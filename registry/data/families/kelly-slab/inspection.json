@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "703a21fbcee28cf9fdf242e9e922865198be2f94cfa95f820b9350b4529be424"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/kellyslab/KellySlab-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-01-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Crushed",
+	"id": "crushed",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/crushed",
+		"revision": "890cebdb57b9f27ebf3c2ddf59084a6869a59444",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/crushed",
+		"revision": "32870f119ec7e05ec914fbe9b99e76aaaa6ecf18"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/crushed/Crushed-Regular.ttf",
+			"sha256": "ce930a0ae7db21bc6d6fb08fc9964e84bf0ecaa60a6fde560d3d2a4ae0949a1a",
+			"size": 57792,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

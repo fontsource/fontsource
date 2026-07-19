@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "James Grieshaber",
+	"family": "Metamorphous",
+	"id": "metamorphous",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Metamorphous\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/metamorphous",
+		"revision": "7fb988359820936ba326c9028b80c7538ca1a5fd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Metamorphous",
+		"revision": "d2d29bb34284baff0817ecfce363b6d0e621e738"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/metamorphous/Metamorphous-Regular.ttf",
+			"sha256": "55939a5664e06807e87fa4af64f52039ead12f002dda8317393fdce2f7ff57fe",
+			"size": 135740,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"miao"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Miao",
+	"id": "noto-sans-miao",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/miao)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmiao",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/miao",
+		"revision": "60e05da3a76e726c5496c3dcbead5051e8b782f7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmiao/NotoSansMiao-Regular.ttf",
+			"sha256": "aeb7a17dd44e8e2027d717cec2b14629f82cb741a7d1a6e4b325e99cb69073ab",
+			"size": 100188,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

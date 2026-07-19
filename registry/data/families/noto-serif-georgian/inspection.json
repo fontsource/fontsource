@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 509,
+				"sha256": "96267a8ba07b226b937d3ea25207b1556f9c4285c146a6fb117803bb635db24d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/notoserifgeorgian/NotoSerifGeorgian[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

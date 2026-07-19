@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-05-20",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Arya",
+	"id": "arya",
+	"license": {
+		"attribution": "Copyright (c) 2014, Eduardo Rodriguez Tunni. Copyright (c) 2000, Modular Infotech, Pune, INDIA. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arya",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/Arya",
+		"revision": "103dc785f25067abe0e63de7b8e839e1863877a9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arya/Arya-Bold.ttf",
+			"sha256": "96449d0ec5f452f56c05fd3072115435f41ed3f78d362444b79a8379de2479f4",
+			"size": 186404,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/arya/Arya-Regular.ttf",
+			"sha256": "b02bdacefe31bd544f9332b9b4244168ec23e18be395a573e08f484c2a778879",
+			"size": 182132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

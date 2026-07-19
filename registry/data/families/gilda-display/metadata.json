@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Gilda Display",
+	"id": "gilda-display",
+	"license": {
+		"attribution": "Copyright 2012 The Gilda Display Project Authors (https://github.com/etunni/gilda-display) with Reserved Font Name 'Gilda'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gildadisplay",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/gilda-display",
+		"revision": "640bdfd3d2ee3b533d1f88687a9e4541136254e0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gildadisplay/GildaDisplay-Regular.ttf",
+			"sha256": "8ca5475692552cd4f149bcd00099c098453c39b8541f4abe2192f84ad17a7aa0",
+			"size": 68020,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

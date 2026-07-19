@@ -1,0 +1,134 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 385,
+				"sha256": "fa3c39295f213e459285f1dc94c6fe27dd103f4ac10ba0b6845d12202f839164"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 390,
+				"sha256": "fca365ae76e23cc717ffb57d4cb7f61677264b71aaf66ce4844d98adb2e332d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 385,
+				"sha256": "fa3c39295f213e459285f1dc94c6fe27dd103f4ac10ba0b6845d12202f839164"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 390,
+				"sha256": "fca365ae76e23cc717ffb57d4cb7f61677264b71aaf66ce4844d98adb2e332d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 390,
+				"sha256": "fca365ae76e23cc717ffb57d4cb7f61677264b71aaf66ce4844d98adb2e332d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 385,
+				"sha256": "fa3c39295f213e459285f1dc94c6fe27dd103f4ac10ba0b6845d12202f839164"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 390,
+				"sha256": "fca365ae76e23cc717ffb57d4cb7f61677264b71aaf66ce4844d98adb2e332d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 385,
+				"sha256": "fa3c39295f213e459285f1dc94c6fe27dd103f4ac10ba0b6845d12202f839164"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 385,
+				"sha256": "fa3c39295f213e459285f1dc94c6fe27dd103f4ac10ba0b6845d12202f839164"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 390,
+				"sha256": "fca365ae76e23cc717ffb57d4cb7f61677264b71aaf66ce4844d98adb2e332d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kulimpark/KulimPark-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

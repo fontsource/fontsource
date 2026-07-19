@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2013-02-27",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Patrick Wagesreiter",
+	"family": "Patrick Hand SC",
+	"id": "patrick-hand-sc",
+	"license": {
+		"attribution": "Copyright 2012 The Patrick Hand Authors (mail@patrickwagesreiter.at)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/patrickhandsc",
+		"revision": "aa1bf77921959fcae9f73318112a22a3730856fe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/patrickhandsc/PatrickHandSC-Regular.ttf",
+			"sha256": "83eff88cfa3c4e501e25f334c0a1a88eb4d4af1ea9d4c32900edf2fb178244dc",
+			"size": 167376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

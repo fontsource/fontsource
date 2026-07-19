@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 255,
+				"sha256": "cbf9b8b8bc8f80fe6dbd0eb1ffe642497e1be8fa810f15fee0e36a507fff712a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008",
+			"outline": "glyf",
+			"path": "ofl/miltonian/Miltonian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

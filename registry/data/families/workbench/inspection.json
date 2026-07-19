@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "BLED"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": -53,
+					"tag": "SCAN"
+				}
+			],
+			"cmap": {
+				"codepointCount": 217,
+				"sha256": "d2408d1a72c90870eea855fd343667a0c4edc935abeac8ad1d7b2cffefcb76b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/workbench/Workbench[BLED,SCAN].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

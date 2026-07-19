@@ -1,0 +1,39 @@
+{
+	"category": "monospace",
+	"dateAdded": "2012-09-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Oxygen Mono",
+	"id": "oxygen-mono",
+	"license": {
+		"attribution": "Copyright (c) 2012, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Oxygen'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oxygenmono",
+		"revision": "23e2e92f2eb68a7b3ec32f3d029302e6e224a1f3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vernnobile/oxygenFont",
+		"revision": "62db0ebe3488c936406685485071a54e3d18473b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oxygenmono/OxygenMono-Regular.ttf",
+			"sha256": "dcc671da93f7fc31f2e7a4a7c058c815c1eaec6a3d27792e18edff4d3bf539f0",
+			"size": 68940,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

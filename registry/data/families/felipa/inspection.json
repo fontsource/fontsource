@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 273,
+				"sha256": "16277a91064b19d8631edbf4c7a53cee7a71b86a3fcc4fbbeeb2599db69727c0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/felipa/Felipa-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

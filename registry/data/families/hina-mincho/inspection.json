@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7967,
+				"sha256": "56a4b36f0a672f0964c618b5def4c6e4b429ee92213d33a259b6779ca530f0a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/hinamincho/HinaMincho-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

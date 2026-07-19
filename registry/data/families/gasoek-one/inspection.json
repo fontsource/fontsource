@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3099,
+				"sha256": "15cd00df1640eaa71f8d1f8c5e7a7c1acab17f83bcf0ab922aceea2f2a4613ee"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.29]",
+			"outline": "glyf",
+			"path": "ofl/gasoekone/GasoekOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

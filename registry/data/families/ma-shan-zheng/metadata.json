@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2019-03-18",
+	"declaredSubsets": [
+		"chinese-simplified",
+		"latin",
+		"menu"
+	],
+	"designer": "Ma ShanZheng",
+	"family": "Ma Shan Zheng",
+	"id": "ma-shan-zheng",
+	"license": {
+		"attribution": "Copyright 2018 The MaShanZheng Project Authors (https://github.com/googlefonts/mashanzheng)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mashanzheng",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/mashanzheng",
+		"revision": "6bfdbe288f5935c6e9072cdd6ab1aa102a006aab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mashanzheng/MaShanZheng-Regular.ttf",
+			"sha256": "b844c59bf20bf530e41c20d6ff12b383b23a2e553b9b68cc89f070869213155d",
+			"size": 5858048,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

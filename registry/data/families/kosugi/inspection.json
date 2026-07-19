@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7526,
+				"sha256": "11cffac55369069b8c38f1c7bf1a36ca240d625e1294ceb511e39a72adb2f8e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.002",
+			"outline": "glyf",
+			"path": "apache/kosugi/Kosugi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-10-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Element Type, Doğukan Karapınar, İbrahim Kaçtıoğlu",
+	"family": "Host Grotesk",
+	"id": "host-grotesk",
+	"license": {
+		"attribution": "Copyright 2023 The Host Grotesk Project Authors (https://github.com/Element-Type/HostGrotesk)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hostgrotesk",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Element-Type/HostGrotesk",
+		"revision": "ab2ba6769119e7ae71aa2fab46eedcb993c670a3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hostgrotesk/HostGrotesk-Italic[wght].ttf",
+			"sha256": "8e16d5b25106332b4330ab02f59bfeb7bb40ba0c060c3053f4c08d4ca8ae4d22",
+			"size": 84264,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hostgrotesk/HostGrotesk[wght].ttf",
+			"sha256": "74c77b8e850d58dd3d8b22e39111a73bef3450de9fb57018ef99119f2d484f5d",
+			"size": 81784,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

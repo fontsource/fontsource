@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-08-03",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Smokum",
+	"id": "smokum",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/smokum",
+		"revision": "02f35d892d3078db7587ca2553412fea92b96a68",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/smokum/Smokum-Regular.ttf",
+			"sha256": "dfb06e95e7b99724e2e508979bdd679c2a1a9c8413c7f6961656097fd38c9a63",
+			"size": 63080,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

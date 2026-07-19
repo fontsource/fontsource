@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 470,
+				"sha256": "7314a6c9afc080ae3122412b46bdf1db915b09794a62174bab75399d8ddb8cf2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.200",
+			"outline": "glyf",
+			"path": "ofl/syne/Syne[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

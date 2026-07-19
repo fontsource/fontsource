@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-05-17",
+	"declaredSubsets": [
+		"braille",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "mshio",
+	"family": "Sawarabi Mincho",
+	"id": "sawarabi-mincho",
+	"license": {
+		"attribution": "Copyright 2024 The Sawarabi Mincho Project Authors (https://github.com/googlefonts/sawarabi-mincho)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sawarabimincho",
+		"revision": "fa7b95b63d3dbbf55d035b52b5c53e772579bb17",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sawarabi-mincho",
+		"revision": "8bd1525717e74e24943d30e07b0ae56ee60c0915"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sawarabimincho/SawarabiMincho-Regular.ttf",
+			"sha256": "1f27e6b0c2543a311c31d2ba3e895e50028069bd24b5e0d20a5b6e0a0b03e9c4",
+			"size": 3662996,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

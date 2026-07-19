@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 218,
+				"sha256": "c65040d42f6ac4d7a6abd28765d0e5b89562a7cc230ee86bd6269688786e6f91"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/gveretlevin/GveretLevin-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

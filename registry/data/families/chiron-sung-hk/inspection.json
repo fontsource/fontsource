@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 46892,
+				"sha256": "0829f044b4c7593487def6d300ac5d2725c9e4b9a241d8f7b9f12d8407e72abf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.019",
+			"outline": "glyf",
+			"path": "ofl/chironsunghk/ChironSungHK-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 46907,
+				"sha256": "5686852747ae728ddaf065bb90d8bd30118c1edb880d8746b9c2d40810d065d8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.019",
+			"outline": "glyf",
+			"path": "ofl/chironsunghk/ChironSungHK[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

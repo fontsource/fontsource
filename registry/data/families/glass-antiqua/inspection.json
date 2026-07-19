@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "977f3727901d30182d5133e0fc56b9f4e9e4e6539744e21b6949505310f55dd8"
+			},
+			"colorTables": [],
+			"fontVersion": "1.001",
+			"outline": "glyf",
+			"path": "ofl/glassantiqua/GlassAntiqua-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

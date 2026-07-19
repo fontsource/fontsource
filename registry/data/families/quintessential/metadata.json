@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Quintessential",
+	"id": "quintessential",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name 'Quintessential'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/quintessential",
+		"revision": "bae3e22f27dab2fa3f7d779a72ee3523652b72f3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/quintessential",
+		"revision": "a3d26ff9183382b8379f368b41b07eb52f1bd193"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/quintessential/Quintessential-Regular.ttf",
+			"sha256": "73d192f10dbfc716214aae282afb93036f12415d16adc9d6d0e981f34d829d32",
+			"size": 73892,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

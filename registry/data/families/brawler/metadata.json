@@ -1,0 +1,47 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-05-18",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Brawler",
+	"id": "brawler",
+	"license": {
+		"attribution": "Copyright 2011 The Brawler Project Authors (https://github.com/cyrealtype/Brawler)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/brawler",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Brawler",
+		"revision": "a8e1fc6a4c43dedc38394c4f4086f526b72e852d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/brawler/Brawler-Bold.ttf",
+			"sha256": "860d9f5094c46bd508bc0477da733461bf5eb8f466080909a3d42ffcb67923ae",
+			"size": 48588,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/brawler/Brawler-Regular.ttf",
+			"sha256": "5f7fcee66ef84c8b27f92b7cdb973039a6194ab3efcce4b328e4755ccb676831",
+			"size": 57852,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

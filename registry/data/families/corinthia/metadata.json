@@ -1,0 +1,49 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Corinthia",
+	"id": "corinthia",
+	"license": {
+		"attribution": "Copyright 2010 The Corinthia Project Authors (https://github.com/googlefonts/corinthia)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/corinthia",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/corinthia",
+		"revision": "9c81839655dfec773b737abc90cb09ac94b1bea1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/corinthia/Corinthia-Bold.ttf",
+			"sha256": "86c58bf8f6a7160f9914160fb3c8dfbf75d5b145dd0ab943a0b82913836516f9",
+			"size": 215252,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/corinthia/Corinthia-Regular.ttf",
+			"sha256": "ee2adb172a41a52c5f6b7de6de5953bf8e9e6bdfa5bc641fdddbdf4c737fc98e",
+			"size": 222456,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

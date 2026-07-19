@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 283,
+				"sha256": "4a88c5cbc0f8466f7ade20b7359334b05a0fb2b3ade63e1806482853cdf4b2e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/niconne/Niconne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

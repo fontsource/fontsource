@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "3b3f6597824a3435061edc143fe42d5711a8f25768a92fbd740e249607b3f1a5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/kdamthmorpro/KdamThmorPro-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

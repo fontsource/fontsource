@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "d8aeab68e3619914373a3c18dc3268f76c878675d6a73551ac4b612c79ec6a8a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2007",
+			"outline": "glyf",
+			"path": "ofl/justmeagaindownhere/JustMeAgainDownHere.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

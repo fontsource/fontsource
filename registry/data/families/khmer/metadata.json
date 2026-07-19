@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Khmer",
+	"id": "khmer",
+	"license": {
+		"attribution": "Copyright (c) 2010, Danh Hong (khmertype.blogspot.com danhhong@gmail.com), with Reserved Font Name Khmer OS. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/khmer",
+		"revision": "8ff38478c21d79318f529d0d3157e422d3f626a9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Khmer",
+		"revision": "d72e92059891c386fa3e8851948ac042ba947f0e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/khmer/Khmer.ttf",
+			"sha256": "cc88eae47fe7875f6a0ad2135e01e5910dacebed03445c4f8d1951f9cf69e3d1",
+			"size": 77684,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

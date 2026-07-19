@@ -1,0 +1,44 @@
+{
+	"category": "display",
+	"dateAdded": "2023-11-23",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Scribble",
+	"id": "rubik-scribble",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikscribble",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "c70421b2f209e0aa88a84210d94da557602a5e56"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikscribble/RubikScribble-Regular.ttf",
+			"sha256": "341d083481febe704791212f560a0898039d6a5744c8819102f3ce7a7f8fc2d4",
+			"size": 583828,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

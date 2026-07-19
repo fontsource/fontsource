@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1010,
+				"sha256": "f777db66db0bd8131f8313a4b3091802110a0bf4c77ccd13431b627020c57dd5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.003",
+			"outline": "glyf",
+			"path": "ofl/opensans/OpenSans-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1010,
+				"sha256": "f777db66db0bd8131f8313a4b3091802110a0bf4c77ccd13431b627020c57dd5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.003",
+			"outline": "glyf",
+			"path": "ofl/opensans/OpenSans[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

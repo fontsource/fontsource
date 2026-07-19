@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 207,
+				"sha256": "49642f49adc27d5ee40c66cdfba40200857d48d84fc3cb6c2adacbc18d842914"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/orbitron/Orbitron[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

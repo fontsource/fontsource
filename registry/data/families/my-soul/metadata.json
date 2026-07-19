@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-03-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "My Soul",
+	"id": "my-soul",
+	"license": {
+		"attribution": "Copyright 2016 The My Soul Project Authors (https://github.com/googlefonts/my-soul)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mysoul",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/my-soul",
+		"revision": "bf7a506caeb8994fd9820787fb6f2c0f0480ec09"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mysoul/MySoul-Regular.ttf",
+			"sha256": "28bcb050c1220145fd6aff6f6f13b1b8f4a9608388c0c34e4ff94452e5e6444f",
+			"size": 145468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

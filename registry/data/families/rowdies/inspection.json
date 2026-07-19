@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 595,
+				"sha256": "53230365f87f25a03e8f3aaaf3aba6e07774cf4e01bcfda48dbf53630e6a4a69"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/rowdies/Rowdies-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 595,
+				"sha256": "53230365f87f25a03e8f3aaaf3aba6e07774cf4e01bcfda48dbf53630e6a4a69"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/rowdies/Rowdies-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 595,
+				"sha256": "53230365f87f25a03e8f3aaaf3aba6e07774cf4e01bcfda48dbf53630e6a4a69"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/rowdies/Rowdies-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

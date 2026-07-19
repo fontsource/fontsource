@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 350,
+				"sha256": "d4cbf781f58e29a04a95349d71fa1f1d8af5ca870d3d954dd14f12424834cd23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/daysone/DaysOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

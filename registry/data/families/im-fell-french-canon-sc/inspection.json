@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 341,
+				"sha256": "45312aee33234c4165512b29efd94887ee08e97b427ff10836a5ff4071974ed3"
+			},
+			"colorTables": [],
+			"fontVersion": "3.00",
+			"outline": "glyf",
+			"path": "ofl/imfellfrenchcanonsc/IMFeFCsc28P.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

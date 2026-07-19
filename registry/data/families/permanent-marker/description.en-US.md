@@ -1,0 +1,1 @@
+Permanent Marker represents the look and feel of a favorite writing instrument.

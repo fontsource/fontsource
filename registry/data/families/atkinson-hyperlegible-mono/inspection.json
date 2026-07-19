@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 359,
+				"sha256": "d838edafeb3096d2830d4e6c64cfff5f7b3b7a48790a39237189a27b72ada1a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/atkinsonhyperlegiblemono/AtkinsonHyperlegibleMono-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 800,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 359,
+				"sha256": "d838edafeb3096d2830d4e6c64cfff5f7b3b7a48790a39237189a27b72ada1a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/atkinsonhyperlegiblemono/AtkinsonHyperlegibleMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

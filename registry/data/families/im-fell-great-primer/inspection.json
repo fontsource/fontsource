@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 373,
+				"sha256": "f3426b00725c9aafd5b1165789d3236cd585396bc97fe4238465f5c6d57a3d5d"
+			},
+			"colorTables": [],
+			"fontVersion": "3.00",
+			"outline": "glyf",
+			"path": "ofl/imfellgreatprimer/IMFeGPit28P.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 354,
+				"sha256": "7a91656f0c145a963ba10588d5d6c50c50a8f187c6abc5aef3787c24812a22fb"
+			},
+			"colorTables": [],
+			"fontVersion": "3.00",
+			"outline": "glyf",
+			"path": "ofl/imfellgreatprimer/IMFeGPrm28P.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

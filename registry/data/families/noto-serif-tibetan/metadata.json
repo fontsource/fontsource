@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tibetan"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Tibetan",
+	"id": "noto-serif-tibetan",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tibetan)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoseriftibetan",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/tibetan",
+		"revision": "28f1693070a917c50b3d275c9381def412a2ea2b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoseriftibetan/NotoSerifTibetan[wght].ttf",
+			"sha256": "060ec022b04c306de3f58d051fb0e1cf81a5b610c5910fbfc43bba154c057cda",
+			"size": 2063504,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

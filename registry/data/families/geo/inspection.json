@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 204,
+				"sha256": "103099f8d40a00d8006403f3609e3bcad3fe9b659eb8adbaa269836555ac38da"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.2",
+			"outline": "glyf",
+			"path": "ofl/geo/Geo-Oblique.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 204,
+				"sha256": "103099f8d40a00d8006403f3609e3bcad3fe9b659eb8adbaa269836555ac38da"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.2",
+			"outline": "glyf",
+			"path": "ofl/geo/Geo-Regular.ttf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

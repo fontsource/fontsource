@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 430,
+				"sha256": "7c0efc4eb294b4790454e0f4d852fd46cc5aa8208ed071f24e8b10c53d7893c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.008",
+			"outline": "glyf",
+			"path": "ofl/notosansarmenian/NotoSansArmenian[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2010-11-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "j. 'mach' wust",
+	"family": "UnifrakturMaguntia",
+	"id": "unifrakturmaguntia",
+	"license": {
+		"attribution": "Copyright (c) 2010 j. 'mach' wust (j.mach.wust@gmail.com) with Reserved Font Name UnifrakturMaguntia. Copyright (c) 2009 Peter Wiegel (wiegel@peter-wiegel.de). This Font Software is licensed under the SIL Open Font License, Version 1.1.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/unifrakturmaguntia",
+		"revision": "26be2797742d47542bd5e8e9153cea3a792fba85",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/unifrakturmaguntia/UnifrakturMaguntia-Book.ttf",
+			"sha256": "d64afc0547059dd2e4a78da48bda0aba0a9901be58c7f8c201a8b2b6b4492cc8",
+			"size": 88508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

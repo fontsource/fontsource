@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Samaritan is an unmodulated (“sans serif”) design for texts in the Middle Eastern _Samaritan_ script. It has 68 glyphs.

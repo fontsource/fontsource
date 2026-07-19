@@ -1,0 +1,46 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "FLAR"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "VOLM"
+				},
+				{
+					"default": 0,
+					"max": 0,
+					"min": -12,
+					"tag": "slnt"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 983,
+				"sha256": "25a49dec6602314f333f81c241da6f45d08d23894f7b7ffc796479ce4ebbe876"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/commissioner/Commissioner[FLAR,VOLM,slnt,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

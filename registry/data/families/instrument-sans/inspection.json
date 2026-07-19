@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 343,
+				"sha256": "9fe832c034ff767c7a9da4d66e46e627e1804611a4744cd63cb3a1e9a6b1c346"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/instrumentsans/InstrumentSans-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 343,
+				"sha256": "9fe832c034ff767c7a9da4d66e46e627e1804611a4744cd63cb3a1e9a6b1c346"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/instrumentsans/InstrumentSans[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

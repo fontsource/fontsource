@@ -1,0 +1,75 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Battambang",
+	"id": "battambang",
+	"license": {
+		"attribution": "Copyright 2019 The Battambang Khmer Project Authors (https://github.com/danhhong/Battambang)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/battambang",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Battambang",
+		"revision": "b2350045aaa01ab6c4aa572d677432e25c338807"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/battambang/Battambang-Black.ttf",
+			"sha256": "4426332a541f6cc85489813b11d99b8a1aaca53b313f8deb21b403a3d58286dd",
+			"size": 104172,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/battambang/Battambang-Bold.ttf",
+			"sha256": "4cd10f7a56a7d9d1fb4184b2219821f8ad6f425be290243ef73c4ef3a80c86ff",
+			"size": 111988,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/battambang/Battambang-Light.ttf",
+			"sha256": "282626df0ef99cdba8e2519e63705de621d1cf29c3d323a1d8e424df1caea5ed",
+			"size": 100592,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/battambang/Battambang-Regular.ttf",
+			"sha256": "1fd3eb9960911396cb7955f2c68afe5ee21c2c14f8097e945d05b768ed4de942",
+			"size": 116040,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/battambang/Battambang-Thin.ttf",
+			"sha256": "8e02ceb59104791191d7370324a75c4e74e85623691272507f8bde3c83d7a8d9",
+			"size": 98740,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

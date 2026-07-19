@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 374,
+				"sha256": "ecda7259e0cb99c6ecf53f9fd6c892e294bcd2f5df6a13b4e31a23c7f8dda250"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/fascinateinline/FascinateInline-Regular.ttf",
+			"style": "normal",
+			"weight": 900
+		}
+	]
+}

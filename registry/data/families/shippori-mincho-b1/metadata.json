@@ -1,0 +1,76 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-01-04",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "FONTDASU",
+	"family": "Shippori Mincho B1",
+	"id": "shippori-mincho-b1",
+	"license": {
+		"attribution": "Copyright 2021 The Shippori Mincho Project Authors (https://github.com/fontdasu/ShipporiMincho)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/shipporiminchob1",
+		"revision": "d0b2d1307ad5d6b579d627a6e5abd25952484b96",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontdasu/ShipporiMincho",
+		"revision": "63431fee6c2cfea772325d6251d2935b7cfa7c6d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/shipporiminchob1/ShipporiMinchoB1-Bold.ttf",
+			"sha256": "d20f3981afb8bceda5fdf8f0fb29ba51eb21518644612ccd8a183e5bd433e25a",
+			"size": 15088960,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/shipporiminchob1/ShipporiMinchoB1-ExtraBold.ttf",
+			"sha256": "bee99a242f32128e8d6a4acff2b3f1742cd42ea90748758e6e10456871887e76",
+			"size": 15088060,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/shipporiminchob1/ShipporiMinchoB1-Medium.ttf",
+			"sha256": "0712348124729e30507a9ed9d7c8939125f13605954596acfe0ec4a6341e3b9d",
+			"size": 15185140,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/shipporiminchob1/ShipporiMinchoB1-Regular.ttf",
+			"sha256": "89403e4b2a9ca0db9f832b893cfbfd90506c7c674cd640ba8a0ee128c34de7a4",
+			"size": 15230032,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/shipporiminchob1/ShipporiMinchoB1-SemiBold.ttf",
+			"sha256": "2d0dfceb662d522c9dd643f6822e9af2def6b0a0186ed5cb303463d2ed8f5c06",
+			"size": 15160536,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

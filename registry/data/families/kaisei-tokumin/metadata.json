@@ -1,0 +1,68 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-05-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Font-Kai",
+	"family": "Kaisei Tokumin",
+	"id": "kaisei-tokumin",
+	"license": {
+		"attribution": "Copyright 2020 The Kaisei Project Authors (https://github.com/Font-Kai/Kaisei)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kaiseitokumin",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/FontKai-Kaisei/Kaisei",
+		"revision": "b396c906d67ddbfde60c2c78588f8de00b46c891"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kaiseitokumin/KaiseiTokumin-Bold.ttf",
+			"sha256": "4540f6b5c32724acc9c4ba77692195078de43a4ee762d436e39d32fa8d1a73c9",
+			"size": 4366200,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kaiseitokumin/KaiseiTokumin-ExtraBold.ttf",
+			"sha256": "bf44bb3e23cc703bfb19111833f78e651998d0a2b1863eff9e88cecb38a8bc53",
+			"size": 4564000,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/kaiseitokumin/KaiseiTokumin-Medium.ttf",
+			"sha256": "fc58ac081468ca3a06c9f8b89077fbbf01c57729c1d5787cc7f33adb3e40d6f3",
+			"size": 4367444,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kaiseitokumin/KaiseiTokumin-Regular.ttf",
+			"sha256": "3fbdbec539369aed11bb1fa0cdda1d19ea246e795107357383dfa561848a427d",
+			"size": 4581732,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"duployan",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Duployan",
+	"id": "noto-sans-duployan",
+	"license": {
+		"attribution": "Copyright 2018-2019, 2022-2023 David Corbett. Copyright 2019-2022 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansduployan",
+		"revision": "04d66c83d5078e48b7ec1b694b2d01214a54ce30",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/duployan",
+		"revision": "9626869cc851873c96eafd019fab55d984bbebc0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansduployan/NotoSansDuployan-Bold.ttf",
+			"sha256": "f7766eabbec7c00e50b0e64bf130805f03da77474c203809ceedf1ae96a521db",
+			"size": 1765340,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/notosansduployan/NotoSansDuployan-Regular.ttf",
+			"sha256": "2510875cbe4b602f90446e185b25eff1dc600acbc37e8a7a46bbf352603373be",
+			"size": 1775008,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

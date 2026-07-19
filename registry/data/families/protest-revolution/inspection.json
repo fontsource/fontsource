@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 557,
+				"sha256": "df6d99a8ff9ff11c39db80d9a03ecfe169adbb5c31f725b6cd64422ec6e3ef58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/protestrevolution/ProtestRevolution-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

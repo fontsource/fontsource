@@ -1,0 +1,34 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-02-23",
+	"declaredSubsets": [
+		"korean",
+		"menu"
+	],
+	"designer": "JIKJI",
+	"family": "Song Myung",
+	"id": "song-myung",
+	"license": {
+		"attribution": "Copyright 2018 The Song Myung Project Authors",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/songmyung",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/songmyung/SongMyung-Regular.ttf",
+			"sha256": "7f90ab20250911560212cc5819c7b205f9c6644bb96b65095d89fcae096bbf58",
+			"size": 2035300,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

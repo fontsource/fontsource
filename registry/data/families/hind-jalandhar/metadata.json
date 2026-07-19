@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"gurmukhi",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind Jalandhar",
+	"id": "hind-jalandhar",
+	"license": {
+		"attribution": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hindjalandhar",
+		"revision": "b3da6516a278bc434699e17bda77534792ca113e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind-jalandhar",
+		"revision": "6d0af0d80b97ce24b8b1ff61d60f814c8904626d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hindjalandhar/HindJalandhar-Bold.ttf",
+			"sha256": "40ae9e8beea31bcf27e0a223424a5b904de716f6d3343c9425a268a7c04ac1a8",
+			"size": 48164,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hindjalandhar/HindJalandhar-Light.ttf",
+			"sha256": "b4fec2a8eedb6ecdd29ed7862bb76f847e077424f0337c7eaf09185aa1447d47",
+			"size": 48372,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hindjalandhar/HindJalandhar-Medium.ttf",
+			"sha256": "8d15a3dba9d59aa768c78d62daa259129e391ca68994d32a954b193e77c208de",
+			"size": 48264,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hindjalandhar/HindJalandhar-Regular.ttf",
+			"sha256": "ec31a2104441edd54607610e7c9c14a13cb7fd57d63cff24330a1734a4dad7e1",
+			"size": 48168,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hindjalandhar/HindJalandhar-SemiBold.ttf",
+			"sha256": "8f231651b67f8fa5dbd3e464036ce0e9eaf8c9d12e34946196a7b6a79ccadc44",
+			"size": 48476,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,33 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 15,
+					"max": 45,
+					"min": 0,
+					"tag": "MORF"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "SHLN"
+				}
+			],
+			"cmap": {
+				"codepointCount": 657,
+				"sha256": "43b83c53aa2bfe46d8c5cd5f2509a4c962df391f8007eaa498cfee3fd852fc98"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL"
+			],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/honk/Honk[MORF,SHLN].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

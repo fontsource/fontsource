@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 493,
+				"sha256": "6334460350a2202af864c845c71a630e7c10c46c8767a67b3ef4f105f41d2a11"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/windsong/WindSong-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 493,
+				"sha256": "6334460350a2202af864c845c71a630e7c10c46c8767a67b3ef4f105f41d2a11"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/windsong/WindSong-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

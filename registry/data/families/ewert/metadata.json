@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Johan Kallas, Mihkel Virkus",
+	"family": "Ewert",
+	"id": "ewert",
+	"license": {
+		"attribution": "Copyright (c) 2011, Johan Kallas (johankallas@gmail.com), Copyright (c) 2011 Mihkel Virkus (mihkelvirkus@gmail.com) with Reserved Font Name Ewert.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ewert",
+		"revision": "08363313b03a2d9e80721a6bf997b3f824c5eb5a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/ewert",
+		"revision": "21fa9ed2031b8f7f1bec75cb3f91ad495e3b2370"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ewert/Ewert-Regular.ttf",
+			"sha256": "8a7eb23adce5193b61bc1843d752f37c208c163dd6db2fc1b64791791969f4ab",
+			"size": 70752,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,55 @@
+{
+	"id": "lisu",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"2D",
+			"2D"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"2BC",
+			"2BC"
+		],
+		[
+			"2CD",
+			"2CD"
+		],
+		[
+			"2010",
+			"2010"
+		],
+		[
+			"300A",
+			"300B"
+		],
+		[
+			"A4D0",
+			"A4FF"
+		],
+		[
+			"11FB0",
+			"11FB0"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/lisu_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "032b645bb6122094cc74cbffd019e81333e4063182f4a7599b9afaa2f95d2767",
+		"upstream": "namFiles"
+	}
+}

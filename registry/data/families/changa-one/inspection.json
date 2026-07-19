@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 243,
+				"sha256": "82c0d08849b675f1b68417c1caed8087eea02847093aad0a1e429014ba8cf025"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/changaone/ChangaOne-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 243,
+				"sha256": "82c0d08849b675f1b68417c1caed8087eea02847093aad0a1e429014ba8cf025"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/changaone/ChangaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

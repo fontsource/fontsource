@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 199,
+				"sha256": "d073ddfe769418382be85828f59867c47e352dcbba84490218df9dff160abdfd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "ofl/allkin/Allkin-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

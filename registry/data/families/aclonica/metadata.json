@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-04-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Aclonica",
+	"id": "aclonica",
+	"license": {
+		"attribution": "Copyright (c) 2010 Brian J. Bonislawsky (astigma@astigmatic.com)",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/aclonica",
+		"revision": "64d5302d5cdc27eeeb8913d99b0e1dda8a2e7953",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/aclonica",
+		"revision": "2746e457bdb6c42c89faa2803030ba609e935390"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/aclonica/Aclonica-Regular.ttf",
+			"sha256": "774a49351cc62a469b56972e9769679ce818a3de15b409ad5f1b6244ee84d85b",
+			"size": 68732,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-09-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Type Associates",
+	"family": "Momo Signature",
+	"id": "momo-signature",
+	"license": {
+		"attribution": "Copyright 2024 The Momo Signature Project Authors (https://github.com/typeassociates)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/momosignature",
+		"revision": "f519380b946a7518dae71eff7ee783d05a7faa1c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typeassociates/MomoSignature",
+		"revision": "c3ba208abfc2d6e661da920121653f0557bae611"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/momosignature/MomoSignature-Regular.ttf",
+			"sha256": "2f64c80e245b171c0931ae222d569261134212f0c0f54784c570f2e6cc6d2347",
+			"size": 414732,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-08-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Oregano",
+	"id": "oregano",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Oregano Italic\"\nCopyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Oregano\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oregano",
+		"revision": "037d76795594963b828a1e861f21a50e7751c558",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oregano/Oregano-Italic.ttf",
+			"sha256": "5e4df67997869d4e68dba1a38463a70c8679d29cb7ac678779631db9382f5538",
+			"size": 87000,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/oregano/Oregano-Regular.ttf",
+			"sha256": "0c2eaed981aeefa8445c4a937794fd1ec7dd5a5b40ff60307a59775cc239b187",
+			"size": 80320,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

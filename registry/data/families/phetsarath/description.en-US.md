@@ -1,0 +1,1 @@
+Phetsarath is a font for the Lao language, used in the Lao People's Democratic Republic. It was commissioned by the [Ministry of Posts and Telecommunications](http://www.phetsarath.gov.la/) of the national government.

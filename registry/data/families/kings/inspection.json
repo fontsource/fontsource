@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 582,
+				"sha256": "a0893600679415111698a3593b818ddbd0470f52a777fc11cb5c7ede32cc9c68"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kings/Kings-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

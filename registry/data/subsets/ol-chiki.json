@@ -1,0 +1,35 @@
+{
+	"id": "ol-chiki",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1C50",
+			"1C7F"
+		],
+		[
+			"20B9",
+			"20B9"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/ol-chiki_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "e27340554092ca928ad54ed437e9f96d8dc7c6cf7f0a621bbaf8fbc05e146af8",
+		"upstream": "namFiles"
+	}
+}

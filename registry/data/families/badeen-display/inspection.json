@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 438,
+				"sha256": "1812738ba61479a3a5a31cb8e5202c0d059ff632deb08dffc5e9509a967369fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/badeendisplay/BadeenDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

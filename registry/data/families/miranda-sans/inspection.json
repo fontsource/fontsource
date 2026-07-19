@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 439,
+				"sha256": "8b8237da223d8b08f231330df1fa7592b7e9ceac0214a707a8e6756516a8937a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mirandasans/MirandaSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 439,
+				"sha256": "8b8237da223d8b08f231330df1fa7592b7e9ceac0214a707a8e6756516a8937a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mirandasans/MirandaSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

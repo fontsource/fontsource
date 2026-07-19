@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Syloti Nagri is an unmodulated (“sans serif”) design for texts in the Indic _Syloti Nagri_ script. It has 87 glyphs.

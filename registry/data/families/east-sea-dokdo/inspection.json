@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3098,
+				"sha256": "c73270f4f9fa6ef9e166bc36d463e7a2172ce5438190c13c2c7d0bf99e2e40da"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/eastseadokdo/EastSeaDokdo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

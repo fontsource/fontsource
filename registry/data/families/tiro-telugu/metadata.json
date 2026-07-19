@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-03-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"telugu"
+	],
+	"designer": "Tiro Typeworks, John Hudson, Fiona Ross, Kaja Słojewska",
+	"family": "Tiro Telugu",
+	"id": "tiro-telugu",
+	"license": {
+		"attribution": "Copyright 2020 The Indigo Project Authors (https://github.com/TiroTypeworks/Indigo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tirotelugu",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Indigo",
+		"revision": "24f67ca20ca4720eb4302592f2e0f6ec21042a5d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tirotelugu/TiroTelugu-Italic.ttf",
+			"sha256": "8f15489b577de6f135113df186ca09440adeba233999ad345cf16f7fc1bd766b",
+			"size": 634840,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tirotelugu/TiroTelugu-Regular.ttf",
+			"sha256": "aefd72a31b1a9d726047d3dc34568f0aacc3a5048971f73d3228d4d2a6087240",
+			"size": 635592,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "85f4d4c281a7fe1acd23a6e5c61a4318957f4c7af45fce38313257756d82e0b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.007; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoserifdogra/NotoSerifDogra-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

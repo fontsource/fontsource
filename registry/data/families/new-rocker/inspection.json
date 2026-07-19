@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 426,
+				"sha256": "5217eb15851af5b31f51a128261c967d9538fae836cc8a2ca0c5d7bd7706b76f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v0.93) -l 8 -r 50 -G 200 -x 14 -w \"G\"",
+			"outline": "glyf",
+			"path": "ofl/newrocker/NewRocker-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

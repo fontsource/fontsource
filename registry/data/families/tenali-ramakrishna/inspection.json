@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "872540f1fc88b38f115a725576a2023f7733f01f51482334c6717e2fc494c16d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.5; ttfautohint (v1.2.25-373a) -l 7 -r 28 -G 50 -x 13 -D telu -f latn -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/tenaliramakrishna/TenaliRamakrishna-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

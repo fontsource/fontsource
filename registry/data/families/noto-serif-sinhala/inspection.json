@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "8344aad4e949e03015efde40e47e277dfc9fa9958c648898397fb6375d8776ca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.007",
+			"outline": "glyf",
+			"path": "ofl/notoserifsinhala/NotoSerifSinhala[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

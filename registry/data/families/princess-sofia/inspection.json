@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "942907a9edf8ae719666288cea61aae47dddf9e3ea479a8acfebc63fc5f8deb7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/princesssofia/PrincessSofia-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

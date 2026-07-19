@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 502,
+				"sha256": "7449aab0ae8296a6da4a8e74345b2b2b441f6a8a33c4ec84516849007138e7b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.600",
+			"outline": "glyf",
+			"path": "ofl/taiheritagepro/TaiHeritagePro-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 502,
+				"sha256": "7449aab0ae8296a6da4a8e74345b2b2b441f6a8a33c4ec84516849007138e7b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.600",
+			"outline": "glyf",
+			"path": "ofl/taiheritagepro/TaiHeritagePro-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

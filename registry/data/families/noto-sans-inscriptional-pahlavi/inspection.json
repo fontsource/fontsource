@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "6ac4702e9cb7d0f7689834c484dbb6ea3435123eeca15d219a1d3dc8e2d11f01"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansinscriptionalpahlavi/NotoSansInscriptionalPahlavi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 3607,
+				"sha256": "2d2263bd78b2dbf6ab805876f8d62c55fb77deb1668449d3f6028ba4e855aceb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/hahmlet/Hahmlet[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

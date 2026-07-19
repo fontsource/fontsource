@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "730c6c6c04be94b7b09c9bddc1af53ef4d25cdecead55b778ecf4d55d62d2a76"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/shojumaru/Shojumaru-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

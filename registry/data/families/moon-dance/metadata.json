@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Moon Dance",
+	"id": "moon-dance",
+	"license": {
+		"attribution": "Copyright 2004 The Moon Dance Project Authors (https://github.com/googlefonts/moondance)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/moondance",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/moondance",
+		"revision": "ebba2ffb57b1b7c23e9dd382605ab9c92119cc49"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/moondance/MoonDance-Regular.ttf",
+			"sha256": "f25e6830b0c1b95df85446fc064cc0bc8db1588600a260a441b03011189e8335",
+			"size": 276360,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 247,
+				"sha256": "f9c438d406c76933c123c059f8818d40cac6f4d07f87716868bdfdd8afba9160"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2010-11-24",
+			"outline": "glyf",
+			"path": "ofl/unifrakturmaguntia/UnifrakturMaguntia-Book.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

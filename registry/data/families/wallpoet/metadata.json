@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-04-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Lars Berggren",
+	"family": "Wallpoet",
+	"id": "wallpoet",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Lars Berggren (punktlars@gmail.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/wallpoet",
+		"revision": "f8b259b4dc5ffea8e3a328f68c8cb54083ddc5f0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/wallpoet/Wallpoet-Regular.ttf",
+			"sha256": "0d8dc36abe195fa455a5a9f60a29f0aa29c7404bf880a67ec71f047dabefb02b",
+			"size": 39904,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

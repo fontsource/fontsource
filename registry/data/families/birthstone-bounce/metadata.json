@@ -1,0 +1,49 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-09-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Birthstone Bounce",
+	"id": "birthstone-bounce",
+	"license": {
+		"attribution": "Copyright 2019 The Birthstone Bounce Project Authors (https://github.com/googlefonts/birthstone-bounce)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/birthstonebounce",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/birthstone-bounce",
+		"revision": "db48de44b60017495c71a024aa2c079d70869225"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/birthstonebounce/BirthstoneBounce-Medium.ttf",
+			"sha256": "ed8a0f1ad5ff82d617288e15268d6365412e3b793d17230610435b09474b31bc",
+			"size": 322404,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/birthstonebounce/BirthstoneBounce-Regular.ttf",
+			"sha256": "a03b6146597d467e794fdd4d61178d72f083eb93e9e86040a10530aaa1307ef9",
+			"size": 326712,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

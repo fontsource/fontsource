@@ -1,0 +1,47 @@
+{
+	"category": "display",
+	"dateAdded": "2011-02-16",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Dan Rhatigan",
+	"family": "Astloch",
+	"id": "astloch",
+	"license": {
+		"attribution": "Copyright 2011 The Astloch Project Authors",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/astloch",
+		"revision": "b540b01bc6e44e9aaa2fb31918d31b294eeafce9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/astloch",
+		"revision": "48ba7212e16d35d8f5991fac7f46c8c134106d30"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/astloch/Astloch-Bold.ttf",
+			"sha256": "dee95fb52f9b24afc701e9991208275f654160870db06bec84cecb25e10fbeee",
+			"size": 75732,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/astloch/Astloch-Regular.ttf",
+			"sha256": "1b6f98e4c391da70d9166182369f90164cb02870ad210c4b3287f35ff28227f0",
+			"size": 51156,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

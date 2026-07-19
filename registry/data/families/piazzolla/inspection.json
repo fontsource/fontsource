@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 30,
+					"max": 30,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1330,
+				"sha256": "67737eb6db64a751691ccb6488b5076c754ace676fbf7ed9e9b490b4167bd392"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005",
+			"outline": "glyf",
+			"path": "ofl/piazzolla/Piazzolla-Italic[opsz,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 30,
+					"max": 30,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1330,
+				"sha256": "67737eb6db64a751691ccb6488b5076c754ace676fbf7ed9e9b490b4167bd392"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005",
+			"outline": "glyf",
+			"path": "ofl/piazzolla/Piazzolla[opsz,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

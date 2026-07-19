@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "2e4d47fd796b8f273b91d82c97431edf5d5fe8ff7947393029a79aa70eb304a8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/gravitasone/GravitasOne.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

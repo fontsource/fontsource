@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 16,
+					"max": 72,
+					"min": 16,
+					"tag": "opsz"
+				}
+			],
+			"cmap": {
+				"codepointCount": 694,
+				"sha256": "d256593b25f006dc3879576def8a0c0669526a729a897727f86fc7b86c2bab9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/ballet/Ballet[opsz].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

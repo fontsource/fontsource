@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 259,
+				"sha256": "005c7bef86715879b3cc3e1b4659a6ac144316de0b83d672914e00f890d8a1f6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/ovo/Ovo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

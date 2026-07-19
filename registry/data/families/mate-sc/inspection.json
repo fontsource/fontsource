@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 432,
+				"sha256": "aec68b5c3328cbad8c6fe8cf7e5711bbde3436b328ebd219710b96fb81310dec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.24]",
+			"outline": "glyf",
+			"path": "ofl/matesc/MateSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

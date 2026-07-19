@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-05-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Hermeneus One",
+	"id": "hermeneus-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, Pablo Impallari (www.impallari.com|impallari@gmail.com) and Rodrigo Fuenzalida (www.rfuenzalida.com), with Reserved Font Name Hermeneus.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hermeneusone",
+		"revision": "fa806749e3c2bd8d128027f0c69e2119bf5b232d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hermeneusone/HermeneusOne-Regular.ttf",
+			"sha256": "53ff8b668ff603beb3a15b298c35d80932f57a47c889e6e96bb93d434da25808",
+			"size": 132940,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

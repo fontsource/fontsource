@@ -1,0 +1,75 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Suwannaphum",
+	"id": "suwannaphum",
+	"license": {
+		"attribution": "Copyright 2019 The Suwannaphum Project Authors (https://github.com/danhhong/Suwannaphum)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/suwannaphum",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Suwannaphum",
+		"revision": "86c0dfc2b5abe20f239e3a3dfec2a9b9e153b28b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/suwannaphum/Suwannaphum-Black.ttf",
+			"sha256": "c68112a98a143165dcf231b04a335497f6c028214006b0e1ad5905d65d0a2906",
+			"size": 101948,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/suwannaphum/Suwannaphum-Bold.ttf",
+			"sha256": "8afa1154b77de9be28248395160cf5f94cda7847aca123971af212e074d6f83d",
+			"size": 103904,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/suwannaphum/Suwannaphum-Light.ttf",
+			"sha256": "4c63d8be65e55a9b755385c6114d9e40dd3d00542cb7581d321e41b029826be9",
+			"size": 98704,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/suwannaphum/Suwannaphum-Regular.ttf",
+			"sha256": "f10e67bb256c78c126ac9def562a933ac44a51e5fa0cebea2a6234faa55de4a5",
+			"size": 97756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/suwannaphum/Suwannaphum-Thin.ttf",
+			"sha256": "a7622a399293c36352a182d829d71b90bf8e711416c9ed551434a15451933766",
+			"size": 103304,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

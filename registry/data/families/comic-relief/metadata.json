@@ -1,0 +1,50 @@
+{
+	"category": "display",
+	"dateAdded": "2025-02-13",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jeff Davis",
+	"family": "Comic Relief",
+	"id": "comic-relief",
+	"license": {
+		"attribution": "Copyright 2013 The Comic Relief Project Authors (https://github.com/loudifier/Comic-Relief)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/comicrelief",
+		"revision": "993d03b988291b8609cd3fc24e10b6a982c79de9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/loudifier/Comic-Relief",
+		"revision": "856315f5a45dfdad75090e4454f1ebfd019296b9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/comicrelief/ComicRelief-Bold.ttf",
+			"sha256": "33aee007212b696afd57d50c901135cd723cd188f7ad98f3a1c572ea64e8f0d5",
+			"size": 94684,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/comicrelief/ComicRelief-Regular.ttf",
+			"sha256": "9ef4958ab06385d91f635f83a15569786b243f9d010cfb3f9a5cdda593c7bc22",
+			"size": 80324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

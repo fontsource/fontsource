@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 10178,
+				"sha256": "e5ba4b9e793958695969796c904ff138be4eff9cc237b12e32ab9629eb74d3e5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/kleeone/KleeOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 10178,
+				"sha256": "e5ba4b9e793958695969796c904ff138be4eff9cc237b12e32ab9629eb74d3e5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/kleeone/KleeOne-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-09-27",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Kinuta Font Factory",
+	"family": "Yuji Syuku",
+	"id": "yuji-syuku",
+	"license": {
+		"attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yujisyuku",
+		"revision": "f6a4e8a8247cd8382551b8c2926fae6b650df6f0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Kinutafontfactory/Yuji",
+		"revision": "efec977b14b57c19eb85d468edcfbbad13139e67"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yujisyuku/YujiSyuku-Regular.ttf",
+			"sha256": "82728ebafc8c97391e2dab633414a806f344b8e4e2227d307179f07b548fca61",
+			"size": 8430348,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

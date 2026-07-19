@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 759,
+				"sha256": "f549bc5b67fba920d81ad5f8ead22a9c97ece3f8d33d5a25eb0aa6cb9364f28a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/poiretone/PoiretOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

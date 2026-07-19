@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Meow Script",
+	"id": "meow-script",
+	"license": {
+		"attribution": "Copyright 2017 The Meow Script Project Authors (https://github.com/googlefonts/meow-script)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/meowscript",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/meow-script",
+		"revision": "6882d389cb287bd7b7716c125e9728b81ed0ab41"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/meowscript/MeowScript-Regular.ttf",
+			"sha256": "20e58b8455a19f18c687d67e2edfa0b62bd7b66d18ae68f5f47e0b603c197776",
+			"size": 601304,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

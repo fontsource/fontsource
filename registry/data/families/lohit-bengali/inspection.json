@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 154,
+				"sha256": "b5f4498b51605194405a7e86fe69546de72d26c9a3a968169c8d468143b2dd08"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.5.1",
+			"outline": "glyf",
+			"path": "ofl/lohitbengali/Lohit-Bengali.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Glory",
+	"id": "glory",
+	"license": {
+		"attribution": "Copyright 2016-2020 The Glory Project Authors (https://github.com/googlefonts/glory)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/glory",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/glory",
+		"revision": "76ea446c0499989af653f75c1cbd80447ef955d6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/glory/Glory-Italic[wght].ttf",
+			"sha256": "f24daaa4671778f0788535471fe9aa6a0a09ecb97ee644d9a7b5801de9f6cb94",
+			"size": 89460,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/glory/Glory[wght].ttf",
+			"sha256": "7282178080ca4fc5feca7b6ff96212acee58462efdff8a43b80d67204f100837",
+			"size": 87024,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

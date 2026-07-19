@@ -1,0 +1,1 @@
+This is the condensed set of styles of the [Cabin font family](https://fonts.google.com/specimen/Cabin). The compete family is available as a variable font, with a Weight range from Regular to Bold, and a Width range from Normal to Condensed.

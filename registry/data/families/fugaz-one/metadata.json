@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "LatinoType",
+	"family": "Fugaz One",
+	"id": "fugaz-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com), with Reserved Font Names \"Fugaz\" and \"Fugaz One\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fugazone",
+		"revision": "fc2680a0f214a82dcc85ba9039575c8a30ab8467",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/fugazone",
+		"revision": "d6fef0584e47767dc53d0144d0d41de77088184b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fugazone/FugazOne-Regular.ttf",
+			"sha256": "14fd5becce8b0ae987e44b3f9fa9e3e6c87463e9585ac15db6c8271462068a62",
+			"size": 27868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

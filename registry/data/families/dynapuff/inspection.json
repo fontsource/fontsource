@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 449,
+				"sha256": "c91b8482cbc2f5a3b12fa065b72da88234bdd012f5adee6e2d447364496e4579"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/dynapuff/DynaPuff[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

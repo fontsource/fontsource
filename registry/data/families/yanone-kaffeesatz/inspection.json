@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 700,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 598,
+				"sha256": "e61d957c727a37ce4d193e9ac4492a33242ec9ee62b39570e0e487e17230e4ea"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/yanonekaffeesatz/YanoneKaffeesatz[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 700,
+				"min": 200
+			}
+		}
+	]
+}

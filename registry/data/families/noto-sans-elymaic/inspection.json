@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "47de85f881c5e49368061e267c1cc2be42f14621c6f92e1df8cfc7b560d6f45a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanselymaic/NotoSansElymaic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

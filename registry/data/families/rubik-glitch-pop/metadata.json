@@ -1,0 +1,44 @@
+{
+	"category": "display",
+	"dateAdded": "2023-11-29",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Glitch Pop",
+	"id": "rubik-glitch-pop",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikglitchpop",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "112698043433bee2d652b8fa1943ea2c19854550"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikglitchpop/RubikGlitchPop-Regular.ttf",
+			"sha256": "20545e9c47a8d5f1a23305c598c54b2c29f252079db2965e593184e765d5880f",
+			"size": 1976660,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

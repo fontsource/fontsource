@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Freckle Face",
+	"id": "freckle-face",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Freckle Face\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/freckleface",
+		"revision": "379730c94efb0165c835f0c0604931c5b9d2e948",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/freckleface",
+		"revision": "158b54fbb54daa103228a08cb0ea7d03c832461b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/freckleface/FreckleFace-Regular.ttf",
+			"sha256": "54b61a9f5bac3eb3a3d7f78f99d4d9c5d5688a9859e79bbf8704ae79c7f8f0fc",
+			"size": 121088,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

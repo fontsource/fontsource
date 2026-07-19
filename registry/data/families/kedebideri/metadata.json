@@ -1,0 +1,84 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-09-11",
+	"declaredSubsets": [
+		"beria-erfe",
+		"latin",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Kedebideri",
+	"id": "kedebideri",
+	"license": {
+		"attribution": "Copyright (c) 2007-2025 SIL Global",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kedebideri",
+		"revision": "cc9cb0b74569628f55b1a78f85b3f38e390e1eae",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-kedebideri",
+		"revision": "4973b2e0258ef40acc0da3c2c1d155630faecc2c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kedebideri/Kedebideri-Black.ttf",
+			"sha256": "d97de0f816199815c76f42735796a791c6dee9a4d2d6718e07b84b5933382d51",
+			"size": 52304,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/kedebideri/Kedebideri-Bold.ttf",
+			"sha256": "44f61b6539ff31d2a2ddca62dabfb66af4f3db17242a239641a3ba85a4748cdb",
+			"size": 52280,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kedebideri/Kedebideri-ExtraBold.ttf",
+			"sha256": "5628251db19898f946fe899ac064c9e0c0d2b58daffd2ecf6895d846e17d749e",
+			"size": 52328,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/kedebideri/Kedebideri-Medium.ttf",
+			"sha256": "84d6fabd103e69c8a7ef49b260f7329a7a21f6edfb139eeb1da88cfd62d1c158",
+			"size": 52476,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kedebideri/Kedebideri-Regular.ttf",
+			"sha256": "f95907a8c39c68d557c2264fcf593a858eb4751cd5e0c3c7c53e1ef354444064",
+			"size": 52524,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kedebideri/Kedebideri-SemiBold.ttf",
+			"sha256": "ace157f39b0ff229b4bef5f5e7fc1486c470315aae0bcb9a59eefaa9166463c7",
+			"size": 52392,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

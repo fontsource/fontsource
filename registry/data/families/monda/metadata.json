@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Monda",
+	"id": "monda",
+	"license": {
+		"attribution": "Copyright 2021 The Monda Project Authors (https://github.com/googlefonts/mondaFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/monda",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/mondaFont",
+		"revision": "13ca3d8bce80e715a736026c043f33e5c0bb5b83"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/monda/Monda[wght].ttf",
+			"sha256": "c95b63f7612df912adc262cb0ef3e8a6c3e6022beb279d9c2ca01c557aa94b59",
+			"size": 167284,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

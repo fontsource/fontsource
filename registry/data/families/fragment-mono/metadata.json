@@ -1,0 +1,49 @@
+{
+	"category": "monospace",
+	"dateAdded": "2022-10-24",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wei Huang, URW Design Studio",
+	"family": "Fragment Mono",
+	"id": "fragment-mono",
+	"license": {
+		"attribution": "Copyright 2022 The Fragment-Mono Project Authors (https://github.com/weiweihuanghuang/fragment-mono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fragmentmono",
+		"revision": "8f6cd0c1cdf938a8a31e246d8a9ba09b5f6cc830",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/weiweihuanghuang/fragment-mono",
+		"revision": "3ff027831f9a8b5820b35e251e5914d5a3f5fac4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fragmentmono/FragmentMono-Italic.ttf",
+			"sha256": "c9dd3c7b24c11ba05ab1a6ec3a659c823f0e14fb26c14df0e93e82ebb60f3a25",
+			"size": 128052,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/fragmentmono/FragmentMono-Regular.ttf",
+			"sha256": "0fe011f425873c2e0fc73a189e394e340ad48d2b9a99a576bdeec75cee000460",
+			"size": 125368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

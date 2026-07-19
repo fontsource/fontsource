@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-12-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"znamenny"
+	],
+	"designer": "Google",
+	"family": "Noto Znamenny Musical Notation",
+	"id": "noto-znamenny-musical-notation",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/znamenny)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoznamennymusicalnotation",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/znamenny",
+		"revision": "342a8039c2317865d203a448d118c384f2b51313"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoznamennymusicalnotation/NotoZnamennyMusicalNotation-Regular.ttf",
+			"sha256": "38b7bd32372d35f7601e8cc485c5b04d0a023c75ecebe9543a7916e3c0626c32",
+			"size": 104040,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

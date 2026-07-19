@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-01-08",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Ramaraja",
+	"id": "ramaraja",
+	"license": {
+		"attribution": "Copyright (c) 2012 Silicon Andhra (fonts.siliconandhra.org). Copyright (c) 2010, Sebastian Kosch (sebastian@aldusleaf.org), with Reserved Font Name 'Crimson'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ramaraja",
+		"revision": "48d3779f250a0342281f8532e5877d33137ae683",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/ramaraja",
+		"revision": "fc98f3e28ac1857afaeb80e1befa842f083f40f1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ramaraja/Ramaraja-Regular.ttf",
+			"sha256": "9540e2a6d611b0f7e0852d64212091cad7a8f0af2128cbf391ee668c5699148f",
+			"size": 704256,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

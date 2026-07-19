@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Sideshow",
+	"family": "Frijole",
+	"id": "frijole",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Font Diner, Inc DBA Sideshow (diner@fontdiner.com) with Reserved Font Name \"Frijole\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/frijole",
+		"revision": "6d842ca0a31e5f0a9f189ae46841564b63339d73",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/frijole",
+		"revision": "0e6ba6cfcc631a3db6c6d6e64e523377176e8eec"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/frijole/Frijole-Regular.ttf",
+			"sha256": "e182bbad0e1ba7eb06d93edb1c97a71f5b7d56e27433fb375f5f7138399ab72c",
+			"size": 227860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,5 @@
+Oi is an ultra-fat display typeface that has its roots in grotesque slab serifs, most specifically the style that sprung with the release of Caslon’s Ionic in 1844 and Clarendon by Fann Street Foundry in 1845. The typeface is a free spirited twisted interpetation of the clarendonesques. With an unapologetic tendency for public shouting, it is a whimsical loudmouth attention seeker!
+
+"Oi" is an interjection used in various languages. Its meaning varies, depending on the tone and abruptness of its use, from a simple “hi” or a call of attention to as far as a challenge to a fight.
+
+Check out [the mini-website](https://kostasbartsokas.com/oi-you-mate/). To contribute, see [github.com/kosbarts/Oi](https://github.com/kosbarts/Oi).

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 559,
+				"sha256": "b2a9cf5fd6a280c19d05d4de4d31f14711b057025552c28907b37d3a5f427966"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirodevanagarisanskrit/TiroDevanagariSanskrit-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 559,
+				"sha256": "b2a9cf5fd6a280c19d05d4de4d31f14711b057025552c28907b37d3a5f427966"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirodevanagarisanskrit/TiroDevanagariSanskrit-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

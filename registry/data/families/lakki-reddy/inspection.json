@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 353,
+				"sha256": "6f848cb36eaefd65634b85f24a0db1bd00553965ec62537203b401908eb7bcf3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/lakkireddy/LakkiReddy-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

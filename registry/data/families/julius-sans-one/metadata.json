@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Luciano Vergara",
+	"family": "Julius Sans One",
+	"id": "julius-sans-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, LatinoType (luciano@latinotype.com), with Reserved Font Names 'Julius'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/juliussansone",
+		"revision": "a8d88dca820b6bade5b39faf75b17241bcbb5904",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/juliussansone",
+		"revision": "8aadb0e8d6ef7f45aa2844ccd99f7e28f0cd1498"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/juliussansone/JuliusSansOne-Regular.ttf",
+			"sha256": "b540bcad9283f58955a8db82d8103b1fd356378f55ec764cdb20d9f5ae749f23",
+			"size": 42288,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

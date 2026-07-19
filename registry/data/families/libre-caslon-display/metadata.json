@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Libre Caslon Display",
+	"id": "libre-caslon-display",
+	"license": {
+		"attribution": "Copyright 2012 The Libre Caslon Display Authors (https://github.com/impallari/Libre-Caslon-Display)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/librecaslondisplay",
+		"revision": "0545fa8ab8321ac32cff617e7462ee3237d5e653",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/Libre-Caslon-Display",
+		"revision": "3491f6a9cfde2bc15e736463b0bc7d93054d5da1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/librecaslondisplay/LibreCaslonDisplay-Regular.ttf",
+			"sha256": "2340c497181e9446fcbb235e1c3780558dc62879ffe0ef47906d3f7f35cf5f35",
+			"size": 101384,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

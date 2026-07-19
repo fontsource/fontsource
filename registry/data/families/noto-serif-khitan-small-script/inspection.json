@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 813,
+				"sha256": "f890e94b5f0d71138cf682eb18391051857999f232d3df00fd27ae78bc1ce42f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoserifkhitansmallscript/NotoSerifKhitanSmallScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

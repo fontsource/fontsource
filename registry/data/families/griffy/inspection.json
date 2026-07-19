@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 257,
+				"sha256": "6385ba1584010c18ec76ed0c7838bec635505ba5d820009aefc7d92cacaa5a0e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/griffy/Griffy-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

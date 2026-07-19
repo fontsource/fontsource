@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 343,
+				"sha256": "b127ed11ceac0a114d9c5b5ba5e44487766a89bd0da78a8807b5afbfaed97f3b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.300; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/alikeangular/AlikeAngular-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

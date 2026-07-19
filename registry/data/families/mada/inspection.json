@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 847,
+				"sha256": "e7509dab35f55b0d37fc3d207cab6ac4778d9cd56d06b4529e565ee9da047959"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.5",
+			"outline": "glyf",
+			"path": "ofl/mada/Mada[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

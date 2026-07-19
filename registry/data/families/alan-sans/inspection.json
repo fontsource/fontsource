@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 494,
+				"sha256": "552a2b420d40ee73e118dec66d7fefb5c7cc17819feea5f4d9a0bbaec50257df"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/alansans/AlanSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

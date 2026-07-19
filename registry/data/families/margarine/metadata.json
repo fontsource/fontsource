@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Margarine",
+	"id": "margarine",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Margarine\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/margarine",
+		"revision": "021e4f3701060346dc43a8cdea7cd677bdb26876",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/margarine/Margarine-Regular.ttf",
+			"sha256": "54043d3d857af45cfe40d243dfcf138bd45f7fb452364a70925989384198d7f3",
+			"size": 148820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

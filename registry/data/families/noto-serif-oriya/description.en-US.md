@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Oriya is a modulated (“serif”) design for texts in the Indic _Odia (Oriya)_ script. It has multiple weights and 690 glyphs.

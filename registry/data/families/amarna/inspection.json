@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 361,
+				"sha256": "39f9c6fed79c023d80d0ff2f1bc04d9a7f43deee59f172d3cf13eae813f5edfd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/amarna/Amarna-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 361,
+				"sha256": "39f9c6fed79c023d80d0ff2f1bc04d9a7f43deee59f172d3cf13eae813f5edfd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/amarna/Amarna[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

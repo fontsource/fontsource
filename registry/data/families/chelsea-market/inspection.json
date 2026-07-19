@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "c02b4fe8385cf7b9ccf12f2d50f8250bc6961a3d960db9f77650cb953711b6b2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/chelseamarket/ChelseaMarket-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

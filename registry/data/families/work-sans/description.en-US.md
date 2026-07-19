@@ -1,0 +1,7 @@
+Work Sans is a typeface family based loosely on early Grotesques, such as those by [Stephenson Blake](https://www.flickr.com/photos/stewf/14444337254/), [Miller & Richard](https://archive.org/stream/printingtypespec00millrich#page/226/mode/2up/) and [Bauerschen Giesserei](https://archive.org/stream/hauptprobeingedr00baue#page/109/mode/1up). The Regular weight and others in the middle of the family are optimised for on-screen text usage at medium-sizes (14px-48px) and can also be used in print design. The fonts closer to the extreme weights are designed more for display use both on the web and in print. Overall, features are simplified and optimised for screen resolutions; for example, diacritic marks are larger than how they would be in print. A version optimised for desktop applications is available from the Work Sans github project page.
+
+The Work Sans project is led by Wei Huang, a type designer from Australia. To contribute, see [github.com/weiweihuanghuang/Work-Sans](https://github.com/weiweihuanghuang/Work-Sans)
+
+**Updated August 2015:** All styles were updated to v1.40 to change the Thin (100) style to be the same as 'HairLine' in previous versions - even thinner! This avoids the complication of a second "Hairline" family. The ExtraLight (200) and Light (300) styles also changed accordingly. Reflow will occur from previous versions on these weights.
+
+**Updated February 2020:** Family has been upgraded to a variable font family.

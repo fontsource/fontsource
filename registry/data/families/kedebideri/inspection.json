@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 347,
+				"sha256": "759e3ef10ef2f684b6c561d6b0be1b2136fb8d8aaabea6834e0b817abd82d2d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/kedebideri/Kedebideri-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 347,
+				"sha256": "759e3ef10ef2f684b6c561d6b0be1b2136fb8d8aaabea6834e0b817abd82d2d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/kedebideri/Kedebideri-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 347,
+				"sha256": "759e3ef10ef2f684b6c561d6b0be1b2136fb8d8aaabea6834e0b817abd82d2d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/kedebideri/Kedebideri-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 347,
+				"sha256": "759e3ef10ef2f684b6c561d6b0be1b2136fb8d8aaabea6834e0b817abd82d2d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/kedebideri/Kedebideri-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 347,
+				"sha256": "759e3ef10ef2f684b6c561d6b0be1b2136fb8d8aaabea6834e0b817abd82d2d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/kedebideri/Kedebideri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 347,
+				"sha256": "759e3ef10ef2f684b6c561d6b0be1b2136fb8d8aaabea6834e0b817abd82d2d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/kedebideri/Kedebideri-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

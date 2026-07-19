@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 463,
+				"sha256": "fe5ea627cc124d4f0d14ba942e11cf07ad683169bb478b1ee35a22c3ea002a4c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/rhodiumlibre/RhodiumLibre-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

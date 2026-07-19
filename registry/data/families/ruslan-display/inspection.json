@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "b5b30ccb0a1258007dc92ab90cbbed2e94b82ebcafb3a9a2402cfb4400c8b3ce"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/ruslandisplay/RuslanDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

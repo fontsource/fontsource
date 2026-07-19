@@ -1,0 +1,197 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-12-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Carrois Apostrophe",
+	"family": "Fira Sans Extra Condensed",
+	"id": "fira-sans-extra-condensed",
+	"license": {
+		"attribution": "Digitized data copyright 2012-2016, The Mozilla Foundation and Telefonica S.A.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/firasansextracondensed",
+		"revision": "07aa52dee08c2f1d68098577151966064f3cb797",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/FiraGFVersion",
+		"revision": "7b7927fac6d4651685e201081b31193852a7a94f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Black.ttf",
+			"sha256": "9792878489db97d068aaf115cab50bdadd1e843274ff51b3786ca8102ba16a87",
+			"size": 516808,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-BlackItalic.ttf",
+			"sha256": "9ca866c1aff106aeb850e22dc1541ea35c0cf6862b25869a452a833fe6821fb1",
+			"size": 539564,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Bold.ttf",
+			"sha256": "3e385cfbd93c8a924ac4b33b0f33a39dd49c3919dffa2f661091a3f21cc4150e",
+			"size": 496872,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-BoldItalic.ttf",
+			"sha256": "037c729bd61f851f2ea7addfb2d7c3d40cef2ad18b133ef74f56916d4574c5f5",
+			"size": 514672,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraBold.ttf",
+			"sha256": "056cad28b3697bf0a093eb49e55d02e873b1de1eb4ed64467c8c80b10c6750e9",
+			"size": 498256,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraBoldItalic.ttf",
+			"sha256": "10ad497da09e30352585fafaffa5f032a055d28767d28dc326cd531d80b2f920",
+			"size": 516096,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraLight.ttf",
+			"sha256": "de6c39406d47dfe9a0439acb4e30ed4abef3a7e038222e6940d43000292e8cc7",
+			"size": 444636,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraLightItalic.ttf",
+			"sha256": "b622420322624f283b8ecfb7ff9686cfa5f8ca191bceb421009ecea8aa84a62f",
+			"size": 460712,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Italic.ttf",
+			"sha256": "088f1c48c502447c9d5c17f70f8096fe9e48074011c3500f9be2c75f2b0a9b47",
+			"size": 471784,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Light.ttf",
+			"sha256": "1ceb377344ff1f91a10ab1a3ecc97606adec33391f34d515850cca5abea55290",
+			"size": 448908,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-LightItalic.ttf",
+			"sha256": "142f55c1a46efa9925f81e93349b992f20b0f1973ba33c83c0663573afad88e5",
+			"size": 461620,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Medium.ttf",
+			"sha256": "d1b3612452391dd580966d724c5dd602a23955e33b466c22020dcbd47837ee22",
+			"size": 456568,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-MediumItalic.ttf",
+			"sha256": "c7ca21914a6ec284e464ea3f8bbc717464ed954d6f474956f4d3e44ee2328c89",
+			"size": 471216,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Regular.ttf",
+			"sha256": "51f01985ca8dc740b951afd3d21478cc51cb1d8546136643c3b031a74add5479",
+			"size": 455820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-SemiBold.ttf",
+			"sha256": "54fc425c016631fbaa1ae2aa1f59f53e46e9c3805fa1df5a217613d8b6228ec7",
+			"size": 484956,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-SemiBoldItalic.ttf",
+			"sha256": "bfd59e8ee7913a2c01e5e971d1bcc52322aace188b63b6e5b9f6e92b231b9bd8",
+			"size": 501956,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Thin.ttf",
+			"sha256": "f978b751ded3e71c9d0a90b992adce21d19302744def16b9cc4b0bb4af76d1e5",
+			"size": 440976,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ThinItalic.ttf",
+			"sha256": "bcb35a0e984a24dea2db51495b725af99253dbc9087811aec4b850532e9176d5",
+			"size": 456444,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

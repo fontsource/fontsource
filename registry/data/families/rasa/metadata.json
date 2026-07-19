@@ -1,0 +1,50 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Rosetta, Anna Giedryś, David Březina",
+	"family": "Rasa",
+	"id": "rasa",
+	"license": {
+		"attribution": "Copyright 2015 The Yrsa-Rasa Project Authors (https://github.com/rosettatype/yrsa-rasa/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rasa",
+		"revision": "a475fc8d6ca08bfb14336a7c8ea81b41f81e6a04",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/rosettatype/yrsa-rasa",
+		"revision": "36874c97c64a0d1853297afdfc0cfaf14a3c0f19"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rasa/Rasa-Italic[wght].ttf",
+			"sha256": "ecea773edd1e87c3310a0fb811ec6102aea71da235f93bc2ce2506e81b3c21a7",
+			"size": 289828,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/rasa/Rasa[wght].ttf",
+			"sha256": "10d2f75aaf7b3f232c948c34584c49caf0cdd17a4c93eb7a5aeb3438efd42e19",
+			"size": 474404,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

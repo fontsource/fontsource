@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 287,
+				"sha256": "a0572ce1f145874bdc644641c70388852c9c201a339b7c22006ea30e7d59f909"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2007",
+			"outline": "glyf",
+			"path": "ofl/sueellenfrancisco/SueEllenFrancisco-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

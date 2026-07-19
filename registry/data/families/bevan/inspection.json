@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 579,
+				"sha256": "35dc13eac5b14cdc06804cada04018f6d48c5acc32b38c3965a706caac11eb29"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevan/Bevan-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 579,
+				"sha256": "35dc13eac5b14cdc06804cada04018f6d48c5acc32b38c3965a706caac11eb29"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevan/Bevan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

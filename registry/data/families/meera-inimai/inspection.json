@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 292,
+				"sha256": "6e1c96a0041836e87a95f91257a292588fbb922cf80d1d214db9a96ee2315916"
+			},
+			"colorTables": [],
+			"fontVersion": "2.0.0+20160526",
+			"outline": "glyf",
+			"path": "ofl/meerainimai/MeeraInimai-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 446,
+				"sha256": "92a61cc640996385a2bb3e144d779f4bc414a779eb94bee263780d2c7ecddb87"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/miriamlibre/MiriamLibre[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

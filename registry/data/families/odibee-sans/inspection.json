@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 253,
+				"sha256": "bf348b6c106cc287cec5a8c194de0312b35b2c69218ae5e04e78d29121c18d2f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/odibeesans/OdibeeSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

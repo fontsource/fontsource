@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2010-12-07",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Covered By Your Grace",
+	"id": "covered-by-your-grace",
+	"license": {
+		"attribution": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/coveredbyyourgrace",
+		"revision": "3923ba677636550d5922d8efa12a63b902462412",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/coveredbyyourgrace",
+		"revision": "705a49490c07c9e76f1ba8dc2d4f56d1b7bbf42c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/coveredbyyourgrace/CoveredByYourGrace.ttf",
+			"sha256": "8a7e5687a4f9aad95243eb28cdc624009a335e0de5175113bc5f1348a4d67fd7",
+			"size": 57040,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

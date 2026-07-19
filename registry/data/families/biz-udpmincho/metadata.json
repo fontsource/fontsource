@@ -1,0 +1,51 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-03-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek-ext",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Type Bank Co., Morisawa Inc.",
+	"family": "BIZ UDPMincho",
+	"id": "biz-udpmincho",
+	"license": {
+		"attribution": "Copyright 2022 The BIZ UDMincho Project Authors (https://github.com/googlefonts/morisawa-biz-ud-mincho)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bizudpmincho",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/morisawa-biz-ud-mincho",
+		"revision": "c30a6221b1f3d09afae9137ffe73c7cbec649947"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bizudpmincho/BIZUDPMincho-Bold.ttf",
+			"sha256": "99618e39b881597efc03d58706bd194757c968c1bf7a7017a893efead6b1b260",
+			"size": 7109432,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bizudpmincho/BIZUDPMincho-Regular.ttf",
+			"sha256": "dbcea04578ac1e9d3484525e870ce491bd04361768f4d2ba4b827d96e20f891d",
+			"size": 6156444,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 547,
+				"sha256": "a2e14bee9633febbf57972f6695ad4bb06171b933c72ffe80240f5579198e340"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/calsans/CalSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

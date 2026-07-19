@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1011,
+				"sha256": "a48cb4244757f79bb5b43d2b2ce03f4b5c464307ff6c406f8faeb023c475fbdd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/tillana/Tillana-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1011,
+				"sha256": "a48cb4244757f79bb5b43d2b2ce03f4b5c464307ff6c406f8faeb023c475fbdd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/tillana/Tillana-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1011,
+				"sha256": "a48cb4244757f79bb5b43d2b2ce03f4b5c464307ff6c406f8faeb023c475fbdd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/tillana/Tillana-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1011,
+				"sha256": "a48cb4244757f79bb5b43d2b2ce03f4b5c464307ff6c406f8faeb023c475fbdd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/tillana/Tillana-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1011,
+				"sha256": "a48cb4244757f79bb5b43d2b2ce03f4b5c464307ff6c406f8faeb023c475fbdd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/tillana/Tillana-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

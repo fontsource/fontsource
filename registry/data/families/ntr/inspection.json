@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 216,
+				"sha256": "7588f2004c7f7e88f920998b28504a1c0123e8e9663dec60538635e7ee0f92e9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.5; ttfautohint (v1.2.25-373a) -l 7 -r 28 -G 50 -x 13 -D telu -f latn -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/ntr/NTR-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

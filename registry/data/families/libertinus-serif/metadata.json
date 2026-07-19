@@ -1,0 +1,90 @@
+{
+	"category": "serif",
+	"dateAdded": "2025-04-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Philipp H. Poll",
+	"family": "Libertinus Serif",
+	"id": "libertinus-serif",
+	"license": {
+		"attribution": "???.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/libertinusserif",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/libertinus",
+		"revision": "63b24ea7904a0ae69b38732b50dc6ebc277f9b68"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/libertinusserif/LibertinusSerif-Bold.ttf",
+			"sha256": "dc5c00822f0d248256dbbe9fea8e68153e90c0dd7f95c906ed667b2ce053b415",
+			"size": 510796,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/libertinusserif/LibertinusSerif-BoldItalic.ttf",
+			"sha256": "8d7406b1e84e4ee1a658289139d16de75ee4380a2309dce2e4d68704b1d8cfe8",
+			"size": 506340,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/libertinusserif/LibertinusSerif-Italic.ttf",
+			"sha256": "c8d62202ff921968c491bbbd05f9794213e98e1317c8cbf5edc1d8043f4a21d6",
+			"size": 605956,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/libertinusserif/LibertinusSerif-Regular.ttf",
+			"sha256": "81ea17858245163742c9f5ddf19e9c54667ee5e026708556fb1bf5dce7f92fae",
+			"size": 603444,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/libertinusserif/LibertinusSerif-SemiBold.ttf",
+			"sha256": "1f6d00f88c709b0babeaaf78fdc4da6c8d5ddb619d7799c5f6a1d7ae05576966",
+			"size": 497840,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/libertinusserif/LibertinusSerif-SemiBoldItalic.ttf",
+			"sha256": "24f97903c512561e8a2499ca755afa45db89721c15c7ff62f728f0a1530e334d",
+			"size": 616600,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-05-11",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Nothing You Could Do",
+	"id": "nothing-you-could-do",
+	"license": {
+		"attribution": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com). This Font Software is licensed under the SIL Open Font License, Version 1.1. This license available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nothingyoucoulddo",
+		"revision": "cb3271a955200f72557673e25eced6f5521f2cca",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nothingyoucoulddo/NothingYouCouldDo.ttf",
+			"sha256": "1daf8cf79076bf59c5a9117b5efd6ecea35e57a05ef127fe4f95b072b8a5245d",
+			"size": 34920,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

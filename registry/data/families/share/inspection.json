@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 253,
+				"sha256": "b49972a2cb50e67bc401f3ecb20ac3b658f3aacbe3f7a6fa9693d713b78c0c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/share/Share-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 253,
+				"sha256": "b49972a2cb50e67bc401f3ecb20ac3b658f3aacbe3f7a6fa9693d713b78c0c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/share/Share-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 253,
+				"sha256": "b49972a2cb50e67bc401f3ecb20ac3b658f3aacbe3f7a6fa9693d713b78c0c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/share/Share-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 253,
+				"sha256": "b49972a2cb50e67bc401f3ecb20ac3b658f3aacbe3f7a6fa9693d713b78c0c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/share/Share-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

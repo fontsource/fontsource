@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans KR is an unmodulated (“sans serif”) design for the _Korean_ language using _Hangul_ and the _Korean Hanja_ scripts. It also supports _Hiragana, Katakana, Latin, Cyrillic_ and _Greek_. It has multiple weights.

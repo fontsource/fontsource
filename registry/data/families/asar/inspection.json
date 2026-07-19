@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 572,
+				"sha256": "831e0c6706e6c410ed51f28a587d1ab9133ecffafeff7b30903e0d45ce9e3078"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.3) -l 8 -r 50 -G 0 -x 0 -H 45 -D deva -f latn -m \"\" -w gG -t -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/asar/Asar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

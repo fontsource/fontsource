@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-07-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Gesine Todt",
+	"family": "Snippet",
+	"id": "snippet",
+	"license": {
+		"attribution": "Copyright (c) 2011 Gesine Todt (www.gesine-todt.de hallo@gesine-todt.de), with Reserved Font Name \"Snippet\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/snippet",
+		"revision": "54584294ef89979740aa9687fdc3c04d11c4b539",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/snippet/Snippet.ttf",
+			"sha256": "66acef67275368057085d747e688e5dcd48807d98fb6a3ca9a9424734bda1353",
+			"size": 39284,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

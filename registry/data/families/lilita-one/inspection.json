@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 225,
+				"sha256": "9d94440f65365306f37ef6b13e113cee97b6fdc8cfd01ff472275748bf0bb451"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/lilitaone/LilitaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

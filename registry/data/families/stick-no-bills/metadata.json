@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sinhala"
+	],
+	"designer": "Mooniak",
+	"family": "Stick No Bills",
+	"id": "stick-no-bills",
+	"license": {
+		"attribution": "Copyright 2021 The Stick No Bills Project Authors (https://github.com/mooniak/stick-no-bills-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sticknobills",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mooniak/stick-no-bills-font",
+		"revision": "b7d7f0ce678b7785a3271586d9e59f26dc0f6e7e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sticknobills/StickNoBills[wght].ttf",
+			"sha256": "4754d337fbf0cffac744b58316c3d091b7abc668d7b9fb5df082e1905b27c027",
+			"size": 279212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

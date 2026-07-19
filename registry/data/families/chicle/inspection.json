@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 234,
+				"sha256": "d1624cf471ae65138f853adb844cf008bce0e127d40b39ca4f68700f76ae6bcb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/chicle/Chicle-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

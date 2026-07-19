@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Myanmar is a modulated (“serif”) design for texts in the Southeast Asian _Myanmar_ script. It has 725 glyphs.

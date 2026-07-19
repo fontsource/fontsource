@@ -1,0 +1,76 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-07-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"limbu",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Namdhinggo",
+	"id": "namdhinggo",
+	"license": {
+		"attribution": "Copyright (c) 2002-2022, SIL International (http://www.sil.org/),\nwith Reserved Font Names \"Namdhinggo\" and \"SIL\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/namdhinggo",
+		"revision": "3bdc6ce2fbe93ea23e2ee668a436207e5c730279",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-namdhinggo",
+		"revision": "2c6ac797b061941d1f46c980910982b1b1f240ab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/namdhinggo/Namdhinggo-Bold.ttf",
+			"sha256": "69523d079c45e6dbc82f9000c505b7a90b0b804cf705cb8864a5031c46b93c61",
+			"size": 86260,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/namdhinggo/Namdhinggo-ExtraBold.ttf",
+			"sha256": "7a0780a1d6b3df02d13c03427dff4fd518d514b829258cf4146d36e78d9c2178",
+			"size": 86576,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/namdhinggo/Namdhinggo-Medium.ttf",
+			"sha256": "c37b90c812c6679eca031d49eab12b499ffd5d66f9845edc0b4ce877a72c69e3",
+			"size": 85496,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/namdhinggo/Namdhinggo-Regular.ttf",
+			"sha256": "fdf20478b42495053869abe4d8a16d273e418e3a343f5261a1e48770912b7e5a",
+			"size": 85124,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/namdhinggo/Namdhinggo-SemiBold.ttf",
+			"sha256": "62604448b98a7e364ca1eb321c64b34b28884581cb6d2edf1b6455a58cc8f764",
+			"size": 85536,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

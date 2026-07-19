@@ -1,0 +1,57 @@
+{
+	"category": "display",
+	"dateAdded": "2013-09-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Christian Naths",
+	"family": "Redacted Script",
+	"id": "redacted-script",
+	"license": {
+		"attribution": "Copyright 2013 The Redacted Project Authors (https://github.com/christiannaths/redacted-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/redactedscript",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/christiannaths/redacted-font",
+		"revision": "dae1afaa7d96c89825c5e0193f07b4b16ccef4d7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/redactedscript/RedactedScript-Bold.ttf",
+			"sha256": "48ad6a76be6f094893541898d1c9a04e3debe48645c314cf07add92c019e7983",
+			"size": 85240,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/redactedscript/RedactedScript-Light.ttf",
+			"sha256": "5ff11d7b9510a90cbee1525564457b6991a65e0a413ecc4fdbdde697452fe665",
+			"size": 83316,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/redactedscript/RedactedScript-Regular.ttf",
+			"sha256": "1ebaab9642a2f43fa33f449760469903143fd1d08b2433eb6c15e28602d9360d",
+			"size": 86144,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

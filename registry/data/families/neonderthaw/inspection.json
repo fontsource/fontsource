@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 583,
+				"sha256": "794a315f170441383ca3bd5056045ea0f197f422cada39eabb48b8c1632d85b2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/neonderthaw/Neonderthaw-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

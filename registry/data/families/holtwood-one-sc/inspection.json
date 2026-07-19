@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "d8e0af04ce401290658667b88a539111fa317dc1e36486780842662549384cb9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/holtwoodonesc/HoltwoodOneSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-11-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Anna Giedryś",
+	"family": "Signika Negative SC",
+	"id": "signika-negative-sc",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Anna Giedrys (info@ancymonic.com), with Reserved Font Names \"Signika\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/signikanegativesc",
+		"revision": "951dadb01806029b88e599f778c188532d1f1a46",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Signika",
+		"revision": "7361a224d1d77274af1ea11dd06448c54c16f598"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/signikanegativesc/SignikaNegativeSC-Bold.ttf",
+			"sha256": "40751aa92248cbb479ea85d7d706522256662c887d399bd0a87b020fa5887918",
+			"size": 289272,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/signikanegativesc/SignikaNegativeSC-Light.ttf",
+			"sha256": "971023e3bfefb00176ba9de8374fb9e70301353fe5ba740f4041e3544d97d689",
+			"size": 267684,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/signikanegativesc/SignikaNegativeSC-Regular.ttf",
+			"sha256": "f6d21ecfe08f2ba59f819907191c8880ee1aea360cc9547ea9ccef8e907b437b",
+			"size": 285880,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/signikanegativesc/SignikaNegativeSC-SemiBold.ttf",
+			"sha256": "74a12828cd1c004940c57d66b51c285fe503dddb8e1a2e0e388508c7a0401e76",
+			"size": 291736,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

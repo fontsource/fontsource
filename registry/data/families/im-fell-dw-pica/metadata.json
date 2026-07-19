@@ -1,0 +1,47 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Igino Marini",
+	"family": "IM Fell DW Pica",
+	"id": "im-fell-dw-pica",
+	"license": {
+		"attribution": "© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL DW Pica Italic\n© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL DW Pica Roman",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imfelldwpica",
+		"revision": "f023d9d161d4456ab39bb2eff4acd970e02dbe36",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/imfelldwpica",
+		"revision": "0d86e14c53d15bed552ac4b2619a091ca36d4443"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imfelldwpica/IMFePIit28P.ttf",
+			"sha256": "e09a00654b5dd266aee743c0c43d129c8404a2d5e0ebf27e5a0e472bd1900b8d",
+			"size": 244584,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/imfelldwpica/IMFePIrm28P.ttf",
+			"sha256": "f65e54016dfab4222ba552cfb82260b14a7df6527cce66430f5f66022addb052",
+			"size": 216968,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

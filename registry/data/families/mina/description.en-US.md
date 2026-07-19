@@ -1,0 +1,3 @@
+Mina is a contemporary geometric Bangla (Bengali) and Latin family. The family comes in two weights, Regular and Bold. It started by extending the Latin font Exo, initially designed by Natanael Gama. It works well as a display typeface, but is also designed to perform at small to intermediate text sizes.
+
+To learn more, visit [github.com/suman51284/Mina](https://github.com/suman51284/Mina)

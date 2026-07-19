@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2020-08-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Sansita Swashed",
+	"id": "sansita-swashed",
+	"license": {
+		"attribution": "Copyright 2020 The Sansita Swashed Project Authors (https://github.com/Omnibus-Type/Sansita-Swashed)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sansitaswashed",
+		"revision": "334b845b197ab85ac3da50f11d1b12156fa30244",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Sansita-Swashed",
+		"revision": "4b18bac65511ce185c1dc687472a8c77bdc6cc4d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sansitaswashed/SansitaSwashed[wght].ttf",
+			"sha256": "a6ff6619f22d01eb9582fb00a38052d7afba404ff5868be9bddf37e2888a1c6a",
+			"size": 234096,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

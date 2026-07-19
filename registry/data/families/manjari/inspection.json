@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "3d32e1f676215c7928668abaff0a58bc94be8595299e03507148cbf30359c37d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/manjari/Manjari-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "3d32e1f676215c7928668abaff0a58bc94be8595299e03507148cbf30359c37d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/manjari/Manjari-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "3d32e1f676215c7928668abaff0a58bc94be8595299e03507148cbf30359c37d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/manjari/Manjari-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

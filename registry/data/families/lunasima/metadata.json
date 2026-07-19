@@ -1,0 +1,54 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-06-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "The DocRepair Project, Google",
+	"family": "Lunasima",
+	"id": "lunasima",
+	"license": {
+		"attribution": "Copyright 2023 The Lunasima Project Authors (https://github.com/docrepair-fonts/lunasima-fonts).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lunasima",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/docrepair-fonts/lunasima-fonts",
+		"revision": "88f44d7a6c3693aa455dc7194c6e5a01cb2a39ae"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lunasima/Lunasima-Bold.ttf",
+			"sha256": "6e5b8c0227c163d22de73ae127cf99f65b33bfd767aa294989f514dd294fe0bf",
+			"size": 196420,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lunasima/Lunasima-Regular.ttf",
+			"sha256": "833ded9502e6553eece11f587f27640cab1ef44900785abe8c3b09ba11690b62",
+			"size": 195140,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "ELSH"
+				}
+			],
+			"cmap": {
+				"codepointCount": 421,
+				"sha256": "cae824cdaf7bb691297bc67a78bddc49daa79c2132a0bb535df0b01c9730477f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/geistpixel/GeistPixel[ELSH].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

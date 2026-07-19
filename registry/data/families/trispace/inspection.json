@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 681,
+				"sha256": "756dcb04df41cf8835c419794e9e8a10caf61ad33cc80a53e1ff4583a1de9938"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.210",
+			"outline": "glyf",
+			"path": "ofl/trispace/Trispace[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Uncial Antiqua",
+	"id": "uncial-antiqua",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Uncial Antiqua\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/uncialantiqua",
+		"revision": "f006ade507ba4f5ced8b279d8658cfd885302ceb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/uncialantiqua/UncialAntiqua-Regular.ttf",
+			"sha256": "33a5128b59d1c95d4f3788164f4ab3a1196f0a982263cb2cd278c47418366766",
+			"size": 63404,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

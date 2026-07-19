@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-11-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"myanmar"
+	],
+	"designer": "SIL International",
+	"family": "Padauk",
+	"id": "padauk",
+	"license": {
+		"attribution": "Copyright (c) 2002-2022 SIL International",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/padauk",
+		"revision": "76c344bcbcbace6177c831d19897895087827449",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-padauk",
+		"revision": "278b8efb03c0ca0d7f29fb3edc1f52489ebb384f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/padauk/Padauk-Bold.ttf",
+			"sha256": "9dbb46745ae4ed42d9030210e63f7aa53281861c7fa0be072980161f94927115",
+			"size": 499304,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/padauk/Padauk-Regular.ttf",
+			"sha256": "c89cf56e572abda9652d9e54203bd729b0c59541c4b569046b9b61acd0b532f3",
+			"size": 498860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

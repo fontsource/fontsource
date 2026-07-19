@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 471,
+				"sha256": "6194f7d6f97e59046db51fd4bdbd493b58bfb7a3979a154546d2715339aed0d2"
+			},
+			"colorTables": [],
+			"fontVersion": "4.004",
+			"outline": "glyf",
+			"path": "ofl/poppins/Poppins-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

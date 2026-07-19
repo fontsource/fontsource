@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 568,
+				"sha256": "864729a96ab259a6e3f02e5fa1875b9831c350ebe9c1c096b32cb936f8030cb3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/francoisone/FrancoisOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

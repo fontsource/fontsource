@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 212,
+				"sha256": "36abff04494f4aebf5525ec309fd610c63ce0c2eb3d697e443d75db73710f8f9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/junge/Junge-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

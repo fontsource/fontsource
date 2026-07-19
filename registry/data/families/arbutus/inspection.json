@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 411,
+				"sha256": "bc5ffebfc25fe1d001b6749ff429d810fc6830f3154042e4c26c97867b31c20e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/arbutus/Arbutus-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

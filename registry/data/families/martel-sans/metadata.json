@@ -1,0 +1,94 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-03-04",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dan Reynolds, Mathieu Réguer",
+	"family": "Martel Sans",
+	"id": "martel-sans",
+	"license": {
+		"attribution": "Copyright (c) 2014 Dan Reynolds. Copyright (c) 2014 Mathieu Rguer.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/martelsans",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typeoff/martel_sans",
+		"revision": "7a536b7ce5f6059665d45bfff7c24bee414c1fd1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/martelsans/MartelSans-Black.ttf",
+			"sha256": "887a02992fb3560da586411d99be7ea1988d8ac6810ca881141f8fda7ac5e4aa",
+			"size": 152156,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/martelsans/MartelSans-Bold.ttf",
+			"sha256": "a6b8bb30ba51cf0e8afbaa47ea157bf952a1ee79ad89e772a7dff6404a2b64b4",
+			"size": 152352,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/martelsans/MartelSans-ExtraBold.ttf",
+			"sha256": "eeced1acab2ab2ebc2eeb9cf80f162583c1b36fab2e1f65bdb14c4a68bde6868",
+			"size": 152748,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/martelsans/MartelSans-ExtraLight.ttf",
+			"sha256": "dc353b8e790286b8a721a371e39f2e2eb37ace13756a4580adca7e6d8543e46c",
+			"size": 153652,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/martelsans/MartelSans-Light.ttf",
+			"sha256": "e1c54736ae22799fbc2bc10d2c753b319d87dd9346ebbe86fbe0b8c59009acaa",
+			"size": 153172,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/martelsans/MartelSans-Regular.ttf",
+			"sha256": "5c365880e5c79763c745ca132049518e69873cf3da6f7ee91711dc522b021100",
+			"size": 153396,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/martelsans/MartelSans-SemiBold.ttf",
+			"sha256": "920cb398017087b2369a036df676335a32a3af71c4560dbde0e2199a004c9fc1",
+			"size": 152724,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

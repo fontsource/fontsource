@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-06-01",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Artifika",
+	"id": "artifika",
+	"license": {
+		"attribution": "Copyright 2010 The Artifika Project Authors (https://github.com/cyrealtype/Artifika)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/artifika",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Artifika",
+		"revision": "c317fd292b4e15dc5f42f91c3ec9dff3f7654535"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/artifika/Artifika-Regular.ttf",
+			"sha256": "51d5e3b59c907938e11964306dcd13e4e4cd413acac7dccce4f81860d1ed9f86",
+			"size": 54136,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

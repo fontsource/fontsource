@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Baumans",
+	"id": "baumans",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org) with Reserved Font Name \"Baumans\".  This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/baumans",
+		"revision": "38144810e651a35905a946a7f9e64d7cde14ed62",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/baumans",
+		"revision": "00e0253a48feaa474db9cd5145ec21891f1d7214"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/baumans/Baumans-Regular.ttf",
+			"sha256": "fc224bf301c1c9204ab89fff5a8962472aea25af01a20223d8fe2aa69d06d6b9",
+			"size": 52076,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,42 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Gujarati",
+	"id": "noto-serif-gujarati",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/gujarati)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifgujarati",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/gujarati",
+		"revision": "825b7f9e39b0eea6f02a4646ffa4ce18d482250a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifgujarati/NotoSerifGujarati[wght].ttf",
+			"sha256": "b76ad2086be5faa06a2e0d89e2ff58691d3754d1bb20f9dff0d7b10516c18831",
+			"size": 378356,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

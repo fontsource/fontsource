@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 922,
+				"sha256": "dd94a15f0aae60e4a96a4898172b17a56376d2876927c71721c13480ba903a6b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.008; 2023",
+			"outline": "glyf",
+			"path": "ofl/robotocondensed/RobotoCondensed-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 922,
+				"sha256": "dd94a15f0aae60e4a96a4898172b17a56376d2876927c71721c13480ba903a6b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.008; 2023",
+			"outline": "glyf",
+			"path": "ofl/robotocondensed/RobotoCondensed[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

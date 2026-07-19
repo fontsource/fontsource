@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 521,
+				"sha256": "758f8c82b392dd9e88b4674098792597f33eaead7e265f0525a633c55a7dbe85"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/prata/Prata-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

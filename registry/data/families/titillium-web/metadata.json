@@ -1,0 +1,129 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Accademia di Belle Arti di Urbino",
+	"family": "Titillium Web",
+	"id": "titillium-web",
+	"license": {
+		"attribution": "Copyright (c) 2009-2011 by Accademia di Belle Arti di Urbino and students of MA course of Visual design. Some rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/titilliumweb",
+		"revision": "6f3aa1348230778648ef2f0bfc85e31627649654",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-Black.ttf",
+			"sha256": "6e064771c29aee4c79c9aebbd560db79faa71f4c1944ea27f12d82be8a04b1cb",
+			"size": 49328,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-Bold.ttf",
+			"sha256": "e2e8e1812041e2c5868f1d03ac24994312052c5381cca2e80748f08cb7e13093",
+			"size": 59884,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-BoldItalic.ttf",
+			"sha256": "744068ee0f1623c61567b0981d51c49edba012d74c5ba73076847c0143284a25",
+			"size": 69772,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-ExtraLight.ttf",
+			"sha256": "38d310af66c015016c39455b0fde799d83980b844fd1f5d4c45ef558e6d700a2",
+			"size": 63172,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-ExtraLightItalic.ttf",
+			"sha256": "3160c0243db4ba708a5a6ffade89847d506a5fe7accc06423dd1705a6a47aebb",
+			"size": 67860,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-Italic.ttf",
+			"sha256": "4f08e681c1b38f825125a1a5a9c8a38d0eb94eea51b04cdb2a17cbec47f90833",
+			"size": 72392,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-Light.ttf",
+			"sha256": "c9bbaf3fdb9cfcfa4a1b4e860f2c5ee32158e80b6b0f1160b40dda2c98037d10",
+			"size": 64004,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-LightItalic.ttf",
+			"sha256": "cc48c25d01e36a414864de23e223145e9b76234e2a12beeac8d204c83ccafc45",
+			"size": 71708,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-Regular.ttf",
+			"sha256": "7b6b4452c65cc8b8522e92e7d4d4c2e6d7675341ceafd041bb6bd30297517ea5",
+			"size": 63660,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-SemiBold.ttf",
+			"sha256": "7c92f15302d7ac1836015cb9cf4068796406667b304a061b75df8e11f1648c81",
+			"size": 63008,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/titilliumweb/TitilliumWeb-SemiBoldItalic.ttf",
+			"sha256": "dcc38dfead3e114992922cb06844d467ce5cfe62baba841ff4053c250dcb41e9",
+			"size": 71796,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "f5c231cd586050fcc2fbd55f325f9b77dca0e8c18d74dc0175b44e85b67e6f9c"
+			},
+			"colorTables": [],
+			"fontVersion": "1.001",
+			"outline": "glyf",
+			"path": "ofl/wendyone/WendyOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 659,
+				"sha256": "44de2d2381fb5c86ff2f437b82396282c6265ef05badf02ad37ecc3b01241b63"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/varta/Varta[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

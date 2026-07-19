@@ -1,0 +1,35 @@
+{
+	"category": "display",
+	"dateAdded": "2018-02-23",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "FONTRIX",
+	"family": "Dokdo",
+	"id": "dokdo",
+	"license": {
+		"attribution": "Copyright (c) 2005-2017 FONTRIX. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dokdo",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dokdo/Dokdo-Regular.ttf",
+			"sha256": "5b3a3d8d28af31fa9adec3fc5da81a88b52e1ff39ed3930c1db787aa4e79c36d",
+			"size": 2150860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

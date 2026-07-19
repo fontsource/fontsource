@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 638,
+				"sha256": "2be9a3406d1c1a6006c4d21c3d932565cadb3a51f77fe92b634a1ab8231a85cf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/parastoo/Parastoo[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

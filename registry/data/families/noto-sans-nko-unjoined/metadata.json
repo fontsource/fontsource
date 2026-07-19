@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-06-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"nko"
+	],
+	"designer": "Google",
+	"displayName": "Noto Sans N'Ko Unjoined",
+	"family": "Noto Sans NKo Unjoined",
+	"id": "noto-sans-nko-unjoined",
+	"license": {
+		"attribution": "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/nko)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansnkounjoined",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/nko",
+		"revision": "a5db712e48059443e873e60805458924ec36f87a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansnkounjoined/NotoSansNKoUnjoined[wght].ttf",
+			"sha256": "9da7c2cd66449822e9b6014a9d59470c9a20fc4c4b831aebc72d308b93ebc4d4",
+			"size": 63800,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

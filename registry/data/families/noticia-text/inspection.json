@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 656,
+				"sha256": "f8b7222d314ff6f473472410e052260682627785cb77413e57b1a565007fab69"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/noticiatext/NoticiaText-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 654,
+				"sha256": "9a6e8c9efb2a0c210c9da557faec4cfc085887ba8ee496d6ec6feb3ec80fde35"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/noticiatext/NoticiaText-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 654,
+				"sha256": "9a6e8c9efb2a0c210c9da557faec4cfc085887ba8ee496d6ec6feb3ec80fde35"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/noticiatext/NoticiaText-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 656,
+				"sha256": "f8b7222d314ff6f473472410e052260682627785cb77413e57b1a565007fab69"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/noticiatext/NoticiaText-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

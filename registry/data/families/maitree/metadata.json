@@ -1,0 +1,86 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Maitree",
+	"id": "maitree",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/maitree",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/maitree",
+		"revision": "e530c1fb68e167a5e990b8125e62231cbedfe4be"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/maitree/Maitree-Bold.ttf",
+			"sha256": "59899168d044143108b18fce46003c6774217019a4878d4313f6793b9d17fbf2",
+			"size": 210140,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/maitree/Maitree-ExtraLight.ttf",
+			"sha256": "aaa310f9bc913882863b1d39bd70978b7d068ac831ef3789bd921f781392343d",
+			"size": 189756,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/maitree/Maitree-Light.ttf",
+			"sha256": "64096b22cb796958391c704992d0cf698deb3478d4af6c131f1b5a435e851e08",
+			"size": 191128,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/maitree/Maitree-Medium.ttf",
+			"sha256": "6314fda8d95a2f69f16b63e8eca4a4a82e1b1ca519ec7039f99565d5d2b34e16",
+			"size": 195424,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/maitree/Maitree-Regular.ttf",
+			"sha256": "0b175f9b468961d37faf21bfbf27207c5aeda9f2b029841bccaf2747c2c269be",
+			"size": 194476,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/maitree/Maitree-SemiBold.ttf",
+			"sha256": "d160545b5b802658431d17bac37f016c7ea6b8a16ae8cecd7f9389da52581216",
+			"size": 206972,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

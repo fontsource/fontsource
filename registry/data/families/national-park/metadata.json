@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-03-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Andrea Herstowski, Ben Hoepner, Jeremy Shellhorn",
+	"family": "National Park",
+	"id": "national-park",
+	"license": {
+		"attribution": "Copyright 2024 The National Park Project Authors (https://github.com/benhoepner/National-Park)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nationalpark",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/benhoepner/National-Park",
+		"revision": "ef0531a85a833b90713743639e3c5ffb8e345833"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nationalpark/NationalPark[wght].ttf",
+			"sha256": "17699dc82c52b177b95dec6805c8091ab79a965c866fa0f07ffa8672ddde0b5c",
+			"size": 159332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

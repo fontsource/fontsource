@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-07-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Yellowtail",
+	"id": "yellowtail",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/yellowtail",
+		"revision": "e77fdf0f4f6757f773feeea5603898e7d875dceb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/yellowtail/Yellowtail-Regular.ttf",
+			"sha256": "3e06841b13000975f3cc38aa84e326e601a4378a4c52d50b5e9fee3598c5d236",
+			"size": 62216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

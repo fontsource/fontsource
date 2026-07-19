@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2018-02-23",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "YoonDesign Inc",
+	"family": "Gamja Flower",
+	"id": "gamja-flower",
+	"license": {
+		"attribution": "Copyright (c) YoonDesign Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gamjaflower",
+		"revision": "bc7234b94c97728a6b3b4b19c9f05dbed123d155",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yoondesign/yoonfont-Gamjaflower",
+		"revision": "c31c8953af3fc0dca946e82e5196c9dacfe7a3b3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gamjaflower/GamjaFlower-Regular.ttf",
+			"sha256": "ece32819ed58536355a49a095b0cdfdd3b8ef9081c5ed9ca1cef8f5d999ae1ac",
+			"size": 12615444,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

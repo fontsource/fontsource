@@ -1,0 +1,186 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 930,
+				"sha256": "820aeca2a24b47f1c78ec8f0ebf35e4e2fc202e60e46d14c5127ed33c4fb5fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.3",
+			"outline": "glyf",
+			"path": "ofl/ibmplexmono/IBMPlexMono-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 100
+		}
+	]
+}

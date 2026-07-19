@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11789,
+				"sha256": "9791e4436b0c4f506d0a203577224ba63b8e6137dc8ea0521cc53f6eedf08fed"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895",
+			"outline": "glyf",
+			"path": "ofl/nanumbrushscript/NanumBrushScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

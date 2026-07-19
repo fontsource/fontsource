@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 247,
+				"sha256": "dc4a7b40a380221203094dec691ff83b28cd5b67e23241d6a997626052020aab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/kottaone/KottaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

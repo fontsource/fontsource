@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2019-11-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "José María Ribagorda, Octavio Pardo",
+	"family": "Ibarra Real Nova",
+	"id": "ibarra-real-nova",
+	"license": {
+		"attribution": "Copyright 2007 The Ibarra Real Nova Project Authors (https://github.com/googlefonts/ibarrareal)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibarrarealnova",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/ibarrareal",
+		"revision": "7ae92a27f13f8e187db49312e7111041d1fa2a17"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibarrarealnova/IbarraRealNova-Italic[wght].ttf",
+			"sha256": "2ead710644460a0433998baccda6070207ad819c027cec442489578b580e1f6e",
+			"size": 120264,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibarrarealnova/IbarraRealNova[wght].ttf",
+			"sha256": "c627ab48daf6544099014b4c5c7faa4e3b993ef5ec77709c89dd37efd4107ddd",
+			"size": 114164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

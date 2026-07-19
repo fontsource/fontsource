@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 354,
+				"sha256": "f3a4f7cf6b2b639345ced0a6913833456ede9869f011f78cd8bd67214f2d7681"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/notoseriftoto/NotoSerifToto[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

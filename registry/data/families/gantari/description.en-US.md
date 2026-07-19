@@ -1,0 +1,3 @@
+Gantari is a sans serif font with a geometric touch, designed by Anugrah Pasau from Lafontype. Gantari is not purely geometric, proportions have been designed so that all characters can look harmonious. The font was originally designed for large sizes, but it also reads well at small sizes.
+
+To contribute, see [github.com/Lafontype/Gantari](https://github.com/Lafontype/Gantari).

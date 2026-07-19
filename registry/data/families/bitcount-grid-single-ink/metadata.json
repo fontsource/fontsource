@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-01-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Petr van Blokland",
+	"family": "Bitcount Grid Single Ink",
+	"id": "bitcount-grid-single-ink",
+	"license": {
+		"attribution": "Copyright 2024 The Bitcount Project Authors (https://github.com/petrvanblokland/TYPETR-Bitcount)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bitcountgridsingleink",
+		"revision": "beb8b43085722f3a7357ec73ff25702620c81dc3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/petrvanblokland/TYPETR-Bitcount",
+		"revision": "89e7994f73b7f5ced80e7cf493d40be9e66ff82f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bitcountgridsingleink/BitcountGridSingleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].ttf",
+			"sha256": "278c3a8da7298e23b9e93289c6a4efa9d92797aeb7d18f445d93dc0f3c08bb82",
+			"size": 276416,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

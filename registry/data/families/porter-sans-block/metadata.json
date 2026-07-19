@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2013-12-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tyler Finck",
+	"family": "Porter Sans Block",
+	"id": "porter-sans-block",
+	"license": {
+		"attribution": "Copyright (c) 2013, Tyler Finck (hello@sursly.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/portersansblock",
+		"revision": "d6effc48df141c1de34431de55db3261f4e9119e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/portersansblock/PorterSansBlock-Regular.ttf",
+			"sha256": "760943d1b089f37c8d079f3e0347e2b0858c8598894f2c04b7dc52cbd2ab4dfd",
+			"size": 112680,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

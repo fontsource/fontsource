@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-03-30",
+	"declaredSubsets": [
+		"kannada",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tiro Typeworks, John Hudson, Fiona Ross, Kaja Słojewska",
+	"family": "Tiro Kannada",
+	"id": "tiro-kannada",
+	"license": {
+		"attribution": "Copyright 2020 The Indigo Project Authors (https://github.com/TiroTypeworks/Indigo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tirokannada",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Indigo",
+		"revision": "98b5d3a01c534b7029af04a59d31e0d7d90be15a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tirokannada/TiroKannada-Italic.ttf",
+			"sha256": "e22b96140842bcdb7c453d68bd18f96aec535182f8b59e5071c8279c6be73c26",
+			"size": 483080,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tirokannada/TiroKannada-Regular.ttf",
+			"sha256": "5543779e9eaecf5fcafc2275b37cddd70eddb7352af35da028ab8228b4593050",
+			"size": 482772,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

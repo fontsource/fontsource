@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2024-02-16",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Jaini",
+	"id": "jaini",
+	"license": {
+		"attribution": "Copyright 2023 The Jaini Project Authors (https://github.com/EkType/Jaini)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jaini",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Jaini",
+		"revision": "4d2bcf9760fccb42eb95a079a17c430907059f58"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jaini/Jaini-Regular.ttf",
+			"sha256": "67224e60cafa27291c4b03cd907ca61ec678ba59fc1743af89da4472ea50d5c7",
+			"size": 757280,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

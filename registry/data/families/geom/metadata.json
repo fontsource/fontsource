@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-11-14",
+	"declaredSubsets": [
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Thanos Poulakidas",
+	"family": "Geom",
+	"id": "geom",
+	"license": {
+		"attribution": "Copyright 2022 The Geom Project Authors (https://github.com/ThanosPoulakidas/Geom)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/geom",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ThanosPoulakidas/Geom",
+		"revision": "c20a14c68c717e28fdb6e1cc7cc6b453fef5fef7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/geom/Geom-Italic[wght].ttf",
+			"sha256": "f448d04a281a0e8198a109e1809e145ffd5567a26299c8b2b772297de17500ad",
+			"size": 108240,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/geom/Geom[wght].ttf",
+			"sha256": "4509ad62e97c2e07c7fbc51180caba092b66fb2967e4de7dcba149ab3beb3b15",
+			"size": 105408,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

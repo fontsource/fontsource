@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 100,
+					"tag": "wdth"
+				},
+				{
+					"default": 900,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 378,
+				"sha256": "c97e3a25f838d18f5e775fc78f1a77af0e768bc94c03e6d2bd5201674a0f9c31"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/sourgummy/SourGummy-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 900,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 100,
+					"tag": "wdth"
+				},
+				{
+					"default": 900,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 378,
+				"sha256": "c97e3a25f838d18f5e775fc78f1a77af0e768bc94c03e6d2bd5201674a0f9c31"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/sourgummy/SourGummy[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 900,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-04-03",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"menu"
+	],
+	"designer": "Khaled Hosny",
+	"family": "Qahiri",
+	"id": "qahiri",
+	"license": {
+		"attribution": "Copyright 2021 The Qahiri Project Authors (github.com/alif-type/qahiri).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/qahiri",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alif-type/qahiri",
+		"revision": "2fbfe8ca2e5ed04b0455e15c717774766f174ad1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/qahiri/Qahiri-Regular.ttf",
+			"sha256": "68e31a245a8613d8b49d55f7ceffdd88b26f2abace2a9dd094a076d78f53a203",
+			"size": 35996,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

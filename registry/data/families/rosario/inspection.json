@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 636,
+				"sha256": "270ab806bf3df839ff3de38b4fa15d67db7ee2e55b11a3e8c57e5827fece3dcb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.201",
+			"outline": "glyf",
+			"path": "ofl/rosario/Rosario-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 635,
+				"sha256": "64e8ece80b8d289f4c9c117a882e1342f1f929373d96a720f9898f7fa4487f94"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.201",
+			"outline": "glyf",
+			"path": "ofl/rosario/Rosario[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

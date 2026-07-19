@@ -1,0 +1,38 @@
+{
+	"category": "monospace",
+	"dateAdded": "2015-06-24",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Stephan Ahlf",
+	"family": "Digital Numbers",
+	"id": "digital-numbers",
+	"license": {
+		"attribution": "Copyright (c) 2015, Stephan Ahlf (https://github.com/s-a/digital-numbers-font stephan.ahlf@googlemail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/digitalnumbers",
+		"revision": "2701058bea5e3d33a01b44fb02fd8d188c34ab48",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/s-a/digital-numbers-font",
+		"revision": "b58e33a259af2872522fcddbfd02dad3732ccadd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/digitalnumbers/DigitalNumbers-Regular.ttf",
+			"sha256": "de9e0cfb83bc10ac6fad876f35d8f381a3ff07f5ca9925919e9d32f980bc9d49",
+			"size": 20984,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 586,
+				"sha256": "1c77d42b81fdc5c725ff5674cd133ac4f16e05fccbbfc5009bd3eb8768bbe756"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/squarepeg/SquarePeg-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

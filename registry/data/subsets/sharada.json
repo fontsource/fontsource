@@ -1,0 +1,67 @@
+{
+	"id": "sharada",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"951",
+			"951"
+		],
+		[
+			"1CD7",
+			"1CD7"
+		],
+		[
+			"1CD9",
+			"1CD9"
+		],
+		[
+			"1CDC",
+			"1CDD"
+		],
+		[
+			"1CE0",
+			"1CE0"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A830",
+			"A835"
+		],
+		[
+			"A838",
+			"A838"
+		],
+		[
+			"11180",
+			"111DF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/sharada_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "45599572be924a7ec956851ccda86437718582e5dfa348c8fb248af6abb61f2d",
+		"upstream": "namFiles"
+	}
+}

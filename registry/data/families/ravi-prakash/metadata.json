@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2015-01-12",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Ravi Prakash",
+	"id": "ravi-prakash",
+	"license": {
+		"attribution": "Copyright (c) 2011 Silicon Andhra (fonts.siliconandhra.org). Copyright (c) 2012, Eduardo Tunni (http://www.tipo.net.ar), with Reserved Font Name 'Joti'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/raviprakash",
+		"revision": "903e42a82f1b0825940c9ff8591b122fc367e735",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/raviprakash",
+		"revision": "0f5d8d7f5a7d263feef811baaa16c143313f27da"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/raviprakash/RaviPrakash-Regular.ttf",
+			"sha256": "f539bdb2673b3e1b69a279da763d178a6e4b4cafe5a12c85be0f5e03b547fcb6",
+			"size": 313012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

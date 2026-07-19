@@ -1,0 +1,3 @@
+Tenali Ramakrishna is an Open Source typeface developed for use in news publications and is suitable for text, headings, posters, and invitations.
+
+The Telugu is designed by Appaji Ambarisha Darbha in 2013 and made available by Silicon Andhra under the SIL Open Font License v1.1. The Latin is designed by Wojciech Kalinowski and originally published as [Classica](http://openfontlibrary.org/en/font/classica). The Tenali Ramakrishna project is led by Appaji Ambarisha Darbha, a type designer based in Hyderabad, India. To contribute, see [github.com/appajid/tenaliramakrishna](https://github.com/appajid/tenaliramakrishna)

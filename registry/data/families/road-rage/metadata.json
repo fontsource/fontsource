@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Road Rage",
+	"id": "road-rage",
+	"license": {
+		"attribution": "Copyright 2010 The Road Rage Project Authors (https://github.com/googlefonts/road-rage)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/roadrage",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/road-rage",
+		"revision": "e55c939b96e80e4760f27d81d1abca714739e3fe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/roadrage/RoadRage-Regular.ttf",
+			"sha256": "b25b8113340bd83520f92a32a13d8d2e39c46fcc595cf39e8ae9e9a4b6332eb8",
+			"size": 427472,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,35 @@
+{
+	"id": "old-persian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"103A0",
+			"103C3"
+		],
+		[
+			"103C8",
+			"103D5"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/old-persian_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "0ba759de4af8b9b5e11e1ac768e986682bc9dceea80b5cbb31196c3fccfafa45",
+		"upstream": "namFiles"
+	}
+}

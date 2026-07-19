@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "550233888d8cc91213cd994fc4795ad30f409daad01c922db8001097ad776186"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoserifdivesakuru/NotoSerifDivesAkuru-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

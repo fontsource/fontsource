@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "Nova Cut",
+	"id": "nova-cut",
+	"license": {
+		"attribution": "Copyright (c) 2011, wmk69 (wmk69@o2.pl) with Reserved Font Names 'NovaCut' and 'Nova Cut'. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/novacut",
+		"revision": "c4fb088b01b024525829754de4c9b6a3323ca509",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/novacut/NovaCut.ttf",
+			"sha256": "09b4238312770fb6a4405027dc33feef1bb1c9283d3c907fe7282960da4eb5f7",
+			"size": 94488,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

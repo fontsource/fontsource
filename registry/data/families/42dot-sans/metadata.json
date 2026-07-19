@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-12-23",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "42dot",
+	"family": "42dot Sans",
+	"id": "42dot-sans",
+	"license": {
+		"attribution": "Copyright 2024 The 42dot Sans Project Authors (https://github.com/42dot/42dot-Sans).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/42dotsans",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/42dot/42dot-Sans",
+		"revision": "d23e87fe44d5b4f5afaa9dca9d5926d7c414d625"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/42dotsans/42dotSans[wght].ttf",
+			"sha256": "cf9ec2f79b6d13384eef338477a223800a547fbb21665eb0ea1330a513805b6a",
+			"size": 5772308,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

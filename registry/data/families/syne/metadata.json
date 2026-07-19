@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-08-25",
+	"declaredSubsets": [
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Bonjour Monde, Lucas Descroix, George Triantafyllakos",
+	"family": "Syne",
+	"id": "syne",
+	"license": {
+		"attribution": "Copyright 2019 The Syne Project Authors (https://gitlab.com/bonjour-monde/fonderie/syne-typeface)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/syne",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://gitlab.com/bonjour-monde/fonderie/syne-typeface",
+		"revision": "d9098c0a72125d411dbb225a2e5a61dc15265ffc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/syne/Syne[wght].ttf",
+			"sha256": "ce5ac77142a65cab2248a1a2ebb740b1d4d9c20b52488877d3ff664d1356104a",
+			"size": 146980,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

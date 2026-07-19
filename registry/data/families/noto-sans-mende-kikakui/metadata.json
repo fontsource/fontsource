@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"mende-kikakui",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Mende Kikakui",
+	"id": "noto-sans-mende-kikakui",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/mende-kikakui)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmendekikakui",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/mende-kikakui",
+		"revision": "70eb55ce4b682dc87c87266a25aa9b12b44f479d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmendekikakui/NotoSansMendeKikakui-Regular.ttf",
+			"sha256": "1f0d4e5957f2d74ffd2ef4850b512e512066c58365308e433985c3842f2d779f",
+			"size": 94212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7812,
+				"sha256": "a976cf1298561ada984e373b7377af1cad9d7b9fe7fcadd325c870512c01acdb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7812,
+				"sha256": "a976cf1298561ada984e373b7377af1cad9d7b9fe7fcadd325c870512c01acdb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7812,
+				"sha256": "a976cf1298561ada984e373b7377af1cad9d7b9fe7fcadd325c870512c01acdb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7812,
+				"sha256": "a976cf1298561ada984e373b7377af1cad9d7b9fe7fcadd325c870512c01acdb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7812,
+				"sha256": "a976cf1298561ada984e373b7377af1cad9d7b9fe7fcadd325c870512c01acdb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

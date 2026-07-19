@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-03-12",
+	"declaredSubsets": [
+		"chinese-hongkong",
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Google",
+	"displayName": "Noto Sans Hong Kong",
+	"family": "Noto Sans HK",
+	"id": "noto-sans-hk",
+	"license": {
+		"attribution": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanshk",
+		"revision": "2ac7e8ea215d57ea37fa3c7073642d0f2f22b525",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/noto-cjk",
+		"revision": "523d033d6cb47f4a80c58a35753646f5c3608a78"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanshk/NotoSansHK[wght].ttf",
+			"sha256": "76098ee78ec234cd4f8c950742b3f766fea2f8b43d5180d901048f4fc86c6849",
+			"size": 11905808,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

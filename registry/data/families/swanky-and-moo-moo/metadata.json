@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-04-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Swanky and Moo Moo",
+	"id": "swanky-and-moo-moo",
+	"license": {
+		"attribution": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/swankyandmoomoo",
+		"revision": "78903d445cfb62e7b7611fc65e52f9aee66bcd6c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/swankyandmoomoo/SwankyandMooMoo.ttf",
+			"sha256": "a745effa8961790717966f7c69d96756a7abe2d334a08be333a656b7c54b627f",
+			"size": 58892,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

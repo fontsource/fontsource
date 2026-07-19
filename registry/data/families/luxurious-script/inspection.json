@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "aeb665df39e25400ed9c473d74c792a4d47d1efb02262b9cf8d3c7918ecfde33"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/luxuriousscript/LuxuriousScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

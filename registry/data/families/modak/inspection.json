@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1227,
+				"sha256": "268945f380fdd7744618d24464f17ff635473e139f7e7aec35b23126f8e7123a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.036;PS Version 1.000;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/modak/Modak-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

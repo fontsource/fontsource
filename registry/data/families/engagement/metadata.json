@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Engagement",
+	"id": "engagement",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Engagement\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/engagement",
+		"revision": "c0da1d694f81baec07de8b94d6b781cfad64af8f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/engagement",
+		"revision": "4a28e79422bbd98791c29adff6630d14f620ffd3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/engagement/Engagement-Regular.ttf",
+			"sha256": "0bfb666005c0f37e9c51265ca5dff812b2fc4929ed324f359caa92f80c25e01a",
+			"size": 76408,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

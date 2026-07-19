@@ -1,0 +1,31 @@
+{
+	"id": "medefaidrin",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"16E40",
+			"16E9A"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/medefaidrin_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "ccc301c1947175c428fc32c085bcbb9a298e7cfc40128b87ef9bcb13c51276fc",
+		"upstream": "namFiles"
+	}
+}

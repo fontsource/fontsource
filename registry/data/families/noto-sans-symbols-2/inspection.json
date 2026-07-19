@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2955,
+				"sha256": "77e43cde5857036f8345f9792772f63f7e236defeed2490f20893690d2da3a1a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.008; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssymbols2/NotoSansSymbols2-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

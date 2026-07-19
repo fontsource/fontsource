@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 47623,
+				"sha256": "f4990d2d476e549001820dfa3055278a129f7179ed2315c56ffbd478597b0954"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.530",
+			"outline": "glyf",
+			"path": "ofl/chironheihk/ChironHeiHK-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 47623,
+				"sha256": "f4990d2d476e549001820dfa3055278a129f7179ed2315c56ffbd478597b0954"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.530",
+			"outline": "glyf",
+			"path": "ofl/chironheihk/ChironHeiHK[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 669,
+				"sha256": "eb9ffabc1dc348ceef89749442d5e5fbebb3bee173c29e8241e86700a941fe0a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/voces/Voces-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

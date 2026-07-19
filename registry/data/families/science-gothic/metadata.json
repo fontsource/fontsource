@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-08-07",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Thomas Phinney, Vassil Kateliev, Brandon Buerkle",
+	"family": "Science Gothic",
+	"id": "science-gothic",
+	"license": {
+		"attribution": "Copyright © 2025 The Science Gothic Project Authors (https://github.com/googlefonts/science-gothic/blob/main/AUTHORS.txt)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sciencegothic",
+		"revision": "2c5cc65841a5cde120f954e9e7a5a905cd1bf923",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/science-gothic",
+		"revision": "9eae80c1fe8f937e4f7009629c8248a959735c77"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sciencegothic/ScienceGothic[CTRS,slnt,wdth,wght].ttf",
+			"sha256": "246e4d33a6fcb3846094e5c4c034616f83e9ae10100316df32e2436362deab3d",
+			"size": 2726388,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

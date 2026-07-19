@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 303,
+				"sha256": "9c10683ce905042c98d08f3943ac5d59c2e9e35df853138779d9de824f7236eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/comicneue/ComicNeue-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 319,
+				"sha256": "f9350662198ac72ac965799035fcc99cff95555643037714242bd7f510f44055"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/comicneue/ComicNeue-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 319,
+				"sha256": "f9350662198ac72ac965799035fcc99cff95555643037714242bd7f510f44055"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/comicneue/ComicNeue-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 303,
+				"sha256": "9c10683ce905042c98d08f3943ac5d59c2e9e35df853138779d9de824f7236eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/comicneue/ComicNeue-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 319,
+				"sha256": "f9350662198ac72ac965799035fcc99cff95555643037714242bd7f510f44055"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/comicneue/ComicNeue-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 303,
+				"sha256": "9c10683ce905042c98d08f3943ac5d59c2e9e35df853138779d9de824f7236eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/comicneue/ComicNeue-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

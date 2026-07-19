@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "22e13f9700fae1243394e5d1ec4a7918d5d39579b9613050a34c9e2e6a876034"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/aubrey/Aubrey-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"category": "serif",
+	"dateAdded": "2026-01-22",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"syriac"
+	],
+	"designer": "SIL International",
+	"family": "Idiqlat",
+	"id": "idiqlat",
+	"license": {
+		"attribution": "Copyright (c) 2025-2026, SIL Global (https://www.sil.org/), with Reserved Font Names \"Idiqlat\" and \"SIL\". Original fonts copyright (c) 1997-2025, Sparksoft Systems, with Reserved Font Names \"Marcus\" and \"Nohadra\". Latin glyphs copyright (c) 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/idiqlat",
+		"revision": "6ed1657f176b3d51fc57875b5cf4b4e03842af44",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-idiqlat",
+		"revision": "ed19e4c20659463b489e3d02b4dde493d438e18f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/idiqlat/Idiqlat-ExtraLight.ttf",
+			"sha256": "60e142e9200199cab462b832806a064e4f58dfa02be1dd042337dd3237ba4987",
+			"size": 80500,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/idiqlat/Idiqlat-Light.ttf",
+			"sha256": "14a3c40097b1f60a8761229f6c5a7f2b161c73be45dea5c900b2804b1227b0bf",
+			"size": 80932,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/idiqlat/Idiqlat-Regular.ttf",
+			"sha256": "9035ef01c4b64c3f0a8396ef9100ddfd0caa80ed9354a740c57f2812965f7ed8",
+			"size": 81504,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-29"
+}

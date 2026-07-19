@@ -1,0 +1,34 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-01-20",
+	"declaredSubsets": [
+		"emoji",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Color Emoji Compat Test",
+	"id": "noto-color-emoji-compat-test",
+	"license": {
+		"attribution": "Copyright 2022 Google.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notocoloremojicompattest",
+		"revision": "e413cae1fe2b7ffd5107d4a8b5370506711848a3",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notocoloremojicompattest/NotoColorEmojiCompatTest-Regular.ttf",
+			"sha256": "6e549759a4476fb250b0f787fd84689f8edeef15eebc8779d5ce5159534db6cb",
+			"size": 58722780,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

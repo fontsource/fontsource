@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-09-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Karolina Lach",
+	"family": "Arbutus Slab",
+	"id": "arbutus-slab",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Sorkin Type Co.. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arbutusslab",
+		"revision": "1c0cdcb05d04267fb4c115b851e1dbdb2785fc0b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/arbutusslab",
+		"revision": "9188ac0bb9ae152e9c4e6ee8c726f4636babb86f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arbutusslab/ArbutusSlab-Regular.ttf",
+			"sha256": "f4f55a6e95aa0dcad40077d4b4e9f7d0269ed2ca448134917c97d59c474e511c",
+			"size": 69268,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

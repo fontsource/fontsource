@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Angélica Díaz",
+	"family": "Esteban",
+	"id": "esteban",
+	"license": {
+		"attribution": "Copyright (c) 2011, Angelica Diaz Rivera (www.typereview.wordpress.com angiecina@gmail.com), with Reserved Font Name \"Esteban\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/esteban",
+		"revision": "a3ab1c9dc5896451b37e65bbeae4c8285d8ba2e7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/esteban",
+		"revision": "35e274d49210b9c8a7864689b48d6156e6be6bbf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/esteban/Esteban-Regular.ttf",
+			"sha256": "117f80a823d1899df85708a59e39ef0f0d974a7407a845543288612f8214e68f",
+			"size": 46504,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

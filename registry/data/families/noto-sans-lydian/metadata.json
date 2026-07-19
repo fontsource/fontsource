@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"lydian",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Lydian",
+	"id": "noto-sans-lydian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/lydian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanslydian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/lydian",
+		"revision": "fb2444aa3ac4b7e4bd8d5a0e971895f6545aa418"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanslydian/NotoSansLydian-Regular.ttf",
+			"sha256": "25466c3aa089d25abf5829a29c6a72738e006a21865a48e03c58411b0227920a",
+			"size": 51676,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-23",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Iceland",
+	"id": "iceland",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Iceland\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/iceland",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Iceland",
+		"revision": "bb43144b50825221060747ddba7b23bc05e7c960"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/iceland/Iceland-Regular.ttf",
+			"sha256": "5b5919189e5d01a6fac79251aaf9fa9565a738c39974cbe13de98ac02ec7fff5",
+			"size": 47632,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

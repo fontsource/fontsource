@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1057,
+				"sha256": "101d078f26737ac9bdc15e47c4b848aa23e6e5d523598a707bc1361792f4cfb9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "ofl/notosanscanadianaboriginal/NotoSansCanadianAboriginal[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

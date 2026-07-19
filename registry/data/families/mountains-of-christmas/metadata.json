@@ -1,0 +1,47 @@
+{
+	"category": "display",
+	"dateAdded": "2010-12-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Tart Workshop",
+	"family": "Mountains of Christmas",
+	"id": "mountains-of-christmas",
+	"license": {
+		"attribution": "Copyright (c) 2010 2011, Font Diner, Inc DBA Tart Workshop (diner@fontdiner.com) with Reserved Font Name \"Mountains of Christmas\"",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/mountainsofchristmas",
+		"revision": "85402ba9968a3ac7e32e4a5be29abc1298f52a3a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/mountainsofchristmas/MountainsofChristmas-Bold.ttf",
+			"sha256": "4c6126f43c650c81d236fd04ffc2fccbc3f37438c304cafad6894a835c2250ef",
+			"size": 123172,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "apache/mountainsofchristmas/MountainsofChristmas-Regular.ttf",
+			"sha256": "3855303be6b88707c00bb271f9c95e996605e9a8e656b3a30686862352b1052e",
+			"size": 122376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

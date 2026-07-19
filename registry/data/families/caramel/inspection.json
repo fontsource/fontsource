@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 592,
+				"sha256": "784d9e26a9ccf15a3487e51a2aa46a570ad0f78e65dec164f57514e02f13ab75"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "ofl/caramel/Caramel-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2599,
+				"sha256": "4760c7c6685316c32874af625ba909a506b1d0cdcf2984e4e07fca2e5ac50b2a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.00",
+			"outline": "glyf",
+			"path": "ofl/dokdo/Dokdo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

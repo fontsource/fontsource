@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 728,
+				"sha256": "405a3014820b4940a2d57b5656c79047435dcf736f58efc6782f0b7507240ff5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.800",
+			"outline": "glyf",
+			"path": "ofl/geist/Geist-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 728,
+				"sha256": "405a3014820b4940a2d57b5656c79047435dcf736f58efc6782f0b7507240ff5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.800",
+			"outline": "glyf",
+			"path": "ofl/geist/Geist[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

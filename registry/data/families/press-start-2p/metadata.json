@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2012-04-04",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "CodeMan38",
+	"family": "Press Start 2P",
+	"id": "press-start-2p",
+	"license": {
+		"attribution": "Copyright 2012 The Press Start 2P Project Authors (cody@zone38.net), with Reserved Font Name \"Press Start 2P\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pressstart2p",
+		"revision": "e06fe11c39051bddaef73ec338a9d1c8175723f1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pressstart2p/PressStart2P-Regular.ttf",
+			"sha256": "034c77f1f05ec89421e4a63f0e3a4ca1ecf852cc6d2bf611f126f275728e017d",
+			"size": 118204,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

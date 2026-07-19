@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 427,
+				"sha256": "993221ddafa3158d66dd7022f9fc1860b8d6312527944b5797079801b1ad8578"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v0.8) -G 200 -r 50",
+			"outline": "glyf",
+			"path": "ofl/petitformalscript/PetitFormalScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

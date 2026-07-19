@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-27",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "James Grieshaber, Eben Sorkin",
+	"family": "Black Ops One",
+	"id": "black-ops-one",
+	"license": {
+		"attribution": "Copyright 2022 The PinyonScript Project Authors (https://github.com/SorkinType/Black-Ops)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/blackopsone",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Black-Ops",
+		"revision": "c955bed3517ad3d8606a8b0105d27538309fb70d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/blackopsone/BlackOpsOne-Regular.ttf",
+			"sha256": "282a825b5f294377387e3969f765408157dbea8da0f5d0aae68c6bc704b145b3",
+			"size": 166532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

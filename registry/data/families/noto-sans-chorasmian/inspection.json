@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 359,
+				"sha256": "c4590ce3a99645b26453bbce5668df50cfb557713abcb9a1c1eab747d88496dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanschorasmian/NotoSansChorasmian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

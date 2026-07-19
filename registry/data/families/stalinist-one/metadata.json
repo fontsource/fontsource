@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2012-08-20",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Alexey Maslov, Jovanny Lemonad",
+	"family": "Stalinist One",
+	"id": "stalinist-one",
+	"license": {
+		"attribution": "Copyright (c) 2009-2011, Alexey Maslov, Jovanny Lemonad (lemonad@jovanny.ru), with Reserved Font Name 'Stalinist'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stalinistone",
+		"revision": "9c023901ef7169004ff23381143584b61cc60684",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stalinistone/StalinistOne-Regular.ttf",
+			"sha256": "73cc48eefa01543b09fd3df9bab6af2a302e52e292b8625f4b62c868bc152eeb",
+			"size": 48808,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

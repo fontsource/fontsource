@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "1c319582ba045f1f80e495b65b982993710c48533c7ce488ba8eacd01823f5b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/solway/Solway-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "1c319582ba045f1f80e495b65b982993710c48533c7ce488ba8eacd01823f5b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/solway/Solway-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "1c319582ba045f1f80e495b65b982993710c48533c7ce488ba8eacd01823f5b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/solway/Solway-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "1c319582ba045f1f80e495b65b982993710c48533c7ce488ba8eacd01823f5b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/solway/Solway-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "1c319582ba045f1f80e495b65b982993710c48533c7ce488ba8eacd01823f5b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/solway/Solway-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

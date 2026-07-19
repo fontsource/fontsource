@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-12-04",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Natanael Gama",
+	"family": "Exo 2",
+	"id": "exo-2",
+	"license": {
+		"attribution": "Copyright 2013 The Exo 2 Project Authors (https://github.com/googlefonts/Exo-2.0)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/exo2",
+		"revision": "1796e34455b893092713d206e7f23e3e07699f00",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Exo-2.0",
+		"revision": "f83ea8a02d3e1d6963ab6e910038521f27e283a2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/exo2/Exo2-Italic[wght].ttf",
+			"sha256": "bad568cea9ed23d6ae4aea41ad3f7747752952aabdd85d7f01474af392a21b32",
+			"size": 302556,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/exo2/Exo2[wght].ttf",
+			"sha256": "205a448676a2586f9c57c25f3d5c58ca8db7e6cf5edf7506783a010c6fe2bfb5",
+			"size": 303940,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

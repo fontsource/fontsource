@@ -1,0 +1,20 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "5ddf85767a2caebe59e816002cce53903285b5ad6d7ad0bb60e77ef854528f25"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL"
+			],
+			"fontVersion": "Version 1.000;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900",
+			"outline": "glyf",
+			"path": "ofl/bungeecolor/BungeeColor-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

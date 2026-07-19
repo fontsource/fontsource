@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "fac70b58e9719b59a1cc8f1e4e0113e5d8e4919ffc9ea78a08ee0f56124400e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/condiment/Condiment-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

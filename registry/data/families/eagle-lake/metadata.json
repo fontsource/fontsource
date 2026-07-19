@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-07-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Eagle Lake",
+	"id": "eagle-lake",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Eagle Lake\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/eaglelake",
+		"revision": "1a603d7c60331e3e0b54cbf4466f2622491ad4ca",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/eaglelake",
+		"revision": "4e2b26479cf425b115731aa69e380fd2f5fd88e5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/eaglelake/EagleLake-Regular.ttf",
+			"sha256": "53a4e929c9ea3584f2432157fd549c7604e6be7e6c4b39873f34fae7f6823928",
+			"size": 78000,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

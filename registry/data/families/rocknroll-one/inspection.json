@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8230,
+				"sha256": "61bb143af95cb680af410a94022f3c49b1bb9692e5eaca7a4e341c045d967ac8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/rocknrollone/RocknRollOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

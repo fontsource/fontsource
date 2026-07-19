@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Egyptian Hieroglyphs is an unmodulated (“sans serif”) design for texts in the historical African _Egyptian hieroglyphs_ script. It has 1,079 glyphs.

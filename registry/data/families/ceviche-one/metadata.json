@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Miguel Hernandez",
+	"family": "Ceviche One",
+	"id": "ceviche-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by LatinoType Limitada (luciano@latinotype.com), with Reserved Font Names \"Cecivhe\" and \"Ceviche One\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cevicheone",
+		"revision": "6b1ef8b34e7f6cba12aa8da5ad4a2bd2bb3ee92e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/cevicheone",
+		"revision": "1af833a0fd47b174386916453a54e6bf1f6d5a34"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cevicheone/CevicheOne-Regular.ttf",
+			"sha256": "366249c911e689cd5ea3d576c0eba0c37a938e0a58721fce3733a4244dd9ab32",
+			"size": 36940,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

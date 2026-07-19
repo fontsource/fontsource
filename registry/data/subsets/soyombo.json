@@ -1,0 +1,35 @@
+{
+	"id": "soyombo",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"11A50",
+			"11AA2"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/soyombo_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "68ecd359559043f7ef51bb7c941419c5d181d92442b4f1542969fcf4fc4859ca",
+		"upstream": "namFiles"
+	}
+}

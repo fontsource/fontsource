@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "c86c66c653fe1f3635f30a508aa2bf5ef1d4751ed4099ae27ce08dc182410370"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/londrinasolid/LondrinaSolid-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "c86c66c653fe1f3635f30a508aa2bf5ef1d4751ed4099ae27ce08dc182410370"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/londrinasolid/LondrinaSolid-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "c86c66c653fe1f3635f30a508aa2bf5ef1d4751ed4099ae27ce08dc182410370"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/londrinasolid/LondrinaSolid-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "c86c66c653fe1f3635f30a508aa2bf5ef1d4751ed4099ae27ce08dc182410370"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/londrinasolid/LondrinaSolid-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		}
+	]
+}

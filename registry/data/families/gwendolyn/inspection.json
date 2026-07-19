@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 577,
+				"sha256": "990bacc71450cd9fb918d5c2aa6a6fe100b177efa00ccf89c4f6525ea41e1094"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/gwendolyn/Gwendolyn-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 577,
+				"sha256": "990bacc71450cd9fb918d5c2aa6a6fe100b177efa00ccf89c4f6525ea41e1094"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/gwendolyn/Gwendolyn-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

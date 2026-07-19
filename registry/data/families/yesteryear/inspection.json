@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 369,
+				"sha256": "65237de8cb2587dcd01a6875c412a8ca7c45a28e4e302fcf74e95e995a82e476"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/yesteryear/Yesteryear-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

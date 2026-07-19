@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-02-11",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Owen Earl",
+	"family": "Jost",
+	"id": "jost",
+	"license": {
+		"attribution": "Copyright 2020 The Jost Project Authors (https://github.com/indestructible-type/Jost)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jost",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/indestructible-type/Jost",
+		"revision": "35f141c970538f1ed0f235789c19156b3ce2a762"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jost/Jost-Italic[wght].ttf",
+			"sha256": "15a6f7e3e11f9e8e338a583a6fe03e8f6b1d9ce877efa3fe579282b6c1cb15fe",
+			"size": 144388,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/jost/Jost[wght].ttf",
+			"sha256": "6343b70971000b04c5d401c96ae08ce371086135e999d5e1e1413039c0213076",
+			"size": 134996,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

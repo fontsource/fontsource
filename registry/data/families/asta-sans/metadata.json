@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-12-23",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "42dot",
+	"family": "Asta Sans",
+	"id": "asta-sans",
+	"license": {
+		"attribution": "Copyright 2024 The Asta Sans Project Authors (https://github.com/42dot/Asta-Sans).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/astasans",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/42dot/Asta-Sans",
+		"revision": "62b8301ac4b2e2ddf62eadca79b91fa944618848"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/astasans/AstaSans[wght].ttf",
+			"sha256": "f68410bf7d04deb992097758640145c72ddcf234070794237fc4994e18991c33",
+			"size": 5771772,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

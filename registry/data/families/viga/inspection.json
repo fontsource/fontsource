@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 271,
+				"sha256": "27c1d4239e32a90b76aa75035a28e71cbb77aecf3aa8a668a7646d2534b7ba68"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/viga/Viga-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

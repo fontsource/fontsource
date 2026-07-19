@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Pattaya",
+	"id": "pattaya",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com), Copyright (c) 2010, Pablo Impallari (www.impallari.com|impallari@gmail.com), Copyright (c) 2010, 2011, Alexei Vanyashin (www.cyreal.org|a@cyreal.org), with Reserved Font Name Lobster.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pattaya",
+		"revision": "51957b419389f0881bac1545f2f0998be7d67190",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/pattaya",
+		"revision": "fec6c7a0c8b84949dcb2a1c6dbe1ec4ba12ca0d9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pattaya/Pattaya-Regular.ttf",
+			"sha256": "02b77f7f5b52e718a91230c8ea153bfe746e1d748dabded4e41d7e6765fa9889",
+			"size": 420092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,43 @@
+{
+	"category": "display",
+	"dateAdded": "2023-06-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Adam Jagosz",
+	"family": "Tektur",
+	"id": "tektur",
+	"license": {
+		"attribution": "Copyright 2023 The Tektur Project Authors (https://www.github.com/hyvyys/Tektur)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tektur",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/hyvyys/Tektur",
+		"revision": "0313e9612ed814c7a480fa54c7b295452b966954"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tektur/Tektur[wdth,wght].ttf",
+			"sha256": "a4c451e5336874811267c2a514efa09bca7bc8cabf32a310f0b44e111eacb933",
+			"size": 163160,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

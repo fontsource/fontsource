@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-03-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Square Peg",
+	"id": "square-peg",
+	"license": {
+		"attribution": "Copyright 1995-2021 The Square Peg Project Authors (https://github.com/googlefonts/square-peg)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/squarepeg",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/square-peg",
+		"revision": "ec1628592761b8b9e7713b6d2b463fb9724c6e8e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/squarepeg/SquarePeg-Regular.ttf",
+			"sha256": "eec103268e16f1f348482687964e5c1545c9c5888052cb48d1aa8dc9f27a37fc",
+			"size": 130916,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

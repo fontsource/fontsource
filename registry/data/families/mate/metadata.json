@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Mate",
+	"id": "mate",
+	"license": {
+		"attribution": "Copyright 2011 The Mate Project Authors (https://github.com/etunni/mate) with Reserved Font Name \"Mate\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mate",
+		"revision": "d92a4f3214862c9026ce734e85587dd68d88a5c2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/mate",
+		"revision": "2ea8febc952610379af663b1651411493d34beea"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mate/Mate-Italic.ttf",
+			"sha256": "52c32eaa806f093934883ee47df2cdb57fb000cbcb537c4982f45fb6decfc37f",
+			"size": 63944,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mate/Mate-Regular.ttf",
+			"sha256": "95480334bc38a94236f03cf1c8dec24ea5a906712a559598d40b322c61d14b43",
+			"size": 62816,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 219,
+				"sha256": "5dc0596d3130a4c6b345722810bba7d05c2ec85a0b0c5a07cd72cdb5b1491f79"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/sail/Sail-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 419,
+				"sha256": "3b5bd7e88acaecd655922d53cb65fd1e73562c371199f347dd400f236de13b36"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssaurashtra/NotoSansSaurashtra-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

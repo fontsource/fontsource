@@ -1,0 +1,3 @@
+ZCool Kuaile was created by a team of font design trainees under the leadership of typographer Liu Bingke. First, Liu created the character shape framework and design standards; then, a group of over 100 typography apprentices participated in building out the character set. Finally, Liu and other designers from his workshop, including Yang Kang and Wu Shaojie, edited and adjusted the characters to unify the design.
+
+To contribute to the ZCool Kuaile project, please visit [github.com/googlefonts/zcool-kuaile](https://github.com/googlefonts/zcool-kuaile).

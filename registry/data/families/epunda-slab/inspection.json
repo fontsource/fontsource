@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 553,
+				"sha256": "d6a7bd2e2a961d0fc419a79f5a18e30f3ca32f64be60d897a7b46e55c875353c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.103",
+			"outline": "glyf",
+			"path": "ofl/epundaslab/EpundaSlab-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 553,
+				"sha256": "d6a7bd2e2a961d0fc419a79f5a18e30f3ca32f64be60d897a7b46e55c875353c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.103",
+			"outline": "glyf",
+			"path": "ofl/epundaslab/EpundaSlab[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

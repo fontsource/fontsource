@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-09-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Anja Meiners",
+	"family": "ABeeZee",
+	"id": "abeezee",
+	"license": {
+		"attribution": "Copyright 2011 The ABeeZee Project Authors (https://github.com/googlefonts/abeezee) with Reserved Font Name ABeeZee",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/abeezee",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/abeezee",
+		"revision": "b9bd3f3522d91aca81eb668f56d40c2c62a90125"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/abeezee/ABeeZee-Italic.ttf",
+			"sha256": "3892bb74578207ed6edae040a0869e54dcae13a466d005460570947062137dd8",
+			"size": 47012,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/abeezee/ABeeZee-Regular.ttf",
+			"sha256": "2901c8df256648cc2bb2e3afb381cb8d28e65ed3dbe11de20695ae4d5ffdeda9",
+			"size": 46016,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-08-03",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Eli Block, Hana Tanimura, Noemie Le Coz",
+	"family": "Notable",
+	"id": "notable",
+	"license": {
+		"attribution": "Copyright 2018 The Notable Project Authors (https://github.com/googlefonts/notable)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notable",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/notable",
+		"revision": "e3426360fa15b1824f4694663271956e50514498"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notable/Notable-Regular.ttf",
+			"sha256": "fe5105a1e0b5c4daf1ea10730aac2fbbeaec3a6431e67eb827bf56e3a966d3c6",
+			"size": 38216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

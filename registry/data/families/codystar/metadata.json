@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Neapolitan",
+	"family": "Codystar",
+	"id": "codystar",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Font Diner, Inc DBA Neapolitan (diner@fontdiner.com) with Reseved Font Name \"Codystar Light\"\nCopyright (c) 2012 by Font Diner, Inc DBA Neapolitan (diner@fontdiner.com) with Reseved Font Name \"Codystar\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/codystar",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/codystar",
+		"revision": "e32d050fbb01232b6a85423b121da89f21bba8b3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/codystar/Codystar-Light.ttf",
+			"sha256": "fa1fcf4f00f3c35b82219320a2322f561bc9e7f5ae6ded498a28958f5c07a3c0",
+			"size": 101536,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/codystar/Codystar-Regular.ttf",
+			"sha256": "99f059a3e31afdaf3fea53d39bc62b15df38a5d882104ae1d1a5ca2df547c10a",
+			"size": 106500,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

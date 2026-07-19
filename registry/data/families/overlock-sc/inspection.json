@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 243,
+				"sha256": "60ca54d7946c0864d2f1bae20676e5e916aadc2fb9873ec474d55ae4171fc4b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/overlocksc/OverlockSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

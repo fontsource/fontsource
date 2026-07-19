@@ -1,0 +1,47 @@
+{
+	"id": "lepcha",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1C00",
+			"1C37"
+		],
+		[
+			"1C3B",
+			"1C49"
+		],
+		[
+			"1C4D",
+			"1C4F"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/lepcha_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "aad40cde66d98a6504ea75ab95dc5b37227ca1cc0a770a97cc4196671762c99b",
+		"upstream": "namFiles"
+	}
+}

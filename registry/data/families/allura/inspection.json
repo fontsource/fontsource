@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "279fdb8f9291b61acf71035f604335d9c831e8067f049f1f162aef4e53bdfc3f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.110",
+			"outline": "glyf",
+			"path": "ofl/allura/Allura-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

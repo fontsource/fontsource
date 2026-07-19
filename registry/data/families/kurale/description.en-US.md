@@ -1,0 +1,3 @@
+Kurale is a Latin, Cyrillic and Devanagari typeface derived from [Gabriela](https://fonts.google.com/specimen/Gabriela). The Latin and Cyrillic serif typeface with soft shapes, and special terminal forms which are shaped like curls. They connect each letter to create attractive word shapes and text blocks with a fine texture. The Devanagari is a modulated design that harmonises with the Latin original. In small bodies of text it works well for reading, and in headlines provides interesting details to catch the eye.
+
+This project is led by Eduardo Tunni, a type designer based in Buenos Aires. To contribute, see [github.com/etunni/kurale](https://github.com/etunni/kurale)

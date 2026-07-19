@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 355,
+				"sha256": "27a77398933b9be572bb37a9002d50687585523cb908b05f237ab862012cc6e9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanspsalterpahlavi/NotoSansPsalterPahlavi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

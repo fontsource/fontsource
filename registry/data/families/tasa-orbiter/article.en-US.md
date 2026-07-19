@@ -1,0 +1,13 @@
+TASA Orbiter is part of the TASA Typeface Collection—two typefaces originally commissioned by the [Taiwan Space Agency (TASA)](https://www.tasa.org.tw/en-US) as part of its institutional rebrand, and released under the SIL Open Font License. It is accompanied by its sibling typeface, [TASA Explorer](https://fonts.google.com/specimen/TASA+Explorer).
+
+TASA Orbiter is a neo-grotesque sans-serif that reflects the technical precision of space operations. Built from a systematic vocabulary of recurring forms, it features slightly squared counters and right-angled turns, reinforcing its mechanical tone.
+
+The original TASA typefaces (v1) were designed by Local Remote between 2022 and 2023. TASA Orbiter (v1) was released in 13 styles across three optical sizes: Text and Deck each had four weights, while Display included five weights.
+
+In 2025, both typefaces were updated by Weizhong Zhang with a focus on preserving their core design characteristics while enhancing drawing precision and readability. TASA Orbiter (v2) consolidated its optical size variants, reducing the total styles from 13 to five weights—streamlining the family in line with TASA Explorer. The new design is based on the former “Deck” optical size, with refined forms and spacing optimized for flexible use. The fonts now support the Google Fonts Core Latin character set, along with additional glyphs for Taiwanese Romanizations ([Tâi-lô](https://en.wikipedia.org/wiki/T%C3%A2i-u%C3%A2n_L%C3%B4-m%C3%A1-j%C4%AB_Phing-im_Hong-%C3%A0n) and [POJ](https://en.wikipedia.org/wiki/Pe%CC%8Dh-%C5%8De-j%C4%AB)).
+
+To contribute, see [github.com/localremotetw/TASA-Typeface-Collection](https://github.com/localremotetw/TASA-Typeface-Collection).
+
+* * *
+
+![](orbiter001.png) ![](orbiter002.png) ![](orbiter003.png)

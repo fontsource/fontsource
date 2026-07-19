@@ -1,0 +1,66 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "FontFuror",
+	"family": "Enriqueta",
+	"id": "enriqueta",
+	"license": {
+		"attribution": "Copyright 2018 The Enriqueta Project Authors (https://github.com/vv-monsalve/Enriqueta_2019)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/enriqueta",
+		"revision": "668fee8c5a8b6aca48d5482261168e20f0ce7382",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vv-monsalve/Enriqueta_2019",
+		"revision": "bdb2460d4ea80582af5d55c790650e645c629e8a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/enriqueta/Enriqueta-Bold.ttf",
+			"sha256": "bb453797b5e353990c4569994754c2496640f427331c9f33b51414ed56777412",
+			"size": 74088,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/enriqueta/Enriqueta-Medium.ttf",
+			"sha256": "be7455fe09db15b36ee858d66ac59d0ab31e37b04b4253099fd869258f9b5592",
+			"size": 74732,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/enriqueta/Enriqueta-Regular.ttf",
+			"sha256": "5e3aca4c6daf22188a92717b7ed53221519daa96b7f85117601ebf1890686716",
+			"size": 74508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/enriqueta/Enriqueta-SemiBold.ttf",
+			"sha256": "b866967948a53bd516d441c0b04f0bbc4b45061a8d1d57e7a8989eab2bd9cc18",
+			"size": 74272,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

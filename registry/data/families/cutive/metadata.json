@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-02-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Cutive",
+	"id": "cutive",
+	"license": {
+		"attribution": "Copyright 2012 The Cutive Project Authors (https://github.com/googlefonts/CutiveFont), with Reserved Font Names \"Cutive\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cutive",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/CutiveFont",
+		"revision": "d97e7cb29296a2c091568d01e3394ae87111bd39"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cutive/Cutive-Regular.ttf",
+			"sha256": "8f0eb3280328c0051bbe725ce9d68c9117484b769cf68dbacec4343ae92ee031",
+			"size": 74884,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 454,
+				"sha256": "64b38ce4aa86645d60137764d2d1f637730d4b616d37f3f9461d5fdd86257414"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/vibes/Vibes-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

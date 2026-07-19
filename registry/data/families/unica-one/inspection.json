@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 603,
+				"sha256": "8fc15ef69282c6a2323ddb54462fe35dfbfa472295929e113c52aead242d2b30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/unicaone/UnicaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

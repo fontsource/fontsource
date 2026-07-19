@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "872540f1fc88b38f115a725576a2023f7733f01f51482334c6717e2fc494c16d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/timmana/Timmana-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

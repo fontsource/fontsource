@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 395,
+				"sha256": "17d0a95e2760549ee4075c9cfbc9675eaf875e5eca3b36a8306259e18509c9bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanswancho/NotoSansWancho-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

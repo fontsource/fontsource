@@ -1,0 +1,94 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-04-20",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dan Reynolds",
+	"family": "Martel",
+	"id": "martel",
+	"license": {
+		"attribution": "Copyright (c) 2015 Dan Reynolds. Copyright (c) 2010-2015, Sorkin Type Co (www.sorkintype.com) with Reserved Font Name 'Merriweather'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/martel",
+		"revision": "65f72f0ad55a7c8f5b1b71bb57addae8b3c06254",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typeoff/martel",
+		"revision": "76c161e71bc7c8c9304b4b6c468e9dd2ddc34661"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/martel/Martel-Bold.ttf",
+			"sha256": "072b7259061a99128e50056b081024975dfc6e4c0b265ab99f75bf66bd50c338",
+			"size": 170240,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/martel/Martel-DemiBold.ttf",
+			"sha256": "6be979323225cd9d1a3964403b2771816e007610ee68d8d4bf08a75f2e7e08bf",
+			"size": 170100,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/martel/Martel-ExtraBold.ttf",
+			"sha256": "5bc47c0d423242f1dc9f7e33246cf264c72fb0672ebc76d4774494fe71ccf9a4",
+			"size": 170900,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/martel/Martel-Heavy.ttf",
+			"sha256": "6122fc615d2ea31a44380737c679d6193a2de5a263f6bd6b329679b4f640609e",
+			"size": 164364,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/martel/Martel-Light.ttf",
+			"sha256": "589537240a3d2c06793c5e7d5f85fc60a4ceba9b95e35206f3a7b5d90f6f6938",
+			"size": 170540,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/martel/Martel-Regular.ttf",
+			"sha256": "b733e56144115d5da6a6415d2971ab97b7262948d172e27309ad00ce9096b876",
+			"size": 170196,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/martel/Martel-UltraLight.ttf",
+			"sha256": "775fa07561b055b31297ad2f05bf5f45eddc1645318ed2c419724a41b09cf010",
+			"size": 168700,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

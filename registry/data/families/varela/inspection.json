@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 531,
+				"sha256": "befccf17486095263e691101acdf45c80dec403b291a4f5a0f52f690391c5d56"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/varela/Varela-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

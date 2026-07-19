@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 579,
+				"sha256": "3cec7a7a2016695a9d02a1c80473d67d0ac2e9a042c8cb7be210fcc52230e7ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/thenautigal/TheNautigal-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 579,
+				"sha256": "3cec7a7a2016695a9d02a1c80473d67d0ac2e9a042c8cb7be210fcc52230e7ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/thenautigal/TheNautigal-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

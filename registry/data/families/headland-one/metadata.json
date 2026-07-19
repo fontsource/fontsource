@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-05-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Gary Lonergan",
+	"family": "Headland One",
+	"id": "headland-one",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com), with Reserved Font Name \"Headland\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/headlandone",
+		"revision": "5ddce0bbf3a5b9838b36846bd3e1333e54135ed4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/headlandone",
+		"revision": "fe8d141e82ed1697ae76dcea8c524acb2eef0490"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/headlandone/HeadlandOne-Regular.ttf",
+			"sha256": "b09ae2dd08b296e1e0d9af93f5c34899d6a04d6c57aff766409f8a96d085f3a4",
+			"size": 149692,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

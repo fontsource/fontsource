@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 367,
+				"sha256": "838767a93f9df063fe4482eccaf4daa0adc0bfff93f36decd5a8d0e687fc0d24"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/luckiestguy/LuckiestGuy-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

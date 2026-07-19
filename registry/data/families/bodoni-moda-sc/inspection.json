@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 11,
+					"max": 96,
+					"min": 6,
+					"tag": "opsz"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 428,
+				"sha256": "7bd35a401b728af4ee93e321730d35aaa1c9cae57584859ec3888a003c218189"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005",
+			"outline": "glyf",
+			"path": "ofl/bodonimodasc/BodoniModaSC-Italic[opsz,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 11,
+					"max": 96,
+					"min": 6,
+					"tag": "opsz"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 428,
+				"sha256": "7bd35a401b728af4ee93e321730d35aaa1c9cae57584859ec3888a003c218189"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005",
+			"outline": "glyf",
+			"path": "ofl/bodonimodasc/BodoniModaSC[opsz,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

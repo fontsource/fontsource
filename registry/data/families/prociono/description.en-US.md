@@ -1,0 +1,1 @@
+Prociono (pro-tsee-O-no) is an Esperanto word meaning either the star Procyon or the animal species known as the raccoon. It is a roman with blackletter elements. To learn more, see [bitbucket.org/sortsmill/sortsmill-fonts](https://bitbucket.org/sortsmill/sortsmill-fonts) and [theleagueofmoveabletype.com/prociono](https://www.theleagueofmoveabletype.com/prociono)

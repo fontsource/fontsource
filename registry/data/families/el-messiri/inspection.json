@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "37070876e2fb6f7c37591136e4188cc2aaa77ccb51f60a1d2bf324ff70ac7228"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.020",
+			"outline": "glyf",
+			"path": "ofl/elmessiri/ElMessiri[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

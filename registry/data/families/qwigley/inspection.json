@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 447,
+				"sha256": "0ff65149158dd451465afd7dfdbc1d65dff67158b38d1e5fe93ebc73220e2e30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/qwigley/Qwigley-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

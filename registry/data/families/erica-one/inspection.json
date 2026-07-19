@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 245,
+				"sha256": "d005c14cc491ce5a94c7f7f1d51bef21886744c215a6f629aee4177a7307b67a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/ericaone/EricaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

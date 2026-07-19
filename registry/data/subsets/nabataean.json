@@ -1,0 +1,35 @@
+{
+	"id": "nabataean",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10880",
+			"1089E"
+		],
+		[
+			"108A7",
+			"108AF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/nabataean_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "f348210f99419320783fa7afc979c72bd09689e8e0448cbcdd19c344d5be29e0",
+		"upstream": "namFiles"
+	}
+}

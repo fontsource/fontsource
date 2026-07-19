@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1104,
+				"sha256": "56d3fd213b817a0b6ffbdad5111200351cd76ac2fa700bdf19abe325766aa635"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/gfsneohellenic/GFSNeohellenic.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 876,
+				"sha256": "1d0b8b67bbd90914d08e4256a7af130947fc60ca567405cc8c059256c08c063f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/gfsneohellenic/GFSNeohellenicBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 880,
+				"sha256": "8bf88966c859759d61efd481b7300afb0f5fd63ab621d7295b2317c0cc5ea5dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/gfsneohellenic/GFSNeohellenicBoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 879,
+				"sha256": "7bfcb4956e7ccb2d623580abfb82e6380bf885f95fd2084eded29d1ed8146efe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/gfsneohellenic/GFSNeohellenicItalic.ttf",
+			"style": "italic",
+			"weight": 400
+		}
+	]
+}

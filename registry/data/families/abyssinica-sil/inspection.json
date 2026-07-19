@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 862,
+				"sha256": "f32474bbbaf37811a1165fe465eeb5dda3efe73c17aa91875444719562405a6e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.300",
+			"outline": "glyf",
+			"path": "ofl/abyssinicasil/AbyssinicaSIL-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

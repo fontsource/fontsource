@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tifinagh"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Tifinagh",
+	"id": "noto-sans-tifinagh",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tifinagh)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanstifinagh",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/tifinagh",
+		"revision": "6c19a68ff330ec938fb21d6be8c94b2183e1b077"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanstifinagh/NotoSansTifinagh-Regular.ttf",
+			"sha256": "b08755bdee9835ebbca1095460e36a9e2f3ae396919fd0fa2377d9b4a3388f7e",
+			"size": 117568,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 550,
+				"sha256": "378a95de4c4690c48d0c015a55480ade5fa6ac8d0751f0501650e27bf3148f00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/indieflower/IndieFlower-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

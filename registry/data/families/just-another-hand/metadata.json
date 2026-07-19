@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2010-12-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Just Another Hand",
+	"id": "just-another-hand",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/justanotherhand",
+		"revision": "9bd941c4194f760ad356a38cade454f4e9423c6d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/justanotherhand",
+		"revision": "151e64a17c149d2d5f75040e7ce8783810b9b818"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/justanotherhand/JustAnotherHand-Regular.ttf",
+			"sha256": "f1cd102ebacdb6388c879c9d481d63908ee0d5939a301415a78cdfdc752f79ea",
+			"size": 191076,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

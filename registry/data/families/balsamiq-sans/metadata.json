@@ -1,0 +1,68 @@
+{
+	"category": "display",
+	"dateAdded": "2020-04-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Michael Angeles",
+	"family": "Balsamiq Sans",
+	"id": "balsamiq-sans",
+	"license": {
+		"attribution": "Copyright 2011 The Balsamiq Sans Project Authors (https://github.com/balsamiq/balsamiqsans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/balsamiqsans",
+		"revision": "dc4174ea7e6302897638732e11a47f2cc978ec95",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/balsamiq/balsamiqsans",
+		"revision": "b1dca64c3ceeaa3c274f69fae5a6f508b9a4dcc4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/balsamiqsans/BalsamiqSans-Bold.ttf",
+			"sha256": "a3302bd8424e6a37704eb5e20d5c5a3a2fd80feaf57e48a19d261f8e0c583621",
+			"size": 369860,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/balsamiqsans/BalsamiqSans-BoldItalic.ttf",
+			"sha256": "4999588a66defbf39e718b3edb0b965b932157bd8d1321130de06bec0cdccc75",
+			"size": 351304,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/balsamiqsans/BalsamiqSans-Italic.ttf",
+			"sha256": "0a287472035409f556acd66c1c926047ee9829a62f88b0fa273591332a8606df",
+			"size": 379924,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/balsamiqsans/BalsamiqSans-Regular.ttf",
+			"sha256": "fcc9c00a9ad6e78673fa84653745569097241d99b5d1387a23f395858ed46b7e",
+			"size": 407528,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

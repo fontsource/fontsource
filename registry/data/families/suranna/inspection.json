@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "a692894020a7df43bb079eab8a6a79d1592e69884ef8463d4b84ab682b7a0ea4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.5; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/suranna/Suranna-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

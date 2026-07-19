@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 253,
+				"sha256": "47942cb46aff6e6d982dda00c0ecf93e497a368a0eda02477ddf3d832b75bdbd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "ofl/lustria/Lustria-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-07-21",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Erik Kennedy",
+	"family": "Figtree",
+	"id": "figtree",
+	"license": {
+		"attribution": "Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/figtree",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/erikdkennedy/figtree",
+		"revision": "032dfa7fe219ef3a02890d6d3add84eacc9aebfe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/figtree/Figtree-Italic[wght].ttf",
+			"sha256": "94dec1f18b9275d69e8b4a91b6514bdc18199048347e1c36e1285b11b0b87653",
+			"size": 62632,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/figtree/Figtree[wght].ttf",
+			"sha256": "26ad3db9b31ff7dde67a91ff515d022d2f495cd506590699cf264f0bfe6fb714",
+			"size": 62712,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

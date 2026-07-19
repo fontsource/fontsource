@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dario Manuel Muhafara",
+	"family": "Overlock SC",
+	"id": "overlock-sc",
+	"license": {
+		"attribution": "Copyright (c) 2011, Dario Manuel Muhafara (http://www.tipo.net.ar dario@tipo.net.ar), with Reserved Font Name \"Overlock\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/overlocksc",
+		"revision": "179ef08c451ad953de595700c46cec1fa5d3f302",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/overlocksc/OverlockSC-Regular.ttf",
+			"sha256": "35432623a400a074e3931b7c4958e00479cbdfa8484a23f6fbba8dfc94976675",
+			"size": 36640,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

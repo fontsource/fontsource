@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 219,
+				"sha256": "1dfaf8eb45c1f844a3aa087455ed934835ce1d7d3bd2ca478e092f19afba2817"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/happymonkey/HappyMonkey-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

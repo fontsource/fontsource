@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 439,
+				"sha256": "7ac78ef9d0998e3c85f0afe7cde941dfab5fd6a377330daefb0396ac5b6e01d8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002g;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.4.1)",
+			"outline": "glyf",
+			"path": "ofl/yatraone/YatraOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

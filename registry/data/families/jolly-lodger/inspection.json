@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "944bdfb0fa3337e3d8e923dde7073650b89fe5cef9f8b066afc918f3dc12debb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/jollylodger/JollyLodger-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

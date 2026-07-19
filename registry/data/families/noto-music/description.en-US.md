@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Music is a font that contains symbols for the modern, Byzantine and Greek _musical notations_. It has 579 glyphs.

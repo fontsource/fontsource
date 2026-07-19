@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Carattere",
+	"id": "carattere",
+	"license": {
+		"attribution": "Copyright 2020 The Carattere Project Authors (https://github.com/googlefonts/carattere)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/carattere",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/carattere",
+		"revision": "18fbebe0c73ec82068be167eb3e63a795bd814ac"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/carattere/Carattere-Regular.ttf",
+			"sha256": "2ee075b50a75aeaea0d976d916b535fbcd423a684e97fe8536fd8f9efe905ae6",
+			"size": 124884,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

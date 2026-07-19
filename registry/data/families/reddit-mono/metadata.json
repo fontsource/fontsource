@@ -1,0 +1,40 @@
+{
+	"category": "monospace",
+	"dateAdded": "2024-02-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Stephen Hutchings, OrangeRed",
+	"family": "Reddit Mono",
+	"id": "reddit-mono",
+	"license": {
+		"attribution": "Copyright (c) 2020-2023, Reddit, Inc. (https://github.com/reddit/redditsans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/redditmono",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/reddit/redditsans",
+		"revision": "60e19b50bde6de34b695591a8a047a6a3618a37c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/redditmono/RedditMono[wght].ttf",
+			"sha256": "5b092e066eb178a4450a5cb53469015468ec33e19716a4cbf9257eaf1e5a10c2",
+			"size": 203908,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"arabic",
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mohamed Gaber, Jovanny Lemonad",
+	"family": "El Messiri",
+	"id": "el-messiri",
+	"license": {
+		"attribution": "Copyright 2015 The El Messiri Project Authors (https://github.com/Gue3bara/El-Messiri)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/elmessiri",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Gue3bara/El-Messiri",
+		"revision": "553b98d8e374318694b50862849af666268fd278"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/elmessiri/ElMessiri[wght].ttf",
+			"sha256": "5d58d5259d2accccba39cffe12e1226e88b6afc5150e3605eb2a9c2fe06ccab0",
+			"size": 138664,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

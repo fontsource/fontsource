@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-03-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil"
+	],
+	"designer": "Tiro Typeworks, Fernando Mello, Fiona Ross, Kaja Słojewska",
+	"family": "Tiro Tamil",
+	"id": "tiro-tamil",
+	"license": {
+		"attribution": "Copyright 2020 The Indigo Project Authors (https://github.com/TiroTypeworks/Indigo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tirotamil",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Indigo",
+		"revision": "98b5d3a01c534b7029af04a59d31e0d7d90be15a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tirotamil/TiroTamil-Italic.ttf",
+			"sha256": "9571f0048b9f25411ff020ec037d2c7e257c5fc2b043c18533e305ea4aa193e6",
+			"size": 198584,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tirotamil/TiroTamil-Regular.ttf",
+			"sha256": "f4ad26a93893a45fcb44bf117940d462c5aef1887543e9b8bf150767e597a76f",
+			"size": 197432,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

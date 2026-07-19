@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 436,
+				"sha256": "e715bece79415207d909ab399657cbb2108b7fa1d3658263055b5e95a8c5e1ef"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/hubballi/Hubballi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

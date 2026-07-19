@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 493,
+				"sha256": "020c09e973e2e30629bfc40e51b10cfde0aaa43da2fb36ba48efc753b0c4ac8f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.04",
+			"outline": "glyf",
+			"path": "ofl/castoro/Castoro-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 493,
+				"sha256": "020c09e973e2e30629bfc40e51b10cfde0aaa43da2fb36ba48efc753b0c4ac8f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.04",
+			"outline": "glyf",
+			"path": "ofl/castoro/Castoro-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

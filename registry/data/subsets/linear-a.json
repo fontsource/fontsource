@@ -1,0 +1,43 @@
+{
+	"id": "linear-a",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10107",
+			"10133"
+		],
+		[
+			"10600",
+			"10736"
+		],
+		[
+			"10740",
+			"10755"
+		],
+		[
+			"10760",
+			"10767"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/linear-a_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "35bab68ec9d2e0db10619b03a4367a6a6d24c41ca2e8fa2ed20926226164dca4",
+		"upstream": "namFiles"
+	}
+}

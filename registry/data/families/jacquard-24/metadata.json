@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2024-03-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sarah Cadigan-Fried",
+	"family": "Jacquard 24",
+	"id": "jacquard-24",
+	"license": {
+		"attribution": "Copyright 2023 The Soft Type Project Authors (https://github.com/scfried/soft-type-jacquard)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jacquard24",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/scfried/soft-type-jacquard",
+		"revision": "b11565152caccd6eaedce5fe2ca0e377d1a7c597"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jacquard24/Jacquard24-Regular.ttf",
+			"sha256": "8e5b1bdb8b6087d6175f1d9edd2634e38b10fb109c0955c24ad55272a866ed49",
+			"size": 313588,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

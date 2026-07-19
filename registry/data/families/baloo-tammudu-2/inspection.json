@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 815,
+				"sha256": "4f0421492ee23af934c310f51b680b8f3d387818f76f476ce84f24263b1e3932"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/balootammudu2/BalooTammudu2[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

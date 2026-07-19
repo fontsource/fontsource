@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Marcelo Magalhães",
+	"family": "Londrina Sketch",
+	"id": "londrina-sketch",
+	"license": {
+		"attribution": "Copyright 2011 The Londrina Sketch Authors (https://github.com/marcelommp/Londrina-Typeface), with Reserved Font Name \"Londrina Sketch\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/londrinasketch",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/marcelommp/Londrina-Typeface",
+		"revision": "7f4129ee609e13f4dc9bcdce6f8a08f5d9bc8060"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/londrinasketch/LondrinaSketch-Regular.ttf",
+			"sha256": "1d3b7beeda7015014412c916e205016ed66d1f8298a97dce0ca3ae2d13271c9f",
+			"size": 332856,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Hanalei",
+	"id": "hanalei",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Hanalei\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hanalei",
+		"revision": "0325655f1752c800577dab063e341372657c560b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/hanalei",
+		"revision": "ec0b5be2259cfe4261f530047d60de8617eabf80"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hanalei/Hanalei-Regular.ttf",
+			"sha256": "000ddd2a6be57f52aa41876c2ba71310e2a711f0343c1bdd71e43c9f137000f6",
+			"size": 184176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

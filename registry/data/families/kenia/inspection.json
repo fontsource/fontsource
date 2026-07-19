@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 199,
+				"sha256": "df1f425d553909dfdc3d335fac9ed72f699032379802198d2a74e056a67f5cfd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/kenia/Kenia-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

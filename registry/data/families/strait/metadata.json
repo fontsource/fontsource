@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Strait",
+	"id": "strait",
+	"license": {
+		"attribution": "Copyright 2012 The Strait Project Authors (https://github.com/etunni/strait), with Reserved Font Name 'Strait'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/strait",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/Strait",
+		"revision": "527c8d122601563758492117058d6727aa58cd32"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/strait/Strait-Regular.ttf",
+			"sha256": "f705c4ade7470e084582b1f5a1f1e45c16524c7b30ce81204c76236ef4ffbb38",
+			"size": 58448,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

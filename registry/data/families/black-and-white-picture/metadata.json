@@ -1,0 +1,35 @@
+{
+	"category": "display",
+	"dateAdded": "2018-02-27",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "AsiaSoft Inc.",
+	"family": "Black And White Picture",
+	"id": "black-and-white-picture",
+	"license": {
+		"attribution": "Copyright (c) 1992-2018 AsiaSoft Inc. Seoul Korea All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/blackandwhitepicture",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/blackandwhitepicture/BlackAndWhitePicture-Regular.ttf",
+			"sha256": "4d72cd6de1f210b446c86f06b4e13d7641cbcfb1b375c6927341388aa8e08056",
+			"size": 9606352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

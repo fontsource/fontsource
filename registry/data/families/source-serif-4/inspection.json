@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 20,
+					"max": 60,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 918,
+				"sha256": "f8c74e4b0624dd7653db0e6d02eaa4f964a88e749f8a1e0359a1d296dc3c4006"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.004;hotconv 1.0.116;makeotfexe 2.5.65601",
+			"outline": "glyf",
+			"path": "ofl/sourceserif4/SourceSerif4-Italic[opsz,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 20,
+					"max": 60,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 918,
+				"sha256": "f8c74e4b0624dd7653db0e6d02eaa4f964a88e749f8a1e0359a1d296dc3c4006"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.004;hotconv 1.0.116;makeotfexe 2.5.65601",
+			"outline": "glyf",
+			"path": "ofl/sourceserif4/SourceSerif4[opsz,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

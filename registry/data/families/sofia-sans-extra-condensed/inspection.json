@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 1000,
+					"min": 1,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 604,
+				"sha256": "2ce25e5187acb42307a1cb6996a61ee5537938b5bef1c6890345c0e78271e6c1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.101",
+			"outline": "glyf",
+			"path": "ofl/sofiasansextracondensed/SofiaSansExtraCondensed-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 1000,
+				"min": 1
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 1000,
+					"min": 1,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 606,
+				"sha256": "b788431f959ea355db343ba130f98d5932b3b77f8831f9260d9c305d115244b5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.101",
+			"outline": "glyf",
+			"path": "ofl/sofiasansextracondensed/SofiaSansExtraCondensed[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 1000,
+				"min": 1
+			}
+		}
+	]
+}

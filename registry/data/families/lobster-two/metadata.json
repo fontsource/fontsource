@@ -1,0 +1,65 @@
+{
+	"category": "display",
+	"dateAdded": "2011-06-21",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Lobster Two",
+	"id": "lobster-two",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Pablo Impallari (www.impallari.com impallari@gmail.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lobstertwo",
+		"revision": "e1051bf966ef88f4539d72dde88599ffad3deb16",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lobstertwo/LobsterTwo-Bold.ttf",
+			"sha256": "5255b383fc8aa432e4e7e5f8005210477c0983370adc6ad6205c9bd2cd1ceb76",
+			"size": 241104,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lobstertwo/LobsterTwo-BoldItalic.ttf",
+			"sha256": "980ee087455f1f0a96fb2ea74bef441a2bf29048e2c739d11683d330cfc19329",
+			"size": 235632,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lobstertwo/LobsterTwo-Italic.ttf",
+			"sha256": "c727ae1d9e1e166a7c0679fcf79c2ff0c21bc5483ee253fdfee2f5792c0bebd9",
+			"size": 249896,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lobstertwo/LobsterTwo-Regular.ttf",
+			"sha256": "be3d8ce18188bc559de37e4355f5f902b4960a7b65a99efb78c03bb65bb782e6",
+			"size": 254332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

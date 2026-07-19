@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "80dec24f6155789b18d3c28ebabc51be38daf88b58384c2eea936a09e8ce4812"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/aclonica/Aclonica-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

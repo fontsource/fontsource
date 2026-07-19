@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 235,
+				"sha256": "17f62477dcef8351e78efb4ae8695496ea92f8a30e6a3768dd95b3ec5edddda7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/bubblegumsans/BubblegumSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2023-07-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Rosalie Wagner",
+	"family": "Borel",
+	"id": "borel",
+	"license": {
+		"attribution": "Copyright 2023 The Borel Project Authors (https://github.com/RosaWagner/Borel)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/borel",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/RosaWagner/Borel",
+		"revision": "68b8266ec6b70c4753b46753c8b103d2ee50b7c8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/borel/Borel-Regular.ttf",
+			"sha256": "14ba894fe6b13f361c5beafab15048b90c4abbf282e3dbb477672462b323b3a8",
+			"size": 227452,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

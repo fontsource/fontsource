@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "1843772c9a33225c80a7b15576ed99720f51df65d941ea58630b2fbeda066feb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssunuwar/NotoSansSunuwar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

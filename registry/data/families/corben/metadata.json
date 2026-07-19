@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2010-12-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Corben",
+	"id": "corben",
+	"license": {
+		"attribution": "Copyright (c) 2010, 2011 by vernon adams (vern@newtypography.co.uk) with Reserved Font Name 'Corben'.\nCopyright (c) 2010, 2011 by vernon adams (vern@newtypography.co.uk) with Reserved Font Name 'Corben'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/corben",
+		"revision": "848e1a926ba00990a9621b9629c84405639db40c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/corben",
+		"revision": "94d5b00e6b64f85258d17e766a1e8e6d85554adc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/corben/Corben-Bold.ttf",
+			"sha256": "1fb5959682b89680467ab628e2f1e6359c6062acbb7edcea14ffcca1124db0f1",
+			"size": 125892,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/corben/Corben-Regular.ttf",
+			"sha256": "dd2c2697a8f936a43b5f0a2bae1bc82cdaf40f8a5fc1d15c1ecd562b3ea16044",
+			"size": 35268,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

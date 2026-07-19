@@ -1,0 +1,85 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-02-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tifinagh"
+	],
+	"designer": "SIL International",
+	"family": "Akatab",
+	"id": "akatab",
+	"license": {
+		"attribution": "Copyright (c) 2010-2025, SIL Global (https://scripts.sil.org), with Reserved Font Name \"Akatab\", copyright 2010-2019 Adobe (http://www.adobe.com/), with Reserved Font Name \"Source\" (Latin glyphs).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/akatab",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-akatab",
+		"revision": "54e989b80bf4c99a2b16dc40710083b2b80ebaef"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/akatab/Akatab-Black.ttf",
+			"sha256": "31ddec2b9ed113d6003368ca61efe3707df5e93804f337aca6d5d24a1f2700e1",
+			"size": 112912,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/akatab/Akatab-Bold.ttf",
+			"sha256": "d7bf342248fa07fcc0e3aeb186f1f9286e10c8465ee427dd74776c3ba1a10fab",
+			"size": 111848,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/akatab/Akatab-ExtraBold.ttf",
+			"sha256": "d56e1275568d4a88d66ce20fb7987d3adb90cafac1976a941b756719e753e58f",
+			"size": 112412,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/akatab/Akatab-Medium.ttf",
+			"sha256": "e0ce76da55ce20a8ae5159efcca7cfe9ab01749d8338d6a8c47b7415c166aa52",
+			"size": 111400,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/akatab/Akatab-Regular.ttf",
+			"sha256": "7efecab54eb02e1b47087ec1ebbe6ac32b4308ac02e18f71c1f7567ec4d69fb4",
+			"size": 110568,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/akatab/Akatab-SemiBold.ttf",
+			"sha256": "e5a581ce73fa4ead0fc5129c330033f042ab3fcc08475ea38cdeb03efa3bc0c8",
+			"size": 111972,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

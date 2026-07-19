@@ -1,0 +1,120 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jasper de Waard",
+	"family": "Proza Libre",
+	"id": "proza-libre",
+	"license": {
+		"attribution": "Copyright (c) 2013 by Jasper de Waard. All rights reserved.\nCopyright (c) 2015 by Jasper de Waard. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/prozalibre",
+		"revision": "29b31c8ec653b25c6e1f8f3d5a84061609ea570b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/jasperdewaard/Proza-Libre",
+		"revision": "45ea7bb14c2301988fbda75fc27374f63e33c19c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/prozalibre/ProzaLibre-Bold.ttf",
+			"sha256": "155f135da4859922f840620c299837d88acd6c6273202b1b08e0dbba3a8838d1",
+			"size": 102672,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-BoldItalic.ttf",
+			"sha256": "a508154c1aa22dfffc51b21a8568a8509eddb532368da9e7dfae2a85d41f8ecb",
+			"size": 101248,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-ExtraBold.ttf",
+			"sha256": "7b88432fceff3c94831fc62054bbc42f4ae64de0d96dd8eb9c022975f175b58c",
+			"size": 116944,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-ExtraBoldItalic.ttf",
+			"sha256": "0d40c91a1cb50e6eda8850225d688d178409a5e7bfaf64cffeb76738c34a68ca",
+			"size": 114252,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-Italic.ttf",
+			"sha256": "b21d2f756992d6e3e049fb79c9d889ac670e975ad1613fe1cea2ad91d856558d",
+			"size": 98044,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-Medium.ttf",
+			"sha256": "3d93e4b2ba6cc5fbef8bed3d7865b42153494710debb0598244eeffb98265484",
+			"size": 100744,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-MediumItalic.ttf",
+			"sha256": "511a83c00b05714b3f693a79d2097158bd75234bbaf74b488bbd910a5aa1ba72",
+			"size": 100832,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-Regular.ttf",
+			"sha256": "0a8508f0bd14dc0d5accd3f06873560fbbefc16956c135520952de1af0dfe162",
+			"size": 98400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-SemiBold.ttf",
+			"sha256": "2e50bc0e72d8b5f6517f11b3bcd35a03f4e1c8b452b3bb6497ebc98f2d6bb4dd",
+			"size": 122408,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/prozalibre/ProzaLibre-SemiBoldItalic.ttf",
+			"sha256": "452c5bf342f972cc31ed97856cd1d6de7926af7c8dc00a47bd16a4b850fa6079",
+			"size": 101668,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

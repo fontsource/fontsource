@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7238,
+				"sha256": "4c33eac582d8b23096c4b7e8a9d2f170034e9f9e91ec8460dc495aaafec10034"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.170; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoseriftangut/NotoSerifTangut-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

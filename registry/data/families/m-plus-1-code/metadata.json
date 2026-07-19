@@ -1,0 +1,41 @@
+{
+	"category": "monospace",
+	"dateAdded": "2021-09-22",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Coji Morishita",
+	"family": "M PLUS 1 Code",
+	"id": "m-plus-1-code",
+	"license": {
+		"attribution": "Copyright 2021 The M+ FONTS Project Authors (https://github.com/coz-m/MPLUS_FONTS)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mplus1code",
+		"revision": "badb95c58fccad31fa1c5c29c5dcbced87d695ec",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/coz-m/MPLUS_FONTS",
+		"revision": "4bf69824e45a175b9121b248c46abff103569051"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mplus1code/MPLUS1Code[wght].ttf",
+			"sha256": "ff68678c5bd7e9d9d6ab6d57e4355aabe30f6b8f8bff9bd59baf6a7807dcfd36",
+			"size": 3933000,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-10"
+}

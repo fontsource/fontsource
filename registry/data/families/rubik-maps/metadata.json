@@ -1,0 +1,44 @@
+{
+	"category": "display",
+	"dateAdded": "2023-11-23",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Maps",
+	"id": "rubik-maps",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikmaps",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "6555502a8b48b1aa3b8c773d34a871a9fb84a2b8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikmaps/RubikMaps-Regular.ttf",
+			"sha256": "ebb439b66ec111e6ca61f9081801cb35445afcedbb3d9749932979d65c69efa1",
+			"size": 2264632,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

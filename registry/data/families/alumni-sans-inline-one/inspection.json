@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 593,
+				"sha256": "360d6cc67daf24a441bc9e1cf0884c0f3d34955af2fcdff25c035ffb95e301ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/alumnisansinlineone/AlumniSansInlineOne-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 593,
+				"sha256": "360d6cc67daf24a441bc9e1cf0884c0f3d34955af2fcdff25c035ffb95e301ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/alumnisansinlineone/AlumniSansInlineOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

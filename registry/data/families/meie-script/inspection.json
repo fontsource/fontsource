@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 220,
+				"sha256": "6f45e0bd5cf7c3f76002245be9b90ea2dd1c87f8293a30b6d804b3b98298cf65"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/meiescript/MeieScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

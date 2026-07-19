@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 359,
+				"sha256": "c1640b44dcde69b77d84581aeb12f8777446d99fabd0396a8fcf19db56139482"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.201; ttfautohint (v0.8) -r 50 -G 200 -x",
+			"outline": "glyf",
+			"path": "ofl/oxygenmono/OxygenMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-hungarian"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Old Hungarian",
+	"id": "noto-sans-old-hungarian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-hungarian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansoldhungarian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/old-hungarian",
+		"revision": "1e4081448c3313c4486e148b86aff6cbbc1584d5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansoldhungarian/NotoSansOldHungarian-Regular.ttf",
+			"sha256": "c23b363986fabc168af489c5d4eaf3c10fbb110599ffe6ca3b2eac777aa73079",
+			"size": 113692,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

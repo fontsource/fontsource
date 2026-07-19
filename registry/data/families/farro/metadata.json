@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-07-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Grayscale",
+	"family": "Farro",
+	"id": "farro",
+	"license": {
+		"attribution": "Copyright 2018 The Farro Project Authors (https://github.com/grayscaleltd/farro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/farro",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/grayscaleltd/farro",
+		"revision": "fa80aadd0c61b6e76d95870579d0650f9d91df76"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/farro/Farro-Bold.ttf",
+			"sha256": "7671a5d122d2e303c7ecdbeb0e3ce552ec8ab644484d587e72ac71a06d3d9a07",
+			"size": 68004,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/farro/Farro-Light.ttf",
+			"sha256": "0e66c58243c6f4f7b10ea268b52687c627d658d607493865aee474acf2b5d7fb",
+			"size": 68252,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/farro/Farro-Medium.ttf",
+			"sha256": "a5447bf5122e9a9804007c56353653ee7f223008120d428a5176a028ec697c80",
+			"size": 68928,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/farro/Farro-Regular.ttf",
+			"sha256": "eed5807e2779c1fba1a1627a1d34b0450e4fc6a87200522e2f3e3f617221c82b",
+			"size": 68588,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

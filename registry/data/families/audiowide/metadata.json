@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-04-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Audiowide",
+	"id": "audiowide",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Audiowide\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/audiowide",
+		"revision": "531939b3ed365d0ee9d985c842062d25830c0ceb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/audiowide",
+		"revision": "eccbd790f5c851314d6c4409a2058156a3186782"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/audiowide/Audiowide-Regular.ttf",
+			"sha256": "c7c0f2b0f6fad8c623e31772ce79f94a4edb9321ffce9fce978ea892d20ae730",
+			"size": 69916,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

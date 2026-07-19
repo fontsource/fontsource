@@ -1,0 +1,67 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "KB Studio",
+	"family": "Mirza",
+	"id": "mirza",
+	"license": {
+		"attribution": "Copyright 2015, 2016 KB-Studio (www.k-b-studio.com|tarobish@gmail.com). Copyright 2015, 2016 Lasse Fister (lasse@graphicore.de). Copyright 2015, 2016 Eduardo Tunni(edu@tipo.net.ar).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mirza",
+		"revision": "38a9f27b1115cd1fa5e1fef9d5055d176d8afd1b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Tarobish/Mirza",
+		"revision": "fa7b59c92953e7f437d079a8c118a7952c507f09"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mirza/Mirza-Bold.ttf",
+			"sha256": "306b412a39d9f93ca840c13ca62300eb5c7712e2afa94bd7ef2272b51131be6d",
+			"size": 177052,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/mirza/Mirza-Medium.ttf",
+			"sha256": "423532407cc832ef84cc8f08a3359f26b50e721c8aa0e00221e4215cc83440b3",
+			"size": 177352,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/mirza/Mirza-Regular.ttf",
+			"sha256": "5b1ac6cb285ca3492e313a53d5252b9784bf7607f2835a2d44cb3cbad0168539",
+			"size": 177820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mirza/Mirza-SemiBold.ttf",
+			"sha256": "4225215d0df4ad389c4ac29d48fddc531703776591ade64c23f6f995669d4078",
+			"size": 177188,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

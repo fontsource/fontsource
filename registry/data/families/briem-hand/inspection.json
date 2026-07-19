@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1139,
+				"sha256": "17035735f767bb0cc6c192b6855fdfe7c779e046b0f67401dd4caeed5bbb5bd2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/briemhand/BriemHand[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"balinese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Balinese",
+	"id": "noto-sans-balinese",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/balinese)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansbalinese",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/balinese",
+		"revision": "e6c2d4c19072cb6da80d74ad9f683b749f5b6f00"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansbalinese/NotoSansBalinese[wght].ttf",
+			"sha256": "ccca9d3492b86930d8e0272d1e06d9e2e11147489b04d9858aa58e766cc30374",
+			"size": 193412,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

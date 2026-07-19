@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Seymour One",
+	"id": "seymour-one",
+	"license": {
+		"attribution": "Copyright 2011 The Seymour One Project Authors (https://github.com/googlefonts/seymourFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/seymourone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/seymourFont",
+		"revision": "67aa8dc604b252424e431a73ff50011cc474d881"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/seymourone/SeymourOne-Regular.ttf",
+			"sha256": "8699709245074a91a64b43495bf864f6df6d43648d7e9d0d09144ca74433c3d4",
+			"size": 93576,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

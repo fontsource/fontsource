@@ -1,0 +1,51 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-06-08",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek-ext",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontworks Inc.",
+	"family": "Klee One",
+	"id": "klee-one",
+	"license": {
+		"attribution": "Copyright 2020 The Klee Project Authors (https://github.com/fontworks-fonts/Klee)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kleeone",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontworks-fonts/Klee",
+		"revision": "8b0532731b63ad8a445ca341d8d7d941079b83ab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kleeone/KleeOne-Regular.ttf",
+			"sha256": "bf4063f030cc2ae6adf0a11424a1888e5c0eb4438f1f6d02f52294af868e9b3a",
+			"size": 8724204,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kleeone/KleeOne-SemiBold.ttf",
+			"sha256": "b031ec426c23ca1143ef1f7d58bee7a79efe119ed654152f121c922202b303fd",
+			"size": 8905128,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

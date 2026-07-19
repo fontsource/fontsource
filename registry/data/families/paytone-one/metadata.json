@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Paytone One",
+	"id": "paytone-one",
+	"license": {
+		"attribution": "Copyright 2011 The Paytone Project Authors (https://github.com/googlefonts/paytoneFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/paytoneone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/paytoneFont",
+		"revision": "126567cf41b70d287e05359dbaf31561496282fa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/paytoneone/PaytoneOne-Regular.ttf",
+			"sha256": "1c07073b0b578199b54c7866d55e2b631d285e8aa4bb4fbc08809d980cd49b14",
+			"size": 114648,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

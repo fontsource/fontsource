@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Tangut is a modulated (“serif”) design for texts in the historical East Asian _Tangut_ script. It has 6,897 glyphs.

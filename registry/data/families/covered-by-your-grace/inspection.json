@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 344,
+				"sha256": "f193fd9ef9384b40a6b6b7d847066a1f53d926db4587be00e376d8a994d0ac45"
+			},
+			"colorTables": [],
+			"fontVersion": null,
+			"outline": "glyf",
+			"path": "ofl/coveredbyyourgrace/CoveredByYourGrace.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

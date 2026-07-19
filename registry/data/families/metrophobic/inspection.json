@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 575,
+				"sha256": "6658c4774195a7ac88c3c4483e5fcaca107c34764322a26c0609fccd4ef1a1ff"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.200; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/metrophobic/Metrophobic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

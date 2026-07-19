@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 247,
+				"sha256": "831e1ab0ec39a98a3fb72e243a5f0a57d25699d03b306a605c5cd6f9d93f598e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kohsantepheap/KohSantepheap-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 247,
+				"sha256": "831e1ab0ec39a98a3fb72e243a5f0a57d25699d03b306a605c5cd6f9d93f598e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kohsantepheap/KohSantepheap-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 247,
+				"sha256": "831e1ab0ec39a98a3fb72e243a5f0a57d25699d03b306a605c5cd6f9d93f598e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kohsantepheap/KohSantepheap-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 247,
+				"sha256": "831e1ab0ec39a98a3fb72e243a5f0a57d25699d03b306a605c5cd6f9d93f598e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kohsantepheap/KohSantepheap-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 247,
+				"sha256": "831e1ab0ec39a98a3fb72e243a5f0a57d25699d03b306a605c5cd6f9d93f598e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kohsantepheap/KohSantepheap-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prompt/Prompt-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

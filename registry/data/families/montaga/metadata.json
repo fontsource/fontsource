@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Alejandra Rodriguez",
+	"family": "Montaga",
+	"id": "montaga",
+	"license": {
+		"attribution": "Copyright (c) 2011, Alejandra Rodriguez (ale_guez@yahoo.com.ar http://twitter.com/ale_guez), with Reserved Font Name \"Montaga\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/montaga",
+		"revision": "b70cdb44b2a77834f59e41ac9c682dd32c3a72a6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/montaga",
+		"revision": "1c439c4e7d38e452718e8e67834c810641d1685a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/montaga/Montaga-Regular.ttf",
+			"sha256": "2f84c4a9ee4921dd629ad55c0003e5f15448737884dea1c3ffd9aacaf3b476a0",
+			"size": 33956,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

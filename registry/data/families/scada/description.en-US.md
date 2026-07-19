@@ -1,0 +1,1 @@
+In 2005, Scada was designed as the corporate identity font for the Latvian design studio [Scada.lv](http://www.scada.lv/). In 2011 the design studio decided to make Scada a libre font. Over 6 months the font was reworked, improved and expanded into a family. It has a modern style, specifically designed for small sizes.

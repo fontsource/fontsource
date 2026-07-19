@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 379,
+				"sha256": "25e5d5663e3f7086dae40c11f9f88fe131b40c6e41aae08d6149d97ad7fece83"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/synemono/SyneMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

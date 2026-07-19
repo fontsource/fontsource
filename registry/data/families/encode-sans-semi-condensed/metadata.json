@@ -1,0 +1,112 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Impallari Type, Andres Torresi, Jacques Le Bailly",
+	"family": "Encode Sans Semi Condensed",
+	"id": "encode-sans-semi-condensed",
+	"license": {
+		"attribution": "Copyright 2012 The Encode Project Authors (impallari@gmail.com), with Reserved Font Name \"Encode Sans\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/encodesanssemicondensed",
+		"revision": "f69afb71ed6dcb30acae48687b746ed95c5caa8b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/Encode-Sans",
+		"revision": "370cdccdb22daf862c6fca0636aad64b6835decd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-Black.ttf",
+			"sha256": "f9ba441d3677c10090e15ad4b1d60a0825c43028fa892c76c3d10a2b4fdde57c",
+			"size": 167572,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-Bold.ttf",
+			"sha256": "0a5b8d0dd5e3d9abb688b2b60e441f3acef5bd3d744f87315346d034df0b5fbf",
+			"size": 168628,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-ExtraBold.ttf",
+			"sha256": "5d82c48dba9adef6c193dc91b626343cafd2c44fa3c40bc7e2140f332b59e427",
+			"size": 170384,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-ExtraLight.ttf",
+			"sha256": "5f8c83276aaf0ae7ed873fb90fc466edbaa506f0e78e2cf601a305c39c2fe7cc",
+			"size": 166556,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-Light.ttf",
+			"sha256": "3266992ee0ca1960d3164a7b55f7a6b9783b5e8eb1c2b02af34ac3bd9173d833",
+			"size": 168296,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-Medium.ttf",
+			"sha256": "5b68f1f10caf92d76281a14ff5b058fa7a5cc81a90956751b2da353f913dcc64",
+			"size": 168888,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-Regular.ttf",
+			"sha256": "a1b3ebf1d84017c4136870b6b8323f0ee055a22a9a9e49e58d9e26b67b0ef866",
+			"size": 170864,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-SemiBold.ttf",
+			"sha256": "f939e954819679898b15e4a7f6badc1e96949541e5c28efbfe5b02ad8b21b75a",
+			"size": 171072,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/encodesanssemicondensed/EncodeSansSemiCondensed-Thin.ttf",
+			"sha256": "545db9aaaa86fc3051c286606a1a4355843de613d047895c19ef0af2800ae876",
+			"size": 162164,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 335,
+				"sha256": "e432e7c127f1f79458645f53cb344afb341c3a5e657d9cc9a30475f3d71d8015"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/ropasans/RopaSans-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 335,
+				"sha256": "e432e7c127f1f79458645f53cb344afb341c3a5e657d9cc9a30475f3d71d8015"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/ropasans/RopaSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2022-02-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Glitch",
+	"id": "rubik-glitch",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikglitch",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "70c5affdb044fecf4eb4988c320b8bfa8e8005c6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikglitch/RubikGlitch-Regular.ttf",
+			"sha256": "260245012483d56956269100ebece747aa95b4b67e5a9411a81a36e91f55e653",
+			"size": 407304,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

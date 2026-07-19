@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 245,
+				"sha256": "4ba61522c9ed1605c55617f322c832b8506677c33d0f8b97be495afce787f744"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/sintony/Sintony-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 245,
+				"sha256": "4ba61522c9ed1605c55617f322c832b8506677c33d0f8b97be495afce787f744"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "ofl/sintony/Sintony-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

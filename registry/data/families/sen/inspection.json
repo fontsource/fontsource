@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 359,
+				"sha256": "31bcf210d1bbc470aad02c252d4d6c170a86590772324d64a50fc41a634ea08c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000;gftools[0.9.31]",
+			"outline": "glyf",
+			"path": "ofl/sen/Sen[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

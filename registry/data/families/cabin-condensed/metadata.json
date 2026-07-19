@@ -1,0 +1,67 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Impallari Type",
+	"family": "Cabin Condensed",
+	"id": "cabin-condensed",
+	"license": {
+		"attribution": "Copyright 2016 The Cabin Project Authors (impallari@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cabincondensed",
+		"revision": "be8dcf4843c1ac6cb6c88ec16c9326729844ccb9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/Cabin",
+		"revision": "9476ee6f5459ee37cf8462452f3e4640c3a48519"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cabincondensed/CabinCondensed-Bold.ttf",
+			"sha256": "55c7759cde62445fe60d36df812f83ad2f720929628040f2a036e1e8c6e48671",
+			"size": 97876,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cabincondensed/CabinCondensed-Medium.ttf",
+			"sha256": "08475cc737055f1c08eb1fbcad084abd9d4d0342cb55b3a76e9114cab99ad9e2",
+			"size": 98504,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/cabincondensed/CabinCondensed-Regular.ttf",
+			"sha256": "d3ad2ca1872bc3a8664ba913314b2f85fef015d0a7cb3007a7ca6420b84e574d",
+			"size": 99468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cabincondensed/CabinCondensed-SemiBold.ttf",
+			"sha256": "a73b89d750f03af8a6cd8783678cd163ec78f9e2c603d2389548fbb8dfc5d62b",
+			"size": 98996,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

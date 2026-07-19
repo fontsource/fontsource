@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Petit Formal Script",
+	"id": "petit-formal-script",
+	"license": {
+		"attribution": "Copyright (c) 2011, Pablo Impallari (www.impallari.com|impallari@gmail.com), Copyright (c) 2011, Brenda Gallo. (gbrenda1987@gmail.com), Copyright (c) 2011, Rodrigo Fuenzalida (www.rfuenzalida.com|hello@rfuenzalida.com),   with Reserved Font Name Petit Formal Script.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/petitformalscript",
+		"revision": "84ee6d35bda0acb542b347d8470eb0bef1b63f79",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/petitformalscript/PetitFormalScript-Regular.ttf",
+			"sha256": "9b80a05170bac7f372b7e00bc762fe14bafd4abdeb013747b189f66525cffe89",
+			"size": 175068,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

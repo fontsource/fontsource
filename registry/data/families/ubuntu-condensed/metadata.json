@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-10-05",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dalton Maag",
+	"family": "Ubuntu Condensed",
+	"id": "ubuntu-condensed",
+	"license": {
+		"attribution": "Copyright 2011 Canonical Ltd. Licensed under the Ubuntu Font Licence 1.0",
+		"id": "UFL-1.0",
+		"url": "https://ubuntu.com/legal/font-licence"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ufl/ubuntucondensed",
+		"revision": "10b6b75ec3020d11aff5085a8a10d271fb0d9439",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ufl/ubuntucondensed/UbuntuCondensed-Regular.ttf",
+			"sha256": "6c1f68d2e85832feae9ea30d2a6c0ea71ea623e8ea342bf00a414f6493ccf720",
+			"size": 350444,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

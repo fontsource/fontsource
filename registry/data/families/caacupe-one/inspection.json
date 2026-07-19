@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 395,
+				"sha256": "bdedcd42ae6a366db02c9d36f6ba1c2802746ade3327cc864dc3aa1c3a4f5b67"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/caacupeone/CaacupeOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

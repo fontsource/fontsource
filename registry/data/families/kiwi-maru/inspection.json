@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8318,
+				"sha256": "dc90741b34ad818523208894a19a22a477b51c7a433cbdbab2304c35a1fbbd4a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/kiwimaru/KiwiMaru-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8318,
+				"sha256": "dc90741b34ad818523208894a19a22a477b51c7a433cbdbab2304c35a1fbbd4a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/kiwimaru/KiwiMaru-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8318,
+				"sha256": "dc90741b34ad818523208894a19a22a477b51c7a433cbdbab2304c35a1fbbd4a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/kiwimaru/KiwiMaru-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

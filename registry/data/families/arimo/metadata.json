@@ -1,0 +1,54 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-11-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Steve Matteson",
+	"family": "Arimo",
+	"id": "arimo",
+	"license": {
+		"attribution": "Copyright 2020 The Arimo Project Authors (https://github.com/googlefonts/arimo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arimo",
+		"revision": "903d46673260c1f4c7f7ef67f5190fb03eab5042",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/arimo",
+		"revision": "4a6255f269916ae7ad3fc2706b0935e7621396b8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arimo/Arimo-Italic[wght].ttf",
+			"sha256": "a80fc54fd0233c1dfe298577c4d00f5ae81d5bb83510975e473c47e699b7f4ed",
+			"size": 543196,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/arimo/Arimo[wght].ttf",
+			"sha256": "e43898b143ec826ac8cb4034816458a7047fbe0836558de2a1f8c6223ae3e0ca",
+			"size": 496268,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

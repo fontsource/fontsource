@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-10-24",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Sideshow",
+	"family": "Creepster Caps",
+	"id": "creepster-caps",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Font Diner, Inc DBA Sideshow (diner@fontdiner.com). All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/creepstercaps",
+		"revision": "1bdc1ad5dca2c5064c4b5896de63738425aa725d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/creepstercaps/CreepsterCaps-Regular.ttf",
+			"sha256": "65280da05a53ce22401277170ff13f220a32a40bd85d6427f67866af378b913d",
+			"size": 58184,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Magnus Gaarde",
+	"family": "Basic",
+	"id": "basic",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Basic\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/basic",
+		"revision": "6de4316d76b211a02f02a44f6b0835c65d5ff777",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EbenSorkin/Basic",
+		"revision": "202e65ac93bd6977e83b2f10db6b1467e0b348db"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/basic/Basic-Regular.ttf",
+			"sha256": "077f7245f6459045495b1ca0493f2b426c421d2112d10b48a38ff8858a07397a",
+			"size": 58520,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

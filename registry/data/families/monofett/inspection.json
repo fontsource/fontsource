@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 435,
+				"sha256": "160d29b508206c1aebe3f4157801bb2691cad413b7456b9d879076e8769b7401"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/monofett/Monofett-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

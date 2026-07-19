@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-01-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Jim Nightshade",
+	"id": "jim-nightshade",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Jim Nightshade\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jimnightshade",
+		"revision": "52283b6467a89cfe102343f6653b459e0dc84282",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/jimnightshade",
+		"revision": "a04375d8b6c564c11f00a67fa5df1d7bf446527f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jimnightshade/JimNightshade-Regular.ttf",
+			"sha256": "ad49a9f652cb1d7ce711d7ccdfb5922e3961f871705e88fb0e5d033e0e707103",
+			"size": 153680,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

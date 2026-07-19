@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1000,
+				"sha256": "df10f99400e311553ee696e48574832b33f6a8a28129ee56adbd23f594032108"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0010",
+			"outline": "glyf",
+			"path": "ofl/jomhuria/Jomhuria-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

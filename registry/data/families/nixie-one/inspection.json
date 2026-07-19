@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 217,
+				"sha256": "98695e2da0f3a3c06d95b45f7f9c09b7ac316f019b7df543e9c040996c5f1725"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/nixieone/NixieOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

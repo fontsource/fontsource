@@ -1,0 +1,9 @@
+Economica is the first digital typeface created in Montevideo, Uruguay, to be distributed internationally. The development of the typeface took most of 2007 and received the assistance of type design colleagues from all over Latin America.
+
+Economica has four basic styles: Regular, Bold, Italic and Bold Italic. It includes a comprehensive character set that lets you work with diverse European languages.
+
+This typeface family was designed for the output of inkjet printers. It was inspired by the concept of saving space in publishing texts without loss of height. This means it is a very condensed type.
+
+The visual advantage of Economica is that accomplishes this horizontal compression while keeping a strong personality. It is not a typical, neutral, sans serif. The open forms and tendency towards flattened curves allow it to be used in very small spaces while retaining high legibility.
+
+To contribute to the project contact Vicente Lamónaca.

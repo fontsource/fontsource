@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 889,
+				"sha256": "c0e3fd07a7044b45539fa5d382f5f340b43331fbcfe87aa81c4c8094f7ec6aed"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.701",
+			"outline": "glyf",
+			"path": "ofl/geistmono/GeistMono-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 889,
+				"sha256": "c0e3fd07a7044b45539fa5d382f5f340b43331fbcfe87aa81c4c8094f7ec6aed"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.701",
+			"outline": "glyf",
+			"path": "ofl/geistmono/GeistMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-09-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Grenze",
+	"id": "grenze",
+	"license": {
+		"attribution": "Copyright 2019, The Grenze Project Authors (https://github.com/Omnibus-Type/Grenze)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/grenze",
+		"revision": "87340cbb0ba6cbfc3f6817ad53bd16a37884e0ed",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Grenze",
+		"revision": "e1be2f305f7b9490dcfd12e799e2dbc2c0cda6eb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/grenze/Grenze-Italic[wght].ttf",
+			"sha256": "60e9821fff9603945d835a73257a743a8c6754fd3fda1e4329af50ea7e46f9c2",
+			"size": 148448,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/grenze/Grenze[wght].ttf",
+			"sha256": "04afa4836bcd41e1ff9867a0dc27d628d31ddec618ec67715c526ebc3cae92f4",
+			"size": 139860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-09-29",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Comforter",
+	"id": "comforter",
+	"license": {
+		"attribution": "Copyright 2015 The Comforter Project Authors (https://github.com/googlefonts/comforter)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/comforter",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/comforter",
+		"revision": "3112f6b6990f10c7a101e5577b8267988989cff7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/comforter/Comforter-Regular.ttf",
+			"sha256": "2852da85b2fbfd37ccd87387f3578a251cb9a8814fbab22c4487f792936a2267",
+			"size": 279684,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

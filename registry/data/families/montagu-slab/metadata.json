@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-09-21",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Florian Karsten",
+	"family": "Montagu Slab",
+	"id": "montagu-slab",
+	"license": {
+		"attribution": "Copyright 2021 The Montagu Slab Project Authors (https://github.com/floriankarsten/montagu-slab)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/montaguslab",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/floriankarsten/montagu-slab",
+		"revision": "317bc2344f39f20620fae2424afc645aff7ab0ef"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/montaguslab/MontaguSlab[opsz,wght].ttf",
+			"sha256": "26fe25e6f5221fa48b97807d9666bbf36e7486bc7853676b24bb631373e8a505",
+			"size": 529316,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

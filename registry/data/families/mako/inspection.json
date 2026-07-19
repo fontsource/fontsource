@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 390,
+				"sha256": "23e9fafc424f556a32553d0835871a7d17840f307a80e53641025ac11a0d2a18"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.33]",
+			"outline": "glyf",
+			"path": "ofl/mako/Mako-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

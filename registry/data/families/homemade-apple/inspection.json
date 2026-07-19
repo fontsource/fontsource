@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "c3852bcf7b0143829c95d879d7fe361369633110280ff29224bf06e586ba362d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/homemadeapple/HomemadeApple-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

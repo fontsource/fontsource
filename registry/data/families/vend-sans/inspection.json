@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 374,
+				"sha256": "b10b766b8595b6c95d08e3d0f84334899339fc63c7c0db1bc55f557f10edecb4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.611",
+			"outline": "glyf",
+			"path": "ofl/vendsans/VendSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 374,
+				"sha256": "b10b766b8595b6c95d08e3d0f84334899339fc63c7c0db1bc55f557f10edecb4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.611",
+			"outline": "glyf",
+			"path": "ofl/vendsans/VendSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

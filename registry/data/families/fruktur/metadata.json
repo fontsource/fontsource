@@ -1,0 +1,50 @@
+{
+	"category": "display",
+	"dateAdded": "2013-01-16",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Viktoriya Grabowska, Eben Sorkin",
+	"family": "Fruktur",
+	"id": "fruktur",
+	"license": {
+		"attribution": "Copyright 2022 The Fruktur Project Authors (https://github.com/SorkinType/Fruktur)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fruktur",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Fruktur",
+		"revision": "0f8b79b91438420d4c158890cb28bcb1eef407a0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fruktur/Fruktur-Italic.ttf",
+			"sha256": "2fc0cb26f0d1945202b6022ea68ac566826d19e64b461b640e9a1056f1f40218",
+			"size": 210784,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/fruktur/Fruktur-Regular.ttf",
+			"sha256": "dcba901b5fe11c0b6c3e8d5eb1003339b2dd020e2fc3949014ed0d8ff87715e7",
+			"size": 211180,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

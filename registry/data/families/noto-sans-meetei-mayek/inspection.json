@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 419,
+				"sha256": "ec400489c87fa7b21688359ed83c10c81a06154a66f96a98db828cb829ccb8ec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/notosansmeeteimayek/NotoSansMeeteiMayek[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

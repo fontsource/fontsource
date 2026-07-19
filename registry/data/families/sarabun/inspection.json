@@ -1,0 +1,212 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/sarabun/Sarabun-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

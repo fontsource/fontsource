@@ -1,0 +1,194 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Trirong",
+	"id": "trirong",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/trirong",
+		"revision": "3311d9477232e831f7bfb71ef1866c7833e03bcf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/trirong",
+		"revision": "0c1ce550d14a0a719ea49fcd6992cf5e1027dc6f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/trirong/Trirong-Black.ttf",
+			"sha256": "56bead49f2bb6975660de599a4a4920a26cd2a3272c52004fa63145eea7e9210",
+			"size": 204788,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-BlackItalic.ttf",
+			"sha256": "be60e1e694cd13b196e603a793e2c95e3dfb6741ec1767fcaa99d5222c93d23a",
+			"size": 232164,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-Bold.ttf",
+			"sha256": "5f763f2ab302d0d81f8e0435db073bfb50a447d52dc1a060594f3dc3420ba8ae",
+			"size": 201896,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-BoldItalic.ttf",
+			"sha256": "42ee8cb33788730a02e0168f159b372e5f07513829bfa5415f7998932ca37676",
+			"size": 226188,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-ExtraBold.ttf",
+			"sha256": "f63665b55d81823643de251a242f296c3165de839ae377eaf7b5d1849808fa48",
+			"size": 205724,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-ExtraBoldItalic.ttf",
+			"sha256": "042c70fcc2c30f7f9292390d145102b5dbe58bab2cdecbe6bb2e718a66d0e2ad",
+			"size": 231236,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-ExtraLight.ttf",
+			"sha256": "b8795c42c38837fcb9b265ea467cc49974c113f64933f34c092e3e19a56ac947",
+			"size": 194128,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-ExtraLightItalic.ttf",
+			"sha256": "67c0c3d74a01d2586f680aeacc528a5e0620fb244832ee32ec767c13a00fea99",
+			"size": 214568,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-Italic.ttf",
+			"sha256": "c705d591725d650ad241c4bed032e553c13756849f4c68aa2a5426a006eb67a6",
+			"size": 204696,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-Light.ttf",
+			"sha256": "4302056ccc54744ae2d9b80f34b6377c6858cb95cd534ce2531fb13a4a780793",
+			"size": 202376,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-LightItalic.ttf",
+			"sha256": "001e8ad176b4e565573d6bf6a354a1875ecc89b7dd442fe38119dca4952b9216",
+			"size": 225544,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-Medium.ttf",
+			"sha256": "7d9baefbf837849e8767f8649f19dd6eb9ef83d5f63baca0268efdc566e2fe03",
+			"size": 196460,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-MediumItalic.ttf",
+			"sha256": "5f7b430504320c4a7d3f9079f1f863d7bc195d60b918ba5dd41860036c377d6a",
+			"size": 212388,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-Regular.ttf",
+			"sha256": "3cd19b35a24df5fcf12c1f917324cf821d5aa582f7ea36fb0d2a91ba5e8ccd05",
+			"size": 197960,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-SemiBold.ttf",
+			"sha256": "4e8cb898fb7992db7ec9d5bc2c46f265d76dd61938ecdbcdcddd937384f501b2",
+			"size": 184500,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-SemiBoldItalic.ttf",
+			"sha256": "f6380bdd5a89d62d45cb2fee8b7c3cc922acbfc673b3d12a982253c43e20f353",
+			"size": 201824,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-Thin.ttf",
+			"sha256": "c45158916cd678d789f27bf956b04aa8f7d185bfcb0e2c644d3efd0bc1bea613",
+			"size": 193856,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/trirong/Trirong-ThinItalic.ttf",
+			"sha256": "64124db72dc25a153c096b0fc03810a976b2918681674fa604dc9bb5583c2c14",
+			"size": 215896,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

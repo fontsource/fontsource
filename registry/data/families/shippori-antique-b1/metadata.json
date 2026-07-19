@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-04-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "FONTDASU",
+	"family": "Shippori Antique B1",
+	"id": "shippori-antique-b1",
+	"license": {
+		"attribution": "Copyright 2020 The Shippori Antique Project Authors (https://github.com/fontdasu/ShipporiAntique)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/shipporiantiqueb1",
+		"revision": "41ec566b323f1f856c4123e3da61ca08dcaac004",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontdasu/ShipporiAntique",
+		"revision": "5653d23ee96e457921b2dbec7692e8e5d243e5fe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/shipporiantiqueb1/ShipporiAntiqueB1-Regular.ttf",
+			"sha256": "0b55142100b58f6bd221b2229132cc2e344d1d3c803adafeb376624c6e3819c4",
+			"size": 13095332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

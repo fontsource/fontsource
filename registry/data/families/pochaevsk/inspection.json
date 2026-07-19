@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 518,
+				"sha256": "253c48c4053411c4e1456f081da080828b68dc79bcc963f6d182850ea2caf58c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.210; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/pochaevsk/Pochaevsk-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

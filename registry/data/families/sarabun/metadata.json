@@ -1,0 +1,176 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-10-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Suppakit Chalermlarp",
+	"family": "Sarabun",
+	"id": "sarabun",
+	"license": {
+		"attribution": "Copyright 2018 The Sarabun Project Authors (https://github.com/cadsondemak/Sarabun)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sarabun",
+		"revision": "88058c714073e72bb1b32baffc2d4ce9bc73944c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Sarabun",
+		"revision": "854cdbc6afa002ff8c2ce6aa7b86f99c7f71c9eb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sarabun/Sarabun-Bold.ttf",
+			"sha256": "d38308ca27d067b9a1b79006337c1f9a66c29aa016d96a9d88d3801da7fa83b9",
+			"size": 89804,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-BoldItalic.ttf",
+			"sha256": "5ef1b930f9a3afed5ec83374b5617cad3a89d91a8fc5e372dc028c2aa2950f8d",
+			"size": 92948,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-ExtraBold.ttf",
+			"sha256": "1f4ba0daad63c802d825885341bd7f1f054306a669ea2b183f2b20ee65a0a043",
+			"size": 89884,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-ExtraBoldItalic.ttf",
+			"sha256": "4b699f0ae018a58df04bd2a2a7c37d71c29c5359cb9df48abc70210ba2564ef9",
+			"size": 92820,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-ExtraLight.ttf",
+			"sha256": "8aa9fba8885554545c7bce3f1db5efd914c74c0ce8ae58e9e4cb477b5824fe9d",
+			"size": 90484,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-ExtraLightItalic.ttf",
+			"sha256": "c2da92eae4674589bfb7ec04ecb5041c0bbe7768adf65fdddcfc1c9af3bbbb2f",
+			"size": 93612,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-Italic.ttf",
+			"sha256": "595a968e97a8b8179a6bde2d74d4f91b11475dcfb6cf270037d76d8ed71160ea",
+			"size": 93248,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-Light.ttf",
+			"sha256": "9efd75e5ebb6d7755cca3faa5906c77a4bbd39c9aac0ed23bf7f4ba33b02f688",
+			"size": 90440,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-LightItalic.ttf",
+			"sha256": "50c12a64ff7fb67fa7ca525c2ed2def9660c97c3ca443acea622e35beee97c33",
+			"size": 93296,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-Medium.ttf",
+			"sha256": "cc7c3016daab3321674fdf6e2ef59850dc0c07503de1cbdb8b90fe8080ada2b4",
+			"size": 90292,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-MediumItalic.ttf",
+			"sha256": "263e6bb51d80c228c201a0770e6100181115119fdca7968445d44d2fb94ab009",
+			"size": 93428,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-Regular.ttf",
+			"sha256": "226d4f368fbc0457990ddef2692679badfd2c1a4e89e5ac4d43c10ba7743b2f1",
+			"size": 90220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-SemiBold.ttf",
+			"sha256": "c0bb057d86e4a12097d701ac0953597e315788d47a446f5b63a6604ab21dceba",
+			"size": 90200,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-SemiBoldItalic.ttf",
+			"sha256": "982bd56d4683c60e7e4c9cd84bfafae7b700c4b514d9655b8810bb7478063e5c",
+			"size": 93352,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-Thin.ttf",
+			"sha256": "fa55eab332e998acb4bb64c43d9bd1cef791d88d5d15d63570f43741688d7057",
+			"size": 90588,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/sarabun/Sarabun-ThinItalic.ttf",
+			"sha256": "c520d004674d257f4e539926c04ec9b77cbab2239aaa2b468df9693a369bb884",
+			"size": 93616,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

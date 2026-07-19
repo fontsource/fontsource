@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-02-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Szymon Celej",
+	"family": "Doppio One",
+	"id": "doppio-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com), with Reserved Font Name \"Doppio\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/doppioone",
+		"revision": "c38848b40c57a1a1889a68a57756892cd8a8b2cf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/doppioone",
+		"revision": "14bdd2e78b5b8e4f5bc5a39e5f1b02d398883a99"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/doppioone/DoppioOne-Regular.ttf",
+			"sha256": "2686a4eadfad03961f63e8474798a8b591d531aaa1bde6923481565830b19d9e",
+			"size": 55704,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

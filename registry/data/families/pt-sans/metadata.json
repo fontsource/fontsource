@@ -1,0 +1,64 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-09-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "ParaType",
+	"family": "PT Sans",
+	"id": "pt-sans",
+	"license": {
+		"attribution": "Copyright © 2009 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ptsans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ptsans/PT_Sans-Web-Bold.ttf",
+			"sha256": "3128bd5ecf01816e59a23d54c57a7a6b14615b07db53ff277c77376010265b05",
+			"size": 470240,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ptsans/PT_Sans-Web-BoldItalic.ttf",
+			"sha256": "81ac221cdd02bccfa679c74adb122478e9d092e65a722e31ca11469961483785",
+			"size": 375204,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ptsans/PT_Sans-Web-Italic.ttf",
+			"sha256": "5a90fe2d0cd798700935240580bdcc12c0ffc9102c0c7163b3418e13bc21debd",
+			"size": 436452,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ptsans/PT_Sans-Web-Regular.ttf",
+			"sha256": "9cc831490532009bae2b3ce0d39c62adfc889060beb421593bfd9d2396d0f10a",
+			"size": 442960,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

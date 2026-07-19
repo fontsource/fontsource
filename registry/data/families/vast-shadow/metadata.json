@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-10-12",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Nicole Fally",
+	"family": "Vast Shadow",
+	"id": "vast-shadow",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Sorkin Type Co (eben@eyebytes.com) with Reserved Font Name Vast and Vast Shadow. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vastshadow",
+		"revision": "598c28004b036f1be1c43a3a4c622d21a47f5789",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vastshadow/VastShadow-Regular.ttf",
+			"sha256": "98bdf7f93c2330697078ece27e48dea7d97b253a547d699bf7afc4bdfa641a93",
+			"size": 62364,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

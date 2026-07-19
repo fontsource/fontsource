@@ -1,0 +1,1 @@
+Allerta is an open source typeface designed for use in signage. Allerta was designed to be easily and quickly read from a distance. Each letter exploits the most unique aspects of that individual letter so that each character can be easily distinguished from any other. Initially published at [matt.cc/allerta](http://matt.cc/allerta).

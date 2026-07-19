@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-04-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Dawning of a New Day",
+	"id": "dawning-of-a-new-day",
+	"license": {
+		"attribution": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dawningofanewday",
+		"revision": "6c09fffc661ac7f9e73cde427d3655abbdd2844e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/dawningofanewday",
+		"revision": "45ea90b8015692ee7fe07e417ea1c88392373ce3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dawningofanewday/DawningofaNewDay.ttf",
+			"sha256": "2b2afa623dbb1926e3b026603287b4d15ee05778106e26a7b33ef94d4be29dcb",
+			"size": 65344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,49 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "The Nautigal",
+	"id": "the-nautigal",
+	"license": {
+		"attribution": "Copyright 2013-2021 The The Nautigal Project Authors (https://github.com/googlefonts/the-nautigal)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/thenautigal",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/the-nautigal",
+		"revision": "1d644f7cd792c5cc64a91e88f0ca568016f820aa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/thenautigal/TheNautigal-Bold.ttf",
+			"sha256": "d51898da90096cefd2edfc5aa4fea2bdde3bad012ba1de08ae659f06bb420e6f",
+			"size": 154128,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/thenautigal/TheNautigal-Regular.ttf",
+			"sha256": "c7239b999c0d8127683116c8563307f0adbd63f7b16b342c180f8196941eca67",
+			"size": 162468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

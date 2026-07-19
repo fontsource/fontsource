@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "efaec10a4d5e6a3ce066f8ff44cb2a033a94c71efbfd5d92873c256c9eb7ad13"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/updock/Updock-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"anatolian-hieroglyphs",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Anatolian Hieroglyphs",
+	"id": "noto-sans-anatolian-hieroglyphs",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/anatolian-hieroglyphs)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansanatolianhieroglyphs",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/anatolian-hieroglyphs",
+		"revision": "d82f0bce270456bb1e975e11b250f61cd1f0e8c7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansanatolianhieroglyphs/NotoSansAnatolianHieroglyphs-Regular.ttf",
+			"sha256": "be46e1111764b0c65e448634f7fb410a14242ccbffd66002681d8f16a98bf26d",
+			"size": 375344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

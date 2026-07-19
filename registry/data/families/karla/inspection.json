@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 393,
+				"sha256": "cf883475fc3a69a62c3f385aa7cbda82d1bb976437939bde1b07190344f70db8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004;gftools[0.9.33]",
+			"outline": "glyf",
+			"path": "ofl/karla/Karla-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 393,
+				"sha256": "cf883475fc3a69a62c3f385aa7cbda82d1bb976437939bde1b07190344f70db8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004;gftools[0.9.33]",
+			"outline": "glyf",
+			"path": "ofl/karla/Karla[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2014-05-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "John Hudson",
+	"family": "Slabo 27px",
+	"id": "slabo-27px",
+	"license": {
+		"attribution": "Copyright (c) 2013, Tiro Typeworks Ltd (www.tiro.com).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/slabo27px",
+		"revision": "3ea5930c4b21a165bafc667cc811a39a93e54f43",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Slabo",
+		"revision": "21420697b49ec12ab3fd182a71ffe7c9d804f156"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/slabo27px/Slabo27px-Regular.ttf",
+			"sha256": "7615a9e35725401d89c0fb02a96cbce43b49efada51b181d74049ac8d49d4b55",
+			"size": 56088,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 433,
+				"sha256": "720db293f2f5505f08056f1b655e9d1f763257ba6c81f75901fab9ce15bed183"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.503; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanscyprominoan/NotoSansCyproMinoan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

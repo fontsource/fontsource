@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Kumar One",
+	"id": "kumar-one",
+	"license": {
+		"attribution": "Copyright (c) 2016 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kumarone",
+		"revision": "59bf2ec1ef09d1983678d0095b309f406ceabb5b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/kumar",
+		"revision": "3192a79a79202eb715d83fd044e9234a6d0dde66"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kumarone/KumarOne-Regular.ttf",
+			"sha256": "04d6479721639f0d00aa34cfaa18d940eacf84060b427433edb70100b6d01100",
+			"size": 95852,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 369,
+				"sha256": "343ce08cf1dc6cc151f4b4b80381eec0508103f370583f0782ee9bb97852c3bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/margarine/Margarine-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

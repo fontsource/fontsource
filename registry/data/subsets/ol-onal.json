@@ -1,0 +1,39 @@
+{
+	"id": "ol-onal",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"964",
+			"965"
+		],
+		[
+			"1E5D0",
+			"1E5FA"
+		],
+		[
+			"1E5FF",
+			"1E5FF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/ol-onal_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "debaeec4cf5fca3afb5ac2e67571f71e42683618acdd97e512d2a8317e478c77",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Mr De Haviland",
+	"id": "mr-de-haviland",
+	"license": {
+		"attribution": "Copyright (c) 2006 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"Mr De Haviland\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mrdehaviland",
+		"revision": "75716221876ed8015f588fddec35073739736c76",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mrdehaviland/MrDeHaviland-Regular.ttf",
+			"sha256": "10cd8e34b17a42722dc49d2d62b7fe774595abe34cc89ee1d79663df68ea6089",
+			"size": 44672,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

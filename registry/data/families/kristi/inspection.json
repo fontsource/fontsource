@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 202,
+				"sha256": "46aecc9f6361d092eb3e8676b501db67fd3eacdf5e86c0ec394482a3f10e890e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/kristi/Kristi-Regular.ttf",
+			"style": "oblique",
+			"weight": 400
+		}
+	]
+}

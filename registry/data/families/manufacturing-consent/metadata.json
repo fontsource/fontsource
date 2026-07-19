@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-05-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fredrick Brennan",
+	"family": "Manufacturing Consent",
+	"id": "manufacturing-consent",
+	"license": {
+		"attribution": "Copyright 2019 The Manufacturing Consent Project Authors (https://github.com/googlefonts/manufacturing-consent-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/manufacturingconsent",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/manufacturing-consent-font",
+		"revision": "80c3d822c2459ac0d76f8cb9d7ca1ca89a068f3b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/manufacturingconsent/ManufacturingConsent-Regular.ttf",
+			"sha256": "5a965329cc99d7b8b22ddbdbf98ee3dfef111c68b5e7aba80128dbefb5427db3",
+			"size": 61796,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

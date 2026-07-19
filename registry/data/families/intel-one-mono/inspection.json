@@ -1,0 +1,182 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 793,
+				"sha256": "bd43ee597f861de520f8394f44229b3c4c1db5354530d43cabb1993d95e4458a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ofl/intelonemono/IntelOneMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12020,
+				"sha256": "2cc7828a8e31d6f30ca26be1c4dba614068c26e255be66bc02a9a2dcc17c7f5a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.00;build 20171102",
+			"outline": "glyf",
+			"path": "ofl/gamjaflower/GamjaFlower-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

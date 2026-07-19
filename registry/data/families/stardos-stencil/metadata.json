@@ -1,0 +1,47 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Stardos Stencil",
+	"id": "stardos-stencil",
+	"license": {
+		"attribution": "Copyright (c) 2011, Vernon Adams (vern@newtypography.co.uk) with Reserved Font Names 'Stardos'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stardosstencil",
+		"revision": "c4dccf8733e06376640ca54419faa78d94e8f2cd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stardosstencil/StardosStencil-Bold.ttf",
+			"sha256": "6b15f50b1b358512d922b5f11937af17e90704587e1d7fb009f1715d2d5dfa74",
+			"size": 33044,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/stardosstencil/StardosStencil-Regular.ttf",
+			"sha256": "208b13d15387c282a1c0c439a8e4c38809243d15c361b31da440b25a7e4f39ae",
+			"size": 42624,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

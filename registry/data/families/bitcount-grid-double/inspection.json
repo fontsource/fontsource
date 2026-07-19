@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0.5,
+					"max": 1,
+					"min": 0,
+					"tag": "CRSV"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "ELSH"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "ELXP"
+				},
+				{
+					"default": 0,
+					"max": 0,
+					"min": -8,
+					"tag": "slnt"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "778d24f340f371dca1fe00353eee037751fe72d145250e3b1cc6824ce5c4b938"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/bitcountgriddouble/BitcountGridDouble[CRSV,ELSH,ELXP,slnt,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

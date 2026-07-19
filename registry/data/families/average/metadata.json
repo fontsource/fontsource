@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Average",
+	"id": "average",
+	"license": {
+		"attribution": "Copyright 2012 The Average Project Authors (https://github.com/etunni/average)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/average",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/average",
+		"revision": "6583341221fb0625ba1b9c3ee2a7490d57df951f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/average/Average-Regular.ttf",
+			"sha256": "f9efcc21a222870178c86d2d47d3861a40284d25acd28657554f646f68902e34",
+			"size": 73640,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

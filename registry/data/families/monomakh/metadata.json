@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2025-01-23",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Aleksandr Andreev, Nikita Simmons",
+	"family": "Monomakh",
+	"id": "monomakh",
+	"license": {
+		"attribution": "Copyright 2025 The Monomakh Project Authors (https://github.com/slavonic/Monomakh/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/monomakh",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/slavonic/Monomakh",
+		"revision": "5131e23dcd584741d7481ecbd3e81a8cb3eea871"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/monomakh/Monomakh-Regular.ttf",
+			"sha256": "c0d38d79252b758a61adb31101f202450ff11305a675481525ecdcc294b800bf",
+			"size": 230236,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

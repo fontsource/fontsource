@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "ad43e819a108adcb605da548dac5d18053ba61eda968f7f6bfe48b30ac41aad1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/actor/Actor-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

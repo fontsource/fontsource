@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "35d4290d3eec7f6dae9b21d11bbba6e12310b64c7f89151097fb0bdffdcd89dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "35d4290d3eec7f6dae9b21d11bbba6e12310b64c7f89151097fb0bdffdcd89dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "35d4290d3eec7f6dae9b21d11bbba6e12310b64c7f89151097fb0bdffdcd89dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "35d4290d3eec7f6dae9b21d11bbba6e12310b64c7f89151097fb0bdffdcd89dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "35d4290d3eec7f6dae9b21d11bbba6e12310b64c7f89151097fb0bdffdcd89dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "35d4290d3eec7f6dae9b21d11bbba6e12310b64c7f89151097fb0bdffdcd89dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "35d4290d3eec7f6dae9b21d11bbba6e12310b64c7f89151097fb0bdffdcd89dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

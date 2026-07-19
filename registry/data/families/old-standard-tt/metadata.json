@@ -1,0 +1,60 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Alexey Kryukov",
+	"family": "Old Standard TT",
+	"id": "old-standard-tt",
+	"license": {
+		"attribution": "Copyright 2011 The Old Standard Project Authors (amkryukov@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oldstandardtt",
+		"revision": "a01f27e9f42b5afad05090256d0d809928d84cae",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://git.sr.ht/~ralessi/oldstandard",
+		"revision": "b8feb6753e80522bfec434da05a5d31b6b3ff094"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oldstandardtt/OldStandard-Bold.ttf",
+			"sha256": "7d831e9d799ad23ee98e889381a9db2a283b2dac7f228dd5c06071decb9c54db",
+			"size": 267128,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/oldstandardtt/OldStandard-Italic.ttf",
+			"sha256": "4b9522f4711317fc06e2413a58b4662c249cb707df193d682b9d640e365ef564",
+			"size": 272692,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/oldstandardtt/OldStandard-Regular.ttf",
+			"sha256": "42717a1280b523a506ca2b0285cca380e77fe214b1f6e3d75a8b925005f19eac",
+			"size": 249668,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

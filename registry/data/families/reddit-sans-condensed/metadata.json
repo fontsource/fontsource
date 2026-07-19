@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-02-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Stephen Hutchings, OrangeRed",
+	"family": "Reddit Sans Condensed",
+	"id": "reddit-sans-condensed",
+	"license": {
+		"attribution": "Copyright (c) 2020-2023, Reddit, Inc. (https://github.com/reddit/redditsans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/redditsanscondensed",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/reddit/redditsans",
+		"revision": "60e19b50bde6de34b695591a8a047a6a3618a37c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/redditsanscondensed/RedditSansCondensed[wght].ttf",
+			"sha256": "465d997d243d4dd5e08ab7285b03cfbe0ea8598066f8565924d7bd6fc83428e8",
+			"size": 261768,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

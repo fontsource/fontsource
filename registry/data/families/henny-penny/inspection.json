@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "6012d63845d7af67a5bd7829ecbd3876ac2964c8143149089258b65a711d24c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/hennypenny/HennyPenny-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

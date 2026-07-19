@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Joti One",
+	"id": "joti-one",
+	"license": {
+		"attribution": "Copyright 2012 The Joti One Project Authors (https://github.com/etunni/joti), with Reserved Font Name \"Joti\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jotione",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/joti",
+		"revision": "7feedf8bad69029e82ae281c7a100fb639d946e1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jotione/JotiOne-Regular.ttf",
+			"sha256": "16d31b49095da1a5c2d3ba5479cd966cff05d3db1d3e235532cb9aef607ef0a9",
+			"size": 58384,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

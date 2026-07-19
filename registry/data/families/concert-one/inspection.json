@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "1fcb0ad6771b8e61827f4278279374c8670ab008dee6a5c14ae68e1d85f32059"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/concertone/ConcertOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 593,
+				"sha256": "e7e88c7ab2a6ace12a3934786be6de68f242e3a2aff82b9845d83b5105a41da8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.0.1; ttfautohint (v0.9) -r 48 -G 60",
+			"outline": "glyf",
+			"path": "ofl/glegoo/Glegoo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 593,
+				"sha256": "e7e88c7ab2a6ace12a3934786be6de68f242e3a2aff82b9845d83b5105a41da8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.0.1; ttfautohint (v0.9) -r 48 -G 60",
+			"outline": "glyf",
+			"path": "ofl/glegoo/Glegoo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

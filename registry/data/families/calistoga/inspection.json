@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 857,
+				"sha256": "34e8bca225c53f8e6680f88f828ec418820471c64e31e5eb8183daebb44bb98a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/calistoga/Calistoga-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

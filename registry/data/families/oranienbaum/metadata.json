@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-08-20",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Oleg Pospelov, Jovanny Lemonad",
+	"family": "Oranienbaum",
+	"id": "oranienbaum",
+	"license": {
+		"attribution": "Copyright (c) 2012, Oleg Pospelov (oleg@pospelov.com), Jovanny Lemonad (lemonad@jovanny.ru), with Reserved Font Name 'Oranienbaum'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oranienbaum",
+		"revision": "410e093b0350c10fb1e921c47dc4c057ccb6ba7d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oranienbaum/Oranienbaum-Regular.ttf",
+			"sha256": "d0c2527f106ddaf53bebce08e903b585d1fd1d830eddd23ed723c313b4fe2c6c",
+			"size": 141220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

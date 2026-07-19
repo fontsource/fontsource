@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "302ec33357c12a7f62109f146d3c7c3255e3c630dbbd34e44da0af04cddc2fe5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/julee/Julee-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

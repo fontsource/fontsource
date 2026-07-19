@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 406,
+				"sha256": "83eebb518ea70d951db2a6b58c12acd021d954e504a406cc1c3ceb7b7c9ed1e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanskharoshthi/NotoSansKharoshthi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

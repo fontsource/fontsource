@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2022-12-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Andy Clymer",
+	"family": "Tilt Warp",
+	"id": "tilt-warp",
+	"license": {
+		"attribution": "Copyright 2019 The Tilt Project Authors (https://github.com/googlefonts/Tilt-Fonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tiltwarp",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Tilt-Fonts",
+		"revision": "0773dc9f490aabba0c19c15d290b575b62245970"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tiltwarp/TiltWarp[XROT,YROT].ttf",
+			"sha256": "e650320e405c220853184fa20a60a812f3f0275c3a1b2d1769409ad1cb4bfca5",
+			"size": 256812,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

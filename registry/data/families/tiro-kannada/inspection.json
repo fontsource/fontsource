@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 480,
+				"sha256": "30a1772bd26493501d4785e3e2683aca382fb8dc86d1d67a1db7018ab74b237f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirokannada/TiroKannada-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 480,
+				"sha256": "30a1772bd26493501d4785e3e2683aca382fb8dc86d1d67a1db7018ab74b237f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirokannada/TiroKannada-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"category": "display",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Srisakdi",
+	"id": "srisakdi",
+	"license": {
+		"attribution": "Copyright 2018 The Srisakdi Project Authors (https://github.com/cadsondemak/Srisakdi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/srisakdi",
+		"revision": "c4faaef994356be94b074669600dc8c09efe4da3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Srisakdi",
+		"revision": "fc86bd7feae6bf8b3a9f388f2a71f4c826a27859"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/srisakdi/Srisakdi-Bold.ttf",
+			"sha256": "c017270f68bac7c3b282c9d80e6665f56ad4f5d670db590a2851dcb9c0a75f57",
+			"size": 102088,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/srisakdi/Srisakdi-Regular.ttf",
+			"sha256": "073d1694bda5cf42082574a4b7d57df298d7f2cfc9ee997f8f5ab9b214cf72c9",
+			"size": 102340,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

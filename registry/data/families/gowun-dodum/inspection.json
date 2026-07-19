@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12494,
+				"sha256": "9b71cf2b3ce9496949dbb60e4868fd0fb1201867a966409ca7c8e3a11feaadab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/gowundodum/GowunDodum-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

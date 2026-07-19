@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2025-03-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Typofactur",
+	"family": "Epunda Slab",
+	"id": "epunda-slab",
+	"license": {
+		"attribution": "Copyright 2023 The Epunda Slab Project Authors (https://github.com/typofactur/epundaslab.git)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/epundaslab",
+		"revision": "1796e34455b893092713d206e7f23e3e07699f00",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typofactur/epundaslab",
+		"revision": "b7f3ef7ccf9e7f1c0d8ef23bd5c6017a8c77a268"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/epundaslab/EpundaSlab-Italic[wght].ttf",
+			"sha256": "5beac9eb7128c086c7bab740503ce83ae260318e4e65a2d52330a1c31dd110df",
+			"size": 93032,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/epundaslab/EpundaSlab[wght].ttf",
+			"sha256": "a0e338c2514c6f6511466131b1dfb2cc20d03dfd408bbcd759fbca8ad3b1210c",
+			"size": 90220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-10-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams, Jacques Le Bailly, Manvel Shmavonyan, Alexei Vanyashin",
+	"family": "Nunito Sans",
+	"id": "nunito-sans",
+	"license": {
+		"attribution": "Copyright 2016 The Nunito Sans Project Authors (https://github.com/Fonthausen/NunitoSans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nunitosans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/NunitoSans",
+		"revision": "058bd7a2f33d6ad5ef1df985b3db403622016a8c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nunitosans/NunitoSans-Italic[YTLC,opsz,wdth,wght].ttf",
+			"sha256": "d9d5db18f3c11221a4fbb553cbc709391c1179964c7eaa4466ef43c78aa4492f",
+			"size": 558412,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/nunitosans/NunitoSans[YTLC,opsz,wdth,wght].ttf",
+			"sha256": "f934d7142fb4784bf828da485b7dcbd90c0c80d514e9d49a5da0ed3a1ae2491d",
+			"size": 571240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

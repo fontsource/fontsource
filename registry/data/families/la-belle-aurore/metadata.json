@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-06-08",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "La Belle Aurore",
+	"id": "la-belle-aurore",
+	"license": {
+		"attribution": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/labelleaurore",
+		"revision": "b10cfc4df84371220fbc16f31aca046853cefa47",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/labelleaurore/LaBelleAurore.ttf",
+			"sha256": "ed67462999e05f0cdac92f686374661e4d68c56fdcd7d05725c6df7b41eabd2a",
+			"size": 59364,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

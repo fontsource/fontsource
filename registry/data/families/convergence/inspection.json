@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 235,
+				"sha256": "7f655ede22c8e19af952b8e5465f552b4f881c9c36500198bda537215daff7a0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/convergence/Convergence-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

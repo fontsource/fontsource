@@ -1,0 +1,47 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-10-12",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Natalia Raices",
+	"family": "Delius Unicase",
+	"id": "delius-unicase",
+	"license": {
+		"attribution": "Copyright (c) 2010, 2011, Natalia Raices<nraices@gmail.com>, with Reserved Font Name \"Delius\" \"Delius Unicase\" \"Delius Swash Caps\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/deliusunicase",
+		"revision": "a96435464c7fd2235adf2f2fa5319716097dd029",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/deliusunicase",
+		"revision": "cf094caecc96589701f341db1994fd10642e3c88"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/deliusunicase/DeliusUnicase-Bold.ttf",
+			"sha256": "2fc8f72a7257d837a5b710a8f6ca9e6b7a179f809243eef9380ba2185b8c2a67",
+			"size": 36120,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/deliusunicase/DeliusUnicase-Regular.ttf",
+			"sha256": "26fb53b7297281e4907dfe254cc23c206f28510f683eb726e5c5024ca36dc95d",
+			"size": 32904,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

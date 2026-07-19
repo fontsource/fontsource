@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-09-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"todhri"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Todhri",
+	"id": "noto-serif-todhri",
+	"license": {
+		"attribution": "Copyright 2024 The Noto Project Authors (https://github.com/notofonts/todhri)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoseriftodhri",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/todhri",
+		"revision": "203e8ffb944c09d0974ca652a202a18ef3be234f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoseriftodhri/NotoSerifTodhri-Regular.ttf",
+			"sha256": "d2c1afe671b637345e7045fcd0b4a4dca35c55811a7811de486b77f1b035008f",
+			"size": 66440,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

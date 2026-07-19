@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 656,
+				"sha256": "ef8ff732f56472621b192756136e4362628b2dc99a6bf3a4b0e267b575743a57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/pressstart2p/PressStart2P-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

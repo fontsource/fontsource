@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-05-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Gaslight",
+	"family": "Strong",
+	"id": "strong",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Strong\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/strong",
+		"revision": "54466c45373ca3d15f215f8fec85bd235e3fa48a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/strong/Strong-Regular.ttf",
+			"sha256": "4cae5278cb372d0ec20fe7b00a969a9766b5ecab9f1a16c3d9d31f2fa8c0b461",
+			"size": 85308,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Dynalight",
+	"id": "dynalight",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Dynalight\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dynalight",
+		"revision": "74f5f222a72b4ea0397a05b9be4bc3fdd14ae51a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/dynalight",
+		"revision": "af7642053cc1189c5c8a4b93d0b4c1b1c5edcb49"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dynalight/Dynalight-Regular.ttf",
+			"sha256": "360da5d767b48c849d06a608a4605d53c32a49fde127603aa83b096b6b43d0f1",
+			"size": 53148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

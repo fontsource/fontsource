@@ -1,0 +1,43 @@
+{
+	"id": "rejang",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A930",
+			"A953"
+		],
+		[
+			"A95F",
+			"A95F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/rejang_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "ca9b4cde64ae13ea05caee7ea785ffdee366a5e6cc7e9d4d51dec6042dca14fb",
+		"upstream": "namFiles"
+	}
+}

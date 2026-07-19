@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "f0307515ff4c5cdf44f8d045171c17d7738d4fbf4fc4bfafd370f420d8a1d93b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/russoone/RussoOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

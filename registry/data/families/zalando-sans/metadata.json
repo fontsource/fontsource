@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-07-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jakob Ekelund, KH Type, Zalando",
+	"family": "Zalando Sans",
+	"id": "zalando-sans",
+	"license": {
+		"attribution": "Copyright 2025 The Zalando Sans Project Authors (https://github.com/zalando/sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zalandosans",
+		"revision": "f3493c1c8476073a87ad9d21bdb9c81c2f47f748",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/zalando/sans",
+		"revision": "4e44d0864c4e37ab67fa549cd188aec8776dc948"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zalandosans/ZalandoSans-Italic[wdth,wght].ttf",
+			"sha256": "70dcf38b38ee3f179211f4a43f99a4cf4e976e16336676d83ae83a8e79078336",
+			"size": 289792,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/zalandosans/ZalandoSans[wdth,wght].ttf",
+			"sha256": "9ef9c85d9b108f588858e045aee46ebbc8e324002d1891c2f662d40a2704dcd8",
+			"size": 281728,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

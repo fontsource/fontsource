@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "c86c66c653fe1f3635f30a508aa2bf5ef1d4751ed4099ae27ce08dc182410370"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/londrinaoutline/LondrinaOutline-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

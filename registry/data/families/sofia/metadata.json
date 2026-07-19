@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "LatinoType",
+	"family": "Sofia",
+	"id": "sofia",
+	"license": {
+		"attribution": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com), with Reserved Font Names \"Sofia\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sofia",
+		"revision": "1df26c102087eed5f8ef6b6c9e07c97f4666814f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sofia/Sofia-Regular.ttf",
+			"sha256": "5634c4ecf066fba2fa11645a3c5b41e830ca240e1eeab81e10b9d476101b1eea",
+			"size": 29796,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "166d7bbaa0bcd06b9baa5c9b3ed867d4648be8a64775d824ce6aef86cee2b3ef"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.004",
+			"outline": "glyf",
+			"path": "ofl/stalinistone/StalinistOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,5 @@
+Prompt in Thai means “ready,” the same as in English. Prompt is a loopless Thai and sans Latin typeface. The simple and geometric Latin was developed to work harmoniously with the loopless Thai that has wide proportions and airy negative space. It is suitable for both web and print usage, such as magazines, newspapers, and posters.
+
+A similarity between some glyphs such as ก ถ ภ ฤ ฦ, ฎ ฏ, บ ป, ข ช is something to take into consideration because it might lead to confusion when typesetting very short texts. Formal loopless Thai typefaces are simplified, compared to traditional looped Thai types, and this simplification has to be done properly in order to preserve the essense of each character. The size and position of Thai vowel and tone marks has been managed carefully, because they are all relevant to readability, legibility, and overall texture.
+
+The Prompt project is led by Cadson Demak, a type foundry in Thailand. To contribute, see [github.com/cadsondemak/prompt](https://github.com/cadsondemak/prompt)

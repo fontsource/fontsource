@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 438,
+				"sha256": "18de8b421d7ebb8a339f18b98fec3dc473df8758ccbfba1e5cae881dd68fe683"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/besley/Besley-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 438,
+				"sha256": "18de8b421d7ebb8a339f18b98fec3dc473df8758ccbfba1e5cae881dd68fe683"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/besley/Besley[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-02-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Ụdị Foundry, Chisaokwu Joboson, Mirko Velimirović",
+	"family": "Ojuju",
+	"id": "ojuju",
+	"license": {
+		"attribution": "Copyright 2024 The Ojuju Project Authors (https://github.com/jobosonchisa/ojuju)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ojuju",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/jobosonchisa/ojuju",
+		"revision": "61052b2801035d3011c87708bd3367eeabd0bb82"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ojuju/Ojuju[wght].ttf",
+			"sha256": "6a4eae3adcf726e5a3961fa6843d5cb4fae3b08726c58fc143e9c2ca5c3d5b52",
+			"size": 221368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

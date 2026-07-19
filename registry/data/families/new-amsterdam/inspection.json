@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 377,
+				"sha256": "25f1028565df1adb350c8c0e1e96ff2de3fdc5213bd001d74a3891c2d4469aa3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/newamsterdam/NewAmsterdam-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

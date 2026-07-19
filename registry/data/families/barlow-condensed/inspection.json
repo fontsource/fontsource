@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowcondensed/BarlowCondensed-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

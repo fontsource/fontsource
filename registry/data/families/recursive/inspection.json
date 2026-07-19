@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 1,
+					"min": 0,
+					"tag": "CASL"
+				},
+				{
+					"default": 0.5,
+					"max": 1,
+					"min": 0,
+					"tag": "CRSV"
+				},
+				{
+					"default": 0,
+					"max": 1,
+					"min": 0,
+					"tag": "MONO"
+				},
+				{
+					"default": 0,
+					"max": 0,
+					"min": -15,
+					"tag": "slnt"
+				},
+				{
+					"default": 300,
+					"max": 1000,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 745,
+				"sha256": "638164d6cc2d8e4c812a41741f50dc21283fc9fccdf55ab9f2f4a68e7b958fbb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.085",
+			"outline": "glyf",
+			"path": "ofl/recursive/Recursive[CASL,CRSV,MONO,slnt,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 1000,
+				"min": 300
+			}
+		}
+	]
+}

@@ -1,0 +1,140 @@
+{
+	"category": "monospace",
+	"dateAdded": "2025-05-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2",
+		"vietnamese"
+	],
+	"designer": "Intel Corporation, Frere-Jones Type",
+	"family": "Intel One Mono",
+	"id": "intel-one-mono",
+	"license": {
+		"attribution": "Copyright 2023-2024 The Intel One Mono Project Authors (https://github.com/intel/intel-one-mono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/intelonemono",
+		"revision": "be9aca95b6f652b68f36617b6b50f1cae605baae",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/intel/intel-one-mono",
+		"revision": "99e2d6ca170744c62bfb5f52547435f23720abe1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/intelonemono/IntelOneMono-Bold.ttf",
+			"sha256": "b220487554fc6379d31d55536b0cddb3c23da1618dd8833d6e1caf3b25fa0bd4",
+			"size": 124452,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-BoldItalic.ttf",
+			"sha256": "4092cdc296cc65ace3192b1f2c410ea1880bf2863513bada14b94d1e7eca6322",
+			"size": 127580,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-Italic.ttf",
+			"sha256": "4d384d29f925f242bdf598f327e44f19279d45bd7c0baee0d9490a7d9cad3da0",
+			"size": 127888,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-Italic[wght].ttf",
+			"sha256": "9f93248b7f85aa3c21d3edcce4477048151f84f173bb88be2246b9f231946d85",
+			"size": 156828,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-Light.ttf",
+			"sha256": "c1db45f875215fb5a29a811df5e9d4e8b6f0d84245175ab6ef621d349dd87831",
+			"size": 125456,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-LightItalic.ttf",
+			"sha256": "906fd25498c7b7d9806b8b7ab22b6b9b19e2ff0e26bf2905cf926ceff0bcc680",
+			"size": 128636,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-Medium.ttf",
+			"sha256": "4cf19027f59495106fbe7a9d248ba5594cfb4def803fb96bd744caae607389e2",
+			"size": 124548,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-MediumItalic.ttf",
+			"sha256": "7256211f9ec38c5d4300dda3b891732dbac3a144a4c833025fc617a956776de4",
+			"size": 127496,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-Regular.ttf",
+			"sha256": "f92cb99ca8d984cfa570c17cf056dc7dbe3e7e2235d1a44c3b57205d4059aefa",
+			"size": 125144,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-SemiBold.ttf",
+			"sha256": "c7c7ecf4f26904e5ce85eea26df242e0e7cc4077d247cce730e13cfe9f8d1baa",
+			"size": 155860,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono-SemiBoldItalic.ttf",
+			"sha256": "b165030c9b371e5b1b8bedebf3bade7adc7326b5bae159db632c28bcab5542ac",
+			"size": 149116,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/intelonemono/IntelOneMono[wght].ttf",
+			"sha256": "e5354cc14c6f9299c06a81b76760a5d2a20cee56466b88d6b6fc6aa295694779",
+			"size": 151540,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

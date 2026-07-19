@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 203,
+				"sha256": "28a406acfaebc9050aa5221dcaa1015240ea159ff3ed2b943e1f03a49c261e54"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 8.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/taprom/Taprom-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

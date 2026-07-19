@@ -1,0 +1,39 @@
+{
+	"id": "hanunoo",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1720",
+			"1736"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/hanunoo_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "d61ff0dbb3dc4fd50fde92222f71ce6ed081420847b16ae996a992505e4ae814",
+		"upstream": "namFiles"
+	}
+}

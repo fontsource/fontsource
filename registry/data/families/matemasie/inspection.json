@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 362,
+				"sha256": "40119809d69128e3ab057e1b1955d9537a8e3ffbfc79e5ef6c3fbec3032c146b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/matemasie/Matemasie-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

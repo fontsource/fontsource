@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2021-03-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Haruki Wakamatsu",
+	"family": "Orelega One",
+	"id": "orelega-one",
+	"license": {
+		"attribution": "Copyright 2021 The Orelega One Project Authors (https://github.com/JapanYoshi/Orelega)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/orelegaone",
+		"revision": "4ad7174ac13f9448cdf293099996e2a88e36a521",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://gitlab.com/haleyhalcyon/orelega",
+		"revision": "756e15cc3dfeb958aafefc2e05db493e4473f0bd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/orelegaone/OrelegaOne-Regular.ttf",
+			"sha256": "df8372dca68d1a5bc4c7713594ec275d14192f2260b9d5c67c426d300505b704",
+			"size": 133732,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

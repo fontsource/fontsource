@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-03-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Bakken & Bæck, Henrik Kongsvoll",
+	"family": "Schibsted Grotesk",
+	"id": "schibsted-grotesk",
+	"license": {
+		"attribution": "Copyright 2023 The Schibsted-Grotesk Project Authors (https://github.com/schibsted/schibsted-grotesk)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/schibstedgrotesk",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/schibsted/schibsted-grotesk",
+		"revision": "d485f61f105e1b3935f4d21dfb4d371359798603"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/schibstedgrotesk/SchibstedGrotesk-Italic[wght].ttf",
+			"sha256": "b49fedb6f3a2ff9b43e13351888641505dc8e5f300941e597eecbc3f52ba357b",
+			"size": 181440,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/schibstedgrotesk/SchibstedGrotesk[wght].ttf",
+			"sha256": "6ceeadf6be8e1fd7687011c7fa38ed0edd1abe967a0b73d97caec183552e823d",
+			"size": 176068,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

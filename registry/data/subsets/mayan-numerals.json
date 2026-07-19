@@ -1,0 +1,31 @@
+{
+	"id": "mayan-numerals",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1D2E0",
+			"1D2F3"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/mayan-numerals_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "8ab011d53c0675c5c5eebd7b133cfdeb729fe9936414cbddfb33c302ceb74039",
+		"upstream": "namFiles"
+	}
+}

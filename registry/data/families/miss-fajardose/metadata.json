@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Miss Fajardose",
+	"id": "miss-fajardose",
+	"license": {
+		"attribution": "Copyright (c) 2004 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"MissFajardose\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/missfajardose",
+		"revision": "ffc6a1c0d611d3c2cae621e27dce8c48f189a563",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/missfajardose/MissFajardose-Regular.ttf",
+			"sha256": "f76e0f245e781a75ea9fa528706b417173f7741439369c07d1501276170ab709",
+			"size": 58872,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

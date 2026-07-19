@@ -1,0 +1,34 @@
+{
+	"category": "display",
+	"dateAdded": "2018-02-23",
+	"declaredSubsets": [
+		"korean",
+		"menu"
+	],
+	"designer": "DXKorea Inc",
+	"family": "Single Day",
+	"id": "single-day",
+	"license": {
+		"attribution": "Copyright 2015 DXKorea Inc. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/singleday",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/singleday/SingleDay-Regular.ttf",
+			"sha256": "716ff67a4b0675b35c26d60a4bb83173f7d153ab754474ed36c3369593ca1ca8",
+			"size": 816524,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

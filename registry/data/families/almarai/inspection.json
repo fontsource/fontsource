@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 528,
+				"sha256": "8261656f09250a9d15dd39b5aef1aecec826aa9242caa773c24dc869d6d80be8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.10",
+			"outline": "glyf",
+			"path": "ofl/almarai/Almarai-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 528,
+				"sha256": "8261656f09250a9d15dd39b5aef1aecec826aa9242caa773c24dc869d6d80be8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.10",
+			"outline": "glyf",
+			"path": "ofl/almarai/Almarai-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 528,
+				"sha256": "8261656f09250a9d15dd39b5aef1aecec826aa9242caa773c24dc869d6d80be8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.10",
+			"outline": "glyf",
+			"path": "ofl/almarai/Almarai-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 528,
+				"sha256": "8261656f09250a9d15dd39b5aef1aecec826aa9242caa773c24dc869d6d80be8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.10",
+			"outline": "glyf",
+			"path": "ofl/almarai/Almarai-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

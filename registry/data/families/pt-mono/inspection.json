@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 805,
+				"sha256": "52dc38317a42750583526f8fd4ee0996b181f9b3f4985222330a08117e86cbb3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001W OFL",
+			"outline": "glyf",
+			"path": "ofl/ptmono/PTM55FT.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

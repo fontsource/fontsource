@@ -1,0 +1,3 @@
+He's one cool customer with that crazy casual beatnik outfit, a long silky goatee and a touch of spooky just to give you the creeps... They call him Griffy! Dig this fun and wacky hip new font from Squid and Neapolitan and turn your L7 designs into way out masterpieces!
+
+Designed by Dave 'Squid' Cohen of Neapolitan (a DBA of Font Diner, Inc)

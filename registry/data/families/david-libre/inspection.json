@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 804,
+				"sha256": "4c1e99abc3321b9c71babd994a86a733ac15ee2ff0d9a08582779b44a1c642b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/davidlibre/DavidLibre-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 804,
+				"sha256": "4c1e99abc3321b9c71babd994a86a733ac15ee2ff0d9a08582779b44a1c642b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/davidlibre/DavidLibre-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 804,
+				"sha256": "4c1e99abc3321b9c71babd994a86a733ac15ee2ff0d9a08582779b44a1c642b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/davidlibre/DavidLibre-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

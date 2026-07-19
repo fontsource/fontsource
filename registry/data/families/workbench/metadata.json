@@ -1,0 +1,40 @@
+{
+	"category": "monospace",
+	"dateAdded": "2023-11-02",
+	"declaredSubsets": [
+		"latin",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Jens Kutílek",
+	"family": "Workbench",
+	"id": "workbench",
+	"license": {
+		"attribution": "Copyright 2021 The Workbench Project Authors (https://github.com/jenskutilek/homecomputer-fonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/workbench",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/jenskutilek/homecomputer-fonts",
+		"revision": "09b2f79d686453d3bc160d04a687488e66962c43"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/workbench/Workbench[BLED,SCAN].ttf",
+			"sha256": "027940fb7aea63f260fb367957e419c08f904f357b384c819f99eb06e7af17d6",
+			"size": 32472,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

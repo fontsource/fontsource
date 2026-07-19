@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-04-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Alumni Sans Collegiate One",
+	"id": "alumni-sans-collegiate-one",
+	"license": {
+		"attribution": "Copyright 2014 The Alumni Sans Collegiate Project Authors (https://github.com/googlefonts/alumni-sans-collegiate)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alumnisanscollegiateone",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/alumni-sans-collegiate",
+		"revision": "9dc96be1ead732fb1677c88632665e0bbf2e4ee2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alumnisanscollegiateone/AlumniSansCollegiateOne-Italic.ttf",
+			"sha256": "aa1ec3cafa94926b00e61da029c48271e6845400167c10f8b659b938da9d54ee",
+			"size": 173756,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/alumnisanscollegiateone/AlumniSansCollegiateOne-Regular.ttf",
+			"sha256": "9bd48b280391794c7a5aea97476b25051b4705c7963e4b63b2c84876db31b59b",
+			"size": 163484,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

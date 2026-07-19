@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2026-01-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Carolina Giovagnoli",
+	"displayName": "Betania Patmos Guides",
+	"family": "Betania Patmos Guide Line",
+	"id": "betania-patmos-guide-line",
+	"license": {
+		"attribution": "Copyright 2024 The Betania Patmos Project Authors (https://github.com/huertatipografica/betania-patmos)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/betaniapatmosguideline",
+		"revision": "82703246c7523e7ae2b35cf7aa3c92b77117f898",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/huertatipografica/betania-patmos",
+		"revision": "08c83ac9540b0b2bf86ddf6b632651142f31a93c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/betaniapatmosguideline/BetaniaPatmosGuideLine-Regular.ttf",
+			"sha256": "5bc4f5e9459ad2607db4ed44a5afa13b4c774b42a11c412208eb907372c28140",
+			"size": 121504,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 367,
+				"sha256": "1573ede0924a2e2dd9fbb694b3c64d6dbb6fb2927a063c1ef851a9601c234ba5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/galindo/Galindo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

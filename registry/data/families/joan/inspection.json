@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 534,
+				"sha256": "baea80006fdf8f3e411f7af9b6e6116189b2cb877556ddfe50b64600b8d67d9f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.30]",
+			"outline": "glyf",
+			"path": "ofl/joan/Joan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

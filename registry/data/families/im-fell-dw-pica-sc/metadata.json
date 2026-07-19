@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Igino Marini",
+	"family": "IM Fell DW Pica SC",
+	"id": "im-fell-dw-pica-sc",
+	"license": {
+		"attribution": "© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL DW Pica SC",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imfelldwpicasc",
+		"revision": "1931346c7f0b237ec358ec2df767b342b34c719b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/imfelldwpicasc",
+		"revision": "7504ed1a04211a3a32b920be754c7076ffcb5230"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imfelldwpicasc/IMFePIsc28P.ttf",
+			"sha256": "7fc01c056b20956bf2e84375340a6274332b67f7845cbbb479fe0b90b41f845d",
+			"size": 198012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

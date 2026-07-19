@@ -1,0 +1,1 @@
+Luckiest Guy is a friendly heavyweight sans serif typeface inspired by 1950s advertisements with custom hand lettering.

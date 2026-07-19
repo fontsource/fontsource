@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-02-27",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Rodriguez Tunni",
+	"family": "Sintony",
+	"id": "sintony",
+	"license": {
+		"attribution": "Copyright (c) 2013, Eduardo Tunni (http://www.tipo.net.ar edu@tipo.net.ar), with Reserved Font Name 'Sintony'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sintony",
+		"revision": "35c049c100cacca2130aebd926ce555c3d7cd113",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/sintony",
+		"revision": "be9cf7be562d566504ef1c8e52d41ce48535ced8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sintony/Sintony-Bold.ttf",
+			"sha256": "f091d492eb4b5940e30679a204b0e5465b5b35c7a604b3da330e850e93402bef",
+			"size": 26016,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sintony/Sintony-Regular.ttf",
+			"sha256": "b1781da0efb28c1668aa0e8b331868a1bb2eef1a02967e01e6a166f3aae34958",
+			"size": 25712,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

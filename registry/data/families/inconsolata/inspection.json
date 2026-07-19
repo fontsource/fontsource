@@ -1,0 +1,1100 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 200,
+					"min": 50,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/Inconsolata[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-Condensed.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedBlack.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedLight.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedMedium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedRegular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedSemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-Expanded.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedBlack.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedLight.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedMedium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedRegular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedSemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensed.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedBlack.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedLight.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedMedium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedRegular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedSemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpanded.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedBlack.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedLight.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedMedium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedRegular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedSemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensed.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedBlack.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedLight.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedMedium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedRegular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedSemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpanded.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedBlack.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedLight.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedMedium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedRegular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedSemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensed.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedBlack.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedLight.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedMedium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedRegular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedSemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpanded.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedBlack.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedBold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedLight.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedMedium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedRegular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedSemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Ligconsolata-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 882,
+				"sha256": "1ffa5731c0d065e15b0abb7ccc6eeb0868894fab0b6dd20dad9c476430085951"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001; ttfautohint (v1.8.2.53-6de2)",
+			"outline": "glyf",
+			"path": "ofl/inconsolata/static/Ligconsolata-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

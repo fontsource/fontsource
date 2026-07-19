@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-12-18",
+	"declaredSubsets": [
+		"kannada",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "John Harrington",
+	"family": "Benne",
+	"id": "benne",
+	"license": {
+		"attribution": "Copyright 2015 The Benne Project Authors (https://github.com/googlefonts/Benne)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/benne",
+		"revision": "05ded14202cdadd48001fc6f203025f2525e2912",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Benne",
+		"revision": "0e13f2e4e66eb5ed0076224b113398b78109748d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/benne/Benne-Regular.ttf",
+			"sha256": "681a3aadbde40f411b34bf6fb555971b1d6c1e979adf7eea5793f9bdd5ec7f3d",
+			"size": 230896,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

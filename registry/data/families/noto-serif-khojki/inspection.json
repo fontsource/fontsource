@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 423,
+				"sha256": "eea34aef546344ef31ca72e545f0fc6ab885c388a025d234ea812735118edf5d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005",
+			"outline": "glyf",
+			"path": "ofl/notoserifkhojki/NotoSerifKhojki[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-12-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontworks Inc.",
+	"family": "DotGothic16",
+	"id": "dotgothic16",
+	"license": {
+		"attribution": "Copyright 2020 The DotGothic16 Project Authors (https://github.com/fontworks-fonts/DotGothic16/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dotgothic16",
+		"revision": "9a6cc6b8ce992aff77b69c857c46af0b42cdff76",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontworks-fonts/DotGothic16",
+		"revision": "e44ca7bb46e7f353302c1431bf752af007c4fdfe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dotgothic16/DotGothic16-Regular.ttf",
+			"sha256": "3ad9af88726d42b40f7f365f0dcac785af73cf20ea6f1d5b44e57cc21150b8f1",
+			"size": 2069236,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

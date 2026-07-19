@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 250,
+				"sha256": "85022739dc8511ac3c801f5f74daac4c206425561150002ddb568b6480d283d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/gupter/Gupter-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 250,
+				"sha256": "85022739dc8511ac3c801f5f74daac4c206425561150002ddb568b6480d283d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/gupter/Gupter-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 250,
+				"sha256": "85022739dc8511ac3c801f5f74daac4c206425561150002ddb568b6480d283d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/gupter/Gupter-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

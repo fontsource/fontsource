@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 532,
+				"sha256": "44a9c399913ac029966dd2ffed1abfe36fc777da276be401990f0a5ac42bcb0c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/jainipurva/JainiPurva-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

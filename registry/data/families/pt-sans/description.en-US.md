@@ -1,0 +1,11 @@
+PT Sans was developed for the project "Public Types of Russian Federation." The second family of the project, PT Serif, is also available.
+
+The fonts are released with a libre license and can be freely redistributed: The main aim of the project is to give possibility to the people of Russia to read and write in their native languages.
+
+The project is dedicated to the 300 year anniversary of the civil type invented by Peter the Great in 1708–1710. It was given financial support from the Russian Federal Agency for Press and Mass Communications.
+
+The fonts include standard Western, Central European and Cyrillic code pages, plus the characters of every title language in the Russian Federation. This makes them a unique and very important tool for modern digital communications.
+
+PT Sans is based on Russian sans serif types of the second part of the 20th century, but at the same time has distinctive features of contemporary humanistic designs. The family consists of 8 styles: 4 basic styles, 2 captions styles for small sizes, and 2 narrows styles for economic type setting.
+
+Designed by Alexandra Korolkova, [Olga Umpeleva](https://profiles.google.com/olga.umpeleva/about) and [Vladimir Yefimov](https://profiles.google.com/VladimirJeffYefimov/about) and released by [ParaType](http://www.paratype.com/public/) in 2009.

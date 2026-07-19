@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"linear-a",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Linear A",
+	"id": "noto-sans-linear-a",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/linear-a)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanslineara",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/linear-a",
+		"revision": "e139e1cc000341fbe4c154932e02d4996f105b85"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanslineara/NotoSansLinearA-Regular.ttf",
+			"sha256": "f2f281d2bfd685ed2fb9597d77ed50dbe64bc36e0e80acf88b0862f2561e5aa0",
+			"size": 162012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

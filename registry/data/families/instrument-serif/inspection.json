@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "115d6b6c483248d1093404e0b3836c8f1b93645520e6de011f4900ec1a62ddc0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/instrumentserif/InstrumentSerif-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "115d6b6c483248d1093404e0b3836c8f1b93645520e6de011f4900ec1a62ddc0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/instrumentserif/InstrumentSerif-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

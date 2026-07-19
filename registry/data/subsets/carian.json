@@ -1,0 +1,47 @@
+{
+	"id": "carian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"B7",
+			"B7"
+		],
+		[
+			"205A",
+			"205A"
+		],
+		[
+			"205D",
+			"205D"
+		],
+		[
+			"2E31",
+			"2E31"
+		],
+		[
+			"102A0",
+			"102D0"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/carian_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "fd0156fa39287935518a804a58611f94700c0e5d7b73e86a04469ef64059ff23",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,67 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-01-28",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Pooja Saxena",
+	"family": "Cambay",
+	"id": "cambay",
+	"license": {
+		"attribution": "Copyright (c) 2014 Pooja Saxena (www.poojasaxena.in)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cambay",
+		"revision": "8cd06664ae01a8a46dab0f84480c0f48082f65da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/anexasajoop/cambay",
+		"revision": "538b69cc50d692cb0864372cab691a9da757c498"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cambay/Cambay-Bold.ttf",
+			"sha256": "75b8835327db778da23a029ad0782bde9f82567f902f9cf0cd1e18efa0fa96bc",
+			"size": 231232,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cambay/Cambay-BoldItalic.ttf",
+			"sha256": "4a5310a8d87f7909fa465794fab60dc37aab5ede8214ff7eea95f36c7a2b8974",
+			"size": 242084,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cambay/Cambay-Italic.ttf",
+			"sha256": "e2946874481bf5e3f28c6ec65a92bc529ad9ca27876fe7bcca8b0f04b5410bb3",
+			"size": 236660,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cambay/Cambay-Regular.ttf",
+			"sha256": "473faf71630aa1b411fa9887951d1b7b2674efa137e6697cd71afc2bf17d4d55",
+			"size": 224780,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

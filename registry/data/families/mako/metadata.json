@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Mako",
+	"id": "mako",
+	"license": {
+		"attribution": "Copyright 2007 The Mako Project Authors (https://github.com/googlefonts/MakoFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mako",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/MakoFont",
+		"revision": "f1365c6fd308090395e543858ce9c8520061c913"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mako/Mako-Regular.ttf",
+			"sha256": "660904f61bb44671dd8f5029bf179f82c7f78daa1c250c7dadb5927f1f1ef816",
+			"size": 70284,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

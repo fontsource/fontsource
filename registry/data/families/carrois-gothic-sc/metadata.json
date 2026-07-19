@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-09-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Carrois Apostrophe",
+	"family": "Carrois Gothic SC",
+	"id": "carrois-gothic-sc",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Ralph du Carrois, with Reserved Font Name 'Carrois'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/carroisgothicsc",
+		"revision": "55414cfd8c30feb70ff5ec2404f5591e61e379ca",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/carroisgothicsc",
+		"revision": "cd21c85aa57e4b1fc55eca2e31692cbd749e4e46"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/carroisgothicsc/CarroisGothicSC-Regular.ttf",
+			"sha256": "3dfc5fe797ab3e04327287d9dbae313847623670417e850d39e24662071f1c98",
+			"size": 40356,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

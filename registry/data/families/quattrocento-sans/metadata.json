@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-02-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Quattrocento Sans",
+	"id": "quattrocento-sans",
+	"license": {
+		"attribution": "Copyright (c) 2011, Pablo Impallari (www.impallari.com|impallari@gmail.com), Copyright (c) 2011, Igino Marini. (www.ikern.com|mail@iginomarini.com), Copyright (c) 2011, Brenda Gallo. (gbrenda1987@gmail.com), with Reserved Font Name Quattrocento Sans.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/quattrocentosans",
+		"revision": "4451de63a1ffa5485a793fd1b3c7b763039ff200",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/quattrocentosans/QuattrocentoSans-Bold.ttf",
+			"sha256": "3c5fcbfa0108c6b8d5f182fbba798d838f6be42c0ca6b4b3462e88a275682eb5",
+			"size": 100560,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/quattrocentosans/QuattrocentoSans-BoldItalic.ttf",
+			"sha256": "f96418eff31cc33e1c68e68103c10310007280dc06b734cbf936584d532ec29e",
+			"size": 100748,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/quattrocentosans/QuattrocentoSans-Italic.ttf",
+			"sha256": "4107f2ad5d4993e764df336df9d6919ce5cf3600c5fc44488e1d724116f99114",
+			"size": 108700,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/quattrocentosans/QuattrocentoSans-Regular.ttf",
+			"sha256": "8ee55c4a998c079efce0db96a30520a121d2bb90fe568f6a9e5cef54cc82ad59",
+			"size": 98340,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,35 @@
+{
+	"id": "bamum",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"A6A0",
+			"A6F7"
+		],
+		[
+			"16800",
+			"16A38"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/bamum_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "3b2cd672896950102d1fe9046cb4b7fdc3fa203f55c7827fff00e1bec62fb7a6",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 444,
+				"sha256": "519020af35e4668014d6cb1c21c1d1cca864439fde9bfeda319bf45af41dd77c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bhutukaexpandedone/BhuTukaExpandedOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

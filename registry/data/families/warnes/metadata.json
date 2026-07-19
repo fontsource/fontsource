@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Warnes",
+	"id": "warnes",
+	"license": {
+		"attribution": "Copyright 2012 The Warnes Project Authors (https://github.com/etunni/warnes), with Reserved Font Name 'Warnes'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/warnes",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/warnes",
+		"revision": "ec72daae3a0a1542706f636b9165f70874599cc5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/warnes/Warnes-Regular.ttf",
+			"sha256": "d3bd538498237de2f30420b45efe9b1a2d0671f66868ddf595284f797266ba32",
+			"size": 70272,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

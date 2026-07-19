@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 243,
+				"sha256": "9e8d8f0628ca2c2f1927dcd60531593f1f16012e9229bbe1b5c33de62f161120"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/bethellen/BethEllen-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

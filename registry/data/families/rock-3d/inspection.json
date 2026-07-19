@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 289,
+				"sha256": "dbbcd3a041a7596a4b1d8228bce1b3f4bb2c387adca06f8a2b8810afe3933d7b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/rock3d/Rock3D-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

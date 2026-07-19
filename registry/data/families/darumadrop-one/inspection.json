@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "f27e9108837947f940af6bb21c117d411644a79705f2210180dc98d0e0317df6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/darumadropone/DarumadropOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

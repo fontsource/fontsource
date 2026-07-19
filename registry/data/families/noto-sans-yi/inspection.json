@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1586,
+				"sha256": "b99dda2122658981373ac9a3d110312a2cfdca8e330018d87b2513c16c841073"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansyi/NotoSansYi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

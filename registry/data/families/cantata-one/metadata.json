@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-02-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Joana Correia",
+	"family": "Cantata One",
+	"id": "cantata-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com), with Reserved Font Name \"Cantata\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cantataone",
+		"revision": "869fdc8b046114b41e52ff92850988074d203e92",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/cantataone",
+		"revision": "12fb64c8cad39f95d18ea97713683cdebe08693a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cantataone/CantataOne-Regular.ttf",
+			"sha256": "e12df35ae88a3e0898422110301e0b7ff4c54a4c129b92077ae7f456f45ba3db",
+			"size": 96828,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

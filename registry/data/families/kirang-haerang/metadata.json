@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2018-02-24",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "Woowahan Brothers",
+	"family": "Kirang Haerang",
+	"id": "kirang-haerang",
+	"license": {
+		"attribution": "Copyright 2018 The Kirang Haerang Project Authors",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kiranghaerang",
+		"revision": "8d488c33137669adbba627f9b2d3a29f5d631fb3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/woowabros/KirangHaerang",
+		"revision": "544ae6224fa83a85a0b4954e188c4791a98e3ce9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kiranghaerang/KirangHaerang-Regular.ttf",
+			"sha256": "d677d28d466989017c520f00a2a7794ea581ea3d9fa9a830fbb44f1015eac72d",
+			"size": 5995608,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

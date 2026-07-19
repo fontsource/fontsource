@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 380,
+				"sha256": "fc6d4bcaf32377e81e1aa949817aaa5ab585a577f33e7657e8c58de7bb3667f6"
+			},
+			"colorTables": [],
+			"fontVersion": "3.00",
+			"outline": "glyf",
+			"path": "ofl/imfelldoublepica/IMFELLDoublePica-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 354,
+				"sha256": "7a91656f0c145a963ba10588d5d6c50c50a8f187c6abc5aef3787c24812a22fb"
+			},
+			"colorTables": [],
+			"fontVersion": "3.00",
+			"outline": "glyf",
+			"path": "ofl/imfelldoublepica/IMFELLDoublePica-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

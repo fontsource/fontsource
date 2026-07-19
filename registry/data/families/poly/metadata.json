@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nicolás Silva",
+	"family": "Poly",
+	"id": "poly",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Jos Nicols Silva Schwarzenberg.<info@nsilva.com>, with Reserved Font Names \"Poly\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/poly",
+		"revision": "6032a8073954d9a94207b25b0d682592375f4625",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/poly/Poly-Italic.ttf",
+			"sha256": "c83e89d46d98ddab1ad7897df36e93f4889ecce358bd0b1977a70a11c5303823",
+			"size": 74236,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/poly/Poly-Regular.ttf",
+			"sha256": "1e1a8d7991d5f4f22268c967fe6e7f4de2e006c7a70c2d9d3fbd43b5563e9181",
+			"size": 76800,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

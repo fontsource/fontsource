@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 767,
+				"sha256": "f39858e3b102261b2bfd5e14d1e866985294389ac2f9c7393f72d0c1b322acc7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/merriweathersans/MerriweatherSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 767,
+				"sha256": "f39858e3b102261b2bfd5e14d1e866985294389ac2f9c7393f72d0c1b322acc7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/merriweathersans/MerriweatherSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

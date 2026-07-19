@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-05-24",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong, Neapolitan",
+	"family": "Fasthand",
+	"id": "fasthand",
+	"license": {
+		"attribution": "Copyright 2020 The Fasthand Project Authors (https://github.com/danhhong/Fasthand)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fasthand",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Fasthand",
+		"revision": "048b6cfd785212af6470687da43969cc9bf462d9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fasthand/Fasthand-Regular.ttf",
+			"sha256": "f4a151d4d01ab2daf53e67904efd2b943c17ac7b7351de4e6ee7bda7697b0a13",
+			"size": 213852,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

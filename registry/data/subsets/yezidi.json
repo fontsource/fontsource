@@ -1,0 +1,59 @@
+{
+	"id": "yezidi",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"60C",
+			"60C"
+		],
+		[
+			"61B",
+			"61B"
+		],
+		[
+			"61F",
+			"61F"
+		],
+		[
+			"660",
+			"669"
+		],
+		[
+			"6D4",
+			"6D4"
+		],
+		[
+			"10E80",
+			"10EA9"
+		],
+		[
+			"10EAB",
+			"10EAD"
+		],
+		[
+			"10EB0",
+			"10EB1"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/yezidi_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "0244b2beed057eefb8e9c06eb5ad122d460f8c591b382e8ad7aaf61401f9b69e",
+		"upstream": "namFiles"
+	}
+}

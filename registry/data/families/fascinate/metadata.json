@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Fascinate",
+	"id": "fascinate",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Fascinate\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fascinate",
+		"revision": "1b1a49eecc0278ed56635f76a506395da21608a8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/fascinate",
+		"revision": "afac7a8ab8c537ef1b89ef6c5ae52a81567b9935"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fascinate/Fascinate-Regular.ttf",
+			"sha256": "2f3d4e1d3b1f58ba4700eba078c07d9f05d9f39513f6d29b0306ddc007bd7fec",
+			"size": 51900,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

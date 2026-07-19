@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-09-08",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "MOTOYA",
+	"family": "Kosugi Maru",
+	"id": "kosugi-maru",
+	"license": {
+		"attribution": "Copyright 2010 The Kosugi Maru Project Authors (https://github.com/googlefonts/kosugi-maru)",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/kosugimaru",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/kosugi-maru",
+		"revision": "bd22c671a9ffc10cc4313e6f2fd75f2b86d6b14b"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/kosugimaru/KosugiMaru-Regular.ttf",
+			"sha256": "4b8d0022c8dadd090ef67cd1f71f130714767af7806cba2eb4ebe4b0271c1d68",
+			"size": 3565716,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

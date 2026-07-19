@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-01-08",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Gurajada",
+	"id": "gurajada",
+	"license": {
+		"attribution": "Copyright (c) 2012 Silicon Andhra (fonts.siliconandhra.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gurajada",
+		"revision": "52b086bba3d9f7093fde7f5fceda6f5307f27afe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/gurajada",
+		"revision": "47d49279bffcb4cebab2dca10f8d7b20ff5230a2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gurajada/Gurajada-Regular.ttf",
+			"sha256": "353c1289a6f4ba743154c870418272cf68e0f63c0c38598ed33cba814d3178e8",
+			"size": 442756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

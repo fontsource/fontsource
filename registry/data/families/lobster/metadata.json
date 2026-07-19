@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2010-05-17",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Impallari Type",
+	"family": "Lobster",
+	"id": "lobster",
+	"license": {
+		"attribution": "Copyright 2010 The Lobster Project Authors (https://github.com/impallari/The-Lobster-Font), with Reserved Font Name \"Lobster\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lobster",
+		"revision": "75eafbbbc75dfdf8e584fd5076cbac5b1ec2432f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/The-Lobster-Font",
+		"revision": "0796aa8aa42f6cbc89fa61be4a2a12fdcd2b8998"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lobster/Lobster-Regular.ttf",
+			"sha256": "d6568e697fd50cedc0be04d8aae4127fe95add607e7bff954ca88604be80c205",
+			"size": 406076,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,110 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"devanagari",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Devanagari UI",
+	"id": "noto-sans-devanagari-ui",
+	"license": {
+		"attribution": "Copyright 2015 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansdevanagariui",
+		"revision": "8bb001f21baedfd1511594d7157b7d6b90409810",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/devanagari",
+		"revision": "9b735f271f5e1abd6be8afbf662e241d5f0ec43c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-Black.ttf",
+			"sha256": "544560061449451446610409e6d3a30fbe6d341313e8f0089839a8c38dc6cbb7",
+			"size": 226908,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-Bold.ttf",
+			"sha256": "c2a648025d13b35674ce39d886b179ffada7202097b42bd4634bf298f08f654e",
+			"size": 223724,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-ExtraBold.ttf",
+			"sha256": "fd36245aa8535d950b8a22fa52e161646855b36338cffc4a0333610ee7af1267",
+			"size": 226304,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-ExtraLight.ttf",
+			"sha256": "44b9cc07a76aa8c4aac181b93f44b1505f580ce2183b601ecf79b6f6dbe0cdb8",
+			"size": 214552,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-Light.ttf",
+			"sha256": "0f66c249feed1e2d164c7d194b73070dab7159a9a329d1c0215e961233d2993e",
+			"size": 212104,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-Medium.ttf",
+			"sha256": "a3ba715b2822f1b76f23b76238ef4aa5a417d4df49815c1979b56af39e6240ce",
+			"size": 219764,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-Regular.ttf",
+			"sha256": "c0b105d248337435b876d3a3d19b380c9782e452b15f142a0cf7b10f5d29a280",
+			"size": 215368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-SemiBold.ttf",
+			"sha256": "660b369a23914f270a9b73ff7db7d8d73c1d1c854141d8ca10aef17b258768f0",
+			"size": 222388,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/notosansdevanagariui/NotoSansDevanagariUI-Thin.ttf",
+			"sha256": "74a640dd72785855505332c8e02f2499587f89c6c319c9849590d3ce4f691958",
+			"size": 214068,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

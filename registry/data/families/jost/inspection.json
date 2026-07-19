@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 524,
+				"sha256": "58d7eb6ebf9fea8b4237f70a6fa5001dc04c1c97fca755e00be3ac2b8a5ad14d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.710",
+			"outline": "glyf",
+			"path": "ofl/jost/Jost-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 524,
+				"sha256": "58d7eb6ebf9fea8b4237f70a6fa5001dc04c1c97fca755e00be3ac2b8a5ad14d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.710",
+			"outline": "glyf",
+			"path": "ofl/jost/Jost[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

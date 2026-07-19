@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "95e37dd1860e69aa76cb61f85f087013796dbe3dd82c3b0c95f5d9c4b3aa5667"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/clickerscript/ClickerScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

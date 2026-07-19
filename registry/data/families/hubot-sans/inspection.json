@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 75,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 543,
+				"sha256": "c11c159805c15186e02b05b4b9b64d702e4e0319609b3adc8f41b0d3e33d5eba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/hubotsans/HubotSans-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 75,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 543,
+				"sha256": "c11c159805c15186e02b05b4b9b64d702e4e0319609b3adc8f41b0d3e33d5eba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/hubotsans/HubotSans[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

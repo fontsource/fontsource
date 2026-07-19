@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-04-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Batsirai Madzonga",
+	"family": "Sankofa Display",
+	"id": "sankofa-display",
+	"license": {
+		"attribution": "Copyright 2024 The Sankofa Display Project Authors (https://github.com/batsimadz/Sankofa-Display)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sankofadisplay",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/batsimadz/Sankofa-Display",
+		"revision": "078848b9058a9e51b36ac4602c7c7424d34bef21"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sankofadisplay/SankofaDisplay-Regular.ttf",
+			"sha256": "747b51b50660960d481505bf10354d68df79e6aea97fcac3faa8252dfb757429",
+			"size": 301656,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 399,
+				"sha256": "b4c1270e994f1adcaf37fc007179644a4548579fd06855ec16dff30938632413"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.33]",
+			"outline": "glyf",
+			"path": "ofl/mooli/Mooli-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

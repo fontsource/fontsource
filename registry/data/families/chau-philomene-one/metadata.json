@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-04-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vicente Lamónaca",
+	"family": "Chau Philomene One",
+	"id": "chau-philomene-one",
+	"license": {
+		"attribution": "Copyright (c) 2010-2012, TipoType (produccion.taller@gmail.com www.tipotype.com), with Reserved Font Name \"Chau Philomene\"\nCopyright (c) 2010-2012, TipoType (produccion.taller@gmail.com), with Reserved Font Name \"Chau Philomene\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chauphilomeneone",
+		"revision": "df37fa0949643559f29a9ce5d94970c648f2fc48",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/chauphilomeneone",
+		"revision": "d7246600bbdfd898596bb8ebab13c484e5b21a55"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chauphilomeneone/ChauPhilomeneOne-Italic.ttf",
+			"sha256": "4a010ccb1f317377ed9f4b47604102a5db3e50533d37d805d3322e56797218e0",
+			"size": 44328,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/chauphilomeneone/ChauPhilomeneOne-Regular.ttf",
+			"sha256": "2b9fffaa99f228498ee104bab524d7932eb1c49dd635e6be2a060c8ec999c9cc",
+			"size": 40040,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

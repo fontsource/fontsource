@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-03-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Lavishly Yours",
+	"id": "lavishly-yours",
+	"license": {
+		"attribution": "Copyright 2014-2021 The Lavishly Yours Project Authors (https://github.com/googlefonts/lavishly-yours)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lavishlyyours",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/lavishly-yours",
+		"revision": "06ea77a251dc2d763d199995ec06da0a0c1a85f1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lavishlyyours/LavishlyYours-Regular.ttf",
+			"sha256": "4a07a5002a4f852952818eebdcf008e48ea7d537541cc8ff7eb842088842313e",
+			"size": 150132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

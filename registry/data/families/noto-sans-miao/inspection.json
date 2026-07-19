@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 485,
+				"sha256": "cf3e2e543d9b60e3e6377564a0300f41c3cf41e43027ed4ca075f8fe2e0ddf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansmiao/NotoSansMiao-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

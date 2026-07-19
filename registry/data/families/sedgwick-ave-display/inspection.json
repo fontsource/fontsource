@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 591,
+				"sha256": "8e726ef06d875c3bc55f2cfe80942d15102128e47a3fd2e5cee0998c978be4af"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/sedgwickavedisplay/SedgwickAveDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

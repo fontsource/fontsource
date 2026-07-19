@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"menu",
+		"thai"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Thai UI",
+	"id": "noto-sans-thai-ui",
+	"license": {
+		"attribution": "Copyright 2016 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansthaiui",
+		"revision": "59c9f6e694c816bedb94c10374426e87ba51f5ce",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/thai",
+		"revision": "a79e109f3fee8b3e5f952c8dadcae4b7b341f562"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansthaiui/NotoSansThaiUI[wdth,wght].ttf",
+			"sha256": "3eddf0ec5225225b9cfd9e649314b883d209cedbc593ff96e485557296353389",
+			"size": 98836,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

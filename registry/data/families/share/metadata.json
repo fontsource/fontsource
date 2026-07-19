@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Carrois Apostrophe",
+	"family": "Share",
+	"id": "share",
+	"license": {
+		"attribution": "Copyright (c) 2005-2011, Carrois Type Design (carrois.com), with Reserved Font Name \"Share\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/share",
+		"revision": "b1c7a4dd55a76b9fe9b4f77220fcf3a5e0d889a4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/share/Share-Bold.ttf",
+			"sha256": "9419ff27f645fe25ae465342d77c82fcd2a3f6b97a7ff09051432e64f2df7581",
+			"size": 91072,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/share/Share-BoldItalic.ttf",
+			"sha256": "08cc32f8a09bd9ff4336cce6428af68f8fc2140d25535fd10d64ff5244a8ad82",
+			"size": 75880,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/share/Share-Italic.ttf",
+			"sha256": "657d449c3205cd6b072ab8e29dc5fb15c1d8320b111bd43a016852171e0b6892",
+			"size": 76636,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/share/Share-Regular.ttf",
+			"sha256": "ef1c3522c12628f19174fbdb2939a2dbd03c83d2498e4a8c0c74c6a4caa9914b",
+			"size": 92012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

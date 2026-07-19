@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-04-22",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Pragati Narrow",
+	"id": "pragati-narrow",
+	"license": {
+		"attribution": "Copyright (c) 2012-2015, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pragatinarrow",
+		"revision": "1f9663dc5498756cb250531df3ff2b12c9df2416",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/PragatiNarrow",
+		"revision": "829be323c427aab3669e2eb55e253573aeefb1e3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pragatinarrow/PragatiNarrow-Bold.ttf",
+			"sha256": "8e151c9307194e6fdd69503999f2150e066dc5e9cdb2a966c861ec53286fc863",
+			"size": 419792,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/pragatinarrow/PragatiNarrow-Regular.ttf",
+			"sha256": "c00d288cc79bce384e85161a256570d278bf25598f809c9718a4f59421516a94",
+			"size": 377784,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

@@ -1,0 +1,51 @@
+{
+	"category": "display",
+	"dateAdded": "2023-01-17",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Shantell Martin, Arrow Type, Anya Danilova",
+	"family": "Shantell Sans",
+	"id": "shantell-sans",
+	"license": {
+		"attribution": "Copyright 2022 The Shantell Sans Project Authors (https://github.com/arrowtype/shantell-sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/shantellsans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/arrowtype/shantell-sans",
+		"revision": "68f5eca1490a58973b2a814d3a7d0f61291fd0c9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/shantellsans/ShantellSans-Italic[BNCE,INFM,SPAC,wght].ttf",
+			"sha256": "269eb72414b3e7eb66fe5159ce507a61266485c41dbcbc1b44a25fadeb4a2c71",
+			"size": 1532432,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/shantellsans/ShantellSans[BNCE,INFM,SPAC,wght].ttf",
+			"sha256": "d98a7913853f78d71aa0b86daf66b5eddb5a3266c07bfd51ef70632b88c41084",
+			"size": 1284736,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

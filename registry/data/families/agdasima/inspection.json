@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 267,
+				"sha256": "12b84c0a0623faf6e5c8d832d270da5518cd6d64df8754c6702457edd1be6a70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/agdasima/Agdasima-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 267,
+				"sha256": "12b84c0a0623faf6e5c8d832d270da5518cd6d64df8754c6702457edd1be6a70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/agdasima/Agdasima-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

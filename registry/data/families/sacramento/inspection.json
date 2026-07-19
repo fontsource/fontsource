@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "ab84d1026da3b5d62834334ecf2db22a625dfc04b329ebc16cdcff7835c6c1bd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/sacramento/Sacramento-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

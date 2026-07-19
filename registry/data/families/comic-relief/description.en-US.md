@@ -1,0 +1,3 @@
+Comic Relief is a typeface designed to be metrically equivalent to the popular Comic Sans MS. Comic Relief can be used in place of Comic Sans MS without having to move, resize, or reset any part of the copy. Perfect for missing cat posters and all of your WordArt needs!
+
+To contribute, see [github.com/loudifier/Comic-Relief](https://github.com/loudifier/Comic-Relief).

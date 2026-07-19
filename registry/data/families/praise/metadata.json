@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-10-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Praise",
+	"id": "praise",
+	"license": {
+		"attribution": "Copyright 2014 The Praise Project Authors (https://github.com/googlefonts/praise-script)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/praise",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/praise-script",
+		"revision": "678af73de9e596fa80cbd1ab89ba45a18ad69991"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/praise/Praise-Regular.ttf",
+			"sha256": "1f9e88031638c7f3c238f5b44a9d745041b1620208a77ecbefb62b10b0ffb214",
+			"size": 694316,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

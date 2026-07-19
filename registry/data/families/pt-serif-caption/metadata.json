@@ -1,0 +1,46 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-02-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "ParaType",
+	"family": "PT Serif Caption",
+	"id": "pt-serif-caption",
+	"license": {
+		"attribution": "Copyright © 2010 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ptserifcaption",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ptserifcaption/PT_Serif-Caption-Web-Italic.ttf",
+			"sha256": "afe69233498676c418383b9defda8aace407eca0e86f4499d9ba4e9f494f9da5",
+			"size": 406612,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ptserifcaption/PT_Serif-Caption-Web-Regular.ttf",
+			"sha256": "d17d47f44e840eee017f839b27dff3c94c7afe7743eff308d4bd11f7018b69af",
+			"size": 399840,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "2169953e772c072de0b9ff485c1bbd4d85eb1abd28dd8584443f73b6c4fbd155"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/bellefair/Bellefair-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

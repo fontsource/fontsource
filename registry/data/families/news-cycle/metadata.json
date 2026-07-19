@@ -1,0 +1,53 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-04-27",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Nathan Willis",
+	"family": "News Cycle",
+	"id": "news-cycle",
+	"license": {
+		"attribution": "Copyright (c) 2010-2011, Nathan Willis (nwillis@glyphography.com), with Reserved Font Name \"News Cycle.\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/newscycle",
+		"revision": "71731ebc626c5c7d7b3b0c8bf4a842ae839899ee",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/newscycle/NewsCycle-Bold.ttf",
+			"sha256": "97f733a3a414cef6c44d6a4fde8ce2543facbfd1f5a35ae80dbfd691a89dd632",
+			"size": 60516,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/newscycle/NewsCycle-Regular.ttf",
+			"sha256": "8653ccce06d26dcf19a68704a16063835fc9fea036638c2fcbd5bdc8c94e4e95",
+			"size": 179600,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

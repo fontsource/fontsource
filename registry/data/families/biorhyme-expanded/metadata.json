@@ -1,0 +1,75 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Aoife Mooney",
+	"family": "BioRhyme Expanded",
+	"id": "biorhyme-expanded",
+	"license": {
+		"attribution": "Copyright 2016 Aoife Mooney (aoifemooney@gmail.com www.aoifemooney.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/biorhymeexpanded",
+		"revision": "2e8dadbdf54c791642333e460d40933cd3f824e9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aoifemooney/makingbiorhyme",
+		"revision": "b3c0488559ad7c42e11b71e65d255344faff63b9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-Bold.ttf",
+			"sha256": "b90136544a46250d2c366d8fdb3268419f0433ba6a6c96998baafe0d17319a77",
+			"size": 101904,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-ExtraBold.ttf",
+			"sha256": "3b916880fa74c804153051745376988e856029c86bed1f7facd532cebeee000d",
+			"size": 102320,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-ExtraLight.ttf",
+			"sha256": "16ba12fa8b94712383e5a4eac51d11addba2a8ce44a0c239ee13583cd7c32fc1",
+			"size": 92336,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-Light.ttf",
+			"sha256": "396a934bcfcd29009432f281c5be6ee2d1ed9552ca45eae509af3f9076d511cb",
+			"size": 96840,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-Regular.ttf",
+			"sha256": "e75a7c996c8884d3d26c0823e7cfbf3cf404d27a36ddff715f6dfd95389affa7",
+			"size": 100672,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-10-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Miguel Hernandez",
+	"family": "Chela One",
+	"id": "chela-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, LatinoType (luciano@latinotype.com), with Reserved Font Names 'Chela'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chelaone",
+		"revision": "611dbc9e1b26245dc4317b71876c195b854ba8ae",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/chelaone",
+		"revision": "cb7da0a381984ec348a9c88e2095f9592149c838"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chelaone/ChelaOne-Regular.ttf",
+			"sha256": "a5633f28945f31a5e494683af2c1f99f9f91c96578bf47dc9c315ebe3050c8f5",
+			"size": 35744,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

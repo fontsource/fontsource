@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"siddham"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Siddham",
+	"id": "noto-sans-siddham",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/siddham)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssiddham",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/siddham",
+		"revision": "6ff212cb17efb2ad8b6a3b677d61cb66edc44dae"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssiddham/NotoSansSiddham-Regular.ttf",
+			"sha256": "8ae4c893d5df6a4e418e7cd19ad6cc7fb95c7b9e04a772072a102fca74ca0185",
+			"size": 231580,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

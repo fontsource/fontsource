@@ -1,0 +1,95 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-18",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mike Abbink, Bold Monday",
+	"family": "IBM Plex Sans Devanagari",
+	"id": "ibm-plex-sans-devanagari",
+	"license": {
+		"attribution": "Copyright 2019 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexsansdevanagari",
+		"revision": "13a2fad085ebc42c067af269f32c03d20d31f9fe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "4ef531544df71be7bcd614c83b8576930ea68dbc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Bold.ttf",
+			"sha256": "8c1a55530a59f4d3df71e36ed7090e78511cf1e03c32b932c693ae6ac603b38f",
+			"size": 330896,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-ExtraLight.ttf",
+			"sha256": "9fd21512c2dcbd1675f0999195ac6d09011a13f61fe60775ae6a5e00e577c1e5",
+			"size": 374584,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Light.ttf",
+			"sha256": "d174a4b8c9d3de5bdbbdfca5adc87edf578b61fc207f576aec47f440b8c0b256",
+			"size": 368748,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Medium.ttf",
+			"sha256": "a112f36f92ecb6967ee82c643547986462d1ddcff22c20ad024cb0915ddd2bee",
+			"size": 343884,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Regular.ttf",
+			"sha256": "9a309796ffbe3b6827591eb4e6e7f13e273c38d37b40d12a5ac695172571e88b",
+			"size": 357812,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-SemiBold.ttf",
+			"sha256": "57f002a2e09846841ebfc59f12d3f3c530d05ff85648d6856dfe44f531c6c84d",
+			"size": 343168,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansdevanagari/IBMPlexSansDevanagari-Thin.ttf",
+			"sha256": "f41144a3bf9130ba62ad10d7e0b0f42695bf74f73b00c6154b03f8e35a9196d1",
+			"size": 371416,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasans/FiraSans-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

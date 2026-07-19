@@ -1,0 +1,59 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Hiroki-Chan",
+	"family": "Kiwi Maru",
+	"id": "kiwi-maru",
+	"license": {
+		"attribution": "Copyright 2020 The Kiwi Maru Project Authors (https://github.com/Kiwi-KawagotoKajiru/Kiwi-Maru)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kiwimaru",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Kiwi-KawagotoKajiru/Kiwi-Maru",
+		"revision": "65a112c7ec9ffe81595406982a670c7f945d7c5b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kiwimaru/KiwiMaru-Light.ttf",
+			"sha256": "30f856bc944911b025bfbf640bf6b9ffe18a9c7b06b20d4ef26fe5cc9b3819f8",
+			"size": 4982684,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/kiwimaru/KiwiMaru-Medium.ttf",
+			"sha256": "b2659f300a7d48c3f29eb273ffc5e1b26cc416ac8c37ff6bb2f3e43c2f4d235a",
+			"size": 5123612,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kiwimaru/KiwiMaru-Regular.ttf",
+			"sha256": "b0c3103b2639f690c1fcb44e060058383174bfd2eb72e6635bc9869b374dee87",
+			"size": 5065572,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

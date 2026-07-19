@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 244,
+				"sha256": "8b6058e834750fddd3ef03ac39db723f4f09fb4d31e3db34762d0b5b429ac009"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/galdeano/Galdeano-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

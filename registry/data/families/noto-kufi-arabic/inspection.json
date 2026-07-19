@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1558,
+				"sha256": "c46c64f758115da4419dec06546b935194c8d6be917df6e4ea4cfcc3a1b75dd6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.109",
+			"outline": "glyf",
+			"path": "ofl/notokufiarabic/NotoKufiArabic[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

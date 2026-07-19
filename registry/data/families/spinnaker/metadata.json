@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-09-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Elena Albertoni",
+	"family": "Spinnaker",
+	"id": "spinnaker",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Spinnaker\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/spinnaker",
+		"revision": "58d95612a50a286dca1b13287c7d3212de2daa82",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/spinnaker/Spinnaker-Regular.ttf",
+			"sha256": "f89852fb1cbf415eac1893d98978d77b934475d53d46838fd146924a4d2e13fc",
+			"size": 24988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

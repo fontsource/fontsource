@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 392,
+				"sha256": "1e70100c90852a61629927f8931a156d2059fcd987d352bd672e1936871d4ab8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanscaucasianalbanian/NotoSansCaucasianAlbanian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

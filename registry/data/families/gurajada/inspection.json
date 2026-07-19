@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 472,
+				"sha256": "c7ac28e8635cf5bd05f8a03a9cff4a971811ac9cefbd129f6cfe2339dec8df1b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.3; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/gurajada/Gurajada-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

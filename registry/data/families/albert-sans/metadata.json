@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-06-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Andreas Rasmussen",
+	"family": "Albert Sans",
+	"id": "albert-sans",
+	"license": {
+		"attribution": "Copyright 2021 The Albert Sans Project Authors (https://github.com/usted/Albert-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/albertsans",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/usted/Albert-Sans",
+		"revision": "f7f46082233f5a29cb71d6ae1d8d0ef9c7962d6c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/albertsans/AlbertSans-Italic[wght].ttf",
+			"sha256": "16eb3291f7389045e90a00abb66a3d2bca1d03387b7ebbbc2b0cd9a094f86226",
+			"size": 142156,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/albertsans/AlbertSans[wght].ttf",
+			"sha256": "8fe5d4cf5822d7096d4d17ad781c90f97c745ac13a22be619db74966fba45fda",
+			"size": 129000,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

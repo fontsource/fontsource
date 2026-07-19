@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Gutenberg Labo",
+	"family": "Otomanopee One",
+	"id": "otomanopee-one",
+	"license": {
+		"attribution": "Copyright 2020 The Otomanopee Project Authors (https://github.com/Gutenberg-Labo), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/otomanopeeone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Gutenberg-Labo/Otomanopee",
+		"revision": "21c3571eebc24b2723f94ef25dbf478c3a996047"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/otomanopeeone/OtomanopeeOne-Regular.ttf",
+			"sha256": "1c10207fafb5eae7c7b85554724653e3c3718a453db31d9fa55dfb1872ccc523",
+			"size": 412608,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

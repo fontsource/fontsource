@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1328,
+				"sha256": "dd1a57275d426b87637d22016080f507b84630bdb2871c06330e5e42d7222db1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.2",
+			"outline": "glyf",
+			"path": "ofl/novamono/NovaMono.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

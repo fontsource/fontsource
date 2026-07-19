@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-12-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Donald Knuth",
+	"family": "jsMath cmmi10",
+	"id": "jsmath-cmmi10",
+	"license": {
+		"attribution": "Generated from MetaFont bitmap by mftrace 1.0.33, http://www.cs.uu.nl/~hanwen/mftrace/",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/jsmathcmmi10",
+		"revision": "5bb43f7897883c3560af56a52e880af14f81e7dd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/jsmathcmmi10/jsMath-cmmi10.ttf",
+			"sha256": "f8f569e095af15da561908026353a73fe7d176f276d86bf7f6fee094bae5bc87",
+			"size": 46148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

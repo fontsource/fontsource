@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-06-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nicole Fally",
+	"family": "Hammersmith One",
+	"id": "hammersmith-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co. (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Hammersmith One\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hammersmithone",
+		"revision": "025db615a0c9eb757b25250c5b4f377fb4fa9044",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/hammersmithone",
+		"revision": "a5fae41a3eabe8ec4e1d8ff7b3fa6dfde5c4fa87"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hammersmithone/HammersmithOne-Regular.ttf",
+			"sha256": "6faf4e9a59a2b25e1016c4e47cf4da4a494d07aee15dc2f708a88caae015ff8a",
+			"size": 102884,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

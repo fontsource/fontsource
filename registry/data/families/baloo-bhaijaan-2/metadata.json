@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2021-10-29",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Ek Type",
+	"family": "Baloo Bhaijaan 2",
+	"id": "baloo-bhaijaan-2",
+	"license": {
+		"attribution": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/baloobhaijaan2",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Baloo2-Variable",
+		"revision": "da4090c1dd5798a3e72d7138e379ee1f94d6349c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/baloobhaijaan2/BalooBhaijaan2[wght].ttf",
+			"sha256": "3e9f07fbc796c0ddcb3e6e0aa26f9c86741d9f5b7f5cb72f4ed3c06e55a19336",
+			"size": 285508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

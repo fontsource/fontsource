@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 585,
+				"sha256": "e20be4865a33150792a1f5456b91c184e7776b443618729225417fada4f12db7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/splash/Splash-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

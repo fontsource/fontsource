@@ -1,0 +1,57 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Agustina Mingote",
+	"family": "Gudea",
+	"id": "gudea",
+	"license": {
+		"attribution": "Copyright (c) 2012, Agustina Mingote (agustinamingote@gmail.com), with Reserved Font Names \"Gudea\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gudea",
+		"revision": "6f23d06ca111a3ed09ca0137ee2aa514d3716847",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/gudea",
+		"revision": "0eb36c75099c39430192adf41887965fdc51e819"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gudea/Gudea-Bold.ttf",
+			"sha256": "2b1b56763dd590f782b65b07978fbe6f9a83ba5ecfdaf698c0e942ca06181059",
+			"size": 22560,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gudea/Gudea-Italic.ttf",
+			"sha256": "d4e7abc76e5bf3686436938840927b3522fd704c1f920514b31b67993409e274",
+			"size": 27028,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/gudea/Gudea-Regular.ttf",
+			"sha256": "a4b5410090a821ea17021627312babdf3d8db0271217fd8c4d9f629ef0a2d90b",
+			"size": 22932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

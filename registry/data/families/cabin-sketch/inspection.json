@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 223,
+				"sha256": "4b932d452a06dd9f96c01f74d80ae3183d0244a3818a9f4579f6722073407870"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/cabinsketch/CabinSketch-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 223,
+				"sha256": "4b932d452a06dd9f96c01f74d80ae3183d0244a3818a9f4579f6722073407870"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/cabinsketch/CabinSketch-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

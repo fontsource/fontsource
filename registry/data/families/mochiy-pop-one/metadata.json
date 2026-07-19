@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-04-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"menu"
+	],
+	"designer": "FONTDASU",
+	"family": "Mochiy Pop One",
+	"id": "mochiy-pop-one",
+	"license": {
+		"attribution": "Copyright 2020 The MochiyPop Project Authors (https://github.com/fontdasu/Mochiypop)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mochiypopone",
+		"revision": "6cf371da494158920f81ca1c0ce4de9112accce2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontdasu/Mochiypop",
+		"revision": "438f3dd27a236961a705b1363eef4130241203ae"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mochiypopone/MochiyPopOne-Regular.ttf",
+			"sha256": "9e009430e1316c271a5f34759c6b65fc343c4e806f193042528887e7235a92c6",
+			"size": 5163948,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

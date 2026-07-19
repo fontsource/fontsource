@@ -1,0 +1,59 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-05-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Font-Kai",
+	"family": "Kaisei Opti",
+	"id": "kaisei-opti",
+	"license": {
+		"attribution": "Copyright 2020 The Kaisei Project Authors (https://github.com/Font-Kai/Kaisei)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kaiseiopti",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/FontKai-Kaisei/Kaisei",
+		"revision": "b396c906d67ddbfde60c2c78588f8de00b46c891"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kaiseiopti/KaiseiOpti-Bold.ttf",
+			"sha256": "48e0a6e35903eeaea2b9559ac62cbe83dac701b2c9355c7cff8927722c965acc",
+			"size": 4287516,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kaiseiopti/KaiseiOpti-Medium.ttf",
+			"sha256": "5fb67055d4d3e60625b6ee10c93fa87e348b7d99f2bfd2632bdf4e43c96d54da",
+			"size": 4297952,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kaiseiopti/KaiseiOpti-Regular.ttf",
+			"sha256": "990cfb1fb00f311c8975c2c5f4778b2fe5462fd5eabf0884828a323dad3f18c0",
+			"size": 4503024,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

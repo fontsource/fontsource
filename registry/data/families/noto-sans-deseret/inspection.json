@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 415,
+				"sha256": "bfb98c358483ffcdfd1883f05a7caa31cc2edccb09fa52afb064500f7c4807c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansdeseret/NotoSansDeseret-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

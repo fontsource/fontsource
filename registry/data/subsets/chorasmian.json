@@ -1,0 +1,31 @@
+{
+	"id": "chorasmian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10FB0",
+			"10FCB"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/chorasmian_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "c326112178bc90c3162bbdd21e4c4690b26e9d7823c986eccebb9e7fed612988",
+		"upstream": "namFiles"
+	}
+}

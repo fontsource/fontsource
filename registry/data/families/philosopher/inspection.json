@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 538,
+				"sha256": "b75b0cefb11ab9307eebf02934698b30981c2cc4986d13742ec2d426cf0026df"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/philosopher/Philosopher-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 534,
+				"sha256": "e1bf0196a67e887ef607424dce9433e39e6d92fab5727e4c7a064a87de05f55d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/philosopher/Philosopher-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 534,
+				"sha256": "e1bf0196a67e887ef607424dce9433e39e6d92fab5727e4c7a064a87de05f55d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/philosopher/Philosopher-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 538,
+				"sha256": "b75b0cefb11ab9307eebf02934698b30981c2cc4986d13742ec2d426cf0026df"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/philosopher/Philosopher-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

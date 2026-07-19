@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Neapolitan",
+	"family": "Griffy",
+	"id": "griffy",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Font Diner, Inc DBA Neapolitan (diner@fontdiner.com) with Reseved Font Name \"Griffy\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/griffy",
+		"revision": "77f88f6e7f3534ee4d5eae4bb02c298a00251686",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/griffy",
+		"revision": "eed85949102ab5baa1a8ca8d6b24239709a76bab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/griffy/Griffy-Regular.ttf",
+			"sha256": "c889c3f8d169631386a297eae8b5bdefbf8d06aa9f4f325faec31b9b5f38eeb5",
+			"size": 208776,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

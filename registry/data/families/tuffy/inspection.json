@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 887,
+				"sha256": "f9fef2fb3ca23dafb87f4c4202d7f4b372891b0082724700d90f728470b43834"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.271",
+			"outline": "glyf",
+			"path": "ofl/tuffy/Tuffy-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 887,
+				"sha256": "f9fef2fb3ca23dafb87f4c4202d7f4b372891b0082724700d90f728470b43834"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.271",
+			"outline": "glyf",
+			"path": "ofl/tuffy/Tuffy-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1501,
+				"sha256": "4f84c9f3da98b033d3c764e030b0b155434e0e94bc873c784b950d0cd9cc1c51"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.272; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/tuffy/Tuffy-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1501,
+				"sha256": "4f84c9f3da98b033d3c764e030b0b155434e0e94bc873c784b950d0cd9cc1c51"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.272; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/tuffy/Tuffy-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

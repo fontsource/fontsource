@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 12180,
+				"sha256": "53a70615fbbc4bc08a70325de6ea2f7fe3dc5a9094e6f67f94f8065c7897623e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/astasans/AstaSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

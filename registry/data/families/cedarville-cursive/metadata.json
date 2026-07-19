@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-06-08",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Cedarville Cursive",
+	"id": "cedarville-cursive",
+	"license": {
+		"attribution": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com kimberlygeswein@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cedarvillecursive",
+		"revision": "d3d340e519cd4ff6dabeb4542c420fe5ac5a3f03",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/cedarvillecursive",
+		"revision": "cd212b0e2dc2364a3012ef43a3b9155c7ed0d352"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cedarvillecursive/Cedarville-Cursive.ttf",
+			"sha256": "5f86d71d08a68605d5912b9bcb639a060ce9c0debd7e0b715f5e268d4a4bc317",
+			"size": 69436,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,61 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-07-23",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Monotype Imaging Inc., SIL International, Meir Sadan",
+	"family": "David Libre",
+	"id": "david-libre",
+	"license": {
+		"attribution": "Copyright 2016 The David Libre Project Authors (https://github.com/meirsadan/david-libre), with reserved font name \"Hadash\", \"Gentium\" and 'SIL'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/davidlibre",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/meirsadan/david-libre",
+		"revision": "15496c1be77e35f3fa3d0df14a2c2c6f9adfd297"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/davidlibre/DavidLibre-Bold.ttf",
+			"sha256": "7610819c7888c8e7ecdfc573089113ec5355cf95078614ae0e30b509b05468f8",
+			"size": 132840,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/davidlibre/DavidLibre-Medium.ttf",
+			"sha256": "fa3e35197472768520a489b77009b75bfc55601f61a0c4d0c1b23ca7f87701ce",
+			"size": 129040,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/davidlibre/DavidLibre-Regular.ttf",
+			"sha256": "923f06e0f6dc84e1649d8cc5d5e12a8d663adf6aba83ba15baa5d559fb47b86e",
+			"size": 127740,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

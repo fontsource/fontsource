@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 322,
+				"sha256": "da23f139e76f28612c6176e05371c8d6917b3d9e3dc388b48d2e74062fa91d61"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/geomini/Geomini[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

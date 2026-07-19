@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2022-08-15",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Arthur Reinders Folmer, Just van Rossum",
+	"family": "Nabla",
+	"id": "nabla",
+	"license": {
+		"attribution": "Copyright 2022 The Nabla Project Authors (https://github.com/justvanrossum/nabla)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nabla",
+		"revision": "34a2c3daeeb2715576af0786ae4e9dc6c7d8ca2a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/justvanrossum/nabla",
+		"revision": "2a06e9f735390a7988d0ef190981ce4abf4dfd28"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nabla/Nabla[EDPT,EHLT].ttf",
+			"sha256": "e45cec60eb2099b4b4ffee8ebe005d1d3060771071ede1caeeeb12e37a2c00ae",
+			"size": 1643616,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "MADType",
+	"family": "Quantico",
+	"id": "quantico",
+	"license": {
+		"attribution": "Copyright (c) 2011 Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name \"Quantico\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/quantico",
+		"revision": "35ae5c8ae1ed32036e34befd106202e086b0922c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/quantico/Quantico-Bold.ttf",
+			"sha256": "e3a88a18c85bfa8c08577abb07e3d490e9264fc09c3c690c6de382c8628901ff",
+			"size": 20896,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/quantico/Quantico-BoldItalic.ttf",
+			"sha256": "88a44cbc5bd640f4940a3c42b12d42c6020ebcf71197875b8f553894ca4e209c",
+			"size": 20660,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/quantico/Quantico-Italic.ttf",
+			"sha256": "e4761fc04d45ac81cb17cc12cc231af666d39b739dba1c1cbceada3ade8be001",
+			"size": 22144,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/quantico/Quantico-Regular.ttf",
+			"sha256": "7f27dfb0658914ac570bf1da36a2527f10eefd41d25a8f9603d52957d61c075d",
+			"size": 20940,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

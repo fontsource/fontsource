@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-04-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "MCKL",
+	"family": "Red Hat Text",
+	"id": "red-hat-text",
+	"license": {
+		"attribution": "Copyright 2024 The Red Hat Project Authors (https://github.com/RedHatOfficial/RedHatFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/redhattext",
+		"revision": "f9ee7c8910dddefaa884468d0b064c4969e8a2c5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/RedHatOfficial/RedHatFont",
+		"revision": "32287097803f6c58136b60bc7a4a594a7fcbd689"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/redhattext/RedHatText-Italic[wght].ttf",
+			"sha256": "e7c263cf563dbd9fea7567839e22f3e34ed21234bd0a9b057402f921d1b1fa7e",
+			"size": 99664,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/redhattext/RedHatText[wght].ttf",
+			"sha256": "52343c51f688537b72967b78a7883ac29d96d698e0f0707bb11bac1987e0855d",
+			"size": 97332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 449,
+				"sha256": "b637eb65509135776d67a4d1c1cf0fed205ab40d534a627d6e48a1facda54e7d"
+			},
+			"colorTables": [],
+			"fontVersion": "1.003",
+			"outline": "glyf",
+			"path": "ofl/ledger/Ledger-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

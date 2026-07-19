@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-04-29",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "The Graphic Ant",
+	"family": "Matangi",
+	"id": "matangi",
+	"license": {
+		"attribution": "Copyright 2021 The Matangi Project Authors (https://github.com/thegraphicant/Matangi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/matangi",
+		"revision": "7e372ee4c0e93a008574d4044ac839cf8365fcea",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/thegraphicant/Matangi",
+		"revision": "a806f5ac9093cab670d0ce25a2cf5639bcc000ca"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/matangi/Matangi[wght].ttf",
+			"sha256": "1f2a23098e137dc241492fde76543abaaccad4726e99b198002e6dffbdf5a45d",
+			"size": 711948,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

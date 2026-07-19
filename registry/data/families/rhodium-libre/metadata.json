@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-06-03",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "James Puckett",
+	"family": "Rhodium Libre",
+	"id": "rhodium-libre",
+	"license": {
+		"attribution": "Copyright (c) 2014, Dunwich Type Founders (http://dunwichtype.com). Rhodium is a trademark of Dunwich Type Founders.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rhodiumlibre",
+		"revision": "9bda7c5d028609ef5e8eea077a3a616baedead82",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/DunwichType/RhodiumLibre",
+		"revision": "c6e9dc9167fb6f4bc6fc44f2262129aaf771c8a3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rhodiumlibre/RhodiumLibre-Regular.ttf",
+			"sha256": "d068be8060fd77135bd7c94ee36822d6902aed3bf0d382d8bcdfcbb5ad1b8283",
+			"size": 233792,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

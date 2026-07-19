@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2010-12-07",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "j. 'mach' wust",
+	"family": "UnifrakturCook",
+	"id": "unifrakturcook",
+	"license": {
+		"attribution": "Copyright (c) 2010 j. 'mach' wust (j.mach.wust@gmail.com) with Reserved Font Name UnifrakturCook. Copyright (c) 2009 Peter Wiegel (wiegel@peter-wiegel.de). This Font Software is licensed under the SIL Open Font License, Version 1.1.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/unifrakturcook",
+		"revision": "fa02673f3b360ca4b9a8ba4f6d5a4aeb59eecd32",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/unifrakturcook/UnifrakturCook-Bold.ttf",
+			"sha256": "ea002fa9c65f1a612af100e00d87ab65f16381f450020ec3d021f3dbf79a6dcd",
+			"size": 42688,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

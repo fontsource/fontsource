@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2021-09-02",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Beastly",
+	"id": "rubik-beastly",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikbeastly",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "70c5affdb044fecf4eb4988c320b8bfa8e8005c6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikbeastly/RubikBeastly-Regular.ttf",
+			"sha256": "854c5f4bd05aae76d7830e871e2c990ea309a436072d8f0b67a796a80ec1cb18",
+			"size": 512684,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,3 @@
+Mogra (મોગરા) is a display typeface that supports the Gujarati and Latin scripts. With dense letterforms that borrow heavily from a broad-nibbed marker, Mogra emphasises the definitive Gujarati out-stroke with mass, weight, and flair. The implied bloating of the marker pen creates an interesting roundness that contrasts against the relatively fixed angle the pen holds.
+
+The Mogra project is led by Lipi Raval, a type designer based in Ahmedabad, India. To contribute, see [github.com/lipiraval/mogra](https://github.com/lipiraval/mogra)

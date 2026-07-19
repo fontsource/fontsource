@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Typomondo",
+	"family": "Butcherman",
+	"id": "butcherman",
+	"license": {
+		"attribution": "Copyright (c) 2011, Typomondo, with Reserved Font Name  \"Butcherman\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/butcherman",
+		"revision": "4955dafd4f6b9eb058170c910fabec6dedb4c66e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/butcherman",
+		"revision": "f4f7f3e2cd993e09bb72e154c5fd34f3dc99d3c0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/butcherman/Butcherman-Regular.ttf",
+			"sha256": "b8cee5e2cdc71f44e6806dc0db1090a3ce2e48ca727072073700bf646b0ce6b5",
+			"size": 66100,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

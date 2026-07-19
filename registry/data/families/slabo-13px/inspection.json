@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "655cfcc3c19d8cb60008b7bbbe53b6262acb781ae46163701f759464f764d6a4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.02 Build 005a",
+			"outline": "glyf",
+			"path": "ofl/slabo13px/Slabo13px-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-01-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Christian Thalmann",
+	"family": "Cormorant Garamond",
+	"id": "cormorant-garamond",
+	"license": {
+		"attribution": "Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cormorantgaramond",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/CatharsisFonts/Cormorant",
+		"revision": "6d210fd3550b7358ca62d6ba3e354ec1ec940813"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+			"sha256": "0f48ea6abb2084537854f7174c470991a463b13036309e3b50a81511611c530d",
+			"size": 715644,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cormorantgaramond/CormorantGaramond[wght].ttf",
+			"sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+			"size": 1195560,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 579,
+				"sha256": "16419607776008ba4f06e621ce77140ae9551347225684b1bf3d0f1ef314053f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.1) -l 8 -r 50 -G 0 -x 0 -D deva -f latn -w gG -W",
+			"outline": "glyf",
+			"path": "ofl/dekko/Dekko-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

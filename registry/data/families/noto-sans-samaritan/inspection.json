@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 397,
+				"sha256": "3e77013ee21b656ac9ef03f448f8820d8d42fa89f3e2c59d7d9d3e9e3449a1df"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssamaritan/NotoSansSamaritan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

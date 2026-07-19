@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Shanti",
+	"id": "shanti",
+	"license": {
+		"attribution": "Copyright 2011 The Shanti Project Authors (https://github.com/googlefonts/ShantiFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/shanti",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/ShantiFont",
+		"revision": "511bc905381c9863b3dc241fc47523d1c3ba382f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/shanti/Shanti-Regular.ttf",
+			"sha256": "cc7320c8c4579293f4389ac391b4189c59d8276c3ac1f3b902bf0b0f0e2e9278",
+			"size": 70112,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

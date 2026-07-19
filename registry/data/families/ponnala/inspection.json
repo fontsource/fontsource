@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 181,
+				"sha256": "93f1502f3af81b192e6bffa20f8b2c97539a386213697ca004cb2d1be225a4fd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.3",
+			"outline": "glyf",
+			"path": "ofl/ponnala/Ponnala-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

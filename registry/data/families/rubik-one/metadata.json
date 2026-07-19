@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-05-05",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Hubert and Fischer",
+	"family": "Rubik One",
+	"id": "rubik-one",
+	"license": {
+		"attribution": "Copyright (c) 2013, 2014, Hubert and Fischer, Philipp Hubert (philipp@hubertfischer.com), Sebastian Fischer (sebastian@hubertfischer.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikone",
+		"revision": "3953587f00fab1f335c0a5bffa389979b8c7f4c7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/rubik",
+		"revision": "e337a5f69a9bea30e58d05bd40184d79cc099628"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikone/RubikOne-Regular.ttf",
+			"sha256": "fced18ce7220d7504aba15adebd58f63d29eca554180aa74ea7545c9e07e6548",
+			"size": 153084,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-11-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "SEKUYA",
+	"family": "Sekuya",
+	"id": "sekuya",
+	"license": {
+		"attribution": "Copyright 2025 The Sekuya Project Authors (https://github.com/kevinnseptian/SEKUYA)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sekuya",
+		"revision": "461309c00c36d6f1d05fdb86e4f2fd516aa5832a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/kevinnseptian/SEKUYA",
+		"revision": "74983eccdc3ee4233b3729132398e78eac409d04"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sekuya/Sekuya-Regular.ttf",
+			"sha256": "88d8f98973abd22df4660a2b64b9ad775a63b317010025069cd0738617221a72",
+			"size": 300420,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

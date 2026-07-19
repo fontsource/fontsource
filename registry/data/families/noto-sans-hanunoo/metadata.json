@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"hanunoo",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Hanunoo",
+	"id": "noto-sans-hanunoo",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/hanunoo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanshanunoo",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/hanunoo",
+		"revision": "5799d6111ecc607bf5fcfdb9ce8b6dcb1712eef5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanshanunoo/NotoSansHanunoo-Regular.ttf",
+			"sha256": "bdf8e293a79d753fcff1c3fdfc5e09fdfd8141cd08dbf2ac1268a24f4549a005",
+			"size": 53184,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

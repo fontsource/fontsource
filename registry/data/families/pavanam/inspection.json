@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 435,
+				"sha256": "8747cd101d1a6c9766f965e53bb466a9740a527010bf8177eacfe48e4649d9bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.86; ttfautohint (v1.3) -l 8 -r 50 -G 200 -x 14 -D latn -f none -m \"\" -w G -t -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/pavanam/Pavanam-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

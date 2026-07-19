@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"malayalam",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Malayalam UI",
+	"id": "noto-sans-malayalam-ui",
+	"license": {
+		"attribution": "Copyright 2018 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmalayalamui",
+		"revision": "69d088af9f72fa77331a06150b6eb0b593825580",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/malayalam",
+		"revision": "0fd65e553a6af3dc1c09ed39dfe8933e01c17b32"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmalayalamui/NotoSansMalayalamUI[wdth,wght].ttf",
+			"sha256": "6980d9e69af585a3346e21cdaf2e20fcbd292e24db043da679ddf2bf2acb884c",
+			"size": 394848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

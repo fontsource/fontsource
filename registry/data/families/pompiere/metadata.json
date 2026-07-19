@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Karolina Lach",
+	"family": "Pompiere",
+	"id": "pompiere",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Pompiere\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pompiere",
+		"revision": "d1e4fd7641d76cb28b9323258de08e04fcdf6565",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pompiere/Pompiere-Regular.ttf",
+			"sha256": "11610bde374970a6ca01136fdbea820f795fceae8c399c664e69f1277c1bc523",
+			"size": 36632,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "4c1a2b468de3faa4ad4eec6f8db418b94a4078836d6d8bb6baa13f883be8939b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/drsugiyama/DrSugiyama-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

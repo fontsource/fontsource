@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 650,
+				"sha256": "fa0dceba1d1dd7e5a10b05df8d66d1037801ba72d21c045c7af20089291b0901"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002",
+			"outline": "glyf",
+			"path": "ofl/asap/Asap-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 650,
+				"sha256": "fa0dceba1d1dd7e5a10b05df8d66d1037801ba72d21c045c7af20089291b0901"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002",
+			"outline": "glyf",
+			"path": "ofl/asap/Asap[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

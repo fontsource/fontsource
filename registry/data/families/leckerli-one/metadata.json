@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-07-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Gesine Todt",
+	"family": "Leckerli One",
+	"id": "leckerli-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 Gesine Todt (www.gesine-todt.de hallo@gesine-todt.de), with Reserved Font Names \"Leckerli\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/leckerlione",
+		"revision": "54584294ef89979740aa9687fdc3c04d11c4b539",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/leckerlione/LeckerliOne-Regular.ttf",
+			"sha256": "3f38ed99a07ab426eaa64c7d5773850a5dc8e6719b03125efce2cfbc82b083d7",
+			"size": 43212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

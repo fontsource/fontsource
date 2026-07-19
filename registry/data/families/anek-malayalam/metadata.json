@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-02-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"malayalam",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Anek Malayalam",
+	"id": "anek-malayalam",
+	"license": {
+		"attribution": "Copyright 2021 The Anek Project Authors (https://github.com/EkType/Anek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anekmalayalam",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Anek",
+		"revision": "34074c6b406f4112e20c7ad10254a6e954d0324b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anekmalayalam/AnekMalayalam[wdth,wght].ttf",
+			"sha256": "319ccd3dc61afce2a5f2e5f3ce16f555c1f385390e80d12af7b9d017dd4993fe",
+			"size": 668244,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

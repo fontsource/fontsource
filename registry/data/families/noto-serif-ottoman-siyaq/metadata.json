@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-03-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"ottoman-siyaq-numbers"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Ottoman Siyaq",
+	"id": "noto-serif-ottoman-siyaq",
+	"license": {
+		"attribution": "Copyright 2022 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifottomansiyaq",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/ottoman-siyaq-numbers",
+		"revision": "b6cca8ffe60e4978e07980dd9ae8820a474a9301"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifottomansiyaq/NotoSerifOttomanSiyaq-Regular.ttf",
+			"sha256": "c709105016fb6db957cfcf8ce504c115fe504b6a9055427ff227b73a24d7dd6c",
+			"size": 80000,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

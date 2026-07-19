@@ -1,0 +1,31 @@
+{
+	"id": "ottoman-siyaq-numbers",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1ED01",
+			"1ED3D"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/ottoman-siyaq-numbers_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "877efae46e0315897f5ec1126d7c61b9e8295c7aa4c52fce6397a6ce2e8339d0",
+		"upstream": "namFiles"
+	}
+}

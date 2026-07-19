@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1111998,
+				"sha256": "0e30de6ed63c19e7c94525641f41e27b6cb6bf7fd11ab8ce0e1b23a5d22a799b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.045;PS 1.045;hotconv 1.0.82;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/adobeblank/AdobeBlank-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

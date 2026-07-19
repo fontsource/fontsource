@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Twinkle Star",
+	"id": "twinkle-star",
+	"license": {
+		"attribution": "Copyright 2003 The Twinkle Star Project Authors (https://github.com/googlefonts/twinkle-star)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/twinklestar",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/twinkle-star",
+		"revision": "b91b9bb130e238e2ab91d1dfd855cfcbb74c5677"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/twinklestar/TwinkleStar-Regular.ttf",
+			"sha256": "fa38cff73e64d3da161a857cdc3babfb8427149356cb61f40a17310261652604",
+			"size": 310488,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

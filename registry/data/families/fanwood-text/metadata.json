@@ -1,0 +1,47 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-08-31",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Barry Schwartz",
+	"family": "Fanwood Text",
+	"id": "fanwood-text",
+	"license": {
+		"attribution": "Copyright (c) 2011, Barry Schwartz (chemoelectric@chemoelectric.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fanwoodtext",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/fanwood",
+		"revision": "cbaaed9704e7d37d3dcdbdf0b472e9efd0e39432"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fanwoodtext/FanwoodText-Italic.ttf",
+			"sha256": "23f51e2fda243a8759d5c32ff8a94da23dc697e8c9a014d4718aa0ab7ed3c808",
+			"size": 96364,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/fanwoodtext/FanwoodText-Regular.ttf",
+			"sha256": "98aa9cbf5c5ece368501d188b1565ae3e7f6c9970ee3823769b8e67219dc33c2",
+			"size": 119216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

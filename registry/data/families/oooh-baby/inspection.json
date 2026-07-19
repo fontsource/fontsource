@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 588,
+				"sha256": "e3806b418fdd5284e53e8e6ff04e1847f135a07669527a1fff3014f40ef42174"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.011; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/ooohbaby/OoohBaby-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

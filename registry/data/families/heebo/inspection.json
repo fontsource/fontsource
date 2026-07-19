@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 463,
+				"sha256": "6b197dedd8c6bad538029381004ef6ec302c13de05669425e5fc8656f129e14d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/heebo/Heebo[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

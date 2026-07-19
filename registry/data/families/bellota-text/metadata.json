@@ -1,0 +1,86 @@
+{
+	"category": "display",
+	"dateAdded": "2020-01-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Kemie Guaida",
+	"family": "Bellota Text",
+	"id": "bellota-text",
+	"license": {
+		"attribution": "Copyright 2019 The Bellota Project Authors (https://github.com/kemie/Bellota-Font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bellotatext",
+		"revision": "56b0bc214ba74afd04f9f6233630f5b2973a40ed",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/kemie/Bellota-Font",
+		"revision": "db900d27103a2e9b37b76ef32386fbf9691ecac6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bellotatext/BellotaText-Bold.ttf",
+			"sha256": "31c41c17d571900437b194300b5a9da384e366e22459d698fabe9f0be4355ef5",
+			"size": 200524,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bellotatext/BellotaText-BoldItalic.ttf",
+			"sha256": "2af54d05da4a9512e3a50f9280d5aaf1c9d50f668658d1b2e820682cc53605c8",
+			"size": 204100,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bellotatext/BellotaText-Italic.ttf",
+			"sha256": "4e04943e63ab256026cf2d0e506d16cc6aa7d5d891e63582acc250fc40992bdc",
+			"size": 195724,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/bellotatext/BellotaText-Light.ttf",
+			"sha256": "fdf27404f3b665aa0bdf8b19c7fd425d94ce013ef413945ebbd66b72442575cd",
+			"size": 190388,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/bellotatext/BellotaText-LightItalic.ttf",
+			"sha256": "7b52095b638459458bd7285f5e55651f301511e1a5136db92cb1ed915f8c61a4",
+			"size": 195940,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/bellotatext/BellotaText-Regular.ttf",
+			"sha256": "b10a58605747b85f738e3bbf9a5571101ecff0a398ef6620df9e9b4ee1f33f83",
+			"size": 191092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 406,
+				"sha256": "9350fd13baa836eb2da6d45f15a7a48500b37656c17d4fc34dba4bed6943352e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.006; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanszanabazarsquare/NotoSansZanabazarSquare-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

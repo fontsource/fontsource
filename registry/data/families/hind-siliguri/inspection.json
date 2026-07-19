@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 427,
+				"sha256": "87bf1c24d7c99ff5a5ae11e2dadd6262f7e1ee7a040bf5f033400f719d0066ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f beng -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindsiliguri/HindSiliguri-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 427,
+				"sha256": "87bf1c24d7c99ff5a5ae11e2dadd6262f7e1ee7a040bf5f033400f719d0066ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f beng -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindsiliguri/HindSiliguri-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 427,
+				"sha256": "87bf1c24d7c99ff5a5ae11e2dadd6262f7e1ee7a040bf5f033400f719d0066ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f beng -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindsiliguri/HindSiliguri-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 427,
+				"sha256": "87bf1c24d7c99ff5a5ae11e2dadd6262f7e1ee7a040bf5f033400f719d0066ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f beng -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindsiliguri/HindSiliguri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 427,
+				"sha256": "87bf1c24d7c99ff5a5ae11e2dadd6262f7e1ee7a040bf5f033400f719d0066ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f beng -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindsiliguri/HindSiliguri-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

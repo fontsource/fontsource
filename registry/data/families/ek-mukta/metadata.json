@@ -1,0 +1,94 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-05-12",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Ek Mukta",
+	"id": "ek-mukta",
+	"license": {
+		"attribution": "Copyright (c) 2014, Girish Dalvi, Ek Type. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ekmukta",
+		"revision": "b6b13967323a4f3a70bb8496d16702d67d727cc0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/MuktaGFVersion",
+		"revision": "bccb1e2d95db0eea6be66e001edb2aeb50ab8d2b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ekmukta/EkMukta-Bold.ttf",
+			"sha256": "1d62434625ca99e03acd200702ed5fd4d47231d134809807cdd7fb419f6409d1",
+			"size": 418448,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ekmukta/EkMukta-ExtraBold.ttf",
+			"sha256": "9e9ffe6a3113b5b4720b56175bbef76836a9b0e9bb9effe4fc968b50d98f575a",
+			"size": 423196,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/ekmukta/EkMukta-ExtraLight.ttf",
+			"sha256": "4d793ee781d99bd9498d1089eb461bfb8133bf1b05e0a2dac659905206c06837",
+			"size": 410672,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ekmukta/EkMukta-Light.ttf",
+			"sha256": "afabee30a12d8bdac36fc2b639e60f26e6f63b2f11613547cfca0d5e4167b54a",
+			"size": 405216,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ekmukta/EkMukta-Medium.ttf",
+			"sha256": "a98b7fad6cfae99c498b36002b290daf4c540cfb12dba86bab72f163299b0f56",
+			"size": 419764,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ekmukta/EkMukta-Regular.ttf",
+			"sha256": "d14f40a588b232cac9fb3063c707df93fc10e8d265694fc99fcfafcc8ab7b3b4",
+			"size": 432280,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ekmukta/EkMukta-SemiBold.ttf",
+			"sha256": "26d85f32f084a74b3eb976c28fa148383ac9822b086d94a41bef4659f3cad568",
+			"size": 411188,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 246,
+				"sha256": "3564f1dc5164c66a577b99a7b62537ec9011f3a8af96f1154f8b83364d62f139"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/chelaone/ChelaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 190,
+				"sha256": "e38d875a7b44cf8c1181bd7d2a4fb53afc820b5660712068c5b1979ba4332924"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/squadaone/SquadaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "db40dbfe6b73b5d968663709cb0593e2715df24caf8350fb313d5d844a0f768c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.012",
+			"outline": "glyf",
+			"path": "ofl/worksans/WorkSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "db40dbfe6b73b5d968663709cb0593e2715df24caf8350fb313d5d844a0f768c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.012",
+			"outline": "glyf",
+			"path": "ofl/worksans/WorkSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

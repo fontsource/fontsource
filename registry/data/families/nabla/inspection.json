@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 200,
+					"min": 0,
+					"tag": "EDPT"
+				},
+				{
+					"default": 12,
+					"max": 24,
+					"min": 0,
+					"tag": "EHLT"
+				}
+			],
+			"cmap": {
+				"codepointCount": 376,
+				"sha256": "6e41284cdb2906a4742913c4defdbc666e2422c3bd27c1240e59bdd964f2a08d"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL",
+				"SVG "
+			],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/nabla/Nabla[EDPT,EHLT].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

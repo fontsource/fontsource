@@ -1,0 +1,3 @@
+Kristi is a calligraphy font inspired by old chancery typefaces. It is made with a basic felt-pen by using bold and quick moves while writing. The name of the font is a common Estonian girls name.
+
+The most distinctive characteristics of this type are tall ascenders and descenders, slim vertical lines and little twists like the letter "g" in the text. Kristi can be used large size, for example as in logotype or headlines.

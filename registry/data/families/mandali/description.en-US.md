@@ -1,0 +1,3 @@
+Mandali is a Telugu font developed for use in news publications and has many unique Telugu conjunct letters. It is named after Mandali Venkata Krishna Rao, who successfully organised the first World Telugu Conference in 1975. He and his family have worked for the well being of Telugu people.
+
+The Telugu is designed and developed by Purushoth Kumar Guttula in 2013 and made available by Silicon Andhra under the SIL Open Font License v1.1. The Latin is designed by Vernon Adams and originally published as [Nunito](http://www.google.com/fonts/specimen/Nunito). The Mandali project is led by Appaji Ambarisha Darbha, a type designer based in Hyderabad, India. To contribute, see [github.com/appajid/mandali](https://github.com/appajid/mandali)

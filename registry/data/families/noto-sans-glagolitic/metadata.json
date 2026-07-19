@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"glagolitic",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Glagolitic",
+	"id": "noto-sans-glagolitic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/glagolitic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansglagolitic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/glagolitic",
+		"revision": "142196c12c02018cbd55250f9ebf9380fa006203"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansglagolitic/NotoSansGlagolitic-Regular.ttf",
+			"sha256": "6472cfa8cda3efd3c680a007af9b55dc02469104a068bf9fd08f934a1fb27310",
+			"size": 83444,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

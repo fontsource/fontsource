@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"hatran",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Hatran",
+	"id": "noto-sans-hatran",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/hatran)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanshatran",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/hatran",
+		"revision": "de472058911afccdf8ab8ddafc7b0314ad30e673"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanshatran/NotoSansHatran-Regular.ttf",
+			"sha256": "8d26a25e634783f3fe285868bc71ca396c11d0f760129ce9f85a24f3f943116d",
+			"size": 50744,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

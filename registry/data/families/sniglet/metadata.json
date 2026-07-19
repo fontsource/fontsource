@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2010-12-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Multiple Designers",
+	"family": "Sniglet",
+	"id": "sniglet",
+	"license": {
+		"attribution": "Copyright (c) 2008, Haley Fiege (haley@kingdomofawesome.com), Copyright (c) 2012, Brenda Gallo (gbrenda1987@gmail.com) Copyright (c) 2013, Pablo Impallari (www.impallari.com|impallari@gmail.com), with no Reserved Font Name.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sniglet",
+		"revision": "ff9fb4e03680ed4d96d171ece45bce52912a41d4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/sniglet",
+		"revision": "5c6b0860bdd0d8c4f16222e4de3918c384db17c4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sniglet/Sniglet-ExtraBold.ttf",
+			"sha256": "fb92a118e14b4bde101a0143895f570a54b070a307b359510b7703b5a94bb18c",
+			"size": 74228,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/sniglet/Sniglet-Regular.ttf",
+			"sha256": "2856a975b9c0ac0402e8402ac4bd126cd97d6c90490435b6198d77e6384ae4f0",
+			"size": 75212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

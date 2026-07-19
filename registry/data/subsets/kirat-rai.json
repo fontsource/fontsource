@@ -1,0 +1,31 @@
+{
+	"id": "kirat-rai",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"16D40",
+			"16D79"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/kirat-rai_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "853b2268cc49e56fedff627cb4fa019343ec5c169ba3a187e3a8ae91f19e4fd2",
+		"upstream": "namFiles"
+	}
+}

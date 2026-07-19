@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 512,
+				"sha256": "3ec628ac557694ea9954ba7844e60e8774cabb20f587c551c2842c45462e6dc8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/suse/SUSE-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 512,
+				"sha256": "3ec628ac557694ea9954ba7844e60e8774cabb20f587c551c2842c45462e6dc8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/suse/SUSE[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

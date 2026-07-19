@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2016-12-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Barrio",
+	"id": "barrio",
+	"license": {
+		"attribution": "Copyright 2016 The Barrio Project Authors (omnibus.type@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/barrio",
+		"revision": "905f06ba9dc581a7ae421e7ecc1edf1fee54751d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Barrio",
+		"revision": "4cb00e50284f63512cce98d382b495955bde4e72"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/barrio/Barrio-Regular.ttf",
+			"sha256": "6f86249fbed4d0d620bcfefda64a0081e15cf0c8c5fd2ad17db157b98b558bc5",
+			"size": 225524,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

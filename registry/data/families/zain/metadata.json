@@ -1,0 +1,102 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-05-31",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"menu"
+	],
+	"designer": "Boutros Fonts",
+	"family": "Zain",
+	"id": "zain",
+	"license": {
+		"attribution": "Copyright 2024 The Zain Project Authors (https://github.com/googlefonts/zain)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zain",
+		"revision": "361c997df97cbbbce27b401ffb712b6bce2f4b3b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zain",
+		"revision": "7c4a81812cee52243a8b52cc362650042b831d28"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zain/Zain-Black.ttf",
+			"sha256": "fb9146db13654b0e75003e8db55508167782d70bb64d85c0b4a0e689f016939f",
+			"size": 193168,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/zain/Zain-Bold.ttf",
+			"sha256": "4dc98e7b1a9cac93bde1907271472ba9cf43ae5212e942cafe59a6d341f052e3",
+			"size": 189816,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/zain/Zain-ExtraBold.ttf",
+			"sha256": "1f28878c4fd73456c1b2fc0fe334767f397c51cd227376b30dc9412732e74abf",
+			"size": 190584,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/zain/Zain-ExtraLight.ttf",
+			"sha256": "0fed2aeaa4a13676ee9a8b518804d4ce904a0b812a85bcbf35ea657cd2d308ac",
+			"size": 180536,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/zain/Zain-Italic.ttf",
+			"sha256": "ed2fd21e100b067530478c2c71229cca9e7213f905c6f8736deadc999bd2a9bb",
+			"size": 202788,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/zain/Zain-Light.ttf",
+			"sha256": "21ac8d8c63f1d037d7922a7e1343ad07d9fc60cc922f5c267d12cd75d93f1037",
+			"size": 189212,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/zain/Zain-LightItalic.ttf",
+			"sha256": "0681b370f399f997f62e0ed782e41fe80ef224afeb995e27f43e440b691b878e",
+			"size": 211528,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/zain/Zain-Regular.ttf",
+			"sha256": "2a2b8af3804039c7f500c43f581a4145012728bc3109ef15d48371700f5e1f63",
+			"size": 188468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

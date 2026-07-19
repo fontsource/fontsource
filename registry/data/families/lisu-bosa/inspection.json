@@ -1,0 +1,212 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "840d95a0ba43d4f1d7b7172da5370da6c8bc351caf2914f3a35fb97cbdaaa6b8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/lisubosa/LisuBosa-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

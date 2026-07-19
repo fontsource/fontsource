@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-08-03",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Natalia Raices",
+	"family": "Delius Swash Caps",
+	"id": "delius-swash-caps",
+	"license": {
+		"attribution": "Copyright (c) 2010, 2011, Natalia Raices <nraices@gmail.com>, with Reserved Font Name \"Delius\" \"Delius Unicase\" \"Delius Swash Caps\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/deliusswashcaps",
+		"revision": "bf2809c5b73cb6ed3f064fab24c3b20be0c5d8b6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/deliusswashcaps",
+		"revision": "a18d931eb4b66533df5df07d91e0851938a96121"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/deliusswashcaps/DeliusSwashCaps-Regular.ttf",
+			"sha256": "04c102448007265b8a0672590900919d35dfd26c624e543c8c3bfbab9535b642",
+			"size": 63052,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

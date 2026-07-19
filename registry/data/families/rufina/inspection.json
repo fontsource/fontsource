@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "438002b284839fec4c3e615328bb7503e9544947da769be79f22446343352654"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/rufina/Rufina-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "438002b284839fec4c3e615328bb7503e9544947da769be79f22446343352654"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/rufina/Rufina-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

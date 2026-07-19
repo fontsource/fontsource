@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 374,
+				"sha256": "de2022f6a5416560ad9d644282f513361616cb1daa637877c71844c82d067892"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/rumraisin/RumRaisin-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

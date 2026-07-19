@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"canadian-aboriginal",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Canadian Aboriginal",
+	"id": "noto-sans-canadian-aboriginal",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/canadian-aboriginal)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanscanadianaboriginal",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/canadian-aboriginal",
+		"revision": "1766b85dfc150695e2322c33fdc441f552720b6f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanscanadianaboriginal/NotoSansCanadianAboriginal[wght].ttf",
+			"sha256": "81b0f7e7ca48b28e343bb6a523a066743acedfbb29f374cbe4501e6d5f08f7af",
+			"size": 292524,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 475,
+				"sha256": "10befa8fd48523a5e729d89ccb81dc48bc72b63dab5e1602933518b2995189e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/biryani/Biryani-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 475,
+				"sha256": "10befa8fd48523a5e729d89ccb81dc48bc72b63dab5e1602933518b2995189e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/biryani/Biryani-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 475,
+				"sha256": "10befa8fd48523a5e729d89ccb81dc48bc72b63dab5e1602933518b2995189e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/biryani/Biryani-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 475,
+				"sha256": "10befa8fd48523a5e729d89ccb81dc48bc72b63dab5e1602933518b2995189e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/biryani/Biryani-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 475,
+				"sha256": "10befa8fd48523a5e729d89ccb81dc48bc72b63dab5e1602933518b2995189e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/biryani/Biryani-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 475,
+				"sha256": "10befa8fd48523a5e729d89ccb81dc48bc72b63dab5e1602933518b2995189e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/biryani/Biryani-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 475,
+				"sha256": "10befa8fd48523a5e729d89ccb81dc48bc72b63dab5e1602933518b2995189e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/biryani/Biryani-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2026-01-30",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "But Ko",
+	"family": "Bpmf Iansui",
+	"id": "bpmf-iansui",
+	"license": {
+		"attribution": "Copyright 2025 The Bpmf Project Authors (https://github.com/ButTaiwan/bpmfvs)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bpmfiansui",
+		"revision": "889c969b9a5c3d2c4f5ba1b0249becf298ae841f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ButTaiwan/bpmfvs",
+		"revision": "20f741c18bb917b63576293906c01e82ddfce032"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bpmfiansui/BpmfIansui-Regular.ttf",
+			"sha256": "72716054f083b8c8953b45ab4c28dcf7a771e3be2eb58a848a459418058f1cb7",
+			"size": 7698176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

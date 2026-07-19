@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 250,
+				"sha256": "fb967d6f53791cd965b17cd6cdbc5957bbbf2e50ac6a51857ead9f1873087258"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/spinnaker/Spinnaker-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

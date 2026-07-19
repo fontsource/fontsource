@@ -1,0 +1,49 @@
+{
+	"category": "display",
+	"dateAdded": "2015-01-28",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "TipTopTyp",
+	"family": "Ranga",
+	"id": "ranga",
+	"license": {
+		"attribution": "Copyright (c) 2014 by TipTopTyp.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ranga",
+		"revision": "5fa1569401e1c87743138971589c76b6ecf3a2be",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Ranga",
+		"revision": "47116eb916be5a95fbf6ba6f3795badbc15a2265"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ranga/Ranga-Bold.ttf",
+			"sha256": "c5c763628e805a2af3c9deb68abd0b70227a98911f7ba56f4f8c2a3e8c286b96",
+			"size": 127288,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ranga/Ranga-Regular.ttf",
+			"sha256": "e51a6898e34d12bd9b9057002e645f176d30f5e821bfaa1ccc4e56294af7099a",
+			"size": 119128,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

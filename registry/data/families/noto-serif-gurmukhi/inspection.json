@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 436,
+				"sha256": "31e83bb73a50fa2eb880af89151b7b206a888ef98550e0fca00654705b5e260a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "ofl/notoserifgurmukhi/NotoSerifGurmukhi[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

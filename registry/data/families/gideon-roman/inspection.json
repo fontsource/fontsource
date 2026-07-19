@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 574,
+				"sha256": "dda364b825f30a1715f50736eaa2859530aade8b4d968b6cc7ffee505c78cb77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.010",
+			"outline": "glyf",
+			"path": "ofl/gideonroman/GideonRoman-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

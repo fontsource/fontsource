@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 735,
+				"sha256": "8c698e25a007f4e179e7eecdf21ff446c46f205640901de3d3dda112f66bd0c1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/spacegrotesk/SpaceGrotesk[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

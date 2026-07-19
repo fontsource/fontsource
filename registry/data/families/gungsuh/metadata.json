@@ -1,0 +1,42 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-05-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "HanYang I&C Co.",
+	"family": "Gungsuh",
+	"id": "gungsuh",
+	"license": {
+		"attribution": "Copyright 2024 The Batang and Gungsuh Project Authors (https://github.com/googlefonts/batang)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gungsuh",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/batang",
+		"revision": "6c1e09f93204c963881afbb4e25699095565f2e5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gungsuh/Gungsuh-Regular.ttf",
+			"sha256": "e0887c3b3a92f0ebc604cbd5e94ad6d0dad4ed3ffa624f6bae9a95f2d4d06735",
+			"size": 6582836,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

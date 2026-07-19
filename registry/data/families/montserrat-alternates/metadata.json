@@ -1,0 +1,195 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-01",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly",
+	"family": "Montserrat Alternates",
+	"id": "montserrat-alternates",
+	"license": {
+		"attribution": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/montserratalternates",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JulietaUla/Montserrat",
+		"revision": "cc8daf2e7085006b9c112542fc82b58afc13521d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-Black.ttf",
+			"sha256": "6fa4bf87ef8927790cc11cc87b8bcadefe2d8a1326664b6d750f5b4e5e2cf943",
+			"size": 221652,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-BlackItalic.ttf",
+			"sha256": "fe505e4ec2d6a5863ab1bb42e3e721d95a987dd93abd10d3cdfd4c53594e3d31",
+			"size": 224064,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-Bold.ttf",
+			"sha256": "98f35386bc203067407b20ff1f22eefd750c9ff3e637a6bfb36b2a2ef3b8fbb0",
+			"size": 214248,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-BoldItalic.ttf",
+			"sha256": "11004d3d235bda580fe5ed7e70d6c617919ce91e5521f6734929a8844a65a1b4",
+			"size": 216520,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-ExtraBold.ttf",
+			"sha256": "66dcd7efa7e568113a958864e68f45ed18bc96eacc16b5d2c1a85ffeedb9dfc6",
+			"size": 214904,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-ExtraBoldItalic.ttf",
+			"sha256": "0cacbf2c2fbaaff1b6a86db6c9554f0d0bb5460b2e8e23758fa5d859df854fc1",
+			"size": 217160,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-ExtraLight.ttf",
+			"sha256": "61a5008e6564e427593d35e1799d9f230c33f502f9632e75f45935f8eb345e02",
+			"size": 212840,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-ExtraLightItalic.ttf",
+			"sha256": "bbf6a02448865d2085601ef2b9de2571e4c77fbb9a2bd3cffffc35981e6a11a5",
+			"size": 214572,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-Italic.ttf",
+			"sha256": "eda385390e3149fb3138f250a949bcec412793484aa99508148322eefdb825d6",
+			"size": 215828,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-Light.ttf",
+			"sha256": "70288e0bda9b8680c2b2fae4c3c6690bb97cb2196a6335ff626b2fe32d5070e9",
+			"size": 212192,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-LightItalic.ttf",
+			"sha256": "df4174a4836a8f7131f9b2a46f4a7a111a405a28a8a3819da524c96093216d21",
+			"size": 214004,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-Medium.ttf",
+			"sha256": "acd0b8e8ca755b4304caccf9d2c8432c2b60e8a4f292415e8c468ed12c974779",
+			"size": 213000,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-MediumItalic.ttf",
+			"sha256": "1e2e65e29ce84de715fe4aca89b5b6ef0cba823c4c7e68f559ef85f648135186",
+			"size": 214960,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-Regular.ttf",
+			"sha256": "3b7c563f2087888279fdb7c21cc57b073ba1931dbe413e1202485b46ebfb7ead",
+			"size": 215068,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-SemiBold.ttf",
+			"sha256": "8596df6b4c8c51d227ad7bed7a69d6d7bbd4fcb388a318e0afd8e29135c7d909",
+			"size": 213876,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-SemiBoldItalic.ttf",
+			"sha256": "8b2f9a4a694fd9fa487ad387d8f96e3e74d5e462a930af7eaa0a22c843e148e0",
+			"size": 216132,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-Thin.ttf",
+			"sha256": "51c6e65e305eab5e9ae47ee6334c6cf615e66418dfdb168128a700cd65a6ba97",
+			"size": 212056,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/montserratalternates/MontserratAlternates-ThinItalic.ttf",
+			"sha256": "66f562ad5ff8be653ddf8e194db669b9a8e56571c24d6539fe92d178b1d7e07a",
+			"size": 213840,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

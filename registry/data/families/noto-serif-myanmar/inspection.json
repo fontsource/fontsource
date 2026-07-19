@@ -1,0 +1,121 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "0491d52f28bf2d55cbb731cc5165a02223302bfbdf774caa688619d22c81cf14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

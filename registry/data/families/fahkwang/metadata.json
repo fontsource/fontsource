@@ -1,0 +1,140 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Fahkwang",
+	"id": "fahkwang",
+	"license": {
+		"attribution": "Copyright 2018 The Fahkwang Project Authors (https://github.com/cadsondemak/Fah-Kwang)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fahkwang",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Fah-Kwang",
+		"revision": "7b16186dadf959e79ded967a7620bfb05600fcaf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fahkwang/Fahkwang-Bold.ttf",
+			"sha256": "f44512b78dae665290e0bcbc0b5198462694c894d3300019b69a30d87341f042",
+			"size": 87808,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-BoldItalic.ttf",
+			"sha256": "607383c7dece1337b2bb573a09136223addc8a54d5e0a34dcd146280052c4805",
+			"size": 90980,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-ExtraLight.ttf",
+			"sha256": "abf6583c1f8f05e9a053e2cf3832e4a2859d28777da0d45232fcec519055d0ca",
+			"size": 88424,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-ExtraLightItalic.ttf",
+			"sha256": "c03eba5baf576d98216027a1b0eedc4035dc13ce7af1d44316d80538bca50c1a",
+			"size": 91104,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-Italic.ttf",
+			"sha256": "7455131628894aba848b3fe9ba8c2fa99f6cbc41f52391934e630a4aa8860fab",
+			"size": 91048,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-Light.ttf",
+			"sha256": "2ac5586f842987801e5f4a391e6cf0c9d2f26e53b8a3bc2442a7640127fda02b",
+			"size": 88404,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-LightItalic.ttf",
+			"sha256": "eff441c47bdef712477f4ecc9fbe8c9663551bccca1f158b1674dc7df668544a",
+			"size": 91148,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-Medium.ttf",
+			"sha256": "050aba7762b61b85f3392423adbe221b71c854312ccb548709c4bc61e4518741",
+			"size": 88000,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-MediumItalic.ttf",
+			"sha256": "0404d0e69c5f21f8be5b65fc2c215ee08c7de9ee89473801c17fb1a5e95a5da6",
+			"size": 91132,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-Regular.ttf",
+			"sha256": "ce596ef9da1e40d894a1f6dbaca54aab3c699763e2715a649a8146e6ef32fb2b",
+			"size": 88168,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-SemiBold.ttf",
+			"sha256": "3c8eaee7f138efe3b2925571f8d9af9275af25662a2a8baddf0dc3af2790fde3",
+			"size": 88028,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/fahkwang/Fahkwang-SemiBoldItalic.ttf",
+			"sha256": "6662235fa26919dccdb65697cc4a664814e1dca57498c168b9e24a0948a8a497",
+			"size": 91212,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

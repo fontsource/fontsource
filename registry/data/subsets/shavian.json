@@ -1,0 +1,35 @@
+{
+	"id": "shavian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"B7",
+			"B7"
+		],
+		[
+			"10450",
+			"1047F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/shavian_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "7cb850c4726d86276843f316b63927331f595dc969546d6142497e70ab862bf9",
+		"upstream": "namFiles"
+	}
+}

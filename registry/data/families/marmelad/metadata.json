@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Cyreal, Manvel Shmavonyan",
+	"family": "Marmelad",
+	"id": "marmelad",
+	"license": {
+		"attribution": "Copyright 2016 The Marmelad Project Authors (https://github.com/cyrealtype/Marmelad-Cyrillic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/marmelad",
+		"revision": "9003f6ba00aa6a58717ce48cccb6ee5e3224a698",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Marmelad-Cyrillic",
+		"revision": "9ddac1c0cbdc888e1c6adae6f34e7db08ec6c187"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/marmelad/Marmelad-Regular.ttf",
+			"sha256": "aadcea7a972d84294ab5399b99654506559d328e03169a2351854c7046b77fc6",
+			"size": 142764,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

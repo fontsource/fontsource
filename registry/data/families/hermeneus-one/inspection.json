@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 444,
+				"sha256": "32d6d685dc746fe1d4c1bb4541a72aa990d7fbe6c6eb83f38c9a0219c565d555"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v0.93) -l 8 -r 50 -G 200 -x 14 -w \"G\"",
+			"outline": "glyf",
+			"path": "ofl/hermeneusone/HermeneusOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

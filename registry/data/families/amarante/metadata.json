@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-07-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Karolina Lach",
+	"family": "Amarante",
+	"id": "amarante",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Amarante\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/amarante",
+		"revision": "0f81999aba70ca8df5af47faa1effc19d16ebc5a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/amarante",
+		"revision": "46979134e6b96a867f1441e91d06bbecc3eba8d2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/amarante/Amarante-Regular.ttf",
+			"sha256": "de5eb7cc2b13632fe3f9fedbe4dc34571a76758cfb52b71fdace8fc4a7638a2f",
+			"size": 148116,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Aguafina Script",
+	"id": "aguafina-script",
+	"license": {
+		"attribution": "Copyright (c) 2007 Angel Koziupa (sudtipos@sudtipos.com), Copyright (c) 2007 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"Aguafina Script\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/aguafinascript",
+		"revision": "d7b3b6c3c6ac39284d34f716d9e7ab32a0f3cdde",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/aguafinascript",
+		"revision": "0cd0eecf14f34e946400cb472a9241616e4833ac"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/aguafinascript/AguafinaScript-Regular.ttf",
+			"sha256": "55f65d84d86936d7aaadffa4c17873923fba26c078d42aa4e6e2f1be8bfb5f6e",
+			"size": 47252,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

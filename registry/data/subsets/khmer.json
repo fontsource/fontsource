@@ -1,0 +1,67 @@
+{
+	"id": "khmer",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"5F"
+		],
+		[
+			"61",
+			"7E"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"AB",
+			"AB"
+		],
+		[
+			"AD",
+			"AD"
+		],
+		[
+			"BB",
+			"BB"
+		],
+		[
+			"1780",
+			"17DD"
+		],
+		[
+			"17E0",
+			"17E9"
+		],
+		[
+			"17F0",
+			"17F9"
+		],
+		[
+			"19E0",
+			"19FF"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/khmer_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "784261527b2967381b4db623b53a32dbdbe8e6cb574d377b15d049d9fa099ca1",
+		"upstream": "namFiles"
+	}
+}

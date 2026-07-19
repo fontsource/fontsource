@@ -1,0 +1,122 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Chakra Petch",
+	"id": "chakra-petch",
+	"license": {
+		"attribution": "Copyright 2018 The Chakra Petch Project Authors (https://github.com/m4rc1e/Chakra-Petch.git)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chakrapetch",
+		"revision": "a4c8c2a0f77efa06765d596d64d077af1d7f0dae",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/m4rc1e/Chakra-Petch",
+		"revision": "6176529d05acf654f31e024daad77966319e499d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-Bold.ttf",
+			"sha256": "65fbf76d95651697275e19db4d717c0e95a789ddd3476478b05292104db278a0",
+			"size": 78384,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-BoldItalic.ttf",
+			"sha256": "bf012ce1894ffcf7d32d3e6548b90df7c40f30161b5cc295eb54ff61c21fab19",
+			"size": 80828,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-Italic.ttf",
+			"sha256": "3aeea48f0ffab0d6ad8d3cd0cb9c0ceb98ecbcf363521ce56fceea51ecbb1d1f",
+			"size": 80764,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-Light.ttf",
+			"sha256": "13a106a367b903fb509ed11e7c921589a0d42c22540510d3ca8f6c7343bef76b",
+			"size": 78936,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-LightItalic.ttf",
+			"sha256": "67e426488e221d5d9e5a3b62a34b45f1f534dabd1078bdc77fcdfe43630cbee0",
+			"size": 81240,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-Medium.ttf",
+			"sha256": "d480f4f97405fac3600652e2e14fd0b14339031c0af4da11582994878f04d919",
+			"size": 78600,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-MediumItalic.ttf",
+			"sha256": "3a9185b6735897aeb38fdd132aae761a9092001c7615ac9e2238131bf9b099ed",
+			"size": 80960,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-Regular.ttf",
+			"sha256": "98fcd638baa5c81ff0316b7538ce330ee3b23b1302726de3526d5933a8ecf986",
+			"size": 78488,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-SemiBold.ttf",
+			"sha256": "45264de3204ddbd5fb3e14a2402acd5c630d16650ae5fc221d2c52da46a6734b",
+			"size": 78604,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/chakrapetch/ChakraPetch-SemiBoldItalic.ttf",
+			"sha256": "4e11c1bec71511bbea8a3bc3f4cebff479bb9681961d691a36f99e5234d8fe89",
+			"size": 81000,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

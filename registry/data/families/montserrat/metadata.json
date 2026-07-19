@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly",
+	"family": "Montserrat",
+	"id": "montserrat",
+	"license": {
+		"attribution": "Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/montserrat",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JulietaUla/Montserrat",
+		"revision": "cc8daf2e7085006b9c112542fc82b58afc13521d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/montserrat/Montserrat-Italic[wght].ttf",
+			"sha256": "51607f316bc020e59f03cbf51543eecffbea501c0b31d73e5b82927c5cca442c",
+			"size": 762376,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/montserrat/Montserrat[wght].ttf",
+			"sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7",
+			"size": 744936,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

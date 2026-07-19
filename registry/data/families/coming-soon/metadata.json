@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-01-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Open Window",
+	"family": "Coming Soon",
+	"id": "coming-soon",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Open Window. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/comingsoon",
+		"revision": "12ad67e4ac2ea6a2c6b2e90f0727de72b952cf41",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/comingsoon",
+		"revision": "27c886594addb8deb44976ee37f829f2c8253a9d"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/comingsoon/ComingSoon-Regular.ttf",
+			"sha256": "cf81388f587ff6122de1a705d1070b8f00abccdba66108509908b5d10715068c",
+			"size": 53256,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

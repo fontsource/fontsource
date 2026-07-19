@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 745,
+				"sha256": "535f3694e6177841c15ccfb2e02a3fc204d0205ad8b77514aa36b3c692414f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.005",
+			"outline": "glyf",
+			"path": "ofl/lemonada/Lemonada[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

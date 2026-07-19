@@ -1,0 +1,147 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 35.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "a6b7fbc7ee0ed95475d8a0f68b9e5a91a773186017ad7be233345cf77cc5e14b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 57.000;hotconv 1.0.70;makeotf.lib2.5.55311",
+			"outline": "glyf",
+			"path": "ofl/titilliumweb/TitilliumWeb-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-07-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Nicole Fally",
+	"family": "Ovo",
+	"id": "ovo",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Ovo\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ovo",
+		"revision": "c42f4721360a3e7336a65ef038bad5a9579f0f0f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ovo/Ovo-Regular.ttf",
+			"sha256": "8d4f113ada748f44d005371bee5692e58950a84e6068b74f54710e280a29f389",
+			"size": 50864,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

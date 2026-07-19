@@ -1,0 +1,23 @@
+[![](hero.png)](https://youtu.be/f3IQSmKFokU)
+
+_[Watch the introduction video on YouTube](https://youtu.be/f3IQSmKFokU)_
+
+_There’s no perfect typeface that works for every size, every device, every application, every style, and every mood. But as the default for Android, with over 2.5 billion active users spanning over 190 countries, and as Google Fonts’ most popular download, [Roboto](https://fonts.google.com/specimen/Roboto) needs to be as flexible as possible._
+
+_The Roboto [superfamily](https://fonts.google.com/knowledge/glossary/superfamily) has grown over time, being updated over the years to improve its language support and aesthetic qualities. Initially launched in 2011 as [sans](https://fonts.google.com/specimen/Roboto) and [condensed](https://fonts.google.com/specimen/Roboto+Condensed) with [slab and mono](https://fonts.google.com/?query=roboto) companions, and expanded with [Roboto Serif](https://material.io/blog/roboto-serif), Roboto Flex is the latest step forward for this powerful typeface system.
+
+Roboto Flex is Google Fonts’ biggest project to date. With a huge range of [weights](https://fonts.google.com/knowledge/glossary/weight) and [widths](https://fonts.google.com/knowledge/glossary/width) across a full set of [optical sizes](https://fonts.google.com/knowledge/glossary/optical_sizes), plus additional capabilities for fine-tuning, Roboto Flex was designed by [Font Bureau](http://fontbureau.typenetwork.com/) to be super scalable, adaptable, customizable, and optimizable.
+
+With Flex, you can customize Roboto to express and finesse your text in ways never before possible. Today, people are constantly switching between devices, resizing browsers, and spreading our viewports across multiple screens. So Google commissioned Font Bureau to re-imagine Roboto to “flex” along with us, with a special emphasis on large-screen capabilities. This was achieved by amplifying the original design to an extreme range of weights, grades, widths and optical sizes.
+
+The second benefit of Roboto Flex is the designer’s ability to fitness and fine-tune their designs with [parametric axes](https://fonts.google.com/knowledge/glossary/parametric_axes). Font Bureau first demonstrated the concept of parametric axes in [Amstelvar Alpha](https://www.axis-praxis.org/specimens/amstelvar) (2017), to provide the ultimate in typographic flexibility. With early prototypes of Roboto Flex, Font Bureau demonstrated new solutions to the typographic problems that digital designers face. Demonstrations of high quality justification, better dark-mode typography and other uses of parametric axes are documented at [variablefonts.typenetwork.com](https://variablefonts.typenetwork.com/)
+
+The needs of developers, designers, and — of course — end-user readers were prioritized and aligned during development. To make Roboto Flex production-ready for all print and digital media, Font Bureau expanded the glyph set with careful planning and development, in partnership with script experts for Cyrillic and Greek. Rigorous testing of each glyph across every axis required new type design tools to be developed, like [typeroof](https://fontbureau.github.io/typeroof/), which can be used to explore the depth of the design.
+
+The final file size of the complete package is remarkably small, given the range of expressive styles now available. By driving variable fonts technology to its limits, it offers the most interesting and useful typographic tools for end users and designers. With a fully loaded Optical Size axis, Roboto Flex makes the layout of texts with deep hierarchies more straightforward and heightens the quality of every design that uses it.
+
+And none of this would be possible without the long list of contributors involved. Special thanks to David Berlow, Santiago Orozco, Ilya Ruderman, Irene Vlachou, Yury Ostromentsky, Mikhail Strukov, Dave Crossland, Damien Correll, Marc Foley, David Jonathan Ross, Chris Lewis, Eben Sorkin, Viktoriya Grabowska, Adam Twardoch, Roel Nieksens, Laurence Penney, and Thomas Linard.
+
+Roboto Flex is developed by Font Bureau for Google, based on the design initiated by Christian Robertson. To learn more, read [Roboto … But Make It Flex](https://material.io/blog/roboto-flex) on the Material Design blog.
+
+_

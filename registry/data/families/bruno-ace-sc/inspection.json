@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "9f6ca92903d028167fcf5ee9d8d6a3198b9b56a283e00cceb0b3c06d40b58f8f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/brunoacesc/BrunoAceSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

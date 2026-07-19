@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 554,
+				"sha256": "5ccd0ab229d33553d0c0599ef990b024573ee2e396bd15f72e6810b764e1ea11"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "ofl/playball/Playball-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

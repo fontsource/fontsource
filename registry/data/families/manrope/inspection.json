@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 678,
+				"sha256": "7c455a700660c50a8087e3b267a0bd6bda06b59995b3301e66748f0b29aca290"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.504",
+			"outline": "glyf",
+			"path": "ofl/manrope/Manrope[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 585,
+				"sha256": "fcf0fcb1b568d83112998d74156dafd80e17a95f172ac2c7714e813befbc370b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/asimovian/Asimovian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

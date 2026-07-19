@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 423,
+				"sha256": "1786a65a6a280bd0e25e72a5fed7bba4ee74b4b3e0a079741482393c5837d940"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.007",
+			"outline": "glyf",
+			"path": "ofl/notosansoriya/NotoSansOriya[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

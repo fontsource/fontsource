@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 689,
+				"sha256": "529495c652b58f405b04f2c4015afafd4546a7ac4168cbe27396018a439b8fd3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.201",
+			"outline": "glyf",
+			"path": "ofl/rubikbrokenfax/RubikBrokenFax-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 260,
+				"sha256": "49c892fe750633c8b266bc89a323bf5984439b48f3c15c56ab1141863b0aca4e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2010",
+			"outline": "glyf",
+			"path": "ofl/dawningofanewday/DawningofaNewDay.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

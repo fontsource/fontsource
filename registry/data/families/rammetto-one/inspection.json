@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 376,
+				"sha256": "a2cb1b77e3635d9a217f0178f67c99b66e27425d05f7516fb1be1e1c9838fef8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/rammettoone/RammettoOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

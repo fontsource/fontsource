@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 868,
+				"sha256": "976142a95b8e27d14e729142f79a7929b69d678810b5c840699c4960df18e87f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.015",
+			"outline": "glyf",
+			"path": "ofl/vollkornsc/VollkornSC-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 868,
+				"sha256": "976142a95b8e27d14e729142f79a7929b69d678810b5c840699c4960df18e87f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.015",
+			"outline": "glyf",
+			"path": "ofl/vollkornsc/VollkornSC-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 868,
+				"sha256": "976142a95b8e27d14e729142f79a7929b69d678810b5c840699c4960df18e87f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.015",
+			"outline": "glyf",
+			"path": "ofl/vollkornsc/VollkornSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 868,
+				"sha256": "976142a95b8e27d14e729142f79a7929b69d678810b5c840699c4960df18e87f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.015",
+			"outline": "glyf",
+			"path": "ofl/vollkornsc/VollkornSC-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

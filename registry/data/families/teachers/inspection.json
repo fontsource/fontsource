@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 338,
+				"sha256": "93a5bf40cc22b9c540825e6e81e84a859feae824e0526a036d4f249e28e6a3ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/teachers/Teachers-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 338,
+				"sha256": "93a5bf40cc22b9c540825e6e81e84a859feae824e0526a036d4f249e28e6a3ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/teachers/Teachers[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

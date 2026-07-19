@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "MedievalSharp",
+	"id": "medievalsharp",
+	"license": {
+		"attribution": "Copyright (c) 2011, Wojciech 'wmk69' Kalinowski (wmk69@o2.pl)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/medievalsharp",
+		"revision": "226af0949b607c7d4bc6426bcb94919c93f845ba",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/wmk69/Medieval-Sharp",
+		"revision": "ee7510b6b13854fd340e7d2e44c218780f672cd1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/medievalsharp/MedievalSharp.ttf",
+			"sha256": "74cb2e6738bd7703adf120802f68fba0c9ddb9147a08e6847f1005b1e55df5a5",
+			"size": 148712,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

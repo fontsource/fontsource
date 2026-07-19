@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Lao is an unmodulated (“sans serif”) design in the more modern, loopless variant of the Southeast Asian _Lao_ script, mainly suitable for headlines, packaging and advertising. It has multiple weights and widths, and 116 glyphs.

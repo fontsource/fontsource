@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "487b309fd6cc501da1af29227dee8facf4e6206c832d3cab5dd41b75daf2adb5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/averagesans/AverageSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

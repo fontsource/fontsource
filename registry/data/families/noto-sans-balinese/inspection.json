@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 450,
+				"sha256": "0a39db51fc3931881dad295c5921adf8a110320413d3a804ac9e05cd34401a07"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.006",
+			"outline": "glyf",
+			"path": "ofl/notosansbalinese/NotoSansBalinese[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

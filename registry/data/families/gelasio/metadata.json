@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2019-12-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Eben Sorkin",
+	"family": "Gelasio",
+	"id": "gelasio",
+	"license": {
+		"attribution": "Copyright 2022 The Gelasio Project Authors (https://github.com/SorkinType/Gelasio)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gelasio",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Gelasio",
+		"revision": "9228e69b160d79f33950e026293f6e13ba9780d0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gelasio/Gelasio-Italic[wght].ttf",
+			"sha256": "52559e845a4d33514e5f93bb9ae7dbeae1894a53f2c565a15f18af40cd337c09",
+			"size": 174212,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/gelasio/Gelasio[wght].ttf",
+			"sha256": "4daecea457258c9ebeb8bc99ed3fd24353618bfad3ea4b93fa0b5d0468fc04e4",
+			"size": 168556,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

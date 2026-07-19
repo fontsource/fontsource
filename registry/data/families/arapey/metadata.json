@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Arapey",
+	"id": "arapey",
+	"license": {
+		"attribution": "Copyright (c) 2011, Eduardo Tunni (http://www.tipo.net.ar edu@tipo.net.ar), with Reserved Font Name \"Arapey\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arapey",
+		"revision": "80c8c46af3f7f1e518539afe92a8b866bdfa856e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/arapey",
+		"revision": "9c06862616bd689aec606d630cf5ad11ec5ea6f2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arapey/Arapey-Italic.ttf",
+			"sha256": "3053e62a5bf1fe0f08d8196bf31de312def7dea7b0415d6b20385caa5d333b0a",
+			"size": 29588,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/arapey/Arapey-Regular.ttf",
+			"sha256": "5da4525899a27708241a4108e76d6bfd087766a66d159d80dcf986801bfb1092",
+			"size": 26784,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

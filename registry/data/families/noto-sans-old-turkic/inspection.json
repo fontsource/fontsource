@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 397,
+				"sha256": "a32e4d470d0f37b240ca7b1643e3619b261cf39945dc4cdb629b477d536e6577"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansoldturkic/NotoSansOldTurkic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

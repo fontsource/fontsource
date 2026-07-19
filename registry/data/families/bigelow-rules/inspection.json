@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "d29e876bc05fd56605b9ca04d1bd461e48dadb4a55ee4da1d9a45a25632f2902"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/bigelowrules/BigelowRules-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

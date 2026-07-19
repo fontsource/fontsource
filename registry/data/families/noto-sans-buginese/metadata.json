@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"buginese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Buginese",
+	"id": "noto-sans-buginese",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/buginese)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansbuginese",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/buginese",
+		"revision": "8d73947363e673e82d4812be966a212d7633a7ee"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansbuginese/NotoSansBuginese-Regular.ttf",
+			"sha256": "af1ed02af9eff48e872c3fcf922ba72053b776c2f0d1a0d4cb36e57d5e3508b5",
+			"size": 51976,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

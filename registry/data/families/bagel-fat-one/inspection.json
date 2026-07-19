@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3107,
+				"sha256": "fd39699435a0ab6b464569b34e1cda40251f964c12ca960fe2c97b4fa9a91ba1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/bagelfatone/BagelFatOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

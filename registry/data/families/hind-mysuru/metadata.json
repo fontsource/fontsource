@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"kannada",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind Mysuru",
+	"id": "hind-mysuru",
+	"license": {
+		"attribution": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hindmysuru",
+		"revision": "1f44736150c9736126f9e073d18e40049835bd1a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind-mysuru",
+		"revision": "7d7fe4cfa6f19c057217ed43174dc9a7aef82552"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hindmysuru/HindMysuru-Bold.ttf",
+			"sha256": "37e0493369db44f74d42ef36c2dda9a1977f9a724e5ac51a2ca7edd38189aa28",
+			"size": 129236,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hindmysuru/HindMysuru-Light.ttf",
+			"sha256": "40634c5beb3700c0f1b556c8ddf4dda27e6a20fb1b90da7a5cae85c536284887",
+			"size": 132420,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hindmysuru/HindMysuru-Medium.ttf",
+			"sha256": "cef72258d349131d78ca9d5de286d4d54199d27e506287ad08345b01626c3240",
+			"size": 131056,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hindmysuru/HindMysuru-Regular.ttf",
+			"sha256": "a38a33806d9f008fbdf204d2f684e80b23cecfc42ee0c2aed81c7b3a8333e7f2",
+			"size": 131428,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hindmysuru/HindMysuru-SemiBold.ttf",
+			"sha256": "7a9eed3f486affb0e469acf75e60562743a1993737f79635bed740aaa8c82a84",
+			"size": 130424,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

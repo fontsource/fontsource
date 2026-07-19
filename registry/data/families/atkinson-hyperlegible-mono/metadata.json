@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-11-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Braille Institute, Applied Design Works, Elliott Scott, Megan Eiswerth, Letters From Sweden",
+	"family": "Atkinson Hyperlegible Mono",
+	"id": "atkinson-hyperlegible-mono",
+	"license": {
+		"attribution": "Copyright 2020-2024 The Atkinson Hyperlegible Mono Project Authors (https://github.com/googlefonts/atkinson-hyperlegible-next-mono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/atkinsonhyperlegiblemono",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/atkinson-hyperlegible-next-mono",
+		"revision": "154d50362016cc3e873eb21d242cd0772384c8f9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/atkinsonhyperlegiblemono/AtkinsonHyperlegibleMono-Italic[wght].ttf",
+			"sha256": "e18f523877530e4abe229df6a36d394326254da488a7f5abb9b7b5ea8f780cd4",
+			"size": 56364,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/atkinsonhyperlegiblemono/AtkinsonHyperlegibleMono[wght].ttf",
+			"sha256": "5ce8b1698d1ded7dff2178c1a3ad159470085a58ea239e8b2cb88f4fb4a6f646",
+			"size": 53960,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "8c8ce83d7a01ce4e9057721e5afc7daa38a9180f16bef021993e427de05a0926"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1 ; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/orelegaone/OrelegaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

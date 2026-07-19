@@ -1,0 +1,1 @@
+Mali is a Thai and Latin family which was inspired by a 6th graders' handwriting. It exudes a carefree and naive appearance.

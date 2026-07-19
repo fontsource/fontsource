@@ -1,0 +1,84 @@
+{
+	"category": "monospace",
+	"dateAdded": "2020-04-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Colophon Foundry",
+	"family": "DM Mono",
+	"id": "dm-mono",
+	"license": {
+		"attribution": "Copyright 2020 The DM Mono Project Authors (https://www.github.com/googlefonts/dm-mono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dmmono",
+		"revision": "bfb7c046dea572dca9fdd435481ba2f36b0a1ebc",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/dm-mono",
+		"revision": "57fadabfb200a77de2812540026c249dc3013077"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dmmono/DMMono-Italic.ttf",
+			"sha256": "32b5bad9cbce64eac6d05c8abbeb619317f7e4cb354e1c33db761adbfaae1b16",
+			"size": 51408,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/dmmono/DMMono-Light.ttf",
+			"sha256": "c7b3645dc8d28237317b4d017bc47b9ff09a7660758122dacb694a5a82552c24",
+			"size": 49752,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/dmmono/DMMono-LightItalic.ttf",
+			"sha256": "90216192555d56cd40857250bbd6d0e8130ddbd015992d584225d7f390849544",
+			"size": 51744,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/dmmono/DMMono-Medium.ttf",
+			"sha256": "fd327daf461db87b44a87def475d251bf03b997f7c07d9680592d75dbbfaad0b",
+			"size": 50360,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/dmmono/DMMono-MediumItalic.ttf",
+			"sha256": "a3b2211bb9cf5c4fc1a0b487553e673a737c2270c59b86bf1e0b48c77e587aa2",
+			"size": 52552,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/dmmono/DMMono-Regular.ttf",
+			"sha256": "55b4c98f123daebb3ed27947ba47b2af00554fc6284d639a540bcef5e6258ad2",
+			"size": 49744,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Imperial Script",
+	"id": "imperial-script",
+	"license": {
+		"attribution": "Copyright 2008 The Imperial Script Project Authors (https://github.com/googlefonts/imperial-script)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imperialscript",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/imperial-script",
+		"revision": "01a1656c6ffebe306262129aafee029fe6a7f3f3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imperialscript/ImperialScript-Regular.ttf",
+			"sha256": "fa040ae596cde82559c3bcf056ac216a94efa904b848382ab85740d38df4bab7",
+			"size": 154824,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

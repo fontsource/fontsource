@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 426,
+				"sha256": "e2eea3bacca631f58624e793433fa8550eff83da011e752ff1becd1ab7f0d2a8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansrunic/NotoSansRunic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

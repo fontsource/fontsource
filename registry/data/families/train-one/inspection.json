@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 4356,
+				"sha256": "eb91aeae6fa1acd443fa706e238d9d8e7e8f5d97ad86fdb2ad4a20873b94bef7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/trainone/TrainOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

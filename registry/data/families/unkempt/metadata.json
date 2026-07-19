@@ -1,0 +1,47 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-05",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Sideshow",
+	"family": "Unkempt",
+	"id": "unkempt",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Font Diner, Inc DBA Sideshow. All rights reserved.\nCopyright (c) 2011 by Font Diner, Inc DBA Sideshow (diner@fontdiner.com) with Reseved Font Name \"Unkempt Bold\"",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/unkempt",
+		"revision": "1b65208c977b7e794f643ec5d5414a8e87dcb345",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/unkempt/Unkempt-Bold.ttf",
+			"sha256": "9dd344f69eb53372db32b5d7558f2addb3d159f4723b8b39364514d8e032a631",
+			"size": 191020,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "apache/unkempt/Unkempt-Regular.ttf",
+			"sha256": "512ce8e7226e0009307f10d47c08ee9a9878690766579ff28c5b1dddfa179f4c",
+			"size": 192364,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

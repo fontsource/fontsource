@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "577bb309f50e3e9c05b22a87e6dae0bc9498f7477f6743fb31437397e9ffb7d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "ofl/gabriela/Gabriela-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

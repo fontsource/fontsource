@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "4df2791b96763e57ed621e1552c231ba09f3fb31d86aaec7ea40a9240ff21934"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.011",
+			"outline": "glyf",
+			"path": "ofl/glory/Glory-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 800,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "4df2791b96763e57ed621e1552c231ba09f3fb31d86aaec7ea40a9240ff21934"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.011",
+			"outline": "glyf",
+			"path": "ofl/glory/Glory[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

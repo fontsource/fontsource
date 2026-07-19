@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 470,
+				"sha256": "d2412116bb477894168885a53e50399392895c4b593be8bb0cb5d2af8a1d7ca8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;gftools[0.9.33]",
+			"outline": "glyf",
+			"path": "ofl/onest/Onest[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

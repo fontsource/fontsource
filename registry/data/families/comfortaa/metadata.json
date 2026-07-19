@@ -1,0 +1,43 @@
+{
+	"category": "display",
+	"dateAdded": "2011-08-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Johan Aakerlund",
+	"family": "Comfortaa",
+	"id": "comfortaa",
+	"license": {
+		"attribution": "Copyright 2011 The Comfortaa Project Authors (https://github.com/alexeiva/comfortaa), with Reserved Font Name \"Comfortaa\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/comfortaa",
+		"revision": "db64f6bde4ced22493138096badb4fe2f7f8f7a0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alexeiva/comfortaa",
+		"revision": "4aa21cfb7b018629dcf17aab6220e638411c7164"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/comfortaa/Comfortaa[wght].ttf",
+			"sha256": "0fc3f45dc48b614db9c39181502544b37217ecbf8bee2fb35886992bc96c5bd3",
+			"size": 201756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

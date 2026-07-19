@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Mrs Sheppards",
+	"id": "mrs-sheppards",
+	"license": {
+		"attribution": "Copyright (c) 2004 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"Mrs Sheppards\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mrssheppards",
+		"revision": "40c368969853e6e70e67a3ede013955dcc858011",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mrssheppards/MrsSheppards-Regular.ttf",
+			"sha256": "0fa5f282a2ad512d3d5d276fc6d4796fe4fda0fc0612d8687113d5423c8c33d8",
+			"size": 42384,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-06-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "The DocRepair Project, Claus Eggers Sørensen",
+	"family": "Bacasime Antique",
+	"id": "bacasime-antique",
+	"license": {
+		"attribution": "Copyright 2023 The Bacasime Antique Project Authors (https://github.com/docrepair-fonts/bacasime-antique-fonts), with Reserved Font Name \"Playfair\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bacasimeantique",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/docrepair-fonts/bacasime-antique-fonts",
+		"revision": "673db74ee28486bb370847e062a97a5f94cec2e0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bacasimeantique/BacasimeAntique-Regular.ttf",
+			"sha256": "7dac1e5f979df3deb933453ed8584a39099a38889d109c1384db1b8bab5f7d28",
+			"size": 30848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

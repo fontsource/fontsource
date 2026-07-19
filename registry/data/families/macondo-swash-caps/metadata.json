@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "John Vargas Beltrán",
+	"family": "Macondo Swash Caps",
+	"id": "macondo-swash-caps",
+	"license": {
+		"attribution": "Copyright (c) 1997 - 2011, John Vargas Beltran. (www.johnvargasbeltran.com|john.vargasbeltran@gmail.com), with Reserved Font Name \"Macondo\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/macondoswashcaps",
+		"revision": "b47c253fb7ccbcd73236a9f50b99abc7da01a41d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/macondoswashcaps",
+		"revision": "2768d9b33c7d703085314fcd8c823ad1a8b02edb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/macondoswashcaps/MacondoSwashCaps-Regular.ttf",
+			"sha256": "776c95ad520e4776a45add8d8693e693b566be9f26cd20505256c8e944dc07ea",
+			"size": 33016,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

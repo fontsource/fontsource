@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 972,
+				"sha256": "cd1151e1515d46e5210713e8e38f416a296b6803e4251968f1f04721b4231bd8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/cormorantsc/CormorantSC-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 972,
+				"sha256": "cd1151e1515d46e5210713e8e38f416a296b6803e4251968f1f04721b4231bd8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/cormorantsc/CormorantSC-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 972,
+				"sha256": "cd1151e1515d46e5210713e8e38f416a296b6803e4251968f1f04721b4231bd8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/cormorantsc/CormorantSC-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 972,
+				"sha256": "cd1151e1515d46e5210713e8e38f416a296b6803e4251968f1f04721b4231bd8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/cormorantsc/CormorantSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 972,
+				"sha256": "cd1151e1515d46e5210713e8e38f416a296b6803e4251968f1f04721b4231bd8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/cormorantsc/CormorantSC-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

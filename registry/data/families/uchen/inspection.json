@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2405,
+				"sha256": "71ea57567919fcbccffffbf549b72a1996f71f4cc1a5f6008d5442118432f307"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000 preliminary",
+			"outline": "glyf",
+			"path": "ofl/uchen/Uchen-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

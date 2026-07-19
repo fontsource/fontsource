@@ -1,0 +1,46 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 36,
+					"max": 36,
+					"min": 12,
+					"tag": "opsz"
+				},
+				{
+					"default": 0,
+					"max": 0,
+					"min": -6,
+					"tag": "slnt"
+				},
+				{
+					"default": 100,
+					"max": 150,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 910,
+				"sha256": "38948bcccb6231cf29a8e3c9aa881763ab828d92d1cbdfc4b3ebef877223e66b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/tiktoksans/TikTokSans[opsz,slnt,wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

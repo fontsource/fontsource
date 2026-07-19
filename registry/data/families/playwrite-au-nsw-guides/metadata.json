@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-11-27",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "TypeTogether, Veronika Burian, José Scaglione",
+	"displayName": "Playwrite Australia NSW Guides",
+	"family": "Playwrite AU NSW Guides",
+	"id": "playwrite-au-nsw-guides",
+	"license": {
+		"attribution": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playwriteaunswguides",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playwrite",
+		"revision": "02e4e15767f5b6c2109413429fc51879b9507ab4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playwriteaunswguides/PlaywriteAUNSWGuides-Regular.ttf",
+			"sha256": "06f40972bde2537413aea34fcb4e9ca40b1b1dbbd0cb9a5a159bd6cda2b473e3",
+			"size": 366508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

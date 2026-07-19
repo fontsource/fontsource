@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 504,
+				"sha256": "00811f4628448e755b42e028d9db140a2e7f03b27f2b9db8a2430b35197af15d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/marhey/Marhey[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

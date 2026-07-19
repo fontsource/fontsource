@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-06-04",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"menu"
+	],
+	"designer": "Boutros Fonts, Mourad Boutros",
+	"family": "Almarai",
+	"id": "almarai",
+	"license": {
+		"attribution": "Copyright (c) 2019 by Almarai. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/almarai",
+		"revision": "3d8d20e89d99f25cadd5aa26953f7b070235ac8f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JuergenWillrodt/Almarai",
+		"revision": "7307ede5d42bcb5b9f905736a7c6eb04347afa3b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/almarai/Almarai-Bold.ttf",
+			"sha256": "06401391b5b39fbcf2bc0c6a6e03faf992435e7b011183a1861737e913af8613",
+			"size": 156672,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/almarai/Almarai-ExtraBold.ttf",
+			"sha256": "9f8f72f1cb06db787a5b32e314a109267e53c505c9f9ab0dad5aa8ff8b219a07",
+			"size": 168292,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/almarai/Almarai-Light.ttf",
+			"sha256": "a57bca270340202a28899f7488ee76ed9b93115b89d7a81db92d68e29993da5a",
+			"size": 149480,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/almarai/Almarai-Regular.ttf",
+			"sha256": "5b5cad33c8e5922083728d271cdcda91f96ba291f1307eccc4f4ef732dc19622",
+			"size": 152824,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "8e4a67bdad9eac29e1e891b6ef9caae1d2b35f68bee4893758344972f1468b62"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/contrailone/ContrailOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

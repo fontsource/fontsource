@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 424,
+				"sha256": "f84ae11d5e4ae6f5d59f019a754cccbe358e1413b3549f9bd5ca2bb2b8fde4f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansindicsiyaqnumbers/NotoSansIndicSiyaqNumbers-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

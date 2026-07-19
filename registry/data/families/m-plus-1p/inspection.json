@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8331,
+				"sha256": "ce043f5d356c16d58a1e0e4592a441c40de06258600e3e06e9f77c83abb620f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.062",
+			"outline": "glyf",
+			"path": "ofl/mplus1p/MPLUS1p-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8331,
+				"sha256": "ce043f5d356c16d58a1e0e4592a441c40de06258600e3e06e9f77c83abb620f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.062",
+			"outline": "glyf",
+			"path": "ofl/mplus1p/MPLUS1p-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8331,
+				"sha256": "ce043f5d356c16d58a1e0e4592a441c40de06258600e3e06e9f77c83abb620f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.062",
+			"outline": "glyf",
+			"path": "ofl/mplus1p/MPLUS1p-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8331,
+				"sha256": "ce043f5d356c16d58a1e0e4592a441c40de06258600e3e06e9f77c83abb620f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.062",
+			"outline": "glyf",
+			"path": "ofl/mplus1p/MPLUS1p-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8331,
+				"sha256": "ce043f5d356c16d58a1e0e4592a441c40de06258600e3e06e9f77c83abb620f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.062",
+			"outline": "glyf",
+			"path": "ofl/mplus1p/MPLUS1p-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8331,
+				"sha256": "ce043f5d356c16d58a1e0e4592a441c40de06258600e3e06e9f77c83abb620f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.062",
+			"outline": "glyf",
+			"path": "ofl/mplus1p/MPLUS1p-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8331,
+				"sha256": "ce043f5d356c16d58a1e0e4592a441c40de06258600e3e06e9f77c83abb620f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.062",
+			"outline": "glyf",
+			"path": "ofl/mplus1p/MPLUS1p-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		}
+	]
+}

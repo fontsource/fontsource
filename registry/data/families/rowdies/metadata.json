@@ -1,0 +1,58 @@
+{
+	"category": "display",
+	"dateAdded": "2019-10-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jaikishan Patel",
+	"family": "Rowdies",
+	"id": "rowdies",
+	"license": {
+		"attribution": "Copyright 2018 The Rowdies Project Authors (https://github.com/magictype/rowdies)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rowdies",
+		"revision": "5be6da8d93d89527dc0ddaba7f901e1c5e0c172a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/magictype/rowdies",
+		"revision": "4703538d6102c2b5eb8fdcb126a6eaaa509f0d06"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rowdies/Rowdies-Bold.ttf",
+			"sha256": "e56ac3fe30e56243483083a6ba271387e332f77920e850ce7dc1baead4fbede2",
+			"size": 76280,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/rowdies/Rowdies-Light.ttf",
+			"sha256": "fa368ef5ab634438738b930dcd24842d6726cb203339fa1e54fcc52cfd081b65",
+			"size": 76152,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/rowdies/Rowdies-Regular.ttf",
+			"sha256": "29c98412d1a6e1991ea6cbd36b5fd7cf579d69c1ba14ba857a16c7e8dd9d00a4",
+			"size": 76352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

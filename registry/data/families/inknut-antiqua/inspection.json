@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 576,
+				"sha256": "67eafc0075880db57b2036cafffd2c0af85fea34587c6d5bb30c78de4f815285"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/inknutantiqua/InknutAntiqua-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 576,
+				"sha256": "67eafc0075880db57b2036cafffd2c0af85fea34587c6d5bb30c78de4f815285"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/inknutantiqua/InknutAntiqua-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 576,
+				"sha256": "67eafc0075880db57b2036cafffd2c0af85fea34587c6d5bb30c78de4f815285"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/inknutantiqua/InknutAntiqua-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 576,
+				"sha256": "67eafc0075880db57b2036cafffd2c0af85fea34587c6d5bb30c78de4f815285"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/inknutantiqua/InknutAntiqua-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 576,
+				"sha256": "67eafc0075880db57b2036cafffd2c0af85fea34587c6d5bb30c78de4f815285"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/inknutantiqua/InknutAntiqua-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 576,
+				"sha256": "67eafc0075880db57b2036cafffd2c0af85fea34587c6d5bb30c78de4f815285"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/inknutantiqua/InknutAntiqua-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 576,
+				"sha256": "67eafc0075880db57b2036cafffd2c0af85fea34587c6d5bb30c78de4f815285"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/inknutantiqua/InknutAntiqua-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "7119406c07aa209efee24f0ebab7e2da6b5bb5803932b569aed3061226bf1e74"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/sassyfrass/SassyFrass-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

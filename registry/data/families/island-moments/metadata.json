@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Island Moments",
+	"id": "island-moments",
+	"license": {
+		"attribution": "Copyright 2013-2021 The Island Moments Project Authors (https://github.com/googlefonts/island-moments)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/islandmoments",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/island-moments",
+		"revision": "665d59f297c782358f09699fc2231c0eee293f25"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/islandmoments/IslandMoments-Regular.ttf",
+			"sha256": "688e4c5368b51b0d1122c4fb4c2c8f89c685f66bec489bfe07cb3287772c4b71",
+			"size": 615340,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

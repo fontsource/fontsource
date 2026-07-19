@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7016,
+				"sha256": "fa357eacaeb0f63094a584b0117197a52fe6417dcf8a88d006f6fa917b57af77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

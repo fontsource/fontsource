@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-11-17",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Lettersoup, Botio Nikoltchev, Ani Petrova",
+	"family": "Sofia Sans Extra Condensed",
+	"id": "sofia-sans-extra-condensed",
+	"license": {
+		"attribution": "Copyright 2019 The Sofia Sans Project Authors (https://github.com/lettersoup/Sofia-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sofiasansextracondensed",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/lettersoup/Sofia-Sans",
+		"revision": "185877d082cebb40facd65143326147431863688"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sofiasansextracondensed/SofiaSansExtraCondensed-Italic[wght].ttf",
+			"sha256": "442c2c3d9e50229f1cbab4981241e72204c974495aff872296a95e0cb9013f30",
+			"size": 309184,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sofiasansextracondensed/SofiaSansExtraCondensed[wght].ttf",
+			"sha256": "69b42c883ad334def49b044fffa5391358f6b1a668259f18fdcdc0bfe854fc45",
+			"size": 345304,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

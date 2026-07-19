@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 571,
+				"sha256": "ad486a2ad0742eeb2253b4c93d9e1d734aaa2f27e3279e7729e0d21b8d76b8e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/areyouserious/AreYouSerious-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Imperial Aramaic is an unmodulated (“sans serif”) design for texts in the historical Middle Eastern _Imperial Aramaic_ script. It has 36 glyphs.

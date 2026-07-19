@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-03-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek-ext",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Type Bank Co., Morisawa Inc.",
+	"family": "BIZ UDGothic",
+	"id": "biz-udgothic",
+	"license": {
+		"attribution": "Copyright 2022 The BIZ UDGothic Project Authors (https://github.com/googlefonts/morisawa-biz-ud-gothic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bizudgothic",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/morisawa-biz-ud-gothic",
+		"revision": "38953aa0afd6937b9caa899e18f4550db7298d69"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bizudgothic/BIZUDGothic-Bold.ttf",
+			"sha256": "98a528b6b638463041968783cc0f63adaf4cdc26f5398afed68bab712d1113f3",
+			"size": 4638128,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bizudgothic/BIZUDGothic-Regular.ttf",
+			"sha256": "709fcd41e3209fb765da750472f55ccdf925653e9fa7e1eb007cb65c8f749c75",
+			"size": 4667376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

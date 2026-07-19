@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 487,
+				"sha256": "ec4a10a5dc602438c91734760c1e3256460002f5ff3048bbf3033c09ce5498f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.011; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/fragmentmono/FragmentMono-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 487,
+				"sha256": "ec4a10a5dc602438c91734760c1e3256460002f5ff3048bbf3033c09ce5498f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.011; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/fragmentmono/FragmentMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

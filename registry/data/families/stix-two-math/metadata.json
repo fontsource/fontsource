@@ -1,0 +1,37 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-04-15",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "Tiro Typeworks, Ross Mills, John Hudson, Paul Hanslow",
+	"family": "STIX Two Math",
+	"id": "stix-two-math",
+	"license": {
+		"attribution": "Copyright 2001-2021 The STIX Fonts Project Authors (https://github.com/stipub/stixfonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stixtwomath",
+		"revision": "823468bd7825152bce2b8fd2cf740432ad2fce8d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/stipub/stixfonts",
+		"revision": "c4afdf3fa5390159ef24aca1db5e957487c23897"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stixtwomath/STIXTwoMath-Regular.ttf",
+			"sha256": "562551b15b836e6e01d1b7350909baf3c8c8d83260c1190fbf4544333e6936de",
+			"size": 1517976,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-29"
+}

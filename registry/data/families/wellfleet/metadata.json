@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Riccardo De Franceschi",
+	"family": "Wellfleet",
+	"id": "wellfleet",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com), with Reserved Font Name Wellfleet",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/wellfleet",
+		"revision": "76eab8e03069a510db3231c8a892b6f416a4fd57",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/wellfleet/Wellfleet-Regular.ttf",
+			"sha256": "347f3918762c7b61c3b98d57071b03295485bc97b6bfb6c7627bcf365cc3c9e7",
+			"size": 82016,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

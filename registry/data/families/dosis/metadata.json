@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-01-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Impallari Type",
+	"family": "Dosis",
+	"id": "dosis",
+	"license": {
+		"attribution": "Copyright 2011 The Dosis Project Authors (https://github.com/googlefonts/dosis-vf)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dosis",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/dosis-vf",
+		"revision": "3407d52f1d1b1c36c14e756ad0b36561d8d44a3b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dosis/Dosis[wght].ttf",
+			"sha256": "b2238eef0b3464904fed097ef274c704bc63d21407369b7d7a5be7b0821a0e82",
+			"size": 117280,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

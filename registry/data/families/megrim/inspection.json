@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 338,
+				"sha256": "8b80c6745ade26b048a97b8d0e570643fef157ddff1f177f0ea5aa9744b72d3e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 20110427",
+			"outline": "glyf",
+			"path": "ofl/megrim/Megrim.ttf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

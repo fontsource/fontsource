@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Rosetta, Anna Giedryś, David Březina",
+	"family": "Yrsa",
+	"id": "yrsa",
+	"license": {
+		"attribution": "Copyright 2015 The Yrsa-Rasa Project Authors (https://github.com/rosettatype/yrsa-rasa/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yrsa",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/rosettatype/yrsa-rasa",
+		"revision": "ec1d6aa68525da0859a43048228aef2c5bff3b40"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yrsa/Yrsa-Italic[wght].ttf",
+			"sha256": "45ba3f6094da57a30d777804850f4108f0ac6538f6366be6bde38cc1059a3230",
+			"size": 286060,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/yrsa/Yrsa[wght].ttf",
+			"sha256": "d853a1fb40e077537a7fd5c447638aa001621fe572d32dd5f633e8e5f58e4e19",
+			"size": 225532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,63 @@
+{
+	"id": "tibetan",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"F00",
+			"F47"
+		],
+		[
+			"F49",
+			"F6C"
+		],
+		[
+			"F71",
+			"F97"
+		],
+		[
+			"F99",
+			"FBC"
+		],
+		[
+			"FBE",
+			"FCC"
+		],
+		[
+			"FCE",
+			"FDA"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"3008",
+			"300B"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/tibetan_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "8962baf714ab6753fa521edcb35be23e4ba0c3a4cb84033d0ca3758016b821ef",
+		"upstream": "namFiles"
+	}
+}

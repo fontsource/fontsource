@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 246,
+				"sha256": "630944dd2512a3115a3dcb3207c0e28085c49e92dae64ea007f1a12d5ccc9eba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/macondoswashcaps/MacondoSwashCaps-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

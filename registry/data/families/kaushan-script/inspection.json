@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 397,
+				"sha256": "b17c727eecb2ee8d544867bc755ab1033130e761ea9a6a9d5e5cca3f5178c0fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/kaushanscript/KaushanScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 187,
+				"sha256": "73fe8c01d8fd96b9f9e226a66a75b6167ec7324826703725f3faf8a70ee43076"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/leaguescript/LeagueScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

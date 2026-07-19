@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2022-05-19",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Toshi Omagari, Jennifer Daniel",
+	"family": "DynaPuff",
+	"id": "dynapuff",
+	"license": {
+		"attribution": "Copyright 2021 The DynaPuff Project Authors (https://github.com/googlefonts/dynapuff)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dynapuff",
+		"revision": "d4cc17c373d3c60e98e332099c1462b98305101e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/dynapuff",
+		"revision": "d1b4a98067a23e7ffbcf5b3665a887241983857b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dynapuff/DynaPuff[wdth,wght].ttf",
+			"sha256": "c3752fc6dd8aaa46a88637f061a9a4e6ab44c02c5f0afd65528b91ae8ff6f948",
+			"size": 212600,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

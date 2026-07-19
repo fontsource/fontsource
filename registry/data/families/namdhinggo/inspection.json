@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "617d135ddceca8ba825c783936f9714d94baf3ba08bbcf247097b554e151c180"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/namdhinggo/Namdhinggo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "617d135ddceca8ba825c783936f9714d94baf3ba08bbcf247097b554e151c180"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/namdhinggo/Namdhinggo-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "617d135ddceca8ba825c783936f9714d94baf3ba08bbcf247097b554e151c180"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/namdhinggo/Namdhinggo-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "617d135ddceca8ba825c783936f9714d94baf3ba08bbcf247097b554e151c180"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/namdhinggo/Namdhinggo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "617d135ddceca8ba825c783936f9714d94baf3ba08bbcf247097b554e151c180"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/namdhinggo/Namdhinggo-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

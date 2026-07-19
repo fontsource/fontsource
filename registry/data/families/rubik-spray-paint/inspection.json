@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 689,
+				"sha256": "b548e078313e830dc027648a4cac5d75f310b9b6ba673bdc3c3b60d0f0931f63"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.200",
+			"outline": "glyf",
+			"path": "ofl/rubikspraypaint/RubikSprayPaint-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 776,
+				"sha256": "eab5a75beb8844a9b873beed930de290c35e8f299300b67bc8d261f7c1535890"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/harmattan/Harmattan-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 776,
+				"sha256": "eab5a75beb8844a9b873beed930de290c35e8f299300b67bc8d261f7c1535890"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/harmattan/Harmattan-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 776,
+				"sha256": "eab5a75beb8844a9b873beed930de290c35e8f299300b67bc8d261f7c1535890"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/harmattan/Harmattan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 776,
+				"sha256": "eab5a75beb8844a9b873beed930de290c35e8f299300b67bc8d261f7c1535890"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/harmattan/Harmattan-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

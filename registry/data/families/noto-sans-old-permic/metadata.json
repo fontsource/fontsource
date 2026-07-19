@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-permic"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Old Permic",
+	"id": "noto-sans-old-permic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-permic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansoldpermic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/old-permic",
+		"revision": "080df8840211dde6b17fc87957950358b723e5e0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansoldpermic/NotoSansOldPermic-Regular.ttf",
+			"sha256": "a0a446342fbb13aee85bdfd77b27362ca9b5a4fd8f8fa4318ee33e41dc581bf6",
+			"size": 52264,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

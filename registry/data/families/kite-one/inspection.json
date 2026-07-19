@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "ca247595930c020a54244a4d8d4757c1a0db315ccb1a7aa0f040feb8e0a6b7b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/kiteone/KiteOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"osmanya"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Osmanya",
+	"id": "noto-sans-osmanya",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/osmanya)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansosmanya",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/osmanya",
+		"revision": "6b87e2ca0c0b8e746247b9c2d073d4cacd522dce"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansosmanya/NotoSansOsmanya-Regular.ttf",
+			"sha256": "8832125f106a0be9d4b7e6442493a96f2d6626b8edb2cc20f53c48e9b73fd5a7",
+			"size": 57652,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

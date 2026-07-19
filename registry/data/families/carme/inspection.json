@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "83485a41ba85a3aa3154f31e0eb2dad25aba209cfead35763f0b626b97116859"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "glyf",
+			"path": "ofl/carme/Carme-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

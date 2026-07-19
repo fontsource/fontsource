@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 1979,
+					"max": 2050,
+					"min": 1979,
+					"tag": "YEAR"
+				}
+			],
+			"cmap": {
+				"codepointCount": 3447,
+				"sha256": "9c37bc9d599390827aafc46919e1d15fb1e7c843214f18fe35773781af7598d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.007",
+			"outline": "glyf",
+			"path": "ofl/climatecrisis/ClimateCrisis[YEAR].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

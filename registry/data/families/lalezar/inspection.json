@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 908,
+				"sha256": "8e7eb469fcc32ba12393610b810613936dbdb2c597f2d50666794b0405b38e9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/lalezar/Lalezar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

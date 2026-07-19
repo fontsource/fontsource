@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Igino Marini",
+	"family": "IM Fell English SC",
+	"id": "im-fell-english-sc",
+	"license": {
+		"attribution": "© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL English SC",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imfellenglishsc",
+		"revision": "a0a380dcefcb4927f09c4439c687f03d2f10183e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/imfellenglishsc",
+		"revision": "34a4488608a28f901546cfccf90a5b00ae0fc5a0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imfellenglishsc/IMFeENsc28P.ttf",
+			"sha256": "102324fb5434bb5da7963533426b0ad44c85bbc9e7755067535c9d11464a176b",
+			"size": 183932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

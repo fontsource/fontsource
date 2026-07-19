@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2025-03-20",
+	"declaredSubsets": [
+		"devanagari",
+		"emoji",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "TypeTogether, Pooja Saxena, Gunjan Panchal, Laura Meseguer, Veronika Burian, José Scaglione",
+	"family": "Playpen Sans Deva",
+	"id": "playpen-sans-deva",
+	"license": {
+		"attribution": "Copyright 2023 The Playpen Sans Project Authors (https://github.com/TypeTogether/Playpen-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playpensansdeva",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playpen-Sans",
+		"revision": "7a0794f02170021c04930280b39ab405599f5fb2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playpensansdeva/PlaypenSansDeva[wght].ttf",
+			"sha256": "741156a0ea70b12b150625cd715c34f0a921db5f7dd2bceb37043e59764ae3ea",
+			"size": 1567116,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

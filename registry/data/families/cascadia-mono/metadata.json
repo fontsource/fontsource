@@ -1,0 +1,56 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-03-18",
+	"declaredSubsets": [
+		"arabic",
+		"braille",
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2",
+		"vietnamese"
+	],
+	"designer": "Aaron Bell, Mohamad Dakak, Viktoriya Grabowska, Liron Lavi Turkenich",
+	"family": "Cascadia Mono",
+	"id": "cascadia-mono",
+	"license": {
+		"attribution": "© 2021 Microsoft Corporation. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cascadiamono",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/microsoft/cascadia-code",
+		"revision": "56bcca3f2c1e4cb19458954f0e2bb4635960df91"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cascadiamono/CascadiaMono-Italic[wght].ttf",
+			"sha256": "53f999d8032b8e16332507d0e18ad638e59cbe72cae52c3ee62ec99337942e51",
+			"size": 513984,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cascadiamono/CascadiaMono[wght].ttf",
+			"sha256": "78864a1b4d03767a44731454a6f24c6b7d6e93fb5f62932860eb02e409cd50cb",
+			"size": 704344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

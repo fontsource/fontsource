@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 267,
+				"sha256": "040b4a6d580b230e94641500573afebd949bbe623ea2b7905ef0fb32176ce423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/deliusswashcaps/DeliusSwashCaps-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

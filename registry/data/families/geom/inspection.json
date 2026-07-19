@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 499,
+				"sha256": "f59fc0b30c988a13903269bae4cf00e065819f91080f1d026d5d7963f22dda22"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102",
+			"outline": "glyf",
+			"path": "ofl/geom/Geom-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 499,
+				"sha256": "f59fc0b30c988a13903269bae4cf00e065819f91080f1d026d5d7963f22dda22"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102",
+			"outline": "glyf",
+			"path": "ofl/geom/Geom[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

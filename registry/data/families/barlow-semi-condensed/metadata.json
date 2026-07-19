@@ -1,0 +1,193 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jeremy Tribby",
+	"family": "Barlow Semi Condensed",
+	"id": "barlow-semi-condensed",
+	"license": {
+		"attribution": "Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/barlowsemicondensed",
+		"revision": "3218ae2acc5bce7ccd97c477965b5b4094241fb0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/jpt/barlow",
+		"revision": "b4726ddf91525818e85e5fce111c285b9273d764"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Black.ttf",
+			"sha256": "171502596b584862a651426010f14878d8f7a87e6a080a621c0b1cd447a5fefc",
+			"size": 113212,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-BlackItalic.ttf",
+			"sha256": "30b873b860062acf2ad4c9dff24c0e7793ca9de26ec071a38c587534974865ae",
+			"size": 115460,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Bold.ttf",
+			"sha256": "5bd6757e459a110da81b44532f0f43058e2dab2401688abca84f2fdbde193cbb",
+			"size": 111772,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-BoldItalic.ttf",
+			"sha256": "65270ba022e056074b0b8f4a9e51a03b0df2e10d04700dcd0a792e524a87bced",
+			"size": 115020,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ExtraBold.ttf",
+			"sha256": "a8096d0dc3ff22ea015d63f436a6856a69e402c12da9991f4a40f2c0bedf44ee",
+			"size": 112096,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ExtraBoldItalic.ttf",
+			"sha256": "b9f5c879fa952b2b5356200a079b3f600f53d273c4dbc088585678d6c7456ae7",
+			"size": 115372,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ExtraLight.ttf",
+			"sha256": "e1ffda60bc25a7f3682785c287b1a167838e786fc018130f7a6907a15e4d0d14",
+			"size": 103908,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ExtraLightItalic.ttf",
+			"sha256": "026abcc59634f6e118dd29fae727882bbfe8eac5e77aa671aa4f4d49355b0a57",
+			"size": 109664,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Italic.ttf",
+			"sha256": "6ce28204c8a48369f254055fccf1784fe10ec7fcc26f84a300d5165ddfc0cb0a",
+			"size": 111340,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Light.ttf",
+			"sha256": "cc4a1ad3d68ec017a79b098228e76c722ed92e5e791978467c76437186f22a03",
+			"size": 104704,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-LightItalic.ttf",
+			"sha256": "4d4030bb4cc8ec04ee017c3c9fed37f069c357eab07f972028efafe1e7ad14b1",
+			"size": 110304,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Medium.ttf",
+			"sha256": "4998b693a190b76f2b11315844345a8546c1e2e6a320905507a9eed04edf8b48",
+			"size": 105560,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-MediumItalic.ttf",
+			"sha256": "cd6f53bf873fd5501b2582805d0bf1a9b46aca40f4cf8e01c6186f51881c1d9a",
+			"size": 111772,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Regular.ttf",
+			"sha256": "e8c7242f612b13d026e18a94b63b0fd079e91a3faf009d1b6981dbb5f16d1153",
+			"size": 105776,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-SemiBold.ttf",
+			"sha256": "bd299f4bc5b44d30be8d42e9bad3a5df7d66af1cd55d0ed72a8b8916360a1424",
+			"size": 109772,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-SemiBoldItalic.ttf",
+			"sha256": "8d06b9fba9eea0e4f4eddfc81af1f88781b0754e8648323de573e85040b59dda",
+			"size": 114036,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Thin.ttf",
+			"sha256": "f2ca25edad258019d88879a9a8ae1a952a7a7f68dadef945954c63bacda08026",
+			"size": 103072,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ThinItalic.ttf",
+			"sha256": "43935a8989c3a2bc0e57c3d491ab4dfd22217fef373eae069df30e610e32b7ec",
+			"size": 109068,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

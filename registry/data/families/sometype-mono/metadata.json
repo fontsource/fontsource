@@ -1,0 +1,48 @@
+{
+	"category": "monospace",
+	"dateAdded": "2019-09-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ryoichi Tsunekawa",
+	"family": "Sometype Mono",
+	"id": "sometype-mono",
+	"license": {
+		"attribution": "Copyright 2018 The Sometype Mono Project Authors (https://github.com/googlefonts/sometype-mono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sometypemono",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sometype-mono",
+		"revision": "cf583c22bc6279d23e587e3ca310e131dd277286"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sometypemono/SometypeMono-Italic[wght].ttf",
+			"sha256": "c1f25acdc7125e74e3f5bce7bda0d5053553c7a574513ecd2247ca30e5170bb3",
+			"size": 65968,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sometypemono/SometypeMono[wght].ttf",
+			"sha256": "4095fd328c988392fb00ab867134e69beff0fc16de66ecdd9e7e232c16f16f25",
+			"size": 64308,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

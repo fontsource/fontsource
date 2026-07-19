@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-04-16",
+	"declaredSubsets": [
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Universidad Nacional de Colombia (UNAL), César Puertas, Viviana Monsalve, Julián Moncada",
+	"displayName": "UNAL Ancizar Sans",
+	"family": "Ancizar Sans",
+	"id": "ancizar-sans",
+	"license": {
+		"attribution": "Copyright 2014 The Ancizar Sans Project Authors (https://github.com/UNAL-OMD/UNAL-Ancizar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ancizarsans",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/UNAL-OMD/UNAL-Ancizar",
+		"revision": "54a5aa2153b4485ff2710612d47183c346e6b842"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ancizarsans/AncizarSans-Italic[wght].ttf",
+			"sha256": "834be8cfccb25c8fdec55908fdbfb3fe682de616688e10e502e22c29ecd5933d",
+			"size": 178372,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ancizarsans/AncizarSans[wght].ttf",
+			"sha256": "c99ce8a9cd997f264e6c34c2799faecd94c39acf7d06928124f9e7c12d72c743",
+			"size": 172192,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

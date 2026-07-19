@@ -1,0 +1,59 @@
+{
+	"id": "cherokee",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"300",
+			"302"
+		],
+		[
+			"304",
+			"304"
+		],
+		[
+			"30B",
+			"30C"
+		],
+		[
+			"323",
+			"324"
+		],
+		[
+			"330",
+			"331"
+		],
+		[
+			"13A0",
+			"13F5"
+		],
+		[
+			"13F8",
+			"13FD"
+		],
+		[
+			"AB70",
+			"ABBF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/cherokee_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "4fe211483bbea205f8c00e45fbbc58e24f6367d1998eddc33b210f15399d19b7",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,3 @@
+Stardos is a stencilled serif font designed to be used a display-only webfont. Stardos Stencil has been designed to be used freely across the internet by web browsers on desktop computers, laptops, mobile devices, and Cloud systems.
+
+Stardos Stencil is a stencilled serif font designed to be used a display-only webfont. Stardos Stencil has been designed to be used freely across the internet by web browsers on desktop computers, laptops, mobile devices, and Cloud systems.

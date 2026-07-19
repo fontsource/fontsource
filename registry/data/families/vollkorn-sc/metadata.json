@@ -1,0 +1,69 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-09-08",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Friedrich Althausen",
+	"family": "Vollkorn SC",
+	"id": "vollkorn-sc",
+	"license": {
+		"attribution": "Copyright 2017 The Vollkorn Project Authors (https://github.com/FAlthausen/Vollkorn-Typeface)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vollkornsc",
+		"revision": "5081ec64046ff04e82233258ba3faad2545813dd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/FAlthausen/Vollkorn-Typeface",
+		"revision": "38ab7a896bd6b163ac7f834ec696d6c68e5dedd6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vollkornsc/VollkornSC-Black.ttf",
+			"sha256": "b4db8f746ed1a2a23b73b7dbad6b723a4dae507d94e191c5a09649b6e1a8f7d6",
+			"size": 204480,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/vollkornsc/VollkornSC-Bold.ttf",
+			"sha256": "e699f58347d31321902c74ff3bafde0f2820240c89c321acff1da69e015a5f56",
+			"size": 200976,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/vollkornsc/VollkornSC-Regular.ttf",
+			"sha256": "a6b4dbabb5cf158f2359c15f39a0eefd5ef99434b9d443a84e6012c2fcbd81ae",
+			"size": 202164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/vollkornsc/VollkornSC-SemiBold.ttf",
+			"sha256": "caa308c2c5970bc7732a0188eb44867fc2f2124e8acbaba7e1aa87403a70e804",
+			"size": 204612,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

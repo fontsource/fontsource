@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 704,
+				"sha256": "b78162ddaf7df357914c037d9248d2d90ba1bdc928c1c8bf344a41a629cd7fbd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 8.100",
+			"outline": "glyf",
+			"path": "ofl/ancizarserif/AncizarSerif-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 704,
+				"sha256": "b78162ddaf7df357914c037d9248d2d90ba1bdc928c1c8bf344a41a629cd7fbd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 8.100",
+			"outline": "glyf",
+			"path": "ofl/ancizarserif/AncizarSerif[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

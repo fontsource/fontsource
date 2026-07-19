@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Bilbo",
+	"id": "bilbo",
+	"license": {
+		"attribution": "Copyright 2011 The Bilbo Project Authors (https://github.com/googlefonts/bilbo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bilbo",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bilbo",
+		"revision": "1ffb16299d6f1ae0304a0ed6a36a95acbb1148e3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bilbo/Bilbo-Regular.ttf",
+			"sha256": "f479505c839db0c7a8be7108d046acca3d409a034b777514241cc6a2f9d818fc",
+			"size": 100216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,42 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-04-14",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Satsuyako",
+	"family": "Yomogi",
+	"id": "yomogi",
+	"license": {
+		"attribution": "Copyright 2020 The Yomogi Project Authors (https://github.com/satsuyako/YomogiFont), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yomogi",
+		"revision": "2dcc1a21e9ee7cb66606d0be9099752504efe559",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/satsuyako/YomogiFont",
+		"revision": "8551d68706679b88ce6ff40e093a993e546e593e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yomogi/Yomogi-Regular.ttf",
+			"sha256": "3424e34bb951e89bf5dd2554a65d8964335ea3c0560f8d1ea9aa3591ef73cba9",
+			"size": 4039220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

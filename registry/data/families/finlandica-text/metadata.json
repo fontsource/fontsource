@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2026-04-17",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Helsinki Type Studio, Niklas Ekholm, Juho Hiilivirta, Jaakko Suomalainen",
+	"family": "Finlandica Text",
+	"id": "finlandica-text",
+	"license": {
+		"attribution": "Copyright 2015 The Finlandica Project Authors (https://github.com/HelsinkiTypeStudio/Finlandica)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/finlandicatext",
+		"revision": "743327264da574f938665c8cf1aaa4d60c58b782",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/HelsinkiTypeStudio/FinlandicaText",
+		"revision": "402f5abf41b8bcde2d3091dbbc1a3604f812625a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/finlandicatext/FinlandicaText-Italic[wght].ttf",
+			"sha256": "c31d0464b7283c93808cc7dcb8206ddb0780d6a8d50cf7f6a4fda8ec06fd8bb6",
+			"size": 299416,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/finlandicatext/FinlandicaText[wght].ttf",
+			"sha256": "6ffe79064e08ec7c3adfdfbd8905aaba7c7286b994b34c143cd9237cb0ab4175",
+			"size": 288868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-17"
+}

@@ -1,0 +1,85 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-06-03",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Erin McLaughlin",
+	"family": "Yantramanav",
+	"id": "yantramanav",
+	"license": {
+		"attribution": "Copyright 2014, Erin McLaughlin (hello@erinmclaughlin.com). Copyright 2010, Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yantramanav",
+		"revision": "cb7d8bcc12d1008508527122ed78aecf6d745115",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/erinmclaughlin/Yantramanav",
+		"revision": "e40db8e44292f8e320222a37d76151b4b6bbfc7e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yantramanav/Yantramanav-Black.ttf",
+			"sha256": "8862dd6dba166ec1060c9fc0159b04c470e7102f3967d1746072bdab98a4d031",
+			"size": 159196,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/yantramanav/Yantramanav-Bold.ttf",
+			"sha256": "682ef4ebc9c8dde1f312c435ade5eca9cafea6ab0c3602e1638c02d3759b135d",
+			"size": 158048,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/yantramanav/Yantramanav-Light.ttf",
+			"sha256": "aafcbbf2c8a104746ba7f551050e03b4fff8a2094d7ea10adfca3e30bcc15db8",
+			"size": 160820,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/yantramanav/Yantramanav-Medium.ttf",
+			"sha256": "8c6287e28f009a687d0616ad5f31e0f8fc513b82df09093ef5bae65dfc216206",
+			"size": 154352,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/yantramanav/Yantramanav-Regular.ttf",
+			"sha256": "823dbb5d9c73a2c192371bf73341a30291b5a416578362eb4607b9c5a5be9821",
+			"size": 153872,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/yantramanav/Yantramanav-Thin.ttf",
+			"sha256": "6e88e360cd722b123e1426e4d98602790b805def1fb198ece28f3bfcaf168650",
+			"size": 160744,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

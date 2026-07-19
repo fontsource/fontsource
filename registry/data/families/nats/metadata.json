@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "NATS",
+	"id": "nats",
+	"license": {
+		"attribution": "Copyright (c) 2012 Silicon Andhra (fonts.siliconandhra.org). Copyright (c) 2011-2012, Julieta Ulanovsky (julieta.ulanovsky@gmail.com), with Reserved Font Names 'Montserrat'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nats",
+		"revision": "2dfee231b3adc2cce864d77f6ebf274ce29c7161",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/nats",
+		"revision": "7e1486a72988cb8ec1802e2dc2d7e4f59df35582"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nats/NATS-Regular.ttf",
+			"sha256": "0e660a99459c55c9031f9c55b8b5038debadaec56bab4849d838f7e411f2fcbb",
+			"size": 355880,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

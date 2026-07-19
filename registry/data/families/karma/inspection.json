@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 490,
+				"sha256": "08f1774e835029931ba2d57bdde4c6dbe226608c33b3e88f6ee6efdaa30a3f30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.202;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/karma/Karma-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 490,
+				"sha256": "08f1774e835029931ba2d57bdde4c6dbe226608c33b3e88f6ee6efdaa30a3f30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.202;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/karma/Karma-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 490,
+				"sha256": "08f1774e835029931ba2d57bdde4c6dbe226608c33b3e88f6ee6efdaa30a3f30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.202;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/karma/Karma-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 490,
+				"sha256": "08f1774e835029931ba2d57bdde4c6dbe226608c33b3e88f6ee6efdaa30a3f30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.202;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/karma/Karma-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 490,
+				"sha256": "08f1774e835029931ba2d57bdde4c6dbe226608c33b3e88f6ee6efdaa30a3f30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.202;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/karma/Karma-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

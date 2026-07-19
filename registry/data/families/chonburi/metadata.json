@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2015-07-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Chonburi",
+	"id": "chonburi",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chonburi",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/chonburi",
+		"revision": "1c6599a6ae44a2d30ff3ee44d015ffab2c0cb014"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chonburi/Chonburi-Regular.ttf",
+			"sha256": "aa0dac4df08af10785ba1dc10121492227f8e4288f0a23d11dd1d1f5a7f6ebfa",
+			"size": 170492,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

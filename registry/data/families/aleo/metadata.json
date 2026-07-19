@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-12-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Alessio Laiso",
+	"family": "Aleo",
+	"id": "aleo",
+	"license": {
+		"attribution": "Copyright 2013 The Aleo Project Authors (https://github.com/AlessioLaiso/aleo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/aleo",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/AlessioLaiso/aleo",
+		"revision": "ce875e48d9983031648e87f38b7a269f4fbf5eb5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/aleo/Aleo-Italic[wght].ttf",
+			"sha256": "9b4c074d9f3e662ef57bbef82efb7b1bb5f757d579c91c4c0b831319221d6f8c",
+			"size": 154500,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/aleo/Aleo[wght].ttf",
+			"sha256": "62b6cb49b7b087b341f0307ea3bc871a9690d8947691206ab025d149b8f6ed6f",
+			"size": 149360,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

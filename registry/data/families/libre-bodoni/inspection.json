@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "88fc38b7059f656305a1652f0e2c293563a94fbc54ba1cbcb1284001b28c11b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005;gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/librebodoni/LibreBodoni-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "88fc38b7059f656305a1652f0e2c293563a94fbc54ba1cbcb1284001b28c11b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005;gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/librebodoni/LibreBodoni[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

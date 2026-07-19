@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-04-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"yi"
+	],
+	"designer": "SIL International",
+	"family": "Nuosu SIL",
+	"id": "nuosu-sil",
+	"license": {
+		"attribution": "Copyright (c) 1999-2022 SIL International",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nuosusil",
+		"revision": "5b9a1ccf1d79bad3472d323903d556699d6f914a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-nuosu",
+		"revision": "1e9b50a3cb69f6ae01c8ca5da1af2d03a85c517f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nuosusil/NuosuSIL-Regular.ttf",
+			"sha256": "632b875ede95598e162da0323fb79e0f4dace58643ddbe29bfc460c78ee2ac64",
+			"size": 259188,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-09-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tyler Finck, ETC",
+	"family": "Trispace",
+	"id": "trispace",
+	"license": {
+		"attribution": "Copyright 2020 The Trispace Project Authors (https://github.com/Etcetera-Type-Co/Trispace)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/trispace",
+		"revision": "cb685dc1b615f4a276f019d2d5d467eb5fa9306a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Etcetera-Type-Co/Trispace",
+		"revision": "8f332ade4a0e4be1cab60eafcbac95a53a3d46f6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/trispace/Trispace[wdth,wght].ttf",
+			"sha256": "4021d8d7abd42907c64f0bf192446ad9f869320563f8c71a526993830e405464",
+			"size": 303532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-02-09",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Barry Schwartz",
+	"family": "Goudy Bookletter 1911",
+	"id": "goudy-bookletter-1911",
+	"license": {
+		"attribution": "Copyright (c) 2010, Barry Schwartz (crudfactory.com chemoelectric@chemoelectric.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/goudybookletter1911",
+		"revision": "42b7d94a4645d832aa40e302a5671ab0ab2ae439",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/goudy-bookletter-1911",
+		"revision": "85ff5b834b4f63feb36fd2053949c19660580e48"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/goudybookletter1911/GoudyBookletter1911.ttf",
+			"sha256": "62d219942d2e4a3a8473c116254966d308820ae1729e2fac3730e66c073a5548",
+			"size": 73496,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,53 @@
+{
+	"category": "monospace",
+	"dateAdded": "2012-09-20",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Paul D. Hunt",
+	"family": "Source Code Pro",
+	"id": "source-code-pro",
+	"license": {
+		"attribution": "© 2010 - 2020 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name ‘Source’.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sourcecodepro",
+		"revision": "bd62bd8b4715f007af6905b0c9fd030f8410b289",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/adobe-fonts/source-code-pro",
+		"revision": "803b7e23ec97ae58b6232ea76519a76d428ba268"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sourcecodepro/SourceCodePro-Italic[wght].ttf",
+			"sha256": "6db77d25aa7b30eff449305b5c998e475694c74d398421127ea5a60f536413cd",
+			"size": 174852,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sourcecodepro/SourceCodePro[wght].ttf",
+			"sha256": "b400fc584e10aff25d0e775ce181b4fc1c5ea1b5dc37b81aeb2084375b945790",
+			"size": 212340,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

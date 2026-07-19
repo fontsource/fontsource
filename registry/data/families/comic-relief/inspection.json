@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 599,
+				"sha256": "d3898d39ccbd9beffa22c17a81bb601cc8268d532cd33c5abf37ed78e871c3a6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/comicrelief/ComicRelief-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 599,
+				"sha256": "d3898d39ccbd9beffa22c17a81bb601cc8268d532cd33c5abf37ed78e871c3a6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/comicrelief/ComicRelief-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

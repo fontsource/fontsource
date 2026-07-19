@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 236,
+				"sha256": "66975f78ea33970f1b05e6279a85c0216fb4b51997e000292ad7a3838d213cbe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/mrssaintdelafield/MrsSaintDelafield-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

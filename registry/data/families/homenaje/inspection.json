@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "f8d02c95b540393a2bf4cd33c04416aeb1ec5377cca4366360a2cfaca95433c1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/homenaje/Homenaje-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,3 @@
+Tourney is a collaboration of tech and sport. At least, that is where the inspiration came from. Tourney would feel at home on a space ship or in a stadium. The lightest weight of Tourney (100) is almost an outline and that "stroke" thickens as the weights increase. 900 is completely solid.
+
+To contribute, see [github.com/Etcetera-Type-Co/Tourney](https://github.com/Etcetera-Type-Co/Tourney).

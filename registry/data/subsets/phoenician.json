@@ -1,0 +1,35 @@
+{
+	"id": "phoenician",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10900",
+			"1091B"
+		],
+		[
+			"1091F",
+			"1091F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/phoenician_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "916301fc70b164eb1ca5d2ea2f76464778b8fc66142c585b65ee8da140495206",
+		"upstream": "namFiles"
+	}
+}

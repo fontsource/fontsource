@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 861,
+				"sha256": "06da1d5523c8cbc12e62f06d4a8df2fb504f50ff62e2bfdf775c7fb492ab8ca0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/voltaire/Voltaire-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

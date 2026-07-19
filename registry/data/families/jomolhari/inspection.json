@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2752,
+				"sha256": "3eb04396d41699924551a5bcce857720221b5cc1489ee18bc47d4965346a1bf8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/jomolhari/Jomolhari-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

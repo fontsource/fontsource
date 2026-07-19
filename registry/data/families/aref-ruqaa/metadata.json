@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Abdullah Aref, Khaled Hosny, Hermann Zapf",
+	"family": "Aref Ruqaa",
+	"id": "aref-ruqaa",
+	"license": {
+		"attribution": "Copyright 2015-2021 The Aref Ruqaa Project Authors (https://github.com/alif-type/aref-ruqaa), with Reserved Font Name EURM10.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arefruqaa",
+		"revision": "47401edc4eeeb709bd28e357868278170ff9ac1b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aliftype/aref-ruqaa",
+		"revision": "175e1ed565e75aba8059675b80dadc0a184d53e6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arefruqaa/ArefRuqaa-Bold.ttf",
+			"sha256": "247071015b7eefd63f94d6e47949c5d10294ed31bd432f809ba9a219d93f91bb",
+			"size": 123852,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/arefruqaa/ArefRuqaa-Regular.ttf",
+			"sha256": "ceb786d83ba92f35e96efcd8623c2858d288e0c543c8761ba35b1020989464f9",
+			"size": 110696,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

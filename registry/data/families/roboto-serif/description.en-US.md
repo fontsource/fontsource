@@ -1,0 +1,5 @@
+Roboto Serif is a variable typeface family designed to create a comfortable and frictionless reading experience. Minimal and highly functional, it is useful anywhere (even for app interfaces) due to the extensive set of weights and widths across a broad range of optical sizes. While it was carefully crafted to work well in digital media, across the full scope of sizes and resolutions we have today, it is just as comfortable to read and work in print media.
+
+To contribute, see [github.com/googlefonts/roboto-serif](https://github.com/googlefonts/roboto-serif).
+
+To learn more, read [Say Hello to Roboto Serif](https://material.io/blog/roboto-serif).

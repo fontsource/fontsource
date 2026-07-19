@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 670,
+				"sha256": "01d683924072f51c961a5bcf028cdffec045a8dc35ac854e5ddf744f88b9ebf5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.001",
+			"outline": "glyf",
+			"path": "ofl/googlesanscode/GoogleSansCode-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 670,
+				"sha256": "01d683924072f51c961a5bcf028cdffec045a8dc35ac854e5ddf744f88b9ebf5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.001",
+			"outline": "glyf",
+			"path": "ofl/googlesanscode/GoogleSansCode[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

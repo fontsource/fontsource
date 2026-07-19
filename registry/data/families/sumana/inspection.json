@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 460,
+				"sha256": "6f0b3aeb198abb23dbae73fb444d7d3b1ad78cad2e0748826fb6ee2795199827"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 001.015;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v0.94) -l 8 -r 50 -G 200 -x 14 -w \"G\"",
+			"outline": "glyf",
+			"path": "ofl/sumana/Sumana-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 460,
+				"sha256": "6f0b3aeb198abb23dbae73fb444d7d3b1ad78cad2e0748826fb6ee2795199827"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 001.015;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v0.94) -l 8 -r 50 -G 200 -x 14 -w \"G\"",
+			"outline": "glyf",
+			"path": "ofl/sumana/Sumana-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

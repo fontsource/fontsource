@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 150,
+				"sha256": "ba9203c75dcd06cfe46fa54908dc5e74cbfed0a42d35599a7e2e2bf330f7391f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 150,
+				"sha256": "ba9203c75dcd06cfe46fa54908dc5e74cbfed0a42d35599a7e2e2bf330f7391f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 150,
+				"sha256": "ba9203c75dcd06cfe46fa54908dc5e74cbfed0a42d35599a7e2e2bf330f7391f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 150,
+				"sha256": "ba9203c75dcd06cfe46fa54908dc5e74cbfed0a42d35599a7e2e2bf330f7391f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

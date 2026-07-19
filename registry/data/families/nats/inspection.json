@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 367,
+				"sha256": "ba970810745ccc4e8da6d591b29a9c9ee4c0b1a4d70482fb304221815d5c51d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4; ttfautohint (v1.2.25-373a) -l 7 -r 28 -G 50 -x 13 -D telu -f latn -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/nats/NATS-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

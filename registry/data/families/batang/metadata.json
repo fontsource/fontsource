@@ -1,0 +1,42 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-05-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "HanYang I&C Co.",
+	"family": "Batang",
+	"id": "batang",
+	"license": {
+		"attribution": "Copyright 2024 The Batang and Gungsuh Project Authors (https://github.com/googlefonts/batang)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/batang",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/batang",
+		"revision": "6c1e09f93204c963881afbb4e25699095565f2e5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/batang/Batang-Regular.ttf",
+			"sha256": "0929031e799b2feadda22208c58f503515e6f8fa2eaba75acd2e6847d73fc54b",
+			"size": 6829552,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

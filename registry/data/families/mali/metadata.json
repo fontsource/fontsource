@@ -1,0 +1,140 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Mali",
+	"id": "mali",
+	"license": {
+		"attribution": "Copyright 2018 The Mali Project Authors (https://github.com/cadsondemak/Mali)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mali",
+		"revision": "147b29987bc3cb343804702f57a540a15ca2862d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Mali",
+		"revision": "4f4843c99ad83880f530b33a2ac1d69054c236bf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mali/Mali-Bold.ttf",
+			"sha256": "3e2f421036c3f91eb5ef34650a5cd2116c737a542147769437a9856a455d4462",
+			"size": 112176,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-BoldItalic.ttf",
+			"sha256": "ed51d1fa721e4dc4a43dba34926442a007f8a300543c1171887810a547e5b23b",
+			"size": 115724,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-ExtraLight.ttf",
+			"sha256": "1ee5ea883fde78e4ec8b66ba3606348cd48171cc42072090df8f7500a82e3f33",
+			"size": 112596,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-ExtraLightItalic.ttf",
+			"sha256": "0295ac94b941c9ee00997aaf83459f100a99986b3f4e2f2c19d211961e3986b4",
+			"size": 115592,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-Italic.ttf",
+			"sha256": "feb2808bbd3827949b5eda93179d5820b0fbbb2bfd6154866b0d05e1b8f25f8c",
+			"size": 115980,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-Light.ttf",
+			"sha256": "0cd365c361b4a394583746ae222b136ca627b344a35cf84c6a65c2cf4ba7a97c",
+			"size": 112788,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-LightItalic.ttf",
+			"sha256": "47e58abc37bbd0279d2e349956a529a069fc08866b2cdb97e17131aeb05d39a3",
+			"size": 115752,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-Medium.ttf",
+			"sha256": "aa3320845e281de05d7076aed9be5a09df4bf11e6c46165027a0b57a0c8f5dc9",
+			"size": 112880,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-MediumItalic.ttf",
+			"sha256": "2c37d78ccf7e6095526f13ee020c7e48c15e91cf42a8b115a22467ff68fc2eca",
+			"size": 115992,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-Regular.ttf",
+			"sha256": "e3212f0f9be130743d32a4f174b7d79628daa5db0d72ca4c63c799ae465597bb",
+			"size": 112756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-SemiBold.ttf",
+			"sha256": "0ba6d92b46369ec5040d119f87a17586be96364fac743fbf510b54a3ead1adcc",
+			"size": 112924,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/mali/Mali-SemiBoldItalic.ttf",
+			"sha256": "3a83a53f2b88e8464a09f8788cd4ad4e96ae3008e3bb2128de34693bd2ad6ed1",
+			"size": 116020,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

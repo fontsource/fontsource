@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Dr Sugiyama",
+	"id": "dr-sugiyama",
+	"license": {
+		"attribution": "Copyright (c) 2004 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"Dr Sujiyama\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/drsugiyama",
+		"revision": "0536a2cc916c1535610e3446fc5e2e758fff4fc9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/drsugiyama",
+		"revision": "11d194b70af6df309a24c9395f64280172839879"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/drsugiyama/DrSugiyama-Regular.ttf",
+			"sha256": "8436c1eae3a06126a6e0aa85b1dffb1b507d39eab7b6512a9bb1adc5d514d9b9",
+			"size": 39928,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

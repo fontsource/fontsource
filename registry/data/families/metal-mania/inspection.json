@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 259,
+				"sha256": "8010b8171442a7773629ef1e148744be56e07617116195fb91eda659f24c1d2e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/metalmania/MetalMania-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

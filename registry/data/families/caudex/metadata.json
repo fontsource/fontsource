@@ -1,0 +1,70 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-05-18",
+	"declaredSubsets": [
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"runic",
+		"vietnamese"
+	],
+	"designer": "Nidud",
+	"family": "Caudex",
+	"id": "caudex",
+	"license": {
+		"attribution": "Copyright (c) 2011 Hjort Nidudsson (nidud@users.sourceforge.net)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/caudex",
+		"revision": "81cca4bb77be599f64f80681a0274687ab41a967",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/caudex",
+		"revision": "2cd095f7ea63c324e8a5f0135acb6a330f2842f8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/caudex/Caudex-Bold.ttf",
+			"sha256": "880fb67901ce94573ed0262d152b87115a08f928c72fc6c1101375a1223d390a",
+			"size": 471708,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/caudex/Caudex-BoldItalic.ttf",
+			"sha256": "78440e8ab6730581ac71fe780ad2fa15ba15d240313028678e404ace4e70eb20",
+			"size": 555156,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/caudex/Caudex-Italic.ttf",
+			"sha256": "ffa47f625d746e7b75c2306b7572f22561e1d73312a375772325c98213e0a4f9",
+			"size": 559440,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/caudex/Caudex-Regular.ttf",
+			"sha256": "dbb493e1adc50aaec52071535e6fccf4176793c79545f54d95a812cbfb85169b",
+			"size": 466324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

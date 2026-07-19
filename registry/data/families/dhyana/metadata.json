@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-15",
+	"declaredSubsets": [
+		"lao",
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Dhyana",
+	"id": "dhyana",
+	"license": {
+		"attribution": "Copyright (c) 2010-12, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names \"Nobile\" and \"Dhyana\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dhyana",
+		"revision": "e6903e6e38fa1950a3a19478bc84f8597a31d5b8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vernnobile/DhyanaFont",
+		"revision": "600f15faf4489ecca60dbcecad6f163e095f2af3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dhyana/Dhyana-Bold.ttf",
+			"sha256": "e2092d37b02d81c24471b8714b3eefb1098e96f80fa658f11284bc0c18b11e8f",
+			"size": 61304,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/dhyana/Dhyana-Regular.ttf",
+			"sha256": "a7b241c509c6f39eebefe649d2e014d2519cd715a12026bb90afb0c3b97c6266",
+			"size": 72348,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

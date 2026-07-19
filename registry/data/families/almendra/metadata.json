@@ -1,0 +1,66 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ana Sanfelippo",
+	"family": "Almendra",
+	"id": "almendra",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Ana Sanfelippo (anasanfe@gmail.com), with Reserved Font Name 'Almendra'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/almendra",
+		"revision": "cacc35deffa880fb6d17e32959046238c7721483",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/almendra",
+		"revision": "988cfa73bbc740e8a263da7a9c94c405d1436530"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/almendra/Almendra-Bold.ttf",
+			"sha256": "5895ef04d0d56c60083ec302e72db99b952b044ab2b440ee12283649b5edc971",
+			"size": 36624,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/almendra/Almendra-BoldItalic.ttf",
+			"sha256": "10e0a7dd4b9f5ad7d51be7f8ee42d76919c322dcbb7733dbad48f4ac751cb105",
+			"size": 35380,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/almendra/Almendra-Italic.ttf",
+			"sha256": "972eb95dd030592755064c35e8e394b75423973d0b7dbfd759c7e36ef80bb7cb",
+			"size": 35216,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/almendra/Almendra-Regular.ttf",
+			"sha256": "b127a6121209353b53da9ce73bf9d350f74190d8384c28ede179e4fb9440f946",
+			"size": 68684,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

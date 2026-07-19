@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Onur Yazıcıgil",
+	"family": "Duru Sans",
+	"id": "duru-sans",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Sorkin Type Co (eben@eyebytes.com) with Reserved Font Name Duru.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/durusans",
+		"revision": "c298c41cf3b6b7c2aa5f445c4eb5bc68c57b07e4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/durusans",
+		"revision": "2895eb6c9842f80c1e01bbf9fbb6231eaef66724"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/durusans/DuruSans-Regular.ttf",
+			"sha256": "edd15a5596318ecc635484f7b4fcb34c6dcaa7be8f85c4d2e9273ad8db688ff0",
+			"size": 88088,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,1 @@
+Charmonman is a Thai and Latin family which takes inspiration from Zapfino. It features tall ascenders and descenders with swashed letterforms.

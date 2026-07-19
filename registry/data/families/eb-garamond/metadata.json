@@ -1,0 +1,53 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-03-23",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Georg Duffner, Octavio Pardo",
+	"family": "EB Garamond",
+	"id": "eb-garamond",
+	"license": {
+		"attribution": "Copyright 2017 The EB Garamond Project Authors (https://github.com/octaviopardo/EBGaramond12)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ebgaramond",
+		"revision": "f8c1d3d6cc75e30d77130bdcbfbff27e3b6233fe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/octaviopardo/EBGaramond12",
+		"revision": "106a4a6d377987459ae5e68673a4570f13b957fb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ebgaramond/EBGaramond-Italic[wght].ttf",
+			"sha256": "bba2c4499c93c9612b90b9825d32b07da52fce2fe57562a1eb6b833553f93c4e",
+			"size": 754468,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ebgaramond/EBGaramond[wght].ttf",
+			"sha256": "ef9512f92f6d579e5dc75af59a5a4b1b8b47d2eda89e00b954d44520e5369027",
+			"size": 851176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-17"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "ea6cf71feee3c155904edf03a092c91b4bcd21ef980c0a11e33f861bb9c48f36"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/hedvigletterssans/HedvigLettersSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

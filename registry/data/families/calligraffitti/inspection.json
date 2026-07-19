@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "cfa43e411c723837698bc9fe8055161265ec01e6909d66b244d3b419b6563cd7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "apache/calligraffitti/Calligraffitti-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

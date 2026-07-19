@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-05-16",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "TypeTogether, Veronika Burian, José Scaglione",
+	"displayName": "Playwrite Ísland",
+	"family": "Playwrite IS",
+	"id": "playwrite-is",
+	"license": {
+		"attribution": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playwriteis",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playwrite",
+		"revision": "02e4e15767f5b6c2109413429fc51879b9507ab4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playwriteis/PlaywriteIS[wght].ttf",
+			"sha256": "fcaad619d330aa4dcdf7b2a6dd711a0f9ccd6ddcd66f7a7296f8d0f9e84b28d3",
+			"size": 343868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

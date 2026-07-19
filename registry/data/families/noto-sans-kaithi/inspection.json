@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 415,
+				"sha256": "10da4f5dff2e176efa4b62f18ad374ccb5a80a5128c8ed8be197554fb01a84bb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.006; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanskaithi/NotoSansKaithi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2185,
+				"sha256": "bd77d503f178c91e1d25c5d1e194bf26e35c62f006fb2881e359f1db16828630"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusserif/LibertinusSerif-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1696,
+				"sha256": "8f3808d1522dfcb0818ce0604668fe5a5b7d704b56a531a94ea820c910fedd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusserif/LibertinusSerif-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2144,
+				"sha256": "4097782d99a0ddede4e40aa8f4c01452d999b4b3603b22a38b7ab8c97af735e1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusserif/LibertinusSerif-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2382,
+				"sha256": "99bc24bfe0191409d5ab816eef2119618220b274da3fc9faf3416b02eaf51293"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusserif/LibertinusSerif-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2125,
+				"sha256": "e542974843aed235e2ccec5d399780caca834d4263db8ab4eb529ede3d27da2b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusserif/LibertinusSerif-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2110,
+				"sha256": "feb58d4514dbad82c750ee1da97054489c4ab787f0568f9540668372e1f6a03e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusserif/LibertinusSerif-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

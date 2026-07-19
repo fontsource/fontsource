@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "55a8d8cbf152a97fedcad1a8d020d346438ff26b2b89d32670984118dd442ce1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/fontdinerswanky/FontdinerSwanky-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

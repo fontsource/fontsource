@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2015-09-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Caveat Brush",
+	"id": "caveat-brush",
+	"license": {
+		"attribution": "Copyright 2015 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/caveatbrush",
+		"revision": "f3595d3a8e5e4c2f81db658e7b86ba917127b7ec",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/caveat",
+		"revision": "59745e818ef7973e11e70cb1358d0e902b56c5fc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/caveatbrush/CaveatBrush-Regular.ttf",
+			"sha256": "e565bd7bffd895ca64f8d1cb77c816b9b38d9c010246386a07c9648592f6f282",
+			"size": 295568,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

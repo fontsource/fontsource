@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Denis Masharov",
+	"family": "Forum",
+	"id": "forum",
+	"license": {
+		"attribution": "Copyright (c) 2011, Denis Masharov <denis.masharov@gmail.com>. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/forum",
+		"revision": "a748fc6b738075c2be721f3d45d0fedebef2c640",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/forum",
+		"revision": "e8efc0bceef3b98cf32f722bf637f3c110f68a37"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/forum/Forum-Regular.ttf",
+			"sha256": "5c9fbe9c4ce76d0269f5088d921d57e58082fd9c28433eacb6de95baf938adf8",
+			"size": 303316,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

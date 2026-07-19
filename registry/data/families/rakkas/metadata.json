@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Zeynep Akay",
+	"family": "Rakkas",
+	"id": "rakkas",
+	"license": {
+		"attribution": "Copyright 2017 The Rakkas Project Authors (https://github.com/zeynepakay/Rakkas)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rakkas",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/zeynepakay/Rakkas",
+		"revision": "3bdb0ba164c9e987a5ab4de7f7cc8842a04d267a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rakkas/Rakkas-Regular.ttf",
+			"sha256": "54278882e4774c14d50c3b555f127d0fe586366d5b787316ebbcbd8108829e60",
+			"size": 146824,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

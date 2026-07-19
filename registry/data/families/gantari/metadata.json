@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-05-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Lafontype",
+	"family": "Gantari",
+	"id": "gantari",
+	"license": {
+		"attribution": "Copyright 2022 The Gantari Project Authors (https://github.com/Lafontype/Gantari)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gantari",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Lafontype/Gantari",
+		"revision": "363a3dd5634bfec7e9f7db11ca3e1f4739a182ab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gantari/Gantari-Italic[wght].ttf",
+			"sha256": "968f9aa4c6a6f7ef4f6995533c9492367b4c7b5e8b4912db555473ecfda24e0f",
+			"size": 131240,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/gantari/Gantari[wght].ttf",
+			"sha256": "16b83edd620efd401c7855ebb96694718c29f55f4198913dfad4791591796e71",
+			"size": 124976,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

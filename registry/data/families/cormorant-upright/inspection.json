@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 675,
+				"sha256": "f7a47179b44cdaa383c6ade9fd7f23d4943047491015edaea2d3c215eb120d8d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.302",
+			"outline": "glyf",
+			"path": "ofl/cormorantupright/CormorantUpright-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 675,
+				"sha256": "f7a47179b44cdaa383c6ade9fd7f23d4943047491015edaea2d3c215eb120d8d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.302",
+			"outline": "glyf",
+			"path": "ofl/cormorantupright/CormorantUpright-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 675,
+				"sha256": "f7a47179b44cdaa383c6ade9fd7f23d4943047491015edaea2d3c215eb120d8d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.302",
+			"outline": "glyf",
+			"path": "ofl/cormorantupright/CormorantUpright-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 675,
+				"sha256": "f7a47179b44cdaa383c6ade9fd7f23d4943047491015edaea2d3c215eb120d8d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.302",
+			"outline": "glyf",
+			"path": "ofl/cormorantupright/CormorantUpright-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 675,
+				"sha256": "f7a47179b44cdaa383c6ade9fd7f23d4943047491015edaea2d3c215eb120d8d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.302",
+			"outline": "glyf",
+			"path": "ofl/cormorantupright/CormorantUpright-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

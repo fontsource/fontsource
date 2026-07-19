@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 462,
+				"sha256": "f90f68bd2b967a02b764c1a31ae1991b5981b6e6b3de856304ca6c65e1e87668"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/vinasans/VinaSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

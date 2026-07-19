@@ -1,0 +1,5 @@
+Sahitya is a Devanagari typeface family based on the Latin [Alegreya](https://www.google.com/fonts/specimen/Alegreya) fonts. It was designed to match the style and feel of the original Latin characters. Juan Pablo del Peral designed the Latin, and led the design of the Devanagari with Sol Matas.
+
+Thanks to Erin McLaughlin, Vaishnavi Murthyand, Noopur Datye, Dan Reynolds and José Nicolás Silva for their support and feedback.
+
+The Sahitya project is led by Juan Pablo del Peral, a type designer based in Argentina. To contribute, see [github.com/juandelperal/sahitya](https://github.com/juandelperal/sahitya)

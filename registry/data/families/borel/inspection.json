@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 351,
+				"sha256": "7d44b6ae3b8cc56982f3d7d1b3092bb5d61a59a420cde1735107f7f8fb1bfbbf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/borel/Borel-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

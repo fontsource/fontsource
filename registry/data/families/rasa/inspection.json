@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 686,
+				"sha256": "99a31ac3251a1bcf5e09f08719d8788d1d979c85a1ab123d0c71429a4ae3c9a4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "ofl/rasa/Rasa-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 777,
+				"sha256": "bd74a378a8f6116df9ce1b05b5be54dbffa8d6d5b7ae81285fba6e6920533632"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "ofl/rasa/Rasa[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

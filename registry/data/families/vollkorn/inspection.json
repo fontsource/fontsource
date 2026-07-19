@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1242,
+				"sha256": "dc4e29a540b31ce11a57d37fe63dfd70516906466a34f3e1b647cf4628871467"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 5.001",
+			"outline": "glyf",
+			"path": "ofl/vollkorn/Vollkorn-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1242,
+				"sha256": "c91155e9da58ae9de95f0bbf05611aa8cefde143d4589714274bc85947f30e7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 5.001",
+			"outline": "glyf",
+			"path": "ofl/vollkorn/Vollkorn[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

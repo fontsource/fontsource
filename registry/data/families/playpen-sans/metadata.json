@@ -1,0 +1,45 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2023-09-07",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"emoji",
+		"greek",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "TypeTogether, Laura Meseguer, Veronika Burian, José Scaglione, Kostas Bartsokas, Vera Evstafieva, Tom Grace, Yorlmar Campos",
+	"family": "Playpen Sans",
+	"id": "playpen-sans",
+	"license": {
+		"attribution": "Copyright 2023 The Playpen Sans Project Authors (https://github.com/TypeTogether/Playpen-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playpensans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playpen-Sans",
+		"revision": "354fed4e5d1397aa3a092e6baa41b0064c8340b5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playpensans/PlaypenSans[wght].ttf",
+			"sha256": "e083f9da8be210e08ea982ab510894641aab37590e70620d6db73f8de881ec4a",
+			"size": 1567080,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

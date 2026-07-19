@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 372,
+				"sha256": "c9993199d98d810c10c7a08c4fa0890cd5dfdf486b2cb954a8b62e150eaa2e68"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/risque/Risque-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-10-04",
+	"declaredSubsets": [
+		"kayah-li",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Kay Pho Du",
+	"id": "kay-pho-du",
+	"license": {
+		"attribution": "Copyright (c) 2019-2023 SIL International, based on the overall design of Karenni (Copyright (c) 2016-2019, Khu Oo Reh).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kayphodu",
+		"revision": "b119bba17a3c97fac11e69cbbf36100b9946729c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-kayphodu",
+		"revision": "4c49d8ac7ae00cf0ee10db3c3c35dc49ca9efd4d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kayphodu/KayPhoDu-Bold.ttf",
+			"sha256": "8d89876b4e2adeb97b9d312ff448e3a66dce7c52c7c21d564159a292ff60787e",
+			"size": 43032,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kayphodu/KayPhoDu-Medium.ttf",
+			"sha256": "4bb552ffcfe2bf7495188616375af8ead67b05536d43fc35b915aa6ce9eb619b",
+			"size": 43792,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kayphodu/KayPhoDu-Regular.ttf",
+			"sha256": "aa54e0cd1c01e7e8ac9887eaf3dac3e7ef2df9c2b58049ef8a0ab8b1a76cbe1e",
+			"size": 43988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kayphodu/KayPhoDu-SemiBold.ttf",
+			"sha256": "07f14ba8c7b3e40bb879da8908aaff4546435edd61e2924f6eae10b54f8e63d4",
+			"size": 43188,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

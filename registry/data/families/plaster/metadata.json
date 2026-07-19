@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sorkin Type",
+	"family": "Plaster",
+	"id": "plaster",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Plaster\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/plaster",
+		"revision": "fd510a41904cc1b96623217faf4f3b792ed7ac7d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Plaster",
+		"revision": "6879ba56c377a4df76cb15889e4e7a4985b50abd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/plaster/Plaster-Regular.ttf",
+			"sha256": "f8b2d7d1d56abd4f20ae962b9f0559e9072a0926b5963d9eed040929ca07dc2d",
+			"size": 32852,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

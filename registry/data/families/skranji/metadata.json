@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-08-21",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Neapolitan",
+	"family": "Skranji",
+	"id": "skranji",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Font Diner, Inc DBA Neapolitan (diner@fontdiner.com) with Reseved Font Name \"Skranji Bold\"\nCopyright (c) 2012 by Font Diner, Inc DBA Neapolitan (diner@fontdiner.com) with Reseved Font Name \"Skranji\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/skranji",
+		"revision": "e07eab975d51beaba270f4a5210247e42ec2555b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/skranji/Skranji-Bold.ttf",
+			"sha256": "cfe2e3847d4c4d63efb207533539933b1acaaa7ea71e8df86758c01b7de6e9ab",
+			"size": 207292,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/skranji/Skranji-Regular.ttf",
+			"sha256": "75a25bc56f04606dd4e050686831a6587d69a5365e7001bc862b08cf86dd4ea1",
+			"size": 207924,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

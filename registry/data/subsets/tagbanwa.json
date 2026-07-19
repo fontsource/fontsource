@@ -1,0 +1,51 @@
+{
+	"id": "tagbanwa",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1735",
+			"1736"
+		],
+		[
+			"1760",
+			"176C"
+		],
+		[
+			"176E",
+			"1770"
+		],
+		[
+			"1772",
+			"1773"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/tagbanwa_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "77d43d59253ffd2359f25c9214a69538c9f622fc71f9d2044d0b4afa29b7e708",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "79e13e83dc0dd4c5cd3bd42f3956d23aa92b732a0dfb979ae6ae00617d8b3894"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/vibur/Vibur-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

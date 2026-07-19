@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4",
+			"outline": "glyf",
+			"path": "ofl/palanquin/Palanquin-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/palanquin/Palanquin-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4",
+			"outline": "glyf",
+			"path": "ofl/palanquin/Palanquin-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4",
+			"outline": "glyf",
+			"path": "ofl/palanquin/Palanquin-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4",
+			"outline": "glyf",
+			"path": "ofl/palanquin/Palanquin-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4",
+			"outline": "glyf",
+			"path": "ofl/palanquin/Palanquin-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/palanquin/Palanquin-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		}
+	]
+}

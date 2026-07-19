@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Orienta",
+	"id": "orienta",
+	"license": {
+		"attribution": "Copyright 2012 The Orienta Project Authors (https://github.com/etunni/orienta) with Reserved Font Name 'Orienta'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/orienta",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/orienta",
+		"revision": "18d3b4ce823c8a5b374023c559cf6d2b2bd505a2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/orienta/Orienta-Regular.ttf",
+			"sha256": "c7ca99f5789c097565d12313a23449eeb7b46a9d60342419ab696870793ca291",
+			"size": 55176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

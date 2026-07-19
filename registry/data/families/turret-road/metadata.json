@@ -1,0 +1,84 @@
+{
+	"category": "display",
+	"dateAdded": "2019-09-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dale Sattler",
+	"family": "Turret Road",
+	"id": "turret-road",
+	"license": {
+		"attribution": "Copyright 2018 The Turret Road Project Authors (https://github.com/noponies/turret-road)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/turretroad",
+		"revision": "44a8d54490d35fcf3f05ae2471b9fd921f0d4548",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/noponies/Turret-Road",
+		"revision": "c77a268e22034f5427de1bbed2d13fdf7b91b1d8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/turretroad/TurretRoad-Bold.ttf",
+			"sha256": "e2d41e87abbaa1b53984df19938f81fd8b6715886d82bdf3af25497755eec4da",
+			"size": 51616,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/turretroad/TurretRoad-ExtraBold.ttf",
+			"sha256": "566338de973b47357317a9af96fe5e99c0fefe3d4e7707780bd78e8090c652b8",
+			"size": 53088,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/turretroad/TurretRoad-ExtraLight.ttf",
+			"sha256": "9f2fa201b4d7a717ca5cae486f083fe1aae4b0c35b98311c2a0eb5c9f2fac4f9",
+			"size": 51844,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/turretroad/TurretRoad-Light.ttf",
+			"sha256": "8610f6b0b7eb0bea030f66eafcc9ebee1948f3fe18fdeac862677ed5c0e6ecfb",
+			"size": 51484,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/turretroad/TurretRoad-Medium.ttf",
+			"sha256": "a36a45d322f18ff5050b36a7a82e17a5c69685b2ef4b75508698bc8e06d80099",
+			"size": 52124,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/turretroad/TurretRoad-Regular.ttf",
+			"sha256": "cce8cfb3cddbef28083bcb1513ec58f4a5c4764d3ec20c6bf49e5e3ecc89ddf9",
+			"size": 51680,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 408,
+				"sha256": "f4fd309ea4607c5d5565a5d5bb0ca0cb8cbe4665f43bdeb2b9799fb0f6e1f280"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/unlock/Unlock-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

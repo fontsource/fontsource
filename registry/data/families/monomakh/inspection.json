@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 815,
+				"sha256": "3b289589f666b152ba35f7199f95251020a059b0912da159c30820a8cc32e40d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/monomakh/Monomakh-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

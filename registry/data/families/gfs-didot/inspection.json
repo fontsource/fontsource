@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1104,
+				"sha256": "8a52f43394d99d799d2a03a0da4a65749665d8cee4a8adcbeaf8a1b199b815e7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/gfsdidot/GFSDidot-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

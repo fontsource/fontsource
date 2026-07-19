@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 232,
+				"sha256": "36cfdd0cd6a3e256e291860a48ae77c84f199ad6b39c025b64900274b7280579"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mrdafoe/MrDafoe-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

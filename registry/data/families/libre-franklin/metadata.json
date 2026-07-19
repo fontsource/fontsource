@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Impallari Type",
+	"family": "Libre Franklin",
+	"id": "libre-franklin",
+	"license": {
+		"attribution": "Copyright 2020 The Libre Franklin Project Authors (https://github.com/googlefonts/Libre-Franklin)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/librefranklin",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Libre-Franklin",
+		"revision": "310b7eef1f7b7ba82322295e0034675ea68040b0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/librefranklin/LibreFranklin-Italic[wght].ttf",
+			"sha256": "b8d2f40203bd4d90fe3e805953d9b79d62a6486db756d984b0d8ef4435b367ba",
+			"size": 206092,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/librefranklin/LibreFranklin[wght].ttf",
+			"sha256": "2329f394b10ed1c71107df20fddc11e2bb1b68c1ecbb385f975b36fd64a971f8",
+			"size": 187436,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

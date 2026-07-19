@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1154,
+				"sha256": "062c582d7cae41d5ef47b6d739a4281d26c0defac0d86737695ab899f53b9dc4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/tiny5/Tiny5-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

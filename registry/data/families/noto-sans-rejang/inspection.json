@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 363,
+				"sha256": "959af7c70cde249424ce63a88ca7ecb3f0c9846b328e30468cf2496fa1fc8a43"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/notosansrejang/NotoSansRejang-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

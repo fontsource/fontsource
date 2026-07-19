@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2023-01-23",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Saurabh Sharma",
+	"family": "Gajraj One",
+	"id": "gajraj-one",
+	"license": {
+		"attribution": "Copyright 2022 The GajrajOne Project Authors (https://github.com/xconsau/gajrajone)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gajrajone",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/xconsau/GajrajOne",
+		"revision": "5768aa3d4522b402ead302e5bb8697e965da694f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gajrajone/GajrajOne-Regular.ttf",
+			"sha256": "eb924f0e1cb9f29f129a76645dadcc36d0f3a831185ac530a6b5af607ae06231",
+			"size": 149784,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"imperial-aramaic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Imperial Aramaic",
+	"id": "noto-sans-imperial-aramaic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/imperial-aramaic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansimperialaramaic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/imperial-aramaic",
+		"revision": "059b859599f8e189962b73d357882446f195e77f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansimperialaramaic/NotoSansImperialAramaic-Regular.ttf",
+			"sha256": "51433e25557eac79df4e447e0b6be4a23bcf3680a60432ebb388a13ea82d227d",
+			"size": 52388,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

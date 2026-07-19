@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 395,
+				"sha256": "96bb8b1af5d66d6509889fb9e537327e7496115ea645b94b60d6180bdc22cf13"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/enriqueta/Enriqueta-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 395,
+				"sha256": "96bb8b1af5d66d6509889fb9e537327e7496115ea645b94b60d6180bdc22cf13"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/enriqueta/Enriqueta-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 395,
+				"sha256": "96bb8b1af5d66d6509889fb9e537327e7496115ea645b94b60d6180bdc22cf13"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/enriqueta/Enriqueta-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 395,
+				"sha256": "96bb8b1af5d66d6509889fb9e537327e7496115ea645b94b60d6180bdc22cf13"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/enriqueta/Enriqueta-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

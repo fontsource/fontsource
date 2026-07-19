@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-persian"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Old Persian",
+	"id": "noto-sans-old-persian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-persian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansoldpersian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/old-persian",
+		"revision": "27b5583d16934490eda51cb723316f65d8b8379b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansoldpersian/NotoSansOldPersian-Regular.ttf",
+			"sha256": "fa2d24830f472b8c0974079be5150caffd4fd0b9d6daf431453f277720895fdb",
+			"size": 59860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

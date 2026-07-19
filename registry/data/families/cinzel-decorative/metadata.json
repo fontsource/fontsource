@@ -1,0 +1,56 @@
+{
+	"category": "display",
+	"dateAdded": "2012-10-05",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Natanael Gama",
+	"family": "Cinzel Decorative",
+	"id": "cinzel-decorative",
+	"license": {
+		"attribution": "Copyright  2012 Natanael Gama (info@ndiscovered.com), with Reserved Font Name 'Cinzel'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cinzeldecorative",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NDISCOVER/Cinzel",
+		"revision": "1c62abfb8d5e27ea0a09169d621b32d24fdb8691"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cinzeldecorative/CinzelDecorative-Black.ttf",
+			"sha256": "a6c1eb3e228f639a98aafd8a8e8a035582dd50ad5f8a84e9dcbc8664e7457114",
+			"size": 62692,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/cinzeldecorative/CinzelDecorative-Bold.ttf",
+			"sha256": "e854e68a388aa50d742a4415c1ae5c17a617ef7956c95a70021d0a4a44f20518",
+			"size": 62300,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cinzeldecorative/CinzelDecorative-Regular.ttf",
+			"sha256": "5b862be329103ad287a10f0a53e27a40e8cc519999253f1a0223e2dc330b10b8",
+			"size": 60408,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

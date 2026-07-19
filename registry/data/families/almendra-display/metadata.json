@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ana Sanfelippo",
+	"family": "Almendra Display",
+	"id": "almendra-display",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Ana Sanfelippo (anasanfe@gmail.com), with Reserved Font Name 'Almendra'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/almendradisplay",
+		"revision": "358edee480058d32c78a08ee6e41acb555e548d5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/almendradisplay",
+		"revision": "d0f84bf66891b9e398cec31f5f7314897f897ee2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/almendradisplay/AlmendraDisplay-Regular.ttf",
+			"sha256": "04b543a9e7bfe39262e47d47ae7ec6a04166ce2d05383a911b256cfcb783383f",
+			"size": 39264,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

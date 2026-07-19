@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-04-29",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Sumana",
+	"id": "sumana",
+	"license": {
+		"attribution": "Copyright © 2015 by Cyreal. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sumana",
+		"revision": "2d1c21489642988ea4713e0f6be624a1433de2b9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Sumana",
+		"revision": "68c5ce43ae96268ac93ee3b79c720c7f479c5ee1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sumana/Sumana-Bold.ttf",
+			"sha256": "e32150c36ced10804d077dc41714df7e5c8471408bccc7036fba30314a914e79",
+			"size": 223880,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sumana/Sumana-Regular.ttf",
+			"sha256": "e71be1be55f8970ef24ee3aaf790c34cad3f5b6c5d518e41c8651c596e102ec4",
+			"size": 211548,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

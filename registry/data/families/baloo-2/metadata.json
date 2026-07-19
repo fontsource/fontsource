@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Ek Type",
+	"family": "Baloo 2",
+	"id": "baloo-2",
+	"license": {
+		"attribution": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/baloo2",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yanone/Baloo2-Variable",
+		"revision": "da523dfa21aa0e376253d61c21e39146dc55702a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/baloo2/Baloo2[wght].ttf",
+			"sha256": "d47a6852548059b1db49a1319d06d499d546c3fa2237cf9eee9c43c8abb025c2",
+			"size": 683200,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

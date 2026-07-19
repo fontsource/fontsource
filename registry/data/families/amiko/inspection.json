@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 631,
+				"sha256": "c50c0c2f52f447a4da7a5020d9d3a0e683e0edec73934fb326d92e4619aeae6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/amiko/Amiko-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 631,
+				"sha256": "c50c0c2f52f447a4da7a5020d9d3a0e683e0edec73934fb326d92e4619aeae6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/amiko/Amiko-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 631,
+				"sha256": "c50c0c2f52f447a4da7a5020d9d3a0e683e0edec73934fb326d92e4619aeae6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/amiko/Amiko-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

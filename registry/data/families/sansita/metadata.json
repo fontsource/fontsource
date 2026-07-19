@@ -1,0 +1,102 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-12-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Sansita",
+	"id": "sansita",
+	"license": {
+		"attribution": "Copyright 2016 The Sansita Project Authors (omnibus.type@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sansita",
+		"revision": "87ad93e46e77755ba02f25ae38418266b5d55f86",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Sansita",
+		"revision": "168abd68a378c93d6febb46b453efd67e9ed86f2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sansita/Sansita-Black.ttf",
+			"sha256": "392e7979b1667704c2ed9aebf3fbf014c1f927a372ab31fd05b19b291dc4d24b",
+			"size": 122904,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/sansita/Sansita-BlackItalic.ttf",
+			"sha256": "e537293697dcb4905ad05a90cbe5cabc352ccdd31d54ef70b0927ea51b919925",
+			"size": 111576,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/sansita/Sansita-Bold.ttf",
+			"sha256": "03d70e42bdc01c1cfb43da0a54ddf21e6f768ddbbc7cbf86134bcdbc2a860174",
+			"size": 117456,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sansita/Sansita-BoldItalic.ttf",
+			"sha256": "bd35f8c971731bcbc963b76e9db4511e7cd9e5b8a30acd94a8cd6d106204f3ca",
+			"size": 109484,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sansita/Sansita-ExtraBold.ttf",
+			"sha256": "f513fd5f5c45f47572e17d849affd3e488676fa48472817dc38069b820403480",
+			"size": 119988,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/sansita/Sansita-ExtraBoldItalic.ttf",
+			"sha256": "f4a9f1ad4126507a4d7f33875afd5fc79912e64a58af03657939528a59ced503",
+			"size": 107376,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/sansita/Sansita-Italic.ttf",
+			"sha256": "10bd5c614aa8d17e7ee27a788342b835bcb355d14a49bdc19d6edf7ecdd94858",
+			"size": 108372,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sansita/Sansita-Regular.ttf",
+			"sha256": "1b25171a67a8fb26972f8bdabe31ed3ccd37db4ea8f7d817fc37d572024208ad",
+			"size": 116092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

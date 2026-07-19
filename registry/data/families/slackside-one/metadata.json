@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Maniackers Design",
+	"family": "Slackside One",
+	"id": "slackside-one",
+	"license": {
+		"attribution": "Copyright 2020 The Slackside One Project Authors (https://github.com/ManiackersDesign/slackside), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/slacksideone",
+		"revision": "a0efa67490ec427452a28e39267e2e9cb1dc4198",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ManiackersDesign/slackside",
+		"revision": "e5a03bb81c7a6c6eb9f901b993c2164213f143d4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/slacksideone/SlacksideOne-Regular.ttf",
+			"sha256": "c32d67d921cfde2f89d2fe12b6e78a58618a41774a7cb1b0e321d5d1ae9a324a",
+			"size": 171736,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

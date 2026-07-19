@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-10-12",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Sideshow",
+	"family": "Satisfy",
+	"id": "satisfy",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Font Diner, Inc. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/satisfy",
+		"revision": "1bf1ba256af8ffbc25714b1152698916e05fe541",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/satisfy/Satisfy-Regular.ttf",
+			"sha256": "55bb141a0a23a32278d5fa7fd2e853824faa173b94774660ebeddb106be07c80",
+			"size": 47928,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

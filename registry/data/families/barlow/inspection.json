@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlow/Barlow-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

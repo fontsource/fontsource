@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"deseret",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Deseret",
+	"id": "noto-sans-deseret",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/deseret)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansdeseret",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/deseret",
+		"revision": "fab3d4d90de5f00b318f70a2d0c247402348fd8f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansdeseret/NotoSansDeseret-Regular.ttf",
+			"sha256": "aaab78856a00ca015e8f545200c82093b33192990651a0f62926a13cf0a7b080",
+			"size": 60572,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

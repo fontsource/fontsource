@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-11-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Anna Giedryś",
+	"family": "Signika Negative",
+	"id": "signika-negative",
+	"license": {
+		"attribution": "Copyright 2018 The Signika Project Authors (https://github.com/googlefonts/Signika).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/signikanegative",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aaronbell/signika",
+		"revision": "bd066259b5a87d24b23c4f0da03a96889b6d0503"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/signikanegative/SignikaNegative[wght].ttf",
+			"sha256": "2d111b1f760fdf84739371f11c88d47d47f642ad643039d3e639466606a5cdec",
+			"size": 428416,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

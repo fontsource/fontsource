@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"ogham"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Ogham",
+	"id": "noto-sans-ogham",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ogham)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansogham",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/ogham",
+		"revision": "f9ef276aefef0c9442f613db21f69a02d4102888"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansogham/NotoSansOgham-Regular.ttf",
+			"sha256": "6a70572d381f3a54fdaa3b373b865f4d97377c65434493b294b1dfacc7c4f58c",
+			"size": 47540,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

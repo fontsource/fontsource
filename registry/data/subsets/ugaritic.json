@@ -1,0 +1,35 @@
+{
+	"id": "ugaritic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10380",
+			"1039D"
+		],
+		[
+			"1039F",
+			"1039F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/ugaritic_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "8ba0d7d2500a27c2de11ac227cc3302c535ef558fc246767c9d57bc649e3833f",
+		"upstream": "namFiles"
+	}
+}

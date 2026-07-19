@@ -1,0 +1,47 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Igino Marini",
+	"family": "IM Fell Great Primer",
+	"id": "im-fell-great-primer",
+	"license": {
+		"attribution": "© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL Great Primer Italic\n© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL Great Primer Roman",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imfellgreatprimer",
+		"revision": "925ef41d0cff124b4be86db129fa070bd0747282",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/imfellgreatprimer",
+		"revision": "caed052ae660283eebd0c5a497e5582d130825f5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imfellgreatprimer/IMFeGPit28P.ttf",
+			"sha256": "a3c1cd9fc694e6f090923423ed8e4dc203c6ccc74ea246ee86279068302fe23d",
+			"size": 249324,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/imfellgreatprimer/IMFeGPrm28P.ttf",
+			"sha256": "5c6de386acb87550ded558f701d288ec1ce7ffa9ec4b160ae06ee3728a1784b2",
+			"size": 216552,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

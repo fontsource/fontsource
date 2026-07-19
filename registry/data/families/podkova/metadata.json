@@ -1,0 +1,42 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-05-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Cyreal",
+	"family": "Podkova",
+	"id": "podkova",
+	"license": {
+		"attribution": "Copyright 2011 The Podkova Project Authors (https://github.com/cyrealtype/Podkova)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/podkova",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Podkova",
+		"revision": "e321080f4bfe74e7b14b4e928880c495f8b40675"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/podkova/Podkova[wght].ttf",
+			"sha256": "a7be6732a489b1c5c7c37a5c2e816fad901563ccd882e9bbc56d13eeebf4a4e7",
+			"size": 163368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

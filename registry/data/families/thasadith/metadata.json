@@ -1,0 +1,68 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Thasadith",
+	"id": "thasadith",
+	"license": {
+		"attribution": "Copyright 2018 The Thasadith Project Authors (https://github.com/cadsondemak/Thasadith)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/thasadith",
+		"revision": "5e7dbcc51e50746eafddcfef3ddf3766178d2e64",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Thasadith",
+		"revision": "033efaea8de73e59dc6bace69d2ffb69d4598b03"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/thasadith/Thasadith-Bold.ttf",
+			"sha256": "110accc7df90be398eafe46918bc7b563a34e11ebbaa4fe4047e070a1e14974f",
+			"size": 95692,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/thasadith/Thasadith-BoldItalic.ttf",
+			"sha256": "563858a700b4cbfd3348749e1c9a8e00e030157fdfd538acb6257702303e148b",
+			"size": 98752,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/thasadith/Thasadith-Italic.ttf",
+			"sha256": "0bf85061df17f275d10dbf600fc98b3c3a7c333927e4c43683eb50a36f063754",
+			"size": 98268,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/thasadith/Thasadith-Regular.ttf",
+			"sha256": "82f16de51287233efb2711386542105e4b7d5dbf1d7f460fefa8700b3fcef5eb",
+			"size": 95336,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

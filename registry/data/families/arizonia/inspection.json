@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 588,
+				"sha256": "dbcb1bf23d14b8b5d0fdb690f70eb0b8c588a1656d9086606d622f71e89a0e90"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/arizonia/Arizonia-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

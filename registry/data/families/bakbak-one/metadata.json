@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2021-09-10",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Saumya Kishore, Sanchit Sawaria",
+	"family": "Bakbak One",
+	"id": "bakbak-one",
+	"license": {
+		"attribution": "Copyright 2021 The Bakbak One Project Authors (https://github.com/googlefonts/bakbak)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bakbakone",
+		"revision": "2a5d290d9f41ad015411adea41dfe6621feb0bbd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bakbak",
+		"revision": "b53b9c31c16f0021b7c206a57a8f04a4d382bc67"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bakbakone/BakbakOne-Regular.ttf",
+			"sha256": "238dd2cf76f0fa33e02ea67c2f9697731378ad567503ca6b1f778778093ff84f",
+			"size": 263136,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

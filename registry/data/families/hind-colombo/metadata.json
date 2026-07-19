@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sinhala"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind Colombo",
+	"id": "hind-colombo",
+	"license": {
+		"attribution": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hindcolombo",
+		"revision": "3f7e4e26d33a0693b605b23a540b6ea188d5c1fd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind-colombo",
+		"revision": "3cf4e8b8400db78e2e07c75d162e66eb59e042c5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hindcolombo/HindColombo-Bold.ttf",
+			"sha256": "c32801dc19d5f50fd49a6d8794fdd8e89300cf4618692ea27feec10f1952b2b6",
+			"size": 167964,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hindcolombo/HindColombo-Light.ttf",
+			"sha256": "e3e47d4d3366f60fd3765d6e2716f063e30c54e32c57234e6ee4087993517186",
+			"size": 141432,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hindcolombo/HindColombo-Medium.ttf",
+			"sha256": "97e18df23617b28a000c9836a85792b677ea735ef105c1cf5c09ffc7dba1a2fb",
+			"size": 150296,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hindcolombo/HindColombo-Regular.ttf",
+			"sha256": "b7faf28ff25b882e2024fdf7d933ecaaa2a6e7fb26cef09b45a5a9fabe820514",
+			"size": 140844,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hindcolombo/HindColombo-SemiBold.ttf",
+			"sha256": "98d35b2a27a16e3315cd0ba867aa27e9512831c911e63a068ab23de3e62a69d3",
+			"size": 154916,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

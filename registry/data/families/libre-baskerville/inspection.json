@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 789,
+				"sha256": "c4b54b2cb09fa4f67764d598961732be9edea9591bc318719a455886c193b12b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005",
+			"outline": "glyf",
+			"path": "ofl/librebaskerville/LibreBaskerville-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 789,
+				"sha256": "c4b54b2cb09fa4f67764d598961732be9edea9591bc318719a455886c193b12b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005",
+			"outline": "glyf",
+			"path": "ofl/librebaskerville/LibreBaskerville[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

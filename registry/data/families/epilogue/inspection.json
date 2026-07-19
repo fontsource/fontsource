@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 689,
+				"sha256": "741d9902bb59bb87a990269916a2500b322e762337d3b7c562d3ff3c8ea2b90a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.112",
+			"outline": "glyf",
+			"path": "ofl/epilogue/Epilogue-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 689,
+				"sha256": "741d9902bb59bb87a990269916a2500b322e762337d3b7c562d3ff3c8ea2b90a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.112",
+			"outline": "glyf",
+			"path": "ofl/epilogue/Epilogue[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

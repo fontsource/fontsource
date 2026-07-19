@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "Nova Round",
+	"id": "nova-round",
+	"license": {
+		"attribution": "Copyright (c) 2011, wmk69 (wmk69@o2.pl) with Reserved Font Names 'NovaRound' and 'Nova Round'. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/novaround",
+		"revision": "51da5ccd4197987f7183e0cbae904269cca44195",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/novaround/NovaRound.ttf",
+			"sha256": "9f427a08e6367f847d4b9452ab56252d99436b6a567206c1734d5cb4de895d95",
+			"size": 93212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

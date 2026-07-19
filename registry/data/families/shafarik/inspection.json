@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1815,
+				"sha256": "e252c16792c8e05d1c82f4b54e0854a626adcf2d76b2f14e99292ef1ebe1845e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/shafarik/Shafarik-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

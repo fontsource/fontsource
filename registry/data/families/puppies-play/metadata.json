@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-10-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Puppies Play",
+	"id": "puppies-play",
+	"license": {
+		"attribution": "Copyright 2009-2021 The Puppies Play Project Authors (https://github.com/googlefonts/puppies-play)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/puppiesplay",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/puppies-play",
+		"revision": "5f5c9a3f1373ea85403f314696a968887c8106c3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/puppiesplay/PuppiesPlay-Regular.ttf",
+			"sha256": "104fd20ddc4f78f256dd5e3a77d2cfdb0ef5b26e467404377f7bd0afabbb24c0",
+			"size": 167944,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

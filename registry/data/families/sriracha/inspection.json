@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 772,
+				"sha256": "d1870c46fd25862c1bc6e9d10beb9e23bcbb53e580d1caeb83848bb599cb6a5e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002g",
+			"outline": "glyf",
+			"path": "ofl/sriracha/Sriracha-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

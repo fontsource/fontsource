@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "514211629794a07684398518f5dd6ef2dc14fab3d980b9704ba0832b98d6a81f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/patuaone/PatuaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

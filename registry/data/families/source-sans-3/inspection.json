@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1615,
+				"sha256": "ae5f0ec6a703aca9a076d7e588d22fd24092920acaf1fcb5a2ea19fc9ae1b46c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.052;hotconv 1.1.0;makeotfexe 2.6.0",
+			"outline": "glyf",
+			"path": "ofl/sourcesans3/SourceSans3-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1615,
+				"sha256": "ae5f0ec6a703aca9a076d7e588d22fd24092920acaf1fcb5a2ea19fc9ae1b46c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.052;hotconv 1.1.0;makeotfexe 2.6.0",
+			"outline": "glyf",
+			"path": "ofl/sourcesans3/SourceSans3[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

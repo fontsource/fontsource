@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans SC is an unmodulated (“sans serif”) design for languages in mainland China that use the _Simplified Chinese_ variant of the Han ideograms. It also supports _Hiragana, Katakana, Latin, Cyrillic, Greek_ and _Hangul_. It has multiple weights.

@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-12-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Saira",
+	"id": "saira",
+	"license": {
+		"attribution": "Copyright 2020 The Saira Project Authors (https://github.com/Omnibus-Type/Saira)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/saira",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Saira",
+		"revision": "1916f2a575479b626238d9842126e63aa208eebf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/saira/Saira-Italic[wdth,wght].ttf",
+			"sha256": "965972c2543b72948aedb55fae36e23175661d0f9d2d8d7f14a1009e466912f8",
+			"size": 534712,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/saira/Saira[wdth,wght].ttf",
+			"sha256": "9d050fc5a01c85f74c4257c207d50b55d1e40c37308c642f974a2c5003231dde",
+			"size": 483700,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

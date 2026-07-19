@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"bengali",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Ek Type",
+	"family": "Baloo Da 2",
+	"id": "baloo-da-2",
+	"license": {
+		"attribution": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/balooda2",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yanone/Baloo2-Variable",
+		"revision": "ffd6308743a5829fe6980ce86f5629ba0250df98"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/balooda2/BalooDa2[wght].ttf",
+			"sha256": "8b62a8c4dbe659be5e4d40c19b7b3012120335b333205c5aa101b45cdb449cff",
+			"size": 451504,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

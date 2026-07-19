@@ -1,0 +1,49 @@
+{
+	"category": "display",
+	"dateAdded": "2020-05-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "MuseoModerno",
+	"id": "museomoderno",
+	"license": {
+		"attribution": "Copyright 2020 The MuseoModerno Project Authors (https://github.com/Omnibus-Type/MuseoModerno)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/museomoderno",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/MuseoModerno",
+		"revision": "ad2f135bea4525cf6d1f14d488593c0fc6ef82db"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/museomoderno/MuseoModerno-Italic[wght].ttf",
+			"sha256": "ff123989a6c175cd3fce6b3decba302d3841d65d9839ec09dd0c850bea212b56",
+			"size": 218276,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/museomoderno/MuseoModerno[wght].ttf",
+			"sha256": "d03b027cf5cf72d014c8a405a8ceb83ea1d5d8ae2c64a7f602b131d9973e3503",
+			"size": 188724,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

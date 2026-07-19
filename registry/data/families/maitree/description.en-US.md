@@ -1,0 +1,5 @@
+Maitree means “friendliness” in Thai. Maitree is a serif Latin and looped Thai typeface with wide proportions. It is characterized by its bigger-than-usual looped terminal in Thai, and long serifs in Latin, that balance out the whole structure. Maitree offers 6 weights, and its asymmetrically curved terminals are well-suited for both formal and casual usage, especially for works that require an antique and historical manner.
+
+A similarity between some glyphs such as ก ถ ภ ฤ ฦ, ฎ ฏ, บ ป, or ข ช is something to take into consideration because it might lead to confusion when typesetting very short texts. Sizes and positions of Thai vowels and tone marks have been managed carefully, because they are all relevant to readability, legibility, and overall texture.
+
+The Maitree project is led by Cadson Demak, a type foundry in Thailand. To contribute, see [github.com/cadsondemak/maitree](https://github.com/cadsondemak/maitree)

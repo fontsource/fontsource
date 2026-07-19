@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1281,
+				"sha256": "4c551e9ea0e4bbeec20aaff60d19cac96fc62c810fc67501f244e655121140b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.13 b171",
+			"outline": "glyf",
+			"path": "ofl/stixtwotext/STIXTwoText-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1281,
+				"sha256": "4c551e9ea0e4bbeec20aaff60d19cac96fc62c810fc67501f244e655121140b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.13 b171",
+			"outline": "glyf",
+			"path": "ofl/stixtwotext/STIXTwoText[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"bassa-vah",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Bassa Vah",
+	"id": "noto-sans-bassa-vah",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/bassa-vah)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansbassavah",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/bassa-vah",
+		"revision": "bed459c24b109a612b53f44542d4fe6f9c754641"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansbassavah/NotoSansBassaVah[wght].ttf",
+			"sha256": "b6c065b905d4ca228580027164f2102fae76215724c43a36e8ebf3c7ee81b8fb",
+			"size": 61308,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

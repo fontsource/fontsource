@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 691,
+				"sha256": "bc635d76bb85e2312d6340611d445e492690e1cc20b6c25a1848daa06c2cada1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.201",
+			"outline": "glyf",
+			"path": "ofl/rubik80sfade/Rubik80sFade-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

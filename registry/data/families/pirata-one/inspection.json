@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 382,
+				"sha256": "cb1939da72144bf7a6756e3e6c069b04e95f43f8403b8a4d7c3aa8cc96270133"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/pirataone/PirataOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

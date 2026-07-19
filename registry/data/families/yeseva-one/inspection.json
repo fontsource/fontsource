@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "c3db33a61964ff1a6a2e97209bea6f4962d599fcd69e435d3f3b28a7ec59fc1d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/yesevaone/YesevaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

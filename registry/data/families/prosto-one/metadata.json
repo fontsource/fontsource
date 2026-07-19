@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2012-02-29",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jovanny Lemonad, Pavel Emelyanov",
+	"family": "Prosto One",
+	"id": "prosto-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, Jovanny Lemonad (http://www.jovanny.ru), Copyright (c) 2012, Pavel Emelyanov (zakachka2006@mail.ru), with Reserved Font Name \"Prosto\" and \"Prosto One\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/prostoone",
+		"revision": "a60ae7789234645296dac4a39527064ca974c248",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/prostoone/ProstoOne-Regular.ttf",
+			"sha256": "745974a4c404cc1fd646d4134940ed359657d6c28634b544f9cbc0f830791ea6",
+			"size": 96868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

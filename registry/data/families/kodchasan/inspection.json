@@ -1,0 +1,160 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "3a2666377c9bee4c84ccacac6fa6942e87c049d47263f73c2cc689085ee4da02"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/kodchasan/Kodchasan-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

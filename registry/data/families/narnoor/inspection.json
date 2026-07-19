@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "0545a3723130d7c6c3bd3a4164195ec120ffa22b5094282a10323c90d2f1329b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/narnoor/Narnoor-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "0545a3723130d7c6c3bd3a4164195ec120ffa22b5094282a10323c90d2f1329b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/narnoor/Narnoor-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "0545a3723130d7c6c3bd3a4164195ec120ffa22b5094282a10323c90d2f1329b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/narnoor/Narnoor-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "0545a3723130d7c6c3bd3a4164195ec120ffa22b5094282a10323c90d2f1329b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/narnoor/Narnoor-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "0545a3723130d7c6c3bd3a4164195ec120ffa22b5094282a10323c90d2f1329b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/narnoor/Narnoor-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

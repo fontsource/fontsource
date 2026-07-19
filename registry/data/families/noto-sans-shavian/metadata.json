@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"shavian"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Shavian",
+	"id": "noto-sans-shavian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/shavian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansshavian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/shavian",
+		"revision": "15edbc9e0dd0c0ad627c658bbf439dce175a8ba4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansshavian/NotoSansShavian-Regular.ttf",
+			"sha256": "9f57b0429b23616aee4a662da73caca681fbcb6895fd212539b70bf596c209d5",
+			"size": 54064,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

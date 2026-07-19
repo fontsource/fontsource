@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 309,
+				"sha256": "b977de5202c8989d5c7346a827fab52c2100c28d450feddaed60d2779f3ffa72"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/cossettetitre/CossetteTitre-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 309,
+				"sha256": "b977de5202c8989d5c7346a827fab52c2100c28d450feddaed60d2779f3ffa72"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/cossettetitre/CossetteTitre-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Metal",
+	"id": "metal",
+	"license": {
+		"attribution": "Copyright 2019 The Metal Project Authors (https://github.com/danhhong/Metal)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/metal",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Metal",
+		"revision": "2d74e37de805a7bc4fb3f704897fbfd2f4e0ac7f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/metal/Metal-Regular.ttf",
+			"sha256": "3718096fff5cf6a76005fdcb786c7f321f496fe6d56fbcb7f664c12c433d8413",
+			"size": 142428,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

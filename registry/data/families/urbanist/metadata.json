@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Corey Hu",
+	"family": "Urbanist",
+	"id": "urbanist",
+	"license": {
+		"attribution": "Copyright 2021 The Urbanist Project Authors (https://github.com/coreyhu/Urbanist)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/urbanist",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/coreyhu/Urbanist",
+		"revision": "549716453f76335ccc5a9e537cbe0da03d6fed34"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/urbanist/Urbanist-Italic[wght].ttf",
+			"sha256": "05ac7a65decda23806d1678d44b8ef23dd656d6793555499dd79ee24c3e777ed",
+			"size": 87508,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/urbanist/Urbanist[wght].ttf",
+			"sha256": "748362d51eb276840e9f0023cd2d98299bf709a95fb3a5ae4ffcb624c638ebb9",
+			"size": 84840,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

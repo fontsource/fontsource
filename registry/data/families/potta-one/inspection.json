@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7286,
+				"sha256": "8d3bd606b8c2f1ba3acfe47d4384f52d85a319334e7b11fbb529b65cd7c39aae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/pottaone/PottaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

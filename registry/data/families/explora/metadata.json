@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-10",
+	"declaredSubsets": [
+		"cherokee",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Explora",
+	"id": "explora",
+	"license": {
+		"attribution": "Copyright 2011 The Explora Project Authors (https://github.com/googlefonts/explora)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/explora",
+		"revision": "1796e34455b893092713d206e7f23e3e07699f00",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/explora",
+		"revision": "b0d0e026f48eefee38dc06821f2c9088a347fa9b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/explora/Explora-Regular.ttf",
+			"sha256": "a29a1b2f59eaceab955f6667e125dfcd41406a41ebc2cce3d837c45d0405b129",
+			"size": 164680,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

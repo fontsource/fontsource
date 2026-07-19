@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "8dc035e1bed17af10f7e5864a831ccdf75a0253c3d0b149e9871bd0286918c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/mitr/Mitr-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "8dc035e1bed17af10f7e5864a831ccdf75a0253c3d0b149e9871bd0286918c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/mitr/Mitr-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "8dc035e1bed17af10f7e5864a831ccdf75a0253c3d0b149e9871bd0286918c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/mitr/Mitr-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "8dc035e1bed17af10f7e5864a831ccdf75a0253c3d0b149e9871bd0286918c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/mitr/Mitr-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "8dc035e1bed17af10f7e5864a831ccdf75a0253c3d0b149e9871bd0286918c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/mitr/Mitr-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "8dc035e1bed17af10f7e5864a831ccdf75a0253c3d0b149e9871bd0286918c9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/mitr/Mitr-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

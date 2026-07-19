@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-06-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Pathway Gothic One",
+	"id": "pathway-gothic-one",
+	"license": {
+		"attribution": "Copyright 2013 The Pathway Gothic Project Authors (https://github.com/etunni/pathway-gothic), with Reserved Font Name 'Pathway'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pathwaygothicone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/pathway-gothic",
+		"revision": "cb77ed5f79d4572096191b7c7dfb157b65abf748"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pathwaygothicone/PathwayGothicOne-Regular.ttf",
+			"sha256": "0b2785c0bbd9c67667875d8d48eeeef9751bb814038747ba00f693b888dbbdf7",
+			"size": 49944,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

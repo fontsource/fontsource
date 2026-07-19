@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"masaram-gondi",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Masaram Gondi",
+	"id": "noto-sans-masaram-gondi",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/masaram-gondi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmasaramgondi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/masaram-gondi",
+		"revision": "aa688154eb5d517ed368e6905fbf1d2e087141a1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmasaramgondi/NotoSansMasaramGondi-Regular.ttf",
+			"sha256": "e1caa285f93023d2cdf8e9594310062b8310a3d6addf6b56103a9f828198c98f",
+			"size": 81772,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

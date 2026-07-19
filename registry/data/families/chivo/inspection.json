@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 500,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 644,
+				"sha256": "04316bade905afb62f39dc12bb16155e6db604e8130d238fc0fb122b17a6cf4a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/chivo/Chivo-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 500,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 500,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 644,
+				"sha256": "9a5629cc522aa538a6ab44436d9c2bcea519257bc1a56e42da15c6f27d131dac"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/chivo/Chivo[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

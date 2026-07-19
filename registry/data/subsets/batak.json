@@ -1,0 +1,43 @@
+{
+	"id": "batak",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1BC0",
+			"1BF3"
+		],
+		[
+			"1BFC",
+			"1BFF"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/batak_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "0b680cb0352b5e8e7751fcc79e92cadae7c0090324ae92c3ffac06b0e3be1e46",
+		"upstream": "namFiles"
+	}
+}

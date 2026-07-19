@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "96d8deca38da9291312fd15e48665a949171acd36cba5bed13ab26a547e9792f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/allan/Allan-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "40e9e21876895cb997f28b50609448312ad24f7bb6d08a15142eee53ef4af0fe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/allan/Allan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

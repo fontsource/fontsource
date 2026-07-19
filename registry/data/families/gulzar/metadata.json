@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-05-14",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Borna Izadpanah, Fiona Ross, Alice Savoie, Simon Cozens",
+	"family": "Gulzar",
+	"id": "gulzar",
+	"license": {
+		"attribution": "Copyright 2021 The Gulzar Project Authors (http://github.com/googlefonts/gulzar/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gulzar",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/simoncozens/Gulzar",
+		"revision": "42b27958a84d56d8341ad1e2dc26b19dba03b15f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gulzar/Gulzar-Regular.ttf",
+			"sha256": "246337973ac64e8b70fe611405dcf32a395a8885c4497dc45dbc4975d3ac0831",
+			"size": 963496,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

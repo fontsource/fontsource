@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-09-21",
+	"declaredSubsets": [
+		"greek",
+		"greek-ext",
+		"latin",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Greek Font Society",
+	"family": "GFS Didot",
+	"id": "gfs-didot",
+	"license": {
+		"attribution": "Copyright (c) Takis Katsoulidis and George D. Matthiopoulos (gfs@greekfontsociety.gr), 2001. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gfsdidot",
+		"revision": "1b37fa9e4a4ad50e613520391a3de7d4f9a0ed76",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/gfsdidot",
+		"revision": "ce7a216e8765803eee73b284275975d323e2396c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gfsdidot/GFSDidot-Regular.ttf",
+			"sha256": "4fc784ab824e8866eeef8ad55976b93e7e170fb1b8237fd4f8781b5b4dd297f9",
+			"size": 191168,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"mahajani",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Mahajani",
+	"id": "noto-sans-mahajani",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/mahajani)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmahajani",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/mahajani",
+		"revision": "6af195b21b1841f6b842af2a3d2f6b252718a70d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmahajani/NotoSansMahajani-Regular.ttf",
+			"sha256": "a48694e1ea0178e11df1b9a760d7ad53b6aa3a7b86e5d8c18dfb37e144ae69c0",
+			"size": 63864,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

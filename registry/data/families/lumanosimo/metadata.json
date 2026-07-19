@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2023-04-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "The DocRepair Project, Eduardo Tunni",
+	"family": "Lumanosimo",
+	"id": "lumanosimo",
+	"license": {
+		"attribution": "Copyright 2023 The Lumanosimo Project Authors (https://github.com/docrepair-fonts/lumanosimo-fonts).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lumanosimo",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/docrepair-fonts/lumanosimo-fonts",
+		"revision": "a7395fda4d79523ae6f0a798e2ea2d8ed524fc80"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lumanosimo/Lumanosimo-Regular.ttf",
+			"sha256": "768d2bbe3b9dcfe5cdd89a01cf4f90b9729b58ae565233a2fab0f7f48b42f662",
+			"size": 38736,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

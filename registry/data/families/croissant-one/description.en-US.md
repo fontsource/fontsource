@@ -1,0 +1,3 @@
+Croissant is a typeface inspired by the Parisian spirit, in the people and the landscapes there. The lowercase letters have smooth round shapes, and a nice long out-stroke to connect nearly every glyph, reminding the reader of elegant French handwriting. The uppercases have a classical structure and soft terminals that embody the spirit of this multi-purpose typeface.
+
+To contribute to the project contact Eduardo Tunni.

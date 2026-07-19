@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 600,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 705,
+				"sha256": "8b3ce8be53524083761a710fe53a09b507beecc9f36387d11c3a667d105042e2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.103",
+			"outline": "glyf",
+			"path": "ofl/rokkitt/Rokkitt-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 600,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 600,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 705,
+				"sha256": "8b3ce8be53524083761a710fe53a09b507beecc9f36387d11c3a667d105042e2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.103",
+			"outline": "glyf",
+			"path": "ofl/rokkitt/Rokkitt[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 600,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

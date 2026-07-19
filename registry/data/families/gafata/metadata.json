@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Lautaro Hourcade",
+	"family": "Gafata",
+	"id": "gafata",
+	"license": {
+		"attribution": "Copyright (c) 2010-2012, Lautaro Hourcade (lautaro.uy@gmail.com), with Reserved Font Name 'Gafata'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gafata",
+		"revision": "efe7968e74d6c41697f02810ffd76afca67c85d7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/gafata",
+		"revision": "dcd42b72333486b9704c2d3736e3c26b0346cb67"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gafata/Gafata-Regular.ttf",
+			"sha256": "a816ae1fc683a8c093666b3b7f5de8e8dbdfca658459a484138e65378d4326b6",
+			"size": 51552,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

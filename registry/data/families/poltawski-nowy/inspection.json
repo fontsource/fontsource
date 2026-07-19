@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 633,
+				"sha256": "ad85edfa1910774b83192cf94d3339fa78fbb220150950c176c5ffa7c0372339"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;gftools[0.9.25]",
+			"outline": "glyf",
+			"path": "ofl/poltawskinowy/PoltawskiNowy-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 633,
+				"sha256": "ad85edfa1910774b83192cf94d3339fa78fbb220150950c176c5ffa7c0372339"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;gftools[0.9.25]",
+			"outline": "glyf",
+			"path": "ofl/poltawskinowy/PoltawskiNowy[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

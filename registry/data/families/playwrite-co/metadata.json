@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2023-12-13",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "TypeTogether, Veronika Burian, José Scaglione",
+	"displayName": "Playwrite Colombia",
+	"family": "Playwrite CO",
+	"id": "playwrite-co",
+	"license": {
+		"attribution": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playwriteco",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playwrite",
+		"revision": "02e4e15767f5b6c2109413429fc51879b9507ab4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playwriteco/PlaywriteCO[wght].ttf",
+			"sha256": "0d2291c2ca2df8eab5840abc46726db9b366c4bbc08484d26133f097383afd41",
+			"size": 339624,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

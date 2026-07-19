@@ -1,0 +1,3 @@
+BatangChe is a well-known myeongjo(brush)-style font that first shipped with Windows 95. It was designed for optimal readability and clarity for long-form text use. This version includes monospace, half-width Latin characters. For a version with proportional Latin characters, see Batang.
+
+To contribute to this project, please visit [github.com/googlefonts/batang](https://github.com/googlefonts/batang).

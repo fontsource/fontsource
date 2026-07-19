@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 588,
+				"sha256": "37b9881e72513fd2a91099a12b236657af927ea91f24c1cc2023f3f218ab41c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/meaculpa/MeaCulpa-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

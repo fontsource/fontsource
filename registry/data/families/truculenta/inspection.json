@@ -1,0 +1,40 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 12,
+					"max": 72,
+					"min": 12,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 619,
+				"sha256": "7c3b3a40d6494a8eeba25ae263b4a516d578e366405eb20018f0ff4233163ddc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/truculenta/Truculenta[opsz,wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

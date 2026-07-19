@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Daniel Johnson",
+	"family": "Megrim",
+	"id": "megrim",
+	"license": {
+		"attribution": "Copyright (c) 2010, 2011 by Daniel Johnson (il.basso.buffo@gmail.com). Released under the terms of the SIL Open Font License.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/megrim",
+		"revision": "e26113d768ba0575e93169535f1efdb144a425c0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/megrim/Megrim.ttf",
+			"sha256": "88d30544a63121ab021f4cf60f57257c81caaeddeeb2eb4d6ec1a600ae779cfd",
+			"size": 57872,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

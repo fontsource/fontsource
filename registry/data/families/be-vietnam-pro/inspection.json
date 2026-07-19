@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 459,
+				"sha256": "7d34dd7fc15aa9c26411ca0bf718d1a46d3b7f2778279f9aa4e527e71aac7eca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bevietnampro/BeVietnamPro-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 100
+		}
+	]
+}

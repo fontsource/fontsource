@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 598,
+				"sha256": "3fac9d8b4eb3933b88b727ca4a47bdf463a966a693446caeb890a935bc595de7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "ofl/islandmoments/IslandMoments-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

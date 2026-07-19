@@ -1,0 +1,50 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-05-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tai-viet",
+		"vietnamese"
+	],
+	"designer": "SIL International",
+	"family": "Tai Heritage Pro",
+	"id": "tai-heritage-pro",
+	"license": {
+		"attribution": "Copyright (c) 1995-2017, SIL International (www.sil.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/taiheritagepro",
+		"revision": "670b231de4715944bc8faf66406f476bf54d754a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-taiheritagepro",
+		"revision": "1ac0dd04cf5dd23435f37cecfe825e0eaf230a4c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/taiheritagepro/TaiHeritagePro-Bold.ttf",
+			"sha256": "658ba5d655942e0139233cc8e8a7e04529976c38dd9abd80a093dceccad42ff4",
+			"size": 303432,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/taiheritagepro/TaiHeritagePro-Regular.ttf",
+			"sha256": "dd2e9d518584b2214762ab4de572c5bd2d3955c0d32b74739a5c471412e2bbac",
+			"size": 273952,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

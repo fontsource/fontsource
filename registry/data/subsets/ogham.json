@@ -1,0 +1,31 @@
+{
+	"id": "ogham",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1680",
+			"169C"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/ogham_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "50fa4fc8c8473012a05a619a6fe5261b96f6c8a11f02e053620b05ddcaad9c36",
+		"upstream": "namFiles"
+	}
+}

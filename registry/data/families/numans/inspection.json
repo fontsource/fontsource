@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 241,
+				"sha256": "14e3868bac1bb873304ca34c403fa229ce3d5dc8a0705dbfc48510efbc3c9704"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "ofl/numans/Numans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

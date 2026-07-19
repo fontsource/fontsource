@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-07-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Saurabh Sharma",
+	"family": "Kumbh Sans",
+	"id": "kumbh-sans",
+	"license": {
+		"attribution": "Copyright 2020 The KumbhSans Project Authors (https://github.com/xconsau/KumbhSans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kumbhsans",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/xconsau/KumbhSans",
+		"revision": "b1c41a8ff0916a5421bd3976c361f1980c0e7cfc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kumbhsans/KumbhSans[YOPQ,wght].ttf",
+			"sha256": "f29b8814e682a1524c1b6cad866700c844c287c2df1f6d362dcaec4cc75dadf9",
+			"size": 118796,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

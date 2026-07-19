@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 422,
+				"sha256": "43163deaed2750826dcdc31df7aed7f8e35403566a85607117249a613a605b6e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.003",
+			"outline": "glyf",
+			"path": "ofl/notosansadlamunjoined/NotoSansAdlamUnjoined[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

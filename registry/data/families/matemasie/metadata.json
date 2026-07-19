@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Adam Yeo",
+	"family": "Matemasie",
+	"id": "matemasie",
+	"license": {
+		"attribution": "Copyright 2024 The Matemasie Project Authors (https://github.com/YADAMSS/Matemasie-Font/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/matemasie",
+		"revision": "d92a4f3214862c9026ce734e85587dd68d88a5c2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/YADAMSS/Matemasie-Font",
+		"revision": "a6dbde5f9eb448066e8c751ee4c5b4146a7fbc99"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/matemasie/Matemasie-Regular.ttf",
+			"sha256": "5ad4d54e1216448e4acf6044bf3a2a1d36e955cd8dea61e9146e8dfc8f1f5cc7",
+			"size": 143128,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

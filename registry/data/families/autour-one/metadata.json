@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-05-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sorkin Type",
+	"family": "Autour One",
+	"id": "autour-one",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Sorkin Type Co (www.sorkintype.com) with Reserved Font Name 'Autour'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/autourone",
+		"revision": "e8afceb45500d9457f0dbef0c9a0ca37709cf540",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/autourone",
+		"revision": "11d97fbce17c2eb0a2eb88eb560c4ecf8e7645ac"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/autourone/AutourOne-Regular.ttf",
+			"sha256": "6a3f5bf27e9398c25bd8c4edaee8bd503d8074553537a2bf3b1d724353aab252",
+			"size": 87060,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

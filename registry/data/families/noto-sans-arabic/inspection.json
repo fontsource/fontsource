@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1561,
+				"sha256": "18ed5c208218cdd02ca17a8523014779351289dbc1a6d7d357303a5015aa8d26"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.012",
+			"outline": "glyf",
+			"path": "ofl/notosansarabic/NotoSansArabic[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Chicle",
+	"id": "chicle",
+	"license": {
+		"attribution": "Copyright (c) 2007 Angel Koziupa (sudtipos@sudtipos.com), Copyright (c) 2007 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"Chicle\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chicle",
+		"revision": "383c6f09a0a4efd39825d4b1cec9c0bcc2708558",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/chicle",
+		"revision": "f68c0fa9e45e089b7cb3fb7bbef873b9e7bf8123"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chicle/Chicle-Regular.ttf",
+			"sha256": "2c82494b86d3f03821284d60f2209a33218adde0dad7133ce3eb063b4363372b",
+			"size": 41032,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

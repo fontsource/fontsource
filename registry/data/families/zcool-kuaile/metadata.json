@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-12-05",
+	"declaredSubsets": [
+		"chinese-simplified",
+		"latin",
+		"menu"
+	],
+	"designer": "Liu Bingke, Yang Kang, Wu Shaojie",
+	"family": "ZCOOL KuaiLe",
+	"id": "zcool-kuaile",
+	"license": {
+		"attribution": "Copyright 2018 The ZCOOL KuaiLe Project Authors (https://github.com/googlefonts/zcool-kuaile)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zcoolkuaile",
+		"revision": "6d49995f5d8f1c7d476760a580ffb89ce1e52c5d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zcool-kuaile",
+		"revision": "577cd45e035fa0cd27f74579de6ff47db62fde8c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zcoolkuaile/ZCOOLKuaiLe-Regular.ttf",
+			"sha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d",
+			"size": 1514968,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

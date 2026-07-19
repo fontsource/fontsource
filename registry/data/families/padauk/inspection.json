@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 524,
+				"sha256": "78f63f1b7db7a24f82972e54890d82fd12216ad6d25b98040f5682771a945f42"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 5.001",
+			"outline": "glyf",
+			"path": "ofl/padauk/Padauk-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 524,
+				"sha256": "78f63f1b7db7a24f82972e54890d82fd12216ad6d25b98040f5682771a945f42"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 5.001",
+			"outline": "glyf",
+			"path": "ofl/padauk/Padauk-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

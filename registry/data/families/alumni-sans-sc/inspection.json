@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 700,
+				"sha256": "316af0ed3698e6672540994b07900408d316dad69f781e6a559b7fa1a1e367e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.016",
+			"outline": "glyf",
+			"path": "ofl/alumnisanssc/AlumniSansSC-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 700,
+				"sha256": "316af0ed3698e6672540994b07900408d316dad69f781e6a559b7fa1a1e367e6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.018",
+			"outline": "glyf",
+			"path": "ofl/alumnisanssc/AlumniSansSC[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

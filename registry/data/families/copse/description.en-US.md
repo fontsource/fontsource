@@ -1,0 +1,1 @@
+Copse is a low-contrast slab serif that is a little soft around the edges, but with a clear and sturdy posture.

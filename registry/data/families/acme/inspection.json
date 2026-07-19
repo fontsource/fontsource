@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "a76c7e11188d08ded6e4e5cca27c5d499ee3541951868481a0dc391724c1760d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/acme/Acme-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-04-01",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2"
+	],
+	"designer": "NightFurySL2001",
+	"family": "WDXL Lubrifont TC",
+	"id": "wdxl-lubrifont-tc",
+	"license": {
+		"attribution": "Copyright 2025 The WDXL Lubrifont Project Authors (https://github.com/NightFurySL2001/WD-XL-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/wdxllubrifonttc",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NightFurySL2001/WD-XL-font",
+		"revision": "75c4a3bb2fffefa0f0aae470c2c0a73d6f79d0b9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/wdxllubrifonttc/WDXLLubrifontTC-Regular.ttf",
+			"sha256": "acae31588d34ba66a51a6271209bdcbb6105962f0f77a74729e69e3938f96775",
+			"size": 10345168,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

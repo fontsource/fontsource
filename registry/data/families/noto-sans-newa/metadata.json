@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"newa"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Newa",
+	"id": "noto-sans-newa",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/newa)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansnewa",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/newa",
+		"revision": "5a902c1fb6abf546e88d61af912d0b40f2a55de3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansnewa/NotoSansNewa-Regular.ttf",
+			"sha256": "5a67f2e2a94eb493076dbb708a91ee4d48cd204c608f531077ad7c624b524e9e",
+			"size": 259668,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

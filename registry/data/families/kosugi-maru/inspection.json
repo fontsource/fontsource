@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7525,
+				"sha256": "02a0834fb316777b207d663395c969bb6409995bf7b826892745b8bb9e885a59"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.002",
+			"outline": "glyf",
+			"path": "apache/kosugimaru/KosugiMaru-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

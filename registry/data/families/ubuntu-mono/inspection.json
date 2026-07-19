@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1224,
+				"sha256": "df698c9b0deb84dd041b495cd439c0baa17606645974e139d3262eecf9532265"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.80",
+			"outline": "glyf",
+			"path": "ufl/ubuntumono/UbuntuMono-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1224,
+				"sha256": "df698c9b0deb84dd041b495cd439c0baa17606645974e139d3262eecf9532265"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.80",
+			"outline": "glyf",
+			"path": "ufl/ubuntumono/UbuntuMono-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1224,
+				"sha256": "df698c9b0deb84dd041b495cd439c0baa17606645974e139d3262eecf9532265"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.80",
+			"outline": "glyf",
+			"path": "ufl/ubuntumono/UbuntuMono-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1224,
+				"sha256": "df698c9b0deb84dd041b495cd439c0baa17606645974e139d3262eecf9532265"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.80",
+			"outline": "glyf",
+			"path": "ufl/ubuntumono/UbuntuMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 240,
+				"sha256": "2b2cb166a87617b8712051a87528a3125388a0d257bedeb258283a6c9b0ab2da"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/lugrasimo/Lugrasimo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

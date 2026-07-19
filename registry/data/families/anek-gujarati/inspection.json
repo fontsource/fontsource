@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 500,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "44b3ffcc6c5ccaaf1f08710e5944695e3701c608d80daca0f8dc061af8b412fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/anekgujarati/AnekGujarati[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

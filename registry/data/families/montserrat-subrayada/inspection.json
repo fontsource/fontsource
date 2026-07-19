@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "a8330ed555942f747193f3fad5ba0f9de58558250b9244be2376c562daa9c12b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/montserratsubrayada/MontserratSubrayada-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "a8330ed555942f747193f3fad5ba0f9de58558250b9244be2376c562daa9c12b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/montserratsubrayada/MontserratSubrayada-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

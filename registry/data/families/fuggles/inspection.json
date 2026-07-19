@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 523,
+				"sha256": "5835a79f8d93050adef44029d4d846327c1f18ba25611827b397e3c9d77eb901"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/fuggles/Fuggles-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

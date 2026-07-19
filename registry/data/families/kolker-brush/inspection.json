@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 589,
+				"sha256": "70060e6f60eb8694caf7fb4af1bb873593f94a43b09f6ccb68cdb99b9e91601b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kolkerbrush/KolkerBrush-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

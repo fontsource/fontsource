@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Nushu is an unmodulated (“sans serif”) design for the East Asian _Nüshu_ script with a simplified skeleton and large counters. It is suitable for shorter texts, especially in smaller font sizes and user interface contexts. It has 402 glyphs.

@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-02-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Taurai Valerie Mtake, Mirko Velimirović",
+	"family": "Madimi One",
+	"id": "madimi-one",
+	"license": {
+		"attribution": "Copyright 2024 The Madimi One Project Authors (https://github.com/TaVaTake/madimi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/madimione",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TaVaTake/madimi",
+		"revision": "b0fedf3bfa1ac17a00bdbcbf06e8fe2aecfa009e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/madimione/MadimiOne-Regular.ttf",
+			"sha256": "e70355081d3f4eb1fb3d523c4b803a8977669f6ba7c2c14ecee88d2d19fec690",
+			"size": 98100,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 561,
+				"sha256": "84ca9620e3713b8eebb207953a8bf740264ad2eb120b83168c469832127eb2eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/leaguespartan/LeagueSpartan[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

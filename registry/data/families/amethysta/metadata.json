@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Amethysta",
+	"id": "amethysta",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org) with Reserved Font Name \"Amethysta\".  This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/amethysta",
+		"revision": "850700ba7e7c5e240db7acefd6ad694c0c68b79f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Amethysta",
+		"revision": "10ae36bc060bec28f1c504c42ce6871b7c034add"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/amethysta/Amethysta-Regular.ttf",
+			"sha256": "5e192003ec8b95595c27737e2a2bb3c9db2e468b24b572a9183b2f0003143f1c",
+			"size": 66348,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

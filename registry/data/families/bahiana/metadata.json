@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2016-12-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Bahiana",
+	"id": "bahiana",
+	"license": {
+		"attribution": "Copyright 2016 The Bahiana Project Authors (omnibus.type@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bahiana",
+		"revision": "85fb94c01ef81a2048180627e679e9d885815114",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Bahiana",
+		"revision": "43505501149a661266ef6c7603fe0d6ddd58984e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bahiana/Bahiana-Regular.ttf",
+			"sha256": "75760e955339cd70012c8bd9577d373f8bdd4256a73f571f61a42f58ea26fe9c",
+			"size": 85984,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

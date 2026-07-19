@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 445,
+				"sha256": "9c4caaf25f84d9e8423359427cbfd73549d1460a90c773ac96111408bfbca47a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansoldhungarian/NotoSansOldHungarian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

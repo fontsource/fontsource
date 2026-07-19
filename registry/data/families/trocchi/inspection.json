@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "86786430ac6f6df688f419fb2c5686a47fddae92753e05cd3c280353b57a69ab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/trocchi/Trocchi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

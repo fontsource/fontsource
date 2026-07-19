@@ -1,0 +1,58 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Amiko",
+	"id": "amiko",
+	"license": {
+		"attribution": "Copyright (c) 2014, Impallari Type (www.impallari.com).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/amiko",
+		"revision": "f53cebfa1de2e7a509ad435cbd704b9a0631d30a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/Amiko-Devanagari",
+		"revision": "069f510b21d2e839950b007f3458eeb6aed073e7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/amiko/Amiko-Bold.ttf",
+			"sha256": "70d2a2e9eeee950c666f5c94836e9fcd3fd3297d1975c952db2518d0e5ebc9ef",
+			"size": 196396,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/amiko/Amiko-Regular.ttf",
+			"sha256": "402d4d96034762fee68518fd95b778cf6a9d70cab838fa1a817cb783d39639a4",
+			"size": 192880,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/amiko/Amiko-SemiBold.ttf",
+			"sha256": "ddfc0e53ccdc4f13cac4599f97d5775be74b2e1e0773cf1bdce71483a476fbf6",
+			"size": 194424,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 641,
+				"sha256": "15e7514c66694e9499c7d2b179e09074df653777ee26a2bc368a6a1b7813a089"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.096; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/caveatbrush/CaveatBrush-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

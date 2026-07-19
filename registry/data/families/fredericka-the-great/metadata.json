@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tart Workshop",
+	"family": "Fredericka the Great",
+	"id": "fredericka-the-great",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Font Diner, Inc DBA Tart Workshop (diner@fontdiner.com) with Reseved Font Name \"Fredericka the Great\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/frederickathegreat",
+		"revision": "f4e5d4d69ca9ea6a906345b45a04292315168f48",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/frederickathegreat",
+		"revision": "6968170d91ffd9daea400fb4d12bf0173f7d6302"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/frederickathegreat/FrederickatheGreat-Regular.ttf",
+			"sha256": "33dc0832b5e934f3db79dc683dea5029c22eb418183b69669b047355c0c245a2",
+			"size": 486016,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

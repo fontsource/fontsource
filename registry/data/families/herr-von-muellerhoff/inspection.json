@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "24af2480a0acdc7f250d629e9bc6e42b95c062e7a7f531c32ea327288e610c97"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/herrvonmuellerhoff/HerrVonMuellerhoff-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

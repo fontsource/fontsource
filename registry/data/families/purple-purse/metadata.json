@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Purple Purse",
+	"id": "purple-purse",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Purple Purse\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/purplepurse",
+		"revision": "971f278c8b7f8d857068a845432bce451d0366f7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/purplepurse/PurplePurse-Regular.ttf",
+			"sha256": "9c5d7289f22bdb1ef20ae0c47fb896c00f8b35bbf9e114ad6fd2528485380deb",
+			"size": 62868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

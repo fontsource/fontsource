@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1004,
+				"sha256": "fe419cfaa582d415e16dc72f408043d88878cfa908a497b3ccdb831a5d1f500e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/sankofadisplay/SankofaDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

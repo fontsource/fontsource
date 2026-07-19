@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-01-12",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Suravaram",
+	"id": "suravaram",
+	"license": {
+		"attribution": "Copyright (c) 2012 Silicon Andhra (fonts.siliconandhra.org). Copyright (c) 2011 by vernon adams (vern@newtypography.co.uk) with Reserved Font Name 'Tienne'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/suravaram",
+		"revision": "eaa1701ab0477076e39d7e3f5d648113b8c22d0c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/suravaram",
+		"revision": "c8d4e86f6a287199182d1ce6c97450307388dc23"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/suravaram/Suravaram-Regular.ttf",
+			"sha256": "67c8e0d9e78c3eef2924bfe54b7462e9875ff42fe37abbe3e601ad6a9ada0f9c",
+			"size": 270044,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

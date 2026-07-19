@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 367,
+				"sha256": "af4dd900f9d1bb56f6483ee23394c66391322bfa18771992ac3244f526d9533d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mervalescript/MervaleScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

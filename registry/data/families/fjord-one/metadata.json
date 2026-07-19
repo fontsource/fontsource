@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-11-02",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Viktoriya Grabowska",
+	"family": "Fjord One",
+	"id": "fjord-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Names \"Fjord\" and \"Fjord One\" This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fjordone",
+		"revision": "a44ae71e61237742828985c112060173528ba4f2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/fjordone",
+		"revision": "90b0be2c47a5acd683621f38ce4f046f741abafb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fjordone/FjordOne-Regular.ttf",
+			"sha256": "e589e22412b5382c1a4ec482af28c515d9c794ce8bde9a4c2db8ef2a6a063d86",
+			"size": 54156,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

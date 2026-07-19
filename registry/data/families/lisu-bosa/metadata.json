@@ -1,0 +1,175 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-07-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"lisu",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Lisu Bosa",
+	"id": "lisu-bosa",
+	"license": {
+		"attribution": "Copyright (c) 1998-2019 David Morse (original regular), Copyright (c) 2019-2023 SIL International (revised regular, bold, italic, bold italic), Copyright (c) 2014-2019 Adobe (http://www.adobe.com/) (Latin glyphs)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lisubosa",
+		"revision": "d9c714992c7d908c9093c37c1e945a1be7848791",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-lisu-bosa",
+		"revision": "95b4da9504f8ba528e001dbfb23adafa314388e3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lisubosa/LisuBosa-Black.ttf",
+			"sha256": "0098f180285dd4bc649e4806fc1c6d4ac8289fee83ca28e81939c3558501135d",
+			"size": 49492,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-BlackItalic.ttf",
+			"sha256": "ec30db42a6c9aa0f1e37797efccf80f23684d502d8cb78c794f851575412002e",
+			"size": 60016,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-Bold.ttf",
+			"sha256": "f37c2557ea5be20c02f2ca1edd2bf509801f5287e5e1f139bd56716afe77b576",
+			"size": 49252,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-BoldItalic.ttf",
+			"sha256": "1e78cb42e80ff80f88ed0c09a6b908336d30c1f67c5274e6b5bb3a3f1625a4db",
+			"size": 59604,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-ExtraBold.ttf",
+			"sha256": "80b38481eef0901c16deb6b1aa6a5b91220f56ddf0f60498237d6df761b5386a",
+			"size": 49480,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-ExtraBoldItalic.ttf",
+			"sha256": "79394df5682593ddbdfbbf02843cbd239674961d73455976f3af8d69028ce360",
+			"size": 59920,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-ExtraLight.ttf",
+			"sha256": "5ec9be841408c31ceeac98c616efda0052c7b6483ac210d7eea272a8984bc448",
+			"size": 49628,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-ExtraLightItalic.ttf",
+			"sha256": "fe1c6824bbe9d5166b7f6333d46a4fe0db2f682a1aa0255b9a212cec660ecdc5",
+			"size": 59496,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-Italic.ttf",
+			"sha256": "266bfc2b8d2157bf6591d8620e04ef79d634a5bb47171152c9fd27d203e73586",
+			"size": 59432,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-Light.ttf",
+			"sha256": "e14e61301c02466818684c07bb494941b6faf4b3c9dbdbdc6eb1f5bf298a60d2",
+			"size": 49496,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-LightItalic.ttf",
+			"sha256": "e3ce4065109f02b13e8dfc533e8d465faf5523825cb3aa26109afc6ad50e0374",
+			"size": 59288,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-Medium.ttf",
+			"sha256": "f3b0510d65b01621a4bbc02ada39adff9687a515e386c4f77c64130f3afbe1ba",
+			"size": 49364,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-MediumItalic.ttf",
+			"sha256": "c6ffe490d9dc41df608c41596fe1809fd535c19b5c9f926eef67a5e78a214d87",
+			"size": 59428,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-Regular.ttf",
+			"sha256": "d1516e8eacbc05b95b032bff3a5c4ed0cb726ceb3db14a19085bc0c4cc2c64a4",
+			"size": 49372,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-SemiBold.ttf",
+			"sha256": "1c0a31ccc975e64ad42e73116ee0691d535ab124f3f83fad9289c1ff35b9593b",
+			"size": 49408,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/lisubosa/LisuBosa-SemiBoldItalic.ttf",
+			"sha256": "542b2300fe9519ce804b6e98d8bb4354dc4871e6f18011c39104e1754179ded5",
+			"size": 59492,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,5 @@
+This calligraphic typeface comes with a Roman Version and a more flourished stylistic set. The main style has less ornate uppercase forms and the second has more flourished upper- and lowercase characters for a beautiful hand-lettered feel. Perfect for tubes, tags, invitations and other projects that need a personal touch.
+
+It comes with Latin Character sets including Western, Central, and Vietnamese language support.
+
+To contribute, see [github.com/googlefonts/moondance](https://github.com/googlefonts/moondance).

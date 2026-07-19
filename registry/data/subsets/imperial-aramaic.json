@@ -1,0 +1,35 @@
+{
+	"id": "imperial-aramaic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10840",
+			"10855"
+		],
+		[
+			"10857",
+			"1085F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/imperial-aramaic_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "9a91178d0c2aeda0fddd0cc6e9ec29f8c0c8951de0c09d80ba5871c9811bc960",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2023-03-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Nguyen Type",
+	"family": "Vina Sans",
+	"id": "vina-sans",
+	"license": {
+		"attribution": "Copyright 2023 The Vina Sans Project Authors (https://github.com/nguyentype/vinasans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vinasans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/nguyentype/vinasans",
+		"revision": "e99f043b3542ccaf24a21f04601942ca8bc28d53"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vinasans/VinaSans-Regular.ttf",
+			"sha256": "aaab4634a39d8a9f51d97844822ae4cba4a64e0d24b26e88f7b5d401e954fe13",
+			"size": 93328,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

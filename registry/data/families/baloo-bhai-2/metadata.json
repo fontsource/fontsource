@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Ek Type",
+	"family": "Baloo Bhai 2",
+	"id": "baloo-bhai-2",
+	"license": {
+		"attribution": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/baloobhai2",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yanone/Baloo2-Variable",
+		"revision": "da523dfa21aa0e376253d61c21e39146dc55702a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/baloobhai2/BalooBhai2[wght].ttf",
+			"sha256": "b85b68f85cb82924b1647b3eb74ebc75301aee4839eb87ee8f03d600d446b304",
+			"size": 710488,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

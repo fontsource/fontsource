@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-06-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Kameron",
+	"id": "kameron",
+	"license": {
+		"attribution": "Copyright 2011 The Kameron Project Authors (https://github.com/googlefonts/kameronFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kameron",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/kameronFont",
+		"revision": "c13447c3b5fc11abd2eb640bd4a8dd789e38d76f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kameron/Kameron[wght].ttf",
+			"sha256": "b7e9bf8756c3403c1acb1d93d225dcd14dbafc9864ee891268c89459e99db410",
+			"size": 83064,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

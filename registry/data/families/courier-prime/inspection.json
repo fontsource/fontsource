@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "54c65d079e0dc7144d0766e1894952faec6b69aeabd59115e7dbd24b1c1e60f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.018",
+			"outline": "glyf",
+			"path": "ofl/courierprime/CourierPrime-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "54c65d079e0dc7144d0766e1894952faec6b69aeabd59115e7dbd24b1c1e60f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.018",
+			"outline": "glyf",
+			"path": "ofl/courierprime/CourierPrime-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "54c65d079e0dc7144d0766e1894952faec6b69aeabd59115e7dbd24b1c1e60f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.018",
+			"outline": "glyf",
+			"path": "ofl/courierprime/CourierPrime-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "54c65d079e0dc7144d0766e1894952faec6b69aeabd59115e7dbd24b1c1e60f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.018",
+			"outline": "glyf",
+			"path": "ofl/courierprime/CourierPrime-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

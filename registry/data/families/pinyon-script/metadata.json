@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-10-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Nicole Fally",
+	"family": "Pinyon Script",
+	"id": "pinyon-script",
+	"license": {
+		"attribution": "Copyright 2022 The PinyonScript Project Authors (https://github.com/SorkinType/Pinyon)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pinyonscript",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Pinyon",
+		"revision": "91d502f9b3a98c210c54916c356caa534cdc4d70"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pinyonscript/PinyonScript-Regular.ttf",
+			"sha256": "4aab130a6ed27f8b8117738c84a5602edf9300cdcc0651a9a65bf96f451ac29a",
+			"size": 151412,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

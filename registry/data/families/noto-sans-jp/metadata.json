@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-01-29",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Google",
+	"displayName": "Noto Sans Japanese",
+	"family": "Noto Sans JP",
+	"id": "noto-sans-jp",
+	"license": {
+		"attribution": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansjp",
+		"revision": "66a36c8c94b1a5d992ee4e7f392fccfe4945767c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/noto-cjk",
+		"revision": "523d033d6cb47f4a80c58a35753646f5c3608a78"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansjp/NotoSansJP[wght].ttf",
+			"sha256": "c2f3b4d463500a2ddcd3849cded1fceeb9fd6d1c32e6cbecd568453ba50fc68f",
+			"size": 9589900,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

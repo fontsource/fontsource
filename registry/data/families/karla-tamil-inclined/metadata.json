@@ -1,0 +1,46 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-09-29",
+	"declaredSubsets": [
+		"tamil"
+	],
+	"designer": "Jonathan Pinhorn",
+	"family": "Karla Tamil Inclined",
+	"id": "karla-tamil-inclined",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Jonathan Pinhorn (jonpinhorn.typedesign@gmail.com), with Reserved Font Names 'Karla'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/karlatamilinclined",
+		"revision": "ac7a510e7ca89810c19efdeb64df1e6fac55b69d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/karlatamilinclined/KarlaTamilInclined-Bold.ttf",
+			"sha256": "57788fe46fa9b701cf284104c0946c6f2ef669cb7e39fbca404a41e315eed0e5",
+			"size": 108804,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/karlatamilinclined/KarlaTamilInclined-Regular.ttf",
+			"sha256": "d563ace3a74ca1ce9c02cd32fb6dca5de7974f53de3304ac734980e02ba4f1c9",
+			"size": 109700,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

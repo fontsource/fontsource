@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 885,
+				"sha256": "b0ac0b6fb0d68211a4087b5ad6e469a042f79f3733805d69c89b28cc890d70a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.300;gftools[0.9.30]",
+			"outline": "glyf",
+			"path": "ofl/rubik/Rubik-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 885,
+				"sha256": "b0ac0b6fb0d68211a4087b5ad6e469a042f79f3733805d69c89b28cc890d70a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.300;gftools[0.9.30]",
+			"outline": "glyf",
+			"path": "ofl/rubik/Rubik[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

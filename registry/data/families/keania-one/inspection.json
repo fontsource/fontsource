@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 259,
+				"sha256": "c5600c1a8ea0904b3b2743a60f6e5cee367154fdbe7cca67af7f6fe5f6f8a625"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/keaniaone/KeaniaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

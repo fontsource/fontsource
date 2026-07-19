@@ -1,0 +1,21 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1082,
+				"sha256": "21d418b792eb53fb1ef0fc01e333b6ea4d85d315a97ae44f57c82de90c35d848"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL",
+				"SVG "
+			],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/bungeespice/BungeeSpice-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

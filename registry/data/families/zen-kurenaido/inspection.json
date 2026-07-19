@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7815,
+				"sha256": "2631492dd870a2f3fd35fd9b8322509aa3c6f85bcb2e65c8294d2d9c7f04fcc5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/zenkurenaido/ZenKurenaido-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

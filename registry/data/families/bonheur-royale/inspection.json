@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 570,
+				"sha256": "c01ef86759ef5b873793e3cd71c238a69c4fceb351330b66114f4be37d4713bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bonheurroyale/BonheurRoyale-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

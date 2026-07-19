@@ -1,0 +1,78 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-03-03",
+	"declaredSubsets": [
+		"gunjala-gondi",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "SIL International",
+	"family": "Narnoor",
+	"id": "narnoor",
+	"license": {
+		"attribution": "Original font copyright (c) 2014-2017 CDAST, University of Hyderabad, Hyderabad (cdast@uohyd.ernet.in).\nAdditions and modifications copyright (c) 2015-2023 SIL International (https://www.sil.org/).\nLatin glyphs copyright (c) 2010, 2012, 2014, 2021 Adobe Systems Incorporated\n(http://www.adobe.com/), with Reserved Font Name 'Source'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/narnoor",
+		"revision": "999ae00f53b46c296f2eb0a67562e0f99a6fd354",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-narnoor",
+		"revision": "53fa5d8f5c3afecd9c2247ef7c8b26a02208f267"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/narnoor/Narnoor-Bold.ttf",
+			"sha256": "25217d506f2aa15cd55ee64d3463a85a9767d6bebfd38ac2d08eab6636838a11",
+			"size": 79864,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/narnoor/Narnoor-ExtraBold.ttf",
+			"sha256": "8a160ae753c3becc1f5ecd36a025f3d415e94505ccbbb080732e15597c1fd3c6",
+			"size": 80484,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/narnoor/Narnoor-Medium.ttf",
+			"sha256": "ebe19c61409fa6b751a8b9d54282d3927478715b21feae6e2b4ef1deaf0ea729",
+			"size": 79720,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/narnoor/Narnoor-Regular.ttf",
+			"sha256": "6681a857f121a01544c1c0d7a77513b9af0031e92a5087332e9fc924e013acc4",
+			"size": 79876,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/narnoor/Narnoor-SemiBold.ttf",
+			"sha256": "0ed1c48efff373273f6c857868cb605e10405c13f97f45945d5a4008b78c3d73",
+			"size": 79700,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,46 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-09-29",
+	"declaredSubsets": [
+		"tamil"
+	],
+	"designer": "Jonathan Pinhorn",
+	"family": "Karla Tamil Upright",
+	"id": "karla-tamil-upright",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Jonathan Pinhorn (jonpinhorn.typedesign@gmail.com), with Reserved Font Names 'Karla'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/karlatamilupright",
+		"revision": "494381ebbd37fddd4f0277a104f71a2e429630a9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/karlatamilupright/KarlaTamilUpright-Bold.ttf",
+			"sha256": "0121d30ef4d7b3b8f8bdd62f3ed2108d37135da8021a737d5fc4976c33f11396",
+			"size": 143224,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/karlatamilupright/KarlaTamilUpright-Regular.ttf",
+			"sha256": "7d79ee26d351ecf03cbeb129ef0a1c29779b58dec45a153291f1a3c6c926e50f",
+			"size": 144440,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

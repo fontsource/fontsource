@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 751,
+				"sha256": "4dfb8c411a41cdc911550477e21ae3458723604fe4f12fe452a9920e5adc7afe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.120",
+			"outline": "glyf",
+			"path": "ofl/moderustic/Moderustic[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Kite One",
+	"id": "kite-one",
+	"license": {
+		"attribution": "Copyright 2011 The Kite One Project Authors (https://github.com/etunni/Kite-One) with Reserved Font Name is \"Kite\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kiteone",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/Kite-One",
+		"revision": "be1d4f26c91c29993c47fa4b4857337b0d94e2f2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kiteone/KiteOne-Regular.ttf",
+			"sha256": "f482673f99d08cf01d617e871cc49f529ae479c321e1ec7f009419275a2f7b61",
+			"size": 67692,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

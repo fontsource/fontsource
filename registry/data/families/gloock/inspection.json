@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 446,
+				"sha256": "d87e52eb862008fda0e212c124623da9899c7e18088766e15a918a312d73a182"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/gloock/Gloock-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 752,
+				"sha256": "5d6a30c17df9b0f9d475a809d5e66ca4abf7505cf574b84fe234934f966ccd9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/viaodalibre/ViaodaLibre-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

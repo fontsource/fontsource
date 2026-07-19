@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Lao is a modulated (“serif”) design for texts in the Southeast Asian _Lao_ script. It has multiple weights and widths, and 117 glyphs.

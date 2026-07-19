@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Natanael Gama, Robin Mientjes",
+	"family": "Exo",
+	"id": "exo",
+	"license": {
+		"attribution": "Copyright 2017 The Exo Project Authors (https://github.com/NDISCOVER/Exo-1.0)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/exo",
+		"revision": "1796e34455b893092713d206e7f23e3e07699f00",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NDISCOVER/Exo-1.0",
+		"revision": "3be4f55b626129f17a3b82677703e48c03dc2052"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/exo/Exo-Italic[wght].ttf",
+			"sha256": "062aca9ab9aa4a9e004e8d679e84aca6ef0cdcabb2fac3b27a73808e04bed9b4",
+			"size": 181908,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/exo/Exo[wght].ttf",
+			"sha256": "2f08f818f1135ac5798030c0bca252c0845af5c54dfe172a5c74fbdd68843445",
+			"size": 175092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

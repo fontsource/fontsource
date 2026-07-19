@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 811,
+				"sha256": "20ab20469add939b9c21c7856fa363df2f77cd8b2625432417323f2359c8c0e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 33.003",
+			"outline": "glyf",
+			"path": "ofl/vazirmatn/Vazirmatn[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

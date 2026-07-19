@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 474,
+				"sha256": "599d2d803a7ca33dffeb0f7a8d21444f841bd98b79c8a3f51aae4655ed4ca47f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/martelsans/MartelSans-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 474,
+				"sha256": "599d2d803a7ca33dffeb0f7a8d21444f841bd98b79c8a3f51aae4655ed4ca47f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/martelsans/MartelSans-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 474,
+				"sha256": "599d2d803a7ca33dffeb0f7a8d21444f841bd98b79c8a3f51aae4655ed4ca47f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/martelsans/MartelSans-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 474,
+				"sha256": "599d2d803a7ca33dffeb0f7a8d21444f841bd98b79c8a3f51aae4655ed4ca47f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/martelsans/MartelSans-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 474,
+				"sha256": "599d2d803a7ca33dffeb0f7a8d21444f841bd98b79c8a3f51aae4655ed4ca47f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/martelsans/MartelSans-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 474,
+				"sha256": "599d2d803a7ca33dffeb0f7a8d21444f841bd98b79c8a3f51aae4655ed4ca47f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/martelsans/MartelSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 474,
+				"sha256": "599d2d803a7ca33dffeb0f7a8d21444f841bd98b79c8a3f51aae4655ed4ca47f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/martelsans/MartelSans-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

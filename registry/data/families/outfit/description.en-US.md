@@ -1,0 +1,5 @@
+A beautiful geometric sans: The official typeface for brand automation company outfit.io. Inspired by the ligature-rich outfit wordmark, Outfit.io is delighted to release it's own type family. The Outfit typeface links the Outfit written voice to Outfit product marks; on brand by default.
+
+In 2023, the font has been updated, offering a more expanded language support.
+
+To contribute to the project, visit [github.com/Outfitio/Outfit-Fonts](https://github.com/Outfitio/Outfit-Fonts)

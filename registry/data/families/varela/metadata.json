@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-06-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Joe Prince",
+	"family": "Varela",
+	"id": "varela",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Admix Designs (joe@admixdesigns.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/varela",
+		"revision": "f316b8cde45a5f16667e3f181eb3c9cf34a61437",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/varela/Varela-Regular.ttf",
+			"sha256": "87cf0ddd50cd297cd6facfaac8bf59bf8d0b1a3b8b6619957ba08e72043d1896",
+			"size": 188240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

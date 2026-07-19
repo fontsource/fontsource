@@ -1,0 +1,3 @@
+[Sawarabi Gothic](http://sawarabi-fonts.osdn.jp/) (さわらびゴシック) is a Japanese font by [mshio](http://mshio.b.osdn.me/). Carefully designed for high legibility, it works well in small text sizes. It already has many hiragana, katakana, ruled lines, and so on, but it does not yet have enough kanji glyphs. Only 4,469 kanji are available in this version, and the project is under active development. There is also another related family, Sawarabi Mincho.
+
+6,945 glyphs. Now released under the SIL Open Font License.

@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "7749bf3cc68858990b2da1c790dc0b65de5dbd62a276c8a0b2626629a23fa3db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/yaldevicolombo/YaldeviColombo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "7749bf3cc68858990b2da1c790dc0b65de5dbd62a276c8a0b2626629a23fa3db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/yaldevicolombo/YaldeviColombo-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "7749bf3cc68858990b2da1c790dc0b65de5dbd62a276c8a0b2626629a23fa3db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/yaldevicolombo/YaldeviColombo-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "7749bf3cc68858990b2da1c790dc0b65de5dbd62a276c8a0b2626629a23fa3db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/yaldevicolombo/YaldeviColombo-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "7749bf3cc68858990b2da1c790dc0b65de5dbd62a276c8a0b2626629a23fa3db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/yaldevicolombo/YaldeviColombo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "7749bf3cc68858990b2da1c790dc0b65de5dbd62a276c8a0b2626629a23fa3db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/yaldevicolombo/YaldeviColombo-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

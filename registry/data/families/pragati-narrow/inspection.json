@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 601,
+				"sha256": "6df9b664ace3649ce8d048c48aa133962c0768a3125094bd0adad43864da439b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/pragatinarrow/PragatiNarrow-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 601,
+				"sha256": "6df9b664ace3649ce8d048c48aa133962c0768a3125094bd0adad43864da439b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/pragatinarrow/PragatiNarrow-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

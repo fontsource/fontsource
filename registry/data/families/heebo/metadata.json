@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Oded Ezer",
+	"family": "Heebo",
+	"id": "heebo",
+	"license": {
+		"attribution": "Copyright 2014 The Heebo Project Authors (https://github.com/OdedEzer/heebo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/heebo",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/OdedEzer/heebo",
+		"revision": "76c7d538568d3e6d7f052a12c5675c84430df25f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/heebo/Heebo[wght].ttf",
+			"sha256": "18f930b583fa8fe6b40b2f8263b7ac6afbac07adc91a12467874e7467d3ace30",
+			"size": 122012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

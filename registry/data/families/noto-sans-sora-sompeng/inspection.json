@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "d99d44e9bb4327b3cbc84f9cab7091ed385c12f229b96554abd349d88f3f5857"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.101",
+			"outline": "glyf",
+			"path": "ofl/notosanssorasompeng/NotoSansSoraSompeng[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

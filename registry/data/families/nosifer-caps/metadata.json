@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-10-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Typomondo",
+	"family": "Nosifer Caps",
+	"id": "nosifer-caps",
+	"license": {
+		"attribution": "Copyright (c) 2011, Vernon Adams DBA Typomondo (vern@newtypography.co.uk), with Reserved Font Name \"Nosifer\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nosifercaps",
+		"revision": "f405a06ca0df9c339ed60892f52c7cffb5ed275f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nosifercaps/NosiferCaps-Regular.ttf",
+			"sha256": "1a1d4fe8f93c32408dc6d068f43e59aaaa3fae4e2cff74dccfbb64de5005d9c1",
+			"size": 43652,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

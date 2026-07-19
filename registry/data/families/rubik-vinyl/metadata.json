@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2022-11-24",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Vinyl",
+	"id": "rubik-vinyl",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikvinyl",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "ce04d776b395e0f8dc68984778a1a467680f4c7e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikvinyl/RubikVinyl-Regular.ttf",
+			"sha256": "64f1d1636851d814a9031a945bc6ca6b7bc26a29009eb316176d27f00f2b7d4e",
+			"size": 414752,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

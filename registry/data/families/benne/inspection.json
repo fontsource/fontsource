@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 505,
+				"sha256": "9a508c8bc8c2890084c0b217ab8ed795b886570ec340404a0b6ff59c155f236f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/benne/Benne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

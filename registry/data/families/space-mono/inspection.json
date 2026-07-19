@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 624,
+				"sha256": "a873845eb026ac9bf7fb4ced6cc723fc5c3c08668840d037c6f3afaf301fab2c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spacemono/SpaceMono-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 624,
+				"sha256": "a873845eb026ac9bf7fb4ced6cc723fc5c3c08668840d037c6f3afaf301fab2c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spacemono/SpaceMono-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 624,
+				"sha256": "a873845eb026ac9bf7fb4ced6cc723fc5c3c08668840d037c6f3afaf301fab2c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spacemono/SpaceMono-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 624,
+				"sha256": "a873845eb026ac9bf7fb4ced6cc723fc5c3c08668840d037c6f3afaf301fab2c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spacemono/SpaceMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

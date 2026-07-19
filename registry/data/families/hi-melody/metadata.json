@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2018-02-23",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "YoonDesign Inc",
+	"family": "Hi Melody",
+	"id": "hi-melody",
+	"license": {
+		"attribution": "Copyright (c) YoonDesign Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/himelody",
+		"revision": "d321138d17fb013551ebf22119cf1bcada1cfd0e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yoondesign/Yoonfont-HiMelody",
+		"revision": "4feb2315457c615527775b455d119e9f3b8c8863"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/himelody/HiMelody-Regular.ttf",
+			"sha256": "360d2c0a880918aa48328d1d9219f5390788d09a1c9353e12b471de018673ae6",
+			"size": 12623412,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

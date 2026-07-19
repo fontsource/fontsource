@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 418,
+				"sha256": "d6faa7f7f43cece2827977a90228fe6c7e860886a456c5207e72ccc16caa5fd6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1 ; ttfautohint (v0.92.18-e454-dirty) -l 8 -r 50 -G 200 -x 0 -w \"g\"",
+			"outline": "glyf",
+			"path": "ofl/benchnine/BenchNine-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "003e6253235de902953ef6effd0f6b04bf5b1d22a09d86bac3ac00fb9461f842"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1 ; ttfautohint (v0.92.18-e454-dirty) -l 8 -r 50 -G 200 -x 0 -w \"g\"",
+			"outline": "glyf",
+			"path": "ofl/benchnine/BenchNine-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 419,
+				"sha256": "b45326c9068536c88f53c203498c47a6a4494124dee5d182306b8346a0ccdb22"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1 ; ttfautohint (v0.92.18-e454-dirty) -l 8 -r 50 -G 200 -x 0 -w \"g\"",
+			"outline": "glyf",
+			"path": "ofl/benchnine/BenchNine-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

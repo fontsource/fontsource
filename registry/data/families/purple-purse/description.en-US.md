@@ -1,0 +1,3 @@
+Purple Purse draws its inspiration from a vintage Ivory Soap ad from the 1950's. Somewhat of a cross between Bodoni and Pixie, this font finds that it never truly takes itself seriously. The fun little bounce of the typeface gives it a perky personality.
+
+To contribute to the project contact Brian J. Bonislawsky.

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-03-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Bartłomiej Rózga",
+	"family": "Exile",
+	"id": "exile",
+	"license": {
+		"attribution": "Copyright 2022 The Exile Project Authors (https://github.com/rozgatype/Exile)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/exile",
+		"revision": "1796e34455b893092713d206e7f23e3e07699f00",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/rozgatype/Exile",
+		"revision": "b5c737683dcc95f1e749e2189fc242c4a2b31e97"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/exile/Exile-Regular.ttf",
+			"sha256": "b8a059a844d6269e9136bec589d79455d0568eadd347e8769a46b1cd9babc6a2",
+			"size": 97560,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

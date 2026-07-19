@@ -1,0 +1,85 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-05-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Nobile",
+	"id": "nobile",
+	"license": {
+		"attribution": "Copyright (c) 2010 by vernon adams (vern@newtypography.co.uk) with Reserved Font Name 'Nobile'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nobile",
+		"revision": "1dc415d8793d58184e1a1c805e6399162ead6ecc",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vernnobile/NobileFont",
+		"revision": "d3f6ea2c6434d6ebfdc0534bd199d14370f12fee"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nobile/Nobile-Bold.ttf",
+			"sha256": "d7c865eebef07f288fa2788528023537cb6a155fc89af352cb0b1441f7447558",
+			"size": 61460,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/nobile/Nobile-BoldItalic.ttf",
+			"sha256": "ddfc58964740d28b33eac62edde3b5807ffaf3f18199ca30667988d3a15eccad",
+			"size": 86044,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/nobile/Nobile-Italic.ttf",
+			"sha256": "21bc5dc61007c4478be3f541238c38637434b29abe39c800cedc6115c85e40a1",
+			"size": 91972,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/nobile/Nobile-Medium.ttf",
+			"sha256": "0926ef055e7637dd23eeb1717a45b6eef4e5c5c1bd99a9516d2770e587ae4524",
+			"size": 67796,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/nobile/Nobile-MediumItalic.ttf",
+			"sha256": "ac8e7d909380ce15e49a2209f77ec55f13088f1c71b24a4ff1cc0340b88d48af",
+			"size": 89840,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/nobile/Nobile-Regular.ttf",
+			"sha256": "fc2eab24ea3dbe7f5d80324fa5c5d3ea5098175755c3218e3d54cec4355987f2",
+			"size": 65152,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

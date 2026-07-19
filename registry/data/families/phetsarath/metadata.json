@@ -1,0 +1,46 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-05-18",
+	"declaredSubsets": [
+		"lao"
+	],
+	"designer": "Danh Hong",
+	"family": "Phetsarath",
+	"id": "phetsarath",
+	"license": {
+		"attribution": "Copyright (c) 2010-2012, Ministry of Posts and Telecommunications, Laos (www.phetsarath.gov.la)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/phetsarath",
+		"revision": "fe89588cf742d9691bee4b4c32de177ee622c949",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/phetsarath/Phetsarath-Bold.ttf",
+			"sha256": "3b8cced65a9b4a49da487c4abb6c36c9dafb2c11e3c75a16b7da32a28bc2ecab",
+			"size": 156840,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/phetsarath/Phetsarath-Regular.ttf",
+			"sha256": "0d0328c2036319a06ae4e0093d1ea32b6d849069f624cf6dd67e1f6ebc4635a8",
+			"size": 40544,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

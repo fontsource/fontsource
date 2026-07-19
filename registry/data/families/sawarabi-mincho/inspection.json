@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 4746,
+				"sha256": "0e6488dc5e033d9b5cd1b6a1c67cf57077fcb6667c8a830d4cbbf19cdc39c28d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.082; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/sawarabimincho/SawarabiMincho-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

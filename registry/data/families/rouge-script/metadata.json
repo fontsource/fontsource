@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-01-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sabrina Mariela Lopez",
+	"family": "Rouge Script",
+	"id": "rouge-script",
+	"license": {
+		"attribution": "Copyright (c) 2011 Typesenses (typesenses@live.com.ar), with Reserved Font Name \"Rouge Script\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rougescript",
+		"revision": "a0c23382f91ea18b655b4386e43d5dff6562a1a9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rougescript/RougeScript-Regular.ttf",
+			"sha256": "99de0ca969d9898687305a36f7e6dde6d30806ab7a463ebb4068dd9dd2a54fd6",
+			"size": 46752,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

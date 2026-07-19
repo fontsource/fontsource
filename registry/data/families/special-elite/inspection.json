@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "9e89d4cde59e588121d345f90c0765821d990baecc7ab8cb3e6ae5b0a2cbca96"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/specialelite/SpecialElite-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

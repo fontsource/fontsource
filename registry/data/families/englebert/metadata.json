@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Englebert",
+	"id": "englebert",
+	"license": {
+		"attribution": "Copyright 2012 The Englebert Project Authors (https://github.com/librefonts/englebert)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/englebert",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/englebert",
+		"revision": "0b03ab09eab75a39c93f8fb0432459a7dca74176"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/englebert/Englebert-Regular.ttf",
+			"sha256": "97be7df4f050113b713077b9cb4a51e7f62c155ba22c7adf7ee65e0d7b0f7577",
+			"size": 52896,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "KB Studio",
+	"family": "Jomhuria",
+	"id": "jomhuria",
+	"license": {
+		"attribution": "Copyright 2015 KB-Studio (www.k-b-studio.com|tarobish@gmail.com). Copyright 2015 Lasse Fister (lasse@graphicore.de). Copyright 2015 Sorkin Type Co (www.sorkintype.com). Copyright 2010-2015 Khaled Hosny (khaledhosny@eglug.org).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jomhuria",
+		"revision": "e80685a939f0289c136720f1fc1fd78d3120b431",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Tarobish/Jomhuria",
+		"revision": "d4b8f42eaf712178802609bfbe48127bd45be9c8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jomhuria/Jomhuria-Regular.ttf",
+			"sha256": "17b4b0453acdaafb940a8be8acccc968713e223e5d03942347f6562ca3b1dec3",
+			"size": 172276,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-12"
+}

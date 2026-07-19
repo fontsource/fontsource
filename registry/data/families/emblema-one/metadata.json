@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Riccardo De Franceschi",
+	"family": "Emblema One",
+	"id": "emblema-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Sorkin Type Co (eben@eyebytes.com) with Reserved Font Names \"Emblema\" and \"Emblema One\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/emblemaone",
+		"revision": "6e37096bf3a8b41b586bc9a6843bbec0d4401912",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/emblemaone",
+		"revision": "65d5dad63686fcfc0c7e13ba2cb3143803d96bfe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/emblemaone/EmblemaOne-Regular.ttf",
+			"sha256": "068ab584fb9868c299776adb871cf693b21123ccfb6ed5fab98ff861d1d42bee",
+			"size": 61832,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

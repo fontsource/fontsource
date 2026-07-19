@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-09-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fernando Díaz",
+	"family": "Fenix",
+	"id": "fenix",
+	"license": {
+		"attribution": "Copyright (c) 2012, Fernando Diaz (www.ferfolio.com fer@ferfolio.com) with Reserved Font Name 'Fenix'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fenix",
+		"revision": "3aa21df689d74851d85441c91e0c7b9af725774d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/fenix",
+		"revision": "b5107c124ba8762eeaccd00b73a7302897d4367e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fenix/Fenix-Regular.ttf",
+			"sha256": "5104f5f344f64b5532850b131d7b9e033c112fcfa97dfef00a64c0a40bdae911",
+			"size": 45144,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

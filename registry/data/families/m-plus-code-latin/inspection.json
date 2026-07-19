@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 100,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 716,
+				"sha256": "1ab9ed677ed68eddda0889d216328ef0537edab8fae1a6fc1a558f0634f3bd4d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/mpluscodelatin/MPLUSCodeLatin[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

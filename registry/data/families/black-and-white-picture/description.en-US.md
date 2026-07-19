@@ -1,0 +1,1 @@
+Black And White Picture is a Korean font that expresses the nostalgia of faded black and white photos through its old and scratchy texture. A matching Latin font, [Flavors](https://fonts.google.com/specimen/Flavors), is built-in for convenience.

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "ef25e4f5564bea6ef898965eb07c75e8e05b23b5896bbf665d75c1c4320b4818"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/craftygirls/CraftyGirls-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

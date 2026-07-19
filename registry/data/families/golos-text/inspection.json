@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "a339f8860141d58f78210534ca5edf637b9f97894070db1cbe4493ec2cd16edc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "ofl/golostext/GolosText[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

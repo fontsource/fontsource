@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 455,
+				"sha256": "9cd7eeb0141aa8c474d96128c5a2e688b1c67712e25e37825d59b3c34f643b62"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/momotrustdisplay/MomoTrustDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

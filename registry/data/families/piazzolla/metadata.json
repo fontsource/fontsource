@@ -1,0 +1,53 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-08-27",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Juan Pablo del Peral, HT Fonts",
+	"family": "Piazzolla",
+	"id": "piazzolla",
+	"license": {
+		"attribution": "Copyright 2018 The Piazzolla Project Authors (https://github.com/huertatipografica/piazzolla)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/piazzolla",
+		"revision": "785d8785d824589e379fa0493ef0b9c3f7361b73",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/huertatipografica/piazzolla",
+		"revision": "fbd775f98a0a27570de0eaf20206860021c68b6b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/piazzolla/Piazzolla-Italic[opsz,wght].ttf",
+			"sha256": "ffeb38d0c9b332f6ef685352bfbae5e65775ccdc2ae142f49ac8ed2d7d215268",
+			"size": 618116,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/piazzolla/Piazzolla[opsz,wght].ttf",
+			"sha256": "b6b6451daba93a4b71f88ca8e37a66c3fd2b4e57ec54a407cddf6ae65b62c7b7",
+			"size": 624956,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

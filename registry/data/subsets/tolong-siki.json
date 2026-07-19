@@ -1,0 +1,35 @@
+{
+	"id": "tolong-siki",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"11DB0",
+			"11DDB"
+		],
+		[
+			"11DE0",
+			"11DE9"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/tolong-siki_unique-glyphs.nam",
+		"revision": "0ae2941d5692866692eff4c8026b3c7a2980fc56",
+		"sha256": "5bea28dac089b703d09b17488a79537f910257afa7da4decd0ff563362e0f31d",
+		"upstream": "namFiles"
+	}
+}

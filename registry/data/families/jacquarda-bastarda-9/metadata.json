@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2024-01-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Sarah Cadigan-Fried",
+	"family": "Jacquarda Bastarda 9",
+	"id": "jacquarda-bastarda-9",
+	"license": {
+		"attribution": "Copyright 2023 The Soft Type Project Authors (https://github.com/scfried/soft-type-jacquarda-bastarda)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jacquardabastarda9",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/scfried/soft-type-jacquarda-bastarda",
+		"revision": "ca6bf8560d7e3fd2aae341ffe0838b61b35b3c61"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jacquardabastarda9/JacquardaBastarda9-Regular.ttf",
+			"sha256": "7d8e5c30bd58598913fc5fd297bc875d1fab1c05fc407c2dfc406a0be9c5a22c",
+			"size": 100960,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

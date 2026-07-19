@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 268,
+				"sha256": "bce0e47749cc960c89ed1b80bb23ee1c920ebad3c045fe5f9e5d48e202b83437"
+			},
+			"colorTables": [],
+			"fontVersion": "1.002",
+			"outline": "glyf",
+			"path": "ofl/elsie/Elsie-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 255,
+				"sha256": "8e7d107468fe2a378dd341d847c18c6e3fcc15ac2daee0bbe5d8e7c32842ca5b"
+			},
+			"colorTables": [],
+			"fontVersion": "1.003",
+			"outline": "glyf",
+			"path": "ofl/elsie/Elsie-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

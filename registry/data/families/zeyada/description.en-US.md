@@ -1,0 +1,3 @@
+Zeyada is based on the handwriting of a warm and generous young mom.
+
+Her family sponsors an amazing Ethiopian young woman named Zeyada and pays for her to continue to be in school. This font has curls and curves and is not a typical cursive, nor a typical print. It is slightly connected, but not a traditional script in any way.

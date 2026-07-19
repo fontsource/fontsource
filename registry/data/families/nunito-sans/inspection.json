@@ -1,0 +1,88 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 500,
+					"max": 540,
+					"min": 440,
+					"tag": "YTLC"
+				},
+				{
+					"default": 12,
+					"max": 12,
+					"min": 6,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 200,
+					"max": 1000,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 939,
+				"sha256": "7e70cfa5bbd0c689e0b66016934360febc662aa6c42ba77099b7ce10b5aae5bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.101;gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/nunitosans/NunitoSans-Italic[YTLC,opsz,wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 1000,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 500,
+					"max": 540,
+					"min": 440,
+					"tag": "YTLC"
+				},
+				{
+					"default": 12,
+					"max": 12,
+					"min": 6,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 200,
+					"max": 1000,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 939,
+				"sha256": "7e70cfa5bbd0c689e0b66016934360febc662aa6c42ba77099b7ce10b5aae5bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.101;gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/nunitosans/NunitoSans[YTLC,opsz,wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 1000,
+				"min": 200
+			}
+		}
+	]
+}

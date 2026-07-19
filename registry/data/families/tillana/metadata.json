@@ -1,0 +1,76 @@
+{
+	"category": "display",
+	"dateAdded": "2015-06-03",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Tillana",
+	"id": "tillana",
+	"license": {
+		"attribution": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tillana",
+		"revision": "304d56b883f6556b321eae5a7dfb0b2b80f6af18",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/tillana",
+		"revision": "7fccbe20b93ad8bcb3c7d7bee3afec03799bf5f6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tillana/Tillana-Bold.ttf",
+			"sha256": "76c53b8963432418087fa3748d14be25f090fd89cd709f6c14b63679c4c72244",
+			"size": 306716,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tillana/Tillana-ExtraBold.ttf",
+			"sha256": "66e96f9cca864969fdf12311cb7157bab60d6c7d9a47d803ff06a40efd7dce25",
+			"size": 304268,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/tillana/Tillana-Medium.ttf",
+			"sha256": "bff30851742c92d894a358ce788669782aabee95a9f51c39f37f2c2b853f46e8",
+			"size": 328012,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/tillana/Tillana-Regular.ttf",
+			"sha256": "fd907100fa0c131db999960bb7ac71243e515c330ee16e18f28fa8958bd1811b",
+			"size": 329148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tillana/Tillana-SemiBold.ttf",
+			"sha256": "8bfe14bc76b8bcb2dd63b92df748e3495af0e7eeee71db4936034e6fed7119c6",
+			"size": 299792,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

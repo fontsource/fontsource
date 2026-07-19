@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-05-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "HanYang I&C Co.",
+	"family": "Gulim",
+	"id": "gulim",
+	"license": {
+		"attribution": "Copyright 2024 The Gulim and Dotum Project Authors (https://github.com/googlefonts/gulim)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gulim",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/gulim",
+		"revision": "012723a8d5b6a6dc920330f26d165422c3014fd6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gulim/Gulim-Regular.ttf",
+			"sha256": "a435857b8ffe2102f8faa7cf098d0d48b1d01d951c1c8326770848203bb7b5c2",
+			"size": 4719024,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

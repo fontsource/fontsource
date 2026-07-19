@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 296,
+				"sha256": "36962ddaf2f8da3a5c143648c898da5d761fc9d4ee2e96e5cb08587c21c5279a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v0.8.51-6076)",
+			"outline": "glyf",
+			"path": "ofl/dhyana/Dhyana-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 361,
+				"sha256": "c3a3a5f8c2295aaf78840b43a46ad88dcc6bde4a45c089786ac5a3066bb85419"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v0.8.51-6076)",
+			"outline": "glyf",
+			"path": "ofl/dhyana/Dhyana-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

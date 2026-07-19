@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 954,
+				"sha256": "cf060bb7716feec9b133e71b7708126711447eb8df8d60183086cc917a4d671b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.003; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/otomanopeeone/OtomanopeeOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-12-02",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Delve Withrington, Dave Bailey, Thomas Jockin",
+	"family": "Overpass",
+	"id": "overpass",
+	"license": {
+		"attribution": "Copyright 2021 The Overpass Project Authors (https://github.com/RedHatOfficial/Overpass)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/overpass",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/RedHatOfficial/Overpass",
+		"revision": "c580d28bfab7f39013568e684a65eeb23eff588d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/overpass/Overpass-Italic[wght].ttf",
+			"sha256": "3b45ac4193930bbeb491b5c76227afd5991607712f0d16d6bc5d74db6bbd8172",
+			"size": 289328,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/overpass/Overpass[wght].ttf",
+			"sha256": "970717df17a7f9911dee45f60695d05bfa9d745fa0a11fc5c348371fa21f0073",
+			"size": 318700,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-05-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Style Script",
+	"id": "style-script",
+	"license": {
+		"attribution": "Copyright 2013 The Style Script Project Authors (https://github.com/googlefonts/style-script)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stylescript",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/style-script",
+		"revision": "618d9e00fb65b051f65f00f8e09f57e07c6af251"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stylescript/StyleScript-Regular.ttf",
+			"sha256": "4f285aa7b2e87de9ea8fc3d3a571cc428257c42ac77b5f786d99d9949ac4ed9a",
+			"size": 603164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

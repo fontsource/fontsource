@@ -1,0 +1,59 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-14",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Yanghee Ryu",
+	"family": "Dongle",
+	"id": "dongle",
+	"license": {
+		"attribution": "Copyright 2021 The Dongle Project Authors (https://github.com/yangheeryu/Dongle)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dongle",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yangheeryu/Dongle",
+		"revision": "f7127c4d2450e1cad20254ec692591347e2fc260"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dongle/Dongle-Bold.ttf",
+			"sha256": "944c498c0d1a1832ab36f173b1b3aa5ae77b2a914e00c4d79e05338fae36472d",
+			"size": 4476536,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/dongle/Dongle-Light.ttf",
+			"sha256": "bb04e03dbe44fb0c619434f31565e62b5bac67229d5ed72eeac69c2e74e9a45c",
+			"size": 4389060,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/dongle/Dongle-Regular.ttf",
+			"sha256": "2966e7a9d312a868e2b5477bf9a3e59b8ce16beb76e7e52305ab5897d1ce9741",
+			"size": 4458600,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11369,
+				"sha256": "4c2867f2e2245c8f8f4713cd531b52075ecefcb717974d69098cc1d3e1d1a2b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.64",
+			"outline": "glyf",
+			"path": "ofl/stylish/Stylish-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

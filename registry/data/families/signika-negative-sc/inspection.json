@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 951,
+				"sha256": "aebf113dd211afd4f0cf89cd8d7f80bbc9e30edbe905c6d0ca4257bb9994125d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 9 -D latn -f none -a nnn -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/signikanegativesc/SignikaNegativeSC-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 951,
+				"sha256": "aebf113dd211afd4f0cf89cd8d7f80bbc9e30edbe905c6d0ca4257bb9994125d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 9 -D latn -f none -a nnn -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/signikanegativesc/SignikaNegativeSC-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 951,
+				"sha256": "aebf113dd211afd4f0cf89cd8d7f80bbc9e30edbe905c6d0ca4257bb9994125d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 9 -D latn -f none -a nnn -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/signikanegativesc/SignikaNegativeSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 951,
+				"sha256": "aebf113dd211afd4f0cf89cd8d7f80bbc9e30edbe905c6d0ca4257bb9994125d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 9 -D latn -f none -a nnn -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/signikanegativesc/SignikaNegativeSC-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

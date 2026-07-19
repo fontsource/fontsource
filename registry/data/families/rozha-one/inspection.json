@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 481,
+				"sha256": "d1e0155359e6d3b609d8d3aeee7159916015134df276c1215b795b7ecb74aebc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.301;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/rozhaone/RozhaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

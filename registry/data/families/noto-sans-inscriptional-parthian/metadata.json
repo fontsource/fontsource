@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"inscriptional-parthian",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Inscriptional Parthian",
+	"id": "noto-sans-inscriptional-parthian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/inscriptional-parthian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansinscriptionalparthian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/inscriptional-parthian",
+		"revision": "3ad1b227f70b46d299ec1a911a39136c8b2a5a89"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansinscriptionalparthian/NotoSansInscriptionalParthian-Regular.ttf",
+			"sha256": "a3b80af8a1927189a353b03075cbebd454291519dfc60a325070d6f405f5ba50",
+			"size": 55164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 685,
+				"sha256": "4f16699534b7c6df6efa6a35a79eca5a7d9402acd3a1ff9b5985fcd1909f4452"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.007",
+			"outline": "glyf",
+			"path": "ofl/lexendexa/LexendExa[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

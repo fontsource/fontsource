@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Grand Hotel",
+	"id": "grand-hotel",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Grand Hotel\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/grandhotel",
+		"revision": "8920a9c7f5895b4134e0ca5d42b8b3c8cffbd4df",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/grandhotel",
+		"revision": "b0716771fb1056ca9db1d65d94e62ecf9dbedefa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/grandhotel/GrandHotel-Regular.ttf",
+			"sha256": "ec7ae65d49c936cb5ed32534ab74dbd40c56733de5145ac3aae9da362e02b50f",
+			"size": 65012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

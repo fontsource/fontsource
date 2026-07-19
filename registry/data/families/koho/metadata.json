@@ -1,0 +1,140 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "KoHo",
+	"id": "koho",
+	"license": {
+		"attribution": "Copyright 2018 The KoHo Project Authors (https://github.com/cadsondemak/Koho)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/koho",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Koho",
+		"revision": "066267ad87e1bd2de617bf4129902317ccb6c04c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/koho/KoHo-Bold.ttf",
+			"sha256": "ad66b62adef88839e0292bbf4a1dfb5d9345826a19a3ffd780d34f7bc669e1b1",
+			"size": 94068,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-BoldItalic.ttf",
+			"sha256": "e040183789349e09b44bd98058687e59793cd8cda5c3b2aa6d3c7fa4319a37f0",
+			"size": 97836,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-ExtraLight.ttf",
+			"sha256": "de98ca80b3696c4b182bde204d63a30a5d4a071e4b7078f9433064bf3d24c478",
+			"size": 96748,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-ExtraLightItalic.ttf",
+			"sha256": "7237959faa377f413d3d10ded225217ab6aa60b1a554ebeae5222ae9adab0259",
+			"size": 101040,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-Italic.ttf",
+			"sha256": "436be41906dc80786358d7546ed279b5051ffb3e10dab86154d0b100d89eb6a0",
+			"size": 100580,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-Light.ttf",
+			"sha256": "5cfb9a15757cf45f5a0b1a37dc8cc0991a8f3f9570c74d8fcde9e66a940535c6",
+			"size": 96412,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-LightItalic.ttf",
+			"sha256": "f15e5b6444466997bba7b40abde407863a94db89fb6a001e42524dac0cda7dcf",
+			"size": 100764,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-Medium.ttf",
+			"sha256": "8c32e67f574b150164ff616209e8239192949bb18f3e94e01ac91fb5419286b9",
+			"size": 95900,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-MediumItalic.ttf",
+			"sha256": "14d8bba68904145404c88d6e1c0117b512f8d089340db4b56cc6616691f66400",
+			"size": 100336,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-Regular.ttf",
+			"sha256": "d9dfeb7f627c7ce3ed9437c8130504daf2644ece5f54a27b9f7930dbdd45ad30",
+			"size": 96176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-SemiBold.ttf",
+			"sha256": "5396d7a25b9d571c6ba5505452c46dfda299513c4bfff9c727ac2c309ac0b84f",
+			"size": 95704,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/koho/KoHo-SemiBoldItalic.ttf",
+			"sha256": "22be368fcf0a729d95fea1a66d35a3ceccf1390ab43d377bba12ed63390d3515",
+			"size": 99944,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

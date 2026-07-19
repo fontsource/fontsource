@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 238,
+				"sha256": "3499da7c5b6a09246267ba38032c32217ad8ce2c27b3d1552b47a54377911227"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/rosarivo/Rosarivo-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "076106936c80af0ca83e66332bfd860805452e890c63e097b2f68142525752a1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/rosarivo/Rosarivo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

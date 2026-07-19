@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 516,
+				"sha256": "daf326af8d5e663cc9ef4436548b275b70e9e3c301551b0ae9e133af2ad728eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansmongolian/NotoSansMongolian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

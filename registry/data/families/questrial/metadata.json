@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Joe Prince, Laura Meseguer",
+	"family": "Questrial",
+	"id": "questrial",
+	"license": {
+		"attribution": "Copyright 2011 The Questrial Project Authors (https://github.com/googlefonts/questrial)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/questrial",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/questrial",
+		"revision": "8db71bfbabedd8c8dda35818ea5d5508758c2e19"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/questrial/Questrial-Regular.ttf",
+			"sha256": "0ee7f2debabb13773fd38468b31820e11fca202a8f98c4d80b6ffcb796899b6f",
+			"size": 184176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

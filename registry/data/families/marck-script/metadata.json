@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-10-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Denis Masharov",
+	"family": "Marck Script",
+	"id": "marck-script",
+	"license": {
+		"attribution": "Copyright (c) 2011, Denis Masharov <denis.masharov@gmail.com>, Marck Fogel, with Reserved Font Names \"Marck Script\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/marckscript",
+		"revision": "632e5eef34788aadc808f9e8db3cee1ed7f6e661",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/marckscript",
+		"revision": "699f31478702f9901c943b7be7caa6e38b6535b7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/marckscript/MarckScript-Regular.ttf",
+			"sha256": "504de8cc6f919163bc9afb67b9bc208d258230c5e8d00cb82ec52474f9fafc3b",
+			"size": 83664,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

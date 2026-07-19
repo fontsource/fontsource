@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 490,
+				"sha256": "69f13ddaf2f707f09c82ecda29f03684b0862a29b8470cc61876257907fa7b27"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.04",
+			"outline": "glyf",
+			"path": "ofl/castorotitling/CastoroTitling-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

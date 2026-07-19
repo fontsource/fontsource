@@ -1,0 +1,3 @@
+Stint Ultra Condensed is an ultra condensed square serif typestyle developed based on the letterforms of the [Syncopate Family](http://www.google.com/fonts/specimen/Syncopate). While Syncopate boasts extra wide unicase forms, Stint Ultra Condensed goes in the exact opposite direction, featuring narrow letterforms of both the capital and lowercase varieties. This is the opposite of the [Stint Ultra Expanded](http://www.google.com/fonts/specimen/Stint+Ultra+Expanded) typestyle.
+
+Highly legible even in this ultra condensed form, Stint Ultra Condensed is a perfect font for getting in as much information as possible into limited realty websites and designs.

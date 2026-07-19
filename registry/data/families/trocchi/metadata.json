@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-04-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Trocchi",
+	"id": "trocchi",
+	"license": {
+		"attribution": "Copyright 2012 The Trocchi Project Authors (https://github.com/m4rc1e/Trocchi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/trocchi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/m4rc1e/Trocchi",
+		"revision": "543ac4fee3173ed80706c4caf5398b8bb3439ae1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/trocchi/Trocchi-Regular.ttf",
+			"sha256": "d2d81d30d99aaa2c234e1d7bb67ee2e9f27f108f8d2ebef1c89e0db623734b91",
+			"size": 68840,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

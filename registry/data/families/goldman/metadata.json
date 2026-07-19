@@ -1,0 +1,49 @@
+{
+	"category": "display",
+	"dateAdded": "2020-07-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jaikishan Patel",
+	"family": "Goldman",
+	"id": "goldman",
+	"license": {
+		"attribution": "Copyright 2018 The Goldman Project Authors (https://github.com/magictype/goldman)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/goldman",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/magictype/goldman",
+		"revision": "3fdf428a931f7a39b3f2f1681c16bfa664ca89dd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/goldman/Goldman-Bold.ttf",
+			"sha256": "3d875bc02d79dff86369ada5b4c4d8c1b7b184bc70a322b651aa5c39693631e3",
+			"size": 77980,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/goldman/Goldman-Regular.ttf",
+			"sha256": "747d4eb547ffca1b1c4ceb49d38f04a2cd8767d5d86425b71290456ab8eb280a",
+			"size": 77956,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 827,
+				"sha256": "bcc3b8e914f1936ffedf3b1a689506cf9f55903740613265a6e7188ec1a3a890"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.101; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/play/Play-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 827,
+				"sha256": "bcc3b8e914f1936ffedf3b1a689506cf9f55903740613265a6e7188ec1a3a890"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.101; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/play/Play-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

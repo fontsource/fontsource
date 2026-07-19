@@ -1,0 +1,76 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 8,
+					"max": 144,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 619,
+				"sha256": "5cee5eccf0370bfee76ef0ecc62ce0f8a2dd8921191d2d7f943c0d717a7a43a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "ofl/pathwayextreme/PathwayExtreme-Italic[opsz,wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 8,
+					"max": 144,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 619,
+				"sha256": "5cee5eccf0370bfee76ef0ecc62ce0f8a2dd8921191d2d7f943c0d717a7a43a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "ofl/pathwayextreme/PathwayExtreme[opsz,wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

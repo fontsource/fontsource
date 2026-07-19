@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 257,
+				"sha256": "028950ef5926b33f4ef475e90eda7e93bfbf145adc4a6b427d9e92afb779dbec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/esteban/Esteban-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

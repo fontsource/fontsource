@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2026-05-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "FontBob",
+	"family": "Geomini",
+	"id": "geomini",
+	"license": {
+		"attribution": "Copyright 2026 The Geomini Project Authors (https://github.com/fontbob/geomini)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/geomini",
+		"revision": "c57113ff3252dd41b14edd7b542fbef6cd863ab1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontbob/geomini",
+		"revision": "259385339d2974bf793425df09a25381939bd7aa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/geomini/Geomini[wght].ttf",
+			"sha256": "baf3fa2b1078c6a5cac05196889c01d63536ed6233e705262c7e6d4fbefffa59",
+			"size": 180664,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-03"
+}

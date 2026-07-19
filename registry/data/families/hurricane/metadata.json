@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-10-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Hurricane",
+	"id": "hurricane",
+	"license": {
+		"attribution": "Copyright 2016-2021 The Hurricane Project Authors (https://github.com/googlefonts/hurricane)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hurricane",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/hurricane",
+		"revision": "bb10369a4820ebee5af7892e8661978c015cb077"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hurricane/Hurricane-Regular.ttf",
+			"sha256": "5ea86b562ca5c2b1893c233367cde1aee0d677bb6d30af9c3f699c270880da13",
+			"size": 377368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

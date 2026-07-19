@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 330,
+				"sha256": "6b80a33fad224fe4b069cc85078a451ec233ba837521014823a882fabce92fb2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 11.002; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/betaniapatmosgdl/BetaniaPatmosGDL-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

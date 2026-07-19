@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 114,
+				"sha256": "9ccc7cc3f6224a5ee23683d6156540ae91cab2bc56d137d7a780c37f31ad99cb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/karlatamilinclined/KarlaTamilInclined-Bold.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 114,
+				"sha256": "9ccc7cc3f6224a5ee23683d6156540ae91cab2bc56d137d7a780c37f31ad99cb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/karlatamilinclined/KarlaTamilInclined-Regular.ttf",
+			"style": "italic",
+			"weight": 400
+		}
+	]
+}

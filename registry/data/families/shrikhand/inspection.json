@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 421,
+				"sha256": "6eaf68946172527a2369127016bbd9ec29e128653f52177c4cfc465e041c685c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.001;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/shrikhand/Shrikhand-Regular.ttf",
+			"style": "oblique",
+			"weight": 400
+		}
+	]
+}

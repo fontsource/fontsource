@@ -1,0 +1,1 @@
+Calligraffitti by Open Window owes its credit to mom and all her years of Calligraphic experience. This impromptu rendering of her calligraphic alphabet captures her years or formal practice blended with a rare encounter with the mood altering music of Santana.

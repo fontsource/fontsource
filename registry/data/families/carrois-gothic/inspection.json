@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 252,
+				"sha256": "f07aed3f16e8c22fb7b80a52e540299d90480ce1e2c4041bdd78d9fceb248c1b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/carroisgothic/CarroisGothic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

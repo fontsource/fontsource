@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"phags-pa",
+		"symbols"
+	],
+	"designer": "Google",
+	"displayName": "Noto Sans Phags-pa",
+	"family": "Noto Sans PhagsPa",
+	"id": "noto-sans-phagspa",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/phags-pa)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansphagspa",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/phags-pa",
+		"revision": "a2cd1a7833b6e7d2be2519fe2539b1d3be53f28e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansphagspa/NotoSansPhagsPa-Regular.ttf",
+			"sha256": "1f90e0a9e6b83c903e4ed9470261ba4e61b7068de2063516665b62c1bf389dab",
+			"size": 97536,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,7 @@
+Glory is a modern sans serif font. The rounded corners give it a soft, contemporary feel. While the characters are slightly condensed, this medium contrast sans features subtly curved vertical strokes.
+
+It was created with graphic design in mind. It is suitable for logos, headlines and body text with the available six weights within a variable font Weight axis. Combine Glory with other script styles to give your work warmth and contrast. For a truly professional look, team up Glory with its script companion, [Hurricane](https://fonts.google.com/specimen/Hurricane).
+
+Glory comes with a wide Latin Glyph set including support for Western, Central, Eastern European languages and also Vietnamese.
+
+To contribute, see [github.com/googlefonts/glory](https://github.com/googlefonts/glory)

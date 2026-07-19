@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-south-arabian"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Old South Arabian",
+	"id": "noto-sans-old-south-arabian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-south-arabian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansoldsoutharabian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/old-south-arabian",
+		"revision": "e77ff1f357de7696d8c44f0ea0394a32d6a19745"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansoldsoutharabian/NotoSansOldSouthArabian-Regular.ttf",
+			"sha256": "54df22db482aef96a0f4aa7eb9e0a7bc92f4af281dec93ca7d16d03a42ef20a5",
+			"size": 51336,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

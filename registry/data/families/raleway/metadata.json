@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida",
+	"family": "Raleway",
+	"id": "raleway",
+	"license": {
+		"attribution": "Copyright 2010 The Raleway Project Authors (impallari@gmail.com), with Reserved Font Name \"Raleway\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/raleway",
+		"revision": "0502fee975d3237bc9fa43b4b221c4e01bfdb054",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/raleway",
+		"revision": "938ac770222935d0d9d7b7b60e9373afd0cc5543"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/raleway/Raleway-Italic[wght].ttf",
+			"sha256": "96629caf2202183fab46c70237055a7d67e6a5400b85413d45a77ed6f2a0770c",
+			"size": 318476,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/raleway/Raleway[wght].ttf",
+			"sha256": "8bbcc3eb8275c388f4bcd998832f8a4b943eadbaf6a595205312774b5951aefb",
+			"size": 312352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

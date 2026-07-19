@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 850,
+				"sha256": "6d350a21a90557a2ea5b9d25a992f4fa897d81a76306e9c07ec1d939fc5dbb27"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.103;gftools[0.9.33.dev8+g029e19f]",
+			"outline": "glyf",
+			"path": "ofl/oswald/Oswald[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 200
+			}
+		}
+	]
+}

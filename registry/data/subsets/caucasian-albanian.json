@@ -1,0 +1,55 @@
+{
+	"id": "caucasian-albanian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"304",
+			"304"
+		],
+		[
+			"331",
+			"331"
+		],
+		[
+			"35E",
+			"35E"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"FE20",
+			"FE2F"
+		],
+		[
+			"10530",
+			"10563"
+		],
+		[
+			"1056F",
+			"1056F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/caucasian-albanian_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "af478b119556f25622b36cdd0333e02d1121b6cd4e3e12124e5aae319deb46c0",
+		"upstream": "namFiles"
+	}
+}

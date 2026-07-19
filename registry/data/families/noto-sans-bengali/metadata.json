@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"bengali",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Bengali",
+	"id": "noto-sans-bengali",
+	"license": {
+		"attribution": "Copyright 2025 The Noto Project Authors (https://github.com/notofonts/bengali)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansbengali",
+		"revision": "b9b4b56be4f67f120752a756f39299b47366223c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/bengali",
+		"revision": "85d80394cbbbb798ca0a41c983902e6cf77be3a3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansbengali/NotoSansBengali[wdth,wght].ttf",
+			"sha256": "dcd42978094e584a849c84a51450eeac40c8826057d566ea6d4b9627a403a05a",
+			"size": 463668,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

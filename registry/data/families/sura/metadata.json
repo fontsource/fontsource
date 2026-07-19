@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-06-17",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Carolina Giovagnoli",
+	"family": "Sura",
+	"id": "sura",
+	"license": {
+		"attribution": "Copyright 2015 by Carolina Giovagnoli. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sura",
+		"revision": "388947f7082dcafcc46a4652f8f60fd47fddcecf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/huertatipografica/sura",
+		"revision": "d20d15fe0de4a84a9d3a944f87e9c35d4c9da612"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sura/Sura-Bold.ttf",
+			"sha256": "3f05a9ce75f1d8eaf8f2dc57684fc8aa84a81fa72a437583849eeb84f57089eb",
+			"size": 148800,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sura/Sura-Regular.ttf",
+			"sha256": "df35bdf883ef6cda173f3e75e88970a257ae69eaa94b93655451f33b9f960234",
+			"size": 140444,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

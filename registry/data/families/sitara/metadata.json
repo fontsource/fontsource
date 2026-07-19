@@ -1,0 +1,63 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-06-10",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Neelakash Kshetrimayum",
+	"family": "Sitara",
+	"id": "sitara",
+	"license": {
+		"attribution": "Copyright (c) 2014, Neelakash Kshetrimayum (github.com/Neelakash/sitara). Copyright 2013, Google Corporation.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sitara",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sitara/Sitara-Bold.ttf",
+			"sha256": "6c1062617bde8a8b9156c5c19ec1645b02e15f7ad35680da8ff8b68b71864419",
+			"size": 203196,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sitara/Sitara-BoldItalic.ttf",
+			"sha256": "72c75e8437992707246bd3b5340f651ab7335a9c8c3f38d93730e1270f7522c3",
+			"size": 205744,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sitara/Sitara-Italic.ttf",
+			"sha256": "fb27328a202750adeb1705e1ebbc10c2633da3334c49933b67fcf053088eef1e",
+			"size": 206340,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sitara/Sitara-Regular.ttf",
+			"sha256": "db012b93bc95bb06c3d223165ac852a70a08153891f02dc6d8bbdd2f046245e0",
+			"size": 202652,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

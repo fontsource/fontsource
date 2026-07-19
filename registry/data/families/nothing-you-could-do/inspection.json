@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 310,
+				"sha256": "56ea7f5abe1bdf77ceff6b4e543a99689bd4afdf6c32c4ea17fce858fbdf7e66"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/nothingyoucoulddo/NothingYouCouldDo.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

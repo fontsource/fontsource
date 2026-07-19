@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Odor Mean Chey",
+	"id": "odor-mean-chey",
+	"license": {
+		"attribution": "Copyright 2019 The Odor Mean Chey Project Authors (https://github.com/danhhong/OdorMeanChey)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/odormeanchey",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/OdorMeanChey",
+		"revision": "aef50fea8910e7982fde427d114d8cfd6ccbbb9e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/odormeanchey/OdorMeanChey-Regular.ttf",
+			"sha256": "29cb2e094a7e8ed9dd5701f48a5ef42c4e15db8acd85ea78e22804ae67188fbe",
+			"size": 103900,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

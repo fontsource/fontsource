@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2023-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Octavio Pardo",
+	"family": "Protest Guerrilla",
+	"id": "protest-guerrilla",
+	"license": {
+		"attribution": "Copyright 2020 The Protest Project Authors (https://github.com/octaviopardo/Protest)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/protestguerrilla",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/octaviopardo/Protest",
+		"revision": "094e74050a0547c8decd760b4f926321a5e72c6e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/protestguerrilla/ProtestGuerrilla-Regular.ttf",
+			"sha256": "f163ab212c3310173fc3807a7ec309b188c3f9a845b543af8c80d6fceb8b1df6",
+			"size": 85604,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

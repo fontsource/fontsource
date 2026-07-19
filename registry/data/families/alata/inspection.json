@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 893,
+				"sha256": "8842935c83e637236b195123dfced724dca5b9e0fe913279b2cbc92a69cf8db0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/alata/Alata-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

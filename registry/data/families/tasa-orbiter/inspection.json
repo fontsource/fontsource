@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 521,
+				"sha256": "5b84ecac72020934c727ec50f58bf5ca53731e9c008da58617d1d62d526c47e5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.011",
+			"outline": "glyf",
+			"path": "ofl/tasaorbiter/TASAOrbiter[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

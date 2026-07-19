@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 413,
+				"sha256": "0ddfdb889f6709908e6fa20244d43c80100d428e6e2a9cfe8cf61e1e8a9b7a0d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.2.3 webfont; ttfautohint (v0.93.3-1d66) -l 8 -r 50 -G 200 -x 0 -w \"gGD\" -c",
+			"outline": "glyf",
+			"path": "ofl/oxygen/Oxygen-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 378,
+				"sha256": "78b360bd1c550d72717bbe83253948a975ccb9e8c82b3be7bcc3dfbd0bf93a01"
+			},
+			"colorTables": [],
+			"fontVersion": "Version Release 0.2.3 webfont; ttfautohint (v0.93.3-1d66) -l 8 -r 50 -G 200 -x 0 -w \"gGD\" -c",
+			"outline": "glyf",
+			"path": "ofl/oxygen/Oxygen-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 422,
+				"sha256": "a58324a37666f3f0923519737dbe1b27888f868e5c544bc2c0b32f3ef7481f7d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version Release 0.2.3 webfont; ttfautohint (v0.93.3-1d66) -l 8 -r 50 -G 200 -x 0 -w \"gGD\" -c",
+			"outline": "glyf",
+			"path": "ofl/oxygen/Oxygen-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

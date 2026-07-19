@@ -1,0 +1,45 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-05-08",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2",
+		"vietnamese"
+	],
+	"designer": "LXGW",
+	"family": "LXGW Marker Gothic",
+	"id": "lxgw-marker-gothic",
+	"license": {
+		"attribution": "Copyright 2024 The LXGW Marker Gothic Project Authors (https://github.com/lxgw/LxgwMarkerGothic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lxgwmarkergothic",
+		"revision": "0b7d4cdb40dccb6d9c2da4631d49d9379452a564",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aaronbell/LxgwMarkerGothic",
+		"revision": "fe8357007423a983e696d2d3ff545ac9bb1bb89e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lxgwmarkergothic/LXGWMarkerGothic-Regular.ttf",
+			"sha256": "e6a55cfd5f18dc393f92670a164397a69242cb4eabe1d3feb5dc22fc4947a8ba",
+			"size": 3187360,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

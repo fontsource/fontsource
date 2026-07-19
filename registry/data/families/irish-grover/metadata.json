@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-16",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Sideshow",
+	"family": "Irish Grover",
+	"id": "irish-grover",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Font Diner, Inc DBA Sideshow. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/irishgrover",
+		"revision": "8888569f002c169dd435783e4aa5cc8218e7425b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/irishgrover/IrishGrover-Regular.ttf",
+			"sha256": "d894be4e904bbd08a9d46670b4f631e84b7de5d70ede2c89e8217958ca32eec4",
+			"size": 52648,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

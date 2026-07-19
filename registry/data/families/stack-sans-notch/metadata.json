@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-10-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Koto",
+	"family": "Stack Sans Notch",
+	"id": "stack-sans-notch",
+	"license": {
+		"attribution": "Copyright 2025 The Stack Sans Project Authors (https://github.com/DylanYoungKoto/Stack-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stacksansnotch",
+		"revision": "9e6be8000555fe4bdfec934f934160668933494f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/DylanYoungKoto/Stack-Sans",
+		"revision": "b9f1dbd88aa25563ed2ea60aa14ec4436e0c8015"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stacksansnotch/StackSansNotch[wght].ttf",
+			"sha256": "95ffd7f11127cce2f7c16017b0538498850183c58467b57d15a31e9613be3a40",
+			"size": 128932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

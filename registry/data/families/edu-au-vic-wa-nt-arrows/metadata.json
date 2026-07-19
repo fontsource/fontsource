@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-08-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tina Anderson, Corey Anderson",
+	"displayName": "Edu Australia VIC WA NT Hand Arrows",
+	"family": "Edu AU VIC WA NT Arrows",
+	"id": "edu-au-vic-wa-nt-arrows",
+	"license": {
+		"attribution": "Copyright 2023 The VIC WA NT School Hand Australia Project Authors (https://github.com/SorkinType/VICWANTSchoolhandAustralia)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/eduauvicwantarrows",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/VICWANTSchoolhandAustralia",
+		"revision": "6529c525fceb9ec15e51dfa6d87244ef053c2d8a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/eduauvicwantarrows/EduAUVICWANTArrows[wght].ttf",
+			"sha256": "adf8176cc45747608c091094612a7e8d3088d4d46dc89acc37df37fb7a561903",
+			"size": 65152,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

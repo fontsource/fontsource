@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 500,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 325,
+				"sha256": "77ac3ac3370e419d0ff76249393b2756dae887ee9ed7dcd9aba4fe0864ca8389"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/anektamil/AnekTamil[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-06-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Studio DRAMA",
+	"family": "Mozilla Text",
+	"id": "mozilla-text",
+	"license": {
+		"attribution": "Copyright 2025 The Mozilla Text Project Authors (https://github.com/mozilla/mozilla-text-type)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mozillatext",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mozilla/mozilla-text-type",
+		"revision": "5ff275ec4906665df3126ad88c70ffd19d770335"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mozillatext/MozillaText[wght].ttf",
+			"sha256": "a74b1a5c77811bab140c8c30b02adea4f6a90fe8811c669c52541dd78f5c5e87",
+			"size": 86268,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

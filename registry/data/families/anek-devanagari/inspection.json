@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 500,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "5c6078c6a682970c8660e6ebabbbb69f5970203fce91ceea8965dbe541ca265f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/anekdevanagari/AnekDevanagari[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

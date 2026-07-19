@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "dcf8c9bf35e634c432fc9da3ff500413317412bd8f42d7001bce2979e96ceeec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/averiasanslibre/AveriaSansLibre-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "dcf8c9bf35e634c432fc9da3ff500413317412bd8f42d7001bce2979e96ceeec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/averiasanslibre/AveriaSansLibre-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "dcf8c9bf35e634c432fc9da3ff500413317412bd8f42d7001bce2979e96ceeec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/averiasanslibre/AveriaSansLibre-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "dcf8c9bf35e634c432fc9da3ff500413317412bd8f42d7001bce2979e96ceeec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/averiasanslibre/AveriaSansLibre-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "dcf8c9bf35e634c432fc9da3ff500413317412bd8f42d7001bce2979e96ceeec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/averiasanslibre/AveriaSansLibre-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "dcf8c9bf35e634c432fc9da3ff500413317412bd8f42d7001bce2979e96ceeec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/averiasanslibre/AveriaSansLibre-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

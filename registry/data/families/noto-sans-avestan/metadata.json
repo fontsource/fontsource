@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"avestan",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Avestan",
+	"id": "noto-sans-avestan",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/avestan)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansavestan",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/avestan",
+		"revision": "c19976eacac1ca2abf665d3363cf61893342c0ab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansavestan/NotoSansAvestan-Regular.ttf",
+			"sha256": "fe2ed44b8b3949cddced6c748bb67e161727b133d1e7a67c20385b314d2a4158",
+			"size": 60532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

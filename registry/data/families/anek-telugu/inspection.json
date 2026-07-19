@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 500,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 341,
+				"sha256": "9eb9f8f89253062427c971db0c2580d4bd4c93d7d537624f1a5aa9b6aca4752c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/anektelugu/AnekTelugu[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

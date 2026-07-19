@@ -1,0 +1,67 @@
+{
+	"id": "nko",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"60C",
+			"60C"
+		],
+		[
+			"61B",
+			"61B"
+		],
+		[
+			"61F",
+			"61F"
+		],
+		[
+			"66A",
+			"66A"
+		],
+		[
+			"7C0",
+			"7FA"
+		],
+		[
+			"7FD",
+			"7FF"
+		],
+		[
+			"200C",
+			"200F"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"2E1C",
+			"2E1D"
+		],
+		[
+			"FD3E",
+			"FD3F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/nko_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "9fe04c620535bab90875b2210faad62d7998e971aa32bc609787b5bbbecef14e",
+		"upstream": "namFiles"
+	}
+}

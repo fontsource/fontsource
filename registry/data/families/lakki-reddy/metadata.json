@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2015-01-12",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Lakki Reddy",
+	"id": "lakki-reddy",
+	"license": {
+		"attribution": "Copyright (c) 2011 Silicon Andhra (fonts.siliconandhra.org). Copyright (c) 2010 by Font Diner, Inc DBA Sideshow.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lakkireddy",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/lakkireddy",
+		"revision": "bf2dceb7e47e591aa7e76d7e268636ea67d66986"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lakkireddy/LakkiReddy-Regular.ttf",
+			"sha256": "f01c5abe775243fd2a7548c2c50178f87b926ffc4c7c6b675775a40931f80a0b",
+			"size": 583032,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Botjo Nikoltchev",
+	"family": "Sofadi One",
+	"id": "sofadi-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Botjo Nikoltchev, with Reserved Font Name 'Sofadi One'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sofadione",
+		"revision": "d6ede73bcea3542230384236a17e4fc32dfc56d2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sofadione/SofadiOne-Regular.ttf",
+			"sha256": "e88fa20679a9e3568b66ee0bb973bc8bebf73bb868297a2dffd30a99354c0a2f",
+			"size": 52712,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 254,
+				"sha256": "c7a6e25f279e3079c8af34f9c5306dc5ac04783c653ab1622b3d0ef64747440b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/deliusunicase/DeliusUnicase-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 254,
+				"sha256": "c7a6e25f279e3079c8af34f9c5306dc5ac04783c653ab1622b3d0ef64747440b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/deliusunicase/DeliusUnicase-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-08-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Sveta Sebyakina, Cyreal",
+	"family": "Alike",
+	"id": "alike",
+	"license": {
+		"attribution": "Copyright 2009 The Alike Project Authors (https://github.com/cyrealtype/Alike) with Reserved Font Name \"Alike\" and \"Alike Angular\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alike",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Alike",
+		"revision": "2de9216949bad46e02460fcb9e455be87d75462d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alike/Alike-Regular.ttf",
+			"sha256": "accb24221880fbdcf8e8b23fc341ed43c6e0cc3cef1dfbad57ac72474dc1e512",
+			"size": 69348,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

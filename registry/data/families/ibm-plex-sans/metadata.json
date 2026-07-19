@@ -1,0 +1,52 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-03-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mike Abbink, Bold Monday",
+	"family": "IBM Plex Sans",
+	"id": "ibm-plex-sans",
+	"license": {
+		"attribution": "Copyright 2019 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexsans",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "3e312890b3b9e47378b30dedfe4196a42151243c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexsans/IBMPlexSans-Italic[wdth,wght].ttf",
+			"sha256": "0b94c5e981993764db32bf9c610ecc60cbd34ad77ec2f10ba03c64ab75124d8e",
+			"size": 599624,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexsans/IBMPlexSans[wdth,wght].ttf",
+			"sha256": "3b031aa4216174205bd8471f88a49b91f093169e9e87bd5262242bc5967fe2e3",
+			"size": 537244,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

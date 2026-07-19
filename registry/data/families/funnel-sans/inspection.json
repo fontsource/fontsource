@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 348,
+				"sha256": "6007b9abd4cbf1e806447024e88bae266a8cee704b9c6bde4560c03df399ef74"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/funnelsans/FunnelSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 800,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 348,
+				"sha256": "6007b9abd4cbf1e806447024e88bae266a8cee704b9c6bde4560c03df399ef74"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/funnelsans/FunnelSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

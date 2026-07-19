@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 638,
+				"sha256": "cdbd7c36e985b04aa8fd78610d7aa49bbfe63851b3808684af95b191274f6d9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;gftools[0.9.29]",
+			"outline": "glyf",
+			"path": "ofl/aleo/Aleo-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 638,
+				"sha256": "cdbd7c36e985b04aa8fd78610d7aa49bbfe63851b3808684af95b191274f6d9b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;gftools[0.9.29]",
+			"outline": "glyf",
+			"path": "ofl/aleo/Aleo[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-07-27",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Rokkitt",
+	"id": "rokkitt",
+	"license": {
+		"attribution": "Copyright 2016 The Rokkit Project Authors (https://github.com/googlefonts/RokkittFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rokkitt",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Fonthausen/RokkittFont",
+		"revision": "762d1439aaa7cf4a590f604451dfc2e1c6970b9f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rokkitt/Rokkitt-Italic[wght].ttf",
+			"sha256": "acd236589a7fb42b60735c37a4d0d6dcd22bdad364e9503be428f5dd9e8615d5",
+			"size": 135840,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/rokkitt/Rokkitt[wght].ttf",
+			"sha256": "737b2881d2e98f85424b473ab049da3216289a1f84266becb972c87664de2b40",
+			"size": 133344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

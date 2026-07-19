@@ -1,0 +1,49 @@
+{
+	"category": "display",
+	"dateAdded": "2022-02-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Alumni Sans Inline One",
+	"id": "alumni-sans-inline-one",
+	"license": {
+		"attribution": "Copyright 2014 The Alumni Sans Inline Project Authors (https://github.com/googlefonts/alumni-sans-inline)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alumnisansinlineone",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/alumni-sans-inline",
+		"revision": "81ea544e0ce487475c75df9545cd3df946c7ba26"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alumnisansinlineone/AlumniSansInlineOne-Italic.ttf",
+			"sha256": "ba98fe1a9aa70f60417851b357882e0275a3f586ff4039c8f258b4af638171ff",
+			"size": 134596,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/alumnisansinlineone/AlumniSansInlineOne-Regular.ttf",
+			"sha256": "e77a9db5e63f9316840cab59d1364cd40334d6cd441c0b43fe2a18b2521e0e7e",
+			"size": 133088,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

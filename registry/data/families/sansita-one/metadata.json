@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-09-28",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Sansita One",
+	"id": "sansita-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com), with Reserved Font Name \"Sansita One\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sansitaone",
+		"revision": "473687c62c2d9aaead98e18fc2e725659d7f49ff",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sansitaone/SansitaOne-Regular.ttf",
+			"sha256": "8cbe88157d350a7a15faadb0e68eee7310cb18330b9d25ff2d64b1d32f3185ad",
+			"size": 32124,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

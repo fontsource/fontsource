@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-09-07",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Cyreal",
+	"family": "Prata",
+	"id": "prata",
+	"license": {
+		"attribution": "Copyright 2011 The Prata Project Authors (contact@cyreal.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/prata",
+		"revision": "b90b3eb144b8f9828f6f812096b330f80862969d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Prata",
+		"revision": "db5f3799a47eb51bbfe0cb572986d26b37f8ec9e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/prata/Prata-Regular.ttf",
+			"sha256": "3b2b880737be3bda5f03554297b758516876157c88f9e3b3bae8fa1fc96a2c2c",
+			"size": 101284,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-29"
+}

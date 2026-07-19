@@ -1,0 +1,56 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-02-02",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Steve Matteson",
+	"family": "Open Sans",
+	"id": "open-sans",
+	"license": {
+		"attribution": "Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/opensans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/opensans",
+		"revision": "bd7e37632246368c60fdcbd374dbf9bad11969b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/opensans/OpenSans-Italic[wdth,wght].ttf",
+			"sha256": "fe269381e992f32e135801740998544d6235061e37c93ec067ad2be3edd5b17b",
+			"size": 583992,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/opensans/OpenSans[wdth,wght].ttf",
+			"sha256": "36643644f318a812aab2d2ed3bb98f8cf0872527f835fe9398d95fe6b9adb878",
+			"size": 532636,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "TypeTogether",
+	"family": "Crete Round",
+	"id": "crete-round",
+	"license": {
+		"attribution": "Copyright (c) 2011, TypeTogether (www.type-together.com info@type-together.com), with Reserved Font Names \"Crete\" and \"Crete Round\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/creteround",
+		"revision": "c168c82b7ee7d2395f249ddecae93f6be7871326",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/creteround",
+		"revision": "65f7a13699e262832f4fa0cd2a61908da6da811d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/creteround/CreteRound-Italic.ttf",
+			"sha256": "eee412e43d843b89a3170b9c5dbae2ce5da95ff729916d3a2c3441aed3411b42",
+			"size": 67264,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/creteround/CreteRound-Regular.ttf",
+			"sha256": "2b06ee75c35806b9fab35e054fbb97af98fb6b2419c6105697351dc1a2b306c8",
+			"size": 59312,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

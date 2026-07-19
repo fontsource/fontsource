@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2017-05-09",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Lipi Raval",
+	"family": "Mogra",
+	"id": "mogra",
+	"license": {
+		"attribution": "Copyright (c) 2015 Lipi Raval (raval.lipi@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mogra",
+		"revision": "f37cf7b991cfa1d387a8f62b3148d7575fcb5f47",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/lipiraval/Mogra",
+		"revision": "048039d237a99cd102ce254615cba9818c75c711"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mogra/Mogra-Regular.ttf",
+			"sha256": "1d7133f5926cf5e7042b587b838bc5c5bcfe6c86b19157afd544c71a630159d8",
+			"size": 323028,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

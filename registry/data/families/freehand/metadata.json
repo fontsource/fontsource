@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Freehand",
+	"id": "freehand",
+	"license": {
+		"attribution": "Copyright 2020 The Freehand Project Authors (https://github.com/danhhong/Freehand)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/freehand",
+		"revision": "9945f2de72f07c8e12f1651919fcd8802739a115",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Freehand",
+		"revision": "43c90b514cfa24587b118a4819d975459e1d7d6d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/freehand/Freehand-Regular.ttf",
+			"sha256": "3f2f1155d862304cf29cc4252aa5df4d47468d127c3c12cbf16894b0dda6c833",
+			"size": 235540,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

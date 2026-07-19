@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2019-06-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Bahianita",
+	"id": "bahianita",
+	"license": {
+		"attribution": "Copyright 2018 The Bahianita Project Authors (https://github.com/Omnibus-Type/Bahiana/tree/master/Bahianita)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bahianita",
+		"revision": "02f8589047ee36cda6276509c7bc94a04bc49f16",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Bahiana",
+		"revision": "0efedac55f05ea7f6b277b2d63424984e53d005d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bahianita/Bahianita-Regular.ttf",
+			"sha256": "325f21fc723c962e58f895961c77ed151520baaa56e366c4dcaf7c8fcb75130a",
+			"size": 142668,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

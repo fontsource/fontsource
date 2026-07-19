@@ -1,0 +1,51 @@
+{
+	"id": "garay",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"60C",
+			"60C"
+		],
+		[
+			"61B",
+			"61B"
+		],
+		[
+			"61F",
+			"61F"
+		],
+		[
+			"10D40",
+			"10D65"
+		],
+		[
+			"10D69",
+			"10D85"
+		],
+		[
+			"10D8E",
+			"10D8F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/garay_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "18c6842c943057d738aed78933bc7914fbf138f00a22bf405c56676b92c2f0e3",
+		"upstream": "namFiles"
+	}
+}

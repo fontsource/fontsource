@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2023-04-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "The DocRepair Project, Astigmatic",
+	"family": "Lugrasimo",
+	"id": "lugrasimo",
+	"license": {
+		"attribution": "Copyright 2023 The Lugrasimo Project Authors (https://github.com/docrepair-fonts/lugrasimo-fonts).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lugrasimo",
+		"revision": "e068b8bc2ce3581ad3a18320887e2a0a844d37c6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/docrepair-fonts/lugrasimo-fonts",
+		"revision": "40395a6877a6bcdfe74deb2a7e355c0a4c7228e7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lugrasimo/Lugrasimo-Regular.ttf",
+			"sha256": "5a8a7b736bfb38c4fa32b0dc82591e5cddc46a52905866d79a4f8050fe40d0c6",
+			"size": 32492,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

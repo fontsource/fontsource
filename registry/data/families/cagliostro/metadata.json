@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "MADType",
+	"family": "Cagliostro",
+	"id": "cagliostro",
+	"license": {
+		"attribution": "Copyright (c) 2011 Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name \"Cagliostro\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cagliostro",
+		"revision": "3bbfdc0b63538ccb78639c3aa94e7868912c2da3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/cagliostro",
+		"revision": "871f5caf05c9d0a09e8eb11f9c43e27bb8679673"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cagliostro/Cagliostro-Regular.ttf",
+			"sha256": "0d205e9a9b34691dca50064ea681404157f1747e39b592fce978b2a32bd5fb61",
+			"size": 37820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

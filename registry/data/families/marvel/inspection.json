@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 193,
+				"sha256": "6a39c4266b96b9e8830818e96e97eb99e1b4e46f679c6b74c67e9e6fb17993c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/marvel/Marvel-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 193,
+				"sha256": "6a39c4266b96b9e8830818e96e97eb99e1b4e46f679c6b74c67e9e6fb17993c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/marvel/Marvel-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 193,
+				"sha256": "6a39c4266b96b9e8830818e96e97eb99e1b4e46f679c6b74c67e9e6fb17993c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/marvel/Marvel-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 193,
+				"sha256": "6a39c4266b96b9e8830818e96e97eb99e1b4e46f679c6b74c67e9e6fb17993c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/marvel/Marvel-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-03-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Comme",
+	"id": "comme",
+	"license": {
+		"attribution": "Copyright 2014 The Comme Project Authors (https://github.com/googlefonts/comme)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/comme",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/comme",
+		"revision": "45a6e22afc31eb55a46c9b4da4a25ed374886ebf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/comme/Comme[wght].ttf",
+			"sha256": "c368b2b9152d7c1e7d52f9dd058c2b01bab4dfb30c4b55097787083ef61f82e9",
+			"size": 91652,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

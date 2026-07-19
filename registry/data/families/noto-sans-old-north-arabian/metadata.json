@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-north-arabian"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Old North Arabian",
+	"id": "noto-sans-old-north-arabian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-north-arabian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansoldnortharabian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/old-north-arabian",
+		"revision": "da9dd37a1d09e6c3b3c17d7f3d907c3ba8dc1a76"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansoldnortharabian/NotoSansOldNorthArabian-Regular.ttf",
+			"sha256": "27e42ee27587eda9c2521650cca938d4b247e00d55603b0abab0789c2eb2cccb",
+			"size": 53664,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

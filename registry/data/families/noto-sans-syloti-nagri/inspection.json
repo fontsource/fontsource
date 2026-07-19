@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 397,
+				"sha256": "9e432cb715a3b6d9c68b5495160607cc76b4e5c9c5a0493cbf8f580ecc42ff15"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssylotinagri/NotoSansSylotiNagri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

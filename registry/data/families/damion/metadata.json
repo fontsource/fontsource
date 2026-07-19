@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-04-27",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Damion",
+	"id": "damion",
+	"license": {
+		"attribution": "Copyright 2014 The Damion Project Authors (https://github.com/googlefonts/damionFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/damion",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/damionFont",
+		"revision": "6408c983f707a0bd5129eecf74a834146fec2983"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/damion/Damion-Regular.ttf",
+			"sha256": "a51fd6c3c517feb9924b98139c2e902a7317caee52c22a2ec9682973969562bf",
+			"size": 75756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 485,
+				"sha256": "a8542749a96ab426c66daba47a19cf09540f687ec8191800409d93e32279e2f6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirobangla/TiroBangla-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 485,
+				"sha256": "a8542749a96ab426c66daba47a19cf09540f687ec8191800409d93e32279e2f6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirobangla/TiroBangla-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

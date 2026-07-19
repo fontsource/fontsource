@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Cuneiform is an unmodulated (“sans serif”) design for texts in the historical Middle Eastern _Sumero-Akkadian cuneiform_ script. It has 1,239 glyphs.

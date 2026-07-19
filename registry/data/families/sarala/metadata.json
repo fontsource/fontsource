@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-06-17",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "HT Fonts, Andres Torresi",
+	"family": "Sarala",
+	"id": "sarala",
+	"license": {
+		"attribution": "Copyright 2015 by Andres Torresi. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sarala",
+		"revision": "deb572b66cbc6f6509cd2c2596a3184d1958446e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/huertatipografica/sarala",
+		"revision": "7779e0c9eb121b25d9fcb7c20d5b3541b3f4fc15"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sarala/Sarala-Bold.ttf",
+			"sha256": "b08ccab2a22b3dcfad6a9b88d5b700cb830c7557ae13e9264e61cd6a96ecc268",
+			"size": 239072,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sarala/Sarala-Regular.ttf",
+			"sha256": "9e7e34335efeaec81e791b76126a3d26a77230bca9e580aa1658ccf72cebce7b",
+			"size": 241592,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1192,
+				"sha256": "b8e9eb59b51c5203a7ff994651d5e56ae70795dc18daa8eb379af69c92531546"
+			},
+			"colorTables": [],
+			"fontVersion": "0.83",
+			"outline": "glyf",
+			"path": "ufl/ubuntucondensed/UbuntuCondensed-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

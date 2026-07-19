@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Hebrew is a modulated (“serif”) design for texts in the Middle Eastern _Hebrew_ script. It has multiple weights and widths, and 150 glyphs.

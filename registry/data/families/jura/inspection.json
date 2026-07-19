@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1052,
+				"sha256": "31c71cdcd400e14693f431f9962fd0d5c9687e6cd913e7b3566a094871435742"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 5.106",
+			"outline": "glyf",
+			"path": "ofl/jura/Jura[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

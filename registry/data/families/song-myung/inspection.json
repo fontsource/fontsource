@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2615,
+				"sha256": "1ddce71a9d9d608feaf16695197f69ceebadee5b34232854e4c02ecf23cdf555"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/songmyung/SongMyung-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

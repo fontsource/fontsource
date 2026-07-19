@@ -1,0 +1,63 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-09-07",
+	"declaredSubsets": [
+		"gothic",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-italic",
+		"runic"
+	],
+	"designer": "David Perry",
+	"family": "Cardo",
+	"id": "cardo",
+	"license": {
+		"attribution": "Copyright (c) 2002-2011, David J. Perry (hospes02@scholarsfonts.net)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cardo",
+		"revision": "5f99a56415a5d804aa991b1ffe621f7d9b1dc90b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/CardoFont",
+		"revision": "b2bf876b4e251ac44b343605464dad86b336b38d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cardo/Cardo-Bold.ttf",
+			"sha256": "6c9383b1471936ee83b08b67bf79f0ed92bee3d5e8363ec3ba21309d5a272e36",
+			"size": 348320,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cardo/Cardo-Italic.ttf",
+			"sha256": "52c51cfde3a827dd9428511c4a968699952b8a917c5f0e97be782cbfa1880f9c",
+			"size": 262388,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cardo/Cardo-Regular.ttf",
+			"sha256": "bcb81f376f1c3892c7026dabf2beafbd1a7ee8ae95d132ee7d4ff7d7c3988261",
+			"size": 400468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2018-03-12",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "YoonDesign Inc",
+	"family": "East Sea Dokdo",
+	"id": "east-sea-dokdo",
+	"license": {
+		"attribution": "Copyright (c) YoonDesign Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/eastseadokdo",
+		"revision": "779e849d12db887542e15c40d92256f843e32490",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yoondesign/Yoonfont-KoreaDokdo",
+		"revision": "1bc4d9ec41e5159a839e58a349fa2e88799e93bc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/eastseadokdo/EastSeaDokdo-Regular.ttf",
+			"sha256": "8cebb39d375134fdbcedef9bf4ec4f6c3f02c39ed0aacd6e83f7a0f435e593b2",
+			"size": 3178684,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

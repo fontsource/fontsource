@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-31",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Santiago Orozco",
+	"family": "Dorsa",
+	"id": "dorsa",
+	"license": {
+		"attribution": "Copyright (c) 2011, Santiago Orozco (hi@typemade.mx), with Reserved Font Name \"Dorsa\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dorsa",
+		"revision": "a292616a8f55ce431c48fa1ece7f049e3a8802ad",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/dorsa",
+		"revision": "3d21216a5f3d62b466464dd6c7fbcb945ab67144"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dorsa/Dorsa-Regular.ttf",
+			"sha256": "d204db5ceb2d028529f9701fab1bf99a7f6b1f555cda5bffe51072ec1409e3c7",
+			"size": 20844,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

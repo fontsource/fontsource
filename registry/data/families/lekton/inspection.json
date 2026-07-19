@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "2c4bf606845317ca424c405f6ddba7b319ac352314150e33752982befe4cce0c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.000",
+			"outline": "glyf",
+			"path": "ofl/lekton/Lekton-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 188,
+				"sha256": "cd6b3b8f5821cc6b620ff5d4225219f7da2b14e03158c507746b3590b2790ca4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/lekton/Lekton-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "2c4bf606845317ca424c405f6ddba7b319ac352314150e33752982befe4cce0c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.000",
+			"outline": "glyf",
+			"path": "ofl/lekton/Lekton-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

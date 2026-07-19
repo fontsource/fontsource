@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 382,
+				"sha256": "f4c5dc8453459c3a51deaeefc1a6117ec044305105ac8ddd63ef434caa3e5533"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansoldpermic/NotoSansOldPermic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

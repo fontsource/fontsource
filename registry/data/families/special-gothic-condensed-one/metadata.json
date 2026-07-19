@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-03-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Alistair McCready",
+	"family": "Special Gothic Condensed One",
+	"id": "special-gothic-condensed-one",
+	"license": {
+		"attribution": "Copyright 2022 The Special-Gothic Project Authors (https://github.com/AlistairMcCready/Special-Gothic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/specialgothiccondensedone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/AlistairMcCready/Special-Gothic",
+		"revision": "805adb65b7262a7abf1c37877ff657111bfcf864"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/specialgothiccondensedone/SpecialGothicCondensedOne-Regular.ttf",
+			"sha256": "f77948acc3218b715003475f7739d7be101fb59bd8887182866225c9de2c935f",
+			"size": 104844,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

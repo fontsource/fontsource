@@ -1,0 +1,43 @@
+{
+	"id": "sogdian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"640",
+			"640"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"10F30",
+			"10F59"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/sogdian_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "97baee8a58df2a4395d39af21a610cd90abdca5a91b392891293611905d3e992",
+		"upstream": "namFiles"
+	}
+}

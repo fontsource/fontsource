@@ -1,0 +1,3 @@
+Grandiflora, or in its original language, Neungsohwa is a decorative Hangeul typeface inspired by the Art Nouveau style of the 20th century. It is presented exclusively in hairline weight to highlight the elegant curves and ornamental characteristics of Hangeul. As Art Nouveau is commonly represented by vines and florals, the typeface was named after the most beloved summer vines of Korea, Campsis grandiflora (Neungsohwa).
+
+To contribute, please visit [github.com/JAMO-TYPEFACE/Grandiflora](https://github.com/JAMO-TYPEFACE/Grandiflora).

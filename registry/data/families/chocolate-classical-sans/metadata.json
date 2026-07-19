@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-05-14",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Moonlit Owen",
+	"family": "Chocolate Classical Sans",
+	"id": "chocolate-classical-sans",
+	"license": {
+		"attribution": "Copyright 2024 The Chocolate Classical Sans Project Authors (https://github.com/MoonlitOwen/ChocolateSans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chocolateclassicalsans",
+		"revision": "34b6d652b373045772f5f1558e291ad1dd295f7c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/MoonlitOwen/ChocolateSans",
+		"revision": "624ecb8064d34258383bcbb08521f9fa2af00124"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chocolateclassicalsans/ChocolateClassicalSans-Regular.ttf",
+			"sha256": "e6345f3d92c7a9b7044c31a87d9b61f50220b08c0f1dcc2736e94c2aa587ce03",
+			"size": 12183000,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

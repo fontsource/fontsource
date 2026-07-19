@@ -1,0 +1,7 @@
+Now in its third version, Literata is a distinct variable font family for digital text. Originally created as the brand typeface for Google Play Books, it exceeds the strict needs of a comfortable reading experience on any device, screen resolution, or font size. The family has matured into a full-fledged digital publishing toolbox — headline, paragraph, and caption text. Type Together redesigned it from the ground up as a variable font. Its tiny file size and infinite adjustability make it perfect for developers, mobile apps, and every screen imaginable. It’s the “every-device font”. Get the entire type family for FREE!
+
+Literata was designed by TypeTogether: Veronika Burian & José Scaglione (Latin), Irene Vlachou (Greek), Vera Evstafieva (Cyrillic) and Elena Novoselova (Cyrillic).
+
+The family won the GOLD Indigo Awards in 2021 and is the Modern Cyrillic 2021 winner. Two versions of the family exist, one for print and the other for Ebooks. This is the print version of the family.
+
+To contribute, see [github.com/googlefonts/literata](https://github.com/googlefonts/literata)

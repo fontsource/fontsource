@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Takri is an unmodulated (“sans serif”) design for texts in the historical Indic _Takri_ script. It has 95 glyphs.

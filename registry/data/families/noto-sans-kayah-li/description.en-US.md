@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Kayah Li is an unmodulated (“sans serif”) design for texts in the Southeast Asian _Kayah Li_ script. It has multiple weights and 60 glyphs.

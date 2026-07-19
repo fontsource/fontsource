@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 219,
+				"sha256": "6c8ad1e540b0c7cb533adc822f0af9add53e1778b8905448d658074d4cc0a4e2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/sevillana/Sevillana-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

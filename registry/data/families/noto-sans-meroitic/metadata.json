@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"meroitic",
+		"meroitic-cursive",
+		"meroitic-hieroglyphs"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Meroitic",
+	"id": "noto-sans-meroitic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/meroitic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmeroitic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/meroitic",
+		"revision": "d682685c8c0ef7ef9d1091a6dad7d8ce2843e565"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmeroitic/NotoSansMeroitic-Regular.ttf",
+			"sha256": "0a9920e60a884d517c9385f68bef840d380ea0918b397a02357a882c28acca69",
+			"size": 88336,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

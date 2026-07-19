@@ -1,0 +1,48 @@
+{
+	"category": "monospace",
+	"dateAdded": "2021-06-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "MCKL",
+	"family": "Red Hat Mono",
+	"id": "red-hat-mono",
+	"license": {
+		"attribution": "Copyright 2024 The Red Hat Project Authors (https://github.com/RedHatOfficial/RedHatFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/redhatmono",
+		"revision": "7d1a39d2f2eb234f00131c825df52a57491097a3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/RedHatOfficial/RedHatFont",
+		"revision": "32287097803f6c58136b60bc7a4a594a7fcbd689"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/redhatmono/RedHatMono-Italic[wght].ttf",
+			"sha256": "bdb184e308ec6dfb2790a5ec6a0b1aceb2aca32b95db447873451934eb3517b7",
+			"size": 71768,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/redhatmono/RedHatMono[wght].ttf",
+			"sha256": "253377ac29ccce89cb1b5fb297c69812ffe993b0c436322b3656323ff30fd14f",
+			"size": 68356,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

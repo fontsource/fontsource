@@ -1,0 +1,51 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-05-11",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Sorkin Type",
+	"family": "Merriweather",
+	"id": "merriweather",
+	"license": {
+		"attribution": "Copyright 2024 The Merriweather Project Authors (https://github.com/EbenSorkin/Merriweather4) with Reserved Font Name \"Merriweather\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/merriweather",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EbenSorkin/Merriweather4",
+		"revision": "e586023aa0fe1dba9a7d4ec80fa8b9e546cb7ecf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/merriweather/Merriweather-Italic[opsz,wdth,wght].ttf",
+			"sha256": "f68a8f4989258679e4fbaf50aa42400132b5373c2d9d2514ba82ef6e85947a0b",
+			"size": 4591168,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/merriweather/Merriweather[opsz,wdth,wght].ttf",
+			"sha256": "d0ed0e359e396af7ad05e73dffd11a3a4c326ea0d0283c56bd9361cb2cc86a96",
+			"size": 4628080,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

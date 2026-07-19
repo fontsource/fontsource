@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2024-03-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sarah Cadigan-Fried",
+	"family": "Jersey 25",
+	"id": "jersey-25",
+	"license": {
+		"attribution": "Copyright 2023 The Soft Type Project Authors (https://github.com/scfried/soft-type-jersey)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jersey25",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/scfried/soft-type-jersey",
+		"revision": "d8446c4c9c2ba14cf408c295be35213c006e19ff"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jersey25/Jersey25-Regular.ttf",
+			"sha256": "4d4acdd89a748e9548041a3046d95536c500e1a7be9197c6aeef7d980f79d370",
+			"size": 142372,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

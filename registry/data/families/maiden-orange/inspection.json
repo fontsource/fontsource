@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "262aa61b41692ddb3d78f5f509ed80b44dc136e428cc19ed48788c5441d8cb92"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/maidenorange/MaidenOrange-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

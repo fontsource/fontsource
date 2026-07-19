@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif TC is a modulated (“serif”) design for languages in Taiwan, Hong Kong and Macau that use the _Traditional Chinese_ variant of the Han ideograms. It also supports _Hiragana, Katakana, Latin, Cyrillic, Greek_ and _Hangul_. It has multiple weights.

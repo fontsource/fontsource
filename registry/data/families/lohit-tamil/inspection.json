@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 134,
+				"sha256": "d4adb89cb590cd3b3f3444bf145ab8eaa61e82f13af0f2f5e50b194c46fb4a93"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.5.0",
+			"outline": "glyf",
+			"path": "ofl/lohittamil/Lohit-Tamil.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

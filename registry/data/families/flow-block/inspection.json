@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 765,
+				"sha256": "8db3daa881dc25a9204fdf485ad1d6ae6e661abeaf30326de5ee084a57430228"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/flowblock/FlowBlock-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

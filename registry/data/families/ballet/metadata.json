@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2020-09-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type, Maximiliano Sproviero",
+	"family": "Ballet",
+	"id": "ballet",
+	"license": {
+		"attribution": "Copyright 2020 The Ballet Project Authors (https://github.com/Omnibus-Type/Ballet)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ballet",
+		"revision": "c3c7f361964dc8ae1a48e627ac3ddf585424acc3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Ballet",
+		"revision": "bd239d606894c2139ad997b60d2141bee7856817"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ballet/Ballet[opsz].ttf",
+			"sha256": "6500b6abb6dd31c3389e8f32a21ae3c66e3257d0afefecf7688aa23f742cb677",
+			"size": 134000,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

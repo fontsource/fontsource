@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-10-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tobias Bjerrome Ahlin, GitHub, Degarism Studio, Sebastian Carewe",
+	"family": "Hubot Sans",
+	"id": "hubot-sans",
+	"license": {
+		"attribution": "Copyright 2021 The Hubot Sans Project Authors (https://github.com/github/hubot-sans), with Reserved Font Name \"Hubot\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hubotsans",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/github/hubot-sans",
+		"revision": "d4b2f67cd7686f5907296d3f027112bbc4f69f42"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hubotsans/HubotSans-Italic[wdth,wght].ttf",
+			"sha256": "785b129a5b9c8f04b4e8883dd26235ef7ae58d862068726a3e254092c28bc829",
+			"size": 381520,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hubotsans/HubotSans[wdth,wght].ttf",
+			"sha256": "229c7682f64b499668d2f47ac803bbde0b5a63225326c8659ea436748ab29965",
+			"size": 369548,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

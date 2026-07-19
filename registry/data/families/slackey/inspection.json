@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "d4057e4a8801508b0d84e3746ee88b36973ef488340d6ef9d92832b8e9ab76aa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/slackey/Slackey-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

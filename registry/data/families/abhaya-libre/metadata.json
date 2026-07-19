@@ -1,0 +1,76 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-08-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sinhala"
+	],
+	"designer": "Mooniak",
+	"family": "Abhaya Libre",
+	"id": "abhaya-libre",
+	"license": {
+		"attribution": "Copyright (c) 1996-2015 Pushpananda Ekanayake (pushpanandae@gmail.com) Copyright (c) 2015 Sol Matas (sol@sonnenshine.com.ar) Copyright (c) 2015 Mooniak (hello@mooniak.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/abhayalibre",
+		"revision": "62bfd73282597923c7bf3cb936469dd673134336",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mooniak/abhaya-libre-font",
+		"revision": "ade314aa678ceb44f892ed58169c6b270c775d02"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/abhayalibre/AbhayaLibre-Bold.ttf",
+			"sha256": "01fb4cd74841c5f108372737a74cfedeaf0a722ca23e2275dc69f411dc0ad5a6",
+			"size": 527476,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/abhayalibre/AbhayaLibre-ExtraBold.ttf",
+			"sha256": "a8d05da8766a9bc540e0ea5b63f36a141d629907e8f06c4c2b23bb0bd741b2e1",
+			"size": 535456,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/abhayalibre/AbhayaLibre-Medium.ttf",
+			"sha256": "d3d4051877dc9538a71720d5fdba4118cdcd467096972c524a9fff9c45269f4b",
+			"size": 543924,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/abhayalibre/AbhayaLibre-Regular.ttf",
+			"sha256": "d4279d38a0012fa54d340979694e70e3235266220dedc0d7000131345fb33bd4",
+			"size": 555376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/abhayalibre/AbhayaLibre-SemiBold.ttf",
+			"sha256": "254d773d80ecd382f5e4d818418ad521aa5a8d69cc996d0ac0a1c3f0417fabc0",
+			"size": 518716,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

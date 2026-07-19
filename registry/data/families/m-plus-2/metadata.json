@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-08-26",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Coji Morishita",
+	"family": "M PLUS 2",
+	"id": "m-plus-2",
+	"license": {
+		"attribution": "Copyright 2021 The M+ FONTS Project Authors (https://github.com/coz-m/MPLUS_FONTS)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mplus2",
+		"revision": "badb95c58fccad31fa1c5c29c5dcbced87d695ec",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/coz-m/MPLUS_FONTS",
+		"revision": "4bf69824e45a175b9121b248c46abff103569051"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mplus2/MPLUS2[wght].ttf",
+			"sha256": "2e4f45c2391355fb03195da4854ffbe85fea49bfdff5cc51020238083af6b75c",
+			"size": 4201608,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-10"
+}

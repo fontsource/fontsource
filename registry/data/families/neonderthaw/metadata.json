@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Neonderthaw",
+	"id": "neonderthaw",
+	"license": {
+		"attribution": "Copyright 2014-2021 The Neonderthaw Project Authors (https://github.com/googlefonts/neonderthaw)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/neonderthaw",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/neonderthaw",
+		"revision": "67e6f60e5addb09d39d7a36f908430cc508165fb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/neonderthaw/Neonderthaw-Regular.ttf",
+			"sha256": "15a72ab630eb73ee922ad653783b81053cf381ef53bcc17a536f3c7fa8097184",
+			"size": 276228,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

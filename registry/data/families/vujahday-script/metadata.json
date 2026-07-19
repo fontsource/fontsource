@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Vujahday Script",
+	"id": "vujahday-script",
+	"license": {
+		"attribution": "Copyright 2003 The Vujahday Script Project Authors (https://github.com/googlefonts/vujahday)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vujahdayscript",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/vujahday",
+		"revision": "37a8a215d0a4b152bf5acb1b04b1dc3eade51ced"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vujahdayscript/VujahdayScript-Regular.ttf",
+			"sha256": "f102428da88931f20c5ed947d9f8aea85ee3f1d4a18b51a74b4f59a344ce5daa",
+			"size": 333472,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

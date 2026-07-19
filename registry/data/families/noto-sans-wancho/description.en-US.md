@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Wancho is an unmodulated (“sans serif”) design for texts in the Indic _Wancho_ script. It has 95 glyphs.

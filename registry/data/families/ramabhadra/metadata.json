@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Ramabhadra",
+	"id": "ramabhadra",
+	"license": {
+		"attribution": "Copyright (c) 2012 Andhra Pradesh Society for Knowledge Networks (fonts.siliconandhra.org). Digitized data copyright (c) 2010-2012 Google Corporation.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ramabhadra",
+		"revision": "7f51d029fe301fa70a00c7edd9ffff3e5c480e79",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/ramabhadra",
+		"revision": "09579428d71598b6d3148aebe5505df573cc1b30"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ramabhadra/Ramabhadra-Regular.ttf",
+			"sha256": "68c57789cdf358d70fa7f1fba7f9b93a09541018278dc2fdd98ab82d14a8ffad",
+			"size": 733308,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

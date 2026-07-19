@@ -1,0 +1,51 @@
+{
+	"id": "manichaean",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"640",
+			"640"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"FE00",
+			"FE00"
+		],
+		[
+			"10AC0",
+			"10AE6"
+		],
+		[
+			"10AEB",
+			"10AF6"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/manichaean_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "f1f7121708298a36d34f313c0346ff0c264e5a9ff0c9b6deb04af783bc68a5d2",
+		"upstream": "namFiles"
+	}
+}

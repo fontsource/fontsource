@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "8980f039fd9b6d24ae893cac5ca2ee4b908286c549153e9082d9e5f2a7163e87"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/damion/Damion-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "e322710633fee409944cfb53b1e6958939420d441fa23c14d20affde06167ac5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/chewy/Chewy-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2026-05-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Non Foundry, Jona Saucedo",
+	"family": "Pliant",
+	"id": "pliant",
+	"license": {
+		"attribution": "Copyright 2025 The Pliant Project Authors (https://github.com/TheJonassss/Pliant)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pliant",
+		"revision": "647e52b1cbc941916c322994994bbe2e3a08ca6e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TheJonassss/Pliant",
+		"revision": "dc119b45f0b60597305af387b97b2f5a94b2e1e4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pliant/Pliant-Italic[wdth,wght].ttf",
+			"sha256": "11dea3b2bf84b9f3d059b30a49d578de1e708db6f934a6a29bd32de3d157d5f0",
+			"size": 311288,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/pliant/Pliant[wdth,wght].ttf",
+			"sha256": "11cb215c4380f2e7e4cb40e38cf799cba36faf89dae69a688eb7cca6f30f0915",
+			"size": 300140,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

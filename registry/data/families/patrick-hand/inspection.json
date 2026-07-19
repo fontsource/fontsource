@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 515,
+				"sha256": "e2cbf375f5200dde98b54c8a771aab7358f113cd2c4d0337178ae7cebea79571"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003;PS 001.003;hotconv 1.0.70;makeotf.lib2.5.58329; ttfautohint (v0.94.20-1c74) -l 8 -r 50 -G 200 -x 14 -w \"gGD\" -c -f",
+			"outline": "glyf",
+			"path": "ofl/patrickhand/PatrickHand-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

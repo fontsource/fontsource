@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-11-25",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2"
+	],
+	"designer": "But Ko",
+	"family": "Iansui",
+	"id": "iansui",
+	"license": {
+		"attribution": "Copyright 2025 The Iansui Project Authors (https://github.com/ButTaiwan/iansui)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/iansui",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ButTaiwan/iansui",
+		"revision": "a66e7fe5bc492b358d8dc916f359157133a1d23c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/iansui/Iansui-Regular.ttf",
+			"sha256": "6e6340d80d618a42b48ade9370c34fa37a8210750c6fbc8efe65f23716538a2b",
+			"size": 9420560,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

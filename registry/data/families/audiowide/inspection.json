@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "fa3bed680ee5aa21737cac9f8512c4b35a7053a71d87dc2e1bd36712d3e01098"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/audiowide/Audiowide-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-03-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dalton Maag, David Jonathan Ross, Dual Type",
+	"family": "Ubuntu Sans",
+	"id": "ubuntu-sans",
+	"license": {
+		"attribution": "Copyright 2011, 2022, 2023 Canonical Ltd. Licensed under the Ubuntu Font Licence 1.0",
+		"id": "UFL-1.0",
+		"url": "https://ubuntu.com/legal/font-licence"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ufl/ubuntusans",
+		"revision": "12ce293bf447bd569e0759698bd39d52472fbbaa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/canonical/Ubuntu-Sans-fonts",
+		"revision": "9554af00fb9d438a12c916df8451c10dcedc9b7e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ufl/ubuntusans/UbuntuSans-Italic[wdth,wght].ttf",
+			"sha256": "603f7a4b837143b742a8df3ad3ad80164a50e4529f02e3f6aa533b78e209d3df",
+			"size": 738444,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ufl/ubuntusans/UbuntuSans[wdth,wght].ttf",
+			"sha256": "37e90bba45a2a1172d9f6078e45daebaa1b4e537943205cc1309f142a254fe40",
+			"size": 1080900,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2025-09-05"
+}

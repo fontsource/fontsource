@@ -1,0 +1,69 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-10-07",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek-ext",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "LY Corporation, Fontrix, Fontworks",
+	"family": "LINE Seed JP",
+	"id": "line-seed-jp",
+	"license": {
+		"attribution": "© LY Corporation",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lineseedjp",
+		"revision": "ca50ef7e44e4d5bc811b512708ff43c21acbac3e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/line/seed",
+		"revision": "ea7a320d85172a57dc458507267d82e7c0f2d49a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lineseedjp/LINESeedJP-Bold.ttf",
+			"sha256": "67aec2dc10b3ad210d6f7d53b33bbfea42ea28e32fa3834624eee699a638d5ff",
+			"size": 3786144,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lineseedjp/LINESeedJP-ExtraBold.ttf",
+			"sha256": "e310cf97ddae9e9deb15f769fd2f68a2ff24bd0a19953c5191df941cc7952c95",
+			"size": 3603732,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/lineseedjp/LINESeedJP-Regular.ttf",
+			"sha256": "04a6c0077ddb8ba5af3638bd76b4600708dde7b38df047b40fbe6f3af358d3c3",
+			"size": 3673280,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lineseedjp/LINESeedJP-Thin.ttf",
+			"sha256": "e59cfc7cde710b0968e850b5fae4714d719e39d9bb731f7aa8c957f661c6bbec",
+			"size": 3747104,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

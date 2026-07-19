@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-02-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Afrotype, Seyi Olusanya, Eyiyemi Adegbite, David Udoh, Mirko Velimirović",
+	"family": "Tac One",
+	"id": "tac-one",
+	"license": {
+		"attribution": "Copyright 2024 The Tac One Project Authors (https://github.com/Afrotype/tac)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tacone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Afrotype/tac",
+		"revision": "85b9001fb4c9f6801808de5ee2f5e257ad062856"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tacone/TacOne-Regular.ttf",
+			"sha256": "0b52bc2a0d4bb3ba187d1da157d18e50fafa7a3158563293445f809c3c515d77",
+			"size": 146436,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

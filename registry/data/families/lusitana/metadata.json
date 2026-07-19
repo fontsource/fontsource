@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ana Paula Megda",
+	"family": "Lusitana",
+	"id": "lusitana",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Ana Paula Megda (www.anamegda.com|anapbm@gmail.com), with Reserved Font Name Lusitana.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lusitana",
+		"revision": "599f79ec517adb4423210c09b9a0bf40257ba02d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/lusitana",
+		"revision": "8fa070c2ac2963f13feee142e2001777ac48e774"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lusitana/Lusitana-Bold.ttf",
+			"sha256": "7ce8affe6a9cf98304d33443f26b172f24230dc2b96d880f98679780e2e181ad",
+			"size": 29284,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lusitana/Lusitana-Regular.ttf",
+			"sha256": "582ef819effed258c236f4924e2799323f3d474472d50939b817f91022ed1e60",
+			"size": 30188,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

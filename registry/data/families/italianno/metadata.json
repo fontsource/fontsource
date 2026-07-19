@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Italianno",
+	"id": "italianno",
+	"license": {
+		"attribution": "Copyright 2009 The Italianno Project Authors (https://github.com/googlefonts/italianno)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/italianno",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/italianno",
+		"revision": "3e3995ef5b90bd2b9dc587fb8f831f3a158cb95b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/italianno/Italianno-Regular.ttf",
+			"sha256": "f6ae96dea0da46c73370eb0575848ab0eda190315bdfda3f5b252bba3dc9173c",
+			"size": 223708,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

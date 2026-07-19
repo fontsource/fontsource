@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-05-18",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Haesung Cho, JAMO",
+	"family": "Grandiflora One",
+	"id": "grandiflora-one",
+	"license": {
+		"attribution": "Copyright 2022 The Grandiflora Project Authors (https://github.com/JAMO-TYPEFACE/Grandiflora)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/grandifloraone",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JAMO-TYPEFACE/Grandiflora",
+		"revision": "5e5d39d3d49c5de0815020ba3996e9725d717e3f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/grandifloraone/GrandifloraOne-Regular.ttf",
+			"sha256": "592da2454a6626ee68558e220df28808b95f7dd140cd1ceb8a0d72b777f157ad",
+			"size": 2342680,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 635,
+				"sha256": "d67cf25f5f6bca2756fdfee162eef2366c20c488125e336f67a9596385f56922"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansvai/NotoSansVai-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

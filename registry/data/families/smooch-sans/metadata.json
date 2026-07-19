@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-12-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Smooch Sans",
+	"id": "smooch-sans",
+	"license": {
+		"attribution": "Copyright 2016 The Smooch Sans Project Authors (https://github.com/googlefonts/smooch-sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/smoochsans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/smooch-sans",
+		"revision": "0a0a405279f4a706e657e95d97fad245e327d5bd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/smoochsans/SmoochSans[wght].ttf",
+			"sha256": "6d82f480d71365d9c6c4f96ad1f3cab44053ea3f0b63650b1e0e539d915aff49",
+			"size": 92880,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

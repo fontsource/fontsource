@@ -1,0 +1,59 @@
+{
+	"id": "cyrillic-ext",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"460",
+			"48F"
+		],
+		[
+			"492",
+			"4AF"
+		],
+		[
+			"4B2",
+			"52F"
+		],
+		[
+			"1C80",
+			"1C8A"
+		],
+		[
+			"20B4",
+			"20B4"
+		],
+		[
+			"2DE0",
+			"2DFF"
+		],
+		[
+			"A640",
+			"A69F"
+		],
+		[
+			"FE2E",
+			"FE2F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/cyrillic-ext_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "867d8c6d1682930b22b0fcd4e4a07ec7edbba7e3fa1cfeb2a249623a5723e757",
+		"upstream": "namFiles"
+	}
+}

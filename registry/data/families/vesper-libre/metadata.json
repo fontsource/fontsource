@@ -1,0 +1,67 @@
+{
+	"category": "serif",
+	"dateAdded": "2014-07-14",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mota Italic",
+	"family": "Vesper Libre",
+	"id": "vesper-libre",
+	"license": {
+		"attribution": "Copyright (c) 2007, Robert Keller (www.motaitalic.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vesperlibre",
+		"revision": "6c238e2b8b86e2bec6a94186f938d4cddeebd5b6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/motaitalic/vesper-libre",
+		"revision": "b765c5a68c1786a177b46e3b3ecd766157ffe349"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vesperlibre/VesperLibre-Bold.ttf",
+			"sha256": "11e59ae4fd3d5276573f95cea3e7e2361756817b5029b49f43c66701f81d96f8",
+			"size": 168172,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/vesperlibre/VesperLibre-Heavy.ttf",
+			"sha256": "007fb773ea25fe9a62238860ed35797b6bb6f934cb6e1b4ae4a0abf5b8172ffd",
+			"size": 165724,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/vesperlibre/VesperLibre-Medium.ttf",
+			"sha256": "46fb5e6b5600f635cbcf279cdc0129980abfc2a769712b1bde716724a200f40a",
+			"size": 168368,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/vesperlibre/VesperLibre-Regular.ttf",
+			"sha256": "2be8f243d90685e53bb6d6435985cf4d145d42bf70e3f964026a62c7cd96de1c",
+			"size": 166124,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

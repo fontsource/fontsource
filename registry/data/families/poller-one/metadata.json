@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-09-28",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Yvonne Schüttler",
+	"family": "Poller One",
+	"id": "poller-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Names \"Poller\" and \"Poller One\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pollerone",
+		"revision": "8cbb608f60730c6f439b7034d0c78b2fbed87ae1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pollerone/PollerOne.ttf",
+			"sha256": "49c5128cb550156e9384453906b869b830aafacfc3a9332ccf989c8ed146d773",
+			"size": 31588,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

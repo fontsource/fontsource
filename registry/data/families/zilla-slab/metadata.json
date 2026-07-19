@@ -1,0 +1,120 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-06-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Typotheque",
+	"family": "Zilla Slab",
+	"id": "zilla-slab",
+	"license": {
+		"attribution": "Copyright 2017, The Mozilla Foundation",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zillaslab",
+		"revision": "f473a26ceba660d85cf223ff121dea1fe91cfcb6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mozilla/zilla-slab",
+		"revision": "6dcec520f9b23ad7f380b7ce3e8072be95fe0004"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zillaslab/ZillaSlab-Bold.ttf",
+			"sha256": "4ec3a04a4eef37074b42ef542e4d874e13646668cfe65256e0bf100441cf8719",
+			"size": 273044,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-BoldItalic.ttf",
+			"sha256": "7951036c92de71e3c88ea01abe031d5bdaddf4639022a3e1cb92322f2e88d2cf",
+			"size": 280236,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-Italic.ttf",
+			"sha256": "ff0cd7a2f0db59d017d51b4ed9003f58bf21ae218ab2a965aa3bc1dd894c152b",
+			"size": 277732,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-Light.ttf",
+			"sha256": "4c3dfcd4a5bb71ee28b6c2ec8e8bfec720f619bc00e12a13a88f0f233af7f851",
+			"size": 265056,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-LightItalic.ttf",
+			"sha256": "899c8f381f7b82a78fd5ac458405b6c212ad25bc11447f235aa097f3faf34b9e",
+			"size": 270260,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-Medium.ttf",
+			"sha256": "d344b0f60cd5fb2d34c4168d2811ba684163e5665e20cccbcfb6ac822d84a500",
+			"size": 268184,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-MediumItalic.ttf",
+			"sha256": "de6be2985329891035a3b3863a325a82a918a2018650c3b43fa5c4ae14815f58",
+			"size": 276812,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-Regular.ttf",
+			"sha256": "41a4626844da9216b031308d4423045c765fe4231d99862d85d7d74509d37703",
+			"size": 270104,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-SemiBold.ttf",
+			"sha256": "aafcb295b88d520357db1ecf9a1c3167055e87e9ddf5f63e560cbd139ec2805e",
+			"size": 270088,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/zillaslab/ZillaSlab-SemiBoldItalic.ttf",
+			"sha256": "23815b73da57186d64adc71cdab4cd2bbd9be21f71efdce60d9676638f070e2f",
+			"size": 277604,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

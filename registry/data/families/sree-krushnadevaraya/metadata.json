@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-01-12",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Sree Krushnadevaraya",
+	"id": "sree-krushnadevaraya",
+	"license": {
+		"attribution": "Copyright (c) 2012 Andhrapradesh Society for Knowledge Networks (fonts.siliconandhra.org). Copyright (c) 2011-2012, Sorkin Type Co (www.sorkintype.com) with Reserved Font Name 'Cantata'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sreekrushnadevaraya",
+		"revision": "5d124841a435b8a9df4e452b756906f31fa16545",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/sreekrushnadevaraya",
+		"revision": "1d8aea8611ff50608f113c079890bd4c996d12be"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sreekrushnadevaraya/SreeKrushnadevaraya-Regular.ttf",
+			"sha256": "3b8f5b01a08fba5af53760e274d6cd7ea6514ec2658d9c480eafcc8917d7e2cb",
+			"size": 612636,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

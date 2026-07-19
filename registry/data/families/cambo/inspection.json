@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "c5228c1752377d5d23c9c5f6c4d5ea2cdbc2119690cd65a39823e5210bec5133"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/cambo/Cambo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

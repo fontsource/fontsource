@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 454,
+				"sha256": "947c9f8924e3118b1ddfc9c6ee822c39a8f387fcc02f58a7a170afaf4e865d98"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/bahiana/Bahiana-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

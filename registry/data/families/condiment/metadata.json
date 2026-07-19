@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-01-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Condiment",
+	"id": "condiment",
+	"license": {
+		"attribution": "Copyright (c) 2010 Angel Koziupa (sudtipos@sudtipos.com), Copyright (c) 2010 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"Condiment\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/condiment",
+		"revision": "980c0731bc99909f9dcff641f6a24c020ce8501a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/condiment",
+		"revision": "a89340dd6409f34edd3d00dba5326e870b910f2a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/condiment/Condiment-Regular.ttf",
+			"sha256": "fb12978739fe3824e95b3e5f739ae623f888f715fe44481117fb3436be9a4b5d",
+			"size": 43392,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

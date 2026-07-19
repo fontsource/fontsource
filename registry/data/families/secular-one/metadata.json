@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Michal Sahar",
+	"family": "Secular One",
+	"id": "secular-one",
+	"license": {
+		"attribution": "Copyright 2016 The Secular One Project Authors (https://github.com/googlefonts/secular)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/secularone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/secular",
+		"revision": "6a1b3caa448955ffe8fe7e5440f620abc0913995"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/secularone/SecularOne-Regular.ttf",
+			"sha256": "2f45092a521db5042887941edfef73178ed7c5ba7fdfc5b6f581d44aab7b0234",
+			"size": 83916,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

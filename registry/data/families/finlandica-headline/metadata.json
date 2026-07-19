@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2026-04-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Helsinki Type Studio, Niklas Ekholm, Juho Hiilivirta, Jaakko Suomalainen",
+	"family": "Finlandica Headline",
+	"id": "finlandica-headline",
+	"license": {
+		"attribution": "Copyright 2015 The Finlandica Project Authors (https://github.com/HelsinkiTypeStudio/Finlandica)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/finlandicaheadline",
+		"revision": "a3984163ec58fa126642bb7a4d3427e320a5d776",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/HelsinkiTypeStudio/FinlandicaHeadline",
+		"revision": "c97bd4dd9fd949cf6bc1b854fef368a43c6741f0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/finlandicaheadline/FinlandicaHeadline-Italic[wght].ttf",
+			"sha256": "f9e652a2cb2fc2eebd95962011af876be07b738636a1ad32503c7b1956ef3a69",
+			"size": 328692,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/finlandicaheadline/FinlandicaHeadline[wght].ttf",
+			"sha256": "807735d6aa1f8dfb34c93256d9f696a0573f3c337e166c26666ac17137b3abfc",
+			"size": 311120,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-22"
+}

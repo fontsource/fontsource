@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Luxurious Roman",
+	"id": "luxurious-roman",
+	"license": {
+		"attribution": "Copyright 2015-2021 The Luxurious Roman Project Authors (https://github.com/googlefonts/luxurious-roman)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/luxuriousroman",
+		"revision": "3b34879b5dcc3adf0a0a3105e65ad3265b6b5bc3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/luxurious-roman",
+		"revision": "31c4f13d56c397cb8e0fb6992594cd4ec5b12ffd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/luxuriousroman/LuxuriousRoman-Regular.ttf",
+			"sha256": "30d6bc4b25cf075560f0dd90a77a8ed8165bd280a863de1c3ab429fbf9ace58b",
+			"size": 143608,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

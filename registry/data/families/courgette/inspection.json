@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 406,
+				"sha256": "f90b41ecb08ab667d196e4ccd96d0244272c4e3e1c5cdbb9aea14860e1d3d094"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/courgette/Courgette-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

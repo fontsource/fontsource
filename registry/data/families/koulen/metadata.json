@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Koulen",
+	"id": "koulen",
+	"license": {
+		"attribution": "Copyright 2019 The Koulen Project Authors (https://github.com/danhhong/Koulen)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/koulen",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Koulen",
+		"revision": "387ec6f230e61fe85a90529543daeeb2a3625b7e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/koulen/Koulen-Regular.ttf",
+			"sha256": "4e19b0b83c537547b0f1ff1fb39dafb55cefbf6e957ef4bc900dccb9e4220117",
+			"size": 56324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

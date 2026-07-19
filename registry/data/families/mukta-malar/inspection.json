@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 533,
+				"sha256": "db57fdeef8105bf59b679f3e2a983ec9d268279e0081da1b897a8964fece7b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamalar/MuktaMalar-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 533,
+				"sha256": "db57fdeef8105bf59b679f3e2a983ec9d268279e0081da1b897a8964fece7b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamalar/MuktaMalar-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 533,
+				"sha256": "db57fdeef8105bf59b679f3e2a983ec9d268279e0081da1b897a8964fece7b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamalar/MuktaMalar-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 533,
+				"sha256": "db57fdeef8105bf59b679f3e2a983ec9d268279e0081da1b897a8964fece7b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamalar/MuktaMalar-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 533,
+				"sha256": "db57fdeef8105bf59b679f3e2a983ec9d268279e0081da1b897a8964fece7b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamalar/MuktaMalar-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 533,
+				"sha256": "db57fdeef8105bf59b679f3e2a983ec9d268279e0081da1b897a8964fece7b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamalar/MuktaMalar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 533,
+				"sha256": "db57fdeef8105bf59b679f3e2a983ec9d268279e0081da1b897a8964fece7b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamalar/MuktaMalar-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

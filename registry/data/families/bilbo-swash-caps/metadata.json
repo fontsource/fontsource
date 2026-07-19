@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "TypeSETit",
+	"family": "Bilbo Swash Caps",
+	"id": "bilbo-swash-caps",
+	"license": {
+		"attribution": "Copyright (c) 2011 TypeSETit, LLC (typesetit@att.net), with Reserved Font Names \"Bilbo\" and \"Bilbo Swash Caps\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bilboswashcaps",
+		"revision": "c697535f4d7958bf9b5d34941d28d1992ca0c0ea",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bilboswashcaps",
+		"revision": "ee601350e786d859e659a17d05934e1a62cb4785"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bilboswashcaps/BilboSwashCaps-Regular.ttf",
+			"sha256": "36e0a6d9f33c57797340a65c8789272247f8d2b0b9521a92112eaa13c77a4354",
+			"size": 58072,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 267,
+				"sha256": "ef7389d3e9e98d10d9af48b18f02d75a15e910198d1211e41b64a879aa7d0c68"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/sharetechmono/ShareTechMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,159 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-10-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Production Type",
+	"family": "Spectral",
+	"id": "spectral",
+	"license": {
+		"attribution": "Copyright 2017 The Spectral Project Authors (https://github.com/productiontype/Spectral)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/spectral",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/productiontype/Spectral",
+		"revision": "dbc06862d7030eedb1b01b60cdad8f6102f4ddfa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/spectral/Spectral-Bold.ttf",
+			"sha256": "70ddb1ec6ae3b0b8d0c79231f670de786978f19baeba2130757526e407aebf9b",
+			"size": 273220,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-BoldItalic.ttf",
+			"sha256": "709fa4f2da9be216fd52125db2d6caa4f90150f48de1a453c9ecf91117ab49b6",
+			"size": 284356,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-ExtraBold.ttf",
+			"sha256": "af3f8513db8d047ebecb1682b5e04dfc12ec7e6b51b71654d4d348f12a5e6b5a",
+			"size": 260528,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-ExtraBoldItalic.ttf",
+			"sha256": "680ba360e376759b54f33154a89e3c75842d4cf8faa498a717c3e1a65a93305a",
+			"size": 273528,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-ExtraLight.ttf",
+			"sha256": "5d852db897fd7ad5ce640a6e88f1cd70eac75777c541d02d86749af8d4797ff1",
+			"size": 244808,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-ExtraLightItalic.ttf",
+			"sha256": "492e823b5d8d67d2f18fe06938d84e8decee24b1790d4c6ebdade3cbd1b83b44",
+			"size": 267536,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-Italic.ttf",
+			"sha256": "7ec97244259db4008c4b1224c7914e5371c797c0044af9d85c2d761ba0e5f787",
+			"size": 270468,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-Light.ttf",
+			"sha256": "a2a530303d326473b69ab7863b879e9203ec747e51d5fa7c7b19e0e975e00740",
+			"size": 269312,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-LightItalic.ttf",
+			"sha256": "4cb424aeb1d6b822e9ce6213789afeabd403c6765fc7339e184c27ae4d6a6b01",
+			"size": 282836,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-Medium.ttf",
+			"sha256": "f385bc588599c879112272711d4acecc126674009d747a27284f59e93a240e83",
+			"size": 272920,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-MediumItalic.ttf",
+			"sha256": "82388c41e76d6417ce9947418fa2cda1ed99f24d4ff295b2f05572178127663f",
+			"size": 284312,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-Regular.ttf",
+			"sha256": "c89021dc20720c8d0dcf40b0b2f6e00c13665fa8041717f581396f51b8c78f5d",
+			"size": 261088,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-SemiBold.ttf",
+			"sha256": "5f86915a744832ecf6e4a17ab04bea091b9fa992ef5164ff65ae34c1da2fe94b",
+			"size": 273068,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/spectral/Spectral-SemiBoldItalic.ttf",
+			"sha256": "46ad3a9f93b98dc2dbdeee265e76eb846c5be912aa8f09f42e3692706c6f563b",
+			"size": 284032,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 408,
+				"sha256": "9a0986b08e4fe2138fcb31a48e0bad4c247c3fc8be6cab386e83b786006a74ec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005",
+			"outline": "glyf",
+			"path": "ofl/notosanssundanese/NotoSansSundanese[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

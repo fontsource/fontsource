@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Miguel Hernandez",
+	"family": "Erica One",
+	"id": "erica-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com), with Reserved Font Names \"Erica\" \"Erica One\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ericaone",
+		"revision": "d84ed1af7dc76b13e8b8e83c3e9946f93aaa0095",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/ericaone",
+		"revision": "bde7cb1ee528f936a9bae89a746742983531d9f8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ericaone/EricaOne-Regular.ttf",
+			"sha256": "4b135f75996959d65d425b7175f0944243fabe8e9d62238555ad9c9b19a17d93",
+			"size": 26244,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

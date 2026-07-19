@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-11-02",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Khaled Hosny, Santiago Orozco",
+	"family": "Reem Kufi Fun",
+	"id": "reem-kufi-fun",
+	"license": {
+		"attribution": "Copyright 2015-2022 The Reem Kufi Fun Project Authors (https://github.com/aliftype/reem-kufi).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/reemkufifun",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aliftype/reem-kufi",
+		"revision": "359f25e571c7d56d6ef48c844c2f641a7a124a4d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/reemkufifun/ReemKufiFun[wght].ttf",
+			"sha256": "d1342cebd08afc04a51bf9a28e5ac6a8299c5716c47df9b7ea27f94653aaa40f",
+			"size": 176328,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-09-16",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Thomas Jockin, Nadine Chahine, Bonnie Shaver-Troup, Santiago Orozco, Héctor Gómez",
+	"family": "Readex Pro",
+	"id": "readex-pro",
+	"license": {
+		"attribution": "Copyright 2019 The Readex Pro Project Authors (https://github.com/ThomasJockin/readexpro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/readexpro",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ThomasJockin/readexpro",
+		"revision": "563dfbb36ae45e52ec50829b016ce724ac2fca70"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/readexpro/ReadexPro[HEXP,wght].ttf",
+			"sha256": "268bba7e1e8f3b14d798b3fb0e40ebaa3fc39308c9ac0020e2faf6df181cc30e",
+			"size": 278544,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

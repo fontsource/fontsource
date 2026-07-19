@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-02-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Neapolitan",
+	"family": "Seaweed Script",
+	"id": "seaweed-script",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Font Diner, Inc DBA Neapolitan (diner@fontdiner.com) with Reseved Font Name \"Seaweed Script\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/seaweedscript",
+		"revision": "77c841d711afb39be84e63bf284b49fe345b29d6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/seaweedscript/SeaweedScript-Regular.ttf",
+			"sha256": "48a7f01ce3f307b532c9c5f8582a8ed87883389933b311b8e3704e8798ba4bc7",
+			"size": 117072,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

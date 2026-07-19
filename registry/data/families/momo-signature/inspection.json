@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 476,
+				"sha256": "4fe5e424741ca35b7d32053eedebee8a8cf1147a422fc2faf7ad6718736deae9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/momosignature/MomoSignature-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

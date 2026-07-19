@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 10500,
+				"sha256": "f7e43a55b94c33a897ff02159f0c91be46dfb5f8e92592f6aff51c6f809164d4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.610",
+			"outline": "glyf",
+			"path": "ofl/bpmfiansui/BpmfIansui-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Open Window",
+	"family": "Miniver",
+	"id": "miniver",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Open Window (dathanboardman@gmail.com) with Reseved Font Name \"Miniver\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/miniver",
+		"revision": "4f80bde60d8c20ff27e25050d8436f36d701ef9d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/miniver/Miniver-Regular.ttf",
+			"sha256": "0637ff653a9113189d196434f2055388638083dde397964b83aa2c1800d5b5b7",
+			"size": 45824,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

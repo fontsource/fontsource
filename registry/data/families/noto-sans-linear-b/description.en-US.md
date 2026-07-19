@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Linear B is an unmodulated (“sans serif”) design for texts in the historical European _Linear B_ script. It has 273 glyphs.

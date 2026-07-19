@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "4b0156b3ba91c1fd52bf1f926728923a9c27069e06b51afbf9ad11a041c17589"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 13 -D telu -f latn -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindguntur/HindGuntur-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "4b0156b3ba91c1fd52bf1f926728923a9c27069e06b51afbf9ad11a041c17589"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 13 -D telu -f latn -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindguntur/HindGuntur-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "4b0156b3ba91c1fd52bf1f926728923a9c27069e06b51afbf9ad11a041c17589"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 13 -D telu -f latn -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindguntur/HindGuntur-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "4b0156b3ba91c1fd52bf1f926728923a9c27069e06b51afbf9ad11a041c17589"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 13 -D telu -f latn -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindguntur/HindGuntur-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "4b0156b3ba91c1fd52bf1f926728923a9c27069e06b51afbf9ad11a041c17589"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 13 -D telu -f latn -a qsq -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindguntur/HindGuntur-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

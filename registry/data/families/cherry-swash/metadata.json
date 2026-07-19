@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-10-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nataliya Kasatkina",
+	"family": "Cherry Swash",
+	"id": "cherry-swash",
+	"license": {
+		"attribution": "Copyright (c) 2012, Natalia Kasatkina (kasatkinanataliya@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cherryswash",
+		"revision": "516a71e52ea2e8f7fbff3f397cf293d22364b137",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/cherryswash",
+		"revision": "f1c0f2dbc3f64ef4f85e54544626e6d629599e4c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cherryswash/CherrySwash-Bold.ttf",
+			"sha256": "5cca323c29a80e19400a06be7c0c46e19db8ff2966cbbff7e05eac33354124ba",
+			"size": 30052,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cherryswash/CherrySwash-Regular.ttf",
+			"sha256": "ce98243d428163be0d59fc02d3133507cd5afe78c501aa320c09c5deaa78a4a3",
+			"size": 30616,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

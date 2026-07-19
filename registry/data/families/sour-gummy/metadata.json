@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-09-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Stefie Justprince",
+	"family": "Sour Gummy",
+	"id": "sour-gummy",
+	"license": {
+		"attribution": "Copyright 2018 The Sour Gummy Project Authors (https://github.com/eifetx/Sour-Gummy-Fonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sourgummy",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/eifetx/Sour-Gummy-Fonts",
+		"revision": "36ed784f767ea3c7a56d8141ab187e49d3e9bb8d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sourgummy/SourGummy-Italic[wdth,wght].ttf",
+			"sha256": "04bad20f657e0938b4cafd5bb7e7a8801a3ab10506d53770e9d32a8a5cafbb82",
+			"size": 140216,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sourgummy/SourGummy[wdth,wght].ttf",
+			"sha256": "a9a710e4a90795f006b83fcf2ff3e036fc851d32c3c65762228df3c825675fd6",
+			"size": 131024,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

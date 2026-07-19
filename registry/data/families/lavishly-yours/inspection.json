@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "5af8b3d8de6203b2aa73d6f7f8da15ae8e4ff0d7f20d4710c38bcc47ebdb9809"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/lavishlyyours/LavishlyYours-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1024,
+				"sha256": "a5c63a915261c08b668dc6da384e4760419a6056989eee18745a093740285f54"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/alatsi/Alatsi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

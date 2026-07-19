@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida, Brenda Gallo",
+	"family": "Raleway Dots",
+	"id": "raleway-dots",
+	"license": {
+		"attribution": "Copyright (c) 2010 - 2012, Matt McInerney (matt@pixelspread.com), Pablo Impallari(impallari@gmail.com), Rodrigo Fuenzalida (hello@rfuenzalida.com) and Brenda Gallo(gbrenda1987@gmail.com), with Reserved Font Name \"Raleway\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ralewaydots",
+		"revision": "1d4f61638adc3db78eced6d437e6ee72255ef590",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/ralewaydots",
+		"revision": "c845d1a8e75014ad17dbbf2633119226bed462d8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ralewaydots/RalewayDots-Regular.ttf",
+			"sha256": "a35582c11e29d5d40bf5ed263f4be18c42264376b51b6b8a7a1b79252b853e09",
+			"size": 464888,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

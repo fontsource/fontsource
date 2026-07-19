@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 251,
+				"sha256": "102c7b526b0d0ed42fd137f21b508c64ef5ed719854bca11ea2e3b4a122b86c1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/passeroone/PasseroOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

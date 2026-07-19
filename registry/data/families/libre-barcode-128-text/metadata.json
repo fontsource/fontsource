@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2017-07-31",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Lasse Fister",
+	"family": "Libre Barcode 128 Text",
+	"id": "libre-barcode-128-text",
+	"license": {
+		"attribution": "Copyright 2017-2020 The Libre Barcode Project Authors (https://github.com/graphicore/librebarcode)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/librebarcode128text",
+		"revision": "90f782e99e568864870fda8f98c269bb1fb40a8a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/graphicore/librebarcode",
+		"revision": "f9864c42b2c467f255659c8851c124e4cd56c67a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/librebarcode128text/LibreBarcode128Text-Regular.ttf",
+			"sha256": "0e8a268749e77c8bf1644a19cdd65e83af6486bcadc06225e486cdf569d58f58",
+			"size": 48056,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

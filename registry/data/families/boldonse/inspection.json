@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 399,
+				"sha256": "f91ba57f9822f7caca1d8b20c07f88a2c16fe7b13f9dc6cfed69987a1cce2b63"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/boldonse/Boldonse-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

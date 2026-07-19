@@ -1,0 +1,43 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-03-29",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Great Vibes",
+	"id": "great-vibes",
+	"license": {
+		"attribution": "Copyright 2010 The Great Vibes Pro Project Authors (https://github.com/googlefonts/great-vibes)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/greatvibes",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/great-vibes",
+		"revision": "f95eb967a3414e5accd65f4fa653c47f607654fa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/greatvibes/GreatVibes-Regular.ttf",
+			"sha256": "8d509802186f1b51572531ecf313e8098f9a5bfdfaca93f0c9b34467f9982d15",
+			"size": 457588,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

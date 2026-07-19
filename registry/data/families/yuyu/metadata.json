@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2026-06-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Julia García López",
+	"family": "Yuyu",
+	"id": "yuyu",
+	"license": {
+		"attribution": "Copyright 2026 The Yuyu Font Project Authors (https://github.com/JuliaGarciaLopez/Yuyu-Font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yuyu",
+		"revision": "3a49e53a5f41b206ef578654425d241c3ccbb03c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JuliaGarciaLopez/Yuyu-Font",
+		"revision": "38e2939cbadbd7c8deddcbe8e43437972c1fbfe4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yuyu/Yuyu-Regular.ttf",
+			"sha256": "5ef97303f294fb1a06ceb3d4855f5fc85c772f22746a977732104349c32834a2",
+			"size": 55884,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-05"
+}

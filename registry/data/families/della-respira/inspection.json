@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 293,
+				"sha256": "6add4202ae23fe36cb372930ee81b312d8ae5b969f4647b0d724fd3b6e564ce3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.201",
+			"outline": "glyf",
+			"path": "ofl/dellarespira/DellaRespira-Regular.ttf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

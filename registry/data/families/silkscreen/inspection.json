@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 226,
+				"sha256": "a3107bc800371842148677d1f23a4cfecdc83da34ea389fd3a94f7418be2c3bd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/silkscreen/Silkscreen-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 226,
+				"sha256": "a3107bc800371842148677d1f23a4cfecdc83da34ea389fd3a94f7418be2c3bd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/silkscreen/Silkscreen-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

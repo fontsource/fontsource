@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-11-27",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "TypeTogether, Veronika Burian, José Scaglione",
+	"displayName": "Playwrite Deutschland Vereinfachte Ausgangsschrift Guides",
+	"family": "Playwrite DE VA Guides",
+	"id": "playwrite-de-va-guides",
+	"license": {
+		"attribution": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playwritedevaguides",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playwrite",
+		"revision": "02e4e15767f5b6c2109413429fc51879b9507ab4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playwritedevaguides/PlaywriteDEVAGuides-Regular.ttf",
+			"sha256": "863ae1ed69e58f9fdd25a21efaf219b01a82ab1417b817664311bf4f5a1ca9cf",
+			"size": 375936,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

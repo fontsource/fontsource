@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 684,
+				"sha256": "b5bf50475fac91636b8e3e6bdea449b7e2c20b41e888d6df3e974b3a1d5661ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "ofl/coiny/Coiny-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

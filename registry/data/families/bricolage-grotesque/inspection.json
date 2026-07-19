@@ -1,0 +1,40 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 96,
+					"max": 96,
+					"min": 12,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 800,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 527,
+				"sha256": "4453c7519801c5a5098b35ff0acbc79d7cbfe052b6023db512fcca6ed8ca1ed1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;gftools[0.9.33.dev8+g029e19f]",
+			"outline": "glyf",
+			"path": "ofl/bricolagegrotesque/BricolageGrotesque[opsz,wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 800,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

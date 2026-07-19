@@ -1,0 +1,43 @@
+{
+	"id": "nyiakeng-puachue-hmong",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1E100",
+			"1E12C"
+		],
+		[
+			"1E130",
+			"1E13D"
+		],
+		[
+			"1E140",
+			"1E149"
+		],
+		[
+			"1E14E",
+			"1E14F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/nyiakeng-puachue-hmong_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "e5b152886aad673e6c0c936fd30c15fc057a77a2657108f1400bff7acd57319f",
+		"upstream": "namFiles"
+	}
+}

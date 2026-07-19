@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"warang-citi"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Warang Citi",
+	"id": "noto-sans-warang-citi",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/warang-citi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanswarangciti",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/warang-citi",
+		"revision": "4e2380582fe87044e718328edaf1eaa38e108fc4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanswarangciti/NotoSansWarangCiti-Regular.ttf",
+			"sha256": "f4c6ec5458b85e1d7d9452fb404bf0c4762e98ac7eea95aa6a7e5798cb6ffdba",
+			"size": 86880,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

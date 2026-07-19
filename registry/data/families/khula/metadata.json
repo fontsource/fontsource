@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-01-28",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Erin McLaughlin",
+	"family": "Khula",
+	"id": "khula",
+	"license": {
+		"attribution": "Copyright (c) 2014, Erin McLaughlin (hello@erinmclaughlin.com). Digitized data copyright 2010, Google Corporation.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/khula",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/erinmclaughlin/Khula",
+		"revision": "1389c0184856d690ea489f86e84c546e4473722d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/khula/Khula-Bold.ttf",
+			"sha256": "923cafe77cf48066e151f91358800bd9e036b1c417b9fcc326da39d281b87fe7",
+			"size": 155640,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/khula/Khula-ExtraBold.ttf",
+			"sha256": "ba71d616a428488071037fba6fa660396f0a189fc545cf60b7a0de709075947f",
+			"size": 159768,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/khula/Khula-Light.ttf",
+			"sha256": "805bec764710d2e18590c3b783d0ba241e76368a718107ede318f84b940e5075",
+			"size": 165864,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/khula/Khula-Regular.ttf",
+			"sha256": "825477d3c995997ebd41245fc4177bf1681bfd6546674e0d67a29a094c78644f",
+			"size": 158356,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/khula/Khula-SemiBold.ttf",
+			"sha256": "b12c4895da1a0e7eccc18c844baa1054fd51eab70d3a65786e7c8437fea51986",
+			"size": 154444,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

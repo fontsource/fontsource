@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 270,
+				"sha256": "b31fa89e954da199a079a7bee37ea6f167e7a1a3cdae0707ccd2e41243ef1df9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/gudea/Gudea-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 291,
+				"sha256": "aa77375d4935b3b2622d56ceb714d29f2482f2977c7ddd2a5f77c7bd0dc1e020"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/gudea/Gudea-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 270,
+				"sha256": "b31fa89e954da199a079a7bee37ea6f167e7a1a3cdae0707ccd2e41243ef1df9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/gudea/Gudea-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

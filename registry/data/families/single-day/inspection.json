@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11465,
+				"sha256": "d79799da61891302033d06a71e7e164e613f80cb3a316bfd017033d83ecba5d7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/singleday/SingleDay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

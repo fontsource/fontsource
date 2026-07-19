@@ -1,0 +1,43 @@
+{
+	"id": "indic-siyaq-numbers",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"627",
+			"627"
+		],
+		[
+			"660",
+			"669"
+		],
+		[
+			"6F0",
+			"6F9"
+		],
+		[
+			"1EC71",
+			"1ECB4"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/indic-siyaq-numbers_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "a89967571460224317d63d1f548cf24cdd2827e4b66a98052936ae33aac7eb7d",
+		"upstream": "namFiles"
+	}
+}

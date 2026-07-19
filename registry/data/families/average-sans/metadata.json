@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Average Sans",
+	"id": "average-sans",
+	"license": {
+		"attribution": "Copyright (c) 2012, Eduardo Tunni (http://www.tipo.net.ar), with Reserved Font Name 'Average'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/averagesans",
+		"revision": "87e74fb4b7937adee6de4f8f868447a3ae751586",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/averagesans",
+		"revision": "25392b948053363b34308e1f95e29c5401997b00"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/averagesans/AverageSans-Regular.ttf",
+			"sha256": "f978bb0eb5ad93b02f3a8e4ef0ed525a1192b4076e8a8d0bb37b2546a297762e",
+			"size": 43824,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

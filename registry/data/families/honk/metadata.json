@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2023-11-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Ek Type",
+	"family": "Honk",
+	"id": "honk",
+	"license": {
+		"attribution": "Copyright 2023 The Honk Project Authors (https://github.com/EkType/Honk)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/honk",
+		"revision": "dee2f12eed6aaf3c44eb1030d960c7bb037b650a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Honk",
+		"revision": "964739fca4b7f5485b21525df1e803fffbe6da99"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/honk/Honk[MORF,SHLN].ttf",
+			"sha256": "7a6c743bb5a8164424d23024efb280bab930abb2bca0f2e9ca2facf6b11d212b",
+			"size": 3820116,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 413,
+				"sha256": "4175d014d04f2a7b413c6b2125b5d1a8c23050255d4d9f59d84be08b5dba1129"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/titanone/TitanOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

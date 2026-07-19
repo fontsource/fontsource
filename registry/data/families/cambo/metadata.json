@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "HT Fonts, Carolina Giovagnoli, Andres Torresi",
+	"family": "Cambo",
+	"id": "cambo",
+	"license": {
+		"attribution": "Copyright (c) 2011, Carolina Giovagnoli (carolina.giovagnoli@htfonts.com), Copyright (c) 2011, Andres Torresi (andres.torresi@htfonts.com), with Reserved Font Name Cambo.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cambo",
+		"revision": "32112919e1c4bc4ad1563ee3babd397e2ee3d553",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/cambo",
+		"revision": "a2c35dbad5014c97b1ca438b895d95c7411e0e04"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cambo/Cambo-Regular.ttf",
+			"sha256": "526c80a8d006783e899537314972ac43449b520f53b96befc17c47175e9b2e2a",
+			"size": 29104,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

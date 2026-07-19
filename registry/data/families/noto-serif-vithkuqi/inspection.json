@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 402,
+				"sha256": "467fd0c7e78f374e25e13073a2d6b3878c7ad3e8af9e4666f7a0fd2c7dde0bda"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/notoserifvithkuqi/NotoSerifVithkuqi[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

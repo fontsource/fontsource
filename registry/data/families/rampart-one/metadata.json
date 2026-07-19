@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2021-06-08",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontworks Inc.",
+	"family": "Rampart One",
+	"id": "rampart-one",
+	"license": {
+		"attribution": "Copyright 2020 The Rampart Project Authors (https://github.com/fontworks-fonts/Rampart/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rampartone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontworks-fonts/Rampart",
+		"revision": "3f5fe9d544c290f6fc7c2176976ee7fe6ce14fbb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rampartone/RampartOne-Regular.ttf",
+			"sha256": "a4c60ee835175fa147eb483fac0dd8ff9007c37884ef77af86b0a868fa554d49",
+			"size": 3722352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

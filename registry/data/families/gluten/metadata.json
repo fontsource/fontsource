@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2021-09-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tyler Finck, ETC",
+	"family": "Gluten",
+	"id": "gluten",
+	"license": {
+		"attribution": "Copyright 2020 The Gluten Project Authors (https://github.com/Etcetera-Type-Co/Gluten)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gluten",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Etcetera-Type-Co/Gluten",
+		"revision": "c8525e6a8d31dde1795485cc66f622beed3e5e80"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gluten/Gluten[slnt,wght].ttf",
+			"sha256": "cb4b01e4754e36615125e7cb16fe1ec8255d1db02d0b236d7c992438dc1a83e4",
+			"size": 349672,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

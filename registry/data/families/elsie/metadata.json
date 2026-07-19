@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Alejandro Inler",
+	"family": "Elsie",
+	"id": "elsie",
+	"license": {
+		"attribution": "Copyright (c) 2010-2012, Alejandro Inler (alejandroinler@gmail.com), with Reserved Font Name 'Elsie'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/elsie",
+		"revision": "c3ed201dcca38e31ded3fa68a0ff958ba4fd67bb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/elsie",
+		"revision": "9734e9ff1331292fc07ec198d4e5b35216fdd425"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/elsie/Elsie-Black.ttf",
+			"sha256": "69339fcd10a5d5c12b72cf5127b44be5a0147d2531baf494004c7adad4af6338",
+			"size": 42216,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/elsie/Elsie-Regular.ttf",
+			"sha256": "9b3ff5056866667fb29f60beb4522994afdd4d5f580626c6fd9e6f5bf49f1ea5",
+			"size": 38936,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

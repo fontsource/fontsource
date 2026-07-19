@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"buhid",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Buhid",
+	"id": "noto-sans-buhid",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/buhid)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansbuhid",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/buhid",
+		"revision": "f678808af467ed38aa5a8d29a3f0925c14b1f570"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansbuhid/NotoSansBuhid-Regular.ttf",
+			"sha256": "70408dbcf0da33d12d3b582305057a63a3ea132b4bf313027834e5b9b6a7d886",
+			"size": 30844,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

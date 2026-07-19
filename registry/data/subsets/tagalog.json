@@ -1,0 +1,47 @@
+{
+	"id": "tagalog",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1700",
+			"1715"
+		],
+		[
+			"171F",
+			"171F"
+		],
+		[
+			"1735",
+			"1736"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/tagalog_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "e139a89fc25901eeada737c6659f9a82792d6701f813b7bb373eaf4c7a0e6f90",
+		"upstream": "namFiles"
+	}
+}

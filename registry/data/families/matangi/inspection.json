@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 466,
+				"sha256": "f6ce4ec4f1761e2e237cf49c47a923facecf1f326f6d8b73b417badd3e82c3e0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.004",
+			"outline": "glyf",
+			"path": "ofl/matangi/Matangi[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

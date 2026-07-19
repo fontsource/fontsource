@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 977,
+				"sha256": "51be7078e75560fd01424bd8da92b85f8630b65b030f064d4cb1f822bb72bf4a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.200",
+			"outline": "glyf",
+			"path": "ofl/monda/Monda[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

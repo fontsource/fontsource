@@ -1,0 +1,47 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-18",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Barry Schwartz",
+	"family": "OFL Sorts Mill Goudy TT",
+	"id": "ofl-sorts-mill-goudy-tt",
+	"license": {
+		"attribution": "Copyright (c) 2009 Barry Schwartz (http://crudfactory.com chemoelectric@chemoelectric.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oflsortsmillgoudytt",
+		"revision": "200ffbc4437b4b4c35cf55fb0a29411d38ad22a5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/sorts-mill-goudy",
+		"revision": "06072890c7b05f274215a24f17449655ccb2c8af"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oflsortsmillgoudytt/OFLGoudyStMTT-Italic.ttf",
+			"sha256": "7cb1647c646e79fb7f4295181fc176e5c5b248f1967ed4bb9f48e4a5c57c462b",
+			"size": 161228,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/oflsortsmillgoudytt/OFLGoudyStMTT.ttf",
+			"sha256": "1f1687e57369887ee785be79138b2b98d36dc5f10641e936bbc91643bf67bb7a",
+			"size": 173520,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

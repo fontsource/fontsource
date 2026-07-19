@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"cypriot",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Cypriot",
+	"id": "noto-sans-cypriot",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/cypriot)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanscypriot",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/cypriot",
+		"revision": "4f81293d17d7b3c9c67b9ab2c335905c75ad3f1d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanscypriot/NotoSansCypriot-Regular.ttf",
+			"sha256": "80590aed2c4223ee0ca53fda21281236529dcc637451d016248559c83880d14d",
+			"size": 77756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

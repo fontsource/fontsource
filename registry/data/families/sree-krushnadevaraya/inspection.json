@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "29f969d42045e118615d9179dddd43e4b010d03341f1c690f558c9a6af6197cd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.5; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/sreekrushnadevaraya/SreeKrushnadevaraya-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

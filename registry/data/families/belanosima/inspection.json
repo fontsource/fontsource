@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 266,
+				"sha256": "09a2c3a51614758fb6ddb3ba991ee4558cb26460c83603658c82bafae4a0fcfb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/belanosima/Belanosima-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 266,
+				"sha256": "09a2c3a51614758fb6ddb3ba991ee4558cb26460c83603658c82bafae4a0fcfb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/belanosima/Belanosima-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 266,
+				"sha256": "09a2c3a51614758fb6ddb3ba991ee4558cb26460c83603658c82bafae4a0fcfb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/belanosima/Belanosima-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

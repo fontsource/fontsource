@@ -1,0 +1,57 @@
+{
+	"category": "monospace",
+	"dateAdded": "2024-11-21",
+	"declaredSubsets": [
+		"adlam",
+		"canadian-aboriginal",
+		"cherokee",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"old-permic",
+		"symbols",
+		"symbols2",
+		"syriac",
+		"vietnamese"
+	],
+	"designer": "Google, Universal Thirst",
+	"family": "Google Sans Code",
+	"id": "google-sans-code",
+	"license": {
+		"attribution": "Copyright 2025 The Google Sans Code Project Authors (github.com/googlefonts/googlesans-code)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/googlesanscode",
+		"revision": "9e108e1439daa51f8dddeb8834e9617816b50c01",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlesans-code",
+		"revision": "edcd56e39fb7e98d6f1b697e187c144cef2fd994"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/googlesanscode/GoogleSansCode-Italic[wght].ttf",
+			"sha256": "bdf116292f27aca16e2aefb5534042a25f244d3a9187a521ce97fc2117a4a844",
+			"size": 132968,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/googlesanscode/GoogleSansCode[wght].ttf",
+			"sha256": "c9649573afcd966f61096b1e9c3c3115e7b54315ca2adf9839c6f8b17d5f8e1f",
+			"size": 126224,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

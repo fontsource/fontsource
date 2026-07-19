@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-06-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "USWDS, Dan Williams, Pablo Impallari, Rodrigo Fuenzalida",
+	"family": "Public Sans",
+	"id": "public-sans",
+	"license": {
+		"attribution": "Copyright 2015 The Public Sans Project Authors (https://github.com/uswds/public-sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/publicsans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/uswds/public-sans",
+		"revision": "c7923167a592d941646f99fb7b5fba17aa7d69e1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/publicsans/PublicSans-Italic[wght].ttf",
+			"sha256": "6ce292b05aa8c66bc644bedff834b4d0ddee9af75c55f98dcb28faa32a81056f",
+			"size": 107940,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/publicsans/PublicSans[wght].ttf",
+			"sha256": "d75a7dc1a27eb9e336d5b33f55489d2ecb5621bf694d5c43b2415bce2ca830a8",
+			"size": 103316,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-07-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vladimir Nikolic",
+	"family": "New Amsterdam",
+	"id": "new-amsterdam",
+	"license": {
+		"attribution": "Copyright 2024 The New Amsterdam Project Authors (https://github.com/vladimirnikolic1/NewAmsterdam)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/newamsterdam",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vladimirnikolic1/NewAmsterdam",
+		"revision": "7a82ccc566f424481f09cb1ee0b1f43e42cf59fa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/newamsterdam/NewAmsterdam-Regular.ttf",
+			"sha256": "f52d8430042c0c09fe3080eb9a7d8d3f8f5f7f18879474d3837ff7a43c07e219",
+			"size": 74324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

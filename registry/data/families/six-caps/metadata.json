@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-02-16",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Six Caps",
+	"id": "six-caps",
+	"license": {
+		"attribution": "Copyright (c) 2010 by vernon adams (vern@newtypography.co.uk) with Reserved Font Names 'Six Caps'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sixcaps",
+		"revision": "18ed13c956f09a07f652e209508aea021a5e32bf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sixcaps/SixCaps.ttf",
+			"sha256": "7b54a46671722fb670647c9c3951e6e618b6a9d876fc5d9ae34dfd311628ae5a",
+			"size": 46388,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

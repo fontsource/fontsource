@@ -1,0 +1,47 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Gustavo Dipre",
+	"family": "Gorditas",
+	"id": "gorditas",
+	"license": {
+		"attribution": "Copyright (c) 2011, Gustavo Dipre (gbrenda1987@gmail.com), with Reserved Font Name \"Gorditas\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gorditas",
+		"revision": "6291aad8a3d10ee602dcd5340e1469a0217eab7a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/gorditas",
+		"revision": "2212c0647e87c13121e408ee446dffe924792ac1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gorditas/Gorditas-Bold.ttf",
+			"sha256": "26b8259c2f61ef10dfa2a2fe1d1e113dfb241d6f780ce15878d005f86c1465c5",
+			"size": 109800,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gorditas/Gorditas-Regular.ttf",
+			"sha256": "95543aaa4c3e1dc22b220b29bcbd8618ff744d904ed4c23179ab5a911d554ee0",
+			"size": 110336,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

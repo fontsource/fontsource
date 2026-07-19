@@ -1,0 +1,20 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 515,
+				"sha256": "579a1af013d4f729a40ee716051bddb85f1a6234c97a96b3b06025b69bfaf5aa"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL"
+			],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoznamennymusicalnotation/NotoZnamennyMusicalNotation-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

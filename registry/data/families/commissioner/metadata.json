@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-07-20",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Kostas Bartsokas",
+	"family": "Commissioner",
+	"id": "commissioner",
+	"license": {
+		"attribution": "Copyright 2019 The Commissioner Project Authors (github.com/kosbarts/Commissioner)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/commissioner",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/m4rc1e/Commissioner",
+		"revision": "7f7dc8e9ed7ffeb3f7a91261f2b9549436ab3d02"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/commissioner/Commissioner[FLAR,VOLM,slnt,wght].ttf",
+			"sha256": "db01279a6eb8676ee62675a4d7e5edbfe5f08fbc109358e2f49760b70c0447d3",
+			"size": 742232,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

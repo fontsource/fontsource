@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-11-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ishtār van Looy",
+	"family": "Amarna",
+	"id": "amarna",
+	"license": {
+		"attribution": "Copyright 2025 The Amarna Project Authors (https://github.com/ijvanl/Amarna)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/amarna",
+		"revision": "a77f2171e3d0badab20ef9316b6b133c67b476d6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ijvanl/Amarna",
+		"revision": "22819bafba78c7f3e4644b6f68683773180a5965"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/amarna/Amarna-Italic[wght].ttf",
+			"sha256": "b5ef66a2439aec16199373c0feef9f8261f5800eb0514a556576c112309ce3c7",
+			"size": 68372,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/amarna/Amarna[wght].ttf",
+			"sha256": "257f905b7a84302726995daef4aac1bb62c94171b8e29803d2eeb43c3d105bd4",
+			"size": 63768,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

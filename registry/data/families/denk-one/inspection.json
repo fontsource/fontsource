@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 733,
+				"sha256": "a6420936d6cbf254ddb5b6bde49311d915efcf381348617f89e831dd73a3a711"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/denkone/DenkOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

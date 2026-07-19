@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 434,
+				"sha256": "33c3e567d6dbab409251dc0054d17fa6a5de3a4bdfc2c272d0477d0838eefa25"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.007; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansnewa/NotoSansNewa-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

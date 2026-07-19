@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 242,
+				"sha256": "dd8114048f2c4e96ffa54fa5266c0f32be1842b024de79e9474626df718d0173"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/textmeone/TextMeOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2017-02-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Kevin Burke",
+	"family": "Pangolin",
+	"id": "pangolin",
+	"license": {
+		"attribution": "Copyright 2016 The Pangolin Project Authors (https://github.com/googlefonts/pangolin)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pangolin",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/pangolin",
+		"revision": "8257f00935ee0d1dba28c9e9142c85bcb357aae2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pangolin/Pangolin-Regular.ttf",
+			"sha256": "cf4f0a46704c7859d4943320fce6c6d06cc7dc450ef971c3676ef36f9f482299",
+			"size": 593408,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

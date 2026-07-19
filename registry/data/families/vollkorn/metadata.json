@@ -1,0 +1,52 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-09-08",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Friedrich Althausen",
+	"family": "Vollkorn",
+	"id": "vollkorn",
+	"license": {
+		"attribution": "Copyright 2018 The Vollkorn Project Authors (https://github.com/FAlthausen/Vollkorn-Typeface)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vollkorn",
+		"revision": "5081ec64046ff04e82233258ba3faad2545813dd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/FAlthausen/Vollkorn-Typeface",
+		"revision": "38ab7a896bd6b163ac7f834ec696d6c68e5dedd6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vollkorn/Vollkorn-Italic[wght].ttf",
+			"sha256": "cd947ae49b5d46e812d8d09434fbe8ec452286cd5557ef6a762a3562e2c8d300",
+			"size": 441264,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/vollkorn/Vollkorn[wght].ttf",
+			"sha256": "4ebef434f76f80286204840354a84db79a0dc3c87deeeb791e015b70b2ade49d",
+			"size": 577864,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

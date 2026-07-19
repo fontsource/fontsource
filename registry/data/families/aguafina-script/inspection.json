@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 232,
+				"sha256": "476faa69736279c2b888232300c7cb417059bbaaffd80062d25655aeb42f8a0c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/aguafinascript/AguafinaScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

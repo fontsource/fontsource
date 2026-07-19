@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 507,
+				"sha256": "aeb31f5a32fbbd80c066041ce7f0d69949f8aa3ccf16db29389eb1c9c96c0b7d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.2)",
+			"outline": "glyf",
+			"path": "ofl/patrickhandsc/PatrickHandSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

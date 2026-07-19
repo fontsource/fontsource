@@ -1,0 +1,85 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-09-03",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Sarpanch",
+	"id": "sarpanch",
+	"license": {
+		"attribution": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sarpanch",
+		"revision": "2ea9501e2993dad84e0fde9e3bd712a1a8336876",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/sarpanch",
+		"revision": "265ec8e95cad31046b4e01a553ebfbfcbeee1188"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sarpanch/Sarpanch-Black.ttf",
+			"sha256": "a1e1f81adb8404de57803bcd42096ec6702bf85bfb9524049f03f26cfcf4f771",
+			"size": 299512,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/sarpanch/Sarpanch-Bold.ttf",
+			"sha256": "c23f96c15d1d075b339bb7a5ede342591d1389924331464b98584865d88c8ebf",
+			"size": 291920,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sarpanch/Sarpanch-ExtraBold.ttf",
+			"sha256": "5ffb125033d467fafd79e8b13dc11fa88c3ce317840d6042afb56d3bb94dc32b",
+			"size": 299108,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/sarpanch/Sarpanch-Medium.ttf",
+			"sha256": "9f1ab5f1ba96df5a968c5f7f02bbb560b1af1bdd92bba8a33ef09384cc41b7be",
+			"size": 292468,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/sarpanch/Sarpanch-Regular.ttf",
+			"sha256": "2828287b0825b08c7b2cbba15779fd8b3b85c1907df8b9a987f08848cd6947f4",
+			"size": 290368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sarpanch/Sarpanch-SemiBold.ttf",
+			"sha256": "ced773bc2a7597ec1a5145ffce6dfacec076255204cf02f1303907a82c6102f2",
+			"size": 292920,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

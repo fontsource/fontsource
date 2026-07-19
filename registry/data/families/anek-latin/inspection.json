@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 500,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 683,
+				"sha256": "b949f84b1d12f3b84d1f16bb90ae2349984f968b2b3e0b27cc97cbe4896519e9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/aneklatin/AnekLatin[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

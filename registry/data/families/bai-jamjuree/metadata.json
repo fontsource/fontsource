@@ -1,0 +1,140 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-08-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Bai Jamjuree",
+	"id": "bai-jamjuree",
+	"license": {
+		"attribution": "Copyright 2018 Bai Jamjuree (https://github.com/cadsondemak/Bai-Jamjuree)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/baijamjuree",
+		"revision": "c936464ebf3a837c3f9e4164f81a707bf9231dcb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Bai-Jamjuree",
+		"revision": "e35cafdf694905d1ac0f27afc587c0e972be1260"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-Bold.ttf",
+			"sha256": "74784411504a295a5255e736e0a8389892af2c8a14e914d3e194329b59279223",
+			"size": 81840,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-BoldItalic.ttf",
+			"sha256": "afeefa87666738ec8689bb018dfc971a532c8fd9e8cba649d1be0176759d93c1",
+			"size": 87264,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-ExtraLight.ttf",
+			"sha256": "da49f9d1efd6f190ac444af02a25606c0cd38fc78d4fc1e459d8e0171b65af11",
+			"size": 81880,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-ExtraLightItalic.ttf",
+			"sha256": "4dfac6888704172ca10ee1986d6de89de820a29310b489282b879b69f0304128",
+			"size": 87492,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-Italic.ttf",
+			"sha256": "96e5f86f49442f60fd72cfc7728fde740870cccd3b8bc8a30e75dd8d9fc4b3b4",
+			"size": 87608,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-Light.ttf",
+			"sha256": "8db41d9372b7425e7c717ba7bd3883965bada642412bccc0545102f9024d6acb",
+			"size": 82208,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-LightItalic.ttf",
+			"sha256": "78e092d9c144538e575da8242888de255e02897eab0a86d75e4bc1e6b33d82fb",
+			"size": 87664,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-Medium.ttf",
+			"sha256": "95782f3c3e07866749fb28e1d1a356e383e8f2bdcc7b88d4e3a3fc546613137f",
+			"size": 82292,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-MediumItalic.ttf",
+			"sha256": "f37dc3ccb6597e851e7c23fed94e6ab0df9668fb5c5d166360e81c00dd84b0bc",
+			"size": 87888,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-Regular.ttf",
+			"sha256": "72b5a30cb78966823eb326c09b9004b0d03b4bddcdfcfd1b8cdbffb6c414547d",
+			"size": 82112,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-SemiBold.ttf",
+			"sha256": "daaa68bc721e893861f948f40542b9f1ea8496a3fe4250a0ffc86dab0aee8f3c",
+			"size": 82316,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/baijamjuree/BaiJamjuree-SemiBoldItalic.ttf",
+			"sha256": "cdc9cd3c2f168d1791871b72b5d62bfed7a5b87efec1bb0ba356f7fad6d623fd",
+			"size": 87760,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

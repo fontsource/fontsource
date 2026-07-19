@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "Nova Oval",
+	"id": "nova-oval",
+	"license": {
+		"attribution": "Copyright (c) 2011, wmk69 (wmk69@o2.pl) with Reserved Font Names 'NovaOval' and 'Nova Oval'. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/novaoval",
+		"revision": "92dc81a50f5978795f532f2023e050b0e9889433",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/novaoval/NovaOval.ttf",
+			"sha256": "2ae90689c17afdcb69fd45325fc65cd98ca8d537a63ed2c33eed9827ac6a16f6",
+			"size": 96656,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

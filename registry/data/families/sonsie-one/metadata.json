@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Riccardo De Franceschi",
+	"family": "Sonsie One",
+	"id": "sonsie-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Sonsie One\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sonsieone",
+		"revision": "56e9ff00d51898dbf9de24b396de10ae6607e932",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sonsieone/SonsieOne-Regular.ttf",
+			"sha256": "af927e627f54066390d6433631106defec38541255083ea36e4c4da27dad7525",
+			"size": 75992,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

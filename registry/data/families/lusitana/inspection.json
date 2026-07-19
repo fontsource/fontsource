@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 205,
+				"sha256": "d15f6b86d3b9a2dece0f3596628be5d9f77eb846481cc74d72b0fecef8010c14"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/lusitana/Lusitana-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 209,
+				"sha256": "900c11069367995a215056eda8bc36b813c07d7b98f7a25a5ec5bd971d1476b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/lusitana/Lusitana-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

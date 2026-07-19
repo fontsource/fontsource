@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 262,
+				"sha256": "95dc10922dad0e903c1712ca69b0579631bb8e4421f380b38ce21ae5e9e399a8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/bacasimeantique/BacasimeAntique-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

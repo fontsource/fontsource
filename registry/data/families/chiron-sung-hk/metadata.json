@@ -1,0 +1,54 @@
+{
+	"category": "serif",
+	"dateAdded": "2025-05-17",
+	"declaredSubsets": [
+		"chinese-hongkong",
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2",
+		"vietnamese"
+	],
+	"designer": "Tamcy",
+	"family": "Chiron Sung HK",
+	"id": "chiron-sung-hk",
+	"license": {
+		"attribution": "Copyright 2025 The Chiron Sung HK Project Authors (https://github.com/chiron-fonts/chiron-sung-hk)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chironsunghk",
+		"revision": "ebe67020b048d790a70bb69beb5a69fafda96121",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/chiron-fonts/chiron-sung-hk",
+		"revision": "65b752caf7698f9e773991fda674152c4bce21fb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chironsunghk/ChironSungHK-Italic[wght].ttf",
+			"sha256": "5e2434ba30eee3ed90fcf5aed4690964cdf9c7c0cf9bec61b1adb695f009e12f",
+			"size": 51926120,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/chironsunghk/ChironSungHK[wght].ttf",
+			"sha256": "c88d5db947f4aad3399105d2c1c808a64580ab65e8cb26e58bb81cd96843d130",
+			"size": 50652520,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

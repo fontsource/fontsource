@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sundanese"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Sundanese",
+	"id": "noto-sans-sundanese",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sundanese)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssundanese",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/sundanese",
+		"revision": "8069fb6e2b3a9bc2888748b4d3cc1dd5919728ee"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssundanese/NotoSansSundanese[wght].ttf",
+			"sha256": "28282be9cce5a96e6b5baa3cc48044187f65d610879ff29b1dc5fe5ea465df6a",
+			"size": 61796,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

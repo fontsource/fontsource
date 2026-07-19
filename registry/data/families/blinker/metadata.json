@@ -1,0 +1,102 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-06-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Juergen Huber",
+	"family": "Blinker",
+	"id": "blinker",
+	"license": {
+		"attribution": "Copyright 2019 the Blinker project authors (https://github.com/supertype-de/Blinker)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/blinker",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/supertype-de/Blinker",
+		"revision": "35cee57f389012c6a213acab504efb82f81c3b8f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/blinker/Blinker-Black.ttf",
+			"sha256": "9404723f3a1a2c600c2b1ca8ba3bdaa1fcc348cdcaa94301181f97e368cfff49",
+			"size": 80932,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/blinker/Blinker-Bold.ttf",
+			"sha256": "da7c3e42b502b5445263d492b5adcdff01e656d87beddf8cc5bae5657898664a",
+			"size": 75824,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/blinker/Blinker-ExtraBold.ttf",
+			"sha256": "2aadb3bf884c0f60c1fccf861ccc4c31ae4ff42c87b23444cd979246d6863129",
+			"size": 82624,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/blinker/Blinker-ExtraLight.ttf",
+			"sha256": "99070de9779f72df4e836b8dff77aba1db6102c41f093d200c5d77f336b16174",
+			"size": 74664,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/blinker/Blinker-Light.ttf",
+			"sha256": "6b8a38218155b1fb37bfdc10d5ff2ef815372ed99aeef3c4e5aebb39ec8d471d",
+			"size": 75880,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/blinker/Blinker-Regular.ttf",
+			"sha256": "2f2da3988c84378f11568885c970c442a7263bce637bd5bd4b02ec064c5753c0",
+			"size": 74532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/blinker/Blinker-SemiBold.ttf",
+			"sha256": "a9a701eb18cbd5f786f28f986c16895ffc0d0337e4a9a63131b619d9542e07d4",
+			"size": 81676,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/blinker/Blinker-Thin.ttf",
+			"sha256": "3e06087e0f62496ac99f14de72d4bee718ef28b9ad824ebc1d79fc8956d30288",
+			"size": 73024,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

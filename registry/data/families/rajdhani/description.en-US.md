@@ -1,0 +1,3 @@
+Rajdhani has modularized letterforms and supports the Devanagari and Latin writing systems. The squared and condensed appearance may be interpreted as technical or even futuristic. Typically round bowls and other letterform elements have straight sides in Rajdhani. The stroke terminals typically end in flat line segments that are horizontal or vertical, rather than diagonal. Their corners are slightly rounded, giving stroke-endings a softer feeling, rather than a pointy one.
+
+Satya Rajpurohit and Jyotish Sonowal developed the Devanagari component together, while the Latin was designed by Shiva Nalleperumal. To contribute, see [github.com/itfoundry/rajdhani](https://github.com/itfoundry/rajdhani)

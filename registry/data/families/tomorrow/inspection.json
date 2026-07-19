@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 565,
+				"sha256": "bfb76028360935eee556574b407aeba7c0cfcf9da549cfe9d5183f952dab2425"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 565,
+				"sha256": "bfb76028360935eee556574b407aeba7c0cfcf9da549cfe9d5183f952dab2425"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 549,
+				"sha256": "8d160a11cea85ceeb5a3078ea85a41faf67652a585e89f2c057f456a4970c2ec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "9d780312b371935aeb38649ba6216ad5762b7c34b32f7dc4458ca9c24104d5e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/tomorrow/Tomorrow-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 426,
+				"sha256": "6d565ee17895cb5683ba57412c0c11f767c9a5d9c7c582d2cc4b6ef59de29fe9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.4.1) -l 11 -r 50 -G 50 -x 14 -D latn -f latn -m \"ttfautohint.ctrl\" -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/scopeone/ScopeOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

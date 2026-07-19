@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 436,
+				"sha256": "91b4671d01648d96746c7bae25d63cead7b9a408cb75b69b3256df00a31ec30e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/alice/Alice-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

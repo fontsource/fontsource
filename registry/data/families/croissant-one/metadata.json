@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Croissant One",
+	"id": "croissant-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, Eduardo Tunni (http://www.tipo.net.ar edu@tipo.net.ar), with Reserved Font Name 'Croissant'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/croissantone",
+		"revision": "389b770410cc0b7c21c85673bfa2077420fe7f65",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/croissantone",
+		"revision": "0747cf401c74b546f997a820cb036a39513ba09c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/croissantone/CroissantOne-Regular.ttf",
+			"sha256": "55ccb462d07bab853281e9fd9646f0cc258bfb1ae8ff645f857ba1f921f7f69e",
+			"size": 54744,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

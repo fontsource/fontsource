@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 391,
+				"sha256": "de5140d40852190220125d774d3a7238b940705e97447df2d8ead88200c81a9a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/emblemaone/EmblemaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "bcf2dbdcc9e36ca5f0610760e668d571940941864020e4a260aa9b52b50444d4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.002",
+			"outline": "glyf",
+			"path": "ofl/baumans/Baumans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

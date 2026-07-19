@@ -1,0 +1,49 @@
+{
+	"category": "display",
+	"dateAdded": "2021-04-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tyler Finck, ETC",
+	"family": "Tourney",
+	"id": "tourney",
+	"license": {
+		"attribution": "Copyright 2020 The Tourney Project Authors (https://github.com/Etcetera-Type-Co/Tourney)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tourney",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Etcetera-Type-Co/Tourney",
+		"revision": "643f1026ad6d41b4527f42cd93c776414fdd6503"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tourney/Tourney-Italic[wdth,wght].ttf",
+			"sha256": "038c789a1ec5be0e935b8a7ad7de6cec7bd0ed8e54cd82f2c95478f54b0744ce",
+			"size": 170280,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tourney/Tourney[wdth,wght].ttf",
+			"sha256": "ee686a1a657ca9397d4d1e9ba3ada1c10a5d9b6da53aeb94411cd62b1b793377",
+			"size": 163380,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

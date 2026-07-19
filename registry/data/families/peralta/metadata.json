@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-07-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Peralta",
+	"id": "peralta",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Peralta\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/peralta",
+		"revision": "5ba9c69c9623191a96ac6939a8932fa70ca408be",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/peralta/Peralta-Regular.ttf",
+			"sha256": "2bbd48b64ff49ca19148bbc3d6d8595f0262d8cf39809f443528754295c56c2b",
+			"size": 59600,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-10-22",
+	"declaredSubsets": [
+		"chinese-simplified",
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Google",
+	"displayName": "Noto Sans Simplified Chinese",
+	"family": "Noto Sans SC",
+	"id": "noto-sans-sc",
+	"license": {
+		"attribution": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssc",
+		"revision": "a85815a42757630ce188fdad368c2dfc444d4773",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/noto-cjk",
+		"revision": "523d033d6cb47f4a80c58a35753646f5c3608a78"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssc/NotoSansSC[wght].ttf",
+			"sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+			"size": 17772300,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

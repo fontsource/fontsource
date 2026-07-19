@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3093,
+				"sha256": "9168fbc5cb440ad5182aea7f69e527f5cff3805c22127634b92517b03ceffb8e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/dohyeon/DoHyeon-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

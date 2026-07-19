@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 659,
+				"sha256": "03da0ccfd717d153234859daab05383042956c30da60e5416d827625f4e25849"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.203",
+			"outline": "glyf",
+			"path": "ofl/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 659,
+				"sha256": "03da0ccfd717d153234859daab05383042956c30da60e5416d827625f4e25849"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.203",
+			"outline": "glyf",
+			"path": "ofl/playfairdisplay/PlayfairDisplay[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

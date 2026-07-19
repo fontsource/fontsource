@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 20579,
+				"sha256": "b1b64cd885b333b212f7127eb52f302041f58588ed6b0f83ddeb9ece179ed976"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.21",
+			"outline": "glyf",
+			"path": "ofl/gulim/Gulim-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

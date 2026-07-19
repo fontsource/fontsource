@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2017-08-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Pedro Vergani, Kevin Burke",
+	"family": "Sedgwick Ave Display",
+	"id": "sedgwick-ave-display",
+	"license": {
+		"attribution": "Copyright 2017 The Sedgwick Ave Project Authors (https://github.com/googlefonts/sedgwickave)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sedgwickavedisplay",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sedgwickave",
+		"revision": "3b269a9037e6ed8c8bc8f4bd90cd4d955855a20e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sedgwickavedisplay/SedgwickAveDisplay-Regular.ttf",
+			"sha256": "3b9c295a146bafb93c8a12c1dde38a2fe47512777daf1458825e291752469a38",
+			"size": 140148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 579,
+				"sha256": "1ca2fb299c4cb5dbd35edf7ed20f4ca6623968f8b3ae7e90a351728922f31934"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/puppiesplay/PuppiesPlay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

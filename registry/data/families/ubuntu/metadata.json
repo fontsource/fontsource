@@ -1,0 +1,106 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-12-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dalton Maag",
+	"family": "Ubuntu",
+	"id": "ubuntu",
+	"license": {
+		"attribution": "Copyright 2011 Canonical Ltd. Licensed under the Ubuntu Font Licence 1.0",
+		"id": "UFL-1.0",
+		"url": "https://ubuntu.com/legal/font-licence"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ufl/ubuntu",
+		"revision": "4c1746968e564f687b4fd72af187597a4a6f11fe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ufl/ubuntu/Ubuntu-Bold.ttf",
+			"sha256": "679b5c1e09cab3156bb8ef529735f9382bf31ca7ac737382ab959297f8d82ad4",
+			"size": 331612,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ufl/ubuntu/Ubuntu-BoldItalic.ttf",
+			"sha256": "875d776e7f33c50b1d1b594791da0eba9865648f232f08bcba00bba9dfa01d96",
+			"size": 354956,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ufl/ubuntu/Ubuntu-Italic.ttf",
+			"sha256": "4ab857e72f781a8967a6e4a9ac8858fbd6b3a9f9782db349d4b62b78ed02860b",
+			"size": 384408,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ufl/ubuntu/Ubuntu-Light.ttf",
+			"sha256": "a5d3ef89f219e90e1f22616adf2bd4a86c8ddd37aff58cd223482c44e3a92eef",
+			"size": 413600,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ufl/ubuntu/Ubuntu-LightItalic.ttf",
+			"sha256": "8fc50d6238be2076f602578d846c81a680f3c1ad58c372cc272b4dee6e68ff90",
+			"size": 407728,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ufl/ubuntu/Ubuntu-Medium.ttf",
+			"sha256": "3cd952b8b52581e48a8fa95b31c8829c2baa41b635042a69587d57f98092961e",
+			"size": 339360,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ufl/ubuntu/Ubuntu-MediumItalic.ttf",
+			"sha256": "54f65387b462fef9b4fb45f4e84344d5a9cfa660e281189e8d5e0ddcfccf5e8c",
+			"size": 365080,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ufl/ubuntu/Ubuntu-Regular.ttf",
+			"sha256": "3128df86a31805618436d0ae5651ba4285d0c9de0a39057d025f64ee33bceb64",
+			"size": 351884,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

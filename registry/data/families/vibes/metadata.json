@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2019-04-23",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"menu"
+	],
+	"designer": "AbdElmomen Kadhim (blueMix)",
+	"family": "Vibes",
+	"id": "vibes",
+	"license": {
+		"attribution": "Copyright 2019 The Vibes Project Authors (https://github.com/bluemix/vibes-typeface)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vibes",
+		"revision": "0e57afeb9ea7ae2dfa1643891096fb78e7a6e479",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/bluemix/vibes-typeface",
+		"revision": "4cfe8e24413fc3711d3bba4c278e17429f93fc13"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vibes/Vibes-Regular.ttf",
+			"sha256": "297d9c8499e7383ac7675932741625ab12d9bb3abd1c31d2659b385d965a7ab7",
+			"size": 78412,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "monospace",
+	"dateAdded": "2011-03-23",
+	"declaredSubsets": [
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "Nova Mono",
+	"id": "nova-mono",
+	"license": {
+		"attribution": "Copyright (c) 2011, Wojciech 'wmk69' Kalinowski (wmk69@o2.pl)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/novamono",
+		"revision": "ec5151d3aeafafd7ad0eecc0df9e73aaad2af2a3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/novamono/NovaMono.ttf",
+			"sha256": "648eadb6648c0801b186d3dcef60ee6aa84a791b1e09c726935c0712508b4807",
+			"size": 302380,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "monospace",
+	"dateAdded": "2022-11-25",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Roman Shamin, Evil Martians",
+	"family": "Martian Mono",
+	"id": "martian-mono",
+	"license": {
+		"attribution": "Copyright 2020 The Martian Mono Project Authors (https://github.com/evilmartians/mono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/martianmono",
+		"revision": "c8bba5c4a69195e4fabc69d75136814c65fe0cf5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/evilmartians/mono",
+		"revision": "17865aac562a1a800888de6604f7251f135cf3b5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/martianmono/MartianMono[wdth,wght].ttf",
+			"sha256": "c3467843ec1c2574b05fbcfd7147c7bfbcf63ddca8fc2bcb9d117f1bfb1b22e7",
+			"size": 148460,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

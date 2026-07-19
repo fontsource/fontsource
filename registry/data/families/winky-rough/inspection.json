@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 384,
+				"sha256": "80d546751f51be5efc2b8bdc78d7f871657319bd2a294d7851dd4b965040c086"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.206",
+			"outline": "glyf",
+			"path": "ofl/winkyrough/WinkyRough-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 384,
+				"sha256": "80d546751f51be5efc2b8bdc78d7f871657319bd2a294d7851dd4b965040c086"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.206",
+			"outline": "glyf",
+			"path": "ofl/winkyrough/WinkyRough[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

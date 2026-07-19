@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 765,
+				"sha256": "0ba47aee876c496636979962405220ffd0bb6b20fe82321296af6f33115d8f7e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/gamaamli/GaMaamli-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

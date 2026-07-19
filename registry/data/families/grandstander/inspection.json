@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 659,
+				"sha256": "eec3d461139fd401f83f5e2aa49459b5871878748e3c6d159710e35361fb9a4f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200",
+			"outline": "glyf",
+			"path": "ofl/grandstander/Grandstander-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 659,
+				"sha256": "eec3d461139fd401f83f5e2aa49459b5871878748e3c6d159710e35361fb9a4f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200",
+			"outline": "glyf",
+			"path": "ofl/grandstander/Grandstander[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

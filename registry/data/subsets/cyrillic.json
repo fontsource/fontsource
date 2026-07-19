@@ -1,0 +1,47 @@
+{
+	"id": "cyrillic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"301",
+			"301"
+		],
+		[
+			"400",
+			"45F"
+		],
+		[
+			"490",
+			"491"
+		],
+		[
+			"4B0",
+			"4B1"
+		],
+		[
+			"2116",
+			"2116"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/cyrillic_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "0224eee839f7a6bb061d06839ed17829160895428255f4739fae796985a4b585",
+		"upstream": "namFiles"
+	}
+}

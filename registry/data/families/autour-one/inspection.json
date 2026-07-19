@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "2a50cc03e3a53a4aa04dbe2cfed364438afef3b3d8024e1d905c21c685875390"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.007; ttfautohint (v0.92) -l 24 -r 24 -G 200 -x 7 -w \"GD\"",
+			"outline": "glyf",
+			"path": "ofl/autourone/AutourOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

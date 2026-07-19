@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 11,
+					"min": -11,
+					"tag": "slnt"
+				},
+				{
+					"default": 400,
+					"max": 1000,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 699,
+				"sha256": "00c7ee45dd85b246dd18562531fc077cb94a7b55ce04937e3ea54793da20d4f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.130;gftools[0.9.24]",
+			"outline": "glyf",
+			"path": "ofl/cairo/Cairo[slnt,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 1000,
+				"min": 200
+			}
+		}
+	]
+}

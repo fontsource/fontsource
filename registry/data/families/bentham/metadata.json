@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-11-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Ben Weiner",
+	"family": "Bentham",
+	"id": "bentham",
+	"license": {
+		"attribution": "Copyright (c) 1999-2010, Ben Weiner (ben@readingtype.org.uk), with Reserved Font Name Bentham.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bentham",
+		"revision": "fec2e26286be68d3423f6cf6d511cd20e0c62460",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bentham",
+		"revision": "e5fe7fcc66269491f3ccd6cf5ee69d7dfd3b8316"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bentham/Bentham-Regular.ttf",
+			"sha256": "6b5d6ac11b4902fc6912c3afb99520e290f59a56245228ca7529fe3937cba793",
+			"size": 55468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

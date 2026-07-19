@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 671,
+				"sha256": "3d72e8d11c31d7e8a5f6687dcb34c657266ad68049ab4a898602dabcd644c169"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002",
+			"outline": "glyf",
+			"path": "ofl/anuphan/Anuphan[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

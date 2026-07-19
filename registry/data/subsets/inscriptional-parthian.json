@@ -1,0 +1,35 @@
+{
+	"id": "inscriptional-parthian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10B40",
+			"10B55"
+		],
+		[
+			"10B58",
+			"10B5F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/inscriptional-parthian_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "ff611c7065753f2f61a3a1f3c508271146348aff4469c3a7c11599d63e49d9e1",
+		"upstream": "namFiles"
+	}
+}

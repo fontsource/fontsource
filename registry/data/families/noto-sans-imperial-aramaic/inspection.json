@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 353,
+				"sha256": "9389acc2e8cbea455883a099eb89dd128758d9d950e632b58ef5c714655b081e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansimperialaramaic/NotoSansImperialAramaic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

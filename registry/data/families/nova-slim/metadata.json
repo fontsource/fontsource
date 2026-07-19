@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "Nova Slim",
+	"id": "nova-slim",
+	"license": {
+		"attribution": "Copyright (c) 2011, wmk69 (wmk69@o2.pl) with Reserved Font Names 'NovaSlim' and 'Nova Slim'. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/novaslim",
+		"revision": "8d17a64511fd03ccf1f80e910524c604460f7ae8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/novaslim/NovaSlim.ttf",
+			"sha256": "78cf188017f211f64ea14fd1c946cc15dcfdec867f4759a50aff0b4350e38eed",
+			"size": 93956,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

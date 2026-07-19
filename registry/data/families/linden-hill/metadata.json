@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-10-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Barry Schwartz",
+	"family": "Linden Hill",
+	"id": "linden-hill",
+	"license": {
+		"attribution": "Copyright (c) 2010, Barry Schwartz (chemoelectric@chemoelectric.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lindenhill",
+		"revision": "e7afee42fc1ca468ad9531fbc1794aacdedf4131",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/linden-hill",
+		"revision": "a3f7ae6c4cac1b7e5ce5269e1fcc6a2fbb9e31ee"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lindenhill/LindenHill-Italic.ttf",
+			"sha256": "6071ebcba53242167cfe38dfd0ae108125055405fb1b4ecd0468e287a9e7c743",
+			"size": 94540,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lindenhill/LindenHill-Regular.ttf",
+			"sha256": "eed3fde6c495dd558b88aa0d3486516dd4d9956a497c335db7beaa9c29d0508a",
+			"size": 124844,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

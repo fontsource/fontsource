@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 378,
+				"sha256": "9398da27303bca99d2fe2c60072ecd44b1be80c42d12c06479b1d7d31d2e0f38"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/exile/Exile-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

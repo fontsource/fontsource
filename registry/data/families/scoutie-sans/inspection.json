@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 759,
+				"sha256": "100de5f7f7dbf5c25bfe228214d9743fc8310ae5d9d1c7f555fd8309ce1eca50"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/scoutiesans/ScoutieSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 800,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 759,
+				"sha256": "100de5f7f7dbf5c25bfe228214d9743fc8310ae5d9d1c7f555fd8309ce1eca50"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/scoutiesans/ScoutieSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

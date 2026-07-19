@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 222,
+				"sha256": "3626c806108120e7fcfd4a7a055743577e642c1b9fd24d931218c50706127464"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2016",
+			"outline": "glyf",
+			"path": "ofl/chathura/Chathura-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 222,
+				"sha256": "3626c806108120e7fcfd4a7a055743577e642c1b9fd24d931218c50706127464"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2016",
+			"outline": "glyf",
+			"path": "ofl/chathura/Chathura-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 222,
+				"sha256": "3626c806108120e7fcfd4a7a055743577e642c1b9fd24d931218c50706127464"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2016",
+			"outline": "glyf",
+			"path": "ofl/chathura/Chathura-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 222,
+				"sha256": "3626c806108120e7fcfd4a7a055743577e642c1b9fd24d931218c50706127464"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2016",
+			"outline": "glyf",
+			"path": "ofl/chathura/Chathura-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 222,
+				"sha256": "3626c806108120e7fcfd4a7a055743577e642c1b9fd24d931218c50706127464"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2016",
+			"outline": "glyf",
+			"path": "ofl/chathura/Chathura-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		}
+	]
+}

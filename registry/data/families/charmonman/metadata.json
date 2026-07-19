@@ -1,0 +1,50 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Charmonman",
+	"id": "charmonman",
+	"license": {
+		"attribution": "Copyright 2018 The Charmonman Project Authors (https://github.com/cadsondemak/Charmonman)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/charmonman",
+		"revision": "e16ddbbf770f7b7a3e7ef03d361b7e1c66a144f8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Charmonman",
+		"revision": "8590fc4aaefe8ccf9ec0abeff7f66b6bc1a83503"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/charmonman/Charmonman-Bold.ttf",
+			"sha256": "8bf4f82298997010662de35cec504c0504456e51d3d9a9a6b4f3788e4b04abee",
+			"size": 117384,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/charmonman/Charmonman-Regular.ttf",
+			"sha256": "7ec5575c6c87a6be69de7839b3ecd1027b7ba6510ad3e49bc30b73cc9ee1bce0",
+			"size": 117644,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

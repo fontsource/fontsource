@@ -1,0 +1,47 @@
+{
+	"id": "kana-extended",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"3099",
+			"309C"
+		],
+		[
+			"1AFF0",
+			"1AFF3"
+		],
+		[
+			"1AFF5",
+			"1AFFB"
+		],
+		[
+			"1AFFD",
+			"1AFFE"
+		],
+		[
+			"1B000",
+			"1B122"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/kana-extended_unique-glyphs.nam",
+		"revision": "348e61490fd1ce04a5f8139ec776cee2de8ad479",
+		"sha256": "1f9528d816220974b187208baa8bb95f9092b6232c1769f178b648bed33fc1f7",
+		"upstream": "namFiles"
+	}
+}

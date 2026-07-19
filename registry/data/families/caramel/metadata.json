@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Caramel",
+	"id": "caramel",
+	"license": {
+		"attribution": "Copyright 2004-2021 The Caramel Project Authors (https://github.com/googlefonts/caramel)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/caramel",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/caramel",
+		"revision": "87aff25878217835c9d22342d60678d4dcf8be75"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/caramel/Caramel-Regular.ttf",
+			"sha256": "36a460f8418d5f9710da43404776fc914fe11ff5ec649e9c8bcb670c602b92be",
+			"size": 204044,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

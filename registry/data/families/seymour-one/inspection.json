@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 527,
+				"sha256": "a6b3d184908903151efc516f6d827e802424248d96868472286a8f08434d2621"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.33]",
+			"outline": "glyf",
+			"path": "ofl/seymourone/SeymourOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

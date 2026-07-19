@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Buginese is an unmodulated (“sans serif”) design for texts in the Southeast Asian _Buginese_ script. It has 41 glyphs.

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "59fd35291ce488e4775dda3a063f49866c318b1401cfa7ab9b4e24474d2809b1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/justanotherhand/JustAnotherHand-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

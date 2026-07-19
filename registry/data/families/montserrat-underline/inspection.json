@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1311,
+				"sha256": "903c1cbc30a960b938aef341163d36e117bbb655d9dc29c99b980a84ade6cd35"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 9.000",
+			"outline": "glyf",
+			"path": "ofl/montserratunderline/MontserratUnderline-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1331,
+				"sha256": "946050e1de7581b0f670e24de9536c3800074ddf14aa008e9524ded5da2881f0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 9.000",
+			"outline": "glyf",
+			"path": "ofl/montserratunderline/MontserratUnderline[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

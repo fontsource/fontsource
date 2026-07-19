@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 15367,
+				"sha256": "a0809a5a6b5aa2b91daa8cb6ceea0f16bf23fcbf91edb22ff250dc76fb6f219c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/shipporiantiqueb1/ShipporiAntiqueB1-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

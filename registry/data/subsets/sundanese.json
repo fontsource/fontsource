@@ -1,0 +1,51 @@
+{
+	"id": "sundanese",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"2D",
+			"2D"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1B80",
+			"1BBF"
+		],
+		[
+			"1CC0",
+			"1CC7"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"2010",
+			"2010"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/sundanese_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "fcf023a30ecf119c009f152ed9c26c8df491d7122dc6ee869d91282df372caff",
+		"upstream": "namFiles"
+	}
+}

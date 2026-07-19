@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-03-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Send Flowers",
+	"id": "send-flowers",
+	"license": {
+		"attribution": "Copyright 1998-2021 The Send Flowers Project Authors (https://github.com/googlefonts/send-flowers)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sendflowers",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/send-flowers",
+		"revision": "5cee2ce8a5ce832b12d409fee214f54164916e92"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sendflowers/SendFlowers-Regular.ttf",
+			"sha256": "4c667e639f9c8a37c3d46663be0885245c3b0fbc283138cfa5d83135f3386c91",
+			"size": 127692,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

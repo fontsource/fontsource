@@ -1,0 +1,121 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 164,
+				"sha256": "1093dc1273c8188dc64a5e56ac5e8a9bf5f53b783b4cd73f228c42fa0f39b5b9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D gujr -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

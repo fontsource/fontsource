@@ -1,0 +1,3 @@
+Orbit is inspired by the concept of monospaced Latin coding fonts. Korean fonts are usually already monospaced, but by bringing the impression of the Latin coding font in the Hangeul and punctuation design, Orbit gives a mathematical and geometric impression through a serif with right angle and orbicular circles. The font attempts to express orbitals with typeface using symmetry and connectivity to create a somewhat cosmic and futuristic atmosphere. As it is reminiscent of coding interface screens, it is recommended to use bright writing on a dark background, below 10pt.
+
+To contribute, please visit [github.com/JAMO-TYPEFACE/Orbit](https://github.com/JAMO-TYPEFACE/Orbit).

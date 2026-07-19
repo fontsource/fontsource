@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tagbanwa"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Tagbanwa",
+	"id": "noto-sans-tagbanwa",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tagbanwa)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanstagbanwa",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/tagbanwa",
+		"revision": "ec39a09e038aae3d9551027fcfb43b417aa486a2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanstagbanwa/NotoSansTagbanwa-Regular.ttf",
+			"sha256": "9f9288024e3eddfd3ce77088c4806e0515d47aa093b1a04bc7bc24bdfd5d998a",
+			"size": 46212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

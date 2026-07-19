@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 966,
+				"sha256": "bcdc35a8d352c4d8bef0b201de18700e97293ae534d2a7eedfc04eb33cdc241e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/tacone/TacOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

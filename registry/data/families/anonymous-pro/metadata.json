@@ -1,0 +1,68 @@
+{
+	"category": "monospace",
+	"dateAdded": "2010-12-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mark Simonson",
+	"family": "Anonymous Pro",
+	"id": "anonymous-pro",
+	"license": {
+		"attribution": "Copyright (c) Mark Simonson 2009-2010. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anonymouspro",
+		"revision": "b77cf8eb320760982c6486bb65ef1031e3d7aeba",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontmgr/AnonymousPro",
+		"revision": "de345fb4214f487b804a2c44aba59e30f866519b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anonymouspro/AnonymousPro-Bold.ttf",
+			"sha256": "52895657e7d48860089ebfac63a27244f37a2218ec9c5019a0b37fe885c0fc0c",
+			"size": 153616,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/anonymouspro/AnonymousPro-BoldItalic.ttf",
+			"sha256": "4e811e1e3b60fc763fb24acd27781e72241a8380beb0ffa5e07af2b87133496d",
+			"size": 141924,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/anonymouspro/AnonymousPro-Italic.ttf",
+			"sha256": "bc13ac34e9994128c61b54bf4e78a8adb439b543ea0b19761d159342599f441a",
+			"size": 144424,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/anonymouspro/AnonymousPro-Regular.ttf",
+			"sha256": "46d8b9a5f4b38fc9d30f3cdd676d4c6f78a9bef949bb1a8304216cc731eb87f8",
+			"size": 158100,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

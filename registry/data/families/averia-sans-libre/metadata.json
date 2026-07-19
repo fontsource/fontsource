@@ -1,0 +1,83 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Dan Sayers",
+	"family": "Averia Sans Libre",
+	"id": "averia-sans-libre",
+	"license": {
+		"attribution": "Copyright (c) 2011, Dan Sayers (i@iotic.com), with Reserved Font Name 'Averia' and 'Averia Libre'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/averiasanslibre",
+		"revision": "93a7f897c12606921bcbd5e05cfada3411c853e0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/averiasanslibre/AveriaSansLibre-Bold.ttf",
+			"sha256": "c54cc938b365fa4442b9de4db603f26596e9ef3d3feba311cf986b6e13107863",
+			"size": 112976,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/averiasanslibre/AveriaSansLibre-BoldItalic.ttf",
+			"sha256": "e0fa53165e0e7ccd3651073619762b66110dd0addc368245586c08c02ebc2d60",
+			"size": 135808,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/averiasanslibre/AveriaSansLibre-Italic.ttf",
+			"sha256": "8603d2963618dbb46eed3b46b1c7f70454af7b1d5607a4e6e9c6a00649c23e4f",
+			"size": 128856,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/averiasanslibre/AveriaSansLibre-Light.ttf",
+			"sha256": "03725f74b84f520d8f27d29d542c31b2213c0e06caff563a43745950e88649c7",
+			"size": 107748,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/averiasanslibre/AveriaSansLibre-LightItalic.ttf",
+			"sha256": "37f7dfdf2e2ab82d73cb86779619a1dfe495823c82425f8982777fa4c12a8c9c",
+			"size": 134240,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/averiasanslibre/AveriaSansLibre-Regular.ttf",
+			"sha256": "834a9a8ef3a37da0165274d0345836b430e54ef15e6ebf070ae7c5805034efbc",
+			"size": 108320,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

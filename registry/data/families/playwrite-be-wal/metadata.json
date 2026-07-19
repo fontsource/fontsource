@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-05-16",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "TypeTogether, Veronika Burian, José Scaglione",
+	"displayName": "Playwrite Belgique Wallonie-Bruxelles",
+	"family": "Playwrite BE WAL",
+	"id": "playwrite-be-wal",
+	"license": {
+		"attribution": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playwritebewal",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playwrite",
+		"revision": "02e4e15767f5b6c2109413429fc51879b9507ab4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playwritebewal/PlaywriteBEWAL[wght].ttf",
+			"sha256": "03b014f5bcb90342eba42f39879869f9c260057e7853f2bbef2e67fda929cefc",
+			"size": 346820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

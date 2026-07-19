@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"menu",
+		"tamil"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Tamil UI",
+	"id": "noto-sans-tamil-ui",
+	"license": {
+		"attribution": "Copyright 2017 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanstamilui",
+		"revision": "4bc8716d62f7267e8384498c851cd68d5a76988e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/tamil",
+		"revision": "bc7886b117af378d8dbd5c91f5ea2bf8cdaffd16"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanstamilui/NotoSansTamilUI[wdth,wght].ttf",
+			"sha256": "66dabbaafd95cf14827b69b5ada6af1bdcde237b505e36ac215797f0dc9bc281",
+			"size": 224208,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

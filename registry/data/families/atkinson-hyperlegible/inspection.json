@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 342,
+				"sha256": "7810fe87f57b64236309f391f1e03cb02d1460d0d17e463c75ff1cef496357b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/atkinsonhyperlegible/AtkinsonHyperlegible-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 342,
+				"sha256": "7810fe87f57b64236309f391f1e03cb02d1460d0d17e463c75ff1cef496357b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/atkinsonhyperlegible/AtkinsonHyperlegible-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 342,
+				"sha256": "7810fe87f57b64236309f391f1e03cb02d1460d0d17e463c75ff1cef496357b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/atkinsonhyperlegible/AtkinsonHyperlegible-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 342,
+				"sha256": "7810fe87f57b64236309f391f1e03cb02d1460d0d17e463c75ff1cef496357b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/atkinsonhyperlegible/AtkinsonHyperlegible-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

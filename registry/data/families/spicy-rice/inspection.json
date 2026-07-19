@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "8cc0c0f81b220eacbf014120a848542f61c522ae301f51f4316c904711971c3b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/spicyrice/SpicyRice-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Graduate",
+	"id": "graduate",
+	"license": {
+		"attribution": "Copyright 2012 The Graduate Project Authors (https://github.com/etunni/graduate) with Reserved Font Name \"Graduate\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/graduate",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/graduate",
+		"revision": "d6031c4ce60208e8e68f5e4dee771420d22c3815"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/graduate/Graduate-Regular.ttf",
+			"sha256": "971222b309851d86f2513f89b510dc52d52ef7798b5f43af2c6f58d43df568e5",
+			"size": 59296,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

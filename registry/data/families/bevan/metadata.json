@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-02-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Bevan",
+	"id": "bevan",
+	"license": {
+		"attribution": "Copyright 2016 The Bevan Project Authors (https://github.com/googlefonts/BevanFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bevan",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/BevanFont",
+		"revision": "ab1035d7823b4c53400a6007ee077ecc9324c3e5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bevan/Bevan-Italic.ttf",
+			"sha256": "bdf6744e1a398c2bbf80e94a8195209759992b25d09863eefacc42de4c9caf6b",
+			"size": 118940,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/bevan/Bevan-Regular.ttf",
+			"sha256": "8d16c0920330f1def84e342ce70626c27fbf179b4294e6391b19301ff5873469",
+			"size": 118004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

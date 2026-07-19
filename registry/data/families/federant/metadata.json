@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-10-05",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Federant",
+	"id": "federant",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org), with Reserved Font Name 'Federant'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/federant",
+		"revision": "5f9fab3e46607f933091ed9e66f61c45db10ff1b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Federant",
+		"revision": "c5c5f602213ac00b181d95e2078fff665dd31809"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/federant/Federant-Regular.ttf",
+			"sha256": "d40cb09c85114c2b0c9442636412e997d8258b383e1d1a684e7e32b21d07a5c2",
+			"size": 45588,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

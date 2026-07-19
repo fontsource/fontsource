@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 581,
+				"sha256": "9a6b946ab03a14276178d0843644a7f0ee1c4a78fe8d1e3852b35e235b0dd10f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.010",
+			"outline": "glyf",
+			"path": "ofl/greyqo/GreyQo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

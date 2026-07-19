@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Marcelo Magalhães",
+	"family": "Londrina Shadow",
+	"id": "londrina-shadow",
+	"license": {
+		"attribution": "Copyright 2011 The Londrina Shadow Authors (https://github.com/marcelommp/Londrina-Typeface), with Reserved Font Name \"Londrina Shadow\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/londrinashadow",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/marcelommp/Londrina-Typeface",
+		"revision": "7f4129ee609e13f4dc9bcdce6f8a08f5d9bc8060"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/londrinashadow/LondrinaShadow-Regular.ttf",
+			"sha256": "bdc4a66213c2bed3a0e58912bb2e47f7b0ea51b07d291a43896eed5c87e01a21",
+			"size": 179844,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

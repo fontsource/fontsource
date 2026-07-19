@@ -1,0 +1,1 @@
+Titan One is a really fat display type with a happy and cheerful personality. It takes most of its essence from hand lettering with big brushes. It is designed to be used mainly on headers and short texts.

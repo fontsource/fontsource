@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-10-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Natanael Gama",
+	"family": "Cinzel",
+	"id": "cinzel",
+	"license": {
+		"attribution": "Copyright 2020 The Cinzel Project Authors (https://github.com/NDISCOVER/Cinzel)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cinzel",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NDISCOVER/Cinzel",
+		"revision": "8271e162a7c6064ff1e539ba86011b16b6a6184f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cinzel/Cinzel[wght].ttf",
+			"sha256": "f4d83d34d1f6c741193e4acf4b3dff9531e5a67b6aa65228d00a7db72a4e0f34",
+			"size": 125468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

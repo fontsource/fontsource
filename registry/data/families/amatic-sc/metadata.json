@@ -1,0 +1,51 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-10-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams, Ben Nathan, Thomas Jockin",
+	"family": "Amatic SC",
+	"id": "amatic-sc",
+	"license": {
+		"attribution": "Copyright 2015 The Amatic SC Project Authors (https://github.com/googlefonts/AmaticSC)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/amaticsc",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/AmaticSC",
+		"revision": "308846136d2dcfb6aef2160d7e927698cdaf9c05"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/amaticsc/AmaticSC-Bold.ttf",
+			"sha256": "d367beadee66efbb657d24d3d8f30f3b60633e9d5c8ded7385541cf775cabb4d",
+			"size": 156180,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/amaticsc/AmaticSC-Regular.ttf",
+			"sha256": "513a76f96d39a5366bd27c258674aaea35ee51c42b8f3060387f74649ee8c8aa",
+			"size": 151624,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

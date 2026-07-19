@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "KB Studio",
+	"family": "Katibeh",
+	"id": "katibeh",
+	"license": {
+		"attribution": "Copyright 2015, 2016 KB-Studio (www.k-b-studio.com|tarobish@gmail.com). Copyright 2015, 2016 Lasse Fister (lasse@graphicore.de). Copyright 2015, 2016 Eduardo Tunni(edu@tipo.net.ar).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/katibeh",
+		"revision": "795a28b9eafcb757914b0e22de95d9f8265cc466",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Tarobish/Katibeh",
+		"revision": "3fde990dc2f1648d63b7fe2841902d268529c1c2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/katibeh/Katibeh-Regular.ttf",
+			"sha256": "334eeadb58eb442734fe7dea87412cbbd8c3fd00294252723aadf19a850cf11f",
+			"size": 189124,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 686,
+				"sha256": "52fde3e269c684fde9c8e2057b30ce5b251cb4502cbf3767b78d94feb7d3647c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/yantramanav/Yantramanav-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 686,
+				"sha256": "52fde3e269c684fde9c8e2057b30ce5b251cb4502cbf3767b78d94feb7d3647c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/yantramanav/Yantramanav-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 686,
+				"sha256": "52fde3e269c684fde9c8e2057b30ce5b251cb4502cbf3767b78d94feb7d3647c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/yantramanav/Yantramanav-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 686,
+				"sha256": "52fde3e269c684fde9c8e2057b30ce5b251cb4502cbf3767b78d94feb7d3647c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/yantramanav/Yantramanav-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 686,
+				"sha256": "52fde3e269c684fde9c8e2057b30ce5b251cb4502cbf3767b78d94feb7d3647c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/yantramanav/Yantramanav-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 686,
+				"sha256": "52fde3e269c684fde9c8e2057b30ce5b251cb4502cbf3767b78d94feb7d3647c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/yantramanav/Yantramanav-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		}
+	]
+}

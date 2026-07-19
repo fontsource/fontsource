@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-05-18",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Minha Hyung, JAMO",
+	"family": "Diphylleia",
+	"id": "diphylleia",
+	"license": {
+		"attribution": "Copyright 2022 The Diphylleia Project Authors (https://github.com/JAMO-TYPEFACE/Diphylleia)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/diphylleia",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JAMO-TYPEFACE/Diphylleia",
+		"revision": "6a20531aa22286238d89f3bc1d8c29694acaec53"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/diphylleia/Diphylleia-Regular.ttf",
+			"sha256": "a0f505e19758bbe69da3e1cdd89fac74e69e851aa82195a61c861bcee7a53293",
+			"size": 1947768,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

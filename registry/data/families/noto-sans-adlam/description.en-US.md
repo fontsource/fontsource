@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Adlam is a joining (cursive) unmodulated (“sans serif”) design for texts in the African _Adlam_ script. It has multiple weights and 362 glyphs.

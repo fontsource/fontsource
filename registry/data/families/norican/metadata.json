@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Norican",
+	"id": "norican",
+	"license": {
+		"attribution": "Copyright 2011 The Norican Project Authors (https://github.com/googlefonts/NoricanFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/norican",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/NoricanFont",
+		"revision": "5e30b33570463b57d70795d7ccac56b4d69688e5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/norican/Norican-Regular.ttf",
+			"sha256": "71ee99002e70bb69f8f613bd29d646d6044aaf34612efcff689a11afa4291d04",
+			"size": 83416,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

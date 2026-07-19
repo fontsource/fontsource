@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2024-01-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Sarah Cadigan-Fried",
+	"family": "Micro 5 Charted",
+	"id": "micro-5-charted",
+	"license": {
+		"attribution": "Copyright 2023 The Soft Type Project Authors (https://github.com/scfried/soft-type-micro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/micro5charted",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/scfried/soft-type-micro",
+		"revision": "a5a61b057a6804ea75840f2b9f31cfb339652e58"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/micro5charted/Micro5Charted-Regular.ttf",
+			"sha256": "7897f7c086e622b7063499eb3202d3f14c8c59c6564d409ad1db17534e289645",
+			"size": 356060,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

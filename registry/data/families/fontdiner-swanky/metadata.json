@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-01-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Font Diner",
+	"family": "Fontdiner Swanky",
+	"id": "fontdiner-swanky",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Font Diner, Inc. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/fontdinerswanky",
+		"revision": "72f340f6cd06360b19d0baebc87e5c1e61ae91bb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/fontdinerswanky",
+		"revision": "5b2cf4d5d4919c4d21a73ce08e1bf93d853571d2"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/fontdinerswanky/FontdinerSwanky-Regular.ttf",
+			"sha256": "847229fbf58c7f7479f93fd7cf9fc269b54c0c9f6465abcb65a206fb261be41b",
+			"size": 45524,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,57 @@
+{
+	"category": "monospace",
+	"dateAdded": "2010-12-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "ISIA Urbino",
+	"family": "Lekton",
+	"id": "lekton",
+	"license": {
+		"attribution": "Copyright (c) 2008, 2009, 2010, Accademia di Belle Arti di Urbino (luciano.perondi@isiaurbino.net). Licensed under the SIL Open Font License, Version 1.1",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lekton",
+		"revision": "27b320be51a8b3c38b1f336b5c6d465ed4d09552",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lekton/Lekton-Bold.ttf",
+			"sha256": "9aab5a281f3428d882e67d9a945930822380f5b28ad00f5fbf79e21dadee375f",
+			"size": 113684,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lekton/Lekton-Italic.ttf",
+			"sha256": "ab5fb533f4ef21191a522b5c92e2bbccad6cf46d927a3fdc7617334a68977427",
+			"size": 34212,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lekton/Lekton-Regular.ttf",
+			"sha256": "ccbb465d255a4bd0242af595d5f5410e635bd0dbf2f4b612b390e508a93d7a3a",
+			"size": 114320,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

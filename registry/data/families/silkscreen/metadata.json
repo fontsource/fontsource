@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2022-06-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jason Kottke",
+	"family": "Silkscreen",
+	"id": "silkscreen",
+	"license": {
+		"attribution": "Copyright 2001 The Silkscreen Project Authors (https://github.com/googlefonts/silkscreen)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/silkscreen",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/silkscreen",
+		"revision": "206ccf3f5234c281461e63ecc59cbc6b0563472b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/silkscreen/Silkscreen-Bold.ttf",
+			"sha256": "768476aa712d4f5c3e18d3bce80f980a8bd3f72b7094d22ec5e768df3acfed61",
+			"size": 30632,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/silkscreen/Silkscreen-Regular.ttf",
+			"sha256": "c845473330b94c2079ce9af01c51ac8ba2d99c24f4d14c039843bbb8e642ebd8",
+			"size": 32220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

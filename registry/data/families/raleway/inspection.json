@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 919,
+				"sha256": "d7ee76f15ce56b17fe56be9cb5fcf4bf412dc5802feb8ed8d61e27ecd6d463fe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.026",
+			"outline": "glyf",
+			"path": "ofl/raleway/Raleway-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 936,
+				"sha256": "a6653e9e62b02f5a060ce4d06335e8ab96e1367335715169a18505c6a7239676"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.026",
+			"outline": "glyf",
+			"path": "ofl/raleway/Raleway[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

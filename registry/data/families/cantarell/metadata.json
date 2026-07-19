@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-05-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dave Crossland",
+	"family": "Cantarell",
+	"id": "cantarell",
+	"license": {
+		"attribution": "Copyright 2009 The Cantarell Project Authors (https://github.com/davelab6/cantarell)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cantarell",
+		"revision": "62463ce993770f366bbc86aeddfaa8c8af668ffe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/cantarell",
+		"revision": "1684004f92b47dbaa3ee7db870091d4d66c5dd8a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cantarell/Cantarell-Bold.ttf",
+			"sha256": "1b15d4acd20df636755bafa1e026e73fb277740aa27442198795fcf0d1cb9818",
+			"size": 44936,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cantarell/Cantarell-BoldItalic.ttf",
+			"sha256": "913df4975de5e304a2395c7e1b9c994dad4bc93f1e80b94ec8662113d87d3e3b",
+			"size": 47848,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cantarell/Cantarell-Italic.ttf",
+			"sha256": "113797007a0baa9eaba2688de40b51f1d907f5c4f2add61cfd25a5e626153613",
+			"size": 45728,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cantarell/Cantarell-Regular.ttf",
+			"sha256": "840a255779258a2b24b5e3d1f32a821ed641fdd5ef1e47c4dc180064db9ccfa1",
+			"size": 43156,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

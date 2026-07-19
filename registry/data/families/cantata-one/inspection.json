@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 411,
+				"sha256": "17a10335173c96726b05dd3f8b5e3e1ce4f59f4fa5d5951ba277d18ac2bb8251"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/cantataone/CantataOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

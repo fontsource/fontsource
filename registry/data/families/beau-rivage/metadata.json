@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-02-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Beau Rivage",
+	"id": "beau-rivage",
+	"license": {
+		"attribution": "Copyright 2004 The Beau Rivage Project Authors (https://github.com/googlefonts/beau-rivage)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/beaurivage",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/beau-rivage",
+		"revision": "a80b72a03f6ea0a5667c58620973efdb72384ffa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/beaurivage/BeauRivage-Regular.ttf",
+			"sha256": "6a407ad2418a5e29ceb447de49fb11e614615de4943292e3862347fa010e7bba",
+			"size": 238824,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

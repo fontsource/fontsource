@@ -1,0 +1,5 @@
+Sora, meaning sky in Japanese, is a typeface family commissioned for the [Sora](https://sora.org/) decentralized autonomous economy focused on empowering projects that benefit society. Soramitsu, the developer of Sora, is a Japanese technology company specializing in blockchain development and well-known for creating the first central bank digital currency.
+
+Sora typeface was designed to capture Soramitsu's spirit and heritage resulting in a type family with cues of low-resolution aesthetics and early screen typography but without nostalgia, as every decision was considered towards the crisp digital environment of today. The particularly big x-height combined with evidently generous counters turns the family into a convenient tool for app and web interfaces, where clarity and effectiveness at any size is an imperative.
+
+To contribute, see [github.com/sora-xor/sora-font](https://github.com/sora-xor/sora-font)

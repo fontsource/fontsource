@@ -1,0 +1,56 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-07-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Tienne",
+	"id": "tienne",
+	"license": {
+		"attribution": "Copyright (c) 2011, Vernon Adams (vern@newtypography.co.uk) with Reserved Font Names 'Tienne'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tienne",
+		"revision": "4723ae0153a065e41468d7e2666cd44961f594c7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Tienne2Font",
+		"revision": "e49a4151f9be25337e3873c71b2430f18113fdfc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tienne/Tienne-Black.ttf",
+			"sha256": "491c1dae79c296f300dd18ab595eb8a693a231263bf1a003dc28bd2feac5462a",
+			"size": 76300,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/tienne/Tienne-Bold.ttf",
+			"sha256": "f9037fef19a075cac703910c3c71ad747addba0aa008fb66d69769f79a41320a",
+			"size": 69024,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tienne/Tienne-Regular.ttf",
+			"sha256": "2fa9043583bbe9496744b9e3e1a1d473379c77366357f6bc853c94ad53d8c31c",
+			"size": 73628,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

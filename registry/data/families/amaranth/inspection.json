@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "52745a082784bd52cc63c52e74bd3bb9bdafc4b82fcdee8326cfbad9e4520383"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/amaranth/Amaranth-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "52745a082784bd52cc63c52e74bd3bb9bdafc4b82fcdee8326cfbad9e4520383"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/amaranth/Amaranth-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "52745a082784bd52cc63c52e74bd3bb9bdafc4b82fcdee8326cfbad9e4520383"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/amaranth/Amaranth-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "52745a082784bd52cc63c52e74bd3bb9bdafc4b82fcdee8326cfbad9e4520383"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/amaranth/Amaranth-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

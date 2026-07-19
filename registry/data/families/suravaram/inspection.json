@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 235,
+				"sha256": "d6be076ac9f9e1f1d2786dbe4389f8cd81ed5c6da8b229759f6c36b0a58ee533"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/suravaram/Suravaram-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

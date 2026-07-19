@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 226,
+				"sha256": "12b487d7bddcbcb9c05733321a56fdf2368a0082ac8b34dcf2de9961649d55d3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/fugazone/FugazOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

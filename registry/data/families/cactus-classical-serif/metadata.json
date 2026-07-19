@@ -1,0 +1,42 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-05-14",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Henry Chan, Tian Haidong, Moonlit Owen",
+	"family": "Cactus Classical Serif",
+	"id": "cactus-classical-serif",
+	"license": {
+		"attribution": "Copyright 2024 The Cactus Classical Serif Project Authors (https://github.com/MoonlitOwen/CactusSerif)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cactusclassicalserif",
+		"revision": "fb1dc0824c47c89537624a2caf3a0595fe9d2740",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/MoonlitOwen/CactusSerif",
+		"revision": "a267f9f32087eb9e6a9203c734cb952a64bc05be"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cactusclassicalserif/CactusClassicalSerif-Regular.ttf",
+			"sha256": "ecbd58961db922392d7fecfafa3681fefaeec0c399b860ab6940ba700f7da055",
+			"size": 28502932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-02-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Grape Nuts",
+	"id": "grape-nuts",
+	"license": {
+		"attribution": "Copyright 2003 The Grape Nuts Project Authors (https://github.com/googlefonts/grapenuts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/grapenuts",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/grapenuts",
+		"revision": "1313fb48d7196fd9388b8327d1a30c03323c33ee"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/grapenuts/GrapeNuts-Regular.ttf",
+			"sha256": "d4772724931dbafc507c610f10d8cffa4602f8b8e8abfc0bd384996875af4134",
+			"size": 122812,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

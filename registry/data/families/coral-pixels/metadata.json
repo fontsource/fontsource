@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-03-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tanukizamurai",
+	"family": "Coral Pixels",
+	"id": "coral-pixels",
+	"license": {
+		"attribution": "Copyright 2024 The Coral Pixels Project Authors (https://github.com/tanukifont/Coral-Pixels)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/coralpixels",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/tanukifont/Coral-Pixels",
+		"revision": "2817da74e36af89291ed233f6e2d799554eff991"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/coralpixels/CoralPixels-Regular.ttf",
+			"sha256": "c42dc4b002d50e1948beb761103631bf90a61878fa3e560699734091ad561540",
+			"size": 632232,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

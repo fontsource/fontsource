@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 447,
+				"sha256": "006147be6427cf011c8f185aa6d4c203040e8893312b85ace4abd0078aa07ecf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.110; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/cutivemono/CutiveMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

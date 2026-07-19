@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-04-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "Nova Square",
+	"id": "nova-square",
+	"license": {
+		"attribution": "Copyright (c) 2011, wmk69 (wmk69@o2.pl) with Reserved Font Names 'NovaSquare' and 'Nova Square'. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/novasquare",
+		"revision": "a16dee833a4aebd3b74167c9b9674b2a2fb52610",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/novasquare/NovaSquare.ttf",
+			"sha256": "bf7d8725e2fed1984cadbcb4e54d67cd898f042e11c14e9c30074b14dab6963f",
+			"size": 87968,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

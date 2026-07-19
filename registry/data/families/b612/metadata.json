@@ -1,0 +1,65 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-11-21",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Nicolas Chauveau, Thomas Paillot, Jonathan Favre-Lamarine, Jean-Luc Vinot",
+	"family": "B612",
+	"id": "b612",
+	"license": {
+		"attribution": "Copyright 2012 The B612 Project Authors (https://github.com/polarsys/b612)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/b612",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/polarsys/b612",
+		"revision": "48ac6ba67ecab8123e8e36d6aa05367db0c7b638"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/b612/B612-Bold.ttf",
+			"sha256": "91749541ac7b2c328b58832b7e2c4df809d7e2ba38d62a3a5aa3f8e38b271814",
+			"size": 100932,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/b612/B612-BoldItalic.ttf",
+			"sha256": "5911fe0ae69264fb74b2956fc66c616580cd392b47f29335fa68ce5db47a4d2f",
+			"size": 109172,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/b612/B612-Italic.ttf",
+			"sha256": "57fd8a0d3c8baf066f21c0a3034af277887a0b17b8c18cbbcc1c642640dd149f",
+			"size": 106128,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/b612/B612-Regular.ttf",
+			"sha256": "139dce659100a83bf95b48474696e448bee95631ef84fd3d0437ced2bf33cf73",
+			"size": 153192,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-11-26",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Sorkin Type",
+	"family": "Denk One",
+	"id": "denk-one",
+	"license": {
+		"attribution": "Copyright 2012 The Denk One Project Authors (https://github.com/SorkinType/Voltaire) with Reserved Font Name 'Denk'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/denkone",
+		"revision": "d9c0d325833eb568b5cb79347cb83124e2b99be4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Denk-One",
+		"revision": "95da30b8aa7bd5fb3045afb2fe054bf1b2e4e029"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/denkone/DenkOne-Regular.ttf",
+			"sha256": "088761eca739820556435bd4eafb8637808a55e121bed582d493969525c97211",
+			"size": 304360,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

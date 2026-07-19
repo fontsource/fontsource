@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 15613,
+				"sha256": "909fea71b18564b50a210d9315e99a2008de8ddd554f4e80db164901fb3bc5b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.610",
+			"outline": "glyf",
+			"path": "ofl/bpmfzihikaistd/BpmfZihiKaiStd-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

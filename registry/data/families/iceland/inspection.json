@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 216,
+				"sha256": "fb8915d1b66fa06d1371b9ef52cd0fcdf8aaf5585d8707194d76a75d7963b798"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/iceland/Iceland-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

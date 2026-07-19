@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Santiago Orozco",
+	"family": "Antic Didone",
+	"id": "antic-didone",
+	"license": {
+		"attribution": "Copyright (c) 2011, Santiago Orozco (hi@typemade.mx), with Reserved Font Name Antic Didone.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anticdidone",
+		"revision": "4f45bb1715060a307b79e4606719f4451e54e690",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/anticdidone",
+		"revision": "a69ba5c398a94f60b93bf779c1d9c2dc27975258"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anticdidone/AnticDidone-Regular.ttf",
+			"sha256": "63a560792f0cb5342c0da7759c9df2e1ce0324a8af46ae976d9458fbcccbb440",
+			"size": 39668,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

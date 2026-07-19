@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 220,
+				"sha256": "888d95f82b4b0428a149c9cf064ea718afd0740181986a6922abd16efbfa6464"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006 2010 beta release; ttfautohint (v1.8.2)",
+			"outline": "glyf",
+			"path": "ofl/arvo/Arvo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 222,
+				"sha256": "4735f37ed45db54a2a4e45274c69043ee5ac8847a603773b61a9607b1c75237f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006 2010 beta release; ttfautohint (v1.8.2)",
+			"outline": "glyf",
+			"path": "ofl/arvo/Arvo-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 222,
+				"sha256": "1aca059bc48f3590718f9a6b6f5c236d83b9eaea2998233a20aa0b6e3ec9e637"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006 2010 beta release; ttfautohint (v1.8.2)",
+			"outline": "glyf",
+			"path": "ofl/arvo/Arvo-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 226,
+				"sha256": "2d04ed8d93cb9414f64dde6b00cf15767a372ab22abc1f9e6f1829dab7f159b7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006 2010 beta release; ttfautohint (v1.8.2)",
+			"outline": "glyf",
+			"path": "ofl/arvo/Arvo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

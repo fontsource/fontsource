@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 313,
+				"sha256": "b71de8897f23252e9521fd2fbd7a150616b8dd9910a9cc6399ed57a65f9ed965"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.301",
+			"outline": "glyf",
+			"path": "ofl/prociono/Prociono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

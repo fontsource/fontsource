@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-06-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Gabriel Lam, ViệtAnh Nguyễn",
+	"family": "Darker Grotesque",
+	"id": "darker-grotesque",
+	"license": {
+		"attribution": "Copyright 2019 The Darker Grotesque Project Authors (https://github.com/bettergui/DarkerGrotesque)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/darkergrotesque",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/bettergui/DarkerGrotesque",
+		"revision": "a5c3584b44ab3a7d272565662139ee07bb72e8e8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/darkergrotesque/DarkerGrotesque[wght].ttf",
+			"sha256": "ed61c00a14f571096a8c03d00f91d37907df9d55da7cd7444914353ca224cb86",
+			"size": 91516,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

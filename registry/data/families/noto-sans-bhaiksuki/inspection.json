@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 434,
+				"sha256": "5b9be34b2f445e54b580019f30319b5740bf3af1888afd7d4b0e2ce36465d4c0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansbhaiksuki/NotoSansBhaiksuki-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

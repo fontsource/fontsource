@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 413,
+				"sha256": "3d2e3f5b38f5836527e3fd03b93582376facc2050fadedf6ba712bc3fa77d5c1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/faunaone/FaunaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

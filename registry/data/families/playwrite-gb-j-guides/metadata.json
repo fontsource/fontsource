@@ -1,0 +1,47 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-11-22",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "TypeTogether, Veronika Burian, José Scaglione",
+	"displayName": "Playwrite England Joined Guides",
+	"family": "Playwrite GB J Guides",
+	"id": "playwrite-gb-j-guides",
+	"license": {
+		"attribution": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playwritegbjguides",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playwrite",
+		"revision": "02e4e15767f5b6c2109413429fc51879b9507ab4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playwritegbjguides/PlaywriteGBJGuides-Italic.ttf",
+			"sha256": "f6741238e70ee582a1a28d97e271f1dc69fce769d12c8e4a126c4500c1e0b7b4",
+			"size": 364208,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/playwritegbjguides/PlaywriteGBJGuides-Regular.ttf",
+			"sha256": "b7be1f39971fd700acf9ef4e5c51d9412a3fc70af9e0efbfd5286ea88ea7b351",
+			"size": 358816,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

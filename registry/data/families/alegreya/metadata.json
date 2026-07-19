@@ -1,0 +1,53 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Juan Pablo del Peral, HT Fonts",
+	"family": "Alegreya",
+	"id": "alegreya",
+	"license": {
+		"attribution": "Copyright 2011 The Alegreya Project Authors (https://github.com/huertatipografica/Alegreya)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alegreya",
+		"revision": "199711f8c8d2cafc88f26c174152abfa18eb62c3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/huertatipografica/Alegreya",
+		"revision": "1dd6b28b57c50e3168db1cbbb8086e7978abcfbf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alegreya/Alegreya-Italic[wght].ttf",
+			"sha256": "fa915eec76227935dc5fb678953c94b71287c360928013cfdb441dfe52f5a391",
+			"size": 425852,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/alegreya/Alegreya[wght].ttf",
+			"sha256": "ba5564634b93a8f8ba57b48cd4f1ae7417d2b4656fbac779028679b00de3cf12",
+			"size": 425288,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

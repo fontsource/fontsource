@@ -1,0 +1,9 @@
+Libre Caslon Display is the display version of [Libre Caslon Text](https://fonts.google.com/specimen/Libre+Caslon+Text). The family is optimized for web headlines.
+
+There are already lots of digital Caslon's revivals, and lots of Caslon-esque fonts. Some are very good. But none of them was truly made for the web. While they look very good when printed on paper, they render very small when used for web body text on the screen.
+
+Another big difference is that pretty much all other digital Caslons revivals are based on 18th Century specimens by William Caslon I and William Caslon II. Libre Caslon, instead, is based on hand lettering artist Caslon interpretations typical of 1950s advertising.
+
+Kerning by Igino Marini with iKern.
+
+Libre Caslon Display also include some nice, extra Open Type features (available in the downloadable files), and a big Pro character-set covering 103 Latin languages: Afar, Afrikaans, Albanian, Azerbaijani, Basque, Belarusian, Bislama, Bosnian, Breton, Catalan, Chamorro, Chichewa, Comorian, Czech, Danish, Dutch, English, Esperanto, Estonian, Faroese, Fijian, Filipino/Tagalog, Finnish, Flemish, French, Gaelic (Irish/Manx/Scottish), Gagauz, German, Gikuyu, Gilbertese/Kiribati, Greenlandic, Guarani, Haitian\_Creole, Hawaiian, Hungarian, Icelandic, Igo/Igbo, Indonesian, Irish, Italian, Javanese, Kashubian, Kinyarwanda, Kirundi, Latin, Latvian, Lithuanian, Luba/Ciluba/Kasai, Luxembourgish, Malagasy, Malay, Maltese, Maori, Marquesan, Marshallese, Moldovan/Moldovian/Romanian, Montenegrin, Nauruan, Ndebele, Norwegian, Oromo, Palauan/Belauan, Polish, Portuguese, Quechua, Romanian, Romansh, Sami, Samoan, Sango, Serbian, Sesotho, Setswana/Sitswana/Tswana, Seychellois\_Creole, SiSwati/Swati/Swazi, Silesian, Slovak, Slovenian, Somali, Sorbian, Sotho, Spanish, Swahili, Swedish, Tahitian, Tetum, Tok\_Pisin, Tongan, Tsonga, Tswana, Tuareg/Berber, Turkish, Turkmen, Tuvaluan, Uzbek/Usbek, Wallisian, Walloon, Welsh, Xhosa, Yoruba, Zulu.

@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-10-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu"
+	],
+	"designer": "Frida Medrano",
+	"family": "Kalnia",
+	"id": "kalnia",
+	"license": {
+		"attribution": "Copyright 2022 The Kalnia Project Authors (https://github.com/fridamedrano/Kalnia-Typeface.git)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kalnia",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fridamedrano/Kalnia-Typeface",
+		"revision": "b58d2689de548478ed6cee6937c37eabc4140958"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kalnia/Kalnia[wdth,wght].ttf",
+			"sha256": "33685d0ec4abcca2736a51a10a6d4ee1aab2e608e6598c6926af9550b86731a4",
+			"size": 116460,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

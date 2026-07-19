@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tipo",
+	"family": "Port Lligat Slab",
+	"id": "port-lligat-slab",
+	"license": {
+		"attribution": "Copyright (c) 2011, Tipo (http://www.tipo.net.ar dario@tipo.net.ar), with Reserved Font Name \"Port Lligat Slab\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/portlligatslab",
+		"revision": "1c5eba2966174ca46a90c1e7e0dbcc79a15ff586",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/portlligatslab/PortLligatSlab-Regular.ttf",
+			"sha256": "70edb02d7c38cde09b379f9101322fb93189a35276e79eb15c240780bd3b4af7",
+			"size": 38160,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,83 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Dan Sayers",
+	"family": "Averia Serif Libre",
+	"id": "averia-serif-libre",
+	"license": {
+		"attribution": "Copyright (c) 2011, Dan Sayers (i@iotic.com), with Reserved Font Name 'Averia' and 'Averia Libre'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/averiaseriflibre",
+		"revision": "6f3c56c74008b97476b4f97e591a5dde93e7cd4d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/averiaseriflibre",
+		"revision": "d1b2ab3fcea4e6a77af02a5e7861ed7753793dfd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/averiaseriflibre/AveriaSerifLibre-Bold.ttf",
+			"sha256": "a4f49c9df1351b6151969737493446fa1add16ed1a22fa8b9a4aecbdffeb1b3b",
+			"size": 113916,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/averiaseriflibre/AveriaSerifLibre-BoldItalic.ttf",
+			"sha256": "3f6d6fe8403f2080c63a48db0bf862243c6c28785a133da2a9273906eb064cd6",
+			"size": 138164,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/averiaseriflibre/AveriaSerifLibre-Italic.ttf",
+			"sha256": "c532f0f6ab4e98054942f56de25361505c7c7032c393f2b5ce2d8c82c22b2499",
+			"size": 130916,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/averiaseriflibre/AveriaSerifLibre-Light.ttf",
+			"sha256": "974986d0a74bb2a888e7fd13e5556388add3ccceeba77c699e43bb3121facf18",
+			"size": 109968,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/averiaseriflibre/AveriaSerifLibre-LightItalic.ttf",
+			"sha256": "cfd452ad90bddf59b5e20d9e6b623fce176bd7fa4bf53180e95c6ad9d5cb41bc",
+			"size": 136016,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/averiaseriflibre/AveriaSerifLibre-Regular.ttf",
+			"sha256": "c64545bce66be1d737832337c1188015f9acacc5230ccbeb4ce646a0eaa252da",
+			"size": 109948,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

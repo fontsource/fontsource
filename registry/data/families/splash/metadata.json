@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-05-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Splash",
+	"id": "splash",
+	"license": {
+		"attribution": "Copyright 2017-2021 The Splash Project Authors (https://github.com/googlefonts/splash)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/splash",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/splash",
+		"revision": "7653a0b5fcccd37a920ba9a4da8f1680c0203af2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/splash/Splash-Regular.ttf",
+			"sha256": "42c2ddc11917333bcd24a3eb0bc7df5205278226e2f6521459384479f1b6675c",
+			"size": 1473200,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2014-10-31",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Multiple Designers",
+	"family": "Bhavuka",
+	"id": "bhavuka",
+	"license": {
+		"attribution": "Copyright 2014 - Matt Heximer (www.10fourdesign.com)\nbased on Latin \"Bellota\" by Kemie Guaida (www.pixilate.com), \nwhich is in turn based on \"Snippet\" by Gesine Todt.\n\nLicensed under the SIL Open Font License 1.1 This license is available with a FAQ at: http://scripts.sil.org/OFL\n(see file OFL.txt)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bhavuka",
+		"revision": "b0979d991509181e59a5b00cf2f9c975476e31f1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Bhavuka",
+		"revision": "5a9c2de51b99f4a5735c1dba6a883a2d9be4caab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bhavuka/Bhavuka-Regular.ttf",
+			"sha256": "153806257782e9bb99f4504659175a4ba27a5933291702963416c98870b37aa9",
+			"size": 262772,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

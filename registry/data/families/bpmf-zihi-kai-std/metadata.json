@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2026-01-30",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "But Ko",
+	"family": "Bpmf Zihi Kai Std",
+	"id": "bpmf-zihi-kai-std",
+	"license": {
+		"attribution": "Copyright 2025 The Bpmf Project Authors (https://github.com/ButTaiwan/bpmfvs)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bpmfzihikaistd",
+		"revision": "d0b331d2b31bd8d9a5630f742c1de1a5d8e3ddc2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ButTaiwan/bpmfvs",
+		"revision": "20f741c18bb917b63576293906c01e82ddfce032"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bpmfzihikaistd/BpmfZihiKaiStd-Regular.ttf",
+			"sha256": "043aaa657f2b28d46ef9d4970064a10ed6fd162f4afb28b9253f25d4f8de341b",
+			"size": 17497872,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

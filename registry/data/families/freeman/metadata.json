@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2024-04-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Rodrigo Fuenzalida, Aoife Mooney, Vernon Adams",
+	"family": "Freeman",
+	"id": "freeman",
+	"license": {
+		"attribution": "Copyright 2023 The Freeman Project Authors (https://github.com/rfuenzalida/Freeman)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/freeman",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/rfuenzalida/Freeman",
+		"revision": "5ced8a95f5b0e0c3dcea3b033398ba93a56fb687"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/freeman/Freeman-Regular.ttf",
+			"sha256": "48fac93ede204981c621a1fb039bdfcbbdf7e646aa7a7f823d4191bcebe16f49",
+			"size": 241164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

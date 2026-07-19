@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2015-07-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Sriracha",
+	"id": "sriracha",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com), Copyright (c) 2014, Pablo Impallari (www.impallari.com|impallari@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sriracha",
+		"revision": "38dfd015906471e06361af6d9d5463bd01c49803",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/sriracha",
+		"revision": "6c6cf92ed8b0b45caca566d999d2dadc7e35f2fd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sriracha/Sriracha-Regular.ttf",
+			"sha256": "c3128c30cb21e8724b792586c87059d1b5eceae10d9957ba2ab26c80bbed3669",
+			"size": 319896,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

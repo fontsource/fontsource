@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2022-12-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Andy Clymer",
+	"family": "Tilt Neon",
+	"id": "tilt-neon",
+	"license": {
+		"attribution": "Copyright 2019 The Tilt Project Authors (https://github.com/googlefonts/Tilt-Fonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tiltneon",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Tilt-Fonts",
+		"revision": "0773dc9f490aabba0c19c15d290b575b62245970"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tiltneon/TiltNeon[XROT,YROT].ttf",
+			"sha256": "c22333dfd1cd14c2a612b36ea1c50ea13e5e9244181e5129a63c944a165823a0",
+			"size": 583288,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

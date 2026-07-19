@@ -1,0 +1,44 @@
+{
+	"category": "display",
+	"dateAdded": "2023-11-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Doodle Triangles",
+	"id": "rubik-doodle-triangles",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikdoodletriangles",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "409369746e32796524d9b0b6c9c5aa6445c83bcd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikdoodletriangles/RubikDoodleTriangles-Regular.ttf",
+			"sha256": "096790639e1a53a23efa86e4c0ed2083037a8bf42521cfd07bf09cbf163d89be",
+			"size": 1366376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

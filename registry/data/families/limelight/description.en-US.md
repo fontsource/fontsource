@@ -1,0 +1,1 @@
+Limelight is a sensitive rendition of the classic high contrast art deco style geometric sans serif. This style is often used to suggest the 1920's time period as well as the theatre generally and hollywood filmmaking in particular. Because of the extreme contrast of the design it will perform most reliably on web pages at medium and large font sizes.

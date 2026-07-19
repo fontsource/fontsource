@@ -191,6 +191,9 @@ jobs:
       - name: Test registry tooling
         run: pnpm --filter '@fontsource-utils/registry' test
 
+      - name: Validate registry data
+        run: pnpm --filter '@fontsource-utils/registry' validate
+
   release:
     if: >-
       github.ref == 'refs/heads/main' &&

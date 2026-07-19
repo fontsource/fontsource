@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 549,
+				"sha256": "909fcbca335bf5057f10ea385f46826dc27162f18f38dc4e3c5b9b5a15856ab1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansmendekikakui/NotoSansMendeKikakui-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

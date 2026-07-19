@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 763,
+				"sha256": "6bd13fca84679d7678433a33c1847ffa6dd6556936639ee1f65d9ee12ea29272"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.213",
+			"outline": "glyf",
+			"path": "ofl/alyamama/Alyamama[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

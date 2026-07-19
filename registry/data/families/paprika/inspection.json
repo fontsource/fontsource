@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 427,
+				"sha256": "1c134002a3f3a946dad8722139e1b8c44233598b0dcc76ce6bd2c96c947dc50a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/paprika/Paprika-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

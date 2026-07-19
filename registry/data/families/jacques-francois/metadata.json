@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Jacques Francois",
+	"id": "jacques-francois",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name 'Jacques Francois'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jacquesfrancois",
+		"revision": "dc1676f820b7e22bf5755a95f4d52cdf318012a0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Jacques-Francois",
+		"revision": "d34156392b110af3e182d07cdfe9649a6f294dab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jacquesfrancois/JacquesFrancois-Regular.ttf",
+			"sha256": "33aa3d742ee62f235016dd63f7e1ed6a3450e0d527a0e951bb1d410a47ac68cd",
+			"size": 60448,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

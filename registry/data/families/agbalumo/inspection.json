@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1474,
+				"sha256": "302920c781d4eaae1620ef63e088374b2ab5d0279a76408e8c7c12e7581dcff7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/agbalumo/Agbalumo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

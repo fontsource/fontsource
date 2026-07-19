@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sorkin Type",
+	"family": "Inder",
+	"id": "inder",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Sorkin Type Co (eben@eyebytes.com) with Reserved Font Name Inder.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/inder",
+		"revision": "54c030894d3ee76214345124ce8cc4b021d06b45",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/inder",
+		"revision": "5620f4744158d400ba1286612d14d49c43597033"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/inder/Inder-Regular.ttf",
+			"sha256": "7e9922756c6879c6aed60b1f880fcd3067c44c8f3328830909d1091b11168fc6",
+			"size": 34132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

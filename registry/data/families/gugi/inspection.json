@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2494,
+				"sha256": "78a6a4505f9cb85f8e97aec0d23908520ebad1bb205be6adc6d430bc07f58233"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.00",
+			"outline": "glyf",
+			"path": "ofl/gugi/Gugi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

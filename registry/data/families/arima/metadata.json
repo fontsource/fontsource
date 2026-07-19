@@ -1,0 +1,44 @@
+{
+	"category": "display",
+	"dateAdded": "2022-05-25",
+	"declaredSubsets": [
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"malayalam",
+		"menu",
+		"tamil",
+		"vietnamese"
+	],
+	"designer": "Natanael Gama, Joana Correia, Rosalie Wagner",
+	"family": "Arima",
+	"id": "arima",
+	"license": {
+		"attribution": "Copyright 2020 The Arima Project Authors (https://github.com/NDISCOVER/Arima-Font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arima",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NDISCOVER/Arima-Font",
+		"revision": "c5fd72960f129076fbf3759d6d777cedcbceb468"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arima/Arima[wght].ttf",
+			"sha256": "c6b0db0d4343e9d08b8e79f9c6f868576c94bc0c839d349535f030b011884e45",
+			"size": 348480,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

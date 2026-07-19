@@ -1,0 +1,95 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-09-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mike Abbink, Bold Monday",
+	"family": "IBM Plex Sans JP",
+	"id": "ibm-plex-sans-jp",
+	"license": {
+		"attribution": "Copyright 2018 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexsansjp",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "80fcb676509354caa75c6bfc7f9db598545d466f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexsansjp/IBMPlexSansJP-Bold.ttf",
+			"sha256": "bd8a98b9b55c9ea3f0fa1ed094c15981788cc9a41b0357f4453014fd1d44da19",
+			"size": 2391376,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansjp/IBMPlexSansJP-ExtraLight.ttf",
+			"sha256": "83b3a8d967295c162938946d6a9395d539c95fd53e161e0e4b01e5d7f39a2ea6",
+			"size": 2412964,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansjp/IBMPlexSansJP-Light.ttf",
+			"sha256": "f6390231b0ce848866d5599765897d4b882d6b29dc0484dd4d1a5435b05761ba",
+			"size": 2405308,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansjp/IBMPlexSansJP-Medium.ttf",
+			"sha256": "1d09f5e25b19e54b2c55da70de58f9962512c3e07ed7c3e1c9bad77ace5c22e6",
+			"size": 2389060,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansjp/IBMPlexSansJP-Regular.ttf",
+			"sha256": "372f8bba95f386856ae435dc0e69f08db1cac29bed513d99171a0ae2d307ba2a",
+			"size": 2396484,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansjp/IBMPlexSansJP-SemiBold.ttf",
+			"sha256": "5985c29d2d5d444072915cf5874dc80e0a3f5fadbf14a9e3013a03a8fe6d7ff5",
+			"size": 2388720,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansjp/IBMPlexSansJP-Thin.ttf",
+			"sha256": "773042bf5e8f428d46fcf81b9255c6a451f20cbd39983f308e96808a2e15e134",
+			"size": 2418688,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

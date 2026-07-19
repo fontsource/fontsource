@@ -1,0 +1,160 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "4ecd7196a90f774eaa4cf7bc007e789f78ddf082b3fe170354f7c078e2fb215a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/fahkwang/Fahkwang-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

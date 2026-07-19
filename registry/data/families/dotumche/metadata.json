@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-05-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "HanYang I&C Co.",
+	"family": "DotumChe",
+	"id": "dotumche",
+	"license": {
+		"attribution": "Copyright 2024 The Gulim and Dotum Project Authors (https://github.com/googlefonts/gulim)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dotumche",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/gulim",
+		"revision": "012723a8d5b6a6dc920330f26d165422c3014fd6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dotumche/DotumChe-Regular.ttf",
+			"sha256": "c2c030ca896d46ff28dae17663e9fe22ab2fc6e6518c96d75e15ca8fb441bd2f",
+			"size": 4568508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 267,
+				"sha256": "94c1210dc66b776c3880dde320fdb8b228356de2ac7a814b71ca38650593895c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/smythe/Smythe-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

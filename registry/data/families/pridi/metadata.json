@@ -1,0 +1,86 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Pridi",
+	"id": "pridi",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pridi",
+		"revision": "1334e46328238ade7f485f3fade384e5b5a5e15d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/pridi",
+		"revision": "fe54fb681271c79ffd55ea9045145c9d1da8ade1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pridi/Pridi-Bold.ttf",
+			"sha256": "7ed16f946290c59f336c1cb031a80a5fd4ae60e6c261bffa9e06c92df6865ff4",
+			"size": 212956,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/pridi/Pridi-ExtraLight.ttf",
+			"sha256": "12f2ed9cd258b585083be1a6faa490c6e41917d95a4fbe045fdb43819eed8a9c",
+			"size": 188316,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/pridi/Pridi-Light.ttf",
+			"sha256": "3f328cfdface42003202df36d275b0d3498c7484dd384add3fbb066c5829dab0",
+			"size": 211748,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/pridi/Pridi-Medium.ttf",
+			"sha256": "d38ca6dd91f8ede51cb793dc05c56c2381a4933a8849ddc09281ecb50943294b",
+			"size": 225316,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/pridi/Pridi-Regular.ttf",
+			"sha256": "cc5a2ea9660d78fc64c909c29582ab8bd7195128f81bed825d7cee985369a4da",
+			"size": 222368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/pridi/Pridi-SemiBold.ttf",
+			"sha256": "afb99e891ab2ada5072940193766bffb53a836f7e75cd8ec85213a61edde4ce4",
+			"size": 220084,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

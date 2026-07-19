@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11741,
+				"sha256": "84ac80c2a1baca74cb5d435dd37aeeef74872433daf59872513744929f1eb0bb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.05",
+			"outline": "glyf",
+			"path": "ofl/bizudgothic/BIZUDGothic-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11741,
+				"sha256": "84ac80c2a1baca74cb5d435dd37aeeef74872433daf59872513744929f1eb0bb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.05",
+			"outline": "glyf",
+			"path": "ofl/bizudgothic/BIZUDGothic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

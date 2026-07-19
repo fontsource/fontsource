@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 501,
+				"sha256": "883bbd86908061e913ca41d37eb9d74a6c8ef91536b66405934d26f0d29648eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.6) -l 8 -r 50 -G 200 -x 14 -D latn -f none -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/librecaslondisplay/LibreCaslonDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-05-14",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Kurale",
+	"id": "kurale",
+	"license": {
+		"attribution": "Copyright 2013 The Kurale Project Authors (edu@tipo.net.ar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kurale",
+		"revision": "224e19cd85a13499a4c017530d22dff69a6491eb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/kurale",
+		"revision": "08bf7684d57c6faacff84e6c5ab31df6b7beae18"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kurale/Kurale-Regular.ttf",
+			"sha256": "6055aaca6870ca64210dd81fa47f8bb71595a9c8fbe570351ed45a15f1a0820d",
+			"size": 265304,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

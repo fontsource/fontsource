@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 45,
+					"min": -45,
+					"tag": "XROT"
+				},
+				{
+					"default": 0,
+					"max": 45,
+					"min": -45,
+					"tag": "YROT"
+				}
+			],
+			"cmap": {
+				"codepointCount": 626,
+				"sha256": "3b18dfcb6168d36d6e9c85c2e0f616b1d35483b5385fbb1219e83f7b1da6ac96"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/tiltwarp/TiltWarp[XROT,YROT].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

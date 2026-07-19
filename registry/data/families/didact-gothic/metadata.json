@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Daniel Johnson, Cyreal",
+	"family": "Didact Gothic",
+	"id": "didact-gothic",
+	"license": {
+		"attribution": "Copyright 2016 The Didact Gothic Project Authors (il.basso.buffo@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/didactgothic",
+		"revision": "c741144416d5635d5de832dff8ba09292c112036",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ossobuffo/didact-gothic",
+		"revision": "adc3106364c1c79dca374283822289a83cf41a77"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/didactgothic/DidactGothic-Regular.ttf",
+			"sha256": "b98f9e091b6337a86f4e0f69c94c31905e1e287782853f472e176b4e28d3f81f",
+			"size": 194200,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

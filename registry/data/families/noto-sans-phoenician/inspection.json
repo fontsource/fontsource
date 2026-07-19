@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 364,
+				"sha256": "f205519a82cdbcc099c764e188e20dc0b5709df5180a3478a49303e7e8f7520b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansphoenician/NotoSansPhoenician-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

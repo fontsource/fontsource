@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 260,
+				"sha256": "bdd674e44ff2f4c224cecdaa5c6fa05c56b4ba348ff0d8e87e353025751f8862"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/pompiere/Pompiere-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

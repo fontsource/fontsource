@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 232,
+				"sha256": "4fc545ecc486cbfeeca8fae971b7153295297840d49a7448a7a13617f3e0b3d6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/almendradisplay/AlmendraDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

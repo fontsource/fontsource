@@ -1,0 +1,35 @@
+{
+	"id": "tamil-supplement",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"11FC0",
+			"11FF1"
+		],
+		[
+			"11FFF",
+			"11FFF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/tamil-supplement_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "e7a82154131c2dbb6122dd41e9baf50de64cc22a1f1a4e6fc5cee366e26d14f9",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "BLED"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": -53,
+					"tag": "SCAN"
+				}
+			],
+			"cmap": {
+				"codepointCount": 470,
+				"sha256": "5d6b81cf3a1ee9404584465d420e98476b999a5c84d24f16dfb8843ee97a0d67"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/sixtyfour/Sixtyfour[BLED,SCAN].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-10-26",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Riccardo De Franceschi",
+	"family": "Contrail One",
+	"id": "contrail-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Names \"Contrail\" and \"Contrail One\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/contrailone",
+		"revision": "e4ea616b8d0a774e0320f5c8f9e9be6ff2b2c872",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/contrailone",
+		"revision": "755f2a5959072b2ce7e09b555cc55917bf3c7ce0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/contrailone/ContrailOne-Regular.ttf",
+			"sha256": "a7665eddb068507736f593ca8eb9f547db8a8d61ea1cf03e072554aab5a0e8b1",
+			"size": 31184,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

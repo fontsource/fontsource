@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 569,
+				"sha256": "8388c5185eb1d5cdab0796e77a8b0fe67fcf8a4550bddfc181b0af97938bcdb5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/blakahollow/BlakaHollow-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

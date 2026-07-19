@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 721,
+				"sha256": "45fc44bb498dc17d20dccf5a9461c2219601cddf03a0196e3b911df728796eb5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.071;gftools[0.9.30]",
+			"outline": "glyf",
+			"path": "ofl/plusjakartasans/PlusJakartaSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 721,
+				"sha256": "45fc44bb498dc17d20dccf5a9461c2219601cddf03a0196e3b911df728796eb5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.071;gftools[0.9.30]",
+			"outline": "glyf",
+			"path": "ofl/plusjakartasans/PlusJakartaSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

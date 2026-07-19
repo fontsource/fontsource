@@ -1,0 +1,193 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Lâm Bảo, Tony Le, ViệtAnh Nguyễn",
+	"family": "Be Vietnam Pro",
+	"id": "be-vietnam-pro",
+	"license": {
+		"attribution": "Copyright 2021 The Be Vietnam Pro Project Authors (https://github.com/bettergui/BeVietnamPro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bevietnampro",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/bettergui/BeVietnamPro",
+		"revision": "804e62d81abbbcdcce5686069c69b41b8c245192"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-Black.ttf",
+			"sha256": "dd0ec461782da7f4a58698b431a67c455ced7c09deb9c40d7b47e61975d3ffdb",
+			"size": 142612,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-BlackItalic.ttf",
+			"sha256": "d55266c614d1fb013a6661c5cd1d98f31f2e03418d83e90f509b210f452c0cdf",
+			"size": 140468,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-Bold.ttf",
+			"sha256": "7f738fe5c43c8872807b20e2d30d42163618de8a4daf7f48a939adac32c16847",
+			"size": 140300,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-BoldItalic.ttf",
+			"sha256": "a2a65bdf9b251beb3d658ae691889d71ce63c0290940c87ca60b449ceb0bdaee",
+			"size": 137748,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-ExtraBold.ttf",
+			"sha256": "44dbfa01553d227bec76ba6446c5618870a76a4a3297f41630dde859d0650d02",
+			"size": 139680,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-ExtraBoldItalic.ttf",
+			"sha256": "b5544a50b74c3153f7aa68614cfaebbea924869e6d6fdfd4ec80decfdd7ff4cd",
+			"size": 138076,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-ExtraLight.ttf",
+			"sha256": "3df1650399fd891967082bd2f78e1d87fe4eb82fc7bdbb7ab94ba8bda848caa1",
+			"size": 134464,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-ExtraLightItalic.ttf",
+			"sha256": "fc4410f0aa39430463f103463d27be5486c2018d11854f1733dd27be7348b41c",
+			"size": 131492,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-Italic.ttf",
+			"sha256": "a33ebb3f68e0e260a7d3874d64259ad309971a2daf969e7ce5f444d70bce535f",
+			"size": 137244,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-Light.ttf",
+			"sha256": "f0b7143edac3fd99960312706cfa51cbafec28e7afa6d4afbd08a73bb246af13",
+			"size": 136772,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-LightItalic.ttf",
+			"sha256": "baeadf148ee2b6640d7910ebab99b01aaaf5eb009463bdf466ab2b43108389fd",
+			"size": 136084,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-Medium.ttf",
+			"sha256": "b60832bfa0fcd015158112c64d7e3fdad3b0c6287d1823f85a3103636e845268",
+			"size": 135980,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-MediumItalic.ttf",
+			"sha256": "b7d43a5f943048f7d4e49a080052acce1902f1eab07f4160299d84abab8119fa",
+			"size": 138280,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-Regular.ttf",
+			"sha256": "cd1ef6e9d7db28ad5cdb88a65ccbe693870e60d340b791f349d248342b4fe4c3",
+			"size": 132948,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-SemiBold.ttf",
+			"sha256": "bd8e27eb02720b9d91e59e4f10a90878643219f25ce6a8d9a4f06a8a88d3bb71",
+			"size": 136736,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-SemiBoldItalic.ttf",
+			"sha256": "f7dbf8a63f4b4a6f7d7f1f4f27443495d01475663bb8fe5cb1a6fc6740e82a27",
+			"size": 134740,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-Thin.ttf",
+			"sha256": "3ff7cae0bdd4b2087fe24583d1137dc0a6ecfed96c62ee39955992fa1629176c",
+			"size": 127040,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/bevietnampro/BeVietnamPro-ThinItalic.ttf",
+			"sha256": "14c50e3d6c8980656681ede48068d12ae645c71b1eaa40ff14267d54a49c5c5a",
+			"size": 129556,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

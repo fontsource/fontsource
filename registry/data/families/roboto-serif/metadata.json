@@ -1,0 +1,51 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-02-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Commercial Type, Greg Gazdowicz",
+	"family": "Roboto Serif",
+	"id": "roboto-serif",
+	"license": {
+		"attribution": "Copyright 2020 The Roboto Serif Project Authors (https://github.com/googlefonts/RobotoSerif)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/robotoserif",
+		"revision": "00a31b16e05b53660766c34faef6c44082e11caa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/roboto-serif",
+		"revision": "1ecc2513e8215b569246a5802f18aa4b0e1d67a5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/robotoserif/RobotoSerif-Italic[GRAD,opsz,wdth,wght].ttf",
+			"sha256": "695ffbe6bfd0893a8de90b1ea13632e7e838bc7427b818584e1daf82b36b99de",
+			"size": 4680368,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/robotoserif/RobotoSerif[GRAD,opsz,wdth,wght].ttf",
+			"sha256": "351ced75f3851806aa6d846b669361521eb1925cfc530396df9c1a1b77061ddb",
+			"size": 3944924,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-10"
+}

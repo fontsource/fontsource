@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 434,
+				"sha256": "53354dce9115f4c4bda8ecaa92428679c663902075728a395b605f9d6a55c633"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hind/Hind-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 434,
+				"sha256": "53354dce9115f4c4bda8ecaa92428679c663902075728a395b605f9d6a55c633"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hind/Hind-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 434,
+				"sha256": "53354dce9115f4c4bda8ecaa92428679c663902075728a395b605f9d6a55c633"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hind/Hind-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 434,
+				"sha256": "53354dce9115f4c4bda8ecaa92428679c663902075728a395b605f9d6a55c633"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hind/Hind-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 434,
+				"sha256": "53354dce9115f4c4bda8ecaa92428679c663902075728a395b605f9d6a55c633"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hind/Hind-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 232,
+				"sha256": "511ec26bdcf96735df58471838ce405a95d6538604d4e661e7ddfd337467685b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/aladin/Aladin-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

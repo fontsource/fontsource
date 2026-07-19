@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2022-11-24",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik 80s Fade",
+	"id": "rubik-80s-fade",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubik80sfade",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "8064988f06c4126e1cf1596baab46f9aeb626056"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubik80sfade/Rubik80sFade-Regular.ttf",
+			"sha256": "da14679ae16caaf4ad32aece9a7357dcdea02c5d7c9b1d296faba86e19862d3f",
+			"size": 3448044,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

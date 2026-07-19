@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-11-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Devonshire",
+	"id": "devonshire",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Devonshire\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/devonshire",
+		"revision": "17396027aba45e2441f1e531b4b4323c779c2156",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/devonshire",
+		"revision": "7d88bb81c76ccd1b7d48a15ae97a00c45f9ffb01"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/devonshire/Devonshire-Regular.ttf",
+			"sha256": "4c00f003570e5a99361cc83017cb1314aa3170cfaa53be29a08c555bbb434657",
+			"size": 67240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-03-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Michroma",
+	"id": "michroma",
+	"license": {
+		"attribution": "Copyright 2011 The Michroma Project Authors (https://github.com/googlefonts/Michroma-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/michroma",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Michroma-font",
+		"revision": "5822b9d1a733db7ae4f1a63a65a8b41b2d5b15cf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/michroma/Michroma-Regular.ttf",
+			"sha256": "b62301163788bc5b7f8fcac0b74b184e34e1827e577b499ecb724da065098f87",
+			"size": 64344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

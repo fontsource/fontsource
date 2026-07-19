@@ -1,0 +1,68 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 623,
+				"sha256": "b2e2d08a66b33976f63baf641e3054f033fc3a2d3780f4df0e554abc2962a5fe"
+			},
+			"colorTables": [
+				"EBDT",
+				"EBLC"
+			],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/anonymouspro/AnonymousPro-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 623,
+				"sha256": "b2e2d08a66b33976f63baf641e3054f033fc3a2d3780f4df0e554abc2962a5fe"
+			},
+			"colorTables": [
+				"EBDT",
+				"EBLC"
+			],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/anonymouspro/AnonymousPro-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 623,
+				"sha256": "b2e2d08a66b33976f63baf641e3054f033fc3a2d3780f4df0e554abc2962a5fe"
+			},
+			"colorTables": [
+				"EBDT",
+				"EBLC"
+			],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/anonymouspro/AnonymousPro-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 623,
+				"sha256": "b2e2d08a66b33976f63baf641e3054f033fc3a2d3780f4df0e554abc2962a5fe"
+			},
+			"colorTables": [
+				"EBDT",
+				"EBLC"
+			],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/anonymouspro/AnonymousPro-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

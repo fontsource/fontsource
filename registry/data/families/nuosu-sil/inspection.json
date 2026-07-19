@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1596,
+				"sha256": "f67f3ad920f14dd077d009c4ed2104a6e017168d7f74fa204823847087c76af2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.300",
+			"outline": "glyf",
+			"path": "ofl/nuosusil/NuosuSIL-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

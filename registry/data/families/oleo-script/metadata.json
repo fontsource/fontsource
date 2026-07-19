@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "soytutype fonts",
+	"family": "Oleo Script",
+	"id": "oleo-script",
+	"license": {
+		"attribution": "Copyright (c) 2012, Soytutype (contact@soytutype.com.ar|soytutype@gmail.com), with reserved fontname 'Oleo'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oleoscript",
+		"revision": "fbd77f5632e1fab240a0a6b41f98d4744e60cdd6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oleoscript/OleoScript-Bold.ttf",
+			"sha256": "7e4843c9d74233f00a2815954177e33758c1c42a08d218b11c131cf7d818f1d5",
+			"size": 34628,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/oleoscript/OleoScript-Regular.ttf",
+			"sha256": "1aa003ac938adf9bea644c406ce90eeb1913138aa1d7492242c0ca948c0f48ac",
+			"size": 34980,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

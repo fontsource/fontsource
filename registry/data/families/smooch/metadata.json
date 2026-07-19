@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Smooch",
+	"id": "smooch",
+	"license": {
+		"attribution": "Copyright 2017 The Smooch Project Authors (https://github.com/googlefonts/smooch)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/smooch",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/smooch",
+		"revision": "90c4cbdfbb06bf83e05b0b690e73f9dc8a760d03"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/smooch/Smooch-Regular.ttf",
+			"sha256": "a6a90a4613d353228eb56a8b257879365f9282105989997f92b3930f2fc55d84",
+			"size": 364436,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

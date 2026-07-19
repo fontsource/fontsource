@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11723,
+				"sha256": "2104d001cd1a7278476f515afa2626b936e2d59a52d9483190d3f62151496f04"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.00",
+			"outline": "glyf",
+			"path": "ofl/poorstory/PoorStory-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

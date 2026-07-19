@@ -1,0 +1,3 @@
+Avería means "breakdown" or "mechanical damage" in Spanish - and is related to the root of the English word "average." Averia Libre is based on the average of 725 fonts in the Google Fonts collection, and both glyph outlines and metrics are the result of the averaging process described at [iotic.com/averia](http://iotic.com/averia/)
+
+Averia Gruesa Libre exists in a Regular style, and there are also the [Averia Libre](http://www.google.com/fonts/specimen/Averia+Libre), [Averia Sans Libre](http://www.google.com/fonts/specimen/Averia+Sans+Libre) and [Averia Serif Libre](http://www.google.com/fonts/specimen/Averia+Serif+Libre) families with 6 styles.

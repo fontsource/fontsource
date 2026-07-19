@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 449,
+				"sha256": "15b7fe4cec16304867bf4360511091da8dfe4b1a3afc637e1df668876bd2563e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/konkhmersleokchher/KonkhmerSleokchher-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

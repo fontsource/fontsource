@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 399,
+				"sha256": "13fde8932591b1a228cc11c3af7c087f7efff343ead7a0641a37f7dc7daecb63"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansmahajani/NotoSansMahajani-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

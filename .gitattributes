@@ -1,1 +1,2 @@
 website/app/generated/api/** linguist-generated
+registry/data/** linguist-generated whitespace=-trailing-space

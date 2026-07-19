@@ -1,0 +1,42 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-03-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams, Jacques Le Bailly, Botjo Nikoltchev, Ani Petrova",
+	"family": "Pacifico",
+	"id": "pacifico",
+	"license": {
+		"attribution": "Copyright 2018 The Pacifico Project Authors (https://github.com/googlefonts/Pacifico)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pacifico",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Pacifico",
+		"revision": "423e7cb2b036ead2624c05197e17a83ddf5c6068"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pacifico/Pacifico-Regular.ttf",
+			"sha256": "5b6c0d5334a7bf77dea52b975c5a0c408878c0f7115ed5b6fb151f634b7bf701",
+			"size": 329380,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7074,
+				"sha256": "992308da1543ed27526e6601805a0b7c5fc2c04061b3df5ed1f135894b23f558"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/newtegomin/NewTegomin-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,7 @@
+Frank Ruhl Libre is an open source version of the classic Hebrew typeface Frank Rühl, the most ubiquitous Hebrew typeface in print. Frank Rühl was designed in 1908 by Rafael Frank in collaboration with Auto Rühl of the C. F. Rühl foundry of Leipzig. A final version was released in 1910. Many Israeli books, newspapers and magazines use Frank Rühl as their main body text typeface.
+
+Made to accommodate the growing need for typefaces in secular Hebrew writings, the typeface was fitted to modern printing demands and designed to be readable in longform text, with and without vowel marks. Frank Rühl has Sephardi proportions (mem-height is approximately 4½ stroke widths), and is based roughly on Venetian typefaces used by printer Daniel Bomberg. Frank wrote of his design that he wishes to combine the simpleness of Antiqua with the "pleasantness" of Fraktur, leading him to "quieten" the letterforms by reducing the contrast between its thin and thick strokes.
+
+This newly designed revival by Yanek Iontef is a family of 7 weights, Light to Black (the original typeface had only one) and in November 2022, it became variable and offers a larger choice of weights.
+
+To contribute, see [github.com/fontef/frankruhllibre](https://github.com/fontef/frankruhllibre).

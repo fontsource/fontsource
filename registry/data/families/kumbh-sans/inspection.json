@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 300,
+					"min": 40,
+					"tag": "YOPQ"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 412,
+				"sha256": "dd6ca8c715cc2c7c378641156a9e23f6b5bb8e3e64ba3dbb0430ea69f43f773c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/kumbhsans/KumbhSans[YOPQ,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

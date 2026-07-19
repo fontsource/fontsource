@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Marion Kadi",
+	"family": "Lancelot",
+	"id": "lancelot",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Marion Kadi (marionkadi@gmail.com). All rights reserved. Licenced under SIL OFL v1.1",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lancelot",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/antonxheight/Lancelot",
+		"revision": "3039d277fadddec95a3dc5aa58182b0aa20659b8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lancelot/Lancelot-Regular.ttf",
+			"sha256": "beca925079dfc167416fdafe9536136a14f66dc5cb06d94949f6e95fba49674c",
+			"size": 48940,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

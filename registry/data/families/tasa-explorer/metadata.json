@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-07-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Local Remote, Weizhong Zhang",
+	"family": "TASA Explorer",
+	"id": "tasa-explorer",
+	"license": {
+		"attribution": "Copyright 2022-2025 The TASA Typeface Collection Project Authors (https://github.com/localremotetw/TASA-Typeface-Collection)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tasaexplorer",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/localremotetw/TASA-Typeface-Collection",
+		"revision": "4c5acaf21a4cd84f9c49c9907d83a25d2350f635"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tasaexplorer/TASAExplorer[wght].ttf",
+			"sha256": "118a786cfc37bda16d1c5650085523b7f3ef4d49b8d366b89c1c800aee876cc2",
+			"size": 164284,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

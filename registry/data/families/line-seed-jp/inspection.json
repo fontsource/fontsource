@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8341,
+				"sha256": "4fed5fd78a8c4582843843fd2ed40dffdb52bf3834a9048c1071e8e958770331"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "ofl/lineseedjp/LINESeedJP-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8341,
+				"sha256": "4fed5fd78a8c4582843843fd2ed40dffdb52bf3834a9048c1071e8e958770331"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015",
+			"outline": "glyf",
+			"path": "ofl/lineseedjp/LINESeedJP-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8341,
+				"sha256": "4fed5fd78a8c4582843843fd2ed40dffdb52bf3834a9048c1071e8e958770331"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/lineseedjp/LINESeedJP-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8341,
+				"sha256": "4fed5fd78a8c4582843843fd2ed40dffdb52bf3834a9048c1071e8e958770331"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008",
+			"outline": "glyf",
+			"path": "ofl/lineseedjp/LINESeedJP-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

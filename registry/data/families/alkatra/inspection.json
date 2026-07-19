@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 698,
+				"sha256": "b67af39dbf001a2ebfcf92b24f3cf1f8e2150a9729fbeafa7a6626393b610ebe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100;gftools[0.9.22]",
+			"outline": "glyf",
+			"path": "ofl/alkatra/Alkatra[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-09-09",
+	"declaredSubsets": [
+		"bengali",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind Siliguri",
+	"id": "hind-siliguri",
+	"license": {
+		"attribution": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hindsiliguri",
+		"revision": "335918cf0bf871cc4bd8f8c4a1da9dd46014f830",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind-siliguri",
+		"revision": "affb7dbd00dc554c33ecafc92cbfef5323ae5235"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hindsiliguri/HindSiliguri-Bold.ttf",
+			"sha256": "d135765781d1a4aebc7dd4a2af221427ec8689060121d8a48b19bca3eeb3977e",
+			"size": 287660,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hindsiliguri/HindSiliguri-Light.ttf",
+			"sha256": "9d55d0dcc9b54cb0870ae5d5b24caf8d3ca9f304cd90ee6f4fe1e6c8ef833e5a",
+			"size": 259344,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hindsiliguri/HindSiliguri-Medium.ttf",
+			"sha256": "f2759c530d647720a4d4e99faef3c2d150e1452193a9c83fb81c8d29805c13ea",
+			"size": 266516,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hindsiliguri/HindSiliguri-Regular.ttf",
+			"sha256": "45071a7da902a74877f432722f525d00502d61aef71fca4cab3da8a23156c33d",
+			"size": 250052,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hindsiliguri/HindSiliguri-SemiBold.ttf",
+			"sha256": "92a9a68240883467830b87b2568242a59e68d4535e9e15f087650e12c4aaca83",
+			"size": 272740,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,95 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-18",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai"
+	],
+	"designer": "Mike Abbink, Bold Monday",
+	"family": "IBM Plex Sans Thai Looped",
+	"id": "ibm-plex-sans-thai-looped",
+	"license": {
+		"attribution": "Copyright 2019 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexsansthailooped",
+		"revision": "239548cfe1ebc58035ffbbb6853d6793565c6511",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "20f93381c40c4779f2297bb31c60fbc2992620b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Bold.ttf",
+			"sha256": "df53c5c794b910f68bb8f3075a6c9bf59261c3ad964bd2be0ddff1bd4c79c7a9",
+			"size": 124580,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-ExtraLight.ttf",
+			"sha256": "1d8ae33823d3e797b32f5d884ff04879b8d1e266da24e4e9465a50bb209d7a96",
+			"size": 128488,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Light.ttf",
+			"sha256": "9827df92fc68774d9e51203b11bb831351bfe7bb11509788aeec8dc85ef78365",
+			"size": 126688,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Medium.ttf",
+			"sha256": "0219cd6e21c9bb226378fa60ebd73e2550b1adb245fec821c817e2b1efcb1f04",
+			"size": 124476,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Regular.ttf",
+			"sha256": "6d7910d13a7a9e33872d5501fd81a71f84ee532f729bfb72c6ffa94d1f13009e",
+			"size": 125080,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-SemiBold.ttf",
+			"sha256": "90535e0096a25940788473d2f51ca2dbe4a2404b9fad570b92dc80b792ab22d1",
+			"size": 124760,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Thin.ttf",
+			"sha256": "3ad5c3c2a6b9107a8105250c450e1b2bbaa539a40da58e305c4b61b853e30126",
+			"size": 129256,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

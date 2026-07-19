@@ -1,0 +1,176 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "K2D",
+	"id": "k2d",
+	"license": {
+		"attribution": "Copyright 2018 The K2D Project Authors (https://github.com/cadsondemak/K2D)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/k2d",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/K2D",
+		"revision": "5df785dc3b0d17e7b57eedb2f4139436dbeb6440"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/k2d/K2D-Bold.ttf",
+			"sha256": "0876882908abb4ee3bcf9f73007128dddd52b77fe36414101fb12da0a67edb3d",
+			"size": 96692,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-BoldItalic.ttf",
+			"sha256": "6128b62d3da6a8dfdbba554a74538afce7bbe08e9881108596f8efa8485e7d78",
+			"size": 100996,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-ExtraBold.ttf",
+			"sha256": "46aa84ed5ffa8f7c1e156ddff85441ebbc1913b8aa3349bf3cd722e7b97df761",
+			"size": 96764,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-ExtraBoldItalic.ttf",
+			"sha256": "fb0c965d96921d852426426709344dacdd8107d2f405513a092601b0077b4e89",
+			"size": 101196,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-ExtraLight.ttf",
+			"sha256": "3b3c724b0ae259e1b163e9f4451f6c25903b13f3a2049ea73bea7f635d171dc4",
+			"size": 96008,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-ExtraLightItalic.ttf",
+			"sha256": "ce3a2cb01a913733de2d85159cd1b757c766fa79a0266363f1c60b489e3fb2e9",
+			"size": 100272,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-Italic.ttf",
+			"sha256": "e423a6554e790cefa6841af2ee34837465f9313fd5e6a1074f9b795d7073b504",
+			"size": 100376,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-Light.ttf",
+			"sha256": "f69664fb42121ad85555822d821bfd6ccde64f201984d5b688c22f300a1efb3d",
+			"size": 96000,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-LightItalic.ttf",
+			"sha256": "56d2f1171dc62770c3668964f231562fae0d882914609133fca914cd82bea203",
+			"size": 100260,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-Medium.ttf",
+			"sha256": "0ea9a92a4d005f69a6cf53b1eaed244f70817a477dcd66bc06fef1f4d9821795",
+			"size": 96608,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-MediumItalic.ttf",
+			"sha256": "29cda60bfda134132fdc72cb02a74604ffe9120cba1f038ed2522edfe210bc5c",
+			"size": 100792,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-Regular.ttf",
+			"sha256": "bfab1193b93b9200455119c968f0ccac24b68d2408d26a8123a4c3c01fb11821",
+			"size": 96144,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-SemiBold.ttf",
+			"sha256": "7d6225a49110e9981d24bbccaf06ae5774b641297edef16ffa2b372497840d07",
+			"size": 96720,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-SemiBoldItalic.ttf",
+			"sha256": "57d890588743f161b1644ffffc18907c49115b64cd32d2e9bcc5f6f0c99326ea",
+			"size": 100948,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-Thin.ttf",
+			"sha256": "33ca61459477f91ac726e551eb9ecb4d470af41afc33ddcb5cc1a985e4869adb",
+			"size": 96196,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/k2d/K2D-ThinItalic.ttf",
+			"sha256": "c1813a64b87902729d730f57a3bb920727abf8b1e25a35610f9e213b237b5791",
+			"size": 100236,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

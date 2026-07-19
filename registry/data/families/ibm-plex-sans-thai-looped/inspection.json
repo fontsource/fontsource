@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "a3814e68f9cba5df429a6438db8cf27507ee730e1ad122c8e6920f5ce09b4911"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "a3814e68f9cba5df429a6438db8cf27507ee730e1ad122c8e6920f5ce09b4911"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "a3814e68f9cba5df429a6438db8cf27507ee730e1ad122c8e6920f5ce09b4911"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "a3814e68f9cba5df429a6438db8cf27507ee730e1ad122c8e6920f5ce09b4911"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "a3814e68f9cba5df429a6438db8cf27507ee730e1ad122c8e6920f5ce09b4911"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "a3814e68f9cba5df429a6438db8cf27507ee730e1ad122c8e6920f5ce09b4911"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "a3814e68f9cba5df429a6438db8cf27507ee730e1ad122c8e6920f5ce09b4911"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansthailooped/IBMPlexSansThaiLooped-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

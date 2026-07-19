@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-12-03",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tobias Whetton, Supernotes",
+	"family": "SN Pro",
+	"id": "sn-pro",
+	"license": {
+		"attribution": "Copyright 2024 The SN Pro Project Authors (https://github.com/supernotes/sn-pro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/snpro",
+		"revision": "7a53368ad523d10526964fd9219267cbf09462ad",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/supernotes/sn-pro",
+		"revision": "e025ac4755352167a4b160bfb77c72068b04b55c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/snpro/SNPro-Italic[wght].ttf",
+			"sha256": "5152b4b61590ff724901278fc950554a0207e09e600088c822120b590ab9cca2",
+			"size": 344928,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/snpro/SNPro[wght].ttf",
+			"sha256": "63abf11c85df08dde6cec421c133c723408ee1e5744bb280b660dfd8be3fe061",
+			"size": 338948,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

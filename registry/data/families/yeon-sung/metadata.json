@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2018-02-23",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "Woowahan brothers",
+	"family": "Yeon Sung",
+	"id": "yeon-sung",
+	"license": {
+		"attribution": "Copyright 2018 The Yeon Sung Project Authors",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yeonsung",
+		"revision": "e8f9fd07fc608a9164f8bca27359b029a59a34ca",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/woowabros/Yeonsung",
+		"revision": "599fc1b88ba87312e69b3ad9085158542fbcccc1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yeonsung/YeonSung-Regular.ttf",
+			"sha256": "49ac2a11009f5f58307d377911eb45d210cf4c1d379d9eca38fb4cdad5491ef6",
+			"size": 2511004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

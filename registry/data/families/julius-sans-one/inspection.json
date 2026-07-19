@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 226,
+				"sha256": "3d2188ce03eaa6b07ef98bdab7c8de22c3b58b74de8b4bfa876187cd5ec68bd6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/juliussansone/JuliusSansOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

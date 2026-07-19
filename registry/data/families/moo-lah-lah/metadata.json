@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2021-11-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Moo Lah Lah",
+	"id": "moo-lah-lah",
+	"license": {
+		"attribution": "Copyright 2003-2021 The Moo Lah Lah Project Authors (https://github.com/googlefonts/moolahlah)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/moolahlah",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/moolahlah",
+		"revision": "ef0153966b76e4b4c136ed98e087607f71b75612"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/moolahlah/MooLahLah-Regular.ttf",
+			"sha256": "127fe2e6787812cffd617ea3a114f945e912d550aba5492cf0f3b800d0a1902f",
+			"size": 316228,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

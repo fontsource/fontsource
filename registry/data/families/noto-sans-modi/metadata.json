@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"modi"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Modi",
+	"id": "noto-sans-modi",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/modi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmodi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/modi",
+		"revision": "8e9d4844a2daef44f622cb15639649c5d075625d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmodi/NotoSansModi-Regular.ttf",
+			"sha256": "df1b8c6736fde0e7d8838370b336e4b22f84b465c81c817a8eceaab5d41ff33f",
+			"size": 108332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

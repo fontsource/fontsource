@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 360,
+				"sha256": "efb47376ee46cefa94f12e58db7fb88650d6f22e7363c296010f25588df22f31"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/kanchenjunga/Kanchenjunga-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 360,
+				"sha256": "efb47376ee46cefa94f12e58db7fb88650d6f22e7363c296010f25588df22f31"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/kanchenjunga/Kanchenjunga-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 360,
+				"sha256": "efb47376ee46cefa94f12e58db7fb88650d6f22e7363c296010f25588df22f31"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/kanchenjunga/Kanchenjunga-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 360,
+				"sha256": "efb47376ee46cefa94f12e58db7fb88650d6f22e7363c296010f25588df22f31"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/kanchenjunga/Kanchenjunga-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

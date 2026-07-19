@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2020-12-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontworks Inc.",
+	"family": "Train One",
+	"id": "train-one",
+	"license": {
+		"attribution": "Copyright 2020 The Train Project Authors (https://github.com/fontworks-fonts/Train/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/trainone",
+		"revision": "fcfdecc1b1290d1a78142eec186ae6d58a43d86b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontworks-fonts/Train",
+		"revision": "2972a9857a8332c2af86b221799558c177ba9012"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/trainone/TrainOne-Regular.ttf",
+			"sha256": "07d67ad14231a4a41f0ee501b14bd6f9c7a9beada5ee6af2924114863a034623",
+			"size": 2152516,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

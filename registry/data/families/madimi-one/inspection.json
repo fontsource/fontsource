@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 345,
+				"sha256": "4099d1e4e54c94911b8fd5e1f626e043f3d62f62a755ef0661484616d10a73ce"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/madimione/MadimiOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

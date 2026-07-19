@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-12-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Manuale",
+	"id": "manuale",
+	"license": {
+		"attribution": "Copyright 2019 The Manuale Project Authors (https://github.com/Omnibus-Type/Manuale)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/manuale",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Manuale",
+		"revision": "20a5ab6a0da1c8cb56916d843e50db0ad6b6dfd3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/manuale/Manuale-Italic[wght].ttf",
+			"sha256": "13eb20f22e8b6a28eba93670219cb472980e8fd006319a917316434e2ed1961a",
+			"size": 203060,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/manuale/Manuale[wght].ttf",
+			"sha256": "19ea09ad2fbf321cf8f94ac3f66547bc9b2bdf3723a2f073615eaa02fe17ded6",
+			"size": 185992,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

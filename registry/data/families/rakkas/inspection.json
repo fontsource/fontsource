@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 639,
+				"sha256": "5e8e3fe634da77e59118269e636f0744d1f90081695a01b11f5584d1d9a6a760"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/rakkas/Rakkas-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

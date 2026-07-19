@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 219,
+				"sha256": "1dfaf8eb45c1f844a3aa087455ed934835ce1d7d3bd2ca478e092f19afba2817"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "ofl/gorditas/Gorditas-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 220,
+				"sha256": "c25fdf737bc69f4c1ae1ba9d32a6f5068b4bff7ed07279c36e609b5acd387c40"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/gorditas/Gorditas-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,35 @@
+{
+	"category": "serif",
+	"dateAdded": "2019-12-07",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"tibetan"
+	],
+	"designer": "Christopher J. Fynn",
+	"family": "Uchen",
+	"id": "uchen",
+	"license": {
+		"attribution": "Font designed by Christopher J. Fynn. Copyright © 2010 by Dzongkha Development Commission.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/uchen",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/uchen/Uchen-Regular.ttf",
+			"sha256": "d466b41c9d11beea843ea16b13de220da2026836b88f3b7d30665215fc0c5d2f",
+			"size": 859156,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

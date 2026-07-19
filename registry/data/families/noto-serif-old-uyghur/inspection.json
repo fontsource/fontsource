@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "41c33acdacd5b0babd12c8f8cf601bbd264f2ae0dfad11264371405e2f30b7e7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/notoserifolduyghur/NotoSerifOldUyghur-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

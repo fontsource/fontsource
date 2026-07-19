@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 269,
+				"sha256": "56c06bc90b914af1013ca25abe66608f3c4fde4c3d9814f5eb9b043a8f57af58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/passionone/PassionOne-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 269,
+				"sha256": "56c06bc90b914af1013ca25abe66608f3c4fde4c3d9814f5eb9b043a8f57af58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/passionone/PassionOne-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 269,
+				"sha256": "56c06bc90b914af1013ca25abe66608f3c4fde4c3d9814f5eb9b043a8f57af58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/passionone/PassionOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

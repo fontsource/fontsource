@@ -1,0 +1,40 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 0,
+					"tag": "ROND"
+				},
+				{
+					"default": -100,
+					"max": 100,
+					"min": -100,
+					"tag": "YELA"
+				},
+				{
+					"default": 100,
+					"max": 1000,
+					"min": 4,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "527f0ad70d4bbc6d4b28bda75b19f17697a7b71af04e9d818adf2147528b37e5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.005;gftools[0.9.33]",
+			"outline": "glyf",
+			"path": "ofl/wavefont/Wavefont[ROND,YELA,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 1000,
+				"min": 4
+			}
+		}
+	]
+}

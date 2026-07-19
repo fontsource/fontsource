@@ -1,0 +1,31 @@
+{
+	"id": "vai",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"A500",
+			"A62B"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/vai_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "6fc6bdae6e0db8ebf4bc016dbaae8a343d43a7f8e011c3c1e13e3634e94652e3",
+		"upstream": "namFiles"
+	}
+}

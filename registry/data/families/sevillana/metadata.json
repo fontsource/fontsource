@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-02-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Brownfox",
+	"family": "Sevillana",
+	"id": "sevillana",
+	"license": {
+		"attribution": "Copyright (c) 2011, Brownfox (gayaneh.b@gmail.com), with Reserved Font Names \"Sevillana\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sevillana",
+		"revision": "e58bec748c57d3b54c536ec66c713ab548f8d701",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sevillana/Sevillana-Regular.ttf",
+			"sha256": "2489af08e91d2a9befde3a3a2b6138749ff65dd74e2af0cb9bc3ff52d38fd20f",
+			"size": 162872,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

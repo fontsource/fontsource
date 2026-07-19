@@ -1,0 +1,59 @@
+{
+	"id": "old-hungarian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"200D",
+			"200D"
+		],
+		[
+			"205A",
+			"205A"
+		],
+		[
+			"205D",
+			"205E"
+		],
+		[
+			"2E31",
+			"2E31"
+		],
+		[
+			"2E41",
+			"2E41"
+		],
+		[
+			"10C80",
+			"10CB2"
+		],
+		[
+			"10CC0",
+			"10CF2"
+		],
+		[
+			"10CFA",
+			"10CFF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/old-hungarian_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "b0b35ed82f4a836146a741bee973c4c94fe3d46ce7ccc8189c3e8c71f7313f5b",
+		"upstream": "namFiles"
+	}
+}

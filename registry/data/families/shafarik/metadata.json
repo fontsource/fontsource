@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2024-12-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"glagolitic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Aleksandr Andreev",
+	"family": "Shafarik",
+	"id": "shafarik",
+	"license": {
+		"attribution": "Copyright 2025 The Shafarik Project Authors (https://github.com/slavonic/Shafarik.git)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/shafarik",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/slavonic/shafarik",
+		"revision": "e4045d59b275755b2b8532b201402786055466d8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/shafarik/Shafarik-Regular.ttf",
+			"sha256": "b25cb985bffa87ece4c4ec9d5c62c28623de9a7016978bda41d7df01cb17f028",
+			"size": 1061684,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

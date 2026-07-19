@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 391,
+				"sha256": "634c54a3bf0f87c6343ab689b42f2ebf04a1f6160d8e2e47eeb41707e1b93337"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/facultyglyphic/FacultyGlyphic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

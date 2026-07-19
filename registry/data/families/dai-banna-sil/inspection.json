@@ -1,0 +1,134 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "6e2007b0c24fbd569994d88b1a8987c6ec774c84751c76c4ca636bc7b8ec267d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/daibannasil/DaiBannaSIL-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

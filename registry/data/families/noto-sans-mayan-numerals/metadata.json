@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"mayan-numerals",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Mayan Numerals",
+	"id": "noto-sans-mayan-numerals",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/mayan-numerals)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmayannumerals",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/mayan-numerals",
+		"revision": "2361f677ead1b84ce88cdef75d6c25e6ca0ff39f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmayannumerals/NotoSansMayanNumerals-Regular.ttf",
+			"sha256": "b073279ae1eabfbe8bd4232f5f83fdaeb439267f5580a7849ed9c4a04cf35d34",
+			"size": 50672,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

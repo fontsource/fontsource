@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"elbasan",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Elbasan",
+	"id": "noto-sans-elbasan",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/elbasan)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanselbasan",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/elbasan",
+		"revision": "42c59134bafaf22df600e5b3e3a97224f14cca06"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanselbasan/NotoSansElbasan-Regular.ttf",
+			"sha256": "fce315f8ec66dd6f627cd8e2d076d622ebb244ef609def9621f820f209eaf576",
+			"size": 60084,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

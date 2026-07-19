@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "687ce265bf57dbe601615c47f16a60414e64f8ef0cc33d69904bc4486448d97e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.201",
+			"outline": "glyf",
+			"path": "ofl/rubikmaps/RubikMaps-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

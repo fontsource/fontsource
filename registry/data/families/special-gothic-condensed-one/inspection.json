@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 454,
+				"sha256": "2255c45e3f05b148ac99e2e44c4f1524bf5708ceaa5a66baa85f7636b02188b1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/specialgothiccondensedone/SpecialGothicCondensedOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

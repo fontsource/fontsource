@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 498,
+				"sha256": "6f5ad518e72df27a1f47ffe58da4d88ab58847ec15299b590d7c16f570dddce8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/italianno/Italianno-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

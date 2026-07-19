@@ -1,0 +1,52 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-02-27",
+	"declaredSubsets": [
+		"korean",
+		"menu"
+	],
+	"designer": "JIKJISOFT",
+	"family": "Sunflower",
+	"id": "sunflower",
+	"license": {
+		"attribution": "Copyright 2008 The Sunflower Project Authors",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sunflower",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sunflower/Sunflower-Bold.ttf",
+			"sha256": "6b033627817f6619433afe82028013dc45a78ff82406b1dbe5b16e1bbc370e0a",
+			"size": 746300,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sunflower/Sunflower-Light.ttf",
+			"sha256": "dd9fb97aa9ec1fdb65e0328513d9c54c114fba41decca1d32a1e1ed992e255c5",
+			"size": 758332,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/sunflower/Sunflower-Medium.ttf",
+			"sha256": "6e216d6b2f77a850f6b73be25633d09e03385dfa63a3a632f9e7d83a90ea7f79",
+			"size": 770536,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

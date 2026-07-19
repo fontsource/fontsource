@@ -1,0 +1,1 @@
+The Sedgwick Ave project expresses handwritten graffiti letterforms with two designs: This is Sedgwick Ave Display, intended for larger size usage, accompanied by [Sedgwick Ave](https://fonts.google.com/specimen/Sedgwick+Ave), ideal for text size usage.

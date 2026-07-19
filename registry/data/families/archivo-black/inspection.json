@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 423,
+				"sha256": "ab9f59b999458dca0d23eacb9b58fb826ad804ea325afa42e12ea3ac2a384d3f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ofl/archivoblack/ArchivoBlack-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

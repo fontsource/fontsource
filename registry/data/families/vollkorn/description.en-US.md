@@ -1,0 +1,7 @@
+Vollkorn came into being as the first typeface design by Friedrich Althausen. First published in 2005 under a Creative Commons license, it was soon downloaded thousands of times and used in all kinds of web and print projects.
+
+It intends to be a quiet, modest and high quality text face for bread and butter use. Unlike many text typefaces from the Renaissance period until now, it has dark and meaty serifs and a bouncing and healthy look. It might be used in body copy, or just as well for headlines and titles. »Vollkorn« (pronounced »Follkorn«) is German for »wholemeal« which refers to the old term »Brotschrift«. It stood for the small fonts for every day use in hand setting times.
+
+In May 2020, it was updated to be a Variable Font with a "Weight" axis in both Roman and Italic.
+
+The Vollkorn project is led by Friedrich Althausen, a typeface designer in Germany. To contribute, see [github.com/FAlthausen/Vollkorn-Typeface](https://github.com/FAlthausen/Vollkorn-Typeface)

@@ -1,0 +1,48 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-05-09",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "Sandoll Communication",
+	"family": "Nanum Gothic Coding",
+	"id": "nanum-gothic-coding",
+	"license": {
+		"attribution": "Copyright © 2009 NHN Corporation. All rights reserved. Font designed by Sandoll Communications Inc.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nanumgothiccoding",
+		"revision": "9cb22ac3b8e238d037c48f98ef521f818958e102",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/naver/nanumfont",
+		"revision": "770142018d7b23abe48a1ff9370adeac3bbbcd0e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nanumgothiccoding/NanumGothicCoding-Bold.ttf",
+			"sha256": "77a6de97c176b76ef9a683b565a1e6f4ce40b499c72a2972c4b5bdf7c6b8e7a0",
+			"size": 2246240,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/nanumgothiccoding/NanumGothicCoding-Regular.ttf",
+			"sha256": "787effd7efed2abca88ade231faa8191f4e9fcf85b1805a13ee1dc3724b72089",
+			"size": 2315924,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

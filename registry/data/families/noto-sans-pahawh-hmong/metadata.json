@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"pahawh-hmong"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Pahawh Hmong",
+	"id": "noto-sans-pahawh-hmong",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/pahawh-hmong)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanspahawhhmong",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/pahawh-hmong",
+		"revision": "793abf16bdd65ee298dcfaf6a8c77113341c4890"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanspahawhhmong/NotoSansPahawhHmong-Regular.ttf",
+			"sha256": "8b575d82f37d1119c7fb6d0f569fafea572bddfeb83861c8501d4ab5a5faef92",
+			"size": 73820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

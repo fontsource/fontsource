@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 700,
+					"max": 1000,
+					"min": 1,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1010,
+				"sha256": "1d892bdf37ef8c8dec63ba9b6bdb3ce3f74aa388cc5811fd23fd9a3bc1fcb43b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; featfreeze: ss01,ss02,lnum",
+			"outline": "glyf",
+			"path": "ofl/ysabeauinfant/YsabeauInfant-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 700,
+				"max": 1000,
+				"min": 1
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 700,
+					"max": 1000,
+					"min": 1,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1012,
+				"sha256": "a698ed2b97dc4fa6d9f98c6240734b844c178eb0dcbc5c50e085c1011515ef0d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; featfreeze: ss01,ss02,lnum",
+			"outline": "glyf",
+			"path": "ofl/ysabeauinfant/YsabeauInfant[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 700,
+				"max": 1000,
+				"min": 1
+			}
+		}
+	]
+}

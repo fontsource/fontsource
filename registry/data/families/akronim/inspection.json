@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 250,
+				"sha256": "d97747af8b07c80307f7fbdab3ece47f3756cd9542a75ffeccf153e0d2622500"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/akronim/Akronim-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

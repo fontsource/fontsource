@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 393,
+				"sha256": "cadb658931c61d6cfc09af1d13e933d215304e3e7a129fce977796a737003293"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/croissantone/CroissantOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

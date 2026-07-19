@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "ELSH"
+				}
+			],
+			"cmap": {
+				"codepointCount": 962,
+				"sha256": "eeeaf3902bc09fbf6fbbfdf6a8e248bb6585e9a3330ae44e2fccfeedd8a120b7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/danfo/Danfo[ELSH].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

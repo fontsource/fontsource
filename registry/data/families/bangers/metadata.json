@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2011-02-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Bangers",
+	"id": "bangers",
+	"license": {
+		"attribution": "Copyright 2010 The Bangers Project Authors (https://github.com/googlefonts/bangers)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bangers",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bangers",
+		"revision": "ca6d2f15db343ee373e9c62a127f3a48cd251228"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bangers/Bangers-Regular.ttf",
+			"sha256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+			"size": 93148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "TypeTogether",
+	"family": "Jockey One",
+	"id": "jockey-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Copyright (c) 2011, TypeTogether (www.type-together.com info@type-together.com), with Reserved Font Names \"Jockey\" and \"Jockey One\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jockeyone",
+		"revision": "3cd17b8816bdbe85f28b66bd50b29b5f66588050",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/jockeyone",
+		"revision": "71261c6f0c80fb7269df32e4aa396669a038030f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jockeyone/JockeyOne-Regular.ttf",
+			"sha256": "6331a3e99e240c45e4b5eb99845f5724932157d6a4766f2b4836f7582891ac4a",
+			"size": 48608,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

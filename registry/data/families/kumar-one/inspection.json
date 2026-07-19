@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 408,
+				"sha256": "86b01e7179425b657d0ac641544608f2d1e9000e78a667303b0632e769e37ee0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.001;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/kumarone/KumarOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

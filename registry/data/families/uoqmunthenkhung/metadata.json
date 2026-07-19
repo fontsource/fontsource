@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2025-05-16",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"latin",
+		"menu",
+		"symbols2"
+	],
+	"designer": "Moonlit Owen",
+	"family": "UoqMunThenKhung",
+	"id": "uoqmunthenkhung",
+	"license": {
+		"attribution": "Copyright 2025 The UoqMunThenKhung Project Authors (https://github.com/MoonlitOwen/ThenKhung)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/uoqmunthenkhung",
+		"revision": "021c80e5932f1130340038c2cff627e4d27bca8b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/MoonlitOwen/ThenKhung",
+		"revision": "cdf0805fd0db0aba5c7789f60033060e1566d4cc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/uoqmunthenkhung/UoqMunThenKhung-Regular.ttf",
+			"sha256": "943a23eb10d40ca85ee08491c0e3fb3adbc4bd111ef1f93526a4f766a8e66fbd",
+			"size": 4901688,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

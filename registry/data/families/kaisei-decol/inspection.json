@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7930,
+				"sha256": "f9ba879dc559206af83083af2d198f98c3b5a57a989af9e97e401c269e315ef4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 5.003",
+			"outline": "glyf",
+			"path": "ofl/kaiseidecol/KaiseiDecol-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7930,
+				"sha256": "f9ba879dc559206af83083af2d198f98c3b5a57a989af9e97e401c269e315ef4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 5.003",
+			"outline": "glyf",
+			"path": "ofl/kaiseidecol/KaiseiDecol-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7930,
+				"sha256": "f9ba879dc559206af83083af2d198f98c3b5a57a989af9e97e401c269e315ef4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 5.003",
+			"outline": "glyf",
+			"path": "ofl/kaiseidecol/KaiseiDecol-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

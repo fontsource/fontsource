@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 778,
+				"sha256": "112f3a5b3f0854228fba9611a7ff3b0ac00af7fd3fe6a0746e1134e25bf0e0c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.008",
+			"outline": "glyf",
+			"path": "ofl/lora/Lora-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 778,
+				"sha256": "112f3a5b3f0854228fba9611a7ff3b0ac00af7fd3fe6a0746e1134e25bf0e0c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.008",
+			"outline": "glyf",
+			"path": "ofl/lora/Lora[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 479,
+				"sha256": "44ef60f16849f458acc9ba68395e9a2f6032a982e6949b8e9d3c4061084f7ddc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.53",
+			"outline": "glyf",
+			"path": "ofl/tirotelugu/TiroTelugu-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 479,
+				"sha256": "44ef60f16849f458acc9ba68395e9a2f6032a982e6949b8e9d3c4061084f7ddc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.53",
+			"outline": "glyf",
+			"path": "ofl/tirotelugu/TiroTelugu-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

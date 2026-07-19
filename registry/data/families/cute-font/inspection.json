@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2523,
+				"sha256": "401fd2394ea9fbdb80fccdc2624cc5814e79c16d2fe671ca4623b4e187cd949b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/cutefont/CuteFont-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

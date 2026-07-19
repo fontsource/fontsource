@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7566,
+				"sha256": "061fd7a0b1ab0d5cf400786a678ac6bebec743752cbb06ede8bb05ab5a52f998"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200",
+			"outline": "glyf",
+			"path": "ofl/yuseimagic/YuseiMagic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

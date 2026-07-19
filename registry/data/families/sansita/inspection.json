@@ -1,0 +1,108 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 456,
+				"sha256": "6b8f7364d2d32ee4c8c3d258b1241790db73a680e3b60eca26bcb57fc558f3d7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/sansita/Sansita-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 457,
+				"sha256": "f9e6293f21689c46200ff28a22bdc2e4aa823d14a7698fe7a0eb9133ffdb46d5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/sansita/Sansita-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "74c64ca39d39eda654338022c5da594aad8618d54a903df9f7817f91eca68069"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/sansita/Sansita-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "74c64ca39d39eda654338022c5da594aad8618d54a903df9f7817f91eca68069"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/sansita/Sansita-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "74c64ca39d39eda654338022c5da594aad8618d54a903df9f7817f91eca68069"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/sansita/Sansita-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "74c64ca39d39eda654338022c5da594aad8618d54a903df9f7817f91eca68069"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/sansita/Sansita-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "74c64ca39d39eda654338022c5da594aad8618d54a903df9f7817f91eca68069"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/sansita/Sansita-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 458,
+				"sha256": "74c64ca39d39eda654338022c5da594aad8618d54a903df9f7817f91eca68069"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/sansita/Sansita-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

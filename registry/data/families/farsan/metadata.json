@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Pooja Saxena",
+	"family": "Farsan",
+	"id": "farsan",
+	"license": {
+		"attribution": "Copyright (c) 2014 Pooja Saxena (www.poojasaxena.in)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/farsan",
+		"revision": "b9b981ba9f472ff815b45eecea7f6f00bf0c8852",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/anexasajoop/farsan",
+		"revision": "c9b4cee129f5844cfedc850d3d68cf2b518f3a6d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/farsan/Farsan-Regular.ttf",
+			"sha256": "7bb968454a2dde084c9fb0f99a9921e9a8f96b0cd28dedf8f545ec23d52c3550",
+			"size": 243932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

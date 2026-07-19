@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8013,
+				"sha256": "27aa7eb0b0f7f0ee7146fcc343f9b7391a26eb8fe49ee968a78f3030fe43da0c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002",
+			"outline": "glyf",
+			"path": "ofl/yujisyuku/YujiSyuku-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

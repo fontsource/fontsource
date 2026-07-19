@@ -1,0 +1,3 @@
+Libre Baskerville is a web font optimized for body text (typically 16px.) It is based on the American Type Founder's Baskerville from 1941, but it has a taller x-height, wider counters and a little less contrast, that allow it to work well for reading on-screen.
+
+Join the project at [github.com/impallari/Libre-Baskerville](https://github.com/impallari/Libre-Baskerville)

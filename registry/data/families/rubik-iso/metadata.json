@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2022-06-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Iso",
+	"id": "rubik-iso",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikiso",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "f61d39563df1f583122af0866fc827666c2b385b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikiso/RubikIso-Regular.ttf",
+			"sha256": "b3d774e88798b202a354bcbe7f14180c2c76596baa0f1bb8445c53683e8a511b",
+			"size": 132376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

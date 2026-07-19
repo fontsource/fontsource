@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 411,
+				"sha256": "bc5ffebfc25fe1d001b6749ff429d810fc6830f3154042e4c26c97867b31c20e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/stoke/Stoke-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "01b1a978d59ff53f3d5f4e05e41941f473be7205b96d5c76b7a0b77c73572bf6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/stoke/Stoke-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

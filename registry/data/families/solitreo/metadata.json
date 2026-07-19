@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-12-14",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nathan Gross, Bryan Kirschen",
+	"family": "Solitreo",
+	"id": "solitreo",
+	"license": {
+		"attribution": "Copyright 2019 The Solitreo Project Authors (https://github.com/ladinoprojects/solitreo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/solitreo",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ladinoprojects/solitreo",
+		"revision": "9b03239708d7d37e86cb2594cf9360121be0740e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/solitreo/Solitreo-Regular.ttf",
+			"sha256": "0b6df66f2145e8fd013d7324b6a55c6bc0c83c4786a6c7dce7505fdbeb65295b",
+			"size": 96968,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2010-09-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"menu"
+	],
+	"designer": "Jovanny Lemonad",
+	"family": "Neucha",
+	"id": "neucha",
+	"license": {
+		"attribution": "Copyright (c) 2005-2010 by Jovanny Lemonad (lemonad@jovanny.ru). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/neucha",
+		"revision": "f1fdf1d956bb359b09de25465a96d0c1d6377205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/neucha/Neucha.ttf",
+			"sha256": "7927bd6ce090fa032857dcbc3ad0e8b765c462d0a72a8779068132496b4e087d",
+			"size": 141432,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"menu"
+	],
+	"designer": "Shibuya Font",
+	"family": "Rock 3D",
+	"id": "rock-3d",
+	"license": {
+		"attribution": "Copyright 2020 The Rock 3D Project Authors (https://github.com/shibuyafont/3d-rock-font), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rock3d",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/shibuyafont/3d-rock-font",
+		"revision": "04e20f0b2387a7619f8e9e8b06cb9b5337f6a2fe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rock3d/Rock3D-Regular.ttf",
+			"sha256": "c95e67174335f12678fc309e321ad4e4099e9411b5a7a2edfbb5011116123f16",
+			"size": 444468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-09-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "ParaType",
+	"family": "PT Sans Caption",
+	"id": "pt-sans-caption",
+	"license": {
+		"attribution": "Copyright © 2009 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ptsanscaption",
+		"revision": "6d6e07c035ef3c3a3d06b02171da2c3e75d25e75",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ptsanscaption/PT_Sans-Caption-Web-Bold.ttf",
+			"sha256": "f49309c204cc6282831b545d68fb8c58c5e9889e93dd2fc45fc5fbdde1648bd5",
+			"size": 398780,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ptsanscaption/PT_Sans-Caption-Web-Regular.ttf",
+			"sha256": "91d763dd9e8284938be814b76919b0bd97510ec342434e7ec7a56f9fc58b36c4",
+			"size": 387192,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-01-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Font Diner",
+	"family": "Homemade Apple",
+	"id": "homemade-apple",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Font Diner, Inc. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/homemadeapple",
+		"revision": "f3f19ffe2e295deb31a7df2469fc82918ad9b421",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/homemadeapple/HomemadeApple-Regular.ttf",
+			"sha256": "dd1baaca3cde1b1f8415aed3b0aea6808655c9d9ca5a99c7282d9accc16c1a58",
+			"size": 110004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

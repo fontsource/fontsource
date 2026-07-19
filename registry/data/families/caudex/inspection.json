@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2014,
+				"sha256": "4c8de6681916a8b0341257bb0c6cbe4e80ee3ead731ece1592203757e21d8c5a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.01",
+			"outline": "glyf",
+			"path": "ofl/caudex/Caudex-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2014,
+				"sha256": "4c8de6681916a8b0341257bb0c6cbe4e80ee3ead731ece1592203757e21d8c5a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.01",
+			"outline": "glyf",
+			"path": "ofl/caudex/Caudex-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2014,
+				"sha256": "4c8de6681916a8b0341257bb0c6cbe4e80ee3ead731ece1592203757e21d8c5a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.01",
+			"outline": "glyf",
+			"path": "ofl/caudex/Caudex-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2014,
+				"sha256": "4c8de6681916a8b0341257bb0c6cbe4e80ee3ead731ece1592203757e21d8c5a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.01",
+			"outline": "glyf",
+			"path": "ofl/caudex/Caudex-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

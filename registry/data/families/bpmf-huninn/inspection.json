@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 10298,
+				"sha256": "04aa8d3f0c4122eab521bfa9325b5c0d74718a254d4dabfa24b73f8ee9c52fc9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.610",
+			"outline": "glyf",
+			"path": "ofl/bpmfhuninn/BpmfHuninn-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

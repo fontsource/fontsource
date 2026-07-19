@@ -1,0 +1,52 @@
+{
+	"category": "monospace",
+	"dateAdded": "2020-11-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "JetBrains, Philipp Nurullin, Konstantin Bulenkov",
+	"family": "JetBrains Mono",
+	"id": "jetbrains-mono",
+	"license": {
+		"attribution": "Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jetbrainsmono",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JetBrains/JetBrainsMono",
+		"revision": "19371302b95d218af43299bce79ddbddd0bc364d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jetbrainsmono/JetBrainsMono-Italic[wght].ttf",
+			"sha256": "85ae2a5cd3f56baf1ce1c21a851322c58e3d8fbe8e8ad4a4d090a820dd7fe558",
+			"size": 191556,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/jetbrainsmono/JetBrainsMono[wght].ttf",
+			"sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda",
+			"size": 187208,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

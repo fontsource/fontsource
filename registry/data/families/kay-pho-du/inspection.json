@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "413bdf28a18232d65edf1c667fb86be6b5ec4781f2e42419574835286be97806"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/kayphodu/KayPhoDu-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "413bdf28a18232d65edf1c667fb86be6b5ec4781f2e42419574835286be97806"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/kayphodu/KayPhoDu-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "413bdf28a18232d65edf1c667fb86be6b5ec4781f2e42419574835286be97806"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/kayphodu/KayPhoDu-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "413bdf28a18232d65edf1c667fb86be6b5ec4781f2e42419574835286be97806"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/kayphodu/KayPhoDu-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

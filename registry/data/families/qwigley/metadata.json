@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Qwigley",
+	"id": "qwigley",
+	"license": {
+		"attribution": "Copyright 2011 The Qwigley Project Authors (https://github.com/googlefonts/qwigley)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/qwigley",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/qwigley",
+		"revision": "7a963366b5efe19ef39603d03888a2105105dc01"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/qwigley/Qwigley-Regular.ttf",
+			"sha256": "6a018d872fa8ad613a71a48383b3f0f987a0e7cd305678ca3a7c87648e6cdbb2",
+			"size": 87336,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

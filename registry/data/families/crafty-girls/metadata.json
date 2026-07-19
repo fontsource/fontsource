@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-01-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Tart Workshop",
+	"family": "Crafty Girls",
+	"id": "crafty-girls",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Font Diner, Inc DBA Tart Workshop. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/craftygirls",
+		"revision": "0537729f8f95546e040d0ff9dce96528eabec6f1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/craftygirls/CraftyGirls-Regular.ttf",
+			"sha256": "5f92fed441fc72e75fd520ee63b4785c9b657404c53e1f269c95a6016298ef45",
+			"size": 75336,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

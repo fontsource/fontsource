@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2020-05-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Grenze Gotisch",
+	"id": "grenze-gotisch",
+	"license": {
+		"attribution": "Copyright 2020 The Grenze Gotisch Project Authors (https://github.com/Omnibus-Type/Grenze-Gotisch)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/grenzegotisch",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Grenze-Gotisch",
+		"revision": "7b5eac166bc3b2a519f98b5c124cb7a11670cc7b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/grenzegotisch/GrenzeGotisch[wght].ttf",
+			"sha256": "701b299d8dc002a2b4bea2ff0f1272c0e4081a2835914354804565c410d0c637",
+			"size": 193492,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

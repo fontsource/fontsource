@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1194,
+				"sha256": "1bcca57c0ca07d1a1b741e9a4b519b5d46131486d0a7dfc003c7672d30b9095f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.101",
+			"outline": "glyf",
+			"path": "ofl/didactgothic/DidactGothic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

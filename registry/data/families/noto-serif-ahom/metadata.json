@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"ahom",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Ahom",
+	"id": "noto-serif-ahom",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ahom)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifahom",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/ahom",
+		"revision": "fb3e25e81eb2a7d8301ddd86085f60a4b2a88d73"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifahom/NotoSerifAhom-Regular.ttf",
+			"sha256": "2db70c33f5ef1796753743a87817278094fb031ba05d6b51d359c8cb5929631b",
+			"size": 86092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 138,
+				"sha256": "8a9f56281a0a62de84478c35fcd5530eb0d80d742e7fd93021d09748163bac06"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.00 December 28, 2010",
+			"outline": "glyf",
+			"path": "ofl/siemreap/Siemreap.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

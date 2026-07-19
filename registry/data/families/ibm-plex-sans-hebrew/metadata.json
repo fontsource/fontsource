@@ -1,0 +1,95 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-18",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mike Abbink, Bold Monday",
+	"family": "IBM Plex Sans Hebrew",
+	"id": "ibm-plex-sans-hebrew",
+	"license": {
+		"attribution": "Copyright 2019 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexsanshebrew",
+		"revision": "dcb0b312027ab420c08b662812b622f8a9590674",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "0f91126e49779170e7b2d18614f9d89a1855659b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Bold.ttf",
+			"sha256": "4468a526f606ac74e8db9125b785a932cf55a265f8e358855371bed6126a1637",
+			"size": 96716,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-ExtraLight.ttf",
+			"sha256": "2b8d281f63cc7b7deafe7b8370529f321861338516becd2b823f6532d8f4d275",
+			"size": 99676,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Light.ttf",
+			"sha256": "0d7f6392a7f3e1422aacf56e435b030f9691b4c87f4dabe73cf261e77ffef7bc",
+			"size": 98132,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Medium.ttf",
+			"sha256": "15b5d6b20f5b4007f2d709ff786266ff62ba9b13ba4e5ac4d23f37d554d68534",
+			"size": 96636,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Regular.ttf",
+			"sha256": "c11df42adf5e2c6e77e623dbedbe8cc23ba72196ac9ad8beb02754eebd9c400a",
+			"size": 96272,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-SemiBold.ttf",
+			"sha256": "3ca3829acbeb58f0832f3320a54bab233904c07d0d1dc79b7f1ff3f36ba68b2d",
+			"size": 96784,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Thin.ttf",
+			"sha256": "cb05cd9206a980572a86d585e3a4378d19c2213bec95b28b8f00852422aaffac",
+			"size": 99952,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

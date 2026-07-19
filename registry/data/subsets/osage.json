@@ -1,0 +1,55 @@
+{
+	"id": "osage",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"301",
+			"301"
+		],
+		[
+			"304",
+			"304"
+		],
+		[
+			"30B",
+			"30B"
+		],
+		[
+			"358",
+			"358"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"104B0",
+			"104D3"
+		],
+		[
+			"104D8",
+			"104FB"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/osage_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "cdc2a3a76c8d96e1c2950fe80b494ef3222134bfcb23507600325cc2f076ffa0",
+		"upstream": "namFiles"
+	}
+}

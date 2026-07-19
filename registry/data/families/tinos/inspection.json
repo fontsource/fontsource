@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3011,
+				"sha256": "3d853c291c4a5ad6a884e43934734a89ba71d7db9d9ae13afcad92725fbc7c55"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.340; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/tinos/Tinos-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3011,
+				"sha256": "3d853c291c4a5ad6a884e43934734a89ba71d7db9d9ae13afcad92725fbc7c55"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.340; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/tinos/Tinos-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3011,
+				"sha256": "3d853c291c4a5ad6a884e43934734a89ba71d7db9d9ae13afcad92725fbc7c55"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.340; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/tinos/Tinos-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3011,
+				"sha256": "3d853c291c4a5ad6a884e43934734a89ba71d7db9d9ae13afcad92725fbc7c55"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.340; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/tinos/Tinos-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

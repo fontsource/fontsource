@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "267129a6247f9b87e28430326d1ce1af055e96d06bb85fb54859e580b1dc12e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/creteround/CreteRound-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "267129a6247f9b87e28430326d1ce1af055e96d06bb85fb54859e580b1dc12e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/creteround/CreteRound-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

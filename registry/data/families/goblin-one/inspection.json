@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 248,
+				"sha256": "9158dce25d9ef93f051f897b8b0a515f4e828ebc48fa08306556e90848b25058"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/goblinone/GoblinOne.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

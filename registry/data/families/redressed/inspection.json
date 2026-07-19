@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 373,
+				"sha256": "715bac936a3b557a8d868aba2db9dbe564f14ff81faa2631b69b059c123f3f86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/redressed/Redressed-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

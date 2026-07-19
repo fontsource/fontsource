@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2504,
+				"sha256": "14753a037df51a830eb529f0799ac1e0e7c037a0753af3b50565e5103b3c7b07"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/sunflower/Sunflower-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2504,
+				"sha256": "14753a037df51a830eb529f0799ac1e0e7c037a0753af3b50565e5103b3c7b07"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/sunflower/Sunflower-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2504,
+				"sha256": "14753a037df51a830eb529f0799ac1e0e7c037a0753af3b50565e5103b3c7b07"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/sunflower/Sunflower-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

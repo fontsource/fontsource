@@ -1,0 +1,76 @@
+{
+	"category": "serif",
+	"dateAdded": "2014-08-27",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Laila",
+	"id": "laila",
+	"license": {
+		"attribution": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/laila",
+		"revision": "fda9459a8ee48985e1939de1ffd49e88c27c9606",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/laila",
+		"revision": "a8b5b4ee6cf52508cc0d4f606d4ec0ae4994953a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/laila/Laila-Bold.ttf",
+			"sha256": "3b50aae09041e0941e4309ba1cbc4bacd858f8852b5e76e240157ae6e7da87b3",
+			"size": 369496,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/laila/Laila-Light.ttf",
+			"sha256": "53e37dfb3b1d5a979a8506264df6c6ef3538fe9cf25035d1705f71053b27e863",
+			"size": 337628,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/laila/Laila-Medium.ttf",
+			"sha256": "ceab0829c5281aa7f6e8196ee6b8052c7cd6227dd36e5e41336e4c7dd61b5f33",
+			"size": 341440,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/laila/Laila-Regular.ttf",
+			"sha256": "f2a4a3f9ac8d8d5e340050fa3f42618e2e6da0adebcf8389a8fa6febbced31f2",
+			"size": 348824,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/laila/Laila-SemiBold.ttf",
+			"sha256": "df916fbc664bbf3e25702b30fe0d94712217e09468ef875e43e4e183e719ab66",
+			"size": 352360,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

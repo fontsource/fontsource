@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"phoenician"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Phoenician",
+	"id": "noto-sans-phoenician",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/phoenician)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansphoenician",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/phoenician",
+		"revision": "42000fa28062130c663c83e38fe9df00f9a85a4f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansphoenician/NotoSansPhoenician-Regular.ttf",
+			"sha256": "9c248001ff674977172c89fb7686faf22b827b63641d0122352523f31780d1f4",
+			"size": 52012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

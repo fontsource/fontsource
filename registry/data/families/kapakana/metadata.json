@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2020-12-21",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Kousuke Nagai",
+	"family": "Kapakana",
+	"id": "kapakana",
+	"license": {
+		"attribution": "Copyright 2020 The Kapakana Project Authors (https://github.com/nagamaki008/kapakana)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kapakana",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/nagamaki008/kapakana",
+		"revision": "0074870cd85239e8c5cf8949da54e0b111333a87"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kapakana/Kapakana[wght].ttf",
+			"sha256": "5ff3af9e470b5b278d645099214818ceb3933b542fbfd4b38c0a9b0be29fd35e",
+			"size": 184420,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

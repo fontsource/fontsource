@@ -1,0 +1,35 @@
+{
+	"id": "egyptian-hieroglyphs",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"13000",
+			"13455"
+		],
+		[
+			"13460",
+			"143FA"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/egyptian-hieroglyphs_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "b652884af5c3178d1139f6b791040e47235e06ff8610fa766030c9b03db26b89",
+		"upstream": "namFiles"
+	}
+}

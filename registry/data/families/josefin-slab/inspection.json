@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "fb8fdd5b037449807443fa9931d336fa083824119e0d2080f894c82cd0d09a6b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100",
+			"outline": "glyf",
+			"path": "ofl/josefinslab/JosefinSlab-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "fb8fdd5b037449807443fa9931d336fa083824119e0d2080f894c82cd0d09a6b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100",
+			"outline": "glyf",
+			"path": "ofl/josefinslab/JosefinSlab[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

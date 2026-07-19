@@ -1,0 +1,23 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1418,
+				"sha256": "07cf836410f766fbaead6b05c7f6040f430045ba7c8a6819fa0a4d4f5fa921f8"
+			},
+			"colorTables": [
+				"CBDT",
+				"CBLC",
+				"COLR",
+				"CPAL",
+				"SVG "
+			],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/notocoloremojicompattest/NotoColorEmojiCompatTest-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

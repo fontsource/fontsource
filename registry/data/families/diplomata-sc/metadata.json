@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Diplomata SC",
+	"id": "diplomata-sc",
+	"license": {
+		"attribution": "Copyright 2011 The Diplomata Project Authors (https://github.com/etunni/diplomata), with Reserved Font Name \"Diplomata\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/diplomatasc",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/diplomata",
+		"revision": "32dc35e6b420631acc10808e1f92f74e3048e81d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/diplomatasc/DiplomataSC-Regular.ttf",
+			"sha256": "6c91b299f45463424e26daf5fbbd5f298ad7b2e89f25bee506dd34a6d5297054",
+			"size": 87544,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

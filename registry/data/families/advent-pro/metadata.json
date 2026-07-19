@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-02-29",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "VivaRado",
+	"family": "Advent Pro",
+	"id": "advent-pro",
+	"license": {
+		"attribution": "Copyright 2018 The Advent Pro Project Authors (https://github.com/googlefonts/Advent)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/adventpro",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Advent",
+		"revision": "d206a139ee9045993fbd1e530b93f28f8bf4e3b1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/adventpro/AdventPro-Italic[wdth,wght].ttf",
+			"sha256": "0917a5d65589025f2a752b1b0568f924dac49a065a25b4d60116b3c6d4d9ebae",
+			"size": 261384,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/adventpro/AdventPro[wdth,wght].ttf",
+			"sha256": "b60ab2920b89bdc4b7dadfb282cadac6e03833e7a80844f9eac096359b2b9766",
+			"size": 248348,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

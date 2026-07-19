@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 213,
+				"sha256": "19d6439a0a0233e4f3ac5fdd90f46befac642aafdfb6983d966032ab59c3a7b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/sirinstencil/SirinStencil-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

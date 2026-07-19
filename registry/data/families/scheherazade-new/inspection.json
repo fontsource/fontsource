@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 800,
+				"sha256": "98bf28ed41fe14c8aae5a1e2c958c9d22a36391e83edc00a9b35bf16663972ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.500",
+			"outline": "glyf",
+			"path": "ofl/scheherazadenew/ScheherazadeNew-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 800,
+				"sha256": "98bf28ed41fe14c8aae5a1e2c958c9d22a36391e83edc00a9b35bf16663972ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.500",
+			"outline": "glyf",
+			"path": "ofl/scheherazadenew/ScheherazadeNew-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 800,
+				"sha256": "98bf28ed41fe14c8aae5a1e2c958c9d22a36391e83edc00a9b35bf16663972ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.500",
+			"outline": "glyf",
+			"path": "ofl/scheherazadenew/ScheherazadeNew-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 800,
+				"sha256": "98bf28ed41fe14c8aae5a1e2c958c9d22a36391e83edc00a9b35bf16663972ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.500",
+			"outline": "glyf",
+			"path": "ofl/scheherazadenew/ScheherazadeNew-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

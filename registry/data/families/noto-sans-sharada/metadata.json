@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sharada"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Sharada",
+	"id": "noto-sans-sharada",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sharada)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssharada",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/sharada",
+		"revision": "cafc138eaa89d3fa491ea6d81051fc910ade8c87"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssharada/NotoSansSharada-Regular.ttf",
+			"sha256": "2ccfb8e72773d318c03b8414ad82686c97ee65a9825fdb1a388e376c4df13372",
+			"size": 122368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

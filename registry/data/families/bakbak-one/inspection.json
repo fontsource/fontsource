@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 461,
+				"sha256": "1079ac862416638fdfc73584701e09438cb94204c1f3d4dd122d647a347818a4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bakbakone/BakbakOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

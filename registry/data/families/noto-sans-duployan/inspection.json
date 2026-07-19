@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 486,
+				"sha256": "2295e2bcb5b12c40f6e65d5224c00171ecc5febf1ca3a0481586d899f71267c9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002",
+			"outline": "glyf",
+			"path": "ofl/notosansduployan/NotoSansDuployan-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 486,
+				"sha256": "2295e2bcb5b12c40f6e65d5224c00171ecc5febf1ca3a0481586d899f71267c9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002",
+			"outline": "glyf",
+			"path": "ofl/notosansduployan/NotoSansDuployan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

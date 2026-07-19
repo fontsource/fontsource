@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontstage",
+	"family": "Chango",
+	"id": "chango",
+	"license": {
+		"attribution": "Copyright (c) 2011 Fontstage (info@fontstage.com), with Reserved Font Name \"Chango\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chango",
+		"revision": "ddfa0ba99f6b164d163ea672910847dfb7c5b9b9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/chango",
+		"revision": "fed28f46958e46610efc52780476adcfc91745e6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chango/Chango-Regular.ttf",
+			"sha256": "3e566f4b881f24198fe1b6525aae970f9200078136e3416abc7ba0272d2f80d9",
+			"size": 40732,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

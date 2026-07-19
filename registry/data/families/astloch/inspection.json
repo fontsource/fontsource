@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 209,
+				"sha256": "dda4107d2805fc3da2a5e1988a9749e476ae479f8d40418211224d6d0c76e17e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/astloch/Astloch-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 209,
+				"sha256": "dda4107d2805fc3da2a5e1988a9749e476ae479f8d40418211224d6d0c76e17e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/astloch/Astloch-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

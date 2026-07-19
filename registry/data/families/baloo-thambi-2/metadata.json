@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil",
+		"vietnamese"
+	],
+	"designer": "Ek Type",
+	"family": "Baloo Thambi 2",
+	"id": "baloo-thambi-2",
+	"license": {
+		"attribution": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/baloothambi2",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yanone/Baloo2-Variable",
+		"revision": "ffd6308743a5829fe6980ce86f5629ba0250df98"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/baloothambi2/BalooThambi2[wght].ttf",
+			"sha256": "6739a11d3557b7426f0f43ce3a22ff6fbfee2d3be56ffb4df093d35d3460bf73",
+			"size": 307136,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

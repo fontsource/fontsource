@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 311,
+				"sha256": "6fcf0778d1c4da44b914179da790ac3b09f37526309ec89cd288abe60e2f9275"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/snowburstone/SnowburstOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

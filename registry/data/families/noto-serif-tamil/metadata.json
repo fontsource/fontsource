@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Tamil",
+	"id": "noto-serif-tamil",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tamil)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoseriftamil",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/tamil",
+		"revision": "626575fa0c68c81dee17a0342003c08c0ab8375e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoseriftamil/NotoSerifTamil-Italic[wdth,wght].ttf",
+			"sha256": "fd83887a38aa103aade5e6f73437386bf010bec2afac5b5973e4996c1a98193b",
+			"size": 422328,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/notoseriftamil/NotoSerifTamil[wdth,wght].ttf",
+			"sha256": "4b10fe56ee22907a80136c16dbe386ee20f3bf116332b35128bb35eeb775d91e",
+			"size": 420124,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

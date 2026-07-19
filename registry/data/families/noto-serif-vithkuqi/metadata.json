@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-10-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vithkuqi"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Vithkuqi",
+	"id": "noto-serif-vithkuqi",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/vithkuqi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifvithkuqi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/vithkuqi",
+		"revision": "b1538fae374bd36a28c35d504ecea658dd015aaf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifvithkuqi/NotoSerifVithkuqi[wght].ttf",
+			"sha256": "964ed4f384e11f3bf552a6c2214c4fd16c9240d26942e001b4424cdbc470f8c4",
+			"size": 134540,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

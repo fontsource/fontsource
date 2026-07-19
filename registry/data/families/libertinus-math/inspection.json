@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3652,
+				"sha256": "75ba7e175727a91d5928e31c01d0c9429055b2770f0470e8163c0d3803761c3a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusmath/LibertinusMath-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

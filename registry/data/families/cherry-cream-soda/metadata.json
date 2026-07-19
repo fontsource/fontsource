@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-01-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Font Diner",
+	"family": "Cherry Cream Soda",
+	"id": "cherry-cream-soda",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Font Diner, Inc. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/cherrycreamsoda",
+		"revision": "043d09f76a7f7e2d7fb98b0114c37d9a1550aa02",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/cherrycreamsoda",
+		"revision": "d378933eaf1dcc111ad2599e41014cb15fbd3788"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/cherrycreamsoda/CherryCreamSoda-Regular.ttf",
+			"sha256": "158577b383ce9798384580bd41c35cd0fb4ed550a32fe4a2e41f4f2594337385",
+			"size": 50256,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

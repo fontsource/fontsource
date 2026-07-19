@@ -1,0 +1,53 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2018-02-28",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "JIKJI SOFT",
+	"family": "Gaegu",
+	"id": "gaegu",
+	"license": {
+		"attribution": "Copyright 2018 The Gaegu Project Authors",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gaegu",
+		"revision": "088df5c822dacc8fad9dd64dbbe5649cd6830e99",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gaegu/Gaegu-Bold.ttf",
+			"sha256": "cc38a4af9506a45254d1ce07c589ec473d9e5f0be319e5a77b17c214903f8c1c",
+			"size": 2962664,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gaegu/Gaegu-Light.ttf",
+			"sha256": "da44ad6e5823819599ec42e1a516f23002cc0e72f968f93bd49e793360cd77ca",
+			"size": 3213004,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/gaegu/Gaegu-Regular.ttf",
+			"sha256": "aa52c98336f7c62e2896fc8b12b56a75d5b476d88a2f104b0980f4f7ce0adfc3",
+			"size": 3165816,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-10-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Kanon Foundry, Alexander Örn, Tor Weibull, Hedvig",
+	"family": "Hedvig Letters Sans",
+	"id": "hedvig-letters-sans",
+	"license": {
+		"attribution": "Copyright 2023 The Hedvig Letters Project Authors (https://github.com/KanonFoundry/HedvigLetters)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hedvigletterssans",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/KanonFoundry/HedvigLetters",
+		"revision": "345b4d9015af6a26eb05e436460ca41fc42784df"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hedvigletterssans/HedvigLettersSans-Regular.ttf",
+			"sha256": "ee35016e71917e3960b310607480f4621d511720ebd1cedff8d44674cf09ae80",
+			"size": 80700,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

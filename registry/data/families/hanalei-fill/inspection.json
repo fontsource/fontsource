@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 363,
+				"sha256": "485ca4d825caef4d8c04629920cdb720dbdd2c3de1cd12bfb97bb4c47ad6e537"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/hanaleifill/HanaleiFill-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

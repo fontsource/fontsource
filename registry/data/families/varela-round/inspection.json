@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 746,
+				"sha256": "7fb04c6a770d606c6fb1761718ca7637976096eaad2dfc7b0d1e4954ed187500"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/varelaround/VarelaRound-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

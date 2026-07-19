@@ -1,0 +1,78 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-01-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Christian Thalmann",
+	"family": "Cormorant SC",
+	"id": "cormorant-sc",
+	"license": {
+		"attribution": "Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cormorantsc",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/CatharsisFonts/Cormorant",
+		"revision": "cc1bfb51ce6568cb3abf9199ab718d543f6fa189"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cormorantsc/CormorantSC-Bold.ttf",
+			"sha256": "78f70c79b5c0a1e66641d4b4a2e2ed32e1a45774b3de94e56f8de68510219177",
+			"size": 763124,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cormorantsc/CormorantSC-Light.ttf",
+			"sha256": "d3dfcbf1aa9281743cb123292851862b4419602efbf29c4867e680d53774a2ae",
+			"size": 764892,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/cormorantsc/CormorantSC-Medium.ttf",
+			"sha256": "7ec02e6b6c20697fd8d5038349452b6f3c628c16440a04156650d42e3fef89bf",
+			"size": 762320,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/cormorantsc/CormorantSC-Regular.ttf",
+			"sha256": "a51985a075f3884d8dc9b2d20367c51b6b05e53fdb912959acb785084579aeaa",
+			"size": 763624,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cormorantsc/CormorantSC-SemiBold.ttf",
+			"sha256": "648cd1c932871e4e8e1d147b593315409e8ea82282f88e9397e2cceae83d065b",
+			"size": 762872,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1022,
+				"sha256": "53802107d8a51668cab96cbd3b2677487a1245a08731d97ecba9dfa848504142"
+			},
+			"colorTables": [],
+			"fontVersion": "2.94.0; ttfautohint (v1.2) -l 7 -r 28 -G 50 -x 13 -D deva -f deva -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/bhavuka/Bhavuka-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

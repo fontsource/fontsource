@@ -1,0 +1,40 @@
+{
+	"category": "monospace",
+	"dateAdded": "2026-06-10",
+	"declaredSubsets": [
+		"ethiopic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "TypeHabesha, Behailu Berento",
+	"family": "Hibur Mono",
+	"id": "hibur-mono",
+	"license": {
+		"attribution": "Copyright 2025-2026 The Hibur Mono Font Project Authors (https://github.com/typehabesha/HiburMono).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hiburmono",
+		"revision": "679abcaab3e391cc59c0e4f5ee53385ef80dd187",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typehabesha/HiburMono",
+		"revision": "ea9fe744a13815eb4efeb297c072ce61b4c335df"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hiburmono/HiburMono-Regular.ttf",
+			"sha256": "b57cd76dab909593d4b6a9336508f07864ea06dadce77312fc57ba1bb1f2cfe1",
+			"size": 210352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-26"
+}

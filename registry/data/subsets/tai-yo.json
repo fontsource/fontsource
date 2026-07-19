@@ -1,0 +1,39 @@
+{
+	"id": "tai-yo",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1E6C0",
+			"1E6DE"
+		],
+		[
+			"1E6E0",
+			"1E6F5"
+		],
+		[
+			"1E6FE",
+			"1E6FF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/tai-yo_unique-glyphs.nam",
+		"revision": "0ae2941d5692866692eff4c8026b3c7a2980fc56",
+		"sha256": "256b26f979e0a9afb6ecbeb064fd8b8c061b93417f2cf5a570a8c56dda7ac9fc",
+		"upstream": "namFiles"
+	}
+}

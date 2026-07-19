@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Cherokee is an unmodulated (“sans serif”) design for texts in the American _Cherokee_ script. It has multiple weights and 273 glyphs.

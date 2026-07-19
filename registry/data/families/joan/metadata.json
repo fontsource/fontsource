@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-04-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Paolo Biagini",
+	"family": "Joan",
+	"id": "joan",
+	"license": {
+		"attribution": "Copyright 2021 The Joan Project Authors (https://github.com/PaoloBiagini/Joan)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/joan",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/PaoloBiagini/Joan",
+		"revision": "981cb73299f7d9164eedcb647e57fb34c9dc1139"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/joan/Joan-Regular.ttf",
+			"sha256": "8777dccac8b33ee6fe4a0c7ab20e08cad20d7d10c18b0ce775e728f8e67be0e4",
+			"size": 393476,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

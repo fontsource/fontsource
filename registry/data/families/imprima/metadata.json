@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Imprima",
+	"id": "imprima",
+	"license": {
+		"attribution": "Copyright 2012 The Imprima Project Authors (https://github.com/etunni/imprima), with Reserved Font Name \"Imprima\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imprima",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/imprima",
+		"revision": "efec6ee25d2ba461487c391b62ae26817614741a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imprima/Imprima-Regular.ttf",
+			"sha256": "c563e40bc5609b8c7bcc39f93cba05455c0d0b8c43460ff991d2834301609c08",
+			"size": 55692,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

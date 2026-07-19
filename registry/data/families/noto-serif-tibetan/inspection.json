@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 552,
+				"sha256": "3561ec44fda0c7184e3aabf577f80bccfc99b9ff2825501c0e79f52607ae895b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.103",
+			"outline": "glyf",
+			"path": "ofl/notoseriftibetan/NotoSerifTibetan[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

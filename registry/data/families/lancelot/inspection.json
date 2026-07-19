@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 219,
+				"sha256": "729088eb1610f300f197cdbb69b8e7bd6c546bff8bd43e53d8eeae8571683644"
+			},
+			"colorTables": [],
+			"fontVersion": "1.004",
+			"outline": "glyf",
+			"path": "ofl/lancelot/Lancelot-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

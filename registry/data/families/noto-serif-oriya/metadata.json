@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-07-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"oriya"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Oriya",
+	"id": "noto-serif-oriya",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/oriya)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoseriforiya",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/oriya",
+		"revision": "795268df4e01d7869805c7af179e5038568212e9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoseriforiya/NotoSerifOriya[wght].ttf",
+			"sha256": "9fa2a08cb6a677d155a823bc58b4c587613780bd43013fd362369c251001502a",
+			"size": 241144,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

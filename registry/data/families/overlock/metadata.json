@@ -1,0 +1,84 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dario Manuel Muhafara",
+	"family": "Overlock",
+	"id": "overlock",
+	"license": {
+		"attribution": "Copyright (c) 2011, Dario Manuel Muhafara (http://www.tipo.net.ar), with Reserved Font Name \"Overlock\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/overlock",
+		"revision": "9c7303eb370202b9cb2b9836de67c662daf33f67",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/overlock/Overlock-Black.ttf",
+			"sha256": "57e9a9982075e72a7800c0c4c37c4ff2321dcacec5b66622c4a3e114c5d25f7b",
+			"size": 43128,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/overlock/Overlock-BlackItalic.ttf",
+			"sha256": "a7de24f86f8170b2f923ace452e2889d74e781f82890e10e8c23135b03cccc91",
+			"size": 44020,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/overlock/Overlock-Bold.ttf",
+			"sha256": "03ac4ce07ebd6e890aaf9071f8c75bf8b7060f39d44335250dd26bcfc8a16329",
+			"size": 42232,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/overlock/Overlock-BoldItalic.ttf",
+			"sha256": "1aa0cf070fc76fde63bc3eb144ed838730abcf33bc65811b0ce9b23adec7691e",
+			"size": 45704,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/overlock/Overlock-Italic.ttf",
+			"sha256": "8602fc83b372d5a09e774054fadee4056a2770e0f3b9000da263d221d0d804a5",
+			"size": 44024,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/overlock/Overlock-Regular.ttf",
+			"sha256": "e27ec26dcb055e6d3843c5106fcacbc54e0c50accc0409935c7aaa16327bc92a",
+			"size": 49468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

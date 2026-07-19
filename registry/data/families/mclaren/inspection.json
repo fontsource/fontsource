@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 372,
+				"sha256": "a593b096a590ec23d10d26386b9612990aff016c35e6123a231ac0a0cb39ed2b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mclaren/McLaren-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

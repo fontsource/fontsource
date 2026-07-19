@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 945,
+				"sha256": "ae29ea320ef70bf6a6c177c0e72996765ca52bb1c53204c32ab88bc4f159ff2b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0010g",
+			"outline": "glyf",
+			"path": "ofl/mirza/Mirza-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 945,
+				"sha256": "ae29ea320ef70bf6a6c177c0e72996765ca52bb1c53204c32ab88bc4f159ff2b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0010g",
+			"outline": "glyf",
+			"path": "ofl/mirza/Mirza-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 945,
+				"sha256": "ae29ea320ef70bf6a6c177c0e72996765ca52bb1c53204c32ab88bc4f159ff2b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0010g",
+			"outline": "glyf",
+			"path": "ofl/mirza/Mirza-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 945,
+				"sha256": "ae29ea320ef70bf6a6c177c0e72996765ca52bb1c53204c32ab88bc4f159ff2b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0010g",
+			"outline": "glyf",
+			"path": "ofl/mirza/Mirza-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

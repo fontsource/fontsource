@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-04-04",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jovanny Lemonad",
+	"family": "Cuprum",
+	"id": "cuprum",
+	"license": {
+		"attribution": "Copyright 2020 The Cuprum Project Authors (https://github.com/alexeiva/cuprum), with Reserved Font Name \"Cuprum\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cuprum",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alexeiva/cuprum",
+		"revision": "98adc59dc00ca00dbde9eb42a23ace5f924b4f90"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cuprum/Cuprum-Italic[wght].ttf",
+			"sha256": "1b2fa2441b421e16176ed3b0356949f406ef44497df17b2ee7977aa7f838312a",
+			"size": 84360,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cuprum/Cuprum[wght].ttf",
+			"sha256": "be75585aa57a5f1c1d10de61305bb4266effa1b9083722d20c26adf97e911534",
+			"size": 84324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

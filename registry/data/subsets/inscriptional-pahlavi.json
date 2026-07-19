@@ -1,0 +1,35 @@
+{
+	"id": "inscriptional-pahlavi",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10B60",
+			"10B72"
+		],
+		[
+			"10B78",
+			"10B7F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/inscriptional-pahlavi_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "76fbdfa8dbf0e9e88bcae3700226e1414981834e5fa5398530ffc6fe4524f611",
+		"upstream": "namFiles"
+	}
+}

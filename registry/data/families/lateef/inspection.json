@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 799,
+				"sha256": "e810c29585bbec9e35fd086db96891b7e6ef245400e850d77c3444e81264ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/lateef/Lateef-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 799,
+				"sha256": "e810c29585bbec9e35fd086db96891b7e6ef245400e850d77c3444e81264ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/lateef/Lateef-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 799,
+				"sha256": "e810c29585bbec9e35fd086db96891b7e6ef245400e850d77c3444e81264ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/lateef/Lateef-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 799,
+				"sha256": "e810c29585bbec9e35fd086db96891b7e6ef245400e850d77c3444e81264ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/lateef/Lateef-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 799,
+				"sha256": "e810c29585bbec9e35fd086db96891b7e6ef245400e850d77c3444e81264ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/lateef/Lateef-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 799,
+				"sha256": "e810c29585bbec9e35fd086db96891b7e6ef245400e850d77c3444e81264ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/lateef/Lateef-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 799,
+				"sha256": "e810c29585bbec9e35fd086db96891b7e6ef245400e850d77c3444e81264ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.400",
+			"outline": "glyf",
+			"path": "ofl/lateef/Lateef-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

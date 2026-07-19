@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 578,
+				"sha256": "37a44ffc2eb9c99d533c2c8561c9d0ebacc596d198ec439a6d802a9082849ca3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/grechenfuemen/GrechenFuemen-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

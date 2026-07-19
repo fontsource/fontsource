@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Bhaiksuki is an unmodulated (“sans serif”) design for texts in the historical Indic _Bhaiksuki_ script. It has 863 glyphs.

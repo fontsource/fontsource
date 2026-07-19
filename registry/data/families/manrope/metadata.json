@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-10-03",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mikhail Sharanda",
+	"family": "Manrope",
+	"id": "manrope",
+	"license": {
+		"attribution": "Copyright 2019 The Manrope Project Authors (https://github.com/sharanda/manrope)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/manrope",
+		"revision": "fb629caaa15ad25c051089c98f09cf6c8e30a86b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aaronbell/manrope",
+		"revision": "6f81ebecdf65e4463b798cc07b16a4f8d5216917"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/manrope/Manrope[wght].ttf",
+			"sha256": "d0639be45d0af36e798172419d7bd173c4bd4f29e2b76cbb69db1d11bf8b0a40",
+			"size": 165420,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

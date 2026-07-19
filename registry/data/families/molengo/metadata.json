@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-04-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Denis Jacquerye",
+	"family": "Molengo",
+	"id": "molengo",
+	"license": {
+		"attribution": "Copyright (c) 2007, Denis Moyogo Jacquerye <moyogo@gmail.com>, with Reserved Font Name Molengo",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/molengo",
+		"revision": "e82a2ab0341c8cb31437f651a2350bde2122b749",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/moyogo/molengo-fonts",
+		"revision": "9e390dcfd861f8774bc5ae369732a66861a2dc4a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/molengo/Molengo-Regular.ttf",
+			"sha256": "179b2472bbc83c90ffe3a64e31e7ce6915d22173ee5073cc4e786e9fc7792d76",
+			"size": 65464,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

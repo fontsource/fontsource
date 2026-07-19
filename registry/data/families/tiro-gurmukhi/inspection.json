@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 467,
+				"sha256": "56c40e9f6d2402b689eae937a0c886142efe71cd98eeba49e5cec2decabbc701"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirogurmukhi/TiroGurmukhi-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 467,
+				"sha256": "56c40e9f6d2402b689eae937a0c886142efe71cd98eeba49e5cec2decabbc701"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirogurmukhi/TiroGurmukhi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "2a377917ef036bf3c2d9b9b1c742313072c242986f3db63b339cdf303bf1418c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/brawler/Brawler-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "2a377917ef036bf3c2d9b9b1c742313072c242986f3db63b339cdf303bf1418c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/brawler/Brawler-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

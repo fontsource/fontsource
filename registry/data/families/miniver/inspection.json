@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "7d88aa015af0747f8bc9891bc89433fb68aa85233cbc29fe81b8e0630332adbb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/miniver/Miniver-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

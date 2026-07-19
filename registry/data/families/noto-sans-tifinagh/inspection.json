@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 399,
+				"sha256": "c93aa08891eece2bd10d4e022aee0ab9b6dc3a16478c7285e0a9db173655b225"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.006; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanstifinagh/NotoSansTifinagh-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

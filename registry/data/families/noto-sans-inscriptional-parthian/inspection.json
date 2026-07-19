@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "c70411ea21fdea009cbc955db12c119c137c4b79e2da55d50c140d638b0a4f3e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansinscriptionalparthian/NotoSansInscriptionalParthian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 855,
+				"sha256": "727295b75f34c2fc70674050fc75b7d3baeee89b27b9bdf8bdbfaa65323267cf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/mynerve/Mynerve-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

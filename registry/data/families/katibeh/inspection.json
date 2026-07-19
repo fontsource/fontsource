@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 982,
+				"sha256": "ee2b86662cfa96d7d8f50a389e9934c5228c4b73cc9561f1ba24ee1ecaeba73d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0010g",
+			"outline": "glyf",
+			"path": "ofl/katibeh/Katibeh-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

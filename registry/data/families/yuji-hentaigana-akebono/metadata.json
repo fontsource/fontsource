@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-06-10",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Kinuta Font Factory",
+	"family": "Yuji Hentaigana Akebono",
+	"id": "yuji-hentaigana-akebono",
+	"license": {
+		"attribution": "Copyright 2021 The Yuji Project Authors (https://github.com/Kinutafontfactory/Yuji)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yujihentaiganaakebono",
+		"revision": "f6a4e8a8247cd8382551b8c2926fae6b650df6f0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Kinutafontfactory/Yuji",
+		"revision": "efec977b14b57c19eb85d468edcfbbad13139e67"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yujihentaiganaakebono/YujiHentaiganaAkebono-Regular.ttf",
+			"sha256": "8e387eeb5c24cd2945d8804caab8f97985b694cec8d2b228da63cceb16c7a8f3",
+			"size": 99100,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

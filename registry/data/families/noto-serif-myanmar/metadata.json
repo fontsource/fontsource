@@ -1,0 +1,110 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"menu",
+		"myanmar"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Myanmar",
+	"id": "noto-serif-myanmar",
+	"license": {
+		"attribution": "Copyright 2016 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifmyanmar",
+		"revision": "d28e9028fa13ed777c771c1acc1faf6c77e9bc1a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/myanmar",
+		"revision": "57be35a771cf5da0271db8521c48a1cfdc4d2126"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Black.ttf",
+			"sha256": "3bc1073eba29f4ea86d05922cae88216e0ac36170614fa5e99487ebc70bd0879",
+			"size": 258784,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Bold.ttf",
+			"sha256": "4188186da169f55df6cba7b01b9e08c9f44516e0ad66766fc8b46e806b423a7e",
+			"size": 270276,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-ExtraBold.ttf",
+			"sha256": "74a006beaa2d64d5204a620530c564366b316dcb443a2278039997a34978f0e0",
+			"size": 255928,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-ExtraLight.ttf",
+			"sha256": "444025fd3d29e7d8a454e632a8ecfd02468d7c5236c39c75f6ad2067ce7e6b6d",
+			"size": 235964,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Light.ttf",
+			"sha256": "68b4f774195520f0b6e9ba54aa6ae951eea9a9a6f6ba6a766de11eed00a570a0",
+			"size": 244356,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Medium.ttf",
+			"sha256": "007c08a5d7554c82a6b6fc3482e897625cf867c7dc22e7f9b7ebf55c9451bb0d",
+			"size": 246872,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Regular.ttf",
+			"sha256": "f88d1da5a75a8e09ff0b073fe3c861d095a72e94fea3235f09f80e6c5b2c9933",
+			"size": 260396,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-SemiBold.ttf",
+			"sha256": "5c82e1c2780a8ce1bc49abee4fa5392bc39333a65acd5affff7589df934a4c90",
+			"size": 247700,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Thin.ttf",
+			"sha256": "91d7c3a9402a3ed18e6c087a511b7542a096801ead8669027f0dfa617f50466f",
+			"size": 235484,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

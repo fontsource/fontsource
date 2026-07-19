@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "2a96a74db8eec838428baa76e9834cf44ccee16e30eb1ddec0f6757039d6370f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/lovelight/LoveLight-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

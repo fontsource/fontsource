@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil"
+	],
+	"designer": "Tharique Azeez",
+	"family": "Pavanam",
+	"id": "pavanam",
+	"license": {
+		"attribution": "Copyright (c) 2015, Tharique Azeez (http://thariqueazeez.com | zeezat@gmail.com). Copyright (c) 2012, vernon adams (vern@newtypography.co.uk)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pavanam",
+		"revision": "2dc66b651665a065716dfbe166263fb034c6a662",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/enathu/pavanam",
+		"revision": "c4ba9335116a4ff2c124ebf918455748caedccac"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pavanam/Pavanam-Regular.ttf",
+			"sha256": "d2805bfdca57f7d7a0c69edf35a5f98d4605af6603dcca943db5d11ea531c2f3",
+			"size": 63100,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

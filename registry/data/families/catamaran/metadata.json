@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-07-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil"
+	],
+	"designer": "Pria Ravichandran",
+	"family": "Catamaran",
+	"id": "catamaran",
+	"license": {
+		"attribution": "Copyright 2020 The Catamaran Project Authors (https://github.com/VanillaandCream/Catamaran-Tamil)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/catamaran",
+		"revision": "bf751db669e232ec535924ea1dba8673d236e718",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/VanillaandCream/Catamaran-Tamil",
+		"revision": "7559b4906f9c9148fb22c6f89508c3053a78a296"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/catamaran/Catamaran[wght].ttf",
+			"sha256": "f6ee331c381f441454225196d7930d4d0a31554d7f1f9c8c58149ca9e122b294",
+			"size": 184276,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

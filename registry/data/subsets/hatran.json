@@ -1,0 +1,43 @@
+{
+	"id": "hatran",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"200C",
+			"200C"
+		],
+		[
+			"108E0",
+			"108F2"
+		],
+		[
+			"108F4",
+			"108F5"
+		],
+		[
+			"108FB",
+			"108FF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/hatran_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "8a5437be937ad29e4cf4697f8b823660c7e5341cb3fc795d80f676cf329d9b52",
+		"upstream": "namFiles"
+	}
+}

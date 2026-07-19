@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Bokor",
+	"id": "bokor",
+	"license": {
+		"attribution": "Copyright 2020 The Bokor Project Authors (https://github.com/danhhong/Bokor)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bokor",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Bokor",
+		"revision": "b5d5f6e07e365610ad5a39d42f87505e85702432"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bokor/Bokor-Regular.ttf",
+			"sha256": "640d475abdd109bfd80d2eef892fe1c63d3ec0faddcd15f819c5f1729712c370",
+			"size": 124128,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2026-04-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "René Bieder",
+	"family": "Strichpunkt Sans",
+	"id": "strichpunkt-sans",
+	"license": {
+		"attribution": "Copyright 2026 The Strichpunkt Sans Project Authors (https://github.com/strichpunkt-design/Strichpunkt_Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/strichpunktsans",
+		"revision": "e7ce30aae705cfb2fffeaf9c63a4ed6f89b9dcd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/strichpunkt-design/Strichpunkt_Sans",
+		"revision": "9a24fe35f229db9d86724550255429a86a9bb308"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/strichpunktsans/StrichpunktSans[wdth,wght].ttf",
+			"sha256": "fe0d16855fd52eb54300f69ebcbfd0bd0323faf0abd8e112d7e42cee2d2804ea",
+			"size": 224680,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

@@ -1,0 +1,1 @@
+Eater is a display font infected by the darkest of rare disease that slowly spreads at night while the webfont user sleeps.

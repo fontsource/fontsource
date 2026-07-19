@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 360,
+				"sha256": "38c72749db30501767a367e620124ce4d5413cc784b8fc73afccfbbdabd31e09"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanshanunoo/NotoSansHanunoo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 430,
+				"sha256": "7ecfd57eb2a04956d028b4662ad4022078c97f9e199cd3583cd6780c7cfd053e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v0.8) -G 200 -r 50",
+			"outline": "glyf",
+			"path": "ofl/ranchers/Ranchers-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

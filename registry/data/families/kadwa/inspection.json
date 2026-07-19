@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 562,
+				"sha256": "d1dc23632841eb97a7d25336351dd6f23b35f8cc49eb96a7a67651b95f5158d2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 001.000;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v1.00) -l 8 -r 50 -G 200 -x 14 -D latn -f none -w G",
+			"outline": "glyf",
+			"path": "ofl/kadwa/Kadwa-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 563,
+				"sha256": "bd0b6c612e837d71e4784c4b88deb01fb2dfe559fb01cd354588e35356608eee"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 001.000;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v1.00) -l 8 -r 50 -G 200 -x 14 -D latn -f none -w G",
+			"outline": "glyf",
+			"path": "ofl/kadwa/Kadwa-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

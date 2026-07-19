@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "9bdd7652fde52fff5608663af42dcd0921932ded8bf93c22b0047a7b4099cde6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/supermercadoone/SupermercadoOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

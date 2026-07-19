@@ -1,0 +1,1 @@
+This ain’t no Lucida. League Script is a modern, coquettish script font that sits somewhere between your high school girlfriend’s love notes and handwritten letters from the ’20s. Designed for [the League of Moveable Type](http://www.theleagueofmoveabletype.com/), it includes ligatures and will act as the framework for future script designs.

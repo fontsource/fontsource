@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 208,
+				"sha256": "ca826165fb90ed5d1a155e5e800c4b4f356d12f109cb540aac412688342474d5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/knewave/Knewave-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

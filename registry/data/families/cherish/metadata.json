@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Cherish",
+	"id": "cherish",
+	"license": {
+		"attribution": "Copyright 2004-2021 The Cherish Project Authors (https://github.com/googlefonts/cherish)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cherish",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/cherish",
+		"revision": "fd3a5b6b7fa7865540892380eb94290c2d49227b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cherish/Cherish-Regular.ttf",
+			"sha256": "5d6588a51682057329566baf12a11c405dea771a9dcec61ac5fe9a83d9db6b13",
+			"size": 202240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

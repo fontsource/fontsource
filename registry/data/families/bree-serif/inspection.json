@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 394,
+				"sha256": "736a9b0018ee697de3c2da386359dc66c6ad15f0b84231f76c73f112a53d7ee1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/breeserif/BreeSerif-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,55 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-01-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Christian Robertson, ParaType, Font Bureau",
+	"family": "Roboto",
+	"id": "roboto",
+	"license": {
+		"attribution": "Copyright 2011 The Roboto Project Authors (https://github.com/googlefonts/roboto-classic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/roboto",
+		"revision": "1c627bfa375fc51cf86fabeca4f6e08a95f0aa5c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/roboto-classic",
+		"revision": "91d5d3e5b81efa04a77925cc609fdcdd7ee663d1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/roboto/Roboto-Italic[wdth,wght].ttf",
+			"sha256": "9725a847af6b460ffca162ae66d20dad48b01876137947180b42d7dcd7887182",
+			"size": 530944,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/roboto/Roboto[wdth,wght].ttf",
+			"sha256": "d7598e12c5dbef095ff8272cfc55da0250bd07fbdecbac8a530b9b277872a134",
+			"size": 488584,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

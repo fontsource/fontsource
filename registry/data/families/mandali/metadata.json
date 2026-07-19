@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Mandali",
+	"id": "mandali",
+	"license": {
+		"attribution": "Copyright (c) 2012 Silicon Andhra (fonts.siliconandhra.org). Copyright (c) 2011, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Name Nunito",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mandali",
+		"revision": "a4b794d9c2770286e22a406e68c1567b68a27e46",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/mandali",
+		"revision": "b5d09820cc850e98417250895a11bf0605ab2510"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mandali/Mandali-Regular.ttf",
+			"sha256": "8ba4663d114aff639e4974b65795353c193272026308608d95770aaaa6afd806",
+			"size": 619212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

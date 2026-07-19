@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-03-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Ingrid Darling",
+	"id": "ingrid-darling",
+	"license": {
+		"attribution": "Copyright 2014-2021 The Ingrid Darling Project Authors (https://github.com/googlefonts/ingrid-darling)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ingriddarling",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/ingrid-darling",
+		"revision": "ea2b4893cf8dc8cd0e7fb2b89f9631b38fde4ed3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ingriddarling/IngridDarling-Regular.ttf",
+			"sha256": "f08b43438d6dc7742a9c0434e7199e01272a2c1b2b135c9a886f6517c9e5ae4f",
+			"size": 159820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

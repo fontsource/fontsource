@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 347,
+				"sha256": "709fb8e1f5eed21dacb081a815ade21a6567754188f3b1ffad13155778e5dd5d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/candal/Candal.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

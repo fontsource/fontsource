@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-10-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Undercase Type, Phaedra Charles, Flavia Zimbardi",
+	"family": "Fraunces",
+	"id": "fraunces",
+	"license": {
+		"attribution": "Copyright 2020 The Fraunces Project Authors (github.com/undercasetype/Fraunces)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fraunces",
+		"revision": "4024282d9b0cffcdb8e3024560862746178d741f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/undercasetype/Fraunces",
+		"revision": "d6d385783609ceb11ac0f220f3abd9f1631c8a36"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+			"sha256": "b24448c43702fac4ee856781d461a0dfba8d8e594b6e8e190234b75fed2c0e01",
+			"size": 414904,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf",
+			"sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+			"size": 360440,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

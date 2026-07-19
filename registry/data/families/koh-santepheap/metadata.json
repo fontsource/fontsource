@@ -1,0 +1,75 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-06-10",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Koh Santepheap",
+	"id": "koh-santepheap",
+	"license": {
+		"attribution": "Copyright 2020 The Koh Santepheap Project Authors (https://github.com/danhhong/KohSantepheap)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kohsantepheap",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/KohSantepheap",
+		"revision": "316be9428c2fa32b872cb298e2439d2293dc006f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kohsantepheap/KohSantepheap-Black.ttf",
+			"sha256": "8f55fefd109aa87cab84befbd19279566df6b7b500009a8760275d385eef5898",
+			"size": 148268,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/kohsantepheap/KohSantepheap-Bold.ttf",
+			"sha256": "7b1503b36d65a7c51d74d089d73153401013c960135f0697bea560f38e4e1cb9",
+			"size": 161040,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kohsantepheap/KohSantepheap-Light.ttf",
+			"sha256": "340c7209ab55fe60b94506cf59894cdeaacca194e81e5deb8807d12b89be5383",
+			"size": 164220,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/kohsantepheap/KohSantepheap-Regular.ttf",
+			"sha256": "d126f680d8081db439097252bdbe8846019f1a66737295d53775c4f56e2254c2",
+			"size": 171268,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kohsantepheap/KohSantepheap-Thin.ttf",
+			"sha256": "efc6360978f1f0acedb84116ca7d90447cb8fbed056b36b89b109bce698a144e",
+			"size": 168692,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

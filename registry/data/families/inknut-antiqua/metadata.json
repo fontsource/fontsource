@@ -1,0 +1,94 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-05-20",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Claus Eggers Sørensen",
+	"family": "Inknut Antiqua",
+	"id": "inknut-antiqua",
+	"license": {
+		"attribution": "Copyright 2014 The Inknut Antiqua Project Authors (https://github.com/clauseggers/Inknut-Antiqua)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/inknutantiqua",
+		"revision": "90762ed9ec0d615707c15fa737fe9cf6dfb9a93d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/clauseggers/Inknut-Antiqua",
+		"revision": "9db4a5c235ef042adbc0da37fcf3dda3ffe59201"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/inknutantiqua/InknutAntiqua-Black.ttf",
+			"sha256": "279de2d9b3f21796a2a367cc55d8654eee9534a4f329d5d442294d82a333c361",
+			"size": 391960,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/inknutantiqua/InknutAntiqua-Bold.ttf",
+			"sha256": "222a233da522553541938fa7780d3bcc008af009679797658885f0052ffb76ef",
+			"size": 398368,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/inknutantiqua/InknutAntiqua-ExtraBold.ttf",
+			"sha256": "89f62cfa8e72f8ec9acc5a0aae088ab4b04fed9c3dbaaad0d2fdb6563a41cba4",
+			"size": 401976,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/inknutantiqua/InknutAntiqua-Light.ttf",
+			"sha256": "6961c4e6b3dfffd2408417d5b58994882806ae959e005309a0096869babd80dc",
+			"size": 401308,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/inknutantiqua/InknutAntiqua-Medium.ttf",
+			"sha256": "2ec563cf7dfc16e944ff6fb3411dd7fc49de13515d3993587243f02e76e4bf98",
+			"size": 399432,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/inknutantiqua/InknutAntiqua-Regular.ttf",
+			"sha256": "d46c7420b1e5fedc2086c8ce89275a6ed13c6778829c0617f56df8c3bddd686f",
+			"size": 393736,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/inknutantiqua/InknutAntiqua-SemiBold.ttf",
+			"sha256": "f4d31ad01f24ae26b30c8610f5b3e1ab9383876f1ef98cc0a4118024928456f4",
+			"size": 397764,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-06-24"
+}

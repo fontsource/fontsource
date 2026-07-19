@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-10-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Petemoss",
+	"id": "petemoss",
+	"license": {
+		"attribution": "Copyright 2008-2021 The Petemoss Project Authors (https://github.com/googlefonts/petemoss)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/petemoss",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/petemoss",
+		"revision": "c08e5306e6d86292071852778b043f5f81de32ae"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/petemoss/Petemoss-Regular.ttf",
+			"sha256": "c15315bba38c1b4fdcc6aadda5bb7aecb9d341121bbc0ea2e23f05bf6fb614c4",
+			"size": 143236,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

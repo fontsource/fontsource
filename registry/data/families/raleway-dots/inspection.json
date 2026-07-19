@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "4eb24acf64745da18f958cd2b83b71fef001732e0cbf92618bb8d420d70b391a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/ralewaydots/RalewayDots-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

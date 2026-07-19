@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2019-03-18",
+	"declaredSubsets": [
+		"chinese-simplified",
+		"latin",
+		"menu"
+	],
+	"designer": "Chen Xiaomin",
+	"family": "Long Cang",
+	"id": "long-cang",
+	"license": {
+		"attribution": "Copyright 2018 The LongCang Project Authors (https://github.com/googlefonts/longcang)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/longcang",
+		"revision": "35e5529ffaf259a96693b048d9d97cdaa76b6837",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/m4rc1e/longcang",
+		"revision": "37b9a6c0b6e1f07d3d2bd4fb2674050be72b98a6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/longcang/LongCang-Regular.ttf",
+			"sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+			"size": 5162508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

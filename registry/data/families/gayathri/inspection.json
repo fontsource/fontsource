@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 384,
+				"sha256": "ee68e32c4866e4f7236152341e5a63029cea9c4950ab37d8f98fe87deb25107d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/gayathri/Gayathri-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 384,
+				"sha256": "ee68e32c4866e4f7236152341e5a63029cea9c4950ab37d8f98fe87deb25107d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/gayathri/Gayathri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 384,
+				"sha256": "ee68e32c4866e4f7236152341e5a63029cea9c4950ab37d8f98fe87deb25107d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/gayathri/Gayathri-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 423,
+				"sha256": "1a7bd9474829c86d9ed3e9af97f958ad50cf812c88e0c3fecdf2fe3c9e533f23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/donegalone/DonegalOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

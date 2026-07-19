@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"nushu"
+	],
+	"designer": "Google",
+	"displayName": "Noto Sans Nüshu",
+	"family": "Noto Sans Nushu",
+	"id": "noto-sans-nushu",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nushu)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansnushu",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/nushu",
+		"revision": "933f7be1e6083e9ead39e560fa0b526d491bec4b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansnushu/NotoSansNushu-Regular.ttf",
+			"sha256": "dc9cd53e71e2ecfb749b6a824bf779c88af840b9f9bdd22db51246fc6b9fca2d",
+			"size": 187204,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

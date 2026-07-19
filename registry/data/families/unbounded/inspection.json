@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1138,
+				"sha256": "510e4b65b64dbdb52efea407bf5661cd8bd8e01d5db93bd799cb5fe43c25a090"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.701;gftools[0.9.28.dev5+ged2979d]",
+			"outline": "glyf",
+			"path": "ofl/unbounded/Unbounded[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

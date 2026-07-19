@@ -1,0 +1,62 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-04-13",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Capitalics, Mateusz Machalski, Andrzej Heidrich",
+	"family": "Bona Nova",
+	"id": "bona-nova",
+	"license": {
+		"attribution": "Copyright 2017 The Bona Nova Project Authors (https://github.com/kosmynkab/Bona-Nova)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bonanova",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/kosmynkab/Bona-Nova",
+		"revision": "a5cbdfb8741af20ea5bfe252f0128beed6c8beed"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bonanova/BonaNova-Bold.ttf",
+			"sha256": "c59ccb3ba8f0151236b1b427b58bee0c90607c82ef747cc6e19d5e20138385dd",
+			"size": 396420,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bonanova/BonaNova-Italic.ttf",
+			"sha256": "0d61c160a521b072d1af19e9683754f3f5761bbce35f73fdf091ecdf495bc6c2",
+			"size": 429716,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/bonanova/BonaNova-Regular.ttf",
+			"sha256": "d72f7715b6b66096e0cc2971e4954f8be33bdced1f143f9c5739a03cdb60bede",
+			"size": 401524,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

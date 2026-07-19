@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Marcelo Magalhães",
+	"family": "Londrina Outline",
+	"id": "londrina-outline",
+	"license": {
+		"attribution": "Copyright 2011 The Londrina Outline Authors (https://github.com/marcelommp/Londrina-Typeface), with Reserved Font Name \"Londrina Outline\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/londrinaoutline",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/marcelommp/Londrina-Typeface",
+		"revision": "7f4129ee609e13f4dc9bcdce6f8a08f5d9bc8060"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/londrinaoutline/LondrinaOutline-Regular.ttf",
+			"sha256": "773c655bc6a2e9b699cfa8c4a5f615c6348686d018281bb8e6cdc470b2f05f4d",
+			"size": 167112,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

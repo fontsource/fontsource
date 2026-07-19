@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 618,
+				"sha256": "e1f9e483acc47bb0b9e44095a0dd9edbd16d102bd46fa8af3005a625c23cdc7c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.009",
+			"outline": "glyf",
+			"path": "ofl/nationalpark/NationalPark[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

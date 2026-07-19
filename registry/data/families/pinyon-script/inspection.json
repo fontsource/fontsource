@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 757,
+				"sha256": "885c92941a232eef5e2ee947975e4319c56a75b19197d492e6764701dcb664f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/pinyonscript/PinyonScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

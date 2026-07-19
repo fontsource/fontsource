@@ -1,0 +1,9 @@
+Anek, as the meaning of the word suggests, is an exercise in multiplicity — multiple scripts designed in multiple weights and widths by multiple designers. A well-informed, conscientious and refreshing interpretation of India’s letter traditions, this family offers a versatile system that can meet the demands of a wide range of applications.
+
+Its expansive design space allows Anek to don multiple personalities. At its most condensed, capsular forms keep structures compact for that graphic texture. On the wide end of the spectrum, the extra legroom lets each letter yawn and stretch into their message. But it is in the boldest weights that Anek comes alive. Sharp terminals and tapered joineries sparkle amidst regimented forms, making this ideal for setting titillating headlines or that magnetic word-mark.
+
+Anek comes in ten scripts: Bangla, Devanagari, Kannada, Latin, Gujarati, Gurmukhi, Malayalam, Odia, Tamil and Telugu. The shared aesthetics of this type-family are drawn from a collaboratively decided pool of visual features. At the same time, each script amalgamates influences from its own typographic culture as well as the perspectives of individual designers.
+
+This project is designed, engineered and maintained by Ek Type; a collective of type designers based in Mumbai focused on designing contemporary Indian typefaces. Contributors of this project are: Maithili Shingre (Anek Malayalam, Anek Kannada), Yesha Goshar (Anek Latin, Anek Odia), Kailash Malviya (Anek Devanagari), Aadarsh Rajan (Anek Tamil), Sulekha Rajkumar (Anek Bangla), Vaishnavi Murthy (Anek Kannada), Omkar Bhoir (Anek Telugu), Mrunmayee Ghaisas (Anek Gujarati), Mahesh Sahu (Anek Odia), and Sarang Kulkarni (Anek Gurmukhi). Project management and design assistance by Noopur Datye, and Font engineering and design assistance by Girish Dalvi.
+
+To contribute, see [github.com/EkType/Anek](https://github.com/EkType/Anek/)

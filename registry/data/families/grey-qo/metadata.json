@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-09-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Grey Qo",
+	"id": "grey-qo",
+	"license": {
+		"attribution": "Copyright 2008-2021 The Grey Qo Project Authors (https://github.com/googlefonts/grey-qo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/greyqo",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/grey-qo",
+		"revision": "33db197cb6b5c11851eee946d28a0380f9eced9d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/greyqo/GreyQo-Regular.ttf",
+			"sha256": "1ed4701c24145a2a3b4271c48fe27d3ae082b98efc7619c1e7ee5b29ffe2cd67",
+			"size": 111544,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

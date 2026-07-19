@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 827,
+				"sha256": "b54f852e7cd21876aba7442e982119a5e30bb2afca036d1c1c7f6d708bc51e0f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/baloochettan2/BalooChettan2[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

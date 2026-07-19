@@ -1,0 +1,112 @@
+{
+	"category": "monospace",
+	"dateAdded": "2026-02-19",
+	"declaredSubsets": [
+		"armenian",
+		"braille",
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"symbols2",
+		"vietnamese"
+	],
+	"designer": "Juliette Pluto",
+	"family": "Iosevka Charon",
+	"id": "iosevka-charon",
+	"license": {
+		"attribution": "Copyright 2015-2025 The Iosevka Project Authors (https://github.com/be5invis/Iosevka)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/iosevkacharon",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/jul-sh/iosevka-charon",
+		"revision": "727f1343e957cadd354f9ec4ee98eba9b645143d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/iosevkacharon/IosevkaCharon-Bold.ttf",
+			"sha256": "6929f4d263eef34bf72992782b8fd49aaf06a94a3bd02bc418bdc9e25892dbc5",
+			"size": 1371320,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/iosevkacharon/IosevkaCharon-BoldItalic.ttf",
+			"sha256": "2d2e548d533903d608b9c6ee4a5262cbf7703d339a25593310cceb5e3c02814d",
+			"size": 1451104,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/iosevkacharon/IosevkaCharon-Italic.ttf",
+			"sha256": "16fafa08364b9657f8acaea402ce0549a98b74cc10b9ca19dd674f3026b7b060",
+			"size": 1453960,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/iosevkacharon/IosevkaCharon-Light.ttf",
+			"sha256": "47bf91a4348e0079f5ddcfe6649f6617e43e663541d8b51c05a512597eca09a2",
+			"size": 1380120,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/iosevkacharon/IosevkaCharon-LightItalic.ttf",
+			"sha256": "7788641d2613c1ee0a733220acd954bae4d33ecf0074a6d19607e29e6b669293",
+			"size": 1455936,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/iosevkacharon/IosevkaCharon-Medium.ttf",
+			"sha256": "fe4236724c45b1fe2073c30c0fb212fcd361a2f6f22c776a777e464fb8917553",
+			"size": 1375420,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/iosevkacharon/IosevkaCharon-MediumItalic.ttf",
+			"sha256": "18396b7a0db5863e4e60bdab6d0d02bc57e31477a7a311d7eff94bc44d264914",
+			"size": 1452616,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/iosevkacharon/IosevkaCharon-Regular.ttf",
+			"sha256": "a5a85271575eefce115a0c029c787bc8914d0c771bd1fdfc3776b7280a57d047",
+			"size": 1379508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

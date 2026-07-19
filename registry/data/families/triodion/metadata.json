@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2024-12-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"menu"
+	],
+	"designer": "Aleksandr Andreev",
+	"family": "Triodion",
+	"id": "triodion",
+	"license": {
+		"attribution": "Copyright 2025 The Triodion Project Authors (https://github.com/slavonic/Triodion).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/triodion",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/slavonic/Triodion",
+		"revision": "3274de97310bf4660d6fb2a1ea49f771071be4b0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/triodion/Triodion-Regular.ttf",
+			"sha256": "fc93ae1a214a8dbb0746ee5afa705042b4d65430327c648eeafe15ff5f53bfe3",
+			"size": 173068,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

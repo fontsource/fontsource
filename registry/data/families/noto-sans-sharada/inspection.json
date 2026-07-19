@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 435,
+				"sha256": "73cd8c2f638d3788229f832aefd16ec7d2d04fb9a80f25f57ffc2f81433d2a0b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.006; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssharada/NotoSansSharada-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

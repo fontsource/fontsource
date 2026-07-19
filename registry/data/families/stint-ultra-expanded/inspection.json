@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "0ed012a9cc42d4df656b276f4383ecd879710ebf52b215fbb8a378d5be1bd9c9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/stintultraexpanded/StintUltraExpanded-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

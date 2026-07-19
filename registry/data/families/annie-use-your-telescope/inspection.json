@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "8f87a51c6bc62c7bf73d96e42064b6862b9827814846e7d17a64403242cd48e8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003 2001",
+			"outline": "glyf",
+			"path": "ofl/annieuseyourtelescope/AnnieUseYourTelescope-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

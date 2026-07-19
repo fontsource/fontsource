@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-02-21",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Typofactur",
+	"family": "Winky Sans",
+	"id": "winky-sans",
+	"license": {
+		"attribution": "Copyright 2024 The Winky Sans Project Authors (https://github.com/typofactur/winkysans)\nCopyright 2024 The Winky Sans Project Authors (https://github.com/typofactur/winkysans.)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/winkysans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typofactur/winkysans",
+		"revision": "0c6c255d031c0328fcfcfbee5fbb87289ff18bc2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/winkysans/WinkySans-Italic[wght].ttf",
+			"sha256": "ead375573ecc189ac280037c75bb96466ca08177af2e648afa7fdd0d9f48a039",
+			"size": 108840,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/winkysans/WinkySans[wght].ttf",
+			"sha256": "0df4bec6a75fc35f363d0163edd0e660365301dbc0d4bcd71cd916d38ea96135",
+			"size": 105280,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

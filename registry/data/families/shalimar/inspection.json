@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 580,
+				"sha256": "b73f7a83b861af9422d4f71315a902033f3ac514770caf5aa4ffc51d8d25cdba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/shalimar/Shalimar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

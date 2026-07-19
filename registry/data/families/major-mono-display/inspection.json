@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 581,
+				"sha256": "c0d5f3c3c1e232c44a6b4286bceab93f27c6dae01a508079bb1db47e49215bfc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/majormonodisplay/MajorMonoDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

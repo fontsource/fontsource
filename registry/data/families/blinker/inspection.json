@@ -1,0 +1,108 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "dab1cc393bcd25bf15a852f4f3bdb4622528b99210567bb521b1bc84f691e910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/blinker/Blinker-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "dab1cc393bcd25bf15a852f4f3bdb4622528b99210567bb521b1bc84f691e910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/blinker/Blinker-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "dab1cc393bcd25bf15a852f4f3bdb4622528b99210567bb521b1bc84f691e910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/blinker/Blinker-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "dab1cc393bcd25bf15a852f4f3bdb4622528b99210567bb521b1bc84f691e910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/blinker/Blinker-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "dab1cc393bcd25bf15a852f4f3bdb4622528b99210567bb521b1bc84f691e910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.016;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/blinker/Blinker-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "dab1cc393bcd25bf15a852f4f3bdb4622528b99210567bb521b1bc84f691e910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/blinker/Blinker-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "dab1cc393bcd25bf15a852f4f3bdb4622528b99210567bb521b1bc84f691e910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/blinker/Blinker-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "dab1cc393bcd25bf15a852f4f3bdb4622528b99210567bb521b1bc84f691e910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+			"outline": "glyf",
+			"path": "ofl/blinker/Blinker-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

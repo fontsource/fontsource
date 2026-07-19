@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Symbols 2 is an unmodulated (“sans serif”) design for texts in Symbols and in _Emoji symbols_. It has 2,674 glyphs.

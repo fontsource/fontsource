@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 402,
+				"sha256": "448eed2258ca71258b1a00c3103c553548f11a3db4fc101047ee6631f86bc742"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/prostoone/ProstoOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

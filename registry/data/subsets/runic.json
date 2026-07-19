@@ -1,0 +1,31 @@
+{
+	"id": "runic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"16A0",
+			"16F8"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/runic_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "27787f48c4338af3137019122e747b83b405db4fd10c224028fb16936e4197de",
+		"upstream": "namFiles"
+	}
+}

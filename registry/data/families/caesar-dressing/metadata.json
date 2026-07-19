@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Open Window",
+	"family": "Caesar Dressing",
+	"id": "caesar-dressing",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Open Window (dathanboardman@gmail.com) with Reseved Font Name \"Caesar Dressing\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/caesardressing",
+		"revision": "b4c724343ca847fe0dedcc812e3a13312defa77d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/caesardressing",
+		"revision": "fb212a606bc3f65a2b3d210c88e938f6090cff15"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/caesardressing/CaesarDressing-Regular.ttf",
+			"sha256": "009dea24a4d4a3a7e02d683087babb1738acc0b949cce38c485fab325c9e9295",
+			"size": 89628,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,5 @@
+**Foundry: [Sorkin Type Co](http://www.sorkintype.com/)**
+
+Contrail is based on handmade sans letters seen on UK posters. It's slight slant and bouncy quality suggest the emerging jet age and a state of both readiness and excited anticipation. Its rounded corners give it an approachable friendly feeling. Contrail is a low contrast design that is suitable for use in medium to large sizes including headlines. This font was made specifically to be used as web type.
+
+Source files are available from [Google Code](http://code.google.com/p/googlefontdirectory/). To contribute to the project contact Eben Sorkin.

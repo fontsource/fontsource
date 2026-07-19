@@ -1,0 +1,69 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "SIL International",
+	"family": "Andika",
+	"id": "andika",
+	"license": {
+		"attribution": "Copyright (c) 2004-2022 SIL International",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/andika",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-andika",
+		"revision": "ca568520c61193de89a795ca676b6978fb435759"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/andika/Andika-Bold.ttf",
+			"sha256": "4361126189a2d0e0da66999352db58aaf1b4ca940faf8a8239d725f8303d890d",
+			"size": 681008,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/andika/Andika-BoldItalic.ttf",
+			"sha256": "2d000f8791a1827c0c4d411e9f4593c4fc2db0fdbb868bb1f863593b3d3968e6",
+			"size": 709628,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/andika/Andika-Italic.ttf",
+			"sha256": "6a4a0dd26d28f577b51dd6afb5acf6fd91ab21694e25649c270a32179bb52a62",
+			"size": 700596,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/andika/Andika-Regular.ttf",
+			"sha256": "202b96b1f174a4a43baefe885b40dacacb81786755efd08ed4b7704e79c45515",
+			"size": 669828,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

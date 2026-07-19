@@ -1,0 +1,72 @@
+{
+	"category": "monospace",
+	"dateAdded": "2010-11-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Steve Matteson",
+	"family": "Cousine",
+	"id": "cousine",
+	"license": {
+		"attribution": "Copyright 2026 The Cousine Project Authors (https://github.com/googlefonts/cousine)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cousine",
+		"revision": "ab75f7cf3e87c9ba8663f431f2ee4279c6406ee3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://www.github.com/googlefonts/cousine",
+		"revision": "c0fbdb438443968c884a5c13f5f9bee916a7f89b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cousine/Cousine-Bold.ttf",
+			"sha256": "17c8a7245156d2253531c9e529474937b09d9f641c5ae7695c5e33f22822eef4",
+			"size": 298048,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cousine/Cousine-BoldItalic.ttf",
+			"sha256": "848e858726fee0ae27b754e4cd6a2755209bf1428a8c91f747696d58c33906c3",
+			"size": 308292,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cousine/Cousine-Italic.ttf",
+			"sha256": "ea2a76ae3d0ece9cd59f0d30fdc08dd70e8f5f457beee5b0852a7b50c2286c7c",
+			"size": 306880,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cousine/Cousine-Regular.ttf",
+			"sha256": "1da22250675fc4c42fcf3a9736c44bc0570516105331443b663fd5cfbd1412fe",
+			"size": 296856,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-09"
+}

@@ -1,0 +1,3 @@
+Gurajada is Telugu handwriting font, suitable for headings, posters, and invitations.
+
+The Telugu is designed and developed by Purushoth Kumar Guttula in 2013 and made available by Silicon Andhra under the SIL Open Font License v1.1. The Latin is developed by Juan Pablo del Peral at HT Fonts, a type foundry in Argentina, and originally published as [Alegreya Sans](http://www.google.com/fonts/specimen/Alegreya+Sans). The Gurajada project is led by Appaji Ambarisha Darbha, a type designer based in Hyderabad, India. To contribute, see [github.com/appajid/gurajada](https://github.com/appajid/gurajada)

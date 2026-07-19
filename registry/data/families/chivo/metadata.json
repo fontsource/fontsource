@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Chivo",
+	"id": "chivo",
+	"license": {
+		"attribution": "Copyright 2019 The Chivo Project Authors (https://github.com/Omnibus-Type/Chivo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chivo",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Chivo",
+		"revision": "d98623c96068cd02fbe9f22982d4b0504be8b851"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chivo/Chivo-Italic[wght].ttf",
+			"sha256": "502339e1cda77e24b5cd46a1a875e4c5e6f20ea019c248f57f23423527030ff3",
+			"size": 177852,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/chivo/Chivo[wght].ttf",
+			"sha256": "801674cbeff749011a0186b2c932dc9158187a8ca4ca6598db2a1f5c7c4342d1",
+			"size": 160636,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Makasar is a design for the historical Southeast Asian _Makasar_ script. It has 30 glyphs.

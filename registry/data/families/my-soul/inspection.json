@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "fe416cd499d5d3c30ce5982d39b7b56cab08df5d3495ae847a62565256d720e2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/mysoul/MySoul-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

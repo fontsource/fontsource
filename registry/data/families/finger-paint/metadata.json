@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Carrois Apostrophe",
+	"family": "Finger Paint",
+	"id": "finger-paint",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Ralph du Carrois, with Reserved Font Name 'Finger Paint'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fingerpaint",
+		"revision": "409c56391856c9b37cd071aa05c0c4e6498c0fa2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/fingerpaint",
+		"revision": "cb21d1208d6f0a641a348584627dc058a2f2998a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fingerpaint/FingerPaint-Regular.ttf",
+			"sha256": "fce000ae028b09ca53949172a838282c678796e1542d259e6da373e257377fc8",
+			"size": 107440,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

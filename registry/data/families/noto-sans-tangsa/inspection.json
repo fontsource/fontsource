@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "17f2fd1e4854ee5e508f7168a265908c08ac12ada8923d4f0e5424ebc8715074"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.506",
+			"outline": "glyf",
+			"path": "ofl/notosanstangsa/NotoSansTangsa[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

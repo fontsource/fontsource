@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2026-01-21",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "TypeTogether, Veronika Burian, José Scaglione",
+	"displayName": "Playwrite New Zealand Basic",
+	"family": "Playwrite NZ Basic",
+	"id": "playwrite-nz-basic",
+	"license": {
+		"attribution": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playwritenzbasic",
+		"revision": "5f3d08debe9dc1478e1051db4185b54b5a9649a8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playwrite",
+		"revision": "fbc8d9790feeba3a5d0c0b4ccdcf246d3c41526e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playwritenzbasic/PlaywriteNZBasic[wght].ttf",
+			"sha256": "e2c28359c82efe11bab003b8e657a8ef0bd7b7ffe95690da50a8fd5217c64a20",
+			"size": 356932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

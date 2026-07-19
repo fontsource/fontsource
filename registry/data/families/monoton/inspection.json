@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "72ebd5b523e11a0fd151b95b40adb54d41a01d39aabb9ab5f360320505b5bd37"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/monoton/Monoton-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-10-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Stephen Hutchings, OrangeRed",
+	"family": "Reddit Sans",
+	"id": "reddit-sans",
+	"license": {
+		"attribution": "Copyright (c) 2020-2023, Reddit, Inc. (https://github.com/reddit/redditsans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/redditsans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/reddit/redditsans",
+		"revision": "60e19b50bde6de34b695591a8a047a6a3618a37c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/redditsans/RedditSans-Italic[wght].ttf",
+			"sha256": "c68ff1930f5b4046181fc6927c6c35ef5352972173c51cc5ef7376a1e949cd07",
+			"size": 242572,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/redditsans/RedditSans[wght].ttf",
+			"sha256": "9a564474e5df96608ac1908c555a5f01f52a28d960b94d34c85a48153b0ac557",
+			"size": 262060,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

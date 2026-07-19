@@ -1,0 +1,159 @@
+{
+	"category": "monospace",
+	"dateAdded": "2018-03-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mike Abbink, Bold Monday",
+	"family": "IBM Plex Mono",
+	"id": "ibm-plex-mono",
+	"license": {
+		"attribution": "Copyright 2017 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexmono",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "9ab3b5b3b96325fb20f365ee0804adca92024cbf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-Bold.ttf",
+			"sha256": "ac27abd6450a64dd94467580a02fe6235156d5b92f2926ebbc8e7489df64e0be",
+			"size": 137784,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-BoldItalic.ttf",
+			"sha256": "af4e05a761e98c1adf064c48a6352c9bec1a6ad70982cd2a544149323391f98e",
+			"size": 144512,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-ExtraLight.ttf",
+			"sha256": "826b765bd5173b97d521053330a66277edc224f8cc5f1e0035df1d995d5f003c",
+			"size": 135980,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-ExtraLightItalic.ttf",
+			"sha256": "8ae22766094bd04c2808a3c9dec812dcf061786c26ebd25eea211ae685eb2c39",
+			"size": 144672,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-Italic.ttf",
+			"sha256": "3362fc791b0652193328b862c1c5f23a789bc7288b1617fa63302f88689a2a34",
+			"size": 143920,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-Light.ttf",
+			"sha256": "780bcf65509d72a35ec114b57bcbe220dc6b77d8ea2e9b25e294be3c570c5025",
+			"size": 135216,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-LightItalic.ttf",
+			"sha256": "2bb4dd18abb03cb8a0a1ae69a0a10b194e02027b817c7b13126ef4724a7f5c73",
+			"size": 143432,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-Medium.ttf",
+			"sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+			"size": 136704,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-MediumItalic.ttf",
+			"sha256": "de6e0f805a15a2a1538be5d1074741298a07ffcba6fa1f4cd93983ff73155a7d",
+			"size": 144004,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+			"sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+			"size": 135580,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-SemiBold.ttf",
+			"sha256": "d3c38e55c78f5b0f28009fddba4834ec503278936a5986032424c9bd2d23aa46",
+			"size": 140216,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-SemiBoldItalic.ttf",
+			"sha256": "391ef0e273eb52571eccaab6a6dbddeec48e1d282cb7bf153043512b797ed6f0",
+			"size": 147368,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-Thin.ttf",
+			"sha256": "c44c820c14b4f1b818344e5f5dc189cee98b1d5e56b4e80055496c228f3cc7ea",
+			"size": 137900,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/ibmplexmono/IBMPlexMono-ThinItalic.ttf",
+			"sha256": "3782f01f12b444c62be712676646c552fc23443e8fd02d5b5619c6c4b975516d",
+			"size": 146100,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

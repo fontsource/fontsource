@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 382,
+				"sha256": "ba9d626ed29bfe1d0634c2c1561666a62ad052701005aad7385e379bb26eac1b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v0.8) -r 50 -G 200 -x",
+			"outline": "glyf",
+			"path": "ofl/coda/Coda-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 391,
+				"sha256": "0dfbc5d88b39b74af14192df61da74b95906c1a183ba701d0b8f5e9a884f22da"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v0.8) -r 50 -G 200 -x",
+			"outline": "glyf",
+			"path": "ofl/coda/Coda-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

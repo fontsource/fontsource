@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"zanabazar-square"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Zanabazar Square",
+	"id": "noto-sans-zanabazar-square",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/zanabazar-square)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanszanabazarsquare",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/zanabazar-square",
+		"revision": "41b2554e25c1ff4c7ea1231c8c966d0d5ec200b3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanszanabazarsquare/NotoSansZanabazarSquare-Regular.ttf",
+			"sha256": "73419252f55ba853edeb9f635533da240ed612b4dff59cdb48d83948864126c7",
+			"size": 71400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

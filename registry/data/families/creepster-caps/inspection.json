@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "28061f9759bee4ff6cadb4a138989df71cc06dec68468a3ff106831c559db942"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "apache/creepstercaps/CreepsterCaps-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

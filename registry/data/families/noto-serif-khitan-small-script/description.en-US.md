@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Khitan Small Script is a design for the historical East Asian _Khitan small script_ script. It has 11,365 glyphs.

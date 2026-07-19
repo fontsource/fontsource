@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 453,
+				"sha256": "dd8829f52eaa564b2cd31607902eb86266e71fcb9f752fa6837c151bca83adb2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/solitreo/Solitreo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

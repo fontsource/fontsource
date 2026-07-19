@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-02-09",
+	"declaredSubsets": [
+		"bengali",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Anek Bangla",
+	"id": "anek-bangla",
+	"license": {
+		"attribution": "Copyright 2021 The Anek Project Authors (https://github.com/EkType/Anek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anekbangla",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Anek",
+		"revision": "34074c6b406f4112e20c7ad10254a6e954d0324b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anekbangla/AnekBangla[wdth,wght].ttf",
+			"sha256": "8b4ec2eaf7400ea9903718a4addf3135475292e6e0b04db7735d0f999289d919",
+			"size": 1344456,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

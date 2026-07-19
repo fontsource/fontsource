@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-07-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Production Type",
+	"family": "Newsreader",
+	"id": "newsreader",
+	"license": {
+		"attribution": "Copyright 2020 The Newsreader Project Authors (http://github.com/productiontype/Newsreader)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/newsreader",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/productiontype/NewsReader",
+		"revision": "1ece6a8bfe5db1a2b90c76cc1fe5d3b2eed5dcf3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/newsreader/Newsreader-Italic[opsz,wght].ttf",
+			"sha256": "796668611f80b64d5adf182fde3b6f29ed83b4e7cbec7b96937e84ac01364792",
+			"size": 495684,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/newsreader/Newsreader[opsz,wght].ttf",
+			"sha256": "8a08d13f8a6c0d51be379a60af84f945f65369a67e509ee3c3bdcc421254d7c1",
+			"size": 451664,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

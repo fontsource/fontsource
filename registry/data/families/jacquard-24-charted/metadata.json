@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2024-03-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sarah Cadigan-Fried",
+	"family": "Jacquard 24 Charted",
+	"id": "jacquard-24-charted",
+	"license": {
+		"attribution": "Copyright 2023 The Soft Type Project Authors (https://github.com/scfried/soft-type-jacquard)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jacquard24charted",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/scfried/soft-type-jacquard",
+		"revision": "b11565152caccd6eaedce5fe2ca0e377d1a7c597"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jacquard24charted/Jacquard24Charted-Regular.ttf",
+			"sha256": "3db5951a07e33560837054e4fa6110cc07866e58bfe14363f81314c2460ff0f2",
+			"size": 2280696,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 343,
+				"sha256": "b9de2dc36e4215848b4f546364ff380e3777cac120eb46c31a07bea23dc9a4db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2010",
+			"outline": "glyf",
+			"path": "ofl/zeyada/Zeyada.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

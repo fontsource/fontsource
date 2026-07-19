@@ -1,0 +1,71 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-05-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"phoenician"
+	],
+	"designer": "Thatcher Ulrich",
+	"family": "Tuffy",
+	"id": "tuffy",
+	"license": {
+		"attribution": "Copyright (c) 2011, Thatcher Ulrich (http://tulrich.com tu@tulrich.com), Karoly Barta (brtkr@freemail.hu), Michael Everson (http://www.evertype.com everson@evertype.com), with Reserved Font Name \"Tuffy\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tuffy",
+		"revision": "ecd9da9f7f80d7460114fe189971a47a23d84b9e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tuffy/Tuffy-Bold.ttf",
+			"sha256": "b7327bb4d996039fb42e7d3cb885bc851cc7683521f1c08b485086cb39aedb5f",
+			"size": 93532,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tuffy/Tuffy-BoldItalic.ttf",
+			"sha256": "03818734e59d18e9daf66887d275f03481a189291e771ee0b758fa1fc1398a2f",
+			"size": 111540,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tuffy/Tuffy-Italic.ttf",
+			"sha256": "8b2d94ce0067ce36091c25fe2221368f21bba402cb360fd977339d43bf484e87",
+			"size": 363848,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tuffy/Tuffy-Regular.ttf",
+			"sha256": "e4818f18c471c4a6a7f1d5f80c7a0ef0fd7b95b63364fd48f15768c449d8f958",
+			"size": 218708,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

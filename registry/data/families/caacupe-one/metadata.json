@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2026-07-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Magdalena Alonso",
+	"displayName": "Caacupé One",
+	"family": "Caacupe One",
+	"id": "caacupe-one",
+	"license": {
+		"attribution": "Copyright 2014-2026 The Caacupe One Project Authors (https://github.com/googlefonts/caacupe)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/caacupeone",
+		"revision": "3c23a4aff8c5863149399edac80bb983c319a121",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/caacupe",
+		"revision": "07166dbe0310593a587ac99055a97b32f70b1630"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/caacupeone/CaacupeOne-Regular.ttf",
+			"sha256": "2f95e76b7df7f29c722c9bafb248cffd3970d92a19dd6b3f545e6934b64998cd",
+			"size": 65148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-01"
+}

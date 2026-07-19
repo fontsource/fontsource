@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 274,
+				"sha256": "57246b25114d707739d8a9e9c9272845100c07c0ff17b5e8ae4f6f6e1f664713"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/germaniaone/GermaniaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

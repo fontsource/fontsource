@@ -1,0 +1,31 @@
+{
+	"id": "sidetic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10940",
+			"10959"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/sidetic_unique-glyphs.nam",
+		"revision": "0ae2941d5692866692eff4c8026b3c7a2980fc56",
+		"sha256": "4b602d21a3bc9f18ebc02bcaa659cdb5b2ef84dcee536646ae8cb4cd0829eb16",
+		"upstream": "namFiles"
+	}
+}

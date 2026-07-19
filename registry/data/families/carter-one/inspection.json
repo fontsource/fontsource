@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 269,
+				"sha256": "5ff0209402c92b843dff90ec51d148936c13ec9c4c23a2f92bb54ae3f46a77ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/carterone/CarterOne.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

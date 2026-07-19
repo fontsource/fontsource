@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 392,
+				"sha256": "044a2fa636d98479891a5bb4f8c28390505f17a35f35e7944e35287434f7cdd5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.102",
+			"outline": "glyf",
+			"path": "ofl/notosanshanifirohingya/NotoSansHanifiRohingya[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

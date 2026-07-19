@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-09-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-uyghur"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Old Uyghur",
+	"id": "noto-serif-old-uyghur",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-uyghur)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifolduyghur",
+		"revision": "1bc6a055a12d64022501257bade46a625b1ab429",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/old-uyghur",
+		"revision": "2660a2e53f4c2f59a8540b4e74634341266584e3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifolduyghur/NotoSerifOldUyghur-Regular.ttf",
+			"sha256": "69b7251fc565b7dcf2a54bce7f6c61095b02850c22062b12e97f92b159f4ab03",
+			"size": 76584,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-26"
+}

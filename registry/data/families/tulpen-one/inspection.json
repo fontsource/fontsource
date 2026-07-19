@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "a73fa6736a57b280e8f7de8c6b09a6216bdcddd94fc158a88576aed23eccd7a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/tulpenone/TulpenOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

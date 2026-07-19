@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-07-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Cantora One",
+	"id": "cantora-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, Pablo Impallari (www.impallari.com|impallari@gmail.com), Rodrigo Fuenzalida (www.rfuenzalida.com|hello@rfuenzalida.com) with Reserved Font Name Cantora.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cantoraone",
+		"revision": "78f2f544ad0b0b5ce718f499e2db37b965dc7a51",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/cantoraone",
+		"revision": "45d202afe1668a05e0afd870e124d72c2b82143c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cantoraone/CantoraOne-Regular.ttf",
+			"sha256": "78e9174f67db3e0c1efbe0b570c3546bc805ed43a0fb2dbec4aca7831caf1f15",
+			"size": 159328,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

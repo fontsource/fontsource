@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 707,
+				"sha256": "606b0689b61bae3eeac73aafce9eef24b569b309e3282dcd6f019168a336fc43"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.013; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/comforter/Comforter-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

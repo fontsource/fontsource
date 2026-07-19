@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-27",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Are You Serious",
+	"id": "are-you-serious",
+	"license": {
+		"attribution": "Copyright 2004 The RU Serius Project Authors (https://github.com/googlefonts/are-you-serious)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/areyouserious",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/are-you-serious",
+		"revision": "2975e6bae2dba4fa1e30e9cd0b210e3a47b478d8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/areyouserious/AreYouSerious-Regular.ttf",
+			"sha256": "e2f61a166f382d7031ce750fe31d9a6d009a7dc8b63aafe4feff65e5cb4b3874",
+			"size": 150788,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

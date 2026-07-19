@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2013-01-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Viktoriya Grabowska",
+	"family": "Kavoon",
+	"id": "kavoon",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Sorkin Type Co (www.sorkintype.com) with Reserved Font Name 'Kavoon'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kavoon",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EbenSorkin/Kavoon",
+		"revision": "0b985571f93c97f70ce9065bfc1a883a21b9deac"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kavoon/Kavoon-Regular.ttf",
+			"sha256": "d9600e05c23bba0872171f094cffe98851f52d3ce1d343f1741d32bfcbcdffa2",
+			"size": 71476,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 218,
+				"sha256": "7e487bd35740197c2c0f302b23d0efdd98f5c6a07d8c2e451fd8e9aa163297cf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/rougescript/RougeScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

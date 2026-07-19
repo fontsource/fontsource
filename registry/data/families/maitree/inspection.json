@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 727,
+				"sha256": "a14c420cbd12a87e0e173a18b1cfe2afce0429841a78a6dd95f6ec6359b13bad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/maitree/Maitree-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 727,
+				"sha256": "a14c420cbd12a87e0e173a18b1cfe2afce0429841a78a6dd95f6ec6359b13bad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/maitree/Maitree-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 727,
+				"sha256": "a14c420cbd12a87e0e173a18b1cfe2afce0429841a78a6dd95f6ec6359b13bad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/maitree/Maitree-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 727,
+				"sha256": "a14c420cbd12a87e0e173a18b1cfe2afce0429841a78a6dd95f6ec6359b13bad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/maitree/Maitree-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 727,
+				"sha256": "a14c420cbd12a87e0e173a18b1cfe2afce0429841a78a6dd95f6ec6359b13bad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/maitree/Maitree-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 727,
+				"sha256": "a14c420cbd12a87e0e173a18b1cfe2afce0429841a78a6dd95f6ec6359b13bad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/maitree/Maitree-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

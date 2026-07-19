@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "fe8834ee64ed171ff68c5f657def8aa6f0f060c39efe88e49b911ab9cfd8bd27"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100",
+			"outline": "glyf",
+			"path": "ofl/ramsina/Ramsina-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

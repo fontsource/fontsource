@@ -1,0 +1,39 @@
+{
+	"id": "mende-kikakui",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"1E800",
+			"1E8C4"
+		],
+		[
+			"1E8C7",
+			"1E8D6"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/mende-kikakui_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "d018d51c20ee8a7241797e0611eb53754a2d239ae6c21340474a2a50eac44dbf",
+		"upstream": "namFiles"
+	}
+}

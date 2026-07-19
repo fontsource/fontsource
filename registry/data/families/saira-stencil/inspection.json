@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 50,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 661,
+				"sha256": "09a7e21ac9a8ee13c2d80414c1be603d3a954e7b9ab34c1356ba59250e7d1d7f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/sairastencil/SairaStencil-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 50,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 661,
+				"sha256": "09a7e21ac9a8ee13c2d80414c1be603d3a954e7b9ab34c1356ba59250e7d1d7f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/sairastencil/SairaStencil[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

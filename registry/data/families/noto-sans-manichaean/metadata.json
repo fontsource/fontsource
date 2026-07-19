@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"manichaean",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Manichaean",
+	"id": "noto-sans-manichaean",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/manichaean)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmanichaean",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/manichaean",
+		"revision": "d3d108ab2cdf0250927b267fab4d2c8dea07dd68"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmanichaean/NotoSansManichaean-Regular.ttf",
+			"sha256": "692e31fc2600b1db6a369dd50b808914ebea385530b0d95ca1f103e7943e7487",
+			"size": 95008,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

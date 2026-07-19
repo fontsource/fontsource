@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2023-10-06",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"ethiopic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Raphael Alẹ́gbẹ́lẹ́yẹ̀, Sorkin Type, Eben Sorkin",
+	"family": "Agbalumo",
+	"id": "agbalumo",
+	"license": {
+		"attribution": "Copyright 2023 The Agbalumo Project Authors (https://github.com/SorkinType/Agbalumo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/agbalumo",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Agbalumo",
+		"revision": "261ad51ef2291821685c1bebf10cf0fb9f7e08f9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/agbalumo/Agbalumo-Regular.ttf",
+			"sha256": "d9e35c6debf1319267140838f3c30c3c51d9f47c7050b5482c14c5accf7f4d94",
+			"size": 1715888,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

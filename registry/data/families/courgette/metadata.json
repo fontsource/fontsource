@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-07-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Karolina Lach",
+	"family": "Courgette",
+	"id": "courgette",
+	"license": {
+		"attribution": "Copyright (c) 2012, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Courgette\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/courgette",
+		"revision": "59d7e3d2e775fc8dce75382f3889f429942817ec",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/courgette",
+		"revision": "dcdd6f44e43530c55ae4d154b23b8f2fbb0e137f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/courgette/Courgette-Regular.ttf",
+			"sha256": "099739d22e66ee2b80656bba63847f9ed419ad7e3969ba2c1d3c437c0d08f3e3",
+			"size": 122072,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

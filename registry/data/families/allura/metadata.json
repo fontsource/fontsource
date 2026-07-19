@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Allura",
+	"id": "allura",
+	"license": {
+		"attribution": "Copyright 2010 The Allura Project Authors (https://github.com/googlefonts/allura)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/allura",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/allura",
+		"revision": "38a78b41510a10b1129c50fa5177b642bd2b4a19"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/allura/Allura-Regular.ttf",
+			"sha256": "9c142b2e515832c0dfc4ff8b8ea18f40314943bf937b72e2b23c4661bac14cc6",
+			"size": 246632,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Peddana",
+	"id": "peddana",
+	"license": {
+		"attribution": "Copyright (c) 2012 Andhrapradesh Society for Knowledge Networks (fonts.siliconandhra.org). Copyright (c) 1997-2014, SIL International (http://scripts.sil.org/) with Reserved Font Names \"Charis\" and \"SIL\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/peddana",
+		"revision": "34e23e77de38370a29d55a77902f1fcd323da21d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/peddana",
+		"revision": "717395267a5ebc69cee39b4eda415fffd39321aa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/peddana/Peddana-Regular.ttf",
+			"sha256": "1aca2e50d3a8dd43250bf942049ae18b8fda542f0469434eb35c8a53b1157836",
+			"size": 714796,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-09-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mike LaGattuta",
+	"family": "Hepta Slab",
+	"id": "hepta-slab",
+	"license": {
+		"attribution": "Copyright 2018 The Hepta Slab Project Authors (https://github.com/mjlagattuta/Hepta-Slab)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/heptaslab",
+		"revision": "0283aa90b099ad0cbd7b57b1afc08077a114fe62",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mjlagattuta/Hepta-Slab",
+		"revision": "4401d23f516b412f1b8472fe705b37b8712b2ecd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/heptaslab/HeptaSlab[wght].ttf",
+			"sha256": "737badc7944d5b6f92c05919995240d6ea70e86bebe45d196e61677e7a901f29",
+			"size": 555236,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

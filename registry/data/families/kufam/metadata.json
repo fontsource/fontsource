@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-07-14",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Original Type, Wael Morcos, Artur Schmal",
+	"family": "Kufam",
+	"id": "kufam",
+	"license": {
+		"attribution": "Copyright 2019 The Kufam Project Authors (https://github.com/originaltype/kufam)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kufam",
+		"revision": "559577a46e979198015840dc68bae470be2bc2a4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/originaltype/kufam",
+		"revision": "a2c0c9552f98295167bc33bdb9c6256dd6abdc8a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kufam/Kufam-Italic[wght].ttf",
+			"sha256": "37c5cf29cb515099783461051cf2c927fc18605b3e7e0088f9bd2150aed756a9",
+			"size": 437568,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kufam/Kufam[wght].ttf",
+			"sha256": "f17a89b518c833de289598d0662bb9a07d09cc7d75b7079a15f1305f624bbcda",
+			"size": 428544,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

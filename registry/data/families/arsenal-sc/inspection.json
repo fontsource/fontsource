@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 715,
+				"sha256": "b462bd0f5f70d6d07e78e04d317c44d80af27276d3e66f721d2113ccd4d6f5dd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/arsenalsc/ArsenalSC-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 711,
+				"sha256": "8ab1028d9d94be9c1c044f99cab6055c3a31098fb01d5697b91eacddf464c24f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/arsenalsc/ArsenalSC-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 711,
+				"sha256": "8ab1028d9d94be9c1c044f99cab6055c3a31098fb01d5697b91eacddf464c24f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/arsenalsc/ArsenalSC-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 715,
+				"sha256": "b462bd0f5f70d6d07e78e04d317c44d80af27276d3e66f721d2113ccd4d6f5dd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/arsenalsc/ArsenalSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

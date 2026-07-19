@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dario Manuel Muhafara",
+	"family": "Balthazar",
+	"id": "balthazar",
+	"license": {
+		"attribution": "Copyright (c) 2011, Dario Manuel Muhafara (http://www.tipo.net.ar dario@tipo.net.ar), with Reserved Font Name \"Balthazar\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/balthazar",
+		"revision": "581ebd3a6f63ba326456f9c010f532f004d23068",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/balthazar",
+		"revision": "40ec71e48349bc565c42eb3c750b50a5d8d19087"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/balthazar/Balthazar-Regular.ttf",
+			"sha256": "b495856b693458a99a4fcfe420944b6034afe823eb159e8437b4e8929d5aceaa",
+			"size": 28248,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

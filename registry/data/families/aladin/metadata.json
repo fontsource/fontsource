@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Aladin",
+	"id": "aladin",
+	"license": {
+		"attribution": "Copyright (c) 2009 Angel Koziupa (sudtipos@sudtipos.com), Copyright (c) 2009 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"Aladin\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/aladin",
+		"revision": "b22e12643cf5a7d5bb0d889744357bdedfbe46e8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/aladin",
+		"revision": "b9b4da7c18ceab08e86942dd5a0a181a6f2d1be3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/aladin/Aladin-Regular.ttf",
+			"sha256": "c7ee57e19b1b2c89f8d786115dc69225091ff7665f30fea7908bc2fb27d13398",
+			"size": 42180,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

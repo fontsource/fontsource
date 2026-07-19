@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Combo",
+	"id": "combo",
+	"license": {
+		"attribution": "Copyright (c) 2012, Eduardo Tunni (http://www.tipo.net.ar edu@tipo.net.ar), with Reserved Font Name 'Combo'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/combo",
+		"revision": "43c3321f5f944a48fb7976d9f5dd98232128d0fc",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/combo",
+		"revision": "ae46147e06fad7d2d664c2738ae08a9262adbeb1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/combo/Combo-Regular.ttf",
+			"sha256": "e714674117c2864bf7407e2ebfafb11e581e97480286fa01b419adda94d08686",
+			"size": 132848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

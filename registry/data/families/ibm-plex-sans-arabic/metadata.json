@@ -1,0 +1,95 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-17",
+	"declaredSubsets": [
+		"arabic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mike Abbink, Bold Monday, Khajag Apelian, Wael Morcos",
+	"family": "IBM Plex Sans Arabic",
+	"id": "ibm-plex-sans-arabic",
+	"license": {
+		"attribution": "Copyright 2019 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexsansarabic",
+		"revision": "702964cf46bd1bf33d0745d24bbaac33edf8b8af",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "e80bf9282a630e70d6c1459f4125c9ec0e75316b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Bold.ttf",
+			"sha256": "691e0c891a38637ae6bbdb69700f8042cb0724a137bee615068ffdb92244f61f",
+			"size": 246992,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-ExtraLight.ttf",
+			"sha256": "4d4137f37a1acd61f1b7eba47c08d0996789596b1e535f9220914ad5daf0a198",
+			"size": 241652,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Light.ttf",
+			"sha256": "0af9d1effbb36ff74d13c64f752c771ecb9162a451cf151c5425f4d00d4daa7c",
+			"size": 238564,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Medium.ttf",
+			"sha256": "b8363ab9f733dfa4f8e96b8b2102c24b5cf4110fb96d1d3d9a9412f6fb49cf74",
+			"size": 242100,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf",
+			"sha256": "6f611412270a132bbac838da9259d4c68569b4175f3b3b8fa3fa36a30b56dab9",
+			"size": 235924,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-SemiBold.ttf",
+			"sha256": "597bd5502e5997be4414e4c9c88834b30ff3784250c84f20bce2b20e53ebd467",
+			"size": 244616,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Thin.ttf",
+			"sha256": "f8e1f556f815e3d29c531f79ff2bed276bec18d403fc6470b54900922cd91a79",
+			"size": 242204,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

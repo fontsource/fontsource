@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 220,
+				"sha256": "58fc29a9de792d1dd6edc9d1536d91806411823c13f3540382a71e82db747149"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.011",
+			"outline": "glyf",
+			"path": "ofl/vidaloka/Vidaloka-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 277,
+				"sha256": "50ff5eb2fcd869cec5fa96f484db887130328b5abe36f9ab1f556e1fe034a2c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/karantina/Karantina-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 277,
+				"sha256": "50ff5eb2fcd869cec5fa96f484db887130328b5abe36f9ab1f556e1fe034a2c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/karantina/Karantina-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 277,
+				"sha256": "50ff5eb2fcd869cec5fa96f484db887130328b5abe36f9ab1f556e1fe034a2c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/karantina/Karantina-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

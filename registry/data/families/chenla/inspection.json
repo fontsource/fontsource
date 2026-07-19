@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 137,
+				"sha256": "c9bcb8a79a1e038e2babdca360265d2b6381c811b54a33a8482b20d4ccdcc03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.00 December 28, 2010",
+			"outline": "glyf",
+			"path": "ofl/chenla/Chenla.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

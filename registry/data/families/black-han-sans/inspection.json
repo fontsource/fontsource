@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2733,
+				"sha256": "43ae7a42d521dfd26da493afd5f8b21acc6b0955a92b9062501a37e79dc2ddbc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/blackhansans/BlackHanSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

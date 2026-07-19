@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Kings",
+	"id": "kings",
+	"license": {
+		"attribution": "Copyright 2013-2021 The Kings Project Authors (https://github.com/googlefonts/kings)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kings",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/kings",
+		"revision": "316326276cb919f88ac51dbe887958e50a3bba49"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kings/Kings-Regular.ttf",
+			"sha256": "80dda73b13254d50173af1dbad3f7321b99ca61d791ebb8cd5fb8be0846c39bb",
+			"size": 270704,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

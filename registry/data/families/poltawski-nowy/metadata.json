@@ -1,0 +1,50 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-03-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Adam Półtawski, Mateusz Machalski, Borys Kosmynka, Ania Wieluńska",
+	"displayName": "Półtawski Nowy",
+	"family": "Poltawski Nowy",
+	"id": "poltawski-nowy",
+	"license": {
+		"attribution": "Copyright 2020 The Poltawski Nowy Project Authors (https://github.com/kosmynkab/Poltawski-Nowy)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/poltawskinowy",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/kosmynkab/Poltawski-Nowy",
+		"revision": "4d541846c51c5267937a06fd5da9ab7837be166f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/poltawskinowy/PoltawskiNowy-Italic[wght].ttf",
+			"sha256": "4524bbb5fe26f853a90994994a0dca8af13da334899389800a5fc80f3482ed4a",
+			"size": 385520,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/poltawskinowy/PoltawskiNowy[wght].ttf",
+			"sha256": "7fd9a33287fa563c2c6d2c2ffb8d9750b453f301c07c9f5077dbf3567aaf024e",
+			"size": 414696,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-11-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eben Sorkin, Mirko Velimirović",
+	"family": "Spline Sans",
+	"id": "spline-sans",
+	"license": {
+		"attribution": "Copyright 2021 The Spline Sans Project Authors (https://github.com/SorkinType/SplineSans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/splinesans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/SplineSans",
+		"revision": "5196436e0714c188c70f30a93b4759e8ed8afb69"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/splinesans/SplineSans[wght].ttf",
+			"sha256": "65250939de0ab412d2b2349c9cb85304a5919fc3c5d4e74713a2d8a1f45f2947",
+			"size": 146896,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

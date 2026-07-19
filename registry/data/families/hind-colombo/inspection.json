@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "48a7063b3cae81f0383831f90e20816eba6a5c5e04ea2f7bbdac3786c0acbd99"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.4.1)",
+			"outline": "glyf",
+			"path": "ofl/hindcolombo/HindColombo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "48a7063b3cae81f0383831f90e20816eba6a5c5e04ea2f7bbdac3786c0acbd99"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.4.1)",
+			"outline": "glyf",
+			"path": "ofl/hindcolombo/HindColombo-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "48a7063b3cae81f0383831f90e20816eba6a5c5e04ea2f7bbdac3786c0acbd99"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.4.1)",
+			"outline": "glyf",
+			"path": "ofl/hindcolombo/HindColombo-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "48a7063b3cae81f0383831f90e20816eba6a5c5e04ea2f7bbdac3786c0acbd99"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.4.1)",
+			"outline": "glyf",
+			"path": "ofl/hindcolombo/HindColombo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "48a7063b3cae81f0383831f90e20816eba6a5c5e04ea2f7bbdac3786c0acbd99"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.4.1)",
+			"outline": "glyf",
+			"path": "ofl/hindcolombo/HindColombo-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

@@ -1,0 +1,35 @@
+{
+	"id": "cypro-minoan",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10100",
+			"10101"
+		],
+		[
+			"12F90",
+			"12FF2"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/cypro-minoan_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "1102064dc7bfcb6770c9d3323821628fec5ebf339cc1c8ba6551dff071ecd94f",
+		"upstream": "namFiles"
+	}
+}

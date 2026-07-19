@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 890,
+				"sha256": "9bcda75e64b4654be087c362c40f2f49d0c305923399a452edd0b870802ec64f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.103",
+			"outline": "glyf",
+			"path": "ofl/podkova/Podkova[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

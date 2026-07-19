@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "613b6bc1e0f462ab368b6971b77bce09d536c149d4301906fa252c1bfc2612c6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/londrinashadow/LondrinaShadow-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

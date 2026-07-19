@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12639,
+				"sha256": "8a2bf947545a634214943f1d72f270e699210c971ad044f0ed27a8708f95cbb5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.012",
+			"outline": "glyf",
+			"path": "ofl/iansui/Iansui-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

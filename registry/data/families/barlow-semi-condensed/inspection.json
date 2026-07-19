@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "dc40757647eb18557a1a987cd980b56f4b2e78aaad0124a869c2f9c3c554c03c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.408",
+			"outline": "glyf",
+			"path": "ofl/barlowsemicondensed/BarlowSemiCondensed-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

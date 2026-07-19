@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-07-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Natalia Raices",
+	"family": "Delius",
+	"id": "delius",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Natalia Raices (nraices@gmail.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/delius",
+		"revision": "a5e9f10e0d0c17fe0a41e8dc29f90fd64a4e7d89",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/delius",
+		"revision": "5bd1633b6b5175d36e260f3f6d06686482d32212"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/delius/Delius-Regular.ttf",
+			"sha256": "c0fd66626926b637d64eb13de013b3318dbd72cdf92c33e41a29a03828bab6f6",
+			"size": 77488,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

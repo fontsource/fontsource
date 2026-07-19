@@ -1,0 +1,58 @@
+{
+	"category": "display",
+	"dateAdded": "2021-03-12",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Rony Koch",
+	"family": "Karantina",
+	"id": "karantina",
+	"license": {
+		"attribution": "Copyright 2020 The Karantina Project Authors (https://github.com/ronykoch/Karantina)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/karantina",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ronykoch/Karantina",
+		"revision": "efb7e920f0a441badef8920cd87d894383a19e6a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/karantina/Karantina-Bold.ttf",
+			"sha256": "fc099ee72a843fb5b4d574abd099e047eec4cf476a1a2c65fe520e1cdcc897be",
+			"size": 48868,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/karantina/Karantina-Light.ttf",
+			"sha256": "3286ffc39003621874ad2ac2d6ca9374d2728443465c4df6222dff425814560d",
+			"size": 51640,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/karantina/Karantina-Regular.ttf",
+			"sha256": "a1ef8ee51724f0182f07d060b63047540a0bca96db10d33fa6a0b539f99019bf",
+			"size": 51480,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

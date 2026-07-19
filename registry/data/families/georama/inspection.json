@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 62.5,
+					"max": 150,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 655,
+				"sha256": "c18c3eb13adfebc445f151aa8d039612236d688e05b53e5c98fcee863bc0ce22"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/georama/Georama-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 62.5,
+					"max": 150,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 655,
+				"sha256": "c18c3eb13adfebc445f151aa8d039612236d688e05b53e5c98fcee863bc0ce22"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/georama/Georama[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

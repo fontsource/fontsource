@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 803,
+				"sha256": "2232f6e4db56837761e15db28ceebd0b5b72843e06c52be6c098896cdc526524"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/pattaya/Pattaya-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

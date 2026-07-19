@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-12-05",
+	"declaredSubsets": [
+		"chinese-simplified",
+		"latin",
+		"menu"
+	],
+	"designer": "Zheng Qingke",
+	"family": "ZCOOL QingKe HuangYou",
+	"id": "zcool-qingke-huangyou",
+	"license": {
+		"attribution": "Copyright 2018 The ZCOOL QingKe HuangYou Project Authors (https://www.github.com/googlefonts/zcool-qingke-huangyou)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zcoolqingkehuangyou",
+		"revision": "7f1b83ecdae8ccb7507fa6e06396e57bc0a5665d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zcool-qingke-huangyou",
+		"revision": "c9dac424b0a9f47d3b113cff4a4922f632d82c94"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zcoolqingkehuangyou/ZCOOLQingKeHuangYou-Regular.ttf",
+			"sha256": "54f0c0df4308cd74cd0f2fd3494ae054dbc4a1fd6fa7d71f4807eb4cdd8b4136",
+			"size": 8328684,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

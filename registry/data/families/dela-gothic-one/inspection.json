@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 9030,
+				"sha256": "c7a4bc71c4c51a0507205393599330db4ca7956d750d8d9dd1bc13e66fe53666"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/delagothicone/DelaGothicOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 359,
+				"sha256": "0dacff22d31daa97d14aa23a8a8d2ea0896db79a9f6d02c6d50d73ef5568e913"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanstagbanwa/NotoSansTagbanwa-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

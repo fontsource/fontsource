@@ -1,0 +1,5 @@
+Orienta is a spacious sans serif, with excellent visual performance at very small text sizes. The balance between forms and counterforms creates strong legibility. If used in titles, you can see the details are all carefully designed, especially in the strokes of each letter.
+
+The February 2023 update features a bigger glyphset, fractions and some minor aesthetic modifications.
+
+To contribute, see [github.com/etunni/orienta](https://github.com/etunni/orienta).

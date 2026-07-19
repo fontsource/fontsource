@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2019-07-04",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Niki Polyocan, Eli Block",
+	"family": "Lacquer",
+	"id": "lacquer",
+	"license": {
+		"attribution": "Copyright 2019 The Lacquer Project Authors (https://github.com/Lacquer-Font/Lacquer)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lacquer",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Lacquer-Font/Lacquer",
+		"revision": "efffa0e54fbf2a6cd5e1b3909a9a8082cab61b5a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lacquer/Lacquer-Regular.ttf",
+			"sha256": "140c21f71907a16952926ee354c81081092c90d599c89fe8b4557baeaebbbe83",
+			"size": 294060,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

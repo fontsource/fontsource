@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "dcf8c9bf35e634c432fc9da3ff500413317412bd8f42d7001bce2979e96ceeec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/averiagruesalibre/AveriaGruesaLibre-Regular.ttf",
+			"style": "oblique",
+			"weight": 400
+		}
+	]
+}

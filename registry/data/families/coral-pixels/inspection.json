@@ -1,0 +1,20 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "93e1a5c08dcf331c63ab8f9fbd8ab253db06bcf41a967a4232efadc12681734a"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL"
+			],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/coralpixels/CoralPixels-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

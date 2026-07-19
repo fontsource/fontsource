@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 15363,
+				"sha256": "2f712dba2b4ac7ecf37945b363a073bfc8643be11df50820eded35aac8c3e634"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.110; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/shipporimincho/ShipporiMincho-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 15363,
+				"sha256": "2f712dba2b4ac7ecf37945b363a073bfc8643be11df50820eded35aac8c3e634"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.110; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/shipporimincho/ShipporiMincho-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 15363,
+				"sha256": "2f712dba2b4ac7ecf37945b363a073bfc8643be11df50820eded35aac8c3e634"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.110; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/shipporimincho/ShipporiMincho-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 15363,
+				"sha256": "2f712dba2b4ac7ecf37945b363a073bfc8643be11df50820eded35aac8c3e634"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.110; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/shipporimincho/ShipporiMincho-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 15363,
+				"sha256": "2f712dba2b4ac7ecf37945b363a073bfc8643be11df50820eded35aac8c3e634"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.110; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/shipporimincho/ShipporiMincho-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

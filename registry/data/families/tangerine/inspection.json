@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "572b4ff0b48ef85d0784fdad12b1761363a0bf16f9fd92fe02017b84618cb606"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.3",
+			"outline": "glyf",
+			"path": "ofl/tangerine/Tangerine-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "572b4ff0b48ef85d0784fdad12b1761363a0bf16f9fd92fe02017b84618cb606"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.3",
+			"outline": "glyf",
+			"path": "ofl/tangerine/Tangerine-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

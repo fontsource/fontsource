@@ -1,0 +1,51 @@
+{
+	"category": "monospace",
+	"dateAdded": "2024-03-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext"
+	],
+	"designer": "Dalton Maag",
+	"family": "Ubuntu Sans Mono",
+	"id": "ubuntu-sans-mono",
+	"license": {
+		"attribution": "Copyright 2011, 2022, 2023 Canonical Ltd.  Licensed under the Ubuntu Font Licence 1.0",
+		"id": "UFL-1.0",
+		"url": "https://ubuntu.com/legal/font-licence"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ufl/ubuntusansmono",
+		"revision": "5636bf92e3be4fbfdf7c5e4091c44a4f9adfdb5c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/canonical/Ubuntu-Sans-Mono-fonts",
+		"revision": "5f47c8f963e2863468e49d2bb5bb6e6c4eb18ef7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ufl/ubuntusansmono/UbuntuSansMono-Italic[wght].ttf",
+			"sha256": "55c3678f40cafe4ac39f0071151626693ea7fa70f421408015cc5fcd858afd71",
+			"size": 186356,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ufl/ubuntusansmono/UbuntuSansMono[wght].ttf",
+			"sha256": "0954a9a2b1be5062592aad7ff42c8ad094de641abeb2043d9b21d137844a0dba",
+			"size": 178092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2025-09-05"
+}

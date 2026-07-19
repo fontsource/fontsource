@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Aubrey",
+	"id": "aubrey",
+	"license": {
+		"attribution": "Copyright 2011 The Aubrey Project Authors (https://github.com/cyrealtype/Aubrey)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/aubrey",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Aubrey",
+		"revision": "1946b0d99c0fec87702a59afc8b5b941a32e0171"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/aubrey/Aubrey-Regular.ttf",
+			"sha256": "0e5d5bcacda38d60d25b2c61a2b7130a91d20f0cab28072fccf29185fc2c3176",
+			"size": 45628,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Playball",
+	"id": "playball",
+	"license": {
+		"attribution": "Copyright 2011 The Playball Project Authors (https://github.com/googlefonts/play-ball)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playball",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/play-ball",
+		"revision": "13a54129eb380bb0f3a086b31da09e7f2cd46ba9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playball/Playball-Regular.ttf",
+			"sha256": "130654dd192f4ccd1c4fa2dc516d03cca93dc8ecdaf30d458283e54dcaef8f40",
+			"size": 190720,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

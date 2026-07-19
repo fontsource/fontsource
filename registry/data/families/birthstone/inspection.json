@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "e2ff52146df85e0e06dd1d67465148069775db3eda55c787805efd1e2998effc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.013; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/birthstone/Birthstone-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

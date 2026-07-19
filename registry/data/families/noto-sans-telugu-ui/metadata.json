@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"menu",
+		"telugu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Telugu UI",
+	"id": "noto-sans-telugu-ui",
+	"license": {
+		"attribution": "Copyright 2019 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansteluguui",
+		"revision": "d9da016620e0734d9c8ccf4e58537b3fe540eb24",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/telugu",
+		"revision": "0d8cb2a9550d76f4349915664f1115ea4c42f4ed"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansteluguui/NotoSansTeluguUI[wdth,wght].ttf",
+			"sha256": "9464e0ca55c7310fbc9299f9afaeb3720efee9b3d91813999af7dae276cc1fc0",
+			"size": 777164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

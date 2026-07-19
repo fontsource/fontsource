@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "c2599bb9b6729f5ff9781bd58540c3bf893287f2604febb4fe0b57e3aa11ce81"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "c2599bb9b6729f5ff9781bd58540c3bf893287f2604febb4fe0b57e3aa11ce81"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "c2599bb9b6729f5ff9781bd58540c3bf893287f2604febb4fe0b57e3aa11ce81"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "c2599bb9b6729f5ff9781bd58540c3bf893287f2604febb4fe0b57e3aa11ce81"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trirong/Trirong-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

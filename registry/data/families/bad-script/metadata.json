@@ -1,0 +1,42 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Gaslight",
+	"family": "Bad Script",
+	"id": "bad-script",
+	"license": {
+		"attribution": "Copyright 2011 The Bad Script Project Authors (https://github.com/alexeiva/badscript)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/badscript",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alexeiva/badscript",
+		"revision": "dca2962433a2b5817f1e716d6731a743440fbd79"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/badscript/BadScript-Regular.ttf",
+			"sha256": "40ec737eee65ec4efbc24ae636fa31d7d84d1ccca83ab54cd555edb72cb3eaf0",
+			"size": 184216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

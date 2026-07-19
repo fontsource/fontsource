@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "09fba241383b17c960997676e79c2c1114cff022a15659bbbfc5b1acceb99167"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mukta/Mukta-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "09fba241383b17c960997676e79c2c1114cff022a15659bbbfc5b1acceb99167"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mukta/Mukta-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "09fba241383b17c960997676e79c2c1114cff022a15659bbbfc5b1acceb99167"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mukta/Mukta-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "09fba241383b17c960997676e79c2c1114cff022a15659bbbfc5b1acceb99167"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mukta/Mukta-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "09fba241383b17c960997676e79c2c1114cff022a15659bbbfc5b1acceb99167"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mukta/Mukta-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "09fba241383b17c960997676e79c2c1114cff022a15659bbbfc5b1acceb99167"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.001;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mukta/Mukta-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "09fba241383b17c960997676e79c2c1114cff022a15659bbbfc5b1acceb99167"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.002;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mukta/Mukta-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

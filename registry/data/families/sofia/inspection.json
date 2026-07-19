@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "4e71286cdb9c93994003ff343359a565355495a69839bebfea51d9bca1cc8211"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/sofia/Sofia-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

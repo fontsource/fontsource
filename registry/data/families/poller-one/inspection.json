@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "6138e9a3b25dc248d8a36e212ce2fca97284adae5936dce1cb036284f3f1f2d9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/pollerone/PollerOne.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2012-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Unica One",
+	"id": "unica-one",
+	"license": {
+		"attribution": "Copyright 2012 The Unica One Project Authors (https://github.com/etunni/unica)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/unicaone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/unica",
+		"revision": "e92da87539ff465aab50b7767512080bf71e39f1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/unicaone/UnicaOne-Regular.ttf",
+			"sha256": "5d5861ae199cb69049e77e7cd08a8ffd6c14e90da19c8db8df0f4004ca93bd8f",
+			"size": 71872,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

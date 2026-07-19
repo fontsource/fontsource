@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-03",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Thomas Junold",
+	"family": "Actor",
+	"id": "actor",
+	"license": {
+		"attribution": "Copyright (c) 2011, Thomas Junold <hallo@buerofueraufmerksamkeit.de>, with Reserved Font Name \"Actor\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/actor",
+		"revision": "d72de0f2297b05318463f4855da59ce433f9aaa7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/actor",
+		"revision": "b1617e5929c9a78c56bbbe056b471cfdbdc13c50"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/actor/Actor-Regular.ttf",
+			"sha256": "a7cf62975a5ecaa8a3be2e2913ffb4a335831315478b93bec722ad982308ea38",
+			"size": 64944,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

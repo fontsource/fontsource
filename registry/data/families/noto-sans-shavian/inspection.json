@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "432bd4e608f94ce0cef8598f3d361e0d14c6a19a6ad3cb440f54c3c6ca928f46"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansshavian/NotoSansShavian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

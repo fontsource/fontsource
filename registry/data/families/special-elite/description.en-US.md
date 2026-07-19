@@ -1,0 +1,3 @@
+Special Elite mimics the Smith Corona Special Elite Type Number NR6 and Remington Noiseless typewriter models.
+
+A little bit of inked up grunge and a little old school analog flavor work together to give you a vintage typewriter typeface for your website and designs.

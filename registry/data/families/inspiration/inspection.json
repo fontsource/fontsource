@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 589,
+				"sha256": "7b84a68754d77fdac70fe33234aad21754088bd9ad8d6d9a9684be81ef0b5bab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/inspiration/Inspiration-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

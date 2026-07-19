@@ -1,0 +1,67 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-07-05",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Ruwudu",
+	"id": "ruwudu",
+	"license": {
+		"attribution": "Copyright (c) SIL International, 2015-2023",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ruwudu",
+		"revision": "5c54798f3b13e1a278f75c4e17e0db0a13fd96ef",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-ruwudu",
+		"revision": "b5aa4e64386fa7fe286634b10b7c874a42b9d1cf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ruwudu/Ruwudu-Bold.ttf",
+			"sha256": "7f7611d534aea674b960e0b586d1f594f3975b4db3fff5f55c1b92484a34cf78",
+			"size": 123240,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ruwudu/Ruwudu-Medium.ttf",
+			"sha256": "11688c54f825b293e6554c44a645ffa863a04331f3abee3dee18711a01719a8e",
+			"size": 122416,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ruwudu/Ruwudu-Regular.ttf",
+			"sha256": "ed5b134e7f389eecfdabc6bbbf9605177fa8b5b9984c8b24edbec908623d2c3b",
+			"size": 121440,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ruwudu/Ruwudu-SemiBold.ttf",
+			"sha256": "13f4e5c44f184bf9432cc4f4121e24853a3b81026a4223d113042710e361041d",
+			"size": 122892,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

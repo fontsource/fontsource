@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 236,
+				"sha256": "05a8840520d7832bed6f66488dc04d1a0273cdbd0b8a96bb6f67434e61945fb2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/montaga/Montaga-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

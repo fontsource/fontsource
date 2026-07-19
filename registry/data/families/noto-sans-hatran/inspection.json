@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 362,
+				"sha256": "a7e718c18383d15cc48c678230dc9eec05a90897d39fb3cab2fef086f958feb0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanshatran/NotoSansHatran-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

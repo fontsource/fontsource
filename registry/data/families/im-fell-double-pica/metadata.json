@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Igino Marini",
+	"family": "IM Fell Double Pica",
+	"id": "im-fell-double-pica",
+	"license": {
+		"attribution": "© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL Double Pica Roman\n© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) with reserved name IM FELL Double Pica Italic",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imfelldoublepica",
+		"revision": "62d695ba95c009c1d5053680d713472566bc1a77",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imfelldoublepica/IMFELLDoublePica-Italic.ttf",
+			"sha256": "00ac0e73855f16e7192a76bc284fb86f69b2f2c21b405e29991f99ece83d6391",
+			"size": 255092,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/imfelldoublepica/IMFELLDoublePica-Regular.ttf",
+			"sha256": "481afa82a0060b3649668fa629455caeea407864d4c1f6d815380866c504df07",
+			"size": 210736,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,7 @@
+The Martel Sans typeface is designed for typesetting immersive documents. It may be be used to set long passages of text in languages that are written in the Devanagari script, including Hindi, Marathi, Nepali, Sanskrit, and others.
+
+The Martel Devanagari design is a readable typeface whose glyph proportions are inspired by traditional writing and calligraphic styles. Its high-contrast strokes have a diagonal axis, in keeping with the pen-angle most often used for the Devanagari writing system. This Sans design is a low contrast design based on the initial Martel Devanagari. The Latin character set is an original design. Both character sets are the work of Dan Reynolds and Mathieu Réguer.
+
+The Martel Sans project is led by Dan Reynolds, a type designer based in Berlin, Germany. To contribute, see [github.com/typeoff/martel\_sans](https://github.com/typeoff/martel_sans)
+
+**Updated November 2015:** Internal metadata corrected.

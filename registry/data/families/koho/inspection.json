@@ -1,0 +1,160 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 726,
+				"sha256": "9a3624b99c8d80675502cd609d0400a01399f1d04678555eeac1ae95b474682d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/koho/KoHo-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

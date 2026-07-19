@@ -1,0 +1,44 @@
+{
+	"category": "display",
+	"dateAdded": "2023-11-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Broken Fax",
+	"id": "rubik-broken-fax",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikbrokenfax",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "df817f272b98fb24d9c3b10323ac08ab74c08227"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikbrokenfax/RubikBrokenFax-Regular.ttf",
+			"sha256": "52062566e93a07757574a2eb993befa2bf00638a2c1d10a12ccdb7e8c86a3e5e",
+			"size": 495004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

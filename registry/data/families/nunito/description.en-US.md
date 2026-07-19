@@ -1,0 +1,3 @@
+Nunito is a well balanced sans serif typeface superfamily, with 2 versions: The project began with Nunito, created by Vernon Adams as a rounded terminal sans serif for display typography. Jacques Le Bailly extended it to a full set of weights, and an accompanying regular non-rounded terminal version, [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans).
+
+To contribute, see [github.com/googlefonts/nunito](https://github.com/googlefonts/nunito).

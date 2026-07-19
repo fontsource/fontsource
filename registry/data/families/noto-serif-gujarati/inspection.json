@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 443,
+				"sha256": "e4e9e79a0a698d4ee9b0aeca8c05dc2477d93d825af844feb0dbddc4a4e6fdac"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.106",
+			"outline": "glyf",
+			"path": "ofl/notoserifgujarati/NotoSerifGujarati[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

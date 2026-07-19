@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Unlock",
+	"id": "unlock",
+	"license": {
+		"attribution": "Copyright 2011 The Unlock Project Authors (https://github.com/etunni/unlock), with Reserved Font Name 'Unlock'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/unlock",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/unlock",
+		"revision": "cf3defaec0849f2d59a9db60eb810ffa32d07eee"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/unlock/Unlock-Regular.ttf",
+			"sha256": "916edbbc325dd8abc630d688c88b4501df9494183295662f017ebe2ace843519",
+			"size": 57640,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12477,
+				"sha256": "fc1b5ac7709af3f8b796b181dac66a2fd6a7463e305f483ab054a7b38962714d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000;PS 1;hotconv 1.0.49;makeotf.lib2.0.14853",
+			"outline": "glyf",
+			"path": "ofl/nanumgothiccoding/NanumGothicCoding-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12477,
+				"sha256": "fc1b5ac7709af3f8b796b181dac66a2fd6a7463e305f483ab054a7b38962714d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000;PS 1;hotconv 1.0.49;makeotf.lib2.0.14853",
+			"outline": "glyf",
+			"path": "ofl/nanumgothiccoding/NanumGothicCoding-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

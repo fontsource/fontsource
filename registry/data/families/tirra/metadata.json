@@ -1,0 +1,85 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-07-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tifinagh"
+	],
+	"designer": "SIL International",
+	"family": "Tirra",
+	"id": "tirra",
+	"license": {
+		"attribution": "Copyright (c) 2010-2025, SIL Global (https://scripts.sil.org), with Reserved Font Name \"Tirra\", copyright 2010-2019 Adobe (http://www.adobe.com/), with Reserved Font Name \"Source\" (Latin glyphs).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tirra",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-akatab",
+		"revision": "faaa0ba74f0709b88969d83888508271d0a2f627"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tirra/Tirra-Black.ttf",
+			"sha256": "331d779c1bb9fd679d06af0dc6a91a53ddfe931221898df669b52c94ce837cfc",
+			"size": 49580,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/tirra/Tirra-Bold.ttf",
+			"sha256": "503457bac22b9e8324b2d3a49ee081c650db97c8020b667f0636013f2a6066bf",
+			"size": 49192,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tirra/Tirra-ExtraBold.ttf",
+			"sha256": "6b7f42f0d22f23c09dafecc98d9912ce6089ff6daa89aff00ab0fc2c13615fb6",
+			"size": 49456,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/tirra/Tirra-Medium.ttf",
+			"sha256": "1142a9e6507967d48d9526e67561d1ac3802296f187a1739abba4cdbf202b74c",
+			"size": 49328,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/tirra/Tirra-Regular.ttf",
+			"sha256": "548e2fd7556a95bc24f6bfc7c32661cb746cca4f25c52dc0a6945e4bed061d25",
+			"size": 49376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tirra/Tirra-SemiBold.ttf",
+			"sha256": "cc99dbef65d904245b13d0178b96e3839bb2d60eacceadfccb74ce59ff8b57c6",
+			"size": 49352,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

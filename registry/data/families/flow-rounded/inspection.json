@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 767,
+				"sha256": "62942b2638cac6b7ea99b6a6f3711266d93bea97c8d9bd99000d00187b21d441"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/flowrounded/FlowRounded-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

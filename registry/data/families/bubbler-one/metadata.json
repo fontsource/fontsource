@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-05-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Brenda Gallo",
+	"family": "Bubbler One",
+	"id": "bubbler-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brenda Gallo (gbrenda1987@gmail.com), with Reserved Font Name \"Bubbler\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bubblerone",
+		"revision": "58f4f72dd3203a1abaa8606659838299290587dc",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bubblerone",
+		"revision": "110b02cb1d151f5c8288d01c98121bab0094da19"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bubblerone/BubblerOne-Regular.ttf",
+			"sha256": "a6dfd3cba4ffb33a603317be430f2cb8ff91ce04e529af79ae7fdef6dd2e1782",
+			"size": 31260,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

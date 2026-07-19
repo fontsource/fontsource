@@ -1,0 +1,78 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-01-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Christian Thalmann",
+	"family": "Cormorant Unicase",
+	"id": "cormorant-unicase",
+	"license": {
+		"attribution": "Copyright 2015 The Cormorant Project Authors (github.com/CatharsisFonts/Cormorant)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cormorantunicase",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/CatharsisFonts/Cormorant",
+		"revision": "cc1bfb51ce6568cb3abf9199ab718d543f6fa189"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cormorantunicase/CormorantUnicase-Bold.ttf",
+			"sha256": "b934e5e865cd0301e0be8ef15f85006d5479fbb2faf875093ddc36493b8ea845",
+			"size": 763380,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cormorantunicase/CormorantUnicase-Light.ttf",
+			"sha256": "3cf4f15203a8d6ed559c7a3a1ea10910ef049a3b4863b09bda92d955614dc9b5",
+			"size": 765136,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/cormorantunicase/CormorantUnicase-Medium.ttf",
+			"sha256": "057870894f166505a6587135e7a2586253a0ee96a35332507e2730ae36dca33f",
+			"size": 762560,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/cormorantunicase/CormorantUnicase-Regular.ttf",
+			"sha256": "8fadf0a9ddf4b7d20fbc7c330a740378469fe4f4422c225dd23e6fc5dc028921",
+			"size": 763872,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/cormorantunicase/CormorantUnicase-SemiBold.ttf",
+			"sha256": "8e74b41f55bc7e0f199b91086916ad64ed83b7284352d5f4bd39d18ef279238b",
+			"size": 763128,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

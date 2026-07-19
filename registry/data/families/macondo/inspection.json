@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 310,
+				"sha256": "f1482805ab35969ece3560b88f48c9f3ab5a8dbf737bc03457a90b27a71fb5ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/macondo/Macondo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

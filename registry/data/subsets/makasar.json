@@ -1,0 +1,31 @@
+{
+	"id": "makasar",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"11EE0",
+			"11EF8"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/makasar_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "48ae7d9a9449dee67938cd4f0957b0ca14837d98325112cea1a215f681ae4293",
+		"upstream": "namFiles"
+	}
+}

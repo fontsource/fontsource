@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-11-07",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Spyros Zevelakis, Eben Sorkin",
+	"family": "Alatsi",
+	"id": "alatsi",
+	"license": {
+		"attribution": "Copyright 2019 The Alatsi Project Authors (https://github.com/SorkinType/Alatsi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alatsi",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Alatsi",
+		"revision": "92b5663a41d41e2912ec46cb4e523303e33f9723"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alatsi/Alatsi-Regular.ttf",
+			"sha256": "16b62400d74df555a35e145d0d8835e4f06e6d5c4707a8d0faf76d4e99910292",
+			"size": 444204,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

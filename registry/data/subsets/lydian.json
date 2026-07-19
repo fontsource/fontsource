@@ -1,0 +1,43 @@
+{
+	"id": "lydian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"B7",
+			"B7"
+		],
+		[
+			"2E31",
+			"2E31"
+		],
+		[
+			"10920",
+			"10939"
+		],
+		[
+			"1093F",
+			"1093F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/lydian_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "ac7ee42ed848461bcd55e76135532723e21d86592b4d87d91522d5874d00bd9e",
+		"upstream": "namFiles"
+	}
+}

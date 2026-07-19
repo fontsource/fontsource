@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 402,
+				"sha256": "299f01b673d207e34ef2555ed2bc87994baa93926f9baace552dcc19a7c49674"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/graduate/Graduate-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

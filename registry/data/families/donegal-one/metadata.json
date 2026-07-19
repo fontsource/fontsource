@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-11-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Gary Lonergan",
+	"family": "Donegal One",
+	"id": "donegal-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name 'Donegal'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/donegalone",
+		"revision": "d8c6d7dca2cc6cee6e7025cff5f016460f4c17e8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/donegalone",
+		"revision": "b0af18fd94255bfdfe07e90db984167564abd565"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/donegalone/DonegalOne-Regular.ttf",
+			"sha256": "1f9b07bbaf3813103281848f782fae74499f5dfc3b3b9f4e90ebea4aa42fbc75",
+			"size": 56944,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

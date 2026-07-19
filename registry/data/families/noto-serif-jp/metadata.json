@@ -1,0 +1,43 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-08-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Google",
+	"displayName": "Noto Serif Japanese",
+	"family": "Noto Serif JP",
+	"id": "noto-serif-jp",
+	"license": {
+		"attribution": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifjp",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://www.github.com/notofonts/noto-cjk",
+		"revision": "985fa52c81c1d6692ccdd82bc3656e8fb932fd89"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifjp/NotoSerifJP[wght].ttf",
+			"sha256": "2fd527ba12b6a44ec30d796d633360da0aeba6c5d4af1304ce12bb4dc15a7dfc",
+			"size": 13574352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

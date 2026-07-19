@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-02-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Neapolitan",
+	"family": "Emilys Candy",
+	"id": "emilys-candy",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Font Diner, Inc DBA Neapolitan (diner@fontdiner.com) with Reseved Font Name \"Emilys Candy\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/emilyscandy",
+		"revision": "6c814d1422888c546f20d27dcb5ebe5b87a4dd85",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/emilyscandy",
+		"revision": "6c0f2ad7e9b0bcc6d69bbd5896b980bf1e208074"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/emilyscandy/EmilysCandy-Regular.ttf",
+			"sha256": "0cf3ca9dbe71b33596e8a1eb12b40deac2e6414fe5616dda50c554580b6e0c68",
+			"size": 237216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

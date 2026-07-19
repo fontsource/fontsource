@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "2bacf74afd41188b6972fd712534f9e1fed10bddb69b3139b1b321c5733e9192"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/codystar/Codystar-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "2bacf74afd41188b6972fd712534f9e1fed10bddb69b3139b1b321c5733e9192"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/codystar/Codystar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

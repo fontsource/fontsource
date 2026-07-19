@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 348,
+				"sha256": "7ee1ea7f21be16765899319be71c46fbaf695e616a00d8265e79b94a6573fd37"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/giveyouglory/GiveYouGlory.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

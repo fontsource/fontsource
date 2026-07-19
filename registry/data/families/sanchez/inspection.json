@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 347,
+				"sha256": "bfaac290e66071267a301126c7eb1a52400dd23eeec5460bffe2420b6296f18e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/sanchez/Sanchez-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "74cae13dbf9f03e33b1dcdab27383a0d20144878594e37ae0261fd32a7192f9c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/sanchez/Sanchez-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

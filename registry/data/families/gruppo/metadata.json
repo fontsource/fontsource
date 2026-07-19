@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-12-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Gruppo",
+	"id": "gruppo",
+	"license": {
+		"attribution": "Copyright 2010 The Gruppo Project Authors (https://github.com/googlefonts/GruppoFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gruppo",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/GruppoFont",
+		"revision": "20e1bc8c76ee1d692c5645b8aaf971cc58ca2e51"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gruppo/Gruppo-Regular.ttf",
+			"sha256": "b14da5eb049a6dd097c79b0a7d55450542ad0ff213cdfea492815a79c58244a7",
+			"size": 76204,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

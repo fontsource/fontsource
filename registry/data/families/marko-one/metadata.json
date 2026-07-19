@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Marko One",
+	"id": "marko-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Marko\" and \"Marko One\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/markoone",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Marko-One",
+		"revision": "d5cfae97a173fc09d182a391fb78dd3d8a727cd8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/markoone/MarkoOne-Regular.ttf",
+			"sha256": "6514019373dabdb5d91ab3d3d7e97d96a656738c634fbae047dbb8143815395d",
+			"size": 34484,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

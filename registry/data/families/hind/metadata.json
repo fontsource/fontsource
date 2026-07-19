@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-06-25",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind",
+	"id": "hind",
+	"license": {
+		"attribution": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hind",
+		"revision": "ae83d01507fdd7827fb654f3760c4906e3f0abe0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind",
+		"revision": "6caef5262dc5bee3e033207082a073a6a1d172d6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hind/Hind-Bold.ttf",
+			"sha256": "330c54396bc27628c32e69b88654e41065722182c6f33b936a2a46d72c9d6774",
+			"size": 286604,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hind/Hind-Light.ttf",
+			"sha256": "c31b8b6073b14f89187586fb1fa38710d8adae3429ef41e1a398dacbfe839e51",
+			"size": 287484,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hind/Hind-Medium.ttf",
+			"sha256": "70f9c1158390d0c93a8bc24b35b4be4b2439653372bbce7381a32c686fb91a98",
+			"size": 277300,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hind/Hind-Regular.ttf",
+			"sha256": "01de158022f53077b52303e46de3b0ab5fb245222a7ffe25a2a57fdd9e969162",
+			"size": 299532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hind/Hind-SemiBold.ttf",
+			"sha256": "1742a1b0aba97b49da1d3ee3af568fa997c59a3cfe73829f7bec293f416d25dd",
+			"size": 281940,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

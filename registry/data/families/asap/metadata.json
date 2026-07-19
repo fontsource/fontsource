@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-01-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Asap",
+	"id": "asap",
+	"license": {
+		"attribution": "Copyright 2018 The Asap Project Authors (https://github.com/Omnibus-Type/Asap)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/asap",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Asap",
+		"revision": "2de32f20d7a0d48d4084adcf4bd6ac8115cf2f1a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/asap/Asap-Italic[wdth,wght].ttf",
+			"sha256": "a21e12f9babf2d02526003b27dff884b6d1cd0fed883ffe7740725626a11dd59",
+			"size": 426484,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/asap/Asap[wdth,wght].ttf",
+			"sha256": "7bf29bcab72f7d00de600e964a3fc206620050d8448ddd976822378d0fe18028",
+			"size": 376764,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

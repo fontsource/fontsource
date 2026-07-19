@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 251,
+				"sha256": "2cf4332e9cdf599971754075991de247525a4184f59e6137e148d69e2acbfe98"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/montenegringothicone/MontenegrinGothicOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

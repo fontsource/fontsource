@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 350,
+				"sha256": "fc97427c0913ceb99ce5a3dfdecf31003d8227501f4b45e733579c1432aaa311"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinuskeyboard/LibertinusKeyboard-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

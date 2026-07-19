@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 612,
+				"sha256": "4c8b990b163edd5950ac73c7773751883df18b7136689853036ecba4652f7791"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusmono/LibertinusMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

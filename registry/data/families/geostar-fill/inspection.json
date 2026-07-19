@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 223,
+				"sha256": "158ec3e02b70b4c9a3bc24bed8f69e2badd1a56d7a18fc7eed3c7bfa5888dd10"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/geostarfill/GeostarFill-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

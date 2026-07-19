@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Aoife Mooney",
+	"family": "BioRhyme",
+	"id": "biorhyme",
+	"license": {
+		"attribution": "Copyright 2016 The BioRhyme Project Authors (https://github.com/aoifemooney/makingbiorhyme)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/biorhyme",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aoifemooney/makingbiorhyme",
+		"revision": "b3c0488559ad7c42e11b71e65d255344faff63b9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/biorhyme/BioRhyme[wdth,wght].ttf",
+			"sha256": "3ef9bcf73838d59683b4144ddd4687bc9023340ee8e2bec33bc7b3cead65c9f7",
+			"size": 188500,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

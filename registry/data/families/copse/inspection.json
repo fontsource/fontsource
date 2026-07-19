@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 212,
+				"sha256": "0a962f25b78561efc9686576c032ba239eeb792d554e7651a1f706dfcf8ccd1a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/copse/Copse-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

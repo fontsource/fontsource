@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-08-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Mooli",
+	"id": "mooli",
+	"license": {
+		"attribution": "Copyright 2012 The Mooli Project Authors (https://github.com/googlefonts/mooliFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mooli",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/mooliFont",
+		"revision": "ecf6cc6fe2cb9c9d61f243f673c9181188f81499"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mooli/Mooli-Regular.ttf",
+			"sha256": "1ab6e242c359f16f2a30741c21634c9f4a4183426730928f9545a2aeeb14078a",
+			"size": 62600,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

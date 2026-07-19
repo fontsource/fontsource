@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 498,
+				"sha256": "4716fd941d0b3f3f88224d15953e4b67e3fd1f7091520b1972201b3ec81a9b6d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/comme/Comme[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

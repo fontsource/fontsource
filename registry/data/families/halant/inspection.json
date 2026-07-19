@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "0f736b0dd385ecfe85fd7a0ae8d3b42baaace292214acb550baefe31d343d83b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/halant/Halant-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "0f736b0dd385ecfe85fd7a0ae8d3b42baaace292214acb550baefe31d343d83b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/halant/Halant-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "0f736b0dd385ecfe85fd7a0ae8d3b42baaace292214acb550baefe31d343d83b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/halant/Halant-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "0f736b0dd385ecfe85fd7a0ae8d3b42baaace292214acb550baefe31d343d83b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/halant/Halant-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "0f736b0dd385ecfe85fd7a0ae8d3b42baaace292214acb550baefe31d343d83b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/halant/Halant-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

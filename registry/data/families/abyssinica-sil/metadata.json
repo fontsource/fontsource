@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"ethiopic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Abyssinica SIL",
+	"id": "abyssinica-sil",
+	"license": {
+		"attribution": "Copyright (c) 2000-2024 by SIL Global",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/abyssinicasil",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-abyssinica",
+		"revision": "1f7e65b0e7367681198c980647b3049559ebefa0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/abyssinicasil/AbyssinicaSIL-Regular.ttf",
+			"sha256": "f0e4fb92ee26967a3e6462342494956a3798b952345f917e1388913bb191cf2b",
+			"size": 268264,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

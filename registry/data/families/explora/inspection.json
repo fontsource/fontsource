@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 778,
+				"sha256": "7b9658a370de294ef3f2e899016c174f2e76c56df7b0247d6480b3095518060e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "ofl/explora/Explora-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

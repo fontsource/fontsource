@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 186,
+				"sha256": "15c7749eb08a1d2a69ba25140305e84cb5cedc0b21b4b1551e3560855d119d80"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/allerta/Allerta-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

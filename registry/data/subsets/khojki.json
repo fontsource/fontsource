@@ -1,0 +1,51 @@
+{
+	"id": "khojki",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"AE6",
+			"AEF"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A830",
+			"A839"
+		],
+		[
+			"11200",
+			"11211"
+		],
+		[
+			"11213",
+			"11241"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/khojki_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "2a529cdc8bd762e91c01997583c9c789e396eef7c9f4d8c3118f5bcc35a77255",
+		"upstream": "namFiles"
+	}
+}

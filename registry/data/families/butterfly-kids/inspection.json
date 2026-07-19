@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "45ac39c161b195351102077630f22ba2a3970f10e09a802cf4c7b9dbc1baef00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/butterflykids/ButterflyKids-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,44 @@
+{
+	"category": "monospace",
+	"dateAdded": "2019-03-25",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2"
+	],
+	"designer": "The Mozilla Foundation, Telefonica S.A., Nikita Prokopov",
+	"family": "Fira Code",
+	"id": "fira-code",
+	"license": {
+		"attribution": "Copyright 2014-2020 The Fira Code Project Authors (https://github.com/tonsky/FiraCode)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/firacode",
+		"revision": "5020a98352f1909554697e1da4132da253727138",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/tonsky/FiraCode",
+		"revision": "8da49d55f8b5978c5f888dd85452b79aad16cca2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/firacode/FiraCode[wght].ttf",
+			"sha256": "9335b082b3c7850d98a64b584f3417f65355f3471278bb5eeb8c6c0e8657aeeb",
+			"size": 260364,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 436,
+				"sha256": "f3f78f8e0cad1ce2a1d528b137957a50de5f94884941953e74791bfd2ecbc62d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.006",
+			"outline": "glyf",
+			"path": "ofl/notosanskannada/NotoSansKannada[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

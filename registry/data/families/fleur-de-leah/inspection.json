@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 570,
+				"sha256": "06820b5b0e95b9136873ac72a8556afbf0a14f6b6b8b614b8d0b2548b2dad814"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/fleurdeleah/FleurDeLeah-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

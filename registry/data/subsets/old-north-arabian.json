@@ -1,0 +1,31 @@
+{
+	"id": "old-north-arabian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10A80",
+			"10A9F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/old-north-arabian_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "5d104e71f203aa7f5ee405cd7ea667c857961d835ecc3de9168ba35deb5f0991",
+		"upstream": "namFiles"
+	}
+}

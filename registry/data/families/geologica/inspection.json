@@ -1,0 +1,46 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 1,
+					"min": 0,
+					"tag": "CRSV"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "SHRP"
+				},
+				{
+					"default": 0,
+					"max": 0,
+					"min": -12,
+					"tag": "slnt"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 836,
+				"sha256": "159cc7f681c09db6ddfc23d7ecf1a57853b9d9d6ea0d31db7c079df79ada0038"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010;gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/geologica/Geologica[CRSV,SHRP,slnt,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 441,
+				"sha256": "3c17fd8ed6c32177a464f01077698cceb8ff0c4152f9125f76a2266f27b3e565"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v0.8) -G 200 -r 50",
+			"outline": "glyf",
+			"path": "ofl/poetsenone/PoetsenOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

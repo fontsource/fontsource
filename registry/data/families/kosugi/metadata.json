@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-09-08",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "MOTOYA",
+	"family": "Kosugi",
+	"id": "kosugi",
+	"license": {
+		"attribution": "Copyright 2010 The Kosugi Project Authors (https://github.com/googlefonts/kosugi)",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/kosugi",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/kosugi",
+		"revision": "75171a2738135ab888549e76a9037e826094f0ce"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/kosugi/Kosugi-Regular.ttf",
+			"sha256": "f5e81d6a6b865d9b88c54d2d3c16bcaa3b239dfcefaf2a62976ac9dc7574bab7",
+			"size": 2288848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

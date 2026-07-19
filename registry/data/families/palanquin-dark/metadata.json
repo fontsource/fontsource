@@ -1,0 +1,67 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-01-28",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Pria Ravichandran",
+	"family": "Palanquin Dark",
+	"id": "palanquin-dark",
+	"license": {
+		"attribution": "Copyright 2014 Pria Ravichandran (pria.ravichandran@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/palanquindark",
+		"revision": "c9b7eb4440b70e152303a2cc0fef6b0570dc0387",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/VanillaandCream/Palanquin",
+		"revision": "f912925eccf9b020425a6f0ddc2ce32fc1640695"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/palanquindark/PalanquinDark-Bold.ttf",
+			"sha256": "8bf3591c758a3a35977b9af72c6a9639aa60c6652743ddb9cdc59dc1a30f7971",
+			"size": 511480,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/palanquindark/PalanquinDark-Medium.ttf",
+			"sha256": "32b2f0672eb1597556c71d002b59dbaff75aeb20e3d2fde9286c71b3793b483f",
+			"size": 513060,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/palanquindark/PalanquinDark-Regular.ttf",
+			"sha256": "de7ba10d7038f13c677b6a57e01c4b2082dd49602a15406135d761296c949284",
+			"size": 500136,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/palanquindark/PalanquinDark-SemiBold.ttf",
+			"sha256": "4729ae4e60cc20cbc1ec942b033354683339fd77a9dcf55f998e9153cb6d3036",
+			"size": 522336,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

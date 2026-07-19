@@ -1,0 +1,49 @@
+{
+	"category": "display",
+	"dateAdded": "2020-07-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tyler Finck, ETC",
+	"family": "Grandstander",
+	"id": "grandstander",
+	"license": {
+		"attribution": "Copyright 2020 The Grandstander Project Authors (https://github.com/Etcetera-Type-Co/Grandstander)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/grandstander",
+		"revision": "f2c0ab3b2b33e2ebd0378ceda10dcc490dd3b650",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Etcetera-Type-Co/Grandstander",
+		"revision": "33c288495d8ac7bc0b29a9f35801de1df7e6d010"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/grandstander/Grandstander-Italic[wght].ttf",
+			"sha256": "22ba556757942fd2b3d87aa087ce88d7222492c5440c4f009144770dcb68bd0d",
+			"size": 185092,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/grandstander/Grandstander[wght].ttf",
+			"sha256": "fbc7d1d934e6aa7842f7e8420cd833eca9eb123d61880075eec68751369e2f13",
+			"size": 183056,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

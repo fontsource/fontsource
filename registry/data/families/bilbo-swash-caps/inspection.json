@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 245,
+				"sha256": "ee643e4145211e3d896fc7feec4912cf792535ec9d281b2077c840976525e72a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/bilboswashcaps/BilboSwashCaps-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jonny Pinhorn",
+	"family": "Karla",
+	"id": "karla",
+	"license": {
+		"attribution": "Copyright 2019 The Karla Project Authors (https://github.com/googlefonts/karla)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/karla",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/karla",
+		"revision": "69b25f663101efb4113dd7ed416c120dd2dce56a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/karla/Karla-Italic[wght].ttf",
+			"sha256": "98c02551288197a43d9c7e62c105f4b6f283a57f0f06d623313ea32d5c701977",
+			"size": 96248,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/karla/Karla[wght].ttf",
+			"sha256": "ed3ca4cd9bdd899c543927c30bf5ff50706b24b3f2b7328e64b25f7d2a9d23dc",
+			"size": 94016,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

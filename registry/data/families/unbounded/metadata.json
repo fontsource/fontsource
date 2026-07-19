@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-11-07",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "NaN",
+	"family": "Unbounded",
+	"id": "unbounded",
+	"license": {
+		"attribution": "Copyright 2022 The Unbounded Project Authors (https://github.com/googlefonts/unbounded)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/unbounded",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/unbounded",
+		"revision": "f3ec43228a864a72487e41552e2140efab9884ea"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/unbounded/Unbounded[wght].ttf",
+			"sha256": "323b511be380c8d474ef030686b71aedde501f8d9cd46da558b7c40454372c3f",
+			"size": 778272,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

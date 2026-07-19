@@ -1,0 +1,57 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-03-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Oxygen",
+	"id": "oxygen",
+	"license": {
+		"attribution": "Copyright (c) 2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names 'Oxygen'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oxygen",
+		"revision": "a594866c8d540ba821c264e38adbcbfc2a8a0aaf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vernnobile/oxygenFont",
+		"revision": "62db0ebe3488c936406685485071a54e3d18473b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oxygen/Oxygen-Bold.ttf",
+			"sha256": "d86d9a11ad1aa242dbf50d2a2a3295baab2a11349dcf6db5bd28e36036b7f6c0",
+			"size": 48708,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/oxygen/Oxygen-Light.ttf",
+			"sha256": "014b444c3073bcf433577cca0aaa177b35ab1b9a46ada562710006cb35128409",
+			"size": 43788,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/oxygen/Oxygen-Regular.ttf",
+			"sha256": "a328b8fa366bdd94f507ad02e2721ac49cb4257a9ef1e49560b230079386010e",
+			"size": 47988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

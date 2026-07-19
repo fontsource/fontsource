@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-02-26",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Andreas Larsen",
+	"family": "Gidole",
+	"id": "gidole",
+	"license": {
+		"attribution": "Copyright 2015 The Gidole Project Authors (https://github.com/googlefonts/gidole)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gidole",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/gidole",
+		"revision": "8568937c577ea42b7c2655d93a5d822222c08321"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gidole/Gidole-Regular.ttf",
+			"sha256": "7a9b54e2ce1f582cfcd1aa39ca025cd125084f4fb2ea35969d21f6544aa05f23",
+			"size": 121620,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

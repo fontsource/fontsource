@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 557,
+				"sha256": "1df1a242c3d001680dfb05bfcfe2bd5654d1e102abdc9edd7edd5dbf96690477"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/amita/Amita-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 557,
+				"sha256": "1df1a242c3d001680dfb05bfcfe2bd5654d1e102abdc9edd7edd5dbf96690477"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/amita/Amita-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 2055,
+				"sha256": "c2a6da5ef89fd223a36d8a1841e7ebec80ee8959efb83b2c3fc8eb6febef4b9e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2407.024",
+			"outline": "glyf",
+			"path": "ofl/cascadiamono/CascadiaMono-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 2426,
+				"sha256": "840e826791cdb6898b5285074e1ee3ebd5de3f3b47361203d0e72fa0e0569040"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2407.024",
+			"outline": "glyf",
+			"path": "ofl/cascadiamono/CascadiaMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 200
+			}
+		}
+	]
+}

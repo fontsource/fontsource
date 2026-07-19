@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 413,
+				"sha256": "6198dfaa80d785cd7346e73611c17e0298ca663acc0099bb88a973893311985e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v0.91) -l 8 -r 50 -G 200 -x 0 -w \"gGD\"",
+			"outline": "glyf",
+			"path": "ofl/oranienbaum/Oranienbaum-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

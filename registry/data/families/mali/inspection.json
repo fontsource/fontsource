@@ -1,0 +1,160 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/mali/Mali-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

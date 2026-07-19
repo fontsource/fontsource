@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-12-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontworks Inc.",
+	"family": "Stick",
+	"id": "stick",
+	"license": {
+		"attribution": "Copyright 2020 The Stick Project Authors (https://github.com/fontworks-fonts/Stick/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stick",
+		"revision": "a2c54f3df7a86550b54f9d8b70f0009b3707dac0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontworks-fonts/Stick",
+		"revision": "069a1101e3fd51e60205710157f8b6a996ffea61"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stick/Stick-Regular.ttf",
+			"sha256": "0e582d72b5125c7847d1c46b658333194f7a3f70bfa210d2f8cae1a596a17857",
+			"size": 2215036,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

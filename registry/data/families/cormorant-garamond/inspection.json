@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 979,
+				"sha256": "2b2212a951dc2cbb70772e0924b3f0c16731f63f992f9a5fb67fc972aa739230"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001",
+			"outline": "glyf",
+			"path": "ofl/cormorantgaramond/CormorantGaramond-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 974,
+				"sha256": "87e2fcca67835cc2ed11ee73ac7e07a1a3427346e748548135248c95388f248a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001",
+			"outline": "glyf",
+			"path": "ofl/cormorantgaramond/CormorantGaramond[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Joe Prince",
+	"family": "Handlee",
+	"id": "handlee",
+	"license": {
+		"attribution": "Copyright (c) 2011, Admix Designs (http://www.admixdesigns.com joe@admixdesigns.com) with Reserved Font Name Handlee.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/handlee",
+		"revision": "d356ad3b6b89e945757800cb46ae635c49fb6adf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/handlee",
+		"revision": "d937cfc17b0389d9847b8a865060b7241af7c654"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/handlee/Handlee-Regular.ttf",
+			"sha256": "7b99c0f291b5d52e06c66498a1d0dd6dff45a32e32d13be089c60d2d8dc00445",
+			"size": 39132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

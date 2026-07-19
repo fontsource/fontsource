@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 14,
+					"max": 32,
+					"min": 14,
+					"tag": "opsz"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 2813,
+				"sha256": "0a65ff4ccbe4855293eea3800a9e7c964c81a097d6356127185337ee3fbf8153"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001;git-66647c0bb",
+			"outline": "glyf",
+			"path": "ofl/inter/Inter-Italic[opsz,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 14,
+					"max": 32,
+					"min": 14,
+					"tag": "opsz"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 2849,
+				"sha256": "65ee00a3f0e287f883edba5843ef129d8619b21ab2c2324b53d3378a27e4ae83"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001;git-66647c0bb",
+			"outline": "glyf",
+			"path": "ofl/inter/Inter[opsz,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

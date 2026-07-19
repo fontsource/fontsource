@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"limbu",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Limbu",
+	"id": "noto-sans-limbu",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/limbu)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanslimbu",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/limbu",
+		"revision": "191ac5f51c1dc7603d7636a26161ff9c36b9671b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanslimbu/NotoSansLimbu-Regular.ttf",
+			"sha256": "5a8b4fd72c5a64051332f66fcf46fda1a32a37d130631362378c6b465d852dd5",
+			"size": 59192,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

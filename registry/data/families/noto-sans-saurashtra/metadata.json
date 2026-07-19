@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"saurashtra"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Saurashtra",
+	"id": "noto-sans-saurashtra",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/saurashtra)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssaurashtra",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/saurashtra",
+		"revision": "922f6bdd4c2f6b6bae4d140253f810359ef2e62b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssaurashtra/NotoSansSaurashtra-Regular.ttf",
+			"sha256": "d2df88b4e293636d04c363b13dc5c6f88fca0e9a3b6fece52f12c11d77e9e566",
+			"size": 74668,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

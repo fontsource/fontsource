@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 597,
+				"sha256": "2c0b3dc135c149e0d8ddbaeb979f6919402f0a2db4a95c31501d07da07ff699f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.014; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/estonia/Estonia-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

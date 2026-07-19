@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 238,
+				"sha256": "78b235e6a355552d50d4d52e5cfacf77cc6e71c25503e5892090f19417d5eb3b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/wallpoet/Wallpoet-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-01-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Sideshow",
+	"family": "Chewy",
+	"id": "chewy",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Font Diner, Inc DBA Sideshow. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/chewy",
+		"revision": "301e764385ba5592427d546a54b50de44ba5212c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/chewy",
+		"revision": "7fae11600a5c13c94a0780ec22ae5309264c43d0"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/chewy/Chewy-Regular.ttf",
+			"sha256": "7cf75ea288f82fd20badea8ab4da7a656a96a7277c170811e813b3d3d6294147",
+			"size": 41248,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

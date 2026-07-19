@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"bengali",
+		"latin",
+		"menu"
+	],
+	"designer": "Black Foundry",
+	"family": "Galada",
+	"id": "galada",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Pablo Impallari (www.impallari.com). Copyright (c) 2015 by black foundry (www.black-foundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/galada",
+		"revision": "8d688a5ee4b997b5e31a9242eb7a670890d506fa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/BlackFoundryCom/Galada",
+		"revision": "ee2fe5b461b2af0ade8952a7d4150958689433b4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/galada/Galada-Regular.ttf",
+			"sha256": "acc22b41ee470dc542e15b5f8907c7fbebef1b9c01eb20e4127bdbf052b006ee",
+			"size": 187776,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

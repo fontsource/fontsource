@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 362,
+				"sha256": "49eeae2a2d10e313d15eae7343947405f695e834cdfec9b151eceed7cdbc3b6c"
+			},
+			"colorTables": [],
+			"fontVersion": "3.00",
+			"outline": "glyf",
+			"path": "ofl/imfellenglish/IMFeENit28P.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "f0cc98628fd61275df8f70d4475ffde7ecb3df177af17bcd9543e85f78d19960"
+			},
+			"colorTables": [],
+			"fontVersion": "3.00",
+			"outline": "glyf",
+			"path": "ofl/imfellenglish/IMFeENrm28P.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

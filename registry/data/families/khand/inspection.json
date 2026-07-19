@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 442,
+				"sha256": "840e8c3f768d31753ee8fb51083f53adbada9553e7fd0e00d8155b4b239173e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/khand/Khand-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 442,
+				"sha256": "840e8c3f768d31753ee8fb51083f53adbada9553e7fd0e00d8155b4b239173e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/khand/Khand-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 442,
+				"sha256": "840e8c3f768d31753ee8fb51083f53adbada9553e7fd0e00d8155b4b239173e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/khand/Khand-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 442,
+				"sha256": "840e8c3f768d31753ee8fb51083f53adbada9553e7fd0e00d8155b4b239173e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/khand/Khand-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 442,
+				"sha256": "840e8c3f768d31753ee8fb51083f53adbada9553e7fd0e00d8155b4b239173e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/khand/Khand-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

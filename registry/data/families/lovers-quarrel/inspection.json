@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 462,
+				"sha256": "a8039c917330c583d6c0c1f872d37bc71834ed4e2de502960cea61174d22bbb7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/loversquarrel/LoversQuarrel-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

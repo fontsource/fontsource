@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 341,
+				"sha256": "62f86a445ebcc873d4efac2645d0ecbf9ccf5c49785212be020f184620415030"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2001",
+			"outline": "glyf",
+			"path": "ofl/swankyandmoomoo/SwankyandMooMoo.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

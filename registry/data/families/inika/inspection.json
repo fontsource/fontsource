@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 307,
+				"sha256": "2f4f560b22f0279133cee1a0508fda442ba3b335122890526ab9740f13e54d6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/inika/Inika-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 307,
+				"sha256": "2f4f560b22f0279133cee1a0508fda442ba3b335122890526ab9740f13e54d6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/inika/Inika-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11825,
+				"sha256": "aab58be75bd53c0d4680e7f2debc35dbd564e4ec2eec1388b2f1561e944d32d8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.020;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895",
+			"outline": "glyf",
+			"path": "ofl/nanumgothic/NanumGothic-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11826,
+				"sha256": "f0cfa432ef0cf2236b4c56a2440177f76e096eaf1ec78604ba9685eb8153c864"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.020;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895",
+			"outline": "glyf",
+			"path": "ofl/nanumgothic/NanumGothic-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11827,
+				"sha256": "b144679af4fb964d7c4513ca2c83a155eeca357d6a15a9e62d98abb615a012bb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.020;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895",
+			"outline": "glyf",
+			"path": "ofl/nanumgothic/NanumGothic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

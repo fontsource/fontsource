@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Dan Ross",
+	"family": "Flow Rounded",
+	"id": "flow-rounded",
+	"license": {
+		"attribution": "Copyright 2020 The Flow Project Authors (https://github.com/HYPD/flow-typeface)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/flowrounded",
+		"revision": "ff1f93bbe72e2d965842557db5dc94a10077bb89",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/HYPD/flow-typeface",
+		"revision": "44f3478408936f5240cbc4fb3f7b4ed19d22822e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/flowrounded/FlowRounded-Regular.ttf",
+			"sha256": "dd3319188800beba4f303532f254880f77c513dfb8ee54e44cd7fa2fdeb25123",
+			"size": 43800,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

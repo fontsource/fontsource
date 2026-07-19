@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Bigelow Rules",
+	"id": "bigelow-rules",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Bigelow Rules\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bigelowrules",
+		"revision": "bafad3405341d8f49fe074d5d578407abcb61689",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/bigelowrules",
+		"revision": "f3ba7414e96d1a940b935d4fa4d2bab47150c7fc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bigelowrules/BigelowRules-Regular.ttf",
+			"sha256": "b6cef7ba51c1fbca920b531a39ac2c348023b5b9e4d35d1bca43ec801eeb5fcb",
+			"size": 59476,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

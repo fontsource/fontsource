@@ -1,0 +1,197 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-12-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Łukasz Dziedzic",
+	"family": "Lato",
+	"id": "lato",
+	"license": {
+		"attribution": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lato",
+		"revision": "5d3b76120a319730fda218cc7410174a462b32cb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/LatoGFVersion",
+		"revision": "080cb69711ca050d91e9c866e58df7a73095c69a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lato/Lato-Black.ttf",
+			"sha256": "808c62839c62dbce7de689af7603666fc7f8b81e0df537d8a5212c87580d4337",
+			"size": 664748,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-BlackItalic.ttf",
+			"sha256": "3214f75bf96783a571bd25338c867c669e7c5e7c08a227f18a7b63766d6e6cbe",
+			"size": 698264,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-Bold.ttf",
+			"sha256": "8a0aace75d33794eece4b28187bfc1df0bbd2888b5d8a56e01788c8d65d16be1",
+			"size": 656544,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-BoldItalic.ttf",
+			"sha256": "62c1b7f0d2e74b45960154c3520efc337b553db0961bfdc950d5618334596cc8",
+			"size": 698364,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-ExtraBold.ttf",
+			"sha256": "61018de62bdaf90d4ac80b1d53c5c130756c8e9219aea3d2773fc9bd5869af97",
+			"size": 613920,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-ExtraBoldItalic.ttf",
+			"sha256": "a42b384b9c37913a61023e3a47c07fead26e776127bbc9e6a0c96fe413089374",
+			"size": 671876,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-ExtraLight.ttf",
+			"sha256": "989989b481db5df0827d90c51fd08d024fe7bc4e367046e2584a0d3b0487936d",
+			"size": 626624,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-ExtraLightItalic.ttf",
+			"sha256": "fc56526250b9b64ce0908c52350b03e91b84afecb08fd2834a12e57b91abdb31",
+			"size": 653640,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-Italic.ttf",
+			"sha256": "e399c44efe1387100531d26c7e4800c5d12251b890d6654a3098c7c679cb1786",
+			"size": 722900,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-Light.ttf",
+			"sha256": "cf2a774503baf418d584f49967bd160e1e03f087c13b25602f28024ec7788f08",
+			"size": 643884,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-LightItalic.ttf",
+			"sha256": "700e6722fd14a10e7646347a6b14c486d4c364a373ba61c70e0b5ccee7811635",
+			"size": 657552,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-Medium.ttf",
+			"sha256": "d3ac182a6833e005745dd75679fbad081c0b12535df4e93ad8ed57817a31a338",
+			"size": 636396,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-MediumItalic.ttf",
+			"sha256": "ecbce6cffa42d8a67afeb27a9d6e85d515e81481d4b2cece989e833a48048405",
+			"size": 694924,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-Regular.ttf",
+			"sha256": "d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251",
+			"size": 656568,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-SemiBold.ttf",
+			"sha256": "71b8b7decbe75a881ed267be539d402bd1e9420b799658aada4e0d1bd5af803c",
+			"size": 668548,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-SemiBoldItalic.ttf",
+			"sha256": "5adeb6b334d8fb99ef053bc052b952773d544315e0e1d668a12c0ce8bd51375c",
+			"size": 697364,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-Thin.ttf",
+			"sha256": "663c55bfe9a38270fff44da273bf4d792eafc3e7e1201f62c3064cad80c5d5e7",
+			"size": 584056,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/lato/Lato-ThinItalic.ttf",
+			"sha256": "e5e86e219ce6987b175470d94d57753a387d1860b635da6327a60e8d19a33beb",
+			"size": 608716,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,66 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-07-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Unna",
+	"id": "unna",
+	"license": {
+		"attribution": "Copyright 2016 The Unna Project Authors (omnibus.type@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/unna",
+		"revision": "be74a5cfe032c515eb5ea84576e7c2832fbbeeaf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Unna",
+		"revision": "826be2abebda53d63bcd99b7ca30a7061b89bcfd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/unna/Unna-Bold.ttf",
+			"sha256": "d20dcc29cd2b5db18f6c782918f26ee9a6a8240a3850d7aa56fd9977024fc5b1",
+			"size": 79556,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/unna/Unna-BoldItalic.ttf",
+			"sha256": "3cf90fb9a8d12eb1cb909842633bf1468819deaf993d39988229d38200a7793e",
+			"size": 84916,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/unna/Unna-Italic.ttf",
+			"sha256": "fd94aa77c2ab4572688ac8ad48c51629c8d651c32b23013b9c33cd72fc9c77b1",
+			"size": 80320,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/unna/Unna-Regular.ttf",
+			"sha256": "94269efa448520c135ae1f994e0a711b214f5df4ce6b37f2d3ef10a7ccdb1700",
+			"size": 71164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

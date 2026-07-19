@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Dan Ross",
+	"family": "Flow Block",
+	"id": "flow-block",
+	"license": {
+		"attribution": "Copyright 2020 The Flow Project Authors (https://github.com/HYPD/flow-typeface)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/flowblock",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/HYPD/flow-typeface",
+		"revision": "44f3478408936f5240cbc4fb3f7b4ed19d22822e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/flowblock/FlowBlock-Regular.ttf",
+			"sha256": "41df2ad95d9ae2d3573e7e958186e04a852a44a568e5c2fc5fbd22e416b50acc",
+			"size": 38928,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

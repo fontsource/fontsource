@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 220,
+				"sha256": "3db6f74f85867e26617d40e1167a0a75a86c17e278486b28802b91262fba8b91"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/wireone/WireOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

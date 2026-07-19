@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 425,
+				"sha256": "0f22968fde4bea4d5225ea11ac240723975405dd6c993b0517a5e95b126be0c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/akatab/Akatab-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 425,
+				"sha256": "0f22968fde4bea4d5225ea11ac240723975405dd6c993b0517a5e95b126be0c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/akatab/Akatab-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 425,
+				"sha256": "0f22968fde4bea4d5225ea11ac240723975405dd6c993b0517a5e95b126be0c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/akatab/Akatab-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 425,
+				"sha256": "0f22968fde4bea4d5225ea11ac240723975405dd6c993b0517a5e95b126be0c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/akatab/Akatab-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 425,
+				"sha256": "0f22968fde4bea4d5225ea11ac240723975405dd6c993b0517a5e95b126be0c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/akatab/Akatab-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 425,
+				"sha256": "0f22968fde4bea4d5225ea11ac240723975405dd6c993b0517a5e95b126be0c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/akatab/Akatab-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

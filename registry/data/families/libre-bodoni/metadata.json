@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-04-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Pablo Impallari, Rodrigo Fuenzalida",
+	"family": "Libre Bodoni",
+	"id": "libre-bodoni",
+	"license": {
+		"attribution": "Copyright 2012 The Libre Bodoni Project Authors (https://github.com/googlefonts/Libre-Bodoni/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/librebodoni",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Libre-Bodoni",
+		"revision": "37d048938a8a32e6ba3992072cb3857659a7828f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/librebodoni/LibreBodoni-Italic[wght].ttf",
+			"sha256": "6a9b0c88764dcf6c094653e3c28da045fcebca48734254afdcbfec46b9ab4fcd",
+			"size": 112608,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/librebodoni/LibreBodoni[wght].ttf",
+			"sha256": "0d543665bd869819ffd7d46608804e245497ba835960832d44be89e561b0c717",
+			"size": 112160,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

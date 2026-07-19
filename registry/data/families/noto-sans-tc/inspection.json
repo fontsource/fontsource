@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 20745,
+				"sha256": "2f4827a222d002c779529e20b6c3587ab6e5ea0d27015220e87b58b9a639ba69"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004-H2;hotconv 1.0.118;makeotfexe 2.5.65603",
+			"outline": "glyf",
+			"path": "ofl/notosanstc/NotoSansTC[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

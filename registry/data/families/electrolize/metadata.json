@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Gaslight",
+	"family": "Electrolize",
+	"id": "electrolize",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Electrolize\" This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/electrolize",
+		"revision": "eb6920819856bfd01255afaf710a675a6168181d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/electrolize",
+		"revision": "2450033307b2d9f771649ae84007e59eb4387d1f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/electrolize/Electrolize-Regular.ttf",
+			"sha256": "aa81ab9015fc0190bb5e68c50290565c7a4a723ddf32b88774aaff05cdd66bca",
+			"size": 55712,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

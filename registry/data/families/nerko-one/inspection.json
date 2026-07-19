@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 447,
+				"sha256": "37c25cb08ba4ef49fa43d8d638ec7959a52f243579aa7fbe405648a01383097d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/nerkoone/NerkoOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

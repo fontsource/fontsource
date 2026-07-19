@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"telugu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind Guntur",
+	"id": "hind-guntur",
+	"license": {
+		"attribution": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hindguntur",
+		"revision": "dfebe21ae47829e4b82fb91593be3ae9471b34eb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind-guntur",
+		"revision": "d1f95f8d9a6013297a6a63cc54e48e3885eb5813"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hindguntur/HindGuntur-Bold.ttf",
+			"sha256": "e3e88e87a47094b34d1b0bc4a88f700cb1d1d35dd6286bd224bc35cc1712b167",
+			"size": 340816,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hindguntur/HindGuntur-Light.ttf",
+			"sha256": "dd3847b40d16ee8f906b41928b5f0e3480ea9092524b5c6a949eb19dc458caf9",
+			"size": 307852,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hindguntur/HindGuntur-Medium.ttf",
+			"sha256": "370d2838cc51cbf0060f164ffe11ecb35a2619452b8c8d200beccb50e3d0228c",
+			"size": 321408,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hindguntur/HindGuntur-Regular.ttf",
+			"sha256": "2f9b4d31507c92fe1d54e5256904e41d91698b952c90d66bfe926cd156dac4eb",
+			"size": 322564,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hindguntur/HindGuntur-SemiBold.ttf",
+			"sha256": "c143afa804c637d05c6c30542c0533820046d52e2c4c32dd7b6a8a51ef307594",
+			"size": 326228,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

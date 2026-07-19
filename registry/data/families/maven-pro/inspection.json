@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 671,
+				"sha256": "fab1be50b41c6fb1dfc5a83f50322ee81b4cee6d22a357e50e1c98b1ceb465b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.103",
+			"outline": "glyf",
+			"path": "ofl/mavenpro/MavenPro[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

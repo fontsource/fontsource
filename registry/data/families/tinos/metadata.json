@@ -1,0 +1,72 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-11-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Steve Matteson",
+	"family": "Tinos",
+	"id": "tinos",
+	"license": {
+		"attribution": "Copyright 2026 The Tinos Project Authors (https://github.com/googlefonts/tinos)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tinos",
+		"revision": "ba95515f1333efe9342c2ad988b9c2f6bef6dbad",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/tinos",
+		"revision": "3b4482a99b80ea5fc75f187b1be3120a3f5905b3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tinos/Tinos-Bold.ttf",
+			"sha256": "393269dbab8899f938db19783eca5eac92eb431f7ae0ab45b8349ca895f1a06b",
+			"size": 597880,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tinos/Tinos-BoldItalic.ttf",
+			"sha256": "a5de79f0fe863ea0954757acb3d47b3ccd0a930ce3dd5b97230cd3866790a06e",
+			"size": 578976,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tinos/Tinos-Italic.ttf",
+			"sha256": "5942266ed398b155d7dc23e36833e7ec6be988f2439bdbeb8ef1bede808eaa91",
+			"size": 565016,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tinos/Tinos-Regular.ttf",
+			"sha256": "60a0e8ef0c04dd5dd69ffe91025fa2ae5836cbd35600a82ba031977557e2cb61",
+			"size": 521588,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

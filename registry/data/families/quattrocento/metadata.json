@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-03-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Quattrocento",
+	"id": "quattrocento",
+	"license": {
+		"attribution": "Copyright (c) 2011, Pablo Impallari (www.impallari.com|impallari@gmail.com), Copyright (c) 2011, Igino Marini. (www.ikern.com|mail@iginomarini.com), Copyright (c) 2011, Brenda Gallo. (gbrenda1987@gmail.com), with Reserved Font Name Quattrocento.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/quattrocento",
+		"revision": "dad2cc6cbf96c477c169aee6e4ceb88659036ad4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/quattrocento",
+		"revision": "45d612b9dddd01d19d5ff6d3ef1321ced46de524"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/quattrocento/Quattrocento-Bold.ttf",
+			"sha256": "5945de7b6d6c7c9fefbb67bc34ec60f64a7dd1bd645fb2771ec7728c0ab67c9d",
+			"size": 164948,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/quattrocento/Quattrocento-Regular.ttf",
+			"sha256": "57dc8daff9121be82e54cf1221658b7ba4f1801212817aead2d184a5660fbcb9",
+			"size": 158200,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

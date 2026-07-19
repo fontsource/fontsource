@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif is a modulated (“serif”) design for texts in the _Latin, Cyrillic_ and _Greek_ scripts, also suitable as the complementary font for other script-specific Noto Serif fonts. It has italic styles, multiple weights and widths, and 3,256 glyphs.

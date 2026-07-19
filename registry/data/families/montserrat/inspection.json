@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1312,
+				"sha256": "e16fcd7d532c5dcd6e931ab9e3d91cdbd99da51230de1871c6ae468e009af56b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 9.000",
+			"outline": "glyf",
+			"path": "ofl/montserrat/Montserrat-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1312,
+				"sha256": "e16fcd7d532c5dcd6e931ab9e3d91cdbd99da51230de1871c6ae468e009af56b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 9.000",
+			"outline": "glyf",
+			"path": "ofl/montserrat/Montserrat[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

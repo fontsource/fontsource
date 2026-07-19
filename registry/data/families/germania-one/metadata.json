@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "John Vargas Beltrán",
+	"family": "Germania One",
+	"id": "germania-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by John Vargas Beltran (john.vargasbeltran@gmail.com), with Reserved Font Name \"Germania One\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/germaniaone",
+		"revision": "38cdf9c2c6c38392224fd60779142649a14b6d6c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/germaniaone",
+		"revision": "73d401d495adf37b1af75a5dca9cb5cdb046b05d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/germaniaone/GermaniaOne-Regular.ttf",
+			"sha256": "3ee3d56584bab8c9e3f59cc3360aa8a36e219dcf0a9f3c8928e3da5a19277e3f",
+			"size": 33240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

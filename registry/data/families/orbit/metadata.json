@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-05-18",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sooun Cho, JAMO",
+	"family": "Orbit",
+	"id": "orbit",
+	"license": {
+		"attribution": "Copyright 2022 The Orbit Project Authors (https://github.com/JAMO-TYPEFACE/Orbit)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/orbit",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JAMO-TYPEFACE/Orbit",
+		"revision": "95122395c6d1fda07aebdf36f566a75678bc3bdd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/orbit/Orbit-Regular.ttf",
+			"sha256": "5d0206fb0a9e3eeac51aff8d4a6dbb7613d63fc435f1a51f96dc35cefb5f9f87",
+			"size": 784480,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

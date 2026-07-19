@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Junge",
+	"id": "junge",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Junge\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/junge",
+		"revision": "c9551847e6a770df4a97a01dfc2b6634dddb26f8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/junge",
+		"revision": "1753e7a229f48ac314ad3c54da9fcfb2d7946f75"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/junge/Junge-Regular.ttf",
+			"sha256": "4671c65a0e6c02c866362938e968e083d171744e4c90fa2cfa8b809cc9f7207e",
+			"size": 71400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

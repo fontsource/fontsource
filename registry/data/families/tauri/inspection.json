@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 276,
+				"sha256": "722531ef74902217fa5a4a7a99f3f3d9aabed8955bf8dcdeada0b3628cdd80da"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v0.93.8-669f) -l 13 -r 13 -G 200 -x 13 -w \"gG\" -W -c",
+			"outline": "glyf",
+			"path": "ofl/tauri/Tauri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

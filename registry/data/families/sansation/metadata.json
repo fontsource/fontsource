@@ -1,0 +1,86 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Bernd Montag",
+	"family": "Sansation",
+	"id": "sansation",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Bernd Montag (berndmontag@gmx.de), with Reserved Font Name 'Sansation'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sansation",
+		"revision": "bc594e0b93d627bea3ea0b75bf46d287045a5f4f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sansation/Sansation-Bold.ttf",
+			"sha256": "8ec74c9628179ed95d075440ba4d01091f800ca9be045ddc25982bd8bc21afff",
+			"size": 44804,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sansation/Sansation-BoldItalic.ttf",
+			"sha256": "428eb2f11e1b12c55505bc5aaf0579e7354391207df474d88f44517df7d48709",
+			"size": 46496,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sansation/Sansation-Italic.ttf",
+			"sha256": "df79f59618325d890aa611ff8742e313b1bcf0a5afc612b4be2f9d870742dc57",
+			"size": 46380,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sansation/Sansation-Light.ttf",
+			"sha256": "ef7798f2d0a3435797793ac8b703bd3131e5a5b1ec5ccbd15f397f11a6ce1811",
+			"size": 44804,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/sansation/Sansation-LightItalic.ttf",
+			"sha256": "96eef3afab26a9a018415da577c71dbceaae48f9f4b2ab26f0f7d412c1dd08d1",
+			"size": 46820,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/sansation/Sansation-Regular.ttf",
+			"sha256": "6d47039ee6665d78b143a1b264abc02017a33ffa52a4e9f6645ce357f92d4f09",
+			"size": 44548,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

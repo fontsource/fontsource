@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2016-02-03",
+	"declaredSubsets": [
+		"menu",
+		"myanmar"
+	],
+	"designer": "Danh Hong",
+	"family": "Yinmar",
+	"id": "yinmar",
+	"license": {
+		"attribution": "Copyright 2014 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yinmar",
+		"revision": "4fbcd3898cd1f17d16608adebbbfccf4f56b40fe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/khmertype/Yinmar",
+		"revision": "6ee5643de838e2a55446cd6567190d883dc57cef"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yinmar/Yinmar-Regular.ttf",
+			"sha256": "a1976639a99f252b3471839c85fe5e87fc1c4e0d1386c9f8ac8c5ff84d357e35",
+			"size": 40272,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-08-05",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mohamed Gaber, Accademia di Belle Arti di Urbino",
+	"family": "Cairo Play",
+	"id": "cairo-play",
+	"license": {
+		"attribution": "Copyright 2009 The Cairo Project Authors (https://github.com/Gue3bara/Cairo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cairoplay",
+		"revision": "3c78ebe15dffc97f3a37c1533f38d8a7c6ae7f14",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Gue3bara/Cairo",
+		"revision": "73d16933c6a0f341c27a69e401da83dcb0d53114"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cairoplay/CairoPlay[slnt,wght].ttf",
+			"sha256": "2c275b43ace54233a0960c3aa1d05b4e9e0e396a501cd3f8d446b16cc3362745",
+			"size": 608152,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 411,
+				"sha256": "73228481bb941781f55b79b828fd867d98af25cf499e238235d1d24e6a14d181"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/kronaone/KronaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

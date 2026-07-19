@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 692,
+				"sha256": "0868eec06dec02ce3d2d358a04f01cb30881647c8bb7ecbd05fbad4968586efa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.009",
+			"outline": "glyf",
+			"path": "ofl/notonastaliqurdu/NotoNastaliqUrdu[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,110 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"gujarati",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Gujarati UI",
+	"id": "noto-sans-gujarati-ui",
+	"license": {
+		"attribution": "Copyright 2019 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansgujaratiui",
+		"revision": "90200f5329b6368f997273400b83769fdde387c2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/gujarati",
+		"revision": "442d6c6956f31b4a858c58eb685e2bf9601cb5a9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Black.ttf",
+			"sha256": "b1a9f30113e5253a5fcb9a2edd7c7032fff776c2e4ac2b803ab900392db09695",
+			"size": 208060,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Bold.ttf",
+			"sha256": "2c91d8e29fdebae8b3a50c0d3212f513e524db9eb1d10a34f729c25c4a5cd6f9",
+			"size": 203268,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-ExtraBold.ttf",
+			"sha256": "f58426066b454e32df586e3b50478d380ae1d0c6683a50fea08782e1f986c766",
+			"size": 203452,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-ExtraLight.ttf",
+			"sha256": "83e3e41358c38c92ba883747804ec4318a80957a9bb1d59fdd25e4025afa1a15",
+			"size": 199684,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Light.ttf",
+			"sha256": "bf35a1bb4d244d5497a9bfdf425401c6a6b7cf3a99a8d96d0cfb03ee9715c210",
+			"size": 194216,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Medium.ttf",
+			"sha256": "194e67b03518fd263afa90ac6c6366b11ddf134deb351355d1c44910094af20e",
+			"size": 205752,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Regular.ttf",
+			"sha256": "59c3611a41f68c55a22963fbfba9489cda4f06da3a03b1ede65eb76073ec7584",
+			"size": 204636,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-SemiBold.ttf",
+			"sha256": "035b9cbbf3e1762c05138351cfd9b93a21f7fdcf95275162f01645c11a5b5d0e",
+			"size": 202540,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/notosansgujaratiui/NotoSansGujaratiUI-Thin.ttf",
+			"sha256": "4c513b4be825c276e8c32966ebb2034408e993ac9f2eea42ac98d6707357fbff",
+			"size": 202304,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

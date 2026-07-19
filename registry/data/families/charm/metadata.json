@@ -1,0 +1,50 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2018-08-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Charm",
+	"id": "charm",
+	"license": {
+		"attribution": "Copyright 2018 The Charm Project Authors (https://github.com/cadsondemak/charm)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/charm",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/Charm",
+		"revision": "873c5516023ae978e5a9de9e67b654d9ed92fc30"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/charm/Charm-Bold.ttf",
+			"sha256": "6e1fa92fda7ab74fcce8ed5d7a9de10a0fb43d777590e8ef9f6931da6e932481",
+			"size": 139104,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/charm/Charm-Regular.ttf",
+			"sha256": "daae102e411243377016dbeb8cb9d53087d13074064fe79658afa966a9ac330e",
+			"size": 138160,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 387,
+				"sha256": "0e53bbd49a35114bb11aa259c73c8c115ac23a0c413ac17cf47238cff7cb9ac9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.000",
+			"outline": "glyf",
+			"path": "ofl/sixcaps/SixCaps.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

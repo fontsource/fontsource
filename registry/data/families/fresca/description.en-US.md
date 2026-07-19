@@ -1,0 +1,1 @@
+A very friendly font for display use with a fresh atmosphere, Fresca gives the text an alternative to comic settings.

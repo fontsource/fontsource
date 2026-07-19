@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-09-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Barry Schwartz",
+	"family": "Sorts Mill Goudy",
+	"id": "sorts-mill-goudy",
+	"license": {
+		"attribution": "Copyright (c) 2010, Barry Schwartz (chemoelectric@chemoelectric.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sortsmillgoudy",
+		"revision": "cf587adc3e372bf8e41926b690981f9e2aced8dc",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/sorts-mill-goudy",
+		"revision": "06072890c7b05f274215a24f17449655ccb2c8af"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sortsmillgoudy/SortsMillGoudy-Italic.ttf",
+			"sha256": "7a7720703749c74b657f5340eda5374d0b87a9653855d5cd2f23cc1083d9b0f9",
+			"size": 105684,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sortsmillgoudy/SortsMillGoudy-Regular.ttf",
+			"sha256": "3a1fdc0d151b29c562ad3f3b7d7cabf007783ba4dc69444d3a98666bb614352d",
+			"size": 121372,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 702,
+				"sha256": "74222a0fd6e83b434ab5b74c4f136c47b67fd28b19acbf33956eb68888dcb2bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/alumnisanscollegiateonesc/AlumniSansCollegiateOneSC-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 702,
+				"sha256": "74222a0fd6e83b434ab5b74c4f136c47b67fd28b19acbf33956eb68888dcb2bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/alumnisanscollegiateonesc/AlumniSansCollegiateOneSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

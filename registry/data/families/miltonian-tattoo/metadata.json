@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-04-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Miltonian Tattoo",
+	"id": "miltonian-tattoo",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Pablo Impallari (www.impallari.com impallari@gmail.com). Igino Marini (www.ikern.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/miltoniantattoo",
+		"revision": "500952db0f97c2bbc49fb2f2688ad863515c0116",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/Miltonian",
+		"revision": "95d180e8744380f93a8437226e58032d484882c7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/miltoniantattoo/MiltonianTattoo-Regular.ttf",
+			"sha256": "b4e9f4c263fc1e7beb14b09572ecb21ba893ce8d5e5cec1e5727c79d5c8583dc",
+			"size": 107880,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

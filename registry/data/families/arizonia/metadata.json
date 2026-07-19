@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Arizonia",
+	"id": "arizonia",
+	"license": {
+		"attribution": "Copyright 2007-2021 The Arizonia Project Authors (https://github.com/googlefonts/arizonia)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arizonia",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/arizonia",
+		"revision": "e135e3351c17de6f0f12066e98d7af9abe1cd76e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arizonia/Arizonia-Regular.ttf",
+			"sha256": "8df1c10bc15d0aba145d4599c25cafad83db686d2cefa42619f069b6f1bbce62",
+			"size": 126276,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

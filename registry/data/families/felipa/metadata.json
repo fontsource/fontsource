@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontstage",
+	"family": "Felipa",
+	"id": "felipa",
+	"license": {
+		"attribution": "Copyright (c) 2011 Fontstage (info@fontstage.com), with Reserved Font Name \"Felipa\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/felipa",
+		"revision": "ce74c68c93ee690652013c1ec4550c85b48fcee2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/felipa",
+		"revision": "3489dd2445fc633f3b32485420d9c56998fad093"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/felipa/Felipa-Regular.ttf",
+			"sha256": "d3f07e2669e046acc1030139a4b08046d7eca87c0b477a8cc99ac1c46af84edc",
+			"size": 40000,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

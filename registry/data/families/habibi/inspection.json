@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 413,
+				"sha256": "e6ee484802ebf5ec02fccbef72554cfe63c5dd36a65866e30001b14dd289b693"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/habibi/Habibi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

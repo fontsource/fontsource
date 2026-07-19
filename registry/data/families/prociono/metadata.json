@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-08-31",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Barry Schwartz",
+	"family": "Prociono",
+	"id": "prociono",
+	"license": {
+		"attribution": "Copyright (c) 2011, Barry Schwartz (chemoelectric@chemoelectric.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/prociono",
+		"revision": "46e9d50f2167442c4f563347d92753d5c7b72e2e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/prociono",
+		"revision": "f9d9680de6d6f0c13939f23c9dd14cd7853cf844"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/prociono/Prociono-Regular.ttf",
+			"sha256": "cfc641117fe748d9958d9891702692da61bf86917de5039a0b31d30f78ce427a",
+			"size": 31136,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

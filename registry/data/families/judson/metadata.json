@@ -1,0 +1,58 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Daniel Johnson",
+	"family": "Judson",
+	"id": "judson",
+	"license": {
+		"attribution": "Copyright (c) 2010, 2011 by Daniel Johnson (il.basso.buffo@gmail.com). Released under the terms of the SIL Open Font License v1.1.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/judson",
+		"revision": "6ee14a75a282b5f435bfe7f15638d1693702100f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/judson",
+		"revision": "a80a2aecb86b334586bc8b956ddf8b1bf61e144b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/judson/Judson-Bold.ttf",
+			"sha256": "07e77390c353d7e4e69862b91e0a79f6774b19d1602b5f4a504ed15ef6f1023c",
+			"size": 195504,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/judson/Judson-Italic.ttf",
+			"sha256": "2bddaed218ead284599fcdcc2889dfb59e804f89db48779e05c0ee87216fdd8f",
+			"size": 212008,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/judson/Judson-Regular.ttf",
+			"sha256": "73790bf79197e5bbf24178df3841ff27fb2fca05dd1f17fc1046e4bbe16caf95",
+			"size": 220844,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

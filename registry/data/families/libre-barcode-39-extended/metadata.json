@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2017-08-21",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Lasse Fister",
+	"family": "Libre Barcode 39 Extended",
+	"id": "libre-barcode-39-extended",
+	"license": {
+		"attribution": "Copyright 2017-2020 The Libre Barcode Project Authors (https://github.com/graphicore/librebarcode)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/librebarcode39extended",
+		"revision": "45cd16e763d6386067638fa06220b79cafd044c6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/graphicore/librebarcode",
+		"revision": "f9864c42b2c467f255659c8851c124e4cd56c67a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/librebarcode39extended/LibreBarcode39Extended-Regular.ttf",
+			"sha256": "4fd24568bda30f28cf430f5a9ba2aa3fcce3677e08f306edf30ab42fd6187535",
+			"size": 17396,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

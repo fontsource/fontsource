@@ -1,0 +1,58 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-11-21",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"malayalam",
+		"menu"
+	],
+	"designer": "Santhosh Thottingal",
+	"family": "Manjari",
+	"id": "manjari",
+	"license": {
+		"attribution": "Copyright 2018 The Manjari Project Authors (https://gitlab.com/smc/fonts/manjari)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/manjari",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://gitlab.com/smc/fonts/manjari",
+		"revision": "8948773e572ce0b58d93b0f120f561a0b02e9853"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/manjari/Manjari-Bold.ttf",
+			"sha256": "f19fef695b28e5448ae87451dfbab426676cadf4b59340558a157c0071b69d26",
+			"size": 151864,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/manjari/Manjari-Regular.ttf",
+			"sha256": "16460924696bfea2a2f71b4201d8786867c6413b548ecbd22bc6bfe55be90f95",
+			"size": 151056,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/manjari/Manjari-Thin.ttf",
+			"sha256": "0eab2fd482b2b0e6cd469c53d09513a2303ff91c86dc8c1ba42acfc73242bd72",
+			"size": 152332,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

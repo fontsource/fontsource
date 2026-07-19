@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 292,
+				"sha256": "1820939ef6360e01661d425e789a661c9900addadee0bcc1fea2f42604d5215b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2010.07.03",
+			"outline": "glyf",
+			"path": "ofl/goudybookletter1911/GoudyBookletter1911.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

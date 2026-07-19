@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2023-09-13",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Stefie Justprince",
+	"family": "Pixelify Sans",
+	"id": "pixelify-sans",
+	"license": {
+		"attribution": "Copyright 2021 The Pixelify Sans Project Authors (https://github.com/eifetx/Pixelify-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pixelifysans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/eifetx/Pixelify-Sans",
+		"revision": "39df74aba80df8157546034b878e8be1eb565ced"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pixelifysans/PixelifySans[wght].ttf",
+			"sha256": "9ba86cd010a4de309d263ceff8e8044092c9db7efda869620cb9ff1c4389e8a5",
+			"size": 79160,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

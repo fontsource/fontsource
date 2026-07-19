@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-06-10",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Tina Anderson, Corey Anderson",
+	"family": "Edu SA Beginner",
+	"id": "edu-sa-beginner",
+	"license": {
+		"attribution": "Copyright 2022 The AU School Handwriting Fonts Project Authors (https://github.com/MezMerrit/AU-School-Handwriting-Fonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/edusabeginner",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/MezMerrit/AU-School-Handwriting-Fonts",
+		"revision": "055799b858017157b6138e59833ab5b1a8947bbd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/edusabeginner/EduSABeginner[wght].ttf",
+			"sha256": "1ec0d8b4f3a6fda018079fa284570d2c4a3a514e3687d139b25b05dbb86c7ff4",
+			"size": 33724,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

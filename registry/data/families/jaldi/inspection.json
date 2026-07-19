@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 706,
+				"sha256": "3df746e20dffc9174417d19ddbed9e979b0c48ecbd5790e1e5feb04ea9e2c429"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.007",
+			"outline": "glyf",
+			"path": "ofl/jaldi/Jaldi-Bold.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 706,
+				"sha256": "3df746e20dffc9174417d19ddbed9e979b0c48ecbd5790e1e5feb04ea9e2c429"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.007",
+			"outline": "glyf",
+			"path": "ofl/jaldi/Jaldi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

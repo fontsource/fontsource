@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2013-09-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Christian Naths",
+	"family": "Redacted",
+	"id": "redacted",
+	"license": {
+		"attribution": "Copyright 2013 The Redacted Project Authors (https://github.com/christiannaths/redacted-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/redacted",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/christiannaths/redacted-font",
+		"revision": "c86d607ca8531631aeff4d3aacb44de05a2ed523"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/redacted/Redacted-Regular.ttf",
+			"sha256": "38d8c529c8a995426c8ec75d0b9d465296e541587632da038e4a5d030b4d1069",
+			"size": 15920,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

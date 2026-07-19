@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-06-28",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nick Shinn, Liron Lavi Turkenic",
+	"family": "Bellefair",
+	"id": "bellefair",
+	"license": {
+		"attribution": "Copyright 2015 The Bellefair Project Authors (https://github.com/shinntype/bellefair)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bellefair",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/shinntype/bellefair",
+		"revision": "879a39cbf0b78b01a14f7f750927a075da4055f8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bellefair/Bellefair-Regular.ttf",
+			"sha256": "5c0cd4d526e6dfcb189106af6b5e6ec99a54efb6d458dfd61626ce6dc0f03026",
+			"size": 65432,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

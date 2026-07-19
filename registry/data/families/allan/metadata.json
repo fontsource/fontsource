@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Anton Koovit",
+	"family": "Allan",
+	"id": "allan",
+	"license": {
+		"attribution": "Copyright (c) 2010-2012, Anton Koovit (anton@fatype.com), with Reserved Font Name 'Allan'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/allan",
+		"revision": "b99f2794a76a518181c5af29c82fbcad402a81f0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/allan",
+		"revision": "1d8c9a6e724cb21b6ff85293761a89ed0d59d20c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/allan/Allan-Bold.ttf",
+			"sha256": "c4d3781233b873ded3965200d4ea3b978ede2d7300d02c528da7a9ad9e7946ca",
+			"size": 115300,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/allan/Allan-Regular.ttf",
+			"sha256": "1216633f30f55dcfbe27f1f3a882a742ada9484a26ed26cbcf208f88e315b896",
+			"size": 56524,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

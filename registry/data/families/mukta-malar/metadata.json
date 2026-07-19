@@ -1,0 +1,94 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-02-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil"
+	],
+	"designer": "Ek Type",
+	"family": "Mukta Malar",
+	"id": "mukta-malar",
+	"license": {
+		"attribution": "Copyright (c) 2016, Ek Type. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/muktamalar",
+		"revision": "354844b814b53288a1650dadb76098929dcd2b19",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Mukta",
+		"revision": "7db4b0fc09894ad6814346172f6f0c1cf822a722"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/muktamalar/MuktaMalar-Bold.ttf",
+			"sha256": "d9b89b888d5e8c2e5e178118faffede3513ed74963cb2327a6381ebe6cc49c4c",
+			"size": 253112,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/muktamalar/MuktaMalar-ExtraBold.ttf",
+			"sha256": "111b0e1ec07834b6e3a4589e811affcf521740589bd40bd2c279ae111a071aca",
+			"size": 261092,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/muktamalar/MuktaMalar-ExtraLight.ttf",
+			"sha256": "b3509f55536f5ae6778b05f419b699ff315bed47218a4b7bbc848909a447a30e",
+			"size": 245020,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/muktamalar/MuktaMalar-Light.ttf",
+			"sha256": "c29de0bc65be9ac013d9d3add8fa9a90b084ad2c241c8991c1cf9b63966fb566",
+			"size": 239168,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/muktamalar/MuktaMalar-Medium.ttf",
+			"sha256": "24a63c81bf17a90a6593190bf9c7b676183f5943b4a529db1a4ef2eb0c71805f",
+			"size": 241356,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/muktamalar/MuktaMalar-Regular.ttf",
+			"sha256": "51904041260855ef4ba2bf845c9bc6511ea330157b704a44c85b029195d32a73",
+			"size": 243008,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/muktamalar/MuktaMalar-SemiBold.ttf",
+			"sha256": "da06e2bef0ed1298499804c3c53f8be0d6c138177c4eb9ff7e8bbab5c9f53e5e",
+			"size": 241480,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

@@ -1,0 +1,43 @@
+{
+	"id": "buhid",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1735",
+			"1736"
+		],
+		[
+			"1740",
+			"1753"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/buhid_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "a6580bed5fe7fff29608cb984fc0122216392847093097aa300fd60ad5d155d3",
+		"upstream": "namFiles"
+	}
+}

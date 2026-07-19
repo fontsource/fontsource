@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 372,
+				"sha256": "d0756d61eb22337a41b4439de9ab2c0914ad8e2f35b8babaf6612e4fbbe147f1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/jockeyone/JockeyOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"category": "monospace",
+	"dateAdded": "2015-05-13",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Christian Robertson",
+	"family": "Roboto Mono",
+	"id": "roboto-mono",
+	"license": {
+		"attribution": "Copyright 2015 The Roboto Mono Project Authors (https://github.com/googlefonts/robotomono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/robotomono",
+		"revision": "aa24661a5ba24c8f8a550a16fb13198719fc2c23",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/RobotoMono",
+		"revision": "111eb14e367888c9374da4da0b018e72cf8ac46d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/robotomono/RobotoMono-Italic[wght].ttf",
+			"sha256": "49ac343bb7b070071e53f0a8a501d68d140ed98ebd0a43b6b8fb96cf22f09ff7",
+			"size": 196792,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/robotomono/RobotoMono[wght].ttf",
+			"sha256": "66a80e79d17e4c7cabd162e2916578a4cc08fd19eef6e2a643305eae9c567b2b",
+			"size": 183700,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

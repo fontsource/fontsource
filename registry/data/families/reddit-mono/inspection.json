@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "3c762229b656635555b98739692891d5cf024be8e4b876b46a5e5a36aeae2d50"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.014",
+			"outline": "glyf",
+			"path": "ofl/redditmono/RedditMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

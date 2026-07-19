@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-06-17",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sorkin Type",
+	"family": "Asar",
+	"id": "asar",
+	"license": {
+		"attribution": "Copyright (c) 2014-2015, Sorkin Type Co (sorkintype.com | sorkintype@gmail.com). Copyright 2014 Pria Ravichandran (pria.ravichandran@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/asar",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Asar",
+		"revision": "d04fb75bf304be9bfb0eff403a1d6ef8dc6c5f94"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/asar/Asar-Regular.ttf",
+			"sha256": "8b4147354af009836d031f50af3e0450768d78b1e0e0281c7df17cd26440cc2e",
+			"size": 669032,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

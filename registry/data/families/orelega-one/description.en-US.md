@@ -1,0 +1,5 @@
+Orelega is a whimsical Clarendon font with oversized ears. Its design was based on Sagona Extra Bold by René Bieder, but it is not a shameless copy. Everything has been redrawn from the ground up, with many new aesthetic changes.
+
+Orelega is Esperanto for “large-eared”. It is composed of orel- “ear”, -eg- \[augments degree or size\], and -a \[adjective ending\].
+
+To contribute, see [github.com/JapanYoshi/Orelega](https://github.com/JapanYoshi/Orelega)

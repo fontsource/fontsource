@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 369,
+				"sha256": "c64e1fa6f7d6ad8026ada6bf14e6421af20889f6ed11ff116adec6713b95fdc4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/ribeyemarrow/RibeyeMarrow-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

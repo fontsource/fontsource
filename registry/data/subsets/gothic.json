@@ -1,0 +1,47 @@
+{
+	"id": "gothic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"B7",
+			"B7"
+		],
+		[
+			"304",
+			"305"
+		],
+		[
+			"308",
+			"308"
+		],
+		[
+			"331",
+			"331"
+		],
+		[
+			"10330",
+			"1034A"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/gothic_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "b26e80797497b9e086928605055eed5e5a3f72e024abf673ba832f5b179d2e24",
+		"upstream": "namFiles"
+	}
+}

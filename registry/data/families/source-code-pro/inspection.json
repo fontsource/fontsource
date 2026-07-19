@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1085,
+				"sha256": "a83395912f53fa12caaf8f13b224483fd5c163154eaaa43677198cf92eca7b04"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.026;hotconv 1.1.0;makeotfexe 2.6.0",
+			"outline": "glyf",
+			"path": "ofl/sourcecodepro/SourceCodePro-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1334,
+				"sha256": "048ae0dd9fb09e295bdd1e3228b30ac05d6aa9218556d26c34319cbc4dbaf139"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.026;hotconv 1.1.0;makeotfexe 2.6.0",
+			"outline": "glyf",
+			"path": "ofl/sourcecodepro/SourceCodePro[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

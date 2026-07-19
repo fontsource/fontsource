@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "TypeTogether",
+	"family": "Bree Serif",
+	"id": "bree-serif",
+	"license": {
+		"attribution": "Copyright (c) 2011, TypeTogether (www.type-together.com), with Reserved Font Names \"Bree\" and \"Bree Serif\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/breeserif",
+		"revision": "7ff5c685b4fd9476e50ebb7bfa3e2228873fd6c6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/breeserif",
+		"revision": "80b004f6325a65a90f50de70facec1c98d36ff9d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/breeserif/BreeSerif-Regular.ttf",
+			"sha256": "fd080582d70112ef479ba4ddd72407f9a4fcbcec4caa7d29de259b13eeb5f431",
+			"size": 46572,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

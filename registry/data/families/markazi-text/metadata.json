@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-06-06",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Borna Izadpanah, Florian Runge, Fiona Ross",
+	"family": "Markazi Text",
+	"id": "markazi-text",
+	"license": {
+		"attribution": "Copyright 2017 The Markazi Text Project Authors (https://github.com/BornaIz/markazitext)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/markazitext",
+		"revision": "6c109f02a1e1592d1abd26febb4768882e22b335",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/BornaIz/markazitext",
+		"revision": "51bb67cce0bb3609f8318077ab0f74b93d365007"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/markazitext/MarkaziText[wght].ttf",
+			"sha256": "424b7331681160ff2a4b209bfc356ea9564d429a7daea43ee4dc28de8ff4f9fe",
+			"size": 296896,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

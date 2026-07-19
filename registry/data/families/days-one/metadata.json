@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-17",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"menu"
+	],
+	"designer": "Jovanny Lemonad",
+	"family": "Days One",
+	"id": "days-one",
+	"license": {
+		"attribution": "Copyright (c) 2009 by Alexander Kalachev, Alexey Maslov, Jovanny Lemonad (lemonad@jovanny.ru). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/daysone",
+		"revision": "c32f75f4e6c382bf4286d91a2f2c8dd0acdfd3a4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/daysone",
+		"revision": "76642af05e1a7734f94e1b22abdbc37b6bfb933c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/daysone/DaysOne-Regular.ttf",
+			"sha256": "7b5a0e6d88696e43e95f6320613908e53d36ad854b4a18e4a1b8d1c19fdbf1fe",
+			"size": 65580,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

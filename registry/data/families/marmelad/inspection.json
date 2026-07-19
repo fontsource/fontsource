@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 749,
+				"sha256": "b15d341be42d8163c59ce018c78f278718827bef82f52c5ef75a15009432f80e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.110; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/marmelad/Marmelad-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

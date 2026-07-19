@@ -1,0 +1,57 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-09-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dale Sattler",
+	"family": "Sulphur Point",
+	"id": "sulphur-point",
+	"license": {
+		"attribution": "Copyright 2019 The Sulphur Point Project Authors (https://github.com/noponies)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sulphurpoint",
+		"revision": "7ee7795052356e0aaae9ce243979587df2490764",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/noponies/sulphur-point",
+		"revision": "2c1a600846ca8b7890a89076aeeb2d43cdaeac23"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sulphurpoint/SulphurPoint-Bold.ttf",
+			"sha256": "6c486637421b3b7507ade75795ca51abd5063fb74f2811618f393fae6d9ce8cb",
+			"size": 56188,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sulphurpoint/SulphurPoint-Light.ttf",
+			"sha256": "5d3aa827b5fd1544712081f4509df1451c36b1d10191291862902a51c7f78801",
+			"size": 56832,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/sulphurpoint/SulphurPoint-Regular.ttf",
+			"sha256": "46d6d54960c777007434e2a992b0ecf63c9f554c2b27f059321f4204662dcb6a",
+			"size": 54060,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

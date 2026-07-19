@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 4605,
+				"sha256": "f72283044f4a0758e536d0a6af0b04c4cc4362293e55857e950b78e545305e55"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.12 b168a",
+			"outline": "glyf",
+			"path": "ofl/stixtwomath/STIXTwoMath-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

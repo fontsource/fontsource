@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "d8ed022566f78a3462e2e30f67146acf2022e4314e58727c8f9d2285def30545"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS Version 1.000;PS 1.0;hotconv 1.;hotconv 1.0.78;makeotf.lib2.5.61930",
+			"outline": "glyf",
+			"path": "ofl/sitara/Sitara-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "097b63ef18faa7fcf6427df2114d3970398d7525c8ade2311504439ab8c1a114"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS Version 1.000;PS 1.0;hotconv 1.;hotconv 1.0.78;makeotf.lib2.5.61930",
+			"outline": "glyf",
+			"path": "ofl/sitara/Sitara-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "097b63ef18faa7fcf6427df2114d3970398d7525c8ade2311504439ab8c1a114"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS Version 1.000;PS 1.0;hotconv 1.;hotconv 1.0.78;makeotf.lib2.5.61930",
+			"outline": "glyf",
+			"path": "ofl/sitara/Sitara-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "d8ed022566f78a3462e2e30f67146acf2022e4314e58727c8f9d2285def30545"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS Version 1.000;PS 1.0;hotconv 1.;hotconv 1.0.78;makeotf.lib2.5.61930",
+			"outline": "glyf",
+			"path": "ofl/sitara/Sitara-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

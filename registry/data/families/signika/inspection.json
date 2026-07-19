@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 0,
+					"min": -30,
+					"tag": "GRAD"
+				},
+				{
+					"default": 300,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "24a52d3156bfc0f88150aaae1e7957493e3b35dde87026447909177fb731cd0f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003;gftools[0.9.32]",
+			"outline": "glyf",
+			"path": "ofl/signika/Signika[GRAD,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

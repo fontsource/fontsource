@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 856,
+				"sha256": "2e307b5539a6deb2559eee888f689e83456dde6168b0d0c4cd40370d00a36d2e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/baloo2/Baloo2[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,65 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Marcelo Magalhães",
+	"family": "Londrina Solid",
+	"id": "londrina-solid",
+	"license": {
+		"attribution": "Copyright 2011 The Londrina Solid Authors (https://github.com/marcelommp/Londrina-Typeface), with Reserved Font Name \"Londrina Solid\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/londrinasolid",
+		"revision": "c9d0f51fb813aacc12751647825814f7cdb5e091",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/marcelommp/Londrina-Typeface",
+		"revision": "7f4129ee609e13f4dc9bcdce6f8a08f5d9bc8060"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/londrinasolid/LondrinaSolid-Black.ttf",
+			"sha256": "8c63a15e3fa34e0b362abeb903944a2bd45e71b1efa122486c0a47e295eae06f",
+			"size": 93408,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/londrinasolid/LondrinaSolid-Light.ttf",
+			"sha256": "fc6f2572d00807895ac2ffe2c5cffb9fb107ccb75cdb62b5d159d7c9c81591a1",
+			"size": 85988,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/londrinasolid/LondrinaSolid-Regular.ttf",
+			"sha256": "e82b9b3ee21ccf153dcf67e5f4226a210474591a6ad31b5f17f2f14dc2524514",
+			"size": 92132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/londrinasolid/LondrinaSolid-Thin.ttf",
+			"sha256": "77761d803e937ec42a7f4b3be80ca15212a7d592dc10022838dc11df8e15fdb5",
+			"size": 80672,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

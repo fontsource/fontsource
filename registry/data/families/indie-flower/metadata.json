@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-03-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Indie Flower",
+	"id": "indie-flower",
+	"license": {
+		"attribution": "Copyright 2010 The Indie Flower Authors (kimberlygeswein.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/indieflower",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/indieflower",
+		"revision": "db44d10c34c1d74011b7f3bee8c7c12123b6068e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/indieflower/IndieFlower-Regular.ttf",
+			"sha256": "ccc94b22b156e9c5dfe50fd051f01b097600b252c24473e624bb43a143140a94",
+			"size": 108196,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

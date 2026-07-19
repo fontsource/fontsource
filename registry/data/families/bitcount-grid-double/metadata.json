@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-01-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Petr van Blokland",
+	"family": "Bitcount Grid Double",
+	"id": "bitcount-grid-double",
+	"license": {
+		"attribution": "Copyright 2024 The Bitcount Project Authors (https://github.com/petrvanblokland/TYPETR-Bitcount)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bitcountgriddouble",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/petrvanblokland/TYPETR-Bitcount",
+		"revision": "af0818eaeb3b0839806ea19134fc18f317cdcf5a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bitcountgriddouble/BitcountGridDouble[CRSV,ELSH,ELXP,slnt,wght].ttf",
+			"sha256": "8827445e53172735959d8ba11db8442ec5ffc8d8dc1b778781e9b5be5e20ffb2",
+			"size": 168224,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

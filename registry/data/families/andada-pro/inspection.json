@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 840,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 757,
+				"sha256": "239c5ac72f462da5b92f7beeff6a0638e0676021c37f3c94ce911feddd10531d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.003",
+			"outline": "glyf",
+			"path": "ofl/andadapro/AndadaPro-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 840,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 840,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 753,
+				"sha256": "933f44ad49a39fe0653c34c0688bf4300ea960328533643c6384c40b8f1f76d2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.003",
+			"outline": "glyf",
+			"path": "ofl/andadapro/AndadaPro[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 840,
+				"min": 400
+			}
+		}
+	]
+}

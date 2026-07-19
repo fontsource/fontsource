@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 380,
+				"sha256": "ba8a66158959997dd0afe06d84bce76166e32f6bdb994160a2d62d0d9c2dd261"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssogdian/NotoSansSogdian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

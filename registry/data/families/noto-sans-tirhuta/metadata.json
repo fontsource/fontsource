@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tirhuta"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Tirhuta",
+	"id": "noto-sans-tirhuta",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tirhuta)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanstirhuta",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/tirhuta",
+		"revision": "3c941a6f7183c147e807ed92b4a4f894c4e5e7f6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanstirhuta/NotoSansTirhuta-Regular.ttf",
+			"sha256": "ad7123ee63118b83ed2f723591e5e861baad8dd157508b8339362850c6036efe",
+			"size": 137848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

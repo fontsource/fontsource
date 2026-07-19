@@ -1,0 +1,31 @@
+{
+	"id": "pau-cin-hau",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"11AC0",
+			"11AF8"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/pau-cin-hau_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "10b0bfb5bf124597f0a518ecb0bbd8749b9fbebc93b3f95553d136cac6f71db5",
+		"upstream": "namFiles"
+	}
+}

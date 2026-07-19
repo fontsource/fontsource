@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 1000,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 936,
+				"sha256": "dbac244f498022e797876be4d52fb5ca7a79f730dc9c6fd507fa982ebb3a01ea"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.603",
+			"outline": "glyf",
+			"path": "ofl/mulish/Mulish-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 200,
+				"max": 1000,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 1000,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 936,
+				"sha256": "dbac244f498022e797876be4d52fb5ca7a79f730dc9c6fd507fa982ebb3a01ea"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.603",
+			"outline": "glyf",
+			"path": "ofl/mulish/Mulish[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 1000,
+				"min": 200
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Love Ya Like A Sister",
+	"id": "love-ya-like-a-sister",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Kimberly Geswein (kimberlygeswein@gmail.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/loveyalikeasister",
+		"revision": "a6c7ad9f76cd852957604754a88bd0ce68de2251",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/loveyalikeasister/LoveYaLikeASister.ttf",
+			"sha256": "4fbe2c1fa647de5a415acac7b2b6491542fe9767b6199719a3bd77a7cf35eb0d",
+			"size": 271924,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

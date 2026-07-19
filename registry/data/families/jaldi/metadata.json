@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-04-22",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Jaldi",
+	"id": "jaldi",
+	"license": {
+		"attribution": "Copyright (c) 2011-2015, Omnibus-Type (www.omnibus-type.com omnibus.type@gmail.com) with Reserved Font Name 'Jaldi' and 'Asap'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jaldi",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Jaldi",
+		"revision": "13315457c7dd2cadd03642a2edd9d9552d0c227f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jaldi/Jaldi-Bold.ttf",
+			"sha256": "5518eef27bab146f957c70fe50ef10bea8fe363d3ac75cc797aa882a7226bd99",
+			"size": 468300,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/jaldi/Jaldi-Regular.ttf",
+			"sha256": "26f34c48b7baa838dd459b5f5db026e9493bb468efc2956761c52134d478d2e2",
+			"size": 460664,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

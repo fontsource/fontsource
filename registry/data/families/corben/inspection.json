@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 380,
+				"sha256": "d229ad75fe7ff02cfd25580041ec8d4927b5dde4ba7f4d6d82375d8b21302a67"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/corben/Corben-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 350,
+				"sha256": "c8338c0bc3ff0ff0be752826d334330305bb45eb0c00c9ba17bf61acf90429d8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/corben/Corben-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "0f8c8f5dc5c2626a024e2a2ff44140108c3094aeb4090efde3d478047ccc8f2c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/radley/Radley-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "7c61a7464e78756f760a81cfa68ee1950795efa71db3a9f47bbe4ce18a65c1d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/radley/Radley-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

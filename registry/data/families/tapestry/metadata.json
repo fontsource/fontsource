@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-04-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Tapestry",
+	"id": "tapestry",
+	"license": {
+		"attribution": "Copyright 2003-2021 The Tapestry Project Authors (https://github.com/googlefonts/tapestry)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tapestry",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/tapestry",
+		"revision": "b38b62f1a12633abf4c2a11fad398afdd162427b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tapestry/Tapestry-Regular.ttf",
+			"sha256": "1434a2e7ba36fb5266a8ef7889eb4e873b64b58007e89c00caf5802cabdfff6f",
+			"size": 137716,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 435,
+				"sha256": "8747cd101d1a6c9766f965e53bb466a9740a527010bf8177eacfe48e4649d9bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.88",
+			"outline": "glyf",
+			"path": "ofl/kavivanar/Kavivanar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

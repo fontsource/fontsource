@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2020-08-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Bonjour Monde, Lucas Descroix",
+	"family": "Syne Tactile",
+	"id": "syne-tactile",
+	"license": {
+		"attribution": "Copyright 2019 The Syne Project Authors (https://gitlab.com/bonjour-monde/fonderie/syne-typeface)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/synetactile",
+		"revision": "5ef4ccb8f5fee7750467e0fd1844c50434cc081d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://gitlab.com/bonjour-monde/fonderie/syne-typeface",
+		"revision": "e536e8f1a8724bf282da74bbae410f91231ce94c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/synetactile/SyneTactile-Regular.ttf",
+			"sha256": "d47ec3693a8f7a7fdf72cdee0e45c8fa0e08bc0b41ba41b8cf31509065ff0620",
+			"size": 129820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-06"
+}

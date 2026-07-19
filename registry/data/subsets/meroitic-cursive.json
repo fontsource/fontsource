@@ -1,0 +1,39 @@
+{
+	"id": "meroitic-cursive",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"109A0",
+			"109B7"
+		],
+		[
+			"109BC",
+			"109CF"
+		],
+		[
+			"109D2",
+			"109FF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/meroitic-cursive_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "6a8e3840738dc9ec96e1c35ab3fecc90b0ad53d9ce7348a17e9cacc43a08ab31",
+		"upstream": "namFiles"
+	}
+}

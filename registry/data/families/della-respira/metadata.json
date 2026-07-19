@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-04-04",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Nathan Willis",
+	"family": "Della Respira",
+	"id": "della-respira",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Nathan Willis (nwillis@glyphography.com), with Reserved Font Names \"Della Respira\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dellarespira",
+		"revision": "58f37ee58d050a4c9d30878b385151434f7ecb95",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dellarespira/DellaRespira-Regular.ttf",
+			"sha256": "81518be5b7baf69db5b8e4cff1a447ac2f6bf7a6029ca4963a67e1fb1b0b9218",
+			"size": 51208,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

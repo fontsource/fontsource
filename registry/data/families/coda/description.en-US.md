@@ -1,0 +1,5 @@
+Eye-catching, no-messing, bandwidth-saving, Coda's Heavy (800) style is designed to be an unassuming, practical, impact heavy display font for the world wide web.
+
+Designed to be used in large sizes to bring bold information to web pages, it is complemented by a Regular weight for use in text and display contexts.
+
+These webfonts are designed to be used freely across the internet by web browsers on desktop computers, laptops and mobile devices.

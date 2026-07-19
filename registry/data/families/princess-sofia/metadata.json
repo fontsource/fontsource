@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-02-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tart Workshop",
+	"family": "Princess Sofia",
+	"id": "princess-sofia",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Font Diner, Inc DBA Tart Workshop (diner@fontdiner.com) with Reseved Font Name \"Princess Sofia\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/princesssofia",
+		"revision": "01fe8dc8622400d8b1d5e214b788f79ce13a7a60",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/princesssofia/PrincessSofia-Regular.ttf",
+			"sha256": "2b5df30a7b866cd764cc4ff586dc8c28e16967099d50ab582f003ffbc7228ee5",
+			"size": 272628,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,35 @@
+{
+	"id": "old-italic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10300",
+			"10323"
+		],
+		[
+			"1032D",
+			"1032F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/old-italic_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "c2c8ffc957d32a42857227ba3ae14589bc346aed3faf5539d18d418d94675a28",
+		"upstream": "namFiles"
+	}
+}

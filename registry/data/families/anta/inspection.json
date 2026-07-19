@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 400,
+				"sha256": "ab9ed58f47105089ae7ac57ad4ccdcfeb5664442530dd36cf24f908edcfca7cf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/anta/Anta-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

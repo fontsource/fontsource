@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Luxurious Script",
+	"id": "luxurious-script",
+	"license": {
+		"attribution": "Copyright 2015-2021 The Luxurious Project Authors (https://github.com/googlefonts/luxurious)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/luxuriousscript",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/luxurious",
+		"revision": "234fe6f071f7e4450893f159a4ca3512310c66ee"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/luxuriousscript/LuxuriousScript-Regular.ttf",
+			"sha256": "db1a118a34eb835f7960a09d8be472b65971d7798772842dc3cd37a8641491e9",
+			"size": 387952,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

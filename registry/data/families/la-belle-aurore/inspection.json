@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "653d49d36d3c98f82af9abdca5a48f0c5beba7311e3f1681047773e63edd2985"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001 2001",
+			"outline": "glyf",
+			"path": "ofl/labelleaurore/LaBelleAurore.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

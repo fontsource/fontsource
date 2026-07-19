@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "811affaea03cfe5c098637998f8143f7451df2a7b8145c1f1e2dbbcda8f48d4c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamahee/MuktaMahee-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "811affaea03cfe5c098637998f8143f7451df2a7b8145c1f1e2dbbcda8f48d4c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamahee/MuktaMahee-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "811affaea03cfe5c098637998f8143f7451df2a7b8145c1f1e2dbbcda8f48d4c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamahee/MuktaMahee-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "811affaea03cfe5c098637998f8143f7451df2a7b8145c1f1e2dbbcda8f48d4c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamahee/MuktaMahee-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "811affaea03cfe5c098637998f8143f7451df2a7b8145c1f1e2dbbcda8f48d4c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamahee/MuktaMahee-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "811affaea03cfe5c098637998f8143f7451df2a7b8145c1f1e2dbbcda8f48d4c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamahee/MuktaMahee-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "811affaea03cfe5c098637998f8143f7451df2a7b8145c1f1e2dbbcda8f48d4c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.538;PS 1.000;hotconv 16.6.51;makeotf.lib2.5.65220; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/muktamahee/MuktaMahee-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

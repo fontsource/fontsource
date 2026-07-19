@@ -1,0 +1,47 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-04-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Syncopate",
+	"id": "syncopate",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Brian J. Bonislawsky DBA Astigmatic (AOETI). All rights reserved. Available under the Apache 2.0 licence. http://www.apache.org/licenses/LICENSE-2.0.html",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/syncopate",
+		"revision": "5c938916d392bb1f5c65ecb7f0b5b4a03494d533",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/syncopate/Syncopate-Bold.ttf",
+			"sha256": "c71f5a40a83115518443c13474e5132804f4a91ce26e26fd9718cd3814ad4b2e",
+			"size": 63964,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "apache/syncopate/Syncopate-Regular.ttf",
+			"sha256": "fcbb10798b80c981afabaa1055bde2ee29b283069b44cdfc68457e903a056ac1",
+			"size": 174132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

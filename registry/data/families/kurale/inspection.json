@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 767,
+				"sha256": "ffc3ff0b61c7f8d6c5bec3065febc08fea76bbc26a6e8b408523ad8ef88bbff0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/kurale/Kurale-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,194 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Kanit",
+	"id": "kanit",
+	"license": {
+		"attribution": "Copyright 2020 The Kanit Project Authors (https://github.com/cadsondemak/kanit)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kanit",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/kanit",
+		"revision": "467dfe842185681d8042cd608b8291199dd37cda"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kanit/Kanit-Black.ttf",
+			"sha256": "5d290c2cc9926764bd782aa6abc47a8f55bd64641d0afb56e115ee522698ee7e",
+			"size": 176856,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-BlackItalic.ttf",
+			"sha256": "7fe3f1d87e33e165eae2d664e42a31faf542d24e431a2e7da36f4e4eee5f8529",
+			"size": 185464,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-Bold.ttf",
+			"sha256": "5dec5b080dab13de9d2295437c0ff3ec05c9e75587dfc31358c005eb4efa5e70",
+			"size": 176136,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-BoldItalic.ttf",
+			"sha256": "194d26ba90b782465bd4653cc5a1cdf7a9bed7b9e271df4f6fb41b5dba359d78",
+			"size": 183656,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-ExtraBold.ttf",
+			"sha256": "70082870d1f5bb6ae9faa708572b2c36de3c076caae187edae753f709d0de984",
+			"size": 177836,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-ExtraBoldItalic.ttf",
+			"sha256": "e874a96de66b5340174ddf9c621593280a21e9adb8e07bb1587112de274acad5",
+			"size": 188372,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-ExtraLight.ttf",
+			"sha256": "f90e440b41170f2f75f2930d3273dbe9ed7a5ac49f7dbdc375ba5f8d2e224745",
+			"size": 164140,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-ExtraLightItalic.ttf",
+			"sha256": "e62305565471f6ef1139581e2afbcd0b108fc2a8b140052cd06ec2852aad9cf9",
+			"size": 168260,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-Italic.ttf",
+			"sha256": "7cbe69393a7bf948dd49e575369344a907f06b0182e7a618c033c67208abb27d",
+			"size": 175160,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-Light.ttf",
+			"sha256": "7c04b0be6011782fcc4c032f4033ef6f6ba1fef99b135ba1ee68b800c53017ec",
+			"size": 171384,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-LightItalic.ttf",
+			"sha256": "e5cd0a7ce9ce65b7be59287320d247b7627b0a437a6a3bd1174440ceed4af1c6",
+			"size": 174936,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-Medium.ttf",
+			"sha256": "50a237034244026a7c63fe55e24e0b4298babe363cde043e032075b764c545a2",
+			"size": 174628,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-MediumItalic.ttf",
+			"sha256": "266a8044e599ce2feef7dffa8e3ce7648c94927daba20c4838629054633cf8c4",
+			"size": 175444,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-Regular.ttf",
+			"sha256": "27170c049660b2f962d3ed28441fd20f4c743503ca031fec9c2b4542d6c52736",
+			"size": 173148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-SemiBold.ttf",
+			"sha256": "67e64baf1a7e6e076435518ff0e6bf25c4d74b98143cd1a2688db906c0abce11",
+			"size": 174796,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-SemiBoldItalic.ttf",
+			"sha256": "df1f635f3022306a7f61ed03cdc1a90364f31e19454bd287cffe45f98ca805d0",
+			"size": 175508,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-Thin.ttf",
+			"sha256": "740d8a4d92ddae394d13a3caea845c048b6d62b58f9fb92ed4ac0118ed38c083",
+			"size": 160460,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/kanit/Kanit-ThinItalic.ttf",
+			"sha256": "6f61a638ba025b495fbf23a05f96af31ae3e9ca710506da123e3d63abdcf7d40",
+			"size": 165048,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

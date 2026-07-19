@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-08-10",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Joe Prince",
+	"family": "Geostar",
+	"id": "geostar",
+	"license": {
+		"attribution": "Copyright (c) 2011, Admix Designs (http://www.admixdesigns.com joe@admixdesigns.com) with Reserved Font Name Geostar.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/geostar",
+		"revision": "d974dfc1b59e685383e9cf641146701c88b11716",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/geostar",
+		"revision": "ca481fdb49204442916697e3d7b1cf6fda792b77"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/geostar/Geostar-Regular.ttf",
+			"sha256": "891b92c124bbe4ac006c0b8b7402215486b7cb7951488178f415694a5898d12b",
+			"size": 41288,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

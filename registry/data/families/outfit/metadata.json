@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-09-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Smartsheet Inc, Rodrigo Fuenzalida",
+	"family": "Outfit",
+	"id": "outfit",
+	"license": {
+		"attribution": "Copyright 2021 The Outfit Project Authors (https://github.com/Outfitio/Outfit-Fonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/outfit",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Outfitio/Outfit-Fonts",
+		"revision": "902773808eb372f70fb34e8946dd1ffe604efc79"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/outfit/Outfit[wght].ttf",
+			"sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+			"size": 110884,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

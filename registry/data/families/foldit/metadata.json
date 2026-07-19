@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2022-10-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Sophia Tai",
+	"family": "Foldit",
+	"id": "foldit",
+	"license": {
+		"attribution": "Copyright 2021-2022 The Foldit Font Project Authors (https://www.github.com/sophiadesign/GF-Foldit)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/foldit",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SophiaDesign/Foldit",
+		"revision": "934034370b760240516ba533549436935c49fbc2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/foldit/Foldit[wght].ttf",
+			"sha256": "cd0f1932ed7762ce679b4f39dafc181660883b14d97a1260c074a88d3915212e",
+			"size": 520484,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

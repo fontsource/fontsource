@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 13360,
+				"sha256": "9d005e6bf150e55f6660cc1dc50cb1aad752f28bcdac546f5f279e90bfef06c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;hotconv 1.1.1;makeotfexe 2.6.0",
+			"outline": "glyf",
+			"path": "ofl/wdxllubrifonttc/WDXLLubrifontTC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

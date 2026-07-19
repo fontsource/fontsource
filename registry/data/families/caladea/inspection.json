@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 435,
+				"sha256": "fb9b1562ffca336811656c8b12a8b6238f6e13887e270d1965ea38eafa127144"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/caladea/Caladea-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 430,
+				"sha256": "466429a88086e6bcc8718ddf30e5665879702d2de685288624fa6d093e4ee197"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/caladea/Caladea-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 430,
+				"sha256": "466429a88086e6bcc8718ddf30e5665879702d2de685288624fa6d093e4ee197"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/caladea/Caladea-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 435,
+				"sha256": "fb9b1562ffca336811656c8b12a8b6238f6e13887e270d1965ea38eafa127144"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/caladea/Caladea-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

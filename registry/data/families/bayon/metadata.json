@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Bayon",
+	"id": "bayon",
+	"license": {
+		"attribution": "Copyright 2019 The Bayon Project Authors (https://github.com/danhhong/Bayon)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bayon",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Bayon",
+		"revision": "1749b1d8a8321d4294aae0f73ebb473535c39aee"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bayon/Bayon-Regular.ttf",
+			"sha256": "ffdeb7ad5ca1abd37631b0a637aaa1b2cd695f85e582f5c75ccce26bdaaf51b6",
+			"size": 55132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

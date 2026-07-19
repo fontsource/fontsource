@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-02-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tart Workshop",
+	"family": "Butterfly Kids",
+	"id": "butterfly-kids",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Font Diner, Inc DBA Tart Workshop (diner@fontdiner.com) with Reseved Font Name \"Butterfly Kids\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/butterflykids",
+		"revision": "c9581ea65df061082c761ad8cdafa6e2c98519ab",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/butterflykids",
+		"revision": "0c553b23416ad40db0b241d1d0b9165d890933b7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/butterflykids/ButterflyKids-Regular.ttf",
+			"sha256": "4a131f49c3d90e816e6447d244090eb2c36cdbf26be53254271ccdf2d8d111b9",
+			"size": 202848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"soyombo"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Soyombo",
+	"id": "noto-sans-soyombo",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/soyombo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssoyombo",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/soyombo",
+		"revision": "c2488cb18ec2296faa98ddc50144c1be4e94dffb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssoyombo/NotoSansSoyombo-Regular.ttf",
+			"sha256": "a1ed643ffe8f84fd7c397a6eb0030f58e2722e7acd8b6a2305f33bf569d1bb2f",
+			"size": 132532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-06-26",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Daniel Uzquiano",
+	"family": "Nata Sans",
+	"id": "nata-sans",
+	"license": {
+		"attribution": "Copyright 2025 The Nata Sans Project Authors (https://github.com/dnlzqn/nata-sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/natasans",
+		"revision": "18b7347881abd9f97f000549c46141b96a680537",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/dnlzqn/nata-sans",
+		"revision": "dd4741f58266ea26270ff1e487856b1ea73eb5b8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/natasans/NataSans[wght].ttf",
+			"sha256": "f8867b7b2d02c3513398412d06f6bc264f414a90753943297fc44d53cfb60559",
+			"size": 434804,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-01-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Open Window",
+	"family": "Calligraffitti",
+	"id": "calligraffitti",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Open Window. All rights reserved.",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"origin": {
+		"available": true,
+		"directory": "apache/calligraffitti",
+		"revision": "23d083ea347fd3f0bbb061c1dfbe7777b6c93d6b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/calligraffitti",
+		"revision": "983f7f33e1a63da6369e2f626ba9166ab7468fb9"
+	},
+	"sourceFiles": [
+		{
+			"path": "apache/calligraffitti/Calligraffitti-Regular.ttf",
+			"sha256": "d6c0464e8c53dd8fefca7ee3af1aa2c20c6cf6a40e4537d2cd4353bff3a168d0",
+			"size": 59860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,71 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-05-19",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "SIL International",
+	"family": "Gentium Book Plus",
+	"id": "gentium-book-plus",
+	"license": {
+		"attribution": "Copyright (c) 2003-2022 SIL International",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gentiumbookplus",
+		"revision": "c92f92dac919ca89a14d75655e89cf3f525310ca",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-gentium",
+		"revision": "7ac5e5ca61b776c5b8df4522c04b9707573ffd42"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gentiumbookplus/GentiumBookPlus-Bold.ttf",
+			"sha256": "b39c3fb12e2e15e2336f2ec6d051c778618ec25f7360bc4765bfe755b408c011",
+			"size": 834852,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gentiumbookplus/GentiumBookPlus-BoldItalic.ttf",
+			"sha256": "e557dd7a7f818fa482c3e63c7576c6d455f6f2e3bf9d84e0a11d1617e2bc1383",
+			"size": 891412,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gentiumbookplus/GentiumBookPlus-Italic.ttf",
+			"sha256": "7a0ab4bd78701fa46d325e362654c41a47e2a0a5cb4a3eebc94dce89c2ee7df1",
+			"size": 882904,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/gentiumbookplus/GentiumBookPlus-Regular.ttf",
+			"sha256": "fe7b64eeacc430fcf46836a6f0dfe00d2c5a15483ed36692a2a185cb23ec2a5c",
+			"size": 818952,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

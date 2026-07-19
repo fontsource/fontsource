@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 129,
+				"sha256": "65ff1efde087121fd85eff5e67d6a6e6f85406e0cd1a5f674ab428756e60f6b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "apache/jsmathcmbx10/jsMath-cmbx10.ttf",
+			"style": "normal",
+			"weight": 700
+		}
+	]
+}

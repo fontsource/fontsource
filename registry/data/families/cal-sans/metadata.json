@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-03-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mark Davis, Cal.com Inc.",
+	"family": "Cal Sans",
+	"id": "cal-sans",
+	"license": {
+		"attribution": "Copyright 2021 The Cal Sans Project Authors (https://github.com/calcom/font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/calsans",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/calcom/font",
+		"revision": "b833fb1129ba8c62c29b1d9f70861c77204affe2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/calsans/CalSans-Regular.ttf",
+			"sha256": "040f5d1335848146e769ca40ce9664ca8b7639eecdd7316f468b7db20d1c9c01",
+			"size": 102768,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

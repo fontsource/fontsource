@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2024-05-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Patric King",
+	"family": "Big Shoulders Stencil Display SC",
+	"id": "big-shoulders-stencil-display-sc",
+	"license": {
+		"attribution": "Copyright 2019 The Big Shoulders Project Authors (https://github.com/xotypeco/big_shoulders)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bigshouldersstencildisplaysc",
+		"revision": "f892d358de8e4cf825e8e017b56d123ec4b31469",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/xotypeco/big_shoulders",
+		"revision": "0b3d09a86862b19efae28eae0cd868f17c476b20"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bigshouldersstencildisplaysc/BigShouldersStencilDisplaySC[wght].ttf",
+			"sha256": "42e26acf67c9fcda467a38b63f5a7cd022b55aa96bdc4af249ab8058dd1cc3fc",
+			"size": 206484,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-29"
+}

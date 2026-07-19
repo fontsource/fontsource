@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 93,
+				"sha256": "ba1da0b4f5bf5471a0b7261844f0047e6567bbfdc07ebc14812c6aad35ce8c78"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/yarndings20charted/Yarndings20Charted-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

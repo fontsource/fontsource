@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-02-16",
+	"declaredSubsets": [
+		"gurmukhi",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Anek Gurmukhi",
+	"id": "anek-gurmukhi",
+	"license": {
+		"attribution": "Copyright 2021 The Anek Project Authors (https://github.com/EkType/Anek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anekgurmukhi",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Anek",
+		"revision": "34074c6b406f4112e20c7ad10254a6e954d0324b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anekgurmukhi/AnekGurmukhi[wdth,wght].ttf",
+			"sha256": "40d72129eb332d7c4fafd25e80a30d2ac11f45e14a1660d6f7bacbf9c800d7d5",
+			"size": 357420,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

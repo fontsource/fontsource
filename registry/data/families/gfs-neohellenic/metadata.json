@@ -1,0 +1,68 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-09-21",
+	"declaredSubsets": [
+		"greek",
+		"greek-ext",
+		"latin",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Greek Font Society",
+	"family": "GFS Neohellenic",
+	"id": "gfs-neohellenic",
+	"license": {
+		"attribution": "Copyright (c) Designed by Takis Katsoulidis and George D. Matthiopoulos (gfs@greekfontsociety.gr)., 2001. All rights reserved.\nCopyright (c) Takis Katsoulidis and George D. Matthiopoulos (gfs@greekfontsociety.gr) , 2001. All rights reserved.\nCopyright (c) Takis Katsoulidis and George D. Matthiopoulos (gfs@greekfontsociety.gr), 1993-2001. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gfsneohellenic",
+		"revision": "73a9aa7c505eb902435376ca9a9c4ca9c2b05bd7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/gfsneohellenic",
+		"revision": "76fc8bb657ac989832180f3b6dea778862059532"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gfsneohellenic/GFSNeohellenic.ttf",
+			"sha256": "14d54dd7f36fdd7140d3f6357c99a8ead988a808b298471e02ba2c0992aa110d",
+			"size": 460072,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/gfsneohellenic/GFSNeohellenicBold.ttf",
+			"sha256": "b1a3900f5f3327ab79d18c762fca17e46c0db37a32fbf34f7dca41458bd46f53",
+			"size": 344708,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gfsneohellenic/GFSNeohellenicBoldItalic.ttf",
+			"sha256": "b486c325aadd1c7dc4f5a87c41ae9c8823ea7285de9d7ad8f8fa6e836d41cad1",
+			"size": 362080,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gfsneohellenic/GFSNeohellenicItalic.ttf",
+			"sha256": "39214ba27aec72823881bdc967b6b8929079609749db1911eda0f7072e461688",
+			"size": 369060,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

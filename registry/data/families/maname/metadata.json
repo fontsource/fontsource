@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-06-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sinhala",
+		"vietnamese"
+	],
+	"designer": "Pathum Egodawatta, Mooniak",
+	"family": "Maname",
+	"id": "maname",
+	"license": {
+		"attribution": "Copyright 2015-2023 The Maname Project Authors (https://github.com/mooniak/maname-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/maname",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mooniak/maname-font",
+		"revision": "626ceee1311626c5240a68b0ef27722f44c374af"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/maname/Maname-Regular.ttf",
+			"sha256": "db07b4953f547081186104ab8e626bf405616b033598ee82eae90166e0c84e14",
+			"size": 501400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

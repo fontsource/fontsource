@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Waterfall",
+	"id": "waterfall",
+	"license": {
+		"attribution": "Copyright 2011 The Waterfall Project Authors (https://github.com/googlefonts/waterfall)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/waterfall",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/waterfall",
+		"revision": "89e483e54f06bc487898d221f99c1050ad8154b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/waterfall/Waterfall-Regular.ttf",
+			"sha256": "83dd964cccae10084e3f3b3168247d47a06375f9efe893cee0b5488cba83eff3",
+			"size": 521348,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

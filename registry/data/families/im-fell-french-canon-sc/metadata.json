@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Igino Marini",
+	"family": "IM Fell French Canon SC",
+	"id": "im-fell-french-canon-sc",
+	"license": {
+		"attribution": "© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL French Canon SC",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imfellfrenchcanonsc",
+		"revision": "3ec2a3f134c20cf16575bf76fabaf8c0a01deb7a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/imfellfrenchcanonsc",
+		"revision": "e7117aa9c7faa9e456fea0ec4806c284a21b54fd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imfellfrenchcanonsc/IMFeFCsc28P.ttf",
+			"sha256": "2eeab14e384b07fc27439fb992ba16c77a2996e2227e67e7627ec07c6fd01d9f",
+			"size": 136188,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

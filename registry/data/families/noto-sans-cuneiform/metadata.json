@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"cuneiform",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Cuneiform",
+	"id": "noto-sans-cuneiform",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/cuneiform)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanscuneiform",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/cuneiform",
+		"revision": "24c590e3586376ead66466b6c8b8a810df24d06f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanscuneiform/NotoSansCuneiform-Regular.ttf",
+			"sha256": "b4e0a892514fcb1beb081c8b652fb36689f77105491d1796c2c3f5a59b4524d2",
+			"size": 1425840,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

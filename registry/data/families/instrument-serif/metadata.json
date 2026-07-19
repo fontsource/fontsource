@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-03-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Rodrigo Fuenzalida, Jordan Egstad",
+	"family": "Instrument Serif",
+	"id": "instrument-serif",
+	"license": {
+		"attribution": "Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/instrumentserif",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Instrument/instrument-serif",
+		"revision": "65c0ef225f386a3c7e87570a4aa9cc0262c2fd81"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/instrumentserif/InstrumentSerif-Italic.ttf",
+			"sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385",
+			"size": 71592,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/instrumentserif/InstrumentSerif-Regular.ttf",
+			"sha256": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88",
+			"size": 70012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

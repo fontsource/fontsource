@@ -1,0 +1,53 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Display",
+	"id": "noto-serif-display",
+	"license": {
+		"attribution": "Copyright 2016 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifdisplay",
+		"revision": "e83e28b3d3a31775e843d142bfd79b26afccc9ba",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/latin-greek-cyrillic",
+		"revision": "41644bc7a679a27da9b44d1875e6a5f651c80674"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifdisplay/NotoSerifDisplay-Italic[wdth,wght].ttf",
+			"sha256": "daad4d314708839a5c343f26e75467edf6c05a3a726502c98974dd3e240e6516",
+			"size": 2000744,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/notoserifdisplay/NotoSerifDisplay[wdth,wght].ttf",
+			"sha256": "4b661adcf6a5d38bf5befdc4d976e8a7238a4aeb57e62c1c1a67775380a09df9",
+			"size": 1835176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

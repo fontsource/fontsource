@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 702,
+				"sha256": "944206b6f10faeb037b34ad1c7f17e15340717b0ca4c7cbf8a5354161fed358f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/alumnisanspinstripe/AlumniSansPinstripe-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 702,
+				"sha256": "944206b6f10faeb037b34ad1c7f17e15340717b0ca4c7cbf8a5354161fed358f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/alumnisanspinstripe/AlumniSansPinstripe-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3150,
+				"sha256": "02cf8eefaae842bdfeb23adfedafd381487e41715aaf0063fde944fdcb2ac060"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/diphylleia/Diphylleia-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

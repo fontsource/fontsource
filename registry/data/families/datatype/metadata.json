@@ -1,0 +1,39 @@
+{
+	"category": "monospace",
+	"dateAdded": "2026-02-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Frank Tisellano",
+	"family": "Datatype",
+	"id": "datatype",
+	"license": {
+		"attribution": "Copyright 2026 The Datatype Project Authors (https://github.com/franktisellano/datatype)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/datatype",
+		"revision": "e37dcc1ec707d4cef933212558d31c293cfcdb84",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/franktisellano/datatype",
+		"revision": "1a17d767ba7fecd54d47ec11b2f7ed644a31513d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/datatype/Datatype[wdth,wght].ttf",
+			"sha256": "ecc12db4d3d268be54f3de142064784633bf489081e70d0f29dde948a0bfc791",
+			"size": 4201224,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-04"
+}

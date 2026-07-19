@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 417,
+				"sha256": "477c47c622d28aa6c76e552dea8c0c1228548b4ab54ad1cad065f649f6c3455c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.007",
+			"outline": "glyf",
+			"path": "ofl/notorashihebrew/NotoRashiHebrew[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

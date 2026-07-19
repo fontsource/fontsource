@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil"
+	],
+	"designer": "Tharique Azeez",
+	"family": "Kavivanar",
+	"id": "kavivanar",
+	"license": {
+		"attribution": "Copyright (c) 2015, Tharique Azeez (http://thariqueazeez.com|zeezat@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kavivanar",
+		"revision": "430548aad6576c8eb3ac429f2e97b974d29394cf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/enathu/kavivanar",
+		"revision": "689a10bac6313880ae05b86aea2ad91979c9880d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kavivanar/Kavivanar-Regular.ttf",
+			"sha256": "ab373a218ee8464fee6ed14ee864d5a6c5146ca0458f0a61678a1889fe44b710",
+			"size": 66324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 648,
+				"sha256": "036831e2569e1f4874dbcd7870425973d34cfeba3ea6d583e48bb70dbb7ae26a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200",
+			"outline": "glyf",
+			"path": "ofl/faustina/Faustina-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 800,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 649,
+				"sha256": "90bc85cc0a3b7826f2a687374cd1743e8ff3975ed7d537940a78bf6e6aa45bfb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200",
+			"outline": "glyf",
+			"path": "ofl/faustina/Faustina[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 253,
+				"sha256": "ad5812a58fcd65b5fbe791eca0bf0cc36a526b22202fbd866a0dd5452bed7c61"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "ofl/lumanosimo/Lumanosimo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

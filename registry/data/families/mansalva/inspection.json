@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 775,
+				"sha256": "8f04c224f8d69ab7a26a81c1c3f1b78c51aa9c545ea91303ef584d920ad8b70d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.112; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/mansalva/Mansalva-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

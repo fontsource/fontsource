@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"meetei-mayek",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Meetei Mayek",
+	"id": "noto-sans-meetei-mayek",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/meetei-mayek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmeeteimayek",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/meetei-mayek",
+		"revision": "0df27325288cee071d2f5d06016b0de1e6738aa5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmeeteimayek/NotoSansMeeteiMayek[wght].ttf",
+			"sha256": "d56eb6d54ad8aad3570b7ee07f64866832a04f29bce6e5f183918c9eaf008fac",
+			"size": 95616,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

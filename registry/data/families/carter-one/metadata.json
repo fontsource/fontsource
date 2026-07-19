@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Carter One",
+	"id": "carter-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Vernon Adams (vern@newtypography.co.uk) with Reserved Font Name 'Carter One'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/carterone",
+		"revision": "4c163cc5600734ea58b7ea6e410949028c698f4e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/carterone",
+		"revision": "dfb0d97f8eb2fa66680b6098cdde15277b069b2b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/carterone/CarterOne.ttf",
+			"sha256": "9267b32e571924b5977a3bfb068726603a1eecf2af8dadbc4262e943b53959c8",
+			"size": 66532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-08-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "McLaren",
+	"id": "mclaren",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"McLaren\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mclaren",
+		"revision": "d6b6c804c3c4f9b79d5ba149696846fdebba01fd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mclaren/McLaren-Regular.ttf",
+			"sha256": "3164e0dbdaa761e9a6bc1dff3532a3b3f631b6f2137c09847b2a7514e4bdc4ef",
+			"size": 54504,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

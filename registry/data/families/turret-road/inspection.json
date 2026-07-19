@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "0483efde771c3e4c22f5276184c269973f82255f4041d9493b17b5b48a0cd7d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/turretroad/TurretRoad-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "0483efde771c3e4c22f5276184c269973f82255f4041d9493b17b5b48a0cd7d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/turretroad/TurretRoad-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "0483efde771c3e4c22f5276184c269973f82255f4041d9493b17b5b48a0cd7d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/turretroad/TurretRoad-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "0483efde771c3e4c22f5276184c269973f82255f4041d9493b17b5b48a0cd7d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/turretroad/TurretRoad-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "0483efde771c3e4c22f5276184c269973f82255f4041d9493b17b5b48a0cd7d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/turretroad/TurretRoad-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "0483efde771c3e4c22f5276184c269973f82255f4041d9493b17b5b48a0cd7d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/turretroad/TurretRoad-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

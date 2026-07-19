@@ -1,0 +1,3 @@
+Zilla Slab is Mozilla's core typeface, used for the Mozilla wordmark, headlines and throughout their designs. A contemporary slab serif, based on Typotheque's Tesla, it is constructed with smooth curves and true italics, which gives text an unexpectedly sophisticated industrial look and a friendly approachability in all weights.
+
+Designed [by Typotheque](https://www.typotheque.com/blog/new_wordmark_and_typeface_for_mozilla), this project is led by Mozilla. To contribute, see [github.com/mozilla/zilla-slab](https://github.com/mozilla/zilla-slab)

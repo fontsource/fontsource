@@ -1,0 +1,51 @@
+{
+	"id": "meroitic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"3A",
+			"3A"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"2026",
+			"2026"
+		],
+		[
+			"205D",
+			"205D"
+		],
+		[
+			"10980",
+			"109B7"
+		],
+		[
+			"109BC",
+			"109CF"
+		],
+		[
+			"109D2",
+			"109FF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/meroitic_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "5eeb2320a4cbb5ddaee4082484b053e2c1e254f0f343a5e301bb932bc82d925a",
+		"upstream": "namFiles"
+	}
+}

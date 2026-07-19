@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 400,
+				"sha256": "56eec900ee9fc8d42af3bd047ba28dc032bea79c9ee921fd11c753901e587d03"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansmasaramgondi/NotoSansMasaramGondi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

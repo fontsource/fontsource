@@ -1,0 +1,65 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"menu",
+		"oriya"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Oriya UI",
+	"id": "noto-sans-oriya-ui",
+	"license": {
+		"attribution": "Copyright 2019 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansoriyaui",
+		"revision": "b1b4d6a4ec1dce769aa389a3eb0b4df3f15aea49",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/oriya",
+		"revision": "1f6ceddd27226ad9b6bb878b4c9d6c53ee9262b4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Black.ttf",
+			"sha256": "ba5174bfd33278d3d28cf092ae64e3bdedeba0ad8cf8cfa6b4338b3556712b8b",
+			"size": 91456,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Bold.ttf",
+			"sha256": "0083e64c0b67116b8ecc920c0284301971c9099bf33a383eb38fd42e29476fa4",
+			"size": 93020,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Regular.ttf",
+			"sha256": "2d151a5c2c9fb01a6cbe767f200b263d090d88bf6a74880f43ed81c211e51fb2",
+			"size": 95868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Thin.ttf",
+			"sha256": "7fea1870b88536a0e6efb66dc862993629036334b425e8966c1b3cee21d9f887",
+			"size": 99136,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

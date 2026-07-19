@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Ranchers",
+	"id": "ranchers",
+	"license": {
+		"attribution": "Copyright (c) 2012, Pablo Impallari (www.impallari.com|impallari@gmail.com), Brenda Gallo. (gbrenda1987@gmail.com), with Reserved Font Name Ranchers.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ranchers",
+		"revision": "7b0cca11e215010855b5de51df02a60bed306dc3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ranchers/Ranchers-Regular.ttf",
+			"sha256": "19568aba8965664d1bc6f5a48c24d269c97501eed87af26b912f42b6e6f22adc",
+			"size": 167420,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

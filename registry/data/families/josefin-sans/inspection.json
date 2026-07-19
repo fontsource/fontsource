@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 574,
+				"sha256": "8c374769d34b25645699832f0be9a8fe76674f58d7d58dbfcfa18d4f02426bc9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/josefinsans/JosefinSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 574,
+				"sha256": "8c374769d34b25645699832f0be9a8fe76674f58d7d58dbfcfa18d4f02426bc9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/josefinsans/JosefinSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

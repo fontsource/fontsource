@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-08-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ksenya Erulevich, Cyreal",
+	"family": "Alice",
+	"id": "alice",
+	"license": {
+		"attribution": "Copyright 2011 The Alice Project Authors (https://github.com/cyrealtype/Alice)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alice",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Alice",
+		"revision": "13be04734d33464e627bd201d35aa9697feed289"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alice/Alice-Regular.ttf",
+			"sha256": "8212c40f10b306af9b82272ae68314de6964522b6dabf6abdaff647e74ac8b58",
+			"size": 129200,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

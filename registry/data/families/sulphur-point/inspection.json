@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 361,
+				"sha256": "90cbce83dba2d9f2dc15c353aa2ec79291247abc1cb05f08d50d37eb7b701182"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/sulphurpoint/SulphurPoint-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 361,
+				"sha256": "90cbce83dba2d9f2dc15c353aa2ec79291247abc1cb05f08d50d37eb7b701182"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/sulphurpoint/SulphurPoint-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 361,
+				"sha256": "90cbce83dba2d9f2dc15c353aa2ec79291247abc1cb05f08d50d37eb7b701182"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8)",
+			"outline": "glyf",
+			"path": "ofl/sulphurpoint/SulphurPoint-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

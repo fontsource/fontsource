@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-12-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Mea Culpa",
+	"id": "mea-culpa",
+	"license": {
+		"attribution": "Copyright 2003-2021 The Mea Culpa Project Authors (https://github.com/googlefonts/mea-culpa)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/meaculpa",
+		"revision": "d92a4f3214862c9026ce734e85587dd68d88a5c2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/mea-culpa",
+		"revision": "13dd5b66076ddc6706d85a30dfed8d007e2f8350"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/meaculpa/MeaCulpa-Regular.ttf",
+			"sha256": "c5a293151793820d25ff10844f1418170ae755fa61d0a126cefa1e9b82f21ce5",
+			"size": 162232,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

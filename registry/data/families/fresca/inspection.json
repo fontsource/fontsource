@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 272,
+				"sha256": "01ab3097178204a67973ee16c7d136098e8df2e05939626355bbc3fb5b88c1c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/fresca/Fresca-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

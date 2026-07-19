@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"psalter-pahlavi"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Psalter Pahlavi",
+	"id": "noto-sans-psalter-pahlavi",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/psalter-pahlavi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanspsalterpahlavi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/psalter-pahlavi",
+		"revision": "2f531fdc967e90d6d01da58384063314ccd14bf5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanspsalterpahlavi/NotoSansPsalterPahlavi-Regular.ttf",
+			"sha256": "1df586f1f62820f7c71c2d6cf9e2c006673a028ec515b0656fb617b0859e4c14",
+			"size": 76400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 512,
+				"sha256": "01fce8648e56602610ffe3df23fa0301969ff9b8cbeb07b2360bd83a0bd69cfe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/annapurnasil/AnnapurnaSIL-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 512,
+				"sha256": "01fce8648e56602610ffe3df23fa0301969ff9b8cbeb07b2360bd83a0bd69cfe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/annapurnasil/AnnapurnaSIL-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

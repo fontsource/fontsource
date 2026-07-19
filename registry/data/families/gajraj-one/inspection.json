@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 515,
+				"sha256": "0f577eba550550a745ec4e08cd15cbbc3e3fffcd62b3ff402c3f8c77d07ada10"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/gajrajone/GajrajOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

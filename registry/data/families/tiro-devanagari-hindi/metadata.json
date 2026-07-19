@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-03-30",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tiro Typeworks, John Hudson, Fiona Ross, Paul Hanslow",
+	"family": "Tiro Devanagari Hindi",
+	"id": "tiro-devanagari-hindi",
+	"license": {
+		"attribution": "Copyright 2020 The Indigo Project Authors (https://github.com/TiroTypeworks/Indigo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tirodevanagarihindi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Indigo",
+		"revision": "98b5d3a01c534b7029af04a59d31e0d7d90be15a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tirodevanagarihindi/TiroDevanagariHindi-Italic.ttf",
+			"sha256": "eed07aca7291e34fa2c4f3e48be325b261f60516ecf835610fee30dade0f78ec",
+			"size": 425636,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tirodevanagarihindi/TiroDevanagariHindi-Regular.ttf",
+			"sha256": "d2abcb4d352f0bfab91632df5d9c8173882073c182e662fa731a5a738e6681d7",
+			"size": 423224,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

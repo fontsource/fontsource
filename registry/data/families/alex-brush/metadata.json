@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Alex Brush",
+	"id": "alex-brush",
+	"license": {
+		"attribution": "Copyright 2011 The Alex Brush Project Authors (https://github.com/googlefonts/alex-brush)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alexbrush",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/alex-brush",
+		"revision": "1a50bd10383f6c5416f5b4806a9368fd2009ea8c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alexbrush/AlexBrush-Regular.ttf",
+			"sha256": "df702038d8e27797230c77959c139eeea38cac0caf53e19ea5b513d3b0d3362d",
+			"size": 116244,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

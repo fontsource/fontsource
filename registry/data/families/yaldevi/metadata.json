@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sinhala"
+	],
+	"designer": "Mooniak",
+	"family": "Yaldevi",
+	"id": "yaldevi",
+	"license": {
+		"attribution": "Copyright 2021 The Yaldevi Project Authors (https://github.com/mooniak/yaldevi-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yaldevi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mooniak/yaldevi-font",
+		"revision": "187eddeb8dae00acd11f2b96e0c74ea3d70ed302"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yaldevi/Yaldevi[wght].ttf",
+			"sha256": "21d5516cd9a8831964b57503f5b7a119aafa9603bdddd0183e91a0ac8c8dc2e4",
+			"size": 469216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

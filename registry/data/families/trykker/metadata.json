@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Magnus Gaarde",
+	"family": "Trykker",
+	"id": "trykker",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Trykker\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/trykker",
+		"revision": "4da50c25628fcfb374ddf728d8d4a70cc782de3c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Trykker",
+		"revision": "5226cb075048ff1d3bd16fd0a0c42ece45629afb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/trykker/Trykker-Regular.ttf",
+			"sha256": "bb5601709cfa4c0b28725afd45025afc79310738886d89ced9caa36164bd217a",
+			"size": 38140,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

@@ -1,0 +1,88 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": -50,
+					"tag": "GRAD"
+				},
+				{
+					"default": 20,
+					"max": 144,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 150,
+					"min": 50,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 919,
+				"sha256": "99cc1823b8559922a55d5ef0db90f6d9c0ee1439491bc94e32f16718d3795b0e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008",
+			"outline": "glyf",
+			"path": "ofl/robotoserif/RobotoSerif-Italic[GRAD,opsz,wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": -50,
+					"tag": "GRAD"
+				},
+				{
+					"default": 20,
+					"max": 144,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 150,
+					"min": 50,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 919,
+				"sha256": "99cc1823b8559922a55d5ef0db90f6d9c0ee1439491bc94e32f16718d3795b0e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008",
+			"outline": "glyf",
+			"path": "ofl/robotoserif/RobotoSerif[GRAD,opsz,wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

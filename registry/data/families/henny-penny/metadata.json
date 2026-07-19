@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-02-22",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Brownfox",
+	"family": "Henny Penny",
+	"id": "henny-penny",
+	"license": {
+		"attribution": "Copyright (c) 2012, Brownfox (gayaneh.b@gmail.com), with Reserved Font Name \"Henny Penny\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hennypenny",
+		"revision": "2ba3ff5b0d0a26a9c8deee1bf728692bfeb24d70",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/hennypenny",
+		"revision": "4847dd1836a19c92e496eac373770f0d09743c49"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hennypenny/HennyPenny-Regular.ttf",
+			"sha256": "9c8550665827dbd341e5d54ea2e686fa4f4a9de3f8b2ed202b96a41e27ab4e19",
+			"size": 92596,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

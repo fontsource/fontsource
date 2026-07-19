@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 391,
+				"sha256": "7a0052bea69a5ba062248abadafe6e7cb52d0fe09177582b9cb5d0af0b5cb626"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D latn -f none -a qsq -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/staatliches/Staatliches-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

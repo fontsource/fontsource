@@ -1,0 +1,43 @@
+{
+	"id": "korean",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"3131",
+			"318E"
+		],
+		[
+			"3200",
+			"321C"
+		],
+		[
+			"3260",
+			"327B"
+		],
+		[
+			"AC00",
+			"D7A3"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/korean_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "fa0ebc953fede57653a1188d26179376c72a9654953c959337322fb0d9529264",
+		"upstream": "namFiles"
+	}
+}

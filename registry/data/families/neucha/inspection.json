@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 283,
+				"sha256": "97165dc8c17646d02e49f34635831c3c4f1c7d9274b57c0dc81d1f5ddd2ae4f8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "ofl/neucha/Neucha.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

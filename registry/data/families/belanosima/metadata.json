@@ -1,0 +1,57 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-06-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "The DocRepair Project, Santiago Orozco",
+	"family": "Belanosima",
+	"id": "belanosima",
+	"license": {
+		"attribution": "Copyright 2023 The Belanosima Project Authors (https://github.com/docrepair-fonts/belanosima-fonts), with Reserved Font Name \"Josefin Sans\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/belanosima",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/docrepair-fonts/belanosima-fonts",
+		"revision": "b772e9b7c44f32e17230f255fac9cac4bfaaa07f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/belanosima/Belanosima-Bold.ttf",
+			"sha256": "ff3fc9341c07ee4260b9f060d4b66b34f2b13d88a6798ac4ad3c8920a0dbc9b1",
+			"size": 39888,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/belanosima/Belanosima-Regular.ttf",
+			"sha256": "fe5f8af7696a801accff91511c4feecb51bc49516465a5557af3b0593c67685c",
+			"size": 37968,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/belanosima/Belanosima-SemiBold.ttf",
+			"sha256": "2394d701ecaede7bdcfb01906a4cfccd7d72108c7e66e41be6419dae7d8811ea",
+			"size": 38476,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

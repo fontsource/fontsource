@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 388,
+				"sha256": "65ca258be67d2ceea0a3279a019427f55d65e8b91d748ead6173a2bbf2e9b8fc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/cantarell/Cantarell-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 388,
+				"sha256": "65ca258be67d2ceea0a3279a019427f55d65e8b91d748ead6173a2bbf2e9b8fc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/cantarell/Cantarell-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 388,
+				"sha256": "65ca258be67d2ceea0a3279a019427f55d65e8b91d748ead6173a2bbf2e9b8fc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/cantarell/Cantarell-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 388,
+				"sha256": "65ca258be67d2ceea0a3279a019427f55d65e8b91d748ead6173a2bbf2e9b8fc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/cantarell/Cantarell-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

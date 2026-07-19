@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tart Workshop",
+	"family": "Chelsea Market",
+	"id": "chelsea-market",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Font Diner, Inc DBA Tart Workshop (diner@fontdiner.com) with Reseved Font Name \"Chelsea Market\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chelseamarket",
+		"revision": "0ce474e0e3927c591fc48f30bc2007d8185bdd36",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/chelseamarket",
+		"revision": "cb0d8b1186fc376de4d6be06a568c25362e381dd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chelseamarket/ChelseaMarket-Regular.ttf",
+			"sha256": "7243be29a2d74e6a826e1091f74c89e58cc8010047c6db8de13f616e81b1f5f2",
+			"size": 172924,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

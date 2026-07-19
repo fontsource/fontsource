@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Ephesis",
+	"id": "ephesis",
+	"license": {
+		"attribution": "Copyright 2004-2021 The Ephesis Project Authors (https://github.com/googlefonts/ephesis)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ephesis",
+		"revision": "1796e34455b893092713d206e7f23e3e07699f00",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/ephesis",
+		"revision": "8b303b53193b302c8894fb4635bbd49d4420d433"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ephesis/Ephesis-Regular.ttf",
+			"sha256": "8fb4729a918f992a37ab45f1466783c78ea8caa77a7b0e69545322e1dbe9c5f9",
+			"size": 142188,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

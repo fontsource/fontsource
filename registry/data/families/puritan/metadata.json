@@ -1,0 +1,65 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-11-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Ben Weiner",
+	"family": "Puritan",
+	"id": "puritan",
+	"license": {
+		"attribution": "Copyright 1999-2010 Ben Weiner (ben@readingtype.org.uk). Licensed under the Open Font License v1.1 (http://scripts.sil.org/OFL)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/puritan",
+		"revision": "f23a0528973190b0f10b57a717cb89e519d5ef2d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/puritan/Puritan-Bold.ttf",
+			"sha256": "64e6d13582c1bc2dcab45f2f7be46362a11d108da84b4480e0339ef9c93486d1",
+			"size": 54564,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/puritan/Puritan-BoldItalic.ttf",
+			"sha256": "121700e1a92a307b4aaf1e908bd713cc9afe9500d33b5db4f81d0d13df1f64b4",
+			"size": 59236,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/puritan/Puritan-Italic.ttf",
+			"sha256": "2cb8e3d29b08f21a693ace2ba43deaf030f9191205e067a9f82535d742c18f9e",
+			"size": 59596,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/puritan/Puritan-Regular.ttf",
+			"sha256": "c1bb23393a4b47cee290d4b371dc2ad812e2c806767bad7d2dd2f08c6d9f75ed",
+			"size": 54748,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

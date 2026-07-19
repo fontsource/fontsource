@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 476,
+				"sha256": "335821466e23582c8f7f3f005e00509a2d787b77f2d2e494908a99511dab396e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindjalandhar/HindJalandhar-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 476,
+				"sha256": "335821466e23582c8f7f3f005e00509a2d787b77f2d2e494908a99511dab396e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindjalandhar/HindJalandhar-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 476,
+				"sha256": "335821466e23582c8f7f3f005e00509a2d787b77f2d2e494908a99511dab396e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindjalandhar/HindJalandhar-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 476,
+				"sha256": "335821466e23582c8f7f3f005e00509a2d787b77f2d2e494908a99511dab396e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindjalandhar/HindJalandhar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 476,
+				"sha256": "335821466e23582c8f7f3f005e00509a2d787b77f2d2e494908a99511dab396e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindjalandhar/HindJalandhar-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

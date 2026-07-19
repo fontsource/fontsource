@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-04-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Monokrom, Sindre Bremnes, Frode Helland",
+	"family": "Geologica",
+	"id": "geologica",
+	"license": {
+		"attribution": "Copyright 2020 The Geologica Project Authors (https://github.com/googlefonts/geologica)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/geologica",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/geologica",
+		"revision": "685f38d7c9e86b0c8530204c97ddcaf6558dd17b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/geologica/Geologica[CRSV,SHRP,slnt,wght].ttf",
+			"sha256": "9124d9e88ac6c11d761f35241713a51d68e2c4ebedce0edaca834717a00959ec",
+			"size": 348640,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

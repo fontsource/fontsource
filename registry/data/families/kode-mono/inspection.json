@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 429,
+				"sha256": "a76d3f88eeccbf57f4c3cb36eb40ffb3ccd5cf3de348a7ff11422b79de2df97b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.206;gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/kodemono/KodeMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

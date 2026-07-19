@@ -1,0 +1,39 @@
+{
+	"id": "samaritan",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"800",
+			"82D"
+		],
+		[
+			"830",
+			"83E"
+		],
+		[
+			"2E31",
+			"2E31"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/samaritan_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "b833a2d0b2450f5c0a1da6c2eec9e90443b7e2fca2e074d537e8427b7f6e909c",
+		"upstream": "namFiles"
+	}
+}

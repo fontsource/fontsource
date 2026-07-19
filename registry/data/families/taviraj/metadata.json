@@ -1,0 +1,194 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Taviraj",
+	"id": "taviraj",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/taviraj",
+		"revision": "037aad08f644fd50dcfac7724fee8bb07229cd0f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/taviraj",
+		"revision": "8bd077c195dccf3bfc4699ec6ae9c6909bdd03a5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/taviraj/Taviraj-Black.ttf",
+			"sha256": "81f3c81155733a73c4b5914d7d6857832e7dcad5b5e63f7992d797907e327a17",
+			"size": 229644,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-BlackItalic.ttf",
+			"sha256": "33b178920c742a79fc5dab4b55585b61ea0a099ce152c8fabaddccc2f8be11e8",
+			"size": 244484,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-Bold.ttf",
+			"sha256": "ece5631dc38d8a229148ec87830fa10aa4ba8d8641c719ea25eef2c37474ba21",
+			"size": 220668,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-BoldItalic.ttf",
+			"sha256": "30d45de52374cec3a07e602841e7aadbf45316fcd5bb8191bf9c2337c7175aab",
+			"size": 244760,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-ExtraBold.ttf",
+			"sha256": "964ba956d8953ac4242471d7f20c898c266c8f2cf7c983a51008be0acfb3ef19",
+			"size": 219592,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-ExtraBoldItalic.ttf",
+			"sha256": "1eed5bf0b32cd8d7123b81fc190d1a2695199e2752ef0716b6675aa1e80e9a87",
+			"size": 245772,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-ExtraLight.ttf",
+			"sha256": "79cc55234fc8b85121bb3e4563dd8e35af7c805d438ece34d484f7066da8b00e",
+			"size": 215484,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-ExtraLightItalic.ttf",
+			"sha256": "e59c5c8aee9545014a90a8c00b5f974ab1078f0635a3bdff65a2ca7ac3bf47b7",
+			"size": 230616,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-Italic.ttf",
+			"sha256": "fa1cc9f894d97f4a40a0b02438dc3b515570e7d3db296d2a503ba3d32cc6c613",
+			"size": 233280,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-Light.ttf",
+			"sha256": "57670abb418f67f90031eb073e7afb69d98e041b7ef824a0d68981104f13beed",
+			"size": 211048,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-LightItalic.ttf",
+			"sha256": "9ea582249b84f20f3bd7a5d782de86abf86ecfaddf2120445e0ce1d199e6c8ee",
+			"size": 211844,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-Medium.ttf",
+			"sha256": "126a0ed061ff96c499b314bdcdacfa1c2ccd153fcd78e4fbb3575c88e98dae3d",
+			"size": 227068,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-MediumItalic.ttf",
+			"sha256": "d4d395f9cad1b34c290eba6c93da85ea99a90e8ba5884adf7a4504ffcf0b8033",
+			"size": 241116,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-Regular.ttf",
+			"sha256": "077e6299711fddca973f9d43455949018459c2d29c6e790666d41017ee1a27d5",
+			"size": 220824,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-SemiBold.ttf",
+			"sha256": "7f4780e18a823b464421ac2da16b190ce3cf6177e78145a1005228efddbe622c",
+			"size": 214616,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-SemiBoldItalic.ttf",
+			"sha256": "fb1d37bd556db119d4b46e26f22bf668cbacbab20ed3748170090a16b9a750fa",
+			"size": 232244,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-Thin.ttf",
+			"sha256": "3bbc37644f9eda2475bd5627798b0d97c765cf668297973a21fe8266c351071e",
+			"size": 211404,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/taviraj/Taviraj-ThinItalic.ttf",
+			"sha256": "4180da968771442706c2a88b034d04defcf71e5fe15b835c0d7e4e1cd4252322",
+			"size": 225008,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

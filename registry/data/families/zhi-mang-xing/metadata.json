@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2019-03-18",
+	"declaredSubsets": [
+		"chinese-simplified",
+		"latin",
+		"menu"
+	],
+	"designer": "Wei Zhimang",
+	"family": "Zhi Mang Xing",
+	"id": "zhi-mang-xing",
+	"license": {
+		"attribution": "Copyright 2018 The ZhiMangXing Project Authors (https://github.com/googlefonts/zhimangxing)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zhimangxing",
+		"revision": "187e2123ad2710ad8c2fa9955332fe9073e834b1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/m4rc1e/zhimangxing",
+		"revision": "15cb1b0d4c78da973e8459a8e2f23a9aef00d8a6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+			"sha256": "644e0cae9b40f0b10ab729a01bd32032e3973bac22be3dccae01bf6ae7fde969",
+			"size": 4063532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

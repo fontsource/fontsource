@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 3091,
+				"sha256": "5a75779067b5e1fa46bc4f7c2447e138a1a9cd54465bb2e4701f10b435b836c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015",
+			"outline": "glyf",
+			"path": "ofl/notosans/NotoSans-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 3094,
+				"sha256": "7bddb9a46a30b98ec2fdc570860af23451fb59a83ea9fe4dd92b86336277c07a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015",
+			"outline": "glyf",
+			"path": "ofl/notosans/NotoSans[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

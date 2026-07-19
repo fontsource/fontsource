@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-08-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Vidaloka",
+	"id": "vidaloka",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Vidaloka\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vidaloka",
+		"revision": "7b8890fb96351476e3dd343be4ea005b82b30e7d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Vidaloka",
+		"revision": "cc4205a19aca98f15ba551e3f8050630e54df28a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vidaloka/Vidaloka-Regular.ttf",
+			"sha256": "5e90b4016da17f26a2f653bd9468bbb7e7b081f40c11ff5c24088420edc4dbe2",
+			"size": 135540,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

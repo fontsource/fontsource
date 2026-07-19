@@ -1,0 +1,43 @@
+{
+	"id": "marchen",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"11C70",
+			"11C8F"
+		],
+		[
+			"11C92",
+			"11CA7"
+		],
+		[
+			"11CA9",
+			"11CB6"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/marchen_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "4667107437b032967992c52dbd6c500a52c51c1170fedc050818bff1a9fe0532",
+		"upstream": "namFiles"
+	}
+}

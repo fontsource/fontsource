@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2019-06-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Barriecito",
+	"id": "barriecito",
+	"license": {
+		"attribution": "Copyright 2018 The Barriecito Project Authors (https://github.com/Omnibus-Type/Barrio/Barriecito)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/barriecito",
+		"revision": "1db3649020195426bf93234475f3177e4d8a2fdc",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Barrio",
+		"revision": "8f33bf10cb73ecf914110fd7182e543a59a70382"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/barriecito/Barriecito-Regular.ttf",
+			"sha256": "ff32a099b68e0eb5e236adcb9a58141d00fbdf196586e421d1c6a0d1859f75b8",
+			"size": 278448,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

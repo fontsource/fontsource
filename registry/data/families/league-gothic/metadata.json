@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-12-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tyler Finck, Caroline Hadilaksono, Micah Rich",
+	"family": "League Gothic",
+	"id": "league-gothic",
+	"license": {
+		"attribution": "Copyright 2020 The League Gothic Project Authors (https://github.com/theleagueof/league-gothic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/leaguegothic",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/sursly/league-gothic",
+		"revision": "f1d4a1c8c1db3c4a32cc13763c5fbb1776b5d478"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/leaguegothic/LeagueGothic[wdth].ttf",
+			"sha256": "3b0e998c9a0034222394ffecdd383e6948259ad037b95555b139a217629ce1d0",
+			"size": 65972,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

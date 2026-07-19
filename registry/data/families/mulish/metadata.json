@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-25",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams, Cyreal, Jacques Le Bailly",
+	"family": "Mulish",
+	"id": "mulish",
+	"license": {
+		"attribution": "Copyright 2016 The Mulish Project Authors (https://github.com/googlefonts/mulish)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mulish",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/mulish",
+		"revision": "5503f7a18ce79870148b9f9cb8e592ac44c044c3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mulish/Mulish-Italic[wght].ttf",
+			"sha256": "4f4d5f97b530500232d9d487101b8283840168dcfe7b8b9a285af65f0fa8aaab",
+			"size": 219548,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mulish/Mulish[wght].ttf",
+			"sha256": "00f1105796291a2fdda117a0fc7f25d8e68f8010cdbb34a411f60b3bd57717ac",
+			"size": 211988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

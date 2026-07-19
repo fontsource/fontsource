@@ -1,0 +1,65 @@
+{
+	"category": "monospace",
+	"dateAdded": "2018-11-21",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Nicolas Chauveau, Thomas Paillot, Jonathan Favre-Lamarine, Jean-Luc Vinot",
+	"family": "B612 Mono",
+	"id": "b612-mono",
+	"license": {
+		"attribution": "Copyright 2012 The B612 Project Authors (https://github.com/polarsys/b612)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/b612mono",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/polarsys/b612",
+		"revision": "48ac6ba67ecab8123e8e36d6aa05367db0c7b638"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/b612mono/B612Mono-Bold.ttf",
+			"sha256": "b467b1d19fdabed42be51d87e38c86645ceeff2f828f294775188d00d1fd68ca",
+			"size": 139456,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/b612mono/B612Mono-BoldItalic.ttf",
+			"sha256": "91a6a8535fc61354a2c59a64ea205a4f6957c2e09ac4ff91a1fc61d346c004e1",
+			"size": 125284,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/b612mono/B612Mono-Italic.ttf",
+			"sha256": "d58fa807e69d18159a40d5790d25772239df20167b50a0f840e9feb253002c9c",
+			"size": 122448,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/b612mono/B612Mono-Regular.ttf",
+			"sha256": "b98cb96cc8a6206dae08c063d60902df7e6d40f86139ebdb97256704253c9c69",
+			"size": 140292,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

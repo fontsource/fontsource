@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "bfa7b9784e496bad78700fde081bc426120e8a5d98ee41b87e076db67cadd0eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/anticdidone/AnticDidone-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,3 @@
+Timmana is a Telugu display typeface, mainly suitable for headings, posters and decorative invitations. As a web font it should be used in very large pixel sizes, while in print the design may be used in a broader range of sizes, perhaps even as small as at 16pt.
+
+Designed by Appaji Ambarisha Darbha in 2013 and made available by Silicon Andhra under the SIL Open Font License v1.1. The Timmana project is led by Appaji Ambarisha Darbha, a type designer based in Hyderabad, India. To contribute, see [github.com/appajid/timmana](https://github.com/appajid/timmana)

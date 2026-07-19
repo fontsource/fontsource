@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-12-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Love Light",
+	"id": "love-light",
+	"license": {
+		"attribution": "Copyright 2003 The Love Light Project Authors (https://github.com/googlefonts/love-light)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lovelight",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/love-light",
+		"revision": "e4fc541136be7d2814ac542a930be1ebaa17b5e1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lovelight/LoveLight-Regular.ttf",
+			"sha256": "2036790ee211f84616197d5bdb90cd519d51a20013df2ffb8c9f3df996f1e016",
+			"size": 168004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

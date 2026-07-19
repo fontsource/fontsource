@@ -1,0 +1,141 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-01-11",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Dalton Maag",
+	"family": "Wix Madefor Text",
+	"id": "wix-madefor-text",
+	"license": {
+		"attribution": "Copyright 2021 The Wix Madefor Project Authors (https://github.com/wix/wixmadefor/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/wixmadefortext",
+		"revision": "e3f4ee57c329941bef8d557cbeae1e6d26e36525",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/wix-incubator/wixmadefor",
+		"revision": "85646f130c8d3edffe66c4d8755c3f9f7abfa877"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-Bold.ttf",
+			"sha256": "37c179b4fefb63ea9637322b84583a2df53aa226c150294eea1675c14b1b8e29",
+			"size": 108636,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-BoldItalic.ttf",
+			"sha256": "81a32794a42384039d6a8ef05871700d2f1e41f31c4be25f1e226535c419e514",
+			"size": 66208,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-ExtraBold.ttf",
+			"sha256": "62e2fe4718129f36ecdb0ae4de385bd6b81ecc876146447167c6c140fad699a9",
+			"size": 109084,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-ExtraBoldItalic.ttf",
+			"sha256": "d8d2b7db3762ff85b89cee1427d57e95ff91659bc5b8b63c1fca8aefaee44057",
+			"size": 66912,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-Italic.ttf",
+			"sha256": "947fa931d687c9dc698f01851a847f061726183812ac32518642cd97805e9f05",
+			"size": 64936,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-Italic[wght].ttf",
+			"sha256": "8c4383ad0ffc560016ad2ecfe16cbf8051e464fbfc4ecbba41d787c551875f97",
+			"size": 86256,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-Medium.ttf",
+			"sha256": "4ecf270136af928612c76fe4ebade91d8156975e5ea4c0cf9225501dd1788e02",
+			"size": 109048,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-MediumItalic.ttf",
+			"sha256": "d0470c2e7e7a39b94c55834caf2d258f3cc07f66c721f11cadc00c58b6a10982",
+			"size": 68044,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-Regular.ttf",
+			"sha256": "dee56f09fd3efc127c1ea95557edc74110c1460a46287da36e0af25efd341ef5",
+			"size": 107700,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-SemiBold.ttf",
+			"sha256": "dced97a77624bc5f8b1ae65850360908297f4588e09feb6f22792d29dc7e765b",
+			"size": 88108,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText-SemiBoldItalic.ttf",
+			"sha256": "603527f1cc2c871a9c8ec273bf32d364a8a8ac2839296aa7b70b1cd8c77d61c0",
+			"size": 51964,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/wixmadefortext/WixMadeforText[wght].ttf",
+			"sha256": "7660fbcd33f643a011283d9e96b3ad571a942d25d1a9603e69e9e1b6976fa4e1",
+			"size": 158708,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

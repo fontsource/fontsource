@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 72,
+					"max": 72,
+					"min": 10,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 719,
+				"sha256": "dec08bd074fa29b2e7cc7a4fbdf8da1010c06d5c87235374a677b2c7578ceabf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/bigshouldersinline/BigShouldersInline[opsz,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

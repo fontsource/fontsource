@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-08-24",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Monoton",
+	"id": "monoton",
+	"license": {
+		"attribution": "Copyright (c) 2011, Vernon Adams (vern@newtypography.co.uk) with Reserved Font Name 'Monoton'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/monoton",
+		"revision": "79d269b547630a6825a9b0f8fff1e349957dd882",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/monoton/Monoton-Regular.ttf",
+			"sha256": "951c4cea65ffede784a7c9672feec5d329a7e1e12216c42d53ecf36c90d04dea",
+			"size": 51604,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

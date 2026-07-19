@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12102,
+				"sha256": "03fd7d5631c04483b5b2bca83842d7b6d1983e7f87155266f866d642944fdb1c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.00",
+			"outline": "glyf",
+			"path": "ofl/himelody/HiMelody-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

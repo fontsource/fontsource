@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 219,
+				"sha256": "925f4667b5d52e11b5b310023fa9adf55038ef9a6106d4fcf0ae7bbc5c6211c0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/revalia/Revalia-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

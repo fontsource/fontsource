@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 270,
+				"sha256": "0a1b1a2d9cad4d5fe8944d1564f8aacc748beb4edb8c2c58dd4d8b0db1af150f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/fjordone/FjordOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

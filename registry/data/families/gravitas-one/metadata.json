@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-06-29",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Riccardo De Franceschi",
+	"family": "Gravitas One",
+	"id": "gravitas-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Gravitas\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gravitasone",
+		"revision": "36ee60d49fa3beeb6c6734a0142bffe7c07ebdcc",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/gravitasone",
+		"revision": "c89d142ad0f695ba267d27965c26d1dd75463f20"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gravitasone/GravitasOne.ttf",
+			"sha256": "b40dc45f3354f282107286acf1542072d258c717c8edf1d118ef0105f25e627b",
+			"size": 41448,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

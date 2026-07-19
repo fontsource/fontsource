@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 244,
+				"sha256": "17ce3d23ed02b0f4574d97b92b0d0beab5bdf336f4deaf5e4b70cc87db0ec7f3"
+			},
+			"colorTables": [],
+			"fontVersion": "2.1",
+			"outline": "glyf",
+			"path": "ofl/puritan/Puritan-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 244,
+				"sha256": "17ce3d23ed02b0f4574d97b92b0d0beab5bdf336f4deaf5e4b70cc87db0ec7f3"
+			},
+			"colorTables": [],
+			"fontVersion": "2.1",
+			"outline": "glyf",
+			"path": "ofl/puritan/Puritan-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 244,
+				"sha256": "17ce3d23ed02b0f4574d97b92b0d0beab5bdf336f4deaf5e4b70cc87db0ec7f3"
+			},
+			"colorTables": [],
+			"fontVersion": "2.0a",
+			"outline": "glyf",
+			"path": "ofl/puritan/Puritan-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 244,
+				"sha256": "17ce3d23ed02b0f4574d97b92b0d0beab5bdf336f4deaf5e4b70cc87db0ec7f3"
+			},
+			"colorTables": [],
+			"fontVersion": "2.0a",
+			"outline": "glyf",
+			"path": "ofl/puritan/Puritan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

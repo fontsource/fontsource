@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "f73d1032095078920a83f17deb667289669cdfefa8c128f9a7a91d0434e9245e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/cherish/Cherish-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

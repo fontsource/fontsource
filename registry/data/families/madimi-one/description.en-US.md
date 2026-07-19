@@ -1,0 +1,3 @@
+Madimi is a rounded sans with a mixed geometric and organic design. The design covers all of Google Latin Core. Madimi takes inspiration from the gentle curved geometry of certain Southern Afrikan graphic symbols. Circles are a main feature, the circle being a shape that represents the womb of a woman in KiNtu symbologies. The idea behind Madimi is to enact the subtle visual subtext of Afrikan visual traditions. Madimi is simple, clean and round edged but still remains clear and easy to read.
+
+To contribute, see [github.com/TaVaTake/madimi](https://github.com/TaVaTake/madimi).

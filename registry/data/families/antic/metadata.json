@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-31",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Santiago Orozco",
+	"family": "Antic",
+	"id": "antic",
+	"license": {
+		"attribution": "Copyright (c) 2010, 2011, Santiago Orozco <hi@typemade.mx>, with Reserved Font Name \"Antic\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/antic",
+		"revision": "2114263d73f3213bda7e365fc3f7e813efcfbfc1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/antic",
+		"revision": "3ec1e049557adb294e645099745789a63feba703"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/antic/Antic-Regular.ttf",
+			"sha256": "c5452292fc4356733af7b2d75d3a22ce4f782a519fce1ae9229947f1a5e39c89",
+			"size": 39240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

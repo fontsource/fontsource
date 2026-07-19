@@ -1,0 +1,1 @@
+The Peralta typeface is an egyptian slab serif gone haywire. You'll find that Capitals and Lowercase have opposite weight distributions, as well as an all-around offbeat nature, and yet it all works to create a delightfully comic typeface.

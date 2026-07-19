@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Gesine Todt",
+	"family": "Bigshot One",
+	"id": "bigshot-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Gesine Todt. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bigshotone",
+		"revision": "4ac1176f30284f788a01ea6aa04195c749bf8101",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bigshotone",
+		"revision": "354d1d8880d46e04cf3b57980e6d56d1a5e1400d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bigshotone/BigshotOne-Regular.ttf",
+			"sha256": "3f87c969632dca932a76e875bb6931e32a003577436fe1f14eccefb274cf2ade",
+			"size": 44836,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

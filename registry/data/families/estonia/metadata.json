@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Estonia",
+	"id": "estonia",
+	"license": {
+		"attribution": "Copyright 2010-2021 The Estonia Project Authors (https://github.com/googlefonts/estonia)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/estonia",
+		"revision": "1796e34455b893092713d206e7f23e3e07699f00",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/estonia",
+		"revision": "d4ee6f0558f9af9ad0cc950e740a81eb95b36526"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/estonia/Estonia-Regular.ttf",
+			"sha256": "03087597ea24879c19d51ca4622f8c4e9cd867d081e7ad0ad3e7dccfdb1933b2",
+			"size": 1470272,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

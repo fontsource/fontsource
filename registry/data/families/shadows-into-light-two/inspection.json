@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 362,
+				"sha256": "794bce4eb66bf0e38acbe3eada85f0b86ad076650ee9f626f85b44bf4bf90735"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003 2012",
+			"outline": "glyf",
+			"path": "ofl/shadowsintolighttwo/ShadowsIntoLightTwo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 382,
+				"sha256": "9c6de0d57b274c5fc811c316407b908ff61ed466dfbaa474cecbf503c7a15368"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/parkinsans/Parkinsans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

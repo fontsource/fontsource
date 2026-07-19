@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 500,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 591,
+				"sha256": "be5efc730a64bc2c779dfe88c16441d7c5f7fedc15b8284ac08b35d6e91db09e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005;gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/rem/REM-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 500,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 500,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 591,
+				"sha256": "be5efc730a64bc2c779dfe88c16441d7c5f7fedc15b8284ac08b35d6e91db09e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005;gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/rem/REM[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

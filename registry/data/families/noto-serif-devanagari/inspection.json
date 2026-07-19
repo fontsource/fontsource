@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 552,
+				"sha256": "cad51cb65abe58fe3de54ecd4cacb7a5df076eb35a304892d251832504bc5fb1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.006",
+			"outline": "glyf",
+			"path": "ofl/notoserifdevanagari/NotoSerifDevanagari[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

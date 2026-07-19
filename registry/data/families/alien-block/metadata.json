@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2026-05-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Kensuke Uchida",
+	"family": "Alien Block",
+	"id": "alien-block",
+	"license": {
+		"attribution": "Copyright 2025 The Alien Block Project Authors (https://github.com/koci-design/AlienBlock)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alienblock",
+		"revision": "4ec395ab7570d070217506120cf11b64c359dba0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/koci-design/AlienBlock",
+		"revision": "036f8f19c165a455a9c967618557492ed9db94e3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alienblock/AlienBlock-Regular.ttf",
+			"sha256": "377e2a998a5b19cd937ab37483a31b17b5b52434c5065ba6751d7a9f38f75a4b",
+			"size": 35344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-13"
+}

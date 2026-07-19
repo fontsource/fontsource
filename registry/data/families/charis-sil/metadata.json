@@ -1,0 +1,69 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-05-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "SIL International",
+	"family": "Charis SIL",
+	"id": "charis-sil",
+	"license": {
+		"attribution": "Copyright (c) 1997-2022 SIL International",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/charissil",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-charis",
+		"revision": "258e532625d5e6c5fca8448782e710db78a6ca8a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/charissil/CharisSIL-Bold.ttf",
+			"sha256": "68460d2b76c8f781b49f9168f2c7dc3c9f7b788a3a1b8f267c5fa6bb47d5c64d",
+			"size": 738488,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/charissil/CharisSIL-BoldItalic.ttf",
+			"sha256": "acdf6dc54c0ee5e03cae3398f64133c335084cd1ecab655f2a8636c5d56acedb",
+			"size": 802588,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/charissil/CharisSIL-Italic.ttf",
+			"sha256": "e776e2961117b39cf924c0139de01748a77b2fcb99c437b2c77bdd9401606c13",
+			"size": 775668,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/charissil/CharisSIL-Regular.ttf",
+			"sha256": "346337374aa347d64ee015b26d441f1970d8631914e2f3941b00e1c4761e28c5",
+			"size": 752900,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-09-09",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind Vadodara",
+	"id": "hind-vadodara",
+	"license": {
+		"attribution": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hindvadodara",
+		"revision": "51063876e70d3bcc9f759e652b5486d74cf1252e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind-vadodara",
+		"revision": "d1972e4ebebc3a65feef2f66823a83444469ece4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hindvadodara/HindVadodara-Bold.ttf",
+			"sha256": "756fbdd4d4cbed464b148eda63b7008e4f2e06d8aa140d2b594402ee70aeba8c",
+			"size": 251948,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hindvadodara/HindVadodara-Light.ttf",
+			"sha256": "4f2854bb53222eb53574711eaa675b55b513fdf68ee938dbe6b80389a1632e36",
+			"size": 236408,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hindvadodara/HindVadodara-Medium.ttf",
+			"sha256": "56da99a97ead900a1c4e260724637fcd8b20e8d7acfeb7045a246c8217f34bc1",
+			"size": 241792,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hindvadodara/HindVadodara-Regular.ttf",
+			"sha256": "064d35104e20e5508f2ed40d0634e30fb5f990aa011d884e0b4541c0fb9d881d",
+			"size": 243376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hindvadodara/HindVadodara-SemiBold.ttf",
+			"sha256": "f7c4250f6721f57ecc465ae4f0271518dd6e2fab01d673ece7acef8fd4a71fff",
+			"size": 252704,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Preahvihear",
+	"id": "preahvihear",
+	"license": {
+		"attribution": "Copyright 2020 The Preahvihear Project Authors (https://github.com/danhhong/Preahvihear)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/preahvihear",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Preahvihear",
+		"revision": "86b9102c4580df7b52e3320d835ab2ded591dd15"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/preahvihear/Preahvihear-Regular.ttf",
+			"sha256": "ea306be8e286bc3bd75b9cb497caa38bdcd06e8d6541a53e2e1a77f16d7ed522",
+			"size": 91520,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

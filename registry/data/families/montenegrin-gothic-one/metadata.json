@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2026-05-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Žarko Banović",
+	"family": "Montenegrin Gothic One",
+	"id": "montenegrin-gothic-one",
+	"license": {
+		"attribution": "Copyright 2014 The Montenegrin Gothic One Project Authors (https://github.com/MagicformDesign/montenegrin-gothic-one)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/montenegringothicone",
+		"revision": "d1738b7f56fa1cf560b536436bb2eb0fe1adc0a3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/MagicformDesign/montenegrin-gothic-one",
+		"revision": "7a9c8500be19a4b3c6050dd4ea6fcf184ca59173"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/montenegringothicone/MontenegrinGothicOne-Regular.ttf",
+			"sha256": "9312b0cdbdda50e4663138742e8906501096a12341fa8f8484a81330d292e134",
+			"size": 140876,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

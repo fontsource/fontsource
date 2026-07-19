@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-09-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Niteesh Yadav",
+	"family": "AR One Sans",
+	"id": "ar-one-sans",
+	"license": {
+		"attribution": "Copyright 2018 The AR One Project Authors (https://github.com/niteeshy/ar-one-sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/aronesans",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/niteeshy/ar-one-sans",
+		"revision": "6dc5e6850f2ced9f28e733c9a7860c54246e17a8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/aronesans/AROneSans[ARRR,wght].ttf",
+			"sha256": "235b1352c58fb6d9763d74711d7c2e1d726d805fc04cad8fde2f56a469566b5f",
+			"size": 187856,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 923,
+				"sha256": "647556c496cf3ec60d7ec81eba25971a0c230156d0d7dc7d2e4fe14200c19576"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/chokokutai/Chokokutai-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

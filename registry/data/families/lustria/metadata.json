@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "MADType",
+	"family": "Lustria",
+	"id": "lustria",
+	"license": {
+		"attribution": "Copyright (c) 2011, Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name Lustria",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lustria",
+		"revision": "392bee5c207a089e2e51787d561af724755f56aa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lustria/Lustria-Regular.ttf",
+			"sha256": "8b50753779d151674dcc74bdf9cdde1e788d8fb2b9ace8fb183a0def0f7361ce",
+			"size": 37400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

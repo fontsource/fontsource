@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-06-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jonathan Barnbrook, Julián Moncada",
+	"family": "Sora",
+	"id": "sora",
+	"license": {
+		"attribution": "Copyright 2019 The Sora Project Authors (https://github.com/sora-xor/sora-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sora",
+		"revision": "a926665019d3f7f25c8b1212cecbfa871e70de82",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/sora-xor/sora-font",
+		"revision": "7f9a9c5d0ccd1c099cfac420aa27133df1c5fdc4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sora/Sora[wght].ttf",
+			"sha256": "84ff7096ae3ec6c8be47d906d1a0ba4de7f2ce78c615275c77301964a316e16c",
+			"size": 111400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

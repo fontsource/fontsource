@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-10",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Yanghee Ryu",
+	"family": "Gowun Dodum",
+	"id": "gowun-dodum",
+	"license": {
+		"attribution": "Copyright 2021 The Gowun Dodum Project Authors (https://github.com/yangheeryu/Gowun-Dodum)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gowundodum",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yangheeryu/Gowun-Dodum",
+		"revision": "6d9ef10fc745cf3b0a4aba02dad1c740f94d029b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gowundodum/GowunDodum-Regular.ttf",
+			"sha256": "a6e457933227483a11758fd0947bc74422a106d46f0bf057fdaa5af94a30067d",
+			"size": 7229088,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

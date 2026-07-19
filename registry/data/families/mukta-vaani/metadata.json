@@ -1,0 +1,94 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-15",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Mukta Vaani",
+	"id": "mukta-vaani",
+	"license": {
+		"attribution": "Copyright (c) 2016, Ek Type. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/muktavaani",
+		"revision": "d9359deb5a726c6e67417f55c052687d522c98c9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Mukta",
+		"revision": "7db4b0fc09894ad6814346172f6f0c1cf822a722"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/muktavaani/MuktaVaani-Bold.ttf",
+			"sha256": "e11f330d219010c13b85e3bc568366ba32544f1c4ae7f9c4976792ed2918ac51",
+			"size": 484412,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/muktavaani/MuktaVaani-ExtraBold.ttf",
+			"sha256": "427f6ca0b008914d4e0ca277fab7fd63d3c439863661f08e39f4fccc7e1a488d",
+			"size": 474540,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/muktavaani/MuktaVaani-ExtraLight.ttf",
+			"sha256": "6107a72e51ccf4a747a264d21de81069a614005fca8f87273fbcb0f64d6d4413",
+			"size": 455888,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/muktavaani/MuktaVaani-Light.ttf",
+			"sha256": "a3585b04045ca3fdf642b147e032fb02b61d8a5372b7216b8c17d6eedb612017",
+			"size": 463076,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/muktavaani/MuktaVaani-Medium.ttf",
+			"sha256": "5b19b8efcb0a042e7edeec14befaa3a653e27b48aae8db6c572346deae020990",
+			"size": 475004,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/muktavaani/MuktaVaani-Regular.ttf",
+			"sha256": "296f0086902c79f422d9c4a9a03b6e42433a5e7b5e213e7e00f2d1c8fd4f266c",
+			"size": 459720,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/muktavaani/MuktaVaani-SemiBold.ttf",
+			"sha256": "7e86b220ccee01048cde6ac87824459475c578ba8494a83df3fade2111c9d75f",
+			"size": 476440,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

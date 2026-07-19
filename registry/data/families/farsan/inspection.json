@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 694,
+				"sha256": "75016741d0289f1da7a1502bd92dc6c13ebd8167971cd0f02e5a0d1d3c3347d7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001g;PS 1.001;hotconv 1.0.86;makeotf.lib2.5.63406 DEVELOPMENT",
+			"outline": "glyf",
+			"path": "ofl/farsan/Farsan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

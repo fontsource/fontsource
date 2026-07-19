@@ -1,0 +1,3 @@
+Source® Sans Pro, Adobe's first open source typeface family, was designed by Paul D. Hunt. It is a sans serif typeface intended to work well in user interfaces.
+
+To contribute, see [github.com/adobe-fonts/source-sans](https://github.com/adobe-fonts/source-sans)

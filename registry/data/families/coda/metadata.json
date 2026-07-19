@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2010-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Coda",
+	"id": "coda",
+	"license": {
+		"attribution": "Copyright (c) 2010-2012, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Names \"Coda\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/coda",
+		"revision": "7430a1c935a2bef25ecca6ad3b65464c3b4c375a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vernnobile/CodaFont",
+		"revision": "41ce6c5246c919290b49dc97cc233815428636f2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/coda/Coda-ExtraBold.ttf",
+			"sha256": "35909e4c6907e1391d09baa934c5e7a4abb232dedea58e47acaa4aecd165c65c",
+			"size": 90516,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/coda/Coda-Regular.ttf",
+			"sha256": "f5d32ae9d5c78cdab7e75a52bd1da07ae22644597232d085a5ce7cd1af341e17",
+			"size": 87060,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

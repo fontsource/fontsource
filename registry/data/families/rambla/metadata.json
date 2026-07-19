@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Martin Sommaruga",
+	"family": "Rambla",
+	"id": "rambla",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Martin Sommaruga (martin@estudiotrama.com), with Reserved Font Name 'Rambla'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rambla",
+		"revision": "98b91755663675fcdf24a4dd539d821168cd524d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rambla/Rambla-Bold.ttf",
+			"sha256": "0e5af09d5cf4c7f04a95ae034fed45b8d37dc5a7f3f5492961bb4ecb3a2aa359",
+			"size": 34688,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/rambla/Rambla-BoldItalic.ttf",
+			"sha256": "6cd51a19872e3736c92e0d0dd48fbef314df200b5b169b7d57b9ffdcc46f92a3",
+			"size": 37372,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/rambla/Rambla-Italic.ttf",
+			"sha256": "359e2cc8e935ab9bbd17734c774ca086b8dc7a30f39cb5440429d298a44390a6",
+			"size": 37144,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/rambla/Rambla-Regular.ttf",
+			"sha256": "50b69b938921d41a868e8cfbcc71a411e04caf14edad6a153222fc03d316ed97",
+			"size": 34332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

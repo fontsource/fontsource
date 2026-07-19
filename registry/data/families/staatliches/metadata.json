@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2018-12-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Brian LaRossa, Erica Carras",
+	"family": "Staatliches",
+	"id": "staatliches",
+	"license": {
+		"attribution": "Copyright 2018 The Staatliches Project Authors (https://github.com/googlefonts/staatliches)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/staatliches",
+		"revision": "e2c66c12056b4fbb223c5e03b4238ae91fab725a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/staatliches",
+		"revision": "0d69eea1ad9a6312fbfdf9afa54fa38933a21b42"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/staatliches/Staatliches-Regular.ttf",
+			"sha256": "8395212aa4c6c3534bd39a745d956305ff080c3f3ed73ba61e4fbaae951e55cc",
+			"size": 63316,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

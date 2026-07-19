@@ -1,0 +1,35 @@
+{
+	"id": "toto",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"2BC",
+			"2BC"
+		],
+		[
+			"1E290",
+			"1E2AE"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/toto_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "acba5779b5554b526794288efa2666036015daadff7636765d2e89f5793b3b21",
+		"upstream": "namFiles"
+	}
+}

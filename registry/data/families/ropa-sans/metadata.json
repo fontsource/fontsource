@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-01-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Botjo Nikoltchev",
+	"family": "Ropa Sans",
+	"id": "ropa-sans",
+	"license": {
+		"attribution": "Copyright 2013 The Ropa Sans Project Authors (nikoltchev@lettersoup.de), with Reserved Font Name \"Ropa Sans\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ropasans",
+		"revision": "55783c325a4dbd204af91c9d4c3a906c535f6649",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/lettersoup/Ropa-Sans",
+		"revision": "33acc9f9e7d126dd46b9e1efa03f98ea2e2046de"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ropasans/RopaSans-Italic.ttf",
+			"sha256": "c7a8d38df247c21fb55ee452619b1ae5c452771c501972dbd317a0f07ca1706d",
+			"size": 58640,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ropasans/RopaSans-Regular.ttf",
+			"sha256": "4a0bc3429f672cab4f9ad5e58047d9e7ccb6ad16db155ab92c56d1aefcdda8f1",
+			"size": 57200,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

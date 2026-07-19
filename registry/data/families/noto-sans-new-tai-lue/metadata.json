@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"new-tai-lue"
+	],
+	"designer": "Google",
+	"family": "Noto Sans New Tai Lue",
+	"id": "noto-sans-new-tai-lue",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/new-tai-lue)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansnewtailue",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/new-tai-lue",
+		"revision": "f591483c535ff7c2db1f010907be69251fc0bb1c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansnewtailue/NotoSansNewTaiLue[wght].ttf",
+			"sha256": "5362f7ab42089804beb05c936bef575f08ab27cf26109c71df99bfa28bda1cb4",
+			"size": 78872,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

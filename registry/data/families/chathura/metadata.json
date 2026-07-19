@@ -1,0 +1,75 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-05-09",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Chathura",
+	"id": "chathura",
+	"license": {
+		"attribution": "Copyright 2009 The Chathura Project Authors.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chathura",
+		"revision": "ac92cb510c857c11b2a4a89e2fb1ef4659f9c42f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Chathura",
+		"revision": "e480434f75f149a18073913a0c5f041b0c2829c3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chathura/Chathura-Bold.ttf",
+			"sha256": "0a493c95a74cc13f6766dbf2de4c47dda0c446c5fc0d6576b970d7890ce9f9aa",
+			"size": 330252,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/chathura/Chathura-ExtraBold.ttf",
+			"sha256": "8323a68a9b99940ce5009503503c0a75b739ac2e1e767e32c4b35b20b0a163fc",
+			"size": 330304,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/chathura/Chathura-Light.ttf",
+			"sha256": "a998baa580e25340e1a44a343c62a0f106f4763e7e0cf153f279fb6c965a122d",
+			"size": 342512,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/chathura/Chathura-Regular.ttf",
+			"sha256": "aff3aab23f202092d411dae54a612968dee39cf411c0d8049e6a9ea99f7e2c14",
+			"size": 332324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/chathura/Chathura-Thin.ttf",
+			"sha256": "ffa6266426a6339d2dcb9ae7ccd0d06f5360e91c9a67db2597d70b0bd2e10aad",
+			"size": 346360,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

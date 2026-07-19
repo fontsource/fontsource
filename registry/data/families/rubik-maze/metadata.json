@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2022-06-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "NaN, Luke Prowse",
+	"family": "Rubik Maze",
+	"id": "rubik-maze",
+	"license": {
+		"attribution": "Copyright 2020 The Rubik Filtered Project Authors (https://github.com/NaN-xyz/Rubik-Filtered)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikmaze",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/NaN-xyz/Rubik-Filtered",
+		"revision": "f61d39563df1f583122af0866fc827666c2b385b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikmaze/RubikMaze-Regular.ttf",
+			"sha256": "5bc4c333e6b5d3caf085d44b633b28a6d2abc40fa933b7bc7a1972ef019ff5d9",
+			"size": 459040,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

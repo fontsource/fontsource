@@ -1,0 +1,39 @@
+{
+	"category": "monospace",
+	"dateAdded": "2025-04-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Philipp H. Poll",
+	"family": "Libertinus Mono",
+	"id": "libertinus-mono",
+	"license": {
+		"attribution": "???.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/libertinusmono",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/libertinus",
+		"revision": "88dfbb0a7715817a43499e613fc8e6645174cd6a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/libertinusmono/LibertinusMono-Regular.ttf",
+			"sha256": "98e3326985108f7d427d1f447d4fa00c93f6787bc53b5c15150c115c5b9d9b9a",
+			"size": 153480,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 429,
+				"sha256": "1e2441e8e2188ef8744a10cff1f346ab250d55cf985b3a42aa9602eb2908792e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanschakma/NotoSansChakma-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

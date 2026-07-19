@@ -1,0 +1,40 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 1,
+					"max": 2,
+					"min": 1,
+					"tag": "ELGR"
+				},
+				{
+					"default": 2,
+					"max": 16,
+					"min": 0,
+					"tag": "ELSH"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1339,
+				"sha256": "a4d7a90c348bea25e0c15132cc8c9b12575b50bf7438c311b19d5f0764749e7d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "ofl/handjet/Handjet[ELGR,ELSH,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

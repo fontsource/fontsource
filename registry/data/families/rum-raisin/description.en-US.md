@@ -1,0 +1,3 @@
+Rum Raisin draws inspiration from a vintage Kelloggs Raisin Bran cereal box. Taken from a formerly unicase design, this has been developed as a caps/lowercase character set. The original unicase a is in the Delta character slot, as an alternate to a more suitable A.
+
+To contribute to the project contact Brian J. Bonislawsky.

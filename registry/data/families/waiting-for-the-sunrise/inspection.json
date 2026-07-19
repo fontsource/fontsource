@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 340,
+				"sha256": "8756d214b05e7b4fc5ff0ee02b89bc2be1f5018af8c6a3b98e5b68e8e39434c3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001 2001",
+			"outline": "glyf",
+			"path": "ofl/waitingforthesunrise/WaitingfortheSunrise.ttf",
+			"style": "normal",
+			"weight": 300
+		}
+	]
+}

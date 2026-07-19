@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 45,
+					"min": -45,
+					"tag": "XROT"
+				},
+				{
+					"default": 0,
+					"max": 45,
+					"min": -45,
+					"tag": "YROT"
+				}
+			],
+			"cmap": {
+				"codepointCount": 662,
+				"sha256": "fe65d7056ef39933253f929ab2219c128b85076bddd5285f2dd34edc9d5e5e77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/tiltneon/TiltNeon[XROT,YROT].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

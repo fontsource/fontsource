@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "6f302224e175432d49c7b7012e5723f381672fad5102db5d42b30a3714865c37"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/sedan/Sedan-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "6f302224e175432d49c7b7012e5723f381672fad5102db5d42b30a3714865c37"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/sedan/Sedan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

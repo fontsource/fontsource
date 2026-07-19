@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nonty",
+	"family": "Hachi Maru Pop",
+	"id": "hachi-maru-pop",
+	"license": {
+		"attribution": "Copyright 2020 The Hachi Maru Pop Project Authors (https://github.com/noriokanisawa/HachiMaruPop)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hachimarupop",
+		"revision": "252adbcc5e3722bd514c424c4a4395127f18d73c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/noriokanisawa/HachiMaruPop",
+		"revision": "efaa0d31f7bcace6cf4255b746911df1243af982"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hachimarupop/HachiMaruPop-Regular.ttf",
+			"sha256": "78408910c8f1a2f174a279cbc1484b48b71780039eba3fe1be2bfcc5d4df3f98",
+			"size": 4385624,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

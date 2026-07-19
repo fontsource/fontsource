@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2024-03-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sarah Cadigan-Fried",
+	"family": "Jersey 25 Charted",
+	"id": "jersey-25-charted",
+	"license": {
+		"attribution": "Copyright 2023 The Soft Type Project Authors (https://github.com/scfried/soft-type-jersey)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jersey25charted",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/scfried/soft-type-jersey",
+		"revision": "afc20d521110d3ba6d6614d226896c74d62f8f2f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jersey25charted/Jersey25Charted-Regular.ttf",
+			"sha256": "0faae6b6c5b031e6f5ef191cc43e3a3a25e1ee9e74713e4b93ba3007137937f8",
+			"size": 1344004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

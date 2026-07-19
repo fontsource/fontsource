@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-07-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Joana Correia",
+	"family": "Quando",
+	"id": "quando",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Quando\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/quando",
+		"revision": "1dbb37669d2b49899c6d0e4bc7b55c9cc35d5f60",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/quando",
+		"revision": "328635dcbaae8f2fc4fd84c9b872e596a82bebe5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/quando/Quando-Regular.ttf",
+			"sha256": "1c6bab1b4b3bf31a305d3866c3826e04237e8da9d9acfa84f49ab138394e8909",
+			"size": 119688,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 242,
+				"sha256": "24369ee33b4781bc6b2083ea3accc1a458cce237d2ba045fbfc6915ad7984342"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 001.001;hotconv 1.0.70;makeotf.lib2.5.58329",
+			"outline": "glyf",
+			"path": "ofl/lilyscriptone/LilyScriptOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

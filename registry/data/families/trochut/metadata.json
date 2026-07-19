@@ -1,0 +1,57 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Andreu Balius",
+	"family": "Trochut",
+	"id": "trochut",
+	"license": {
+		"attribution": "Copyright (c) 2011, Andreu Balius (www.andreubalius.com|mail@andreubalius.com), with Reserved Font Name Trochut",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/trochut",
+		"revision": "3e62b3ccd504ecdf03a4bae2fa6f86ddbc6b1270",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/trochut/Trochut-Bold.ttf",
+			"sha256": "5a9cf2c2525cd56ff866e172a2f18eb2669ea4e9b6238c954da9dadd1386c527",
+			"size": 25412,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/trochut/Trochut-Italic.ttf",
+			"sha256": "4931fa0cd1418dc3dc9e68a2b1a3cae83d03a6a0743bce27e37841aaea2a4682",
+			"size": 27908,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/trochut/Trochut-Regular.ttf",
+			"sha256": "720759af046a690bebcc0fee08df6841d564438219ca86544c375b9252a1224e",
+			"size": 25300,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

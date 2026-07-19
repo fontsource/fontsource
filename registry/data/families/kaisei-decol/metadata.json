@@ -1,0 +1,59 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-05-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Font-Kai",
+	"family": "Kaisei Decol",
+	"id": "kaisei-decol",
+	"license": {
+		"attribution": "Copyright 2020 The Kaisei Project Authors (https://github.com/Font-Kai/Kaisei)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kaiseidecol",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/FontKai-Kaisei/Kaisei",
+		"revision": "b396c906d67ddbfde60c2c78588f8de00b46c891"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kaiseidecol/KaiseiDecol-Bold.ttf",
+			"sha256": "0e3a6da5145fdbba32cfb1c806812d95457506e1698f5d61e8f834fb847f0d6f",
+			"size": 4286896,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kaiseidecol/KaiseiDecol-Medium.ttf",
+			"sha256": "6db5273d6807f4f575222a70ebf3bb548173dcdda2f22d9bf272d6d0e7161aa1",
+			"size": 4297772,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kaiseidecol/KaiseiDecol-Regular.ttf",
+			"sha256": "fb9202b97944fa00b5f145ad4701def5c306bcd0d26407917baef9e01b042056",
+			"size": 4503152,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

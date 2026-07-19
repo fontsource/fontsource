@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 400,
+				"sha256": "24fcbae924f124bbe0f63b989a9ec9292d1d44ae81473e65dbe50b248fe252f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/medievalsharp/MedievalSharp.ttf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

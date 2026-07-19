@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2026-01-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Carolina Giovagnoli",
+	"displayName": "Betania Patmos Guideline",
+	"family": "Betania Patmos GDL",
+	"id": "betania-patmos-gdl",
+	"license": {
+		"attribution": "Copyright 2024 The Betania Patmos Project Authors (https://github.com/huertatipografica/betania-patmos)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/betaniapatmosgdl",
+		"revision": "8c65faac9da160ee3e7ba1ed60b9c1f982257dca",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/huertatipografica/betania-patmos",
+		"revision": "08c83ac9540b0b2bf86ddf6b632651142f31a93c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/betaniapatmosgdl/BetaniaPatmosGDL-Regular.ttf",
+			"sha256": "761c3d83f07517e3e6da5a25fa7b87fca3b52eb944c57c63a9a67fee74c20106",
+			"size": 304756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

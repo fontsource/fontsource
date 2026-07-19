@@ -1,0 +1,50 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-11-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Claus Eggers Sørensen",
+	"family": "Playfair Display",
+	"id": "playfair-display",
+	"license": {
+		"attribution": "Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name \"Playfair Display\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playfairdisplay",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/clauseggers/Playfair",
+		"revision": "80a334101928546b04fa9e709ad4b2f11f8a9e10"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playfairdisplay/PlayfairDisplay-Italic[wght].ttf",
+			"sha256": "a5e26dc5e2e77fb2803a0bf02fd4f81ee136ec8dea863ccdb0c59a263b21378b",
+			"size": 278688,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/playfairdisplay/PlayfairDisplay[wght].ttf",
+			"sha256": "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6",
+			"size": 300724,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-03-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"nag-mundari"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Nag Mundari",
+	"id": "noto-sans-nag-mundari",
+	"license": {
+		"attribution": "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/nag-mundari)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansnagmundari",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/nag-mundari",
+		"revision": "64846ef2e38f46694aca851f48837ed2635994a4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansnagmundari/NotoSansNagMundari[wght].ttf",
+			"sha256": "326db3178a5cb37f602c2b4ee32fdcb8b97e9526954f5c715b3c11545ec8a424",
+			"size": 59720,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

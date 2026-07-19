@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2019-09-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"tibetan"
+	],
+	"designer": "Christopher J. Fynn",
+	"family": "Jomolhari",
+	"id": "jomolhari",
+	"license": {
+		"attribution": "Copyright (c) 2006 by Christopher Fynn. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jomolhari",
+		"revision": "7ad90cae69c419bce2a9451deaa3119763ce75aa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/jomolhari",
+		"revision": "08671f0429160658734b73c0bf14bec35dd0fd84"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jomolhari/Jomolhari-Regular.ttf",
+			"sha256": "4507597ac6d8faad3908c06a4698167f8204a1101d38bf32b04582cc2d22e86c",
+			"size": 2260860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

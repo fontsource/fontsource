@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 591,
+				"sha256": "c4f1986876b766ca147d7264d48e7641881ba7b67cd4e0973657612244637a1a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/meowscript/MeowScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

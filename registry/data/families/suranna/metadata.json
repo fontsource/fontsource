@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-01-12",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Suranna",
+	"id": "suranna",
+	"license": {
+		"attribution": "Copyright (c) 2012 Andhrapradesh Society for Knowledge Networks (fonts.siliconandhra.org). Copyright (c) 2011, Cyreal (www.cyreal.org) with Reserved Font Name 'Prata'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/suranna",
+		"revision": "475b195b8cfdb7fe3e071fa72a5441e8c5973a9c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/suranna",
+		"revision": "ce1c1f150ba50e59fd9d95c114c40545c4e8fe04"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/suranna/Suranna-Regular.ttf",
+			"sha256": "66ad4194f922e0b230e12d35070c852d38573ad40ad4e993cbe7d69df344b177",
+			"size": 624852,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

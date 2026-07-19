@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 258,
+				"sha256": "dae12ebaa47bb33a5ed36ba6e48716976416a9bb284325ff2e1c8ddbc041a25b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/quantico/Quantico-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 258,
+				"sha256": "dae12ebaa47bb33a5ed36ba6e48716976416a9bb284325ff2e1c8ddbc041a25b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/quantico/Quantico-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 258,
+				"sha256": "dae12ebaa47bb33a5ed36ba6e48716976416a9bb284325ff2e1c8ddbc041a25b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/quantico/Quantico-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 258,
+				"sha256": "dae12ebaa47bb33a5ed36ba6e48716976416a9bb284325ff2e1c8ddbc041a25b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002",
+			"outline": "glyf",
+			"path": "ofl/quantico/Quantico-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

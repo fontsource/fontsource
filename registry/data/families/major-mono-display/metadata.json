@@ -1,0 +1,40 @@
+{
+	"category": "monospace",
+	"dateAdded": "2018-12-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Emre Parlak",
+	"family": "Major Mono Display",
+	"id": "major-mono-display",
+	"license": {
+		"attribution": "Copyright 2018 The Major Mono Project Authors (https://github.com/googlefonts/majormono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/majormonodisplay",
+		"revision": "d32d5cfe1a9ad18bdf282f1a69af7d7a546ec5fd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/majormono",
+		"revision": "ab4221e332ee158b314406b4ca01246290a9168b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/majormonodisplay/MajorMonoDisplay-Regular.ttf",
+			"sha256": "3f2ee71c2b8464f065bf960a148be81d68fcc13385df87737928f948208dffc6",
+			"size": 126788,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

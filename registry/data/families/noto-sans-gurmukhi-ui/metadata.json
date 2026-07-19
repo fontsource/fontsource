@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"gurmukhi",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Gurmukhi UI",
+	"id": "noto-sans-gurmukhi-ui",
+	"license": {
+		"attribution": "Copyright 2019 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansgurmukhiui",
+		"revision": "b5708d1a54d9b47cab58423afb779d28d13dd018",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/gurmukhi",
+		"revision": "231c5c6e9c622c4ef3792ead7a91045af0ee610a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansgurmukhiui/NotoSansGurmukhiUI[wdth,wght].ttf",
+			"sha256": "3615afc43386f768ac15335349e8bf810bb811614f6b42252eca1fc34849692b",
+			"size": 165656,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

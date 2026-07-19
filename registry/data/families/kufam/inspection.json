@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1056,
+				"sha256": "6383d76ee8d22902c44522e8ca6d35c651e746cf890141214de317bbc0a4f5f2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.301; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kufam/Kufam-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1056,
+				"sha256": "6383d76ee8d22902c44522e8ca6d35c651e746cf890141214de317bbc0a4f5f2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.301; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kufam/Kufam[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

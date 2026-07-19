@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2023-06-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "The DocRepair Project, Phaedra Charles, Flavia Zimbardi",
+	"family": "Caprasimo",
+	"id": "caprasimo",
+	"license": {
+		"attribution": "Copyright 2023 The Caprasimo Project Authors (https://github.com/docrepair-fonts/caprasimo-fonts).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/caprasimo",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/docrepair-fonts/caprasimo-fonts",
+		"revision": "9f11e8fd4e8a4bdf069612a275a40103c5337ccf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/caprasimo/Caprasimo-Regular.ttf",
+			"sha256": "786ab84ee787d40df55be78cb4361e485a1c6687195cbcccf3538cb5e46ced90",
+			"size": 41660,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

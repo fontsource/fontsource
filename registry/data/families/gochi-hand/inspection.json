@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 240,
+				"sha256": "165483f52b021f2f2a85843d9c425d56d24c243d44899421dd96fb1538d35aea"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/gochihand/GochiHand-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

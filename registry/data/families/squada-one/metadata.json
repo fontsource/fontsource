@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-15",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Joe Prince",
+	"family": "Squada One",
+	"id": "squada-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Admix Designs (http://www.admixdesigns.com joe@admixdesigns.com) with Reserved Font Name Squada.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/squadaone",
+		"revision": "41f5a805b2947c0edc6878dbaf0408042484b621",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/squadaone/SquadaOne-Regular.ttf",
+			"sha256": "5b34a1633dbc48db3835d8a847bc475e6e0267121d3435854729ba4b407a05df",
+			"size": 19072,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-10-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Florian Karsten",
+	"family": "Space Grotesk",
+	"id": "space-grotesk",
+	"license": {
+		"attribution": "Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/spacegrotesk",
+		"revision": "00a38a53f92aef923b9353f40128e8f4552ddae4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/floriankarsten/space-grotesk",
+		"revision": "03507d024a01282884232081fc6011c09ff4e849"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/spacegrotesk/SpaceGrotesk[wght].ttf",
+			"sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72",
+			"size": 136676,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

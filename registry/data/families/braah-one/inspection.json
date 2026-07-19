@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 682,
+				"sha256": "73659b6a1dfc0f82f159d7d7cb81173cd0ecd8804d0e04c52da6db48e9154af3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.29]",
+			"outline": "glyf",
+			"path": "ofl/braahone/BraahOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

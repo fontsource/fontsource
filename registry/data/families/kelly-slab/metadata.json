@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-27",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Denis Masharov",
+	"family": "Kelly Slab",
+	"id": "kelly-slab",
+	"license": {
+		"attribution": "Copyright (c) 2011, Denis Masharov <denis.masharov@gmail.com>, with Reserved Font Names \"Kelly\", \"Kelly Slab\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kellyslab",
+		"revision": "ec2a70eddd695b8bfaa89d5c1e8157b5e4443010",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kellyslab/KellySlab-Regular.ttf",
+			"sha256": "cbf98bddb534c52d2f1150aed233c53e5e3a7966b7be1ab860550c23f9930c27",
+			"size": 77816,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

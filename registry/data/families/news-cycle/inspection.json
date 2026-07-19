@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 713,
+				"sha256": "7a4bc66e0b2bd80e465add216102531870516621ff348c849f3c5119719b36c7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.5.1",
+			"outline": "glyf",
+			"path": "ofl/newscycle/NewsCycle-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1564,
+				"sha256": "9028dc1501c19dd895b8483f81d42dceec541d65df1a4a6b22279aa9b05854ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.5.1",
+			"outline": "glyf",
+			"path": "ofl/newscycle/NewsCycle-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

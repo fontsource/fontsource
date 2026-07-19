@@ -1,0 +1,159 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-03-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mike Abbink, Bold Monday",
+	"family": "IBM Plex Serif",
+	"id": "ibm-plex-serif",
+	"license": {
+		"attribution": "Copyright 2020 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexserif",
+		"revision": "08420a23d7997d820b65a8aed9a19f04b3538623",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "43279c151110b30d65a582261a5ddefd5c75c7be"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Bold.ttf",
+			"sha256": "534c02c295999dd86e770457ece1d43db0de9256dd98bf741426f63ae904209e",
+			"size": 163800,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-BoldItalic.ttf",
+			"sha256": "2a32b76ac19c1942bf5942dbbd2a1566e5f1ae9833e421ebcf36d3522715e153",
+			"size": 173032,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-ExtraLight.ttf",
+			"sha256": "e70801926e16dd77c41f4a7c1099f6bab7140f489f03fb80856ec678820be60d",
+			"size": 163956,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-ExtraLightItalic.ttf",
+			"sha256": "f45aca4b4a1402c0c07c4a4665b278eb01aced90b6b719af29e8ae1a2a8bdc43",
+			"size": 172260,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Italic.ttf",
+			"sha256": "4b75b38be4673527231f49c48818d090c913d5042dd5c747b525bf6185d29ecb",
+			"size": 173004,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Light.ttf",
+			"sha256": "698bad1d5e52004cb1d504249bd704cf0aed03740d7ef22d7a533db2bc020f69",
+			"size": 162748,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-LightItalic.ttf",
+			"sha256": "f4e4364e8fb60d9a0a4ed41e5bbe757672b042cdf2a963215035951782de8060",
+			"size": 171364,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Medium.ttf",
+			"sha256": "32925e73e5b4a441df9d23e847f2b8c4046c1fc3db094e90bad8883157811509",
+			"size": 164104,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-MediumItalic.ttf",
+			"sha256": "a3b5c5b291db0b88abf833bd02864adcaa4ba994d9f7d9b790f552e2fd0cbabd",
+			"size": 173212,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Regular.ttf",
+			"sha256": "e882efa9c41949a528ac2369079ec5ef050c1c996bbd0bacce3c3326d44cf80d",
+			"size": 163068,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-SemiBold.ttf",
+			"sha256": "27ce4d105591b48f666b228e1e399838a704594efea22b730000951bea700a60",
+			"size": 164528,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-SemiBoldItalic.ttf",
+			"sha256": "15f4e3974b83b2459a6a1b252caa356a9a11316deeba45adbc89b46fb4aab820",
+			"size": 173748,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Thin.ttf",
+			"sha256": "1b4df73116dad2432f2d13337ae347fff71a03b8c1ba2b3e1c06cc98aadba72b",
+			"size": 161232,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/ibmplexserif/IBMPlexSerif-ThinItalic.ttf",
+			"sha256": "772397765d3842e375712a277609783dc1c753653157de3c807c5390d6a1513d",
+			"size": 168660,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

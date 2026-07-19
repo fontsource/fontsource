@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 918,
+				"sha256": "c3dcc7f39d235c1c6b65b4c54ca5c203b3fd1163f31f5599e59fe1b3a7d21aeb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008",
+			"outline": "glyf",
+			"path": "ofl/gelasio/Gelasio-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 918,
+				"sha256": "c3dcc7f39d235c1c6b65b4c54ca5c203b3fd1163f31f5599e59fe1b3a7d21aeb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008",
+			"outline": "glyf",
+			"path": "ofl/gelasio/Gelasio[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

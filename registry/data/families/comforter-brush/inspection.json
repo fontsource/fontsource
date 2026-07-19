@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 701,
+				"sha256": "3fa414d84eec64248e2374cb639098bc6ab67b318efe5a5195153a965dec6f8a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.013",
+			"outline": "glyf",
+			"path": "ofl/comforterbrush/ComforterBrush-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

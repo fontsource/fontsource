@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-01-06",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Duarte Pinto",
+	"family": "Gloock",
+	"id": "gloock",
+	"license": {
+		"attribution": "Copyright 2022 The Gloock Project Authors (https://github.com/duartp/gloock)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gloock",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/duartp/gloock",
+		"revision": "de92978ce821ae0cba86954b4c46abc70486981d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gloock/Gloock-Regular.ttf",
+			"sha256": "c3a67e0212f7da01764796ae721cb9bab3e122d142354f97cf9c63fb763e6d77",
+			"size": 98096,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

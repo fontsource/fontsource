@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-06-25",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Teko",
+	"id": "teko",
+	"license": {
+		"attribution": "Copyright 2023 The Teko Project Authors (https://www.github.com/googlefonts/teko)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/teko",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://www.github.com/googlefonts/teko",
+		"revision": "6715caf853f342eef57ea367b6c2991cd3928398"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/teko/Teko[wght].ttf",
+			"sha256": "d1321889f262bbbff632e7976349853399cd097b6f382d4b19790c915c13c1ae",
+			"size": 292108,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

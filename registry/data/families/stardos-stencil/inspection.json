@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 302,
+				"sha256": "426882fd43288fdbf518dbf6608402dd1bb39281ed842a6138b7cc3f7b2e3eae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/stardosstencil/StardosStencil-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 301,
+				"sha256": "03d98aceb7ec18fead3b81f59e4cd48da85fc8345a61e59a78d14db8fe8842eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.2)",
+			"outline": "glyf",
+			"path": "ofl/stardosstencil/StardosStencil-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

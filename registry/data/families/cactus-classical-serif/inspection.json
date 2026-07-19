@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 58064,
+				"sha256": "839e37ff76f7f0d3279ee8f69b4d0f8ce87c47506a2b694c380cd4e9ca32d3e0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/cactusclassicalserif/CactusClassicalSerif-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

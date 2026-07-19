@@ -1,0 +1,38 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 343,
+				"sha256": "11635367d3b21aaed9d7356b0d7b28677aaf277687ce673c1e43def16752a4f8"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL",
+				"SVG "
+			],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/arefruqaaink/ArefRuqaaInk-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 343,
+				"sha256": "11635367d3b21aaed9d7356b0d7b28677aaf277687ce673c1e43def16752a4f8"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL",
+				"SVG "
+			],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/arefruqaaink/ArefRuqaaInk-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

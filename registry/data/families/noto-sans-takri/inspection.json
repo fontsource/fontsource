@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "d13339b36ad4e15bec93d5bd11a0337835cf639786b4de22f79909e725106f53"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanstakri/NotoSansTakri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

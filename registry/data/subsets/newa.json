@@ -1,0 +1,51 @@
+{
+	"id": "newa",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"B7",
+			"B7"
+		],
+		[
+			"1DFB",
+			"1DFB"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"11400",
+			"1145B"
+		],
+		[
+			"1145D",
+			"11461"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/newa_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "139b95174856794f952710a8831912c5dd3116ec714d203efc1a164f294e5a8e",
+		"upstream": "namFiles"
+	}
+}

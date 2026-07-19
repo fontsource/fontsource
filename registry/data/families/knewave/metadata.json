@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tyler Finck",
+	"family": "Knewave",
+	"id": "knewave",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Tyler Finck (tylerfinck@gmail.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/knewave",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/knewave",
+		"revision": "f335d5ff1f12e4acf97d4208e1c37b4d386e57fb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/knewave/Knewave-Regular.ttf",
+			"sha256": "ed3bac761d755b89ab3082c844d4a623d63c7d6eef85d22ba1fb6c680e6a4436",
+			"size": 32460,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

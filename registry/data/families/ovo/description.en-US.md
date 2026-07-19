@@ -1,0 +1,5 @@
+**Foundry: [Sorkin Type Co](http://www.sorkintype.com/)**
+
+Ovo was inspired by a set of hand lettered caps seen in a 1930's lettering guide. The capitals suggested the time in which they were made because of the soft serif treatment used. This detail and a subtle casual feeling creeping into the otherwise classical forms led to the soft genial lowercase and the whimsical numbers now seen in Ovo. Ovo is a medium contrast serif font. Because of the old style variable letter widths and subtle detail it will work best at medium to large sizes.
+
+Source files are available from [Google Code](http://code.google.com/p/googlefontdirectory/). To contribute to the project contact Eben Sorkin.

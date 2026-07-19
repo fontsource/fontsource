@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-07-09",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Rajdhani",
+	"id": "rajdhani",
+	"license": {
+		"attribution": "Copyright (c) 2014 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rajdhani",
+		"revision": "8772f86137e17678cbd3584ca9a3c9486c3e7e50",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/rajdhani",
+		"revision": "86cae0e9a63279efa076915a470049dd76c044f0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rajdhani/Rajdhani-Bold.ttf",
+			"sha256": "691470dd3286a14e9677940d0bf75796179841ba5215cbda1a2c8910a3226afd",
+			"size": 400680,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/rajdhani/Rajdhani-Light.ttf",
+			"sha256": "140e9f13af69538161c5780fcf7f81594c069aea887e7bffd417ae1c641213c3",
+			"size": 383928,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/rajdhani/Rajdhani-Medium.ttf",
+			"sha256": "12ff7dcfe4c206e3875ac53b1762eab57de6a2fa7f5a86c26b97b88d6591eac2",
+			"size": 384348,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/rajdhani/Rajdhani-Regular.ttf",
+			"sha256": "6e1fc228a8318251a6e569502ec57bac1e4656c582f92f59ccecc4688e039b98",
+			"size": 377860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/rajdhani/Rajdhani-SemiBold.ttf",
+			"sha256": "94bbd25a18ca665999feb05a537de9fd2b860dcfb78bbe9ca00270825bf235da",
+			"size": 390340,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

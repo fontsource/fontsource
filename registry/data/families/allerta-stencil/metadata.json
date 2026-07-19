@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-11-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Matt McInerney",
+	"family": "Allerta Stencil",
+	"id": "allerta-stencil",
+	"license": {
+		"attribution": "Copyright (c) 2009, Matt McInerney <matt@pixelspread.com> with Reserved Font Name Allerta.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/allertastencil",
+		"revision": "3f73c2eb035060c81777a3f950586bb7cdaf6cff",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/allerta",
+		"revision": "88a8c57b949cb8224f24815d5d3aa05d4950de69"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/allertastencil/AllertaStencil-Regular.ttf",
+			"sha256": "8c504d1be20768941ab04251a389ad82d5782d647fa1c4029c811dc5bc2abd59",
+			"size": 20260,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

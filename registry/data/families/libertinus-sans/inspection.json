@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2214,
+				"sha256": "b097d00a3a914a775528466a969c83872863334580e441304cd29b7c095ce219"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinussans/LibertinusSans-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2182,
+				"sha256": "620f71d273fdc865b7b072e354f526cca4d398fc89c9406935105b0220307fd8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinussans/LibertinusSans-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2143,
+				"sha256": "2d406a19e142e0a3c3756677435232b5636b002aca617dbfb11e7c896f3781ca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinussans/LibertinusSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

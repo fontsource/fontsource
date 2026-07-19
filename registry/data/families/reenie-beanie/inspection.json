@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 320,
+				"sha256": "7713783a6d92baffa30e5ba2d2c2b51985a725c772f03b939049151381665b93"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/reeniebeanie/ReenieBeanie.ttf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

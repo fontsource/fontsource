@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 338,
+				"sha256": "b5095488e3231ebc2569655fca3399d36de47ce2ec9609ba505ce009582ab1e0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.261;PS 1.261;hotconv 1.0.86;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/galada/Galada-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-05-18",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Oleg Snarsky, Denis Masharov, Vladimir Rabdu",
+	"family": "Ruslan Display",
+	"id": "ruslan-display",
+	"license": {
+		"attribution": "Copyright 2011 Oleg Snarsky, Denis Masharov, Vladimir Rabdu.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ruslandisplay",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ruslandisplay/RuslanDisplay-Regular.ttf",
+			"sha256": "6fb5f4db06869e886ca5da3760c547c6d3ebec82aebd3678f314e99ae3347b09",
+			"size": 55048,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

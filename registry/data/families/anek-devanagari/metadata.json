@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-02-09",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Anek Devanagari",
+	"id": "anek-devanagari",
+	"license": {
+		"attribution": "Copyright 2021 The Anek Project Authors (https://github.com/EkType/Anek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anekdevanagari",
+		"revision": "5b5d46657dc2a85f7f8911c87ef4cb6122385274",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Anek",
+		"revision": "34074c6b406f4112e20c7ad10254a6e954d0324b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anekdevanagari/AnekDevanagari[wdth,wght].ttf",
+			"sha256": "b88cf0ff5705599b2f16fce4ba9ce2029f76106dd24f0419976c417d89f20888",
+			"size": 2190532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

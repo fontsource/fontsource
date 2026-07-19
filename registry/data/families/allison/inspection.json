@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 571,
+				"sha256": "7bbfbcd00a1aecf698b317526c1981cb257cb3eac12f0c2d7e6c2b1a15343e3e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/allison/Allison-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

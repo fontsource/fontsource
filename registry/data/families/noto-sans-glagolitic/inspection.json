@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 474,
+				"sha256": "485d87ca3eecd60d20e9f951275aab074ceaf10dc1f1dc6faa4290b48ca036aa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansglagolitic/NotoSansGlagolitic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

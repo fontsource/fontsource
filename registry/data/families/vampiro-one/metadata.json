@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Riccardo De Franceschi",
+	"family": "Vampiro One",
+	"id": "vampiro-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name 'Vampiro'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vampiroone",
+		"revision": "3cc3a3d9fdb54a3e305eca915c6665336b832ac3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Vampiro",
+		"revision": "ec42cf12230a8663c3ccb7a0c2da590ba98d2cd9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vampiroone/VampiroOne-Regular.ttf",
+			"sha256": "6e1920a4bbbc66552f793ecc686313ef09469ae75b6b25878bf8923fdfecb2a2",
+			"size": 27920,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

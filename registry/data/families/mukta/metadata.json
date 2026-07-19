@@ -1,0 +1,94 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-01-26",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Mukta",
+	"id": "mukta",
+	"license": {
+		"attribution": "Copyright (c) 2014, Girish Dalvi, Ek Type. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mukta",
+		"revision": "4ed247183585550f5ee6d09665680c282227df41",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Mukta",
+		"revision": "418021bbb8f5e7bf0bfd96296f9e015bf953efed"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mukta/Mukta-Bold.ttf",
+			"sha256": "7d22891cd57507b04af95a67ffaf59b7073b3595a27d1cfbbcefb418de820a12",
+			"size": 418416,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/mukta/Mukta-ExtraBold.ttf",
+			"sha256": "328eeebffe06fac60d60b46fe60c3995a908d2347e9c285f1eef1a0c9d73e004",
+			"size": 423168,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/mukta/Mukta-ExtraLight.ttf",
+			"sha256": "ff3260e6fd667797b0beb80430b0da318ccdac73c0f90fe828c2dd5a093265a1",
+			"size": 410644,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/mukta/Mukta-Light.ttf",
+			"sha256": "161f2f22d33a1c75d9fb37d74ea99e8dbbe119cd5c102c83146fb032a552e8f2",
+			"size": 405188,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/mukta/Mukta-Medium.ttf",
+			"sha256": "4db18bd8f19582607e8a6af0c4bf158b4b3378b426e42ad39d444d216c70074c",
+			"size": 419736,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/mukta/Mukta-Regular.ttf",
+			"sha256": "2958e4af564507df2a856164df6f9978dacb03f999a4f34a0c269dc8a4de9688",
+			"size": 432248,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mukta/Mukta-SemiBold.ttf",
+			"sha256": "f437fb098f8f29acb8628617cb2682f0780ef22fa8b0443de1f66090c36e510a",
+			"size": 411160,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

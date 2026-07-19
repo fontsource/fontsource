@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 428,
+				"sha256": "8b31c2a6376c488ebc609a59dfad7f6e3a4b102df33e3d67ab55d519d52d18ea"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v0.93) -l 8 -r 50 -G 200 -x 14 -w \"G\"",
+			"outline": "glyf",
+			"path": "ofl/milonga/Milonga-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

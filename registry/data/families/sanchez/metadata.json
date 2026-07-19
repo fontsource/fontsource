@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Daniel Hernandez",
+	"family": "Sanchez",
+	"id": "sanchez",
+	"license": {
+		"attribution": "Copyright (c) 2012, LatinoType (luciano@latinotype.com), with Reserved Font Names 'Sanchez'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sanchez",
+		"revision": "b7d028b50afb4cfb754a5da35ec397f9b2284b72",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sanchez/Sanchez-Italic.ttf",
+			"sha256": "50978369880866e41534bcdb215ebed9b632efae31d434b252a607688bf4bc05",
+			"size": 75212,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sanchez/Sanchez-Regular.ttf",
+			"sha256": "759e73bad0b78e84555215fd9a68637cf445d41d29e0e9834f5ee9dc43fa7684",
+			"size": 72552,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

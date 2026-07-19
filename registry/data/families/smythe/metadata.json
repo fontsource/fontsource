@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-04-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Smythe",
+	"id": "smythe",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Vernon Adams (vern@newtypography.co.uk) with Reserved Font Names 'Smythe'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/smythe",
+		"revision": "4f4168f517813d2349118f78e57345293584d18d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/smythe/Smythe-Regular.ttf",
+			"sha256": "51207abbe4ef2d576b3033e95fc5bd30282c0db766807e1b8ae3f19d2540e11c",
+			"size": 90652,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

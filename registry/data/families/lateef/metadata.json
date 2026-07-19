@@ -1,0 +1,94 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Lateef",
+	"id": "lateef",
+	"license": {
+		"attribution": "Copyright (c) 1994-2025 SIL Global.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lateef",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-lateef",
+		"revision": "d682ea7cc0305b592058255167c83d059aa640fa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lateef/Lateef-Bold.ttf",
+			"sha256": "eee405eeb4e81491b0b659fb40dc016765292022d74406c616f72501e160afe2",
+			"size": 243260,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lateef/Lateef-ExtraBold.ttf",
+			"sha256": "ee6406b63af32993054b1f7e2d6ff0fd7c91c409b0d4818bb1d686f709f0cdff",
+			"size": 244116,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/lateef/Lateef-ExtraLight.ttf",
+			"sha256": "d22920471ea9305e50b18674a285975cd9856059dd1dccb088becb101090c328",
+			"size": 240832,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/lateef/Lateef-Light.ttf",
+			"sha256": "f5c18f8c66cc30a61cc009f86b31aeecc4d81804fe4ef847cef4d2288a1e6723",
+			"size": 239892,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/lateef/Lateef-Medium.ttf",
+			"sha256": "b08e71723c6bdcc7855a1384ced2cc459f0fbbc65dfa0dfa0a94b9983d484ef1",
+			"size": 242052,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/lateef/Lateef-Regular.ttf",
+			"sha256": "fcbd9e0227a4d7238880defa5fd74c012d69351150709e559a8577446145c2fc",
+			"size": 241092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lateef/Lateef-SemiBold.ttf",
+			"sha256": "ac0ba34269c19062340d942c5ad4ecc41ab8b9d21df92973372a7e1d7a421ff2",
+			"size": 242260,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

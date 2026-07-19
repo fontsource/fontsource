@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-02-24",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "Woowahan Brothers",
+	"family": "Do Hyeon",
+	"id": "do-hyeon",
+	"license": {
+		"attribution": "Copyright 2018 The Do Hyeon Project Authors",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dohyeon",
+		"revision": "7e73e5a40f4145727a4783093db7695673c82a6c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/baemin/Dohyeon",
+		"revision": "1d32c9fa97c9f3d349587b45fe1851ebebd89cae"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dohyeon/DoHyeon-Regular.ttf",
+			"sha256": "35644be7f28e0a68a447b1f7af351dcde5674b870f24f7b5f43e26d00b4ab653",
+			"size": 879764,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

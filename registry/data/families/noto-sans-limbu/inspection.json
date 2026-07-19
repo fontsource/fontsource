@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "621140f2d8972c77a51f5c1dee3cb4e272cd46546c67cee0b6f2ae609b3277a4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanslimbu/NotoSansLimbu-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

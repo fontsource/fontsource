@@ -1,0 +1,57 @@
+{
+	"category": "display",
+	"dateAdded": "2012-08-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Life Savers",
+	"id": "life-savers",
+	"license": {
+		"attribution": "Copyright 2012 The Life Savers Project Authors (https://github.com/googlefonts/life-savers)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lifesavers",
+		"revision": "b1239eadfa756b3557d9e47742773f9e8e7cdac7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/life-savers",
+		"revision": "76eb6d11fa7a003dae0e05c4fa9e2f00a535d8c2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lifesavers/LifeSavers-Bold.ttf",
+			"sha256": "cbcc2ded1b108aca167abc1a8d752b1deb975c445611c0fb725d32d21dcfb000",
+			"size": 222528,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lifesavers/LifeSavers-ExtraBold.ttf",
+			"sha256": "a7392b6a21ec8f22e5019d0adf9945fc4acba8761d4ff1e53eec65c9a230b454",
+			"size": 228872,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/lifesavers/LifeSavers-Regular.ttf",
+			"sha256": "9cfbf78067b2f17079be543d38bc614ddad23cc6e9c61f119b2ad96289236056",
+			"size": 217792,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

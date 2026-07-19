@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 453,
+				"sha256": "ea8f192de184cbfa2d5c13d134fedbb873187a17b25aba9b3b17bb8ee484ecdd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.29]",
+			"outline": "glyf",
+			"path": "ofl/secularone/SecularOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

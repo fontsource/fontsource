@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 288,
+				"sha256": "7dbf8bddd598374ecd8b804c8f02a8391751c9b5be825a5b065efa2777d181dd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/bowlbyone/BowlbyOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

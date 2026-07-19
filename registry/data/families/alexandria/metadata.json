@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-11-04",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mohamed Gaber, Julieta Ulanovsky",
+	"family": "Alexandria",
+	"id": "alexandria",
+	"license": {
+		"attribution": "Copyright 2022 The Alexandria Project Authors (https://github.com/Gue3bara/Alexandria)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alexandria",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Gue3bara/Alexandria",
+		"revision": "4fd1422be3488837c41fbdb84a77350f0f56a734"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alexandria/Alexandria[wght].ttf",
+			"sha256": "db8ae03b62d55a65aa4e04307878df8c00d6e5388e4800635cbe0e22b6411b64",
+			"size": 332488,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

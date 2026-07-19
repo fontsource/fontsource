@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-06-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tyler Finck, ETC",
+	"family": "Epilogue",
+	"id": "epilogue",
+	"license": {
+		"attribution": "Copyright 2020 The Epilogue Project Authors (https://github.com/Etcetera-Type-Co/Epilogue)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/epilogue",
+		"revision": "1a18379b7ff79d2b61502b25c726bff655aafb97",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Etcetera-Type-Co/Epilogue",
+		"revision": "7a46afad13fd6e996e387559478fe8b4c7bb1807"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/epilogue/Epilogue-Italic[wght].ttf",
+			"sha256": "7e5263bfe5b8ea9d46201fc3e3d59c354628de2220c3f3fe831fad946a1f7db2",
+			"size": 209304,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/epilogue/Epilogue[wght].ttf",
+			"sha256": "012f651b45f47c10c7714cb7e3f2f7d9ccb7f235a2cc72c6b273ddc735705c67",
+			"size": 202996,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

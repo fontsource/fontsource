@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Khmer UI is an unmodulated (“sans serif”) design for app and website user interfaces in the Southeast Asian _Khmer_ script. It has multiple weights and widths, and 381 glyphs.

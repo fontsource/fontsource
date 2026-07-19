@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 473,
+				"sha256": "705f753bf3d0b194b7e24fbe27a5dece6e2a361f0f8e22d805752f01791583d2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.012",
+			"outline": "glyf",
+			"path": "ofl/ruthie/Ruthie-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

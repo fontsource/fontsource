@@ -1,0 +1,3 @@
+M+ FONTS is a little nifty font family for everyday usage. Mplus U is a Sans Serif font with nine weights from Thin to Black, supporting 5,700+ Kanjis for Japanese with GF Latin Plus. To further enhance visibility, legibility, and readability, the internal spaces of the glyphs are designed to be wider and maximize the size of the voiced/semi-voiced sound mark on the kana characters. This font is intended for use in UIs, and as an accessible/readability font (UD font). As a side effect, this font has a very cute appearance :-)
+
+To contribute to the project, visit [github.com/coz-m/MPLUS\_FONTS](https://github.com/coz-m/MPLUS_FONTS)

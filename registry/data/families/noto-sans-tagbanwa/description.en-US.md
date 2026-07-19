@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Tagbanwa is an unmodulated (“sans serif”) design for texts in the Southeast Asian _Tagbanwa_ script. It has 29 glyphs.

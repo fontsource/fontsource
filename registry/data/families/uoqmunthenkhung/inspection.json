@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 9162,
+				"sha256": "1bf26f94178a4934dd38cd370b42f4b6f21c2e56ff6404dc629ea13cddb32709"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.197",
+			"outline": "glyf",
+			"path": "ofl/uoqmunthenkhung/UoqMunThenKhung-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 251,
+				"sha256": "5d1dbb0fc690b480045c7a47870d42500dc4969b1b5a44b5968ae093f1a4ab1f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/cookie/Cookie-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

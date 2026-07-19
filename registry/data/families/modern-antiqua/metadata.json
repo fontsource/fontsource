@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "Modern Antiqua",
+	"id": "modern-antiqua",
+	"license": {
+		"attribution": "Copyright (c) 2011, wmk69, (wmk69@o2.pl), with Reserved Font Names 'ModernAntiqua' and 'Modern Antiqua'. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/modernantiqua",
+		"revision": "9143035437755c519a17429fc817ff59dcfa7fcb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/wmk69/Modern-Antiqua",
+		"revision": "f88d41ebebb9614874068d3142b6af52b707e917"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/modernantiqua/ModernAntiqua-Regular.ttf",
+			"sha256": "36ce0d70604b58915a29189065a1b8383d5197ba117994c87cbfd4f360831efd",
+			"size": 70108,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

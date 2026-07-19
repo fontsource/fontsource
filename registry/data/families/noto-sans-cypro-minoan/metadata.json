@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-12-12",
+	"declaredSubsets": [
+		"cypro-minoan",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Cypro Minoan",
+	"id": "noto-sans-cypro-minoan",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/cypro-minoan)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanscyprominoan",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/cypro-minoan",
+		"revision": "12b0fed7738a0a2b6d47040d383c2a5a5e796b0d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanscyprominoan/NotoSansCyproMinoan-Regular.ttf",
+			"sha256": "e2c9c85ce7044f895443e97653ca440e7499d10c59ef780c12e592558a7c2bda",
+			"size": 63164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 375,
+				"sha256": "42a9cc4a69c939ad6f3af5be8ec6fc68d57d6afdcb1d8b5d115157d51ceecc32"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansosmanya/NotoSansOsmanya-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-07-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Federo",
+	"id": "federo",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Olexa M. Volochay | Cyreal.org (a@cyreal.org). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/federo",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Federo",
+		"revision": "79d2ed54e783fb0b116aabdb6c9b0318393cd3c8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/federo/Federo-Regular.ttf",
+			"sha256": "5284628c38309ec5046a6bf231e038eaf84c46df03602690607af56cac2b9bc7",
+			"size": 145056,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

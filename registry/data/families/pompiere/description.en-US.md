@@ -1,0 +1,5 @@
+**Foundry: [Sorkin Type Co](http://www.sorkintype.com/)**
+
+Pompiere is a low contrast condensed sans serif font. However unlike most sans it has very tall ascenders and and very small x height. Pompiere is playful and even a little sweet. This font was inspired by a handmade sign seen outside of NYC firefighters Squad Co. 18 in the West Village of Manhattan. Because of its small x height and modest weight it will work best at medium to large sizes.
+
+Source files are available from [Google Code](http://code.google.com/p/googlefontdirectory/). To contribute to the project contact Eben Sorkin.

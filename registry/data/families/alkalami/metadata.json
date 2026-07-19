@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-06-10",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Alkalami",
+	"id": "alkalami",
+	"license": {
+		"attribution": "Copyright (c) SIL International, 2015-2023",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alkalami",
+		"revision": "0a732c0180b94fc1a6fc0c73c49a3dc03b44a2f1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-alkalami",
+		"revision": "aac8fee84607803af27a8c3bdae12056b0ba0aec"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alkalami/Alkalami-Regular.ttf",
+			"sha256": "4410dfc591b918dd4360b0252b079855a8a00250de363c8c0163b29ddfc56434",
+			"size": 145540,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-18",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Wire One",
+	"id": "wire-one",
+	"license": {
+		"attribution": "Copyright 2011 The Wire One Project Authors (https://github.com/cyrealtype/Wire-One)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/wireone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Wire-One",
+		"revision": "16db96d77889d4a8de2015ca5f3fc965446437d4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/wireone/WireOne-Regular.ttf",
+			"sha256": "d505059c3c094b921358db3e41be899789edf4c4aec1ec777be1643efcd9fc05",
+			"size": 48420,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

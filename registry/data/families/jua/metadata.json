@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-02-24",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "Woowahan Brothers",
+	"family": "Jua",
+	"id": "jua",
+	"license": {
+		"attribution": "Copyright 2018 The BM JUA Project Authors",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jua",
+		"revision": "69d2493f8b919292a9c4b530081934877093c038",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/woowabros/Jua",
+		"revision": "73d9cfefe39bf98fe45ac9e0062893353f3f3b81"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jua/Jua-Regular.ttf",
+			"sha256": "769677aef240bfc3b9965f2b50748075bff885e6c6992fc591a3fb268279f898",
+			"size": 2119352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

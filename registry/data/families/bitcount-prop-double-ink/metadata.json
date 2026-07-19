@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-01-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Petr van Blokland",
+	"family": "Bitcount Prop Double Ink",
+	"id": "bitcount-prop-double-ink",
+	"license": {
+		"attribution": "Copyright 2024 The Bitcount Project Authors (https://github.com/petrvanblokland/TYPETR-Bitcount)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bitcountpropdoubleink",
+		"revision": "c69999f8e0858b9a351ccd82731ace7e54928d29",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/petrvanblokland/TYPETR-Bitcount",
+		"revision": "89e7994f73b7f5ced80e7cf493d40be9e66ff82f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bitcountpropdoubleink/BitcountPropDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].ttf",
+			"sha256": "f9d7628a841cac26d188776079b48bf843884cccc3952d51fdcc2bc6de0e96ec",
+			"size": 338644,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

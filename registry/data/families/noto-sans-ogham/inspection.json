@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 364,
+				"sha256": "bbf2f580c1c1bcbe827b3587b8e457acdf9f34cd4812225a8e4fbe6290b94a55"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansogham/NotoSansOgham-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

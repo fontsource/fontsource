@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"inscriptional-pahlavi",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Inscriptional Pahlavi",
+	"id": "noto-sans-inscriptional-pahlavi",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/inscriptional-pahlavi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansinscriptionalpahlavi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/inscriptional-pahlavi",
+		"revision": "ae11e4305961021e457dc2f9a17b3a7eb1fe3357"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansinscriptionalpahlavi/NotoSansInscriptionalPahlavi-Regular.ttf",
+			"sha256": "96aa13745c70634bc902662aaa2a665818d277b04d3318992346c54954237cd6",
+			"size": 52148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 437,
+				"sha256": "9b7473f0aef5a3e9a29d0e3f5614165aab498f97529cf74b149d851829353ee4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.2",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 437,
+				"sha256": "9b7473f0aef5a3e9a29d0e3f5614165aab498f97529cf74b149d851829353ee4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.2",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 437,
+				"sha256": "9b7473f0aef5a3e9a29d0e3f5614165aab498f97529cf74b149d851829353ee4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.2",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 437,
+				"sha256": "9b7473f0aef5a3e9a29d0e3f5614165aab498f97529cf74b149d851829353ee4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.2",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 437,
+				"sha256": "9b7473f0aef5a3e9a29d0e3f5614165aab498f97529cf74b149d851829353ee4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.2",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 437,
+				"sha256": "9b7473f0aef5a3e9a29d0e3f5614165aab498f97529cf74b149d851829353ee4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.2",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 437,
+				"sha256": "9b7473f0aef5a3e9a29d0e3f5614165aab498f97529cf74b149d851829353ee4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.2",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsanshebrew/IBMPlexSansHebrew-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

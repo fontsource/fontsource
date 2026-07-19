@@ -1,0 +1,5 @@
+Inspired by the historic handwritten posters found in the vibrant coastal communities of Accra, Ga Maamli is a font that embodies the spirited essence of the Ga people. Originally used to announce social events like concerts, boxing matches, and parties, these original posters exuded a distinct flair and vivacity. Ga Maamli has been adapted and reworked into an extended character set that preserves the dynamism and allure of its traditional counterpart. This font’s variations and nuances exude a charm that pays homage to its vernacular origins while embracing modern typographic standards. Ga Maamli is more than just a font – it captures and celebrates the lively culture of the people of Accra.
+
+To contribute, see [github.com/SorkinType/GaMaamli/](https://github.com/SorkinType/GaMaamli/).
+
+![](Ga_Maamli_4.jpg) ![](Ga_Maamli_1.jpg) ![](Ga_Maamli_5.jpg) ![](Ga_Maamli_2.jpg) ![](Ga_Maamli_3.jpg) ![](Ga_Maamli_11.jpg) ![](Ga_Maamli_13.jpg)

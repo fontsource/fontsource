@@ -1,0 +1,47 @@
+{
+	"id": "javanese",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A980",
+			"A9CD"
+		],
+		[
+			"A9CF",
+			"A9D9"
+		],
+		[
+			"A9DE",
+			"A9DF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/javanese_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "1d1589c7214db63277a5a69cc588a6d87e46d42899742900cdcbde49d7b92cf8",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2164,
+				"sha256": "b604470f2f9d35d9d303866d4abfe23aae0b518d88cb131e1fdda7b5b6805a77"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+			"outline": "glyf",
+			"path": "ofl/lato/Lato-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

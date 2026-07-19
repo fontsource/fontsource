@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 14293,
+				"sha256": "3247b9546e486c1c6e9fe4ecd312f8de1f53270267270e0ce8c5599dbb2f333c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/mochiypopone/MochiyPopOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

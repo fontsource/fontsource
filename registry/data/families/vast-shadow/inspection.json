@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "43be30710ecbbab4d472811e33c019a613349683e30868b8c361c22918c8272e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/vastshadow/VastShadow-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

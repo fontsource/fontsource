@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2019-08-29",
+	"declaredSubsets": [
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Carolina Short",
+	"family": "Mansalva",
+	"id": "mansalva",
+	"license": {
+		"attribution": "Copyright 2022 The Mansalva Project Authors (https://github.com/carolinashort/mansalva)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mansalva",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/carolinashort/mansalva",
+		"revision": "192d65ff2d1560ff6399abde05904d910965d483"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mansalva/Mansalva-Regular.ttf",
+			"sha256": "613ca294f0a364fd282a06d5e8a65db5d8f2bb8b834f8b21437a53cf70dafb8a",
+			"size": 355776,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

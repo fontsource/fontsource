@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2022-09-30",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Daniel Coull, Eino Korkala",
+	"family": "Climate Crisis",
+	"id": "climate-crisis",
+	"license": {
+		"attribution": "Copyright 2020 The Climate Crisis Project Authors (https://github.com/dancoull/ClimateCrisis)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/climatecrisis",
+		"revision": "33fdc2ecc74b1c080e97ea13bcaa9a5806539229",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/dancoull/ClimateCrisis",
+		"revision": "8e3882135dddeb43f582ae88f337589dbba625f4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/climatecrisis/ClimateCrisis[YEAR].ttf",
+			"sha256": "4b25279f80e420f9f09dbba13eb14d0beabfa013d17f74bad19cc9fdf4d55523",
+			"size": 3601356,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

@@ -1,0 +1,3 @@
+Amita is the Indian Feminine form of Amit. Amita is a Latin and Devanagari typeface derived from [Redressed](https://www.google.com/fonts/specimen/Redressed) and Modular Infotech Devanagari 2310 and 1228. The Latin is a script type designed by Brian Bonislawsky which blends script and italic letterforms together in an upright non-connecting style. Open spacing and stylish letterforms lend themselves to titling, but also to clean legibility at smaller sizes as body copy. The Devanagari is a traditionally calligraphic style. The combination was designed by Eduardo Tunni.
+
+This project is led by Eduardo Tunni, a type designer based in Buenos Aires. To contribute, see [github.com/etunni/Amita](https://github.com/etunni/Amita)

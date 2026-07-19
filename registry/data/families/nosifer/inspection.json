@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 334,
+				"sha256": "fc3915b6d6ddfd4e38ae88a17967046dd419e29de62c2e43bc4c621c95b835dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.002",
+			"outline": "glyf",
+			"path": "ofl/nosifer/Nosifer-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

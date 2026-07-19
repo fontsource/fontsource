@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Faster One",
+	"id": "faster-one",
+	"license": {
+		"attribution": "Copyright 2012 The Faster Project Authors (https://github.com/etunni/faster), with Reserved Font Name 'Faster'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fasterone",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/faster",
+		"revision": "c1eb445af08bcc5ce66380f65e56d9d3135cca3c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fasterone/FasterOne-Regular.ttf",
+			"sha256": "382877a3a497c42bfeadfbb6e1b939d5b0f3f5cfd6c1a566c0c0d3d1f9b4bcb5",
+			"size": 94044,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

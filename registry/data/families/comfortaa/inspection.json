@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 850,
+				"sha256": "8d07aa8e676bf9ef89fa93e9aa0f26bd4d98a624a0cdc02f6cced1e6e7b332d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.105",
+			"outline": "glyf",
+			"path": "ofl/comfortaa/Comfortaa[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

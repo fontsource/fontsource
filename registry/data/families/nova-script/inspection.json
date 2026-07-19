@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 418,
+				"sha256": "35fb1b7907d5f0e772327174b9e892c784013d0a32eb0c100c06ea9a1033f256"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/novascript/NovaScript-Regular.ttf",
+			"style": "oblique",
+			"weight": 400
+		}
+	]
+}

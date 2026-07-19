@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3119,
+				"sha256": "2dc57e737cc6534ef6aaebf592ff4874c2b2f76b013f228b93421dc43874574c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/yeonsung/YeonSung-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

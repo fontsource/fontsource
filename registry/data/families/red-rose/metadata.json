@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2020-07-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jaikishan Patel",
+	"family": "Red Rose",
+	"id": "red-rose",
+	"license": {
+		"attribution": "Copyright 2018 The Red Rose Project Authors (https://github.com/magictype/redrose)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/redrose",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/magictype/redrose",
+		"revision": "d173625490893538463fa9746477f35c975ab0e9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/redrose/RedRose[wght].ttf",
+			"sha256": "e2811a5215647a881cf9e84c030cd81c7b452a99e567652f8531e877d7ae86da",
+			"size": 114928,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

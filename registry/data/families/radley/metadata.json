@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Radley",
+	"id": "radley",
+	"license": {
+		"attribution": "Copyright 2011 The Radley Project Authors (https://github.com/googlefonts/RadleyFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/radley",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/RadleyFont",
+		"revision": "7f54a0b10f092538849afcfbae11b9968eb2970b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/radley/Radley-Italic.ttf",
+			"sha256": "31be2a0bbae272eae2ae125e059c67e113990620da4190cf966d7e2182152bcf",
+			"size": 80504,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/radley/Radley-Regular.ttf",
+			"sha256": "22012c9224fd2e6fe87bbea65648063a5a56dfca17282d65a4c1db4fd863dba7",
+			"size": 92920,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

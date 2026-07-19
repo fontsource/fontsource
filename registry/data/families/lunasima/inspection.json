@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1937,
+				"sha256": "27932bde5cc06fcbf2c16d15298d16e6c764adf7a5f5a4df16da8a221461f94d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.009",
+			"outline": "glyf",
+			"path": "ofl/lunasima/Lunasima-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1937,
+				"sha256": "27932bde5cc06fcbf2c16d15298d16e6c764adf7a5f5a4df16da8a221461f94d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.009",
+			"outline": "glyf",
+			"path": "ofl/lunasima/Lunasima-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

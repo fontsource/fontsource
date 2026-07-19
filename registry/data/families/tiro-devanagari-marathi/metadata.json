@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-03-30",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tiro Typeworks, John Hudson, Fiona Ross, Paul Hanslow",
+	"family": "Tiro Devanagari Marathi",
+	"id": "tiro-devanagari-marathi",
+	"license": {
+		"attribution": "Copyright 2020 The Indigo Project Authors (https://github.com/TiroTypeworks/Indigo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tirodevanagarimarathi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Indigo",
+		"revision": "98b5d3a01c534b7029af04a59d31e0d7d90be15a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Italic.ttf",
+			"sha256": "ffa2383d457e468db75775cf19910a4817c3e250da6cfa28a3c6994954ab7d4c",
+			"size": 441728,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Regular.ttf",
+			"sha256": "8e1d4edf924c0685f1383d0d37aa7c4662103d2e485e53b535b4528af5acd966",
+			"size": 439712,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

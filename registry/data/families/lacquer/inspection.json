@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 250,
+				"sha256": "4cf0ecc28f626c9f96f9879f623d34814a0ef0dc4ef1c18a88364f7dc5e7a2be"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/lacquer/Lacquer-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

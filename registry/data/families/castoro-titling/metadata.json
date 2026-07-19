@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2023-03-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tiro Typeworks, John Hudson",
+	"family": "Castoro Titling",
+	"id": "castoro-titling",
+	"license": {
+		"attribution": "Copyright 2020 The Castoro Project Authors (https://github.com/TiroTypeworks/Castoro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/castorotitling",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Castoro",
+		"revision": "58a386a96e522b6d47c566175c7ee799d4c8d14f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/castorotitling/CastoroTitling-Regular.ttf",
+			"sha256": "64360ca1f8d8da1a983cbda6bac74c1bd47aeda41e116d9377e0ec629b029f44",
+			"size": 56184,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

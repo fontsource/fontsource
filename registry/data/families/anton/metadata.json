@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2011-02-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Anton",
+	"id": "anton",
+	"license": {
+		"attribution": "Copyright 2020 The Anton Project Authors (https://github.com/googlefonts/AntonFont.git)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anton",
+		"revision": "cee74d7ca45d66d5c1878c828645c862f2788d2d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/AntonFont",
+		"revision": "beb92fcad87808357123bb66881b4032dc96efe7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anton/Anton-Regular.ttf",
+			"sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+			"size": 170812,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

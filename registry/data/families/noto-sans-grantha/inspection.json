@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 439,
+				"sha256": "e4f0c669696a832338a00dcd2801d10d6596a1a4036b463a5256d49b4dfae6e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansgrantha/NotoSansGrantha-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

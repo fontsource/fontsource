@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sebastián Salazar",
+	"family": "Sedan",
+	"id": "sedan",
+	"license": {
+		"attribution": "Copyright 2023 The Sedan Project Authors (https://github.com/googlefonts/sedan)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sedan",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sedan",
+		"revision": "35a4019d7c2547b58177cff9a65b91e47dd79546"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sedan/Sedan-Italic.ttf",
+			"sha256": "d76f24f467075ba42c7483cde7ab8f785bd10a74e6e7eb967ab10c876bac1051",
+			"size": 88912,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sedan/Sedan-Regular.ttf",
+			"sha256": "ad6ea5b34a1e5508bc35ac01c9aa23367c9aace7e1cd42d54bcb517ec788e0e8",
+			"size": 116096,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

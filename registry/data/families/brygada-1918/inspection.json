@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1019,
+				"sha256": "2160d6110b1f5b80f64fb4695d883aa5045a424c1822c9a5d041fce45c6aa2e3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.006",
+			"outline": "glyf",
+			"path": "ofl/brygada1918/Brygada1918-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1025,
+				"sha256": "f38b2ea3c41adff7331ed842656d370a9a75270db79d4539a2547f23289f3371"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.006",
+			"outline": "glyf",
+			"path": "ofl/brygada1918/Brygada1918[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

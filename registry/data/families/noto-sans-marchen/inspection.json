@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 391,
+				"sha256": "5f215ebc772da7b5653bbf76a4f0a67b81c32908bf76fcb18924d1d4401ef8a1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansmarchen/NotoSansMarchen-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

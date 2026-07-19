@@ -1,0 +1,175 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-06-21",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "LV=, Jacques Le Bailly",
+	"family": "Livvic",
+	"id": "livvic",
+	"license": {
+		"attribution": "Copyright 2019 The Livvic Project Authors (https://github.com/Fonthausen/Livvic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/livvic",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Fonthausen/Livvic",
+		"revision": "30f612bf37946b0462c91ba2b4323e955a519463"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/livvic/Livvic-Black.ttf",
+			"sha256": "69522e784a487191945fa9f9d92d67e64cd5a4bc6e849ae42d5f4a799a8d9b60",
+			"size": 106204,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-BlackItalic.ttf",
+			"sha256": "83e66c050786059aeabeb5fb69defab2593df93caedde11746dc6277fbf8e523",
+			"size": 109932,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-Bold.ttf",
+			"sha256": "f2e3a5952c0fe465778a2eb93a8a4fd1f27fb6a9f8080f9aa2c7f085212dcf3f",
+			"size": 104788,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-BoldItalic.ttf",
+			"sha256": "b0fdf70102675ee1ac81cc38a0f0e40694a6403a8ba326cc62e99be0bad4cedd",
+			"size": 106312,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-ExtraLight.ttf",
+			"sha256": "7a69d3faedade4b4ee238069fe703163842f2230b505057563882cec659c59c6",
+			"size": 104564,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-ExtraLightItalic.ttf",
+			"sha256": "a4b62b2c66972bc3faf72a7f635085d69eb0e73fe6c595a2574a2ac8b8d2fd67",
+			"size": 105836,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-Italic.ttf",
+			"sha256": "a252ed6488d89f4200b54174c002846424aa5bab454220e6c68f6ab4ad03bbce",
+			"size": 106132,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-Light.ttf",
+			"sha256": "f3baaa33ac50be741765cf91e70d84835ede9a68dc95a35740de9affde113461",
+			"size": 105164,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-LightItalic.ttf",
+			"sha256": "cb15d9db1b29cd88277ecbdc77761730e3922e2e7c23b5dae04e00ab0c3b64c4",
+			"size": 106624,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-Medium.ttf",
+			"sha256": "78f9277de8b8734cf172288fb44f359c85f3a38a6f98f2333f8e103ce1acdcf4",
+			"size": 104384,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-MediumItalic.ttf",
+			"sha256": "2293e97ef4e012dc74a7a453d3261112de4b50b8b6507f8587ebc95e489490b9",
+			"size": 105952,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-Regular.ttf",
+			"sha256": "778e7577cf8ed8f0a97eb657bbf4d4f05bc0c6e8eb0ac8458f25a0eaa6ca16e8",
+			"size": 104416,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-SemiBold.ttf",
+			"sha256": "93cf062cf28cfff0359f38dd93a75f46dcf5ba514483bb557069a89b7b3c4e0c",
+			"size": 104560,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-SemiBoldItalic.ttf",
+			"sha256": "84a8af5c40ee96f0e9873b8e33a9d65c3a08cc3bdb5b0cd4e83e8174d12bade0",
+			"size": 106080,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-Thin.ttf",
+			"sha256": "17e22e7713967bebd783b1b8745649a2fc54e9ee096d8ad38129f53b47c94aef",
+			"size": 103740,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/livvic/Livvic-ThinItalic.ttf",
+			"sha256": "4ecbdca3573200a38f92b3964f9f5159660969100e2e07b0b96f4414288c462c",
+			"size": 104732,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

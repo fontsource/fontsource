@@ -1,0 +1,112 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-12-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Saira Semi Condensed",
+	"id": "saira-semi-condensed",
+	"license": {
+		"attribution": "Copyright 2016 The Saira Project Authors (omnibus.type@gmail.com), with reserved font name \"Saira\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sairasemicondensed",
+		"revision": "f2480dad6f8e7b1f42c023d3542e55eb8c3a2822",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Saira",
+		"revision": "1916f2a575479b626238d9842126e63aa208eebf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Black.ttf",
+			"sha256": "eabab4239393853625fa6522db4805f2ebe97e745a875e76f82ecb6e659e81a4",
+			"size": 97020,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Bold.ttf",
+			"sha256": "2ab7a35f798e149db1908ddae844024bcb975bdccbfc81dbac3429d0f6270b14",
+			"size": 96500,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-ExtraBold.ttf",
+			"sha256": "3a394a5b48a6838c6c2002f0c585af690e41ae23a8a8d923e02009d09fafbadd",
+			"size": 97340,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-ExtraLight.ttf",
+			"sha256": "61a841e4e7cbfa21fe3d2e97f8d75fe888055d5c6e7d3fdfdb1ad0868198dead",
+			"size": 93336,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Light.ttf",
+			"sha256": "44af898351f2884e603c7ce60891be47e7def9891d7fdbff95c192bf8996fb4f",
+			"size": 95612,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Medium.ttf",
+			"sha256": "bd886bd6f632b4906a4f469c81ccb37b1f0d68d4c175bef7277c8addb86cff2d",
+			"size": 95548,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Regular.ttf",
+			"sha256": "9dad0fea2405ebc740092a0ca34e350ac235c0a040095068e0054b337520f93a",
+			"size": 95184,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-SemiBold.ttf",
+			"sha256": "f7a32aded607fb364a940ca08b4dbe514346b4fbfa6bb1777c71edf6d7f0fe56",
+			"size": 96160,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Thin.ttf",
+			"sha256": "87163e0f5247162ff3f0eb4897fac7ce461e756dbae902bd940a8460f6730d68",
+			"size": 92828,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

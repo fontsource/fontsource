@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 397,
+				"sha256": "387329e38f093515b3b922d30625ea74856af640b55ad6cf92ac533071c7ba40"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/magra/Magra-Bold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 397,
+				"sha256": "387329e38f093515b3b922d30625ea74856af640b55ad6cf92ac533071c7ba40"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/magra/Magra-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

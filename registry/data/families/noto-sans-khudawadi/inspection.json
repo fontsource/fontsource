@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 406,
+				"sha256": "33a00ffe1dd52a421f8a4494bb2dbabecbf7795b70ed442539fd423d18013983"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanskhudawadi/NotoSansKhudawadi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

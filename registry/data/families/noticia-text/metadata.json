@@ -1,0 +1,67 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "JM Solé",
+	"family": "Noticia Text",
+	"id": "noticia-text",
+	"license": {
+		"attribution": "Copyright (c) 2011 JM Sole (info@jmsole.cl), with Reserved Font Name \"Noticia Text\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/noticiatext",
+		"revision": "d7db6d1847b54ff8268051e1fb0a664dbddd35c4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/jmsole/noticiatext",
+		"revision": "bcc80c5a33855419251ac3b9d1fa08d42d52f3ef"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/noticiatext/NoticiaText-Bold.ttf",
+			"sha256": "a9b1c97d67f93d7ad523656b5343a5a806e4b15501a305326770003cd5548b5d",
+			"size": 113244,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/noticiatext/NoticiaText-BoldItalic.ttf",
+			"sha256": "284e39cd922072e3c40f78340dde2fa26942a873f1e41c14259f635b320f962a",
+			"size": 86044,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/noticiatext/NoticiaText-Italic.ttf",
+			"sha256": "29e6acd83e8b24cfdc0d305e0637c96665c7a75985059d70615c65d63c4ff253",
+			"size": 87392,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/noticiatext/NoticiaText-Regular.ttf",
+			"sha256": "3eb11339e5a6acd7ad8c6d0753b175be2b12f6c5105562d5c43b2dc800d688f8",
+			"size": 115288,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

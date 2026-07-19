@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/pridi/Pridi-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/pridi/Pridi-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/pridi/Pridi-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/pridi/Pridi-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/pridi/Pridi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "2e7ec6d0a9dcf042d8d20e0c93305b84420e705f2bd13f1ed43bae4d6aa2d19c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/pridi/Pridi-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

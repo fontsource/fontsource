@@ -1,0 +1,182 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "3fb790bf3473e9f72dca61866bf24c96b6b8ec6cf3489b9f04dfe72edb847d57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "2cbd8b0f8477a268eb743f487196d9172a7e6311b8c466fcc9cae89348884d6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "3fb790bf3473e9f72dca61866bf24c96b6b8ec6cf3489b9f04dfe72edb847d57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "2cbd8b0f8477a268eb743f487196d9172a7e6311b8c466fcc9cae89348884d6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "2cbd8b0f8477a268eb743f487196d9172a7e6311b8c466fcc9cae89348884d6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "2cbd8b0f8477a268eb743f487196d9172a7e6311b8c466fcc9cae89348884d6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "3fb790bf3473e9f72dca61866bf24c96b6b8ec6cf3489b9f04dfe72edb847d57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "2cbd8b0f8477a268eb743f487196d9172a7e6311b8c466fcc9cae89348884d6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "3fb790bf3473e9f72dca61866bf24c96b6b8ec6cf3489b9f04dfe72edb847d57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "3fb790bf3473e9f72dca61866bf24c96b6b8ec6cf3489b9f04dfe72edb847d57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "2cbd8b0f8477a268eb743f487196d9172a7e6311b8c466fcc9cae89348884d6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "3fb790bf3473e9f72dca61866bf24c96b6b8ec6cf3489b9f04dfe72edb847d57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefortext/WixMadeforText[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Rodrigo Fuenzalida, Pablo Impallari",
+	"family": "Poetsen One",
+	"id": "poetsen-one",
+	"license": {
+		"attribution": "Copyright (c) 2012, Pablo Impallari (www.impallari.com|impallari@gmail.com) and Rodrigo Fuenzalida (www.rfuenzalida.com), with Reserved Font Name Poetsen.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/poetsenone",
+		"revision": "f02e51f4130654138f638558ecf6f8aab940266f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/poetsenone/PoetsenOne-Regular.ttf",
+			"sha256": "61943821534f3ba438a50e84c6efe90207abc03262fae04b52e4d1dfea3eab26",
+			"size": 200920,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 888,
+				"sha256": "8e83f70e12dc4a093fcc0d7ecfec8b736b2031d582ce2d0fa79937a2d17a2245"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/oldstandardtt/OldStandard-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 887,
+				"sha256": "84d3bfd554a01252c6400eed1e59eaee47a7ee03e918865a356f876551536af4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/oldstandardtt/OldStandard-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 888,
+				"sha256": "8e83f70e12dc4a093fcc0d7ecfec8b736b2031d582ce2d0fa79937a2d17a2245"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/oldstandardtt/OldStandard-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

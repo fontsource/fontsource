@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Tamil UI is an unmodulated (“sans serif”) design for app and website user interfaces in the Indic _Tamil_ script. It has multiple weights and widths, and 244 glyphs.

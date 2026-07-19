@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2011-06-29",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Riccardo De Franceschi, Eben Sorkin",
+	"family": "Asset",
+	"id": "asset",
+	"license": {
+		"attribution": "Copyright 2023 The Asset Project Authors (https://github.com/SorkinType/Asset)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/asset",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Asset",
+		"revision": "8b65aa032ccd4cd76c6e1e6e28bad4601210c8fe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/asset/Asset-Regular.ttf",
+			"sha256": "1dac444192904730f28fbbb10a5ca7a629fe38e4717e026fdfea50ed69bef920",
+			"size": 186716,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

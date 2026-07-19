@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "3f190f43983de0812043f41dda2fbc1625ae2fb728377d362ed09c62ea20029e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/mogra/Mogra-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

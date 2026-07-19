@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 418,
+				"sha256": "188b55f0217e2e1b6f93f3e2af2e5652f075e2ff941aa72461a2c644f599052e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanskhojki/NotoSansKhojki-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-08-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Galindo",
+	"id": "galindo",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Galindo\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/galindo",
+		"revision": "f00b789c095f41238091517c73e770b16a927c5d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/galindo",
+		"revision": "dc5fea52318d56672b1e3f000851806c8b5bd2cc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/galindo/Galindo-Regular.ttf",
+			"sha256": "335a73def6a890d38e8793a81077a8e15987b1a4e5366847e138b5beb13bf0fe",
+			"size": 58104,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

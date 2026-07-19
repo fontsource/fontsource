@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-04-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Fuggles",
+	"id": "fuggles",
+	"license": {
+		"attribution": "Copyright 2021 The Fuggles Pro Project Authors (https://github.com/googlefonts/fuggles)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fuggles",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/fuggles",
+		"revision": "cc9766c14a1aabedb7ef7dbf3e9aa0e325542c5a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fuggles/Fuggles-Regular.ttf",
+			"sha256": "2e738fa143601d4415c858d8c844f12333b49c47ba5c12c787a0f6fa150e152a",
+			"size": 734252,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

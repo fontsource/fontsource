@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-10-12",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "John Vargas Beltrán",
+	"family": "Salsa",
+	"id": "salsa",
+	"license": {
+		"attribution": "Copyright (c) 2011 by John Vargas Beltrn (john.vargasbeltran@gmail.com), with Reserved Font Name Salsa.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/salsa",
+		"revision": "56c33d6822f9411ed8de5a1dcb37cf16c412c428",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/salsa/Salsa-Regular.ttf",
+			"sha256": "3e69c0731a5104d4f25477aa2cdf9d7e9c54b201c60e99c37380ebd05097930c",
+			"size": 56680,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

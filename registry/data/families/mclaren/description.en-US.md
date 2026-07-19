@@ -1,0 +1,3 @@
+The McLaren typeface was created to act as a generic go-to comic style lettering. It has simple clean letterforms with a mild bounce and offbeat quality to it without going too far.
+
+It is cleanly legible for small bursts of copy to larger bodies of text, perfect for books for children, comics, and anything requiring a mildly playful yet clearly readable font.

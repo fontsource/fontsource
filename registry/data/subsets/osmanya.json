@@ -1,0 +1,35 @@
+{
+	"id": "osmanya",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10480",
+			"1049D"
+		],
+		[
+			"104A0",
+			"104A9"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/osmanya_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "1e06fe7e16a689b6bfed14e6232237dee6787557f6309200796d1fcacf1add12",
+		"upstream": "namFiles"
+	}
+}

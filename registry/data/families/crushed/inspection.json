@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 367,
+				"sha256": "3220d61519b98d5f17a2f5642a8d450572ab9c2429f462da2b425dabdef9a28f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "apache/crushed/Crushed-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

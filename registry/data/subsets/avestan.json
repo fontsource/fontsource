@@ -1,0 +1,51 @@
+{
+	"id": "avestan",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"2E",
+			"2E"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"B7",
+			"B7"
+		],
+		[
+			"200C",
+			"200D"
+		],
+		[
+			"2E30",
+			"2E31"
+		],
+		[
+			"10B00",
+			"10B35"
+		],
+		[
+			"10B39",
+			"10B3F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/avestan_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "e067dbc2fab813280cc9a3fa09a7c86a16c22453f2b3c8641a5716fb2ad9cf63",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Dogra is a modulated (“serif”) design for texts in the historical Indic _Dogra_ script. It has 143 glyphs.

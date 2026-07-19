@@ -1,0 +1,3 @@
+Yatra One is a Devanagari and Latin libre font inspired by the hand-painted signage of the Mumbai local railway. This heavy weight high-contrast display face preserves the idiosyncratic character of brush-painted signage by featuring angular cuts and open knots. Notably, the Latin adopts a Devanagari brush angle. A Mumbai native, Yatra offers basic Marathi alternates.
+
+The Yatra One project is led by Catherine Leigh Schmidt, a type designer based in the USA. To contribute, see [github.com/cathschmidt/yatra-one](https://github.com/cathschmidt/yatra-one)

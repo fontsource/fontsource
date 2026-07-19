@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-04-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Philipp H. Poll",
+	"family": "Libertinus Keyboard",
+	"id": "libertinus-keyboard",
+	"license": {
+		"attribution": "Copyright 2025 The Libertinus Keyboard Project Authors (https://github.com/googlefonts/libertinus)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/libertinuskeyboard",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/libertinus",
+		"revision": "88dfbb0a7715817a43499e613fc8e6645174cd6a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/libertinuskeyboard/LibertinusKeyboard-Regular.ttf",
+			"sha256": "0650795374a0987df42181958ba3d924effd8641a1d0c173c855f1f326551e0a",
+			"size": 204456,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

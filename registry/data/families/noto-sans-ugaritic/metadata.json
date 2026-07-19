@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"ugaritic"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Ugaritic",
+	"id": "noto-sans-ugaritic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ugaritic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansugaritic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/ugaritic",
+		"revision": "9ddf5ed058fcb2b8694c6dbdd4d0e914989e1d92"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansugaritic/NotoSansUgaritic-Regular.ttf",
+			"sha256": "68d5a37ab45ba3ab091dda2aa392698963a90e2b399e131394892b8224da6491",
+			"size": 53244,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

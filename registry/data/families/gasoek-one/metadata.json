@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-05-18",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jiashuo Zhang, JAMO",
+	"family": "Gasoek One",
+	"id": "gasoek-one",
+	"license": {
+		"attribution": "Copyright 2022 The Gasoek Project Authors (https://github.com/JAMO-TYPEFACE/Gasoek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gasoekone",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JAMO-TYPEFACE/Gasoek",
+		"revision": "f6b875c95ad933c5f937c2494ae2337f5aef2694"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gasoekone/GasoekOne-Regular.ttf",
+			"sha256": "73a6b8e0d12a56f0a070f19b44a93ae050f98eb926da5d2a7c8d6db92bd8d9c3",
+			"size": 1061372,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

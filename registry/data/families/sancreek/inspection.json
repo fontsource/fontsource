@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "5354ebcc2ac8a38d29b8b66c226fc9fc807c67a364c91eee5b56539c86401f58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/sancreek/Sancreek-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

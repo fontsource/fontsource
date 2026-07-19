@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 716,
+				"sha256": "496febb046979c832d66ed533fba06b62a87736c8aa3ace61419950191719279"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 20110429",
+			"outline": "glyf",
+			"path": "ofl/judson/Judson-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 711,
+				"sha256": "84645a4a7f5a25f23289bb4ed75096860cb9cd3748c69f644cfc08377d4eefde"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 20110429",
+			"outline": "glyf",
+			"path": "ofl/judson/Judson-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 852,
+				"sha256": "ebd33de8c48e84026b13f35b07378717378dbd50120e7aff90d9dfe2a6a4716d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 20110429",
+			"outline": "glyf",
+			"path": "ofl/judson/Judson-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

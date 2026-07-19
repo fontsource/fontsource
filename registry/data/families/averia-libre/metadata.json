@@ -1,0 +1,83 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Dan Sayers",
+	"family": "Averia Libre",
+	"id": "averia-libre",
+	"license": {
+		"attribution": "2011, Dan Sayers (i@iotic.com\nCopyright (c) 2011, Dan Sayers (i@iotic.com), with Reserved Font Name 'Averia' and 'Averia Libre'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/averialibre",
+		"revision": "155568cb397dd2edf1088772a0bd54755bdcdc2c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/averialibre/AveriaLibre-Bold.ttf",
+			"sha256": "374f67a2b8b8c7e45a543ec6558e03437e8c6a4450cc724a5d70cae89aba679d",
+			"size": 112184,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/averialibre/AveriaLibre-BoldItalic.ttf",
+			"sha256": "9a13370078d6be2c07778d2b03eee2e172aefc640c45327316a9ebf5c50d41a9",
+			"size": 135624,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/averialibre/AveriaLibre-Italic.ttf",
+			"sha256": "5e5b4d33f0911fd1a2d23d2096533933f131dd258f8c3196e1695e64256a7202",
+			"size": 128804,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/averialibre/AveriaLibre-Light.ttf",
+			"sha256": "b74d2b2dadfe7bf27abf1f25bb1b324504e52d8f6452ebb34a5672fbce12ff05",
+			"size": 108188,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/averialibre/AveriaLibre-LightItalic.ttf",
+			"sha256": "34871b14abcea6cb9dcee65ab635be65d08b0f825cd88d70a44ed5217bb9a524",
+			"size": 133576,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/averialibre/AveriaLibre-Regular.ttf",
+			"sha256": "3dda695e06012f89b39eaccd77fbbcf22133a17b00ce5ddf3e4e9a996546b865",
+			"size": 108424,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

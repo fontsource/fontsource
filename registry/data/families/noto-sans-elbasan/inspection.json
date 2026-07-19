@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "20194017bb645c54731faf97daa1f54ee5e075c5085c7a4e7462f44f8f8987e2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanselbasan/NotoSansElbasan-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

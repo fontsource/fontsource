@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-03-18",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "justfont",
+	"family": "Huninn",
+	"id": "huninn",
+	"license": {
+		"attribution": "Copyright 2025 The Huninn Project Authors (https://github.com/justfont/Huninn)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/huninn",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/justfont/Huninn",
+		"revision": "2f278099d0a6fdf77593c30bd6e4a44859800ee2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/huninn/Huninn-Regular.ttf",
+			"sha256": "1bd770a5ffc0c06723b567686f8b5db5abf9ab54227f3bbc4e6fd648f4698805",
+			"size": 4683972,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

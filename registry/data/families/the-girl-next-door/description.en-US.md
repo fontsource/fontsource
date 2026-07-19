@@ -1,0 +1,3 @@
+'the girl next door' is based on the handwriting of a middle school geography teacher.
+
+From her personality to her handwriting, she is the typical girl next door - she puts you at ease in every situation and is perfectly comfortable and confident in who she is. Her handwriting reflects that and is readable, neat, and yet comfortable and welcoming.

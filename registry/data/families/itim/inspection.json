@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 773,
+				"sha256": "f5a190cbb2b18f225e3c8a439219adde5dbc29977ee69ef43a67919576bc9dc5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002g",
+			"outline": "glyf",
+			"path": "ofl/itim/Itim-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "783f0d0d555c3a2930ece438d4482b57f1ac435fc3a061c7439b17e792e57fb4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansnandinagari/NotoSansNandinagari-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

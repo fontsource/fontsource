@@ -1,0 +1,47 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Mariela Monsalve",
+	"family": "Asul",
+	"id": "asul",
+	"license": {
+		"attribution": "Copyright (c) 2011, Mariela Monsalve (marmonsalve@gmail.com), with Reserved Font Name \"Asul\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/asul",
+		"revision": "1e3ac20fb04af6d3ae1286c96b4ac81b9d86cbe5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/asul",
+		"revision": "d3179dc9cff2434b299a698af0183d191e31e925"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/asul/Asul-Bold.ttf",
+			"sha256": "0aea5c8f5f04c9b2f252eb5b3d7f6d2ee80cbef613526ebbc330c592900bbcfe",
+			"size": 33424,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/asul/Asul-Regular.ttf",
+			"sha256": "2bd614af0594c9657cc6f986f602b294d2a903b3a7ce137942a35ac01b6f1f76",
+			"size": 33440,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

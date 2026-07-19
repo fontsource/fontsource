@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 405,
+				"sha256": "1f6a6eeca788819e19a30b26b571bc4f6f9ca7fd09370a961bfab045cfe4c588"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/belleza/Belleza-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

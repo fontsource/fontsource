@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Holtwood One SC",
+	"id": "holtwood-one-sc",
+	"license": {
+		"attribution": "Copyright 2011 The Holtwood Project Authors (https://github.com/googlefonts/HoltwoodFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/holtwoodonesc",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/HoltwoodFont",
+		"revision": "4e8e360635badb21940ad39fa97a495bf879e89b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/holtwoodonesc/HoltwoodOneSC-Regular.ttf",
+			"sha256": "17c8ed01cc4557554749f9435798a7d18afbc97fd0c866405edd38a40470d96c",
+			"size": 58448,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

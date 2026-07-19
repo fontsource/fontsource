@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Kousuke Nagai",
+	"family": "New Tegomin",
+	"id": "new-tegomin",
+	"license": {
+		"attribution": "Copyright 2020 The New Tegomin Project Authors (https://github.com/nagamaki008/NewTegomin)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/newtegomin",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/nagamaki008/NewTegomin",
+		"revision": "955803d27527edbfb9a416f765b6144215c250df"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/newtegomin/NewTegomin-Regular.ttf",
+			"sha256": "bcae8775f0f9b88e12e40434918c56817e96e3a291e2a6595a34fb38fe3e58fb",
+			"size": 7450688,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

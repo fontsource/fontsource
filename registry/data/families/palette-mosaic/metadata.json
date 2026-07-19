@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2021-04-13",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"menu"
+	],
+	"designer": "Shibuya Font",
+	"family": "Palette Mosaic",
+	"id": "palette-mosaic",
+	"license": {
+		"attribution": "Copyright 2020 The Palette Mosaic Project Authors (https://github.com/shibuyafont/Palette-mosaic-font-mono), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/palettemosaic",
+		"revision": "96505abe9c3b3ec1536883c9cc7ccb041b410399",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/shibuyafont/Palette-mosaic-font-mono",
+		"revision": "461da4c5f2ca2d38a590d27468252b9b4a54e31f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/palettemosaic/PaletteMosaic-Regular.ttf",
+			"sha256": "6029de6a94670695b620b3df665794e3dae213d8b7aed8ac0327b2da5679b004",
+			"size": 142520,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

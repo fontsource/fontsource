@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 343,
+				"sha256": "45c42b3258693621e24e1088f2c0aaef3c036391ab465a2b7421207c8f702899"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/manufacturingconsent/ManufacturingConsent-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

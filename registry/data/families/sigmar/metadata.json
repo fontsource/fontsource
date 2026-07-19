@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2023-02-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Sigmar",
+	"id": "sigmar",
+	"license": {
+		"attribution": "Copyright 2011 The Sigmar One Project Authors (https://github.com/googlefonts/sigmarone)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sigmar",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sigmarone",
+		"revision": "1fb4311d78953da0f943e0e4b806acdd076af81b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sigmar/Sigmar-Regular.ttf",
+			"sha256": "0597d733ed4722af36157f1e72d2415e123a9052655d67410c9ab8a0b223f54d",
+			"size": 209084,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

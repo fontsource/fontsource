@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 450,
+				"sha256": "b0cfe5b029a9fc244b8647a92b9429f5ba7044420b7c37fa595817c2b79d73c6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/aboreto/Aboreto-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

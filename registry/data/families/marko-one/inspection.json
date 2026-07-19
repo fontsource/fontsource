@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 212,
+				"sha256": "d8400491bd4325ab69f11fe11dd7dda88feaf9f681fc1afdf50e2799e92aaa31"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/markoone/MarkoOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

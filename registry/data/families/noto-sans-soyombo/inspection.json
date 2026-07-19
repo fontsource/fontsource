@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 419,
+				"sha256": "ff3cb80dd357ca1ac44a126ef761977e2295463f388366145af4499e8b9e9994"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssoyombo/NotoSansSoyombo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

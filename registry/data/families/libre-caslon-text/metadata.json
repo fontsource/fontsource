@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-06-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Pablo Impallari",
+	"family": "Libre Caslon Text",
+	"id": "libre-caslon-text",
+	"license": {
+		"attribution": "Copyright 2020 The Libre Caslon Text Project Authors (https://github.com/thundernixon/Libre-Caslon)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/librecaslontext",
+		"revision": "ea37b132420c876be7220094ea6374be0efb23e3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/thundernixon/Libre-Caslon",
+		"revision": "52200a76d723e4a8cb9a566686ed1f56a794f39a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/librecaslontext/LibreCaslonText-Italic[wght].ttf",
+			"sha256": "60ca1a3aade61c8c381800ca85b9b2f0fb341d89ebe065e12cd6ec2ee2e53e54",
+			"size": 176200,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/librecaslontext/LibreCaslonText[wght].ttf",
+			"sha256": "c11809dbfd5445886293d89b32bfc2584075c80e77750cf1c284113e36b8b3f4",
+			"size": 126876,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 578,
+				"sha256": "eb75c5ee0b4a531a60737fa480e45e60fe98dc94caeeff0fab45314ba32371d1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/twinklestar/TwinkleStar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

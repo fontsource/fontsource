@@ -1,0 +1,1 @@
+Chakra Petch is a Thai and Latin family which features Thai's traditional looped letterforms. It's a square sans serif with tapered corners. Due to the design, it works well for both digital and print based media.

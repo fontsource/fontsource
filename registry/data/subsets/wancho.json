@@ -1,0 +1,67 @@
+{
+	"id": "wancho",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"22",
+			"22"
+		],
+		[
+			"27",
+			"29"
+		],
+		[
+			"2C",
+			"2F"
+		],
+		[
+			"5B",
+			"5D"
+		],
+		[
+			"7B",
+			"7B"
+		],
+		[
+			"7D",
+			"7D"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"201C",
+			"201D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"1E2C0",
+			"1E2F9"
+		],
+		[
+			"1E2FF",
+			"1E2FF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/wancho_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "7cd8b6d8c6be976b11ea4a16d39b1eb35dec7f6e7fcc6c2e27c468326affc97f",
+		"upstream": "namFiles"
+	}
+}

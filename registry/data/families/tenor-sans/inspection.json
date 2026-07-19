@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 475,
+				"sha256": "4d226378f1666377e9d776d318b9be07140f49efedea916f13c65ec1b3bd7788"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1",
+			"outline": "glyf",
+			"path": "ofl/tenorsans/TenorSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 10,
+					"max": 100,
+					"min": 10,
+					"tag": "opsz"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 593,
+				"sha256": "bd9a34342b9f40284ebb3f3c161c1809dc3d57f5de7a407c899401b0c2aabd8d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102",
+			"outline": "glyf",
+			"path": "ofl/imbue/Imbue[opsz,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

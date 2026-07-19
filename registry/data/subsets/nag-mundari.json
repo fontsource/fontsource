@@ -1,0 +1,31 @@
+{
+	"id": "nag-mundari",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1E4D0",
+			"1E4F9"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/nag-mundari_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "7c4c9f9ce8737ee1d488860e7e2ec95f8b252356cc3f50030a0f3197a3575c37",
+		"upstream": "namFiles"
+	}
+}

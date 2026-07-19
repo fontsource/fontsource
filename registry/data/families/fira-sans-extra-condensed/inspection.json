@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1686,
+				"sha256": "74ef9bb16974c0feda9c0c95ddcbf8ba9fcf8afa205db2b155cc19e06d74eb45"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.203",
+			"outline": "glyf",
+			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

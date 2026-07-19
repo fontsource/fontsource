@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 533,
+				"sha256": "37ecde7bb0b05729e7f2768fab45660e94e85e7a4f2a1b2fd74050e47111d1d8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.007",
+			"outline": "glyf",
+			"path": "ofl/capriola/Capriola[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

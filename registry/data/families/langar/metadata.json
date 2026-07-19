@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2020-11-26",
+	"declaredSubsets": [
+		"gurmukhi",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Typeland, Alessia Mazzarella",
+	"family": "Langar",
+	"id": "langar",
+	"license": {
+		"attribution": "Copyright 2016 The Langar Project Authors (https://github.com/typeland/Langar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/langar",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typeland/Langar",
+		"revision": "82c844e60ab055cef1169f7825bc119ea3bd5090"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/langar/Langar-Regular.ttf",
+			"sha256": "b3c5559480f2c8587bdc24816f92ed3ad906d1d2ccc2294d2e051dc4ea0fe806",
+			"size": 192308,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

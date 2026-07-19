@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3158,
+				"sha256": "8f7d85c0ce29862159de58ebfc3fbbbf106f685b609d49fcbe72cca492e84cb5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/kiranghaerang/KirangHaerang-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

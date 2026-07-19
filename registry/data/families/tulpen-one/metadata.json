@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-08-03",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Naima Ben Ayed",
+	"family": "Tulpen One",
+	"id": "tulpen-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Naima Ben Ayed (naima.benayed@gmail.com), with Reserved Font Names \"Tulpen\" and \"Tulpen One\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tulpenone",
+		"revision": "4cfe01306dcf3460c6607b154ea325471799425c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tulpenone/TulpenOne-Regular.ttf",
+			"sha256": "b773d2fd30f5ef174560ce0fe05b05c6fa901e710236c4e9eea4c3f669580005",
+			"size": 35244,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

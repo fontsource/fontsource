@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "David Jonathan Ross",
+	"family": "Bungee",
+	"id": "bungee",
+	"license": {
+		"attribution": "Copyright 2023 The Bungee Project Authors (https://github.com/djrrb/Bungee)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bungee",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/djrrb/Bungee",
+		"revision": "eb03cf69adab5094f6b84e95357789cdf3bfeb99"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bungee/Bungee-Regular.ttf",
+			"sha256": "c4f5361ce120af3e6b9156d0bf379fa19cda2ea0cd18ac01fd99596c6bf66e3f",
+			"size": 118996,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

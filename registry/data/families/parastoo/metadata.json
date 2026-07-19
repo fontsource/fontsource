@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2025-05-22",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Saber Rastikerdar",
+	"family": "Parastoo",
+	"id": "parastoo",
+	"license": {
+		"attribution": "Copyright 2016 The Parastoo Project Authors (https://github.com/googlefonts/parastoo-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/parastoo",
+		"revision": "f99590247b389f1dfc0e6274ad801dffec1797e1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/parastoo-font",
+		"revision": "80a254f68aa51a80a97e33218e3e23e9d3229b10"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/parastoo/Parastoo[wght].ttf",
+			"sha256": "f29efde7fbdc1ec5d2e2d009371103c6a06ec4f85ed1703306b5fa11d261a8e4",
+			"size": 170292,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

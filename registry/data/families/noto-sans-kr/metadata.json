@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-02-05",
+	"declaredSubsets": [
+		"cyrillic",
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Google",
+	"displayName": "Noto Sans Korean",
+	"family": "Noto Sans KR",
+	"id": "noto-sans-kr",
+	"license": {
+		"attribution": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanskr",
+		"revision": "b38c5c93af322c45f633e17ac440ec1e6c94d489",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/noto-cjk",
+		"revision": "523d033d6cb47f4a80c58a35753646f5c3608a78"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanskr/NotoSansKR[wght].ttf",
+			"sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252",
+			"size": 10414588,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

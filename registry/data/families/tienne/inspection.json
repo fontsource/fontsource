@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 322,
+				"sha256": "2ab5916959eb1d65ac2d51089def501e1af52eb95456c7dbc96ce0070853e68f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "ofl/tienne/Tienne-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 299,
+				"sha256": "c76882939ae92bc09ec480fc3bb440ffd7c4c5b87853cd8149b6a3ca5c7ca91a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/tienne/Tienne-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 349,
+				"sha256": "df3ef39d0f6215d064b5671a042419f4ac03fdd3bd4a465420d68de22af6697d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/tienne/Tienne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

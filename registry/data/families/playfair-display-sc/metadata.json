@@ -1,0 +1,86 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-10-26",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Claus Eggers Sørensen",
+	"family": "Playfair Display SC",
+	"id": "playfair-display-sc",
+	"license": {
+		"attribution": "Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name \"Playfair Display\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playfairdisplaysc",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/clauseggers/Playfair",
+		"revision": "80a334101928546b04fa9e709ad4b2f11f8a9e10"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playfairdisplaysc/PlayfairDisplaySC-Black.ttf",
+			"sha256": "9a508229401e2a5deb52ff9c11f00446a482bd25029836a54027716310cfe0b0",
+			"size": 202412,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/playfairdisplaysc/PlayfairDisplaySC-BlackItalic.ttf",
+			"sha256": "6bea69bbdbbc93addd99bd124763e1fc8a31c9d72513e2d22087d04676e1546f",
+			"size": 199512,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/playfairdisplaysc/PlayfairDisplaySC-Bold.ttf",
+			"sha256": "b58a968cfc9b4e96e6857a206e1b042dc3fdbe5dc31cd75825d864f80ac7e915",
+			"size": 204568,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/playfairdisplaysc/PlayfairDisplaySC-BoldItalic.ttf",
+			"sha256": "3fe8dda7cb14eced6cd56fe2eb7eae8bee5d70caa301e75a23f1ce19fa6b82cb",
+			"size": 206016,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/playfairdisplaysc/PlayfairDisplaySC-Italic.ttf",
+			"sha256": "9d9c78080ddb51db269056bd0d84e11007e6f6e1980ec15e757158afbb6f3ad4",
+			"size": 202092,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/playfairdisplaysc/PlayfairDisplaySC-Regular.ttf",
+			"sha256": "55df09f0a49905a0f5e478597b5b3fc78acf0512ceb568504f3cdc4659662e47",
+			"size": 201772,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,43 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-12-03",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Google",
+	"displayName": "Noto Serif Traditional Chinese",
+	"family": "Noto Serif TC",
+	"id": "noto-serif-tc",
+	"license": {
+		"attribution": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoseriftc",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://www.github.com/notofonts/noto-cjk",
+		"revision": "985fa52c81c1d6692ccdd82bc3656e8fb932fd89"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoseriftc/NotoSerifTC[wght].ttf",
+			"sha256": "0077e18f57c6908f4a000969880940bdb0dad057c0e8d98b49dc364c3d1b09c6",
+			"size": 16851596,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

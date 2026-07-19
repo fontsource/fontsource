@@ -1,0 +1,47 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-11-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Ben Weiner",
+	"family": "Geo",
+	"id": "geo",
+	"license": {
+		"attribution": "Copyright (c) 2000-2010, Ben Weiner (ben@readingtype.org.uk), with Reserved Font Name Geo.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/geo",
+		"revision": "0ca061f588cd7e53095538f67a024ff9f6dacc45",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/geo",
+		"revision": "95c7f776abbeab9ccbb97d91ee68b1dfb72885f5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/geo/Geo-Oblique.ttf",
+			"sha256": "4f0083782a238a2c03fb8864119b1df5c0c8388a208a0f03d7a7c11313e679f3",
+			"size": 50036,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/geo/Geo-Regular.ttf",
+			"sha256": "38669ed77c0ffe1859f45143c63614c0f1953074331536cb35d3caca944be605",
+			"size": 38680,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

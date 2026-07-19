@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "303ca72aaef67f110b75fa2a63780e3a06ea87b131c6cbc04342983a0a2ccda2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/peralta/Peralta-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

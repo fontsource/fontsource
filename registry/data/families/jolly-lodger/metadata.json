@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Font Diner",
+	"family": "Jolly Lodger",
+	"id": "jolly-lodger",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Font Diner, Inc (diner@fontdiner.com) with Reseved Font Name \"Jolly Lodger\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jollylodger",
+		"revision": "912fda551f122da01d7ca9ad24e824459c4516ad",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/jollylodger",
+		"revision": "06a3c7f44fc01a8d09ed73ea8c180a11018bdac8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jollylodger/JollyLodger-Regular.ttf",
+			"sha256": "64d3e628ae2f3ebcb34eed029e90cb6674e9e74ed4e76e72effbf53b93b2dbf9",
+			"size": 39800,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

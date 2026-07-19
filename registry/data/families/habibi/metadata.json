@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Magnus Gaarde",
+	"family": "Habibi",
+	"id": "habibi",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Habibi\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/habibi",
+		"revision": "709a455e50ebaec8d0ca75f8a48103a652c0fb03",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/habibi",
+		"revision": "1c3eb606631e9da373f1017f7972765a7ab32bd5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/habibi/Habibi-Regular.ttf",
+			"sha256": "65ae905bf98ae8ca0ec67786d01cdc1add55759dbb8b99e7da0d368f9ea74671",
+			"size": 36260,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

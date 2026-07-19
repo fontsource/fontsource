@@ -1,0 +1,54 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-02-27",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"devanagari",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Google",
+	"family": "Noto Sans",
+	"id": "noto-sans",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/latin-greek-cyrillic",
+		"revision": "c4a321e123e4d4ff315f57f4e0adf294fe3a95be"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosans/NotoSans-Italic[wdth,wght].ttf",
+			"sha256": "58e6e0ebd1931b29a365aa2d3e2ee9a9e831a3af7cf3ad1462d4e72154f0b291",
+			"size": 2322640,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/notosans/NotoSans[wdth,wght].ttf",
+			"sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+			"size": 2049096,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

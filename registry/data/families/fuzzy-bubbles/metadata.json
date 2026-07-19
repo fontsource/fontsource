@@ -1,0 +1,49 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Fuzzy Bubbles",
+	"id": "fuzzy-bubbles",
+	"license": {
+		"attribution": "Copyright 2005 The Fuzzy Bubbles Project Authors (https://github.com/googlefonts/fuzzy-bubbles)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fuzzybubbles",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/fuzzy-bubbles",
+		"revision": "16d63fbca17f057559d0187fa7c07dd302d2276d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fuzzybubbles/FuzzyBubbles-Bold.ttf",
+			"sha256": "f18fa58c66cf2540800f10ae4c9ae315c89149c41ace2a394c5efca7354c4ea8",
+			"size": 140308,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/fuzzybubbles/FuzzyBubbles-Regular.ttf",
+			"sha256": "407829f1e0b6b73a9482ffdfd22702bb149a020fad33f95eb30bc98bf9d471d5",
+			"size": 148532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1548,
+				"sha256": "19cc0e162078d54b47935a63bfc510fc512a02072e1e3dbe2c11d04c6ebf9877"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/amiri/Amiri-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1549,
+				"sha256": "302b23c0ebe7f56b56f38f163cfe73acbe237275b0a914cb8f683f14b41ec740"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/amiri/Amiri-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1693,
+				"sha256": "c2605ac9adbde6d307c5864091ee35f777a16f67d56357752e9a9073e7aa942b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/amiri/Amiri-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1699,
+				"sha256": "030bf75fea579208a4a65080e391c62597fd55dc51b803de0d163175a6d7309e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/amiri/Amiri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"kharoshthi",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Kharoshthi",
+	"id": "noto-sans-kharoshthi",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/kharoshthi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanskharoshthi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/kharoshthi",
+		"revision": "aacffd48d67ea30b8836a4069df73aa789148c01"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanskharoshthi/NotoSansKharoshthi-Regular.ttf",
+			"sha256": "e1cc4bd5abc3c0efe6cb102a30b543371c8a42d12ed661bcc4c3f3e3421ee670",
+			"size": 91472,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

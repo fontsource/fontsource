@@ -1,0 +1,39 @@
+{
+	"id": "khitan-small-script",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"16FE4",
+			"16FE4"
+		],
+		[
+			"18B00",
+			"18CD5"
+		],
+		[
+			"18CFF",
+			"18CFF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/khitan-small-script_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "1a83eeaa66fb3b682819d08287f3955a5fe3a384a22354bbf3b13f4fc5a18068",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-06-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sunuwar"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Sunuwar",
+	"id": "noto-sans-sunuwar",
+	"license": {
+		"attribution": "Copyright 2021 The Noto Sunuwar Project Authors (https://github.com/ScriptEncodingInitiative/sunuwar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssunuwar",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/sunuwar",
+		"revision": "981b7c03c93f203c838b280c232de9166e8fb8c6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssunuwar/NotoSansSunuwar-Regular.ttf",
+			"sha256": "332bbbcbb64c42ccc0a1b79dfd557b47aa3bd88a8ffab1417dd2f6989ad67f4d",
+			"size": 59068,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

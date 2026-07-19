@@ -1,0 +1,121 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "14d53eb7ba86ae0a4b782a3affd05af7a6c0ea5f5d0f81bb69b922fa2672a5c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.072",
+			"outline": "glyf",
+			"path": "ofl/sairasemicondensed/SairaSemiCondensed-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		}
+	]
+}

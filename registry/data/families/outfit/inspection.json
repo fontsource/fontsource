@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 360,
+				"sha256": "39b843d179acbc5d3953b717533443ed8f7cd069cc66b61a155d637e245107b3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100;gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/outfit/Outfit[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

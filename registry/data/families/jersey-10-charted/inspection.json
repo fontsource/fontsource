@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 332,
+				"sha256": "a827367df165a277dbe53fab50a96bedd88508af705b8dcdf2a10edfdc15bb57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/jersey10charted/Jersey10Charted-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

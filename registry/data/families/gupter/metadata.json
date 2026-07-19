@@ -1,0 +1,56 @@
+{
+	"category": "serif",
+	"dateAdded": "2019-11-13",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Octavio Pardo",
+	"family": "Gupter",
+	"id": "gupter",
+	"license": {
+		"attribution": "Copyright 2019 The Gupter Project Authors (https://github.com/octaviopardo/GUPTER)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gupter",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/octaviopardo/GUPTER",
+		"revision": "959e1580e02c8213898597aa076c33eafd0d6db6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gupter/Gupter-Bold.ttf",
+			"sha256": "8fab8a84e5a47c4c5a5a4449ca62e3a6492fbddadd778de9d9fb2d3b1b36989c",
+			"size": 53204,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gupter/Gupter-Medium.ttf",
+			"sha256": "6ca9e0c2fa74cbd2b75a0e69b116218570ac74d80c1e92ebcc59bb6bdc8bb032",
+			"size": 52112,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/gupter/Gupter-Regular.ttf",
+			"sha256": "cad87b6c06ac63e24f2b9741c0cbe4bcf5945826696f4baca61933c959052cf6",
+			"size": 52376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

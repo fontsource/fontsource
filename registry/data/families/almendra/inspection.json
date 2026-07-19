@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 236,
+				"sha256": "67dcb43358f9bf438354b2a2f2efdef6c63c297da90fd01d11631bb1dcfdab39"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/almendra/Almendra-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 235,
+				"sha256": "f3aa311a8ced19a1fd9513006749d9064b646689fdb00af971118f1fb8b635c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/almendra/Almendra-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 235,
+				"sha256": "f3aa311a8ced19a1fd9513006749d9064b646689fdb00af971118f1fb8b635c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/almendra/Almendra-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 358,
+				"sha256": "8d0208d5ce50793b2693b0da7a30c4b060bcfdf9ca13ba078b9f592ff3a2b73c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/almendra/Almendra-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

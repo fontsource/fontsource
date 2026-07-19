@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 348,
+				"sha256": "ef11d4e542c9b7db6baa4c7ef6b34159d65543cb41bc5dfc494ff5f3f7cea949"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/adlamdisplay/ADLaMDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

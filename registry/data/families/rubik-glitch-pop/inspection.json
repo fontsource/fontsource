@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 688,
+				"sha256": "0d05ddb26d1404d3111d6dbb566f6899e92b64f4fd9136b68a74140889e45654"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.201",
+			"outline": "glyf",
+			"path": "ofl/rubikglitchpop/RubikGlitchPop-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

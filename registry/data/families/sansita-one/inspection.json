@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 211,
+				"sha256": "73622a0b6396f89f155162784e200482ffccfffc4e6413ab5eb239f1660a7c89"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/sansitaone/SansitaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

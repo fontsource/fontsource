@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 328,
+				"sha256": "cfde71713f66b4916af8a51947fb8cb307ac4925e7f356f521ae9024fde67ef3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/tagesschrift/Tagesschrift-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 725,
+				"sha256": "78ceb904d9f1968d6a2e8be78580bae13571b020024e4b810796357509d14491"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "862bbff3fa832dc10f005145efdf707e9ef0ff9325157135efc9a94ff3e6f755"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/kanit/Kanit-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

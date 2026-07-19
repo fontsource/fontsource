@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2011-10-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Vernon Adams",
+	"family": "Sancreek",
+	"id": "sancreek",
+	"license": {
+		"attribution": "Copyright 2011 The Sancreek Project Authors (https://github.com/googlefonts/sancreek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sancreek",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sancreek",
+		"revision": "6a26130542b916d49c5ed3e06ec5edfe68743d8a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sancreek/Sancreek-Regular.ttf",
+			"sha256": "8f87c42f6e6ba97125cd975c3d7d48902fc227d805948e678d5293a300e3fe55",
+			"size": 93252,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

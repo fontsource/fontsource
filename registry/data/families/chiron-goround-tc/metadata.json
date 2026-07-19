@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-06-21",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tamcy",
+	"family": "Chiron GoRound TC",
+	"id": "chiron-goround-tc",
+	"license": {
+		"attribution": "Copyright 2025 The Chiron GoRound TC Project Authors (https://github.com/chiron-fonts/chiron-go-round-tc)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chirongoroundtc",
+		"revision": "acff8706bac584c3149c630864fe0d3c07e34561",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/chiron-fonts/chiron-go-round-tc",
+		"revision": "803fb2f0423d5ce9683859cdaa19942896abaf74"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chirongoroundtc/ChironGoRoundTC[wght].ttf",
+			"sha256": "47cd5ff5153799d4c0d05bcc64da849e13b8eb842e46728a66bf2d52c480231f",
+			"size": 51170304,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

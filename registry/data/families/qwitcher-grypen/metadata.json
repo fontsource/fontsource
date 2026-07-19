@@ -1,0 +1,49 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Qwitcher Grypen",
+	"id": "qwitcher-grypen",
+	"license": {
+		"attribution": "Copyright 2007-2021 The Qwitcher Grypen Project Authors (https://github.com/googlefonts/qwitcher-grypen)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/qwitchergrypen",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/qwitcher-grypen",
+		"revision": "cd12ed20d42c30bae735809f5cf84d44ad598837"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/qwitchergrypen/QwitcherGrypen-Bold.ttf",
+			"sha256": "a48354aa42dca6dfaf16700b453d03c73ef34e6168b05c100edd7b957eb3add7",
+			"size": 200760,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/qwitchergrypen/QwitcherGrypen-Regular.ttf",
+			"sha256": "54f877a938c45e55f44344a6fe143f83f60cedbc653dc2e318617a9df97e964e",
+			"size": 186392,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

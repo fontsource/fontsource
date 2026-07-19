@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-01-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "FontFuror",
+	"family": "Magra",
+	"id": "magra",
+	"license": {
+		"attribution": "Copyright (c) 2011, FontFuror (info@fontfuror.com), with Reserved Names \"Magra\" \"Magra Pro\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/magra",
+		"revision": "45fe3cfa41d1e4faaa1078c7637ed803e192b3aa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/magra/Magra-Bold.ttf",
+			"sha256": "3e991012c290becfeb29943f86391a435b8bbf1fc853dc8399ccbfcce6b56a81",
+			"size": 44500,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/magra/Magra-Regular.ttf",
+			"sha256": "d4d0fe421d324b3a7886cac4c6c2069f4e671ae1859463f14af1488ad27f215e",
+			"size": 45536,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

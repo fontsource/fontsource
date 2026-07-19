@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tai-viet"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Tai Viet",
+	"id": "noto-sans-tai-viet",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tai-viet)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanstaiviet",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/tai-viet",
+		"revision": "8e1e11187d6bc19f48530777d268d2eee8b644b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanstaiviet/NotoSansTaiViet-Regular.ttf",
+			"sha256": "ba2a5346d6a9c041663fc835cf090efcbb9feb81a620245e7a64ecf6caafc59d",
+			"size": 70236,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

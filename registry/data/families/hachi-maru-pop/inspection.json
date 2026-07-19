@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7470,
+				"sha256": "20f325fa60b07b1a2e7d445f074c0072b4d8553606d02ebc05143555443093d4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.300",
+			"outline": "glyf",
+			"path": "ofl/hachimarupop/HachiMaruPop-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

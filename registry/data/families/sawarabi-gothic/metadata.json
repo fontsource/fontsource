@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-05-17",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "mshio",
+	"family": "Sawarabi Gothic",
+	"id": "sawarabi-gothic",
+	"license": {
+		"attribution": "Copyright 2016 The Sawarabi Gothic Project Authors.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sawarabigothic",
+		"revision": "6cdf4e00d66c8b7d8df381389e4ab115323b7a8b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sawarabi-mincho",
+		"revision": "397399cfaf018172046c936c0d774de0c5cbba82"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sawarabigothic/SawarabiGothic-Regular.ttf",
+			"sha256": "04f2f9111bb69cb8d3706c27b44879c2c0fac593a11edf5cfe8cec1efc92c789",
+			"size": 1902848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

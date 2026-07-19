@@ -1,0 +1,69 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-05-27",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Andrij Shevchenko",
+	"family": "Arsenal SC",
+	"id": "arsenal-sc",
+	"license": {
+		"attribution": "Copyright 2012 The Arsenal Project Authors (andrij.design@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arsenalsc",
+		"revision": "4258e32d2c6f911bed2f1cfe2952270dc29e4e61",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alexeiva/Arsenal",
+		"revision": "e34db566b2f5de986eea9b36986d602015d80615"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arsenalsc/ArsenalSC-Bold.ttf",
+			"sha256": "a06dae429de1ffd9de35b290bd0bc2cafc6e542390b118ab95f5414d2d99414b",
+			"size": 189768,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/arsenalsc/ArsenalSC-BoldItalic.ttf",
+			"sha256": "f2e9fc066073bff6dbf4b99af102e9f303abab11886665df0346ffb3c54b090b",
+			"size": 186624,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/arsenalsc/ArsenalSC-Italic.ttf",
+			"sha256": "e384e807ddd1888db1ae39fb96df3065e224b6d975dbef972e6697a7249547ef",
+			"size": 181848,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/arsenalsc/ArsenalSC-Regular.ttf",
+			"sha256": "56d7ae5099045e6b04a963156f665abeb5cfec2b55af0ddec74af6564bc7af47",
+			"size": 184020,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

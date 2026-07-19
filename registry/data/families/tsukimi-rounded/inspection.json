@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 477,
+				"sha256": "bd0b8744078b568daa7fe86b078c88005779e2612e8e6348d508da85e04f32d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.032; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/tsukimirounded/TsukimiRounded-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 477,
+				"sha256": "bd0b8744078b568daa7fe86b078c88005779e2612e8e6348d508da85e04f32d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.032; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/tsukimirounded/TsukimiRounded-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 477,
+				"sha256": "bd0b8744078b568daa7fe86b078c88005779e2612e8e6348d508da85e04f32d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.032; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/tsukimirounded/TsukimiRounded-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 477,
+				"sha256": "bd0b8744078b568daa7fe86b078c88005779e2612e8e6348d508da85e04f32d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.032; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/tsukimirounded/TsukimiRounded-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 477,
+				"sha256": "bd0b8744078b568daa7fe86b078c88005779e2612e8e6348d508da85e04f32d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.032; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/tsukimirounded/TsukimiRounded-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

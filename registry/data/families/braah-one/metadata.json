@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-03-24",
+	"declaredSubsets": [
+		"gurmukhi",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Ashish Kumar",
+	"family": "Braah One",
+	"id": "braah-one",
+	"license": {
+		"attribution": "Copyright 2022 The Braah Project Authors (https://github.com/artandtype/Braah )",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/braahone",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/artandtype/Braah",
+		"revision": "2b7ba2ea006af5a55313158531b6f0b71eca5ff8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/braahone/BraahOne-Regular.ttf",
+			"sha256": "b571d948a89980dfed4e69170c852311989ce2807ec486572d6106049ffc9521",
+			"size": 124592,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

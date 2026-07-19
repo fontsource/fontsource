@@ -1,0 +1,47 @@
+{
+	"id": "mandaic",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"640",
+			"640"
+		],
+		[
+			"840",
+			"85B"
+		],
+		[
+			"85E",
+			"85E"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/mandaic_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "9786869dc6b22b3f379ad03d3bdce0e328d263b6becf93a113f2f09fe1a4d68c",
+		"upstream": "namFiles"
+	}
+}

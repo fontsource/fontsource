@@ -1,0 +1,88 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": -100,
+					"tag": "BNCE"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "INFM"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "SPAC"
+				},
+				{
+					"default": 300,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 837,
+				"sha256": "17fa755dc9fbbca5522493b17357a6b3bad89af3671fa3b9a44f9abdab7be425"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.011;[c5ecc13dd]",
+			"outline": "glyf",
+			"path": "ofl/shantellsans/ShantellSans-Italic[BNCE,INFM,SPAC,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 800,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": -100,
+					"tag": "BNCE"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "INFM"
+				},
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "SPAC"
+				},
+				{
+					"default": 300,
+					"max": 800,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 837,
+				"sha256": "17fa755dc9fbbca5522493b17357a6b3bad89af3671fa3b9a44f9abdab7be425"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.011;[c5ecc13dd]",
+			"outline": "glyf",
+			"path": "ofl/shantellsans/ShantellSans[BNCE,INFM,SPAC,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 800,
+				"min": 300
+			}
+		}
+	]
+}

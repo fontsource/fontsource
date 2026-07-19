@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "soytutype fonts",
+	"family": "Oleo Script Swash Caps",
+	"id": "oleo-script-swash-caps",
+	"license": {
+		"attribution": "Copyright (c) 2012, Soytutype (contact@soytutype.com.ar|soytutype@gmail.com), with reserved fontname 'Oleo'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oleoscriptswashcaps",
+		"revision": "2f530d9121ebdcef97aef2fe8c04a2825e8eb34b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oleoscriptswashcaps/OleoScriptSwashCaps-Bold.ttf",
+			"sha256": "0d622c6a5db8507ecbaaa844672e8553f26249c6a1566b098f54295a77eb42a2",
+			"size": 39784,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/oleoscriptswashcaps/OleoScriptSwashCaps-Regular.ttf",
+			"sha256": "b8811c803202bbc80e6124200666080a62b63df3b52e1833456189ec1f798c31",
+			"size": 40088,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

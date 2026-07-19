@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2021-03-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yoshimichi Ohira",
+	"family": "Zen Dots",
+	"id": "zen-dots",
+	"license": {
+		"attribution": "Copyright 2021 The Dots Project Authors (https://github.com/googlefonts/zen-dots)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zendots",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zen-dots",
+		"revision": "c9f0bc02e2aad7544f843aefce01845a2d3ba372"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zendots/ZenDots-Regular.ttf",
+			"sha256": "2f81a9f4c26f302d87a40792e048cd7193c886aa50fa6792a4b4fb6266c25609",
+			"size": 37112,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

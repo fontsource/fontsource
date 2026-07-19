@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-04-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Festive",
+	"id": "festive",
+	"license": {
+		"attribution": "Copyright 2015 The Festive Pro Project Authors (https://github.com/googlefonts/festive)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/festive",
+		"revision": "846db8cc7a1f8dab1893b079ca64ee6e72c4f6d1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/festive",
+		"revision": "bd9351113997057606ffc2ef98ccca9f2c968eb0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/festive/Festive-Regular.ttf",
+			"sha256": "34940d4e68ffdbaee80e25d9ac8ef956eb0f4965c804d067041373ddca6a9ec8",
+			"size": 1326792,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

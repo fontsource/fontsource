@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-06-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Octavio Pardo",
+	"family": "REM",
+	"id": "rem",
+	"license": {
+		"attribution": "Copyright 2019 The REM Project Authors (https://github.com/octaviopardo/REM)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rem",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/octaviopardo/REM",
+		"revision": "b26d584ebdb3d8084355205d22c87e4e99658d56"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rem/REM-Italic[wght].ttf",
+			"sha256": "4ed7f32cb4c5ec11c5c8138c27dc26d83704a38027da0bf673a16f6135ee72bc",
+			"size": 205420,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/rem/REM[wght].ttf",
+			"sha256": "ea889cb78c4a724a865859c29d5d9fbf26932eb56442865b37303e1277428d3d",
+			"size": 200932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

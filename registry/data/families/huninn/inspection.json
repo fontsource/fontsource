@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11364,
+				"sha256": "aef7d297859b7469cd37680ae9f30ba03d23bfe87bc2e30faebd6391ea639cb2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/huninn/Huninn-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

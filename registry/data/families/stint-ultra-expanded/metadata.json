@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-02-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Stint Ultra Expanded",
+	"id": "stint-ultra-expanded",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Stint Ultra Expanded\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stintultraexpanded",
+		"revision": "f9eb76b33a54ffc61463da692b2a6b7dc8981bd8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stintultraexpanded/StintUltraExpanded-Regular.ttf",
+			"sha256": "82b0ec50644e8824100a32085c7136aeb79b2dc9a81804aefc82c3c9337f8a6f",
+			"size": 42788,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

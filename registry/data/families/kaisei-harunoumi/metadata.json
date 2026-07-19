@@ -1,0 +1,59 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-05-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Font-Kai",
+	"family": "Kaisei HarunoUmi",
+	"id": "kaisei-harunoumi",
+	"license": {
+		"attribution": "Copyright 2020 The Kaisei Project Authors (https://github.com/Font-Kai/Kaisei)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kaiseiharunoumi",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/FontKai-Kaisei/Kaisei",
+		"revision": "b396c906d67ddbfde60c2c78588f8de00b46c891"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kaiseiharunoumi/KaiseiHarunoUmi-Bold.ttf",
+			"sha256": "a10baa36d587245219269e8400da5c1540463c80236b952d6b6cd0485a337f4a",
+			"size": 4353936,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kaiseiharunoumi/KaiseiHarunoUmi-Medium.ttf",
+			"sha256": "1575519fd0fb06092b4a65d2cd8e9c057e3a4352c6f1cba8562450b074b06980",
+			"size": 4364768,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kaiseiharunoumi/KaiseiHarunoUmi-Regular.ttf",
+			"sha256": "176e2dac3ffb1659dd85c90666a3ee19d2bb4fce8a8a2315fe630625ac5ab6a7",
+			"size": 4571780,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

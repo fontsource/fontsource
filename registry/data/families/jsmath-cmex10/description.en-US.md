@@ -1,0 +1,1 @@
+These are fonts to support the jsMath package. They're based on data from the original Computer Modern fonts shipped with TeX, but with their own quirky encoding.

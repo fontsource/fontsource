@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"carian",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Carian",
+	"id": "noto-sans-carian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/carian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanscarian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/carian",
+		"revision": "90653aaa664123ff3b49ac9a1380d08feb84cf4e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanscarian/NotoSansCarian-Regular.ttf",
+			"sha256": "73f83bf71bac6046bd409f42706cd5e3706bce4521150302be3010ef6a161ecd",
+			"size": 53300,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

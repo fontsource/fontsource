@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 258,
+				"sha256": "099df63dd754a5a18628ccd2654b60616e8e364788ff9b29f26f1e1d0870762b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/rye/Rye-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

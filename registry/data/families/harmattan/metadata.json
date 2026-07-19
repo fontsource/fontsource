@@ -1,0 +1,67 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-07-03",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "SIL International",
+	"family": "Harmattan",
+	"id": "harmattan",
+	"license": {
+		"attribution": "Copyright (c) 2007-2008, The C&MA Guinea Fulbe Team;\n\nCopyright renewed 2011-2012, George W. Nuss (http://www.fulbefouta.com),\nwith the Reserved Font Name \"Fouta\".\n\nCopyright (c) 2004-2025, SIL Global (https://www.sil.org),\nwith Reserved Font Names 'Andika' and 'SIL'.\n\nCopyright (c) 2014-2025, SIL Global (https://www.sil.org/).\nwith Reserved Font Names \"Harmattan\" and \"SIL\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/harmattan",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-harmattan",
+		"revision": "b8d089bdb2cf97351cff63beaa9d68a6273dcc42"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/harmattan/Harmattan-Bold.ttf",
+			"sha256": "eb9de49ecb72d34e14c768bea6f9a7831f6bd2c15b062fcc2bb17b0ac967bc67",
+			"size": 559624,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/harmattan/Harmattan-Medium.ttf",
+			"sha256": "e83a209c87145152dcc4df18ffdd50aad8407fb563135392e168c896e932d2d5",
+			"size": 579456,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/harmattan/Harmattan-Regular.ttf",
+			"sha256": "5fbaafc51ad21663729b168afaff5f28d3e3087f1fc736ada32d7cd99674c0e0",
+			"size": 573500,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/harmattan/Harmattan-SemiBold.ttf",
+			"sha256": "83479450450a50da78412f2f48b274883095a23a01d6bf36db54e769cb09b11d",
+			"size": 561880,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

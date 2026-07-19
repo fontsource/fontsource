@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 860,
+				"sha256": "fd5507d261f569c32415bd365a6619c5b5638af10dcdb0ca3d1e1c6263ad139e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.102",
+			"outline": "glyf",
+			"path": "ofl/notosansethiopic/NotoSansEthiopic[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

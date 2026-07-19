@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-09-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dmitri Voloshin, Andrey Kudryavtsev",
+	"family": "Onest",
+	"id": "onest",
+	"license": {
+		"attribution": "Copyright 2021 The Onest Project Authors (https://github.com/simpals/onest)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/onest",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/simpals/onest",
+		"revision": "f18c06a14512e43a6191849278d6f07fdaf347d6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/onest/Onest[wght].ttf",
+			"sha256": "3faa4b905661849b2332e394b42f91b5bf5575e553c516caa81811e868a4d589",
+			"size": 124376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

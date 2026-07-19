@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11367,
+				"sha256": "56eb5d4dd45442f051fedec9e62a3bc6223fc4c99a23fe212c115c728481f7ea"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.64",
+			"outline": "glyf",
+			"path": "ofl/blackandwhitepicture/BlackAndWhitePicture-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

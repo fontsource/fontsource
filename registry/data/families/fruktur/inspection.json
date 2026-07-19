@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 731,
+				"sha256": "bfeba4083eb4b112d8cac964684c63bfa6c964cb641426feeee58bb51a95fc95"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/fruktur/Fruktur-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 731,
+				"sha256": "bfeba4083eb4b112d8cac964684c63bfa6c964cb641426feeee58bb51a95fc95"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/fruktur/Fruktur-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

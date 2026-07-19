@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Mende Kikakui is an unmodulated (“sans serif”) design for texts in the African _Mende_ script. It has 228 glyphs.

@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind Madurai",
+	"id": "hind-madurai",
+	"license": {
+		"attribution": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hindmadurai",
+		"revision": "0773f767e439aeda9826b966698896724daefc3d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind-madurai",
+		"revision": "3f3bd222489daea4dfec65d5de86012ed4819b5b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hindmadurai/HindMadurai-Bold.ttf",
+			"sha256": "842086c4312100a032494dcb43fa7afc69ad5772fe004865e0761f92165910a1",
+			"size": 142576,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hindmadurai/HindMadurai-Light.ttf",
+			"sha256": "dbe7a2234d341e80b345d4ffc2002e3089492cd07cd4ff5c38fe2dcbbfea54cc",
+			"size": 127664,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hindmadurai/HindMadurai-Medium.ttf",
+			"sha256": "522aae6dea7fb9a9dfbf2ea25bf2ebf5d6f05c4ecba30fd2a56d22a690f4c072",
+			"size": 137784,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hindmadurai/HindMadurai-Regular.ttf",
+			"sha256": "8bd56d6002d4fe4f5f378dd29f9ad382dbbd03a2bf16da24599aabe33f9b55b3",
+			"size": 136868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hindmadurai/HindMadurai-SemiBold.ttf",
+			"sha256": "fce32cd155130741e8dbae7256ddc2cb195eb07f7816746e7bc828e03c7b0ce5",
+			"size": 139348,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

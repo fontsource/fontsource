@@ -1,0 +1,3 @@
+Murecho is a low-stroke contrast, flat terminal Gothic style (“sans serif”) Japanese typeface designed for text settings in Japan. It covers Hiragana, Katakana, and Kanji (JOYO+). It also supports Latin, Cyrillic, and Greek. Murecho is available in 9 practical weights and as a variable font.
+
+To contribute to Murecho, please visit the [github page](https://github.com/positype/Murecho-Project).

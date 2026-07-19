@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Kolker Brush",
+	"id": "kolker-brush",
+	"license": {
+		"attribution": "Copyright 2004 The Kolker Brush Project Authors (https://github.com/googlefonts/kolker-brush)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kolkerbrush",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/kolker-brush",
+		"revision": "03ba4eb35eb2801089ff9343695a1f54f9b8d5b7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kolkerbrush/KolkerBrush-Regular.ttf",
+			"sha256": "c0914812bc5b224cc0e8321de70021a33a1a766b9efaf525f7463200f82300f4",
+			"size": 268272,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

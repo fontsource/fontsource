@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2024-12-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"menu"
+	],
+	"designer": "Aleksandr Andreev",
+	"family": "Pochaevsk",
+	"id": "pochaevsk",
+	"license": {
+		"attribution": "Copyright 2025 The Pochaevsk Project Authors (https://github.com/slavonic/pochaevsk).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pochaevsk",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/slavonic/pochaevsk",
+		"revision": "2117e7362d9b465ff0ac1850b535860d43d05f1d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pochaevsk/Pochaevsk-Regular.ttf",
+			"sha256": "1c424dbaad55832f4067c631c89ecae1c917f23f8c33323987ea4a99f97012a8",
+			"size": 180120,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

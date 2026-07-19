@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-09-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "ParaType",
+	"family": "PT Sans Narrow",
+	"id": "pt-sans-narrow",
+	"license": {
+		"attribution": "Copyright © 2009 ParaType Ltd (yakupov@paratype.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ptsansnarrow",
+		"revision": "7c36d46208de28d9dc5ef3bf8c33716ea89c3ca9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ptsansnarrow/PT_Sans-Narrow-Web-Bold.ttf",
+			"sha256": "e69d83bcf5bd647892b4e2b22f5098dabd55c989413513197722fc156fb9f00e",
+			"size": 487720,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ptsansnarrow/PT_Sans-Narrow-Web-Regular.ttf",
+			"sha256": "4102edda03059163771869d258df54ac8563c408fa6e9ef75b2ddc85eabea6f4",
+			"size": 396212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

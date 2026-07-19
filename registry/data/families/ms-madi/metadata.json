@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-03-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Ms Madi",
+	"id": "ms-madi",
+	"license": {
+		"attribution": "Copyright 2018 The Ms Madi Project Authors (https://github.com/googlefonts/ms-madi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/msmadi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/ms-madi",
+		"revision": "867703c03535006513ced087c9d2a1a1fda8f565"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/msmadi/MsMadi-Regular.ttf",
+			"sha256": "08dfe959077490d11a4dd0d3097b48daafdecef821e290c973cd1893595cc208",
+			"size": 144208,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

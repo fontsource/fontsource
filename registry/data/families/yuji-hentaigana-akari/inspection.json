@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 336,
+				"sha256": "bdf1151509a3a1db122f841fc072d8203be2321f712f761c9b5e6ddcd5300f78"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002",
+			"outline": "glyf",
+			"path": "ofl/yujihentaiganaakari/YujiHentaiganaAkari-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

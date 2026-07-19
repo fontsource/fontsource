@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 262,
+				"sha256": "a11aba93b7435e1d526d3ca97460f4dc749b2190d3d964ce05a94592b43b7dec"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/vampiroone/VampiroOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 700,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 423,
+				"sha256": "c875ebcd6fab6c9305b9a25c15f73eceaf85edd965b52299ceeb12ad8f9de02b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/stacksansheadline/StackSansHeadline[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 700,
+				"min": 200
+			}
+		}
+	]
+}

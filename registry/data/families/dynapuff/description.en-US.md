@@ -1,0 +1,5 @@
+Dynapuff’s loveable demeanor and hand-drawn charm makes it well suited for your, _“zomg’s”_ and _“asdfajlskdfjalksdfjkj’s”_. 😂😂😂😂😂 Dynapuff features OpenType code that alternates the vertical position of the letters to make those _“noooooooooo waaaaaaay”_s appear hand-drawn and less like a robot texting on a typewriter. Give it a whirl in Google’s keyboard ([Gboard](https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin)) where you can transform text messages into typographic stickers. Plain text _“hahas”_ are a thing of the past after you’ve sent an _“lol”_ in Dynapuff.
+
+What Dynapuff might lack in subtlety, it makes up for it with its playful and flexible typographic energy. Designed by Toshi Omagari, this casual typeface is optimized for legibility in small text environments like stickers or candy packaging. It also manages to be large when displayed in children’s books to shop signage.
+
+To contribute see [github.com/googlefonts/dynapuff](https://github.com/googlefonts/dynapuff).

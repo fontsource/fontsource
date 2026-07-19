@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 497,
+				"sha256": "ba7ab9b39c348720b62f3c762af291dc6e0a526e2eb850feb520dde1fee07a7d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100;gftools[0.9.25]",
+			"outline": "glyf",
+			"path": "ofl/schibstedgrotesk/SchibstedGrotesk-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 497,
+				"sha256": "ba7ab9b39c348720b62f3c762af291dc6e0a526e2eb850feb520dde1fee07a7d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100;gftools[0.9.25]",
+			"outline": "glyf",
+			"path": "ofl/schibstedgrotesk/SchibstedGrotesk[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 400
+			}
+		}
+	]
+}

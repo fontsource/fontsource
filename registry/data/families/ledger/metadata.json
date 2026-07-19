@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-02-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Denis Masharov",
+	"family": "Ledger",
+	"id": "ledger",
+	"license": {
+		"attribution": "Copyright (c) 2011, Denis Masharov <denis.masharov@gmail.com>.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ledger",
+		"revision": "17237886deb09de12ff8c5eb26d19ff0c1a36ea9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ledger/Ledger-Regular.ttf",
+			"sha256": "0d9e4086208d5aee8813ae1185010c58fa2f07933fb5c1a1d0950f42bd976272",
+			"size": 62148,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

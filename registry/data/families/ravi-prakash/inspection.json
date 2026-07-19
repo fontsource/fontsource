@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 305,
+				"sha256": "c0def4310df3aa788ec0683f72d1f9b51443c02750639d0128625d157cc271e4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4; ttfautohint (v1.2.42-39fb)",
+			"outline": "glyf",
+			"path": "ofl/raviprakash/RaviPrakash-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

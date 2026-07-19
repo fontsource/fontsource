@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7815,
+				"sha256": "53b07420a470eaf75a5f13ee41432faa2760429686f0ea6e39b9856104c0b1b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/zenantique/ZenAntique-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

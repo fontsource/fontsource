@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2019-05-10",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Rob Jelinski, Alyson Fraser Diaz",
+	"family": "Beth Ellen",
+	"id": "beth-ellen",
+	"license": {
+		"attribution": "Copyright 2019 The Beth Ellen Project Authors (https://github.com/googlefonts/BethEllen)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bethellen",
+		"revision": "f69040e2710b3c617b1ba5bd8ffb0bb463813ec9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/BethEllen",
+		"revision": "d6c8d9b3871c432c6abfd71660885f16ddbce3e2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bethellen/BethEllen-Regular.ttf",
+			"sha256": "ca49471aec90a19df63f583f5a60d514f012559a8a2d17f62f8a389fe90726d7",
+			"size": 116988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 828,
+				"sha256": "5e3859ae6e8d4911ab3128ad4264e9bfbaf9f01fb3352be0de70d4e5d6f81c42"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100",
+			"outline": "glyf",
+			"path": "ofl/pushster/Pushster-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

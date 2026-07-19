@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 346,
+				"sha256": "6e5e9bf37948352940c8f682d6b3ddcbd28e17da27639212a8b3009ed4600b5b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.27]",
+			"outline": "glyf",
+			"path": "ofl/delicioushandrawn/DeliciousHandrawn-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

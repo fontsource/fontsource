@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2021-03-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yoshimichi Ohira",
+	"family": "Zen Loop",
+	"id": "zen-loop",
+	"license": {
+		"attribution": "Copyright 2021 The Zen-Loop Project Authors (https://github.com/googlefonts/zen-loop)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zenloop",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zen-loop",
+		"revision": "6ca53231f8adfb03f75d63b1dc1a8d8db6d641cf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zenloop/ZenLoop-Italic.ttf",
+			"sha256": "7ae5141733792d8596d9be4b9ab865ccbfda30bcade02c935b5a918875bc46d8",
+			"size": 45416,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/zenloop/ZenLoop-Regular.ttf",
+			"sha256": "06c4de349ee28ef965f9a5361ef2c28841628adcc3e86490b9811584acb2378b",
+			"size": 43064,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

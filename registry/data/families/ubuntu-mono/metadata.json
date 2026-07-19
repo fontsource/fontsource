@@ -1,0 +1,70 @@
+{
+	"category": "monospace",
+	"dateAdded": "2011-10-05",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dalton Maag",
+	"family": "Ubuntu Mono",
+	"id": "ubuntu-mono",
+	"license": {
+		"attribution": "Copyright 2011 Canonical Ltd. Licensed under the Ubuntu Font Licence 1.0",
+		"id": "UFL-1.0",
+		"url": "https://ubuntu.com/legal/font-licence"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ufl/ubuntumono",
+		"revision": "81e687fb3c5344bb18a4bfc74897ee7bd1c05afa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ufl/ubuntumono/UbuntuMono-Bold.ttf",
+			"sha256": "11f15c3a6bbd998a8695fdefb3475931c3789aa035d7546f2efe78e83b352f6b",
+			"size": 191400,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ufl/ubuntumono/UbuntuMono-BoldItalic.ttf",
+			"sha256": "bd255784bb87b5c41513a12a86f0f9cf061bce4e8256d3bfe7234611002e8f48",
+			"size": 216208,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ufl/ubuntumono/UbuntuMono-Italic.ttf",
+			"sha256": "960b2bc286c2ff7d49073303858c65e1fc9013c17a971b61123b02c39454ef75",
+			"size": 210216,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ufl/ubuntumono/UbuntuMono-Regular.ttf",
+			"sha256": "b35dd9d2131d5d83a9b87fe9ad22c6288fa3d17688d43302c14da29812417d63",
+			"size": 205748,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

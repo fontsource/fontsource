@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 498,
+				"sha256": "4b401440f1f59918284d02edc307611ec24344985166bea4a720116050cae44f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.500; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/padyakkeexpandedone/PadyakkeExpandedOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

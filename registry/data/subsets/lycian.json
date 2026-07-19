@@ -1,0 +1,35 @@
+{
+	"id": "lycian",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"205A",
+			"205A"
+		],
+		[
+			"10280",
+			"1029C"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/lycian_unique-glyphs.nam",
+		"revision": "f089774ec5a09a48a771077b9ef45e3bdd8c8180",
+		"sha256": "f81156aec2dfb02ea55dbe0abdeca6f2420206ab68d5649ae928f75f07791db3",
+		"upstream": "namFiles"
+	}
+}

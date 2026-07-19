@@ -1,0 +1,47 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-16",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Cabin Sketch",
+	"id": "cabin-sketch",
+	"license": {
+		"attribution": "Copyright 2011 The Cabin Project Authors (impallari@gmail.com), with Reserved Font Name \"Cabin\", \"Cabin Sketch\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cabinsketch",
+		"revision": "3bb35f25623a157bb04dbf5fdd2b86410d81c263",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/CabinSketch",
+		"revision": "f74674fd7ba37fdfcdad88b58d8d3983a320a68d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cabinsketch/CabinSketch-Bold.ttf",
+			"sha256": "0961688037b97947495c2e35e6e5a93f2b234490514e33346605ffedf9c7e6be",
+			"size": 271012,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/cabinsketch/CabinSketch-Regular.ttf",
+			"sha256": "a6f989fcc910ca321e06cd6a20dbcab20f9e41bce084911432857cfe286355e7",
+			"size": 156232,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

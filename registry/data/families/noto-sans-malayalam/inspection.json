@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 467,
+				"sha256": "2d226d30773dfd1f6127566ff7f825179da607fb1881b2f28fdf1b7309be51ac"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.104",
+			"outline": "glyf",
+			"path": "ofl/notosansmalayalam/NotoSansMalayalam[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

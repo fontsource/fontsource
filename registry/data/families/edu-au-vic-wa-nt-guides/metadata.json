@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-08-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tina Anderson, Corey Anderson",
+	"displayName": "Edu Australia VIC WA NT Hand Guides",
+	"family": "Edu AU VIC WA NT Guides",
+	"id": "edu-au-vic-wa-nt-guides",
+	"license": {
+		"attribution": "Copyright 2023 The VIC WA NT School Hand Australia Project Authors (https://github.com/SorkinType/VICWANTSchoolhandAustralia)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/eduauvicwantguides",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/VICWANTSchoolhandAustralia",
+		"revision": "6529c525fceb9ec15e51dfa6d87244ef053c2d8a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/eduauvicwantguides/EduAUVICWANTGuides[wght].ttf",
+			"sha256": "7c47fc85f944c729e9df8af4be787a3c222604916b8700045451a0743cd29d4a",
+			"size": 1578084,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

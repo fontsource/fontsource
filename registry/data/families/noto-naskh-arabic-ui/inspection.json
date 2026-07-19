@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1122,
+				"sha256": "1cb2881cf583213d726f2b72e6a7f991c3c146113177e6a0a4c6d5420516880c"
+			},
+			"colorTables": [],
+			"fontVersion": "2.015",
+			"outline": "glyf",
+			"path": "ofl/notonaskharabicui/NotoNaskhArabicUI[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

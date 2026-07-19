@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-07-08",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Sirivennela",
+	"id": "sirivennela",
+	"license": {
+		"attribution": "Copyright 2021 The Sirivennela Font Project Authors (https://github.com/appajid/Sirivennela)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sirivennela",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/Sirivennela",
+		"revision": "1e9e8dbbc7a3fd9e4c352aeb865a7328dae07eed"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sirivennela/Sirivennela-Regular.ttf",
+			"sha256": "36af0418247babf130ff25eec8fb1eb64d29c97e4b640d8ea125d2c9b201175a",
+			"size": 1555204,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-09-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Type Associates",
+	"family": "Momo Trust Display",
+	"id": "momo-trust-display",
+	"license": {
+		"attribution": "Copyright 2024 The Momo Trust Project Authors (https://github.com/typeassociates/MomoTrustDisplay)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/momotrustdisplay",
+		"revision": "0a7e6dd60f5c3cd8ee9e0d9156b2519bacdfca69",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typeassociates/MomoTrustDisplay",
+		"revision": "33a85fe93dfe2ee4ee1cc0fe853f08b6a12d1815"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/momotrustdisplay/MomoTrustDisplay-Regular.ttf",
+			"sha256": "f10dcc94ccc58c6a1c538d18f53008ac7d02a9e1e54b6b7cfd219a01d56ec0d3",
+			"size": 93640,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

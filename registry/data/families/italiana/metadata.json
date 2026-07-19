@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Santiago Orozco",
+	"family": "Italiana",
+	"id": "italiana",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Santiago Orozco (hi@typemade.mx) with reserved name Italiana",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/italiana",
+		"revision": "eab3209dc2c9519268d00649400421f2d5bf8b8b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/italiana/Italiana-Regular.ttf",
+			"sha256": "0ad271d9cd42a57cd5c5fa483ae2406a8138b95acb2a43eb73a8d37b7291fee9",
+			"size": 31828,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

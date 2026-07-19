@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Brenda Gallo",
+	"family": "Happy Monkey",
+	"id": "happy-monkey",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brenda Gallo (gbrenda1987@gmail.com), with Reserved Font Name \"Happy Monkey\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/happymonkey",
+		"revision": "a0ab26d8aa8bfe410ac32046baac7d613c1896fa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/happymonkey",
+		"revision": "5e49a946fe2459a69afa0ea0dfd501280cb61183"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/happymonkey/HappyMonkey-Regular.ttf",
+			"sha256": "154d17efd5043e9f76ea4b8a15743fe19634c7adbe3531d6af68bec8a0c7fad3",
+			"size": 76344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

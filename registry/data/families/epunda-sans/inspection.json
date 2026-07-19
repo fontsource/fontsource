@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 551,
+				"sha256": "ea5e216f0d78d12d328c7e0c89c08e1264531c1296bcf755bcb262f6c9e575a2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.205",
+			"outline": "glyf",
+			"path": "ofl/epundasans/EpundaSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 300,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 552,
+				"sha256": "241d6e5ed5b0e4330122dad5d1a924b65c251cbbb6f7e573fbb257d57d05dbfd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.205",
+			"outline": "glyf",
+			"path": "ofl/epundasans/EpundaSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 300,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

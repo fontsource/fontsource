@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-12-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"displayName": "Olé",
+	"family": "Ole",
+	"id": "ole",
+	"license": {
+		"attribution": "Copyright 2008 The Ole Project Authors (https://github.com/googlefonts/ole)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ole",
+		"revision": "a8d02229f0dc191fbba831ac58aec6b4c473ea30",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/ole",
+		"revision": "fe77f34a3002bc4c2e26a8e27bee31cb45307846"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ole/Ole-Regular.ttf",
+			"sha256": "6071527486096be714c64a8b04181f78556cba14a95f596323c0d3560e406e73",
+			"size": 194772,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-09"
+}

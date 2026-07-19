@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"syloti-nagri"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Syloti Nagri",
+	"id": "noto-sans-syloti-nagri",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/syloti-nagri)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssylotinagri",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/syloti-nagri",
+		"revision": "24ab3ac364a1b0882f36fa18f8f090145b009bf8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssylotinagri/NotoSansSylotiNagri-Regular.ttf",
+			"sha256": "86125713777b45f80ea7f08abe9cc02e2e25cf9a475f8c7e15d29180ab980571",
+			"size": 67252,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

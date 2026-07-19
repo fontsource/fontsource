@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "f83525fa0c496c5841b0979cc9e9332191ea1f8d6858c7181d5d5852217c5654"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.002; ttfautohint (v0.94.20-1c74) -l 7 -r 28 -G 0 -x 13 -w \"\" -W -c",
+			"outline": "glyf",
+			"path": "ofl/gafata/Gafata-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

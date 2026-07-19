@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1380,
+				"sha256": "fc4eff9e25efd9a9210ace135f42b1012a002cc653c3224f1b9940068e08c1fe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.104;gftools[0.9.28.dev5+ged2979d]",
+			"outline": "glyf",
+			"path": "ofl/radiocanada/RadioCanada-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1383,
+				"sha256": "e8cd3cdf213e27028d7ef9ccf77c5ecbf69e48a5066bfc4e4ea8e84f44a2d1be"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.104;gftools[0.9.28.dev5+ged2979d]",
+			"outline": "glyf",
+			"path": "ofl/radiocanada/RadioCanada[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

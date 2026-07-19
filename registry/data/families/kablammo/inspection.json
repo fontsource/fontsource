@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 60,
+					"min": 0,
+					"tag": "MORF"
+				}
+			],
+			"cmap": {
+				"codepointCount": 985,
+				"sha256": "809ed751d7e6a7e3499e87227c14070e7d71d73a85a039999df80c9f1f26bbb3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/kablammo/Kablammo[MORF].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

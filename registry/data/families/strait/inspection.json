@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 421,
+				"sha256": "d876e6b7668d48dc7e144bece463898bca376d75f1f818928901cfe9afbe9b57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/strait/Strait-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

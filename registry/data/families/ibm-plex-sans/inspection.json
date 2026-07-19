@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 891,
+				"sha256": "d5a29c0cdc9ac732f6c094dce960e20d4290e61350a47c60087e9c6a37850c41"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.201",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsans/IBMPlexSans-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 891,
+				"sha256": "d5a29c0cdc9ac732f6c094dce960e20d4290e61350a47c60087e9c6a37850c41"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.201",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsans/IBMPlexSans[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

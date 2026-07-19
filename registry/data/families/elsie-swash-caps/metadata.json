@@ -1,0 +1,48 @@
+{
+	"category": "display",
+	"dateAdded": "2012-11-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Alejandro Inler",
+	"family": "Elsie Swash Caps",
+	"id": "elsie-swash-caps",
+	"license": {
+		"attribution": "Copyright (c) 2010-2012, Alejandro Inler (alejandroinler@gmail.com), with Reserved Font Name 'Elsie'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/elsieswashcaps",
+		"revision": "5c0f12efeaeba74ff779d6e8c2656e98b465b2fe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/elsieswashcaps",
+		"revision": "f48faa350a1a9641bd984b6945f791914a652c65"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/elsieswashcaps/ElsieSwashCaps-Black.ttf",
+			"sha256": "6961a1cda97a11a9783151670529a01dab5e44a84cd1029a44c95270b72b26bd",
+			"size": 39256,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/elsieswashcaps/ElsieSwashCaps-Regular.ttf",
+			"sha256": "6b9c2d61e6f955e4cc7bc51777a2e411c2034d921d150473098b9c7554734520",
+			"size": 38332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

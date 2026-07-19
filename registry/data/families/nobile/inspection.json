@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 329,
+				"sha256": "723bab319b885eb5835b8f16b550c3d10590cdd255276a8d13b91d565acbebb8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.000",
+			"outline": "glyf",
+			"path": "ofl/nobile/Nobile-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 472,
+				"sha256": "27e759207f6e74472f4761a864aa51457213d222701593bfd2e37d234207dd8a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 001.000;hotconv 1.0.38",
+			"outline": "glyf",
+			"path": "ofl/nobile/Nobile-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 473,
+				"sha256": "c4e4b0196200ab6e8eb91e7383af152d06ef6c985de55285f589ed810c1673d2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 001.000;hotconv 1.0.38",
+			"outline": "glyf",
+			"path": "ofl/nobile/Nobile-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 442,
+				"sha256": "23288c627b39b9595f48ad2f833061519a14f44d4d8ae77d94750dc561e15d5e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.000",
+			"outline": "glyf",
+			"path": "ofl/nobile/Nobile-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 472,
+				"sha256": "4f0f9832963c582a4f5992a715dae653f4c8684c730c3bcd5fe0cca30ab608a2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 001.000;hotconv 1.0.38",
+			"outline": "glyf",
+			"path": "ofl/nobile/Nobile-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 372,
+				"sha256": "726ee4577eed6a336809cb0e0dcdb96bae99df141303880903b1d2e87d85be7d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "glyf",
+			"path": "ofl/nobile/Nobile-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

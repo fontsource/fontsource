@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 384,
+				"sha256": "6fad4dc56c681258ef9788f339d0950fd63a7b3ccbd0e020daf13cde631f9032"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanstamilsupplement/NotoSansTamilSupplement-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

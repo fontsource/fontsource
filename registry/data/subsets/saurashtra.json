@@ -1,0 +1,43 @@
+{
+	"id": "saurashtra",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A880",
+			"A8C5"
+		],
+		[
+			"A8CE",
+			"A8D9"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/saurashtra_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "abeb1e3150aafad78658a6b18d3283d7543792fedfbe2969d95ac411267530ec",
+		"upstream": "namFiles"
+	}
+}

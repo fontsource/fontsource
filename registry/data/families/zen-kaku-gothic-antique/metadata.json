@@ -1,0 +1,77 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yoshimichi Ohira",
+	"family": "Zen Kaku Gothic Antique",
+	"id": "zen-kaku-gothic-antique",
+	"license": {
+		"attribution": "Copyright 2022 The Zen Project Authors (https://github.com/googlefonts/zen-kakugothic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zenkakugothicantique",
+		"revision": "ba225958c40ae6268a256861d80355a84b26e535",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zen-kakugothic",
+		"revision": "2705757e17e42954f3acbdf921ac0ae24d1270cd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Black.ttf",
+			"sha256": "a7283b2e53d78ed1368f3b73c54410d3fbeb9f0e2e9da93b6c2c67a1e7c2900a",
+			"size": 2308740,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Bold.ttf",
+			"sha256": "c0c631a6a4e51d4c29c8c84c40fca30b820e966d9a521c039029a19b4e438c29",
+			"size": 2324476,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Light.ttf",
+			"sha256": "1f4fd2ad3f837f4b14cda167da22aee86ad3ade20a6ff8aa931360d4676b7b66",
+			"size": 2184344,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Medium.ttf",
+			"sha256": "02bdc45744fd357b04c1a8fb0f2392a8c31b3a9250acb9899252a933ec66f4b6",
+			"size": 2337952,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Regular.ttf",
+			"sha256": "e79b874ef1ae0cfe5b9d750f5990d408874300b17c7a02cb6e86e73a14a33005",
+			"size": 2370412,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

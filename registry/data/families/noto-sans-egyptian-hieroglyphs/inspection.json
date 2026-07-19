@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1403,
+				"sha256": "d5322c3c65cd1a493b3e56e713e460be58185e08441437a2fd02c5fa530a761b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansegyptianhieroglyphs/NotoSansEgyptianHieroglyphs-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

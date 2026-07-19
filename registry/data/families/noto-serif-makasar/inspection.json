@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 357,
+				"sha256": "2e33b84fb0364f07a58a252027c1d709f1affc74d75f92069c55b012cc3d2586"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoserifmakasar/NotoSerifMakasar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

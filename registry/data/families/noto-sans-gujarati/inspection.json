@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 442,
+				"sha256": "3f4d5561d4383c92dbde88697483ba15b98fa8b57347be86be647563971fc110"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.106",
+			"outline": "glyf",
+			"path": "ofl/notosansgujarati/NotoSansGujarati[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2010-12-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Birgit Pulk",
+	"family": "Kristi",
+	"id": "kristi",
+	"license": {
+		"attribution": "Copyright (c) 2010, Birgit Pulk (birgitpulk@gmail.com). All rights reserved. Licenced under SIL OFL v1.1",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kristi",
+		"revision": "814cc2193f76f9e7bc6ccdd14068c0da805329ff",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kristi/Kristi-Regular.ttf",
+			"sha256": "6725b7a28d9bd8761e2834a6ab380babe073678c6f42017fe576116b9d6fd2a0",
+			"size": 47440,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

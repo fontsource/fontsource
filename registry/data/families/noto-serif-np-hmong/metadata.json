@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"nyiakeng-puachue-hmong"
+	],
+	"designer": "Google",
+	"displayName": "Noto Serif Nyiakeng Puachue Hmong",
+	"family": "Noto Serif NP Hmong",
+	"id": "noto-serif-np-hmong",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nyiakeng-puachue-hmong)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifnphmong",
+		"revision": "54584294ef89979740aa9687fdc3c04d11c4b539",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/nyiakeng-puachue-hmong",
+		"revision": "2c945bb9c314d607d45c3120fcb35701349d9c87"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifnphmong/NotoSerifNPHmong[wght].ttf",
+			"sha256": "6917f29fdcb76668b8ad4c85038d54815b5899c49242c82b76c3b3dcc2bb216f",
+			"size": 133168,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

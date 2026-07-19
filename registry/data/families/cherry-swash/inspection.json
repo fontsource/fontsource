@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 266,
+				"sha256": "11b4eae292e33c85f45b46d957fadce6dbcfd9505f9f44c79955d5510edb8d7d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/cherryswash/CherrySwash-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 266,
+				"sha256": "11b4eae292e33c85f45b46d957fadce6dbcfd9505f9f44c79955d5510edb8d7d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/cherryswash/CherrySwash-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

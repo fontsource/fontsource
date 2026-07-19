@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 507,
+				"sha256": "c1e028f5736aa9302809e521c46f35af6d0f51201b0893e019a03cf3adaca8b5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 001.000;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v1.2) -l 8 -r 50 -G 200 -x 16 -D latn -f none -w G -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/sahitya/Sahitya-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 507,
+				"sha256": "c1e028f5736aa9302809e521c46f35af6d0f51201b0893e019a03cf3adaca8b5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 001.000;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v1.2) -l 8 -r 50 -G 200 -x 16 -D latn -f none -w G -W -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/sahitya/Sahitya-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Mallanna",
+	"id": "mallanna",
+	"license": {
+		"attribution": "Copyright (c) 2012 Andhrapradesh Society for Knowledge Networks (fonts.siliconandhra.org). Copyright (c) 2011, Vernon Adams (vern@newtypography.co.uk), with Reserved Font Name Nunito",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mallanna",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/mallanna",
+		"revision": "52b5b8b53bd89d84ecc8a0da7b809ea241c8eb74"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mallanna/Mallanna-Regular.ttf",
+			"sha256": "73e5769253565b284aded5d9da1f98c6a10b0da5ba75b40b3c236239fcc23f76",
+			"size": 722912,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

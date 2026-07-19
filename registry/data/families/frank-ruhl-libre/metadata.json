@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yanek Iontef",
+	"family": "Frank Ruhl Libre",
+	"id": "frank-ruhl-libre",
+	"license": {
+		"attribution": "Copyright 2015 The Frank Ruhl Libre Project Authors (https://github.com/fontef/frankruhllibre)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/frankruhllibre",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/fontef/frankruhllibre",
+		"revision": "2372d1998e51dc011f86554c0d23f1ccf44afddf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/frankruhllibre/FrankRuhlLibre[wght].ttf",
+			"sha256": "f9bf26966681037aae894b031bd0dcf2c1bfdfa128dd0640cf276fe62a338a43",
+			"size": 178468,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

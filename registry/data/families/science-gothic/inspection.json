@@ -1,0 +1,46 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 85,
+					"min": 0,
+					"tag": "CTRS"
+				},
+				{
+					"default": 0,
+					"max": 0,
+					"min": -10,
+					"tag": "slnt"
+				},
+				{
+					"default": 100,
+					"max": 200,
+					"min": 50,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 839,
+				"sha256": "4d9b6940b2d10c0944301244b42f0b75daf72a6bca3c3ec1ec324014328ff318"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.035",
+			"outline": "glyf",
+			"path": "ofl/sciencegothic/ScienceGothic[CTRS,slnt,wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

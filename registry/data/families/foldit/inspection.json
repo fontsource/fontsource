@@ -1,0 +1,31 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "11c00ff30baa9151ac39ffed3dca2716b044ecb5b2e837eebdfd5af5f3509a49"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL"
+			],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/foldit/Foldit[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

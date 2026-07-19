@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 257,
+				"sha256": "8453fd81198180676c8f466f295d173d2338bf37127106297caa86e87bcfd32b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ofl/lobstertwo/LobsterTwo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 257,
+				"sha256": "8453fd81198180676c8f466f295d173d2338bf37127106297caa86e87bcfd32b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ofl/lobstertwo/LobsterTwo-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 257,
+				"sha256": "8453fd81198180676c8f466f295d173d2338bf37127106297caa86e87bcfd32b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ofl/lobstertwo/LobsterTwo-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 257,
+				"sha256": "8453fd81198180676c8f466f295d173d2338bf37127106297caa86e87bcfd32b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ofl/lobstertwo/LobsterTwo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 586,
+				"sha256": "65bdf8d531305c2a62b00984691fb0730d02fee0aeb2081c908d0f62b1c5a4e5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/birthstonebounce/BirthstoneBounce-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 586,
+				"sha256": "65bdf8d531305c2a62b00984691fb0730d02fee0aeb2081c908d0f62b1c5a4e5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/birthstonebounce/BirthstoneBounce-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Gidugu",
+	"id": "gidugu",
+	"license": {
+		"attribution": "Copyright 2025 The Gidugu Project Authors (https://github.com/googlefonts/gidugu)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gidugu",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/gidugu",
+		"revision": "834c5de1862debc558e536377bc3ebc1c35bf958"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gidugu/Gidugu-Regular.ttf",
+			"sha256": "1d10013a9e298e9fe79015973e484f3641bf8a1e7b5b58231142853a14bc80f4",
+			"size": 460988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

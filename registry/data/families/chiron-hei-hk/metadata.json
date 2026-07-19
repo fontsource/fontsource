@@ -1,0 +1,55 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-05-08",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2",
+		"vietnamese"
+	],
+	"designer": "Tamcy",
+	"family": "Chiron Hei HK",
+	"id": "chiron-hei-hk",
+	"license": {
+		"attribution": "Copyright 2025 The Chiron Hei HK Project Authors (https://github.com/chiron-fonts/chiron-hei-hk)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chironheihk",
+		"revision": "4d9f95cfb10739fffa0a92897b6c2abc6db61dc2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/chiron-fonts/chiron-hei-hk",
+		"revision": "5d80c2cecb7d0d702c23b4caa71e524b030d99d5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chironheihk/ChironHeiHK-Italic[wght].ttf",
+			"sha256": "e9e78771ef2cedf21cc01cf3f547036f55e5b183190473cb6f3804f49507707b",
+			"size": 33329960,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/chironheihk/ChironHeiHK[wght].ttf",
+			"sha256": "0d788ded72dc88f478818182179af4c7cd143df0bf86557d29729ab132333930",
+			"size": 31144580,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

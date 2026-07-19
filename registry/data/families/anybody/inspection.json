@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 150,
+					"min": 50,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 658,
+				"sha256": "ad9b35267e003a5413ad7b2c5d0a555b84f2de79ace3bd452b535da04d53e19d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.114;gftools[0.9.25]",
+			"outline": "glyf",
+			"path": "ofl/anybody/Anybody-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 150,
+					"min": 50,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 658,
+				"sha256": "ad9b35267e003a5413ad7b2c5d0a555b84f2de79ace3bd452b535da04d53e19d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.114;gftools[0.9.25]",
+			"outline": "glyf",
+			"path": "ofl/anybody/Anybody[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

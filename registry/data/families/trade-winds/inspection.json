@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 226,
+				"sha256": "46038667a153ef30132532b0170db4944bc8766aed82bd7533db8e2a037bf897"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/tradewinds/TradeWinds-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

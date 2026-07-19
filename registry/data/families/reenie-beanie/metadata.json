@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2010-05-10",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "James Grieshaber",
+	"family": "Reenie Beanie",
+	"id": "reenie-beanie",
+	"license": {
+		"attribution": "Copyright (c) 2010 Typeco (james@typeco.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/reeniebeanie",
+		"revision": "108bb102d8fd512ca807530c250d4c7cbc32f83e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/reeniebeanie/ReenieBeanie.ttf",
+			"sha256": "0ea608aa325bf9e11c9590cc0b63dcf7cd215e270784f1ebbe6fad4927b31ff8",
+			"size": 147036,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

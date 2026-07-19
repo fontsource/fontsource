@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Warang Citi is an unmodulated (“sans serif”) design for texts in the Indic _Varang Kshiti (Warang Citi)_ script. It has 181 glyphs.

@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-10-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Guillermo Torres, Omnibus-Type",
+	"family": "Texturina",
+	"id": "texturina",
+	"license": {
+		"attribution": "Copyright 2020 The Texturina Project Authors (https://github.com/Omnibus-Type/Texturina)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/texturina",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Texturina",
+		"revision": "5f38963152042ab3bcb1722c1bdcc950f8605345"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/texturina/Texturina-Italic[opsz,wght].ttf",
+			"sha256": "d5827e6531510e9b5e2a95f3042ee7463b0b1f320f9a4146159a553482f6e339",
+			"size": 292320,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/texturina/Texturina[opsz,wght].ttf",
+			"sha256": "478a15d7145cf94565cfc1aeb33596aeb0118c7d86a84d061ddf46de3d7dfda3",
+			"size": 288320,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

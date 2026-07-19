@@ -1,0 +1,39 @@
+{
+	"id": "signwriting",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1D800",
+			"1DA8B"
+		],
+		[
+			"1DA9B",
+			"1DA9F"
+		],
+		[
+			"1DAA1",
+			"1DAAF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/signwriting_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "4bd364911f05a1f70b9bb287ac18c9612304de73cc39a97205d3bfc823260498",
+		"upstream": "namFiles"
+	}
+}

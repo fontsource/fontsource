@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2020-12-08",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"menu"
+	],
+	"designer": "Shibuya Font",
+	"family": "Shizuru",
+	"id": "shizuru",
+	"license": {
+		"attribution": "Copyright 2020 The Shizuru Project Authors (https://github.com/shibuyafont/shizuru-font), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/shizuru",
+		"revision": "e6a6bad8b35fd840fc011cff1557c357adb7824c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/shibuyafont/shizuru-font",
+		"revision": "d81cbacf44553b9a2fd2dda3613263930c8a77c1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/shizuru/Shizuru-Regular.ttf",
+			"sha256": "5954562e5fbb40fffe6361cbbcac0d4a4c9c5e2897d7b20876f294fbcc243f7f",
+			"size": 251244,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

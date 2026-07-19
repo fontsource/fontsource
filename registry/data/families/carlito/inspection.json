@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2117,
+				"sha256": "920e462ff032f7d138efddf13e9516a1a07e3af5673d9ad7af83677152b96b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.104",
+			"outline": "glyf",
+			"path": "ofl/carlito/Carlito-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2117,
+				"sha256": "920e462ff032f7d138efddf13e9516a1a07e3af5673d9ad7af83677152b96b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.104",
+			"outline": "glyf",
+			"path": "ofl/carlito/Carlito-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2117,
+				"sha256": "920e462ff032f7d138efddf13e9516a1a07e3af5673d9ad7af83677152b96b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.104",
+			"outline": "glyf",
+			"path": "ofl/carlito/Carlito-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2117,
+				"sha256": "920e462ff032f7d138efddf13e9516a1a07e3af5673d9ad7af83677152b96b86"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.104",
+			"outline": "glyf",
+			"path": "ofl/carlito/Carlito-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

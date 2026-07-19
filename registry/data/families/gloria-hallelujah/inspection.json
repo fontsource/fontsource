@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 358,
+				"sha256": "e1846f81ec566dad728223d64dfd85474a5ccc3e3e4ccaf4f981ef5ce36424fd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004 2010",
+			"outline": "glyf",
+			"path": "ofl/gloriahallelujah/GloriaHallelujah.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

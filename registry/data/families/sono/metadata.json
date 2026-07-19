@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-07-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tyler Finck",
+	"family": "Sono",
+	"id": "sono",
+	"license": {
+		"attribution": "Copyright 2020 The Sono Project Authors (https://github.com/sursly/sono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sono",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/sursly/sono",
+		"revision": "7dc859025b464e8530d90116782b5407b7b6376d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sono/Sono[MONO,wght].ttf",
+			"sha256": "247ca641ca7066e3addc8081d89613c06a79e4276cd4f2164d07a6493530010f",
+			"size": 154620,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

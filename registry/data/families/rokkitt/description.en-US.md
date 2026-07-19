@@ -1,0 +1,9 @@
+Rokkitt was initiated by Vernon Adams when he was inspired by the type forms of a number of distinctive geometric slab serifs, sometimes called Egyptians, popular in the late nineteenth and early to mid twentieth centuries. In 1910 the Inland Type Foundry published Litho Antique and similar types were published by American Type Founders in the 1920s and Monotype Corporation in the 1930s. Rokkitt is intended for use as a display font, in headings and headlines, though it can also be used as an alternative to sans serif designs at text sizes.
+
+**Update January 2017:** Vernon Adams began the project in 2011, and developed the typeface until 2014. During 2016 Kalapi Gajjar completed Vernon's original work and released a substantial update with a full set of 9 weights, and support for more Latin languages.
+
+**Update July 2019:** The family has been converted into a variable font.
+
+**Update January 2023:** The family has now an italic.
+
+To contribute, see [github.com/googlefonts/RokkittFont](https://github.com/googlefonts/RokkittFont).

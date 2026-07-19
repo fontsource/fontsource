@@ -1,0 +1,35 @@
+{
+	"id": "tangsa",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"16A70",
+			"16ABE"
+		],
+		[
+			"16AC0",
+			"16AC9"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/tangsa_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "3e3298c137cf3e36c1a8aa0d4549a66ea69ccd5b80c6c1ed12dbe789222211c5",
+		"upstream": "namFiles"
+	}
+}

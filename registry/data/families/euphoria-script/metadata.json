@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sabrina Mariela Lopez",
+	"family": "Euphoria Script",
+	"id": "euphoria-script",
+	"license": {
+		"attribution": "Copyright (c) 2012 Sabrina Mariela Lopez (typesenses@live.com.ar), with Reserved Font Name \"Euphoria Script\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/euphoriascript",
+		"revision": "27eb2b0de2b92c3eefba0b91d354c5d08d26819c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/euphoriascript",
+		"revision": "c7606fae5a17e051d983269f008dba6e8f4c0c77"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/euphoriascript/EuphoriaScript-Regular.ttf",
+			"sha256": "1ca81517a450506290e2be25648e153ee4c9cf6acc44c1d610b1e6d7e0e67484",
+			"size": 38424,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

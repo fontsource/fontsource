@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 481,
+				"sha256": "c67b012f08b5ad6c2aec6119e3549dff05344ae241eb42f8e590bdd6ab03e7b2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 481,
+				"sha256": "c67b012f08b5ad6c2aec6119e3549dff05344ae241eb42f8e590bdd6ab03e7b2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.52",
+			"outline": "glyf",
+			"path": "ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

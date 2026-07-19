@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-03-22",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tall Chai",
+	"family": "Akshar",
+	"id": "akshar",
+	"license": {
+		"attribution": "Copyright 2022 The Akshar Type Project Authors (https://github.com/tallchai/akshar-type)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/akshar",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/tallchai/akshar-type",
+		"revision": "0c6de5ef9cef264b3b3f958e772b3a371f92d083"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/akshar/Akshar[wght].ttf",
+			"sha256": "5288f970076f57f158dba767f44aec8f8e852920f1a3cc20a3268420ad9ec251",
+			"size": 237016,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

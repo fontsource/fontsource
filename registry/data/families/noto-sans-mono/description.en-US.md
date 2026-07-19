@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Mono is a monospaced, unmodulated (“sans serif”) design suitable for programming code and other uses where a fixed-width font is needed. It supports the _Latin_, _Cyrillic_ and _Greek_ scripts, and various symbols. It has multiple weights and widths, and 3,787 glyphs.

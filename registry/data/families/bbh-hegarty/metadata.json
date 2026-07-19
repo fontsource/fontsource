@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-09-24",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Studio DRAMA",
+	"family": "BBH Hegarty",
+	"id": "bbh-hegarty",
+	"license": {
+		"attribution": "Copyright 2025 The BBH Project Authors (https://github.com/Studio-DRAMA/BBH)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bbhhegarty",
+		"revision": "0cdca60cfbdaf5944a586d517c283f6077b34e4b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Studio-DRAMA/BBH",
+		"revision": "b8d40ef62b138be4c7c3dac2de117217f261b24b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bbhhegarty/BBHHegarty-Regular.ttf",
+			"sha256": "34ce60212aa1d835bf44fd61c9fc24092c9e34c1182dd91f2cbf41f69999af21",
+			"size": 28752,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

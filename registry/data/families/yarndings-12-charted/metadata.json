@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2024-01-24",
+	"declaredSubsets": [
+		"latin",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Sarah Cadigan-Fried",
+	"family": "Yarndings 12 Charted",
+	"id": "yarndings-12-charted",
+	"license": {
+		"attribution": "Copyright 2023 The Soft Type Project Authors (https://github.com/scfried/soft-type-yarndings)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yarndings12charted",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/scfried/soft-type-yarndings",
+		"revision": "31a5afb1007733ed93b7ade5b1eccc164fc75bca"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yarndings12charted/Yarndings12Charted-Regular.ttf",
+			"sha256": "4f09a9d084aec3d88ce52d11367713cd91c48ae9a250405fcd0b9112b33bf201",
+			"size": 147756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

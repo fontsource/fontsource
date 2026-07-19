@@ -1,0 +1,7 @@
+Expletus Sans is a display typeface, which means that it is not recommended for long pieces of text. However, it's very effective for setting headers and other large sized text, due to it's way of pulling in the reader. It comes in 4 weights and will include italics from May 2011.
+
+Expletus Sans has been upgraded to a variable font in November 2021. Line spacing has also been adjusted to improve user experience.
+
+To contribute, see [github.com/googlefonts/Expletus-Sans](https://github.com/googlefonts/Expletus-Sans).
+
+To learn more, read [Introducing Expletus Sans](https://fonts.googleblog.com/2011/03/introducing-expletus.html).

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 671,
+				"sha256": "b4d38f5134a52090231621911dde882c652b09ca1393d718cd28343f9a66740a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/alfaslabone/AlfaSlabOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

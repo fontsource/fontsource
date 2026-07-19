@@ -1,0 +1,47 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Changa One",
+	"id": "changa-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Eduardo Tunni (http://www.tipo.net.ar edu@tipo.net.ar), with Reserved Font Name \"Changa\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/changaone",
+		"revision": "20ea00016512b42da82bfaff8bcba7318256083a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/changa-one",
+		"revision": "e8d7a3159a17875eb09b35b06e78ae706d8affe9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/changaone/ChangaOne-Italic.ttf",
+			"sha256": "b6228f50f720651795c98aa24cf93bf062fee5899084a9e60f115ab3886f5583",
+			"size": 26748,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/changaone/ChangaOne-Regular.ttf",
+			"sha256": "7ac4d26a3a45b4731904b59cbb8a9cc15b7b70d447fc2b5dda40ef17c5d2e16d",
+			"size": 22736,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

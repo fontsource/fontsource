@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"menu",
+		"sinhala"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Sinhala UI",
+	"id": "noto-sans-sinhala-ui",
+	"license": {
+		"attribution": "Copyright 2016 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssinhalaui",
+		"revision": "578588fa6a5674a8b0e485110c5cbaa5c154c2f5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/sinhala",
+		"revision": "032355e96de5bac83fd996535af3d13b1fbfeccf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssinhalaui/NotoSansSinhalaUI[wdth,wght].ttf",
+			"sha256": "3daf1ec98108a0705b4d197424492d0955386a9bc76a7838ec9f31db47c1fc32",
+			"size": 1072380,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

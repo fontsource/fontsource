@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 652,
+				"sha256": "cde13e36788ee774ffde8c0243724693d8e9ac4969d8ffcba84bcac350a57c68"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/rubikmonoone/RubikMonoOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

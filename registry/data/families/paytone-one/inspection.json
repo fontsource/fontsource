@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 593,
+				"sha256": "0d16bd8a1c099393c6baa196008b66154427c4c5755b8074c1c6297e82277823"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/paytoneone/PaytoneOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

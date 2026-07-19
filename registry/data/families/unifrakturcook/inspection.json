@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 246,
+				"sha256": "f5500cb20d1e3a3066f4b3daa5f07f1f37ee1fcdf88d39457846439072d14b05"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2011-09-01",
+			"outline": "glyf",
+			"path": "ofl/unifrakturcook/UnifrakturCook-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		}
+	]
+}

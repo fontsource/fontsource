@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2020-11-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nermin Kahrimanovic",
+	"family": "Nerko One",
+	"id": "nerko-one",
+	"license": {
+		"attribution": "Copyright 2013 The Nerko One Project Authors (https://github.com/nermink99/Nerko/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nerkoone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/nermink99/Nerko",
+		"revision": "62c2998197eaa09664ca1e0605fa4cfd273ac8bf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nerkoone/NerkoOne-Regular.ttf",
+			"sha256": "55695d7d77712b983973e2984d8014c5060aecfb2e94493671fa4f0ffc3876c7",
+			"size": 102416,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

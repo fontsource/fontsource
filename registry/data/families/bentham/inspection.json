@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 315,
+				"sha256": "4b6f6d5503961891320283b00a8eaf9b881065ba3832e68fb8393438e4fcad63"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 002.002",
+			"outline": "glyf",
+			"path": "ofl/bentham/Bentham-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

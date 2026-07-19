@@ -1,0 +1,43 @@
+{
+	"category": "display",
+	"dateAdded": "2023-04-21",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"emoji",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vectro Type Foundry, Travis Kochel, Lizy Gershenzon, Daria Cohen, Ethan Cohen",
+	"family": "Kablammo",
+	"id": "kablammo",
+	"license": {
+		"attribution": "Copyright 2023 The Kablammo Project Authors (https://github.com/Vectro-Type-Foundry/kablammo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kablammo",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Vectro-Type-Foundry/kablammo",
+		"revision": "cccc120d23cbf65f7f263122407d980a24f65f27"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kablammo/Kablammo[MORF].ttf",
+			"sha256": "900c8c183efc8d913da30dceb9e4e9886888bbd48847455343f12ce85a334925",
+			"size": 2209224,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

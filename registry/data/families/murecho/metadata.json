@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-10-27",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Neil Summerour",
+	"family": "Murecho",
+	"id": "murecho",
+	"license": {
+		"attribution": "Copyright 2021 The Murecho Project Authors (https://github.com/positype/Murecho-Project)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/murecho",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/positype/Murecho-Project",
+		"revision": "0efba44c1c504efe50edc3ae30da5840461e5d49"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/murecho/Murecho[wght].ttf",
+			"sha256": "3a273c2f11e0164f829bc15c0689e587fe34d1493ff167d5afff8fe71a29e667",
+			"size": 1430664,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

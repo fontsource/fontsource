@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 236,
+				"sha256": "79bbf79040cdeebfcc9d9fd9e4d126acaaf8e7d3ea5a0aa9e983d68f1d66a91a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/sirivennela/Sirivennela-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

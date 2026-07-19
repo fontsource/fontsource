@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-10-11",
+	"declaredSubsets": [
+		"chorasmian",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Chorasmian",
+	"id": "noto-sans-chorasmian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/chorasmian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanschorasmian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/chorasmian",
+		"revision": "0ce3cfe5b4aecaa18ee820c9a668c7cd3744a29f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanschorasmian/NotoSansChorasmian-Regular.ttf",
+			"sha256": "30496cc8f77c1ef3f97f3c61791a579c4aa97983e8678ffc81a341151af5756b",
+			"size": 68212,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

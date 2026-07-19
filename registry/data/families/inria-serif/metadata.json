@@ -1,0 +1,84 @@
+{
+	"category": "serif",
+	"dateAdded": "2019-12-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Grégori Vincens, Jérémie Hornus",
+	"family": "Inria Serif",
+	"id": "inria-serif",
+	"license": {
+		"attribution": "Copyright 2017 The Inria Serif Project Authors (https://github.com/BlackFoundryCom/InriaFonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/inriaserif",
+		"revision": "4db57d4c20acbb2cb96973fbf5ce74d0878b936e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/BlackFoundryCom/InriaFonts",
+		"revision": "9b015af5d8ab574b6afeffd324443bfcbf77e300"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/inriaserif/InriaSerif-Bold.ttf",
+			"sha256": "35ff98e0c58cb27a6ec045b25072d99de57d6ea03f12c8dc0963fcbed0df2d91",
+			"size": 97172,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/inriaserif/InriaSerif-BoldItalic.ttf",
+			"sha256": "640772d92df913501f961382215b344eae71c1d54a1a02fd150898fe5de46bfd",
+			"size": 99476,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/inriaserif/InriaSerif-Italic.ttf",
+			"sha256": "ab8c4878366145598f6421dc970ef40de27d25edf02fa9628b5f2cd93e4d54f3",
+			"size": 101756,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/inriaserif/InriaSerif-Light.ttf",
+			"sha256": "84de09ba2fb616be390214a5283aaaf55b89e50594bd7efcc438aff69c4e9927",
+			"size": 99100,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/inriaserif/InriaSerif-LightItalic.ttf",
+			"sha256": "76dad25026919a84d9b65d3758f53099c1917cf15cc45e0e745b91a215ee9f37",
+			"size": 103128,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/inriaserif/InriaSerif-Regular.ttf",
+			"sha256": "576ba277e3ea1bb7de43724d14c989de92e35eeae204210b0c2a9e7b10dc23fc",
+			"size": 99808,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

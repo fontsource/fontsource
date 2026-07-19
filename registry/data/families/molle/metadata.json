@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-09-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Elena Albertoni",
+	"family": "Molle",
+	"id": "molle",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Spinnaker\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/molle",
+		"revision": "40d0ee0b55ec32719ed79362d2c77467b9dc0097",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Molle2",
+		"revision": "3924159e0186e87a1a93d1ce80b5341164310f4f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/molle/Molle-Regular.ttf",
+			"sha256": "5693a09a77e5afd28380d269e2cf03ca78c4fd92a8bacd248910221cbfe2ef58",
+			"size": 50964,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

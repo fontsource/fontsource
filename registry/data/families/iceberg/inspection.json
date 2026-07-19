@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "79a08869599252df1ad2f946e60b1f9ea515740ba2ff6cdfb222d2dc25556946"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/iceberg/Iceberg-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

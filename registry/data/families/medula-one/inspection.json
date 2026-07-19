@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "f704983bbdc2bab5f88cdac2a72eed049cc105c2574f771abeb4156704e918a9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/medulaone/MedulaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

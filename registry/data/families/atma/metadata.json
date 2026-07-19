@@ -1,0 +1,76 @@
+{
+	"category": "display",
+	"dateAdded": "2017-05-09",
+	"declaredSubsets": [
+		"bengali",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Black Foundry",
+	"family": "Atma",
+	"id": "atma",
+	"license": {
+		"attribution": "Copyright 2015 The Atma Project Authors (www.black-foundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/atma",
+		"revision": "fa3e737fde14b025c4b2b6aaf47de0d4a8697a40",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/BlackFoundryCom/Atma",
+		"revision": "f805a3068057f9422e57427b4538c7d168684c7a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/atma/Atma-Bold.ttf",
+			"sha256": "d55399f5bcdb78f60da7dbd6c5abfdc92510154361586ad1b07bca7ee739dba6",
+			"size": 216512,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/atma/Atma-Light.ttf",
+			"sha256": "44d29f1887173928289709a47ef6b6b5259209ac2349a8622922316a697f497c",
+			"size": 218972,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/atma/Atma-Medium.ttf",
+			"sha256": "369d9788c926ea6f3650999617beb348238f370d65b3d5d180d638c82ea3d82a",
+			"size": 220636,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/atma/Atma-Regular.ttf",
+			"sha256": "3ddd9e02b4b6077b25c07f5d1f4411c9071e5030a4124d77dcd5a04fa292b921",
+			"size": 220344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/atma/Atma-SemiBold.ttf",
+			"sha256": "15b935a57290a675391c6ca6bac4bd7fc746ead44e35495d6dc2562b2265a28f",
+			"size": 219984,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

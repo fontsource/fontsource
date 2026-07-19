@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-23",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Wojciech Kalinowski",
+	"family": "Nova Script",
+	"id": "nova-script",
+	"license": {
+		"attribution": "Copyright (c) 2011, wmk69 (wmk69@o2.pl) with Reserved Font Names 'NovaScript' and 'Nova Script'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/novascript",
+		"revision": "d79c26af5bf546bd2a8231acefd485310419f30d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/novascript/NovaScript-Regular.ttf",
+			"sha256": "470a4b2ca317b49f8bfc21d2b8f70d506b2652643664e1c3898852e72122a28d",
+			"size": 117388,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

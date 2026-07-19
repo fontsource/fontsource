@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 622,
+				"sha256": "47e235e7b48642286a5a343f2e0196914092bc4fb180c53fdc93c60e2ed76bc7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.013; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/corinthia/Corinthia-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 622,
+				"sha256": "47e235e7b48642286a5a343f2e0196914092bc4fb180c53fdc93c60e2ed76bc7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.013; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/corinthia/Corinthia-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-13",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Bowlby One",
+	"id": "bowlby-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 by vernon adams (vern@newtypography.co.uk), with Reserved Font Names \"Bowlby\" \"Bowlby One\" and \"Bowlby One SC\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bowlbyone",
+		"revision": "5e3c21be88b011e0a5eeec8ade23bba0698a7805",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bowlbyone",
+		"revision": "d469e83e10f7c1e7294e5586da5da1d9725f417c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bowlbyone/BowlbyOne-Regular.ttf",
+			"sha256": "c46a806d7b51fd4987e5f0be449fe40a944cb407e43290ce1cdeed029a8cdc1d",
+			"size": 59856,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

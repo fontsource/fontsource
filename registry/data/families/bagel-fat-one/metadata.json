@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2023-05-18",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Kyungwon Kim, JAMO",
+	"family": "Bagel Fat One",
+	"id": "bagel-fat-one",
+	"license": {
+		"attribution": "Copyright 2022 The Bagel Fat Project Authors (https://github.com/JAMO-TYPEFACE/BagelFat)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bagelfatone",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JAMO-TYPEFACE/BagelFat",
+		"revision": "d8dd4e8b5dd0e74fbf87a78290ee9a9aaed1270b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bagelfatone/BagelFatOne-Regular.ttf",
+			"sha256": "9286944032c5a9b20ad70940105417beae14013e0b4f5fc292425afdc4330245",
+			"size": 1585984,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

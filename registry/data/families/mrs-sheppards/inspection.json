@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 232,
+				"sha256": "30cd9f8abb172c1e863037bcaf3dd5255013ee0d3c4013c63a8c29a30e6a5d59"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mrssheppards/MrsSheppards-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"chakma",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Chakma",
+	"id": "noto-sans-chakma",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/chakma)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanschakma",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/chakma",
+		"revision": "239fe3aac753fa2007fa34fa4897a6b520994e88"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanschakma/NotoSansChakma-Regular.ttf",
+			"sha256": "0e560c61cfe0f378377741770d38b5f802457455dd78aaf4b89614082659fba5",
+			"size": 126960,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

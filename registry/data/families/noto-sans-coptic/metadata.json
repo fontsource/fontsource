@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"coptic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Coptic",
+	"id": "noto-sans-coptic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/coptic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanscoptic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/coptic",
+		"revision": "ed3522436a4e3c41b0479c8d7785facd3c397eaa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanscoptic/NotoSansCoptic-Regular.ttf",
+			"sha256": "51990af1bb0df7be8bfe98fda97769cecfa36eee15381e5504df400276abd735",
+			"size": 92512,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

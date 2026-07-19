@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 919,
+				"sha256": "952cf80921ad3eeb5f3e0b8ad8338af6871ed1b9a3115c36170e6f67623bc0ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansanatolianhieroglyphs/NotoSansAnatolianHieroglyphs-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

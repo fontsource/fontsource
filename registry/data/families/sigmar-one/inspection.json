@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "02daae0d93131de15e1c2f8cd8def1954a209b3e95d22a5e8910ff23b1ee4382"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/sigmarone/SigmarOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

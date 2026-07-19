@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-12-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jacques Le Bailly",
+	"family": "Crimson Pro",
+	"id": "crimson-pro",
+	"license": {
+		"attribution": "Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/crimsonpro",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Fonthausen/CrimsonPro",
+		"revision": "24e8f7bf59ec45d77c67879ad80d97e5f94c787b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/crimsonpro/CrimsonPro-Italic[wght].ttf",
+			"sha256": "a74dc11dcf2fbb1452064e42395a40a907ca630b49cff86012223785e52b2559",
+			"size": 253176,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/crimsonpro/CrimsonPro[wght].ttf",
+			"sha256": "16aa9fb7300a93637da51fac03a071b2ff08b6bbf65f99c794c25f040b58af6a",
+			"size": 246324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

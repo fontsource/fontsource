@@ -1,0 +1,37 @@
+{
+	"category": "display",
+	"dateAdded": "2026-01-29",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "Monotype Imaging Inc.",
+	"family": "Allkin",
+	"id": "allkin",
+	"license": {
+		"attribution": "Copyright 2025 The Allkin Project Authors (https://github.com/googlefonts/allkin), with Reserved Font Name \"Allkin\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/allkin",
+		"revision": "1eea522ac579f94e34c8124e7f6078bef2c45fb9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/allkin",
+		"revision": "fffaa4201dfbd887a78e3d0c79654a7ad0d155f3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/allkin/Allkin-Regular.ttf",
+			"sha256": "5699f97288b8d583082ba190312fff7e48c096bd54cfff6344b15c3dbec9a75d",
+			"size": 64860,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

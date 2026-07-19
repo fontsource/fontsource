@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Font Zone 108",
+	"family": "Potta One",
+	"id": "potta-one",
+	"license": {
+		"attribution": "Copyright 2020 The Potta Project Authors (https://github.com/go108go/Potta), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pottaone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/go108go/Potta",
+		"revision": "574738ac030a0551d675056dc56166fddbcad53c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pottaone/PottaOne-Regular.ttf",
+			"sha256": "bde843868b56e429e1c863da2efa76df533162b226d990efcb96d533b0ca2a93",
+			"size": 4918516,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

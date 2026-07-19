@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 568,
+				"sha256": "d4fef0e31328ca24492cc2063a68bab7fe521a55cba66d3689d81c080871e98f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/vt323/VT323-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

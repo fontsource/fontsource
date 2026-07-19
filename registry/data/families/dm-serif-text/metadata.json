@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2019-06-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Colophon Foundry",
+	"family": "DM Serif Text",
+	"id": "dm-serif-text",
+	"license": {
+		"attribution": "Copyright 2014 - 2017 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. Copyright 2019 Google LLC.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dmseriftext",
+		"revision": "2536d8f1f906c7bb1f4b1d09ac073109dc6a7cd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/dm-fonts",
+		"revision": "027cea4e4f45827128860a4dec7b9a0852a295d7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dmseriftext/DMSerifText-Italic.ttf",
+			"sha256": "d016b81df5cd7462188a0ba11dc343ce2897dffa39fb1fcff0fef0bb7684364e",
+			"size": 71156,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/dmseriftext/DMSerifText-Regular.ttf",
+			"sha256": "94b5fa7bac0f406cb3149512037f37ea21b55cecd732c3fd3a076260441399cd",
+			"size": 78376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

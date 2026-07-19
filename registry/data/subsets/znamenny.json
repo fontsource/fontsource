@@ -1,0 +1,39 @@
+{
+	"id": "znamenny",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1CF00",
+			"1CF2D"
+		],
+		[
+			"1CF30",
+			"1CF46"
+		],
+		[
+			"1CF50",
+			"1CFC3"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/znamenny_unique-glyphs.nam",
+		"revision": "f816c1bb6405903439fc2d5bf86bdc60d6bcc12d",
+		"sha256": "34952d6dce32b1b8b8c52245eb2e8bf81de4300bfff7a13b3b9f78d049231c4b",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "50180d1837f5afddef6e6b51ee9a7329ec5a917ccfdc180d3ee5ff5e61a77f32"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanspahawhhmong/NotoSansPahawhHmong-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2020-01-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Severin Meyer",
+	"family": "Oxanium",
+	"id": "oxanium",
+	"license": {
+		"attribution": "Copyright 2019 The Oxanium Project Authors (https://github.com/sevmeyer/oxanium)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oxanium",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/sevmeyer/oxanium",
+		"revision": "a8f39e0c71186190027a093e9001459410192d1e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oxanium/Oxanium[wght].ttf",
+			"sha256": "2ce01d946e1e1ffc8d7eecfffbda8623bedd63eaf811a20488c4b69af45babb0",
+			"size": 43536,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

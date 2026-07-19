@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-05-21",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"menu"
+	],
+	"designer": "Hagilda, Mushon Zer-Aviv",
+	"family": "Alef",
+	"id": "alef",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Hagilda. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alef",
+		"revision": "a7e2f6192117ea6283d2b564f05c16c8466d2442",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alef/Alef-Bold.ttf",
+			"sha256": "5dae0d7b2365288d8a34f5fb033d4278be96cef2547862cb93ceb8373e10bcf1",
+			"size": 92312,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/alef/Alef-Regular.ttf",
+			"sha256": "a32adcc953ac356906901778460083dc207d4560cb586fd9ea24ec5b186969ed",
+			"size": 90996,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

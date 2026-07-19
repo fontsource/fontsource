@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-12-15",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Dan Rhatigan",
+	"family": "Copse",
+	"id": "copse",
+	"license": {
+		"attribution": "\"Copyright (c) 2010, Daniel Rhatigan (sparky@ultrasparky.org) with Reserved Font Name Copse\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/copse",
+		"revision": "75c7de8d2a85f4da7083e72bb800161463e8ce07",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/copse",
+		"revision": "3022d037cd17945ad478f853ce401fc51185f8d0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/copse/Copse-Regular.ttf",
+			"sha256": "b852e682f0c66de4db1835f8545ff2e94761549987a4607447b069e973f50b1d",
+			"size": 72252,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

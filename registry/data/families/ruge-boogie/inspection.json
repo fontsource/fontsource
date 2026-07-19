@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 570,
+				"sha256": "bb51ef0509e16ad5e7908598682b42873ef0a08990548e7f6737cb4093d52850"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/rugeboogie/RugeBoogie-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

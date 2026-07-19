@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 647,
+				"sha256": "e1153940b8fb674e98141ba29d6b8f9ffb749172908ac45839f77444a13baf2d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/maname/Maname-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

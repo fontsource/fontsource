@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 239,
+				"sha256": "90b2c311a9655c7f85288965fb6c9f5e7f895c2f3ad482d9489e51a3ae8cd07d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/zendots/ZenDots-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

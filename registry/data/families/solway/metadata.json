@@ -1,0 +1,74 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-08-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Mariya Lish, The Northern Block",
+	"family": "Solway",
+	"id": "solway",
+	"license": {
+		"attribution": "Copyright 2018 The Solway Project Authors (https://github.com/mashavp/Solway)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/solway",
+		"revision": "b7343b2753a27bb04060a7d7b86c65ed17dacba4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mashavp/Solway",
+		"revision": "41e054e45760c690e2a2b770feb86a5e125360c2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/solway/Solway-Bold.ttf",
+			"sha256": "1929aeae0836799a08472026aff797a768f1c051db629a853d35589ba5e5ae1e",
+			"size": 57776,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/solway/Solway-ExtraBold.ttf",
+			"sha256": "4d2a7458d613ba3316cd9c1cb7a1ac89daecc34c73aed100d72c5170db1a86d8",
+			"size": 58164,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/solway/Solway-Light.ttf",
+			"sha256": "7d5819ffda578c61363779789aa23ad26285a44472743a8ab30e17df15c88033",
+			"size": 53176,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/solway/Solway-Medium.ttf",
+			"sha256": "3c47643b4b48c825e65e44af9356bb7392ee63c7c4e7211e6f8d1e1b96b633f0",
+			"size": 57448,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/solway/Solway-Regular.ttf",
+			"sha256": "a7a5103509a64884149b94b500003d3deecc289cb94f2556c81945ca28b0da55",
+			"size": 56376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

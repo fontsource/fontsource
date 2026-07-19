@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2012-02-29",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Denis Masharov",
+	"family": "Poiret One",
+	"id": "poiret-one",
+	"license": {
+		"attribution": "Copyright 2011 The Poiret One Project Authors (https://github.com/alexeiva/poiretone)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/poiretone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alexeiva/poiretone",
+		"revision": "74eec8d29c9b5179cbd63b1c3d152233aa537123"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/poiretone/PoiretOne-Regular.ttf",
+			"sha256": "457f2d03263f58e5a6dbcc1b607b10dff6581e7cf9c4ebdf330ec3e6772a3558",
+			"size": 130176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

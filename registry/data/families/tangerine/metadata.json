@@ -1,0 +1,47 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2010-06-08",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Toshi Omagari",
+	"family": "Tangerine",
+	"id": "tangerine",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Toshi Omagari. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tangerine",
+		"revision": "980c15012a04cf14941c4e1bc662dcccc00f1f3a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/TangerineFont",
+		"revision": "9b57a9f9be5ecfe95e7f8c0e6b2b827eedb9ad67"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tangerine/Tangerine-Bold.ttf",
+			"sha256": "a35368c814c71c15928ffc60cbac32bc81461f03b895a4a607df9c64b3d1548b",
+			"size": 65464,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tangerine/Tangerine-Regular.ttf",
+			"sha256": "3f5db6010de48f7173939f16621c0e0e794b589eec04e3b04e0a81be848dfab9",
+			"size": 60648,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

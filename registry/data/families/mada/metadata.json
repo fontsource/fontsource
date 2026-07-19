@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-05-08",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Khaled Hosny, Paul D. Hunt",
+	"family": "Mada",
+	"id": "mada",
+	"license": {
+		"attribution": "Copyright 2015-2022 The Mada Project Authors (https://github.com/aliftype/mada), with Reserved Font Name \"Source\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mada",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aliftype/mada",
+		"revision": "2f7dea3a2bad718583bfcc1dc2030cf15401c789"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mada/Mada[wght].ttf",
+			"sha256": "bf4d193ee78cea2fd8bdc9e64e5cb7e8a19ff76ab74f97a9a4a0e80f8f4cefde",
+			"size": 181408,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

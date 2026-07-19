@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 550,
+				"sha256": "771fc24aa3a0a35a2957bcebf71f9d30d72f149706968798588c2463b3ce381b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.013",
+			"outline": "glyf",
+			"path": "ofl/hankengrotesk/HankenGrotesk-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 550,
+				"sha256": "771fc24aa3a0a35a2957bcebf71f9d30d72f149706968798588c2463b3ce381b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.013",
+			"outline": "glyf",
+			"path": "ofl/hankengrotesk/HankenGrotesk[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

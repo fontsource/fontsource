@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-03-06",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Sorkin Type",
+	"family": "Merriweather Sans",
+	"id": "merriweather-sans",
+	"license": {
+		"attribution": "Copyright 2019 The Merriweather Project Authors (https://github.com/SorkinType/Merriweather-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/merriweathersans",
+		"revision": "c5afa3ea7e2488eb1c7579a052f612cbbdb903c5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Merriweather-Sans",
+		"revision": "bb6bd99bf9eb756723f2428629659a638702d335"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/merriweathersans/MerriweatherSans-Italic[wght].ttf",
+			"sha256": "882e6763fa1f35dc03cd61c1e3186dba2408828c807895dfa16875b1242ad59d",
+			"size": 236768,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/merriweathersans/MerriweatherSans[wght].ttf",
+			"sha256": "bef90d227eeb5b58e27d0a421df6c5d8df2e6a6d68aa08bdc51faa54f1d997dc",
+			"size": 266512,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

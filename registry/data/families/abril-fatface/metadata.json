@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-08-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "TypeTogether",
+	"family": "Abril Fatface",
+	"id": "abril-fatface",
+	"license": {
+		"attribution": "Copyright (c) 2011, Copyright (c) 2011, TypeTogether (www.type-together.com info@type-together.com), with Reserved Font Names \"Abril\" and \"Abril Fatface\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/abrilfatface",
+		"revision": "5e7d9dd147772bdd3af703d8d4129820cdcb2a49",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/abrilfatface",
+		"revision": "5e899bfd997c34d1c2bd43ca9f94d2d0ded6346f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/abrilfatface/AbrilFatface-Regular.ttf",
+			"sha256": "5971d4a3758a922a9fedc7f6fb825a96341a2e718c45a4b2c9a6b417c8c4dbe9",
+			"size": 67364,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

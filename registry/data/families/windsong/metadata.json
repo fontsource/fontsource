@@ -1,0 +1,49 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-05-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "WindSong",
+	"id": "windsong",
+	"license": {
+		"attribution": "Copyright 2013 The WindSong Project Authors (https://github.com/googlefonts/windsong)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/windsong",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/windsong",
+		"revision": "08da686e588864189c5c1616ed6971c1aeebafd5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/windsong/WindSong-Medium.ttf",
+			"sha256": "df3525097cb0273f610b87da52399879f87dcce0cbddee08c3e52395108079aa",
+			"size": 276656,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/windsong/WindSong-Regular.ttf",
+			"sha256": "44bea4f8cdb818e9df6eef5334c63915acb7f1877b239debb373277d16b0aac2",
+			"size": 267192,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

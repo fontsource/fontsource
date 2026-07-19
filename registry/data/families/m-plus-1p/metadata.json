@@ -1,0 +1,100 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-06-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Coji Morishita, M+ Fonts Project",
+	"family": "M PLUS 1p",
+	"id": "m-plus-1p",
+	"license": {
+		"attribution": "Copyright 2016 The M+ Project Authors.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mplus1p",
+		"revision": "d714b17ce2379f06daf6295617f961df605dccb5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/coz-m/MPLUS_FONTS",
+		"revision": "9cb1a484f5f8c5c18c7e2f83a13c812aec15c11d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mplus1p/MPLUS1p-Black.ttf",
+			"sha256": "815821a62ce085e453af318ca004768e336329d5a7d6f7bed272e97e7862d43e",
+			"size": 1774332,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/mplus1p/MPLUS1p-Bold.ttf",
+			"sha256": "76eb077b0a31ca33ca40238e47da5a17e2786741607cec09678d7d2e5ab1afc1",
+			"size": 1766552,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/mplus1p/MPLUS1p-ExtraBold.ttf",
+			"sha256": "d17f745712668b0dcd95e42b3634a90a76195228d4abf88a0be8e98ddbc441b2",
+			"size": 1773944,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/mplus1p/MPLUS1p-Light.ttf",
+			"sha256": "e39fa39f8556c3fdf47e01f68915d8d17936107f33fbead6b1b40fcf605c118c",
+			"size": 1767184,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/mplus1p/MPLUS1p-Medium.ttf",
+			"sha256": "28b2f52a40ae988064810b71d67e127df75a16e08d7df4e192d1006e4075394f",
+			"size": 1758908,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/mplus1p/MPLUS1p-Regular.ttf",
+			"sha256": "2f294ad496432b1608f070d310e3aa2adcf1de4af429f4901df97ec4bd361ed1",
+			"size": 1758688,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mplus1p/MPLUS1p-Thin.ttf",
+			"sha256": "aa093fe44beb740d2730e0437bdd0bfeb57b526d30e8b2410e29ec6503434dd6",
+			"size": 1771656,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

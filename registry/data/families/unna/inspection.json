@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 353,
+				"sha256": "d5cf097bdd4ae657587ff70b11384d9fb88b16cee2dca300d65c2e816e42cddb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.007; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/unna/Unna-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 353,
+				"sha256": "d5cf097bdd4ae657587ff70b11384d9fb88b16cee2dca300d65c2e816e42cddb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.007; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/unna/Unna-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 353,
+				"sha256": "d5cf097bdd4ae657587ff70b11384d9fb88b16cee2dca300d65c2e816e42cddb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.007; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/unna/Unna-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 353,
+				"sha256": "d5cf097bdd4ae657587ff70b11384d9fb88b16cee2dca300d65c2e816e42cddb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.007; ttfautohint (v1.5)",
+			"outline": "glyf",
+			"path": "ofl/unna/Unna-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

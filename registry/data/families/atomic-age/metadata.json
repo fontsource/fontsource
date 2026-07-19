@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-10-26",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "James Grieshaber",
+	"family": "Atomic Age",
+	"id": "atomic-age",
+	"license": {
+		"attribution": "Copyright (c) 2013 - 2016, Sorkin Type Co (www.sorkintype.com) with Reserved Font Name 'Atomic Age'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/atomicage",
+		"revision": "862210c9f745075a9fd876412ee13398da47e5eb",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EbenSorkin/Atomic-Age",
+		"revision": "bb96b179ca5c48149011237c64781fa94817e711"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/atomicage/AtomicAge-Regular.ttf",
+			"sha256": "5ea6111180af882b0799a1e1c04b7acc557807ff76e0cc24258b259a06f67ed2",
+			"size": 62592,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

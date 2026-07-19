@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/thasadith/Thasadith-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/thasadith/Thasadith-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/thasadith/Thasadith-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "9476aa6bde869b2a19de1c4629394a4fe140c567118db3a755239ccefa52575a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/thasadith/Thasadith-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

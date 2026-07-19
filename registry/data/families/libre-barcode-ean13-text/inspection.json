@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 154,
+				"sha256": "5c002c96619189e38257d1d557e980f65adacdf8f2233a4e86e5bb1f548cd82c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/librebarcodeean13text/LibreBarcodeEAN13Text-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

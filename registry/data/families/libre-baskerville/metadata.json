@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Libre Baskerville",
+	"id": "libre-baskerville",
+	"license": {
+		"attribution": "Copyright 2012 The Libre Baskerville Project Authors (https://github.com/impallari/Libre-Baskerville)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/librebaskerville",
+		"revision": "b3d4b3ba7c4d54f15ed2be72d7f58b9097c3b252",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/Libre-Baskerville",
+		"revision": "d20160cfa0ac4c532327f85b3ca4054acf92ed38"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/librebaskerville/LibreBaskerville-Italic[wght].ttf",
+			"sha256": "223959683dc73ec4437bd61fabaa4b3f22209e22855ffd3aee36ba61a5116e97",
+			"size": 167456,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/librebaskerville/LibreBaskerville[wght].ttf",
+			"sha256": "05a95421961341c5b2556285e8415df9db27dab4f4abe22b446b3c6a8b916c5d",
+			"size": 171900,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

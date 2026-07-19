@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 389,
+				"sha256": "bc67d807195e1039f17ce5ec341749ea27da3a334f910c596ae631cd18947598"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/combo/Combo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

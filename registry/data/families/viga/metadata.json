@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontstage",
+	"family": "Viga",
+	"id": "viga",
+	"license": {
+		"attribution": "Copyright (c) 2011 Fontstage (info@fontstage.com), with Reserved Font Name \"Viga\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/viga",
+		"revision": "80251c57846d2bb603151eaa25f390252714d240",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/viga/Viga-Regular.ttf",
+			"sha256": "730ad2a38691ce19ee5aa9dd9ec84ae8737b2084b06eef13435a4facad9b063c",
+			"size": 28436,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

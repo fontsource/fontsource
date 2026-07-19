@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"kannada",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Ek Type",
+	"family": "Baloo Tamma 2",
+	"id": "baloo-tamma-2",
+	"license": {
+		"attribution": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/balootamma2",
+		"revision": "5bbba43d914fb70a6044f13767eab5bcccee6517",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yanone/Baloo2-Variable",
+		"revision": "da523dfa21aa0e376253d61c21e39146dc55702a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/balootamma2/BalooTamma2[wght].ttf",
+			"sha256": "364e7b33fafe3f94eb121b4db36423e1b0fbef278af0b1a8d3643c65567b9d3c",
+			"size": 475932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

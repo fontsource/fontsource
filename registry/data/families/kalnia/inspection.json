@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 100,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 372,
+				"sha256": "1622bb78c04cf9e9b8ff2f3e768b36245d94370780174e65c185a1a0eff529e0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.105",
+			"outline": "glyf",
+			"path": "ofl/kalnia/Kalnia[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

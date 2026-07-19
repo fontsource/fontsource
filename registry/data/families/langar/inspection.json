@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 489,
+				"sha256": "516cc4b755736fcb357b1e1e93a043eefefcf346f7e4b76027c02dc8381881f1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/langar/Langar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

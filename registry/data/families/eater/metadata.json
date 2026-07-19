@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Typomondo",
+	"family": "Eater",
+	"id": "eater",
+	"license": {
+		"attribution": "Copyright (c) 2011, Vernon Adams DBA Typomondo (vern@newtypography.co.uk), with Reserved Font Name \"Eater\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/eater",
+		"revision": "6c70e8b1769d87c1a4a7f02b34c440abe2c4b204",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/eater",
+		"revision": "6c5ace2f3226138bc19b92312a0a82ff6cf6861f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/eater/Eater-Regular.ttf",
+			"sha256": "df2744af0f58592c4ff13e8205e62a56f7bdf915b3e31c9def075668c42a2b3f",
+			"size": 83928,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

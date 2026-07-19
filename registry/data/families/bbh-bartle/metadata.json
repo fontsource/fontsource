@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-09-24",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Studio DRAMA",
+	"family": "BBH Bartle",
+	"id": "bbh-bartle",
+	"license": {
+		"attribution": "Copyright 2025 The BBH Project Authors (https://github.com/Studio-DRAMA/BBH)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bbhbartle",
+		"revision": "ec997b1d4517cec107dd4809e5f48e75529f77fe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Studio-DRAMA/BBH",
+		"revision": "b8d40ef62b138be4c7c3dac2de117217f261b24b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bbhbartle/BBHBartle-Regular.ttf",
+			"sha256": "f0de1a96b31ed2ce012172dd28d4a5a7c3d4c7fdee84f32f311608ec4eca3431",
+			"size": 17880,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

@@ -1,0 +1,3 @@
+M+ FONTS is a little nifty font family for everyday usage. Mplus 1 Code is a Sans Serif font with seven weights from Thin to Bold, supporting 5,700+ Kanjis for Japanese with GF Latin Plus. Because this font is for programming usage, it has high readability even in small sizes, and letterforms are designed to avoid misreadings as much as possible. This font is a combination of Mplus 1 full-width Japanese with new half-width monospaced Latin alphabet and figures.
+
+To contribute to the project, visit [github.com/coz-m/MPLUS\_FONTS](https://github.com/coz-m/MPLUS_FONTS)

@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-10-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Sassy Frass",
+	"id": "sassy-frass",
+	"license": {
+		"attribution": "Copyright 2008 The Sassy Frass Project Authors (https://github.com/googlefonts/sassy-frass)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sassyfrass",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sassy-frass",
+		"revision": "9d93a3cc26cb069a2405362b45d95f0ddd4453a1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sassyfrass/SassyFrass-Regular.ttf",
+			"sha256": "91fc6e0f43a277ddb590faf8a97fd3016f4f1251a9dea2deaf658b1812c42899",
+			"size": 162820,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

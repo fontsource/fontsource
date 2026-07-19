@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 633,
+				"sha256": "2ab596bb119062fb1b1cbd41716c9c993fca1de38cfef24c715a3acac033c8ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/festive/Festive-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

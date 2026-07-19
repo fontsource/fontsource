@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 423,
+				"sha256": "73ecd21435a516bdf701dd786550d643e8192113ca814b8f9b3a5b8406f4e913"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325",
+			"outline": "glyf",
+			"path": "ofl/alef/Alef-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 423,
+				"sha256": "73ecd21435a516bdf701dd786550d643e8192113ca814b8f9b3a5b8406f4e913"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325",
+			"outline": "glyf",
+			"path": "ofl/alef/Alef-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

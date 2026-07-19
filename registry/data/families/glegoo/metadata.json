@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-25",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Glegoo",
+	"id": "glegoo",
+	"license": {
+		"attribution": "Copyright (c) 2011, Eduardo Tunni (http://www.tipo.net.ar), Copyright 2011-13 Lohit Fonts Project contributors (http://fedorahosted.org/lohit)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/glegoo",
+		"revision": "58c765efa75a22363a2e0a44bbeb1304eb67216f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/glegoo",
+		"revision": "f33250e4771fc7535fbbe847c4d9787396dff0a9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/glegoo/Glegoo-Bold.ttf",
+			"sha256": "8ad5922db134fe9bf9f2691fc5554293c06884cf89823f452fc76db6b3de7fef",
+			"size": 271068,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/glegoo/Glegoo-Regular.ttf",
+			"sha256": "237ca320ef867416c46c6fdfa6edc2ac5f49a121396ad0279a2e0f8ed7aaa3b1",
+			"size": 271368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

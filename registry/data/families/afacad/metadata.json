@@ -1,0 +1,52 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-10-20",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Kristian Möller, Dicotype",
+	"family": "Afacad",
+	"id": "afacad",
+	"license": {
+		"attribution": "Copyright 2023 The Afacad Project Authors (https://github.com/Dicotype/Afacad)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/afacad",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Dicotype/Afacad",
+		"revision": "b294b1f8610ff16a3846a255b1a6a2e6788a056e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/afacad/Afacad-Italic[wght].ttf",
+			"sha256": "1cf0a5853330267433c0a1603e239ff33e5963887ec2545c96a1516ca960a717",
+			"size": 121024,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/afacad/Afacad[wght].ttf",
+			"sha256": "89513fc375cafeecca81110f6a3ef5882d7ac2d871a365b6c93bbfa6039b8230",
+			"size": 117456,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

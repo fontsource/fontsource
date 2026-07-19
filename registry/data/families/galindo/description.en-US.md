@@ -1,0 +1,1 @@
+The Galindo typeface is an inspired spin off light-hearted animated fonts with geometric counters.

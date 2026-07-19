@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11742,
+				"sha256": "668e43d49711a55a84a6ecb2181529cd616c6498dfca65a548783426916aa6b2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.10",
+			"outline": "glyf",
+			"path": "ofl/nanumpenscript/NanumPenScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

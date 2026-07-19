@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 439,
+				"sha256": "a5ba7355c15bbe2582d16082fbf7f4dadbddc03b594bde55a6a15c4e4aa05016"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanstirhuta/NotoSansTirhuta-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 241,
+				"sha256": "6b34dd3cef6edd1ccfc30ceb172b2223e03974e50d60513933ce16afcbbdbfff"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/quattrocentosans/QuattrocentoSans-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 242,
+				"sha256": "6dbc240d761eca00c1f9b29be38d39503c2c8bef983fecfe5a4803041a27e466"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/quattrocentosans/QuattrocentoSans-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 243,
+				"sha256": "ab2e6aad90717c8d05225ba886cd268f29428052a1f5f3288c169762ed440a16"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/quattrocentosans/QuattrocentoSans-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 242,
+				"sha256": "c6c5da5edc334a6fd4e6f5a11f3bba7d2212081ac5fb1385a0c35749a4e40e6f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/quattrocentosans/QuattrocentoSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

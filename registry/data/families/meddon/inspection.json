@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 434,
+				"sha256": "3a40f779a175e0db948f38a8760bed74069b134783f804de2c40893636f2ab0d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/meddon/Meddon.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

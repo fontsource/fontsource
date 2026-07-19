@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tanukizamurai",
+	"family": "Yusei Magic",
+	"id": "yusei-magic",
+	"license": {
+		"attribution": "Copyright 2020 The Yusei Magic Project Authors (https://github.com/tanukifont/YuseiMagic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yuseimagic",
+		"revision": "f8b1f3f6690a9866048f0c0617decb620ab4b6ca",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/tanukifont/YuseiMagic",
+		"revision": "d622b0ea84059a411a1344bd2f948d9e0df92a1b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yuseimagic/YuseiMagic-Regular.ttf",
+			"sha256": "82098615f39ed9da6a8ccc674b9006e49c70dd5b775a7a1697f6bedd22ce25a2",
+			"size": 3134968,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

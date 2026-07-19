@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 234,
+				"sha256": "3432eb90dbebaaf428c3142238b63f41fc578852bcbeb2490c171e1be62e6552"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/piedra/Piedra-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

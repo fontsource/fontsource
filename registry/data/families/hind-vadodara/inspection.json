@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "bcf2548f253ccc6bd510cf569f4ab1bd88a6820e4f9daa96217bd3359e8c7eef"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f gujr -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindvadodara/HindVadodara-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "bcf2548f253ccc6bd510cf569f4ab1bd88a6820e4f9daa96217bd3359e8c7eef"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f gujr -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindvadodara/HindVadodara-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "bcf2548f253ccc6bd510cf569f4ab1bd88a6820e4f9daa96217bd3359e8c7eef"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f gujr -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindvadodara/HindVadodara-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "bcf2548f253ccc6bd510cf569f4ab1bd88a6820e4f9daa96217bd3359e8c7eef"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f gujr -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindvadodara/HindVadodara-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "bcf2548f253ccc6bd510cf569f4ab1bd88a6820e4f9daa96217bd3359e8c7eef"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f gujr -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindvadodara/HindVadodara-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

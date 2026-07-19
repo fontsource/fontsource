@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "0978ffd34db8bee0f38d7b91d17510ad1fb76ed384a51f90a673ae0b01f7cbf9"
+			},
+			"colorTables": [],
+			"fontVersion": "004.301",
+			"outline": "glyf",
+			"path": "ofl/fenix/Fenix-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

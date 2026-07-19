@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"linear-b",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Linear B",
+	"id": "noto-sans-linear-b",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/linear-b)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanslinearb",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/linear-b",
+		"revision": "410f88c1d4d10b5db76217e57e7b153811ce0674"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanslinearb/NotoSansLinearB-Regular.ttf",
+			"sha256": "c69e7a80ad643b7f05fea03bf4102a659489b045533f6ac5539c3600c98fdb06",
+			"size": 135716,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

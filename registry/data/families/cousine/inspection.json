@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2282,
+				"sha256": "a21a8f3b56e58dc488e7e8834ff416473958d8e2e5a8d7972389cefaa5b99384"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.241; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/cousine/Cousine-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2282,
+				"sha256": "a21a8f3b56e58dc488e7e8834ff416473958d8e2e5a8d7972389cefaa5b99384"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.241; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/cousine/Cousine-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2282,
+				"sha256": "a21a8f3b56e58dc488e7e8834ff416473958d8e2e5a8d7972389cefaa5b99384"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.241; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/cousine/Cousine-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2282,
+				"sha256": "a21a8f3b56e58dc488e7e8834ff416473958d8e2e5a8d7972389cefaa5b99384"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.241; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/cousine/Cousine-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

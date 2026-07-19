@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 208,
+				"sha256": "a51a408f597255a6069ffd8534abbd8ba40210ecf12c3e0da0c747c1fb722fd3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/portersansblock/PorterSansBlock-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

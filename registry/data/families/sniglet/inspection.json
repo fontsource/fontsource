@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 241,
+				"sha256": "d874f817b446ca849e8a495f43c11a96db1650dc543f046ca48dae4fd150ad50"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v0.95) -l 8 -r 50 -G 200 -x 14 -w \"G\"",
+			"outline": "glyf",
+			"path": "ofl/sniglet/Sniglet-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 241,
+				"sha256": "d874f817b446ca849e8a495f43c11a96db1650dc543f046ca48dae4fd150ad50"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v0.95) -l 8 -r 50 -G 200 -x 14 -w \"G\"",
+			"outline": "glyf",
+			"path": "ofl/sniglet/Sniglet-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

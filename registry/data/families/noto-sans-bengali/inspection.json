@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 444,
+				"sha256": "13602c3c79ae4c8b7b3dedb658ee08e8dc0a8df56d25755d4ed6e8ba67ae32a8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.011",
+			"outline": "glyf",
+			"path": "ofl/notosansbengali/NotoSansBengali[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

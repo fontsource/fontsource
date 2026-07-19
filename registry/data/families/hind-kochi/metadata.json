@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"malayalam",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Hind Kochi",
+	"id": "hind-kochi",
+	"license": {
+		"attribution": "Copyright (c) 2015 Indian Type Foundry (info@indiantypefoundry.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hindkochi",
+		"revision": "0d55225271d5b60207731930741233a9df5c5164",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/hind-kochi",
+		"revision": "57ad6793acd07b743efa5f5691d4d58b8956bf74"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hindkochi/HindKochi-Bold.ttf",
+			"sha256": "0015eaed80482e33b9cf4c18941e3250915ca5b8bed428b8b0f9d952496f3726",
+			"size": 62092,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/hindkochi/HindKochi-Light.ttf",
+			"sha256": "ab814d88fc60652e9675d92358d64c12ef5216032009b38d4b66ae4aba33b801",
+			"size": 63216,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/hindkochi/HindKochi-Medium.ttf",
+			"sha256": "3c59b6ec6023c9e4b4e3473a0b006ce32cc1521ca38e35c618e1231eafcd4de5",
+			"size": 62752,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/hindkochi/HindKochi-Regular.ttf",
+			"sha256": "be4ef5af5157c64ab86a758580f9cc41ade446c256fd15070800eb8fcfcdc639",
+			"size": 62796,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/hindkochi/HindKochi-SemiBold.ttf",
+			"sha256": "58e6cbe26b7082018c55bc728c4056913d23cfbd7dd9d9147ba8ae219ac424bf",
+			"size": 62416,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

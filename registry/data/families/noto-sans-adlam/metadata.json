@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"adlam",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Adlam",
+	"id": "noto-sans-adlam",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/adlam)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansadlam",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/adlam",
+		"revision": "581ccd2bf966d0b79a5285be7ea328f112beda7e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansadlam/NotoSansAdlam[wght].ttf",
+			"sha256": "fda98eedbbad51d6c80319065bb193a1b3c9410a8309f09063082b768a54159f",
+			"size": 136472,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,66 @@
+{
+	"category": "display",
+	"dateAdded": "2012-04-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Brownfox",
+	"family": "Simonetta",
+	"id": "simonetta",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Brownfox (www.brownfox.org gayaneh.b@gmail.com), with Reserved Font Name \"Simonetta\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/simonetta",
+		"revision": "d8153ad802ea8ec5c5175801557de4206ee7ca37",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/simonetta/Simonetta-Black.ttf",
+			"sha256": "c5912a33c419048c6fe0bc44303bba3a987a122bfb4c733750d71dafd0841b1b",
+			"size": 111468,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/simonetta/Simonetta-BlackItalic.ttf",
+			"sha256": "924b6b7f82552c11579037bb6906bbbcf783d01488de9278977cbbe4b44948a7",
+			"size": 107044,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/simonetta/Simonetta-Italic.ttf",
+			"sha256": "89164679cf426fb50185be14d9673c8ca35e429a0308f06393988c20dcfb9c20",
+			"size": 106264,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/simonetta/Simonetta-Regular.ttf",
+			"sha256": "96d14d9f8c8af857dc64beaf4cee297f22d7992a463cfff3e30928b5d5572ef6",
+			"size": 115060,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

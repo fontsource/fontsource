@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 608,
+				"sha256": "3fb790bf3473e9f72dca61866bf24c96b6b8ec6cf3489b9f04dfe72edb847d57"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/wixmadefordisplay/WixMadeforDisplay[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

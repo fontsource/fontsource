@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-04-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Miltonian",
+	"id": "miltonian",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Pablo Impallari (www.impallari.com impallari@gmail.com). Igino Marini (www.ikern.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/miltonian",
+		"revision": "2ee77f8a4d2c906cee5a0e8d03bb7df233a060b4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/Miltonian",
+		"revision": "95d180e8744380f93a8437226e58032d484882c7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/miltonian/Miltonian-Regular.ttf",
+			"sha256": "bd4ada3764e6774964efe097463533b2759755e390f68e3d16974264f8dd2d98",
+			"size": 126804,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

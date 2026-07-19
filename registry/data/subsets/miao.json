@@ -1,0 +1,43 @@
+{
+	"id": "miao",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"16F00",
+			"16F4A"
+		],
+		[
+			"16F4F",
+			"16F87"
+		],
+		[
+			"16F8F",
+			"16F9F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/miao_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "ab28ee5b7c415158ba86f8b87b73f55b9caf7755f2cf6739c9b8ee5017b05540",
+		"upstream": "namFiles"
+	}
+}

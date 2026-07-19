@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 413,
+				"sha256": "487bf5b3b20a95a0edd1f56c6e8d6dcf7f74998f385d7f1fdc13cf1a99d8b7c0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/limelight/Limelight-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

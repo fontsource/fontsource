@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-08-12",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams, Cyreal, Jacques Le Bailly",
+	"family": "Nunito",
+	"id": "nunito",
+	"license": {
+		"attribution": "Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nunito",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/nunito",
+		"revision": "8c6a9bb9732545b9ed53f29ec5e1ab0ff53c4e6f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nunito/Nunito-Italic[wght].ttf",
+			"sha256": "b520cc871868b0acfca1beda875df7f4a44ebce914f8a89f83977fc9c09529c8",
+			"size": 281832,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/nunito/Nunito[wght].ttf",
+			"sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207",
+			"size": 276932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

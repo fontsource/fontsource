@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 427,
+				"sha256": "f6b99feff7ca4f03e88bb310bc12aadb3333a2688072e35a23d408d6dd1aca5d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.4.1)",
+			"outline": "glyf",
+			"path": "ofl/kavoon/Kavoon-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

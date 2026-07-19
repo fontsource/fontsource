@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Khmer",
+	"id": "noto-serif-khmer",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khmer)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifkhmer",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/khmer",
+		"revision": "5d2251a4e32635c6657967a157759aac7a662fc9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifkhmer/NotoSerifKhmer[wdth,wght].ttf",
+			"sha256": "50ad032042491e98b440e41490d26b716d8d43886eebfafa9735f6284c1980e2",
+			"size": 498288,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

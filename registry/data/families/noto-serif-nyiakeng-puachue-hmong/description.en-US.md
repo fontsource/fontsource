@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Nyiakeng Puachue Hmong is a modulated (“serif”) design for texts in the _Nyiakeng Puachue Hmong_ script. It has multiple weights and 76 glyphs.

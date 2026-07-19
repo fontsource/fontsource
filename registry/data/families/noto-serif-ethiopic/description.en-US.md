@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Serif Ethiopic is a modulated (“serif”) design for texts in the African _Ethiopic_ script. It has multiple weights and widths, and 566 glyphs.

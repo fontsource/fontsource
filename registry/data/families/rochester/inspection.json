@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "ff31937e36e29d070843447d9ff44296917bcb7831a1c2057027e1d7a652d03e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "apache/rochester/Rochester-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2021-08-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Gideon Roman",
+	"id": "gideon-roman",
+	"license": {
+		"attribution": "Copyright 2009-2021 The Gideon Roman Project Authors (https://github.com/googlefonts/gideon)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gideonroman",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/gideon",
+		"revision": "c7220310f3d5a41af5c7906b3c33672a0a2146c8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gideonroman/GideonRoman-Regular.ttf",
+			"sha256": "8edd923657529e420382016e8f0a395d2d526c391328fc97cf4d42ed2d18bdce",
+			"size": 109484,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

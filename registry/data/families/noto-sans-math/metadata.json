@@ -1,0 +1,37 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Math",
+	"id": "noto-sans-math",
+	"license": {
+		"attribution": "Copyright 2022 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmath",
+		"revision": "823468bd7825152bce2b8fd2cf740432ad2fce8d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://www.github.com/notofonts/math",
+		"revision": "4b78263eac2301b04367d600a07b521cfbff0867"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmath/NotoSansMath-Regular.ttf",
+			"sha256": "3f495fe933c06786e4d5f6d86b8ee70b6753a68ee3b9d87528726de0f6e2c47d",
+			"size": 1015396,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-29"
+}

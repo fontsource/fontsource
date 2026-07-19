@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "24a9294d3d7a9ba59ad9d26f46af25f5142e350863e12f87a7cbe30077bc2fbd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/chauphilomeneone/ChauPhilomeneOne-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "24a9294d3d7a9ba59ad9d26f46af25f5142e350863e12f87a7cbe30077bc2fbd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/chauphilomeneone/ChauPhilomeneOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

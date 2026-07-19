@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 856,
+				"sha256": "60c9e325a018bc0d9d2ae421d2f7a9185b466600d894c79867d73622ed669023"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/pangolin/Pangolin-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

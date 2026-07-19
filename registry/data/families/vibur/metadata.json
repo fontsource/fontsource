@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2010-12-15",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Johan Kallas",
+	"family": "Vibur",
+	"id": "vibur",
+	"license": {
+		"attribution": "Copyright (c) 2010, Johan Kallas (johan.kallas@gmail.com). All rights reserved. Licenced under SIL OFL v1.1",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/vibur",
+		"revision": "7d2e52f54ff055abca2b3c21ff4de48794bddcd0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/vibur/Vibur-Regular.ttf",
+			"sha256": "3e23653e2f0abfa88ae499d1265f1b80055b6caf52fe32b1586eb7d294227bb1",
+			"size": 173604,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

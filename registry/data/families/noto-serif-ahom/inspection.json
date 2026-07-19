@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 397,
+				"sha256": "c1f843ea998ef364d31231e8dd1b282c2aafeff4a9ed565eab6456795bafb673"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.007; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoserifahom/NotoSerifAhom-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

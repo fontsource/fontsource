@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Pontano Sans",
+	"id": "pontano-sans",
+	"license": {
+		"attribution": "Copyright 2012 The Pontano Sans Project Authors (https://github.com/googlefonts/PontanoSansFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pontanosans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/PontanoSansFont",
+		"revision": "240072e22db75e84578dc80b757f589792f9e723"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pontanosans/PontanoSans[wght].ttf",
+			"sha256": "cafd98966b473326a8d6344abb34ec543267f47fb76ca7532855db5a08a0a002",
+			"size": 78532,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

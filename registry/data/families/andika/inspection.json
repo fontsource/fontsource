@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2448,
+				"sha256": "d411d212e4e634a5c617348daffac5f4491fdbf611f2bc473a6c1eb4f2cc8760"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.101",
+			"outline": "glyf",
+			"path": "ofl/andika/Andika-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2448,
+				"sha256": "d411d212e4e634a5c617348daffac5f4491fdbf611f2bc473a6c1eb4f2cc8760"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.101",
+			"outline": "glyf",
+			"path": "ofl/andika/Andika-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2448,
+				"sha256": "d411d212e4e634a5c617348daffac5f4491fdbf611f2bc473a6c1eb4f2cc8760"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.101",
+			"outline": "glyf",
+			"path": "ofl/andika/Andika-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2448,
+				"sha256": "d411d212e4e634a5c617348daffac5f4491fdbf611f2bc473a6c1eb4f2cc8760"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.101",
+			"outline": "glyf",
+			"path": "ofl/andika/Andika-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

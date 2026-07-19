@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 486,
+				"sha256": "28127a173e7f712c75530ae3dcbedc2dfd6ac8ad1a1d849f07166b590bffa8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.096;PS 001.096;hotconv 1.0.70;makeotf.lib2.5.58329",
+			"outline": "glyf",
+			"path": "ofl/cambay/Cambay-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 486,
+				"sha256": "28127a173e7f712c75530ae3dcbedc2dfd6ac8ad1a1d849f07166b590bffa8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006;PS 001.006;hotconv 1.0.70;makeotf.lib2.5.58329",
+			"outline": "glyf",
+			"path": "ofl/cambay/Cambay-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 487,
+				"sha256": "e025967218c6e69e4a4a7d6427b9e4101b8d20c8cfb41dd1aeddeed911cc020f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.019;PS 001.019;hotconv 1.0.70;makeotf.lib2.5.58329",
+			"outline": "glyf",
+			"path": "ofl/cambay/Cambay-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 487,
+				"sha256": "e025967218c6e69e4a4a7d6427b9e4101b8d20c8cfb41dd1aeddeed911cc020f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.181;PS 001.181;hotconv 1.0.70;makeotf.lib2.5.58329",
+			"outline": "glyf",
+			"path": "ofl/cambay/Cambay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

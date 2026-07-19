@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1350,
+				"sha256": "2b408633de7fa6a3695bfbbfe79e38baac105315881bda063bcb8f95d8755829"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.206",
+			"outline": "glyf",
+			"path": "ofl/firamono/FiraMono-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1350,
+				"sha256": "2b408633de7fa6a3695bfbbfe79e38baac105315881bda063bcb8f95d8755829"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.206",
+			"outline": "glyf",
+			"path": "ofl/firamono/FiraMono-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1350,
+				"sha256": "2b408633de7fa6a3695bfbbfe79e38baac105315881bda063bcb8f95d8755829"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.206",
+			"outline": "glyf",
+			"path": "ofl/firamono/FiraMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

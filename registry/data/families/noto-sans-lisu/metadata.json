@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"lisu",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Lisu",
+	"id": "noto-sans-lisu",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/lisu)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanslisu",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/lisu",
+		"revision": "d7e34571c41408f05975acaee719c2353408eb9e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanslisu/NotoSansLisu[wght].ttf",
+			"sha256": "669592efd358c495000ae79201dbec736d877d04fabf4dfc4dfb887cd9eeac40",
+			"size": 56240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

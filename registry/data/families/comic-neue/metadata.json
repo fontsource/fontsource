@@ -1,0 +1,83 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2020-03-12",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Craig Rozynski, Hrant Papazian",
+	"family": "Comic Neue",
+	"id": "comic-neue",
+	"license": {
+		"attribution": "Copyright 2014 The Comic Neue Project Authors (https://github.com/crozynski/comicneue)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/comicneue",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/crozynski/comicneue",
+		"revision": "c5ee07b5eebc4cc6347badfad56cb0c705a2e41e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/comicneue/ComicNeue-Bold.ttf",
+			"sha256": "3e7e5fccfd7e0788f317b43312151c1bd5cf058c9697a8d83eac3939050bd61e",
+			"size": 55716,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/comicneue/ComicNeue-BoldItalic.ttf",
+			"sha256": "5c312c2a2fa64eee82f3b87fcfab8f3b12a5e59b043124401d322eb323cfbf16",
+			"size": 55928,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/comicneue/ComicNeue-Italic.ttf",
+			"sha256": "e06bfd1552f5c9464c5665733ffd69239b0593885dbb9e059688a5900f78cf98",
+			"size": 54392,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/comicneue/ComicNeue-Light.ttf",
+			"sha256": "efb91c06dccc264f07f800c0691d40c94e8cfce6183daade0709268bec178f76",
+			"size": 55816,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/comicneue/ComicNeue-LightItalic.ttf",
+			"sha256": "a6d36baee09c7025916ddb517835458d15ef890291507197a54875ccc096b927",
+			"size": 54120,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/comicneue/ComicNeue-Regular.ttf",
+			"sha256": "a0ee5a37c8b27c4db0700137d928598b1e23b0089e1546a8961909176b779360",
+			"size": 57248,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

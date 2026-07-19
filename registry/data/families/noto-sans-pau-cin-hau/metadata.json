@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"pau-cin-hau"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Pau Cin Hau",
+	"id": "noto-sans-pau-cin-hau",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/pau-cin-hau)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanspaucinhau",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/pau-cin-hau",
+		"revision": "31ef11c2be728b8f709ea9b65fa04aa3519af39a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanspaucinhau/NotoSansPauCinHau-Regular.ttf",
+			"sha256": "148f6ad11e71c58a4c557af7f492a6478b3e96700202a62e7013dd7031057a83",
+			"size": 56924,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 334,
+				"sha256": "a786e30e58ba1f66de5bf6b55d250b10995bff061d814950a2d07b3e92085a47"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/yuyushort/YuyuShort-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

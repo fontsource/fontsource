@@ -1,0 +1,67 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-07-30",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Khaled Hosny, Sebastian Kosch",
+	"family": "Amiri",
+	"id": "amiri",
+	"license": {
+		"attribution": "Copyright 2010-2022 The Amiri Project Authors (https://github.com/aliftype/amiri).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/amiri",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aliftype/amiri.git",
+		"revision": "04d40ee68cc6b8cb6870eca81a8a7451165aa95a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/amiri/Amiri-Bold.ttf",
+			"sha256": "cfccb794268e7d573d857e6d6a67f89cf8a053e8ffd85dfa0c8ec1bb36fc4827",
+			"size": 413480,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/amiri/Amiri-BoldItalic.ttf",
+			"sha256": "241300e2dcb2c541ac3617872960d99683d261e4f526dc4691d0727e7bef130b",
+			"size": 409692,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/amiri/Amiri-Italic.ttf",
+			"sha256": "770e4da44d0459c0ddd6484483d475b95f2d088dd27ce472427624081eb68c70",
+			"size": 428532,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/amiri/Amiri-Regular.ttf",
+			"sha256": "ab391c4147d054c48976e98322ad0eefe1427aa0e0502a12a4c75d80a70cfcd7",
+			"size": 431116,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

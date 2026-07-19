@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Sigmar One",
+	"id": "sigmar-one",
+	"license": {
+		"attribution": "Copyright 2011 The Sigmar One Project Authors (contact@sansoxygen.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sigmarone",
+		"revision": "6f26a427c656c37b398c035e96b13079d1e61a17",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/sigmarone",
+		"revision": "1fb4311d78953da0f943e0e4b806acdd076af81b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sigmarone/SigmarOne-Regular.ttf",
+			"sha256": "0817eb698a5c4aac2c07bb84be1ead806494c489da468db23f5ffd9bcf3f0970",
+			"size": 172512,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

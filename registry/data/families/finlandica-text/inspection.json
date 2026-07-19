@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 500,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 964,
+				"sha256": "0eca4e02587b728e248ffd5f64d4342f8cf7834ae33da628ce249bbad809137f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.103",
+			"outline": "glyf",
+			"path": "ofl/finlandicatext/FinlandicaText-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 500,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 500,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 964,
+				"sha256": "0eca4e02587b728e248ffd5f64d4342f8cf7834ae33da628ce249bbad809137f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.103",
+			"outline": "glyf",
+			"path": "ofl/finlandicatext/FinlandicaText[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

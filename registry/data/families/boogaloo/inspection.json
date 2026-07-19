@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 281,
+				"sha256": "c353a6f3044bf0299e66225725324a384eac04794a4aac87e5b21b3c7c7c19ff"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/boogaloo/Boogaloo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

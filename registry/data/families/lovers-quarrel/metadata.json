@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-03-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Lovers Quarrel",
+	"id": "lovers-quarrel",
+	"license": {
+		"attribution": "Copyright 2004 The Lovers Quarrel Project Authors (https://github.com/googlefonts/lovers-quarrel)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/loversquarrel",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/lovers-quarrel",
+		"revision": "bf3a5fd5bf11cd96b5545ee9191a16460296eb71"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/loversquarrel/LoversQuarrel-Regular.ttf",
+			"sha256": "a856cd5a36d050a6e7fb4b976143e6ddad8271bdeebfb2c2efec78ab0f8569b6",
+			"size": 110424,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

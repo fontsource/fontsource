@@ -1,0 +1,93 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-04-04",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"menu"
+	],
+	"designer": "Boutros Fonts, Mourad Boutros, Soulaf Khalifeh",
+	"family": "Tajawal",
+	"id": "tajawal",
+	"license": {
+		"attribution": "(c) 2017 by Boutros International. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tajawal",
+		"revision": "20776328c5a501f52fe9553fc5997451b4667589",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/tajawal",
+		"revision": "2085b8942f234e7afb83dc03c77713d0d5471cc9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tajawal/Tajawal-Black.ttf",
+			"sha256": "da582a579d3200869535dc994d2349608a8582042f8776b3679b157015db287c",
+			"size": 59028,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/tajawal/Tajawal-Bold.ttf",
+			"sha256": "0342ab6b74b6bd1b4b5bf7beda45a9734a2b3147a31e8a3a45b6a3417a52d9d7",
+			"size": 59988,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tajawal/Tajawal-ExtraBold.ttf",
+			"sha256": "3d1298b747c22579f9e1bdeb0d4165064cb17f7e66145e2f43f9deb12ad7a2cf",
+			"size": 59648,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/tajawal/Tajawal-ExtraLight.ttf",
+			"sha256": "a12ffbfaaec30ab8142edc60fa4727b104a90eb54c6a200a76988a1ec2ec11dc",
+			"size": 55784,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/tajawal/Tajawal-Light.ttf",
+			"sha256": "ab26ed3e0c5af2c71b469b5780decff8088d290ab91aa29b07321580136e813a",
+			"size": 61864,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/tajawal/Tajawal-Medium.ttf",
+			"sha256": "1ff8bd943a261c9dd7906bdb1993cab87b6d925a7fb5f848cdb51ed301531090",
+			"size": 62280,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/tajawal/Tajawal-Regular.ttf",
+			"sha256": "6882892da3e03527d5db2bbab3b48bde6ef2e878a43f522d1a4eebda90010a19",
+			"size": 60364,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

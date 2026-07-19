@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 218,
+				"sha256": "0e1766501763994148b07bb806a36b8b6fb93a54ba04f1f3b815da6840a66ac8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/ewert/Ewert-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

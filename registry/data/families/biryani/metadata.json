@@ -1,0 +1,94 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-04-22",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dan Reynolds, Mathieu Réguer",
+	"family": "Biryani",
+	"id": "biryani",
+	"license": {
+		"attribution": "Copyright (c) 2015 Dan Reynolds. Copyright (c) 2015 Mathieu Réguer.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/biryani",
+		"revision": "71ecb026b2c429c7939e35b0323ca8f4f3ab032c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/typeoff/biryani",
+		"revision": "6f7831d27b7458109cd88aceba28efeda057dadb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/biryani/Biryani-Black.ttf",
+			"sha256": "45d7963ee617b4508f16d182e0eb7aeebb6431614a0641ccc8d4534f3673bafa",
+			"size": 178060,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/biryani/Biryani-Bold.ttf",
+			"sha256": "5e1b0cc60cbf479a1ce41c6b764fcb25160726485c6676db8e789ed4bab43e43",
+			"size": 178968,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/biryani/Biryani-ExtraBold.ttf",
+			"sha256": "ea9ae707985de3f2318fb2ba812facef31253c27e1b039bae922dced15f2273a",
+			"size": 178960,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/biryani/Biryani-ExtraLight.ttf",
+			"sha256": "f2a95908cf136847faa9dbda8226d1d2f45cfcadf17696d082010404509dd770",
+			"size": 177264,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/biryani/Biryani-Light.ttf",
+			"sha256": "83238e32854ac489e02276aebca90d4c675ea95a4413c3ce3d012581c67fea8b",
+			"size": 180716,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/biryani/Biryani-Regular.ttf",
+			"sha256": "0b846b4f8600e7943a3a86a2f7ce04c20daa7d2cdad74c951edcc8e07c367116",
+			"size": 179936,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/biryani/Biryani-SemiBold.ttf",
+			"sha256": "8bb5d78fb28fa27909394f3c3548ce544376e23448ff15fbb7cb22ee650b0e5d",
+			"size": 179216,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

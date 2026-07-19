@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 62.5,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 564,
+				"sha256": "ac95d5d99bd5b377d7e18313fb0481bc08f7b321cd8a3fd49cd8a3d336ba2f04"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.107",
+			"outline": "glyf",
+			"path": "ofl/notosansmyanmar/NotoSansMyanmar[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

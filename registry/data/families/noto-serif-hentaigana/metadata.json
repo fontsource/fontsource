@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-02-26",
+	"declaredSubsets": [
+		"kana-extended",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Hentaigana",
+	"id": "noto-serif-hentaigana",
+	"license": {
+		"attribution": "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/hentaigana)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifhentaigana",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/hentaigana",
+		"revision": "05826fcd095f41f3517f4126dda514f51de644cc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifhentaigana/NotoSerifHentaigana[wght].ttf",
+			"sha256": "94d31f3669977a8464d7f4c6597a2c0bacab636e70548e1a3184ffc7e0a5abf1",
+			"size": 454624,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

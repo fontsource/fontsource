@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-10-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"makasar",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Makasar",
+	"id": "noto-serif-makasar",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/makasar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifmakasar",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/makasar",
+		"revision": "e7902cc5d89ed7d091c247c855f516fe49f8b6ac"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifmakasar/NotoSerifMakasar-Regular.ttf",
+			"sha256": "f4c5619563060fb67fc9ef26e755ee8a9d4a27ba22e2938f25ffcd1e2b547f94",
+			"size": 57888,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

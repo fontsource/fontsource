@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-03-30",
+	"declaredSubsets": [
+		"bengali",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tiro Typeworks, John Hudson, Fiona Ross, Neelakash Kshetrimayum",
+	"family": "Tiro Bangla",
+	"id": "tiro-bangla",
+	"license": {
+		"attribution": "Copyright 2020 The Indigo Project Authors (https://github.com/TiroTypeworks/Indigo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tirobangla",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Indigo",
+		"revision": "98b5d3a01c534b7029af04a59d31e0d7d90be15a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tirobangla/TiroBangla-Italic.ttf",
+			"sha256": "deb8330a56697cfabef8ff393c6d36af60531229b138bf9a3ffe834330cb03e1",
+			"size": 329576,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tirobangla/TiroBangla-Regular.ttf",
+			"sha256": "a763523dc3f90a71962cb8d9400b8f0a86b40b2cb01676f165101a2967127ae4",
+			"size": 323776,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

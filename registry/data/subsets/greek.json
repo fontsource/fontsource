@@ -1,0 +1,51 @@
+{
+	"id": "greek",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"370",
+			"377"
+		],
+		[
+			"37A",
+			"37F"
+		],
+		[
+			"384",
+			"38A"
+		],
+		[
+			"38C",
+			"38C"
+		],
+		[
+			"38E",
+			"3A1"
+		],
+		[
+			"3A3",
+			"3FF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/greek_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "9457a0e393cf3d4651751c0240ecdf935f55859b4a7791d89efc475fde5177a6",
+		"upstream": "namFiles"
+	}
+}

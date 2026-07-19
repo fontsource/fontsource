@@ -1,0 +1,41 @@
+{
+	"category": "serif",
+	"dateAdded": "2013-03-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Gabriela",
+	"id": "gabriela",
+	"license": {
+		"attribution": "Copyright 2013 The Gabriela Project Authors (https://github.com/etunni/Gabriela), with Reserved Font Name \"Gabriela\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gabriela",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/Gabriela",
+		"revision": "961e4fb89c38cbe8ddcc3c9268c42d94c834d5da"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gabriela/Gabriela-Regular.ttf",
+			"sha256": "c38334bfff10cc97fa6e5c5ddf1f12dd54428bb218d7a423fb3c07bf8180bfd8",
+			"size": 70984,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

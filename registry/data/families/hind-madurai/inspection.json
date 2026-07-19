@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 405,
+				"sha256": "1480d7f8e1133496f896e4e7bff989790fcf5fc9cdf661cdbf7c638e94baddad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f taml -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindmadurai/HindMadurai-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 405,
+				"sha256": "1480d7f8e1133496f896e4e7bff989790fcf5fc9cdf661cdbf7c638e94baddad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f taml -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindmadurai/HindMadurai-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 405,
+				"sha256": "1480d7f8e1133496f896e4e7bff989790fcf5fc9cdf661cdbf7c638e94baddad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f taml -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindmadurai/HindMadurai-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 405,
+				"sha256": "1480d7f8e1133496f896e4e7bff989790fcf5fc9cdf661cdbf7c638e94baddad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f taml -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindmadurai/HindMadurai-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 405,
+				"sha256": "1480d7f8e1133496f896e4e7bff989790fcf5fc9cdf661cdbf7c638e94baddad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f taml -w G -W -c -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/hindmadurai/HindMadurai-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

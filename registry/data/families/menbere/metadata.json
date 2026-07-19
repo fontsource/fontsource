@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-04-15",
+	"declaredSubsets": [
+		"ethiopic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Aleme Tadesse, Sorkin Type, Eben Sorkin",
+	"family": "Menbere",
+	"id": "menbere",
+	"license": {
+		"attribution": "Copyright 2022 The Menbere Project Authors (https://github.com/SorkinType/Menbere/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/menbere",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Menbere",
+		"revision": "ab34feb55b02536fd40281b7651ddafbfcabc544"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/menbere/Menbere[wght].ttf",
+			"sha256": "4705b09c466787f6a69d0203cf98fee7eab7a023517c43350543b6d7dbed2654",
+			"size": 2717324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

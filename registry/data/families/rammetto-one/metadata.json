@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Rammetto One",
+	"id": "rammetto-one",
+	"license": {
+		"attribution": "Copyright 2011 The Rammetto Project Authors (https://github.com/googlefonts/RammettoFont), with Reserved Font Name Rammetto.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rammettoone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/RammettoFont",
+		"revision": "a60e02d4bc60c0e5ca87076da98c52a16f87bd99"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rammettoone/RammettoOne-Regular.ttf",
+			"sha256": "0063c5480f7868be5dd95dd668575643ff953199541dce65fe5a88310bd7733f",
+			"size": 69392,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 250,
+				"sha256": "5fe330c5816f49368b6eafde140377289b003d11952551716874ba4baecfa658"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/abeezee/ABeeZee-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 250,
+				"sha256": "5fe330c5816f49368b6eafde140377289b003d11952551716874ba4baecfa658"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/abeezee/ABeeZee-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,11 @@
+Bytesized is a miniscule monospace pixel font - 3x4 modulo diacritics - made to be as legible as possible within these restrictions.
+
+The name comes from the fact that, if you restrict the font to ASCII only, you can store it raw in just under 150 bytes!
+
+While a few compromises had to be made to fit it into such a small profile, namely only supporting the Latin Core character set, and some "creative" glyph designs, so to speak, it's still quite readable!
+
+To contribute, see [github.com/balt-dev/bytesized-gf](https://github.com/balt-dev/bytesized-gf).
+
+* * *
+
+![](Image1.png)

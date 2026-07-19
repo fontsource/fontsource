@@ -1,0 +1,3 @@
+This script is reminiscent of fonts used to display "yinglian," the short poems and blessings traditionally posted on either side of the entryway to a home or temple. MaShanZheng is heavy and majestic, vital and expansive.
+
+To contribute, please visit [github.com/googlefonts/mashanzheng](https://github.com/googlefonts/mashanzheng).

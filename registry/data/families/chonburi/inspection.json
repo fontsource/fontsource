@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 723,
+				"sha256": "dfa9669f3d92b8ce4c0f7d857d354739aa19e4274fc66e5cb2480fe07347d0fa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000g",
+			"outline": "glyf",
+			"path": "ofl/chonburi/Chonburi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

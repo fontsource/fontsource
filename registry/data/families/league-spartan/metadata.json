@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-12-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Matt Bailey, Tyler Finck",
+	"family": "League Spartan",
+	"id": "league-spartan",
+	"license": {
+		"attribution": "Copyright 2020 The League Spartan Project Authors (https://github.com/theleagueof/league-spartan)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/leaguespartan",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/league-spartan",
+		"revision": "27341b9bf93a2c7faa140538a64ce342486c5fb5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/leaguespartan/LeagueSpartan[wght].ttf",
+			"sha256": "2dbb6290b39ab7c48a40b18f74ca59ef48a69a015c3ea0542703f0c6ce51d617",
+			"size": 95116,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

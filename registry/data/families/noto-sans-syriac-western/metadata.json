@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-01-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"syriac"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Syriac Western",
+	"id": "noto-sans-syriac-western",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/syriac)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssyriacwestern",
+		"revision": "83d36a51745ddd56578e2fb13251e4d821ae0c81",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/syriac",
+		"revision": "a24ba4586441a6b76df20215464898852e702078"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssyriacwestern/NotoSansSyriacWestern[wght].ttf",
+			"sha256": "29d375b81b36ab042c543f94b31a9ca4982ee1af02e352a6285fa6a0ce25c5b8",
+			"size": 180868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

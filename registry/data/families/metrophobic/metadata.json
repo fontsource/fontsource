@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Metrophobic",
+	"id": "metrophobic",
+	"license": {
+		"attribution": "Copyright 2011 The Metrophobic Project Authors (https://github.com/googlefonts/MetrophobicFont), with Reserved Font Name 'Metrophobic'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/metrophobic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/MetrophobicFont",
+		"revision": "d4da54632ddd53631332a5a469183c887b4ea3e1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/metrophobic/Metrophobic-Regular.ttf",
+			"sha256": "34e4ac3257307c28e6dd14f5d77bb296211f0ddd217607228a5375416ed8ac58",
+			"size": 79772,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "a7ff8631bb2f3f08d79dec18c85374aae2fe3fae2237df7f54f56804c65ed8fa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/sendflowers/SendFlowers-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

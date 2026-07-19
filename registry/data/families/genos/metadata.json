@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-10-08",
+	"declaredSubsets": [
+		"cherokee",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Genos",
+	"id": "genos",
+	"license": {
+		"attribution": "Copyright 2011 The Genos Project Authors (https://github.com/googlefonts/genos)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/genos",
+		"revision": "f0a808c7a1231c440b97ab3a25f232519365fbba",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/genos",
+		"revision": "707181862a0fe1ceecc334bb54c63ea4377e95d8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/genos/Genos-Italic[wght].ttf",
+			"sha256": "88591d5374bc8ec1d7e4e1151f0289bd00a71903a52a380379491afd730a773e",
+			"size": 144248,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/genos/Genos[wght].ttf",
+			"sha256": "88a32589d9d8615ab728977d647f5e5010dbf789050d4cf25d6607b14d49a1f1",
+			"size": 135320,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-12"
+}

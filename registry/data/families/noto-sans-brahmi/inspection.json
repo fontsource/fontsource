@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 450,
+				"sha256": "1e62ace41874c2d733fa0056e13ae67b46b3faff6e6fb1ea2c451fee4836c6bf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansbrahmi/NotoSansBrahmi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 392,
+				"sha256": "4f4867149f27097f1382a5fc66a386d4d58f32d2e899a8fe23fa9b77ceddd8f7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0",
+			"outline": "glyf",
+			"path": "ofl/modernantiqua/ModernAntiqua-Regular.ttf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

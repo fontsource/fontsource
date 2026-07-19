@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2021-01-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"telugu"
+	],
+	"designer": "Vaishnavi Murthy, Juan Luis Blanco",
+	"family": "Akaya Telivigala",
+	"id": "akaya-telivigala",
+	"license": {
+		"attribution": "Copyright 2015 The Akaya Telivigala Project Authors (https://github.com/vaishnavimurthy/Akaya-Telivigala)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/akayatelivigala",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vaishnavimurthy/Akaya-Telivigala",
+		"revision": "93b31e45b69178ecfdb48981a5aa8a8b33bb0340"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/akayatelivigala/AkayaTelivigala-Regular.ttf",
+			"sha256": "e57498133912f5abab1651ac44654fd67ebefebb489052748587b4ba33e182c2",
+			"size": 561640,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

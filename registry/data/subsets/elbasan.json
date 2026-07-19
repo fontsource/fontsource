@@ -1,0 +1,63 @@
+{
+	"id": "elbasan",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"B7",
+			"B7"
+		],
+		[
+			"305",
+			"305"
+		],
+		[
+			"391",
+			"3A1"
+		],
+		[
+			"3A3",
+			"3A9"
+		],
+		[
+			"3DA",
+			"3DA"
+		],
+		[
+			"3DC",
+			"3DC"
+		],
+		[
+			"3DE",
+			"3DE"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"10500",
+			"10527"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/elbasan_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "6132792d2e99d4e014c110b43445ad510e51cfaf14158890eeab0446aa74b7fd",
+		"upstream": "namFiles"
+	}
+}

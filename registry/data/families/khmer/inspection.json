@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 141,
+				"sha256": "7ebfe8306f35c580d70e4352404584532829ffff56ea0d3972330646983a4d59"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.00 February 8, 2013",
+			"outline": "glyf",
+			"path": "ofl/khmer/Khmer.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 520,
+				"sha256": "cab6462306a47203893ae786f03d6a9d10e4d24d9040aa34bf829ed89a3c0096"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.004",
+			"outline": "glyf",
+			"path": "ofl/frankruhllibre/FrankRuhlLibre[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 300
+			}
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-07-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Carolina Short",
+	"family": "Asimovian",
+	"id": "asimovian",
+	"license": {
+		"attribution": "Copyright 2024 The Asimovian Project Authors (https://github.com/carolinashort/asimovian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/asimovian",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/carolinashort/asimovian",
+		"revision": "ae24db36d32c554da5a4a831663700c18d1360cf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/asimovian/Asimovian-Regular.ttf",
+			"sha256": "0ca907ed08a2d43785fabdda6be798771cce01df266e6c42a8dd28b7c36ea5df",
+			"size": 66136,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

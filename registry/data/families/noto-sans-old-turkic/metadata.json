@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-turkic"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Old Turkic",
+	"id": "noto-sans-old-turkic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-turkic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansoldturkic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/old-turkic",
+		"revision": "598d6ec8b4cb7db6012a370b9546b29d4a0bc607"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansoldturkic/NotoSansOldTurkic-Regular.ttf",
+			"sha256": "b8e3f206a9fdaea960a988bb1ed3275391eb534d127859611dca87f2204da4a7",
+			"size": 56284,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

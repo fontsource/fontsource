@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 425,
+				"sha256": "cc11c6990572f0da798633fbb3c9093e2fa4c71f14f6c4fb2b2d44164c4625eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.24]",
+			"outline": "glyf",
+			"path": "ofl/jotione/JotiOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

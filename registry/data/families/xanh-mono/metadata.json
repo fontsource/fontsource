@@ -1,0 +1,49 @@
+{
+	"category": "monospace",
+	"dateAdded": "2020-08-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Yellow Type, Lâm Bảo, Duy Dao",
+	"family": "Xanh Mono",
+	"id": "xanh-mono",
+	"license": {
+		"attribution": "Copyright 2020 The XanhMono Project Authors (https://github.com/yellow-type-foundry/xanhmono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/xanhmono",
+		"revision": "eb246f7b6c1eb5975b9ba51f2926df0a2d3bc5c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yellow-type-foundry/xanhmono",
+		"revision": "5c0ceb816ffc1e8f79be71c82a43201395f3eca5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/xanhmono/XanhMono-Italic.ttf",
+			"sha256": "e74ed4105efc797c05ec0631182e0a76bb5ecbf1b6adedb9e0170c79964b2f6f",
+			"size": 63836,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/xanhmono/XanhMono-Regular.ttf",
+			"sha256": "33e64b43fdcb40bd0141853601c7aaffd5be15ebd3cf56340d2473ff8be8e69c",
+			"size": 59924,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

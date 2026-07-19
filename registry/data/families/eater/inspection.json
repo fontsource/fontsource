@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 342,
+				"sha256": "6f9721f77909652b7bce5d691b008066927f476e796aba155ad1cc2a50d4e5c3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.002",
+			"outline": "glyf",
+			"path": "ofl/eater/Eater-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

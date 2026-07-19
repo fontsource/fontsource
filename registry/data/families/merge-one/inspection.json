@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 337,
+				"sha256": "1613762b914362e8099f6a6eb6533e4b9ac61267a72f499f10238ba696c7bd46"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/mergeone/MergeOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-04-03",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Philipp H. Poll",
+	"family": "Libertinus Sans",
+	"id": "libertinus-sans",
+	"license": {
+		"attribution": "Copyright 2025 The Libertinus Sans Project Authors (https://github.com/googlefonts/libertinus)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/libertinussans",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/libertinus",
+		"revision": "63b24ea7904a0ae69b38732b50dc6ebc277f9b68"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/libertinussans/LibertinusSans-Bold.ttf",
+			"sha256": "92e1e56b0d949241c400e3bca9a772a5318d3b49de7c5f7ccff0413d1a4cc339",
+			"size": 489576,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/libertinussans/LibertinusSans-Italic.ttf",
+			"sha256": "44527ec77f40df4a9f5b306ca4db46d973ddf90929e7e875f8dde0084754ef38",
+			"size": 631960,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/libertinussans/LibertinusSans-Regular.ttf",
+			"sha256": "2d261d21add710a08b2ffbd89072d7fd2f29a19582e872da4b8f8f6d622cd78b",
+			"size": 460756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

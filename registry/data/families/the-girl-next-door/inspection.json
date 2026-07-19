@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 344,
+				"sha256": "0727d8c92dec40fb78821d1e02ac1ffbcc9f8828fae184f1d9a6d19e1b89cdda"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2010",
+			"outline": "glyf",
+			"path": "ofl/thegirlnextdoor/TheGirlNextDoor.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 485,
+				"sha256": "c0ac36cbdfa1a920df57a7cc9103b66aa3bf35bc9b59cfd566386a7ca6e51311"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.29]",
+			"outline": "glyf",
+			"path": "ofl/michroma/Michroma-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

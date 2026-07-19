@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 758,
+				"sha256": "7967029044e0f045e052ad1028b4760919bdf3ed36046969aca6725efb03fcd5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/badscript/BadScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

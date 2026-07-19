@@ -1,0 +1,57 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-09-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "BenchNine",
+	"id": "benchnine",
+	"license": {
+		"attribution": "Copyright (c) 2012, vernon adams (vern@newtypography.co.uk), with Reserved Font Name 'BenchNine'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/benchnine",
+		"revision": "84c3a6ae75cebc1a746f9cc4e541ad092752854c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/benchnine",
+		"revision": "dd9d771443fa68ea48ef0819d28fc64e0fded42f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/benchnine/BenchNine-Bold.ttf",
+			"sha256": "5d3c445184569f424ed6d434cad16bdda130c5a395f79e2674f447cd5495cb97",
+			"size": 58996,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/benchnine/BenchNine-Light.ttf",
+			"sha256": "b1a0aa5fd59b09aff1e396fb617c7ca9223c39e1bbbc1199d96784a8ce707878",
+			"size": 54816,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/benchnine/BenchNine-Regular.ttf",
+			"sha256": "abc1e1dfcfcf8fecf322d85bd461f308a68d313ab2a82f4f192d9580a82bb0d7",
+			"size": 57172,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

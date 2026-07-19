@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-05-09",
+	"declaredSubsets": [
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Linus Romer",
+	"family": "Miama",
+	"id": "miama",
+	"license": {
+		"attribution": "Copyright (c) 2008-2011, Linus Romer, with Reserved Font Name Miama. This Font Software is licensed under the SIL Open Font License, Version 1.1.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/miama",
+		"revision": "482e43e851cdabb5047a2cee3f49b323a7f613ae",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/miama/Miama-Regular.ttf",
+			"sha256": "2dfff84eb0d46ac727e99438417e244d3a92e4d09b26c3039b40d640f07aba6b",
+			"size": 336520,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

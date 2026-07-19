@@ -1,0 +1,42 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2025-03-11",
+	"declaredSubsets": [
+		"arabic",
+		"emoji",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu"
+	],
+	"designer": "TypeTogether, Azza Alameddine, Laura Meseguer, Veronika Burian, José Scaglione",
+	"family": "Playpen Sans Arabic",
+	"id": "playpen-sans-arabic",
+	"license": {
+		"attribution": "Copyright 2023 The Playpen Sans Project Authors (https://github.com/TypeTogether/Playpen-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playpensansarabic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playpen-Sans",
+		"revision": "a4829cda744ea7e9ae73c14468a8a5672809f525"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playpensansarabic/PlaypenSansArabic[wght].ttf",
+			"sha256": "31122f11b6aa8a36a283f95797663a575afffbe2d52b69e496f3a2440942a226",
+			"size": 758132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

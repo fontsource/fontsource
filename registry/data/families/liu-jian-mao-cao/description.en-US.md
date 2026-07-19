@@ -1,0 +1,5 @@
+Liu Jian Mao Cao is a grass script font based on the work of calligrapher Liu Zhengjiang. Like most grass scripts, LiuJian is boundless and expressive, but is also tempered with mellow approachability. Like water, its flow is full and gentle, restoring a still image to movement.
+
+The latin script included in the font was designed by Kimberly Geswein.
+
+To contribute, see [github.com/googlefonts/liujianmaocao](https://github.com/googlefonts/liujianmaocao).

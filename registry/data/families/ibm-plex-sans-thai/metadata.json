@@ -1,0 +1,95 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-06-18",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai"
+	],
+	"designer": "Mike Abbink, Bold Monday",
+	"family": "IBM Plex Sans Thai",
+	"id": "ibm-plex-sans-thai",
+	"license": {
+		"attribution": "Copyright 2019 IBM Corp. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ibmplexsansthai",
+		"revision": "d935ac9235ee2071604dd67866959dc7528585d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/plex",
+		"revision": "67b4babc1f9b57d6ad3e362cf5bbc1c4026b2d63"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ibmplexsansthai/IBMPlexSansThai-Bold.ttf",
+			"sha256": "f88fbe0a3717c93deddf4b13e50a05c9adcd38f58d675d9d5d0b869961851667",
+			"size": 116552,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthai/IBMPlexSansThai-ExtraLight.ttf",
+			"sha256": "b1ba0c97d959657832c1a0929c274e4d4d8128ca2c52d24c6835cf87fb4a5a04",
+			"size": 119896,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthai/IBMPlexSansThai-Light.ttf",
+			"sha256": "b8e2da56ec11f1965af59a7119ee0b9b78773a9c9a89ae049b4975c9197b5c8d",
+			"size": 118380,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthai/IBMPlexSansThai-Medium.ttf",
+			"sha256": "46ba1b7365cc2c583914f23914cce46e836a72662e34f6e3029b15aaa10b792e",
+			"size": 116304,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthai/IBMPlexSansThai-Regular.ttf",
+			"sha256": "eee061d1bac39be40f9bb94498898cd1894f5d3d9a2f0ee6cbd48a6bd03d052b",
+			"size": 116004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthai/IBMPlexSansThai-SemiBold.ttf",
+			"sha256": "9d7526a0c8dfad63c49815d0cce9eea1026f018468b81c579997e953620a67d3",
+			"size": 116484,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/ibmplexsansthai/IBMPlexSansThai-Thin.ttf",
+			"sha256": "65f2cd4ed6f23048622bba1a1062c05c2ff80e603d202fdccf303cf3d5d085e5",
+			"size": 120904,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 969,
+				"sha256": "d03c3a617ab394ca36f4c90e7e4a013e1fd46569ad6e5f571d97f06399cabff6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 967,
+				"sha256": "c960c546d523428436083d3e8e109d9142244df31f005e9d563b90b069fb619e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.200",
+			"outline": "glyf",
+			"path": "ofl/montserratalternates/MontserratAlternates-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

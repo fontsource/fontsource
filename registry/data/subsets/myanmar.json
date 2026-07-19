@@ -1,0 +1,55 @@
+{
+	"id": "myanmar",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"1000",
+			"109F"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A92E",
+			"A92E"
+		],
+		[
+			"A9E0",
+			"A9FE"
+		],
+		[
+			"AA60",
+			"AA7F"
+		],
+		[
+			"116D0",
+			"116E3"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/myanmar_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "0c22e77c39f249a64f5a3df49fe62d7ff216b15a294364ff456d5c3aee3a58a2",
+		"upstream": "namFiles"
+	}
+}

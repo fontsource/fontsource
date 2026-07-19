@@ -1,0 +1,3 @@
+Dotum is a well-known gothic-style font that first shipped with Windows 95. It was designed with clean, simple strokes for clarity in user interfaces. This version includes proportional Latin characters. For a version with monospace, half-width Latin characters, see GulimChe.
+
+To contribute to this project, please visit [github.com/googlefonts/gulim](https://github.com/googlefonts/gulim).

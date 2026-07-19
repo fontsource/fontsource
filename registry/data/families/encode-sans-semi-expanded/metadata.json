@@ -1,0 +1,112 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Impallari Type, Andres Torresi, Jacques Le Bailly",
+	"family": "Encode Sans Semi Expanded",
+	"id": "encode-sans-semi-expanded",
+	"license": {
+		"attribution": "Copyright 2012 The Encode Project Authors (impallari@gmail.com), with Reserved Font Name \"Encode Sans\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/encodesanssemiexpanded",
+		"revision": "f69afb71ed6dcb30acae48687b746ed95c5caa8b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/Encode-Sans",
+		"revision": "370cdccdb22daf862c6fca0636aad64b6835decd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-Black.ttf",
+			"sha256": "5ccf895878db2154b4a21def75594258e89e7122d05134d56cd37981ea22ff8f",
+			"size": 168696,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-Bold.ttf",
+			"sha256": "388f18cbf0bcc4dcafc916c5f03989be30de3efebab71ef800f36d1f86b65962",
+			"size": 169420,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-ExtraBold.ttf",
+			"sha256": "b50b6596ceb2e5ba62c33b46ba7e6f3a0a8cc7cf2b491f01bfa4ee30aa177a85",
+			"size": 170916,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-ExtraLight.ttf",
+			"sha256": "ba81657a3d28eb922075b6419ef79b74098f6bf74770797f90e0ce59796a529a",
+			"size": 166276,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-Light.ttf",
+			"sha256": "ed235d922e0f859ac9cbcd559d0441e32506d44ddae24aea89926e98841f982c",
+			"size": 169484,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-Medium.ttf",
+			"sha256": "ceb8cd76cedec8021892bc46dff129cde6c47ae19cd5d9cf676044ff337b3a98",
+			"size": 170260,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-Regular.ttf",
+			"sha256": "aa69bcb0adf89d178c82e381ab6b959eca58c861440532cafbcc24e03cdce0ff",
+			"size": 169488,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-SemiBold.ttf",
+			"sha256": "1bc6f3f5aa3db42d4fc37d924f4b22f313a677fd3575fec805fc1169006e3e1f",
+			"size": 170788,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/encodesanssemiexpanded/EncodeSansSemiExpanded-Thin.ttf",
+			"sha256": "2d62660af2b106f8ff45356d009c4dbc4107c950e5ce3145522b1a1137c3f86a",
+			"size": 163204,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

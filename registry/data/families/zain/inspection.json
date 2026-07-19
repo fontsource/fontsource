@@ -1,0 +1,108 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "70e1e4f1655137307167ff18028b7f86668e9a6b41041d16b2ed0c52d9cbffae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/zain/Zain-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "70e1e4f1655137307167ff18028b7f86668e9a6b41041d16b2ed0c52d9cbffae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/zain/Zain-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "70e1e4f1655137307167ff18028b7f86668e9a6b41041d16b2ed0c52d9cbffae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/zain/Zain-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "70e1e4f1655137307167ff18028b7f86668e9a6b41041d16b2ed0c52d9cbffae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/zain/Zain-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 680,
+				"sha256": "c82a65f3ef37433cd279714aa873fa64cf3fcb1f44be2bd10857330efd4d60a0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/zain/Zain-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "70e1e4f1655137307167ff18028b7f86668e9a6b41041d16b2ed0c52d9cbffae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/zain/Zain-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 680,
+				"sha256": "c82a65f3ef37433cd279714aa873fa64cf3fcb1f44be2bd10857330efd4d60a0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/zain/Zain-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 590,
+				"sha256": "70e1e4f1655137307167ff18028b7f86668e9a6b41041d16b2ed0c52d9cbffae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/zain/Zain-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"id": "deseret",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"10400",
+			"1044F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/deseret_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "a3f283c4368da58759e177f35e8f22f5c267d4be6d3ce719303345bb42a0ed3c",
+		"upstream": "namFiles"
+	}
+}

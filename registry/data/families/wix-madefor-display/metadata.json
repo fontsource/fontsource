@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-02-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Dalton Maag",
+	"family": "Wix Madefor Display",
+	"id": "wix-madefor-display",
+	"license": {
+		"attribution": "Copyright 2021 The Wix Madefor Project Authors (https://github.com/wix/wixmadefor/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/wixmadefordisplay",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/wix/wixmadefor",
+		"revision": "85646f130c8d3edffe66c4d8755c3f9f7abfa877"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/wixmadefordisplay/WixMadeforDisplay[wght].ttf",
+			"sha256": "5cab84cd1f7231a866e59ee34245c9ca95cf23984d6b7d79132b3ffac2ef821f",
+			"size": 159752,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

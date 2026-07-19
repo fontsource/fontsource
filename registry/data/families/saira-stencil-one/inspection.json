@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 636,
+				"sha256": "814738f540cdc9e6e5ff0c82c677a6f67a94ad9f467b8041fde1de51c59fe0c4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/sairastencilone/SairaStencilOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

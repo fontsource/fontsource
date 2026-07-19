@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-04-20",
+	"declaredSubsets": [
+		"khmer",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Siemreap",
+	"id": "siemreap",
+	"license": {
+		"attribution": "Copyright (c) 2010, Danh Hong (khmertype.blogspot.com danhhong@gmail.com), with Reserved Font Name Khmer OS Siemreap. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/siemreap",
+		"revision": "c1385139f0f8fd9dd5d51966f91ca85cb8bd8388",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Siemreap",
+		"revision": "3ce4cbfc6b8172c80872a1d666cff71ca720db96"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/siemreap/Siemreap.ttf",
+			"sha256": "464760c6d06fc3f153f2e005eb1b0d33d5bd67e75f2d1c633f584c24ac006588",
+			"size": 285320,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

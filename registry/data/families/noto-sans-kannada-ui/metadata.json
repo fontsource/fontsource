@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"kannada",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Kannada UI",
+	"id": "noto-sans-kannada-ui",
+	"license": {
+		"attribution": "Copyright 2018 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanskannadaui",
+		"revision": "28295b35efcdb3a4043d6fdd42f003d8f9eb6b32",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/kannada",
+		"revision": "d56201c60822b83c3928072dc58d8f62c7016a45"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanskannadaui/NotoSansKannadaUI[wdth,wght].ttf",
+			"sha256": "a0b35c3ff628b3da3df104a1d5c83408ed50ce33168976704a298936a2900329",
+			"size": 526888,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

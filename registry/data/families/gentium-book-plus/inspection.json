@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2783,
+				"sha256": "8f1ba6e79b727fc5ba57b7eaa067cfdd5c503c7dc1ac10f4d466caf165ff0aaf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.101",
+			"outline": "glyf",
+			"path": "ofl/gentiumbookplus/GentiumBookPlus-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2783,
+				"sha256": "8f1ba6e79b727fc5ba57b7eaa067cfdd5c503c7dc1ac10f4d466caf165ff0aaf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.101",
+			"outline": "glyf",
+			"path": "ofl/gentiumbookplus/GentiumBookPlus-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2783,
+				"sha256": "8f1ba6e79b727fc5ba57b7eaa067cfdd5c503c7dc1ac10f4d466caf165ff0aaf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.101",
+			"outline": "glyf",
+			"path": "ofl/gentiumbookplus/GentiumBookPlus-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2783,
+				"sha256": "8f1ba6e79b727fc5ba57b7eaa067cfdd5c503c7dc1ac10f4d466caf165ff0aaf"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 6.101",
+			"outline": "glyf",
+			"path": "ofl/gentiumbookplus/GentiumBookPlus-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

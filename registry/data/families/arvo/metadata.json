@@ -1,0 +1,65 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-11-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Anton Koovit",
+	"family": "Arvo",
+	"id": "arvo",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Anton Koovit.\nCopyright 2010 Anton Koovit, Yassin Baggar.\nCopyright 2010 Anton Koovit.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/arvo",
+		"revision": "4a479af1b38165e1835d397a5620343a2b79cb01",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/antonxheight/Arvo",
+		"revision": "ae906e99ab549103549c68252edfcb1816a6bf08"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/arvo/Arvo-Bold.ttf",
+			"sha256": "6239b2edee762db0ab99343137c9ba15ae81fc843da2e76a0a395781748cc21f",
+			"size": 37652,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/arvo/Arvo-BoldItalic.ttf",
+			"sha256": "fc29e57f5558873e41ca9ff9a9c77521565f12c6972756d0fbcc592e1f0f4edb",
+			"size": 36872,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/arvo/Arvo-Italic.ttf",
+			"sha256": "a2eb63a0771b8d13d8e54bf650a02aef813eeaa2e10f6298358e6b15d26c6686",
+			"size": 35156,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/arvo/Arvo-Regular.ttf",
+			"sha256": "f41bd41471ec2db7140351bdde614da5341524503598ff7fe79f3c89c13b605e",
+			"size": 38780,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

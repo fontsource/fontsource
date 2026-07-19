@@ -1,0 +1,5 @@
+Xanh Mono is a mono-serif typeface, designed by Lam Bao and Duy Dao. In Vietnamese, “Xanh” has a lot of meanings, including blue; green; young; etc. We believe that Xanh Mono will not only present a fresh and gentle look, but also a stylish and unique approach for both reading and display purposes.
+
+Xanh Mono là một mặt chữ mono có chân, được thiết kế bởi Lâm Bảo và Duy Đào từ xưởng đúc chữ kĩ thuật số đầu tiên tại Việt Nam, còn được biết đến là Yellow Type Foundry. Xanh Mono theo sự lắng đọng, nhẹ nhàng nhưng vẫn đủ cá tính để vừa sử dụng cho trải nghiệm đọc và tiêu đề lớn.Bảo và Duy hy vọng Xanh Mono sẽ là sự lựa chọn phông chữ tuyệt vời dành cho bạn.
+
+To contribute see [https://github.com/yellow-type-foundry/xanhmono](https://github.com/yellow-type-foundry/xanhmono).

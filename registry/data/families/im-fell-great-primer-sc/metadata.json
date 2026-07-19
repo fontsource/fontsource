@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2010-05-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Igino Marini",
+	"family": "IM Fell Great Primer SC",
+	"id": "im-fell-great-primer-sc",
+	"license": {
+		"attribution": "© 2007 Igino Marini (www.iginomarini.com mail@iginomarini.com) With Reserved Font Name IM FELL Great Primer SC",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/imfellgreatprimersc",
+		"revision": "e992b933c9ace3c01da9b37a1e03d73114016ba4",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/imfellgreatprimersc",
+		"revision": "beb2648c0d5952f43287c5638f6613de64fbfccf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/imfellgreatprimersc/IMFeGPsc28P.ttf",
+			"sha256": "78952e5990c83116ef01ad7402f4384b1b9bc5c6c38690d2048f16a5317ff0c4",
+			"size": 203776,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

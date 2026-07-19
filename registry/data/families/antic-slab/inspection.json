@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "11a02ae7298ad0f71807d08ee5dd67dffb48a24d5a55cf0ea5dd2ae533147c9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.002",
+			"outline": "glyf",
+			"path": "ofl/anticslab/AnticSlab-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 826,
+				"sha256": "02b9034c4cc6377e0f2a1b4667aa0a904340e3c948817eae8060509f8f04c0e7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindmysuru/HindMysuru-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 826,
+				"sha256": "02b9034c4cc6377e0f2a1b4667aa0a904340e3c948817eae8060509f8f04c0e7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindmysuru/HindMysuru-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 826,
+				"sha256": "02b9034c4cc6377e0f2a1b4667aa0a904340e3c948817eae8060509f8f04c0e7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindmysuru/HindMysuru-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 826,
+				"sha256": "02b9034c4cc6377e0f2a1b4667aa0a904340e3c948817eae8060509f8f04c0e7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindmysuru/HindMysuru-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 826,
+				"sha256": "02b9034c4cc6377e0f2a1b4667aa0a904340e3c948817eae8060509f8f04c0e7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindmysuru/HindMysuru-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

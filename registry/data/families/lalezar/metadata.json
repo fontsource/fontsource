@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-02-28",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Borna Izadpanah",
+	"family": "Lalezar",
+	"id": "lalezar",
+	"license": {
+		"attribution": "Copyright 2015 The Lalezar Project Authors (https://github.com/BornaIz/Lalezar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lalezar",
+		"revision": "504aae083c1d7e7b16d14e344560995cda3adf0a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/BornaIz/Lalezar",
+		"revision": "238701c4241f207e92515f845a199be9131c1109"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lalezar/Lalezar-Regular.ttf",
+			"sha256": "7b80807bc831f141de0f7dcf6816412bf0c548968d548c5156ca388733390ea9",
+			"size": 290016,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2026-06-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Andrés Briganti, Evil Rabbit, Guillermo Rauch",
+	"family": "Geist Pixel",
+	"id": "geist-pixel",
+	"license": {
+		"attribution": "Copyright 2026 The Geist Project Authors (https://github.com/vercel/geist-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/geistpixel",
+		"revision": "4d4c5b11bfcc5bcfd4dcbeb70f5c250e8de9d1f2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vercel/geist-font",
+		"revision": "10dc7658f13c38a474cde201bb09a4617267545b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/geistpixel/GeistPixel[ELSH].ttf",
+			"sha256": "dcde0e2ae59aad779e71ee3fa45ade3a7146c2498024fdbb79c8cb619e60a238",
+			"size": 3657104,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-10"
+}

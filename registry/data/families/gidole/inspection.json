@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 796,
+				"sha256": "fc9c2019ef9a61095609ad7e6b79368628dd002ef86819f5bf84bb0e65856abc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/gidole/Gidole-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

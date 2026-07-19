@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Viktoriya Grabowska",
+	"family": "Armata",
+	"id": "armata",
+	"license": {
+		"attribution": "Copyright (c) 2012, Sorkin Type Co (www.sorkintype.com) with Reserved Font Name \"Armata\"  This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/armata",
+		"revision": "70e996edb7ad98f4c44df7a3e144b2bd84cfb007",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/armata",
+		"revision": "acd66b422a3b61baae8fee57c197e9f782b87f57"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/armata/Armata-Regular.ttf",
+			"sha256": "ee4a6a0410bafc1d0b46bd4551e5360d4ef7603eea1a9c783d46e9569a936905",
+			"size": 89724,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

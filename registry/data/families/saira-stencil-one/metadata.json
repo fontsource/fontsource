@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2019-06-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Hector Gatti, Omnibus-Type",
+	"family": "Saira Stencil One",
+	"id": "saira-stencil-one",
+	"license": {
+		"attribution": "Copyright 2019 The Saira Stencil Project Authors (https://github.com/Omnibus-Type/Saira)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sairastencilone",
+		"revision": "d9fe4ab5599f2d07066c288ece78f552019e799e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Saira",
+		"revision": "1916f2a575479b626238d9842126e63aa208eebf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sairastencilone/SairaStencilOne-Regular.ttf",
+			"sha256": "781496fdaf8e04cf6741b31025f6b4ba84f66021b097a8e0d85cbea2180cf223",
+			"size": 109944,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

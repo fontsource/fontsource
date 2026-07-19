@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-12-08",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Maniackers Design",
+	"family": "Monomaniac One",
+	"id": "monomaniac-one",
+	"license": {
+		"attribution": "Copyright 2020 The Monomaniac Project Authors (https://github.com/ManiackersDesign/monomaniac), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/monomaniacone",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/ManiackersDesign/monomaniac",
+		"revision": "2318283d6dbf3cbe50e8eed3c75a17a425e6bd8c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/monomaniacone/MonomaniacOne-Regular.ttf",
+			"sha256": "4045d2b419268efce1b1ef33004603c74c045804137693f1fb98c79576f31c6f",
+			"size": 122056,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

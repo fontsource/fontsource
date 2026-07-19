@@ -1,0 +1,47 @@
+{
+	"id": "symbols2",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"2000",
+			"2001"
+		],
+		[
+			"2004",
+			"2008"
+		],
+		[
+			"200A",
+			"200A"
+		],
+		[
+			"23B8",
+			"23BD"
+		],
+		[
+			"2500",
+			"259F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/symbols2_unique-glyphs.nam",
+		"revision": "db4e58f11227b4593dff7b5b6c29417daca3b212",
+		"sha256": "b38e44dc9a176c26dc5231a0f1391d2f777302d88e6bdce04ad9f5b05c55decc",
+		"upstream": "namFiles"
+	}
+}

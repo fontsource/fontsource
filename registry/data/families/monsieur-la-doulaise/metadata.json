@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sudtipos",
+	"family": "Monsieur La Doulaise",
+	"id": "monsieur-la-doulaise",
+	"license": {
+		"attribution": "Copyright (c) 2006 Alejandro Paul (sudtipos@sudtipos.com), with Reserved Font Name \"MonsieurLaDoulaise\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/monsieurladoulaise",
+		"revision": "1c47f041cafe3ac81d9655ecf50ecf9b46104849",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/monsieurladoulaise/MonsieurLaDoulaise-Regular.ttf",
+			"sha256": "dd3e04fbe661a7a70ff87b56b446e57a2605de5659c84d35ef58f4606ee68fad",
+			"size": 54288,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

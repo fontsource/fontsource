@@ -1,0 +1,120 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-09-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dale Sattler",
+	"family": "Kulim Park",
+	"id": "kulim-park",
+	"license": {
+		"attribution": "Copyright 2018 The Kulim Park Project Authors (https://github.com/noponies/Kulim-Park)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kulimpark",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/noponies/Kulim-Park",
+		"revision": "e080ee92d3f56075f641d0c988a480c0590a4426"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kulimpark/KulimPark-Bold.ttf",
+			"sha256": "b7b6903b9d38272eba1c63ac1c958270d5bced8493852a42107ee6fbe352a623",
+			"size": 60624,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-BoldItalic.ttf",
+			"sha256": "6d648df1c4535b1cd96f4d6d7a4d9d713e63574c4c635fa00b4f7716d18e5c1b",
+			"size": 63220,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-ExtraLight.ttf",
+			"sha256": "8ab13edb2e90b917f44f4f0122359fba0e28a09875409d6237b18bd58976bc5a",
+			"size": 60084,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-ExtraLightItalic.ttf",
+			"sha256": "4677883ce82f26b4eaf9dcd279e51c2207ea27f7a134ace76d1ae54bbfe24585",
+			"size": 62808,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-Italic.ttf",
+			"sha256": "bf29c091102f5745b206433d9c6ffded661ed63c95f35abd9e77f01db473efd8",
+			"size": 62920,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-Light.ttf",
+			"sha256": "86674fee8d387fc819da5efd38725f6ba1f205e36923e5ce799fe9a608094714",
+			"size": 60304,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-LightItalic.ttf",
+			"sha256": "0c4e3524b301e3cf00d471f0160108256d41f9aa92a32b5097720b7a3aa2a5e4",
+			"size": 63092,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-Regular.ttf",
+			"sha256": "29c4777b24bd07dd17fa6ffe79b8d30d859dc2b994d0d62a33cf392518404a02",
+			"size": 60852,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-SemiBold.ttf",
+			"sha256": "6f84c4ee85b5191cbef75a47510c8a0b19bb73b788b10b57261e0e9df22fe947",
+			"size": 61052,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/kulimpark/KulimPark-SemiBoldItalic.ttf",
+			"sha256": "1b72bb4c7562f368ba6eacaffd72ebe215ae400c30bce7cba4e219a36df995c6",
+			"size": 63520,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

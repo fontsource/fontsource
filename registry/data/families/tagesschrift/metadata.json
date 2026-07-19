@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2024-12-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yanone",
+	"family": "Tagesschrift",
+	"id": "tagesschrift",
+	"license": {
+		"attribution": "Copyright 2024 The Tagesschrift Project Authors (https://github.com/yanone/tagesschrift)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tagesschrift",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yanone/tagesschrift",
+		"revision": "3c08faf1630c3e56d5c893f013f421ed33a62d0e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tagesschrift/Tagesschrift-Regular.ttf",
+			"sha256": "c8d9506c31912f8151dd98cc23793692552534f21fcdd2d489eb923f4c00dfb7",
+			"size": 146216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

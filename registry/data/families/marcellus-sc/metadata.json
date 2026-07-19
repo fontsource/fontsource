@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-05-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Marcellus SC",
+	"id": "marcellus-sc",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Marcellus\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/marcellussc",
+		"revision": "1e838fdd5dbb8daec48f4de4f76a1cfff4b3d1ed",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/marcellussc/MarcellusSC-Regular.ttf",
+			"sha256": "03044ab65228b0554c9a5c1e63df29d4e58a71857e212801aaf768dfd106bdf0",
+			"size": 47888,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

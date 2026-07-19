@@ -1,0 +1,66 @@
+{
+	"category": "monospace",
+	"dateAdded": "2019-12-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Alan Dague-Greene",
+	"family": "Courier Prime",
+	"id": "courier-prime",
+	"license": {
+		"attribution": "Copyright 2015 The Courier Prime Project Authors (https://github.com/quoteunquoteapps/CourierPrime).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/courierprime",
+		"revision": "7204f5a9b1e530633e00c67bd4954ceb7d8c2483",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/quoteunquoteapps/CourierPrime",
+		"revision": "7fd585a2dd4c1612c79b3308e300923d1c13df93"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/courierprime/CourierPrime-Bold.ttf",
+			"sha256": "ff1f38786c849d1c41fa8e447960abdb2bd75fdfb0cfcdeb524fad65a5af3638",
+			"size": 72856,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/courierprime/CourierPrime-BoldItalic.ttf",
+			"sha256": "3355273f3ea6d6362658f9564f4e83d59e156cf1a182e3c1592b5c5943627dcc",
+			"size": 80872,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/courierprime/CourierPrime-Italic.ttf",
+			"sha256": "f1b9a5829789f7e56432a9f3bc7665ef4531dbba1c112639e48bef39621a006b",
+			"size": 79980,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/courierprime/CourierPrime-Regular.ttf",
+			"sha256": "72f793376f8e2841656bf21d77a5de010f2929bd6956a22ee848ad0c7eb978af",
+			"size": 71188,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

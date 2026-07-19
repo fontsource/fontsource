@@ -1,0 +1,43 @@
+{
+	"id": "sora-sompeng",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"2D",
+			"2D"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"2010",
+			"2010"
+		],
+		[
+			"110D0",
+			"110E8"
+		],
+		[
+			"110F0",
+			"110F9"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/sora-sompeng_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "92609c37fb86338e3f5036ffa50cf81f0a604562480feba78c5faa93aacd3a3c",
+		"upstream": "namFiles"
+	}
+}

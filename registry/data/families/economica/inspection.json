@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 248,
+				"sha256": "6ca367b728375c5bb00ed74f4e039ea8f00fa1c111f2d4db82134b098d9c2c06"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/economica/Economica-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 251,
+				"sha256": "9cb20b754bb153191a449c03b931a0c4d410ba8d2386cafd53353495e60da058"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/economica/Economica-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 248,
+				"sha256": "6ca367b728375c5bb00ed74f4e039ea8f00fa1c111f2d4db82134b098d9c2c06"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/economica/Economica-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 248,
+				"sha256": "6ca367b728375c5bb00ed74f4e039ea8f00fa1c111f2d4db82134b098d9c2c06"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/economica/Economica-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

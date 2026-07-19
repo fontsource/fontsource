@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "f79f76c9d50350fca43cc64584db21380efafdb3c787244cd892e4cc99ecd5a1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/rajdhani/Rajdhani-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "f79f76c9d50350fca43cc64584db21380efafdb3c787244cd892e4cc99ecd5a1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/rajdhani/Rajdhani-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "f79f76c9d50350fca43cc64584db21380efafdb3c787244cd892e4cc99ecd5a1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/rajdhani/Rajdhani-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "f79f76c9d50350fca43cc64584db21380efafdb3c787244cd892e4cc99ecd5a1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/rajdhani/Rajdhani-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "f79f76c9d50350fca43cc64584db21380efafdb3c787244cd892e4cc99ecd5a1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+			"outline": "glyf",
+			"path": "ofl/rajdhani/Rajdhani-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1081,
+				"sha256": "7e8a3a544b4641e21adc0fe0e338367085a0ea62238a11c1cf906dec91fd36fe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.103; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/greatvibes/GreatVibes-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

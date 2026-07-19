@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 461,
+				"sha256": "4da16e2bc99e4a1ca4d02d7160b3d6e4d2f518fe2c44186455112fc87552356c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/bebasneue/BebasNeue-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

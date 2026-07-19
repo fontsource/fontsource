@@ -1,0 +1,37 @@
+{
+	"category": "monospace",
+	"dateAdded": "2016-03-23",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "Dr. Ken Lunde",
+	"family": "Adobe Blank",
+	"id": "adobe-blank",
+	"license": {
+		"attribution": "Copyright  2013, 2015 Adobe Systems Incorporated (http://www.adobe.com/).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/adobeblank",
+		"revision": "3ee943a947311e9e655a7845411e53e3b3fa93d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/adobe-fonts/adobe-blank",
+		"revision": "19279e6f6707408fd93091d157b7836259bcbd21"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/adobeblank/AdobeBlank-Regular.ttf",
+			"sha256": "3b468f6efabe9274e804edf10477c8bdaf27cb2a76f50a5dd7cca34599f8b918",
+			"size": 72408,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

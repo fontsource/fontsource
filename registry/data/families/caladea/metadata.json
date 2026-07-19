@@ -1,0 +1,66 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-02-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "HT Fonts, Carolina Giovagnoli, Andrés Torresi",
+	"family": "Caladea",
+	"id": "caladea",
+	"license": {
+		"attribution": "Copyright 2012 The Caladea Project Authors (https://github.com/huertatipografica/Caladea)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/caladea",
+		"revision": "13c010f766052c13fa9cc8c656008cee55fb4775",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/caladea",
+		"revision": "336a529cfad3d103d6527752686f8331d13e820a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/caladea/Caladea-Bold.ttf",
+			"sha256": "ae3cb2dcbc925809dd29d2a44e9802211cab66be541bacbfc9c08c74b27c3742",
+			"size": 84492,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/caladea/Caladea-BoldItalic.ttf",
+			"sha256": "ccabaa7b7e2fdf253d2b1a5fa699dd8a3df8d835a9eb285ad82631a677eb76c0",
+			"size": 83356,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/caladea/Caladea-Italic.ttf",
+			"sha256": "4359a8e24f748b6447b1ff6d7a174febe70961d29f8bb8634b56dacd740a3deb",
+			"size": 83780,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/caladea/Caladea-Regular.ttf",
+			"sha256": "f1e899278b7b4491aba5b6a8253c4b04c050cc59b21865be5c37559a775153cd",
+			"size": 81600,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

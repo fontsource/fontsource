@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 15285,
+				"sha256": "fd05dfaf427e630072907ce1a8320307fd90e7e3bbe7c41312ff988eee0105ea"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/lxgwmarkergothic/LXGWMarkerGothic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

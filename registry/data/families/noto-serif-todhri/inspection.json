@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 378,
+				"sha256": "2897a25ded2de8e2637bfdf27e157290724c72f7d5ef0c13e38a73160c5cd70d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoseriftodhri/NotoSerifTodhri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

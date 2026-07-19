@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-10-05",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "HT Fonts",
+	"family": "Gochi Hand",
+	"id": "gochi-hand",
+	"license": {
+		"attribution": "Copyright (c) 2011, HT Fonts (www.htfonts.com info@htfonts.com), with Reserved Font Names \"Gochi\" and \"Gochi Hand\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gochihand",
+		"revision": "716f86027cf2bf70efa0c31d6d18e18c26433fe8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/gochihand",
+		"revision": "e202a9f4b7cd6f9c84440e684f0a3d0b5dd234e0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gochihand/GochiHand-Regular.ttf",
+			"sha256": "c46b029ab4846b2935e301af0b2cf85a1d74d2858e6a33636a3e64cf3cc4696b",
+			"size": 37352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

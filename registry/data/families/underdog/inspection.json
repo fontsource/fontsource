@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "31a028fbad89642d256ff1a97b21daa228bfc7ceb88a17914d62cf5f369f4ab3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v0.9)",
+			"outline": "glyf",
+			"path": "ofl/underdog/Underdog-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

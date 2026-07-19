@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "73c2a309b913215aaed0c6cebb1a717e0bad428a5599fa58ddde9bad620effdc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansbuginese/NotoSansBuginese-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

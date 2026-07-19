@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "5f0c31ebc807be299c60626b2d1eeda5f7cb8a5e39800fef8d2f5deb84c088fe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.600",
+			"outline": "glyf",
+			"path": "ofl/chilanka/Chilanka-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 392,
+				"sha256": "c444be9f707206f6d974b5dee668a7f4b73b523578d4554bdd72d66e95e13f90"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notoserifottomansiyaq/NotoSerifOttomanSiyaq-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

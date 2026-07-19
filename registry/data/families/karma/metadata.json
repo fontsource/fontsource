@@ -1,0 +1,76 @@
+{
+	"category": "serif",
+	"dateAdded": "2014-06-25",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Indian Type Foundry",
+	"family": "Karma",
+	"id": "karma",
+	"license": {
+		"attribution": "Copyright 2014 Indian Type Foundry. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/karma",
+		"revision": "cb19d513a1195ec1b22aab0201f53ccd117d91c5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/itfoundry/karma",
+		"revision": "12228946ce59ce2008e0a95a6b222632e6481121"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/karma/Karma-Bold.ttf",
+			"sha256": "3819cedaa8ef7247aaae77113cbb9b22b207f5fe6c045ae0e1442a7b6b69328e",
+			"size": 346620,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/karma/Karma-Light.ttf",
+			"sha256": "8a6174244c519f4190f7995ae64e52b4203b01156327d02ca07c5445ad2eda3d",
+			"size": 315108,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/karma/Karma-Medium.ttf",
+			"sha256": "28ef21834a486aafee86cbdfad1b89d7ebd175c0d58bcf07099f7cabc3bc9406",
+			"size": 335956,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/karma/Karma-Regular.ttf",
+			"sha256": "cc3457d2867b67ee956d95206dbc831e57b26975219d3d4e68d60f51f67b4b55",
+			"size": 339812,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/karma/Karma-SemiBold.ttf",
+			"sha256": "e4189f11c7794358e14d66e3661c585ce1b550403b327abc4ea4d240dcdc5116",
+			"size": 335912,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

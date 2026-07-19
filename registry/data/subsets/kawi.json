@@ -1,0 +1,39 @@
+{
+	"id": "kawi",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"11F00",
+			"11F10"
+		],
+		[
+			"11F12",
+			"11F3A"
+		],
+		[
+			"11F3E",
+			"11F5A"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/kawi_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "e030c5501dbf70b7a45b1212c6dc89f7e1c81ae23dc643102837219a1508812c",
+		"upstream": "namFiles"
+	}
+}

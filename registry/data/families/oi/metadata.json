@@ -1,0 +1,45 @@
+{
+	"category": "display",
+	"dateAdded": "2021-02-03",
+	"declaredSubsets": [
+		"arabic",
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil",
+		"vietnamese"
+	],
+	"designer": "Kostas Bartsokas",
+	"family": "Oi",
+	"id": "oi",
+	"license": {
+		"attribution": "Copyright 2019 The Oi Project Authors (github.com/kosbarts/Oi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/oi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/kosbarts/Oi",
+		"revision": "bd7ccfa844054ec4a0b2b17e56c33830646668ea"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/oi/Oi-Regular.ttf",
+			"sha256": "a406eece17ef2416ffefd6f57e4d5272ab2fa226c001ccf6aee7838231175203",
+			"size": 554780,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

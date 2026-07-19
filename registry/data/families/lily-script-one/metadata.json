@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2013-06-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Julia Petretta",
+	"family": "Lily Script One",
+	"id": "lily-script-one",
+	"license": {
+		"attribution": "Copyright (c) 2012-2013, Julia Petretta (www.juliapetretta.com julia.petretta@googlemail.com), with Reserved Font Name 'Lily'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lilyscriptone",
+		"revision": "54584294ef89979740aa9687fdc3c04d11c4b539",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lilyscriptone/LilyScriptOne-Regular.ttf",
+			"sha256": "191c8e3bfd653ae020cf23cd5b4c5a6a2de7412464a290e51461dd084aa62765",
+			"size": 37572,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

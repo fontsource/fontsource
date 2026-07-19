@@ -1,0 +1,5 @@
+Podkova is the Russian word for Horseshoe, and this is a monoline slab serif with diagonal terminals. The wide proportions and clean features aid legibility at small sizes, while the unusual letterforms provide enough character to be useful for display typography too.
+
+Initially designed by Ilya Yudin in 2010, it was carefully refined and expanded by Alexei Vanyashin into a wider range of weights (that made the bold style a little lighter) in January 2017. In September 2019, the family is now a variable font.
+
+To contribute, see [github.com/cyrealtype/Podkova](https://github.com/cyrealtype/Podkova).

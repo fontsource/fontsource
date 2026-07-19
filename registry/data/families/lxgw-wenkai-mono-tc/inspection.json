@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 22421,
+				"sha256": "48234dfbd4fa205d516480d087056a95cf32d7a9292560588f80090092f4c20a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.330",
+			"outline": "glyf",
+			"path": "ofl/lxgwwenkaimonotc/LXGWWenKaiMonoTC-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 22421,
+				"sha256": "48234dfbd4fa205d516480d087056a95cf32d7a9292560588f80090092f4c20a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.330",
+			"outline": "glyf",
+			"path": "ofl/lxgwwenkaimonotc/LXGWWenKaiMonoTC-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 22421,
+				"sha256": "48234dfbd4fa205d516480d087056a95cf32d7a9292560588f80090092f4c20a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.330",
+			"outline": "glyf",
+			"path": "ofl/lxgwwenkaimonotc/LXGWWenKaiMonoTC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

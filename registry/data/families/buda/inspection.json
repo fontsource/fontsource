@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 213,
+				"sha256": "c9f8dc650f79b6bb1bba8c18f6eef2b386f087ead1590953c7c5ee669eeb14ee"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/buda/Buda-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		}
+	]
+}

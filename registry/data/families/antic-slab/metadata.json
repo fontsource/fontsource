@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-03-14",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Santiago Orozco",
+	"family": "Antic Slab",
+	"id": "antic-slab",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Santiago Orozco(hi@typemade.mx) with reserved name Antic Slab",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anticslab",
+		"revision": "bcb26a04a8a5d079ef434c8a28bc05239a5dd3e1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/anticslab",
+		"revision": "94821708c44ba2ac3c9bcd011141dbb888b0b26d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anticslab/AnticSlab-Regular.ttf",
+			"sha256": "bea5831a412ccf18bf34612a575d908b7892c4669fa91b80405cba508fc32a56",
+			"size": 36948,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

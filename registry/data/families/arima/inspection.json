@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1120,
+				"sha256": "71c8bd3afe4503090f2e5915babac303bbdaf2c8f5150ce87f2de530ecac9b68"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101;gftools[0.9.23]",
+			"outline": "glyf",
+			"path": "ofl/arima/Arima[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

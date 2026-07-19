@@ -1,0 +1,39 @@
+{
+	"category": "monospace",
+	"dateAdded": "2012-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Cutive Mono",
+	"id": "cutive-mono",
+	"license": {
+		"attribution": "Copyright 2012 The Cutive Project Authors (https://github.com/googlefonts/cutivemono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/cutivemono",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/cutivemono",
+		"revision": "4422d783b81be0fcec82ef3610eac94784d989c1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/cutivemono/CutiveMono-Regular.ttf",
+			"sha256": "96a36a00079058684982f61ee334323f8b501d7b68dcecd6049a4f9177e3a62c",
+			"size": 80004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

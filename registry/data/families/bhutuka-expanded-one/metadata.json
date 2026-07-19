@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2022-01-21",
+	"declaredSubsets": [
+		"gurmukhi",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Erin McLaughlin",
+	"family": "BhuTuka Expanded One",
+	"id": "bhutuka-expanded-one",
+	"license": {
+		"attribution": "Copyright 2017 The BhuTuka Expanded One Project Authors (https://github.com/erinmclaughlin/BhuTuka-Extended-One)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bhutukaexpandedone",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/erinmclaughlin/BhuTuka-Extended-One",
+		"revision": "ac2ad17bcd23da70b2c63a4ed794cbb7a7ebaac6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bhutukaexpandedone/BhuTukaExpandedOne-Regular.ttf",
+			"sha256": "66b52f1013bf977571c08217fc851b9988f264b065be611880b90909fb3c274d",
+			"size": 138740,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

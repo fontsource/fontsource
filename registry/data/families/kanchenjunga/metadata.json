@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-10-25",
+	"declaredSubsets": [
+		"kirat-rai",
+		"latin",
+		"menu"
+	],
+	"designer": "Becca Hirsbrunner Spalinger",
+	"family": "Kanchenjunga",
+	"id": "kanchenjunga",
+	"license": {
+		"attribution": "Copyright (c) 2021-2024 SIL International",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kanchenjunga",
+		"revision": "3bd0d355518d9a25bcd556c64aa8868311a6ab96",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-kanchenjunga",
+		"revision": "19a3efac0c2ca42a1b28a53c74ca8f3eb6c12ca7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kanchenjunga/Kanchenjunga-Bold.ttf",
+			"sha256": "67a9a29cd49a17832a5eee8d2747fb9a66ee32e49dc52f5dd43887ff24eb0935",
+			"size": 50992,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kanchenjunga/Kanchenjunga-Medium.ttf",
+			"sha256": "cba5d8031cdbfd8d0eee90f11453a39f6f72cd6a9062636bedf4ebf7b72a27d5",
+			"size": 51076,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/kanchenjunga/Kanchenjunga-Regular.ttf",
+			"sha256": "45609f8cc90d4733d3d1665346d359afc1a659def340d0f369121af034322ef9",
+			"size": 50976,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/kanchenjunga/Kanchenjunga-SemiBold.ttf",
+			"sha256": "126e137cb641813aa6f0a3688ea5d0c3b5b0a2121cd64237d39e0b3bafae9895",
+			"size": 51020,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

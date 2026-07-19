@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 266,
+				"sha256": "85468660a5dc0314e694216d118c355b05657ac82a6ba9e4e64ac4d4c191d8f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/telex/Telex-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,3 @@
+Manjari is a Malayalam and Latin family whose name means pearl in Malayalam. It's also the name of a poetic metre. This family is suitable for body text and titles.
+
+To contribute, see [github.com/smc/manjari](https://github.com/smc/manjari)

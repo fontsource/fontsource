@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-03-09",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Haley Fiege",
+	"family": "League Script",
+	"id": "league-script",
+	"license": {
+		"attribution": "Copyright (c) 2010, Haley Fiege (haley@kingdomofawesome.com",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/leaguescript",
+		"revision": "4d02e44e262e700a3a7385e23b280940bdba0700",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/theleagueof/league-script-number-one",
+		"revision": "225add0b37cf8268759ba4572e02630d9fb54ecf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/leaguescript/LeagueScript-Regular.ttf",
+			"sha256": "42c3a493028aec3a2266e540a1264f7b5e26eefd17219dda9b165b928986308a",
+			"size": 69292,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

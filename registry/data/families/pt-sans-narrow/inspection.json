@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 717,
+				"sha256": "59dfef061abeda98c08924d9c45cf41c3440b2c8e38dc1b0aec9c96d5f0d0565"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003W OFL",
+			"outline": "glyf",
+			"path": "ofl/ptsansnarrow/PT_Sans-Narrow-Web-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 717,
+				"sha256": "59dfef061abeda98c08924d9c45cf41c3440b2c8e38dc1b0aec9c96d5f0d0565"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003W OFL",
+			"outline": "glyf",
+			"path": "ofl/ptsansnarrow/PT_Sans-Narrow-Web-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

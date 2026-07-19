@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 266,
+				"sha256": "0c401297e774d46e8a2adb818ca2f576225269b3a8686df8b9bc80803f4cf32b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/amiriquran/AmiriQuran-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

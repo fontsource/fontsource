@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "92e5871c321c929a4bae2d2882577576230782720f9670dae7ac2f9ee8d812f8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/flamenco/Flamenco-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "92e5871c321c929a4bae2d2882577576230782720f9670dae7ac2f9ee8d812f8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/flamenco/Flamenco-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

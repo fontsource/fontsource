@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 730,
+				"sha256": "17f78acff5a2832b7c2c4929722a1c8f211083c669ba74cfe2bd8b1faf7dfd03"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansnushu/NotoSansNushu-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

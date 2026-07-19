@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"elymaic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Elymaic",
+	"id": "noto-sans-elymaic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/elymaic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanselymaic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/elymaic",
+		"revision": "4a230cd737fee5c57d6343ff349ca74531a5e92c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanselymaic/NotoSansElymaic-Regular.ttf",
+			"sha256": "4a4772cbb8a278019152bafd58fef3892fae055d0b137f3fb1f61663960e156b",
+			"size": 57408,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

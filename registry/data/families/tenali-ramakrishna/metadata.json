@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Tenali Ramakrishna",
+	"id": "tenali-ramakrishna",
+	"license": {
+		"attribution": "Copyright (c) 2012 Andhrapradesh Society for Knowledge Networks (fonts.siliconandhra.org). Copyright (c) 2011, Wojciech Kalinowski (wmk69@o2.pl), with Reserved Font Names 'Classica'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tenaliramakrishna",
+		"revision": "1881ab853a466119e56a4472ad39dabbd92baf87",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/tenaliramakrishna",
+		"revision": "444587c444ccb531e9b383b787cbdbcb424a476c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tenaliramakrishna/TenaliRamakrishna-Regular.ttf",
+			"sha256": "270de242b3a71275be5919cd1d5aefa272ae4a996d45e83b9672e15152caa4b8",
+			"size": 710220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 446,
+				"sha256": "724e1f44df40508c5fb5d607f2101932594a0fedcd946091a4c8f5fe5fff0376"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/suezone/SuezOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

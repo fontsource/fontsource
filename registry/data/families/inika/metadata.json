@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Constanza Artigas",
+	"family": "Inika",
+	"id": "inika",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Constanza Artigas Preller (artigasconstanza@gmail.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/inika",
+		"revision": "f4910312af934b5530011ca2155efdfdaa0f9ea6",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/inika",
+		"revision": "bccbe87bf5a91ebb43d149cd786cdabde71c8e52"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/inika/Inika-Bold.ttf",
+			"sha256": "57c5b398a0d72c85283a4640337091bc974aae9ef03b1bd159523b747c1197f3",
+			"size": 38736,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/inika/Inika-Regular.ttf",
+			"sha256": "3fe94a6697ababc3b8b580e005d2718a2ce0fe2afea08b164ee5259d9ea8db25",
+			"size": 39700,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

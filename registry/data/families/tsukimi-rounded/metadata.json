@@ -1,0 +1,76 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Takashi Funayama",
+	"family": "Tsukimi Rounded",
+	"id": "tsukimi-rounded",
+	"license": {
+		"attribution": "Copyright 2020 The Tsukimi Rounded Project Authors (https://github.com/mt-funa/Tsukimi-Rounded), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tsukimirounded",
+		"revision": "3f594588069963399f6d2cff1f9e0b93175bad03",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mt-funa/Tsukimi-Rounded",
+		"revision": "7199ebaed5a78b14f7824cc3ea44f5694e790807"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tsukimirounded/TsukimiRounded-Bold.ttf",
+			"sha256": "377e031bc1990911d0553619e8761b71014ed9074f322dcdb907d03c26a3b8b5",
+			"size": 109580,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tsukimirounded/TsukimiRounded-Light.ttf",
+			"sha256": "6ba9e7893d81b29feb106b85c561c387d80d2c67a0347ffbc3c7a764719e42ab",
+			"size": 106680,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/tsukimirounded/TsukimiRounded-Medium.ttf",
+			"sha256": "4e7ca0c575bc8efd1bd027ed7b07666d7d59da2a98611b129d647da75eca3dd2",
+			"size": 109284,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/tsukimirounded/TsukimiRounded-Regular.ttf",
+			"sha256": "15f8a35fba85cda8513f99b3cb334fcaa4762833c7dae65500bed281bb8d9c74",
+			"size": 109492,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tsukimirounded/TsukimiRounded-SemiBold.ttf",
+			"sha256": "e0a3c0c7d618938def53931b1482e7a2f93fcb31ad1421b2f797e2f1ffdad543",
+			"size": 110948,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 227,
+				"sha256": "5458f81829c56e8088dbfbc1ca90cab985e3a86d8d54a2f9b37791d721bccbad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/cherrycreamsoda/CherryCreamSoda-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

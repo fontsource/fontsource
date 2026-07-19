@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-11-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nicolás Silva, John Vargas Beltrán",
+	"family": "Convergence",
+	"id": "convergence",
+	"license": {
+		"attribution": "Copyright (c) 2010 by Jos Nicols Silva Schwarzenberg.<info@nsilva.com> and John Vargas Beltran <http://www.johnvargasbeltran.com/>, with Reserved Font Names \"Convergence\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/convergence",
+		"revision": "0f759a14de06d1aeafaf03f129fdfc840921f351",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/convergence",
+		"revision": "0f57768c9ddc32b357bf4d32897b8ea4e846d71e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/convergence/Convergence-Regular.ttf",
+			"sha256": "4e17355228610042e6922db7f19d9d87eb99b4f09ba3a12be8a2800bad0e9904",
+			"size": 30220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

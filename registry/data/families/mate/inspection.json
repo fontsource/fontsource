@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "60d95d248d573bec73617f563ff1fcd3940d327de0e0b879d97312f3db90a068"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.24]",
+			"outline": "glyf",
+			"path": "ofl/mate/Mate-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 403,
+				"sha256": "60d95d248d573bec73617f563ff1fcd3940d327de0e0b879d97312f3db90a068"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.24]",
+			"outline": "glyf",
+			"path": "ofl/mate/Mate-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

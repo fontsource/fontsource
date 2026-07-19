@@ -1,0 +1,64 @@
+{
+	"category": "monospace",
+	"dateAdded": "2024-05-16",
+	"declaredSubsets": [
+		"chinese-traditional",
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"lisu",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "LXGW",
+	"family": "LXGW WenKai Mono TC",
+	"id": "lxgw-wenkai-mono-tc",
+	"license": {
+		"attribution": "Copyright 2024 The LXGW WenKai Project Authors (https://github.com/lxgw/LxgwWenkaiTC)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lxgwwenkaimonotc",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/aaronbell/LxgwWenkaiTC",
+		"revision": "a5cf76f5bd1f26cdf74ca1b22b9f6fe17b8d5bc5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lxgwwenkaimonotc/LXGWWenKaiMonoTC-Bold.ttf",
+			"sha256": "b3c9b93d8074e1ee8ff8b2f49388f26f6528d5cd614ba7d61ea4d45645c9a3e8",
+			"size": 12885112,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/lxgwwenkaimonotc/LXGWWenKaiMonoTC-Light.ttf",
+			"sha256": "b61aa17e05c027cb8ce3768516795ef92a3363f8f537f385797dba7045bc453c",
+			"size": 13769976,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/lxgwwenkaimonotc/LXGWWenKaiMonoTC-Regular.ttf",
+			"sha256": "ea6707f71c862f4f255cbe510148b676ca8f5360872633de88694f8004f3f8b3",
+			"size": 13122932,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

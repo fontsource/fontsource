@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 369,
+				"sha256": "9ca7907678ec4bc9ea0a5d21303de80f72eb7a44b6f406631e11871bdb726e66"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.11; ttfautohint (v0.8) -G 32 -r 16 -x",
+			"outline": "glyf",
+			"path": "ofl/molengo/Molengo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

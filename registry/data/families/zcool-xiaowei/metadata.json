@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-12-05",
+	"declaredSubsets": [
+		"chinese-simplified",
+		"latin",
+		"menu"
+	],
+	"designer": "Li Dawei",
+	"family": "ZCOOL XiaoWei",
+	"id": "zcool-xiaowei",
+	"license": {
+		"attribution": "Copyright 2018 The ZCOOL XiaoWei Project Authors (https://www.github.com/googlefonts/xiaowei)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zcoolxiaowei",
+		"revision": "d427686494a89f0b7ecb9833273b6aabb83a6350",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zcool-xiaowei",
+		"revision": "e94fc01eed059b3396129a48f756a46f7737fe2f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf",
+			"sha256": "a42b620140f493db42f741351dfbf343c0936d58588ee8004b8b2a218d997ff1",
+			"size": 6313808,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

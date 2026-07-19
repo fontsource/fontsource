@@ -1,0 +1,49 @@
+{
+	"category": "display",
+	"dateAdded": "2022-03-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tyler Finck",
+	"family": "Anybody",
+	"id": "anybody",
+	"license": {
+		"attribution": "Copyright 2020 The Anybody Project Authors (https://github.com/Etcetera-Type-Co/Anybody)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anybody",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Etcetera-Type-Co/Anybody",
+		"revision": "fe7b55cf9d1563348ad95ac8e05f43b81a420c31"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anybody/Anybody-Italic[wdth,wght].ttf",
+			"sha256": "f9a465a1e5af36e30c37ba11812e4763e3c37febda2c2244acbcec8092063fd7",
+			"size": 209060,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/anybody/Anybody[wdth,wght].ttf",
+			"sha256": "b184bd7e6ca8348bbaecec98951565729d7e89b7872d4898a1f9981342b5b64c",
+			"size": 201352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

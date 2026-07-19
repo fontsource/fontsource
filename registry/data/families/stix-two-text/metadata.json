@@ -1,0 +1,52 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-04-15",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tiro Typeworks, Ross Mills, John Hudson, Paul Hanslow",
+	"family": "STIX Two Text",
+	"id": "stix-two-text",
+	"license": {
+		"attribution": "Copyright 2001-2021 The STIX Fonts Project Authors (https://github.com/stipub/stixfonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stixtwotext",
+		"revision": "718c7ee0e83f5e301cc96bbc081c9bb5ade9ed92",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/stipub/stixfonts",
+		"revision": "c4afdf3fa5390159ef24aca1db5e957487c23897"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stixtwotext/STIXTwoText-Italic[wght].ttf",
+			"sha256": "88c0e2e316eaff56eddc9e51e4850317e2a1e490bbf758b2dec4793aedba9c74",
+			"size": 454368,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/stixtwotext/STIXTwoText[wght].ttf",
+			"sha256": "7962b8b7811e6a896c9a91a0bccbb5241047770eb24d4997c5cb5fe21d5c0df2",
+			"size": 418956,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

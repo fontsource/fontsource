@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-03-18",
+	"declaredSubsets": [
+		"canadian-aboriginal",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Charles Daoud, Coppers and Brasses, Alexandre Saumier Demers, Jacques Le Bailly",
+	"family": "Radio Canada",
+	"id": "radio-canada",
+	"license": {
+		"attribution": "Copyright 2017 The Radio-Canada Project Authors (https://github.com/cbcrc/radiocanadafonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/radiocanada",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cbcrc/radiocanadafonts",
+		"revision": "61a4efa847d6361be8e9cd3c656b3256b29d4ff4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/radiocanada/RadioCanada-Italic[wdth,wght].ttf",
+			"sha256": "473fa77b1d9b106828de36fd6371670829c8b5770f83d6b905ec3c052478a1a3",
+			"size": 476920,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/radiocanada/RadioCanada[wdth,wght].ttf",
+			"sha256": "54918d2c5fadb4436e8fd304f97fa0c7bc7a5d504e9a37773fb4df0f33d42056",
+			"size": 455656,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

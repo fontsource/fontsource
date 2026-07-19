@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-11-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Licorice",
+	"id": "licorice",
+	"license": {
+		"attribution": "Copyright 2004 The Licorice Project Authors (https://github.com/googlefonts/licorice)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/licorice",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/licorice",
+		"revision": "8bc5263602a190f212684ea69d5b9d3b21a59bc0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/licorice/Licorice-Regular.ttf",
+			"sha256": "c72d8cb2f56e6995b3682d8620e2d602bacf78b67121cdfbface9acc422750d8",
+			"size": 154512,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

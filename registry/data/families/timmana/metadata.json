@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-01-12",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Timmana",
+	"id": "timmana",
+	"license": {
+		"attribution": "Copyright (c) 2012 Andhrapradesh Society for Knowledge Networks (fonts.siliconandhra.org). Copyright (c) 2011, Sergiy Tkachenko (www.4thfebruary.com.ua info@4thfebruary.com.ua), with Reserved Font Names 'Sansus', 'Webissimo'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/timmana",
+		"revision": "f59fb5dea6bb55650a8a2efc9fb970f451cad46c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/timmana",
+		"revision": "6ed6823a73b42a541885d12a7df389d3112a9380"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/timmana/Timmana-Regular.ttf",
+			"sha256": "5882968b061fc3f45c0ff2868bc4becd16b1d5f385eca1a63e487af86b6d63c6",
+			"size": 760696,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

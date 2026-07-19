@@ -1,0 +1,86 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Athiti",
+	"id": "athiti",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/athiti",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/athiti",
+		"revision": "541c0b5034964f8db50ef52921fede1422194abe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/athiti/Athiti-Bold.ttf",
+			"sha256": "164aaaf1c046e834f418bc79ba5ffe636c79c2a26ec9146e1eaf9487cbeea833",
+			"size": 186308,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/athiti/Athiti-ExtraLight.ttf",
+			"sha256": "12737cd3ab743baa423ce14dde806672181c53aeca3fc596966da3a54c9db6e9",
+			"size": 174592,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/athiti/Athiti-Light.ttf",
+			"sha256": "f0a732e2336296b16c5d52cddd640902bac94a65b48d732e964f6f5a2a9627d6",
+			"size": 177692,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/athiti/Athiti-Medium.ttf",
+			"sha256": "72d2657716b16233c8b093924d584044ab91a9ed997bc72dee152ca23c731bc9",
+			"size": 182400,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/athiti/Athiti-Regular.ttf",
+			"sha256": "666f5474258cbffd537b494e2d6a441ee849778e2175a4e222d4d625c6efe0e5",
+			"size": 186712,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/athiti/Athiti-SemiBold.ttf",
+			"sha256": "2e76cacba59a3e9d39cea52292d2e8a8ad9a6459336ab811bab0f141103544f3",
+			"size": 185036,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2015-09-23",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Caveat",
+	"id": "caveat",
+	"license": {
+		"attribution": "Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/caveat",
+		"revision": "5571d84c0d8c70ec1af4f64072d8c5cf1e4e9643",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/caveat",
+		"revision": "59745e818ef7973e11e70cb1358d0e902b56c5fc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/caveat/Caveat[wght].ttf",
+			"sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988",
+			"size": 403648,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

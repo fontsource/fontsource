@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2025-02-06",
+	"declaredSubsets": [
+		"dives-akuru",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Dives Akuru",
+	"id": "noto-serif-dives-akuru",
+	"license": {
+		"attribution": "Copyright 2024 The Noto Project Authors (https://github.com/notofonts/dives-akuru)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifdivesakuru",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/dives-akuru",
+		"revision": "e9e925bc4b31fa6347c166ea31d0064a5b8599ae"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifdivesakuru/NotoSerifDivesAkuru-Regular.ttf",
+			"sha256": "8b6753cdf9e4703af44f7f196994912f6fa683a176d45b49d4c8624030d544dd",
+			"size": 405912,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

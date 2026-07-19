@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 558,
+				"sha256": "03ed64ad5c5487ca36b70a3e6ba2252267c1172a25dd0003446f85781c7319fa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/protestriot/ProtestRiot-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

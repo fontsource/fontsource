@@ -1,0 +1,86 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Mitr",
+	"id": "mitr",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mitr",
+		"revision": "d7917348e4e7f795d9fd9ed6ce91a6d9a1645a7c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/mitr",
+		"revision": "41950431d37f6410fd082760ca806eb490e4791f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mitr/Mitr-Bold.ttf",
+			"sha256": "92349c05cd6a35549d0fb3e9b0d7d73059717e212cbda182ee28e5917150bc34",
+			"size": 224432,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/mitr/Mitr-ExtraLight.ttf",
+			"sha256": "dc3e6a03603bb0db3dc6833042e218a917d211d52d93bca426aa606f129d4488",
+			"size": 200760,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/mitr/Mitr-Light.ttf",
+			"sha256": "0ddb2f43bc071cd1546d1abdb0447c4a411e06450e69d97c838c2725fc8064a6",
+			"size": 211080,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/mitr/Mitr-Medium.ttf",
+			"sha256": "847340933424d473bff6d011bc08543a2a2d2a670985a93e3431e3ac8926068f",
+			"size": 222116,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/mitr/Mitr-Regular.ttf",
+			"sha256": "3763923ca8d860f9c06f483f663cd3d8d94e9ed8c2f35a7ce35bb6b13e1219fd",
+			"size": 222416,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mitr/Mitr-SemiBold.ttf",
+			"sha256": "257e8612923ed13838b2f0a0f9b25527aa83513c657df049a5ee608e6d4a059d",
+			"size": 225796,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

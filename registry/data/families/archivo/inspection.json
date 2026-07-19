@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 62,
+					"tag": "wdth"
+				},
+				{
+					"default": 600,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 653,
+				"sha256": "f206a24e9b5752d8727344e3ee86ce83674ed5affdf9d74cbdc850e1d3aca48a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/archivo/Archivo-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 600,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 62,
+					"tag": "wdth"
+				},
+				{
+					"default": 600,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 653,
+				"sha256": "f206a24e9b5752d8727344e3ee86ce83674ed5affdf9d74cbdc850e1d3aca48a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/archivo/Archivo[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 600,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

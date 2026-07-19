@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "e07e0b6a0d1f9f5173c10f8c907c1f0985237460d512ac28c7c35b9072510411"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/permanentmarker/PermanentMarker-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

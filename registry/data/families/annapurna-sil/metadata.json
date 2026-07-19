@@ -1,0 +1,51 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-01-19",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "SIL International",
+	"family": "Annapurna SIL",
+	"id": "annapurna-sil",
+	"license": {
+		"attribution": "Copyright (c) 2007-2023 by SIL International",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/annapurnasil",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-annapurna",
+		"revision": "5bd915dff1934cf36041d7766784347713c812a3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/annapurnasil/AnnapurnaSIL-Bold.ttf",
+			"sha256": "c73a534c69802dfb8b8da42e9544ae479edd6bcfec51f42c9aa5c46310a7cecf",
+			"size": 524904,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/annapurnasil/AnnapurnaSIL-Regular.ttf",
+			"sha256": "f5f80335993c983ebf811b27fe07604b01d207f7c3b66c8798c3d721d164088c",
+			"size": 530928,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

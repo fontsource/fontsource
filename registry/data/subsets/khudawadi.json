@@ -1,0 +1,55 @@
+{
+	"id": "khudawadi",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"964",
+			"965"
+		],
+		[
+			"200C",
+			"200D"
+		],
+		[
+			"2013",
+			"2014"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A830",
+			"A839"
+		],
+		[
+			"112B0",
+			"112EA"
+		],
+		[
+			"112F0",
+			"112F9"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/khudawadi_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "fb6de501ebd94089f05f2be1bb3b5b4fc6c0b900b0009fb867d345101f384825",
+		"upstream": "namFiles"
+	}
+}

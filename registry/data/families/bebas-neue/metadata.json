@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-10-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ryoichi Tsunekawa",
+	"family": "Bebas Neue",
+	"id": "bebas-neue",
+	"license": {
+		"attribution": "Copyright 2019 The Bebas Neue Project Authors (https://github.com/dharmatype/Bebas-Neue)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bebasneue",
+		"revision": "61f595f96445e9c2316b50d1ba3d79ef91f72b0a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/dharmatype/Bebas-Neue",
+		"revision": "686d14af640c17af3691c597778f121d840d9051"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bebasneue/BebasNeue-Regular.ttf",
+			"sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+			"size": 61400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

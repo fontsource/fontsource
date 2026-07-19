@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2015-07-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"thai",
+		"vietnamese"
+	],
+	"designer": "Cadson Demak",
+	"family": "Itim",
+	"id": "itim",
+	"license": {
+		"attribution": "Copyright (c) 2015, Cadson Demak (info@cadsondemak.com), Copyright (c) 2014, Pablo Impallari (www.impallari.com|impallari@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/itim",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cadsondemak/itim",
+		"revision": "eb5e37a5412ea61cbc048f57dad5a97285d470e1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/itim/Itim-Regular.ttf",
+			"sha256": "9164d7eb92ca717b53b07193e3445c96782222d24215151b8d2851b576b17645",
+			"size": 371384,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 457,
+				"sha256": "cd8565b9b8e91330186376e9cb0e9cec917c2c99522f6ed374476e3da3923195"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.000",
+			"outline": "glyf",
+			"path": "ofl/alkalami/Alkalami-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

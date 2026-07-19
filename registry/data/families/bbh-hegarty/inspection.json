@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 134,
+				"sha256": "8610e8cda43ab7a413001eb84363880f1a6ca7c13bd18f60949a452780fc7e21"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/bbhhegarty/BBHHegarty-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

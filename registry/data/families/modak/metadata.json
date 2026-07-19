@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2015-02-18",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Modak",
+	"id": "modak",
+	"license": {
+		"attribution": "Copyright (c) 2015 Ek Type (www.ektype.in)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/modak",
+		"revision": "2212fc24569bebbffe49452e3c1f363f89949eb9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Modak",
+		"revision": "143b2db4fd5c8db6cdab20fad82b26ded9ce9eb7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/modak/Modak-Regular.ttf",
+			"sha256": "9a96ba056ddcbb7d0c937c52f744ff5d71004a97689b1fd2cdbd678f314db245",
+			"size": 650188,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

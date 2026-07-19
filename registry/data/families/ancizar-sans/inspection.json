@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 1000,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 701,
+				"sha256": "00f842c657d438b5c6d20fcb719abc70eedb81efce0ea7ccb34314985a1493f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 8.100",
+			"outline": "glyf",
+			"path": "ofl/ancizarsans/AncizarSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 1000,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 1000,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 701,
+				"sha256": "00f842c657d438b5c6d20fcb719abc70eedb81efce0ea7ccb34314985a1493f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 8.100",
+			"outline": "glyf",
+			"path": "ofl/ancizarsans/AncizarSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 1000,
+				"min": 100
+			}
+		}
+	]
+}

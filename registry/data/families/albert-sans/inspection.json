@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 395,
+				"sha256": "630d65400b9dee71ddf896b199e3af90f3f19c00ed384b9c047188224e702fbd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.025",
+			"outline": "glyf",
+			"path": "ofl/albertsans/AlbertSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 395,
+				"sha256": "630d65400b9dee71ddf896b199e3af90f3f19c00ed384b9c047188224e702fbd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.025",
+			"outline": "glyf",
+			"path": "ofl/albertsans/AlbertSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

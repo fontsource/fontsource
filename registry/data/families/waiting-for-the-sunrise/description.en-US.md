@@ -1,0 +1,1 @@
+Waiting for the Sunrise is based on the handwriting of a high school student. The title comes from the song [Lift Me Up by The Afters](http://theafters.com/music/). Although this font was created during a time of darkness in my life, it is a cheery, perky font. It is a reminder to me of the joy that comes after mourning.

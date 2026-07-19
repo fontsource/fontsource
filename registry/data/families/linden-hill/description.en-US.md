@@ -1,0 +1,1 @@
+Linden Hill is a revival of Frederic Goudy’s [Deepdene](https://en.wikipedia.org/wiki/Deepdene_(typeface)) with roman and italic styles. To learn more, see [bitbucket.org/sortsmill/sortsmill-fonts](https://bitbucket.org/sortsmill/sortsmill-fonts) and [theleagueofmoveabletype.com/linden-hill](https://www.theleagueofmoveabletype.com/linden-hill)

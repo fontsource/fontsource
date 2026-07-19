@@ -1,0 +1,35 @@
+{
+	"id": "gurung-khema",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"965",
+			"965"
+		],
+		[
+			"16100",
+			"16139"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/gurung-khema_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "8da77dd8c3149c8cea4b051f1cde312e6bdcec6f835e7097ae9ac319c85d5bff",
+		"upstream": "namFiles"
+	}
+}

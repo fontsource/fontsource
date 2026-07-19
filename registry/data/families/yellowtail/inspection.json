@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 369,
+				"sha256": "c937f1f5dc3b04c668a69221962a62bd7db01c4690ca9da60c0162728bba5240"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.002",
+			"outline": "glyf",
+			"path": "apache/yellowtail/Yellowtail-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

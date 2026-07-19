@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "JM Solé",
+	"family": "Alfa Slab One",
+	"id": "alfa-slab-one",
+	"license": {
+		"attribution": "Copyright 2016 The Alfa Slab One Project Authors (http://www.jmsole.cl | info@jmsole.cl), with Reserved Font Name \"Alfa Slab\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alfaslabone",
+		"revision": "ae38321d5a5ff3a2125357402dd332998e6bf41b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/alfaslabone",
+		"revision": "84a903ffba3cf8248f3b1662de782e72646e00df"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alfaslabone/AlfaSlabOne-Regular.ttf",
+			"sha256": "28664afa698a3393bd5a29eec750230a0645c5301d62200e5f2d3a027fb2299d",
+			"size": 97376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

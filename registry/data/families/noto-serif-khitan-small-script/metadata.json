@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-01-11",
+	"declaredSubsets": [
+		"khitan-small-script",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Serif Khitan Small Script",
+	"id": "noto-serif-khitan-small-script",
+	"license": {
+		"attribution": "Copyright 2022 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoserifkhitansmallscript",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/khitan-small-script",
+		"revision": "8769c8b092f7a228b69fe7420f8c714abb0bcd44"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoserifkhitansmallscript/NotoSerifKhitanSmallScript-Regular.ttf",
+			"sha256": "3e164843a3f04b9f89b533a8cb87141b0ee72661b035a4229cb6f58934d44eba",
+			"size": 851848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

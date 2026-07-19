@@ -1,0 +1,192 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-10-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tony de Marco, Monica Rizzolli",
+	"family": "Tomorrow",
+	"id": "tomorrow",
+	"license": {
+		"attribution": "Copyright 2019 The Tomorrow Project Authors (https://github.com/MonicaRizzolli/Tomorrow)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tomorrow",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/MonicaRizzolli/Tomorrow",
+		"revision": "5be77729a028a17876819eb262d22ba5977b5d7c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tomorrow/Tomorrow-Black.ttf",
+			"sha256": "50f588a001797ba6db023d00c1950cb33c983786d9e809c6e1473669ec2b167e",
+			"size": 55016,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-BlackItalic.ttf",
+			"sha256": "5eb9a4021dac271e6714b20998d5dfcf0b16856bf34044081a072a522b2b6167",
+			"size": 58620,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-Bold.ttf",
+			"sha256": "f024e7550a4c61583f19b12bf9f0730a91634c370549a87667b812376d6d858a",
+			"size": 58772,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-BoldItalic.ttf",
+			"sha256": "c30f681ba51129cd2d81a93d5a8a5c8262d2e535ae53e73a001d3d3770636038",
+			"size": 62280,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-ExtraBold.ttf",
+			"sha256": "e7ea7979decf1bb60d83f28176cd5ba79667a9b66c7827023fcc7a787d88c435",
+			"size": 61952,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-ExtraBoldItalic.ttf",
+			"sha256": "f7fe4bed14aaec1e25b1173c4eed35c3c5537e836c47db67b06189ec4adc7b19",
+			"size": 65032,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-ExtraLight.ttf",
+			"sha256": "4743cc9a6214fc8a92f84972f348ae7a37521803428e319da38c4188769863bc",
+			"size": 59752,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-ExtraLightItalic.ttf",
+			"sha256": "6629c77344425e9df21fbac82cdf949532ecc197975d93c31c554029aa40abea",
+			"size": 61912,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-Italic.ttf",
+			"sha256": "6702f65c28bd3fc835aebe71edc1e862cd54a0bd78b81868aba98b89b1c627dc",
+			"size": 61492,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-Light.ttf",
+			"sha256": "5b9b59bc09eb7983717ae4a31beacbfad259f1c70fdff9203f174f506e645f11",
+			"size": 59772,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-LightItalic.ttf",
+			"sha256": "2e37e3fce108df08f5639d529a20b7fb5f3ad542694605cbc6572b81731bc803",
+			"size": 61928,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-Medium.ttf",
+			"sha256": "ed82147f4fdefa4a89cefdbeff0d6d0fc6af5a3fac073884918bfba846e5b88b",
+			"size": 59020,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-MediumItalic.ttf",
+			"sha256": "04258fbdda083701e8fe5af445eb2fbb540967aa118c76d9cf78c7a63d32094b",
+			"size": 61092,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-Regular.ttf",
+			"sha256": "6bb5534178637f472be093b2df876d580e7cb50df53e1a4b2be9f94070ff1767",
+			"size": 59520,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-SemiBold.ttf",
+			"sha256": "27f99342d00d33da5a5c89cf53e58a09a6e079d07511edbac9594713bd2368b6",
+			"size": 59628,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-SemiBoldItalic.ttf",
+			"sha256": "44bef0383d3ae455aefa06e84935b80c439f3f661b5097367255a2119cf1c4f0",
+			"size": 62248,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-Thin.ttf",
+			"sha256": "1f31e17daea5eb340b4104988b45848be568df0a7d8cff4caf3e6c668fcd1df3",
+			"size": 57748,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/tomorrow/Tomorrow-ThinItalic.ttf",
+			"sha256": "dc2dc4737909d4ad6a7b9ca937bb9606cd7b1a525dd1b604a08a70f5ef152042",
+			"size": 61016,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,450 @@
+{
+	"category": "monospace",
+	"dateAdded": "2010-02-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Raph Levien",
+	"family": "Inconsolata",
+	"id": "inconsolata",
+	"license": {
+		"attribution": "Copyright 2006 The Inconsolata Project Authors (https://github.com/cyrealtype/Inconsolata)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/inconsolata",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Inconsolata",
+		"revision": "fc1fc21081558b39a2db43bfd9b65bf9acb50701"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/inconsolata/Inconsolata[wdth,wght].ttf",
+			"sha256": "23ded25b447074d00659392bf9b1123d89df55cb07b0ad9bfef3366d199b5fcb",
+			"size": 347180,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-Black.ttf",
+			"sha256": "5701e159b01d6a5bfb38f2a122ae42c70b29b6ea91c795c6aa8de767ed95f602",
+			"size": 108216
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-Bold.ttf",
+			"sha256": "69deb4d3626bcdce00331458e62de49e0ae58236626841014939dd8c5119abb4",
+			"size": 107220
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-Condensed.ttf",
+			"sha256": "7081063a7270dc315d46d55564165b2e134b18f5f82e61c7b8693c819a3d4cda",
+			"size": 105520
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedBlack.ttf",
+			"sha256": "49cd8aeff9b4dc69c65beea80697c3138fa491c42379a5a52cd18018721fcb06",
+			"size": 107368
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedBold.ttf",
+			"sha256": "acd472129a09241a400208d7fef7e78f7cce5e3f914413a7cf2cddcb6651c9a6",
+			"size": 106948
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedExtraBold.ttf",
+			"sha256": "d626cfd949bf815b97241d12b9163d5faefea6ceea1ce90f6ccaad25cf0e5b16",
+			"size": 106896
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedExtraLight.ttf",
+			"sha256": "b06b798f55655635edf2fbc87f6ffef6b44bfc5b91d501077088858196717d66",
+			"size": 105484
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedLight.ttf",
+			"sha256": "46d65353e3d8667b91fce809ec116119965c156a29fe43857dc3cc91ea2d022a",
+			"size": 105872
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedMedium.ttf",
+			"sha256": "2cd062269f1d8307900fd5325a52dbfef3380f78b0e8c5d42af56f9399760bf3",
+			"size": 106972
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedRegular.ttf",
+			"sha256": "a39d4d3a256fb07ee56e2b2e508daf1113e7f09f7f65ba7b012d7781f43a04d3",
+			"size": 105580
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-CondensedSemiBold.ttf",
+			"sha256": "b1fc91734647e062f7887e872402a03f3a6fb85d863ac0b393017c7fe19aac0c",
+			"size": 106884
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-Expanded.ttf",
+			"sha256": "646e7a3638f02e752a2ba9b153adf91d9b2f8483d7136845641899e556f21a17",
+			"size": 106552
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedBlack.ttf",
+			"sha256": "fddf432cc18951741d448259e9eb2aaed2721f40fec9f0522a8d45f9ca8d7588",
+			"size": 109872
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedBold.ttf",
+			"sha256": "485c3212650f8799d24e1de42aff3c5e3f36559994c95e8af28afe2965282250",
+			"size": 108168
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedExtraBold.ttf",
+			"sha256": "922c0fd9ad333e2f5439c6ebfb05670bd9b9119b1c6091f43292ea9cfd3c27b0",
+			"size": 109956
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedExtraLight.ttf",
+			"sha256": "8ca0f89a4e1cf15f8146a5a57d7a6bc8de8ea288aa0cb61aa1a6419768d87ede",
+			"size": 107880
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedLight.ttf",
+			"sha256": "4c94c0a95ad9866a1add80fae107522adee5bd4e0bca5234aca85d578e41aa54",
+			"size": 107696
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedMedium.ttf",
+			"sha256": "68d7059c6a14900a7dff93faaa3e3281f214f52b8c7634f9643d103c63879888",
+			"size": 108292
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedRegular.ttf",
+			"sha256": "d7fba81b7251687d97763d0389268180414f3d7a68738f1c8dc18bba4476bc4b",
+			"size": 106612
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExpandedSemiBold.ttf",
+			"sha256": "78e842416402e84b7de9a8fe8f0a2a07335656342aa7b1ebd177e00299650d85",
+			"size": 108204
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraBold.ttf",
+			"sha256": "73d19da9a44c252275717c475ca74d62a63b7ddd2e0056ab0e6891b45b4bf1f2",
+			"size": 107272
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensed.ttf",
+			"sha256": "d2b27d919ca0d954be51279bcb0ef9bba2f78b6f9f739d82423c6b48815dcb92",
+			"size": 105408
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedBlack.ttf",
+			"sha256": "14daa10ac3d0b2c96461d44645f53c33a14bdc6badeafc277bacd984ad871d60",
+			"size": 107020
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedBold.ttf",
+			"sha256": "9f509b544040c1aae8bf74a27d2cacffbe0b95c7531d28d2ff514c391bd03dec",
+			"size": 106964
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedExtraBold.ttf",
+			"sha256": "992d8ab7e0aafa3166c95b2015a6dc035b622e9dd6a804387fa7657eb2a4fd33",
+			"size": 106740
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedExtraLight.ttf",
+			"sha256": "4dad87033736805e41361fa4db54b45f1e1ce9fdc2c07e14207818762ce7a903",
+			"size": 104956
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedLight.ttf",
+			"sha256": "ea281bb54e770e9a4d9207f9b10874fbe06baaf6b9895f7a8d0286befb86705f",
+			"size": 105436
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedMedium.ttf",
+			"sha256": "e04568124e089528221e09ce54fbcce9e9ee4565ef72f52a14aaaa29d0e9c903",
+			"size": 106180
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedRegular.ttf",
+			"sha256": "4269c8b7f1dbd049d829e428190f5f62c5c0138e02a0be1848574ee63baa290c",
+			"size": 105468
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraCondensedSemiBold.ttf",
+			"sha256": "ded1cb0e1ecc5e5749bd9d0c1cc5a34a86b99408237db2d62216c94c99627ee5",
+			"size": 107228
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpanded.ttf",
+			"sha256": "15a486673b2bac94fe85de0d2770b3167d1acac96c709f1fe1d39171e026a64c",
+			"size": 107836
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedBlack.ttf",
+			"sha256": "2633c4eb4a568ff2fd8adb422fdada80490c937c581659f80aa5ca8c9ff0f1c2",
+			"size": 111232
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedBold.ttf",
+			"sha256": "77dcc5db5b92701cd89bf9165f369d4e8a5df543cfa1ad7396a5cb86c34f30ba",
+			"size": 110348
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedExtraBold.ttf",
+			"sha256": "a2a109a0c806f569daa141b408727f6577dc945f712e4035edabcf85f127fc8d",
+			"size": 110752
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedExtraLight.ttf",
+			"sha256": "ad61b4aa33f6ffbedbabbe1af4e558d66d9c2d77049a7c8a0a0088467184dbdb",
+			"size": 108764
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedLight.ttf",
+			"sha256": "0aaa55eb294da278cbbd471b9ff5bf959c84f5c57f1a4a45118e835ee7823bd8",
+			"size": 109164
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedMedium.ttf",
+			"sha256": "9457025138565506abb68d0f589102ae104b611e9252951f65609f4cfa0126ca",
+			"size": 109424
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedRegular.ttf",
+			"sha256": "ecf5a274eacd2ccf199bb3d4b8aa927ee49c8c8486b15a930dbe49d398496720",
+			"size": 107896
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraExpandedSemiBold.ttf",
+			"sha256": "4efa5679858c8fff057f6b180531fccf2d8a094d98c2b41beeb43459fe888f36",
+			"size": 109516
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-ExtraLight.ttf",
+			"sha256": "3381c40d3ff8d55f87df62ac3cf3c67a14d744e36bd9d8bb224f8733f1133a96",
+			"size": 105732
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-Light.ttf",
+			"sha256": "5b56d22fc7e536a3f2932dfa726cccfa12632be6ffdcc2fa97e053af49a4b844",
+			"size": 105612
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-Medium.ttf",
+			"sha256": "90ba1a56bdd0bb59747642007703525a3e52fa5d2c78d163705f36a55439dafd",
+			"size": 106752
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-Regular.ttf",
+			"sha256": "0f11ac40d1618e1aa1adb7322a14980a0b0c943421124022073f83236d15f0d5",
+			"size": 105628
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiBold.ttf",
+			"sha256": "8152d7cd053dc594e0e85f1e87aa11d062997e67f9f556062af14a89b63f6b10",
+			"size": 106836
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensed.ttf",
+			"sha256": "46272ebd698d505d9e7e2ba1a10378a901bcc79d89ce626414abced930ddc7bf",
+			"size": 105792
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedBlack.ttf",
+			"sha256": "def81f936e70cb75045db6ebc01644886ff49cedde7cb0b03474cd1a47c1ad7d",
+			"size": 109008
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedBold.ttf",
+			"sha256": "dbdfcaaffd648b11c5dcd99a96000d86f73a399196af0f7afb19e61c5bb2296f",
+			"size": 107176
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedExtraBold.ttf",
+			"sha256": "955178e05dd0881488a957adab7f887ae5af681de61289478eb94662f1432f95",
+			"size": 107660
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedExtraLight.ttf",
+			"sha256": "f73e213ca50b52fc03151ce1a700e6d981799a081ad17bbe47d7dadb6d1cfbc5",
+			"size": 106216
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedLight.ttf",
+			"sha256": "92c86a7337d044354c37feae2e9cd7044bef07da0164aa0f5294702513299245",
+			"size": 106452
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedMedium.ttf",
+			"sha256": "9368a59b13922f3df38a812f9b70810cb5b70af246960cecbe481e6e6aaec7bc",
+			"size": 107324
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedRegular.ttf",
+			"sha256": "51104b9071e0fe9abdfafe2a0fe86caed59e6804ebf80f59de4bc15768708b14",
+			"size": 105852
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiCondensedSemiBold.ttf",
+			"sha256": "3abc7ef31d04a901d90e3d53a508355833b2b0e6fb5a6fa7e2817f6214825747",
+			"size": 106732
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpanded.ttf",
+			"sha256": "164455b92f2bd549b28cbcb344d97ff17f79f520654b19f653f9edf46a13c913",
+			"size": 106228
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedBlack.ttf",
+			"sha256": "7c1a6ee7d1cbec716304eee8e8f2ff7a68b64236508aa68bdb514323498189bc",
+			"size": 109792
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedBold.ttf",
+			"sha256": "05ba7a06a4da343ebad20a46c290202494c39d41c83b9acd941306722c6528b0",
+			"size": 108012
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedExtraBold.ttf",
+			"sha256": "715a7cd18b9d69c8b5ac14868fb7ab2a6c22f0c16d8054b019edaa45d2204387",
+			"size": 108584
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedExtraLight.ttf",
+			"sha256": "e40da2d88c25538a4759296cc03cb379730f36e082fd8d3ad607f6bde01dda5b",
+			"size": 107636
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedLight.ttf",
+			"sha256": "d4cb892fe2777bad10e78200306140bfc119ae128c94d077eaa8363e1d1468d9",
+			"size": 106344
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedMedium.ttf",
+			"sha256": "c43a3d361f9d653fd13cff4db39dde52001a5640370ddd5041693556e5a99982",
+			"size": 107516
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedRegular.ttf",
+			"sha256": "067b9f8aa2f00e301513f92e80e31c5ba670b4b401273d0ae9c0078dd83bc354",
+			"size": 106288
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-SemiExpandedSemiBold.ttf",
+			"sha256": "1c4df85f9677d899623fd863665201ccc0496e68577b247e91f955eb705ec9a1",
+			"size": 108116
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensed.ttf",
+			"sha256": "6217bb5b5b736ca4e4d0d15389bbc5f1a82f86d6f02a83045e0d20ce7ea847ab",
+			"size": 105064
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedBlack.ttf",
+			"sha256": "49edf48e1769f295e45cd80b58e57f45afa584d82545919c8d01acfff8e29b2d",
+			"size": 107048
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedBold.ttf",
+			"sha256": "610e095be10f841c4f3ed0e97948224091a91609f86c3a3e5ba0f73b79344ad3",
+			"size": 106308
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedExtraBold.ttf",
+			"sha256": "da9cf89a50e9222ddb3e7865b7d6b7b8b138d3d6913e8ceb1792d80fab26dba7",
+			"size": 106632
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedExtraLight.ttf",
+			"sha256": "0bc0e24c64f1e49de708271812e776902ca1a7ff87c30b1641fd61a4aca7e6c6",
+			"size": 105040
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedLight.ttf",
+			"sha256": "a27f3c8e1bc7e82b6b682fc47e429322c90e61f987ebd23a53a381023d79a860",
+			"size": 105136
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedMedium.ttf",
+			"sha256": "e0066b07f09a5c6f03d06d6754de575e0a726fb570e50715d2114af0175fa1e1",
+			"size": 106236
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedRegular.ttf",
+			"sha256": "debdb46c1224a421252349fc7616a63cc226b27625fce4807b8b144f2f79e3b8",
+			"size": 105124
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraCondensedSemiBold.ttf",
+			"sha256": "fee862ba03134a0bfe6d009f5b556263c9a89426378b12ff3b9c6f9a1bebcd0d",
+			"size": 106260
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpanded.ttf",
+			"sha256": "d22fc9e8c4bc7048939a3b63a6f9456f99836d976214d7dc1c70b514af158477",
+			"size": 109516
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedBlack.ttf",
+			"sha256": "94545e831016c53034ef8f4adc4869085cc7e18b3aec90e9ddd9b345bac38133",
+			"size": 111876
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedBold.ttf",
+			"sha256": "c5cba54b5a01bd992a6dca29100e9f7ab64bd1a2ad4e56a634f062f694df057b",
+			"size": 111816
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedExtraBold.ttf",
+			"sha256": "1a04f8b6e49dd8d9c9d0e7dbd9f259402874231c685fd9a6f9c3fafe51c1b7bc",
+			"size": 111860
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedExtraLight.ttf",
+			"sha256": "37746ae2ac1d34483c438caa77cb90c15150e941d71f840c4ba37ced788647f4",
+			"size": 110040
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedLight.ttf",
+			"sha256": "519ac560160459169a98f687ea94991ed4a389d3bed2c7460e1385920878d92b",
+			"size": 110512
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedMedium.ttf",
+			"sha256": "a782104f93cfa0b63b8138ef6120a386c0de1563f990d16f2f3635d486e98679",
+			"size": 110728
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedRegular.ttf",
+			"sha256": "87bb05e16dae37220a57268a65f0a2f0bdf438360db5c3efe5ede2477e9ab6b8",
+			"size": 109576
+		},
+		{
+			"path": "ofl/inconsolata/static/Inconsolata-UltraExpandedSemiBold.ttf",
+			"sha256": "3a70e658df8e3b80ebc393643baf4d725b75b7884504bcd9b82b717c2a1bb874",
+			"size": 111508
+		},
+		{
+			"path": "ofl/inconsolata/static/Ligconsolata-Bold.ttf",
+			"sha256": "148a64b395b3e04905c6127222771b2ae258389b6b9e4f81f70d999d6af94074",
+			"size": 107160
+		},
+		{
+			"path": "ofl/inconsolata/static/Ligconsolata-Regular.ttf",
+			"sha256": "cae4f3856fdaef071f35860af6db44b146edbf7cde7d7a144dc930d400b4e914",
+			"size": 105636
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

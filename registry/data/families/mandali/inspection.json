@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "b0c539f74c2fa74de4ff4f0cc597b9df4bd44907eb3aac2836fe37023f1e2256"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.5; ttfautohint (v1.2.25-373a) -l 7 -r 28 -G 50 -x 13 -D telu -f latn -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/mandali/Mandali-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

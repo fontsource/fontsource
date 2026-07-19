@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2023-07-10",
+	"declaredSubsets": [
+		"adlam",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mark Jamra, Neil Patel, Andrew Footit",
+	"family": "ADLaM Display",
+	"id": "adlam-display",
+	"license": {
+		"attribution": "Copyright (c) 2022 by Microsoft. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/adlamdisplay",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/microsoft/ADLaM-Display",
+		"revision": "879176243e9f7161a8aefdab8c36a4a7318ebe15"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/adlamdisplay/ADLaMDisplay-Regular.ttf",
+			"sha256": "cc36c3c6cba02522b86ef6c5ee7b062c5bf2a60b0f51f9b87a44c7d50d650899",
+			"size": 97228,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

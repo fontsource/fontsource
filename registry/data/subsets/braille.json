@@ -1,0 +1,31 @@
+{
+	"id": "braille",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"2800",
+			"28FF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/braille_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "db718b336cb5e024ee33c04835c1791febd3f9ff53f17cf06048327f788d09ce",
+		"upstream": "namFiles"
+	}
+}

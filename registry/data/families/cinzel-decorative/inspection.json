@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 350,
+				"sha256": "383001012332ef9a0bff86983fa896760f729755adc89a7cd24e86f21210d5f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325",
+			"outline": "glyf",
+			"path": "ofl/cinzeldecorative/CinzelDecorative-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 350,
+				"sha256": "383001012332ef9a0bff86983fa896760f729755adc89a7cd24e86f21210d5f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325",
+			"outline": "glyf",
+			"path": "ofl/cinzeldecorative/CinzelDecorative-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 350,
+				"sha256": "383001012332ef9a0bff86983fa896760f729755adc89a7cd24e86f21210d5f5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325",
+			"outline": "glyf",
+			"path": "ofl/cinzeldecorative/CinzelDecorative-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

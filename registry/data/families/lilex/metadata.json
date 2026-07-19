@@ -1,0 +1,53 @@
+{
+	"category": "monospace",
+	"dateAdded": "2025-11-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"symbols2",
+		"vietnamese"
+	],
+	"designer": "Mike Abbink, Paul van der Laan, Pieter van Rosmalen, Mikhael Khrustik",
+	"family": "Lilex",
+	"id": "lilex",
+	"license": {
+		"attribution": "Copyright 2019 The Lilex Project Authors (https://github.com/mishamyrt/Lilex)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lilex",
+		"revision": "72760d7f4d324ed6c8906958601318293a73a4b1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mishamyrt/Lilex",
+		"revision": "50260ef98a52ee7e74617c13894505497fa8b2ea"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lilex/Lilex-Italic[wght].ttf",
+			"sha256": "84a80f6db4fbcdd03bde31a8561e3ba9c7f7a6673cce05d627bf5e6816abf57b",
+			"size": 246644,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/lilex/Lilex[wght].ttf",
+			"sha256": "ac99facd1db106a77d662a8285d97f1f241fb1f5316a41f8ceee8279b4750d82",
+			"size": 229100,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

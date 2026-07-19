@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "cff915aef992ce904ef8c3d8bc91f55e28e77b563a76eb0c6330b74cdb5ad35b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.200",
+			"outline": "glyf",
+			"path": "ofl/mingzat/Mingzat-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

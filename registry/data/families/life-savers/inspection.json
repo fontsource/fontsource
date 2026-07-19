@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 416,
+				"sha256": "1fd6385ff95547bd148484ddefdd8d17f3f8421ed70a57677710953379e87a87"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/lifesavers/LifeSavers-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 416,
+				"sha256": "1fd6385ff95547bd148484ddefdd8d17f3f8421ed70a57677710953379e87a87"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/lifesavers/LifeSavers-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 416,
+				"sha256": "1fd6385ff95547bd148484ddefdd8d17f3f8421ed70a57677710953379e87a87"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/lifesavers/LifeSavers-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

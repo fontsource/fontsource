@@ -1,0 +1,117 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-02-24",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "HanYang I&C Co",
+	"family": "Gothic A1",
+	"id": "gothic-a1",
+	"license": {
+		"attribution": "(C) Copyright HanYang I&C Co.,Ltd. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gothica1",
+		"revision": "3ab2d94b73baca0964033f6bcb0346fdba01a374",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/hanyangfont/Gothic",
+		"revision": "599d7e34fff27a50f3e9266b753ad661d3167b91"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gothica1/GothicA1-Black.ttf",
+			"sha256": "6398ff5c6923c74cb453390892dcb982ec0a6c43b35da8590a8f32702d8c079d",
+			"size": 2260752,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/gothica1/GothicA1-Bold.ttf",
+			"sha256": "2e883fa0ae548000996258b4101f2bb732a28b197264f49621a2cb16d6e9f126",
+			"size": 2287068,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gothica1/GothicA1-ExtraBold.ttf",
+			"sha256": "37a65353a646fea5a1ac90585d1bb8f9b997ecae0b79c4f1f187566f910e3f9d",
+			"size": 2281144,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/gothica1/GothicA1-ExtraLight.ttf",
+			"sha256": "3de01e7b6bc0fdd494fa4de0677e67a73a6ae907537bb4c5f355d9c966e2ebfd",
+			"size": 2298392,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/gothica1/GothicA1-Light.ttf",
+			"sha256": "927826b1e23366327ebe53d4675a87938ee90b77104cb794087b5138588b53f4",
+			"size": 2298100,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/gothica1/GothicA1-Medium.ttf",
+			"sha256": "c8a0eb56fa6b13448688fed0799d503fe536a8c6b7acfafdfd580edb9c4c2192",
+			"size": 2288824,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/gothica1/GothicA1-Regular.ttf",
+			"sha256": "211151bea98098c579610ab1114bb1bfe909057207db561f357b896d076c21ac",
+			"size": 2295400,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/gothica1/GothicA1-SemiBold.ttf",
+			"sha256": "7ee3063f2d626936d8a59dfa21525e7ed19b4e89e8fbb0ea5a924cad9b0cc1f4",
+			"size": 2288560,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/gothica1/GothicA1-Thin.ttf",
+			"sha256": "2caee77c0db6afe1cd759c547537361ce66945e7d6fef0f14a9a35fbb4581bb6",
+			"size": 2308312,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

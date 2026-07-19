@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "234924771e6b4014844c441a840a9815b068273d7d69f2bf964deaafb051bd19"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.28]",
+			"outline": "glyf",
+			"path": "ofl/gruppo/Gruppo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

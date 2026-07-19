@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"arabic",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Naskh Arabic UI",
+	"id": "noto-naskh-arabic-ui",
+	"license": {
+		"attribution": "Copyright 2019 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notonaskharabicui",
+		"revision": "7bd90fb361406928d691f9110406cf2bf03f2144",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/arabic",
+		"revision": "133ccaebf922ca080a7eef22998611ac3c242df9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notonaskharabicui/NotoNaskhArabicUI[wght].ttf",
+			"sha256": "6bcf69fb867a773084baf29736b6410ff7a0fd67c821271fe6eb87ed2292b1cd",
+			"size": 199448,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

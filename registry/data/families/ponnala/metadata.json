@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Appaji Ambarisha Darbha",
+	"family": "Ponnala",
+	"id": "ponnala",
+	"license": {
+		"attribution": "Copyright (c) 2012 Silicon Andhra (fonts.siliconandhra.org)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ponnala",
+		"revision": "0c0ae5c617bf18f888854c0470efc858dcececd0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/ponnala",
+		"revision": "c1366dc5361da5f9dd8ed1c8864efc259a77672e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ponnala/Ponnala-Regular.ttf",
+			"sha256": "7febc4f7f386e8fe4485a7579ebadafb8c5d5eeb05660bf35eda33d11f2ed81e",
+			"size": 473792,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

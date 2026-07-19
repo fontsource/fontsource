@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-06-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Lana Roulhac, Ben Buysse",
+	"family": "Story Script",
+	"id": "story-script",
+	"license": {
+		"attribution": "Copyright 2022 The Story Script Project Authors (https://github.com/lroulh/story-script)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/storyscript",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/lroulh/story-script",
+		"revision": "464caab609d0c56a028a6db52e411b7e4f86a1cf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/storyscript/StoryScript-Regular.ttf",
+			"sha256": "2988808654b44c902f0e3a1a0b31fc67398ea5a093888da30c014bc3329f7731",
+			"size": 121544,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,54 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-03-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Christian Thalmann",
+	"family": "Ysabeau",
+	"id": "ysabeau",
+	"license": {
+		"attribution": "Copyright 2023 The Ysabeau Project Authors (https://github.com/CatharsisFonts/Ysabeau)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ysabeau",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/CatharsisFonts/Ysabeau",
+		"revision": "c21395fc7e596c66e8e03daa09babf245005ce01"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ysabeau/Ysabeau-Italic[wght].ttf",
+			"sha256": "6d9099e463926e46659e01e415f891af967ec65a1fa5c496ec2b6612e4d3e27c",
+			"size": 332916,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/ysabeau/Ysabeau[wght].ttf",
+			"sha256": "aa6df9f1f6cb1180f7c00fffb5ae2734ba66aa5f58defd173a9247ca11dffcf4",
+			"size": 431992,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

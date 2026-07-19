@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-02-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Baltdev",
+	"family": "Bytesized",
+	"id": "bytesized",
+	"license": {
+		"attribution": "Copyright 2024 The Bytesized Project Authors (https://github.com/balt-dev/bytesized-gf)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bytesized",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/balt-dev/bytesized-gf",
+		"revision": "11abbf2db0602d93f35ec9d493a074e384f0cdb3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bytesized/Bytesized-Regular.ttf",
+			"sha256": "867b090a29cf5b45378692d3163439bb51875a3ddf4e37dcabf62030d04f1d51",
+			"size": 20792,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 971,
+				"sha256": "b744b7810a65bd856d33f0899a73600d46b67cbed7d057fd689e1d5e9e785c06"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/questrial/Questrial-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

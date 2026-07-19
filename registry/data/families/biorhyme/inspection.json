@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 100,
+					"tag": "wdth"
+				},
+				{
+					"default": 800,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "01771cf0326d136ffc5453975f269c6431630a121fb74ea6260a389786cd9175"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.600;gftools[0.9.33]",
+			"outline": "glyf",
+			"path": "ofl/biorhyme/BioRhyme[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 800,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/palanquindark/PalanquinDark-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/palanquindark/PalanquinDark-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/palanquindark/PalanquinDark-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 465,
+				"sha256": "a5bbb71c05b27497610efb9e4c3b58001ca87d226ec31067d3aefe9ae798f2d0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/palanquindark/PalanquinDark-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

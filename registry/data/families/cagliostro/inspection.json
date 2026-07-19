@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 251,
+				"sha256": "02c993b6741d3b5466e6ee0e2fd98ec6c5b1e3cf3341cefa9863940b50ca2ce1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version",
+			"outline": "glyf",
+			"path": "ofl/cagliostro/Cagliostro-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

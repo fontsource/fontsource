@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2010-11-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Santiago Orozco",
+	"family": "Josefin Sans",
+	"id": "josefin-sans",
+	"license": {
+		"attribution": "Copyright 2010 The Josefin Sans Project Authors (https://github.com/ThomasJockin/JosefinSansFont-master), with Reserved Font Name \"Josefin Sans\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/josefinsans",
+		"revision": "0fd277cf519ed2c02e63e4e19220f4cf6103df51",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/josefinsans",
+		"revision": "bf6907e3a34924300dd407201262f62c2fc2a642"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/josefinsans/JosefinSans-Italic[wght].ttf",
+			"sha256": "c22b42ca690be7ea07d04415ac70b48603dff88e854738cba4bd87027b905ef1",
+			"size": 130984,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/josefinsans/JosefinSans[wght].ttf",
+			"sha256": "9255abdb5f393bc51e101abbd07a716a977fd3e15472b1b84b260f426a342bfd",
+			"size": 118588,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

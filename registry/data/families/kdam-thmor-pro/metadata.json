@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-05-11",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Tep Sovichet, Hak Longdey",
+	"family": "Kdam Thmor Pro",
+	"id": "kdam-thmor-pro",
+	"license": {
+		"attribution": "Copyright 2022 The Kdam Thmor Pro Project Authors (https://www.github.com/sovichet/kdam-thmor-pro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kdamthmorpro",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/sovichet/kdam-thmor-pro",
+		"revision": "02b97ee272f9a32d06135f70e220d2c4d6dd218f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kdamthmorpro/KdamThmorPro-Regular.ttf",
+			"sha256": "f3c0eb232ec1ca8991576cd93eb604868830dc201bf71f31fb7fba8cf4441226",
+			"size": 85760,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

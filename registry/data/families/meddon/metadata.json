@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-02-02",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Meddon",
+	"id": "meddon",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Vernon Adams (vern@newtypography.co.uk) with Reserved Font Name 'Meddon'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/meddon",
+		"revision": "30c61ef30bf7b89629cf20a2f9b52f76f367c400",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/vernnobile/MeddonFont",
+		"revision": "157a4b58e73139e11e21ac9805282f196b8f4059"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/meddon/Meddon.ttf",
+			"sha256": "c983e998ff7e01242544659c971bf4055bfb43a9fc5a0dd83ca7dafd105f94da",
+			"size": 128264,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

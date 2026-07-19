@@ -1,0 +1,57 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Fontstage",
+	"family": "Passion One",
+	"id": "passion-one",
+	"license": {
+		"attribution": "Copyright (c) 2011 Fontstage (info@fontstage.com), with Reserved Font Name \"Passion\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/passionone",
+		"revision": "c68f53b1e0d109b2b36587807d39648cf609b014",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/passionone/PassionOne-Black.ttf",
+			"sha256": "c954dbac8835bf16f938f8d97fe1627d47aa122d60246169ff55cec772949e96",
+			"size": 24288,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/passionone/PassionOne-Bold.ttf",
+			"sha256": "3a7249909b2e56e831f8a357a4ee549e9c5945cd003f0e5e3bd8791a76d98b7e",
+			"size": 24716,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/passionone/PassionOne-Regular.ttf",
+			"sha256": "86fea5001e5d751cf5696f0ecd4754db80918adbb12658add959f5bcdc92b09b",
+			"size": 24940,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

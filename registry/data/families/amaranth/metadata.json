@@ -1,0 +1,65 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Gesine Todt",
+	"family": "Amaranth",
+	"id": "amaranth",
+	"license": {
+		"attribution": "Copyright 2016 The Amaranth Project Authors (https://github.com/googlefonts/amaranth)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/amaranth",
+		"revision": "8a0ccff43f9b32acc26ff54867934b3774c1823a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/amaranth",
+		"revision": "f4f60a57f54a04186030913a86e3e56105bbe848"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/amaranth/Amaranth-Bold.ttf",
+			"sha256": "2ca9f93499ad3af5679afe2930170fd00c50c2fdaf0240c7de976e23be5791dc",
+			"size": 72844,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/amaranth/Amaranth-BoldItalic.ttf",
+			"sha256": "e8fc151453806c6aaed72a40bacaf3fcf380ccd5d852de08bd686e55ae70464b",
+			"size": 106708,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/amaranth/Amaranth-Italic.ttf",
+			"sha256": "6c96bda248c8ed3ebda63382cfcc233a26213d87d457a5224b79a0452aff27ea",
+			"size": 96780,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/amaranth/Amaranth-Regular.ttf",
+			"sha256": "49d60587db044af5158afe373bfa6204d8dcce647ccd4f1f1c61f560980554ec",
+			"size": 79036,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

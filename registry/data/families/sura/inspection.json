@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 336,
+				"sha256": "6c3537c9e00481f3827caf162ea0514c8f850d5fe4802d76000d8181732813c0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v1.00) -l 8 -r 50 -G 200 -x 14 -D latn -f none -w G",
+			"outline": "glyf",
+			"path": "ofl/sura/Sura-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 336,
+				"sha256": "6c3537c9e00481f3827caf162ea0514c8f850d5fe4802d76000d8181732813c0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003;PS 001.002;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v1.00) -l 8 -r 50 -G 200 -x 14 -D latn -f none -w G",
+			"outline": "glyf",
+			"path": "ofl/sura/Sura-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 818,
+				"sha256": "1d235f030a11550ae154531868063fb1766a797b2f838b59f0d43346c5b3ebce"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/balooda2/BalooDa2[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 400
+			}
+		}
+	]
+}

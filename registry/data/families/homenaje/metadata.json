@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Constanza Artigas Preller, Agustina Mingote",
+	"family": "Homenaje",
+	"id": "homenaje",
+	"license": {
+		"attribution": "Copyright 2016 The Homenaje Project Authors (https://github.com/googlefonts/Homenaje), with Reserved Font Name 'Homenaje.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/homenaje",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Homenaje",
+		"revision": "d371ad8e2f096db1f866c8fdfb9804f90dc39453"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/homenaje/Homenaje-Regular.ttf",
+			"sha256": "0bf7bae4aa3e7c2c674785325d20f4405a53f25ace4ceb4752cf75e27172be4a",
+			"size": 36436,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

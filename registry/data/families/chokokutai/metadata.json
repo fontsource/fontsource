@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Font Zone 108",
+	"family": "Chokokutai",
+	"id": "chokokutai",
+	"license": {
+		"attribution": "Copyright 2020 The Chokokutai Project Authors (https://github.com/go108go/Chokokutai), all rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chokokutai",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/go108go/Chokokutai",
+		"revision": "55016eef4cfaf7d9001eeaa64ad5a0a0f20a67c7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chokokutai/Chokokutai-Regular.ttf",
+			"sha256": "c622b971d1bdb2d8cd64f978746e6d52d361417ae4222c275cb57549e34e097e",
+			"size": 165580,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

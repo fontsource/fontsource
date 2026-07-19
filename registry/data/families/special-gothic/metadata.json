@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-03-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Alistair McCready",
+	"family": "Special Gothic",
+	"id": "special-gothic",
+	"license": {
+		"attribution": "Copyright 2023 The Special Gothic Project Authors (https://github.com/AlistairMcCready/Special-Gothic/)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/specialgothic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/AlistairMcCready/Special-Gothic",
+		"revision": "17774cf97eec75a115aebc7ed66a57ce67b88177"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/specialgothic/SpecialGothic[wdth,wght].ttf",
+			"sha256": "2bbf8bcb6c02cacbdcdc4b6db7ae450b85447bfe5a0ba4ae46c9f69182b5c414",
+			"size": 264080,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

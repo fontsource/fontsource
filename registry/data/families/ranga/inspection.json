@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 488,
+				"sha256": "ff9da4ed44fefe36ac60c24ebfab88eb785d536b6eb3e281cbd5e1ce05cb4252"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.2",
+			"outline": "glyf",
+			"path": "ofl/ranga/Ranga-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 488,
+				"sha256": "ff9da4ed44fefe36ac60c24ebfab88eb785d536b6eb3e281cbd5e1ce05cb4252"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.2",
+			"outline": "glyf",
+			"path": "ofl/ranga/Ranga-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

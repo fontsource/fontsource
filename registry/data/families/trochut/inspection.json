@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "8c38a01a07446038634323a8fbcb4d4eef6e09fe84cc3f110f7b97245154f37f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trochut/Trochut-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 215,
+				"sha256": "8c38a01a07446038634323a8fbcb4d4eef6e09fe84cc3f110f7b97245154f37f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trochut/Trochut-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 217,
+				"sha256": "c98b40d6a90f2d89abfd46bd3998533d29d6ca7243c0cfd17657422309e38b6b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/trochut/Trochut-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

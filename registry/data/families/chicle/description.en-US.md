@@ -1,0 +1,5 @@
+In a much needed break from complex scripts and polished packaging fonts, Koziupa and Paul decided to show their playful side.
+
+Chicle has bold, stretchable, kid-proof, pet-resistant letters. This font is made to take the abuse of software used to put together the elaborate, attention-scrambling artwork of candy, cereal, and toy packaging, or whatever boxed obscenity contains cat and dog treats.
+
+Chicle is Spanish for bubble gum. Its a definite sugar fix — no substitutes.

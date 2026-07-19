@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 419,
+				"sha256": "871b8d4ac77413552e7cefe3c32c915be6bc30ccb388ed685759870ef1081e48"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanswarangciti/NotoSansWarangCiti-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

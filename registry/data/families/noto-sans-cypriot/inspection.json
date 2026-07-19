@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 436,
+				"sha256": "fc2fdb71a414809d066ee6ed45bc17c4c8d52046520d061b0a96fe874145cb8a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanscypriot/NotoSansCypriot-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

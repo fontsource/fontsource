@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 456,
+				"sha256": "4ec68bab546a0341677fdc766b03502f26b2355d32c9ada8526f0086a269e774"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.058",
+			"outline": "glyf",
+			"path": "ofl/vesperlibre/VesperLibre-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 456,
+				"sha256": "4ec68bab546a0341677fdc766b03502f26b2355d32c9ada8526f0086a269e774"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.058",
+			"outline": "glyf",
+			"path": "ofl/vesperlibre/VesperLibre-Heavy.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 456,
+				"sha256": "4ec68bab546a0341677fdc766b03502f26b2355d32c9ada8526f0086a269e774"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.058",
+			"outline": "glyf",
+			"path": "ofl/vesperlibre/VesperLibre-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 456,
+				"sha256": "4ec68bab546a0341677fdc766b03502f26b2355d32c9ada8526f0086a269e774"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.058",
+			"outline": "glyf",
+			"path": "ofl/vesperlibre/VesperLibre-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "2342a27285ea73a5a091b40041a92b9863d7c1287fcfabb43880db1f2ed376a2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/oregano/Oregano-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "2342a27285ea73a5a091b40041a92b9863d7c1287fcfabb43880db1f2ed376a2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/oregano/Oregano-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

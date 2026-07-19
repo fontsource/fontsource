@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 12,
+					"max": 72,
+					"min": 12,
+					"tag": "opsz"
+				},
+				{
+					"default": 500,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 634,
+				"sha256": "4faab34119506e9a23228a985c542aad95fe9862c827d695ebafb6dc83882841"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/texturina/Texturina-Italic[opsz,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 500,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 12,
+					"max": 72,
+					"min": 12,
+					"tag": "opsz"
+				},
+				{
+					"default": 500,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 634,
+				"sha256": "4faab34119506e9a23228a985c542aad95fe9862c827d695ebafb6dc83882841"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/texturina/Texturina[opsz,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 500,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 581,
+				"sha256": "68b20ae4b43843d4669752cf2caefa941b07071b6c45e4483dc5ecdeab4d842b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/imperialscript/ImperialScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

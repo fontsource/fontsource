@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 451,
+				"sha256": "1b122a0983c6ba67a9dd90ca21187c3f99ae786e7a32a8c9a64d2c9ee7e04d19"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/bilbo/Bilbo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

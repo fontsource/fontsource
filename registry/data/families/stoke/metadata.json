@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-08-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Nicole Fally",
+	"family": "Stoke",
+	"id": "stoke",
+	"license": {
+		"attribution": "Copyright (c) 2012, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com), with Reserved Font Name 'Stoke'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stoke",
+		"revision": "9223f996303ccf98f0da8b57ff6091ce70343a0f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stoke/Stoke-Light.ttf",
+			"sha256": "6d7657845f2003b7119bb981d4f2363182c77f3a20d1a3a3b2b4465814e9dfb8",
+			"size": 50820,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/stoke/Stoke-Regular.ttf",
+			"sha256": "da50d1746c29010693ff20832aeb0caa94b3b0566443057341e6df3c715df8b2",
+			"size": 133340,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

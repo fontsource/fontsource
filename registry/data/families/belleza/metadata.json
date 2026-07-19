@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-03-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Belleza",
+	"id": "belleza",
+	"license": {
+		"attribution": "Copyright 2012 The Belleza Project Authors (https://github.com/etunni/belleza)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/belleza",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/belleza",
+		"revision": "af3974fe84e2cfd236455a14d2c708264b692167"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/belleza/Belleza-Regular.ttf",
+			"sha256": "a88eb0fdf4e78687a40d3478e1c90d4d3079e8c0d7d3a2452488a3ba805bff1d",
+			"size": 55696,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

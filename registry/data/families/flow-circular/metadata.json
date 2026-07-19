@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Dan Ross",
+	"family": "Flow Circular",
+	"id": "flow-circular",
+	"license": {
+		"attribution": "Copyright 2020 The Flow Project Authors (https://github.com/HYPD/flow-typeface)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/flowcircular",
+		"revision": "03dac7d00bdcc3ade9a1f77b855ae076b94d59f7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/HYPD/flow-typeface",
+		"revision": "44f3478408936f5240cbc4fb3f7b4ed19d22822e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/flowcircular/FlowCircular-Regular.ttf",
+			"sha256": "ea87d5b1d0be7c5a3cf63054ad3e1d5ed54cca7491f9237a1226cb72f6340e78",
+			"size": 45788,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

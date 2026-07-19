@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 417,
+				"sha256": "32ff6f900d131c81d44be78faccca0d41fee1c7408869935ceb2bd5d97bfd013"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/fanwoodtext/FanwoodText-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 417,
+				"sha256": "32ff6f900d131c81d44be78faccca0d41fee1c7408869935ceb2bd5d97bfd013"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1001",
+			"outline": "glyf",
+			"path": "ofl/fanwoodtext/FanwoodText-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

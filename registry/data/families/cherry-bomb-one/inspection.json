@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 873,
+				"sha256": "b57960e2495121a972ac49243af4ffed10711981f45721adfde9e69f97b996fe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/cherrybombone/CherryBombOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

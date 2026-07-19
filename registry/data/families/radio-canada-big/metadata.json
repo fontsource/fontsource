@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-04-17",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Étienne Aubert Bonn",
+	"family": "Radio Canada Big",
+	"id": "radio-canada-big",
+	"license": {
+		"attribution": "Copyright 2022 The Radio Canada Big Project Authors (https://github.com/googlefonts/radiocanadadisplay)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/radiocanadabig",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/radiocanadadisplay",
+		"revision": "9ac9cf87d0fbd85bce912535994e02614b1b525f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/radiocanadabig/RadioCanadaBig-Italic[wght].ttf",
+			"sha256": "0bb4d0d21d3e312415c9703df39099eb06e1129af970bb4daa2454c0edcb882d",
+			"size": 76672,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/radiocanadabig/RadioCanadaBig[wght].ttf",
+			"sha256": "9d7fc9bd74b5d27e48bba194ed2993f054ebc9672463dc5f14bf1907932341d8",
+			"size": 73276,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

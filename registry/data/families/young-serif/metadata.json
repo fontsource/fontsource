@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-08-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Bastien Sozeau",
+	"family": "Young Serif",
+	"id": "young-serif",
+	"license": {
+		"attribution": "Copyright 2023 The Young Serif Project Authors (https://github.com/noirblancrouge/YoungSerif)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/youngserif",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/noirblancrouge/YoungSerif",
+		"revision": "d307c79320df6b8ccc656b5ab83719519ddffc28"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/youngserif/YoungSerif-Regular.ttf",
+			"sha256": "42bb2602364b28569fdce5eeb6ab3d81cf8090ba81b211f1229ed69f33155523",
+			"size": 106608,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

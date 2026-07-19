@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-05-01",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Arrow Type, Stephen Nixon",
+	"family": "Recursive",
+	"id": "recursive",
+	"license": {
+		"attribution": "Copyright 2019 The Recursive Project Authors (github.com/arrowtype/recursive)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/recursive",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/arrowtype/recursive",
+		"revision": "071fc21f217781110d67e8d0bf5021f31cbdcb85"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/recursive/Recursive[CASL,CRSV,MONO,slnt,wght].ttf",
+			"sha256": "653221ca467f4732fe6856ac493f6c409e9f56a7674abe36b2364acc89796f7c",
+			"size": 2379132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

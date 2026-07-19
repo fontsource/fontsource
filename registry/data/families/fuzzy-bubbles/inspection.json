@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 577,
+				"sha256": "a595d93214be769fcf3bb7024a260b9610ec3f12ce631e231b4bd888b75275b5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/fuzzybubbles/FuzzyBubbles-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 577,
+				"sha256": "a595d93214be769fcf3bb7024a260b9610ec3f12ce631e231b4bd888b75275b5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/fuzzybubbles/FuzzyBubbles-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

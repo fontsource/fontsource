@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 256,
+				"sha256": "863192f4706512efec5f590bb611364a879619efda2bf032a251140411739afe"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.102",
+			"outline": "glyf",
+			"path": "ofl/digitalnumbers/DigitalNumbers-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

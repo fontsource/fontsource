@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2011-07-13",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jovanny Lemonad",
+	"family": "Yeseva One",
+	"id": "yeseva-one",
+	"license": {
+		"attribution": "Copyright 2012 The Yeseva One Project Authors (lemonad@jovanny.ru), with Reserved Font Name \"Yeseva\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yesevaone",
+		"revision": "b05e0c06645032255e156afcde1755bac9c2dd9c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alexeiva/yesevaone",
+		"revision": "0d609f6155ed0fe1d822696135ffbd04b88fd017"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yesevaone/YesevaOne-Regular.ttf",
+			"sha256": "88362b33820f0011e163e67b1d570fecd442aa8c05eaac89d5162f9c40d9dac3",
+			"size": 108016,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

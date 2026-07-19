@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"rejang"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Rejang",
+	"id": "noto-sans-rejang",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/rejang)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansrejang",
+		"revision": "c00c6f1c71d4b20cbd5320b552a49d4c6fb4ca73",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/rejang",
+		"revision": "f8a0b6d6e937ca8893d86c4a3e3dabd3ffa3ccd9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansrejang/NotoSansRejang-Regular.ttf",
+			"sha256": "4350c7672a035d21bacf9909a17da374aec268e5394cf66302838c194eeaca47",
+			"size": 51048,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

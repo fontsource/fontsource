@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 491,
+				"sha256": "de8d62b3f1874b649f03ee94bc75940b413a4485324a0e285eebe304edce492a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.303",
+			"outline": "glyf",
+			"path": "ofl/urbanist/Urbanist-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 491,
+				"sha256": "de8d62b3f1874b649f03ee94bc75940b413a4485324a0e285eebe304edce492a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.303",
+			"outline": "glyf",
+			"path": "ofl/urbanist/Urbanist[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

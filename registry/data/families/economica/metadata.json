@@ -1,0 +1,66 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-02-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vicente Lamónaca",
+	"family": "Economica",
+	"id": "economica",
+	"license": {
+		"attribution": "Copyright (c) 2012, Vicente Lamonaca (produccion.taller@gmail.com www.tipografia-montevideo.info www.tipotype.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/economica",
+		"revision": "336859beb57afe7c266646973585dd3634e96fbe",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/economica",
+		"revision": "6bf48e6858755227cdd104ee4b44e9e2e4bb197b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/economica/Economica-Bold.ttf",
+			"sha256": "b65bd51b7be6bd0df20bf9a652c96afb0ecd7cc1863bd2c3ee8f00e2e29304f4",
+			"size": 27196,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/economica/Economica-BoldItalic.ttf",
+			"sha256": "00abac86722696edd3e681c71b2eca1df510f54d3f2fbfa0471c8db38190ab43",
+			"size": 27024,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/economica/Economica-Italic.ttf",
+			"sha256": "7524301555913bc0422727b2830d9b6e8269a36433acc825681ed96b40948843",
+			"size": 27692,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/economica/Economica-Regular.ttf",
+			"sha256": "7d5e3599ef99560f6ecafd0fe41753484ee86f215a7f6c5033c6c07d65b5d7b4",
+			"size": 26756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,1 @@
+Sintony is a modern sans serif typeface, drawn with a slightly square structure and smooth stroke modulation. Great for long passages of text, he provides any text with a calm and clear feeling.

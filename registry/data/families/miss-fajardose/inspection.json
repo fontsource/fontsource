@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 233,
+				"sha256": "5918ec669bd72fe015da76c0a8b5ef3b4c15a31f688b76e71bb1a033830696a5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/missfajardose/MissFajardose-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

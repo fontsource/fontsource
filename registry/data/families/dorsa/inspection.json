@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 210,
+				"sha256": "c990e34caa120dde2928478f7848e8a614ddf1e64083fd24de9a66f913b1057a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/dorsa/Dorsa-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

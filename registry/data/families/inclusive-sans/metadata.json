@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-08-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Olivia King",
+	"family": "Inclusive Sans",
+	"id": "inclusive-sans",
+	"license": {
+		"attribution": "Copyright 2024 The Inclusive Sans Project Authors (https://github.com/LivKing/Inclusive-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/inclusivesans",
+		"revision": "207b497e875e3dc4b87f6a38fc2d1af535ddf387",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/LivKing/Inclusive-Sans",
+		"revision": "38b8ed1dd67bd25ef4180140492810cf050ef501"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/inclusivesans/InclusiveSans-Italic[wght].ttf",
+			"sha256": "1b94e7bc731a3d91e358bff9f9253ccef36012e214c0ba64661741fa44494b2e",
+			"size": 114612,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/inclusivesans/InclusiveSans[wght].ttf",
+			"sha256": "52ae5fdb8eda45633f1e9817ebdb07d8075c89081d51204f16f78394608a5c4e",
+			"size": 112280,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

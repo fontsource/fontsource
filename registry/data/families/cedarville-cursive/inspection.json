@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 352,
+				"sha256": "b83eb57dc051e3002b96258c8bc2e49f14bd95d6b70dc743a2ac32d575a17b13"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001 2010",
+			"outline": "glyf",
+			"path": "ofl/cedarvillecursive/Cedarville-Cursive.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

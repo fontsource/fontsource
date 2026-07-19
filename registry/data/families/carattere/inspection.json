@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 583,
+				"sha256": "88d6efa76614b777113161780e38059e8a1885d51ad48d30a57b21a029e8b825"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/carattere/Carattere-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

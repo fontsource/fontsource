@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 321,
+				"sha256": "70b54db89ebb06873238861baae5f3bccd91180dfe83f12fa0d00508a2f4e1e8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/alienblock/AlienBlock-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

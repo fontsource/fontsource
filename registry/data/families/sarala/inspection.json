@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 555,
+				"sha256": "76cee11c0914ea68b6933c95168e92aeafaa4bd45b6b713c280fb6aede7af343"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004;PS 001.003;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v1.00) -l 8 -r 50 -G 200 -x 14 -D latn -f none -w G",
+			"outline": "glyf",
+			"path": "ofl/sarala/Sarala-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 555,
+				"sha256": "76cee11c0914ea68b6933c95168e92aeafaa4bd45b6b713c280fb6aede7af343"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004;PS 001.003;hotconv 1.0.70;makeotf.lib2.5.58329 DEVELOPMENT; ttfautohint (v1.00) -l 8 -r 50 -G 200 -x 14 -D latn -f none -w G",
+			"outline": "glyf",
+			"path": "ofl/sarala/Sarala-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

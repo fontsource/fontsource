@@ -1,0 +1,186 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 754,
+				"sha256": "11cff9cb6a2057d46483ecbcdf3cdf397d241f3dd23bf0b196551375c1e490c5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.6",
+			"outline": "glyf",
+			"path": "ofl/ibmplexserif/IBMPlexSerif-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 100
+		}
+	]
+}

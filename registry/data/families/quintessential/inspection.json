@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "f6175b0fc440c87b2a86631f6b38833f372961a847e6700637f33f54700087ab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/quintessential/Quintessential-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

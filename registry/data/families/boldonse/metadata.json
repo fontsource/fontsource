@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-02-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Universitype",
+	"family": "Boldonse",
+	"id": "boldonse",
+	"license": {
+		"attribution": "Copyright 2024 The Boldonse Project Authors (https://github.com/googlefonts/boldonse)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/boldonse",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/boldonse",
+		"revision": "ebf7dd8db35ccdb0fb262331234634d92ac1231f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/boldonse/Boldonse-Regular.ttf",
+			"sha256": "f566c572a85fee25b41ccab1a8d18ef8039a30e3ca44f310ee162899ea6d5fc7",
+			"size": 78240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

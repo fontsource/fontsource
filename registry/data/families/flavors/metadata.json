@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sideshow",
+	"family": "Flavors",
+	"id": "flavors",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Font Diner, Inc DBA Sideshow (diner@fontdiner.com) with Reserved Font Name \"Flavors\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/flavors",
+		"revision": "3576c6827b88022211dbf5fa7ea645dcd818d4a1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/flavors",
+		"revision": "494aad3c703cd55dfa728cded360b49e128dc101"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/flavors/Flavors-Regular.ttf",
+			"sha256": "4e651bcdabe9753092ab8b1a85487c934d93650401853a591bbdb4658bf502d8",
+			"size": 184784,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

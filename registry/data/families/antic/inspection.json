@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "578f4d0c315090c568fd532221c009b3cb9d81a27187940dcd9a11011ae0a64d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0012",
+			"outline": "glyf",
+			"path": "ofl/antic/Antic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

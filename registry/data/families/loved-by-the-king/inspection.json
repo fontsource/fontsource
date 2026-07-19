@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 361,
+				"sha256": "777e853a667d322a31e6ecf4d53dfeb47dddf92ced32b082d5f09a0e662529ad"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2006",
+			"outline": "glyf",
+			"path": "ofl/lovedbytheking/LovedbytheKing.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

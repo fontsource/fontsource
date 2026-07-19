@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"marchen",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Marchen",
+	"id": "noto-sans-marchen",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/marchen)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmarchen",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/marchen",
+		"revision": "8b7d0d75ddbd5e2069b8b0f1a89a842d6b37cff2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmarchen/NotoSansMarchen-Regular.ttf",
+			"sha256": "6c8ecfbf4e0b5926ebee810be293c1018f921577b2f6dff22e19ec0a596c7ce3",
+			"size": 286768,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Martin Sommaruga",
+	"family": "Rufina",
+	"id": "rufina",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Martin Sommaruga (martin@estudiotrama.com), with Reserved Font Name 'Rufina'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rufina",
+		"revision": "df42574db2ebe8c245d4c5ff01cd258d6190285b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rufina/Rufina-Bold.ttf",
+			"sha256": "6677451f47d8fd528b8607335ad3bae52db34f775559fc3db99dc7281f5805e0",
+			"size": 40056,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/rufina/Rufina-Regular.ttf",
+			"sha256": "0b26e1388e827afa7c40e3ec268c85010dda0c759be0a169025509b59b1a4b1c",
+			"size": 40040,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

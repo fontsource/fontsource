@@ -1,0 +1,94 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2015-01-28",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Pria Ravichandran",
+	"family": "Palanquin",
+	"id": "palanquin",
+	"license": {
+		"attribution": "Copyright 2014 Pria Ravichandran (pria.ravichandran@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/palanquin",
+		"revision": "60ce0822632a16c1c4662a7fccd0b3730e1626f8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/VanillaandCream/Palanquin",
+		"revision": "f912925eccf9b020425a6f0ddc2ce32fc1640695"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/palanquin/Palanquin-Bold.ttf",
+			"sha256": "b9ff87d5743c179d1300ecbbdb97c53e7a1adb2f54c446c21acec50e2bc77acf",
+			"size": 508152,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/palanquin/Palanquin-ExtraLight.ttf",
+			"sha256": "1e92eeaf00081e9320bbcbda4e1c54cbaa4c8148dc6a6a25c1ad0b3f1474f198",
+			"size": 440576,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/palanquin/Palanquin-Light.ttf",
+			"sha256": "33c40ff07f925a26240a76de1ac3a57c086a388138c44966f0ea2f56522893d0",
+			"size": 443316,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/palanquin/Palanquin-Medium.ttf",
+			"sha256": "9afdd20558ad624c4a45ec9d4450980320c49093be397c83d33033e413dcc4c4",
+			"size": 525336,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/palanquin/Palanquin-Regular.ttf",
+			"sha256": "f4f9cf415279b466b1c4df6168283f95fa88440b27bb34e884aeb03a432b02f0",
+			"size": 478368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/palanquin/Palanquin-SemiBold.ttf",
+			"sha256": "08cf0011bc5ab632e75ca79f2df1f37956fc3b93d1305b46117df17fb58cb414",
+			"size": 521420,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/palanquin/Palanquin-Thin.ttf",
+			"sha256": "387c32989030704407c8b6e711b05268b67dd93e0f033f8eebdd300a9c4f0809",
+			"size": 429632,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

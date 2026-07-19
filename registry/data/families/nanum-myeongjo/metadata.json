@@ -1,0 +1,57 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-05-09",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "Sandoll Communication",
+	"family": "Nanum Myeongjo",
+	"id": "nanum-myeongjo",
+	"license": {
+		"attribution": "Copyright © 2010 NHN Corporation. All rights reserved. Font designed by FONTRIX.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nanummyeongjo",
+		"revision": "f12cf9db03e887b61a34ead809ec1b632bd013b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nanummyeongjo/NanumMyeongjo-Bold.ttf",
+			"sha256": "bc9ed8e60d93fe6db054b8fb988481b625f2eef8cb2317ad0e9834681b8fe3f3",
+			"size": 3074720,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/nanummyeongjo/NanumMyeongjo-ExtraBold.ttf",
+			"sha256": "60c0077fce069ba90ae97c0a3679f6eb3712e0ca637bdd0c15b72d335ec46db7",
+			"size": 3180888,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/nanummyeongjo/NanumMyeongjo-Regular.ttf",
+			"sha256": "7ed9e8653a8ed04285d51dc343ffea6eb3d9c73afc27383ea8929ee4ffd03205",
+			"size": 3058408,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

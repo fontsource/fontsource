@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 977,
+				"sha256": "57c2e5a9e4ac00734c8819235cfc87f8fd08e7239037a819ddc1a570692edc30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.061",
+			"outline": "glyf",
+			"path": "ofl/elmssans/ElmsSans-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 977,
+				"sha256": "57c2e5a9e4ac00734c8819235cfc87f8fd08e7239037a819ddc1a570692edc30"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.061",
+			"outline": "glyf",
+			"path": "ofl/elmssans/ElmsSans[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

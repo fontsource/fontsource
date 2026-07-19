@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 693,
+				"sha256": "e666969009b033c8d42ae9214056341e9d1c2e918457684fd38d35d6fd14e21e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/blackopsone/BlackOpsOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

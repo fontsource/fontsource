@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Google",
+	"family": "Noto Kufi Arabic",
+	"id": "noto-kufi-arabic",
+	"license": {
+		"attribution": "Copyright 2019-2022 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notokufiarabic",
+		"revision": "eb4f2fde9aa730c58ba547d2def669066b6ad87e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/arabic",
+		"revision": "652edd9688496f88c4cf41706c892fe10f9f3c92"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notokufiarabic/NotoKufiArabic[wght].ttf",
+			"sha256": "494f6b61469d7a02a2d63f0fc4930bb007388d8cfe551de5eb98354e100889f3",
+			"size": 434204,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

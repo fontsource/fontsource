@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 248,
+				"sha256": "1e7268698b8b76e1249df3f28fec7bd6fd6092fb40efce731e4190c639d74fa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/caprasimo/Caprasimo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

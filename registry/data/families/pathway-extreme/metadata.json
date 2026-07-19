@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-02-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Pathway Extreme",
+	"id": "pathway-extreme",
+	"license": {
+		"attribution": "Copyright 2019 The Pathway Extreme Project Authors (https://github.com/etunni/Pathway-Variable-Font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pathwayextreme",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/Pathway-Variable-Font",
+		"revision": "4fa691f3898690d1f485839743ace01c5e6410da"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pathwayextreme/PathwayExtreme-Italic[opsz,wdth,wght].ttf",
+			"sha256": "ad71db067a33c101fb1ec792e94c405f22274f68a6842dc4521f623c17805fa1",
+			"size": 225420,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/pathwayextreme/PathwayExtreme[opsz,wdth,wght].ttf",
+			"sha256": "a7640e7731dbd5556123aa8b56948c23542ce8696f0bc882ce56f2dd9a9ee9fa",
+			"size": 305108,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 387,
+				"sha256": "f85eee48a2c4da05cccaf1a319ce9d1ccc347044e27b29618849b432825d36ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/farro/Farro-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 387,
+				"sha256": "f85eee48a2c4da05cccaf1a319ce9d1ccc347044e27b29618849b432825d36ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/farro/Farro-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 387,
+				"sha256": "f85eee48a2c4da05cccaf1a319ce9d1ccc347044e27b29618849b432825d36ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/farro/Farro-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 387,
+				"sha256": "f85eee48a2c4da05cccaf1a319ce9d1ccc347044e27b29618849b432825d36ba"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/farro/Farro-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

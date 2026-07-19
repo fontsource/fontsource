@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 245,
+				"sha256": "d6ca74c22bd548f9d1bd0dc8630a4328ae4cccb0b6838a94ad31975329052c52"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/balthazar/Balthazar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

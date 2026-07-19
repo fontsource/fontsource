@@ -1,0 +1,43 @@
+{
+	"id": "beria-erfe",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"300",
+			"301"
+		],
+		[
+			"304",
+			"304"
+		],
+		[
+			"16EA0",
+			"16EB8"
+		],
+		[
+			"16EBB",
+			"16ED3"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/beria-erfe_unique-glyphs.nam",
+		"revision": "1d38a7d77ce11452ccbfe8fa9a0cb728ee6d7cd3",
+		"sha256": "a11e2305b79143ea585614d5b3ba30dcccdbb3107b6ddd29fd627d0f03699cf8",
+		"upstream": "namFiles"
+	}
+}

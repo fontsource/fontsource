@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong, Neapolitan",
+	"family": "Taprom",
+	"id": "taprom",
+	"license": {
+		"attribution": "Copyright 2019 The Taprom Project Authors (https://github.com/danhhong/Taprom)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/taprom",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Taprom",
+		"revision": "9dac96ed769128b07cf9f0b8d03ed6932f640d7e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/taprom/Taprom-Regular.ttf",
+			"sha256": "d89c52e9ad32693ffbd8646e2770e331d83c310056badf32ce3b12b3e1b5b45a",
+			"size": 203652,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

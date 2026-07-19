@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 13,
+					"min": -13,
+					"tag": "slnt"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 601,
+				"sha256": "c95f872be52750bfcf7b37f10cd73e1a10d3d2f20c43a3f27218597a5d9e2da8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.300",
+			"outline": "glyf",
+			"path": "ofl/gluten/Gluten[slnt,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

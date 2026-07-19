@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 549,
+				"sha256": "0d8890c62eb1cc1b0d2aa7653d7f57f530ecb85048c3a0c5d0e1e164e5701a17"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/aoboshione/AoboshiOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

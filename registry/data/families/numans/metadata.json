@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Jovanny Lemonad",
+	"family": "Numans",
+	"id": "numans",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Jovanny Lemonad (lemonad@jovanny.ru). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/numans",
+		"revision": "db033527e404fefcab3a06b8858cf91d1b62350d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/numans/Numans-Regular.ttf",
+			"sha256": "d331ef3473572f5eb0dd05b6de238b65b4d875eb1c5296e18225a7b4e64436f3",
+			"size": 39368,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

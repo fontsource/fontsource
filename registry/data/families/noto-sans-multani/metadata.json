@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"multani"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Multani",
+	"id": "noto-sans-multani",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/multani)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmultani",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/multani",
+		"revision": "1ef5899c9e386c6b824641d32352444d8c418a6c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmultani/NotoSansMultani-Regular.ttf",
+			"sha256": "fe39d78a4f0acae8e5033ac59aa7af3f8664410c048a3b58b5d76ea44548c090",
+			"size": 57728,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

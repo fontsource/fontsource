@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-12",
+	"declaredSubsets": [
+		"menu",
+		"tamil"
+	],
+	"designer": "Multiple Designers",
+	"family": "Lohit Tamil",
+	"id": "lohit-tamil",
+	"license": {
+		"attribution": "Copyright 2011 Lohit Fonts Project contributors (psatpute@redhat.com). <http://fedorahosted.org/lohit> Licensed under the SIL Open Font License 1.1 (see file OFL.txt)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lohittamil",
+		"revision": "b404bd2dde776aecb8060234858c6587f4d7920a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/pravins/lohit",
+		"revision": "a403c9b7f509dad5e58dde85ef63b1c36fde3a21"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lohittamil/Lohit-Tamil.ttf",
+			"sha256": "320d0959c0650998cd2e589b3368ad3319a0d106becb81b80c272a01dc48fe14",
+			"size": 66184,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

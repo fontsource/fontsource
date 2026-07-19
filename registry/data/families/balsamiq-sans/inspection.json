@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 979,
+				"sha256": "8df2ba81851d2a087a845b587362e65bdae107a1ac090c6b4d57486dd1c84559"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "ofl/balsamiqsans/BalsamiqSans-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 979,
+				"sha256": "8df2ba81851d2a087a845b587362e65bdae107a1ac090c6b4d57486dd1c84559"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "ofl/balsamiqsans/BalsamiqSans-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 979,
+				"sha256": "8df2ba81851d2a087a845b587362e65bdae107a1ac090c6b4d57486dd1c84559"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "ofl/balsamiqsans/BalsamiqSans-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 979,
+				"sha256": "8df2ba81851d2a087a845b587362e65bdae107a1ac090c6b4d57486dd1c84559"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "ofl/balsamiqsans/BalsamiqSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

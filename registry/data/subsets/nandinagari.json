@@ -1,0 +1,63 @@
+{
+	"id": "nandinagari",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"964",
+			"965"
+		],
+		[
+			"CE6",
+			"CEF"
+		],
+		[
+			"1CE9",
+			"1CE9"
+		],
+		[
+			"1CF2",
+			"1CF2"
+		],
+		[
+			"1CFA",
+			"1CFA"
+		],
+		[
+			"A830",
+			"A835"
+		],
+		[
+			"119A0",
+			"119A7"
+		],
+		[
+			"119AA",
+			"119D7"
+		],
+		[
+			"119DA",
+			"119E4"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/nandinagari_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "8c3115017bd4f792dc90a937b1bc7794b4eefbb66aafc9ad75f524eae1be11a2",
+		"upstream": "namFiles"
+	}
+}

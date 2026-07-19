@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Ruthie",
+	"id": "ruthie",
+	"license": {
+		"attribution": "Copyright 2014 The Ruthie Project Authors (https://github.com/googlefonts/ruthie)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ruthie",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/ruthie",
+		"revision": "73c981515aaf81ab6b027f7e10716f6be62c3fd5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ruthie/Ruthie-Regular.ttf",
+			"sha256": "f97e99910e79a6caebcc18dcca305969a0ab42595fce6767139f260c193da302",
+			"size": 71856,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

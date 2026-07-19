@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"batak",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Batak",
+	"id": "noto-sans-batak",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/batak)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansbatak",
+		"revision": "9ede951a642aa69692d392d96876ae3282392f50",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/batak",
+		"revision": "139c2a6c256d72c560f894569c799d6bf090ba72"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansbatak/NotoSansBatak-Regular.ttf",
+			"sha256": "fc3809692a0ad247a56889af623eaf7a73089c0a78bbe5306443add3d23313a6",
+			"size": 70136,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-03"
+}

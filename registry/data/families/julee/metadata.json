@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-09-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Julián Tunni",
+	"family": "Julee",
+	"id": "julee",
+	"license": {
+		"attribution": "Copyright 2011 The Julee Project Authors (https://github.com/etunni/julee) with Reserved Font Name is \"Julee\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/julee",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/julee",
+		"revision": "9a2efe6783e9ea590cee62c8aec51670a3dec51d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/julee/Julee-Regular.ttf",
+			"sha256": "1a895f51fbe0e37f059b1c07030068a2ccbadef8f81970cd346b967bb0b57eb1",
+			"size": 66776,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

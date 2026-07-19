@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 355,
+				"sha256": "adf6f9edbc971fcf1a0ca85035e171d5ea302b7211498eec79c2f19d620f9eff"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansmandaic/NotoSansMandaic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-03-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Agyei Archer, Céline Hurka, Mirko Velimirović",
+	"family": "Jaro",
+	"id": "jaro",
+	"license": {
+		"attribution": "Copyright 2023 The Jaro Project Authors (https://github.com/agyeiarcher/Jaro)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jaro",
+		"revision": "6e4b84c976cadb3c49a40fd9a1c203e4f7fcf2da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/agyeiarcher/Jaro",
+		"revision": "51096c4f8e9e0076709d509b905741470beb972d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jaro/Jaro[opsz].ttf",
+			"sha256": "38d50e38a6fb082069984b363eb0a9280fc6a5e7f8a69fce2afce52bb6bc9670",
+			"size": 145616,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

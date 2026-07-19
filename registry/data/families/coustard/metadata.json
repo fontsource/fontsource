@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-08-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Coustard",
+	"id": "coustard",
+	"license": {
+		"attribution": "Copyright 2011 The Coustard Project Authors (https://github.com/googlefonts/coustardFont)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/coustard",
+		"revision": "755538365478cc6de0dba26a829294716612cca7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/coustardFont",
+		"revision": "84d4ef2fbb8e87ba843d49308b98eeb4a874be91"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/coustard/Coustard-Black.ttf",
+			"sha256": "6a7c7019eaf2a96ac6ef242f537a583800687a1e95786e02601f498538c5a24b",
+			"size": 78444,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/coustard/Coustard-Regular.ttf",
+			"sha256": "71f251444fc70fc98adb011cdf8d8c64ecc7ae5d57fc04f59d8ebb1cfc16460c",
+			"size": 75432,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

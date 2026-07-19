@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 409,
+				"sha256": "f42de930ebf2ca800067fbf6593b9e9f994994345b790f9557194586e9a7d738"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanstaiviet/NotoSansTaiViet-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

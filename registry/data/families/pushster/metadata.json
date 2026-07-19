@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2019-04-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sir Andyj",
+	"family": "Pushster",
+	"id": "pushster",
+	"license": {
+		"attribution": "Copyright 2010 xyz The Lobster Project Authors (https://github.com/impallari/The-Lobster-Font), with Reserved Font Name \"Lobster\".4",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/pushster",
+		"revision": "da17f429d1e43ec6191568b5f16032325cd1de81",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/impallari/The-Lobster-Font",
+		"revision": "9101378a660fa0b93a03372467df8dfd15647fd9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/pushster/Pushster-Regular.ttf",
+			"sha256": "d6568e697fd50cedc0be04d8aae4127fe95add607e7bff954ca88604be80c205",
+			"size": 406076,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

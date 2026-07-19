@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 648,
+				"sha256": "89937e629a04187217d9eaa27cc8f8825c751fc7d62c93d60cac8142023ff961"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008",
+			"outline": "glyf",
+			"path": "ofl/bahianita/Bahianita-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

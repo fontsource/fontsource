@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Ana Sanfelippo",
+	"family": "Almendra SC",
+	"id": "almendra-sc",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Ana Sanfelippo (anasanfe@gmail.com). Reserved Font Names \"Almendra\" \"Almendra SC\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/almendrasc",
+		"revision": "001f4973e8de99e2339422a025798df9b7233763",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/almendrasc",
+		"revision": "e4303f5636ecd733268fc4ae29dd16d2c894cc3d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/almendrasc/AlmendraSC-Regular.ttf",
+			"sha256": "dca733b5b03e4ea52c666365777c8f6b360d55de04efc9d834cf9f82b68308be",
+			"size": 35988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

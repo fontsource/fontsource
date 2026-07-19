@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Johan Kallas, Mihkel Virkus",
+	"family": "Concert One",
+	"id": "concert-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, 2011 Johan Kallas (johankallas@gmail.com), Copyright (c) 2011, 2011 Mihkel Virkus (mihkelvirkus@gmail.com), with Reserved Font Name Concert.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/concertone",
+		"revision": "0c6810dbbf4ebf3002024e900e3536bac45bc2e5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/concertone",
+		"revision": "b002b9370c7365b13d6a79e4718eb6aa8e3d0dc6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/concertone/ConcertOne-Regular.ttf",
+			"sha256": "54e934724b90a9c20d53b25a8d17574a7631f8461e29c8462bd7b36d49fc1e78",
+			"size": 71028,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

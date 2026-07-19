@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 587,
+				"sha256": "37c43712d286be4d9348d5daa91e2e9d3c4f2a36700809cc97faba89c1094e6e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/moolahlah/MooLahLah-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

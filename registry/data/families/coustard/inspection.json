@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 359,
+				"sha256": "7beeba71473c0e9df889fdb59d106e3643f9e9d4c4f1b2db3a59b6998f482248"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/coustard/Coustard-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 359,
+				"sha256": "7beeba71473c0e9df889fdb59d106e3643f9e9d4c4f1b2db3a59b6998f482248"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/coustard/Coustard-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

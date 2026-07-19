@@ -1,0 +1,47 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "LatinoType",
+	"family": "Flamenco",
+	"id": "flamenco",
+	"license": {
+		"attribution": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com), with Reserved Font Names \"Flamenco\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/flamenco",
+		"revision": "d116c0e1f47697deb2d099b055158b7e84eb7e9d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/flamenco",
+		"revision": "908f93e92b13062e172153d04b96a9301ca1c7c5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/flamenco/Flamenco-Light.ttf",
+			"sha256": "6e755ea4c20b869dd7463c0f2a5b37aae0be6b158d0ef8281b0374af3c515210",
+			"size": 34600,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/flamenco/Flamenco-Regular.ttf",
+			"sha256": "4de67f9c6b2444ae2073c236f0829c95d380c5ef44aff4539754888fc2e3cf23",
+			"size": 36576,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

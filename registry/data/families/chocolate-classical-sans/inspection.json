@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 35979,
+				"sha256": "5aafda6603731df4667122ee9d3aad0d1a79cacf8ac3aea13ea2591e1c02f9a3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005",
+			"outline": "glyf",
+			"path": "ofl/chocolateclassicalsans/ChocolateClassicalSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

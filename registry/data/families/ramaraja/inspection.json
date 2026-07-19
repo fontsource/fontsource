@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 229,
+				"sha256": "c042b232eb9dd5e99cc7a3174520580daee1bb76cb18e60c5b8c8a127349c0c0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4; ttfautohint (v1.2.25-373a) -l 7 -r 28 -G 50 -x 13 -D telu -f latn -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/ramaraja/Ramaraja-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

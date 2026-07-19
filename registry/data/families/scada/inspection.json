@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 521,
+				"sha256": "f441344b72059076144829596aabe5f8e4ccf96817aed77e74845019caa64205"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/scada/Scada-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 521,
+				"sha256": "f441344b72059076144829596aabe5f8e4ccf96817aed77e74845019caa64205"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/scada/Scada-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 521,
+				"sha256": "f441344b72059076144829596aabe5f8e4ccf96817aed77e74845019caa64205"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/scada/Scada-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 521,
+				"sha256": "f441344b72059076144829596aabe5f8e4ccf96817aed77e74845019caa64205"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "ofl/scada/Scada-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

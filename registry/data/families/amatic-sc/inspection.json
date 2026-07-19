@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 797,
+				"sha256": "8a1efda818112546bdaf5c87f9f724eaa526a9fee07c1a21fac807bf1dbfeec7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.505",
+			"outline": "glyf",
+			"path": "ofl/amaticsc/AmaticSC-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 797,
+				"sha256": "8a1efda818112546bdaf5c87f9f724eaa526a9fee07c1a21fac807bf1dbfeec7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.505",
+			"outline": "glyf",
+			"path": "ofl/amaticsc/AmaticSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

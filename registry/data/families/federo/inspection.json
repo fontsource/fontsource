@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "8af4c1a5ea459ace5c3cf5d70583ee2bfbabf0a8aa8ebdcaf375f64b1bb8a182"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/federo/Federo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

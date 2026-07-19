@@ -1,0 +1,1 @@
+This font always makes me smile. Something about the style of the handwriting just makes me feel happy. It is slightly connected but not a true script by any means & will lend an upbeat feel to any project you use it on.

@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2025-02-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Patric King",
+	"family": "Big Shoulders Inline",
+	"id": "big-shoulders-inline",
+	"license": {
+		"attribution": "Copyright 2019 The Big Shoulders Project Authors (https://github.com/xotypeco/big_shoulders)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bigshouldersinline",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/xotypeco/big_shoulders",
+		"revision": "8ba99c9e347396d828b263b8b818269cb99eb27c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bigshouldersinline/BigShouldersInline[opsz,wght].ttf",
+			"sha256": "417c1d07898a6648faa9e3a95d7302aa44ee614e2236a2b336e16922569d1fa3",
+			"size": 642132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

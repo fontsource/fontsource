@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2018-02-23",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "TAE System & Typefaces Co.",
+	"family": "Gugi",
+	"id": "gugi",
+	"license": {
+		"attribution": "Copyright (c) 2017 by TAE System & Typefaces Co.. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gugi",
+		"revision": "71462da1649ab51601ec70391dc86595f80c42b7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/1020tj/Gugi",
+		"revision": "7aa7f4c408a5b63e6f58a22c90eed13993f1cdae"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gugi/Gugi-Regular.ttf",
+			"sha256": "c0b1f979979cfc309fb2438fa9464f96173353e0c4842cc7a5919658184ed9d3",
+			"size": 990856,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

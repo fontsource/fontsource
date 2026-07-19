@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-03-24",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Updock",
+	"id": "updock",
+	"license": {
+		"attribution": "Copyright 1991-2021 The Up Dock Project Authors (https://github.com/googlefonts/updock)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/updock",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/updock",
+		"revision": "392c2404f3860e8f06f63aa4dfc91eec3831d294"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/updock/Updock-Regular.ttf",
+			"sha256": "2b9138ac107e6b5831828474c5f9e773c2da3a762afb76841deb6ecf5fd99ef6",
+			"size": 120868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

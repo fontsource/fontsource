@@ -1,0 +1,43 @@
+{
+	"category": "display",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "artakana",
+	"family": "Dela Gothic One",
+	"id": "dela-gothic-one",
+	"license": {
+		"attribution": "Copyright 2020 The Dela Gothic Project Authors (https://github.com/syakuzen/DelaGothic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/delagothicone",
+		"revision": "690b65d64dabaebf9d18e2d7e8c8e7e02b4cccaf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/syakuzen/DelaGothic",
+		"revision": "da8b03e57a8977132b3d0358c48c8463374c74ab"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/delagothicone/DelaGothicOne-Regular.ttf",
+			"sha256": "4ff87a0965f1b0505e5a2c58424bc6ad3cff27e56a82f21c2fc9d6b0e3857ee2",
+			"size": 2508848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

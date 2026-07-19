@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11882,
+				"sha256": "ec4e9e20d11babe1331932c748f35a00d08eb88636b1973bba8aedd1e350f698"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.032;PS 1;hotconv 1.0.56;makeotf.lib2.0.21325",
+			"outline": "glyf",
+			"path": "ofl/nanummyeongjo/NanumMyeongjo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11884,
+				"sha256": "26ae8a4a84c1ec9b549340946de8f76e5deaa62df012d0b1d3b103d7ce92c119"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.032;PS 1;hotconv 1.0.56;makeotf.lib2.0.21325",
+			"outline": "glyf",
+			"path": "ofl/nanummyeongjo/NanumMyeongjo-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 11882,
+				"sha256": "ec4e9e20d11babe1331932c748f35a00d08eb88636b1973bba8aedd1e350f698"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.032;PS 1;hotconv 1.0.56;makeotf.lib2.0.21325",
+			"outline": "glyf",
+			"path": "ofl/nanummyeongjo/NanumMyeongjo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

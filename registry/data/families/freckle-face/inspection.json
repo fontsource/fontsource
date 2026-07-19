@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 365,
+				"sha256": "f547af1fb809a09bf74110c9e14be8bd394f9120738fd9d77d20c996e5c97f1d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/freckleface/FreckleFace-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

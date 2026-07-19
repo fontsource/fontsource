@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7815,
+				"sha256": "53b07420a470eaf75a5f13ee41432faa2760429686f0ea6e39b9856104c0b1b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.500",
+			"outline": "glyf",
+			"path": "ofl/zenoldmincho/ZenOldMincho-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7815,
+				"sha256": "53b07420a470eaf75a5f13ee41432faa2760429686f0ea6e39b9856104c0b1b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.500",
+			"outline": "glyf",
+			"path": "ofl/zenoldmincho/ZenOldMincho-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7815,
+				"sha256": "53b07420a470eaf75a5f13ee41432faa2760429686f0ea6e39b9856104c0b1b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.500",
+			"outline": "glyf",
+			"path": "ofl/zenoldmincho/ZenOldMincho-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7815,
+				"sha256": "53b07420a470eaf75a5f13ee41432faa2760429686f0ea6e39b9856104c0b1b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.500",
+			"outline": "glyf",
+			"path": "ofl/zenoldmincho/ZenOldMincho-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7815,
+				"sha256": "53b07420a470eaf75a5f13ee41432faa2760429686f0ea6e39b9856104c0b1b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.500",
+			"outline": "glyf",
+			"path": "ofl/zenoldmincho/ZenOldMincho-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

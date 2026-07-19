@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 525,
+				"sha256": "42d61e6655d535fbb02e5af6a47d44c48dc01eda923aeae38ed80ca065114746"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.008; ttfautohint (v1.4.1) -l 6 -r 46 -G 0 -x 0 -H 200 -D latn -f none -m \"\" -w g -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/atomicage/AtomicAge-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

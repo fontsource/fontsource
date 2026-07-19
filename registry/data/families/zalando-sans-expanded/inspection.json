@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 531,
+				"sha256": "75c1a2bf721a9166df98cbb2fcb375bfa4c97a0890af47c7822a15576d66d011"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.800",
+			"outline": "glyf",
+			"path": "ofl/zalandosansexpanded/ZalandoSansExpanded-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 531,
+				"sha256": "75c1a2bf721a9166df98cbb2fcb375bfa4c97a0890af47c7822a15576d66d011"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.800",
+			"outline": "glyf",
+			"path": "ofl/zalandosansexpanded/ZalandoSansExpanded[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

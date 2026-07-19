@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 231,
+				"sha256": "9edd4943c9a8710dcd9e66f15dd14ccb6278a40ed1e5bda71fa961f9bec736e9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mrdehaviland/MrDeHaviland-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

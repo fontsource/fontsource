@@ -1,0 +1,5 @@
+**Foundry: [Sorkin Type Co](http://www.sorkintype.com/)**
+
+Donegal One is a text typeface designed to be highly legible and comfortable when reading on screen. Donegal's utility and personality consistently shows from small text sizes to display. Donegal uses the cut interior curve associated with W.A. Dwiggins. This feature is one of many that contribute to Donegal's distinctive and pleasing character.
+
+Source files are available from [Google Code](http://code.google.com/p/googlefontdirectory/). To contribute to the project contact Eben Sorkin.

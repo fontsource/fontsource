@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Catherine Leigh Schmidt",
+	"family": "Yatra One",
+	"id": "yatra-one",
+	"license": {
+		"attribution": "Copyright 2014 The Yatra Project Authors.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yatraone",
+		"revision": "3f93e740ce7a594a421a2c245ddb383145f1fd2a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cathschmidt/yatra-one",
+		"revision": "b991e49f275db52a5b59ee959c87d0f7ba5325f5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yatraone/YatraOne-Regular.ttf",
+			"sha256": "c47a94a4edf30f4eae0ca1c84777f4b70bc350221b6249de6b64fefdded2d3cd",
+			"size": 276324,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "monospace",
+	"dateAdded": "2023-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Jens Kutílek",
+	"family": "Sixtyfour",
+	"id": "sixtyfour",
+	"license": {
+		"attribution": "Copyright 2021 The Sixtyfour Project Authors (https://github.com/jenskutilek/homecomputer-fonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sixtyfour",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/jenskutilek/homecomputer-fonts",
+		"revision": "09b2f79d686453d3bc160d04a687488e66962c43"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sixtyfour/Sixtyfour[BLED,SCAN].ttf",
+			"sha256": "3d5a3bb3257a491124347bac83ca7f0c8c77a9961270f353b498f3153e751c68",
+			"size": 71536,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

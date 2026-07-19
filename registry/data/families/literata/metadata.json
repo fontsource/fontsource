@@ -1,0 +1,53 @@
+{
+	"category": "serif",
+	"dateAdded": "2018-12-06",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "TypeTogether",
+	"family": "Literata",
+	"id": "literata",
+	"license": {
+		"attribution": "Copyright 2017 The Literata Project Authors (https://github.com/googlefonts/literata)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/literata",
+		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/literata",
+		"revision": "0c2761b727a1b3a7cffd313c37f0f5163dfc7a63"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/literata/Literata-Italic[opsz,wght].ttf",
+			"sha256": "d483dfaeba9cbf4ce71d32a52ee65df82f7e35b15fff8d1011cdb242d1fcd465",
+			"size": 902728,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/literata/Literata[opsz,wght].ttf",
+			"sha256": "b41138c9373112f32abb589cc22e8674b06ed4048b0c513be922bdd26f274440",
+			"size": 955132,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

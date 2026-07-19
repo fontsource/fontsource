@@ -1,0 +1,86 @@
+{
+	"category": "display",
+	"dateAdded": "2020-01-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Kemie Guaida",
+	"family": "Bellota",
+	"id": "bellota",
+	"license": {
+		"attribution": "Copyright 2019 The Bellota Project Authors (https://github.com/kemie/Bellota-Font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bellota",
+		"revision": "4368dfe3a3a5052b052c11340b5298697be76ec1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/kemie/Bellota-Font",
+		"revision": "db900d27103a2e9b37b76ef32386fbf9691ecac6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bellota/Bellota-Bold.ttf",
+			"sha256": "2120a9b5c3c92e7fe7cf4e964e925ac04cb013c63ac72da4a756ae6ed872e97b",
+			"size": 201076,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bellota/Bellota-BoldItalic.ttf",
+			"sha256": "82caafa69ed7cd8ab3723b2c8eedb443be908f9088e57ffcde0b5f0d38dc3708",
+			"size": 204668,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/bellota/Bellota-Italic.ttf",
+			"sha256": "8e1ae4d9fa4e055e9fc202be586f8a9a5bef81d8731bdd40bd862df2071edb99",
+			"size": 198660,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/bellota/Bellota-Light.ttf",
+			"sha256": "18d184f3598bae830082041cf7fb49a24d0dee605de2b52e4ae68bded698df0a",
+			"size": 191872,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/bellota/Bellota-LightItalic.ttf",
+			"sha256": "6f61044daac01399bd7d1fd00c2ccfeb6b916f10f4c96a303e1a1007bb48e17d",
+			"size": 197412,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/bellota/Bellota-Regular.ttf",
+			"sha256": "d46806f9c5fd46cd6bf1c261bfa46b2d22503130d585451dc7863d8ce80524fc",
+			"size": 194464,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

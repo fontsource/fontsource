@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-02-09",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ek Type",
+	"family": "Anek Gujarati",
+	"id": "anek-gujarati",
+	"license": {
+		"attribution": "Copyright 2021 The Anek Project Authors (https://github.com/EkType/Anek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/anekgujarati",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/EkType/Anek",
+		"revision": "34074c6b406f4112e20c7ad10254a6e954d0324b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/anekgujarati/AnekGujarati[wdth,wght].ttf",
+			"sha256": "7d68cf90804e69cd23717f9f5485f4ac10b660096ab0b406e86f32e09d96029b",
+			"size": 1621452,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

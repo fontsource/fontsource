@@ -1,0 +1,48 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-11-16",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Fondamento",
+	"id": "fondamento",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Fondamento Italic\"\nCopyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Fondamento\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fondamento",
+		"revision": "fe6836ec8db35c5b1e8c5829b080d98cc99e2438",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/fondamento",
+		"revision": "92205310620ae12fc72d8dde6033cdc46ca07101"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fondamento/Fondamento-Italic.ttf",
+			"sha256": "8303c76ccfaf81a065c3653a1d559f76e8223a3200a79451d5dedd33cebbef9e",
+			"size": 78760,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/fondamento/Fondamento-Regular.ttf",
+			"sha256": "ee03a7ccb3b7cdf3cd095d0cc34f9e70c16b1779cbc7c466bf9077323a6ea764",
+			"size": 87160,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

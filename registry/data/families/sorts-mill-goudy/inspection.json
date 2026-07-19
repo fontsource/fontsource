@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 393,
+				"sha256": "0467a0896c3fee897dfe1ab1b258289cc608d82a9b2cdb7509ba2b0c6c54269d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 003.101",
+			"outline": "glyf",
+			"path": "ofl/sortsmillgoudy/SortsMillGoudy-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 392,
+				"sha256": "d375243cde01f9fb945980ec8dc4566cfe61ae48a92e2e0d2f0fc89b031dc63c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 003.101",
+			"outline": "glyf",
+			"path": "ofl/sortsmillgoudy/SortsMillGoudy-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

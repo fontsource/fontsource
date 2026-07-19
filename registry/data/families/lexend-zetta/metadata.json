@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-08-01",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Bonnie Shaver-Troup, Thomas Jockin, Santiago Orozco, Héctor Gómez, Superunion",
+	"family": "Lexend Zetta",
+	"id": "lexend-zetta",
+	"license": {
+		"attribution": "Copyright 2019 The Lexend Project Authors (https://github.com/googlefonts/lexend)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lexendzetta",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/lexend",
+		"revision": "20491885ca2cf7ffc556432973e7bdbc701952b5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lexendzetta/LexendZetta[wght].ttf",
+			"sha256": "705ba2f80f8daf3c93b9aec2798d054e5f31cb1bded00f1706800549f47c35df",
+			"size": 192720,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

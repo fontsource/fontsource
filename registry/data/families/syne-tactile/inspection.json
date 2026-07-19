@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 400,
+				"sha256": "821759f822ff96822633f55874839168ea9f7b6436f91b70d8ae7265d8d09126"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/synetactile/SyneTactile-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

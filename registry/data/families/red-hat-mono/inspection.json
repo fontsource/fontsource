@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "5b9648bd9ef10161cdc6c99d8dda70c8734908c9e1eaaf2408813f6547f8c0c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.030",
+			"outline": "glyf",
+			"path": "ofl/redhatmono/RedHatMono-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 404,
+				"sha256": "5b9648bd9ef10161cdc6c99d8dda70c8734908c9e1eaaf2408813f6547f8c0c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.030",
+			"outline": "glyf",
+			"path": "ofl/redhatmono/RedHatMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 300
+			}
+		}
+	]
+}

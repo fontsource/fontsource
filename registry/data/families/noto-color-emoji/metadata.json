@@ -1,0 +1,34 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-07-27",
+	"declaredSubsets": [
+		"emoji",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Color Emoji",
+	"id": "noto-color-emoji",
+	"license": {
+		"attribution": "Copyright 2021 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notocoloremoji",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notocoloremoji/NotoColorEmoji-Regular.ttf",
+			"sha256": "be73479ba4fa277c89b85cd6c71717df30d9d0eff6da8c1e1a201e5b95459299",
+			"size": 24271604,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

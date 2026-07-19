@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-12-12",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"nandinagari"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Nandinagari",
+	"id": "noto-sans-nandinagari",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nandinagari)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansnandinagari",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/nandinagari",
+		"revision": "6fd9a06474f168966558decc068b3f404b7d9063"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansnandinagari/NotoSansNandinagari-Regular.ttf",
+			"sha256": "ed326d58e570027ecff41cb3f0286a389f52118bf1313273e4ce2faa3d5d5f51",
+			"size": 252968,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

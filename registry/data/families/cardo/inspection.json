@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2992,
+				"sha256": "4096099d721fd3a5c30291ed8a7d560119364b53b99b5927e2aae95e4ed21f9a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0011",
+			"outline": "glyf",
+			"path": "ofl/cardo/Cardo-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2412,
+				"sha256": "800a59a0484bfb75b0f089621ac42ef6cc0ef6079bb2f0dfa8523b541f8dc3fa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.991",
+			"outline": "glyf",
+			"path": "ofl/cardo/Cardo-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3830,
+				"sha256": "d678d031e89dccdb37fc681e96dbbbbd28950d22bc423a8b7e38f7cde70d9823"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0451",
+			"outline": "glyf",
+			"path": "ofl/cardo/Cardo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

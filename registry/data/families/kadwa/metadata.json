@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2015-06-17",
+	"declaredSubsets": [
+		"devanagari",
+		"latin",
+		"menu"
+	],
+	"designer": "Sol Matas",
+	"family": "Kadwa",
+	"id": "kadwa",
+	"license": {
+		"attribution": "Copyright (c) 2014-2015, Sol Matas (sol@sonnenshine.com.ar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kadwa",
+		"revision": "e42af549d1585c3d088aec2b99bbad9b918a4ae2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/solmatas/Kadwa",
+		"revision": "ec58500fc2026ed3125a609b8c617b4b0c4bce20"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kadwa/Kadwa-Bold.ttf",
+			"sha256": "4dca4a79280ecc1911deb83cc0441dbd53d65af10a42b07157c7a9f2de1e25cc",
+			"size": 239892,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kadwa/Kadwa-Regular.ttf",
+			"sha256": "2d726feadfadcf1e1eb31d443556b830da66badbb0629e984419d8ddab7e6e9d",
+			"size": 251420,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 855,
+				"sha256": "dc330208f96b5ef516c73104d884b280d24e91e6afe540fba3be012c1e232de2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.320;hotconv 1.0.109;makeotfexe 2.5.65596; ttfautohint (v1.8.1)",
+			"outline": "glyf",
+			"path": "ofl/gotu/Gotu-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

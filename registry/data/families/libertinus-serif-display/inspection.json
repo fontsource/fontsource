@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2081,
+				"sha256": "bd33948dd7a188c15162f3401e6eaa95843e6c184c855e5ddad2c6a260424042"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.051;RELEASE",
+			"outline": "glyf",
+			"path": "ofl/libertinusserifdisplay/LibertinusSerifDisplay-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

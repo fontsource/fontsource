@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 557,
+				"sha256": "b5d92b60736fe11ad299999a1d8aba7209168d7e17179f05fb6f798e6e640e87"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.31]",
+			"outline": "glyf",
+			"path": "ofl/bangers/Bangers-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

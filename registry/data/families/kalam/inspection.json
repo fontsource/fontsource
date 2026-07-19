@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1026,
+				"sha256": "cb8dc5c3c4eba51e08aa7fb33febbe5d7fc9a386c3d211d33fc6edc2121e2910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/kalam/Kalam-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1026,
+				"sha256": "cb8dc5c3c4eba51e08aa7fb33febbe5d7fc9a386c3d211d33fc6edc2121e2910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/kalam/Kalam-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1026,
+				"sha256": "cb8dc5c3c4eba51e08aa7fb33febbe5d7fc9a386c3d211d33fc6edc2121e2910"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.3)",
+			"outline": "glyf",
+			"path": "ofl/kalam/Kalam-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

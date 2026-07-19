@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"braille",
+		"latin",
+		"latin-ext",
+		"math",
+		"mayan-numerals",
+		"menu",
+		"symbols"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Symbols 2",
+	"id": "noto-sans-symbols-2",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/symbols)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssymbols2",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/symbols",
+		"revision": "25b00f0d3f40873a005287514ba2a48558655314"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssymbols2/NotoSansSymbols2-Regular.ttf",
+			"sha256": "7d5fb73b7ca67a6798101741f5d280a3d016a56a197afcd4199dbb57b4b82a21",
+			"size": 1233128,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

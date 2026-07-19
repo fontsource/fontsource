@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 331,
+				"sha256": "8a0b7c87d71e263f508e5cebee79a34d772e4ea5f17aeebf0084a284c0af8234"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/jacquard12/Jacquard12-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 348,
+				"sha256": "6b79ea997c6c27c084cb91b27fcbc83e9b344ff7aef4b20ab9b5d954f63c2a73"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003 2010",
+			"outline": "glyf",
+			"path": "ofl/architectsdaughter/ArchitectsDaughter-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

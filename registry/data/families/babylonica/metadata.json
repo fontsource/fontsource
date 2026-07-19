@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-02-23",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Babylonica",
+	"id": "babylonica",
+	"license": {
+		"attribution": "Copyright 2010 The Babylonica Project Authors (https://github.com/googlefonts/babylonica)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/babylonica",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/babylonica",
+		"revision": "7b1c733f74a11604a711e87f840010e0746cfcd1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/babylonica/Babylonica-Regular.ttf",
+			"sha256": "d033b18ba66881e0f066ebc66b457944e0dc51e981f9be61c8365d4bcfdb165c",
+			"size": 498620,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

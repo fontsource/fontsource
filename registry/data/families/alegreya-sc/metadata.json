@@ -1,0 +1,125 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Juan Pablo del Peral, HT Fonts",
+	"family": "Alegreya SC",
+	"id": "alegreya-sc",
+	"license": {
+		"attribution": "Copyright 2011 The Alegreya Project Authors (https://github.com/huertatipografica/Alegreya)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alegreyasc",
+		"revision": "88c2351fb58bf5dfedb96934de48be9a606c7d2e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/huertatipografica/Alegreya",
+		"revision": "d6aedcbb5a82a09dedb07ab99bb91803db8e02af"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-Black.ttf",
+			"sha256": "0d5d9c8a36e9458f5598d1136d71387ae32a5ab94f06833eadc341555d0a4e91",
+			"size": 400252,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-BlackItalic.ttf",
+			"sha256": "ea81582efc3f03411c83310b7c6af952690f50ad2e28af8b6c26b96e9d77bc07",
+			"size": 382008,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-Bold.ttf",
+			"sha256": "3ef96cbf3be7b84d9dff9b1aa1e2ac40eec0cf323ccd0638395cdef9c5a91528",
+			"size": 378796,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-BoldItalic.ttf",
+			"sha256": "f0d577301defcaeb5c4cf3d7afd88d878affd6749539e614b5d6d08a92c66e2a",
+			"size": 398592,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-ExtraBold.ttf",
+			"sha256": "d485e1fea222301f8600daa70be44027f39795127c9c5fb77a6bd9f5aba8dbf7",
+			"size": 376680,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-ExtraBoldItalic.ttf",
+			"sha256": "3d99eb98f65af4295c388b5ba67d606a0afd29e9c0fe756fc929bf4b17c73586",
+			"size": 376724,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-Italic.ttf",
+			"sha256": "1e89a8fd7ca396f5f7862be6d13c57fd28bb3b71f3294216b0b5fd5047ead9b8",
+			"size": 368248,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-Medium.ttf",
+			"sha256": "fa896222115cc9a41c0695a3ee6feafbaba97932e9bb6240520b3feeb560ea2c",
+			"size": 382820,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-MediumItalic.ttf",
+			"sha256": "7f75204ce88025fd42b6f55051d52ccb3218127bb652da976b61ad9d290a498d",
+			"size": 381204,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/alegreyasc/AlegreyaSC-Regular.ttf",
+			"sha256": "5c8fba800b848b851e308dfdfdc573b64135e498db41cbd0b6d78ba9d267d9a1",
+			"size": 367628,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-02-23",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"menu"
+	],
+	"designer": "Zess Type",
+	"family": "Black Han Sans",
+	"id": "black-han-sans",
+	"license": {
+		"attribution": "Copyright 2015 The Black Han Sans Project Authors (https://github.com/zesstype/Black-Han-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/blackhansans",
+		"revision": "c200187d394c634da4dbeba74d59522ce0875401",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/zesstype/Black-Han-Sans",
+		"revision": "8809d5944fbf6aa2cd99158cb7ab55629058348a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/blackhansans/BlackHanSans-Regular.ttf",
+			"sha256": "31960809284026681774a8e52dc19ebcad26cf69b0ad9d560f288296fbb52739",
+			"size": 998424,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

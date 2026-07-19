@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 369,
+				"sha256": "3be03aab1ff6b9d9cb75b0f401a06f34451ca6c58a6905afa7374d7161bd77f2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/jimnightshade/JimNightshade-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

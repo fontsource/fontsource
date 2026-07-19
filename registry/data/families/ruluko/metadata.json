@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-01-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ana Sanfelippo, Angélica Díaz, Meme Hernández",
+	"family": "Ruluko",
+	"id": "ruluko",
+	"license": {
+		"attribution": "Copyright (c) 2011, Ana Sanfelippo, Angelica Diaz y Meme Hernandez (anasanfe@gmail.com - angiecina@gmail.com), with Reserved Font Name \"Ruluko\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ruluko",
+		"revision": "83877a00304ce6e148c2a337daa753ef382ce102",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ruluko/Ruluko-Regular.ttf",
+			"sha256": "c426db1373755d3ba00456dece5cf5ad1c8023978f60cbfe7b7e256ab1c89c3f",
+			"size": 27436,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

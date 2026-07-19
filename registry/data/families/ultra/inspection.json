@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 371,
+				"sha256": "46449f83782a089c4b90b8882486e92d4bb0729e44261f70622efe0a97600a79"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "apache/ultra/Ultra-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

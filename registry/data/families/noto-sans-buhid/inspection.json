@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 361,
+				"sha256": "c1bbf792863e2d013b3256e129c65cefdc21830356b437ab136214d94724ae0d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/notosansbuhid/NotoSansBuhid-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

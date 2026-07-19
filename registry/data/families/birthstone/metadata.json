@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Birthstone",
+	"id": "birthstone",
+	"license": {
+		"attribution": "Copyright 2019 The Birthstone Project Authors (https://github.com/googlefonts/birthstone)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/birthstone",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/birthstone",
+		"revision": "6fb65f5dc60e40fe907e5dfe22917613bde97f73"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/birthstone/Birthstone-Regular.ttf",
+			"sha256": "cd04bb37f03d2e8caebaee2f26b09d3244bab7810fa348d8acb2e6a5228d8783",
+			"size": 381092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

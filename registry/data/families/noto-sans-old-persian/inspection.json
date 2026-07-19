@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 385,
+				"sha256": "db96e660fbefc4d8379ba90a1513cd58cd94c7548e4f00fa0ea3721041458d00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansoldpersian/NotoSansOldPersian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

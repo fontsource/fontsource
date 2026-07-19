@@ -1,0 +1,3 @@
+Dhurjati is a Telugu font with a square design and round corners. It has ornamental vowel marks that evoke a traditional Indian feeling and is suitable for headlines, invitations, posters and other uses at large sizes. Dhurjati is named after the Telugu poet from the court of the king Krishnadevaraya, and was one of the Astadiggajalu (literally eight legends) there.
+
+The Telugu and Latin is designed and developed by Purushoth Kumar Guttula in 2013 and made available by Silicon Andhra under the SIL Open Font License v1.1. The Dhurjati project is led by Appaji Ambarisha Darbha, a type designer based in Hyderabad, India. To contribute, see [github.com/appajid/dhurjati](https://github.com/appajid/dhurjati)

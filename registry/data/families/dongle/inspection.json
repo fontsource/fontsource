@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12494,
+				"sha256": "4b46338ed9e79e7656f77d8d099ef76d176c6e15fb8ce0ec50c56c1688a273a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/dongle/Dongle-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12494,
+				"sha256": "4b46338ed9e79e7656f77d8d099ef76d176c6e15fb8ce0ec50c56c1688a273a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/dongle/Dongle-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 12494,
+				"sha256": "4b46338ed9e79e7656f77d8d099ef76d176c6e15fb8ce0ec50c56c1688a273a7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/dongle/Dongle-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

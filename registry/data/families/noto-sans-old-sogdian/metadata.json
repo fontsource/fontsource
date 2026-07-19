@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"old-sogdian"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Old Sogdian",
+	"id": "noto-sans-old-sogdian",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-sogdian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansoldsogdian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/old-sogdian",
+		"revision": "aa13b986b6b48a97ab305a8915d2349fdfc87692"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansoldsogdian/NotoSansOldSogdian-Regular.ttf",
+			"sha256": "3686573e4175d14e8681cdd7bdf10b57762ded8bc3e5a5fa0083e4e14f4f2613",
+			"size": 66124,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

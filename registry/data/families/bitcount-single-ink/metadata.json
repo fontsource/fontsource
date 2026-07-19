@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2025-01-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Petr van Blokland",
+	"family": "Bitcount Single Ink",
+	"id": "bitcount-single-ink",
+	"license": {
+		"attribution": "Copyright 2024 The Bitcount Project Authors (https://github.com/petrvanblokland/TYPETR-Bitcount)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bitcountsingleink",
+		"revision": "ae5c272a4e86d61d7a336d3684078f6477cbe2f3",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/petrvanblokland/TYPETR-Bitcount",
+		"revision": "89e7994f73b7f5ced80e7cf493d40be9e66ff82f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bitcountsingleink/BitcountSingleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].ttf",
+			"sha256": "3dc8184914b365b1b5d19533b416afa591cbe25fcd5cc7c5ecb33fe51d1ac4bb",
+			"size": 430912,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

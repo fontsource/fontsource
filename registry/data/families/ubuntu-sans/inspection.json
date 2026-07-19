@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1178,
+				"sha256": "1ede094c6cabf77fc78b545cbb5044b3e7ff6fb14889f0d60129fb7065f4b131"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ufl/ubuntusans/UbuntuSans-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1178,
+				"sha256": "1ede094c6cabf77fc78b545cbb5044b3e7ff6fb14889f0d60129fb7065f4b131"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.006",
+			"outline": "glyf",
+			"path": "ufl/ubuntusans/UbuntuSans[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

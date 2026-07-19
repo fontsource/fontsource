@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-06-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jörg Drees",
+	"family": "Wittgenstein",
+	"id": "wittgenstein",
+	"license": {
+		"attribution": "Copyright 2024 The Wittgenstein Project Authors (https://github.com/jrgdrs/Wittgenstein)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/wittgenstein",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/jrgdrs/Wittgenstein",
+		"revision": "56c1cf1b4a9f5127d4621f1e167f6415b0a284e9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/wittgenstein/Wittgenstein-Italic[wght].ttf",
+			"sha256": "f046ab65c2acc48869301db17a97cf73174ba9748af8ca10f574af0d8f3cb5b3",
+			"size": 97640,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/wittgenstein/Wittgenstein[wght].ttf",
+			"sha256": "773d52be838aabb9a1912909a9c2af5ac6c54939443433b648c51b039e987e3a",
+			"size": 105844,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

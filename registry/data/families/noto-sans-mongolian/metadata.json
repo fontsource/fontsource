@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"mongolian",
+		"symbols"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Mongolian",
+	"id": "noto-sans-mongolian",
+	"license": {
+		"attribution": "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/mongolian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmongolian",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/mongolian",
+		"revision": "a61ef47935dcf4e4675456b632d6248836a5496a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmongolian/NotoSansMongolian-Regular.ttf",
+			"sha256": "805a55e10492c547ccadc1ad04faabdef61a74a5c02ecce69748378d66ef032d",
+			"size": 390920,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,57 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2019-06-10",
+	"declaredSubsets": [
+		"latin",
+		"malayalam",
+		"menu"
+	],
+	"designer": "SMC, Binoy Dominic",
+	"family": "Gayathri",
+	"id": "gayathri",
+	"license": {
+		"attribution": "Copyright 2019 The Gayathri Project Authors (https://gitlab.com/smc/fonts/gayathri)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gayathri",
+		"revision": "ac67ce77dcc241dbc0f3b2e7fa686408b63d5d5d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/smc/Gayathri",
+		"revision": "5ad0cb435bd61227de1e95dc54ee85bfca671c53"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gayathri/Gayathri-Bold.ttf",
+			"sha256": "ad62d4ab2990d5bba9203c205513a8e162a44a03c58269f9a8b138cad9c0d5e3",
+			"size": 163828,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gayathri/Gayathri-Regular.ttf",
+			"sha256": "c4fab5d994518247f78d96bf212a7d5b36563b60663136765fbaebd33a74d4f9",
+			"size": 162884,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/gayathri/Gayathri-Thin.ttf",
+			"sha256": "5c60a888ea5c0d1d259a1803fdbe9d7fa5c8ef9edce952482efa9f59dde4519d",
+			"size": 163828,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,85 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2017-02-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sinhala"
+	],
+	"designer": "Mooniak",
+	"family": "Yaldevi Colombo",
+	"id": "yaldevi-colombo",
+	"license": {
+		"attribution": "Copyright (c) 2015-2016 Mooniak (hello@mooniak.com) Copyright (c) 2015 Sol Matas (sol@sonnenshine.com.ar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/yaldevicolombo",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/mooniak/yaldevi-font",
+		"revision": "bd4f7c3222d4508c61bdcdc33467f5a865470370"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/yaldevicolombo/YaldeviColombo-Bold.ttf",
+			"sha256": "71df5bd96f75e17a78fb818b7fc7157cf70831c6764023611a146480a33a7305",
+			"size": 480540,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/yaldevicolombo/YaldeviColombo-ExtraLight.ttf",
+			"sha256": "f20e9ebeb4d2b675de55723341ffecb39ab978f52a8e13dfa81eb152709b3919",
+			"size": 415696,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/yaldevicolombo/YaldeviColombo-Light.ttf",
+			"sha256": "32a7effe1259d7b678b2eb0f2549cddf95fa20c75f573f8c06bdc220f7b4e7b1",
+			"size": 411912,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/yaldevicolombo/YaldeviColombo-Medium.ttf",
+			"sha256": "0f9f4595dda66c8daa56f61689c62f897b21a4801b90dbe65b9803aef7c20eef",
+			"size": 445824,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/yaldevicolombo/YaldeviColombo-Regular.ttf",
+			"sha256": "5577ba8af289a7c6bf2fa9d6afa653435a382c4cb41323adb7fa530db5440214",
+			"size": 418848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/yaldevicolombo/YaldeviColombo-SemiBold.ttf",
+			"sha256": "35e399999d7f8d84d28d21359d743ef8ad7c1f46a96b0096b2b0b9d684583414",
+			"size": 486552,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

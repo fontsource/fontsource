@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2019-12-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Liam Spradlin",
+	"family": "Girassol",
+	"id": "girassol",
+	"license": {
+		"attribution": "Copyright 2019 The Girassol Project Authors (https://github.com/liamspradlin/Girassol-Display)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/girassol",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/liamspradlin/Girassol-Display",
+		"revision": "cc8fa1b5a1afc28520fdc0ccc36256db243d9dfa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/girassol/Girassol-Regular.ttf",
+			"sha256": "84c229dea2428bf26808d985a44262fd57f47a17b1722497c9d4ec5bba94fafc",
+			"size": 37644,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

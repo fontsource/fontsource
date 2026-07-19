@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 355,
+				"sha256": "99a0ac2133caa21d442228140b373cb39a23b5c9e5c832c34f700ee304c3864c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansmayannumerals/NotoSansMayanNumerals-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

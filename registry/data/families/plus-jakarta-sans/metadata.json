@@ -1,0 +1,50 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-03-24",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Tokotype",
+	"family": "Plus Jakarta Sans",
+	"id": "plus-jakarta-sans",
+	"license": {
+		"attribution": "Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/plusjakartasans",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/tokotype/PlusJakartaSans",
+		"revision": "18d1cd2f7ea10481919d2f05c1f7064b7307fc26"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/plusjakartasans/PlusJakartaSans-Italic[wght].ttf",
+			"sha256": "9529eb888668b6a3c6dd75b6341a2fc5263fb6c9e788822e6117c29dd9e8b115",
+			"size": 183188,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/plusjakartasans/PlusJakartaSans[wght].ttf",
+			"sha256": "89b3fb38aa0d275d7a731d0d817a4f1622b316b4d7fbdedcf02ee9099ff68bc8",
+			"size": 176288,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

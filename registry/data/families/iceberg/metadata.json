@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-25",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Iceberg",
+	"id": "iceberg",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org), with Reserved Font Name \"Iceberg\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/iceberg",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/iceberg",
+		"revision": "db1c024077a00f9999b5f6437a70c19ced5c1fc5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/iceberg/Iceberg-Regular.ttf",
+			"sha256": "dbbe0c4fceebe2e1c966362e9d647104c74796e52d494554eeabf4d6104fb2ff",
+			"size": 42808,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

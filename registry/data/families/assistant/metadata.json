@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Adobe Systems Inc., Ben Nathan",
+	"family": "Assistant",
+	"id": "assistant",
+	"license": {
+		"attribution": "Copyright 2020 The Assistant Project Authors (https://github.com/hafontia/Assistant). Copyright 2010 The Source Sans Pro Authors (https://github.com/adobe-fonts/source-sans-pro), with Reserved Font Name 'Source'. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/assistant",
+		"revision": "e9991033b10f4e4b11918224dccd62a7791328bd",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeNetwork/Assistant",
+		"revision": "2b5ffdccb0216ccbdbdc8a623f3b935fc5b5e04a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/assistant/Assistant[wght].ttf",
+			"sha256": "1c3b393884f8fb133a1b17f41d26178adae1050a4f86d7a429d1b5658c314fa3",
+			"size": 99496,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

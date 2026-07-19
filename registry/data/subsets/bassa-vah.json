@@ -1,0 +1,39 @@
+{
+	"id": "bassa-vah",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"16AD0",
+			"16AED"
+		],
+		[
+			"16AF0",
+			"16AF5"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/bassa-vah_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "912a13b4732bd38fa0e64621c289e3bc0038abf0aa6ef133530dbfcfc84f4da4",
+		"upstream": "namFiles"
+	}
+}

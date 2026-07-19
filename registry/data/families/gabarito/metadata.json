@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2023-09-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Naipe Foundry, Leandro Assis, Álvaro Franca, Felipe Casaprima",
+	"family": "Gabarito",
+	"id": "gabarito",
+	"license": {
+		"attribution": "Copyright 2023 The Gabarito Project Authors (https://github.com/naipefoundry/gabarito)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gabarito",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/naipefoundry/gabarito",
+		"revision": "1f3fb39d6449eefa880543f109f33ede0cd4064f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gabarito/Gabarito[wght].ttf",
+			"sha256": "8650e2bd7747f7d74619fd7aecbcb0309e6f37b7964024f3fb15ae4833b67ca5",
+			"size": 158144,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

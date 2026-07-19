@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "c7f219d8529d0255d53444014c5b2bb5a393df85e93362eb05cfa6ff24cac686"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/simonetta/Simonetta-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 224,
+				"sha256": "c7f219d8529d0255d53444014c5b2bb5a393df85e93362eb05cfa6ff24cac686"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/simonetta/Simonetta-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 220,
+				"sha256": "9ef0011ea79d7df63138e3e4b4ede88c5048b381051451df9cc4417bc094d0c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/simonetta/Simonetta-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 220,
+				"sha256": "9ef0011ea79d7df63138e3e4b4ede88c5048b381051451df9cc4417bc094d0c8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/simonetta/Simonetta-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

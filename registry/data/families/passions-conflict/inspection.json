@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 572,
+				"sha256": "825ed5122e70bc2fbf9449d6f341802e14905254cdc365926bbfb7c25c14d91d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/passionsconflict/PassionsConflict-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

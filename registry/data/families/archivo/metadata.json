@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2016-12-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Archivo",
+	"id": "archivo",
+	"license": {
+		"attribution": "Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/archivo",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/Archivo",
+		"revision": "b5d63988ce19d044d3e10362de730af00526b672"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/archivo/Archivo-Italic[wdth,wght].ttf",
+			"sha256": "305d13b4eb80e62f7d517f78d7c045250d977552a420f2dbed906f314e761305",
+			"size": 741368,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/archivo/Archivo[wdth,wght].ttf",
+			"sha256": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+			"size": 658596,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

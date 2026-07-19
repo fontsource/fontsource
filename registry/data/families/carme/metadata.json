@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-07-27",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Rubén Prol",
+	"family": "Carme",
+	"id": "carme",
+	"license": {
+		"attribution": "Copyright (c) 2010-2011, Ruben Prol (ipanemagrafica@gmail.com|www.ipanemagrafica.com), with Reserved Font Name Carme.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/carme",
+		"revision": "f67c5258ff3a55f5b6d1afe61e956e4a33cc4a86",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/carme",
+		"revision": "bddcc27d905baa14d9736bb0483ab20b5acf5434"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/carme/Carme-Regular.ttf",
+			"sha256": "2be32ebe8f62944b1df0f1bf0c76957bda369567b99454d749e51192a393db90",
+			"size": 78028,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

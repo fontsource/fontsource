@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 45,
+					"min": -45,
+					"tag": "XROT"
+				},
+				{
+					"default": 0,
+					"max": 45,
+					"min": -45,
+					"tag": "YROT"
+				}
+			],
+			"cmap": {
+				"codepointCount": 649,
+				"sha256": "f5dcd8b9e24fbed52abf71cec95e357013aa4cf9734e58c579a2064a5cf1acb9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/tiltprism/TiltPrism[XROT,YROT].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

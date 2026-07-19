@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1032,
+				"sha256": "d74b8f9ac0f0c0143ed5a44588f6b32899e8c542ab7b3835fa812c59f6185a58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1032,
+				"sha256": "d74b8f9ac0f0c0143ed5a44588f6b32899e8c542ab7b3835fa812c59f6185a58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1032,
+				"sha256": "d74b8f9ac0f0c0143ed5a44588f6b32899e8c542ab7b3835fa812c59f6185a58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1032,
+				"sha256": "d74b8f9ac0f0c0143ed5a44588f6b32899e8c542ab7b3835fa812c59f6185a58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1032,
+				"sha256": "d74b8f9ac0f0c0143ed5a44588f6b32899e8c542ab7b3835fa812c59f6185a58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1032,
+				"sha256": "d74b8f9ac0f0c0143ed5a44588f6b32899e8c542ab7b3835fa812c59f6185a58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1032,
+				"sha256": "d74b8f9ac0f0c0143ed5a44588f6b32899e8c542ab7b3835fa812c59f6185a58"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.101",
+			"outline": "glyf",
+			"path": "ofl/ibmplexsansarabic/IBMPlexSansArabic-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

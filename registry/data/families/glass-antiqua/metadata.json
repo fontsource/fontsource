@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-02-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Denis Masharov",
+	"family": "Glass Antiqua",
+	"id": "glass-antiqua",
+	"license": {
+		"attribution": "Copyright (c) 2011, Denis Masharov <denis.masharov@gmail.com>.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/glassantiqua",
+		"revision": "bb1982109d6167438faab892b5d9500db64799fc",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/glassantiqua",
+		"revision": "ccc1839b05e9827b7f3a1439d089952908cd0334"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/glassantiqua/GlassAntiqua-Regular.ttf",
+			"sha256": "af93faedd95bd2ea55fd6f6ca62136933b641497693f15b19fc3642d54b5b44e",
+			"size": 63012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

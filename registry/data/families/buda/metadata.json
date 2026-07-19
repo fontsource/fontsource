@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2010-12-20",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Adèle Antignac",
+	"family": "Buda",
+	"id": "buda",
+	"license": {
+		"attribution": "Copyright (c) 2010, Adele Antignac (a.antignac@hotmail.fr). All rights reserved. Licenced under SIL OFL vl.1",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/buda",
+		"revision": "66411d8b9f9ebefcb279b1d9282b70ff13b69c6b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/buda",
+		"revision": "c53669f67b2d293b48e43a1b394ef39ff08200de"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/buda/Buda-Light.ttf",
+			"sha256": "1c8a9bb52f69dba3b66961b792c03e5407f48070bf9ff8436103082f6dd6a720",
+			"size": 106012,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

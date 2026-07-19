@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 531,
+				"sha256": "d00b35a26d5b34c59946fa878068fe00496fc9696e6cb773794e1b6e5fd4a28a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindkochi/HindKochi-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 531,
+				"sha256": "d00b35a26d5b34c59946fa878068fe00496fc9696e6cb773794e1b6e5fd4a28a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindkochi/HindKochi-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 531,
+				"sha256": "d00b35a26d5b34c59946fa878068fe00496fc9696e6cb773794e1b6e5fd4a28a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindkochi/HindKochi-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 531,
+				"sha256": "d00b35a26d5b34c59946fa878068fe00496fc9696e6cb773794e1b6e5fd4a28a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindkochi/HindKochi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 531,
+				"sha256": "d00b35a26d5b34c59946fa878068fe00496fc9696e6cb773794e1b6e5fd4a28a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+			"outline": "glyf",
+			"path": "ofl/hindkochi/HindKochi-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

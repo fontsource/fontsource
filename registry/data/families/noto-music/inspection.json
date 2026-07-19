@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 890,
+				"sha256": "7d490f374f4aa0b26c88b3e9e24f3de8c58793255bcf1eda874c294b3eb0c450"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notomusic/NotoMusic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

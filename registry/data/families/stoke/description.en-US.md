@@ -1,0 +1,9 @@
+**Foundry: [Sorkin Type Co](http://www.sorkintype.com/)**
+
+Stoke is a semi-wide high contrast serifed text typeface. Stoke is inspired by letters found on 20th century UK posters showing an odd combination of seriousness of form and whimsical proportions and details. Stoke's low x height make it most suitable for use at medium to large sizes.
+
+Stoke is a Unicode typeface family that supports languages that use the Latin script and its variants, and could be expanded to support other scripts. More specifically, this release supports the following Unicode ranges: Latin-1, Latin-2: Eastern Europe, Turkish, Macintosh Character Set.
+
+Stoke was updated in July 2012 with a slightly darker regular weight to allow [ttfautohint](http://www.freetype.org/ttfautohint) to create high quality hinting for Windows. The optimization of the design for screen rendering involved changes to glyph sizes, letter spacing, and serif where bends were reduced to solve rendering problem in Windows XP. The character set was also expanded.
+
+Source files are available from [Google Code](http://code.google.com/p/googlefontdirectory/). To contribute to the project contact Eben Sorkin.

@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-06-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Alumni Sans Pinstripe",
+	"id": "alumni-sans-pinstripe",
+	"license": {
+		"attribution": "Copyright 2014 The Alumni Sans Pinstripe Project Authors (https://github.com/googlefonts/alumni-sans-pinstripe)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alumnisanspinstripe",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/alumni-sans-pinstripe",
+		"revision": "26cf834f2eca219b017478be9ea1387c78756e78"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alumnisanspinstripe/AlumniSansPinstripe-Italic.ttf",
+			"sha256": "5639e0d5bfec3719f127139d232c60c42aa3ae661b580e405e6a9b06002ab6be",
+			"size": 110624,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/alumnisanspinstripe/AlumniSansPinstripe-Regular.ttf",
+			"sha256": "c00bc8d641f2ddc444bbb9a07125f4eb1e6eda0384a896196ad0c7be0a9cfeea",
+			"size": 104716,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

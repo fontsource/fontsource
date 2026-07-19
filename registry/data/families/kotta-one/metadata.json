@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-01-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Ania Kruk",
+	"family": "Kotta One",
+	"id": "kotta-one",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Ania Kruk (hello@aniakruk.com), with Reserved Font Name \"Kotta\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kottaone",
+		"revision": "a9464593f253576773a18243d99e93c5b2bd0892",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kottaone/KottaOne-Regular.ttf",
+			"sha256": "17b1dd75c9ebd632b5df2b052fe5ae83139516a56e8367c5027dbbfd4ac5b184",
+			"size": 36624,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

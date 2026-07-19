@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-06-05",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Mohamed Gaber, Laura Garcia Mut, Khaled Hosny",
+	"family": "Fustat",
+	"id": "fustat",
+	"license": {
+		"attribution": "Copyright 2022 The Fustat Project Authors (https://github.com/Kief-Type-Foundry/Fustat)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fustat",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Kief-Type-Foundry/Fustat",
+		"revision": "642499b606f79bc6c25e63a4f8335a40afd96a13"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fustat/Fustat[wght].ttf",
+			"sha256": "ba09d90e6180e79334aadd42ea1ed0e97a405fadcd34412c1d02a6b8f679d402",
+			"size": 172620,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

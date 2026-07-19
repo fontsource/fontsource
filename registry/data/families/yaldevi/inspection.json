@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 200,
+					"max": 700,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 449,
+				"sha256": "733cafc0b78096fdd21c9ba38eca1be505f415bd5d245538ca5781b46eac3521"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/yaldevi/Yaldevi[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 700,
+				"min": 200
+			}
+		}
+	]
+}

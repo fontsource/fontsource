@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-05-14",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "MonteCarlo",
+	"id": "montecarlo",
+	"license": {
+		"attribution": "Copyright 2011 The MonteCarlo Project Authors (https://github.com/googlefonts/monte-carlo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/montecarlo",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/monte-carlo",
+		"revision": "62962590ae6b6dea67788c485d38217abe196e1b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/montecarlo/MonteCarlo-Regular.ttf",
+			"sha256": "11d397212722b5ddd1e3190c3812139035e7acffb01da8ceaec96eaf985e12b5",
+			"size": 393456,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

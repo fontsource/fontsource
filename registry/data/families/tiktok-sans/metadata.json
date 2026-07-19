@@ -1,0 +1,43 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-07-09",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Grilli Type, Contrast Foundry, Type Network",
+	"family": "TikTok Sans",
+	"id": "tiktok-sans",
+	"license": {
+		"attribution": "Copyright 2024 TikTok Inc. (https://github.com/tiktok/TikTokSans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/tiktoksans",
+		"revision": "1e1dba1da2af16f4d6e912e0750856ae980b097f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TikTok/TikTokSans",
+		"revision": "baa2f381f9102da9fbc3c83843ad224774240516"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/tiktoksans/TikTokSans[opsz,slnt,wdth,wght].ttf",
+			"sha256": "0e7f0a3e924c9a86478fc6fc2946de2e4ab8fc704ed72ee40434ade94bb9b0c6",
+			"size": 761964,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,78 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yoshimichi Ohira",
+	"family": "Zen Old Mincho",
+	"id": "zen-old-mincho",
+	"license": {
+		"attribution": "Copyright 2021 The Zen Old Mincho Project Authors (https://github.com/googlefonts/zen-oldmincho)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zenoldmincho",
+		"revision": "6c4ff7159f6296ebd06b92d8010b086fcb795409",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zen-oldmincho",
+		"revision": "490d363e7886839ba1f86971cf874a1d70ad27f0"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zenoldmincho/ZenOldMincho-Black.ttf",
+			"sha256": "84a80d8bca79d7d9478935045b216ed003ad40fdea5fd9116d524eb26e872cdc",
+			"size": 5416348,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/zenoldmincho/ZenOldMincho-Bold.ttf",
+			"sha256": "d6b95c1ff45c8dac153d28961e4c37d7d03b648330c71f884d124dc652a13c0d",
+			"size": 5436460,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/zenoldmincho/ZenOldMincho-Medium.ttf",
+			"sha256": "e60c7961e5110d0f08f902de43fe60865f1538845ff2092c779837257efac3bf",
+			"size": 5502836,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/zenoldmincho/ZenOldMincho-Regular.ttf",
+			"sha256": "4c051a78a21c4e8e9dccf1c754776d33f356b8cc6ef95d9b64761b9bae814b84",
+			"size": 5442512,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/zenoldmincho/ZenOldMincho-SemiBold.ttf",
+			"sha256": "d98b9783652081f7f9e662b0568bddeaf6462962dd39edf68781268eb60ea3a0",
+			"size": 5521388,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

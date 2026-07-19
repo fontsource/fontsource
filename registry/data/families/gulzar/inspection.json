@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 414,
+				"sha256": "65bdffe55ff7a566e6e900dd657ce4e5c12dd229b7c4d9385b87097c194ea5db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;[7b34f74]; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/gulzar/Gulzar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

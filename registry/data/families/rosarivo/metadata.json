@@ -1,0 +1,48 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-03-29",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Pablo Ugerman",
+	"family": "Rosarivo",
+	"id": "rosarivo",
+	"license": {
+		"attribution": "Copyright (c) 2011, UGR Design (www.ugrdesign.com.ar info@ugrdesign.com.ar), with Reserved Font Names \"Rosarivo\", \"Rosarivo Pro\", \"Rosarivo UGR\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rosarivo",
+		"revision": "3e8cc42cd757805a42ad5b51cf8b0296743d16db",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rosarivo/Rosarivo-Italic.ttf",
+			"sha256": "a9865d8ed5f7984c6994b8630a6ee9fa29395a13a72b5e257b3461139e305b47",
+			"size": 39244,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/rosarivo/Rosarivo-Regular.ttf",
+			"sha256": "8b6503b67c5c080bbef8cebc59f4665b7c6d45429c677ebffa0dbe797a4dc4d0",
+			"size": 41344,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

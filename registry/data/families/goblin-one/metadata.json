@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-06-29",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Riccardo De Franceschi",
+	"family": "Goblin One",
+	"id": "goblin-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Goblin\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/goblinone",
+		"revision": "2dcc32eb988b1049ba92e41e469c8f8362c06d1c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/goblinone",
+		"revision": "446c2b743e1eda33533ad624c543cfd623eb7c90"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/goblinone/GoblinOne.ttf",
+			"sha256": "26a15eafd8911f547e846066a1eea0521af2d870d6f17b8ecf0741768b99d099",
+			"size": 36736,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

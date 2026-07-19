@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-05-05",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Hubert and Fischer",
+	"family": "Rubik Mono One",
+	"id": "rubik-mono-one",
+	"license": {
+		"attribution": "Copyright 2015 The Rubik Project Authors (mail@hubertfischer.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/rubikmonoone",
+		"revision": "c6119d5a03fa1aac9d4567b98719e2e69b028ec5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alexeiva/rubikmonoone",
+		"revision": "7d08552d8921a0b864538b030cd0f59e7acdd4b1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/rubikmonoone/RubikMonoOne-Regular.ttf",
+			"sha256": "b22624b6a36e543e942106edfccd198c50b57b65b924bfe02a6f0a5699429e6b",
+			"size": 141088,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

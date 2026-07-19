@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Sunuwar is an unmodulated (“sans serif”) design for texts in the South Asian _Sunuwar_ script. It has 85 glyphs.

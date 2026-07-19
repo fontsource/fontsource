@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tamil",
+		"vietnamese"
+	],
+	"designer": "Marcelo Magalhães",
+	"family": "Coiny",
+	"id": "coiny",
+	"license": {
+		"attribution": "Copyright 2015 Marcelo Magalhaes (marcelommp@gmail.com @marcelommp)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/coiny",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/marcelommp/Coiny",
+		"revision": "0341b95f0c79f0e0b33ab7b5404cf9265be88516"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/coiny/Coiny-Regular.ttf",
+			"sha256": "ef02d723a54abe4819bea54ea8b2ecf72d77d258010bb336cd4862a37705eac7",
+			"size": 156520,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

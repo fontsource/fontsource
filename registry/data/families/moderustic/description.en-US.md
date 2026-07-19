@@ -1,0 +1,3 @@
+Moderustic is a versatile typeface meticulously designed for user interfaces, crafted with the aim of enhancing the user experience. This font maintains a consistent width across different styles, ensuring that your UI elements always occupy the same space on the page. It supports a variety of languages, including Greek, Latin, and Cyrillic, making it an ideal choice for designing user-friendly digital applications. Moderustic offers exceptional readability and adaptability, allowing you to create sleek and modern user interfaces that cater to a global audience.
+
+To contribute, see [github.com/Tural/Moderustic](https://github.com/Tural/Moderustic).

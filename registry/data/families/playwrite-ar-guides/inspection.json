@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 486,
+				"sha256": "e1a3628aadcfc5a5b9985a8cb1d9a0a20749722c4e5ab0ac366447cbb681b20d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003",
+			"outline": "glyf",
+			"path": "ofl/playwritearguides/PlaywriteARGuides-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

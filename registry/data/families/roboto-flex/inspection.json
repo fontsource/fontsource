@@ -1,0 +1,100 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 150,
+					"min": -200,
+					"tag": "GRAD"
+				},
+				{
+					"default": 96,
+					"max": 175,
+					"min": 27,
+					"tag": "XOPQ"
+				},
+				{
+					"default": 468,
+					"max": 603,
+					"min": 323,
+					"tag": "XTRA"
+				},
+				{
+					"default": 79,
+					"max": 135,
+					"min": 25,
+					"tag": "YOPQ"
+				},
+				{
+					"default": 750,
+					"max": 854,
+					"min": 649,
+					"tag": "YTAS"
+				},
+				{
+					"default": -203,
+					"max": -98,
+					"min": -305,
+					"tag": "YTDE"
+				},
+				{
+					"default": 738,
+					"max": 788,
+					"min": 560,
+					"tag": "YTFI"
+				},
+				{
+					"default": 514,
+					"max": 570,
+					"min": 416,
+					"tag": "YTLC"
+				},
+				{
+					"default": 712,
+					"max": 760,
+					"min": 528,
+					"tag": "YTUC"
+				},
+				{
+					"default": 14,
+					"max": 144,
+					"min": 8,
+					"tag": "opsz"
+				},
+				{
+					"default": 0,
+					"max": 0,
+					"min": -10,
+					"tag": "slnt"
+				},
+				{
+					"default": 100,
+					"max": 151,
+					"min": 25,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 1000,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 826,
+				"sha256": "9957c098f9f637e5a37a8c4673f40c823e889933b25f52120165cfa157dec8ca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.200;gftools[0.9.32]",
+			"outline": "glyf",
+			"path": "ofl/robotoflex/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 1000,
+				"min": 100
+			}
+		}
+	]
+}

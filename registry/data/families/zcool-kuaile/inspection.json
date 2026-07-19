@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7053,
+				"sha256": "6751660254114292483b665876bfca58a54804ba970f19804fd807026a6d8c34"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/zcoolkuaile/ZCOOLKuaiLe-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

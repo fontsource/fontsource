@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2013-06-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Fauna One",
+	"id": "fauna-one",
+	"license": {
+		"attribution": "Copyright 2013 The Fauna One Project Authors (https://github.com/etunni/fauna-one) with Reserved Font Name 'Fauna'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/faunaone",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/fauna-one",
+		"revision": "ed89976413a322f9d84aae5d97c17cfe5cf0d95d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/faunaone/FaunaOne-Regular.ttf",
+			"sha256": "3c636067331e86fbf349924f3c1964155b99072a390caaffe60ce6c0866363fe",
+			"size": 58804,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

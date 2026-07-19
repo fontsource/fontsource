@@ -1,0 +1,159 @@
+{
+	"category": "serif",
+	"dateAdded": "2017-10-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Production Type",
+	"family": "Spectral SC",
+	"id": "spectral-sc",
+	"license": {
+		"attribution": "Copyright 2017 The Spectral Project Authors (https://github.com/productiontype/Spectral)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/spectralsc",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/productiontype/Spectral",
+		"revision": "dbc06862d7030eedb1b01b60cdad8f6102f4ddfa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/spectralsc/SpectralSC-Bold.ttf",
+			"sha256": "ddbd53f4b1fd856f5a9b6f5110c095a4a4f4382bdab6decfd79cffd15656dddc",
+			"size": 273068,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-BoldItalic.ttf",
+			"sha256": "66d58379ac57b8cf25c4c7e45290934c39098533d3490259826e1e8f2f294caa",
+			"size": 284204,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-ExtraBold.ttf",
+			"sha256": "63847d218d39256fa2d753339f5c45adb6369b1ec65e09c3644830adffdc5ae7",
+			"size": 260376,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-ExtraBoldItalic.ttf",
+			"sha256": "166350d8946a85b0678f65b684ecd0027dcbd7832f27ea93a811b6c998e9d7b0",
+			"size": 273380,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-ExtraLight.ttf",
+			"sha256": "997326a9e206285ca211ec68aa34487853d08f1b2e5eaa51b76b603ad34e2021",
+			"size": 244656,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-ExtraLightItalic.ttf",
+			"sha256": "d0f32620ee3604d42417f6388c13cd8f87d80563a9d35a4612bda23d19a1fff6",
+			"size": 267392,
+			"variant": {
+				"style": "italic",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-Italic.ttf",
+			"sha256": "774281eb396b34b89b30ffc7779d32267299f275b050be6723c7cc252177e33d",
+			"size": 270316,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-Light.ttf",
+			"sha256": "53ef48cb4905c3bbae15baa4f0d72e2cde19350f80a8a497665dfe5a68ddc080",
+			"size": 269160,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-LightItalic.ttf",
+			"sha256": "ab0c53a48ff4671a15b2a25a53f130e02ecd828a8caa948b1b4e49f4ea28103c",
+			"size": 282688,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-Medium.ttf",
+			"sha256": "68169569f117fd5aa62dc443cc99683a492922b00fdc3be6df7ccf59dadd8418",
+			"size": 272768,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-MediumItalic.ttf",
+			"sha256": "94ad7436eb6896f24a254c5c17ba4123a53221a27f8f5f8d4ac054bade66feb6",
+			"size": 284168,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-Regular.ttf",
+			"sha256": "11b89ee8eff243c4068a9fc105650f8d90005b288f90c98c6d40fecd85a0306d",
+			"size": 260936,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-SemiBold.ttf",
+			"sha256": "7b907d97835d68c84abe35c6a3294aeedf7ac271ced70292502019b667034477",
+			"size": 272916,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/spectralsc/SpectralSC-SemiBoldItalic.ttf",
+			"sha256": "d7f8d9793b2c5d76a0b2b9232b6f92051c878951e1a29a87b5608f21751f72ed",
+			"size": 283888,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

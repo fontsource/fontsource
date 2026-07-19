@@ -1,0 +1,3 @@
+Bagel Fat is a very heavy/fat font with rounded details. By these rounded corners, the overall mood is cute and lovely which is inspired by bread, pastries and sweets. Also a large contrast at where the horizontal and the vertical stroke come across makes it unique, not just cute.
+
+To contribute, please visit [github.com/JAMO-TYPEFACE/BagelFat](https://github.com/JAMO-TYPEFACE/BagelFat).

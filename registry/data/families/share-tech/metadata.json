@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Carrois Apostrophe",
+	"family": "Share Tech",
+	"id": "share-tech",
+	"license": {
+		"attribution": "Copyright 2012 The Share Tech Project Authors (post@carrois.com), with Reserved Font Name 'Share.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sharetech",
+		"revision": "d4295326c7cf9d0d8957c89d8eb56143af634308",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/m4rc1e/ShareTech",
+		"revision": "2c501093f8f4fc6d985435133c8ac0fa92137431"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sharetech/ShareTech-Regular.ttf",
+			"sha256": "2d1dc42631c22ce99285a3a7c1d0ca9e0bae9e67aa1ca01a501081f27a203df4",
+			"size": 53096,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

@@ -1,0 +1,48 @@
+{
+	"category": "monospace",
+	"dateAdded": "2022-03-28",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eben Sorkin, Mirko Velimirović",
+	"family": "Spline Sans Mono",
+	"id": "spline-sans-mono",
+	"license": {
+		"attribution": "Copyright 2022 The Spline Sans Mono Project Authors (https://github.com/SorkinType/SplineSansMono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/splinesansmono",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/SplineSansMono",
+		"revision": "b167db03b7d7ae754bf7071c13415e7aeee7d073"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/splinesansmono/SplineSansMono-Italic[wght].ttf",
+			"sha256": "073f111f37a86cc6d952b7870b3c1aebbfc78f4056dd3996db28bbc7166667a6",
+			"size": 132152,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/splinesansmono/SplineSansMono[wght].ttf",
+			"sha256": "e20c1df32aa2f886e828cfcc81ca5c405d3f3b160990f6b892923e2e449bf525",
+			"size": 118744,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

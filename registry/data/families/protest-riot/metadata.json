@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2023-12-13",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols",
+		"vietnamese"
+	],
+	"designer": "Octavio Pardo",
+	"family": "Protest Riot",
+	"id": "protest-riot",
+	"license": {
+		"attribution": "Copyright 2020 The Protest Project Authors (https://github.com/octaviopardo/Protest)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/protestriot",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/octaviopardo/Protest",
+		"revision": "094e74050a0547c8decd760b4f926321a5e72c6e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/protestriot/ProtestRiot-Regular.ttf",
+			"sha256": "0e9f6679f106b5777bf609f6afbc1ee1233adaaa8b045cb5fbebfb1cedfbf732",
+			"size": 109708,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

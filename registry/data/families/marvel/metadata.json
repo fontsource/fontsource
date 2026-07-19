@@ -1,0 +1,65 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-03",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Carolina Trebol",
+	"family": "Marvel",
+	"id": "marvel",
+	"license": {
+		"attribution": "Copyright (c) 2011, Carolina Trebol <ca@fromzero.org>, with Reserved Font Name \"Marvel\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/marvel",
+		"revision": "3cf487942f493e5b164cff52a1124d51c9716f19",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/marvel/Marvel-Bold.ttf",
+			"sha256": "2f154dc302525d262f3a5930ed69c1ffdbe26ee837cafe9a2cc124b832d2ed9c",
+			"size": 36968,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/marvel/Marvel-BoldItalic.ttf",
+			"sha256": "4d1453fd5ce503afe0b16f4ac75e7642f2a007a55baaf589a47ec952ac73bfae",
+			"size": 40080,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/marvel/Marvel-Italic.ttf",
+			"sha256": "d3595cb5f687e593cefee93027db12783a2701a81dff460a82a6373724c2bbc4",
+			"size": 40668,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/marvel/Marvel-Regular.ttf",
+			"sha256": "826c418b11e194fc426338aa6da3b7420cbc2a8089d1b785198fe072e7515d10",
+			"size": 38220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

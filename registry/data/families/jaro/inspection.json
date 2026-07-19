@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 14,
+					"max": 72,
+					"min": 6,
+					"tag": "opsz"
+				}
+			],
+			"cmap": {
+				"codepointCount": 997,
+				"sha256": "c991194bff907aba01f951fcec690767813018526dd82e1232f16b61812d3833"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/jaro/Jaro[opsz].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

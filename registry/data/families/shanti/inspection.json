@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 392,
+				"sha256": "fa20380351d81d9bbb9800ec831f7f26cc78db74e8f127d95f1e1a4de8e3f65e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "ofl/shanti/Shanti-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

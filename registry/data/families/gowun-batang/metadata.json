@@ -1,0 +1,50 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-06-10",
+	"declaredSubsets": [
+		"korean",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Yanghee Ryu",
+	"family": "Gowun Batang",
+	"id": "gowun-batang",
+	"license": {
+		"attribution": "Copyright 2021 The Gowun Batang Project Authors (https://github.com/yangheeryu/Gowun-Batang)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gowunbatang",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yangheeryu/Gowun-Batang",
+		"revision": "4e73f5a9a004927220354f4b68a4c720da538147"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gowunbatang/GowunBatang-Bold.ttf",
+			"sha256": "dbfcaa646e5831e7478524924f02906f550285a5050699b4e38c9950b3ec4b94",
+			"size": 8178712,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/gowunbatang/GowunBatang-Regular.ttf",
+			"sha256": "466c593e7147412e748af4856d5ad14709b5a860bdf62b9c2546f2c5874e9849",
+			"size": 8433296,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

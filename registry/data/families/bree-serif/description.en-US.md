@@ -1,0 +1,1 @@
+This friendly upright italic is the serif cousin of TypeTogether's award winning family [Bree](http://www.type-together.com/Bree). Designed by Veronika Burian and José Scaglione, Bree was originally released in 2008 and became an immediate success because of its originality, charming appearance and versatility.

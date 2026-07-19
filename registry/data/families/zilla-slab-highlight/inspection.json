@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 517,
+				"sha256": "05f91d93dc967a4a558ab69dd2ae19ec3e69834bcb2f431eedff83ad76b0825a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/zillaslabhighlight/ZillaSlabHighlight-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 519,
+				"sha256": "9c7c35e009318f6b74f3bcc076e1c84aa756e633351b95421883f0ebef76c3e1"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/zillaslabhighlight/ZillaSlabHighlight-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

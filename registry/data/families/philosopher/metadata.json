@@ -1,0 +1,69 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-31",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Jovanny Lemonad",
+	"family": "Philosopher",
+	"id": "philosopher",
+	"license": {
+		"attribution": "Copyright 2011 The Philosopher Project Authors (https://github.com/alexeiva/philosopher)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/philosopher",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/alexeiva/philosopher",
+		"revision": "9983715d443b6be727d886cd16bce241cf9ad0b7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/philosopher/Philosopher-Bold.ttf",
+			"sha256": "2277c78b95657274b949f40b64b58d18fe7bbe0ec968c104d38906ec700024ea",
+			"size": 110068,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/philosopher/Philosopher-BoldItalic.ttf",
+			"sha256": "a8abb9341d1dc574d301edebf9ad8ea68dd0ae61ca1fa640b9bbdb5f388013c4",
+			"size": 118380,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/philosopher/Philosopher-Italic.ttf",
+			"sha256": "1ec5f0cc140a5daefca74692c1693c224aaac6936b8eda16598d56eba94cf008",
+			"size": 118000,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/philosopher/Philosopher-Regular.ttf",
+			"sha256": "e1cba0b5003b5694f1d6cc0fbe629f78362ad38a9ffd4d0cb7abfd9698a575ed",
+			"size": 111676,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

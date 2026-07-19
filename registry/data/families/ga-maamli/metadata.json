@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2024-06-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Afotey Clement Nii Odai, Ama Diaka, David Abbey-Thompson",
+	"family": "Ga Maamli",
+	"id": "ga-maamli",
+	"license": {
+		"attribution": "Copyright 2023 The Ga Maamli Project Authors (https://github.com/SorkinType/GaMaamli)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gamaamli",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/GaMaamli",
+		"revision": "aed1210a08dacfa86e419caf81fdb42940ee4e2a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gamaamli/GaMaamli-Regular.ttf",
+			"sha256": "68466b07730b44635898ee56c5bac8d89903b62df2d93ef16e7d4120a00a6638",
+			"size": 320256,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

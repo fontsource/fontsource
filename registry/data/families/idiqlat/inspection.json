@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 415,
+				"sha256": "1f3041e41e49d0b4020687398f72f85cf67c18115665686145ed5b7176b724fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100",
+			"outline": "glyf",
+			"path": "ofl/idiqlat/Idiqlat-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 415,
+				"sha256": "1f3041e41e49d0b4020687398f72f85cf67c18115665686145ed5b7176b724fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100",
+			"outline": "glyf",
+			"path": "ofl/idiqlat/Idiqlat-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 415,
+				"sha256": "1f3041e41e49d0b4020687398f72f85cf67c18115665686145ed5b7176b724fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.100",
+			"outline": "glyf",
+			"path": "ofl/idiqlat/Idiqlat-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,71 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-03-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Łukasz Dziedzic",
+	"family": "Carlito",
+	"id": "carlito",
+	"license": {
+		"attribution": "Copyright 2013 The Carlito Project Authors (https://github.com/googlefonts/carlito)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/carlito",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/carlito",
+		"revision": "3a810cab78ebd6e2e4eed42af9e8453c4f9b850a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/carlito/Carlito-Bold.ttf",
+			"sha256": "bb5d20f79b82599ec72983597437373a80f2d2085fa91fc144fd74e876a594db",
+			"size": 682468,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/carlito/Carlito-BoldItalic.ttf",
+			"sha256": "b32928186c119599e03ca6a1ffc680fdcb7fac95772f4b95d989cf6cd3861517",
+			"size": 808508,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/carlito/Carlito-Italic.ttf",
+			"sha256": "0b019225e58d702bfedcbd35c21696769f8ee115cb6343f84c2f240312450d1c",
+			"size": 615236,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/carlito/Carlito-Regular.ttf",
+			"sha256": "f6418f708baede9789daef5d458c0f53d2a888af9820e8062934e504fedc6595",
+			"size": 628032,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

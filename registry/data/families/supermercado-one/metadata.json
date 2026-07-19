@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-02",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "James Grieshaber",
+	"family": "Supermercado One",
+	"id": "supermercado-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Sorkin Type Co (www.sorkintype.com eben@eyebytes.com) with Reserved Font Name \"Supermercado One\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/supermercadoone",
+		"revision": "2ad16ab5809f087ac79e732341a5fd7e0481e597",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/supermercadoone/SupermercadoOne-Regular.ttf",
+			"sha256": "73e1f6c46e4f94949df8394a5dc207a5ae4c75b94d19b012c7b8eaa67dca3750",
+			"size": 143180,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

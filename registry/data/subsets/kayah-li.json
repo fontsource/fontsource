@@ -1,0 +1,47 @@
+{
+	"id": "kayah-li",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"2D",
+			"2D"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"2010",
+			"2010"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A900",
+			"A92F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/kayah-li_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "6052b23a1fc26618789ab80f3e9a38484183a3a7038b85102657e013a2471db2",
+		"upstream": "namFiles"
+	}
+}

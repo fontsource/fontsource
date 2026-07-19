@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 734,
+				"sha256": "7c50f9cd30869d8e95f7f6ff64f165b13624ea0515208b0bc4b4030673c62c79"
+			},
+			"colorTables": [],
+			"fontVersion": "0.01",
+			"outline": "glyf",
+			"path": "ofl/thabit/Thabit-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 734,
+				"sha256": "7c50f9cd30869d8e95f7f6ff64f165b13624ea0515208b0bc4b4030673c62c79"
+			},
+			"colorTables": [],
+			"fontVersion": "0.01",
+			"outline": "glyf",
+			"path": "ofl/thabit/Thabit-BoldOblique.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 733,
+				"sha256": "fa0836a5fb9dd70018b63dbeec1130a1ad6eeb3c448a74c714018da3038f218b"
+			},
+			"colorTables": [],
+			"fontVersion": "0.01",
+			"outline": "glyf",
+			"path": "ofl/thabit/Thabit-Oblique.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 733,
+				"sha256": "fa0836a5fb9dd70018b63dbeec1130a1ad6eeb3c448a74c714018da3038f218b"
+			},
+			"colorTables": [],
+			"fontVersion": "0.01",
+			"outline": "glyf",
+			"path": "ofl/thabit/Thabit.ttf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

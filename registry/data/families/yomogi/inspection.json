@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 8036,
+				"sha256": "007a03cab75b5fe657a28f981bfc87f4071a9786226e8c76a2184e538ceb080f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.100",
+			"outline": "glyf",
+			"path": "ofl/yomogi/Yomogi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

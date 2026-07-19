@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 579,
+				"sha256": "f2e809dc94a3650ea4f0d59fbb0eb1e709a2fdff45797cda0c5dee58bc418c97"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/arya/Arya-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 579,
+				"sha256": "f2e809dc94a3650ea4f0d59fbb0eb1e709a2fdff45797cda0c5dee58bc418c97"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/arya/Arya-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

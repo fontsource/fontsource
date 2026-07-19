@@ -1,0 +1,41 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2023-01-04",
+	"declaredSubsets": [
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Carolina Short",
+	"family": "Mynerve",
+	"id": "mynerve",
+	"license": {
+		"attribution": "Copyright 2022 The Mynerve Project Authors (https://github.com/carolinashort/MyNerve)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mynerve",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/carolinashort/MyNerve",
+		"revision": "4220ec76c588d97b43757c5332b0aa45ed9a52f3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mynerve/Mynerve-Regular.ttf",
+			"sha256": "1844706b0020e74f1cc38810266f8c45741bd0d9b7beeb05a584caee11dbc63e",
+			"size": 279224,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2023-02-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Suon May Sophanith",
+	"family": "Konkhmer Sleokchher",
+	"id": "konkhmer-sleokchher",
+	"license": {
+		"attribution": "Copyright 2022 The Konkhmer Sleokchher Project Authors (https://github.com/suonmaysophanith7/KonKhmer_SleokChher)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/konkhmersleokchher",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/suonmaysophanith7/KonKhmer_SleokChher",
+		"revision": "1289371ce1f5f4f9223f023f607d83c98fc03625"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/konkhmersleokchher/KonkhmerSleokchher-Regular.ttf",
+			"sha256": "16cf848e5670b1565cff77a1827347a56ee085e0b556f1f6e66de8d3ba0ef0df",
+			"size": 1834832,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

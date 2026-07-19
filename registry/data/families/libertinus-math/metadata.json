@@ -1,0 +1,37 @@
+{
+	"category": "display",
+	"dateAdded": "2025-04-03",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "Philipp H. Poll",
+	"family": "Libertinus Math",
+	"id": "libertinus-math",
+	"license": {
+		"attribution": "???.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/libertinusmath",
+		"revision": "823468bd7825152bce2b8fd2cf740432ad2fce8d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/libertinus",
+		"revision": "88dfbb0a7715817a43499e613fc8e6645174cd6a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/libertinusmath/LibertinusMath-Regular.ttf",
+			"sha256": "6eaebb1260c45328a49299a614eb20cee6d0b5c2fbb0d48314def159e0715318",
+			"size": 1259804,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-29"
+}

@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mohamed Gaber, Eduardo Tunni",
+	"family": "Lemonada",
+	"id": "lemonada",
+	"license": {
+		"attribution": "Copyright 2011 The Lemonada Project Authors (https://github.com/Gue3bara/Lemonada)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lemonada",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Gue3bara/Lemonada",
+		"revision": "21a53a1760f6f3c3e585bc50bc3463e97f1fa7e6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lemonada/Lemonada[wght].ttf",
+			"sha256": "84134e9e1da7d593839073157980a4d38296d2be10b61469a8f3169204959ad9",
+			"size": 189204,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

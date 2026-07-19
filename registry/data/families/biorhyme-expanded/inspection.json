@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 379,
+				"sha256": "6d44d351908502b93f9357c8c653d41c2f54ac55a6629cbbf5c4de2a40d68c1a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 379,
+				"sha256": "6d44d351908502b93f9357c8c653d41c2f54ac55a6629cbbf5c4de2a40d68c1a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 379,
+				"sha256": "6d44d351908502b93f9357c8c653d41c2f54ac55a6629cbbf5c4de2a40d68c1a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 379,
+				"sha256": "6d44d351908502b93f9357c8c653d41c2f54ac55a6629cbbf5c4de2a40d68c1a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 379,
+				"sha256": "6d44d351908502b93f9357c8c653d41c2f54ac55a6629cbbf5c4de2a40d68c1a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/biorhymeexpanded/BioRhymeExpanded-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

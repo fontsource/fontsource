@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1002,
+				"sha256": "da766d35a0581161ccc39ba6bb4b370c1c2e563695ccc6a0dbc3dccb9f53099f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.2g",
+			"outline": "glyf",
+			"path": "ofl/istokweb/IstokWeb-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "8001c07cb84f62da71d28b43e7157b3446c4d25a88caba7e8a00ac5199baf0ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.2g",
+			"outline": "glyf",
+			"path": "ofl/istokweb/IstokWeb-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "8001c07cb84f62da71d28b43e7157b3446c4d25a88caba7e8a00ac5199baf0ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.2g",
+			"outline": "glyf",
+			"path": "ofl/istokweb/IstokWeb-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1332,
+				"sha256": "cb1562aa46a50ed322a9174359b16b17966695ff4cd2c6735ac4058a82a85f40"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.2g",
+			"outline": "glyf",
+			"path": "ofl/istokweb/IstokWeb-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

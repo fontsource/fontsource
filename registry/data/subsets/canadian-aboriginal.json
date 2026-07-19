@@ -1,0 +1,59 @@
+{
+	"id": "canadian-aboriginal",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"131",
+			"131"
+		],
+		[
+			"2C7",
+			"2C7"
+		],
+		[
+			"2D8",
+			"2DB"
+		],
+		[
+			"307",
+			"307"
+		],
+		[
+			"1400",
+			"167F"
+		],
+		[
+			"18B0",
+			"18F5"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"11AB0",
+			"11ABF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/canadian-aboriginal_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "afe2d61967b5a92d4a3d72870111e8610310545285010ba80a78aa36a28d4cca",
+		"upstream": "namFiles"
+	}
+}

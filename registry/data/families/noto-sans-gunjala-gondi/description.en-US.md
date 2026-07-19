@@ -1,0 +1,1 @@
+Noto is a global font collection for writing in all modern and ancient languages. Noto Sans Gunjala Gondi is a design for the Indic _Gunjala Gondi_ script. It has multiple weights, and has 254 glyphs.

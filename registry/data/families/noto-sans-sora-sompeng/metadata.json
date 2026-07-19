@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"sora-sompeng"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Sora Sompeng",
+	"id": "noto-sans-sora-sompeng",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sora-sompeng)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssorasompeng",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/sora-sompeng",
+		"revision": "d6dc3eaa0f252c018aaf41314e24bcc889a8c5e4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssorasompeng/NotoSansSoraSompeng[wght].ttf",
+			"sha256": "1fe66f4904e960705b68c60f7e92ae579ef80bab30f29b894d44eed1edc306e0",
+			"size": 60240,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

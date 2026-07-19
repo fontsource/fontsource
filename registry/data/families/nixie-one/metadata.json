@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2011-06-21",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Jovanny Lemonad",
+	"family": "Nixie One",
+	"id": "nixie-one",
+	"license": {
+		"attribution": "Copyright (c) 2011, Jovanny Lemonad (lemonad@jovanny.ru), with Reserved Font Name \"Nixie\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/nixieone",
+		"revision": "78815787debb3688a8c50cfd56adda1d51ba6b34",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/nixieone/NixieOne-Regular.ttf",
+			"sha256": "69030eb096d2590d00f4ac79fefa1e6e9c12f2d396a37527a1f7d6c047cd0f5d",
+			"size": 52580,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

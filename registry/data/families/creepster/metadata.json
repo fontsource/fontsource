@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Sideshow",
+	"family": "Creepster",
+	"id": "creepster",
+	"license": {
+		"attribution": "Copyright (c) 2011, Font Diner, Inc DBA Sideshow (diner@fontdiner.com), with Reserved Font Names \"Creepster\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/creepster",
+		"revision": "50f8ff96f9de584858108a44a7b3dd4065dce11f",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/creepster",
+		"revision": "1c79da6f4d0cc0835ba16d20aba5c113e6245e7e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/creepster/Creepster-Regular.ttf",
+			"sha256": "402aeb734586c74aecd3dbdc454589b1fb12e2e1c71f782fd019ae68066d9f44",
+			"size": 62724,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-09"
+}

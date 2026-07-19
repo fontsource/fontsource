@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2014-12-10",
+	"declaredSubsets": [
+		"latin",
+		"menu",
+		"telugu"
+	],
+	"designer": "Purushoth Kumar Guttula",
+	"family": "Dhurjati",
+	"id": "dhurjati",
+	"license": {
+		"attribution": "Copyright (c) 2012 Andhrapradesh Society for Knowledge Networks (fonts.siliconandhra.org). Copyright (c) 2014 Google, Inc.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dhurjati",
+		"revision": "cd8239071e20b91382a8e6949baf12ea864e39a7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/appajid/dhurjati",
+		"revision": "a318ca871e126878f22e1e235ea9c3563b2344fc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dhurjati/Dhurjati-Regular.ttf",
+			"sha256": "7f82ab141b77d263f9ea9b31b47faf50c11310f42fce6d9dffeaaa334909bbf9",
+			"size": 990048,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

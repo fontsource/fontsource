@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Michal Sahar",
+	"family": "Suez One",
+	"id": "suez-one",
+	"license": {
+		"attribution": "Copyright 2016 Michal Sahar. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/suezone",
+		"revision": "df014a91df8d311cae980f53f49dac6dfc7b08b8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/MichalSahar/Suez",
+		"revision": "04af4fcca02b34b461033520fc758132f7519c49"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/suezone/SuezOne-Regular.ttf",
+			"sha256": "3ef86844aad0cf9db7dcbda326f3d2f54cc4ccfe56db949e9e0c60a17031bd41",
+			"size": 70856,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

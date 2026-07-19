@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Lemon",
+	"id": "lemon",
+	"license": {
+		"attribution": "Copyright 2011 The Lemon Project Authors (https://github.com/etunni/lemon) with Reserved Font Name \"Lemon\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lemon",
+		"revision": "e2332cf862ac3145c0ee5f24f04f4c1819b2410b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/lemon",
+		"revision": "88027507a29de7878336812a328d25245c106e9b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lemon/Lemon-Regular.ttf",
+			"sha256": "6a3973a9ea7c05e6041969d0a5e8f2b04db3b2ccd5e5bc98bc7ff52c0940ce2f",
+			"size": 77180,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

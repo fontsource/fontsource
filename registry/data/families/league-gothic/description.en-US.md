@@ -1,0 +1,3 @@
+League Gothic is a revival of an old classic: Alternate Gothic. It was originally designed by Morris Fuller Bentonfor the American Type Founders Company in 1903. The League Of Moveable Type decided to make their own version, and contribute it to the Open Source Type Movement. Thanks to a commission from the fine & patient folks over at WND.com, it’s been revised and updated with contributions from Micah Rich, Tyler Finck, Dannci and Mirko Velimirovic.
+
+To contribute, see [github.com/sursly/league-gothic](https://github.com/sursly/league-gothic).

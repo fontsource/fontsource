@@ -1,0 +1,39 @@
+{
+	"id": "old-uyghur",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"640",
+			"640"
+		],
+		[
+			"10AF2",
+			"10AF2"
+		],
+		[
+			"10F70",
+			"10F89"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/old-uyghur_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "215c6d80edcb4bf5197f0c183f1a3760436ff61affbff8d66cec0f717628d382",
+		"upstream": "namFiles"
+	}
+}

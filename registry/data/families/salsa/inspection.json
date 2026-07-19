@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 241,
+				"sha256": "2c4cf481e070fe3b3f42d372cdd2b7cac00b8644510544c09759a2193204bc08"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/salsa/Salsa-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

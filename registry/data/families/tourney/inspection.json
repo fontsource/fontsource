@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 645,
+				"sha256": "f4ba44a1b5d7b0ff8f11c64d0088f390d7da2705d18b9faab337d3eb7b15ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015",
+			"outline": "glyf",
+			"path": "ofl/tourney/Tourney-Italic[wdth,wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 645,
+				"sha256": "f4ba44a1b5d7b0ff8f11c64d0088f390d7da2705d18b9faab337d3eb7b15ae00"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.015",
+			"outline": "glyf",
+			"path": "ofl/tourney/Tourney[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

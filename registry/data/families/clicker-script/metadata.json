@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-11-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Astigmatic",
+	"family": "Clicker Script",
+	"id": "clicker-script",
+	"license": {
+		"attribution": "Copyright (c) 2012 by Brian J. Bonislawsky and Jim Lyles for Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Clicker Script\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/clickerscript",
+		"revision": "4616d5078869dc94a8b1b4b32ebd471f469c547b",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/clickerscript",
+		"revision": "f8f050697a52a8e2e10009db97c1a18b0099bb6f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/clickerscript/ClickerScript-Regular.ttf",
+			"sha256": "0221d4376fc0a25795a32d7e309798b6693b56f65c5851f92529043b230a9117",
+			"size": 64012,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

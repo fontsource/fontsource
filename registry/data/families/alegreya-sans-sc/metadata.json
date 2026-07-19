@@ -1,0 +1,161 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2013-12-04",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Juan Pablo del Peral, HT Fonts",
+	"family": "Alegreya Sans SC",
+	"id": "alegreya-sans-sc",
+	"license": {
+		"attribution": "Copyright 2013 The Alegreya Sans Project Authors (https://github.com/huertatipografica/Alegreya-Sans)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alegreyasanssc",
+		"revision": "d0ca27ed3e1916321be3dd6981edf62fda40f7e5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/huertatipografica/Alegreya-Sans",
+		"revision": "e6d16c40fa641159b8b371e2a40bda0c9a3a1d43"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-Black.ttf",
+			"sha256": "786209b83189e790f95094a24f991537d8cef5b985ecef986be33b88bafded96",
+			"size": 270436,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-BlackItalic.ttf",
+			"sha256": "2fce60ff17e99d1be4bf3f010d71b129e632d047db248b9f92fb2fd1364c04a5",
+			"size": 277236,
+			"variant": {
+				"style": "italic",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-Bold.ttf",
+			"sha256": "1f7f1ca33c4ae013a94d374106fd4044820b3d915e7f7a22182ddaf49b9c7912",
+			"size": 275612,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-BoldItalic.ttf",
+			"sha256": "66e79aa70b8375bac7df4acb0545c4b790347ce724546eaf049527323e4d4cdb",
+			"size": 274568,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-ExtraBold.ttf",
+			"sha256": "f9e72a3ca819c1a087824c95f830ca9fa56a367d72078db5e57e62e7e0917a93",
+			"size": 281408,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-ExtraBoldItalic.ttf",
+			"sha256": "b6275ac5e89e14f8cce5fb34571a5bc44a4ed6070ff209b25f70c038e70e4634",
+			"size": 280488,
+			"variant": {
+				"style": "italic",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-Italic.ttf",
+			"sha256": "f5e231dd870cfcb172a90e4e5686690a59d7f30280fab8a6e89e309fc03f5e06",
+			"size": 271508,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-Light.ttf",
+			"sha256": "64088b83af22b58e945f56c494e39fffd9b4565ed2bddbbd849963ae2bdda4e3",
+			"size": 261328,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-LightItalic.ttf",
+			"sha256": "430978829be347c7b30ebe2520d15110a35a7d0a38408aae4a5ad692aa625b91",
+			"size": 264392,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-Medium.ttf",
+			"sha256": "532c7dc4bc0fe8109d2c5f17829d9985597aacb86e8001023e045d4ee00f356a",
+			"size": 266120,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-MediumItalic.ttf",
+			"sha256": "bb3373b80b8803a047760415ea515faa0924db6336512653bc32b2ac3d7f71ce",
+			"size": 273588,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-Regular.ttf",
+			"sha256": "0c5d4abcdd83af0ce9f5d4ca49f226c2b3030d2a83adf92cb5a5c2638c8e68b0",
+			"size": 267620,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-Thin.ttf",
+			"sha256": "14b8df3d295d6a67b28a31249f43f4f891eb91cf5bdd3d40820b322673cc071a",
+			"size": 256020,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		},
+		{
+			"path": "ofl/alegreyasanssc/AlegreyaSansSC-ThinItalic.ttf",
+			"sha256": "92c0ecbc1f3d52774f557b09a9cda4fa4e363e93e2f7f7bb9831abf7f63d18f4",
+			"size": 266676,
+			"variant": {
+				"style": "italic",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-05-27"
+}

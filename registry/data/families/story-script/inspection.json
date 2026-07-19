@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 573,
+				"sha256": "34140e50ad8419a218c6f91159d4c50a3a8d17c85c16010e40bb9b7b9633dfd7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/storyscript/StoryScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

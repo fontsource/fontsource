@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"bhaiksuki",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Bhaiksuki",
+	"id": "noto-sans-bhaiksuki",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/bhaiksuki)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansbhaiksuki",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/bhaiksuki",
+		"revision": "570db5a125e4f011e2d54b55220c0e2111adea2e"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansbhaiksuki/NotoSansBhaiksuki-Regular.ttf",
+			"sha256": "eac343bece0d783218f3ab574df20217c0e165de3d04cd6fef8b47934605e0d9",
+			"size": 370124,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"nabataean"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Nabataean",
+	"id": "noto-sans-nabataean",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nabataean)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansnabataean",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/nabataean",
+		"revision": "d16bdaad189b2af2547b7e39819b0501f324f9f7"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansnabataean/NotoSansNabataean-Regular.ttf",
+			"sha256": "b21dc4564143ce3647bfb5c410b8b2f0affb257756693b9578a1328fdf9d82e8",
+			"size": 55600,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

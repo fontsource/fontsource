@@ -1,0 +1,42 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yoshimichi Ohira",
+	"family": "Zen Antique Soft",
+	"id": "zen-antique-soft",
+	"license": {
+		"attribution": "Copyright 2021 The Zen Antique Project Authors (https://github.com/googlefonts/zen-antique)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zenantiquesoft",
+		"revision": "70bcf4897b4cc67d0fc31551e97bc3c6b54d36b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zen-antique",
+		"revision": "3521a97dfa21d4c985725be88e9beb5edef517b9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zenantiquesoft/ZenAntiqueSoft-Regular.ttf",
+			"sha256": "ab566917267087f4ee3ee9662ce09ff13070e42c704e1e84b6de4c75457da1a5",
+			"size": 7095608,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

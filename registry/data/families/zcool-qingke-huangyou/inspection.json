@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 9429,
+				"sha256": "54f1008f888b622400e122b42264a769c8cf63cb611af07060c3df75111ba686"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/zcoolqingkehuangyou/ZCOOLQingKeHuangYou-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

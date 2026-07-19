@@ -1,0 +1,47 @@
+{
+	"id": "tai-viet",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"A78B",
+			"A78C"
+		],
+		[
+			"AA80",
+			"AAC2"
+		],
+		[
+			"AADB",
+			"AADF"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/tai-viet_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "f7e65c8bf4794f7b88cf2bdbd9f50a6e798c88e9779e2054eb0cc38ef64a836c",
+		"upstream": "namFiles"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 510,
+				"sha256": "43b6963d86fa34f36ef5e1ad0642b28a4d66a18bd6224b137017e2456eb007db"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/gidugu/Gidugu-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

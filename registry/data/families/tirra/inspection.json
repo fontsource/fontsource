@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "0653d9f836cb2cf47046231ea68f05890a70f1fcddeabb9ca347b3e270625a4b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.100",
+			"outline": "glyf",
+			"path": "ofl/tirra/Tirra-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "0653d9f836cb2cf47046231ea68f05890a70f1fcddeabb9ca347b3e270625a4b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.100",
+			"outline": "glyf",
+			"path": "ofl/tirra/Tirra-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "0653d9f836cb2cf47046231ea68f05890a70f1fcddeabb9ca347b3e270625a4b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.100",
+			"outline": "glyf",
+			"path": "ofl/tirra/Tirra-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "0653d9f836cb2cf47046231ea68f05890a70f1fcddeabb9ca347b3e270625a4b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.100",
+			"outline": "glyf",
+			"path": "ofl/tirra/Tirra-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "0653d9f836cb2cf47046231ea68f05890a70f1fcddeabb9ca347b3e270625a4b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.100",
+			"outline": "glyf",
+			"path": "ofl/tirra/Tirra-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "0653d9f836cb2cf47046231ea68f05890a70f1fcddeabb9ca347b3e270625a4b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.100",
+			"outline": "glyf",
+			"path": "ofl/tirra/Tirra-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

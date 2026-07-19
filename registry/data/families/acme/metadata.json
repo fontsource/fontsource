@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Juan Pablo del Peral, HT Fonts",
+	"family": "Acme",
+	"id": "acme",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Juan Pablo del Peral (info@htfonts.com), with Reserved Font Name \"Acme\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/acme",
+		"revision": "1e6b7aac1e7f9eb9e22b72486af83cd30ced2e05",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/acme",
+		"revision": "d78cd61343e6d3bb3d00d8836d727fa1b7ac02fa"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/acme/Acme-Regular.ttf",
+			"sha256": "76fdb582f54653c27274d5cd986f994c28d7fa7d323e7eb9ee14ce8875d39dc4",
+			"size": 23292,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

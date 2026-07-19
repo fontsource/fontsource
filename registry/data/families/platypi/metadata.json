@@ -1,0 +1,49 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-03-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "David Sargent",
+	"family": "Platypi",
+	"id": "platypi",
+	"license": {
+		"attribution": "Copyright 2024 The Platypi Project Authors (https://github.com/d-sargent/platypi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/platypi",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/d-sargent/platypi",
+		"revision": "c204c7ba647cd05f55a68be6973340fa47aa67d1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/platypi/Platypi-Italic[wght].ttf",
+			"sha256": "716b546cb067982720d2db8327da4921ca32c07206d036b59def8cff6a00f537",
+			"size": 166552,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/platypi/Platypi[wght].ttf",
+			"sha256": "c4a2f2525bd0deaed25ccca4e0be42d5dcbf2a4739e2cc32fe3e7603333b7d53",
+			"size": 169476,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

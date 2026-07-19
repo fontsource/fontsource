@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 441,
+				"sha256": "dba7867341128f5a45f6e5672353f9a0a71fd1b2dbac9a01fd14aad2881d97b2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v0.8) -G 200 -r 50",
+			"outline": "glyf",
+			"path": "ofl/racingsansone/RacingSansOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

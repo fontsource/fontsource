@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 241,
+				"sha256": "6cac4453433205feae7bbf25165619e65cf03ad19af39222403c45742df877e5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/zentokyozoo/ZenTokyoZoo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

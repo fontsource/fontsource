@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2012-10-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Paprika",
+	"id": "paprika",
+	"license": {
+		"attribution": "Copyright 2012 The Paprika Project Authors (https://github.com/etunni/paprika)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/paprika",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/paprika",
+		"revision": "4297101a8717fd9ee5795b693f37f3c80bdd3d68"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/paprika/Paprika-Regular.ttf",
+			"sha256": "a53bba54989b5401d61115332ad2554c3cc6b7ab82e02cb0bd1abc4d48ad63cb",
+			"size": 90580,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

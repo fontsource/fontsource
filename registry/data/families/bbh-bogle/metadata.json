@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-09-24",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Studio DRAMA",
+	"family": "BBH Bogle",
+	"id": "bbh-bogle",
+	"license": {
+		"attribution": "Copyright 2025 The BBH Project Authors (https://github.com/Studio-DRAMA/BBH)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bbhbogle",
+		"revision": "451e5f33a3434eb0a34cd2c012516b1cf1876644",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Studio-DRAMA/BBH",
+		"revision": "b8d40ef62b138be4c7c3dac2de117217f261b24b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bbhbogle/BBHBogle-Regular.ttf",
+			"sha256": "e70fc533bc3c89d2742d60f1772bd0c933305f4a41ae4e9996d2799d37104376",
+			"size": 15656,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

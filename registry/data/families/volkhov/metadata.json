@@ -1,0 +1,65 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-08-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Volkhov",
+	"id": "volkhov",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Volkhov\" and \"Volkhov Bold Italic\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL\nCopyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Volkhov\" and \"Volkhov Bold\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL\nCopyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Volkhov\" and \"Volkhov Italic\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL\nCopyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Volkhov\" and \"Volkhov Regular\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/volkhov",
+		"revision": "6f2b1051eba18c5629c3a517ba5b06f149a0ea83",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/volkhov/Volkhov-Bold.ttf",
+			"sha256": "ad28a57498198a9336b673cea068582aa443dc72c98a3222552e8392225af646",
+			"size": 112220,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/volkhov/Volkhov-BoldItalic.ttf",
+			"sha256": "4863ee6fce826ad47bbf68531bbc0cd861a6c832e8a4905ea79de0aa6add05c2",
+			"size": 102728,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/volkhov/Volkhov-Italic.ttf",
+			"sha256": "027360a4bfabcfcf49f95c9f9944b2147cd95c3a72dcb2a66eac7e7ef6e714f1",
+			"size": 102360,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/volkhov/Volkhov-Regular.ttf",
+			"sha256": "f8f49e898a4e9df91ac2f3e0d34deb4912d4fe2424831b514de297c8046d58d9",
+			"size": 112276,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

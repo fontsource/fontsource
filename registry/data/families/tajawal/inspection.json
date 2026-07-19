@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 446,
+				"sha256": "a8c1e5f54bbcec5c6f649c69f73cf0fced95e6395bc46f752259718f18bd9cab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/tajawal/Tajawal-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 455,
+				"sha256": "b1b9d1db067906542087626cba19d71e97a379cd2614b55648db06b5957562b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/tajawal/Tajawal-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 446,
+				"sha256": "a8c1e5f54bbcec5c6f649c69f73cf0fced95e6395bc46f752259718f18bd9cab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/tajawal/Tajawal-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 445,
+				"sha256": "c4555f8476499c852c0b9a4f0c0baf3a7fad19a37244d695201e3807cf9cddd3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/tajawal/Tajawal-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 454,
+				"sha256": "d944d02b24153f6ccde6ac43e592beb71e77bac83bfc9205b8d1cd3cb8ffdd4f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/tajawal/Tajawal-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 455,
+				"sha256": "b1b9d1db067906542087626cba19d71e97a379cd2614b55648db06b5957562b4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/tajawal/Tajawal-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 446,
+				"sha256": "a8c1e5f54bbcec5c6f649c69f73cf0fced95e6395bc46f752259718f18bd9cab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.700",
+			"outline": "glyf",
+			"path": "ofl/tajawal/Tajawal-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

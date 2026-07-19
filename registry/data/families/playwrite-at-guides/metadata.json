@@ -1,0 +1,47 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2024-11-27",
+	"declaredSubsets": [
+		"menu"
+	],
+	"designer": "TypeTogether, Veronika Burian, José Scaglione",
+	"displayName": "Playwrite Österreich Guides",
+	"family": "Playwrite AT Guides",
+	"id": "playwrite-at-guides",
+	"license": {
+		"attribution": "Copyright 2023 The Playwrite Project Authors (https://github.com/TypeTogether/Playwrite)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/playwriteatguides",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TypeTogether/Playwrite",
+		"revision": "02e4e15767f5b6c2109413429fc51879b9507ab4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/playwriteatguides/PlaywriteATGuides-Italic.ttf",
+			"sha256": "a9f075e96d4c33b614c5454a7b6b3e6f4ca68cfed0f3674713d3d0369f7dd058",
+			"size": 378540,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/playwriteatguides/PlaywriteATGuides-Regular.ttf",
+			"sha256": "7708b88b250f4cb7a5a6395c97ffb46daf80034e2954c497b7c1a34ac6401ff6",
+			"size": 372876,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

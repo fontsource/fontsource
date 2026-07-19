@@ -1,0 +1,52 @@
+{
+	"category": "serif",
+	"dateAdded": "2021-11-16",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Frank Grießhammer",
+	"family": "Source Serif 4",
+	"id": "source-serif-4",
+	"license": {
+		"attribution": "© 2014 - 2021 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name ‘Source’.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sourceserif4",
+		"revision": "08dc85da6bca7ae308a6f1d38d0b137465646071",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/adobe-fonts/source-serif",
+		"revision": "b3980ade53bb3d023a0006076d05349236b309b1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sourceserif4/SourceSerif4-Italic[opsz,wght].ttf",
+			"sha256": "15fbc7e4679489a501998c3669272637a6646388ef7e4bd77eebb5bf967a1f42",
+			"size": 855432,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/sourceserif4/SourceSerif4[opsz,wght].ttf",
+			"sha256": "97b2d4da6e3cb494b5a1e66ae176914d852ccabef49e0c02c0df25f3e39aca0b",
+			"size": 1209508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

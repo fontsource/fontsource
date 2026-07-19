@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Vernon Adams",
+	"family": "Francois One",
+	"id": "francois-one",
+	"license": {
+		"attribution": "Copyright 2011 The Francois One Project Authors (contact@sansoxygen.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/francoisone",
+		"revision": "c1879b395052a03cbc29afdda23c289225351719",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/francoisoneFont",
+		"revision": "09ca2d148ed2ae88b0b89b5309f5eedd1daa2e0c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/francoisone/FrancoisOne-Regular.ttf",
+			"sha256": "700fb5e4a5b6edb14dde2dcd481e5a9cac14281579cf42500170bae7cddd3609",
+			"size": 79356,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

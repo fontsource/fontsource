@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 368,
+				"sha256": "12164628fefc2ed1a12174eb36ec5bc7e269b6608f4df27a48b667291a31c95f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/uncialantiqua/UncialAntiqua-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,11 @@
+Andika is a sans serif, Unicode-compliant font designed especially for literacy use, taking into account the needs of beginning readers. The focus is on clear, easy-to-perceive letterforms that will not be readily confused with one another.
+
+Starting with an initial draft of a basic lowercase Latin alphabet by Victor Gaultney, Annie Olsen refined the design and added over 4,700 glyphs, including a complete extended Cyrillic set.
+
+A sans serif font is preferred by some literacy personnel for teaching people to read. Its forms are simpler and less cluttered than those of most serif fonts. For years, literacy workers have had to make do with fonts that were not really suitable for beginning readers and writers. In some cases, literacy specialists have had to tediously assemble letters from a variety of fonts in order to get all of the characters they need for their particular language project, resulting in confusing and unattractive publications. Andika addresses those issues.
+
+The font has been upgraded in May 2022. This upgrade gives additional weight styles and expands the glyphset to support full Latin and Cyrillic characters sets. Rendering is also much improved.
+
+Read more at [software.sil.org/andika](http://software.sil.org/andika/)
+
+To contribute, see [github.com/silnrsi/font-andika](https://github.com/silnrsi/font-andika).

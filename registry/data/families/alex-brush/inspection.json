@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 575,
+				"sha256": "e7e9ff3f64a5e3c11a34d17fa865179f2ede931bc52d57aad2c4b2ba5b5b16eb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.111; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/alexbrush/AlexBrush-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

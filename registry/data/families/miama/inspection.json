@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1110,
+				"sha256": "994b71a65a7de96f1ecd40a4776c319a671a087e80194393a48d6bfbcff382f6"
+			},
+			"colorTables": [],
+			"fontVersion": "0.32",
+			"outline": "glyf",
+			"path": "ofl/miama/Miama-Regular.ttf",
+			"style": "italic",
+			"weight": 400
+		}
+	]
+}

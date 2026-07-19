@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-10-08",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Passions Conflict",
+	"id": "passions-conflict",
+	"license": {
+		"attribution": "Copyright 2004 The Hurricane Project Authors (https://github.com/googlefonts/passions-conflict)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/passionsconflict",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/passions-conflict",
+		"revision": "214cc2936ec1ec8fde1143ce215c0ec189a6638d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/passionsconflict/PassionsConflict-Regular.ttf",
+			"sha256": "6fa9080c8a5577803c3e6073e92a54758930e8cc31112f6500901be34d5fc55a",
+			"size": 149128,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

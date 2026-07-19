@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "2a17ac5ee3915b3301401f208d5b3b70830a5f325447d8e415d84ed7b065eee7"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.000",
+			"outline": "glyf",
+			"path": "ofl/stalemate/Stalemate-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

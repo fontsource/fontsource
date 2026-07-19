@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1384,
+				"sha256": "d54041ef3dc44fab16774dccfc58d319b9d1bae6e13eb62e2c7c147718de7f5b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bonanova/BonaNova-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1381,
+				"sha256": "76a119328876650bbef72bb3a83556247649e6d4499c00c408f2526c2dde2021"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bonanova/BonaNova-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1384,
+				"sha256": "d54041ef3dc44fab16774dccfc58d319b9d1bae6e13eb62e2c7c147718de7f5b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/bonanova/BonaNova-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

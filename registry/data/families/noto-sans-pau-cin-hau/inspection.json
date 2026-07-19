@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 392,
+				"sha256": "4020f61b714c13482911fcb405a294dd4d873437d8815c38c9582755c923a147"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.002; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanspaucinhau/NotoSansPauCinHau-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

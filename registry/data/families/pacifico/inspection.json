@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 805,
+				"sha256": "88c987f1299477a3f1a6f770908af2f9ecedd84b8c31abf49b0d9f696808c4cd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.001",
+			"outline": "glyf",
+			"path": "ofl/pacifico/Pacifico-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

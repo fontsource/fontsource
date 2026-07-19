@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1019,
+				"sha256": "75372cbf154e17e5b5d58f34fcb28c0b3680144f6b19c55d814e6ae59ee62751"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/freeman/Freeman-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

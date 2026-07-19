@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "b355567a17423edffdeefc3b863eded1f546421687e8c592956648a274783e3d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/emilyscandy/EmilysCandy-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 237,
+				"sha256": "988ee9e32cb4a8f3bd5381114b772f25b84b5078c96c9a03112da4eb38d8da5f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/artifika/Artifika-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

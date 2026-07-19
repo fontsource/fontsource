@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3223,
+				"sha256": "60b24acc41e53f4cdcc316aecd1a29681a95bad58c8d8374aaabb006cc7c94f8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.29]",
+			"outline": "glyf",
+			"path": "ofl/moiraione/MoiraiOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

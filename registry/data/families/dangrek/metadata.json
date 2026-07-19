@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Dangrek",
+	"id": "dangrek",
+	"license": {
+		"attribution": "Copyright 2020 The Dangrek Project Authors (https://github.com/danhhong/Dangrek)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/dangrek",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Dangrek",
+		"revision": "a8da8cf02ec7e96f45716b0052a027007bb042c2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/dangrek/Dangrek-Regular.ttf",
+			"sha256": "d7dbac288167ef960ea67a5d45890b47419e18c046e90c68ee655a0168e0d06d",
+			"size": 62464,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 337,
+				"sha256": "89dda8d255e93f1b2fd27e13cbd0f3df909b369fd109a629bf5b2b8aaa59f958"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.302;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/laila/Laila-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 337,
+				"sha256": "89dda8d255e93f1b2fd27e13cbd0f3df909b369fd109a629bf5b2b8aaa59f958"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.302;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/laila/Laila-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 337,
+				"sha256": "89dda8d255e93f1b2fd27e13cbd0f3df909b369fd109a629bf5b2b8aaa59f958"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.302;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/laila/Laila-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 337,
+				"sha256": "89dda8d255e93f1b2fd27e13cbd0f3df909b369fd109a629bf5b2b8aaa59f958"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.302;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/laila/Laila-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 337,
+				"sha256": "89dda8d255e93f1b2fd27e13cbd0f3df909b369fd109a629bf5b2b8aaa59f958"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.302;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+			"outline": "glyf",
+			"path": "ofl/laila/Laila-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

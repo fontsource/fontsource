@@ -1,0 +1,186 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1235,
+				"sha256": "1279bfdf9f2aff35d2e5ab99a02f61ddb052279218b69a7102a6ab30bf5b7f44"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/alegreyasans/AlegreyaSans-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

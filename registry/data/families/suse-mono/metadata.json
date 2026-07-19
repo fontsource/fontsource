@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2025-08-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "René Bieder",
+	"family": "SUSE Mono",
+	"id": "suse-mono",
+	"license": {
+		"attribution": "Copyright 2025 The SUSE Project Authors (https://github.com/SUSE/suse-font)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/susemono",
+		"revision": "08a9e6da211f385f355b2a81f4d0d95ba3838061",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SUSE/suse-font",
+		"revision": "7159afb2555b06d3a5c2f90e4d324e59e69c277d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/susemono/SUSEMono-Italic[wght].ttf",
+			"sha256": "6367768fc87e8a948cdbc9aab96caefac6f856bce69f0d0118d4b199aa9c72ce",
+			"size": 85420,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/susemono/SUSEMono[wght].ttf",
+			"sha256": "d1ad49b5aa76a3136046ff0fde4918e01d895fecb703cea6390d2be3166579d2",
+			"size": 87216,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 502,
+				"sha256": "715f404f92ee921bc921aea757981da064f9649981455780ca3c764979679220"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mina/Mina-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 498,
+				"sha256": "4fb5b41e8872d97c7d729c86596f8b30f296b9236612f262ae4aee66a8c1c3ca"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mina/Mina-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

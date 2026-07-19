@@ -1,0 +1,3 @@
+NATS is a Telugu handwriting font, mainly suitable for headings, posters and decorative invitations, and anywhere if someone want to use handwriting style to add their mark.
+
+The Telugu is designed and developed by Purushoth Kumar Guttula in 2012 and made available under the SIL Open Font License v1.1 by Silicon Andhra. The Latin is designed by Julieta Ulanovsky, a type designer in Argentina, and originally published as [Montserrat](http://www.google.com/fonts/specimen/Montserrat). The NATS project is led by Appaji Ambarisha Darbha, a type designer based in Hyderabad, India. To contribute, see [github.com/appajid/nats](https://github.com/appajid/nats)

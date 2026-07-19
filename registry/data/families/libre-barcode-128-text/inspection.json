@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 113,
+				"sha256": "39c46d3df30b2b0bea16ecb0454bb13238944d04633e930e0963a06500237d3a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.005; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/librebarcode128text/LibreBarcode128Text-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

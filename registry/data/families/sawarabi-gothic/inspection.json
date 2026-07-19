@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 6884,
+				"sha256": "34817c05ff8ab38c81f836cbfe6e2433e147e415889375b3dc8fe8d148a995ab"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 20141215",
+			"outline": "glyf",
+			"path": "ofl/sawarabigothic/SawarabiGothic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

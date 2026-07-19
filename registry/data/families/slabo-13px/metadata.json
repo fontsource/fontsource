@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2014-05-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "John Hudson",
+	"family": "Slabo 13px",
+	"id": "slabo-13px",
+	"license": {
+		"attribution": "Copyright (c) 2013, Tiro Typeworks Ltd (www.tiro.com).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/slabo13px",
+		"revision": "9d77164b65632e314c228c5c653f47f9ff2e092a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/TiroTypeworks/Slabo",
+		"revision": "21420697b49ec12ab3fd182a71ffe7c9d804f156"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/slabo13px/Slabo13px-Regular.ttf",
+			"sha256": "7b86edc3c9605f9e0d997658735b75ae1d5e11606a9109b8cc99521eb2b3f406",
+			"size": 55796,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

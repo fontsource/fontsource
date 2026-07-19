@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2593,
+				"sha256": "2b83e5fc91da74c1196217cb778b23eb510f0e4479eb50fd5935cf997ca7db20"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/gaegu/Gaegu-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2593,
+				"sha256": "2b83e5fc91da74c1196217cb778b23eb510f0e4479eb50fd5935cf997ca7db20"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/gaegu/Gaegu-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2593,
+				"sha256": "2b83e5fc91da74c1196217cb778b23eb510f0e4479eb50fd5935cf997ca7db20"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.00",
+			"outline": "glyf",
+			"path": "ofl/gaegu/Gaegu-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

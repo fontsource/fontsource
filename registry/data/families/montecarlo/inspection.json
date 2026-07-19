@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 954,
+				"sha256": "58fd8abd93b87dd29b1c1c0b80da6b43b6508af1829a7efa422144f60d732f33"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/montecarlo/MonteCarlo-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

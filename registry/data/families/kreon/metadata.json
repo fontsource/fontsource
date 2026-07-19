@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-02-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Julia Petretta",
+	"family": "Kreon",
+	"id": "kreon",
+	"license": {
+		"attribution": "Copyright 2018 The Kreon Project Authors (https://github.com/googlefonts/kreon), with Reserved Font Name \"Kreon\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kreon",
+		"revision": "130fcfb0ff422fec96b335616b2ca99f91914792",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/kreon",
+		"revision": "d7f798b480013cfa899779d6dae4511fd3c310cb"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kreon/Kreon[wght].ttf",
+			"sha256": "3fdb29ba16fe1907747c40b4706d3b8f91a9e95171609194bc10cbd16d982943",
+			"size": 79176,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

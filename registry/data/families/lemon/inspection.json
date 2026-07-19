@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 407,
+				"sha256": "e53c6a66cae9415f47a8700c6185e2c64009c88ebc0ff3e63974ff4e70482631"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.24]",
+			"outline": "glyf",
+			"path": "ofl/lemon/Lemon-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

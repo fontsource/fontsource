@@ -1,0 +1,67 @@
+{
+	"category": "monospace",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Colophon Foundry",
+	"family": "Space Mono",
+	"id": "space-mono",
+	"license": {
+		"attribution": "Copyright 2016 The Space Mono Project Authors (https://github.com/googlefonts/spacemono)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/spacemono",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/spacemono",
+		"revision": "329858c2c4dbd3476f972a4ae00624b018cf4b81"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/spacemono/SpaceMono-Bold.ttf",
+			"sha256": "405e73d41afb7e5906efce206a326af5c956f38e255f35421c260e861e599c59",
+			"size": 98232,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/spacemono/SpaceMono-BoldItalic.ttf",
+			"sha256": "cdcc95eddee312879a9728494e595f591cb159f3f276d79bc58673dec7e57138",
+			"size": 111904,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/spacemono/SpaceMono-Italic.ttf",
+			"sha256": "eca264c8690a91fe837d19a6badf2d88961610c4c8aafcb196526192a9f258c5",
+			"size": 121396,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/spacemono/SpaceMono-Regular.ttf",
+			"sha256": "95837e182baeeada83368f7748db28357f0a1b75c6b84ff7065b5edf933c8e18",
+			"size": 99356,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

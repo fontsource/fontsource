@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-06-11",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Joana Correia, Viktoriya Grabowska, Eben Sorkin",
+	"family": "Varta",
+	"id": "varta",
+	"license": {
+		"attribution": "Copyright 2019 The Varta Project Authors (https://github.com/SorkinType/Varta)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/varta",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Varta",
+		"revision": "38d842bff4d906c7f8859d898b1ac946a549c092"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/varta/Varta[wght].ttf",
+			"sha256": "45933f4041ba1df953c13bdab388bf3127c7081b2e7dfbe71e36f9214d05760f",
+			"size": 112072,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

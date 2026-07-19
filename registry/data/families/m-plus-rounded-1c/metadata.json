@@ -1,0 +1,100 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-05-17",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"hebrew",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Coji Morishita, M+ Fonts Project",
+	"family": "M PLUS Rounded 1c",
+	"id": "m-plus-rounded-1c",
+	"license": {
+		"attribution": "Copyright 2016 The Rounded M+ Project Authors.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mplusrounded1c",
+		"revision": "84efd8ad78c3710ad14bd909e3bc407151885628",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/coz-m/MPLUS_FONTS",
+		"revision": "eb604901d6f04b6f7f2a84b0378c58df84a9dba6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mplusrounded1c/MPLUSRounded1c-Black.ttf",
+			"sha256": "d5981a59ccc5f00da1bd3ae46750fa95cd165b0e6b3a5fc7a1945f94c59449e3",
+			"size": 3635504,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/mplusrounded1c/MPLUSRounded1c-Bold.ttf",
+			"sha256": "c358630584e8e2d8fbd6121d0f4693255ffef6d1e6d4f3441fd6e5a963a11f9e",
+			"size": 3542592,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/mplusrounded1c/MPLUSRounded1c-ExtraBold.ttf",
+			"sha256": "8e7c15901dca87f1451b356dda594f7d092ba252a5dcc47da74523a242493c36",
+			"size": 3628512,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/mplusrounded1c/MPLUSRounded1c-Light.ttf",
+			"sha256": "ade5c673a5d097b59c7bc5b1a6c1e37d3dd63c3ac98468a647d8ab2392b98b49",
+			"size": 3294556,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/mplusrounded1c/MPLUSRounded1c-Medium.ttf",
+			"sha256": "adfde1b6bae58719c4e0144612a94232e72fc5ca655c4722165fe88d06521a70",
+			"size": 3432624,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/mplusrounded1c/MPLUSRounded1c-Regular.ttf",
+			"sha256": "b75708b53e45b06d17d470aeeca5b766e3d1b3999f03f13ec4eb863ca846c14c",
+			"size": 3389792,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/mplusrounded1c/MPLUSRounded1c-Thin.ttf",
+			"sha256": "180c0959fff5af21637c3887c0ec47df8164877218ef7e866a7a227f2c1e1a9f",
+			"size": 2907880,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-05-01"
+}

@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 727,
+				"sha256": "7b742d50d6a0965c439843a02e11df36054b71cce50f360858c6b6e75a1ec640"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/srisakdi/Srisakdi-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 727,
+				"sha256": "7b742d50d6a0965c439843a02e11df36054b71cce50f360858c6b6e75a1ec640"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/srisakdi/Srisakdi-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

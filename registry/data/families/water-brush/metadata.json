@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2022-04-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Water Brush",
+	"id": "water-brush",
+	"license": {
+		"attribution": "Copyright 2004-2021 The Water Brush Project Authors (https://github.com/googlefonts/water-brush)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/waterbrush",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/water-brush",
+		"revision": "b7a36104b4ba7d489ba4f34a14c7e39dccbab86f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/waterbrush/WaterBrush-Regular.ttf",
+			"sha256": "2cbdccbca5d4be005fe4edd8895b91618a7f96639eaeeb4987ad83e81afc71a7",
+			"size": 332028,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

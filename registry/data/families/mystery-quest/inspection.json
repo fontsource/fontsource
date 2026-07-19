@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 228,
+				"sha256": "ec6445b17473f1d2a80e859098d3b242e56e5b86a119b2a304bf210658a2c5f3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/mysteryquest/MysteryQuest-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

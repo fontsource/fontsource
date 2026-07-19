@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 567,
+				"sha256": "3a6d1e28768ec26d728f443385b95082229ae549ef7c6bbf0785573927e13476"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/qwitchergrypen/QwitcherGrypen-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 567,
+				"sha256": "3a6d1e28768ec26d728f443385b95082229ae549ef7c6bbf0785573927e13476"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/qwitchergrypen/QwitcherGrypen-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

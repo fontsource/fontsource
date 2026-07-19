@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-27",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Sorkin Type, Irina Smirnova",
+	"family": "Fjalla One",
+	"id": "fjalla-one",
+	"license": {
+		"attribution": "Copyright 2012 The Fjalla Project Authors (https://github.com/SorkinType/FjallaOne)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/fjallaone",
+		"revision": "a60a77e14f28abd4ef243a1b5dfc48df0cec5205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/FjallaOne",
+		"revision": "e5fcc44bb44b8a84debd0cc070bad1360cc91761"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/fjallaone/FjallaOne-Regular.ttf",
+			"sha256": "ce3b299625abe3c76f8acd235b57b3e07ac6ee2d550e106a4b4e4d60095ae2ba",
+			"size": 209052,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,82 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 803,
+				"sha256": "4233dc170680282a4ec54f4799ebba6c92c1dc57034bcb4e9fc9f048643fbca8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001",
+			"outline": "glyf",
+			"path": "ofl/bellotatext/BellotaText-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 803,
+				"sha256": "4233dc170680282a4ec54f4799ebba6c92c1dc57034bcb4e9fc9f048643fbca8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001",
+			"outline": "glyf",
+			"path": "ofl/bellotatext/BellotaText-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 803,
+				"sha256": "4233dc170680282a4ec54f4799ebba6c92c1dc57034bcb4e9fc9f048643fbca8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001",
+			"outline": "glyf",
+			"path": "ofl/bellotatext/BellotaText-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 803,
+				"sha256": "4233dc170680282a4ec54f4799ebba6c92c1dc57034bcb4e9fc9f048643fbca8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001",
+			"outline": "glyf",
+			"path": "ofl/bellotatext/BellotaText-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 803,
+				"sha256": "4233dc170680282a4ec54f4799ebba6c92c1dc57034bcb4e9fc9f048643fbca8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001",
+			"outline": "glyf",
+			"path": "ofl/bellotatext/BellotaText-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 803,
+				"sha256": "4233dc170680282a4ec54f4799ebba6c92c1dc57034bcb4e9fc9f048643fbca8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.001",
+			"outline": "glyf",
+			"path": "ofl/bellotatext/BellotaText-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

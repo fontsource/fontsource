@@ -1,0 +1,3 @@
+Rambla is a humanist sans for medium-long texts. It’s slightly condensed, with a generous x-height and short ascenders and descenders. Its proportions are economical in both height and width. It’s elegant at large sizes and legible at the same time, with a lot of rhythm in small sizes.
+
+To contribute to the project contact Martin Sommaruga.

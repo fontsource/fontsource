@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-01-11",
+	"declaredSubsets": [
+		"cyrillic",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Mariela Monsalve, Angelina Sanchez",
+	"family": "Ruda",
+	"id": "ruda",
+	"license": {
+		"attribution": "Copyright 2019 The Ruda Project Authors (https://github.com/marmonsalve/Ruda-new)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/ruda",
+		"revision": "6de81676be61cbb4b41d50575467e6abf2209317",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/m4rc1e/Ruda-new",
+		"revision": "a63532e04ffb0f46b635cf9e000966155958e19d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/ruda/Ruda[wght].ttf",
+			"sha256": "acc6e412c74545f934bed8564f8650f113d46d220f0f3a94484e6a6558cb40f0",
+			"size": 84420,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

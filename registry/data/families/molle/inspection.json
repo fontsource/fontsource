@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 263,
+				"sha256": "a3e7e922c1cf22a76ccfc04ec065251694ab2ccf589f03d74543ee87830edbfb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/molle/Molle-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,5 @@
+Hubot Sans is Mona Sans’s robotic sidekick. The typeface is designed with more geometric accents to lend a technical and idiosyncratic feel—perfect for headers and pull-quotes. Made together with Degarism.
+
+Hubot Sans is a variable font. Variable fonts enable different variations of a typeface to be incorporated into one single file, and are supported by all major browsers.
+
+To contribute, see [github.com/github/hubot-sans](https://github.com/github/hubot-sans).

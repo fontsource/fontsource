@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-11-02",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Mate SC",
+	"id": "mate-sc",
+	"license": {
+		"attribution": "Copyright 2011 The Mate Project Authors (https://github.com/etunni/mate) with Reserved Font Name \"Mate\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/matesc",
+		"revision": "d92a4f3214862c9026ce734e85587dd68d88a5c2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/mate",
+		"revision": "2ea8febc952610379af663b1651411493d34beea"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/matesc/MateSC-Regular.ttf",
+			"sha256": "7aa5db42e899619bf2ecac412fc5668a3ea5d5cdc0af05cf95656c10fdfb50a0",
+			"size": 71092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

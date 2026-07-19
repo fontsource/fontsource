@@ -1,0 +1,78 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yoshimichi Ohira",
+	"family": "Zen Maru Gothic",
+	"id": "zen-maru-gothic",
+	"license": {
+		"attribution": "Copyright 2021 The Zen Maru Gothic Authors (https://github.com/googlefonts/zen-marugothic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zenmarugothic",
+		"revision": "92503f07b74eab956c1abf4956fbf46170716caa",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zen-marugothic",
+		"revision": "553c872b216d1290e2902a466edcdc9682f0df6a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Black.ttf",
+			"sha256": "6bd74fe76cd39ee0ec18775c3661d845343fb3f6f8fa09a3076638417baf741f",
+			"size": 3710324,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Bold.ttf",
+			"sha256": "fe24426b9c8b5523a0146a8235c8674eccf0493af354a53ec895c3596d9eb745",
+			"size": 3779008,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Light.ttf",
+			"sha256": "c4e6fa10ff517df37cb0c13038fe2813f3c47afe6577fa4a5573200e4508b2c1",
+			"size": 3723392,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Medium.ttf",
+			"sha256": "3cfdb98a13571ede17fcc769f5093a97c38b80a7b9b2ab754a26b4d822092b3b",
+			"size": 3810988,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/zenmarugothic/ZenMaruGothic-Regular.ttf",
+			"sha256": "a0c0b53543e0993ae2225e629c833f3d51495ad31720694ff112ce4ce11111ef",
+			"size": 3832756,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

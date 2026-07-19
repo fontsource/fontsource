@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2010-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Just Me Again Down Here",
+	"id": "just-me-again-down-here",
+	"license": {
+		"attribution": "Copyright (c) 2011 by Kimberly Geswein (kimberlygeswein@gmail.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/justmeagaindownhere",
+		"revision": "a8968c643431bf6588193896c057ddc223401205",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/justmeagaindownhere",
+		"revision": "63543cec6964e5061ece828c63948d1910e0dbdd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/justmeagaindownhere/JustMeAgainDownHere.ttf",
+			"sha256": "0412aa1e460666d339738991b48e9f4bd51e10b6f04e2e1341fce4d2b3244c31",
+			"size": 72060,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

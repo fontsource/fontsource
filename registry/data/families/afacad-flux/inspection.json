@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 14,
+					"min": -14,
+					"tag": "slnt"
+				},
+				{
+					"default": 400,
+					"max": 1000,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 669,
+				"sha256": "cd561b4ca636782efc3223b4c238f4a881f445812416ffcc272715a26d29a0a8"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.100",
+			"outline": "glyf",
+			"path": "ofl/afacadflux/AfacadFlux[slnt,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 1000,
+				"min": 100
+			}
+		}
+	]
+}

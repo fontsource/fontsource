@@ -1,0 +1,41 @@
+{
+	"category": "display",
+	"dateAdded": "2016-01-20",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"telugu",
+		"vietnamese"
+	],
+	"designer": "Ek Type",
+	"family": "Baloo Tammudu 2",
+	"id": "baloo-tammudu-2",
+	"license": {
+		"attribution": "Copyright 2019 The Baloo 2 Project Authors (https://github.com/EkType/Baloo2)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/balootammudu2",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/yanone/Baloo2-Variable",
+		"revision": "da523dfa21aa0e376253d61c21e39146dc55702a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/balootammudu2/BalooTammudu2[wght].ttf",
+			"sha256": "4771a1c50423a07f36919fac4d882cc0ac43e451faf043c8558d7a209298d56c",
+			"size": 669816,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

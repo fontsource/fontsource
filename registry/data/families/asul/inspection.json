@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 232,
+				"sha256": "0db71292ac25128fcf465a4375b6d5a34e3da4d27289ae8e30fdf4fbda63bdae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/asul/Asul-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 232,
+				"sha256": "0db71292ac25128fcf465a4375b6d5a34e3da4d27289ae8e30fdf4fbda63bdae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/asul/Asul-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

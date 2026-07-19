@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-09-22",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Coji Morishita",
+	"family": "M PLUS Code Latin",
+	"id": "m-plus-code-latin",
+	"license": {
+		"attribution": "Copyright 2021 The M+ FONTS Project Authors (https://github.com/coz-m/MPLUS_FONTS)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mpluscodelatin",
+		"revision": "badb95c58fccad31fa1c5c29c5dcbced87d695ec",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/coz-m/MPLUS_FONTS",
+		"revision": "4bf69824e45a175b9121b248c46abff103569051"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mpluscodelatin/MPLUSCodeLatin[wdth,wght].ttf",
+			"sha256": "fd1dec1e7fd5062705e5e5838ebf3b1e11d20dd11478c31be3bb34190400eeed",
+			"size": 133076,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-10"
+}

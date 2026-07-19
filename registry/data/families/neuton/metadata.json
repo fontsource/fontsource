@@ -1,0 +1,84 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-02-09",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Brian Zick",
+	"family": "Neuton",
+	"id": "neuton",
+	"license": {
+		"attribution": "Copyright 2010 The Neuton Project Authors (http://www.21326.info/), with Reserved Font Name \"Neuton\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/neuton",
+		"revision": "0204ebcbb49f56256a2a2a02ca7b383e3b33a0da",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/anoxic/neuton",
+		"revision": "b376055d272ab8a54d490bfad487e96c1d047c97"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/neuton/Neuton-Bold.ttf",
+			"sha256": "6e9594b4efae7508d434acd863e0c5fd22502ee76798e72a2e79a94a4255fa74",
+			"size": 60344,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/neuton/Neuton-ExtraBold.ttf",
+			"sha256": "5b590903d739180edbca3c20363466358824e7ce34895829a53495ed91122a65",
+			"size": 61840,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "ofl/neuton/Neuton-ExtraLight.ttf",
+			"sha256": "0dde410696b33f5546bf3975cecce5d00810dc367fb9d62c4e8c4deda6c84eb6",
+			"size": 53996,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "ofl/neuton/Neuton-Italic.ttf",
+			"sha256": "b5c66a502ed69b489300887b7019923e79925f90f1bed92cebbc398ec54b5199",
+			"size": 63292,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/neuton/Neuton-Light.ttf",
+			"sha256": "055582e4bafdb13759e9f9bfc0b88d64c57c395c414b2c1e452866ccd1f5ef9d",
+			"size": 54056,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/neuton/Neuton-Regular.ttf",
+			"sha256": "28ae41fd0ff18925c1a829358b7bd334e27994da23d6abdd72eaff646cacadb6",
+			"size": 64628,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-21"
+}

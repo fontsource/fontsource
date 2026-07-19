@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 353,
+				"sha256": "ad5a4f0e8b98fcc85eeebd13691601728b0c7f4caea8f8304810bc52debb0747"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2010",
+			"outline": "glyf",
+			"path": "ofl/overtherainbow/OvertheRainbow.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

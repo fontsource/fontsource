@@ -1,0 +1,35 @@
+{
+	"id": "meroitic-hieroglyphs",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"205D",
+			"205D"
+		],
+		[
+			"10980",
+			"1099F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/meroitic-hieroglyphs_unique-glyphs.nam",
+		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
+		"sha256": "f2ebcfa563ceb50f66da135e275ce62c2e9c6d31a5058c9426ebafc7eecf6d5e",
+		"upstream": "namFiles"
+	}
+}

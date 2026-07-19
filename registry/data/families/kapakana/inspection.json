@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 400,
+					"min": 300,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 421,
+				"sha256": "cfa2c56e1bf5b2e0e5370e377d261e58c2130b680c987dd5d95ab03ca6e9b79c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/kapakana/Kapakana[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 400,
+				"min": 300
+			}
+		}
+	]
+}

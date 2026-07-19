@@ -1,0 +1,49 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-03-15",
+	"declaredSubsets": [
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Alfredo Marco Pradil, Chank Diesel",
+	"family": "Teachers",
+	"id": "teachers",
+	"license": {
+		"attribution": "Copyright 2023 The Teachers Project Authors (https://github.com/chankfonts/Teachers-fonts)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/teachers",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/chankfonts/Teachers-fonts",
+		"revision": "71a4377cf26d6d016527557d2c8bd18894d0c7ad"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/teachers/Teachers-Italic[wght].ttf",
+			"sha256": "5e0edd5dfffac145df5fa1c10c85baf350e3f738d6c2b2dbbf487f7427ce9ea9",
+			"size": 69364,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/teachers/Teachers[wght].ttf",
+			"sha256": "b59c8c0c5b1990935916d3fc414f87d0116f1bc0be355382968454e5d4b8e015",
+			"size": 67184,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

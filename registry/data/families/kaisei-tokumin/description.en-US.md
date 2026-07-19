@@ -1,0 +1,3 @@
+Kaisei Tokumin is a shorten word for Tokudai Mincho Kana, meaning "Extra Bold Serif Kana," intended for the strong title usage. Extra bold typefaces sometimes become unbalanced when having heavier density in the glyph, and loses the breathe of words. Kaisei Tokumin is designed to keep the legibility and still have power as an extra bold typeface.
+
+To contribute to the project, visit [https://github.com/FontKai-Kaisei/Kaisei](https://github.com/FontKai-Kaisei/Kaisei)

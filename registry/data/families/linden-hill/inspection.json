@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "da79d1bcca701753c2e5fac495c40366333631a41edc1030a4e86bc31d8b5797"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.201",
+			"outline": "glyf",
+			"path": "ofl/lindenhill/LindenHill-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 396,
+				"sha256": "da79d1bcca701753c2e5fac495c40366333631a41edc1030a4e86bc31d8b5797"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.202",
+			"outline": "glyf",
+			"path": "ofl/lindenhill/LindenHill-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

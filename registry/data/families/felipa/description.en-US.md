@@ -1,0 +1,1 @@
+Felipa is a carefully written calligraphic font based on a traditional Italian chancery cursive, though reinterpreted with a contemporary feeling.

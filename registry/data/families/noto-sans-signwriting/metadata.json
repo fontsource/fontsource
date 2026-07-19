@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"signwriting"
+	],
+	"designer": "Google",
+	"family": "Noto Sans SignWriting",
+	"id": "noto-sans-signwriting",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sign-writing)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanssignwriting",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/sign-writing",
+		"revision": "a0a0e9a8691ea81cfd32f7afb971c1ed4bf58f9a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanssignwriting/NotoSansSignWriting-Regular.ttf",
+			"sha256": "1da27fe7b8e959efaf338818f2a6c1aa2c02ff97cf60c34c6d0825675ebc53fb",
+			"size": 7881488,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

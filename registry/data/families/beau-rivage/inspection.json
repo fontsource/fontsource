@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 586,
+				"sha256": "f55c46a0d2db4f8f78d496c1b57403098416a1476b2f50070a6d44c2d034fbd9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/beaurivage/BeauRivage-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

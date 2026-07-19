@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"mandaic",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Mandaic",
+	"id": "noto-sans-mandaic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/mandaic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansmandaic",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/mandaic",
+		"revision": "36a3804b7febaa6827c198f9a39324c8b24ad366"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansmandaic/NotoSansMandaic-Regular.ttf",
+			"sha256": "28f9cdd5221c0c0ce42871996a3ca716e0f2f7be5131423e51021c6397be0fdc",
+			"size": 66976,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

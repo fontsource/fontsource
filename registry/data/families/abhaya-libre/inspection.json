@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 416,
+				"sha256": "9cca7965feca06f5978d866e750adcb45877eac4ce34a79ae018e227ca4d60f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.050 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/abhayalibre/AbhayaLibre-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 416,
+				"sha256": "9cca7965feca06f5978d866e750adcb45877eac4ce34a79ae018e227ca4d60f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.050 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/abhayalibre/AbhayaLibre-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 416,
+				"sha256": "9cca7965feca06f5978d866e750adcb45877eac4ce34a79ae018e227ca4d60f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.050 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/abhayalibre/AbhayaLibre-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 416,
+				"sha256": "9cca7965feca06f5978d866e750adcb45877eac4ce34a79ae018e227ca4d60f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.050 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/abhayalibre/AbhayaLibre-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 416,
+				"sha256": "9cca7965feca06f5978d866e750adcb45877eac4ce34a79ae018e227ca4d60f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.050 ; ttfautohint (v1.6)",
+			"outline": "glyf",
+			"path": "ofl/abhayalibre/AbhayaLibre-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

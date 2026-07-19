@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 248,
+				"sha256": "93a2973de5fe703001600b568d79523b963bcd6345694090e96e630fc0f56053"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002 2011",
+			"outline": "glyf",
+			"path": "ofl/aldrich/Aldrich-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

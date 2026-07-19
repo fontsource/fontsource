@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-05-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Joe Prince",
+	"family": "Maven Pro",
+	"id": "maven-pro",
+	"license": {
+		"attribution": "Copyright 2011 The Maven Pro Project Authors (https://github.com/m4rc1e/mavenproFont), with Reserved Font Name \"Maven Pro\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/mavenpro",
+		"revision": "d92a4f3214862c9026ce734e85587dd68d88a5c2",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://www.github.com/m4rc1e/mavenproFont",
+		"revision": "a694ee80d067e6f8cad700930e78ce395d4949e6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/mavenpro/MavenPro[wght].ttf",
+			"sha256": "bc994ed80baaec6ea61d7cb631f49466a1deb29d4363138021a96931f9faae9a",
+			"size": 87944,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

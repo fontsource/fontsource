@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 367,
+				"sha256": "bcf5fc583402b1550724b8458b49f195e614d72de9ecb6681fcc0b3f4eae4249"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansoldsoutharabian/NotoSansOldSouthArabian-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

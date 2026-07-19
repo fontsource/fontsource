@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-08-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Bonheur Royale",
+	"id": "bonheur-royale",
+	"license": {
+		"attribution": "Copyright 2005-2021 The Bonheur Royale Project Authors (https://github.com/googlefonts/bonheur-royale)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bonheurroyale",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/bonheur-royale",
+		"revision": "90087bb825c798641a29d2a1114ce7acd4048b0b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bonheurroyale/BonheurRoyale-Regular.ttf",
+			"sha256": "c37f2847c2d726e254762afe26354ed6d9b9ac88caa4c3473a89eef359fd2878",
+			"size": 133728,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

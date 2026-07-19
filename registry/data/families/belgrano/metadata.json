@@ -1,0 +1,38 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-12-19",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "LatinoType",
+	"family": "Belgrano",
+	"id": "belgrano",
+	"license": {
+		"attribution": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names \"Belgrano\"",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/belgrano",
+		"revision": "d3da14dcf43fef9b93923f9d3fabc6aca1792dda",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/belgrano",
+		"revision": "e79e00337ef13f738009b16d2909cc2dd17af344"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/belgrano/Belgrano-Regular.ttf",
+			"sha256": "5bf095dfbc56718bea7d74c0b30c36413714aaf8833d2cb012b604b64fd383d9",
+			"size": 29048,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-12-16",
+	"declaredSubsets": [
+		"kannada",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Erin McLaughlin",
+	"family": "Hubballi",
+	"id": "hubballi",
+	"license": {
+		"attribution": "Copyright 2016 The Hubballi Project Authors (https://github.com/erinmclaughlin/Hubballi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/hubballi",
+		"revision": "0b58fb370093f9a9f4ff785d94405710b79de67c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/erinmclaughlin/Hubballi",
+		"revision": "e5c909bedfc4a2395ea300f94acec0d245ff7635"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/hubballi/Hubballi-Regular.ttf",
+			"sha256": "e51ad77d40b5adccd6c6ca537863ef4e364bd374c56593e007fbf5402a9a1cdd",
+			"size": 187464,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

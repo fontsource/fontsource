@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 700,
+				"sha256": "241a267ea777b3e85114337b5cd3c1ee2b0bc5f02afdd2df1865f2cfcc9f92ae"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.25]",
+			"outline": "glyf",
+			"path": "ofl/fjallaone/FjallaOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 647,
+				"sha256": "ce83548ad1ae197e3f6e18e3694b3f0b9939a26238bfdce7c8407ef4f7f782b5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/barriecito/Barriecito-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

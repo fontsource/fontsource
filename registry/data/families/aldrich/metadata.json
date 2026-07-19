@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-17",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "MADType",
+	"family": "Aldrich",
+	"id": "aldrich",
+	"license": {
+		"attribution": "Copyright (c) Matthew Desmond, 2011. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/aldrich",
+		"revision": "4d4b948e76213e535a99956f3e8a2aba5b9da90c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/aldrich",
+		"revision": "ec28a1d125f17139f1a0685025dc43a775bed76f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/aldrich/Aldrich-Regular.ttf",
+			"sha256": "bcabd8e6db3e8cb59242e8dbdef30bfd9b25be600e2e8f506618008f99138d47",
+			"size": 56548,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

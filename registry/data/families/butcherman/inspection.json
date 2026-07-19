@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 328,
+				"sha256": "decea157b301f435d6e69e144a36be16cef9aad963674f26923472bc20bcdfd2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.004",
+			"outline": "glyf",
+			"path": "ofl/butcherman/Butcherman-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

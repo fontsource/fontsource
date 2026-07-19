@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 370,
+				"sha256": "898c8c808c409650e76087fa2634e5308170f0ae793f981a3f9b7365f7486701"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/engagement/Engagement-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

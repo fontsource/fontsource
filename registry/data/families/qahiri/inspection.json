@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 195,
+				"sha256": "b67a3d68a6bb1eed5dfe97377b22112c592f5b80fbefd83b9ce192d18db24743"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.00",
+			"outline": "glyf",
+			"path": "ofl/qahiri/Qahiri-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

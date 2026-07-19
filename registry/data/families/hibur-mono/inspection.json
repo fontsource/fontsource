@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 989,
+				"sha256": "ad7325ee7e534ff8e7a3f5dd667c6d76e3da94503e382e96f17c796c9f78a655"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/hiburmono/HiburMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

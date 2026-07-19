@@ -1,0 +1,35 @@
+{
+	"id": "anatolian-hieroglyphs",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"200B",
+			"200B"
+		],
+		[
+			"14400",
+			"14646"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/anatolian-hieroglyphs_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "98f201c6b7b8abf61722ca9cc303fb509b97a62174f1e189e2bffc6089210919",
+		"upstream": "namFiles"
+	}
+}

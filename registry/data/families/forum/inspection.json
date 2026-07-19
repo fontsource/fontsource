@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 578,
+				"sha256": "09b9cc7cf4520a835088fa75a125dae1e201b2dcdd91b8d56860092f85e03d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/forum/Forum-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

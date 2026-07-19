@@ -1,0 +1,48 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2023-04-03",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "The DocRepair Project, Patric King",
+	"family": "Agdasima",
+	"id": "agdasima",
+	"license": {
+		"attribution": "Copyright 2023 The Agdasima Project Authors (https://github.com/docrepair-fonts/agdasima-fonts).",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/agdasima",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/docrepair-fonts/agdasima-fonts",
+		"revision": "c971400d774dfd6d28e7a8e34aedc3b3dfdce6f9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/agdasima/Agdasima-Bold.ttf",
+			"sha256": "d75fd96cf62e06d172484ad158614546437a2a988b16feed8b751f9838447ec5",
+			"size": 23012,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/agdasima/Agdasima-Regular.ttf",
+			"sha256": "512b6ec7aa802bb92cf3b816644ca11facf630b087d6e3ab3cd4b8d4eae77896",
+			"size": 23152,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

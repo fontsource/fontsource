@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2021-10-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Shalimar",
+	"id": "shalimar",
+	"license": {
+		"attribution": "Copyright 2004-2021 The Shalimar Project Authors (https://github.com/googlefonts/shalimar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/shalimar",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/shalimar",
+		"revision": "f071bc2cfa26969d846d9848b7b2f53e9fab16f9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/shalimar/Shalimar-Regular.ttf",
+			"sha256": "00b0a11c7ba12d8f1437db6a95977ecd5453749f119b93cf2502d0a41e05961c",
+			"size": 220724,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

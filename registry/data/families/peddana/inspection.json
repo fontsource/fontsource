@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 230,
+				"sha256": "a06e436574d0c8ab25f07973d3d3d517d286cb21cb9c9665fc6c0eb71eb4cbf5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.0.4; ttfautohint (v1.2.25-373a) -l 7 -r 28 -G 50 -x 13 -D telu -f latn -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/peddana/Peddana-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

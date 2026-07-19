@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				}
+			],
+			"cmap": {
+				"codepointCount": 469,
+				"sha256": "6712ac83b05b8b3428bb222aba8ee5fd061d1659fda0232073463aac0ea6184a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/leaguegothic/LeagueGothic[wdth].ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

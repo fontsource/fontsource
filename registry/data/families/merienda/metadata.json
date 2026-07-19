@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2012-10-31",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Eduardo Tunni",
+	"family": "Merienda",
+	"id": "merienda",
+	"license": {
+		"attribution": "Copyright 2017 The Merienda Project Authors (https://github.com/etunni/merienda)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/merienda",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/etunni/merienda",
+		"revision": "15f2f36d29595fa3dd6cf068323ef44bc0713b56"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/merienda/Merienda[wght].ttf",
+			"sha256": "a91e4d88a50b4f80c7b1f31fe46e376eb87b72247d2a216f5e5be1881340deea",
+			"size": 226360,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

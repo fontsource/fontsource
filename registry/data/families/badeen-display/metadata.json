@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2024-11-20",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Hani Alasadi",
+	"family": "Badeen Display",
+	"id": "badeen-display",
+	"license": {
+		"attribution": "Copyright 2024 The Badeen Project Authors (https://github.com/haniadnansd/Badeen-Display)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/badeendisplay",
+		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/haniadnansd/Badeen-Display",
+		"revision": "c1370b602b4a9819c4ddce4af17962a42edb8bc3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/badeendisplay/BadeenDisplay-Regular.ttf",
+			"sha256": "274805b3ee44f9b45a99bdcecf25cd44944c0a81f6cf8086b5cf30d00e860537",
+			"size": 78908,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

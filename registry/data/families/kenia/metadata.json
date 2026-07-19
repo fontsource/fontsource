@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2010-12-15",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Julia Petretta",
+	"family": "Kenia",
+	"id": "kenia",
+	"license": {
+		"attribution": "Copyright (c) 2010, Julia Petretta (julia.petretta@googlemail.com), with Reserved Font Name Kenia",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/kenia",
+		"revision": "db07a23ae260595b2d038bbf683597eb63f735f8",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/kenia/Kenia-Regular.ttf",
+			"sha256": "4052e03cdabd35ef9f739fdf1462b1b26c16b2238ba27223238624a2bb5565b9",
+			"size": 65156,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

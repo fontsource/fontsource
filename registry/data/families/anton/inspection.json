@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 978,
+				"sha256": "b6acd9ac38dcdb5ae298d5bbd2d6fabfdba3a4d2e7db727e8de9e73ab66cef6b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.116; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/anton/Anton-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

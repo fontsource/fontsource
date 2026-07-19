@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Moulpali",
+	"id": "moulpali",
+	"license": {
+		"attribution": "Copyright 2020 The Moulpali Project Authors (https://github.com/danhhong/Moulpali)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/moulpali",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Moulpali",
+		"revision": "fdfa5638779a2fe76414b2c1ff449435608df23c"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/moulpali/Moulpali-Regular.ttf",
+			"sha256": "555fa15b85a70b3b18c182ccd26a24f2e1babaf64fb53ba31bbf91327a7b31b4",
+			"size": 100364,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

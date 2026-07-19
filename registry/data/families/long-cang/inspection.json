@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7015,
+				"sha256": "c337bca22124ef788c5b878b3e7617b1e8576d11bbaf824e4c1a81cc3f95e87b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001",
+			"outline": "glyf",
+			"path": "ofl/longcang/LongCang-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

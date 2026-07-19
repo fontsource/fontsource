@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 376,
+				"sha256": "7629f1d21a57004f7daa754137554801f955e3de4588ad5f066a145566ce102c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004",
+			"outline": "glyf",
+			"path": "ofl/girassol/Girassol-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

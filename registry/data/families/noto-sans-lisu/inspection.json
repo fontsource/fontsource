@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 390,
+				"sha256": "1f5e0a46691fc3f89bdcd8af6c5b72a6b9fcb0b9e8cd9d6d7aa6ac00f37c56f3"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.102",
+			"outline": "glyf",
+			"path": "ofl/notosanslisu/NotoSansLisu[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-03-09",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Vernon Adams",
+	"family": "Candal",
+	"id": "candal",
+	"license": {
+		"attribution": "Copyright (c) 2011, Vernon Adams (vern@newtypography.co.uk) with Reserved Font Name 'Candal'. All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/candal",
+		"revision": "5a2ebe25cc5e5d2e5fef0fe01934b2f8eb594b8c",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/candal",
+		"revision": "ed7ac22d003047196e34bcf6465f2ad5871493e8"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/candal/Candal.ttf",
+			"sha256": "cf4ff425c49ab2e167fb7d166ba57f2925b6df6161a228786b291ea3875f1eb5",
+			"size": 32816,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-16"
+}

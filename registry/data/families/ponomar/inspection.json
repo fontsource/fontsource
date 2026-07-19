@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 781,
+				"sha256": "ae947b39a327a831da5f565f00c7650bdc100d74fea2195b36e5dca9de31e13e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.302; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/ponomar/Ponomar-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

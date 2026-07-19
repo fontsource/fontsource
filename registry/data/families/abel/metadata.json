@@ -1,0 +1,38 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-08-03",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "MADType",
+	"family": "Abel",
+	"id": "abel",
+	"license": {
+		"attribution": "Copyright (c) 2011, Matthew Desmond (http://www.madtype.com | mattdesmond@gmail.com), with Reserved Font Name Abel.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/abel",
+		"revision": "84bc33042700f5de962575a20b573fec506c4e1e",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/abel",
+		"revision": "a68e5cfb801dfe266cdd8f5651e977f330757df2"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/abel/Abel-Regular.ttf",
+			"sha256": "8809dcad25318225052f88333e208c5aad4adcb7b2c934c135735ec19aa410b4",
+			"size": 35220,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

@@ -1,0 +1,40 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2019-06-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"malayalam",
+		"menu"
+	],
+	"designer": "SMC, Santhosh Thottingal",
+	"family": "Chilanka",
+	"id": "chilanka",
+	"license": {
+		"attribution": "Copyright 2020 The Chilanka Project Authors (https://gitlab.com/smc/fonts/chilanka)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/chilanka",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/smc/Chilanka",
+		"revision": "4688e5c6fcfb5ccf8fc9f28dedaa15b2eacbe8e9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/chilanka/Chilanka-Regular.ttf",
+			"sha256": "c6ce47d1a8d387310469c8e355351ff2bd4106030c2a45f1cef0c93215075ed7",
+			"size": 352832,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"greek",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yoshimichi Ohira",
+	"family": "Zen Kurenaido",
+	"id": "zen-kurenaido",
+	"license": {
+		"attribution": "Copyright 2021 The Zen Kurenaido Project Authors (https://github.com/googlefonts/zen-kurenaido)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zenkurenaido",
+		"revision": "2edac135aa83e34640ec569d1d27520c3400e9b7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zen-kurenaido",
+		"revision": "cd751ced55d4ebb1fb2fbd90602eb9351dd03fd6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zenkurenaido/ZenKurenaido-Regular.ttf",
+			"sha256": "58b8d930d9fc10c8a5810c085bae378dacb98d0779073ee6d53d919f19ee6a4f",
+			"size": 4303112,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

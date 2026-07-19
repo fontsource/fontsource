@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-07-06",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Loved by the King",
+	"id": "loved-by-the-king",
+	"license": {
+		"attribution": "Copyright (c) 2006 by Kimberly Geswein (kimberlygeswein@gmail.com). All rights reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/lovedbytheking",
+		"revision": "9bb9e9d4915ebaa1979b6185d24ed9606efea889",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
+		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/lovedbytheking/LovedbytheKing.ttf",
+			"sha256": "1d2fce705c902a0c47264992e698ce76336013458f0612cc68917025ca6fcfb3",
+			"size": 28252,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-25"
+}

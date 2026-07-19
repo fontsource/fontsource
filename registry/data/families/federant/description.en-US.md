@@ -1,0 +1,9 @@
+Federant revives the Reklameschrift typeface Feder Antiqua by Otto Ludwig Nägele (1911). The main challenge of designing a modern interpretation was to balance between applying visual corrections for overall consistency and staying close to the original source. In certain cases the historical authenticy was sacrificed in favour of an even typographic color.
+
+This project required research of historic type specimens in search for the missing letterforms. The unusual interpretation of the Yen currency symbol can be found in typefaces of that period.
+
+Designed by Olexa M.Volochay, Alexei Vanyashin for Cyreal.
+
+To contribute to the project, visit [github.com/cyrealtype/Federant](https://github.com/cyrealtype/Federant)
+
+**Updated:** February 2016 to Version 1.011, to correct the GPOS table (enabling kerning, so the horizontal metrics may change, causing some reflow in Firefox where kerning is used by default.)

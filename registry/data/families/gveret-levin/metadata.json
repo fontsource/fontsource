@@ -1,0 +1,39 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2025-11-14",
+	"declaredSubsets": [
+		"hebrew",
+		"latin",
+		"menu"
+	],
+	"designer": "AlefAlefAlef",
+	"family": "Gveret Levin",
+	"id": "gveret-levin",
+	"license": {
+		"attribution": "Copyright 2024 The Gveret Levin Project Authors (https://github.com/AlefAlefAlef/gveret-levin)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/gveretlevin",
+		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/AlefAlefAlef/gveret-levin",
+		"revision": "b383a9c00863837b1b88b4d0365f43a304007dae"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/gveretlevin/GveretLevin-Regular.ttf",
+			"sha256": "05c443395d48b97f43469da4fb08772a4c612fda306348577dbc40a1267912b1",
+			"size": 59788,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

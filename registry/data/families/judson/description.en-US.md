@@ -1,0 +1,3 @@
+Judson is a serif font designed for African literacy. It contains as many glyphs and precomposed combinations that I know of for all African languages written in Latin-derived alphabets. It uses OpenType tables for correct placement of diacritical marks, including stacked marks. Care has been taken so that all characters are easily distinguished, even in the italic face. The medium roman face has support for the International Phonetic Alphabet (IPA.)
+
+Currently Judson is only available in medium roman, italic and bold roman faces; at this time there is no bold italic.

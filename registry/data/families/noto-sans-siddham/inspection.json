@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 428,
+				"sha256": "ce0e03447e464a1f652d0ca377eb93c533f26bf3d03e7201c450edadcac67696"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanssiddham/NotoSansSiddham-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

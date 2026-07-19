@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 724,
+				"sha256": "a432706a009256b6aea3bb6683d101d105f23d8220629ac2621f43c1f33e4d9d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/taviraj/Taviraj-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 250
+		}
+	]
+}

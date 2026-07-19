@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"tai-tham"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Tai Tham",
+	"id": "noto-sans-tai-tham",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tai-tham)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanstaitham",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/tai-tham",
+		"revision": "e336c5170ba284d0726e4a82a5b7a12fa07367bf"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanstaitham/NotoSansTaiTham[wght].ttf",
+			"sha256": "a053b99fc5ed0a3e5fb14eecbbf137245cb0b8c34c2cb4ffd0872db3097bcd0a",
+			"size": 172864,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

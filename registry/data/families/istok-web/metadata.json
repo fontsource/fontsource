@@ -1,0 +1,68 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-07-13",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Andrey V. Panov",
+	"family": "Istok Web",
+	"id": "istok-web",
+	"license": {
+		"attribution": "Copyright (c) 2008-2014, Andrey V. Panov (panov@canopus.iacp.dvo.ru), with Reserved Font Name Istok",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/istokweb",
+		"revision": "9756daa90d5e45beade31b6a85389c2e7f8f1cc0",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/m4rc1e/Istok-Web",
+		"revision": "f995ade61785c37629bed658e1898096ad934ec5"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/istokweb/IstokWeb-Bold.ttf",
+			"sha256": "e8cae1e9a6e9f452059342547ae8ebf58f04f85c04f59d4383109490fef45d69",
+			"size": 224440,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/istokweb/IstokWeb-BoldItalic.ttf",
+			"sha256": "546f1b01644176ccf134b97f74cb4bcc8307abfefb0b06ddf10353dab1296a08",
+			"size": 218164,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/istokweb/IstokWeb-Italic.ttf",
+			"sha256": "d8b61729f5d71eb9db7d64573f9003fd893dfb9f6fc8fba5d915eec02ba85283",
+			"size": 218124,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/istokweb/IstokWeb-Regular.ttf",
+			"sha256": "a13c4e6cba8f6d24abf96542d9028cea47411ac65c01e6f85349d7405dee53c6",
+			"size": 315392,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-05-29"
+}

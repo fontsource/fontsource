@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2011-12-07",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Dario Manuel Muhafara",
+	"family": "Galdeano",
+	"id": "galdeano",
+	"license": {
+		"attribution": "Copyright (c) 2011, Dario Manuel Muhafara (http://www.tipo.net.ar dario@tipo.net.ar), with Reserved Font Name \"Galdeano\".",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/galdeano",
+		"revision": "f3b5a759243d9ff26e0ef81a4636c45b0f715d76",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/librefonts/galdeano",
+		"revision": "0325c647c669479930cc9126131a78ca5b942db9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/galdeano/Galdeano-Regular.ttf",
+			"sha256": "ec2379e6ae1192420eb7a633c170890cf85944abc73e6ef6c68371d1c05c6652",
+			"size": 24868,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

@@ -1,0 +1,39 @@
+{
+	"category": "serif",
+	"dateAdded": "2012-11-30",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Impallari Type",
+	"family": "Domine",
+	"id": "domine",
+	"license": {
+		"attribution": "Copyright 2020 The Domine Project Authors (https://github.com/googlefonts/domine)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/domine",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Domine",
+		"revision": "2974ac627aad3a34190288c07fd0a0040d38550f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/domine/Domine[wght].ttf",
+			"sha256": "c63552cb60c658e90c1da3e83f9e7cf203562c39cdbf5a78ba9df62d8e7a1ed7",
+			"size": 101904,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

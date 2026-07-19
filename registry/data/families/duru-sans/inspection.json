@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 410,
+				"sha256": "3edf3432788054f7d44103182d0ca777f9c9fa3af5238d178819dfa1b1350ac2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/durusans/DuruSans-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

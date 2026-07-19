@@ -1,0 +1,42 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"cyrillic-ext",
+		"greek-ext",
+		"hebrew",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Hebrew",
+	"id": "noto-sans-hebrew",
+	"license": {
+		"attribution": "Copyright 2024 The Noto Project Authors (https://github.com/notofonts/hebrew)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanshebrew",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/hebrew",
+		"revision": "d2ce986faa9c149e8961c7bceddb8e376760541a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanshebrew/NotoSansHebrew[wdth,wght].ttf",
+			"sha256": "7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88",
+			"size": 112640,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

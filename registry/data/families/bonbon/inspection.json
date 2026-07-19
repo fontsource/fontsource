@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 214,
+				"sha256": "8a0260b59960c0e6f0cc6ddcd489bdb327efa189eacd22b7de7b26e1ec173cf9"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/bonbon/Bonbon-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

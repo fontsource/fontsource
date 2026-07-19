@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 367,
+				"sha256": "c7e7f4d199b2a261009634c38bed16f8e4af7de0d96f96da78e8a82737a8430d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanspalmyrene/NotoSansPalmyrene-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

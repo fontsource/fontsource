@@ -1,0 +1,186 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 878,
+				"sha256": "a5e8278e63fe2a084f236d7faf45bdd8c5993822b71bcc9a730c02d204656b7a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/spectralsc/SpectralSC-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

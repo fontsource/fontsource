@@ -1,0 +1,47 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-10-01",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Julieta Ulanovsky",
+	"family": "Montserrat Subrayada",
+	"id": "montserrat-subrayada",
+	"license": {
+		"attribution": "Copyright (c) 2011-2012, Julieta Ulanovsky (julieta.ulanovsky@gmail.com), with Reserved Font Names 'Montserrat'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/montserratsubrayada",
+		"revision": "d6495c76a58952651c831acc7d2dca3a0aceb608",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/JulietaUla/Montserrat",
+		"revision": "cc8daf2e7085006b9c112542fc82b58afc13521d"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/montserratsubrayada/MontserratSubrayada-Bold.ttf",
+			"sha256": "e2f82ad20176aabece01751b84f5a857b46a6cc4cab917830fd1cb6e141ff7b3",
+			"size": 24364,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/montserratsubrayada/MontserratSubrayada-Regular.ttf",
+			"sha256": "37a5e64e0c0fbb4148c37f731c52c63c1efc71f36564a27570d5222e5995a5f1",
+			"size": 24332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-26"
+}

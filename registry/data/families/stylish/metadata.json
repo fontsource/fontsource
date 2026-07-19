@@ -1,0 +1,34 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2018-02-27",
+	"declaredSubsets": [
+		"korean",
+		"menu"
+	],
+	"designer": "AsiaSoft Inc",
+	"family": "Stylish",
+	"id": "stylish",
+	"license": {
+		"attribution": "Copyright (c) 1992-2018 AsiaSoft Inc. Seoul Korea All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/stylish",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/stylish/Stylish-Regular.ttf",
+			"sha256": "3ea2e4c9d0183fdcc1362039305ef30fa8bb5154f030b303a029059a44a8516c",
+			"size": 10854004,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

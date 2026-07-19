@@ -1,0 +1,39 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-09-18",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Omnibus-Type",
+	"family": "Archivo Black",
+	"id": "archivo-black",
+	"license": {
+		"attribution": "Copyright 2017 The Archivo Black Project Authors (https://github.com/Omnibus-Type/ArchivoBlack)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/archivoblack",
+		"revision": "94a7d81318e438525a5285e07ab72c050fdfeb44",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Omnibus-Type/ArchivoBlack",
+		"revision": "95df3c54d818473a3e362f30ae3059bd85b80036"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/archivoblack/ArchivoBlack-Regular.ttf",
+			"sha256": "dd9a89a019b4849f66ab75455fe7bdf931311042cbb0f0f97acc061539703180",
+			"size": 90988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

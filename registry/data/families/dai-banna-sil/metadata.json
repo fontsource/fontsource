@@ -1,0 +1,121 @@
+{
+	"category": "serif",
+	"dateAdded": "2023-07-06",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"new-tai-lue"
+	],
+	"designer": "SIL International",
+	"family": "Dai Banna SIL",
+	"id": "dai-banna-sil",
+	"license": {
+		"attribution": "Copyright (c) 1998-2022 SIL International",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/daibannasil",
+		"revision": "1058a1dda6141444c06a56bdb1aca4b8ac0f3b6a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/silnrsi/font-daibannasil",
+		"revision": "dcf3e10a5a42e65b191e4d14628f2f263f41b2bc"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-Bold.ttf",
+			"sha256": "ae562489672abdccbbcf664f29e706c114b41c110edea3fe404a9ea7c8322b55",
+			"size": 69520,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-BoldItalic.ttf",
+			"sha256": "001b197160209b8e70302c8e9aeb8504d1a2f17a830b486b20696c1ed9b6e864",
+			"size": 73260,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-Italic.ttf",
+			"sha256": "058fb915b7a5a42ee719760406c65c036b82b55470da3f263de4131289f187af",
+			"size": 71768,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-Light.ttf",
+			"sha256": "a33a115cb803e1b2f500e48750e68a4513a965ce5248415dd2654a3b3ed24b8b",
+			"size": 68508,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-LightItalic.ttf",
+			"sha256": "091460bd9b0585e94b1b20d5906e6554ec29958e8e573682d37fb7c735f0860b",
+			"size": 71924,
+			"variant": {
+				"style": "italic",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-Medium.ttf",
+			"sha256": "cf34bb5312df3531a999a83ec4d1c0daa83a1e37a144be3d40510c06efeb4de6",
+			"size": 68292,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-MediumItalic.ttf",
+			"sha256": "f0ef8fc8c85b4a1e0c9aa780b5765a5951ac4aa4820f61b5c645fd3044279887",
+			"size": 72108,
+			"variant": {
+				"style": "italic",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-Regular.ttf",
+			"sha256": "7756d1c25925ba89130aef675d2d11f419602564c1091e9520fef1ac9ed8f193",
+			"size": 68172,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-SemiBold.ttf",
+			"sha256": "49e0e792d6b0bb625569a49b320dc5f974ca96f02314a8238e5ea98d40cdcc62",
+			"size": 68692,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/daibannasil/DaiBannaSIL-SemiBoldItalic.ttf",
+			"sha256": "416bc32287b4d07e8536639f35fc58e5190c4281fb6d115cd76d9ebfdddff020",
+			"size": 72528,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-02-26"
+}

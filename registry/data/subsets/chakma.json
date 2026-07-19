@@ -1,0 +1,51 @@
+{
+	"id": "chakma",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"9E6",
+			"9EF"
+		],
+		[
+			"1040",
+			"1049"
+		],
+		[
+			"200B",
+			"200D"
+		],
+		[
+			"25CC",
+			"25CC"
+		],
+		[
+			"11100",
+			"11134"
+		],
+		[
+			"11136",
+			"11147"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/chakma_unique-glyphs.nam",
+		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
+		"sha256": "01b8c0452702127cd83b3c2a5ec04897ce5d21b2661ddaeec4d7d3c8fe2722b9",
+		"upstream": "namFiles"
+	}
+}

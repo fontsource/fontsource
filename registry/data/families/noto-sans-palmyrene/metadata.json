@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"palmyrene"
+	],
+	"designer": "Google",
+	"family": "Noto Sans Palmyrene",
+	"id": "noto-sans-palmyrene",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/palmyrene)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosanspalmyrene",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/palmyrene",
+		"revision": "bbb69ea150a25cabb937bcbd654c171ff958b426"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosanspalmyrene/NotoSansPalmyrene-Regular.ttf",
+			"sha256": "d9cb8aeef761d8f0639bdb182f03048435473f623f7567c9b6477fe320cd8404",
+			"size": 64084,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

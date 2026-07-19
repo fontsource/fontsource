@@ -1,0 +1,40 @@
+{
+	"category": "serif",
+	"dateAdded": "2024-03-15",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Afrotype, Seyi Olusanya, Eyiyemi Adegbite, David Udoh, Mirko Velimirović",
+	"family": "Danfo",
+	"id": "danfo",
+	"license": {
+		"attribution": "Copyright 2024 The Tac Project Authors (https://github.com/Afrotype/Danfo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/danfo",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Afrotype/danfo",
+		"revision": "a66fc9ded8f42ad2d39b91c9cd8a1960737ad02a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/danfo/Danfo[ELSH].ttf",
+			"sha256": "7e88c371ac63b0e4d0140812e703a3e021d37147a0df4f167ac324255a39d42f",
+			"size": 147264,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

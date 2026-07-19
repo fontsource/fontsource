@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2019-11-05",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Gydient, ViệtAnh Nguyễn",
+	"family": "Viaoda Libre",
+	"id": "viaoda-libre",
+	"license": {
+		"attribution": "Copyright 2020 The Viaodalibre Project Authors (https://github.com/bettergui/ViaodaLibre)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/viaodalibre",
+		"revision": "7048826f842a378812c450daa8c001b26dd2f115",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/bettergui/ViaodaLibre",
+		"revision": "a0d8da9d47c56c3ee53f9ca954b025734975a657"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/viaodalibre/ViaodaLibre-Regular.ttf",
+			"sha256": "adb53ede25107c5ed4c45f993fd014a21ef82ac82b2327a564fe8e994e228942",
+			"size": 196944,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

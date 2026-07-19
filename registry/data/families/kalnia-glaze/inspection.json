@@ -1,0 +1,37 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 125,
+					"min": 100,
+					"tag": "wdth"
+				},
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 380,
+				"sha256": "173cb22711e87189da69d49ed349da75d3587d27df9df0d26f7db6ac4ffdab05"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL"
+			],
+			"fontVersion": "Version 1.110",
+			"outline": "glyf",
+			"path": "ofl/kalniaglaze/KalniaGlaze[wdth,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

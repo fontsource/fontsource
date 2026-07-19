@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Moul",
+	"id": "moul",
+	"license": {
+		"attribution": "Copyright 2020 The Moul Project Authors (https://github.com/danhhong/Moul)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/moul",
+		"revision": "adde58aa7f4ef91d3464a7d2a168ff07cc3d9e07",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Moul",
+		"revision": "9bd37b4c66a42ed6f78619c305a59fe13aee2316"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/moul/Moul-Regular.ttf",
+			"sha256": "c0445e86767edf1bfb08a6fe65bd38f350b588c641af7e2e88a59d72ccecd9c3",
+			"size": 166200,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-27"
+}

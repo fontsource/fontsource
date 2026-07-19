@@ -1,0 +1,68 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-07-30",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jovanny Lemonad",
+	"family": "Scada",
+	"id": "scada",
+	"license": {
+		"attribution": "Copyright 2012 The Scada Project Authors (lemonad@jovanny.ru)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/scada",
+		"revision": "816401ea96bc0b42f07485474dc773b51cedc3e7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/scada",
+		"revision": "df06a155d95984d259c8492aeaaa520188a3d46b"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/scada/Scada-Bold.ttf",
+			"sha256": "3a0085400cfc229bc4329e77dd5a11eb79e7fc881f5c285f813b251133ddd095",
+			"size": 91136,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/scada/Scada-BoldItalic.ttf",
+			"sha256": "c509976fc82880d6729bf6a4db19786f2eaf86dfe4ccf36060afb3d871e6f547",
+			"size": 95196,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/scada/Scada-Italic.ttf",
+			"sha256": "3f479dbfe80ed74d3ff880076468f9818edd28ff9909e5f22ce698224a085c1f",
+			"size": 94644,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/scada/Scada-Regular.ttf",
+			"sha256": "4ae8f108b8ce016017a2fe40ff65ec613eb6a4149ce3b9a9fe60cea117b55036",
+			"size": 91020,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

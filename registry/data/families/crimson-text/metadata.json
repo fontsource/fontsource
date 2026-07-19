@@ -1,0 +1,85 @@
+{
+	"category": "serif",
+	"dateAdded": "2011-01-26",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Sebastian Kosch",
+	"family": "Crimson Text",
+	"id": "crimson-text",
+	"license": {
+		"attribution": "Copyright 2010 The Crimson Text Project Authors (https://github.com/googlefonts/Crimson)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/crimsontext",
+		"revision": "7380f7cebbf2250460c23fd301b51bcbab162edf",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/Crimson",
+		"revision": "4f1458ae64c6c0d9c5fdfbf5095c7fabe0fa063f"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/crimsontext/CrimsonText-Bold.ttf",
+			"sha256": "a3a0765fc5e8d0b49b540a23aefe0184887dd79f06a0bdf4db7035cea6befa93",
+			"size": 112796,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/crimsontext/CrimsonText-BoldItalic.ttf",
+			"sha256": "467013e913e46304760461c46661c994b2aa1769e3fbd31371026300315181b4",
+			"size": 115112,
+			"variant": {
+				"style": "italic",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/crimsontext/CrimsonText-Italic.ttf",
+			"sha256": "4ed1699ac7c64e8b3d33f6bb8323c3d7206b0d7bacb9ee2d65c697e6014d29de",
+			"size": 110216,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/crimsontext/CrimsonText-Regular.ttf",
+			"sha256": "48e6c5d5ad1d01599d374ecb817e15890d1feb3b8a3a88e527d44c90389e1f06",
+			"size": 107200,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/crimsontext/CrimsonText-SemiBold.ttf",
+			"sha256": "802e84000740fec2a9fbe0ae09b6b6811bd86a78a0173b15d44450a1530e9410",
+			"size": 111176,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"path": "ofl/crimsontext/CrimsonText-SemiBoldItalic.ttf",
+			"sha256": "8f4a0db2d181ba4493a4ad53042edc3b57ab50fedd8fa32c7b2ad57173208543",
+			"size": 112120,
+			"variant": {
+				"style": "italic",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

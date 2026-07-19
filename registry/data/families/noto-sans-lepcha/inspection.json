@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 411,
+				"sha256": "522ae7aaa0204f724b7befea9ba6c2f56f6dc170a7b09db5b2b3f5f70198dbac"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.006; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosanslepcha/NotoSansLepcha-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

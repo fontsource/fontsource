@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 900,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1458,
+				"sha256": "e4829e9689375202a3f8a4931c69203b7754f26ad4c62cfe47eec3d1e412d1cd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.41",
+			"outline": "glyf",
+			"path": "ofl/beiruti/Beiruti[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 200
+			}
+		}
+	]
+}

@@ -1,0 +1,5 @@
+Philosopher was started in 2008 and takes inspiration from Agfa Rotis and ITC Binary. This font is universal: It can be used in logos, headlines, and for text. The initial version of the font was deliberately spread with errors - this was my invaluable contribution to type culture around the world, as I thought then - I wanted to stir up designers so they began working **with** fonts, rather than passively using what is there. Over time I wanted to correct the errors, and now the font has been used by millions of people worldwide.
+
+In June 2011 a four-style family was published, and in September 2011 the full Latin and Cyrillic family was fully hinted.
+
+To contribute, see [github.com/alexeiva/philosopher](https://github.com/alexeiva/philosopher).

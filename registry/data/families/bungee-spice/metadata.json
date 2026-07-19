@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2022-04-05",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "David Jonathan Ross",
+	"family": "Bungee Spice",
+	"id": "bungee-spice",
+	"license": {
+		"attribution": "Copyright 2023 The Bungee Project Authors (https://github.com/djrrb/Bungee)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/bungeespice",
+		"revision": "6ce172f74aa355ea43eb964fa4a91570a4d3064d",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/djrrb/Bungee",
+		"revision": "eb03cf69adab5094f6b84e95357789cdf3bfeb99"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/bungeespice/BungeeSpice-Regular.ttf",
+			"sha256": "ccf8e3f7eb1ac87ed217097332856f9007484362a00ae3b42a03c6ef851158d0",
+			"size": 1502376,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

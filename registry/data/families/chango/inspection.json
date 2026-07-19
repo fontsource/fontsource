@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 270,
+				"sha256": "d22298ab9d114056cfa41190ff7583d7a4b95b6ef4fb273e2cb6c913a9a6ef3c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "ofl/chango/Chango-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

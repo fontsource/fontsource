@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2011-03-02",
+	"declaredSubsets": [
+		"khmer",
+		"latin",
+		"menu"
+	],
+	"designer": "Danh Hong",
+	"family": "Angkor",
+	"id": "angkor",
+	"license": {
+		"attribution": "Copyright 2020 The Angkor Project Authors (https://github.com/danhhong/Angkor)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/angkor",
+		"revision": "95f4904fc8bcf26d3420fe315560c96417c6dec7",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/danhhong/Angkor",
+		"revision": "8a6117ad7d97eee87c364657b47f35742df3bba9"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/angkor/Angkor-Regular.ttf",
+			"sha256": "ef3a846370cf0a5f6d5718162cb9133a1a9243586f32faf6cdbc449594a3dc1c",
+			"size": 79720,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

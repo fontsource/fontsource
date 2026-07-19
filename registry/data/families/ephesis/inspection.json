@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 575,
+				"sha256": "e6d58429824d7230ace4efb6c6e47e9a3f51a9c15fb605816dd1eaca60ecea04"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.3)",
+			"outline": "glyf",
+			"path": "ofl/ephesis/Ephesis-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

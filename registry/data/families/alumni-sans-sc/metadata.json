@@ -1,0 +1,51 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2024-05-27",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Robert Leuschke",
+	"family": "Alumni Sans SC",
+	"id": "alumni-sans-sc",
+	"license": {
+		"attribution": "Copyright 2015 The Alumni Sans Project Authors (https://github.com/googlefonts/alumni)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/alumnisanssc",
+		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/alumni",
+		"revision": "44a7998fa2bfa1b3e119983cdc565dd7f0f03bda"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/alumnisanssc/AlumniSansSC-Italic[wght].ttf",
+			"sha256": "62b490f2ee301d2dda0554f4bfc68ac8ab905d89762716702391a49174554a26",
+			"size": 130528,
+			"variant": {
+				"style": "italic",
+				"weight": 400
+			}
+		},
+		{
+			"path": "ofl/alumnisanssc/AlumniSansSC[wght].ttf",
+			"sha256": "41a67970fd2a6f6a806578451d7e9902b45008043de2d60bf47e005ec0dab922",
+			"size": 125764,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

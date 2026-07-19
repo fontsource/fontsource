@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 589,
+				"sha256": "1d5bb425693ca44639e80672accd765f37e11af0bc65fbdcb634e0f58ec90c3f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/waterbrush/WaterBrush-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

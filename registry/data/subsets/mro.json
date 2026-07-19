@@ -1,0 +1,39 @@
+{
+	"id": "mro",
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"16A40",
+			"16A5E"
+		],
+		[
+			"16A60",
+			"16A69"
+		],
+		[
+			"16A6E",
+			"16A6F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/mro_unique-glyphs.nam",
+		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
+		"sha256": "e91c2d8a8e5ae2ad543bb0bf3861cc526555e1062bc17c8079f15b1687b885db",
+		"upstream": "namFiles"
+	}
+}

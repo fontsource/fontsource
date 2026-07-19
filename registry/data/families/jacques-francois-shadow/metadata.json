@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-09-07",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Jacques Francois Shadow",
+	"id": "jacques-francois-shadow",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name 'Jacques Francois'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/jacquesfrancoisshadow",
+		"revision": "3a79d7c797219bedbe6d41a797eae639aaca604a",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Jacques-Francois-Shadow",
+		"revision": "073491c6b1582ad2a1affc515f3fee1163c093fe"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/jacquesfrancoisshadow/JacquesFrancoisShadow-Regular.ttf",
+			"sha256": "3947827a196a3c12ceb471ed589168a9b57285db7258eb468a83f4c17945784c",
+			"size": 82492,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-06-02"
+}

@@ -1,0 +1,5 @@
+I enjoyed designing this typeface because it was inspired by my little son "Jonah," who is called by his friends "Joti." The type has the informality and style of the cartoons which children watch. Its primary concept is top-heavy stems with a slight sense of movement to further enhance the style. Joti is ideal for composing headlines and short texts in sizes larger than 14 points.
+
+The March 2023 update features a bigger glyphset, fractions and some minor aesthetic modifications.
+
+To contribute, see [github.com/etunni/joti](https://github.com/etunni/joti).

@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1269,
+				"sha256": "4316dc918e75f7fce5f34974a12bf74a6adbe422a3dcd02ca8f59c063caf3271"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.561;gftools[0.9.30]",
+			"outline": "glyf",
+			"path": "ofl/victormono/VictorMono-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1269,
+				"sha256": "4316dc918e75f7fce5f34974a12bf74a6adbe422a3dcd02ca8f59c063caf3271"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.561;gftools[0.9.30]",
+			"outline": "glyf",
+			"path": "ofl/victormono/VictorMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 100,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

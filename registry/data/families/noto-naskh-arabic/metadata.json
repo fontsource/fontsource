@@ -1,0 +1,42 @@
+{
+	"category": "serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"arabic",
+		"latin",
+		"latin-ext",
+		"math",
+		"menu",
+		"symbols"
+	],
+	"designer": "Google",
+	"family": "Noto Naskh Arabic",
+	"id": "noto-naskh-arabic",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notonaskharabic",
+		"revision": "ad2e6647e3d97ad5a8b6b5f95042f99161af5915",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/arabic",
+		"revision": "59f5a3fd985bf24858915c3dddfc51a537640965"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notonaskharabic/NotoNaskhArabic[wght].ttf",
+			"sha256": "67b5a525a661b607971fbd3f96a81b89d3a768e74534fca84f18ac97e6fab72f",
+			"size": 307592,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

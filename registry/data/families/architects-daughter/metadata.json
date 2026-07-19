@@ -1,0 +1,38 @@
+{
+	"category": "handwriting",
+	"dateAdded": "2011-03-09",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Kimberly Geswein",
+	"family": "Architects Daughter",
+	"id": "architects-daughter",
+	"license": {
+		"attribution": "Copyright (c) 2010, Kimberly Geswein (kimberlygeswein.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/architectsdaughter",
+		"revision": "7bff203357176e2eb63ecfcc965d85921be3adc9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/architectsdaughter",
+		"revision": "0912d302495d684898c33d02a4a0f24f32ec3da3"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/architectsdaughter/ArchitectsDaughter-Regular.ttf",
+			"sha256": "6159718a08898e34bc1cb7354086141a5f9a70b73e54dbec27ead0d59a697359",
+			"size": 43352,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-15"
+}

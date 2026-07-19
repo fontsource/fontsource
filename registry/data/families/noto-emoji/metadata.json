@@ -1,0 +1,34 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2022-04-29",
+	"declaredSubsets": [
+		"emoji",
+		"menu"
+	],
+	"designer": "Google",
+	"family": "Noto Emoji",
+	"id": "noto-emoji",
+	"license": {
+		"attribution": "Copyright 2013, 2022 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notoemoji",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notoemoji/NotoEmoji[wght].ttf",
+			"sha256": "de6c18832938afc99caf132b39d6a30a19bac7f2e812e28db2535b4608d27551",
+			"size": 1982596,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

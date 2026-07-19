@@ -1,0 +1,39 @@
+{
+	"category": "display",
+	"dateAdded": "2024-09-25",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "NORD ID, Kristian Möller",
+	"family": "Funnel Display",
+	"id": "funnel-display",
+	"license": {
+		"attribution": "Copyright 2023 The Funnel Project Authors (https://github.com/Dicotype/Funnel)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/funneldisplay",
+		"revision": "5e42225ce2f492759c5a53d44e5fb5bd7fec6721",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/Dicotype/Funnel",
+		"revision": "f9509ce0df3c344ddc454600baf77df54b83c379"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/funneldisplay/FunnelDisplay[wght].ttf",
+			"sha256": "b4151c9c4b7b07eb74320096b4ff4156cca8821f5adfab34af9fd9a2d6c1179d",
+			"size": 53436,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-02-27"
+}

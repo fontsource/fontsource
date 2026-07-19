@@ -1,0 +1,41 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2020-11-19",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"nko"
+	],
+	"designer": "Google",
+	"displayName": "Noto Sans N'Ko",
+	"family": "Noto Sans NKo",
+	"id": "noto-sans-nko",
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nko)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/notosansnko",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/notofonts/nko",
+		"revision": "a5db712e48059443e873e60805458924ec36f87a"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansnko/NotoSansNKo-Regular.ttf",
+			"sha256": "97954444367ad6708c36e85a89aec2830720e34968398d9caf07e7c3307c7993",
+			"size": 79696,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

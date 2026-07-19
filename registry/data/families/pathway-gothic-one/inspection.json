@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 420,
+				"sha256": "f4c7d7baf3b52708feeb4a2195d8e80cca878e62eaf363d9c86a64f9202cf8fc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.003; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "ofl/pathwaygothicone/PathwayGothicOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

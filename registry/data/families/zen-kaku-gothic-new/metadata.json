@@ -1,0 +1,77 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2021-10-22",
+	"declaredSubsets": [
+		"cyrillic",
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Yoshimichi Ohira",
+	"family": "Zen Kaku Gothic New",
+	"id": "zen-kaku-gothic-new",
+	"license": {
+		"attribution": "Copyright 2022 The Zen Project Authors (https://github.com/googlefonts/zen-kakugothic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/zenkakugothicnew",
+		"revision": "ba225958c40ae6268a256861d80355a84b26e535",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/zen-kakugothic",
+		"revision": "2705757e17e42954f3acbdf921ac0ae24d1270cd"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/zenkakugothicnew/ZenKakuGothicNew-Black.ttf",
+			"sha256": "795819a979184981842994d8f4eb9e14ce443d687bd5e731d6ca67ded8f92261",
+			"size": 2300600,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "ofl/zenkakugothicnew/ZenKakuGothicNew-Bold.ttf",
+			"sha256": "0081cedabc4921982fcd061f845a005664ac7fb642af2dd34b4007bc63ccd235",
+			"size": 2314424,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/zenkakugothicnew/ZenKakuGothicNew-Light.ttf",
+			"sha256": "ad4e9733f96397ed0c99c295d9b3b56e39a0e0bc02b0ac56ce3ade7793a1eef1",
+			"size": 2181020,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/zenkakugothicnew/ZenKakuGothicNew-Medium.ttf",
+			"sha256": "651a3f7280b7f36262601ee76d8388a8dc4372dcc67aff025a608939a562b525",
+			"size": 2328176,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "ofl/zenkakugothicnew/ZenKakuGothicNew-Regular.ttf",
+			"sha256": "b840cd07a67d89cacca44249ae49aa99ee7640eb5ce623be8d8983d6aabac801",
+			"size": 2360248,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-12"
+}

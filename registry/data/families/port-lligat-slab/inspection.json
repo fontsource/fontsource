@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 252,
+				"sha256": "ad7aad5c3ab95e5883db007e85c609e2a06741b8f62fc0e16682f1a4c4e5cfa5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/portlligatslab/PortLligatSlab-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 391,
+				"sha256": "1d89428bdddbf3448f5e8a6d3e25a57ec76641daccf4a53366362cd239ac7617"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/doppioone/DoppioOne-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 442,
+				"sha256": "b61c8217c1eef0635bf2c255d163e10b4a142afc6a454df908a8e8d543c7154b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "glyf",
+			"path": "ofl/marckscript/MarckScript-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

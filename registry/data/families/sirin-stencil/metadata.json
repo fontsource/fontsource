@@ -1,0 +1,38 @@
+{
+	"category": "display",
+	"dateAdded": "2012-01-18",
+	"declaredSubsets": [
+		"latin",
+		"menu"
+	],
+	"designer": "Cyreal",
+	"family": "Sirin Stencil",
+	"id": "sirin-stencil",
+	"license": {
+		"attribution": "Copyright (c) 2011, Cyreal (www.cyreal.org a@cyreal.org) with Reserved Font Name \"Sirin\" and \"Sirin Stencil\". This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/sirinstencil",
+		"revision": "59bb4114a25125c90196e74743b0a5a9c84ca1de",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/cyrealtype/Sirin-Stencil",
+		"revision": "803ade3c703e5f0feb4cb46526ecc71ca5e8fbd1"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/sirinstencil/SirinStencil-Regular.ttf",
+			"sha256": "0e231c6220787179588fe8b1c8921bff70207f1f556a6ef7e35e46ae04352b2d",
+			"size": 69332,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24"
+}

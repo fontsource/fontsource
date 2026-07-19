@@ -1,0 +1,40 @@
+{
+	"category": "sans-serif",
+	"dateAdded": "2012-07-10",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Viktoriya Grabowska",
+	"family": "Capriola",
+	"id": "capriola",
+	"license": {
+		"attribution": "Copyright 2025 The Capriola Project Authors (https://github.com/SorkinType/Capriola-VF)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/capriola",
+		"revision": "f5e66f9520f68fea77bc1a50831f4195ebdeb5ce",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Capriola-VF",
+		"revision": "048a515c14cebe8ffe4a821c3c9c075450a80b97"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/capriola/Capriola[wght].ttf",
+			"sha256": "03bd906c00b8618af3b0844a45165b699e2fcccd589d29812b5c9f83afd49e75",
+			"size": 507360,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-27"
+}

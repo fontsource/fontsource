@@ -1,0 +1,7 @@
+Castoro began as a synthesis of aspects of assorted Dutch types from the 16–18th Centuries and was initially made for the Indic fonts that Tiro produced for Harvard University Press. The version released as Castoro retains the extensive diacritic set for transliteration of South Asian languages and additional characters for an increased number of European languages.
+
+Castoro is named for the North American beaver, Castor canadensis. Robust serif text types with extensive language and typographic layout support are sometimes referred to as 'workhorse' types. Castoro may be thought of as a busy beaver.
+
+The roman was designed by John Hudson, and the italic with his Tiro colleague Paul Hanslow, assisted by Kaja Słojewska.
+
+To contribute, see [github.com/TiroTypeworks/Castoro](https://github.com/TiroTypeworks/Castoro).

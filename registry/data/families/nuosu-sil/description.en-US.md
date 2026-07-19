@@ -1,0 +1,3 @@
+Nuosu is a single Unicode font for the standardized Yi script used by a large ethnic group in southwestern China. The traditional Yi scripts have been in use for centuries, and have a tremendous number of local variants. The script was standardized in the 1970's by the Chinese government. In the process of standardization, 820 symbols from the traditional scripts of the Liangshan region were chosen to form a syllabary.
+
+This font was developed by SIL, and you can learn more about it at [software.sil.org/nuosu](https://software.sil.org/nuosu). To contribute, see [github.com/silnrsi/font-nuosu](https://github.com/silnrsi/font-nuosu).

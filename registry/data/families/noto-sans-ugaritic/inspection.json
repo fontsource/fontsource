@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 366,
+				"sha256": "b9bd051f8d523c21c355549a0447b345a55e421a2d5604651e2e1963584ac942"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/notosansugaritic/NotoSansUgaritic-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

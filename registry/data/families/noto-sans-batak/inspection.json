@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 382,
+				"sha256": "144fece0ba76362d36c205976591e02289f0c29fb562235a5aded5604ff08ab0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.16-eb64)",
+			"outline": "glyf",
+			"path": "ofl/notosansbatak/NotoSansBatak-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

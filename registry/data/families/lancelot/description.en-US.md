@@ -1,0 +1,1 @@
+Lancelot is a new ornate serif type based on French traditions. It has two sets of capitals, swash and classical.

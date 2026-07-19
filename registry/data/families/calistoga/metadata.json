@@ -1,0 +1,40 @@
+{
+	"category": "display",
+	"dateAdded": "2019-11-04",
+	"declaredSubsets": [
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Yvonne Schüttler, Sorkin Type, Eben Sorkin",
+	"family": "Calistoga",
+	"id": "calistoga",
+	"license": {
+		"attribution": "Copyright 2019 The Calistoga Project Authors (https://github.com/SorkinType/Calistoga)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"origin": {
+		"available": true,
+		"directory": "ofl/calistoga",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"upstream": "googleFonts"
+	},
+	"project": {
+		"repository": "https://github.com/SorkinType/Calistoga",
+		"revision": "61662683b93028d797e7ddb327fd33ff7e2838d4"
+	},
+	"sourceFiles": [
+		{
+			"path": "ofl/calistoga/Calistoga-Regular.ttf",
+			"sha256": "85a5accb2453368357d432fd0edf4701545cac7551946711c06085677fd1399f",
+			"size": 274832,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03"
+}

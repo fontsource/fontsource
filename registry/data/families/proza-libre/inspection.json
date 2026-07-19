@@ -1,0 +1,134 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc) -l 8 -r 50 -G 200 -x 14 -D latn -f none -m \"ohint (v1.4.1.8-43bc) -l 8 -r 50 -G 200 -x 14\" -w G -t -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 333,
+				"sha256": "90e8760e037cc7d3603f780dd7aace68b47c4abf860fa51ca9035c2da7e62423"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001; ttfautohint (v1.4.1.8-43bc)",
+			"outline": "glyf",
+			"path": "ofl/prozalibre/ProzaLibre-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

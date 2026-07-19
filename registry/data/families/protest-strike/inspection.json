@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 558,
+				"sha256": "d3a4f0c68875461461251567c142f051c2cc0a59f902d95348ace6f2d06a1b50"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+			"outline": "glyf",
+			"path": "ofl/proteststrike/ProtestStrike-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}
