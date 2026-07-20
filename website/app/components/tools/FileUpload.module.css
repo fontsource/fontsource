@@ -4,20 +4,20 @@
 	transition: background-color 150ms ease;
 }
 
+.idleIcon,
+.acceptIcon,
+.rejectIcon {
+	flex-shrink: 0;
+}
+
 .idleIcon {
-	width: 52px;
-	height: 52px;
 	color: var(--mantine-color-dimmed);
 }
 
 .acceptIcon {
-	width: 52px;
-	height: 52px;
 	color: var(--mantine-color-blue-6);
 }
 
 .rejectIcon {
-	width: 52px;
-	height: 52px;
 	color: var(--mantine-color-red-6);
 }

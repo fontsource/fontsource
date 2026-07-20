@@ -6,7 +6,7 @@ import type { Config } from '@react-router/dev/config';
 const docsDirectory = fileURLToPath(new URL('./docs', import.meta.url));
 const mdxExtension = '.mdx';
 
-const staticPageRoutes = ['/tools', '/tools/converter'];
+const staticPageRoutes = ['/tools', '/tools/converter', '/tools/optimizer'];
 const staticResourceRoutes = ['/llms.txt', '/llms-full.txt', '/robots.txt'];
 
 const getDocsPageRoutes = (directory: string): string[] => {

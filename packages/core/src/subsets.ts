@@ -1,4 +1,3 @@
-import type { FontBuildConfig } from './types';
 import { codepointsToRangeString } from './utils';
 
 interface SubsetSlice {
@@ -61,9 +60,10 @@ const parseSlicingStrategy = (fileContent: string): number[][] => {
 /**
  * Generates the complete subset data map from raw file contents provided in the config.
  */
-export const generateSubsetData = (
-	config: FontBuildConfig,
-): Map<string, SubsetDefinition> => {
+export const generateSubsetData = (config: {
+	subsets: string[];
+	subsetSources?: Partial<Record<string, string>>;
+}): Map<string, SubsetDefinition> => {
 	const subsetData = new Map<string, SubsetDefinition>();
 
 	for (const name of config.subsets) {

@@ -88,27 +88,44 @@ export interface FontConfig
 
 interface FontBuildFeatures {
 	featureSettings: Record<string, boolean>;
-	subsetSources: Partial<UnicodeRangeMap>;
 }
 
-interface BaseFontBuildConfig
-	extends FontIdentity,
-		FontSelection,
-		FontBuildFeatures {
+interface BaseFontBuildConfigFields extends FontIdentity, FontBuildFeatures {
+	weights: number[];
+	styles: FontStyle[];
+	unicodeRange?: UnicodeRangeMap;
 	formats?: WebFontFormat[];
 }
 
-export interface StaticFontBuildConfig extends BaseFontBuildConfig {
+interface SubsetFontBuildConfigFields extends BaseFontBuildConfigFields {
+	characters?: undefined;
+	subsets: string[];
+	subsetSources: Partial<UnicodeRangeMap>;
+}
+
+interface FullFontBuildConfig
+	extends FontIdentity,
+		FormatOptions<WebFontFormat> {
+	type: 'static' | 'variable';
+	characters: 'all';
+	subsets?: never;
+	subsetSources?: never;
+}
+
+export interface StaticFontBuildConfig extends SubsetFontBuildConfigFields {
 	type: 'static';
 }
 
-export interface VariableFontBuildConfig extends BaseFontBuildConfig {
+export interface VariableFontBuildConfig extends SubsetFontBuildConfigFields {
 	type: 'variable';
 	variable: VariableAxisConfig;
 	axisKeys?: VariableAxisKey[];
 }
 
-export type FontBuildConfig = StaticFontBuildConfig | VariableFontBuildConfig;
+export type FontBuildConfig =
+	| StaticFontBuildConfig
+	| VariableFontBuildConfig
+	| FullFontBuildConfig;
 
 export interface FontAsset extends FontSource {
 	content: Uint8Array;

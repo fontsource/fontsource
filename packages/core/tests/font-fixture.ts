@@ -13,5 +13,8 @@ const loadFontFixture = (filename: string): Uint8Array =>
 export const loadStaticFontFixture = (): Uint8Array =>
 	loadFontFixture('abel-latin-400-normal.ttf');
 
+export const loadStaticWoff2Fixture = (): Uint8Array =>
+	loadFontFixture('abel-latin-400-normal.woff2');
+
 export const loadVariableFontFixture = (): Uint8Array =>
 	loadFontFixture('recursive-latin-full-normal.ttf');

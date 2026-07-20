@@ -1,5 +1,6 @@
 import type { FontRef, StyleValue } from '@glypht/core';
 import type { FontContext } from './context';
+import { normalizeFontBuffer } from './normalize';
 
 export type FontInspectionAxis = {
 	tag: string;
@@ -9,6 +10,8 @@ export type FontInspectionAxis = {
 };
 
 export type FontInspection = {
+	familyName: string;
+	subfamilyName: string;
 	fontVersion: string | null;
 	weight: number | { min: number; max: number; default: number };
 	style: 'normal' | 'italic' | 'oblique';
@@ -194,6 +197,8 @@ const inspectFace = (font: FontRef, sfnt: SfntFace): FontInspection => {
 	const slant = styleValue(font.styleValues.slant);
 
 	return {
+		familyName: font.familyName,
+		subfamilyName: font.subfamilyName,
 		fontVersion: sfnt.fontVersion,
 		weight: weight.type === 'single' ? weight.value : axisRange(weight.value),
 		style: italic >= 0.5 ? 'italic' : slant === 0 ? 'normal' : 'oblique',
@@ -203,13 +208,14 @@ const inspectFace = (font: FontRef, sfnt: SfntFace): FontInspection => {
 	};
 };
 
-/** Inspect one single-face SFNT source without retaining it in the context. */
+/** Inspect one single-face font source without retaining it in the context. */
 export const inspectFont = async (
 	ctx: FontContext,
 	buffer: Uint8Array,
 ): Promise<FontInspection> => {
-	const sfnt = readSfntFace(buffer);
-	const fonts = await ctx.glyphtContext.loadFonts([buffer]);
+	const normalizedBuffer = await normalizeFontBuffer(ctx, buffer);
+	const sfnt = readSfntFace(normalizedBuffer);
+	const fonts = await ctx.glyphtContext.loadFonts([normalizedBuffer]);
 
 	try {
 		if (fonts.length !== 1 || !fonts[0]) {

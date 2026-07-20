@@ -1,5 +1,5 @@
-import { WoffCompressionContext } from '@glypht/core';
 import type { FontContext } from './context';
+import { normalizeFontBuffer } from './normalize';
 import type { FontFileFormat } from './types';
 import { normalizeKebabCase } from './utils';
 
@@ -55,11 +55,7 @@ export const convertFont = async (
 	const { glyphtContext, compressionContext } = ctx;
 	const uniqueFormats = [...new Set(formats)];
 
-	// Identify and decompress compressed inputs to get a raw TTF buffer.
-	const type = WoffCompressionContext.compressionType(buffer);
-	const ttfBuffer = type
-		? await compressionContext.decompressToTTF(buffer)
-		: buffer;
+	const ttfBuffer = await normalizeFontBuffer(ctx, buffer);
 
 	const baseName = name
 		? stripExtension(name)
