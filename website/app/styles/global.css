@@ -26,6 +26,19 @@ html {
 
 [data-mantine-color-scheme='dark'] {
 	color-scheme: dark;
+	--mantine-color-dark-0: #f3f5fa;
+	--mantine-color-dark-1: #d8deea;
+	--mantine-color-dark-2: #aeb8cb;
+	--mantine-color-dark-3: #7e8ca8;
+	--mantine-color-dark-4: var(--mantine-color-border-1);
+	--mantine-color-dark-5: #26334e;
+	--mantine-color-dark-6: #1a2540;
+	--mantine-color-dark-7: var(--mantine-color-background-4);
+	--mantine-color-dark-8: var(--mantine-color-background-5);
+	--mantine-color-dark-9: #0b101c;
+	--mantine-color-purple: #7c76ff;
+	--mantine-color-purple-0: var(--mantine-color-purple);
+	--mantine-color-purple-1: var(--mantine-color-purple);
 }
 
 header {
