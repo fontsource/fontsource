@@ -30,6 +30,6 @@ jobs:
       - name: Archive
         run: pnpm --filter '@fontsource-utils/registry' archive
         env:
-          REGISTRY_R2_ENDPOINT: ${{ vars.REGISTRY_R2_ENDPOINT }}
+          REGISTRY_R2_ENDPOINT: ${{ secrets.REGISTRY_R2_ENDPOINT }}
           REGISTRY_R2_ACCESS_KEY_ID: ${{ secrets.REGISTRY_R2_ACCESS_KEY_ID }}
           REGISTRY_R2_SECRET_ACCESS_KEY: ${{ secrets.REGISTRY_R2_SECRET_ACCESS_KEY }}
