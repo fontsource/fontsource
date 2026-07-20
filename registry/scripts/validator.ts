@@ -294,7 +294,7 @@ const validateSubset = async (root: string, id: string): Promise<void> => {
 	deepStrictEqual(union, expected, `${id} slice union differs from its ranges`);
 };
 
-const listFiles = async (root: string): Promise<string[]> =>
+export const listFiles = async (root: string): Promise<string[]> =>
 	(await readdir(root, { recursive: true, withFileTypes: true }))
 		.filter((entry) => !entry.isDirectory())
 		.map((entry) =>

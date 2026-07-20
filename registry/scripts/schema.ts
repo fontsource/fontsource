@@ -38,6 +38,24 @@ export const registryIndexSchema = z.strictObject({
 	subsets: z.array(idSchema),
 });
 
+export const archiveManifestSchema = z.strictObject({
+	schemaVersion: z.literal(1),
+	registryRevision: revisionSchema,
+	registry: z.array(
+		z.strictObject({
+			path: sourcePathSchema,
+			size: z.number().int().nonnegative(),
+			sha256: sha256Schema,
+		}),
+	),
+	sources: z.array(
+		z.strictObject({
+			size: z.number().int().nonnegative(),
+			sha256: sha256Schema,
+		}),
+	),
+});
+
 const sourceFileSchema = z.strictObject({
 	path: sourcePathSchema,
 	sha256: sha256Schema,

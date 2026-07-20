@@ -12,6 +12,23 @@ const runGitBuffer = (repository: string, args: string[]): Buffer =>
 const runGitText = (repository: string, args: string[]): string =>
 	runGitBuffer(repository, args).toString('utf8').trim();
 
+export const getGitRevision = (repository: string): string =>
+	runGitText(repository, ['rev-parse', 'HEAD']);
+
+export const assertGitPathClean = (repository: string, path: string): void => {
+	if (
+		runGitText(repository, [
+			'status',
+			'--porcelain=v1',
+			'--untracked-files=all',
+			'--',
+			path,
+		])
+	) {
+		throw new Error(`${path} must match HEAD before it can be archived`);
+	}
+};
+
 export type GitSnapshot = {
 	revision: string;
 	paths: readonly string[];

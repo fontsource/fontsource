@@ -12,7 +12,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join, relative, resolve } from 'node:path';
 import { describe, expect, it, onTestFinished } from 'vitest';
 import { generateRegistry } from './generate.ts';
-import { openGitSnapshot } from './git.ts';
+import { assertGitPathClean, openGitSnapshot } from './git.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
 
 const temporaryDirectory = async (name: string): Promise<string> => {
@@ -218,6 +218,18 @@ const createNamRepository = async (): Promise<{
 };
 
 describe('registry ingestion', () => {
+	it('archives only committed registry data', async () => {
+		const repository = await createGitRepository('committed-registry');
+		await writeFixture(repository, 'registry/data/index.json', '{}\n');
+		commitAll(repository, 'registry snapshot');
+		expect(() => assertGitPathClean(repository, 'registry/data')).not.toThrow();
+
+		await writeFixture(repository, 'registry/data/untracked.json', '{}\n');
+		expect(() => assertGitPathClean(repository, 'registry/data')).toThrow(
+			'must match HEAD',
+		);
+	});
+
 	it('rejects shallow repositories that cannot prove source history', async () => {
 		const source = await createGitRepository('source-history');
 		await writeFixture(source, 'family/METADATA.pb', 'name: "Example"\n');

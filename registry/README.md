@@ -11,6 +11,7 @@ Run from the repository root:
 ~~~sh
 pnpm --filter '@fontsource-utils/registry' generate <google-repo> <google-commit> <nam-repo> <nam-commit>
 pnpm --filter '@fontsource-utils/registry' validate
+pnpm --filter '@fontsource-utils/registry' archive
 ~~~
 
 Both source revisions must be exact 40-character commits. Generation also
@@ -20,6 +21,29 @@ Generation validates existing `policy.json` files but never creates or changes
 package policy. Registry data is written to `data/` and refreshed weekly or on
 demand by the [registry sync workflow](../.github/workflows/registry-sync.yml),
 which validates changes before committing them to `main`.
+
+The [registry archive workflow](../.github/workflows/registry-archive.yml)
+runs after registry data changes. It copies the exact registry files and every
+verified source TTF into the private `fontsource-registry` R2 bucket:
+
+~~~text
+registry/sha256/<sha256>
+sources/sha256/<sha256>
+snapshots/<fontsource-commit>/manifest.json
+~~~
+
+Each manifest maps registry paths and sources to their SHA-256 objects and is
+written last. Later runs add only changed objects and one manifest.
+
+Provision the bucket once:
+
+~~~sh
+wrangler r2 bucket create fontsource-registry
+~~~
+
+The workflow needs `REGISTRY_R2_ENDPOINT` and bucket-scoped Object Read & Write
+credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
+`REGISTRY_R2_SECRET_ACCESS_KEY`.
 
 ## Structure
 

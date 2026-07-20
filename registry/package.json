@@ -3,6 +3,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
+		"archive": "node scripts/archive.ts",
 		"generate": "pnpm --filter '@fontsource-utils/core' build && node scripts/generate.ts",
 		"test": "pnpm --filter '@fontsource-utils/core' build && vitest run",
 		"typecheck": "pnpm --filter '@fontsource-utils/core' build && tsc --noEmit",
@@ -10,6 +11,8 @@
 	},
 	"dependencies": {
 		"@fontsource-utils/core": "workspace:*",
+		"@aws-sdk/client-s3": "^3.1090.0",
+		"fastq": "^1.20.1",
 		"protobufjs": "8.7.1",
 		"turndown": "7.2.4",
 		"zod": "4.4.3"

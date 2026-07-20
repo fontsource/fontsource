@@ -1,0 +1,35 @@
+name: Registry Archive
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'registry/data/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency: registry-archive
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Setup
+        uses: jdx/mise-action@dad1bfd3df957f44999b559dd69dc1671cb4e9ea # v4.2.1
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Archive
+        run: pnpm --filter '@fontsource-utils/registry' archive
+        env:
+          REGISTRY_R2_ENDPOINT: ${{ vars.REGISTRY_R2_ENDPOINT }}
+          REGISTRY_R2_ACCESS_KEY_ID: ${{ secrets.REGISTRY_R2_ACCESS_KEY_ID }}
+          REGISTRY_R2_SECRET_ACCESS_KEY: ${{ secrets.REGISTRY_R2_SECRET_ACCESS_KEY }}
