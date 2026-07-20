@@ -350,7 +350,7 @@ export function CatalogSearchPage() {
 							<Breadcrumbs
 								items={[
 									{ name: 'Browse', url: '/browse' },
-									{ name: discovery.heading },
+									{ name: discovery.label },
 								]}
 							/>
 							<Title order={1} c="purple.0">

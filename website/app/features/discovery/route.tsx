@@ -52,7 +52,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData, location }) => {
 					{
 						'@type': 'ListItem',
 						position: 2,
-						name: page.heading,
+						name: page.label,
 						item: getCanonicalUrl(page.path),
 					},
 				],

@@ -30,6 +30,7 @@ export interface DiscoveryPage {
 	heading: string;
 	intro: string;
 	kind: 'category' | 'language' | 'variable';
+	label: string;
 	path: string;
 	routeState: DiscoveryRouteState;
 }
@@ -64,6 +65,7 @@ const buildDiscoveryPage = (
 				heading: `${label} Fonts`,
 				intro: content.intro,
 				kind: target.kind,
+				label,
 				path: `/languages/${target.value}`,
 				routeState: { subsets: target.value },
 			};
@@ -77,6 +79,7 @@ const buildDiscoveryPage = (
 				heading: `${content.label} Fonts`,
 				intro: content.intro,
 				kind: target.kind,
+				label: content.label,
 				path: `/categories/${target.value}`,
 				routeState: { category: target.value },
 			};
@@ -88,6 +91,7 @@ const buildDiscoveryPage = (
 				heading: 'Variable Fonts',
 				intro: variableDiscoveryContent.intro,
 				kind: target.kind,
+				label: 'Variable',
 				path: '/variable-fonts',
 				routeState: { variable: true },
 			};
