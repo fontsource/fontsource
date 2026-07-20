@@ -1,9 +1,0 @@
-.downloadButton {
-  &:not([data-disabled]):hover {
-    svg {
-      path {
-        stroke: white;
-      }
-    }
-  }
-}

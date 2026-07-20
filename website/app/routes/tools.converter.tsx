@@ -1,6 +1,5 @@
-import { Stack } from '@mantine/core';
 import type { MetaFunction } from 'react-router';
-import { FontConverter } from '@/components/tools/FontConverter';
+import { FontWorkbench } from '@/components/tools/FontWorkbench';
 import { ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
@@ -12,11 +11,7 @@ export const meta: MetaFunction = () => {
 };
 
 export const ConverterPage = () => {
-	return (
-		<Stack gap="xl">
-			<FontConverter />
-		</Stack>
-	);
+	return <FontWorkbench preset="converter" />;
 };
 
 export default ConverterPage;

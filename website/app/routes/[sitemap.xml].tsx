@@ -18,6 +18,11 @@ export const loader: LoaderFunction = async ({ request }) => {
 		changefreq: 'weekly',
 		priority: 0.7,
 	});
+	smStream.write({
+		url: '/tools/optimizer',
+		changefreq: 'weekly',
+		priority: 0.7,
+	});
 
 	// Pipe each font to stream
 	const [fontlist, discoveryPages] = await Promise.all([

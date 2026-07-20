@@ -1,6 +1,10 @@
 import { afterAll, describe, expect, it } from 'vitest';
 import { createFontContext, inspectFont } from '../src';
-import { loadStaticFontFixture, loadVariableFontFixture } from './font-fixture';
+import {
+	loadStaticFontFixture,
+	loadStaticWoff2Fixture,
+	loadVariableFontFixture,
+} from './font-fixture';
 
 const ctx = createFontContext();
 
@@ -55,6 +59,8 @@ describe('inspectFont', () => {
 		const result = await inspectFont(ctx, loadStaticFontFixture());
 
 		expect(result).toMatchObject({
+			familyName: 'Abel',
+			subfamilyName: 'Regular',
 			fontVersion: expect.stringContaining('Version'),
 			weight: 400,
 			style: 'normal',
@@ -62,6 +68,13 @@ describe('inspectFont', () => {
 		});
 		expect(result.tables).toContain('glyf');
 		expect(result.unicodeRanges.length).toBeGreaterThan(0);
+	});
+
+	it('reads the same facts from compressed input', async () => {
+		const raw = await inspectFont(ctx, loadStaticFontFixture());
+		const compressed = await inspectFont(ctx, loadStaticWoff2Fixture());
+
+		expect(compressed).toEqual(raw);
 	});
 
 	it('keeps variable style and custom axes explicit', async () => {
