@@ -22,10 +22,110 @@
 			var(--mantine-color-background-5)
 		);
 		transform: translateY(-1px);
+
+		svg {
+			transform: translateX(2px);
+		}
+	}
+
+	&:active {
+		transform: translateY(0);
 	}
 
 	&:focus-visible {
 		outline: 2px solid var(--mantine-color-purpleHover-2);
 		outline-offset: 2px;
+	}
+}
+
+.card svg,
+.languageLink svg {
+	transition: transform 150ms ease;
+}
+
+.languageGrid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: var(--mantine-spacing-sm);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	@media (--lt-lg) {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	@media (--lt-md) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	@media (--lt-sm) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.languageLink {
+	display: flex;
+	min-height: 72px;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--mantine-spacing-md);
+	padding: var(--mantine-spacing-md);
+	color: inherit;
+	text-decoration: none;
+	border: 1px solid
+		light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+	border-radius: var(--mantine-radius-md);
+	background-color: light-dark(
+		var(--mantine-color-background-1),
+		var(--mantine-color-background-4)
+	);
+	transition: background-color 150ms ease;
+
+	svg {
+		flex: 0 0 auto;
+		color: var(--mantine-color-purple-0);
+	}
+
+	&:hover {
+		background-color: light-dark(
+			var(--mantine-color-background-2),
+			var(--mantine-color-background-5)
+		);
+
+		svg {
+			transform: translateX(2px);
+		}
+	}
+
+	&:active {
+		background-color: light-dark(
+			var(--mantine-color-purpleHover-0),
+			var(--mantine-color-purpleHover-2)
+		);
+
+		svg {
+			transform: translateX(0);
+		}
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline-offset: 2px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.card,
+	.card svg,
+	.languageLink,
+	.languageLink svg {
+		transition: none;
+	}
+
+	.card:hover,
+	.card:hover svg,
+	.languageLink:hover svg {
+		transform: none;
 	}
 }

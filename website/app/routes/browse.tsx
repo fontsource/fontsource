@@ -1,4 +1,5 @@
 import {
+	Box,
 	Card,
 	Container,
 	Group,
@@ -31,7 +32,7 @@ export const meta: MetaFunction = () =>
 			'Browse open-source fonts by language, category, and variable-font support, then preview and self-host your selection with Fontsource.',
 	});
 
-const PageGrid = ({ pages }: { pages: DiscoveryPage[] }) => (
+const StyleGrid = ({ pages }: { pages: DiscoveryPage[] }) => (
 	<SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="md">
 		{pages.map((page) => (
 			<Card
@@ -47,7 +48,7 @@ const PageGrid = ({ pages }: { pages: DiscoveryPage[] }) => (
 					<div>
 						<Title order={3}>{page.heading}</Title>
 						<Text mt="xs" c="dimmed" size="sm">
-							{page.count} families
+							{page.count.toLocaleString('en-US')} families
 						</Text>
 					</div>
 					<IconArrowRight aria-hidden size={20} />
@@ -57,22 +58,30 @@ const PageGrid = ({ pages }: { pages: DiscoveryPage[] }) => (
 	</SimpleGrid>
 );
 
-const PageSection = ({
-	title,
-	description,
-	pages,
-}: {
-	title: string;
-	description: string;
-	pages: DiscoveryPage[];
-}) => (
-	<section>
-		<Title order={2}>{title}</Title>
-		<Text c="dimmed" mt="xs" mb="md">
-			{description}
-		</Text>
-		<PageGrid pages={pages} />
-	</section>
+const LanguageDirectory = ({ pages }: { pages: DiscoveryPage[] }) => (
+	<Box component="nav" aria-label="Fonts by language">
+		<Box component="ul" className={classes.languageGrid}>
+			{pages.map((page) => (
+				<li key={page.path}>
+					<Link
+						to={page.path}
+						prefetch="intent"
+						className={classes.languageLink}
+					>
+						<div>
+							<Text component="span" fw={600}>
+								{page.heading}
+							</Text>
+							<Text component="span" display="block" c="dimmed" size="xs">
+								{page.count.toLocaleString('en-US')} families
+							</Text>
+						</div>
+						<IconArrowRight aria-hidden size={18} />
+					</Link>
+				</li>
+			))}
+		</Box>
+	</Box>
 );
 
 export default function Browse() {
@@ -88,23 +97,29 @@ export default function Browse() {
 						Browse Fonts
 					</Title>
 					<Text>
-						Choose a starting point, then refine the results with the same
-						filters and previews available in the full font catalog.
+						Choose a style, language, or variable-font format. Every page
+						includes the full catalog filters and preview controls.
 					</Text>
 				</Stack>
 			</ContentHeader>
 			<Container size="xl" py="xl">
-				<Stack gap="xl">
-					<PageSection
-						title="Browse by style and features"
-						description="Start with a broad font category or explore families with variable axes."
-						pages={stylesAndFeatures}
-					/>
-					<PageSection
-						title="Language support"
-						description="Find font families that publish the character subset your project needs."
-						pages={languages}
-					/>
+				<Stack gap={48}>
+					<section>
+						<Title order={2}>Font styles and features</Title>
+						<Text c="dimmed" mt="xs" mb="md">
+							Start with a broad visual style or explore flexible variable
+							fonts.
+						</Text>
+						<StyleGrid pages={stylesAndFeatures} />
+					</section>
+					<section>
+						<Title order={2}>Fonts by language</Title>
+						<Text c="dimmed" mt="xs" mb="md" maw={720}>
+							Find families for the language your project supports. Each page
+							starts with the matching Fontsource character subset selected.
+						</Text>
+						<LanguageDirectory pages={languages} />
+					</section>
 				</Stack>
 			</Container>
 		</>

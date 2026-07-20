@@ -60,9 +60,9 @@ const buildDiscoveryPage = (
 			const label = subsetToLanguage(target.value);
 			return {
 				count,
-				description: `Browse open-source font families that publish Fontsource's ${label} subset. Preview and compare fonts, then self-host with npm, a download, or CDN.`,
+				description: `Browse and preview open-source ${label} fonts that include Fontsource's ${label} character subset, then self-host with npm, a download, or CDN.`,
 				heading: `${label} Fonts`,
-				intro: `Explore ${count} open-source font families that publish Fontsource's ${label} subset. Subset availability describes the packaged character range, so verify the exact characters and shaping your project requires.`,
+				intro: `Explore ${count} open-source font families for ${label} typography. Each family includes Fontsource's ${label} character subset, so you can preview native text, compare styles, and verify the exact characters and shaping your project needs.`,
 				kind: target.kind,
 				path: `/languages/${target.value}`,
 				routeState: { subsets: target.value },
@@ -74,7 +74,7 @@ const buildDiscoveryPage = (
 				count,
 				description: `Browse and preview ${label.toLowerCase()} font families from Fontsource, then self-host your selection with npm, a download, or CDN.`,
 				heading: `${label} Fonts`,
-				intro: `Explore ${count} open-source ${label.toLowerCase()} font families, then use the full catalog controls to refine and compare the results.`,
+				intro: `Explore ${count} open-source ${label.toLowerCase()} font families. Preview your own text, compare styles, and refine the results with the full Fontsource catalog controls.`,
 				kind: target.kind,
 				path: `/categories/${target.value}`,
 				routeState: { category: target.value },
@@ -86,7 +86,7 @@ const buildDiscoveryPage = (
 				description:
 					'Browse and preview open-source variable font families from Fontsource, then self-host your selection with npm, a download, or CDN.',
 				heading: 'Variable Fonts',
-				intro: `Explore ${count} open-source variable font families with configurable axes, then refine and compare them with the full catalog controls.`,
+				intro: `Explore ${count} open-source variable font families with configurable weight, width, and other axes. Preview and compare them with the full Fontsource catalog controls.`,
 				kind: target.kind,
 				path: '/variable-fonts',
 				routeState: { variable: true },
