@@ -1,30 +1,10 @@
-import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
+import type { MetaFunction } from 'react-router';
 
-import { CatalogSearchPage, links, loadSearch } from '@/routes/_index';
-import { cacheHeaders } from '@/utils/cache';
-import { loadDiscoveryPages } from '@/utils/discovery.server';
+import { CatalogSearchPage, links } from '@/routes/_index';
 import { getCanonicalUrl, ogMeta } from '@/utils/meta';
+import type { loader } from './loader.server';
 
 export { links };
-
-export const loader = async (args: LoaderFunctionArgs) => {
-	const pathname = args.params.language
-		? `/languages/${args.params.language}`
-		: args.params.category
-			? `/categories/${args.params.category}`
-			: '/variable-fonts';
-	const page = (await loadDiscoveryPages(args.request.signal)).find(
-		(item) => item.path === pathname,
-	);
-	if (!page) {
-		throw new Response('Not found', {
-			status: 404,
-			headers: cacheHeaders.noStore,
-		});
-	}
-
-	return loadSearch(args, page);
-};
 
 export const meta: MetaFunction<typeof loader> = ({ loaderData, location }) => {
 	const page = loaderData?.discovery;
