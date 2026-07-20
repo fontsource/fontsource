@@ -1,122 +1,112 @@
 .pageHeader {
 	display: flex;
-	align-items: flex-start;
+	align-items: flex-end;
 	justify-content: space-between;
 	gap: var(--mantine-spacing-xl);
 }
 
 .modeNav {
-	display: flex;
+	display: inline-flex;
 	flex-shrink: 0;
-	gap: var(--mantine-spacing-xl);
-	padding-top: var(--mantine-spacing-xs);
+	gap: 2px;
+	padding: 3px;
+	border: 1px solid var(--mantine-color-default-border);
+	border-radius: var(--mantine-radius-md);
+	background-color: var(--mantine-color-default);
 }
 
 .modeLink {
-	border-bottom: 2px solid transparent;
+	padding: 7px 14px;
+	border-radius: calc(var(--mantine-radius-md) - 3px);
 	color: var(--mantine-color-dimmed);
-	font-weight: 500;
-	padding: var(--mantine-spacing-xs) 0;
+	font-size: var(--mantine-font-size-sm);
+	font-weight: 600;
+	line-height: 1.3;
 	text-decoration: none;
+}
 
-	&:hover {
-		color: var(--mantine-color-text);
-	}
+.modeLink:hover {
+	color: var(--mantine-color-text);
 }
 
 .modeLink[data-active='true'] {
-	border-bottom-color: var(--mantine-color-purple-0);
-	color: var(--mantine-color-purple-0);
+	background-color: var(--mantine-color-body);
+	color: var(--mantine-color-text);
+	box-shadow: var(--mantine-shadow-xs);
 }
 
 .modeLink:focus-visible,
-.fileDisclosure:focus-visible {
-	outline: 2px solid var(--mantine-color-purpleHover-2);
-	outline-offset: 3px;
+.fileDisclosure:focus-visible,
+.packageDetails summary:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}
+
+.projectHeader {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: var(--mantine-spacing-sm);
+}
+
+.compactUpload {
+	min-width: 0;
 }
 
 .workbenchShell {
-	border: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	border-radius: var(--mantine-radius-md);
-	background: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
 	overflow: hidden;
+	border: 1px solid var(--mantine-color-default-border);
+	border-radius: var(--mantine-radius-lg);
+	background-color: var(--mantine-color-body);
 }
 
-.uploadArea {
-	padding: var(--mantine-spacing-md);
-}
-
-.workspace {
-	display: grid;
-	grid-template-columns: minmax(240px, 0.43fr) minmax(0, 1fr);
-	grid-template-rows: minmax(0, 1fr);
-	border-top: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	overflow: hidden;
-	min-height: 220px;
-	max-height: clamp(380px, calc(100vh - 340px), 540px);
-}
-
-.families {
-	display: flex;
-	flex-direction: column;
-	background: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-4));
-	border-right: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	min-width: 0;
-	min-height: 0;
-	overflow: hidden;
-}
-
+.sectionHeader,
 .familyHeader,
-.detailHeader,
+.resultSummary,
 .outputBar {
 	padding: var(--mantine-spacing-lg);
 }
 
-.familyList {
-	flex: 1;
-	min-height: 0;
-	overflow-y: auto;
+.sectionHeader,
+.familyHeader {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--mantine-spacing-lg);
 }
 
-.familyButton {
-	width: 100%;
-	border: 0;
-	border-bottom: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	border-radius: 0;
-	background: transparent;
-	color: inherit;
-	padding: 14px var(--mantine-spacing-lg);
-	text-align: left;
-	cursor: pointer;
-
-	&:hover {
-		background: light-dark(var(--mantine-color-purple-hover-0), var(--mantine-color-background-6));
-	}
+.familySection + .familySection {
+	border-top: 1px solid var(--mantine-color-default-border);
 }
 
-.familyButton[data-active='true'] {
-	background: light-dark(var(--mantine-color-purple-hover-1), var(--mantine-color-background-6));
-	box-shadow: inset 3px 0 0 var(--mantine-color-purple-0);
+.resultSummary {
+	border-bottom: 1px solid var(--mantine-color-default-border);
+	background-color: light-dark(
+		var(--mantine-color-gray-0),
+		var(--mantine-color-dark-7)
+	);
 }
 
-.familyButton:focus-visible {
-	outline: 2px solid var(--mantine-color-purpleHover-2);
-	outline-offset: -2px;
-}
-
-.details {
-	min-width: 0;
-	min-height: 0;
-	overflow-y: auto;
+.resultValue {
+	color: var(--mantine-color-purple-0);
+	font-size: clamp(1.75rem, 4vw, 2.5rem);
+	line-height: 1.1;
 }
 
 .fileList {
-	padding: 0 var(--mantine-spacing-lg) var(--mantine-spacing-lg);
+	padding: 0 var(--mantine-spacing-lg);
 }
 
 .fileRow {
 	padding: var(--mantine-spacing-md) 0;
-	border-top: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+	border-top: 1px solid var(--mantine-color-default-border);
+}
+
+.filename {
+	overflow: hidden;
+	min-width: 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .fileDisclosure {
@@ -124,114 +114,129 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	border: 0;
-	border-top: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	background: transparent;
-	color: inherit;
-	font: inherit;
-	font-weight: 500;
 	padding: var(--mantine-spacing-md) 0;
-	text-align: left;
+	border: 0;
+	border-top: 1px solid var(--mantine-color-default-border);
+	background: transparent;
+	color: var(--mantine-color-dimmed);
 	cursor: pointer;
-
-	&:hover {
-		color: var(--mantine-color-purple-0);
-	}
+	font: inherit;
+	font-size: var(--mantine-font-size-sm);
+	font-weight: 600;
 }
 
-.filename {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+.fileDisclosure:hover {
+	color: var(--mantine-color-text);
 }
 
-.outputBar {
-	border-top: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+.packageDetails {
+	margin: 0 var(--mantine-spacing-lg);
+	padding: var(--mantine-spacing-md) 0;
+	border-top: 1px solid var(--mantine-color-default-border);
+}
+
+.packageDetails summary {
+	width: fit-content;
+	color: var(--mantine-color-dimmed);
+	cursor: pointer;
+	font-size: var(--mantine-font-size-sm);
+	font-weight: 600;
+}
+
+.packageDetails summary:hover {
+	color: var(--mantine-color-text);
+}
+
+.packageList {
+	padding-left: var(--mantine-spacing-md);
 }
 
 .progressArea {
-	border-top: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	padding: var(--mantine-spacing-md) var(--mantine-spacing-lg);
+	padding: 0 var(--mantine-spacing-lg) var(--mantine-spacing-lg);
 }
 
-.outputSummary {
+.outputBar {
+	border-top: 1px solid var(--mantine-color-default-border);
+	background-color: var(--mantine-color-default);
+}
+
+.settingsSummary {
 	min-width: 0;
 }
 
+.outputActions {
+	flex-shrink: 0;
+}
+
 .errorList {
-	max-height: 14rem;
+	min-width: 0;
+	max-height: 11rem;
 	overflow-y: auto;
-	padding-right: var(--mantine-spacing-xs);
 }
 
 .customizeContent {
-	gap: var(--mantine-spacing-lg);
+	padding-top: var(--mantine-spacing-xs);
 }
 
-@media (--lt-sm) {
+@media (max-width: 47.99em) {
 	.pageHeader {
-		display: block;
+		display: grid;
+		align-items: start;
+	}
+
+	.projectHeader {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.projectHeader > :last-child {
+		justify-self: end;
 	}
 
 	.modeNav {
-		gap: var(--mantine-spacing-lg);
-		margin-top: var(--mantine-spacing-md);
-		padding-top: 0;
+		width: 100%;
 	}
 
-	.uploadArea {
-		padding: var(--mantine-spacing-sm);
+	.modeLink {
+		flex: 1;
+		text-align: center;
 	}
 
-	.customizeContent {
-		gap: var(--mantine-spacing-sm);
-	}
-
-	.workspace {
-		display: block;
-		min-height: 0;
-		max-height: none;
-	}
-
-	.families {
-		border-right: 0;
-		border-bottom: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	}
-
-	.familyList {
-		display: flex;
-		flex: none;
+	.sectionHeader,
+	.familyHeader {
+		display: grid;
 		gap: var(--mantine-spacing-xs);
-		overflow-x: auto;
-		padding-bottom: var(--mantine-spacing-md);
 	}
 
-	.familyButton {
-		min-width: 180px;
-		border-right: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-		border-bottom: 0;
-	}
-
+	.sectionHeader,
+	.familyHeader,
+	.resultSummary,
 	.outputBar {
 		padding: var(--mantine-spacing-md);
 	}
 
-	.outputLayout {
-		align-items: stretch;
-		flex-direction: column;
+	.fileList {
+		padding: 0 var(--mantine-spacing-md);
 	}
 
-	.outputSummary,
+	.packageDetails {
+		margin: 0 var(--mantine-spacing-md);
+	}
+
+	.progressArea {
+		padding: 0 var(--mantine-spacing-md) var(--mantine-spacing-md);
+	}
+
+	.outputLayout,
 	.outputActions {
+		align-items: stretch;
 		width: 100%;
 	}
 
-	.outputActions {
-		align-items: stretch;
+	.outputLayout {
 		flex-direction: column;
 	}
 
 	.outputActions > * {
-		width: 100%;
+		flex: 1;
 	}
 }

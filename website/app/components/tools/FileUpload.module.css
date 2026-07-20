@@ -4,6 +4,11 @@
 	transition: background-color 150ms ease;
 }
 
+.dropzone[data-compact='true'] {
+	background-color: transparent;
+	padding: 4px var(--mantine-spacing-md);
+}
+
 .idleIcon,
 .acceptIcon,
 .rejectIcon {
