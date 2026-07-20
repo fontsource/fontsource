@@ -46,18 +46,12 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData, location }) => {
 					{
 						'@type': 'ListItem',
 						position: 1,
-						name: 'Fonts',
-						item: getCanonicalUrl('/'),
-					},
-					{
-						'@type': 'ListItem',
-						position: 2,
 						name: 'Browse',
 						item: getCanonicalUrl('/browse'),
 					},
 					{
 						'@type': 'ListItem',
-						position: 3,
+						position: 2,
 						name: page.heading,
 						item: getCanonicalUrl(page.path),
 					},

@@ -349,7 +349,6 @@ export function CatalogSearchPage() {
 						<Stack gap="xs" maw={760}>
 							<Breadcrumbs
 								items={[
-									{ name: 'Fonts', url: '/' },
 									{ name: 'Browse', url: '/browse' },
 									{ name: discovery.heading },
 								]}
