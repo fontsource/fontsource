@@ -350,7 +350,7 @@ export function CatalogSearchPage() {
 							<Breadcrumbs
 								items={[
 									{ name: 'Fonts', url: '/' },
-									{ name: 'Browse Fonts', url: '/browse' },
+									{ name: 'Browse', url: '/browse' },
 									{ name: discovery.heading },
 								]}
 							/>
