@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
+import { consola } from 'consola';
 import fastq from 'fastq';
 import { assertGitPathClean, getGitRevision } from './git.ts';
 import { objectMatches, putObject } from './r2.ts';
@@ -14,6 +15,7 @@ import { listFiles, validateRegistry } from './validator.ts';
 const CONCURRENCY = 16;
 const REPOSITORY_ROOT = resolve(import.meta.dirname, '../..');
 const REGISTRY_ROOT = join(REPOSITORY_ROOT, 'registry', 'data');
+const logger = consola.withTag('registry');
 
 interface RegistryFile {
 	path: string;
@@ -99,37 +101,52 @@ export const publishArchive = async (
 	root: string,
 	registryRevision: string,
 ): Promise<void> => {
+	logger.start(`Planning snapshot ${registryRevision}`);
 	const plan = await createArchivePlan(root, registryRevision);
+	logger.success(
+		`Planned ${plan.registry.length} registry files and ${plan.sources.length} source fonts`,
+	);
 	const manifestBytes = Buffer.from(canonicalJson(plan.manifest));
 	const manifestKey = `snapshots/${registryRevision}/manifest.json`;
 	const manifestHash = sha256(manifestBytes);
 	if (
 		await objectMatches(manifestKey, manifestBytes.byteLength, manifestHash)
 	) {
-		console.log(`[registry] Snapshot ${registryRevision} already archived`);
+		logger.success(`Snapshot ${registryRevision} is already archived`);
 		return;
 	}
 
 	const registryObjects = [
 		...new Map(plan.registry.map((file) => [file.sha256, file])).values(),
 	];
+	const objects = [
+		...registryObjects.map((file) => ({
+			key: `registry/sha256/${file.sha256}`,
+			size: file.size,
+			sha256: file.sha256,
+			read: async () => file.bytes,
+		})),
+		...plan.sources.map((source) => ({
+			key: `sources/sha256/${source.sha256}`,
+			size: source.size,
+			sha256: source.sha256,
+			read: () => readSource(source),
+		})),
+	];
+	logger.start(`Processing ${objects.length} content-addressed objects`);
 	const uploads = fastq.promise(putObject, CONCURRENCY);
+	let processed = 0;
 	await Promise.all(
-		[
-			...registryObjects.map((file) => ({
-				key: `registry/sha256/${file.sha256}`,
-				size: file.size,
-				sha256: file.sha256,
-				read: async () => file.bytes,
-			})),
-			...plan.sources.map((source) => ({
-				key: `sources/sha256/${source.sha256}`,
-				size: source.size,
-				sha256: source.sha256,
-				read: () => readSource(source),
-			})),
-		].map((object) => uploads.push(object)),
+		objects.map(async (object) => {
+			await uploads.push(object);
+			processed += 1;
+			if (processed % 500 === 0 && processed < objects.length) {
+				logger.info(`Processed ${processed}/${objects.length} archive objects`);
+			}
+		}),
 	);
+	logger.success(`Processed ${objects.length} content-addressed objects`);
+	logger.start('Publishing snapshot manifest');
 	await putObject({
 		key: manifestKey,
 		size: manifestBytes.byteLength,
@@ -137,8 +154,8 @@ export const publishArchive = async (
 		read: async () => manifestBytes,
 	});
 
-	console.log(
-		`[registry] Archived ${plan.registry.length} registry files and ${plan.sources.length} sources`,
+	logger.success(
+		`Archived snapshot ${registryRevision} with ${plan.registry.length} registry files and ${plan.sources.length} source fonts`,
 	);
 };
 

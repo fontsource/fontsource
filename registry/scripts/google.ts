@@ -1,6 +1,7 @@
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
 import { createFontContext, inspectFont } from '@fontsource-utils/core';
+import { consola } from 'consola';
 import TurndownService from 'turndown';
 import type { GitSnapshot } from './git.ts';
 import { normalizeInspection } from './inspection.ts';
@@ -19,6 +20,8 @@ import {
 	sha256,
 	writeJson,
 } from './shared.ts';
+
+const logger = consola.withTag('registry');
 
 type GoogleFont = {
 	filename: string;
@@ -413,13 +416,20 @@ export const generateGoogle = async (
 	const families = readGoogleFamilies(snapshot);
 	const familyIds = new Set(previousFamilyIds);
 	const ctx = createFontContext();
+	const sortedFamilies = Array.from(families).toSorted(([left], [right]) =>
+		compareStrings(left, right),
+	);
 
 	try {
-		for (const [id, family] of Array.from(families).toSorted(
-			([left], [right]) => compareStrings(left, right),
-		)) {
+		for (const [index, [id, family]] of sortedFamilies.entries()) {
 			await writeFamily(snapshot, id, family, root, ctx);
 			familyIds.add(id);
+			const processed = index + 1;
+			if (processed % 100 === 0 && processed < sortedFamilies.length) {
+				logger.info(
+					`Processed ${processed}/${sortedFamilies.length} font families`,
+				);
+			}
 		}
 	} finally {
 		ctx.destroy();

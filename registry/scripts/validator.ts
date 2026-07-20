@@ -1,6 +1,7 @@
 import { ok as assert, deepStrictEqual, strictEqual } from 'node:assert/strict';
 import { readdir, readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
+import { consola } from 'consola';
 import type { z } from 'zod';
 import {
 	axisRegistrySchema,
@@ -19,6 +20,8 @@ import {
 	pathExists,
 	readJson,
 } from './shared.ts';
+
+const logger = consola.withTag('registry');
 
 const assertSortedUnique = <Value>(
 	values: readonly Value[],
@@ -332,7 +335,15 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	);
 
 	const subsetSet = new Set(index.subsets);
-	for (const id of index.families) await validateFamily(root, id, subsetSet);
+	for (const [familyIndex, id] of index.families.entries()) {
+		await validateFamily(root, id, subsetSet);
+		const validated = familyIndex + 1;
+		if (validated % 250 === 0 && validated < index.families.length) {
+			logger.info(
+				`Validated ${validated}/${index.families.length} font families`,
+			);
+		}
+	}
 	for (const id of index.subsets) await validateSubset(root, id);
 	await validateCanonicalJson(join(root, 'axes.json'), axisRegistrySchema);
 
@@ -360,5 +371,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 };
 
 if (import.meta.main) {
+	logger.start('Validating registry');
 	await validateRegistry(join(import.meta.dirname, '..', 'data'));
+	logger.success('Registry is valid');
 }

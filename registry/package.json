@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@fontsource-utils/core": "workspace:*",
 		"@aws-sdk/client-s3": "^3.1090.0",
+		"consola": "^3.1.0",
 		"fastq": "^1.20.1",
 		"protobufjs": "8.7.1",
 		"turndown": "7.2.4",

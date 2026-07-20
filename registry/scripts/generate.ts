@@ -1,10 +1,13 @@
 import { join } from 'node:path';
+import { consola } from 'consola';
 import { openGitSnapshot } from './git.ts';
 import { generateGoogle } from './google.ts';
 import { generateNam } from './nam.ts';
 import { registryIndexSchema } from './schema.ts';
 import { readJsonIfExists, writeJson } from './shared.ts';
 import { validateRegistry } from './validator.ts';
+
+const logger = consola.withTag('registry');
 
 export const generateRegistry = async (
 	googleRepository: string,
@@ -18,12 +21,18 @@ export const generateRegistry = async (
 	const previousValue = await readJsonIfExists(join(root, 'index.json'));
 	const previousIndex =
 		previousValue === null ? null : registryIndexSchema.parse(previousValue);
+
+	logger.start(`Generating families from google/fonts@${google.revision}`);
 	const families = await generateGoogle(
 		google,
 		root,
 		previousIndex?.families ?? [],
 	);
+	logger.success(`Generated ${families.length} font families`);
+
+	logger.start(`Generating subsets from googlefonts/nam-files@${nam.revision}`);
 	const subsets = await generateNam(nam, root);
+	logger.success(`Generated ${subsets.length} subsets`);
 
 	await writeJson(join(root, 'index.json'), {
 		schemaVersion: 1,
@@ -40,7 +49,9 @@ export const generateRegistry = async (
 		families,
 		subsets,
 	});
+	logger.start('Validating registry');
 	await validateRegistry(root);
+	logger.success('Registry is valid');
 };
 
 if (import.meta.main) {
