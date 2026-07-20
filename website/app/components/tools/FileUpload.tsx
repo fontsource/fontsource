@@ -16,7 +16,7 @@ export const FileUpload = ({
 	disabled,
 	compact,
 }: FileUploadProps) => {
-	const iconSize = compact ? 28 : 52;
+	const iconSize = compact ? 20 : 52;
 
 	return (
 		<Dropzone
@@ -31,12 +31,13 @@ export const FileUpload = ({
 			}}
 			disabled={disabled}
 			className={classes.dropzone}
+			data-compact={compact || undefined}
 		>
 			<Group
-				justify="center"
-				gap={compact ? 'md' : 'xl'}
+				justify={compact ? 'flex-start' : 'center'}
+				gap={compact ? 'sm' : 'xl'}
 				wrap={compact ? 'nowrap' : 'wrap'}
-				mih={compact ? 84 : { base: 160, sm: 220 }}
+				mih={compact ? 48 : { base: 160, sm: 220 }}
 				style={{ pointerEvents: 'none' }}
 			>
 				<Dropzone.Accept>
@@ -56,15 +57,17 @@ export const FileUpload = ({
 						size={iconSize}
 					/>
 				</Dropzone.Idle>
-				<Stack gap={7} style={{ minWidth: 0 }}>
+				<Stack gap={compact ? 0 : 7} style={{ minWidth: 0 }}>
 					<Text size={compact ? 'md' : 'xl'}>
 						{compact
-							? 'Add more fonts'
+							? 'Add fonts — drag or click'
 							: 'Drag fonts here or click to select files'}
 					</Text>
-					<Text size="sm" c="dimmed">
-						TTF, OTF, WOFF, WOFF2 · 250 MB total · processed locally
-					</Text>
+					{!compact && (
+						<Text size="sm" c="dimmed">
+							TTF, OTF, WOFF, WOFF2 · 250 MB total · processed locally
+						</Text>
+					)}
 				</Stack>
 			</Group>
 		</Dropzone>

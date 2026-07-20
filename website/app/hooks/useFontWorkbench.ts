@@ -8,7 +8,7 @@ import {
 	inspectFont,
 } from '@fontsource-utils/core';
 import { Zip, ZipPassThrough } from 'fflate';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 export type FontToolPreset = 'converter' | 'optimizer';
 type ArtifactFormat = FontFileFormat | 'css';
@@ -84,7 +84,6 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 	const [sources, setSources] = useState<FontSourceEntry[]>([]);
 	const [artifacts, setArtifacts] = useState<FontArtifact[]>([]);
 	const [output, setOutput] = useState(() => defaultOutput(preset));
-	const [selectedFamilyId, setSelectedFamilyId] = useState<string>();
 	const [familyErrors, setFamilyErrors] = useState<Record<string, string>>({});
 	const [projectError, setProjectError] = useState<string>();
 	const [isProcessing, setIsProcessing] = useState(false);
@@ -120,15 +119,6 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 					: { ...family, id: `${family.id}-${duplicateCount + 1}` };
 			});
 	}, [sources]);
-
-	useEffect(() => {
-		if (!families.some((family) => family.id === selectedFamilyId)) {
-			setSelectedFamilyId(families[0]?.id);
-		}
-	}, [families, selectedFamilyId]);
-
-	const selectedFamily =
-		families.find((family) => family.id === selectedFamilyId) ?? families[0];
 
 	const resetResults = () => {
 		setArtifacts([]);
@@ -478,8 +468,6 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 	return {
 		sources,
 		families,
-		selectedFamily,
-		setSelectedFamilyId,
 		artifacts,
 		output,
 		updateOutput,
