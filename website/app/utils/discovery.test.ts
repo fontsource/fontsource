@@ -25,4 +25,10 @@ describe('discovery pages', () => {
 			'/variable-fonts',
 		]);
 	});
+
+	it('keeps on-page introductions separate from search descriptions', () => {
+		for (const page of getDiscoveryPages(counts)) {
+			expect(page.description).not.toBe(page.intro);
+		}
+	});
 });
