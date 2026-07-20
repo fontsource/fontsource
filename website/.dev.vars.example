@@ -1,0 +1,6 @@
+BETTER_AUTH_URL=http://localhost:5173
+BETTER_AUTH_SECRET=replace-with-at-least-32-random-characters
+GOOGLE_CLIENT_ID=replace-with-google-client-id
+GOOGLE_CLIENT_SECRET=replace-with-google-client-secret
+GITHUB_CLIENT_ID=replace-with-github-client-id
+GITHUB_CLIENT_SECRET=replace-with-github-client-secret

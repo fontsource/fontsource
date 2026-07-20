@@ -12,6 +12,22 @@ mode = "smart"
 [cache]
 enabled = true
 
+[vars]
+BETTER_AUTH_URL = "https://fontsource.org"
+
+[[d1_databases]]
+binding = "APP_DB"
+database_name = "fontsource-app"
+
+[secrets]
+required = [
+  "BETTER_AUTH_SECRET",
+  "GOOGLE_CLIENT_ID",
+  "GOOGLE_CLIENT_SECRET",
+  "GITHUB_CLIENT_ID",
+  "GITHUB_CLIENT_SECRET",
+]
+
 [[services]]
 binding = "API"
 service = "fontsource-api"
