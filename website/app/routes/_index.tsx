@@ -23,6 +23,7 @@ import {
 	type MetaFunction,
 	useLoaderData,
 	useNavigate,
+	useNavigation,
 } from 'react-router';
 
 import { Breadcrumbs } from '@/components/docs/Breadcrumbs';
@@ -315,7 +316,14 @@ export function CatalogSearchPage() {
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
 	const navigate = useNavigate();
+	const navigation = useNavigation();
+	const navigationState = useRef(navigation.state);
 	const searchRef = useRef<HTMLDivElement>(null);
+	navigationState.current = navigation.state;
+	// Ignore delayed search URL writes once React Router is leaving this page.
+	const navigateSearch = (url: string) => {
+		if (navigationState.current === 'idle') void navigate(url);
+	};
 
 	const state$ = useObservable(createPageSearchState(discovery));
 	// Resolve the collection name only after Legend has restored local persistence.
@@ -331,7 +339,7 @@ export function CatalogSearchPage() {
 					state$,
 					collectionsStore,
 					discovery,
-					discovery ? navigate : undefined,
+					discovery ? navigateSearch : undefined,
 				)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
