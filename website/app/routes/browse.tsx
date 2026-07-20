@@ -1,5 +1,4 @@
 import {
-	Box,
 	Card,
 	Container,
 	Group,
@@ -42,7 +41,7 @@ const StyleGrid = ({ pages }: { pages: DiscoveryPage[] }) => (
 				prefetch="intent"
 				padding="lg"
 				radius="md"
-				className={classes.card}
+				className={`${classes.link} ${classes.card}`}
 			>
 				<Group justify="space-between" align="center" wrap="nowrap">
 					<div>
@@ -59,14 +58,19 @@ const StyleGrid = ({ pages }: { pages: DiscoveryPage[] }) => (
 );
 
 const LanguageDirectory = ({ pages }: { pages: DiscoveryPage[] }) => (
-	<Box component="nav" aria-label="Fonts by language">
-		<Box component="ul" className={classes.languageGrid}>
+	<nav aria-label="Fonts by language">
+		<SimpleGrid
+			component="ul"
+			cols={{ base: 1, sm: 2, md: 3, lg: 4 }}
+			spacing="sm"
+			className={classes.languageGrid}
+		>
 			{pages.map((page) => (
 				<li key={page.path}>
 					<Link
 						to={page.path}
 						prefetch="intent"
-						className={classes.languageLink}
+						className={`${classes.link} ${classes.languageLink}`}
 					>
 						<div>
 							<Text component="span" fw={600}>
@@ -80,8 +84,8 @@ const LanguageDirectory = ({ pages }: { pages: DiscoveryPage[] }) => (
 					</Link>
 				</li>
 			))}
-		</Box>
-	</Box>
+		</SimpleGrid>
+	</nav>
 );
 
 export default function Browse() {

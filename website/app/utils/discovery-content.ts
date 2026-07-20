@@ -3,13 +3,7 @@ type DiscoveryContent = {
 	intro: string;
 };
 
-type CategoryDiscoveryContent = DiscoveryContent & {
-	label: string;
-};
-
-export const languageDiscoveryContent: Partial<
-	Record<string, DiscoveryContent>
-> = {
+export const languageDiscoveryContent = {
 	arabic: {
 		description:
 			'Browse open-source Arabic fonts with native right-to-left previews. Compare connected letterforms, styles, and families ready to self-host.',
@@ -124,11 +118,9 @@ export const languageDiscoveryContent: Partial<
 		intro:
 			'Compare Vietnamese typefaces through dense diacritics and everyday reading.',
 	},
-};
+} satisfies Record<string, DiscoveryContent>;
 
-export const categoryDiscoveryContent: Partial<
-	Record<string, CategoryDiscoveryContent>
-> = {
+export const categoryDiscoveryContent = {
 	display: {
 		description:
 			'Browse open-source display fonts for headlines, posters, and branding. Preview your text, compare styles, and self-host with Fontsource.',
@@ -171,7 +163,7 @@ export const categoryDiscoveryContent: Partial<
 			'Browse distinctive typefaces for editorial design, branding, and comfortable long-form reading.',
 		label: 'Serif',
 	},
-};
+} satisfies Record<string, DiscoveryContent & { label: string }>;
 
 export const variableDiscoveryContent: DiscoveryContent = {
 	description:

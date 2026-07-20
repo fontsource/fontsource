@@ -49,7 +49,7 @@ import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
 import { getPreviewText } from '@/utils/language/language';
 
-export interface SearchProps {
+interface SearchProps {
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
 	serverState?: InstantSearchServerState;
