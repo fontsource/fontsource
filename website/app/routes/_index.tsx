@@ -337,8 +337,8 @@ export function CatalogSearchPage() {
 			>
 				<Configure attributesToRetrieve={attributesToRetrieve} />
 				{discovery && (
-					<ContentHeader>
-						<Stack gap="xs" maw={900}>
+					<ContentHeader mih={0} pt={40} pb={24}>
+						<Stack gap="xs" maw={760}>
 							<Breadcrumbs
 								items={[
 									{ name: 'Fonts', url: '/' },
@@ -354,7 +354,11 @@ export function CatalogSearchPage() {
 					</ContentHeader>
 				)}
 				<Box className={classes.background}>
-					<Box className={classes.container} ref={searchRef}>
+					<Box
+						className={classes.container}
+						pt={discovery ? 24 : undefined}
+						ref={searchRef}
+					>
 						<Filters state$={state$} />
 					</Box>
 				</Box>
