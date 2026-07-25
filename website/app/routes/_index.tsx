@@ -349,7 +349,8 @@ export function CatalogSearchPage() {
 						eyebrow={
 							<Breadcrumbs
 								items={[
-									{ name: 'Browse', url: '/browse' },
+									{ name: 'Fontsource', url: '/' },
+									{ name: 'Browse Fonts', url: '/browse' },
 									{ name: discovery.label },
 								]}
 							/>
