@@ -1,4 +1,5 @@
 import { Box, Group, Text } from '@mantine/core';
+import { useIntersection } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 
@@ -16,6 +17,7 @@ interface FontCardProps {
 	preview?: string;
 	previewHeight?: number;
 	size: number;
+	eagerStylesheet?: boolean;
 }
 
 const FontCard = ({
@@ -24,13 +26,25 @@ const FontCard = ({
 	preview,
 	previewHeight,
 	size,
+	eagerStylesheet = false,
 }: FontCardProps) => {
 	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${font.id}@latest/index.css`;
+	const { ref, entry } = useIntersection<HTMLDivElement>({
+		rootMargin: '150% 0px',
+	});
+	const [shouldLoadStylesheet, setShouldLoadStylesheet] =
+		useState(eagerStylesheet);
 	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
 	const isFontReady = useIsFontReady(font.family, isStylesheetLoaded);
 
 	useEffect(() => {
-		if (isStylesheetLoaded) return;
+		if (eagerStylesheet || entry?.isIntersecting) {
+			setShouldLoadStylesheet(true);
+		}
+	}, [eagerStylesheet, entry?.isIntersecting]);
+
+	useEffect(() => {
+		if (!shouldLoadStylesheet || isStylesheetLoaded) return;
 
 		for (const sheet of document.styleSheets) {
 			if (sheet.href === stylesheetHref) {
@@ -38,7 +52,7 @@ const FontCard = ({
 				return;
 			}
 		}
-	}, [isStylesheetLoaded, stylesheetHref]);
+	}, [isStylesheetLoaded, shouldLoadStylesheet, stylesheetHref]);
 
 	const isNotLatin =
 		font.defSubset !== 'latin' ||
@@ -54,13 +68,16 @@ const FontCard = ({
 		<Box
 			className={classes.wrapper}
 			mih={{ base: '150px', sm: layout === 'grid' ? '332px' : '150px' }}
+			ref={ref}
 		>
-			<link
-				rel="stylesheet"
-				href={stylesheetHref}
-				onLoad={() => setStylesheetLoaded(true)}
-				onError={() => setStylesheetLoaded(true)}
-			/>
+			{shouldLoadStylesheet && (
+				<link
+					rel="stylesheet"
+					href={stylesheetHref}
+					onLoad={() => setStylesheetLoaded(true)}
+					onError={() => setStylesheetLoaded(true)}
+				/>
+			)}
 			<Link className={classes.link} prefetch="intent" to={`/fonts/${font.id}`}>
 				<div className={classes.preview}>
 					<Skeleton name="search-hit-preview" loading={!isFontReady}>

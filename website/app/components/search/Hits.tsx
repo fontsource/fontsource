@@ -1,5 +1,13 @@
 import { observer, useValue } from '@legendapp/state/react';
-import { Box, Group, SimpleGrid, Text, VisuallyHidden } from '@mantine/core';
+import {
+	Box,
+	Button,
+	Group,
+	SimpleGrid,
+	Stack,
+	Text,
+	VisuallyHidden,
+} from '@mantine/core';
 import { useMounted, useViewportSize } from '@mantine/hooks';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import type { BaseHit } from 'instantsearch.js';
@@ -33,6 +41,7 @@ interface AlgoliaMetadata extends BaseHit {
 interface HitComponentProps {
 	state$: SearchState;
 	hit: AlgoliaMetadata;
+	eagerStylesheet?: boolean;
 }
 
 interface InfiniteHitsProps {
@@ -40,6 +49,7 @@ interface InfiniteHitsProps {
 }
 
 const hitsPerVirtualRow = 12;
+const eagerStylesheetCount = 4;
 const rowGap = 16;
 const loadingPlaceholderKeys = [0, 1, 2, 3];
 type Display = 'grid' | 'list';
@@ -55,48 +65,69 @@ const getRowClassName = (display: Display) =>
 		? `${classes['result-row']} ${classes['list-mode']}`
 		: classes['result-row'];
 
-const HitComponent = observer(({ hit, state$ }: HitComponentProps) => {
-	const display = useValue(state$.display);
-	const size = useValue(state$.size);
+const getNoResultsMessage = (
+	collectionMessage: string | undefined,
+	hasQuery: boolean,
+	hasActiveFilters: boolean,
+) => {
+	if (collectionMessage) return collectionMessage;
+	if (hasQuery && hasActiveFilters) {
+		return 'No font families match your search and filters. Try a different search or remove a filter.';
+	}
+	if (hasQuery) {
+		return 'No font families match your search. Try a different search.';
+	}
+	if (hasActiveFilters) {
+		return 'No font families match these filters. Try removing a filter.';
+	}
+	return 'No font families are available right now.';
+};
 
-	// Change preview text if hit.defSubset is not latin or if it's an ico
-	const isNotLatin =
-		hit.defSubset !== 'latin' ||
-		hit.category === 'icons' ||
-		hit.category === 'other';
+const HitComponent = observer(
+	({ eagerStylesheet, hit, state$ }: HitComponentProps) => {
+		const display = useValue(state$.display);
+		const size = useValue(state$.size);
 
-	// We want a unique preview text for each font if it's not latin
-	const currentPreview = useValue(() => {
-		const customValue = state$.preview.customValue.get();
+		// Change preview text if hit.defSubset is not latin or if it's an ico
+		const isNotLatin =
+			hit.defSubset !== 'latin' ||
+			hit.category === 'icons' ||
+			hit.category === 'other';
 
-		if (customValue !== '') {
-			return customValue;
-		}
+		// We want a unique preview text for each font if it's not latin
+		const currentPreview = useValue(() => {
+			const customValue = state$.preview.customValue.get();
 
-		// Use language-specific preview for non-latin fonts when no custom input
-		if (isNotLatin) {
-			return getPreviewText(hit.defSubset, hit.objectID);
-		}
+			if (customValue !== '') {
+				return customValue;
+			}
 
-		return state$.preview.presetValue.get();
-	});
+			// Use language-specific preview for non-latin fonts when no custom input
+			if (isNotLatin) {
+				return getPreviewText(hit.defSubset, hit.objectID);
+			}
 
-	return (
-		<FontCard
-			font={{
-				id: hit.objectID,
-				family: hit.family,
-				defSubset: hit.defSubset,
-				category: hit.category,
-				variable: hit.variable,
-			}}
-			layout={display}
-			preview={currentPreview}
-			previewHeight={getGridPreviewHeight(size)}
-			size={size}
-		/>
-	);
-});
+			return state$.preview.presetValue.get();
+		});
+
+		return (
+			<FontCard
+				font={{
+					id: hit.objectID,
+					family: hit.family,
+					defSubset: hit.defSubset,
+					category: hit.category,
+					variable: hit.variable,
+				}}
+				layout={display}
+				preview={currentPreview}
+				previewHeight={getGridPreviewHeight(size)}
+				size={size}
+				eagerStylesheet={eagerStylesheet}
+			/>
+		);
+	},
+);
 
 const HitPlaceholder = ({
 	display,
@@ -144,8 +175,8 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const collection = collections.find((item) => item.id === collectionId);
 	const collectionMessage = collection
 		? collection.fontIds.length === 0
-			? `${collection.name} does not have any fonts yet.`
-			: `No fonts in ${collection.name} match these filters.`
+			? `${collection.name} is empty. Choose All fonts to find fonts to add.`
+			: `No font families in ${collection.name} match these filters. Try removing a filter.`
 		: undefined;
 	const display = state$.display.get();
 	const loadingStatusId = useId();
@@ -166,7 +197,9 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 						: 1;
 
 	// Infinite Scrolling
-	const { results, indexUiState, status } = useInstantSearch();
+	const { indexUiState, refresh, results, status } = useInstantSearch({
+		catchError: true,
+	});
 	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
 	const isSearchLoading = status === 'loading' || status === 'stalled';
 	const size = state$.size.get();
@@ -181,6 +214,13 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		sortBy: indexUiState.sortBy ?? '',
 		toggle: indexUiState.toggle ?? {},
 	});
+	const hasQuery = Boolean(indexUiState.query?.trim());
+	const hasActiveFilters =
+		Object.values(indexUiState.menu ?? {}).some(Boolean) ||
+		Object.values(indexUiState.refinementList ?? {}).some(
+			(values) => values.length > 0,
+		) ||
+		Object.values(indexUiState.toggle ?? {}).some(Boolean);
 	const previousSearchKeyRef = useRef(searchKey);
 	// Twelve fills complete rows at every supported grid width: 1, 2, 3, and 4 columns.
 	const rows = useMemo(
@@ -296,15 +336,30 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		return unsubscribe;
 	}, [state$.preview, state$.language, items]);
 
+	if (status === 'error') {
+		return (
+			<Box px={4} py={24} role="alert">
+				<Stack align="flex-start" gap="xs">
+					<Text fw={600}>Font results could not load.</Text>
+					<Text c="dimmed">
+						We could not reach the font search service. Check your connection,
+						then try again.
+					</Text>
+					<Button onClick={() => refresh()} size="sm">
+						Reload results
+					</Button>
+				</Stack>
+			</Box>
+		);
+	}
+
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
 	if (!results.__isArtificial && results.nbHits === 0) {
 		return (
 			<Box>
-				<Text role="status">
-					{collectionMessage
-						? collectionMessage
-						: `No results found for "${indexUiState.query ?? ''}"`}
+				<Text aria-atomic="true" role="status">
+					{getNoResultsMessage(collectionMessage, hasQuery, hasActiveFilters)}
 				</Text>
 			</Box>
 		);
@@ -342,11 +397,15 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 								>
 									{row ? (
 										<div className={getRowClassName(display)}>
-											{row.map((hit) => (
+											{row.map((hit, hitIndex) => (
 												<HitComponent
 													key={hit.objectID}
 													state$={state$}
 													hit={hit}
+													eagerStylesheet={
+														virtualRow.index === 0 &&
+														hitIndex < eagerStylesheetCount
+													}
 												/>
 											))}
 										</div>
@@ -365,8 +424,13 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 						cols={display === 'grid' ? { base: 1, sm: 2, md: 3, xl: 4 } : 1}
 						spacing={rowGap}
 					>
-						{items.map((hit) => (
-							<HitComponent key={hit.objectID} state$={state$} hit={hit} />
+						{items.map((hit, index) => (
+							<HitComponent
+								key={hit.objectID}
+								state$={state$}
+								hit={hit}
+								eagerStylesheet={index < eagerStylesheetCount}
+							/>
 						))}
 					</SimpleGrid>
 				)}

@@ -1,12 +1,5 @@
 import { useValue } from '@legendapp/state/react';
-import {
-	Box,
-	Button,
-	Checkbox,
-	Group,
-	SimpleGrid,
-	UnstyledButton,
-} from '@mantine/core';
+import { Box, Button, Checkbox, Group, SimpleGrid } from '@mantine/core';
 import { useCallback } from 'react';
 import {
 	Configure,
@@ -101,26 +94,18 @@ const Filters = ({ state$ }: FilterProps) => {
 					<LanguagesDropdown state$={state$} />
 				</Group>
 				<Group justify="center" wrap="nowrap">
-					<UnstyledButton
-						w={200}
-						onClick={() => {
+					<Checkbox
+						checked={variableValue.isRefined}
+						color="purple.0"
+						disabled={!canRefine}
+						label="Show only variable fonts"
+						onChange={() => {
 							variableRefine(variableValue);
 						}}
-						disabled={!canRefine}
-					>
-						<Checkbox
-							color="purple.0"
-							label="Show only variable fonts"
-							checked={variableValue.isRefined}
-							disabled={!canRefine}
-							readOnly
-							style={{
-								pointerEvents: 'none',
-							}}
-						/>
-					</UnstyledButton>
+						w={200}
+					/>
 					<Button
-						leftSection={<IconTrash />}
+						leftSection={<IconTrash aria-hidden="true" />}
 						variant="subtle"
 						className={classes.button}
 						onClick={() => {

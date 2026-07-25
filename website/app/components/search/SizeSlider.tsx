@@ -21,7 +21,7 @@ const SizeSlider = observer(({ state$ }: SizeSliderProps) => {
 					classNames={{ root: classes.slider, bar: classes.bar }}
 					color="purple.0"
 					size="sm"
-					thumbLabel="Change font size"
+					thumbLabel="Preview font size"
 					label={null}
 					value={size}
 					onChange={state$.size.set}

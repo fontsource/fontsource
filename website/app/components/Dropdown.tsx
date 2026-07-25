@@ -87,7 +87,7 @@ const DropdownBase = ({
 					component="button"
 					classNames={{ input: classes.input }}
 					pointer
-					rightSection={<IconCaret />}
+					rightSection={<IconCaret aria-hidden="true" />}
 					onClick={() => {
 						combobox.toggleDropdown();
 					}}
@@ -103,6 +103,7 @@ const DropdownBase = ({
 			<Combobox.Dropdown>
 				{search && (
 					<Combobox.Search
+						aria-label="Search languages"
 						value={searchQuery}
 						onChange={(event) => {
 							handleSearchQuery(event.currentTarget.value);
