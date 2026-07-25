@@ -9,11 +9,9 @@
 	display: flex;
 	flex-shrink: 0;
 	gap: var(--mantine-spacing-lg);
-	border-bottom: 1px solid var(--mantine-color-default-border);
 }
 
 .modeLink {
-	margin-bottom: -1px;
 	padding-block: var(--mantine-spacing-xs);
 	border-bottom: 2px solid transparent;
 	color: light-dark(
