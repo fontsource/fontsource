@@ -70,7 +70,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 							<FooterNavLink label="Fonts" to="/" />
 							<FooterNavLink label="Browse" to="/browse" />
 							<FooterNavLink label="Documentation" to="/docs" />
-							<FooterNavLink label="Privacy" to="/privacy" />
+							<FooterNavLink label="Privacy Policy" to="/privacy" />
 							<ThemeButton stroke="white" />
 							<Icon
 								label="GitHub"

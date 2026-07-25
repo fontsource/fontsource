@@ -5,7 +5,7 @@ import classes from '@/styles/privacy.module.css';
 import { ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
-	const title = 'Privacy | Fontsource';
+	const title = 'Privacy Policy | Fontsource';
 	const description =
 		'How Fontsource approaches privacy across its website and services.';
 
@@ -26,21 +26,12 @@ export default function PrivacyPage() {
 		<>
 			<ContentHeader>
 				<Stack gap="sm" maw={760}>
-					<Text className={classes.eyebrow}>Fontsource privacy notice</Text>
+					<Text className={classes.eyebrow}>Fontsource</Text>
 					<Title order={1} className={classes.title}>
-						Privacy
+						Privacy Policy
 					</Title>
 					<Text className={classes.lede}>
-						Fontsource is an{' '}
-						<Anchor
-							href="https://github.com/fontsource/fontsource"
-							target="_blank"
-							rel="noreferrer"
-							className={classes.ledeLink}
-						>
-							open-source project
-						</Anchor>{' '}
-						for self-hostable fonts.
+						Fontsource is an open-source project for self-hostable fonts.
 					</Text>
 				</Stack>
 			</ContentHeader>
@@ -52,7 +43,7 @@ export default function PrivacyPage() {
 							<Text className={classes.date}>July 25, 2026</Text>
 						</Box>
 
-						<Box component="nav" aria-label="Privacy notice sections">
+						<Box component="nav" aria-label="Privacy policy sections">
 							<Text className={classes.label}>On this page</Text>
 							<Box className={classes.navigation}>
 								{sections.map((section) => (
@@ -229,11 +220,11 @@ export default function PrivacyPage() {
 							</Text>
 							<Box>
 								<Title order={2} className={classes.sectionTitle}>
-									Changes to this notice
+									Changes to this policy
 								</Title>
 								<Box className={classes.copy}>
 									<Text>
-										We may update this notice as Fontsource's services change.
+										We may update this policy as Fontsource's services change.
 										The date at the top shows when it was last updated.
 									</Text>
 								</Box>

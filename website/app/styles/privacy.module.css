@@ -22,23 +22,6 @@
 	text-wrap: pretty;
 }
 
-.ledeLink {
-	color: inherit;
-	font-weight: 550;
-	text-decoration-color: light-dark(#8992a3, #7f89a0);
-	text-underline-offset: 0.25rem;
-}
-
-.ledeLink:hover {
-	color: var(--mantine-color-purple-0);
-}
-
-.ledeLink:focus-visible {
-	border-radius: 0.125rem;
-	outline: 2px solid var(--mantine-color-purple-0);
-	outline-offset: 0.1875rem;
-}
-
 .container {
 	max-width: 90rem;
 	margin-inline: auto;
