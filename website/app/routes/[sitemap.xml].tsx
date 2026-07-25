@@ -12,6 +12,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 	smStream.write({ url: '/', changefreq: 'daily', priority: 0.9 });
 	smStream.write({ url: '/browse', changefreq: 'weekly', priority: 0.7 });
 	smStream.write({ url: '/tools', changefreq: 'weekly', priority: 0.7 });
+	smStream.write({ url: '/privacy', changefreq: 'yearly', priority: 0.3 });
 	smStream.write({
 		url: '/tools/converter',
 		changefreq: 'weekly',

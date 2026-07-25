@@ -101,6 +101,7 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 					<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
 					<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
 					<HeaderNavLink label="Tools" to="/tools" toggle={toggle} />
+					<HeaderNavLink label="Privacy" to="/privacy" toggle={toggle} />
 					<Divider />
 					<ThemeButtonMobile />
 					<MobileExternalIcon

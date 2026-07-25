@@ -175,7 +175,6 @@ export const Document = ({ children }: DocumentProps) => {
 					defaultColorScheme="light"
 					suppressHydrationWarning
 				/>
-				<script defer src="https://demo.medama.io/script.js" />
 			</head>
 			<body>
 				<MantineProvider theme={theme}>

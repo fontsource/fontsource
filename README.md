@@ -2,8 +2,6 @@
 
 [![Generic badge](https://img.shields.io/badge/fontsource-passing-brightgreen)](https://github.com/fontsource/fontsource) [![Monthly NPM Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.fontsource.org%2Fv1%2Fstats%2Fbadge%2Fnpm-monthly)](https://fontsource.org/docs/api/stats) [![Total NPM Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.fontsource.org%2Fv1%2Fstats%2Fbadge%2Fnpm-total)](https://fontsource.org/docs/api/stats) [![Monthly jsDelivr Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.fontsource.org%2Fv1%2Fstats%2Fbadge%2Fjsdelivr-monthly)](https://fontsource.org/docs/api/stats) [![Total jsDelivr Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.fontsource.org%2Fv1%2Fstats%2Fbadge%2Fjsdelivr-total)](https://fontsource.org/docs/api/stats) [![License](https://badgen.net/badge/license/MIT/green)](https://github.com/fontsource/fontsource/blob/main/LICENSE)
 
-> **Looking for privacy-focused website analytics?** Check out [Medama](https://github.com/medama-io/medama), an open-source, lightweight and self-hostable analytics solution designed to respect user privacy. 
-
 An updating monorepo full of self-hostable Open Source fonts bundled into individual NPM packages!
 
 Our full documentation and search directory can be found [here](https://fontsource.org/).
