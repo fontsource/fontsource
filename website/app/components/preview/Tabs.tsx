@@ -44,7 +44,6 @@ export const TabsWrapper = ({
 			}}
 		>
 			<ContentHeader
-				eyebrow="Font family"
 				title={metadata.family}
 				data-m:load={`view-tab=${tabsValue}`}
 				actions={

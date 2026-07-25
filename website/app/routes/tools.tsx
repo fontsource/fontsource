@@ -9,7 +9,6 @@ export default function ToolsLayout() {
 	return (
 		<>
 			<ContentHeader
-				eyebrow="Browser utilities"
 				title="Developer Tools"
 				description="Utilities for working with font files directly in your browser."
 			/>

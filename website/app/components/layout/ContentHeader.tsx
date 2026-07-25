@@ -8,7 +8,6 @@ type ContentHeaderProps = Omit<ContainerProps, 'children' | 'title'> & {
 	actions?: ReactNode;
 	children?: ReactNode;
 	description?: ReactNode;
-	eyebrow?: ReactNode;
 	title: ReactNode;
 };
 
@@ -16,7 +15,6 @@ export const ContentHeader = ({
 	actions,
 	children,
 	description,
-	eyebrow,
 	title,
 	...other
 }: ContentHeaderProps) => {
@@ -24,7 +22,6 @@ export const ContentHeader = ({
 		<Box component="header" className={classes.header}>
 			<Container className={classes.inner} {...other}>
 				<Box className={classes.content}>
-					{eyebrow && <Box className={classes.eyebrow}>{eyebrow}</Box>}
 					<Box className={classes.heading}>
 						<Title order={1} className={classes.title}>
 							{title}

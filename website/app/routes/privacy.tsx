@@ -46,7 +46,6 @@ export default function PrivacyPage() {
 	return (
 		<>
 			<ContentHeader
-				eyebrow="Fontsource / Privacy Policy"
 				title="Privacy Policy"
 				description={
 					<>
