@@ -17,3 +17,10 @@
 		outline-offset: -3px;
 	}
 }
+
+.description {
+	color: light-dark(
+		var(--mantine-color-gray-7),
+		var(--mantine-color-dark-1)
+	);
+}

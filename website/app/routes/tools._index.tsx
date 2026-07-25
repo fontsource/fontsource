@@ -5,9 +5,9 @@ import { ToolCard } from '@/components/tools/ToolCard';
 import { ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
-	const title = 'Developer Tools | Fontsource';
+	const title = 'Font Tools | Fontsource';
 	const description =
-		'Free browser-based font tools for web developers and designers, including a private webfont converter and WOFF2 optimizer with CSS generation.';
+		'Free browser-based tools for converting and optimizing font files without uploading them.';
 
 	return ogMeta({ title, description });
 };
@@ -15,13 +15,14 @@ export const meta: MetaFunction = () => {
 const tools = [
 	{
 		title: 'Font Converter',
-		description: 'Convert TTF, OTF, WOFF, and WOFF2 files in your browser.',
+		description:
+			'Convert TTF, OTF, WOFF, and WOFF2 files into your selected formats.',
 		link: '/tools/converter',
 		icon: IconTransform,
 	},
 	{
 		title: 'Webfont Optimizer',
-		description: 'Create compressed WOFF2 webfonts and ready-to-use CSS.',
+		description: 'Compress font families to WOFF2 and generate matching CSS.',
 		link: '/tools/optimizer',
 		icon: IconBolt,
 	},

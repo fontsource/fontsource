@@ -2,6 +2,7 @@ import { Container } from '@mantine/core';
 import { Outlet, useMatch } from 'react-router';
 
 import { ContentHeader } from '@/components/layout/ContentHeader';
+import { FontToolsProvider } from '@/components/tools/FontToolsProvider';
 
 import classes from '../styles/global.module.css';
 
@@ -12,13 +13,18 @@ export default function ToolsLayout() {
 		<>
 			{isToolsIndex && (
 				<ContentHeader
-					eyebrow="Browser utilities"
-					title="Developer Tools"
-					description="Utilities for working with font files directly in your browser."
+					title="Font Tools"
+					description="Convert and optimize font files without uploading them."
 				/>
 			)}
 			<Container className={classes.container}>
-				<Outlet />
+				{isToolsIndex ? (
+					<Outlet />
+				) : (
+					<FontToolsProvider>
+						<Outlet />
+					</FontToolsProvider>
+				)}
 			</Container>
 		</>
 	);

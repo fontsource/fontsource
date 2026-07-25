@@ -34,7 +34,7 @@ export const ToolCard = ({
 			<Title order={2} size="h3" mt="md">
 				{title}
 			</Title>
-			<Text size="sm" c="dimmed" mt="sm">
+			<Text size="sm" mt="sm" className={styles.description}>
 				{description}
 			</Text>
 		</Card>

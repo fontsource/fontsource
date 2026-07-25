@@ -1,10 +1,29 @@
 .dropzone {
-	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
+	border-color: light-dark(#d8d5ff, #3e3b70);
+	background-color: light-dark(#f7f6ff, #18182e);
 	border-radius: var(--mantine-radius-md);
-	transition: background-color 150ms ease;
+	transition:
+		border-color 150ms ease,
+		background-color 150ms ease;
+}
+
+.dropzone:not([data-compact='true']):hover {
+	border-color: light-dark(#b8b4ff, #57528f);
+	background-color: light-dark(#f1f0ff, #1d1c38);
+}
+
+.dropzone[data-accept] {
+	border-color: light-dark(#7bc993, #3f8b58);
+	background-color: light-dark(#eefbf2, #14261c);
+}
+
+.dropzone[data-reject] {
+	border-color: light-dark(#ee9a9a, #9f4c4c);
+	background-color: light-dark(#fff3f3, #2d191b);
 }
 
 .dropzone[data-compact='true'] {
+	border-color: var(--mantine-color-default-border);
 	background-color: transparent;
 	padding: 4px var(--mantine-spacing-md);
 }
@@ -16,13 +35,20 @@
 }
 
 .idleIcon {
-	color: var(--mantine-color-dimmed);
+	color: var(--mantine-color-purple-0);
 }
 
 .acceptIcon {
-	color: var(--mantine-color-blue-6);
+	color: light-dark(#176b32, #72df91);
 }
 
 .rejectIcon {
 	color: var(--mantine-color-red-6);
+}
+
+.supportingText {
+	color: light-dark(
+		var(--mantine-color-gray-7),
+		var(--mantine-color-dark-1)
+	);
 }

@@ -8,19 +8,25 @@ import {
 	inspectFont,
 } from '@fontsource-utils/core';
 import { Zip, ZipPassThrough } from 'fflate';
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
+import { resolveConversionArtifacts } from '@/components/tools/artifacts';
+import {
+	type FontOutputSettings,
+	type FontSourceEntry,
+	type FontToolPreset,
+	useFontToolsSession,
+} from '@/components/tools/FontToolsProvider';
+import { processWithConcurrency } from '@/utils/processWithConcurrency';
 
-export type FontToolPreset = 'converter' | 'optimizer';
+export type {
+	FontOutputSettings,
+	FontSourceEntry,
+	FontToolPreset,
+} from '@/components/tools/FontToolsProvider';
+
 type ArtifactFormat = FontFileFormat | 'css';
 
-interface FontSourceEntry {
-	id: number;
-	file: File;
-	inspection: FontInspection | null;
-	error?: string;
-}
-
-interface FontArtifact {
+export interface FontArtifact {
 	filename: string;
 	format: ArtifactFormat;
 	data: Uint8Array;
@@ -28,33 +34,14 @@ interface FontArtifact {
 	familyId?: string;
 }
 
-interface FontFamilyGroup {
+export interface FontFamilyGroup {
 	id: string;
 	name: string;
 	sourceIds: number[];
 	faces: FontInspection[];
 }
 
-interface FontOutputSettings {
-	formats: { woff2: boolean; woff: boolean; ttf: boolean };
-	includeCss: boolean;
-	display: string;
-	path: string;
-	preserveNames: boolean;
-}
-
 const MAX_PROJECT_BYTES = 250 * 1024 ** 2;
-
-const defaultOutput = (preset: FontToolPreset): FontOutputSettings => {
-	const optimize = preset === 'optimizer';
-	return {
-		formats: { woff2: true, woff: false, ttf: false },
-		includeCss: optimize,
-		display: 'swap',
-		path: './files',
-		preserveNames: !optimize,
-	};
-};
 
 const slugify = (value: string): string =>
 	value
@@ -80,16 +67,28 @@ const clearProcessingErrors = (sources: FontSourceEntry[]): FontSourceEntry[] =>
 	);
 
 export const useFontWorkbench = (preset: FontToolPreset) => {
-	const nextId = useRef(0);
-	const [sources, setSources] = useState<FontSourceEntry[]>([]);
+	const {
+		nextSourceId,
+		stopRequested,
+		sources,
+		setSources,
+		outputs,
+		setOutputs,
+		activePreset,
+		setActivePreset,
+	} = useFontToolsSession();
 	const [artifacts, setArtifacts] = useState<FontArtifact[]>([]);
-	const [output, setOutput] = useState(() => defaultOutput(preset));
 	const [familyErrors, setFamilyErrors] = useState<Record<string, string>>({});
 	const [projectError, setProjectError] = useState<string>();
-	const [isProcessing, setIsProcessing] = useState(false);
+	const [projectNotice, setProjectNotice] = useState<string>();
 	const [isCreatingZip, setIsCreatingZip] = useState(false);
+	const [isStopping, setIsStopping] = useState(false);
 	const [progress, setProgress] = useState({ value: 0, text: '' });
-	const packageOutput = output.includeCss || !output.preserveNames;
+	const output = outputs[preset];
+	const packageOutput = preset === 'optimizer';
+	const isProcessing = activePreset === preset;
+	const isSessionProcessing = activePreset !== undefined;
+
 	const families = useMemo<FontFamilyGroup[]>(() => {
 		const grouped = new Map<string, FontFamilyGroup>();
 
@@ -124,40 +123,32 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 		setArtifacts([]);
 		setFamilyErrors({});
 		setSources(clearProcessingErrors);
+		setProjectError(undefined);
+		setProjectNotice(undefined);
 	};
 
 	const updateOutput = (next: FontOutputSettings) => {
-		setOutput(next);
+		setOutputs((current) => ({ ...current, [preset]: next }));
 		resetResults();
 	};
 
 	const addFiles = async (files: File[]) => {
 		setProjectError(undefined);
-		const currentFingerprints = new Set(
-			sources.map(
-				({ file }) => `${file.name}:${file.size}:${file.lastModified}`,
-			),
-		);
-		const entries: FontSourceEntry[] = [];
-
-		for (const file of files) {
-			const fingerprint = `${file.name}:${file.size}:${file.lastModified}`;
-			if (currentFingerprints.has(fingerprint)) continue;
-			currentFingerprints.add(fingerprint);
-			entries.push({
-				id: nextId.current++,
-				file,
-				inspection: null,
-			});
-		}
-
+		setProjectNotice(undefined);
+		const entries: FontSourceEntry[] = files.map((file) => ({
+			id: nextSourceId.current++,
+			file,
+			inspection: null,
+		}));
 		if (entries.length === 0) return;
 		const totalBytes = [...sources, ...entries].reduce(
 			(total, source) => total + source.file.size,
 			0,
 		);
 		if (totalBytes > MAX_PROJECT_BYTES) {
-			setProjectError('This batch is larger than the 250 MB browser limit.');
+			setProjectError(
+				'The selected files would exceed the 250 MB batch limit. Remove some font files or choose fewer files.',
+			);
 			return;
 		}
 
@@ -166,8 +157,9 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 		const ctx = createFontContext();
 
 		try {
-			await Promise.all(
-				entries.map(async (entry) => {
+			await processWithConcurrency(
+				entries,
+				async (entry) => {
 					try {
 						const inspection = await inspectFont(
 							ctx,
@@ -185,13 +177,15 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 								source.id === entry.id
 									? {
 											...source,
-											error: 'This file could not be read as a font.',
+											error:
+												'We could not read this file as a font. Try another copy.',
 										}
 									: source,
 							),
 						);
 					}
-				}),
+				},
+				() => stopRequested.current,
 			);
 		} finally {
 			ctx.destroy();
@@ -199,6 +193,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 	};
 
 	const removeSource = (id: number) => {
+		setProjectNotice(undefined);
 		setSources((current) => current.filter((source) => source.id !== id));
 		resetResults();
 	};
@@ -208,11 +203,13 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 		setArtifacts([]);
 		setFamilyErrors({});
 		setProjectError(undefined);
+		setProjectNotice(undefined);
 	};
 
 	const rejectFiles = () => {
+		setProjectNotice(undefined);
 		setProjectError(
-			'Use TTF, OTF, WOFF, or WOFF2 files. The total batch limit is 250 MB.',
+			'Some files were not added. Choose TTF, OTF, WOFF, or WOFF2 files, and keep the batch under 250 MB.',
 		);
 	};
 
@@ -227,8 +224,9 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 		let completed = 0;
 
 		try {
-			const results = await Promise.all(
-				validSources.map(async (source) => {
+			const processed = await processWithConcurrency(
+				validSources,
+				async (source) => {
 					try {
 						const converted = await convertFont(
 							ctx,
@@ -243,7 +241,8 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 								entry.id === source.id
 									? {
 											...entry,
-											error: 'Font conversion failed.',
+											error:
+												'We could not convert this font. Try another copy.',
 										}
 									: entry,
 							),
@@ -253,41 +252,31 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 						completed++;
 						setProgress({
 							value: (completed / validSources.length) * 100,
-							text: `Converted ${source.file.name}`,
+							text: `${completed} of ${validSources.length} ${validSources.length === 1 ? 'font' : 'fonts'} processed`,
 						});
 					}
-				}),
+				},
+				() => stopRequested.current,
 			);
 
-			const bestByFilename = new Map<
-				string,
-				{ artifact: FontArtifact; priority: number }
-			>();
-			for (const { source, converted } of results) {
-				const extension =
-					source.file.name.split('.').pop()?.toLowerCase() ?? '';
-				const sourceFormat = extension === 'otf' ? 'ttf' : extension;
-				const sourceQuality =
-					sourceFormat === 'ttf' ? 3 : sourceFormat === 'woff' ? 2 : 1;
-
-				for (const result of converted) {
-					const priority =
-						(sourceFormat === result.format ? 10 : 0) + sourceQuality;
-					const artifact: FontArtifact = {
-						filename: result.filename,
-						format: result.format,
-						data: result.data,
-						sourceId: source.id,
-					};
-					const current = bestByFilename.get(result.filename);
-					if (!current || priority > current.priority) {
-						bestByFilename.set(result.filename, { artifact, priority });
-					}
-				}
+			const resolved = resolveConversionArtifacts(
+				processed.results.map(({ source, converted }) => ({
+					sourceId: source.id,
+					results: converted,
+				})),
+			);
+			setArtifacts(resolved.artifacts);
+			if (resolved.renamedArtifactCount > 0) {
+				setProjectNotice(
+					`Renamed ${resolved.renamedArtifactCount} output ${resolved.renamedArtifactCount === 1 ? 'file' : 'files'} to avoid duplicate ${resolved.renamedArtifactCount === 1 ? 'filename' : 'filenames'}.`,
+				);
 			}
-			setArtifacts(
-				[...bestByFilename.values()].map(({ artifact }) => artifact),
-			);
+
+			return {
+				processedCount: processed.processedCount,
+				totalCount: validSources.length,
+				stopped: processed.stopped,
+			};
 		} finally {
 			ctx.destroy();
 		}
@@ -298,95 +287,111 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 			(format) => output.formats[format],
 		);
 		const ctx = createFontContext();
-		const builtArtifacts: FontArtifact[] = [];
 		const errors: Record<string, string> = {};
+		const familyProgress = Array<number>(families.length).fill(0);
+		let totalProgress = 0;
 
 		try {
-			for (const [index, family] of families.entries()) {
-				const familySources = sources.filter((source) =>
-					family.sourceIds.includes(source.id),
-				);
-				setProgress({
-					value: (index / families.length) * 100,
-					text: `Optimizing ${family.name}`,
-				});
-
-				try {
-					const shared = {
-						id: family.id,
-						family: family.name,
-						characters: 'all' as const,
-						formats,
+			const processed = await processWithConcurrency(
+				families,
+				async (family, index) => {
+					const familySources = sources.filter((source) =>
+						family.sourceIds.includes(source.id),
+					);
+					const updateFamilyProgress = (value: number) => {
+						totalProgress += value - (familyProgress[index] ?? 0);
+						familyProgress[index] = value;
+						setProgress({
+							value: (totalProgress / families.length) * 100,
+							text:
+								families.length === 1
+									? `Optimizing ${family.name}…`
+									: `Optimizing ${families.length} font families…`,
+						});
 					};
-					const config: FontBuildConfig = family.faces.some(
-						(face) => face.axes.length > 0,
-					)
-						? {
-								...shared,
-								type: 'variable',
-							}
-						: { ...shared, type: 'static' };
-					const result = await buildFont(
-						ctx,
-						await Promise.all(
-							familySources.map(
-								async ({ file }) => new Uint8Array(await file.arrayBuffer()),
-							),
-						),
-						config,
-						{
+					const familyArtifacts: FontArtifact[] = [];
+
+					try {
+						const shared = {
+							id: family.id,
+							family: family.name,
+							characters: 'all' as const,
+							formats,
+						};
+						const config: FontBuildConfig = family.faces.some(
+							(face) => face.axes.length > 0,
+						)
+							? {
+									...shared,
+									type: 'variable',
+								}
+							: { ...shared, type: 'static' };
+						const buffers: Uint8Array[] = [];
+						for (const { file } of familySources) {
+							buffers.push(new Uint8Array(await file.arrayBuffer()));
+						}
+						const result = await buildFont(ctx, buffers, config, {
 							css: {
 								display: output.display,
 								resolver: ({ source }) =>
 									`${output.path.trim().replace(/\/$/, '') || '.'}/${source.filename}`,
 							},
-							onProgress: (familyProgress) =>
-								setProgress({
-									value: ((index + familyProgress) / families.length) * 100,
-									text: `Optimizing ${family.name}`,
-								}),
-						},
-					);
-
-					for (const font of result.fonts) {
-						builtArtifacts.push({
-							filename: `${family.id}/${font.filename}`,
-							format: font.format,
-							data: font.content,
-							familyId: family.id,
+							onProgress: updateFamilyProgress,
 						});
-					}
 
-					if (output.includeCss) {
-						const css = result.css.find(
-							(asset) => asset.filename === 'index.css',
-						);
-						if (css) {
-							builtArtifacts.push({
-								filename: `${family.id}/index.css`,
-								format: 'css',
-								data: new TextEncoder().encode(css.content),
+						for (const font of result.fonts) {
+							familyArtifacts.push({
+								filename: `${family.id}/${font.filename}`,
+								format: font.format,
+								data: font.content,
 								familyId: family.id,
 							});
 						}
+
+						if (output.includeCss) {
+							const css = result.css.find(
+								(asset) => asset.filename === 'index.css',
+							);
+							if (css) {
+								familyArtifacts.push({
+									filename: `${family.id}/index.css`,
+									format: 'css',
+									data: new TextEncoder().encode(css.content),
+									familyId: family.id,
+								});
+							}
+						}
+					} catch (error) {
+						errors[family.id] =
+							error instanceof Error &&
+							error.message.startsWith(
+								'Multiple distinct fonts would be written',
+							)
+								? 'This family has more than one file for the same weight and style. Remove the duplicate and try again.'
+								: 'We could not optimize this family. Try another copy of its font files.';
+					} finally {
+						updateFamilyProgress(1);
 					}
-					setArtifacts([...builtArtifacts]);
-				} catch (error) {
-					errors[family.id] =
-						error instanceof Error &&
-						error.message.startsWith('Multiple distinct fonts would be written')
-							? 'Multiple different files have the same family, weight, and style.'
-							: 'This family could not be optimized.';
-				}
-			}
+
+					return familyArtifacts;
+				},
+				() => stopRequested.current,
+			);
+			setArtifacts(processed.results.flat());
 			setFamilyErrors(errors);
+
+			return {
+				processedCount: processed.processedCount,
+				totalCount: families.length,
+				stopped: processed.stopped,
+			};
 		} finally {
 			ctx.destroy();
 		}
 	};
 
 	const processFiles = async () => {
-		if (isProcessing || sources.length === 0) return;
+		if (isSessionProcessing || sources.length === 0) return;
 		const formatCount = packageOutput
 			? Number(output.formats.woff) + Number(output.formats.woff2)
 			: Object.values(output.formats).filter(Boolean).length;
@@ -395,70 +400,121 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 			return;
 		}
 
-		setIsProcessing(true);
+		setActivePreset(preset);
 		setProjectError(undefined);
+		setProjectNotice(undefined);
 		setArtifacts([]);
 		setFamilyErrors({});
 		setSources(clearProcessingErrors);
+		stopRequested.current = false;
+		setIsStopping(false);
 		setProgress({
 			value: 0,
-			text: packageOutput ? 'Preparing package…' : 'Preparing conversion…',
+			text: packageOutput
+				? 'Preparing font families…'
+				: 'Preparing font files…',
 		});
 
 		try {
-			if (packageOutput) {
-				await runPackageBuild();
-			} else {
-				await runConversion();
+			const result = packageOutput
+				? await runPackageBuild()
+				: await runConversion();
+			if (result.stopped) {
+				setProjectNotice(
+					`${packageOutput ? 'Optimization' : 'Conversion'} stopped after ${result.processedCount} of ${result.totalCount} ${packageOutput ? 'families' : 'fonts'}. Any completed files are ready below.`,
+				);
 			}
+		} catch {
+			setProjectError(
+				packageOutput
+					? 'Optimization could not finish. Your font files are still available. Try again.'
+					: 'Conversion could not finish. Your font files are still available. Try again.',
+			);
 		} finally {
-			setIsProcessing(false);
+			stopRequested.current = false;
+			setIsStopping(false);
+			setActivePreset((current) => (current === preset ? undefined : current));
 		}
 	};
 
+	const stopProcessing = () => {
+		if (!isProcessing || isStopping) return;
+		stopRequested.current = true;
+		setIsStopping(true);
+		setProgress((current) => ({
+			...current,
+			text: packageOutput
+				? 'Finishing active families before stopping…'
+				: 'Finishing active fonts before stopping…',
+		}));
+	};
+
 	const downloadArtifact = (artifact: FontArtifact) => {
-		triggerDownload(
-			artifact.filename.split('/').pop() ?? artifact.filename,
-			new Blob([artifact.data as BlobPart], {
-				type:
-					artifact.format === 'css' ? 'text/css' : `font/${artifact.format}`,
-			}),
-		);
+		setProjectError(undefined);
+		try {
+			triggerDownload(
+				artifact.filename.split('/').pop() ?? artifact.filename,
+				new Blob([artifact.data as BlobPart], {
+					type:
+						artifact.format === 'css' ? 'text/css' : `font/${artifact.format}`,
+				}),
+			);
+		} catch {
+			setProjectError(`Download failed for ${artifact.filename}. Try again.`);
+		}
 	};
 
 	const downloadAll = () => {
 		if (artifacts.length === 0 || isCreatingZip) return;
 		setIsCreatingZip(true);
 		setProjectError(undefined);
-		const zip = new Zip();
-		const chunks: BlobPart[] = [];
-
-		zip.ondata = (error, data, final) => {
-			if (error) {
-				setProjectError(
-					'The ZIP could not be created. Try Download all again.',
-				);
-				setIsCreatingZip(false);
-				return;
-			}
-			chunks.push(data as BlobPart);
-			if (final) {
-				triggerDownload(
-					preset === 'converter'
-						? 'fontsource-converted.zip'
-						: 'fontsource-webfonts.zip',
-					new Blob(chunks, { type: 'application/zip' }),
-				);
-				setIsCreatingZip(false);
-			}
+		let failed = false;
+		const fail = () => {
+			if (failed) return;
+			failed = true;
+			setProjectError(
+				`The ZIP file could not be created. Try ${preset === 'converter' ? 'Download all as ZIP' : 'Download package'} again.`,
+			);
+			setIsCreatingZip(false);
 		};
 
-		for (const artifact of artifacts) {
-			const stream = new ZipPassThrough(artifact.filename);
-			zip.add(stream);
-			stream.push(artifact.data, true);
+		try {
+			const zip = new Zip();
+			const chunks: BlobPart[] = [];
+
+			zip.ondata = (error, data, final) => {
+				if (failed) return;
+				if (error) {
+					fail();
+					return;
+				}
+				chunks.push(data as BlobPart);
+				if (final) {
+					try {
+						const archive = new Blob(chunks, { type: 'application/zip' });
+						chunks.length = 0;
+						triggerDownload(
+							preset === 'converter'
+								? 'fontsource-converted.zip'
+								: 'fontsource-webfonts.zip',
+							archive,
+						);
+						setIsCreatingZip(false);
+					} catch {
+						fail();
+					}
+				}
+			};
+
+			for (const artifact of artifacts) {
+				const stream = new ZipPassThrough(artifact.filename);
+				zip.add(stream);
+				stream.push(artifact.data, true);
+			}
+			zip.end();
+		} catch {
+			fail();
 		}
-		zip.end();
 	};
 
 	const isInspecting = sources.some(
@@ -473,8 +529,12 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 		updateOutput,
 		familyErrors,
 		projectError,
+		projectNotice,
 		isInspecting,
 		isProcessing,
+		isStopping,
+		isSessionProcessing,
+		activePreset,
 		isCreatingZip,
 		progress,
 		packageOutput,
@@ -483,6 +543,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 		removeSource,
 		clearAll,
 		processFiles,
+		stopProcessing,
 		downloadArtifact,
 		downloadAll,
 	};
