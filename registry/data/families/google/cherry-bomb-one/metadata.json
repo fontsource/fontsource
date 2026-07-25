@@ -1,0 +1,43 @@
+{
+	"category": "display",
+	"dateAdded": "2020-12-14",
+	"declaredSubsets": [
+		"japanese",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Satsuyako",
+	"family": "Cherry Bomb One",
+	"id": "cherry-bomb-one",
+	"license": {
+		"attribution": "Copyright 2019 The Cherry Bomb Project Authors (https://github.com/satsuyako/CherryBomb)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"project": {
+		"repository": "https://github.com/satsuyako/CherryBomb",
+		"revision": "9171b63b087c39b1d769287287f38582a57911eb"
+	},
+	"provenance": {
+		"directory": "ofl/cherrybombone",
+		"repository": "google/fonts",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"type": "github"
+	},
+	"provider": "google",
+	"sourceFiles": [
+		{
+			"path": "ofl/cherrybombone/CherryBombOne-Regular.ttf",
+			"sha256": "9596c6793eb0335057d655b13751ce7ccb50ef0cd15cb52c58465fb62de2bb8f",
+			"size": 214940,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-03-03",
+	"status": "active"
+}

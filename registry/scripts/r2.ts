@@ -59,11 +59,14 @@ interface ImmutableObject {
 	key: string;
 	size: number;
 	sha256: string;
-	read: () => Promise<Uint8Array>;
+	read?: () => Promise<Uint8Array>;
 }
 
 export const putObject = async (object: ImmutableObject): Promise<void> => {
 	if (await objectMatches(object.key, object.size, object.sha256)) return;
+	if (!object.read) {
+		throw new Error(`Missing required R2 object ${object.key}`);
+	}
 
 	const body = await object.read();
 	if (body.byteLength !== object.size || sha256(body) !== object.sha256) {

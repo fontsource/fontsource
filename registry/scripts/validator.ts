@@ -23,6 +23,13 @@ import {
 
 const logger = consola.withTag('registry');
 
+const parseFamilyKey = (
+	key: string,
+): { provider: FamilyMetadata['provider']; id: string } => {
+	const [provider, id] = key.split('/') as [FamilyMetadata['provider'], string];
+	return { provider, id };
+};
+
 const assertSortedUnique = <Value>(
 	values: readonly Value[],
 	key: (value: Value) => string,
@@ -178,10 +185,11 @@ export const validatePolicyResolution = (
 
 const validateFamily = async (
 	root: string,
-	id: string,
+	key: string,
 	subsets: ReadonlySet<string>,
 ): Promise<void> => {
-	const directory = join(root, 'families', id);
+	const { provider, id } = parseFamilyKey(key);
+	const directory = join(root, 'families', key);
 	const metadata = await validateCanonicalJson(
 		join(directory, 'metadata.json'),
 		familyMetadataSchema,
@@ -191,6 +199,10 @@ const validateFamily = async (
 		familyInspectionSchema,
 	);
 	assert(metadata.id === id, `${id} metadata ID does not match its directory`);
+	assert(
+		metadata.provider === provider,
+		`${id} metadata provider does not match its directory`,
+	);
 	assertSortedUnique(
 		metadata.declaredSubsets,
 		(value) => value,
@@ -305,6 +317,22 @@ export const listFiles = async (root: string): Promise<string[]> =>
 		)
 		.toSorted(compareStrings);
 
+const listFamilyKeys = async (root: string): Promise<string[]> => {
+	const keys: string[] = [];
+	const familiesRoot = join(root, 'families');
+	for (const provider of await readdir(familiesRoot, {
+		withFileTypes: true,
+	})) {
+		if (!provider.isDirectory()) continue;
+		for (const family of await readdir(join(familiesRoot, provider.name), {
+			withFileTypes: true,
+		})) {
+			if (family.isDirectory()) keys.push(`${provider.name}/${family.name}`);
+		}
+	}
+	return keys.toSorted(compareStrings);
+};
+
 export const validateRegistry = async (root: string): Promise<void> => {
 	const index = await validateCanonicalJson(
 		join(root, 'index.json'),
@@ -312,13 +340,14 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	);
 	assertSortedUnique(index.families, (value) => value, 'Registry families');
 	assertSortedUnique(index.subsets, (value) => value, 'Registry subsets');
+	const familyIds = new Set<string>();
+	for (const family of index.families) {
+		const { id } = parseFamilyKey(family);
+		assert(!familyIds.has(id), `Duplicate registry family ID ${id}`);
+		familyIds.add(id);
+	}
 
-	const actualFamilies = (
-		await readdir(join(root, 'families'), { withFileTypes: true })
-	)
-		.filter((entry) => entry.isDirectory())
-		.map((entry) => entry.name)
-		.toSorted(compareStrings);
+	const actualFamilies = await listFamilyKeys(root);
 	deepStrictEqual(
 		actualFamilies,
 		index.families,
@@ -335,16 +364,19 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	);
 
 	const subsetSet = new Set(index.subsets);
-	for (const [familyIndex, id] of index.families.entries()) {
-		await validateFamily(root, id, subsetSet);
-		const validated = familyIndex + 1;
-		if (validated % 250 === 0 && validated < index.families.length) {
-			logger.info(
-				`Validated ${validated}/${index.families.length} font families`,
-			);
-		}
-	}
-	for (const id of index.subsets) await validateSubset(root, id);
+	let validated = 0;
+	await Promise.all(
+		index.families.map(async (family) => {
+			await validateFamily(root, family, subsetSet);
+			validated += 1;
+			if (validated % 250 === 0 && validated < index.families.length) {
+				logger.info(
+					`Validated ${validated}/${index.families.length} font families`,
+				);
+			}
+		}),
+	);
+	await Promise.all(index.subsets.map((id) => validateSubset(root, id)));
 	await validateCanonicalJson(join(root, 'axes.json'), axisRegistrySchema);
 
 	const allowed = new Set<string>([
@@ -352,7 +384,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		'axes.json',
 		...index.subsets.map((id) => `subsets/${id}.json`),
 	]);
-	for (const id of index.families) {
+	for (const family of index.families) {
 		for (const filename of [
 			'metadata.json',
 			'inspection.json',
@@ -361,7 +393,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 			'description.en-US.md',
 			'article.en-US.md',
 		]) {
-			const path = `families/${id}/${filename}`;
+			const path = `families/${family}/${filename}`;
 			if (await pathExists(join(root, path))) allowed.add(path);
 		}
 	}

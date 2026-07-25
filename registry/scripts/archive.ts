@@ -25,11 +25,9 @@ interface RegistryFile {
 }
 
 interface SourceFile {
-	path: string;
-	repository: string;
-	revision: string;
 	size: number;
 	sha256: string;
+	read?: () => Promise<Uint8Array>;
 }
 
 const createArchivePlan = async (root: string, registryRevision: string) => {
@@ -50,12 +48,16 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			await readJson(join(root, 'families', family, 'metadata.json')),
 		);
 		for (const source of metadata.sourceFiles) {
+			let read: SourceFile['read'];
+			if (metadata.provenance.type === 'github') {
+				const { repository, revision } = metadata.provenance;
+				read = () => readSource(source.path, repository, revision);
+			}
+			const previous = sourceMap.get(source.sha256);
 			sourceMap.set(source.sha256, {
-				path: source.path,
-				repository: index.upstreams.googleFonts.repository,
-				revision: metadata.origin.revision,
 				size: source.size,
 				sha256: source.sha256,
+				read: read ?? previous?.read,
 			});
 		}
 	}
@@ -82,16 +84,20 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	};
 };
 
-const readSource = async (source: SourceFile): Promise<Uint8Array> => {
-	// Some source TTFs exceed jsDelivr's per-file limit, so read the pinned
+const readSource = async (
+	path: string,
+	repository: string,
+	revision: string,
+): Promise<Uint8Array> => {
+	// Some source fonts exceed jsDelivr's per-file limit, so read the pinned
 	// GitHub object directly and let the registry hash verify the response.
-	const path = source.path.split('/').map(encodeURIComponent).join('/');
+	const encodedPath = path.split('/').map(encodeURIComponent).join('/');
 	const response = await fetch(
-		`https://raw.githubusercontent.com/${source.repository}/${source.revision}/${path}`,
+		`https://raw.githubusercontent.com/${repository}/${revision}/${encodedPath}`,
 	);
 	if (!response.ok) {
 		throw new Error(
-			`Unable to fetch ${source.path}: ${response.status} ${response.statusText}`,
+			`Unable to fetch ${path}: ${response.status} ${response.statusText}`,
 		);
 	}
 	return response.bytes();
@@ -130,7 +136,7 @@ export const publishArchive = async (
 			key: `sources/sha256/${source.sha256}`,
 			size: source.size,
 			sha256: source.sha256,
-			read: () => readSource(source),
+			...(source.read ? { read: source.read } : {}),
 		})),
 	];
 	logger.start(`Processing ${objects.length} content-addressed objects`);

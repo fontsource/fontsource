@@ -13,7 +13,17 @@ import { dirname, join, relative, resolve } from 'node:path';
 import { describe, expect, it, onTestFinished } from 'vitest';
 import { generateRegistry } from './generate.ts';
 import { assertGitPathClean, openGitSnapshot } from './git.ts';
+import { familyMetadataSchema, registryIndexSchema } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
+import { validateRegistry } from './validator.ts';
+
+const ABEL_POLICY = {
+	packages: {
+		static: { variants: [{ weight: 400, style: 'normal' }] },
+	},
+	defaultSubset: 'latin',
+	subsets: [{ id: 'latin', definition: 'latin' }],
+} as const;
 
 const temporaryDirectory = async (name: string): Promise<string> => {
 	const path = await mkdtemp(join(tmpdir(), `${name}-`));
@@ -217,6 +227,47 @@ const createNamRepository = async (): Promise<{
 	};
 };
 
+const addRetainedRegistryState = async (root: string): Promise<void> => {
+	await writeFixture(
+		root,
+		'families/google/abel/policy.json',
+		canonicalJson(ABEL_POLICY),
+	);
+	const googleDirectory = join(root, 'families/google/abel');
+	const fontsourceDirectory = join(root, 'families/fontsource/example');
+	const metadata = familyMetadataSchema.parse(
+		await readJson(join(googleDirectory, 'metadata.json')),
+	);
+	await writeFixture(
+		root,
+		'families/fontsource/example/metadata.json',
+		canonicalJson({
+			...metadata,
+			id: 'example',
+			family: 'Example',
+			provider: 'fontsource',
+			provenance: { type: 'registry' },
+		}),
+	);
+	await cp(
+		join(googleDirectory, 'inspection.json'),
+		join(fontsourceDirectory, 'inspection.json'),
+	);
+	const index = registryIndexSchema.parse(
+		await readJson(join(root, 'index.json')),
+	);
+	await writeFixture(
+		root,
+		'index.json',
+		canonicalJson({
+			...index,
+			families: [...index.families, 'fontsource/example'].toSorted(
+				compareStrings,
+			),
+		}),
+	);
+};
+
 describe('registry ingestion', () => {
 	it('archives only committed registry data', async () => {
 		const repository = await createGitRepository('committed-registry');
@@ -248,6 +299,33 @@ describe('registry ingestion', () => {
 		);
 	});
 
+	it('rejects public family IDs shared by multiple providers', async () => {
+		const registry = await temporaryDirectory('duplicate-family-id');
+		await writeFixture(
+			registry,
+			'index.json',
+			canonicalJson({
+				schemaVersion: 1,
+				upstreams: {
+					googleFonts: {
+						repository: 'google/fonts',
+						revision: '1'.repeat(40),
+					},
+					namFiles: {
+						repository: 'googlefonts/nam-files',
+						revision: '2'.repeat(40),
+					},
+				},
+				families: ['fontsource/abel', 'google/abel'],
+				subsets: [],
+			}),
+		);
+
+		await expect(validateRegistry(registry)).rejects.toThrow(
+			'Duplicate registry family ID abel',
+		);
+	});
+
 	it('regenerates deterministically, preserves policy, and retains missing families', async () => {
 		const google = await createGoogleRepository();
 		const nam = await createNamRepository();
@@ -260,18 +338,7 @@ describe('registry ingestion', () => {
 			nam.revision,
 			registry,
 		);
-		const abelPolicy = {
-			packages: {
-				static: { variants: [{ weight: 400, style: 'normal' }] },
-			},
-			defaultSubset: 'latin',
-			subsets: [{ id: 'latin', definition: 'latin' }],
-		};
-		await writeFixture(
-			registry,
-			'families/abel/policy.json',
-			canonicalJson(abelPolicy),
-		);
+		await addRetainedRegistryState(registry);
 
 		await writeFixture(
 			google.repository,
@@ -290,11 +357,6 @@ describe('registry ingestion', () => {
 			registry,
 		);
 		const freshRegistry = await temporaryDirectory('fresh-registry');
-		await writeFixture(
-			freshRegistry,
-			'families/abel/policy.json',
-			canonicalJson(abelPolicy),
-		);
 		await generateRegistry(
 			google.repository,
 			unrelatedRevision,
@@ -302,20 +364,26 @@ describe('registry ingestion', () => {
 			nam.revision,
 			freshRegistry,
 		);
+		await addRetainedRegistryState(freshRegistry);
 		expect(await treeHashes(registry)).toEqual(await treeHashes(freshRegistry));
 		expect(
-			await readJson(join(registry, 'families/abel/metadata.json')),
+			await readJson(join(registry, 'families/google/abel/metadata.json')),
 		).toMatchObject({
-			origin: { revision: google.revision },
+			provenance: { revision: google.revision },
 		});
 		expect(await readJson(join(registry, 'subsets/latin.json'))).toMatchObject({
 			source: { revision: nam.revision },
 		});
-		expect(await readJson(join(registry, 'families/abel/policy.json'))).toEqual(
-			abelPolicy,
-		);
+		expect(
+			await readJson(join(registry, 'families/google/abel/policy.json')),
+		).toEqual(ABEL_POLICY);
+		expect(
+			await readJson(
+				join(registry, 'families/fontsource/example/metadata.json'),
+			),
+		).toMatchObject({ provider: 'fontsource', status: 'active' });
 		const description = await readFile(
-			join(registry, 'families/abel/description.en-US.md'),
+			join(registry, 'families/google/abel/description.en-US.md'),
 			'utf8',
 		);
 		expect(description).not.toContain('javascript:');
@@ -332,10 +400,11 @@ describe('registry ingestion', () => {
 			registry,
 		);
 		const metadata = await readJson(
-			join(registry, 'families/abel/metadata.json'),
+			join(registry, 'families/google/abel/metadata.json'),
 		);
 		expect(metadata).toMatchObject({
-			origin: { available: false, revision: google.revision },
+			status: 'deprecated',
+			provenance: { revision: google.revision },
 		});
 	}, 30_000);
 });

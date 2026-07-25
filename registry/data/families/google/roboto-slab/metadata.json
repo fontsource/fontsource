@@ -1,0 +1,46 @@
+{
+	"category": "serif",
+	"dateAdded": "2013-04-10",
+	"declaredSubsets": [
+		"cyrillic",
+		"cyrillic-ext",
+		"greek",
+		"greek-ext",
+		"latin",
+		"latin-ext",
+		"menu",
+		"vietnamese"
+	],
+	"designer": "Christian Robertson",
+	"family": "Roboto Slab",
+	"id": "roboto-slab",
+	"license": {
+		"attribution": "Copyright 2018 The Roboto Slab Project Authors (https://github.com/googlefonts/robotoslab)",
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"project": {
+		"repository": "https://github.com/googlefonts/robotoslab",
+		"revision": "67af3ce9c4ca574419e1295b6165a2eeee112e6e"
+	},
+	"provenance": {
+		"directory": "apache/robotoslab",
+		"repository": "google/fonts",
+		"revision": "369504809965ab8a0e467ad1f2d00ea07eefe1d0",
+		"type": "github"
+	},
+	"provider": "google",
+	"sourceFiles": [
+		{
+			"path": "apache/robotoslab/RobotoSlab[wght].ttf",
+			"sha256": "786ae192477447d33c6672c3055fba7cbfe45184c9a79e77a14f15716ca05b16",
+			"size": 251880,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2025-09-05",
+	"status": "active"
+}
