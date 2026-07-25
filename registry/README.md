@@ -52,6 +52,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 ## Structure
 
 - `scripts/generate.ts` coordinates one complete registry build and validation.
+- `scripts/font-files.ts` implements opt-in Git-backed Fontsource ingestion. It
+  is not part of scheduled generation yet.
 - `scripts/google.ts` owns `data/families/google/` and writes family metadata,
   source inspection, documents, licenses, and normalized axis metadata.
 - `scripts/nam.ts` writes Unicode subset and slicing definitions.
@@ -76,7 +78,48 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   `registry` provenance requires the source to be promoted to R2 first.
 - Package policy is reviewed registry state, not derived from legacy catalogs.
 - Package variants are explicit relations, not weight/style cross-products.
-- Core owns generic font processing; these scripts own Google and NAM ingestion.
+- Core owns generic font processing; these scripts own provider ingestion and
+  NAM data.
+
+## Font-files sources
+
+The opt-in `fontsource/font-files` adapter accepts reviewed source families:
+
+~~~text
+sources/<id>/
+  metadata.json
+  license.txt
+  files/*.ttf
+  files/*.otf
+  description.en-US.md
+  article.en-US.md
+~~~
+
+The two Markdown files are optional. `metadata.json` contains the portable
+family fields and declares every source file:
+
+~~~json
+{
+	"id": "example",
+	"family": "Example",
+	"category": "sans-serif",
+	"license": {
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"declaredSubsets": ["latin"],
+	"sourceFiles": [
+		{
+			"path": "files/Example-Regular.ttf",
+			"variant": { "weight": 400, "style": "normal" }
+		}
+	]
+}
+~~~
+
+The adapter derives hashes, sizes, inspection, modification dates, and Git
+provenance. The source repository stores the raw binaries; this repository
+commits only generated text records.
 
 ## Development
 
