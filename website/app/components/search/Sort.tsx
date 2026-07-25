@@ -26,6 +26,8 @@ const sortMap: Record<string, string> = {
 	prod_RANDOM: 'Random',
 };
 
+const numberFormatter = new Intl.NumberFormat('en');
+
 const getSortItems = () => {
 	return Object.entries(sortMap).map(([key, label]) => ({
 		label,
@@ -53,7 +55,8 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 	return (
 		<Group className={classes.wrapper} justify="space-between" wrap="nowrap">
 			<Text aria-atomic="true" role="status">
-				{count} families loaded
+				{numberFormatter.format(count)}{' '}
+				{count === 1 ? 'font family' : 'font families'}
 			</Text>
 			<Group>
 				<Group visibleFrom="sm">
@@ -66,12 +69,9 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 					<Text span ml="xs" mr={-8} fz={14}>
 						Display
 					</Text>
-					<Tooltip
-						label={display === 'grid' ? 'Grid' : 'List'}
-						openDelay={600}
-						closeDelay={100}
-					>
+					<Tooltip label="Change view" openDelay={600} closeDelay={100}>
 						<SegmentedControl
+							aria-label="Display mode"
 							className={classes.control}
 							value={display}
 							onChange={state$.display.set as (value: string) => void}
@@ -79,8 +79,12 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 								{
 									label: (
 										<>
-											<IconGrid height={20} data-active={display === 'grid'} />
-											<VisuallyHidden>Grid View</VisuallyHidden>
+											<IconGrid
+												aria-hidden="true"
+												height={20}
+												data-active={display === 'grid'}
+											/>
+											<VisuallyHidden>Grid view</VisuallyHidden>
 										</>
 									),
 									value: 'grid',
@@ -88,8 +92,12 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 								{
 									label: (
 										<>
-											<IconList height={20} data-active={display === 'list'} />
-											<VisuallyHidden>List View</VisuallyHidden>
+											<IconList
+												aria-hidden="true"
+												height={20}
+												data-active={display === 'list'}
+											/>
+											<VisuallyHidden>List view</VisuallyHidden>
 										</>
 									),
 									value: 'list',

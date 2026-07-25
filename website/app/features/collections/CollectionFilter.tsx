@@ -77,7 +77,7 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 			>
 				<Menu.Target>
 					<InputBase
-						aria-label={`Filter by collection, ${selectedCollection?.name ?? 'All fonts'}`}
+						aria-label={`Font collection: ${selectedCollection?.name ?? 'All fonts'}`}
 						classNames={{ input: classes.input }}
 						component="button"
 						disabled={!ready}

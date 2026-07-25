@@ -47,7 +47,11 @@ const SearchBar = () => {
 			maxLength={512}
 			ref={ref}
 			leftSection={
-				<IconSearch data-active={focused} className={classes.left} />
+				<IconSearch
+					aria-hidden="true"
+					className={classes.left}
+					data-active={focused}
+				/>
 			}
 			leftSectionWidth={60}
 			rightSection={<SearchByAlgolia height={14} />}

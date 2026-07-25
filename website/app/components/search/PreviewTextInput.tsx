@@ -69,8 +69,9 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 			<Menu shadow="md">
 				<Menu.Target>
 					<Button
+						aria-label={`Preview text: ${label}`}
 						className={classes.button}
-						rightSection={<IconCaret />}
+						rightSection={<IconCaret aria-hidden="true" />}
 						styles={{
 							inner: {
 								justifyContent: 'space-between',
@@ -114,11 +115,12 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 				</Menu.Dropdown>
 			</Menu>
 			<TextInput
+				aria-label="Custom preview text"
 				value={customValue}
 				onChange={(e) => {
 					state$.preview.customValue.set(e.currentTarget.value);
 				}}
-				placeholder="Type something"
+				placeholder="Enter preview text"
 				variant="unstyled"
 				classNames={{ root: classes.inputRoot, input: classes.input }}
 			/>

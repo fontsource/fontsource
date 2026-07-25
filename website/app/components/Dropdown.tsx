@@ -103,6 +103,7 @@ const DropdownBase = ({
 			<Combobox.Dropdown>
 				{search && (
 					<Combobox.Search
+						aria-label="Search languages"
 						value={searchQuery}
 						onChange={(event) => {
 							handleSearchQuery(event.currentTarget.value);
