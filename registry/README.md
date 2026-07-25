@@ -23,7 +23,7 @@ which validates changes before committing them to `main`.
 
 The [registry archive workflow](../.github/workflows/registry-archive.yml)
 runs after registry data changes. It copies the exact registry files and every
-verified source TTF into the private `fontsource-registry` R2 bucket:
+verified source font into the private `fontsource-registry` R2 bucket:
 
 ~~~text
 registry/sha256/<sha256>

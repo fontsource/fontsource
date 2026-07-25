@@ -89,7 +89,7 @@ const readSource = async (
 	repository: string,
 	revision: string,
 ): Promise<Uint8Array> => {
-	// Some source TTFs exceed jsDelivr's per-file limit, so read the pinned
+	// Some source fonts exceed jsDelivr's per-file limit, so read the pinned
 	// GitHub object directly and let the registry hash verify the response.
 	const encodedPath = path.split('/').map(encodeURIComponent).join('/');
 	const response = await fetch(
