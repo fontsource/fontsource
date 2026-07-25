@@ -1,0 +1,225 @@
+.container {
+	max-width: 90rem;
+	margin-inline: auto;
+	padding: clamp(3.5rem, 7vw, 6rem) 4rem clamp(5rem, 8vw, 7rem);
+}
+
+.layout {
+	display: grid;
+	grid-template-columns: minmax(11.5rem, 14rem) minmax(0, 46rem);
+	gap: clamp(3.5rem, 8vw, 8rem);
+	max-width: 68rem;
+	margin-inline: 0;
+	align-items: start;
+}
+
+.sidebar {
+	position: sticky;
+	top: 6rem;
+	display: grid;
+	gap: 2.25rem;
+}
+
+.updated {
+	padding-left: 1rem;
+	border-left: 2px solid var(--mantine-color-purple-0);
+}
+
+.label {
+	margin-bottom: 0.5rem;
+	color: light-dark(#778197, #8f9ab1);
+	font-size: 0.6875rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.date {
+	color: light-dark(#18243b, #eef2ff);
+	font-size: 0.9375rem;
+	font-weight: 550;
+	font-variant-numeric: tabular-nums;
+}
+
+.navigation {
+	display: grid;
+	gap: 0.125rem;
+}
+
+.navigationLink {
+	width: fit-content;
+	padding-block: 0.375rem;
+	color: light-dark(#59657c, #a9b3ca);
+	font-size: 0.875rem;
+	line-height: 1.35;
+	text-decoration: none;
+	transition:
+		color 150ms ease,
+		transform 150ms ease;
+}
+
+.navigationLink:hover {
+	color: var(--mantine-color-purple-0);
+	transform: translateX(0.1875rem);
+}
+
+.navigationLink:focus-visible {
+	border-radius: 0.125rem;
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 0.1875rem;
+}
+
+.sidebarContact {
+	padding-top: 1.5rem;
+	border-top: 1px solid
+		light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+}
+
+.contactLink {
+	color: light-dark(#27344c, #d4dcf0);
+	font-size: 0.875rem;
+	font-weight: 550;
+	text-underline-offset: 0.25rem;
+}
+
+.article {
+	min-width: 0;
+}
+
+.section {
+	display: grid;
+	grid-template-columns: 2.25rem minmax(0, 1fr);
+	gap: 1.5rem;
+	padding-bottom: 3.5rem;
+	margin-bottom: 3.5rem;
+	border-bottom: 1px solid
+		light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+	scroll-margin-top: 6rem;
+}
+
+.section:last-child {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+.sectionNumber {
+	padding-top: 0.35rem;
+	color: var(--mantine-color-purple-0);
+	font-family: var(--mantine-font-family-monospace);
+	font-size: 0.75rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.08em;
+}
+
+.sectionTitle {
+	margin-bottom: 1.125rem;
+	color: light-dark(#101a2f, #f2f5ff);
+	font-size: clamp(1.4rem, 2.3vw, 1.75rem);
+	font-weight: 650;
+	letter-spacing: -0.025em;
+	line-height: 1.2;
+	text-wrap: balance;
+}
+
+.copy {
+	display: grid;
+	gap: 1rem;
+}
+
+.copy p {
+	max-width: 65ch;
+	color: light-dark(#354159, #d3dbec);
+	font-size: 1rem;
+	line-height: 1.75;
+	text-wrap: pretty;
+}
+
+.copy a {
+	color: light-dark(#473ef6, #9b97ff);
+	font-weight: 550;
+	text-decoration-color: light-dark(
+		rgba(98, 91, 248, 0.42),
+		rgba(155, 151, 255, 0.48)
+	);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25rem;
+}
+
+.copy a:hover {
+	text-decoration-color: currentColor;
+}
+
+.copy a:focus-visible,
+.contactLink:focus-visible {
+	border-radius: 0.125rem;
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 0.1875rem;
+}
+
+@media (--lt-md) {
+	.container {
+		padding-inline: 2rem;
+	}
+
+	.layout {
+		grid-template-columns: minmax(10.5rem, 12rem) minmax(0, 1fr);
+		gap: 3.5rem;
+	}
+}
+
+@media (--lt-sm) {
+	.container {
+		padding: 3rem 1.5rem 5rem;
+	}
+
+	.layout {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 3.5rem;
+	}
+
+	.sidebar {
+		position: static;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.75rem 2rem;
+		padding-bottom: 2.25rem;
+		border-bottom: 1px solid
+			light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+	}
+
+	.updated {
+		grid-column: 1 / -1;
+	}
+
+	.sidebarContact {
+		padding-top: 0;
+		border-top: 0;
+	}
+}
+
+@media (--lt-xs) {
+	.sidebar {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.updated {
+		grid-column: auto;
+	}
+
+	.navigation {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: 1rem;
+	}
+
+	.section {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0.75rem;
+		padding-bottom: 2.75rem;
+		margin-bottom: 2.75rem;
+	}
+
+	.sectionNumber {
+		padding-top: 0;
+	}
+}

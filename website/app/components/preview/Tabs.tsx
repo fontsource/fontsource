@@ -1,5 +1,5 @@
 import type { BoxProps } from '@mantine/core';
-import { Badge, Group, Tabs, Title, VisuallyHidden } from '@mantine/core';
+import { Badge, Group, Tabs, VisuallyHidden } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 import { Link } from 'react-router';
 
@@ -43,25 +43,23 @@ export const TabsWrapper = ({
 				list: classes.list,
 			}}
 		>
-			<ContentHeader>
-				<Group
-					align="center"
-					gap="sm"
-					className={classes.heading}
-					data-m:load={`view-tab=${tabsValue}`}
-				>
-					<Title order={1} c="purple.0" className={classes.title}>
-						{metadata.family}
-					</Title>
-					<Badge color="gray" variant="light" className={classes.badge}>
-						{metadata.category}
-					</Badge>
-					<Badge color="gray" variant="light" className={classes.badge}>
-						{metadata.type}
-					</Badge>
-					<FavoriteButton font={fontSummary} />
-					<AddToCollectionMenu font={fontSummary} />
-				</Group>
+			<ContentHeader
+				eyebrow="Font family"
+				title={metadata.family}
+				data-m:load={`view-tab=${tabsValue}`}
+				actions={
+					<Group align="center" gap="sm">
+						<Badge color="gray" variant="light" className={classes.badge}>
+							{metadata.category}
+						</Badge>
+						<Badge color="gray" variant="light" className={classes.badge}>
+							{metadata.type}
+						</Badge>
+						<FavoriteButton font={fontSummary} />
+						<AddToCollectionMenu font={fontSummary} />
+					</Group>
+				}
+			>
 				<Tabs.List>
 					<Link
 						to={`/fonts/${metadata.id}`}

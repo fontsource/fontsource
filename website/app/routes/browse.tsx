@@ -95,17 +95,11 @@ export default function Browse() {
 
 	return (
 		<>
-			<ContentHeader>
-				<Stack gap="xs" maw={800}>
-					<Title order={1} c="purple.0">
-						Browse Fonts
-					</Title>
-					<Text>
-						Choose a style, language, or variable-font format. Every page
-						includes the full catalog filters and preview controls.
-					</Text>
-				</Stack>
-			</ContentHeader>
+			<ContentHeader
+				eyebrow="Font discovery"
+				title="Browse Fonts"
+				description="Choose a style, language, or variable-font format. Every page includes the full catalog filters and preview controls."
+			/>
 			<Container size="xl" py="xl">
 				<Stack gap={48}>
 					<section>
