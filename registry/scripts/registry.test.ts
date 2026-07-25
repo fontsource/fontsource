@@ -11,9 +11,14 @@ import {
 import { tmpdir } from 'node:os';
 import { dirname, join, relative, resolve } from 'node:path';
 import { describe, expect, it, onTestFinished } from 'vitest';
+import { generateFontFiles } from './font-files.ts';
 import { generateRegistry } from './generate.ts';
 import { assertGitPathClean, openGitSnapshot } from './git.ts';
-import { familyMetadataSchema, registryIndexSchema } from './schema.ts';
+import {
+	familyMetadataSchema,
+	registryIndexSchema,
+	sourceFamilySchema,
+} from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
 import { validateRegistry } from './validator.ts';
 
@@ -227,6 +232,54 @@ const createNamRepository = async (): Promise<{
 	};
 };
 
+const createFontFilesRepository = async (): Promise<{
+	repository: string;
+	revision: string;
+}> => {
+	const repository = await createGitRepository('font-files');
+	await copyFont(
+		repository,
+		'abel-latin-400-normal.ttf',
+		'sources/example/files/Example-Regular.ttf',
+	);
+	await writeFixture(
+		repository,
+		'sources/example/metadata.json',
+		canonicalJson({
+			id: 'example',
+			family: 'Example',
+			category: 'sans-serif',
+			designer: 'Registry Tests',
+			dateAdded: '2026-01-02',
+			license: {
+				id: 'OFL-1.1',
+				url: 'https://openfontlicense.org/open-font-license-official-text/',
+			},
+			declaredSubsets: ['latin'],
+			sourceFiles: [
+				{
+					path: 'files/Example-Regular.ttf',
+					variant: { weight: 400, style: 'normal' },
+				},
+			],
+		}),
+	);
+	await writeFixture(
+		repository,
+		'sources/example/license.txt',
+		'Example license\n',
+	);
+	await writeFixture(
+		repository,
+		'sources/example/description.en-US.md',
+		'# Example\n',
+	);
+	return {
+		repository,
+		revision: commitAll(repository, 'initial Fontsource snapshot'),
+	};
+};
+
 const addRetainedRegistryState = async (root: string): Promise<void> => {
 	await writeFixture(
 		root,
@@ -324,6 +377,64 @@ describe('registry ingestion', () => {
 		await expect(validateRegistry(registry)).rejects.toThrow(
 			'Duplicate registry family ID abel',
 		);
+	});
+
+	it('ingests a Fontsource source family', async () => {
+		const source = await createFontFilesRepository();
+		const registry = await temporaryDirectory('font-files-registry');
+		const snapshot = openGitSnapshot(source.repository, source.revision);
+
+		await expect(generateFontFiles(snapshot, registry)).resolves.toEqual([
+			'example',
+		]);
+		expect(
+			await readJson(
+				join(registry, 'families/fontsource/example/metadata.json'),
+			),
+		).toMatchObject({
+			provider: 'fontsource',
+			status: 'active',
+			provenance: {
+				type: 'github',
+				repository: 'fontsource/font-files',
+				revision: source.revision,
+				directory: 'sources/example',
+			},
+			sourceFiles: [
+				{
+					path: 'sources/example/files/Example-Regular.ttf',
+					variant: { weight: 400, style: 'normal' },
+				},
+			],
+		});
+		expect(
+			await readJson(
+				join(registry, 'families/fontsource/example/inspection.json'),
+			),
+		).toMatchObject({
+			files: [
+				{ path: 'sources/example/files/Example-Regular.ttf', weight: 400 },
+			],
+		});
+		expect(
+			await readFile(
+				join(registry, 'families/fontsource/example/description.en-US.md'),
+				'utf8',
+			),
+		).toBe('# Example\n');
+	});
+
+	it('rejects packaged webfonts as sources', () => {
+		expect(
+			sourceFamilySchema.safeParse({
+				id: 'example',
+				family: 'Example',
+				category: 'sans-serif',
+				license: { id: 'OFL-1.1', url: 'https://example.com/license' },
+				declaredSubsets: ['latin'],
+				sourceFiles: [{ path: 'files/Example.woff2' }],
+			}).success,
+		).toBe(false);
 	});
 
 	it('regenerates deterministically, preserves policy, and retains missing families', async () => {

@@ -109,6 +109,28 @@ export const familyMetadataSchema = z.strictObject({
 	sourceFiles: z.array(sourceFileSchema).min(1),
 });
 
+export const sourceFamilySchema = familyMetadataSchema
+	.omit({
+		provider: true,
+		status: true,
+		provenance: true,
+		sourceModified: true,
+		sourceFiles: true,
+	})
+	.extend({
+		sourceFiles: z
+			.array(
+				z.strictObject({
+					path: sourcePathSchema.refine(
+						(path) => /^files\/.+\.(?:otf|ttf)$/i.test(path),
+						{ message: 'must be a TTF or OTF under files/' },
+					),
+					variant: staticVariantSchema.optional(),
+				}),
+			)
+			.min(1),
+	});
+
 const axisSchema = z.strictObject({
 	tag: z.string().length(4),
 	min: finiteNumberSchema,
@@ -202,4 +224,5 @@ export const axisRegistrySchema = z.record(
 export type FamilyMetadata = z.infer<typeof familyMetadataSchema>;
 export type FamilyInspection = z.infer<typeof familyInspectionSchema>;
 export type FamilyPolicy = z.infer<typeof familyPolicySchema>;
+export type SourceFamily = z.infer<typeof sourceFamilySchema>;
 export type SubsetDefinition = z.infer<typeof subsetDefinitionSchema>;
