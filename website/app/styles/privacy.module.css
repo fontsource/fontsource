@@ -9,7 +9,7 @@
 	grid-template-columns: minmax(11.5rem, 14rem) minmax(0, 46rem);
 	gap: clamp(3.5rem, 8vw, 8rem);
 	max-width: 68rem;
-	margin-inline: auto;
+	margin-inline: 0;
 	align-items: start;
 }
 
@@ -160,7 +160,7 @@
 
 @media (--lt-md) {
 	.container {
-		padding-inline: 2.5rem;
+		padding-inline: 2rem;
 	}
 
 	.layout {
