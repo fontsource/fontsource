@@ -96,7 +96,6 @@ export default function Browse() {
 	return (
 		<>
 			<ContentHeader
-				eyebrow="Fontsource / Browse Fonts"
 				title="Browse Fonts"
 				description="Choose a style, language, or variable-font format. Every page includes the full catalog filters and preview controls."
 			/>

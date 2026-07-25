@@ -26,7 +26,6 @@ import {
 	useNavigation,
 } from 'react-router';
 
-import { Breadcrumbs } from '@/components/docs/Breadcrumbs';
 import { ContentHeader } from '@/components/layout/ContentHeader';
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
@@ -346,15 +345,6 @@ export function CatalogSearchPage() {
 				<Configure attributesToRetrieve={attributesToRetrieve} />
 				{discovery && (
 					<ContentHeader
-						eyebrow={
-							<Breadcrumbs
-								items={[
-									{ name: 'Fontsource', url: '/' },
-									{ name: 'Browse Fonts', url: '/browse' },
-									{ name: discovery.label },
-								]}
-							/>
-						}
 						title={discovery.heading}
 						description={discovery.intro}
 					/>
