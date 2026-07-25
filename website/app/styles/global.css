@@ -41,13 +41,6 @@ html {
 	--mantine-color-purple-1: var(--mantine-color-purple);
 }
 
-header {
-	background-color: light-dark(
-		var(--mantine-color-background-1),
-		var(--mantine-color-background-5)
-	);
-}
-
 body {
 	display: flex;
 	min-height: 100vh;

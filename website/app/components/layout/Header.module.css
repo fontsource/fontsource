@@ -1,6 +1,10 @@
 /* Header */
 .header {
 	border-bottom: light-dark(1px solid #edf0f3, 1px solid #151e34);
+	background-color: light-dark(
+		var(--mantine-color-background-1),
+		var(--mantine-color-background-5)
+	);
 }
 
 .inner {
