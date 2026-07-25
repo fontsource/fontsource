@@ -6,6 +6,8 @@
 	margin-bottom: 22px;
 	color: light-dark(#667086, #a9b3ca);
 	font-size: 14px;
+	letter-spacing: normal;
+	text-transform: none;
 }
 
 .breadcrumbs span {

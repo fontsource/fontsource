@@ -1,30 +1,112 @@
-/* ContentHeader */
 .header {
-	background: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-5));
+	border-bottom: 1px solid
+		light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+	background: light-dark(
+		var(--mantine-color-background-1),
+		var(--mantine-color-background-5)
+	);
 }
 
 .inner {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: end;
+	gap: clamp(2rem, 4vw, 4rem);
 	max-width: 1440px;
 	margin-left: auto;
 	margin-right: auto;
-	min-height: 144px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 64px 64px 40px;
+	min-height: 240px;
+	padding: 56px 64px 44px;
 
 	@media (--lt-md) {
-		padding: 56px 32px 36px;
+		padding: 48px 32px 40px;
 	}
 
 	@media (--lt-sm) {
-		min-height: 168px;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		gap: 22px;
-		padding: 40px 24px 28px;
+		grid-template-columns: minmax(0, 1fr);
+		align-items: start;
+		gap: 1.5rem;
+		min-height: 200px;
+		padding: 40px 24px 32px;
 	}
 }
 
-/* Footer */
+.content {
+	display: grid;
+	gap: 0.75rem;
+	min-width: 0;
+	max-width: 62rem;
+}
+
+.eyebrow {
+	color: var(--mantine-color-purple-0);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.eyebrow > * {
+	margin: 0;
+}
+
+.heading {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.875rem 1.25rem;
+	min-width: 0;
+}
+
+.title {
+	max-width: 22ch;
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	font-size: clamp(2.5rem, 4vw, 3.5rem);
+	font-weight: 650;
+	letter-spacing: -0.045em;
+	line-height: 1;
+	overflow-wrap: anywhere;
+	text-wrap: balance;
+}
+
+.actions {
+	display: flex;
+	flex: 0 1 auto;
+	align-items: center;
+	min-width: 0;
+}
+
+.description {
+	max-width: 50rem;
+	color: light-dark(#4a566d, #bdc6d9);
+	font-size: clamp(1rem, 1.7vw, 1.125rem);
+	line-height: 1.55;
+	text-wrap: pretty;
+}
+
+.description a {
+	color: light-dark(#473ef6, #9b97ff);
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	text-decoration: none;
+}
+
+.description a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.25rem;
+}
+
+.description a:focus-visible {
+	border-radius: 0.125rem;
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 0.1875rem;
+}
+
+.controls {
+	align-self: end;
+	max-width: 100%;
+
+	@media (--lt-sm) {
+		width: 100%;
+	}
+}

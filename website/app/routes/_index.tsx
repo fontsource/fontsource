@@ -1,7 +1,7 @@
 import { createFetchRequester } from '@algolia/requester-fetch';
 import { observable } from '@legendapp/state';
 import { useObservable, useValue } from '@legendapp/state/react';
-import { Box, MantineProvider, Stack, Text, Title } from '@mantine/core';
+import { Box, MantineProvider } from '@mantine/core';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import type { UiState } from 'instantsearch.js';
 import { history } from 'instantsearch.js/es/lib/routers';
@@ -345,20 +345,18 @@ export function CatalogSearchPage() {
 			>
 				<Configure attributesToRetrieve={attributesToRetrieve} />
 				{discovery && (
-					<ContentHeader mih={0} pt={40} pb={24}>
-						<Stack gap="xs" maw={760}>
+					<ContentHeader
+						eyebrow={
 							<Breadcrumbs
 								items={[
 									{ name: 'Browse', url: '/browse' },
 									{ name: discovery.label },
 								]}
 							/>
-							<Title order={1} c="purple.0">
-								{discovery.heading}
-							</Title>
-							<Text>{discovery.intro}</Text>
-						</Stack>
-					</ContentHeader>
+						}
+						title={discovery.heading}
+						description={discovery.intro}
+					/>
 				)}
 				<Box className={classes.background}>
 					<Box

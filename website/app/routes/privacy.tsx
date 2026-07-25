@@ -1,16 +1,16 @@
-import { Anchor, Box, Container, Stack, Text, Title } from '@mantine/core';
+import { Anchor, Box, Container, Text, Title } from '@mantine/core';
+import type { ReactNode } from 'react';
 import type { MetaFunction } from 'react-router';
 import { ContentHeader } from '@/components/layout/ContentHeader';
 import classes from '@/styles/privacy.module.css';
 import { ogMeta } from '@/utils/meta';
 
-export const meta: MetaFunction = () => {
-	const title = 'Privacy Policy | Fontsource';
-	const description =
-		'How Fontsource approaches privacy across its website and services.';
-
-	return ogMeta({ title, description });
-};
+export const meta: MetaFunction = () =>
+	ogMeta({
+		title: 'Privacy Policy | Fontsource',
+		description:
+			'How Fontsource approaches privacy across its website and services.',
+	});
 
 const sections = [
 	{ href: '#requests', label: 'Website, API, and CDN' },
@@ -21,20 +21,48 @@ const sections = [
 	{ href: '#changes', label: 'Changes' },
 ];
 
+interface PolicySectionProps {
+	children: ReactNode;
+	id: string;
+	number: string;
+	title: string;
+}
+
+const PolicySection = ({ children, id, number, title }: PolicySectionProps) => (
+	<Box component="section" id={id} className={classes.section}>
+		<Text component="span" className={classes.sectionNumber}>
+			{number}
+		</Text>
+		<Box>
+			<Title order={2} className={classes.sectionTitle}>
+				{title}
+			</Title>
+			<Box className={classes.copy}>{children}</Box>
+		</Box>
+	</Box>
+);
+
 export default function PrivacyPage() {
 	return (
 		<>
-			<ContentHeader>
-				<Stack gap="sm" maw={760}>
-					<Text className={classes.eyebrow}>Fontsource</Text>
-					<Title order={1} className={classes.title}>
-						Privacy Policy
-					</Title>
-					<Text className={classes.lede}>
-						Fontsource is an open-source project for self-hostable fonts.
-					</Text>
-				</Stack>
-			</ContentHeader>
+			<ContentHeader
+				eyebrow="Fontsource / Privacy Policy"
+				title="Privacy Policy"
+				description={
+					<>
+						Fontsource is an{' '}
+						<Anchor
+							href="https://github.com/fontsource/fontsource"
+							target="_blank"
+							rel="noreferrer"
+							inherit
+						>
+							open-source
+						</Anchor>{' '}
+						project for self-hostable fonts.
+					</>
+				}
+			/>
 			<Container className={classes.container}>
 				<Box className={classes.layout}>
 					<Box component="aside" className={classes.sidebar}>
@@ -70,166 +98,107 @@ export default function PrivacyPage() {
 					</Box>
 
 					<Box component="article" className={classes.article}>
-						<Box component="section" id="requests" className={classes.section}>
-							<Text component="span" className={classes.sectionNumber}>
-								01
-							</Text>
-							<Box>
-								<Title order={2} className={classes.sectionTitle}>
-									Website, API, and CDN requests
-								</Title>
-								<Box className={classes.copy}>
-									<Text>
-										Fontsource uses Cloudflare to deliver and protect its
-										website and API, and partners with jsDelivr to provide its
-										public CDN. These providers may process technical
-										information needed to provide those services. You can read
-										the{' '}
-										<Anchor
-											href="https://www.cloudflare.com/privacypolicy/"
-											target="_blank"
-											rel="noreferrer"
-										>
-											Cloudflare Privacy Policy
-										</Anchor>{' '}
-										and the{' '}
-										<Anchor
-											href="https://www.jsdelivr.com/terms/privacy-policy"
-											target="_blank"
-											rel="noreferrer"
-										>
-											jsDelivr Privacy Policy
-										</Anchor>
-										.
-									</Text>
-									<Text>
-										Using the Fontsource public CDN causes browsers to connect
-										to jsDelivr and the services it uses to deliver files.
-										Installing and self-hosting Fontsource packages avoids those
-										CDN requests.
-									</Text>
-								</Box>
-							</Box>
-						</Box>
-
-						<Box component="section" id="search" className={classes.section}>
-							<Text component="span" className={classes.sectionNumber}>
-								02
-							</Text>
-							<Box>
-								<Title order={2} className={classes.sectionTitle}>
-									Search
-								</Title>
-								<Box className={classes.copy}>
-									<Text>
-										Fontsource uses Algolia to provide catalogue search. Algolia
-										may process information needed to return search results. You
-										can read the{' '}
-										<Anchor
-											href="https://www.algolia.com/policies/privacy"
-											target="_blank"
-											rel="noreferrer"
-										>
-											Algolia Privacy Policy
-										</Anchor>
-										.
-									</Text>
-								</Box>
-							</Box>
-						</Box>
-
-						<Box
-							component="section"
-							id="advertising"
-							className={classes.section}
+						<PolicySection
+							id="requests"
+							number="01"
+							title="Website, API, and CDN requests"
 						>
-							<Text component="span" className={classes.sectionNumber}>
-								03
+							<Text>
+								Fontsource uses Cloudflare to deliver and protect its website
+								and API, and partners with jsDelivr to provide its public CDN.
+								These providers may process technical information needed to
+								provide those services. You can read the{' '}
+								<Anchor
+									href="https://www.cloudflare.com/privacypolicy/"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Cloudflare Privacy Policy
+								</Anchor>{' '}
+								and the{' '}
+								<Anchor
+									href="https://www.jsdelivr.com/terms/privacy-policy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									jsDelivr Privacy Policy
+								</Anchor>
+								.
 							</Text>
-							<Box>
-								<Title order={2} className={classes.sectionTitle}>
-									Advertising
-								</Title>
-								<Box className={classes.copy}>
-									<Text>
-										Some pages may display ads provided by Carbon Ads. Carbon
-										may process information needed to deliver and measure those
-										ads and may use browser storage. You can read the{' '}
-										<Anchor
-											href="https://www.carbonads.net/privacy"
-											target="_blank"
-											rel="noreferrer"
-										>
-											Carbon Ads Privacy Policy
-										</Anchor>
-										.
-									</Text>
-								</Box>
-							</Box>
-						</Box>
+							<Text>
+								Using the Fontsource public CDN causes browsers to connect to
+								jsDelivr and the services it uses to deliver files. Installing
+								and self-hosting Fontsource packages avoids those CDN requests.
+							</Text>
+						</PolicySection>
 
-						<Box
-							component="section"
+						<PolicySection id="search" number="02" title="Search">
+							<Text>
+								Fontsource uses Algolia to provide catalogue search. Algolia may
+								process information needed to return search results. You can
+								read the{' '}
+								<Anchor
+									href="https://www.algolia.com/policies/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Algolia Privacy Policy
+								</Anchor>
+								.
+							</Text>
+						</PolicySection>
+
+						<PolicySection id="advertising" number="03" title="Advertising">
+							<Text>
+								Some pages may display ads provided by Carbon Ads. Carbon may
+								process information needed to deliver and measure those ads and
+								may use browser storage. You can read the{' '}
+								<Anchor
+									href="https://www.carbonads.net/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Carbon Ads Privacy Policy
+								</Anchor>
+								.
+							</Text>
+						</PolicySection>
+
+						<PolicySection
 							id="browser-storage"
-							className={classes.section}
+							number="04"
+							title="Information stored in your browser"
 						>
-							<Text component="span" className={classes.sectionNumber}>
-								04
+							<Text>
+								Fontsource may store information in your browser to support site
+								features. You can remove it by clearing the site's data in your
+								browser.
 							</Text>
-							<Box>
-								<Title order={2} className={classes.sectionTitle}>
-									Information stored in your browser
-								</Title>
-								<Box className={classes.copy}>
-									<Text>
-										Fontsource may store information in your browser to support
-										site features. You can remove it by clearing the site's data
-										in your browser.
-									</Text>
-									<Text>
-										Some tools may also process information locally in your
-										browser.
-									</Text>
-								</Box>
-							</Box>
-						</Box>
+							<Text>
+								Some tools may also process information locally in your browser.
+							</Text>
+						</PolicySection>
 
-						<Box component="section" id="contact" className={classes.section}>
-							<Text component="span" className={classes.sectionNumber}>
-								05
+						<PolicySection id="contact" number="05" title="Contact">
+							<Text>
+								For privacy questions, email{' '}
+								<Anchor href="mailto:hello@ayuhito.com">
+									hello@ayuhito.com
+								</Anchor>
+								.
 							</Text>
-							<Box>
-								<Title order={2} className={classes.sectionTitle}>
-									Contact
-								</Title>
-								<Box className={classes.copy}>
-									<Text>
-										For privacy questions, email{' '}
-										<Anchor href="mailto:hello@ayuhito.com">
-											hello@ayuhito.com
-										</Anchor>
-										.
-									</Text>
-								</Box>
-							</Box>
-						</Box>
+						</PolicySection>
 
-						<Box component="section" id="changes" className={classes.section}>
-							<Text component="span" className={classes.sectionNumber}>
-								06
+						<PolicySection
+							id="changes"
+							number="06"
+							title="Changes to this policy"
+						>
+							<Text>
+								We may update this policy as Fontsource's services change. The
+								date at the top shows when it was last updated.
 							</Text>
-							<Box>
-								<Title order={2} className={classes.sectionTitle}>
-									Changes to this policy
-								</Title>
-								<Box className={classes.copy}>
-									<Text>
-										We may update this policy as Fontsource's services change.
-										The date at the top shows when it was last updated.
-									</Text>
-								</Box>
-							</Box>
-						</Box>
+						</PolicySection>
 					</Box>
 				</Box>
 			</Container>
