@@ -83,7 +83,7 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 						disabled={!ready}
 						pointer
 						ref={targetRef}
-						rightSection={<IconCaret />}
+						rightSection={<IconCaret aria-hidden="true" />}
 						rightSectionPointerEvents="none"
 						w={250}
 					>

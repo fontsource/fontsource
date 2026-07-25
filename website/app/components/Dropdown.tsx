@@ -87,7 +87,7 @@ const DropdownBase = ({
 					component="button"
 					classNames={{ input: classes.input }}
 					pointer
-					rightSection={<IconCaret />}
+					rightSection={<IconCaret aria-hidden="true" />}
 					onClick={() => {
 						combobox.toggleDropdown();
 					}}

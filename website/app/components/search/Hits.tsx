@@ -1,5 +1,13 @@
 import { observer, useValue } from '@legendapp/state/react';
-import { Box, Group, SimpleGrid, Text, VisuallyHidden } from '@mantine/core';
+import {
+	Box,
+	Button,
+	Group,
+	SimpleGrid,
+	Stack,
+	Text,
+	VisuallyHidden,
+} from '@mantine/core';
 import { useMounted, useViewportSize } from '@mantine/hooks';
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import type { BaseHit } from 'instantsearch.js';
@@ -166,7 +174,9 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 						: 1;
 
 	// Infinite Scrolling
-	const { results, indexUiState, status } = useInstantSearch();
+	const { error, indexUiState, refresh, results, status } = useInstantSearch({
+		catchError: true,
+	});
 	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
 	const isSearchLoading = status === 'loading' || status === 'stalled';
 	const size = state$.size.get();
@@ -295,6 +305,24 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 
 		return unsubscribe;
 	}, [state$.preview, state$.language, items]);
+
+	if (status === 'error') {
+		return (
+			<Box px={4} py={24} role="alert">
+				<Stack align="flex-start" gap="xs">
+					<Text fw={600}>Fonts could not load.</Text>
+					<Text c="dimmed">
+						{error?.message
+							? 'The font search service did not respond. Try again.'
+							: 'Check your connection, then try again.'}
+					</Text>
+					<Button onClick={() => refresh()} size="sm">
+						Try again
+					</Button>
+				</Stack>
+			</Box>
+		);
+	}
 
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
