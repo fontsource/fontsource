@@ -23,15 +23,17 @@ describe('variant validation', () => {
 		const metadata: FamilyMetadata = {
 			id: 'neuton',
 			family: 'Neuton',
+			provider: 'google',
+			status: 'active',
+			provenance: {
+				type: 'github',
+				repository: 'google/fonts',
+				revision,
+				directory: 'ofl/neuton',
+			},
 			category: 'serif',
 			sourceModified: '2026-01-02',
 			license: { id: 'OFL-1.1', url: 'https://example.com/license' },
-			origin: {
-				upstream: 'googleFonts',
-				revision,
-				directory: 'ofl/neuton',
-				available: true,
-			},
 			declaredSubsets: ['latin'],
 			sourceFiles: files.map((file) => ({
 				path: file.path,

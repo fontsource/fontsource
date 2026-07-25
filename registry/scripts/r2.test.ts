@@ -30,6 +30,14 @@ describe('R2 source archive', () => {
 			$fault: 'client',
 			$metadata: { httpStatusCode: 404 },
 		});
+		s3.send.mockRejectedValueOnce(missing);
+		await expect(
+			putObject({
+				key: 'sources/missing',
+				size: body.byteLength,
+				sha256: hash,
+			}),
+		).rejects.toThrow('Missing required R2 object sources/missing');
 
 		s3.send.mockRejectedValueOnce(missing);
 		await expect(
@@ -49,7 +57,9 @@ describe('R2 source archive', () => {
 			read: async () => body,
 		});
 
-		const command = s3.send.mock.calls[2]?.[0];
+		const command = s3.send.mock.calls.find(
+			([value]) => value instanceof PutObjectCommand,
+		)?.[0];
 		expect(command).toBeInstanceOf(PutObjectCommand);
 		expect(command?.input).toMatchObject({
 			Bucket: 'fontsource-registry',

@@ -2,6 +2,10 @@ import { z } from 'zod';
 
 // Zod is the single schema source for committed registry data.
 const idSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+const familyProviderSchema = z.enum(['google', 'fontsource']);
+const familyKeySchema = z
+	.string()
+	.regex(/^(?:google|fontsource)\/[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const revisionSchema = z.string().regex(/^[0-9a-f]{40}$/);
 const sha256Schema = z.string().regex(/^[0-9a-f]{64}$/);
 const dateSchema = z.iso.date();
@@ -34,7 +38,7 @@ export const registryIndexSchema = z.strictObject({
 			revision: revisionSchema,
 		}),
 	}),
-	families: z.array(idSchema),
+	families: z.array(familyKeySchema),
 	subsets: z.array(idSchema),
 });
 
@@ -66,6 +70,17 @@ const sourceFileSchema = z.strictObject({
 export const familyMetadataSchema = z.strictObject({
 	id: idSchema,
 	family: z.string().min(1),
+	provider: familyProviderSchema,
+	status: z.enum(['active', 'deprecated']),
+	provenance: z.discriminatedUnion('type', [
+		z.strictObject({
+			type: z.literal('github'),
+			repository: z.string().regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/),
+			revision: revisionSchema,
+			directory: sourcePathSchema,
+		}),
+		z.strictObject({ type: z.literal('registry') }),
+	]),
 	displayName: z.string().min(1).optional(),
 	category: z.enum([
 		'sans-serif',
@@ -83,12 +98,6 @@ export const familyMetadataSchema = z.strictObject({
 		id: z.string().min(1),
 		url: z.url({ protocol: /^https$/ }),
 		attribution: z.string().min(1).optional(),
-	}),
-	origin: z.strictObject({
-		upstream: z.literal('googleFonts'),
-		revision: revisionSchema,
-		directory: sourcePathSchema,
-		available: z.boolean(),
 	}),
 	project: z
 		.strictObject({

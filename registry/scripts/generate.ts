@@ -4,7 +4,7 @@ import { openGitSnapshot } from './git.ts';
 import { generateGoogle } from './google.ts';
 import { generateNam } from './nam.ts';
 import { registryIndexSchema } from './schema.ts';
-import { readJsonIfExists, writeJson } from './shared.ts';
+import { compareStrings, readJsonIfExists, writeJson } from './shared.ts';
 import { validateRegistry } from './validator.ts';
 
 const logger = consola.withTag('registry');
@@ -21,14 +21,18 @@ export const generateRegistry = async (
 	const previousValue = await readJsonIfExists(join(root, 'index.json'));
 	const previousIndex =
 		previousValue === null ? null : registryIndexSchema.parse(previousValue);
+	const previousFamilies = previousIndex?.families ?? [];
+	const previousGoogleIds = previousFamilies
+		.filter((family) => family.startsWith('google/'))
+		.map((family) => family.slice('google/'.length));
 
 	logger.start(`Generating families from google/fonts@${google.revision}`);
-	const families = await generateGoogle(
-		google,
-		root,
-		previousIndex?.families ?? [],
-	);
-	logger.success(`Generated ${families.length} font families`);
+	const googleFamilies = await generateGoogle(google, root, previousGoogleIds);
+	logger.success(`Generated ${googleFamilies.length} Google font families`);
+	const families = [
+		...previousFamilies.filter((family) => !family.startsWith('google/')),
+		...googleFamilies.map((family) => `google/${family}`),
+	].toSorted(compareStrings);
 
 	logger.start(`Generating subsets from googlefonts/nam-files@${nam.revision}`);
 	const subsets = await generateNam(nam, root);

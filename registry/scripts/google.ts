@@ -355,6 +355,14 @@ const writeFamily = async (
 	const metadata = familyMetadataSchema.parse({
 		id,
 		family: google.name,
+		provider: 'google',
+		status: 'active',
+		provenance: {
+			type: 'github',
+			repository: 'google/fonts',
+			revision: lastChanged.revision,
+			directory,
+		},
 		...(google.displayName && google.displayName !== google.name
 			? { displayName: google.displayName }
 			: {}),
@@ -367,12 +375,6 @@ const writeFamily = async (
 			url: license.url,
 			...(copyrights.length > 0 ? { attribution: copyrights.join('\n') } : {}),
 		},
-		origin: {
-			upstream: 'googleFonts',
-			revision: lastChanged.revision,
-			directory,
-			available: true,
-		},
 		...(google.project ? { project: google.project } : {}),
 		declaredSubsets: Array.from(new Set(google.subsets)).toSorted(
 			compareStrings,
@@ -382,7 +384,7 @@ const writeFamily = async (
 	const inspection = familyInspectionSchema.parse({
 		files: inspectionFiles,
 	});
-	const output = join(root, 'families', id);
+	const output = join(root, 'families', 'google', id);
 	await mkdir(output, { recursive: true });
 	await writeJson(join(output, 'metadata.json'), metadata);
 	await writeJson(join(output, 'inspection.json'), inspection);
@@ -437,14 +439,9 @@ export const generateGoogle = async (
 
 	for (const id of previousFamilyIds) {
 		if (families.has(id)) continue;
-		const metadataPath = join(root, 'families', id, 'metadata.json');
+		const metadataPath = join(root, 'families', 'google', id, 'metadata.json');
 		const metadata = familyMetadataSchema.parse(await readJson(metadataPath));
-		if (metadata.origin.available) {
-			await writeJson(metadataPath, {
-				...metadata,
-				origin: { ...metadata.origin, available: false },
-			});
-		}
+		await writeJson(metadataPath, { ...metadata, status: 'deprecated' });
 	}
 
 	await writeAxisRegistry(snapshot, root);

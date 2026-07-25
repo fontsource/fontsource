@@ -1,8 +1,7 @@
 # Registry
 
-This private workspace package builds Fontsource's text-only registry from
-pinned Google Fonts and NAM repository snapshots. It is repository tooling,
-not a public package.
+This private workspace package maintains Fontsource's text-only font registry.
+It is repository tooling, not a public package.
 
 ## Commands
 
@@ -33,13 +32,18 @@ snapshots/<fontsource-commit>/manifest.json
 ~~~
 
 Each manifest maps registry paths and sources to their SHA-256 objects and is
-written last. Later runs add only changed objects and one manifest.
+written last. Google sources can be recovered from their pinned GitHub commit.
+Registry-managed sources must already exist at their content-addressed R2 key.
 
 Provision the bucket once:
 
 ~~~sh
 wrangler r2 bucket create fontsource-registry
+wrangler r2 bucket lock add fontsource-registry archive --retention-indefinite
 ~~~
+
+The indefinite lock keeps published manifests and their content-addressed
+objects from being overwritten or deleted.
 
 The workflow needs `REGISTRY_R2_ENDPOINT` and bucket-scoped Object Read & Write
 credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
@@ -48,23 +52,28 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 ## Structure
 
 - `scripts/generate.ts` coordinates one complete registry build and validation.
-- `scripts/google.ts` writes family metadata, source inspection, documents,
-  licenses, and normalized axis metadata.
+- `scripts/google.ts` owns `data/families/google/` and writes family metadata,
+  source inspection, documents, licenses, and normalized axis metadata.
 - `scripts/nam.ts` writes Unicode subset and slicing definitions.
 - `scripts/git.ts` reads immutable Git trees and path history.
 - `scripts/inspection.ts` maps Core's provider-neutral font inspection into
   registry records.
 - `scripts/schema.ts` defines the Zod contracts; `scripts/validator.ts` checks
   files and cross-file references.
-- `data/` contains the generated registry and is added separately from the
-  tooling.
+- `data/families/<provider>/<id>/` contains family records. Family IDs are
+  globally unique across providers.
+- `data/subsets/` and `data/axes.json` contain shared Unicode and axis data.
 
 ## Invariants
 
 - Inputs are local repositories pinned to exact commits.
 - Output is canonical, deterministic, text-only, and schema-validated.
 - Provenance comes from Git history, not prior generated metadata.
-- Removed Google families remain recorded as unavailable.
+- Each provider owns its directory; Google generation never changes Fontsource
+  records.
+- Removed Google families remain buildable but are marked `deprecated`.
+- `github` provenance can recover a missing source from an exact commit;
+  `registry` provenance requires the source to be promoted to R2 first.
 - Package policy is reviewed registry state, not derived from legacy catalogs.
 - Package variants are explicit relations, not weight/style cross-products.
 - Core owns generic font processing; these scripts own Google and NAM ingestion.

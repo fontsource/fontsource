@@ -11,7 +11,10 @@ on:
 permissions:
   contents: read
 
-concurrency: registry-archive
+concurrency:
+  group: registry-archive
+  # Every registry commit has its own snapshot, so pending runs must not be dropped.
+  queue: max
 
 jobs:
   archive:

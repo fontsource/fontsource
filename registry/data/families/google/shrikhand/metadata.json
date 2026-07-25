@@ -1,0 +1,42 @@
+{
+	"category": "display",
+	"dateAdded": "2016-06-20",
+	"declaredSubsets": [
+		"gujarati",
+		"latin",
+		"latin-ext",
+		"menu"
+	],
+	"designer": "Jonny Pinhorn",
+	"family": "Shrikhand",
+	"id": "shrikhand",
+	"license": {
+		"attribution": "Copyright (c) 2015 Jonny Pinhorn (jonpinhorn.typedesign@gmail.com)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"project": {
+		"repository": "https://github.com/jonpinhorn/shrikhand",
+		"revision": "c11c9b0720fba977fad7cb4f339ebacdba1d1394"
+	},
+	"provenance": {
+		"directory": "ofl/shrikhand",
+		"repository": "google/fonts",
+		"revision": "fd556f7502cdcff465a4e4af4b0375ff799a2783",
+		"type": "github"
+	},
+	"provider": "google",
+	"sourceFiles": [
+		{
+			"path": "ofl/shrikhand/Shrikhand-Regular.ttf",
+			"sha256": "8ba32f6d6a96fb8dbc92fc1acfbc4d2123d5348063d89b2c3dd784e7afcb81af",
+			"size": 220804,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-04-24",
+	"status": "active"
+}
