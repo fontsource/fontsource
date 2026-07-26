@@ -386,6 +386,16 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		join(root, 'languages.json'),
 		languageCatalogSchema,
 	);
+	for (const [id, language] of Object.entries(languages)) {
+		if (!language.requiredCodepoints) continue;
+		deepStrictEqual(
+			language.requiredCodepoints,
+			Array.from(new Set(language.requiredCodepoints)).toSorted(
+				(left, right) => left - right,
+			),
+			`${id} required codepoints must be sorted and unique`,
+		);
+	}
 	for (const tag of Object.keys(taxonomy.tags)) {
 		const group = tag.split('/')[0] as string;
 		assert(

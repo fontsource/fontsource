@@ -89,7 +89,17 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const languageViews = Object.entries(languages).map(([id, language]) =>
 		createJsonFile(
 			`languages/${id}.json`,
-			RegistryLanguageSchema.parse({ id, ...language }),
+			RegistryLanguageSchema.parse({
+				id,
+				language: language.language,
+				script: language.script,
+				name: language.name,
+				...(language.preferredName
+					? { preferredName: language.preferredName }
+					: {}),
+				...(language.autonym ? { autonym: language.autonym } : {}),
+				...(language.sampleText ? { sampleText: language.sampleText } : {}),
+			}),
 		),
 	);
 	const sourceMap = new Map<string, SourceFile>();

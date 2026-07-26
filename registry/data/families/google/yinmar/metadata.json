@@ -11,8 +11,10 @@
 	"family": "Yinmar",
 	"id": "yinmar",
 	"languages": [
+		"ksw_Mymr",
 		"mnw_Mymr",
 		"my_Mymr",
+		"pwo_Mymr",
 		"shn_Mymr"
 	],
 	"license": {

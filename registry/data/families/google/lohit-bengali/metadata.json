@@ -13,8 +13,14 @@
 		"as_Beng",
 		"bn_Beng",
 		"bpy_Beng",
+		"brx_Beng",
+		"ccp_Beng",
+		"khr_Beng",
+		"kyw_Beng",
 		"mni_Beng",
-		"rkt_Beng"
+		"rkt_Beng",
+		"syl_Beng",
+		"trp_Beng"
 	],
 	"license": {
 		"attribution": "Copyright 2011 Lohit Fonts Project contributors (psatpute@redhat.com). <http://fedorahosted.org/lohit> Licensed under the SIL Open Font License 1.1 (see file OFL.txt)",

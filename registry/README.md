@@ -20,9 +20,9 @@ Generation validates existing `policy.json` files but never creates or changes
 package policy. Registry data is written to `data/` and refreshed weekly or on
 demand by the [registry sync workflow](../.github/workflows/registry-sync.yml),
 which validates changes before committing them to `main`.
-Google's explicit language lists override cmap detection. References without a
-language record are logged and omitted; other families are matched against
-canonical base exemplars using the cmap shared by every source face.
+Google’s explicit language lists override cmap detection. References without a
+language record are logged and omitted; other families are matched against the
+registry language requirements using the cmap shared by every source face.
 
 The [registry archive workflow](../.github/workflows/registry-archive.yml)
 runs after registry data changes. It copies the exact registry files and every
@@ -66,7 +66,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   files and cross-file references.
 - `data/families/<provider>/<id>/` contains family records. Family IDs are
   globally unique across providers.
-- `data/languages.json` defines semantic languages and their public names.
+- `data/languages.json` defines semantic languages, public names, and the
+  private codepoint requirements used for automatic matching.
 - `data/taxonomy.json` defines the reviewed classification and tag labels.
 - `data/subsets/` and `data/axes.json` contain shared Unicode and axis data.
 
@@ -109,7 +110,6 @@ family fields and declares every source file:
 	"family": "Example",
 	"classifications": ["display", "sans-serif"],
 	"tags": ["theme/stencil"],
-	"languages": ["en_Latn"],
 	"license": {
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
@@ -124,9 +124,11 @@ family fields and declares every source file:
 }
 ~~~
 
-The adapter derives hashes, sizes, inspection, modification dates, and Git
-provenance. The source repository stores the raw binaries; this repository
-commits only generated text records.
+The adapter derives hashes, sizes, inspection, modification dates, Git
+provenance, and languages supported by every source face. A reviewed
+`languages` list may override automatic matching for exceptional families. The
+source repository stores the raw binaries; this repository commits only
+generated text records.
 
 ## Development
 

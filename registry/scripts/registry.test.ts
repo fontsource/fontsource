@@ -16,6 +16,7 @@ import { generateRegistry } from './generate.ts';
 import { assertGitPathClean, openGitSnapshot } from './git.ts';
 import {
 	familyMetadataSchema,
+	languageCatalogSchema,
 	registryIndexSchema,
 	sourceFamilySchema,
 } from './schema.ts';
@@ -29,6 +30,15 @@ const ABEL_POLICY = {
 	defaultSubset: 'latin',
 	subsets: [{ id: 'latin', definition: 'latin' }],
 } as const;
+
+const TEST_LANGUAGES = languageCatalogSchema.parse({
+	en_Latn: {
+		language: 'en',
+		script: 'Latn',
+		name: 'English',
+		requiredCodepoints: [65, 66, 67],
+	},
+});
 
 const temporaryDirectory = async (name: string): Promise<string> => {
 	const path = await mkdtemp(join(tmpdir(), `${name}-`));
@@ -241,6 +251,30 @@ sample_text {
 }
 `,
 	);
+	await writeFixture(
+		repository,
+		'lang/Lib/gflanguages/data/languages/zy_Latn.textproto',
+		`id: "zy_Latn"
+language: "zy"
+script: "Latn"
+name: "Sample-only test language"
+sample_text {
+  styles: "A 🫠."
+}
+`,
+	);
+	await writeFixture(
+		repository,
+		'lang/Lib/gflanguages/data/languages/zz_Latn.textproto',
+		`id: "zz_Latn"
+language: "zz"
+script: "Latn"
+name: "Normalization test language"
+exemplar_chars {
+  base: "{Å} 🫠"
+}
+`,
+	);
 	return {
 		repository,
 		revision: commitAll(repository, 'initial Google snapshot'),
@@ -292,7 +326,6 @@ const createFontFilesRepository = async (): Promise<{
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org/open-font-license-official-text/',
 			},
-			languages: [],
 			declaredSubsets: ['latin'],
 			sourceFiles: [
 				{
@@ -422,9 +455,9 @@ describe('registry ingestion', () => {
 		const registry = await temporaryDirectory('font-files-registry');
 		const snapshot = openGitSnapshot(source.repository, source.revision);
 
-		await expect(generateFontFiles(snapshot, registry)).resolves.toEqual([
-			'example',
-		]);
+		await expect(
+			generateFontFiles(snapshot, registry, TEST_LANGUAGES),
+		).resolves.toEqual(['example']);
 		expect(
 			await readJson(
 				join(registry, 'families/fontsource/example/metadata.json'),
@@ -434,6 +467,7 @@ describe('registry ingestion', () => {
 			status: 'active',
 			classifications: ['display', 'sans-serif'],
 			tags: ['theme/stencil'],
+			languages: ['en_Latn'],
 			provenance: {
 				type: 'github',
 				repository: 'fontsource/font-files',
@@ -537,6 +571,13 @@ describe('registry ingestion', () => {
 				script: 'Latn',
 				name: 'English',
 				autonym: 'English',
+				requiredCodepoints: [65, 66, 67],
+			},
+			zy_Latn: {
+				requiredCodepoints: [65, 129_760],
+			},
+			zz_Latn: {
+				requiredCodepoints: [65, 197, 778, 129_760],
 			},
 		});
 		expect(

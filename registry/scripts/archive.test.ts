@@ -33,6 +33,7 @@ describe('registry source archive', () => {
 		let manifest: unknown;
 		let current: unknown;
 		let family: unknown;
+		let language: unknown;
 		let sourceContentType: string | undefined;
 		r2.putObject.mockImplementation(
 			async (object: {
@@ -51,6 +52,11 @@ describe('registry source archive', () => {
 				}
 				if (object.key.endsWith('/api/families/abel.json')) {
 					family = JSON.parse(
+						Buffer.from(await object.read()).toString('utf8'),
+					);
+				}
+				if (object.key.endsWith('/api/languages/fa_Arab.json')) {
+					language = JSON.parse(
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
@@ -121,5 +127,6 @@ describe('registry source archive', () => {
 			],
 		});
 		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
+		expect(language).not.toHaveProperty('requiredCodepoints');
 	}, 15_000);
 });

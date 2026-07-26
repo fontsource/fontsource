@@ -15,6 +15,14 @@ const dateSchema = z.iso.date();
 const finiteNumberSchema = z.number().finite();
 const fontStyleSchema = z.enum(['normal', 'italic']);
 const scriptSchema = z.string().regex(/^[A-Z][a-z]{3}$/);
+const unicodeScalarSchema = z
+	.number()
+	.int()
+	.min(0)
+	.max(0x10ffff)
+	.refine((value) => value < 0xd800 || value > 0xdfff, {
+		message: 'must not be a Unicode surrogate',
+	});
 export const fontClassificationSchema = z.enum([
 	'serif',
 	'sans-serif',
@@ -70,6 +78,7 @@ export const languageCatalogSchema = z.record(
 		preferredName: z.string().min(1).optional(),
 		autonym: z.string().min(1).optional(),
 		sampleText: sampleTextSchema.optional(),
+		requiredCodepoints: z.array(unicodeScalarSchema).min(1).optional(),
 	}),
 );
 
@@ -165,6 +174,7 @@ export const sourceFamilySchema = familyMetadataSchema
 		sourceFiles: true,
 	})
 	.extend({
+		languages: familyMetadataSchema.shape.languages.default([]),
 		sourceFiles: z
 			.array(
 				z.strictObject({

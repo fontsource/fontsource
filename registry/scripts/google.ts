@@ -1,15 +1,12 @@
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
-import {
-	createFontContext,
-	type FontInspection,
-	inspectFont,
-} from '@fontsource-utils/core';
+import { createFontContext, inspectFont } from '@fontsource-utils/core';
 import { consola } from 'consola';
 import { parse } from 'csv-parse/sync';
 import TurndownService from 'turndown';
 import type { GitSnapshot } from './git.ts';
 import { normalizeInspection } from './inspection.ts';
+import { createLanguageMatcher, type FontCoverage } from './languages.ts';
 import { loadProtoType, parseProto } from './protobuf.ts';
 import {
 	axisRegistrySchema,
@@ -39,6 +36,25 @@ type GoogleFont = {
 };
 
 type GoogleSampleText = NonNullable<FamilyMetadata['sampleText']>;
+
+const SAMPLE_TEXT_FIELDS = [
+	'masthead_full',
+	'masthead_partial',
+	'styles',
+	'tester',
+	'poster_sm',
+	'poster_md',
+	'poster_lg',
+	'specimen_48',
+	'specimen_36',
+	'specimen_32',
+	'specimen_21',
+	'specimen_16',
+] as const;
+
+type GoogleRawSampleText = Partial<
+	Record<(typeof SAMPLE_TEXT_FIELDS)[number], string>
+>;
 
 type GoogleFamily = {
 	name: string;
@@ -78,7 +94,7 @@ type GoogleFamilyProto = {
 	languages: string[];
 	primary_language?: string;
 	primary_script?: string;
-	sample_text?: GoogleSampleText;
+	sample_text?: GoogleRawSampleText;
 };
 
 type GoogleAxisProto = {
@@ -102,7 +118,7 @@ type GoogleLanguageProto = {
 		base?: string;
 		not_required?: string;
 	};
-	sample_text?: GoogleSampleText;
+	sample_text?: GoogleRawSampleText;
 };
 
 const familyProto = loadProtoType(
@@ -116,7 +132,7 @@ const languageProto = loadProtoType(
 );
 
 const normalizeSampleText = (
-	value: GoogleSampleText | undefined,
+	value: GoogleRawSampleText | undefined,
 ): GoogleSampleText | undefined => {
 	const styles = value?.styles?.trim();
 	const tester = value?.tester?.trim();
@@ -189,26 +205,40 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 	};
 };
 
-type LanguageRequirements = ReadonlyMap<string, readonly number[]>;
-
 // Braces group grapheme sequences in Google exemplars. Font cmap support is
-// determined by their NFC-normalized component codepoints.
-const exemplarCodepoints = (value: string): number[] =>
-	[
-		...new Set(
-			Array.from(
-				value.replace(/[{}\s]/gu, '').normalize('NFC'),
-				(character) => character.codePointAt(0) as number,
-			),
-		),
-	].toSorted((left, right) => left - right);
+// determined by both their original and NFC-normalized component codepoints.
+const exemplarCodepoints = (value: string): number[] => {
+	const codepoints = new Set<number>();
+	for (const token of value.split(/\s+/u)) {
+		if (!token) continue;
+		const characters =
+			token.length > 1 ? token.replace(/^\{+|\}+$/gu, '') : token;
+		for (const form of [characters, characters.normalize('NFC')]) {
+			for (const character of form) {
+				codepoints.add(character.codePointAt(0) as number);
+			}
+		}
+	}
+	return [...codepoints].toSorted((left, right) => left - right);
+};
 
-const readGoogleLanguages = (
-	snapshot: GitSnapshot,
-): {
-	catalog: LanguageCatalog;
-	requirements: LanguageRequirements;
-} => {
+const sampleTextCodepoints = (
+	value: GoogleRawSampleText | undefined,
+): number[] => {
+	const codepoints = new Set<number>();
+	const text = SAMPLE_TEXT_FIELDS.map((field) => value?.[field] ?? '').join(
+		'\n',
+	);
+	for (const form of [text, text.normalize('NFC')]) {
+		for (const character of form) {
+			if (/[\p{P}\p{Z}\s]/u.test(character)) continue;
+			codepoints.add(character.codePointAt(0) as number);
+		}
+	}
+	return [...codepoints].toSorted((left, right) => left - right);
+};
+
+const readGoogleLanguages = (snapshot: GitSnapshot): LanguageCatalog => {
 	const paths = snapshot.paths.filter((path) =>
 		/^lang\/Lib\/gflanguages\/data\/languages\/[^/]+\.textproto$/.test(path),
 	);
@@ -216,7 +246,6 @@ const readGoogleLanguages = (
 		throw new Error('No Google language metadata files found');
 
 	const catalog: Record<string, unknown> = {};
-	const requirements = new Map<string, readonly number[]>();
 	for (const path of paths) {
 		const language = parseProto<GoogleLanguageProto>(
 			languageProto,
@@ -227,6 +256,15 @@ const readGoogleLanguages = (
 			throw new Error(`Google language ID does not match ${path}`);
 		}
 		const sampleText = normalizeSampleText(language.sample_text);
+		const base = language.exemplar_chars?.base;
+		const ignored = new Set(
+			exemplarCodepoints(language.exemplar_chars?.not_required ?? ''),
+		);
+		const requiredCodepoints = (
+			base
+				? exemplarCodepoints(base)
+				: sampleTextCodepoints(language.sample_text)
+		).filter((codepoint) => !ignored.has(codepoint));
 		catalog[id] = {
 			language: language.language,
 			script: language.script,
@@ -236,23 +274,11 @@ const readGoogleLanguages = (
 				: {}),
 			...(language.autonym ? { autonym: language.autonym } : {}),
 			...(sampleText ? { sampleText } : {}),
+			...(requiredCodepoints.length > 0 ? { requiredCodepoints } : {}),
 		};
-
-		const base = language.exemplar_chars?.base;
-		if (!base) continue;
-		const ignored = new Set(
-			exemplarCodepoints(language.exemplar_chars?.not_required ?? ''),
-		);
-		const required = exemplarCodepoints(base).filter(
-			(codepoint) => !ignored.has(codepoint),
-		);
-		if (required.length > 0) requirements.set(id, required);
 	}
 
-	return {
-		catalog: languageCatalogSchema.parse(catalog),
-		requirements,
-	};
+	return languageCatalogSchema.parse(catalog);
 };
 
 type FontClassification = FamilyMetadata['classifications'][number];
@@ -500,35 +526,12 @@ const writeAxisRegistry = async (
 	await writeJson(join(root, 'axes.json'), axisRegistrySchema.parse(registry));
 };
 
-const supportsCodepoint = (
-	ranges: FontInspection['unicodeRanges'],
-	codepoint: number,
-): boolean =>
-	ranges.some((range) =>
-		typeof range === 'number'
-			? range === codepoint
-			: range[0] <= codepoint && codepoint <= range[1],
-	);
-
-const supportedLanguages = (
-	ranges: FontInspection['unicodeRanges'],
-	requirements: LanguageRequirements,
-): ReadonlySet<string> =>
-	new Set(
-		[...requirements]
-			.filter(([, codepoints]) =>
-				codepoints.every((codepoint) => supportsCodepoint(ranges, codepoint)),
-			)
-			.map(([id]) => id),
-	);
-
 const inspectFamilySources = async (
 	snapshot: GitSnapshot,
 	id: string,
 	source: GoogleFamilyDirectory,
 	ctx: ReturnType<typeof createFontContext>,
-	languageRequirements: LanguageRequirements,
-	languageCache: Map<string, ReadonlySet<string>>,
+	matchLanguages: ReturnType<typeof createLanguageMatcher>,
 ): Promise<{
 	sourceFiles: FamilyMetadata['sourceFiles'];
 	inspectionFiles: FamilyInspection['files'];
@@ -558,7 +561,7 @@ const inspectFamilySources = async (
 
 	const sourceFiles: FamilyMetadata['sourceFiles'] = [];
 	const inspectionFiles: FamilyInspection['files'] = [];
-	let familyLanguages: Set<string> | undefined;
+	const coverage: FontCoverage[] = [];
 
 	// Keep inspection sequential: a single source face can already be memory-heavy.
 	for (const path of Array.from(sourcePaths).toSorted(compareStrings)) {
@@ -575,32 +578,19 @@ const inspectFamilySources = async (
 				: {}),
 		});
 		inspectionFiles.push(normalized);
-
-		if (family.languages.length > 0) continue;
-		const coverageKey = normalized.cmap.sha256;
-		let sourceLanguages = languageCache.get(coverageKey);
-		if (!sourceLanguages) {
-			sourceLanguages = supportedLanguages(
-				inspected.unicodeRanges,
-				languageRequirements,
-			);
-			languageCache.set(coverageKey, sourceLanguages);
-		}
-		if (!familyLanguages) {
-			familyLanguages = new Set(sourceLanguages);
-		} else {
-			for (const language of familyLanguages) {
-				if (!sourceLanguages.has(language)) familyLanguages.delete(language);
-			}
-		}
+		coverage.push({
+			cmapSha256: normalized.cmap.sha256,
+			unicodeRanges: inspected.unicodeRanges,
+		});
 	}
 
 	return {
 		sourceFiles,
 		inspectionFiles,
-		languages: [...(familyLanguages ?? family.languages)].toSorted(
-			compareStrings,
-		),
+		languages:
+			family.languages.length > 0
+				? [...family.languages].toSorted(compareStrings)
+				: matchLanguages(coverage),
 	};
 };
 
@@ -612,8 +602,7 @@ const writeFamily = async (
 	ctx: ReturnType<typeof createFontContext>,
 	tags: readonly string[],
 	languageCatalog: LanguageCatalog,
-	languageRequirements: LanguageRequirements,
-	languageCache: Map<string, ReadonlySet<string>>,
+	matchLanguages: ReturnType<typeof createLanguageMatcher>,
 ): Promise<void> => {
 	const { directory, family: google, files } = source;
 	const license = LICENSES[google.license];
@@ -627,14 +616,7 @@ const writeFamily = async (
 		sourceFiles,
 		inspectionFiles,
 		languages: detectedLanguages,
-	} = await inspectFamilySources(
-		snapshot,
-		id,
-		source,
-		ctx,
-		languageRequirements,
-		languageCache,
-	);
+	} = await inspectFamilySources(snapshot, id, source, ctx, matchLanguages);
 	const languages = new Set(
 		detectedLanguages.filter((language) => languageCatalog[language]),
 	);
@@ -723,8 +705,7 @@ export const generateGoogle = async (
 ): Promise<string[]> => {
 	const families = readGoogleFamilies(snapshot);
 	const tagsByFamily = readGoogleTags(snapshot, taxonomy);
-	const { catalog: languageCatalog, requirements: languageRequirements } =
-		readGoogleLanguages(snapshot);
+	const languageCatalog = readGoogleLanguages(snapshot);
 	const referencedLanguages = new Set(
 		[...families.values()].flatMap(({ family }) => [
 			...family.languages,
@@ -743,7 +724,7 @@ export const generateGoogle = async (
 
 	const familyIds = new Set(previousFamilyIds);
 	const ctx = createFontContext();
-	const languageCache = new Map<string, ReadonlySet<string>>();
+	const matchLanguages = createLanguageMatcher(languageCatalog);
 	const sortedFamilies = Array.from(families).toSorted(([left], [right]) =>
 		compareStrings(left, right),
 	);
@@ -758,8 +739,7 @@ export const generateGoogle = async (
 				ctx,
 				tagsByFamily.get(family.family.name) ?? [],
 				languageCatalog,
-				languageRequirements,
-				languageCache,
+				matchLanguages,
 			);
 			familyIds.add(id);
 			const processed = index + 1;
