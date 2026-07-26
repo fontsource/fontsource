@@ -1,5 +1,12 @@
 # @fontsource-utils/core
 
+## [0.3.0](https://github.com/fontsource/fontsource/compare/core-v0.2.0...core-v0.3.0) (2026-07-26)
+
+
+### Features
+
+* **website:** add shared font tools workbench ([#1204](https://github.com/fontsource/fontsource/issues/1204)) ([f55ea4b](https://github.com/fontsource/fontsource/commit/f55ea4bc408f5cac5a372735c5b2b972adc37c0a))
+
 ## [0.2.0](https://github.com/fontsource/fontsource/compare/core-v0.1.0...core-v0.2.0) (2026-07-18)
 
 
