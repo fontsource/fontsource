@@ -110,6 +110,20 @@ describe('account endpoints', () => {
 		);
 	});
 
+	it('returns unexpected authentication errors to the login page', async () => {
+		const response = await handleAuthRequest(
+			new Request(
+				`${testEnv.BETTER_AUTH_URL}/api/auth/error?error=internal_server_error`,
+			),
+			testEnv,
+		);
+
+		expect(response.status).toBe(302);
+		expect(response.headers.get('Location')).toBe(
+			'/login?error=internal_server_error',
+		);
+	});
+
 	it('reads an authenticated session from the request cookie', async () => {
 		const auth = createAuth(testEnv);
 		const context = await auth.$context;

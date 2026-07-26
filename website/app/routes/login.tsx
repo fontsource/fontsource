@@ -5,7 +5,7 @@ import {
 	IconBrandGoogle,
 } from '@tabler/icons-react';
 import { createAuthClient } from 'better-auth/react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type {
 	HeadersFunction,
 	LoaderFunctionArgs,
@@ -15,6 +15,14 @@ import { redirect, useSearchParams } from 'react-router';
 import { getAuthSession } from '@/utils/auth.server';
 import { cacheHeaders } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
+import {
+	getOAuthLoginError,
+	getSignInNetworkError,
+	getSignInRequestError,
+	type LoginErrorMessage,
+	parseSocialProvider,
+	type SocialProvider,
+} from '@/utils/login-error';
 
 const authClient = createAuthClient();
 
@@ -36,36 +44,46 @@ export const loader = async ({ request, context }: LoaderFunctionArgs) => {
 		: null;
 };
 
-type SocialProvider = 'google' | 'github';
-
-const signInErrorMessage =
-	'Please try again, or choose another sign-in option.';
-
 export default function Login() {
 	const [searchParams] = useSearchParams();
 	const [pendingProvider, setPendingProvider] = useState<SocialProvider | null>(
 		null,
 	);
-	const [hasActionError, setHasActionError] = useState(false);
-	const hasError = hasActionError || searchParams.has('error');
+	const [actionError, setActionError] = useState<LoginErrorMessage | null>(
+		null,
+	);
+	const [hasAttemptedSignIn, setHasAttemptedSignIn] = useState(false);
+	const signInInFlight = useRef(false);
+	const callbackError = hasAttemptedSignIn
+		? null
+		: getOAuthLoginError(
+				searchParams.get('error'),
+				parseSocialProvider(searchParams.get('provider')),
+			);
+	const loginError = actionError ?? callbackError;
 
 	const signIn = async (provider: SocialProvider) => {
-		setHasActionError(false);
+		if (signInInFlight.current) return;
+
+		signInInFlight.current = true;
+		setHasAttemptedSignIn(true);
+		setActionError(null);
 		setPendingProvider(provider);
 
 		try {
 			const result = await authClient.signIn.social({
 				provider,
 				callbackURL: '/login',
-				errorCallbackURL: '/login',
+				errorCallbackURL: `/login?provider=${provider}`,
 			});
 
 			if (result.error) {
-				setHasActionError(true);
+				setActionError(getSignInRequestError(provider, result.error.status));
 			}
 		} catch {
-			setHasActionError(true);
+			setActionError(getSignInNetworkError(provider));
 		} finally {
+			signInInFlight.current = false;
 			setPendingProvider(null);
 		}
 	};
@@ -78,16 +96,16 @@ export default function Login() {
 						Log in to Fontsource
 					</Title>
 
-					{hasError && (
+					{loginError && (
 						<Alert
 							color="red"
 							icon={<IconAlertCircle size={20} aria-hidden="true" />}
 							radius="md"
-							title="Couldn't log you in"
+							title={loginError.title}
 							variant="light"
-							role="alert"
+							role="status"
 						>
-							{signInErrorMessage}
+							{loginError.message}
 						</Alert>
 					)}
 
@@ -98,6 +116,7 @@ export default function Login() {
 							leftSection={<IconBrandGoogle size={18} aria-hidden="true" />}
 							loading={pendingProvider === 'google'}
 							disabled={pendingProvider !== null}
+							aria-busy={pendingProvider === 'google'}
 							onClick={() => void signIn('google')}
 						>
 							Continue with Google
@@ -108,6 +127,7 @@ export default function Login() {
 							leftSection={<IconBrandGithub size={18} aria-hidden="true" />}
 							loading={pendingProvider === 'github'}
 							disabled={pendingProvider !== null}
+							aria-busy={pendingProvider === 'github'}
 							onClick={() => void signIn('github')}
 						>
 							Continue with GitHub

@@ -16,6 +16,9 @@ export const createAuth = (env: Env) =>
 		database: env.APP_DB,
 		baseURL: env.BETTER_AUTH_URL,
 		secret: env.BETTER_AUTH_SECRET,
+		onAPIError: {
+			errorURL: '/login',
+		},
 		advanced: {
 			ipAddress: {
 				ipAddressHeaders: ['cf-connecting-ip'],
