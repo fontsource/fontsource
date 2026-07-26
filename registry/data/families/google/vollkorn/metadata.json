@@ -3,15 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2010-09-08",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Friedrich Althausen",
 	"family": "Vollkorn",
 	"id": "vollkorn",

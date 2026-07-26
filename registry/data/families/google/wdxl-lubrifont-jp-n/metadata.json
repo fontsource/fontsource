@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-04-01",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2"
-	],
 	"designer": "NightFurySL2001",
 	"family": "WDXL Lubrifont JP N",
 	"id": "wdxl-lubrifont-jp-n",

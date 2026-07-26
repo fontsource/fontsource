@@ -3,18 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2013-01-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Christian Robertson, ParaType, Font Bureau",
 	"family": "Roboto",
 	"id": "roboto",

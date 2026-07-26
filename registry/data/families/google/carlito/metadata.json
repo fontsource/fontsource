@@ -3,16 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-03-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Łukasz Dziedzic",
 	"family": "Carlito",
 	"id": "carlito",

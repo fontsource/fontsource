@@ -4,10 +4,6 @@
 		"symbols"
 	],
 	"dateAdded": "2017-08-21",
-	"declaredSubsets": [
-		"latin",
-		"menu"
-	],
 	"designer": "Lasse Fister",
 	"family": "Libre Barcode 39 Extended Text",
 	"id": "libre-barcode-39-extended-text",

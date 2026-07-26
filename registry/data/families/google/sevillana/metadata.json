@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-02-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Brownfox",
 	"family": "Sevillana",
 	"id": "sevillana",

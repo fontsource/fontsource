@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-05-18",
-	"declaredSubsets": [
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jiashuo Zhang, JAMO",
 	"family": "Gasoek One",
 	"id": "gasoek-one",

@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2013-01-16",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Viktoriya Grabowska, Eben Sorkin",
 	"family": "Fruktur",
 	"id": "fruktur",

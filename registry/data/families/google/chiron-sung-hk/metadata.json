@@ -3,17 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2025-05-17",
-	"declaredSubsets": [
-		"chinese-hongkong",
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2",
-		"vietnamese"
-	],
 	"designer": "Tamcy",
 	"family": "Chiron Sung HK",
 	"id": "chiron-sung-hk",

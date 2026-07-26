@@ -4,14 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2019-11-05",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Gydient, ViệtAnh Nguyễn",
 	"family": "Viaoda Libre",
 	"id": "viaoda-libre",

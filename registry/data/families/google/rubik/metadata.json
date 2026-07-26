@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-07-22",
-	"declaredSubsets": [
-		"arabic",
-		"cyrillic",
-		"cyrillic-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Hubert and Fischer, Meir Sadan, Cyreal, Daniel Grumer, Omaima Dajani",
 	"family": "Rubik",
 	"id": "rubik",

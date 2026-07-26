@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2017-02-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Impallari Type, Andres Torresi, Jacques Le Bailly",
 	"family": "Encode Sans Expanded",
 	"id": "encode-sans-expanded",

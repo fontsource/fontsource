@@ -3,17 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2013-02-27",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"devanagari",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Google",
 	"family": "Noto Sans",
 	"id": "noto-sans",

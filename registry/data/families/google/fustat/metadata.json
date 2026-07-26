@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-06-05",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mohamed Gaber, Laura Garcia Mut, Khaled Hosny",
 	"family": "Fustat",
 	"id": "fustat",

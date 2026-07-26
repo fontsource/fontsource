@@ -4,13 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"gujarati",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Rosetta, Anna Giedryś, David Březina",
 	"family": "Rasa",
 	"id": "rasa",

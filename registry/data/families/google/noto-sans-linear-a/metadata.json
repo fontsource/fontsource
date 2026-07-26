@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"linear-a",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Linear A",
 	"id": "noto-sans-linear-a",

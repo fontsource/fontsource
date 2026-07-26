@@ -4,12 +4,6 @@
 		"symbols"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"music"
-	],
 	"designer": "Google",
 	"family": "Noto Music",
 	"id": "noto-music",

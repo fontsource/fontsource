@@ -4,11 +4,6 @@
 		"symbols"
 	],
 	"dateAdded": "2013-09-18",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Christian Naths",
 	"family": "Redacted",
 	"id": "redacted",

@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"arabic",
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mohamed Gaber, Jovanny Lemonad",
 	"family": "El Messiri",
 	"id": "el-messiri",

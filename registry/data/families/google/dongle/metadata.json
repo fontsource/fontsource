@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-14",
-	"declaredSubsets": [
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Yanghee Ryu",
 	"family": "Dongle",
 	"id": "dongle",

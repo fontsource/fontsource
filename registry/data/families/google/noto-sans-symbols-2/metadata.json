@@ -4,15 +4,6 @@
 		"symbols"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"braille",
-		"latin",
-		"latin-ext",
-		"math",
-		"mayan-numerals",
-		"menu",
-		"symbols"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Symbols 2",
 	"id": "noto-sans-symbols-2",

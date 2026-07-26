@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-12-17",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Matt Bailey, Tyler Finck",
 	"family": "League Spartan",
 	"id": "league-spartan",

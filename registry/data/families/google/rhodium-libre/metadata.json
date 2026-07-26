@@ -4,12 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2015-06-03",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "James Puckett",
 	"family": "Rhodium Libre",
 	"id": "rhodium-libre",

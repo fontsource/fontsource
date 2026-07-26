@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-07-29",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tyler Finck",
 	"family": "Sono",
 	"id": "sono",

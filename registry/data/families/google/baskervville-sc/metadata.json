@@ -3,11 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2024-05-27",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "ANRT",
 	"family": "Baskervville SC",
 	"id": "baskervville-sc",

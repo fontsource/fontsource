@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-19",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Alumni Sans",
 	"id": "alumni-sans",

@@ -3,16 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2018-12-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "TypeTogether",
 	"family": "Literata",
 	"id": "literata",

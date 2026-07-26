@@ -3,11 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2024-06-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jörg Drees",
 	"family": "Wittgenstein",
 	"id": "wittgenstein",

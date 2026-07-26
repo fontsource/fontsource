@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-09-13",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Stefie Justprince",
 	"family": "Pixelify Sans",
 	"id": "pixelify-sans",

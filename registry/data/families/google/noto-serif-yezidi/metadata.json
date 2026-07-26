@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"yezidi"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Yezidi",
 	"id": "noto-serif-yezidi",

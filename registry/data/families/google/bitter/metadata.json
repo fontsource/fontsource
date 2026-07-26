@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-12-19",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Sol Matas",
 	"family": "Bitter",
 	"id": "bitter",

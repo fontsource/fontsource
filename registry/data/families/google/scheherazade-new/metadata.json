@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-05-12",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "SIL International",
 	"family": "Scheherazade New",
 	"id": "scheherazade-new",

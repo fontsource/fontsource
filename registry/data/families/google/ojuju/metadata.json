@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-02-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Ụdị Foundry, Chisaokwu Joboson, Mirko Velimirović",
 	"family": "Ojuju",
 	"id": "ojuju",

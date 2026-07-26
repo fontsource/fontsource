@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-03-16",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek-ext",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Type Bank Co., Morisawa Inc.",
 	"family": "BIZ UDPMincho",
 	"id": "biz-udpmincho",

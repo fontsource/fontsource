@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2014-05-05",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Hubert and Fischer",
 	"family": "Rubik One",
 	"id": "rubik-one",

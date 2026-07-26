@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-10-24",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Wei Huang, URW Design Studio",
 	"family": "Fragment Mono",
 	"id": "fragment-mono",

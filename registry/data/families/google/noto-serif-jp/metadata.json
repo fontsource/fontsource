@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2018-08-22",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Google",
 	"displayName": "Noto Serif Japanese",
 	"family": "Noto Serif JP",

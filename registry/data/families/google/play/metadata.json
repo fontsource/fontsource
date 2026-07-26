@@ -4,15 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-05-04",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Jonas Hecksher",
 	"family": "Play",
 	"id": "play",

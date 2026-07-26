@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-07-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Jakob Ekelund, KH Type, Zalando",
 	"family": "Zalando Sans",
 	"id": "zalando-sans",

@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-03-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jonny Pinhorn",
 	"family": "Karla",
 	"id": "karla",

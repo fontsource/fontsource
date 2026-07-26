@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-07-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Wei Huang",
 	"family": "Work Sans",
 	"id": "work-sans",

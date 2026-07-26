@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-01-28",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Pria Ravichandran",
 	"family": "Palanquin Dark",
 	"id": "palanquin-dark",

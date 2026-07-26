@@ -3,16 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-04-03",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Philipp H. Poll",
 	"family": "Libertinus Sans",
 	"id": "libertinus-sans",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-01-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"sinhala"
-	],
 	"designer": "Indian Type Foundry",
 	"family": "Hind Colombo",
 	"id": "hind-colombo",

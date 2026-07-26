@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-03-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Familjen STHLM AB",
 	"family": "Familjen Grotesk",
 	"id": "familjen-grotesk",

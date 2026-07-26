@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Thai",
 	"id": "noto-serif-thai",

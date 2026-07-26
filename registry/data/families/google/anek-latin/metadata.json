@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-02-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Ek Type",
 	"family": "Anek Latin",
 	"id": "anek-latin",

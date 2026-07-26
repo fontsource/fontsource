@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2017-01-18",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Christian Thalmann",
 	"family": "Cormorant Upright",
 	"id": "cormorant-upright",

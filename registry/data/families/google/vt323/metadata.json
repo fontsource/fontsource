@@ -3,12 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2011-03-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Peter Hull",
 	"family": "VT323",
 	"id": "vt323",

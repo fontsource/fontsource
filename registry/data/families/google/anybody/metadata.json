@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-03-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tyler Finck",
 	"family": "Anybody",
 	"id": "anybody",

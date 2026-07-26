@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2020-11-06",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Nermin Kahrimanovic",
 	"family": "Nerko One",
 	"id": "nerko-one",

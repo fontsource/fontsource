@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-03-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"telugu"
-	],
 	"designer": "Tiro Typeworks, John Hudson, Fiona Ross, Kaja Słojewska",
 	"family": "Tiro Telugu",
 	"id": "tiro-telugu",

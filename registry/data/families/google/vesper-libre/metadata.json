@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2014-07-14",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mota Italic",
 	"family": "Vesper Libre",
 	"id": "vesper-libre",

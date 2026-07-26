@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Impallari Type",
 	"family": "Libre Franklin",
 	"id": "libre-franklin",

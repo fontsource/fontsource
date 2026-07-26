@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2020-12-21",
-	"declaredSubsets": [
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Kousuke Nagai",
 	"family": "Kapakana",
 	"id": "kapakana",

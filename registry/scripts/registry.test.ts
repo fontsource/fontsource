@@ -312,6 +312,11 @@ const createFontFilesRepository = async (): Promise<{
 		'abel-latin-400-normal.ttf',
 		'sources/example/files/Example-Regular.ttf',
 	);
+	await copyFont(
+		repository,
+		'abel-latin-400-normal.ttf',
+		'sources/symbols/files/Symbols-Regular.ttf',
+	);
 	await writeFixture(
 		repository,
 		'sources/example/metadata.json',
@@ -326,7 +331,6 @@ const createFontFilesRepository = async (): Promise<{
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org/open-font-license-official-text/',
 			},
-			declaredSubsets: ['latin'],
 			sourceFiles: [
 				{
 					path: 'files/Example-Regular.ttf',
@@ -344,6 +348,26 @@ const createFontFilesRepository = async (): Promise<{
 		repository,
 		'sources/example/description.en-US.md',
 		'# Example\n',
+	);
+	await writeFixture(
+		repository,
+		'sources/symbols/metadata.json',
+		canonicalJson({
+			id: 'symbols',
+			family: 'Symbols',
+			classifications: ['symbols'],
+			languages: [],
+			license: {
+				id: 'OFL-1.1',
+				url: 'https://openfontlicense.org/open-font-license-official-text/',
+			},
+			sourceFiles: [{ path: 'files/Symbols-Regular.ttf' }],
+		}),
+	);
+	await writeFixture(
+		repository,
+		'sources/symbols/license.txt',
+		'Symbols license\n',
 	);
 	return {
 		repository,
@@ -459,7 +483,7 @@ describe('registry ingestion', () => {
 
 		await expect(
 			generateFontFiles(snapshot, registry, TEST_LANGUAGES),
-		).resolves.toEqual(['example']);
+		).resolves.toEqual(['example', 'symbols']);
 		expect(
 			await readJson(
 				join(registry, 'families/fontsource/example/metadata.json'),
@@ -498,6 +522,11 @@ describe('registry ingestion', () => {
 				'utf8',
 			),
 		).toBe('# Example\n');
+		expect(
+			await readJson(
+				join(registry, 'families/fontsource/symbols/metadata.json'),
+			),
+		).toMatchObject({ languages: [] });
 	});
 
 	it('rejects packaged webfonts as sources', () => {
@@ -507,7 +536,6 @@ describe('registry ingestion', () => {
 				family: 'Example',
 				classifications: ['sans-serif'],
 				license: { id: 'OFL-1.1', url: 'https://example.com/license' },
-				declaredSubsets: ['latin'],
 				sourceFiles: [{ path: 'files/Example.woff2' }],
 			}).success,
 		).toBe(false);

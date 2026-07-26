@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-11-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Astigmatic",
 	"family": "Mervale Script",
 	"id": "mervale-script",

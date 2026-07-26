@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-05-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Gaslight",
 	"family": "Strong",
 	"id": "strong",

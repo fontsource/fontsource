@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-11-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Astigmatic",
 	"family": "Margarine",
 	"id": "margarine",

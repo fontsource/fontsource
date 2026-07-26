@@ -54,7 +54,6 @@ const FamilySummarySchema = z.strictObject({
 		.array(LanguageIdSchema)
 		.describe('Semantic language IDs, distinct from package subsets'),
 	sourceModified: z.iso.date(),
-	declaredSubsets: z.array(IdSchema),
 	variable: z.boolean(),
 	axes: z.array(z.string().length(4)),
 });

@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2011-12-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sorkin Type",
 	"family": "Plaster",
 	"id": "plaster",

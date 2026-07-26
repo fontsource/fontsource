@@ -3,16 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2014-06-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2"
-	],
 	"designer": "Carrois Apostrophe",
 	"family": "Fira Mono",
 	"id": "fira-mono",

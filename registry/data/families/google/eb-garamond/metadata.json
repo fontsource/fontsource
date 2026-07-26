@@ -3,16 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-03-23",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Georg Duffner, Octavio Pardo",
 	"family": "EB Garamond",
 	"id": "eb-garamond",

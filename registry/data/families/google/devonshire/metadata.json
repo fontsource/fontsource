@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-11-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Astigmatic",
 	"family": "Devonshire",
 	"id": "devonshire",

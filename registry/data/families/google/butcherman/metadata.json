@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2011-12-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Typomondo",
 	"family": "Butcherman",
 	"id": "butcherman",

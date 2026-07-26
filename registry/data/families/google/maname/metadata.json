@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2024-06-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"sinhala",
-		"vietnamese"
-	],
 	"designer": "Pathum Egodawatta, Mooniak",
 	"family": "Maname",
 	"id": "maname",

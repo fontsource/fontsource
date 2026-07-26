@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-03-24",
-	"declaredSubsets": [
-		"gurmukhi",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Ashish Kumar",
 	"family": "Braah One",
 	"id": "braah-one",

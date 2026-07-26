@@ -3,16 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2026-04-24",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Dmitry Grenev",
 	"family": "Akt",
 	"id": "akt",

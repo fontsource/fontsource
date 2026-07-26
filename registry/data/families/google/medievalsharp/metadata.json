@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-03-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Wojciech Kalinowski",
 	"family": "MedievalSharp",
 	"id": "medievalsharp",

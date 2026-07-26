@@ -3,15 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-04-15",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tiro Typeworks, Ross Mills, John Hudson, Paul Hanslow",
 	"family": "STIX Two Text",
 	"id": "stix-two-text",

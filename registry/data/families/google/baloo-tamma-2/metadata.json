@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2016-01-20",
-	"declaredSubsets": [
-		"kannada",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Ek Type",
 	"family": "Baloo Tamma 2",
 	"id": "baloo-tamma-2",

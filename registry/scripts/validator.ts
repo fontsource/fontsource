@@ -237,11 +237,6 @@ const validateFamily = async (
 		);
 	}
 	assertSortedUnique(
-		metadata.declaredSubsets,
-		(value) => value,
-		`${id} declared subsets`,
-	);
-	assertSortedUnique(
 		metadata.sourceFiles,
 		(file) => file.path,
 		`${id} source files`,

@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-06-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jason Kottke",
 	"family": "Silkscreen",
 	"id": "silkscreen",

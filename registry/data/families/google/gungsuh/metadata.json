@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2024-05-15",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek",
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "HanYang I&C Co.",
 	"family": "Gungsuh",
 	"id": "gungsuh",

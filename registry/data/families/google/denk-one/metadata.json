@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-11-26",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Sorkin Type",
 	"family": "Denk One",
 	"id": "denk-one",

@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-11-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Riccardo De Franceschi",
 	"family": "Vampiro One",
 	"id": "vampiro-one",

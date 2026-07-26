@@ -5,12 +5,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-11-02",
-	"declaredSubsets": [
-		"latin",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Jens Kutílek",
 	"family": "Workbench",
 	"id": "workbench",

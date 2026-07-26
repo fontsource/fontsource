@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-07-13",
-	"declaredSubsets": [
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Joe Prince",
 	"family": "Varela Round",
 	"id": "varela-round",

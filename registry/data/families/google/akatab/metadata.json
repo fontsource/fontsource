@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-02-15",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"tifinagh"
-	],
 	"designer": "SIL International",
 	"family": "Akatab",
 	"id": "akatab",

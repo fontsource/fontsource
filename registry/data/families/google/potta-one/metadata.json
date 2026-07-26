@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2020-12-14",
-	"declaredSubsets": [
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Font Zone 108",
 	"family": "Potta One",
 	"id": "potta-one",

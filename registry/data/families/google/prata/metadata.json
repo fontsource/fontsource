@@ -4,13 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-09-07",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Cyreal",
 	"family": "Prata",
 	"id": "prata",

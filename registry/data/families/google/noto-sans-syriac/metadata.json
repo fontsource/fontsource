@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"syriac"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Syriac",
 	"id": "noto-sans-syriac",

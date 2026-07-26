@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-08-31",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Jovanny Lemonad",
 	"family": "Philosopher",
 	"id": "philosopher",

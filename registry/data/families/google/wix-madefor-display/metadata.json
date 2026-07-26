@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-02-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Dalton Maag",
 	"family": "Wix Madefor Display",
 	"id": "wix-madefor-display",

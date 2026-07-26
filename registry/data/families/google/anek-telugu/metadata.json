@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-02-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"telugu"
-	],
 	"designer": "Ek Type",
 	"family": "Anek Telugu",
 	"id": "anek-telugu",

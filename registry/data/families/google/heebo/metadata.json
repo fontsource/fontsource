@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Oded Ezer",
 	"family": "Heebo",
 	"id": "heebo",

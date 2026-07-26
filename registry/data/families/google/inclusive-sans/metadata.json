@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-08-04",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Olivia King",
 	"family": "Inclusive Sans",
 	"id": "inclusive-sans",

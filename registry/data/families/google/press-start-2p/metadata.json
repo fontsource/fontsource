@@ -3,14 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-04-04",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "CodeMan38",
 	"family": "Press Start 2P",
 	"id": "press-start-2p",

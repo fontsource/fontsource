@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2010-09-21",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "ParaType",
 	"family": "PT Sans Caption",
 	"id": "pt-sans-caption",

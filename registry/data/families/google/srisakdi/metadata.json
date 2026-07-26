@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2018-08-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Cadson Demak",
 	"family": "Srisakdi",
 	"id": "srisakdi",

@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-04-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Alumni Sans Collegiate One",
 	"id": "alumni-sans-collegiate-one",

@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-12-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Playball",
 	"id": "playball",

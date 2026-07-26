@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-02-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Pathway Extreme",
 	"id": "pathway-extreme",

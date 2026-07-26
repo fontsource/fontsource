@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-10-02",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Andrés Briganti, Mateo Zaragoza, Guillermo Rauch, Evil Rabbit, José Rago, Facundo Santana",
 	"family": "Geist",
 	"id": "geist",

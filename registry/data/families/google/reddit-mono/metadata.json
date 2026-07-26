@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-02-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Stephen Hutchings, OrangeRed",
 	"family": "Reddit Mono",
 	"id": "reddit-mono",

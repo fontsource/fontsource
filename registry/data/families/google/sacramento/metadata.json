@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-11-01",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Astigmatic",
 	"family": "Sacramento",
 	"id": "sacramento",

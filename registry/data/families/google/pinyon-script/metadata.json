@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-10-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Nicole Fally",
 	"family": "Pinyon Script",
 	"id": "pinyon-script",

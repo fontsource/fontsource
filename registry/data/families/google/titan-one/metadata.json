@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-01-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Rodrigo Fuenzalida",
 	"family": "Titan One",
 	"id": "titan-one",

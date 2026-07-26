@@ -3,18 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2017-06-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"hebrew",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Coji Morishita, M+ Fonts Project",
 	"family": "M PLUS 1p",
 	"id": "m-plus-1p",

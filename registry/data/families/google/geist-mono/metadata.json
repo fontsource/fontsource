@@ -4,15 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-10-03",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2",
-		"vietnamese"
-	],
 	"designer": "Andrés Briganti, Mateo Zaragoza, Guillermo Rauch, Evil Rabbit, José Rago, Facundo Santana",
 	"family": "Geist Mono",
 	"id": "geist-mono",

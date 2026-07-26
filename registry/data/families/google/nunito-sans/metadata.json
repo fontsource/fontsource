@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-10-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams, Jacques Le Bailly, Manvel Shmavonyan, Alexei Vanyashin",
 	"family": "Nunito Sans",
 	"id": "nunito-sans",

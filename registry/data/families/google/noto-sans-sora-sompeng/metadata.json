@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"sora-sompeng"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Sora Sompeng",
 	"id": "noto-sans-sora-sompeng",

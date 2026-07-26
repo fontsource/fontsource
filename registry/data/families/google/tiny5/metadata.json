@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-04-19",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Stefan Schmidt",
 	"family": "Tiny5",
 	"id": "tiny5",

@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-04-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "The DocRepair Project, Patric King",
 	"family": "Agdasima",
 	"id": "agdasima",

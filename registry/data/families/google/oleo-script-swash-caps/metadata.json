@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-11-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "soytutype fonts",
 	"family": "Oleo Script Swash Caps",
 	"id": "oleo-script-swash-caps",

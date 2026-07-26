@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2020-09-24",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Omnibus-Type, Maximiliano Sproviero",
 	"family": "Ballet",
 	"id": "ballet",

@@ -3,14 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-03-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams, Jacques Le Bailly, Botjo Nikoltchev, Ani Petrova",
 	"family": "Pacifico",
 	"id": "pacifico",

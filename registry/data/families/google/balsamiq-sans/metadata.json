@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-04-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Michael Angeles",
 	"family": "Balsamiq Sans",
 	"id": "balsamiq-sans",

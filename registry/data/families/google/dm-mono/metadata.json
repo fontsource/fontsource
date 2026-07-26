@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-04-15",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Colophon Foundry",
 	"family": "DM Mono",
 	"id": "dm-mono",

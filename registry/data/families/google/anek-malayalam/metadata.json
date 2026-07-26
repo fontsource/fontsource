@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-02-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"malayalam",
-		"menu"
-	],
 	"designer": "Ek Type",
 	"family": "Anek Malayalam",
 	"id": "anek-malayalam",

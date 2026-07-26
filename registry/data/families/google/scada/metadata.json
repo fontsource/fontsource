@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-07-30",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jovanny Lemonad",
 	"family": "Scada",
 	"id": "scada",

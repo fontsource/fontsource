@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-06-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Lana Roulhac, Ben Buysse",
 	"family": "Story Script",
 	"id": "story-script",

@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2011-03-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Wojciech Kalinowski",
 	"family": "Nova Flat",
 	"id": "nova-flat",

@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Cadson Demak",
 	"family": "Prompt",
 	"id": "prompt",

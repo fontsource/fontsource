@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-05-04",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams",
 	"family": "Sigmar One",
 	"id": "sigmar-one",

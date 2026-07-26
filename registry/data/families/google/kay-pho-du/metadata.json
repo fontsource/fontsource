@@ -3,12 +3,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2023-10-04",
-	"declaredSubsets": [
-		"kayah-li",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "SIL International",
 	"family": "Kay Pho Du",
 	"id": "kay-pho-du",

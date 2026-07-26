@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-11-21",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"malayalam",
-		"menu"
-	],
 	"designer": "Santhosh Thottingal",
 	"family": "Manjari",
 	"id": "manjari",

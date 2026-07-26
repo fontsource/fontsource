@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-01-20",
-	"declaredSubsets": [
-		"gurmukhi",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Indian Type Foundry",
 	"family": "Hind Jalandhar",
 	"id": "hind-jalandhar",

@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-01-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Astigmatic",
 	"family": "Parisienne",
 	"id": "parisienne",

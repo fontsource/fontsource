@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-08-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Corinthia",
 	"id": "corinthia",

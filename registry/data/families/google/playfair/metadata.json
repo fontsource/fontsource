@@ -4,14 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2023-04-13",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Claus Eggers Sørensen",
 	"family": "Playfair",
 	"id": "playfair",

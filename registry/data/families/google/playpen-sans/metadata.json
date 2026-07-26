@@ -4,17 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-09-07",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"emoji",
-		"greek",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "TypeTogether, Laura Meseguer, Veronika Burian, José Scaglione, Kostas Bartsokas, Vera Evstafieva, Tom Grace, Yorlmar Campos",
 	"family": "Playpen Sans",
 	"id": "playpen-sans",

@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-09-28",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Smartsheet Inc, Rodrigo Fuenzalida",
 	"family": "Outfit",
 	"id": "outfit",

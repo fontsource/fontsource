@@ -3,19 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-18",
-	"declaredSubsets": [
-		"arabic",
-		"braille",
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2",
-		"vietnamese"
-	],
 	"designer": "Aaron Bell, Mohamad Dakak, Viktoriya Grabowska, Liron Lavi Turkenich",
 	"family": "Cascadia Code",
 	"id": "cascadia-code",

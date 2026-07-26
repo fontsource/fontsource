@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"tamil"
-	],
 	"designer": "Tharique Azeez",
 	"family": "Kavivanar",
 	"id": "kavivanar",

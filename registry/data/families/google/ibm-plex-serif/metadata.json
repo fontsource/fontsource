@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2018-03-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Mike Abbink, Bold Monday",
 	"family": "IBM Plex Serif",
 	"id": "ibm-plex-serif",

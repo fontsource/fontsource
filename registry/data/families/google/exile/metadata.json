@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2025-03-17",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Bartłomiej Rózga",
 	"family": "Exile",
 	"id": "exile",

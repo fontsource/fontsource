@@ -3,17 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2025-04-15",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Philipp H. Poll",
 	"family": "Libertinus Serif",
 	"id": "libertinus-serif",

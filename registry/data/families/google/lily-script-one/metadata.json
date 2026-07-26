@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2013-06-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Julia Petretta",
 	"family": "Lily Script One",
 	"id": "lily-script-one",

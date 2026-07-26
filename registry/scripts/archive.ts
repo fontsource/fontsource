@@ -151,7 +151,6 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			tags: metadata.tags,
 			languages: metadata.languages,
 			sourceModified: metadata.sourceModified,
-			declaredSubsets: metadata.declaredSubsets,
 		};
 		familySummaries.push({
 			...publicFamily,

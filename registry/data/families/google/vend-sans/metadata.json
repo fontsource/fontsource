@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-06-06",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Bloom Type Foundry, Baptiste Guesnon",
 	"family": "Vend Sans",
 	"id": "vend-sans",

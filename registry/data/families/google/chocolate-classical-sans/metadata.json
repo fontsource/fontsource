@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-05-14",
-	"declaredSubsets": [
-		"chinese-traditional",
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Moonlit Owen",
 	"family": "Chocolate Classical Sans",
 	"id": "chocolate-classical-sans",

@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2020-01-16",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Kemie Guaida",
 	"family": "Bellota",
 	"id": "bellota",

@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-01-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sudtipos",
 	"family": "Mr Bedfort",
 	"id": "mr-bedfort",

@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2015-06-17",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sorkin Type",
 	"family": "Asar",
 	"id": "asar",

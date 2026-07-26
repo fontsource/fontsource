@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-06-09",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Andreas Rasmussen",
 	"family": "Albert Sans",
 	"id": "albert-sans",

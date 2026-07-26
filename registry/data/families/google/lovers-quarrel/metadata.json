@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-03-29",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Lovers Quarrel",
 	"id": "lovers-quarrel",

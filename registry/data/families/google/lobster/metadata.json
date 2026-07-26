@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2010-05-17",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Impallari Type",
 	"family": "Lobster",
 	"id": "lobster",

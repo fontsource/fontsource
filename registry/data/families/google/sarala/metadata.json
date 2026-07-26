@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-06-17",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "HT Fonts, Andres Torresi",
 	"family": "Sarala",
 	"id": "sarala",

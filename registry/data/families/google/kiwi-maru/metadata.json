@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-12-14",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Hiroki-Chan",
 	"family": "Kiwi Maru",
 	"id": "kiwi-maru",

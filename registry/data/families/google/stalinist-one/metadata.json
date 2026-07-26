@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-08-20",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Alexey Maslov, Jovanny Lemonad",
 	"family": "Stalinist One",
 	"id": "stalinist-one",

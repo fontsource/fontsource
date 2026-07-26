@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-03-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Brenda Gallo",
 	"family": "Happy Monkey",
 	"id": "happy-monkey",

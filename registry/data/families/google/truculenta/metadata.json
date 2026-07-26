@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-12-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Omnibus-Type",
 	"family": "Truculenta",
 	"id": "truculenta",

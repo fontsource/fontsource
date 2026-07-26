@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-05-12",
-	"declaredSubsets": [
-		"khmer",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Tep Sovichet, Wei Huang",
 	"family": "Kantumruy Pro",
 	"id": "kantumruy-pro",

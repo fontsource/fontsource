@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"tangut"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Tangut",
 	"id": "noto-serif-tangut",

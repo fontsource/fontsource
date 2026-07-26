@@ -4,14 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-06-29",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Riccardo De Franceschi, Eben Sorkin",
 	"family": "Asset",
 	"id": "asset",

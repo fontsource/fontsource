@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-08",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Fontworks Inc.",
 	"family": "Rampart One",
 	"id": "rampart-one",

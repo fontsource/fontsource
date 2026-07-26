@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-02-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Commercial Type, Greg Gazdowicz",
 	"family": "Roboto Serif",
 	"id": "roboto-serif",

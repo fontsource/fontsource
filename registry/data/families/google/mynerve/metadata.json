@@ -4,13 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2023-01-04",
-	"declaredSubsets": [
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Carolina Short",
 	"family": "Mynerve",
 	"id": "mynerve",

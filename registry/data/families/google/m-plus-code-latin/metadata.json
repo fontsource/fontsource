@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-09-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Coji Morishita",
 	"family": "M PLUS Code Latin",
 	"id": "m-plus-code-latin",

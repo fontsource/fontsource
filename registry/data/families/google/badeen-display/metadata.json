@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2024-11-20",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Hani Alasadi",
 	"family": "Badeen Display",
 	"id": "badeen-display",

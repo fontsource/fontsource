@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2018-06-06",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Borna Izadpanah, Florian Runge, Fiona Ross",
 	"family": "Markazi Text",
 	"id": "markazi-text",

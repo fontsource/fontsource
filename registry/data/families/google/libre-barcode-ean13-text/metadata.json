@@ -4,10 +4,6 @@
 		"symbols"
 	],
 	"dateAdded": "2020-10-26",
-	"declaredSubsets": [
-		"latin",
-		"menu"
-	],
 	"designer": "Lasse Fister",
 	"family": "Libre Barcode EAN13 Text",
 	"id": "libre-barcode-ean13-text",

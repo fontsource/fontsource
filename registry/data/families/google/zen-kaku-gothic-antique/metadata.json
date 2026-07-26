@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-10-22",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Yoshimichi Ohira",
 	"family": "Zen Kaku Gothic Antique",
 	"id": "zen-kaku-gothic-antique",

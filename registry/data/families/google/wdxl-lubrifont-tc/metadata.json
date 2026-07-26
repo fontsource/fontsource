@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-04-01",
-	"declaredSubsets": [
-		"chinese-traditional",
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2"
-	],
 	"designer": "NightFurySL2001",
 	"family": "WDXL Lubrifont TC",
 	"id": "wdxl-lubrifont-tc",

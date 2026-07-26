@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-09-27",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "NORD ID, Kristian Möller",
 	"family": "Funnel Sans",
 	"id": "funnel-sans",

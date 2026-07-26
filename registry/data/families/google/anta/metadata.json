@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-01-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Sergej Lebedev",
 	"family": "Anta",
 	"id": "anta",

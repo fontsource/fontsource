@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2022-05-27",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Dominik Jáger",
 	"family": "Aboreto",
 	"id": "aboreto",

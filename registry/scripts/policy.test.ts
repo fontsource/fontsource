@@ -36,7 +36,6 @@ describe('variant validation', () => {
 			languages: [],
 			sourceModified: '2026-01-02',
 			license: { id: 'OFL-1.1', url: 'https://example.com/license' },
-			declaredSubsets: ['latin'],
 			sourceFiles: files.map((file) => ({
 				path: file.path,
 				sha256: '0'.repeat(64),

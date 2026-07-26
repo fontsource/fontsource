@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-06-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"sunuwar"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Sunuwar",
 	"id": "noto-sans-sunuwar",

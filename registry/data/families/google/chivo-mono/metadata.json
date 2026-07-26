@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-11-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Omnibus-Type",
 	"family": "Chivo Mono",
 	"id": "chivo-mono",

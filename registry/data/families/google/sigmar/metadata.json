@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-02-24",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams",
 	"family": "Sigmar",
 	"id": "sigmar",

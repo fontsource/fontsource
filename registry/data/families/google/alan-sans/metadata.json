@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-09-05",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Raphaël Ronot",
 	"family": "Alan Sans",
 	"id": "alan-sans",

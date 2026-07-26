@@ -5,13 +5,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-07-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Simon Cozens, Jens Kutílek",
 	"family": "Sixtyfour Convergence",
 	"id": "sixtyfour-convergence",

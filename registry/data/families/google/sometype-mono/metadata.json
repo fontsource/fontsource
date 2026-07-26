@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-09-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Ryoichi Tsunekawa",
 	"family": "Sometype Mono",
 	"id": "sometype-mono",

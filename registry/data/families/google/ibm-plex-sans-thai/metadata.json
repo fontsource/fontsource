@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-18",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai"
-	],
 	"designer": "Mike Abbink, Bold Monday",
 	"family": "IBM Plex Sans Thai",
 	"id": "ibm-plex-sans-thai",

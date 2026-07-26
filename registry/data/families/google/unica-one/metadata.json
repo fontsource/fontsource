@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Unica One",
 	"id": "unica-one",

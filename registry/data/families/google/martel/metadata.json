@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2015-04-20",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Dan Reynolds",
 	"family": "Martel",
 	"id": "martel",

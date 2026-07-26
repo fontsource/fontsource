@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-09-24",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vernon Adams",
 	"family": "BenchNine",
 	"id": "benchnine",

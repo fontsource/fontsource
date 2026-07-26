@@ -3,13 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2022-11-25",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Roman Shamin, Evil Martians",
 	"family": "Martian Mono",
 	"id": "martian-mono",

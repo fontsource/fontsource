@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2026-04-17",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Helsinki Type Studio, Niklas Ekholm, Juho Hiilivirta, Jaakko Suomalainen",
 	"family": "Finlandica Text",
 	"id": "finlandica-text",

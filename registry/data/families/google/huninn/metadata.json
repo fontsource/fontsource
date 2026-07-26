@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-18",
-	"declaredSubsets": [
-		"chinese-traditional",
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "justfont",
 	"family": "Huninn",
 	"id": "huninn",

@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-11-02",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Khaled Hosny, Santiago Orozco",
 	"family": "Reem Kufi Ink",
 	"id": "reem-kufi-ink",

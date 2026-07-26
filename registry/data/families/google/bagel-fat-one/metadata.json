@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2023-05-18",
-	"declaredSubsets": [
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Kyungwon Kim, JAMO",
 	"family": "Bagel Fat One",
 	"id": "bagel-fat-one",

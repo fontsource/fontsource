@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"old-persian"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Old Persian",
 	"id": "noto-sans-old-persian",

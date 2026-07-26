@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-10-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Puppies Play",
 	"id": "puppies-play",

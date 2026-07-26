@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2026-06-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Andrés Briganti, Evil Rabbit, Guillermo Rauch",
 	"family": "Geist Pixel",
 	"id": "geist-pixel",

@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2025-05-22",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Saber Rastikerdar",
 	"family": "Parastoo",
 	"id": "parastoo",

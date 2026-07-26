@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2025-04-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Philipp H. Poll",
 	"family": "Libertinus Keyboard",
 	"id": "libertinus-keyboard",

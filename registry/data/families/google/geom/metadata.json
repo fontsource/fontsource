@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-11-14",
-	"declaredSubsets": [
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Thanos Poulakidas",
 	"family": "Geom",
 	"id": "geom",

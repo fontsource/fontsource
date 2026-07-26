@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-03-04",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Dan Reynolds, Mathieu Réguer",
 	"family": "Martel Sans",
 	"id": "martel-sans",

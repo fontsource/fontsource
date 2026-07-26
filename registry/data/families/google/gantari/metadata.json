@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-05-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Lafontype",
 	"family": "Gantari",
 	"id": "gantari",

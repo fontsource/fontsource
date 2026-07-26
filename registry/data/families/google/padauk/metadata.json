@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-11-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"myanmar"
-	],
 	"designer": "SIL International",
 	"family": "Padauk",
 	"id": "padauk",

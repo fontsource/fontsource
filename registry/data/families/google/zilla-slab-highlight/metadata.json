@@ -3,11 +3,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2017-07-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Typotheque",
 	"family": "Zilla Slab Highlight",
 	"id": "zilla-slab-highlight",

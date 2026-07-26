@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-05-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Joe Prince",
 	"family": "Maven Pro",
 	"id": "maven-pro",

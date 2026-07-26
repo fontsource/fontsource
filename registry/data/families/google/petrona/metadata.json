@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-07-15",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Ringo R. Seeber",
 	"family": "Petrona",
 	"id": "petrona",

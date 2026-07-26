@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2025-01-23",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Aleksandr Andreev, Nikita Simmons",
 	"family": "Monomakh",
 	"id": "monomakh",

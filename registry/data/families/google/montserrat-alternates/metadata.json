@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-01",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly",
 	"family": "Montserrat Alternates",
 	"id": "montserrat-alternates",

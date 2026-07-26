@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-03-15",
-	"declaredSubsets": [
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Alfredo Marco Pradil, Chank Diesel",
 	"family": "Teachers",
 	"id": "teachers",

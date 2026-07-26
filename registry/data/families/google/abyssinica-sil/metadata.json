@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2016-01-20",
-	"declaredSubsets": [
-		"ethiopic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "SIL International",
 	"family": "Abyssinica SIL",
 	"id": "abyssinica-sil",

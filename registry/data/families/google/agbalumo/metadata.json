@@ -3,14 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2023-10-06",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"ethiopic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Raphael Alẹ́gbẹ́lẹ́yẹ̀, Sorkin Type, Eben Sorkin",
 	"family": "Agbalumo",
 	"id": "agbalumo",

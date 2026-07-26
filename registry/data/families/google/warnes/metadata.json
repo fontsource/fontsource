@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-09-07",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Warnes",
 	"id": "warnes",

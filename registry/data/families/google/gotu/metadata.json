@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-01-10",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Ek Type",
 	"family": "Gotu",
 	"id": "gotu",

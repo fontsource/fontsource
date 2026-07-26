@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-07-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Saurabh Sharma",
 	"family": "Kumbh Sans",
 	"id": "kumbh-sans",

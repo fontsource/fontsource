@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-10-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Miguel Hernandez",
 	"family": "Chela One",
 	"id": "chela-one",

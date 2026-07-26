@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2022-02-26",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mohamed Gaber",
 	"family": "Blaka Ink",
 	"id": "blaka-ink",

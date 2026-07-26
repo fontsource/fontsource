@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-02-09",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Ek Type",
 	"family": "Anek Devanagari",
 	"id": "anek-devanagari",

@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-02-26",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Andreas Larsen",
 	"family": "Gidole",
 	"id": "gidole",

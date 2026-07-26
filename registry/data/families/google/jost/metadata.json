@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-02-11",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Owen Earl",
 	"family": "Jost",
 	"id": "jost",

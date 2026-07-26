@@ -4,11 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2010-09-21",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"menu"
-	],
 	"designer": "Khaled Hosny",
 	"family": "Thabit",
 	"id": "thabit",

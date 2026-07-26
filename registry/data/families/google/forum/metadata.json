@@ -4,13 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-07-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Denis Masharov",
 	"family": "Forum",
 	"id": "forum",

@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-03-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"tamil"
-	],
 	"designer": "Tiro Typeworks, Fernando Mello, Fiona Ross, Kaja Słojewska",
 	"family": "Tiro Tamil",
 	"id": "tiro-tamil",

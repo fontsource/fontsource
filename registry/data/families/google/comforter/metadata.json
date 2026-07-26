@@ -4,13 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-09-29",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Comforter",
 	"id": "comforter",

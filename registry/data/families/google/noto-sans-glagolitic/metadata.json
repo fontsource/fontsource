@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"glagolitic",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Glagolitic",
 	"id": "noto-sans-glagolitic",

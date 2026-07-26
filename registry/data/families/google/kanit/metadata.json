@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-12-07",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Cadson Demak",
 	"family": "Kanit",
 	"id": "kanit",

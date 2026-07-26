@@ -4,13 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2015-07-01",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Cadson Demak",
 	"family": "Sriracha",
 	"id": "sriracha",

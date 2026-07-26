@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-03-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Bakken & Bæck, Henrik Kongsvoll",
 	"family": "Schibsted Grotesk",
 	"id": "schibsted-grotesk",

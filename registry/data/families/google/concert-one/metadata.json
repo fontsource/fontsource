@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-11-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Johan Kallas, Mihkel Virkus",
 	"family": "Concert One",
 	"id": "concert-one",

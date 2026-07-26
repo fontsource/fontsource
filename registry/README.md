@@ -113,12 +113,10 @@ family fields and declares every source file:
 	"id": "example",
 	"family": "Example",
 	"classifications": ["display", "sans-serif"],
-	"tags": ["theme/stencil"],
 	"license": {
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
-	"declaredSubsets": ["latin"],
 	"sourceFiles": [
 		{
 			"path": "files/Example-Regular.ttf",
@@ -129,9 +127,10 @@ family fields and declares every source file:
 ~~~
 
 The adapter derives hashes, sizes, inspection, modification dates, Git
-provenance, and languages supported by every source face. A reviewed
-`languages` list may override automatic matching for exceptional families. The
-source repository stores the raw binaries; this repository commits only
+provenance, and languages supported by every source face. Optional `tags` are
+reviewed discovery metadata. An optional `languages` list overrides automatic
+matching, including an empty list for fonts with no semantic language support.
+The source repository stores the raw binaries; this repository commits only
 generated text records.
 
 ## Development

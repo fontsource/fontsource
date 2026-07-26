@@ -3,15 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2020-11-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "JetBrains, Philipp Nurullin, Konstantin Bulenkov",
 	"family": "JetBrains Mono",
 	"id": "jetbrains-mono",

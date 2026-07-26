@@ -3,11 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-08-10",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"menu"
-	],
 	"designer": "Khaled Hosny, Sebastian Kosch",
 	"family": "Amiri Quran",
 	"id": "amiri-quran",

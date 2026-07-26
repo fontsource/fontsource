@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"new-tai-lue"
-	],
 	"designer": "Google",
 	"family": "Noto Sans New Tai Lue",
 	"id": "noto-sans-new-tai-lue",

@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2016-01-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"telugu",
-		"vietnamese"
-	],
 	"designer": "Ek Type",
 	"family": "Baloo Tammudu 2",
 	"id": "baloo-tammudu-2",

@@ -3,17 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-06-15",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "The DocRepair Project, Google",
 	"family": "Lunasima",
 	"id": "lunasima",

@@ -3,12 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2022-12-14",
-	"declaredSubsets": [
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Nathan Gross, Bryan Kirschen",
 	"family": "Solitreo",
 	"id": "solitreo",

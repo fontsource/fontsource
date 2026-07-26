@@ -3,14 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2022-08-15",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Arthur Reinders Folmer, Just van Rossum",
 	"family": "Nabla",
 	"id": "nabla",

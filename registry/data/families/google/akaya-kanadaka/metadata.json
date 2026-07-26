@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2021-01-14",
-	"declaredSubsets": [
-		"kannada",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vaishnavi Murthy, Juan Luis Blanco",
 	"family": "Akaya Kanadaka",
 	"id": "akaya-kanadaka",

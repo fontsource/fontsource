@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-03-22",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Tall Chai",
 	"family": "Akshar",
 	"id": "akshar",

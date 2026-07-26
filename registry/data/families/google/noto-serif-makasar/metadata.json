@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-10-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"makasar",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Makasar",
 	"id": "noto-serif-makasar",

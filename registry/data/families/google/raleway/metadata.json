@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-09-07",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida",
 	"family": "Raleway",
 	"id": "raleway",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-07-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Impallari Type, Rodrigo Fuenzalida",
 	"family": "Cabin",
 	"id": "cabin",

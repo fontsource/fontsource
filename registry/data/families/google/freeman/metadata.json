@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-04-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Rodrigo Fuenzalida, Aoife Mooney, Vernon Adams",
 	"family": "Freeman",
 	"id": "freeman",

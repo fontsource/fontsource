@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-04-03",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"menu"
-	],
 	"designer": "Khaled Hosny",
 	"family": "Qahiri",
 	"id": "qahiri",

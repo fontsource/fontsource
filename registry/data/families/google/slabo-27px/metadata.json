@@ -3,11 +3,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2014-05-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "John Hudson",
 	"family": "Slabo 27px",
 	"id": "slabo-27px",

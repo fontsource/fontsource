@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2013-10-28",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Suppakit Chalermlarp",
 	"family": "Sarabun",
 	"id": "sarabun",

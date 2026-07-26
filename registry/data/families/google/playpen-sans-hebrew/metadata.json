@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-11",
-	"declaredSubsets": [
-		"emoji",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu"
-	],
 	"designer": "TypeTogether, Tom Grace, Laura Meseguer, Veronika Burian, José Scaglione",
 	"family": "Playpen Sans Hebrew",
 	"id": "playpen-sans-hebrew",

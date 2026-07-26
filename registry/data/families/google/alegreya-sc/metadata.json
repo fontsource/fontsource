@@ -3,16 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-12-19",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Juan Pablo del Peral, HT Fonts",
 	"family": "Alegreya SC",
 	"id": "alegreya-sc",

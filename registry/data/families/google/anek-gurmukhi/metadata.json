@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-02-16",
-	"declaredSubsets": [
-		"gurmukhi",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Ek Type",
 	"family": "Anek Gurmukhi",
 	"id": "anek-gurmukhi",

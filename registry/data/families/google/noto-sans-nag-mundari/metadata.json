@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-03-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"nag-mundari"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Nag Mundari",
 	"id": "noto-sans-nag-mundari",

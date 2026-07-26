@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"old-permic"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Old Permic",
 	"id": "noto-sans-old-permic",

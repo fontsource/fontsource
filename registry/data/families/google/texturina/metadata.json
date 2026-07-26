@@ -4,12 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-10-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Guillermo Torres, Omnibus-Type",
 	"family": "Texturina",
 	"id": "texturina",

@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-04-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Rodrigo Fuenzalida, Jordan Egstad",
 	"family": "Instrument Sans",
 	"id": "instrument-sans",

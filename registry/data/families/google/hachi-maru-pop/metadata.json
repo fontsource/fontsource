@@ -4,13 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2020-12-14",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Nonty",
 	"family": "Hachi Maru Pop",
 	"id": "hachi-maru-pop",

@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-05-04",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Daniel Johnson",
 	"family": "Judson",
 	"id": "judson",

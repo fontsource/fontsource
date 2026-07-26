@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2017-01-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Christian Thalmann",
 	"family": "Cormorant",
 	"id": "cormorant",

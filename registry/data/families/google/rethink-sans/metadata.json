@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-09-06",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Hans Thiessen",
 	"family": "Rethink Sans",
 	"id": "rethink-sans",

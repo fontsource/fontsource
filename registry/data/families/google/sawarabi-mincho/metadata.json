@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2018-05-17",
-	"declaredSubsets": [
-		"braille",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "mshio",
 	"family": "Sawarabi Mincho",
 	"id": "sawarabi-mincho",

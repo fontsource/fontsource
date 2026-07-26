@@ -3,14 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2022-11-24",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "NaN, Luke Prowse",
 	"family": "Rubik 80s Fade",
 	"id": "rubik-80s-fade",

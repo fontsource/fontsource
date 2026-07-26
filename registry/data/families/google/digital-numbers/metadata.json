@@ -3,10 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2015-06-24",
-	"declaredSubsets": [
-		"latin",
-		"menu"
-	],
 	"designer": "Stephan Ahlf",
 	"family": "Digital Numbers",
 	"id": "digital-numbers",

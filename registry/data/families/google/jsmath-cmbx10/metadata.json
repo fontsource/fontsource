@@ -3,10 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2010-12-20",
-	"declaredSubsets": [
-		"latin",
-		"menu"
-	],
 	"designer": "Donald Knuth",
 	"family": "jsMath cmbx10",
 	"id": "jsmath-cmbx10",

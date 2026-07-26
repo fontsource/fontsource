@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-12-02",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Delve Withrington, Dave Bailey, Thomas Jockin",
 	"family": "Overpass",
 	"id": "overpass",

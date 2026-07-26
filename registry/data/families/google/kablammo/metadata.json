@@ -3,15 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2023-04-21",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"emoji",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vectro Type Foundry, Travis Kochel, Lizy Gershenzon, Daria Cohen, Ethan Cohen",
 	"family": "Kablammo",
 	"id": "kablammo",

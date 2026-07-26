@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-11-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Astigmatic",
 	"family": "Clicker Script",
 	"id": "clicker-script",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-05-18",
-	"declaredSubsets": [
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sooun Cho, JAMO",
 	"family": "Orbit",
 	"id": "orbit",

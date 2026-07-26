@@ -4,15 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-12-14",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "artakana",
 	"family": "Dela Gothic One",
 	"id": "dela-gothic-one",

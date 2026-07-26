@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-07-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"tamil"
-	],
 	"designer": "Pria Ravichandran",
 	"family": "Catamaran",
 	"id": "catamaran",

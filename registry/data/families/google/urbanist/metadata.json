@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Corey Hu",
 	"family": "Urbanist",
 	"id": "urbanist",

@@ -3,15 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-01-27",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Capitalics, Mateusz Machalski, Borys Kosmynka, Ania Wieluńska, Przemysław Hoffer",
 	"family": "Brygada 1918",
 	"id": "brygada-1918",

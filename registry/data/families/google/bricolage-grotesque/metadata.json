@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-06-15",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Mathieu Triay",
 	"family": "Bricolage Grotesque",
 	"id": "bricolage-grotesque",

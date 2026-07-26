@@ -4,17 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-02-03",
-	"declaredSubsets": [
-		"arabic",
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"tamil",
-		"vietnamese"
-	],
 	"designer": "Kostas Bartsokas",
 	"family": "Oi",
 	"id": "oi",

@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-11-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Braille Institute, Applied Design Works, Elliott Scott, Megan Eiswerth, Letters From Sweden",
 	"family": "Atkinson Hyperlegible Mono",
 	"id": "atkinson-hyperlegible-mono",

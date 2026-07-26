@@ -3,16 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-05-19",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "SIL International",
 	"family": "Gentium Book Plus",
 	"id": "gentium-book-plus",

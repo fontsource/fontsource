@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-12-17",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Smooch Sans",
 	"id": "smooch-sans",

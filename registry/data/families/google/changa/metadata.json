@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-31",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Changa",
 	"id": "changa",

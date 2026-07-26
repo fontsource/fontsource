@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-04-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Wojciech Kalinowski",
 	"family": "Nova Square",
 	"id": "nova-square",

@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-05-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "SIL International",
 	"family": "Charis SIL",
 	"id": "charis-sil",

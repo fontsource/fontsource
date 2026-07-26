@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-12-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Octavio Pardo",
 	"family": "Protest Guerrilla",
 	"id": "protest-guerrilla",

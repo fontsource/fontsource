@@ -4,14 +4,6 @@
 		"symbols"
 	],
 	"dateAdded": "2023-12-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"znamenny"
-	],
 	"designer": "Google",
 	"family": "Noto Znamenny Musical Notation",
 	"id": "noto-znamenny-musical-notation",

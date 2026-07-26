@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2017-10-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Production Type",
 	"family": "Spectral SC",
 	"id": "spectral-sc",

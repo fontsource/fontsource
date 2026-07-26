@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-11-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Owen Earl",
 	"family": "Bodoni Moda",
 	"id": "bodoni-moda",

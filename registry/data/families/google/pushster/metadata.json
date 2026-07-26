@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2019-04-01",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sir Andyj",
 	"family": "Pushster",
 	"id": "pushster",

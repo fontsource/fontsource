@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-09-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Dmitri Voloshin, Andrey Kudryavtsev",
 	"family": "Onest",
 	"id": "onest",

@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2020-07-24",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tyler Finck, ETC",
 	"family": "Grandstander",
 	"id": "grandstander",

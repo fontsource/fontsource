@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-06-28",
-	"declaredSubsets": [
-		"kawi",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Kawi",
 	"id": "noto-sans-kawi",

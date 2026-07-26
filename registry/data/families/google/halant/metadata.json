@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2014-08-27",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Indian Type Foundry",
 	"family": "Halant",
 	"id": "halant",

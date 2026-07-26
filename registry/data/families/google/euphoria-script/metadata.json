@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-02-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sabrina Mariela Lopez",
 	"family": "Euphoria Script",
 	"id": "euphoria-script",

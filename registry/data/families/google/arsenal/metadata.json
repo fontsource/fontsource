@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-12-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Andrij Shevchenko",
 	"family": "Arsenal",
 	"id": "arsenal",

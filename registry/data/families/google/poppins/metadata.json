@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-06-03",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Indian Type Foundry, Jonny Pinhorn, Ninad Kale",
 	"family": "Poppins",
 	"id": "poppins",

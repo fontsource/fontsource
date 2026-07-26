@@ -4,13 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-10-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Vernon Adams",
 	"family": "Sancreek",
 	"id": "sancreek",

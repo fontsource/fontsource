@@ -5,14 +5,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-10-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams, Ben Nathan, Thomas Jockin",
 	"family": "Amatic SC",
 	"id": "amatic-sc",

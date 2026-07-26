@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2023-09-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"old-uyghur"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Old Uyghur",
 	"id": "noto-serif-old-uyghur",

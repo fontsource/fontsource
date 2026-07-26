@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-18",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mike Abbink, Bold Monday",
 	"family": "IBM Plex Sans Hebrew",
 	"id": "ibm-plex-sans-hebrew",

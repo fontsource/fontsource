@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2014-07-14",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Indian Type Foundry",
 	"family": "Khand",
 	"id": "khand",

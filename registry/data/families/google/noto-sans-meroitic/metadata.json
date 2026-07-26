@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"meroitic",
-		"meroitic-cursive",
-		"meroitic-hieroglyphs"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Meroitic",
 	"id": "noto-sans-meroitic",

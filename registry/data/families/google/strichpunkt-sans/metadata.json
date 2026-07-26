@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2026-04-01",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "René Bieder",
 	"family": "Strichpunkt Sans",
 	"id": "strichpunkt-sans",

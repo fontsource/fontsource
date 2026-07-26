@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-07-14",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Original Type, Wael Morcos, Artur Schmal",
 	"family": "Kufam",
 	"id": "kufam",

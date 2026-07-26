@@ -4,11 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2023-04-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "The DocRepair Project, Astigmatic",
 	"family": "Lugrasimo",
 	"id": "lugrasimo",

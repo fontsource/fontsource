@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-11-07",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "NaN",
 	"family": "Unbounded",
 	"id": "unbounded",

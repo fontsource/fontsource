@@ -5,12 +5,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-11-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Fuzzy Bubbles",
 	"id": "fuzzy-bubbles",

@@ -3,13 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2024-11-25",
-	"declaredSubsets": [
-		"chinese-traditional",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2"
-	],
 	"designer": "But Ko",
 	"family": "Iansui",
 	"id": "iansui",

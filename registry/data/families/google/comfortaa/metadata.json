@@ -4,15 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-08-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Johan Aakerlund",
 	"family": "Comfortaa",
 	"id": "comfortaa",

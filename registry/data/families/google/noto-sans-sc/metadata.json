@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-10-22",
-	"declaredSubsets": [
-		"chinese-simplified",
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Google",
 	"displayName": "Noto Sans Simplified Chinese",
 	"family": "Noto Sans SC",

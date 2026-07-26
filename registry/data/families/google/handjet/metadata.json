@@ -4,18 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-09-11",
-	"declaredSubsets": [
-		"arabic",
-		"armenian",
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Rosetta, David Březina",
 	"family": "Handjet",
 	"id": "handjet",

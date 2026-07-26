@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"meetei-mayek",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Meetei Mayek",
 	"id": "noto-sans-meetei-mayek",

@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-08-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Cadson Demak",
 	"family": "Thasadith",
 	"id": "thasadith",

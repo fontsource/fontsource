@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2024-02-21",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Sarah Cadigan-Fried",
 	"family": "Jacquard 12 Charted",
 	"id": "jacquard-12-charted",

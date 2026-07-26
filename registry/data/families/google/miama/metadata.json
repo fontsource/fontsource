@@ -3,13 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-05-09",
-	"declaredSubsets": [
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Linus Romer",
 	"family": "Miama",
 	"id": "miama",

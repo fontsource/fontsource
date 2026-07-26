@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-09-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Naipe Foundry, Leandro Assis, Álvaro Franca, Felipe Casaprima",
 	"family": "Gabarito",
 	"id": "gabarito",

@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-04-04",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jovanny Lemonad",
 	"family": "Russo One",
 	"id": "russo-one",

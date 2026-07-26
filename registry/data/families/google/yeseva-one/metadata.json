@@ -4,14 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-07-13",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Jovanny Lemonad",
 	"family": "Yeseva One",
 	"id": "yeseva-one",

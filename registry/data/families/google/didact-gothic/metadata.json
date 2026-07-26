@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-05-04",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Daniel Johnson, Cyreal",
 	"family": "Didact Gothic",
 	"id": "didact-gothic",

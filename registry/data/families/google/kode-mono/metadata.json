@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-05-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Isa Ozler",
 	"family": "Kode Mono",
 	"id": "kode-mono",

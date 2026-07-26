@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-05-11",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Sorkin Type",
 	"family": "Merriweather",
 	"id": "merriweather",

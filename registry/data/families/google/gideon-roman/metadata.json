@@ -4,12 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-08-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Gideon Roman",
 	"id": "gideon-roman",

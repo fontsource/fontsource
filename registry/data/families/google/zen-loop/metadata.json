@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-03-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Yoshimichi Ohira",
 	"family": "Zen Loop",
 	"id": "zen-loop",

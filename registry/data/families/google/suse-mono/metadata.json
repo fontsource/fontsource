@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-08-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "René Bieder",
 	"family": "SUSE Mono",
 	"id": "suse-mono",

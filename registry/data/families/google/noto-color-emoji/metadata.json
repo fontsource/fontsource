@@ -3,10 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-07-27",
-	"declaredSubsets": [
-		"emoji",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Color Emoji",
 	"id": "noto-color-emoji",

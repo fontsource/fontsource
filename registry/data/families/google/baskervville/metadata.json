@@ -3,11 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2019-10-04",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "ANRT",
 	"family": "Baskervville",
 	"id": "baskervville",

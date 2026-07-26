@@ -3,16 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"georgian",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Georgian",
 	"id": "noto-sans-georgian",

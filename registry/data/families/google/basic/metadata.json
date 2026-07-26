@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-12-15",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Magnus Gaarde",
 	"family": "Basic",
 	"id": "basic",

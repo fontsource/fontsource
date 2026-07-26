@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2010-09-21",
-	"declaredSubsets": [
-		"greek",
-		"greek-ext",
-		"latin",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Greek Font Society",
 	"family": "GFS Didot",
 	"id": "gfs-didot",

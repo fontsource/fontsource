@@ -3,16 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-09-17",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Paul D. Hunt",
 	"family": "Source Sans 3",
 	"id": "source-sans-3",

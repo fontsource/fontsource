@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-03-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Mike Abbink, Bold Monday",
 	"family": "IBM Plex Sans",
 	"id": "ibm-plex-sans",

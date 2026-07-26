@@ -5,12 +5,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-04-07",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Tapestry",
 	"id": "tapestry",

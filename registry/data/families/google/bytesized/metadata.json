@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-02-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Baltdev",
 	"family": "Bytesized",
 	"id": "bytesized",

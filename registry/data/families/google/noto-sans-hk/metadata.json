@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-03-12",
-	"declaredSubsets": [
-		"chinese-hongkong",
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Google",
 	"displayName": "Noto Sans Hong Kong",
 	"family": "Noto Sans HK",

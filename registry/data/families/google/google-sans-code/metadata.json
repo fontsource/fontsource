@@ -3,20 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2024-11-21",
-	"declaredSubsets": [
-		"adlam",
-		"canadian-aboriginal",
-		"cherokee",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"old-permic",
-		"symbols",
-		"symbols2",
-		"syriac",
-		"vietnamese"
-	],
 	"designer": "Google, Universal Thirst",
 	"family": "Google Sans Code",
 	"id": "google-sans-code",

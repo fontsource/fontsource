@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-03-12",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Mike Abbink, Bold Monday",
 	"family": "IBM Plex Sans Condensed",
 	"id": "ibm-plex-sans-condensed",

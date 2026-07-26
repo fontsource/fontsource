@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-10-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Koto",
 	"family": "Stack Sans Text",
 	"id": "stack-sans-text",

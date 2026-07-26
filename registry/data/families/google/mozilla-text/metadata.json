@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-06-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Studio DRAMA",
 	"family": "Mozilla Text",
 	"id": "mozilla-text",

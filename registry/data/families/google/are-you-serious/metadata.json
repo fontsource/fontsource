@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-08-27",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Are You Serious",
 	"id": "are-you-serious",

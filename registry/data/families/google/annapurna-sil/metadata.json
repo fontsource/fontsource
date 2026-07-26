@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2024-01-19",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "SIL International",
 	"family": "Annapurna SIL",
 	"id": "annapurna-sil",

@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-03-22",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Dalton Maag, David Jonathan Ross, Dual Type",
 	"family": "Ubuntu Sans",
 	"id": "ubuntu-sans",

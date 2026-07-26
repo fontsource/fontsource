@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"greek-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Hebrew",
 	"id": "noto-sans-hebrew",

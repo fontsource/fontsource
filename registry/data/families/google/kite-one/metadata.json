@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Kite One",
 	"id": "kite-one",

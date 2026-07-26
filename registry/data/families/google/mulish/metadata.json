@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-05-25",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams, Cyreal, Jacques Le Bailly",
 	"family": "Mulish",
 	"id": "mulish",

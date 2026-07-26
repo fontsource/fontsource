@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-12-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Grégori Vincens, Jérémie Hornus",
 	"family": "Inria Sans",
 	"id": "inria-sans",

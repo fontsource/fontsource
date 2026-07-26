@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-10-20",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Kristian Möller, Dicotype",
 	"family": "Afacad",
 	"id": "afacad",
