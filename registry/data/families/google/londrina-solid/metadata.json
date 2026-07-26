@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2012-03-14",
 	"declaredSubsets": [
 		"latin",
@@ -63,5 +66,11 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/excited",
+		"expressive/playful",
+		"expressive/rugged",
+		"sans/grotesque"
+	]
 }

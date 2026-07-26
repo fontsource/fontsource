@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2011-12-15",
 	"declaredSubsets": [
 		"lao",
@@ -46,5 +48,6 @@
 		}
 	],
 	"sourceModified": "2026-02-26",
-	"status": "active"
+	"status": "active",
+	"tags": []
 }

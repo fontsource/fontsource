@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2011-03-02",
 	"declaredSubsets": [
 		"khmer",
@@ -32,5 +34,9 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/vintage"
+	]
 }

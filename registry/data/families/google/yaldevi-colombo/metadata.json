@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2017-02-20",
 	"declaredSubsets": [
 		"latin",
@@ -83,5 +85,6 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": []
 }

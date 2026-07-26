@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"handwriting"
+	],
 	"dateAdded": "2016-06-20",
 	"declaredSubsets": [
 		"bengali",
@@ -37,5 +40,15 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/excited",
+		"expressive/fancy",
+		"expressive/loud",
+		"expressive/playful",
+		"expressive/sincere",
+		"expressive/vintage",
+		"script/informal"
+	]
 }

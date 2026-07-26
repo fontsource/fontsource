@@ -1,5 +1,7 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"handwriting"
+	],
 	"dateAdded": "2023-12-12",
 	"declaredSubsets": [
 		"menu"
@@ -36,5 +38,12 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/childlike",
+		"purpose/learn-to-write",
+		"script/handwritten",
+		"script/informal",
+		"script/upright-script"
+	]
 }

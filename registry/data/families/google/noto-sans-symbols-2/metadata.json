@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif",
+		"symbols"
+	],
 	"dateAdded": "2020-11-19",
 	"declaredSubsets": [
 		"braille",
@@ -41,5 +44,11 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged"
+	]
 }

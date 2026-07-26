@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2012-10-18",
 	"declaredSubsets": [
 		"cyrillic",
@@ -84,5 +86,12 @@
 		}
 	],
 	"sourceModified": "2026-03-25",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/rugged",
+		"sans/humanist",
+		"theme/techno"
+	]
 }

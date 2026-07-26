@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2019-06-24",
 	"declaredSubsets": [
 		"latin",
@@ -100,5 +102,13 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/futuristic",
+		"expressive/stiff",
+		"sans/superellipse",
+		"seasonal/hanukkah"
+	]
 }

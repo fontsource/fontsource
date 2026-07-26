@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2025-09-18",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +41,13 @@
 		}
 	],
 	"sourceModified": "2026-04-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/cute",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/geometric",
+		"sans/rounded"
+	]
 }

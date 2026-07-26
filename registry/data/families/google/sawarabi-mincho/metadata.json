@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2018-05-17",
 	"declaredSubsets": [
 		"braille",
@@ -39,5 +41,11 @@
 		}
 	],
 	"sourceModified": "2026-06-02",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/vintage",
+		"serif/old-style-garalde"
+	]
 }

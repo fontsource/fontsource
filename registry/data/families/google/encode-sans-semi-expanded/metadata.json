@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2017-02-08",
 	"declaredSubsets": [
 		"latin",
@@ -110,5 +112,10 @@
 		}
 	],
 	"sourceModified": "2026-05-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"sans/humanist"
+	]
 }

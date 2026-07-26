@@ -31,6 +31,7 @@ export const objectMatches = async (
 	key: string,
 	size: number,
 	expectedSha256: string,
+	contentType?: string,
 ): Promise<boolean> => {
 	let object: HeadObjectCommandOutput;
 	try {
@@ -52,18 +53,27 @@ export const objectMatches = async (
 	) {
 		throw new Error(`Existing R2 object does not match ${key}`);
 	}
-	return true;
+	return !contentType || object.ContentType === contentType;
 };
 
 interface ImmutableObject {
 	key: string;
 	size: number;
 	sha256: string;
+	contentType?: string;
 	read?: () => Promise<Uint8Array>;
 }
 
 export const putObject = async (object: ImmutableObject): Promise<void> => {
-	if (await objectMatches(object.key, object.size, object.sha256)) return;
+	if (
+		await objectMatches(
+			object.key,
+			object.size,
+			object.sha256,
+			object.contentType,
+		)
+	)
+		return;
 	if (!object.read) {
 		throw new Error(`Missing required R2 object ${object.key}`);
 	}
@@ -79,11 +89,26 @@ export const putObject = async (object: ImmutableObject): Promise<void> => {
 				Bucket: BUCKET,
 				Key: object.key,
 				Body: body,
-				IfNoneMatch: '*',
+				ContentType: object.contentType,
 				Metadata: { sha256: object.sha256 },
 			}),
 		);
 	} catch (error) {
 		throw new Error(`Unable to upload ${object.key}`, { cause: error });
+	}
+};
+
+export const putCurrentObject = async (body: Uint8Array): Promise<void> => {
+	try {
+		await client.send(
+			new PutObjectCommand({
+				Bucket: BUCKET,
+				Key: 'current.json',
+				Body: body,
+				ContentType: 'application/json',
+			}),
+		);
+	} catch (error) {
+		throw new Error('Unable to upload current.json', { cause: error });
 	}
 };

@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"slab-serif"
+	],
 	"dateAdded": "2016-06-20",
 	"declaredSubsets": [
 		"latin",
@@ -73,5 +76,11 @@
 		}
 	],
 	"sourceModified": "2026-02-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/innovative",
+		"expressive/playful",
+		"expressive/rugged",
+		"slab/humanist"
+	]
 }

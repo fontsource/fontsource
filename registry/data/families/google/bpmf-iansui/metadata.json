@@ -1,5 +1,7 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"handwriting"
+	],
 	"dateAdded": "2026-01-30",
 	"declaredSubsets": [
 		"chinese-traditional",
@@ -38,5 +40,12 @@
 		}
 	],
 	"sourceModified": "2026-04-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/childlike",
+		"expressive/happy",
+		"script/upright-script",
+		"theme/brush"
+	]
 }

@@ -2,6 +2,7 @@ import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
 import { createFontContext, inspectFont } from '@fontsource-utils/core';
 import { consola } from 'consola';
+import { parse } from 'csv-parse/sync';
 import TurndownService from 'turndown';
 import type { GitSnapshot } from './git.ts';
 import { normalizeInspection } from './inspection.ts';
@@ -12,6 +13,7 @@ import {
 	type FamilyMetadata,
 	familyInspectionSchema,
 	familyMetadataSchema,
+	type Taxonomy,
 } from './schema.ts';
 import {
 	compareStrings,
@@ -38,6 +40,8 @@ type GoogleFamily = {
 	dateAdded: string;
 	fonts: GoogleFont[];
 	subsets: string[];
+	stroke?: string;
+	classifications: string[];
 	displayName?: string;
 	project?: { repository: string; revision?: string };
 };
@@ -55,6 +59,8 @@ type GoogleFamilyProto = {
 		copyright?: string;
 	}>;
 	subsets: string[];
+	stroke?: string;
+	classifications: string[];
 	display_name?: string;
 	source?: { repository_url?: string; commit?: string };
 };
@@ -122,17 +128,129 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 		dateAdded: family.date_added,
 		fonts,
 		subsets: family.subsets,
+		...(family.stroke ? { stroke: family.stroke } : {}),
+		classifications: family.classifications ?? [],
 		...(family.display_name ? { displayName: family.display_name } : {}),
 		...(project ? { project } : {}),
 	};
 };
 
-const CATEGORY_MAP: Record<string, FamilyMetadata['category']> = {
+type FontClassification = FamilyMetadata['classifications'][number];
+
+const GOOGLE_CLASSIFICATION_MAP: Record<string, FontClassification> = {
 	DISPLAY: 'display',
 	HANDWRITING: 'handwriting',
 	MONOSPACE: 'monospace',
 	SANS_SERIF: 'sans-serif',
 	SERIF: 'serif',
+	SLAB_SERIF: 'slab-serif',
+	SYMBOLS: 'symbols',
+};
+
+const STRUCTURAL_CLASSIFICATIONS = new Set<FontClassification>([
+	'sans-serif',
+	'serif',
+	'slab-serif',
+]);
+
+const normalizeGoogleClassifications = (
+	family: GoogleFamily,
+): FontClassification[] => {
+	const classifications = new Set<FontClassification>();
+	for (const value of [family.stroke, ...family.classifications]) {
+		if (!value) continue;
+		const classification = GOOGLE_CLASSIFICATION_MAP[value];
+		if (!classification) {
+			throw new Error(
+				`${family.name} has unsupported Google classification ${value}`,
+			);
+		}
+		classifications.add(classification);
+	}
+
+	const category = GOOGLE_CLASSIFICATION_MAP[family.category];
+	if (!category) {
+		throw new Error(
+			`${family.name} has unsupported Google category ${family.category}`,
+		);
+	}
+	if (
+		!STRUCTURAL_CLASSIFICATIONS.has(category) ||
+		![...classifications].some((value) => STRUCTURAL_CLASSIFICATIONS.has(value))
+	) {
+		classifications.add(category);
+	}
+	return [...classifications].toSorted(compareStrings);
+};
+
+// Google scores degrees and variable coordinates; Fontsource publishes only
+// strong whole-family assertions as binary discovery tags.
+const MIN_GOOGLE_TAG_SCORE = 50;
+const IGNORED_GOOGLE_TAGS = new Set([
+	'display/display',
+	'monospace/monospace',
+	'not-text/symbols',
+	'special-use/symbols',
+]);
+
+const normalizeGoogleTag = (value: string): string => {
+	const parts = value
+		.split('/')
+		.filter(Boolean)
+		.map((part) =>
+			part
+				.toLowerCase()
+				.replace(/['’]/g, '')
+				.replace(/[^a-z0-9]+/g, '-')
+				.replace(/^-|-$/g, ''),
+		);
+	if (parts.length !== 2 || parts.some((part) => !part)) {
+		throw new Error(`Unsupported Google tag ${value}`);
+	}
+	return parts.join('/');
+};
+
+const readGoogleTags = (
+	snapshot: GitSnapshot,
+	taxonomy: Taxonomy,
+): Map<string, string[]> => {
+	const path = 'tags/all/families.csv';
+	if (!snapshot.paths.includes(path)) {
+		throw new Error(`Missing Google tag assignments at ${path}`);
+	}
+	const tagsByFamily = new Map<string, Set<string>>();
+	const rows = parse(snapshot.read(path), {
+		skip_empty_lines: true,
+	}) as string[][];
+	for (const [index, row] of rows.entries()) {
+		if (row.length !== 4) {
+			throw new Error(`Invalid Google tag row ${index + 1}`);
+		}
+		const [family, coordinates, sourceTag, sourceScore] = row;
+		if (!family || coordinates === undefined || !sourceTag || !sourceScore) {
+			throw new Error(`Incomplete Google tag row ${index + 1}`);
+		}
+		const score = Number(sourceScore);
+		if (!Number.isFinite(score) || score < 0 || score > 100) {
+			throw new Error(`Invalid Google tag score on row ${index + 1}`);
+		}
+		if (coordinates || score < MIN_GOOGLE_TAG_SCORE) continue;
+
+		const tag = normalizeGoogleTag(sourceTag);
+		if (tag.startsWith('quality/') || IGNORED_GOOGLE_TAGS.has(tag)) continue;
+		if (!taxonomy.tags[tag]) {
+			throw new Error(`Unknown canonical tag for Google ${sourceTag}`);
+		}
+		const tags = tagsByFamily.get(family) ?? new Set<string>();
+		tags.add(tag);
+		tagsByFamily.set(family, tags);
+	}
+	return new Map(
+		[...tagsByFamily].map(([family, tags]) => [
+			family,
+			[...tags].toSorted(compareStrings),
+		]),
+	);
 };
 
 const LICENSES: Record<
@@ -325,11 +443,9 @@ const writeFamily = async (
 	source: GoogleFamilyDirectory,
 	root: string,
 	ctx: ReturnType<typeof createFontContext>,
+	tags: readonly string[],
 ): Promise<void> => {
 	const { directory, family: google, files } = source;
-	const category = CATEGORY_MAP[google.category];
-	if (!category)
-		throw new Error(`${id} has unsupported category ${google.category}`);
 	const license = LICENSES[google.license];
 	if (!license)
 		throw new Error(`${id} has unsupported license ${google.license}`);
@@ -366,7 +482,8 @@ const writeFamily = async (
 		...(google.displayName && google.displayName !== google.name
 			? { displayName: google.displayName }
 			: {}),
-		category,
+		classifications: normalizeGoogleClassifications(google),
+		tags,
 		designer: google.designer,
 		dateAdded: google.dateAdded,
 		sourceModified: lastChanged.date,
@@ -414,8 +531,10 @@ export const generateGoogle = async (
 	snapshot: GitSnapshot,
 	root: string,
 	previousFamilyIds: readonly string[],
+	taxonomy: Taxonomy,
 ): Promise<string[]> => {
 	const families = readGoogleFamilies(snapshot);
+	const tagsByFamily = readGoogleTags(snapshot, taxonomy);
 	const familyIds = new Set(previousFamilyIds);
 	const ctx = createFontContext();
 	const sortedFamilies = Array.from(families).toSorted(([left], [right]) =>
@@ -424,7 +543,14 @@ export const generateGoogle = async (
 
 	try {
 		for (const [index, [id, family]] of sortedFamilies.entries()) {
-			await writeFamily(snapshot, id, family, root, ctx);
+			await writeFamily(
+				snapshot,
+				id,
+				family,
+				root,
+				ctx,
+				tagsByFamily.get(family.family.name) ?? [],
+			);
 			familyIds.add(id);
 			const processed = index + 1;
 			if (processed % 100 === 0 && processed < sortedFamilies.length) {

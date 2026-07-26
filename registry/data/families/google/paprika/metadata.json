@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2012-10-26",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,12 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/happy",
+		"expressive/sincere",
+		"expressive/vintage",
+		"seasonal/hanukkah",
+		"serif/humanist-venetian"
+	]
 }

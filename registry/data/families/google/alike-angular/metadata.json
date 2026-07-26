@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2011-09-28",
 	"declaredSubsets": [
 		"latin",
@@ -39,5 +42,11 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"serif/old-style-garalde"
+	]
 }

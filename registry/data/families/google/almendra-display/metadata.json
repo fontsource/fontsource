@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-11-12",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,9 @@
 		}
 	],
 	"sourceModified": "2026-07-15",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/vintage",
+		"theme/blackletter"
+	]
 }

@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2013-03-06",
 	"declaredSubsets": [
 		"cyrillic",
@@ -39,5 +42,11 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/playful",
+		"expressive/vintage",
+		"script/upright-script",
+		"serif/old-style-garalde"
+	]
 }

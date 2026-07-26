@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2024-03-27",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,13 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/playful",
+		"seasonal/diwali",
+		"seasonal/holi",
+		"seasonal/valentines-day",
+		"theme/inline"
+	]
 }

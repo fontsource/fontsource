@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2023-10-06",
 	"declaredSubsets": [
 		"cyrillic-ext",
@@ -40,5 +42,17 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/active",
+		"expressive/cute",
+		"expressive/happy",
+		"expressive/innovative",
+		"expressive/rugged",
+		"expressive/vintage",
+		"seasonal/hanukkah",
+		"seasonal/kwanzaa",
+		"seasonal/valentines-day",
+		"theme/brush"
+	]
 }

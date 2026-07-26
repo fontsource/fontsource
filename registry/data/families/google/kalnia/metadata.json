@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2023-10-19",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +41,9 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/playful",
+		"serif/didone"
+	]
 }

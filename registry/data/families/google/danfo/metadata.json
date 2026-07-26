@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2024-03-15",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +41,19 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/active",
+		"expressive/awkward",
+		"expressive/excited",
+		"expressive/happy",
+		"expressive/innovative",
+		"expressive/loud",
+		"expressive/playful",
+		"expressive/rugged",
+		"expressive/vintage",
+		"theme/tuscan",
+		"theme/wacky",
+		"theme/woodtype"
+	]
 }

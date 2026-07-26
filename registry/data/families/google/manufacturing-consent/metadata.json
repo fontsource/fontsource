@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2025-05-23",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,14 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/fancy",
+		"expressive/rugged",
+		"expressive/vintage",
+		"script/formal",
+		"seasonal/halloween",
+		"theme/blackletter"
+	]
 }

@@ -3,8 +3,13 @@ import { consola } from 'consola';
 import { openGitSnapshot } from './git.ts';
 import { generateGoogle } from './google.ts';
 import { generateNam } from './nam.ts';
-import { registryIndexSchema } from './schema.ts';
-import { compareStrings, readJsonIfExists, writeJson } from './shared.ts';
+import { registryIndexSchema, taxonomySchema } from './schema.ts';
+import {
+	compareStrings,
+	readJson,
+	readJsonIfExists,
+	writeJson,
+} from './shared.ts';
 import { validateRegistry } from './validator.ts';
 
 const logger = consola.withTag('registry');
@@ -25,9 +30,18 @@ export const generateRegistry = async (
 	const previousGoogleIds = previousFamilies
 		.filter((family) => family.startsWith('google/'))
 		.map((family) => family.slice('google/'.length));
+	const taxonomy = taxonomySchema.parse(
+		await readJson(join(import.meta.dirname, '..', 'data', 'taxonomy.json')),
+	);
+	await writeJson(join(root, 'taxonomy.json'), taxonomy);
 
 	logger.start(`Generating families from google/fonts@${google.revision}`);
-	const googleFamilies = await generateGoogle(google, root, previousGoogleIds);
+	const googleFamilies = await generateGoogle(
+		google,
+		root,
+		previousGoogleIds,
+		taxonomy,
+	);
 	logger.success(`Generated ${googleFamilies.length} Google font families`);
 	const families = [
 		...previousFamilies.filter((family) => !family.startsWith('google/')),

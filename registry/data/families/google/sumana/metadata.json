@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2015-04-29",
 	"declaredSubsets": [
 		"devanagari",
@@ -47,5 +49,11 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/competent",
+		"expressive/rugged",
+		"serif/transitional"
+	]
 }

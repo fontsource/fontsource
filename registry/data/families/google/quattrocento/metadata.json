@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-03-20",
 	"declaredSubsets": [
 		"latin",
@@ -46,5 +49,11 @@
 		}
 	],
 	"sourceModified": "2026-03-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/vintage",
+		"serif/humanist-venetian",
+		"serif/old-style-garalde"
+	]
 }

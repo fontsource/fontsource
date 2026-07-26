@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2010-09-21",
 	"declaredSubsets": [
 		"greek",
@@ -39,5 +41,12 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/competent",
+		"expressive/sincere",
+		"expressive/vintage",
+		"serif/didone"
+	]
 }

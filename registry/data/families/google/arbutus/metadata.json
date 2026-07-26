@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"slab-serif"
+	],
 	"dateAdded": "2011-12-07",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,14 @@
 		}
 	],
 	"sourceModified": "2026-07-15",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/loud",
+		"expressive/rugged",
+		"expressive/vintage",
+		"slab/humanist",
+		"theme/tuscan",
+		"theme/woodtype"
+	]
 }

@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2015-06-17",
 	"declaredSubsets": [
 		"devanagari",
@@ -47,5 +49,8 @@
 		}
 	],
 	"sourceModified": "2026-05-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"slab/humanist"
+	]
 }

@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2017-01-26",
 	"declaredSubsets": [
 		"devanagari",
@@ -92,5 +94,11 @@
 		}
 	],
 	"sourceModified": "2026-03-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"sans/humanist"
+	]
 }

@@ -40,7 +40,7 @@ jobs:
         run: |
           # Keep complete history for provenance while hydrating only adapter inputs.
           git clone --filter=blob:none --sparse --single-branch https://github.com/google/fonts.git "$RUNNER_TEMP/google-fonts"
-          git -C "$RUNNER_TEMP/google-fonts" sparse-checkout set ofl apache ufl axisregistry
+          git -C "$RUNNER_TEMP/google-fonts" sparse-checkout set ofl apache ufl axisregistry tags
           git clone --no-checkout --single-branch https://github.com/googlefonts/nam-files.git "$RUNNER_TEMP/nam-files"
           # Record immutable upstream commits instead of moving branch names.
           pnpm --filter '@fontsource-utils/registry' generate \

@@ -13,6 +13,8 @@ import {
 	familyPolicySchema,
 	registryIndexSchema,
 	subsetDefinitionSchema,
+	type Taxonomy,
+	taxonomySchema,
 } from './schema.ts';
 import {
 	canonicalJson,
@@ -187,6 +189,7 @@ const validateFamily = async (
 	root: string,
 	key: string,
 	subsets: ReadonlySet<string>,
+	taxonomy: Taxonomy,
 ): Promise<void> => {
 	const { provider, id } = parseFamilyKey(key);
 	const directory = join(root, 'families', key);
@@ -203,6 +206,15 @@ const validateFamily = async (
 		metadata.provider === provider,
 		`${id} metadata provider does not match its directory`,
 	);
+	assertSortedUnique(
+		metadata.classifications,
+		(value) => value,
+		`${id} classifications`,
+	);
+	assertSortedUnique(metadata.tags, (value) => value, `${id} tags`);
+	for (const tag of metadata.tags) {
+		assert(taxonomy.tags[tag], `${id} references unknown tag ${tag}`);
+	}
 	assertSortedUnique(
 		metadata.declaredSubsets,
 		(value) => value,
@@ -346,6 +358,17 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		assert(!familyIds.has(id), `Duplicate registry family ID ${id}`);
 		familyIds.add(id);
 	}
+	const taxonomy = await validateCanonicalJson(
+		join(root, 'taxonomy.json'),
+		taxonomySchema,
+	);
+	for (const tag of Object.keys(taxonomy.tags)) {
+		const group = tag.split('/')[0] as string;
+		assert(
+			taxonomy.tagGroups[group],
+			`${tag} references unknown group ${group}`,
+		);
+	}
 
 	const actualFamilies = await listFamilyKeys(root);
 	deepStrictEqual(
@@ -367,7 +390,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	let validated = 0;
 	await Promise.all(
 		index.families.map(async (family) => {
-			await validateFamily(root, family, subsetSet);
+			await validateFamily(root, family, subsetSet, taxonomy);
 			validated += 1;
 			if (validated % 250 === 0 && validated < index.families.length) {
 				logger.info(
@@ -382,6 +405,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	const allowed = new Set<string>([
 		'index.json',
 		'axes.json',
+		'taxonomy.json',
 		...index.subsets.map((id) => `subsets/${id}.json`),
 	]);
 	for (const family of index.families) {

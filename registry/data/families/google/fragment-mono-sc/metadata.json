@@ -1,5 +1,8 @@
 {
-	"category": "monospace",
+	"classifications": [
+		"monospace",
+		"sans-serif"
+	],
 	"dateAdded": "2024-06-04",
 	"declaredSubsets": [
 		"cyrillic-ext",
@@ -47,5 +50,6 @@
 		}
 	],
 	"sourceModified": "2026-05-29",
-	"status": "active"
+	"status": "active",
+	"tags": []
 }

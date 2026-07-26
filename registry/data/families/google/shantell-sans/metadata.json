@@ -1,5 +1,9 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"handwriting",
+		"sans-serif"
+	],
 	"dateAdded": "2023-01-17",
 	"declaredSubsets": [
 		"cyrillic",
@@ -49,5 +53,14 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/childlike",
+		"expressive/excited",
+		"expressive/happy",
+		"expressive/sincere",
+		"script/handwritten",
+		"seasonal/christmas",
+		"seasonal/hanukkah"
+	]
 }

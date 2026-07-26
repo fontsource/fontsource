@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"symbols"
+	],
 	"dateAdded": "2017-07-31",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,8 @@
 		}
 	],
 	"sourceModified": "2026-03-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"special-use/barcode"
+	]
 }

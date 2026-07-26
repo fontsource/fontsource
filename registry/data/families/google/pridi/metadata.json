@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2016-06-20",
 	"declaredSubsets": [
 		"latin",
@@ -84,5 +87,9 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"serif/modern",
+		"slab/clarendon"
+	]
 }

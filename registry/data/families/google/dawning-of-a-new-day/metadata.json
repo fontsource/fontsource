@@ -1,5 +1,8 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting"
+	],
 	"dateAdded": "2011-04-14",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,10 @@
 		}
 	],
 	"sourceModified": "2026-02-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/playful",
+		"expressive/vintage"
+	]
 }

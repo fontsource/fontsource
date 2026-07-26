@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2011-10-24",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +38,6 @@
 		}
 	],
 	"sourceModified": "2026-03-25",
-	"status": "active"
+	"status": "active",
+	"tags": []
 }

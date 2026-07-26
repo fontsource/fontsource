@@ -1,8 +1,9 @@
 import { resolve } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
+import { RegistryFamilyDetailSchema } from '../../api/shared/registry.ts';
 
 const r2 = vi.hoisted(() => ({
-	objectMatches: vi.fn(),
+	putCurrentObject: vi.fn(),
 	putObject: vi.fn(),
 }));
 
@@ -21,31 +22,57 @@ describe('registry source archive', () => {
 				schemaVersion: 1,
 				registryRevision: 'latest',
 				registry: [],
+				views: [],
 				sources: [],
 			}),
 		).toThrow();
 	});
 
-	it('publishes content-addressed objects before the snapshot manifest', async () => {
+	it('publishes archive objects before the manifest and current pointer', async () => {
 		const keys: string[] = [];
 		let manifest: unknown;
-		r2.objectMatches.mockResolvedValue(false);
+		let current: unknown;
+		let family: unknown;
+		let sourceContentType: string | undefined;
 		r2.putObject.mockImplementation(
-			async (object: { key: string; read: () => Promise<Uint8Array> }) => {
+			async (object: {
+				key: string;
+				contentType?: string;
+				read: () => Promise<Uint8Array>;
+			}) => {
 				keys.push(object.key);
-				if (object.key.startsWith('snapshots/')) {
+				if (object.key.startsWith('sources/') && !sourceContentType) {
+					sourceContentType = object.contentType;
+				}
+				if (object.key.endsWith('/manifest.json')) {
 					manifest = JSON.parse(
+						Buffer.from(await object.read()).toString('utf8'),
+					);
+				}
+				if (object.key.endsWith('/api/families/abel.json')) {
+					family = JSON.parse(
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
 			},
 		);
+		r2.putCurrentObject.mockImplementation(async (body: Uint8Array) => {
+			keys.push('current.json');
+			current = JSON.parse(Buffer.from(body).toString('utf8'));
+		});
 
 		await publishArchive(REGISTRY_ROOT, REVISION);
 
-		expect(keys.at(-1)).toBe(`snapshots/${REVISION}/manifest.json`);
+		expect(keys.at(-2)).toBe(`snapshots/${REVISION}/manifest.json`);
+		expect(keys.at(-1)).toBe('current.json');
 		expect(keys.some((key) => key.startsWith('registry/sha256/'))).toBe(true);
 		expect(keys.some((key) => key.startsWith('sources/sha256/'))).toBe(true);
+		expect(sourceContentType).toMatch(/^font\/(?:otf|ttf)$/);
+		expect(
+			keys.some(
+				(key) => key === `snapshots/${REVISION}/api/families/abel.json`,
+			),
+		).toBe(true);
 		expect(manifest).toMatchObject({
 			schemaVersion: 1,
 			registryRevision: REVISION,
@@ -57,6 +84,41 @@ describe('registry source archive', () => {
 					sha256: expect.stringMatching(/^[0-9a-f]{64}$/),
 				}),
 			]),
+			views: expect.arrayContaining([
+				expect.objectContaining({ path: 'families/abel.json' }),
+				expect.objectContaining({ path: 'taxonomy.json' }),
+			]),
 		});
+		expect(current).toMatchObject({
+			schemaVersion: 1,
+			registryRevision: REVISION,
+		});
+		expect(family).toMatchObject({
+			id: 'abel',
+			classifications: ['sans-serif'],
+			tags: expect.any(Array),
+			license: {
+				id: 'OFL-1.1',
+				text: expect.any(String),
+			},
+			content: {
+				'en-US': {
+					description: expect.any(String),
+				},
+			},
+			sources: [
+				expect.objectContaining({
+					format: 'ttf',
+					filename: 'Abel-Regular.ttf',
+					downloadUrl: expect.stringMatching(
+						/^\/v1\/registry\/sources\/[0-9a-f]{64}$/,
+					),
+					type: 'static',
+				}),
+			],
+		});
+		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
+		expect(family).not.toHaveProperty('provenance');
+		expect(family).not.toHaveProperty('schemaVersion');
 	}, 15_000);
 });

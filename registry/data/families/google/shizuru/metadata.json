@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2020-12-08",
 	"declaredSubsets": [
 		"japanese",
@@ -37,5 +39,12 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/excited",
+		"expressive/playful",
+		"theme/distressed",
+		"theme/wacky"
+	]
 }

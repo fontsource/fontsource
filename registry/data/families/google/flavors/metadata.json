@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"handwriting"
+	],
 	"dateAdded": "2011-12-19",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,14 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/cute",
+		"expressive/excited",
+		"expressive/happy",
+		"expressive/playful",
+		"seasonal/halloween",
+		"seasonal/holi"
+	]
 }

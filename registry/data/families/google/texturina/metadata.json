@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2020-10-23",
 	"declaredSubsets": [
 		"latin",
@@ -47,5 +50,10 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"expressive/vintage",
+		"theme/blackletter"
+	]
 }

@@ -1,5 +1,8 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting"
+	],
 	"dateAdded": "2012-03-29",
 	"declaredSubsets": [
 		"cyrillic",
@@ -41,5 +44,18 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/fancy",
+		"expressive/sophisticated",
+		"expressive/vintage",
+		"script/formal",
+		"seasonal/christmas",
+		"seasonal/diwali",
+		"seasonal/hanukkah",
+		"seasonal/holi",
+		"seasonal/lunar-new-year",
+		"seasonal/valentines-day"
+	]
 }

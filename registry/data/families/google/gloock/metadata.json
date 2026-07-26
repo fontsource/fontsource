@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2023-01-06",
 	"declaredSubsets": [
 		"cyrillic-ext",
@@ -38,5 +41,10 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"expressive/vintage",
+		"serif/transitional"
+	]
 }

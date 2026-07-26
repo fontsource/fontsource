@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2023-01-31",
 	"declaredSubsets": [
 		"cyrillic-ext",
@@ -39,5 +42,8 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged"
+	]
 }

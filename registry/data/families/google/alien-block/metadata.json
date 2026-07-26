@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2026-05-01",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,14 @@
 		}
 	],
 	"sourceModified": "2026-05-13",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/futuristic",
+		"expressive/happy",
+		"expressive/innovative",
+		"expressive/loud",
+		"expressive/playful",
+		"theme/techno"
+	]
 }

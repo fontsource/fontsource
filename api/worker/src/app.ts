@@ -24,6 +24,16 @@ import {
 	LegacyFontFileRedirectRoute,
 } from './routes/compat';
 import { GetFontOpenGraphRoute } from './routes/open-graph';
+import {
+	GetRegistryFamilyRoute,
+	GetRegistryRoute,
+	GetRegistrySourceRoute,
+	GetRegistrySubsetRoute,
+	GetRegistryTaxonomyRoute,
+	ListRegistryAxesRoute,
+	ListRegistryFamiliesRoute,
+	ListRegistrySubsetsRoute,
+} from './routes/registry';
 import { DEFAULT_NOT_FOUND_MESSAGE, toErrorResponse } from './utils/errors';
 
 const app = new Hono<AppEnv>();
@@ -121,6 +131,11 @@ const openapi = fromHono(app, {
 					'Font catalog, variable metadata, axis registry, statistics, and version information.',
 			},
 			{
+				name: 'Registry',
+				description:
+					'Source metadata, discovery taxonomy, Unicode subsets, variable axes, and archived source fonts.',
+			},
+			{
 				name: 'CDN',
 				description: 'Binary font assets and generated CSS stylesheets.',
 			},
@@ -151,6 +166,15 @@ openapi.get('/v1/stats/badge/:metric', GetStatsBadgeRoute);
 openapi.get('/v1/stats/:id', GetFontStatsRoute);
 openapi.get('/v1/version/:id', GetFontVersionsRoute);
 openapi.get('/og/fonts/:id', GetFontOpenGraphRoute);
+
+openapi.get('/v1/registry', GetRegistryRoute);
+openapi.get('/v1/registry/taxonomy', GetRegistryTaxonomyRoute);
+openapi.get('/v1/registry/families', ListRegistryFamiliesRoute);
+openapi.get('/v1/registry/families/:id', GetRegistryFamilyRoute);
+openapi.get('/v1/registry/subsets', ListRegistrySubsetsRoute);
+openapi.get('/v1/registry/subsets/:id', GetRegistrySubsetRoute);
+openapi.get('/v1/registry/axes', ListRegistryAxesRoute);
+openapi.get('/v1/registry/sources/:sha256', GetRegistrySourceRoute);
 
 openapi.get('/fonts/:tag/:file', GetBinaryAssetRoute);
 openapi.get('/css/:tag/:file', GetCssFileRoute);

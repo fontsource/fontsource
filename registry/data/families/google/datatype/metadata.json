@@ -1,5 +1,8 @@
 {
-	"category": "monospace",
+	"classifications": [
+		"monospace",
+		"sans-serif"
+	],
 	"dateAdded": "2026-02-25",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,9 @@
 		}
 	],
 	"sourceModified": "2026-03-04",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"sans/neo-grotesque"
+	]
 }

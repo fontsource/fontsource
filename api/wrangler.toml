@@ -9,6 +9,7 @@ kv_namespaces = [
 
 r2_buckets = [
   { binding = "FONTS", bucket_name = "fontsource-artifacts" },
+  { binding = "REGISTRY", bucket_name = "fontsource-registry" },
 ]
 
 [placement]

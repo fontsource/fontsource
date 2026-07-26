@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2011-07-27",
 	"declaredSubsets": [
 		"cyrillic-ext",
@@ -39,5 +41,13 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/active",
+		"expressive/loud",
+		"expressive/rugged",
+		"expressive/stiff",
+		"sans/geometric",
+		"theme/stencil"
+	]
 }

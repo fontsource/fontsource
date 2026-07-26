@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2019-04-23",
 	"declaredSubsets": [
 		"arabic",
@@ -37,5 +39,10 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/playful",
+		"theme/wacky"
+	]
 }

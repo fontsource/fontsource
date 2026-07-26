@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"monospace",
+		"sans-serif"
+	],
 	"dateAdded": "2014-05-05",
 	"declaredSubsets": [
 		"cyrillic",
@@ -40,5 +43,10 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/loud",
+		"expressive/rugged",
+		"sans/neo-grotesque"
+	]
 }

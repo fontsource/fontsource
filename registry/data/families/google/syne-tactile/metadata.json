@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2020-08-25",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,11 @@
 		}
 	],
 	"sourceModified": "2026-04-06",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/awkward",
+		"expressive/rugged",
+		"theme/distressed"
+	]
 }

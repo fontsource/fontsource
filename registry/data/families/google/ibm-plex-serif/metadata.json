@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2018-03-12",
 	"declaredSubsets": [
 		"cyrillic",
@@ -157,5 +159,12 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"serif/scotch"
+	]
 }

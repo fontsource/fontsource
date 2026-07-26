@@ -1,5 +1,7 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"handwriting"
+	],
 	"dateAdded": "2012-11-11",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,15 @@
 		}
 	],
 	"sourceModified": "2026-02-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/excited",
+		"expressive/happy",
+		"expressive/playful",
+		"expressive/vintage",
+		"script/informal",
+		"seasonal/holi",
+		"seasonal/valentines-day"
+	]
 }

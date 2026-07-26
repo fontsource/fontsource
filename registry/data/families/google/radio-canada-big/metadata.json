@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2024-04-17",
 	"declaredSubsets": [
 		"latin",
@@ -46,5 +48,8 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"sans/neo-grotesque"
+	]
 }

@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2012-10-05",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,11 @@
 		}
 	],
 	"sourceModified": "2026-07-16",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/loud",
+		"expressive/playful",
+		"expressive/rugged",
+		"theme/brush"
+	]
 }

@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-10-05",
 	"declaredSubsets": [
 		"latin",
@@ -54,5 +57,9 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/vintage",
+		"serif/old-style-garalde"
+	]
 }

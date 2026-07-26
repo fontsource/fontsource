@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2010-12-15",
 	"declaredSubsets": [
 		"cyrillic",
@@ -104,5 +106,13 @@
 		}
 	],
 	"sourceModified": "2026-03-25",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/futuristic",
+		"sans/neo-grotesque",
+		"seasonal/kwanzaa"
+	]
 }

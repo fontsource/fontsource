@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2011-12-19",
 	"declaredSubsets": [
 		"latin",
@@ -64,5 +67,10 @@
 		}
 	],
 	"sourceModified": "2026-07-15",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/vintage",
+		"seasonal/christmas",
+		"serif/humanist-venetian"
+	]
 }

@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2016-05-31",
 	"declaredSubsets": [
 		"arabic",
@@ -39,5 +41,9 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"sans/geometric"
+	]
 }

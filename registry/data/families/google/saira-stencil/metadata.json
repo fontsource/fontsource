@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2026-03-20",
 	"declaredSubsets": [
 		"latin",
@@ -47,5 +50,6 @@
 		}
 	],
 	"sourceModified": "2026-07-02",
-	"status": "active"
+	"status": "active",
+	"tags": []
 }

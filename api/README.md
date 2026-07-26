@@ -10,6 +10,7 @@ This is the current Fontsource API built on Cloudflare Workers. It serves font m
 | Workers Cache | Keeps cacheable responses close to callers. |
 | KV (`METADATA`) | Stores the font catalog, axis registry, and public metadata. |
 | R2 (`FONTS`) | Stores generated font files and package archives. |
+| R2 (`REGISTRY`) | Stores registry snapshots and original source fonts. |
 | D1 (`STATS`) | Stores incremental npm and jsDelivr download history. |
 | Queues (`STATS_QUEUE`) | Spreads stats refreshes across small, retryable package jobs. |
 | Durable Objects (`ARTIFACT_BUILDER`) | Coordinates package builds so the same artifact is not built twice. |

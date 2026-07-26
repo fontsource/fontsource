@@ -19,7 +19,7 @@ vi.mock('@aws-sdk/client-s3', async (importOriginal) => {
 	};
 });
 
-import { putObject } from './r2.ts';
+import { putCurrentObject, putObject } from './r2.ts';
 
 describe('R2 source archive', () => {
 	it('verifies bodies and conditionally uploads only missing objects', async () => {
@@ -54,6 +54,7 @@ describe('R2 source archive', () => {
 			key: 'sources/font',
 			size: body.byteLength,
 			sha256: hash,
+			contentType: 'font/ttf',
 			read: async () => body,
 		});
 
@@ -64,12 +65,29 @@ describe('R2 source archive', () => {
 		expect(command?.input).toMatchObject({
 			Bucket: 'fontsource-registry',
 			Key: 'sources/font',
-			IfNoneMatch: '*',
+			ContentType: 'font/ttf',
 			Metadata: { sha256: hash },
 		});
 
+		s3.send
+			.mockResolvedValueOnce({
+				ContentLength: body.byteLength,
+				Metadata: { sha256: hash },
+			})
+			.mockResolvedValueOnce({});
+		const refresh = vi.fn(async () => body);
+		await putObject({
+			key: 'sources/font',
+			size: body.byteLength,
+			sha256: hash,
+			contentType: 'font/ttf',
+			read: refresh,
+		});
+		expect(refresh).toHaveBeenCalledOnce();
+
 		s3.send.mockResolvedValueOnce({
 			ContentLength: body.byteLength,
+			ContentType: 'font/ttf',
 			Metadata: { sha256: hash },
 		});
 		const read = vi.fn(async () => body);
@@ -77,8 +95,26 @@ describe('R2 source archive', () => {
 			key: 'sources/font',
 			size: body.byteLength,
 			sha256: hash,
+			contentType: 'font/ttf',
 			read,
 		});
 		expect(read).not.toHaveBeenCalled();
+	});
+
+	it('overwrites the current snapshot pointer', async () => {
+		const body = new TextEncoder().encode('current');
+		s3.send.mockClear();
+		s3.send.mockResolvedValueOnce({});
+
+		await putCurrentObject(body);
+
+		const command = s3.send.mock.calls[0]?.[0];
+		expect(command).toBeInstanceOf(PutObjectCommand);
+		expect(command?.input).toEqual({
+			Bucket: 'fontsource-registry',
+			Key: 'current.json',
+			Body: body,
+			ContentType: 'application/json',
+		});
 	});
 });

@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2020-12-16",
 	"declaredSubsets": [
 		"japanese",
@@ -38,5 +40,9 @@
 		}
 	],
 	"sourceModified": "2026-02-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"expressive/vintage"
+	]
 }

@@ -1,5 +1,9 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting",
+		"sans-serif"
+	],
 	"dateAdded": "2018-02-28",
 	"declaredSubsets": [
 		"korean",
@@ -51,5 +55,14 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/childlike",
+		"expressive/cute",
+		"sans/rounded",
+		"script/handwritten",
+		"script/informal",
+		"script/upright-script",
+		"theme/brush"
+	]
 }

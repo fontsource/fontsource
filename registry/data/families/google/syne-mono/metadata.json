@@ -1,5 +1,7 @@
 {
-	"category": "monospace",
+	"classifications": [
+		"monospace"
+	],
 	"dateAdded": "2020-08-25",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,12 @@
 		}
 	],
 	"sourceModified": "2026-04-06",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/futuristic",
+		"expressive/rugged",
+		"theme/distressed",
+		"theme/techno"
+	]
 }

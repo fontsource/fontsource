@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2022-08-10",
 	"declaredSubsets": [
 		"arabic",
@@ -37,5 +39,9 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"serif/old-style-garalde"
+	]
 }

@@ -599,6 +599,470 @@ export type GetFontOpenGraphImageResponses = {
 
 export type GetFontOpenGraphImageResponse = GetFontOpenGraphImageResponses[keyof GetFontOpenGraphImageResponses];
 
+export type GetRegistryData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/registry';
+};
+
+export type GetRegistryErrors = {
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistryError = GetRegistryErrors[keyof GetRegistryErrors];
+
+export type GetRegistryResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        familyCount: number;
+        subsetCount: number;
+    };
+};
+
+export type GetRegistryResponse = GetRegistryResponses[keyof GetRegistryResponses];
+
+export type GetRegistryTaxonomyData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/registry/taxonomy';
+};
+
+export type GetRegistryTaxonomyErrors = {
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistryTaxonomyError = GetRegistryTaxonomyErrors[keyof GetRegistryTaxonomyErrors];
+
+export type GetRegistryTaxonomyResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        classifications: {
+            serif?: {
+                label: string;
+            };
+            'sans-serif'?: {
+                label: string;
+            };
+            'slab-serif'?: {
+                label: string;
+            };
+            display?: {
+                label: string;
+            };
+            handwriting?: {
+                label: string;
+            };
+            monospace?: {
+                label: string;
+            };
+            symbols?: {
+                label: string;
+            };
+        };
+        tagGroups: {
+            [key: string]: {
+                label: string;
+            };
+        };
+        tags: {
+            [key: string]: {
+                label: string;
+            };
+        };
+    };
+};
+
+export type GetRegistryTaxonomyResponse = GetRegistryTaxonomyResponses[keyof GetRegistryTaxonomyResponses];
+
+export type ListRegistryFamiliesData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/registry/families';
+};
+
+export type ListRegistryFamiliesErrors = {
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type ListRegistryFamiliesError = ListRegistryFamiliesErrors[keyof ListRegistryFamiliesErrors];
+
+export type ListRegistryFamiliesResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        families: Array<{
+            id: string;
+            family: string;
+            displayName?: string;
+            provider: string;
+            status: 'active' | 'deprecated';
+            classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
+            tags: Array<string>;
+            sourceModified: string;
+            declaredSubsets: Array<string>;
+            variable: boolean;
+            axes: Array<string>;
+        }>;
+    };
+};
+
+export type ListRegistryFamiliesResponse = ListRegistryFamiliesResponses[keyof ListRegistryFamiliesResponses];
+
+export type GetRegistryFamilyData = {
+    body?: never;
+    path: {
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+    };
+    query?: never;
+    url: '/v1/registry/families/{id}';
+};
+
+export type GetRegistryFamilyErrors = {
+    /**
+     * Registry family not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistryFamilyError = GetRegistryFamilyErrors[keyof GetRegistryFamilyErrors];
+
+export type GetRegistryFamilyResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        id: string;
+        family: string;
+        displayName?: string;
+        provider: string;
+        status: 'active' | 'deprecated';
+        classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
+        tags: Array<string>;
+        sourceModified: string;
+        declaredSubsets: Array<string>;
+        designer?: string;
+        dateAdded?: string;
+        license: {
+            id: string;
+            url: string;
+            attribution?: string;
+            /**
+             * Complete license text
+             */
+            text?: string;
+        };
+        project?: {
+            repository: string;
+            revision?: string;
+        };
+        content?: {
+            [key: string]: {
+                /**
+                 * Markdown family description
+                 */
+                description?: string;
+                /**
+                 * Markdown family article
+                 */
+                article?: string;
+            };
+        };
+        sources: Array<{
+            sha256: string;
+            filename: string;
+            format: 'ttf' | 'otf';
+            size: number;
+            /**
+             * Relative source download URL
+             */
+            downloadUrl: string;
+            type: 'static' | 'variable';
+            fontVersion: string | null;
+            weight: number | {
+                min: number;
+                max: number;
+                default: number;
+            };
+            style: 'normal' | 'italic' | 'oblique';
+            axes: Array<{
+                tag: string;
+                min: number;
+                max: number;
+                default: number;
+            }>;
+        }>;
+    };
+};
+
+export type GetRegistryFamilyResponse = GetRegistryFamilyResponses[keyof GetRegistryFamilyResponses];
+
+export type ListRegistrySubsetsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/registry/subsets';
+};
+
+export type ListRegistrySubsetsErrors = {
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type ListRegistrySubsetsError = ListRegistrySubsetsErrors[keyof ListRegistrySubsetsErrors];
+
+export type ListRegistrySubsetsResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        subsets: Array<string>;
+    };
+};
+
+export type ListRegistrySubsetsResponse = ListRegistrySubsetsResponses[keyof ListRegistrySubsetsResponses];
+
+export type GetRegistrySubsetData = {
+    body?: never;
+    path: {
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+    };
+    query?: never;
+    url: '/v1/registry/subsets/{id}';
+};
+
+export type GetRegistrySubsetErrors = {
+    /**
+     * Registry subset not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistrySubsetError = GetRegistrySubsetErrors[keyof GetRegistrySubsetErrors];
+
+export type GetRegistrySubsetResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        id: string;
+        ranges: Array<[
+            string,
+            string
+        ]>;
+        slices?: Array<{
+            id: string;
+            ranges: Array<[
+                string,
+                string
+            ]>;
+        }>;
+    };
+};
+
+export type GetRegistrySubsetResponse = GetRegistrySubsetResponses[keyof GetRegistrySubsetResponses];
+
+export type ListRegistryAxesData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/registry/axes';
+};
+
+export type ListRegistryAxesErrors = {
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type ListRegistryAxesError = ListRegistryAxesErrors[keyof ListRegistryAxesErrors];
+
+export type ListRegistryAxesResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        axes: {
+            [key: string]: {
+                name: string;
+                description: string;
+                min: number;
+                max: number;
+                default: number;
+                precision: number;
+            };
+        };
+    };
+};
+
+export type ListRegistryAxesResponse = ListRegistryAxesResponses[keyof ListRegistryAxesResponses];
+
+export type GetRegistrySourceData = {
+    body?: never;
+    path: {
+        /**
+         * Archived source font SHA-256 digest
+         */
+        sha256: string;
+    };
+    query?: never;
+    url: '/v1/registry/sources/{sha256}';
+};
+
+export type GetRegistrySourceErrors = {
+    /**
+     * Registry source not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The archived source metadata is invalid
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistrySourceError = GetRegistrySourceErrors[keyof GetRegistrySourceErrors];
+
+export type GetRegistrySourceResponses = {
+    /**
+     * Original TTF or OTF source font
+     */
+    200: string;
+};
+
+export type GetRegistrySourceResponse = GetRegistrySourceResponses[keyof GetRegistrySourceResponses];
+
 export type GetBinaryAssetData = {
     body?: never;
     path: {

@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2010-12-20",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,11 @@
 		}
 	],
 	"sourceModified": "2026-07-09",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/business",
+		"expressive/sincere",
+		"serif/humanist-venetian"
+	]
 }
