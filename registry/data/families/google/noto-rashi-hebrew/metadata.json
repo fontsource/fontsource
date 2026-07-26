@@ -13,11 +13,21 @@
 	"designer": "Google",
 	"family": "Noto Rashi Hebrew",
 	"id": "noto-rashi-hebrew",
+	"languages": [
+		"he_Hebr",
+		"jpr_Hebr",
+		"jrb_Hebr",
+		"lad_Hebr",
+		"sam_Hebr",
+		"yi_Hebr",
+		"zh_Hebr"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/hebrew)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hebr",
 	"project": {
 		"repository": "https://github.com/notofonts/hebrew",
 		"revision": "02fcd18e295ebadcda7bcaa774c107538fe2a5ee"

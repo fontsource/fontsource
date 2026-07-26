@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Sundanese",
 	"id": "noto-sans-sundanese",
+	"languages": [
+		"su_Sund"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sundanese)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sund",
 	"project": {
 		"repository": "https://github.com/notofonts/sundanese",
 		"revision": "8069fb6e2b3a9bc2888748b4d3cc1dd5919728ee"

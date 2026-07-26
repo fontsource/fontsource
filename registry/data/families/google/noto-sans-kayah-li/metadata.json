@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Kayah Li",
 	"id": "noto-sans-kayah-li",
+	"languages": [
+		"eky_Kali",
+		"kyu_Kali"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/kayah-li)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Kali",
 	"project": {
 		"repository": "https://github.com/notofonts/kayah-li",
 		"revision": "d804f259b83b41e7435284b5b389624631bedf35"

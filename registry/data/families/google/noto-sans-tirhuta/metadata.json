@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Tirhuta",
 	"id": "noto-sans-tirhuta",
+	"languages": [
+		"mai_Tirh",
+		"sa_Tirh"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tirhuta)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Tirh",
 	"project": {
 		"repository": "https://github.com/notofonts/tirhuta",
 		"revision": "3c941a6f7183c147e807ed92b4a4f894c4e5e7f6"

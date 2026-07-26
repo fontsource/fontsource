@@ -12,11 +12,22 @@
 	"designer": "Google",
 	"family": "Noto Sans Tifinagh",
 	"id": "noto-sans-tifinagh",
+	"languages": [
+		"ber_Tfng",
+		"kab_Tfng",
+		"rif_Tfng",
+		"shi_Tfng",
+		"taq_Tfng",
+		"tzm_Tfng",
+		"zen_Tfng",
+		"zgh_Tfng"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tifinagh)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Tfng",
 	"project": {
 		"repository": "https://github.com/notofonts/tifinagh",
 		"revision": "6c19a68ff330ec938fb21d6be8c94b2183e1b077"

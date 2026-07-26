@@ -12,11 +12,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Lao",
 	"id": "noto-sans-lao",
+	"languages": [
+		"hnj_Laoo",
+		"kjg_Laoo",
+		"lo_Laoo"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/lao)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Laoo",
 	"project": {
 		"repository": "https://github.com/notofonts/lao",
 		"revision": "ab77daf4d8d6d9564da2dae84ae31bd9c971090f"

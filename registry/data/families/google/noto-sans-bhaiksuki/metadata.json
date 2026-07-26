@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Bhaiksuki",
 	"id": "noto-sans-bhaiksuki",
+	"languages": [
+		"sa_Bhks"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/bhaiksuki)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Bhks",
 	"project": {
 		"repository": "https://github.com/notofonts/bhaiksuki",
 		"revision": "570db5a125e4f011e2d54b55220c0e2111adea2e"

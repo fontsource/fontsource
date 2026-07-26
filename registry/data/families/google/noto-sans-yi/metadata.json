@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Yi",
 	"id": "noto-sans-yi",
+	"languages": [
+		"ii_Yiii"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/yi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Yiii",
 	"project": {
 		"repository": "https://github.com/notofonts/yi",
 		"revision": "bdf568a724f7dd9c59f6fb04cdac4e3450699d63"

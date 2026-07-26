@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Kharoshthi",
 	"id": "noto-sans-kharoshthi",
+	"languages": [
+		"pra_Khar",
+		"sa_Khar"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/kharoshthi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Khar",
 	"project": {
 		"repository": "https://github.com/notofonts/kharoshthi",
 		"revision": "aacffd48d67ea30b8836a4069df73aa789148c01"

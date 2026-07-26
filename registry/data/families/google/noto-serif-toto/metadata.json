@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Toto",
 	"id": "noto-serif-toto",
+	"languages": [
+		"txo_Toto"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/toto)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Toto",
 	"project": {
 		"repository": "https://github.com/notofonts/toto",
 		"revision": "654cc6c340ccd33ea8935bfe936933861eb998b1"

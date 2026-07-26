@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Kawi",
 	"id": "noto-sans-kawi",
+	"languages": [
+		"kaw_Kawi"
+	],
 	"license": {
 		"attribution": "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/kawi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Kawi",
 	"project": {
 		"repository": "https://github.com/notofonts/kawi",
 		"revision": "7b1182376580f1192b0ac9cc172ee1ee723655b7"

@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Ol Chiki",
 	"id": "noto-sans-ol-chiki",
+	"languages": [
+		"sat_Olck"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ol-chiki)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Olck",
 	"project": {
 		"repository": "https://github.com/notofonts/ol-chiki",
 		"revision": "61f81d5651c9c31d44d2731dc840607dd443c604"

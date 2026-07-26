@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Takri",
 	"id": "noto-sans-takri",
+	"languages": [
+		"doi_Takr"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/takri)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Takr",
 	"project": {
 		"repository": "https://github.com/notofonts/takri",
 		"revision": "bf175ad0b88bacf551fa992f19ce0e1cd2270b22"

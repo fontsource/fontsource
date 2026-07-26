@@ -7,6 +7,8 @@ import {
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
 	RegistryInfoSchema,
+	RegistryLanguageSchema,
+	RegistryLanguagesSchema,
 	RegistrySubsetSchema,
 	RegistrySubsetsSchema,
 	RegistryTaxonomySchema,
@@ -18,6 +20,7 @@ import {
 	axisRegistrySchema,
 	familyInspectionSchema,
 	familyMetadataSchema,
+	languageCatalogSchema,
 	registryIndexSchema,
 	subsetDefinitionSchema,
 	taxonomySchema,
@@ -70,6 +73,35 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const index = registryIndexSchema.parse(
 		await readJson(join(root, 'index.json')),
 	);
+	const languages = languageCatalogSchema.parse(
+		await readJson(join(root, 'languages.json')),
+	);
+	const languageSummaries = Object.entries(languages)
+		.map(([id, language]) => ({
+			id,
+			language: language.language,
+			script: language.script,
+			name: language.name,
+			preferredName: language.preferredName,
+			autonym: language.autonym,
+		}))
+		.toSorted((left, right) => compareStrings(left.id, right.id));
+	const languageViews = Object.entries(languages).map(([id, language]) =>
+		createJsonFile(
+			`languages/${id}.json`,
+			RegistryLanguageSchema.parse({
+				id,
+				language: language.language,
+				script: language.script,
+				name: language.name,
+				...(language.preferredName
+					? { preferredName: language.preferredName }
+					: {}),
+				...(language.autonym ? { autonym: language.autonym } : {}),
+				...(language.sampleText ? { sampleText: language.sampleText } : {}),
+			}),
+		),
+	);
 	const sourceMap = new Map<string, SourceFile>();
 	const familySummaries = [];
 	const familyViews: ArchiveFile[] = [];
@@ -116,6 +148,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			status: metadata.status,
 			classifications: metadata.classifications,
 			tags: metadata.tags,
+			languages: metadata.languages,
 			sourceModified: metadata.sourceModified,
 			declaredSubsets: metadata.declaredSubsets,
 		};
@@ -129,6 +162,9 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				`families/${metadata.id}.json`,
 				RegistryFamilyDetailSchema.parse({
 					...publicFamily,
+					primaryLanguage: metadata.primaryLanguage,
+					primaryScript: metadata.primaryScript,
+					sampleText: metadata.sampleText,
 					designer: metadata.designer,
 					dateAdded: metadata.dateAdded,
 					license: {
@@ -211,6 +247,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			'registry.json',
 			RegistryInfoSchema.parse({
 				familyCount: familySummaries.length,
+				languageCount: languageSummaries.length,
 				subsetCount: index.subsets.length,
 			}),
 		),
@@ -222,9 +259,14 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			'subsets.json',
 			RegistrySubsetsSchema.parse({ subsets: index.subsets }),
 		),
+		createJsonFile(
+			'languages.json',
+			RegistryLanguagesSchema.parse({ languages: languageSummaries }),
+		),
 		createJsonFile('axes.json', RegistryAxesSchema.parse({ axes })),
 		createJsonFile('taxonomy.json', RegistryTaxonomySchema.parse(taxonomy)),
 		...familyViews,
+		...languageViews,
 		...subsets,
 	].toSorted((left, right) => compareStrings(left.path, right.path));
 

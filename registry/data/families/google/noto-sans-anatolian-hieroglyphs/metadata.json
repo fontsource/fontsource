@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Anatolian Hieroglyphs",
 	"id": "noto-sans-anatolian-hieroglyphs",
+	"languages": [
+		"hlu_Hluw"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/anatolian-hieroglyphs)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hluw",
 	"project": {
 		"repository": "https://github.com/notofonts/anatolian-hieroglyphs",
 		"revision": "d82f0bce270456bb1e975e11b250f61cd1f0e8c7"

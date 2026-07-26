@@ -12,11 +12,20 @@
 	"designer": "Google",
 	"family": "Noto Sans Myanmar",
 	"id": "noto-sans-myanmar",
+	"languages": [
+		"kht_Mymr",
+		"ksw_Mymr",
+		"mnw_Mymr",
+		"my_Mymr",
+		"pwo_Mymr",
+		"shn_Mymr"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/myanmar)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mymr",
 	"project": {
 		"repository": "https://github.com/notofonts/myanmar",
 		"revision": "bd348056676051ac9076de5737436f0308b0de29"

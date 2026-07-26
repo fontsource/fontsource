@@ -14,11 +14,26 @@
 	"designer": "Google",
 	"family": "Noto Sans Canadian Aboriginal",
 	"id": "noto-sans-canadian-aboriginal",
+	"languages": [
+		"chp_Cans",
+		"cr_Cans",
+		"crj_Cans",
+		"crk_Cans",
+		"crl_Cans",
+		"crm_Cans",
+		"csw_Cans",
+		"den_Cans",
+		"iu_Cans",
+		"nsk_Cans",
+		"oj_Cans",
+		"ojb_Cans"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/canadian-aboriginal)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Cans",
 	"project": {
 		"repository": "https://github.com/notofonts/canadian-aboriginal",
 		"revision": "1766b85dfc150695e2322c33fdc441f552720b6f"

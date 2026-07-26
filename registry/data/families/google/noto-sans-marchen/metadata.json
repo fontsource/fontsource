@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Marchen",
 	"id": "noto-sans-marchen",
+	"languages": [
+		"bo_Marc",
+		"sa_Marc"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/marchen)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Marc",
 	"project": {
 		"repository": "https://github.com/notofonts/marchen",
 		"revision": "8b7d0d75ddbd5e2069b8b0f1a89a842d6b37cff2"

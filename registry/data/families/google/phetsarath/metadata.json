@@ -9,11 +9,15 @@
 	"designer": "Danh Hong",
 	"family": "Phetsarath",
 	"id": "phetsarath",
+	"languages": [
+		"lo_Laoo"
+	],
 	"license": {
 		"attribution": "Copyright (c) 2010-2012, Ministry of Posts and Telecommunications, Laos (www.phetsarath.gov.la)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Laoo",
 	"project": {
 		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
 		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"

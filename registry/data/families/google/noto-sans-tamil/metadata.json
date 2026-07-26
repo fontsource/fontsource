@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Tamil",
 	"id": "noto-sans-tamil",
+	"languages": [
+		"bfq_Taml",
+		"ta_Taml"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tamil)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Taml",
 	"project": {
 		"repository": "https://github.com/notofonts/tamil",
 		"revision": "626575fa0c68c81dee17a0342003c08c0ab8375e"

@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Linear B",
 	"id": "noto-sans-linear-b",
+	"languages": [
+		"gmy_Linb",
+		"grc_Linb"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/linear-b)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Linb",
 	"project": {
 		"repository": "https://github.com/notofonts/linear-b",
 		"revision": "410f88c1d4d10b5db76217e57e7b153811ce0674"

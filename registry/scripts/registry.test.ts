@@ -16,6 +16,7 @@ import { generateRegistry } from './generate.ts';
 import { assertGitPathClean, openGitSnapshot } from './git.ts';
 import {
 	familyMetadataSchema,
+	languageCatalogSchema,
 	registryIndexSchema,
 	sourceFamilySchema,
 } from './schema.ts';
@@ -29,6 +30,15 @@ const ABEL_POLICY = {
 	defaultSubset: 'latin',
 	subsets: [{ id: 'latin', definition: 'latin' }],
 } as const;
+
+const TEST_LANGUAGES = languageCatalogSchema.parse({
+	en_Latn: {
+		language: 'en',
+		script: 'Latn',
+		name: 'English',
+		requiredCodepoints: [65, 66, 67],
+	},
+});
 
 const temporaryDirectory = async (name: string): Promise<string> => {
 	const path = await mkdtemp(join(tmpdir(), `${name}-`));
@@ -142,6 +152,12 @@ fonts {
 }
 subsets: "latin"
 subsets: "menu"
+primary_script: "Latn"
+primary_language: "en_Latn"
+sample_text {
+  styles: "All people are born free"
+  tester: "All people are born free and equal"
+}
 `,
 	);
 	await writeFixture(
@@ -215,6 +231,48 @@ precision: 0
 description: "Weight " "axis"
 fallback { name: "Regular" value: 400 }
 fallback_only: false
+`,
+	);
+	await writeFixture(
+		repository,
+		'lang/Lib/gflanguages/data/languages/en_Latn.textproto',
+		`id: "en_Latn"
+language: "en"
+script: "Latn"
+name: "English"
+autonym: "English"
+exemplar_chars {
+  base: "A {BC} 𐌀"
+  not_required: "𐌀"
+}
+sample_text {
+  styles: "All people are born free"
+  tester: "All people are born free and equal"
+}
+`,
+	);
+	await writeFixture(
+		repository,
+		'lang/Lib/gflanguages/data/languages/zy_Latn.textproto',
+		`id: "zy_Latn"
+language: "zy"
+script: "Latn"
+name: "Sample-only test language"
+sample_text {
+  styles: "A 🫠."
+}
+`,
+	);
+	await writeFixture(
+		repository,
+		'lang/Lib/gflanguages/data/languages/zz_Latn.textproto',
+		`id: "zz_Latn"
+language: "zz"
+script: "Latn"
+name: "Normalization test language"
+exemplar_chars {
+  base: "{Å} 🫠"
+}
 `,
 	);
 	return {
@@ -397,9 +455,9 @@ describe('registry ingestion', () => {
 		const registry = await temporaryDirectory('font-files-registry');
 		const snapshot = openGitSnapshot(source.repository, source.revision);
 
-		await expect(generateFontFiles(snapshot, registry)).resolves.toEqual([
-			'example',
-		]);
+		await expect(
+			generateFontFiles(snapshot, registry, TEST_LANGUAGES),
+		).resolves.toEqual(['example']);
 		expect(
 			await readJson(
 				join(registry, 'families/fontsource/example/metadata.json'),
@@ -409,6 +467,7 @@ describe('registry ingestion', () => {
 			status: 'active',
 			classifications: ['display', 'sans-serif'],
 			tags: ['theme/stencil'],
+			languages: ['en_Latn'],
 			provenance: {
 				type: 'github',
 				repository: 'fontsource/font-files',
@@ -497,7 +556,29 @@ describe('registry ingestion', () => {
 		).toMatchObject({
 			classifications: ['sans-serif'],
 			tags: ['expressive/business'],
+			languages: ['en_Latn'],
+			primaryLanguage: 'en_Latn',
+			primaryScript: 'Latn',
+			sampleText: {
+				styles: 'All people are born free',
+				tester: 'All people are born free and equal',
+			},
 			provenance: { revision: google.revision },
+		});
+		expect(await readJson(join(registry, 'languages.json'))).toMatchObject({
+			en_Latn: {
+				language: 'en',
+				script: 'Latn',
+				name: 'English',
+				autonym: 'English',
+				requiredCodepoints: [65, 66, 67],
+			},
+			zy_Latn: {
+				requiredCodepoints: [65, 129_760],
+			},
+			zz_Latn: {
+				requiredCodepoints: [65, 197, 778, 129_760],
+			},
 		});
 		expect(
 			await readJson(

@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Serif Ahom",
 	"id": "noto-serif-ahom",
+	"languages": [
+		"aho_Ahom",
+		"sa_Ahom"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ahom)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Ahom",
 	"project": {
 		"repository": "https://github.com/notofonts/ahom",
 		"revision": "fb3e25e81eb2a7d8301ddd86085f60a4b2a88d73"

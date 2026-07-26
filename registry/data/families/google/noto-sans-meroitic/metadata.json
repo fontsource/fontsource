@@ -14,11 +14,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Meroitic",
 	"id": "noto-sans-meroitic",
+	"languages": [
+		"xmr_Mero"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/meroitic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mero",
 	"project": {
 		"repository": "https://github.com/notofonts/meroitic",
 		"revision": "d682685c8c0ef7ef9d1091a6dad7d8ce2843e565"
@@ -30,6 +34,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "𐦣𐦤𐦥𐦦𐦮𐦯𐦰 𐦀𐦁𐦂𐦃𐦄𐦅𐦆 𐦱𐦲𐦳𐦴𐦵𐦶𐦷 𐦾𐦿𐦧𐦨𐦩𐦪𐦫 𐦑𐦒𐦓𐦔𐦠𐦡𐦢 𐦜𐦝𐦞𐦟𐦎𐦏𐦐",
+		"tester": "𐦀𐦁𐦂𐦃𐦄𐦅𐦆 𐦜𐦝𐦞𐦟𐦎𐦏𐦐 𐦣𐦤𐦥𐦦𐦮𐦯𐦰 𐦾𐦿𐦧𐦨𐦩𐦪𐦫 𐦱𐦲𐦳𐦴𐦵𐦶𐦷 𐦑𐦒𐦓𐦔𐦠𐦡𐦢 𐦇𐦈𐦉𐦊𐦋𐦌𐦍 𐦕𐦖𐦗𐦘𐦙𐦚𐦛"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/notosansmeroitic/NotoSansMeroitic-Regular.ttf",

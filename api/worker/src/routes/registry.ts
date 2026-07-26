@@ -7,6 +7,9 @@ import {
 	RegistryFamilyDetailSchema,
 	RegistryIdParamSchema,
 	RegistryInfoSchema,
+	RegistryLanguageIdParamSchema,
+	RegistryLanguageSchema,
+	RegistryLanguagesSchema,
 	RegistrySourceParamSchema,
 	RegistrySubsetSchema,
 	RegistrySubsetsSchema,
@@ -97,6 +100,46 @@ export class GetRegistryFamilyRoute extends OpenAPIRoute {
 			c,
 			`families/${data.params.id}.json`,
 			'Not Found. Registry family does not exist.',
+		);
+	}
+}
+
+export class ListRegistryLanguagesRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['Registry'],
+		operationId: 'listRegistryLanguages',
+		summary: 'List registry languages',
+		responses: registryResponses(RegistryLanguagesSchema),
+	};
+
+	async handle(c: AppContext) {
+		return getRegistryView(c, 'languages.json');
+	}
+}
+
+export class GetRegistryLanguageRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['Registry'],
+		operationId: 'getRegistryLanguage',
+		summary: 'Get a registry language',
+		request: {
+			params: RegistryLanguageIdParamSchema,
+		},
+		responses: {
+			...registryResponses(RegistryLanguageSchema),
+			'404': {
+				description: 'Registry language not found',
+				...contentJson(ErrorResponseSchema),
+			},
+		},
+	};
+
+	async handle(c: AppContext) {
+		const data = await this.getValidatedData<typeof this.schema>();
+		return getRegistryView(
+			c,
+			`languages/${data.params.id}.json`,
+			'Not Found. Registry language does not exist.',
 		);
 	}
 }

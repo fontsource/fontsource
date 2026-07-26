@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Bassa Vah",
 	"id": "noto-sans-bassa-vah",
+	"languages": [
+		"bsq_Bass"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/bassa-vah)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Bass",
 	"project": {
 		"repository": "https://github.com/notofonts/bassa-vah",
 		"revision": "bed459c24b109a612b53f44542d4fe6f9c754641"

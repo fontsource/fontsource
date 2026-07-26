@@ -10,11 +10,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Gujarati UI",
 	"id": "noto-sans-gujarati-ui",
+	"languages": [
+		"gu_Gujr"
+	],
 	"license": {
 		"attribution": "Copyright 2019 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Gujr",
 	"project": {
 		"repository": "https://github.com/notofonts/gujarati",
 		"revision": "442d6c6956f31b4a858c58eb685e2bf9601cb5a9"

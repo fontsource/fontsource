@@ -10,11 +10,20 @@
 	"designer": "Google",
 	"family": "Noto Serif Myanmar",
 	"id": "noto-serif-myanmar",
+	"languages": [
+		"kht_Mymr",
+		"ksw_Mymr",
+		"mnw_Mymr",
+		"my_Mymr",
+		"pwo_Mymr",
+		"shn_Mymr"
+	],
 	"license": {
 		"attribution": "Copyright 2016 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mymr",
 	"project": {
 		"repository": "https://github.com/notofonts/myanmar",
 		"revision": "57be35a771cf5da0271db8521c48a1cfdc4d2126"

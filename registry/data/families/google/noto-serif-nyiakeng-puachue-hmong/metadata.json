@@ -10,11 +10,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Nyiakeng Puachue Hmong",
 	"id": "noto-serif-nyiakeng-puachue-hmong",
+	"languages": [
+		"hmn_Hmnp"
+	],
 	"license": {
 		"attribution": "Copyright 2020 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hmnp",
 	"project": {
 		"repository": "https://github.com/notofonts/nyiakeng-puachue-hmong",
 		"revision": "6f39c5843fe2f459973c3cd57dc82ca09cccbab0"

@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Old Persian",
 	"id": "noto-sans-old-persian",
+	"languages": [
+		"peo_Xpeo",
+		"sa_Xpeo"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-persian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Xpeo",
 	"project": {
 		"repository": "https://github.com/notofonts/old-persian",
 		"revision": "27b5583d16934490eda51cb723316f65d8b8379b"

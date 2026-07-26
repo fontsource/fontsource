@@ -10,11 +10,18 @@
 	"designer": "Google",
 	"family": "Noto Sans Telugu UI",
 	"id": "noto-sans-telugu-ui",
+	"languages": [
+		"gon_Telu",
+		"lmn_Telu",
+		"te_Telu",
+		"wbq_Telu"
+	],
 	"license": {
 		"attribution": "Copyright 2019 Google LLC. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Telu",
 	"project": {
 		"repository": "https://github.com/notofonts/telugu",
 		"revision": "0d8cb2a9550d76f4349915664f1115ea4c42f4ed"

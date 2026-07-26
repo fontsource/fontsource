@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Sunuwar",
 	"id": "noto-sans-sunuwar",
+	"languages": [
+		"suz_Sunu"
+	],
 	"license": {
 		"attribution": "Copyright 2021 The Noto Sunuwar Project Authors (https://github.com/ScriptEncodingInitiative/sunuwar)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sunu",
 	"project": {
 		"repository": "https://github.com/notofonts/sunuwar",
 		"revision": "981b7c03c93f203c838b280c232de9166e8fb8c6"

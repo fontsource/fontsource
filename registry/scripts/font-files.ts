@@ -4,10 +4,12 @@ import { join } from 'node:path';
 import { createFontContext, inspectFont } from '@fontsource-utils/core';
 import type { GitSnapshot } from './git.ts';
 import { normalizeInspection } from './inspection.ts';
+import { createLanguageMatcher, type FontCoverage } from './languages.ts';
 import {
 	type FamilyMetadata,
 	familyInspectionSchema,
 	familyMetadataSchema,
+	type LanguageCatalog,
 	type SourceFamily,
 	sourceFamilySchema,
 } from './schema.ts';
@@ -59,6 +61,7 @@ const writeFamily = async (
 	source: FontFilesFamily,
 	root: string,
 	ctx: ReturnType<typeof createFontContext>,
+	matchLanguages: ReturnType<typeof createLanguageMatcher>,
 ): Promise<void> => {
 	const { directory, files, metadata: sourceMetadata } = source;
 	const licensePath = `${directory}/license.txt`;
@@ -85,6 +88,7 @@ const writeFamily = async (
 
 	const sourceFiles: FamilyMetadata['sourceFiles'] = [];
 	const inspectionFiles: Array<ReturnType<typeof normalizeInspection>> = [];
+	const coverage: FontCoverage[] = [];
 	for (const sourceFile of declaredFiles.toSorted((left, right) =>
 		compareStrings(left.path, right.path),
 	)) {
@@ -95,14 +99,19 @@ const writeFamily = async (
 			size: contents.byteLength,
 			...(sourceFile.variant ? { variant: sourceFile.variant } : {}),
 		});
-		inspectionFiles.push(
-			normalizeInspection(
-				sourceFile.path,
-				await inspectFont(ctx, new Uint8Array(contents)),
-			),
-		);
+		const inspected = await inspectFont(ctx, new Uint8Array(contents));
+		const normalized = normalizeInspection(sourceFile.path, inspected);
+		inspectionFiles.push(normalized);
+		coverage.push({
+			cmapSha256: normalized.cmap.sha256,
+			unicodeRanges: inspected.unicodeRanges,
+		});
 	}
 	const lastChanged = snapshot.lastChanged(directory);
+	const languages =
+		sourceMetadata.languages.length > 0
+			? sourceMetadata.languages
+			: matchLanguages(coverage);
 	const metadata = familyMetadataSchema.parse({
 		...sourceMetadata,
 		provider: 'fontsource',
@@ -118,6 +127,7 @@ const writeFamily = async (
 			new Set(sourceMetadata.classifications),
 		).toSorted(compareStrings),
 		tags: Array.from(new Set(sourceMetadata.tags)).toSorted(compareStrings),
+		languages: Array.from(new Set(languages)).toSorted(compareStrings),
 		declaredSubsets: Array.from(
 			new Set(sourceMetadata.declaredSubsets),
 		).toSorted(compareStrings),
@@ -149,12 +159,14 @@ const writeFamily = async (
 export const generateFontFiles = async (
 	snapshot: GitSnapshot,
 	root: string,
+	languages: LanguageCatalog,
 ): Promise<string[]> => {
 	const families = readFamilies(snapshot);
 	const ctx = createFontContext();
+	const matchLanguages = createLanguageMatcher(languages);
 	try {
 		for (const family of families) {
-			await writeFamily(snapshot, family, root, ctx);
+			await writeFamily(snapshot, family, root, ctx, matchLanguages);
 		}
 	} finally {
 		ctx.destroy();

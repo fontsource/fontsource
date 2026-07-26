@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Chakma",
 	"id": "noto-sans-chakma",
+	"languages": [
+		"ccp_Cakm"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/chakma)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Cakm",
 	"project": {
 		"repository": "https://github.com/notofonts/chakma",
 		"revision": "239fe3aac753fa2007fa34fa4897a6b520994e88"

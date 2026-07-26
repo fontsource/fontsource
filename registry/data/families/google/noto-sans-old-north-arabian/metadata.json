@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Old North Arabian",
 	"id": "noto-sans-old-north-arabian",
+	"languages": [
+		"aii_Narb",
+		"xna_Narb"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-north-arabian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Narb",
 	"project": {
 		"repository": "https://github.com/notofonts/old-north-arabian",
 		"revision": "da9dd37a1d09e6c3b3c17d7f3d907c3ba8dc1a76"

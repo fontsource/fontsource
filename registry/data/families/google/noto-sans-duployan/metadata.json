@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Duployan",
 	"id": "noto-sans-duployan",
+	"languages": [
+		"chn_Dupl",
+		"fr_Dupl"
+	],
 	"license": {
 		"attribution": "Copyright 2018-2019, 2022-2023 David Corbett. Copyright 2019-2022 Google LLC. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Dupl",
 	"project": {
 		"repository": "https://github.com/notofonts/duployan",
 		"revision": "9626869cc851873c96eafd019fab55d984bbebc0"
@@ -28,6 +33,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "𛱔𛱕𛱖𛱗𛱘𛱙𛱚 𛱩𛱪𛱰𛱱𛱲𛱳𛱴 𛰀𛰁𛰂𛰃𛰄𛰅𛰆 𛲔𛲕𛲖𛲗𛲘𛲙𛲜 𛰎𛰏𛰐𛰑𛰒𛰓𛰔 𛱢𛱣𛱤𛱥𛱦𛱧𛱨",
+		"tester": "𛰀𛰁𛰂𛰃𛰄𛰅𛰆 𛰱𛰲𛰳𛰴𛰵𛰶𛰷 𛱼𛲀𛲁𛲂𛲃𛲄𛲅 𛰎𛰏𛰐𛰑𛰒𛰓𛰔 𛱆𛱇𛱈𛱉𛱊𛱋𛱌 𛱢𛱣𛱤𛱥𛱦𛱧𛱨 𛱔𛱕𛱖𛱗𛱘𛱙𛱚 𛲔𛲕𛲖𛲗𛲘𛲙𛲜 𛱩𛱪𛱰𛱱𛱲𛱳𛱴 𛰜𛰝𛰞𛰟𛰠𛰡𛰢"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/notosansduployan/NotoSansDuployan-Bold.ttf",

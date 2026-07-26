@@ -10,11 +10,20 @@
 	"designer": "Google",
 	"family": "Noto Sans Myanmar UI",
 	"id": "noto-sans-myanmar-ui",
+	"languages": [
+		"kht_Mymr",
+		"ksw_Mymr",
+		"mnw_Mymr",
+		"my_Mymr",
+		"pwo_Mymr",
+		"shn_Mymr"
+	],
 	"license": {
 		"attribution": "Copyright 2015 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mymr",
 	"project": {
 		"repository": "https://github.com/notofonts/myanmar",
 		"revision": "ed95e81c048ccf83bcbba0d409a78153bfa233d7"

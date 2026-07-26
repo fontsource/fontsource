@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Cherokee",
 	"id": "noto-sans-cherokee",
+	"languages": [
+		"chr_Cher"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/cherokee)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Cher",
 	"project": {
 		"repository": "https://github.com/notofonts/cherokee",
 		"revision": "a8a61f7f537960c468130795eaa168f4a594266e"

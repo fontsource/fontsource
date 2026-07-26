@@ -10,11 +10,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Kannada UI",
 	"id": "noto-sans-kannada-ui",
+	"languages": [
+		"kn_Knda",
+		"tcy_Knda"
+	],
 	"license": {
 		"attribution": "Copyright 2018 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Knda",
 	"project": {
 		"repository": "https://github.com/notofonts/kannada",
 		"revision": "d56201c60822b83c3928072dc58d8f62c7016a45"

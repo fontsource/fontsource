@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Ogham",
 	"id": "noto-sans-ogham",
+	"languages": [
+		"sga_Ogam"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ogham)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Ogam",
 	"project": {
 		"repository": "https://github.com/notofonts/ogham",
 		"revision": "f9ef276aefef0c9442f613db21f69a02d4102888"

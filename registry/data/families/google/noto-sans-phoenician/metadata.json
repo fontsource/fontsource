@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Phoenician",
 	"id": "noto-sans-phoenician",
+	"languages": [
+		"aii_Phnx",
+		"phn_Phnx"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/phoenician)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Phnx",
 	"project": {
 		"repository": "https://github.com/notofonts/phoenician",
 		"revision": "42000fa28062130c663c83e38fe9df00f9a85a4f"

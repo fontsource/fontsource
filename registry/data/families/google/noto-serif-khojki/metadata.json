@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Khojki",
 	"id": "noto-serif-khojki",
+	"languages": [
+		"sd_Khoj"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khojki)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Khoj",
 	"project": {
 		"repository": "https://github.com/notofonts/khojki",
 		"revision": "02e25bf94664812076be4fa7dd1d688641e4bf8a"

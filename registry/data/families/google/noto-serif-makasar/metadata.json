@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Makasar",
 	"id": "noto-serif-makasar",
+	"languages": [
+		"mak_Maka"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/makasar)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Maka",
 	"project": {
 		"repository": "https://github.com/notofonts/makasar",
 		"revision": "e7902cc5d89ed7d091c247c855f516fe49f8b6ac"

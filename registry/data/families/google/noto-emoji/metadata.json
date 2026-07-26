@@ -10,6 +10,7 @@
 	"designer": "Google",
 	"family": "Noto Emoji",
 	"id": "noto-emoji",
+	"languages": [],
 	"license": {
 		"attribution": "Copyright 2013, 2022 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
@@ -22,6 +23,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🐦‍🔥🍋‍🟩🍄‍🟫🙂‍↕️🕊️🏆😻🌟🧿🍀🎨🍜",
+		"tester": "🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🐦‍🔥🍋‍🟩🍄‍🟫🙂‍↕️🕊️🏆😻🌟🧿🍀🎨🍜"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/notoemoji/NotoEmoji[wght].ttf",

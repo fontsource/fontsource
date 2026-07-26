@@ -15,11 +15,24 @@
 	"displayName": "Noto Serif Traditional Chinese",
 	"family": "Noto Serif TC",
 	"id": "noto-serif-tc",
+	"languages": [
+		"cjy_Hant",
+		"gan_Hant",
+		"hak_Hant",
+		"hsn_Hant",
+		"lzh_Hant",
+		"nan_Hant",
+		"wuu_Hant",
+		"yue_Hant",
+		"za_Hant",
+		"zh_Hant"
+	],
 	"license": {
 		"attribution": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hant",
 	"project": {
 		"repository": "https://www.github.com/notofonts/noto-cjk",
 		"revision": "985fa52c81c1d6692ccdd82bc3656e8fb932fd89"

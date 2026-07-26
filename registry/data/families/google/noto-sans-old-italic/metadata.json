@@ -12,11 +12,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Old Italic",
 	"id": "noto-sans-old-italic",
+	"languages": [
+		"ett_Ital",
+		"osc_Ital",
+		"xum_Ital"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-italic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Ital",
 	"project": {
 		"repository": "https://github.com/notofonts/old-italic",
 		"revision": "486912f34b04a5ce9eb157ab3045ac665b6c36a8"

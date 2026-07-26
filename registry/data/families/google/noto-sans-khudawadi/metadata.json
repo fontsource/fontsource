@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Khudawadi",
 	"id": "noto-sans-khudawadi",
+	"languages": [
+		"sd_Sind"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khudawadi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sind",
 	"project": {
 		"repository": "https://github.com/notofonts/khudawadi",
 		"revision": "842e04f50a19bc13847da26afbbf3ccac2ccc125"

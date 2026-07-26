@@ -12,11 +12,17 @@
 	"designer": "Google",
 	"family": "Noto Serif Sinhala",
 	"id": "noto-serif-sinhala",
+	"languages": [
+		"pi_Sinh",
+		"sa_Sinh",
+		"si_Sinh"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sinhala)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sinh",
 	"project": {
 		"repository": "https://github.com/notofonts/sinhala",
 		"revision": "add62c1ebbbd54bcb291eb30aeea22400f839bfa"

@@ -10,11 +10,15 @@
 	"designer": "Danh Hong",
 	"family": "Khmer",
 	"id": "khmer",
+	"languages": [
+		"km_Khmr"
+	],
 	"license": {
 		"attribution": "Copyright (c) 2010, Danh Hong (khmertype.blogspot.com danhhong@gmail.com), with Reserved Font Name Khmer OS. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Khmr",
 	"project": {
 		"repository": "https://github.com/danhhong/Khmer",
 		"revision": "d72e92059891c386fa3e8851948ac042ba947f0e"

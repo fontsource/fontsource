@@ -14,11 +14,18 @@
 	"designer": "Google",
 	"family": "Noto Sans Brahmi",
 	"id": "noto-sans-brahmi",
+	"languages": [
+		"aii_Brah",
+		"pi_Brah",
+		"pka_Brah",
+		"sa_Brah"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/brahmi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Brah",
 	"project": {
 		"repository": "https://github.com/notofonts/brahmi",
 		"revision": "7803437c1a61033137e89a7860cccb8f735a6088"

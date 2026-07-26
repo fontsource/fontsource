@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Hanunoo",
 	"id": "noto-sans-hanunoo",
+	"languages": [
+		"hnn_Hano"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/hanunoo)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hano",
 	"project": {
 		"repository": "https://github.com/notofonts/hanunoo",
 		"revision": "5799d6111ecc607bf5fcfdb9ce8b6dcb1712eef5"

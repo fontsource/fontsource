@@ -12,11 +12,18 @@
 	"designer": "Google",
 	"family": "Noto Sans Masaram Gondi",
 	"id": "noto-sans-masaram-gondi",
+	"languages": [
+		"esg_Gonm",
+		"gon_Gonm",
+		"sa_Gonm",
+		"wsg_Gonm"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/masaram-gondi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Gonm",
 	"project": {
 		"repository": "https://github.com/notofonts/masaram-gondi",
 		"revision": "aa688154eb5d517ed368e6905fbf1d2e087141a1"

@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Tai Le",
 	"id": "noto-sans-tai-le",
+	"languages": [
+		"tdd_Tale"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tai-le)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Tale",
 	"project": {
 		"repository": "https://github.com/notofonts/tai-le",
 		"revision": "297f30f9460ad4d16f64ed70f659320e415ccee1"

@@ -15,11 +15,15 @@
 	"displayName": "Noto Serif Korean",
 	"family": "Noto Serif KR",
 	"id": "noto-serif-kr",
+	"languages": [
+		"ko_Kore"
+	],
 	"license": {
 		"attribution": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Kore",
 	"project": {
 		"repository": "https://www.github.com/notofonts/noto-cjk",
 		"revision": "985fa52c81c1d6692ccdd82bc3656e8fb932fd89"

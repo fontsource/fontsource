@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Deseret",
 	"id": "noto-sans-deseret",
+	"languages": [
+		"en_Dsrt"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/deseret)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Dsrt",
 	"project": {
 		"repository": "https://github.com/notofonts/deseret",
 		"revision": "fab3d4d90de5f00b318f70a2d0c247402348fd8f"

@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Lydian",
 	"id": "noto-sans-lydian",
+	"languages": [
+		"xld_Lydi"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/lydian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Lydi",
 	"project": {
 		"repository": "https://github.com/notofonts/lydian",
 		"revision": "fb2444aa3ac4b7e4bd8d5a0e971895f6545aa418"

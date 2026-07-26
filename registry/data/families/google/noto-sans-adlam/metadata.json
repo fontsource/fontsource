@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Adlam",
 	"id": "noto-sans-adlam",
+	"languages": [
+		"ff_Adlm",
+		"fuf_Adlm"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/adlam)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Adlm",
 	"project": {
 		"repository": "https://github.com/notofonts/adlam",
 		"revision": "581ccd2bf966d0b79a5285be7ea328f112beda7e"

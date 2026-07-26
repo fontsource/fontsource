@@ -13,11 +13,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Old Permic",
 	"id": "noto-sans-old-permic",
+	"languages": [
+		"koi_Perm",
+		"kv_Perm"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-permic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Perm",
 	"project": {
 		"repository": "https://github.com/notofonts/old-permic",
 		"revision": "080df8840211dde6b17fc87957950358b723e5e0"
@@ -29,6 +34,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "𐍐𐍑𐍒𐍓𐍔𐍕𐍖 𐍞𐍟𐍠𐍡𐍢𐍣𐍤 𐍥𐍦𐍧𐍨𐍩𐍪𐍫 𐍗𐍘𐍙𐍚𐍛𐍜𐍝 𐍬𐍭𐍮𐍯𐍰𐍱𐍲",
+		"tester": "𐍐𐍑𐍒𐍓𐍔𐍕𐍖 𐍞𐍟𐍠𐍡𐍢𐍣𐍤 𐍥𐍦𐍧𐍨𐍩𐍪𐍫 𐍗𐍘𐍙𐍚𐍛𐍜𐍝 𐍬𐍭𐍮𐍯𐍰𐍱𐍲"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/notosansoldpermic/NotoSansOldPermic-Regular.ttf",

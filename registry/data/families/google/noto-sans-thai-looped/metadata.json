@@ -12,11 +12,22 @@
 	"designer": "Google",
 	"family": "Noto Sans Thai Looped",
 	"id": "noto-sans-thai-looped",
+	"languages": [
+		"kdt_Thai",
+		"kxm_Thai",
+		"lcp_Thai",
+		"lwl_Thai",
+		"pi_Thai",
+		"sou_Thai",
+		"th_Thai",
+		"tts_Thai"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/thai)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Thai",
 	"project": {
 		"repository": "https://github.com/notofonts/thai",
 		"revision": "c62000b1b2328aa5e08470c1924ac9987fdb83b9"

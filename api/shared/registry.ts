@@ -1,6 +1,9 @@
 import { z } from 'zod';
 
 const IdSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+const LanguageIdSchema = z
+	.string()
+	.regex(/^[a-z][a-z0-9]*(?:[-_][A-Za-z0-9]+)*$/);
 const TagIdSchema = z
 	.string()
 	.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*\/[a-z0-9]+(?:-[a-z0-9]+)*$/);
@@ -18,6 +21,12 @@ const UnicodeRangeSchema = z.tuple([
 	z.string().regex(/^[0-9A-F]+$/),
 	z.string().regex(/^[0-9A-F]+$/),
 ]);
+const ScriptSchema = z.string().regex(/^[A-Z][a-z]{3}$/);
+
+const SampleTextSchema = z.strictObject({
+	styles: z.string().min(1).optional(),
+	tester: z.string().min(1).optional(),
+});
 
 const RangeShape = {
 	min: z.number(),
@@ -40,6 +49,9 @@ const FamilySummarySchema = z.strictObject({
 	status: z.enum(['active', 'deprecated']),
 	classifications: z.array(ClassificationSchema).min(1),
 	tags: z.array(TagIdSchema),
+	languages: z
+		.array(LanguageIdSchema)
+		.describe('Semantic language IDs, distinct from package subsets'),
 	sourceModified: z.iso.date(),
 	declaredSubsets: z.array(IdSchema),
 	variable: z.boolean(),
@@ -66,6 +78,7 @@ const LocalizedContentSchema = z.strictObject({
 
 export const RegistryInfoSchema = z.strictObject({
 	familyCount: z.number().int().nonnegative(),
+	languageCount: z.number().int().nonnegative(),
 	subsetCount: z.number().int().nonnegative(),
 });
 
@@ -77,6 +90,9 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.omit({
 	variable: true,
 	axes: true,
 }).extend({
+	primaryLanguage: LanguageIdSchema.optional(),
+	primaryScript: ScriptSchema.optional(),
+	sampleText: SampleTextSchema.optional(),
 	designer: z.string().optional(),
 	dateAdded: z.iso.date().optional(),
 	license: z.strictObject({
@@ -97,6 +113,23 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.omit({
 
 export const RegistrySubsetsSchema = z.strictObject({
 	subsets: z.array(IdSchema),
+});
+
+const RegistryLanguageSummarySchema = z.strictObject({
+	id: LanguageIdSchema,
+	language: z.string().min(1).describe('BCP 47 language subtag'),
+	script: ScriptSchema.describe('ISO 15924 script code'),
+	name: z.string().min(1),
+	preferredName: z.string().min(1).optional(),
+	autonym: z.string().min(1).optional(),
+});
+
+export const RegistryLanguagesSchema = z.strictObject({
+	languages: z.array(RegistryLanguageSummarySchema),
+});
+
+export const RegistryLanguageSchema = RegistryLanguageSummarySchema.extend({
+	sampleText: SampleTextSchema.optional(),
 });
 
 export const RegistrySubsetSchema = z.strictObject({
@@ -139,4 +172,8 @@ export const RegistrySourceParamSchema = z.object({
 
 export const RegistryIdParamSchema = z.object({
 	id: IdSchema.describe('Registry family or subset identifier'),
+});
+
+export const RegistryLanguageIdParamSchema = z.object({
+	id: LanguageIdSchema.describe('Registry language identifier'),
 });

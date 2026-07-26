@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Meetei Mayek",
 	"id": "noto-sans-meetei-mayek",
+	"languages": [
+		"mni_Mtei",
+		"sa_Mtei"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/meetei-mayek)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mtei",
 	"project": {
 		"repository": "https://github.com/notofonts/meetei-mayek",
 		"revision": "0df27325288cee071d2f5d06016b0de1e6738aa5"

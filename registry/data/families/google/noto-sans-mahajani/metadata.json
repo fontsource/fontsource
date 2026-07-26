@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Mahajani",
 	"id": "noto-sans-mahajani",
+	"languages": [
+		"hi_Mahj"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/mahajani)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mahj",
 	"project": {
 		"repository": "https://github.com/notofonts/mahajani",
 		"revision": "6af195b21b1841f6b842af2a3d2f6b252718a70d"

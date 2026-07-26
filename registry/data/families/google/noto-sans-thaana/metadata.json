@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Thaana",
 	"id": "noto-sans-thaana",
+	"languages": [
+		"dv_Thaa"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/thaana)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Thaa",
 	"project": {
 		"repository": "https://github.com/notofonts/thaana",
 		"revision": "18a413df01de7199c95d4115b8cd5ad492b9819c"

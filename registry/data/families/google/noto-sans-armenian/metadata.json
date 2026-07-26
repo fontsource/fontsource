@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Armenian",
 	"id": "noto-sans-armenian",
+	"languages": [
+		"hy_Armn",
+		"hyw_Armn"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/armenian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Armn",
 	"project": {
 		"repository": "https://github.com/notofonts/armenian",
 		"revision": "6eda0736b79b405c7151fd558c83ecec1c9c534c"

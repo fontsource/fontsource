@@ -11,6 +11,7 @@
 	"designer": "Lasse Fister",
 	"family": "Libre Barcode EAN13 Text",
 	"id": "libre-barcode-ean13-text",
+	"languages": [],
 	"license": {
 		"attribution": "Copyright 2017-2020 The Libre Barcode Project Authors (https://github.com/graphicore/librebarcode)",
 		"id": "OFL-1.1",
@@ -27,6 +28,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "abcdefghij x012345678 23456789 klmnopqrst",
+		"tester": "abcdefghij x012345678 23456789 klmnopqrst"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/librebarcodeean13text/LibreBarcodeEAN13Text-Regular.ttf",

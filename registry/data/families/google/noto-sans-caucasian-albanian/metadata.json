@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Caucasian Albanian",
 	"id": "noto-sans-caucasian-albanian",
+	"languages": [
+		"lez_Aghb"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/caucasian-albanian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Aghb",
 	"project": {
 		"repository": "https://github.com/notofonts/caucasian-albanian",
 		"revision": "fe112d99202d347b106fe63ebc6b10c3655e00cd"
@@ -28,6 +32,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "𐕗𐕘𐕙𐔷𐔸𐔹𐔺 𐔻𐔼𐔽𐕌𐕍𐕎𐕏 𐕂𐕃𐕄𐕅𐕆𐕇𐕈 𐔰𐔱𐔲𐔳𐔴𐔵𐔶 𐕡𐕢𐕣𐔾𐔿𐕀𐕁 𐕉𐕊𐕋𐕚𐕛𐕜𐕝",
+		"tester": "𐔰𐔱𐔲𐔳𐔴𐔵𐔶 𐕡𐕢𐕣𐔾𐔿𐕀𐕁 𐔻𐔼𐔽𐕌𐕍𐕎𐕏 𐕉𐕊𐕋𐕚𐕛𐕜𐕝 𐕂𐕃𐕄𐕅𐕆𐕇𐕈 𐕗𐕘𐕙𐔷𐔸𐔹𐔺 𐕞𐕟𐕠𐕓𐕔𐕕𐕖"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/notosanscaucasianalbanian/NotoSansCaucasianAlbanian-Regular.ttf",

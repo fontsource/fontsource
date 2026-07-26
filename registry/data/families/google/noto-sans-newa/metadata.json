@@ -12,11 +12,20 @@
 	"designer": "Google",
 	"family": "Noto Sans Newa",
 	"id": "noto-sans-newa",
+	"languages": [
+		"bn_Newa",
+		"hi_Newa",
+		"mai_Newa",
+		"ne_Newa",
+		"new_Newa",
+		"sa_Newa"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/newa)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Newa",
 	"project": {
 		"repository": "https://github.com/notofonts/newa",
 		"revision": "5a902c1fb6abf546e88d61af912d0b40f2a55de3"

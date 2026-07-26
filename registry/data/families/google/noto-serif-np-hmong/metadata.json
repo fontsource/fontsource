@@ -12,11 +12,15 @@
 	"displayName": "Noto Serif Nyiakeng Puachue Hmong",
 	"family": "Noto Serif NP Hmong",
 	"id": "noto-serif-np-hmong",
+	"languages": [
+		"hmn_Hmnp"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nyiakeng-puachue-hmong)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hmnp",
 	"project": {
 		"repository": "https://github.com/notofonts/nyiakeng-puachue-hmong",
 		"revision": "2c945bb9c314d607d45c3120fcb35701349d9c87"

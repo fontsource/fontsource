@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Hanifi Rohingya",
 	"id": "noto-sans-hanifi-rohingya",
+	"languages": [
+		"rhg_Rohg"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/hanifi-rohingya)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Rohg",
 	"project": {
 		"repository": "https://github.com/notofonts/hanifi-rohingya",
 		"revision": "48ba61fd61998b8378d977bc999bf5caf7c80079"

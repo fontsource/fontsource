@@ -12,11 +12,21 @@
 	"designer": "Google",
 	"family": "Noto Sans Ethiopic",
 	"id": "noto-sans-ethiopic",
+	"languages": [
+		"am_Ethi",
+		"byn_Ethi",
+		"gez_Ethi",
+		"om_Ethi",
+		"ti_Ethi",
+		"tig_Ethi",
+		"wal_Ethi"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ethiopic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Ethi",
 	"project": {
 		"repository": "https://github.com/notofonts/ethiopic",
 		"revision": "1cc6933c58b7c42bbade15d6c7173897c24759e3"

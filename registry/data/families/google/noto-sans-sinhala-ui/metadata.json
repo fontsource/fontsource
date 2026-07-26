@@ -10,11 +10,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Sinhala UI",
 	"id": "noto-sans-sinhala-ui",
+	"languages": [
+		"pi_Sinh",
+		"sa_Sinh",
+		"si_Sinh"
+	],
 	"license": {
 		"attribution": "Copyright 2016 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sinh",
 	"project": {
 		"repository": "https://github.com/notofonts/sinhala",
 		"revision": "032355e96de5bac83fd996535af3d13b1fbfeccf"

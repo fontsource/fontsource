@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Nag Mundari",
 	"id": "noto-sans-nag-mundari",
+	"languages": [
+		"unr_Nagm"
+	],
 	"license": {
 		"attribution": "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/nag-mundari)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Nagm",
 	"project": {
 		"repository": "https://github.com/notofonts/nag-mundari",
 		"revision": "64846ef2e38f46694aca851f48837ed2635994a4"

@@ -630,6 +630,7 @@ export type GetRegistryResponses = {
      */
     200: {
         familyCount: number;
+        languageCount: number;
         subsetCount: number;
     };
 };
@@ -742,6 +743,10 @@ export type ListRegistryFamiliesResponses = {
             status: 'active' | 'deprecated';
             classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
             tags: Array<string>;
+            /**
+             * Semantic language IDs, distinct from package subsets
+             */
+            languages: Array<string>;
             sourceModified: string;
             declaredSubsets: Array<string>;
             variable: boolean;
@@ -807,8 +812,18 @@ export type GetRegistryFamilyResponses = {
         status: 'active' | 'deprecated';
         classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
         tags: Array<string>;
+        /**
+         * Semantic language IDs, distinct from package subsets
+         */
+        languages: Array<string>;
         sourceModified: string;
         declaredSubsets: Array<string>;
+        primaryLanguage?: string;
+        primaryScript?: string;
+        sampleText?: {
+            styles?: string;
+            tester?: string;
+        };
         designer?: string;
         dateAdded?: string;
         license: {
@@ -864,6 +879,124 @@ export type GetRegistryFamilyResponses = {
 };
 
 export type GetRegistryFamilyResponse = GetRegistryFamilyResponses[keyof GetRegistryFamilyResponses];
+
+export type ListRegistryLanguagesData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/registry/languages';
+};
+
+export type ListRegistryLanguagesErrors = {
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type ListRegistryLanguagesError = ListRegistryLanguagesErrors[keyof ListRegistryLanguagesErrors];
+
+export type ListRegistryLanguagesResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        languages: Array<{
+            id: string;
+            /**
+             * BCP 47 language subtag
+             */
+            language: string;
+            /**
+             * ISO 15924 script code
+             */
+            script: string;
+            name: string;
+            preferredName?: string;
+            autonym?: string;
+        }>;
+    };
+};
+
+export type ListRegistryLanguagesResponse = ListRegistryLanguagesResponses[keyof ListRegistryLanguagesResponses];
+
+export type GetRegistryLanguageData = {
+    body?: never;
+    path: {
+        /**
+         * Registry language identifier
+         */
+        id: string;
+    };
+    query?: never;
+    url: '/v1/registry/languages/{id}';
+};
+
+export type GetRegistryLanguageErrors = {
+    /**
+     * Registry language not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistryLanguageError = GetRegistryLanguageErrors[keyof GetRegistryLanguageErrors];
+
+export type GetRegistryLanguageResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        id: string;
+        /**
+         * BCP 47 language subtag
+         */
+        language: string;
+        /**
+         * ISO 15924 script code
+         */
+        script: string;
+        name: string;
+        preferredName?: string;
+        autonym?: string;
+        sampleText?: {
+            styles?: string;
+            tester?: string;
+        };
+    };
+};
+
+export type GetRegistryLanguageResponse = GetRegistryLanguageResponses[keyof GetRegistryLanguageResponses];
 
 export type ListRegistrySubsetsData = {
     body?: never;

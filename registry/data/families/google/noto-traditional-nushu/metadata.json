@@ -13,11 +13,15 @@
 	"displayName": "Noto Traditional Nüshu",
 	"family": "Noto Traditional Nushu",
 	"id": "noto-traditional-nushu",
+	"languages": [
+		"mis_Nshu"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nushu)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Nshu",
 	"project": {
 		"repository": "https://github.com/notofonts/nushu",
 		"revision": "836ef3cc41d6f95e6f64e3f4a46ad260eb7e9d9d"

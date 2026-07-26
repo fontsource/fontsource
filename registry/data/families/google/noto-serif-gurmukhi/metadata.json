@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Gurmukhi",
 	"id": "noto-serif-gurmukhi",
+	"languages": [
+		"pa_Guru"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/gurmukhi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Guru",
 	"project": {
 		"repository": "https://github.com/notofonts/gurmukhi",
 		"revision": "231c5c6e9c622c4ef3792ead7a91045af0ee610a"

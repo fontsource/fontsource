@@ -6,6 +6,7 @@ import { parse } from 'csv-parse/sync';
 import TurndownService from 'turndown';
 import type { GitSnapshot } from './git.ts';
 import { normalizeInspection } from './inspection.ts';
+import { createLanguageMatcher, type FontCoverage } from './languages.ts';
 import { loadProtoType, parseProto } from './protobuf.ts';
 import {
 	axisRegistrySchema,
@@ -13,6 +14,8 @@ import {
 	type FamilyMetadata,
 	familyInspectionSchema,
 	familyMetadataSchema,
+	type LanguageCatalog,
+	languageCatalogSchema,
 	type Taxonomy,
 } from './schema.ts';
 import {
@@ -32,6 +35,27 @@ type GoogleFont = {
 	copyright?: string;
 };
 
+type GoogleSampleText = NonNullable<FamilyMetadata['sampleText']>;
+
+const SAMPLE_TEXT_FIELDS = [
+	'masthead_full',
+	'masthead_partial',
+	'styles',
+	'tester',
+	'poster_sm',
+	'poster_md',
+	'poster_lg',
+	'specimen_48',
+	'specimen_36',
+	'specimen_32',
+	'specimen_21',
+	'specimen_16',
+] as const;
+
+type GoogleRawSampleText = Partial<
+	Record<(typeof SAMPLE_TEXT_FIELDS)[number], string>
+>;
+
 type GoogleFamily = {
 	name: string;
 	designer: string;
@@ -44,6 +68,10 @@ type GoogleFamily = {
 	classifications: string[];
 	displayName?: string;
 	project?: { repository: string; revision?: string };
+	languages: string[];
+	primaryLanguage?: string;
+	primaryScript?: string;
+	sampleText?: GoogleSampleText;
 };
 
 type GoogleFamilyProto = {
@@ -63,6 +91,10 @@ type GoogleFamilyProto = {
 	classifications: string[];
 	display_name?: string;
 	source?: { repository_url?: string; commit?: string };
+	languages: string[];
+	primary_language?: string;
+	primary_script?: string;
+	sample_text?: GoogleRawSampleText;
 };
 
 type GoogleAxisProto = {
@@ -75,11 +107,42 @@ type GoogleAxisProto = {
 	precision?: number;
 };
 
+type GoogleLanguageProto = {
+	id?: string;
+	language?: string;
+	script?: string;
+	name?: string;
+	preferred_name?: string;
+	autonym?: string;
+	exemplar_chars?: {
+		base?: string;
+		not_required?: string;
+	};
+	sample_text?: GoogleRawSampleText;
+};
+
 const familyProto = loadProtoType(
 	'./proto/google-fonts.proto',
 	'google.fonts_public.FamilyProto',
 );
 const axisProto = loadProtoType('./proto/google-axis.proto', 'AxisProto');
+const languageProto = loadProtoType(
+	'./proto/google-languages.proto',
+	'google.languages_public.LanguageProto',
+);
+
+const normalizeSampleText = (
+	value: GoogleRawSampleText | undefined,
+): GoogleSampleText | undefined => {
+	const styles = value?.styles?.trim();
+	const tester = value?.tester?.trim();
+	return styles || tester
+		? {
+				...(styles ? { styles } : {}),
+				...(tester ? { tester } : {}),
+			}
+		: undefined;
+};
 
 const normalizeProject = (
 	repository: string | undefined,
@@ -100,6 +163,7 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 	const family = parseProto<GoogleFamilyProto>(familyProto, source);
 	const category = family.category.at(-1);
 	if (!category) throw new Error('Missing Google category');
+	const sampleText = normalizeSampleText(family.sample_text);
 
 	const fonts = family.fonts.map((font): GoogleFont => {
 		const style = font.style;
@@ -132,7 +196,89 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 		classifications: family.classifications ?? [],
 		...(family.display_name ? { displayName: family.display_name } : {}),
 		...(project ? { project } : {}),
+		languages: family.languages,
+		...(family.primary_language
+			? { primaryLanguage: family.primary_language }
+			: {}),
+		...(family.primary_script ? { primaryScript: family.primary_script } : {}),
+		...(sampleText ? { sampleText } : {}),
 	};
+};
+
+// Braces group grapheme sequences in Google exemplars. Font cmap support is
+// determined by both their original and NFC-normalized component codepoints.
+const exemplarCodepoints = (value: string): number[] => {
+	const codepoints = new Set<number>();
+	for (const token of value.split(/\s+/u)) {
+		if (!token) continue;
+		const characters =
+			token.length > 1 ? token.replace(/^\{+|\}+$/gu, '') : token;
+		for (const form of [characters, characters.normalize('NFC')]) {
+			for (const character of form) {
+				codepoints.add(character.codePointAt(0) as number);
+			}
+		}
+	}
+	return [...codepoints].toSorted((left, right) => left - right);
+};
+
+const sampleTextCodepoints = (
+	value: GoogleRawSampleText | undefined,
+): number[] => {
+	const codepoints = new Set<number>();
+	const text = SAMPLE_TEXT_FIELDS.map((field) => value?.[field] ?? '').join(
+		'\n',
+	);
+	for (const form of [text, text.normalize('NFC')]) {
+		for (const character of form) {
+			if (/[\p{P}\p{Z}\s]/u.test(character)) continue;
+			codepoints.add(character.codePointAt(0) as number);
+		}
+	}
+	return [...codepoints].toSorted((left, right) => left - right);
+};
+
+const readGoogleLanguages = (snapshot: GitSnapshot): LanguageCatalog => {
+	const paths = snapshot.paths.filter((path) =>
+		/^lang\/Lib\/gflanguages\/data\/languages\/[^/]+\.textproto$/.test(path),
+	);
+	if (paths.length === 0)
+		throw new Error('No Google language metadata files found');
+
+	const catalog: Record<string, unknown> = {};
+	for (const path of paths) {
+		const language = parseProto<GoogleLanguageProto>(
+			languageProto,
+			snapshot.read(path).toString('utf8'),
+		);
+		const id = language.id ?? '';
+		if (basename(path, '.textproto') !== id) {
+			throw new Error(`Google language ID does not match ${path}`);
+		}
+		const sampleText = normalizeSampleText(language.sample_text);
+		const base = language.exemplar_chars?.base;
+		const ignored = new Set(
+			exemplarCodepoints(language.exemplar_chars?.not_required ?? ''),
+		);
+		const requiredCodepoints = (
+			base
+				? exemplarCodepoints(base)
+				: sampleTextCodepoints(language.sample_text)
+		).filter((codepoint) => !ignored.has(codepoint));
+		catalog[id] = {
+			language: language.language,
+			script: language.script,
+			name: language.name,
+			...(language.preferred_name
+				? { preferredName: language.preferred_name }
+				: {}),
+			...(language.autonym ? { autonym: language.autonym } : {}),
+			...(sampleText ? { sampleText } : {}),
+			...(requiredCodepoints.length > 0 ? { requiredCodepoints } : {}),
+		};
+	}
+
+	return languageCatalogSchema.parse(catalog);
 };
 
 type FontClassification = FamilyMetadata['classifications'][number];
@@ -385,9 +531,11 @@ const inspectFamilySources = async (
 	id: string,
 	source: GoogleFamilyDirectory,
 	ctx: ReturnType<typeof createFontContext>,
+	matchLanguages: ReturnType<typeof createLanguageMatcher>,
 ): Promise<{
 	sourceFiles: FamilyMetadata['sourceFiles'];
 	inspectionFiles: FamilyInspection['files'];
+	languages: string[];
 }> => {
 	const { directory, family, files } = source;
 	const sourcePaths = new Set<string>();
@@ -413,11 +561,14 @@ const inspectFamilySources = async (
 
 	const sourceFiles: FamilyMetadata['sourceFiles'] = [];
 	const inspectionFiles: FamilyInspection['files'] = [];
+	const coverage: FontCoverage[] = [];
 
 	// Keep inspection sequential: a single source face can already be memory-heavy.
 	for (const path of Array.from(sourcePaths).toSorted(compareStrings)) {
 		const contents = snapshot.read(path);
 		const declared = declaredVariants.get(path);
+		const inspected = await inspectFont(ctx, new Uint8Array(contents));
+		const normalized = normalizeInspection(path, inspected);
 		sourceFiles.push({
 			path,
 			sha256: sha256(contents),
@@ -426,15 +577,21 @@ const inspectFamilySources = async (
 				? { variant: { weight: declared.weight, style: declared.style } }
 				: {}),
 		});
-		inspectionFiles.push(
-			normalizeInspection(
-				path,
-				await inspectFont(ctx, new Uint8Array(contents)),
-			),
-		);
+		inspectionFiles.push(normalized);
+		coverage.push({
+			cmapSha256: normalized.cmap.sha256,
+			unicodeRanges: inspected.unicodeRanges,
+		});
 	}
 
-	return { sourceFiles, inspectionFiles };
+	return {
+		sourceFiles,
+		inspectionFiles,
+		languages:
+			family.languages.length > 0
+				? [...family.languages].toSorted(compareStrings)
+				: matchLanguages(coverage),
+	};
 };
 
 const writeFamily = async (
@@ -444,6 +601,8 @@ const writeFamily = async (
 	root: string,
 	ctx: ReturnType<typeof createFontContext>,
 	tags: readonly string[],
+	languageCatalog: LanguageCatalog,
+	matchLanguages: ReturnType<typeof createLanguageMatcher>,
 ): Promise<void> => {
 	const { directory, family: google, files } = source;
 	const license = LICENSES[google.license];
@@ -453,12 +612,17 @@ const writeFamily = async (
 		.map((filename) => `${directory}/${filename}`)
 		.find((path) => files.has(path));
 
-	const { sourceFiles, inspectionFiles } = await inspectFamilySources(
-		snapshot,
-		id,
-		source,
-		ctx,
+	const {
+		sourceFiles,
+		inspectionFiles,
+		languages: detectedLanguages,
+	} = await inspectFamilySources(snapshot, id, source, ctx, matchLanguages);
+	const languages = new Set(
+		detectedLanguages.filter((language) => languageCatalog[language]),
 	);
+	if (google.primaryLanguage && languageCatalog[google.primaryLanguage]) {
+		languages.add(google.primaryLanguage);
+	}
 
 	const copyrights = Array.from(
 		new Set(
@@ -484,6 +648,12 @@ const writeFamily = async (
 			: {}),
 		classifications: normalizeGoogleClassifications(google),
 		tags,
+		languages: [...languages].toSorted(compareStrings),
+		...(google.primaryLanguage && languageCatalog[google.primaryLanguage]
+			? { primaryLanguage: google.primaryLanguage }
+			: {}),
+		...(google.primaryScript ? { primaryScript: google.primaryScript } : {}),
+		...(google.sampleText ? { sampleText: google.sampleText } : {}),
 		designer: google.designer,
 		dateAdded: google.dateAdded,
 		sourceModified: lastChanged.date,
@@ -535,8 +705,26 @@ export const generateGoogle = async (
 ): Promise<string[]> => {
 	const families = readGoogleFamilies(snapshot);
 	const tagsByFamily = readGoogleTags(snapshot, taxonomy);
+	const languageCatalog = readGoogleLanguages(snapshot);
+	const referencedLanguages = new Set(
+		[...families.values()].flatMap(({ family }) => [
+			...family.languages,
+			...(family.primaryLanguage ? [family.primaryLanguage] : []),
+		]),
+	);
+	const unknownLanguages = [...referencedLanguages]
+		.filter((language) => !languageCatalog[language])
+		.toSorted(compareStrings);
+	if (unknownLanguages.length > 0) {
+		logger.warn(
+			`Ignoring ${unknownLanguages.length} stale Google language references: ${unknownLanguages.join(', ')}`,
+		);
+	}
+	await writeJson(join(root, 'languages.json'), languageCatalog);
+
 	const familyIds = new Set(previousFamilyIds);
 	const ctx = createFontContext();
+	const matchLanguages = createLanguageMatcher(languageCatalog);
 	const sortedFamilies = Array.from(families).toSorted(([left], [right]) =>
 		compareStrings(left, right),
 	);
@@ -550,6 +738,8 @@ export const generateGoogle = async (
 				root,
 				ctx,
 				tagsByFamily.get(family.family.name) ?? [],
+				languageCatalog,
+				matchLanguages,
 			);
 			familyIds.add(id);
 			const processed = index + 1;

@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Rejang",
 	"id": "noto-sans-rejang",
+	"languages": [
+		"rej_Rjng",
+		"sa_Rjng"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/rejang)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Rjng",
 	"project": {
 		"repository": "https://github.com/notofonts/rejang",
 		"revision": "f8a0b6d6e937ca8893d86c4a3e3dabd3ffa3ccd9"

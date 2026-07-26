@@ -10,11 +10,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Gurmukhi UI",
 	"id": "noto-sans-gurmukhi-ui",
+	"languages": [
+		"pa_Guru"
+	],
 	"license": {
 		"attribution": "Copyright 2019 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Guru",
 	"project": {
 		"repository": "https://github.com/notofonts/gurmukhi",
 		"revision": "231c5c6e9c622c4ef3792ead7a91045af0ee610a"

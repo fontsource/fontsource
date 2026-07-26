@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Tangsa",
 	"id": "noto-sans-tangsa",
+	"languages": [
+		"nst_Tnsa"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tangsa)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Tnsa",
 	"project": {
 		"repository": "https://github.com/notofonts/tangsa",
 		"revision": "8d40c34e78702e6ec2ef9a8e2cbd6a38cd7f6d4a"
