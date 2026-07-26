@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"handwriting",
+		"serif"
+	],
 	"dateAdded": "2012-01-18",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,9 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/vintage",
+		"serif/transitional"
+	]
 }

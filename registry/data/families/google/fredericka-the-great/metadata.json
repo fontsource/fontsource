@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2011-12-19",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,12 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/rugged",
+		"expressive/vintage",
+		"serif/didone",
+		"theme/distressed"
+	]
 }

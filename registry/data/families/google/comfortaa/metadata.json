@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2011-08-10",
 	"declaredSubsets": [
 		"cyrillic",
@@ -41,5 +44,10 @@
 		}
 	],
 	"sourceModified": "2026-02-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"sans/geometric",
+		"sans/rounded"
+	]
 }

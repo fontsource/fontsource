@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2024-10-17",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,12 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"expressive/vintage",
+		"sans/glyphic",
+		"seasonal/kwanzaa",
+		"theme/art-nouveau"
+	]
 }

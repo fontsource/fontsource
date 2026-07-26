@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2018-02-23",
 	"declaredSubsets": [
 		"korean",
@@ -37,5 +40,13 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/futuristic",
+		"expressive/rugged",
+		"expressive/stiff",
+		"sans/rounded",
+		"sans/superellipse",
+		"theme/techno"
+	]
 }

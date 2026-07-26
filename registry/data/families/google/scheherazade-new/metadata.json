@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2021-05-12",
 	"declaredSubsets": [
 		"arabic",
@@ -65,5 +67,11 @@
 		}
 	],
 	"sourceModified": "2026-05-01",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/sincere",
+		"expressive/vintage",
+		"serif/transitional"
+	]
 }

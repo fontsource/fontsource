@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2022-05-12",
 	"declaredSubsets": [
 		"chinese-hongkong",
@@ -41,5 +43,11 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/competent",
+		"expressive/sincere",
+		"seasonal/lunar-new-year",
+		"serif/transitional"
+	]
 }

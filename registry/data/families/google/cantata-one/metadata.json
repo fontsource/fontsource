@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2012-02-29",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,10 @@
 		}
 	],
 	"sourceModified": "2026-07-16",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/competent",
+		"expressive/sincere",
+		"serif/modern"
+	]
 }

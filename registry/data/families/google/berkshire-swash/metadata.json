@@ -1,5 +1,9 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting",
+		"serif"
+	],
 	"dateAdded": "2012-03-14",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +41,9 @@
 		}
 	],
 	"sourceModified": "2026-02-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"script/upright-script",
+		"seasonal/christmas"
+	]
 }

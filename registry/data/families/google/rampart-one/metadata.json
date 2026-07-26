@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2021-06-08",
 	"declaredSubsets": [
 		"cyrillic",
@@ -39,5 +42,12 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/playful",
+		"expressive/rugged",
+		"expressive/vintage",
+		"theme/shaded"
+	]
 }

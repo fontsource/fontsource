@@ -1,13 +1,26 @@
 import { readFile } from 'node:fs/promises';
-import { join, resolve } from 'node:path';
+import { basename, join, resolve } from 'node:path';
 import { consola } from 'consola';
 import fastq from 'fastq';
+import {
+	RegistryAxesSchema,
+	RegistryFamiliesSchema,
+	RegistryFamilyDetailSchema,
+	RegistryInfoSchema,
+	RegistrySubsetSchema,
+	RegistrySubsetsSchema,
+	RegistryTaxonomySchema,
+} from '../../api/shared/registry.ts';
 import { assertGitPathClean, getGitRevision } from './git.ts';
-import { objectMatches, putObject } from './r2.ts';
+import { putCurrentObject, putObject } from './r2.ts';
 import {
 	archiveManifestSchema,
+	axisRegistrySchema,
+	familyInspectionSchema,
 	familyMetadataSchema,
 	registryIndexSchema,
+	subsetDefinitionSchema,
+	taxonomySchema,
 } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
 import { listFiles, validateRegistry } from './validator.ts';
@@ -17,7 +30,7 @@ const REPOSITORY_ROOT = resolve(import.meta.dirname, '../..');
 const REGISTRY_ROOT = join(REPOSITORY_ROOT, 'registry', 'data');
 const logger = consola.withTag('registry');
 
-interface RegistryFile {
+interface ArchiveFile {
 	path: string;
 	bytes: Uint8Array;
 	size: number;
@@ -27,14 +40,29 @@ interface RegistryFile {
 interface SourceFile {
 	size: number;
 	sha256: string;
+	contentType: 'font/ttf' | 'font/otf';
 	read?: () => Promise<Uint8Array>;
 }
+
+const createJsonFile = (path: string, value: unknown): ArchiveFile => {
+	const bytes = Buffer.from(canonicalJson(value));
+	return { path, bytes, size: bytes.byteLength, sha256: sha256(bytes) };
+};
+
+const readTextIfExists = async (path: string): Promise<string | undefined> => {
+	try {
+		return await readFile(path, 'utf8');
+	} catch (error) {
+		if ((error as NodeJS.ErrnoException).code === 'ENOENT') return undefined;
+		throw error;
+	}
+};
 
 const createArchivePlan = async (root: string, registryRevision: string) => {
 	await validateRegistry(root);
 
 	const registry = await Promise.all(
-		(await listFiles(root)).map(async (path): Promise<RegistryFile> => {
+		(await listFiles(root)).map(async (path): Promise<ArchiveFile> => {
 			const bytes = await readFile(join(root, path));
 			return { path, bytes, size: bytes.byteLength, sha256: sha256(bytes) };
 		}),
@@ -43,9 +71,90 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		await readJson(join(root, 'index.json')),
 	);
 	const sourceMap = new Map<string, SourceFile>();
+	const familySummaries = [];
+	const familyViews: ArchiveFile[] = [];
 	for (const family of index.families) {
+		const directory = join(root, 'families', family);
 		const metadata = familyMetadataSchema.parse(
-			await readJson(join(root, 'families', family, 'metadata.json')),
+			await readJson(join(directory, 'metadata.json')),
+		);
+		const inspection = familyInspectionSchema.parse(
+			await readJson(join(directory, 'inspection.json')),
+		);
+		const axes = [
+			...new Set(
+				inspection.files.flatMap((file) => file.axes.map(({ tag }) => tag)),
+			),
+		].toSorted(compareStrings);
+		// Registry validation guarantees matching source and inspection order.
+		const sources = metadata.sourceFiles.map((source, index) => {
+			const inspected = inspection.files[index];
+			const format = source.path.toLowerCase().endsWith('.otf') ? 'otf' : 'ttf';
+			return {
+				sha256: source.sha256,
+				filename: basename(source.path),
+				format,
+				size: source.size,
+				downloadUrl: `/v1/registry/sources/${source.sha256}`,
+				type: inspected.axes.length > 0 ? 'variable' : 'static',
+				fontVersion: inspected.fontVersion,
+				weight: inspected.weight,
+				style: inspected.style,
+				axes: inspected.axes,
+			};
+		});
+		const [description, article, licenseText] = await Promise.all([
+			readTextIfExists(join(directory, 'description.en-US.md')),
+			readTextIfExists(join(directory, 'article.en-US.md')),
+			readTextIfExists(join(directory, 'license.txt')),
+		]);
+		const publicFamily = {
+			id: metadata.id,
+			family: metadata.family,
+			...(metadata.displayName ? { displayName: metadata.displayName } : {}),
+			provider: metadata.provider,
+			status: metadata.status,
+			classifications: metadata.classifications,
+			tags: metadata.tags,
+			sourceModified: metadata.sourceModified,
+			declaredSubsets: metadata.declaredSubsets,
+		};
+		familySummaries.push({
+			...publicFamily,
+			variable: axes.length > 0,
+			axes,
+		});
+		familyViews.push(
+			createJsonFile(
+				`families/${metadata.id}.json`,
+				RegistryFamilyDetailSchema.parse({
+					...publicFamily,
+					designer: metadata.designer,
+					dateAdded: metadata.dateAdded,
+					license: {
+						id: metadata.license.id,
+						url: metadata.license.url,
+						attribution: metadata.license.attribution,
+						text: licenseText,
+					},
+					project: metadata.project
+						? {
+								repository: metadata.project.repository,
+								revision: metadata.project.revision,
+							}
+						: undefined,
+					content:
+						description || article
+							? {
+									'en-US': {
+										description,
+										article,
+									},
+								}
+							: undefined,
+					sources,
+				}),
+			),
 		);
 		for (const source of metadata.sourceFiles) {
 			let read: SourceFile['read'];
@@ -54,9 +163,18 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				read = () => readSource(source.path, repository, revision);
 			}
 			const previous = sourceMap.get(source.sha256);
+			const contentType = source.path.toLowerCase().endsWith('.otf')
+				? 'font/otf'
+				: 'font/ttf';
+			if (previous && previous.contentType !== contentType) {
+				throw new Error(
+					`Source ${source.sha256} is declared as both TTF and OTF`,
+				);
+			}
 			sourceMap.set(source.sha256, {
 				size: source.size,
 				sha256: source.sha256,
+				contentType,
 				read: read ?? previous?.read,
 			});
 		}
@@ -64,14 +182,65 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const sources = [...sourceMap.values()].toSorted((left, right) =>
 		compareStrings(left.sha256, right.sha256),
 	);
+	const subsets = await Promise.all(
+		index.subsets.map(async (id) => {
+			const subset = subsetDefinitionSchema.parse(
+				await readJson(join(root, 'subsets', `${id}.json`)),
+			);
+			return createJsonFile(
+				`subsets/${id}.json`,
+				RegistrySubsetSchema.parse({
+					id: subset.id,
+					ranges: subset.ranges,
+					slices: subset.slices?.map((slice) => ({
+						id: slice.id,
+						ranges: slice.ranges,
+					})),
+				}),
+			);
+		}),
+	);
+	const axes = axisRegistrySchema.parse(
+		await readJson(join(root, 'axes.json')),
+	);
+	const taxonomy = taxonomySchema.parse(
+		await readJson(join(root, 'taxonomy.json')),
+	);
+	const views = [
+		createJsonFile(
+			'registry.json',
+			RegistryInfoSchema.parse({
+				familyCount: familySummaries.length,
+				subsetCount: index.subsets.length,
+			}),
+		),
+		createJsonFile(
+			'families.json',
+			RegistryFamiliesSchema.parse({ families: familySummaries }),
+		),
+		createJsonFile(
+			'subsets.json',
+			RegistrySubsetsSchema.parse({ subsets: index.subsets }),
+		),
+		createJsonFile('axes.json', RegistryAxesSchema.parse({ axes })),
+		createJsonFile('taxonomy.json', RegistryTaxonomySchema.parse(taxonomy)),
+		...familyViews,
+		...subsets,
+	].toSorted((left, right) => compareStrings(left.path, right.path));
 
 	return {
 		registry,
+		views,
 		sources,
 		manifest: archiveManifestSchema.parse({
 			schemaVersion: 1,
 			registryRevision,
 			registry: registry.map(({ path, size, sha256: hash }) => ({
+				path,
+				size,
+				sha256: hash,
+			})),
+			views: views.map(({ path, size, sha256: hash }) => ({
 				path,
 				size,
 				sha256: hash,
@@ -110,17 +279,11 @@ export const publishArchive = async (
 	logger.start(`Planning snapshot ${registryRevision}`);
 	const plan = await createArchivePlan(root, registryRevision);
 	logger.success(
-		`Planned ${plan.registry.length} registry files and ${plan.sources.length} source fonts`,
+		`Planned ${plan.registry.length} registry files, ${plan.views.length} API views, and ${plan.sources.length} source fonts`,
 	);
 	const manifestBytes = Buffer.from(canonicalJson(plan.manifest));
 	const manifestKey = `snapshots/${registryRevision}/manifest.json`;
 	const manifestHash = sha256(manifestBytes);
-	if (
-		await objectMatches(manifestKey, manifestBytes.byteLength, manifestHash)
-	) {
-		logger.success(`Snapshot ${registryRevision} is already archived`);
-		return;
-	}
 
 	const registryObjects = [
 		...new Map(plan.registry.map((file) => [file.sha256, file])).values(),
@@ -132,14 +295,21 @@ export const publishArchive = async (
 			sha256: file.sha256,
 			read: async () => file.bytes,
 		})),
+		...plan.views.map((file) => ({
+			key: `snapshots/${registryRevision}/api/${file.path}`,
+			size: file.size,
+			sha256: file.sha256,
+			read: async () => file.bytes,
+		})),
 		...plan.sources.map((source) => ({
 			key: `sources/sha256/${source.sha256}`,
 			size: source.size,
 			sha256: source.sha256,
+			contentType: source.contentType,
 			...(source.read ? { read: source.read } : {}),
 		})),
 	];
-	logger.start(`Processing ${objects.length} content-addressed objects`);
+	logger.start(`Processing ${objects.length} archive objects`);
 	const uploads = fastq.promise(putObject, CONCURRENCY);
 	let processed = 0;
 	await Promise.all(
@@ -151,7 +321,7 @@ export const publishArchive = async (
 			}
 		}),
 	);
-	logger.success(`Processed ${objects.length} content-addressed objects`);
+	logger.success(`Processed ${objects.length} archive objects`);
 	logger.start('Publishing snapshot manifest');
 	await putObject({
 		key: manifestKey,
@@ -159,9 +329,12 @@ export const publishArchive = async (
 		sha256: manifestHash,
 		read: async () => manifestBytes,
 	});
+	await putCurrentObject(
+		Buffer.from(canonicalJson({ schemaVersion: 1, registryRevision })),
+	);
 
 	logger.success(
-		`Archived snapshot ${registryRevision} with ${plan.registry.length} registry files and ${plan.sources.length} source fonts`,
+		`Archived snapshot ${registryRevision} with ${plan.registry.length} registry files, ${plan.views.length} API views, and ${plan.sources.length} source fonts`,
 	);
 };
 

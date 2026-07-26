@@ -1,5 +1,8 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"handwriting",
+		"sans-serif"
+	],
 	"dateAdded": "2025-12-05",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,12 @@
 		}
 	],
 	"sourceModified": "2026-04-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/childlike",
+		"expressive/happy",
+		"expressive/playful",
+		"sans/rounded",
+		"script/upright-script"
+	]
 }

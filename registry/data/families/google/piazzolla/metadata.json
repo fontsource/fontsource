@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2020-08-27",
 	"declaredSubsets": [
 		"cyrillic",
@@ -51,5 +54,9 @@
 		}
 	],
 	"sourceModified": "2026-05-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"expressive/sincere"
+	]
 }

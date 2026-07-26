@@ -1,5 +1,9 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting",
+		"sans-serif"
+	],
 	"dateAdded": "2026-06-05",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +41,14 @@
 		}
 	],
 	"sourceModified": "2026-06-05",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/childlike",
+		"expressive/cute",
+		"expressive/happy",
+		"expressive/playful",
+		"script/handwritten",
+		"script/informal"
+	]
 }

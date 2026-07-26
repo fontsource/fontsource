@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2011-06-29",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,13 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/loud",
+		"expressive/rugged",
+		"expressive/vintage",
+		"seasonal/valentines-day",
+		"serif/fat-face",
+		"theme/woodtype"
+	]
 }

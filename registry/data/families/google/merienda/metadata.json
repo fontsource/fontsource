@@ -1,5 +1,7 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"handwriting"
+	],
 	"dateAdded": "2012-10-31",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +40,15 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/happy",
+		"expressive/vintage",
+		"script/handwritten",
+		"seasonal/christmas",
+		"seasonal/diwali",
+		"seasonal/hanukkah",
+		"seasonal/lunar-new-year",
+		"theme/brush"
+	]
 }

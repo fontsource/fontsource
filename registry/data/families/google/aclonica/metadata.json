@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2011-04-27",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,9 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"seasonal/kwanzaa"
+	]
 }

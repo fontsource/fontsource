@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2012-08-21",
 	"declaredSubsets": [
 		"latin",
@@ -46,5 +48,12 @@
 		}
 	],
 	"sourceModified": "2026-03-25",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/loud",
+		"expressive/rugged",
+		"seasonal/kwanzaa",
+		"theme/medieval"
+	]
 }

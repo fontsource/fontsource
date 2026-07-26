@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2019-03-21",
 	"declaredSubsets": [
 		"arabic",
@@ -38,5 +40,10 @@
 		}
 	],
 	"sourceModified": "2026-06-02",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/rugged",
+		"sans/superellipse"
+	]
 }

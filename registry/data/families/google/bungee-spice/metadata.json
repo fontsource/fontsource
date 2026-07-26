@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2022-04-05",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +41,19 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/innovative",
+		"expressive/loud",
+		"expressive/playful",
+		"expressive/rugged",
+		"expressive/stiff",
+		"expressive/vintage",
+		"sans/geometric",
+		"sans/rounded",
+		"seasonal/diwali",
+		"seasonal/hanukkah",
+		"seasonal/kwanzaa",
+		"seasonal/lunar-new-year"
+	]
 }

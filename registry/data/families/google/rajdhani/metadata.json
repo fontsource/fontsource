@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2014-07-09",
 	"declaredSubsets": [
 		"devanagari",
@@ -74,5 +76,12 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/futuristic",
+		"expressive/rugged",
+		"expressive/stiff",
+		"sans/superellipse"
+	]
 }

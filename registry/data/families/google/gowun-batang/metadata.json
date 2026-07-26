@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2021-06-10",
 	"declaredSubsets": [
 		"korean",
@@ -48,5 +50,11 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/sincere",
+		"seasonal/lunar-new-year",
+		"serif/transitional"
+	]
 }

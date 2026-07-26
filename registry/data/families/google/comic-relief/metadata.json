@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2025-02-13",
 	"declaredSubsets": [
 		"cyrillic",
@@ -48,5 +50,14 @@
 		}
 	],
 	"sourceModified": "2026-05-21",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/childlike",
+		"expressive/happy",
+		"expressive/playful",
+		"expressive/sincere",
+		"expressive/vintage",
+		"sans/rounded",
+		"theme/brush"
+	]
 }

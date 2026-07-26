@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2025-05-08",
 	"declaredSubsets": [
 		"chinese-traditional",
@@ -43,5 +45,13 @@
 		}
 	],
 	"sourceModified": "2026-06-02",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/active",
+		"expressive/artistic",
+		"expressive/playful",
+		"sans/geometric",
+		"seasonal/lunar-new-year",
+		"theme/brush"
+	]
 }

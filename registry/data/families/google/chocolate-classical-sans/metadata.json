@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2024-05-14",
 	"declaredSubsets": [
 		"chinese-traditional",
@@ -40,5 +42,11 @@
 		}
 	],
 	"sourceModified": "2026-06-02",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/rugged",
+		"sans/humanist"
+	]
 }

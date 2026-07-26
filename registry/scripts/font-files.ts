@@ -114,6 +114,10 @@ const writeFamily = async (
 			directory,
 		},
 		sourceModified: lastChanged.date,
+		classifications: Array.from(
+			new Set(sourceMetadata.classifications),
+		).toSorted(compareStrings),
+		tags: Array.from(new Set(sourceMetadata.tags)).toSorted(compareStrings),
 		declaredSubsets: Array.from(
 			new Set(sourceMetadata.declaredSubsets),
 		).toSorted(compareStrings),

@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2017-01-18",
 	"declaredSubsets": [
 		"latin",
@@ -74,5 +76,12 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/happy",
+		"expressive/sincere",
+		"expressive/vintage",
+		"seasonal/valentines-day",
+		"serif/old-style-garalde"
+	]
 }

@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2019-06-10",
 	"declaredSubsets": [
 		"latin",
@@ -55,5 +58,11 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"sans/grotesque",
+		"sans/rounded",
+		"seasonal/diwali"
+	]
 }

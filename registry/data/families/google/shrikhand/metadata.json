@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2016-06-20",
 	"declaredSubsets": [
 		"gujarati",
@@ -38,5 +41,15 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/active",
+		"expressive/cute",
+		"expressive/loud",
+		"expressive/rugged",
+		"expressive/vintage",
+		"seasonal/diwali",
+		"seasonal/holi",
+		"serif/transitional"
+	]
 }

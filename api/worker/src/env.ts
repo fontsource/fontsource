@@ -17,6 +17,7 @@ export const parseEnv = (env: Env): void => {
 	for (const binding of [
 		'METADATA',
 		'FONTS',
+		'REGISTRY',
 		'ARTIFACT_BUILDER',
 		'STATS',
 		'STATS_QUEUE',

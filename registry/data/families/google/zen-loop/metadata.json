@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"handwriting"
+	],
 	"dateAdded": "2021-03-10",
 	"declaredSubsets": [
 		"latin",
@@ -46,5 +49,11 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"sans/neo-grotesque",
+		"sans/rounded",
+		"script/handwritten",
+		"script/informal"
+	]
 }

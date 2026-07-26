@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2022-12-02",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +41,10 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/vintage",
+		"sans/geometric",
+		"theme/techno"
+	]
 }

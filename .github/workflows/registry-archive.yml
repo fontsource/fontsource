@@ -6,6 +6,12 @@ on:
       - main
     paths:
       - 'registry/data/**'
+      - 'registry/scripts/archive.ts'
+      - 'registry/scripts/r2.ts'
+      - 'registry/scripts/schema.ts'
+      - 'registry/scripts/shared.ts'
+      - 'api/shared/registry.ts'
+      - '.github/workflows/registry-archive.yml'
   workflow_dispatch:
 
 permissions:

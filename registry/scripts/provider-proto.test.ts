@@ -7,6 +7,8 @@ designer: "MADType"
 license: "OFL"
 category: "SANS_SERIF"
 date_added: "2011-08-03"
+stroke: "SANS_SERIF"
+classifications: "DISPLAY"
 fonts {
   name: "Abel"
   style: "normal"
@@ -30,6 +32,8 @@ describe('Google provider schema', () => {
 	it('accepts current Google metadata and the documented position exception', () => {
 		expect(parseGoogleFamily(ABEL_METADATA)).toMatchObject({
 			name: 'Abel',
+			stroke: 'SANS_SERIF',
+			classifications: ['DISPLAY'],
 			fonts: [{ filename: 'Abel-Regular.ttf' }],
 			project: {
 				repository: 'https://github.com/librefonts/abel',

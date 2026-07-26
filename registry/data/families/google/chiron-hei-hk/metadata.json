@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2025-05-08",
 	"declaredSubsets": [
 		"chinese-traditional",
@@ -53,5 +55,11 @@
 		}
 	],
 	"sourceModified": "2026-04-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/competent",
+		"sans/humanist",
+		"seasonal/lunar-new-year"
+	]
 }

@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2012-01-18",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,17 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/happy",
+		"expressive/loud",
+		"expressive/playful",
+		"expressive/rugged",
+		"sans/humanist",
+		"sans/neo-grotesque",
+		"seasonal/hanukkah",
+		"seasonal/valentines-day",
+		"theme/woodtype"
+	]
 }

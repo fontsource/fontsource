@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"monospace",
+		"sans-serif"
+	],
 	"dateAdded": "2021-09-22",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +41,9 @@
 		}
 	],
 	"sourceModified": "2026-04-10",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/rugged"
+	]
 }

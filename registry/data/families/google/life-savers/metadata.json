@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-08-13",
 	"declaredSubsets": [
 		"latin",
@@ -55,5 +58,14 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/cute",
+		"expressive/excited",
+		"expressive/happy",
+		"expressive/vintage",
+		"seasonal/christmas",
+		"seasonal/valentines-day",
+		"theme/wacky"
+	]
 }

@@ -1,5 +1,9 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting",
+		"serif"
+	],
 	"dateAdded": "2012-02-08",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +41,14 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/sincere",
+		"expressive/sophisticated",
+		"expressive/vintage",
+		"script/formal",
+		"seasonal/diwali",
+		"seasonal/holi"
+	]
 }

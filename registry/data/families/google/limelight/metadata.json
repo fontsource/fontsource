@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2011-05-25",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,14 @@
 		}
 	],
 	"sourceModified": "2026-03-25",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/awkward",
+		"expressive/loud",
+		"expressive/vintage",
+		"seasonal/christmas",
+		"seasonal/kwanzaa",
+		"theme/art-deco"
+	]
 }

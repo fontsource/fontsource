@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2025-07-09",
 	"declaredSubsets": [
 		"cyrillic",
@@ -41,5 +43,10 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/sincere",
+		"sans/grotesque"
+	]
 }

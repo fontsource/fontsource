@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2011-08-31",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,10 @@
 		}
 	],
 	"sourceModified": "2026-07-09",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/stiff",
+		"expressive/vintage"
+	]
 }

@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"symbols"
+	],
 	"dateAdded": "2021-10-22",
 	"declaredSubsets": [
 		"cyrillic",
@@ -40,5 +43,8 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"special-use/redaction"
+	]
 }

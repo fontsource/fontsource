@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2023-04-21",
 	"declaredSubsets": [
 		"cyrillic",
@@ -41,5 +43,20 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/active",
+		"expressive/awkward",
+		"expressive/cute",
+		"expressive/excited",
+		"expressive/happy",
+		"expressive/innovative",
+		"expressive/loud",
+		"expressive/playful",
+		"expressive/vintage",
+		"seasonal/halloween",
+		"seasonal/holi",
+		"theme/blobby",
+		"theme/wacky"
+	]
 }

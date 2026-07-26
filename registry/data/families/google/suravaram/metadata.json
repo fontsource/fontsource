@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2015-01-12",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +39,8 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"seasonal/holi"
+	]
 }

@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"slab-serif"
+	],
 	"dateAdded": "2018-09-19",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +40,11 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"expressive/sincere",
+		"expressive/vintage",
+		"slab/geometric"
+	]
 }

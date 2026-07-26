@@ -1,0 +1,207 @@
+import { beforeEach, describe, expect, it } from 'vitest';
+import {
+	RegistryAxesSchema,
+	RegistryFamiliesSchema,
+	RegistryFamilyDetailSchema,
+	RegistryInfoSchema,
+	RegistrySubsetSchema,
+	RegistrySubsetsSchema,
+	RegistryTaxonomySchema,
+} from '../shared/registry';
+import { dispatch, jsonSnapshot, setupWorkerTest, testEnv } from './helpers';
+
+const REVISION = '1'.repeat(40);
+const SOURCE_SHA256 = '2'.repeat(64);
+const SOURCE_BYTES = new TextEncoder().encode('test font');
+const FAMILY_SUMMARY = {
+	id: 'abel',
+	family: 'Abel',
+	provider: 'google',
+	status: 'active',
+	classifications: ['sans-serif'],
+	tags: ['sans/humanist'],
+	sourceModified: '2026-07-15',
+	declaredSubsets: ['latin'],
+	variable: false,
+	axes: [],
+} as const;
+const VIEWS = [
+	{
+		path: 'registry.json',
+		route: '/v1/registry',
+		body: RegistryInfoSchema.parse({ familyCount: 1, subsetCount: 1 }),
+	},
+	{
+		path: 'families.json',
+		route: '/v1/registry/families',
+		body: RegistryFamiliesSchema.parse({ families: [FAMILY_SUMMARY] }),
+	},
+	{
+		path: 'families/abel.json',
+		route: '/v1/registry/families/abel',
+		body: RegistryFamilyDetailSchema.parse({
+			id: FAMILY_SUMMARY.id,
+			family: FAMILY_SUMMARY.family,
+			provider: FAMILY_SUMMARY.provider,
+			status: FAMILY_SUMMARY.status,
+			classifications: FAMILY_SUMMARY.classifications,
+			tags: FAMILY_SUMMARY.tags,
+			sourceModified: FAMILY_SUMMARY.sourceModified,
+			declaredSubsets: FAMILY_SUMMARY.declaredSubsets,
+			license: {
+				id: 'OFL-1.1',
+				url: 'https://openfontlicense.org',
+			},
+			sources: [
+				{
+					sha256: SOURCE_SHA256,
+					filename: 'Abel-Regular.ttf',
+					format: 'ttf',
+					size: SOURCE_BYTES.byteLength,
+					downloadUrl: `/v1/registry/sources/${SOURCE_SHA256}`,
+					type: 'static',
+					fontVersion: 'Version 1.0',
+					weight: 400,
+					style: 'normal',
+					axes: [],
+				},
+			],
+		}),
+	},
+	{
+		path: 'taxonomy.json',
+		route: '/v1/registry/taxonomy',
+		body: RegistryTaxonomySchema.parse({
+			classifications: {
+				display: { label: 'Display' },
+				handwriting: { label: 'Handwriting' },
+				monospace: { label: 'Monospace' },
+				'sans-serif': { label: 'Sans Serif' },
+				serif: { label: 'Serif' },
+				'slab-serif': { label: 'Slab Serif' },
+				symbols: { label: 'Symbols' },
+			},
+			tagGroups: { sans: { label: 'Sans Serif' } },
+			tags: { 'sans/humanist': { label: 'Humanist' } },
+		}),
+	},
+	{
+		path: 'subsets.json',
+		route: '/v1/registry/subsets',
+		body: RegistrySubsetsSchema.parse({ subsets: ['latin'] }),
+	},
+	{
+		path: 'subsets/latin.json',
+		route: '/v1/registry/subsets/latin',
+		body: RegistrySubsetSchema.parse({
+			id: 'latin',
+			ranges: [['0000', '00FF']],
+		}),
+	},
+	{
+		path: 'axes.json',
+		route: '/v1/registry/axes',
+		body: RegistryAxesSchema.parse({
+			axes: {
+				wght: {
+					name: 'Weight',
+					description: 'Weight axis',
+					min: 1,
+					max: 1000,
+					default: 400,
+					precision: 0,
+				},
+			},
+		}),
+	},
+] as const;
+
+const putJson = async (key: string, value: unknown): Promise<void> => {
+	await testEnv.REGISTRY.put(key, JSON.stringify(value));
+};
+
+const seedRegistry = async (): Promise<void> => {
+	const prefix = `snapshots/${REVISION}/api`;
+	const existing = await testEnv.REGISTRY.list();
+	await Promise.all(
+		existing.objects.map(({ key }) => testEnv.REGISTRY.delete(key)),
+	);
+	await Promise.all([
+		putJson('current.json', {
+			schemaVersion: 1,
+			registryRevision: REVISION,
+		}),
+		...VIEWS.map(({ path, body }) => putJson(`${prefix}/${path}`, body)),
+		testEnv.REGISTRY.put(`sources/sha256/${SOURCE_SHA256}`, SOURCE_BYTES, {
+			httpMetadata: { contentType: 'font/ttf' },
+		}),
+	]);
+};
+
+describe('registry routes', () => {
+	beforeEach(async () => {
+		await setupWorkerTest();
+		await seedRegistry();
+	});
+
+	it('serves the current registry views', async () => {
+		const responses = await Promise.all(
+			VIEWS.map(({ route }) => jsonSnapshot(`https://fontsource.test${route}`)),
+		);
+
+		expect(responses.map(({ body }) => body)).toEqual(
+			VIEWS.map(({ body }) => body),
+		);
+		for (const response of responses) {
+			expect(response.status).toBe(200);
+			expect(response.headers.cacheControl).toBe('public, max-age=300');
+			expect(response.headers.etag).toBe('<etag>');
+		}
+	});
+
+	it('streams immutable source fonts and supports conditional requests', async () => {
+		const url = `https://fontsource.test/v1/registry/sources/${SOURCE_SHA256}`;
+		const first = await dispatch(url);
+		const body = new Uint8Array(await first.response.arrayBuffer());
+		await first.settle();
+
+		expect(first.response.status).toBe(200);
+		expect(body).toEqual(SOURCE_BYTES);
+		expect(first.response.headers.get('Content-Type')).toBe('font/ttf');
+		expect(first.response.headers.get('Cache-Control')).toBe(
+			'public, max-age=31536000, immutable',
+		);
+
+		const second = await dispatch(
+			new Request(url, {
+				headers: {
+					'If-None-Match': first.response.headers.get('ETag') ?? '',
+				},
+			}),
+		);
+		await second.settle();
+
+		expect(second.response.status).toBe(304);
+		expect(second.response.headers.get('ETag')).toBe(
+			first.response.headers.get('ETag'),
+		);
+	});
+
+	it('returns not found for unknown registry records', async () => {
+		const family = await jsonSnapshot(
+			'https://fontsource.test/v1/registry/families/unknown',
+		);
+		const source = await jsonSnapshot(
+			`https://fontsource.test/v1/registry/sources/${'8'.repeat(64)}`,
+		);
+
+		expect(family).toMatchObject({
+			status: 404,
+			body: { status: 404 },
+		});
+		expect(source).toMatchObject({
+			status: 404,
+			body: { status: 404 },
+		});
+	});
+});

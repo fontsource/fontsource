@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2011-05-18",
 	"declaredSubsets": [
 		"greek",
@@ -68,5 +71,10 @@
 		}
 	],
 	"sourceModified": "2026-07-09",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/sincere",
+		"expressive/vintage",
+		"serif/humanist-venetian"
+	]
 }

@@ -1,5 +1,8 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"handwriting",
+		"sans-serif"
+	],
 	"dateAdded": "2025-03-12",
 	"declaredSubsets": [
 		"emoji",
@@ -40,5 +43,11 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/childlike",
+		"expressive/sincere",
+		"script/handwritten",
+		"script/informal"
+	]
 }

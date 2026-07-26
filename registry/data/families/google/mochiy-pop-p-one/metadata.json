@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2021-04-14",
 	"declaredSubsets": [
 		"japanese",
@@ -37,5 +40,11 @@
 		}
 	],
 	"sourceModified": "2026-03-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/cute",
+		"expressive/rugged",
+		"expressive/vintage",
+		"sans/humanist"
+	]
 }

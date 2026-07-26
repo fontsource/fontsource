@@ -28,22 +28,20 @@ verified source font into the private `fontsource-registry` R2 bucket:
 ~~~text
 registry/sha256/<sha256>
 sources/sha256/<sha256>
+snapshots/<fontsource-commit>/api/...
 snapshots/<fontsource-commit>/manifest.json
+current.json
 ~~~
 
-Each manifest maps registry paths and sources to their SHA-256 objects and is
-written last. Google sources can be recovered from their pinned GitHub commit.
+Each snapshot includes family, subset, and axis views projected into the
+public API contract in [`api/shared/registry.ts`](../api/shared/registry.ts).
+The committed registry format remains private and can change without changing
+those responses. The manifest maps every registry file, API view, and source to
+a SHA-256 object and is written before `current.json` selects the complete
+snapshot.
+
+Google sources can be recovered from their pinned GitHub commit.
 Registry-managed sources must already exist at their content-addressed R2 key.
-
-Provision the bucket once:
-
-~~~sh
-wrangler r2 bucket create fontsource-registry
-wrangler r2 bucket lock add fontsource-registry archive --retention-indefinite
-~~~
-
-The indefinite lock keeps published manifests and their content-addressed
-objects from being overwritten or deleted.
 
 The workflow needs `REGISTRY_R2_ENDPOINT` and bucket-scoped Object Read & Write
 credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
@@ -55,7 +53,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - `scripts/font-files.ts` implements opt-in Git-backed Fontsource ingestion. It
   is not part of scheduled generation yet.
 - `scripts/google.ts` owns `data/families/google/` and writes family metadata,
-  source inspection, documents, licenses, and normalized axis metadata.
+  binary discovery tags, source inspection, documents, licenses, and normalized
+  axis metadata.
 - `scripts/nam.ts` writes Unicode subset and slicing definitions.
 - `scripts/git.ts` reads immutable Git trees and path history.
 - `scripts/inspection.ts` maps Core's provider-neutral font inspection into
@@ -64,12 +63,14 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   files and cross-file references.
 - `data/families/<provider>/<id>/` contains family records. Family IDs are
   globally unique across providers.
+- `data/taxonomy.json` defines the reviewed classification and tag labels.
 - `data/subsets/` and `data/axes.json` contain shared Unicode and axis data.
 
 ## Invariants
 
 - Inputs are local repositories pinned to exact commits.
 - Output is canonical, deterministic, text-only, and schema-validated.
+- Public API views explicitly map registry records rather than exposing them.
 - Provenance comes from Git history, not prior generated metadata.
 - Each provider owns its directory; Google generation never changes Fontsource
   records.
@@ -102,7 +103,8 @@ family fields and declares every source file:
 {
 	"id": "example",
 	"family": "Example",
-	"category": "sans-serif",
+	"classifications": ["display", "sans-serif"],
+	"tags": ["theme/stencil"],
 	"license": {
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"

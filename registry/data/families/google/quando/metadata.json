@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-07-10",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,9 @@
 		}
 	],
 	"sourceModified": "2026-03-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/sincere",
+		"seasonal/valentines-day"
+	]
 }

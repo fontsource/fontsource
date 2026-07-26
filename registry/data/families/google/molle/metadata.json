@@ -1,5 +1,8 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting"
+	],
 	"dateAdded": "2012-09-18",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,16 @@
 		}
 	],
 	"sourceModified": "2026-04-24",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/cute",
+		"expressive/sincere",
+		"expressive/vintage",
+		"script/informal",
+		"seasonal/christmas",
+		"seasonal/valentines-day",
+		"theme/blobby",
+		"theme/brush"
+	]
 }

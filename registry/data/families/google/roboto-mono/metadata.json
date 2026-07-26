@@ -1,5 +1,7 @@
 {
-	"category": "monospace",
+	"classifications": [
+		"monospace"
+	],
 	"dateAdded": "2015-05-13",
 	"declaredSubsets": [
 		"cyrillic",
@@ -50,5 +52,10 @@
 		}
 	],
 	"sourceModified": "2026-04-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/rugged",
+		"sans/neo-grotesque"
+	]
 }

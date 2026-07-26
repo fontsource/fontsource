@@ -1,5 +1,9 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting",
+		"sans-serif"
+	],
 	"dateAdded": "2011-10-12",
 	"declaredSubsets": [
 		"cyrillic",
@@ -49,5 +53,11 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"script/handwritten",
+		"seasonal/christmas",
+		"seasonal/halloween",
+		"seasonal/lunar-new-year"
+	]
 }

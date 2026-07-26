@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-11-16",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,12 @@
 		}
 	],
 	"sourceModified": "2026-03-25",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/happy",
+		"expressive/vintage",
+		"seasonal/halloween",
+		"serif/didone"
+	]
 }

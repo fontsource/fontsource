@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-10-05",
 	"declaredSubsets": [
 		"latin",
@@ -46,5 +49,8 @@
 		}
 	],
 	"sourceModified": "2026-07-16",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"slab/humanist"
+	]
 }

@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2022-02-26",
 	"declaredSubsets": [
 		"arabic",
@@ -47,5 +50,10 @@
 		}
 	],
 	"sourceModified": "2026-02-26",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/sophisticated",
+		"expressive/vintage",
+		"serif/humanist-venetian"
+	]
 }

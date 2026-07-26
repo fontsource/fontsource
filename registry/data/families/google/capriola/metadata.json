@@ -1,5 +1,7 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"sans-serif"
+	],
 	"dateAdded": "2012-07-10",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +40,12 @@
 		}
 	],
 	"sourceModified": "2026-04-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/happy",
+		"expressive/playful",
+		"expressive/sincere",
+		"sans/humanist",
+		"sans/rounded"
+	]
 }

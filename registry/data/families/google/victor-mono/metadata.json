@@ -1,5 +1,8 @@
 {
-	"category": "monospace",
+	"classifications": [
+		"monospace",
+		"sans-serif"
+	],
 	"dateAdded": "2023-06-21",
 	"declaredSubsets": [
 		"cyrillic",
@@ -50,5 +53,11 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/stiff",
+		"sans/neo-grotesque",
+		"sans/superellipse"
+	]
 }

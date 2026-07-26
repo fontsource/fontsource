@@ -1,5 +1,8 @@
 {
-	"category": "serif",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2011-02-09",
 	"declaredSubsets": [
 		"latin",
@@ -82,5 +85,11 @@
 		}
 	],
 	"sourceModified": "2026-05-21",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/competent",
+		"expressive/sincere",
+		"serif/humanist-venetian"
+	]
 }

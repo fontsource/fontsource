@@ -1,5 +1,9 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting",
+		"sans-serif"
+	],
 	"dateAdded": "2018-03-12",
 	"declaredSubsets": [
 		"korean",
@@ -37,5 +41,11 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/excited",
+		"expressive/playful",
+		"script/handwritten"
+	]
 }

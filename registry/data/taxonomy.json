@@ -1,0 +1,260 @@
+{
+	"classifications": {
+		"display": {
+			"label": "Display"
+		},
+		"handwriting": {
+			"label": "Handwriting"
+		},
+		"monospace": {
+			"label": "Monospace"
+		},
+		"sans-serif": {
+			"label": "Sans Serif"
+		},
+		"serif": {
+			"label": "Serif"
+		},
+		"slab-serif": {
+			"label": "Slab Serif"
+		},
+		"symbols": {
+			"label": "Symbols"
+		}
+	},
+	"tagGroups": {
+		"expressive": {
+			"label": "Expressive"
+		},
+		"purpose": {
+			"label": "Purpose"
+		},
+		"sans": {
+			"label": "Sans Serif"
+		},
+		"script": {
+			"label": "Script"
+		},
+		"seasonal": {
+			"label": "Seasonal"
+		},
+		"serif": {
+			"label": "Serif"
+		},
+		"slab": {
+			"label": "Slab Serif"
+		},
+		"special-use": {
+			"label": "Special Use"
+		},
+		"theme": {
+			"label": "Theme"
+		}
+	},
+	"tags": {
+		"expressive/active": {
+			"label": "Active"
+		},
+		"expressive/artistic": {
+			"label": "Artistic"
+		},
+		"expressive/awkward": {
+			"label": "Awkward"
+		},
+		"expressive/business": {
+			"label": "Business"
+		},
+		"expressive/calm": {
+			"label": "Calm"
+		},
+		"expressive/childlike": {
+			"label": "Childlike"
+		},
+		"expressive/competent": {
+			"label": "Competent"
+		},
+		"expressive/cute": {
+			"label": "Cute"
+		},
+		"expressive/excited": {
+			"label": "Excited"
+		},
+		"expressive/fancy": {
+			"label": "Fancy"
+		},
+		"expressive/futuristic": {
+			"label": "Futuristic"
+		},
+		"expressive/happy": {
+			"label": "Happy"
+		},
+		"expressive/innovative": {
+			"label": "Innovative"
+		},
+		"expressive/loud": {
+			"label": "Loud"
+		},
+		"expressive/playful": {
+			"label": "Playful"
+		},
+		"expressive/rugged": {
+			"label": "Rugged"
+		},
+		"expressive/sincere": {
+			"label": "Sincere"
+		},
+		"expressive/sophisticated": {
+			"label": "Sophisticated"
+		},
+		"expressive/stiff": {
+			"label": "Stiff"
+		},
+		"expressive/vintage": {
+			"label": "Vintage"
+		},
+		"purpose/easy-reading": {
+			"label": "Easy Reading"
+		},
+		"purpose/learn-to-write": {
+			"label": "Learn To Write"
+		},
+		"sans/geometric": {
+			"label": "Geometric"
+		},
+		"sans/glyphic": {
+			"label": "Glyphic"
+		},
+		"sans/grotesque": {
+			"label": "Grotesque"
+		},
+		"sans/humanist": {
+			"label": "Humanist"
+		},
+		"sans/neo-grotesque": {
+			"label": "Neo Grotesque"
+		},
+		"sans/rounded": {
+			"label": "Rounded"
+		},
+		"sans/superellipse": {
+			"label": "Superellipse"
+		},
+		"script/formal": {
+			"label": "Formal"
+		},
+		"script/handwritten": {
+			"label": "Handwritten"
+		},
+		"script/informal": {
+			"label": "Informal"
+		},
+		"script/upright-script": {
+			"label": "Upright Script"
+		},
+		"seasonal/christmas": {
+			"label": "Christmas"
+		},
+		"seasonal/diwali": {
+			"label": "Diwali"
+		},
+		"seasonal/halloween": {
+			"label": "Halloween"
+		},
+		"seasonal/hanukkah": {
+			"label": "Hanukkah"
+		},
+		"seasonal/holi": {
+			"label": "Holi"
+		},
+		"seasonal/kwanzaa": {
+			"label": "Kwanzaa"
+		},
+		"seasonal/lunar-new-year": {
+			"label": "Lunar New Year"
+		},
+		"seasonal/valentines-day": {
+			"label": "Valentine's Day"
+		},
+		"serif/didone": {
+			"label": "Didone"
+		},
+		"serif/fat-face": {
+			"label": "Fat Face"
+		},
+		"serif/humanist-venetian": {
+			"label": "Humanist Venetian"
+		},
+		"serif/modern": {
+			"label": "Modern"
+		},
+		"serif/old-style-garalde": {
+			"label": "Old Style Garalde"
+		},
+		"serif/scotch": {
+			"label": "Scotch"
+		},
+		"serif/transitional": {
+			"label": "Transitional"
+		},
+		"slab/clarendon": {
+			"label": "Clarendon"
+		},
+		"slab/geometric": {
+			"label": "Geometric"
+		},
+		"slab/humanist": {
+			"label": "Humanist"
+		},
+		"special-use/barcode": {
+			"label": "Barcode"
+		},
+		"special-use/redaction": {
+			"label": "Redaction"
+		},
+		"theme/art-deco": {
+			"label": "Art Deco"
+		},
+		"theme/art-nouveau": {
+			"label": "Art Nouveau"
+		},
+		"theme/blackletter": {
+			"label": "Blackletter"
+		},
+		"theme/blobby": {
+			"label": "Blobby"
+		},
+		"theme/brush": {
+			"label": "Brush"
+		},
+		"theme/distressed": {
+			"label": "Distressed"
+		},
+		"theme/inline": {
+			"label": "Inline"
+		},
+		"theme/medieval": {
+			"label": "Medieval"
+		},
+		"theme/pixel": {
+			"label": "Pixel"
+		},
+		"theme/shaded": {
+			"label": "Shaded"
+		},
+		"theme/stencil": {
+			"label": "Stencil"
+		},
+		"theme/techno": {
+			"label": "Techno"
+		},
+		"theme/tuscan": {
+			"label": "Tuscan"
+		},
+		"theme/wacky": {
+			"label": "Wacky"
+		},
+		"theme/woodtype": {
+			"label": "Woodtype"
+		}
+	}
+}

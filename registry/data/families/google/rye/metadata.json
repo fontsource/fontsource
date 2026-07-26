@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-08-21",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,13 @@
 		}
 	],
 	"sourceModified": "2026-03-25",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/awkward",
+		"expressive/rugged",
+		"expressive/vintage",
+		"theme/tuscan",
+		"theme/woodtype"
+	]
 }

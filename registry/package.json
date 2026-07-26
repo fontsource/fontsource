@@ -10,9 +10,10 @@
 		"validate": "node scripts/validator.ts"
 	},
 	"dependencies": {
-		"@fontsource-utils/core": "workspace:*",
 		"@aws-sdk/client-s3": "^3.1090.0",
+		"@fontsource-utils/core": "workspace:*",
 		"consola": "^3.1.0",
+		"csv-parse": "^7.0.1",
 		"fastq": "^1.20.1",
 		"protobufjs": "8.7.1",
 		"turndown": "7.2.4",

@@ -1,5 +1,7 @@
 {
-	"category": "display",
+	"classifications": [
+		"display"
+	],
 	"dateAdded": "2023-05-18",
 	"declaredSubsets": [
 		"korean",
@@ -38,5 +40,10 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/awkward",
+		"expressive/innovative",
+		"expressive/playful"
+	]
 }

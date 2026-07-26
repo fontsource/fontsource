@@ -1,5 +1,8 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting"
+	],
 	"dateAdded": "2021-10-22",
 	"declaredSubsets": [
 		"latin",
@@ -38,5 +41,16 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/artistic",
+		"expressive/awkward",
+		"expressive/fancy",
+		"expressive/sophisticated",
+		"expressive/vintage",
+		"script/formal",
+		"script/handwritten",
+		"seasonal/christmas",
+		"theme/medieval"
+	]
 }

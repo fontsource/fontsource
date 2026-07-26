@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2011-10-26",
 	"declaredSubsets": [
 		"latin",
@@ -37,5 +40,12 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/futuristic",
+		"expressive/rugged",
+		"expressive/stiff",
+		"expressive/vintage",
+		"theme/techno"
+	]
 }

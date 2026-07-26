@@ -1,5 +1,7 @@
 {
-	"category": "monospace",
+	"classifications": [
+		"monospace"
+	],
 	"dateAdded": "2025-05-16",
 	"declaredSubsets": [
 		"latin",
@@ -138,5 +140,11 @@
 		}
 	],
 	"sourceModified": "2026-06-02",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
 }

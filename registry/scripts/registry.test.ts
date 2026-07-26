@@ -152,6 +152,8 @@ designer: "Arrow Type"
 license: "OFL"
 category: "SANS_SERIF"
 date_added: "2020-01-01"
+stroke: "SANS_SERIF"
+classifications: "DISPLAY"
 fonts {
   name: "Recursive"
   style: "normal"
@@ -186,6 +188,16 @@ subsets: "latin"
 	for (const id of ['abel', 'recursive', 'stalesans']) {
 		await writeFixture(repository, `ofl/${id}/OFL.txt`, `License for ${id}\n`);
 	}
+	await writeFixture(
+		repository,
+		'tags/all/families.csv',
+		`Abel,,/Expressive/Active,10
+Abel,,/Expressive/Business,75
+Abel,,/Quality/Drawing,90
+Abel,"wdth,wght@75,400",/Theme/Stencil,100
+Recursive Sans,,/Sans/Humanist,50
+`,
+	);
 	await writeFixture(
 		repository,
 		'ofl/abel/DESCRIPTION.en_us.html',
@@ -248,7 +260,8 @@ const createFontFilesRepository = async (): Promise<{
 		canonicalJson({
 			id: 'example',
 			family: 'Example',
-			category: 'sans-serif',
+			classifications: ['display', 'sans-serif'],
+			tags: ['theme/stencil'],
 			designer: 'Registry Tests',
 			dateAdded: '2026-01-02',
 			license: {
@@ -394,6 +407,8 @@ describe('registry ingestion', () => {
 		).toMatchObject({
 			provider: 'fontsource',
 			status: 'active',
+			classifications: ['display', 'sans-serif'],
+			tags: ['theme/stencil'],
 			provenance: {
 				type: 'github',
 				repository: 'fontsource/font-files',
@@ -429,7 +444,7 @@ describe('registry ingestion', () => {
 			sourceFamilySchema.safeParse({
 				id: 'example',
 				family: 'Example',
-				category: 'sans-serif',
+				classifications: ['sans-serif'],
 				license: { id: 'OFL-1.1', url: 'https://example.com/license' },
 				declaredSubsets: ['latin'],
 				sourceFiles: [{ path: 'files/Example.woff2' }],
@@ -480,7 +495,17 @@ describe('registry ingestion', () => {
 		expect(
 			await readJson(join(registry, 'families/google/abel/metadata.json')),
 		).toMatchObject({
+			classifications: ['sans-serif'],
+			tags: ['expressive/business'],
 			provenance: { revision: google.revision },
+		});
+		expect(
+			await readJson(
+				join(registry, 'families/google/recursive-sans/metadata.json'),
+			),
+		).toMatchObject({
+			classifications: ['display', 'sans-serif'],
+			tags: ['sans/humanist'],
 		});
 		expect(await readJson(join(registry, 'subsets/latin.json'))).toMatchObject({
 			source: { revision: nam.revision },

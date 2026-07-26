@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2011-12-19",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,18 @@
 		}
 	],
 	"sourceModified": "2026-07-15",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/cute",
+		"expressive/happy",
+		"expressive/playful",
+		"expressive/rugged",
+		"expressive/sincere",
+		"expressive/vintage",
+		"script/informal",
+		"script/upright-script",
+		"seasonal/christmas",
+		"seasonal/hanukkah",
+		"seasonal/valentines-day"
+	]
 }

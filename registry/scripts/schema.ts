@@ -11,6 +11,28 @@ const sha256Schema = z.string().regex(/^[0-9a-f]{64}$/);
 const dateSchema = z.iso.date();
 const finiteNumberSchema = z.number().finite();
 const fontStyleSchema = z.enum(['normal', 'italic']);
+export const fontClassificationSchema = z.enum([
+	'serif',
+	'sans-serif',
+	'slab-serif',
+	'display',
+	'handwriting',
+	'monospace',
+	'symbols',
+]);
+const tagIdSchema = z
+	.string()
+	.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*\/[a-z0-9]+(?:-[a-z0-9]+)*$/);
+const classificationsSchema = z
+	.array(fontClassificationSchema)
+	.min(1)
+	.refine(
+		(values) =>
+			values.filter((value) =>
+				['serif', 'sans-serif', 'slab-serif'].includes(value),
+			).length <= 1,
+		{ message: 'must not contain conflicting serif classifications' },
+	);
 const staticVariantSchema = z.strictObject({
 	weight: z.number().int().min(1).max(1000),
 	style: fontStyleSchema,
@@ -42,16 +64,17 @@ export const registryIndexSchema = z.strictObject({
 	subsets: z.array(idSchema),
 });
 
+const archivedFileSchema = z.strictObject({
+	path: sourcePathSchema,
+	size: z.number().int().nonnegative(),
+	sha256: sha256Schema,
+});
+
 export const archiveManifestSchema = z.strictObject({
 	schemaVersion: z.literal(1),
 	registryRevision: revisionSchema,
-	registry: z.array(
-		z.strictObject({
-			path: sourcePathSchema,
-			size: z.number().int().nonnegative(),
-			sha256: sha256Schema,
-		}),
-	),
+	registry: z.array(archivedFileSchema),
+	views: z.array(archivedFileSchema),
 	sources: z.array(
 		z.strictObject({
 			size: z.number().int().nonnegative(),
@@ -61,7 +84,9 @@ export const archiveManifestSchema = z.strictObject({
 });
 
 const sourceFileSchema = z.strictObject({
-	path: sourcePathSchema,
+	path: sourcePathSchema.refine((path) => /\.(?:otf|ttf)$/i.test(path), {
+		message: 'must be a TTF or OTF',
+	}),
 	sha256: sha256Schema,
 	size: z.number().int().nonnegative(),
 	variant: staticVariantSchema.optional(),
@@ -82,15 +107,8 @@ export const familyMetadataSchema = z.strictObject({
 		z.strictObject({ type: z.literal('registry') }),
 	]),
 	displayName: z.string().min(1).optional(),
-	category: z.enum([
-		'sans-serif',
-		'serif',
-		'display',
-		'handwriting',
-		'monospace',
-		'icons',
-		'other',
-	]),
+	classifications: classificationsSchema,
+	tags: z.array(tagIdSchema).default([]),
 	designer: z.string().min(1).optional(),
 	dateAdded: dateSchema.optional(),
 	sourceModified: dateSchema,
@@ -221,8 +239,17 @@ export const axisRegistrySchema = z.record(
 	}),
 );
 
+const labelSchema = z.strictObject({ label: z.string().min(1) });
+
+export const taxonomySchema = z.strictObject({
+	classifications: z.record(fontClassificationSchema, labelSchema),
+	tagGroups: z.record(idSchema, labelSchema),
+	tags: z.record(tagIdSchema, labelSchema),
+});
+
 export type FamilyMetadata = z.infer<typeof familyMetadataSchema>;
 export type FamilyInspection = z.infer<typeof familyInspectionSchema>;
 export type FamilyPolicy = z.infer<typeof familyPolicySchema>;
 export type SourceFamily = z.infer<typeof sourceFamilySchema>;
 export type SubsetDefinition = z.infer<typeof subsetDefinitionSchema>;
+export type Taxonomy = z.infer<typeof taxonomySchema>;

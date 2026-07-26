@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2020-12-14",
 	"declaredSubsets": [
 		"cyrillic",
@@ -57,5 +59,8 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/vintage"
+	]
 }

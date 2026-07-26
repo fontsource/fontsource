@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2012-03-14",
 	"declaredSubsets": [
 		"latin",
@@ -36,5 +39,10 @@
 		}
 	],
 	"sourceModified": "2026-03-25",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/vintage",
+		"sans/humanist",
+		"serif/modern"
+	]
 }

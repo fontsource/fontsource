@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2010-05-11",
 	"declaredSubsets": [
 		"cyrillic",
@@ -42,5 +45,10 @@
 		}
 	],
 	"sourceModified": "2026-05-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/rugged",
+		"sans/humanist",
+		"seasonal/hanukkah"
+	]
 }

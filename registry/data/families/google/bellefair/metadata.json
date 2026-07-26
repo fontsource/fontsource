@@ -1,5 +1,7 @@
 {
-	"category": "serif",
+	"classifications": [
+		"serif"
+	],
 	"dateAdded": "2017-06-28",
 	"declaredSubsets": [
 		"hebrew",
@@ -38,5 +40,12 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/sincere",
+		"expressive/vintage",
+		"seasonal/christmas",
+		"serif/old-style-garalde"
+	]
 }

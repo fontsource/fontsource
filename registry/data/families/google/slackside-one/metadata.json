@@ -1,5 +1,8 @@
 {
-	"category": "handwriting",
+	"classifications": [
+		"display",
+		"handwriting"
+	],
 	"dateAdded": "2020-12-14",
 	"declaredSubsets": [
 		"japanese",
@@ -38,5 +41,12 @@
 		}
 	],
 	"sourceModified": "2026-03-12",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/active",
+		"expressive/awkward",
+		"expressive/playful",
+		"script/handwritten",
+		"theme/distressed"
+	]
 }

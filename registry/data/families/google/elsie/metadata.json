@@ -1,5 +1,8 @@
 {
-	"category": "display",
+	"classifications": [
+		"display",
+		"serif"
+	],
 	"dateAdded": "2012-11-12",
 	"declaredSubsets": [
 		"latin",
@@ -46,5 +49,11 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/cute",
+		"expressive/vintage",
+		"seasonal/valentines-day",
+		"serif/didone"
+	]
 }

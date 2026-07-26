@@ -1,5 +1,8 @@
 {
-	"category": "sans-serif",
+	"classifications": [
+		"display",
+		"sans-serif"
+	],
 	"dateAdded": "2023-05-18",
 	"declaredSubsets": [
 		"korean",
@@ -38,5 +41,13 @@
 		}
 	],
 	"sourceModified": "2026-03-03",
-	"status": "active"
+	"status": "active",
+	"tags": [
+		"expressive/cute",
+		"expressive/loud",
+		"expressive/rugged",
+		"sans/neo-grotesque",
+		"seasonal/lunar-new-year",
+		"theme/woodtype"
+	]
 }
