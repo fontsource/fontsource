@@ -24,6 +24,7 @@ import {
 	extractStyleValue,
 	formatAxisValue,
 	formatSlantValue,
+	formatStyle,
 	generateStaticFilename,
 	generateVariableFilename,
 	normalizeKebabCase,
@@ -47,6 +48,24 @@ const STYLE_VALUE_AXIS_MAP: Record<keyof StyleValues, string> = {
 	width: 'wdth',
 	italic: 'ital',
 	slant: 'slnt',
+};
+
+const pinUnusedStyleAxes = (
+	styleValues: Partial<StyleValues>,
+): Partial<Record<keyof StyleValues, SubsetAxisSetting>> => {
+	const settings = { ...styleValues };
+
+	for (const styleKey of ['width', 'slant'] as const) {
+		const styleValue = styleValues[styleKey];
+		if (styleValue?.type === 'variable') {
+			settings[styleKey] = {
+				type: 'single',
+				value: styleValue.value.defaultValue,
+			};
+		}
+	}
+
+	return settings;
 };
 
 const getSourceVariableConfig = (fonts: FontRef[]): VariableAxisConfig => {
@@ -198,7 +217,14 @@ export const buildFont = async (
 				};
 			}
 
-			const styleValues: Partial<Record<string, SubsetAxisSetting>> = {};
+			let fonts = isVariableFont
+				? family.fonts
+				: family.fonts.map(({ font, styleValues }) => ({
+						font,
+						styleValues: pinUnusedStyleAxes(styleValues),
+					}));
+			const styleValues: Partial<Record<string, SubsetAxisSetting>> =
+				isVariableFont ? {} : pinUnusedStyleAxes(family.styleValues);
 			const axes: Partial<Record<string, SubsetAxisSetting>> = {};
 
 			if (isVariableFont && variableConfig) {
@@ -219,6 +245,15 @@ export const buildFont = async (
 					}
 				}
 			} else {
+				// Glypht preserves unspecified axes, so a static build must pin
+				// every custom axis it does not instance.
+				for (const axis of family.axes) {
+					axes[axis.tag] = {
+						type: 'single',
+						value: axis.defaultValue,
+					};
+				}
+
 				// If weights aren't explicitly configured, extract them from the font metadata.
 				let weights = config.weights;
 				if (!weights || weights.length === 0) {
@@ -254,22 +289,44 @@ export const buildFont = async (
 					(s) => s === 'italic' || s.startsWith('oblique'),
 				);
 				const hasNormal = styles.includes('normal');
+				const italicAxis = family.styleValues.italic;
+				const slantAxis = family.styleValues.slant;
 
-				// If both italic and normal styles are present, we can use a single 'italic' axis with values 0 and 1.
-				if (hasItalic && hasNormal) {
-					styleValues.italic = {
-						type: 'multiple',
-						value: { ranges: [0, 1] },
-					};
-				} else if (hasItalic) {
-					styleValues.italic = { type: 'single', value: 1 };
+				// Use the source endpoints instead of assuming every style axis is
+				// encoded as ital 0–1 or a particular slant angle.
+				if (slantAxis?.type === 'variable' && italicAxis?.type !== 'variable') {
+					const { min, defaultValue, max } = slantAxis.value;
+					const upright = min <= 0 && max >= 0 ? 0 : defaultValue;
+					const italic =
+						Math.abs(min - upright) > Math.abs(max - upright) ? min : max;
+					styleValues.slant =
+						hasItalic && hasNormal
+							? {
+									type: 'multiple',
+									value: { ranges: [upright, italic] },
+								}
+							: { type: 'single', value: hasItalic ? italic : upright };
+				} else if (italicAxis?.type === 'variable') {
+					const italic = italicAxis.value.max;
+					styleValues.italic =
+						hasItalic && hasNormal
+							? {
+									type: 'multiple',
+									value: { ranges: [0, italic] },
+								}
+							: { type: 'single', value: hasItalic ? italic : 0 };
 				} else {
-					styleValues.italic = { type: 'single', value: 0 };
+					const requestedStyles = new Set(styles.map(formatStyle));
+					fonts = fonts.filter(({ font }) =>
+						requestedStyles.has(
+							formatStyle(extractFontStyle(font.styleValues).style),
+						),
+					);
 				}
 			}
 
 			return {
-				fonts: family.fonts,
+				fonts,
 				enableSubsetting: true,
 				styleValues,
 				axes,
