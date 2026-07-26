@@ -50,6 +50,10 @@
 	border-top: 1px solid var(--mantine-color-default-border);
 }
 
+.sourceTableSection {
+	margin-bottom: calc(-1 * var(--mantine-spacing-lg));
+}
+
 .supportingText {
 	color: light-dark(
 		var(--mantine-color-gray-7),

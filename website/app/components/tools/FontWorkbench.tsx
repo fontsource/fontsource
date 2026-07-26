@@ -245,7 +245,9 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 			)}
 
 			{workbench.sources.length > 0 && (
-				<section className={classes.section}>
+				<section
+					className={`${classes.section} ${!hasResults ? classes.sourceTableSection : ''}`}
+				>
 					<FileList
 						sources={workbench.sources}
 						onRemove={workbench.removeSource}
