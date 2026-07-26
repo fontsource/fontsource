@@ -21,6 +21,7 @@ const UnicodeRangeSchema = z.tuple([
 	z.string().regex(/^[0-9A-F]+$/),
 	z.string().regex(/^[0-9A-F]+$/),
 ]);
+const ScriptSchema = z.string().regex(/^[A-Z][a-z]{3}$/);
 
 const SampleTextSchema = z.strictObject({
 	styles: z.string().min(1).optional(),
@@ -90,10 +91,7 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.omit({
 	axes: true,
 }).extend({
 	primaryLanguage: LanguageIdSchema.optional(),
-	primaryScript: z
-		.string()
-		.regex(/^[A-Z][a-z]{3}$/)
-		.optional(),
+	primaryScript: ScriptSchema.optional(),
 	sampleText: SampleTextSchema.optional(),
 	designer: z.string().optional(),
 	dateAdded: z.iso.date().optional(),
@@ -120,10 +118,7 @@ export const RegistrySubsetsSchema = z.strictObject({
 const RegistryLanguageSummarySchema = z.strictObject({
 	id: LanguageIdSchema,
 	language: z.string().min(1).describe('BCP 47 language subtag'),
-	script: z
-		.string()
-		.regex(/^[A-Z][a-z]{3}$/)
-		.describe('ISO 15924 script code'),
+	script: ScriptSchema.describe('ISO 15924 script code'),
 	name: z.string().min(1),
 	preferredName: z.string().min(1).optional(),
 	autonym: z.string().min(1).optional(),

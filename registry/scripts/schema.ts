@@ -14,6 +14,7 @@ const sha256Schema = z.string().regex(/^[0-9a-f]{64}$/);
 const dateSchema = z.iso.date();
 const finiteNumberSchema = z.number().finite();
 const fontStyleSchema = z.enum(['normal', 'italic']);
+const scriptSchema = z.string().regex(/^[A-Z][a-z]{3}$/);
 export const fontClassificationSchema = z.enum([
 	'serif',
 	'sans-serif',
@@ -64,7 +65,7 @@ export const languageCatalogSchema = z.record(
 	languageIdSchema,
 	z.strictObject({
 		language: z.string().min(1),
-		script: z.string().regex(/^[A-Z][a-z]{3}$/),
+		script: scriptSchema,
 		name: z.string().min(1),
 		preferredName: z.string().min(1).optional(),
 		autonym: z.string().min(1).optional(),
@@ -135,10 +136,7 @@ export const familyMetadataSchema = z.strictObject({
 	tags: z.array(tagIdSchema).default([]),
 	languages: z.array(languageIdSchema),
 	primaryLanguage: languageIdSchema.optional(),
-	primaryScript: z
-		.string()
-		.regex(/^[A-Z][a-z]{3}$/)
-		.optional(),
+	primaryScript: scriptSchema.optional(),
 	sampleText: sampleTextSchema.optional(),
 	designer: z.string().min(1).optional(),
 	dateAdded: dateSchema.optional(),

@@ -82,10 +82,8 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			language: language.language,
 			script: language.script,
 			name: language.name,
-			...(language.preferredName
-				? { preferredName: language.preferredName }
-				: {}),
-			...(language.autonym ? { autonym: language.autonym } : {}),
+			preferredName: language.preferredName,
+			autonym: language.autonym,
 		}))
 		.toSorted((left, right) => compareStrings(left.id, right.id));
 	const languageViews = Object.entries(languages).map(([id, language]) =>

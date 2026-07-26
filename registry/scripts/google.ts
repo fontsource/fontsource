@@ -38,10 +38,7 @@ type GoogleFont = {
 	copyright?: string;
 };
 
-type GoogleSampleText = {
-	styles?: string;
-	tester?: string;
-};
+type GoogleSampleText = NonNullable<FamilyMetadata['sampleText']>;
 
 type GoogleFamily = {
 	name: string;
@@ -81,10 +78,7 @@ type GoogleFamilyProto = {
 	languages: string[];
 	primary_language?: string;
 	primary_script?: string;
-	sample_text?: {
-		styles?: string;
-		tester?: string;
-	};
+	sample_text?: GoogleSampleText;
 };
 
 type GoogleAxisProto = {
@@ -108,10 +102,7 @@ type GoogleLanguageProto = {
 		base?: string;
 		not_required?: string;
 	};
-	sample_text?: {
-		styles?: string;
-		tester?: string;
-	};
+	sample_text?: GoogleSampleText;
 };
 
 const familyProto = loadProtoType(
@@ -189,7 +180,7 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 		classifications: family.classifications ?? [],
 		...(family.display_name ? { displayName: family.display_name } : {}),
 		...(project ? { project } : {}),
-		languages: family.languages ?? [],
+		languages: family.languages,
 		...(family.primary_language
 			? { primaryLanguage: family.primary_language }
 			: {}),

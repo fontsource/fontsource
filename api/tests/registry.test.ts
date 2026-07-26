@@ -232,27 +232,19 @@ describe('registry routes', () => {
 	});
 
 	it('returns not found for unknown registry records', async () => {
-		const family = await jsonSnapshot(
-			'https://fontsource.test/v1/registry/families/unknown',
-		);
-		const language = await jsonSnapshot(
-			'https://fontsource.test/v1/registry/languages/unknown_Latn',
-		);
-		const source = await jsonSnapshot(
-			`https://fontsource.test/v1/registry/sources/${'8'.repeat(64)}`,
+		const responses = await Promise.all(
+			[
+				'/v1/registry/families/unknown',
+				'/v1/registry/languages/unknown_Latn',
+				`/v1/registry/sources/${'8'.repeat(64)}`,
+			].map((path) => jsonSnapshot(`https://fontsource.test${path}`)),
 		);
 
-		expect(family).toMatchObject({
-			status: 404,
-			body: { status: 404 },
-		});
-		expect(source).toMatchObject({
-			status: 404,
-			body: { status: 404 },
-		});
-		expect(language).toMatchObject({
-			status: 404,
-			body: { status: 404 },
-		});
+		for (const response of responses) {
+			expect(response).toMatchObject({
+				status: 404,
+				body: { status: 404 },
+			});
+		}
 	});
 });
