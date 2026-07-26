@@ -20,6 +20,7 @@ import {
 	Title,
 	type TitleProps,
 } from '@mantine/core';
+import { IconExternalLink } from '@tabler/icons-react';
 import cx from 'clsx';
 import type { ComponentProps } from 'react';
 import { Link } from 'react-router';
@@ -39,17 +40,89 @@ const shouldUseDocumentNavigation = (href: string) => {
 	return documentResourceExtension.test(getHrefPathname(href));
 };
 
+const MdxLink = ({
+	href = '',
+	children,
+	className,
+	...props
+}: ComponentProps<'a'>) => {
+	if (href.startsWith('/') && !shouldUseDocumentNavigation(href)) {
+		return (
+			<Link
+				to={href}
+				prefetch="intent"
+				className={cx(docsMdxClasses.link, className)}
+				{...props}
+			>
+				{children}
+			</Link>
+		);
+	}
+
+	const externalProps = href.startsWith('http')
+		? { target: '_blank', rel: 'noreferrer' }
+		: {};
+
+	return (
+		<a
+			href={href}
+			className={cx(docsMdxClasses.link, className)}
+			{...externalProps}
+			{...props}
+		>
+			{children}
+		</a>
+	);
+};
+
+const MdxTable = (props: TableProps) => (
+	<Table.ScrollContainer minWidth="max-content" type="native" tabIndex={0}>
+		<Table fz="sm" {...props} />
+	</Table.ScrollContainer>
+);
+
+const MdxExternalLinkIcon = (
+	props: ComponentProps<typeof IconExternalLink>,
+) => <IconExternalLink size={14} stroke={1.8} aria-hidden="true" {...props} />;
+
 const mdxComponents = {
 	// Typography
 	h1: () => null,
-	h2: (props: BoxProps) => (
-		<Title order={2} fw={700} fz={24} lh={1.25} mt={42} mb="sm" {...props} />
+	h2: ({ className, ...props }: BoxProps) => (
+		<Title
+			order={2}
+			fw={700}
+			fz={24}
+			lh={1.25}
+			mt={42}
+			mb="sm"
+			className={cx(docsMdxClasses.heading, className)}
+			{...props}
+		/>
 	),
-	h3: (props: TitleProps) => (
-		<Title order={3} fw={700} fz={19} lh={1.35} mt="xl" mb="sm" {...props} />
+	h3: ({ className, ...props }: TitleProps) => (
+		<Title
+			order={3}
+			fw={700}
+			fz={19}
+			lh={1.35}
+			mt="xl"
+			mb="sm"
+			className={cx(docsMdxClasses.heading, className)}
+			{...props}
+		/>
 	),
-	h4: (props: TitleProps) => (
-		<Title order={4} fw={700} fz={17} lh={1.4} mt="lg" mb="xs" {...props} />
+	h4: ({ className, ...props }: TitleProps) => (
+		<Title
+			order={4}
+			fw={700}
+			fz={17}
+			lh={1.4}
+			mt="lg"
+			mb="xs"
+			className={cx(docsMdxClasses.heading, className)}
+			{...props}
+		/>
 	),
 	p: (props: TextProps) => (
 		<Text fw={400} fz={16} lh={1.75} my="md" {...props} />
@@ -65,7 +138,7 @@ const mdxComponents = {
 	code: (props: CodeProps) => <CodeMdx {...props} />,
 
 	// Table
-	table: (props: TableProps) => <Table fz="sm" {...props} />,
+	table: MdxTable,
 	thead: (props: TableTheadProps) => <Table.Thead {...props} />,
 	tbody: (props: TableTbodyProps) => <Table.Tbody {...props} />,
 	tr: (props: TableTrProps) => <Table.Tr {...props} />,
@@ -77,34 +150,9 @@ const mdxComponents = {
 	// Other
 	hr: (props: DividerProps) => <Divider mb="md" {...props} />,
 	blockquote: (props: BlockquoteProps) => <Blockquote fz={16} {...props} />,
-	a: ({ href = '', children, className, ...props }: ComponentProps<'a'>) => {
-		if (href.startsWith('/') && !shouldUseDocumentNavigation(href)) {
-			return (
-				<Link
-					to={href}
-					className={cx(docsMdxClasses.link, className)}
-					{...props}
-				>
-					{children}
-				</Link>
-			);
-		}
-
-		const externalProps = href.startsWith('http')
-			? { target: '_blank', rel: 'noreferrer' }
-			: {};
-
-		return (
-			<a
-				href={href}
-				className={cx(docsMdxClasses.link, className)}
-				{...externalProps}
-				{...props}
-			>
-				{children}
-			</a>
-		);
-	},
+	a: MdxLink,
+	DocsLink: MdxLink,
+	DocsExternalLinkIcon: MdxExternalLinkIcon,
 	PackageManagerCode,
 };
 

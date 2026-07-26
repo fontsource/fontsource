@@ -12,7 +12,7 @@ interface PageActionsProps {
 
 const copyLabel = (status: CopyStatus) => {
 	if (status === 'copied') return 'Copied Markdown';
-	if (status === 'failed') return 'Copy failed';
+	if (status === 'failed') return 'Copy failed — retry';
 	return 'Copy Markdown';
 };
 
@@ -30,9 +30,12 @@ export const PageActions = ({ markdownUrl }: PageActionsProps) => {
 	const settleCopyStatus = (status: CopyStatus) => {
 		window.clearTimeout(copyStatusTimeout.current);
 		setCopyStatus(status);
-		copyStatusTimeout.current = window.setTimeout(() => {
-			setCopyStatus('idle');
-		}, 1500);
+		copyStatusTimeout.current = window.setTimeout(
+			() => {
+				setCopyStatus('idle');
+			},
+			status === 'failed' ? 3000 : 1500,
+		);
 	};
 
 	const copyPage = async () => {

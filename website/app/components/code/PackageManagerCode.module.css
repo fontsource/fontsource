@@ -5,7 +5,7 @@
 
 	.tab {
 		&[data-active] {
-			border-bottom: 2px solid var(--mantine-color-purple-0);
+			border-bottom: 2px solid var(--mantine-color-purple);
 		}
 	}
 }

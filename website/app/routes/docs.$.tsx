@@ -37,21 +37,28 @@ interface LoaderData {
 
 const sectionRedirects: Record<string, string> = {
 	'getting-started': '/docs/getting-started/introduction',
-	guides: '/docs/guides/angular',
 	api: '/docs/api/introduction',
+};
+
+const permanentRedirects: Record<string, string> = {
+	'guides/laravel': 'https://laravel.com/docs/13.x/vite#font-providers',
+	'guides/nuxt': 'https://fonts.nuxt.com/get-started/providers#npm',
+	'guides/vuetify':
+		'https://vuetifyjs.com/en/getting-started/installation/#fonts',
 };
 
 interface ContentProps {
 	title: string;
+	titleId?: string;
 	markdownUrl: string;
 }
 
 const docsContentLoader =
 	browserCollections.docs.createClientLoader<ContentProps>({
-		component({ default: MDX }, { title, markdownUrl }) {
+		component({ default: MDX }, { title, titleId, markdownUrl }) {
 			return (
 				<>
-					<Balancer as="h1" className={classes.title}>
+					<Balancer as="h1" id={titleId} className={classes.title}>
 						{title}
 					</Balancer>
 					<PageActions markdownUrl={markdownUrl} />
@@ -68,6 +75,14 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const route = params['*']?.replace(/\/$/, '');
 	if (!route) {
 		throw new Response('Not found', { status: 404 });
+	}
+
+	const permanentRedirectTo = permanentRedirects[route];
+	if (permanentRedirectTo) {
+		return redirect(permanentRedirectTo, {
+			status: 301,
+			headers: cacheHeaders.stable,
+		});
 	}
 
 	const redirectTo = sectionRedirects[route];
@@ -135,6 +150,9 @@ export default function DocsPage() {
 					<Breadcrumbs items={loaderData.breadcrumbs} />
 					{docsContentLoader.useContent(loaderData.path, {
 						title: loaderData.frontmatter.title,
+						titleId: loaderData.toc
+							.find((item) => item.depth === 1 && item.url.startsWith('#'))
+							?.url.slice(1),
 						markdownUrl: loaderData.markdownUrl,
 					})}
 					<Pager pager={loaderData.pager} />

@@ -1,4 +1,9 @@
 .wrapper {
+	--docs-accent-on-tint: light-dark(
+		color-mix(in srgb, var(--mantine-color-purple-0) 88%, black),
+		color-mix(in srgb, var(--mantine-color-purple) 88%, white)
+	);
+
 	position: sticky;
 	top: 82px;
 	display: flex;
@@ -9,7 +14,7 @@
 	overflow-y: auto;
 	border-right: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
 
-	@media (--lt-sm) {
+	@media (max-width: 47.99em) {
 		top: 0;
 		width: 100%;
 		max-height: none;
@@ -40,19 +45,23 @@
 
 	&:hover,
 	&:focus-visible {
-		color: var(--mantine-color-purple-0);
+		color: var(--docs-accent-on-tint);
 		background: var(--mantine-color-purpleHover-0);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 2px;
 	}
 
 	&[data-active="true"] {
-		background: light-dark(rgba(98, 91, 248, 0.04), rgba(98, 91, 248, 0.09));
-		color: var(--mantine-color-purple-0);
-		box-shadow: inset 2px 0 0 var(--mantine-color-purple-0);
+		background: var(--mantine-color-purpleHover-0);
+		color: var(--docs-accent-on-tint);
+		box-shadow: inset 2px 0 0 var(--docs-accent-on-tint);
+	}
+
+	@media (max-width: 47.99em) {
+		min-height: 44px;
 	}
 }
 
@@ -104,19 +113,23 @@
 
 	&:hover,
 	&:focus-visible {
-		color: var(--mantine-color-purple-0);
+		color: var(--docs-accent-on-tint);
 		background-color: var(--mantine-color-purpleHover-0);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 2px;
 	}
 
 	&[data-active="true"] {
-		background: light-dark(rgba(98, 91, 248, 0.08), rgba(98, 91, 248, 0.14));
-		box-shadow: inset 2px 0 0 var(--mantine-color-purple-0);
-		color: var(--mantine-color-purple-0);
+		background: var(--mantine-color-purpleHover-0);
+		box-shadow: inset 2px 0 0 var(--docs-accent-on-tint);
+		color: var(--docs-accent-on-tint);
 		font-weight: 700;
+	}
+
+	@media (max-width: 47.99em) {
+		min-height: 44px;
 	}
 }

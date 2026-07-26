@@ -1,0 +1,64 @@
+---
+title: Vite
+description: Install and bundle Fontsource packages with Vite.
+---
+
+# Vite
+
+Vite can import Fontsource CSS without additional configuration. It resolves
+the CSS `url()` references, emits the font files as hashed assets, and keeps
+them on the same origin as your application.
+
+## 1. Install the font
+
+<PackageManagerCode cmd="@fontsource-variable/open-sans" />
+
+## 2. Import it from your entry point
+
+```ts
+// src/main.ts
+import "@fontsource-variable/open-sans/wght.css";
+import "./style.css";
+```
+
+The variable package's `wght.css` entry covers its full weight range with one
+font file per subset. For a static package, import only the variants you use:
+
+```ts
+import "@fontsource/open-sans/400.css";
+import "@fontsource/open-sans/700.css";
+```
+
+## 3. Apply the font
+
+```css
+/* src/style.css */
+body {
+  font-family: "Open Sans Variable", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+```
+
+Vite rebases the font URLs found in the package CSS automatically, so you do
+not need to copy files into `public/` or configure an asset loader.
+
+## Preload a critical font
+
+When a font is critical to the first screen, Vite's `?url` import returns its
+final build URL:
+
+```ts
+import openSansUrl from "@fontsource-variable/open-sans/files/open-sans-latin-wght-normal.woff2?url";
+```
+
+Pass that URL to your framework's document head or preload component. Preload
+only the subset and style needed immediately; unnecessary preloads compete
+with other critical resources.
+
+See the dedicated [preloading guide](/docs/getting-started/preload) and Vite's
+[CSS features](https://vite.dev/guide/features.html#css) and
+[static asset handling](https://vite.dev/guide/assets.html#explicit-url-imports)
+for more detail.

@@ -32,6 +32,16 @@
 	&:hover {
 		background-color: var(--mantine-color-purple-0);
 	}
+
+	&:focus-visible {
+		outline: 2px solid var(--mantine-color-text-0);
+		outline-offset: 2px;
+	}
+
+	@media (--lt-sm) {
+		width: 2.75rem;
+		height: 2.75rem;
+	}
 }
 
 .language {
@@ -72,6 +82,10 @@
 	&:global(.shiki) {
 		color: #c2bfff !important;
 		background: #01112c !important;
+	}
+
+	@media (--lt-sm) {
+		padding-top: 2.875rem;
 	}
 }
 

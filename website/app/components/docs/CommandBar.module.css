@@ -70,7 +70,8 @@
 
 	&:hover,
 	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purple-0);
+		background: var(--mantine-color-purpleHover-0);
+		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 1px;
 	}
 
@@ -90,6 +91,8 @@
 
 	@media (--lt-sm) {
 		width: auto;
+		min-width: 44px;
+		min-height: 44px;
 		margin-left: 0;
 
 		span,

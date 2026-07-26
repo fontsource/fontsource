@@ -1,20 +1,50 @@
 ---
-title: Vue.js
-description: Install and use Fontsource fonts from a Vue application entry point.
+title: Vue
+description: Install, import, and use Fontsource packages in a Vue application.
 ---
 
-# Vue.js
+# Vue
 
-To include Fontsource into your Vue.js project, you can import the Fontsource files into your entry point with the appropriate bundler setup.
+Fontsource packages work with Vue's standard Vite setup. The font files remain
+self-hosted and are emitted with the rest of your application assets.
 
-## Installation
+## 1. Install the font
 
-```js
+<PackageManagerCode cmd="@fontsource-variable/open-sans" />
+
+## 2. Import it from the application entry point
+
+```ts
+// src/main.ts
 import { createApp } from "vue";
-
 import "@fontsource-variable/open-sans/wght.css";
-
+import "./style.css";
 import App from "./App.vue";
 
 createApp(App).mount("#app");
+```
+
+Importing from `main.ts` makes the font available to the whole application.
+Import it from an individual component or route instead when you want the font
+in a separate bundle.
+
+## 3. Apply the font
+
+```css
+/* src/style.css */
+body {
+  margin: 0;
+  font-family: "Open Sans Variable", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+```
+
+If you use a static package, import only the weights and styles you need:
+
+```ts
+import "@fontsource/open-sans/400.css";
+import "@fontsource/open-sans/700.css";
 ```

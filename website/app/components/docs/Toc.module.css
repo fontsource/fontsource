@@ -47,12 +47,12 @@
 
 	&:hover,
 	&[data-active="true"] {
-		color: var(--mantine-color-purple-0);
+		color: var(--mantine-color-purple);
 		font-weight: 700;
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 3px;
 		border-radius: 3px;
 	}
@@ -70,11 +70,11 @@
 
 	&:hover,
 	&:focus-visible {
-		color: var(--mantine-color-purple-0);
+		color: var(--mantine-color-purple);
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 3px;
 		border-radius: 3px;
 	}

@@ -1,72 +1,52 @@
 ---
 title: Remix
-description: Install and use Fontsource fonts in Remix with Vite or the classic compiler.
+description: Install and use Fontsource packages in a Remix application built with Vite.
 ---
 
 # Remix
 
-Remix is a full-stack JavaScript framework for building web applications. Importing fonts depends on the compiler you are using. Below are the steps to import fonts into a Remix project.
+Remix applications built with Vite can import Fontsource CSS directly. Vite
+bundles the CSS and emits its font files as versioned application assets.
 
-## Vite Compiler
+> Starting a new project? Remix's current framework features now live in React
+> Router. See the [React Router guide](/docs/guides/react-router) for that
+> setup.
 
-To import fonts into a Remix project using the Vite compiler, you can simply import the CSS file directly into your `root.tsx` file.
+## 1. Install the font
 
-### 1. Import CSS
+<PackageManagerCode cmd="@fontsource-variable/open-sans" />
 
-Modify `root.tsx` to include the following code:
+## 2. Import it from the root route
 
 ```tsx
+// app/root.tsx
 import "@fontsource-variable/open-sans/wght.css";
+import "./app.css";
+
+// Keep the rest of your root route unchanged.
 ```
 
-> **Note:** You **MUST** include the `.css` extension when importing the file or you will get an error.
+CSS side-effect imports work without the former
+`@remix-run/css-bundle` package when using Remix Vite. Importing from
+`app/root.tsx` makes the font available to every route.
 
-### 2. Usage
-
-You can now use the imported fonts in your Remix.js project.
+## 3. Apply the font
 
 ```css
-h1 {
+/* app/app.css */
+body {
   font-family: "Open Sans Variable", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
 }
 ```
 
-## Classic Remix Compiler
+Import only the weights, styles, or variable axes you use. The
+[package installation guide](/docs/getting-started/install) lists the available
+entry points.
 
-With the Classic Remix Compiler, you can leverage the CSS bundler plugin built into the framework.
-
-### 1. Install the plugin
-
-<PackageManagerCode cmd="@remix-run/css-bundle" />
-
-### 2. Configure the plugin
-
-Modify `root.tsx` to include the following code:
-
-```tsx
-import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction } from "@remix-run/node";
-
-import "@fontsource-variable/open-sans/wght.css";
-
-export const links: LinksFunction = () => {
-  return [
-    ...(cssBundleHref
-      ? [{ rel: "stylesheet", href: cssBundleHref }]
-      : []),
-    // ...
-  ];
-};
-```
-
-### 3. Usage
-
-You can now use the imported fonts in your Remix.js project.
-
-```css
-h1 {
-  font-family: "Open Sans Variable", sans-serif;
-}
-```
-
-Read the official documentation on the plugin [here](https://remix.run/docs/en/main/guides/styling#css-bundling).
+See Remix's
+[CSS import documentation](https://v2.remix.run/docs/styling/css-imports) for
+more about Vite CSS handling.

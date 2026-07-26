@@ -25,13 +25,13 @@
 
 	&:hover,
 	&:focus-visible {
-		color: var(--mantine-color-purple-0);
+		color: var(--mantine-color-purple);
 		text-decoration: underline;
 		text-underline-offset: 3px;
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 3px;
 		border-radius: 3px;
 	}
@@ -42,7 +42,8 @@
 	}
 
 	@media (--lt-sm) {
-		padding: 6px 14px 6px 0;
+		min-height: 44px;
+		padding: 10px 14px 10px 0;
 		border-left: 0;
 	}
 }
