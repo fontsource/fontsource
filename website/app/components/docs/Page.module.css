@@ -75,9 +75,10 @@
 	color: inherit;
 	text-decoration: none;
 	transition:
-		background-color 100ms ease,
-		border-color 100ms ease,
-		color 100ms ease;
+		background-color 140ms ease,
+		border-color 140ms ease,
+		color 140ms ease,
+		transform 140ms ease;
 
 	> strong {
 		display: flex;
@@ -101,19 +102,44 @@
 		border-color: var(--mantine-color-purple);
 		color: inherit;
 		text-decoration: none;
+		transform: translateY(-1px);
 
 		> strong {
 			color: var(--docs-accent-on-tint);
 		}
 	}
 
+	&:active {
+		transform: translateY(0);
+	}
+
 	&:focus-visible {
 		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 2px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+
+		&:hover,
+		&:focus-visible {
+			transform: none;
+		}
 	}
 }
 
 .article :global(.docs-guide-external) {
 	display: block;
 	flex: 0 0 auto;
+	color: light-dark(#69748a, #aeb7cd);
+	opacity: 0.82;
+	transition:
+		color 140ms ease,
+		opacity 140ms ease;
+}
+
+.article :global(.docs-guide-list > a:hover .docs-guide-external),
+.article :global(.docs-guide-list > a:focus-visible .docs-guide-external) {
+	color: var(--docs-accent-on-tint);
+	opacity: 1;
 }
