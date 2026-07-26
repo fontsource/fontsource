@@ -50,6 +50,7 @@ import '@mantine/core/styles/NavLink.css';
 import '@mantine/core/styles/Tabs.css';
 
 // Feedback
+import '@mantine/core/styles/Alert.css';
 import '@mantine/core/styles/Progress.css';
 
 // Overlays

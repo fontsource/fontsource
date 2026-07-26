@@ -1,4 +1,5 @@
-import { Checkbox, Group, Stack, Title } from '@mantine/core';
+import { Checkbox, Group, Text } from '@mantine/core';
+import classes from './FontWorkbench.module.css';
 
 interface Formats {
 	ttf: boolean;
@@ -8,34 +9,44 @@ interface Formats {
 
 interface FormatSelectorProps {
 	formats: Formats;
-	onFormatChange: (format: keyof Formats, checked: boolean) => void;
+	onChange: (format: keyof Formats, checked: boolean) => void;
+	disabled?: boolean;
 }
 
 const formatOptions = [
-	{ key: 'ttf', label: 'TTF/OTF' },
+	{ key: 'woff2', label: 'WOFF2 (recommended)' },
 	{ key: 'woff', label: 'WOFF' },
-	{ key: 'woff2', label: 'WOFF2' },
+	{ key: 'ttf', label: 'TTF' },
 ] as const;
 
 export const FormatSelector = ({
 	formats,
-	onFormatChange,
+	onChange,
+	disabled = false,
 }: FormatSelectorProps) => {
+	const hasFormat = Object.values(formats).some(Boolean);
+
 	return (
-		<Stack>
-			<Title order={3}>Output Formats</Title>
-			<Group>
+		<fieldset className={classes.fieldset}>
+			<legend className={classes.legend}>Output Formats</legend>
+			<Group mt="sm">
 				{formatOptions.map(({ key, label }) => (
 					<Checkbox
 						key={key}
 						label={label}
 						checked={formats[key]}
-						onChange={(event) =>
-							onFormatChange(key, event.currentTarget.checked)
+						disabled={disabled}
+						onChange={({ currentTarget: { checked } }) =>
+							onChange(key, checked)
 						}
 					/>
 				))}
 			</Group>
-		</Stack>
+			{!hasFormat && (
+				<Text size="xs" c="red" mt="xs" role="alert">
+					Select at least one output format.
+				</Text>
+			)}
+		</fieldset>
 	);
 };

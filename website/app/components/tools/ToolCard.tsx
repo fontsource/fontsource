@@ -1,4 +1,4 @@
-import { Card, Group, Text, Title } from '@mantine/core';
+import { Card, Text, Title } from '@mantine/core';
 import type { Icon } from '@tabler/icons-react';
 import { Link } from 'react-router';
 import styles from './ToolCard.module.css';
@@ -25,13 +25,16 @@ export const ToolCard = ({
 			className={styles.toolCard}
 			prefetch="intent"
 		>
-			<Group>
-				<Icon />
-			</Group>
-			<Title order={3} mt="md">
+			<Icon
+				size={32}
+				stroke={1.5}
+				color="var(--mantine-color-purple)"
+				aria-hidden
+			/>
+			<Title order={2} size="h3" mt="md">
 				{title}
 			</Title>
-			<Text size="sm" c="dimmed" mt="sm">
+			<Text size="sm" mt="sm" className={styles.description}>
 				{description}
 			</Text>
 		</Card>
