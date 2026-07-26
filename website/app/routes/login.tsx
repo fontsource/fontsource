@@ -5,7 +5,7 @@ import {
 	IconBrandGoogle,
 } from '@tabler/icons-react';
 import { createAuthClient } from 'better-auth/react';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import type {
 	HeadersFunction,
 	LoaderFunctionArgs,
@@ -15,16 +15,60 @@ import { redirect, useSearchParams } from 'react-router';
 import { getAuthSession } from '@/utils/auth.server';
 import { cacheHeaders } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
-import {
-	getOAuthLoginError,
-	getSignInNetworkError,
-	getSignInRequestError,
-	type LoginErrorMessage,
-	parseSocialProvider,
-	type SocialProvider,
-} from '@/utils/login-error';
 
 const authClient = createAuthClient();
+
+type SocialProvider = 'google' | 'github';
+
+type LoginErrorMessage = {
+	title: string;
+	message: string;
+};
+
+const providerLabels: Record<SocialProvider, string> = {
+	google: 'Google',
+	github: 'GitHub',
+};
+
+const getCallbackError = (
+	searchParams: URLSearchParams,
+): LoginErrorMessage | null => {
+	const error = searchParams.get('error');
+	if (!error) return null;
+
+	const provider = searchParams.get('provider');
+	const providerLabel =
+		provider === 'google'
+			? providerLabels.google
+			: provider === 'github'
+				? providerLabels.github
+				: null;
+
+	if (error === 'email_not_found') {
+		const alternateProvider =
+			provider === 'google'
+				? providerLabels.github
+				: provider === 'github'
+					? providerLabels.google
+					: null;
+
+		return {
+			title: providerLabel
+				? `${providerLabel} didn’t share an email address`
+				: 'No email address was provided',
+			message: alternateProvider
+				? `Fontsource needs an email address to complete sign-in. Try an account that shares one, or continue with ${alternateProvider}.`
+				: 'Fontsource needs an email address to complete sign-in. Try an account that shares one, or use another sign-in option.',
+		};
+	}
+
+	return {
+		title: providerLabel
+			? `${providerLabel} couldn’t complete sign-in`
+			: 'Couldn’t log you in',
+		message: 'Try again. If it keeps happening, use another sign-in option.',
+	};
+};
 
 export const meta: MetaFunction = () => [
 	{ title: 'Log in | Fontsource' },
@@ -52,21 +96,10 @@ export default function Login() {
 	const [actionError, setActionError] = useState<LoginErrorMessage | null>(
 		null,
 	);
-	const [hasAttemptedSignIn, setHasAttemptedSignIn] = useState(false);
-	const signInInFlight = useRef(false);
-	const callbackError = hasAttemptedSignIn
-		? null
-		: getOAuthLoginError(
-				searchParams.get('error'),
-				parseSocialProvider(searchParams.get('provider')),
-			);
+	const callbackError = pendingProvider ? null : getCallbackError(searchParams);
 	const loginError = actionError ?? callbackError;
 
 	const signIn = async (provider: SocialProvider) => {
-		if (signInInFlight.current) return;
-
-		signInInFlight.current = true;
-		setHasAttemptedSignIn(true);
 		setActionError(null);
 		setPendingProvider(provider);
 
@@ -78,12 +111,25 @@ export default function Login() {
 			});
 
 			if (result.error) {
-				setActionError(getSignInRequestError(provider, result.error.status));
+				setActionError(
+					result.error.status === 429
+						? {
+								title: 'Too many sign-in attempts',
+								message: 'Wait a moment, then try again.',
+							}
+						: {
+								title: `Fontsource couldn’t start ${providerLabels[provider]} sign-in`,
+								message:
+									'Try again. If it keeps happening, use another sign-in option.',
+							},
+				);
 			}
 		} catch {
-			setActionError(getSignInNetworkError());
+			setActionError({
+				title: 'Couldn’t connect to Fontsource',
+				message: 'Check your connection, then try again.',
+			});
 		} finally {
-			signInInFlight.current = false;
 			setPendingProvider(null);
 		}
 	};
