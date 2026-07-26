@@ -114,7 +114,7 @@ const SourceTable = ({
 							)}
 							{!source.inspection && !source.error && (
 								<Text size="xs" mt={4} className={classes.supportingText}>
-									Reading font details…
+									Reading metadata…
 								</Text>
 							)}
 						</Table.Td>
@@ -164,26 +164,28 @@ export const FileList = ({
 		(source) => !source.inspection && source.error,
 	).length;
 	const readingCount = sources.length - readableCount - unreadableCount;
-	const inspectionSummary = [
-		readableCount > 0 ? `${readableCount} ready` : undefined,
-		readingCount > 0
-			? `Reading ${readingCount} ${readingCount === 1 ? 'file' : 'files'}…`
-			: undefined,
-		unreadableCount > 0
-			? `${unreadableCount} ${unreadableCount === 1 ? 'file' : 'files'} could not be read`
-			: undefined,
-	]
-		.filter(Boolean)
-		.join(' · ');
-	const inspectionState =
-		readingCount > 0 ? 'reading' : unreadableCount > 0 ? 'warning' : 'ready';
-	const fullBatchSummary = (
+	const inspectionSummary =
+		readingCount > 0 || unreadableCount > 0
+			? [
+					readableCount > 0 ? `${readableCount} ready` : undefined,
+					readingCount > 0
+						? `Reading ${readingCount} ${readingCount === 1 ? 'file' : 'files'}…`
+						: undefined,
+					unreadableCount > 0 ? `${unreadableCount} unreadable` : undefined,
+				]
+					.filter(Boolean)
+					.join(' · ')
+			: undefined;
+	const inspectionState = unreadableCount > 0 ? 'warning' : 'reading';
+	const fullBatchSummary = inspectionSummary ? (
 		<>
 			{batchSummary} ·{' '}
 			<span className={classes.batchStatus} data-state={inspectionState}>
 				{inspectionSummary}
 			</span>
 		</>
+	) : (
+		batchSummary
 	);
 	const visibleSources = expanded
 		? sources
@@ -212,7 +214,7 @@ export const FileList = ({
 		return (
 			<details className={classes.sourceDetails}>
 				<summary>
-					<span className={classes.sourceDetailsTitle}>Font files</span>
+					<span className={classes.sourceDetailsTitle}>Font Files</span>
 					<span className={classes.supportingText}>{fullBatchSummary}</span>
 				</summary>
 				<Stack gap="sm" className={classes.sourceDetailsContent}>
@@ -260,7 +262,7 @@ export const FileList = ({
 						tabIndex={-1}
 						className={classes.fileListTitle}
 					>
-						Font files
+						Font Files
 					</Title>
 					<Text size="sm" mt={4} className={classes.supportingText}>
 						{fullBatchSummary}

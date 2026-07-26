@@ -28,10 +28,7 @@ export const FormatSelector = ({
 
 	return (
 		<fieldset className={classes.fieldset}>
-			<legend className={classes.legend}>Output formats</legend>
-			<Text size="sm" className={classes.supportingText}>
-				Select one or more formats for the converted files.
-			</Text>
+			<legend className={classes.legend}>Output Formats</legend>
 			<Group mt="sm">
 				{formatOptions.map(({ key, label }) => (
 					<Checkbox

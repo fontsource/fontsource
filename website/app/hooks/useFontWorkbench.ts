@@ -473,7 +473,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 			if (failed) return;
 			failed = true;
 			setProjectError(
-				`The ZIP file could not be created. Try ${preset === 'converter' ? 'Download all as ZIP' : 'Download package'} again.`,
+				`The ZIP file could not be created. Try ${preset === 'converter' ? 'Download ZIP' : 'Download package'} again.`,
 			);
 			setIsCreatingZip(false);
 		};

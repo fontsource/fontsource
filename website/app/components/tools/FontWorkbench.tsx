@@ -33,23 +33,22 @@ interface FontWorkbenchProps {
 const pageContent = {
 	converter: {
 		title: 'Font Converter',
-		description:
-			'Convert TTF, OTF, WOFF, and WOFF2 files into the formats you choose.',
+		description: 'Convert TTF, OTF, WOFF, and WOFF2 files locally.',
 		action: 'Convert',
 	},
 	optimizer: {
 		title: 'Webfont Optimizer',
-		description: 'Compress font families to WOFF2 and generate matching CSS.',
+		description: 'Build compressed WOFF2 files and matching CSS locally.',
 		action: 'Optimize',
 	},
 } as const;
 
 const fontDisplayOptions = [
-	{ value: 'swap', label: 'Swap — show fallback text immediately' },
-	{ value: 'fallback', label: 'Fallback — use fallback if the font is late' },
-	{ value: 'optional', label: 'Optional — avoid swapping after text appears' },
-	{ value: 'block', label: 'Block — hide text briefly while loading' },
-	{ value: 'auto', label: 'Auto — use the browser default' },
+	{ value: 'swap', label: 'swap — show fallback immediately' },
+	{ value: 'fallback', label: 'fallback — use fallback if the font is late' },
+	{ value: 'optional', label: 'optional — use the font only if ready' },
+	{ value: 'block', label: 'block — hide text briefly' },
+	{ value: 'auto', label: 'auto — browser default' },
 ];
 
 const sizeComparison = (inputSize: number, outputSize: number) => {
@@ -58,23 +57,23 @@ const sizeComparison = (inputSize: number, outputSize: number) => {
 
 	if (percentage > 1) {
 		return {
-			headline: `${Math.round(percentage)}% smaller as WOFF2`,
-			detail: `Original ${formatFileSize(inputSize)} → WOFF2 ${formatFileSize(outputSize)} · Saved ${formatFileSize(difference)}`,
+			headline: `${Math.round(percentage)}% Smaller as WOFF2`,
+			detail: `Input ${formatFileSize(inputSize)} → output ${formatFileSize(outputSize)} · saved ${formatFileSize(difference)}`,
 			tone: 'success',
 		};
 	}
 
 	if (percentage >= -1) {
 		return {
-			headline: 'Already optimized as WOFF2',
-			detail: `Original ${formatFileSize(inputSize)} → WOFF2 ${formatFileSize(outputSize)} · No meaningful size change`,
+			headline: 'Already Optimized as WOFF2',
+			detail: `Input ${formatFileSize(inputSize)} → output ${formatFileSize(outputSize)} · no meaningful change`,
 			tone: 'info',
 		};
 	}
 
 	return {
-		headline: 'WOFF2 is larger for this font',
-		detail: `Original ${formatFileSize(inputSize)} → WOFF2 ${formatFileSize(outputSize)} · Generated output is ${formatFileSize(-difference)} larger`,
+		headline: 'WOFF2 Is Larger',
+		detail: `Input ${formatFileSize(inputSize)} → output ${formatFileSize(outputSize)} · ${formatFileSize(-difference)} larger`,
 		tone: 'warning',
 	};
 };
@@ -118,15 +117,15 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 	).size;
 	const resultDescription =
 		preset === 'converter'
-			? `${convertedSourceCount}${failedConversionSources.length > 0 ? ` of ${readySources.length}` : ''} ${convertedSourceCount === 1 ? 'font' : 'fonts'} converted into ${workbench.artifacts.length} downloadable ${workbench.artifacts.length === 1 ? 'file' : 'files'}.${failedConversionSources.length > 0 ? ` ${failedConversionSources.length} failed.` : ''}`
-			: `${optimizedFamilyIds.size}${failedFamilies.length > 0 ? ` of ${workbench.families.length}` : ''} ${optimizedFamilyIds.size === 1 ? 'family' : 'families'} packaged into ${workbench.artifacts.length} downloadable ${workbench.artifacts.length === 1 ? 'file' : 'files'}.${failedFamilies.length > 0 ? ` ${failedFamilies.length} failed.` : ''}`;
+			? `${workbench.artifacts.length} ${workbench.artifacts.length === 1 ? 'file' : 'files'} from ${convertedSourceCount} ${convertedSourceCount === 1 ? 'font' : 'fonts'}${failedConversionSources.length > 0 ? ` · ${failedConversionSources.length} failed` : ''}`
+			: `${workbench.artifacts.length} package ${workbench.artifacts.length === 1 ? 'file' : 'files'} for ${optimizedFamilyIds.size} ${optimizedFamilyIds.size === 1 ? 'family' : 'families'}${failedFamilies.length > 0 ? ` · ${failedFamilies.length} failed` : ''}`;
 	const packageDescription = [
 		readySources.length > 0
 			? `${workbench.families.length} ${workbench.families.length === 1 ? 'family' : 'families'}`
 			: undefined,
 		'WOFF2',
-		workbench.output.formats.woff ? 'WOFF fallback' : undefined,
-		workbench.output.includeCss ? 'CSS included' : 'font files only',
+		workbench.output.formats.woff ? 'WOFF' : undefined,
+		workbench.output.includeCss ? 'CSS' : 'font files only',
 	]
 		.filter(Boolean)
 		.join(' · ');
@@ -166,7 +165,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 				<Stack gap="xs">
 					<Title order={1}>{content.title}</Title>
 					<Text maw={700} className={classes.supportingText}>
-						{content.description} Your files stay on this device.
+						{content.description}
 					</Text>
 				</Stack>
 
@@ -270,7 +269,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 					<Stack gap="sm">
 						<div>
 							<Title order={2} size="h3">
-								Package contents
+								Package Contents
 							</Title>
 							<Text size="sm" mt={4} className={classes.supportingText}>
 								{packageDescription}
@@ -278,11 +277,11 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 						</div>
 
 						<details className={classes.advanced}>
-							<summary>Advanced options</summary>
+							<summary>Advanced Options</summary>
 							<Stack gap="md" className={classes.advancedContent}>
 								<Checkbox
-									label="Add WOFF fallback"
-									description="Adds WOFF files for older browsers. The package will be larger."
+									label="Include WOFF fallback"
+									description="For legacy browser support. Increases package size."
 									classNames={{ description: classes.supportingText }}
 									checked={workbench.output.formats.woff}
 									disabled={workbench.isSessionProcessing}
@@ -292,7 +291,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 								/>
 								<Checkbox
 									label="Include CSS"
-									description="Creates an index.css file with @font-face rules for each family."
+									description="Creates one index.css per family with @font-face rules."
 									classNames={{ description: classes.supportingText }}
 									checked={workbench.output.includeCss}
 									disabled={workbench.isSessionProcessing}
@@ -307,8 +306,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 									<>
 										<SimpleGrid cols={{ base: 1, sm: 2 }}>
 											<Select
-												label="Text loading behavior"
-												description="Controls what appears while the font loads."
+												label="font-display"
 												data={fontDisplayOptions}
 												value={workbench.output.display}
 												classNames={{ description: classes.supportingText }}
@@ -321,8 +319,8 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 												}
 											/>
 											<TextInput
-												label="Font asset path"
-												description="Added before each font filename in generated CSS URLs."
+												label="CSS font path"
+												description="Prepended to font URLs in index.css."
 												value={workbench.output.path}
 												classNames={{ description: classes.supportingText }}
 												disabled={workbench.isSessionProcessing}
@@ -335,7 +333,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 											/>
 										</SimpleGrid>
 										<Text size="xs" className={classes.supportingText}>
-											CSS URL preview:{' '}
+											Generated URL:{' '}
 											<Code className={classes.pathPreview}>
 												{cssUrlPreview}
 											</Code>
@@ -396,7 +394,10 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 			)}
 
 			{failedFamilies.length > 0 && (
-				<Alert color="red" title="Some font families were not optimized">
+				<Alert
+					color="red"
+					title={`Optimization Failed for ${failedFamilies.length} ${failedFamilies.length === 1 ? 'Family' : 'Families'}`}
+				>
 					<Stack gap={4}>
 						{failedFamilies.map((family) => (
 							<Text key={family.id} size="sm">
@@ -410,7 +411,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 			{failedConversionSources.length > 0 && (
 				<Alert
 					color="red"
-					title={`${failedConversionSources.length} ${failedConversionSources.length === 1 ? 'font was' : 'fonts were'} not converted`}
+					title={`Conversion Failed for ${failedConversionSources.length} ${failedConversionSources.length === 1 ? 'Font' : 'Fonts'}`}
 				>
 					{failedConversionSources.map((source) => source.file.name).join(', ')}
 					. Remove the failed files or try another copy.
@@ -444,13 +445,11 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 						<ResultsTable
 							artifacts={workbench.artifacts}
 							title={
-								preset === 'converter' ? 'Converted files' : 'Package files'
+								preset === 'converter' ? 'Converted Files' : 'Package Files'
 							}
 							description={resultDescription}
 							zipLabel={
-								preset === 'converter'
-									? 'Download all as ZIP'
-									: 'Download package'
+								preset === 'converter' ? 'Download ZIP' : 'Download package'
 							}
 							onDownload={workbench.downloadArtifact}
 							onDownloadAll={workbench.downloadAll}

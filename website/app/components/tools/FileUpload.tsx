@@ -65,13 +65,11 @@ export const FileUpload = forwardRef<HTMLDivElement, FileUploadProps>(
 					</Dropzone.Idle>
 					<Stack gap={compact ? 0 : 7} style={{ minWidth: 0 }}>
 						<Text size={compact ? 'md' : 'xl'}>
-							{compact
-								? 'Drop or choose more font files'
-								: 'Drop font files here or choose files'}
+							{compact ? 'Add More Font Files' : 'Drop Font Files or Browse'}
 						</Text>
 						{!compact && (
 							<Text size="sm" className={classes.supportingText}>
-								TTF, OTF, WOFF, or WOFF2 · 250 MB per batch
+								TTF, OTF, WOFF, WOFF2 · 250 MB max
 							</Text>
 						)}
 					</Stack>

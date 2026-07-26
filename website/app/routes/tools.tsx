@@ -14,7 +14,7 @@ export default function ToolsLayout() {
 			{isToolsIndex && (
 				<ContentHeader
 					title="Font Tools"
-					description="Convert and optimize font files without uploading them."
+					description="Convert files or build WOFF2/CSS packages locally."
 				/>
 			)}
 			<Container className={classes.container}>

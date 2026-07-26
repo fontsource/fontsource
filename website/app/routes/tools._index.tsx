@@ -15,14 +15,13 @@ export const meta: MetaFunction = () => {
 const tools = [
 	{
 		title: 'Font Converter',
-		description:
-			'Convert TTF, OTF, WOFF, and WOFF2 files into your selected formats.',
+		description: 'Convert TTF, OTF, WOFF, and WOFF2 files.',
 		link: '/tools/converter',
 		icon: IconTransform,
 	},
 	{
 		title: 'Webfont Optimizer',
-		description: 'Compress font families to WOFF2 and generate matching CSS.',
+		description: 'Build compressed WOFF2 files and @font-face CSS.',
 		link: '/tools/optimizer',
 		icon: IconBolt,
 	},

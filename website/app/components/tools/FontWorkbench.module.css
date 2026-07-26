@@ -66,10 +66,6 @@
 	font-weight: 600;
 }
 
-.batchStatus[data-state='ready'] {
-	color: light-dark(#176b32, #72df91);
-}
-
 .batchStatus[data-state='warning'] {
 	color: light-dark(var(--mantine-color-red-8), var(--mantine-color-red-4));
 }
