@@ -643,11 +643,14 @@ describe('registry ingestion', () => {
 			registry,
 			'families/google/recursive-sans/metadata.json',
 		);
+		const replacement = familyMetadataSchema.parse(
+			await readJson(replacementPath),
+		);
 		await writeFixture(
 			registry,
 			'families/google/recursive-sans/metadata.json',
 			canonicalJson({
-				...(await readJson(replacementPath)),
+				...replacement,
 				status: 'deprecated',
 			}),
 		);

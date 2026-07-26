@@ -741,6 +741,7 @@ export type ListRegistryFamiliesResponses = {
             displayName?: string;
             provider: string;
             status: 'active' | 'deprecated';
+            replacedBy?: string;
             classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
             tags: Array<string>;
             /**
@@ -810,6 +811,7 @@ export type GetRegistryFamilyResponses = {
         displayName?: string;
         provider: string;
         status: 'active' | 'deprecated';
+        replacedBy?: string;
         classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
         tags: Array<string>;
         /**
