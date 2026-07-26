@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2020-12-14",
-	"declaredSubsets": [
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Satsuyako",
 	"family": "Cherry Bomb One",
 	"id": "cherry-bomb-one",

@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-02-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams",
 	"family": "Anton",
 	"id": "anton",

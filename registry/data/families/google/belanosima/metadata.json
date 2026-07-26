@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-06-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "The DocRepair Project, Santiago Orozco",
 	"family": "Belanosima",
 	"id": "belanosima",

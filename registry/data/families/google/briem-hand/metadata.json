@@ -3,14 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2024-03-27",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Gunnlaugur SE Briem, Eben Sorkin",
 	"family": "Briem Hand",
 	"id": "briem-hand",

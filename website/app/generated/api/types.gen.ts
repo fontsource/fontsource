@@ -749,7 +749,6 @@ export type ListRegistryFamiliesResponses = {
              */
             languages: Array<string>;
             sourceModified: string;
-            declaredSubsets: Array<string>;
             variable: boolean;
             axes: Array<string>;
         }>;
@@ -819,7 +818,6 @@ export type GetRegistryFamilyResponses = {
          */
         languages: Array<string>;
         sourceModified: string;
-        declaredSubsets: Array<string>;
         primaryLanguage?: string;
         primaryScript?: string;
         sampleText?: {

@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2015-01-28",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "TipTopTyp",
 	"family": "Ranga",
 	"id": "ranga",

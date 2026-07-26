@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-09-08",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "MOTOYA",
 	"family": "Kosugi Maru",
 	"id": "kosugi-maru",

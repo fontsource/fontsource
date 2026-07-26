@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-12-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Saurabh Sharma",
 	"family": "Cause",
 	"id": "cause",

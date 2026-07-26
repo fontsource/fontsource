@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-12",
-	"declaredSubsets": [
-		"emoji",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"thai"
-	],
 	"designer": "TypeTogether, Sirin Gunkloy, Laura Meseguer, Veronika Burian, José Scaglione",
 	"family": "Playpen Sans Thai",
 	"id": "playpen-sans-thai",

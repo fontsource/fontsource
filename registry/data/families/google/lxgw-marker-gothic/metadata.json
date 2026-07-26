@@ -3,17 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-05-08",
-	"declaredSubsets": [
-		"chinese-traditional",
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2",
-		"vietnamese"
-	],
 	"designer": "LXGW",
 	"family": "LXGW Marker Gothic",
 	"id": "lxgw-marker-gothic",

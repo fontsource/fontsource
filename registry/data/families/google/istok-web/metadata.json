@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-07-13",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Andrey V. Panov",
 	"family": "Istok Web",
 	"id": "istok-web",

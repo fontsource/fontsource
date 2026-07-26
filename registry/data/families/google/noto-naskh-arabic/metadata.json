@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Google",
 	"family": "Noto Naskh Arabic",
 	"id": "noto-naskh-arabic",

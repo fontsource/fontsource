@@ -3,17 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-02-24",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "HanYang I&C Co",
 	"family": "Gothic A1",
 	"id": "gothic-a1",

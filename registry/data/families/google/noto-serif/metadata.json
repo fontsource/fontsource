@@ -3,17 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2013-02-27",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Google",
 	"family": "Noto Serif",
 	"id": "noto-serif",

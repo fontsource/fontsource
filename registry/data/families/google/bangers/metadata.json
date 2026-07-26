@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2011-02-09",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams",
 	"family": "Bangers",
 	"id": "bangers",

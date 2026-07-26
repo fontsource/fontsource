@@ -3,11 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2011-05-04",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vernon Adams",
 	"family": "Monofett",
 	"id": "monofett",

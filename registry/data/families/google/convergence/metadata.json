@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-11-09",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Nicolás Silva, John Vargas Beltrán",
 	"family": "Convergence",
 	"id": "convergence",

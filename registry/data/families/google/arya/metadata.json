@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-05-20",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Arya",
 	"id": "arya",

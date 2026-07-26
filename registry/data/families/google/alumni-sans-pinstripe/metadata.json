@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-06-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Alumni Sans Pinstripe",
 	"id": "alumni-sans-pinstripe",

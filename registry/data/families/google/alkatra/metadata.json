@@ -3,14 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2023-01-27",
-	"declaredSubsets": [
-		"bengali",
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu",
-		"oriya"
-	],
 	"designer": "Suman Bhandary",
 	"family": "Alkatra",
 	"id": "alkatra",

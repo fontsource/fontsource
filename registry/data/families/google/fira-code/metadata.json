@@ -3,16 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2019-03-25",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2"
-	],
 	"designer": "The Mozilla Foundation, Telefonica S.A., Nikita Prokopov",
 	"family": "Fira Code",
 	"id": "fira-code",

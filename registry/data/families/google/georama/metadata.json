@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-07-01",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Production Type",
 	"family": "Georama",
 	"id": "georama",

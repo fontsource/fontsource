@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-20",
-	"declaredSubsets": [
-		"devanagari",
-		"emoji",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "TypeTogether, Pooja Saxena, Gunjan Panchal, Laura Meseguer, Veronika Burian, José Scaglione",
 	"family": "Playpen Sans Deva",
 	"id": "playpen-sans-deva",

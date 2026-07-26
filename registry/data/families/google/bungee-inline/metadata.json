@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "David Jonathan Ross",
 	"family": "Bungee Inline",
 	"id": "bungee-inline",

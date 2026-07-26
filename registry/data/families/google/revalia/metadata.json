@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-03-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Johan Kallas, Mihkel Virkus",
 	"family": "Revalia",
 	"id": "revalia",

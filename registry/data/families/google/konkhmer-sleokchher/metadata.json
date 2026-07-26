@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2023-02-02",
-	"declaredSubsets": [
-		"khmer",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Suon May Sophanith",
 	"family": "Konkhmer Sleokchher",
 	"id": "konkhmer-sleokchher",

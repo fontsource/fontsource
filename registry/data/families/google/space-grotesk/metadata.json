@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-10-07",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Florian Karsten",
 	"family": "Space Grotesk",
 	"id": "space-grotesk",

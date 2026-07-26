@@ -3,18 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2024-05-16",
-	"declaredSubsets": [
-		"chinese-traditional",
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"lisu",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "LXGW",
 	"family": "LXGW WenKai TC",
 	"id": "lxgw-wenkai-tc",

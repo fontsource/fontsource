@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2010-09-21",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"menu"
-	],
 	"designer": "Jovanny Lemonad",
 	"family": "Neucha",
 	"id": "neucha",

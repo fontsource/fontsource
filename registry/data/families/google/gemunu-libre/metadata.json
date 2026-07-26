@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2017-05-29",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"sinhala"
-	],
 	"designer": "Mooniak",
 	"family": "Gemunu Libre",
 	"id": "gemunu-libre",

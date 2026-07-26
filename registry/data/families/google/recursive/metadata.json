@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-05-01",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Arrow Type, Stephen Nixon",
 	"family": "Recursive",
 	"id": "recursive",

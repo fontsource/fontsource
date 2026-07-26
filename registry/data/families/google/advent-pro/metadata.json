@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-02-29",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "VivaRado",
 	"family": "Advent Pro",
 	"id": "advent-pro",

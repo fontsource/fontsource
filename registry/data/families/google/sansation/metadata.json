@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Bernd Montag",
 	"family": "Sansation",
 	"id": "sansation",

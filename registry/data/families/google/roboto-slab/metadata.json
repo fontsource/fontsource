@@ -3,16 +3,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2013-04-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Christian Robertson",
 	"family": "Roboto Slab",
 	"id": "roboto-slab",

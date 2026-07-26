@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2013-03-06",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Sorkin Type",
 	"family": "Merriweather Sans",
 	"id": "merriweather-sans",

@@ -3,11 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2020-08-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Bonjour Monde, Lucas Descroix",
 	"family": "Syne Mono",
 	"id": "syne-mono",

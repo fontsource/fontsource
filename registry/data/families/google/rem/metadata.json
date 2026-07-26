@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-06-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Octavio Pardo",
 	"family": "REM",
 	"id": "rem",

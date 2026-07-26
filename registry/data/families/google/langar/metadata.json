@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2020-11-26",
-	"declaredSubsets": [
-		"gurmukhi",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Typeland, Alessia Mazzarella",
 	"family": "Langar",
 	"id": "langar",

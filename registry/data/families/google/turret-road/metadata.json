@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-09-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Dale Sattler",
 	"family": "Turret Road",
 	"id": "turret-road",

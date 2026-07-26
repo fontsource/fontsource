@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-04-18",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Batsirai Madzonga",
 	"family": "Sankofa Display",
 	"id": "sankofa-display",

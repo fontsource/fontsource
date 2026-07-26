@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-05-17",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "mshio",
 	"family": "Sawarabi Gothic",
 	"id": "sawarabi-gothic",

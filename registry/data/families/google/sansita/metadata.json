@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-12-04",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Omnibus-Type",
 	"family": "Sansita",
 	"id": "sansita",

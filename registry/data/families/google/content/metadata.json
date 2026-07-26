@@ -3,10 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2011-03-02",
-	"declaredSubsets": [
-		"khmer",
-		"menu"
-	],
 	"designer": "Danh Hong",
 	"family": "Content",
 	"id": "content",

@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-08-30",
-	"declaredSubsets": [
-		"khojki",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Khojki",
 	"id": "noto-serif-khojki",

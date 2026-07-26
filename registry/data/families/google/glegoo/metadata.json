@@ -3,12 +3,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2012-01-25",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Glegoo",
 	"id": "glegoo",

@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-10-22",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Yoshimichi Ohira",
 	"family": "Zen Maru Gothic",
 	"id": "zen-maru-gothic",

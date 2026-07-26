@@ -3,16 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2012-09-20",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Paul D. Hunt",
 	"family": "Source Code Pro",
 	"id": "source-code-pro",

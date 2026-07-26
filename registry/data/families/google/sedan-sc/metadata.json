@@ -4,11 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2012-10-31",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sebastián Salazar",
 	"family": "Sedan SC",
 	"id": "sedan-sc",

@@ -3,12 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2010-02-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Raph Levien",
 	"family": "Inconsolata",
 	"id": "inconsolata",

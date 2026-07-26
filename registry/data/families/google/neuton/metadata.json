@@ -4,11 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-02-09",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Brian Zick",
 	"family": "Neuton",
 	"id": "neuton",

@@ -3,14 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-06-08",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek-ext",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Fontworks Inc.",
 	"family": "Klee One",
 	"id": "klee-one",

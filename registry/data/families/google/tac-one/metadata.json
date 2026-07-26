@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-02-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Afrotype, Seyi Olusanya, Eyiyemi Adegbite, David Udoh, Mirko Velimirović",
 	"family": "Tac One",
 	"id": "tac-one",

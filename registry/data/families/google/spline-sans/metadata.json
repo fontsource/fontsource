@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-11-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eben Sorkin, Mirko Velimirović",
 	"family": "Spline Sans",
 	"id": "spline-sans",

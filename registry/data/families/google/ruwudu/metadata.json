@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2023-07-05",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "SIL International",
 	"family": "Ruwudu",
 	"id": "ruwudu",

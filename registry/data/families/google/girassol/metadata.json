@@ -4,11 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2019-12-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Liam Spradlin",
 	"family": "Girassol",
 	"id": "girassol",

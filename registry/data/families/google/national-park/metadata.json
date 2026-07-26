@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-07",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Andrea Herstowski, Ben Hoepner, Jeremy Shellhorn",
 	"family": "National Park",
 	"id": "national-park",

@@ -3,16 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-04-27",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Nathan Willis",
 	"family": "News Cycle",
 	"id": "news-cycle",

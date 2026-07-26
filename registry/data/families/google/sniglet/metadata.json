@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2010-12-15",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Multiple Designers",
 	"family": "Sniglet",
 	"id": "sniglet",

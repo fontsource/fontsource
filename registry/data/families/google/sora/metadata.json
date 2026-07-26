@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-06-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jonathan Barnbrook, Julián Moncada",
 	"family": "Sora",
 	"id": "sora",

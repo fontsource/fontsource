@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-04-04",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Jovanny Lemonad",
 	"family": "Cuprum",
 	"id": "cuprum",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"masaram-gondi",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Masaram Gondi",
 	"id": "noto-sans-masaram-gondi",

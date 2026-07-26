@@ -3,11 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-06-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Pablo Impallari",
 	"family": "Libre Caslon Text",
 	"id": "libre-caslon-text",

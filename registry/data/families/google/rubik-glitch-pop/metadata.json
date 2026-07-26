@@ -3,16 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2023-11-29",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "NaN, Luke Prowse",
 	"family": "Rubik Glitch Pop",
 	"id": "rubik-glitch-pop",

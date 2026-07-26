@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-12-03",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tobias Whetton, Supernotes",
 	"family": "SN Pro",
 	"id": "sn-pro",

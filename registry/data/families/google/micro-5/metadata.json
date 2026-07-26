@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-01-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Sarah Cadigan-Fried",
 	"family": "Micro 5",
 	"id": "micro-5",

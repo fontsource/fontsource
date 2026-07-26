@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2022-02-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Babylonica",
 	"id": "babylonica",

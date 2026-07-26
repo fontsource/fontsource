@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2017-01-26",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Ek Type",
 	"family": "Mukta",
 	"id": "mukta",

@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-07-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Tural Alisoy",
 	"family": "Moderustic",
 	"id": "moderustic",

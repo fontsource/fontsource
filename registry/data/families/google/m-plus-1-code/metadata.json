@@ -3,13 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2021-09-22",
-	"declaredSubsets": [
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Coji Morishita",
 	"family": "M PLUS 1 Code",
 	"id": "m-plus-1-code",

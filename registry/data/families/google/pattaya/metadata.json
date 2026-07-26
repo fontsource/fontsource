@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Cadson Demak",
 	"family": "Pattaya",
 	"id": "pattaya",

@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-07-20",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Kostas Bartsokas",
 	"family": "Commissioner",
 	"id": "commissioner",

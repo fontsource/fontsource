@@ -3,14 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2017-02-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Kevin Burke",
 	"family": "Pangolin",
 	"id": "pangolin",

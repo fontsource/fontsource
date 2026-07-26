@@ -5,12 +5,6 @@
 		"serif"
 	],
 	"dateAdded": "2015-05-20",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni, Brian Bonislawsky",
 	"family": "Amita",
 	"id": "amita",

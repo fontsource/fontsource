@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-01-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Botjo Nikoltchev",
 	"family": "Ropa Sans",
 	"id": "ropa-sans",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-06-28",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tobias Bjerrome Ahlin, GitHub, Degarism Studio, Sebastian Carewe",
 	"family": "Mona Sans",
 	"id": "mona-sans",

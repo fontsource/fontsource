@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2022-03-24",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Whisper",
 	"id": "whisper",

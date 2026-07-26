@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-01-11",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Mariela Monsalve, Angelina Sanchez",
 	"family": "Ruda",
 	"id": "ruda",

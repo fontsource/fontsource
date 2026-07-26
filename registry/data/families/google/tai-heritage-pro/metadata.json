@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-05-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"tai-viet",
-		"vietnamese"
-	],
 	"designer": "SIL International",
 	"family": "Tai Heritage Pro",
 	"id": "tai-heritage-pro",

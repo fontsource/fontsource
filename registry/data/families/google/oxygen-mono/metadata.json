@@ -3,11 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2012-09-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vernon Adams",
 	"family": "Oxygen Mono",
 	"id": "oxygen-mono",

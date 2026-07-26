@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-01-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Severin Meyer",
 	"family": "Oxanium",
 	"id": "oxanium",

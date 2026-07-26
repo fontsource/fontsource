@@ -3,16 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2023-11-22",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "NaN, Luke Prowse",
 	"family": "Rubik Doodle Triangles",
 	"id": "rubik-doodle-triangles",

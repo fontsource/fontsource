@@ -63,7 +63,6 @@ type GoogleFamily = {
 	category: string;
 	dateAdded: string;
 	fonts: GoogleFont[];
-	subsets: string[];
 	stroke?: string;
 	classifications: string[];
 	displayName?: string;
@@ -86,7 +85,6 @@ type GoogleFamilyProto = {
 		filename: string;
 		copyright?: string;
 	}>;
-	subsets: string[];
 	stroke?: string;
 	classifications: string[];
 	display_name?: string;
@@ -191,7 +189,6 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 		category,
 		dateAdded: family.date_added,
 		fonts,
-		subsets: family.subsets,
 		...(family.stroke ? { stroke: family.stroke } : {}),
 		classifications: family.classifications ?? [],
 		...(family.display_name ? { displayName: family.display_name } : {}),
@@ -663,9 +660,6 @@ const writeFamily = async (
 			...(copyrights.length > 0 ? { attribution: copyrights.join('\n') } : {}),
 		},
 		...(google.project ? { project: google.project } : {}),
-		declaredSubsets: Array.from(new Set(google.subsets)).toSorted(
-			compareStrings,
-		),
 		sourceFiles,
 	});
 	const inspection = familyInspectionSchema.parse({

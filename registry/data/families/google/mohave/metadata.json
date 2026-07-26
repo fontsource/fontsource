@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-01-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Gumpita Rahayu",
 	"family": "Mohave",
 	"id": "mohave",

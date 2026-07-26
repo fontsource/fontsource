@@ -4,15 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-03-29",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Great Vibes",
 	"id": "great-vibes",

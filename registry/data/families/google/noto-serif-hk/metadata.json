@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-05-12",
-	"declaredSubsets": [
-		"chinese-hongkong",
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Google",
 	"displayName": "Noto Serif Hong Kong",
 	"family": "Noto Serif HK",

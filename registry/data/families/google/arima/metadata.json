@@ -3,16 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2022-05-25",
-	"declaredSubsets": [
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"malayalam",
-		"menu",
-		"tamil",
-		"vietnamese"
-	],
 	"designer": "Natanael Gama, Joana Correia, Rosalie Wagner",
 	"family": "Arima",
 	"id": "arima",

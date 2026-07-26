@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2026-03-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Hector Gatti, Omnibus-Type",
 	"family": "Saira Stencil",
 	"id": "saira-stencil",

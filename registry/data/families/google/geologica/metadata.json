@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-04-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Monokrom, Sindre Bremnes, Frode Helland",
 	"family": "Geologica",
 	"id": "geologica",

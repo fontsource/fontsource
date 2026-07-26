@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-08-05",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mohamed Gaber, Accademia di Belle Arti di Urbino",
 	"family": "Cairo Play",
 	"id": "cairo-play",

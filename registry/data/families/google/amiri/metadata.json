@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2012-07-30",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Khaled Hosny, Sebastian Kosch",
 	"family": "Amiri",
 	"id": "amiri",

@@ -3,12 +3,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2018-12-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Alessio Laiso",
 	"family": "Aleo",
 	"id": "aleo",

@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-07-18",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"tifinagh"
-	],
 	"designer": "SIL International",
 	"family": "Tirra",
 	"id": "tirra",

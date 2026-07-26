@@ -3,19 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-02-02",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Steve Matteson",
 	"family": "Open Sans",
 	"id": "open-sans",

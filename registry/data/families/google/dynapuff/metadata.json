@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2022-05-19",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Toshi Omagari, Jennifer Daniel",
 	"family": "DynaPuff",
 	"id": "dynapuff",

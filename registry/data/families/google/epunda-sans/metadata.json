@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-21",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Typofactur",
 	"family": "Epunda Sans",
 	"id": "epunda-sans",

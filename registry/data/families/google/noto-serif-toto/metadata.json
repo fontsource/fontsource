@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-09-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"toto"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Toto",
 	"id": "noto-serif-toto",

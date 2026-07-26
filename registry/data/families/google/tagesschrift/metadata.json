@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2024-12-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Yanone",
 	"family": "Tagesschrift",
 	"id": "tagesschrift",

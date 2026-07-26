@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2025-02-13",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jeff Davis",
 	"family": "Comic Relief",
 	"id": "comic-relief",

@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"phags-pa",
-		"symbols"
-	],
 	"designer": "Google",
 	"displayName": "Noto Sans Phags-pa",
 	"family": "Noto Sans PhagsPa",

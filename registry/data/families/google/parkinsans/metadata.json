@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-11-07",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Red Stone",
 	"family": "Parkinsans",
 	"id": "parkinsans",

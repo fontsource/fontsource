@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2022-04-26",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mohamed Gaber",
 	"family": "Blaka",
 	"id": "blaka",

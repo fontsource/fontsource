@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-10-11",
-	"declaredSubsets": [
-		"chorasmian",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Chorasmian",
 	"id": "noto-sans-chorasmian",

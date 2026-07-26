@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-01-31",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Dương Trần",
 	"family": "Phudu",
 	"id": "phudu",

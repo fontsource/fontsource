@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2023-07-06",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"new-tai-lue"
-	],
 	"designer": "SIL International",
 	"family": "Dai Banna SIL",
 	"id": "dai-banna-sil",

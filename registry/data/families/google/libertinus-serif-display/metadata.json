@@ -3,16 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2025-04-16",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Philipp H. Poll",
 	"family": "Libertinus Serif Display",
 	"id": "libertinus-serif-display",

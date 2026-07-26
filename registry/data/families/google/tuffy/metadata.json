@@ -4,16 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-05-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"phoenician"
-	],
 	"designer": "Thatcher Ulrich",
 	"family": "Tuffy",
 	"id": "tuffy",

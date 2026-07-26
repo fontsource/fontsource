@@ -3,13 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2010-12-15",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mark Simonson",
 	"family": "Anonymous Pro",
 	"id": "anonymous-pro",

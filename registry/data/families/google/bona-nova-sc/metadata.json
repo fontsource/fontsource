@@ -3,16 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2024-05-27",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Capitalics, Mateusz Machalski, Andrzej Heidrich",
 	"family": "Bona Nova SC",
 	"id": "bona-nova-sc",

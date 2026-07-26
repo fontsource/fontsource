@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Mark Davis, Cal.com Inc.",
 	"family": "Cal Sans",
 	"id": "cal-sans",

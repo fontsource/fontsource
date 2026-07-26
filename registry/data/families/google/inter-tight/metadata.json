@@ -4,16 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-07-22",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Rasmus Andersson",
 	"family": "Inter Tight",
 	"id": "inter-tight",

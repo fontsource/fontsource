@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-01-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Anton Skugarov, Alexandr Ivanin",
 	"family": "Liter",
 	"id": "liter",

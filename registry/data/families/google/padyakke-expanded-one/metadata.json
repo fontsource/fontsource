@@ -4,12 +4,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2022-12-06",
-	"declaredSubsets": [
-		"kannada",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "James Puckett",
 	"family": "Padyakke Expanded One",
 	"id": "padyakke-expanded-one",

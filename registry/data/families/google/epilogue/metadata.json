@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-06-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tyler Finck, ETC",
 	"family": "Epilogue",
 	"id": "epilogue",

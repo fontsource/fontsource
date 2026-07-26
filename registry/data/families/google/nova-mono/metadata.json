@@ -4,12 +4,6 @@
 		"monospace"
 	],
 	"dateAdded": "2011-03-23",
-	"declaredSubsets": [
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Wojciech Kalinowski",
 	"family": "Nova Mono",
 	"id": "nova-mono",

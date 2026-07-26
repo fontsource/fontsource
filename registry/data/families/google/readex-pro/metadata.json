@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-09-16",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Thomas Jockin, Nadine Chahine, Bonnie Shaver-Troup, Santiago Orozco, Héctor Gómez",
 	"family": "Readex Pro",
 	"id": "readex-pro",

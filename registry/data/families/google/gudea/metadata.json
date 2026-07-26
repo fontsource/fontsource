@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-01-18",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Agustina Mingote",
 	"family": "Gudea",
 	"id": "gudea",

@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-10-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Jaikishan Patel",
 	"family": "Rowdies",
 	"id": "rowdies",

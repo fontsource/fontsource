@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2015-05-20",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Claus Eggers Sørensen",
 	"family": "Inknut Antiqua",
 	"id": "inknut-antiqua",

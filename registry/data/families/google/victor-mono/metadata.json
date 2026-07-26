@@ -4,15 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-06-21",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Rune Bjørnerås",
 	"family": "Victor Mono",
 	"id": "victor-mono",

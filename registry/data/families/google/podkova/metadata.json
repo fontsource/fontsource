@@ -4,14 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-05-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Cyreal",
 	"family": "Podkova",
 	"id": "podkova",

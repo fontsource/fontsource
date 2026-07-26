@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2017-05-09",
-	"declaredSubsets": [
-		"bengali",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Black Foundry",
 	"family": "Atma",
 	"id": "atma",

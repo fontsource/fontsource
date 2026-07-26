@@ -3,12 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2020-08-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Yellow Type, Lâm Bảo, Duy Dao",
 	"family": "Xanh Mono",
 	"id": "xanh-mono",

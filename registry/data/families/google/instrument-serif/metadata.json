@@ -3,11 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2023-03-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Rodrigo Fuenzalida, Jordan Egstad",
 	"family": "Instrument Serif",
 	"id": "instrument-serif",

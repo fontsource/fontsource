@@ -3,11 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2021-06-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Displaay, Martin Vácha",
 	"family": "Azeret Mono",
 	"id": "azeret-mono",

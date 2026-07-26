@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-12-15",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Fontworks Inc.",
 	"family": "DotGothic16",
 	"id": "dotgothic16",

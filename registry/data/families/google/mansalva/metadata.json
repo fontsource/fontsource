@@ -5,13 +5,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-08-29",
-	"declaredSubsets": [
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Carolina Short",
 	"family": "Mansalva",
 	"id": "mansalva",

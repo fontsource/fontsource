@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2010-05-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vernon Adams",
 	"family": "Nobile",
 	"id": "nobile",

@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-11-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Astigmatic",
 	"family": "Grand Hotel",
 	"id": "grand-hotel",

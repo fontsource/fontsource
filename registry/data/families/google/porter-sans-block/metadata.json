@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2013-12-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Tyler Finck",
 	"family": "Porter Sans Block",
 	"id": "porter-sans-block",

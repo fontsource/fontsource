@@ -3,17 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2010-11-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Steve Matteson",
 	"family": "Tinos",
 	"id": "tinos",

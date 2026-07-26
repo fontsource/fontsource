@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-02-24",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Alumni Sans Inline One",
 	"id": "alumni-sans-inline-one",

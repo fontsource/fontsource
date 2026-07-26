@@ -4,12 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Michal Sahar",
 	"family": "Suez One",
 	"id": "suez-one",

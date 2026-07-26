@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-02-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Cadson Demak",
 	"family": "Anuphan",
 	"id": "anuphan",

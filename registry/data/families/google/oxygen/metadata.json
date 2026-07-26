@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-03-29",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vernon Adams",
 	"family": "Oxygen",
 	"id": "oxygen",

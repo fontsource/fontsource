@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"imperial-aramaic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Imperial Aramaic",
 	"id": "noto-sans-imperial-aramaic",

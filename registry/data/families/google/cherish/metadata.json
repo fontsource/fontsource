@@ -3,12 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-08-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Cherish",
 	"id": "cherish",

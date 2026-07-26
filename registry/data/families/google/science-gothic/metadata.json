@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-08-07",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Thomas Phinney, Vassil Kateliev, Brandon Buerkle",
 	"family": "Science Gothic",
 	"id": "science-gothic",

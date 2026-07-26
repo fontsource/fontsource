@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-09-28",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Elena Albertoni",
 	"family": "Spinnaker",
 	"id": "spinnaker",

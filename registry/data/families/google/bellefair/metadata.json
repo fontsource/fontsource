@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2017-06-28",
-	"declaredSubsets": [
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Nick Shinn, Liron Lavi Turkenic",
 	"family": "Bellefair",
 	"id": "bellefair",

@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2017-02-28",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Borna Izadpanah",
 	"family": "Lalezar",
 	"id": "lalezar",

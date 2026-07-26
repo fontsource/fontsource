@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2010-12-07",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vernon Adams",
 	"family": "Coda",
 	"id": "coda",

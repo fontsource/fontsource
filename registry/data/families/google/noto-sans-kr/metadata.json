@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-02-05",
-	"declaredSubsets": [
-		"cyrillic",
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Google",
 	"displayName": "Noto Sans Korean",
 	"family": "Noto Sans KR",

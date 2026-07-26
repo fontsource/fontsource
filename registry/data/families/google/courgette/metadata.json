@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-07-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Karolina Lach",
 	"family": "Courgette",
 	"id": "courgette",

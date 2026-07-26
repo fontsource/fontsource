@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-01-18",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Miguel Hernandez",
 	"family": "Erica One",
 	"id": "erica-one",

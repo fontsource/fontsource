@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-01-23",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Saurabh Sharma",
 	"family": "Gajraj One",
 	"id": "gajraj-one",

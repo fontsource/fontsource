@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"ol-chiki"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Ol Chiki",
 	"id": "noto-sans-ol-chiki",

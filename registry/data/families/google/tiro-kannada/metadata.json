@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-03-30",
-	"declaredSubsets": [
-		"kannada",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Tiro Typeworks, John Hudson, Fiona Ross, Kaja Słojewska",
 	"family": "Tiro Kannada",
 	"id": "tiro-kannada",

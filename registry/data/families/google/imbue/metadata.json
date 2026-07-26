@@ -4,12 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-12-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tyler Finck, ETC",
 	"family": "Imbue",
 	"id": "imbue",

@@ -3,11 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2023-08-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Bastien Sozeau",
 	"family": "Young Serif",
 	"id": "young-serif",

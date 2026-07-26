@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"gujarati",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Gujarati",
 	"id": "noto-serif-gujarati",

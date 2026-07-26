@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-10-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Road Rage",
 	"id": "road-rage",

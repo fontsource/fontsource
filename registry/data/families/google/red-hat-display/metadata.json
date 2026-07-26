@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-04-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "MCKL",
 	"family": "Red Hat Display",
 	"id": "red-hat-display",

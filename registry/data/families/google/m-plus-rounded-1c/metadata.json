@@ -3,18 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2018-05-17",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"hebrew",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Coji Morishita, M+ Fonts Project",
 	"family": "M PLUS Rounded 1c",
 	"id": "m-plus-rounded-1c",

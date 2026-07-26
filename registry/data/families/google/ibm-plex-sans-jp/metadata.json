@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-09-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mike Abbink, Bold Monday",
 	"family": "IBM Plex Sans JP",
 	"id": "ibm-plex-sans-jp",

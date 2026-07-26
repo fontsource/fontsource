@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2023-01-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Mercedes Jáuregui, Omnibus-Type",
 	"family": "Labrada",
 	"id": "labrada",

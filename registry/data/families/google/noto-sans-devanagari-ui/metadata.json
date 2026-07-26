@@ -3,10 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"devanagari",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Devanagari UI",
 	"id": "noto-sans-devanagari-ui",

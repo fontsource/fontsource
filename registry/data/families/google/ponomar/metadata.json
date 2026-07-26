@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2024-12-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"menu"
-	],
 	"designer": "Aleksandr Andreev",
 	"family": "Ponomar",
 	"id": "ponomar",

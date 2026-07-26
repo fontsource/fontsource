@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-02-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vernon Adams",
 	"family": "Norican",
 	"id": "norican",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"psalter-pahlavi"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Psalter Pahlavi",
 	"id": "noto-sans-psalter-pahlavi",

@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2022-02-17",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Grape Nuts",
 	"id": "grape-nuts",

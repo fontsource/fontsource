@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2024-05-14",
-	"declaredSubsets": [
-		"chinese-traditional",
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Henry Chan, Tian Haidong, Moonlit Owen",
 	"family": "Cactus Classical Serif",
 	"id": "cactus-classical-serif",

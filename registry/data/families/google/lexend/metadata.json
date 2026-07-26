@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-03-09",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Bonnie Shaver-Troup, Thomas Jockin, Santiago Orozco, Héctor Gómez, Superunion",
 	"family": "Lexend",
 	"id": "lexend",

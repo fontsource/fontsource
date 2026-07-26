@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-03-09",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Kimberly Geswein",
 	"family": "Indie Flower",
 	"id": "indie-flower",

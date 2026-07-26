@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-10-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Koto",
 	"family": "Stack Sans Notch",
 	"id": "stack-sans-notch",

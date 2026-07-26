@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-02-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "ParaType",
 	"family": "PT Serif",
 	"id": "pt-serif",

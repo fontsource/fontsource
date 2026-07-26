@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-06-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Joana Correia, Viktoriya Grabowska, Eben Sorkin",
 	"family": "Varta",
 	"id": "varta",

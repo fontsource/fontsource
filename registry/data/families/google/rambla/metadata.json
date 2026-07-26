@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-31",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Martin Sommaruga",
 	"family": "Rambla",
 	"id": "rambla",

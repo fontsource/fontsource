@@ -3,15 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2015-05-13",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Christian Robertson",
 	"family": "Roboto Mono",
 	"id": "roboto-mono",

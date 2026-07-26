@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2011-07-27",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "James Grieshaber, Eben Sorkin",
 	"family": "Black Ops One",
 	"id": "black-ops-one",

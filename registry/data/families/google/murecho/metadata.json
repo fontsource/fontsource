@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-10-27",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Neil Summerour",
 	"family": "Murecho",
 	"id": "murecho",

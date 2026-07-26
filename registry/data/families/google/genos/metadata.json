@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-10-08",
-	"declaredSubsets": [
-		"cherokee",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Genos",
 	"id": "genos",

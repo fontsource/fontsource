@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-05-13",
-	"declaredSubsets": [
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Hypertype",
 	"family": "Hahmlet",
 	"id": "hahmlet",

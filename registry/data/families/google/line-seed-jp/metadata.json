@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-10-07",
-	"declaredSubsets": [
-		"cyrillic",
-		"greek-ext",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "LY Corporation, Fontrix, Fontworks",
 	"family": "LINE Seed JP",
 	"id": "line-seed-jp",

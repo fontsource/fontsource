@@ -3,13 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-05-21",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Font-Kai",
 	"family": "Kaisei Opti",
 	"id": "kaisei-opti",

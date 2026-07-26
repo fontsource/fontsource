@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-12-09",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tyler Finck, Caroline Hadilaksono, Micah Rich",
 	"family": "League Gothic",
 	"id": "league-gothic",

@@ -3,12 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2017-08-01",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Pedro Vergani, Kevin Burke",
 	"family": "Sedgwick Ave",
 	"id": "sedgwick-ave",

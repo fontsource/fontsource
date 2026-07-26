@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-02-29",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Neapolitan",
 	"family": "Seaweed Script",
 	"id": "seaweed-script",

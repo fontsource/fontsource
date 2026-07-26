@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-04-28",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"yi"
-	],
 	"designer": "SIL International",
 	"family": "Nuosu SIL",
 	"id": "nuosu-sil",

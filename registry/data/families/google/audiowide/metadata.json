@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-04-04",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Astigmatic",
 	"family": "Audiowide",
 	"id": "audiowide",

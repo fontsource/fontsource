@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-11-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams",
 	"family": "Monda",
 	"id": "monda",

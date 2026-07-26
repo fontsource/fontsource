@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-12-16",
-	"declaredSubsets": [
-		"kannada",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Erin McLaughlin",
 	"family": "Hubballi",
 	"id": "hubballi",

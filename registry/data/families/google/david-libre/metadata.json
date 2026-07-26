@@ -3,15 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-07-23",
-	"declaredSubsets": [
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Monotype Imaging Inc., SIL International, Meir Sadan",
 	"family": "David Libre",
 	"id": "david-libre",

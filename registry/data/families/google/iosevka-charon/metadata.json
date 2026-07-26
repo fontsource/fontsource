@@ -4,21 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2026-02-19",
-	"declaredSubsets": [
-		"armenian",
-		"braille",
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"symbols2",
-		"vietnamese"
-	],
 	"designer": "Juliette Pluto",
 	"family": "Iosevka Charon",
 	"id": "iosevka-charon",

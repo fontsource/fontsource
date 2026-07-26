@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2021-04-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Yoshimichi Ohira",
 	"family": "Zen Tokyo Zoo",
 	"id": "zen-tokyo-zoo",

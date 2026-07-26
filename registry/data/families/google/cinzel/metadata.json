@@ -3,11 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2012-10-24",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Natanael Gama",
 	"family": "Cinzel",
 	"id": "cinzel",

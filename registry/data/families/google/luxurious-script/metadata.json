@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-11-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Luxurious Script",
 	"id": "luxurious-script",

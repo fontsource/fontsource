@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2011-11-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Tyler Finck",
 	"family": "Knewave",
 	"id": "knewave",

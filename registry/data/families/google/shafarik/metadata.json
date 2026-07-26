@@ -3,14 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2024-12-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"glagolitic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Aleksandr Andreev",
 	"family": "Shafarik",
 	"id": "shafarik",

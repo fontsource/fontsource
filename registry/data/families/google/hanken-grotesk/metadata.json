@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-11-16",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Alfredo Marco Pradil, Hanken Design Co.",
 	"family": "Hanken Grotesk",
 	"id": "hanken-grotesk",

@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2025-11-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "SEKUYA",
 	"family": "Sekuya",
 	"id": "sekuya",

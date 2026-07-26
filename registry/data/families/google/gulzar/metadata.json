@@ -4,12 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-05-14",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Borna Izadpanah, Fiona Ross, Alice Savoie, Simon Cozens",
 	"family": "Gulzar",
 	"id": "gulzar",

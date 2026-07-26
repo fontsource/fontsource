@@ -3,16 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-12-02",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Carrois Apostrophe",
 	"family": "Fira Sans Condensed",
 	"id": "fira-sans-condensed",

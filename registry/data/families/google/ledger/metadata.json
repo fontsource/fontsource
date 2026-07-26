@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2012-02-22",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Denis Masharov",
 	"family": "Ledger",
 	"id": "ledger",

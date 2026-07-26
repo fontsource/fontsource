@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2015-06-03",
-	"declaredSubsets": [
-		"devanagari",
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Rosetta, Vaibhav Singh",
 	"family": "Eczar",
 	"id": "eczar",

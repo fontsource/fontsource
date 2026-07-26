@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2017-02-20",
-	"declaredSubsets": [
-		"bengali",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Suman Bhandary, Natanael Gama, Mooniak",
 	"family": "Mina",
 	"id": "mina",

@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"tamil",
-		"vietnamese"
-	],
 	"designer": "Marcelo Magalhães",
 	"family": "Coiny",
 	"id": "coiny",

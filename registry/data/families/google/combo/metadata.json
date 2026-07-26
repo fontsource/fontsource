@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-09-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Combo",
 	"id": "combo",

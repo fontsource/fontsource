@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-10-31",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Rodrigo Fuenzalida, Nicolas Massi",
 	"family": "Pirata One",
 	"id": "pirata-one",

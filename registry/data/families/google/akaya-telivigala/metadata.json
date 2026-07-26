@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2021-01-14",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"telugu"
-	],
 	"designer": "Vaishnavi Murthy, Juan Luis Blanco",
 	"family": "Akaya Telivigala",
 	"id": "akaya-telivigala",

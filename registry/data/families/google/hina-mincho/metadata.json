@@ -4,14 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-04-14",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Satsuyako",
 	"family": "Hina Mincho",
 	"id": "hina-mincho",

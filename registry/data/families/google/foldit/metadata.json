@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-10-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Sophia Tai",
 	"family": "Foldit",
 	"id": "foldit",

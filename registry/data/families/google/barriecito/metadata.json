@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2019-06-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Omnibus-Type",
 	"family": "Barriecito",
 	"id": "barriecito",

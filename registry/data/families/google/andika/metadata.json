@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-08-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "SIL International",
 	"family": "Andika",
 	"id": "andika",

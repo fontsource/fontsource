@@ -3,17 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-09-07",
-	"declaredSubsets": [
-		"gothic",
-		"greek",
-		"greek-ext",
-		"hebrew",
-		"latin",
-		"latin-ext",
-		"menu",
-		"old-italic",
-		"runic"
-	],
 	"designer": "David Perry",
 	"family": "Cardo",
 	"id": "cardo",

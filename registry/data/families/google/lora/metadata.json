@@ -3,16 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-07-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Cyreal",
 	"family": "Lora",
 	"id": "lora",

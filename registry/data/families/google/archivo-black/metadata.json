@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-09-18",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Omnibus-Type",
 	"family": "Archivo Black",
 	"id": "archivo-black",

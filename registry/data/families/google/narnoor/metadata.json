@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-03-03",
-	"declaredSubsets": [
-		"gunjala-gondi",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "SIL International",
 	"family": "Narnoor",
 	"id": "narnoor",

@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-10-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Ania Kruk",
 	"family": "Cookie",
 	"id": "cookie",

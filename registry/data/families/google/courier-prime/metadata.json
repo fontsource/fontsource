@@ -4,11 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2019-12-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Alan Dague-Greene",
 	"family": "Courier Prime",
 	"id": "courier-prime",

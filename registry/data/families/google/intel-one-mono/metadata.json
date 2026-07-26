@@ -3,13 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2025-05-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2",
-		"vietnamese"
-	],
 	"designer": "Intel Corporation, Frere-Jones Type",
 	"family": "Intel One Mono",
 	"id": "intel-one-mono",

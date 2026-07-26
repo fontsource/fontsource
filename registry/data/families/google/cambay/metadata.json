@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2015-01-28",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Pooja Saxena",
 	"family": "Cambay",
 	"id": "cambay",

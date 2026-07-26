@@ -3,10 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"khmer",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Khmer UI",
 	"id": "noto-sans-khmer-ui",

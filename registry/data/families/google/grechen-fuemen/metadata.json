@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-09-02",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Grechen Fuemen",
 	"id": "grechen-fuemen",

@@ -4,13 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-03-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Haruki Wakamatsu",
 	"family": "Orelega One",
 	"id": "orelega-one",

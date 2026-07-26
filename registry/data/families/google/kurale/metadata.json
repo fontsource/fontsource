@@ -3,14 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2015-05-14",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Kurale",
 	"id": "kurale",

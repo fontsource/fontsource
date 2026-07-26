@@ -4,12 +4,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2021-09-21",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Florian Karsten",
 	"family": "Montagu Slab",
 	"id": "montagu-slab",

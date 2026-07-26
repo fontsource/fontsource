@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-03-16",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Saber Rastikerdar",
 	"family": "Vazirmatn",
 	"id": "vazirmatn",

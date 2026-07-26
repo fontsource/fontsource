@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-01-20",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Ek Type",
 	"family": "Baloo 2",
 	"id": "baloo-2",

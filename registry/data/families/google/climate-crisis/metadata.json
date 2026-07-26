@@ -4,13 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-09-30",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Daniel Coull, Eino Korkala",
 	"family": "Climate Crisis",
 	"id": "climate-crisis",

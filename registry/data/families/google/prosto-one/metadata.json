@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-02-29",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Jovanny Lemonad, Pavel Emelyanov",
 	"family": "Prosto One",
 	"id": "prosto-one",

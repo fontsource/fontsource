@@ -4,14 +4,6 @@
 		"symbols"
 	],
 	"dateAdded": "2021-10-22",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Dan Ross",
 	"family": "Flow Block",
 	"id": "flow-block",

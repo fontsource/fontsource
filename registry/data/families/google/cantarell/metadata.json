@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2010-05-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Dave Crossland",
 	"family": "Cantarell",
 	"id": "cantarell",

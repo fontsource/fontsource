@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-11-04",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Mohamed Gaber, Julieta Ulanovsky",
 	"family": "Alexandria",
 	"id": "alexandria",

@@ -3,13 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2020-12-15",
-	"declaredSubsets": [
-		"cyrillic",
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Fontworks Inc.",
 	"family": "Reggae One",
 	"id": "reggae-one",

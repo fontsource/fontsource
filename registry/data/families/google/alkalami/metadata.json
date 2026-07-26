@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2022-06-10",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "SIL International",
 	"family": "Alkalami",
 	"id": "alkalami",

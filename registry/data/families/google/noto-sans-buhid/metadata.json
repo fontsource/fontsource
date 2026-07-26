@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"buhid",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Buhid",
 	"id": "noto-sans-buhid",

@@ -4,16 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2010-05-11",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Yanone, Cyreal",
 	"family": "Yanone Kaffeesatz",
 	"id": "yanone-kaffeesatz",

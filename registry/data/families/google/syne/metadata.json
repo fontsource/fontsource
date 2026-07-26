@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-08-25",
-	"declaredSubsets": [
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Bonjour Monde, Lucas Descroix, George Triantafyllakos",
 	"family": "Syne",
 	"id": "syne",

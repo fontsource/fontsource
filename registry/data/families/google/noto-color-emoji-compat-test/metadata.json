@@ -4,10 +4,6 @@
 		"symbols"
 	],
 	"dateAdded": "2022-01-20",
-	"declaredSubsets": [
-		"emoji",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Color Emoji Compat Test",
 	"id": "noto-color-emoji-compat-test",

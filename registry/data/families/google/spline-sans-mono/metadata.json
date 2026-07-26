@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-03-28",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eben Sorkin, Mirko Velimirović",
 	"family": "Spline Sans Mono",
 	"id": "spline-sans-mono",

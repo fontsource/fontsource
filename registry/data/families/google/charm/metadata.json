@@ -3,13 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2018-08-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"thai",
-		"vietnamese"
-	],
 	"designer": "Cadson Demak",
 	"family": "Charm",
 	"id": "charm",

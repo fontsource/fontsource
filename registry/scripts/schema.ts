@@ -164,7 +164,6 @@ export const familyMetadataSchema = z.strictObject({
 			revision: z.string().min(1).optional(),
 		})
 		.optional(),
-	declaredSubsets: z.array(idSchema),
 	sourceFiles: z.array(sourceFileSchema).min(1),
 });
 
@@ -178,7 +177,7 @@ export const sourceFamilySchema = familyMetadataSchema
 		sourceFiles: true,
 	})
 	.extend({
-		languages: familyMetadataSchema.shape.languages.default([]),
+		languages: familyMetadataSchema.shape.languages.optional(),
 		sourceFiles: z
 			.array(
 				z.strictObject({

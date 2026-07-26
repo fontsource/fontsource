@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-18",
-	"declaredSubsets": [
-		"korean",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mike Abbink, Bold Monday",
 	"family": "IBM Plex Sans KR",
 	"id": "ibm-plex-sans-kr",

@@ -4,14 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2010-05-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Alexey Kryukov",
 	"family": "Old Standard TT",
 	"id": "old-standard-tt",

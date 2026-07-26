@@ -4,13 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2013-03-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Gabriela",
 	"id": "gabriela",

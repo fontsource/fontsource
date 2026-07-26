@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-11-17",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Lettersoup, Botio Nikoltchev, Ani Petrova",
 	"family": "Sofia Sans Extra Condensed",
 	"id": "sofia-sans-extra-condensed",

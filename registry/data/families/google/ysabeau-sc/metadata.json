@@ -3,17 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-06-14",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Christian Thalmann",
 	"family": "Ysabeau SC",
 	"id": "ysabeau-sc",

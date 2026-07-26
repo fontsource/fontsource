@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-05-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Oleg Snarsky, Denis Masharov, Vladimir Rabdu",
 	"family": "Ruslan Display",
 	"id": "ruslan-display",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"egyptian-hieroglyphs",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Egyptian Hieroglyphs",
 	"id": "noto-sans-egyptian-hieroglyphs",

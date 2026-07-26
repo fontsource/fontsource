@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-31",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams",
 	"family": "Anaheim",
 	"id": "anaheim",

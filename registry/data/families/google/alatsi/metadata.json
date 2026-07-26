@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-11-07",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Spyros Zevelakis, Eben Sorkin",
 	"family": "Alatsi",
 	"id": "alatsi",

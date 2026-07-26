@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-12-14",
-	"declaredSubsets": [
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Tanukizamurai",
 	"family": "Yusei Magic",
 	"id": "yusei-magic",

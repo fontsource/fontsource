@@ -4,16 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-11-06",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"symbols2",
-		"vietnamese"
-	],
 	"designer": "Mike Abbink, Paul van der Laan, Pieter van Rosmalen, Mikhael Khrustik",
 	"family": "Lilex",
 	"id": "lilex",

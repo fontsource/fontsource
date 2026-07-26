@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-06-24",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Juergen Huber",
 	"family": "Blinker",
 	"id": "blinker",

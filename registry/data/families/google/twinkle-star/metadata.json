@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2021-11-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Twinkle Star",
 	"id": "twinkle-star",

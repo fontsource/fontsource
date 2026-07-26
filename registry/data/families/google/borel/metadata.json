@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-07-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols",
-		"vietnamese"
-	],
 	"designer": "Rosalie Wagner",
 	"family": "Borel",
 	"id": "borel",

@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-07-09",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Grilli Type, Contrast Foundry, Type Network",
 	"family": "TikTok Sans",
 	"id": "tiktok-sans",

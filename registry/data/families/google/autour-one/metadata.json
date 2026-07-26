@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-05-15",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sorkin Type",
 	"family": "Autour One",
 	"id": "autour-one",

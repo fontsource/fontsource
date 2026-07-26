@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"canadian-aboriginal",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Canadian Aboriginal",
 	"id": "noto-sans-canadian-aboriginal",

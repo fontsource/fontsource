@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-03-18",
-	"declaredSubsets": [
-		"canadian-aboriginal",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Charles Daoud, Coppers and Brasses, Alexandre Saumier Demers, Jacques Le Bailly",
 	"family": "Radio Canada",
 	"id": "radio-canada",

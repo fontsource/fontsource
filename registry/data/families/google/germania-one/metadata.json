@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-01-18",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "John Vargas Beltrán",
 	"family": "Germania One",
 	"id": "germania-one",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-06-29",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Joe Prince",
 	"family": "Varela",
 	"id": "varela",

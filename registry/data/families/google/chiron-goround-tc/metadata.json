@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-06-21",
-	"declaredSubsets": [
-		"chinese-traditional",
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tamcy",
 	"family": "Chiron GoRound TC",
 	"id": "chiron-goround-tc",

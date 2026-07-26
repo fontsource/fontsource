@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-05-26",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"lepcha",
-		"menu"
-	],
 	"designer": "SIL International",
 	"family": "Mingzat",
 	"id": "mingzat",

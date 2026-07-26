@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"kharoshthi",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Kharoshthi",
 	"id": "noto-sans-kharoshthi",

@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-08-21",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Neapolitan",
 	"family": "Skranji",
 	"id": "skranji",

@@ -3,15 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2021-11-16",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Frank Grießhammer",
 	"family": "Source Serif 4",
 	"id": "source-serif-4",

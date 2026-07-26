@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-01-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sabrina Mariela Lopez",
 	"family": "Rouge Script",
 	"id": "rouge-script",

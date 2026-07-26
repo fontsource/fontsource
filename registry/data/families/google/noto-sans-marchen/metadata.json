@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"marchen",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Marchen",
 	"id": "noto-sans-marchen",

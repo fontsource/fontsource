@@ -3,14 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-12-13",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Gaslight",
 	"family": "Bad Script",
 	"id": "bad-script",

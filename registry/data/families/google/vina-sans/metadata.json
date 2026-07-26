@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2023-03-16",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Nguyen Type",
 	"family": "Vina Sans",
 	"id": "vina-sans",

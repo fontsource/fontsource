@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-02-29",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams, Kalapi Gajjar, Cyreal",
 	"family": "Oswald",
 	"id": "oswald",

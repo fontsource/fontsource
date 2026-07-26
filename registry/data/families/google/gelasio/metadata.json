@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2019-12-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Eben Sorkin",
 	"family": "Gelasio",
 	"id": "gelasio",

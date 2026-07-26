@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-01-04",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Tart Workshop",
 	"family": "Chelsea Market",
 	"id": "chelsea-market",

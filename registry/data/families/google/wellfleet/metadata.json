@@ -3,11 +3,6 @@
 		"slab-serif"
 	],
 	"dateAdded": "2012-01-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Riccardo De Franceschi",
 	"family": "Wellfleet",
 	"id": "wellfleet",

@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2025-01-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Petr van Blokland",
 	"family": "Bitcount Grid Single Ink",
 	"id": "bitcount-grid-single-ink",

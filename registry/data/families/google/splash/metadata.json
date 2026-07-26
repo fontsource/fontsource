@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2022-05-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Splash",
 	"id": "splash",

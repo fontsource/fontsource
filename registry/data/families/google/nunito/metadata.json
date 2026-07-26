@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-08-12",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Vernon Adams, Cyreal, Jacques Le Bailly",
 	"family": "Nunito",
 	"id": "nunito",

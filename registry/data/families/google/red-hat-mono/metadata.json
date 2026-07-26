@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "MCKL",
 	"family": "Red Hat Mono",
 	"id": "red-hat-mono",

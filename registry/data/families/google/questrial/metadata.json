@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-08-10",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Joe Prince, Laura Meseguer",
 	"family": "Questrial",
 	"id": "questrial",

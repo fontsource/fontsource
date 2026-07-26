@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2026-02-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Max Thunberg",
 	"family": "Miranda Sans",
 	"id": "miranda-sans",

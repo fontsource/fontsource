@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-02-22",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Szymon Celej",
 	"family": "Doppio One",
 	"id": "doppio-one",

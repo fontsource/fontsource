@@ -4,14 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-03-11",
-	"declaredSubsets": [
-		"arabic",
-		"emoji",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu"
-	],
 	"designer": "TypeTogether, Azza Alameddine, Laura Meseguer, Veronika Burian, José Scaglione",
 	"family": "Playpen Sans Arabic",
 	"id": "playpen-sans-arabic",

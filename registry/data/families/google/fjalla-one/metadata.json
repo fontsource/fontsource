@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-27",
-	"declaredSubsets": [
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Sorkin Type, Irina Smirnova",
 	"family": "Fjalla One",
 	"id": "fjalla-one",

@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2019-06-21",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "LV=, Jacques Le Bailly",
 	"family": "Livvic",
 	"id": "livvic",

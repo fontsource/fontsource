@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2016-12-03",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Omnibus-Type",
 	"family": "Saira Semi Condensed",
 	"id": "saira-semi-condensed",

@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-07-11",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Open Window",
 	"family": "Metal Mania",
 	"id": "metal-mania",

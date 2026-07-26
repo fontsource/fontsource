@@ -4,11 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2012-02-08",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Johan Kallas, Mihkel Virkus",
 	"family": "Ewert",
 	"id": "ewert",

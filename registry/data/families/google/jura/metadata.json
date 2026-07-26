@@ -4,17 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2011-05-18",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"greek-ext",
-		"kayah-li",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Daniel Johnson, Cyreal",
 	"family": "Jura",
 	"id": "jura",

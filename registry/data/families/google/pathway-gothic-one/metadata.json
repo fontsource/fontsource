@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2013-06-05",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Eduardo Tunni",
 	"family": "Pathway Gothic One",
 	"id": "pathway-gothic-one",

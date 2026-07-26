@@ -4,15 +4,6 @@
 		"serif"
 	],
 	"dateAdded": "2011-05-18",
-	"declaredSubsets": [
-		"greek",
-		"greek-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"runic",
-		"vietnamese"
-	],
 	"designer": "Nidud",
 	"family": "Caudex",
 	"id": "caudex",

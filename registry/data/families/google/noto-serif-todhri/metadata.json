@@ -3,12 +3,6 @@
 		"serif"
 	],
 	"dateAdded": "2024-09-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"todhri"
-	],
 	"designer": "Google",
 	"family": "Noto Serif Todhri",
 	"id": "noto-serif-todhri",

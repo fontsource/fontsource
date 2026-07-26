@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2014-10-31",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Multiple Designers",
 	"family": "Bhavuka",
 	"id": "bhavuka",

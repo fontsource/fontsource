@@ -3,13 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-06-17",
-	"declaredSubsets": [
-		"arabic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Mike Abbink, Bold Monday, Khajag Apelian, Wael Morcos",
 	"family": "IBM Plex Sans Arabic",
 	"id": "ibm-plex-sans-arabic",

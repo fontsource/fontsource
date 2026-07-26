@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2020-08-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Bonjour Monde, Lucas Descroix",
 	"family": "Syne Tactile",
 	"id": "syne-tactile",

@@ -3,12 +3,6 @@
 		"monospace"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Colophon Foundry",
 	"family": "Space Mono",
 	"id": "space-mono",

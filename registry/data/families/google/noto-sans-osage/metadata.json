@@ -3,12 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"osage"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Osage",
 	"id": "noto-sans-osage",

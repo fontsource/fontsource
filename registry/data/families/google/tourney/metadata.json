@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-04-29",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Tyler Finck, ETC",
 	"family": "Tourney",
 	"id": "tourney",

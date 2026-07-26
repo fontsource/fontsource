@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2012-10-10",
-	"declaredSubsets": [
-		"cyrillic",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Vernon Adams",
 	"family": "Seymour One",
 	"id": "seymour-one",

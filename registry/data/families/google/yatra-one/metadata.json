@@ -3,12 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2016-06-20",
-	"declaredSubsets": [
-		"devanagari",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Catherine Leigh Schmidt",
 	"family": "Yatra One",
 	"id": "yatra-one",

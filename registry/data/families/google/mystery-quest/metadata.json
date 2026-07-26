@@ -3,11 +3,6 @@
 		"display"
 	],
 	"dateAdded": "2012-02-29",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Sideshow",
 	"family": "Mystery Quest",
 	"id": "mystery-quest",

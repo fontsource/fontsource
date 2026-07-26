@@ -3,10 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"gurmukhi",
-		"menu"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Gurmukhi UI",
 	"id": "noto-sans-gurmukhi-ui",

@@ -3,11 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-04-30",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Braille Institute, Applied Design Works, Elliott Scott, Megan Eiswerth, Linus Boman, Theodore Petrosky",
 	"family": "Atkinson Hyperlegible",
 	"id": "atkinson-hyperlegible",

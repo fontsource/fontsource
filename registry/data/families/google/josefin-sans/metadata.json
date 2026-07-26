@@ -4,12 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2010-11-17",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Santiago Orozco",
 	"family": "Josefin Sans",
 	"id": "josefin-sans",

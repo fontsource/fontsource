@@ -4,11 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2012-01-25",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Impallari Type",
 	"family": "Kaushan Script",
 	"id": "kaushan-script",

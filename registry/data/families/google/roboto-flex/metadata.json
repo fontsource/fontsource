@@ -3,15 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2022-05-01",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"greek",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Font Bureau, David Berlow, Santiago Orozco, Irene Vlachou, Ilya Ruderman, Yury Ostromentsky, Mikhail Strukov",
 	"family": "Roboto Flex",
 	"id": "roboto-flex",

@@ -4,12 +4,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2020-12-14",
-	"declaredSubsets": [
-		"japanese",
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Maniackers Design",
 	"family": "Slackside One",
 	"id": "slackside-one",

@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2020-11-19",
-	"declaredSubsets": [
-		"arabic",
-		"latin",
-		"latin-ext",
-		"math",
-		"menu",
-		"symbols"
-	],
 	"designer": "Google",
 	"family": "Noto Sans Arabic",
 	"id": "noto-sans-arabic",

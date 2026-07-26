@@ -4,11 +4,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2021-03-12",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Yoshimichi Ohira",
 	"family": "Zen Dots",
 	"id": "zen-dots",

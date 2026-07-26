@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-12-13",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "TypeSETit",
 	"family": "Bilbo Swash Caps",
 	"id": "bilbo-swash-caps",

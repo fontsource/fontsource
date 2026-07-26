@@ -3,12 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2011-12-07",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Robert Leuschke",
 	"family": "Bilbo",
 	"id": "bilbo",

@@ -3,11 +3,6 @@
 		"handwriting"
 	],
 	"dateAdded": "2015-09-23",
-	"declaredSubsets": [
-		"latin",
-		"latin-ext",
-		"menu"
-	],
 	"designer": "Impallari Type",
 	"family": "Caveat Brush",
 	"id": "caveat-brush",

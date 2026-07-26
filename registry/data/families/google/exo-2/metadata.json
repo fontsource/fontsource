@@ -3,14 +3,6 @@
 		"sans-serif"
 	],
 	"dateAdded": "2013-12-04",
-	"declaredSubsets": [
-		"cyrillic",
-		"cyrillic-ext",
-		"latin",
-		"latin-ext",
-		"menu",
-		"vietnamese"
-	],
 	"designer": "Natanael Gama",
 	"family": "Exo 2",
 	"id": "exo-2",
