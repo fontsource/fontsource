@@ -313,13 +313,6 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 
 		previousSearchKeyRef.current = searchKey;
 		setIsLoadingMore(false);
-		const resultsTop = resultsRootRef.current
-			? resultsRootRef.current.getBoundingClientRect().top + window.scrollY
-			: 0;
-		window.scrollTo({
-			top: Math.max(resultsTop - 16, 0),
-			behavior: 'auto',
-		});
 	}, [searchKey]);
 
 	useEffect(() => {

@@ -47,6 +47,7 @@ import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
 import { getPreviewText } from '@/utils/language/language';
+import { ogMeta } from '@/utils/meta';
 
 export interface SearchProps {
 	discovery?: DiscoveryPage;
@@ -84,8 +85,10 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-export const meta: MetaFunction = ({ location }) =>
-	location.search ? [{ name: 'robots', content: 'noindex, follow' }] : [];
+export const meta: MetaFunction = ({ location }) => [
+	...ogMeta({}),
+	...(location.search ? [{ name: 'robots', content: 'noindex, follow' }] : []),
+];
 
 const sortMap: Record<string, string> = {
 	prod_POPULAR: 'popular',
