@@ -20,6 +20,7 @@ import {
 	Title,
 	type TitleProps,
 } from '@mantine/core';
+import { IconExternalLink } from '@tabler/icons-react';
 import cx from 'clsx';
 import type { ComponentProps } from 'react';
 import { Link } from 'react-router';
@@ -79,6 +80,10 @@ const MdxTable = (props: TableProps) => (
 		<Table fz="sm" {...props} />
 	</Table.ScrollContainer>
 );
+
+const MdxExternalLinkIcon = (
+	props: ComponentProps<typeof IconExternalLink>,
+) => <IconExternalLink size={14} stroke={1.8} aria-hidden="true" {...props} />;
 
 const mdxComponents = {
 	// Typography
@@ -147,6 +152,7 @@ const mdxComponents = {
 	blockquote: (props: BlockquoteProps) => <Blockquote fz={16} {...props} />,
 	a: MdxLink,
 	DocsLink: MdxLink,
+	DocsExternalLinkIcon: MdxExternalLinkIcon,
 	PackageManagerCode,
 };
 
