@@ -24,15 +24,6 @@ export const getOAuthLoginError = (
 
 	const providerLabel = provider ? providerLabels[provider] : null;
 
-	if (code === 'access_denied') {
-		return {
-			title: providerLabel
-				? `${providerLabel} sign-in was cancelled`
-				: 'Sign-in was cancelled',
-			message: 'Try again when you’re ready, or use another sign-in option.',
-		};
-	}
-
 	if (code === 'email_not_found') {
 		const alternateProvider =
 			provider === 'google'
@@ -43,11 +34,11 @@ export const getOAuthLoginError = (
 
 		return {
 			title: providerLabel
-				? `${providerLabel} couldn’t verify your email`
-				: 'Your email couldn’t be verified',
+				? `${providerLabel} didn’t share an email address`
+				: 'No email address was provided',
 			message: alternateProvider
-				? `Use an account with an email address, or continue with ${alternateProvider}.`
-				: 'Use an account with an email address, or try another sign-in option.',
+				? `Fontsource needs an email address to complete sign-in. Try an account that shares one, or continue with ${alternateProvider}.`
+				: 'Fontsource needs an email address to complete sign-in. Try an account that shares one, or use another sign-in option.',
 		};
 	}
 
@@ -55,9 +46,7 @@ export const getOAuthLoginError = (
 		title: providerLabel
 			? `${providerLabel} couldn’t complete sign-in`
 			: 'Couldn’t log you in',
-		message: providerLabel
-			? `Try ${providerLabel} again, or use another sign-in option.`
-			: 'Try again, or use another sign-in option.',
+		message: 'Try again. If it keeps happening, use another sign-in option.',
 	};
 };
 
@@ -70,19 +59,17 @@ export const getSignInRequestError = (
 	if (status === 429) {
 		return {
 			title: 'Too many sign-in attempts',
-			message: `Wait a moment, then try ${providerLabel} again.`,
+			message: 'Wait a moment, then try again.',
 		};
 	}
 
 	return {
-		title: `Couldn’t start ${providerLabel} sign-in`,
-		message: `Try ${providerLabel} again, or use another sign-in option.`,
+		title: `Fontsource couldn’t start ${providerLabel} sign-in`,
+		message: 'Try again. If it keeps happening, use another sign-in option.',
 	};
 };
 
-export const getSignInNetworkError = (
-	provider: SocialProvider,
-): LoginErrorMessage => ({
+export const getSignInNetworkError = (): LoginErrorMessage => ({
 	title: 'Couldn’t connect to Fontsource',
-	message: `Check your connection and try ${providerLabels[provider]} again.`,
+	message: 'Check your connection, then try again.',
 });

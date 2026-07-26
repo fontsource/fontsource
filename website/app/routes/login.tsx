@@ -81,7 +81,7 @@ export default function Login() {
 				setActionError(getSignInRequestError(provider, result.error.status));
 			}
 		} catch {
-			setActionError(getSignInNetworkError(provider));
+			setActionError(getSignInNetworkError());
 		} finally {
 			signInInFlight.current = false;
 			setPendingProvider(null);

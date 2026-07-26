@@ -20,17 +20,18 @@ describe('login error messages', () => {
 		expect(getOAuthLoginError('', 'github')).toBeNull();
 	});
 
-	it('explains a cancelled provider flow', () => {
+	it('does not assume why a provider denied access', () => {
 		expect(getOAuthLoginError('access_denied', 'github')).toEqual({
-			title: 'GitHub sign-in was cancelled',
-			message: 'Try again when you’re ready, or use another sign-in option.',
+			title: 'GitHub couldn’t complete sign-in',
+			message: 'Try again. If it keeps happening, use another sign-in option.',
 		});
 	});
 
-	it('offers another provider when an email is unavailable', () => {
+	it('explains why an email address is required', () => {
 		expect(getOAuthLoginError('email_not_found', 'google')).toEqual({
-			title: 'Google couldn’t verify your email',
-			message: 'Use an account with an email address, or continue with GitHub.',
+			title: 'Google didn’t share an email address',
+			message:
+				'Fontsource needs an email address to complete sign-in. Try an account that shares one, or continue with GitHub.',
 		});
 	});
 
@@ -39,7 +40,7 @@ describe('login error messages', () => {
 
 		expect(error).toEqual({
 			title: 'Google couldn’t complete sign-in',
-			message: 'Try Google again, or use another sign-in option.',
+			message: 'Try again. If it keeps happening, use another sign-in option.',
 		});
 		expect(JSON.stringify(error)).not.toContain('internal_provider_detail');
 	});
@@ -47,14 +48,14 @@ describe('login error messages', () => {
 	it('explains rate limiting', () => {
 		expect(getSignInRequestError('github', 429)).toEqual({
 			title: 'Too many sign-in attempts',
-			message: 'Wait a moment, then try GitHub again.',
+			message: 'Wait a moment, then try again.',
 		});
 	});
 
 	it('distinguishes network failures', () => {
-		expect(getSignInNetworkError('google')).toEqual({
+		expect(getSignInNetworkError()).toEqual({
 			title: 'Couldn’t connect to Fontsource',
-			message: 'Check your connection and try Google again.',
+			message: 'Check your connection, then try again.',
 		});
 	});
 });

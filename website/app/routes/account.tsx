@@ -79,8 +79,8 @@ export default function Account() {
 					</Title>
 
 					{hasActionError && (
-						<Alert color="red" title="Something went wrong" role="alert">
-							We couldn't sign you out. Please try again.
+						<Alert color="red" title="Couldn’t sign you out" role="alert">
+							Try again.
 						</Alert>
 					)}
 
