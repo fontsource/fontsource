@@ -68,6 +68,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   globally unique across providers.
 - `data/languages.json` defines semantic languages, public names, and the
   private codepoint requirements used for automatic matching.
+- `data/replacements.json` records reviewed successor relationships between
+  globally unique family IDs.
 - `data/taxonomy.json` defines the reviewed classification and tag labels.
 - `data/subsets/` and `data/axes.json` contain shared Unicode and axis data.
 
@@ -80,6 +82,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - Each provider owns its directory; Google generation never changes Fontsource
   records.
 - Removed Google families remain buildable but are marked `deprecated`.
+- Replaced families retain their own sources; `replacedBy` recommends an active
+  successor and never aliases its binaries.
 - `github` provenance can recover a missing source from an exact commit;
   `registry` provenance requires the source to be promoted to R2 first.
 - Package policy is reviewed registry state, not derived from legacy catalogs.

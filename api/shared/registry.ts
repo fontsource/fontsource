@@ -47,6 +47,7 @@ const FamilySummarySchema = z.strictObject({
 	displayName: z.string().optional(),
 	provider: IdSchema,
 	status: z.enum(['active', 'deprecated']),
+	replacedBy: IdSchema.optional(),
 	classifications: z.array(ClassificationSchema).min(1),
 	tags: z.array(TagIdSchema),
 	languages: z

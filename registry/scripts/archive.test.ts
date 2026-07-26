@@ -33,6 +33,7 @@ describe('registry source archive', () => {
 		let manifest: unknown;
 		let current: unknown;
 		let family: unknown;
+		let replacement: unknown;
 		let language: unknown;
 		let sourceContentType: string | undefined;
 		r2.putObject.mockImplementation(
@@ -52,6 +53,11 @@ describe('registry source archive', () => {
 				}
 				if (object.key.endsWith('/api/families/abel.json')) {
 					family = JSON.parse(
+						Buffer.from(await object.read()).toString('utf8'),
+					);
+				}
+				if (object.key.endsWith('/api/families/ek-mukta.json')) {
+					replacement = JSON.parse(
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
@@ -127,6 +133,12 @@ describe('registry source archive', () => {
 			],
 		});
 		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
+		expect(replacement).toMatchObject({
+			id: 'ek-mukta',
+			status: 'deprecated',
+			replacedBy: 'mukta',
+		});
+		expect(RegistryFamilyDetailSchema.parse(replacement)).toEqual(replacement);
 		expect(language).not.toHaveProperty('requiredCodepoints');
 	}, 15_000);
 });

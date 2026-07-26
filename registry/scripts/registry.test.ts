@@ -370,6 +370,8 @@ const addRetainedRegistryState = async (root: string): Promise<void> => {
 			id: 'example',
 			family: 'Example',
 			provider: 'fontsource',
+			status: 'active',
+			replacedBy: undefined,
 			provenance: { type: 'registry' },
 		}),
 	);
@@ -511,7 +513,7 @@ describe('registry ingestion', () => {
 		).toBe(false);
 	});
 
-	it('regenerates deterministically, preserves policy, and retains missing families', async () => {
+	it('regenerates deterministically, applies replacements, and retains missing families', async () => {
 		const google = await createGoogleRepository();
 		const nam = await createNamRepository();
 		const registry = await temporaryDirectory('registry');
@@ -524,6 +526,11 @@ describe('registry ingestion', () => {
 			registry,
 		);
 		await addRetainedRegistryState(registry);
+		await writeFixture(
+			registry,
+			'replacements.json',
+			canonicalJson({ abel: 'recursive-sans' }),
+		);
 
 		await writeFixture(
 			google.repository,
@@ -542,6 +549,11 @@ describe('registry ingestion', () => {
 			registry,
 		);
 		const freshRegistry = await temporaryDirectory('fresh-registry');
+		await writeFixture(
+			freshRegistry,
+			'replacements.json',
+			canonicalJson({ abel: 'recursive-sans' }),
+		);
 		await generateRegistry(
 			google.repository,
 			unrelatedRevision,
@@ -564,6 +576,8 @@ describe('registry ingestion', () => {
 				tester: 'All people are born free and equal',
 			},
 			provenance: { revision: google.revision },
+			replacedBy: 'recursive-sans',
+			status: 'deprecated',
 		});
 		expect(await readJson(join(registry, 'languages.json'))).toMatchObject({
 			en_Latn: {
@@ -621,7 +635,27 @@ describe('registry ingestion', () => {
 		);
 		expect(metadata).toMatchObject({
 			status: 'deprecated',
+			replacedBy: 'recursive-sans',
 			provenance: { revision: google.revision },
 		});
+
+		const replacementPath = join(
+			registry,
+			'families/google/recursive-sans/metadata.json',
+		);
+		const replacement = familyMetadataSchema.parse(
+			await readJson(replacementPath),
+		);
+		await writeFixture(
+			registry,
+			'families/google/recursive-sans/metadata.json',
+			canonicalJson({
+				...replacement,
+				status: 'deprecated',
+			}),
+		);
+		await expect(validateRegistry(registry)).rejects.toThrow(
+			'Replacement target recursive-sans must be active',
+		);
 	}, 30_000);
 });

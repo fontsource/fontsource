@@ -14,6 +14,7 @@ import {
 	type LanguageCatalog,
 	languageCatalogSchema,
 	registryIndexSchema,
+	replacementRegistrySchema,
 	subsetDefinitionSchema,
 	type Taxonomy,
 	taxonomySchema,
@@ -193,7 +194,7 @@ const validateFamily = async (
 	subsets: ReadonlySet<string>,
 	taxonomy: Taxonomy,
 	languages: LanguageCatalog,
-): Promise<void> => {
+): Promise<FamilyMetadata> => {
 	const { provider, id } = parseFamilyKey(key);
 	const directory = join(root, 'families', key);
 	const metadata = await validateCanonicalJson(
@@ -279,7 +280,7 @@ const validateFamily = async (
 	}
 
 	const policyPath = join(directory, 'policy.json');
-	if (!(await pathExists(policyPath))) return;
+	if (!(await pathExists(policyPath))) return metadata;
 	const policy = await validateCanonicalJson(policyPath, familyPolicySchema);
 	assert(
 		Boolean(policy.packages.static || policy.packages.variable),
@@ -311,6 +312,7 @@ const validateFamily = async (
 		);
 	}
 	validatePolicyResolution(policy, metadata, inspection, id);
+	return metadata;
 };
 
 const validateSubset = async (root: string, id: string): Promise<void> => {
@@ -378,6 +380,10 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		assert(!familyIds.has(id), `Duplicate registry family ID ${id}`);
 		familyIds.add(id);
 	}
+	const replacements = await validateCanonicalJson(
+		join(root, 'replacements.json'),
+		replacementRegistrySchema,
+	);
 	const taxonomy = await validateCanonicalJson(
 		join(root, 'taxonomy.json'),
 		taxonomySchema,
@@ -422,17 +428,45 @@ export const validateRegistry = async (root: string): Promise<void> => {
 
 	const subsetSet = new Set(index.subsets);
 	let validated = 0;
-	await Promise.all(
+	const families = await Promise.all(
 		index.families.map(async (family) => {
-			await validateFamily(root, family, subsetSet, taxonomy, languages);
+			const metadata = await validateFamily(
+				root,
+				family,
+				subsetSet,
+				taxonomy,
+				languages,
+			);
 			validated += 1;
 			if (validated % 250 === 0 && validated < index.families.length) {
 				logger.info(
 					`Validated ${validated}/${index.families.length} font families`,
 				);
 			}
+			return metadata;
 		}),
 	);
+	const metadataById = new Map(families.map((family) => [family.id, family]));
+	for (const family of families) {
+		strictEqual(
+			family.replacedBy,
+			replacements[family.id],
+			`${family.id} replacement does not match replacements.json`,
+		);
+	}
+	for (const [id, replacedBy] of Object.entries(replacements)) {
+		assert(id !== replacedBy, `${id} cannot replace itself`);
+		const family = metadataById.get(id);
+		assert(family, `Replacement source ${id} does not exist`);
+		const replacement = metadataById.get(replacedBy);
+		assert(replacement, `Replacement target ${replacedBy} does not exist`);
+		strictEqual(family.status, 'deprecated', `${id} must be deprecated`);
+		strictEqual(
+			replacement.status,
+			'active',
+			`Replacement target ${replacedBy} must be active`,
+		);
+	}
 	await Promise.all(index.subsets.map((id) => validateSubset(root, id)));
 	await validateCanonicalJson(join(root, 'axes.json'), axisRegistrySchema);
 
@@ -440,6 +474,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		'index.json',
 		'axes.json',
 		'languages.json',
+		'replacements.json',
 		'taxonomy.json',
 		...index.subsets.map((id) => `subsets/${id}.json`),
 	]);

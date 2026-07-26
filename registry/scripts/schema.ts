@@ -98,6 +98,8 @@ export const registryIndexSchema = z.strictObject({
 	subsets: z.array(idSchema),
 });
 
+export const replacementRegistrySchema = z.record(idSchema, idSchema);
+
 const archivedFileSchema = z.strictObject({
 	path: sourcePathSchema,
 	size: z.number().int().nonnegative(),
@@ -131,6 +133,7 @@ export const familyMetadataSchema = z.strictObject({
 	family: z.string().min(1),
 	provider: familyProviderSchema,
 	status: z.enum(['active', 'deprecated']),
+	replacedBy: idSchema.optional(),
 	provenance: z.discriminatedUnion('type', [
 		z.strictObject({
 			type: z.literal('github'),
@@ -169,6 +172,7 @@ export const sourceFamilySchema = familyMetadataSchema
 	.omit({
 		provider: true,
 		status: true,
+		replacedBy: true,
 		provenance: true,
 		sourceModified: true,
 		sourceFiles: true,
@@ -290,6 +294,7 @@ export type FamilyMetadata = z.infer<typeof familyMetadataSchema>;
 export type FamilyInspection = z.infer<typeof familyInspectionSchema>;
 export type FamilyPolicy = z.infer<typeof familyPolicySchema>;
 export type LanguageCatalog = z.infer<typeof languageCatalogSchema>;
+export type ReplacementRegistry = z.infer<typeof replacementRegistrySchema>;
 export type SourceFamily = z.infer<typeof sourceFamilySchema>;
 export type SubsetDefinition = z.infer<typeof subsetDefinitionSchema>;
 export type Taxonomy = z.infer<typeof taxonomySchema>;
