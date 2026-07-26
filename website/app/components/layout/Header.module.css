@@ -68,6 +68,11 @@
 	}
 }
 
+.burger {
+	width: 44px;
+	height: 44px;
+}
+
 .mobile-links {
 	height: 100vh;
 	padding: 24px 16px;
@@ -78,8 +83,18 @@
 
 .mobile-link {
 	display: flex;
+	align-items: center;
+	min-height: 44px;
 
 	&:hover {
 		color: var(--mantine-color-purple-0);
+	}
+}
+
+@media (--lt-sm) {
+	.link {
+		display: flex;
+		align-items: center;
+		min-height: 44px;
 	}
 }

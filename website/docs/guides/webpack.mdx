@@ -1,47 +1,63 @@
 ---
 title: Webpack
-description: Configure Webpack to bundle and use Fontsource font packages.
+description: Configure Webpack 5 to bundle Fontsource package CSS and font files.
 ---
 
 # Webpack
 
-To use Fontsource with Webpack, you'll need to configure your Webpack project to handle font files and include Fontsource in the bundle. Follow the steps below to set it up.
+Webpack can bundle Fontsource CSS and emit its referenced font files as
+versioned application assets. Webpack 5's built-in Asset Modules replace the
+former `file-loader` setup.
 
-## Installation
+## 1. Install the font and CSS loaders
 
-### 1. Install the loaders
+<PackageManagerCode cmd="@fontsource-variable/open-sans" />
 
-<PackageManagerCode cmd="css-loader file-loader" />
+<PackageManagerCode cmd="-D style-loader css-loader" />
 
-### 2. Configure the loaders
+## 2. Configure Webpack
 
-Modify `webpack.config.js` to include the following configuration:
+Add rules for CSS and font assets:
 
 ```js
+// webpack.config.js
 module.exports = {
   module: {
     rules: [
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ["file-loader"],
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.css$/i,
-        use: ["css-loader"],
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: "asset/resource",
       },
     ],
   },
 };
 ```
 
-### 3. Import the font
+`css-loader` resolves the `url()` references in Fontsource CSS.
+`style-loader` adds the resulting stylesheet to the page. The asset rule emits
+the referenced font files without an additional loader.
 
-Import the font in your entry file or component:
+## 3. Import and apply the font
 
 ```js
+// src/index.js
 import "@fontsource-variable/open-sans/wght.css";
-// You should be able to import other CSS files too
-import "./styles.css"
-
-// Your application code goes here
+import "./styles.css";
 ```
+
+```css
+/* src/styles.css */
+body {
+  font-family: "Open Sans Variable", sans-serif;
+}
+```
+
+For production builds that extract CSS into separate files, use your existing
+CSS extraction plugin in place of `style-loader`. See Webpack's
+[Asset Modules guide](https://webpack.js.org/guides/asset-modules/) and
+[`style-loader` documentation](https://webpack.js.org/loaders/style-loader/)
+for the underlying configuration.

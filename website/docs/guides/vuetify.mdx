@@ -1,0 +1,51 @@
+---
+title: Vuetify
+description: Install and use Fontsource Roboto packages with Vuetify.
+---
+
+# Vuetify
+
+Vuetify uses Roboto as its default font but does not install the font for you.
+A Fontsource package keeps Roboto self-hosted and lets you include only the
+weights used by your interface.
+
+## 1. Install Roboto
+
+<PackageManagerCode cmd="@fontsource/roboto" />
+
+## 2. Import the required weights
+
+Add the Fontsource imports to the same entry file that creates your Vue
+application:
+
+```ts
+// src/main.ts
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "vuetify/styles";
+
+import { createApp } from "vue";
+import { createVuetify } from "vuetify";
+import App from "./App.vue";
+
+const vuetify = createVuetify();
+
+createApp(App).use(vuetify).mount("#app");
+```
+
+The static package uses the `"Roboto"` family expected by Vuetify's default
+typography. Add italic variants only when your design uses them:
+
+```ts
+import "@fontsource/roboto/400-italic.css";
+import "@fontsource/roboto/700-italic.css";
+```
+
+No external font stylesheet is required. Your bundler emits the selected
+Roboto files with the application assets.
+
+Vuetify also documents an automated setup with `unplugin-fonts`. See its
+[font installation options](https://vuetifyjs.com/en/getting-started/installation/#fonts)
+when you prefer generated imports over choosing package entries directly.

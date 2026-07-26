@@ -1,0 +1,69 @@
+---
+title: React Router
+description: Install and use Fontsource packages in React Router Framework Mode.
+---
+
+# React Router
+
+React Router Framework Mode uses Vite, so Fontsource package CSS can be
+imported directly from a route module. Vite bundles the CSS and emits the font
+files as self-hosted, hashed assets.
+
+## 1. Install the font
+
+<PackageManagerCode cmd="@fontsource-variable/open-sans" />
+
+## 2. Import it from the root route
+
+```tsx
+// app/root.tsx
+import "@fontsource-variable/open-sans/wght.css";
+import "./app.css";
+
+// Keep the rest of your root route unchanged.
+```
+
+The root route is the parent of every other route, so this import makes the
+font available throughout the application.
+
+## 3. Apply the font
+
+```css
+/* app/app.css */
+body {
+  font-family: "Open Sans Variable", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+```
+
+## Load a font for one route
+
+Import the package CSS from an individual route when the font is used only
+there:
+
+```tsx
+// app/routes/editor.tsx
+import "@fontsource/jetbrains-mono/400.css";
+
+export default function Editor() {
+  return <code className="editor">const ready = true;</code>;
+}
+```
+
+For explicit route stylesheet links, Vite can return a package CSS URL:
+
+```tsx
+import fontCssHref from "@fontsource/jetbrains-mono/400.css?url";
+
+export function links() {
+  return [{ rel: "stylesheet", href: fontCssHref }];
+}
+```
+
+The `links` approach requires the root document to render React Router's
+`<Links />` component, as the default framework template does. See React
+Router's [styling guide](https://reactrouter.com/explanation/styling) for the
+available CSS patterns.

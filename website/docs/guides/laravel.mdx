@@ -1,0 +1,94 @@
+---
+title: Laravel
+description: Use Fontsource packages with Laravel's Vite integration and Blade font helpers.
+---
+
+# Laravel
+
+Laravel's current Vite integration can read an installed Fontsource package,
+emit its self-hosted font files, generate the `@font-face` CSS, and add preload
+links through Blade.
+
+## 1. Install the font
+
+<PackageManagerCode cmd="@fontsource/jetbrains-mono" />
+
+## 2. Configure the Fontsource provider
+
+Add the `fontsource` provider to the existing Laravel plugin configuration:
+
+```js
+// vite.config.js
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
+import { fontsource } from "laravel-vite-plugin/fonts";
+
+export default defineConfig({
+  plugins: [
+    laravel({
+      input: "resources/js/app.js",
+      fonts: [
+        fontsource("JetBrains Mono", {
+          alias: "mono",
+          weights: [400, 700],
+          subsets: ["latin"],
+          preload: [{ weight: 400 }],
+        }),
+      ],
+    }),
+  ],
+});
+```
+
+The provider derives `@fontsource/jetbrains-mono` from the family name and
+reads the installed package from `node_modules`. Selecting weights and subsets
+here prevents unused files from entering the build.
+
+## 3. Render the font CSS and preloads
+
+Place Laravel's `@fonts` directive in the `<head>` of your root Blade layout:
+
+```blade
+<!doctype html>
+<html lang="en">
+  <head>
+    @fonts("mono")
+    @vite("resources/js/app.js")
+  </head>
+  <body>
+    {{ $slot }}
+  </body>
+</html>
+```
+
+The alias also creates a CSS variable:
+
+```css
+code,
+pre {
+  font-family: var(--font-mono);
+}
+```
+
+## Direct package import
+
+If your installed `laravel-vite-plugin` does not expose the font provider, use
+the standard Vite package path instead:
+
+```js
+// resources/js/app.js
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/700.css";
+```
+
+```css
+code,
+pre {
+  font-family: "JetBrains Mono", monospace;
+}
+```
+
+See Laravel's
+[font provider documentation](https://laravel.com/docs/13.x/vite#font-providers)
+and [Blade `@fonts` directive](https://laravel.com/docs/13.x/blade#fonts) for
+all provider options.

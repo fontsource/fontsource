@@ -1,0 +1,82 @@
+---
+title: Nuxt
+description: Use Fontsource packages directly or through Nuxt Fonts in a Nuxt application.
+---
+
+# Nuxt
+
+Fontsource packages work as ordinary npm stylesheets in Nuxt. You can import
+the exact CSS entry you need, or let the Nuxt Fonts module resolve an installed
+Fontsource package through its npm provider.
+
+## Direct package import
+
+This is the smallest setup and keeps variant selection in your package import.
+
+### 1. Install the font
+
+<PackageManagerCode cmd="@fontsource-variable/inter" />
+
+### 2. Add the package CSS
+
+Include the Fontsource entry in Nuxt's global `css` array:
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  css: [
+    "@fontsource-variable/inter/wght.css",
+    "~/assets/css/main.css",
+  ],
+});
+```
+
+### 3. Apply the font
+
+```css
+/* assets/css/main.css */
+body {
+  font-family: "Inter Variable", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+```
+
+Nuxt passes the package CSS through its Vite build, which emits the referenced
+font files with the rest of your application assets.
+
+## Nuxt Fonts npm provider
+
+Use this option when your application already uses `@nuxt/fonts` or you want
+Nuxt to generate the font CSS and fallbacks.
+
+<PackageManagerCode cmd="@nuxt/fonts" />
+
+Configure the installed Fontsource package as an npm-provided family:
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ["@nuxt/fonts"],
+  fonts: {
+    families: [
+      {
+        name: "Inter Variable",
+        provider: "npm",
+      },
+    ],
+  },
+});
+```
+
+Keep the same `font-family` declaration in your application CSS. When using
+this provider, remove the direct Fontsource CSS entry from the `css` array so
+the font faces are not generated twice.
+
+The npm provider recognizes both `@fontsource/*` and
+`@fontsource-variable/*` dependencies and resolves them locally without a
+runtime CDN request. See the
+[Nuxt Fonts provider documentation](https://fonts.nuxt.com/get-started/providers)
+for configuration options.

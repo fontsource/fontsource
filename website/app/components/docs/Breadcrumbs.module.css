@@ -8,6 +8,10 @@
 	font-size: 14px;
 	letter-spacing: normal;
 	text-transform: none;
+
+	@media (--lt-sm) {
+		margin-bottom: 10px;
+	}
 }
 
 .breadcrumbs span {
@@ -22,14 +26,20 @@
 
 	&:hover,
 	&:focus-visible {
-		color: var(--mantine-color-purple-0);
+		color: var(--mantine-color-purple);
 		text-decoration: underline;
 		text-underline-offset: 3px;
 	}
 
 	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-2);
+		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 3px;
 		border-radius: 3px;
+	}
+
+	@media (--lt-sm) {
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
 	}
 }

@@ -1,23 +1,30 @@
 {
 	"title": "Guides",
 	"defaultOpen": true,
+	"pagesIndex": "index",
 	"pages": [
-		"---Frameworks---",
-		"external:[Astro](https://docs.astro.build/en/guides/fonts/#using-fontsource)",
+		"---Frameworks and Build Tools---",
 		"angular",
-		"external:[Flutter](https://pub.dev/packages/fontsource)",
+		"external:[Astro](https://docs.astro.build/en/guides/fonts/#using-fontsource)",
+		"external:[Fontsource for Flutter](https://pub.dev/packages/fontsource)",
 		"external:[Gatsby](https://www.gatsbyjs.com/docs/how-to/styling/using-web-fonts/#self-host-google-fonts-with-fontsource)",
+		"laravel",
 		"nextjs",
+		"nuxt",
 		"qwik",
+		"react-router",
 		"remix",
 		"svelte",
+		"storybook",
+		"vite",
 		"vue",
+		"webpack",
 		"---Component Libraries---",
-		"external:[Chakra UI](https://chakra-ui.com/community/recipes/using-fonts)",
-		"external:[Material UI](https://mui.com/material-ui/react-typography/#install-with-npm)",
+		"external:[Chakra UI](https://chakra-ui.com/guides/theming-add-custom-font-to-vite)",
+		"external:[Material UI](https://mui.com/material-ui/react-typography/#roboto-font)",
 		"external:[Panda CSS](https://panda-css.com/docs/guides/fonts#fontsource)",
+		"vuetify",
 		"---Other---",
-		"external:[Obsidian](https://github.com/fontsource/obsidian-fontsource)",
-		"webpack"
+		"external:[Obsidian plugin](https://github.com/fontsource/obsidian-fontsource)"
 	]
 }

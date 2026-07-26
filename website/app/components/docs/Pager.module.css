@@ -22,6 +22,7 @@
 	text-decoration: none;
 	color: light-dark(#33405a, #d3dbec);
 	transition:
+		background-color 100ms ease,
 		border-color 100ms ease,
 		color 100ms ease;
 
@@ -32,10 +33,11 @@
 
 	&:hover,
 	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-2);
+		background: var(--mantine-color-purpleHover-0);
+		outline: 2px solid var(--mantine-color-purple);
 		outline-offset: 2px;
-		color: var(--mantine-color-purple-0);
-		border-color: var(--mantine-color-purple-0);
+		color: var(--docs-accent-on-tint);
+		border-color: var(--mantine-color-purple);
 	}
 }
 

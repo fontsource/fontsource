@@ -1,0 +1,50 @@
+---
+title: Storybook
+description: Load Fontsource packages in every Storybook story and documentation page.
+---
+
+# Storybook
+
+Storybook renders stories in a separate preview document. Importing a
+Fontsource package from the preview configuration makes the same self-hosted
+font available to every story and docs page.
+
+## 1. Install the font
+
+<PackageManagerCode cmd="@fontsource-variable/inter" />
+
+## 2. Import it from the preview configuration
+
+Add the font CSS before your existing preview export:
+
+```ts
+// .storybook/preview.ts
+import "@fontsource-variable/inter/wght.css";
+import "./preview.css";
+
+// Keep your existing Storybook preview configuration below.
+export default {
+  parameters: {},
+};
+```
+
+## 3. Apply the font
+
+```css
+/* .storybook/preview.css */
+body {
+  font-family: "Inter Variable", sans-serif;
+}
+```
+
+If your application already has a global stylesheet that applies the family,
+import that stylesheet from `preview.ts` after the Fontsource package instead
+of creating `preview.css`.
+
+For a font used by only one component, import its package entry beside that
+component. Storybook will process the import through its configured Vite or
+Webpack builder.
+
+See Storybook's
+[webfont documentation](https://storybook.js.org/docs/configure/styling-and-css/#adding-webfonts)
+for the preview-file integration.

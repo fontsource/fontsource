@@ -74,7 +74,7 @@ const MobileExternalIcon = ({ icon, label, href }: IconProps) => {
 	return (
 		<UnstyledButton
 			component="a"
-			className={classes.mobileLink}
+			className={classes['mobile-link']}
 			href={href}
 			target="_blank"
 			rel="noreferrer"
@@ -155,6 +155,7 @@ export const Header = ({ ...other }: ContainerProps) => {
 						</Tooltip.Group>
 					</Box>
 					<Burger
+						className={classes.burger}
 						opened={opened}
 						onClick={toggle}
 						hiddenFrom="sm"

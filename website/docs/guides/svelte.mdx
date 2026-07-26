@@ -1,100 +1,70 @@
 ---
 title: SvelteKit
-description: Install and use Fontsource fonts across Svelte and SvelteKit applications.
+description: Install and use Fontsource packages across a SvelteKit application.
 ---
 
 # SvelteKit
 
-To include Fontsource into your Svelte / SvelteKit project and apply it to your application's typography, follow the steps below.
+Fontsource packages are handled by SvelteKit's Vite build, keeping the font
+files self-hosted and versioned with the rest of your application.
 
-## Installation
-
-First, install your chosen font package:
+## 1. Install the font
 
 <PackageManagerCode cmd="@fontsource-variable/inter" />
 
-## 1. Layout Import
+## 2. Import it from the root layout
 
-Import fonts in your root layout for application-wide availability:
+For a current SvelteKit application, import the font in
+`src/routes/+layout.svelte`:
 
-```html
-<!-- src/routes/+layout.svelte -->
+```svelte
 <script>
-  import '@fontsource-variable/inter/wght.css';
+  import "@fontsource-variable/inter/wght.css";
+
+  let { children } = $props();
 </script>
 
-<main>
-  <slot />
-</main>
+{@render children()}
 
 <style>
   :global(body) {
-    font-family: 'Inter Variable', sans-serif;
     margin: 0;
-  }
-
-  :global(h1, h2, h3, h4, h5, h6) {
-    font-family: 'Inter Variable', sans-serif;
-    font-weight: 600;
+    font-family: "Inter Variable", sans-serif;
   }
 </style>
 ```
 
-## 2. CSS File Import
+This makes the font available across every page. To limit a font to one section
+of the application, import it from that route's `+layout.svelte` instead.
 
-Create a global CSS file and import it in your layout:
+## Import through a global stylesheet
+
+You can also keep all global typography in one CSS file:
 
 ```css
 /* src/styles/global.css */
-@import '@fontsource-variable/inter/wght.css';
+@import "@fontsource-variable/inter/wght.css";
 
 body {
-  font-family: 'Inter Variable', sans-serif;
   margin: 0;
-  line-height: 1.6;
+  font-family: "Inter Variable", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter Variable', sans-serif;
-  font-weight: 600;
+h1 {
+  font-weight: 700;
 }
 ```
 
-```html
+```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
-  import '../styles/global.css';
+  import "../styles/global.css";
+
+  let { children } = $props();
 </script>
 
-<main>
-  <slot />
-</main>
+{@render children()}
 ```
 
-## 3. Component-Level Import
-
-For better code splitting, import fonts in specific components or routes:
-
-```html
-<!-- src/routes/blog/+layout.svelte -->
-<script>
-  import '@fontsource/playfair-display/700.css';
-  import '@fontsource-variable/inter/wght.css';
-</script>
-
-<article>
-  <slot />
-</article>
-
-<style>
-  article :global(h1) {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-  }
-
-  article :global(p) {
-    font-family: 'Inter Variable', sans-serif;
-    font-weight: 400;
-  }
-</style>
-```
+Svelte 4 applications can keep their existing `<slot />` layout syntax. In
+Svelte 5, snippets and `{@render children()}` replace legacy slots.

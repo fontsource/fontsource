@@ -29,7 +29,11 @@ const getDocsPageRoutes = (directory: string): string[] => {
 			.split(sep)
 			.join('/');
 
-		routes.push(`/docs/${docsPath}`);
+		const routePath =
+			docsPath === 'index'
+				? '/docs'
+				: `/docs/${docsPath.replace(/\/index$/, '')}`;
+		routes.push(routePath);
 	}
 
 	return routes;

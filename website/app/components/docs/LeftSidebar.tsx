@@ -48,6 +48,8 @@ const containsCurrentPage = (
 	if (node.type === 'page') return currentPath === node.url;
 	if (node.type !== 'folder') return false;
 
+	if (node.index && currentPath === node.index.url) return true;
+
 	return node.children.some((child) => containsCurrentPage(child, currentPath));
 };
 
@@ -92,7 +94,7 @@ const PageLink = ({
 		<Link
 			className={className}
 			to={node.url}
-			prefetch="render"
+			prefetch="intent"
 			data-active={active}
 			aria-current={active ? 'page' : undefined}
 			onClick={toggle}
@@ -184,7 +186,7 @@ const RootSection = ({
 				<Link
 					className={classes.rootSection}
 					to={url}
-					prefetch="render"
+					prefetch="intent"
 					data-active={active}
 					aria-current={active ? 'location' : undefined}
 					onClick={toggle}

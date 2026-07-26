@@ -1,5 +1,5 @@
 .link {
-	color: var(--mantine-color-purple-0);
+	color: var(--mantine-color-purple);
 	font-weight: 500;
 	text-decoration-line: underline;
 	text-decoration-thickness: 1px;
@@ -11,8 +11,17 @@
 
 	&:hover,
 	&:focus-visible {
-		outline: none;
 		color: light-dark(#473ef6, #8f8aff);
 		text-decoration-color: currentColor;
 	}
+
+	&:focus-visible {
+		outline: 2px solid var(--mantine-color-purple);
+		outline-offset: 3px;
+		border-radius: 3px;
+	}
+}
+
+.heading {
+	text-wrap: balance;
 }

@@ -37,21 +37,21 @@ interface LoaderData {
 
 const sectionRedirects: Record<string, string> = {
 	'getting-started': '/docs/getting-started/introduction',
-	guides: '/docs/guides/angular',
 	api: '/docs/api/introduction',
 };
 
 interface ContentProps {
 	title: string;
+	titleId?: string;
 	markdownUrl: string;
 }
 
 const docsContentLoader =
 	browserCollections.docs.createClientLoader<ContentProps>({
-		component({ default: MDX }, { title, markdownUrl }) {
+		component({ default: MDX }, { title, titleId, markdownUrl }) {
 			return (
 				<>
-					<Balancer as="h1" className={classes.title}>
+					<Balancer as="h1" id={titleId} className={classes.title}>
 						{title}
 					</Balancer>
 					<PageActions markdownUrl={markdownUrl} />
@@ -135,6 +135,9 @@ export default function DocsPage() {
 					<Breadcrumbs items={loaderData.breadcrumbs} />
 					{docsContentLoader.useContent(loaderData.path, {
 						title: loaderData.frontmatter.title,
+						titleId: loaderData.toc
+							.find((item) => item.depth === 1 && item.url.startsWith('#'))
+							?.url.slice(1),
 						markdownUrl: loaderData.markdownUrl,
 					})}
 					<Pager pager={loaderData.pager} />

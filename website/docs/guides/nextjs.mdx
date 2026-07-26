@@ -1,32 +1,34 @@
 ---
 title: Next.js
-description: Install and use Fontsource fonts with the Next.js App Router or Pages Router.
+description: Install and use Fontsource packages with the Next.js App Router or Pages Router.
 ---
 
 # Next.js
 
-Next.js is a React framework for building web applications. Importing fonts depends on the router you are using. Below are the steps to import fonts into a Next.js project.
+Fontsource packages give you explicit, versioned control over the font files,
+weights, styles, subsets, and variable axes included in your Next.js build.
+The browser serves those assets from the same deployment as your application.
 
-## App Router
-
-To import fonts into a Next.js project using the [App Router](https://nextjs.org/docs/app), you can simply import the CSS file directly into your root layout file.
-
-### 1. Installation
+## 1. Install the font
 
 <PackageManagerCode cmd="@fontsource-variable/open-sans" />
 
-### 2. Import CSS
+## 2. Import it from the root
 
-Modify `app/layout.tsx` to include the following code:
+### App Router
+
+Import the font CSS from your root layout:
 
 ```tsx
+// app/layout.tsx
 import "@fontsource-variable/open-sans/wght.css";
+import "./globals.css";
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body>{children}</body>
@@ -35,54 +37,45 @@ export default function RootLayout({
 }
 ```
 
-> **Note:** You can also import fonts in individual `layout.tsx` or `page.tsx` files to scope them to specific routes.
+You can instead import a font from a nested `layout.tsx` when only one route
+segment needs it.
 
-### 3. Usage
+### Pages Router
 
-You can now use the imported fonts in your Next.js project.
-
-```css
-h1 {
-  font-family: "Open Sans Variable", sans-serif;
-}
-```
-
-## Pages Router
-
-With the [Pages Router](https://nextjs.org/docs/pages/building-your-application/routing/custom-app), you can import fonts in your custom `_app.tsx` file.
-
-### 1. Installation
-
-<PackageManagerCode cmd="@fontsource-variable/open-sans" />
-
-### 2. Import CSS
-
-Modify `_app.tsx` to include the following code:
+Import the font from your custom App component:
 
 ```tsx
+// pages/_app.tsx
+import type { AppProps } from "next/app";
 import "@fontsource-variable/open-sans/wght.css";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }: { Component: any; pageProps: any }) {
+export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
-
-export default MyApp;
 ```
 
-> **Note:** You can also import fonts in individual page components, but the CSS will only be present within that page and not globally.
-
-### 3. Usage
-
-You can now use the imported fonts in your Next.js project.
+## 3. Apply the font
 
 ```css
-h1 {
+/* app/globals.css or styles/globals.css */
+body {
   font-family: "Open Sans Variable", sans-serif;
+}
+
+h1 {
+  font-weight: 700;
 }
 ```
 
-## Comparison to `next/font`
+## Fontsource or `next/font`?
 
-Next.js offers a built-in way to load fonts using the `next/font` package. This package serves as a straightforward alternative to Fontsource with a simple setup. It embeds the CSS from the Google Fonts API, eliminating an additional round-trip response. It performs well for most use cases and is a good choice if you do not need to customise the font loading behaviour.
+Both approaches self-host font files and avoid browser requests to Google.
+`next/font` downloads supported Google Fonts at build time and generates the
+loading CSS for you.
 
-We recommend using Fontsource if you need more control over versioning your dependencies and do not want an invisible abstraction over the Google Fonts API. We also offer an escape hatch to directly modify the `@font-face` rules suitable for more advanced use cases.
+Use Fontsource when you want fonts to be normal package dependencies, need
+fonts outside the Google Fonts catalog, or want direct control over package
+versions, CSS, subsets, axes, and font files. See the
+[Next.js font documentation](https://nextjs.org/docs/app/getting-started/fonts)
+for the built-in alternative.
