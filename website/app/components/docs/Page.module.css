@@ -51,37 +51,6 @@
 	overflow-x: auto;
 }
 
-.article :global(.docs-guide-start) {
-	display: grid;
-	gap: 7px;
-	margin: 28px 0 44px;
-	padding: 20px 16px;
-	border: 1px solid var(--mantine-color-purpleHover-1);
-	border-radius: 6px;
-	background: var(--mantine-color-purpleHover-0);
-
-	> strong {
-		color: light-dark(#101a2f, #f2f5ff);
-		font-size: 17px;
-	}
-
-	> span {
-		color: light-dark(#59657c, #abb5cc);
-		font-size: 15px;
-		line-height: 1.55;
-	}
-}
-
-.article :global(.docs-guide-start a) {
-	color: var(--docs-accent-on-tint);
-
-	@media (--lt-sm) {
-		display: inline-flex;
-		align-items: center;
-		min-height: 44px;
-	}
-}
-
 .article :global(.docs-guide-list) {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));

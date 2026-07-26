@@ -40,6 +40,13 @@ const sectionRedirects: Record<string, string> = {
 	api: '/docs/api/introduction',
 };
 
+const permanentRedirects: Record<string, string> = {
+	'guides/laravel': 'https://laravel.com/docs/13.x/vite#font-providers',
+	'guides/nuxt': 'https://fonts.nuxt.com/get-started/providers#npm',
+	'guides/vuetify':
+		'https://vuetifyjs.com/en/getting-started/installation/#fonts',
+};
+
 interface ContentProps {
 	title: string;
 	titleId?: string;
@@ -68,6 +75,14 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 	const route = params['*']?.replace(/\/$/, '');
 	if (!route) {
 		throw new Response('Not found', { status: 404 });
+	}
+
+	const permanentRedirectTo = permanentRedirects[route];
+	if (permanentRedirectTo) {
+		return redirect(permanentRedirectTo, {
+			status: 301,
+			headers: cacheHeaders.stable,
+		});
 	}
 
 	const redirectTo = sectionRedirects[route];
