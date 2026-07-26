@@ -7,7 +7,7 @@ import { ogMeta } from '@/utils/meta';
 export const meta: MetaFunction = () => {
 	const title = 'Font Tools | Fontsource';
 	const description =
-		'Free browser-based tools for converting and optimizing font files without uploading them.';
+		'Browser-based tools for converting TTF, OTF, WOFF, and WOFF2 files, compressing web fonts, and generating @font-face CSS. No uploads.';
 
 	return ogMeta({ title, description });
 };
