@@ -19,21 +19,18 @@ const UnicodeRangeSchema = z.tuple([
 	z.string().regex(/^[0-9A-F]+$/),
 ]);
 
-const AxisSchema = z.strictObject({
-	tag: z.string().length(4),
+const RangeShape = {
 	min: z.number(),
 	max: z.number(),
 	default: z.number(),
+};
+
+const AxisSchema = z.strictObject({
+	tag: z.string().length(4),
+	...RangeShape,
 });
 
-const WeightSchema = z.union([
-	z.number(),
-	z.strictObject({
-		min: z.number(),
-		max: z.number(),
-		default: z.number(),
-	}),
-]);
+const WeightSchema = z.union([z.number(), z.strictObject(RangeShape)]);
 
 const FamilySummarySchema = z.strictObject({
 	id: IdSchema,

@@ -96,19 +96,11 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				format,
 				size: source.size,
 				downloadUrl: `/v1/registry/sources/${source.sha256}`,
-				type:
-					inspected.axes.length > 0
-						? ('variable' as const)
-						: ('static' as const),
+				type: inspected.axes.length > 0 ? 'variable' : 'static',
 				fontVersion: inspected.fontVersion,
 				weight: inspected.weight,
 				style: inspected.style,
-				axes: inspected.axes.map((axis) => ({
-					tag: axis.tag,
-					min: axis.min,
-					max: axis.max,
-					default: axis.default,
-				})),
+				axes: inspected.axes,
 			};
 		});
 		const [description, article, licenseText] = await Promise.all([
@@ -116,7 +108,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			readTextIfExists(join(directory, 'article.en-US.md')),
 			readTextIfExists(join(directory, 'license.txt')),
 		]);
-		const summary = {
+		const publicFamily = {
 			id: metadata.id,
 			family: metadata.family,
 			...(metadata.displayName ? { displayName: metadata.displayName } : {}),
@@ -126,25 +118,19 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			tags: metadata.tags,
 			sourceModified: metadata.sourceModified,
 			declaredSubsets: metadata.declaredSubsets,
+		};
+		familySummaries.push({
+			...publicFamily,
 			variable: axes.length > 0,
 			axes,
-		};
-		familySummaries.push(summary);
+		});
 		familyViews.push(
 			createJsonFile(
 				`families/${metadata.id}.json`,
 				RegistryFamilyDetailSchema.parse({
-					id: metadata.id,
-					family: metadata.family,
-					displayName: metadata.displayName,
-					provider: metadata.provider,
-					status: metadata.status,
-					classifications: metadata.classifications,
-					tags: metadata.tags,
+					...publicFamily,
 					designer: metadata.designer,
 					dateAdded: metadata.dateAdded,
-					sourceModified: metadata.sourceModified,
-					declaredSubsets: metadata.declaredSubsets,
 					license: {
 						id: metadata.license.id,
 						url: metadata.license.url,
@@ -343,10 +329,9 @@ export const publishArchive = async (
 		sha256: manifestHash,
 		read: async () => manifestBytes,
 	});
-	const currentBytes = Buffer.from(
-		canonicalJson({ schemaVersion: 1, registryRevision }),
+	await putCurrentObject(
+		Buffer.from(canonicalJson({ schemaVersion: 1, registryRevision })),
 	);
-	await putCurrentObject(currentBytes);
 
 	logger.success(
 		`Archived snapshot ${registryRevision} with ${plan.registry.length} registry files, ${plan.views.length} API views, and ${plan.sources.length} source fonts`,

@@ -118,7 +118,5 @@ describe('registry source archive', () => {
 			],
 		});
 		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
-		expect(family).not.toHaveProperty('provenance');
-		expect(family).not.toHaveProperty('schemaVersion');
 	}, 15_000);
 });

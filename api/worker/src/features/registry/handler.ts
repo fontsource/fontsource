@@ -10,11 +10,6 @@ const CurrentSnapshotSchema = z.strictObject({
 	registryRevision: z.string().regex(/^[0-9a-f]{40}$/),
 });
 
-const conditionalHeaders = (headers: Headers): Headers | undefined =>
-	headers.has('If-None-Match') || headers.has('If-Modified-Since')
-		? headers
-		: undefined;
-
 const respondWithObject = (
 	object: R2Object | R2ObjectBody,
 	contentType: string,
@@ -55,11 +50,9 @@ export const getRegistryView = async (
 	notFoundMessage?: string,
 ): Promise<Response> => {
 	const revision = await getCurrentRevision(c);
-	const onlyIf = conditionalHeaders(c.req.raw.headers);
-	const object = await c.env.REGISTRY.get(
-		`snapshots/${revision}/api/${path}`,
-		onlyIf ? { onlyIf } : undefined,
-	);
+	const object = await c.env.REGISTRY.get(`snapshots/${revision}/api/${path}`, {
+		onlyIf: c.req.raw.headers,
+	});
 	if (!object) {
 		if (notFoundMessage) {
 			throw notFound(notFoundMessage);
@@ -78,11 +71,9 @@ export const getRegistrySource = async (
 	c: Context<AppEnv>,
 	sha256: string,
 ): Promise<Response> => {
-	const onlyIf = conditionalHeaders(c.req.raw.headers);
-	const object = await c.env.REGISTRY.get(
-		`sources/sha256/${sha256}`,
-		onlyIf ? { onlyIf } : undefined,
-	);
+	const object = await c.env.REGISTRY.get(`sources/sha256/${sha256}`, {
+		onlyIf: c.req.raw.headers,
+	});
 	if (!object) {
 		throw notFound('Not Found. Registry source does not exist.');
 	}
