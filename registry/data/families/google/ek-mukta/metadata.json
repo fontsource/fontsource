@@ -489,6 +489,7 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"replacedBy": "mukta",
 	"sourceFiles": [
 		{
 			"path": "ofl/ekmukta/EkMukta-Bold.ttf",
@@ -555,6 +556,6 @@
 		}
 	],
 	"sourceModified": "2026-02-27",
-	"status": "active",
+	"status": "deprecated",
 	"tags": []
 }

@@ -3,7 +3,13 @@ import { consola } from 'consola';
 import { openGitSnapshot } from './git.ts';
 import { generateGoogle } from './google.ts';
 import { generateNam } from './nam.ts';
-import { registryIndexSchema, taxonomySchema } from './schema.ts';
+import {
+	familyMetadataSchema,
+	type ReplacementRegistry,
+	registryIndexSchema,
+	replacementRegistrySchema,
+	taxonomySchema,
+} from './schema.ts';
 import {
 	compareStrings,
 	readJson,
@@ -13,6 +19,25 @@ import {
 import { validateRegistry } from './validator.ts';
 
 const logger = consola.withTag('registry');
+
+const applyReplacements = async (
+	root: string,
+	families: readonly string[],
+	replacements: ReplacementRegistry,
+): Promise<void> => {
+	await Promise.all(
+		families.map(async (family) => {
+			const path = join(root, 'families', family, 'metadata.json');
+			const metadata = familyMetadataSchema.parse(await readJson(path));
+			const replacedBy = replacements[metadata.id];
+			await writeJson(path, {
+				...metadata,
+				...(replacedBy ? { status: 'deprecated' } : {}),
+				replacedBy,
+			});
+		}),
+	);
+};
 
 export const generateRegistry = async (
 	googleRepository: string,
@@ -27,6 +52,10 @@ export const generateRegistry = async (
 	const previousIndex =
 		previousValue === null ? null : registryIndexSchema.parse(previousValue);
 	const previousFamilies = previousIndex?.families ?? [];
+	const replacementsValue = await readJsonIfExists(
+		join(root, 'replacements.json'),
+	);
+	const replacements = replacementRegistrySchema.parse(replacementsValue ?? {});
 	const previousGoogleIds = previousFamilies
 		.filter((family) => family.startsWith('google/'))
 		.map((family) => family.slice('google/'.length));
@@ -67,6 +96,8 @@ export const generateRegistry = async (
 		families,
 		subsets,
 	});
+	await writeJson(join(root, 'replacements.json'), replacements);
+	await applyReplacements(root, families, replacements);
 	logger.start('Validating registry');
 	await validateRegistry(root);
 	logger.success('Registry is valid');

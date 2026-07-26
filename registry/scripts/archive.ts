@@ -146,6 +146,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			...(metadata.displayName ? { displayName: metadata.displayName } : {}),
 			provider: metadata.provider,
 			status: metadata.status,
+			replacedBy: metadata.replacedBy,
 			classifications: metadata.classifications,
 			tags: metadata.tags,
 			languages: metadata.languages,
