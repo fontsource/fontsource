@@ -4,6 +4,8 @@ import {
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
 	RegistryInfoSchema,
+	RegistryLanguageSchema,
+	RegistryLanguagesSchema,
 	RegistrySubsetSchema,
 	RegistrySubsetsSchema,
 	RegistryTaxonomySchema,
@@ -20,6 +22,7 @@ const FAMILY_SUMMARY = {
 	status: 'active',
 	classifications: ['sans-serif'],
 	tags: ['sans/humanist'],
+	languages: ['en_Latn'],
 	sourceModified: '2026-07-15',
 	declaredSubsets: ['latin'],
 	variable: false,
@@ -29,7 +32,11 @@ const VIEWS = [
 	{
 		path: 'registry.json',
 		route: '/v1/registry',
-		body: RegistryInfoSchema.parse({ familyCount: 1, subsetCount: 1 }),
+		body: RegistryInfoSchema.parse({
+			familyCount: 1,
+			languageCount: 1,
+			subsetCount: 1,
+		}),
 	},
 	{
 		path: 'families.json',
@@ -46,6 +53,13 @@ const VIEWS = [
 			status: FAMILY_SUMMARY.status,
 			classifications: FAMILY_SUMMARY.classifications,
 			tags: FAMILY_SUMMARY.tags,
+			languages: FAMILY_SUMMARY.languages,
+			primaryLanguage: 'en_Latn',
+			primaryScript: 'Latn',
+			sampleText: {
+				styles: 'All people are born free',
+				tester: 'All people are born free and equal',
+			},
 			sourceModified: FAMILY_SUMMARY.sourceModified,
 			declaredSubsets: FAMILY_SUMMARY.declaredSubsets,
 			license: {
@@ -66,6 +80,36 @@ const VIEWS = [
 					axes: [],
 				},
 			],
+		}),
+	},
+	{
+		path: 'languages.json',
+		route: '/v1/registry/languages',
+		body: RegistryLanguagesSchema.parse({
+			languages: [
+				{
+					id: 'en_Latn',
+					language: 'en',
+					script: 'Latn',
+					name: 'English',
+					autonym: 'English',
+				},
+			],
+		}),
+	},
+	{
+		path: 'languages/en_Latn.json',
+		route: '/v1/registry/languages/en_Latn',
+		body: RegistryLanguageSchema.parse({
+			id: 'en_Latn',
+			language: 'en',
+			script: 'Latn',
+			name: 'English',
+			autonym: 'English',
+			sampleText: {
+				styles: 'All people are born free',
+				tester: 'All people are born free and equal',
+			},
 		}),
 	},
 	{
@@ -191,6 +235,9 @@ describe('registry routes', () => {
 		const family = await jsonSnapshot(
 			'https://fontsource.test/v1/registry/families/unknown',
 		);
+		const language = await jsonSnapshot(
+			'https://fontsource.test/v1/registry/languages/unknown_Latn',
+		);
 		const source = await jsonSnapshot(
 			`https://fontsource.test/v1/registry/sources/${'8'.repeat(64)}`,
 		);
@@ -200,6 +247,10 @@ describe('registry routes', () => {
 			body: { status: 404 },
 		});
 		expect(source).toMatchObject({
+			status: 404,
+			body: { status: 404 },
+		});
+		expect(language).toMatchObject({
 			status: 404,
 			body: { status: 404 },
 		});

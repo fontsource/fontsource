@@ -12,11 +12,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Runic",
 	"id": "noto-sans-runic",
+	"languages": [
+		"de_Runr",
+		"got_Runr",
+		"non_Runr"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/runic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Runr",
 	"project": {
 		"repository": "https://github.com/notofonts/runic",
 		"revision": "0badcd990e0be2e6010362488af5a901a7bfefa1"

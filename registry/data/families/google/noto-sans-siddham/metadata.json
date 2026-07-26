@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Siddham",
 	"id": "noto-sans-siddham",
+	"languages": [
+		"sa_Sidd"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/siddham)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sidd",
 	"project": {
 		"repository": "https://github.com/notofonts/siddham",
 		"revision": "6ff212cb17efb2ad8b6a3b677d61cb66edc44dae"

@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Hatran",
 	"id": "noto-sans-hatran",
+	"languages": [
+		"aii_Hatr",
+		"mis_Hatr"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/hatran)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hatr",
 	"project": {
 		"repository": "https://github.com/notofonts/hatran",
 		"revision": "de472058911afccdf8ab8ddafc7b0314ad30e673"

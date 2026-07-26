@@ -2,6 +2,9 @@ import { z } from 'zod';
 
 // Zod is the single schema source for committed registry data.
 const idSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+const languageIdSchema = z
+	.string()
+	.regex(/^[a-z][a-z0-9]*(?:[-_][A-Za-z0-9]+)*$/);
 const familyProviderSchema = z.enum(['google', 'fontsource']);
 const familyKeySchema = z
 	.string()
@@ -47,6 +50,27 @@ const sourcePathSchema = z
 			!value.split('/').includes('..'),
 		{ message: 'must be a safe repository-relative POSIX path' },
 	);
+
+const sampleTextSchema = z
+	.strictObject({
+		styles: z.string().min(1).optional(),
+		tester: z.string().min(1).optional(),
+	})
+	.refine((value) => value.styles || value.tester, {
+		message: 'must contain styles or tester text',
+	});
+
+export const languageCatalogSchema = z.record(
+	languageIdSchema,
+	z.strictObject({
+		language: z.string().min(1),
+		script: z.string().regex(/^[A-Z][a-z]{3}$/),
+		name: z.string().min(1),
+		preferredName: z.string().min(1).optional(),
+		autonym: z.string().min(1).optional(),
+		sampleText: sampleTextSchema.optional(),
+	}),
+);
 
 export const registryIndexSchema = z.strictObject({
 	schemaVersion: z.literal(1),
@@ -109,6 +133,13 @@ export const familyMetadataSchema = z.strictObject({
 	displayName: z.string().min(1).optional(),
 	classifications: classificationsSchema,
 	tags: z.array(tagIdSchema).default([]),
+	languages: z.array(languageIdSchema),
+	primaryLanguage: languageIdSchema.optional(),
+	primaryScript: z
+		.string()
+		.regex(/^[A-Z][a-z]{3}$/)
+		.optional(),
+	sampleText: sampleTextSchema.optional(),
 	designer: z.string().min(1).optional(),
 	dateAdded: dateSchema.optional(),
 	sourceModified: dateSchema,
@@ -250,6 +281,7 @@ export const taxonomySchema = z.strictObject({
 export type FamilyMetadata = z.infer<typeof familyMetadataSchema>;
 export type FamilyInspection = z.infer<typeof familyInspectionSchema>;
 export type FamilyPolicy = z.infer<typeof familyPolicySchema>;
+export type LanguageCatalog = z.infer<typeof languageCatalogSchema>;
 export type SourceFamily = z.infer<typeof sourceFamilySchema>;
 export type SubsetDefinition = z.infer<typeof subsetDefinitionSchema>;
 export type Taxonomy = z.infer<typeof taxonomySchema>;

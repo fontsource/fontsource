@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Todhri",
 	"id": "noto-serif-todhri",
+	"languages": [
+		"sq_Todr"
+	],
 	"license": {
 		"attribution": "Copyright 2024 The Noto Project Authors (https://github.com/notofonts/todhri)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Todr",
 	"project": {
 		"repository": "https://github.com/notofonts/todhri",
 		"revision": "203e8ffb944c09d0974ca652a202a18ef3be234f"

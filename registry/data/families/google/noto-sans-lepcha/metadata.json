@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Lepcha",
 	"id": "noto-sans-lepcha",
+	"languages": [
+		"lep_Lepc"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/lepcha)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Lepc",
 	"project": {
 		"repository": "https://github.com/notofonts/lepcha",
 		"revision": "22993dbe4ed924277e75a444a40d2b420a372e7c"

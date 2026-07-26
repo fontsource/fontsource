@@ -11,6 +11,8 @@ import {
 	familyInspectionSchema,
 	familyMetadataSchema,
 	familyPolicySchema,
+	type LanguageCatalog,
+	languageCatalogSchema,
 	registryIndexSchema,
 	subsetDefinitionSchema,
 	type Taxonomy,
@@ -190,6 +192,7 @@ const validateFamily = async (
 	key: string,
 	subsets: ReadonlySet<string>,
 	taxonomy: Taxonomy,
+	languages: LanguageCatalog,
 ): Promise<void> => {
 	const { provider, id } = parseFamilyKey(key);
 	const directory = join(root, 'families', key);
@@ -214,6 +217,23 @@ const validateFamily = async (
 	assertSortedUnique(metadata.tags, (value) => value, `${id} tags`);
 	for (const tag of metadata.tags) {
 		assert(taxonomy.tags[tag], `${id} references unknown tag ${tag}`);
+	}
+	assertSortedUnique(metadata.languages, (value) => value, `${id} languages`);
+	for (const language of metadata.languages) {
+		assert(
+			languages[language],
+			`${id} references unknown language ${language}`,
+		);
+	}
+	if (metadata.primaryLanguage) {
+		assert(
+			languages[metadata.primaryLanguage],
+			`${id} references unknown primary language ${metadata.primaryLanguage}`,
+		);
+		assert(
+			metadata.languages.includes(metadata.primaryLanguage),
+			`${id} primary language is not included in its languages`,
+		);
 	}
 	assertSortedUnique(
 		metadata.declaredSubsets,
@@ -362,6 +382,10 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		join(root, 'taxonomy.json'),
 		taxonomySchema,
 	);
+	const languages = await validateCanonicalJson(
+		join(root, 'languages.json'),
+		languageCatalogSchema,
+	);
 	for (const tag of Object.keys(taxonomy.tags)) {
 		const group = tag.split('/')[0] as string;
 		assert(
@@ -390,7 +414,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	let validated = 0;
 	await Promise.all(
 		index.families.map(async (family) => {
-			await validateFamily(root, family, subsetSet, taxonomy);
+			await validateFamily(root, family, subsetSet, taxonomy, languages);
 			validated += 1;
 			if (validated % 250 === 0 && validated < index.families.length) {
 				logger.info(
@@ -405,6 +429,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	const allowed = new Set<string>([
 		'index.json',
 		'axes.json',
+		'languages.json',
 		'taxonomy.json',
 		...index.subsets.map((id) => `subsets/${id}.json`),
 	]);

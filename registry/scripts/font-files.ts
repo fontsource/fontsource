@@ -118,6 +118,9 @@ const writeFamily = async (
 			new Set(sourceMetadata.classifications),
 		).toSorted(compareStrings),
 		tags: Array.from(new Set(sourceMetadata.tags)).toSorted(compareStrings),
+		languages: Array.from(new Set(sourceMetadata.languages)).toSorted(
+			compareStrings,
+		),
 		declaredSubsets: Array.from(
 			new Set(sourceMetadata.declaredSubsets),
 		).toSorted(compareStrings),

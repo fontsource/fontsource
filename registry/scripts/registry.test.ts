@@ -142,6 +142,12 @@ fonts {
 }
 subsets: "latin"
 subsets: "menu"
+primary_script: "Latn"
+primary_language: "en_Latn"
+sample_text {
+  styles: "All people are born free"
+  tester: "All people are born free and equal"
+}
 `,
 	);
 	await writeFixture(
@@ -217,6 +223,24 @@ fallback { name: "Regular" value: 400 }
 fallback_only: false
 `,
 	);
+	await writeFixture(
+		repository,
+		'lang/Lib/gflanguages/data/languages/en_Latn.textproto',
+		`id: "en_Latn"
+language: "en"
+script: "Latn"
+name: "English"
+autonym: "English"
+exemplar_chars {
+  base: "A {BC} 𐌀"
+  not_required: "𐌀"
+}
+sample_text {
+  styles: "All people are born free"
+  tester: "All people are born free and equal"
+}
+`,
+	);
 	return {
 		repository,
 		revision: commitAll(repository, 'initial Google snapshot'),
@@ -268,6 +292,7 @@ const createFontFilesRepository = async (): Promise<{
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org/open-font-license-official-text/',
 			},
+			languages: [],
 			declaredSubsets: ['latin'],
 			sourceFiles: [
 				{
@@ -497,7 +522,22 @@ describe('registry ingestion', () => {
 		).toMatchObject({
 			classifications: ['sans-serif'],
 			tags: ['expressive/business'],
+			languages: ['en_Latn'],
+			primaryLanguage: 'en_Latn',
+			primaryScript: 'Latn',
+			sampleText: {
+				styles: 'All people are born free',
+				tester: 'All people are born free and equal',
+			},
 			provenance: { revision: google.revision },
+		});
+		expect(await readJson(join(registry, 'languages.json'))).toMatchObject({
+			en_Latn: {
+				language: 'en',
+				script: 'Latn',
+				name: 'English',
+				autonym: 'English',
+			},
 		});
 		expect(
 			await readJson(

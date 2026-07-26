@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Imperial Aramaic",
 	"id": "noto-sans-imperial-aramaic",
+	"languages": [
+		"aii_Armi",
+		"arc_Armi"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/imperial-aramaic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Armi",
 	"project": {
 		"repository": "https://github.com/notofonts/imperial-aramaic",
 		"revision": "059b859599f8e189962b73d357882446f195e77f"

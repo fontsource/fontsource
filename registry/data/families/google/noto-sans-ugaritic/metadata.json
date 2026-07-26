@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Ugaritic",
 	"id": "noto-sans-ugaritic",
+	"languages": [
+		"aii_Ugar",
+		"uga_Ugar"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/ugaritic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Ugar",
 	"project": {
 		"repository": "https://github.com/notofonts/ugaritic",
 		"revision": "9ddf5ed058fcb2b8694c6dbdd4d0e914989e1d92"

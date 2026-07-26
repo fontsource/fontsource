@@ -12,6 +12,17 @@
 	"designer": "Neelakash Kshetrimayum",
 	"family": "Sitara",
 	"id": "sitara",
+	"languages": [
+		"brx_Deva",
+		"doi_Deva",
+		"hi_Deva",
+		"kok_Deva",
+		"mai_Deva",
+		"mr_Deva",
+		"ne_Deva",
+		"sa_Deva",
+		"sd_Deva"
+	],
 	"license": {
 		"attribution": "Copyright (c) 2014, Neelakash Kshetrimayum (github.com/Neelakash/sitara). Copyright 2013, Google Corporation.",
 		"id": "OFL-1.1",

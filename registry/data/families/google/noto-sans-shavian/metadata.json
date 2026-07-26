@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Shavian",
 	"id": "noto-sans-shavian",
+	"languages": [
+		"en_Shaw"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/shavian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Shaw",
 	"project": {
 		"repository": "https://github.com/notofonts/shavian",
 		"revision": "15edbc9e0dd0c0ad627c658bbf439dce175a8ba4"

@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Serif Kannada",
 	"id": "noto-serif-kannada",
+	"languages": [
+		"kn_Knda",
+		"tcy_Knda"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/kannada)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Knda",
 	"project": {
 		"repository": "https://github.com/notofonts/kannada",
 		"revision": "b0e78acf3176fb4d30c95ece3825ef8561dbd7aa"

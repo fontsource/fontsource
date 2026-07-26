@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Javanese",
 	"id": "noto-sans-javanese",
+	"languages": [
+		"jv_Java"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/javanese)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Java",
 	"project": {
 		"repository": "https://github.com/notofonts/javanese",
 		"revision": "da4d01347950f097f175ff332955f5d95f8bd617"

@@ -13,11 +13,18 @@
 	"displayName": "Noto Sans N'Ko",
 	"family": "Noto Sans NKo",
 	"id": "noto-sans-nko",
+	"languages": [
+		"bm_Nkoo",
+		"dyu_Nkoo",
+		"man_Nkoo",
+		"nqo_Nkoo"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nko)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Nkoo",
 	"project": {
 		"repository": "https://github.com/notofonts/nko",
 		"revision": "a5db712e48059443e873e60805458924ec36f87a"

@@ -12,11 +12,20 @@
 	"designer": "Google",
 	"family": "Noto Serif Oriya",
 	"id": "noto-serif-oriya",
+	"languages": [
+		"khr_Orya",
+		"kyw_Orya",
+		"or_Orya",
+		"sa_Orya",
+		"sat_Orya",
+		"unr_Orya"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/oriya)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Orya",
 	"project": {
 		"repository": "https://github.com/notofonts/oriya",
 		"revision": "795268df4e01d7869805c7af179e5038568212e9"

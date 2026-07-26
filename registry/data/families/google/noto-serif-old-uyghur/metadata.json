@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Old Uyghur",
 	"id": "noto-serif-old-uyghur",
+	"languages": [
+		"oui_Ougr"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-uyghur)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Ougr",
 	"project": {
 		"repository": "https://github.com/notofonts/old-uyghur",
 		"revision": "2660a2e53f4c2f59a8540b4e74634341266584e3"

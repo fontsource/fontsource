@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Sogdian",
 	"id": "noto-sans-sogdian",
+	"languages": [
+		"aii_Sogd",
+		"sog_Sogd"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sogdian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sogd",
 	"project": {
 		"repository": "https://github.com/notofonts/sogdian",
 		"revision": "9f27761f150f7d0952e4873296cdc0eeaa6d28d3"

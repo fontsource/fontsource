@@ -10,11 +10,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Lao UI",
 	"id": "noto-sans-lao-ui",
+	"languages": [
+		"hnj_Laoo",
+		"kjg_Laoo",
+		"lo_Laoo"
+	],
 	"license": {
 		"attribution": "Copyright 2017 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Laoo",
 	"project": {
 		"repository": "https://github.com/notofonts/lao",
 		"revision": "d60e676a54d9fa09baab98e9930ef2933f497536"

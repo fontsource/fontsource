@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Lycian",
 	"id": "noto-sans-lycian",
+	"languages": [
+		"xlc_Lyci"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/lycian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Lyci",
 	"project": {
 		"repository": "https://github.com/notofonts/lycian",
 		"revision": "1e9e778f10314086451d972c0e42693890dfda36"

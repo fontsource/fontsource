@@ -12,11 +12,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Samaritan",
 	"id": "noto-sans-samaritan",
+	"languages": [
+		"aii_Samr",
+		"sam_Samr",
+		"smp_Samr"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/samaritan)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Samr",
 	"project": {
 		"repository": "https://github.com/notofonts/samaritan",
 		"revision": "86c2e96b021b020d39b51641a541443e36c7ce62"

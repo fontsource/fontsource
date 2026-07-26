@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Vai",
 	"id": "noto-sans-vai",
+	"languages": [
+		"vai_Vaii"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/vai)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Vaii",
 	"project": {
 		"repository": "https://github.com/notofonts/vai",
 		"revision": "f30c6331f2be292991c1ae047f5aeec48bd79644"

@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Bamum",
 	"id": "noto-sans-bamum",
+	"languages": [
+		"bax_Bamu"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/bamum)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Bamu",
 	"project": {
 		"repository": "https://github.com/notofonts/bamum",
 		"revision": "92bf2329accf9c1e6bc9373a64def94578a5f89b"
@@ -28,6 +32,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "ꚳꚴ𖥉𖥊𖥋𖥌𖥍 𖡼𖡽𖠀𖠁𖠂𖠃𖠄 𖠎𖠏𖠐𖠑𖠒𖠓𖠔 ꚠꚡꚢꚣꚤꚥꚦ 𖨔𖨕𖨖𖨗𖨘𖨙𖨚 𖠣𖠤𖠥𖠦𖠧𖠨𖠩",
+		"tester": "ꚳꚴ𖥉𖥊𖥋𖥌𖥍 𖠎𖠏𖠐𖠑𖠒𖠓𖠔 𖨔𖨕𖨖𖨗𖨘𖨙𖨚 𖥗𖥘𖥙𖥚𖥛𖥜𖥝 𖥺𖥻𖥼𖥽𖥾𖥿𖦀 ꚠꚡꚢꚣꚤꚥꚦ 𖡼𖡽𖠀𖠁𖠂𖠃𖠄 𖧜𖧝𖧞𖧟𖧠𖧡𖧢 𖠣𖠤𖠥𖠦 𖠧𖠨𖠩 𖠚𖠛𖡆𖡇𖡈𖡉𖡊"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/notosansbamum/NotoSansBamum[wght].ttf",

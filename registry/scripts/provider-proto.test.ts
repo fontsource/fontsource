@@ -22,6 +22,13 @@ fonts {
   }
 }
 subsets: "latin"
+languages: "en_Latn"
+primary_script: "Latn"
+primary_language: "en_Latn"
+sample_text {
+  styles: "All people are born free"
+  tester: "All people are born free and equal"
+}
 source {
   repository_url: "https://github.com/librefonts/abel"
   commit: "abc123"
@@ -35,6 +42,13 @@ describe('Google provider schema', () => {
 			stroke: 'SANS_SERIF',
 			classifications: ['DISPLAY'],
 			fonts: [{ filename: 'Abel-Regular.ttf' }],
+			languages: ['en_Latn'],
+			primaryLanguage: 'en_Latn',
+			primaryScript: 'Latn',
+			sampleText: {
+				styles: 'All people are born free',
+				tester: 'All people are born free and equal',
+			},
 			project: {
 				repository: 'https://github.com/librefonts/abel',
 				revision: 'abc123',

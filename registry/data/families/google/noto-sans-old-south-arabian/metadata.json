@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Old South Arabian",
 	"id": "noto-sans-old-south-arabian",
+	"languages": [
+		"aii_Sarb",
+		"xsa_Sarb"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-south-arabian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sarb",
 	"project": {
 		"repository": "https://github.com/notofonts/old-south-arabian",
 		"revision": "e77ff1f357de7696d8c44f0ea0394a32d6a19745"

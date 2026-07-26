@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Sora Sompeng",
 	"id": "noto-sans-sora-sompeng",
+	"languages": [
+		"sa_Sora",
+		"srb_Sora"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/sora-sompeng)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Sora",
 	"project": {
 		"repository": "https://github.com/notofonts/sora-sompeng",
 		"revision": "d6dc3eaa0f252c018aaf41314e24bcc889a8c5e4"

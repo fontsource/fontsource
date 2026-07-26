@@ -15,11 +15,18 @@
 	"displayName": "Noto Sans Phags-pa",
 	"family": "Noto Sans PhagsPa",
 	"id": "noto-sans-phagspa",
+	"languages": [
+		"lzh_Phag",
+		"mn_Phag",
+		"sa_Phag",
+		"zh_Phag"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/phags-pa)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Phag",
 	"project": {
 		"repository": "https://github.com/notofonts/phags-pa",
 		"revision": "a2cd1a7833b6e7d2be2519fe2539b1d3be53f28e"

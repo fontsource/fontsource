@@ -15,11 +15,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Glagolitic",
 	"id": "noto-sans-glagolitic",
+	"languages": [
+		"cu_Glag"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/glagolitic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Glag",
 	"project": {
 		"repository": "https://github.com/notofonts/glagolitic",
 		"revision": "142196c12c02018cbd55250f9ebf9380fa006203"

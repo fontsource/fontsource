@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Egyptian Hieroglyphs",
 	"id": "noto-sans-egyptian-hieroglyphs",
+	"languages": [
+		"aii_Egyp",
+		"egy_Egyp"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/egyptian-hieroglyphs)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Egyp",
 	"project": {
 		"repository": "https://github.com/notofonts/egyptian-hieroglyphs",
 		"revision": "773da399bed8fb50cf285b13d75dfd1667d6fbca"

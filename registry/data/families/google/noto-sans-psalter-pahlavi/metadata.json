@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Psalter Pahlavi",
 	"id": "noto-sans-psalter-pahlavi",
+	"languages": [
+		"aii_Phlp",
+		"pal_Phlp"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/psalter-pahlavi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Phlp",
 	"project": {
 		"repository": "https://github.com/notofonts/psalter-pahlavi",
 		"revision": "2f531fdc967e90d6d01da58384063314ccd14bf5"

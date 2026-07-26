@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Mro",
 	"id": "noto-sans-mro",
+	"languages": [
+		"mro_Mroo",
+		"sa_Mroo"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/mro)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mroo",
 	"project": {
 		"repository": "https://github.com/notofonts/mro",
 		"revision": "3d7debf9b0faf7750c1c9191e9bc348c2a1fcedd"

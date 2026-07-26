@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Cuneiform",
 	"id": "noto-sans-cuneiform",
+	"languages": [
+		"akk_Xsux",
+		"hit_Xsux"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/cuneiform)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Xsux",
 	"project": {
 		"repository": "https://github.com/notofonts/cuneiform",
 		"revision": "24c590e3586376ead66466b6c8b8a810df24d06f"

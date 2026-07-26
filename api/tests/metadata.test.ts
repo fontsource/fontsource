@@ -215,6 +215,8 @@ describe('metadata routes', () => {
 			'/v1/registry/axes',
 			'/v1/registry/families',
 			'/v1/registry/families/{id}',
+			'/v1/registry/languages',
+			'/v1/registry/languages/{id}',
 			'/v1/registry/sources/{sha256}',
 			'/v1/registry/subsets',
 			'/v1/registry/subsets/{id}',

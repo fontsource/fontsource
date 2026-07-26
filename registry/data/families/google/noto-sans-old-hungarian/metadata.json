@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Old Hungarian",
 	"id": "noto-sans-old-hungarian",
+	"languages": [
+		"ohu_Hung"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-hungarian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hung",
 	"project": {
 		"repository": "https://github.com/notofonts/old-hungarian",
 		"revision": "1e4081448c3313c4486e148b86aff6cbbc1584d5"

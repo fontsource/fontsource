@@ -11,11 +11,15 @@
 	"designer": "Appaji Ambarisha Darbha",
 	"family": "Ponnala",
 	"id": "ponnala",
+	"languages": [
+		"te_Telu"
+	],
 	"license": {
 		"attribution": "Copyright (c) 2012 Silicon Andhra (fonts.siliconandhra.org)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Telu",
 	"project": {
 		"repository": "https://github.com/appajid/ponnala",
 		"revision": "c1366dc5361da5f9dd8ed1c8864efc259a77672e"

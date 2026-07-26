@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Khmer",
 	"id": "noto-sans-khmer",
+	"languages": [
+		"km_Khmr"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khmer)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Khmr",
 	"project": {
 		"repository": "https://github.com/notofonts/khmer",
 		"revision": "5d2251a4e32635c6657967a157759aac7a662fc9"

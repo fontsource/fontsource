@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Batak",
 	"id": "noto-sans-batak",
+	"languages": [
+		"bbc_Batk"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/batak)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Batk",
 	"project": {
 		"repository": "https://github.com/notofonts/batak",
 		"revision": "139c2a6c256d72c560f894569c799d6bf090ba72"

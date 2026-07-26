@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Wancho",
 	"id": "noto-sans-wancho",
+	"languages": [
+		"nnp_Wcho",
+		"sa_Wcho"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/wancho)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Wcho",
 	"project": {
 		"repository": "https://github.com/notofonts/wancho",
 		"revision": "91ab06e9185d9a294a4c6a522dfa9d55d56d561f"

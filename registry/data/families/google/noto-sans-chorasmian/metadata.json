@@ -14,11 +14,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Chorasmian",
 	"id": "noto-sans-chorasmian",
+	"languages": [
+		"aii_Chrs"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/chorasmian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Chrs",
 	"project": {
 		"repository": "https://github.com/notofonts/chorasmian",
 		"revision": "0ce3cfe5b4aecaa18ee820c9a668c7cd3744a29f"

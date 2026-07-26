@@ -15,11 +15,24 @@
 	"displayName": "Noto Serif Simplified Chinese",
 	"family": "Noto Serif SC",
 	"id": "noto-serif-sc",
+	"languages": [
+		"cjy_Hans",
+		"gan_Hans",
+		"hak_Hans",
+		"hsn_Hans",
+		"lzh_Hans",
+		"nan_Hans",
+		"wuu_Hans",
+		"yue_Hans",
+		"za_Hans",
+		"zh_Hans"
+	],
 	"license": {
 		"attribution": "(c) 2017-2024 Adobe (http://www.adobe.com/).",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Hans",
 	"project": {
 		"repository": "https://www.github.com/notofonts/noto-cjk",
 		"revision": "985fa52c81c1d6692ccdd82bc3656e8fb932fd89"

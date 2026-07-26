@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Tamil Supplement",
 	"id": "noto-sans-tamil-supplement",
+	"languages": [
+		"bfq_Taml",
+		"ta_Taml"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tamil)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Taml",
 	"project": {
 		"repository": "https://github.com/notofonts/tamil",
 		"revision": "27af016af77aed49475014b9cfe2a46b8fe71966"
@@ -28,6 +33,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "𑿕𑿖𑿗𑿘𑿙𑿚𑿛 𑿱𑿪𑿫𑿬𑿭𑿮𑿯 𑿰𑿣𑿤𑿥𑿦𑿧𑿨 𑿩𑿜𑿝𑿞𑿟𑿠𑿡",
+		"tester": "𑿕𑿖𑿗𑿘𑿙𑿚𑿛 𑿱𑿪𑿫𑿬𑿭𑿮𑿯 𑿰𑿣𑿤𑿥𑿦𑿧𑿨 𑿩𑿜𑿝𑿞𑿟𑿠𑿡"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/notosanstamilsupplement/NotoSansTamilSupplement-Regular.ttf",

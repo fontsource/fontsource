@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Elymaic",
 	"id": "noto-sans-elymaic",
+	"languages": [
+		"aii_Elym",
+		"xly_Elym"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/elymaic)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Elym",
 	"project": {
 		"repository": "https://github.com/notofonts/elymaic",
 		"revision": "4a230cd737fee5c57d6343ff349ca74531a5e92c"

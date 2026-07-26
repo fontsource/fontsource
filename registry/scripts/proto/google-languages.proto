@@ -1,0 +1,47 @@
+syntax = "proto2";
+
+// Fontsource's reviewed Google Fonts language ingestion contract.
+// Based on google/fonts lang/resources/protos/languages_public.proto.
+package google.languages_public;
+
+message LanguageProto {
+  optional string id = 1;
+  optional string language = 2;
+  optional string script = 3;
+  optional string name = 4;
+  optional string preferred_name = 5;
+  optional string autonym = 6;
+  optional int32 population = 7;
+  repeated string region = 8;
+  optional ExemplarCharsProto exemplar_chars = 9;
+  optional SampleTextProto sample_text = 10;
+  optional bool historical = 11;
+  repeated string source = 12;
+  optional string note = 13;
+}
+
+message ExemplarCharsProto {
+  optional string base = 1;
+  optional string auxiliary = 2;
+  optional string marks = 3;
+  optional string numerals = 4;
+  optional string punctuation = 5;
+  optional string index = 6;
+  optional string not_required = 7;
+}
+
+message SampleTextProto {
+  optional string masthead_full = 1;
+  optional string masthead_partial = 2;
+  optional string styles = 3;
+  optional string tester = 4;
+  optional string poster_sm = 5;
+  optional string poster_md = 6;
+  optional string poster_lg = 7;
+  optional string specimen_48 = 8;
+  optional string specimen_36 = 9;
+  optional string specimen_32 = 10;
+  optional string specimen_21 = 11;
+  optional string specimen_16 = 12;
+  optional string note = 13;
+}

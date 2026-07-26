@@ -12,11 +12,17 @@
 	"designer": "Sir Andyj",
 	"family": "Pushster",
 	"id": "pushster",
+	"languages": [
+		"en_Latn",
+		"eo_Latn"
+	],
 	"license": {
 		"attribution": "Copyright 2010 xyz The Lobster Project Authors (https://github.com/impallari/The-Lobster-Font), with Reserved Font Name \"Lobster\".4",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryLanguage": "en_Latn",
+	"primaryScript": "Thai",
 	"project": {
 		"repository": "https://github.com/impallari/The-Lobster-Font",
 		"revision": "9101378a660fa0b93a03372467df8dfd15647fd9"

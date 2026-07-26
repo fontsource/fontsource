@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Medefaidrin",
 	"id": "noto-sans-medefaidrin",
+	"languages": [
+		"dmf_Medf"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/medefaidrin)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Medf",
 	"project": {
 		"repository": "https://github.com/notofonts/medefaidrin",
 		"revision": "db67ede293998b151205e6b7ca30f699f71e1624"

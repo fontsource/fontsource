@@ -12,11 +12,19 @@
 	"designer": "Google",
 	"family": "Noto Sans Syriac Eastern",
 	"id": "noto-sans-syriac-eastern",
+	"languages": [
+		"aii_Syrc",
+		"ar_Syrc",
+		"syc_Syrc",
+		"syr_Syrc",
+		"tru_Syrc"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/syriac)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Syrc",
 	"project": {
 		"repository": "https://github.com/notofonts/syriac",
 		"revision": "11c7d5208e347bf59e1064253d3ec5916c1c2314"

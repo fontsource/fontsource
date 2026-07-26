@@ -10,6 +10,7 @@
 	"designer": "Google",
 	"family": "Noto Color Emoji",
 	"id": "noto-color-emoji",
+	"languages": [],
 	"license": {
 		"attribution": "Copyright 2021 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
@@ -22,6 +23,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜",
+		"tester": "🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜"
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/notocoloremoji/NotoColorEmoji-Regular.ttf",

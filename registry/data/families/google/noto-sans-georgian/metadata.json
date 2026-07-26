@@ -16,11 +16,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Georgian",
 	"id": "noto-sans-georgian",
+	"languages": [
+		"ka_Geor",
+		"lzz_Geor",
+		"xmf_Geor"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/georgian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Geor",
 	"project": {
 		"repository": "https://github.com/notofonts/georgian",
 		"revision": "c02e5483c2dd63c5cf223845010ebd6e6dc56aec"

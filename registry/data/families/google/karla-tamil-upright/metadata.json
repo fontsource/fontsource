@@ -9,11 +9,15 @@
 	"designer": "Jonathan Pinhorn",
 	"family": "Karla Tamil Upright",
 	"id": "karla-tamil-upright",
+	"languages": [
+		"ta_Taml"
+	],
 	"license": {
 		"attribution": "Copyright (c) 2011-2012, Jonathan Pinhorn (jonpinhorn.typedesign@gmail.com), with Reserved Font Names 'Karla'",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Taml",
 	"project": {
 		"repository": "https://github.com/googlefonts/googlefontdirectory-hg",
 		"revision": "52f780bc9d197280a9f430574e179a5f233c56b6"

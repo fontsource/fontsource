@@ -12,11 +12,31 @@
 	"designer": "Google",
 	"family": "Noto Serif Bengali",
 	"id": "noto-serif-bengali",
+	"languages": [
+		"as_Beng",
+		"bn_Beng",
+		"bpy_Beng",
+		"brx_Beng",
+		"ccp_Beng",
+		"grt_Beng",
+		"kha_Beng",
+		"khr_Beng",
+		"kyw_Beng",
+		"lus_Beng",
+		"mni_Beng",
+		"rkt_Beng",
+		"sat_Beng",
+		"syl_Beng",
+		"trp_Beng",
+		"unr_Beng",
+		"unx_Beng"
+	],
 	"license": {
 		"attribution": "Copyright 2025 The Noto Project Authors (https://github.com/notofonts/bengali)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Beng",
 	"project": {
 		"repository": "https://github.com/notofonts/bengali",
 		"revision": "7ab89a047313e4a2c7ca5d670b28ced031c86542"

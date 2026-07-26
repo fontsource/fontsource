@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Vithkuqi",
 	"id": "noto-sans-vithkuqi",
+	"languages": [
+		"sq_Vith"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/vithkuqi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Vith",
 	"project": {
 		"repository": "https://github.com/notofonts/vithkuqi",
 		"revision": "b1538fae374bd36a28c35d504ecea658dd015aaf"

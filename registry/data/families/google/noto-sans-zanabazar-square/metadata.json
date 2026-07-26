@@ -12,11 +12,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Zanabazar Square",
 	"id": "noto-sans-zanabazar-square",
+	"languages": [
+		"bo_Zanb",
+		"mn_Zanb",
+		"sa_Zanb"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/zanabazar-square)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Zanb",
 	"project": {
 		"repository": "https://github.com/notofonts/zanabazar-square",
 		"revision": "41b2554e25c1ff4c7ea1231c8c966d0d5ec200b3"

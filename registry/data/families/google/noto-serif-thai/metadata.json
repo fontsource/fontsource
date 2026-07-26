@@ -12,11 +12,22 @@
 	"designer": "Google",
 	"family": "Noto Serif Thai",
 	"id": "noto-serif-thai",
+	"languages": [
+		"kdt_Thai",
+		"kxm_Thai",
+		"lcp_Thai",
+		"lwl_Thai",
+		"pi_Thai",
+		"sou_Thai",
+		"th_Thai",
+		"tts_Thai"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/thai)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Thai",
 	"project": {
 		"repository": "https://github.com/notofonts/thai",
 		"revision": "f8f3f024703f9d939d02f4e2fe16f1d5a39ca963"

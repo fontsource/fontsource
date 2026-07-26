@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Yezidi",
 	"id": "noto-serif-yezidi",
+	"languages": [
+		"ku_Yezi"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/yezidi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Yezi",
 	"project": {
 		"repository": "https://github.com/notofonts/yezidi",
 		"revision": "905a5f0b0de80d566e756478bc77a0c0f37c3348"

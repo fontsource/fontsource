@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Lisu",
 	"id": "noto-sans-lisu",
+	"languages": [
+		"lis_Lisu"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/lisu)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Lisu",
 	"project": {
 		"repository": "https://github.com/notofonts/lisu",
 		"revision": "d7e34571c41408f05975acaee719c2353408eb9e"

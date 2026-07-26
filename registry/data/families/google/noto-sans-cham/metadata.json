@@ -12,11 +12,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Cham",
 	"id": "noto-sans-cham",
+	"languages": [
+		"cja_Cham",
+		"cjm_Cham",
+		"sa_Cham"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/cham)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Cham",
 	"project": {
 		"repository": "https://github.com/notofonts/cham",
 		"revision": "ab48c582e3c834028dc0444b832874be83532350"

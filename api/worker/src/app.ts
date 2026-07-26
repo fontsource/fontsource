@@ -26,12 +26,14 @@ import {
 import { GetFontOpenGraphRoute } from './routes/open-graph';
 import {
 	GetRegistryFamilyRoute,
+	GetRegistryLanguageRoute,
 	GetRegistryRoute,
 	GetRegistrySourceRoute,
 	GetRegistrySubsetRoute,
 	GetRegistryTaxonomyRoute,
 	ListRegistryAxesRoute,
 	ListRegistryFamiliesRoute,
+	ListRegistryLanguagesRoute,
 	ListRegistrySubsetsRoute,
 } from './routes/registry';
 import { DEFAULT_NOT_FOUND_MESSAGE, toErrorResponse } from './utils/errors';
@@ -133,7 +135,7 @@ const openapi = fromHono(app, {
 			{
 				name: 'Registry',
 				description:
-					'Source metadata, discovery taxonomy, Unicode subsets, variable axes, and archived source fonts.',
+					'Source metadata, discovery taxonomy, languages, Unicode subsets, variable axes, and archived source fonts.',
 			},
 			{
 				name: 'CDN',
@@ -171,6 +173,8 @@ openapi.get('/v1/registry', GetRegistryRoute);
 openapi.get('/v1/registry/taxonomy', GetRegistryTaxonomyRoute);
 openapi.get('/v1/registry/families', ListRegistryFamiliesRoute);
 openapi.get('/v1/registry/families/:id', GetRegistryFamilyRoute);
+openapi.get('/v1/registry/languages', ListRegistryLanguagesRoute);
+openapi.get('/v1/registry/languages/:id', GetRegistryLanguageRoute);
 openapi.get('/v1/registry/subsets', ListRegistrySubsetsRoute);
 openapi.get('/v1/registry/subsets/:id', GetRegistrySubsetRoute);
 openapi.get('/v1/registry/axes', ListRegistryAxesRoute);

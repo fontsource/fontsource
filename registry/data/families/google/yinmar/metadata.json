@@ -10,6 +10,11 @@
 	"designer": "Danh Hong",
 	"family": "Yinmar",
 	"id": "yinmar",
+	"languages": [
+		"mnw_Mymr",
+		"my_Mymr",
+		"shn_Mymr"
+	],
 	"license": {
 		"attribution": "Copyright 2014 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",

@@ -14,11 +14,17 @@
 	"designer": "Google",
 	"family": "Noto Sans Mongolian",
 	"id": "noto-sans-mongolian",
+	"languages": [
+		"mn_Mong",
+		"mnc_Mong",
+		"sa_Mong"
+	],
 	"license": {
 		"attribution": "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/mongolian)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mong",
 	"project": {
 		"repository": "https://github.com/notofonts/mongolian",
 		"revision": "a61ef47935dcf4e4675456b632d6248836a5496a"

@@ -10,11 +10,15 @@
 	"designer": "Google",
 	"family": "Noto Sans Malayalam UI",
 	"id": "noto-sans-malayalam-ui",
+	"languages": [
+		"ml_Mlym"
+	],
 	"license": {
 		"attribution": "Copyright 2018 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mlym",
 	"project": {
 		"repository": "https://github.com/notofonts/malayalam",
 		"revision": "0fd65e553a6af3dc1c09ed39dfe8933e01c17b32"

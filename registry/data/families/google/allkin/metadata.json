@@ -9,6 +9,7 @@
 	"designer": "Monotype Imaging Inc.",
 	"family": "Allkin",
 	"id": "allkin",
+	"languages": [],
 	"license": {
 		"attribution": "Copyright 2025 The Allkin Project Authors (https://github.com/googlefonts/allkin), with Reserved Font Name \"Allkin\".",
 		"id": "OFL-1.1",
@@ -25,6 +26,10 @@
 		"type": "github"
 	},
 	"provider": "google",
+	"sampleText": {
+		"styles": "                                                                                                 ",
+		"tester": "                                 "
+	},
 	"sourceFiles": [
 		{
 			"path": "ofl/allkin/Allkin-Regular.ttf",

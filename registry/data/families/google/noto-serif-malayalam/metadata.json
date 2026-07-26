@@ -12,11 +12,15 @@
 	"designer": "Google",
 	"family": "Noto Serif Malayalam",
 	"id": "noto-serif-malayalam",
+	"languages": [
+		"ml_Mlym"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/malayalam)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Mlym",
 	"project": {
 		"repository": "https://github.com/notofonts/malayalam",
 		"revision": "ea3898d22b4659221728ad8a854c076c57e33836"

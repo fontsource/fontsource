@@ -10,11 +10,22 @@
 	"designer": "Google",
 	"family": "Noto Sans Thai UI",
 	"id": "noto-sans-thai-ui",
+	"languages": [
+		"kdt_Thai",
+		"kxm_Thai",
+		"lcp_Thai",
+		"lwl_Thai",
+		"pi_Thai",
+		"sou_Thai",
+		"th_Thai",
+		"tts_Thai"
+	],
 	"license": {
 		"attribution": "Copyright 2016 Google Inc. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Thai",
 	"project": {
 		"repository": "https://github.com/notofonts/thai",
 		"revision": "a79e109f3fee8b3e5f952c8dadcae4b7b341f562"

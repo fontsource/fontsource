@@ -11,6 +11,7 @@
 	"designer": "Google",
 	"family": "Noto Color Emoji Compat Test",
 	"id": "noto-color-emoji-compat-test",
+	"languages": [],
 	"license": {
 		"attribution": "Copyright 2022 Google.",
 		"id": "OFL-1.1",

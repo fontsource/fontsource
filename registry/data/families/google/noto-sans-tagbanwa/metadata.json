@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Tagbanwa",
 	"id": "noto-sans-tagbanwa",
+	"languages": [
+		"sa_Tagb",
+		"tbw_Tagb"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tagbanwa)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Tagb",
 	"project": {
 		"repository": "https://github.com/notofonts/tagbanwa",
 		"revision": "ec39a09e038aae3d9551027fcfb43b417aa486a2"

@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Palmyrene",
 	"id": "noto-sans-palmyrene",
+	"languages": [
+		"aii_Palm",
+		"arc_Palm"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/palmyrene)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Palm",
 	"project": {
 		"repository": "https://github.com/notofonts/palmyrene",
 		"revision": "bbb69ea150a25cabb937bcbd654c171ff958b426"

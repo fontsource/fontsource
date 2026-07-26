@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Inscriptional Pahlavi",
 	"id": "noto-sans-inscriptional-pahlavi",
+	"languages": [
+		"aii_Phli",
+		"pal_Phli"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/inscriptional-pahlavi)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Phli",
 	"project": {
 		"repository": "https://github.com/notofonts/inscriptional-pahlavi",
 		"revision": "ae11e4305961021e457dc2f9a17b3a7eb1fe3357"

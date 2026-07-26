@@ -12,11 +12,16 @@
 	"designer": "Google",
 	"family": "Noto Sans Balinese",
 	"id": "noto-sans-balinese",
+	"languages": [
+		"ban_Bali",
+		"sa_Bali"
+	],
 	"license": {
 		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/balinese)",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Bali",
 	"project": {
 		"repository": "https://github.com/notofonts/balinese",
 		"revision": "e6c2d4c19072cb6da80d74ad9f683b749f5b6f00"

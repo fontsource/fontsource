@@ -10,11 +10,20 @@
 	"designer": "Google",
 	"family": "Noto Sans Oriya UI",
 	"id": "noto-sans-oriya-ui",
+	"languages": [
+		"khr_Orya",
+		"kyw_Orya",
+		"or_Orya",
+		"sa_Orya",
+		"sat_Orya",
+		"unr_Orya"
+	],
 	"license": {
 		"attribution": "Copyright 2019 Google LLC. All Rights Reserved.",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Orya",
 	"project": {
 		"repository": "https://github.com/notofonts/oriya",
 		"revision": "1f6ceddd27226ad9b6bb878b4c9d6c53ee9262b4"
