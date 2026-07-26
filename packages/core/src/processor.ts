@@ -247,11 +247,8 @@ export const buildFont = async (
 			} else {
 				// Glypht preserves unspecified axes, so a static build must pin
 				// every custom axis it does not instance.
-				for (const axis of family.axes) {
-					axes[axis.tag] = {
-						type: 'single',
-						value: axis.defaultValue,
-					};
+				for (const { tag, defaultValue } of family.axes) {
+					axes[tag] = { type: 'single', value: defaultValue };
 				}
 
 				// If weights aren't explicitly configured, extract them from the font metadata.
@@ -285,12 +282,21 @@ export const buildFont = async (
 					value: { ranges: weights },
 				};
 
-				const hasItalic = styles.some(
-					(s) => s === 'italic' || s.startsWith('oblique'),
-				);
-				const hasNormal = styles.includes('normal');
+				const requestedStyles = new Set(styles.map(formatStyle));
+				const hasItalic = requestedStyles.has('italic');
+				const hasNormal = requestedStyles.has('normal');
 				const italicAxis = family.styleValues.italic;
 				const slantAxis = family.styleValues.slant;
+				const styleSetting = (
+					upright: number,
+					italic: number,
+				): SubsetAxisSetting =>
+					hasItalic && hasNormal
+						? {
+								type: 'multiple',
+								value: { ranges: [upright, italic] },
+							}
+						: { type: 'single', value: hasItalic ? italic : upright };
 
 				// Use the source endpoints instead of assuming every style axis is
 				// encoded as ital 0–1 or a particular slant angle.
@@ -299,24 +305,10 @@ export const buildFont = async (
 					const upright = min <= 0 && max >= 0 ? 0 : defaultValue;
 					const italic =
 						Math.abs(min - upright) > Math.abs(max - upright) ? min : max;
-					styleValues.slant =
-						hasItalic && hasNormal
-							? {
-									type: 'multiple',
-									value: { ranges: [upright, italic] },
-								}
-							: { type: 'single', value: hasItalic ? italic : upright };
+					styleValues.slant = styleSetting(upright, italic);
 				} else if (italicAxis?.type === 'variable') {
-					const italic = italicAxis.value.max;
-					styleValues.italic =
-						hasItalic && hasNormal
-							? {
-									type: 'multiple',
-									value: { ranges: [0, italic] },
-								}
-							: { type: 'single', value: hasItalic ? italic : 0 };
+					styleValues.italic = styleSetting(0, italicAxis.value.max);
 				} else {
-					const requestedStyles = new Set(styles.map(formatStyle));
 					fonts = fonts.filter(({ font }) =>
 						requestedStyles.has(
 							formatStyle(extractFontStyle(font.styleValues).style),

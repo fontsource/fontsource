@@ -129,49 +129,13 @@ describe('buildFont integration with real fixtures', () => {
 		expect(result.faces[0]?.weight).toBe('300 1000');
 	});
 
-	it('pins unused variable axes when building static faces', async () => {
+	it('builds static weights and styles without retaining variable axes', async () => {
 		const result = await buildWithFixture(loadVariableFontFixture(), {
 			type: 'static',
 			id: 'recursive',
 			family: 'Recursive',
 			subsets: ['latin'],
 			weights: [400, 700],
-			styles: ['normal'],
-			formats: ['woff2'],
-			featureSettings: {},
-			subsetSources: {
-				latin: latinRangeSubset,
-			},
-		});
-		const ctx = createFontContext();
-
-		try {
-			const inspections = await Promise.all(
-				result.fonts.map((font) => inspectFont(ctx, font.content)),
-			);
-
-			expect(
-				inspections.map(({ weight, style, axes }) => ({
-					weight,
-					style,
-					axes,
-				})),
-			).toEqual([
-				{ weight: 400, style: 'normal', axes: [] },
-				{ weight: 700, style: 'normal', axes: [] },
-			]);
-		} finally {
-			ctx.destroy();
-		}
-	});
-
-	it('instances a slant axis for requested static styles', async () => {
-		const result = await buildWithFixture(loadVariableFontFixture(), {
-			type: 'static',
-			id: 'recursive',
-			family: 'Recursive',
-			subsets: ['latin'],
-			weights: [400],
 			styles: ['normal', 'italic'],
 			formats: ['woff2'],
 			featureSettings: {},
@@ -188,11 +152,21 @@ describe('buildFont integration with real fixtures', () => {
 
 			expect(result.fonts.map((font) => font.filename)).toEqual([
 				'files/recursive-latin-400-normal.woff2',
+				'files/recursive-latin-700-normal.woff2',
 				'files/recursive-latin-400-italic.woff2',
+				'files/recursive-latin-700-italic.woff2',
 			]);
-			expect(inspections.map(({ style, axes }) => ({ style, axes }))).toEqual([
-				{ style: 'normal', axes: [] },
-				{ style: 'oblique', axes: [] },
+			expect(
+				inspections.map(({ weight, style, axes }) => ({
+					weight,
+					style,
+					axes,
+				})),
+			).toEqual([
+				{ weight: 400, style: 'normal', axes: [] },
+				{ weight: 700, style: 'normal', axes: [] },
+				{ weight: 400, style: 'oblique', axes: [] },
+				{ weight: 700, style: 'oblique', axes: [] },
 			]);
 		} finally {
 			ctx.destroy();
