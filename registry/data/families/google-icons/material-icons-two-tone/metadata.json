@@ -1,0 +1,38 @@
+{
+	"classifications": [
+		"symbols"
+	],
+	"family": "Material Icons Two Tone",
+	"id": "material-icons-two-tone",
+	"languages": [],
+	"license": {
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"project": {
+		"repository": "https://github.com/google/material-design-icons"
+	},
+	"provenance": {
+		"directory": "font",
+		"repository": "google/material-design-icons",
+		"revision": "f7bd4f25f3764883717c09a1fd867f560c9a9581",
+		"type": "github"
+	},
+	"provider": "google-icons",
+	"sourceFiles": [
+		{
+			"path": "font/MaterialIconsTwoTone-Regular.otf",
+			"sha256": "03ccf13774af5b5cbbad641dfa33038d4e9f4b7979eedc2c0a15f06bf9eb33cd",
+			"size": 675852,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2022-09-19",
+	"status": "active",
+	"tags": [
+		"special-use/icons"
+	]
+}

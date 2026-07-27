@@ -1,14 +1,14 @@
 # Registry
 
-This private workspace package maintains Fontsource's text-only font registry.
-It is repository tooling, not a public package.
+This private workspace package maintains Fontsource's font registry as
+text-only metadata. It is repository tooling, not a public package.
 
 ## Commands
 
 Run from the repository root:
 
 ~~~sh
-pnpm --filter '@fontsource-utils/registry' generate <google-repo> <google-commit> <nam-repo> <nam-commit> <font-files-repo> <font-files-commit>
+pnpm --filter '@fontsource-utils/registry' generate <google-repo> <google-commit> <google-icons-repo> <google-icons-commit> <nam-repo> <nam-commit> <font-files-repo> <font-files-commit>
 pnpm --filter '@fontsource-utils/registry' validate
 pnpm --filter '@fontsource-utils/registry' check:font-files <font-files-repo>
 pnpm --filter '@fontsource-utils/registry' archive
@@ -44,7 +44,7 @@ those responses. The manifest maps every registry file, API view, and source to
 a SHA-256 object and is written before `current.json` selects the complete
 snapshot.
 
-Google sources can be recovered from their pinned GitHub commit.
+Google font and icon sources can be recovered from their pinned GitHub commit.
 Registry-managed sources must already exist at their content-addressed R2 key.
 
 The workflow needs `REGISTRY_R2_ENDPOINT` and bucket-scoped Object Read & Write
@@ -55,6 +55,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 
 - `scripts/generate.ts` coordinates one complete registry build and validation.
 - `scripts/font-files.ts` implements Git-backed Fontsource ingestion.
+- `scripts/google-icons.ts` ingests Material Icons, Material Symbols, and their
+  public name-to-codepoint mappings.
 - `scripts/google.ts` owns `data/families/google/` and writes family metadata,
   discovery metadata, source inspection, documents, licenses, languages, and
   normalized axis metadata.
@@ -65,7 +67,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - `scripts/schema.ts` defines the Zod contracts; `scripts/validator.ts` checks
   files and cross-file references.
 - `data/families/<provider>/<id>/` contains family records. Family IDs are
-  globally unique across providers.
+  globally unique across providers. Icon families also include `icons.json`
+  with their public names and Unicode codepoints.
 - `data/languages.json` defines semantic languages, public names, and the
   private codepoint requirements used for automatic matching.
 - `data/replacements.json` records reviewed successor relationships between
@@ -79,8 +82,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - Output is canonical, deterministic, text-only, and schema-validated.
 - Public API views explicitly map registry records rather than exposing them.
 - Provenance comes from Git history, not prior generated metadata.
-- Each provider owns its directory; Google generation never changes Fontsource
-  records.
+- Each provider owns its directory; one adapter never changes another
+  provider's records.
 - Removed Google families remain buildable but are marked `deprecated`.
 - Replaced families retain their own sources; `replacedBy` recommends an active
   successor and never aliases its binaries.

@@ -1,5 +1,13 @@
 {
 	"families": [
+		"google-icons/material-icons",
+		"google-icons/material-icons-outlined",
+		"google-icons/material-icons-round",
+		"google-icons/material-icons-sharp",
+		"google-icons/material-icons-two-tone",
+		"google-icons/material-symbols-outlined",
+		"google-icons/material-symbols-rounded",
+		"google-icons/material-symbols-sharp",
 		"google/42dot-sans",
 		"google/abeezee",
 		"google/abel",
@@ -2223,6 +2231,10 @@
 		"googleFonts": {
 			"repository": "google/fonts",
 			"revision": "389b770410cc0b7c21c85673bfa2077420fe7f65"
+		},
+		"googleIcons": {
+			"repository": "google/material-design-icons",
+			"revision": "528cb964c01fb2b09bc3b9208f82b6d8f8c1c1e2"
 		},
 		"namFiles": {
 			"repository": "googlefonts/nam-files",

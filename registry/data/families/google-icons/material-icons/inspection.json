@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2226,
+				"sha256": "f528c2c213a34af7ffaead3eb535e4273e8bf13dd94bc562c3de8892c2ea1d19"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.017",
+			"outline": "glyf",
+			"path": "font/MaterialIcons-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

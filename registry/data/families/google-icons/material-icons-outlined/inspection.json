@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2195,
+				"sha256": "f27c76d1a3132d9fe140fee2702ffc5dcbddc4247130ea095b089809fe571403"
+			},
+			"colorTables": [],
+			"fontVersion": "2022-08-02T22:00:24.736834",
+			"outline": "cff",
+			"path": "font/MaterialIconsOutlined-Regular.otf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2238,
+				"sha256": "d43ceb57065fd31be54349b1ca24d00bac49f95087559448aff0d6d25baf84de"
+			},
+			"colorTables": [
+				"COLR",
+				"CPAL"
+			],
+			"fontVersion": "2022-08-03T09:48:23.867249",
+			"outline": "cff",
+			"path": "font/MaterialIconsTwoTone-Regular.otf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

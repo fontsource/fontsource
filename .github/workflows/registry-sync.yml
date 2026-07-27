@@ -41,6 +41,9 @@ jobs:
           # Keep complete history for provenance while hydrating only adapter inputs.
           git clone --filter=blob:none --sparse --single-branch https://github.com/google/fonts.git "$RUNNER_TEMP/google-fonts"
           git -C "$RUNNER_TEMP/google-fonts" sparse-checkout set ofl apache ufl axisregistry tags lang
+          # This repository has millions of paths; the adapter reads its small
+          # font trees directly from Git without populating a working tree.
+          git clone --filter=blob:none --no-checkout --single-branch https://github.com/google/material-design-icons.git "$RUNNER_TEMP/google-icons"
           git clone --no-checkout --single-branch https://github.com/googlefonts/nam-files.git "$RUNNER_TEMP/nam-files"
           git clone --filter=blob:none --sparse --single-branch https://github.com/fontsource/font-files.git "$RUNNER_TEMP/font-files"
           git -C "$RUNNER_TEMP/font-files" sparse-checkout set sources
@@ -48,6 +51,8 @@ jobs:
           pnpm --filter '@fontsource-utils/registry' generate \
             "$RUNNER_TEMP/google-fonts" \
             "$(git -C "$RUNNER_TEMP/google-fonts" rev-parse HEAD)" \
+            "$RUNNER_TEMP/google-icons" \
+            "$(git -C "$RUNNER_TEMP/google-icons" rev-parse HEAD)" \
             "$RUNNER_TEMP/nam-files" \
             "$(git -C "$RUNNER_TEMP/nam-files" rev-parse HEAD)" \
             "$RUNNER_TEMP/font-files" \

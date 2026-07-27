@@ -40,6 +40,7 @@ export type GitSnapshot = {
 export const openGitSnapshot = (
 	repository: string,
 	revision: string,
+	pathspecs: readonly string[] = [],
 ): GitSnapshot => {
 	if (!/^[0-9a-f]{40}$/.test(revision)) {
 		throw new Error('Revision must be a full lowercase 40-character commit');
@@ -65,6 +66,8 @@ export const openGitSnapshot = (
 		'-r',
 		'--name-only',
 		revision,
+		'--',
+		...pathspecs,
 	])
 		.split('\n')
 		.filter(Boolean)

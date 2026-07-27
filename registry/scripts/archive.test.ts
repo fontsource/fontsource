@@ -34,6 +34,7 @@ describe('registry source archive', () => {
 		let current: unknown;
 		let family: unknown;
 		let familyWithVariantOverride: unknown;
+		let iconFamily: unknown;
 		let replacement: unknown;
 		let language: unknown;
 		let sourceContentType: string | undefined;
@@ -59,6 +60,11 @@ describe('registry source archive', () => {
 				}
 				if (object.key.endsWith('/api/families/alegreya-sans.json')) {
 					familyWithVariantOverride = JSON.parse(
+						Buffer.from(await object.read()).toString('utf8'),
+					);
+				}
+				if (object.key.endsWith('/api/families/material-icons.json')) {
+					iconFamily = JSON.parse(
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
@@ -96,6 +102,9 @@ describe('registry source archive', () => {
 			registryRevision: REVISION,
 			registry: expect.arrayContaining([
 				expect.objectContaining({ path: 'index.json' }),
+				expect.objectContaining({
+					path: 'families/google-icons/material-icons/icons.json',
+				}),
 			]),
 			sources: expect.arrayContaining([
 				expect.objectContaining({
@@ -152,6 +161,14 @@ describe('registry source archive', () => {
 		expect(RegistryFamilyDetailSchema.parse(familyWithVariantOverride)).toEqual(
 			familyWithVariantOverride,
 		);
+		expect(iconFamily).toMatchObject({
+			id: 'material-icons',
+			provider: 'google-icons',
+			classifications: ['symbols'],
+			tags: ['special-use/icons'],
+			languages: [],
+		});
+		expect(RegistryFamilyDetailSchema.parse(iconFamily)).toEqual(iconFamily);
 		expect(replacement).toMatchObject({
 			id: 'ek-mukta',
 			status: 'deprecated',

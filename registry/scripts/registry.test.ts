@@ -17,6 +17,7 @@ import { assertGitPathClean, openGitSnapshot } from './git.ts';
 import {
 	familyMetadataSchema,
 	languageCatalogSchema,
+	registryIndexSchema,
 	sourceFamilySchema,
 } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
@@ -307,6 +308,52 @@ const createNamRepository = async (): Promise<{
 	};
 };
 
+const createGoogleIconsRepository = async (): Promise<{
+	repository: string;
+	revision: string;
+}> => {
+	const repository = await createGitRepository('google-icons');
+	const staticFonts = [
+		'MaterialIcons-Regular.ttf',
+		'MaterialIconsOutlined-Regular.otf',
+		'MaterialIconsRound-Regular.otf',
+		'MaterialIconsSharp-Regular.otf',
+		'MaterialIconsTwoTone-Regular.otf',
+	];
+	const variableFonts = [
+		'MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf',
+		'MaterialSymbolsRounded[FILL,GRAD,opsz,wght].ttf',
+		'MaterialSymbolsSharp[FILL,GRAD,opsz,wght].ttf',
+	];
+	for (const filename of staticFonts) {
+		await copyFont(repository, 'abel-latin-400-normal.ttf', `font/${filename}`);
+		await writeFixture(
+			repository,
+			`font/${filename.replace(/\.(?:otf|ttf)$/, '.codepoints')}`,
+			filename === 'MaterialIcons-Regular.ttf'
+				? 'flourescent 41\nflourescent 42\n'
+				: 'home 41\n',
+		);
+	}
+	for (const filename of variableFonts) {
+		await copyFont(
+			repository,
+			'recursive-latin-full-normal.ttf',
+			`variablefont/${filename}`,
+		);
+		await writeFixture(
+			repository,
+			`variablefont/${filename.replace(/\.ttf$/, '.codepoints')}`,
+			'home 41\nsettings 42\n',
+		);
+	}
+	await writeFixture(repository, 'LICENSE', 'Apache License\n');
+	return {
+		repository,
+		revision: commitAll(repository, 'initial Google icons snapshot'),
+	};
+};
+
 const createFontFilesRepository = async (): Promise<{
 	repository: string;
 	revision: string;
@@ -435,6 +482,10 @@ describe('registry ingestion', () => {
 						repository: 'google/fonts',
 						revision: '1'.repeat(40),
 					},
+					googleIcons: {
+						repository: 'google/material-design-icons',
+						revision: '4'.repeat(40),
+					},
 					namFiles: {
 						repository: 'googlefonts/nam-files',
 						revision: '2'.repeat(40),
@@ -522,6 +573,7 @@ describe('registry ingestion', () => {
 
 	it('regenerates deterministically, applies replacements, and retains missing families', async () => {
 		const google = await createGoogleRepository();
+		const googleIcons = await createGoogleIconsRepository();
 		const nam = await createNamRepository();
 		const fontFiles = await createFontFilesRepository();
 		const registry = await temporaryDirectory('registry');
@@ -529,6 +581,8 @@ describe('registry ingestion', () => {
 		await generateRegistry(
 			google.repository,
 			google.revision,
+			googleIcons.repository,
+			googleIcons.revision,
 			nam.repository,
 			nam.revision,
 			fontFiles.repository,
@@ -554,6 +608,8 @@ describe('registry ingestion', () => {
 		await generateRegistry(
 			google.repository,
 			unrelatedRevision,
+			googleIcons.repository,
+			googleIcons.revision,
 			nam.repository,
 			nam.revision,
 			fontFiles.repository,
@@ -569,6 +625,8 @@ describe('registry ingestion', () => {
 		await generateRegistry(
 			google.repository,
 			unrelatedRevision,
+			googleIcons.repository,
+			googleIcons.revision,
 			nam.repository,
 			nam.revision,
 			fontFiles.repository,
@@ -627,6 +685,69 @@ describe('registry ingestion', () => {
 				join(registry, 'families/fontsource/example/metadata.json'),
 			),
 		).toMatchObject({ provider: 'fontsource', status: 'active' });
+		const index = registryIndexSchema.parse(
+			await readJson(join(registry, 'index.json')),
+		);
+		expect(
+			index.families.filter((family) => family.startsWith('google-icons/')),
+		).toEqual([
+			'google-icons/material-icons',
+			'google-icons/material-icons-outlined',
+			'google-icons/material-icons-round',
+			'google-icons/material-icons-sharp',
+			'google-icons/material-icons-two-tone',
+			'google-icons/material-symbols-outlined',
+			'google-icons/material-symbols-rounded',
+			'google-icons/material-symbols-sharp',
+		]);
+		expect(
+			await readJson(
+				join(registry, 'families/google-icons/material-icons/metadata.json'),
+			),
+		).toMatchObject({
+			provider: 'google-icons',
+			classifications: ['symbols'],
+			tags: ['special-use/icons'],
+			languages: [],
+			license: { id: 'Apache-2.0' },
+			sourceFiles: [
+				{
+					path: 'font/MaterialIcons-Regular.ttf',
+					variant: { weight: 400, style: 'normal' },
+				},
+			],
+		});
+		expect(
+			await readJson(
+				join(registry, 'families/google-icons/material-icons/icons.json'),
+			),
+		).toMatchObject({
+			icons: [
+				{ name: 'flourescent', codepoint: 65 },
+				{ name: 'flourescent', codepoint: 66 },
+			],
+			source: {
+				repository: 'google/material-design-icons',
+				path: 'font/MaterialIcons-Regular.codepoints',
+			},
+		});
+		expect(
+			await readJson(
+				join(
+					registry,
+					'families/google-icons/material-symbols-outlined/inspection.json',
+				),
+			),
+		).toMatchObject({
+			files: [
+				{
+					path: 'variablefont/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf',
+					axes: expect.arrayContaining([
+						expect.objectContaining({ tag: 'wght' }),
+					]),
+				},
+			],
+		});
 		const description = await readFile(
 			join(registry, 'families/google/abel/description.en-US.md'),
 			'utf8',
@@ -644,9 +765,19 @@ describe('registry ingestion', () => {
 			fontFiles.repository,
 			'remove Symbols',
 		);
+		await rm(join(googleIcons.repository, 'font/MaterialIcons-Regular.ttf'));
+		await rm(
+			join(googleIcons.repository, 'font/MaterialIcons-Regular.codepoints'),
+		);
+		const removedGoogleIconsRevision = commitAll(
+			googleIcons.repository,
+			'remove Material Icons',
+		);
 		await generateRegistry(
 			google.repository,
 			removedRevision,
+			googleIcons.repository,
+			removedGoogleIconsRevision,
 			nam.repository,
 			nam.revision,
 			fontFiles.repository,
@@ -668,6 +799,14 @@ describe('registry ingestion', () => {
 		).toMatchObject({
 			status: 'deprecated',
 			provenance: { revision: fontFiles.revision },
+		});
+		expect(
+			await readJson(
+				join(registry, 'families/google-icons/material-icons/metadata.json'),
+			),
+		).toMatchObject({
+			status: 'deprecated',
+			provenance: { revision: googleIcons.revision },
 		});
 
 		const replacementPath = join(
