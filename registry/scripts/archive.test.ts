@@ -33,6 +33,7 @@ describe('registry source archive', () => {
 		let manifest: unknown;
 		let current: unknown;
 		let family: unknown;
+		let familyWithVariantOverride: unknown;
 		let replacement: unknown;
 		let language: unknown;
 		let sourceContentType: string | undefined;
@@ -53,6 +54,11 @@ describe('registry source archive', () => {
 				}
 				if (object.key.endsWith('/api/families/abel.json')) {
 					family = JSON.parse(
+						Buffer.from(await object.read()).toString('utf8'),
+					);
+				}
+				if (object.key.endsWith('/api/families/alegreya-sans.json')) {
+					familyWithVariantOverride = JSON.parse(
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
@@ -133,6 +139,19 @@ describe('registry source archive', () => {
 			],
 		});
 		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
+		expect(familyWithVariantOverride).toMatchObject({
+			sources: expect.arrayContaining([
+				expect.objectContaining({
+					filename: 'AlegreyaSans-Thin.ttf',
+					type: 'static',
+					weight: 100,
+					style: 'normal',
+				}),
+			]),
+		});
+		expect(RegistryFamilyDetailSchema.parse(familyWithVariantOverride)).toEqual(
+			familyWithVariantOverride,
+		);
 		expect(replacement).toMatchObject({
 			id: 'ek-mukta',
 			status: 'deprecated',

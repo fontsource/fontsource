@@ -38,6 +38,12 @@ const TEST_LANGUAGES = languageCatalogSchema.parse({
 		name: 'English',
 		requiredCodepoints: [65, 66, 67],
 	},
+	zz_Latn: {
+		language: 'zz',
+		script: 'Latn',
+		name: 'Test language',
+		requiredCodepoints: [0x10ffff],
+	},
 });
 
 const temporaryDirectory = async (name: string): Promise<string> => {
@@ -325,6 +331,8 @@ const createFontFilesRepository = async (): Promise<{
 			family: 'Example',
 			classifications: ['display', 'sans-serif'],
 			tags: ['theme/stencil'],
+			primaryLanguage: 'zz_Latn',
+			primaryScript: 'Latn',
 			designer: 'Registry Tests',
 			dateAdded: '2026-01-02',
 			license: {
@@ -357,6 +365,8 @@ const createFontFilesRepository = async (): Promise<{
 			family: 'Symbols',
 			classifications: ['symbols'],
 			languages: [],
+			primaryLanguage: 'en_Latn',
+			primaryScript: 'Latn',
 			license: {
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org/open-font-license-official-text/',
@@ -493,7 +503,8 @@ describe('registry ingestion', () => {
 			status: 'active',
 			classifications: ['display', 'sans-serif'],
 			tags: ['theme/stencil'],
-			languages: ['en_Latn'],
+			languages: ['en_Latn', 'zz_Latn'],
+			primaryLanguage: 'zz_Latn',
 			provenance: {
 				type: 'github',
 				repository: 'fontsource/font-files',
@@ -522,11 +533,11 @@ describe('registry ingestion', () => {
 				'utf8',
 			),
 		).toBe('# Example\n');
-		expect(
-			await readJson(
-				join(registry, 'families/fontsource/symbols/metadata.json'),
-			),
-		).toMatchObject({ languages: [] });
+		const symbols = await readJson(
+			join(registry, 'families/fontsource/symbols/metadata.json'),
+		);
+		expect(symbols).toMatchObject({ languages: [], primaryScript: 'Latn' });
+		expect(symbols).not.toHaveProperty('primaryLanguage');
 	});
 
 	it('rejects packaged webfonts as sources', () => {
