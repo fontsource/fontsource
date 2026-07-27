@@ -2216,6 +2216,10 @@
 		"znamenny"
 	],
 	"upstreams": {
+		"fontFiles": {
+			"repository": "fontsource/font-files",
+			"revision": "634de953dba143728c21f51b99255c1ff2753b84"
+		},
 		"googleFonts": {
 			"repository": "google/fonts",
 			"revision": "389b770410cc0b7c21c85673bfa2077420fe7f65"
