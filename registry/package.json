@@ -7,7 +7,8 @@
 		"generate": "pnpm --filter '@fontsource-utils/core' build && node scripts/generate.ts",
 		"test": "pnpm --filter '@fontsource-utils/core' build && vitest run",
 		"typecheck": "pnpm --filter '@fontsource-utils/core' build && tsc --noEmit",
-		"validate": "node scripts/validator.ts"
+		"validate": "node scripts/validator.ts",
+		"check:font-files": "pnpm --filter '@fontsource-utils/core' build && node scripts/check-font-files.ts"
 	},
 	"dependencies": {
 		"@aws-sdk/client-s3": "^3.1090.0",

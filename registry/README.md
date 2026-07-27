@@ -10,6 +10,7 @@ Run from the repository root:
 ~~~sh
 pnpm --filter '@fontsource-utils/registry' generate <google-repo> <google-commit> <nam-repo> <nam-commit> <font-files-repo> <font-files-commit>
 pnpm --filter '@fontsource-utils/registry' validate
+pnpm --filter '@fontsource-utils/registry' check:font-files <font-files-repo>
 pnpm --filter '@fontsource-utils/registry' archive
 ~~~
 

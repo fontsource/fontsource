@@ -22,7 +22,7 @@ import { validateRegistry } from './validator.ts';
 
 const logger = consola.withTag('registry');
 
-const applyReplacements = async (
+export const applyReplacements = async (
 	root: string,
 	families: readonly string[],
 	replacements: ReplacementRegistry,
