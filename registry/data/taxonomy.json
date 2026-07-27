@@ -208,6 +208,9 @@
 		"special-use/barcode": {
 			"label": "Barcode"
 		},
+		"special-use/icons": {
+			"label": "Icons"
+		},
 		"special-use/redaction": {
 			"label": "Redaction"
 		},

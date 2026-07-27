@@ -1,0 +1,38 @@
+{
+	"classifications": [
+		"symbols"
+	],
+	"family": "Material Symbols Rounded",
+	"id": "material-symbols-rounded",
+	"languages": [],
+	"license": {
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"project": {
+		"repository": "https://github.com/google/material-design-icons"
+	},
+	"provenance": {
+		"directory": "variablefont",
+		"repository": "google/material-design-icons",
+		"revision": "528cb964c01fb2b09bc3b9208f82b6d8f8c1c1e2",
+		"type": "github"
+	},
+	"provider": "google-icons",
+	"sourceFiles": [
+		{
+			"path": "variablefont/MaterialSymbolsRounded[FILL,GRAD,opsz,wght].ttf",
+			"sha256": "8817f9df195b582d45a6031c1d9e1533595dd7a6f0e76abc309bdc3cc4d72ee1",
+			"size": 15073992,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-24",
+	"status": "active",
+	"tags": [
+		"special-use/icons"
+	]
+}

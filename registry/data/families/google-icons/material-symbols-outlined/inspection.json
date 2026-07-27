@@ -1,0 +1,46 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 1,
+					"min": 0,
+					"tag": "FILL"
+				},
+				{
+					"default": 0,
+					"max": 200,
+					"min": -50,
+					"tag": "GRAD"
+				},
+				{
+					"default": 24,
+					"max": 48,
+					"min": 20,
+					"tag": "opsz"
+				},
+				{
+					"default": 400,
+					"max": 700,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 4382,
+				"sha256": "c7e2330b037a77ee633c96bab75b961eb0376d69ff3e00ecce87a89de557b18d"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.961",
+			"outline": "glyf",
+			"path": "variablefont/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 100
+			}
+		}
+	]
+}

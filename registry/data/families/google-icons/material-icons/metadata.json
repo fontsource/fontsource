@@ -1,0 +1,38 @@
+{
+	"classifications": [
+		"symbols"
+	],
+	"family": "Material Icons",
+	"id": "material-icons",
+	"languages": [],
+	"license": {
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"project": {
+		"repository": "https://github.com/google/material-design-icons"
+	},
+	"provenance": {
+		"directory": "font",
+		"repository": "google/material-design-icons",
+		"revision": "f7bd4f25f3764883717c09a1fd867f560c9a9581",
+		"type": "github"
+	},
+	"provider": "google-icons",
+	"sourceFiles": [
+		{
+			"path": "font/MaterialIcons-Regular.ttf",
+			"sha256": "ef149f08bdd2ff09a4e2c8573476b7b0f3fbb15b623954ade59899e7175bedda",
+			"size": 356840,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2022-09-19",
+	"status": "active",
+	"tags": [
+		"special-use/icons"
+	]
+}

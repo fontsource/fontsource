@@ -5,10 +5,10 @@ const idSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const languageIdSchema = z
 	.string()
 	.regex(/^[a-z][a-z0-9]*(?:[-_][A-Za-z0-9]+)*$/);
-const familyProviderSchema = z.enum(['google', 'fontsource']);
+const familyProviderSchema = z.enum(['google', 'google-icons', 'fontsource']);
 const familyKeySchema = z
 	.string()
-	.regex(/^(?:google|fontsource)\/[a-z0-9]+(?:-[a-z0-9]+)*$/);
+	.regex(/^(?:google|google-icons|fontsource)\/[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const revisionSchema = z.string().regex(/^[0-9a-f]{40}$/);
 const sha256Schema = z.string().regex(/^[0-9a-f]{64}$/);
 const dateSchema = z.iso.date();
@@ -59,6 +59,9 @@ const sourcePathSchema = z
 			!value.split('/').includes('..'),
 		{ message: 'must be a safe repository-relative POSIX path' },
 	);
+const githubRepositorySchema = z
+	.string()
+	.regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/);
 
 const sampleTextSchema = z
 	.strictObject({
@@ -87,6 +90,10 @@ export const registryIndexSchema = z.strictObject({
 	upstreams: z.strictObject({
 		googleFonts: z.strictObject({
 			repository: z.literal('google/fonts'),
+			revision: revisionSchema,
+		}),
+		googleIcons: z.strictObject({
+			repository: z.literal('google/material-design-icons'),
 			revision: revisionSchema,
 		}),
 		namFiles: z.strictObject({
@@ -141,7 +148,7 @@ export const familyMetadataSchema = z.strictObject({
 	provenance: z.discriminatedUnion('type', [
 		z.strictObject({
 			type: z.literal('github'),
-			repository: z.string().regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/),
+			repository: githubRepositorySchema,
 			revision: revisionSchema,
 			directory: sourcePathSchema,
 		}),
@@ -169,6 +176,23 @@ export const familyMetadataSchema = z.strictObject({
 		})
 		.optional(),
 	sourceFiles: z.array(sourceFileSchema).min(1),
+});
+
+export const familyIconsSchema = z.strictObject({
+	icons: z
+		.array(
+			z.strictObject({
+				name: z.string().min(1).regex(/^\S+$/),
+				codepoint: unicodeScalarSchema,
+			}),
+		)
+		.min(1),
+	source: z.strictObject({
+		repository: githubRepositorySchema,
+		revision: revisionSchema,
+		path: sourcePathSchema,
+		sha256: sha256Schema,
+	}),
 });
 
 export const sourceFamilySchema = familyMetadataSchema
@@ -295,6 +319,7 @@ export const taxonomySchema = z.strictObject({
 
 export type FamilyMetadata = z.infer<typeof familyMetadataSchema>;
 export type FamilyInspection = z.infer<typeof familyInspectionSchema>;
+export type FamilyIcons = z.infer<typeof familyIconsSchema>;
 export type FamilyPolicy = z.infer<typeof familyPolicySchema>;
 export type LanguageCatalog = z.infer<typeof languageCatalogSchema>;
 export type ReplacementRegistry = z.infer<typeof replacementRegistrySchema>;

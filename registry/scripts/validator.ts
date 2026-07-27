@@ -8,6 +8,7 @@ import {
 	type FamilyInspection,
 	type FamilyMetadata,
 	type FamilyPolicy,
+	familyIconsSchema,
 	familyInspectionSchema,
 	familyMetadataSchema,
 	familyPolicySchema,
@@ -274,6 +275,20 @@ const validateFamily = async (
 		}
 	}
 
+	const iconsPath = join(directory, 'icons.json');
+	if (await pathExists(iconsPath)) {
+		const manifest = await validateCanonicalJson(iconsPath, familyIconsSchema);
+		assert(
+			metadata.classifications.includes('symbols'),
+			`${id} has icons but is not classified as symbols`,
+		);
+		assertSortedUnique(
+			manifest.icons,
+			(icon) => `${icon.name}\0${icon.codepoint.toString(16).padStart(6, '0')}`,
+			`${id} icons`,
+		);
+	}
+
 	const policyPath = join(directory, 'policy.json');
 	if (!(await pathExists(policyPath))) return metadata;
 	const policy = await validateCanonicalJson(policyPath, familyPolicySchema);
@@ -477,6 +492,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		for (const filename of [
 			'metadata.json',
 			'inspection.json',
+			'icons.json',
 			'license.txt',
 			'policy.json',
 			'description.en-US.md',

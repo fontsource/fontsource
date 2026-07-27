@@ -3,6 +3,7 @@ import { consola } from 'consola';
 import { generateFontFiles } from './font-files.ts';
 import { openGitSnapshot } from './git.ts';
 import { generateGoogle } from './google.ts';
+import { generateGoogleIcons } from './google-icons.ts';
 import { generateNam } from './nam.ts';
 import {
 	familyMetadataSchema,
@@ -44,6 +45,8 @@ export const applyReplacements = async (
 export const generateRegistry = async (
 	googleRepository: string,
 	googleRevision: string,
+	googleIconsRepository: string,
+	googleIconsRevision: string,
 	namRepository: string,
 	namRevision: string,
 	fontFilesRepository: string,
@@ -51,6 +54,11 @@ export const generateRegistry = async (
 	root: string,
 ): Promise<void> => {
 	const google = openGitSnapshot(googleRepository, googleRevision);
+	const googleIcons = openGitSnapshot(
+		googleIconsRepository,
+		googleIconsRevision,
+		['LICENSE', 'font', 'variablefont'],
+	);
 	const nam = openGitSnapshot(namRepository, namRevision);
 	const fontFiles = openGitSnapshot(fontFilesRepository, fontFilesRevision);
 	const previousValue = await readJsonIfExists(join(root, 'index.json'));
@@ -64,6 +72,9 @@ export const generateRegistry = async (
 	const previousGoogleIds = previousFamilies
 		.filter((family) => family.startsWith('google/'))
 		.map((family) => family.slice('google/'.length));
+	const previousGoogleIconIds = previousFamilies
+		.filter((family) => family.startsWith('google-icons/'))
+		.map((family) => family.slice('google-icons/'.length));
 	const previousFontsourceIds = previousFamilies
 		.filter((family) => family.startsWith('fontsource/'))
 		.map((family) => family.slice('fontsource/'.length));
@@ -80,6 +91,15 @@ export const generateRegistry = async (
 		taxonomy,
 	);
 	logger.success(`Generated ${googleFamilies.length} Google font families`);
+	logger.start(
+		`Generating families from google/material-design-icons@${googleIcons.revision}`,
+	);
+	const googleIconFamilies = await generateGoogleIcons(
+		googleIcons,
+		root,
+		previousGoogleIconIds,
+	);
+	logger.success(`Generated ${googleIconFamilies.length} Google icon families`);
 	const languages = languageCatalogSchema.parse(
 		await readJson(join(root, 'languages.json')),
 	);
@@ -98,6 +118,7 @@ export const generateRegistry = async (
 
 	const families = [
 		...googleFamilies.map((family) => `google/${family}`),
+		...googleIconFamilies.map((family) => `google-icons/${family}`),
 		...fontsourceFamilies.map((family) => `fontsource/${family}`),
 	].toSorted(compareStrings);
 
@@ -111,6 +132,10 @@ export const generateRegistry = async (
 			googleFonts: {
 				repository: 'google/fonts',
 				revision: google.revision,
+			},
+			googleIcons: {
+				repository: 'google/material-design-icons',
+				revision: googleIcons.revision,
 			},
 			namFiles: {
 				repository: 'googlefonts/nam-files',
@@ -135,6 +160,8 @@ if (import.meta.main) {
 	const [
 		googleRepository,
 		googleRevision,
+		googleIconsRepository,
+		googleIconsRevision,
 		namRepository,
 		namRevision,
 		fontFilesRepository,
@@ -143,19 +170,23 @@ if (import.meta.main) {
 	if (
 		!googleRepository ||
 		!googleRevision ||
+		!googleIconsRepository ||
+		!googleIconsRevision ||
 		!namRepository ||
 		!namRevision ||
 		!fontFilesRepository ||
 		!fontFilesRevision ||
-		process.argv.length !== 8
+		process.argv.length !== 10
 	) {
 		throw new Error(
-			'Usage: generate.ts <google-fonts-repo> <google-commit> <nam-files-repo> <nam-commit> <font-files-repo> <font-files-commit>',
+			'Usage: generate.ts <google-fonts-repo> <google-commit> <google-icons-repo> <google-icons-commit> <nam-files-repo> <nam-commit> <font-files-repo> <font-files-commit>',
 		);
 	}
 	await generateRegistry(
 		googleRepository,
 		googleRevision,
+		googleIconsRepository,
+		googleIconsRevision,
 		namRepository,
 		namRevision,
 		fontFilesRepository,

@@ -1,0 +1,8950 @@
+{
+	"icons": [
+		{
+			"codepoint": 59729,
+			"name": "10k"
+		},
+		{
+			"codepoint": 59730,
+			"name": "10mp"
+		},
+		{
+			"codepoint": 59731,
+			"name": "11mp"
+		},
+		{
+			"codepoint": 60301,
+			"name": "123"
+		},
+		{
+			"codepoint": 59732,
+			"name": "12mp"
+		},
+		{
+			"codepoint": 59733,
+			"name": "13mp"
+		},
+		{
+			"codepoint": 59734,
+			"name": "14mp"
+		},
+		{
+			"codepoint": 59735,
+			"name": "15mp"
+		},
+		{
+			"codepoint": 59736,
+			"name": "16mp"
+		},
+		{
+			"codepoint": 59737,
+			"name": "17mp"
+		},
+		{
+			"codepoint": 63741,
+			"name": "18_up_rating"
+		},
+		{
+			"codepoint": 59738,
+			"name": "18mp"
+		},
+		{
+			"codepoint": 59739,
+			"name": "19mp"
+		},
+		{
+			"codepoint": 59740,
+			"name": "1k"
+		},
+		{
+			"codepoint": 59741,
+			"name": "1k_plus"
+		},
+		{
+			"codepoint": 61389,
+			"name": "1x_mobiledata"
+		},
+		{
+			"codepoint": 59742,
+			"name": "20mp"
+		},
+		{
+			"codepoint": 59743,
+			"name": "21mp"
+		},
+		{
+			"codepoint": 59744,
+			"name": "22mp"
+		},
+		{
+			"codepoint": 59745,
+			"name": "23mp"
+		},
+		{
+			"codepoint": 59746,
+			"name": "24mp"
+		},
+		{
+			"codepoint": 59747,
+			"name": "2k"
+		},
+		{
+			"codepoint": 59748,
+			"name": "2k_plus"
+		},
+		{
+			"codepoint": 59749,
+			"name": "2mp"
+		},
+		{
+			"codepoint": 61390,
+			"name": "30fps"
+		},
+		{
+			"codepoint": 61391,
+			"name": "30fps_select"
+		},
+		{
+			"codepoint": 58743,
+			"name": "360"
+		},
+		{
+			"codepoint": 59469,
+			"name": "3d_rotation"
+		},
+		{
+			"codepoint": 61392,
+			"name": "3g_mobiledata"
+		},
+		{
+			"codepoint": 59750,
+			"name": "3k"
+		},
+		{
+			"codepoint": 59751,
+			"name": "3k_plus"
+		},
+		{
+			"codepoint": 59752,
+			"name": "3mp"
+		},
+		{
+			"codepoint": 61393,
+			"name": "3p"
+		},
+		{
+			"codepoint": 61394,
+			"name": "4g_mobiledata"
+		},
+		{
+			"codepoint": 61395,
+			"name": "4g_plus_mobiledata"
+		},
+		{
+			"codepoint": 57458,
+			"name": "4k"
+		},
+		{
+			"codepoint": 59753,
+			"name": "4k_plus"
+		},
+		{
+			"codepoint": 59754,
+			"name": "4mp"
+		},
+		{
+			"codepoint": 61240,
+			"name": "5g"
+		},
+		{
+			"codepoint": 59755,
+			"name": "5k"
+		},
+		{
+			"codepoint": 59756,
+			"name": "5k_plus"
+		},
+		{
+			"codepoint": 59757,
+			"name": "5mp"
+		},
+		{
+			"codepoint": 61396,
+			"name": "60fps"
+		},
+		{
+			"codepoint": 61397,
+			"name": "60fps_select"
+		},
+		{
+			"codepoint": 61982,
+			"name": "6_ft_apart"
+		},
+		{
+			"codepoint": 59758,
+			"name": "6k"
+		},
+		{
+			"codepoint": 59759,
+			"name": "6k_plus"
+		},
+		{
+			"codepoint": 59760,
+			"name": "6mp"
+		},
+		{
+			"codepoint": 59761,
+			"name": "7k"
+		},
+		{
+			"codepoint": 59762,
+			"name": "7k_plus"
+		},
+		{
+			"codepoint": 59763,
+			"name": "7mp"
+		},
+		{
+			"codepoint": 59764,
+			"name": "8k"
+		},
+		{
+			"codepoint": 59765,
+			"name": "8k_plus"
+		},
+		{
+			"codepoint": 59766,
+			"name": "8mp"
+		},
+		{
+			"codepoint": 59767,
+			"name": "9k"
+		},
+		{
+			"codepoint": 59768,
+			"name": "9k_plus"
+		},
+		{
+			"codepoint": 59769,
+			"name": "9mp"
+		},
+		{
+			"codepoint": 60308,
+			"name": "abc"
+		},
+		{
+			"codepoint": 60219,
+			"name": "ac_unit"
+		},
+		{
+			"codepoint": 57744,
+			"name": "access_alarm"
+		},
+		{
+			"codepoint": 57745,
+			"name": "access_alarms"
+		},
+		{
+			"codepoint": 57746,
+			"name": "access_time"
+		},
+		{
+			"codepoint": 61398,
+			"name": "access_time_filled"
+		},
+		{
+			"codepoint": 59470,
+			"name": "accessibility"
+		},
+		{
+			"codepoint": 59692,
+			"name": "accessibility_new"
+		},
+		{
+			"codepoint": 59668,
+			"name": "accessible"
+		},
+		{
+			"codepoint": 59700,
+			"name": "accessible_forward"
+		},
+		{
+			"codepoint": 59471,
+			"name": "account_balance"
+		},
+		{
+			"codepoint": 59472,
+			"name": "account_balance_wallet"
+		},
+		{
+			"codepoint": 59473,
+			"name": "account_box"
+		},
+		{
+			"codepoint": 59475,
+			"name": "account_circle"
+		},
+		{
+			"codepoint": 59770,
+			"name": "account_tree"
+		},
+		{
+			"codepoint": 61241,
+			"name": "ad_units"
+		},
+		{
+			"codepoint": 58894,
+			"name": "adb"
+		},
+		{
+			"codepoint": 57669,
+			"name": "add"
+		},
+		{
+			"codepoint": 58425,
+			"name": "add_a_photo"
+		},
+		{
+			"codepoint": 57747,
+			"name": "add_alarm"
+		},
+		{
+			"codepoint": 57347,
+			"name": "add_alert"
+		},
+		{
+			"codepoint": 57670,
+			"name": "add_box"
+		},
+		{
+			"codepoint": 59177,
+			"name": "add_business"
+		},
+		{
+			"codepoint": 57576,
+			"name": "add_call"
+		},
+		{
+			"codepoint": 60294,
+			"name": "add_card"
+		},
+		{
+			"codepoint": 59771,
+			"name": "add_chart"
+		},
+		{
+			"codepoint": 57671,
+			"name": "add_circle"
+		},
+		{
+			"codepoint": 57672,
+			"name": "add_circle_outline"
+		},
+		{
+			"codepoint": 57958,
+			"name": "add_comment"
+		},
+		{
+			"codepoint": 63723,
+			"name": "add_home"
+		},
+		{
+			"codepoint": 63725,
+			"name": "add_home_work"
+		},
+		{
+			"codepoint": 59772,
+			"name": "add_ic_call"
+		},
+		{
+			"codepoint": 57720,
+			"name": "add_link"
+		},
+		{
+			"codepoint": 58727,
+			"name": "add_location"
+		},
+		{
+			"codepoint": 61242,
+			"name": "add_location_alt"
+		},
+		{
+			"codepoint": 59773,
+			"name": "add_moderator"
+		},
+		{
+			"codepoint": 58430,
+			"name": "add_photo_alternate"
+		},
+		{
+			"codepoint": 57811,
+			"name": "add_reaction"
+		},
+		{
+			"codepoint": 61243,
+			"name": "add_road"
+		},
+		{
+			"codepoint": 59476,
+			"name": "add_shopping_cart"
+		},
+		{
+			"codepoint": 62010,
+			"name": "add_task"
+		},
+		{
+			"codepoint": 58972,
+			"name": "add_to_drive"
+		},
+		{
+			"codepoint": 57854,
+			"name": "add_to_home_screen"
+		},
+		{
+			"codepoint": 58269,
+			"name": "add_to_photos"
+		},
+		{
+			"codepoint": 57436,
+			"name": "add_to_queue"
+		},
+		{
+			"codepoint": 61244,
+			"name": "addchart"
+		},
+		{
+			"codepoint": 60122,
+			"name": "adf_scanner"
+		},
+		{
+			"codepoint": 58270,
+			"name": "adjust"
+		},
+		{
+			"codepoint": 61245,
+			"name": "admin_panel_settings"
+		},
+		{
+			"codepoint": 60054,
+			"name": "adobe"
+		},
+		{
+			"codepoint": 59234,
+			"name": "ads_click"
+		},
+		{
+			"codepoint": 60025,
+			"name": "agriculture"
+		},
+		{
+			"codepoint": 61400,
+			"name": "air"
+		},
+		{
+			"codepoint": 58928,
+			"name": "airline_seat_flat"
+		},
+		{
+			"codepoint": 58929,
+			"name": "airline_seat_flat_angled"
+		},
+		{
+			"codepoint": 58930,
+			"name": "airline_seat_individual_suite"
+		},
+		{
+			"codepoint": 58931,
+			"name": "airline_seat_legroom_extra"
+		},
+		{
+			"codepoint": 58932,
+			"name": "airline_seat_legroom_normal"
+		},
+		{
+			"codepoint": 58933,
+			"name": "airline_seat_legroom_reduced"
+		},
+		{
+			"codepoint": 58934,
+			"name": "airline_seat_recline_extra"
+		},
+		{
+			"codepoint": 58935,
+			"name": "airline_seat_recline_normal"
+		},
+		{
+			"codepoint": 59344,
+			"name": "airline_stops"
+		},
+		{
+			"codepoint": 59338,
+			"name": "airlines"
+		},
+		{
+			"codepoint": 61401,
+			"name": "airplane_ticket"
+		},
+		{
+			"codepoint": 57749,
+			"name": "airplanemode_active"
+		},
+		{
+			"codepoint": 57748,
+			"name": "airplanemode_inactive"
+		},
+		{
+			"codepoint": 57748,
+			"name": "airplanemode_off"
+		},
+		{
+			"codepoint": 57749,
+			"name": "airplanemode_on"
+		},
+		{
+			"codepoint": 57429,
+			"name": "airplay"
+		},
+		{
+			"codepoint": 60220,
+			"name": "airport_shuttle"
+		},
+		{
+			"codepoint": 59477,
+			"name": "alarm"
+		},
+		{
+			"codepoint": 59478,
+			"name": "alarm_add"
+		},
+		{
+			"codepoint": 59479,
+			"name": "alarm_off"
+		},
+		{
+			"codepoint": 59480,
+			"name": "alarm_on"
+		},
+		{
+			"codepoint": 57369,
+			"name": "album"
+		},
+		{
+			"codepoint": 57359,
+			"name": "align_horizontal_center"
+		},
+		{
+			"codepoint": 57357,
+			"name": "align_horizontal_left"
+		},
+		{
+			"codepoint": 57360,
+			"name": "align_horizontal_right"
+		},
+		{
+			"codepoint": 57365,
+			"name": "align_vertical_bottom"
+		},
+		{
+			"codepoint": 57361,
+			"name": "align_vertical_center"
+		},
+		{
+			"codepoint": 57356,
+			"name": "align_vertical_top"
+		},
+		{
+			"codepoint": 59775,
+			"name": "all_inbox"
+		},
+		{
+			"codepoint": 60221,
+			"name": "all_inclusive"
+		},
+		{
+			"codepoint": 59659,
+			"name": "all_out"
+		},
+		{
+			"codepoint": 61828,
+			"name": "alt_route"
+		},
+		{
+			"codepoint": 57574,
+			"name": "alternate_email"
+		},
+		{
+			"codepoint": 59923,
+			"name": "amp_stories"
+		},
+		{
+			"codepoint": 61246,
+			"name": "analytics"
+		},
+		{
+			"codepoint": 61901,
+			"name": "anchor"
+		},
+		{
+			"codepoint": 59481,
+			"name": "android"
+		},
+		{
+			"codepoint": 59164,
+			"name": "animation"
+		},
+		{
+			"codepoint": 59482,
+			"name": "announcement"
+		},
+		{
+			"codepoint": 61402,
+			"name": "aod"
+		},
+		{
+			"codepoint": 59968,
+			"name": "apartment"
+		},
+		{
+			"codepoint": 61879,
+			"name": "api"
+		},
+		{
+			"codepoint": 61247,
+			"name": "app_blocking"
+		},
+		{
+			"codepoint": 61248,
+			"name": "app_registration"
+		},
+		{
+			"codepoint": 61249,
+			"name": "app_settings_alt"
+		},
+		{
+			"codepoint": 60132,
+			"name": "app_shortcut"
+		},
+		{
+			"codepoint": 60032,
+			"name": "apple"
+		},
+		{
+			"codepoint": 59778,
+			"name": "approval"
+		},
+		{
+			"codepoint": 58819,
+			"name": "apps"
+		},
+		{
+			"codepoint": 59340,
+			"name": "apps_outage"
+		},
+		{
+			"codepoint": 59963,
+			"name": "architecture"
+		},
+		{
+			"codepoint": 57673,
+			"name": "archive"
+		},
+		{
+			"codepoint": 59248,
+			"name": "area_chart"
+		},
+		{
+			"codepoint": 58820,
+			"name": "arrow_back"
+		},
+		{
+			"codepoint": 58848,
+			"name": "arrow_back_ios"
+		},
+		{
+			"codepoint": 58090,
+			"name": "arrow_back_ios_new"
+		},
+		{
+			"codepoint": 61825,
+			"name": "arrow_circle_down"
+		},
+		{
+			"codepoint": 60071,
+			"name": "arrow_circle_left"
+		},
+		{
+			"codepoint": 60074,
+			"name": "arrow_circle_right"
+		},
+		{
+			"codepoint": 61826,
+			"name": "arrow_circle_up"
+		},
+		{
+			"codepoint": 58843,
+			"name": "arrow_downward"
+		},
+		{
+			"codepoint": 58821,
+			"name": "arrow_drop_down"
+		},
+		{
+			"codepoint": 58822,
+			"name": "arrow_drop_down_circle"
+		},
+		{
+			"codepoint": 58823,
+			"name": "arrow_drop_up"
+		},
+		{
+			"codepoint": 58824,
+			"name": "arrow_forward"
+		},
+		{
+			"codepoint": 58849,
+			"name": "arrow_forward_ios"
+		},
+		{
+			"codepoint": 58846,
+			"name": "arrow_left"
+		},
+		{
+			"codepoint": 63694,
+			"name": "arrow_outward"
+		},
+		{
+			"codepoint": 58847,
+			"name": "arrow_right"
+		},
+		{
+			"codepoint": 59713,
+			"name": "arrow_right_alt"
+		},
+		{
+			"codepoint": 58840,
+			"name": "arrow_upward"
+		},
+		{
+			"codepoint": 57440,
+			"name": "art_track"
+		},
+		{
+			"codepoint": 61250,
+			"name": "article"
+		},
+		{
+			"codepoint": 59483,
+			"name": "aspect_ratio"
+		},
+		{
+			"codepoint": 59484,
+			"name": "assessment"
+		},
+		{
+			"codepoint": 59485,
+			"name": "assignment"
+		},
+		{
+			"codepoint": 63560,
+			"name": "assignment_add"
+		},
+		{
+			"codepoint": 59486,
+			"name": "assignment_ind"
+		},
+		{
+			"codepoint": 59487,
+			"name": "assignment_late"
+		},
+		{
+			"codepoint": 59488,
+			"name": "assignment_return"
+		},
+		{
+			"codepoint": 59489,
+			"name": "assignment_returned"
+		},
+		{
+			"codepoint": 59490,
+			"name": "assignment_turned_in"
+		},
+		{
+			"codepoint": 63701,
+			"name": "assist_walker"
+		},
+		{
+			"codepoint": 58271,
+			"name": "assistant"
+		},
+		{
+			"codepoint": 59784,
+			"name": "assistant_direction"
+		},
+		{
+			"codepoint": 59785,
+			"name": "assistant_navigation"
+		},
+		{
+			"codepoint": 58272,
+			"name": "assistant_photo"
+		},
+		{
+			"codepoint": 60271,
+			"name": "assured_workload"
+		},
+		{
+			"codepoint": 58739,
+			"name": "atm"
+		},
+		{
+			"codepoint": 59998,
+			"name": "attach_email"
+		},
+		{
+			"codepoint": 57894,
+			"name": "attach_file"
+		},
+		{
+			"codepoint": 57895,
+			"name": "attach_money"
+		},
+		{
+			"codepoint": 58044,
+			"name": "attachment"
+		},
+		{
+			"codepoint": 59986,
+			"name": "attractions"
+		},
+		{
+			"codepoint": 61403,
+			"name": "attribution"
+		},
+		{
+			"codepoint": 60290,
+			"name": "audio_file"
+		},
+		{
+			"codepoint": 58273,
+			"name": "audiotrack"
+		},
+		{
+			"codepoint": 58975,
+			"name": "auto_awesome"
+		},
+		{
+			"codepoint": 58976,
+			"name": "auto_awesome_mosaic"
+		},
+		{
+			"codepoint": 58977,
+			"name": "auto_awesome_motion"
+		},
+		{
+			"codepoint": 59980,
+			"name": "auto_delete"
+		},
+		{
+			"codepoint": 58979,
+			"name": "auto_fix_high"
+		},
+		{
+			"codepoint": 58980,
+			"name": "auto_fix_normal"
+		},
+		{
+			"codepoint": 58981,
+			"name": "auto_fix_off"
+		},
+		{
+			"codepoint": 58619,
+			"name": "auto_graph"
+		},
+		{
+			"codepoint": 60448,
+			"name": "auto_mode"
+		},
+		{
+			"codepoint": 58982,
+			"name": "auto_stories"
+		},
+		{
+			"codepoint": 61404,
+			"name": "autofps_select"
+		},
+		{
+			"codepoint": 59491,
+			"name": "autorenew"
+		},
+		{
+			"codepoint": 57371,
+			"name": "av_timer"
+		},
+		{
+			"codepoint": 61851,
+			"name": "baby_changing_station"
+		},
+		{
+			"codepoint": 59236,
+			"name": "back_hand"
+		},
+		{
+			"codepoint": 61852,
+			"name": "backpack"
+		},
+		{
+			"codepoint": 57674,
+			"name": "backspace"
+		},
+		{
+			"codepoint": 59492,
+			"name": "backup"
+		},
+		{
+			"codepoint": 61251,
+			"name": "backup_table"
+		},
+		{
+			"codepoint": 60007,
+			"name": "badge"
+		},
+		{
+			"codepoint": 59987,
+			"name": "bakery_dining"
+		},
+		{
+			"codepoint": 60150,
+			"name": "balance"
+		},
+		{
+			"codepoint": 58767,
+			"name": "balcony"
+		},
+		{
+			"codepoint": 57714,
+			"name": "ballot"
+		},
+		{
+			"codepoint": 57963,
+			"name": "bar_chart"
+		},
+		{
+			"codepoint": 63580,
+			"name": "barcode_reader"
+		},
+		{
+			"codepoint": 61685,
+			"name": "batch_prediction"
+		},
+		{
+			"codepoint": 61405,
+			"name": "bathroom"
+		},
+		{
+			"codepoint": 59969,
+			"name": "bathtub"
+		},
+		{
+			"codepoint": 60380,
+			"name": "battery_0_bar"
+		},
+		{
+			"codepoint": 60377,
+			"name": "battery_1_bar"
+		},
+		{
+			"codepoint": 60384,
+			"name": "battery_2_bar"
+		},
+		{
+			"codepoint": 60381,
+			"name": "battery_3_bar"
+		},
+		{
+			"codepoint": 60386,
+			"name": "battery_4_bar"
+		},
+		{
+			"codepoint": 60372,
+			"name": "battery_5_bar"
+		},
+		{
+			"codepoint": 60370,
+			"name": "battery_6_bar"
+		},
+		{
+			"codepoint": 57756,
+			"name": "battery_alert"
+		},
+		{
+			"codepoint": 57763,
+			"name": "battery_charging_full"
+		},
+		{
+			"codepoint": 57764,
+			"name": "battery_full"
+		},
+		{
+			"codepoint": 61406,
+			"name": "battery_saver"
+		},
+		{
+			"codepoint": 57765,
+			"name": "battery_std"
+		},
+		{
+			"codepoint": 57766,
+			"name": "battery_unknown"
+		},
+		{
+			"codepoint": 60222,
+			"name": "beach_access"
+		},
+		{
+			"codepoint": 61407,
+			"name": "bed"
+		},
+		{
+			"codepoint": 61408,
+			"name": "bedroom_baby"
+		},
+		{
+			"codepoint": 61409,
+			"name": "bedroom_child"
+		},
+		{
+			"codepoint": 61410,
+			"name": "bedroom_parent"
+		},
+		{
+			"codepoint": 61252,
+			"name": "bedtime"
+		},
+		{
+			"codepoint": 60278,
+			"name": "bedtime_off"
+		},
+		{
+			"codepoint": 58669,
+			"name": "beenhere"
+		},
+		{
+			"codepoint": 61940,
+			"name": "bento"
+		},
+		{
+			"codepoint": 61253,
+			"name": "bike_scooter"
+		},
+		{
+			"codepoint": 59962,
+			"name": "biotech"
+		},
+		{
+			"codepoint": 61411,
+			"name": "blender"
+		},
+		{
+			"codepoint": 63702,
+			"name": "blind"
+		},
+		{
+			"codepoint": 57990,
+			"name": "blinds"
+		},
+		{
+			"codepoint": 60447,
+			"name": "blinds_closed"
+		},
+		{
+			"codepoint": 57675,
+			"name": "block"
+		},
+		{
+			"codepoint": 61254,
+			"name": "block_flipped"
+		},
+		{
+			"codepoint": 61412,
+			"name": "bloodtype"
+		},
+		{
+			"codepoint": 57767,
+			"name": "bluetooth"
+		},
+		{
+			"codepoint": 58895,
+			"name": "bluetooth_audio"
+		},
+		{
+			"codepoint": 57768,
+			"name": "bluetooth_connected"
+		},
+		{
+			"codepoint": 57769,
+			"name": "bluetooth_disabled"
+		},
+		{
+			"codepoint": 61413,
+			"name": "bluetooth_drive"
+		},
+		{
+			"codepoint": 57770,
+			"name": "bluetooth_searching"
+		},
+		{
+			"codepoint": 58274,
+			"name": "blur_circular"
+		},
+		{
+			"codepoint": 58275,
+			"name": "blur_linear"
+		},
+		{
+			"codepoint": 58276,
+			"name": "blur_off"
+		},
+		{
+			"codepoint": 58277,
+			"name": "blur_on"
+		},
+		{
+			"codepoint": 59915,
+			"name": "bolt"
+		},
+		{
+			"codepoint": 59493,
+			"name": "book"
+		},
+		{
+			"codepoint": 61975,
+			"name": "book_online"
+		},
+		{
+			"codepoint": 59494,
+			"name": "bookmark"
+		},
+		{
+			"codepoint": 58776,
+			"name": "bookmark_add"
+		},
+		{
+			"codepoint": 58777,
+			"name": "bookmark_added"
+		},
+		{
+			"codepoint": 59495,
+			"name": "bookmark_border"
+		},
+		{
+			"codepoint": 59495,
+			"name": "bookmark_outline"
+		},
+		{
+			"codepoint": 58778,
+			"name": "bookmark_remove"
+		},
+		{
+			"codepoint": 59787,
+			"name": "bookmarks"
+		},
+		{
+			"codepoint": 57896,
+			"name": "border_all"
+		},
+		{
+			"codepoint": 57897,
+			"name": "border_bottom"
+		},
+		{
+			"codepoint": 57898,
+			"name": "border_clear"
+		},
+		{
+			"codepoint": 57899,
+			"name": "border_color"
+		},
+		{
+			"codepoint": 57900,
+			"name": "border_horizontal"
+		},
+		{
+			"codepoint": 57901,
+			"name": "border_inner"
+		},
+		{
+			"codepoint": 57902,
+			"name": "border_left"
+		},
+		{
+			"codepoint": 57903,
+			"name": "border_outer"
+		},
+		{
+			"codepoint": 57904,
+			"name": "border_right"
+		},
+		{
+			"codepoint": 57905,
+			"name": "border_style"
+		},
+		{
+			"codepoint": 57906,
+			"name": "border_top"
+		},
+		{
+			"codepoint": 57907,
+			"name": "border_vertical"
+		},
+		{
+			"codepoint": 60263,
+			"name": "boy"
+		},
+		{
+			"codepoint": 57451,
+			"name": "branding_watermark"
+		},
+		{
+			"codepoint": 59988,
+			"name": "breakfast_dining"
+		},
+		{
+			"codepoint": 58278,
+			"name": "brightness_1"
+		},
+		{
+			"codepoint": 58279,
+			"name": "brightness_2"
+		},
+		{
+			"codepoint": 58280,
+			"name": "brightness_3"
+		},
+		{
+			"codepoint": 58281,
+			"name": "brightness_4"
+		},
+		{
+			"codepoint": 58282,
+			"name": "brightness_5"
+		},
+		{
+			"codepoint": 58283,
+			"name": "brightness_6"
+		},
+		{
+			"codepoint": 58284,
+			"name": "brightness_7"
+		},
+		{
+			"codepoint": 57771,
+			"name": "brightness_auto"
+		},
+		{
+			"codepoint": 57772,
+			"name": "brightness_high"
+		},
+		{
+			"codepoint": 57773,
+			"name": "brightness_low"
+		},
+		{
+			"codepoint": 57774,
+			"name": "brightness_medium"
+		},
+		{
+			"codepoint": 63736,
+			"name": "broadcast_on_home"
+		},
+		{
+			"codepoint": 63737,
+			"name": "broadcast_on_personal"
+		},
+		{
+			"codepoint": 58285,
+			"name": "broken_image"
+		},
+		{
+			"codepoint": 60369,
+			"name": "browse_gallery"
+		},
+		{
+			"codepoint": 61255,
+			"name": "browser_not_supported"
+		},
+		{
+			"codepoint": 59343,
+			"name": "browser_updated"
+		},
+		{
+			"codepoint": 60019,
+			"name": "brunch_dining"
+		},
+		{
+			"codepoint": 58286,
+			"name": "brush"
+		},
+		{
+			"codepoint": 59101,
+			"name": "bubble_chart"
+		},
+		{
+			"codepoint": 59496,
+			"name": "bug_report"
+		},
+		{
+			"codepoint": 59497,
+			"name": "build"
+		},
+		{
+			"codepoint": 61256,
+			"name": "build_circle"
+		},
+		{
+			"codepoint": 58769,
+			"name": "bungalow"
+		},
+		{
+			"codepoint": 58428,
+			"name": "burst_mode"
+		},
+		{
+			"codepoint": 59791,
+			"name": "bus_alert"
+		},
+		{
+			"codepoint": 57519,
+			"name": "business"
+		},
+		{
+			"codepoint": 60223,
+			"name": "business_center"
+		},
+		{
+			"codepoint": 58761,
+			"name": "cabin"
+		},
+		{
+			"codepoint": 61414,
+			"name": "cable"
+		},
+		{
+			"codepoint": 59498,
+			"name": "cached"
+		},
+		{
+			"codepoint": 59369,
+			"name": "cake"
+		},
+		{
+			"codepoint": 59999,
+			"name": "calculate"
+		},
+		{
+			"codepoint": 60364,
+			"name": "calendar_month"
+		},
+		{
+			"codepoint": 59701,
+			"name": "calendar_today"
+		},
+		{
+			"codepoint": 59702,
+			"name": "calendar_view_day"
+		},
+		{
+			"codepoint": 61415,
+			"name": "calendar_view_month"
+		},
+		{
+			"codepoint": 61416,
+			"name": "calendar_view_week"
+		},
+		{
+			"codepoint": 57520,
+			"name": "call"
+		},
+		{
+			"codepoint": 57521,
+			"name": "call_end"
+		},
+		{
+			"codepoint": 57522,
+			"name": "call_made"
+		},
+		{
+			"codepoint": 57523,
+			"name": "call_merge"
+		},
+		{
+			"codepoint": 57524,
+			"name": "call_missed"
+		},
+		{
+			"codepoint": 57572,
+			"name": "call_missed_outgoing"
+		},
+		{
+			"codepoint": 57525,
+			"name": "call_received"
+		},
+		{
+			"codepoint": 57526,
+			"name": "call_split"
+		},
+		{
+			"codepoint": 57452,
+			"name": "call_to_action"
+		},
+		{
+			"codepoint": 58287,
+			"name": "camera"
+		},
+		{
+			"codepoint": 58288,
+			"name": "camera_alt"
+		},
+		{
+			"codepoint": 59644,
+			"name": "camera_enhance"
+		},
+		{
+			"codepoint": 58289,
+			"name": "camera_front"
+		},
+		{
+			"codepoint": 61417,
+			"name": "camera_indoor"
+		},
+		{
+			"codepoint": 61418,
+			"name": "camera_outdoor"
+		},
+		{
+			"codepoint": 58290,
+			"name": "camera_rear"
+		},
+		{
+			"codepoint": 58291,
+			"name": "camera_roll"
+		},
+		{
+			"codepoint": 61419,
+			"name": "cameraswitch"
+		},
+		{
+			"codepoint": 61257,
+			"name": "campaign"
+		},
+		{
+			"codepoint": 58825,
+			"name": "cancel"
+		},
+		{
+			"codepoint": 57577,
+			"name": "cancel_presentation"
+		},
+		{
+			"codepoint": 59961,
+			"name": "cancel_schedule_send"
+		},
+		{
+			"codepoint": 60116,
+			"name": "candlestick_chart"
+		},
+		{
+			"codepoint": 60402,
+			"name": "car_crash"
+		},
+		{
+			"codepoint": 59989,
+			"name": "car_rental"
+		},
+		{
+			"codepoint": 59990,
+			"name": "car_repair"
+		},
+		{
+			"codepoint": 59638,
+			"name": "card_giftcard"
+		},
+		{
+			"codepoint": 59639,
+			"name": "card_membership"
+		},
+		{
+			"codepoint": 59640,
+			"name": "card_travel"
+		},
+		{
+			"codepoint": 61944,
+			"name": "carpenter"
+		},
+		{
+			"codepoint": 59794,
+			"name": "cases"
+		},
+		{
+			"codepoint": 60224,
+			"name": "casino"
+		},
+		{
+			"codepoint": 58119,
+			"name": "cast"
+		},
+		{
+			"codepoint": 58120,
+			"name": "cast_connected"
+		},
+		{
+			"codepoint": 61420,
+			"name": "cast_for_education"
+		},
+		{
+			"codepoint": 60081,
+			"name": "castle"
+		},
+		{
+			"codepoint": 58632,
+			"name": "catching_pokemon"
+		},
+		{
+			"codepoint": 58740,
+			"name": "category"
+		},
+		{
+			"codepoint": 60005,
+			"name": "celebration"
+		},
+		{
+			"codepoint": 60346,
+			"name": "cell_tower"
+		},
+		{
+			"codepoint": 57580,
+			"name": "cell_wifi"
+		},
+		{
+			"codepoint": 58292,
+			"name": "center_focus_strong"
+		},
+		{
+			"codepoint": 58293,
+			"name": "center_focus_weak"
+		},
+		{
+			"codepoint": 61421,
+			"name": "chair"
+		},
+		{
+			"codepoint": 61422,
+			"name": "chair_alt"
+		},
+		{
+			"codepoint": 58757,
+			"name": "chalet"
+		},
+		{
+			"codepoint": 58087,
+			"name": "change_circle"
+		},
+		{
+			"codepoint": 59499,
+			"name": "change_history"
+		},
+		{
+			"codepoint": 61853,
+			"name": "charging_station"
+		},
+		{
+			"codepoint": 57527,
+			"name": "chat"
+		},
+		{
+			"codepoint": 57546,
+			"name": "chat_bubble"
+		},
+		{
+			"codepoint": 57547,
+			"name": "chat_bubble_outline"
+		},
+		{
+			"codepoint": 58826,
+			"name": "check"
+		},
+		{
+			"codepoint": 59444,
+			"name": "check_box"
+		},
+		{
+			"codepoint": 59445,
+			"name": "check_box_outline_blank"
+		},
+		{
+			"codepoint": 59500,
+			"name": "check_circle"
+		},
+		{
+			"codepoint": 59693,
+			"name": "check_circle_outline"
+		},
+		{
+			"codepoint": 59057,
+			"name": "checklist"
+		},
+		{
+			"codepoint": 59059,
+			"name": "checklist_rtl"
+		},
+		{
+			"codepoint": 61854,
+			"name": "checkroom"
+		},
+		{
+			"codepoint": 58827,
+			"name": "chevron_left"
+		},
+		{
+			"codepoint": 58828,
+			"name": "chevron_right"
+		},
+		{
+			"codepoint": 60225,
+			"name": "child_care"
+		},
+		{
+			"codepoint": 60226,
+			"name": "child_friendly"
+		},
+		{
+			"codepoint": 59501,
+			"name": "chrome_reader_mode"
+		},
+		{
+			"codepoint": 60078,
+			"name": "church"
+		},
+		{
+			"codepoint": 61258,
+			"name": "circle"
+		},
+		{
+			"codepoint": 59796,
+			"name": "circle_notifications"
+		},
+		{
+			"codepoint": 59502,
+			"name": "class"
+		},
+		{
+			"codepoint": 61983,
+			"name": "clean_hands"
+		},
+		{
+			"codepoint": 61695,
+			"name": "cleaning_services"
+		},
+		{
+			"codepoint": 57676,
+			"name": "clear"
+		},
+		{
+			"codepoint": 57528,
+			"name": "clear_all"
+		},
+		{
+			"codepoint": 58829,
+			"name": "close"
+		},
+		{
+			"codepoint": 61903,
+			"name": "close_fullscreen"
+		},
+		{
+			"codepoint": 57372,
+			"name": "closed_caption"
+		},
+		{
+			"codepoint": 61916,
+			"name": "closed_caption_disabled"
+		},
+		{
+			"codepoint": 59798,
+			"name": "closed_caption_off"
+		},
+		{
+			"codepoint": 58045,
+			"name": "cloud"
+		},
+		{
+			"codepoint": 58046,
+			"name": "cloud_circle"
+		},
+		{
+			"codepoint": 58047,
+			"name": "cloud_done"
+		},
+		{
+			"codepoint": 58048,
+			"name": "cloud_download"
+		},
+		{
+			"codepoint": 58049,
+			"name": "cloud_off"
+		},
+		{
+			"codepoint": 58050,
+			"name": "cloud_queue"
+		},
+		{
+			"codepoint": 60250,
+			"name": "cloud_sync"
+		},
+		{
+			"codepoint": 58051,
+			"name": "cloud_upload"
+		},
+		{
+			"codepoint": 59408,
+			"name": "cloudy_snowing"
+		},
+		{
+			"codepoint": 59312,
+			"name": "co2"
+		},
+		{
+			"codepoint": 60144,
+			"name": "co_present"
+		},
+		{
+			"codepoint": 59503,
+			"name": "code"
+		},
+		{
+			"codepoint": 58611,
+			"name": "code_off"
+		},
+		{
+			"codepoint": 61423,
+			"name": "coffee"
+		},
+		{
+			"codepoint": 61424,
+			"name": "coffee_maker"
+		},
+		{
+			"codepoint": 58294,
+			"name": "collections"
+		},
+		{
+			"codepoint": 58417,
+			"name": "collections_bookmark"
+		},
+		{
+			"codepoint": 58295,
+			"name": "color_lens"
+		},
+		{
+			"codepoint": 58296,
+			"name": "colorize"
+		},
+		{
+			"codepoint": 57529,
+			"name": "comment"
+		},
+		{
+			"codepoint": 59982,
+			"name": "comment_bank"
+		},
+		{
+			"codepoint": 59298,
+			"name": "comments_disabled"
+		},
+		{
+			"codepoint": 60149,
+			"name": "commit"
+		},
+		{
+			"codepoint": 59712,
+			"name": "commute"
+		},
+		{
+			"codepoint": 58297,
+			"name": "compare"
+		},
+		{
+			"codepoint": 59669,
+			"name": "compare_arrows"
+		},
+		{
+			"codepoint": 58748,
+			"name": "compass_calibration"
+		},
+		{
+			"codepoint": 59233,
+			"name": "compost"
+		},
+		{
+			"codepoint": 59725,
+			"name": "compress"
+		},
+		{
+			"codepoint": 58122,
+			"name": "computer"
+		},
+		{
+			"codepoint": 58936,
+			"name": "confirmation_num"
+		},
+		{
+			"codepoint": 58936,
+			"name": "confirmation_number"
+		},
+		{
+			"codepoint": 61987,
+			"name": "connect_without_contact"
+		},
+		{
+			"codepoint": 59800,
+			"name": "connected_tv"
+		},
+		{
+			"codepoint": 59337,
+			"name": "connecting_airports"
+		},
+		{
+			"codepoint": 59964,
+			"name": "construction"
+		},
+		{
+			"codepoint": 63697,
+			"name": "contact_emergency"
+		},
+		{
+			"codepoint": 57552,
+			"name": "contact_mail"
+		},
+		{
+			"codepoint": 61998,
+			"name": "contact_page"
+		},
+		{
+			"codepoint": 57551,
+			"name": "contact_phone"
+		},
+		{
+			"codepoint": 59724,
+			"name": "contact_support"
+		},
+		{
+			"codepoint": 60017,
+			"name": "contactless"
+		},
+		{
+			"codepoint": 57530,
+			"name": "contacts"
+		},
+		{
+			"codepoint": 57677,
+			"name": "content_copy"
+		},
+		{
+			"codepoint": 57678,
+			"name": "content_cut"
+		},
+		{
+			"codepoint": 57679,
+			"name": "content_paste"
+		},
+		{
+			"codepoint": 60046,
+			"name": "content_paste_go"
+		},
+		{
+			"codepoint": 58616,
+			"name": "content_paste_off"
+		},
+		{
+			"codepoint": 60059,
+			"name": "content_paste_search"
+		},
+		{
+			"codepoint": 60215,
+			"name": "contrast"
+		},
+		{
+			"codepoint": 57460,
+			"name": "control_camera"
+		},
+		{
+			"codepoint": 58298,
+			"name": "control_point"
+		},
+		{
+			"codepoint": 58299,
+			"name": "control_point_duplicate"
+		},
+		{
+			"codepoint": 63591,
+			"name": "conveyor_belt"
+		},
+		{
+			"codepoint": 60076,
+			"name": "cookie"
+		},
+		{
+			"codepoint": 58092,
+			"name": "copy_all"
+		},
+		{
+			"codepoint": 59660,
+			"name": "copyright"
+		},
+		{
+			"codepoint": 61985,
+			"name": "coronavirus"
+		},
+		{
+			"codepoint": 61904,
+			"name": "corporate_fare"
+		},
+		{
+			"codepoint": 58759,
+			"name": "cottage"
+		},
+		{
+			"codepoint": 61943,
+			"name": "countertops"
+		},
+		{
+			"codepoint": 57680,
+			"name": "create"
+		},
+		{
+			"codepoint": 58060,
+			"name": "create_new_folder"
+		},
+		{
+			"codepoint": 59504,
+			"name": "credit_card"
+		},
+		{
+			"codepoint": 58612,
+			"name": "credit_card_off"
+		},
+		{
+			"codepoint": 61425,
+			"name": "credit_score"
+		},
+		{
+			"codepoint": 58760,
+			"name": "crib"
+		},
+		{
+			"codepoint": 60393,
+			"name": "crisis_alert"
+		},
+		{
+			"codepoint": 58302,
+			"name": "crop"
+		},
+		{
+			"codepoint": 58300,
+			"name": "crop_16_9"
+		},
+		{
+			"codepoint": 58301,
+			"name": "crop_3_2"
+		},
+		{
+			"codepoint": 58303,
+			"name": "crop_5_4"
+		},
+		{
+			"codepoint": 58304,
+			"name": "crop_7_5"
+		},
+		{
+			"codepoint": 58305,
+			"name": "crop_din"
+		},
+		{
+			"codepoint": 58306,
+			"name": "crop_free"
+		},
+		{
+			"codepoint": 58307,
+			"name": "crop_landscape"
+		},
+		{
+			"codepoint": 58308,
+			"name": "crop_original"
+		},
+		{
+			"codepoint": 58309,
+			"name": "crop_portrait"
+		},
+		{
+			"codepoint": 58423,
+			"name": "crop_rotate"
+		},
+		{
+			"codepoint": 58310,
+			"name": "crop_square"
+		},
+		{
+			"codepoint": 59289,
+			"name": "cruelty_free"
+		},
+		{
+			"codepoint": 60307,
+			"name": "css"
+		},
+		{
+			"codepoint": 60357,
+			"name": "currency_bitcoin"
+		},
+		{
+			"codepoint": 60272,
+			"name": "currency_exchange"
+		},
+		{
+			"codepoint": 60154,
+			"name": "currency_franc"
+		},
+		{
+			"codepoint": 60143,
+			"name": "currency_lira"
+		},
+		{
+			"codepoint": 60145,
+			"name": "currency_pound"
+		},
+		{
+			"codepoint": 60140,
+			"name": "currency_ruble"
+		},
+		{
+			"codepoint": 60151,
+			"name": "currency_rupee"
+		},
+		{
+			"codepoint": 60155,
+			"name": "currency_yen"
+		},
+		{
+			"codepoint": 60153,
+			"name": "currency_yuan"
+		},
+		{
+			"codepoint": 60446,
+			"name": "curtains"
+		},
+		{
+			"codepoint": 60445,
+			"name": "curtains_closed"
+		},
+		{
+			"codepoint": 60373,
+			"name": "cyclone"
+		},
+		{
+			"codepoint": 59802,
+			"name": "dangerous"
+		},
+		{
+			"codepoint": 58652,
+			"name": "dark_mode"
+		},
+		{
+			"codepoint": 59505,
+			"name": "dashboard"
+		},
+		{
+			"codepoint": 59803,
+			"name": "dashboard_customize"
+		},
+		{
+			"codepoint": 60113,
+			"name": "data_array"
+		},
+		{
+			"codepoint": 59247,
+			"name": "data_exploration"
+		},
+		{
+			"codepoint": 60115,
+			"name": "data_object"
+		},
+		{
+			"codepoint": 61426,
+			"name": "data_saver_off"
+		},
+		{
+			"codepoint": 61427,
+			"name": "data_saver_on"
+		},
+		{
+			"codepoint": 60319,
+			"name": "data_thresholding"
+		},
+		{
+			"codepoint": 57775,
+			"name": "data_usage"
+		},
+		{
+			"codepoint": 63726,
+			"name": "dataset"
+		},
+		{
+			"codepoint": 63727,
+			"name": "dataset_linked"
+		},
+		{
+			"codepoint": 59670,
+			"name": "date_range"
+		},
+		{
+			"codepoint": 60279,
+			"name": "deblur"
+		},
+		{
+			"codepoint": 59970,
+			"name": "deck"
+		},
+		{
+			"codepoint": 58311,
+			"name": "dehaze"
+		},
+		{
+			"codepoint": 59506,
+			"name": "delete"
+		},
+		{
+			"codepoint": 59691,
+			"name": "delete_forever"
+		},
+		{
+			"codepoint": 59694,
+			"name": "delete_outline"
+		},
+		{
+			"codepoint": 57708,
+			"name": "delete_sweep"
+		},
+		{
+			"codepoint": 60018,
+			"name": "delivery_dining"
+		},
+		{
+			"codepoint": 60329,
+			"name": "density_large"
+		},
+		{
+			"codepoint": 60318,
+			"name": "density_medium"
+		},
+		{
+			"codepoint": 60328,
+			"name": "density_small"
+		},
+		{
+			"codepoint": 58742,
+			"name": "departure_board"
+		},
+		{
+			"codepoint": 59507,
+			"name": "description"
+		},
+		{
+			"codepoint": 60342,
+			"name": "deselect"
+		},
+		{
+			"codepoint": 61706,
+			"name": "design_services"
+		},
+		{
+			"codepoint": 63732,
+			"name": "desk"
+		},
+		{
+			"codepoint": 59805,
+			"name": "desktop_access_disabled"
+		},
+		{
+			"codepoint": 58123,
+			"name": "desktop_mac"
+		},
+		{
+			"codepoint": 58124,
+			"name": "desktop_windows"
+		},
+		{
+			"codepoint": 58312,
+			"name": "details"
+		},
+		{
+			"codepoint": 58125,
+			"name": "developer_board"
+		},
+		{
+			"codepoint": 58623,
+			"name": "developer_board_off"
+		},
+		{
+			"codepoint": 57776,
+			"name": "developer_mode"
+		},
+		{
+			"codepoint": 58165,
+			"name": "device_hub"
+		},
+		{
+			"codepoint": 57855,
+			"name": "device_thermostat"
+		},
+		{
+			"codepoint": 58169,
+			"name": "device_unknown"
+		},
+		{
+			"codepoint": 57777,
+			"name": "devices"
+		},
+		{
+			"codepoint": 60382,
+			"name": "devices_fold"
+		},
+		{
+			"codepoint": 58167,
+			"name": "devices_other"
+		},
+		{
+			"codepoint": 63609,
+			"name": "dew_point"
+		},
+		{
+			"codepoint": 57531,
+			"name": "dialer_sip"
+		},
+		{
+			"codepoint": 57532,
+			"name": "dialpad"
+		},
+		{
+			"codepoint": 60117,
+			"name": "diamond"
+		},
+		{
+			"codepoint": 60285,
+			"name": "difference"
+		},
+		{
+			"codepoint": 61428,
+			"name": "dining"
+		},
+		{
+			"codepoint": 59991,
+			"name": "dinner_dining"
+		},
+		{
+			"codepoint": 58670,
+			"name": "directions"
+		},
+		{
+			"codepoint": 58671,
+			"name": "directions_bike"
+		},
+		{
+			"codepoint": 58674,
+			"name": "directions_boat"
+		},
+		{
+			"codepoint": 61429,
+			"name": "directions_boat_filled"
+		},
+		{
+			"codepoint": 58672,
+			"name": "directions_bus"
+		},
+		{
+			"codepoint": 61430,
+			"name": "directions_bus_filled"
+		},
+		{
+			"codepoint": 58673,
+			"name": "directions_car"
+		},
+		{
+			"codepoint": 61431,
+			"name": "directions_car_filled"
+		},
+		{
+			"codepoint": 58674,
+			"name": "directions_ferry"
+		},
+		{
+			"codepoint": 61711,
+			"name": "directions_off"
+		},
+		{
+			"codepoint": 58676,
+			"name": "directions_railway"
+		},
+		{
+			"codepoint": 61432,
+			"name": "directions_railway_filled"
+		},
+		{
+			"codepoint": 58726,
+			"name": "directions_run"
+		},
+		{
+			"codepoint": 58675,
+			"name": "directions_subway"
+		},
+		{
+			"codepoint": 61433,
+			"name": "directions_subway_filled"
+		},
+		{
+			"codepoint": 58676,
+			"name": "directions_train"
+		},
+		{
+			"codepoint": 58677,
+			"name": "directions_transit"
+		},
+		{
+			"codepoint": 61434,
+			"name": "directions_transit_filled"
+		},
+		{
+			"codepoint": 58678,
+			"name": "directions_walk"
+		},
+		{
+			"codepoint": 61259,
+			"name": "dirty_lens"
+		},
+		{
+			"codepoint": 62000,
+			"name": "disabled_by_default"
+		},
+		{
+			"codepoint": 59246,
+			"name": "disabled_visible"
+		},
+		{
+			"codepoint": 58896,
+			"name": "disc_full"
+		},
+		{
+			"codepoint": 60012,
+			"name": "discord"
+		},
+		{
+			"codepoint": 60361,
+			"name": "discount"
+		},
+		{
+			"codepoint": 60311,
+			"name": "display_settings"
+		},
+		{
+			"codepoint": 63703,
+			"name": "diversity_1"
+		},
+		{
+			"codepoint": 63704,
+			"name": "diversity_2"
+		},
+		{
+			"codepoint": 63705,
+			"name": "diversity_3"
+		},
+		{
+			"codepoint": 58897,
+			"name": "dnd_forwardslash"
+		},
+		{
+			"codepoint": 59509,
+			"name": "dns"
+		},
+		{
+			"codepoint": 61580,
+			"name": "do_disturb"
+		},
+		{
+			"codepoint": 61581,
+			"name": "do_disturb_alt"
+		},
+		{
+			"codepoint": 61582,
+			"name": "do_disturb_off"
+		},
+		{
+			"codepoint": 61583,
+			"name": "do_disturb_on"
+		},
+		{
+			"codepoint": 58898,
+			"name": "do_not_disturb"
+		},
+		{
+			"codepoint": 58897,
+			"name": "do_not_disturb_alt"
+		},
+		{
+			"codepoint": 58947,
+			"name": "do_not_disturb_off"
+		},
+		{
+			"codepoint": 58948,
+			"name": "do_not_disturb_on"
+		},
+		{
+			"codepoint": 61435,
+			"name": "do_not_disturb_on_total_silence"
+		},
+		{
+			"codepoint": 61855,
+			"name": "do_not_step"
+		},
+		{
+			"codepoint": 61872,
+			"name": "do_not_touch"
+		},
+		{
+			"codepoint": 58126,
+			"name": "dock"
+		},
+		{
+			"codepoint": 58874,
+			"name": "document_scanner"
+		},
+		{
+			"codepoint": 59374,
+			"name": "domain"
+		},
+		{
+			"codepoint": 60258,
+			"name": "domain_add"
+		},
+		{
+			"codepoint": 57583,
+			"name": "domain_disabled"
+		},
+		{
+			"codepoint": 61260,
+			"name": "domain_verification"
+		},
+		{
+			"codepoint": 59510,
+			"name": "done"
+		},
+		{
+			"codepoint": 59511,
+			"name": "done_all"
+		},
+		{
+			"codepoint": 59695,
+			"name": "done_outline"
+		},
+		{
+			"codepoint": 59671,
+			"name": "donut_large"
+		},
+		{
+			"codepoint": 59672,
+			"name": "donut_small"
+		},
+		{
+			"codepoint": 61436,
+			"name": "door_back"
+		},
+		{
+			"codepoint": 61437,
+			"name": "door_front"
+		},
+		{
+			"codepoint": 61438,
+			"name": "door_sliding"
+		},
+		{
+			"codepoint": 61439,
+			"name": "doorbell"
+		},
+		{
+			"codepoint": 59984,
+			"name": "double_arrow"
+		},
+		{
+			"codepoint": 58633,
+			"name": "downhill_skiing"
+		},
+		{
+			"codepoint": 61584,
+			"name": "download"
+		},
+		{
+			"codepoint": 61585,
+			"name": "download_done"
+		},
+		{
+			"codepoint": 61440,
+			"name": "download_for_offline"
+		},
+		{
+			"codepoint": 61441,
+			"name": "downloading"
+		},
+		{
+			"codepoint": 57681,
+			"name": "drafts"
+		},
+		{
+			"codepoint": 57949,
+			"name": "drag_handle"
+		},
+		{
+			"codepoint": 59717,
+			"name": "drag_indicator"
+		},
+		{
+			"codepoint": 59206,
+			"name": "draw"
+		},
+		{
+			"codepoint": 58899,
+			"name": "drive_eta"
+		},
+		{
+			"codepoint": 58997,
+			"name": "drive_file_move"
+		},
+		{
+			"codepoint": 59809,
+			"name": "drive_file_move_outline"
+		},
+		{
+			"codepoint": 59245,
+			"name": "drive_file_move_rtl"
+		},
+		{
+			"codepoint": 59810,
+			"name": "drive_file_rename_outline"
+		},
+		{
+			"codepoint": 59811,
+			"name": "drive_folder_upload"
+		},
+		{
+			"codepoint": 61875,
+			"name": "dry"
+		},
+		{
+			"codepoint": 59992,
+			"name": "dry_cleaning"
+		},
+		{
+			"codepoint": 59813,
+			"name": "duo"
+		},
+		{
+			"codepoint": 57778,
+			"name": "dvr"
+		},
+		{
+			"codepoint": 59924,
+			"name": "dynamic_feed"
+		},
+		{
+			"codepoint": 61887,
+			"name": "dynamic_form"
+		},
+		{
+			"codepoint": 61442,
+			"name": "e_mobiledata"
+		},
+		{
+			"codepoint": 61443,
+			"name": "earbuds"
+		},
+		{
+			"codepoint": 61444,
+			"name": "earbuds_battery"
+		},
+		{
+			"codepoint": 61919,
+			"name": "east"
+		},
+		{
+			"codepoint": 59957,
+			"name": "eco"
+		},
+		{
+			"codepoint": 61445,
+			"name": "edgesensor_high"
+		},
+		{
+			"codepoint": 61446,
+			"name": "edgesensor_low"
+		},
+		{
+			"codepoint": 58313,
+			"name": "edit"
+		},
+		{
+			"codepoint": 58744,
+			"name": "edit_attributes"
+		},
+		{
+			"codepoint": 59202,
+			"name": "edit_calendar"
+		},
+		{
+			"codepoint": 63628,
+			"name": "edit_document"
+		},
+		{
+			"codepoint": 58728,
+			"name": "edit_location"
+		},
+		{
+			"codepoint": 57797,
+			"name": "edit_location_alt"
+		},
+		{
+			"codepoint": 59205,
+			"name": "edit_note"
+		},
+		{
+			"codepoint": 58661,
+			"name": "edit_notifications"
+		},
+		{
+			"codepoint": 59728,
+			"name": "edit_off"
+		},
+		{
+			"codepoint": 61261,
+			"name": "edit_road"
+		},
+		{
+			"codepoint": 63629,
+			"name": "edit_square"
+		},
+		{
+			"codepoint": 60108,
+			"name": "egg"
+		},
+		{
+			"codepoint": 60104,
+			"name": "egg_alt"
+		},
+		{
+			"codepoint": 59643,
+			"name": "eject"
+		},
+		{
+			"codepoint": 61978,
+			"name": "elderly"
+		},
+		{
+			"codepoint": 60265,
+			"name": "elderly_woman"
+		},
+		{
+			"codepoint": 60187,
+			"name": "electric_bike"
+		},
+		{
+			"codepoint": 60444,
+			"name": "electric_bolt"
+		},
+		{
+			"codepoint": 60188,
+			"name": "electric_car"
+		},
+		{
+			"codepoint": 60443,
+			"name": "electric_meter"
+		},
+		{
+			"codepoint": 60189,
+			"name": "electric_moped"
+		},
+		{
+			"codepoint": 60190,
+			"name": "electric_rickshaw"
+		},
+		{
+			"codepoint": 60191,
+			"name": "electric_scooter"
+		},
+		{
+			"codepoint": 61698,
+			"name": "electrical_services"
+		},
+		{
+			"codepoint": 61856,
+			"name": "elevator"
+		},
+		{
+			"codepoint": 57534,
+			"name": "email"
+		},
+		{
+			"codepoint": 57835,
+			"name": "emergency"
+		},
+		{
+			"codepoint": 60404,
+			"name": "emergency_recording"
+		},
+		{
+			"codepoint": 60406,
+			"name": "emergency_share"
+		},
+		{
+			"codepoint": 59938,
+			"name": "emoji_emotions"
+		},
+		{
+			"codepoint": 59939,
+			"name": "emoji_events"
+		},
+		{
+			"codepoint": 59930,
+			"name": "emoji_flags"
+		},
+		{
+			"codepoint": 59931,
+			"name": "emoji_food_beverage"
+		},
+		{
+			"codepoint": 59932,
+			"name": "emoji_nature"
+		},
+		{
+			"codepoint": 59940,
+			"name": "emoji_objects"
+		},
+		{
+			"codepoint": 59933,
+			"name": "emoji_people"
+		},
+		{
+			"codepoint": 59934,
+			"name": "emoji_symbols"
+		},
+		{
+			"codepoint": 59935,
+			"name": "emoji_transportation"
+		},
+		{
+			"codepoint": 60442,
+			"name": "energy_savings_leaf"
+		},
+		{
+			"codepoint": 59965,
+			"name": "engineering"
+		},
+		{
+			"codepoint": 59644,
+			"name": "enhance_photo_translate"
+		},
+		{
+			"codepoint": 58943,
+			"name": "enhanced_encryption"
+		},
+		{
+			"codepoint": 57373,
+			"name": "equalizer"
+		},
+		{
+			"codepoint": 57344,
+			"name": "error"
+		},
+		{
+			"codepoint": 57345,
+			"name": "error_outline"
+		},
+		{
+			"codepoint": 61857,
+			"name": "escalator"
+		},
+		{
+			"codepoint": 61868,
+			"name": "escalator_warning"
+		},
+		{
+			"codepoint": 59925,
+			"name": "euro"
+		},
+		{
+			"codepoint": 59686,
+			"name": "euro_symbol"
+		},
+		{
+			"codepoint": 58733,
+			"name": "ev_station"
+		},
+		{
+			"codepoint": 59512,
+			"name": "event"
+		},
+		{
+			"codepoint": 58900,
+			"name": "event_available"
+		},
+		{
+			"codepoint": 58901,
+			"name": "event_busy"
+		},
+		{
+			"codepoint": 58902,
+			"name": "event_note"
+		},
+		{
+			"codepoint": 60283,
+			"name": "event_repeat"
+		},
+		{
+			"codepoint": 59651,
+			"name": "event_seat"
+		},
+		{
+			"codepoint": 59513,
+			"name": "exit_to_app"
+		},
+		{
+			"codepoint": 59727,
+			"name": "expand"
+		},
+		{
+			"codepoint": 59341,
+			"name": "expand_circle_down"
+		},
+		{
+			"codepoint": 58830,
+			"name": "expand_less"
+		},
+		{
+			"codepoint": 58831,
+			"name": "expand_more"
+		},
+		{
+			"codepoint": 57374,
+			"name": "explicit"
+		},
+		{
+			"codepoint": 59514,
+			"name": "explore"
+		},
+		{
+			"codepoint": 59816,
+			"name": "explore_off"
+		},
+		{
+			"codepoint": 58314,
+			"name": "exposure"
+		},
+		{
+			"codepoint": 58315,
+			"name": "exposure_minus_1"
+		},
+		{
+			"codepoint": 58316,
+			"name": "exposure_minus_2"
+		},
+		{
+			"codepoint": 58315,
+			"name": "exposure_neg_1"
+		},
+		{
+			"codepoint": 58316,
+			"name": "exposure_neg_2"
+		},
+		{
+			"codepoint": 58317,
+			"name": "exposure_plus_1"
+		},
+		{
+			"codepoint": 58318,
+			"name": "exposure_plus_2"
+		},
+		{
+			"codepoint": 58319,
+			"name": "exposure_zero"
+		},
+		{
+			"codepoint": 59515,
+			"name": "extension"
+		},
+		{
+			"codepoint": 58613,
+			"name": "extension_off"
+		},
+		{
+			"codepoint": 59516,
+			"name": "face"
+		},
+		{
+			"codepoint": 63706,
+			"name": "face_2"
+		},
+		{
+			"codepoint": 63707,
+			"name": "face_3"
+		},
+		{
+			"codepoint": 63708,
+			"name": "face_4"
+		},
+		{
+			"codepoint": 63709,
+			"name": "face_5"
+		},
+		{
+			"codepoint": 63710,
+			"name": "face_6"
+		},
+		{
+			"codepoint": 61262,
+			"name": "face_retouching_natural"
+		},
+		{
+			"codepoint": 61447,
+			"name": "face_retouching_off"
+		},
+		{
+			"codepoint": 62004,
+			"name": "facebook"
+		},
+		{
+			"codepoint": 61637,
+			"name": "fact_check"
+		},
+		{
+			"codepoint": 60348,
+			"name": "factory"
+		},
+		{
+			"codepoint": 61858,
+			"name": "family_restroom"
+		},
+		{
+			"codepoint": 57375,
+			"name": "fast_forward"
+		},
+		{
+			"codepoint": 57376,
+			"name": "fast_rewind"
+		},
+		{
+			"codepoint": 58746,
+			"name": "fastfood"
+		},
+		{
+			"codepoint": 59517,
+			"name": "favorite"
+		},
+		{
+			"codepoint": 59518,
+			"name": "favorite_border"
+		},
+		{
+			"codepoint": 59518,
+			"name": "favorite_outline"
+		},
+		{
+			"codepoint": 60120,
+			"name": "fax"
+		},
+		{
+			"codepoint": 57453,
+			"name": "featured_play_list"
+		},
+		{
+			"codepoint": 57454,
+			"name": "featured_video"
+		},
+		{
+			"codepoint": 61449,
+			"name": "feed"
+		},
+		{
+			"codepoint": 59519,
+			"name": "feedback"
+		},
+		{
+			"codepoint": 58768,
+			"name": "female"
+		},
+		{
+			"codepoint": 61942,
+			"name": "fence"
+		},
+		{
+			"codepoint": 60008,
+			"name": "festival"
+		},
+		{
+			"codepoint": 57437,
+			"name": "fiber_dvr"
+		},
+		{
+			"codepoint": 57441,
+			"name": "fiber_manual_record"
+		},
+		{
+			"codepoint": 57438,
+			"name": "fiber_new"
+		},
+		{
+			"codepoint": 57450,
+			"name": "fiber_pin"
+		},
+		{
+			"codepoint": 57442,
+			"name": "fiber_smart_record"
+		},
+		{
+			"codepoint": 57715,
+			"name": "file_copy"
+		},
+		{
+			"codepoint": 58052,
+			"name": "file_download"
+		},
+		{
+			"codepoint": 59818,
+			"name": "file_download_done"
+		},
+		{
+			"codepoint": 58622,
+			"name": "file_download_off"
+		},
+		{
+			"codepoint": 60147,
+			"name": "file_open"
+		},
+		{
+			"codepoint": 59918,
+			"name": "file_present"
+		},
+		{
+			"codepoint": 58054,
+			"name": "file_upload"
+		},
+		{
+			"codepoint": 63622,
+			"name": "file_upload_off"
+		},
+		{
+			"codepoint": 58323,
+			"name": "filter"
+		},
+		{
+			"codepoint": 58320,
+			"name": "filter_1"
+		},
+		{
+			"codepoint": 58321,
+			"name": "filter_2"
+		},
+		{
+			"codepoint": 58322,
+			"name": "filter_3"
+		},
+		{
+			"codepoint": 58324,
+			"name": "filter_4"
+		},
+		{
+			"codepoint": 58325,
+			"name": "filter_5"
+		},
+		{
+			"codepoint": 58326,
+			"name": "filter_6"
+		},
+		{
+			"codepoint": 58327,
+			"name": "filter_7"
+		},
+		{
+			"codepoint": 58328,
+			"name": "filter_8"
+		},
+		{
+			"codepoint": 58329,
+			"name": "filter_9"
+		},
+		{
+			"codepoint": 58330,
+			"name": "filter_9_plus"
+		},
+		{
+			"codepoint": 61263,
+			"name": "filter_alt"
+		},
+		{
+			"codepoint": 60210,
+			"name": "filter_alt_off"
+		},
+		{
+			"codepoint": 58331,
+			"name": "filter_b_and_w"
+		},
+		{
+			"codepoint": 58332,
+			"name": "filter_center_focus"
+		},
+		{
+			"codepoint": 58333,
+			"name": "filter_drama"
+		},
+		{
+			"codepoint": 58334,
+			"name": "filter_frames"
+		},
+		{
+			"codepoint": 58335,
+			"name": "filter_hdr"
+		},
+		{
+			"codepoint": 57682,
+			"name": "filter_list"
+		},
+		{
+			"codepoint": 59726,
+			"name": "filter_list_alt"
+		},
+		{
+			"codepoint": 60247,
+			"name": "filter_list_off"
+		},
+		{
+			"codepoint": 58336,
+			"name": "filter_none"
+		},
+		{
+			"codepoint": 58338,
+			"name": "filter_tilt_shift"
+		},
+		{
+			"codepoint": 58339,
+			"name": "filter_vintage"
+		},
+		{
+			"codepoint": 59520,
+			"name": "find_in_page"
+		},
+		{
+			"codepoint": 59521,
+			"name": "find_replace"
+		},
+		{
+			"codepoint": 59661,
+			"name": "fingerprint"
+		},
+		{
+			"codepoint": 61912,
+			"name": "fire_extinguisher"
+		},
+		{
+			"codepoint": 61859,
+			"name": "fire_hydrant"
+		},
+		{
+			"codepoint": 63729,
+			"name": "fire_hydrant_alt"
+		},
+		{
+			"codepoint": 63730,
+			"name": "fire_truck"
+		},
+		{
+			"codepoint": 59971,
+			"name": "fireplace"
+		},
+		{
+			"codepoint": 58844,
+			"name": "first_page"
+		},
+		{
+			"codepoint": 59920,
+			"name": "fit_screen"
+		},
+		{
+			"codepoint": 59435,
+			"name": "fitbit"
+		},
+		{
+			"codepoint": 60227,
+			"name": "fitness_center"
+		},
+		{
+			"codepoint": 57683,
+			"name": "flag"
+		},
+		{
+			"codepoint": 60152,
+			"name": "flag_circle"
+		},
+		{
+			"codepoint": 61264,
+			"name": "flaky"
+		},
+		{
+			"codepoint": 58340,
+			"name": "flare"
+		},
+		{
+			"codepoint": 58341,
+			"name": "flash_auto"
+		},
+		{
+			"codepoint": 58342,
+			"name": "flash_off"
+		},
+		{
+			"codepoint": 58343,
+			"name": "flash_on"
+		},
+		{
+			"codepoint": 61450,
+			"name": "flashlight_off"
+		},
+		{
+			"codepoint": 61451,
+			"name": "flashlight_on"
+		},
+		{
+			"codepoint": 61452,
+			"name": "flatware"
+		},
+		{
+			"codepoint": 58681,
+			"name": "flight"
+		},
+		{
+			"codepoint": 59339,
+			"name": "flight_class"
+		},
+		{
+			"codepoint": 59652,
+			"name": "flight_land"
+		},
+		{
+			"codepoint": 59653,
+			"name": "flight_takeoff"
+		},
+		{
+			"codepoint": 58344,
+			"name": "flip"
+		},
+		{
+			"codepoint": 59959,
+			"name": "flip_camera_android"
+		},
+		{
+			"codepoint": 59960,
+			"name": "flip_camera_ios"
+		},
+		{
+			"codepoint": 59522,
+			"name": "flip_to_back"
+		},
+		{
+			"codepoint": 59523,
+			"name": "flip_to_front"
+		},
+		{
+			"codepoint": 60390,
+			"name": "flood"
+		},
+		{
+			"codepoint": 60465,
+			"name": "flourescent"
+		},
+		{
+			"codepoint": 61453,
+			"name": "flourescent"
+		},
+		{
+			"codepoint": 60465,
+			"name": "fluorescent"
+		},
+		{
+			"codepoint": 57355,
+			"name": "flutter_dash"
+		},
+		{
+			"codepoint": 61454,
+			"name": "fmd_bad"
+		},
+		{
+			"codepoint": 61455,
+			"name": "fmd_good"
+		},
+		{
+			"codepoint": 59416,
+			"name": "foggy"
+		},
+		{
+			"codepoint": 58055,
+			"name": "folder"
+		},
+		{
+			"codepoint": 60349,
+			"name": "folder_copy"
+		},
+		{
+			"codepoint": 60212,
+			"name": "folder_delete"
+		},
+		{
+			"codepoint": 60291,
+			"name": "folder_off"
+		},
+		{
+			"codepoint": 58056,
+			"name": "folder_open"
+		},
+		{
+			"codepoint": 58057,
+			"name": "folder_shared"
+		},
+		{
+			"codepoint": 58903,
+			"name": "folder_special"
+		},
+		{
+			"codepoint": 60204,
+			"name": "folder_zip"
+		},
+		{
+			"codepoint": 61986,
+			"name": "follow_the_signs"
+		},
+		{
+			"codepoint": 57703,
+			"name": "font_download"
+		},
+		{
+			"codepoint": 58617,
+			"name": "font_download_off"
+		},
+		{
+			"codepoint": 61938,
+			"name": "food_bank"
+		},
+		{
+			"codepoint": 60057,
+			"name": "forest"
+		},
+		{
+			"codepoint": 60320,
+			"name": "fork_left"
+		},
+		{
+			"codepoint": 60332,
+			"name": "fork_right"
+		},
+		{
+			"codepoint": 63592,
+			"name": "forklift"
+		},
+		{
+			"codepoint": 57908,
+			"name": "format_align_center"
+		},
+		{
+			"codepoint": 57909,
+			"name": "format_align_justify"
+		},
+		{
+			"codepoint": 57910,
+			"name": "format_align_left"
+		},
+		{
+			"codepoint": 57911,
+			"name": "format_align_right"
+		},
+		{
+			"codepoint": 57912,
+			"name": "format_bold"
+		},
+		{
+			"codepoint": 57913,
+			"name": "format_clear"
+		},
+		{
+			"codepoint": 57914,
+			"name": "format_color_fill"
+		},
+		{
+			"codepoint": 57915,
+			"name": "format_color_reset"
+		},
+		{
+			"codepoint": 57916,
+			"name": "format_color_text"
+		},
+		{
+			"codepoint": 57917,
+			"name": "format_indent_decrease"
+		},
+		{
+			"codepoint": 57918,
+			"name": "format_indent_increase"
+		},
+		{
+			"codepoint": 57919,
+			"name": "format_italic"
+		},
+		{
+			"codepoint": 57920,
+			"name": "format_line_spacing"
+		},
+		{
+			"codepoint": 57921,
+			"name": "format_list_bulleted"
+		},
+		{
+			"codepoint": 63561,
+			"name": "format_list_bulleted_add"
+		},
+		{
+			"codepoint": 57922,
+			"name": "format_list_numbered"
+		},
+		{
+			"codepoint": 57959,
+			"name": "format_list_numbered_rtl"
+		},
+		{
+			"codepoint": 60261,
+			"name": "format_overline"
+		},
+		{
+			"codepoint": 57923,
+			"name": "format_paint"
+		},
+		{
+			"codepoint": 57924,
+			"name": "format_quote"
+		},
+		{
+			"codepoint": 57950,
+			"name": "format_shapes"
+		},
+		{
+			"codepoint": 57925,
+			"name": "format_size"
+		},
+		{
+			"codepoint": 57926,
+			"name": "format_strikethrough"
+		},
+		{
+			"codepoint": 57927,
+			"name": "format_textdirection_l_to_r"
+		},
+		{
+			"codepoint": 57928,
+			"name": "format_textdirection_r_to_l"
+		},
+		{
+			"codepoint": 57929,
+			"name": "format_underline"
+		},
+		{
+			"codepoint": 57929,
+			"name": "format_underlined"
+		},
+		{
+			"codepoint": 60077,
+			"name": "fort"
+		},
+		{
+			"codepoint": 57535,
+			"name": "forum"
+		},
+		{
+			"codepoint": 57684,
+			"name": "forward"
+		},
+		{
+			"codepoint": 57430,
+			"name": "forward_10"
+		},
+		{
+			"codepoint": 57431,
+			"name": "forward_30"
+		},
+		{
+			"codepoint": 57432,
+			"name": "forward_5"
+		},
+		{
+			"codepoint": 61831,
+			"name": "forward_to_inbox"
+		},
+		{
+			"codepoint": 61952,
+			"name": "foundation"
+		},
+		{
+			"codepoint": 60228,
+			"name": "free_breakfast"
+		},
+		{
+			"codepoint": 59208,
+			"name": "free_cancellation"
+		},
+		{
+			"codepoint": 59241,
+			"name": "front_hand"
+		},
+		{
+			"codepoint": 63593,
+			"name": "front_loader"
+		},
+		{
+			"codepoint": 58832,
+			"name": "fullscreen"
+		},
+		{
+			"codepoint": 58833,
+			"name": "fullscreen_exit"
+		},
+		{
+			"codepoint": 57930,
+			"name": "functions"
+		},
+		{
+			"codepoint": 61456,
+			"name": "g_mobiledata"
+		},
+		{
+			"codepoint": 59687,
+			"name": "g_translate"
+		},
+		{
+			"codepoint": 58127,
+			"name": "gamepad"
+		},
+		{
+			"codepoint": 57377,
+			"name": "games"
+		},
+		{
+			"codepoint": 61457,
+			"name": "garage"
+		},
+		{
+			"codepoint": 60441,
+			"name": "gas_meter"
+		},
+		{
+			"codepoint": 59662,
+			"name": "gavel"
+		},
+		{
+			"codepoint": 59209,
+			"name": "generating_tokens"
+		},
+		{
+			"codepoint": 57685,
+			"name": "gesture"
+		},
+		{
+			"codepoint": 59524,
+			"name": "get_app"
+		},
+		{
+			"codepoint": 59656,
+			"name": "gif"
+		},
+		{
+			"codepoint": 59299,
+			"name": "gif_box"
+		},
+		{
+			"codepoint": 60264,
+			"name": "girl"
+		},
+		{
+			"codepoint": 58763,
+			"name": "gite"
+		},
+		{
+			"codepoint": 1114109,
+			"name": "goat"
+		},
+		{
+			"codepoint": 60229,
+			"name": "golf_course"
+		},
+		{
+			"codepoint": 61458,
+			"name": "gpp_bad"
+		},
+		{
+			"codepoint": 61459,
+			"name": "gpp_good"
+		},
+		{
+			"codepoint": 61460,
+			"name": "gpp_maybe"
+		},
+		{
+			"codepoint": 57779,
+			"name": "gps_fixed"
+		},
+		{
+			"codepoint": 57780,
+			"name": "gps_not_fixed"
+		},
+		{
+			"codepoint": 57781,
+			"name": "gps_off"
+		},
+		{
+			"codepoint": 59525,
+			"name": "grade"
+		},
+		{
+			"codepoint": 58345,
+			"name": "gradient"
+		},
+		{
+			"codepoint": 59983,
+			"name": "grading"
+		},
+		{
+			"codepoint": 58346,
+			"name": "grain"
+		},
+		{
+			"codepoint": 57784,
+			"name": "graphic_eq"
+		},
+		{
+			"codepoint": 61957,
+			"name": "grass"
+		},
+		{
+			"codepoint": 61461,
+			"name": "grid_3x3"
+		},
+		{
+			"codepoint": 61462,
+			"name": "grid_4x4"
+		},
+		{
+			"codepoint": 61463,
+			"name": "grid_goldenratio"
+		},
+		{
+			"codepoint": 58347,
+			"name": "grid_off"
+		},
+		{
+			"codepoint": 58348,
+			"name": "grid_on"
+		},
+		{
+			"codepoint": 59824,
+			"name": "grid_view"
+		},
+		{
+			"codepoint": 59375,
+			"name": "group"
+		},
+		{
+			"codepoint": 59376,
+			"name": "group_add"
+		},
+		{
+			"codepoint": 59207,
+			"name": "group_off"
+		},
+		{
+			"codepoint": 59309,
+			"name": "group_remove"
+		},
+		{
+			"codepoint": 59526,
+			"name": "group_work"
+		},
+		{
+			"codepoint": 62003,
+			"name": "groups"
+		},
+		{
+			"codepoint": 63711,
+			"name": "groups_2"
+		},
+		{
+			"codepoint": 63712,
+			"name": "groups_3"
+		},
+		{
+			"codepoint": 61464,
+			"name": "h_mobiledata"
+		},
+		{
+			"codepoint": 61465,
+			"name": "h_plus_mobiledata"
+		},
+		{
+			"codepoint": 59825,
+			"name": "hail"
+		},
+		{
+			"codepoint": 60363,
+			"name": "handshake"
+		},
+		{
+			"codepoint": 61707,
+			"name": "handyman"
+		},
+		{
+			"codepoint": 59993,
+			"name": "hardware"
+		},
+		{
+			"codepoint": 57426,
+			"name": "hd"
+		},
+		{
+			"codepoint": 61466,
+			"name": "hdr_auto"
+		},
+		{
+			"codepoint": 61467,
+			"name": "hdr_auto_select"
+		},
+		{
+			"codepoint": 61265,
+			"name": "hdr_enhanced_select"
+		},
+		{
+			"codepoint": 58349,
+			"name": "hdr_off"
+		},
+		{
+			"codepoint": 61468,
+			"name": "hdr_off_select"
+		},
+		{
+			"codepoint": 58350,
+			"name": "hdr_on"
+		},
+		{
+			"codepoint": 61469,
+			"name": "hdr_on_select"
+		},
+		{
+			"codepoint": 61470,
+			"name": "hdr_plus"
+		},
+		{
+			"codepoint": 58353,
+			"name": "hdr_strong"
+		},
+		{
+			"codepoint": 58354,
+			"name": "hdr_weak"
+		},
+		{
+			"codepoint": 61471,
+			"name": "headphones"
+		},
+		{
+			"codepoint": 61472,
+			"name": "headphones_battery"
+		},
+		{
+			"codepoint": 58128,
+			"name": "headset"
+		},
+		{
+			"codepoint": 58129,
+			"name": "headset_mic"
+		},
+		{
+			"codepoint": 58170,
+			"name": "headset_off"
+		},
+		{
+			"codepoint": 58355,
+			"name": "healing"
+		},
+		{
+			"codepoint": 57813,
+			"name": "health_and_safety"
+		},
+		{
+			"codepoint": 57379,
+			"name": "hearing"
+		},
+		{
+			"codepoint": 61700,
+			"name": "hearing_disabled"
+		},
+		{
+			"codepoint": 60098,
+			"name": "heart_broken"
+		},
+		{
+			"codepoint": 60440,
+			"name": "heat_pump"
+		},
+		{
+			"codepoint": 59926,
+			"name": "height"
+		},
+		{
+			"codepoint": 59527,
+			"name": "help"
+		},
+		{
+			"codepoint": 61888,
+			"name": "help_center"
+		},
+		{
+			"codepoint": 59645,
+			"name": "help_outline"
+		},
+		{
+			"codepoint": 61473,
+			"name": "hevc"
+		},
+		{
+			"codepoint": 60217,
+			"name": "hexagon"
+		},
+		{
+			"codepoint": 61474,
+			"name": "hide_image"
+		},
+		{
+			"codepoint": 61475,
+			"name": "hide_source"
+		},
+		{
+			"codepoint": 57380,
+			"name": "high_quality"
+		},
+		{
+			"codepoint": 57951,
+			"name": "highlight"
+		},
+		{
+			"codepoint": 61266,
+			"name": "highlight_alt"
+		},
+		{
+			"codepoint": 59528,
+			"name": "highlight_off"
+		},
+		{
+			"codepoint": 59528,
+			"name": "highlight_remove"
+		},
+		{
+			"codepoint": 58634,
+			"name": "hiking"
+		},
+		{
+			"codepoint": 59529,
+			"name": "history"
+		},
+		{
+			"codepoint": 59966,
+			"name": "history_edu"
+		},
+		{
+			"codepoint": 61821,
+			"name": "history_toggle_off"
+		},
+		{
+			"codepoint": 60070,
+			"name": "hive"
+		},
+		{
+			"codepoint": 60298,
+			"name": "hls"
+		},
+		{
+			"codepoint": 60300,
+			"name": "hls_off"
+		},
+		{
+			"codepoint": 58762,
+			"name": "holiday_village"
+		},
+		{
+			"codepoint": 59530,
+			"name": "home"
+		},
+		{
+			"codepoint": 59826,
+			"name": "home_filled"
+		},
+		{
+			"codepoint": 61476,
+			"name": "home_max"
+		},
+		{
+			"codepoint": 61477,
+			"name": "home_mini"
+		},
+		{
+			"codepoint": 61696,
+			"name": "home_repair_service"
+		},
+		{
+			"codepoint": 59913,
+			"name": "home_work"
+		},
+		{
+			"codepoint": 57364,
+			"name": "horizontal_distribute"
+		},
+		{
+			"codepoint": 61704,
+			"name": "horizontal_rule"
+		},
+		{
+			"codepoint": 59719,
+			"name": "horizontal_split"
+		},
+		{
+			"codepoint": 60230,
+			"name": "hot_tub"
+		},
+		{
+			"codepoint": 58682,
+			"name": "hotel"
+		},
+		{
+			"codepoint": 59203,
+			"name": "hotel_class"
+		},
+		{
+			"codepoint": 59996,
+			"name": "hourglass_bottom"
+		},
+		{
+			"codepoint": 61267,
+			"name": "hourglass_disabled"
+		},
+		{
+			"codepoint": 59531,
+			"name": "hourglass_empty"
+		},
+		{
+			"codepoint": 59532,
+			"name": "hourglass_full"
+		},
+		{
+			"codepoint": 59995,
+			"name": "hourglass_top"
+		},
+		{
+			"codepoint": 59972,
+			"name": "house"
+		},
+		{
+			"codepoint": 61954,
+			"name": "house_siding"
+		},
+		{
+			"codepoint": 58756,
+			"name": "houseboat"
+		},
+		{
+			"codepoint": 57716,
+			"name": "how_to_reg"
+		},
+		{
+			"codepoint": 57717,
+			"name": "how_to_vote"
+		},
+		{
+			"codepoint": 60286,
+			"name": "html"
+		},
+		{
+			"codepoint": 59650,
+			"name": "http"
+		},
+		{
+			"codepoint": 59533,
+			"name": "https"
+		},
+		{
+			"codepoint": 59892,
+			"name": "hub"
+		},
+		{
+			"codepoint": 61710,
+			"name": "hvac"
+		},
+		{
+			"codepoint": 58635,
+			"name": "ice_skating"
+		},
+		{
+			"codepoint": 60009,
+			"name": "icecream"
+		},
+		{
+			"codepoint": 58356,
+			"name": "image"
+		},
+		{
+			"codepoint": 58357,
+			"name": "image_aspect_ratio"
+		},
+		{
+			"codepoint": 61718,
+			"name": "image_not_supported"
+		},
+		{
+			"codepoint": 58431,
+			"name": "image_search"
+		},
+		{
+			"codepoint": 59828,
+			"name": "imagesearch_roller"
+		},
+		{
+			"codepoint": 57568,
+			"name": "import_contacts"
+		},
+		{
+			"codepoint": 57539,
+			"name": "import_export"
+		},
+		{
+			"codepoint": 59666,
+			"name": "important_devices"
+		},
+		{
+			"codepoint": 57686,
+			"name": "inbox"
+		},
+		{
+			"codepoint": 59291,
+			"name": "incomplete_circle"
+		},
+		{
+			"codepoint": 59657,
+			"name": "indeterminate_check_box"
+		},
+		{
+			"codepoint": 59534,
+			"name": "info"
+		},
+		{
+			"codepoint": 59535,
+			"name": "info_outline"
+		},
+		{
+			"codepoint": 59536,
+			"name": "input"
+		},
+		{
+			"codepoint": 57931,
+			"name": "insert_chart"
+		},
+		{
+			"codepoint": 57962,
+			"name": "insert_chart_outlined"
+		},
+		{
+			"codepoint": 57932,
+			"name": "insert_comment"
+		},
+		{
+			"codepoint": 57933,
+			"name": "insert_drive_file"
+		},
+		{
+			"codepoint": 57934,
+			"name": "insert_emoticon"
+		},
+		{
+			"codepoint": 57935,
+			"name": "insert_invitation"
+		},
+		{
+			"codepoint": 57936,
+			"name": "insert_link"
+		},
+		{
+			"codepoint": 60106,
+			"name": "insert_page_break"
+		},
+		{
+			"codepoint": 57937,
+			"name": "insert_photo"
+		},
+		{
+			"codepoint": 61586,
+			"name": "insights"
+		},
+		{
+			"codepoint": 60273,
+			"name": "install_desktop"
+		},
+		{
+			"codepoint": 60274,
+			"name": "install_mobile"
+		},
+		{
+			"codepoint": 61268,
+			"name": "integration_instructions"
+		},
+		{
+			"codepoint": 59336,
+			"name": "interests"
+		},
+		{
+			"codepoint": 59451,
+			"name": "interpreter_mode"
+		},
+		{
+			"codepoint": 57721,
+			"name": "inventory"
+		},
+		{
+			"codepoint": 57761,
+			"name": "inventory_2"
+		},
+		{
+			"codepoint": 59537,
+			"name": "invert_colors"
+		},
+		{
+			"codepoint": 57540,
+			"name": "invert_colors_off"
+		},
+		{
+			"codepoint": 59537,
+			"name": "invert_colors_on"
+		},
+		{
+			"codepoint": 59064,
+			"name": "ios_share"
+		},
+		{
+			"codepoint": 58755,
+			"name": "iron"
+		},
+		{
+			"codepoint": 58358,
+			"name": "iso"
+		},
+		{
+			"codepoint": 60284,
+			"name": "javascript"
+		},
+		{
+			"codepoint": 60139,
+			"name": "join_full"
+		},
+		{
+			"codepoint": 60148,
+			"name": "join_inner"
+		},
+		{
+			"codepoint": 60146,
+			"name": "join_left"
+		},
+		{
+			"codepoint": 60138,
+			"name": "join_right"
+		},
+		{
+			"codepoint": 58636,
+			"name": "kayaking"
+		},
+		{
+			"codepoint": 59458,
+			"name": "kebab_dining"
+		},
+		{
+			"codepoint": 59196,
+			"name": "key"
+		},
+		{
+			"codepoint": 60292,
+			"name": "key_off"
+		},
+		{
+			"codepoint": 58130,
+			"name": "keyboard"
+		},
+		{
+			"codepoint": 61480,
+			"name": "keyboard_alt"
+		},
+		{
+			"codepoint": 58131,
+			"name": "keyboard_arrow_down"
+		},
+		{
+			"codepoint": 58132,
+			"name": "keyboard_arrow_left"
+		},
+		{
+			"codepoint": 58133,
+			"name": "keyboard_arrow_right"
+		},
+		{
+			"codepoint": 58134,
+			"name": "keyboard_arrow_up"
+		},
+		{
+			"codepoint": 58135,
+			"name": "keyboard_backspace"
+		},
+		{
+			"codepoint": 58136,
+			"name": "keyboard_capslock"
+		},
+		{
+			"codepoint": 60128,
+			"name": "keyboard_command"
+		},
+		{
+			"codepoint": 60135,
+			"name": "keyboard_command_key"
+		},
+		{
+			"codepoint": 58835,
+			"name": "keyboard_control"
+		},
+		{
+			"codepoint": 60134,
+			"name": "keyboard_control_key"
+		},
+		{
+			"codepoint": 60112,
+			"name": "keyboard_double_arrow_down"
+		},
+		{
+			"codepoint": 60099,
+			"name": "keyboard_double_arrow_left"
+		},
+		{
+			"codepoint": 60105,
+			"name": "keyboard_double_arrow_right"
+		},
+		{
+			"codepoint": 60111,
+			"name": "keyboard_double_arrow_up"
+		},
+		{
+			"codepoint": 58138,
+			"name": "keyboard_hide"
+		},
+		{
+			"codepoint": 60127,
+			"name": "keyboard_option"
+		},
+		{
+			"codepoint": 60136,
+			"name": "keyboard_option_key"
+		},
+		{
+			"codepoint": 58139,
+			"name": "keyboard_return"
+		},
+		{
+			"codepoint": 58140,
+			"name": "keyboard_tab"
+		},
+		{
+			"codepoint": 58141,
+			"name": "keyboard_voice"
+		},
+		{
+			"codepoint": 59973,
+			"name": "king_bed"
+		},
+		{
+			"codepoint": 60231,
+			"name": "kitchen"
+		},
+		{
+			"codepoint": 58637,
+			"name": "kitesurfing"
+		},
+		{
+			"codepoint": 59538,
+			"name": "label"
+		},
+		{
+			"codepoint": 59703,
+			"name": "label_important"
+		},
+		{
+			"codepoint": 59720,
+			"name": "label_important_outline"
+		},
+		{
+			"codepoint": 59830,
+			"name": "label_off"
+		},
+		{
+			"codepoint": 59539,
+			"name": "label_outline"
+		},
+		{
+			"codepoint": 60207,
+			"name": "lan"
+		},
+		{
+			"codepoint": 58359,
+			"name": "landscape"
+		},
+		{
+			"codepoint": 60375,
+			"name": "landslide"
+		},
+		{
+			"codepoint": 59540,
+			"name": "language"
+		},
+		{
+			"codepoint": 58142,
+			"name": "laptop"
+		},
+		{
+			"codepoint": 58143,
+			"name": "laptop_chromebook"
+		},
+		{
+			"codepoint": 58144,
+			"name": "laptop_mac"
+		},
+		{
+			"codepoint": 58145,
+			"name": "laptop_windows"
+		},
+		{
+			"codepoint": 58845,
+			"name": "last_page"
+		},
+		{
+			"codepoint": 59541,
+			"name": "launch"
+		},
+		{
+			"codepoint": 58683,
+			"name": "layers"
+		},
+		{
+			"codepoint": 58684,
+			"name": "layers_clear"
+		},
+		{
+			"codepoint": 61964,
+			"name": "leaderboard"
+		},
+		{
+			"codepoint": 58360,
+			"name": "leak_add"
+		},
+		{
+			"codepoint": 58361,
+			"name": "leak_remove"
+		},
+		{
+			"codepoint": 61979,
+			"name": "leave_bags_at_home"
+		},
+		{
+			"codepoint": 61723,
+			"name": "legend_toggle"
+		},
+		{
+			"codepoint": 58362,
+			"name": "lens"
+		},
+		{
+			"codepoint": 61481,
+			"name": "lens_blur"
+		},
+		{
+			"codepoint": 57390,
+			"name": "library_add"
+		},
+		{
+			"codepoint": 59831,
+			"name": "library_add_check"
+		},
+		{
+			"codepoint": 57391,
+			"name": "library_books"
+		},
+		{
+			"codepoint": 57392,
+			"name": "library_music"
+		},
+		{
+			"codepoint": 61482,
+			"name": "light"
+		},
+		{
+			"codepoint": 58648,
+			"name": "light_mode"
+		},
+		{
+			"codepoint": 57584,
+			"name": "lightbulb"
+		},
+		{
+			"codepoint": 60414,
+			"name": "lightbulb_circle"
+		},
+		{
+			"codepoint": 59663,
+			"name": "lightbulb_outline"
+		},
+		{
+			"codepoint": 60058,
+			"name": "line_axis"
+		},
+		{
+			"codepoint": 59673,
+			"name": "line_style"
+		},
+		{
+			"codepoint": 59674,
+			"name": "line_weight"
+		},
+		{
+			"codepoint": 57952,
+			"name": "linear_scale"
+		},
+		{
+			"codepoint": 57687,
+			"name": "link"
+		},
+		{
+			"codepoint": 57711,
+			"name": "link_off"
+		},
+		{
+			"codepoint": 58424,
+			"name": "linked_camera"
+		},
+		{
+			"codepoint": 60000,
+			"name": "liquor"
+		},
+		{
+			"codepoint": 59542,
+			"name": "list"
+		},
+		{
+			"codepoint": 57582,
+			"name": "list_alt"
+		},
+		{
+			"codepoint": 57542,
+			"name": "live_help"
+		},
+		{
+			"codepoint": 58937,
+			"name": "live_tv"
+		},
+		{
+			"codepoint": 61483,
+			"name": "living"
+		},
+		{
+			"codepoint": 58687,
+			"name": "local_activity"
+		},
+		{
+			"codepoint": 58685,
+			"name": "local_airport"
+		},
+		{
+			"codepoint": 58686,
+			"name": "local_atm"
+		},
+		{
+			"codepoint": 58687,
+			"name": "local_attraction"
+		},
+		{
+			"codepoint": 58688,
+			"name": "local_bar"
+		},
+		{
+			"codepoint": 58689,
+			"name": "local_cafe"
+		},
+		{
+			"codepoint": 58690,
+			"name": "local_car_wash"
+		},
+		{
+			"codepoint": 58691,
+			"name": "local_convenience_store"
+		},
+		{
+			"codepoint": 58710,
+			"name": "local_dining"
+		},
+		{
+			"codepoint": 58692,
+			"name": "local_drink"
+		},
+		{
+			"codepoint": 61269,
+			"name": "local_fire_department"
+		},
+		{
+			"codepoint": 58693,
+			"name": "local_florist"
+		},
+		{
+			"codepoint": 58694,
+			"name": "local_gas_station"
+		},
+		{
+			"codepoint": 58695,
+			"name": "local_grocery_store"
+		},
+		{
+			"codepoint": 58696,
+			"name": "local_hospital"
+		},
+		{
+			"codepoint": 58697,
+			"name": "local_hotel"
+		},
+		{
+			"codepoint": 58698,
+			"name": "local_laundry_service"
+		},
+		{
+			"codepoint": 58699,
+			"name": "local_library"
+		},
+		{
+			"codepoint": 58700,
+			"name": "local_mall"
+		},
+		{
+			"codepoint": 58701,
+			"name": "local_movies"
+		},
+		{
+			"codepoint": 58702,
+			"name": "local_offer"
+		},
+		{
+			"codepoint": 58703,
+			"name": "local_parking"
+		},
+		{
+			"codepoint": 58704,
+			"name": "local_pharmacy"
+		},
+		{
+			"codepoint": 58705,
+			"name": "local_phone"
+		},
+		{
+			"codepoint": 58706,
+			"name": "local_pizza"
+		},
+		{
+			"codepoint": 58707,
+			"name": "local_play"
+		},
+		{
+			"codepoint": 61270,
+			"name": "local_police"
+		},
+		{
+			"codepoint": 58708,
+			"name": "local_post_office"
+		},
+		{
+			"codepoint": 58709,
+			"name": "local_print_shop"
+		},
+		{
+			"codepoint": 58709,
+			"name": "local_printshop"
+		},
+		{
+			"codepoint": 58710,
+			"name": "local_restaurant"
+		},
+		{
+			"codepoint": 58711,
+			"name": "local_see"
+		},
+		{
+			"codepoint": 58712,
+			"name": "local_shipping"
+		},
+		{
+			"codepoint": 58713,
+			"name": "local_taxi"
+		},
+		{
+			"codepoint": 59377,
+			"name": "location_city"
+		},
+		{
+			"codepoint": 57782,
+			"name": "location_disabled"
+		},
+		{
+			"codepoint": 58714,
+			"name": "location_history"
+		},
+		{
+			"codepoint": 57543,
+			"name": "location_off"
+		},
+		{
+			"codepoint": 57544,
+			"name": "location_on"
+		},
+		{
+			"codepoint": 61915,
+			"name": "location_pin"
+		},
+		{
+			"codepoint": 57783,
+			"name": "location_searching"
+		},
+		{
+			"codepoint": 59543,
+			"name": "lock"
+		},
+		{
+			"codepoint": 61271,
+			"name": "lock_clock"
+		},
+		{
+			"codepoint": 59544,
+			"name": "lock_open"
+		},
+		{
+			"codepoint": 59545,
+			"name": "lock_outline"
+		},
+		{
+			"codepoint": 63731,
+			"name": "lock_person"
+		},
+		{
+			"codepoint": 60126,
+			"name": "lock_reset"
+		},
+		{
+			"codepoint": 60023,
+			"name": "login"
+		},
+		{
+			"codepoint": 60118,
+			"name": "logo_dev"
+		},
+		{
+			"codepoint": 59834,
+			"name": "logout"
+		},
+		{
+			"codepoint": 58364,
+			"name": "looks"
+		},
+		{
+			"codepoint": 58363,
+			"name": "looks_3"
+		},
+		{
+			"codepoint": 58365,
+			"name": "looks_4"
+		},
+		{
+			"codepoint": 58366,
+			"name": "looks_5"
+		},
+		{
+			"codepoint": 58367,
+			"name": "looks_6"
+		},
+		{
+			"codepoint": 58368,
+			"name": "looks_one"
+		},
+		{
+			"codepoint": 58369,
+			"name": "looks_two"
+		},
+		{
+			"codepoint": 57384,
+			"name": "loop"
+		},
+		{
+			"codepoint": 58370,
+			"name": "loupe"
+		},
+		{
+			"codepoint": 57709,
+			"name": "low_priority"
+		},
+		{
+			"codepoint": 59546,
+			"name": "loyalty"
+		},
+		{
+			"codepoint": 61484,
+			"name": "lte_mobiledata"
+		},
+		{
+			"codepoint": 61485,
+			"name": "lte_plus_mobiledata"
+		},
+		{
+			"codepoint": 62005,
+			"name": "luggage"
+		},
+		{
+			"codepoint": 60001,
+			"name": "lunch_dining"
+		},
+		{
+			"codepoint": 60427,
+			"name": "lyrics"
+		},
+		{
+			"codepoint": 63698,
+			"name": "macro_off"
+		},
+		{
+			"codepoint": 57688,
+			"name": "mail"
+		},
+		{
+			"codepoint": 60426,
+			"name": "mail_lock"
+		},
+		{
+			"codepoint": 57569,
+			"name": "mail_outline"
+		},
+		{
+			"codepoint": 58766,
+			"name": "male"
+		},
+		{
+			"codepoint": 58603,
+			"name": "man"
+		},
+		{
+			"codepoint": 63713,
+			"name": "man_2"
+		},
+		{
+			"codepoint": 63714,
+			"name": "man_3"
+		},
+		{
+			"codepoint": 63715,
+			"name": "man_4"
+		},
+		{
+			"codepoint": 61486,
+			"name": "manage_accounts"
+		},
+		{
+			"codepoint": 60391,
+			"name": "manage_history"
+		},
+		{
+			"codepoint": 61487,
+			"name": "manage_search"
+		},
+		{
+			"codepoint": 58715,
+			"name": "map"
+		},
+		{
+			"codepoint": 61488,
+			"name": "maps_home_work"
+		},
+		{
+			"codepoint": 61272,
+			"name": "maps_ugc"
+		},
+		{
+			"codepoint": 59835,
+			"name": "margin"
+		},
+		{
+			"codepoint": 59836,
+			"name": "mark_as_unread"
+		},
+		{
+			"codepoint": 61835,
+			"name": "mark_chat_read"
+		},
+		{
+			"codepoint": 61833,
+			"name": "mark_chat_unread"
+		},
+		{
+			"codepoint": 61836,
+			"name": "mark_email_read"
+		},
+		{
+			"codepoint": 61834,
+			"name": "mark_email_unread"
+		},
+		{
+			"codepoint": 60317,
+			"name": "mark_unread_chat_alt"
+		},
+		{
+			"codepoint": 57689,
+			"name": "markunread"
+		},
+		{
+			"codepoint": 59547,
+			"name": "markunread_mailbox"
+		},
+		{
+			"codepoint": 61976,
+			"name": "masks"
+		},
+		{
+			"codepoint": 59696,
+			"name": "maximize"
+		},
+		{
+			"codepoint": 61489,
+			"name": "media_bluetooth_off"
+		},
+		{
+			"codepoint": 61490,
+			"name": "media_bluetooth_on"
+		},
+		{
+			"codepoint": 61351,
+			"name": "mediation"
+		},
+		{
+			"codepoint": 60397,
+			"name": "medical_information"
+		},
+		{
+			"codepoint": 61705,
+			"name": "medical_services"
+		},
+		{
+			"codepoint": 61491,
+			"name": "medication"
+		},
+		{
+			"codepoint": 60039,
+			"name": "medication_liquid"
+		},
+		{
+			"codepoint": 60239,
+			"name": "meeting_room"
+		},
+		{
+			"codepoint": 58146,
+			"name": "memory"
+		},
+		{
+			"codepoint": 58834,
+			"name": "menu"
+		},
+		{
+			"codepoint": 59929,
+			"name": "menu_book"
+		},
+		{
+			"codepoint": 59837,
+			"name": "menu_open"
+		},
+		{
+			"codepoint": 60312,
+			"name": "merge"
+		},
+		{
+			"codepoint": 57938,
+			"name": "merge_type"
+		},
+		{
+			"codepoint": 57545,
+			"name": "message"
+		},
+		{
+			"codepoint": 57546,
+			"name": "messenger"
+		},
+		{
+			"codepoint": 57547,
+			"name": "messenger_outline"
+		},
+		{
+			"codepoint": 57385,
+			"name": "mic"
+		},
+		{
+			"codepoint": 61273,
+			"name": "mic_external_off"
+		},
+		{
+			"codepoint": 61274,
+			"name": "mic_external_on"
+		},
+		{
+			"codepoint": 57386,
+			"name": "mic_none"
+		},
+		{
+			"codepoint": 57387,
+			"name": "mic_off"
+		},
+		{
+			"codepoint": 61956,
+			"name": "microwave"
+		},
+		{
+			"codepoint": 59967,
+			"name": "military_tech"
+		},
+		{
+			"codepoint": 59697,
+			"name": "minimize"
+		},
+		{
+			"codepoint": 60401,
+			"name": "minor_crash"
+		},
+		{
+			"codepoint": 61708,
+			"name": "miscellaneous_services"
+		},
+		{
+			"codepoint": 57459,
+			"name": "missed_video_call"
+		},
+		{
+			"codepoint": 58904,
+			"name": "mms"
+		},
+		{
+			"codepoint": 57856,
+			"name": "mobile_friendly"
+		},
+		{
+			"codepoint": 57857,
+			"name": "mobile_off"
+		},
+		{
+			"codepoint": 57575,
+			"name": "mobile_screen_share"
+		},
+		{
+			"codepoint": 61492,
+			"name": "mobiledata_off"
+		},
+		{
+			"codepoint": 61591,
+			"name": "mode"
+		},
+		{
+			"codepoint": 57939,
+			"name": "mode_comment"
+		},
+		{
+			"codepoint": 57940,
+			"name": "mode_edit"
+		},
+		{
+			"codepoint": 61493,
+			"name": "mode_edit_outline"
+		},
+		{
+			"codepoint": 60439,
+			"name": "mode_fan_off"
+		},
+		{
+			"codepoint": 61494,
+			"name": "mode_night"
+		},
+		{
+			"codepoint": 59342,
+			"name": "mode_of_travel"
+		},
+		{
+			"codepoint": 61495,
+			"name": "mode_standby"
+		},
+		{
+			"codepoint": 61647,
+			"name": "model_training"
+		},
+		{
+			"codepoint": 57955,
+			"name": "monetization_on"
+		},
+		{
+			"codepoint": 58749,
+			"name": "money"
+		},
+		{
+			"codepoint": 57948,
+			"name": "money_off"
+		},
+		{
+			"codepoint": 61496,
+			"name": "money_off_csred"
+		},
+		{
+			"codepoint": 61275,
+			"name": "monitor"
+		},
+		{
+			"codepoint": 60066,
+			"name": "monitor_heart"
+		},
+		{
+			"codepoint": 61497,
+			"name": "monitor_weight"
+		},
+		{
+			"codepoint": 58371,
+			"name": "monochrome_photos"
+		},
+		{
+			"codepoint": 59378,
+			"name": "mood"
+		},
+		{
+			"codepoint": 59379,
+			"name": "mood_bad"
+		},
+		{
+			"codepoint": 60200,
+			"name": "moped"
+		},
+		{
+			"codepoint": 58905,
+			"name": "more"
+		},
+		{
+			"codepoint": 58835,
+			"name": "more_horiz"
+		},
+		{
+			"codepoint": 59997,
+			"name": "more_time"
+		},
+		{
+			"codepoint": 58836,
+			"name": "more_vert"
+		},
+		{
+			"codepoint": 60082,
+			"name": "mosque"
+		},
+		{
+			"codepoint": 61498,
+			"name": "motion_photos_auto"
+		},
+		{
+			"codepoint": 59840,
+			"name": "motion_photos_off"
+		},
+		{
+			"codepoint": 59841,
+			"name": "motion_photos_on"
+		},
+		{
+			"codepoint": 61991,
+			"name": "motion_photos_pause"
+		},
+		{
+			"codepoint": 59842,
+			"name": "motion_photos_paused"
+		},
+		{
+			"codepoint": 59675,
+			"name": "motorcycle"
+		},
+		{
+			"codepoint": 58147,
+			"name": "mouse"
+		},
+		{
+			"codepoint": 60257,
+			"name": "move_down"
+		},
+		{
+			"codepoint": 57704,
+			"name": "move_to_inbox"
+		},
+		{
+			"codepoint": 60260,
+			"name": "move_up"
+		},
+		{
+			"codepoint": 57388,
+			"name": "movie"
+		},
+		{
+			"codepoint": 58372,
+			"name": "movie_creation"
+		},
+		{
+			"codepoint": 63552,
+			"name": "movie_edit"
+		},
+		{
+			"codepoint": 58426,
+			"name": "movie_filter"
+		},
+		{
+			"codepoint": 58625,
+			"name": "moving"
+		},
+		{
+			"codepoint": 59843,
+			"name": "mp"
+		},
+		{
+			"codepoint": 59103,
+			"name": "multiline_chart"
+		},
+		{
+			"codepoint": 61881,
+			"name": "multiple_stop"
+		},
+		{
+			"codepoint": 57784,
+			"name": "multitrack_audio"
+		},
+		{
+			"codepoint": 59958,
+			"name": "museum"
+		},
+		{
+			"codepoint": 58373,
+			"name": "music_note"
+		},
+		{
+			"codepoint": 58432,
+			"name": "music_off"
+		},
+		{
+			"codepoint": 57443,
+			"name": "music_video"
+		},
+		{
+			"codepoint": 57390,
+			"name": "my_library_add"
+		},
+		{
+			"codepoint": 57391,
+			"name": "my_library_books"
+		},
+		{
+			"codepoint": 57392,
+			"name": "my_library_music"
+		},
+		{
+			"codepoint": 58716,
+			"name": "my_location"
+		},
+		{
+			"codepoint": 61276,
+			"name": "nat"
+		},
+		{
+			"codepoint": 58374,
+			"name": "nature"
+		},
+		{
+			"codepoint": 58375,
+			"name": "nature_people"
+		},
+		{
+			"codepoint": 58376,
+			"name": "navigate_before"
+		},
+		{
+			"codepoint": 58377,
+			"name": "navigate_next"
+		},
+		{
+			"codepoint": 58717,
+			"name": "navigation"
+		},
+		{
+			"codepoint": 58729,
+			"name": "near_me"
+		},
+		{
+			"codepoint": 61935,
+			"name": "near_me_disabled"
+		},
+		{
+			"codepoint": 61499,
+			"name": "nearby_error"
+		},
+		{
+			"codepoint": 61500,
+			"name": "nearby_off"
+		},
+		{
+			"codepoint": 60438,
+			"name": "nest_cam_wired_stand"
+		},
+		{
+			"codepoint": 57785,
+			"name": "network_cell"
+		},
+		{
+			"codepoint": 58944,
+			"name": "network_check"
+		},
+		{
+			"codepoint": 58906,
+			"name": "network_locked"
+		},
+		{
+			"codepoint": 60362,
+			"name": "network_ping"
+		},
+		{
+			"codepoint": 57786,
+			"name": "network_wifi"
+		},
+		{
+			"codepoint": 60388,
+			"name": "network_wifi_1_bar"
+		},
+		{
+			"codepoint": 60374,
+			"name": "network_wifi_2_bar"
+		},
+		{
+			"codepoint": 60385,
+			"name": "network_wifi_3_bar"
+		},
+		{
+			"codepoint": 58889,
+			"name": "new_label"
+		},
+		{
+			"codepoint": 57393,
+			"name": "new_releases"
+		},
+		{
+			"codepoint": 60289,
+			"name": "newspaper"
+		},
+		{
+			"codepoint": 61277,
+			"name": "next_plan"
+		},
+		{
+			"codepoint": 57706,
+			"name": "next_week"
+		},
+		{
+			"codepoint": 57787,
+			"name": "nfc"
+		},
+		{
+			"codepoint": 61937,
+			"name": "night_shelter"
+		},
+		{
+			"codepoint": 60002,
+			"name": "nightlife"
+		},
+		{
+			"codepoint": 61501,
+			"name": "nightlight"
+		},
+		{
+			"codepoint": 61278,
+			"name": "nightlight_round"
+		},
+		{
+			"codepoint": 59974,
+			"name": "nights_stay"
+		},
+		{
+			"codepoint": 61502,
+			"name": "no_accounts"
+		},
+		{
+			"codepoint": 63742,
+			"name": "no_adult_content"
+		},
+		{
+			"codepoint": 62007,
+			"name": "no_backpack"
+		},
+		{
+			"codepoint": 61860,
+			"name": "no_cell"
+		},
+		{
+			"codepoint": 60400,
+			"name": "no_crash"
+		},
+		{
+			"codepoint": 61861,
+			"name": "no_drinks"
+		},
+		{
+			"codepoint": 58945,
+			"name": "no_encryption"
+		},
+		{
+			"codepoint": 61503,
+			"name": "no_encryption_gmailerrorred"
+		},
+		{
+			"codepoint": 61862,
+			"name": "no_flash"
+		},
+		{
+			"codepoint": 61863,
+			"name": "no_food"
+		},
+		{
+			"codepoint": 62011,
+			"name": "no_luggage"
+		},
+		{
+			"codepoint": 61910,
+			"name": "no_meals"
+		},
+		{
+			"codepoint": 61993,
+			"name": "no_meals_ouline"
+		},
+		{
+			"codepoint": 60238,
+			"name": "no_meeting_room"
+		},
+		{
+			"codepoint": 61864,
+			"name": "no_photography"
+		},
+		{
+			"codepoint": 57548,
+			"name": "no_sim"
+		},
+		{
+			"codepoint": 61871,
+			"name": "no_stroller"
+		},
+		{
+			"codepoint": 61909,
+			"name": "no_transfer"
+		},
+		{
+			"codepoint": 60396,
+			"name": "noise_aware"
+		},
+		{
+			"codepoint": 60403,
+			"name": "noise_control_off"
+		},
+		{
+			"codepoint": 58638,
+			"name": "nordic_walking"
+		},
+		{
+			"codepoint": 61920,
+			"name": "north"
+		},
+		{
+			"codepoint": 61921,
+			"name": "north_east"
+		},
+		{
+			"codepoint": 61922,
+			"name": "north_west"
+		},
+		{
+			"codepoint": 61694,
+			"name": "not_accessible"
+		},
+		{
+			"codepoint": 57395,
+			"name": "not_interested"
+		},
+		{
+			"codepoint": 58741,
+			"name": "not_listed_location"
+		},
+		{
+			"codepoint": 61649,
+			"name": "not_started"
+		},
+		{
+			"codepoint": 57455,
+			"name": "note"
+		},
+		{
+			"codepoint": 59548,
+			"name": "note_add"
+		},
+		{
+			"codepoint": 61504,
+			"name": "note_alt"
+		},
+		{
+			"codepoint": 57964,
+			"name": "notes"
+		},
+		{
+			"codepoint": 58265,
+			"name": "notification_add"
+		},
+		{
+			"codepoint": 57348,
+			"name": "notification_important"
+		},
+		{
+			"codepoint": 59380,
+			"name": "notifications"
+		},
+		{
+			"codepoint": 59383,
+			"name": "notifications_active"
+		},
+		{
+			"codepoint": 59381,
+			"name": "notifications_none"
+		},
+		{
+			"codepoint": 59382,
+			"name": "notifications_off"
+		},
+		{
+			"codepoint": 59383,
+			"name": "notifications_on"
+		},
+		{
+			"codepoint": 59384,
+			"name": "notifications_paused"
+		},
+		{
+			"codepoint": 57788,
+			"name": "now_wallpaper"
+		},
+		{
+			"codepoint": 57789,
+			"name": "now_widgets"
+		},
+		{
+			"codepoint": 60103,
+			"name": "numbers"
+		},
+		{
+			"codepoint": 59698,
+			"name": "offline_bolt"
+		},
+		{
+			"codepoint": 59658,
+			"name": "offline_pin"
+		},
+		{
+			"codepoint": 59845,
+			"name": "offline_share"
+		},
+		{
+			"codepoint": 60437,
+			"name": "oil_barrel"
+		},
+		{
+			"codepoint": 60413,
+			"name": "on_device_training"
+		},
+		{
+			"codepoint": 58938,
+			"name": "ondemand_video"
+		},
+		{
+			"codepoint": 61675,
+			"name": "online_prediction"
+		},
+		{
+			"codepoint": 59676,
+			"name": "opacity"
+		},
+		{
+			"codepoint": 59549,
+			"name": "open_in_browser"
+		},
+		{
+			"codepoint": 61902,
+			"name": "open_in_full"
+		},
+		{
+			"codepoint": 59550,
+			"name": "open_in_new"
+		},
+		{
+			"codepoint": 58614,
+			"name": "open_in_new_off"
+		},
+		{
+			"codepoint": 59551,
+			"name": "open_with"
+		},
+		{
+			"codepoint": 58764,
+			"name": "other_houses"
+		},
+		{
+			"codepoint": 61992,
+			"name": "outbond"
+		},
+		{
+			"codepoint": 57802,
+			"name": "outbound"
+		},
+		{
+			"codepoint": 61279,
+			"name": "outbox"
+		},
+		{
+			"codepoint": 59975,
+			"name": "outdoor_grill"
+		},
+		{
+			"codepoint": 61650,
+			"name": "outgoing_mail"
+		},
+		{
+			"codepoint": 61908,
+			"name": "outlet"
+		},
+		{
+			"codepoint": 57710,
+			"name": "outlined_flag"
+		},
+		{
+			"codepoint": 60350,
+			"name": "output"
+		},
+		{
+			"codepoint": 59848,
+			"name": "padding"
+		},
+		{
+			"codepoint": 59385,
+			"name": "pages"
+		},
+		{
+			"codepoint": 59552,
+			"name": "pageview"
+		},
+		{
+			"codepoint": 61505,
+			"name": "paid"
+		},
+		{
+			"codepoint": 58378,
+			"name": "palette"
+		},
+		{
+			"codepoint": 63594,
+			"name": "pallet"
+		},
+		{
+			"codepoint": 59685,
+			"name": "pan_tool"
+		},
+		{
+			"codepoint": 60345,
+			"name": "pan_tool_alt"
+		},
+		{
+			"codepoint": 58379,
+			"name": "panorama"
+		},
+		{
+			"codepoint": 58380,
+			"name": "panorama_fish_eye"
+		},
+		{
+			"codepoint": 58380,
+			"name": "panorama_fisheye"
+		},
+		{
+			"codepoint": 58381,
+			"name": "panorama_horizontal"
+		},
+		{
+			"codepoint": 61280,
+			"name": "panorama_horizontal_select"
+		},
+		{
+			"codepoint": 59849,
+			"name": "panorama_photosphere"
+		},
+		{
+			"codepoint": 59850,
+			"name": "panorama_photosphere_select"
+		},
+		{
+			"codepoint": 58382,
+			"name": "panorama_vertical"
+		},
+		{
+			"codepoint": 61281,
+			"name": "panorama_vertical_select"
+		},
+		{
+			"codepoint": 58383,
+			"name": "panorama_wide_angle"
+		},
+		{
+			"codepoint": 61282,
+			"name": "panorama_wide_angle_select"
+		},
+		{
+			"codepoint": 58639,
+			"name": "paragliding"
+		},
+		{
+			"codepoint": 60003,
+			"name": "park"
+		},
+		{
+			"codepoint": 59386,
+			"name": "party_mode"
+		},
+		{
+			"codepoint": 61506,
+			"name": "password"
+		},
+		{
+			"codepoint": 61507,
+			"name": "pattern"
+		},
+		{
+			"codepoint": 57396,
+			"name": "pause"
+		},
+		{
+			"codepoint": 57762,
+			"name": "pause_circle"
+		},
+		{
+			"codepoint": 57397,
+			"name": "pause_circle_filled"
+		},
+		{
+			"codepoint": 57398,
+			"name": "pause_circle_outline"
+		},
+		{
+			"codepoint": 57578,
+			"name": "pause_presentation"
+		},
+		{
+			"codepoint": 59553,
+			"name": "payment"
+		},
+		{
+			"codepoint": 61283,
+			"name": "payments"
+		},
+		{
+			"codepoint": 60045,
+			"name": "paypal"
+		},
+		{
+			"codepoint": 60201,
+			"name": "pedal_bike"
+		},
+		{
+			"codepoint": 61284,
+			"name": "pending"
+		},
+		{
+			"codepoint": 61883,
+			"name": "pending_actions"
+		},
+		{
+			"codepoint": 60240,
+			"name": "pentagon"
+		},
+		{
+			"codepoint": 59387,
+			"name": "people"
+		},
+		{
+			"codepoint": 59937,
+			"name": "people_alt"
+		},
+		{
+			"codepoint": 59388,
+			"name": "people_outline"
+		},
+		{
+			"codepoint": 60248,
+			"name": "percent"
+		},
+		{
+			"codepoint": 59554,
+			"name": "perm_camera_mic"
+		},
+		{
+			"codepoint": 59555,
+			"name": "perm_contact_cal"
+		},
+		{
+			"codepoint": 59555,
+			"name": "perm_contact_calendar"
+		},
+		{
+			"codepoint": 59556,
+			"name": "perm_data_setting"
+		},
+		{
+			"codepoint": 59557,
+			"name": "perm_device_info"
+		},
+		{
+			"codepoint": 59557,
+			"name": "perm_device_information"
+		},
+		{
+			"codepoint": 59558,
+			"name": "perm_identity"
+		},
+		{
+			"codepoint": 59559,
+			"name": "perm_media"
+		},
+		{
+			"codepoint": 59560,
+			"name": "perm_phone_msg"
+		},
+		{
+			"codepoint": 59561,
+			"name": "perm_scan_wifi"
+		},
+		{
+			"codepoint": 59389,
+			"name": "person"
+		},
+		{
+			"codepoint": 63716,
+			"name": "person_2"
+		},
+		{
+			"codepoint": 63717,
+			"name": "person_3"
+		},
+		{
+			"codepoint": 63718,
+			"name": "person_4"
+		},
+		{
+			"codepoint": 59390,
+			"name": "person_add"
+		},
+		{
+			"codepoint": 59981,
+			"name": "person_add_alt"
+		},
+		{
+			"codepoint": 61285,
+			"name": "person_add_alt_1"
+		},
+		{
+			"codepoint": 59851,
+			"name": "person_add_disabled"
+		},
+		{
+			"codepoint": 58640,
+			"name": "person_off"
+		},
+		{
+			"codepoint": 59391,
+			"name": "person_outline"
+		},
+		{
+			"codepoint": 58714,
+			"name": "person_pin"
+		},
+		{
+			"codepoint": 58730,
+			"name": "person_pin_circle"
+		},
+		{
+			"codepoint": 61286,
+			"name": "person_remove"
+		},
+		{
+			"codepoint": 61287,
+			"name": "person_remove_alt_1"
+		},
+		{
+			"codepoint": 61702,
+			"name": "person_search"
+		},
+		{
+			"codepoint": 59098,
+			"name": "personal_injury"
+		},
+		{
+			"codepoint": 58939,
+			"name": "personal_video"
+		},
+		{
+			"codepoint": 61690,
+			"name": "pest_control"
+		},
+		{
+			"codepoint": 61693,
+			"name": "pest_control_rodent"
+		},
+		{
+			"codepoint": 59677,
+			"name": "pets"
+		},
+		{
+			"codepoint": 60119,
+			"name": "phishing"
+		},
+		{
+			"codepoint": 57549,
+			"name": "phone"
+		},
+		{
+			"codepoint": 58148,
+			"name": "phone_android"
+		},
+		{
+			"codepoint": 58907,
+			"name": "phone_bluetooth_speaker"
+		},
+		{
+			"codepoint": 58953,
+			"name": "phone_callback"
+		},
+		{
+			"codepoint": 59852,
+			"name": "phone_disabled"
+		},
+		{
+			"codepoint": 59853,
+			"name": "phone_enabled"
+		},
+		{
+			"codepoint": 58908,
+			"name": "phone_forwarded"
+		},
+		{
+			"codepoint": 58909,
+			"name": "phone_in_talk"
+		},
+		{
+			"codepoint": 58149,
+			"name": "phone_iphone"
+		},
+		{
+			"codepoint": 58910,
+			"name": "phone_locked"
+		},
+		{
+			"codepoint": 58911,
+			"name": "phone_missed"
+		},
+		{
+			"codepoint": 58912,
+			"name": "phone_paused"
+		},
+		{
+			"codepoint": 58150,
+			"name": "phonelink"
+		},
+		{
+			"codepoint": 57563,
+			"name": "phonelink_erase"
+		},
+		{
+			"codepoint": 57564,
+			"name": "phonelink_lock"
+		},
+		{
+			"codepoint": 58151,
+			"name": "phonelink_off"
+		},
+		{
+			"codepoint": 57565,
+			"name": "phonelink_ring"
+		},
+		{
+			"codepoint": 57566,
+			"name": "phonelink_setup"
+		},
+		{
+			"codepoint": 58384,
+			"name": "photo"
+		},
+		{
+			"codepoint": 58385,
+			"name": "photo_album"
+		},
+		{
+			"codepoint": 58386,
+			"name": "photo_camera"
+		},
+		{
+			"codepoint": 61288,
+			"name": "photo_camera_back"
+		},
+		{
+			"codepoint": 61289,
+			"name": "photo_camera_front"
+		},
+		{
+			"codepoint": 58427,
+			"name": "photo_filter"
+		},
+		{
+			"codepoint": 58387,
+			"name": "photo_library"
+		},
+		{
+			"codepoint": 58418,
+			"name": "photo_size_select_actual"
+		},
+		{
+			"codepoint": 58419,
+			"name": "photo_size_select_large"
+		},
+		{
+			"codepoint": 58420,
+			"name": "photo_size_select_small"
+		},
+		{
+			"codepoint": 60303,
+			"name": "php"
+		},
+		{
+			"codepoint": 58657,
+			"name": "piano"
+		},
+		{
+			"codepoint": 58656,
+			"name": "piano_off"
+		},
+		{
+			"codepoint": 58389,
+			"name": "picture_as_pdf"
+		},
+		{
+			"codepoint": 59562,
+			"name": "picture_in_picture"
+		},
+		{
+			"codepoint": 59665,
+			"name": "picture_in_picture_alt"
+		},
+		{
+			"codepoint": 59076,
+			"name": "pie_chart"
+		},
+		{
+			"codepoint": 61508,
+			"name": "pie_chart_outline"
+		},
+		{
+			"codepoint": 59077,
+			"name": "pie_chart_outlined"
+		},
+		{
+			"codepoint": 61509,
+			"name": "pin"
+		},
+		{
+			"codepoint": 58718,
+			"name": "pin_drop"
+		},
+		{
+			"codepoint": 59239,
+			"name": "pin_end"
+		},
+		{
+			"codepoint": 59235,
+			"name": "pin_invoke"
+		},
+		{
+			"codepoint": 60216,
+			"name": "pinch"
+		},
+		{
+			"codepoint": 59854,
+			"name": "pivot_table_chart"
+		},
+		{
+			"codepoint": 60067,
+			"name": "pix"
+		},
+		{
+			"codepoint": 58719,
+			"name": "place"
+		},
+		{
+			"codepoint": 59994,
+			"name": "plagiarism"
+		},
+		{
+			"codepoint": 57399,
+			"name": "play_arrow"
+		},
+		{
+			"codepoint": 57796,
+			"name": "play_circle"
+		},
+		{
+			"codepoint": 57400,
+			"name": "play_circle_fill"
+		},
+		{
+			"codepoint": 57400,
+			"name": "play_circle_filled"
+		},
+		{
+			"codepoint": 57401,
+			"name": "play_circle_outline"
+		},
+		{
+			"codepoint": 61290,
+			"name": "play_disabled"
+		},
+		{
+			"codepoint": 59654,
+			"name": "play_for_work"
+		},
+		{
+			"codepoint": 61511,
+			"name": "play_lesson"
+		},
+		{
+			"codepoint": 57403,
+			"name": "playlist_add"
+		},
+		{
+			"codepoint": 57445,
+			"name": "playlist_add_check"
+		},
+		{
+			"codepoint": 59366,
+			"name": "playlist_add_check_circle"
+		},
+		{
+			"codepoint": 59365,
+			"name": "playlist_add_circle"
+		},
+		{
+			"codepoint": 57439,
+			"name": "playlist_play"
+		},
+		{
+			"codepoint": 60288,
+			"name": "playlist_remove"
+		},
+		{
+			"codepoint": 61703,
+			"name": "plumbing"
+		},
+		{
+			"codepoint": 59392,
+			"name": "plus_one"
+		},
+		{
+			"codepoint": 61512,
+			"name": "podcasts"
+		},
+		{
+			"codepoint": 61822,
+			"name": "point_of_sale"
+		},
+		{
+			"codepoint": 59927,
+			"name": "policy"
+		},
+		{
+			"codepoint": 59393,
+			"name": "poll"
+		},
+		{
+			"codepoint": 60347,
+			"name": "polyline"
+		},
+		{
+			"codepoint": 59563,
+			"name": "polymer"
+		},
+		{
+			"codepoint": 60232,
+			"name": "pool"
+		},
+		{
+			"codepoint": 57550,
+			"name": "portable_wifi_off"
+		},
+		{
+			"codepoint": 58390,
+			"name": "portrait"
+		},
+		{
+			"codepoint": 59936,
+			"name": "post_add"
+		},
+		{
+			"codepoint": 58940,
+			"name": "power"
+		},
+		{
+			"codepoint": 58166,
+			"name": "power_input"
+		},
+		{
+			"codepoint": 58950,
+			"name": "power_off"
+		},
+		{
+			"codepoint": 59564,
+			"name": "power_settings_new"
+		},
+		{
+			"codepoint": 61513,
+			"name": "precision_manufacturing"
+		},
+		{
+			"codepoint": 59678,
+			"name": "pregnant_woman"
+		},
+		{
+			"codepoint": 57567,
+			"name": "present_to_all"
+		},
+		{
+			"codepoint": 61893,
+			"name": "preview"
+		},
+		{
+			"codepoint": 61514,
+			"name": "price_change"
+		},
+		{
+			"codepoint": 61515,
+			"name": "price_check"
+		},
+		{
+			"codepoint": 59565,
+			"name": "print"
+		},
+		{
+			"codepoint": 59855,
+			"name": "print_disabled"
+		},
+		{
+			"codepoint": 58949,
+			"name": "priority_high"
+		},
+		{
+			"codepoint": 61660,
+			"name": "privacy_tip"
+		},
+		{
+			"codepoint": 59204,
+			"name": "private_connectivity"
+		},
+		{
+			"codepoint": 57809,
+			"name": "production_quantity_limits"
+		},
+		{
+			"codepoint": 60436,
+			"name": "propane"
+		},
+		{
+			"codepoint": 60435,
+			"name": "propane_tank"
+		},
+		{
+			"codepoint": 59978,
+			"name": "psychology"
+		},
+		{
+			"codepoint": 63722,
+			"name": "psychology_alt"
+		},
+		{
+			"codepoint": 59403,
+			"name": "public"
+		},
+		{
+			"codepoint": 61898,
+			"name": "public_off"
+		},
+		{
+			"codepoint": 57941,
+			"name": "publish"
+		},
+		{
+			"codepoint": 62002,
+			"name": "published_with_changes"
+		},
+		{
+			"codepoint": 60072,
+			"name": "punch_clock"
+		},
+		{
+			"codepoint": 61709,
+			"name": "push_pin"
+		},
+		{
+			"codepoint": 61291,
+			"name": "qr_code"
+		},
+		{
+			"codepoint": 57354,
+			"name": "qr_code_2"
+		},
+		{
+			"codepoint": 61958,
+			"name": "qr_code_scanner"
+		},
+		{
+			"codepoint": 59566,
+			"name": "query_builder"
+		},
+		{
+			"codepoint": 58620,
+			"name": "query_stats"
+		},
+		{
+			"codepoint": 59567,
+			"name": "question_answer"
+		},
+		{
+			"codepoint": 60299,
+			"name": "question_mark"
+		},
+		{
+			"codepoint": 57404,
+			"name": "queue"
+		},
+		{
+			"codepoint": 57405,
+			"name": "queue_music"
+		},
+		{
+			"codepoint": 57446,
+			"name": "queue_play_next"
+		},
+		{
+			"codepoint": 57551,
+			"name": "quick_contacts_dialer"
+		},
+		{
+			"codepoint": 57552,
+			"name": "quick_contacts_mail"
+		},
+		{
+			"codepoint": 61292,
+			"name": "quickreply"
+		},
+		{
+			"codepoint": 61516,
+			"name": "quiz"
+		},
+		{
+			"codepoint": 60056,
+			"name": "quora"
+		},
+		{
+			"codepoint": 61517,
+			"name": "r_mobiledata"
+		},
+		{
+			"codepoint": 61518,
+			"name": "radar"
+		},
+		{
+			"codepoint": 57406,
+			"name": "radio"
+		},
+		{
+			"codepoint": 59447,
+			"name": "radio_button_checked"
+		},
+		{
+			"codepoint": 59446,
+			"name": "radio_button_off"
+		},
+		{
+			"codepoint": 59447,
+			"name": "radio_button_on"
+		},
+		{
+			"codepoint": 59446,
+			"name": "radio_button_unchecked"
+		},
+		{
+			"codepoint": 59857,
+			"name": "railway_alert"
+		},
+		{
+			"codepoint": 60004,
+			"name": "ramen_dining"
+		},
+		{
+			"codepoint": 60316,
+			"name": "ramp_left"
+		},
+		{
+			"codepoint": 60310,
+			"name": "ramp_right"
+		},
+		{
+			"codepoint": 58720,
+			"name": "rate_review"
+		},
+		{
+			"codepoint": 61519,
+			"name": "raw_off"
+		},
+		{
+			"codepoint": 61520,
+			"name": "raw_on"
+		},
+		{
+			"codepoint": 61293,
+			"name": "read_more"
+		},
+		{
+			"codepoint": 59194,
+			"name": "real_estate_agent"
+		},
+		{
+			"codepoint": 63558,
+			"name": "rebase_edit"
+		},
+		{
+			"codepoint": 59568,
+			"name": "receipt"
+		},
+		{
+			"codepoint": 61294,
+			"name": "receipt_long"
+		},
+		{
+			"codepoint": 57407,
+			"name": "recent_actors"
+		},
+		{
+			"codepoint": 59858,
+			"name": "recommend"
+		},
+		{
+			"codepoint": 59679,
+			"name": "record_voice_over"
+		},
+		{
+			"codepoint": 60244,
+			"name": "rectangle"
+		},
+		{
+			"codepoint": 59232,
+			"name": "recycling"
+		},
+		{
+			"codepoint": 60064,
+			"name": "reddit"
+		},
+		{
+			"codepoint": 59569,
+			"name": "redeem"
+		},
+		{
+			"codepoint": 57690,
+			"name": "redo"
+		},
+		{
+			"codepoint": 61980,
+			"name": "reduce_capacity"
+		},
+		{
+			"codepoint": 58837,
+			"name": "refresh"
+		},
+		{
+			"codepoint": 61521,
+			"name": "remember_me"
+		},
+		{
+			"codepoint": 57691,
+			"name": "remove"
+		},
+		{
+			"codepoint": 57692,
+			"name": "remove_circle"
+		},
+		{
+			"codepoint": 57693,
+			"name": "remove_circle_outline"
+		},
+		{
+			"codepoint": 59859,
+			"name": "remove_done"
+		},
+		{
+			"codepoint": 57447,
+			"name": "remove_from_queue"
+		},
+		{
+			"codepoint": 59860,
+			"name": "remove_moderator"
+		},
+		{
+			"codepoint": 58391,
+			"name": "remove_red_eye"
+		},
+		{
+			"codepoint": 60412,
+			"name": "remove_road"
+		},
+		{
+			"codepoint": 59688,
+			"name": "remove_shopping_cart"
+		},
+		{
+			"codepoint": 59646,
+			"name": "reorder"
+		},
+		{
+			"codepoint": 63720,
+			"name": "repartition"
+		},
+		{
+			"codepoint": 57408,
+			"name": "repeat"
+		},
+		{
+			"codepoint": 59862,
+			"name": "repeat_on"
+		},
+		{
+			"codepoint": 57409,
+			"name": "repeat_one"
+		},
+		{
+			"codepoint": 59863,
+			"name": "repeat_one_on"
+		},
+		{
+			"codepoint": 57410,
+			"name": "replay"
+		},
+		{
+			"codepoint": 57433,
+			"name": "replay_10"
+		},
+		{
+			"codepoint": 57434,
+			"name": "replay_30"
+		},
+		{
+			"codepoint": 57435,
+			"name": "replay_5"
+		},
+		{
+			"codepoint": 59864,
+			"name": "replay_circle_filled"
+		},
+		{
+			"codepoint": 57694,
+			"name": "reply"
+		},
+		{
+			"codepoint": 57695,
+			"name": "reply_all"
+		},
+		{
+			"codepoint": 57696,
+			"name": "report"
+		},
+		{
+			"codepoint": 61522,
+			"name": "report_gmailerrorred"
+		},
+		{
+			"codepoint": 57712,
+			"name": "report_off"
+		},
+		{
+			"codepoint": 59570,
+			"name": "report_problem"
+		},
+		{
+			"codepoint": 61996,
+			"name": "request_page"
+		},
+		{
+			"codepoint": 61878,
+			"name": "request_quote"
+		},
+		{
+			"codepoint": 59865,
+			"name": "reset_tv"
+		},
+		{
+			"codepoint": 61523,
+			"name": "restart_alt"
+		},
+		{
+			"codepoint": 58732,
+			"name": "restaurant"
+		},
+		{
+			"codepoint": 58721,
+			"name": "restaurant_menu"
+		},
+		{
+			"codepoint": 59571,
+			"name": "restore"
+		},
+		{
+			"codepoint": 59704,
+			"name": "restore_from_trash"
+		},
+		{
+			"codepoint": 59689,
+			"name": "restore_page"
+		},
+		{
+			"codepoint": 61524,
+			"name": "reviews"
+		},
+		{
+			"codepoint": 61941,
+			"name": "rice_bowl"
+		},
+		{
+			"codepoint": 57553,
+			"name": "ring_volume"
+		},
+		{
+			"codepoint": 60325,
+			"name": "rocket"
+		},
+		{
+			"codepoint": 60315,
+			"name": "rocket_launch"
+		},
+		{
+			"codepoint": 60434,
+			"name": "roller_shades"
+		},
+		{
+			"codepoint": 60433,
+			"name": "roller_shades_closed"
+		},
+		{
+			"codepoint": 60365,
+			"name": "roller_skating"
+		},
+		{
+			"codepoint": 61953,
+			"name": "roofing"
+		},
+		{
+			"codepoint": 59572,
+			"name": "room"
+		},
+		{
+			"codepoint": 61880,
+			"name": "room_preferences"
+		},
+		{
+			"codepoint": 60233,
+			"name": "room_service"
+		},
+		{
+			"codepoint": 58392,
+			"name": "rotate_90_degrees_ccw"
+		},
+		{
+			"codepoint": 60075,
+			"name": "rotate_90_degrees_cw"
+		},
+		{
+			"codepoint": 58393,
+			"name": "rotate_left"
+		},
+		{
+			"codepoint": 58394,
+			"name": "rotate_right"
+		},
+		{
+			"codepoint": 60313,
+			"name": "roundabout_left"
+		},
+		{
+			"codepoint": 60323,
+			"name": "roundabout_right"
+		},
+		{
+			"codepoint": 59680,
+			"name": "rounded_corner"
+		},
+		{
+			"codepoint": 60109,
+			"name": "route"
+		},
+		{
+			"codepoint": 58152,
+			"name": "router"
+		},
+		{
+			"codepoint": 59681,
+			"name": "rowing"
+		},
+		{
+			"codepoint": 57573,
+			"name": "rss_feed"
+		},
+		{
+			"codepoint": 61525,
+			"name": "rsvp"
+		},
+		{
+			"codepoint": 59821,
+			"name": "rtt"
+		},
+		{
+			"codepoint": 61890,
+			"name": "rule"
+		},
+		{
+			"codepoint": 61897,
+			"name": "rule_folder"
+		},
+		{
+			"codepoint": 61295,
+			"name": "run_circle"
+		},
+		{
+			"codepoint": 58653,
+			"name": "running_with_errors"
+		},
+		{
+			"codepoint": 58946,
+			"name": "rv_hookup"
+		},
+		{
+			"codepoint": 60399,
+			"name": "safety_check"
+		},
+		{
+			"codepoint": 57804,
+			"name": "safety_divider"
+		},
+		{
+			"codepoint": 58626,
+			"name": "sailing"
+		},
+		{
+			"codepoint": 61981,
+			"name": "sanitizer"
+		},
+		{
+			"codepoint": 58722,
+			"name": "satellite"
+		},
+		{
+			"codepoint": 60218,
+			"name": "satellite_alt"
+		},
+		{
+			"codepoint": 57697,
+			"name": "save"
+		},
+		{
+			"codepoint": 57713,
+			"name": "save_alt"
+		},
+		{
+			"codepoint": 60256,
+			"name": "save_as"
+		},
+		{
+			"codepoint": 59921,
+			"name": "saved_search"
+		},
+		{
+			"codepoint": 58091,
+			"name": "savings"
+		},
+		{
+			"codepoint": 60255,
+			"name": "scale"
+		},
+		{
+			"codepoint": 58153,
+			"name": "scanner"
+		},
+		{
+			"codepoint": 57960,
+			"name": "scatter_plot"
+		},
+		{
+			"codepoint": 59573,
+			"name": "schedule"
+		},
+		{
+			"codepoint": 59914,
+			"name": "schedule_send"
+		},
+		{
+			"codepoint": 58621,
+			"name": "schema"
+		},
+		{
+			"codepoint": 59404,
+			"name": "school"
+		},
+		{
+			"codepoint": 59979,
+			"name": "science"
+		},
+		{
+			"codepoint": 57961,
+			"name": "score"
+		},
+		{
+			"codepoint": 60368,
+			"name": "scoreboard"
+		},
+		{
+			"codepoint": 57790,
+			"name": "screen_lock_landscape"
+		},
+		{
+			"codepoint": 57791,
+			"name": "screen_lock_portrait"
+		},
+		{
+			"codepoint": 57792,
+			"name": "screen_lock_rotation"
+		},
+		{
+			"codepoint": 57793,
+			"name": "screen_rotation"
+		},
+		{
+			"codepoint": 60398,
+			"name": "screen_rotation_alt"
+		},
+		{
+			"codepoint": 61296,
+			"name": "screen_search_desktop"
+		},
+		{
+			"codepoint": 57570,
+			"name": "screen_share"
+		},
+		{
+			"codepoint": 61526,
+			"name": "screenshot"
+		},
+		{
+			"codepoint": 60424,
+			"name": "screenshot_monitor"
+		},
+		{
+			"codepoint": 60366,
+			"name": "scuba_diving"
+		},
+		{
+			"codepoint": 59869,
+			"name": "sd"
+		},
+		{
+			"codepoint": 58915,
+			"name": "sd_card"
+		},
+		{
+			"codepoint": 61527,
+			"name": "sd_card_alert"
+		},
+		{
+			"codepoint": 57794,
+			"name": "sd_storage"
+		},
+		{
+			"codepoint": 59574,
+			"name": "search"
+		},
+		{
+			"codepoint": 60022,
+			"name": "search_off"
+		},
+		{
+			"codepoint": 58154,
+			"name": "security"
+		},
+		{
+			"codepoint": 61528,
+			"name": "security_update"
+		},
+		{
+			"codepoint": 61529,
+			"name": "security_update_good"
+		},
+		{
+			"codepoint": 61530,
+			"name": "security_update_warning"
+		},
+		{
+			"codepoint": 59723,
+			"name": "segment"
+		},
+		{
+			"codepoint": 57698,
+			"name": "select_all"
+		},
+		{
+			"codepoint": 60024,
+			"name": "self_improvement"
+		},
+		{
+			"codepoint": 61531,
+			"name": "sell"
+		},
+		{
+			"codepoint": 57699,
+			"name": "send"
+		},
+		{
+			"codepoint": 59916,
+			"name": "send_and_archive"
+		},
+		{
+			"codepoint": 60123,
+			"name": "send_time_extension"
+		},
+		{
+			"codepoint": 61532,
+			"name": "send_to_mobile"
+		},
+		{
+			"codepoint": 61877,
+			"name": "sensor_door"
+		},
+		{
+			"codepoint": 60432,
+			"name": "sensor_occupied"
+		},
+		{
+			"codepoint": 61876,
+			"name": "sensor_window"
+		},
+		{
+			"codepoint": 58654,
+			"name": "sensors"
+		},
+		{
+			"codepoint": 58655,
+			"name": "sensors_off"
+		},
+		{
+			"codepoint": 59409,
+			"name": "sentiment_dissatisfied"
+		},
+		{
+			"codepoint": 59410,
+			"name": "sentiment_neutral"
+		},
+		{
+			"codepoint": 59411,
+			"name": "sentiment_satisfied"
+		},
+		{
+			"codepoint": 57581,
+			"name": "sentiment_satisfied_alt"
+		},
+		{
+			"codepoint": 59412,
+			"name": "sentiment_very_dissatisfied"
+		},
+		{
+			"codepoint": 59413,
+			"name": "sentiment_very_satisfied"
+		},
+		{
+			"codepoint": 61930,
+			"name": "set_meal"
+		},
+		{
+			"codepoint": 59576,
+			"name": "settings"
+		},
+		{
+			"codepoint": 61533,
+			"name": "settings_accessibility"
+		},
+		{
+			"codepoint": 59577,
+			"name": "settings_applications"
+		},
+		{
+			"codepoint": 59578,
+			"name": "settings_backup_restore"
+		},
+		{
+			"codepoint": 59579,
+			"name": "settings_bluetooth"
+		},
+		{
+			"codepoint": 59581,
+			"name": "settings_brightness"
+		},
+		{
+			"codepoint": 59580,
+			"name": "settings_cell"
+		},
+		{
+			"codepoint": 59581,
+			"name": "settings_display"
+		},
+		{
+			"codepoint": 59582,
+			"name": "settings_ethernet"
+		},
+		{
+			"codepoint": 59583,
+			"name": "settings_input_antenna"
+		},
+		{
+			"codepoint": 59584,
+			"name": "settings_input_component"
+		},
+		{
+			"codepoint": 59585,
+			"name": "settings_input_composite"
+		},
+		{
+			"codepoint": 59586,
+			"name": "settings_input_hdmi"
+		},
+		{
+			"codepoint": 59587,
+			"name": "settings_input_svideo"
+		},
+		{
+			"codepoint": 59588,
+			"name": "settings_overscan"
+		},
+		{
+			"codepoint": 59589,
+			"name": "settings_phone"
+		},
+		{
+			"codepoint": 59590,
+			"name": "settings_power"
+		},
+		{
+			"codepoint": 59591,
+			"name": "settings_remote"
+		},
+		{
+			"codepoint": 61534,
+			"name": "settings_suggest"
+		},
+		{
+			"codepoint": 57795,
+			"name": "settings_system_daydream"
+		},
+		{
+			"codepoint": 59592,
+			"name": "settings_voice"
+		},
+		{
+			"codepoint": 60371,
+			"name": "severe_cold"
+		},
+		{
+			"codepoint": 63699,
+			"name": "shape_line"
+		},
+		{
+			"codepoint": 59405,
+			"name": "share"
+		},
+		{
+			"codepoint": 58660,
+			"name": "share_arrival_time"
+		},
+		{
+			"codepoint": 61535,
+			"name": "share_location"
+		},
+		{
+			"codepoint": 63598,
+			"name": "shelves"
+		},
+		{
+			"codepoint": 59872,
+			"name": "shield"
+		},
+		{
+			"codepoint": 60073,
+			"name": "shield_moon"
+		},
+		{
+			"codepoint": 59593,
+			"name": "shop"
+		},
+		{
+			"codepoint": 57758,
+			"name": "shop_2"
+		},
+		{
+			"codepoint": 59594,
+			"name": "shop_two"
+		},
+		{
+			"codepoint": 60061,
+			"name": "shopify"
+		},
+		{
+			"codepoint": 61900,
+			"name": "shopping_bag"
+		},
+		{
+			"codepoint": 59595,
+			"name": "shopping_basket"
+		},
+		{
+			"codepoint": 59596,
+			"name": "shopping_cart"
+		},
+		{
+			"codepoint": 60296,
+			"name": "shopping_cart_checkout"
+		},
+		{
+			"codepoint": 57953,
+			"name": "short_text"
+		},
+		{
+			"codepoint": 61536,
+			"name": "shortcut"
+		},
+		{
+			"codepoint": 59105,
+			"name": "show_chart"
+		},
+		{
+			"codepoint": 61537,
+			"name": "shower"
+		},
+		{
+			"codepoint": 57411,
+			"name": "shuffle"
+		},
+		{
+			"codepoint": 59873,
+			"name": "shuffle_on"
+		},
+		{
+			"codepoint": 58429,
+			"name": "shutter_speed"
+		},
+		{
+			"codepoint": 61984,
+			"name": "sick"
+		},
+		{
+			"codepoint": 60389,
+			"name": "sign_language"
+		},
+		{
+			"codepoint": 61608,
+			"name": "signal_cellular_0_bar"
+		},
+		{
+			"codepoint": 57800,
+			"name": "signal_cellular_4_bar"
+		},
+		{
+			"codepoint": 57858,
+			"name": "signal_cellular_alt"
+		},
+		{
+			"codepoint": 60383,
+			"name": "signal_cellular_alt_1_bar"
+		},
+		{
+			"codepoint": 60387,
+			"name": "signal_cellular_alt_2_bar"
+		},
+		{
+			"codepoint": 61612,
+			"name": "signal_cellular_connected_no_internet_0_bar"
+		},
+		{
+			"codepoint": 57805,
+			"name": "signal_cellular_connected_no_internet_4_bar"
+		},
+		{
+			"codepoint": 57806,
+			"name": "signal_cellular_no_sim"
+		},
+		{
+			"codepoint": 61538,
+			"name": "signal_cellular_nodata"
+		},
+		{
+			"codepoint": 57807,
+			"name": "signal_cellular_null"
+		},
+		{
+			"codepoint": 57808,
+			"name": "signal_cellular_off"
+		},
+		{
+			"codepoint": 61616,
+			"name": "signal_wifi_0_bar"
+		},
+		{
+			"codepoint": 57816,
+			"name": "signal_wifi_4_bar"
+		},
+		{
+			"codepoint": 57817,
+			"name": "signal_wifi_4_bar_lock"
+		},
+		{
+			"codepoint": 61539,
+			"name": "signal_wifi_bad"
+		},
+		{
+			"codepoint": 61540,
+			"name": "signal_wifi_connected_no_internet_4"
+		},
+		{
+			"codepoint": 57818,
+			"name": "signal_wifi_off"
+		},
+		{
+			"codepoint": 61541,
+			"name": "signal_wifi_statusbar_4_bar"
+		},
+		{
+			"codepoint": 61542,
+			"name": "signal_wifi_statusbar_connected_no_internet_4"
+		},
+		{
+			"codepoint": 61543,
+			"name": "signal_wifi_statusbar_null"
+		},
+		{
+			"codepoint": 60305,
+			"name": "signpost"
+		},
+		{
+			"codepoint": 58155,
+			"name": "sim_card"
+		},
+		{
+			"codepoint": 58916,
+			"name": "sim_card_alert"
+		},
+		{
+			"codepoint": 61544,
+			"name": "sim_card_download"
+		},
+		{
+			"codepoint": 59976,
+			"name": "single_bed"
+		},
+		{
+			"codepoint": 61545,
+			"name": "sip"
+		},
+		{
+			"codepoint": 58641,
+			"name": "skateboarding"
+		},
+		{
+			"codepoint": 57412,
+			"name": "skip_next"
+		},
+		{
+			"codepoint": 57413,
+			"name": "skip_previous"
+		},
+		{
+			"codepoint": 58642,
+			"name": "sledding"
+		},
+		{
+			"codepoint": 58395,
+			"name": "slideshow"
+		},
+		{
+			"codepoint": 57448,
+			"name": "slow_motion_video"
+		},
+		{
+			"codepoint": 61889,
+			"name": "smart_button"
+		},
+		{
+			"codepoint": 61546,
+			"name": "smart_display"
+		},
+		{
+			"codepoint": 61547,
+			"name": "smart_screen"
+		},
+		{
+			"codepoint": 61548,
+			"name": "smart_toy"
+		},
+		{
+			"codepoint": 58156,
+			"name": "smartphone"
+		},
+		{
+			"codepoint": 60234,
+			"name": "smoke_free"
+		},
+		{
+			"codepoint": 60235,
+			"name": "smoking_rooms"
+		},
+		{
+			"codepoint": 58917,
+			"name": "sms"
+		},
+		{
+			"codepoint": 58918,
+			"name": "sms_failed"
+		},
+		{
+			"codepoint": 60014,
+			"name": "snapchat"
+		},
+		{
+			"codepoint": 61895,
+			"name": "snippet_folder"
+		},
+		{
+			"codepoint": 57414,
+			"name": "snooze"
+		},
+		{
+			"codepoint": 58643,
+			"name": "snowboarding"
+		},
+		{
+			"codepoint": 59407,
+			"name": "snowing"
+		},
+		{
+			"codepoint": 58627,
+			"name": "snowmobile"
+		},
+		{
+			"codepoint": 58644,
+			"name": "snowshoeing"
+		},
+		{
+			"codepoint": 61874,
+			"name": "soap"
+		},
+		{
+			"codepoint": 57803,
+			"name": "social_distance"
+		},
+		{
+			"codepoint": 60431,
+			"name": "solar_power"
+		},
+		{
+			"codepoint": 57700,
+			"name": "sort"
+		},
+		{
+			"codepoint": 57427,
+			"name": "sort_by_alpha"
+		},
+		{
+			"codepoint": 60407,
+			"name": "sos"
+		},
+		{
+			"codepoint": 59347,
+			"name": "soup_kitchen"
+		},
+		{
+			"codepoint": 61892,
+			"name": "source"
+		},
+		{
+			"codepoint": 61923,
+			"name": "south"
+		},
+		{
+			"codepoint": 59364,
+			"name": "south_america"
+		},
+		{
+			"codepoint": 61924,
+			"name": "south_east"
+		},
+		{
+			"codepoint": 61925,
+			"name": "south_west"
+		},
+		{
+			"codepoint": 60236,
+			"name": "spa"
+		},
+		{
+			"codepoint": 57942,
+			"name": "space_bar"
+		},
+		{
+			"codepoint": 58987,
+			"name": "space_dashboard"
+		},
+		{
+			"codepoint": 60395,
+			"name": "spatial_audio"
+		},
+		{
+			"codepoint": 60392,
+			"name": "spatial_audio_off"
+		},
+		{
+			"codepoint": 60394,
+			"name": "spatial_tracking"
+		},
+		{
+			"codepoint": 58157,
+			"name": "speaker"
+		},
+		{
+			"codepoint": 58158,
+			"name": "speaker_group"
+		},
+		{
+			"codepoint": 59597,
+			"name": "speaker_notes"
+		},
+		{
+			"codepoint": 59690,
+			"name": "speaker_notes_off"
+		},
+		{
+			"codepoint": 57554,
+			"name": "speaker_phone"
+		},
+		{
+			"codepoint": 59876,
+			"name": "speed"
+		},
+		{
+			"codepoint": 59598,
+			"name": "spellcheck"
+		},
+		{
+			"codepoint": 61549,
+			"name": "splitscreen"
+		},
+		{
+			"codepoint": 59815,
+			"name": "spoke"
+		},
+		{
+			"codepoint": 59952,
+			"name": "sports"
+		},
+		{
+			"codepoint": 61939,
+			"name": "sports_bar"
+		},
+		{
+			"codepoint": 59985,
+			"name": "sports_baseball"
+		},
+		{
+			"codepoint": 59942,
+			"name": "sports_basketball"
+		},
+		{
+			"codepoint": 59943,
+			"name": "sports_cricket"
+		},
+		{
+			"codepoint": 59944,
+			"name": "sports_esports"
+		},
+		{
+			"codepoint": 59945,
+			"name": "sports_football"
+		},
+		{
+			"codepoint": 59946,
+			"name": "sports_golf"
+		},
+		{
+			"codepoint": 60356,
+			"name": "sports_gymnastics"
+		},
+		{
+			"codepoint": 59955,
+			"name": "sports_handball"
+		},
+		{
+			"codepoint": 59947,
+			"name": "sports_hockey"
+		},
+		{
+			"codepoint": 59956,
+			"name": "sports_kabaddi"
+		},
+		{
+			"codepoint": 60137,
+			"name": "sports_martial_arts"
+		},
+		{
+			"codepoint": 59948,
+			"name": "sports_mma"
+		},
+		{
+			"codepoint": 59949,
+			"name": "sports_motorsports"
+		},
+		{
+			"codepoint": 59950,
+			"name": "sports_rugby"
+		},
+		{
+			"codepoint": 61550,
+			"name": "sports_score"
+		},
+		{
+			"codepoint": 59951,
+			"name": "sports_soccer"
+		},
+		{
+			"codepoint": 59954,
+			"name": "sports_tennis"
+		},
+		{
+			"codepoint": 59953,
+			"name": "sports_volleyball"
+		},
+		{
+			"codepoint": 60214,
+			"name": "square"
+		},
+		{
+			"codepoint": 59977,
+			"name": "square_foot"
+		},
+		{
+			"codepoint": 60262,
+			"name": "ssid_chart"
+		},
+		{
+			"codepoint": 59878,
+			"name": "stacked_bar_chart"
+		},
+		{
+			"codepoint": 61995,
+			"name": "stacked_line_chart"
+		},
+		{
+			"codepoint": 60304,
+			"name": "stadium"
+		},
+		{
+			"codepoint": 61865,
+			"name": "stairs"
+		},
+		{
+			"codepoint": 59448,
+			"name": "star"
+		},
+		{
+			"codepoint": 59450,
+			"name": "star_border"
+		},
+		{
+			"codepoint": 61593,
+			"name": "star_border_purple500"
+		},
+		{
+			"codepoint": 59449,
+			"name": "star_half"
+		},
+		{
+			"codepoint": 61551,
+			"name": "star_outline"
+		},
+		{
+			"codepoint": 61594,
+			"name": "star_purple500"
+		},
+		{
+			"codepoint": 61676,
+			"name": "star_rate"
+		},
+		{
+			"codepoint": 59600,
+			"name": "stars"
+		},
+		{
+			"codepoint": 57481,
+			"name": "start"
+		},
+		{
+			"codepoint": 57555,
+			"name": "stay_current_landscape"
+		},
+		{
+			"codepoint": 57556,
+			"name": "stay_current_portrait"
+		},
+		{
+			"codepoint": 57557,
+			"name": "stay_primary_landscape"
+		},
+		{
+			"codepoint": 57558,
+			"name": "stay_primary_portrait"
+		},
+		{
+			"codepoint": 61948,
+			"name": "sticky_note_2"
+		},
+		{
+			"codepoint": 57415,
+			"name": "stop"
+		},
+		{
+			"codepoint": 61297,
+			"name": "stop_circle"
+		},
+		{
+			"codepoint": 57571,
+			"name": "stop_screen_share"
+		},
+		{
+			"codepoint": 57819,
+			"name": "storage"
+		},
+		{
+			"codepoint": 59601,
+			"name": "store"
+		},
+		{
+			"codepoint": 58723,
+			"name": "store_mall_directory"
+		},
+		{
+			"codepoint": 59922,
+			"name": "storefront"
+		},
+		{
+			"codepoint": 61552,
+			"name": "storm"
+		},
+		{
+			"codepoint": 60309,
+			"name": "straight"
+		},
+		{
+			"codepoint": 58396,
+			"name": "straighten"
+		},
+		{
+			"codepoint": 59881,
+			"name": "stream"
+		},
+		{
+			"codepoint": 58734,
+			"name": "streetview"
+		},
+		{
+			"codepoint": 57943,
+			"name": "strikethrough_s"
+		},
+		{
+			"codepoint": 61870,
+			"name": "stroller"
+		},
+		{
+			"codepoint": 58397,
+			"name": "style"
+		},
+		{
+			"codepoint": 58841,
+			"name": "subdirectory_arrow_left"
+		},
+		{
+			"codepoint": 58842,
+			"name": "subdirectory_arrow_right"
+		},
+		{
+			"codepoint": 59602,
+			"name": "subject"
+		},
+		{
+			"codepoint": 61713,
+			"name": "subscript"
+		},
+		{
+			"codepoint": 57444,
+			"name": "subscriptions"
+		},
+		{
+			"codepoint": 57416,
+			"name": "subtitles"
+		},
+		{
+			"codepoint": 61298,
+			"name": "subtitles_off"
+		},
+		{
+			"codepoint": 58735,
+			"name": "subway"
+		},
+		{
+			"codepoint": 61553,
+			"name": "summarize"
+		},
+		{
+			"codepoint": 59418,
+			"name": "sunny"
+		},
+		{
+			"codepoint": 59417,
+			"name": "sunny_snowing"
+		},
+		{
+			"codepoint": 61714,
+			"name": "superscript"
+		},
+		{
+			"codepoint": 59705,
+			"name": "supervised_user_circle"
+		},
+		{
+			"codepoint": 59603,
+			"name": "supervisor_account"
+		},
+		{
+			"codepoint": 61299,
+			"name": "support"
+		},
+		{
+			"codepoint": 61666,
+			"name": "support_agent"
+		},
+		{
+			"codepoint": 58645,
+			"name": "surfing"
+		},
+		{
+			"codepoint": 57417,
+			"name": "surround_sound"
+		},
+		{
+			"codepoint": 57559,
+			"name": "swap_calls"
+		},
+		{
+			"codepoint": 59604,
+			"name": "swap_horiz"
+		},
+		{
+			"codepoint": 59699,
+			"name": "swap_horizontal_circle"
+		},
+		{
+			"codepoint": 59605,
+			"name": "swap_vert"
+		},
+		{
+			"codepoint": 59606,
+			"name": "swap_vert_circle"
+		},
+		{
+			"codepoint": 59606,
+			"name": "swap_vertical_circle"
+		},
+		{
+			"codepoint": 59884,
+			"name": "swipe"
+		},
+		{
+			"codepoint": 60243,
+			"name": "swipe_down"
+		},
+		{
+			"codepoint": 60208,
+			"name": "swipe_down_alt"
+		},
+		{
+			"codepoint": 60249,
+			"name": "swipe_left"
+		},
+		{
+			"codepoint": 60211,
+			"name": "swipe_left_alt"
+		},
+		{
+			"codepoint": 60242,
+			"name": "swipe_right"
+		},
+		{
+			"codepoint": 60246,
+			"name": "swipe_right_alt"
+		},
+		{
+			"codepoint": 60206,
+			"name": "swipe_up"
+		},
+		{
+			"codepoint": 60213,
+			"name": "swipe_up_alt"
+		},
+		{
+			"codepoint": 60241,
+			"name": "swipe_vertical"
+		},
+		{
+			"codepoint": 59361,
+			"name": "switch_access_shortcut"
+		},
+		{
+			"codepoint": 59362,
+			"name": "switch_access_shortcut_add"
+		},
+		{
+			"codepoint": 59885,
+			"name": "switch_account"
+		},
+		{
+			"codepoint": 58398,
+			"name": "switch_camera"
+		},
+		{
+			"codepoint": 61905,
+			"name": "switch_left"
+		},
+		{
+			"codepoint": 61906,
+			"name": "switch_right"
+		},
+		{
+			"codepoint": 58399,
+			"name": "switch_video"
+		},
+		{
+			"codepoint": 60080,
+			"name": "synagogue"
+		},
+		{
+			"codepoint": 58919,
+			"name": "sync"
+		},
+		{
+			"codepoint": 59928,
+			"name": "sync_alt"
+		},
+		{
+			"codepoint": 58920,
+			"name": "sync_disabled"
+		},
+		{
+			"codepoint": 60142,
+			"name": "sync_lock"
+		},
+		{
+			"codepoint": 58921,
+			"name": "sync_problem"
+		},
+		{
+			"codepoint": 61554,
+			"name": "system_security_update"
+		},
+		{
+			"codepoint": 61555,
+			"name": "system_security_update_good"
+		},
+		{
+			"codepoint": 61556,
+			"name": "system_security_update_warning"
+		},
+		{
+			"codepoint": 58922,
+			"name": "system_update"
+		},
+		{
+			"codepoint": 59607,
+			"name": "system_update_alt"
+		},
+		{
+			"codepoint": 59607,
+			"name": "system_update_tv"
+		},
+		{
+			"codepoint": 59608,
+			"name": "tab"
+		},
+		{
+			"codepoint": 59609,
+			"name": "tab_unselected"
+		},
+		{
+			"codepoint": 60114,
+			"name": "table_bar"
+		},
+		{
+			"codepoint": 57957,
+			"name": "table_chart"
+		},
+		{
+			"codepoint": 60102,
+			"name": "table_restaurant"
+		},
+		{
+			"codepoint": 61697,
+			"name": "table_rows"
+		},
+		{
+			"codepoint": 61886,
+			"name": "table_view"
+		},
+		{
+			"codepoint": 58159,
+			"name": "tablet"
+		},
+		{
+			"codepoint": 58160,
+			"name": "tablet_android"
+		},
+		{
+			"codepoint": 58161,
+			"name": "tablet_mac"
+		},
+		{
+			"codepoint": 59887,
+			"name": "tag"
+		},
+		{
+			"codepoint": 58400,
+			"name": "tag_faces"
+		},
+		{
+			"codepoint": 60020,
+			"name": "takeout_dining"
+		},
+		{
+			"codepoint": 58923,
+			"name": "tap_and_play"
+		},
+		{
+			"codepoint": 61929,
+			"name": "tapas"
+		},
+		{
+			"codepoint": 61557,
+			"name": "task"
+		},
+		{
+			"codepoint": 58086,
+			"name": "task_alt"
+		},
+		{
+			"codepoint": 61300,
+			"name": "taxi_alert"
+		},
+		{
+			"codepoint": 60011,
+			"name": "telegram"
+		},
+		{
+			"codepoint": 60083,
+			"name": "temple_buddhist"
+		},
+		{
+			"codepoint": 60079,
+			"name": "temple_hindu"
+		},
+		{
+			"codepoint": 60302,
+			"name": "terminal"
+		},
+		{
+			"codepoint": 58724,
+			"name": "terrain"
+		},
+		{
+			"codepoint": 60125,
+			"name": "text_decrease"
+		},
+		{
+			"codepoint": 57954,
+			"name": "text_fields"
+		},
+		{
+			"codepoint": 57701,
+			"name": "text_format"
+		},
+		{
+			"codepoint": 60130,
+			"name": "text_increase"
+		},
+		{
+			"codepoint": 59706,
+			"name": "text_rotate_up"
+		},
+		{
+			"codepoint": 59707,
+			"name": "text_rotate_vertical"
+		},
+		{
+			"codepoint": 59708,
+			"name": "text_rotation_angledown"
+		},
+		{
+			"codepoint": 59709,
+			"name": "text_rotation_angleup"
+		},
+		{
+			"codepoint": 59710,
+			"name": "text_rotation_down"
+		},
+		{
+			"codepoint": 59711,
+			"name": "text_rotation_none"
+		},
+		{
+			"codepoint": 61894,
+			"name": "text_snippet"
+		},
+		{
+			"codepoint": 57560,
+			"name": "textsms"
+		},
+		{
+			"codepoint": 58401,
+			"name": "texture"
+		},
+		{
+			"codepoint": 60006,
+			"name": "theater_comedy"
+		},
+		{
+			"codepoint": 59610,
+			"name": "theaters"
+		},
+		{
+			"codepoint": 61558,
+			"name": "thermostat"
+		},
+		{
+			"codepoint": 61559,
+			"name": "thermostat_auto"
+		},
+		{
+			"codepoint": 59611,
+			"name": "thumb_down"
+		},
+		{
+			"codepoint": 59414,
+			"name": "thumb_down_alt"
+		},
+		{
+			"codepoint": 59890,
+			"name": "thumb_down_off_alt"
+		},
+		{
+			"codepoint": 59612,
+			"name": "thumb_up"
+		},
+		{
+			"codepoint": 59415,
+			"name": "thumb_up_alt"
+		},
+		{
+			"codepoint": 59891,
+			"name": "thumb_up_off_alt"
+		},
+		{
+			"codepoint": 59613,
+			"name": "thumbs_up_down"
+		},
+		{
+			"codepoint": 60379,
+			"name": "thunderstorm"
+		},
+		{
+			"codepoint": 60030,
+			"name": "tiktok"
+		},
+		{
+			"codepoint": 58924,
+			"name": "time_to_leave"
+		},
+		{
+			"codepoint": 58402,
+			"name": "timelapse"
+		},
+		{
+			"codepoint": 59682,
+			"name": "timeline"
+		},
+		{
+			"codepoint": 58405,
+			"name": "timer"
+		},
+		{
+			"codepoint": 58403,
+			"name": "timer_10"
+		},
+		{
+			"codepoint": 61562,
+			"name": "timer_10_select"
+		},
+		{
+			"codepoint": 58404,
+			"name": "timer_3"
+		},
+		{
+			"codepoint": 61563,
+			"name": "timer_3_select"
+		},
+		{
+			"codepoint": 58406,
+			"name": "timer_off"
+		},
+		{
+			"codepoint": 59290,
+			"name": "tips_and_updates"
+		},
+		{
+			"codepoint": 60360,
+			"name": "tire_repair"
+		},
+		{
+			"codepoint": 57956,
+			"name": "title"
+		},
+		{
+			"codepoint": 59614,
+			"name": "toc"
+		},
+		{
+			"codepoint": 59615,
+			"name": "today"
+		},
+		{
+			"codepoint": 59893,
+			"name": "toggle_off"
+		},
+		{
+			"codepoint": 59894,
+			"name": "toggle_on"
+		},
+		{
+			"codepoint": 59941,
+			"name": "token"
+		},
+		{
+			"codepoint": 59616,
+			"name": "toll"
+		},
+		{
+			"codepoint": 58407,
+			"name": "tonality"
+		},
+		{
+			"codepoint": 61896,
+			"name": "topic"
+		},
+		{
+			"codepoint": 57753,
+			"name": "tornado"
+		},
+		{
+			"codepoint": 59667,
+			"name": "touch_app"
+		},
+		{
+			"codepoint": 61301,
+			"name": "tour"
+		},
+		{
+			"codepoint": 58162,
+			"name": "toys"
+		},
+		{
+			"codepoint": 59617,
+			"name": "track_changes"
+		},
+		{
+			"codepoint": 58725,
+			"name": "traffic"
+		},
+		{
+			"codepoint": 58736,
+			"name": "train"
+		},
+		{
+			"codepoint": 58737,
+			"name": "tram"
+		},
+		{
+			"codepoint": 63724,
+			"name": "transcribe"
+		},
+		{
+			"codepoint": 58738,
+			"name": "transfer_within_a_station"
+		},
+		{
+			"codepoint": 58408,
+			"name": "transform"
+		},
+		{
+			"codepoint": 58765,
+			"name": "transgender"
+		},
+		{
+			"codepoint": 58745,
+			"name": "transit_enterexit"
+		},
+		{
+			"codepoint": 59618,
+			"name": "translate"
+		},
+		{
+			"codepoint": 58075,
+			"name": "travel_explore"
+		},
+		{
+			"codepoint": 59619,
+			"name": "trending_down"
+		},
+		{
+			"codepoint": 59620,
+			"name": "trending_flat"
+		},
+		{
+			"codepoint": 59620,
+			"name": "trending_neutral"
+		},
+		{
+			"codepoint": 59621,
+			"name": "trending_up"
+		},
+		{
+			"codepoint": 58747,
+			"name": "trip_origin"
+		},
+		{
+			"codepoint": 63595,
+			"name": "trolley"
+		},
+		{
+			"codepoint": 57810,
+			"name": "troubleshoot"
+		},
+		{
+			"codepoint": 61564,
+			"name": "try"
+		},
+		{
+			"codepoint": 60376,
+			"name": "tsunami"
+		},
+		{
+			"codepoint": 61866,
+			"name": "tty"
+		},
+		{
+			"codepoint": 58409,
+			"name": "tune"
+		},
+		{
+			"codepoint": 61565,
+			"name": "tungsten"
+		},
+		{
+			"codepoint": 60326,
+			"name": "turn_left"
+		},
+		{
+			"codepoint": 60331,
+			"name": "turn_right"
+		},
+		{
+			"codepoint": 60327,
+			"name": "turn_sharp_left"
+		},
+		{
+			"codepoint": 60330,
+			"name": "turn_sharp_right"
+		},
+		{
+			"codepoint": 60324,
+			"name": "turn_slight_left"
+		},
+		{
+			"codepoint": 60314,
+			"name": "turn_slight_right"
+		},
+		{
+			"codepoint": 59622,
+			"name": "turned_in"
+		},
+		{
+			"codepoint": 59623,
+			"name": "turned_in_not"
+		},
+		{
+			"codepoint": 58163,
+			"name": "tv"
+		},
+		{
+			"codepoint": 58951,
+			"name": "tv_off"
+		},
+		{
+			"codepoint": 59897,
+			"name": "two_wheeler"
+		},
+		{
+			"codepoint": 63728,
+			"name": "type_specimen"
+		},
+		{
+			"codepoint": 60321,
+			"name": "u_turn_left"
+		},
+		{
+			"codepoint": 60322,
+			"name": "u_turn_right"
+		},
+		{
+			"codepoint": 61869,
+			"name": "umbrella"
+		},
+		{
+			"codepoint": 57705,
+			"name": "unarchive"
+		},
+		{
+			"codepoint": 57702,
+			"name": "undo"
+		},
+		{
+			"codepoint": 58838,
+			"name": "unfold_less"
+		},
+		{
+			"codepoint": 63695,
+			"name": "unfold_less_double"
+		},
+		{
+			"codepoint": 58839,
+			"name": "unfold_more"
+		},
+		{
+			"codepoint": 63696,
+			"name": "unfold_more_double"
+		},
+		{
+			"codepoint": 62006,
+			"name": "unpublished"
+		},
+		{
+			"codepoint": 57579,
+			"name": "unsubscribe"
+		},
+		{
+			"codepoint": 61566,
+			"name": "upcoming"
+		},
+		{
+			"codepoint": 59683,
+			"name": "update"
+		},
+		{
+			"codepoint": 57461,
+			"name": "update_disabled"
+		},
+		{
+			"codepoint": 61691,
+			"name": "upgrade"
+		},
+		{
+			"codepoint": 61595,
+			"name": "upload"
+		},
+		{
+			"codepoint": 59900,
+			"name": "upload_file"
+		},
+		{
+			"codepoint": 57824,
+			"name": "usb"
+		},
+		{
+			"codepoint": 58618,
+			"name": "usb_off"
+		},
+		{
+			"codepoint": 57656,
+			"name": "vaccines"
+		},
+		{
+			"codepoint": 60358,
+			"name": "vape_free"
+		},
+		{
+			"codepoint": 60367,
+			"name": "vaping_rooms"
+		},
+		{
+			"codepoint": 61302,
+			"name": "verified"
+		},
+		{
+			"codepoint": 59624,
+			"name": "verified_user"
+		},
+		{
+			"codepoint": 57944,
+			"name": "vertical_align_bottom"
+		},
+		{
+			"codepoint": 57945,
+			"name": "vertical_align_center"
+		},
+		{
+			"codepoint": 57946,
+			"name": "vertical_align_top"
+		},
+		{
+			"codepoint": 57462,
+			"name": "vertical_distribute"
+		},
+		{
+			"codepoint": 60430,
+			"name": "vertical_shades"
+		},
+		{
+			"codepoint": 60429,
+			"name": "vertical_shades_closed"
+		},
+		{
+			"codepoint": 59721,
+			"name": "vertical_split"
+		},
+		{
+			"codepoint": 58925,
+			"name": "vibration"
+		},
+		{
+			"codepoint": 57456,
+			"name": "video_call"
+		},
+		{
+			"codepoint": 61567,
+			"name": "video_camera_back"
+		},
+		{
+			"codepoint": 61568,
+			"name": "video_camera_front"
+		},
+		{
+			"codepoint": 63648,
+			"name": "video_chat"
+		},
+		{
+			"codepoint": 57418,
+			"name": "video_collection"
+		},
+		{
+			"codepoint": 60295,
+			"name": "video_file"
+		},
+		{
+			"codepoint": 57457,
+			"name": "video_label"
+		},
+		{
+			"codepoint": 57418,
+			"name": "video_library"
+		},
+		{
+			"codepoint": 60021,
+			"name": "video_settings"
+		},
+		{
+			"codepoint": 61569,
+			"name": "video_stable"
+		},
+		{
+			"codepoint": 57419,
+			"name": "videocam"
+		},
+		{
+			"codepoint": 57420,
+			"name": "videocam_off"
+		},
+		{
+			"codepoint": 58168,
+			"name": "videogame_asset"
+		},
+		{
+			"codepoint": 58624,
+			"name": "videogame_asset_off"
+		},
+		{
+			"codepoint": 59625,
+			"name": "view_agenda"
+		},
+		{
+			"codepoint": 59626,
+			"name": "view_array"
+		},
+		{
+			"codepoint": 59627,
+			"name": "view_carousel"
+		},
+		{
+			"codepoint": 59628,
+			"name": "view_column"
+		},
+		{
+			"codepoint": 58410,
+			"name": "view_comfortable"
+		},
+		{
+			"codepoint": 58410,
+			"name": "view_comfy"
+		},
+		{
+			"codepoint": 60275,
+			"name": "view_comfy_alt"
+		},
+		{
+			"codepoint": 58411,
+			"name": "view_compact"
+		},
+		{
+			"codepoint": 60276,
+			"name": "view_compact_alt"
+		},
+		{
+			"codepoint": 60277,
+			"name": "view_cozy"
+		},
+		{
+			"codepoint": 59629,
+			"name": "view_day"
+		},
+		{
+			"codepoint": 59630,
+			"name": "view_headline"
+		},
+		{
+			"codepoint": 59902,
+			"name": "view_in_ar"
+		},
+		{
+			"codepoint": 60287,
+			"name": "view_kanban"
+		},
+		{
+			"codepoint": 59631,
+			"name": "view_list"
+		},
+		{
+			"codepoint": 59632,
+			"name": "view_module"
+		},
+		{
+			"codepoint": 59633,
+			"name": "view_quilt"
+		},
+		{
+			"codepoint": 61716,
+			"name": "view_sidebar"
+		},
+		{
+			"codepoint": 59634,
+			"name": "view_stream"
+		},
+		{
+			"codepoint": 60293,
+			"name": "view_timeline"
+		},
+		{
+			"codepoint": 59635,
+			"name": "view_week"
+		},
+		{
+			"codepoint": 58421,
+			"name": "vignette"
+		},
+		{
+			"codepoint": 58758,
+			"name": "villa"
+		},
+		{
+			"codepoint": 59636,
+			"name": "visibility"
+		},
+		{
+			"codepoint": 59637,
+			"name": "visibility_off"
+		},
+		{
+			"codepoint": 58926,
+			"name": "voice_chat"
+		},
+		{
+			"codepoint": 59722,
+			"name": "voice_over_off"
+		},
+		{
+			"codepoint": 57561,
+			"name": "voicemail"
+		},
+		{
+			"codepoint": 60378,
+			"name": "volcano"
+		},
+		{
+			"codepoint": 57421,
+			"name": "volume_down"
+		},
+		{
+			"codepoint": 59292,
+			"name": "volume_down_alt"
+		},
+		{
+			"codepoint": 57422,
+			"name": "volume_mute"
+		},
+		{
+			"codepoint": 57423,
+			"name": "volume_off"
+		},
+		{
+			"codepoint": 57424,
+			"name": "volume_up"
+		},
+		{
+			"codepoint": 60016,
+			"name": "volunteer_activism"
+		},
+		{
+			"codepoint": 57562,
+			"name": "vpn_key"
+		},
+		{
+			"codepoint": 60282,
+			"name": "vpn_key_off"
+		},
+		{
+			"codepoint": 58927,
+			"name": "vpn_lock"
+		},
+		{
+			"codepoint": 61570,
+			"name": "vrpano"
+		},
+		{
+			"codepoint": 63743,
+			"name": "wallet"
+		},
+		{
+			"codepoint": 59638,
+			"name": "wallet_giftcard"
+		},
+		{
+			"codepoint": 59639,
+			"name": "wallet_membership"
+		},
+		{
+			"codepoint": 59640,
+			"name": "wallet_travel"
+		},
+		{
+			"codepoint": 57788,
+			"name": "wallpaper"
+		},
+		{
+			"codepoint": 60344,
+			"name": "warehouse"
+		},
+		{
+			"codepoint": 57346,
+			"name": "warning"
+		},
+		{
+			"codepoint": 61571,
+			"name": "warning_amber"
+		},
+		{
+			"codepoint": 61873,
+			"name": "wash"
+		},
+		{
+			"codepoint": 58164,
+			"name": "watch"
+		},
+		{
+			"codepoint": 59684,
+			"name": "watch_later"
+		},
+		{
+			"codepoint": 60131,
+			"name": "watch_off"
+		},
+		{
+			"codepoint": 61572,
+			"name": "water"
+		},
+		{
+			"codepoint": 61955,
+			"name": "water_damage"
+		},
+		{
+			"codepoint": 59288,
+			"name": "water_drop"
+		},
+		{
+			"codepoint": 59904,
+			"name": "waterfall_chart"
+		},
+		{
+			"codepoint": 57718,
+			"name": "waves"
+		},
+		{
+			"codepoint": 59238,
+			"name": "waving_hand"
+		},
+		{
+			"codepoint": 58412,
+			"name": "wb_auto"
+		},
+		{
+			"codepoint": 58413,
+			"name": "wb_cloudy"
+		},
+		{
+			"codepoint": 58414,
+			"name": "wb_incandescent"
+		},
+		{
+			"codepoint": 58422,
+			"name": "wb_iridescent"
+		},
+		{
+			"codepoint": 59905,
+			"name": "wb_shade"
+		},
+		{
+			"codepoint": 58416,
+			"name": "wb_sunny"
+		},
+		{
+			"codepoint": 59906,
+			"name": "wb_twighlight"
+		},
+		{
+			"codepoint": 57798,
+			"name": "wb_twilight"
+		},
+		{
+			"codepoint": 58941,
+			"name": "wc"
+		},
+		{
+			"codepoint": 57425,
+			"name": "web"
+		},
+		{
+			"codepoint": 57449,
+			"name": "web_asset"
+		},
+		{
+			"codepoint": 58615,
+			"name": "web_asset_off"
+		},
+		{
+			"codepoint": 58773,
+			"name": "web_stories"
+		},
+		{
+			"codepoint": 60306,
+			"name": "webhook"
+		},
+		{
+			"codepoint": 60033,
+			"name": "wechat"
+		},
+		{
+			"codepoint": 57707,
+			"name": "weekend"
+		},
+		{
+			"codepoint": 61926,
+			"name": "west"
+		},
+		{
+			"codepoint": 59406,
+			"name": "whatshot"
+		},
+		{
+			"codepoint": 61867,
+			"name": "wheelchair_pickup"
+		},
+		{
+			"codepoint": 57719,
+			"name": "where_to_vote"
+		},
+		{
+			"codepoint": 57789,
+			"name": "widgets"
+		},
+		{
+			"codepoint": 63733,
+			"name": "width_full"
+		},
+		{
+			"codepoint": 63734,
+			"name": "width_normal"
+		},
+		{
+			"codepoint": 63735,
+			"name": "width_wide"
+		},
+		{
+			"codepoint": 58942,
+			"name": "wifi"
+		},
+		{
+			"codepoint": 58570,
+			"name": "wifi_1_bar"
+		},
+		{
+			"codepoint": 58585,
+			"name": "wifi_2_bar"
+		},
+		{
+			"codepoint": 61303,
+			"name": "wifi_calling"
+		},
+		{
+			"codepoint": 61573,
+			"name": "wifi_calling_3"
+		},
+		{
+			"codepoint": 60266,
+			"name": "wifi_channel"
+		},
+		{
+			"codepoint": 60209,
+			"name": "wifi_find"
+		},
+		{
+			"codepoint": 57825,
+			"name": "wifi_lock"
+		},
+		{
+			"codepoint": 58952,
+			"name": "wifi_off"
+		},
+		{
+			"codepoint": 60267,
+			"name": "wifi_password"
+		},
+		{
+			"codepoint": 61692,
+			"name": "wifi_protected_setup"
+		},
+		{
+			"codepoint": 57826,
+			"name": "wifi_tethering"
+		},
+		{
+			"codepoint": 60121,
+			"name": "wifi_tethering_error"
+		},
+		{
+			"codepoint": 61574,
+			"name": "wifi_tethering_error_rounded"
+		},
+		{
+			"codepoint": 61575,
+			"name": "wifi_tethering_off"
+		},
+		{
+			"codepoint": 60428,
+			"name": "wind_power"
+		},
+		{
+			"codepoint": 61576,
+			"name": "window"
+		},
+		{
+			"codepoint": 61928,
+			"name": "wine_bar"
+		},
+		{
+			"codepoint": 57662,
+			"name": "woman"
+		},
+		{
+			"codepoint": 63719,
+			"name": "woman_2"
+		},
+		{
+			"codepoint": 60013,
+			"name": "woo_commerce"
+		},
+		{
+			"codepoint": 60063,
+			"name": "wordpress"
+		},
+		{
+			"codepoint": 59641,
+			"name": "work"
+		},
+		{
+			"codepoint": 60425,
+			"name": "work_history"
+		},
+		{
+			"codepoint": 59714,
+			"name": "work_off"
+		},
+		{
+			"codepoint": 59715,
+			"name": "work_outline"
+		},
+		{
+			"codepoint": 59311,
+			"name": "workspace_premium"
+		},
+		{
+			"codepoint": 57760,
+			"name": "workspaces"
+		},
+		{
+			"codepoint": 59917,
+			"name": "workspaces_filled"
+		},
+		{
+			"codepoint": 59919,
+			"name": "workspaces_outline"
+		},
+		{
+			"codepoint": 57947,
+			"name": "wrap_text"
+		},
+		{
+			"codepoint": 61304,
+			"name": "wrong_location"
+		},
+		{
+			"codepoint": 61891,
+			"name": "wysiwyg"
+		},
+		{
+			"codepoint": 61577,
+			"name": "yard"
+		},
+		{
+			"codepoint": 59642,
+			"name": "youtube_searched_for"
+		},
+		{
+			"codepoint": 59647,
+			"name": "zoom_in"
+		},
+		{
+			"codepoint": 60205,
+			"name": "zoom_in_map"
+		},
+		{
+			"codepoint": 59648,
+			"name": "zoom_out"
+		},
+		{
+			"codepoint": 58731,
+			"name": "zoom_out_map"
+		}
+	],
+	"source": {
+		"path": "font/MaterialIcons-Regular.codepoints",
+		"repository": "google/material-design-icons",
+		"revision": "f7bd4f25f3764883717c09a1fd867f560c9a9581",
+		"sha256": "530f25bf7b2d71c8e1da9476d53f9a9bb6b7e187bff69bb7128bb679b8194894"
+	}
+}
