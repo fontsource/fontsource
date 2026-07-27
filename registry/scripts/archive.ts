@@ -121,6 +121,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		// Registry validation guarantees matching source and inspection order.
 		const sources = metadata.sourceFiles.map((source, index) => {
 			const inspected = inspection.files[index];
+			const variable = inspected.axes.length > 0;
 			const format = source.path.toLowerCase().endsWith('.otf') ? 'otf' : 'ttf';
 			return {
 				sha256: source.sha256,
@@ -128,10 +129,13 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				format,
 				size: source.size,
 				downloadUrl: `/v1/registry/sources/${source.sha256}`,
-				type: inspected.axes.length > 0 ? 'variable' : 'static',
+				type: variable ? 'variable' : 'static',
 				fontVersion: inspected.fontVersion,
-				weight: inspected.weight,
-				style: inspected.style,
+				weight:
+					variable || !source.variant
+						? inspected.weight
+						: source.variant.weight,
+				style: source.variant?.style ?? inspected.style,
 				axes: inspected.axes,
 			};
 		});

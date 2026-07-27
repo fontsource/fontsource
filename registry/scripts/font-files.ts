@@ -108,9 +108,21 @@ const writeFamily = async (
 		});
 	}
 	const lastChanged = snapshot.lastChanged(directory);
-	const languages = sourceMetadata.languages ?? matchLanguages(coverage);
+	const languages = new Set(
+		sourceMetadata.languages ?? matchLanguages(coverage),
+	);
+	if (
+		sourceMetadata.languages === undefined &&
+		sourceMetadata.primaryLanguage
+	) {
+		languages.add(sourceMetadata.primaryLanguage);
+	}
+	const { primaryLanguage, ...sourceFields } = sourceMetadata;
 	const metadata = familyMetadataSchema.parse({
-		...sourceMetadata,
+		...sourceFields,
+		...(primaryLanguage && languages.has(primaryLanguage)
+			? { primaryLanguage }
+			: {}),
 		provider: 'fontsource',
 		status: 'active',
 		provenance: {
@@ -124,7 +136,7 @@ const writeFamily = async (
 			new Set(sourceMetadata.classifications),
 		).toSorted(compareStrings),
 		tags: Array.from(new Set(sourceMetadata.tags)).toSorted(compareStrings),
-		languages: Array.from(new Set(languages)).toSorted(compareStrings),
+		languages: [...languages].toSorted(compareStrings),
 		sourceFiles,
 	});
 	const inspection = familyInspectionSchema.parse({ files: inspectionFiles });
