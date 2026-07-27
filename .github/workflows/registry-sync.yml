@@ -42,12 +42,16 @@ jobs:
           git clone --filter=blob:none --sparse --single-branch https://github.com/google/fonts.git "$RUNNER_TEMP/google-fonts"
           git -C "$RUNNER_TEMP/google-fonts" sparse-checkout set ofl apache ufl axisregistry tags lang
           git clone --no-checkout --single-branch https://github.com/googlefonts/nam-files.git "$RUNNER_TEMP/nam-files"
+          git clone --filter=blob:none --sparse --single-branch https://github.com/fontsource/font-files.git "$RUNNER_TEMP/font-files"
+          git -C "$RUNNER_TEMP/font-files" sparse-checkout set sources
           # Record immutable upstream commits instead of moving branch names.
           pnpm --filter '@fontsource-utils/registry' generate \
             "$RUNNER_TEMP/google-fonts" \
             "$(git -C "$RUNNER_TEMP/google-fonts" rev-parse HEAD)" \
             "$RUNNER_TEMP/nam-files" \
-            "$(git -C "$RUNNER_TEMP/nam-files" rev-parse HEAD)"
+            "$(git -C "$RUNNER_TEMP/nam-files" rev-parse HEAD)" \
+            "$RUNNER_TEMP/font-files" \
+            "$(git -C "$RUNNER_TEMP/font-files" rev-parse HEAD)"
 
       - name: Validate
         run: |

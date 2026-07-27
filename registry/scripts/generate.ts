@@ -1,10 +1,12 @@
 import { join } from 'node:path';
 import { consola } from 'consola';
+import { generateFontFiles } from './font-files.ts';
 import { openGitSnapshot } from './git.ts';
 import { generateGoogle } from './google.ts';
 import { generateNam } from './nam.ts';
 import {
 	familyMetadataSchema,
+	languageCatalogSchema,
 	type ReplacementRegistry,
 	registryIndexSchema,
 	replacementRegistrySchema,
@@ -44,10 +46,13 @@ export const generateRegistry = async (
 	googleRevision: string,
 	namRepository: string,
 	namRevision: string,
+	fontFilesRepository: string,
+	fontFilesRevision: string,
 	root: string,
 ): Promise<void> => {
 	const google = openGitSnapshot(googleRepository, googleRevision);
 	const nam = openGitSnapshot(namRepository, namRevision);
+	const fontFiles = openGitSnapshot(fontFilesRepository, fontFilesRevision);
 	const previousValue = await readJsonIfExists(join(root, 'index.json'));
 	const previousIndex =
 		previousValue === null ? null : registryIndexSchema.parse(previousValue);
@@ -59,6 +64,9 @@ export const generateRegistry = async (
 	const previousGoogleIds = previousFamilies
 		.filter((family) => family.startsWith('google/'))
 		.map((family) => family.slice('google/'.length));
+	const previousFontsourceIds = previousFamilies
+		.filter((family) => family.startsWith('fontsource/'))
+		.map((family) => family.slice('fontsource/'.length));
 	const taxonomy = taxonomySchema.parse(
 		await readJson(join(import.meta.dirname, '..', 'data', 'taxonomy.json')),
 	);
@@ -72,9 +80,25 @@ export const generateRegistry = async (
 		taxonomy,
 	);
 	logger.success(`Generated ${googleFamilies.length} Google font families`);
+	const languages = languageCatalogSchema.parse(
+		await readJson(join(root, 'languages.json')),
+	);
+	logger.start(
+		`Generating families from fontsource/font-files@${fontFiles.revision}`,
+	);
+	const fontsourceFamilies = await generateFontFiles(
+		fontFiles,
+		root,
+		previousFontsourceIds,
+		languages,
+	);
+	logger.success(
+		`Generated ${fontsourceFamilies.length} Fontsource font families`,
+	);
+
 	const families = [
-		...previousFamilies.filter((family) => !family.startsWith('google/')),
 		...googleFamilies.map((family) => `google/${family}`),
+		...fontsourceFamilies.map((family) => `fontsource/${family}`),
 	].toSorted(compareStrings);
 
 	logger.start(`Generating subsets from googlefonts/nam-files@${nam.revision}`);
@@ -92,6 +116,10 @@ export const generateRegistry = async (
 				repository: 'googlefonts/nam-files',
 				revision: nam.revision,
 			},
+			fontFiles: {
+				repository: 'fontsource/font-files',
+				revision: fontFiles.revision,
+			},
 		},
 		families,
 		subsets,
@@ -104,17 +132,25 @@ export const generateRegistry = async (
 };
 
 if (import.meta.main) {
-	const [googleRepository, googleRevision, namRepository, namRevision] =
-		process.argv.slice(2);
+	const [
+		googleRepository,
+		googleRevision,
+		namRepository,
+		namRevision,
+		fontFilesRepository,
+		fontFilesRevision,
+	] = process.argv.slice(2);
 	if (
 		!googleRepository ||
 		!googleRevision ||
 		!namRepository ||
 		!namRevision ||
-		process.argv.length !== 6
+		!fontFilesRepository ||
+		!fontFilesRevision ||
+		process.argv.length !== 8
 	) {
 		throw new Error(
-			'Usage: generate.ts <google-fonts-repo> <google-commit> <nam-files-repo> <nam-commit>',
+			'Usage: generate.ts <google-fonts-repo> <google-commit> <nam-files-repo> <nam-commit> <font-files-repo> <font-files-commit>',
 		);
 	}
 	await generateRegistry(
@@ -122,6 +158,8 @@ if (import.meta.main) {
 		googleRevision,
 		namRepository,
 		namRevision,
+		fontFilesRepository,
+		fontFilesRevision,
 		join(import.meta.dirname, '..', 'data'),
 	);
 }

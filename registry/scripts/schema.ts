@@ -93,6 +93,10 @@ export const registryIndexSchema = z.strictObject({
 			repository: z.literal('googlefonts/nam-files'),
 			revision: revisionSchema,
 		}),
+		fontFiles: z.strictObject({
+			repository: z.literal('fontsource/font-files'),
+			revision: revisionSchema,
+		}),
 	}),
 	families: z.array(familyKeySchema),
 	subsets: z.array(idSchema),

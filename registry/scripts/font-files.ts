@@ -2,6 +2,7 @@ import { deepStrictEqual } from 'node:assert/strict';
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createFontContext, inspectFont } from '@fontsource-utils/core';
+import { consola } from 'consola';
 import type { GitSnapshot } from './git.ts';
 import { normalizeInspection } from './inspection.ts';
 import { createLanguageMatcher, type FontCoverage } from './languages.ts';
@@ -13,9 +14,16 @@ import {
 	type SourceFamily,
 	sourceFamilySchema,
 } from './schema.ts';
-import { compareStrings, normalizeText, sha256, writeJson } from './shared.ts';
+import {
+	compareStrings,
+	normalizeText,
+	readJson,
+	sha256,
+	writeJson,
+} from './shared.ts';
 
 const FONT_FILES_REPOSITORY = 'fontsource/font-files';
+const logger = consola.withTag('registry');
 
 const DOCUMENTS = ['article.en-US.md', 'description.en-US.md'] as const;
 
@@ -165,17 +173,41 @@ const writeFamily = async (
 export const generateFontFiles = async (
 	snapshot: GitSnapshot,
 	root: string,
+	previousFamilyIds: readonly string[],
 	languages: LanguageCatalog,
 ): Promise<string[]> => {
 	const families = readFamilies(snapshot);
+	const familyIds = new Set(previousFamilyIds);
 	const ctx = createFontContext();
 	const matchLanguages = createLanguageMatcher(languages);
 	try {
-		for (const family of families) {
+		for (const [index, family] of families.entries()) {
 			await writeFamily(snapshot, family, root, ctx, matchLanguages);
+			familyIds.add(family.metadata.id);
+			const processed = index + 1;
+			if (processed % 25 === 0 && processed < families.length) {
+				logger.info(
+					`Processed ${processed}/${families.length} Fontsource font families`,
+				);
+			}
 		}
 	} finally {
 		ctx.destroy();
 	}
-	return families.map((family) => family.metadata.id);
+
+	const currentIds = new Set(families.map((family) => family.metadata.id));
+	for (const id of previousFamilyIds) {
+		if (currentIds.has(id)) continue;
+		const metadataPath = join(
+			root,
+			'families',
+			'fontsource',
+			id,
+			'metadata.json',
+		);
+		const metadata = familyMetadataSchema.parse(await readJson(metadataPath));
+		await writeJson(metadataPath, { ...metadata, status: 'deprecated' });
+	}
+
+	return [...familyIds].toSorted(compareStrings);
 };

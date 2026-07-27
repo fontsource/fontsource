@@ -17,7 +17,6 @@ import { assertGitPathClean, openGitSnapshot } from './git.ts';
 import {
 	familyMetadataSchema,
 	languageCatalogSchema,
-	registryIndexSchema,
 	sourceFamilySchema,
 } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
@@ -385,46 +384,11 @@ const createFontFilesRepository = async (): Promise<{
 	};
 };
 
-const addRetainedRegistryState = async (root: string): Promise<void> => {
+const addPackagePolicy = async (root: string): Promise<void> => {
 	await writeFixture(
 		root,
 		'families/google/abel/policy.json',
 		canonicalJson(ABEL_POLICY),
-	);
-	const googleDirectory = join(root, 'families/google/abel');
-	const fontsourceDirectory = join(root, 'families/fontsource/example');
-	const metadata = familyMetadataSchema.parse(
-		await readJson(join(googleDirectory, 'metadata.json')),
-	);
-	await writeFixture(
-		root,
-		'families/fontsource/example/metadata.json',
-		canonicalJson({
-			...metadata,
-			id: 'example',
-			family: 'Example',
-			provider: 'fontsource',
-			status: 'active',
-			replacedBy: undefined,
-			provenance: { type: 'registry' },
-		}),
-	);
-	await cp(
-		join(googleDirectory, 'inspection.json'),
-		join(fontsourceDirectory, 'inspection.json'),
-	);
-	const index = registryIndexSchema.parse(
-		await readJson(join(root, 'index.json')),
-	);
-	await writeFixture(
-		root,
-		'index.json',
-		canonicalJson({
-			...index,
-			families: [...index.families, 'fontsource/example'].toSorted(
-				compareStrings,
-			),
-		}),
 	);
 };
 
@@ -475,6 +439,10 @@ describe('registry ingestion', () => {
 						repository: 'googlefonts/nam-files',
 						revision: '2'.repeat(40),
 					},
+					fontFiles: {
+						repository: 'fontsource/font-files',
+						revision: '3'.repeat(40),
+					},
 				},
 				families: ['fontsource/abel', 'google/abel'],
 				subsets: [],
@@ -492,7 +460,7 @@ describe('registry ingestion', () => {
 		const snapshot = openGitSnapshot(source.repository, source.revision);
 
 		await expect(
-			generateFontFiles(snapshot, registry, TEST_LANGUAGES),
+			generateFontFiles(snapshot, registry, [], TEST_LANGUAGES),
 		).resolves.toEqual(['example', 'symbols']);
 		expect(
 			await readJson(
@@ -555,6 +523,7 @@ describe('registry ingestion', () => {
 	it('regenerates deterministically, applies replacements, and retains missing families', async () => {
 		const google = await createGoogleRepository();
 		const nam = await createNamRepository();
+		const fontFiles = await createFontFilesRepository();
 		const registry = await temporaryDirectory('registry');
 
 		await generateRegistry(
@@ -562,9 +531,11 @@ describe('registry ingestion', () => {
 			google.revision,
 			nam.repository,
 			nam.revision,
+			fontFiles.repository,
+			fontFiles.revision,
 			registry,
 		);
-		await addRetainedRegistryState(registry);
+		await addPackagePolicy(registry);
 		await writeFixture(
 			registry,
 			'replacements.json',
@@ -585,6 +556,8 @@ describe('registry ingestion', () => {
 			unrelatedRevision,
 			nam.repository,
 			nam.revision,
+			fontFiles.repository,
+			fontFiles.revision,
 			registry,
 		);
 		const freshRegistry = await temporaryDirectory('fresh-registry');
@@ -598,9 +571,11 @@ describe('registry ingestion', () => {
 			unrelatedRevision,
 			nam.repository,
 			nam.revision,
+			fontFiles.repository,
+			fontFiles.revision,
 			freshRegistry,
 		);
-		await addRetainedRegistryState(freshRegistry);
+		await addPackagePolicy(freshRegistry);
 		expect(await treeHashes(registry)).toEqual(await treeHashes(freshRegistry));
 		expect(
 			await readJson(join(registry, 'families/google/abel/metadata.json')),
@@ -662,11 +637,20 @@ describe('registry ingestion', () => {
 
 		await rm(join(google.repository, 'ofl/abel'), { recursive: true });
 		const removedRevision = commitAll(google.repository, 'remove Abel');
+		await rm(join(fontFiles.repository, 'sources/symbols'), {
+			recursive: true,
+		});
+		const removedFontFilesRevision = commitAll(
+			fontFiles.repository,
+			'remove Symbols',
+		);
 		await generateRegistry(
 			google.repository,
 			removedRevision,
 			nam.repository,
 			nam.revision,
+			fontFiles.repository,
+			removedFontFilesRevision,
 			registry,
 		);
 		const metadata = await readJson(
@@ -676,6 +660,14 @@ describe('registry ingestion', () => {
 			status: 'deprecated',
 			replacedBy: 'recursive-sans',
 			provenance: { revision: google.revision },
+		});
+		expect(
+			await readJson(
+				join(registry, 'families/fontsource/symbols/metadata.json'),
+			),
+		).toMatchObject({
+			status: 'deprecated',
+			provenance: { revision: fontFiles.revision },
 		});
 
 		const replacementPath = join(

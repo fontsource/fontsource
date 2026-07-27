@@ -8,12 +8,12 @@ It is repository tooling, not a public package.
 Run from the repository root:
 
 ~~~sh
-pnpm --filter '@fontsource-utils/registry' generate <google-repo> <google-commit> <nam-repo> <nam-commit>
+pnpm --filter '@fontsource-utils/registry' generate <google-repo> <google-commit> <nam-repo> <nam-commit> <font-files-repo> <font-files-commit>
 pnpm --filter '@fontsource-utils/registry' validate
 pnpm --filter '@fontsource-utils/registry' archive
 ~~~
 
-Both source revisions must be exact 40-character commits. Generation also
+All source revisions must be exact 40-character commits. Generation also
 requires complete Git history so per-path provenance is accurate; shallow
 repositories are rejected.
 Generation validates existing `policy.json` files but never creates or changes
@@ -53,8 +53,7 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 ## Structure
 
 - `scripts/generate.ts` coordinates one complete registry build and validation.
-- `scripts/font-files.ts` implements opt-in Git-backed Fontsource ingestion. It
-  is not part of scheduled generation yet.
+- `scripts/font-files.ts` implements Git-backed Fontsource ingestion.
 - `scripts/google.ts` owns `data/families/google/` and writes family metadata,
   discovery metadata, source inspection, documents, licenses, languages, and
   normalized axis metadata.
@@ -93,7 +92,7 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 
 ## Font-files sources
 
-The opt-in `fontsource/font-files` adapter accepts reviewed source families:
+The `fontsource/font-files` adapter accepts reviewed source families:
 
 ~~~text
 sources/<id>/
