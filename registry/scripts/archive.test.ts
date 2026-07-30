@@ -30,15 +30,9 @@ describe('registry source archive', () => {
 
 	it('publishes archive objects before the manifest and current pointer', async () => {
 		const keys: string[] = [];
+		const views = new Map<string, unknown>();
 		let manifest: unknown;
 		let current: unknown;
-		let family: unknown;
-		let familyWithVariantOverride: unknown;
-		let obliqueFamily: unknown;
-		let iconFamily: unknown;
-		let replacement: unknown;
-		let familyCatalog: Array<Record<string, unknown>> | undefined;
-		let languageCatalog: unknown;
 		let sourceContentType: string | undefined;
 		r2.putObject.mockImplementation(
 			async (object: {
@@ -55,39 +49,12 @@ describe('registry source archive', () => {
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
-				if (object.key.endsWith('/api/families/abel.json')) {
-					family = JSON.parse(
-						Buffer.from(await object.read()).toString('utf8'),
-					);
-				}
-				if (object.key.endsWith('/api/families/alegreya-sans.json')) {
-					familyWithVariantOverride = JSON.parse(
-						Buffer.from(await object.read()).toString('utf8'),
-					);
-				}
-				if (object.key.endsWith('/api/families/nebula-sans.json')) {
-					obliqueFamily = JSON.parse(
-						Buffer.from(await object.read()).toString('utf8'),
-					);
-				}
-				if (object.key.endsWith('/api/families/material-icons.json')) {
-					iconFamily = JSON.parse(
-						Buffer.from(await object.read()).toString('utf8'),
-					);
-				}
-				if (object.key.endsWith('/api/families/ek-mukta.json')) {
-					replacement = JSON.parse(
-						Buffer.from(await object.read()).toString('utf8'),
-					);
-				}
-				if (object.key.endsWith('/api/families.json')) {
-					familyCatalog = JSON.parse(
-						Buffer.from(await object.read()).toString('utf8'),
-					);
-				}
-				if (object.key.endsWith('/api/languages.json')) {
-					languageCatalog = JSON.parse(
-						Buffer.from(await object.read()).toString('utf8'),
+				const marker = '/api/';
+				const viewIndex = object.key.indexOf(marker);
+				if (viewIndex >= 0) {
+					views.set(
+						object.key.slice(viewIndex + marker.length),
+						JSON.parse(Buffer.from(await object.read()).toString('utf8')),
 					);
 				}
 			},
@@ -133,6 +100,7 @@ describe('registry source archive', () => {
 			schemaVersion: 1,
 			registryRevision: REVISION,
 		});
+		const family = views.get('families/abel.json');
 		expect(family).toMatchObject({
 			id: 'abel',
 			classifications: ['sans-serif'],
@@ -159,6 +127,7 @@ describe('registry source archive', () => {
 			],
 		});
 		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
+		const familyWithVariantOverride = views.get('families/alegreya-sans.json');
 		expect(familyWithVariantOverride).toMatchObject({
 			sources: expect.arrayContaining([
 				expect.objectContaining({
@@ -173,6 +142,7 @@ describe('registry source archive', () => {
 		expect(RegistryFamilyDetailSchema.parse(familyWithVariantOverride)).toEqual(
 			familyWithVariantOverride,
 		);
+		const obliqueFamily = views.get('families/nebula-sans.json');
 		expect(obliqueFamily).toMatchObject({
 			sources: expect.arrayContaining([
 				expect.objectContaining({
@@ -184,6 +154,7 @@ describe('registry source archive', () => {
 		expect(RegistryFamilyDetailSchema.parse(obliqueFamily)).toEqual(
 			obliqueFamily,
 		);
+		const iconFamily = views.get('families/material-icons.json');
 		expect(iconFamily).toMatchObject({
 			id: 'material-icons',
 			provider: 'google-icons',
@@ -192,12 +163,16 @@ describe('registry source archive', () => {
 			languages: [],
 		});
 		expect(RegistryFamilyDetailSchema.parse(iconFamily)).toEqual(iconFamily);
+		const replacement = views.get('families/ek-mukta.json');
 		expect(replacement).toMatchObject({
 			id: 'ek-mukta',
 			status: 'deprecated',
 			replacedBy: 'mukta',
 		});
 		expect(RegistryFamilyDetailSchema.parse(replacement)).toEqual(replacement);
+		const familyCatalog = views.get('families.json') as
+			| Array<Record<string, unknown>>
+			| undefined;
 		const abelSummary = familyCatalog?.find(({ id }) => id === 'abel');
 		expect(abelSummary).toMatchObject({
 			id: 'abel',
@@ -205,6 +180,7 @@ describe('registry source archive', () => {
 		});
 		expect(abelSummary).not.toHaveProperty('languages');
 		expect(abelSummary).not.toHaveProperty('variable');
+		const languageCatalog = views.get('languages.json');
 		expect(languageCatalog).toEqual(
 			expect.arrayContaining([
 				expect.objectContaining({

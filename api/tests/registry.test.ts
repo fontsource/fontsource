@@ -33,13 +33,7 @@ const VIEWS = [
 		path: 'families/abel.json',
 		route: '/v1/registry/families/abel',
 		body: RegistryFamilyDetailSchema.parse({
-			id: FAMILY_SUMMARY.id,
-			family: FAMILY_SUMMARY.family,
-			provider: FAMILY_SUMMARY.provider,
-			status: FAMILY_SUMMARY.status,
-			classifications: FAMILY_SUMMARY.classifications,
-			tags: FAMILY_SUMMARY.tags,
-			axes: FAMILY_SUMMARY.axes,
+			...FAMILY_SUMMARY,
 			languages: ['en_Latn'],
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
@@ -47,7 +41,6 @@ const VIEWS = [
 				styles: 'All people are born free',
 				tester: 'All people are born free and equal',
 			},
-			sourceModified: FAMILY_SUMMARY.sourceModified,
 			license: {
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org',

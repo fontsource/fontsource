@@ -142,7 +142,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		const publicFamily = {
 			id,
 			family: family.family,
-			...(family.displayName ? { displayName: family.displayName } : {}),
+			displayName: family.displayName,
 			provider,
 			status: family.status,
 			replacedBy: replacements[id],
@@ -169,12 +169,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 						attribution: family.license.attribution,
 						text: licenseText,
 					},
-					project: family.project
-						? {
-								repository: family.project.repository,
-								revision: family.project.revision,
-							}
-						: undefined,
+					project: family.project,
 					content:
 						description || article
 							? {
@@ -261,15 +256,15 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		manifest: archiveManifestSchema.parse({
 			schemaVersion: 1,
 			registryRevision,
-			registry: registry.map(({ path, size, sha256: hash }) => ({
+			registry: registry.map(({ path, size, sha256 }) => ({
 				path,
 				size,
-				sha256: hash,
+				sha256,
 			})),
-			views: views.map(({ path, size, sha256: hash }) => ({
+			views: views.map(({ path, size, sha256 }) => ({
 				path,
 				size,
-				sha256: hash,
+				sha256,
 			})),
 			sources: sources.map((source) => ({
 				size: source.size,
@@ -308,8 +303,6 @@ export const publishArchive = async (
 		`Planned ${plan.registry.length} registry files, ${plan.views.length} API views, and ${plan.sources.length} source fonts`,
 	);
 	const manifestBytes = Buffer.from(canonicalJson(plan.manifest));
-	const manifestKey = `snapshots/${registryRevision}/manifest.json`;
-	const manifestHash = sha256(manifestBytes);
 
 	const registryObjects = [
 		...new Map(plan.registry.map((file) => [file.sha256, file])).values(),
@@ -328,11 +321,8 @@ export const publishArchive = async (
 			read: async () => file.bytes,
 		})),
 		...plan.sources.map((source) => ({
+			...source,
 			key: `sources/sha256/${source.sha256}`,
-			size: source.size,
-			sha256: source.sha256,
-			contentType: source.contentType,
-			...(source.read ? { read: source.read } : {}),
 		})),
 	];
 	logger.start(`Processing ${objects.length} archive objects`);
@@ -350,9 +340,9 @@ export const publishArchive = async (
 	logger.success(`Processed ${objects.length} archive objects`);
 	logger.start('Publishing snapshot manifest');
 	await putObject({
-		key: manifestKey,
+		key: `snapshots/${registryRevision}/manifest.json`,
 		size: manifestBytes.byteLength,
-		sha256: manifestHash,
+		sha256: sha256(manifestBytes),
 		read: async () => manifestBytes,
 	});
 	await putCurrentObject(

@@ -121,7 +121,7 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 
 export const RegistrySubsetsSchema = z.array(IdSchema);
 
-export const RegistryLanguageSchema = z.strictObject({
+const RegistryLanguageSchema = z.strictObject({
 	id: LanguageIdSchema,
 	language: z.string().min(1).describe('BCP 47 language subtag'),
 	script: ScriptSchema.describe('ISO 15924 script code'),
