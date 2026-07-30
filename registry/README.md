@@ -17,10 +17,11 @@ pnpm --filter '@fontsource-utils/registry' archive
 All source revisions must be exact 40-character commits. Generation also
 requires complete Git history so per-path provenance is accurate; shallow
 repositories are rejected.
-Generation validates existing `policy.json` files but never creates or changes
-package policy. Registry data is written to `data/` and refreshed weekly or on
-demand by the [registry sync workflow](../.github/workflows/registry-sync.yml),
-which validates changes before committing them to `main`.
+Generation validates existing `distribution.json` files but never creates or
+changes distribution intent. Registry data is written to `data/` and refreshed
+weekly or on demand by the
+[registry sync workflow](../.github/workflows/registry-sync.yml), which
+validates changes before committing them to `main`.
 Families present in the previous registry but absent from their provider are
 retained with their original sources and marked `deprecated`. A reappearing
 family is generated as active again unless it has a reviewed replacement.
@@ -75,6 +76,9 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - `data/families/<provider>/<id>/family.json` combines family metadata, source
   declarations, and inspected source properties. IDs are globally unique
   across providers and are derived from directory names.
+- Reviewed families may include `distribution.json` with the exact static
+  variants, variable axis bundles, and public subset mappings Fontsource
+  publishes. Its absence means the family has no official distribution.
 - Icon families also include `icons.json` with public names and Unicode
   codepoints.
 - `data/languages.json` defines semantic languages, public names, and the
@@ -97,8 +101,10 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   successor and never aliases its binaries.
 - `github` provenance can recover a missing source from an exact commit;
   `registry` provenance requires the source to be promoted to R2 first.
-- Package policy is reviewed registry state, not derived from legacy catalogs.
-- Package variants are explicit relations, not weight/style cross-products.
+- Distribution is reviewed registry state, not derived from legacy catalogs.
+- Published variants are explicit relations, not weight/style cross-products.
+- Build format, package version, storage paths, and artifact hashes are global
+  release concerns and do not belong in family distribution records.
 - Core owns generic font processing; these scripts own provider ingestion and
   NAM data.
 
