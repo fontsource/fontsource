@@ -3,7 +3,7 @@
 		"sans-serif"
 	],
 	"dateAdded": "2025-09-05",
-	"designer": "Raphaël Ronot",
+	"designer": "Raphaël Ronot, Samar Zureik",
 	"family": "Alan Sans",
 	"id": "alan-sans",
 	"languages": [
@@ -460,7 +460,7 @@
 	"provenance": {
 		"directory": "ofl/alansans",
 		"repository": "google/fonts",
-		"revision": "a7508b3b116d03a84ef27ad11a8779badf2518c2",
+		"revision": "31522b115de4c8541d2fd36b74408279ba967d8b",
 		"type": "github"
 	},
 	"provider": "google",
@@ -475,7 +475,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-07-03",
+	"sourceModified": "2026-07-23",
 	"status": "active",
 	"tags": [
 		"expressive/calm",

@@ -1,0 +1,1 @@
+Junction is a humanist sans serif created by Caroline Hadilaksono and Tyler Finck. It was the first open-source type project started by The League of Moveable Type, later expanded with light and bold weights and broader international support.

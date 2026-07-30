@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 100,
+				"sha256": "990c654c87bbc84ed4feba38dacdfbc95d94c875296bd3bff797808292de7c51"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.003",
+			"outline": "glyf",
+			"path": "sources/blackout-midnight/files/Blackout Midnight.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

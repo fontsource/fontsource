@@ -1,0 +1,1 @@
+Iosevka is an open-source monospace sans-serif family designed for writing code, terminal use, and technical documents. It combines nine weights with broad Latin, Greek, Cyrillic, IPA, punctuation, and symbol coverage.

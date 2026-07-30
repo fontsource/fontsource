@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 270,
+				"sha256": "2e6feb28b69178a0789f9429505a7583cfd4df1b111d2b4c68f9308a220ac44b"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 001.001",
+			"outline": "cff",
+			"path": "sources/junction/files/Junction-bold.otf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 271,
+				"sha256": "5ccb4e7654baa437343c2bcf6b3344c6973f9fc19f69e27ec204b56b377b5dfa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.002",
+			"outline": "cff",
+			"path": "sources/junction/files/Junction-light.otf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 271,
+				"sha256": "5ccb4e7654baa437343c2bcf6b3344c6973f9fc19f69e27ec204b56b377b5dfa"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.056",
+			"outline": "cff",
+			"path": "sources/junction/files/Junction-regular.otf",
+			"style": "normal",
+			"weight": 500
+		}
+	]
+}

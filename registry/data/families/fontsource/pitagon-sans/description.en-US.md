@@ -1,0 +1,1 @@
+Pitagon Sans is a geometric display sans designed for headings and titles in the Pi Design System. Inspired by Maven Pro, its distinctive curvature and flowing rhythm balance a recognizable voice with clear, versatile forms.

@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 149,
+				"sha256": "25b6338610fa969cb975fad0ce5c42a20b97dd7317fec87c82a5591e55602d17"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900 DEVELOPMENT",
+			"outline": "cff",
+			"path": "sources/bagnard-sans/files/BagnardSans.otf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

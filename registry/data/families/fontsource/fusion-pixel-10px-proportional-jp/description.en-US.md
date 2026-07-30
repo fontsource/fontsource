@@ -1,0 +1,1 @@
+Fusion Pixel 10px Proportional JP is a pan-CJK pixel sans serif assembled from multiple open-source pixel fonts. This Japanese-specific build uses natural glyph widths and spacing and is optimized for a 10-pixel grid.

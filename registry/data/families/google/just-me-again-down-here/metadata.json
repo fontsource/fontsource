@@ -396,13 +396,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/justmeagaindownhere",
-		"revision": "63543cec6964e5061ece828c63948d1910e0dbdd"
+		"repository": "https://github.com/googlefonts/justmeagaindownhere",
+		"revision": "23514049cb37c16431521835a69aa7cfe5d9b709"
 	},
 	"provenance": {
 		"directory": "ofl/justmeagaindownhere",
 		"repository": "google/fonts",
-		"revision": "a8968c643431bf6588193896c057ddc223401205",
+		"revision": "5bce8c4ee5603515b0f0be8e3474ca88700d9e35",
 		"type": "github"
 	},
 	"provider": "google",
@@ -417,7 +417,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/childlike",

@@ -1,0 +1,1 @@
+Redaction 70 is a strongly degraded grade of the Redaction family, pushing its serif forms toward coarse bitmap shapes while retaining enough structure to read. It reflects the damage accumulated through repeated document reproduction.

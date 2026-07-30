@@ -352,13 +352,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/ericaone",
-		"revision": "bde7cb1ee528f936a9bae89a746742983531d9f8"
+		"repository": "https://github.com/googlefonts/ericaone",
+		"revision": "34ddbe60f433f69a959c8200e97b8b9be4499900"
 	},
 	"provenance": {
 		"directory": "ofl/ericaone",
 		"repository": "google/fonts",
-		"revision": "d84ed1af7dc76b13e8b8e83c3e9946f93aaa0095",
+		"revision": "4adaf5176158a5849671acf2380ac10262bcdee7",
 		"type": "github"
 	},
 	"provider": "google",
@@ -373,7 +373,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/awkward",

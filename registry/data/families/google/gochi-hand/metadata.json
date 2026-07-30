@@ -354,13 +354,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/gochihand",
-		"revision": "e202a9f4b7cd6f9c84440e684f0a3d0b5dd234e0"
+		"repository": "https://github.com/googlefonts/gochihand",
+		"revision": "af523d983cfa89c7216edbb907db7e39cef756d2"
 	},
 	"provenance": {
 		"directory": "ofl/gochihand",
 		"repository": "google/fonts",
-		"revision": "716f86027cf2bf70efa0c31d6d18e18c26433fe8",
+		"revision": "9e38c10af6591f6d4ee57c0006bfc58ed07e0d71",
 		"type": "github"
 	},
 	"provider": "google",
@@ -375,7 +375,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-05-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/awkward",

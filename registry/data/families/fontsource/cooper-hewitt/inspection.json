@@ -1,0 +1,186 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-Bold.otf",
+			"style": "normal",
+			"weight": 711
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-BoldItalic.otf",
+			"style": "normal",
+			"weight": 712
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-Book.otf",
+			"style": "normal",
+			"weight": 705
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-BookItalic.otf",
+			"style": "normal",
+			"weight": 706
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-Heavy.otf",
+			"style": "normal",
+			"weight": 713
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 569,
+				"sha256": "095e58ffdc60f008a00eb010d5f127f7471697dbcf6808f1ccae3276c70dddc9"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-HeavyItalic.otf",
+			"style": "normal",
+			"weight": 714
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-Light.otf",
+			"style": "normal",
+			"weight": 703
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-LightItalic.otf",
+			"style": "normal",
+			"weight": 704
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-Medium.otf",
+			"style": "normal",
+			"weight": 707
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-MediumItalic.otf",
+			"style": "normal",
+			"weight": 708
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-Semibold.otf",
+			"style": "normal",
+			"weight": 709
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-SemiboldItalic.otf",
+			"style": "normal",
+			"weight": 710
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-Thin.otf",
+			"style": "normal",
+			"weight": 701
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 566,
+				"sha256": "cc33ffc873e10782cf7713201767eae57a78342d585dab3cd56bf00513fcd62f"
+			},
+			"colorTables": [],
+			"fontVersion": "1.000",
+			"outline": "cff",
+			"path": "sources/cooper-hewitt/files/CooperHewitt-ThinItalic.otf",
+			"style": "normal",
+			"weight": 702
+		}
+	]
+}

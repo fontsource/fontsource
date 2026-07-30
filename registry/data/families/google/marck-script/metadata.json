@@ -426,13 +426,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/marckscript",
-		"revision": "699f31478702f9901c943b7be7caa6e38b6535b7"
+		"repository": "https://github.com/googlefonts/marckscript",
+		"revision": "b85fe9173d03ac8c339274ead43f34f0752c0819"
 	},
 	"provenance": {
 		"directory": "ofl/marckscript",
 		"repository": "google/fonts",
-		"revision": "632e5eef34788aadc808f9e8db3cee1ed7f6e661",
+		"revision": "cf6322a90b377645c94f780fcd8187b7c0c92c61",
 		"type": "github"
 	},
 	"provider": "google",
@@ -447,7 +447,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-26",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/active",

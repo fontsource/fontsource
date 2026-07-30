@@ -1,0 +1,1 @@
+Karmilla is a modified version of Jonathan Pinhorn’s Karla. The project extends the original grotesque sans serif with characters and refinements for French, German, Norwegian, Slovak, Icelandic, and other European languages.

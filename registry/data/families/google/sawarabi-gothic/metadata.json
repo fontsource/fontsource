@@ -693,6 +693,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"primaryScript": "Jpan",
 	"project": {
 		"repository": "https://github.com/googlefonts/sawarabi-mincho",
 		"revision": "397399cfaf018172046c936c0d774de0c5cbba82"
@@ -700,7 +701,7 @@
 	"provenance": {
 		"directory": "ofl/sawarabigothic",
 		"repository": "google/fonts",
-		"revision": "6cdf4e00d66c8b7d8df381389e4ab115323b7a8b",
+		"revision": "7bfa8c0bdd1a33f4b34dd05aba830ad40742ef1e",
 		"type": "github"
 	},
 	"provider": "google",
@@ -715,7 +716,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-26",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/business",

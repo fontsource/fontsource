@@ -500,7 +500,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
-	"primaryScript": "Hira",
+	"primaryScript": "Jpan",
 	"project": {
 		"repository": "https://github.com/satsuyako/YomogiFont",
 		"revision": "8551d68706679b88ce6ff40e093a993e546e593e"
@@ -508,7 +508,7 @@
 	"provenance": {
 		"directory": "ofl/yomogi",
 		"repository": "google/fonts",
-		"revision": "2dcc1a21e9ee7cb66606d0be9099752504efe559",
+		"revision": "d3e5fc3f9dd73b03fa3e090b6355d364da02ef79",
 		"type": "github"
 	},
 	"provider": "google",
@@ -523,7 +523,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-12",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/awkward",

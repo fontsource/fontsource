@@ -1,0 +1,1 @@
+Adwaita Sans is GNOME’s variation of Inter, adapted for the Adwaita desktop and application design language. Its variable upright and italic fonts cover weights from Thin through Black and include an optical-size axis.

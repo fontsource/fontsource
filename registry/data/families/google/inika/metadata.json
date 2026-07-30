@@ -376,13 +376,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/inika",
-		"revision": "bccbe87bf5a91ebb43d149cd786cdabde71c8e52"
+		"repository": "https://github.com/googlefonts/inika",
+		"revision": "07bb78b80a644c3e4979fbd4b6a6a6548d5a2934"
 	},
 	"provenance": {
 		"directory": "ofl/inika",
 		"repository": "google/fonts",
-		"revision": "f4910312af934b5530011ca2155efdfdaa0f9ea6",
+		"revision": "b9102fa47dc4b0fab5ec39160ca9183d3e9ea543",
 		"type": "github"
 	},
 	"provider": "google",
@@ -406,7 +406,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/rugged",

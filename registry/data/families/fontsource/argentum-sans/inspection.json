@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1100,
+				"sha256": "43155df3f0d7bf140749c939f818cfa6c4fdfd3640759a790fa034b21cdfc7c2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "sources/argentum-sans/files/ArgentumSans-Italic-VF.ttf",
+			"style": "italic",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 100,
+					"min": 75,
+					"tag": "wdth"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1099,
+				"sha256": "232143292d90a86302e4947bcbcaa36281cdf815cda4cfeb96307a47f1c4ae3c"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 4.000",
+			"outline": "glyf",
+			"path": "sources/argentum-sans/files/ArgentumSans-VF.ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,95 @@
+{
+	"classifications": [
+		"serif",
+		"symbols"
+	],
+	"designer": "Qrac",
+	"family": "YakuHanMP",
+	"id": "yakuhanmp",
+	"languages": [],
+	"license": {
+		"attribution": "Qrac and upstream contributors",
+		"id": "OFL-1.1",
+		"url": "https://raw.githubusercontent.com/qrac/yakuhanjp/3c7c89f68f7e604bb161b1c47cb4c403a4e517bc/resource/Noto_Serif_JP/OFL.txt"
+	},
+	"primaryScript": "Jpan",
+	"project": {
+		"repository": "https://github.com/qrac/yakuhanjp",
+		"revision": "3c7c89f68f7e604bb161b1c47cb4c403a4e517bc"
+	},
+	"provenance": {
+		"directory": "sources/yakuhanmp",
+		"repository": "fontsource/font-files",
+		"revision": "f67c93c7336863d2cb6037eb86269cad5d545b7f",
+		"type": "github"
+	},
+	"provider": "fontsource",
+	"sourceFiles": [
+		{
+			"path": "sources/yakuhanmp/files/YakuHanMP-Black.ttf",
+			"sha256": "0a382dfdf3019fb05bcc1616d8b35136291a8dc4a3d8a58cd5b1a7b1c394c0e6",
+			"size": 7592,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "sources/yakuhanmp/files/YakuHanMP-Bold.ttf",
+			"sha256": "d70b623247a5df162dd1bc088bafc9e39a0562d9cbf7810e4f0a164d17ec9f95",
+			"size": 7584,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "sources/yakuhanmp/files/YakuHanMP-ExtraLight.ttf",
+			"sha256": "7e4d3df366a2a8c4c75602ae013d250d50988a9904fc4fe3b45a6726428c93e5",
+			"size": 7648,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"path": "sources/yakuhanmp/files/YakuHanMP-Light.ttf",
+			"sha256": "11ed303e72f52dbc90be133af85fff8039397162bbb76390cb39515bf2830e1c",
+			"size": 7572,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "sources/yakuhanmp/files/YakuHanMP-Medium.ttf",
+			"sha256": "5f21be95cd99525496bc3a54245b36da02286dc8db90a7c14b9c24f5f463ab80",
+			"size": 7556,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "sources/yakuhanmp/files/YakuHanMP-Regular.ttf",
+			"sha256": "eebddae815f9dd6172e1742fdf0c4e566c5fb9f9d595d8fa3a5d36d69158c6c7",
+			"size": 7564,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "sources/yakuhanmp/files/YakuHanMP-SemiBold.ttf",
+			"sha256": "3cdc3b3c6fdbb5d672180fe6be490da55a81b23889dab2384a7348418fe22744",
+			"size": 7564,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"sourceModified": "2026-07-27",
+	"status": "active",
+	"tags": []
+}

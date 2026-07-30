@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "2d61b4b4368056ea9312532e5b5fe101ed0e65abe966047efe834e40d4f6a4cd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000;Glyphs 3.2 (3217)",
+			"outline": "cff",
+			"path": "sources/apfel-grotezk/files/ApfelGrotezk-Fett.otf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "2d61b4b4368056ea9312532e5b5fe101ed0e65abe966047efe834e40d4f6a4cd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000;Glyphs 3.2 (3217)",
+			"outline": "cff",
+			"path": "sources/apfel-grotezk/files/ApfelGrotezk-Mittel.otf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "2d61b4b4368056ea9312532e5b5fe101ed0e65abe966047efe834e40d4f6a4cd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000;Glyphs 3.2 (3217)",
+			"outline": "cff",
+			"path": "sources/apfel-grotezk/files/ApfelGrotezk-Regular.otf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 339,
+				"sha256": "2d61b4b4368056ea9312532e5b5fe101ed0e65abe966047efe834e40d4f6a4cd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000;Glyphs 3.2 (3217)",
+			"outline": "cff",
+			"path": "sources/apfel-grotezk/files/ApfelGrotezk-Satt.otf",
+			"style": "normal",
+			"weight": 900
+		}
+	]
+}

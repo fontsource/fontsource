@@ -1,0 +1,238 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-ExtraBoldItalic.ttf",
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-Heavy.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-HeavyItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-MediumItalic.ttf",
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7582,
+				"sha256": "287df997266bdc8d2064fbe9a027d323e8411a60ba6e2b060b4d68a97253dd70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.8.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/iosevka-curly/files/IosevkaCurly-ThinItalic.ttf",
+			"style": "italic",
+			"weight": 100
+		}
+	]
+}

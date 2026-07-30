@@ -352,13 +352,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/macondoswashcaps",
-		"revision": "2768d9b33c7d703085314fcd8c823ad1a8b02edb"
+		"repository": "https://github.com/googlefonts/macondoswashcaps",
+		"revision": "bd29bdafaab2e21ae4bdcc16106b15f2365bca61"
 	},
 	"provenance": {
 		"directory": "ofl/macondoswashcaps",
 		"repository": "google/fonts",
-		"revision": "b47c253fb7ccbcd73236a9f50b99abc7da01a41d",
+		"revision": "9c1029ab93abe13f3b288e5e507596ee70ab1802",
 		"type": "github"
 	},
 	"provider": "google",
@@ -373,7 +373,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-26",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/vintage",

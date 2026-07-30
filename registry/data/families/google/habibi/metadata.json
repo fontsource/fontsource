@@ -428,13 +428,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/habibi",
-		"revision": "1c3eb606631e9da373f1017f7972765a7ab32bd5"
+		"repository": "https://github.com/googlefonts/habibi",
+		"revision": "dca56369c22e74471cceec90e257533271629472"
 	},
 	"provenance": {
 		"directory": "ofl/habibi",
 		"repository": "google/fonts",
-		"revision": "709a455e50ebaec8d0ca75f8a48103a652c0fb03",
+		"revision": "6aaa7d22a693fe71a6bb36a5c61412eff6c48279",
 		"type": "github"
 	},
 	"provider": "google",
@@ -449,7 +449,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/business",

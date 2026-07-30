@@ -1,0 +1,30 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 308,
+				"sha256": "d604434a113c29b8800cc38fe0532357a1271228c63e4a87caffbc7861922267"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.004;PS 001.004;hotconv 1.0.70;makeotf.lib2.5.58329",
+			"outline": "cff",
+			"path": "sources/bluu-next/files/BluuNext-Bold.otf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 268,
+				"sha256": "b227279153c369c4e53c6fa8afee5b363b4fba53331aa1dbdd95159a44662de5"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000;PS 001.000;hotconv 1.0.70;makeotf.lib2.5.58329",
+			"outline": "cff",
+			"path": "sources/bluu-next/files/BluuNext-Bolditalic.otf",
+			"style": "italic",
+			"weight": 700
+		}
+	]
+}

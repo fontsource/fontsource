@@ -1,0 +1,1 @@
+Open Runde is a rounded variant of Rasmus Andersson’s Inter, created by Laurids Kern as an open alternative to SF Pro Rounded. Its softened corners are generated with Glyphs Mini and supplied in four upright weights from Regular through Bold.

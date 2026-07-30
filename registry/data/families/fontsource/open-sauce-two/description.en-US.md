@@ -1,0 +1,1 @@
+Open Sauce Two is the rounded member of Alfredo Marco Pradil’s contemporary grotesque superfamily. Softer details give it an approachable voice while preserving the proportions and seven-weight range shared by the other Open Sauce families.

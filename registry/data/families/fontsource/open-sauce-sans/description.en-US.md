@@ -1,0 +1,1 @@
+Open Sauce Sans is the standard member of Alfredo Marco Pradil’s contemporary grotesque superfamily. Subtle ink traps support clear interface and display typography across seven weights and matching italics.

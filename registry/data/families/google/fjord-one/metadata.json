@@ -351,13 +351,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/fjordone",
-		"revision": "90b0be2c47a5acd683621f38ce4f046f741abafb"
+		"repository": "https://github.com/googlefonts/fjordone",
+		"revision": "a6c1784e33666b26db68a0170055b9f41086240e"
 	},
 	"provenance": {
 		"directory": "ofl/fjordone",
 		"repository": "google/fonts",
-		"revision": "a44ae71e61237742828985c112060173528ba4f2",
+		"revision": "9b57bf5f195f0cbc6653b93d9fe9c63b85b8ad24",
 		"type": "github"
 	},
 	"provider": "google",
@@ -372,7 +372,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/business",

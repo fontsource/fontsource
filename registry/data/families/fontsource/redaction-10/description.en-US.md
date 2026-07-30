@@ -1,0 +1,1 @@
+Redaction 10 is the lightest degraded grade in the Redaction family, introducing subtle bitmap wear while preserving most of the original letterforms. The series reflects how legal documents lose detail as they pass through repeated faxing, photocopying, and scanning.

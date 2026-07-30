@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3261,
+				"sha256": "b07be2cc4e97507585284c2d7485c37cba4b9b6db12a5f2d3c8b1aa9228493ff"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-mono/files/DejaVuSansMono-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2683,
+				"sha256": "785ef8783df326c690e741925353bfe50ddef14a31812a33c47bbc6803f30791"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-mono/files/DejaVuSansMono-BoldOblique.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2683,
+				"sha256": "21e837198fd6a8a21a9bcaa2b10f33be7bb477454b8ad0f4af2450f625e1d0cb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-mono/files/DejaVuSansMono-Oblique.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3322,
+				"sha256": "0c7941d608b5f8e2d9aef05d9ebc2c1bd74913ff7dfa23a9a4a3f77975260a18"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-mono/files/DejaVuSansMono.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

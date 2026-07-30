@@ -439,13 +439,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/jockeyone",
-		"revision": "71261c6f0c80fb7269df32e4aa396669a038030f"
+		"repository": "https://github.com/googlefonts/jockeyone",
+		"revision": "4f6087374d94a145a80a2b297f27db8b52e52dd9"
 	},
 	"provenance": {
 		"directory": "ofl/jockeyone",
 		"repository": "google/fonts",
-		"revision": "3cd17b8816bdbe85f28b66bd50b29b5f66588050",
+		"revision": "0e4bbb7818f63ae05fe12cf0911196b9d05fec1f",
 		"type": "github"
 	},
 	"provider": "google",
@@ -460,7 +460,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/futuristic",

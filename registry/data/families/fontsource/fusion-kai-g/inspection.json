@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 22131,
+				"sha256": "98a4ef20355ae324a1426d62900b1b74536d442a76f4a78748bc057629c5ba5f"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 3.313;October 7, 2023",
+			"outline": "glyf",
+			"path": "sources/fusion-kai-g/files/FusionKaiG-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,1 @@
+Redaction 50 sits at the midpoint of the family’s degraded grades, where familiar serif forms become visibly bloated, warped, and pixelated. It evokes the transformation of legal documents through repeated copying and scanning.

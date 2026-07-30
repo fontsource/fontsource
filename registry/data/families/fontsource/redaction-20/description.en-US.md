@@ -1,0 +1,1 @@
+Redaction 20 advances the Redaction family’s typographic degradation, adding visible bitmap distortion while keeping the text readily recognizable. The series reflects how legal documents lose detail through repeated reproduction.

@@ -1,0 +1,1 @@
+Pitagon Sans Text is a geometric sans designed for paragraphs, descriptions, subtitles, and interfaces. A tall x-height, open counters, balanced spacing, and low-contrast strokes preserve legibility across a wide range of sizes.

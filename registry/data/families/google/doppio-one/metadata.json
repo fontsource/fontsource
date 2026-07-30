@@ -428,13 +428,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/doppioone",
-		"revision": "14bdd2e78b5b8e4f5bc5a39e5f1b02d398883a99"
+		"repository": "https://github.com/googlefonts/doppioone",
+		"revision": "34f9329a27b33de4a879733d65daaee5e7eb61d5"
 	},
 	"provenance": {
 		"directory": "ofl/doppioone",
 		"repository": "google/fonts",
-		"revision": "c38848b40c57a1a1889a68a57756892cd8a8b2cf",
+		"revision": "d14234d12918faa291401af25f02f0ee66519b29",
 		"type": "github"
 	},
 	"provider": "google",
@@ -449,7 +449,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-26",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/calm",

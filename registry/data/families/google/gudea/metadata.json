@@ -353,13 +353,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/gudea",
-		"revision": "0eb36c75099c39430192adf41887965fdc51e819"
+		"repository": "https://github.com/googlefonts/gudea",
+		"revision": "7651bdceeaa8148f45ee5781d87914346be8e9bc"
 	},
 	"provenance": {
 		"directory": "ofl/gudea",
 		"repository": "google/fonts",
-		"revision": "6f23d06ca111a3ed09ca0137ee2aa514d3716847",
+		"revision": "5852f1b8d315e6f9639a23fa5a522b6b3263fbc4",
 		"type": "github"
 	},
 	"provider": "google",
@@ -392,7 +392,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/business",

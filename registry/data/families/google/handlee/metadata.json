@@ -341,13 +341,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/handlee",
-		"revision": "d937cfc17b0389d9847b8a865060b7241af7c654"
+		"repository": "https://github.com/googlefonts/handlee",
+		"revision": "f9930b13dd4ace03636c6260d73cacb5fa30a107"
 	},
 	"provenance": {
 		"directory": "ofl/handlee",
 		"repository": "google/fonts",
-		"revision": "d356ad3b6b89e945757800cb46ae635c49fb6adf",
+		"revision": "9ee2ee261e6fef901cde27ad695312db7acdf4c2",
 		"type": "github"
 	},
 	"provider": "google",
@@ -362,7 +362,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/childlike",

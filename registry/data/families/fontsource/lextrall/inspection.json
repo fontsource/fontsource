@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 100,
+					"min": 0,
+					"tag": "HEXP"
+				},
+				{
+					"default": 400,
+					"max": 900,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 686,
+				"sha256": "12facc5ac31ba4dca7140aa2899c2d7f50a12c6402caa1689f54ef748e5322d7"
+			},
+			"colorTables": [],
+			"fontVersion": "1.0",
+			"outline": "glyf",
+			"path": "sources/lextrall/files/Lextrall[HEXP,wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 900,
+				"min": 100
+			}
+		}
+	]
+}

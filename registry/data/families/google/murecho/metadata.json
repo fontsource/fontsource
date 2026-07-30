@@ -488,7 +488,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
-	"primaryScript": "Hira",
+	"primaryScript": "Jpan",
 	"project": {
 		"repository": "https://github.com/positype/Murecho-Project",
 		"revision": "0efba44c1c504efe50edc3ae30da5840461e5d49"
@@ -496,7 +496,7 @@
 	"provenance": {
 		"directory": "ofl/murecho",
 		"repository": "google/fonts",
-		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"revision": "0f3ec263f8f26f38a5bdffe90137e3b16ded987e",
 		"type": "github"
 	},
 	"provider": "google",
@@ -511,7 +511,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-12",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/calm",

@@ -1,0 +1,1 @@
+Comic Mono turns Shannon Miwa’s Comic Shanns into a true monospace. Its glyphs are adjusted to a common width, its metrics are tuned to sit comfortably beside system fonts, and its bold face is generated from the same playful source.

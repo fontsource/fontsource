@@ -351,13 +351,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/geostarfill",
-		"revision": "48dc43d804ebfd6743caa51e2d42d17dd34b275c"
+		"repository": "https://github.com/googlefonts/geostarfill",
+		"revision": "61aec9b9308292407c258a90b15a66b0449135bc"
 	},
 	"provenance": {
 		"directory": "ofl/geostarfill",
 		"repository": "google/fonts",
-		"revision": "662da72d1e17bab7c4624af47d1026d19848e6e6",
+		"revision": "f240fc790df03eea4ba973ca1f094bf2c59f9d02",
 		"type": "github"
 	},
 	"provider": "google",
@@ -372,7 +372,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/awkward",

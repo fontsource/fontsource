@@ -428,13 +428,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/durusans",
-		"revision": "2895eb6c9842f80c1e01bbf9fbb6231eaef66724"
+		"repository": "https://github.com/googlefonts/durusans",
+		"revision": "d1fe3f7222addb4f12bf8fd244a26e9304a7a376"
 	},
 	"provenance": {
 		"directory": "ofl/durusans",
 		"repository": "google/fonts",
-		"revision": "c298c41cf3b6b7c2aa5f445c4eb5bc68c57b07e4",
+		"revision": "344e15e2e01aa95569f677bb0d626edc5bf91735",
 		"type": "github"
 	},
 	"provider": "google",
@@ -449,7 +449,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/business",

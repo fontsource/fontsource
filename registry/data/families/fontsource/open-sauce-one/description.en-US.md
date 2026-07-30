@@ -1,0 +1,1 @@
+Open Sauce One is the cleanest member of Alfredo Marco Pradil’s contemporary grotesque superfamily. Its neutral forms omit the ink traps of Open Sauce Sans, making it especially suited to editorial layouts while remaining consistent across seven weights and matching italics.

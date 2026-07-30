@@ -345,13 +345,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/goblinone",
-		"revision": "446c2b743e1eda33533ad624c543cfd623eb7c90"
+		"repository": "https://github.com/googlefonts/goblinone",
+		"revision": "82b0d4b4f5e17c953c5a6e42e73d2e93ea2ea9e2"
 	},
 	"provenance": {
 		"directory": "ofl/goblinone",
 		"repository": "google/fonts",
-		"revision": "2dcc32eb988b1049ba92e41e469c8f8362c06d1c",
+		"revision": "b05b74cfe81a8fc7c95f28ca27cf85343fd1001d",
 		"type": "github"
 	},
 	"provider": "google",
@@ -366,7 +366,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/loud",

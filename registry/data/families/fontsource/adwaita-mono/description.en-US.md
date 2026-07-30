@@ -1,0 +1,1 @@
+Adwaita Mono is GNOME’s monospace companion to Adwaita Sans. It customizes Iosevka to match the proportions and character of the Inter-based sans-serif, giving the pair a consistent voice across interface text and code.

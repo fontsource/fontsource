@@ -352,13 +352,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/drsugiyama",
-		"revision": "11d194b70af6df309a24c9395f64280172839879"
+		"repository": "https://github.com/googlefonts/drsugiyama",
+		"revision": "67e9b2e25cd7b9bde6ea5d5001fce5da54a9e877"
 	},
 	"provenance": {
 		"directory": "ofl/drsugiyama",
 		"repository": "google/fonts",
-		"revision": "0536a2cc916c1535610e3446fc5e2e758fff4fc9",
+		"revision": "3ffbe5150bb755148f90a20f033b6e731227b9af",
 		"type": "github"
 	},
 	"provider": "google",
@@ -373,7 +373,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/artistic",

@@ -351,13 +351,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/geostar",
-		"revision": "ca481fdb49204442916697e3d7b1cf6fda792b77"
+		"repository": "https://github.com/googlefonts/geostar",
+		"revision": "cd70b3170a6db347032f02d4f773e2f0ecff25a3"
 	},
 	"provenance": {
 		"directory": "ofl/geostar",
 		"repository": "google/fonts",
-		"revision": "d974dfc1b59e685383e9cf641146701c88b11716",
+		"revision": "6f018d40c85c7a3dc52351b4a918a1f88c9b698d",
 		"type": "github"
 	},
 	"provider": "google",
@@ -372,7 +372,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/awkward",

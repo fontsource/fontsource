@@ -1,0 +1,1 @@
+GNU Unifont is a dual-width bitmap-style typeface designed to render a meaningful glyph for every printable Unicode Basic Multilingual Plane code point, with additional coverage in higher planes. It is intended primarily as a broad-coverage fallback font.

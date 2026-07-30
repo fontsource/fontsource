@@ -1,0 +1,40 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 0,
+					"max": 0,
+					"min": -11,
+					"tag": "slnt"
+				},
+				{
+					"default": 100,
+					"max": 125,
+					"min": 100,
+					"tag": "wdth"
+				},
+				{
+					"default": 200,
+					"max": 800,
+					"min": 200,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 2459,
+				"sha256": "48ec6039a8d62bf9fe71b545794dd1b85dfcc8842aa6982bd735d895d43b382a"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.400 (Monaspace Krypton Var)",
+			"outline": "glyf",
+			"path": "sources/monaspace-krypton/files/Monaspace Krypton Var.ttf",
+			"style": "normal",
+			"weight": {
+				"default": 200,
+				"max": 800,
+				"min": 200
+			}
+		}
+	]
+}

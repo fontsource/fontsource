@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2512,
+				"sha256": "4dc25188c0e3c915542f95cdd6e33f9242a65058f3d15da4054fb0377cb72ddd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;Glyphs 3.1.2 (3151)",
+			"outline": "cff",
+			"path": "sources/open-runde/files/OpenRunde-Bold.otf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2512,
+				"sha256": "4dc25188c0e3c915542f95cdd6e33f9242a65058f3d15da4054fb0377cb72ddd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;Glyphs 3.1.2 (3151)",
+			"outline": "cff",
+			"path": "sources/open-runde/files/OpenRunde-Medium.otf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2512,
+				"sha256": "4dc25188c0e3c915542f95cdd6e33f9242a65058f3d15da4054fb0377cb72ddd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;Glyphs 3.1.2 (3151)",
+			"outline": "cff",
+			"path": "sources/open-runde/files/OpenRunde-Regular.otf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2512,
+				"sha256": "4dc25188c0e3c915542f95cdd6e33f9242a65058f3d15da4054fb0377cb72ddd"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;Glyphs 3.1.2 (3151)",
+			"outline": "cff",
+			"path": "sources/open-runde/files/OpenRunde-Semibold.otf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

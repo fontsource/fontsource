@@ -428,13 +428,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/glassantiqua",
-		"revision": "ccc1839b05e9827b7f3a1439d089952908cd0334"
+		"repository": "https://github.com/googlefonts/glassantiqua",
+		"revision": "64763eadb6bf4a38f7fe638b06683ef7cea15266"
 	},
 	"provenance": {
 		"directory": "ofl/glassantiqua",
 		"repository": "google/fonts",
-		"revision": "bb1982109d6167438faab892b5d9500db64799fc",
+		"revision": "9aa07ca8f267a3ad6935b9fa99187371c4fc04dd",
 		"type": "github"
 	},
 	"provider": "google",
@@ -449,7 +449,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/awkward",

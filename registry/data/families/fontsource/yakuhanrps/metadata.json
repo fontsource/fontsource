@@ -1,0 +1,95 @@
+{
+	"classifications": [
+		"sans-serif",
+		"symbols"
+	],
+	"designer": "Qrac",
+	"family": "YakuHanRPs",
+	"id": "yakuhanrps",
+	"languages": [],
+	"license": {
+		"attribution": "Qrac and upstream contributors",
+		"id": "OFL-1.1",
+		"url": "https://raw.githubusercontent.com/qrac/yakuhanjp/3c7c89f68f7e604bb161b1c47cb4c403a4e517bc/resource/M_PLUS_Rounded_1c/OFL.txt"
+	},
+	"primaryScript": "Jpan",
+	"project": {
+		"repository": "https://github.com/qrac/yakuhanjp",
+		"revision": "3c7c89f68f7e604bb161b1c47cb4c403a4e517bc"
+	},
+	"provenance": {
+		"directory": "sources/yakuhanrps",
+		"repository": "fontsource/font-files",
+		"revision": "f67c93c7336863d2cb6037eb86269cad5d545b7f",
+		"type": "github"
+	},
+	"provider": "fontsource",
+	"sourceFiles": [
+		{
+			"path": "sources/yakuhanrps/files/YakuHanRPs-Black.ttf",
+			"sha256": "8b24d6b1e2206193b3d1835dfc45e2d04ca99597efc339f98384c6fcfb30d165",
+			"size": 6824,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"path": "sources/yakuhanrps/files/YakuHanRPs-Bold.ttf",
+			"sha256": "a40f8807d83d6406d9ca94d08a6aa15f371a3f2b4bfe8fef515c0028a8da6298",
+			"size": 6716,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "sources/yakuhanrps/files/YakuHanRPs-ExtraBold.ttf",
+			"sha256": "fadbdbea774ffcd6fecf3e25b3d9f8aa998bac266e0b19fb603a6d1f4b3fbab3",
+			"size": 6768,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"path": "sources/yakuhanrps/files/YakuHanRPs-Light.ttf",
+			"sha256": "def7afe243bc167513e4919f1518bff078ab43ee12dbe6020eb815e0508f9d2a",
+			"size": 6536,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "sources/yakuhanrps/files/YakuHanRPs-Medium.ttf",
+			"sha256": "b71214147b814971ee15a5521d763d729c250d084f7590563850d9a110e479dc",
+			"size": 6592,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"path": "sources/yakuhanrps/files/YakuHanRPs-Regular.ttf",
+			"sha256": "55461f87ededfc6bb67e426235a3e0f3df314775e085552bbe3f8b725a943849",
+			"size": 6508,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"path": "sources/yakuhanrps/files/YakuHanRPs-Thin.ttf",
+			"sha256": "7f0f4d5392345b08e8b6317b66ee402316ca8b4150da7f89cd92925549ee262e",
+			"size": 6344,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"sourceModified": "2026-07-27",
+	"status": "active",
+	"tags": []
+}

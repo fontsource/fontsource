@@ -1,0 +1,160 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "a77b79d2e45b37618d23558e06d28d2e4dc94899373e6978244cffcc68962871"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 948,
+				"sha256": "f30a55f84282f99aa50595ccfcb4907530967493d83106a683cc14676adf7a2e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-BlackItalic.ttf",
+			"style": "oblique",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "a77b79d2e45b37618d23558e06d28d2e4dc94899373e6978244cffcc68962871"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 948,
+				"sha256": "f30a55f84282f99aa50595ccfcb4907530967493d83106a683cc14676adf7a2e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-BoldItalic.ttf",
+			"style": "oblique",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "a77b79d2e45b37618d23558e06d28d2e4dc94899373e6978244cffcc68962871"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-Book.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 948,
+				"sha256": "f30a55f84282f99aa50595ccfcb4907530967493d83106a683cc14676adf7a2e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-BookItalic.ttf",
+			"style": "oblique",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "a77b79d2e45b37618d23558e06d28d2e4dc94899373e6978244cffcc68962871"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 948,
+				"sha256": "f30a55f84282f99aa50595ccfcb4907530967493d83106a683cc14676adf7a2e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-LightItalic.ttf",
+			"style": "oblique",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "a77b79d2e45b37618d23558e06d28d2e4dc94899373e6978244cffcc68962871"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 948,
+				"sha256": "f30a55f84282f99aa50595ccfcb4907530967493d83106a683cc14676adf7a2e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-MediumItalic.ttf",
+			"style": "oblique",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 950,
+				"sha256": "a77b79d2e45b37618d23558e06d28d2e4dc94899373e6978244cffcc68962871"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-Semibold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 948,
+				"sha256": "f30a55f84282f99aa50595ccfcb4907530967493d83106a683cc14676adf7a2e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.010",
+			"outline": "glyf",
+			"path": "sources/nebula-sans/files/NebulaSans-SemiboldItalic.ttf",
+			"style": "oblique",
+			"weight": 600
+		}
+	]
+}

@@ -1,0 +1,1 @@
+WIN95FA recreates the pixel character of the proportional MS Sans Serif used by Windows 95 as a scalable OpenType font. Alina Sava designed it for the W95 WordPress theme and released it for personal and commercial use under the SIL Open Font License.

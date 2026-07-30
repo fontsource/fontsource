@@ -344,13 +344,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/ewert",
-		"revision": "21fa9ed2031b8f7f1bec75cb3f91ad495e3b2370"
+		"repository": "https://github.com/googlefonts/ewert",
+		"revision": "1fdc40c5b4f330020515d69ca4e3d1fd18e1df64"
 	},
 	"provenance": {
 		"directory": "ofl/ewert",
 		"repository": "google/fonts",
-		"revision": "08363313b03a2d9e80721a6bf997b3f824c5eb5a",
+		"revision": "3d5d4e152624e6c00dd4d4588ada3e1615988b70",
 		"type": "github"
 	},
 	"provider": "google",
@@ -365,7 +365,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/awkward",

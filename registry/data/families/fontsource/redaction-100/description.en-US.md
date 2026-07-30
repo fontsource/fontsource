@@ -1,0 +1,1 @@
+Redaction 100 is the most degraded grade in the Redaction family, reducing its serif forms to near-illegible bitmap shapes. It is the clearest expression of the project’s reference to documents transformed and marginalized by repeated reproduction.

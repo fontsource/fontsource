@@ -347,13 +347,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/elsieswashcaps",
-		"revision": "f48faa350a1a9641bd984b6945f791914a652c65"
+		"repository": "https://github.com/googlefonts/elsieswashcaps",
+		"revision": "411b5d70587edced2c2c23f9d4c1393be55bf5d4"
 	},
 	"provenance": {
 		"directory": "ofl/elsieswashcaps",
 		"repository": "google/fonts",
-		"revision": "5c0f12efeaeba74ff779d6e8c2656e98b465b2fe",
+		"revision": "f935c469bd561d638b1e5650810f6f2c757e6274",
 		"type": "github"
 	},
 	"provider": "google",
@@ -377,7 +377,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/cute",

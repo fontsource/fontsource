@@ -1,0 +1,1 @@
+Metropolis is a modern geometric sans serif influenced by the minimalist typefaces of the early twenty-first century. It is designed to stay readable at small sizes while retaining a clean, architectural presence at display sizes.

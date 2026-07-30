@@ -352,13 +352,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/juliussansone",
-		"revision": "8aadb0e8d6ef7f45aa2844ccd99f7e28f0cd1498"
+		"repository": "https://github.com/googlefonts/juliussansone",
+		"revision": "6e629197948d3aef530fba4cfa8f9e754b947cc1"
 	},
 	"provenance": {
 		"directory": "ofl/juliussansone",
 		"repository": "google/fonts",
-		"revision": "a8d88dca820b6bade5b39faf75b17241bcbb5904",
+		"revision": "2cb4abadc09f1e4e6cb20c863515593375c8873e",
 		"type": "github"
 	},
 	"provider": "google",
@@ -373,7 +373,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/rugged",

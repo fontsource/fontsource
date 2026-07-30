@@ -1,0 +1,1 @@
+Redaction is a bespoke serif commissioned by Titus Kaphar and Reginald Dwayne Betts for *The Redaction* at MoMA PS1. Designed by Jeremy Mickel as a typographic extension of the exhibition, its familiar forms and deliberate notches refer to the distortion accumulated as legal documents are faxed and photocopied.

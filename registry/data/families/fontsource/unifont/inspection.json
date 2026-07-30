@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 58910,
+				"sha256": "68d2e33b87c371ab95283fd94a8e293a785de30d5d680b0606289e68332c3ced"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 17.0.05",
+			"outline": "cff",
+			"path": "sources/unifont/files/unifont-17.0.05.otf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

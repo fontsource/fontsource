@@ -1,0 +1,1 @@
+Fusion Pixel 10px Monospaced SC is a pan-CJK pixel sans serif assembled from multiple open-source pixel fonts. This Simplified Chinese-specific build uses fixed half- and full-width metrics and is optimized for a 10-pixel grid.

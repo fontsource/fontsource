@@ -1,0 +1,1 @@
+Bagnard Sans is the sans-serif companion to Bagnard, a project inspired by graffiti left by an anonymous prisoner during the Napoleonic Wars. It retains the source family’s hand-drawn character in a simpler, unbracketed construction.

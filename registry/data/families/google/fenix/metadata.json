@@ -351,13 +351,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/fenix",
-		"revision": "b5107c124ba8762eeaccd00b73a7302897d4367e"
+		"repository": "https://github.com/googlefonts/fenix",
+		"revision": "cfae6dd0422933ef47db060c6710166fb5ed30d1"
 	},
 	"provenance": {
 		"directory": "ofl/fenix",
 		"repository": "google/fonts",
-		"revision": "3aa21df689d74851d85441c91e0c7b9af725774d",
+		"revision": "41d47d905edb6818aa0806c6821eef4776e3380f",
 		"type": "github"
 	},
 	"provider": "google",
@@ -372,7 +372,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/competent"

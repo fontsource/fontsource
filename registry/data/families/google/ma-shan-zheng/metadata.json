@@ -213,22 +213,22 @@
 	"provenance": {
 		"directory": "ofl/mashanzheng",
 		"repository": "google/fonts",
-		"revision": "4e5f06dbb274a27ebe71ed54ea706b3ee40eabd9",
+		"revision": "406197b91ff39a93061c2c2eeaee67ddf2ae1f0d",
 		"type": "github"
 	},
 	"provider": "google",
 	"sourceFiles": [
 		{
 			"path": "ofl/mashanzheng/MaShanZheng-Regular.ttf",
-			"sha256": "b844c59bf20bf530e41c20d6ff12b383b23a2e553b9b68cc89f070869213155d",
-			"size": 5858048,
+			"sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb",
+			"size": 5857936,
 			"variant": {
 				"style": "normal",
 				"weight": 400
 			}
 		}
 	],
-	"sourceModified": "2026-03-03",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/active",

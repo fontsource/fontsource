@@ -1,0 +1,1 @@
+Ostrich Sans is a modern display sans serif with an exceptionally long, narrow profile. The core family ranges from ultra-light through black, with bold double-line forms and a collection of more decorative dashed, rounded, inline, and heavy companions.

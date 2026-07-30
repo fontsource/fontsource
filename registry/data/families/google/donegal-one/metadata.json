@@ -428,13 +428,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/donegalone",
-		"revision": "b0af18fd94255bfdfe07e90db984167564abd565"
+		"repository": "https://github.com/googlefonts/donegalone",
+		"revision": "3fccfd33ed0b9eefdb158aef321fc2e604127a2c"
 	},
 	"provenance": {
 		"directory": "ofl/donegalone",
 		"repository": "google/fonts",
-		"revision": "d8c6d7dca2cc6cee6e7025cff5f016460f4c17e8",
+		"revision": "23841f1b548b765cc4828ee0cef5839a74cf15aa",
 		"type": "github"
 	},
 	"provider": "google",
@@ -449,7 +449,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-26",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/business",

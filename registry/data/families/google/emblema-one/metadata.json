@@ -428,13 +428,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/emblemaone",
-		"revision": "65d5dad63686fcfc0c7e13ba2cb3143803d96bfe"
+		"repository": "https://github.com/googlefonts/emblemaone",
+		"revision": "79205499f351bf5c95c8dcf6121180c18789f62f"
 	},
 	"provenance": {
 		"directory": "ofl/emblemaone",
 		"repository": "google/fonts",
-		"revision": "6e37096bf3a8b41b586bc9a6843bbec0d4401912",
+		"revision": "a007fa0a87212ca71a8d1ec870c8ce849ea21cea",
 		"type": "github"
 	},
 	"provider": "google",
@@ -449,7 +449,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/active",

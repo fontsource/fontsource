@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 2112,
+				"sha256": "1ea33b5f9a794cecd9b56429cefd7c64e3048ba7aa5e7a5e64566a5a814ece47"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-math/files/DejaVuMathTeXGyre.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

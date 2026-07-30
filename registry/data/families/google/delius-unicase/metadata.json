@@ -346,13 +346,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/deliusunicase",
-		"revision": "cf094caecc96589701f341db1994fd10642e3c88"
+		"repository": "https://github.com/googlefonts/deliusunicase",
+		"revision": "2440c19ebfa6d4a898d9b8d439e9888e7d2fd71f"
 	},
 	"provenance": {
 		"directory": "ofl/deliusunicase",
 		"repository": "google/fonts",
-		"revision": "a96435464c7fd2235adf2f2fa5319716097dd029",
+		"revision": "85cdab5d572a9b0370fdb36a6c9cd8443534c1df",
 		"type": "github"
 	},
 	"provider": "google",
@@ -376,7 +376,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-26",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/awkward",

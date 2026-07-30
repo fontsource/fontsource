@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3443,
+				"sha256": "910500731482c8869893355c9d166414ae72aab3983a3504a6565bebf75db1b6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-serif/files/DejaVuSerif-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3435,
+				"sha256": "ee67052c805ca4bf9e865dd0ca4e3f651c0d2b9db88442759eb2957d678f1ce6"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-serif/files/DejaVuSerif-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3436,
+				"sha256": "a620c3b23d87eaabd3be5b913c3f2e50114a1f026b874f918a62bfbc29f91198"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-serif/files/DejaVuSerif-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3447,
+				"sha256": "50fa77becccdfe54bbc16abd2fbacd9de479be792947598ef4ff30105fd7646e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-serif/files/DejaVuSerif.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

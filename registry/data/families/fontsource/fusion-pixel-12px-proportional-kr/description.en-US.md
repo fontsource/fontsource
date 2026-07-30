@@ -1,0 +1,1 @@
+Fusion Pixel 12px Proportional KR is a pan-CJK pixel sans serif assembled from multiple open-source pixel fonts. This Korean-specific build uses natural glyph widths and spacing and is optimized for a 12-pixel grid.

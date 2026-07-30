@@ -1,0 +1,1 @@
+Redaction 35 is a moderately degraded grade of the Redaction family, balancing recognizable serif forms with increasingly coarse bitmap erosion. It references the distortion accumulated as legal documents are repeatedly reproduced.

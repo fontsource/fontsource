@@ -1,0 +1,1 @@
+Fusion Kai G is a handwritten Simplified Chinese typeface that prioritizes mainland-standard glyph forms. It combines LXGW WenKai GB, Iansui, and LXGW WenKai Lite; this source preserves the final authoritative G release after upstream discontinued the variant.

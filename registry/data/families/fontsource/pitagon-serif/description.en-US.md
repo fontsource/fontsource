@@ -1,0 +1,1 @@
+Pitagon Serif is a contemporary serif designed for articles, books, magazines, and other text-heavy settings. Its asymmetric serifs, generous x-height, pronounced ascenders, and softly curved low-contrast forms support both digital and print reading.

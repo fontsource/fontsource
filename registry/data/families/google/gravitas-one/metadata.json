@@ -345,13 +345,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/gravitasone",
-		"revision": "c89d142ad0f695ba267d27965c26d1dd75463f20"
+		"repository": "https://github.com/googlefonts/gravitasone",
+		"revision": "feede2e8781269a901f8bddb91f05965d294e5a9"
 	},
 	"provenance": {
 		"directory": "ofl/gravitasone",
 		"repository": "google/fonts",
-		"revision": "36ee60d49fa3beeb6c6734a0142bffe7c07ebdcc",
+		"revision": "9ace4e6883bc66c0c52c991f7a222130b48e2a2e",
 		"type": "github"
 	},
 	"provider": "google",
@@ -366,7 +366,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/loud",

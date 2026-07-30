@@ -352,13 +352,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/gafata",
-		"revision": "dcd42b72333486b9704c2d3736e3c26b0346cb67"
+		"repository": "https://github.com/googlefonts/gafata",
+		"revision": "145c6761d3cf3aa1522f0bcec92b5378f67e4139"
 	},
 	"provenance": {
 		"directory": "ofl/gafata",
 		"repository": "google/fonts",
-		"revision": "efe7968e74d6c41697f02810ffd76afca67c85d7",
+		"revision": "a08ab43d5e3fd99d68e8a0a7258a0398a5a23c91",
 		"type": "github"
 	},
 	"provider": "google",
@@ -373,7 +373,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/business",

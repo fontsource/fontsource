@@ -1,0 +1,1 @@
+DejaVu Math TeX Gyre extends the DejaVu design for mathematical typesetting, combining broad Unicode math coverage with additions created by B. Jackowski, P. Strzelczyk, and P. Pianowski for the TeX community.

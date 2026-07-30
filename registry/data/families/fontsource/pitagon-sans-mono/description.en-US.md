@@ -1,0 +1,1 @@
+Pitagon Sans Mono is a fixed-width sans for programming and other technical uses, supporting Latin, Cyrillic, Greek, and a broad set of symbols. Its simple, restrained forms are designed to remain crisp and easy to scan at small sizes.

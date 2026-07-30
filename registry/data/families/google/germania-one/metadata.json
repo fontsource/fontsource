@@ -361,13 +361,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/germaniaone",
-		"revision": "73d401d495adf37b1af75a5dca9cb5cdb046b05d"
+		"repository": "https://github.com/googlefonts/germaniaone",
+		"revision": "8c373b1705299e083f48de2a4c5a818b35c83ad4"
 	},
 	"provenance": {
 		"directory": "ofl/germaniaone",
 		"repository": "google/fonts",
-		"revision": "38cdf9c2c6c38392224fd60779142649a14b6d6c",
+		"revision": "c0d3ea5176e1892b7a9138c6a423b891b00b94c5",
 		"type": "github"
 	},
 	"provider": "google",
@@ -382,7 +382,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/artistic",

@@ -1,0 +1,1 @@
+Chunk Five is an ultra-bold slab serif reminiscent of American Western woodcuts, broadsides, and newspaper headlines. Its unapologetic block lettering is made for display while remaining refined enough for contemporary work.

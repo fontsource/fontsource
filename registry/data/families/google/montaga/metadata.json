@@ -344,13 +344,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/montaga",
-		"revision": "1c439c4e7d38e452718e8e67834c810641d1685a"
+		"repository": "https://github.com/googlefonts/montaga",
+		"revision": "c01e6e195c2d67a0b9d5c3091f3c436991cafd90"
 	},
 	"provenance": {
 		"directory": "ofl/montaga",
 		"repository": "google/fonts",
-		"revision": "b70cdb44b2a77834f59e41ac9c682dd32c3a72a6",
+		"revision": "fcac85673a0a7847abf5a986b38732ceee069668",
 		"type": "github"
 	},
 	"provider": "google",
@@ -365,7 +365,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-26",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/business",

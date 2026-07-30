@@ -426,13 +426,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/devonshire",
-		"revision": "7d88bb81c76ccd1b7d48a15ae97a00c45f9ffb01"
+		"repository": "https://github.com/googlefonts/devonshire",
+		"revision": "7a5ccf2a745c1b08c55181ce87fb522dedcbe631"
 	},
 	"provenance": {
 		"directory": "ofl/devonshire",
 		"repository": "google/fonts",
-		"revision": "17396027aba45e2441f1e531b4b4323c779c2156",
+		"revision": "fc6e2f744b985ea64a91c9805ac8d9098484529d",
 		"type": "github"
 	},
 	"provider": "google",
@@ -447,7 +447,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-26",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/active",

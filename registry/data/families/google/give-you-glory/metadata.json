@@ -399,13 +399,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/giveyouglory",
-		"revision": "2787317ad77bac728fea1ca0c4ce7f0d3ba273d5"
+		"repository": "https://github.com/googlefonts/giveyouglory",
+		"revision": "79ab8c04f2f381fa7439e09957fe3257ff113333"
 	},
 	"provenance": {
 		"directory": "ofl/giveyouglory",
 		"repository": "google/fonts",
-		"revision": "2f6e668ad6eff3710d80babef897e0780c3f8773",
+		"revision": "9332a3b8326ffed1d9671db90e81a2b609c1a6b6",
 		"type": "github"
 	},
 	"provider": "google",
@@ -420,7 +420,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/artistic",

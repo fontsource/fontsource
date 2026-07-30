@@ -352,13 +352,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/economica",
-		"revision": "6bf48e6858755227cdd104ee4b44e9e2e4bb197b"
+		"repository": "https://github.com/googlefonts/economica",
+		"revision": "03c3c4473a043aa560421b3d54d67f66d4a98a31"
 	},
 	"provenance": {
 		"directory": "ofl/economica",
 		"repository": "google/fonts",
-		"revision": "336859beb57afe7c266646973585dd3634e96fbe",
+		"revision": "f1dda8eec6eddb03b18e448ba4896fa38c2b98d7",
 		"type": "github"
 	},
 	"provider": "google",
@@ -400,7 +400,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/futuristic",

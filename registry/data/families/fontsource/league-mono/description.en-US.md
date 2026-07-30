@@ -1,0 +1,1 @@
+League Mono is a variable monospace inspired by forms from Fira Mono, Libertinus Mono, and Courier. Its weight and width axes span thin to extra-bold and condensed to extended, allowing one source to cover forty named combinations.

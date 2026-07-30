@@ -1,0 +1,1 @@
+Fusion Pixel 8px Proportional SC is a pan-CJK pixel sans serif assembled from multiple open-source pixel fonts. This Simplified Chinese-specific build uses natural glyph widths and spacing and is optimized for a 8-pixel grid.

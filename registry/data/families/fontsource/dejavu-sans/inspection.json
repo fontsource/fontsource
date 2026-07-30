@@ -1,0 +1,69 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 5898,
+				"sha256": "f0030a7c757930a37362d6f1f47cdca926a48435a3a0b532d972876eeef4dc69"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-sans/files/DejaVuSans-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 5341,
+				"sha256": "63a336a5e6c77eece0b27388c00a7661c9e02ad23baadbcfbe76ea9609b5e4f4"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-sans/files/DejaVuSans-BoldOblique.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1986,
+				"sha256": "0ac4a1b3e72e5e124853dafedf4618b82bb4d394905355454599af0243799333"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-sans/files/DejaVuSans-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 5283,
+				"sha256": "f2be666ff6b84f0a867dd690598a8cef400350f9ac3450ecada0dbfeece9d221"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-sans/files/DejaVuSans-Oblique.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 5918,
+				"sha256": "1414af337750e04d9b4931c53347340ce67c3b846350a41da3a776a48307851e"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.37",
+			"outline": "glyf",
+			"path": "sources/dejavu-sans/files/DejaVuSans.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -351,13 +351,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/galdeano",
-		"revision": "0325c647c669479930cc9126131a78ca5b942db9"
+		"repository": "https://github.com/googlefonts/galdeano",
+		"revision": "41268aaf05c1ab2716d0b4a8114aa6b7beff8e31"
 	},
 	"provenance": {
 		"directory": "ofl/galdeano",
 		"repository": "google/fonts",
-		"revision": "f3b5a759243d9ff26e0ef81a4636c45b0f715d76",
+		"revision": "1926afa554af9df3efccb5ac5821f60c1fa894b3",
 		"type": "github"
 	},
 	"provider": "google",
@@ -372,7 +372,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"sans/glyphic"

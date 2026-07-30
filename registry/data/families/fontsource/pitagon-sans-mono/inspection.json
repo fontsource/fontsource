@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 100,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1377,
+				"sha256": "871afc2a62a956eee62f793887a1b18594a9673c54f5352744c5a549312c4a70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "sources/pitagon-sans-mono/files/PitagonSansMono-Italic[wght].ttf",
+			"style": "italic",
+			"weight": {
+				"default": 100,
+				"max": 800,
+				"min": 100
+			}
+		},
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 800,
+					"min": 100,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 1377,
+				"sha256": "871afc2a62a956eee62f793887a1b18594a9673c54f5352744c5a549312c4a70"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001;gftools[0.9.26]",
+			"outline": "glyf",
+			"path": "sources/pitagon-sans-mono/files/PitagonSansMono[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 800,
+				"min": 100
+			}
+		}
+	]
+}

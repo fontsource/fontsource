@@ -428,13 +428,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/hammersmithone",
-		"revision": "a5fae41a3eabe8ec4e1d8ff7b3fa6dfde5c4fa87"
+		"repository": "https://github.com/googlefonts/hammersmithone",
+		"revision": "fa842a5d78963d24a139bb95c3b5d81d3a307c2b"
 	},
 	"provenance": {
 		"directory": "ofl/hammersmithone",
 		"repository": "google/fonts",
-		"revision": "025db615a0c9eb757b25250c5b4f377fb4fa9044",
+		"revision": "ac1fd266e59b4c9bdf10048e75dda0976e5f7c5b",
 		"type": "github"
 	},
 	"provider": "google",
@@ -449,7 +449,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/calm",

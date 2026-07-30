@@ -347,13 +347,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/deliusswashcaps",
-		"revision": "a18d931eb4b66533df5df07d91e0851938a96121"
+		"repository": "https://github.com/googlefonts/deliusswashcaps",
+		"revision": "2bcc0f94b70fdc0c94bc30d803f8c646224c1eab"
 	},
 	"provenance": {
 		"directory": "ofl/deliusswashcaps",
 		"repository": "google/fonts",
-		"revision": "bf2809c5b73cb6ed3f064fab24c3b20be0c5d8b6",
+		"revision": "9258aff6a1889eca542b8e9b03a4c7d5902525d3",
 		"type": "github"
 	},
 	"provider": "google",
@@ -368,7 +368,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-26",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/childlike",

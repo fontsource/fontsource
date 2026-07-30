@@ -1,0 +1,17 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 36518,
+				"sha256": "777203de67934d6bc59de7ee86f836c6b707cb0e26415abef68262d155c8d96d"
+			},
+			"colorTables": [],
+			"fontVersion": "2026.07.20",
+			"outline": "glyf",
+			"path": "sources/fusion-pixel-12px-proportional-jp/files/fusion-pixel-12px-proportional-ja.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

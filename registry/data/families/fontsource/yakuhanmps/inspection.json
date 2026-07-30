@@ -1,0 +1,95 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 44,
+				"sha256": "94f2b344030f70ca9a41f39553eb8aad8181f6a2e5fb3ec8c6e49a2e2649a8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 44,
+				"sha256": "94f2b344030f70ca9a41f39553eb8aad8181f6a2e5fb3ec8c6e49a2e2649a8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 44,
+				"sha256": "94f2b344030f70ca9a41f39553eb8aad8181f6a2e5fb3ec8c6e49a2e2649a8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "sources/yakuhanmps/files/YakuHanMPs-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 250
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 44,
+				"sha256": "94f2b344030f70ca9a41f39553eb8aad8181f6a2e5fb3ec8c6e49a2e2649a8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 44,
+				"sha256": "94f2b344030f70ca9a41f39553eb8aad8181f6a2e5fb3ec8c6e49a2e2649a8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 44,
+				"sha256": "94f2b344030f70ca9a41f39553eb8aad8181f6a2e5fb3ec8c6e49a2e2649a8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 44,
+				"sha256": "94f2b344030f70ca9a41f39553eb8aad8181f6a2e5fb3ec8c6e49a2e2649a8fb"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.001",
+			"outline": "glyf",
+			"path": "sources/yakuhanmps/files/YakuHanMPs-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

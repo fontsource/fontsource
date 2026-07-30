@@ -1,0 +1,1 @@
+Peace Sans is a bold, friendly display sans-serif created by Sergey Ryadovoy and Jovanny Lemonad during the learning process at TypeType School. Its single style was designed to make typography feel more peaceful and kind.

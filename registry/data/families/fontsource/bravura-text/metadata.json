@@ -1,0 +1,39 @@
+{
+	"classifications": [
+		"symbols"
+	],
+	"designer": "Daniel Spreadbury",
+	"family": "Bravura Text",
+	"id": "bravura-text",
+	"languages": [],
+	"license": {
+		"attribution": "Steinberg Media Technologies GmbH",
+		"id": "OFL-1.1",
+		"url": "https://raw.githubusercontent.com/steinbergmedia/bravura/02e8ed29a29115df35007d1178cebaeee26c20e1/LICENSE.txt"
+	},
+	"project": {
+		"repository": "https://github.com/steinbergmedia/bravura",
+		"revision": "02e8ed29a29115df35007d1178cebaeee26c20e1"
+	},
+	"provenance": {
+		"directory": "sources/bravura-text",
+		"repository": "fontsource/font-files",
+		"revision": "f67c93c7336863d2cb6037eb86269cad5d545b7f",
+		"type": "github"
+	},
+	"provider": "fontsource",
+	"sourceFiles": [
+		{
+			"path": "sources/bravura-text/files/BravuraText.otf",
+			"sha256": "bd5b1d0a43853e32eaa0851afe9a37e5967f88153270225890c32ae73d2a4942",
+			"size": 1236512,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2026-07-27",
+	"status": "active",
+	"tags": []
+}

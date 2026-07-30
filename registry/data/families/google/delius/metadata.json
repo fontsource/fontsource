@@ -347,13 +347,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/delius",
-		"revision": "5bd1633b6b5175d36e260f3f6d06686482d32212"
+		"repository": "https://github.com/googlefonts/delius",
+		"revision": "99e93e1a8034bf205d3978eaa98b8254a8faff3e"
 	},
 	"provenance": {
 		"directory": "ofl/delius",
 		"repository": "google/fonts",
-		"revision": "a5e9f10e0d0c17fe0a41e8dc29f90fd64a4e7d89",
+		"revision": "f97069559867f2df0764b9fb57bda905e5d99e50",
 		"type": "github"
 	},
 	"provider": "google",
@@ -368,7 +368,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-26",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/childlike",

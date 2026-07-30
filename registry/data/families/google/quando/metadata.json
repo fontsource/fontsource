@@ -429,13 +429,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/quando",
-		"revision": "328635dcbaae8f2fc4fd84c9b872e596a82bebe5"
+		"repository": "https://github.com/googlefonts/quando",
+		"revision": "bba03c60be43e46037df543ccce62fe7c7582b64"
 	},
 	"provenance": {
 		"directory": "ofl/quando",
 		"repository": "google/fonts",
-		"revision": "1dbb37669d2b49899c6d0e4bc7b55c9cc35d5f60",
+		"revision": "00e726a90e0b9698971c37b88c35ef958965448b",
 		"type": "github"
 	},
 	"provider": "google",
@@ -450,7 +450,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-26",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/sincere",

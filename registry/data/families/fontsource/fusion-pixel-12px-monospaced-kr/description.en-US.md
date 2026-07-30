@@ -1,0 +1,1 @@
+Fusion Pixel 12px Monospaced KR is a pan-CJK pixel sans serif assembled from multiple open-source pixel fonts. This Korean-specific build uses fixed half- and full-width metrics and is optimized for a 12-pixel grid.

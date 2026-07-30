@@ -1,0 +1,1 @@
+Fusion Pixel 8px Monospaced JP is a pan-CJK pixel sans serif assembled from multiple open-source pixel fonts. This Japanese-specific build uses fixed half- and full-width metrics and is optimized for a 8-pixel grid.

@@ -354,13 +354,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/fresca",
-		"revision": "ca8ad60bad380c425ebe357ee8a3a71770a849b4"
+		"repository": "https://github.com/googlefonts/fresca",
+		"revision": "6f0f0d00ca1fc37032e87cb12c365a1a31bea443"
 	},
 	"provenance": {
 		"directory": "ofl/fresca",
 		"repository": "google/fonts",
-		"revision": "acd9f0f3fe988d4ef7b041cc2c0ee53573673a8d",
+		"revision": "f2dc3ac29933d87fd2a00f7f2f26968e9c71b6f0",
 		"type": "github"
 	},
 	"provider": "google",
@@ -375,7 +375,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/happy",

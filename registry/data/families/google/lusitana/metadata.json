@@ -325,13 +325,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/lusitana",
-		"revision": "8fa070c2ac2963f13feee142e2001777ac48e774"
+		"repository": "https://github.com/googlefonts/lusitana",
+		"revision": "393d85168ac2026bfc47c6c15bcb3868e279d92b"
 	},
 	"provenance": {
 		"directory": "ofl/lusitana",
 		"repository": "google/fonts",
-		"revision": "599f79ec517adb4423210c09b9a0bf40257ba02d",
+		"revision": "b981043567f69be42a67b48634f1f2b8a8731581",
 		"type": "github"
 	},
 	"provider": "google",
@@ -355,7 +355,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-26",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/business",

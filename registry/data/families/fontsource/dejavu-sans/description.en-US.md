@@ -1,0 +1,1 @@
+DejaVu Sans expands Bitstream Vera Sans with a much wider character repertoire while retaining its original look and feel, including an experimental ExtraLight face alongside the regular and bold family.

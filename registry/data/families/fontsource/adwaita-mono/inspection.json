@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7539,
+				"sha256": "43f330d1f2295dcc6a4ab98c8e36bafb161feb79d190c1414342598735ef6bfc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.1.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/adwaita-mono/files/AdwaitaMono-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7539,
+				"sha256": "43f330d1f2295dcc6a4ab98c8e36bafb161feb79d190c1414342598735ef6bfc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.1.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/adwaita-mono/files/AdwaitaMono-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7539,
+				"sha256": "43f330d1f2295dcc6a4ab98c8e36bafb161feb79d190c1414342598735ef6bfc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.1.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/adwaita-mono/files/AdwaitaMono-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 7539,
+				"sha256": "43f330d1f2295dcc6a4ab98c8e36bafb161feb79d190c1414342598735ef6bfc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 34.1.0; ttfautohint (v1.8.4)",
+			"outline": "glyf",
+			"path": "sources/adwaita-mono/files/AdwaitaMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -347,13 +347,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/elsie",
-		"revision": "9734e9ff1331292fc07ec198d4e5b35216fdd425"
+		"repository": "https://github.com/googlefonts/elsie",
+		"revision": "32783244780b4fdd904d5a1aa3f45a25c76ed15f"
 	},
 	"provenance": {
 		"directory": "ofl/elsie",
 		"repository": "google/fonts",
-		"revision": "c3ed201dcca38e31ded3fa68a0ff958ba4fd67bb",
+		"revision": "042c20e2751c97d50b747405b256026894c55e64",
 		"type": "github"
 	},
 	"provider": "google",
@@ -377,7 +377,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/cute",

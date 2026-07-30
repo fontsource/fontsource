@@ -428,13 +428,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/inder",
-		"revision": "5620f4744158d400ba1286612d14d49c43597033"
+		"repository": "https://github.com/googlefonts/inder",
+		"revision": "e4d4209a92fbe490892b0a6dbac6d61369f32f60"
 	},
 	"provenance": {
 		"directory": "ofl/inder",
 		"repository": "google/fonts",
-		"revision": "54c030894d3ee76214345124ce8cc4b021d06b45",
+		"revision": "9a310b2f8aec43f9b83744b50d9b330d0d4466e6",
 		"type": "github"
 	},
 	"provider": "google",
@@ -449,7 +449,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-03-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/business",

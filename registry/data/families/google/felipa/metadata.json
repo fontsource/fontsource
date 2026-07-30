@@ -355,13 +355,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/felipa",
-		"revision": "3489dd2445fc633f3b32485420d9c56998fad093"
+		"repository": "https://github.com/googlefonts/felipa",
+		"revision": "1ba44f83532b9074cc71a2c13c526dea5118bb50"
 	},
 	"provenance": {
 		"directory": "ofl/felipa",
 		"repository": "google/fonts",
-		"revision": "ce74c68c93ee690652013c1ec4550c85b48fcee2",
+		"revision": "38d9b1eb604e6c6e4bbbe67143e7069d0fe1f727",
 		"type": "github"
 	},
 	"provider": "google",
@@ -376,7 +376,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-27",
+	"sourceModified": "2026-07-22",
 	"status": "active",
 	"tags": [
 		"expressive/artistic",

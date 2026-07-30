@@ -1,0 +1,121 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 3367,
+				"sha256": "e234780908827fd459e7a6cf8ad43bd7a765008572a67facfb8754ed8677fc23"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.004",
+			"outline": "glyf",
+			"path": "sources/noto-mono/files/NotoMono-Thin.ttf",
+			"style": "normal",
+			"weight": 100
+		}
+	]
+}

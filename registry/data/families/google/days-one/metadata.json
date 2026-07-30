@@ -374,13 +374,13 @@
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"project": {
-		"repository": "https://github.com/librefonts/daysone",
-		"revision": "76642af05e1a7734f94e1b22abdbc37b6bfb933c"
+		"repository": "https://github.com/googlefonts/daysone",
+		"revision": "5a4d7f229c497dd3f4cf1b8c23da954c3e45e2cf"
 	},
 	"provenance": {
 		"directory": "ofl/daysone",
 		"repository": "google/fonts",
-		"revision": "c32f75f4e6c382bf4286d91a2f2c8dd0acdfd3a4",
+		"revision": "37bc5c0003907017d5d5af10b860f1541454048e",
 		"type": "github"
 	},
 	"provider": "google",
@@ -395,7 +395,7 @@
 			}
 		}
 	],
-	"sourceModified": "2026-02-26",
+	"sourceModified": "2026-07-21",
 	"status": "active",
 	"tags": [
 		"expressive/rugged"
