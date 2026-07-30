@@ -8,7 +8,7 @@ exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = 
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2) format('woff2'),
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2) format(woff2),
        url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff) format('woff');
   unicode-range: U+0000-00FF;
 }",
