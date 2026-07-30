@@ -6,9 +6,6 @@ import {
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
 	RegistryIdParamSchema,
-	RegistryInfoSchema,
-	RegistryLanguageIdParamSchema,
-	RegistryLanguageSchema,
 	RegistryLanguagesSchema,
 	RegistrySourceParamSchema,
 	RegistrySubsetSchema,
@@ -37,19 +34,6 @@ const registryResponses = (schema: z.ZodType) => ({
 		...contentJson(ErrorResponseSchema),
 	},
 });
-
-export class GetRegistryRoute extends OpenAPIRoute {
-	schema = {
-		tags: ['Registry'],
-		operationId: 'getRegistry',
-		summary: 'Get the current registry snapshot',
-		responses: registryResponses(RegistryInfoSchema),
-	};
-
-	async handle(c: AppContext) {
-		return getRegistryView(c, 'registry.json');
-	}
-}
 
 export class ListRegistryFamiliesRoute extends OpenAPIRoute {
 	schema = {
@@ -114,33 +98,6 @@ export class ListRegistryLanguagesRoute extends OpenAPIRoute {
 
 	async handle(c: AppContext) {
 		return getRegistryView(c, 'languages.json');
-	}
-}
-
-export class GetRegistryLanguageRoute extends OpenAPIRoute {
-	schema = {
-		tags: ['Registry'],
-		operationId: 'getRegistryLanguage',
-		summary: 'Get a registry language',
-		request: {
-			params: RegistryLanguageIdParamSchema,
-		},
-		responses: {
-			...registryResponses(RegistryLanguageSchema),
-			'404': {
-				description: 'Registry language not found',
-				...contentJson(ErrorResponseSchema),
-			},
-		},
-	};
-
-	async handle(c: AppContext) {
-		const data = await this.getValidatedData<typeof this.schema>();
-		return getRegistryView(
-			c,
-			`languages/${data.params.id}.json`,
-			'Not Found. Registry language does not exist.',
-		);
 	}
 }
 

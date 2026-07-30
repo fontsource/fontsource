@@ -599,44 +599,6 @@ export type GetFontOpenGraphImageResponses = {
 
 export type GetFontOpenGraphImageResponse = GetFontOpenGraphImageResponses[keyof GetFontOpenGraphImageResponses];
 
-export type GetRegistryData = {
-    body?: never;
-    path?: never;
-    query?: never;
-    url: '/v1/registry';
-};
-
-export type GetRegistryErrors = {
-    /**
-     * The current registry snapshot is unavailable or incomplete
-     */
-    502: {
-        /**
-         * HTTP status code
-         */
-        status: number;
-        /**
-         * Human-readable error message
-         */
-        error: string;
-    };
-};
-
-export type GetRegistryError = GetRegistryErrors[keyof GetRegistryErrors];
-
-export type GetRegistryResponses = {
-    /**
-     * Registry data from the current snapshot
-     */
-    200: {
-        familyCount: number;
-        languageCount: number;
-        subsetCount: number;
-    };
-};
-
-export type GetRegistryResponse = GetRegistryResponses[keyof GetRegistryResponses];
-
 export type GetRegistryTaxonomyData = {
     body?: never;
     path?: never;
@@ -734,25 +696,18 @@ export type ListRegistryFamiliesResponses = {
     /**
      * Registry data from the current snapshot
      */
-    200: {
-        families: Array<{
-            id: string;
-            family: string;
-            displayName?: string;
-            provider: string;
-            status: 'active' | 'deprecated';
-            replacedBy?: string;
-            classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
-            tags: Array<string>;
-            /**
-             * Semantic language IDs, distinct from package subsets
-             */
-            languages: Array<string>;
-            sourceModified: string;
-            variable: boolean;
-            axes: Array<string>;
-        }>;
-    };
+    200: Array<{
+        id: string;
+        family: string;
+        displayName?: string;
+        provider: string;
+        status: 'active' | 'deprecated';
+        replacedBy?: string;
+        classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
+        tags: Array<string>;
+        sourceModified: string;
+        axes: Array<string>;
+    }>;
 };
 
 export type ListRegistryFamiliesResponse = ListRegistryFamiliesResponses[keyof ListRegistryFamiliesResponses];
@@ -813,11 +768,12 @@ export type GetRegistryFamilyResponses = {
         replacedBy?: string;
         classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
         tags: Array<string>;
+        sourceModified: string;
+        axes: Array<string>;
         /**
          * Semantic language IDs, distinct from package subsets
          */
         languages: Array<string>;
-        sourceModified: string;
         primaryLanguage?: string;
         primaryScript?: string;
         sampleText?: {
@@ -860,14 +816,53 @@ export type GetRegistryFamilyResponses = {
              * Relative source download URL
              */
             downloadUrl: string;
-            type: 'static' | 'variable';
             fontVersion: string | null;
+            /**
+             * Inspected font style
+             */
+            style: 'normal' | 'italic' | 'oblique';
+            /**
+             * Provider-declared weight and style
+             */
+            declaredVariant?: {
+                weight: number;
+                style: 'normal' | 'italic';
+            };
+            type: 'static';
+            /**
+             * Inspected font weight
+             */
+            weight: number;
+        } | {
+            sha256: string;
+            filename: string;
+            format: 'ttf' | 'otf';
+            size: number;
+            /**
+             * Relative source download URL
+             */
+            downloadUrl: string;
+            fontVersion: string | null;
+            /**
+             * Inspected font style
+             */
+            style: 'normal' | 'italic' | 'oblique';
+            /**
+             * Provider-declared weight and style
+             */
+            declaredVariant?: {
+                weight: number;
+                style: 'normal' | 'italic';
+            };
+            type: 'variable';
+            /**
+             * Inspected font weight or range
+             */
             weight: number | {
                 min: number;
                 max: number;
                 default: number;
             };
-            style: 'normal' | 'italic' | 'oblique';
             axes: Array<{
                 tag: string;
                 min: number;
@@ -909,74 +904,7 @@ export type ListRegistryLanguagesResponses = {
     /**
      * Registry data from the current snapshot
      */
-    200: {
-        languages: Array<{
-            id: string;
-            /**
-             * BCP 47 language subtag
-             */
-            language: string;
-            /**
-             * ISO 15924 script code
-             */
-            script: string;
-            name: string;
-            preferredName?: string;
-            autonym?: string;
-        }>;
-    };
-};
-
-export type ListRegistryLanguagesResponse = ListRegistryLanguagesResponses[keyof ListRegistryLanguagesResponses];
-
-export type GetRegistryLanguageData = {
-    body?: never;
-    path: {
-        /**
-         * Registry language identifier
-         */
-        id: string;
-    };
-    query?: never;
-    url: '/v1/registry/languages/{id}';
-};
-
-export type GetRegistryLanguageErrors = {
-    /**
-     * Registry language not found
-     */
-    404: {
-        /**
-         * HTTP status code
-         */
-        status: number;
-        /**
-         * Human-readable error message
-         */
-        error: string;
-    };
-    /**
-     * The current registry snapshot is unavailable or incomplete
-     */
-    502: {
-        /**
-         * HTTP status code
-         */
-        status: number;
-        /**
-         * Human-readable error message
-         */
-        error: string;
-    };
-};
-
-export type GetRegistryLanguageError = GetRegistryLanguageErrors[keyof GetRegistryLanguageErrors];
-
-export type GetRegistryLanguageResponses = {
-    /**
-     * Registry data from the current snapshot
-     */
-    200: {
+    200: Array<{
         id: string;
         /**
          * BCP 47 language subtag
@@ -993,10 +921,10 @@ export type GetRegistryLanguageResponses = {
             styles?: string;
             tester?: string;
         };
-    };
+    }>;
 };
 
-export type GetRegistryLanguageResponse = GetRegistryLanguageResponses[keyof GetRegistryLanguageResponses];
+export type ListRegistryLanguagesResponse = ListRegistryLanguagesResponses[keyof ListRegistryLanguagesResponses];
 
 export type ListRegistrySubsetsData = {
     body?: never;
@@ -1027,9 +955,7 @@ export type ListRegistrySubsetsResponses = {
     /**
      * Registry data from the current snapshot
      */
-    200: {
-        subsets: Array<string>;
-    };
+    200: Array<string>;
 };
 
 export type ListRegistrySubsetsResponse = ListRegistrySubsetsResponses[keyof ListRegistrySubsetsResponses];
@@ -1129,15 +1055,13 @@ export type ListRegistryAxesResponses = {
      * Registry data from the current snapshot
      */
     200: {
-        axes: {
-            [key: string]: {
-                name: string;
-                description: string;
-                min: number;
-                max: number;
-                default: number;
-                precision: number;
-            };
+        [key: string]: {
+            name: string;
+            description: string;
+            min: number;
+            max: number;
+            default: number;
+            precision: number;
         };
     };
 };
