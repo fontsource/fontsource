@@ -56,10 +56,11 @@ const pickVariableIndexCSS = (
 // italic face contributes to both `400-italic.css` and `latin-italic.css`.
 const groupFacesByCSSFile = (faces: FontFace[]): Map<string, FontFace[]> => {
 	const facesByCSSFile = new Map<string, FontFace[]>();
+	const useSlicedAggregate = faces.some((face) => face.sliceIndex > 0);
 
 	// Iterate over each face and assign it to the appropriate CSS files based on its properties.
 	for (const face of faces) {
-		for (const cssFile of getCSSFiles(face)) {
+		for (const cssFile of getCSSFiles(face, useSlicedAggregate)) {
 			const cssFaces = facesByCSSFile.get(cssFile);
 
 			if (cssFaces) {
@@ -73,22 +74,33 @@ const groupFacesByCSSFile = (faces: FontFace[]): Map<string, FontFace[]> => {
 	return facesByCSSFile;
 };
 
-const getCSSFiles = (face: FontFace): string[] => {
+const getCSSFiles = (face: FontFace, useSlicedAggregate = false): string[] => {
 	const style = formatStyle(face.style);
+	const isSlice = face.sliceIndex > 0;
+	const isAggregateFace = !useSlicedAggregate || isSlice;
 
 	if (face.isVariable) {
+		if (!isAggregateFace) return [];
+
 		const axisKey = face.axisKey ?? 'wght';
 		return [style === 'normal' ? `${axisKey}.css` : `${axisKey}-${style}.css`];
 	}
 
-	// Static packages publish both weight and subset entrypoints.
-	const assetFilenames = [
-		style === 'normal' ? `${face.weight}.css` : `${face.weight}-${style}.css`,
-		`${face.subset}.css`,
-	];
+	const assetFilenames = isAggregateFace
+		? [
+				style === 'normal'
+					? `${face.weight}.css`
+					: `${face.weight}-${style}.css`,
+			]
+		: [];
+
+	// Named subsets and full-repertoire builds keep their direct entrypoints.
+	if (!isSlice) {
+		assetFilenames.push(`${face.subset}.css`);
+	}
 
 	// Keep the legacy subset italic entrypoint.
-	if (style !== 'normal') {
+	if (!isSlice && style !== 'normal') {
 		assetFilenames.push(`${face.subset}-italic.css`);
 	}
 

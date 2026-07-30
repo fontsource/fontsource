@@ -5,7 +5,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url(./files/inter-latin-wght-normal.woff2) format('woff2-variations');
+  src: url(./files/inter-latin-wght-normal.woff2) format(woff2) tech(variations);
   unicode-range: U+0000-00FF;
 }
 /* wght-italic.css */
@@ -15,7 +15,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 100 900;
-  src: url(./files/inter-latin-wght-italic.woff2) format('woff2-variations');
+  src: url(./files/inter-latin-wght-italic.woff2) format(woff2) tech(variations);
   unicode-range: U+0000-00FF;
 }
 /* index.css */
@@ -25,6 +25,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url(./files/inter-latin-wght-normal.woff2) format('woff2-variations');
+  src: url(./files/inter-latin-wght-normal.woff2) format(woff2) tech(variations);
   unicode-range: U+0000-00FF;
 }

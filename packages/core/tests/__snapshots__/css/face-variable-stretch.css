@@ -5,6 +5,6 @@
   font-display: swap;
   font-weight: 400;
   font-stretch: 75% 125%;
-  src: url(./files/testfont-latin-wdth-normal.woff2) format('woff2-variations');
+  src: url(./files/testfont-latin-wdth-normal.woff2) format(woff2) tech(variations);
   unicode-range: U+0000-00FF;
 }

@@ -15,6 +15,7 @@ export { buildFont } from './processor';
 export type {
 	CSSAsset,
 	FontAsset,
+	FontBuildCharacters,
 	FontBuildConfig,
 	FontBuildResult,
 	FontConfig,
@@ -23,6 +24,7 @@ export type {
 	FontSource,
 	FontStyle,
 	StaticFontBuildConfig,
+	SubsetFontBuildCharacters,
 	VariableAxisConfig,
 	VariableAxisKey,
 	VariableFontAxis,

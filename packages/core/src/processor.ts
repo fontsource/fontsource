@@ -144,20 +144,27 @@ export const buildFont = async (
 	);
 	const fontRefs = await glyphtContext.loadFonts(normalizedBuffers);
 	const familyId = config.id ?? normalizeKebabCase(config.family);
-	const keepAllCharacters = config.characters === 'all';
+	const characterConfig =
+		config.characters === 'all' ? undefined : config.characters;
+	const keepAllCharacters = characterConfig === undefined;
 	const subsets: ReturnType<typeof generateSubsetData> = keepAllCharacters
 		? new Map()
-		: generateSubsetData(config);
+		: generateSubsetData(characterConfig);
+	const slicing = characterConfig?.slicing
+		? generateSubsetData({
+				subsets: [characterConfig.slicing.subset],
+				subsetSources: {
+					[characterConfig.slicing.subset]: characterConfig.slicing.source,
+				},
+			}).get(characterConfig.slicing.subset)
+		: undefined;
 	const isVariableFont = config.type === 'variable';
 	const variableConfig =
 		config.type !== 'variable'
 			? undefined
-			: keepAllCharacters
-				? getSourceVariableConfig(fontRefs)
-				: config.variable;
+			: (config.variable ?? getSourceVariableConfig(fontRefs));
 
 	const families = sortFontsIntoFamilies(fontRefs);
-	const defaultSubset = keepAllCharacters ? 'full' : config.subsets[0];
 	const requestedFormats = new Set(config.formats ?? ['woff2']);
 	const exportFormats = {
 		woff: requestedFormats.has('woff'),
@@ -173,50 +180,82 @@ export const buildFont = async (
 		assetFormats.push('woff');
 	}
 
-	// Build `unicode-range` character sets.
-	const includeCharacters = keepAllCharacters
-		? []
-		: config.subsets.flatMap((subsetName) => {
-				const def = subsets.get(subsetName);
-				if (!def) return [];
+	type CharacterSet = Pick<FontFace, 'subset' | 'unicodeRange' | 'sliceIndex'>;
+	const characterSets = new Map<string, CharacterSet>();
+	const includeCharacters: Array<{
+		name: string;
+		includeUnicodeRanges: number[];
+	}> = [];
+	const addCharacterSet = (
+		characterSet: CharacterSet,
+		codepoints: number[],
+	) => {
+		const name = `fontsource-${characterSets.size + 1}`;
+		characterSets.set(name, characterSet);
+		includeCharacters.push({ name, includeUnicodeRanges: codepoints });
+	};
 
-				if (def.type === 'range') {
-					return [{ name: subsetName, includeUnicodeRanges: def.codepoints }];
-				}
-
-				return def.slices.map((slice) => ({
-					name: `${subsetName}-${slice.index}`,
-					includeUnicodeRanges: slice.codepoints,
-				}));
-			});
-	const subsetUnicodeRanges = new Map<string, string>();
-
-	for (const [subsetName, subsetDef] of subsets) {
-		if (subsetDef.type === 'range') {
-			subsetUnicodeRanges.set(subsetName, subsetDef.unicodeRange);
-			continue;
+	const addSubset = (
+		subsetName: string,
+		definition: NonNullable<ReturnType<typeof subsets.get>>,
+	) => {
+		if (definition.type === 'range') {
+			addCharacterSet(
+				{
+					subset: subsetName,
+					unicodeRange: definition.unicodeRange,
+					sliceIndex: 0,
+				},
+				definition.codepoints,
+			);
+			return;
 		}
 
-		for (const slice of subsetDef.slices) {
-			subsetUnicodeRanges.set(
-				`${subsetName}-${slice.index}`,
-				codepointsToRangeString(slice.codepoints),
+		for (const slice of definition.slices) {
+			addCharacterSet(
+				{
+					subset: subsetName,
+					unicodeRange: codepointsToRangeString(slice.codepoints),
+					sliceIndex: slice.index,
+				},
+				slice.codepoints,
 			);
 		}
+	};
+
+	for (const subsetName of characterConfig?.subsets ?? []) {
+		const definition = subsets.get(subsetName);
+		if (definition) addSubset(subsetName, definition);
 	}
+
+	if (characterConfig?.slicing) {
+		if (slicing?.type !== 'sliced') {
+			throw new Error(
+				`Slicing source for "${characterConfig.slicing.subset}" must contain slices`,
+			);
+		}
+		addSubset(characterConfig.slicing.subset, slicing);
+	}
+	if (!keepAllCharacters && characterSets.size === 0) {
+		throw new Error(
+			'At least one character subset or slicing source is required',
+		);
+	}
+
+	const fullCharacterSet: CharacterSet = {
+		subset: 'full',
+		unicodeRange: '',
+		sliceIndex: 0,
+	};
+	const defaultCharacterSet = keepAllCharacters
+		? fullCharacterSet
+		: characterSets.values().next().value;
 
 	// Build Glypht FamilySettings for each family.
 	const buildFamilySettings = (
 		variableConfig?: VariableAxisConfig,
 	): FamilySettings[] =>
 		families.map((family) => {
-			if (keepAllCharacters) {
-				return {
-					fonts: family.fonts,
-					enableSubsetting: false,
-				};
-			}
-
 			let fonts = isVariableFont
 				? family.fonts
 				: family.fonts.map(({ font, styleValues }) => ({
@@ -242,6 +281,23 @@ export const buildFont = async (
 						styleValues[styleKey] = setting;
 					} else {
 						axes[tag] = setting;
+					}
+				}
+
+				// Glypht preserves unspecified axes, so pin every source axis that
+				// does not belong to this published bundle.
+				for (const [styleKey, tag] of Object.entries(STYLE_VALUE_AXIS_MAP)) {
+					const styleValue = family.styleValues[styleKey as keyof StyleValues];
+					if (styleValue?.type === 'variable' && !variableConfig[tag]) {
+						styleValues[styleKey] = {
+							type: 'single',
+							value: styleValue.value.defaultValue,
+						};
+					}
+				}
+				for (const { tag, defaultValue } of family.axes) {
+					if (!variableConfig[tag]) {
+						axes[tag] = { type: 'single', value: defaultValue };
 					}
 				}
 			} else {
@@ -322,8 +378,8 @@ export const buildFont = async (
 				enableSubsetting: true,
 				styleValues,
 				axes,
-				features: config.featureSettings,
-				includeCharacters,
+				features: config.featureSettings ?? {},
+				includeCharacters: keepAllCharacters ? 'all' : includeCharacters,
 			};
 		});
 
@@ -331,9 +387,9 @@ export const buildFont = async (
 	const variableAxisKeys =
 		config.type !== 'variable'
 			? [undefined]
-			: keepAllCharacters
+			: keepAllCharacters && !config.axisKeys
 				? ['full']
-				: getRequestedAxisKeys(config.variable, config.axisKeys);
+				: getRequestedAxisKeys(variableConfig ?? {}, config.axisKeys);
 
 	// Generate a unique key for each face based on its defining properties.
 	const getFaceKey = (
@@ -383,26 +439,15 @@ export const buildFont = async (
 		for (const exported of exportedFonts) {
 			const { weight, style } = extractFontStyle(exported.font.styleValues);
 
-			const charsetName = (exported.charsetNameOrIndex ??
-				defaultSubset) as string;
-			if (!charsetName) continue;
+			const charsetName = exported.charsetNameOrIndex;
+			const characterSet = keepAllCharacters
+				? fullCharacterSet
+				: typeof charsetName === 'string'
+					? characterSets.get(charsetName)
+					: defaultCharacterSet;
+			if (!characterSet) continue;
 
-			// Handle sliced subsets by extracting the base subset name and slice index.
-			const sliceMatch = charsetName.match(/^(.+)-(\d+)$/);
-			const subsetName = sliceMatch
-				? (sliceMatch[1] ?? charsetName)
-				: charsetName;
-			const sliceIndex = sliceMatch
-				? Number.parseInt(sliceMatch[2] ?? '0', 10)
-				: 0;
-
-			const subsetDef = subsets.get(subsetName);
-			if (!keepAllCharacters && !subsetDef) continue;
-
-			const unicodeRange = keepAllCharacters
-				? undefined
-				: (subsetUnicodeRanges.get(charsetName) ??
-					subsetUnicodeRanges.get(subsetName));
+			const { subset: subsetName, sliceIndex, unicodeRange } = characterSet;
 
 			const faceStyle =
 				axisKey && axisConfig
@@ -463,7 +508,7 @@ export const buildFont = async (
 					weight: faceWeight,
 					style: faceStyle,
 					isVariable: isVariableFont,
-					unicodeRange: unicodeRange ?? '',
+					unicodeRange,
 					sources: [],
 					axisKey,
 					stretch: variableStretch,
