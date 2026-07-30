@@ -1,0 +1,108 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "84e0646960c39ffb42bfa075fc7db7bb10b9e9b9c63f4602198598a64c4829bc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020",
+			"outline": "glyf",
+			"path": "ofl/arimamadurai/ArimaMadurai-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "84e0646960c39ffb42bfa075fc7db7bb10b9e9b9c63f4602198598a64c4829bc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020",
+			"outline": "glyf",
+			"path": "ofl/arimamadurai/ArimaMadurai-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "84e0646960c39ffb42bfa075fc7db7bb10b9e9b9c63f4602198598a64c4829bc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020",
+			"outline": "glyf",
+			"path": "ofl/arimamadurai/ArimaMadurai-ExtraBold.ttf",
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "84e0646960c39ffb42bfa075fc7db7bb10b9e9b9c63f4602198598a64c4829bc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020",
+			"outline": "glyf",
+			"path": "ofl/arimamadurai/ArimaMadurai-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 275
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "84e0646960c39ffb42bfa075fc7db7bb10b9e9b9c63f4602198598a64c4829bc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020",
+			"outline": "glyf",
+			"path": "ofl/arimamadurai/ArimaMadurai-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "84e0646960c39ffb42bfa075fc7db7bb10b9e9b9c63f4602198598a64c4829bc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020",
+			"outline": "glyf",
+			"path": "ofl/arimamadurai/ArimaMadurai-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "84e0646960c39ffb42bfa075fc7db7bb10b9e9b9c63f4602198598a64c4829bc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020",
+			"outline": "glyf",
+			"path": "ofl/arimamadurai/ArimaMadurai-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 690,
+				"sha256": "84e0646960c39ffb42bfa075fc7db7bb10b9e9b9c63f4602198598a64c4829bc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.020; ttfautohint (v1.5) -l 7 -r 28 -G 50 -x 13 -D latn -f none -w G -X \"\"",
+			"outline": "glyf",
+			"path": "ofl/arimamadurai/ArimaMadurai-Thin.ttf",
+			"style": "normal",
+			"weight": 250
+		}
+	]
+}

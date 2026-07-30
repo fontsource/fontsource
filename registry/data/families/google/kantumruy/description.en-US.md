@@ -1,0 +1,3 @@
+The Kantumruy fonts are designed in three styles (Light, Regular and Bold) and are made for the Khmer script, the national language of Cambodia. It works well for both text and posters, on websites and in print.
+
+Kantumruy is designed by Tep Sovichet.

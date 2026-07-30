@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 704,
+				"sha256": "29d0b039f92fe1845ccd026a7e44eb0d5dca804db094dfc259f39d145d8bd5d2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102; 2013; Maintenance release",
+			"outline": "glyf",
+			"path": "ofl/gentiumbookbasic/GenBkBasB.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 704,
+				"sha256": "29d0b039f92fe1845ccd026a7e44eb0d5dca804db094dfc259f39d145d8bd5d2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102; 2013; Maintenance release",
+			"outline": "glyf",
+			"path": "ofl/gentiumbookbasic/GenBkBasBI.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 704,
+				"sha256": "29d0b039f92fe1845ccd026a7e44eb0d5dca804db094dfc259f39d145d8bd5d2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102; 2013; Maintenance release",
+			"outline": "glyf",
+			"path": "ofl/gentiumbookbasic/GenBkBasI.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 704,
+				"sha256": "29d0b039f92fe1845ccd026a7e44eb0d5dca804db094dfc259f39d145d8bd5d2"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.102; 2013; Maintenance release",
+			"outline": "glyf",
+			"path": "ofl/gentiumbookbasic/GenBkBasR.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

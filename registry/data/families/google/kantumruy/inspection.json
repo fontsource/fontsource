@@ -1,0 +1,43 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 141,
+				"sha256": "7ebfe8306f35c580d70e4352404584532829ffff56ea0d3972330646983a4d59"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.300",
+			"outline": "glyf",
+			"path": "ofl/kantumruy/Kantumruy-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 141,
+				"sha256": "7ebfe8306f35c580d70e4352404584532829ffff56ea0d3972330646983a4d59"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.300",
+			"outline": "glyf",
+			"path": "ofl/kantumruy/Kantumruy-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 141,
+				"sha256": "7ebfe8306f35c580d70e4352404584532829ffff56ea0d3972330646983a4d59"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.300",
+			"outline": "glyf",
+			"path": "ofl/kantumruy/Kantumruy-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}
