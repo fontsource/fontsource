@@ -161,12 +161,14 @@ export const validateDistributionResolution = (
 		source,
 	}));
 	for (const variant of distribution.static ?? []) {
-		const staticMatches = fonts.filter(
-			({ font, source }) =>
-				font.axes.length === 0 &&
-				source.variant?.weight === variant.weight &&
-				source.variant.style === variant.style,
-		);
+		const staticMatches = fonts.filter(({ font, source }) => {
+			if (font.axes.length > 0) return false;
+			return source.variant
+				? source.variant.weight === variant.weight &&
+						source.variant.style === variant.style
+				: fontSupportsWeight(font, variant.weight) &&
+						fontSupportsStyle(font, variant.style);
+		});
 		if (staticMatches.length > 1) {
 			throw new Error(
 				`${context} static ${variant.weight} ${variant.style} is ambiguous`,
@@ -175,11 +177,11 @@ export const validateDistributionResolution = (
 		if (staticMatches.length === 1) continue;
 
 		const variableMatches = fonts.filter(({ font, source }) => {
-			if (font.axes.length === 0 || !source.variant) return false;
+			if (font.axes.length === 0) return false;
 			return (
 				fontSupportsWeight(font, variant.weight) &&
 				(fontSupportsStyle(font, variant.style) ||
-					source.variant.style === variant.style)
+					source.variant?.style === variant.style)
 			);
 		});
 		assert(
@@ -192,9 +194,8 @@ export const validateDistributionResolution = (
 		const matches = fonts.filter(({ font, source }) => {
 			if (
 				font.axes.length === 0 ||
-				!source.variant ||
 				(!fontSupportsStyle(font, variant.style) &&
-					source.variant.style !== variant.style)
+					source.variant?.style !== variant.style)
 			)
 				return false;
 			return publishedAxisKeys(font).has(variant.axisKey);

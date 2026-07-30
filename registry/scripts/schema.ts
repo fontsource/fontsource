@@ -238,11 +238,7 @@ export const sourceFamilySchema = familySchema
 	});
 
 const variableDistributionSchema = z.strictObject({
-	axisKey: z.union([
-		z.literal('standard'),
-		z.literal('full'),
-		z.string().length(4),
-	]),
+	axisKey: z.union([z.literal('standard'), z.string().length(4)]),
 	style: fontStyleSchema,
 });
 
