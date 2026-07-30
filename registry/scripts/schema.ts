@@ -242,14 +242,19 @@ const variableDistributionSchema = z.strictObject({
 	style: fontStyleSchema,
 });
 
+const subsetDistributionSchema = z.strictObject({
+	defaultSubset: idSchema,
+	subsets: z
+		.array(z.strictObject({ id: idSchema, definition: idSchema }))
+		.min(1),
+	slicing: idSchema.optional(),
+});
+
 export const familyDistributionSchema = z
 	.strictObject({
 		static: z.array(staticVariantSchema).min(1).optional(),
 		variable: z.array(variableDistributionSchema).min(1).optional(),
-		defaultSubset: idSchema,
-		subsets: z
-			.array(z.strictObject({ id: idSchema, definition: idSchema }))
-			.min(1),
+		characters: z.union([z.literal('all'), subsetDistributionSchema]),
 	})
 	.refine((value) => value.static || value.variable, {
 		message: 'must declare static or variable packages',

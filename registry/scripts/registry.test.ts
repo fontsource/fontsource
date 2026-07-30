@@ -25,8 +25,11 @@ import { listFamilyKeys, validateRegistry } from './validator.ts';
 
 const ABEL_DISTRIBUTION = {
 	static: [{ weight: 400, style: 'normal' }],
-	defaultSubset: 'latin',
-	subsets: [{ id: 'latin', definition: 'latin' }],
+	characters: {
+		defaultSubset: 'latin',
+		subsets: [{ id: 'latin', definition: 'latin' }],
+		slicing: 'japanese-web',
+	},
 } as const;
 
 const TEST_LANGUAGES = languageCatalogSchema.parse({

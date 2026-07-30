@@ -20,6 +20,7 @@ import {
 	type LanguageCatalog,
 	languageCatalogSchema,
 	replacementRegistrySchema,
+	type SubsetDefinition,
 	subsetDefinitionSchema,
 	type Taxonomy,
 	taxonomySchema,
@@ -210,7 +211,7 @@ export const validateDistributionResolution = (
 const validateFamily = async (
 	root: string,
 	key: string,
-	subsets: ReadonlySet<string>,
+	subsets: ReadonlyMap<string, SubsetDefinition>,
 	taxonomy: Taxonomy,
 	languages: LanguageCatalog,
 ): Promise<{ id: string; family: Family }> => {
@@ -305,33 +306,52 @@ const validateFamily = async (
 		(variant) => `${variant.axisKey.toLowerCase()}:${variant.style}`,
 		`${id} variable variants`,
 	);
-	assertSortedUnique(
-		distribution.subsets,
-		(subset) => subset.id,
-		`${id} public subsets`,
-	);
-	const subsetIds = new Set(distribution.subsets.map((subset) => subset.id));
-	assert(
-		subsetIds.has(distribution.defaultSubset),
-		`${id} default subset is not mapped`,
-	);
-	for (const subset of distribution.subsets) {
-		assert(
-			subsets.has(subset.definition),
-			`${id} references missing subset ${subset.definition}`,
+	if (distribution.characters !== 'all') {
+		const {
+			defaultSubset,
+			slicing,
+			subsets: publicSubsets,
+		} = distribution.characters;
+		assertSortedUnique(
+			publicSubsets,
+			(subset) => subset.id,
+			`${id} public subsets`,
 		);
+		assert(
+			publicSubsets.some((subset) => subset.id === defaultSubset),
+			`${id} default subset is not mapped`,
+		);
+		for (const subset of publicSubsets) {
+			const definition = subsets.get(subset.definition);
+			assert(
+				definition,
+				`${id} references missing subset ${subset.definition}`,
+			);
+			assert(
+				!definition.slices,
+				`${id} named subset ${subset.definition} must not be sliced`,
+			);
+		}
+		if (slicing) {
+			const definition = subsets.get(slicing);
+			assert(definition, `${id} references missing slicing ${slicing}`);
+			assert(definition.slices, `${id} slicing ${slicing} must contain slices`);
+		}
 	}
 	validateDistributionResolution(distribution, family, id);
 	return { id, family };
 };
 
-const validateSubset = async (root: string, id: string): Promise<void> => {
+const validateSubset = async (
+	root: string,
+	id: string,
+): Promise<SubsetDefinition> => {
 	const definition = await validateCanonicalJson(
 		join(root, 'subsets', `${id}.json`),
 		subsetDefinitionSchema,
 	);
 	validateRanges(definition.ranges, id);
-	if (!definition.slices) return;
+	if (!definition.slices) return definition;
 	assertSortedUnique(
 		definition.slices,
 		(slice) => String(Number(slice.id)).padStart(8, '0'),
@@ -350,6 +370,7 @@ const validateSubset = async (root: string, id: string): Promise<void> => {
 	}
 	const expected = expandRanges(definition.ranges);
 	deepStrictEqual(union, expected, `${id} slice union differs from its ranges`);
+	return definition;
 };
 
 export const listFiles = async (root: string): Promise<string[]> =>
@@ -390,6 +411,13 @@ export const validateRegistry = async (root: string): Promise<void> => {
 	await validateCanonicalJson(join(root, 'upstreams.json'), upstreamsSchema);
 	const familyKeys = await listFamilyKeys(root);
 	const subsetIds = await listSubsetIds(root);
+	const subsets = new Map(
+		await Promise.all(
+			subsetIds.map(
+				async (id) => [id, await validateSubset(root, id)] as const,
+			),
+		),
+	);
 	const familyIds = new Set<string>();
 	for (const family of familyKeys) {
 		const { id } = parseFamilyKey(family);
@@ -426,14 +454,13 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		);
 	}
 
-	const subsetSet = new Set(subsetIds);
 	let validated = 0;
 	const families = await Promise.all(
 		familyKeys.map(async (family) => {
 			const validatedFamily = await validateFamily(
 				root,
 				family,
-				subsetSet,
+				subsets,
 				taxonomy,
 				languages,
 			);
@@ -460,7 +487,6 @@ export const validateRegistry = async (root: string): Promise<void> => {
 			`Replacement target ${replacedBy} must be active`,
 		);
 	}
-	await Promise.all(subsetIds.map((id) => validateSubset(root, id)));
 	await validateCanonicalJson(join(root, 'axes.json'), axisRegistrySchema);
 
 	const allowed = new Set<string>([
