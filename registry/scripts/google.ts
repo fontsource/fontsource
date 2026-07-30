@@ -561,20 +561,16 @@ const inspectFamilySources = async (
 		const contents = snapshot.read(path);
 		const declared = declaredVariants.get(path);
 		const inspected = await inspectFont(ctx, new Uint8Array(contents));
-		const { cmap, inspection } = normalizeInspection(inspected);
 		sources.push({
 			path,
 			sha256: sha256(contents),
 			size: contents.byteLength,
-			...(declared
-				? { variant: { weight: declared.weight, style: declared.style } }
-				: {}),
-			inspection,
+			variant: declared
+				? { weight: declared.weight, style: declared.style }
+				: undefined,
+			inspection: normalizeInspection(inspected),
 		});
-		coverage.push({
-			cmapSha256: cmap.sha256,
-			unicodeRanges: inspected.unicodeRanges,
-		});
+		coverage.push(inspected.unicodeRanges);
 	}
 
 	return {
@@ -635,26 +631,25 @@ const writeFamily = async (
 			revision: lastChanged.revision,
 			directory,
 		},
-		...(google.displayName && google.displayName !== google.name
-			? { displayName: google.displayName }
-			: {}),
+		displayName:
+			google.displayName === google.name ? undefined : google.displayName,
 		classifications: normalizeGoogleClassifications(google),
 		tags,
 		languages: [...languages].toSorted(compareStrings),
-		...(google.primaryLanguage && languageCatalog[google.primaryLanguage]
-			? { primaryLanguage: google.primaryLanguage }
-			: {}),
-		...(google.primaryScript ? { primaryScript: google.primaryScript } : {}),
-		...(google.sampleText ? { sampleText: google.sampleText } : {}),
+		primaryLanguage: languages.has(google.primaryLanguage ?? '')
+			? google.primaryLanguage
+			: undefined,
+		primaryScript: google.primaryScript,
+		sampleText: google.sampleText,
 		designer: google.designer,
 		dateAdded: google.dateAdded,
 		sourceModified: lastChanged.date,
 		license: {
 			id: license.id,
 			url: license.url,
-			...(copyrights.length > 0 ? { attribution: copyrights.join('\n') } : {}),
+			attribution: copyrights.length > 0 ? copyrights.join('\n') : undefined,
 		},
-		...(google.project ? { project: google.project } : {}),
+		project: google.project,
 		sources,
 	});
 	const output = join(root, 'families', 'google', id);

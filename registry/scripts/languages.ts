@@ -2,10 +2,7 @@ import type { FontInspection } from '@fontsource-utils/core';
 import type { LanguageCatalog } from './schema.ts';
 import { compareStrings } from './shared.ts';
 
-export type FontCoverage = {
-	cmapSha256: string;
-	unicodeRanges: FontInspection['unicodeRanges'];
-};
+export type FontCoverage = FontInspection['unicodeRanges'];
 
 const supportsCodepoint = (
 	ranges: FontInspection['unicodeRanges'],
@@ -27,19 +24,20 @@ export const createLanguageMatcher = (catalog: LanguageCatalog) => {
 
 	return (faces: readonly FontCoverage[]): string[] => {
 		let familyLanguages: Set<string> | undefined;
-		for (const face of faces) {
-			let faceLanguages = cache.get(face.cmapSha256);
+		for (const coverage of faces) {
+			const key = JSON.stringify(coverage);
+			let faceLanguages = cache.get(key);
 			if (!faceLanguages) {
 				faceLanguages = new Set(
 					requirements
 						.filter(([, codepoints]) =>
 							codepoints.every((codepoint) =>
-								supportsCodepoint(face.unicodeRanges, codepoint),
+								supportsCodepoint(coverage, codepoint),
 							),
 						)
 						.map(([id]) => id),
 				);
-				cache.set(face.cmapSha256, faceLanguages);
+				cache.set(key, faceLanguages);
 			}
 
 			if (!familyLanguages) {

@@ -35,7 +35,7 @@ export const applyReplacements = async (
 			const id = familyKey.slice(familyKey.indexOf('/') + 1);
 			await writeJson(path, {
 				...family,
-				...(replacements[id] ? { status: 'deprecated' } : {}),
+				status: replacements[id] ? 'deprecated' : family.status,
 			});
 		}),
 	);

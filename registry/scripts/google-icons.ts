@@ -160,7 +160,6 @@ const writeFamily = async (
 	}
 
 	const changed = snapshot.lastChanged(definition.fontPath);
-	const { inspection } = normalizeInspection(inspected);
 	const family = familySchema.parse({
 		family: definition.family,
 		status: 'active',
@@ -182,7 +181,7 @@ const writeFamily = async (
 				sha256: sha256(contents),
 				size: contents.byteLength,
 				variant: { weight: 400, style: 'normal' },
-				inspection,
+				inspection: normalizeInspection(inspected),
 			},
 		],
 	});

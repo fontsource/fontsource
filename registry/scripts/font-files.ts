@@ -102,18 +102,14 @@ const writeFamily = async (
 	)) {
 		const contents = snapshot.read(sourceFile.path);
 		const inspected = await inspectFont(ctx, new Uint8Array(contents));
-		const { cmap, inspection } = normalizeInspection(inspected);
 		sources.push({
 			path: sourceFile.path,
 			sha256: sha256(contents),
 			size: contents.byteLength,
-			...(sourceFile.variant ? { variant: sourceFile.variant } : {}),
-			inspection,
+			variant: sourceFile.variant,
+			inspection: normalizeInspection(inspected),
 		});
-		coverage.push({
-			cmapSha256: cmap.sha256,
-			unicodeRanges: inspected.unicodeRanges,
-		});
+		coverage.push(inspected.unicodeRanges);
 	}
 	const lastChanged = snapshot.lastChanged(directory);
 	const languages = new Set(
@@ -128,9 +124,9 @@ const writeFamily = async (
 	const { id, primaryLanguage, ...sourceFields } = sourceMetadataWithoutFiles;
 	const family = familySchema.parse({
 		...sourceFields,
-		...(primaryLanguage && languages.has(primaryLanguage)
-			? { primaryLanguage }
-			: {}),
+		primaryLanguage: languages.has(primaryLanguage ?? '')
+			? primaryLanguage
+			: undefined,
 		status: 'active',
 		provenance: {
 			type: 'github',
