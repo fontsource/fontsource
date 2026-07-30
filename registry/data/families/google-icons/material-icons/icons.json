@@ -8943,7 +8943,6 @@
 	],
 	"source": {
 		"path": "font/MaterialIcons-Regular.codepoints",
-		"repository": "google/material-design-icons",
 		"revision": "f7bd4f25f3764883717c09a1fd867f560c9a9581",
 		"sha256": "530f25bf7b2d71c8e1da9476d53f9a9bb6b7e187bff69bb7128bb679b8194894"
 	}

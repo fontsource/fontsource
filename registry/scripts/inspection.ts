@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import type { FontInspection } from '@fontsource-utils/core';
-import type { FamilyInspection } from './schema.ts';
+import type { FamilySource } from './schema.ts';
 import { compareStrings } from './shared.ts';
 
 const COLOR_TABLES = new Set([
@@ -15,11 +15,14 @@ const COLOR_TABLES = new Set([
 ]);
 const BITMAP_TABLES = new Set(['CBDT', 'EBDT', 'sbix']);
 
-type InspectionFile = FamilyInspection['files'][number];
+type NormalizedInspection = {
+	inspection: FamilySource['inspection'];
+	cmap: { codepointCount: number; sha256: string };
+};
 
 const hashCoverage = (
 	ranges: FontInspection['unicodeRanges'],
-): InspectionFile['cmap'] => {
+): NormalizedInspection['cmap'] => {
 	const codepoints = new Set<number>();
 	for (const range of ranges) {
 		if (typeof range === 'number') {
@@ -41,7 +44,9 @@ const hashCoverage = (
 	return { codepointCount: sorted.length, sha256: hash.digest('hex') };
 };
 
-const outlineKind = (tables: readonly string[]): InspectionFile['outline'] => {
+const outlineKind = (
+	tables: readonly string[],
+): FamilySource['inspection']['outline'] => {
 	if (tables.includes('glyf')) return 'glyf';
 	if (tables.includes('CFF2')) return 'cff2';
 	if (tables.includes('CFF ')) return 'cff';
@@ -52,17 +57,17 @@ const outlineKind = (tables: readonly string[]): InspectionFile['outline'] => {
 };
 
 export const normalizeInspection = (
-	path: string,
 	font: FontInspection,
-): InspectionFile => ({
-	path,
-	fontVersion: font.fontVersion,
-	weight: font.weight,
-	style: font.style,
-	axes: font.axes,
+): NormalizedInspection => ({
 	cmap: hashCoverage(font.unicodeRanges),
-	outline: outlineKind(font.tables),
-	colorTables: font.tables
-		.filter((table) => COLOR_TABLES.has(table))
-		.toSorted(compareStrings),
+	inspection: {
+		fontVersion: font.fontVersion,
+		weight: font.weight,
+		style: font.style,
+		axes: font.axes,
+		outline: outlineKind(font.tables),
+		colorTables: font.tables
+			.filter((table) => COLOR_TABLES.has(table))
+			.toSorted(compareStrings),
+	},
 });

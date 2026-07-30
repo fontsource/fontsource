@@ -1,0 +1,77 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2018-10-22",
+	"designer": "Google",
+	"displayName": "Noto Sans Traditional Chinese",
+	"family": "Noto Sans TC",
+	"languages": [
+		"cjy_Hant",
+		"gan_Hant",
+		"hak_Hant",
+		"hsn_Hant",
+		"lzh_Hant",
+		"nan_Hant",
+		"wuu_Hant",
+		"yue_Hant",
+		"za_Hant",
+		"zh_Hant"
+	],
+	"license": {
+		"attribution": "(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryLanguage": "zh_Hant",
+	"primaryScript": "Hant",
+	"project": {
+		"repository": "https://github.com/notofonts/noto-cjk",
+		"revision": "523d033d6cb47f4a80c58a35753646f5c3608a78"
+	},
+	"provenance": {
+		"directory": "ofl/notosanstc",
+		"repository": "google/fonts",
+		"revision": "3be1884c48c3e45b52ecc725676a08f87776373e",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-25",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [
+					{
+						"default": 100,
+						"max": 900,
+						"min": 100,
+						"tag": "wght"
+					}
+				],
+				"colorTables": [],
+				"fontVersion": "Version 2.004-H2;hotconv 1.0.118;makeotfexe 2.5.65603",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": {
+					"default": 100,
+					"max": 900,
+					"min": 100
+				}
+			},
+			"path": "ofl/notosanstc/NotoSansTC[wght].ttf",
+			"sha256": "864727d210d54f2537bbe23b3a839436c3992af72de9322af5270897246bd44f",
+			"size": 11941968,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

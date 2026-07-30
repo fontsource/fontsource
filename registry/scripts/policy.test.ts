@@ -1,9 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type {
-	FamilyInspection,
-	FamilyMetadata,
-	FamilyPolicy,
-} from './schema.ts';
+import type { Family, FamilyPolicy } from './schema.ts';
 import { compareStrings } from './shared.ts';
 import { validatePolicyResolution } from './validator.ts';
 
@@ -20,10 +16,8 @@ describe('variant validation', () => {
 				variant,
 			}))
 			.toSorted((left, right) => compareStrings(left.path, right.path));
-		const metadata: FamilyMetadata = {
-			id: 'neuton',
+		const family: Family = {
 			family: 'Neuton',
-			provider: 'google',
 			status: 'active',
 			provenance: {
 				type: 'github',
@@ -36,23 +30,19 @@ describe('variant validation', () => {
 			languages: [],
 			sourceModified: '2026-01-02',
 			license: { id: 'OFL-1.1', url: 'https://example.com/license' },
-			sourceFiles: files.map((file) => ({
+			sources: files.map((file) => ({
 				path: file.path,
 				sha256: '0'.repeat(64),
 				size: 1,
 				variant: file.variant,
-			})),
-		};
-		const inspection: FamilyInspection = {
-			files: files.map((file) => ({
-				path: file.path,
-				fontVersion: 'Version 1.0',
-				weight: file.variant.weight,
-				style: file.variant.style,
-				axes: [],
-				cmap: { codepointCount: 95, sha256: '1'.repeat(64) },
-				outline: 'glyf',
-				colorTables: [],
+				inspection: {
+					fontVersion: 'Version 1.0',
+					weight: file.variant.weight,
+					style: file.variant.style,
+					axes: [],
+					outline: 'glyf',
+					colorTables: [],
+				},
 			})),
 		};
 		const policy: FamilyPolicy = {
@@ -62,7 +52,7 @@ describe('variant validation', () => {
 		};
 
 		expect(() =>
-			validatePolicyResolution(policy, metadata, inspection, 'neuton'),
+			validatePolicyResolution(policy, family, 'neuton'),
 		).not.toThrow();
 		expect(() =>
 			validatePolicyResolution(
@@ -74,8 +64,7 @@ describe('variant validation', () => {
 						},
 					},
 				},
-				metadata,
-				inspection,
+				family,
 				'neuton',
 			),
 		).toThrow('neuton static 300 italic must resolve to one source');

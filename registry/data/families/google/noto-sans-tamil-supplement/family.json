@@ -1,0 +1,61 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Tamil Supplement",
+	"languages": [
+		"bfq_Taml",
+		"ta_Taml"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tamil)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Taml",
+	"project": {
+		"repository": "https://github.com/notofonts/tamil",
+		"revision": "27af016af77aed49475014b9cfe2a46b8fe71966"
+	},
+	"provenance": {
+		"directory": "ofl/notosanstamilsupplement",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sampleText": {
+		"styles": "𑿕𑿖𑿗𑿘𑿙𑿚𑿛 𑿱𑿪𑿫𑿬𑿭𑿮𑿯 𑿰𑿣𑿤𑿥𑿦𑿧𑿨 𑿩𑿜𑿝𑿞𑿟𑿠𑿡",
+		"tester": "𑿕𑿖𑿗𑿘𑿙𑿚𑿛 𑿱𑿪𑿫𑿬𑿭𑿮𑿯 𑿰𑿣𑿤𑿥𑿦𑿧𑿨 𑿩𑿜𑿝𑿞𑿟𑿠𑿡"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosanstamilsupplement/NotoSansTamilSupplement-Regular.ttf",
+			"sha256": "321ef3c69cd8b3859420164820f316f245772ab24a587ac35f484a7e18760071",
+			"size": 67716,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

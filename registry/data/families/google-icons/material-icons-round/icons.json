@@ -8803,7 +8803,6 @@
 	],
 	"source": {
 		"path": "font/MaterialIconsRound-Regular.codepoints",
-		"repository": "google/material-design-icons",
 		"revision": "f7bd4f25f3764883717c09a1fd867f560c9a9581",
 		"sha256": "534fc87caafe6c7529a390fbe5b669c158d560caa5e9358c8e49054b817603d8"
 	}

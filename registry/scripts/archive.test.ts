@@ -101,7 +101,7 @@ describe('registry source archive', () => {
 			schemaVersion: 1,
 			registryRevision: REVISION,
 			registry: expect.arrayContaining([
-				expect.objectContaining({ path: 'index.json' }),
+				expect.objectContaining({ path: 'upstreams.json' }),
 				expect.objectContaining({
 					path: 'families/google-icons/material-icons/icons.json',
 				}),

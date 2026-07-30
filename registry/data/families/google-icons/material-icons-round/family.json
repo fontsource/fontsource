@@ -1,0 +1,44 @@
+{
+	"classifications": [
+		"symbols"
+	],
+	"family": "Material Icons Round",
+	"languages": [],
+	"license": {
+		"id": "Apache-2.0",
+		"url": "https://www.apache.org/licenses/LICENSE-2.0"
+	},
+	"project": {
+		"repository": "https://github.com/google/material-design-icons"
+	},
+	"provenance": {
+		"directory": "font",
+		"repository": "google/material-design-icons",
+		"revision": "f7bd4f25f3764883717c09a1fd867f560c9a9581",
+		"type": "github"
+	},
+	"sourceModified": "2022-09-19",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "2022-08-02T22:00:44.367947",
+				"outline": "cff",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "font/MaterialIconsRound-Regular.otf",
+			"sha256": "bad85e5454b6288104ce03806c37323bcd8f145e3094e727860173ac8c91062e",
+			"size": 400092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"special-use/icons"
+	]
+}

@@ -71,9 +71,12 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   registry records.
 - `scripts/schema.ts` defines the Zod contracts; `scripts/validator.ts` checks
   files and cross-file references.
-- `data/families/<provider>/<id>/` contains family records. Family IDs are
-  globally unique across providers. Icon families also include `icons.json`
-  with their public names and Unicode codepoints.
+- `data/upstreams.json` records the exact source repository revisions.
+- `data/families/<provider>/<id>/family.json` combines family metadata, source
+  declarations, and inspected source properties. IDs are globally unique
+  across providers and are derived from directory names.
+- Icon families also include `icons.json` with public names and Unicode
+  codepoints.
 - `data/languages.json` defines semantic languages, public names, and the
   private codepoint requirements used for automatic matching.
 - `data/replacements.json` records reviewed successor relationships between

@@ -1,0 +1,60 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"displayName": "Noto Sans Phags-pa",
+	"family": "Noto Sans PhagsPa",
+	"languages": [
+		"lzh_Phag",
+		"mn_Phag",
+		"sa_Phag",
+		"zh_Phag"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/phags-pa)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Phag",
+	"project": {
+		"repository": "https://github.com/notofonts/phags-pa",
+		"revision": "a2cd1a7833b6e7d2be2519fe2539b1d3be53f28e"
+	},
+	"provenance": {
+		"directory": "ofl/notosansphagspa",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosansphagspa/NotoSansPhagsPa-Regular.ttf",
+			"sha256": "1f90e0a9e6b83c903e4ed9470261ba4e61b7068de2063516665b62c1bf389dab",
+			"size": 97536,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

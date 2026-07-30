@@ -1,0 +1,65 @@
+{
+	"classifications": [
+		"display"
+	],
+	"dateAdded": "2011-03-02",
+	"designer": "Danh Hong",
+	"family": "Content",
+	"languages": [
+		"km_Khmr"
+	],
+	"license": {
+		"attribution": "Copyright (c) 2010, Danh Hong (khmertype.blogspot.com danhhong@gmail.com), with Reserved Font Name Khmer OS Content. This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Khmr",
+	"provenance": {
+		"directory": "ofl/content",
+		"repository": "google/fonts",
+		"revision": "3dd78844021e948ceb633d1dcee3f7885561b5d9",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-03",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 6.00 December 28, 2010",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 700
+			},
+			"path": "ofl/content/Content-Bold.ttf",
+			"sha256": "3242d6b22201e6919c784a6d95d0284bc36ef6b38785fe002a8cfab18a3f841f",
+			"size": 306292,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 6.00 December 28, 2010",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/content/Content-Regular.ttf",
+			"sha256": "b470db9d4ce6147203ff917c3ebadf3d31ebc78801a35aac4f7c090bf9b67802",
+			"size": 313092,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/competent",
+		"theme/blackletter"
+	]
+}

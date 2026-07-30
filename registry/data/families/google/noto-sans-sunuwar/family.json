@@ -1,0 +1,56 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2025-06-11",
+	"designer": "Google",
+	"family": "Noto Sans Sunuwar",
+	"languages": [
+		"suz_Sunu"
+	],
+	"license": {
+		"attribution": "Copyright 2021 The Noto Sunuwar Project Authors (https://github.com/ScriptEncodingInitiative/sunuwar)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Sunu",
+	"project": {
+		"repository": "https://github.com/notofonts/sunuwar",
+		"revision": "981b7c03c93f203c838b280c232de9166e8fb8c6"
+	},
+	"provenance": {
+		"directory": "ofl/notosanssunuwar",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosanssunuwar/NotoSansSunuwar-Regular.ttf",
+			"sha256": "332bbbcbb64c42ccc0a1b79dfd557b47aa3bd88a8ffab1417dd2f6989ad67f4d",
+			"size": 59068,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

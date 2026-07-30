@@ -1,0 +1,150 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Arabic",
+	"languages": [
+		"aeb_Arab",
+		"ar_Arab",
+		"arb_Arab",
+		"arq_Arab",
+		"ars_Arab",
+		"ary_Arab",
+		"arz_Arab",
+		"az_Arab",
+		"azb_Arab",
+		"bal_Arab",
+		"bej_Arab",
+		"ber_Arab",
+		"bft_Arab",
+		"bgn_Arab",
+		"bqi_Arab",
+		"brh_Arab",
+		"cja_Arab",
+		"cjm_Arab",
+		"ckb_Arab",
+		"cop_Arab",
+		"dcc_Arab",
+		"doi_Arab",
+		"dyo_Arab",
+		"fa_Arab",
+		"fia_Arab",
+		"gbz_Arab",
+		"gjk_Arab",
+		"gju_Arab",
+		"glk_Arab",
+		"ha_Arab",
+		"haz_Arab",
+		"hnd_Arab",
+		"hno_Arab",
+		"id_Arab",
+		"inh_Arab",
+		"khw_Arab",
+		"kk_Arab",
+		"kr_Arab",
+		"ks_Arab",
+		"ku_Arab",
+		"kvx_Arab",
+		"kxp_Arab",
+		"ky_Arab",
+		"lah_Arab",
+		"lki_Arab",
+		"lrc_Arab",
+		"luz_Arab",
+		"mfa_Arab",
+		"min_Arab",
+		"mis_Arab",
+		"mrw_Arab",
+		"mvy_Arab",
+		"mzn_Arab",
+		"ota_Arab",
+		"pa_Arab",
+		"prd_Arab",
+		"prs_Arab",
+		"ps_Arab",
+		"rmt_Arab",
+		"sd_Arab",
+		"sdh_Arab",
+		"shi_Arab",
+		"skr_Arab",
+		"so_Arab",
+		"sus_Arab",
+		"swb_Arab",
+		"tg_Arab",
+		"tk_Arab",
+		"tly_Arab",
+		"tr_Arab",
+		"trw_Arab",
+		"tt_Arab",
+		"ttt_Arab",
+		"ug_Arab",
+		"ur_Arab",
+		"uz_Arab",
+		"wni_Arab",
+		"wo_Arab",
+		"zdj_Arab",
+		"zlm_Arab"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Arab",
+	"project": {
+		"repository": "https://github.com/notofonts/arabic",
+		"revision": "6c8320740db19efbb3127c3697b0ee5d0fa62319"
+	},
+	"provenance": {
+		"directory": "ofl/notosansarabic",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [
+					{
+						"default": 100,
+						"max": 100,
+						"min": 62.5,
+						"tag": "wdth"
+					},
+					{
+						"default": 400,
+						"max": 900,
+						"min": 100,
+						"tag": "wght"
+					}
+				],
+				"colorTables": [],
+				"fontVersion": "Version 2.012",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": {
+					"default": 400,
+					"max": 900,
+					"min": 100
+				}
+			},
+			"path": "ofl/notosansarabic/NotoSansArabic[wdth,wght].ttf",
+			"sha256": "63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e",
+			"size": 844676,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

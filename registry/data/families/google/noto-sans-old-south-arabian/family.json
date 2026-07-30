@@ -1,0 +1,57 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Old South Arabian",
+	"languages": [
+		"aii_Sarb",
+		"xsa_Sarb"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/old-south-arabian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Sarb",
+	"project": {
+		"repository": "https://github.com/notofonts/old-south-arabian",
+		"revision": "e77ff1f357de7696d8c44f0ea0394a32d6a19745"
+	},
+	"provenance": {
+		"directory": "ofl/notosansoldsoutharabian",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.001; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosansoldsoutharabian/NotoSansOldSouthArabian-Regular.ttf",
+			"sha256": "54df22db482aef96a0f4aa7eb9e0a7bc92f4af281dec93ca7d16d03a42ef20a5",
+			"size": 51336,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

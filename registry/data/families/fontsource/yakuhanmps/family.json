@@ -1,0 +1,149 @@
+{
+	"classifications": [
+		"serif",
+		"symbols"
+	],
+	"designer": "Qrac",
+	"family": "YakuHanMPs",
+	"languages": [],
+	"license": {
+		"attribution": "Qrac and upstream contributors",
+		"id": "OFL-1.1",
+		"url": "https://raw.githubusercontent.com/qrac/yakuhanjp/3c7c89f68f7e604bb161b1c47cb4c403a4e517bc/resource/Noto_Serif_JP/OFL.txt"
+	},
+	"primaryScript": "Jpan",
+	"project": {
+		"repository": "https://github.com/qrac/yakuhanjp",
+		"revision": "3c7c89f68f7e604bb161b1c47cb4c403a4e517bc"
+	},
+	"provenance": {
+		"directory": "sources/yakuhanmps",
+		"repository": "fontsource/font-files",
+		"revision": "f67c93c7336863d2cb6037eb86269cad5d545b7f",
+		"type": "github"
+	},
+	"sourceModified": "2026-07-27",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 1.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 900
+			},
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Black.ttf",
+			"sha256": "30f67690594290fd8890d9e9240d5a6266d529d1e9ed394f4c1691406c541830",
+			"size": 6416,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 1.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 700
+			},
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Bold.ttf",
+			"sha256": "38fb4656517b5bdea85f2781425e9fbe464ffec379751ea41c70bb1d4fecc3ec",
+			"size": 6420,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 1.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 250
+			},
+			"path": "sources/yakuhanmps/files/YakuHanMPs-ExtraLight.ttf",
+			"sha256": "5c36280670187629250a18f77908961cf34806f05750ef5299207d119111a7a2",
+			"size": 6480,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 1.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 300
+			},
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Light.ttf",
+			"sha256": "151c77232367d9fc9fa068037c12e488ee261eb0496210ff68c95de25c4c8aa4",
+			"size": 6400,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 1.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 500
+			},
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Medium.ttf",
+			"sha256": "3655c8993180d0bef69b9ad2fc84d85610eab42784b01daad2300ad357e08955",
+			"size": 6388,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 1.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "sources/yakuhanmps/files/YakuHanMPs-Regular.ttf",
+			"sha256": "501bc99953e9a3d8baa27c0ba1d6a0b18f099f8a46ac0c5b3c3d2ce847a00c01",
+			"size": 6396,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 1.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 600
+			},
+			"path": "sources/yakuhanmps/files/YakuHanMPs-SemiBold.ttf",
+			"sha256": "8b38eec728f3d734c650f4b672556f8e04d4d7a488ebb7b9e4f1ef49c3834e19",
+			"size": 6404,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		}
+	],
+	"status": "active",
+	"tags": []
+}

@@ -3,12 +3,7 @@ import { dirname, extname, join } from 'node:path';
 import { createFontContext, inspectFont } from '@fontsource-utils/core';
 import type { GitSnapshot } from './git.ts';
 import { normalizeInspection } from './inspection.ts';
-import {
-	type FamilyIcons,
-	familyIconsSchema,
-	familyInspectionSchema,
-	familyMetadataSchema,
-} from './schema.ts';
+import { type FamilyIcons, familyIconsSchema, familySchema } from './schema.ts';
 import {
 	compareStrings,
 	normalizeText,
@@ -115,7 +110,6 @@ const readIcons = (
 		manifest: familyIconsSchema.parse({
 			icons,
 			source: {
-				repository: REPOSITORY,
 				revision: changed.revision,
 				path,
 				sha256: sha256(contents),
@@ -166,10 +160,9 @@ const writeFamily = async (
 	}
 
 	const changed = snapshot.lastChanged(definition.fontPath);
-	const metadata = familyMetadataSchema.parse({
-		id: definition.id,
+	const { inspection } = normalizeInspection(inspected);
+	const family = familySchema.parse({
 		family: definition.family,
-		provider: 'google-icons',
 		status: 'active',
 		provenance: {
 			type: 'github',
@@ -183,24 +176,19 @@ const writeFamily = async (
 		sourceModified: changed.date > iconsModified ? changed.date : iconsModified,
 		license: LICENSE,
 		project: { repository: PROJECT_URL },
-		sourceFiles: [
+		sources: [
 			{
 				path: definition.fontPath,
 				sha256: sha256(contents),
 				size: contents.byteLength,
 				variant: { weight: 400, style: 'normal' },
+				inspection,
 			},
 		],
 	});
 	const output = join(root, 'families', 'google-icons', definition.id);
 	await mkdir(output, { recursive: true });
-	await writeJson(join(output, 'metadata.json'), metadata);
-	await writeJson(
-		join(output, 'inspection.json'),
-		familyInspectionSchema.parse({
-			files: [normalizeInspection(definition.fontPath, inspected)],
-		}),
-	);
+	await writeJson(join(output, 'family.json'), family);
 	await writeJson(join(output, 'icons.json'), icons);
 	await writeFile(
 		join(output, 'description.en-US.md'),
@@ -261,9 +249,9 @@ export const generateGoogleIcons = async (
 	const currentIds = new Set(families.map((family) => family.id));
 	for (const id of previousFamilyIds) {
 		if (currentIds.has(id)) continue;
-		const path = join(root, 'families', 'google-icons', id, 'metadata.json');
-		const metadata = familyMetadataSchema.parse(await readJson(path));
-		await writeJson(path, { ...metadata, status: 'deprecated' });
+		const path = join(root, 'families', 'google-icons', id, 'family.json');
+		const family = familySchema.parse(await readJson(path));
+		await writeJson(path, { ...family, status: 'deprecated' });
 	}
 
 	return [...familyIds].toSorted(compareStrings);

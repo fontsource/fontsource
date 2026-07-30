@@ -5,20 +5,21 @@ import { consola } from 'consola';
 import type { z } from 'zod';
 import {
 	axisRegistrySchema,
-	type FamilyInspection,
-	type FamilyMetadata,
+	type Family,
 	type FamilyPolicy,
+	type FamilyProvider,
+	type FamilySource,
 	familyIconsSchema,
-	familyInspectionSchema,
-	familyMetadataSchema,
 	familyPolicySchema,
+	familyProviderSchema,
+	familySchema,
 	type LanguageCatalog,
 	languageCatalogSchema,
-	registryIndexSchema,
 	replacementRegistrySchema,
 	subsetDefinitionSchema,
 	type Taxonomy,
 	taxonomySchema,
+	upstreamsSchema,
 } from './schema.ts';
 import {
 	canonicalJson,
@@ -31,9 +32,14 @@ const logger = consola.withTag('registry');
 
 const parseFamilyKey = (
 	key: string,
-): { provider: FamilyMetadata['provider']; id: string } => {
-	const [provider, id] = key.split('/') as [FamilyMetadata['provider'], string];
-	return { provider, id };
+): { provider: FamilyProvider; id: string } => {
+	const [provider, id, extra] = key.split('/');
+	assert(provider && id && !extra, `Invalid family directory ${key}`);
+	assert(
+		/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id),
+		`Invalid family directory ${key}`,
+	);
+	return { provider: familyProviderSchema.parse(provider), id };
 };
 
 const assertSortedUnique = <Value>(
@@ -100,7 +106,7 @@ const expandRanges = (
 };
 
 const fontSupportsStyle = (
-	font: FamilyInspection['files'][number],
+	font: FamilySource['inspection'],
 	style: 'normal' | 'italic',
 ): boolean => {
 	const italicAxis = font.axes.find(
@@ -116,7 +122,7 @@ const fontSupportsStyle = (
 };
 
 const fontSupportsWeight = (
-	font: FamilyInspection['files'][number],
+	font: FamilySource['inspection'],
 	weight: number,
 ): boolean =>
 	typeof font.weight === 'number'
@@ -125,20 +131,15 @@ const fontSupportsWeight = (
 
 export const validatePolicyResolution = (
 	policy: FamilyPolicy,
-	metadata: FamilyMetadata,
-	inspection: FamilyInspection,
+	family: Family,
 	context: string,
 ): void => {
 	// Every explicit policy entry must select one source without inventing a
 	// weight/style cross-product or relying on source ordering.
-	const sourceFiles = new Map(
-		metadata.sourceFiles.map((source) => [source.path, source]),
-	);
-	const fonts = inspection.files.map((font) => {
-		const source = sourceFiles.get(font.path);
-		assert(source, `${context} has no source metadata for ${font.path}`);
-		return { font, source };
-	});
+	const fonts = family.sources.map((source) => ({
+		font: source.inspection,
+		source,
+	}));
 	for (const variant of policy.packages.static?.variants ?? []) {
 		const staticMatches = fonts.filter(
 			({ font, source }) =>
@@ -195,82 +196,60 @@ const validateFamily = async (
 	subsets: ReadonlySet<string>,
 	taxonomy: Taxonomy,
 	languages: LanguageCatalog,
-): Promise<FamilyMetadata> => {
-	const { provider, id } = parseFamilyKey(key);
+): Promise<{ id: string; family: Family }> => {
+	const { id } = parseFamilyKey(key);
 	const directory = join(root, 'families', key);
-	const metadata = await validateCanonicalJson(
-		join(directory, 'metadata.json'),
-		familyMetadataSchema,
-	);
-	const inspection = await validateCanonicalJson(
-		join(directory, 'inspection.json'),
-		familyInspectionSchema,
-	);
-	assert(metadata.id === id, `${id} metadata ID does not match its directory`);
-	assert(
-		metadata.provider === provider,
-		`${id} metadata provider does not match its directory`,
+	const family = await validateCanonicalJson(
+		join(directory, 'family.json'),
+		familySchema,
 	);
 	assertSortedUnique(
-		metadata.classifications,
+		family.classifications,
 		(value) => value,
 		`${id} classifications`,
 	);
-	assertSortedUnique(metadata.tags, (value) => value, `${id} tags`);
-	for (const tag of metadata.tags) {
+	assertSortedUnique(family.tags, (value) => value, `${id} tags`);
+	for (const tag of family.tags) {
 		assert(taxonomy.tags[tag], `${id} references unknown tag ${tag}`);
 	}
-	assertSortedUnique(metadata.languages, (value) => value, `${id} languages`);
-	for (const language of metadata.languages) {
+	assertSortedUnique(family.languages, (value) => value, `${id} languages`);
+	for (const language of family.languages) {
 		assert(
 			languages[language],
 			`${id} references unknown language ${language}`,
 		);
 	}
-	if (metadata.primaryLanguage) {
+	if (family.primaryLanguage) {
 		assert(
-			languages[metadata.primaryLanguage],
-			`${id} references unknown primary language ${metadata.primaryLanguage}`,
+			languages[family.primaryLanguage],
+			`${id} references unknown primary language ${family.primaryLanguage}`,
 		);
 		assert(
-			metadata.languages.includes(metadata.primaryLanguage),
+			family.languages.includes(family.primaryLanguage),
 			`${id} primary language is not included in its languages`,
 		);
 	}
-	assertSortedUnique(
-		metadata.sourceFiles,
-		(file) => file.path,
-		`${id} source files`,
-	);
-	assertSortedUnique(
-		inspection.files,
-		(file) => file.path,
-		`${id} inspection files`,
-	);
-	deepStrictEqual(
-		metadata.sourceFiles.map((file) => file.path),
-		inspection.files.map((file) => file.path),
-		`${id} source and inspection paths differ`,
-	);
+	assertSortedUnique(family.sources, (file) => file.path, `${id} source files`);
 
-	for (const file of inspection.files) {
+	for (const source of family.sources) {
+		const file = source.inspection;
 		assertSortedUnique(
 			file.colorTables,
 			(table) => table,
-			`${file.path} color tables`,
+			`${source.path} color tables`,
 		);
-		assertSortedUnique(file.axes, (axis) => axis.tag, `${file.path} axes`);
+		assertSortedUnique(file.axes, (axis) => axis.tag, `${source.path} axes`);
 		if (typeof file.weight !== 'number') {
 			assert(
 				file.weight.min <= file.weight.default &&
 					file.weight.default <= file.weight.max,
-				`${file.path} has an invalid weight range`,
+				`${source.path} has an invalid weight range`,
 			);
 		}
 		for (const axis of file.axes) {
 			assert(
 				axis.min <= axis.default && axis.default <= axis.max,
-				`${file.path} has an invalid ${axis.tag} range`,
+				`${source.path} has an invalid ${axis.tag} range`,
 			);
 		}
 	}
@@ -279,7 +258,11 @@ const validateFamily = async (
 	if (await pathExists(iconsPath)) {
 		const manifest = await validateCanonicalJson(iconsPath, familyIconsSchema);
 		assert(
-			metadata.classifications.includes('symbols'),
+			family.provenance.type === 'github',
+			`${id} icon source repository is not defined by family provenance`,
+		);
+		assert(
+			family.classifications.includes('symbols'),
 			`${id} has icons but is not classified as symbols`,
 		);
 		assertSortedUnique(
@@ -290,7 +273,7 @@ const validateFamily = async (
 	}
 
 	const policyPath = join(directory, 'policy.json');
-	if (!(await pathExists(policyPath))) return metadata;
+	if (!(await pathExists(policyPath))) return { id, family };
 	const policy = await validateCanonicalJson(policyPath, familyPolicySchema);
 	assert(
 		Boolean(policy.packages.static || policy.packages.variable),
@@ -321,8 +304,8 @@ const validateFamily = async (
 			`${id} references missing subset ${subset.definition}`,
 		);
 	}
-	validatePolicyResolution(policy, metadata, inspection, id);
-	return metadata;
+	validatePolicyResolution(policy, family, id);
+	return { id, family };
 };
 
 const validateSubset = async (root: string, id: string): Promise<void> => {
@@ -330,7 +313,6 @@ const validateSubset = async (root: string, id: string): Promise<void> => {
 		join(root, 'subsets', `${id}.json`),
 		subsetDefinitionSchema,
 	);
-	assert(definition.id === id, `${id} subset ID does not match its filename`);
 	validateRanges(definition.ranges, id);
 	if (!definition.slices) return;
 	assertSortedUnique(
@@ -361,9 +343,10 @@ export const listFiles = async (root: string): Promise<string[]> =>
 		)
 		.toSorted(compareStrings);
 
-const listFamilyKeys = async (root: string): Promise<string[]> => {
+export const listFamilyKeys = async (root: string): Promise<string[]> => {
 	const keys: string[] = [];
 	const familiesRoot = join(root, 'families');
+	if (!(await pathExists(familiesRoot))) return keys;
 	for (const provider of await readdir(familiesRoot, {
 		withFileTypes: true,
 	})) {
@@ -377,15 +360,21 @@ const listFamilyKeys = async (root: string): Promise<string[]> => {
 	return keys.toSorted(compareStrings);
 };
 
+export const listSubsetIds = async (root: string): Promise<string[]> => {
+	const subsetsRoot = join(root, 'subsets');
+	if (!(await pathExists(subsetsRoot))) return [];
+	return (await readdir(subsetsRoot))
+		.filter((filename) => filename.endsWith('.json'))
+		.map((filename) => filename.slice(0, -5))
+		.toSorted(compareStrings);
+};
+
 export const validateRegistry = async (root: string): Promise<void> => {
-	const index = await validateCanonicalJson(
-		join(root, 'index.json'),
-		registryIndexSchema,
-	);
-	assertSortedUnique(index.families, (value) => value, 'Registry families');
-	assertSortedUnique(index.subsets, (value) => value, 'Registry subsets');
+	await validateCanonicalJson(join(root, 'upstreams.json'), upstreamsSchema);
+	const familyKeys = await listFamilyKeys(root);
+	const subsetIds = await listSubsetIds(root);
 	const familyIds = new Set<string>();
-	for (const family of index.families) {
+	for (const family of familyKeys) {
 		const { id } = parseFamilyKey(family);
 		assert(!familyIds.has(id), `Duplicate registry family ID ${id}`);
 		familyIds.add(id);
@@ -420,27 +409,11 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		);
 	}
 
-	const actualFamilies = await listFamilyKeys(root);
-	deepStrictEqual(
-		actualFamilies,
-		index.families,
-		'Registry family index does not match family directories',
-	);
-	const actualSubsets = (await readdir(join(root, 'subsets')))
-		.filter((filename) => filename.endsWith('.json'))
-		.map((filename) => filename.slice(0, -5))
-		.toSorted(compareStrings);
-	deepStrictEqual(
-		actualSubsets,
-		index.subsets,
-		'Registry subset index does not match subset files',
-	);
-
-	const subsetSet = new Set(index.subsets);
+	const subsetSet = new Set(subsetIds);
 	let validated = 0;
 	const families = await Promise.all(
-		index.families.map(async (family) => {
-			const metadata = await validateFamily(
+		familyKeys.map(async (family) => {
+			const validatedFamily = await validateFamily(
 				root,
 				family,
 				subsetSet,
@@ -448,50 +421,42 @@ export const validateRegistry = async (root: string): Promise<void> => {
 				languages,
 			);
 			validated += 1;
-			if (validated % 250 === 0 && validated < index.families.length) {
+			if (validated % 250 === 0 && validated < familyKeys.length) {
 				logger.info(
-					`Validated ${validated}/${index.families.length} font families`,
+					`Validated ${validated}/${familyKeys.length} font families`,
 				);
 			}
-			return metadata;
+			return validatedFamily;
 		}),
 	);
-	const metadataById = new Map(families.map((family) => [family.id, family]));
-	for (const family of families) {
-		strictEqual(
-			family.replacedBy,
-			replacements[family.id],
-			`${family.id} replacement does not match replacements.json`,
-		);
-	}
+	const familiesById = new Map(families.map((family) => [family.id, family]));
 	for (const [id, replacedBy] of Object.entries(replacements)) {
 		assert(id !== replacedBy, `${id} cannot replace itself`);
-		const family = metadataById.get(id);
+		const family = familiesById.get(id);
 		assert(family, `Replacement source ${id} does not exist`);
-		const replacement = metadataById.get(replacedBy);
+		const replacement = familiesById.get(replacedBy);
 		assert(replacement, `Replacement target ${replacedBy} does not exist`);
-		strictEqual(family.status, 'deprecated', `${id} must be deprecated`);
+		strictEqual(family.family.status, 'deprecated', `${id} must be deprecated`);
 		strictEqual(
-			replacement.status,
+			replacement.family.status,
 			'active',
 			`Replacement target ${replacedBy} must be active`,
 		);
 	}
-	await Promise.all(index.subsets.map((id) => validateSubset(root, id)));
+	await Promise.all(subsetIds.map((id) => validateSubset(root, id)));
 	await validateCanonicalJson(join(root, 'axes.json'), axisRegistrySchema);
 
 	const allowed = new Set<string>([
-		'index.json',
+		'upstreams.json',
 		'axes.json',
 		'languages.json',
 		'replacements.json',
 		'taxonomy.json',
-		...index.subsets.map((id) => `subsets/${id}.json`),
+		...subsetIds.map((id) => `subsets/${id}.json`),
 	]);
-	for (const family of index.families) {
+	for (const family of familyKeys) {
 		for (const filename of [
-			'metadata.json',
-			'inspection.json',
+			'family.json',
 			'icons.json',
 			'license.txt',
 			'policy.json',

@@ -1,0 +1,60 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"displayName": "Noto Sans N'Ko",
+	"family": "Noto Sans NKo",
+	"languages": [
+		"bm_Nkoo",
+		"dyu_Nkoo",
+		"man_Nkoo",
+		"nqo_Nkoo"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nko)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Nkoo",
+	"project": {
+		"repository": "https://github.com/notofonts/nko",
+		"revision": "a5db712e48059443e873e60805458924ec36f87a"
+	},
+	"provenance": {
+		"directory": "ofl/notosansnko",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosansnko/NotoSansNKo-Regular.ttf",
+			"sha256": "97954444367ad6708c36e85a89aec2830720e34968398d9caf07e7c3307c7993",
+			"size": 79696,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

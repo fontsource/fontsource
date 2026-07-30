@@ -10,10 +10,8 @@ import { createLanguageMatcher, type FontCoverage } from './languages.ts';
 import { loadProtoType, parseProto } from './protobuf.ts';
 import {
 	axisRegistrySchema,
-	type FamilyInspection,
-	type FamilyMetadata,
-	familyInspectionSchema,
-	familyMetadataSchema,
+	type Family,
+	familySchema,
 	type LanguageCatalog,
 	languageCatalogSchema,
 	type Taxonomy,
@@ -35,7 +33,7 @@ type GoogleFont = {
 	copyright?: string;
 };
 
-type GoogleSampleText = NonNullable<FamilyMetadata['sampleText']>;
+type GoogleSampleText = NonNullable<Family['sampleText']>;
 
 const SAMPLE_TEXT_FIELDS = [
 	'masthead_full',
@@ -278,7 +276,7 @@ const readGoogleLanguages = (snapshot: GitSnapshot): LanguageCatalog => {
 	return languageCatalogSchema.parse(catalog);
 };
 
-type FontClassification = FamilyMetadata['classifications'][number];
+type FontClassification = Family['classifications'][number];
 
 const GOOGLE_CLASSIFICATION_MAP: Record<string, FontClassification> = {
 	DISPLAY: 'display',
@@ -530,8 +528,7 @@ const inspectFamilySources = async (
 	ctx: ReturnType<typeof createFontContext>,
 	matchLanguages: ReturnType<typeof createLanguageMatcher>,
 ): Promise<{
-	sourceFiles: FamilyMetadata['sourceFiles'];
-	inspectionFiles: FamilyInspection['files'];
+	sources: Family['sources'];
 	languages: string[];
 }> => {
 	const { directory, family, files } = source;
@@ -556,8 +553,7 @@ const inspectFamilySources = async (
 		}
 	}
 
-	const sourceFiles: FamilyMetadata['sourceFiles'] = [];
-	const inspectionFiles: FamilyInspection['files'] = [];
+	const sources: Family['sources'] = [];
 	const coverage: FontCoverage[] = [];
 
 	// Keep inspection sequential: a single source face can already be memory-heavy.
@@ -565,25 +561,24 @@ const inspectFamilySources = async (
 		const contents = snapshot.read(path);
 		const declared = declaredVariants.get(path);
 		const inspected = await inspectFont(ctx, new Uint8Array(contents));
-		const normalized = normalizeInspection(path, inspected);
-		sourceFiles.push({
+		const { cmap, inspection } = normalizeInspection(inspected);
+		sources.push({
 			path,
 			sha256: sha256(contents),
 			size: contents.byteLength,
 			...(declared
 				? { variant: { weight: declared.weight, style: declared.style } }
 				: {}),
+			inspection,
 		});
-		inspectionFiles.push(normalized);
 		coverage.push({
-			cmapSha256: normalized.cmap.sha256,
+			cmapSha256: cmap.sha256,
 			unicodeRanges: inspected.unicodeRanges,
 		});
 	}
 
 	return {
-		sourceFiles,
-		inspectionFiles,
+		sources,
 		languages:
 			family.languages.length > 0
 				? [...family.languages].toSorted(compareStrings)
@@ -609,11 +604,13 @@ const writeFamily = async (
 		.map((filename) => `${directory}/${filename}`)
 		.find((path) => files.has(path));
 
-	const {
-		sourceFiles,
-		inspectionFiles,
-		languages: detectedLanguages,
-	} = await inspectFamilySources(snapshot, id, source, ctx, matchLanguages);
+	const { sources, languages: detectedLanguages } = await inspectFamilySources(
+		snapshot,
+		id,
+		source,
+		ctx,
+		matchLanguages,
+	);
 	const languages = new Set(
 		detectedLanguages.filter((language) => languageCatalog[language]),
 	);
@@ -629,10 +626,8 @@ const writeFamily = async (
 		),
 	).toSorted(compareStrings);
 	const lastChanged = snapshot.lastChanged(directory);
-	const metadata = familyMetadataSchema.parse({
-		id,
+	const family = familySchema.parse({
 		family: google.name,
-		provider: 'google',
 		status: 'active',
 		provenance: {
 			type: 'github',
@@ -660,15 +655,11 @@ const writeFamily = async (
 			...(copyrights.length > 0 ? { attribution: copyrights.join('\n') } : {}),
 		},
 		...(google.project ? { project: google.project } : {}),
-		sourceFiles,
-	});
-	const inspection = familyInspectionSchema.parse({
-		files: inspectionFiles,
+		sources,
 	});
 	const output = join(root, 'families', 'google', id);
 	await mkdir(output, { recursive: true });
-	await writeJson(join(output, 'metadata.json'), metadata);
-	await writeJson(join(output, 'inspection.json'), inspection);
+	await writeJson(join(output, 'family.json'), family);
 	if (licensePath) {
 		await writeFile(
 			join(output, 'license.txt'),
@@ -749,9 +740,9 @@ export const generateGoogle = async (
 
 	for (const id of previousFamilyIds) {
 		if (families.has(id)) continue;
-		const metadataPath = join(root, 'families', 'google', id, 'metadata.json');
-		const metadata = familyMetadataSchema.parse(await readJson(metadataPath));
-		await writeJson(metadataPath, { ...metadata, status: 'deprecated' });
+		const familyPath = join(root, 'families', 'google', id, 'family.json');
+		const family = familySchema.parse(await readJson(familyPath));
+		await writeJson(familyPath, { ...family, status: 'deprecated' });
 	}
 
 	await writeAxisRegistry(snapshot, root);

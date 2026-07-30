@@ -1,0 +1,58 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Mongolian",
+	"languages": [
+		"mn_Mong",
+		"mnc_Mong",
+		"sa_Mong"
+	],
+	"license": {
+		"attribution": "Copyright 2023 The Noto Project Authors (https://github.com/notofonts/mongolian)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Mong",
+	"project": {
+		"repository": "https://github.com/notofonts/mongolian",
+		"revision": "a61ef47935dcf4e4675456b632d6248836a5496a"
+	},
+	"provenance": {
+		"directory": "ofl/notosansmongolian",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 3.002; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosansmongolian/NotoSansMongolian-Regular.ttf",
+			"sha256": "805a55e10492c547ccadc1ad04faabdef61a74a5c02ecce69748378d66ef032d",
+			"size": 390920,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}
