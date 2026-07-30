@@ -1,0 +1,77 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Hebrew",
+	"languages": [
+		"he_Hebr",
+		"jpr_Hebr",
+		"jrb_Hebr",
+		"lad_Hebr",
+		"sam_Hebr",
+		"yi_Hebr",
+		"zh_Hebr"
+	],
+	"license": {
+		"attribution": "Copyright 2024 The Noto Project Authors (https://github.com/notofonts/hebrew)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Hebr",
+	"project": {
+		"repository": "https://github.com/notofonts/hebrew",
+		"revision": "d2ce986faa9c149e8961c7bceddb8e376760541a"
+	},
+	"provenance": {
+		"directory": "ofl/notosanshebrew",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [
+					{
+						"default": 100,
+						"max": 100,
+						"min": 62.5,
+						"tag": "wdth"
+					},
+					{
+						"default": 100,
+						"max": 900,
+						"min": 100,
+						"tag": "wght"
+					}
+				],
+				"colorTables": [],
+				"fontVersion": "Version 3.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": {
+					"default": 100,
+					"max": 900,
+					"min": 100
+				}
+			},
+			"path": "ofl/notosanshebrew/NotoSansHebrew[wdth,wght].ttf",
+			"sha256": "7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88",
+			"size": 112640,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

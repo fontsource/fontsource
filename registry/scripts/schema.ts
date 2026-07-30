@@ -5,10 +5,11 @@ const idSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const languageIdSchema = z
 	.string()
 	.regex(/^[a-z][a-z0-9]*(?:[-_][A-Za-z0-9]+)*$/);
-const familyProviderSchema = z.enum(['google', 'google-icons', 'fontsource']);
-const familyKeySchema = z
-	.string()
-	.regex(/^(?:google|google-icons|fontsource)\/[a-z0-9]+(?:-[a-z0-9]+)*$/);
+export const familyProviderSchema = z.enum([
+	'google',
+	'google-icons',
+	'fontsource',
+]);
 const revisionSchema = z.string().regex(/^[0-9a-f]{40}$/);
 const sha256Schema = z.string().regex(/^[0-9a-f]{64}$/);
 const dateSchema = z.iso.date();
@@ -85,28 +86,23 @@ export const languageCatalogSchema = z.record(
 	}),
 );
 
-export const registryIndexSchema = z.strictObject({
-	schemaVersion: z.literal(1),
-	upstreams: z.strictObject({
-		googleFonts: z.strictObject({
-			repository: z.literal('google/fonts'),
-			revision: revisionSchema,
-		}),
-		googleIcons: z.strictObject({
-			repository: z.literal('google/material-design-icons'),
-			revision: revisionSchema,
-		}),
-		namFiles: z.strictObject({
-			repository: z.literal('googlefonts/nam-files'),
-			revision: revisionSchema,
-		}),
-		fontFiles: z.strictObject({
-			repository: z.literal('fontsource/font-files'),
-			revision: revisionSchema,
-		}),
+export const upstreamsSchema = z.strictObject({
+	googleFonts: z.strictObject({
+		repository: z.literal('google/fonts'),
+		revision: revisionSchema,
 	}),
-	families: z.array(familyKeySchema),
-	subsets: z.array(idSchema),
+	googleIcons: z.strictObject({
+		repository: z.literal('google/material-design-icons'),
+		revision: revisionSchema,
+	}),
+	namFiles: z.strictObject({
+		repository: z.literal('googlefonts/nam-files'),
+		revision: revisionSchema,
+	}),
+	fontFiles: z.strictObject({
+		repository: z.literal('fontsource/font-files'),
+		revision: revisionSchema,
+	}),
 });
 
 export const replacementRegistrySchema = z.record(idSchema, idSchema);
@@ -139,12 +135,34 @@ const sourceFileSchema = z.strictObject({
 	variant: staticVariantSchema.optional(),
 });
 
-export const familyMetadataSchema = z.strictObject({
-	id: idSchema,
+const axisSchema = z.strictObject({
+	tag: z.string().length(4),
+	min: finiteNumberSchema,
+	max: finiteNumberSchema,
+	default: finiteNumberSchema,
+});
+
+const weightSchema = z.union([
+	finiteNumberSchema,
+	z.strictObject({
+		min: finiteNumberSchema,
+		max: finiteNumberSchema,
+		default: finiteNumberSchema,
+	}),
+]);
+
+const sourceInspectionSchema = z.strictObject({
+	fontVersion: z.string().min(1).nullable(),
+	weight: weightSchema,
+	style: z.enum(['normal', 'italic', 'oblique']),
+	axes: z.array(axisSchema),
+	outline: z.enum(['glyf', 'cff', 'cff2', 'bitmap']),
+	colorTables: z.array(z.string().length(4)),
+});
+
+export const familySchema = z.strictObject({
 	family: z.string().min(1),
-	provider: familyProviderSchema,
 	status: z.enum(['active', 'deprecated']),
-	replacedBy: idSchema.optional(),
 	provenance: z.discriminatedUnion('type', [
 		z.strictObject({
 			type: z.literal('github'),
@@ -175,7 +193,9 @@ export const familyMetadataSchema = z.strictObject({
 			revision: z.string().min(1).optional(),
 		})
 		.optional(),
-	sourceFiles: z.array(sourceFileSchema).min(1),
+	sources: z
+		.array(sourceFileSchema.extend({ inspection: sourceInspectionSchema }))
+		.min(1),
 });
 
 export const familyIconsSchema = z.strictObject({
@@ -188,24 +208,22 @@ export const familyIconsSchema = z.strictObject({
 		)
 		.min(1),
 	source: z.strictObject({
-		repository: githubRepositorySchema,
 		revision: revisionSchema,
 		path: sourcePathSchema,
 		sha256: sha256Schema,
 	}),
 });
 
-export const sourceFamilySchema = familyMetadataSchema
+export const sourceFamilySchema = familySchema
 	.omit({
-		provider: true,
 		status: true,
-		replacedBy: true,
 		provenance: true,
 		sourceModified: true,
-		sourceFiles: true,
+		sources: true,
 	})
 	.extend({
-		languages: familyMetadataSchema.shape.languages.optional(),
+		id: idSchema,
+		languages: familySchema.shape.languages.optional(),
 		sourceFiles: z
 			.array(
 				z.strictObject({
@@ -218,40 +236,6 @@ export const sourceFamilySchema = familyMetadataSchema
 			)
 			.min(1),
 	});
-
-const axisSchema = z.strictObject({
-	tag: z.string().length(4),
-	min: finiteNumberSchema,
-	max: finiteNumberSchema,
-	default: finiteNumberSchema,
-});
-
-const weightSchema = z.union([
-	finiteNumberSchema,
-	z.strictObject({
-		min: finiteNumberSchema,
-		max: finiteNumberSchema,
-		default: finiteNumberSchema,
-	}),
-]);
-
-export const familyInspectionSchema = z.strictObject({
-	files: z.array(
-		z.strictObject({
-			path: sourcePathSchema,
-			fontVersion: z.string().min(1).nullable(),
-			weight: weightSchema,
-			style: z.enum(['normal', 'italic', 'oblique']),
-			axes: z.array(axisSchema),
-			cmap: z.strictObject({
-				codepointCount: z.number().int().nonnegative(),
-				sha256: sha256Schema,
-			}),
-			outline: z.enum(['glyf', 'cff', 'cff2', 'bitmap']),
-			colorTables: z.array(z.string().length(4)),
-		}),
-	),
-});
 
 const variableVariantSchema = z.strictObject({
 	axisKey: z.string().min(1),
@@ -279,7 +263,6 @@ const rangeSchema = z.tuple([
 ]);
 
 export const subsetDefinitionSchema = z.strictObject({
-	id: idSchema,
 	ranges: z.array(rangeSchema),
 	slices: z
 		.array(
@@ -317,8 +300,9 @@ export const taxonomySchema = z.strictObject({
 	tags: z.record(tagIdSchema, labelSchema),
 });
 
-export type FamilyMetadata = z.infer<typeof familyMetadataSchema>;
-export type FamilyInspection = z.infer<typeof familyInspectionSchema>;
+export type Family = z.infer<typeof familySchema>;
+export type FamilyProvider = z.infer<typeof familyProviderSchema>;
+export type FamilySource = Family['sources'][number];
 export type FamilyIcons = z.infer<typeof familyIconsSchema>;
 export type FamilyPolicy = z.infer<typeof familyPolicySchema>;
 export type LanguageCatalog = z.infer<typeof languageCatalogSchema>;

@@ -20,10 +20,5 @@ it('reports only languages supported by every source face', () => {
 		}),
 	);
 
-	expect(
-		matchLanguages([
-			{ cmapSha256: 'first', unicodeRanges: [[65, 66], 913] },
-			{ cmapSha256: 'second', unicodeRanges: [[65, 66]] },
-		]),
-	).toEqual(['en_Latn']);
+	expect(matchLanguages([[[65, 66], 913], [[65, 66]]])).toEqual(['en_Latn']);
 });

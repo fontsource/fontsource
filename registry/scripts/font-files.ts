@@ -7,9 +7,8 @@ import type { GitSnapshot } from './git.ts';
 import { normalizeInspection } from './inspection.ts';
 import { createLanguageMatcher, type FontCoverage } from './languages.ts';
 import {
-	type FamilyMetadata,
-	familyInspectionSchema,
-	familyMetadataSchema,
+	type Family,
+	familySchema,
 	type LanguageCatalog,
 	type SourceFamily,
 	sourceFamilySchema,
@@ -72,11 +71,13 @@ const writeFamily = async (
 	matchLanguages: ReturnType<typeof createLanguageMatcher>,
 ): Promise<void> => {
 	const { directory, files, metadata: sourceMetadata } = source;
+	const { sourceFiles: declaredSourceFiles, ...sourceMetadataWithoutFiles } =
+		sourceMetadata;
 	const licensePath = `${directory}/license.txt`;
 	if (!files.has(licensePath)) {
 		throw new Error(`${directory} is missing license.txt`);
 	}
-	const declaredFiles = sourceMetadata.sourceFiles.map((file) => ({
+	const declaredFiles = declaredSourceFiles.map((file) => ({
 		...file,
 		path: `${directory}/${file.path}`,
 	}));
@@ -94,26 +95,21 @@ const writeFamily = async (
 		`${sourceMetadata.id} metadata must declare every source file`,
 	);
 
-	const sourceFiles: FamilyMetadata['sourceFiles'] = [];
-	const inspectionFiles: Array<ReturnType<typeof normalizeInspection>> = [];
+	const sources: Family['sources'] = [];
 	const coverage: FontCoverage[] = [];
 	for (const sourceFile of declaredFiles.toSorted((left, right) =>
 		compareStrings(left.path, right.path),
 	)) {
 		const contents = snapshot.read(sourceFile.path);
-		sourceFiles.push({
+		const inspected = await inspectFont(ctx, new Uint8Array(contents));
+		sources.push({
 			path: sourceFile.path,
 			sha256: sha256(contents),
 			size: contents.byteLength,
-			...(sourceFile.variant ? { variant: sourceFile.variant } : {}),
+			variant: sourceFile.variant,
+			inspection: normalizeInspection(inspected),
 		});
-		const inspected = await inspectFont(ctx, new Uint8Array(contents));
-		const normalized = normalizeInspection(sourceFile.path, inspected);
-		inspectionFiles.push(normalized);
-		coverage.push({
-			cmapSha256: normalized.cmap.sha256,
-			unicodeRanges: inspected.unicodeRanges,
-		});
+		coverage.push(inspected.unicodeRanges);
 	}
 	const lastChanged = snapshot.lastChanged(directory);
 	const languages = new Set(
@@ -125,13 +121,12 @@ const writeFamily = async (
 	) {
 		languages.add(sourceMetadata.primaryLanguage);
 	}
-	const { primaryLanguage, ...sourceFields } = sourceMetadata;
-	const metadata = familyMetadataSchema.parse({
+	const { id, primaryLanguage, ...sourceFields } = sourceMetadataWithoutFiles;
+	const family = familySchema.parse({
 		...sourceFields,
-		...(primaryLanguage && languages.has(primaryLanguage)
-			? { primaryLanguage }
-			: {}),
-		provider: 'fontsource',
+		primaryLanguage: languages.has(primaryLanguage ?? '')
+			? primaryLanguage
+			: undefined,
 		status: 'active',
 		provenance: {
 			type: 'github',
@@ -145,13 +140,11 @@ const writeFamily = async (
 		).toSorted(compareStrings),
 		tags: Array.from(new Set(sourceMetadata.tags)).toSorted(compareStrings),
 		languages: [...languages].toSorted(compareStrings),
-		sourceFiles,
+		sources,
 	});
-	const inspection = familyInspectionSchema.parse({ files: inspectionFiles });
-	const output = join(root, 'families', 'fontsource', metadata.id);
+	const output = join(root, 'families', 'fontsource', id);
 	await mkdir(output, { recursive: true });
-	await writeJson(join(output, 'metadata.json'), metadata);
-	await writeJson(join(output, 'inspection.json'), inspection);
+	await writeJson(join(output, 'family.json'), family);
 
 	await writeFile(
 		join(output, 'license.txt'),
@@ -198,15 +191,9 @@ export const generateFontFiles = async (
 	const currentIds = new Set(families.map((family) => family.metadata.id));
 	for (const id of previousFamilyIds) {
 		if (currentIds.has(id)) continue;
-		const metadataPath = join(
-			root,
-			'families',
-			'fontsource',
-			id,
-			'metadata.json',
-		);
-		const metadata = familyMetadataSchema.parse(await readJson(metadataPath));
-		await writeJson(metadataPath, { ...metadata, status: 'deprecated' });
+		const familyPath = join(root, 'families', 'fontsource', id, 'family.json');
+		const family = familySchema.parse(await readJson(familyPath));
+		await writeJson(familyPath, { ...family, status: 'deprecated' });
 	}
 
 	return [...familyIds].toSorted(compareStrings);

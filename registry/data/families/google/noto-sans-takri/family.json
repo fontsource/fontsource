@@ -1,0 +1,55 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Takri",
+	"languages": [
+		"doi_Takr"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/takri)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Takr",
+	"project": {
+		"repository": "https://github.com/notofonts/takri",
+		"revision": "bf175ad0b88bacf551fa992f19ce0e1cd2270b22"
+	},
+	"provenance": {
+		"directory": "ofl/notosanstakri",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosanstakri/NotoSansTakri-Regular.ttf",
+			"sha256": "129764150a358e24eb65ec117d140440e84b28bf4aad23a608fe9526f10c4701",
+			"size": 71068,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"sans/humanist"
+	]
+}

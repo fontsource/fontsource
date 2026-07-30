@@ -18,15 +18,19 @@ import { putCurrentObject, putObject } from './r2.ts';
 import {
 	archiveManifestSchema,
 	axisRegistrySchema,
-	familyInspectionSchema,
-	familyMetadataSchema,
+	familySchema,
 	languageCatalogSchema,
-	registryIndexSchema,
+	replacementRegistrySchema,
 	subsetDefinitionSchema,
 	taxonomySchema,
 } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
-import { listFiles, validateRegistry } from './validator.ts';
+import {
+	listFamilyKeys,
+	listFiles,
+	listSubsetIds,
+	validateRegistry,
+} from './validator.ts';
 
 const CONCURRENCY = 16;
 const REPOSITORY_ROOT = resolve(import.meta.dirname, '../..');
@@ -70,8 +74,10 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			return { path, bytes, size: bytes.byteLength, sha256: sha256(bytes) };
 		}),
 	);
-	const index = registryIndexSchema.parse(
-		await readJson(join(root, 'index.json')),
+	const familyKeys = await listFamilyKeys(root);
+	const subsetIds = await listSubsetIds(root);
+	const replacements = replacementRegistrySchema.parse(
+		await readJson(join(root, 'replacements.json')),
 	);
 	const languages = languageCatalogSchema.parse(
 		await readJson(join(root, 'languages.json')),
@@ -105,23 +111,21 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const sourceMap = new Map<string, SourceFile>();
 	const familySummaries = [];
 	const familyViews: ArchiveFile[] = [];
-	for (const family of index.families) {
-		const directory = join(root, 'families', family);
-		const metadata = familyMetadataSchema.parse(
-			await readJson(join(directory, 'metadata.json')),
-		);
-		const inspection = familyInspectionSchema.parse(
-			await readJson(join(directory, 'inspection.json')),
+	for (const familyKey of familyKeys) {
+		const [provider, id] = familyKey.split('/') as [string, string];
+		const directory = join(root, 'families', familyKey);
+		const family = familySchema.parse(
+			await readJson(join(directory, 'family.json')),
 		);
 		const axes = [
 			...new Set(
-				inspection.files.flatMap((file) => file.axes.map(({ tag }) => tag)),
+				family.sources.flatMap(({ inspection }) =>
+					inspection.axes.map(({ tag }) => tag),
+				),
 			),
 		].toSorted(compareStrings);
-		// Registry validation guarantees matching source and inspection order.
-		const sources = metadata.sourceFiles.map((source, index) => {
-			const inspected = inspection.files[index];
-			const variable = inspected.axes.length > 0;
+		const sources = family.sources.map((source) => {
+			const variable = source.inspection.axes.length > 0;
 			const format = source.path.toLowerCase().endsWith('.otf') ? 'otf' : 'ttf';
 			return {
 				sha256: source.sha256,
@@ -130,13 +134,13 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				size: source.size,
 				downloadUrl: `/v1/registry/sources/${source.sha256}`,
 				type: variable ? 'variable' : 'static',
-				fontVersion: inspected.fontVersion,
+				fontVersion: source.inspection.fontVersion,
 				weight:
 					variable || !source.variant
-						? inspected.weight
+						? source.inspection.weight
 						: source.variant.weight,
-				style: source.variant?.style ?? inspected.style,
-				axes: inspected.axes,
+				style: source.variant?.style ?? source.inspection.style,
+				axes: source.inspection.axes,
 			};
 		});
 		const [description, article, licenseText] = await Promise.all([
@@ -145,16 +149,16 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			readTextIfExists(join(directory, 'license.txt')),
 		]);
 		const publicFamily = {
-			id: metadata.id,
-			family: metadata.family,
-			...(metadata.displayName ? { displayName: metadata.displayName } : {}),
-			provider: metadata.provider,
-			status: metadata.status,
-			replacedBy: metadata.replacedBy,
-			classifications: metadata.classifications,
-			tags: metadata.tags,
-			languages: metadata.languages,
-			sourceModified: metadata.sourceModified,
+			id,
+			family: family.family,
+			...(family.displayName ? { displayName: family.displayName } : {}),
+			provider,
+			status: family.status,
+			replacedBy: replacements[id],
+			classifications: family.classifications,
+			tags: family.tags,
+			languages: family.languages,
+			sourceModified: family.sourceModified,
 		};
 		familySummaries.push({
 			...publicFamily,
@@ -163,24 +167,24 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		});
 		familyViews.push(
 			createJsonFile(
-				`families/${metadata.id}.json`,
+				`families/${id}.json`,
 				RegistryFamilyDetailSchema.parse({
 					...publicFamily,
-					primaryLanguage: metadata.primaryLanguage,
-					primaryScript: metadata.primaryScript,
-					sampleText: metadata.sampleText,
-					designer: metadata.designer,
-					dateAdded: metadata.dateAdded,
+					primaryLanguage: family.primaryLanguage,
+					primaryScript: family.primaryScript,
+					sampleText: family.sampleText,
+					designer: family.designer,
+					dateAdded: family.dateAdded,
 					license: {
-						id: metadata.license.id,
-						url: metadata.license.url,
-						attribution: metadata.license.attribution,
+						id: family.license.id,
+						url: family.license.url,
+						attribution: family.license.attribution,
 						text: licenseText,
 					},
-					project: metadata.project
+					project: family.project
 						? {
-								repository: metadata.project.repository,
-								revision: metadata.project.revision,
+								repository: family.project.repository,
+								revision: family.project.revision,
 							}
 						: undefined,
 					content:
@@ -196,10 +200,10 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				}),
 			),
 		);
-		for (const source of metadata.sourceFiles) {
+		for (const source of family.sources) {
 			let read: SourceFile['read'];
-			if (metadata.provenance.type === 'github') {
-				const { repository, revision } = metadata.provenance;
+			if (family.provenance.type === 'github') {
+				const { repository, revision } = family.provenance;
 				read = () => readSource(source.path, repository, revision);
 			}
 			const previous = sourceMap.get(source.sha256);
@@ -223,14 +227,14 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		compareStrings(left.sha256, right.sha256),
 	);
 	const subsets = await Promise.all(
-		index.subsets.map(async (id) => {
+		subsetIds.map(async (id) => {
 			const subset = subsetDefinitionSchema.parse(
 				await readJson(join(root, 'subsets', `${id}.json`)),
 			);
 			return createJsonFile(
 				`subsets/${id}.json`,
 				RegistrySubsetSchema.parse({
-					id: subset.id,
+					id,
 					ranges: subset.ranges,
 					slices: subset.slices?.map((slice) => ({
 						id: slice.id,
@@ -252,7 +256,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			RegistryInfoSchema.parse({
 				familyCount: familySummaries.length,
 				languageCount: languageSummaries.length,
-				subsetCount: index.subsets.length,
+				subsetCount: subsetIds.length,
 			}),
 		),
 		createJsonFile(
@@ -261,7 +265,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		),
 		createJsonFile(
 			'subsets.json',
-			RegistrySubsetsSchema.parse({ subsets: index.subsets }),
+			RegistrySubsetsSchema.parse({ subsets: subsetIds }),
 		),
 		createJsonFile(
 			'languages.json',

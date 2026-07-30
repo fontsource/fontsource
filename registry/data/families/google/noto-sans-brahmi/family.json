@@ -1,0 +1,58 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Brahmi",
+	"languages": [
+		"aii_Brah",
+		"pi_Brah",
+		"pka_Brah",
+		"sa_Brah"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/brahmi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Brah",
+	"project": {
+		"repository": "https://github.com/notofonts/brahmi",
+		"revision": "7803437c1a61033137e89a7860cccb8f735a6088"
+	},
+	"provenance": {
+		"directory": "ofl/notosansbrahmi",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosansbrahmi/NotoSansBrahmi-Regular.ttf",
+			"sha256": "3e3b877c30f3fa51328fd4fb96bf2f66bdb922c36c446ed0bb94bde0f90729d3",
+			"size": 115452,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

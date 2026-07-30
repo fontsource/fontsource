@@ -1,0 +1,54 @@
+{
+	"classifications": [
+		"serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Serif Tangut",
+	"languages": [
+		"txg_Tang"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tangut)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Tang",
+	"project": {
+		"repository": "https://github.com/notofonts/tangut",
+		"revision": "bc79cdc478cd198b4ea77827c42a50dbb3613187"
+	},
+	"provenance": {
+		"directory": "ofl/notoseriftangut",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.170; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notoseriftangut/NotoSerifTangut-Regular.ttf",
+			"sha256": "f6098b9210e0a10f2ba2e4fbbb496c1df3594bf84555090929750c79ac75495d",
+			"size": 5687188,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/competent",
+		"expressive/sincere",
+		"serif/transitional"
+	]
+}

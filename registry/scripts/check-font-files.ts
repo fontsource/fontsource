@@ -7,11 +7,11 @@ import { applyReplacements } from './generate.ts';
 import { assertGitPathClean, getGitRevision, openGitSnapshot } from './git.ts';
 import {
 	languageCatalogSchema,
-	registryIndexSchema,
 	replacementRegistrySchema,
+	upstreamsSchema,
 } from './schema.ts';
-import { compareStrings, readJson, writeJson } from './shared.ts';
-import { validateRegistry } from './validator.ts';
+import { readJson, writeJson } from './shared.ts';
+import { listFamilyKeys, validateRegistry } from './validator.ts';
 
 const logger = consola.withTag('registry');
 
@@ -28,8 +28,8 @@ const root = join(temporary, 'data');
 
 try {
 	await cp(join(import.meta.dirname, '..', 'data'), root, { recursive: true });
-	const index = registryIndexSchema.parse(
-		await readJson(join(root, 'index.json')),
+	const upstreams = upstreamsSchema.parse(
+		await readJson(join(root, 'upstreams.json')),
 	);
 	const languages = languageCatalogSchema.parse(
 		await readJson(join(root, 'languages.json')),
@@ -37,7 +37,8 @@ try {
 	const replacements = replacementRegistrySchema.parse(
 		await readJson(join(root, 'replacements.json')),
 	);
-	const previousFamilyIds = index.families
+	const familyKeys = await listFamilyKeys(root);
+	const previousFamilyIds = familyKeys
 		.filter((family) => family.startsWith('fontsource/'))
 		.map((family) => family.slice('fontsource/'.length));
 
@@ -48,20 +49,12 @@ try {
 		previousFamilyIds,
 		languages,
 	);
-	const families = [
-		...index.families.filter((family) => !family.startsWith('fontsource/')),
-		...familyIds.map((family) => `fontsource/${family}`),
-	].toSorted(compareStrings);
-	await writeJson(join(root, 'index.json'), {
-		...index,
-		upstreams: {
-			...index.upstreams,
-			fontFiles: {
-				repository: 'fontsource/font-files',
-				revision,
-			},
+	await writeJson(join(root, 'upstreams.json'), {
+		...upstreams,
+		fontFiles: {
+			repository: 'fontsource/font-files',
+			revision,
 		},
-		families,
 	});
 	await applyReplacements(
 		root,

@@ -1,0 +1,57 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Tirhuta",
+	"languages": [
+		"mai_Tirh",
+		"sa_Tirh"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/tirhuta)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Tirh",
+	"project": {
+		"repository": "https://github.com/notofonts/tirhuta",
+		"revision": "3c941a6f7183c147e807ed92b4a4f894c4e5e7f6"
+	},
+	"provenance": {
+		"directory": "ofl/notosanstirhuta",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosanstirhuta/NotoSansTirhuta-Regular.ttf",
+			"sha256": "ad7123ee63118b83ed2f723591e5e861baad8dd157508b8339362850c6036efe",
+			"size": 137848,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/rugged",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

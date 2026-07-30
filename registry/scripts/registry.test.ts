@@ -15,13 +15,13 @@ import { generateFontFiles } from './font-files.ts';
 import { generateRegistry } from './generate.ts';
 import { assertGitPathClean, openGitSnapshot } from './git.ts';
 import {
-	familyMetadataSchema,
+	familySchema,
 	languageCatalogSchema,
-	registryIndexSchema,
 	sourceFamilySchema,
+	upstreamsSchema,
 } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
-import { validateRegistry } from './validator.ts';
+import { listFamilyKeys, validateRegistry } from './validator.ts';
 
 const ABEL_POLICY = {
 	packages: {
@@ -442,7 +442,7 @@ const addPackagePolicy = async (root: string): Promise<void> => {
 describe('registry ingestion', () => {
 	it('archives only committed registry data', async () => {
 		const repository = await createGitRepository('committed-registry');
-		await writeFixture(repository, 'registry/data/index.json', '{}\n');
+		await writeFixture(repository, 'registry/data/upstreams.json', '{}\n');
 		commitAll(repository, 'registry snapshot');
 		expect(() => assertGitPathClean(repository, 'registry/data')).not.toThrow();
 
@@ -474,10 +474,9 @@ describe('registry ingestion', () => {
 		const registry = await temporaryDirectory('duplicate-family-id');
 		await writeFixture(
 			registry,
-			'index.json',
-			canonicalJson({
-				schemaVersion: 1,
-				upstreams: {
+			'upstreams.json',
+			canonicalJson(
+				upstreamsSchema.parse({
 					googleFonts: {
 						repository: 'google/fonts',
 						revision: '1'.repeat(40),
@@ -494,11 +493,16 @@ describe('registry ingestion', () => {
 						repository: 'fontsource/font-files',
 						revision: '3'.repeat(40),
 					},
-				},
-				families: ['fontsource/abel', 'google/abel'],
-				subsets: [],
-			}),
+				}),
+			),
 		);
+		for (const provider of ['fontsource', 'google']) {
+			await writeFixture(
+				registry,
+				`families/${provider}/abel/family.json`,
+				'{}\n',
+			);
+		}
 
 		await expect(validateRegistry(registry)).rejects.toThrow(
 			'Duplicate registry family ID abel',
@@ -514,11 +518,8 @@ describe('registry ingestion', () => {
 			generateFontFiles(snapshot, registry, [], TEST_LANGUAGES),
 		).resolves.toEqual(['example', 'symbols']);
 		expect(
-			await readJson(
-				join(registry, 'families/fontsource/example/metadata.json'),
-			),
+			await readJson(join(registry, 'families/fontsource/example/family.json')),
 		).toMatchObject({
-			provider: 'fontsource',
 			status: 'active',
 			classifications: ['display', 'sans-serif'],
 			tags: ['theme/stencil'],
@@ -530,20 +531,12 @@ describe('registry ingestion', () => {
 				revision: source.revision,
 				directory: 'sources/example',
 			},
-			sourceFiles: [
+			sources: [
 				{
 					path: 'sources/example/files/Example-Regular.ttf',
 					variant: { weight: 400, style: 'normal' },
+					inspection: { weight: 400 },
 				},
-			],
-		});
-		expect(
-			await readJson(
-				join(registry, 'families/fontsource/example/inspection.json'),
-			),
-		).toMatchObject({
-			files: [
-				{ path: 'sources/example/files/Example-Regular.ttf', weight: 400 },
 			],
 		});
 		expect(
@@ -553,7 +546,7 @@ describe('registry ingestion', () => {
 			),
 		).toBe('# Example\n');
 		const symbols = await readJson(
-			join(registry, 'families/fontsource/symbols/metadata.json'),
+			join(registry, 'families/fontsource/symbols/family.json'),
 		);
 		expect(symbols).toMatchObject({ languages: [], primaryScript: 'Latn' });
 		expect(symbols).not.toHaveProperty('primaryLanguage');
@@ -636,7 +629,7 @@ describe('registry ingestion', () => {
 		await addPackagePolicy(freshRegistry);
 		expect(await treeHashes(registry)).toEqual(await treeHashes(freshRegistry));
 		expect(
-			await readJson(join(registry, 'families/google/abel/metadata.json')),
+			await readJson(join(registry, 'families/google/abel/family.json')),
 		).toMatchObject({
 			classifications: ['sans-serif'],
 			tags: ['expressive/business'],
@@ -648,7 +641,6 @@ describe('registry ingestion', () => {
 				tester: 'All people are born free and equal',
 			},
 			provenance: { revision: google.revision },
-			replacedBy: 'recursive-sans',
 			status: 'deprecated',
 		});
 		expect(await readJson(join(registry, 'languages.json'))).toMatchObject({
@@ -668,7 +660,7 @@ describe('registry ingestion', () => {
 		});
 		expect(
 			await readJson(
-				join(registry, 'families/google/recursive-sans/metadata.json'),
+				join(registry, 'families/google/recursive-sans/family.json'),
 			),
 		).toMatchObject({
 			classifications: ['display', 'sans-serif'],
@@ -681,15 +673,17 @@ describe('registry ingestion', () => {
 			await readJson(join(registry, 'families/google/abel/policy.json')),
 		).toEqual(ABEL_POLICY);
 		expect(
-			await readJson(
-				join(registry, 'families/fontsource/example/metadata.json'),
-			),
-		).toMatchObject({ provider: 'fontsource', status: 'active' });
-		const index = registryIndexSchema.parse(
-			await readJson(join(registry, 'index.json')),
-		);
+			await readJson(join(registry, 'families/fontsource/example/family.json')),
+		).toMatchObject({ status: 'active' });
 		expect(
-			index.families.filter((family) => family.startsWith('google-icons/')),
+			upstreamsSchema.parse(await readJson(join(registry, 'upstreams.json'))),
+		).toMatchObject({
+			googleFonts: { revision: unrelatedRevision },
+			fontFiles: { revision: fontFiles.revision },
+		});
+		const familyKeys = await listFamilyKeys(registry);
+		expect(
+			familyKeys.filter((family) => family.startsWith('google-icons/')),
 		).toEqual([
 			'google-icons/material-icons',
 			'google-icons/material-icons-outlined',
@@ -702,15 +696,14 @@ describe('registry ingestion', () => {
 		]);
 		expect(
 			await readJson(
-				join(registry, 'families/google-icons/material-icons/metadata.json'),
+				join(registry, 'families/google-icons/material-icons/family.json'),
 			),
 		).toMatchObject({
-			provider: 'google-icons',
 			classifications: ['symbols'],
 			tags: ['special-use/icons'],
 			languages: [],
 			license: { id: 'Apache-2.0' },
-			sourceFiles: [
+			sources: [
 				{
 					path: 'font/MaterialIcons-Regular.ttf',
 					variant: { weight: 400, style: 'normal' },
@@ -727,7 +720,6 @@ describe('registry ingestion', () => {
 				{ name: 'flourescent', codepoint: 66 },
 			],
 			source: {
-				repository: 'google/material-design-icons',
 				path: 'font/MaterialIcons-Regular.codepoints',
 			},
 		});
@@ -735,16 +727,18 @@ describe('registry ingestion', () => {
 			await readJson(
 				join(
 					registry,
-					'families/google-icons/material-symbols-outlined/inspection.json',
+					'families/google-icons/material-symbols-outlined/family.json',
 				),
 			),
 		).toMatchObject({
-			files: [
+			sources: [
 				{
 					path: 'variablefont/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf',
-					axes: expect.arrayContaining([
-						expect.objectContaining({ tag: 'wght' }),
-					]),
+					inspection: {
+						axes: expect.arrayContaining([
+							expect.objectContaining({ tag: 'wght' }),
+						]),
+					},
 				},
 			],
 		});
@@ -785,24 +779,21 @@ describe('registry ingestion', () => {
 			registry,
 		);
 		const metadata = await readJson(
-			join(registry, 'families/google/abel/metadata.json'),
+			join(registry, 'families/google/abel/family.json'),
 		);
 		expect(metadata).toMatchObject({
 			status: 'deprecated',
-			replacedBy: 'recursive-sans',
 			provenance: { revision: google.revision },
 		});
 		expect(
-			await readJson(
-				join(registry, 'families/fontsource/symbols/metadata.json'),
-			),
+			await readJson(join(registry, 'families/fontsource/symbols/family.json')),
 		).toMatchObject({
 			status: 'deprecated',
 			provenance: { revision: fontFiles.revision },
 		});
 		expect(
 			await readJson(
-				join(registry, 'families/google-icons/material-icons/metadata.json'),
+				join(registry, 'families/google-icons/material-icons/family.json'),
 			),
 		).toMatchObject({
 			status: 'deprecated',
@@ -811,14 +802,12 @@ describe('registry ingestion', () => {
 
 		const replacementPath = join(
 			registry,
-			'families/google/recursive-sans/metadata.json',
+			'families/google/recursive-sans/family.json',
 		);
-		const replacement = familyMetadataSchema.parse(
-			await readJson(replacementPath),
-		);
+		const replacement = familySchema.parse(await readJson(replacementPath));
 		await writeFixture(
 			registry,
-			'families/google/recursive-sans/metadata.json',
+			'families/google/recursive-sans/family.json',
 			canonicalJson({
 				...replacement,
 				status: 'deprecated',

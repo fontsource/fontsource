@@ -6,12 +6,12 @@ import { generateGoogle } from './google.ts';
 import { generateGoogleIcons } from './google-icons.ts';
 import { generateNam } from './nam.ts';
 import {
-	familyMetadataSchema,
+	familySchema,
 	languageCatalogSchema,
 	type ReplacementRegistry,
-	registryIndexSchema,
 	replacementRegistrySchema,
 	taxonomySchema,
+	upstreamsSchema,
 } from './schema.ts';
 import {
 	compareStrings,
@@ -19,7 +19,7 @@ import {
 	readJsonIfExists,
 	writeJson,
 } from './shared.ts';
-import { validateRegistry } from './validator.ts';
+import { listFamilyKeys, validateRegistry } from './validator.ts';
 
 const logger = consola.withTag('registry');
 
@@ -29,14 +29,13 @@ export const applyReplacements = async (
 	replacements: ReplacementRegistry,
 ): Promise<void> => {
 	await Promise.all(
-		families.map(async (family) => {
-			const path = join(root, 'families', family, 'metadata.json');
-			const metadata = familyMetadataSchema.parse(await readJson(path));
-			const replacedBy = replacements[metadata.id];
+		families.map(async (familyKey) => {
+			const path = join(root, 'families', familyKey, 'family.json');
+			const family = familySchema.parse(await readJson(path));
+			const id = familyKey.slice(familyKey.indexOf('/') + 1);
 			await writeJson(path, {
-				...metadata,
-				...(replacedBy ? { status: 'deprecated' } : {}),
-				replacedBy,
+				...family,
+				status: replacements[id] ? 'deprecated' : family.status,
 			});
 		}),
 	);
@@ -61,10 +60,7 @@ export const generateRegistry = async (
 	);
 	const nam = openGitSnapshot(namRepository, namRevision);
 	const fontFiles = openGitSnapshot(fontFilesRepository, fontFilesRevision);
-	const previousValue = await readJsonIfExists(join(root, 'index.json'));
-	const previousIndex =
-		previousValue === null ? null : registryIndexSchema.parse(previousValue);
-	const previousFamilies = previousIndex?.families ?? [];
+	const previousFamilies = await listFamilyKeys(root);
 	const replacementsValue = await readJsonIfExists(
 		join(root, 'replacements.json'),
 	);
@@ -126,9 +122,9 @@ export const generateRegistry = async (
 	const subsets = await generateNam(nam, root);
 	logger.success(`Generated ${subsets.length} subsets`);
 
-	await writeJson(join(root, 'index.json'), {
-		schemaVersion: 1,
-		upstreams: {
+	await writeJson(
+		join(root, 'upstreams.json'),
+		upstreamsSchema.parse({
 			googleFonts: {
 				repository: 'google/fonts',
 				revision: google.revision,
@@ -145,10 +141,8 @@ export const generateRegistry = async (
 				repository: 'fontsource/font-files',
 				revision: fontFiles.revision,
 			},
-		},
-		families,
-		subsets,
-	});
+		}),
+	);
 	await writeJson(join(root, 'replacements.json'), replacements);
 	await applyReplacements(root, families, replacements);
 	logger.start('Validating registry');

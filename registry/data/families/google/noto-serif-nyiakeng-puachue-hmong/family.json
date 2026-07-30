@@ -1,0 +1,60 @@
+{
+	"classifications": [
+		"serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Serif Nyiakeng Puachue Hmong",
+	"languages": [
+		"hmn_Hmnp"
+	],
+	"license": {
+		"attribution": "Copyright 2020 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Hmnp",
+	"project": {
+		"repository": "https://github.com/notofonts/nyiakeng-puachue-hmong",
+		"revision": "6f39c5843fe2f459973c3cd57dc82ca09cccbab0"
+	},
+	"provenance": {
+		"directory": "ofl/notoserifnyiakengpuachuehmong",
+		"repository": "google/fonts",
+		"revision": "6dee1a214482dae758425750c1eb513450347545",
+		"type": "github"
+	},
+	"sourceModified": "2026-05-21",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [
+					{
+						"default": 400,
+						"max": 700,
+						"min": 400,
+						"tag": "wght"
+					}
+				],
+				"colorTables": [],
+				"fontVersion": "Version 1.000",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": {
+					"default": 400,
+					"max": 700,
+					"min": 400
+				}
+			},
+			"path": "ofl/notoserifnyiakengpuachuehmong/NotoSerifNyiakengPuachueHmong[wght].ttf",
+			"sha256": "802b838de1cae59401c5140620479ee6dc4eaa28d877d4fcc5b79d92e8b43555",
+			"size": 40980,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": []
+}

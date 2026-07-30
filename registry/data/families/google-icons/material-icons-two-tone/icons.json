@@ -8955,7 +8955,6 @@
 	],
 	"source": {
 		"path": "font/MaterialIconsTwoTone-Regular.codepoints",
-		"repository": "google/material-design-icons",
 		"revision": "f7bd4f25f3764883717c09a1fd867f560c9a9581",
 		"sha256": "94dec6e86fb1263300bd7dbd0af2b55c9cecd1cfdfcf19df0816db8f303ba26e"
 	}

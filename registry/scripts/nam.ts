@@ -79,7 +79,6 @@ export const parseSlices = (source: string): number[][] => {
 
 const buildSubsetDefinition = (
 	snapshot: GitSnapshot,
-	id: string,
 	path: string,
 	contents: Buffer,
 	ranges: Range[],
@@ -87,7 +86,6 @@ const buildSubsetDefinition = (
 ): SubsetDefinition => {
 	const lastChanged = snapshot.lastChanged(path);
 	return subsetDefinitionSchema.parse({
-		id,
 		ranges,
 		...(slices ? { slices } : {}),
 		source: {
@@ -117,7 +115,6 @@ export const generateNam = async (
 			id,
 			buildSubsetDefinition(
 				snapshot,
-				id,
 				path,
 				contents,
 				codepointsToRanges(parseNam(contents.toString('utf8'))),
@@ -138,7 +135,6 @@ export const generateNam = async (
 			id,
 			buildSubsetDefinition(
 				snapshot,
-				id,
 				path,
 				contents,
 				codepointsToRanges(union),

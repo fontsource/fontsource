@@ -1,0 +1,55 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Hanunoo",
+	"languages": [
+		"hnn_Hano"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/hanunoo)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Hano",
+	"project": {
+		"repository": "https://github.com/notofonts/hanunoo",
+		"revision": "5799d6111ecc607bf5fcfdb9ce8b6dcb1712eef5"
+	},
+	"provenance": {
+		"directory": "ofl/notosanshanunoo",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosanshanunoo/NotoSansHanunoo-Regular.ttf",
+			"sha256": "bdf8e293a79d753fcff1c3fdfc5e09fdfd8141cd08dbf2ac1268a24f4549a005",
+			"size": 53184,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

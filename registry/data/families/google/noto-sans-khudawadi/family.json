@@ -1,0 +1,55 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Khudawadi",
+	"languages": [
+		"sd_Sind"
+	],
+	"license": {
+		"attribution": "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khudawadi)",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Sind",
+	"project": {
+		"repository": "https://github.com/notofonts/khudawadi",
+		"revision": "842e04f50a19bc13847da26afbbf3ccac2ccc125"
+	},
+	"provenance": {
+		"directory": "ofl/notosanskhudawadi",
+		"repository": "google/fonts",
+		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"type": "github"
+	},
+	"sourceModified": "2026-03-12",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004; ttfautohint (v1.8.4.7-5d5b)",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "ofl/notosanskhudawadi/NotoSansKhudawadi-Regular.ttf",
+			"sha256": "1650e84136b1e9a4e3b4e8f2e96b3542be7587716c58b4c0da6814ed1d87a721",
+			"size": 68840,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": [
+		"expressive/business",
+		"expressive/calm",
+		"expressive/competent",
+		"expressive/sincere",
+		"sans/humanist"
+	]
+}

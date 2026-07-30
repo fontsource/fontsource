@@ -1,0 +1,183 @@
+{
+	"classifications": [
+		"sans-serif",
+		"symbols"
+	],
+	"designer": "Qrac",
+	"family": "YakuHanJPs",
+	"languages": [],
+	"license": {
+		"attribution": "Qrac and upstream contributors",
+		"id": "OFL-1.1",
+		"url": "https://raw.githubusercontent.com/qrac/yakuhanjp/3c7c89f68f7e604bb161b1c47cb4c403a4e517bc/resource/Noto_Sans_JP/OFL.txt"
+	},
+	"primaryScript": "Jpan",
+	"project": {
+		"repository": "https://github.com/qrac/yakuhanjp",
+		"revision": "3c7c89f68f7e604bb161b1c47cb4c403a4e517bc"
+	},
+	"provenance": {
+		"directory": "sources/yakuhanjps",
+		"repository": "fontsource/font-files",
+		"revision": "f67c93c7336863d2cb6037eb86269cad5d545b7f",
+		"type": "github"
+	},
+	"sourceModified": "2026-07-27",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 900
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-Black.ttf",
+			"sha256": "f026c8481293c8bb9cacf43be1375bb4ee6024f5f39fbeb00cbf8c90e5ae609d",
+			"size": 5972,
+			"variant": {
+				"style": "normal",
+				"weight": 900
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 700
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-Bold.ttf",
+			"sha256": "27bc4179be45d11b17db7bc0d9aa42d12109eb5c44a56a0b11927a1bf4917f24",
+			"size": 5960,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 800
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-ExtraBold.ttf",
+			"sha256": "0cd12c9580fa8bc41eb9c0fe1587acf834ed81120a745c914321a1c5d82b11dc",
+			"size": 6012,
+			"variant": {
+				"style": "normal",
+				"weight": 800
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 250
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-ExtraLight.ttf",
+			"sha256": "728cb49fb11c8b2ba9db0de8f40025e55fc8ef9cf39decfeb1bb18326547d29f",
+			"size": 6020,
+			"variant": {
+				"style": "normal",
+				"weight": 200
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 300
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-Light.ttf",
+			"sha256": "5a2092f105550ab31443b962fbf118dc5f518201dc487c939f0ea2dd2971c1d9",
+			"size": 5968,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 500
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-Medium.ttf",
+			"sha256": "85924949be9be715430e5219cd84d3e10c38b75ce784244872a28367beced86a",
+			"size": 5980,
+			"variant": {
+				"style": "normal",
+				"weight": 500
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-Regular.ttf",
+			"sha256": "d72d6a954a7f944d45345b387dc57be74a15115436152bc376303e622be06cc7",
+			"size": 5988,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 600
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-SemiBold.ttf",
+			"sha256": "f6a08545b4119bcbeddcf9e53addf236cd0d95cc5d3c9749cb44118963c56d0d",
+			"size": 6000,
+			"variant": {
+				"style": "normal",
+				"weight": 600
+			}
+		},
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.004",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 250
+			},
+			"path": "sources/yakuhanjps/files/YakuHanJPs-Thin.ttf",
+			"sha256": "dc674e48cd2d7d4cedf438821a12a18e584c16b1530a192f8da9c87777516bbe",
+			"size": 5960,
+			"variant": {
+				"style": "normal",
+				"weight": 100
+			}
+		}
+	],
+	"status": "active",
+	"tags": []
+}

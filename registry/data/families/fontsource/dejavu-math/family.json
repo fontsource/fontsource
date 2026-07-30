@@ -1,0 +1,47 @@
+{
+	"classifications": [
+		"symbols"
+	],
+	"designer": "DejaVu Fonts team",
+	"displayName": "DejaVu Math TeX Gyre",
+	"family": "DejaVu Math",
+	"languages": [],
+	"license": {
+		"attribution": "Bitstream, Inc., the DejaVu Fonts team, and contributors",
+		"id": "Bitstream-Vera",
+		"url": "https://raw.githubusercontent.com/dejavu-fonts/dejavu-fonts/0eda8a319c08835009849583cd090bb5b141ce25/LICENSE"
+	},
+	"primaryScript": "Zsym",
+	"project": {
+		"repository": "https://github.com/dejavu-fonts/dejavu-fonts",
+		"revision": "0eda8a319c08835009849583cd090bb5b141ce25"
+	},
+	"provenance": {
+		"directory": "sources/dejavu-math",
+		"repository": "fontsource/font-files",
+		"revision": "9801131c1e5e185ad290bc571cf9a33b6047a5ed",
+		"type": "github"
+	},
+	"sourceModified": "2026-07-27",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [],
+				"colorTables": [],
+				"fontVersion": "Version 2.37",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": 400
+			},
+			"path": "sources/dejavu-math/files/DejaVuMathTeXGyre.ttf",
+			"sha256": "40da67c0b6b03076504fbda4bf3e7b4f20b35999c98063019a3392fe9b1294fe",
+			"size": 577708,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": []
+}

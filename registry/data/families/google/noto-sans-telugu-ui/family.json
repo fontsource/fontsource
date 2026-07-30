@@ -1,0 +1,69 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Telugu UI",
+	"languages": [
+		"gon_Telu",
+		"lmn_Telu",
+		"te_Telu",
+		"wbq_Telu"
+	],
+	"license": {
+		"attribution": "Copyright 2019 Google LLC. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"primaryScript": "Telu",
+	"project": {
+		"repository": "https://github.com/notofonts/telugu",
+		"revision": "0d8cb2a9550d76f4349915664f1115ea4c42f4ed"
+	},
+	"provenance": {
+		"directory": "ofl/notosansteluguui",
+		"repository": "google/fonts",
+		"revision": "d9da016620e0734d9c8ccf4e58537b3fe540eb24",
+		"type": "github"
+	},
+	"sourceModified": "2026-06-02",
+	"sources": [
+		{
+			"inspection": {
+				"axes": [
+					{
+						"default": 100,
+						"max": 100,
+						"min": 62.5,
+						"tag": "wdth"
+					},
+					{
+						"default": 400,
+						"max": 900,
+						"min": 100,
+						"tag": "wght"
+					}
+				],
+				"colorTables": [],
+				"fontVersion": "Version 2.001",
+				"outline": "glyf",
+				"style": "normal",
+				"weight": {
+					"default": 400,
+					"max": 900,
+					"min": 100
+				}
+			},
+			"path": "ofl/notosansteluguui/NotoSansTeluguUI[wdth,wght].ttf",
+			"sha256": "9464e0ca55c7310fbc9299f9afaeb3720efee9b3d91813999af7dae276cc1fc0",
+			"size": 777164,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"status": "active",
+	"tags": []
+}
