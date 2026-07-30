@@ -23,10 +23,8 @@ import {
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
 import { listFamilyKeys, validateRegistry } from './validator.ts';
 
-const ABEL_POLICY = {
-	packages: {
-		static: { variants: [{ weight: 400, style: 'normal' }] },
-	},
+const ABEL_DISTRIBUTION = {
+	static: [{ weight: 400, style: 'normal' }],
 	defaultSubset: 'latin',
 	subsets: [{ id: 'latin', definition: 'latin' }],
 } as const;
@@ -431,11 +429,11 @@ const createFontFilesRepository = async (): Promise<{
 	};
 };
 
-const addPackagePolicy = async (root: string): Promise<void> => {
+const addDistribution = async (root: string): Promise<void> => {
 	await writeFixture(
 		root,
-		'families/google/abel/policy.json',
-		canonicalJson(ABEL_POLICY),
+		'families/google/abel/distribution.json',
+		canonicalJson(ABEL_DISTRIBUTION),
 	);
 };
 
@@ -582,7 +580,7 @@ describe('registry ingestion', () => {
 			fontFiles.revision,
 			registry,
 		);
-		await addPackagePolicy(registry);
+		await addDistribution(registry);
 		await writeFixture(
 			registry,
 			'replacements.json',
@@ -626,7 +624,7 @@ describe('registry ingestion', () => {
 			fontFiles.revision,
 			freshRegistry,
 		);
-		await addPackagePolicy(freshRegistry);
+		await addDistribution(freshRegistry);
 		expect(await treeHashes(registry)).toEqual(await treeHashes(freshRegistry));
 		expect(
 			await readJson(join(registry, 'families/google/abel/family.json')),
@@ -670,8 +668,8 @@ describe('registry ingestion', () => {
 			source: { revision: nam.revision },
 		});
 		expect(
-			await readJson(join(registry, 'families/google/abel/policy.json')),
-		).toEqual(ABEL_POLICY);
+			await readJson(join(registry, 'families/google/abel/distribution.json')),
+		).toEqual(ABEL_DISTRIBUTION);
 		expect(
 			await readJson(join(registry, 'families/fontsource/example/family.json')),
 		).toMatchObject({ status: 'active' });

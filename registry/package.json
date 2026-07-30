@@ -3,11 +3,11 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"archive": "node scripts/archive.ts",
+		"archive": "pnpm --filter '@fontsource-utils/core' build && node scripts/archive.ts",
 		"generate": "pnpm --filter '@fontsource-utils/core' build && node scripts/generate.ts",
 		"test": "pnpm --filter '@fontsource-utils/core' build && vitest run",
 		"typecheck": "pnpm --filter '@fontsource-utils/core' build && tsc --noEmit",
-		"validate": "node scripts/validator.ts",
+		"validate": "pnpm --filter '@fontsource-utils/core' build && node scripts/validator.ts",
 		"check:font-files": "pnpm --filter '@fontsource-utils/core' build && node scripts/check-font-files.ts"
 	},
 	"dependencies": {

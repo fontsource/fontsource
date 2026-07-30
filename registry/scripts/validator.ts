@@ -1,16 +1,20 @@
 import { ok as assert, deepStrictEqual, strictEqual } from 'node:assert/strict';
 import { readdir, readFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
+import {
+	getVariableAxisKeys,
+	type VariableAxisConfig,
+} from '@fontsource-utils/core';
 import { consola } from 'consola';
 import type { z } from 'zod';
 import {
 	axisRegistrySchema,
 	type Family,
-	type FamilyPolicy,
+	type FamilyDistribution,
 	type FamilyProvider,
 	type FamilySource,
+	familyDistributionSchema,
 	familyIconsSchema,
-	familyPolicySchema,
 	familyProviderSchema,
 	familySchema,
 	type LanguageCatalog,
@@ -129,18 +133,34 @@ const fontSupportsWeight = (
 		? font.weight === weight
 		: font.weight.min <= weight && font.weight.max >= weight;
 
-export const validatePolicyResolution = (
-	policy: FamilyPolicy,
+const publishedAxisKeys = (
+	font: FamilySource['inspection'],
+): ReadonlySet<string> => {
+	const axes: VariableAxisConfig = Object.fromEntries(
+		font.axes.map((axis) => [
+			axis.tag,
+			{
+				min: axis.min,
+				max: axis.max,
+				default: axis.default,
+			},
+		]),
+	);
+	return new Set(getVariableAxisKeys(axes));
+};
+
+export const validateDistributionResolution = (
+	distribution: FamilyDistribution,
 	family: Family,
 	context: string,
 ): void => {
-	// Every explicit policy entry must select one source without inventing a
+	// Every published entry must select one source without inventing a
 	// weight/style cross-product or relying on source ordering.
 	const fonts = family.sources.map((source) => ({
 		font: source.inspection,
 		source,
 	}));
-	for (const variant of policy.packages.static?.variants ?? []) {
+	for (const variant of distribution.static ?? []) {
 		const staticMatches = fonts.filter(
 			({ font, source }) =>
 				font.axes.length === 0 &&
@@ -168,7 +188,7 @@ export const validatePolicyResolution = (
 		);
 	}
 
-	for (const variant of policy.packages.variable?.variants ?? []) {
+	for (const variant of distribution.variable ?? []) {
 		const matches = fonts.filter(({ font, source }) => {
 			if (
 				font.axes.length === 0 ||
@@ -177,11 +197,7 @@ export const validatePolicyResolution = (
 					source.variant.style !== variant.style)
 			)
 				return false;
-			if (variant.axisKey === 'standard' || variant.axisKey === 'full')
-				return true;
-			return font.axes.some(
-				(axis) => axis.tag.toLowerCase() === variant.axisKey.toLowerCase(),
-			);
+			return publishedAxisKeys(font).has(variant.axisKey);
 		});
 		assert(
 			matches.length === 1,
@@ -272,39 +288,39 @@ const validateFamily = async (
 		);
 	}
 
-	const policyPath = join(directory, 'policy.json');
-	if (!(await pathExists(policyPath))) return { id, family };
-	const policy = await validateCanonicalJson(policyPath, familyPolicySchema);
-	assert(
-		Boolean(policy.packages.static || policy.packages.variable),
-		`${id} policy has no package profile`,
+	const distributionPath = join(directory, 'distribution.json');
+	if (!(await pathExists(distributionPath))) return { id, family };
+	const distribution = await validateCanonicalJson(
+		distributionPath,
+		familyDistributionSchema,
 	);
 	assertSortedUnique(
-		policy.packages.static?.variants ?? [],
+		distribution.static ?? [],
 		(variant) => `${String(variant.weight).padStart(4, '0')}:${variant.style}`,
 		`${id} static variants`,
 	);
 	assertSortedUnique(
-		policy.packages.variable?.variants ?? [],
-		(variant) => `${variant.axisKey}:${variant.style}`,
+		distribution.variable ?? [],
+		(variant) => `${variant.axisKey.toLowerCase()}:${variant.style}`,
 		`${id} variable variants`,
 	);
-	const subsetIds = new Set(policy.subsets.map((subset) => subset.id));
+	assertSortedUnique(
+		distribution.subsets,
+		(subset) => subset.id,
+		`${id} public subsets`,
+	);
+	const subsetIds = new Set(distribution.subsets.map((subset) => subset.id));
 	assert(
-		subsetIds.has(policy.defaultSubset),
+		subsetIds.has(distribution.defaultSubset),
 		`${id} default subset is not mapped`,
 	);
-	assert(
-		subsetIds.size === policy.subsets.length,
-		`${id} has duplicate public subsets`,
-	);
-	for (const subset of policy.subsets) {
+	for (const subset of distribution.subsets) {
 		assert(
 			subsets.has(subset.definition),
 			`${id} references missing subset ${subset.definition}`,
 		);
 	}
-	validatePolicyResolution(policy, family, id);
+	validateDistributionResolution(distribution, family, id);
 	return { id, family };
 };
 
@@ -459,7 +475,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 			'family.json',
 			'icons.json',
 			'license.txt',
-			'policy.json',
+			'distribution.json',
 			'description.en-US.md',
 			'article.en-US.md',
 		]) {

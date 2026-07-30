@@ -237,25 +237,27 @@ export const sourceFamilySchema = familySchema
 			.min(1),
 	});
 
-const variableVariantSchema = z.strictObject({
-	axisKey: z.string().min(1),
+const variableDistributionSchema = z.strictObject({
+	axisKey: z.union([
+		z.literal('standard'),
+		z.literal('full'),
+		z.string().length(4),
+	]),
 	style: fontStyleSchema,
 });
 
-export const familyPolicySchema = z.strictObject({
-	packages: z.strictObject({
-		static: z
-			.strictObject({ variants: z.array(staticVariantSchema).min(1) })
-			.optional(),
-		variable: z
-			.strictObject({ variants: z.array(variableVariantSchema).min(1) })
-			.optional(),
-	}),
-	defaultSubset: idSchema,
-	subsets: z
-		.array(z.strictObject({ id: idSchema, definition: idSchema }))
-		.min(1),
-});
+export const familyDistributionSchema = z
+	.strictObject({
+		static: z.array(staticVariantSchema).min(1).optional(),
+		variable: z.array(variableDistributionSchema).min(1).optional(),
+		defaultSubset: idSchema,
+		subsets: z
+			.array(z.strictObject({ id: idSchema, definition: idSchema }))
+			.min(1),
+	})
+	.refine((value) => value.static || value.variable, {
+		message: 'must declare static or variable packages',
+	});
 
 const rangeSchema = z.tuple([
 	z.string().regex(/^[0-9A-F]+$/),
@@ -304,7 +306,7 @@ export type Family = z.infer<typeof familySchema>;
 export type FamilyProvider = z.infer<typeof familyProviderSchema>;
 export type FamilySource = Family['sources'][number];
 export type FamilyIcons = z.infer<typeof familyIconsSchema>;
-export type FamilyPolicy = z.infer<typeof familyPolicySchema>;
+export type FamilyDistribution = z.infer<typeof familyDistributionSchema>;
 export type LanguageCatalog = z.infer<typeof languageCatalogSchema>;
 export type ReplacementRegistry = z.infer<typeof replacementRegistrySchema>;
 export type SourceFamily = z.infer<typeof sourceFamilySchema>;
