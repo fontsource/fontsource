@@ -1,0 +1,56 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 729,
+				"sha256": "57b47474ee85b42ed3dd69dac9866e7fda19dfa6bcb469c466155809c83f6855"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.000",
+			"outline": "glyf",
+			"path": "ofl/bjcree/BJCree-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 729,
+				"sha256": "57b47474ee85b42ed3dd69dac9866e7fda19dfa6bcb469c466155809c83f6855"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.000",
+			"outline": "glyf",
+			"path": "ofl/bjcree/BJCree-Medium.ttf",
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 729,
+				"sha256": "57b47474ee85b42ed3dd69dac9866e7fda19dfa6bcb469c466155809c83f6855"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.000",
+			"outline": "glyf",
+			"path": "ofl/bjcree/BJCree-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 729,
+				"sha256": "57b47474ee85b42ed3dd69dac9866e7fda19dfa6bcb469c466155809c83f6855"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 7.000",
+			"outline": "glyf",
+			"path": "ofl/bjcree/BJCree-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		}
+	]
+}

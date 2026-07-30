@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 383,
+				"sha256": "eb8382adfd9cb646de7d0e12c9eb0238a2e915c5d3cd9b9536a7614e3ee9f2dc"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/edusahand/EduSAHand[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

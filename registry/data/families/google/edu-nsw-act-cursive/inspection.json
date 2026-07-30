@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 393,
+				"sha256": "1275844a9062e2daa6083cc689978971120d14db20e0ebe62e6f46927e2f2387"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.000",
+			"outline": "glyf",
+			"path": "ofl/edunswactcursive/EduNSWACTCursive[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

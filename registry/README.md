@@ -21,6 +21,11 @@ Generation validates existing `policy.json` files but never creates or changes
 package policy. Registry data is written to `data/` and refreshed weekly or on
 demand by the [registry sync workflow](../.github/workflows/registry-sync.yml),
 which validates changes before committing them to `main`.
+Families present in the previous registry but absent from their provider are
+retained with their original sources and marked `deprecated`. A reappearing
+family is generated as active again unless it has a reviewed replacement.
+Successors are never guessed: `data/replacements.json` contains only reviewed
+mappings.
 Google’s explicit language lists override cmap detection. References without a
 language record are logged and omitted; other families are matched against the
 registry language requirements using the cmap shared by every source face.
@@ -84,7 +89,7 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - Provenance comes from Git history, not prior generated metadata.
 - Each provider owns its directory; one adapter never changes another
   provider's records.
-- Removed Google families remain buildable but are marked `deprecated`.
+- Removed provider families remain buildable but are marked `deprecated`.
 - Replaced families retain their own sources; `replacedBy` recommends an active
   successor and never aliases its binaries.
 - `github` provenance can recover a missing source from an exact commit;

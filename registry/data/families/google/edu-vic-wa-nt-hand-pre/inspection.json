@@ -1,0 +1,28 @@
+{
+	"files": [
+		{
+			"axes": [
+				{
+					"default": 400,
+					"max": 700,
+					"min": 400,
+					"tag": "wght"
+				}
+			],
+			"cmap": {
+				"codepointCount": 400,
+				"sha256": "06f6614e2e258d8fa79f9770df207eba1a5d498328c4d9de1499d62fb7662d46"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.000",
+			"outline": "glyf",
+			"path": "ofl/eduvicwanthandpre/EduVICWANTHandPre[wght].ttf",
+			"style": "normal",
+			"weight": {
+				"default": 400,
+				"max": 700,
+				"min": 400
+			}
+		}
+	]
+}

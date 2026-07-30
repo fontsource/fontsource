@@ -1,0 +1,160 @@
+{
+	"files": [
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1336,
+				"sha256": "9262e8e0fe0e0eb5cd9f2d4e424828e111b7069604e00344e8d34172ce804390"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.045;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-Black.ttf",
+			"style": "normal",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 872,
+				"sha256": "df15b11b5a15fa5e540d695cd959cf87d73c02216f0005faa2acc80ffa6569b0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.095;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-BlackItalic.ttf",
+			"style": "italic",
+			"weight": 900
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1336,
+				"sha256": "9262e8e0fe0e0eb5cd9f2d4e424828e111b7069604e00344e8d34172ce804390"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.045;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-Bold.ttf",
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 872,
+				"sha256": "df15b11b5a15fa5e540d695cd959cf87d73c02216f0005faa2acc80ffa6569b0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.095;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-BoldItalic.ttf",
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1336,
+				"sha256": "9262e8e0fe0e0eb5cd9f2d4e424828e111b7069604e00344e8d34172ce804390"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.045;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-ExtraLight.ttf",
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 872,
+				"sha256": "df15b11b5a15fa5e540d695cd959cf87d73c02216f0005faa2acc80ffa6569b0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.095;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-ExtraLightItalic.ttf",
+			"style": "italic",
+			"weight": 200
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 872,
+				"sha256": "df15b11b5a15fa5e540d695cd959cf87d73c02216f0005faa2acc80ffa6569b0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.095;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-Italic.ttf",
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1336,
+				"sha256": "9262e8e0fe0e0eb5cd9f2d4e424828e111b7069604e00344e8d34172ce804390"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.045;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-Light.ttf",
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 872,
+				"sha256": "df15b11b5a15fa5e540d695cd959cf87d73c02216f0005faa2acc80ffa6569b0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.095;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-LightItalic.ttf",
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1336,
+				"sha256": "9262e8e0fe0e0eb5cd9f2d4e424828e111b7069604e00344e8d34172ce804390"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.045;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-Regular.ttf",
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 1336,
+				"sha256": "9262e8e0fe0e0eb5cd9f2d4e424828e111b7069604e00344e8d34172ce804390"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 2.045;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-SemiBold.ttf",
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"axes": [],
+			"cmap": {
+				"codepointCount": 872,
+				"sha256": "df15b11b5a15fa5e540d695cd959cf87d73c02216f0005faa2acc80ffa6569b0"
+			},
+			"colorTables": [],
+			"fontVersion": "Version 1.095;hotconv 1.0.109;makeotfexe 2.5.65596",
+			"outline": "glyf",
+			"path": "ofl/sourcesanspro/SourceSansPro-SemiBoldItalic.ttf",
+			"style": "italic",
+			"weight": 600
+		}
+	]
+}

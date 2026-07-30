@@ -1,0 +1,42 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2020-11-19",
+	"designer": "Google",
+	"family": "Noto Sans Phags Pa",
+	"id": "noto-sans-phags-pa",
+	"languages": [
+		"lzh_Phag",
+		"mn_Phag",
+		"sa_Phag",
+		"zh_Phag"
+	],
+	"license": {
+		"attribution": "Copyright 2017 Google Inc. All Rights Reserved.",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"provenance": {
+		"directory": "ofl/notosansphagspa",
+		"repository": "google/fonts",
+		"revision": "2ad41cdc116dc19982d5af55d0407018679f5d75",
+		"type": "github"
+	},
+	"provider": "google",
+	"replacedBy": "noto-sans-phagspa",
+	"sourceFiles": [
+		{
+			"path": "ofl/notosansphagspa/NotoSansPhagsPa-Regular.ttf",
+			"sha256": "26e1100003585ae36f3e88569626e4e0d99af3f835cb118fe27919d76351047b",
+			"size": 39292,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2022-05-24",
+	"status": "deprecated",
+	"tags": []
+}

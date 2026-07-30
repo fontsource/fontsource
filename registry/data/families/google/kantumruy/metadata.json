@@ -1,0 +1,56 @@
+{
+	"classifications": [
+		"sans-serif"
+	],
+	"dateAdded": "2013-06-24",
+	"designer": "Tep Sovichet",
+	"family": "Kantumruy",
+	"id": "kantumruy",
+	"languages": [
+		"km_Khmr"
+	],
+	"license": {
+		"attribution": "Copyright (c) 2013, Tep Sovichet (it4ug.net sovichet.tep@gmail.com), with Reserved Font Name 'Kantumruy'",
+		"id": "OFL-1.1",
+		"url": "https://openfontlicense.org/open-font-license-official-text/"
+	},
+	"provenance": {
+		"directory": "ofl/kantumruy",
+		"repository": "google/fonts",
+		"revision": "701bd391b1a4b3238de193a8523009ecef1be42c",
+		"type": "github"
+	},
+	"provider": "google",
+	"sourceFiles": [
+		{
+			"path": "ofl/kantumruy/Kantumruy-Bold.ttf",
+			"sha256": "0b20134d3ae5afabefdc2676cc9b157a768894002fbd910623547c2e45de3ec5",
+			"size": 34604,
+			"variant": {
+				"style": "normal",
+				"weight": 700
+			}
+		},
+		{
+			"path": "ofl/kantumruy/Kantumruy-Light.ttf",
+			"sha256": "21124042f062c601a2b35c688aa9a7ceca489640b9459c50a3bf249baa506172",
+			"size": 36112,
+			"variant": {
+				"style": "normal",
+				"weight": 300
+			}
+		},
+		{
+			"path": "ofl/kantumruy/Kantumruy-Regular.ttf",
+			"sha256": "c77d11f22eb9223f98b8c59a2f325c06defab3546584c6695f9d18c87dc4922a",
+			"size": 35136,
+			"variant": {
+				"style": "normal",
+				"weight": 400
+			}
+		}
+	],
+	"sourceModified": "2022-05-23",
+	"status": "deprecated",
+	"tags": []
+}
