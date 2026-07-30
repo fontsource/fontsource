@@ -39,7 +39,11 @@ const AxisSchema = z.strictObject({
 	...RangeShape,
 });
 
-const WeightSchema = z.union([z.number(), z.strictObject(RangeShape)]);
+const WeightSchema = z.union([z.number().finite(), z.strictObject(RangeShape)]);
+const DeclaredVariantSchema = z.strictObject({
+	weight: z.number().int().min(1).max(1000),
+	style: z.enum(['normal', 'italic']),
+});
 
 const FamilySummarySchema = z.strictObject({
 	id: IdSchema,
@@ -50,46 +54,50 @@ const FamilySummarySchema = z.strictObject({
 	replacedBy: IdSchema.optional(),
 	classifications: z.array(ClassificationSchema).min(1),
 	tags: z.array(TagIdSchema),
-	languages: z
-		.array(LanguageIdSchema)
-		.describe('Semantic language IDs, distinct from package subsets'),
 	sourceModified: z.iso.date(),
-	variable: z.boolean(),
 	axes: z.array(z.string().length(4)),
 });
 
-const RegistrySourceSchema = z.strictObject({
+const SourceCommonShape = {
 	sha256: Sha256Schema,
 	filename: z.string().min(1),
 	format: z.enum(['ttf', 'otf']),
 	size: z.number().int().nonnegative(),
 	downloadUrl: z.string().min(1).describe('Relative source download URL'),
-	type: z.enum(['static', 'variable']),
 	fontVersion: z.string().nullable(),
-	weight: WeightSchema,
-	style: z.enum(['normal', 'italic', 'oblique']),
-	axes: z.array(AxisSchema),
-});
+	style: z
+		.enum(['normal', 'italic', 'oblique'])
+		.describe('Inspected font style'),
+	declaredVariant: DeclaredVariantSchema.optional().describe(
+		'Provider-declared weight and style',
+	),
+};
+
+const RegistrySourceSchema = z.discriminatedUnion('type', [
+	z.strictObject({
+		...SourceCommonShape,
+		type: z.literal('static'),
+		weight: z.number().finite().describe('Inspected font weight'),
+	}),
+	z.strictObject({
+		...SourceCommonShape,
+		type: z.literal('variable'),
+		weight: WeightSchema.describe('Inspected font weight or range'),
+		axes: z.array(AxisSchema).min(1),
+	}),
+]);
 
 const LocalizedContentSchema = z.strictObject({
 	description: z.string().describe('Markdown family description').optional(),
 	article: z.string().describe('Markdown family article').optional(),
 });
 
-export const RegistryInfoSchema = z.strictObject({
-	familyCount: z.number().int().nonnegative(),
-	languageCount: z.number().int().nonnegative(),
-	subsetCount: z.number().int().nonnegative(),
-});
+export const RegistryFamiliesSchema = z.array(FamilySummarySchema);
 
-export const RegistryFamiliesSchema = z.strictObject({
-	families: z.array(FamilySummarySchema),
-});
-
-export const RegistryFamilyDetailSchema = FamilySummarySchema.omit({
-	variable: true,
-	axes: true,
-}).extend({
+export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
+	languages: z
+		.array(LanguageIdSchema)
+		.describe('Semantic language IDs, distinct from package subsets'),
 	primaryLanguage: LanguageIdSchema.optional(),
 	primaryScript: ScriptSchema.optional(),
 	sampleText: SampleTextSchema.optional(),
@@ -111,26 +119,19 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.omit({
 	sources: z.array(RegistrySourceSchema).min(1),
 });
 
-export const RegistrySubsetsSchema = z.strictObject({
-	subsets: z.array(IdSchema),
-});
+export const RegistrySubsetsSchema = z.array(IdSchema);
 
-const RegistryLanguageSummarySchema = z.strictObject({
+export const RegistryLanguageSchema = z.strictObject({
 	id: LanguageIdSchema,
 	language: z.string().min(1).describe('BCP 47 language subtag'),
 	script: ScriptSchema.describe('ISO 15924 script code'),
 	name: z.string().min(1),
 	preferredName: z.string().min(1).optional(),
 	autonym: z.string().min(1).optional(),
-});
-
-export const RegistryLanguagesSchema = z.strictObject({
-	languages: z.array(RegistryLanguageSummarySchema),
-});
-
-export const RegistryLanguageSchema = RegistryLanguageSummarySchema.extend({
 	sampleText: SampleTextSchema.optional(),
 });
+
+export const RegistryLanguagesSchema = z.array(RegistryLanguageSchema);
 
 export const RegistrySubsetSchema = z.strictObject({
 	id: IdSchema,
@@ -154,9 +155,10 @@ const AxisRegistryEntrySchema = z.strictObject({
 	precision: z.number(),
 });
 
-export const RegistryAxesSchema = z.strictObject({
-	axes: z.record(z.string().length(4), AxisRegistryEntrySchema),
-});
+export const RegistryAxesSchema = z.record(
+	z.string().length(4),
+	AxisRegistryEntrySchema,
+);
 
 const TaxonomyLabelSchema = z.strictObject({ label: z.string().min(1) });
 
@@ -172,8 +174,4 @@ export const RegistrySourceParamSchema = z.object({
 
 export const RegistryIdParamSchema = z.object({
 	id: IdSchema.describe('Registry family or subset identifier'),
-});
-
-export const RegistryLanguageIdParamSchema = z.object({
-	id: LanguageIdSchema.describe('Registry language identifier'),
 });

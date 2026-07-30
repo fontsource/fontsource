@@ -2,7 +2,7 @@
 
 import { buildClientParams, type Client, type ClientMeta, type Options as Options2, type RequestResult, type TDataShape } from './client';
 import { client } from './client.gen';
-import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryErrors, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryLanguageErrors, GetRegistryLanguageResponses, GetRegistryResponses, GetRegistrySourceErrors, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
+import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistrySourceErrors, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -235,15 +235,6 @@ export const getFontOpenGraphImage = <ThrowOnError extends boolean = true>(param
 };
 
 /**
- * Get the current registry snapshot
- */
-export const getRegistry = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<GetRegistryResponses, GetRegistryErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<GetRegistryResponses, GetRegistryErrors, ThrowOnError, 'data'>({
-    responseStyle: 'data',
-    url: '/v1/registry',
-    ...options
-});
-
-/**
  * Get registry classifications and tags
  */
 export const getRegistryTaxonomy = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<GetRegistryTaxonomyResponses, GetRegistryTaxonomyErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<GetRegistryTaxonomyResponses, GetRegistryTaxonomyErrors, ThrowOnError, 'data'>({
@@ -284,21 +275,6 @@ export const listRegistryLanguages = <ThrowOnError extends boolean = true>(optio
     url: '/v1/registry/languages',
     ...options
 });
-
-/**
- * Get a registry language
- */
-export const getRegistryLanguage = <ThrowOnError extends boolean = true>(parameters: {
-    id: string;
-}, options?: Options<never, ThrowOnError>): RequestResult<GetRegistryLanguageResponses, GetRegistryLanguageErrors, ThrowOnError, 'data'> => {
-    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }] }]);
-    return (options?.client ?? client).get<GetRegistryLanguageResponses, GetRegistryLanguageErrors, ThrowOnError, 'data'>({
-        responseStyle: 'data',
-        url: '/v1/registry/languages/{id}',
-        ...options,
-        ...params
-    });
-};
 
 /**
  * List registry Unicode subsets

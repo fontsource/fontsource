@@ -34,9 +34,11 @@ describe('registry source archive', () => {
 		let current: unknown;
 		let family: unknown;
 		let familyWithVariantOverride: unknown;
+		let obliqueFamily: unknown;
 		let iconFamily: unknown;
 		let replacement: unknown;
-		let language: unknown;
+		let familyCatalog: Array<Record<string, unknown>> | undefined;
+		let languageCatalog: unknown;
 		let sourceContentType: string | undefined;
 		r2.putObject.mockImplementation(
 			async (object: {
@@ -63,6 +65,11 @@ describe('registry source archive', () => {
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
+				if (object.key.endsWith('/api/families/nebula-sans.json')) {
+					obliqueFamily = JSON.parse(
+						Buffer.from(await object.read()).toString('utf8'),
+					);
+				}
 				if (object.key.endsWith('/api/families/material-icons.json')) {
 					iconFamily = JSON.parse(
 						Buffer.from(await object.read()).toString('utf8'),
@@ -73,8 +80,13 @@ describe('registry source archive', () => {
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
-				if (object.key.endsWith('/api/languages/fa_Arab.json')) {
-					language = JSON.parse(
+				if (object.key.endsWith('/api/families.json')) {
+					familyCatalog = JSON.parse(
+						Buffer.from(await object.read()).toString('utf8'),
+					);
+				}
+				if (object.key.endsWith('/api/languages.json')) {
+					languageCatalog = JSON.parse(
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 				}
@@ -114,7 +126,6 @@ describe('registry source archive', () => {
 			views: expect.arrayContaining([
 				expect.objectContaining({ path: 'families/abel.json' }),
 				expect.objectContaining({ path: 'languages.json' }),
-				expect.objectContaining({ path: 'languages/fa_Arab.json' }),
 				expect.objectContaining({ path: 'taxonomy.json' }),
 			]),
 		});
@@ -153,13 +164,25 @@ describe('registry source archive', () => {
 				expect.objectContaining({
 					filename: 'AlegreyaSans-Thin.ttf',
 					type: 'static',
-					weight: 100,
+					weight: 250,
 					style: 'normal',
+					declaredVariant: { weight: 100, style: 'normal' },
 				}),
 			]),
 		});
 		expect(RegistryFamilyDetailSchema.parse(familyWithVariantOverride)).toEqual(
 			familyWithVariantOverride,
+		);
+		expect(obliqueFamily).toMatchObject({
+			sources: expect.arrayContaining([
+				expect.objectContaining({
+					style: 'oblique',
+					declaredVariant: expect.objectContaining({ style: 'italic' }),
+				}),
+			]),
+		});
+		expect(RegistryFamilyDetailSchema.parse(obliqueFamily)).toEqual(
+			obliqueFamily,
 		);
 		expect(iconFamily).toMatchObject({
 			id: 'material-icons',
@@ -175,6 +198,21 @@ describe('registry source archive', () => {
 			replacedBy: 'mukta',
 		});
 		expect(RegistryFamilyDetailSchema.parse(replacement)).toEqual(replacement);
-		expect(language).not.toHaveProperty('requiredCodepoints');
+		const abelSummary = familyCatalog?.find(({ id }) => id === 'abel');
+		expect(abelSummary).toMatchObject({
+			id: 'abel',
+			axes: [],
+		});
+		expect(abelSummary).not.toHaveProperty('languages');
+		expect(abelSummary).not.toHaveProperty('variable');
+		expect(languageCatalog).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({
+					id: 'fa_Arab',
+					sampleText: expect.any(Object),
+				}),
+			]),
+		);
+		expect(JSON.stringify(languageCatalog)).not.toContain('requiredCodepoints');
 	}, 15_000);
 });

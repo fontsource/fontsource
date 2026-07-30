@@ -6,8 +6,6 @@ import {
 	RegistryAxesSchema,
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
-	RegistryInfoSchema,
-	RegistryLanguageSchema,
 	RegistryLanguagesSchema,
 	RegistrySubsetSchema,
 	RegistrySubsetsSchema,
@@ -90,24 +88,9 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			name: language.name,
 			preferredName: language.preferredName,
 			autonym: language.autonym,
+			sampleText: language.sampleText,
 		}))
 		.toSorted((left, right) => compareStrings(left.id, right.id));
-	const languageViews = Object.entries(languages).map(([id, language]) =>
-		createJsonFile(
-			`languages/${id}.json`,
-			RegistryLanguageSchema.parse({
-				id,
-				language: language.language,
-				script: language.script,
-				name: language.name,
-				...(language.preferredName
-					? { preferredName: language.preferredName }
-					: {}),
-				...(language.autonym ? { autonym: language.autonym } : {}),
-				...(language.sampleText ? { sampleText: language.sampleText } : {}),
-			}),
-		),
-	);
 	const sourceMap = new Map<string, SourceFile>();
 	const familySummaries = [];
 	const familyViews: ArchiveFile[] = [];
@@ -127,21 +110,29 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		const sources = family.sources.map((source) => {
 			const variable = source.inspection.axes.length > 0;
 			const format = source.path.toLowerCase().endsWith('.otf') ? 'otf' : 'ttf';
-			return {
+			const common = {
 				sha256: source.sha256,
 				filename: basename(source.path),
 				format,
 				size: source.size,
 				downloadUrl: `/v1/registry/sources/${source.sha256}`,
-				type: variable ? 'variable' : 'static',
 				fontVersion: source.inspection.fontVersion,
-				weight:
-					variable || !source.variant
-						? source.inspection.weight
-						: source.variant.weight,
-				style: source.variant?.style ?? source.inspection.style,
-				axes: source.inspection.axes,
+				style: source.inspection.style,
+				declaredVariant: source.variant,
 			};
+			if (variable) {
+				return {
+					...common,
+					type: 'variable' as const,
+					weight: source.inspection.weight,
+					axes: source.inspection.axes,
+				};
+			}
+			const weight = source.inspection.weight;
+			if (typeof weight !== 'number') {
+				throw new Error(`Static source ${source.path} has a weight range`);
+			}
+			return { ...common, type: 'static' as const, weight };
 		});
 		const [description, article, licenseText] = await Promise.all([
 			readTextIfExists(join(directory, 'description.en-US.md')),
@@ -157,19 +148,16 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			replacedBy: replacements[id],
 			classifications: family.classifications,
 			tags: family.tags,
-			languages: family.languages,
 			sourceModified: family.sourceModified,
-		};
-		familySummaries.push({
-			...publicFamily,
-			variable: axes.length > 0,
 			axes,
-		});
+		};
+		familySummaries.push(publicFamily);
 		familyViews.push(
 			createJsonFile(
 				`families/${id}.json`,
 				RegistryFamilyDetailSchema.parse({
 					...publicFamily,
+					languages: family.languages,
 					primaryLanguage: family.primaryLanguage,
 					primaryScript: family.primaryScript,
 					sampleText: family.sampleText,
@@ -252,29 +240,17 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	);
 	const views = [
 		createJsonFile(
-			'registry.json',
-			RegistryInfoSchema.parse({
-				familyCount: familySummaries.length,
-				languageCount: languageSummaries.length,
-				subsetCount: subsetIds.length,
-			}),
-		),
-		createJsonFile(
 			'families.json',
-			RegistryFamiliesSchema.parse({ families: familySummaries }),
+			RegistryFamiliesSchema.parse(familySummaries),
 		),
-		createJsonFile(
-			'subsets.json',
-			RegistrySubsetsSchema.parse({ subsets: subsetIds }),
-		),
+		createJsonFile('subsets.json', RegistrySubsetsSchema.parse(subsetIds)),
 		createJsonFile(
 			'languages.json',
-			RegistryLanguagesSchema.parse({ languages: languageSummaries }),
+			RegistryLanguagesSchema.parse(languageSummaries),
 		),
-		createJsonFile('axes.json', RegistryAxesSchema.parse({ axes })),
+		createJsonFile('axes.json', RegistryAxesSchema.parse(axes)),
 		createJsonFile('taxonomy.json', RegistryTaxonomySchema.parse(taxonomy)),
 		...familyViews,
-		...languageViews,
 		...subsets,
 	].toSorted((left, right) => compareStrings(left.path, right.path));
 

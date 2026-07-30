@@ -3,8 +3,6 @@ import {
 	RegistryAxesSchema,
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
-	RegistryInfoSchema,
-	RegistryLanguageSchema,
 	RegistryLanguagesSchema,
 	RegistrySubsetSchema,
 	RegistrySubsetsSchema,
@@ -22,25 +20,14 @@ const FAMILY_SUMMARY = {
 	status: 'active',
 	classifications: ['sans-serif'],
 	tags: ['sans/humanist'],
-	languages: ['en_Latn'],
 	sourceModified: '2026-07-15',
-	variable: false,
 	axes: [],
 } as const;
 const VIEWS = [
 	{
-		path: 'registry.json',
-		route: '/v1/registry',
-		body: RegistryInfoSchema.parse({
-			familyCount: 1,
-			languageCount: 1,
-			subsetCount: 1,
-		}),
-	},
-	{
 		path: 'families.json',
 		route: '/v1/registry/families',
-		body: RegistryFamiliesSchema.parse({ families: [FAMILY_SUMMARY] }),
+		body: RegistryFamiliesSchema.parse([FAMILY_SUMMARY]),
 	},
 	{
 		path: 'families/abel.json',
@@ -52,7 +39,8 @@ const VIEWS = [
 			status: FAMILY_SUMMARY.status,
 			classifications: FAMILY_SUMMARY.classifications,
 			tags: FAMILY_SUMMARY.tags,
-			languages: FAMILY_SUMMARY.languages,
+			axes: FAMILY_SUMMARY.axes,
+			languages: ['en_Latn'],
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
 			sampleText: {
@@ -75,7 +63,7 @@ const VIEWS = [
 					fontVersion: 'Version 1.0',
 					weight: 400,
 					style: 'normal',
-					axes: [],
+					declaredVariant: { weight: 400, style: 'normal' },
 				},
 			],
 		}),
@@ -83,32 +71,19 @@ const VIEWS = [
 	{
 		path: 'languages.json',
 		route: '/v1/registry/languages',
-		body: RegistryLanguagesSchema.parse({
-			languages: [
-				{
-					id: 'en_Latn',
-					language: 'en',
-					script: 'Latn',
-					name: 'English',
-					autonym: 'English',
+		body: RegistryLanguagesSchema.parse([
+			{
+				id: 'en_Latn',
+				language: 'en',
+				script: 'Latn',
+				name: 'English',
+				autonym: 'English',
+				sampleText: {
+					styles: 'All people are born free',
+					tester: 'All people are born free and equal',
 				},
-			],
-		}),
-	},
-	{
-		path: 'languages/en_Latn.json',
-		route: '/v1/registry/languages/en_Latn',
-		body: RegistryLanguageSchema.parse({
-			id: 'en_Latn',
-			language: 'en',
-			script: 'Latn',
-			name: 'English',
-			autonym: 'English',
-			sampleText: {
-				styles: 'All people are born free',
-				tester: 'All people are born free and equal',
 			},
-		}),
+		]),
 	},
 	{
 		path: 'taxonomy.json',
@@ -130,7 +105,7 @@ const VIEWS = [
 	{
 		path: 'subsets.json',
 		route: '/v1/registry/subsets',
-		body: RegistrySubsetsSchema.parse({ subsets: ['latin'] }),
+		body: RegistrySubsetsSchema.parse(['latin']),
 	},
 	{
 		path: 'subsets/latin.json',
@@ -144,15 +119,13 @@ const VIEWS = [
 		path: 'axes.json',
 		route: '/v1/registry/axes',
 		body: RegistryAxesSchema.parse({
-			axes: {
-				wght: {
-					name: 'Weight',
-					description: 'Weight axis',
-					min: 1,
-					max: 1000,
-					default: 400,
-					precision: 0,
-				},
+			wght: {
+				name: 'Weight',
+				description: 'Weight axis',
+				min: 1,
+				max: 1000,
+				default: 400,
+				precision: 0,
 			},
 		}),
 	},
@@ -233,7 +206,6 @@ describe('registry routes', () => {
 		const responses = await Promise.all(
 			[
 				'/v1/registry/families/unknown',
-				'/v1/registry/languages/unknown_Latn',
 				`/v1/registry/sources/${'8'.repeat(64)}`,
 			].map((path) => jsonSnapshot(`https://fontsource.test${path}`)),
 		);
