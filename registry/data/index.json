@@ -61,6 +61,7 @@
 		"fontsource/fusion-pixel-8px-proportional-kr",
 		"fontsource/fusion-pixel-8px-proportional-sc",
 		"fontsource/fusion-pixel-8px-proportional-tc",
+		"fontsource/geist-sans",
 		"fontsource/genjyuu-gothic",
 		"fontsource/hauora-sans",
 		"fontsource/ia-writer-duo",
@@ -2363,7 +2364,7 @@
 	"upstreams": {
 		"fontFiles": {
 			"repository": "fontsource/font-files",
-			"revision": "9c76865650f64dd9242db524070753930bc7685c"
+			"revision": "31a5e47789d233c65b9165435864496aeb0f86dd"
 		},
 		"googleFonts": {
 			"repository": "google/fonts",
