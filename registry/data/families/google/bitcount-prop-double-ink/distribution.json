@@ -1,0 +1,107 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"style": "normal",
+			"weight": 900
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "CRSV",
+			"style": "normal"
+		},
+		{
+			"axisKey": "ELSH",
+			"style": "normal"
+		},
+		{
+			"axisKey": "ELXP",
+			"style": "normal"
+		},
+		{
+			"axisKey": "full",
+			"style": "normal"
+		},
+		{
+			"axisKey": "slnt",
+			"style": "normal"
+		},
+		{
+			"axisKey": "standard",
+			"style": "normal"
+		},
+		{
+			"axisKey": "SZP1",
+			"style": "normal"
+		},
+		{
+			"axisKey": "SZP2",
+			"style": "normal"
+		},
+		{
+			"axisKey": "wght",
+			"style": "normal"
+		},
+		{
+			"axisKey": "XPN1",
+			"style": "normal"
+		},
+		{
+			"axisKey": "XPN2",
+			"style": "normal"
+		},
+		{
+			"axisKey": "YPN1",
+			"style": "normal"
+		},
+		{
+			"axisKey": "YPN2",
+			"style": "normal"
+		}
+	]
+}

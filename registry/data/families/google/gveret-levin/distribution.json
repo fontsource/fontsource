@@ -1,0 +1,21 @@
+{
+	"characters": {
+		"defaultSubset": "hebrew",
+		"subsets": [
+			{
+				"definition": "hebrew",
+				"id": "hebrew"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "math",
+				"id": "math"
+			},
+			{
+				"definition": "symbols",
+				"id": "symbols"
+			},
+			{
+				"definition": "vietnamese",
+				"id": "vietnamese"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "full",
+			"style": "normal"
+		},
+		{
+			"axisKey": "MORF",
+			"style": "normal"
+		},
+		{
+			"axisKey": "SHLN",
+			"style": "normal"
+		}
+	]
+}

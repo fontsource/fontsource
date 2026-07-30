@@ -1,0 +1,25 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "takri",
+				"id": "takri"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

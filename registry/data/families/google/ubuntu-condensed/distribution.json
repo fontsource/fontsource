@@ -1,0 +1,37 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "cyrillic",
+				"id": "cyrillic"
+			},
+			{
+				"definition": "cyrillic-ext",
+				"id": "cyrillic-ext"
+			},
+			{
+				"definition": "greek",
+				"id": "greek"
+			},
+			{
+				"definition": "greek-ext",
+				"id": "greek-ext"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

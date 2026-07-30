@@ -1,0 +1,25 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "math",
+				"id": "math"
+			},
+			{
+				"definition": "symbols",
+				"id": "symbols"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "cyrillic",
+				"id": "cyrillic"
+			},
+			{
+				"definition": "greek",
+				"id": "greek"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "vietnamese",
+				"id": "vietnamese"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

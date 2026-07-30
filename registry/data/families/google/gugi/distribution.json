@@ -1,0 +1,22 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"slicing": "korean-web",
+		"subsets": [
+			{
+				"definition": "korean",
+				"id": "korean"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

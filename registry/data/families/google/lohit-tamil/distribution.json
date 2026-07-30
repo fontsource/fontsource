@@ -1,0 +1,17 @@
+{
+	"characters": {
+		"defaultSubset": "tamil",
+		"subsets": [
+			{
+				"definition": "tamil",
+				"id": "tamil"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

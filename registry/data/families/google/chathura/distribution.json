@@ -1,0 +1,37 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "telugu",
+				"id": "telugu"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"style": "normal",
+			"weight": 800
+		}
+	]
+}

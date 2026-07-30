@@ -60,6 +60,56 @@ describe('distribution resolution', () => {
 		).toThrow('neuton static 300 italic must resolve to one source');
 	});
 
+	it('uses a unique variable source when static instances are ambiguous', () => {
+		const inspection = {
+			fontVersion: 'Version 1.0',
+			weight: 400,
+			style: 'normal' as const,
+			axes: [],
+			outline: 'glyf' as const,
+			colorTables: [],
+		};
+		const family = createFamily('Inconsolata', [
+			{
+				path: 'static/Inconsolata-Condensed.ttf',
+				sha256: '0'.repeat(64),
+				size: 1,
+				inspection,
+			},
+			{
+				path: 'static/Inconsolata-Expanded.ttf',
+				sha256: '1'.repeat(64),
+				size: 1,
+				inspection,
+			},
+			{
+				path: 'Inconsolata[wdth,wght].ttf',
+				sha256: '2'.repeat(64),
+				size: 1,
+				variant: { weight: 400, style: 'normal' },
+				inspection: {
+					...inspection,
+					weight: { min: 200, max: 900, default: 400 },
+					axes: [
+						{ tag: 'wdth', min: 50, max: 200, default: 100 },
+						{ tag: 'wght', min: 200, max: 900, default: 400 },
+					],
+				},
+			},
+		]);
+
+		expect(() =>
+			validateDistributionResolution(
+				{
+					static: [{ weight: 400, style: 'normal' }],
+					characters: 'all',
+				},
+				family,
+				'inconsolata',
+			),
+		).not.toThrow();
+	});
+
 	it('accepts only canonical variable axis bundles published by Core', () => {
 		const family = createFamily('Example', [
 			{

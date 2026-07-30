@@ -1,0 +1,21 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "khmer",
+				"id": "khmer"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

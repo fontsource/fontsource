@@ -1,0 +1,17 @@
+{
+	"characters": {
+		"defaultSubset": "bengali",
+		"subsets": [
+			{
+				"definition": "bengali",
+				"id": "bengali"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

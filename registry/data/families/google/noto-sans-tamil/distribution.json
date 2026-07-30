@@ -1,0 +1,71 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "tamil",
+				"id": "tamil"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"style": "normal",
+			"weight": 900
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "standard",
+			"style": "normal"
+		},
+		{
+			"axisKey": "wdth",
+			"style": "normal"
+		},
+		{
+			"axisKey": "wght",
+			"style": "normal"
+		}
+	]
+}

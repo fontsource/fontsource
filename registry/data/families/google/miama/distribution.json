@@ -1,0 +1,29 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "greek",
+				"id": "greek"
+			},
+			{
+				"definition": "greek-ext",
+				"id": "greek-ext"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "italic",
+			"weight": 400
+		}
+	]
+}

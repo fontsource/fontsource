@@ -1,0 +1,33 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "meroitic",
+				"id": "meroitic"
+			},
+			{
+				"definition": "meroitic-cursive",
+				"id": "meroitic-cursive"
+			},
+			{
+				"definition": "meroitic-hieroglyphs",
+				"id": "meroitic-hieroglyphs"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

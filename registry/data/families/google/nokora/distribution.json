@@ -1,0 +1,59 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "khmer",
+				"id": "khmer"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"style": "normal",
+			"weight": 800
+		},
+		{
+			"style": "normal",
+			"weight": 900
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "wght",
+			"style": "normal"
+		}
+	]
+}

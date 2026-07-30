@@ -1,0 +1,46 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"slicing": "traditional-chinese-web",
+		"subsets": [
+			{
+				"definition": "chinese-traditional",
+				"id": "chinese-traditional"
+			},
+			{
+				"definition": "cyrillic",
+				"id": "cyrillic"
+			},
+			{
+				"definition": "cyrillic-ext",
+				"id": "cyrillic-ext"
+			},
+			{
+				"definition": "greek",
+				"id": "greek"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "symbols2",
+				"id": "symbols2"
+			},
+			{
+				"definition": "vietnamese",
+				"id": "vietnamese"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

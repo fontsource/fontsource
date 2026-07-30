@@ -1,0 +1,41 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "devanagari",
+				"id": "devanagari"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"style": "normal",
+			"weight": 800
+		}
+	]
+}

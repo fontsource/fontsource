@@ -1,0 +1,45 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "arabic",
+				"id": "arabic"
+			},
+			{
+				"definition": "cyrillic",
+				"id": "cyrillic"
+			},
+			{
+				"definition": "cyrillic-ext",
+				"id": "cyrillic-ext"
+			},
+			{
+				"definition": "greek",
+				"id": "greek"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "tamil",
+				"id": "tamil"
+			},
+			{
+				"definition": "vietnamese",
+				"id": "vietnamese"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

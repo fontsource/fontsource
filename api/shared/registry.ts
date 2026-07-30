@@ -44,6 +44,30 @@ const DeclaredVariantSchema = z.strictObject({
 	weight: z.number().int().min(1).max(1000),
 	style: z.enum(['normal', 'italic']),
 });
+const VariableDistributionSchema = z.strictObject({
+	axisKey: z.union([z.literal('standard'), z.string().length(4)]),
+	style: z.enum(['normal', 'italic']),
+});
+const CharacterDistributionSchema = z.discriminatedUnion('type', [
+	z.strictObject({ type: z.literal('all') }),
+	z.strictObject({
+		type: z.literal('subsets'),
+		defaultSubset: IdSchema,
+		subsets: z
+			.array(z.strictObject({ id: IdSchema, definition: IdSchema }))
+			.min(1),
+		slicing: IdSchema.optional(),
+	}),
+]);
+const RegistryDistributionSchema = z
+	.strictObject({
+		static: z.array(DeclaredVariantSchema).min(1).optional(),
+		variable: z.array(VariableDistributionSchema).min(1).optional(),
+		characters: CharacterDistributionSchema,
+	})
+	.refine((value) => value.static || value.variable, {
+		message: 'must declare static or variable outputs',
+	});
 
 const FamilySummarySchema = z.strictObject({
 	id: IdSchema,
@@ -117,6 +141,7 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		.optional(),
 	content: z.record(z.string().min(1), LocalizedContentSchema).optional(),
 	sources: z.array(RegistrySourceSchema).min(1),
+	distribution: RegistryDistributionSchema.optional(),
 });
 
 export const RegistrySubsetsSchema = z.array(IdSchema);

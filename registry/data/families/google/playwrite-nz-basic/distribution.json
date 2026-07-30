@@ -1,0 +1,27 @@
+{
+	"characters": "all",
+	"static": [
+		{
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "wght",
+			"style": "normal"
+		}
+	]
+}

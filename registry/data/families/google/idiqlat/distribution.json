@@ -1,0 +1,29 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "syriac",
+				"id": "syriac"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

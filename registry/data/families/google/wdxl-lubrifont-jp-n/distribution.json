@@ -1,0 +1,34 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"slicing": "japanese-web",
+		"subsets": [
+			{
+				"definition": "cyrillic",
+				"id": "cyrillic"
+			},
+			{
+				"definition": "japanese",
+				"id": "japanese"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "symbols2",
+				"id": "symbols2"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

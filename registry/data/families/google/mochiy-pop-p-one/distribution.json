@@ -1,0 +1,22 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"slicing": "japanese-web",
+		"subsets": [
+			{
+				"definition": "japanese",
+				"id": "japanese"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

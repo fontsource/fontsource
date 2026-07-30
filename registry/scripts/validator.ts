@@ -170,11 +170,6 @@ export const validateDistributionResolution = (
 				: fontSupportsWeight(font, variant.weight) &&
 						fontSupportsStyle(font, variant.style);
 		});
-		if (staticMatches.length > 1) {
-			throw new Error(
-				`${context} static ${variant.weight} ${variant.style} is ambiguous`,
-			);
-		}
 		if (staticMatches.length === 1) continue;
 
 		const variableMatches = fonts.filter(({ font, source }) => {
@@ -185,6 +180,12 @@ export const validateDistributionResolution = (
 					source.variant?.style === variant.style)
 			);
 		});
+		if (variableMatches.length === 1) continue;
+		if (staticMatches.length > 1) {
+			throw new Error(
+				`${context} static ${variant.weight} ${variant.style} is ambiguous`,
+			);
+		}
 		assert(
 			variableMatches.length === 1,
 			`${context} static ${variant.weight} ${variant.style} must resolve to one source`,
