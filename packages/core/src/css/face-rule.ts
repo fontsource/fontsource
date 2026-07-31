@@ -24,11 +24,13 @@ const getSourceValue = (
 		? resolver({ face, source })
 		: `./files/${source.filename}`;
 
-	let format = 'woff';
 	if (source.format === 'woff2') {
-		// Special format to make it clear to browsers that this is a variable font.
-		format = face.isVariable ? 'woff2-variations' : 'woff2';
-	} else if (source.format === 'ttf') {
+		const technology = face.isVariable ? ' tech(variations)' : '';
+		return `url(${url}) format(woff2)${technology}`;
+	}
+
+	let format = 'woff';
+	if (source.format === 'ttf') {
 		format = 'truetype';
 	}
 

@@ -129,19 +129,50 @@ describe('buildFont integration with real fixtures', () => {
 		expect(result.faces[0]?.weight).toBe('300 1000');
 	});
 
+	it('publishes standard and full variable bundles for the full repertoire', async () => {
+		const result = await buildWithFixture(loadVariableFontFixture(), {
+			type: 'variable',
+			id: 'recursive',
+			family: 'Recursive',
+			characters: 'all',
+			axisKeys: ['standard', 'full'],
+			formats: ['woff2'],
+		});
+
+		expect(result.fonts.map((font) => font.filename)).toEqual([
+			'files/recursive-full-standard-normal.woff2',
+			'files/recursive-full-full-normal.woff2',
+		]);
+		expect(result.faces.map((face) => face.axisKey)).toEqual([
+			'standard',
+			'full',
+		]);
+
+		const ctx = createFontContext();
+		try {
+			const [standard, full] = await Promise.all(
+				result.fonts.map((font) => inspectFont(ctx, font.content)),
+			);
+			expect(standard?.axes.map((axis) => axis.tag)).not.toContain('CASL');
+			expect(full?.axes.map((axis) => axis.tag)).toContain('CASL');
+		} finally {
+			ctx.destroy();
+		}
+	}, 10_000);
+
 	it('builds static weights and styles without retaining variable axes', async () => {
 		const result = await buildWithFixture(loadVariableFontFixture(), {
 			type: 'static',
 			id: 'recursive',
 			family: 'Recursive',
-			subsets: ['latin'],
+			characters: {
+				subsets: ['latin'],
+				subsetSources: { latin: latinRangeSubset },
+			},
 			weights: [400, 700],
 			styles: ['normal', 'italic'],
 			formats: ['woff2'],
 			featureSettings: {},
-			subsetSources: {
-				latin: latinRangeSubset,
-			},
 		});
 		const ctx = createFontContext();
 
@@ -173,18 +204,50 @@ describe('buildFont integration with real fixtures', () => {
 		}
 	});
 
+	it('builds full static variants from a variable source', async () => {
+		const result = await buildWithFixture(loadVariableFontFixture(), {
+			type: 'static',
+			id: 'recursive',
+			family: 'Recursive',
+			characters: 'all',
+			weights: [400, 700],
+			styles: ['normal'],
+			formats: ['woff2'],
+		});
+		const ctx = createFontContext();
+
+		try {
+			const inspections = await Promise.all(
+				result.fonts.map((font) => inspectFont(ctx, font.content)),
+			);
+
+			expect(result.fonts.map((font) => font.filename)).toEqual([
+				'files/recursive-full-400-normal.woff2',
+				'files/recursive-full-700-normal.woff2',
+			]);
+			expect(inspections.map(({ weight, axes }) => ({ weight, axes }))).toEqual(
+				[
+					{ weight: 400, axes: [] },
+					{ weight: 700, axes: [] },
+				],
+			);
+		} finally {
+			ctx.destroy();
+		}
+	});
+
 	it('does not synthesize styles missing from the source faces', async () => {
 		const result = await buildWithFixture(loadStaticFontFixture(), {
 			type: 'static',
 			family: 'Abel',
-			subsets: ['latin'],
+			characters: {
+				subsets: ['latin'],
+				subsetSources: { latin: latinRangeSubset },
+			},
 			weights: [400],
 			styles: ['normal', 'italic'],
 			formats: ['woff2'],
 			featureSettings: {},
-			subsetSources: {
-				latin: latinRangeSubset,
-			},
 		});
 
 		expect(result.fonts.map((font) => font.filename)).toEqual([
@@ -223,14 +286,14 @@ describe('buildFont integration with real fixtures', () => {
 		const result = await buildWithFixture(loadStaticFontFixture(), {
 			type: 'static',
 			family: 'Abel',
-			subsets: ['latin'],
+			characters: {
+				subsets: ['latin'],
+				subsetSources: { latin: latinRangeSubset },
+			},
 			weights: [],
 			styles: [],
 			formats: ['woff2', 'woff'],
 			featureSettings: {},
-			subsetSources: {
-				latin: latinRangeSubset,
-			},
 		});
 
 		expect(result.faces).toHaveLength(1);
@@ -247,14 +310,14 @@ describe('buildFont integration with real fixtures', () => {
 		const result = await buildWithFixture(loadStaticFontFixture(), {
 			type: 'static',
 			family: 'Abel',
-			subsets: ['latin'],
+			characters: {
+				subsets: ['latin'],
+				subsetSources: { latin: latinSlicingSubset },
+			},
 			weights: [],
 			styles: [],
 			formats: ['woff2', 'woff'],
 			featureSettings: {},
-			subsetSources: {
-				latin: latinSlicingSubset,
-			},
 		});
 
 		expect(result.faces.map((face) => face.sliceIndex)).toEqual([1, 2]);
@@ -262,12 +325,46 @@ describe('buildFont integration with real fixtures', () => {
 		expect(serialisePackage(result)).toMatchSnapshot();
 	});
 
+	it('keeps named subset entrypoints separate from sliced aggregate CSS', async () => {
+		const result = await buildWithFixture(loadStaticFontFixture(), {
+			type: 'static',
+			family: 'Abel',
+			characters: {
+				subsets: ['latin'],
+				subsetSources: { latin: latinRangeSubset },
+				slicing: {
+					subset: 'japanese',
+					source: latinSlicingSubset,
+				},
+			},
+			formats: ['woff2'],
+		});
+
+		expect(result.fonts.map((font) => font.filename)).toEqual([
+			'files/abel-latin-400-normal.woff2',
+			'files/abel-japanese-400-normal-1.woff2',
+			'files/abel-japanese-400-normal-2.woff2',
+		]);
+
+		const latin = result.css.find((asset) => asset.filename === 'latin.css');
+		const weight = result.css.find((asset) => asset.filename === '400.css');
+
+		expect(latin?.content).toContain('abel-latin-400-normal.woff2');
+		expect(latin?.content).not.toContain('abel-japanese');
+		expect(weight?.content).not.toContain('abel-latin');
+		expect(weight?.content).toContain('abel-japanese-400-normal-1.woff2');
+		expect(weight?.content).toContain('abel-japanese-400-normal-2.woff2');
+	});
+
 	it('builds variable slices for real standard-axis data', async () => {
 		const result = await buildWithFixture(loadVariableFontFixture(), {
 			type: 'variable',
 			id: 'recursive',
 			family: 'Recursive',
-			subsets: ['latin'],
+			characters: {
+				subsets: ['latin'],
+				subsetSources: { latin: latinSlicingSubset },
+			},
 			weights: [],
 			styles: ['normal'],
 			formats: ['woff2'],
@@ -275,9 +372,6 @@ describe('buildFont integration with real fixtures', () => {
 			variable: {
 				wght: { min: 300, max: 1000 },
 				slnt: { min: -15, max: 0 },
-			},
-			subsetSources: {
-				latin: latinSlicingSubset,
 			},
 		});
 
@@ -295,7 +389,10 @@ describe('buildFont integration with real fixtures', () => {
 			type: 'variable',
 			id: 'recursive',
 			family: 'Recursive',
-			subsets: ['latin'],
+			characters: {
+				subsets: ['latin'],
+				subsetSources: { latin: latinRangeSubset },
+			},
 			weights: [],
 			styles: ['normal'],
 			formats: ['woff2'],
@@ -304,9 +401,6 @@ describe('buildFont integration with real fixtures', () => {
 				wght: { min: 300, max: 1000 },
 				slnt: { min: -15, max: 0 },
 				CASL: { min: 0, max: 1 },
-			},
-			subsetSources: {
-				latin: latinRangeSubset,
 			},
 		});
 
@@ -330,7 +424,10 @@ describe('buildFont integration with real fixtures', () => {
 			type: 'variable',
 			id: 'recursive',
 			family: 'Recursive',
-			subsets: ['latin'],
+			characters: {
+				subsets: ['latin'],
+				subsetSources: { latin: latinRangeSubset },
+			},
 			weights: [],
 			styles: ['normal'],
 			formats: ['woff2'],
@@ -340,9 +437,6 @@ describe('buildFont integration with real fixtures', () => {
 				MONO: { min: 0, max: 1 },
 				wght: { min: 300, max: 1000 },
 				slnt: { min: -15, max: 0 },
-			},
-			subsetSources: {
-				latin: latinRangeSubset,
 			},
 		});
 

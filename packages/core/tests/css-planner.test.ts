@@ -127,6 +127,25 @@ describe('css planner', () => {
 		expect(assetPlan.get('wght.css')).toEqual(faces);
 	});
 
+	it('uses slices for aggregate CSS and named faces for subset CSS', () => {
+		const named = staticFace({
+			subset: 'latin',
+			weight: 400,
+			filename: 'latin.woff2',
+		});
+		const sliced = staticFace({
+			subset: 'japanese',
+			weight: 400,
+			sliceIndex: 1,
+			filename: 'japanese-1.woff2',
+		});
+		const assetPlan = groupFacesByCSSFile([named, sliced]);
+
+		expect(assetPlan.get('latin.css')).toEqual([named]);
+		expect(assetPlan.get('400.css')).toEqual([sliced]);
+		expect(assetPlan.has('japanese.css')).toBe(false);
+	});
+
 	it('selects a normal static asset for index.css before falling back to italic', () => {
 		const faces = [
 			staticFace({
