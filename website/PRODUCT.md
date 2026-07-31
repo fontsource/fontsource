@@ -24,7 +24,7 @@ Fontsource combines an open-source font directory and interactive previews with 
 
 ## Operating Context
 
-Users browse and filter font families by properties such as language, category, and variable-font support. They preview and configure individual families, save browser-local collections, and then install packages, copy generated CSS or CDN snippets, or download font assets.
+Users browse and filter font families by properties such as language, category, and variable-font support. They preview and configure individual families, save browser-local collections, assemble configured families in a browser-local font set, and then install packages, copy generated CSS or CDN snippets, or download font assets.
 
 The website also provides documentation, API reference material, and browser-based font tools. The font converter processes TTF, OTF, WOFF, and WOFF2 files locally without uploading them to a server.
 
@@ -36,6 +36,7 @@ The website also provides documentation, API reference material, and browser-bas
 - Self-hosting is the recommended path; CDN delivery is a supported alternative.
 - Font metadata, subsets, weights, styles, variable axes, licenses, generated CSS, and package naming are product-critical data.
 - Users can search, filter, preview, configure, install, download, and organize fonts into browser-local collections.
+- Font Set keeps one configured setup per family and generates combined, exact-version package or CDN output without requiring an account.
 - The site supports light and dark color schemes and responsive layouts.
 - Font licenses vary by family. The product must not imply that every font uses the same license.
 - The website is a React Router application deployed to Cloudflare Workers and depends on Fontsource APIs and Algolia search.

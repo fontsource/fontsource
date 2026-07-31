@@ -6,5 +6,9 @@ export const loader = ({ params }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 
-	return redirect(`/fonts/${encodeURIComponent(id)}/use`);
+	return redirect(`/fonts/${id}/glyphs`);
 };
+
+export default function CharactersPage() {
+	return null;
+}

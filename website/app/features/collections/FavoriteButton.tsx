@@ -1,5 +1,5 @@
 import { useValue } from '@legendapp/state/react';
-import { ActionIcon, Tooltip } from '@mantine/core';
+import { ActionIcon, Button, Tooltip } from '@mantine/core';
 import { IconHeart } from '@tabler/icons-react';
 
 import type { FontSummary } from '@/utils/font-summary';
@@ -7,9 +7,10 @@ import { useCollectionsStore } from './CollectionsProvider';
 
 interface FavoriteButtonProps {
 	font: FontSummary;
+	withLabel?: boolean;
 }
 
-const FavoriteButton = ({ font }: FavoriteButtonProps) => {
+const FavoriteButton = ({ font, withLabel }: FavoriteButtonProps) => {
 	const store = useCollectionsStore();
 	const ready = useValue(store.ready$);
 	const favoritesId = useValue(store.getFavoritesCollectionId);
@@ -23,6 +24,28 @@ const FavoriteButton = ({ font }: FavoriteButtonProps) => {
 			store.addFontToCollection(favoritesId, font);
 		}
 	};
+
+	if (withLabel) {
+		return (
+			<Button
+				aria-label={label}
+				aria-pressed={favorite}
+				disabled={!ready}
+				leftSection={
+					<IconHeart
+						aria-hidden="true"
+						fill={favorite ? 'currentColor' : 'none'}
+						size={18}
+					/>
+				}
+				onClick={handleClick}
+				type="button"
+				variant="default"
+			>
+				{favorite ? 'Saved' : 'Save'}
+			</Button>
+		);
+	}
 
 	return (
 		<Tooltip label={label} openDelay={500}>
