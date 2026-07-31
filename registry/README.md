@@ -77,8 +77,10 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   declarations, and inspected source properties. IDs are globally unique
   across providers and are derived from directory names.
 - Reviewed families may include `distribution.json` with the exact static
-  variants, variable axis bundles, and public subset mappings Fontsource
-  publishes. Its absence means the family has no official distribution.
+  variants, variable axis bundles, and character distribution Fontsource
+  publishes. Character distribution is either the full repertoire or named
+  subset mappings with an optional family-wide slicing strategy. Its absence
+  means the family has no official distribution.
 - Icon families also include `icons.json` with public names and Unicode
   codepoints.
 - `data/languages.json` defines semantic languages, public names, and the
@@ -103,6 +105,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   `registry` provenance requires the source to be promoted to R2 first.
 - Distribution is reviewed registry state, not derived from legacy catalogs.
 - Published variants are explicit relations, not weight/style cross-products.
+- Named subset definitions and a slicing strategy are separate outputs. A
+  family-wide slicing strategy replaces named subsets in aggregate CSS.
 - Build format, package version, storage paths, and artifact hashes are global
   release concerns and do not belong in family distribution records.
 - Core owns generic font processing; these scripts own provider ingestion and

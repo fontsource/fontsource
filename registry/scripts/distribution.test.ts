@@ -39,8 +39,10 @@ describe('distribution resolution', () => {
 		);
 		const distribution: FamilyDistribution = {
 			static: [...variants],
-			defaultSubset: 'latin',
-			subsets: [{ id: 'latin', definition: 'latin' }],
+			characters: {
+				defaultSubset: 'latin',
+				subsets: [{ id: 'latin', definition: 'latin' }],
+			},
 		};
 
 		expect(() =>
@@ -86,8 +88,7 @@ describe('distribution resolution', () => {
 				{ axisKey: 'standard', style: 'normal' },
 				{ axisKey: 'wght', style: 'normal' },
 			],
-			defaultSubset: 'latin',
-			subsets: [{ id: 'latin', definition: 'latin' }],
+			characters: 'all',
 		};
 
 		expect(() =>
