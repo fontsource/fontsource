@@ -1,0 +1,53 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "gothic",
+				"id": "gothic"
+			},
+			{
+				"definition": "greek",
+				"id": "greek"
+			},
+			{
+				"definition": "greek-ext",
+				"id": "greek-ext"
+			},
+			{
+				"definition": "hebrew",
+				"id": "hebrew"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "old-italic",
+				"id": "old-italic"
+			},
+			{
+				"definition": "runic",
+				"id": "runic"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		}
+	]
+}

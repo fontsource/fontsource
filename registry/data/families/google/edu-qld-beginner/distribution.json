@@ -1,0 +1,35 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "wght",
+			"style": "normal"
+		}
+	]
+}

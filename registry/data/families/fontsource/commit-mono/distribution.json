@@ -1,0 +1,35 @@
+{
+	"characters": "all",
+	"static": [
+		{
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "wght",
+			"style": "normal"
+		}
+	]
+}

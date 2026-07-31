@@ -1,0 +1,17 @@
+{
+	"characters": {
+		"defaultSubset": "myanmar",
+		"subsets": [
+			{
+				"definition": "myanmar",
+				"id": "myanmar"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

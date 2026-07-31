@@ -1,0 +1,13 @@
+{
+	"characters": "all",
+	"static": [
+		{
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		}
+	]
+}

@@ -115,6 +115,20 @@ describe('registry source archive', () => {
 					description: expect.any(String),
 				},
 			},
+			distribution: {
+				static: [
+					{
+						weight: 400,
+						style: 'normal',
+						source: expect.stringMatching(/^[0-9a-f]{64}$/),
+					},
+				],
+				characters: {
+					type: 'subsets',
+					defaultSubset: 'latin',
+					subsets: [{ id: 'latin', definition: 'latin' }],
+				},
+			},
 			sources: [
 				expect.objectContaining({
 					format: 'ttf',

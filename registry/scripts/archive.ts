@@ -16,17 +16,25 @@ import { putCurrentObject, putObject } from './r2.ts';
 import {
 	archiveManifestSchema,
 	axisRegistrySchema,
+	familyDistributionSchema,
 	familySchema,
 	languageCatalogSchema,
 	replacementRegistrySchema,
 	subsetDefinitionSchema,
 	taxonomySchema,
 } from './schema.ts';
-import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
+import {
+	canonicalJson,
+	compareStrings,
+	readJson,
+	readJsonIfExists,
+	sha256,
+} from './shared.ts';
 import {
 	listFamilyKeys,
 	listFiles,
 	listSubsetIds,
+	resolveDistributionSources,
 	validateRegistry,
 } from './validator.ts';
 
@@ -100,6 +108,21 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		const family = familySchema.parse(
 			await readJson(join(directory, 'family.json')),
 		);
+		const distributionValue = await readJsonIfExists(
+			join(directory, 'distribution.json'),
+		);
+		const distribution = distributionValue
+			? familyDistributionSchema.parse(distributionValue)
+			: undefined;
+		const publicDistribution = distribution
+			? {
+					...resolveDistributionSources(distribution, family, id),
+					characters:
+						distribution.characters === 'all'
+							? ({ type: 'all' } as const)
+							: ({ type: 'subsets', ...distribution.characters } as const),
+				}
+			: undefined;
 		const axes = [
 			...new Set(
 				family.sources.flatMap(({ inspection }) =>
@@ -180,6 +203,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 								}
 							: undefined,
 					sources,
+					distribution: publicDistribution,
 				}),
 			),
 		);

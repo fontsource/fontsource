@@ -1,0 +1,38 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"slicing": "japanese-web",
+		"subsets": [
+			{
+				"definition": "cyrillic",
+				"id": "cyrillic"
+			},
+			{
+				"definition": "greek-ext",
+				"id": "greek-ext"
+			},
+			{
+				"definition": "japanese",
+				"id": "japanese"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"characters": {
+		"defaultSubset": "lycian",
+		"subsets": [
+			{
+				"definition": "lycian",
+				"id": "lycian"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	]
+}

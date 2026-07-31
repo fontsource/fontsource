@@ -45,6 +45,8 @@ current.json
 
 Each snapshot includes family, language, subset, and axis views projected into
 the public API contract in [`api/shared/registry.ts`](../api/shared/registry.ts).
+Family detail views include the reviewed distribution with an explicit
+`all` or `subsets` character mode.
 The committed registry format remains private and can change without changing
 those responses. The manifest maps every registry file, API view, and source to
 a SHA-256 object and is written before `current.json` selects the complete

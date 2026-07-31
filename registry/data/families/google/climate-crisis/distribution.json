@@ -1,0 +1,31 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "full",
+			"style": "normal"
+		},
+		{
+			"axisKey": "YEAR",
+			"style": "normal"
+		}
+	]
+}

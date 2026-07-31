@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import type { Family, FamilyDistribution } from './schema.ts';
-import { validateDistributionResolution } from './validator.ts';
+import {
+	resolveDistributionSources,
+	validateDistributionResolution,
+} from './validator.ts';
 
 const createFamily = (family: string, sources: Family['sources']): Family => ({
 	family,
@@ -58,6 +61,65 @@ describe('distribution resolution', () => {
 				'neuton',
 			),
 		).toThrow('neuton static 300 italic must resolve to one source');
+	});
+
+	it('uses a unique variable source when static instances are ambiguous', () => {
+		const inspection = {
+			fontVersion: 'Version 1.0',
+			weight: 400,
+			style: 'normal' as const,
+			axes: [],
+			outline: 'glyf' as const,
+			colorTables: [],
+		};
+		const family = createFamily('Inconsolata', [
+			{
+				path: 'static/Inconsolata-Condensed.ttf',
+				sha256: '0'.repeat(64),
+				size: 1,
+				inspection,
+			},
+			{
+				path: 'static/Inconsolata-Expanded.ttf',
+				sha256: '1'.repeat(64),
+				size: 1,
+				inspection,
+			},
+			{
+				path: 'Inconsolata[wdth,wght].ttf',
+				sha256: '2'.repeat(64),
+				size: 1,
+				variant: { weight: 400, style: 'normal' },
+				inspection: {
+					...inspection,
+					weight: { min: 200, max: 900, default: 400 },
+					axes: [
+						{ tag: 'wdth', min: 50, max: 200, default: 100 },
+						{ tag: 'wght', min: 200, max: 900, default: 400 },
+					],
+				},
+			},
+		]);
+
+		expect(
+			resolveDistributionSources(
+				{
+					static: [{ weight: 400, style: 'normal' }],
+					characters: 'all',
+				},
+				family,
+				'inconsolata',
+			),
+		).toEqual({
+			static: [
+				{
+					weight: 400,
+					style: 'normal',
+					source: '2'.repeat(64),
+				},
+			],
+			variable: undefined,
+		});
 	});
 
 	it('accepts only canonical variable axis bundles published by Core', () => {

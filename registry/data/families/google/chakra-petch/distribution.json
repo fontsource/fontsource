@@ -1,0 +1,65 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "thai",
+				"id": "thai"
+			},
+			{
+				"definition": "vietnamese",
+				"id": "vietnamese"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		}
+	]
+}

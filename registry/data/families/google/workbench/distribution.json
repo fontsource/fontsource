@@ -1,0 +1,39 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "math",
+				"id": "math"
+			},
+			{
+				"definition": "symbols",
+				"id": "symbols"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "BLED",
+			"style": "normal"
+		},
+		{
+			"axisKey": "full",
+			"style": "normal"
+		},
+		{
+			"axisKey": "SCAN",
+			"style": "normal"
+		}
+	]
+}

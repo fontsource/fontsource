@@ -1,0 +1,21 @@
+{
+	"characters": {
+		"defaultSubset": "khmer",
+		"subsets": [
+			{
+				"definition": "khmer",
+				"id": "khmer"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		}
+	]
+}

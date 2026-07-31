@@ -45,6 +45,14 @@ const VIEWS = [
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org',
 			},
+			distribution: {
+				static: [{ weight: 400, style: 'normal', source: SOURCE_SHA256 }],
+				characters: {
+					type: 'subsets',
+					defaultSubset: 'latin',
+					subsets: [{ id: 'latin', definition: 'latin' }],
+				},
+			},
 			sources: [
 				{
 					sha256: SOURCE_SHA256,

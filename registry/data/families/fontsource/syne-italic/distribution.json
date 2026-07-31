@@ -1,0 +1,9 @@
+{
+	"characters": "all",
+	"static": [
+		{
+			"style": "italic",
+			"weight": 400
+		}
+	]
+}

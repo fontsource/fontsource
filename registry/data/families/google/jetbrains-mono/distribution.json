@@ -1,0 +1,107 @@
+{
+	"characters": {
+		"defaultSubset": "latin",
+		"subsets": [
+			{
+				"definition": "cyrillic",
+				"id": "cyrillic"
+			},
+			{
+				"definition": "cyrillic-ext",
+				"id": "cyrillic-ext"
+			},
+			{
+				"definition": "greek",
+				"id": "greek"
+			},
+			{
+				"definition": "latin",
+				"id": "latin"
+			},
+			{
+				"definition": "latin-ext",
+				"id": "latin-ext"
+			},
+			{
+				"definition": "vietnamese",
+				"id": "vietnamese"
+			}
+		]
+	},
+	"static": [
+		{
+			"style": "italic",
+			"weight": 100
+		},
+		{
+			"style": "normal",
+			"weight": 100
+		},
+		{
+			"style": "italic",
+			"weight": 200
+		},
+		{
+			"style": "normal",
+			"weight": 200
+		},
+		{
+			"style": "italic",
+			"weight": 300
+		},
+		{
+			"style": "normal",
+			"weight": 300
+		},
+		{
+			"style": "italic",
+			"weight": 400
+		},
+		{
+			"style": "normal",
+			"weight": 400
+		},
+		{
+			"style": "italic",
+			"weight": 500
+		},
+		{
+			"style": "normal",
+			"weight": 500
+		},
+		{
+			"style": "italic",
+			"weight": 600
+		},
+		{
+			"style": "normal",
+			"weight": 600
+		},
+		{
+			"style": "italic",
+			"weight": 700
+		},
+		{
+			"style": "normal",
+			"weight": 700
+		},
+		{
+			"style": "italic",
+			"weight": 800
+		},
+		{
+			"style": "normal",
+			"weight": 800
+		}
+	],
+	"variable": [
+		{
+			"axisKey": "wght",
+			"style": "italic"
+		},
+		{
+			"axisKey": "wght",
+			"style": "normal"
+		}
+	]
+}
