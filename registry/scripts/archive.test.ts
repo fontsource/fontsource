@@ -116,7 +116,13 @@ describe('registry source archive', () => {
 				},
 			},
 			distribution: {
-				static: [{ weight: 400, style: 'normal' }],
+				static: [
+					{
+						weight: 400,
+						style: 'normal',
+						source: expect.stringMatching(/^[0-9a-f]{64}$/),
+					},
+				],
 				characters: {
 					type: 'subsets',
 					defaultSubset: 'latin',

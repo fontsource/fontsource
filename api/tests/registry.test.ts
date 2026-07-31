@@ -46,7 +46,7 @@ const VIEWS = [
 				url: 'https://openfontlicense.org',
 			},
 			distribution: {
-				static: [{ weight: 400, style: 'normal' }],
+				static: [{ weight: 400, style: 'normal', source: SOURCE_SHA256 }],
 				characters: {
 					type: 'subsets',
 					defaultSubset: 'latin',

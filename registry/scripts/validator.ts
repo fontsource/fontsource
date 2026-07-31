@@ -150,18 +150,25 @@ const publishedAxisKeys = (
 	return new Set(getVariableAxisKeys(axes));
 };
 
-export const validateDistributionResolution = (
+export const resolveDistributionSources = (
 	distribution: FamilyDistribution,
 	family: Family,
 	context: string,
-): void => {
+): {
+	static?: Array<
+		NonNullable<FamilyDistribution['static']>[number] & { source: string }
+	>;
+	variable?: Array<
+		NonNullable<FamilyDistribution['variable']>[number] & { source: string }
+	>;
+} => {
 	// Every published entry must select one source without inventing a
 	// weight/style cross-product or relying on source ordering.
 	const fonts = family.sources.map((source) => ({
 		font: source.inspection,
 		source,
 	}));
-	for (const variant of distribution.static ?? []) {
+	const staticVariants = distribution.static?.map((variant) => {
 		const staticMatches = fonts.filter(({ font, source }) => {
 			if (font.axes.length > 0) return false;
 			return source.variant
@@ -170,7 +177,9 @@ export const validateDistributionResolution = (
 				: fontSupportsWeight(font, variant.weight) &&
 						fontSupportsStyle(font, variant.style);
 		});
-		if (staticMatches.length === 1) continue;
+		if (staticMatches.length === 1) {
+			return { ...variant, source: staticMatches[0].source.sha256 };
+		}
 
 		const variableMatches = fonts.filter(({ font, source }) => {
 			if (font.axes.length === 0) return false;
@@ -180,8 +189,7 @@ export const validateDistributionResolution = (
 					source.variant?.style === variant.style)
 			);
 		});
-		if (variableMatches.length === 1) continue;
-		if (staticMatches.length > 1) {
+		if (staticMatches.length > 1 && variableMatches.length !== 1) {
 			throw new Error(
 				`${context} static ${variant.weight} ${variant.style} is ambiguous`,
 			);
@@ -190,9 +198,10 @@ export const validateDistributionResolution = (
 			variableMatches.length === 1,
 			`${context} static ${variant.weight} ${variant.style} must resolve to one source`,
 		);
-	}
+		return { ...variant, source: variableMatches[0].source.sha256 };
+	});
 
-	for (const variant of distribution.variable ?? []) {
+	const variableVariants = distribution.variable?.map((variant) => {
 		const matches = fonts.filter(({ font, source }) => {
 			if (
 				font.axes.length === 0 ||
@@ -206,7 +215,18 @@ export const validateDistributionResolution = (
 			matches.length === 1,
 			`${context} variable ${variant.axisKey} ${variant.style} must resolve to one source`,
 		);
-	}
+		return { ...variant, source: matches[0].source.sha256 };
+	});
+
+	return { static: staticVariants, variable: variableVariants };
+};
+
+export const validateDistributionResolution = (
+	distribution: FamilyDistribution,
+	family: Family,
+	context: string,
+): void => {
+	resolveDistributionSources(distribution, family, context);
 };
 
 const validateFamily = async (

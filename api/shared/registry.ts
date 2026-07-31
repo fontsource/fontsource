@@ -47,6 +47,7 @@ const DeclaredVariantSchema = z.strictObject({
 const VariableDistributionSchema = z.strictObject({
 	axisKey: z.union([z.literal('standard'), z.string().length(4)]),
 	style: z.enum(['normal', 'italic']),
+	source: Sha256Schema,
 });
 const CharacterDistributionSchema = z.discriminatedUnion('type', [
 	z.strictObject({ type: z.literal('all') }),
@@ -61,7 +62,10 @@ const CharacterDistributionSchema = z.discriminatedUnion('type', [
 ]);
 const RegistryDistributionSchema = z
 	.strictObject({
-		static: z.array(DeclaredVariantSchema).min(1).optional(),
+		static: z
+			.array(DeclaredVariantSchema.extend({ source: Sha256Schema }))
+			.min(1)
+			.optional(),
 		variable: z.array(VariableDistributionSchema).min(1).optional(),
 		characters: CharacterDistributionSchema,
 	})

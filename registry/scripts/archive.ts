@@ -34,6 +34,7 @@ import {
 	listFamilyKeys,
 	listFiles,
 	listSubsetIds,
+	resolveDistributionSources,
 	validateRegistry,
 } from './validator.ts';
 
@@ -112,6 +113,15 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		);
 		const distribution = distributionValue
 			? familyDistributionSchema.parse(distributionValue)
+			: undefined;
+		const publicDistribution = distribution
+			? {
+					...resolveDistributionSources(distribution, family, id),
+					characters:
+						distribution.characters === 'all'
+							? ({ type: 'all' } as const)
+							: ({ type: 'subsets', ...distribution.characters } as const),
+				}
 			: undefined;
 		const axes = [
 			...new Set(
@@ -193,18 +203,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 								}
 							: undefined,
 					sources,
-					distribution: distribution
-						? {
-								...distribution,
-								characters:
-									distribution.characters === 'all'
-										? { type: 'all' }
-										: {
-												type: 'subsets',
-												...distribution.characters,
-											},
-							}
-						: undefined,
+					distribution: publicDistribution,
 				}),
 			),
 		);

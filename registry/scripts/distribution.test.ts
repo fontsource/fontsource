@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import type { Family, FamilyDistribution } from './schema.ts';
-import { validateDistributionResolution } from './validator.ts';
+import {
+	resolveDistributionSources,
+	validateDistributionResolution,
+} from './validator.ts';
 
 const createFamily = (family: string, sources: Family['sources']): Family => ({
 	family,
@@ -98,8 +101,8 @@ describe('distribution resolution', () => {
 			},
 		]);
 
-		expect(() =>
-			validateDistributionResolution(
+		expect(
+			resolveDistributionSources(
 				{
 					static: [{ weight: 400, style: 'normal' }],
 					characters: 'all',
@@ -107,7 +110,16 @@ describe('distribution resolution', () => {
 				family,
 				'inconsolata',
 			),
-		).not.toThrow();
+		).toEqual({
+			static: [
+				{
+					weight: 400,
+					style: 'normal',
+					source: '2'.repeat(64),
+				},
+			],
+			variable: undefined,
+		});
 	});
 
 	it('accepts only canonical variable axis bundles published by Core', () => {
