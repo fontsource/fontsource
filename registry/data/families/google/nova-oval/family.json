@@ -444,10 +444,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 418,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 421,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0191-0192, U+01E4-01E5, U+01FC-01FF, U+0218-021B, U+0237, U+0394, U+03A0, U+03A3, U+03A9, U+03BC, U+03C0, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E60-1E61, U+1E6A-1E6B, U+1E80-1E85, U+1EF2-1EF3, U+2010-2015, U+2017-2027, U+2030, U+2032-2037, U+2039-203A, U+2043-2044, U+20AC, U+2105, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2217-221B, U+221E, U+2248, U+2260-2261, U+2264-2265, U+25CA",
 				"weight": 400
 			},
 			"path": "ofl/novaoval/NovaOval.ttf",

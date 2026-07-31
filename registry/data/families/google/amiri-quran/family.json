@@ -219,10 +219,36 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 266,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"curs",
+						"kern",
+						"mark",
+						"mkmk",
+						"ss05"
+					],
+					"gsub": [
+						"ccmp",
+						"fina",
+						"init",
+						"locl",
+						"mark",
+						"medi",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss05",
+						"ss07",
+						"ss08"
+					]
+				},
 				"fontVersion": "Version 1.003",
+				"glyphs": 1446,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0, U+00A2-00A3, U+00A5, U+00A9, U+00AB, U+00AE, U+00B0, U+00B7, U+00BB, U+00D7, U+00F7, U+0305, U+030A, U+0325, U+060C, U+0615, U+0617-061B, U+061E-061F, U+0621-063A, U+0640-0658, U+065C, U+0660-0669, U+066E-0671, U+067A, U+06A1, U+06BA, U+06CC, U+06D6-06ED, U+06F0-06F9, U+08F0-08F3, U+2000-200F, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+2028-202F, U+20AC, U+2212, U+25CC, U+FD3E-FD3F, U+FDFA, U+FDFD",
 				"weight": 400
 			},
 			"path": "ofl/amiriquran/AmiriQuran-Regular.ttf",

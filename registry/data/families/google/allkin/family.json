@@ -30,10 +30,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 199,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 200,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+E000-E00B, U+E00D-E0C4",
 				"weight": 400
 			},
 			"path": "ofl/allkin/Allkin-Regular.ttf",

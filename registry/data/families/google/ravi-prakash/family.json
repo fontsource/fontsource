@@ -216,10 +216,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 305,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"haln",
+						"psts"
+					]
+				},
 				"fontVersion": "Version 1.0.4; ttfautohint (v1.2.42-39fb)",
+				"glyphs": 834,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000C, U+0020-007E, U+00A0-00AC, U+00AE-00BF, U+0283, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0394, U+03A9, U+03BC, U+03C0, U+0964-0965, U+0C01-0C03, U+0C05-0C0C, U+0C0E-0C10, U+0C12-0C28, U+0C2A-0C33, U+0C35-0C39, U+0C3D-0C44, U+0C46-0C48, U+0C4A-0C4D, U+0C55-0C56, U+0C58-0C59, U+0C60-0C63, U+0C66-0C6F, U+0C78-0C7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+20B9, U+2212, U+25CC, U+FFBC-FFE3, U+FFE7-FFF2",
 				"weight": 400
 			},
 			"path": "ofl/raviprakash/RaviPrakash-Regular.ttf",

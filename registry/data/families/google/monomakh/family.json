@@ -477,10 +477,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 815,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"calt",
+						"ccmp",
+						"dlig",
+						"liga",
+						"locl",
+						"salt",
+						"ss01",
+						"ss06",
+						"ss07",
+						"ss08",
+						"ss09",
+						"ss10",
+						"ss11",
+						"ss13",
+						"ss15"
+					]
+				},
 				"fontVersion": "Version 1.200; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 859,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-017F, U+0192, U+0218-021B, U+0232-0233, U+0237, U+02B9, U+02BB-02BD, U+02C6-02C7, U+02C9-02CB, U+02D8-02DD, U+0300-0308, U+030A-030C, U+030F, U+0311-0314, U+0323, U+0326-0328, U+032F, U+033E, U+0360-0361, U+0400-0489, U+0490-0491, U+04A4-04A5, U+04C1-04C2, U+04D0-04D1, U+0510-0511, U+10FB, U+1C80-1C88, U+1DC0-1DC1, U+2000-200D, U+2010-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2024-2026, U+202F-2030, U+2039-203B, U+203E, U+2042, U+2044, U+2051, U+2056, U+2058-205E, U+2060, U+2074, U+20AC, U+20DD, U+2116, U+2122, U+2212, U+2215, U+2329-232A, U+25CC, U+2626, U+2720, U+27E8-27E9, U+29DF, U+2DE0-2DFF, U+2E2A-2E2D, U+2E2F, U+2E43, U+A640-A67F, U+A698-A69F, U+E000-E005, U+E01B, U+E020-E021, U+E02D-E02E, U+E0E0, U+E0E4, U+E0EC, U+E0F0-E0F2, U+E0F5, U+E383, U+E420-E421, U+E437-E438, U+E46A, U+E477, U+E48F, U+E926, U+E92A, U+E92C, U+EDEA, U+F340-F346, U+F4E0-F4F4, U+F4F6-F4FF, U+F674-F67B, U+F69E-F69F, U+F6BE-F6BF, U+F6C3, U+F6C9-F6CB, U+F6CE-F6D6, U+F7E3-F7E5, U+F7E8, U+F7EE, U+FB01-FB02, U+FE26, U+FE2E-FE2F, U+1F540-1F545, U+F0023",
 				"weight": 400
 			},
 			"path": "ofl/monomakh/Monomakh-Regular.ttf",

@@ -462,10 +462,33 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1104,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"c2sc",
+						"dnom",
+						"fina",
+						"hist",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.0",
+				"glyphs": 1147,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE, U+00B0-0137, U+0139-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01B7, U+01F4-01F5, U+01FA-01FF, U+0218-0219, U+0292, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0300-0301, U+0303, U+0308-0309, U+0312-0314, U+0323, U+0326-0328, U+0342-0343, U+0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-03D1, U+03D5-03D6, U+03D8-03DC, U+03DE-03E1, U+04D2-04D3, U+04E6-04E7, U+1E80-1E85, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2010, U+2012-2014, U+2016-201E, U+2020-2022, U+2025-2026, U+2030, U+2032-2033, U+2039-203A, U+203C-203E, U+2044, U+2070, U+2074-208E, U+20A1-20A4, U+20A7, U+20AC, U+2122, U+2126, U+212E, U+2153-215F, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+2227-222B, U+2245, U+2248, U+2260-2261, U+2264-2265, U+2310, U+25CA, U+25E6, U+F500-F510, U+F512-F51A, U+F639-F642, U+F650-F651, U+F655-F65E, U+F661-F66A, U+F66D-F6AD, U+F6C3, U+F6C9-F6CB, U+F6CE-F6D0, U+F6DC-F6DD, U+F6F4-F6FF, U+F721, U+F724, U+F726, U+F730-F739, U+F760-F77A, U+F7A1-F7A2, U+F7A8, U+F7AF, U+F7B4, U+F7B8, U+F7E0-F7F6, U+F7F8-F7FF, U+FB00-FB04, U+FFFC",
 				"weight": 400
 			},
 			"path": "ofl/gfsdidot/GFSDidot-Regular.ttf",

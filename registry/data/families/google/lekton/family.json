@@ -342,10 +342,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 352,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"calt",
+						"dlig",
+						"liga",
+						"onum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss05",
+						"ss06",
+						"ss07",
+						"ss08",
+						"swsh",
+						"titl"
+					]
+				},
 				"fontVersion": "Version 34.000",
+				"glyphs": 950,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-005D, U+005F, U+0061-007E, U+00A1-00A7, U+00A9-00AC, U+00AE, U+00B0-00B1, U+00B5-00B7, U+00BA-00BB, U+00BF-0129, U+012B-012C, U+012E-0132, U+0134-0137, U+0139-013E, U+0141-0148, U+014A-017E, U+0192, U+01FA-01FF, U+0218-0219, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-2019, U+201C-201D, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB04",
 				"weight": 700
 			},
 			"path": "ofl/lekton/Lekton-Bold.ttf",
@@ -359,10 +383,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 188,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 3.000",
+				"glyphs": 205,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-005D, U+005F-007E, U+00A1, U+00A3, U+00A5, U+00A8, U+00AB, U+00B0-00B1, U+00B4-00B6, U+00B8, U+00BB, U+00BF-00CF, U+00D1-00D6, U+00D9-00DC, U+00E0-00EF, U+00F1-00F7, U+00F9-00FC, U+00FF, U+0131, U+0152-0153, U+0178, U+02C6-02C7, U+02DA, U+02DC, U+2018-2019, U+201C-201D, U+2020-2021, U+2026, U+2030, U+2039-203A, U+20AC, U+2122, U+220F, U+2248, U+2260, U+2264-2265, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/lekton/Lekton-Italic.ttf",
@@ -376,10 +409,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 352,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"calt",
+						"dlig",
+						"liga",
+						"onum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss05",
+						"ss06",
+						"ss07",
+						"ss08",
+						"swsh",
+						"titl"
+					]
+				},
 				"fontVersion": "Version 34.000",
+				"glyphs": 950,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-005D, U+005F, U+0061-007E, U+00A1-00A7, U+00A9-00AC, U+00AE, U+00B0-00B1, U+00B5-00B7, U+00BA-00BB, U+00BF-0129, U+012B-012C, U+012E-0132, U+0134-0137, U+0139-013E, U+0141-0148, U+014A-017E, U+0192, U+01FA-01FF, U+0218-0219, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-2019, U+201C-201D, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB04",
 				"weight": 400
 			},
 			"path": "ofl/lekton/Lekton-Regular.ttf",

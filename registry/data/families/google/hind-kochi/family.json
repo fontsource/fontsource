@@ -407,10 +407,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 531,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"akhn",
+						"blwf",
+						"blws",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+				"glyphs": 532,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0964-0965, U+0D01-0D03, U+0D05-0D0C, U+0D0E-0D10, U+0D12-0D3A, U+0D3D-0D44, U+0D46-0D48, U+0D4A-0D4E, U+0D57, U+0D60-0D63, U+0D66-0D75, U+0D79-0D7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01B7-F0213",
 				"weight": 700
 			},
 			"path": "ofl/hindkochi/HindKochi-Bold.ttf",
@@ -424,10 +437,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 531,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"akhn",
+						"blwf",
+						"blws",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+				"glyphs": 532,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0964-0965, U+0D01-0D03, U+0D05-0D0C, U+0D0E-0D10, U+0D12-0D3A, U+0D3D-0D44, U+0D46-0D48, U+0D4A-0D4E, U+0D57, U+0D60-0D63, U+0D66-0D75, U+0D79-0D7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01B7-F0213",
 				"weight": 300
 			},
 			"path": "ofl/hindkochi/HindKochi-Light.ttf",
@@ -441,10 +467,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 531,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"akhn",
+						"blwf",
+						"blws",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+				"glyphs": 532,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0964-0965, U+0D01-0D03, U+0D05-0D0C, U+0D0E-0D10, U+0D12-0D3A, U+0D3D-0D44, U+0D46-0D48, U+0D4A-0D4E, U+0D57, U+0D60-0D63, U+0D66-0D75, U+0D79-0D7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01B7-F0213",
 				"weight": 500
 			},
 			"path": "ofl/hindkochi/HindKochi-Medium.ttf",
@@ -458,10 +497,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 531,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"akhn",
+						"blwf",
+						"blws",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+				"glyphs": 532,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0964-0965, U+0D01-0D03, U+0D05-0D0C, U+0D0E-0D10, U+0D12-0D3A, U+0D3D-0D44, U+0D46-0D48, U+0D4A-0D4E, U+0D57, U+0D60-0D63, U+0D66-0D75, U+0D79-0D7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01B7-F0213",
 				"weight": 400
 			},
 			"path": "ofl/hindkochi/HindKochi-Regular.ttf",
@@ -475,10 +527,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 531,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"akhn",
+						"blwf",
+						"blws",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 0.702;PS 1.0;hotconv 1.0.81;makeotf.lib2.5.63406",
+				"glyphs": 532,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0964-0965, U+0D01-0D03, U+0D05-0D0C, U+0D0E-0D10, U+0D12-0D3A, U+0D3D-0D44, U+0D46-0D48, U+0D4A-0D4E, U+0D57, U+0D60-0D63, U+0D66-0D75, U+0D79-0D7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01B7-F0213",
 				"weight": 600
 			},
 			"path": "ofl/hindkochi/HindKochi-SemiBold.ttf",

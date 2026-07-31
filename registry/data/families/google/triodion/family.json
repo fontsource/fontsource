@@ -374,10 +374,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 527,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"salt",
+						"ss01"
+					]
+				},
 				"fontVersion": "Version 1.202; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 528,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007F, U+00A0-00FF, U+0131, U+0152-0153, U+017F, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0306-0308, U+030F, U+0311, U+033E, U+034F, U+0360, U+0400-0487, U+10FB, U+1C81-1C83, U+1C85, U+1DC0-1DC1, U+2000-2014, U+2018-201A, U+201C-201E, U+2020, U+2022, U+2024-2027, U+202F, U+2039-203B, U+2044, U+2052-2053, U+2056, U+2058-2059, U+205C-205E, U+2074, U+20AC, U+2212, U+2215, U+2219, U+223B-223D, U+2241, U+25CC, U+2626, U+263D-263E, U+271A, U+2720, U+2734, U+29DF, U+2DE0-2DF5, U+2DFD, U+2E2A-2E2D, U+2E2F, U+2E34, U+2E43, U+A640-A643, U+A64A-A64D, U+A656-A657, U+A66F, U+A673, U+A675, U+A67C-A67F, U+E000-E005, U+E0EC, U+E2EA, U+E3C0, U+E5D0-E5D6, U+E8E1, U+E8E3, U+E8E5, U+E901, U+E903-E904, U+E92A-E92B, U+F4E0-F4E2, U+F4E6-F4E7, U+F4E9-F4EE, U+F4F0-F4F3, U+F4FD, U+FB00-FB02, U+FB05, U+1F311-1F319, U+1F347, U+1F377, U+1F41F, U+1F540-1F545, U+F0023",
 				"weight": 400
 			},
 			"path": "ofl/triodion/Triodion-Regular.ttf",

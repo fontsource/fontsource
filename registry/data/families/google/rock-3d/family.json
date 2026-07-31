@@ -206,10 +206,22 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 289,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vkna",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 411,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0, U+00A5-00A6, U+2002, U+3000-3002, U+300C-300D, U+3041-3094, U+3099-309A, U+309D-309E, U+30A1-30FD, U+FE11-FE12, U+FE41-FE42",
 				"weight": 400
 			},
 			"path": "ofl/rock3d/Rock3D-Regular.ttf",

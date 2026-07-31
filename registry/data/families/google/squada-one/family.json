@@ -339,10 +339,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 190,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 192,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007D, U+00A1-00AC, U+00AE-00BB, U+00BF-00FF, U+02C6, U+02DA, U+02DC, U+03BC, U+2021",
 				"weight": 400
 			},
 			"path": "ofl/squadaone/SquadaOne-Regular.ttf",

@@ -411,10 +411,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 352,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.003 2001",
+				"glyphs": 355,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0125, U+0127-0129, U+012B-012C, U+012F-0131, U+0134-0137, U+0139-0149, U+014B-0165, U+0168-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+F6C3, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/annieuseyourtelescope/AnnieUseYourTelescope-Regular.ttf",

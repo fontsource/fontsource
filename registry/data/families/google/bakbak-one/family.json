@@ -479,10 +479,36 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 461,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"dist",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.003; ttfautohint (v1.8.3)",
+				"glyphs": 1081,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-017F, U+0192, U+0218-021B, U+0237, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0326, U+0394, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0930, U+0932-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0960-0965, U+0970, U+0972, U+1E80-1E85, U+1EF2-1EF3, U+200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/bakbakone/BakbakOne-Regular.ttf",

@@ -375,10 +375,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 260,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002 2010",
+				"glyphs": 265,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0102-0103, U+0106-0107, U+010C-010E, U+011A-011B, U+0139-013A, U+013D, U+0141-0144, U+0147-0148, U+0150-0155, U+0158-015B, U+0160-0161, U+0164, U+016E-0171, U+0178-017E, U+0192, U+02C6-02C7, U+02D8-02DA, U+02DC-02DD, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+20AC, U+2122, U+2212, U+2215, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/dawningofanewday/DawningofaNewDay.ttf",

@@ -204,10 +204,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 93,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 95,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0023, U+0027-003F, U+0041-005D, U+005F, U+0061-007B, U+007D, U+00A0, U+00B7, U+200A, U+2013-2014, U+2022",
 				"weight": 400
 			},
 			"path": "ofl/yarndings12charted/Yarndings12Charted-Regular.ttf",

@@ -485,10 +485,40 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 543,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 736,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00B4, U+00B6-0137, U+0139-0148, U+014A-014D, U+0150-017E, U+0192, U+01A0-01A1, U+01AF-01B0, U+01E6-01E7, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+031B, U+0323, U+0326-0328, U+0335-0338, U+03BC, U+03C0, U+1E80-1E85, U+1E9E, U+1EA0-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AA, U+20AC, U+20B9-20BA, U+20BF, U+2113, U+2116-2117, U+2122, U+212E, U+215B-215E, U+2190-2194, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2460-2468, U+24EA, U+24FF, U+25CB-25CC, U+25CF, U+2639-263A, U+2713, U+2776-277E, U+F8FF, U+FB01-FB02",
 				"weight": {
 					"default": 200,
 					"max": 900,
@@ -519,10 +549,40 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 543,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 736,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00B4, U+00B6-0137, U+0139-0148, U+014A-014D, U+0150-017E, U+0192, U+01A0-01A1, U+01AF-01B0, U+01E6-01E7, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+031B, U+0323, U+0326-0328, U+0335-0338, U+03BC, U+03C0, U+1E80-1E85, U+1E9E, U+1EA0-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AA, U+20AC, U+20B9-20BA, U+20BF, U+2113, U+2116-2117, U+2122, U+212E, U+215B-215E, U+2190-2194, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2460-2468, U+24EA, U+24FF, U+25CB-25CC, U+25CF, U+2639-263A, U+2713, U+2776-277E, U+F8FF, U+FB01-FB02",
 				"weight": {
 					"default": 200,
 					"max": 900,

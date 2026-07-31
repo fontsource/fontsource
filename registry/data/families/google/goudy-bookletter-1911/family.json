@@ -392,10 +392,22 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 292,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"ss01"
+					]
+				},
 				"fontVersion": "Version 2010.07.03",
+				"glyphs": 303,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A1, U+00A8-00A9, U+00AB-00AC, U+00AE, U+00B0-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-00CF, U+00D1-00DD, U+00DF-00EF, U+00F1-00FD, U+00FF, U+0102-0103, U+0106-010F, U+0114-0117, U+011A-0122, U+0124-0125, U+0128-0129, U+012C-012D, U+0130-0137, U+0139-013E, U+0143-0148, U+014E-014F, U+0152-0165, U+0168-0169, U+016C-016F, U+0174-017F, U+0237, U+02C6-02C7, U+02D8-02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2032-2033, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+22C5, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/goudybookletter1911/GoudyBookletter1911.ttf",

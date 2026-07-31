@@ -334,10 +334,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 193,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 195,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0022, U+0024, U+0026-005D, U+005F-007E, U+00A0-00A3, U+00A5-00A6, U+00A8-00A9, U+00AE, U+00B0, U+00B4-00B5, U+00B8, U+00BF-00C4, U+00C6-00CF, U+00D1-00E4, U+00E6-00EF, U+00F1-00FF, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02D9, U+02DC, U+03BC, U+2013-2014, U+201A, U+201C-201D, U+2022, U+2026, U+2044, U+20AC, U+2122, U+2212, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/marvel/Marvel-Bold.ttf",
@@ -351,10 +358,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 193,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 195,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-0022, U+0024, U+0026-005D, U+005F-007E, U+00A0-00A3, U+00A5-00A6, U+00A8-00A9, U+00AE, U+00B0, U+00B4-00B5, U+00B8, U+00BF-00C4, U+00C6-00CF, U+00D1-00E4, U+00E6-00EF, U+00F1-00FF, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02D9, U+02DC, U+03BC, U+2013-2014, U+201A, U+201C-201D, U+2022, U+2026, U+2044, U+20AC, U+2122, U+2212, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/marvel/Marvel-BoldItalic.ttf",
@@ -368,10 +382,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 193,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 195,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-0022, U+0024, U+0026-005D, U+005F-007E, U+00A0-00A3, U+00A5-00A6, U+00A8-00A9, U+00AE, U+00B0, U+00B4-00B5, U+00B8, U+00BF-00C4, U+00C6-00CF, U+00D1-00E4, U+00E6-00EF, U+00F1-00FF, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02D9, U+02DC, U+03BC, U+2013-2014, U+201A, U+201C-201D, U+2022, U+2026, U+2044, U+20AC, U+2122, U+2212, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/marvel/Marvel-Italic.ttf",
@@ -385,10 +406,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 193,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 195,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0022, U+0024, U+0026-005D, U+005F-007E, U+00A0-00A3, U+00A5-00A6, U+00A8-00A9, U+00AE, U+00B0, U+00B4-00B5, U+00B8, U+00BF-00C4, U+00C6-00CF, U+00D1-00E4, U+00E6-00EF, U+00F1-00FF, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02D9, U+02DC, U+03BC, U+2013-2014, U+201A, U+201C-201D, U+2022, U+2026, U+2044, U+20AC, U+2122, U+2212, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/marvel/Marvel-Regular.ttf",

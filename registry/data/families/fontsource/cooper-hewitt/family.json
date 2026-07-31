@@ -444,10 +444,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 711
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-Bold.otf",
@@ -461,10 +481,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 712
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-BoldItalic.otf",
@@ -478,10 +518,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 705
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-Book.otf",
@@ -495,10 +555,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 706
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-BookItalic.otf",
@@ -512,10 +592,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 713
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-Heavy.otf",
@@ -529,10 +629,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 569,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 564,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E540, U+E551-E552, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 714
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-HeavyItalic.otf",
@@ -546,10 +666,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 703
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-Light.otf",
@@ -563,10 +703,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 704
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-LightItalic.otf",
@@ -580,10 +740,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 707
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-Medium.otf",
@@ -597,10 +777,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 708
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-MediumItalic.otf",
@@ -614,10 +814,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 709
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-Semibold.otf",
@@ -631,10 +851,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 710
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-SemiboldItalic.otf",
@@ -648,10 +888,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 701
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-Thin.otf",
@@ -665,10 +925,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 566,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"sinf",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "1.000",
+				"glyphs": 561,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00B4, U+00B6-0148, U+014A-017E, U+0218-0219, U+0232-0233, U+0237, U+02C6-02C7, U+02D8-02DD, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E6A-1E6B, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2002-200B, U+2012-2016, U+2018-2022, U+2026, U+2030, U+2034, U+2039-203A, U+203D, U+2044, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+20BD, U+2116-2117, U+2120, U+2122, U+2153-215F, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260-2261, U+2264-2265, U+22A0, U+2302, U+25A0-25A1, U+25AA-25AB, U+25B2, U+25BA, U+25BC, U+25C4, U+25CB, U+25CF, U+25E2-25E5, U+25EF, U+2605, U+2612, U+263C, U+263E, U+2660, U+2663, U+2665-2666, U+267B-267D, U+26AA-26AB, U+3008-3009, U+E38C-E38D, U+E411-E416, U+E421-E42E, U+E441, U+E444, U+E451-E454, U+E461-E466, U+E471-E472, U+E481-E488, U+E491-E498, U+E511-E513, U+E571-E57F, U+E731, U+E740, U+E785, U+E935, U+E99B-E99C, U+F182-F185, U+F215-F219, U+F220-F222, U+F6C3, U+FB01-FB02, U+FF3F",
 				"weight": 702
 			},
 			"path": "sources/cooper-hewitt/files/CooperHewitt-ThinItalic.otf",

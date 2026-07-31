@@ -483,10 +483,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 430,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"frac",
+						"liga",
+						"ordn",
+						"sinf",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.000; ttfautohint (v0.8) -G 200 -r 50",
+				"glyphs": 446,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-017E, U+018F, U+0192, U+01C4-01CC, U+01EA-01EB, U+01F1-01F3, U+01FA-01FF, U+0218-021B, U+0237, U+0259, U+02BC, U+02C6-02C7, U+02D8-02DD, U+03BC, U+1E0C-1E0D, U+1E24-1E25, U+1E44-1E45, U+1E5A-1E5B, U+1E62-1E63, U+1E6C-1E6D, U+1E80-1E85, U+1E92-1E93, U+1EB8-1EB9, U+1EBC-1EBD, U+1ECA-1ECD, U+1EE4-1EE5, U+1EF2-1EF3, U+1EF8-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2153-2154, U+2212, U+2215, U+2219, U+2248, U+2260, U+2264-2265, U+F6C3, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/ranchers/Ranchers-Regular.ttf",

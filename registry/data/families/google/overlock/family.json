@@ -365,10 +365,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 260,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 281,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F724, U+F726, U+F730-F739, U+F7A2, U+F8FF, U+FB00-FB04, U+FB06",
 				"weight": 900
 			},
 			"path": "ofl/overlock/Overlock-Black.ttf",
@@ -382,10 +391,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 258,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 283,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F724, U+F730-F739, U+F7A2, U+FB00-FB04, U+FB06",
 				"weight": 900
 			},
 			"path": "ofl/overlock/Overlock-BlackItalic.ttf",
@@ -399,10 +417,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 259,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 280,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F724, U+F730-F739, U+F7A2, U+F8FF, U+FB00-FB04, U+FB06",
 				"weight": 700
 			},
 			"path": "ofl/overlock/Overlock-Bold.ttf",
@@ -416,10 +443,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 259,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 284,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F724, U+F730-F739, U+F7A2, U+F8FF, U+FB00-FB04, U+FB06",
 				"weight": 700
 			},
 			"path": "ofl/overlock/Overlock-BoldItalic.ttf",
@@ -433,10 +469,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 258,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 283,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F724, U+F730-F739, U+F7A2, U+FB00-FB04, U+FB06",
 				"weight": 400
 			},
 			"path": "ofl/overlock/Overlock-Italic.ttf",
@@ -450,10 +495,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 326,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 349,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F6F9-F6FA, U+F6FD, U+F6FF, U+F721, U+F724, U+F726, U+F730-F739, U+F73F, U+F761-F77A, U+F7A1-F7A2, U+F7B4, U+F7BF, U+F7E0-F7F6, U+F7F8-F7FF, U+F8FF, U+FB00-FB04, U+FB06",
 				"weight": 400
 			},
 			"path": "ofl/overlock/Overlock-Regular.ttf",

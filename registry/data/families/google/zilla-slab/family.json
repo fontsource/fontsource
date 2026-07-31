@@ -456,10 +456,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1056,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/zillaslab/ZillaSlab-Bold.ttf",
@@ -473,10 +502,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1055,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/zillaslab/ZillaSlab-BoldItalic.ttf",
@@ -490,10 +548,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1056,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/zillaslab/ZillaSlab-Italic.ttf",
@@ -507,10 +594,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 515,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1056,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 300
 			},
 			"path": "ofl/zillaslab/ZillaSlab-Light.ttf",
@@ -524,10 +640,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1055,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 300
 			},
 			"path": "ofl/zillaslab/ZillaSlab-LightItalic.ttf",
@@ -541,10 +686,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1056,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 500
 			},
 			"path": "ofl/zillaslab/ZillaSlab-Medium.ttf",
@@ -558,10 +732,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1055,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 500
 			},
 			"path": "ofl/zillaslab/ZillaSlab-MediumItalic.ttf",
@@ -575,10 +778,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1056,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/zillaslab/ZillaSlab-Regular.ttf",
@@ -592,10 +824,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1056,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 600
 			},
 			"path": "ofl/zillaslab/ZillaSlab-SemiBold.ttf",
@@ -609,10 +870,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 513,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"crcy",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"ornm",
+						"pnum",
+						"sinf",
+						"smcp",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.1; 2017; ttfautohint (v1.6)",
+				"glyphs": 1056,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0137, U+0139-017E, U+018F, U+0192, U+01C4-01CC, U+01D3-01D4, U+01E2-01E3, U+01F1-01F3, U+01FC-01FF, U+0218-021B, U+0232-0233, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0323, U+0394, U+03A3, U+03C0, U+1E46-1E47, U+1E62-1E63, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+2004, U+2007, U+2009-200B, U+2012-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-208E, U+2090-2093, U+2095-209C, U+20A1-20AE, U+20B1, U+20B4, U+20B9-20BA, U+20BD, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24CA, U+25B2, U+25B6, U+25B8, U+25BA, U+25BC, U+25C0, U+25C2, U+25C4, U+25CA, U+2610-2611, U+261A-261F, U+267E, U+2713, U+301A-301B, U+F8FF, U+FB00-FB04",
 				"weight": 600
 			},
 			"path": "ofl/zillaslab/ZillaSlab-SemiBoldItalic.ttf",

@@ -34,10 +34,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 741,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 900
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Black.ttf",
@@ -51,10 +67,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 725,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 700
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Bold.ttf",
@@ -68,10 +100,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 741,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 800
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-ExtraBold.ttf",
@@ -85,10 +133,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 741,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 200
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-ExtraLight.ttf",
@@ -102,10 +166,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 725,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 300
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Light.ttf",
@@ -119,10 +199,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 741,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 500
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Medium.ttf",
@@ -136,10 +232,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 725,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 400
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Regular.ttf",
@@ -153,10 +265,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 741,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 600
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-SemiBold.ttf",
@@ -170,10 +298,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 239,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v1.8.3) -l 8 -r 50 -G 200 -x 14 -D mymr -f none -a qsq -X \"\"",
+				"glyphs": 741,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+003F, U+00A0, U+1000-109F, U+200B-200D, U+2018-2019, U+201C-201D, U+2026, U+25CC, U+A92E, U+A9E0-A9FE, U+AA60-AA7F, U+FE00",
 				"weight": 100
 			},
 			"path": "ofl/notoserifmyanmar/NotoSerifMyanmar-Thin.ttf",

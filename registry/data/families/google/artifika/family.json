@@ -356,10 +356,20 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 237,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mkmk"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.102; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 239,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0327-0328, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000",
 				"weight": 400
 			},
 			"path": "ofl/artifika/Artifika-Regular.ttf",

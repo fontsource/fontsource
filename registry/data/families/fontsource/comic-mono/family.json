@@ -214,10 +214,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 103,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.1.1",
+				"glyphs": 106,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+2013-2014, U+2018-201A, U+201C-201D, U+2022",
 				"weight": 400
 			},
 			"path": "sources/comic-mono/files/ComicMono-Bold.ttf",
@@ -231,10 +238,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 103,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.1.1",
+				"glyphs": 106,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+2013-2014, U+2018-201A, U+201C-201D, U+2022",
 				"weight": 400
 			},
 			"path": "sources/comic-mono/files/ComicMono.ttf",

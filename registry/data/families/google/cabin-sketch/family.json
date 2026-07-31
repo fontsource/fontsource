@@ -364,10 +364,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 223,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.100",
+				"glyphs": 224,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0237, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122",
 				"weight": 700
 			},
 			"path": "ofl/cabinsketch/CabinSketch-Bold.ttf",
@@ -381,10 +395,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 223,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.100",
+				"glyphs": 224,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0237, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122",
 				"weight": 400
 			},
 			"path": "ofl/cabinsketch/CabinSketch-Regular.ttf",

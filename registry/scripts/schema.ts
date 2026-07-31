@@ -24,6 +24,11 @@ const unicodeScalarSchema = z
 	.refine((value) => value < 0xd800 || value > 0xdfff, {
 		message: 'must not be a Unicode surrogate',
 	});
+const cssUnicodeRangeSchema = z
+	.string()
+	.regex(
+		/^U\+[0-9A-F]{4,6}(?:-[0-9A-F]{4,6})?(?:, U\+[0-9A-F]{4,6}(?:-[0-9A-F]{4,6})?)*$/,
+	);
 export const fontClassificationSchema = z.enum([
 	'serif',
 	'sans-serif',
@@ -106,6 +111,7 @@ export const upstreamsSchema = z.strictObject({
 });
 
 export const replacementRegistrySchema = z.record(idSchema, idSchema);
+export const familyTagsSchema = z.record(tagIdSchema, z.array(idSchema).min(1));
 
 const archivedFileSchema = z.strictObject({
 	path: sourcePathSchema,
@@ -153,9 +159,16 @@ const weightSchema = z.union([
 
 const sourceInspectionSchema = z.strictObject({
 	fontVersion: z.string().min(1).nullable(),
+	glyphs: z.number().int().positive(),
 	weight: weightSchema,
 	style: z.enum(['normal', 'italic', 'oblique']),
 	axes: z.array(axisSchema),
+	codepoints: z.number().int().positive(),
+	unicodeRange: cssUnicodeRangeSchema,
+	features: z.strictObject({
+		gsub: z.array(z.string().length(4)),
+		gpos: z.array(z.string().length(4)),
+	}),
 	outline: z.enum(['glyf', 'cff', 'cff2', 'bitmap']),
 	colorTables: z.array(z.string().length(4)),
 });

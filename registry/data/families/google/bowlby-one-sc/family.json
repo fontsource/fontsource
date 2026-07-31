@@ -393,10 +393,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 369,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.2",
+				"glyphs": 375,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0102-0110, U+0118-0121, U+0125, U+0130-0131, U+0134-0135, U+0139-013A, U+013D-013E, U+0141-0144, U+0147-0148, U+0150-0155, U+0158-0165, U+016C-0171, U+0178-017E, U+0192, U+0200-021B, U+02C6-02C7, U+02D8-02DD, U+030F, U+0311, U+0326, U+03A9, U+03C0, U+2000-200A, U+2010-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+202F-2030, U+2039-203A, U+2044, U+205F, U+2074, U+20AC, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+272E-272F, U+278A-2793, U+E000, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/bowlbyonesc/BowlbyOneSC-Regular.ttf",

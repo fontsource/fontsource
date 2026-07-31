@@ -401,10 +401,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 295,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 307,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A1, U+00A3, U+00A8, U+00AB, U+00AF, U+00B1, U+00B4, U+00B7-00B8, U+00BB, U+00BF-00F6, U+00F8-0101, U+0106-010D, U+0110, U+0112-0113, U+0116-0117, U+011A-011D, U+0120-0121, U+0124-0125, U+0128-012B, U+0130-0131, U+0136-0137, U+0139-013C, U+0143-0148, U+014C-014D, U+0153-0165, U+0168-016B, U+016E-016F, U+0174-017E, U+01CD-01D4, U+01E2-01E3, U+01E8-01E9, U+01F4-01F5, U+01F8-01F9, U+01FC-01FF, U+0228-0229, U+0243, U+02BC, U+02C6-02C7, U+02DA, U+02DC, U+061F, U+2013-2014, U+2018-201F, U+2026, U+2039-203A, U+203D, U+20A8, U+20AC, U+2212",
 				"weight": 700
 			},
 			"path": "sources/karmilla/files/Karmilla-Bold-015.ttf",
@@ -418,10 +425,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 360,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 372,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A1, U+00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00AF, U+00B4, U+00B8, U+00BB, U+00BF-00F6, U+00F8-010F, U+0112-0122, U+0124-0125, U+0128-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014C-014F, U+0152-0165, U+0168-016F, U+0172-017E, U+0181, U+018A, U+018E, U+01CD-01D4, U+01DD, U+01E2-01E3, U+01E6-01ED, U+01F8-01F9, U+01FC-01FF, U+0218-021B, U+021E-021F, U+0226-0229, U+0232-0233, U+0237, U+0243, U+0253, U+0257, U+02BC, U+02C6-02C7, U+02D8, U+02DA-02DC, U+061F, U+1E62-1E63, U+1EA0-1EA1, U+1EB8-1EB9, U+1ECA-1ECD, U+1EE4-1EE5, U+2013-2014, U+2018-201F, U+2026, U+2039-203A, U+203D, U+20AC, U+20B9, U+2212",
 				"weight": 400
 			},
 			"path": "sources/karmilla/files/Karmilla-Regular-015.ttf",

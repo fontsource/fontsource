@@ -29,10 +29,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 134,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blws",
+						"half",
+						"haln"
+					]
+				},
 				"fontVersion": "Version 2.5.0",
+				"glyphs": 247,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000C, U+0020-0040, U+005B-0060, U+007B-007E, U+00A2, U+00D7, U+00F7, U+0964-0965, U+0B82-0B83, U+0B85-0B8A, U+0B8E-0B90, U+0B92-0B95, U+0B99-0B9A, U+0B9C, U+0B9E-0B9F, U+0BA3-0BA4, U+0BA8-0BAA, U+0BAE-0BB9, U+0BBE-0BC2, U+0BC6-0BC8, U+0BCA-0BCD, U+0BD0, U+0BD7, U+0BE6-0BFA, U+200C-200D, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 400
 			},
 			"path": "ofl/lohittamil/Lohit-Tamil.ttf",

@@ -395,10 +395,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 384,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"pref",
+						"pres",
+						"pstf",
+						"psts",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 1126,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0, U+00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AD-00B0, U+00B2-00B4, U+00B6, U+00B8-00B9, U+00BB, U+00BF-0101, U+0106-010E, U+0112-0113, U+0116-0117, U+011A-011D, U+0120-0121, U+0124-0125, U+0128-012B, U+0131, U+0143-0144, U+0147-0148, U+014C-014D, U+0152-0155, U+0158-0161, U+0168-016B, U+016E-016F, U+0174-0177, U+017A-017E, U+01D2-01D4, U+01FC-01FD, U+0D00-0D03, U+0D05-0D0C, U+0D0E-0D10, U+0D12-0D44, U+0D46-0D48, U+0D4A-0D4F, U+0D54-0D63, U+0D66-0D7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2070, U+2074-2079, U+20AC, U+20B9, U+25CC",
 				"weight": 700
 			},
 			"path": "ofl/gayathri/Gayathri-Bold.ttf",
@@ -412,10 +434,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 384,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"pref",
+						"pres",
+						"pstf",
+						"psts",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 1126,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0, U+00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AD-00B0, U+00B2-00B4, U+00B6, U+00B8-00B9, U+00BB, U+00BF-0101, U+0106-010E, U+0112-0113, U+0116-0117, U+011A-011D, U+0120-0121, U+0124-0125, U+0128-012B, U+0131, U+0143-0144, U+0147-0148, U+014C-014D, U+0152-0155, U+0158-0161, U+0168-016B, U+016E-016F, U+0174-0177, U+017A-017E, U+01D2-01D4, U+01FC-01FD, U+0D00-0D03, U+0D05-0D0C, U+0D0E-0D10, U+0D12-0D44, U+0D46-0D48, U+0D4A-0D4F, U+0D54-0D63, U+0D66-0D7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2070, U+2074-2079, U+20AC, U+20B9, U+25CC",
 				"weight": 400
 			},
 			"path": "ofl/gayathri/Gayathri-Regular.ttf",
@@ -429,10 +473,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 384,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"pref",
+						"pres",
+						"pstf",
+						"psts",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 1126,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0, U+00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AD-00B0, U+00B2-00B4, U+00B6, U+00B8-00B9, U+00BB, U+00BF-0101, U+0106-010E, U+0112-0113, U+0116-0117, U+011A-011D, U+0120-0121, U+0124-0125, U+0128-012B, U+0131, U+0143-0144, U+0147-0148, U+014C-014D, U+0152-0155, U+0158-0161, U+0168-016B, U+016E-016F, U+0174-0177, U+017A-017E, U+01D2-01D4, U+01FC-01FD, U+0D00-0D03, U+0D05-0D0C, U+0D0E-0D10, U+0D12-0D44, U+0D46-0D48, U+0D4A-0D4F, U+0D54-0D63, U+0D66-0D7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2070, U+2074-2079, U+20AC, U+20B9, U+25CC",
 				"weight": 100
 			},
 			"path": "ofl/gayathri/Gayathri-Thin.ttf",

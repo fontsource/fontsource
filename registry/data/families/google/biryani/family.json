@@ -463,10 +463,40 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 475,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"cpsp",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"ccmp",
+						"cjct",
+						"frac",
+						"half",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+				"glyphs": 878,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007F, U+00A0-00AC, U+00AE-00B4, U+00B6-00D6, U+00D8-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0326, U+0901-094E, U+0950-0954, U+0956-0974, U+0976-0977, U+0979-097F, U+1E80-1E85, U+1EF2-1EF3, U+200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "ofl/biryani/Biryani-Black.ttf",
@@ -480,10 +510,40 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 475,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"cpsp",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"ccmp",
+						"cjct",
+						"frac",
+						"half",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+				"glyphs": 878,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007F, U+00A0-00AC, U+00AE-00B4, U+00B6-00D6, U+00D8-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0326, U+0901-094E, U+0950-0954, U+0956-0974, U+0976-0977, U+0979-097F, U+1E80-1E85, U+1EF2-1EF3, U+200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/biryani/Biryani-Bold.ttf",
@@ -497,10 +557,40 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 475,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"cpsp",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"ccmp",
+						"cjct",
+						"frac",
+						"half",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+				"glyphs": 878,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007F, U+00A0-00AC, U+00AE-00B4, U+00B6-00D6, U+00D8-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0326, U+0901-094E, U+0950-0954, U+0956-0974, U+0976-0977, U+0979-097F, U+1E80-1E85, U+1EF2-1EF3, U+200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 800
 			},
 			"path": "ofl/biryani/Biryani-ExtraBold.ttf",
@@ -514,10 +604,40 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 475,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"cpsp",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"ccmp",
+						"cjct",
+						"frac",
+						"half",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+				"glyphs": 868,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007F, U+00A0-00AC, U+00AE-00B4, U+00B6-00D6, U+00D8-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0326, U+0901-094E, U+0950-0954, U+0956-0974, U+0976-0977, U+0979-097F, U+1E80-1E85, U+1EF2-1EF3, U+200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 275
 			},
 			"path": "ofl/biryani/Biryani-ExtraLight.ttf",
@@ -531,10 +651,40 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 475,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"cpsp",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"ccmp",
+						"cjct",
+						"frac",
+						"half",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+				"glyphs": 878,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007F, U+00A0-00AC, U+00AE-00B4, U+00B6-00D6, U+00D8-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0326, U+0901-094E, U+0950-0954, U+0956-0974, U+0976-0977, U+0979-097F, U+1E80-1E85, U+1EF2-1EF3, U+200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "ofl/biryani/Biryani-Light.ttf",
@@ -548,10 +698,40 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 475,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"cpsp",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"ccmp",
+						"cjct",
+						"frac",
+						"half",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+				"glyphs": 878,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007F, U+00A0-00AC, U+00AE-00B4, U+00B6-00D6, U+00D8-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0326, U+0901-094E, U+0950-0954, U+0956-0974, U+0976-0977, U+0979-097F, U+1E80-1E85, U+1EF2-1EF3, U+200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/biryani/Biryani-Regular.ttf",
@@ -565,10 +745,40 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 475,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"cpsp",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"ccmp",
+						"cjct",
+						"frac",
+						"half",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.004; ttfautohint (v1.1) -l 5 -r 5 -G 72 -x 0 -D latn -f none -w gGD -W -c",
+				"glyphs": 878,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007F, U+00A0-00AC, U+00AE-00B4, U+00B6-00D6, U+00D8-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0326, U+0901-094E, U+0950-0954, U+0956-0974, U+0976-0977, U+0979-097F, U+1E80-1E85, U+1EF2-1EF3, U+200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/biryani/Biryani-SemiBold.ttf",

@@ -408,10 +408,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 900
 			},
 			"path": "sources/metropolis/files/Metropolis-Black.ttf",
@@ -425,10 +438,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 900
 			},
 			"path": "sources/metropolis/files/Metropolis-BlackItalic.ttf",
@@ -442,10 +468,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 700
 			},
 			"path": "sources/metropolis/files/Metropolis-Bold.ttf",
@@ -459,10 +498,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 700
 			},
 			"path": "sources/metropolis/files/Metropolis-BoldItalic.ttf",
@@ -476,10 +528,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 800
 			},
 			"path": "sources/metropolis/files/Metropolis-ExtraBold.ttf",
@@ -493,10 +558,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 800
 			},
 			"path": "sources/metropolis/files/Metropolis-ExtraBoldItalic.ttf",
@@ -510,10 +588,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 200
 			},
 			"path": "sources/metropolis/files/Metropolis-ExtraLight.ttf",
@@ -527,10 +618,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 200
 			},
 			"path": "sources/metropolis/files/Metropolis-ExtraLightItalic.ttf",
@@ -544,10 +648,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 300
 			},
 			"path": "sources/metropolis/files/Metropolis-Light.ttf",
@@ -561,10 +678,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 300
 			},
 			"path": "sources/metropolis/files/Metropolis-LightItalic.ttf",
@@ -578,10 +708,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 500
 			},
 			"path": "sources/metropolis/files/Metropolis-Medium.ttf",
@@ -595,10 +738,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 500
 			},
 			"path": "sources/metropolis/files/Metropolis-MediumItalic.ttf",
@@ -612,10 +768,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 400
 			},
 			"path": "sources/metropolis/files/Metropolis-Regular.ttf",
@@ -629,10 +798,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 400
 			},
 			"path": "sources/metropolis/files/Metropolis-RegularItalic.ttf",
@@ -646,10 +828,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 600
 			},
 			"path": "sources/metropolis/files/Metropolis-SemiBold.ttf",
@@ -663,10 +858,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 600
 			},
 			"path": "sources/metropolis/files/Metropolis-SemiBoldItalic.ttf",
@@ -680,10 +888,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 100
 			},
 			"path": "sources/metropolis/files/Metropolis-Thin.ttf",
@@ -697,10 +918,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 307,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 11.000",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE-00B0, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013A, U+013D-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0326, U+1E80-1E85, U+1EB8-1EB9, U+1EBC-1EBD, U+1EF2-1EF3, U+2002-2006, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+202F-2030, U+2039-203A, U+20AC, U+2122, U+2212",
 				"weight": 100
 			},
 			"path": "sources/metropolis/files/Metropolis-ThinItalic.ttf",

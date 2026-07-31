@@ -34,10 +34,38 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 150,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"calt",
+						"cjct",
+						"haln",
+						"nukt",
+						"pres",
+						"pstf",
+						"psts",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 513,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-0023, U+0025, U+0027-002C, U+002E-003F, U+005B-005F, U+007B-007E, U+00A0, U+00AD, U+00D7, U+00F7, U+0964-0965, U+0B01-0B03, U+0B05-0B0C, U+0B0F-0B10, U+0B13-0B28, U+0B2A-0B30, U+0B32-0B33, U+0B35-0B39, U+0B3C-0B44, U+0B47-0B48, U+0B4B-0B4D, U+0B56-0B57, U+0B5C-0B5D, U+0B5F-0B63, U+0B66-0B77, U+200B-200D, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 900
 			},
 			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Black.ttf",
@@ -51,10 +79,38 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 150,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"calt",
+						"cjct",
+						"haln",
+						"nukt",
+						"pres",
+						"pstf",
+						"psts",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 513,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-0023, U+0025, U+0027-002C, U+002E-003F, U+005B-005F, U+007B-007E, U+00A0, U+00AD, U+00D7, U+00F7, U+0964-0965, U+0B01-0B03, U+0B05-0B0C, U+0B0F-0B10, U+0B13-0B28, U+0B2A-0B30, U+0B32-0B33, U+0B35-0B39, U+0B3C-0B44, U+0B47-0B48, U+0B4B-0B4D, U+0B56-0B57, U+0B5C-0B5D, U+0B5F-0B63, U+0B66-0B77, U+200B-200D, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 700
 			},
 			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Bold.ttf",
@@ -68,10 +124,38 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 150,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"calt",
+						"cjct",
+						"haln",
+						"nukt",
+						"pres",
+						"pstf",
+						"psts",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 513,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-0023, U+0025, U+0027-002C, U+002E-003F, U+005B-005F, U+007B-007E, U+00A0, U+00AD, U+00D7, U+00F7, U+0964-0965, U+0B01-0B03, U+0B05-0B0C, U+0B0F-0B10, U+0B13-0B28, U+0B2A-0B30, U+0B32-0B33, U+0B35-0B39, U+0B3C-0B44, U+0B47-0B48, U+0B4B-0B4D, U+0B56-0B57, U+0B5C-0B5D, U+0B5F-0B63, U+0B66-0B77, U+200B-200D, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 400
 			},
 			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Regular.ttf",
@@ -85,10 +169,38 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 150,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"calt",
+						"cjct",
+						"haln",
+						"nukt",
+						"pres",
+						"pstf",
+						"psts",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 513,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-0023, U+0025, U+0027-002C, U+002E-003F, U+005B-005F, U+007B-007E, U+00A0, U+00AD, U+00D7, U+00F7, U+0964-0965, U+0B01-0B03, U+0B05-0B0C, U+0B0F-0B10, U+0B13-0B28, U+0B2A-0B30, U+0B32-0B33, U+0B35-0B39, U+0B3C-0B44, U+0B47-0B48, U+0B4B-0B4D, U+0B56-0B57, U+0B5C-0B5D, U+0B5F-0B63, U+0B66-0B77, U+200B-200D, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 100
 			},
 			"path": "ofl/notosansoriyaui/NotoSansOriyaUI-Thin.ttf",

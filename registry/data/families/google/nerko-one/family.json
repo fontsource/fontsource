@@ -453,10 +453,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 447,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.101",
+				"glyphs": 440,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+0096, U+00A0-017E, U+018E-018F, U+0192, U+01C4-01CC, U+01EA-01EB, U+01F1-01F5, U+01FA-021B, U+0259, U+02C6-02C7, U+02C9, U+02D8, U+02DA, U+02DC, U+03A9, U+1E25, U+1E44-1E45, U+1E5A-1E5B, U+1E62-1E63, U+1E6C-1E6D, U+1E80-1E85, U+1E92-1E93, U+1EC8-1ECD, U+1EE4-1EE5, U+1EF2-1EF3, U+1EF8-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2023, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2113, U+2122, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/nerkoone/NerkoOne-Regular.ttf",

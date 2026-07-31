@@ -452,10 +452,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"onum",
+						"ordn",
+						"pnum",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-017E, U+018F, U+0192, U+01B5-01B6, U+01FC-01FF, U+0218-021B, U+0237, U+0259, U+02BB, U+02C6-02C7, U+02D8-02DD, U+0312, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1E9E, U+1EF2-1EF3, U+2007-2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+20BA, U+2120, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2245, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "ofl/blinker/Blinker-Black.ttf",
@@ -469,10 +491,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"onum",
+						"ordn",
+						"pnum",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-017E, U+018F, U+0192, U+01B5-01B6, U+01FC-01FF, U+0218-021B, U+0237, U+0259, U+02BB, U+02C6-02C7, U+02D8-02DD, U+0312, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1E9E, U+1EF2-1EF3, U+2007-2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+20BA, U+2120, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2245, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/blinker/Blinker-Bold.ttf",
@@ -486,10 +530,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"onum",
+						"ordn",
+						"pnum",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-017E, U+018F, U+0192, U+01B5-01B6, U+01FC-01FF, U+0218-021B, U+0237, U+0259, U+02BB, U+02C6-02C7, U+02D8-02DD, U+0312, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1E9E, U+1EF2-1EF3, U+2007-2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+20BA, U+2120, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2245, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+FB01-FB02",
 				"weight": 800
 			},
 			"path": "ofl/blinker/Blinker-ExtraBold.ttf",
@@ -503,10 +569,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"onum",
+						"ordn",
+						"pnum",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-017E, U+018F, U+0192, U+01B5-01B6, U+01FC-01FF, U+0218-021B, U+0237, U+0259, U+02BB, U+02C6-02C7, U+02D8-02DD, U+0312, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1E9E, U+1EF2-1EF3, U+2007-2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+20BA, U+2120, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2245, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+FB01-FB02",
 				"weight": 200
 			},
 			"path": "ofl/blinker/Blinker-ExtraLight.ttf",
@@ -520,10 +608,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"onum",
+						"ordn",
+						"pnum",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.016;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-017E, U+018F, U+0192, U+01B5-01B6, U+01FC-01FF, U+0218-021B, U+0237, U+0259, U+02BB, U+02C6-02C7, U+02D8-02DD, U+0312, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1E9E, U+1EF2-1EF3, U+2007-2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+20BA, U+2120, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2245, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "ofl/blinker/Blinker-Light.ttf",
@@ -537,10 +647,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"onum",
+						"ordn",
+						"pnum",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-017E, U+018F, U+0192, U+01B5-01B6, U+01FC-01FF, U+0218-021B, U+0237, U+0259, U+02BB, U+02C6-02C7, U+02D8-02DD, U+0312, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1E9E, U+1EF2-1EF3, U+2007-2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+20BA, U+2120, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2245, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/blinker/Blinker-Regular.ttf",
@@ -554,10 +686,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"onum",
+						"ordn",
+						"pnum",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-017E, U+018F, U+0192, U+01B5-01B6, U+01FC-01FF, U+0218-021B, U+0237, U+0259, U+02BB, U+02C6-02C7, U+02D8-02DD, U+0312, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1E9E, U+1EF2-1EF3, U+2007-2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+20BA, U+2120, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2245, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/blinker/Blinker-SemiBold.ttf",
@@ -571,10 +725,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"onum",
+						"ordn",
+						"pnum",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.015;PS 1.15;hotconv 1.0.88;makeotf.lib2.5.647800",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-017E, U+018F, U+0192, U+01B5-01B6, U+01FC-01FF, U+0218-021B, U+0237, U+0259, U+02BB, U+02C6-02C7, U+02D8-02DD, U+0312, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+1E8A-1E8B, U+1E9E, U+1EF2-1EF3, U+2007-2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+20BA, U+2120, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2245, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+FB01-FB02",
 				"weight": 100
 			},
 			"path": "ofl/blinker/Blinker-Thin.ttf",

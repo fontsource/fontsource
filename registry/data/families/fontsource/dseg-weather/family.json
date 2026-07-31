@@ -26,10 +26,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 20,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.3",
+				"glyphs": 23,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+002F-003B, U+0041-0043, U+0061-0063",
 				"weight": 400
 			},
 			"path": "sources/dseg-weather/files/DSEGWeather.ttf",

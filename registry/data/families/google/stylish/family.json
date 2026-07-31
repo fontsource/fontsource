@@ -213,10 +213,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 11369,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.64",
+				"glyphs": 11370,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-005F, U+0061-007E, U+00A9, U+00D7, U+00F7, U+2018-2019, U+201C-201D, U+20A9, U+3131-3163, U+3165-318E, U+AC00-D7A3",
 				"weight": 400
 			},
 			"path": "ofl/stylish/Stylish-Regular.ttf",

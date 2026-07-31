@@ -359,10 +359,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 277,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"frac",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+				"glyphs": 280,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+05B0-05BC, U+05BE-05BF, U+05C1-05C2, U+05C7, U+05D0-05EA, U+05F3-05F4, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AA, U+20AC, U+20BF, U+2122, U+2190-2193, U+2196-2199, U+220F, U+2212, U+2215, U+221A, U+2260, U+FB2A-FB2B",
 				"weight": 700
 			},
 			"path": "ofl/karantina/Karantina-Bold.ttf",
@@ -376,10 +392,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 277,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"frac",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+				"glyphs": 280,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+05B0-05BC, U+05BE-05BF, U+05C1-05C2, U+05C7, U+05D0-05EA, U+05F3-05F4, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AA, U+20AC, U+20BF, U+2122, U+2190-2193, U+2196-2199, U+220F, U+2212, U+2215, U+221A, U+2260, U+FB2A-FB2B",
 				"weight": 300
 			},
 			"path": "ofl/karantina/Karantina-Light.ttf",
@@ -393,10 +425,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 277,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"frac",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+				"glyphs": 280,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+05B0-05BC, U+05BE-05BF, U+05C1-05C2, U+05C7, U+05D0-05EA, U+05F3-05F4, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AA, U+20AC, U+20BF, U+2122, U+2190-2193, U+2196-2199, U+220F, U+2212, U+2215, U+221A, U+2260, U+FB2A-FB2B",
 				"weight": 400
 			},
 			"path": "ofl/karantina/Karantina-Regular.ttf",

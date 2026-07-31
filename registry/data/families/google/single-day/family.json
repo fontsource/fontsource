@@ -212,10 +212,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 11465,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"fwid"
+					]
+				},
 				"fontVersion": "Version 1.00",
+				"glyphs": 12127,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0009, U+000D, U+0020-007E, U+2016, U+2018-2019, U+201C-201D, U+2026, U+20A9, U+3131-3163, U+3165-318E, U+AC00-D7A3, U+FF01-FF5E, U+FFE6",
 				"weight": 400
 			},
 			"path": "ofl/singleday/SingleDay-Regular.ttf",

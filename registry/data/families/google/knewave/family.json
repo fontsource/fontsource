@@ -363,10 +363,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 208,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 210,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A8-00A9, U+00AB, U+00AE, U+00B0, U+00B4, U+00B7-00B8, U+00BA-00BB, U+00BF-00F6, U+00F8-00FF, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212",
 				"weight": 400
 			},
 			"path": "ofl/knewave/Knewave-Regular.ttf",

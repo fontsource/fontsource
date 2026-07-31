@@ -433,10 +433,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 371,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 373,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0002, U+0009-000A, U+000D, U+0020-007E, U+00A0-00AC, U+00AE, U+00B0-0107, U+010A-011B, U+011E-0148, U+014A-0154, U+0156-0173, U+0176-017E, U+0192, U+01C4-01C5, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+03A9, U+03BC, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F8FF, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/monoton/Monoton-Regular.ttf",

@@ -434,13 +434,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 410,
 				"colorTables": [
 					"COLR",
 					"CPAL"
 				],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"locl",
+						"salt",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss05",
+						"ss06",
+						"ss07"
+					]
+				},
 				"fontVersion": "Version 1.000;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900",
+				"glyphs": 868,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BA-00BB, U+00BF-00DE, U+00E0-0130, U+0132-0137, U+0139-0148, U+014A-017E, U+0192, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+2044, U+20AC, U+2117, U+2122, U+2212, U+2248, U+2260, U+2264-2265, U+E100-E135, U+E138-E13B",
 				"weight": 400
 			},
 			"path": "ofl/bungeecolor/BungeeColor-Regular.ttf",

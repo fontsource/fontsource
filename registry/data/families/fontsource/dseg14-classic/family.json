@@ -203,10 +203,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 93,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.46",
+				"glyphs": 96,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0022, U+0024-003A, U+003C-005A, U+005C, U+005E-007A, U+007C, U+007E, U+00A5-00A6, U+00B0-00B1",
 				"weight": 700
 			},
 			"path": "sources/dseg14-classic/files/DSEG14Classic-Bold.ttf",
@@ -220,10 +227,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 93,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.46",
+				"glyphs": 96,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-0022, U+0024-003A, U+003C-005A, U+005C, U+005E-007A, U+007C, U+007E, U+00A5-00A6, U+00B0-00B1",
 				"weight": 700
 			},
 			"path": "sources/dseg14-classic/files/DSEG14Classic-BoldItalic.ttf",
@@ -237,10 +251,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 93,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.46",
+				"glyphs": 96,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-0022, U+0024-003A, U+003C-005A, U+005C, U+005E-007A, U+007C, U+007E, U+00A5-00A6, U+00B0-00B1",
 				"weight": 400
 			},
 			"path": "sources/dseg14-classic/files/DSEG14Classic-Italic.ttf",
@@ -254,10 +275,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 93,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.46",
+				"glyphs": 96,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0022, U+0024-003A, U+003C-005A, U+005C, U+005E-007A, U+007C, U+007E, U+00A5-00A6, U+00B0-00B1",
 				"weight": 300
 			},
 			"path": "sources/dseg14-classic/files/DSEG14Classic-Light.ttf",
@@ -271,10 +299,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 93,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.46",
+				"glyphs": 96,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-0022, U+0024-003A, U+003C-005A, U+005C, U+005E-007A, U+007C, U+007E, U+00A5-00A6, U+00B0-00B1",
 				"weight": 300
 			},
 			"path": "sources/dseg14-classic/files/DSEG14Classic-LightItalic.ttf",
@@ -288,10 +323,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 93,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.46",
+				"glyphs": 96,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0022, U+0024-003A, U+003C-005A, U+005C, U+005E-007A, U+007C, U+007E, U+00A5-00A6, U+00B0-00B1",
 				"weight": 400
 			},
 			"path": "sources/dseg14-classic/files/DSEG14Classic-Regular.ttf",

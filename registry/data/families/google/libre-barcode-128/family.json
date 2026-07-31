@@ -204,10 +204,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 113,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"calt"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.3)",
+				"glyphs": 221,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0, U+00C2-00CE, U+200B-200C",
 				"weight": 400
 			},
 			"path": "ofl/librebarcode128/LibreBarcode128-Regular.ttf",

@@ -451,10 +451,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1328,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.2",
+				"glyphs": 1331,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0192, U+01C4-01CC, U+01E4-01E5, U+01F1-01F3, U+01FA-021B, U+0237, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0308, U+0370-0377, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF, U+1E0C-1E0F, U+1E24-1E25, U+1E36-1E37, U+1E80-1E89, U+1E9E, U+1EF2-1EF5, U+1EF8-1EF9, U+2010-2027, U+2030-205E, U+2070-2071, U+2074-208E, U+2090-2094, U+20A0-20B5, U+20B9, U+2100-214B, U+214D-214E, U+2153-2184, U+2190-22FF, U+2302, U+2308-230B, U+2310, U+2319, U+231C-2323, U+2329-232A, U+2335, U+239B-23AE, U+23B0-23B7, U+25A0-25A1, U+25A3, U+25AA-25CC, U+25CF-25D7, U+25E0-25FF, U+2605-2606, U+26AA-26AB, U+29EB, U+2B12-2B1C, U+2B1F-2B28, U+2B2C-2B2F, U+2B53-2B54, U+2C75-2C76, U+FB00-FB06",
 				"weight": 400
 			},
 			"path": "ofl/novamono/NovaMono.ttf",

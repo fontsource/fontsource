@@ -386,10 +386,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 338,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"kern"
+					],
+					"gsub": [
+						"akhn",
+						"blwf",
+						"half",
+						"init",
+						"nukt",
+						"pres",
+						"pstf",
+						"psts",
+						"rphf",
+						"ss01"
+					]
+				},
 				"fontVersion": "Version 1.261;PS 1.261;hotconv 1.0.86;makeotf.lib2.5.63406",
+				"glyphs": 655,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A1-00AE, U+00B0-00B4, U+00B6-00FF, U+0104-0107, U+010C-010D, U+0118-0119, U+0131, U+0141-0144, U+0152-0153, U+015A-015B, U+0160-0161, U+0178-017E, U+0192, U+02C6-02C7, U+02DA-02DC, U+0964-0965, U+0981-0983, U+0985-098C, U+098F-0990, U+0993-09A8, U+09AA-09B0, U+09B2, U+09B6-09B9, U+09BC-09C4, U+09C7-09C8, U+09CB-09CE, U+09D7, U+09DC-09DD, U+09DF-09E3, U+09E6-09FA, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+20B9, U+2122, U+25CC, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/galada/Galada-Regular.ttf",

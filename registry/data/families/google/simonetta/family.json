@@ -358,10 +358,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 224,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1.004",
+				"glyphs": 237,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02DA, U+02DC, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+2044, U+2074, U+20AC, U+2212, U+FB00-FB04",
 				"weight": 900
 			},
 			"path": "ofl/simonetta/Simonetta-Black.ttf",
@@ -375,10 +389,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 224,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1.004",
+				"glyphs": 237,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02DA, U+02DC, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+2044, U+2074, U+20AC, U+2212, U+FB00-FB04",
 				"weight": 900
 			},
 			"path": "ofl/simonetta/Simonetta-BlackItalic.ttf",
@@ -392,10 +420,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 220,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.004",
+				"glyphs": 228,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0178, U+02C6-02C7, U+02DA, U+02DC, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+2044, U+2074, U+20AC, U+2212, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/simonetta/Simonetta-Italic.ttf",
@@ -409,10 +446,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 220,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.004",
+				"glyphs": 228,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0178, U+02C6-02C7, U+02DA, U+02DC, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+2044, U+2074, U+20AC, U+2212, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/simonetta/Simonetta-Regular.ttf",

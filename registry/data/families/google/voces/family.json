@@ -479,10 +479,27 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 669,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.100",
+				"glyphs": 681,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01EB, U+01F0, U+01FA-01FF, U+0218-021B, U+0237, U+0250-025D, U+025F-0268, U+026A-0296, U+0298-02AD, U+02B0-02EE, U+02F3-0301, U+0303-033F, U+0343-034E, U+0350-0362, U+03B2, U+03B8, U+03C0, U+03C7, U+1E00-1E01, U+1E3E-1E3F, U+1E80-1E85, U+1EBD, U+1EF2-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203E, U+2044, U+2070, U+2074-2079, U+207F, U+20A3-20A4, U+20A7, U+20AB-20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/voces/Voces-Regular.ttf",

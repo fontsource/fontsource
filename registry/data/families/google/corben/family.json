@@ -414,10 +414,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 380,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"onum",
+						"smcp"
+					]
+				},
 				"fontVersion": "Version 1.101; ttfautohint (v1.6)",
+				"glyphs": 552,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0113, U+0115-012B, U+012D-0131, U+0134-013E, U+0141-0148, U+014A-014D, U+014F-017E, U+0192, U+01E7, U+01EA-01EB, U+01F5, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+03BC, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E45, U+1E56-1E57, U+1E60-1E63, U+1E6A-1E6B, U+1E80-1E85, U+1E8F, U+1E91, U+1EF2-1EF3, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/corben/Corben-Bold.ttf",
@@ -431,10 +445,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 350,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1.101",
+				"glyphs": 356,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-010F, U+0112-0122, U+0124-0125, U+0127-0148, U+014C-0165, U+0168-017E, U+0192, U+01F1-01F2, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/corben/Corben-Regular.ttf",

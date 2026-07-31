@@ -371,10 +371,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 900
 			},
 			"path": "ofl/lisubosa/LisuBosa-Black.ttf",
@@ -388,10 +397,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 900
 			},
 			"path": "ofl/lisubosa/LisuBosa-BlackItalic.ttf",
@@ -405,10 +423,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 700
 			},
 			"path": "ofl/lisubosa/LisuBosa-Bold.ttf",
@@ -422,10 +449,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 700
 			},
 			"path": "ofl/lisubosa/LisuBosa-BoldItalic.ttf",
@@ -439,10 +475,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 800
 			},
 			"path": "ofl/lisubosa/LisuBosa-ExtraBold.ttf",
@@ -456,10 +501,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 800
 			},
 			"path": "ofl/lisubosa/LisuBosa-ExtraBoldItalic.ttf",
@@ -473,10 +527,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 200
 			},
 			"path": "ofl/lisubosa/LisuBosa-ExtraLight.ttf",
@@ -490,10 +553,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 200
 			},
 			"path": "ofl/lisubosa/LisuBosa-ExtraLightItalic.ttf",
@@ -507,10 +579,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 400
 			},
 			"path": "ofl/lisubosa/LisuBosa-Italic.ttf",
@@ -524,10 +605,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 300
 			},
 			"path": "ofl/lisubosa/LisuBosa-Light.ttf",
@@ -541,10 +631,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 300
 			},
 			"path": "ofl/lisubosa/LisuBosa-LightItalic.ttf",
@@ -558,10 +657,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 500
 			},
 			"path": "ofl/lisubosa/LisuBosa-Medium.ttf",
@@ -575,10 +683,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 500
 			},
 			"path": "ofl/lisubosa/LisuBosa-MediumItalic.ttf",
@@ -592,10 +709,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 400
 			},
 			"path": "ofl/lisubosa/LisuBosa-Regular.ttf",
@@ -609,10 +735,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 600
 			},
 			"path": "ofl/lisubosa/LisuBosa-SemiBold.ttf",
@@ -626,10 +761,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 340,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 341,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02BC, U+02C6-02C7, U+02CD, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2605, U+A4D0-A4FF, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD, U+11FB0",
 				"weight": 600
 			},
 			"path": "ofl/lisubosa/LisuBosa-SemiBoldItalic.ttf",

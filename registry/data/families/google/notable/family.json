@@ -377,10 +377,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 258,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"elli",
+						"frac",
+						"ordn",
+						"salt",
+						"ss01",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.100",
+				"glyphs": 265,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0101, U+0112-0113, U+012A-012B, U+0131, U+014C-014D, U+0152-0153, U+016A-016B, U+0174-0178, U+02C6, U+02D9-02DA, U+02DC, U+0300-0303, U+0307-0308, U+030A, U+0327, U+0335, U+0338, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2044, U+2074, U+20AC, U+2117, U+2122, U+2190, U+2192, U+2212, U+2215, U+2264-2265, U+E0FF, U+EFFD, U+F000",
 				"weight": 400
 			},
 			"path": "ofl/notable/Notable-Regular.ttf",

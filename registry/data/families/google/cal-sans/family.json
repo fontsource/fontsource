@@ -497,10 +497,40 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 547,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk",
+						"ss03"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"cv01",
+						"cv02",
+						"cv03",
+						"cv04",
+						"cv05",
+						"cv06",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"pnum",
+						"ss01",
+						"ss02",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 647,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00AC, U+00AE-00B1, U+00B4-00B8, U+00BA-0113, U+0116-012B, U+012E-013E, U+0141-0148, U+014A-014D, U+0150-0165, U+0168-017E, U+018F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01E2-01E3, U+0218-021B, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-030C, U+030F, U+0311-0312, U+031B, U+0323-0324, U+0326-0328, U+032E, U+0331, U+0335, U+0338, U+03C0, U+1E0C-1E0D, U+1E20-1E21, U+1E24-1E25, U+1E2A-1E2B, U+1E34-1E3B, U+1E40-1E49, U+1E5C-1E5F, U+1E62-1E63, U+1E6C-1E6F, U+1E80-1E85, U+1E8E-1E8F, U+1E92-1E96, U+1E9E, U+1EA0-1EF9, U+2007-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+203C-203D, U+2044, U+20AC, U+2116, U+2122, U+2190-2199, U+2202, U+220F, U+2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2E18, U+A78B-A78C, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/calsans/CalSans-Regular.ttf",

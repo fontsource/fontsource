@@ -369,10 +369,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 267,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 274,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+011E-011F, U+0130-0131, U+0141-0142, U+0152-0153, U+015E-0161, U+0178, U+017D-017E, U+0192, U+0200-021B, U+02C6-02C7, U+02D8-02DD, U+030F, U+0311, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/smythe/Smythe-Regular.ttf",

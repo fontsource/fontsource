@@ -29,10 +29,20 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 116,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.01",
+				"glyphs": 162,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0001-000F, U+0020-0040, U+00A0, U+00AD, U+037E, U+0E81-0E82, U+0E84, U+0E87-0E88, U+0E8A, U+0E8D, U+0E94-0E97, U+0E99-0E9F, U+0EA1-0EA3, U+0EA5, U+0EA7, U+0EAA-0EAB, U+0EAD-0EB9, U+0EBB-0EBD, U+0EC0-0EC4, U+0EC6, U+0EC8-0ECD, U+0ED0-0ED9, U+0EDC-0EDD",
 				"weight": 700
 			},
 			"path": "ofl/phetsarath/Phetsarath-Bold.ttf",
@@ -46,10 +56,20 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 101,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.01",
+				"glyphs": 162,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0040, U+00A0, U+00AD, U+037E, U+0E81-0E82, U+0E84, U+0E87-0E88, U+0E8A, U+0E8D, U+0E94-0E97, U+0E99-0E9F, U+0EA1-0EA3, U+0EA5, U+0EA7, U+0EAA-0EAB, U+0EAD-0EB9, U+0EBB-0EBD, U+0EC0-0EC4, U+0EC6, U+0EC8-0ECD, U+0ED0-0ED9, U+0EDC-0EDD",
 				"weight": 400
 			},
 			"path": "ofl/phetsarath/Phetsarath-Regular.ttf",

@@ -430,10 +430,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 338,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "sources/aileron/files/Aileron-Black.otf",
@@ -447,10 +462,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 340,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "sources/aileron/files/Aileron-BlackItalic.otf",
@@ -464,10 +495,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 338,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "sources/aileron/files/Aileron-Bold.otf",
@@ -481,10 +527,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 340,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "sources/aileron/files/Aileron-BoldItalic.otf",
@@ -498,10 +560,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 338,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "sources/aileron/files/Aileron-Heavy.otf",
@@ -515,10 +592,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 340,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "sources/aileron/files/Aileron-HeavyItalic.otf",
@@ -532,10 +625,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 340,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "sources/aileron/files/Aileron-Italic.otf",
@@ -549,10 +658,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 338,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "sources/aileron/files/Aileron-Light.otf",
@@ -566,10 +690,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 340,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "sources/aileron/files/Aileron-LightItalic.otf",
@@ -583,10 +723,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 338,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "sources/aileron/files/Aileron-Regular.otf",
@@ -600,10 +755,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 338,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "sources/aileron/files/Aileron-SemiBold.otf",
@@ -617,10 +787,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 340,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "sources/aileron/files/Aileron-SemiBoldItalic.otf",
@@ -634,10 +820,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 338,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 250
 			},
 			"path": "sources/aileron/files/Aileron-Thin.otf",
@@ -651,10 +852,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 340,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 250
 			},
 			"path": "sources/aileron/files/Aileron-ThinItalic.otf",
@@ -668,10 +885,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 338,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 250
 			},
 			"path": "sources/aileron/files/Aileron-UltraLight.otf",
@@ -685,10 +917,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 337,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"locl",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.102;PS 001.102;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 340,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00A9, U+00AB-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+0326, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 250
 			},
 			"path": "sources/aileron/files/Aileron-UltraLightItalic.otf",

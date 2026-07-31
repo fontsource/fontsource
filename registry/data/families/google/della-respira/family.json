@@ -348,10 +348,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 293,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.201",
+				"glyphs": 296,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-0110, U+0112-0122, U+0124-0125, U+0128-0137, U+0139-0141, U+0143-0148, U+014C-014F, U+0152-0153, U+017F, U+0237, U+02C7, U+02D8, U+02DA-02DB, U+2013-2014, U+2018, U+201C, U+2022, U+2039-203A, U+2044, U+20AC, U+2212, U+E211, U+E21C, U+E21E-E221, U+F520, U+FB00-FB06",
 				"weight": 500
 			},
 			"path": "ofl/dellarespira/DellaRespira-Regular.ttf",

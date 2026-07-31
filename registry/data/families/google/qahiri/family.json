@@ -230,10 +230,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 195,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"curs",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"ccmp",
+						"clig",
+						"dnom",
+						"fina",
+						"init",
+						"isol",
+						"locl",
+						"medi",
+						"numr",
+						"onum",
+						"rclt",
+						"salt",
+						"ss01",
+						"ss02"
+					]
+				},
 				"fontVersion": "Version 3.00",
+				"glyphs": 548,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0022, U+0025, U+0027-0029, U+002C-003B, U+003F, U+0041-005D, U+005F, U+0061-007B, U+007D, U+00A0-00A1, U+00AB, U+00AD, U+00B7, U+00BB, U+00BF, U+060C, U+0615, U+061B, U+061F, U+0621-063A, U+0640-064A, U+0654-0655, U+0660-066A, U+066E-066F, U+0671, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A1-06A2, U+06A4, U+06A7, U+06A9, U+06AF, U+06BA, U+06BE, U+06C1-06C3, U+06CC, U+06D2-06D4, U+06F0-06F9, U+08BB-08BD, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044",
 				"weight": 400
 			},
 			"path": "ofl/qahiri/Qahiri-Regular.ttf",

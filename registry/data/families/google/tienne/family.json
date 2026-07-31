@@ -366,10 +366,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 322,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 001.001",
+				"glyphs": 340,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0001-0009, U+0010-0019, U+0020-007E, U+00A0-00FF, U+0127-0129, U+0131-0135, U+0137-0138, U+013F-0144, U+0152-0154, U+0156-0159, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0200-021B, U+0237, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "ofl/tienne/Tienne-Black.ttf",
@@ -383,10 +392,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 299,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 303,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0002, U+0009, U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0127-0129, U+0131-0135, U+0137-0138, U+013F-0144, U+0152-0154, U+0156-0159, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0200-021B, U+0237, U+02C6-02C7, U+02C9, U+02D8-02DD, U+030F, U+0311, U+0326, U+03A9, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+212E, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/tienne/Tienne-Bold.ttf",
@@ -400,10 +418,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 349,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 354,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0002, U+0009-000A, U+000D, U+0020-007E, U+00A0-00FF, U+0102-0107, U+010C-0111, U+0118-011B, U+0127-0129, U+0131-0135, U+0137-013A, U+013D-0144, U+0147-0148, U+0150-015B, U+015E-0165, U+016E-0171, U+0178-017E, U+0192, U+0200-021B, U+0237, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+03A9, U+03BC, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/tienne/Tienne-Regular.ttf",

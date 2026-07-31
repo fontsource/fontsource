@@ -399,10 +399,33 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+				"glyphs": 931,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+097D, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2212, U+25CC, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/halant/Halant-Bold.ttf",
@@ -416,10 +439,33 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+				"glyphs": 931,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+097D, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2212, U+25CC, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "ofl/halant/Halant-Light.ttf",
@@ -433,10 +479,33 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+				"glyphs": 931,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+097D, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2212, U+25CC, U+FB01-FB02",
 				"weight": 500
 			},
 			"path": "ofl/halant/Halant-Medium.ttf",
@@ -450,10 +519,33 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+				"glyphs": 931,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+097D, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2212, U+25CC, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/halant/Halant-Regular.ttf",
@@ -467,10 +559,33 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.101;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 8 -r 50 -G 200 -x 14 -D latn -f deva -w gGD -W -c",
+				"glyphs": 931,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+097D, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2212, U+25CC, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/halant/Halant-SemiBold.ttf",

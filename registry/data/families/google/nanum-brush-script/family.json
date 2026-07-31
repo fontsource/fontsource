@@ -216,10 +216,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 11789,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"fwid"
+					]
+				},
 				"fontVersion": "Version 1.100;PS 1;hotconv 1.0.57;makeotf.lib2.0.21895",
+				"glyphs": 13799,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A2-00A3, U+00A5, U+00A7, U+00A9, U+00B0-00B3, U+00B6, U+00B9, U+00BC-00BE, U+00D7, U+00F7, U+2018-2019, U+201C-201D, U+2020-2021, U+2030, U+2074, U+2081-2084, U+20A9, U+2103, U+2109, U+2113, U+2116, U+2121-2122, U+2126, U+2153-2154, U+215B-215E, U+2260, U+2460-246E, U+2474-2482, U+249C-24B5, U+24D0-24E9, U+2500-2503, U+250C-254B, U+3131-3163, U+3165-318E, U+3200-321C, U+3260-327B, U+327F, U+3380-3384, U+3388-33CA, U+33CF-33D0, U+33D3, U+33D6, U+33D8, U+33DB-33DD, U+AC00-D7A3, U+FF01-FF5E, U+FFE0-FFE1, U+FFE5-FFE6",
 				"weight": 400
 			},
 			"path": "ofl/nanumbrushscript/NanumBrushScript-Regular.ttf",

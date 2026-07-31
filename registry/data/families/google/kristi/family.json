@@ -356,10 +356,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 202,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"calt"
+					]
+				},
 				"fontVersion": "Version 1.004",
+				"glyphs": 212,
 				"outline": "glyf",
 				"style": "oblique",
+				"unicodeRange": "U+0020-007E, U+00A1-00AC, U+00AE-00FF, U+0131, U+02C6, U+02DA, U+02DC, U+03BC, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026",
 				"weight": 400
 			},
 			"path": "ofl/kristi/Kristi-Regular.ttf",

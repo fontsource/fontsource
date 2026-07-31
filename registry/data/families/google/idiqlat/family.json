@@ -372,10 +372,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 415,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"cv02",
+						"cv15",
+						"cv17",
+						"cv18",
+						"cv38",
+						"cv55",
+						"cv59",
+						"cv60",
+						"fin2",
+						"fin3",
+						"fina",
+						"init",
+						"med2",
+						"medi",
+						"rclt",
+						"rlig",
+						"rtlm",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss05",
+						"ss16",
+						"stch"
+					]
+				},
 				"fontVersion": "Version 2.100",
+				"glyphs": 585,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C0-02C1, U+02C6-02C7, U+02D2-02D3, U+02D8-02DD, U+0303-0304, U+0307-0308, U+030A, U+0320, U+0323-0325, U+032D-032E, U+0330-0331, U+034F, U+03C0, U+060C, U+061B-061C, U+061F, U+0640, U+0651, U+0700-070D, U+070F-0726, U+0728-074A, U+074D-074F, U+1DF8, U+1DFA, U+2000-2015, U+2018-2022, U+2026-2030, U+2039-203A, U+203E, U+2044, U+2060, U+2066-2069, U+206C-206D, U+2074, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+2670-2671, U+29F5, U+2E22-2E23, U+F130-F131, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 200
 			},
 			"path": "ofl/idiqlat/Idiqlat-ExtraLight.ttf",
@@ -389,10 +427,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 415,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"cv02",
+						"cv15",
+						"cv17",
+						"cv18",
+						"cv38",
+						"cv55",
+						"cv59",
+						"cv60",
+						"fin2",
+						"fin3",
+						"fina",
+						"init",
+						"med2",
+						"medi",
+						"rclt",
+						"rlig",
+						"rtlm",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss05",
+						"ss16",
+						"stch"
+					]
+				},
 				"fontVersion": "Version 2.100",
+				"glyphs": 585,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C0-02C1, U+02C6-02C7, U+02D2-02D3, U+02D8-02DD, U+0303-0304, U+0307-0308, U+030A, U+0320, U+0323-0325, U+032D-032E, U+0330-0331, U+034F, U+03C0, U+060C, U+061B-061C, U+061F, U+0640, U+0651, U+0700-070D, U+070F-0726, U+0728-074A, U+074D-074F, U+1DF8, U+1DFA, U+2000-2015, U+2018-2022, U+2026-2030, U+2039-203A, U+203E, U+2044, U+2060, U+2066-2069, U+206C-206D, U+2074, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+2670-2671, U+29F5, U+2E22-2E23, U+F130-F131, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 300
 			},
 			"path": "ofl/idiqlat/Idiqlat-Light.ttf",
@@ -406,10 +482,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 415,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"cv02",
+						"cv15",
+						"cv17",
+						"cv18",
+						"cv38",
+						"cv55",
+						"cv59",
+						"cv60",
+						"fin2",
+						"fin3",
+						"fina",
+						"init",
+						"med2",
+						"medi",
+						"rclt",
+						"rlig",
+						"rtlm",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss05",
+						"ss16",
+						"stch"
+					]
+				},
 				"fontVersion": "Version 2.100",
+				"glyphs": 585,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C0-02C1, U+02C6-02C7, U+02D2-02D3, U+02D8-02DD, U+0303-0304, U+0307-0308, U+030A, U+0320, U+0323-0325, U+032D-032E, U+0330-0331, U+034F, U+03C0, U+060C, U+061B-061C, U+061F, U+0640, U+0651, U+0700-070D, U+070F-0726, U+0728-074A, U+074D-074F, U+1DF8, U+1DFA, U+2000-2015, U+2018-2022, U+2026-2030, U+2039-203A, U+203E, U+2044, U+2060, U+2066-2069, U+206C-206D, U+2074, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+2670-2671, U+29F5, U+2E22-2E23, U+F130-F131, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 400
 			},
 			"path": "ofl/idiqlat/Idiqlat-Regular.ttf",

@@ -409,10 +409,51 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 467,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"dist",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"nukt",
+						"numr",
+						"pstf",
+						"rclt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss05",
+						"ss14",
+						"ss15",
+						"ss16",
+						"ss17",
+						"ss18",
+						"ss19",
+						"ss20",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.52",
+				"glyphs": 874,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0103, U+0108-0109, U+010C-010D, U+0112-0115, U+0120-0121, U+0128-012D, U+0131, U+0139-013A, U+0145-0146, U+014C-014F, U+0152-0155, U+015A-015B, U+0160-0161, U+0168-016D, U+0178-017A, U+017D-017E, U+0192, U+01E2-01E3, U+0237, U+02BE-02BF, U+02C6, U+02DA, U+02DC, U+0300-0304, U+0306-0308, U+030A, U+030C, U+0310, U+0323-0327, U+032E, U+0331, U+035F, U+0964-0965, U+0A01-0A03, U+0A05-0A0A, U+0A0F-0A10, U+0A13-0A28, U+0A2A-0A30, U+0A32-0A33, U+0A35-0A36, U+0A38-0A39, U+0A3C, U+0A3E-0A42, U+0A47-0A48, U+0A4B-0A4D, U+0A51, U+0A59-0A5C, U+0A5E, U+0A66-0A76, U+1E0C-1E0F, U+1E16-1E17, U+1E24-1E25, U+1E32-1E37, U+1E3A-1E3B, U+1E40-1E49, U+1E4C-1E4D, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E6F, U+1E78-1E79, U+1E8E-1E8F, U+1E92-1E96, U+1E9E, U+1EBC-1EBD, U+2000-200D, U+2013-2014, U+2018-2022, U+2026, U+202F-2030, U+2032-2033, U+2039-203A, U+2044, U+2055, U+205F, U+2070, U+2074-2079, U+20A8, U+20AC, U+20B9, U+2122, U+2212, U+2215, U+25CC, U+262C, U+A830-A839",
 				"weight": 400
 			},
 			"path": "ofl/tirogurmukhi/TiroGurmukhi-Italic.ttf",
@@ -426,10 +467,51 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 467,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"dist",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"nukt",
+						"numr",
+						"pstf",
+						"rclt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss05",
+						"ss14",
+						"ss15",
+						"ss16",
+						"ss17",
+						"ss18",
+						"ss19",
+						"ss20",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.52",
+				"glyphs": 874,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0103, U+0108-0109, U+010C-010D, U+0112-0115, U+0120-0121, U+0128-012D, U+0131, U+0139-013A, U+0145-0146, U+014C-014F, U+0152-0155, U+015A-015B, U+0160-0161, U+0168-016D, U+0178-017A, U+017D-017E, U+0192, U+01E2-01E3, U+0237, U+02BE-02BF, U+02C6, U+02DA, U+02DC, U+0300-0304, U+0306-0308, U+030A, U+030C, U+0310, U+0323-0327, U+032E, U+0331, U+035F, U+0964-0965, U+0A01-0A03, U+0A05-0A0A, U+0A0F-0A10, U+0A13-0A28, U+0A2A-0A30, U+0A32-0A33, U+0A35-0A36, U+0A38-0A39, U+0A3C, U+0A3E-0A42, U+0A47-0A48, U+0A4B-0A4D, U+0A51, U+0A59-0A5C, U+0A5E, U+0A66-0A76, U+1E0C-1E0F, U+1E16-1E17, U+1E24-1E25, U+1E32-1E37, U+1E3A-1E3B, U+1E40-1E49, U+1E4C-1E4D, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E6F, U+1E78-1E79, U+1E8E-1E8F, U+1E92-1E96, U+1E9E, U+1EBC-1EBD, U+2000-200D, U+2013-2014, U+2018-2022, U+2026, U+202F-2030, U+2032-2033, U+2039-203A, U+2044, U+2055, U+205F, U+2070, U+2074-2079, U+20A8, U+20AC, U+20B9, U+2122, U+2212, U+2215, U+25CC, U+262C, U+A830-A839",
 				"weight": 400
 			},
 			"path": "ofl/tirogurmukhi/TiroGurmukhi-Regular.ttf",

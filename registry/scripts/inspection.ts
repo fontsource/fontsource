@@ -13,6 +13,9 @@ const COLOR_TABLES = new Set([
 ]);
 const BITMAP_TABLES = new Set(['CBDT', 'EBDT', 'sbix']);
 
+const codepointHex = (value: number): string =>
+	value.toString(16).toUpperCase().padStart(4, '0');
+
 const outlineKind = (
 	tables: readonly string[],
 ): FamilySource['inspection']['outline'] => {
@@ -29,9 +32,24 @@ export const normalizeInspection = (
 	font: FontInspection,
 ): FamilySource['inspection'] => ({
 	fontVersion: font.fontVersion,
+	glyphs: font.glyphs,
 	weight: font.weight,
 	style: font.style,
 	axes: font.axes,
+	codepoints: font.unicodeRanges.reduce<number>(
+		(count, range) =>
+			count + (typeof range === 'number' ? 1 : range[1] - range[0] + 1),
+		0,
+	),
+	unicodeRange: font.unicodeRanges
+		.map((range) => {
+			const [start, end] = typeof range === 'number' ? [range, range] : range;
+			return start === end
+				? `U+${codepointHex(start)}`
+				: `U+${codepointHex(start)}-${codepointHex(end)}`;
+		})
+		.join(', '),
+	features: font.features,
 	outline: outlineKind(font.tables),
 	colorTables: font.tables
 		.filter((table) => COLOR_TABLES.has(table))

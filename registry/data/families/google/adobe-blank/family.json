@@ -1400,10 +1400,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1111998,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.045;PS 1.045;hotconv 1.0.82;makeotf.lib2.5.63406",
+				"glyphs": 2049,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000-D7FF, U+E000-FDCF, U+FDF0-FFFD, U+10000-1FFFD, U+20000-2FFFD, U+30000-3FFFD, U+40000-4FFFD, U+50000-5FFFD, U+60000-6FFFD, U+70000-7FFFD, U+80000-8FFFD, U+90000-9FFFD, U+A0000-AFFFD, U+B0000-BFFFD, U+C0000-CFFFD, U+D0000-DFFFD, U+E0000-EFFFD, U+F0000-FFFFD, U+100000-10FFFD",
 				"weight": 400
 			},
 			"path": "ofl/adobeblank/AdobeBlank-Regular.ttf",

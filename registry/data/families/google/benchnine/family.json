@@ -425,10 +425,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 418,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1 ; ttfautohint (v0.92.18-e454-dirty) -l 8 -r 50 -G 200 -x 0 -w \"g\"",
+				"glyphs": 421,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00B4, U+00B6, U+00B8-0148, U+014C-0161, U+0164-0165, U+0168-017E, U+0192, U+01C4-01CC, U+01F1-01F5, U+0200-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+030F, U+0311, U+0394, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E60-1E61, U+1E6A-1E6B, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+220F, U+2212, U+2215, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB00-FB03",
 				"weight": 700
 			},
 			"path": "ofl/benchnine/BenchNine-Bold.ttf",
@@ -442,10 +451,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 414,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1 ; ttfautohint (v0.92.18-e454-dirty) -l 8 -r 50 -G 200 -x 0 -w \"g\"",
+				"glyphs": 417,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00B1, U+00B4, U+00B6, U+00B8, U+00BA-0148, U+014C-0161, U+0164-0165, U+0168-017E, U+0192, U+01C4-01CC, U+01F1-01F5, U+0200-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+030F, U+0311, U+0394, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E60-1E61, U+1E6A-1E6B, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+220F, U+2212, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB00-FB03",
 				"weight": 300
 			},
 			"path": "ofl/benchnine/BenchNine-Light.ttf",
@@ -459,10 +477,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 419,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1 ; ttfautohint (v0.92.18-e454-dirty) -l 8 -r 50 -G 200 -x 0 -w \"g\"",
+				"glyphs": 422,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00B4, U+00B6, U+00B8-0148, U+014C-0161, U+0164-0165, U+0168-017E, U+0192, U+01C4-01CC, U+01F1-01F5, U+0200-021B, U+0237, U+02C6-02C7, U+02C9, U+02D8-02DD, U+030F, U+0311, U+0394, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E60-1E61, U+1E6A-1E6B, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+220F, U+2212, U+2215, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB00-FB03",
 				"weight": 400
 			},
 			"path": "ofl/benchnine/BenchNine-Regular.ttf",

@@ -199,10 +199,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 76,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"calt"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.3)",
+				"glyphs": 163,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+0024-0025, U+002A-002B, U+002D-0039, U+0041-005A, U+0061-007A, U+00A0, U+00C2, U+200B-200C",
 				"weight": 400
 			},
 			"path": "ofl/librebarcode39text/LibreBarcode39Text-Regular.ttf",

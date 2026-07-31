@@ -441,10 +441,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 411,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.003",
+				"glyphs": 424,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0001-0009, U+0010-0019, U+0020-007E, U+00A0-0148, U+014A-017E, U+0192, U+01FC-01FD, U+0218-0219, U+0237, U+02C6-02C7, U+02D8-02DD, U+0394, U+03A9, U+03C0, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E60-1E61, U+1E6A-1E6B, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F6C3, U+FB00-FB02",
 				"weight": 400
 			},
 			"path": "ofl/kronaone/KronaOne-Regular.ttf",

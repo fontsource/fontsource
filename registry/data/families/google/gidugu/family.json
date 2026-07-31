@@ -445,10 +445,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 510,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"dist",
+						"mark"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"haln",
+						"nukt",
+						"psts"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1005,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-017E, U+0192, U+01FA-01FF, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+0951-0953, U+0964-0965, U+0C01-0C03, U+0C05-0C0C, U+0C0E-0C10, U+0C12-0C28, U+0C2A-0C39, U+0C3C-0C44, U+0C46-0C48, U+0C4A-0C4D, U+0C55-0C56, U+0C58-0C59, U+0C60-0C63, U+0C66-0C6F, U+0C78-0C7F, U+1E80-1E85, U+1EF2-1EF3, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2080-2089, U+20A3-20A4, U+20AC, U+20B9, U+2113, U+2122, U+2126, U+212E, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F8FF, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/gidugu/Gidugu-Regular.ttf",

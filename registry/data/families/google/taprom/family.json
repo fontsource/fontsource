@@ -205,10 +205,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 203,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"clig",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 8.002; ttfautohint (v1.8.3)",
+				"glyphs": 360,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0, U+00AB, U+00BB, U+1780-17DD, U+17E0-17E9, U+25CC",
 				"weight": 400
 			},
 			"path": "ofl/taprom/Taprom-Regular.ttf",

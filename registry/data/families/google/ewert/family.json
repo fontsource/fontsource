@@ -357,10 +357,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 218,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 222,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00AC, U+00AE-00B4, U+00B6-00FF, U+010C-010D, U+0131, U+0178, U+02C6-02C7, U+02D8-02DD, U+03BC, U+2013-2014, U+2018-2019, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+2082, U+2084, U+2212, U+2215",
 				"weight": 400
 			},
 			"path": "ofl/ewert/Ewert-Regular.ttf",

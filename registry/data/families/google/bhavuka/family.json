@@ -520,10 +520,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1022,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"cpsp",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"    ",
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"dlig",
+						"frac",
+						"half",
+						"haln",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"salt",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups",
+						"vatu"
+					]
+				},
 				"fontVersion": "2.94.0; ttfautohint (v1.2) -l 7 -r 28 -G 50 -x 13 -D deva -f deva -w G -X \"\"",
+				"glyphs": 1023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01C0-01C1, U+01C4-01DC, U+01DE-01E3, U+01E6-01ED, U+01F0-01F5, U+01F8-01FF, U+0207, U+020B, U+020F, U+0213, U+0217-021B, U+021E-021F, U+0226-022B, U+0232-0233, U+0237, U+02B0, U+02B2-02B3, U+02B7-02BA, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306, U+0308, U+030A, U+030C, U+0326-0328, U+0340-0341, U+0344, U+0374, U+037E, U+0387, U+0391-0392, U+0395-0397, U+0399-039A, U+039C-039D, U+039F, U+03A1, U+03A4-03A5, U+03A7, U+03AA-03AB, U+03B2, U+03BA, U+03BF-03C1, U+03C7, U+03D2, U+03D4, U+03D6, U+03F0-03F1, U+0589, U+0900-097F, U+1E80-1E85, U+1EA0-1EA1, U+1EA4-1EA7, U+1EAA-1EAC, U+1EAE-1EB1, U+1EB4-1EB6, U+1EB8-1EB9, U+1EBC-1EC1, U+1EC4-1EC6, U+1ECA-1ECD, U+1ED0-1ED3, U+1ED6-1ED8, U+1EE4-1EE5, U+1EF2-1EF5, U+1EF8-1EF9, U+200C, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203D, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+2766, U+A8E0-A8FB, U+FB00-FB04, U+FEFF, U+F0001-F0002, U+F0062-F0065, U+F016D-F0228, U+F022A-F023C, U+F0250-F0252, U+F0257-F0258, U+F025F-F0260, U+F026D-F026F, U+F0276, U+F0283, U+F028D-F028E, U+F02A5-F02A8, U+F02AC, U+F02B2-F02B3, U+F02B8, U+F02C6-F02C7, U+F02CC-F02CD, U+F02D4, U+F02D8, U+F02EE, U+F02FF-F0300, U+F0307, U+F030B, U+F0318, U+F031C, U+F0323-F0324, U+F0349, U+F035C-F035D, U+F0369, U+F036C, U+F03DA-F03DB, U+F03DD-F03F3, U+F03F8-F03FE",
 				"weight": 400
 			},
 			"path": "ofl/bhavuka/Bhavuka-Regular.ttf",

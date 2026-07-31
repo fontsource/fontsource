@@ -415,10 +415,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 334,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 001.002",
+				"glyphs": 337,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A1-00B1, U+00B4-00B8, U+00BA-00BB, U+00BF-0110, U+0112-0122, U+0124-0125, U+0127-0148, U+014C-0165, U+0168-017E, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+0311, U+0326, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+F6C3",
 				"weight": 400
 			},
 			"path": "ofl/nosifer/Nosifer-Regular.ttf",

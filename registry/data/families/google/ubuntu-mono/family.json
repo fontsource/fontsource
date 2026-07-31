@@ -540,10 +540,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1224,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"afrc",
+						"case",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"ordn",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 0.80",
+				"glyphs": 1296,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0008-0009, U+000D, U+001D, U+0020-007E, U+00A0-024F, U+0292, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0311, U+0384-0386, U+0388-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0400-045F, U+0462-0463, U+0472-0475, U+048A-04F9, U+1E80-1E85, U+1EF2-1EF3, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20AE, U+20B4, U+20B9, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+251C, U+2524, U+252C, U+2534, U+253C, U+2550-256C, U+2588, U+2591-2593, U+25CA, U+E0FF, U+EFFD, U+F000-F002, U+F506-F511, U+F80A-F81D, U+FB01-FB02, U+FFFD",
 				"weight": 700
 			},
 			"path": "ufl/ubuntumono/UbuntuMono-Bold.ttf",
@@ -557,10 +578,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1224,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"afrc",
+						"case",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"ordn",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 0.80",
+				"glyphs": 1301,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0008-0009, U+000D, U+001D, U+0020-007E, U+00A0-024F, U+0292, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0311, U+0384-0386, U+0388-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0400-045F, U+0462-0463, U+0472-0475, U+048A-04F9, U+1E80-1E85, U+1EF2-1EF3, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20AE, U+20B4, U+20B9, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+251C, U+2524, U+252C, U+2534, U+253C, U+2550-256C, U+2588, U+2591-2593, U+25CA, U+E0FF, U+EFFD, U+F000-F002, U+F506-F511, U+F80A-F81D, U+FB01-FB02, U+FFFD",
 				"weight": 700
 			},
 			"path": "ufl/ubuntumono/UbuntuMono-BoldItalic.ttf",
@@ -574,10 +616,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1224,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"afrc",
+						"case",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"ordn",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 0.80",
+				"glyphs": 1301,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0008-0009, U+000D, U+001D, U+0020-007E, U+00A0-024F, U+0292, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0311, U+0384-0386, U+0388-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0400-045F, U+0462-0463, U+0472-0475, U+048A-04F9, U+1E80-1E85, U+1EF2-1EF3, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20AE, U+20B4, U+20B9, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+251C, U+2524, U+252C, U+2534, U+253C, U+2550-256C, U+2588, U+2591-2593, U+25CA, U+E0FF, U+EFFD, U+F000-F002, U+F506-F511, U+F80A-F81D, U+FB01-FB02, U+FFFD",
 				"weight": 400
 			},
 			"path": "ufl/ubuntumono/UbuntuMono-Italic.ttf",
@@ -591,10 +654,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1224,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"afrc",
+						"case",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"ordn",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 0.80",
+				"glyphs": 1296,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0008-0009, U+000D, U+001D, U+0020-007E, U+00A0-024F, U+0292, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0311, U+0384-0386, U+0388-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0400-045F, U+0462-0463, U+0472-0475, U+048A-04F9, U+1E80-1E85, U+1EF2-1EF3, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20AE, U+20B4, U+20B9, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+251C, U+2524, U+252C, U+2534, U+253C, U+2550-256C, U+2588, U+2591-2593, U+25CA, U+E0FF, U+EFFD, U+F000-F002, U+F506-F511, U+F80A-F81D, U+FB01-FB02, U+FFFD",
 				"weight": 400
 			},
 			"path": "ufl/ubuntumono/UbuntuMono-Regular.ttf",

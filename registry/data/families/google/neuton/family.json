@@ -368,10 +368,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 226,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"frac",
+						"lnum",
+						"onum",
+						"ordn",
+						"smcp"
+					]
+				},
 				"fontVersion": "Version 1.560",
+				"glyphs": 308,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00B1, U+00B4-00B8, U+00BA-00FF, U+010C-010D, U+011A-011B, U+0152-0153, U+0158-0159, U+0160-0161, U+0178, U+017D-017E, U+02C6, U+02D9-02DA, U+02DC, U+1E9E, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+25CA",
 				"weight": 700
 			},
 			"path": "ofl/neuton/Neuton-Bold.ttf",
@@ -385,10 +400,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 226,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"frac",
+						"lnum",
+						"onum",
+						"ordn",
+						"smcp"
+					]
+				},
 				"fontVersion": "Version 1.560",
+				"glyphs": 308,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00B1, U+00B4-00B8, U+00BA-00FF, U+010C-010D, U+011A-011B, U+0152-0153, U+0158-0159, U+0160-0161, U+0178, U+017D-017E, U+02C6, U+02D9-02DA, U+02DC, U+1E9E, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+25CA",
 				"weight": 800
 			},
 			"path": "ofl/neuton/Neuton-ExtraBold.ttf",
@@ -402,10 +432,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 226,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"frac",
+						"lnum",
+						"onum",
+						"ordn",
+						"smcp"
+					]
+				},
 				"fontVersion": "Version 1.560",
+				"glyphs": 308,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00B1, U+00B4-00B8, U+00BA-00FF, U+010C-010D, U+011A-011B, U+0152-0153, U+0158-0159, U+0160-0161, U+0178, U+017D-017E, U+02C6, U+02D9-02DA, U+02DC, U+1E9E, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+25CA",
 				"weight": 275
 			},
 			"path": "ofl/neuton/Neuton-ExtraLight.ttf",
@@ -419,10 +464,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 226,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"frac",
+						"lnum",
+						"onum",
+						"ordn",
+						"smcp"
+					]
+				},
 				"fontVersion": "Version 1.560",
+				"glyphs": 310,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00B1, U+00B4-00B8, U+00BA-00FF, U+010C-010D, U+011A-011B, U+0152-0153, U+0158-0159, U+0160-0161, U+0178, U+017D-017E, U+02C6, U+02D9-02DA, U+02DC, U+1E9E, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+25CA",
 				"weight": 400
 			},
 			"path": "ofl/neuton/Neuton-Italic.ttf",
@@ -436,10 +496,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 226,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"frac",
+						"lnum",
+						"onum",
+						"ordn",
+						"smcp"
+					]
+				},
 				"fontVersion": "Version 1.560",
+				"glyphs": 308,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00B1, U+00B4-00B8, U+00BA-00FF, U+010C-010D, U+011A-011B, U+0152-0153, U+0158-0159, U+0160-0161, U+0178, U+017D-017E, U+02C6, U+02D9-02DA, U+02DC, U+1E9E, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+25CA",
 				"weight": 300
 			},
 			"path": "ofl/neuton/Neuton-Light.ttf",
@@ -453,10 +528,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 226,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"frac",
+						"lnum",
+						"onum",
+						"ordn",
+						"smcp"
+					]
+				},
 				"fontVersion": "Version 1.560",
+				"glyphs": 308,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00B1, U+00B4-00B8, U+00BA-00FF, U+010C-010D, U+011A-011B, U+0152-0153, U+0158-0159, U+0160-0161, U+0178, U+017D-017E, U+02C6, U+02D9-02DA, U+02DC, U+1E9E, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+25CA",
 				"weight": 400
 			},
 			"path": "ofl/neuton/Neuton-Regular.ttf",

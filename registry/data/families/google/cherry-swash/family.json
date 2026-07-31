@@ -372,10 +372,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 266,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 269,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0102-0103, U+0106-0107, U+0109, U+010C-010E, U+0115, U+011A-011B, U+0127-0129, U+0131-0135, U+0137-013A, U+013F-0144, U+0147-0148, U+014F, U+0152-015B, U+015D, U+0160-0161, U+0164, U+0169, U+016D-016F, U+0177, U+0179-017A, U+017D-017E, U+02C6-02C7, U+02D8-02DA, U+02DC, U+03BC, U+1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+20AC",
 				"weight": 700
 			},
 			"path": "ofl/cherryswash/CherrySwash-Bold.ttf",
@@ -389,10 +396,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 266,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 269,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0102-0103, U+0106-0107, U+0109, U+010C-010E, U+0115, U+011A-011B, U+0127-0129, U+0131-0135, U+0137-013A, U+013F-0144, U+0147-0148, U+014F, U+0152-015B, U+015D, U+0160-0161, U+0164, U+0169, U+016D-016F, U+0177, U+0179-017A, U+017D-017E, U+02C6-02C7, U+02D8-02DA, U+02DC, U+03BC, U+1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+20AC",
 				"weight": 400
 			},
 			"path": "ofl/cherryswash/CherrySwash-Regular.ttf",

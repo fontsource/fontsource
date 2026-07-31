@@ -1,0 +1,48 @@
+{
+	"special-use/digital-display": [
+		"dseg14-classic",
+		"dseg14-classic-mini",
+		"dseg14-modern",
+		"dseg14-modern-mini",
+		"dseg7-classic",
+		"dseg7-classic-mini",
+		"dseg7-modern",
+		"dseg7-modern-mini",
+		"dseg7-segg-chan",
+		"dseg7-segg-chan-mini"
+	],
+	"special-use/emoji": [
+		"noto-color-emoji",
+		"noto-color-emoji-compat-test",
+		"noto-emoji"
+	],
+	"special-use/icons": [
+		"dseg-weather"
+	],
+	"special-use/math": [
+		"dejavu-math",
+		"jsmath-cmbx10",
+		"jsmath-cmex10",
+		"jsmath-cmmi10",
+		"jsmath-cmr10",
+		"jsmath-cmsy10",
+		"jsmath-cmti10",
+		"libertinus-math",
+		"noto-sans-math",
+		"stix-two-math"
+	],
+	"special-use/music-symbols": [
+		"bravura",
+		"bravura-text",
+		"noto-music",
+		"noto-znamenny-musical-notation"
+	],
+	"special-use/punctuation": [
+		"yakuhanjp",
+		"yakuhanjps",
+		"yakuhanmp",
+		"yakuhanmps",
+		"yakuhanrp",
+		"yakuhanrps"
+	]
+}

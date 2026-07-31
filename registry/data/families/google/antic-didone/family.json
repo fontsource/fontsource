@@ -357,10 +357,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 215,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.001",
+				"glyphs": 220,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00AC, U+00AE-00FF, U+0131, U+0152-0153, U+0178, U+02C6, U+02D8-02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+25CA",
 				"weight": 400
 			},
 			"path": "ofl/anticdidone/AnticDidone-Regular.ttf",

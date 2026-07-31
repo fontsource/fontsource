@@ -39,10 +39,33 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 154,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"init",
+						"nukt",
+						"pres",
+						"pstf",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 2.5.1",
+				"glyphs": 487,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000C, U+0020-0040, U+005B-0060, U+007B-007E, U+00A2, U+00D7, U+00F7, U+0964-0965, U+0981-0983, U+0985-098C, U+098F-0990, U+0993-09A8, U+09AA-09B0, U+09B2, U+09B6-09B9, U+09BC-09C4, U+09C7-09C8, U+09CB-09CE, U+09D7, U+09DC-09DD, U+09DF-09E3, U+09E6-09FB, U+200C-200D, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 400
 			},
 			"path": "ofl/lohitbengali/Lohit-Bengali.ttf",

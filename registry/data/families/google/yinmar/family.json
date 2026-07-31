@@ -32,10 +32,27 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 191,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"blwf",
+						"locl",
+						"pref",
+						"pstf",
+						"rlig",
+						"rphf"
+					]
+				},
 				"fontVersion": "Version 1.11",
+				"glyphs": 249,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+1000-109F, U+25CC, U+AA60-AA7B",
 				"weight": 400
 			},
 			"path": "ofl/yinmar/Yinmar-Regular.ttf",

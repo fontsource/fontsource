@@ -338,10 +338,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 256,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 001.102",
+				"glyphs": 257,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000-00FF",
 				"weight": 400
 			},
 			"path": "ofl/digitalnumbers/DigitalNumbers-Regular.ttf",

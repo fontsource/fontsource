@@ -440,10 +440,36 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 396,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"hist",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"salt",
+						"ss01",
+						"subs",
+						"sups",
+						"swsh"
+					]
+				},
 				"fontVersion": "Version 1.201",
+				"glyphs": 590,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-0149, U+014C-017F, U+0218-021B, U+0237, U+02BB-02BC, U+02C0, U+02C6-02C8, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0312, U+0315, U+0326-0328, U+2000-2015, U+2018-2022, U+2026, U+202F, U+2032-2033, U+2039-203A, U+203E, U+2044, U+2053, U+205F-2060, U+20AC, U+2212, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/lindenhill/LindenHill-Italic.ttf",
@@ -457,10 +483,36 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 396,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"case",
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"dnom",
+						"frac",
+						"hist",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"salt",
+						"smcp",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.202",
+				"glyphs": 765,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0137, U+0139-0149, U+014C-017F, U+0218-021B, U+0237, U+02BB-02BC, U+02C0, U+02C6-02C8, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0312, U+0315, U+0326-0328, U+2000-2015, U+2018-2022, U+2026, U+202F, U+2032-2033, U+2039-203A, U+203E, U+2044, U+2053, U+205F-2060, U+20AC, U+2212, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/lindenhill/LindenHill-Regular.ttf",

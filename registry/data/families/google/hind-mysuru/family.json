@@ -407,10 +407,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 826,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"blwm"
+					],
+					"gsub": [
+						"blwf",
+						"haln",
+						"pres",
+						"rphf"
+					]
+				},
 				"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+				"glyphs": 827,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0C81-0C83, U+0C85-0C8C, U+0C8E-0C90, U+0C92-0CA8, U+0CAA-0CB3, U+0CB5-0CB9, U+0CBC, U+0CBE-0CC4, U+0CC6-0CC8, U+0CCA-0CCD, U+0CD5-0CD6, U+0CDE, U+0CE0-0CE3, U+0CE6-0CEF, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01A5-F033A",
 				"weight": 700
 			},
 			"path": "ofl/hindmysuru/HindMysuru-Bold.ttf",
@@ -424,10 +438,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 826,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"blwm"
+					],
+					"gsub": [
+						"blwf",
+						"haln",
+						"pres",
+						"rphf"
+					]
+				},
 				"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+				"glyphs": 827,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0C81-0C83, U+0C85-0C8C, U+0C8E-0C90, U+0C92-0CA8, U+0CAA-0CB3, U+0CB5-0CB9, U+0CBC, U+0CBE-0CC4, U+0CC6-0CC8, U+0CCA-0CCD, U+0CD5-0CD6, U+0CDE, U+0CE0-0CE3, U+0CE6-0CEF, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01A5-F033A",
 				"weight": 300
 			},
 			"path": "ofl/hindmysuru/HindMysuru-Light.ttf",
@@ -441,10 +469,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 826,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"blwm"
+					],
+					"gsub": [
+						"blwf",
+						"haln",
+						"pres",
+						"rphf"
+					]
+				},
 				"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+				"glyphs": 827,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0C81-0C83, U+0C85-0C8C, U+0C8E-0C90, U+0C92-0CA8, U+0CAA-0CB3, U+0CB5-0CB9, U+0CBC, U+0CBE-0CC4, U+0CC6-0CC8, U+0CCA-0CCD, U+0CD5-0CD6, U+0CDE, U+0CE0-0CE3, U+0CE6-0CEF, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01A5-F033A",
 				"weight": 500
 			},
 			"path": "ofl/hindmysuru/HindMysuru-Medium.ttf",
@@ -458,10 +500,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 826,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"blwm"
+					],
+					"gsub": [
+						"blwf",
+						"haln",
+						"pres",
+						"rphf"
+					]
+				},
 				"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+				"glyphs": 827,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0C81-0C83, U+0C85-0C8C, U+0C8E-0C90, U+0C92-0CA8, U+0CAA-0CB3, U+0CB5-0CB9, U+0CBC, U+0CBE-0CC4, U+0CC6-0CC8, U+0CCA-0CCD, U+0CD5-0CD6, U+0CDE, U+0CE0-0CE3, U+0CE6-0CEF, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01A5-F033A",
 				"weight": 400
 			},
 			"path": "ofl/hindmysuru/HindMysuru-Regular.ttf",
@@ -475,10 +531,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 826,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"blwm"
+					],
+					"gsub": [
+						"blwf",
+						"haln",
+						"pres",
+						"rphf"
+					]
+				},
 				"fontVersion": "Version 0.703;PS 1.0;hotconv 1.0.86;makeotf.lib2.5.63406",
+				"glyphs": 827,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0C81-0C83, U+0C85-0C8C, U+0C8E-0C90, U+0C92-0CA8, U+0CAA-0CB3, U+0CB5-0CB9, U+0CBC, U+0CBE-0CC4, U+0CC6-0CC8, U+0CCA-0CCD, U+0CD5-0CD6, U+0CDE, U+0CE0-0CE3, U+0CE6-0CEF, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+F0001-F0002, U+F01A5-F033A",
 				"weight": 600
 			},
 			"path": "ofl/hindmysuru/HindMysuru-SemiBold.ttf",

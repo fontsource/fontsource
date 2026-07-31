@@ -364,10 +364,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 228,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 231,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0133, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122, U+215B-215E, U+25CF, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/londrinashadow/LondrinaShadow-Regular.ttf",

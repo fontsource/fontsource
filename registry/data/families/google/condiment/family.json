@@ -365,10 +365,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 230,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 234,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A5-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02D8-02DD, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2264-2265, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/condiment/Condiment-Regular.ttf",

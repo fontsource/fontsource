@@ -434,10 +434,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 423,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark",
+						"zz01",
+						"zz02",
+						"zz03"
+					],
+					"gsub": [
+						"ccmp",
+						"liga",
+						"zz01",
+						"zz02",
+						"zz03",
+						"zz04",
+						"zz05",
+						"zz06",
+						"zz07",
+						"zz08",
+						"zz09"
+					]
+				},
 				"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325",
+				"glyphs": 424,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+05B0-05BC, U+05BE, U+05C0-05C3, U+05C7, U+05D0-05EA, U+05F3-05F4, U+1E80-1E85, U+1EF2-1EF3, U+2000-200A, U+200E-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+202F-2030, U+2039-203A, U+2044, U+205F, U+20AA, U+20AC, U+2122, U+E000, U+FB01-FB02, U+FB2A-FB36, U+FB38-FB3C, U+FB3E, U+FB40-FB41, U+FB43-FB44, U+FB46-FB4B",
 				"weight": 700
 			},
 			"path": "ofl/alef/Alef-Bold.ttf",
@@ -451,10 +475,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 423,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark",
+						"zz01",
+						"zz02",
+						"zz03"
+					],
+					"gsub": [
+						"ccmp",
+						"liga",
+						"zz01",
+						"zz02",
+						"zz03",
+						"zz04",
+						"zz05",
+						"zz06",
+						"zz07",
+						"zz08",
+						"zz09"
+					]
+				},
 				"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.56;makeotf.lib2.0.21325",
+				"glyphs": 424,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0133, U+0136-0137, U+0139-0148, U+014A-014D, U+0150-015B, U+015E-0167, U+016A-016B, U+016E-017E, U+0218-021B, U+02C6-02C7, U+02D8-02DD, U+05B0-05BC, U+05BE, U+05C0-05C3, U+05C7, U+05D0-05EA, U+05F3-05F4, U+1E80-1E85, U+1EF2-1EF3, U+2000-200A, U+200E-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+202F-2030, U+2039-203A, U+2044, U+205F, U+20AA, U+20AC, U+2122, U+E000, U+FB01-FB02, U+FB2A-FB36, U+FB38-FB3C, U+FB3E, U+FB40-FB41, U+FB43-FB44, U+FB46-FB4B",
 				"weight": 400
 			},
 			"path": "ofl/alef/Alef-Regular.ttf",

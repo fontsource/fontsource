@@ -406,10 +406,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 315,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 002.002",
+				"glyphs": 318,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0013, U+0020-007D, U+00A0-00A1, U+00A3-00A4, U+00A6-00A9, U+00AB, U+00AE, U+00B4, U+00BB, U+00BF-00DD, U+00E0-00EF, U+00F1-00F7, U+00F9-00FD, U+00FF-0149, U+014C-017E, U+02C6-02C7, U+02DA, U+02DC-02DD, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2026, U+2030, U+2202, U+2212, U+221E, U+FB00-FB03",
 				"weight": 400
 			},
 			"path": "ofl/bentham/Bentham-Regular.ttf",

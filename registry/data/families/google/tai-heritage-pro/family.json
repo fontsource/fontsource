@@ -402,10 +402,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 502,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"rclt"
+					]
+				},
 				"fontVersion": "Version 2.600",
+				"glyphs": 542,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-0103, U+0110-0115, U+0128-012D, U+0131, U+014C-014F, U+0152-0153, U+0160-0161, U+0168-016D, U+0178, U+017D-017E, U+0192, U+01A0-01A1, U+01AF-01B0, U+02C6-02CB, U+02D0, U+02D8-02DC, U+0300-0304, U+0306, U+0308-030A, U+030C, U+031B, U+0323, U+0327, U+03C0, U+0E3F, U+1EA0-1EF1, U+2000-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2030, U+2039-203A, U+2044, U+2060, U+20A3, U+20AB-20AD, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+A78C, U+AA80-AAC2, U+AADB-AADF, U+E032, U+E047, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 700
 			},
 			"path": "ofl/taiheritagepro/TaiHeritagePro-Bold.ttf",
@@ -419,10 +433,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 502,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"rclt"
+					]
+				},
 				"fontVersion": "Version 2.600",
+				"glyphs": 542,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-0103, U+0110-0115, U+0128-012D, U+0131, U+014C-014F, U+0152-0153, U+0160-0161, U+0168-016D, U+0178, U+017D-017E, U+0192, U+01A0-01A1, U+01AF-01B0, U+02C6-02CB, U+02D0, U+02D8-02DC, U+0300-0304, U+0306, U+0308-030A, U+030C, U+031B, U+0323, U+0327, U+03C0, U+0E3F, U+1EA0-1EF1, U+2000-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2030, U+2039-203A, U+2044, U+2060, U+20A3, U+20AB-20AD, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+A78C, U+AA80-AAC2, U+AADB-AADF, U+E032, U+E047, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 400
 			},
 			"path": "ofl/taiheritagepro/TaiHeritagePro-Regular.ttf",

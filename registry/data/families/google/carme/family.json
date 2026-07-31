@@ -355,10 +355,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 214,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "1.000",
+				"glyphs": 217,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-005D, U+005F-007D, U+00A0-00A2, U+00A8-00AA, U+00AC-00AE, U+00B0-00B4, U+00B8-00BA, U+00BC-00D6, U+00D8-00DE, U+00E0-00F6, U+00F8-00FF, U+0152-0153, U+0178, U+02C6, U+02DC, U+2000-200A, U+2010-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+202F, U+2039-203A, U+2044, U+205F, U+20AC, U+2122, U+E000, U+FB01-FB04",
 				"weight": 400
 			},
 			"path": "ofl/carme/Carme-Regular.ttf",

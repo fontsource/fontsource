@@ -917,10 +917,34 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 789,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sinf",
+						"ss01",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.005",
+				"glyphs": 864,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017E, U+0180-0181, U+0186-018A, U+018E-0193, U+0196-019A, U+019D, U+01A4-01A5, U+01A9, U+01AC-01AE, U+01B2-01B6, U+01C4-01ED, U+01F0-01F5, U+01F8-021B, U+021E-021F, U+0226-0233, U+0237, U+023A-023E, U+0241-024F, U+0251, U+0253-0254, U+0256-0257, U+0259, U+025B, U+0260, U+0265-0266, U+0268-0269, U+026B, U+0272, U+027D-027E, U+0283, U+0288-0289, U+028B-028C, U+0294-0295, U+02BC, U+02BE-02BF, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+030F, U+0311-0312, U+0323-0328, U+032D-032E, U+0330-0331, U+0335-0338, U+03BC, U+1D7D, U+1E00-1E9A, U+1E9E, U+1EA0-1EA1, U+1EAC-1EAD, U+1EB6-1EB9, U+1EBC-1EBD, U+1EC6-1EC7, U+1ECA-1ECD, U+1ED8-1ED9, U+1EE4-1EE5, U+1EF2-1EF5, U+1EF8-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2028-2029, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A4, U+20AC, U+20B5, U+2116, U+2120, U+2122, U+2153-2154, U+215B-215E, U+2212, U+2215, U+2219, U+2260, U+2C60-2C66, U+2C6D, U+2C72-2C73, U+A740-A741, U+A78B-A78D, U+A792-A793, U+A7AA, U+F6C3, U+FB00-FB04, U+FB06",
 				"weight": {
 					"default": 400,
 					"max": 700,
@@ -945,10 +969,33 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 789,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sinf",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.005",
+				"glyphs": 861,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017E, U+0180-0181, U+0186-018A, U+018E-0193, U+0196-019A, U+019D, U+01A4-01A5, U+01A9, U+01AC-01AE, U+01B2-01B6, U+01C4-01ED, U+01F0-01F5, U+01F8-021B, U+021E-021F, U+0226-0233, U+0237, U+023A-023E, U+0241-024F, U+0251, U+0253-0254, U+0256-0257, U+0259, U+025B, U+0260, U+0265-0266, U+0268-0269, U+026B, U+0272, U+027D-027E, U+0283, U+0288-0289, U+028B-028C, U+0294-0295, U+02BC, U+02BE-02BF, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+030F, U+0311-0312, U+0323-0328, U+032D-032E, U+0330-0331, U+0335-0338, U+03BC, U+1D7D, U+1E00-1E9A, U+1E9E, U+1EA0-1EA1, U+1EAC-1EAD, U+1EB6-1EB9, U+1EBC-1EBD, U+1EC6-1EC7, U+1ECA-1ECD, U+1ED8-1ED9, U+1EE4-1EE5, U+1EF2-1EF5, U+1EF8-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2028-2029, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A4, U+20AC, U+20B5, U+2116, U+2120, U+2122, U+2153-2154, U+215B-215E, U+2212, U+2215, U+2219, U+2260, U+2C60-2C66, U+2C6D, U+2C72-2C73, U+A740-A741, U+A78B-A78D, U+A792-A793, U+A7AA, U+F6C3, U+FB00-FB04, U+FB06",
 				"weight": {
 					"default": 400,
 					"max": 700,

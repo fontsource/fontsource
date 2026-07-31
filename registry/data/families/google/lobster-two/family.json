@@ -376,10 +376,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 257,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.006",
+				"glyphs": 357,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00AE, U+00B0-00FF, U+0104-0109, U+010C-010D, U+0111, U+0118-0119, U+011E-011F, U+0131-0133, U+0141-0144, U+0150-0153, U+015A-015B, U+0160-0161, U+0170-0171, U+0178-017E, U+0192, U+02C6-02C7, U+02D8, U+02DA-02DD, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122, U+2212, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/lobstertwo/LobsterTwo-Bold.ttf",
@@ -393,10 +406,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 257,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.006",
+				"glyphs": 357,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00AE, U+00B0-00FF, U+0104-0109, U+010C-010D, U+0111, U+0118-0119, U+011E-011F, U+0131-0133, U+0141-0144, U+0150-0153, U+015A-015B, U+0160-0161, U+0170-0171, U+0178-017E, U+0192, U+02C6-02C7, U+02D8, U+02DA-02DD, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122, U+2212, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/lobstertwo/LobsterTwo-BoldItalic.ttf",
@@ -410,10 +436,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 257,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.006",
+				"glyphs": 357,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A1-00AE, U+00B0-00FF, U+0104-0109, U+010C-010D, U+0111, U+0118-0119, U+011E-011F, U+0131-0133, U+0141-0144, U+0150-0153, U+015A-015B, U+0160-0161, U+0170-0171, U+0178-017E, U+0192, U+02C6-02C7, U+02D8, U+02DA-02DD, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122, U+2212, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/lobstertwo/LobsterTwo-Italic.ttf",
@@ -427,10 +466,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 257,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.006",
+				"glyphs": 357,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00AE, U+00B0-00FF, U+0104-0109, U+010C-010D, U+0111, U+0118-0119, U+011E-011F, U+0131-0133, U+0141-0144, U+0150-0153, U+015A-015B, U+0160-0161, U+0170-0171, U+0178-017E, U+0192, U+02C6-02C7, U+02D8, U+02DA-02DD, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2122, U+2212, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/lobstertwo/LobsterTwo-Regular.ttf",

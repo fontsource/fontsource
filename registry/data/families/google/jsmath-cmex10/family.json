@@ -204,10 +204,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 129,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 001.001",
+				"glyphs": 132,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00B0, U+00B5-00B7, U+00C0-00CF, U+00D1-00D6, U+00D8-00DC, U+00DF, U+00EF, U+00FF",
 				"weight": 500
 			},
 			"path": "apache/jsmathcmex10/jsMath-cmex10.ttf",

@@ -214,10 +214,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 100,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.003",
+				"glyphs": 102,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-005D, U+005F-007A, U+007C, U+00A0, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2044",
 				"weight": 400
 			},
 			"path": "sources/blackout-two-am/files/Blackout 2 AM.ttf",

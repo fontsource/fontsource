@@ -1,6 +1,10 @@
 import { resolve } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
-import { RegistryFamilyDetailSchema } from '../../api/shared/registry.ts';
+import {
+	RegistryFamilyDetailSchema,
+	RegistryFamilySymbolsSchema,
+	RegistrySourceCapabilitiesSchema,
+} from '../../api/shared/registry.ts';
 
 const r2 = vi.hoisted(() => ({
 	putCurrentObject: vi.fn(),
@@ -31,6 +35,17 @@ describe('registry source archive', () => {
 	it('publishes archive objects before the manifest and current pointer', async () => {
 		const keys: string[] = [];
 		const views = new Map<string, unknown>();
+		const wantedViews = new Set([
+			'families.json',
+			'families/abel.json',
+			'families/alegreya-sans.json',
+			'families/dejavu-math.json',
+			'families/ek-mukta.json',
+			'families/material-icons.json',
+			'families/material-icons/symbols.json',
+			'families/nebula-sans.json',
+			'languages.json',
+		]);
 		let manifest: unknown;
 		let current: unknown;
 		let sourceContentType: string | undefined;
@@ -52,10 +67,17 @@ describe('registry source archive', () => {
 				const marker = '/api/';
 				const viewIndex = object.key.indexOf(marker);
 				if (viewIndex >= 0) {
-					views.set(
-						object.key.slice(viewIndex + marker.length),
-						JSON.parse(Buffer.from(await object.read()).toString('utf8')),
-					);
+					const path = object.key.slice(viewIndex + marker.length);
+					if (wantedViews.has(path)) {
+						const value = JSON.parse(
+							Buffer.from(await object.read()).toString('utf8'),
+						);
+						views.set(path, value);
+						if (path === 'families/abel.json') {
+							const source = value.sources[0];
+							wantedViews.add(`sources/${source.sha256}/capabilities.json`);
+						}
+					}
 				}
 			},
 		);
@@ -81,6 +103,7 @@ describe('registry source archive', () => {
 			registryRevision: REVISION,
 			registry: expect.arrayContaining([
 				expect.objectContaining({ path: 'upstreams.json' }),
+				expect.objectContaining({ path: 'family-tags.json' }),
 				expect.objectContaining({
 					path: 'families/google-icons/material-icons/icons.json',
 				}),
@@ -92,6 +115,9 @@ describe('registry source archive', () => {
 			]),
 			views: expect.arrayContaining([
 				expect.objectContaining({ path: 'families/abel.json' }),
+				expect.objectContaining({
+					path: 'families/material-icons/symbols.json',
+				}),
 				expect.objectContaining({ path: 'languages.json' }),
 				expect.objectContaining({ path: 'taxonomy.json' }),
 			]),
@@ -136,11 +162,36 @@ describe('registry source archive', () => {
 					downloadUrl: expect.stringMatching(
 						/^\/v1\/registry\/sources\/[0-9a-f]{64}$/,
 					),
+					capabilitiesUrl: expect.stringMatching(
+						/^\/v1\/registry\/sources\/[0-9a-f]{64}\/capabilities$/,
+					),
 					type: 'static',
 				}),
 			],
 		});
 		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
+		const familySource = (
+			family as {
+				sources: Array<{ sha256: string }>;
+			}
+		).sources[0];
+		const capabilities = views.get(
+			`sources/${familySource?.sha256}/capabilities.json`,
+		);
+		expect(capabilities).toMatchObject({
+			glyphCount: expect.any(Number),
+			codepointCount: expect.any(Number),
+			unicodeRange: expect.stringMatching(/^U\+/),
+			features: {
+				gsub: expect.any(Array),
+				gpos: expect.any(Array),
+			},
+			outline: 'glyf',
+			colorTables: expect.any(Array),
+		});
+		expect(RegistrySourceCapabilitiesSchema.parse(capabilities)).toEqual(
+			capabilities,
+		);
 		const familyWithVariantOverride = views.get('families/alegreya-sans.json');
 		expect(familyWithVariantOverride).toMatchObject({
 			sources: expect.arrayContaining([
@@ -156,6 +207,9 @@ describe('registry source archive', () => {
 		expect(RegistryFamilyDetailSchema.parse(familyWithVariantOverride)).toEqual(
 			familyWithVariantOverride,
 		);
+		expect(views.get('families/dejavu-math.json')).toMatchObject({
+			tags: expect.arrayContaining(['special-use/math']),
+		});
 		const obliqueFamily = views.get('families/nebula-sans.json');
 		expect(obliqueFamily).toMatchObject({
 			sources: expect.arrayContaining([
@@ -175,8 +229,11 @@ describe('registry source archive', () => {
 			classifications: ['symbols'],
 			tags: ['special-use/icons'],
 			languages: [],
+			symbolsUrl: '/v1/registry/families/material-icons/symbols',
 		});
 		expect(RegistryFamilyDetailSchema.parse(iconFamily)).toEqual(iconFamily);
+		const symbols = views.get('families/material-icons/symbols.json');
+		expect(RegistryFamilySymbolsSchema.parse(symbols)).toEqual(symbols);
 		const replacement = views.get('families/ek-mukta.json');
 		expect(replacement).toMatchObject({
 			id: 'ek-mukta',

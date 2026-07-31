@@ -7,6 +7,7 @@ import { generateGoogleIcons } from './google-icons.ts';
 import { generateNam } from './nam.ts';
 import {
 	familySchema,
+	familyTagsSchema,
 	languageCatalogSchema,
 	type ReplacementRegistry,
 	replacementRegistrySchema,
@@ -65,6 +66,9 @@ export const generateRegistry = async (
 		join(root, 'replacements.json'),
 	);
 	const replacements = replacementRegistrySchema.parse(replacementsValue ?? {});
+	const familyTags = familyTagsSchema.parse(
+		(await readJsonIfExists(join(root, 'family-tags.json'))) ?? {},
+	);
 	const previousGoogleIds = previousFamilies
 		.filter((family) => family.startsWith('google/'))
 		.map((family) => family.slice('google/'.length));
@@ -144,6 +148,7 @@ export const generateRegistry = async (
 		}),
 	);
 	await writeJson(join(root, 'replacements.json'), replacements);
+	await writeJson(join(root, 'family-tags.json'), familyTags);
 	await applyReplacements(root, families, replacements);
 	logger.start('Validating registry');
 	await validateRegistry(root);

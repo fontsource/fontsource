@@ -433,10 +433,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 397,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 428,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00AC, U+00AE-0108, U+010A-0129, U+012B-012C, U+012E-0136, U+0138-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01FC-01FF, U+0218-0219, U+0237, U+02C6-02C7, U+02D8-02DD, U+03BC, U+1E00-1E01, U+1E3E-1E3F, U+1E80-1E85, U+1EF2-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20A3-20A4, U+20A7, U+20AB-20AC, U+2122, U+2212, U+221A, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/magra/Magra-Bold.ttf",
@@ -450,10 +457,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 397,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 428,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00AC, U+00AE-0108, U+010A-0129, U+012B-012C, U+012E-0136, U+0138-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01FC-01FF, U+0218-0219, U+0237, U+02C6-02C7, U+02D8-02DD, U+03BC, U+1E00-1E01, U+1E3E-1E3F, U+1E80-1E85, U+1EF2-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20A3-20A4, U+20A7, U+20AB-20AC, U+2122, U+2212, U+221A, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/magra/Magra-Regular.ttf",

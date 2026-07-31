@@ -365,10 +365,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 366,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"dist",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 3.001",
+				"glyphs": 451,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D0, U+02D8-02DD, U+034F, U+03A9, U+03C0, U+0965, U+1900-191E, U+1920-192B, U+1930-193B, U+1940, U+1944-194F, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+2074, U+20A8, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+F130-F131, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 700
 			},
 			"path": "ofl/namdhinggo/Namdhinggo-Bold.ttf",
@@ -382,10 +396,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 366,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"dist",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 3.001",
+				"glyphs": 451,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D0, U+02D8-02DD, U+034F, U+03A9, U+03C0, U+0965, U+1900-191E, U+1920-192B, U+1930-193B, U+1940, U+1944-194F, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+2074, U+20A8, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+F130-F131, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 800
 			},
 			"path": "ofl/namdhinggo/Namdhinggo-ExtraBold.ttf",
@@ -399,10 +427,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 366,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"dist",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 3.001",
+				"glyphs": 451,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D0, U+02D8-02DD, U+034F, U+03A9, U+03C0, U+0965, U+1900-191E, U+1920-192B, U+1930-193B, U+1940, U+1944-194F, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+2074, U+20A8, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+F130-F131, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 500
 			},
 			"path": "ofl/namdhinggo/Namdhinggo-Medium.ttf",
@@ -416,10 +458,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 366,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"dist",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 3.001",
+				"glyphs": 451,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D0, U+02D8-02DD, U+034F, U+03A9, U+03C0, U+0965, U+1900-191E, U+1920-192B, U+1930-193B, U+1940, U+1944-194F, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+2074, U+20A8, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+F130-F131, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 400
 			},
 			"path": "ofl/namdhinggo/Namdhinggo-Regular.ttf",
@@ -433,10 +489,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 366,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"dist",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 3.001",
+				"glyphs": 451,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D0, U+02D8-02DD, U+034F, U+03A9, U+03C0, U+0965, U+1900-191E, U+1920-192B, U+1930-193B, U+1940, U+1944-194F, U+2000-200D, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2029, U+202F-2030, U+2039-203A, U+2044, U+2060, U+2074, U+20A8, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+F130-F131, U+FB01-FB02, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 600
 			},
 			"path": "ofl/namdhinggo/Namdhinggo-SemiBold.ttf",

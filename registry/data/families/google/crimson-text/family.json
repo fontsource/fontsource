@@ -509,10 +509,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 675,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"sinf",
+						"subs",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.100; ttfautohint (v1.8.4)",
+				"glyphs": 718,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017E, U+0189, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01D6-01DC, U+01E2-01E3, U+01FB-01FF, U+0218-021B, U+0232-0233, U+0237, U+0256, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-030C, U+0312, U+0323, U+0326-0328, U+03BC, U+1E00-1E13, U+1E18-1E1B, U+1E1E-1E2B, U+1E2D-1E4B, U+1E4D-1E4F, U+1E54-1E5B, U+1E5D-1E64, U+1E66, U+1E68-1E77, U+1E79, U+1E7B-1E99, U+1EA0-1EF9, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2024, U+2026, U+2030, U+2032-2033, U+2038-203A, U+203E, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2190-2193, U+2202, U+2211-2213, U+2215, U+221A, U+221D-221E, U+2260, U+2264-2265, U+2619, U+2767, U+F890-F898, U+F89A-F89F, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/crimsontext/CrimsonText-Bold.ttf",
@@ -526,10 +550,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 675,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"sinf",
+						"subs",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.100; ttfautohint (v1.8.4)",
+				"glyphs": 720,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017E, U+0189, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01D6-01DC, U+01E2-01E3, U+01FB-01FF, U+0218-021B, U+0232-0233, U+0237, U+0256, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-030C, U+0312, U+0323, U+0326-0328, U+03BC, U+1E00-1E13, U+1E18-1E1B, U+1E1E-1E2B, U+1E2D-1E4B, U+1E4D-1E4F, U+1E54-1E5B, U+1E5D-1E64, U+1E66, U+1E68-1E77, U+1E79, U+1E7B-1E99, U+1EA0-1EF9, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2024, U+2026, U+2030, U+2032-2033, U+2038-203A, U+203E, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2190-2193, U+2202, U+2211-2213, U+2215, U+221A, U+221D-221E, U+2260, U+2264-2265, U+2619, U+2767, U+F890-F898, U+F89A-F89F, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/crimsontext/CrimsonText-BoldItalic.ttf",
@@ -543,10 +592,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 675,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"sinf",
+						"subs",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.100; ttfautohint (v1.8.4)",
+				"glyphs": 720,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017E, U+0189, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01D6-01DC, U+01E2-01E3, U+01FB-01FF, U+0218-021B, U+0232-0233, U+0237, U+0256, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-030C, U+0312, U+0323, U+0326-0328, U+03BC, U+1E00-1E13, U+1E18-1E1B, U+1E1E-1E2B, U+1E2D-1E4B, U+1E4D-1E4F, U+1E54-1E5B, U+1E5D-1E64, U+1E66, U+1E68-1E77, U+1E79, U+1E7B-1E99, U+1EA0-1EF9, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2024, U+2026, U+2030, U+2032-2033, U+2038-203A, U+203E, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2190-2193, U+2202, U+2211-2213, U+2215, U+221A, U+221D-221E, U+2260, U+2264-2265, U+2619, U+2767, U+F890-F898, U+F89A-F89F, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/crimsontext/CrimsonText-Italic.ttf",
@@ -560,10 +634,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 675,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"sinf",
+						"subs",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.100; ttfautohint (v1.8.4)",
+				"glyphs": 718,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017E, U+0189, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01D6-01DC, U+01E2-01E3, U+01FB-01FF, U+0218-021B, U+0232-0233, U+0237, U+0256, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-030C, U+0312, U+0323, U+0326-0328, U+03BC, U+1E00-1E13, U+1E18-1E1B, U+1E1E-1E2B, U+1E2D-1E4B, U+1E4D-1E4F, U+1E54-1E5B, U+1E5D-1E64, U+1E66, U+1E68-1E77, U+1E79, U+1E7B-1E99, U+1EA0-1EF9, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2024, U+2026, U+2030, U+2032-2033, U+2038-203A, U+203E, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2190-2193, U+2202, U+2211-2213, U+2215, U+221A, U+221D-221E, U+2260, U+2264-2265, U+2619, U+2767, U+F890-F898, U+F89A-F89F, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/crimsontext/CrimsonText-Regular.ttf",
@@ -577,10 +675,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 675,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"sinf",
+						"subs",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.100; ttfautohint (v1.8.4)",
+				"glyphs": 718,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017E, U+0189, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01D6-01DC, U+01E2-01E3, U+01FB-01FF, U+0218-021B, U+0232-0233, U+0237, U+0256, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-030C, U+0312, U+0323, U+0326-0328, U+03BC, U+1E00-1E13, U+1E18-1E1B, U+1E1E-1E2B, U+1E2D-1E4B, U+1E4D-1E4F, U+1E54-1E5B, U+1E5D-1E64, U+1E66, U+1E68-1E77, U+1E79, U+1E7B-1E99, U+1EA0-1EF9, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2024, U+2026, U+2030, U+2032-2033, U+2038-203A, U+203E, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2190-2193, U+2202, U+2211-2213, U+2215, U+221A, U+221D-221E, U+2260, U+2264-2265, U+2619, U+2767, U+F890-F898, U+F89A-F89F, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/crimsontext/CrimsonText-SemiBold.ttf",
@@ -594,10 +716,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 675,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"sinf",
+						"subs",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.100; ttfautohint (v1.8.4)",
+				"glyphs": 720,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00AC, U+00AE-0148, U+014A-017E, U+0189, U+01A0-01A1, U+01AF-01B0, U+01CD-01D4, U+01D6-01DC, U+01E2-01E3, U+01FB-01FF, U+0218-021B, U+0232-0233, U+0237, U+0256, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-030C, U+0312, U+0323, U+0326-0328, U+03BC, U+1E00-1E13, U+1E18-1E1B, U+1E1E-1E2B, U+1E2D-1E4B, U+1E4D-1E4F, U+1E54-1E5B, U+1E5D-1E64, U+1E66, U+1E68-1E77, U+1E79, U+1E7B-1E99, U+1EA0-1EF9, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2024, U+2026, U+2030, U+2032-2033, U+2038-203A, U+203E, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2190-2193, U+2202, U+2211-2213, U+2215, U+221A, U+221D-221E, U+2260, U+2264-2265, U+2619, U+2767, U+F890-F898, U+F89A-F89F, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/crimsontext/CrimsonText-SemiBoldItalic.ttf",

@@ -2,7 +2,7 @@
 
 import { buildClientParams, type Client, type ClientMeta, type Options as Options2, type RequestResult, type TDataShape } from './client';
 import { client } from './client.gen';
-import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistrySourceErrors, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
+import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -268,6 +268,21 @@ export const getRegistryFamily = <ThrowOnError extends boolean = true>(parameter
 };
 
 /**
+ * Get a registry family symbol catalog
+ */
+export const getRegistryFamilySymbols = <ThrowOnError extends boolean = true>(parameters: {
+    id: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<GetRegistryFamilySymbolsResponses, GetRegistryFamilySymbolsErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }] }]);
+    return (options?.client ?? client).get<GetRegistryFamilySymbolsResponses, GetRegistryFamilySymbolsErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/families/{id}/symbols',
+        ...options,
+        ...params
+    });
+};
+
+/**
  * List registry languages
  */
 export const listRegistryLanguages = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<ListRegistryLanguagesResponses, ListRegistryLanguagesErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<ListRegistryLanguagesResponses, ListRegistryLanguagesErrors, ThrowOnError, 'data'>({
@@ -319,6 +334,21 @@ export const getRegistrySource = <ThrowOnError extends boolean = true>(parameter
     return (options?.client ?? client).get<GetRegistrySourceResponses, GetRegistrySourceErrors, ThrowOnError, 'data'>({
         responseStyle: 'data',
         url: '/v1/registry/sources/{sha256}',
+        ...options,
+        ...params
+    });
+};
+
+/**
+ * Get archived source font capabilities
+ */
+export const getRegistrySourceCapabilities = <ThrowOnError extends boolean = true>(parameters: {
+    sha256: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<GetRegistrySourceCapabilitiesResponses, GetRegistrySourceCapabilitiesErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'sha256' }] }]);
+    return (options?.client ?? client).get<GetRegistrySourceCapabilitiesResponses, GetRegistrySourceCapabilitiesErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/sources/{sha256}/capabilities',
         ...options,
         ...params
     });

@@ -27,10 +27,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 24,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 45,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2329-232A, U+3008-3011, U+3014-3017, U+FF08-FF09, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 900
 			},
 			"path": "sources/yakuhanrps/files/YakuHanRPs-Black.ttf",
@@ -44,10 +55,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 24,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 45,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2329-232A, U+3008-3011, U+3014-3017, U+FF08-FF09, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 700
 			},
 			"path": "sources/yakuhanrps/files/YakuHanRPs-Bold.ttf",
@@ -61,10 +83,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 24,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 45,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2329-232A, U+3008-3011, U+3014-3017, U+FF08-FF09, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 800
 			},
 			"path": "sources/yakuhanrps/files/YakuHanRPs-ExtraBold.ttf",
@@ -78,10 +111,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 24,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 45,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2329-232A, U+3008-3011, U+3014-3017, U+FF08-FF09, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 300
 			},
 			"path": "sources/yakuhanrps/files/YakuHanRPs-Light.ttf",
@@ -95,10 +139,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 24,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 45,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2329-232A, U+3008-3011, U+3014-3017, U+FF08-FF09, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 500
 			},
 			"path": "sources/yakuhanrps/files/YakuHanRPs-Medium.ttf",
@@ -112,10 +167,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 24,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 45,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2329-232A, U+3008-3011, U+3014-3017, U+FF08-FF09, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 400
 			},
 			"path": "sources/yakuhanrps/files/YakuHanRPs-Regular.ttf",
@@ -129,10 +195,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 24,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 45,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2329-232A, U+3008-3011, U+3014-3017, U+FF08-FF09, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 250
 			},
 			"path": "sources/yakuhanrps/files/YakuHanRPs-Thin.ttf",

@@ -255,10 +255,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 244,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D deva -f latn -a qsq -W -X \"\"",
+				"glyphs": 571,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0, U+00A9, U+00D7, U+00F7, U+02BC, U+0900-097F, U+200B-200D, U+2013-2015, U+2018-2019, U+201C-201D, U+2022, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 700
 			},
 			"path": "ofl/khula/Khula-Bold.ttf",
@@ -272,10 +297,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 244,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D deva -f latn -a qsq -W -X \"\"",
+				"glyphs": 571,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0, U+00A9, U+00D7, U+00F7, U+02BC, U+0900-097F, U+200B-200D, U+2013-2015, U+2018-2019, U+201C-201D, U+2022, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 800
 			},
 			"path": "ofl/khula/Khula-ExtraBold.ttf",
@@ -289,10 +339,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 245,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D deva -f latn -a qsq -W -X \"\"",
+				"glyphs": 571,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0, U+00A9, U+00D7, U+00F7, U+02BC, U+0900-097F, U+200B-200D, U+2013-2015, U+2018-2019, U+201C-201D, U+2022, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 300
 			},
 			"path": "ofl/khula/Khula-Light.ttf",
@@ -306,10 +381,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 244,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D deva -f latn -a qsq -W -X \"\"",
+				"glyphs": 571,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0, U+00A9, U+00D7, U+00F7, U+02BC, U+0900-097F, U+200B-200D, U+2013-2015, U+2018-2019, U+201C-201D, U+2022, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 400
 			},
 			"path": "ofl/khula/Khula-Regular.ttf",
@@ -323,10 +423,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 244,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.002;PS 1.0;hotconv 1.0.72;makeotf.lib2.5.5900; ttfautohint (v1.8.2) -l 8 -r 50 -G 200 -x 14 -D deva -f latn -a qsq -W -X \"\"",
+				"glyphs": 571,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0, U+00A9, U+00D7, U+00F7, U+02BC, U+0900-097F, U+200B-200D, U+2013-2015, U+2018-2019, U+201C-201D, U+2022, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": 600
 			},
 			"path": "ofl/khula/Khula-SemiBold.ttf",
