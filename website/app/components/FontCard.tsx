@@ -1,7 +1,7 @@
 import { Box, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import type { FontSummary } from '@/utils/font-summary';
@@ -28,6 +28,7 @@ const FontCard = ({
 	size,
 	eagerStylesheet = false,
 }: FontCardProps) => {
+	const location = useLocation();
 	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${font.id}@latest/index.css`;
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
@@ -78,7 +79,12 @@ const FontCard = ({
 					onError={() => setStylesheetLoaded(true)}
 				/>
 			)}
-			<Link className={classes.link} prefetch="intent" to={`/fonts/${font.id}`}>
+			<Link
+				className={classes.link}
+				prefetch="intent"
+				to={`/fonts/${font.id}`}
+				state={{ fontResults: `${location.pathname}${location.search}` }}
+			>
 				<div className={classes.preview}>
 					<Skeleton name="search-hit-preview" loading={!isFontReady}>
 						<Text

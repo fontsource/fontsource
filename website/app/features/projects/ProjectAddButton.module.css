@@ -1,0 +1,124 @@
+.button {
+	min-width: 0;
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 0 12px;
+	border: light-dark(1px solid #e1e3ec, 1px solid #2c3651);
+	border-radius: 4px;
+	background: transparent;
+	color: var(--mantine-color-purple-0);
+	font: inherit;
+	font-size: 14px;
+	font-weight: 600;
+	white-space: nowrap;
+	cursor: pointer;
+	transition:
+		background-color 120ms ease,
+		transform 120ms ease;
+
+	&:hover:not(:disabled) {
+		border-color: var(--mantine-color-purple-0);
+		background: light-dark(#f5f7f9, #121b31);
+	}
+
+	&:focus-visible {
+		outline: 3px solid var(--mantine-color-purpleHover-3);
+		outline-offset: 2px;
+	}
+
+	&:disabled {
+		cursor: wait;
+		opacity: 0.58;
+	}
+}
+
+.toast {
+	position: fixed;
+	inset: auto 24px 24px auto;
+	z-index: 1000;
+	max-width: min(520px, calc(100% - 48px));
+	display: none;
+	align-items: center;
+	gap: 24px;
+	margin: 0;
+	padding: 13px 14px 13px 16px;
+	border: 1px solid light-dark(#d8dbea, #2c3651);
+	border-radius: 6px;
+	background: light-dark(#fff, #121b31);
+	color: light-dark(#01112c, #f5f7f9);
+	box-shadow: 0 12px 34px rgb(1 17 44 / 16%);
+	font-size: 14px;
+
+	&[data-open],
+	&:popover-open {
+		display: flex;
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-inline-start: auto;
+	}
+
+	button,
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
+		padding: 0 8px;
+		border: 0;
+		background: transparent;
+		color: var(--mantine-color-purple-0);
+		font: inherit;
+		font-weight: 600;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	:is(button, a):focus-visible {
+		outline: 2px solid var(--mantine-color-purple-0);
+		outline-offset: 2px;
+	}
+}
+
+.close {
+	display: inline-grid;
+	min-width: 44px;
+	place-items: center;
+	color: light-dark(#52617a, #aeb9cc) !important;
+}
+
+@media (--lt-sm) {
+	.button {
+		width: fit-content;
+	}
+
+	.toast {
+		right: 16px;
+		bottom: 16px;
+		left: 16px;
+		max-width: none;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 10px;
+
+		> div {
+			width: 100%;
+			margin-inline-start: 0;
+		}
+
+		.close {
+			margin-inline-start: auto;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.button {
+		transition: none;
+	}
+}

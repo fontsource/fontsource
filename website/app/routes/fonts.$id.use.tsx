@@ -2,10 +2,9 @@ import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 
-import { FamilyPreview } from '@/components/font-page/FamilyPreview';
+import { FamilyUse } from '@/components/font-page/FamilyUse';
 import { TabsWrapper } from '@/components/preview/Tabs';
 import {
-	type GetFontResponse,
 	getFont,
 	getFontVersions,
 	getRegistryFamily,
@@ -34,45 +33,35 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			() => ({ value: undefined, unavailable: true }),
 		),
 	]);
-	const { staticCSS, variableCSS } = getFontPreviewCSS(metadata, variable);
+	const previewCSS = getFontPreviewCSS(metadata, variable);
 
 	return data(
 		{
 			metadata,
-			staticCSS,
 			variable,
-			variableCSS,
 			versions,
 			registry: registryResult.value,
 			registryUnavailable: registryResult.unavailable,
+			...previewCSS,
 		},
 		{ headers: cacheHeaders.short },
 	);
 };
 
-const generateDescription = (metadata: GetFontResponse) => {
-	const { family, category, variable } = metadata;
-
-	const variableDesc = variable ? 'variable ' : '';
-
-	return `Download the ${family} ${variableDesc}${category} font family web typeface. Self-host typography for your website.`;
-};
-
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
-	const title = loaderData?.metadata.family
-		? `${loaderData.metadata.family} | Fontsource`
-		: 'Fontsource';
-
-	const description = loaderData?.metadata
-		? generateDescription(loaderData.metadata)
-		: undefined;
-	const image = loaderData?.metadata
-		? getFontOpenGraphImage(loaderData.metadata)
-		: undefined;
-	return ogMeta({ title, description, image });
+	const family = loaderData?.metadata.family;
+	return ogMeta({
+		title: family ? `Get ${family} | Fontsource` : undefined,
+		description: family
+			? `Download ${family} or add it to a website with a package or CDN.`
+			: undefined,
+		image: loaderData?.metadata
+			? getFontOpenGraphImage(loaderData.metadata)
+			: undefined,
+	});
 };
 
-export default function Font() {
+export default function UsePage() {
 	const {
 		metadata,
 		staticCSS,
@@ -88,9 +77,9 @@ export default function Font() {
 			metadata={metadata}
 			registry={registry}
 			variableAvailable={Boolean(variable)}
-			tabsValue="preview"
+			tabsValue="use"
 		>
-			<FamilyPreview
+			<FamilyUse
 				key={metadata.id}
 				metadata={metadata}
 				staticCSS={staticCSS}
@@ -99,7 +88,6 @@ export default function Font() {
 				versions={versions}
 				registry={registry}
 				registryUnavailable={registryUnavailable}
-				variableUnavailable={metadata.variable && !variable}
 			/>
 		</TabsWrapper>
 	);
