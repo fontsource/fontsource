@@ -49,10 +49,25 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 101,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"liga"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 140,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+002D, U+00A0, U+02BC, U+02D7, U+0303, U+0331, U+0E01-0E3A, U+0E3F-0E5B, U+200B-200D, U+2010, U+25CC",
 				"weight": {
 					"default": 400,
 					"max": 900,

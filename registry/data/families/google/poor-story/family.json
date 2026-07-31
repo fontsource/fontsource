@@ -212,10 +212,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 11723,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"fwid"
+					]
+				},
 				"fontVersion": "Version 3.00",
+				"glyphs": 11724,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1, U+00A4, U+00A7, U+00A9, U+00AB, U+00AF-00B3, U+00B6-00B7, U+00B9, U+00BB-00BF, U+00D7, U+00F7, U+2018-2019, U+201C-201D, U+2020-2021, U+2026, U+2030, U+2074, U+2081-2084, U+20A9, U+2122, U+2153-2154, U+215B-215E, U+2160-2169, U+2170-2179, U+2460-246E, U+2474-2482, U+249C-24B5, U+24D0-24E9, U+2500-2503, U+250C-254B, U+3131-3163, U+3165-318E, U+3200-321B, U+3260-327B, U+AC00-D7A3, U+FF01-FF5E, U+FFE3, U+FFE6",
 				"weight": 400
 			},
 			"path": "ofl/poorstory/PoorStory-Regular.ttf",

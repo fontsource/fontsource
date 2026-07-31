@@ -681,10 +681,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 369,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp"
+					]
+				},
 				"fontVersion": "Version 0.11; ttfautohint (v0.8) -G 32 -r 16 -x",
+				"glyphs": 373,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000C, U+0020-007E, U+00A0-00A1, U+00A3-00A4, U+00A6, U+00A8, U+00AB, U+00B6, U+00BB, U+00BF-0103, U+0106-0107, U+010C-010D, U+0111-0113, U+0116-0117, U+011A-011D, U+0128-0129, U+0130-0131, U+014A-014F, U+0152-0153, U+0160-0161, U+0168-016B, U+0170-0171, U+0174-0175, U+017F, U+0181, U+0186, U+018A, U+018E-0192, U+0194, U+0196-0199, U+019D, U+019F, U+01A9, U+01B2-01B6, U+01CD-01D4, U+01DD, U+0228-022A, U+022F, U+0237, U+0244-0245, U+0251, U+0253-0254, U+0256-0257, U+0259, U+025B, U+0261, U+0263, U+0268-0269, U+0272, U+0283, U+0289, U+028B-028C, U+02BB-02BD, U+02DE, U+0300-0304, U+0306-030E, U+0310-0315, U+0323-0329, U+032C-032D, U+0331, U+1E04-1E05, U+1E0C-1E0F, U+1E12-1E13, U+1E18-1E19, U+1E24-1E25, U+1E36-1E37, U+1E3C-1E3D, U+1E44-1E47, U+1E4A-1E4B, U+1E54-1E55, U+1E62-1E63, U+1E6C-1E71, U+1E76-1E77, U+1E84-1E85, U+1E92-1E93, U+1EA0-1EA1, U+1EB8-1EB9, U+1EBC-1EBD, U+1ECA-1ECD, U+1EE4-1EE5, U+1EF8-1EF9, U+2010-2011, U+2013-2014, U+2018-201F, U+2022, U+2039-203A, U+20A6, U+20AC, U+20B5, U+2C6D",
 				"weight": 400
 			},
 			"path": "ofl/molengo/Molengo-Regular.ttf",

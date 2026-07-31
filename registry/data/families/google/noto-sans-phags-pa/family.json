@@ -27,10 +27,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 94,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"calt",
+						"ccmp",
+						"fina",
+						"init",
+						"medi"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 379,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+00A0, U+1801-1803, U+1805, U+200B-200F, U+2025-2026, U+25CC, U+3001-3002, U+3007-3011, U+3014-301B, U+A840-A877, U+FE00",
 				"weight": 400
 			},
 			"path": "ofl/notosansphagspa/NotoSansPhagsPa-Regular.ttf",

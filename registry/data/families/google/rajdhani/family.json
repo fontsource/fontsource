@@ -475,10 +475,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 465,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+				"glyphs": 1100,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0123, U+0125-0137, U+0139-0148, U+014A-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02C9, U+02D8-02DD, U+039C, U+03A0, U+03A3, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+0972, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+2212, U+2248, U+2260, U+2264-2265, U+25CC, U+F6C3",
 				"weight": 700
 			},
 			"path": "ofl/rajdhani/Rajdhani-Bold.ttf",
@@ -492,10 +514,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 465,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+				"glyphs": 1100,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0123, U+0125-0137, U+0139-0148, U+014A-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02C9, U+02D8-02DD, U+039C, U+03A0, U+03A3, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+0972, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+2212, U+2248, U+2260, U+2264-2265, U+25CC, U+F6C3",
 				"weight": 300
 			},
 			"path": "ofl/rajdhani/Rajdhani-Light.ttf",
@@ -509,10 +553,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 465,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+				"glyphs": 1100,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0123, U+0125-0137, U+0139-0148, U+014A-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02C9, U+02D8-02DD, U+039C, U+03A0, U+03A3, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+0972, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+2212, U+2248, U+2260, U+2264-2265, U+25CC, U+F6C3",
 				"weight": 500
 			},
 			"path": "ofl/rajdhani/Rajdhani-Medium.ttf",
@@ -526,10 +592,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 465,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+				"glyphs": 1100,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0123, U+0125-0137, U+0139-0148, U+014A-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02C9, U+02D8-02DD, U+039C, U+03A0, U+03A3, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+0972, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+2212, U+2248, U+2260, U+2264-2265, U+25CC, U+F6C3",
 				"weight": 400
 			},
 			"path": "ofl/rajdhani/Rajdhani-Regular.ttf",
@@ -543,10 +631,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 465,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.201;PS 1.0;hotconv 1.0.78;makeotf.lib2.5.61930; ttfautohint (v1.1) -l 7 -r 28 -G 50 -x 13 -D latn -f deva -w G",
+				"glyphs": 1100,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BB, U+00BF-0107, U+010A-0123, U+0125-0137, U+0139-0148, U+014A-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02C9, U+02D8-02DD, U+039C, U+03A0, U+03A3, U+0901-0903, U+0905-0939, U+093C-0943, U+0945-094D, U+0950-0954, U+0958-0961, U+0964-0970, U+0972, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2126, U+2202, U+2206, U+2212, U+2248, U+2260, U+2264-2265, U+25CC, U+F6C3",
 				"weight": 600
 			},
 			"path": "ofl/rajdhani/Rajdhani-SemiBold.ttf",

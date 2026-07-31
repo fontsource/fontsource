@@ -437,10 +437,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 359,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.201; ttfautohint (v0.8) -r 50 -G 200 -x",
+				"glyphs": 362,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-0113, U+0116-0148, U+014A-017E, U+0192, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA",
 				"weight": 400
 			},
 			"path": "ofl/oxygenmono/OxygenMono-Regular.ttf",

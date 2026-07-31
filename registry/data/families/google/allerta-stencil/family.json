@@ -350,10 +350,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 186,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.02",
+				"glyphs": 217,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0022, U+0024-005D, U+0060-007A, U+007C, U+00A0-00A5, U+00A8, U+00AB, U+00B4, U+00B8, U+00BB, U+00BF-00C5, U+00C7-00D7, U+00D9-00E5, U+00E7-00F7, U+00F9-00FF, U+0131, U+0141-0142, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02D8-02DD, U+2013-2014, U+2018-2019, U+201C-201D, U+2039-203A, U+20AC",
 				"weight": 400
 			},
 			"path": "ofl/allertastencil/AllertaStencil-Regular.ttf",

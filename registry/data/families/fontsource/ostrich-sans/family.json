@@ -215,10 +215,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 115,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 1.001;PS 001.001;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 118,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A9, U+00AE, U+0131, U+02C6-02C7, U+02D8-02DD, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2122",
 				"weight": 900
 			},
 			"path": "sources/ostrich-sans/files/OstrichSans-Black.otf",
@@ -232,10 +241,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 109,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 112,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-005A, U+005C, U+005F-007A, U+007C, U+00A0, U+00A9, U+00AE, U+0131, U+02C6-02C7, U+02D8-02DD, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2122",
 				"weight": 700
 			},
 			"path": "sources/ostrich-sans/files/OstrichSans-Bold.otf",
@@ -249,10 +267,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 114,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 1.001;PS 001.001;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 117,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-005F, U+0061-007E, U+00A9, U+00AE, U+0131, U+02C6-02C7, U+02D8-02DD, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2122",
 				"weight": 300
 			},
 			"path": "sources/ostrich-sans/files/OstrichSans-Light.otf",
@@ -266,10 +293,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 304,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001;PS 001.001;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 311,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-005A, U+005C, U+005E-007A, U+007C, U+007E, U+00A1, U+00A3, U+00A8-00A9, U+00AE-00B0, U+00B4, U+00B7-00B8, U+00BA, U+00BF-0101, U+0106-0117, U+011A-0125, U+0128-012D, U+0130-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014C-014F, U+0152-0165, U+0168-016F, U+0174-017E, U+01FC-01FF, U+02C6-02C7, U+02D8-02DA, U+02DC, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2044, U+20AC, U+2122, U+F6C3, U+F6C9-F6CB, U+F6CE, U+F6D0, U+F8FF",
 				"weight": 400
 			},
 			"path": "sources/ostrich-sans/files/OstrichSans-Medium.otf",

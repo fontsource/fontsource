@@ -327,10 +327,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 149,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "1.000",
+				"glyphs": 157,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-0021, U+0024, U+0026, U+0028-0029, U+002C-003B, U+003F-005A, U+0060-007A, U+00A8, U+00AB, U+00B4, U+00B8, U+00BB, U+00C0-00CF, U+00D1-00D6, U+00D9-00DD, U+00E0-00EF, U+00F1-00F6, U+00F9-00FD, U+00FF, U+0131, U+0152-0153, U+0178, U+02C6, U+02DA, U+02DC, U+2018-2019, U+201C-201D, U+20AC",
 				"weight": 400
 			},
 			"path": "sources/bagnard/files/Bagnard.otf",

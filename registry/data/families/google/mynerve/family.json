@@ -880,10 +880,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 855,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"ordn",
+						"sinf",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1015,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-014D, U+0150-017E, U+0181, U+0186-018A, U+018E-0194, U+0196-0199, U+019D, U+01A0-01A1, U+01A4-01A5, U+01A9, U+01AC-01B4, U+01B7, U+01C0-01C3, U+01CD-01DF, U+01E2-01EB, U+01EE-01EF, U+01FA-01FF, U+0218-021B, U+0228-022B, U+0232-0233, U+0237, U+0242-0245, U+024B-024C, U+0251, U+0253-0254, U+0256-0257, U+0259, U+025B, U+0260, U+0263, U+0266, U+0268-0269, U+0272, U+027D-027E, U+0283, U+0288-028C, U+0292, U+0294-0295, U+02B0, U+02B2, U+02B7, U+02B9, U+02BB-02BF, U+02C6-02C8, U+02D8-02DD, U+02E1, U+0300-0304, U+0306-030C, U+0310, U+0312, U+031B, U+0323-0328, U+032E, U+0331, U+0335, U+035F, U+0374-0375, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CF, U+03D7, U+1E04-1E05, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E2A-1E2B, U+1E2E-1E2F, U+1E34-1E4D, U+1E50-1E53, U+1E5C-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E80-1E85, U+1E8E-1E8F, U+1E92-1E97, U+1E9E, U+1EA0-1EF9, U+2013-2014, U+2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+2074, U+207F, U+208D-208E, U+20AC, U+2122, U+215B-215E, U+2190-2199, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25A1, U+25B3, U+25CA, U+25CC, U+2758, U+2C64, U+2C6D, U+2C72-2C73, U+A71B-A71C, U+A78B-A78D, U+A7AA, U+E132-E133, U+E9AD, U+F002-F005, U+F007, U+F009, U+F00B-F01E, U+F020-F02C, U+F02E-F048, U+FB01-FB02, U+1F7BB",
 				"weight": 400
 			},
 			"path": "ofl/mynerve/Mynerve-Regular.ttf",

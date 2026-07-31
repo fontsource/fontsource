@@ -371,10 +371,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 457,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"curs",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"locl",
+						"ltrm",
+						"medi",
+						"pnum",
+						"rlig",
+						"rtlm",
+						"salt",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss07",
+						"ss08",
+						"ss09"
+					]
+				},
 				"fontVersion": "Version 3.000",
+				"glyphs": 912,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02C9, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+0600, U+060C, U+061B-061C, U+061E-061F, U+0621-063A, U+063F-0658, U+065A-065D, U+0660-0670, U+0674, U+067B, U+067D-067E, U+0683-0684, U+0698, U+069F-06A2, U+06A4-06A5, U+06A7-06AA, U+06AD, U+06AF, U+06BA, U+06C6, U+06C8-06C9, U+06CC, U+06D0-06D3, U+06DD, U+06E5, U+06E7, U+0751-0752, U+0755-0756, U+075D, U+0760-0761, U+0763, U+0767, U+0870, U+0872, U+0874, U+08A0-08A3, U+08A8-08A9, U+08BB-08BD, U+08C3-08C4, U+08F4-08FD, U+2000-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2030, U+2039-203A, U+2044, U+2060, U+2066-2069, U+206C-206D, U+2074, U+20A6, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+29F5, U+F130-F131, U+FB01-FB02, U+FD3E-FD3F, U+FDF2, U+FDFD, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 700
 			},
 			"path": "ofl/ruwudu/Ruwudu-Bold.ttf",
@@ -388,10 +421,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 457,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"curs",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"locl",
+						"ltrm",
+						"medi",
+						"pnum",
+						"rlig",
+						"rtlm",
+						"salt",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss07",
+						"ss08",
+						"ss09"
+					]
+				},
 				"fontVersion": "Version 3.000",
+				"glyphs": 912,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02C9, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+0600, U+060C, U+061B-061C, U+061E-061F, U+0621-063A, U+063F-0658, U+065A-065D, U+0660-0670, U+0674, U+067B, U+067D-067E, U+0683-0684, U+0698, U+069F-06A2, U+06A4-06A5, U+06A7-06AA, U+06AD, U+06AF, U+06BA, U+06C6, U+06C8-06C9, U+06CC, U+06D0-06D3, U+06DD, U+06E5, U+06E7, U+0751-0752, U+0755-0756, U+075D, U+0760-0761, U+0763, U+0767, U+0870, U+0872, U+0874, U+08A0-08A3, U+08A8-08A9, U+08BB-08BD, U+08C3-08C4, U+08F4-08FD, U+2000-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2030, U+2039-203A, U+2044, U+2060, U+2066-2069, U+206C-206D, U+2074, U+20A6, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+29F5, U+F130-F131, U+FB01-FB02, U+FD3E-FD3F, U+FDF2, U+FDFD, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 500
 			},
 			"path": "ofl/ruwudu/Ruwudu-Medium.ttf",
@@ -405,10 +471,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 457,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"curs",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"locl",
+						"ltrm",
+						"medi",
+						"pnum",
+						"rlig",
+						"rtlm",
+						"salt",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss07",
+						"ss08",
+						"ss09"
+					]
+				},
 				"fontVersion": "Version 3.000",
+				"glyphs": 912,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02C9, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+0600, U+060C, U+061B-061C, U+061E-061F, U+0621-063A, U+063F-0658, U+065A-065D, U+0660-0670, U+0674, U+067B, U+067D-067E, U+0683-0684, U+0698, U+069F-06A2, U+06A4-06A5, U+06A7-06AA, U+06AD, U+06AF, U+06BA, U+06C6, U+06C8-06C9, U+06CC, U+06D0-06D3, U+06DD, U+06E5, U+06E7, U+0751-0752, U+0755-0756, U+075D, U+0760-0761, U+0763, U+0767, U+0870, U+0872, U+0874, U+08A0-08A3, U+08A8-08A9, U+08BB-08BD, U+08C3-08C4, U+08F4-08FD, U+2000-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2030, U+2039-203A, U+2044, U+2060, U+2066-2069, U+206C-206D, U+2074, U+20A6, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+29F5, U+F130-F131, U+FB01-FB02, U+FD3E-FD3F, U+FDF2, U+FDFD, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 400
 			},
 			"path": "ofl/ruwudu/Ruwudu-Regular.ttf",
@@ -422,10 +521,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 457,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"curs",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"locl",
+						"ltrm",
+						"medi",
+						"pnum",
+						"rlig",
+						"rtlm",
+						"salt",
+						"ss02",
+						"ss03",
+						"ss04",
+						"ss07",
+						"ss08",
+						"ss09"
+					]
+				},
 				"fontVersion": "Version 3.000",
+				"glyphs": 912,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02C9, U+02D0, U+02D8-02DD, U+034F, U+03C0, U+0600, U+060C, U+061B-061C, U+061E-061F, U+0621-063A, U+063F-0658, U+065A-065D, U+0660-0670, U+0674, U+067B, U+067D-067E, U+0683-0684, U+0698, U+069F-06A2, U+06A4-06A5, U+06A7-06AA, U+06AD, U+06AF, U+06BA, U+06C6, U+06C8-06C9, U+06CC, U+06D0-06D3, U+06DD, U+06E5, U+06E7, U+0751-0752, U+0755-0756, U+075D, U+0760-0761, U+0763, U+0767, U+0870, U+0872, U+0874, U+08A0-08A3, U+08A8-08A9, U+08BB-08BD, U+08C3-08C4, U+08F4-08FD, U+2000-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026-2030, U+2039-203A, U+2044, U+2060, U+2066-2069, U+206C-206D, U+2074, U+20A6, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2423, U+25CA, U+25CC, U+29F5, U+F130-F131, U+FB01-FB02, U+FD3E-FD3F, U+FDF2, U+FDFD, U+FE00-FE0F, U+FEFF, U+FFFC-FFFD",
 				"weight": 600
 			},
 			"path": "ofl/ruwudu/Ruwudu-SemiBold.ttf",

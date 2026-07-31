@@ -450,10 +450,29 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 540,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga",
+						"onum",
+						"salt",
+						"ss01",
+						"ss02",
+						"ss03",
+						"zz01",
+						"zz02",
+						"zz03",
+						"zz04",
+						"zz05"
+					]
+				},
 				"fontVersion": "Version 1.301",
+				"glyphs": 533,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0401, U+0410-044F, U+0451, U+2010, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22F2, U+25CA, U+E000-E003, U+E005-E009, U+E010-E019, U+E020-E029, U+F000, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/sansation/Sansation-Bold.ttf",
@@ -467,10 +486,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 533,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga",
+						"onum",
+						"ss03",
+						"zz01",
+						"zz02",
+						"zz03"
+					]
+				},
 				"fontVersion": "Version 1.301",
+				"glyphs": 526,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0401, U+0410-044F, U+0451, U+2010, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22F2, U+25CA, U+E000-E003, U+E005-E009, U+E010-E019, U+E020-E021, U+E029, U+F000, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/sansation/Sansation-BoldItalic.ttf",
@@ -484,10 +517,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 533,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga",
+						"onum",
+						"ss03",
+						"zz01",
+						"zz02",
+						"zz03"
+					]
+				},
 				"fontVersion": "Version 1.301",
+				"glyphs": 526,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0401, U+0410-044F, U+0451, U+2010, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22F2, U+25CA, U+E000-E003, U+E005-E009, U+E010-E019, U+E020-E021, U+E029, U+F000, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/sansation/Sansation-Italic.ttf",
@@ -501,10 +548,29 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 540,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga",
+						"onum",
+						"salt",
+						"ss01",
+						"ss02",
+						"ss03",
+						"zz01",
+						"zz02",
+						"zz03",
+						"zz04",
+						"zz05"
+					]
+				},
 				"fontVersion": "Version 1.301",
+				"glyphs": 533,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0401, U+0410-044F, U+0451, U+2010, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22F2, U+25CA, U+E000-E003, U+E005-E009, U+E010-E019, U+E020-E029, U+F000, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "ofl/sansation/Sansation-Light.ttf",
@@ -518,10 +584,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 533,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga",
+						"onum",
+						"ss03",
+						"zz01",
+						"zz02",
+						"zz03"
+					]
+				},
 				"fontVersion": "Version 1.301",
+				"glyphs": 526,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0401, U+0410-044F, U+0451, U+2010, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22F2, U+25CA, U+E000-E003, U+E005-E009, U+E010-E019, U+E020-E021, U+E029, U+F000, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "ofl/sansation/Sansation-LightItalic.ttf",
@@ -535,10 +615,29 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 540,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"liga",
+						"onum",
+						"salt",
+						"ss01",
+						"ss02",
+						"ss03",
+						"zz01",
+						"zz02",
+						"zz03",
+						"zz04",
+						"zz05"
+					]
+				},
 				"fontVersion": "Version 1.301",
+				"glyphs": 533,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+0401, U+0410-044F, U+0451, U+2010, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22F2, U+25CA, U+E000-E003, U+E005-E009, U+E010-E019, U+E020-E029, U+F000, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/sansation/Sansation-Regular.ttf",

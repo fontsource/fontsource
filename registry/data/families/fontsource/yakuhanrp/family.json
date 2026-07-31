@@ -27,10 +27,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 32,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 56,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2027, U+2329-232A, U+3001-3002, U+3008-3011, U+3014-3017, U+30FB, U+FF01, U+FF08-FF09, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 900
 			},
 			"path": "sources/yakuhanrp/files/YakuHanRP-Black.ttf",
@@ -44,10 +55,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 32,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 56,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2027, U+2329-232A, U+3001-3002, U+3008-3011, U+3014-3017, U+30FB, U+FF01, U+FF08-FF09, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 700
 			},
 			"path": "sources/yakuhanrp/files/YakuHanRP-Bold.ttf",
@@ -61,10 +83,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 32,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 56,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2027, U+2329-232A, U+3001-3002, U+3008-3011, U+3014-3017, U+30FB, U+FF01, U+FF08-FF09, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 800
 			},
 			"path": "sources/yakuhanrp/files/YakuHanRP-ExtraBold.ttf",
@@ -78,10 +111,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 32,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 56,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2027, U+2329-232A, U+3001-3002, U+3008-3011, U+3014-3017, U+30FB, U+FF01, U+FF08-FF09, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 300
 			},
 			"path": "sources/yakuhanrp/files/YakuHanRP-Light.ttf",
@@ -95,10 +139,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 32,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 56,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2027, U+2329-232A, U+3001-3002, U+3008-3011, U+3014-3017, U+30FB, U+FF01, U+FF08-FF09, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 500
 			},
 			"path": "sources/yakuhanrp/files/YakuHanRP-Medium.ttf",
@@ -112,10 +167,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 32,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 56,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2027, U+2329-232A, U+3001-3002, U+3008-3011, U+3014-3017, U+30FB, U+FF01, U+FF08-FF09, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 400
 			},
 			"path": "sources/yakuhanrp/files/YakuHanRP-Regular.ttf",
@@ -129,10 +195,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 32,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.059",
+				"glyphs": 56,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020, U+00A0, U+2027, U+2329-232A, U+3001-3002, U+3008-3011, U+3014-3017, U+30FB, U+FF01, U+FF08-FF09, U+FF1A-FF1B, U+FF1F, U+FF3B, U+FF3D, U+FF5B, U+FF5D",
 				"weight": 250
 			},
 			"path": "sources/yakuhanrp/files/YakuHanRP-Thin.ttf",

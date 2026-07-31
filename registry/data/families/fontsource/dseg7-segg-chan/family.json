@@ -26,10 +26,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 15,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 0.3",
+				"glyphs": 18,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0021, U+002D-002E, U+0030-003A",
 				"weight": 400
 			},
 			"path": "sources/dseg7-segg-chan/files/DSEG7SEGGCHAN-Regular.ttf",

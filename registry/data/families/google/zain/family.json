@@ -380,10 +380,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 590,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"lnum",
+						"locl",
+						"medi",
+						"ordn",
+						"pnum",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss03",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+				"glyphs": 610,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00AB, U+00AD-00B4, U+00B6-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03BC, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+065A, U+0660-066E, U+0670-0671, U+0679, U+067E, U+0686, U+0688, U+0691-0692, U+0694-0695, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06B5-06B7, U+06BA, U+06BE, U+06C0-06C3, U+06C6, U+06CA, U+06CC, U+06CE, U+06D2-06D3, U+06D5, U+06DB, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2260, U+2264-2265, U+25CC, U+E000-E009, U+E100-E107, U+E109-E10B, U+E10D-E10F, U+E111-E115, U+E117-E119, U+E11B-E146, U+E148-E14B, U+E14D, U+E14F-E151, U+E153-E15A, U+E15C-E161, U+EECD-EED0, U+F805-F806, U+FB01-FB02, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB3, U+FBE8-FBE9, U+FBFD-FBFF, U+FC09-FC0A, U+FC32, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FDF2, U+FDFC, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 900
 			},
 			"path": "ofl/zain/Zain-Black.ttf",
@@ -397,10 +426,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 590,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"lnum",
+						"locl",
+						"medi",
+						"ordn",
+						"pnum",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss03",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+				"glyphs": 610,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00AB, U+00AD-00B4, U+00B6-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03BC, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+065A, U+0660-066E, U+0670-0671, U+0679, U+067E, U+0686, U+0688, U+0691-0692, U+0694-0695, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06B5-06B7, U+06BA, U+06BE, U+06C0-06C3, U+06C6, U+06CA, U+06CC, U+06CE, U+06D2-06D3, U+06D5, U+06DB, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2260, U+2264-2265, U+25CC, U+E000-E009, U+E100-E107, U+E109-E10B, U+E10D-E10F, U+E111-E115, U+E117-E119, U+E11B-E146, U+E148-E14B, U+E14D, U+E14F-E151, U+E153-E15A, U+E15C-E161, U+EECD-EED0, U+F805-F806, U+FB01-FB02, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB3, U+FBE8-FBE9, U+FBFD-FBFF, U+FC09-FC0A, U+FC32, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FDF2, U+FDFC, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 700
 			},
 			"path": "ofl/zain/Zain-Bold.ttf",
@@ -414,10 +472,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 590,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"lnum",
+						"locl",
+						"medi",
+						"ordn",
+						"pnum",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss03",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+				"glyphs": 610,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00AB, U+00AD-00B4, U+00B6-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03BC, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+065A, U+0660-066E, U+0670-0671, U+0679, U+067E, U+0686, U+0688, U+0691-0692, U+0694-0695, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06B5-06B7, U+06BA, U+06BE, U+06C0-06C3, U+06C6, U+06CA, U+06CC, U+06CE, U+06D2-06D3, U+06D5, U+06DB, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2260, U+2264-2265, U+25CC, U+E000-E009, U+E100-E107, U+E109-E10B, U+E10D-E10F, U+E111-E115, U+E117-E119, U+E11B-E146, U+E148-E14B, U+E14D, U+E14F-E151, U+E153-E15A, U+E15C-E161, U+EECD-EED0, U+F805-F806, U+FB01-FB02, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB3, U+FBE8-FBE9, U+FBFD-FBFF, U+FC09-FC0A, U+FC32, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FDF2, U+FDFC, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 800
 			},
 			"path": "ofl/zain/Zain-ExtraBold.ttf",
@@ -431,10 +518,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 590,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"lnum",
+						"locl",
+						"medi",
+						"ordn",
+						"pnum",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss03",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+				"glyphs": 610,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00AB, U+00AD-00B4, U+00B6-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03BC, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+065A, U+0660-066E, U+0670-0671, U+0679, U+067E, U+0686, U+0688, U+0691-0692, U+0694-0695, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06B5-06B7, U+06BA, U+06BE, U+06C0-06C3, U+06C6, U+06CA, U+06CC, U+06CE, U+06D2-06D3, U+06D5, U+06DB, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2260, U+2264-2265, U+25CC, U+E000-E009, U+E100-E107, U+E109-E10B, U+E10D-E10F, U+E111-E115, U+E117-E119, U+E11B-E146, U+E148-E14B, U+E14D, U+E14F-E151, U+E153-E15A, U+E15C-E161, U+EECD-EED0, U+F805-F806, U+FB01-FB02, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB3, U+FBE8-FBE9, U+FBFD-FBFF, U+FC09-FC0A, U+FC32, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FDF2, U+FDFC, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 200
 			},
 			"path": "ofl/zain/Zain-ExtraLight.ttf",
@@ -448,10 +564,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 680,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"lnum",
+						"locl",
+						"medi",
+						"ordn",
+						"pnum",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss03",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+				"glyphs": 700,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00AB, U+00AD-00B4, U+00B6-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03BC, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+065A, U+0660-066E, U+0670-0671, U+0679, U+067E, U+0686, U+0688, U+0691-0692, U+0694-0695, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06B5-06B7, U+06BA, U+06BE, U+06C0-06C3, U+06C6, U+06CA, U+06CC, U+06CE, U+06D2-06D3, U+06D5, U+06DB, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2260, U+2264-2265, U+25CC, U+E000-E009, U+E100-E107, U+E109-E10B, U+E10D-E10F, U+E111-E115, U+E117-E119, U+E11B-E146, U+E148-E14B, U+E14D, U+E14F-E151, U+E153-E15A, U+E15C-E161, U+E200-E259, U+EECD-EED0, U+F805-F806, U+FB01-FB02, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB3, U+FBE8-FBE9, U+FBFD-FBFF, U+FC09-FC0A, U+FC32, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FDF2, U+FDFC, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 400
 			},
 			"path": "ofl/zain/Zain-Italic.ttf",
@@ -465,10 +610,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 590,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"lnum",
+						"locl",
+						"medi",
+						"ordn",
+						"pnum",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss03",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+				"glyphs": 610,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00AB, U+00AD-00B4, U+00B6-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03BC, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+065A, U+0660-066E, U+0670-0671, U+0679, U+067E, U+0686, U+0688, U+0691-0692, U+0694-0695, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06B5-06B7, U+06BA, U+06BE, U+06C0-06C3, U+06C6, U+06CA, U+06CC, U+06CE, U+06D2-06D3, U+06D5, U+06DB, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2260, U+2264-2265, U+25CC, U+E000-E009, U+E100-E107, U+E109-E10B, U+E10D-E10F, U+E111-E115, U+E117-E119, U+E11B-E146, U+E148-E14B, U+E14D, U+E14F-E151, U+E153-E15A, U+E15C-E161, U+EECD-EED0, U+F805-F806, U+FB01-FB02, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB3, U+FBE8-FBE9, U+FBFD-FBFF, U+FC09-FC0A, U+FC32, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FDF2, U+FDFC, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 300
 			},
 			"path": "ofl/zain/Zain-Light.ttf",
@@ -482,10 +656,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 680,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"lnum",
+						"locl",
+						"medi",
+						"ordn",
+						"pnum",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss03",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+				"glyphs": 700,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00AB, U+00AD-00B4, U+00B6-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03BC, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+065A, U+0660-066E, U+0670-0671, U+0679, U+067E, U+0686, U+0688, U+0691-0692, U+0694-0695, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06B5-06B7, U+06BA, U+06BE, U+06C0-06C3, U+06C6, U+06CA, U+06CC, U+06CE, U+06D2-06D3, U+06D5, U+06DB, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2260, U+2264-2265, U+25CC, U+E000-E009, U+E100-E107, U+E109-E10B, U+E10D-E10F, U+E111-E115, U+E117-E119, U+E11B-E146, U+E148-E14B, U+E14D, U+E14F-E151, U+E153-E15A, U+E15C-E161, U+E200-E259, U+EECD-EED0, U+F805-F806, U+FB01-FB02, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB3, U+FBE8-FBE9, U+FBFD-FBFF, U+FC09-FC0A, U+FC32, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FDF2, U+FDFC, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 300
 			},
 			"path": "ofl/zain/Zain-LightItalic.ttf",
@@ -499,10 +702,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 590,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"lnum",
+						"locl",
+						"medi",
+						"ordn",
+						"pnum",
+						"rlig",
+						"ss01",
+						"ss02",
+						"ss03",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4)",
+				"glyphs": 610,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A3, U+00A5-00AB, U+00AD-00B4, U+00B6-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03BC, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+065A, U+0660-066E, U+0670-0671, U+0679, U+067E, U+0686, U+0688, U+0691-0692, U+0694-0695, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06B5-06B7, U+06BA, U+06BE, U+06C0-06C3, U+06C6, U+06CA, U+06CC, U+06CE, U+06D2-06D3, U+06D5, U+06DB, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+2260, U+2264-2265, U+25CC, U+E000-E009, U+E100-E107, U+E109-E10B, U+E10D-E10F, U+E111-E115, U+E117-E119, U+E11B-E146, U+E148-E14B, U+E14D, U+E14F-E151, U+E153-E15A, U+E15C-E161, U+EECD-EED0, U+F805-F806, U+FB01-FB02, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB3, U+FBE8-FBE9, U+FBFD-FBFF, U+FC09-FC0A, U+FC32, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FDF2, U+FDFC, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 400
 			},
 			"path": "ofl/zain/Zain-Regular.ttf",

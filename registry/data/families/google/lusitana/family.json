@@ -338,10 +338,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 205,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 210,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+03BC, U+2013, U+2022, U+2026, U+2039-203A, U+20AC, U+2212, U+2260",
 				"weight": 700
 			},
 			"path": "ofl/lusitana/Lusitana-Bold.ttf",
@@ -355,10 +364,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 209,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 214,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00FF, U+0131, U+0152-0153, U+0178, U+0192, U+02C6, U+02DA, U+02DC, U+03BC, U+2013, U+2020-2022, U+2026, U+2039-203A, U+20AC, U+2212, U+2260",
 				"weight": 400
 			},
 			"path": "ofl/lusitana/Lusitana-Regular.ttf",

@@ -17,6 +17,7 @@ import {
 	familyIconsSchema,
 	familyProviderSchema,
 	familySchema,
+	familyTagsSchema,
 	type LanguageCatalog,
 	languageCatalogSchema,
 	replacementRegistrySchema,
@@ -278,6 +279,35 @@ const validateFamily = async (
 			`${source.path} color tables`,
 		);
 		assertSortedUnique(file.axes, (axis) => axis.tag, `${source.path} axes`);
+		let previousCodepoint = -2;
+		let codepoints = 0;
+		for (const range of file.unicodeRange.split(', ')) {
+			const [startValue, endValue = startValue] = range.slice(2).split('-');
+			const start = Number.parseInt(startValue ?? '', 16);
+			const end = Number.parseInt(endValue ?? '', 16);
+			assert(
+				start <= end && end <= 0x10ffff,
+				`${source.path} contains an invalid Unicode range`,
+			);
+			assert(
+				start > previousCodepoint + 1,
+				`${source.path} Unicode ranges must be sorted, disjoint, and minimal`,
+			);
+			codepoints += end - start + 1;
+			previousCodepoint = end;
+		}
+		strictEqual(
+			codepoints,
+			file.codepoints,
+			`${source.path} codepoint count does not match its Unicode range`,
+		);
+		for (const [table, features] of Object.entries(file.features)) {
+			assertSortedUnique(
+				features,
+				(feature) => feature,
+				`${source.path} ${table} features`,
+			);
+		}
 		if (typeof file.weight !== 'number') {
 			assert(
 				file.weight.min <= file.weight.default &&
@@ -453,6 +483,10 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		join(root, 'taxonomy.json'),
 		taxonomySchema,
 	);
+	const familyTags = await validateCanonicalJson(
+		join(root, 'family-tags.json'),
+		familyTagsSchema,
+	);
 	const languages = await validateCanonicalJson(
 		join(root, 'languages.json'),
 		languageCatalogSchema,
@@ -495,6 +529,13 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		}),
 	);
 	const familiesById = new Map(families.map((family) => [family.id, family]));
+	for (const [tag, ids] of Object.entries(familyTags)) {
+		assert(taxonomy.tags[tag], `Curated family tag ${tag} does not exist`);
+		assertSortedUnique(ids, (id) => id, `${tag} families`);
+		for (const id of ids) {
+			assert(familiesById.has(id), `${tag} references missing family ${id}`);
+		}
+	}
 	for (const [id, replacedBy] of Object.entries(replacements)) {
 		assert(id !== replacedBy, `${id} cannot replace itself`);
 		const family = familiesById.get(id);
@@ -516,6 +557,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		'languages.json',
 		'replacements.json',
 		'taxonomy.json',
+		'family-tags.json',
 		...subsetIds.map((id) => `subsets/${id}.json`),
 	]);
 	for (const family of familyKeys) {

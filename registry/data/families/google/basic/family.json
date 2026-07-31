@@ -449,10 +449,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 446,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.003; ttfautohint (v1.1) -l 6 -r 16 -G 0 -x 16 -D latn -f none -w \"\"",
+				"glyphs": 463,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0009-000A, U+000D, U+0010-0014, U+001E-007F, U+00A0-017E, U+018F, U+0192, U+01C4-01CC, U+01F1-01F3, U+01FC-01FD, U+0218-021B, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0394, U+03A9, U+03BC, U+03C0, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E60-1E61, U+1E6A-1E6B, U+1E80-1E85, U+1EF2-1EF3, U+2002, U+2009, U+200B-200C, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+203C, U+2044, U+20A9, U+20AC, U+20BA, U+2105, U+2113, U+2116, U+2120, U+2122, U+2126, U+212E, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+E0FF, U+EFFD, U+F000, U+F6C3, U+FB00-FB04, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/basic/Basic-Regular.ttf",

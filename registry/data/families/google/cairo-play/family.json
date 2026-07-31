@@ -485,13 +485,41 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 699,
 				"colorTables": [
 					"COLR",
 					"CPAL"
 				],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"fina",
+						"frac",
+						"init",
+						"locl",
+						"medi",
+						"numr",
+						"ordn",
+						"rlig",
+						"rvrn",
+						"sinf",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 3.130;gftools[0.9.24]",
+				"glyphs": 1956,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0010, U+0020-007E, U+00A0-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014A-017E, U+0192, U+01FA-01FF, U+0218-021B, U+0237, U+02BB-02BC, U+02C6-02C7, U+02D8-02DD, U+03C0, U+060C-060D, U+0615, U+061B, U+061F, U+0621-063A, U+0640-0656, U+0658, U+0660-0671, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06BA, U+06BE, U+06C1-06C3, U+06CC, U+06D2-06D4, U+06F0-06F9, U+1E80-1E85, U+1EAB, U+1EB0, U+1EC5, U+1ED7, U+1EF2-1EF3, U+1EF8-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F6BE, U+F6C3, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB9, U+FBBD-FBBE, U+FBE8-FBE9, U+FBFD-FBFF, U+FC43-FC44, U+FC64-FC65, U+FC67-FC6B, U+FC6D-FC71, U+FC73-FC77, U+FC79-FC7B, U+FC86-FC87, U+FC8A-FC8B, U+FC8D-FC8F, U+FC91-FC92, U+FC94, U+FC96, U+FCFB-FCFE, U+FD05-FD08, U+FD0D-FD10, U+FD17-FD1A, U+FD21-FD24, U+FD29-FD2C, U+FD3E-FD3F, U+FDF2, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": {
 					"default": 400,
 					"max": 1000,

@@ -516,10 +516,26 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 609,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.001",
+				"glyphs": 644,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-012B, U+012E-0148, U+014A-014D, U+0150-015B, U+015E-016B, U+016E-017E, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01DE-01DF, U+01E6-01E7, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+031B, U+0323, U+0326-0328, U+0384-0385, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-0497, U+049A-049B, U+04A2-04A3, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0, U+04CF, U+04D8-04D9, U+04E2-04E3, U+04E8-04E9, U+04EE-04EF, U+1E12-1E13, U+1E44-1E45, U+1E80-1E85, U+1EA0-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2190-2193, U+2212, U+2215, U+2260",
 				"weight": {
 					"default": 400,
 					"max": 900,

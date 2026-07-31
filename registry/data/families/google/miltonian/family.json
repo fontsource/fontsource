@@ -364,10 +364,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 255,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.008",
+				"glyphs": 258,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8, U+02DA-02DC, U+2000-200A, U+2010-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+202F-2030, U+2039-203A, U+205F, U+20AC, U+2122, U+2639-263A, U+2661, U+2665, U+2698, U+269C, U+2766, U+E000, U+E0B5-E0BC, U+1F33F",
 				"weight": 400
 			},
 			"path": "ofl/miltonian/Miltonian-Regular.ttf",

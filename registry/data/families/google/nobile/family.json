@@ -379,10 +379,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 329,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 001.000",
+				"glyphs": 344,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02DA, U+02DC, U+0301, U+0306, U+0400-045F, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2116, U+2122, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/nobile/Nobile-Bold.ttf",
@@ -396,10 +407,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 472,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1.000;PS 001.000;hotconv 1.0.38",
+				"glyphs": 483,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A1-012C, U+012E-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+0192, U+01CD-01CF, U+01D1-01D4, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+0301, U+0306, U+0400-045F, U+0490, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203E, U+20AC, U+2116, U+2122, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/nobile/Nobile-BoldItalic.ttf",
@@ -413,10 +435,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 473,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1.000;PS 001.000;hotconv 1.0.38",
+				"glyphs": 490,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A1-012C, U+012E-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+0192, U+01CD-01CF, U+01D1-01D4, U+01FA-01FF, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+0301, U+0306, U+0400-045F, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8, U+2010-2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2116, U+2122, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/nobile/Nobile-Italic.ttf",
@@ -430,10 +463,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 442,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 001.000",
+				"glyphs": 458,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0113, U+0116-012B, U+012E-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014A-014D, U+0150-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+0301, U+0306, U+0400-045F, U+1E90-1E91, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2116, U+2122, U+FB00-FB04",
 				"weight": 500
 			},
 			"path": "ofl/nobile/Nobile-Medium.ttf",
@@ -447,10 +491,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 472,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1.000;PS 001.000;hotconv 1.0.38",
+				"glyphs": 485,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A1-012C, U+012E-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+0192, U+01CD-01CF, U+01D1-01D4, U+01FA-01FF, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+0301, U+0306, U+0400-045F, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2116, U+2122, U+FB00-FB04",
 				"weight": 500
 			},
 			"path": "ofl/nobile/Nobile-MediumItalic.ttf",
@@ -464,10 +519,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 372,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 001.001",
+				"glyphs": 400,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0102-0103, U+0106-0107, U+010D, U+0114-0115, U+011A-011B, U+011D, U+011F, U+0128, U+012C, U+0131, U+0143-0144, U+014E-014F, U+0152-0153, U+015A-015C, U+0160-0161, U+0168-0169, U+016C-016F, U+0176-0179, U+017D-017E, U+0192, U+01CD-01CF, U+01D1-01D4, U+01E7, U+01F5, U+02C6-02C7, U+02D8, U+02DA, U+02DC, U+0301, U+0306, U+0400-045F, U+1E80, U+1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2116, U+2122, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/nobile/Nobile-Regular.ttf",

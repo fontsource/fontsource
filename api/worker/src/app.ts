@@ -26,6 +26,8 @@ import {
 import { GetFontOpenGraphRoute } from './routes/open-graph';
 import {
 	GetRegistryFamilyRoute,
+	GetRegistryFamilySymbolsRoute,
+	GetRegistrySourceCapabilitiesRoute,
 	GetRegistrySourceRoute,
 	GetRegistrySubsetRoute,
 	GetRegistryTaxonomyRoute,
@@ -170,11 +172,16 @@ openapi.get('/og/fonts/:id', GetFontOpenGraphRoute);
 openapi.get('/v1/registry/taxonomy', GetRegistryTaxonomyRoute);
 openapi.get('/v1/registry/families', ListRegistryFamiliesRoute);
 openapi.get('/v1/registry/families/:id', GetRegistryFamilyRoute);
+openapi.get('/v1/registry/families/:id/symbols', GetRegistryFamilySymbolsRoute);
 openapi.get('/v1/registry/languages', ListRegistryLanguagesRoute);
 openapi.get('/v1/registry/subsets', ListRegistrySubsetsRoute);
 openapi.get('/v1/registry/subsets/:id', GetRegistrySubsetRoute);
 openapi.get('/v1/registry/axes', ListRegistryAxesRoute);
 openapi.get('/v1/registry/sources/:sha256', GetRegistrySourceRoute);
+openapi.get(
+	'/v1/registry/sources/:sha256/capabilities',
+	GetRegistrySourceCapabilitiesRoute,
+);
 
 openapi.get('/fonts/:tag/:file', GetBinaryAssetRoute);
 openapi.get('/css/:tag/:file', GetCssFileRoute);

@@ -370,10 +370,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 528,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig",
+						"ss01"
+					]
+				},
 				"fontVersion": "Version 1.10",
+				"glyphs": 579,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0192, U+02C9, U+0387, U+060C, U+0615, U+061B, U+061F, U+0621-063A, U+0640-0658, U+0660-0671, U+0674, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06BA, U+06BE, U+06C0-06C3, U+06CC, U+06D2-06D4, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2153-2154, U+215B-215E, U+2212, U+2264-2265, U+25CC, U+E002-E00C, U+E00F-E010, U+E015-E019, U+E01F-E028, U+E030-E036, U+E041-E04E, U+E051-E054, U+E060, U+EA26, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB7, U+FBB9, U+FBE8-FBE9, U+FBFC-FBFF, U+FC3D-FC3E, U+FC59-FC5A, U+FC83-FC84, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FDFA, U+FDFC-FDFD, U+FE82, U+FE84, U+FE86, U+FE88-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE-FEF0, U+FEF2-FEFC",
 				"weight": 700
 			},
 			"path": "ofl/almarai/Almarai-Bold.ttf",
@@ -387,10 +407,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 528,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig",
+						"ss01"
+					]
+				},
 				"fontVersion": "Version 1.10",
+				"glyphs": 579,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0192, U+02C9, U+0387, U+060C, U+0615, U+061B, U+061F, U+0621-063A, U+0640-0658, U+0660-0671, U+0674, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06BA, U+06BE, U+06C0-06C3, U+06CC, U+06D2-06D4, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2153-2154, U+215B-215E, U+2212, U+2264-2265, U+25CC, U+E002-E00C, U+E00F-E010, U+E015-E019, U+E01F-E028, U+E030-E036, U+E041-E04E, U+E051-E054, U+E060, U+EA26, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB7, U+FBB9, U+FBE8-FBE9, U+FBFC-FBFF, U+FC3D-FC3E, U+FC59-FC5A, U+FC83-FC84, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FDFA, U+FDFC-FDFD, U+FE82, U+FE84, U+FE86, U+FE88-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE-FEF0, U+FEF2-FEFC",
 				"weight": 800
 			},
 			"path": "ofl/almarai/Almarai-ExtraBold.ttf",
@@ -404,10 +444,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 528,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig",
+						"ss01"
+					]
+				},
 				"fontVersion": "Version 1.10",
+				"glyphs": 579,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0192, U+02C9, U+0387, U+060C, U+0615, U+061B, U+061F, U+0621-063A, U+0640-0658, U+0660-0671, U+0674, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06BA, U+06BE, U+06C0-06C3, U+06CC, U+06D2-06D4, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2153-2154, U+215B-215E, U+2212, U+2264-2265, U+25CC, U+E002-E00C, U+E00F-E010, U+E015-E019, U+E01F-E028, U+E030-E036, U+E041-E04E, U+E051-E054, U+E060, U+EA26, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB7, U+FBB9, U+FBE8-FBE9, U+FBFC-FBFF, U+FC3D-FC3E, U+FC59-FC5A, U+FC83-FC84, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FDFA, U+FDFC-FDFD, U+FE82, U+FE84, U+FE86, U+FE88-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE-FEF0, U+FEF2-FEFC",
 				"weight": 300
 			},
 			"path": "ofl/almarai/Almarai-Light.ttf",
@@ -421,10 +481,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 528,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig",
+						"ss01"
+					]
+				},
 				"fontVersion": "Version 1.10",
+				"glyphs": 579,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0192, U+02C9, U+0387, U+060C, U+0615, U+061B, U+061F, U+0621-063A, U+0640-0658, U+0660-0671, U+0674, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A1, U+06A4, U+06A9, U+06AF, U+06BA, U+06BE, U+06C0-06C3, U+06CC, U+06D2-06D4, U+06F0-06F9, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2153-2154, U+215B-215E, U+2212, U+2264-2265, U+25CC, U+E002-E00C, U+E00F-E010, U+E015-E019, U+E01F-E028, U+E030-E036, U+E041-E04E, U+E051-E054, U+E060, U+EA26, U+FB51, U+FB57-FB59, U+FB67-FB69, U+FB6B-FB6D, U+FB7B-FB7D, U+FB89, U+FB8B, U+FB8D, U+FB8F-FB91, U+FB93-FB95, U+FB9F, U+FBA5, U+FBA7-FBA9, U+FBAB-FBAD, U+FBAF, U+FBB1-FBB7, U+FBB9, U+FBE8-FBE9, U+FBFC-FBFF, U+FC3D-FC3E, U+FC59-FC5A, U+FC83-FC84, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FDFA, U+FDFC-FDFD, U+FE82, U+FE84, U+FE86, U+FE88-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE-FEF0, U+FEF2-FEFC",
 				"weight": 400
 			},
 			"path": "ofl/almarai/Almarai-Regular.ttf",

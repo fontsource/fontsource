@@ -1050,10 +1050,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 900
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Black.ttf",
@@ -1067,10 +1106,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 900
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-BlackItalic.ttf",
@@ -1084,10 +1161,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 700
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Bold.ttf",
@@ -1101,10 +1217,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 700
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-BoldItalic.ttf",
@@ -1118,10 +1272,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 800
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraBold.ttf",
@@ -1135,10 +1328,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 800
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraBoldItalic.ttf",
@@ -1152,10 +1383,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 275
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraLight.ttf",
@@ -1169,10 +1439,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 275
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ExtraLightItalic.ttf",
@@ -1186,10 +1494,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Italic.ttf",
@@ -1203,10 +1549,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 300
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Light.ttf",
@@ -1220,10 +1605,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 300
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-LightItalic.ttf",
@@ -1237,10 +1660,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 500
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Medium.ttf",
@@ -1254,10 +1716,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 500
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-MediumItalic.ttf",
@@ -1271,10 +1771,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Regular.ttf",
@@ -1288,10 +1827,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 600
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-SemiBold.ttf",
@@ -1305,10 +1883,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 600
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-SemiBoldItalic.ttf",
@@ -1322,10 +1938,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2708,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 250
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-Thin.ttf",
@@ -1339,10 +1994,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1686,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.203",
+				"glyphs": 2707,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-02B2, U+02B4, U+02B7-02BC, U+02BF-02C0, U+02C6-02C8, U+02CA-02CC, U+02CE-02D1, U+02D4, U+02D6-02DE, U+02E0-02E9, U+02EE, U+0300-0304, U+0306-030D, U+030F, U+0311-0313, U+0316-0321, U+0323-032D, U+032F-0332, U+0334-0336, U+0339-033D, U+0342, U+0345, U+035C, U+0361, U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-0479, U+048A-052F, U+0E3F, U+1D4A, U+1D6C-1D76, U+1D91, U+1DBF, U+1DC4-1DC9, U+1E02-1E05, U+1E0A-1E0F, U+1E12-1E13, U+1E1E-1E1F, U+1E24-1E25, U+1E2E-1E2F, U+1E36-1E37, U+1E3C-1E41, U+1E44-1E47, U+1E4A-1E4D, U+1E50-1E57, U+1E5A-1E5B, U+1E60-1E63, U+1E6A-1E71, U+1E78-1E79, U+1E80-1E85, U+1E92-1E93, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2007-2008, U+200B-200F, U+2012-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+203F, U+2044, U+204A, U+2070, U+2074-208E, U+20A1, U+20A6, U+20A9-20AC, U+20AF, U+20B4, U+20B9-20BA, U+20BD, U+210A, U+2113, U+2116, U+2122, U+2126, U+212E, U+2153-215F, U+2190-2193, U+21E6-21EA, U+2202, U+2205-2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+2326-2328, U+232B, U+23CE, U+25AF, U+25CA, U+2C64-2C66, U+2C6D, U+2C71-2C73, U+A789-A78D, U+A7AA, U+A7AD-A7AE, U+A7B2-A7B7, U+AB53, U+FB01-FB02, U+FEFF",
 				"weight": 250
 			},
 			"path": "ofl/firasansextracondensed/FiraSansExtraCondensed-ThinItalic.ttf",

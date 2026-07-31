@@ -388,10 +388,27 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 371,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.003; ttfautohint (v1.6)",
+				"glyphs": 375,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000-0009, U+000D, U+0010-0019, U+0020-007E, U+00A0-0109, U+010C-0113, U+0118-011B, U+0122-0123, U+0127-012B, U+012E-012F, U+0131-0135, U+0137-013A, U+013D-0144, U+0147-0148, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+01C5, U+01C7-01CC, U+0200-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/radley/Radley-Italic.ttf",
@@ -405,10 +422,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 371,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.003; ttfautohint (v1.6)",
+				"glyphs": 385,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-0110, U+0112-0113, U+0118-011B, U+011E-0123, U+0126-012F, U+0131-0148, U+014A-015B, U+015E-0167, U+016A-0173, U+0178-017E, U+0192, U+01C4-01C5, U+01C7-01CC, U+0200-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+2013-2014, U+2018-201A, U+201C-201E, U+2020, U+2022, U+2026, U+2039-203A, U+2074, U+20AC, U+2122, U+2212, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/radley/Radley-Regular.ttf",

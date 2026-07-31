@@ -367,10 +367,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 336,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"frac",
+						"liga",
+						"ordn",
+						"sups",
+						"vert",
+						"vkna",
+						"vrt2",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 3.002",
+				"glyphs": 360,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6, U+02DA, U+02DC, U+0301, U+0305-0308, U+030B-030C, U+0328, U+2002, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+2215, U+3000-3002, U+3041-3096, U+309B-309C, U+30FC, U+4EEE, U+4F51, U+4F53, U+540D, U+5909, U+5B57, U+706F, U+FB01-FB02, U+FE11-FE12",
 				"weight": 400
 			},
 			"path": "ofl/yujihentaiganaakari/YujiHentaiganaAkari-Regular.ttf",

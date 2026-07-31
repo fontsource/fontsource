@@ -812,10 +812,49 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 2964,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"rtlm",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss06",
+						"ss07",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 2.013",
+				"glyphs": 3836,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-052F, U+1AB0-1AC0, U+1AC5, U+1AC7-1ACE, U+1C80-1C88, U+1D00-1DF9, U+1DFB-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2064, U+2066-2071, U+2074-208E, U+2090-209C, U+20A0-20BF, U+20F0, U+2100-215F, U+2184, U+2189, U+2212, U+25CC, U+2C60-2C7F, U+2DE0-2E5D, U+A640-A69F, U+A700-A7CA, U+A7D0-A7D1, U+A7D3, U+A7D5-A7D9, U+A7F2-A7FF, U+A92E, U+AB30-AB6B, U+FB00-FB06, U+FE00, U+FE20-FE2F, U+FEFF, U+FFFC-FFFD, U+10780-10785, U+10787-107B0, U+107B2-107BA, U+11AB0-11AB1, U+1DF00-1DF1E",
 				"weight": {
 					"default": 400,
 					"max": 900,
@@ -846,10 +885,46 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 2965,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"mgrk",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"rtlm",
+						"sinf",
+						"smcp",
+						"ss03",
+						"ss06",
+						"ss07",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 2.015",
+				"glyphs": 3830,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-052F, U+10FB, U+1AB0-1AC0, U+1AC5, U+1AC7-1ACE, U+1C80-1C88, U+1D00-1DF9, U+1DFB-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2064, U+2066-2071, U+2074-208E, U+2090-209C, U+20A0-20C0, U+20F0, U+2100-215F, U+2183-2184, U+2189, U+2212, U+25CC, U+2C60-2C7F, U+2DE0-2E5D, U+A640-A69F, U+A700-A7CA, U+A7D0-A7D1, U+A7D3, U+A7D5-A7D9, U+A7F2-A7FF, U+A92E, U+AB30-AB6B, U+FB00-FB06, U+FE00, U+FE20-FE2F, U+FEFF, U+FFFC-FFFD, U+10780-10785, U+10787-107B0, U+107B2-107BA, U+1DF00-1DF1E",
 				"weight": {
 					"default": 400,
 					"max": 900,

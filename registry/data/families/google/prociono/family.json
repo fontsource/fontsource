@@ -400,10 +400,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 313,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"CAPS",
+						"dlig",
+						"liga",
+						"salt",
+						"ss01"
+					]
+				},
 				"fontVersion": "Version 2.301",
+				"glyphs": 333,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-00A3, U+00A6-00AB, U+00AD-00B1, U+00B4, U+00B6-00B8, U+00BA-00BB, U+00BF-00CF, U+00D1-00D6, U+00D8-00DD, U+00DF-00EF, U+00F1-00F6, U+00F8-00FD, U+00FF-0103, U+0106-010F, U+0112-0117, U+011A-0121, U+0124-0125, U+0128-012D, U+0130-0135, U+0139-013A, U+013D-013E, U+0143-0144, U+0147-0148, U+014C-0155, U+0158-015D, U+0160-0161, U+0164-0165, U+0168-0171, U+0174-017F, U+0237, U+02C6-02C7, U+02D8-02DA, U+02DC-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0327, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC, U+2212, U+FB00-FB04, U+FB06",
 				"weight": 400
 			},
 			"path": "ofl/prociono/Prociono-Regular.ttf",

@@ -370,10 +370,24 @@
 						"tag": "SCAN"
 					}
 				],
+				"codepoints": 470,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"salt",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04"
+					]
+				},
 				"fontVersion": "Version 2.001",
+				"glyphs": 489,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0152-0153, U+017F, U+0192, U+02C6, U+02D9-02DA, U+02DC, U+0394, U+03A9, U+03BC, U+03C0, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+2501, U+2503, U+250F, U+2513, U+2517, U+251B, U+2523, U+252B, U+2533, U+253B, U+254B, U+256D-2573, U+2580-2590, U+2593-259F, U+25A7-25A8, U+25CA-25CB, U+25CF, U+25D8-25D9, U+25E2-25E5, U+2660-2667, U+2713, U+E000-E09D",
 				"weight": 400
 			},
 			"path": "ofl/sixtyfour/Sixtyfour[BLED,SCAN].ttf",

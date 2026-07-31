@@ -428,10 +428,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 413,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 422,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-0121, U+0124-0125, U+0127-012F, U+0131-0135, U+0139-013A, U+013D-0144, U+0147-0148, U+014A-0155, U+0157-0161, U+0164-0165, U+0168-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+0307, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2153-2154, U+2212, U+F639-F641, U+F643-F64C, U+F655-F65E, U+F661-F66A, U+F6DC, U+F730-F739, U+F761-F77A, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/titanone/TitanOne-Regular.ttf",

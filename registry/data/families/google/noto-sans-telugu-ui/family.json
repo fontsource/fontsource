@@ -45,10 +45,30 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 163,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"blwm",
+						"dist",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"psts",
+						"rphf"
+					]
+				},
 				"fontVersion": "Version 2.001",
+				"glyphs": 958,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-0023, U+0025, U+0027-003F, U+005B-005F, U+007B-007E, U+00A0, U+00AD, U+00D7, U+00F7, U+0951-0952, U+0964-0965, U+0C00-0C0C, U+0C0E-0C10, U+0C12-0C28, U+0C2A-0C39, U+0C3D-0C44, U+0C46-0C48, U+0C4A-0C4D, U+0C55-0C56, U+0C58-0C5A, U+0C60-0C63, U+0C66-0C6F, U+0C77-0C7F, U+1CDA, U+1CF2, U+200B-200D, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20B9, U+2212, U+25CC",
 				"weight": {
 					"default": 400,
 					"max": 900,

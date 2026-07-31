@@ -411,10 +411,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 376,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.100; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 384,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0113, U+0116-011B, U+011E-0123, U+0126-012B, U+012E-0148, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017E, U+01C4-01CC, U+01F1-01F5, U+0202-0203, U+0206-0207, U+020A-020B, U+020E-020F, U+0212-0213, U+0216-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0311, U+0326-0328, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/rammettoone/RammettoOne-Regular.ttf",

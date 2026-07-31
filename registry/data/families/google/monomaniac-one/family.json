@@ -370,10 +370,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 525,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"frac",
+						"liga",
+						"ordn",
+						"sups",
+						"vert",
+						"vrt2"
+					]
+				},
 				"fontVersion": "Version 1.000; ttfautohint (v1.8.3)",
+				"glyphs": 526,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+01C0, U+02C6, U+02DA, U+02DC, U+0300-0303, U+0305-0308, U+030A-030C, U+0327-0328, U+0332, U+0336, U+2002-2003, U+2010-2016, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2030, U+2032-2033, U+2039-203B, U+203E, U+2044, U+2070, U+2074, U+20AC, U+20DD, U+2103, U+2109, U+2122, U+2126, U+217F, U+2190-2195, U+21D2, U+21D4, U+2200, U+2202-2203, U+2207, U+2212, U+2215, U+221A, U+221D-221E, U+2225, U+2227-222B, U+223C-223D, U+2252, U+2260-2261, U+2266-2267, U+226A-226B, U+22A5, U+22EE-22EF, U+2571-2573, U+25A0-25A1, U+25B2-25B3, U+25BC-25BD, U+25C6-25C7, U+25CB, U+25CE-25CF, U+25EF, U+266F, U+3000-3002, U+3007-3015, U+301C-301D, U+301F, U+3041-3094, U+309B-309C, U+30A1-30FC, U+FB01-FB02, U+FE30-FE32, U+FE39-FE44",
 				"weight": 400
 			},
 			"path": "ofl/monomaniacone/MonomaniacOne-Regular.ttf",

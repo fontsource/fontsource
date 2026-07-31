@@ -5,6 +5,13 @@ import {
 	validateDistributionResolution,
 } from './validator.ts';
 
+const sourceCapabilities = {
+	glyphs: 1,
+	codepoints: 1,
+	unicodeRange: 'U+0041',
+	features: { gsub: [], gpos: [] },
+};
+
 const createFamily = (family: string, sources: Family['sources']): Family => ({
 	family,
 	status: 'active',
@@ -31,6 +38,7 @@ describe('distribution resolution', () => {
 				size: 1,
 				variant,
 				inspection: {
+					...sourceCapabilities,
 					fontVersion: 'Version 1.0',
 					weight: variant.weight,
 					style: variant.style,
@@ -65,6 +73,7 @@ describe('distribution resolution', () => {
 
 	it('uses a unique variable source when static instances are ambiguous', () => {
 		const inspection = {
+			...sourceCapabilities,
 			fontVersion: 'Version 1.0',
 			weight: 400,
 			style: 'normal' as const,
@@ -129,6 +138,7 @@ describe('distribution resolution', () => {
 				sha256: '0'.repeat(64),
 				size: 1,
 				inspection: {
+					...sourceCapabilities,
 					fontVersion: 'Version 1.0',
 					weight: { min: 100, max: 900, default: 400 },
 					style: 'normal',

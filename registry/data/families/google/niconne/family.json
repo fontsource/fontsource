@@ -366,10 +366,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 283,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 293,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000-0001, U+000D, U+0020-007E, U+00A0-00FF, U+0108-0109, U+0127-0129, U+012E-012F, U+0131-0135, U+0137-0138, U+013F-0144, U+0152-0154, U+0156-0159, U+0160-0161, U+016A-016B, U+0172-0173, U+0178, U+017D-017E, U+0192, U+01F1-01F2, U+020B-0217, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+03A0, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+F6C3, U+FB00-FB04, U+FB06",
 				"weight": 400
 			},
 			"path": "ofl/niconne/Niconne-Regular.ttf",

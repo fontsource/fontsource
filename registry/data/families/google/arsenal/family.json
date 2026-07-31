@@ -521,10 +521,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 715,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"frac",
+						"hist",
+						"liga",
+						"locl",
+						"ordn",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups",
+						"swsh"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 1041,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+0128-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0161, U+0164-0165, U+0168-016B, U+016E-0173, U+0178-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+021A-021B, U+0237, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-030C, U+031B, U+0323, U+0326-0328, U+0335, U+0400-045F, U+0462-0463, U+046A-046B, U+0472-0475, U+048A-04FF, U+0510-0513, U+051A-051D, U+0524-0529, U+052E-052F, U+1E9E, U+1EA0-1EF9, U+2002-2005, U+2009-200A, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20AE, U+20B4, U+20B8, U+20BD, U+2116, U+2122, U+2153-2158, U+215B-215E, U+2190-2193, U+2212, U+2215, U+263A-263B, U+2767, U+F6D4, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/arsenal/Arsenal-Bold.ttf",
@@ -538,10 +567,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 716,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"frac",
+						"hist",
+						"liga",
+						"locl",
+						"ordn",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups",
+						"swsh"
+					]
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 1031,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+0128-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0161, U+0164-0165, U+0168-016B, U+016E-0173, U+0178-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+021A-021B, U+0237, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-030C, U+031B, U+0323, U+0326-0328, U+0335, U+0400-045F, U+0462-0463, U+046A-046B, U+0472-0475, U+048A-04FF, U+0510-0513, U+051A-051D, U+0524-0529, U+052E-052F, U+1E9E, U+1EA0-1EF9, U+2002-2005, U+2009-200A, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20AE, U+20B4, U+20B8, U+20BD, U+2116, U+2122, U+2153-2158, U+215B-215E, U+2190-2193, U+2212, U+2215, U+263A-263B, U+2767, U+F6C3, U+F6D4, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/arsenal/Arsenal-BoldItalic.ttf",
@@ -555,10 +613,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 716,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"frac",
+						"hist",
+						"liga",
+						"locl",
+						"ordn",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups",
+						"swsh"
+					]
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 1031,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+0128-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0161, U+0164-0165, U+0168-016B, U+016E-0173, U+0178-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+021A-021B, U+0237, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-030C, U+031B, U+0323, U+0326-0328, U+0335, U+0400-045F, U+0462-0463, U+046A-046B, U+0472-0475, U+048A-04FF, U+0510-0513, U+051A-051D, U+0524-0529, U+052E-052F, U+1E9E, U+1EA0-1EF9, U+2002-2005, U+2009-200A, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20AE, U+20B4, U+20B8, U+20BD, U+2116, U+2122, U+2153-2158, U+215B-215E, U+2190-2193, U+2212, U+2215, U+263A-263B, U+2767, U+F6C3, U+F6D4, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/arsenal/Arsenal-Italic.ttf",
@@ -572,10 +659,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 715,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"frac",
+						"hist",
+						"liga",
+						"locl",
+						"ordn",
+						"salt",
+						"smcp",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups",
+						"swsh"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 1041,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+0128-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0161, U+0164-0165, U+0168-016B, U+016E-0173, U+0178-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+021A-021B, U+0237, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-030C, U+031B, U+0323, U+0326-0328, U+0335, U+0400-045F, U+0462-0463, U+046A-046B, U+0472-0475, U+048A-04FF, U+0510-0513, U+051A-051D, U+0524-0529, U+052E-052F, U+1E9E, U+1EA0-1EF9, U+2002-2005, U+2009-200A, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20AE, U+20B4, U+20B8, U+20BD, U+2116, U+2122, U+2153-2158, U+215B-215E, U+2190-2193, U+2212, U+2215, U+263A-263B, U+2767, U+F6D4, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/arsenal/Arsenal-Regular.ttf",

@@ -493,10 +493,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 723,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"case",
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"frac",
+						"liga",
+						"locl",
+						"ordn"
+					]
+				},
 				"fontVersion": "Version 1.000W OFL",
+				"glyphs": 719,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0109, U+010C-0113, U+0116-011F, U+0122-0127, U+012A-012B, U+012E-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-0165, U+016A-0173, U+0178-017F, U+0192, U+01F4-01F5, U+0218-021B, U+0237, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0301, U+037E, U+0394, U+03A9, U+03BC, U+03C0, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0462-0463, U+0472-0475, U+048A-04C0, U+04C3-04F9, U+04FC-04FD, U+0510-0513, U+051C-051D, U+0524-0527, U+1E30-1E31, U+1E3E-1E3F, U+1E54-1E55, U+1E9E, U+2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2081-2084, U+20AC, U+20B4, U+20B6-20B7, U+20B9-20CF, U+2113, U+2116, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+2C67-2C68, U+F401, U+F406-F40E, U+F486-F489, U+F49E-F49F, U+F4C6-F4C7, U+F4CC-F4CD, U+F4D6-F4D7, U+F50A-F54D, U+F62C-F62F, U+F634-F635, U+F662, U+F6C1-F6C3, U+F6C9-F6CB, U+F6CE-F6D1, U+F6D4, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/ptserif/PT_Serif-Web-Bold.ttf",
@@ -510,10 +528,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 723,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"case",
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"frac",
+						"liga",
+						"locl",
+						"ordn"
+					]
+				},
 				"fontVersion": "Version 1.000W OFL",
+				"glyphs": 719,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-0109, U+010C-0113, U+0116-011F, U+0122-0127, U+012A-012B, U+012E-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-0165, U+016A-0173, U+0178-017F, U+0192, U+01F4-01F5, U+0218-021B, U+0237, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0301, U+037E, U+0394, U+03A9, U+03BC, U+03C0, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0462-0463, U+0472-0475, U+048A-04C0, U+04C3-04F9, U+04FC-04FD, U+0510-0513, U+051C-051D, U+0524-0527, U+1E30-1E31, U+1E3E-1E3F, U+1E54-1E55, U+1E9E, U+2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2081-2084, U+20AC, U+20B4, U+20B6-20B7, U+20B9-20CF, U+2113, U+2116, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+22C5, U+25CA, U+2C67-2C68, U+F401, U+F406-F40E, U+F486-F489, U+F49E-F49F, U+F4C6-F4C7, U+F4CC-F4CD, U+F4D6-F4D7, U+F50A-F54D, U+F62C-F62F, U+F634-F635, U+F662, U+F6C1-F6C3, U+F6C9-F6CB, U+F6CE-F6D1, U+F6D4, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/ptserif/PT_Serif-Web-BoldItalic.ttf",
@@ -527,10 +563,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 720,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"case",
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"frac",
+						"liga",
+						"locl",
+						"ordn"
+					]
+				},
 				"fontVersion": "Version 1.000W OFL",
+				"glyphs": 719,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-0109, U+010C-0113, U+0116-011F, U+0122-0127, U+012A-012B, U+012E-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-0165, U+016A-0173, U+0178-017F, U+0192, U+01F4-01F5, U+0218-021B, U+0237, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0301, U+0394, U+03A9, U+03BC, U+03C0, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0462-0463, U+0472-0475, U+048A-04C0, U+04C3-04F9, U+04FC-04FD, U+0510-0513, U+051C-051D, U+0524-0527, U+1E30-1E31, U+1E3E-1E3F, U+1E54-1E55, U+1E9E, U+2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2081-2084, U+20AC, U+20B4, U+20B6-20B7, U+20B9-20CF, U+2113, U+2116, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2C67-2C68, U+F401, U+F406-F40E, U+F486-F489, U+F49E-F49F, U+F4C6-F4C7, U+F4CC-F4CD, U+F4D6-F4D7, U+F50A-F54D, U+F62C-F62F, U+F634-F635, U+F662, U+F6C1-F6C3, U+F6C9-F6CB, U+F6CE-F6D1, U+F6D4, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/ptserif/PT_Serif-Web-Italic.ttf",
@@ -544,10 +598,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 717,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"case",
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"frac",
+						"liga",
+						"locl",
+						"ordn"
+					]
+				},
 				"fontVersion": "Version 1.000W OFL",
+				"glyphs": 719,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0109, U+010C-0113, U+0116-011F, U+0122-0127, U+012A-012B, U+012E-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-0165, U+016A-0173, U+0178-017F, U+0192, U+01F4-01F5, U+0218-021B, U+0237, U+02BC, U+02C6-02C7, U+02D8-02DD, U+0301, U+0394, U+03A9, U+03BC, U+03C0, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0462-0463, U+0472-0475, U+048A-04C0, U+04C3-04F9, U+04FC-04FD, U+0510-0513, U+051C-051D, U+0524-0527, U+1E30-1E31, U+1E3E-1E3F, U+1E54-1E55, U+1E9E, U+2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2081-2084, U+20AC, U+20B4, U+20B6-20B7, U+20B9-20CF, U+2113, U+2116, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2C67-2C68, U+F401, U+F406-F40E, U+F486-F489, U+F49E-F49F, U+F4C6-F4C7, U+F4CC-F4CD, U+F4D6-F4D7, U+F50A-F54D, U+F62C-F62F, U+F634-F635, U+F662, U+F6C3, U+F6C9-F6CB, U+F6CE-F6D1, U+F6D4, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/ptserif/PT_Serif-Web-Regular.ttf",

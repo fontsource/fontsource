@@ -24,10 +24,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 141,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"clig",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 1.300",
+				"glyphs": 214,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0040, U+007B-007E, U+00AB, U+00AD, U+00BB, U+1780-17B3, U+17B6-17DB, U+17E0-17E9, U+200B",
 				"weight": 700
 			},
 			"path": "ofl/kantumruy/Kantumruy-Bold.ttf",
@@ -41,10 +54,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 141,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"clig",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 1.300",
+				"glyphs": 214,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0040, U+007B-007E, U+00AB, U+00AD, U+00BB, U+1780-17B3, U+17B6-17DB, U+17E0-17E9, U+200B",
 				"weight": 300
 			},
 			"path": "ofl/kantumruy/Kantumruy-Light.ttf",
@@ -58,10 +84,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 141,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"abvs",
+						"blwf",
+						"clig",
+						"pref",
+						"pstf"
+					]
+				},
 				"fontVersion": "Version 1.300",
+				"glyphs": 214,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-0040, U+007B-007E, U+00AB, U+00AD, U+00BB, U+1780-17B3, U+17B6-17DB, U+17E0-17E9, U+200B",
 				"weight": 400
 			},
 			"path": "ofl/kantumruy/Kantumruy-Regular.ttf",

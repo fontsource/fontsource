@@ -360,10 +360,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 263,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"calt"
+					]
+				},
 				"fontVersion": "Version 1.002",
+				"glyphs": 272,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000-000A, U+000D, U+0010-0019, U+001E-007F, U+00A0-00FF, U+0127-0129, U+0131-0138, U+013F-0144, U+0152-0154, U+0156-0159, U+0178, U+0237, U+02C6-02C7, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+F6C3",
 				"weight": 400
 			},
 			"path": "ofl/molle/Molle-Regular.ttf",

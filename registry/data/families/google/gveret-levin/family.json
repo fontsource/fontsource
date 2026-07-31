@@ -220,10 +220,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 218,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"dlig",
+						"ss01",
+						"ss02"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 226,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0, U+00A2-00A3, U+00A5, U+00A9, U+00AE, U+00B0, U+00B7, U+00D7, U+00F7, U+02C6, U+02DC, U+05B0-05BC, U+05BE-05C3, U+05C6-05C7, U+05D0-05EA, U+05F0-05F4, U+2013-2014, U+2018-201F, U+2022, U+2026, U+2028-2029, U+20AA, U+20AC, U+2122, U+2135, U+2212, U+2E17, U+FB1D-FB20, U+FB29-FB36, U+FB38-FB3C, U+FB3E, U+FB40-FB41, U+FB43-FB44, U+FB46-FB4F",
 				"weight": 400
 			},
 			"path": "ofl/gveretlevin/GveretLevin-Regular.ttf",

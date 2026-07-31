@@ -454,10 +454,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 451,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 453,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-003F, U+0041-007E, U+00A1-00B4, U+00B6-00BB, U+00BF-0131, U+0134, U+0136-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0490-0491, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20A3-20A4, U+20AC, U+2116, U+2122, U+2264-2265, U+F6C3",
 				"weight": 400
 			},
 			"path": "ofl/kellyslab/KellySlab-Regular.ttf",

@@ -62,10 +62,12 @@ describe('inspectFont', () => {
 			familyName: 'Abel',
 			subfamilyName: 'Regular',
 			fontVersion: expect.stringContaining('Version'),
+			glyphs: expect.any(Number),
 			weight: 400,
 			style: 'normal',
 			axes: [],
 		});
+		expect(result.glyphs).toBeGreaterThan(0);
 		expect(result.tables).toContain('glyf');
 		expect(result.unicodeRanges.length).toBeGreaterThan(0);
 	});
@@ -98,5 +100,22 @@ describe('inspectFont', () => {
 		);
 
 		expect(result.tables).toContain('COLR');
+	});
+
+	it('lists layout feature tags', async () => {
+		const table = new Uint8Array(22);
+		const view = new DataView(table.buffer);
+		view.setUint32(0, 0x00010000);
+		view.setUint16(6, 10);
+		view.setUint16(10, 1);
+		table.set(new TextEncoder().encode('liga'), 12);
+		view.setUint16(16, 8);
+
+		const result = await inspectFont(
+			ctx,
+			addSfntTable(loadStaticFontFixture(), 'GSUB', table),
+		);
+
+		expect(result.features.gsub).toEqual(['liga']);
 	});
 });

@@ -55,10 +55,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 215,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"locl",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.000;PS Version 1.000;PS 1.0;hotconv 1.;hotconv 1.0.78;makeotf.lib2.5.61930",
+				"glyphs": 747,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-002E, U+0030-0040, U+005B-0060, U+007B-007E, U+00A0, U+00A2, U+00D7, U+00F7, U+0142, U+0900-094D, U+094F-0977, U+0979-097F, U+200C, U+2013-2014, U+2019, U+201B-201D, U+2026, U+20B9, U+2212, U+25CC, U+A8E0-A8FB, U+FEFF",
 				"weight": 700
 			},
 			"path": "ofl/sitara/Sitara-Bold.ttf",
@@ -72,10 +97,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 214,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"locl",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.000;PS Version 1.000;PS 1.0;hotconv 1.;hotconv 1.0.78;makeotf.lib2.5.61930",
+				"glyphs": 746,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-002E, U+0030-0040, U+005B-0060, U+007B-007E, U+00A0, U+00A2, U+00D7, U+00F7, U+0142, U+0900-094D, U+094F-0954, U+0956-0977, U+0979-097F, U+200C, U+2013-2014, U+2019, U+201B-201D, U+2026, U+20B9, U+2212, U+25CC, U+A8E0-A8FB, U+FEFF",
 				"weight": 700
 			},
 			"path": "ofl/sitara/Sitara-BoldItalic.ttf",
@@ -89,10 +139,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 214,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"locl",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.000;PS Version 1.000;PS 1.0;hotconv 1.;hotconv 1.0.78;makeotf.lib2.5.61930",
+				"glyphs": 746,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-002E, U+0030-0040, U+005B-0060, U+007B-007E, U+00A0, U+00A2, U+00D7, U+00F7, U+0142, U+0900-094D, U+094F-0954, U+0956-0977, U+0979-097F, U+200C, U+2013-2014, U+2019, U+201B-201D, U+2026, U+20B9, U+2212, U+25CC, U+A8E0-A8FB, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/sitara/Sitara-Italic.ttf",
@@ -106,10 +181,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 215,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"half",
+						"haln",
+						"locl",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.000;PS Version 1.000;PS 1.0;hotconv 1.;hotconv 1.0.78;makeotf.lib2.5.61930",
+				"glyphs": 747,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-002E, U+0030-0040, U+005B-0060, U+007B-007E, U+00A0, U+00A2, U+00D7, U+00F7, U+0142, U+0900-094D, U+094F-0977, U+0979-097F, U+200C, U+2013-2014, U+2019, U+201B-201D, U+2026, U+20B9, U+2212, U+25CC, U+A8E0-A8FB, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/sitara/Sitara-Regular.ttf",

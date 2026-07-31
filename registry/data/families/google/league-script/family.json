@@ -361,10 +361,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 187,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"dlig"
+					]
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 207,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A8, U+00AB, U+00B4, U+00B8, U+00BB, U+00BF-00D6, U+00D8-00DD, U+00E0-00EF, U+00F1-00F6, U+00F8-00FD, U+00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+02C6-02C7, U+02D8, U+02DA, U+02DC, U+2018-2019, U+201C-201D, U+2022, U+2044, U+20AC, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/leaguescript/LeagueScript-Regular.ttf",

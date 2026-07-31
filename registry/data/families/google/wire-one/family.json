@@ -356,10 +356,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 220,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.102; ttfautohint (v1.8.3)",
+				"glyphs": 224,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6-02C7, U+02D8-02DD, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+2044, U+2074, U+20AC, U+2212, U+2215",
 				"weight": 400
 			},
 			"path": "ofl/wireone/WireOne-Regular.ttf",

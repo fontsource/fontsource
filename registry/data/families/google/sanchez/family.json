@@ -430,10 +430,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 347,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 369,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-005D, U+005F-007D, U+00A1-00A3, U+00A5-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BA-00BB, U+00BD, U+00BF-0129, U+012B-012C, U+012E-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2044, U+20AC, U+2122, U+2153, U+2212, U+2248, U+2260, U+FB00-FB02",
 				"weight": 400
 			},
 			"path": "ofl/sanchez/Sanchez-Italic.ttf",
@@ -447,10 +460,22 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 349,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga",
+						"salt"
+					]
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 369,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-005D, U+005F-007D, U+00A1-00A3, U+00A5-00AC, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BA-00BB, U+00BD, U+00BF-012C, U+012E-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+0192, U+01FC-01FF, U+0218-0219, U+02C6-02C7, U+02D8-02DD, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2044, U+20AC, U+2122, U+2153, U+2212, U+2248, U+2260, U+F6C3, U+FB00-FB02",
 				"weight": 400
 			},
 			"path": "ofl/sanchez/Sanchez-Regular.ttf",

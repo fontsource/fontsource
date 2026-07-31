@@ -361,10 +361,22 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 296,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"ccmp",
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1.002; ttfautohint (v0.8.51-6076)",
+				"glyphs": 340,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0152-0153, U+0160-0161, U+0178, U+0192, U+02C6, U+02DA, U+02DC, U+0306, U+0E81-0E82, U+0E84, U+0E87-0E88, U+0E8A, U+0E8D, U+0E94-0E97, U+0E99-0E9F, U+0EA1-0EA3, U+0EA5, U+0EA7, U+0EAA-0EAB, U+0EAD-0EB9, U+0EBB-0EBD, U+0EC0-0EC4, U+0EC6, U+0EC8-0ECD, U+0ED0-0ED9, U+0EDC-0EDD, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC-20AD, U+2122, U+25CC, U+E001, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/dhyana/Dhyana-Bold.ttf",
@@ -378,10 +390,22 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 361,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"ccmp",
+						"liga"
+					]
+				},
 				"fontVersion": "Version 1.002; ttfautohint (v0.8.51-6076)",
+				"glyphs": 398,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0109, U+010C-010D, U+0112-0113, U+0118-0119, U+0122-0123, U+0128-012B, U+012E-012F, U+0131, U+0134-0135, U+0137, U+0143-0144, U+0152-0154, U+0156-015B, U+0160-0161, U+016A-016B, U+0172-0173, U+0178-017E, U+02C6-02C7, U+02DA, U+02DC, U+0301, U+0306, U+0E81-0E82, U+0E84, U+0E87-0E88, U+0E8A, U+0E8D, U+0E94-0E97, U+0E99-0E9F, U+0EA1-0EA3, U+0EA5, U+0EA7, U+0EAA-0EAB, U+0EAD-0EB9, U+0EBB-0EBD, U+0EC0-0EC4, U+0EC6, U+0EC8-0ECD, U+0ED0-0ED9, U+0EDC-0EDD, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20AC-20AD, U+2122, U+25CC, U+E002-E018",
 				"weight": 400
 			},
 			"path": "ofl/dhyana/Dhyana-Regular.ttf",

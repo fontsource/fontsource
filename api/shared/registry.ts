@@ -21,6 +21,12 @@ const UnicodeRangeSchema = z.tuple([
 	z.string().regex(/^[0-9A-F]+$/),
 	z.string().regex(/^[0-9A-F]+$/),
 ]);
+const UnicodeScalarSchema = z
+	.number()
+	.int()
+	.min(0)
+	.max(0x10ffff)
+	.refine((value) => value < 0xd800 || value > 0xdfff);
 const ScriptSchema = z.string().regex(/^[A-Z][a-z]{3}$/);
 
 const SampleTextSchema = z.strictObject({
@@ -92,6 +98,10 @@ const SourceCommonShape = {
 	format: z.enum(['ttf', 'otf']),
 	size: z.number().int().nonnegative(),
 	downloadUrl: z.string().min(1).describe('Relative source download URL'),
+	capabilitiesUrl: z
+		.string()
+		.min(1)
+		.describe('Relative source capabilities URL'),
 	fontVersion: z.string().nullable(),
 	style: z
 		.enum(['normal', 'italic', 'oblique'])
@@ -144,8 +154,34 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		})
 		.optional(),
 	content: z.record(z.string().min(1), LocalizedContentSchema).optional(),
+	symbolsUrl: z.string().min(1).optional(),
 	sources: z.array(RegistrySourceSchema).min(1),
 	distribution: RegistryDistributionSchema.optional(),
+});
+
+export const RegistryFamilySymbolsSchema = z
+	.array(
+		z.strictObject({
+			name: z.string().min(1).regex(/^\S+$/),
+			codepoint: UnicodeScalarSchema,
+		}),
+	)
+	.min(1);
+
+export const RegistrySourceCapabilitiesSchema = z.strictObject({
+	glyphCount: z.number().int().positive(),
+	codepointCount: z.number().int().positive(),
+	unicodeRange: z
+		.string()
+		.regex(
+			/^U\+[0-9A-F]{4,6}(?:-[0-9A-F]{4,6})?(?:, U\+[0-9A-F]{4,6}(?:-[0-9A-F]{4,6})?)*$/,
+		),
+	features: z.strictObject({
+		gsub: z.array(z.string().length(4)),
+		gpos: z.array(z.string().length(4)),
+	}),
+	outline: z.enum(['glyf', 'cff', 'cff2', 'bitmap']),
+	colorTables: z.array(z.string().length(4)),
 });
 
 export const RegistrySubsetsSchema = z.array(IdSchema);

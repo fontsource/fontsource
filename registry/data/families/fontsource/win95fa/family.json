@@ -355,10 +355,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 167,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002;Fontself Maker 3.4.0",
+				"glyphs": 160,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000A, U+000D, U+0020-005F, U+0061-007E, U+00A0, U+00A7, U+00AD, U+00C0-00CF, U+00D1-00D6, U+00D8-00DD, U+00DF-00EF, U+00F1-00F6, U+00F8-00FD, U+00FF, U+0152-0153, U+0178, U+2018-2019, U+201C-201D, U+20AC, U+E900",
 				"weight": 400
 			},
 			"path": "sources/win95fa/files/W95FA.otf",

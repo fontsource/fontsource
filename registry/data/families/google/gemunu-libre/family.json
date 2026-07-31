@@ -417,10 +417,31 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 445,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"dist",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blws",
+						"liga",
+						"pstf",
+						"psts",
+						"rphf",
+						"ss01",
+						"sups",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.100",
+				"glyphs": 907,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0D81-0D83, U+0D85-0D8E, U+0D90-0D96, U+0D9A-0DB1, U+0DB3-0DBB, U+0DBD, U+0DC0-0DC6, U+0DCA, U+0DCF-0DD4, U+0DD6, U+0DD8-0DDF, U+0DE6-0DEF, U+0DF2-0DF4, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02, U+111E1-111F4",
 				"weight": {
 					"default": 200,
 					"max": 800,

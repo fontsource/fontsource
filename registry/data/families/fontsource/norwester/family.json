@@ -215,10 +215,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 97,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"\u0000\u0000\u0000\u0000"
+					]
+				},
 				"fontVersion": "Version 1.002;PS 001.002;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 98,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-0029, U+002B-003B, U+003D, U+003F-005A, U+005C, U+005F, U+0061-007A, U+00A3, U+00B0, U+00D7, U+00F7, U+2013-2014, U+2018-2019, U+201C-201D, U+2026, U+20AC, U+2212",
 				"weight": 400
 			},
 			"path": "sources/norwester/files/norwester.otf",

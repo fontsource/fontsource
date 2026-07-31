@@ -450,10 +450,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 434,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+				"glyphs": 1006,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/hind/Hind-Bold.ttf",
@@ -467,10 +491,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 434,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+				"glyphs": 1006,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "ofl/hind/Hind-Light.ttf",
@@ -484,10 +532,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 434,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+				"glyphs": 1006,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 500
 			},
 			"path": "ofl/hind/Hind-Medium.ttf",
@@ -501,10 +573,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 434,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+				"glyphs": 1006,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/hind/Hind-Regular.ttf",
@@ -518,10 +614,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 434,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"liga",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 2.001;PS 1.0;hotconv 1.0.79;makeotf.lib2.5.61930; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 13 -D latn -f deva -w G -W -c -X \"\"",
+				"glyphs": 1006,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+0192, U+0218-021B, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+200B-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/hind/Hind-SemiBold.ttf",

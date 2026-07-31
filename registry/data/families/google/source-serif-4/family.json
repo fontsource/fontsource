@@ -582,10 +582,42 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 918,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.004;hotconv 1.0.116;makeotfexe 2.5.65601",
+				"glyphs": 1093,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-012B, U+012E-0131, U+0134-0165, U+0168-017F, U+018F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01F8-01F9, U+0218-021B, U+0237, U+0251, U+0259, U+0261, U+02B0, U+02B2-02B3, U+02B7-02B8, U+02BB-02BC, U+02BE-02BF, U+02C6-02CC, U+02D8-02DD, U+02E1-02E3, U+0300-0304, U+0306-030C, U+031B, U+0323-0324, U+0326-0329, U+032E, U+0331, U+0374-0375, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C2, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+1D43, U+1D47-1D49, U+1D4D, U+1D4F-1D50, U+1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DBB, U+1E0C-1E0F, U+1E20-1E21, U+1E24-1E25, U+1E2A-1E2B, U+1E36-1E3B, U+1E3E-1E3F, U+1E42-1E49, U+1E5A-1E63, U+1E6C-1E6F, U+1E80-1E85, U+1E8E-1E8F, U+1E92-1E93, U+1E97, U+1E9E, U+1EA0-1EF9, U+2002-2007, U+2009-200B, U+2010, U+2012-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+202F-2030, U+2032-2033, U+2039-203A, U+203C, U+2044, U+2047-2049, U+2070-2071, U+2074-2079, U+207D-2089, U+208D-208E, U+20A1, U+20A4, U+20A6-20A7, U+20A9, U+20AB-20AC, U+20AE, U+20B1-20B2, U+20B4-20B5, U+20B8-20BA, U+20BD, U+20BF, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B-215E, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25A0, U+25B2-25B3, U+25B6-25B7, U+25BC-25BD, U+25C0-25C1, U+25C6, U+25C9-25CA, U+2610-2611, U+266A, U+2713, U+2752, U+2E3A-2E3B, U+FB00-FB04, U+1F12F, U+1F16A-1F16B",
 				"weight": {
 					"default": 400,
 					"max": 900,
@@ -616,10 +648,43 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 918,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 4.004;hotconv 1.0.116;makeotfexe 2.5.65601",
+				"glyphs": 1463,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-012B, U+012E-0131, U+0134-0165, U+0168-017F, U+018F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01F8-01F9, U+0218-021B, U+0237, U+0251, U+0259, U+0261, U+02B0, U+02B2-02B3, U+02B7-02B8, U+02BB-02BC, U+02BE-02BF, U+02C6-02CC, U+02D8-02DD, U+02E1-02E3, U+0300-0304, U+0306-030C, U+031B, U+0323-0324, U+0326-0329, U+032E, U+0331, U+0374-0375, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C2, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+1D43, U+1D47-1D49, U+1D4D, U+1D4F-1D50, U+1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DBB, U+1E0C-1E0F, U+1E20-1E21, U+1E24-1E25, U+1E2A-1E2B, U+1E36-1E3B, U+1E3E-1E3F, U+1E42-1E49, U+1E5A-1E63, U+1E6C-1E6F, U+1E80-1E85, U+1E8E-1E8F, U+1E92-1E93, U+1E97, U+1E9E, U+1EA0-1EF9, U+2002-2007, U+2009-200B, U+2010, U+2012-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+202F-2030, U+2032-2033, U+2039-203A, U+203C, U+2044, U+2047-2049, U+2070-2071, U+2074-2079, U+207D-2089, U+208D-208E, U+20A1, U+20A4, U+20A6-20A7, U+20A9, U+20AB-20AC, U+20AE, U+20B1-20B2, U+20B4-20B5, U+20B8-20BA, U+20BD, U+20BF, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2153-2154, U+215B-215E, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25A0, U+25B2-25B3, U+25B6-25B7, U+25BC-25BD, U+25C0-25C1, U+25C6, U+25C9-25CA, U+2610-2611, U+266A, U+2713, U+2752, U+2E3A-2E3B, U+FB00-FB04, U+1F12F, U+1F16A-1F16B",
 				"weight": {
 					"default": 400,
 					"max": 900,

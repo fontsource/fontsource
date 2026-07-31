@@ -494,10 +494,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 647,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"dist",
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blws",
+						"case",
+						"ccmp",
+						"liga",
+						"locl",
+						"ordn",
+						"pstf",
+						"psts",
+						"rphf",
+						"ss02",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1142,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A5, U+00A7-00AB, U+00AD-00B0, U+00B4, U+00B6-00B8, U+00BA-00BB, U+00BF-0131, U+0134-0148, U+014A-017E, U+018F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01C4-01CC, U+01E6-01E7, U+01EA-01EB, U+01FA-021B, U+022A-022D, U+0230-0233, U+0237, U+0259, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0300-0304, U+0306-030C, U+030F, U+0311-0312, U+031B, U+0323-0324, U+0326-0328, U+032E, U+0331, U+0D82-0D83, U+0D85-0D96, U+0D9A-0DB1, U+0DB3-0DBB, U+0DBD, U+0DC0-0DC6, U+0DCA, U+0DCF-0DD4, U+0DD6, U+0DD8-0DDF, U+0DE6-0DEF, U+0DF2-0DF4, U+1E0C-1E0D, U+1E36-1E37, U+1E42-1E47, U+1E6C-1E6D, U+1E80-1E85, U+1E9E, U+1EA0-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20A3-20A4, U+20A7, U+20AC, U+2122, U+2212, U+2215, U+2219, U+25CC, U+EC7F, U+FB01-FB02, U+111E1-111F4",
 				"weight": 400
 			},
 			"path": "ofl/maname/Maname-Regular.ttf",

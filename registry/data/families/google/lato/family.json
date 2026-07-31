@@ -1039,10 +1039,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 900
 			},
 			"path": "ofl/lato/Lato-Black.ttf",
@@ -1056,10 +1087,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 900
 			},
 			"path": "ofl/lato/Lato-BlackItalic.ttf",
@@ -1073,10 +1135,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 700
 			},
 			"path": "ofl/lato/Lato-Bold.ttf",
@@ -1090,10 +1183,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 700
 			},
 			"path": "ofl/lato/Lato-BoldItalic.ttf",
@@ -1107,10 +1231,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 800
 			},
 			"path": "ofl/lato/Lato-ExtraBold.ttf",
@@ -1124,10 +1279,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 800
 			},
 			"path": "ofl/lato/Lato-ExtraBoldItalic.ttf",
@@ -1141,10 +1327,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 275
 			},
 			"path": "ofl/lato/Lato-ExtraLight.ttf",
@@ -1158,10 +1375,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 275
 			},
 			"path": "ofl/lato/Lato-ExtraLightItalic.ttf",
@@ -1175,10 +1423,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/lato/Lato-Italic.ttf",
@@ -1192,10 +1471,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 300
 			},
 			"path": "ofl/lato/Lato-Light.ttf",
@@ -1209,10 +1519,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 300
 			},
 			"path": "ofl/lato/Lato-LightItalic.ttf",
@@ -1226,10 +1567,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 500
 			},
 			"path": "ofl/lato/Lato-Medium.ttf",
@@ -1243,10 +1615,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 500
 			},
 			"path": "ofl/lato/Lato-MediumItalic.ttf",
@@ -1260,10 +1663,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 400
 			},
 			"path": "ofl/lato/Lato-Regular.ttf",
@@ -1277,10 +1711,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 600
 			},
 			"path": "ofl/lato/Lato-SemiBold.ttf",
@@ -1294,10 +1759,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 600
 			},
 			"path": "ofl/lato/Lato-SemiBoldItalic.ttf",
@@ -1311,10 +1807,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 250
 			},
 			"path": "ofl/lato/Lato-Thin.ttf",
@@ -1328,10 +1855,41 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 2164,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"calt",
+						"case",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.015; 2015-08-06; http://www.latofonts.com/",
+				"glyphs": 3023,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-036F, U+0374-0375, U+037A-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03CE, U+03D0-0486, U+0488-0513, U+0E3F, U+1D00-1DCA, U+1DFE-1E9B, U+1E9E, U+1EA0-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2010, U+2012-2022, U+2026, U+202F-2030, U+2032-2034, U+2039-203A, U+203C-203E, U+2044, U+205E-205F, U+2070-2071, U+2074-2094, U+20A0-20B5, U+20B8-20BA, U+20DD, U+2105, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2132, U+214D-214E, U+2153-215F, U+2183-2184, U+2190-2199, U+21A8, U+2202, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E-221F, U+2229, U+222B, U+2248, U+2260-2261, U+2264-2265, U+2302, U+2310, U+2320-2321, U+2460-2473, U+24EA-24F4, U+24FF-2500, U+2502, U+250C, U+2510, U+2514, U+2518, U+25A1, U+25AA-25AB, U+25CA-25CC, U+25CF, U+25E6, U+2600, U+263C, U+2669, U+2776-277F, U+2C60-2C6C, U+2C74-2C77, U+2E17, U+A717-A71A, U+A720-A721, U+F8FF, U+FB00-FB04, U+FE20-FE23, U+FEFF",
 				"weight": 250
 			},
 			"path": "ofl/lato/Lato-ThinItalic.ttf",

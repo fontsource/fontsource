@@ -361,10 +361,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 204,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 001.2",
+				"glyphs": 207,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB, U+00AE, U+00B1, U+00B4, U+00B6, U+00B8, U+00BB, U+00BF-00CF, U+00D1-00DD, U+00DF-00EF, U+00F1-00FD, U+00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6, U+02D8, U+02DA, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+2044, U+2122, U+2212, U+221E, U+2260, U+2264-2265, U+FB01-FB02",
 				"weight": 500
 			},
 			"path": "ofl/geo/Geo-Oblique.ttf",
@@ -378,10 +385,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 204,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 001.2",
+				"glyphs": 207,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5-00A9, U+00AB, U+00AE, U+00B1, U+00B4, U+00B6, U+00B8, U+00BB, U+00BF-00CF, U+00D1-00DD, U+00DF-00EF, U+00F1-00FD, U+00FF, U+0131, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6, U+02D8, U+02DA, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2039-203A, U+2044, U+2122, U+2212, U+221E, U+2260, U+2264-2265, U+FB01-FB02",
 				"weight": 500
 			},
 			"path": "ofl/geo/Geo-Regular.ttf",

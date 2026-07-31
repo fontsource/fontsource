@@ -437,10 +437,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 387,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 001.000",
+				"glyphs": 438,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0002, U+0009-000A, U+000D, U+0020-007E, U+00A0-0113, U+0115-0131, U+0134-013E, U+0141-0148, U+014A-0174, U+0176-017E, U+0192, U+01CD-01D4, U+02C6-02C7, U+02D8-02DD, U+0394, U+03A9, U+03BC, U+03C0, U+045D, U+1E44, U+1E60, U+1E80, U+1E82-1E86, U+1E8E, U+1E9E, U+1EBD, U+1EF2-1EF3, U+1EF8, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2116, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/sixcaps/SixCaps.ttf",

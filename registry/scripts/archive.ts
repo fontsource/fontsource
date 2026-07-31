@@ -6,7 +6,9 @@ import {
 	RegistryAxesSchema,
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
+	RegistryFamilySymbolsSchema,
 	RegistryLanguagesSchema,
+	RegistrySourceCapabilitiesSchema,
 	RegistrySubsetSchema,
 	RegistrySubsetsSchema,
 	RegistryTaxonomySchema,
@@ -16,8 +18,11 @@ import { putCurrentObject, putObject } from './r2.ts';
 import {
 	archiveManifestSchema,
 	axisRegistrySchema,
+	type FamilySource,
 	familyDistributionSchema,
+	familyIconsSchema,
 	familySchema,
+	familyTagsSchema,
 	languageCatalogSchema,
 	replacementRegistrySchema,
 	subsetDefinitionSchema,
@@ -54,6 +59,7 @@ interface SourceFile {
 	size: number;
 	sha256: string;
 	contentType: 'font/ttf' | 'font/otf';
+	capabilities: ReturnType<typeof sourceCapabilities>;
 	read?: () => Promise<Uint8Array>;
 }
 
@@ -71,6 +77,16 @@ const readTextIfExists = async (path: string): Promise<string | undefined> => {
 	}
 };
 
+const sourceCapabilities = (source: FamilySource) =>
+	RegistrySourceCapabilitiesSchema.parse({
+		glyphCount: source.inspection.glyphs,
+		codepointCount: source.inspection.codepoints,
+		unicodeRange: source.inspection.unicodeRange,
+		features: source.inspection.features,
+		outline: source.inspection.outline,
+		colorTables: source.inspection.colorTables,
+	});
+
 const createArchivePlan = async (root: string, registryRevision: string) => {
 	await validateRegistry(root);
 
@@ -85,6 +101,17 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const replacements = replacementRegistrySchema.parse(
 		await readJson(join(root, 'replacements.json')),
 	);
+	const familyTags = familyTagsSchema.parse(
+		await readJson(join(root, 'family-tags.json')),
+	);
+	const curatedTags = new Map<string, string[]>();
+	for (const [tag, ids] of Object.entries(familyTags)) {
+		for (const id of ids) {
+			const tags = curatedTags.get(id) ?? [];
+			tags.push(tag);
+			curatedTags.set(id, tags);
+		}
+	}
 	const languages = languageCatalogSchema.parse(
 		await readJson(join(root, 'languages.json')),
 	);
@@ -102,6 +129,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const sourceMap = new Map<string, SourceFile>();
 	const familySummaries = [];
 	const familyViews: ArchiveFile[] = [];
+	const symbolViews: ArchiveFile[] = [];
 	for (const familyKey of familyKeys) {
 		const [provider, id] = familyKey.split('/') as [string, string];
 		const directory = join(root, 'families', familyKey);
@@ -111,6 +139,16 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		const distributionValue = await readJsonIfExists(
 			join(directory, 'distribution.json'),
 		);
+		const iconsValue = await readJsonIfExists(join(directory, 'icons.json'));
+		const icons = iconsValue ? familyIconsSchema.parse(iconsValue) : undefined;
+		if (icons) {
+			symbolViews.push(
+				createJsonFile(
+					`families/${id}/symbols.json`,
+					RegistryFamilySymbolsSchema.parse(icons.icons),
+				),
+			);
+		}
 		const distribution = distributionValue
 			? familyDistributionSchema.parse(distributionValue)
 			: undefined;
@@ -139,6 +177,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				format,
 				size: source.size,
 				downloadUrl: `/v1/registry/sources/${source.sha256}`,
+				capabilitiesUrl: `/v1/registry/sources/${source.sha256}/capabilities`,
 				fontVersion: source.inspection.fontVersion,
 				style: source.inspection.style,
 				declaredVariant: source.variant,
@@ -170,7 +209,9 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			status: family.status,
 			replacedBy: replacements[id],
 			classifications: family.classifications,
-			tags: family.tags,
+			tags: Array.from(
+				new Set([...family.tags, ...(curatedTags.get(id) ?? [])]),
+			).toSorted(compareStrings),
 			sourceModified: family.sourceModified,
 			axes,
 		};
@@ -202,6 +243,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 									},
 								}
 							: undefined,
+					symbolsUrl: icons ? `/v1/registry/families/${id}/symbols` : undefined,
 					sources,
 					distribution: publicDistribution,
 				}),
@@ -214,6 +256,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				read = () => readSource(source.path, repository, revision);
 			}
 			const previous = sourceMap.get(source.sha256);
+			const capabilities = sourceCapabilities(source);
 			const contentType = source.path.toLowerCase().endsWith('.otf')
 				? 'font/otf'
 				: 'font/ttf';
@@ -222,16 +265,29 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 					`Source ${source.sha256} is declared as both TTF and OTF`,
 				);
 			}
+			if (
+				previous &&
+				canonicalJson(previous.capabilities) !== canonicalJson(capabilities)
+			) {
+				throw new Error(`Source ${source.sha256} has conflicting capabilities`);
+			}
 			sourceMap.set(source.sha256, {
 				size: source.size,
 				sha256: source.sha256,
 				contentType,
+				capabilities,
 				read: read ?? previous?.read,
 			});
 		}
 	}
 	const sources = [...sourceMap.values()].toSorted((left, right) =>
 		compareStrings(left.sha256, right.sha256),
+	);
+	const capabilityViews = sources.map((source) =>
+		createJsonFile(
+			`sources/${source.sha256}/capabilities.json`,
+			source.capabilities,
+		),
 	);
 	const subsets = await Promise.all(
 		subsetIds.map(async (id) => {
@@ -270,6 +326,8 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		createJsonFile('axes.json', RegistryAxesSchema.parse(axes)),
 		createJsonFile('taxonomy.json', RegistryTaxonomySchema.parse(taxonomy)),
 		...familyViews,
+		...symbolViews,
+		...capabilityViews,
 		...subsets,
 	].toSorted((left, right) => compareStrings(left.path, right.path));
 

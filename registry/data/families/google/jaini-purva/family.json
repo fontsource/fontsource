@@ -505,10 +505,49 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 532,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm",
+						"dist",
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"calt",
+						"case",
+						"ccmp",
+						"dlig",
+						"half",
+						"haln",
+						"liga",
+						"locl",
+						"nukt",
+						"ordn",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"salt",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 2.000; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1693,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B1, U+00B4, U+00B6-00B8, U+00BA-00BB, U+00BF-0113, U+0116-011B, U+011E-0123, U+0126-012B, U+012E-0133, U+0136-0137, U+0139-013E, U+0141-0148, U+014A-014D, U+0150-015B, U+015E-0165, U+0168-017E, U+018F, U+0218-021B, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0310, U+0312, U+0323, U+0325-0328, U+032E, U+0331, U+0900-097F, U+1E0C-1E0D, U+1E24-1E25, U+1E2A-1E2B, U+1E34-1E35, U+1E3A-1E3B, U+1E40-1E49, U+1E5A-1E5B, U+1E5E-1E5F, U+1E62-1E63, U+1E6C-1E6F, U+1E80-1E85, U+1E8E-1E8F, U+1E96, U+1E9E, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+20AC, U+20B9, U+2122, U+2212, U+25CC, U+A8F8-A8F9, U+A8FD-A8FF, U+11B00-11B09",
 				"weight": 400
 			},
 			"path": "ofl/jainipurva/JainiPurva-Regular.ttf",

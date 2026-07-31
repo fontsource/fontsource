@@ -418,10 +418,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 382,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v0.8) -r 50 -G 200 -x",
+				"glyphs": 387,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A1-0113, U+0116-0148, U+014C-015B, U+015D-0165, U+0168-0173, U+0178-017E, U+01C4-01CC, U+01F1-01F5, U+0200-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2074, U+20AC, U+2122, U+2212, U+FB00-FB03",
 				"weight": 800
 			},
 			"path": "ofl/coda/Coda-ExtraBold.ttf",
@@ -435,10 +444,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 391,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 2.001; ttfautohint (v0.8) -r 50 -G 200 -x",
+				"glyphs": 394,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A1-0148, U+014C-0165, U+0168-017E, U+0192, U+01C4-01CC, U+01F1-01F5, U+0200-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0307, U+030F, U+0311, U+0326, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+3026, U+F6C3, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/coda/Coda-Regular.ttf",

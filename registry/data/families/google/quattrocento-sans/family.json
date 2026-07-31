@@ -363,10 +363,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 241,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 243,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0110, U+0131-0133, U+0138, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0259, U+02C6-02C7, U+02DA, U+02DC, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2153-2154, U+2212, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/quattrocentosans/QuattrocentoSans-Bold.ttf",
@@ -380,10 +395,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 242,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 244,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0110, U+0131-0133, U+0138, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0259, U+02C6-02C7, U+02DA, U+02DC, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2153-2154, U+2212, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/quattrocentosans/QuattrocentoSans-BoldItalic.ttf",
@@ -397,10 +427,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 243,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 245,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0110, U+0131-0133, U+0138, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0259, U+02C6-02C7, U+02D9-02DA, U+02DC, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2153-2154, U+2212, U+2215, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/quattrocentosans/QuattrocentoSans-Italic.ttf",
@@ -414,10 +459,25 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 242,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 243,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AE, U+00B0-00FF, U+0110, U+0131-0133, U+0138, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+0259, U+02C6-02C7, U+02DA, U+02DC, U+03BC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074, U+2080-2084, U+20AC, U+2122, U+2153-2154, U+2212, U+2215, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/quattrocentosans/QuattrocentoSans-Regular.ttf",

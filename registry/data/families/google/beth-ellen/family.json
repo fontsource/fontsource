@@ -355,10 +355,20 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 243,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"liga"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 254,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000A, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+2215, U+F001, U+F003-F004, U+F006, U+F009, U+F00B, U+F00F-F010, U+F013-F016, U+F01A, U+F01E, U+F020, U+F023-F025, U+F027-F028, U+F02A-F02B, U+F032-F035",
 				"weight": 400
 			},
 			"path": "ofl/bethellen/BethEllen-Regular.ttf",

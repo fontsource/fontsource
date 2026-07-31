@@ -809,10 +809,48 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 1584,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"ccmp",
+						"fina",
+						"frac",
+						"init",
+						"isol",
+						"locl",
+						"medi",
+						"onum",
+						"ordn",
+						"rlig",
+						"rvrn",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss10",
+						"ss11",
+						"ss12",
+						"ss20",
+						"subs",
+						"sups",
+						"tnum",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 8.5",
+				"glyphs": 2276,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-017F, U+0181, U+0186, U+0189-018A, U+018E-0190, U+0198-0199, U+019D, U+019F-01A1, U+01A6, U+01A9, U+01AF-01B0, U+01B3-01B4, U+01B7, U+01C3-01F5, U+01F8-021B, U+021E-021F, U+0226-0233, U+0237-0239, U+0240, U+0245, U+0250, U+0253-0257, U+0259, U+025B, U+0262, U+026A, U+026E, U+0272, U+0274-0276, U+0280, U+0283, U+028C, U+028F, U+0291-0293, U+0299, U+029C, U+029E-029F, U+02A3-02AB, U+02BB-02BC, U+02C2-02C7, U+02D2-02D3, U+02D8-02DD, U+0300-030F, U+0311, U+031B, U+0323-0329, U+032D-032E, U+0330-0331, U+0600-0604, U+0609-0612, U+0615-061C, U+061E-06FF, U+0750-077F, U+08A0-08B4, U+08B6-08BD, U+1D00-1D01, U+1D04-1D05, U+1D07, U+1D0A-1D0B, U+1D0D, U+1D0F, U+1D18, U+1D1B-1D1C, U+1D20-1D22, U+1D6B, U+1E00-1E9E, U+1EA0-1EF9, U+200B-2015, U+2018-2022, U+2026, U+2028-202E, U+2030, U+2032-2037, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+20B9, U+2103, U+2109, U+2116, U+2122, U+212B, U+2152-215F, U+2190-2199, U+220E, U+2212, U+2215, U+2248, U+2260, U+2264-2265, U+2460-2473, U+24EA-24F4, U+24FF, U+25A0, U+25CC, U+2776-277F, U+A728-A729, U+A730-A73D, U+A74E-A74F, U+A760-A761, U+A7AE-A7AF, U+AB50, U+AB5B, U+E005-E006, U+E008-E00B, U+E00D-E014, U+E016, U+E018-E01A, U+E01C-E01F, U+E0B1-E0B3, U+F8FF, U+FB50-FBB1, U+FBD3-FBE9, U+FBFC-FBFF, U+FC5E-FC63, U+FCF2-FCF4, U+FD3C-FD3F, U+FDF2, U+FDFC, U+FE70-FE74, U+FE76-FEEE, U+FEF1-FEFC",
 				"weight": {
 					"default": 400,
 					"max": 900,

@@ -813,10 +813,36 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 3490,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"ccmp",
+						"dnom",
+						"frac",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"rtlm",
+						"smcp",
+						"ss03",
+						"subs",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 2.014",
+				"glyphs": 3920,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-00AC, U+00AE-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03E1, U+03F0-052F, U+10FB, U+1AB0-1AC0, U+1AC5, U+1AC7-1ACE, U+1C80-1C88, U+1D00-1DF9, U+1DFB-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2000-2064, U+2066-2071, U+2074-208E, U+2090-209C, U+20A0-20C0, U+20F0, U+2100-215F, U+2183-2184, U+2189, U+2190-2195, U+219C-219E, U+21A0, U+21A2-21A4, U+21A6, U+21D0-21D4, U+21DA-21DB, U+21E6, U+21E8, U+2200-220E, U+2210, U+2212, U+2218-221A, U+221E, U+2220, U+2223, U+2227-222A, U+2234-2238, U+223C-223D, U+2241, U+2243, U+2245, U+2247-224C, U+2254-2255, U+2257, U+225F-2262, U+2264-2265, U+226C, U+226E-2275, U+227A-227B, U+2282-2289, U+228E, U+2291-229C, U+22A2-22A5, U+22B4-22B5, U+22B8, U+22C2-22C4, U+22C6, U+22C8-22CA, U+22CD-22CE, U+22D0-22D1, U+22E2-22E3, U+2308-230B, U+2310, U+2319, U+2320-2321, U+2336-237A, U+2395, U+239B-23AE, U+23B0-23BD, U+23DC-23E1, U+2474-2475, U+2500-25FF, U+266D-266F, U+2736, U+2758-275A, U+27D5-27D7, U+27DC, U+27E6-27EB, U+27F5-27F6, U+2987-2988, U+29A3, U+29B8, U+2A00, U+2A05-2A06, U+2C60-2C7F, U+2DE0-2E5D, U+A640-A69F, U+A700-A7CA, U+A7D0-A7D1, U+A7D3, U+A7D5-A7D9, U+A7F2-A7FF, U+A92E, U+AB30-AB6B, U+FE00, U+FE20-FE2F, U+FEFF, U+FF5B, U+FF5D, U+FFFC-FFFD, U+10780-10785, U+10787-107B0, U+107B2-107BA, U+1DF00-1DF1E, U+1F67C-1F67F",
 				"weight": {
 					"default": 400,
 					"max": 900,

@@ -448,10 +448,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 612,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"locl",
+						"ss01",
+						"ss07",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 7.051;RELEASE",
+				"glyphs": 618,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-017F, U+0237, U+0300-036F, U+2010-2027, U+2070-2071, U+2074-208E, U+2090-2091, U+2093-2094, U+2153-215F, U+2190-219B, U+2200-220D, U+220F-2214, U+2217-221F, U+22C5, U+2500, U+2503, U+250C, U+2510, U+2514, U+2518, U+251C, U+2524, U+252C, U+2534, U+253C, U+2550-256C, U+2580, U+2584, U+2588, U+258C, U+2590-2593, U+2605, U+2639-263B, U+2660, U+2663, U+2665-2666, U+2669-266F, U+A789, U+FB29, U+FFFD, U+1D106-1D107",
 				"weight": 400
 			},
 			"path": "ofl/libertinusmono/LibertinusMono-Regular.ttf",

@@ -413,10 +413,29 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 380,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"hist",
+						"liga",
+						"locl",
+						"salt",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"swsh"
+					]
+				},
 				"fontVersion": "3.00",
+				"glyphs": 397,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0133, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017F, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+037E, U+03BC, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2153-2154, U+215B-215E, U+2215, U+2219, U+261C, U+261E, U+E004-E018, U+E01A-E01C, U+E01F-E024, U+E028-E02B, U+E02E, U+E040-E041, U+E047, U+E054, U+FB00-FB05",
 				"weight": 400
 			},
 			"path": "ofl/imfelldoublepica/IMFELLDoublePica-Italic.ttf",
@@ -430,10 +449,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 354,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"dlig",
+						"hist",
+						"liga",
+						"locl",
+						"salt",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04"
+					]
+				},
 				"fontVersion": "3.00",
+				"glyphs": 371,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0107, U+010C-0113, U+0116-011B, U+011E-011F, U+0122-0123, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-017F, U+0192, U+0218-021B, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+037E, U+03BC, U+1E80-1E85, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2153-2154, U+215B-215E, U+2215, U+2219, U+261C, U+261E, U+E004-E00B, U+E01C, U+E02E, U+E040-E041, U+E047, U+E054, U+FB00-FB05",
 				"weight": 400
 			},
 			"path": "ofl/imfelldoublepica/IMFELLDoublePica-Regular.ttf",

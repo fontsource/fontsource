@@ -374,10 +374,34 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 308,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"cpsp",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"salt",
+						"ss01",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.004;PS 001.004;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 371,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A9, U+00AB-00B4, U+00B6-00B9, U+00BB-00FF, U+0106-0109, U+010B-010F, U+0116-0117, U+011A-011B, U+0131-0133, U+0139-013A, U+013D-0144, U+0147-0148, U+0152-0155, U+0158-015B, U+0160-0161, U+0164-0165, U+016E-016F, U+0174-017E, U+0192, U+02C6-02C7, U+02D9-02DA, U+02DC, U+039B, U+03BC, U+03C0, U+1E80-1E85, U+1EF2-1EF3, U+2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+20AC, U+2122, U+215B-215E, U+2202, U+2205, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2607, U+261D, U+2620, U+2661, U+2665, U+FB02",
 				"weight": 700
 			},
 			"path": "sources/bluu-next/files/BluuNext-Bold.otf",
@@ -391,10 +415,30 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 268,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"frac",
+						"liga",
+						"lnum",
+						"onum",
+						"salt",
+						"ss01",
+						"sups",
+						"zero"
+					]
+				},
 				"fontVersion": "Version 1.000;PS 001.000;hotconv 1.0.70;makeotf.lib2.5.58329",
+				"glyphs": 299,
 				"outline": "cff",
 				"style": "italic",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-00A2, U+00A4, U+00A8, U+00AB, U+00AD, U+00AF, U+00B2-00B4, U+00B6-00B9, U+00BB-00F6, U+00F8-00FF, U+0106-0109, U+010B-010F, U+0116-0117, U+011A-011B, U+0131-0133, U+0139, U+013D, U+013F-0141, U+0143, U+0147, U+0152-0155, U+0158-015B, U+0160-0161, U+0164, U+016E-016F, U+0174-017E, U+02C6-02C7, U+02D9-02DA, U+02DC, U+1E80-1E85, U+1EF2-1EF3, U+2009, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+215B-215E, U+2665, U+FB00",
 				"weight": 700
 			},
 			"path": "sources/bluu-next/files/BluuNext-Bolditalic.otf",

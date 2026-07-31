@@ -217,10 +217,24 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 224,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"haln",
+						"psts"
+					]
+				},
 				"fontVersion": "Version 1.0.5; ttfautohint (v1.2.25-373a) -l 7 -r 28 -G 50 -x 13 -D telu -f latn -w G -X \"\"",
+				"glyphs": 1235,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0, U+00A2, U+00A9, U+00AE, U+00BC-00BE, U+00D7, U+00F7, U+0950-0952, U+0964-0965, U+0C01-0C03, U+0C05-0C0C, U+0C0E-0C10, U+0C12-0C28, U+0C2A-0C39, U+0C3D-0C44, U+0C46-0C48, U+0C4A-0C4D, U+0C55-0C56, U+0C58-0C59, U+0C60-0C63, U+0C66-0C6F, U+0C78-0C7F, U+200C-200D, U+2013-2014, U+2018-2019, U+201C-201D, U+2022, U+2026, U+20B9, U+2103, U+2109, U+2122, U+2153, U+2190-2193, U+2212, U+25CC",
 				"weight": 400
 			},
 			"path": "ofl/dhurjati/Dhurjati-Regular.ttf",

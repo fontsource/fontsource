@@ -365,10 +365,17 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 287,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.002 2007",
+				"glyphs": 290,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0100, U+0102, U+0104, U+0106, U+0108, U+010A, U+010C, U+010E, U+0112, U+0114, U+0116, U+0118, U+011A, U+011C, U+011E, U+0120, U+0122, U+0124, U+0128, U+012C, U+012E, U+0130, U+0134, U+0136, U+0139, U+013B, U+013F, U+0141-0143, U+0145, U+0147, U+014C, U+014E, U+0150, U+0152-0154, U+0156, U+0158, U+015A, U+015C, U+015E, U+0160-0162, U+0164, U+0168, U+016A, U+016C, U+016E, U+0170, U+0172, U+0174, U+0176, U+0178-0179, U+017B, U+017D-017E, U+0192, U+01FC, U+01FE, U+02C6-02C7, U+02D8-02DD, U+1E80, U+1E82, U+1E84, U+1EF2, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+2044, U+20AC, U+2122, U+2212, U+F6C3, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/sueellenfrancisco/SueEllenFrancisco-Regular.ttf",

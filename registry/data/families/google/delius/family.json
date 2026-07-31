@@ -360,10 +360,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 267,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 298,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00FF, U+0126-0129, U+0130-0138, U+013F-0144, U+0152-0154, U+0156-0159, U+0178, U+02C6-02C7, U+02D8-02DC, U+03A9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2190-2193, U+2212, U+2248, U+2260, U+2264-2265, U+E062, U+E092-E096, U+E098, U+E09A-E09B, U+E0B0, U+F6C3, U+FB01-FB03",
 				"weight": 400
 			},
 			"path": "ofl/delius/Delius-Regular.ttf",

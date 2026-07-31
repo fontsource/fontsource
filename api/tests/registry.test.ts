@@ -3,7 +3,9 @@ import {
 	RegistryAxesSchema,
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
+	RegistryFamilySymbolsSchema,
 	RegistryLanguagesSchema,
+	RegistrySourceCapabilitiesSchema,
 	RegistrySubsetSchema,
 	RegistrySubsetsSchema,
 	RegistryTaxonomySchema,
@@ -45,6 +47,7 @@ const VIEWS = [
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org',
 			},
+			symbolsUrl: '/v1/registry/families/abel/symbols',
 			distribution: {
 				static: [{ weight: 400, style: 'normal', source: SOURCE_SHA256 }],
 				characters: {
@@ -60,6 +63,7 @@ const VIEWS = [
 					format: 'ttf',
 					size: SOURCE_BYTES.byteLength,
 					downloadUrl: `/v1/registry/sources/${SOURCE_SHA256}`,
+					capabilitiesUrl: `/v1/registry/sources/${SOURCE_SHA256}/capabilities`,
 					type: 'static',
 					fontVersion: 'Version 1.0',
 					weight: 400,
@@ -68,6 +72,13 @@ const VIEWS = [
 				},
 			],
 		}),
+	},
+	{
+		path: 'families/abel/symbols.json',
+		route: '/v1/registry/families/abel/symbols',
+		body: RegistryFamilySymbolsSchema.parse([
+			{ name: 'home', codepoint: 0xe88a },
+		]),
 	},
 	{
 		path: 'languages.json',
@@ -128,6 +139,21 @@ const VIEWS = [
 				default: 400,
 				precision: 0,
 			},
+		}),
+	},
+	{
+		path: `sources/${SOURCE_SHA256}/capabilities.json`,
+		route: `/v1/registry/sources/${SOURCE_SHA256}/capabilities`,
+		body: RegistrySourceCapabilitiesSchema.parse({
+			glyphCount: 2,
+			codepointCount: 2,
+			unicodeRange: 'U+0041-0042',
+			features: {
+				gsub: ['liga'],
+				gpos: [],
+			},
+			outline: 'glyf',
+			colorTables: [],
 		}),
 	},
 ] as const;
@@ -207,7 +233,9 @@ describe('registry routes', () => {
 		const responses = await Promise.all(
 			[
 				'/v1/registry/families/unknown',
+				'/v1/registry/families/unknown/symbols',
 				`/v1/registry/sources/${'8'.repeat(64)}`,
+				`/v1/registry/sources/${'8'.repeat(64)}/capabilities`,
 			].map((path) => jsonSnapshot(`https://fontsource.test${path}`)),
 		);
 

@@ -483,10 +483,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "ofl/poppins/Poppins-Black.ttf",
@@ -500,10 +527,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 900
 			},
 			"path": "ofl/poppins/Poppins-BlackItalic.ttf",
@@ -517,10 +571,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/poppins/Poppins-Bold.ttf",
@@ -534,10 +615,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 700
 			},
 			"path": "ofl/poppins/Poppins-BoldItalic.ttf",
@@ -551,10 +659,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 800
 			},
 			"path": "ofl/poppins/Poppins-ExtraBold.ttf",
@@ -568,10 +703,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 800
 			},
 			"path": "ofl/poppins/Poppins-ExtraBoldItalic.ttf",
@@ -585,10 +747,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 275
 			},
 			"path": "ofl/poppins/Poppins-ExtraLight.ttf",
@@ -602,10 +791,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 275
 			},
 			"path": "ofl/poppins/Poppins-ExtraLightItalic.ttf",
@@ -619,10 +835,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/poppins/Poppins-Italic.ttf",
@@ -636,10 +879,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "ofl/poppins/Poppins-Light.ttf",
@@ -653,10 +923,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 300
 			},
 			"path": "ofl/poppins/Poppins-LightItalic.ttf",
@@ -670,10 +967,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 500
 			},
 			"path": "ofl/poppins/Poppins-Medium.ttf",
@@ -687,10 +1011,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 500
 			},
 			"path": "ofl/poppins/Poppins-MediumItalic.ttf",
@@ -704,10 +1055,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/poppins/Poppins-Regular.ttf",
@@ -721,10 +1099,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/poppins/Poppins-SemiBold.ttf",
@@ -738,10 +1143,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 600
 			},
 			"path": "ofl/poppins/Poppins-SemiBoldItalic.ttf",
@@ -755,10 +1187,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 250
 			},
 			"path": "ofl/poppins/Poppins-Thin.ttf",
@@ -772,10 +1231,37 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 471,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"half",
+						"haln",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"vatu"
+					]
+				},
 				"fontVersion": "4.004",
+				"glyphs": 1060,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0107, U+010A-011B, U+011E-0123, U+0128-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+018F, U+0192, U+01FC-01FD, U+0218-021B, U+0259, U+02BC, U+02C6-02C7, U+02C9, U+02D8-02DD, U+03C0, U+0901-0903, U+0905-090D, U+090F-0911, U+0913-0928, U+092A-0933, U+0935-0939, U+093C-0945, U+0947-0949, U+094B-094D, U+0950, U+0958-095E, U+0960-0970, U+0972, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20A8, U+20AC, U+20B9-20BA, U+20BD, U+2113, U+2122, U+2126, U+212E, U+2202, U+2206, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+FB01-FB02",
 				"weight": 250
 			},
 			"path": "ofl/poppins/Poppins-ThinItalic.ttf",

@@ -31,10 +31,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 154,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"calt"
+					]
+				},
 				"fontVersion": "Version 1.008; ttfautohint (v1.8.3)",
+				"glyphs": 155,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020, U+0028-002B, U+002D, U+0030-003C, U+003E-003F, U+0041-0054, U+0058, U+005B-005D, U+0061-0074, U+0078, U+007B-007D, U+00A0, U+00C0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+200B-200C, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026",
 				"weight": 400
 			},
 			"path": "ofl/librebarcodeean13text/LibreBarcodeEAN13Text-Regular.ttf",

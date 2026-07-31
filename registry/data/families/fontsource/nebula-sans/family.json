@@ -471,10 +471,45 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 950,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1079,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2206, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 900
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-Black.ttf",
@@ -488,10 +523,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 948,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1048,
 				"outline": "glyf",
 				"style": "oblique",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-0393, U+0395-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 900
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-BlackItalic.ttf",
@@ -505,10 +573,45 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 950,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1079,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2206, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 700
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-Bold.ttf",
@@ -522,10 +625,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 948,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1048,
 				"outline": "glyf",
 				"style": "oblique",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-0393, U+0395-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 700
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-BoldItalic.ttf",
@@ -539,10 +675,45 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 950,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1079,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2206, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 400
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-Book.ttf",
@@ -556,10 +727,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 948,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1048,
 				"outline": "glyf",
 				"style": "oblique",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-0393, U+0395-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 400
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-BookItalic.ttf",
@@ -573,10 +777,45 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 950,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1079,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2206, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 300
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-Light.ttf",
@@ -590,10 +829,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 948,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1048,
 				"outline": "glyf",
 				"style": "oblique",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-0393, U+0395-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 300
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-LightItalic.ttf",
@@ -607,10 +879,45 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 950,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1079,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2206, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 500
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-Medium.ttf",
@@ -624,10 +931,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 948,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1048,
 				"outline": "glyf",
 				"style": "oblique",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-0393, U+0395-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 500
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-MediumItalic.ttf",
@@ -641,10 +981,45 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 950,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"smcp",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1079,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2206, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 600
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-Semibold.ttf",
@@ -658,10 +1033,43 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 948,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.010",
+				"glyphs": 1048,
 				"outline": "glyf",
 				"style": "oblique",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AD-0107, U+010A-011B, U+011E-0123, U+0126-0127, U+012A-0131, U+0136-0137, U+0139-0148, U+014C-015B, U+015E-0165, U+0168-017E, U+0192, U+01D3-01D4, U+01FA-01FF, U+0218-0219, U+0259, U+02B0-02B4, U+02B7-02B8, U+02C6-02C7, U+02D8-02DD, U+02E0-02E4, U+02ED, U+0301, U+0308, U+030C, U+0342-0345, U+0374-0375, U+037A, U+037E, U+0384-038A, U+038C, U+038E-0393, U+0395-03A1, U+03A3-03D1, U+03D5, U+03D7, U+03D9, U+03DB, U+03DD, U+03E1, U+03F4, U+03F7-03F8, U+0400-045F, U+0462-0463, U+0472-0475, U+0490-0493, U+0496-049B, U+04A0-04A3, U+04AA-04AB, U+04AE-04B3, U+04B6-04B7, U+04BA-04BB, U+04C0-04C4, U+04C7-04C8, U+04CF-04D1, U+04D4-04D9, U+04E2-04E3, U+04E6-04E9, U+04EE-04EF, U+04F2-04F3, U+04F6-04F7, U+1D2C, U+1D2E, U+1D30-1D31, U+1D33-1D3A, U+1D3C, U+1D3E-1D43, U+1D47-1D4B, U+1D4D, U+1D4F-1D52, U+1D56-1D58, U+1D5B, U+1D9C, U+1DA0, U+1DAC, U+1DAE, U+1DB0, U+1DBB, U+1DBF, U+1E3B, U+1E80-1E85, U+1EBC-1EBD, U+1EF2-1EF3, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2009-200A, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+203D, U+2044, U+2070-2071, U+2074-2089, U+20AC, U+2117, U+2120, U+2122, U+2126, U+2150-215E, U+2189, U+2190-2194, U+2196-2199, U+2212, U+2260, U+2C7D, U+A7F2-A7F4, U+FB00, U+FB02-FB04",
 				"weight": 600
 			},
 			"path": "sources/nebula-sans/files/NebulaSans-SemiboldItalic.ttf",

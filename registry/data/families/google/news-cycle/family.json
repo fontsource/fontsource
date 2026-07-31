@@ -482,10 +482,21 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 713,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"liga"
+					]
+				},
 				"fontVersion": "Version 0.5.1",
+				"glyphs": 715,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-0110, U+0112-0125, U+0128-0134, U+0136-0137, U+0139-0140, U+0143-0149, U+014C-0165, U+0168-0171, U+0173-017F, U+0186, U+0189, U+0196, U+01C0-01C1, U+01C3-01E3, U+01E6-01ED, U+01F1-01F5, U+01F8-021B, U+021E-021F, U+0226-0227, U+022A-0233, U+0245, U+0250, U+0254, U+0259, U+02B9-02BA, U+02BC, U+02C4, U+02C6-02C8, U+02D8-02DD, U+0300-0303, U+0305, U+0308, U+030A-030C, U+030E-0313, U+0315, U+0323-0324, U+0327, U+0341, U+0344, U+1E00-1E99, U+1E9B, U+1E9E, U+1EA0-1EA1, U+1EA4-1EA7, U+1EAA-1EB1, U+1EB4-1EB9, U+1EBC-1EC1, U+1EC4-1EC7, U+1ECA-1ECD, U+1ED0-1ED3, U+1ED6-1ED9, U+1EE4-1EE5, U+1EF2-1EF5, U+1EF8-1EF9, U+2010-2016, U+2018-2022, U+2024-2026, U+202A, U+202F-2030, U+2032-2037, U+2039-203E, U+2044, U+2047-2049, U+2057, U+20AC, U+2122, U+2212-2213, U+2215-2218, U+2223, U+2225, U+E211, U+EFFD, U+F000-F001, U+FB00-FB04",
 				"weight": 700
 			},
 			"path": "ofl/newscycle/NewsCycle-Bold.ttf",
@@ -499,10 +510,23 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 1564,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"liga",
+						"onum"
+					]
+				},
 				"fontVersion": "Version 0.5.1",
+				"glyphs": 1566,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+000D, U+0020-007E, U+00A0-0250, U+0253-0259, U+0292, U+0299, U+029C, U+02B0, U+02B2-02B3, U+02B7-02BA, U+02BC, U+02C4, U+02C6-02C8, U+02D8-02DD, U+02E1-02E3, U+0300-0303, U+0305, U+0308, U+030A-030C, U+030E-0315, U+031B, U+0322-0324, U+0327, U+0337, U+0341, U+0344-0345, U+0370-0374, U+0376-0377, U+037B-037E, U+0384-038A, U+038C, U+038E-03A1, U+03A3-04FF, U+1D9C, U+1D9E, U+1DA0, U+1DBB, U+1E00-1E99, U+1E9B, U+1E9E, U+1EA0-1EA1, U+1EA4-1EA7, U+1EAA-1EB1, U+1EB4-1EB9, U+1EBC-1EC1, U+1EC4-1EC7, U+1ECA-1ECD, U+1ED0-1ED3, U+1ED6-1EDD, U+1EE0-1EE5, U+1EE8-1EEB, U+1EEE-1EF5, U+1EF8-1EF9, U+1F00-1F15, U+1F18-1F1D, U+1F20-1F45, U+1F48-1F4D, U+1F50-1F57, U+1F59, U+1F5B, U+1F5D, U+1F5F-1F7D, U+1F80-1FB4, U+1FB6-1FC4, U+1FC6-1FD3, U+1FD6-1FDB, U+1FDD-1FEF, U+1FF2-1FF4, U+1FF6-1FFE, U+2010-2016, U+2018-2022, U+2024-2026, U+202A, U+202F-2030, U+2032-2037, U+2039-203E, U+2044, U+2047-2049, U+2057, U+2070-2071, U+2074-207B, U+20AC, U+20B4, U+2122, U+214F, U+2190-2193, U+2200, U+2202-2209, U+220B-220C, U+220F, U+2211-2213, U+2215-221A, U+221E, U+2220, U+2223-2227, U+2229-222B, U+2234-2236, U+223C, U+2241, U+2245, U+2248-2249, U+2260, U+226A-226B, U+226E-226F, U+2282-2283, U+2601, U+2672, U+2C7A, U+2E2E, U+E210-E211, U+EFFD, U+F000-F001, U+F643-F64C, U+FB00-FB06",
 				"weight": 400
 			},
 			"path": "ofl/newscycle/NewsCycle-Regular.ttf",

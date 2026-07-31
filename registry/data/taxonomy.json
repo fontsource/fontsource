@@ -208,8 +208,23 @@
 		"special-use/barcode": {
 			"label": "Barcode"
 		},
+		"special-use/digital-display": {
+			"label": "Digital Display"
+		},
+		"special-use/emoji": {
+			"label": "Emoji"
+		},
 		"special-use/icons": {
 			"label": "Icons"
+		},
+		"special-use/math": {
+			"label": "Math"
+		},
+		"special-use/music-symbols": {
+			"label": "Music Symbols"
+		},
+		"special-use/punctuation": {
+			"label": "Punctuation"
 		},
 		"special-use/redaction": {
 			"label": "Redaction"

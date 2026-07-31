@@ -5,8 +5,10 @@ import {
 	RegistryAxesSchema,
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
+	RegistryFamilySymbolsSchema,
 	RegistryIdParamSchema,
 	RegistryLanguagesSchema,
+	RegistrySourceCapabilitiesSchema,
 	RegistrySourceParamSchema,
 	RegistrySubsetSchema,
 	RegistrySubsetsSchema,
@@ -84,6 +86,33 @@ export class GetRegistryFamilyRoute extends OpenAPIRoute {
 			c,
 			`families/${data.params.id}.json`,
 			'Not Found. Registry family does not exist.',
+		);
+	}
+}
+
+export class GetRegistryFamilySymbolsRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['Registry'],
+		operationId: 'getRegistryFamilySymbols',
+		summary: 'Get a registry family symbol catalog',
+		request: {
+			params: RegistryIdParamSchema,
+		},
+		responses: {
+			...registryResponses(RegistryFamilySymbolsSchema),
+			'404': {
+				description: 'Registry family symbol catalog not found',
+				...contentJson(ErrorResponseSchema),
+			},
+		},
+	};
+
+	async handle(c: AppContext) {
+		const data = await this.getValidatedData<typeof this.schema>();
+		return getRegistryView(
+			c,
+			`families/${data.params.id}/symbols.json`,
+			'Not Found. Registry family does not have a symbol catalog.',
 		);
 	}
 }
@@ -187,5 +216,32 @@ export class GetRegistrySourceRoute extends OpenAPIRoute {
 	async handle(c: AppContext) {
 		const data = await this.getValidatedData<typeof this.schema>();
 		return getRegistrySource(c, data.params.sha256);
+	}
+}
+
+export class GetRegistrySourceCapabilitiesRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['Registry'],
+		operationId: 'getRegistrySourceCapabilities',
+		summary: 'Get archived source font capabilities',
+		request: {
+			params: RegistrySourceParamSchema,
+		},
+		responses: {
+			...registryResponses(RegistrySourceCapabilitiesSchema),
+			'404': {
+				description: 'Registry source capabilities not found',
+				...contentJson(ErrorResponseSchema),
+			},
+		},
+	};
+
+	async handle(c: AppContext) {
+		const data = await this.getValidatedData<typeof this.schema>();
+		return getRegistryView(
+			c,
+			`sources/${data.params.sha256}/capabilities.json`,
+			'Not Found. Registry source capabilities do not exist.',
+		);
 	}
 }

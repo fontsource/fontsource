@@ -461,10 +461,36 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 378,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"locl",
+						"numr",
+						"ordn",
+						"salt",
+						"ss01",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.000",
+				"glyphs": 513,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0123, U+0126-0131, U+0134-0137, U+0139-013E, U+0141-0148, U+014A-017E, U+01FA, U+0218-021B, U+0237, U+02C6, U+02DA, U+02DC, U+0300-0304, U+0306-0308, U+030A-030C, U+0312, U+0326-0328, U+0335-0336, U+17DB, U+1E80-1E85, U+1E9E, U+1EBC-1EBD, U+1EF2-1EF3, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+2215, U+2264-2265, U+E000, U+FB01-FB02",
 				"weight": {
 					"default": 400,
 					"max": 800,

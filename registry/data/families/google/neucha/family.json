@@ -329,10 +329,19 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 283,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": []
+				},
 				"fontVersion": "Version 001.001",
+				"glyphs": 286,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A1, U+00A3-00A4, U+00A6-00A9, U+00AB-00AE, U+00B0-00B1, U+00B4-00B7, U+00BB, U+00BF-00C2, U+00C4-00CB, U+00CD-00CF, U+00D1, U+00D3-00D4, U+00D6, U+00D9-00DC, U+00DF-00E2, U+00E4-00EB, U+00ED-00EF, U+00F1, U+00F3-00F4, U+00F6, U+00F9-00FC, U+00FF, U+0131, U+0152-0153, U+0178, U+02C6, U+02DA, U+02DC, U+03BC, U+0401-040C, U+040E-044F, U+0451-045C, U+045E-045F, U+0490-0491, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+20A3, U+20A7, U+20AC, U+2116, U+2122",
 				"weight": 400
 			},
 			"path": "ofl/neucha/Neucha.ttf",

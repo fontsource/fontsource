@@ -459,10 +459,36 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 531,
 				"colorTables": [],
+				"features": {
+					"gpos": [],
+					"gsub": [
+						"aalt",
+						"c2sc",
+						"dlig",
+						"dnom",
+						"frac",
+						"liga",
+						"lnum",
+						"locl",
+						"numr",
+						"onum",
+						"ordn",
+						"pnum",
+						"sinf",
+						"smcp",
+						"ss01",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 1.000",
+				"glyphs": 850,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A5, U+00A7-00AC, U+00AE-017F, U+0192, U+01A0-01A1, U+01AF-01B0, U+01FC-01FF, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0309, U+031B, U+0323, U+03A9, U+03C0, U+1EA0-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+207D-207E, U+2080-2089, U+208D-208E, U+20A1, U+20A3-20A4, U+20A6-20A9, U+20AB-20AC, U+2103, U+2109, U+2113, U+2116-2117, U+2120, U+2122, U+2126, U+212E, U+2150, U+2153-215E, U+2190-2193, U+2196-2199, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+263A-263B, U+FB00-FB04, U+FB06",
 				"weight": 400
 			},
 			"path": "ofl/varela/Varela-Regular.ttf",

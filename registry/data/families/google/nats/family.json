@@ -365,10 +365,28 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 367,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"blwm",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"haln",
+						"nukt",
+						"psts"
+					]
+				},
 				"fontVersion": "Version 1.0.4; ttfautohint (v1.2.25-373a) -l 7 -r 28 -G 50 -x 13 -D telu -f latn -w G -X \"\"",
+				"glyphs": 869,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A1-00AC, U+00AE-00FF, U+0127-0129, U+0131, U+0133-0135, U+0137-0138, U+0140-0144, U+0152-0154, U+0156-0159, U+0160-0161, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+093C, U+0950-0953, U+0964-0965, U+0C01-0C03, U+0C05-0C0C, U+0C0E-0C10, U+0C12-0C1E, U+0C20-0C28, U+0C2A-0C39, U+0C3D-0C44, U+0C46-0C48, U+0C4A-0C4D, U+0C55-0C56, U+0C58-0C59, U+0C60-0C63, U+0C66-0C6F, U+0C78-0C7F, U+200C-200D, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+20B9, U+2122, U+2126, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+FB01-FB02",
 				"weight": 400
 			},
 			"path": "ofl/nats/NATS-Regular.ttf",

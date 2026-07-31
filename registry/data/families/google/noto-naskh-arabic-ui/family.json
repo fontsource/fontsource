@@ -115,10 +115,31 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 1122,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"init",
+						"liga",
+						"locl",
+						"medi",
+						"rlig",
+						"tnum"
+					]
+				},
 				"fontVersion": "2.015",
+				"glyphs": 1597,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-0021, U+002C, U+002E, U+0030-003A, U+00A0, U+00AB, U+00BB, U+0600-0604, U+0606-061B, U+061E-06FF, U+0750-077F, U+08A0, U+08A2-08AC, U+08E4-08FE, U+200B-2011, U+204F, U+25CC, U+2E41, U+FB50-FBC1, U+FBD3-FD3F, U+FD50-FD8F, U+FD92-FDC7, U+FDF0-FDFD, U+FE70-FE74, U+FE76-FEFC, U+FEFF",
 				"weight": {
 					"default": 400,
 					"max": 700,

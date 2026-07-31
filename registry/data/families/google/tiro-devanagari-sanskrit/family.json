@@ -443,10 +443,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 559,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwf",
+						"blwm",
+						"dist",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"cjct",
+						"dnom",
+						"frac",
+						"half",
+						"liga",
+						"lnum",
+						"nukt",
+						"numr",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"smcp",
+						"ss04",
+						"ss05",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.52",
+				"glyphs": 1835,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0103, U+0108-0109, U+010C-010D, U+0112-0115, U+0120-0121, U+0128-012D, U+0131, U+0139-013A, U+0145-0146, U+014C-014F, U+0152-0155, U+015A-015B, U+0160-0161, U+0168-016D, U+0178-017A, U+017D-017E, U+0192, U+01E2-01E3, U+0237, U+02BE-02BF, U+02C6, U+02DA, U+02DC, U+0300-0304, U+0306-0308, U+030A, U+030C, U+0310, U+0323-0327, U+032E, U+0331, U+035F, U+0900-0939, U+093C-094E, U+0950-0952, U+0958-0972, U+097A, U+0FD5-0FD8, U+1CD0-1CFA, U+1E0C-1E0F, U+1E16-1E17, U+1E24-1E25, U+1E32-1E37, U+1E3A-1E3B, U+1E40-1E49, U+1E4C-1E4D, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E6F, U+1E78-1E79, U+1E8E-1E8F, U+1E92-1E96, U+1E9E, U+1EBC-1EBD, U+2000-200D, U+2013-2014, U+2018-2022, U+2026, U+202F-2030, U+2032-2033, U+2039-203A, U+2044, U+2055, U+205F, U+2070, U+2074-2079, U+20A8, U+20AC, U+20B9, U+2122, U+2212, U+2215, U+25CC, U+A8E0-A8FD",
 				"weight": 400
 			},
 			"path": "ofl/tirodevanagarisanskrit/TiroDevanagariSanskrit-Italic.ttf",
@@ -460,10 +498,48 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 559,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwf",
+						"blwm",
+						"dist",
+						"kern"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"c2sc",
+						"calt",
+						"case",
+						"ccmp",
+						"cjct",
+						"dnom",
+						"frac",
+						"half",
+						"liga",
+						"lnum",
+						"nukt",
+						"numr",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"smcp",
+						"ss04",
+						"ss05",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.52",
+				"glyphs": 1835,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+00A0-0103, U+0108-0109, U+010C-010D, U+0112-0115, U+0120-0121, U+0128-012D, U+0131, U+0139-013A, U+0145-0146, U+014C-014F, U+0152-0155, U+015A-015B, U+0160-0161, U+0168-016D, U+0178-017A, U+017D-017E, U+0192, U+01E2-01E3, U+0237, U+02BE-02BF, U+02C6, U+02DA, U+02DC, U+0300-0304, U+0306-0308, U+030A, U+030C, U+0310, U+0323-0327, U+032E, U+0331, U+035F, U+0900-0939, U+093C-094E, U+0950-0952, U+0958-0972, U+097A, U+0FD5-0FD8, U+1CD0-1CFA, U+1E0C-1E0F, U+1E16-1E17, U+1E24-1E25, U+1E32-1E37, U+1E3A-1E3B, U+1E40-1E49, U+1E4C-1E4D, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E6F, U+1E78-1E79, U+1E8E-1E8F, U+1E92-1E96, U+1E9E, U+1EBC-1EBD, U+2000-200D, U+2013-2014, U+2018-2022, U+2026, U+202F-2030, U+2032-2033, U+2039-203A, U+2044, U+2055, U+205F, U+2070, U+2074-2079, U+20A8, U+20AC, U+20B9, U+2122, U+2212, U+2215, U+25CC, U+A8E0-A8FD",
 				"weight": 400
 			},
 			"path": "ofl/tirodevanagarisanskrit/TiroDevanagariSanskrit-Regular.ttf",

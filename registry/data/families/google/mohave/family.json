@@ -431,10 +431,41 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 413,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"hlig",
+						"liga",
+						"locl",
+						"numr",
+						"ordn",
+						"pnum",
+						"salt",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.003",
+				"glyphs": 482,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-012B, U+012E-0149, U+014C-017F, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+0394, U+03A9, U+03C0, U+1E80-1E85, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A3-20A4, U+20A7, U+20AC, U+2113, U+2122, U+212E, U+215B-215E, U+2190-2199, U+2202, U+2205, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F8FF, U+FB01-FB02",
 				"weight": {
 					"default": 300,
 					"max": 700,
@@ -459,10 +490,42 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 414,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"case",
+						"ccmp",
+						"dlig",
+						"dnom",
+						"frac",
+						"hlig",
+						"liga",
+						"locl",
+						"numr",
+						"ordn",
+						"pnum",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss04",
+						"subs",
+						"sups",
+						"tnum"
+					]
+				},
 				"fontVersion": "Version 2.003",
+				"glyphs": 483,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+0020-007E, U+00A0-012B, U+012E-0149, U+014C-017F, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0326, U+0394, U+03A9, U+03BC, U+03C0, U+1E80-1E85, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A3-20A4, U+20A7, U+20AC, U+2113, U+2122, U+212E, U+215B-215E, U+2190-2199, U+2202, U+2205, U+220F, U+2211-2212, U+2215, U+2219-221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+F8FF, U+FB01-FB02",
 				"weight": {
 					"default": 300,
 					"max": 700,

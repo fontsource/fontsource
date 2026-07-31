@@ -370,10 +370,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 446,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.700",
+				"glyphs": 465,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+0660-066A, U+066D-066E, U+0670, U+067E, U+06A4, U+2002-200A, U+2011-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CC, U+E028, U+E030, U+E03D-E03E, U+E800, U+FB00-FB03, U+FB57-FB59, U+FB6B-FB6D, U+FBB2-FBB7, U+FBE8-FBE9, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 900
 			},
 			"path": "ofl/tajawal/Tajawal-Black.ttf",
@@ -387,10 +408,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 455,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.700",
+				"glyphs": 474,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+0660-066A, U+066D-066E, U+0670, U+067E, U+06A4, U+2002-200A, U+2011-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CC, U+E028, U+E030, U+E033-E03B, U+E03D-E03E, U+E800, U+FB00-FB03, U+FB57-FB59, U+FB6B-FB6D, U+FBB2-FBB7, U+FBE8-FBE9, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 700
 			},
 			"path": "ofl/tajawal/Tajawal-Bold.ttf",
@@ -404,10 +447,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 446,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.700",
+				"glyphs": 465,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+0660-066A, U+066D-066E, U+0670, U+067E, U+06A4, U+2002-200A, U+2011-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CC, U+E028, U+E030, U+E03D-E03E, U+E800, U+FB00-FB03, U+FB57-FB59, U+FB6B-FB6D, U+FBB2-FBB7, U+FBE8-FBE9, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 800
 			},
 			"path": "ofl/tajawal/Tajawal-ExtraBold.ttf",
@@ -421,10 +485,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 445,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.700",
+				"glyphs": 464,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+0660-066A, U+066D-066E, U+0670, U+067E, U+06A4, U+2002-2007, U+2009-200A, U+2011-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CC, U+E028, U+E030, U+E03D-E03E, U+E800, U+FB00-FB03, U+FB57-FB59, U+FB6B-FB6D, U+FBB2-FBB7, U+FBE8-FBE9, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 275
 			},
 			"path": "ofl/tajawal/Tajawal-ExtraLight.ttf",
@@ -438,10 +523,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 454,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.700",
+				"glyphs": 473,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+0660-066A, U+066D-066E, U+0670, U+067E, U+06A4, U+2002-2007, U+2009-200A, U+2011-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CC, U+E028, U+E030, U+E033-E03B, U+E03D-E03E, U+E800, U+FB00-FB03, U+FB57-FB59, U+FB6B-FB6D, U+FBB2-FBB7, U+FBE8-FBE9, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 300
 			},
 			"path": "ofl/tajawal/Tajawal-Light.ttf",
@@ -455,10 +562,32 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 455,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.700",
+				"glyphs": 474,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+0660-066A, U+066D-066E, U+0670, U+067E, U+06A4, U+2002-200A, U+2011-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CC, U+E028, U+E030, U+E033-E03B, U+E03D-E03E, U+E800, U+FB00-FB03, U+FB57-FB59, U+FB6B-FB6D, U+FBB2-FBB7, U+FBE8-FBE9, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 500
 			},
 			"path": "ofl/tajawal/Tajawal-Medium.ttf",
@@ -472,10 +601,31 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 446,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern",
+						"mark",
+						"mkmk"
+					],
+					"gsub": [
+						"aalt",
+						"ccmp",
+						"dlig",
+						"fina",
+						"frac",
+						"init",
+						"liga",
+						"medi",
+						"rlig"
+					]
+				},
 				"fontVersion": "Version 1.700",
+				"glyphs": 465,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00FF, U+0131, U+0141-0142, U+0152-0153, U+0160-0161, U+0178, U+017D-017E, U+0192, U+02C6-02C7, U+02D8-02DD, U+03C0, U+060C, U+061B, U+061F, U+0621-063A, U+0640-0655, U+0660-066A, U+066D-066E, U+0670, U+067E, U+06A4, U+2002-200A, U+2011-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC, U+2122, U+2126, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CC, U+E028, U+E030, U+E03D-E03E, U+E800, U+FB00-FB03, U+FB57-FB59, U+FB6B-FB6D, U+FBB2-FBB7, U+FBE8-FBE9, U+FC59-FC5A, U+FC5E-FC63, U+FC95-FC96, U+FD3E-FD3F, U+FDF2, U+FE82, U+FE84, U+FE86, U+FE88, U+FE8A-FE8C, U+FE8E, U+FE90-FE92, U+FE94, U+FE96-FE98, U+FE9A-FE9C, U+FE9E-FEA0, U+FEA2-FEA4, U+FEA6-FEA8, U+FEAA, U+FEAC, U+FEAE, U+FEB0, U+FEB2-FEB4, U+FEB6-FEB8, U+FEBA-FEBC, U+FEBE-FEC0, U+FEC2-FEC4, U+FEC6-FEC8, U+FECA-FECC, U+FECE-FED0, U+FED2-FED4, U+FED6-FED8, U+FEDA-FEDC, U+FEDE-FEE0, U+FEE2-FEE4, U+FEE6-FEE8, U+FEEA-FEEC, U+FEEE, U+FEF0, U+FEF2-FEFC",
 				"weight": 400
 			},
 			"path": "ofl/tajawal/Tajawal-Regular.ttf",

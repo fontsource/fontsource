@@ -13,15 +13,27 @@ export type FontInspection = {
 	familyName: string;
 	subfamilyName: string;
 	fontVersion: string | null;
+	glyphs: number;
 	weight: number | { min: number; max: number; default: number };
 	style: 'normal' | 'italic' | 'oblique';
 	axes: FontInspectionAxis[];
 	unicodeRanges: Array<number | readonly [number, number]>;
+	features: {
+		gsub: string[];
+		gpos: string[];
+	};
 	tables: string[];
+};
+
+type SfntTable = {
+	offset: number;
+	length: number;
 };
 
 type SfntFace = {
 	fontVersion: string | null;
+	glyphs: number;
+	features: FontInspection['features'];
 	tables: string[];
 };
 
@@ -123,6 +135,68 @@ const readFontVersion = (
 	return bestValue;
 };
 
+const tableRange = (
+	table: SfntTable,
+	offset: number,
+	length: number,
+	label: string,
+): number => {
+	const start = table.offset + offset;
+	if (
+		offset < 0 ||
+		length < 0 ||
+		start + length > table.offset + table.length
+	) {
+		throw new Error(`Invalid ${label} range`);
+	}
+	return start;
+};
+
+const readLayoutFeatures = (
+	data: DataView,
+	table: SfntTable | undefined,
+	tag: 'GSUB' | 'GPOS',
+): string[] => {
+	if (!table) return [];
+	tableRange(table, 0, 10, tag);
+
+	const featureListOffset = data.getUint16(table.offset + 6);
+	const featureList = tableRange(
+		table,
+		featureListOffset,
+		2,
+		`${tag} FeatureList`,
+	);
+
+	const featureCount = data.getUint16(featureList);
+	const records = tableRange(
+		table,
+		featureListOffset + 2,
+		featureCount * 6,
+		`${tag} FeatureList`,
+	);
+	const featureTags = new Set<string>();
+	for (let index = 0; index < featureCount; index += 1) {
+		const record = records + index * 6;
+		const featureOffset = data.getUint16(record + 4);
+		const feature = tableRange(
+			table,
+			featureListOffset + featureOffset,
+			4,
+			`${tag} Feature`,
+		);
+		const lookupCount = data.getUint16(feature + 2);
+		tableRange(
+			table,
+			featureListOffset + featureOffset + 4,
+			lookupCount * 2,
+			`${tag} Feature lookups`,
+		);
+		featureTags.add(readTag(data, record));
+	}
+	return Array.from(featureTags).sort();
+};
+
 const readSfntFace = (buffer: Uint8Array): SfntFace => {
 	if (buffer.byteLength < 12) throw new Error('Invalid SFNT file');
 
@@ -137,6 +211,7 @@ const readSfntFace = (buffer: Uint8Array): SfntFace => {
 
 	const numTables = data.getUint16(4);
 	const tables: string[] = [];
+	const records = new Map<string, SfntTable>();
 	let fontVersion: string | null = null;
 
 	for (let index = 0; index < numTables; index += 1) {
@@ -152,12 +227,25 @@ const readSfntFace = (buffer: Uint8Array): SfntFace => {
 			throw new Error(`Invalid SFNT table range for ${tag}`);
 		}
 		tables.push(tag);
+		records.set(tag, { offset: tableOffset, length: tableLength });
 		if (tag === 'name') {
 			fontVersion = readFontVersion(buffer, data, tableOffset, tableLength);
 		}
 	}
 
-	return { fontVersion, tables: tables.sort() };
+	const maxp = records.get('maxp');
+	if (!maxp) throw new Error('Font is missing the maxp table');
+	tableRange(maxp, 0, 6, 'maxp');
+
+	return {
+		fontVersion,
+		glyphs: data.getUint16(maxp.offset + 4),
+		features: {
+			gsub: readLayoutFeatures(data, records.get('GSUB'), 'GSUB'),
+			gpos: readLayoutFeatures(data, records.get('GPOS'), 'GPOS'),
+		},
+		tables: tables.sort(),
+	};
 };
 
 const axisRange = (value: {
@@ -200,10 +288,12 @@ const inspectFace = (font: FontRef, sfnt: SfntFace): FontInspection => {
 		familyName: font.familyName,
 		subfamilyName: font.subfamilyName,
 		fontVersion: sfnt.fontVersion,
+		glyphs: sfnt.glyphs,
 		weight: weight.type === 'single' ? weight.value : axisRange(weight.value),
 		style: italic >= 0.5 ? 'italic' : slant === 0 ? 'normal' : 'oblique',
 		axes,
 		unicodeRanges: font.unicodeRanges,
+		features: sfnt.features,
 		tables: sfnt.tables,
 	};
 };

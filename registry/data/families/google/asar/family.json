@@ -487,10 +487,39 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 572,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"abvm",
+						"blwm"
+					],
+					"gsub": [
+						"abvs",
+						"akhn",
+						"blwf",
+						"blws",
+						"cjct",
+						"frac",
+						"half",
+						"haln",
+						"hist",
+						"locl",
+						"nukt",
+						"pres",
+						"psts",
+						"rkrf",
+						"rphf",
+						"salt",
+						"ss01",
+						"vatu"
+					]
+				},
 				"fontVersion": "Version 1.003; ttfautohint (v1.3) -l 8 -r 50 -G 0 -x 0 -H 45 -D deva -f latn -m \"\" -w gG -t -X \"\"",
+				"glyphs": 1358,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0000, U+000D, U+0020-007E, U+0090, U+00A0-017E, U+018F, U+0192, U+01C4-01CC, U+01F1-01F3, U+01FC-01FD, U+0218-021B, U+0237, U+0259, U+02C6-02C7, U+02C9, U+02D8-02DD, U+0307, U+03C0, U+0901-097F, U+1E02-1E03, U+1E0A-1E0B, U+1E1E-1E1F, U+1E40-1E41, U+1E56-1E57, U+1E60-1E61, U+1E6A-1E6B, U+1E80-1E85, U+1EF2-1EF3, U+200C-200D, U+2013-2014, U+2018-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+203C, U+2044, U+2074, U+20A1, U+20A3-20A4, U+20A6-20A7, U+20A9-20AC, U+20B1-20B2, U+20B5, U+20B9-20BA, U+2105, U+2113, U+2116, U+2120, U+2122, U+2126, U+212E, U+2153, U+2190-2193, U+2202, U+2206, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+25CC, U+F6C3, U+FB00-FB04",
 				"weight": 400
 			},
 			"path": "ofl/asar/Asar-Regular.ttf",

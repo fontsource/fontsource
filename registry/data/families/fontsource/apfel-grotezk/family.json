@@ -414,10 +414,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.000;Glyphs 3.2 (3217)",
+				"glyphs": 346,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+018F, U+0192, U+0218-021B, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0417, U+0437, U+1E9E, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+203D, U+2044, U+2070, U+2074, U+20AC, U+2122, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260, U+2264-2265, U+25CF",
 				"weight": 700
 			},
 			"path": "sources/apfel-grotezk/files/ApfelGrotezk-Fett.otf",
@@ -431,10 +447,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.000;Glyphs 3.2 (3217)",
+				"glyphs": 346,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+018F, U+0192, U+0218-021B, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0417, U+0437, U+1E9E, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+203D, U+2044, U+2070, U+2074, U+20AC, U+2122, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260, U+2264-2265, U+25CF",
 				"weight": 500
 			},
 			"path": "sources/apfel-grotezk/files/ApfelGrotezk-Mittel.otf",
@@ -448,10 +480,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.000;Glyphs 3.2 (3217)",
+				"glyphs": 346,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+018F, U+0192, U+0218-021B, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0417, U+0437, U+1E9E, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+203D, U+2044, U+2070, U+2074, U+20AC, U+2122, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260, U+2264-2265, U+25CF",
 				"weight": 400
 			},
 			"path": "sources/apfel-grotezk/files/ApfelGrotezk-Regular.otf",
@@ -465,10 +513,26 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 339,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"frac",
+						"liga",
+						"locl",
+						"ordn",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 2.000;Glyphs 3.2 (3217)",
+				"glyphs": 346,
 				"outline": "cff",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-0107, U+010A-0113, U+0116-011B, U+011E-0123, U+0126-0127, U+012A-012B, U+012E-0131, U+0136-0137, U+0139-013E, U+0141-0148, U+014C-014D, U+0150-015B, U+015E-0165, U+016A-016B, U+016E-0173, U+0178-017E, U+018F, U+0192, U+0218-021B, U+0237, U+0259, U+02C6-02C7, U+02D8-02DD, U+0417, U+0437, U+1E9E, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033, U+2039-203A, U+203D, U+2044, U+2070, U+2074, U+20AC, U+2122, U+2190-2193, U+2196-2199, U+2212, U+2248, U+2260, U+2264-2265, U+25CF",
 				"weight": 900
 			},
 			"path": "sources/apfel-grotezk/files/ApfelGrotezk-Satt.otf",

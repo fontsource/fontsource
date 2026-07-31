@@ -402,10 +402,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 505,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"dist",
+						"kern"
+					],
+					"gsub": [
+						"aalt",
+						"blwf",
+						"c2sc",
+						"dlig",
+						"frac",
+						"haln",
+						"locl",
+						"ordn",
+						"pres",
+						"rphf",
+						"sinf",
+						"smcp",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.001",
+				"glyphs": 978,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-0108, U+010A, U+010C-0114, U+0116-011C, U+011E-0120, U+0122-0124, U+0126, U+0128, U+012A-012C, U+012E-0132, U+0134, U+0136-0137, U+0139-0148, U+014A, U+014C-014E, U+0150-015C, U+015E-0162, U+0164, U+0166, U+0168, U+016A-016C, U+016E-0174, U+0176, U+0178-017E, U+0192, U+0219, U+02C4, U+02C6, U+02D8, U+02DA-02DC, U+02DE, U+02F7, U+0374, U+037E, U+0387, U+0C81-0C83, U+0C85-0C8C, U+0C8E-0C90, U+0C92-0CA8, U+0CAA-0CB3, U+0CB5-0CB9, U+0CBC-0CC4, U+0CC6-0CC8, U+0CCA-0CCD, U+0CD5-0CD6, U+0CDE, U+0CE0-0CE3, U+0CE6-0CEF, U+0CF1-0CF2, U+2010-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2024-2026, U+2032-2033, U+2039-203A, U+2044, U+2074, U+207A-207C, U+208A-208C, U+20A8, U+20AB-20AC, U+20B9, U+2100-2101, U+2105-2106, U+2113, U+2116, U+2120, U+2122, U+2126-2127, U+2190-2199, U+2212-2213, U+2215, U+2223-2226, U+2236, U+223C, U+2241, U+2260, U+2264-2265, U+226A-226B, U+226E-226F, U+22C5, U+22EF, U+2303, U+249C-24B5, U+25CC, U+25E6, U+261C, U+261E, U+2A74-2A76, U+FB01-FB02, U+1F4BA",
 				"weight": 400
 			},
 			"path": "ofl/benne/Benne-Regular.ttf",

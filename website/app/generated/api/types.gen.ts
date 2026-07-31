@@ -807,6 +807,7 @@ export type GetRegistryFamilyResponses = {
                 article?: string;
             };
         };
+        symbolsUrl?: string;
         sources: Array<{
             sha256: string;
             filename: string;
@@ -816,6 +817,10 @@ export type GetRegistryFamilyResponses = {
              * Relative source download URL
              */
             downloadUrl: string;
+            /**
+             * Relative source capabilities URL
+             */
+            capabilitiesUrl: string;
             fontVersion: string | null;
             /**
              * Inspected font style
@@ -842,6 +847,10 @@ export type GetRegistryFamilyResponses = {
              * Relative source download URL
              */
             downloadUrl: string;
+            /**
+             * Relative source capabilities URL
+             */
+            capabilitiesUrl: string;
             fontVersion: string | null;
             /**
              * Inspected font style
@@ -897,6 +906,61 @@ export type GetRegistryFamilyResponses = {
 };
 
 export type GetRegistryFamilyResponse = GetRegistryFamilyResponses[keyof GetRegistryFamilyResponses];
+
+export type GetRegistryFamilySymbolsData = {
+    body?: never;
+    path: {
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+    };
+    query?: never;
+    url: '/v1/registry/families/{id}/symbols';
+};
+
+export type GetRegistryFamilySymbolsErrors = {
+    /**
+     * Registry family symbol catalog not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistryFamilySymbolsError = GetRegistryFamilySymbolsErrors[keyof GetRegistryFamilySymbolsErrors];
+
+export type GetRegistryFamilySymbolsResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: Array<{
+        name: string;
+        codepoint: number;
+    }>;
+};
+
+export type GetRegistryFamilySymbolsResponse = GetRegistryFamilySymbolsResponses[keyof GetRegistryFamilySymbolsResponses];
 
 export type ListRegistryLanguagesData = {
     body?: never;
@@ -1142,6 +1206,68 @@ export type GetRegistrySourceResponses = {
 };
 
 export type GetRegistrySourceResponse = GetRegistrySourceResponses[keyof GetRegistrySourceResponses];
+
+export type GetRegistrySourceCapabilitiesData = {
+    body?: never;
+    path: {
+        /**
+         * Archived source font SHA-256 digest
+         */
+        sha256: string;
+    };
+    query?: never;
+    url: '/v1/registry/sources/{sha256}/capabilities';
+};
+
+export type GetRegistrySourceCapabilitiesErrors = {
+    /**
+     * Registry source capabilities not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistrySourceCapabilitiesError = GetRegistrySourceCapabilitiesErrors[keyof GetRegistrySourceCapabilitiesErrors];
+
+export type GetRegistrySourceCapabilitiesResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        glyphCount: number;
+        codepointCount: number;
+        unicodeRange: string;
+        features: {
+            gsub: Array<string>;
+            gpos: Array<string>;
+        };
+        outline: 'glyf' | 'cff' | 'cff2' | 'bitmap';
+        colorTables: Array<string>;
+    };
+};
+
+export type GetRegistrySourceCapabilitiesResponse = GetRegistrySourceCapabilitiesResponses[keyof GetRegistrySourceCapabilitiesResponses];
 
 export type GetBinaryAssetData = {
     body?: never;

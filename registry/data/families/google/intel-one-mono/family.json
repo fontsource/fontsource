@@ -535,10 +535,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 700
 			},
 			"path": "ofl/intelonemono/IntelOneMono-Bold.ttf",
@@ -552,10 +577,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 700
 			},
 			"path": "ofl/intelonemono/IntelOneMono-BoldItalic.ttf",
@@ -569,10 +619,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 400
 			},
 			"path": "ofl/intelonemono/IntelOneMono-Italic.ttf",
@@ -593,10 +668,36 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"rvrn",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.006",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": {
 					"default": 300,
 					"max": 700,
@@ -614,10 +715,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 300
 			},
 			"path": "ofl/intelonemono/IntelOneMono-Light.ttf",
@@ -631,10 +757,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 300
 			},
 			"path": "ofl/intelonemono/IntelOneMono-LightItalic.ttf",
@@ -648,10 +799,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 500
 			},
 			"path": "ofl/intelonemono/IntelOneMono-Medium.ttf",
@@ -665,10 +841,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 500
 			},
 			"path": "ofl/intelonemono/IntelOneMono-MediumItalic.ttf",
@@ -682,10 +883,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 400
 			},
 			"path": "ofl/intelonemono/IntelOneMono-Regular.ttf",
@@ -699,10 +925,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 600
 			},
 			"path": "ofl/intelonemono/IntelOneMono-SemiBold.ttf",
@@ -716,10 +967,35 @@
 		{
 			"inspection": {
 				"axes": [],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.005; ttfautohint (v1.8.4.7-5d5b)",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "italic",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": 600
 			},
 			"path": "ofl/intelonemono/IntelOneMono-SemiBoldItalic.ttf",
@@ -740,10 +1016,36 @@
 						"tag": "wght"
 					}
 				],
+				"codepoints": 793,
 				"colorTables": [],
+				"features": {
+					"gpos": [
+						"mark"
+					],
+					"gsub": [
+						"aalt",
+						"calt",
+						"ccmp",
+						"dnom",
+						"locl",
+						"numr",
+						"rvrn",
+						"salt",
+						"sinf",
+						"ss01",
+						"ss02",
+						"ss03",
+						"ss11",
+						"ss12",
+						"subs",
+						"sups"
+					]
+				},
 				"fontVersion": "Version 1.006",
+				"glyphs": 1059,
 				"outline": "glyf",
 				"style": "normal",
+				"unicodeRange": "U+0020-007E, U+00A0-00A3, U+00A5, U+00A7-00AB, U+00AE-00B4, U+00B6-0131, U+0134-0137, U+0139-0148, U+014A-017E, U+018F, U+01A0-01A1, U+01AF-01B0, U+01CD-01DC, U+01E6-01E7, U+01EA-01EB, U+01F0, U+01F8-01F9, U+0218-021B, U+0226-0227, U+022E-022F, U+0232-0233, U+0237, U+0259, U+02B9-02BC, U+02BE-02BF, U+02C6-02C8, U+02CC-02CD, U+02D8-02DD, U+0300-0304, U+0306-030C, U+0312, U+0315, U+0323-0324, U+0326-0328, U+032D-032E, U+0331, U+03BC, U+0E3F, U+1E06-1E07, U+1E0C-1E0F, U+1E12-1E13, U+1E20-1E21, U+1E24-1E25, U+1E28-1E2B, U+1E32-1E4B, U+1E58-1E5F, U+1E62-1E63, U+1E6C-1E71, U+1E7E-1E85, U+1E8C-1E96, U+1E9E, U+1EA0-1EF9, U+2011, U+2013-2015, U+2018-201A, U+201C-201E, U+2020-2022, U+2025-2026, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20A6, U+20A9, U+20AB-20AC, U+20B1, U+20B9-20BA, U+20BD, U+2117, U+2120, U+2122, U+2153-215E, U+2212, U+2248, U+2260, U+2264-2265, U+2500-259F, U+2610-2612, U+2713, U+A788, U+E0A0-E0A2, U+E0B0-E0B3",
 				"weight": {
 					"default": 300,
 					"max": 700,

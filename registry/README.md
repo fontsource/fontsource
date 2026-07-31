@@ -43,10 +43,12 @@ snapshots/<fontsource-commit>/manifest.json
 current.json
 ~~~
 
-Each snapshot includes family, language, subset, and axis views projected into
-the public API contract in [`api/shared/registry.ts`](../api/shared/registry.ts).
+Each snapshot includes family, language, subset, axis, symbol, and source
+capability views projected into the public API contract in
+[`api/shared/registry.ts`](../api/shared/registry.ts).
 Family detail views include the reviewed distribution with an explicit
-`all` or `subsets` character mode.
+`all` or `subsets` character mode and links to lazy symbol and source
+capability views when available.
 The committed registry format remains private and can change without changing
 those responses. The manifest maps every registry file, API view, and source to
 a SHA-256 object and is written before `current.json` selects the complete
@@ -76,8 +78,9 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   files and cross-file references.
 - `data/upstreams.json` records the exact source repository revisions.
 - `data/families/<provider>/<id>/family.json` combines family metadata, source
-  declarations, and inspected source properties. IDs are globally unique
-  across providers and are derived from directory names.
+  declarations, and inspected source properties, including glyph coverage,
+  layout features, outlines, and color tables. IDs are globally unique across
+  providers and are derived from directory names.
 - Reviewed families may include `distribution.json` with the exact static
   variants, variable axis bundles, and character distribution Fontsource
   publishes. Character distribution is either the full repertoire or named
@@ -89,6 +92,7 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   private codepoint requirements used for automatic matching.
 - `data/replacements.json` records reviewed successor relationships between
   globally unique family IDs.
+- `data/family-tags.json` assigns reviewed cross-provider discovery tags.
 - `data/taxonomy.json` defines the reviewed classification and tag labels.
 - `data/subsets/` and `data/axes.json` contain shared Unicode and axis data.
 
