@@ -870,6 +870,29 @@ export type GetRegistryFamilyResponses = {
                 default: number;
             }>;
         }>;
+        distribution?: {
+            static?: Array<{
+                weight: number;
+                style: 'normal' | 'italic';
+                source: string;
+            }>;
+            variable?: Array<{
+                axisKey: 'standard' | string;
+                style: 'normal' | 'italic';
+                source: string;
+            }>;
+            characters: {
+                type: 'all';
+            } | {
+                type: 'subsets';
+                defaultSubset: string;
+                subsets: Array<{
+                    id: string;
+                    definition: string;
+                }>;
+                slicing?: string;
+            };
+        };
     };
 };
 
