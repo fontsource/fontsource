@@ -166,6 +166,7 @@ describe('registry source archive', () => {
 					subsets: [{ id: 'latin', definition: 'latin' }],
 				},
 			},
+			previewSource: expect.stringMatching(/^[0-9a-f]{64}$/),
 			sources: [
 				expect.objectContaining({
 					format: 'ttf',

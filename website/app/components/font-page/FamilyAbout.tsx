@@ -8,13 +8,12 @@ import type {
 	ListRegistryAxesResponse,
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
+import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
 import { getFontFamilyStack } from '@/utils/font-preview';
 import {
 	getOpenTypeFeatureName,
-	hasSymbolCatalog,
-	isDigitalFontFamily,
-	isPunctuationFontFamily,
-	isSymbolFontFamily,
+	getRegistryContent,
+	getRegistryFamilyKind,
 	type RegistryFamily,
 	type RegistrySource,
 	usesNameLigatures,
@@ -22,6 +21,7 @@ import {
 
 import classes from './FamilyAbout.module.css';
 import { LicenseReceipt } from './LicenseReceipt';
+import { RegistryMarkdown } from './RegistryMarkdown';
 
 interface FamilyAboutProps {
 	metadata: GetFontResponse;
@@ -40,13 +40,6 @@ interface FamilyAboutProps {
 	variableUnavailable?: boolean;
 }
 
-const humanize = (value: string) =>
-	value
-		.split(/[-_/]/)
-		.filter(Boolean)
-		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-		.join(' ');
-
 const formatDate = (value?: string) => {
 	if (!value) return;
 	const date = new Date(`${value}T00:00:00Z`);
@@ -61,84 +54,6 @@ const formatDate = (value?: string) => {
 
 const getRegistryAssetUrl = (value: string) =>
 	new URL(value, 'https://api.fontsource.org').toString();
-
-const getLocalizedContent = (registry?: RegistryFamily) => {
-	const content = registry?.content;
-	if (!content) return;
-	const entries = Object.entries(content);
-	return (
-		entries.find(([locale]) => locale.toLowerCase().startsWith('en'))?.[1] ??
-		entries[0]?.[1]
-	);
-};
-
-const cleanMarkdown = (value: string) =>
-	value
-		.replace(/!\[[^\]]*\]\([^)]+\)/g, '')
-		.replace(/\*\*|__/g, '')
-		.replace(/(^|\s)\*([^*]+)\*/g, '$1$2')
-		.trim();
-
-const renderInlineMarkdown = (value: string) => {
-	const nodes: React.ReactNode[] = [];
-	const expression = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
-	let cursor = 0;
-	let match = expression.exec(value);
-
-	while (match) {
-		const [source, label, url] = match;
-		if (match.index > cursor) {
-			nodes.push(cleanMarkdown(value.slice(cursor, match.index)));
-		}
-		nodes.push(
-			<a
-				key={`${url}-${match.index}`}
-				href={url}
-				target="_blank"
-				rel="noreferrer"
-			>
-				{label}
-			</a>,
-		);
-		cursor = match.index + source.length;
-		match = expression.exec(value);
-	}
-
-	if (cursor < value.length) nodes.push(cleanMarkdown(value.slice(cursor)));
-	return nodes;
-};
-
-const MarkdownContent = ({ value }: { value: string }) => (
-	<>
-		{value
-			.split(/\n{2,}/)
-			.map((block) => block.trim())
-			.filter((block) => block && !/^(?:\*\s*){3}$/.test(block))
-			.map((block) => {
-				const withoutImages = block.replace(/!\[[^\]]*\]\([^)]+\)/g, '').trim();
-				if (!withoutImages) return null;
-				const heading = withoutImages.match(/^#{2,4}\s+(.+)$/s);
-				if (heading) {
-					return (
-						<h3 key={withoutImages}>{renderInlineMarkdown(heading[1])}</h3>
-					);
-				}
-				return (
-					<p key={withoutImages}>
-						{renderInlineMarkdown(withoutImages.replaceAll('\n', ' '))}
-					</p>
-				);
-			})}
-	</>
-);
-
-const getSpecimen = (metadata: GetFontResponse, registry?: RegistryFamily) => {
-	return (
-		registry?.sampleText?.styles ??
-		registry?.sampleText?.tester ??
-		metadata.family
-	);
-};
 
 export const FamilyAbout = ({
 	metadata,
@@ -156,38 +71,37 @@ export const FamilyAbout = ({
 	capabilitiesUnavailable = false,
 	variableUnavailable = false,
 }: FamilyAboutProps) => {
-	const hasCatalog = hasSymbolCatalog(registry);
+	const hasCatalog = Boolean(registry?.symbols);
 	const hasNamedLigatures = usesNameLigatures(registry);
-	const isSymbolFamily = isSymbolFontFamily(registry);
-	const isPunctuationFamily = isPunctuationFontFamily(registry);
-	const isDigitalFamily = isDigitalFontFamily(registry);
-	const content = getLocalizedContent(registry);
+	const familyKind = getRegistryFamilyKind(registry);
+	const isSymbolFamily = familyKind === 'symbols';
+	const isPunctuationFamily = familyKind === 'punctuation';
+	const isDigitalFamily = familyKind === 'digital';
+	const content = getRegistryContent(registry);
 	const description =
 		content?.description ??
-		`${metadata.family} is an open-source ${humanize(metadata.category).toLowerCase()} family distributed by Fontsource.`;
-	const article =
-		content?.article && content.article !== content.description
-			? content.article.startsWith(content.description ?? '')
-				? content.article.slice(content.description?.length ?? 0)
-				: content.article
-			: undefined;
+		`${metadata.family} is an open-source ${formatFontLabel(metadata.category).toLowerCase()} family distributed by Fontsource.`;
+	let article = content?.article;
+	if (!article || article === content?.description) {
+		article = undefined;
+	} else if (content.description && article.startsWith(content.description)) {
+		article = article.slice(content.description.length).trim();
+	}
 	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
 	const specimenStyle = {
 		fontFamily,
 		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
 	};
 	const classifications = registry?.classifications.map(
-		(value) => taxonomy?.classifications[value]?.label ?? humanize(value),
-	) ?? [humanize(metadata.category)];
+		(value) =>
+			taxonomy?.classifications[value]?.label ?? formatFontLabel(value),
+	) ?? [formatFontLabel(metadata.category)];
 	const tags =
 		registry?.tags.map((id) => ({
 			id,
-			label: taxonomy?.tags[id]?.label ?? humanize(id),
+			label: taxonomy?.tags[id]?.label ?? formatFontLabel(id),
 		})) ?? [];
-	const familyLanguages =
-		languages?.filter((language) =>
-			registry?.languages.includes(language.id),
-		) ?? [];
+	const familyLanguages = languages ?? [];
 	const primaryLanguage = familyLanguages.find(
 		(language) => language.id === registry?.primaryLanguage,
 	);
@@ -208,6 +122,43 @@ export const FamilyAbout = ({
 				new Set([...capabilities.features.gsub, ...capabilities.features.gpos]),
 			).sort()
 		: [];
+	let availabilityMessage: string | undefined;
+	if (registryUnavailable) {
+		availabilityMessage =
+			'The family registry record is temporarily unavailable. Package facts and download options remain available.';
+	} else if (capabilitiesUnavailable) {
+		availabilityMessage =
+			'Exact source capabilities are temporarily unavailable. Family, package, and license information remain available.';
+	} else if (variableUnavailable) {
+		availabilityMessage =
+			'Variable-axis details are temporarily unavailable. Static preview and package facts remain available.';
+	} else if (enrichmentUnavailable) {
+		availabilityMessage =
+			'Some supporting registry details are temporarily unavailable. The family record and registry license remain available.';
+	}
+	let coverageDescription =
+		'Registry language details are unavailable. The package subsets below describe downloadable character sets, not exact language support.';
+	if (hasCatalog) {
+		coverageDescription = hasNamedLigatures
+			? 'This family provides a verified catalog of named symbol ligatures and their Unicode mappings.'
+			: 'This family provides a verified catalog of mapped symbols.';
+	} else if (isPunctuationFamily) {
+		coverageDescription =
+			'This family is designed to replace and space Japanese punctuation alongside another Japanese text font.';
+	} else if (isDigitalFamily) {
+		coverageDescription =
+			'This family is designed for numerical readouts and compact display labels.';
+	} else if (isSymbolFamily) {
+		coverageDescription =
+			'This family is intended for mapped symbols rather than running language text.';
+	} else if (primaryLanguage) {
+		coverageDescription = `${primaryLanguage.preferredName ?? primaryLanguage.name} is the primary language.`;
+	} else if (registry?.primaryScript) {
+		coverageDescription = `${registry.primaryScript} is the primary script.`;
+	} else if (registry) {
+		coverageDescription =
+			'The registry does not list semantic language coverage for this family.';
+	}
 	return (
 		<section className={classes.page} aria-labelledby="about-heading">
 			<style
@@ -215,18 +166,9 @@ export const FamilyAbout = ({
 				dangerouslySetInnerHTML={{ __html: variableCSS ?? staticCSS }}
 			/>
 
-			{(registryUnavailable ||
-				enrichmentUnavailable ||
-				capabilitiesUnavailable ||
-				variableUnavailable) && (
+			{availabilityMessage && (
 				<p className={classes.availabilityNotice} role="status">
-					{registryUnavailable
-						? 'The family registry record is temporarily unavailable. Package facts and download options remain available.'
-						: capabilitiesUnavailable
-							? 'Exact source capabilities are temporarily unavailable. Family, package, and license information remain available.'
-							: variableUnavailable
-								? 'Variable-axis details are temporarily unavailable. Static preview and package facts remain available.'
-								: 'Some supporting registry details are temporarily unavailable. The family record and registry license remain available.'}
+					{availabilityMessage}
 				</p>
 			)}
 
@@ -235,7 +177,7 @@ export const FamilyAbout = ({
 					<p className={classes.kicker}>About this family</p>
 					<h2 id="about-heading">{metadata.family}, in context.</h2>
 					<div className={classes.prose}>
-						<MarkdownContent value={description} />
+						<RegistryMarkdown value={description} />
 					</div>
 					<div
 						className={classes.specimen}
@@ -244,7 +186,7 @@ export const FamilyAbout = ({
 						role="img"
 						aria-label={`${metadata.family} letter sample`}
 					>
-						{getSpecimen(metadata, registry)}
+						{registry?.sampleText?.short ?? metadata.family}
 					</div>
 				</div>
 
@@ -301,7 +243,6 @@ export const FamilyAbout = ({
 					familyId={metadata.id}
 					family={metadata.family}
 					license={registry?.license}
-					registryUnavailable={registryUnavailable}
 					variant="detail"
 				/>
 			</div>
@@ -328,7 +269,7 @@ export const FamilyAbout = ({
 				<article className={classes.article}>
 					<h2>The story</h2>
 					<div className={classes.prose}>
-						<MarkdownContent value={article} />
+						<RegistryMarkdown value={article} />
 					</div>
 				</article>
 			)}
@@ -350,25 +291,7 @@ export const FamilyAbout = ({
 				<div className={classes.capabilityGrid}>
 					<div>
 						<h3>Languages and scripts</h3>
-						<p>
-							{hasCatalog
-								? hasNamedLigatures
-									? 'This family provides a verified catalog of named symbol ligatures and their Unicode mappings.'
-									: 'This family provides a verified catalog of mapped symbols.'
-								: isPunctuationFamily
-									? 'This family is designed to replace and space Japanese punctuation alongside another Japanese text font.'
-									: isDigitalFamily
-										? 'This family is designed for numerical readouts and compact display labels.'
-										: isSymbolFamily
-											? 'This family is intended for mapped symbols rather than running language text.'
-											: primaryLanguage
-												? `${primaryLanguage.preferredName ?? primaryLanguage.name} is the primary language.`
-												: registry?.primaryScript
-													? `${registry.primaryScript} is the primary script.`
-													: registry
-														? 'The registry does not list semantic language coverage for this family.'
-														: 'Registry language details are unavailable. The package subsets below describe downloadable character sets, not exact language support.'}
-						</p>
+						<p>{coverageDescription}</p>
 						{familyLanguages.length > 0 ? (
 							<ul className={classes.languageList}>
 								{familyLanguages.slice(0, 6).map((language) => (
@@ -384,7 +307,7 @@ export const FamilyAbout = ({
 							!isSymbolFamily &&
 							!isPunctuationFamily &&
 							!isDigitalFamily ? (
-							<p>{metadata.subsets.map(humanize).join(', ')}</p>
+							<p>{metadata.subsets.map(formatFontLabel).join(', ')}</p>
 						) : null}
 						{familyLanguages.length > 6 && (
 							<p className={classes.more}>
@@ -398,7 +321,7 @@ export const FamilyAbout = ({
 						<h3>Styles and axes</h3>
 						<p>
 							{metadata.weights.length} weights ·{' '}
-							{metadata.styles.map(humanize).join(', ')}
+							{metadata.styles.map(formatFontLabel).join(', ')}
 						</p>
 						{axes.length > 0 ? (
 							<dl className={classes.axisList}>
@@ -407,7 +330,7 @@ export const FamilyAbout = ({
 									return (
 										<div key={axis}>
 											<dt>
-												{definition?.name ?? humanize(axis)}
+												{definition?.name ?? getAxisLabel(axis)}
 												<code>{axis}</code>
 											</dt>
 											<dd>
@@ -485,8 +408,8 @@ export const FamilyAbout = ({
 								<dt>Provider</dt>
 								<dd>
 									{registry
-										? humanize(registry.provider)
-										: humanize(metadata.type)}
+										? formatFontLabel(registry.provider)
+										: formatFontLabel(metadata.type)}
 								</dd>
 							</div>
 							{sources.length > 0 && (
@@ -603,7 +526,7 @@ export const FamilyAbout = ({
 							<ul>
 								<li>
 									<Link to={`/fonts/${registry.replacedBy}`}>
-										<strong>{humanize(registry.replacedBy)}</strong>
+										<strong>{formatFontLabel(registry.replacedBy)}</strong>
 										<span>Recommended replacement</span>
 									</Link>
 								</li>

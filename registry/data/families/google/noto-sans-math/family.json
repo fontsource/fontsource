@@ -11,6 +11,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "math",
 	"project": {
 		"repository": "https://www.github.com/notofonts/math",
 		"revision": "4b78263eac2301b04367d600a07b521cfbff0867"

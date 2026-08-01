@@ -139,6 +139,9 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		.describe('Semantic language IDs, distinct from package subsets'),
 	primaryLanguage: LanguageIdSchema.optional(),
 	primaryScript: ScriptSchema.optional(),
+	previewSubset: IdSchema.optional().describe(
+		'Reviewed package subset for previews and default acquisition',
+	),
 	sampleText: SampleTextSchema.optional(),
 	designer: z.string().optional(),
 	dateAdded: z.iso.date().optional(),
@@ -162,7 +165,34 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		})
 		.optional(),
 	sources: z.array(RegistrySourceSchema).min(1),
+	previewSource: Sha256Schema.describe(
+		'Representative source for capability and glyph inspection',
+	),
 	distribution: RegistryDistributionSchema,
+}).superRefine((family, context) => {
+	if (
+		!family.sources.some((source) => source.sha256 === family.previewSource)
+	) {
+		context.addIssue({
+			code: 'custom',
+			message: 'previewSource must reference sources',
+			path: ['previewSource'],
+		});
+	}
+	if (family.previewSubset) {
+		if (
+			family.distribution.characters.type !== 'subsets' ||
+			!family.distribution.characters.subsets.some(
+				(subset) => subset.id === family.previewSubset,
+			)
+		) {
+			context.addIssue({
+				code: 'custom',
+				message: 'previewSubset must reference a distributed subset',
+				path: ['previewSubset'],
+			});
+		}
+	}
 });
 
 export const RegistryFamilySymbolsSchema = z

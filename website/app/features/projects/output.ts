@@ -1,3 +1,4 @@
+import { getJsDelivrPackageUrl } from '../../utils/cdn';
 import type { ProjectItem } from './model';
 
 const fallbacks: Record<ProjectItem['category'], string> = {
@@ -11,13 +12,13 @@ const fallbacks: Record<ProjectItem['category'], string> = {
 };
 
 const getCdnUrl = (item: ProjectItem) =>
-	`https://cdn.jsdelivr.net/npm/${item.packageName}@${item.packageVersion}/${item.cssFile}`;
+	getJsDelivrPackageUrl(item.packageName, item.packageVersion, item.cssFile);
 
 const hasTag = (item: ProjectItem, tag: string) => item.tags.includes(tag);
 const hasSymbolCatalog = (item: ProjectItem) =>
-	(item.symbolInputModes?.length ?? 0) > 0;
+	item.symbolInputModes.length > 0;
 const usesNameLigatures = (item: ProjectItem) =>
-	item.symbolInputModes?.includes('name-ligature') ?? false;
+	item.symbolInputModes.includes('name-ligature');
 const isPunctuationFamily = (item: ProjectItem) =>
 	hasTag(item, 'special-use/punctuation');
 const isDigitalFamily = (item: ProjectItem) =>
@@ -69,6 +70,7 @@ const getUsageBlock = (item: ProjectItem) => {
 	if (usesNameLigatures(item)) {
 		declarations.push(
 			'line-height: 1;',
+			'text-transform: none;',
 			'white-space: nowrap;',
 			"font-feature-settings: 'liga';",
 		);
@@ -82,6 +84,26 @@ const getUsageBlock = (item: ProjectItem) => {
 	}
 
 	return `.font-${item.familyId} {\n${declarations.map((line) => `  ${line}`).join('\n')}\n}`;
+};
+
+const escapeHtml = (value: string) =>
+	value
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;');
+
+const getUsageMarkup = (item: ProjectItem) => {
+	const sample = escapeHtml(item.sampleText);
+	const className = `font-${item.familyId}`;
+	if (usesNameLigatures(item)) {
+		return `<span class="${className}" aria-hidden="true">${sample}</span>`;
+	}
+	if (isPunctuationFamily(item)) {
+		return `<p class="${className}">${sample}</p>`;
+	}
+	if (isDigitalFamily(item)) {
+		return `<span class="${className}">${sample}</span>`;
+	}
 };
 
 const getProjectCss = (items: ProjectItem[]) => {
@@ -107,6 +129,7 @@ export {
 	getFontStack,
 	getProjectCss,
 	getUsageBlock,
+	getUsageMarkup,
 	getUsageNote,
 	hasSymbolCatalog,
 	isDigitalFamily,

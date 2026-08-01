@@ -1,13 +1,9 @@
 import { observable, syncState } from '@legendapp/state';
 
-import {
-	type CurrentProjectSnapshot,
-	createEmptyCurrentProjectSnapshot,
-	type ProjectItem,
-} from './model';
+import type { CurrentProjectSnapshot, ProjectItem } from './model';
 
 const createCurrentProjectStore = (
-	initialSnapshot: CurrentProjectSnapshot = createEmptyCurrentProjectSnapshot(),
+	initialSnapshot: CurrentProjectSnapshot = { version: 1, items: [] },
 ) => {
 	const state$ = observable<CurrentProjectSnapshot>(initialSnapshot);
 	const ready$ = syncState(state$).isPersistLoaded;

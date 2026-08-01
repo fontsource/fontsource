@@ -20,54 +20,6 @@
 	}
 }
 
-.hero {
-	max-width: var(--family-page-max);
-	min-height: 326px;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-	border-top: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
-}
-
-.heroIdentity {
-	min-width: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding: 26px 64px 24px;
-}
-
-.heroSpecimen {
-	min-width: 0;
-	display: flex;
-	align-items: center;
-	padding: 38px 56px;
-	font-size: clamp(58px, 5.8vw, 90px);
-	font-weight: 450;
-	line-height: 0.98;
-	letter-spacing: -0.04em;
-	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
-	background: light-dark(#efeeff, #172138);
-	overflow: hidden;
-
-	> span {
-		min-width: 0;
-		max-width: 100%;
-		overflow-wrap: break-word;
-	}
-}
-
-.heroSpecimen[data-category="icons"] {
-	font-size: clamp(42px, 4vw, 64px);
-	font-variation-settings: "FILL" 0, "wght" 450;
-	letter-spacing: 0;
-}
-
-.heroSpecimen[data-category="monospace"] {
-	font-size: clamp(50px, 4.8vw, 76px);
-	letter-spacing: -0.05em;
-}
-
 .compactHeader {
 	max-width: var(--family-page-max);
 	margin: 0 auto;
@@ -111,10 +63,15 @@
 }
 
 .description {
+	display: -webkit-box;
+	overflow: hidden;
 	max-width: 520px;
-	margin-top: 12px;
+	margin: 12px 0 0;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
 	font-size: 16px;
 	line-height: 1.5;
+	text-wrap: pretty;
 	color: light-dark(#34435c, #cbd3e2);
 }
 
@@ -274,11 +231,11 @@
 	}
 
 	&:hover,
-	&[data-active] {
+	&[aria-current="page"] {
 		color: var(--mantine-color-purple-0);
 	}
 
-	&[data-active]::after {
+	&[aria-current="page"]::after {
 		background: var(--mantine-color-purple-0);
 	}
 
@@ -321,19 +278,6 @@
 		padding-right: 32px;
 	}
 
-	.hero {
-		grid-template-columns: 1fr;
-		min-height: 0;
-	}
-
-	.heroIdentity {
-		padding: 32px;
-	}
-
-	.heroSpecimen {
-		min-height: 280px;
-		padding: 32px;
-	}
 }
 
 @media (--lt-sm) {
@@ -348,16 +292,6 @@
 	.backBar {
 		padding-top: 16px;
 		padding-bottom: 16px;
-	}
-
-	.heroIdentity {
-		padding: 28px 24px;
-	}
-
-	.heroSpecimen {
-		min-height: 230px;
-		padding: 28px 24px;
-		font-size: clamp(48px, 15vw, 72px);
 	}
 
 	.compactHeader {

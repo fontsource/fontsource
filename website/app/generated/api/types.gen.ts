@@ -776,6 +776,10 @@ export type GetRegistryFamilyResponses = {
         languages: Array<string>;
         primaryLanguage?: string;
         primaryScript?: string;
+        /**
+         * Reviewed package subset for previews and default acquisition
+         */
+        previewSubset?: string;
         sampleText?: {
             /**
              * Compact preview text
@@ -888,6 +892,10 @@ export type GetRegistryFamilyResponses = {
                 default: number;
             }>;
         }>;
+        /**
+         * Representative source for capability and glyph inspection
+         */
+        previewSource: string;
         distribution: {
             static?: Array<{
                 weight: number;

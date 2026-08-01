@@ -5,11 +5,7 @@ import type {
 	GetVariableFontResponse,
 } from '../generated/api';
 import { jsDelivrResolver } from './cdn';
-import {
-	isDigitalFontFamily,
-	isPunctuationFontFamily,
-	type RegistryFamily,
-} from './registry';
+import { getRegistryFamilyKind, type RegistryFamily } from './registry';
 
 type FontPreviewIdentity = Pick<GetFontResponse, 'family' | 'id' | 'variable'>;
 
@@ -30,43 +26,19 @@ const rtlPreviewSubsets = new Set([
 	'thaana',
 ]);
 
-const subsetAliases: Array<{ idSuffix: string; subset: string }> = [
-	{ idSuffix: '-hk', subset: 'chinese-hongkong' },
-	{ idSuffix: '-jp', subset: 'japanese' },
-	{ idSuffix: '-kr', subset: 'korean' },
-	{ idSuffix: '-sc', subset: 'chinese-simplified' },
-	{ idSuffix: '-tc', subset: 'chinese-traditional' },
-];
-
-const fontPreviewSubsets: Record<string, string> = {
-	'noto-sans-math': 'math',
-	'noto-sans-symbols': 'symbols',
-	'noto-sans-symbols-2': 'symbols',
-};
-
 export const isLatinPreviewSubset = (subset: string) =>
 	latinPreviewSubsets.has(subset);
 
 export const getPreviewDirection = (subset: string): 'ltr' | 'rtl' =>
 	rtlPreviewSubsets.has(subset) ? 'rtl' : 'ltr';
 
-export const getPreferredPreviewSubset = (metadata: GetFontResponse) => {
-	const fontPreviewSubset = fontPreviewSubsets[metadata.id];
-	if (fontPreviewSubset) return fontPreviewSubset;
-
-	const aliasedSubset = subsetAliases.find(
-		({ idSuffix, subset }) =>
-			metadata.id.endsWith(idSuffix) && metadata.subsets.includes(subset),
-	)?.subset;
-	if (aliasedSubset) return aliasedSubset;
-
-	const idMatchedSubset = metadata.subsets
-		.filter((subset) => !latinPreviewSubsets.has(subset) && subset !== 'menu')
-		.sort((a, b) => b.length - a.length)
-		.find((subset) => metadata.id.includes(subset));
-
-	return idMatchedSubset ?? metadata.defSubset;
-};
+export const getPreferredPreviewSubset = (
+	metadata: GetFontResponse,
+	registry?: RegistryFamily,
+) =>
+	registry?.previewSubset && metadata.subsets.includes(registry.previewSubset)
+		? registry.previewSubset
+		: metadata.defSubset;
 
 export const getFontFamilyStack = (
 	metadata: FontPreviewIdentity,
@@ -77,11 +49,12 @@ export const getFontFamilyStack = (
 		? `${metadata.family} Variable`
 		: metadata.family;
 
-	if (isPunctuationFontFamily(registry)) {
+	const familyKind = getRegistryFamilyKind(registry);
+	if (familyKind === 'punctuation') {
 		return `"${family}", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif`;
 	}
 
-	if (isDigitalFontFamily(registry)) {
+	if (familyKind === 'digital') {
 		return `"${family}", ui-monospace, monospace`;
 	}
 

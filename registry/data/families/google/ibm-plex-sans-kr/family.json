@@ -200,6 +200,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "korean",
 	"primaryScript": "Kore",
 	"project": {
 		"repository": "https://github.com/googlefonts/plex",

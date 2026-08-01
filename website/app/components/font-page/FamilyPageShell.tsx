@@ -1,23 +1,29 @@
 import { Box, Group, Text, Title } from '@mantine/core';
-import { Link, useLocation } from 'react-router';
+import { Link, NavLink, useLocation } from 'react-router';
 
 import { IconDownload } from '@/components/icons';
 import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import type { GetFontResponse } from '@/generated/api';
+import { formatFontLabel } from '@/utils/font-labels';
 import { getFontFamilyStack } from '@/utils/font-preview';
-import { isSymbolFontFamily, type RegistryFamily } from '@/utils/registry';
+import {
+	getRegistryContent,
+	getRegistryFamilyKind,
+	type RegistryFamily,
+} from '@/utils/registry';
 
-import classes from './Tabs.module.css';
+import classes from './FamilyPageShell.module.css';
+import { RegistryMarkdown } from './RegistryMarkdown';
 
 type FamilyTab = 'preview' | 'glyphs' | 'about' | 'use';
 type FontPageLocationState = { fontResults?: string };
 
-interface TabWrapperProps {
+interface FamilyPageShellProps {
 	metadata: GetFontResponse;
 	registry?: RegistryFamily;
 	variableAvailable?: boolean;
-	tabsValue: string;
+	tabsValue: FamilyTab;
 	children: React.ReactNode;
 }
 
@@ -28,30 +34,11 @@ const tabs: Array<{ label: string; value: FamilyTab; suffix: string }> = [
 	{ label: 'Get font', value: 'use', suffix: '/use' },
 ];
 
-const categoryNames: Record<GetFontResponse['category'], string> = {
-	'sans-serif': 'Sans serif',
-	serif: 'Serif',
-	display: 'Display',
-	handwriting: 'Handwriting',
-	monospace: 'Monospace',
-	icons: 'Icons',
-	other: 'Other',
-};
-
 const sourceNames: Record<GetFontResponse['type'], string> = {
 	google: 'Google Fonts',
 	league: 'The League of Moveable Type',
 	icons: 'Icon family',
 	other: 'Open source',
-};
-
-const getRegistryDescription = (registry?: RegistryFamily) => {
-	if (!registry?.content) return;
-	return (
-		registry.content.en?.description ??
-		Object.values(registry.content).find((content) => content.description)
-			?.description
-	);
 };
 
 export const FamilyIdentity = ({
@@ -65,16 +52,18 @@ export const FamilyIdentity = ({
 	fontFamily: string;
 	compact?: boolean;
 }) => {
-	const category = categoryNames[metadata.category];
+	const category = formatFontLabel(metadata.category);
 	const weightLabel = `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`;
 	const subsetLabel = `${metadata.subsets.length} ${metadata.subsets.length === 1 ? 'subset' : 'subsets'}`;
-	const description = getRegistryDescription(registry);
+	const description = getRegistryContent(registry)?.description;
+	const descriptionSummary = description?.split(/\n\s*\n/, 1)[0]?.trim();
 	const attribution = registry?.designer;
-	const classification =
-		registry?.classifications[0]?.replaceAll('-', ' ') ?? category;
+	const classification = registry?.classifications[0]
+		? formatFontLabel(registry.classifications[0])
+		: category;
 	const tags = registry?.tags.slice(0, 2) ?? [];
 	const useSpecimenTitle = registry
-		? !isSymbolFontFamily(registry)
+		? getRegistryFamilyKind(registry) !== 'symbols'
 		: metadata.category !== 'icons' && metadata.category !== 'other';
 
 	return (
@@ -95,10 +84,16 @@ export const FamilyIdentity = ({
 				</div>
 			) : (
 				<>
-					<Text className={classes.description}>
-						{description ??
-							`A ${category.toLowerCase()} family with ${weightLabel} and ${subsetLabel}.`}
-					</Text>
+					<p className={classes.description}>
+						<RegistryMarkdown
+							inline
+							links={false}
+							value={
+								descriptionSummary ||
+								`A ${category.toLowerCase()} family with ${weightLabel} and ${subsetLabel}.`
+							}
+						/>
+					</p>
 					<Text className={classes.source}>
 						{attribution ? (
 							<>
@@ -117,15 +112,18 @@ export const FamilyIdentity = ({
 					</div>
 					{tags.length > 0 && (
 						<ul className={classes.tags}>
-							{tags.map((tag) => (
-								<li key={tag}>
-									<Link
-										to={`/?query=${encodeURIComponent(tag.split('/').at(-1)?.replaceAll('-', ' ') ?? tag)}`}
-									>
-										{tag.split('/').at(-1)?.replaceAll('-', ' ') ?? tag}
-									</Link>
-								</li>
-							))}
+							{tags.map((tag) => {
+								const tagValue = tag.split('/').at(-1) ?? tag;
+								return (
+									<li key={tag}>
+										<Link
+											to={`/?query=${encodeURIComponent(tagValue.replaceAll('-', ' '))}`}
+										>
+											{formatFontLabel(tagValue)}
+										</Link>
+									</li>
+								);
+							})}
 						</ul>
 					)}
 				</>
@@ -183,11 +181,9 @@ export const FamilyActions = ({
 };
 
 export const FamilyTabs = ({
-	activeTab,
 	metadata,
 	contained = false,
 }: {
-	activeTab: string;
 	metadata: GetFontResponse;
 	contained?: boolean;
 }) => {
@@ -201,36 +197,30 @@ export const FamilyTabs = ({
 		>
 			<div className={classes.tabList}>
 				{tabs.map((tab) => (
-					<Link
+					<NavLink
 						key={tab.value}
 						to={`/fonts/${metadata.id}${tab.suffix}`}
 						state={location.state}
 						className={classes.tab}
-						data-active={activeTab === tab.value || undefined}
-						aria-current={activeTab === tab.value ? 'page' : undefined}
+						end={tab.value === 'preview'}
 						prefetch="intent"
 					>
 						{tab.label}
-					</Link>
+					</NavLink>
 				))}
 			</div>
 		</nav>
 	);
 };
 
-export const TabsWrapper = ({
+export const FamilyPageShell = ({
 	metadata,
 	registry,
 	variableAvailable,
 	tabsValue,
 	children,
-}: TabWrapperProps) => {
-	const activeTab = ['install', 'cdn', 'download'].includes(tabsValue)
-		? 'use'
-		: tabsValue === 'characters'
-			? 'glyphs'
-			: tabsValue;
-	const isPreview = activeTab === 'preview';
+}: FamilyPageShellProps) => {
+	const isPreview = tabsValue === 'preview';
 	const fontFamily = getFontFamilyStack(metadata, variableAvailable, registry);
 	const location = useLocation();
 	const locationState = location.state as FontPageLocationState | null;
@@ -263,12 +253,12 @@ export const TabsWrapper = ({
 					<FamilyActions
 						metadata={metadata}
 						compact
-						showGetFont={activeTab !== 'use'}
+						showGetFont={tabsValue !== 'use'}
 					/>
 				</section>
 			)}
 
-			{!isPreview && <FamilyTabs activeTab={activeTab} metadata={metadata} />}
+			{!isPreview && <FamilyTabs metadata={metadata} />}
 
 			{registry?.status === 'deprecated' && (
 				<div className={classes.statusNotice} role="status">

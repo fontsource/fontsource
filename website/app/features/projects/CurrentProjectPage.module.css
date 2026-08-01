@@ -523,53 +523,6 @@
 	padding: 24px;
 }
 
-.codeBlock {
-	min-width: 0;
-	border-radius: 5px;
-	background: #07162f;
-	color: #f2f5ff;
-	overflow: hidden;
-}
-
-.codeHeader {
-	min-height: 52px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	padding: 0 12px;
-	border-bottom: 1px solid rgb(255 255 255 / 12%);
-	color: #aeb9d0;
-	font-family: var(--mantine-font-family-monospace);
-	font-size: 0.75rem;
-
-	button {
-		display: inline-flex;
-		align-items: center;
-		gap: 6px;
-		min-height: 44px;
-		padding: 0 10px;
-		border: 0;
-		border-radius: 3px;
-		background: var(--mantine-color-purple-0);
-		color: white;
-		font: inherit;
-		cursor: pointer;
-	}
-}
-
-.codeBlock pre {
-	max-width: 100%;
-	margin: 0;
-	padding: 16px;
-	overflow: auto;
-	font-family: var(--mantine-font-family-monospace);
-	font-size: 0.8rem;
-	line-height: 1.65;
-	white-space: pre-wrap;
-	overflow-wrap: anywhere;
-}
-
 .downloadBar {
 	display: flex;
 	align-items: center;
@@ -699,14 +652,6 @@
 	line-height: 1.55;
 }
 
-.receiptMeta {
-	margin: 14px 0 0;
-	color: light-dark(#68748a, #9eabc0);
-	font-family: var(--mantine-font-family-monospace);
-	font-size: 0.7rem;
-	line-height: 1.55;
-}
-
 :is(
 		.introActions a,
 		.introActions button,
@@ -717,7 +662,6 @@
 		.singlePrompt button,
 		.methodSwitch button,
 		.packageManagers button,
-		.codeHeader button,
 		.downloadBar button
 	):focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);

@@ -1,11 +1,6 @@
-import { useClipboard } from '@mantine/hooks';
-import {
-	type KeyboardEvent,
-	useDeferredValue,
-	useEffect,
-	useMemo,
-	useState,
-} from 'react';
+import { VisuallyHidden } from '@mantine/core';
+import { useClipboard, useDebouncedValue } from '@mantine/hooks';
+import { type KeyboardEvent, useDeferredValue, useMemo, useState } from 'react';
 
 import { IconCopy, IconSearch } from '@/components/icons';
 import type {
@@ -14,6 +9,7 @@ import type {
 	GetRegistrySourceCapabilitiesResponse,
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
+import { formatFontLabel } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
 	getPreferredPreviewSubset,
@@ -24,10 +20,7 @@ import { getPreviewText as getLanguagePreviewText } from '@/utils/language/langu
 import {
 	findUnmappedCharacters,
 	getRegistryCharacterGroups,
-	hasSymbolCatalog,
-	isDigitalFontFamily,
-	isPunctuationFontFamily,
-	isSymbolFontFamily,
+	getRegistryFamilyKind,
 	type RegistryFamily,
 	type RegistrySource,
 	usesNameLigatures,
@@ -44,34 +37,12 @@ interface CharacterExplorerProps {
 	symbols?: GetRegistryFamilySymbolsResponse;
 	capabilities?: GetRegistrySourceCapabilitiesResponse;
 	capabilitySource?: RegistrySource;
-	registryUnavailable?: boolean;
+	languageMetadataUnavailable?: boolean;
 	capabilitiesUnavailable?: boolean;
 	symbolsUnavailable?: boolean;
 }
 
-const characterGroups = {
-	latin: [
-		...'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-		...'abcdefghijklmnopqrstuvwxyz',
-		...'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØŒÙÚÛÜÝàáâãäåæçèéêëìíîïñòóôõöøœùúûüýÿ',
-		'fi',
-		'fl',
-		'ffi',
-		'ffl',
-	],
-	punctuation: [...'.,;:!?()[]{}<>/\\|–—“”‘’…'],
-	numbers: [...'0123456789'],
-	symbols: [...'&@#%‰*+−=≠≤≥×÷€£¥$¢©®™§¶←→↑↓'],
-} as const;
-
 type ExplorerMode = 'browse' | 'check';
-
-const characterGroupLabels = [
-	{ label: 'Latin', value: 'latin' },
-	{ label: 'Punctuation', value: 'punctuation' },
-	{ label: 'Numbers', value: 'numbers' },
-	{ label: 'Symbols', value: 'symbols' },
-];
 
 const registryCharacterGroupLabels = [
 	{ label: 'All', value: 'all' },
@@ -80,113 +51,6 @@ const registryCharacterGroupLabels = [
 	{ label: 'Punctuation', value: 'punctuation' },
 	{ label: 'Symbols', value: 'symbols' },
 ] as const;
-
-const iconGroups = {
-	common: [
-		'home',
-		'search',
-		'favorite',
-		'menu',
-		'close',
-		'settings',
-		'star',
-		'check',
-		'info',
-		'warning',
-		'visibility',
-		'lock',
-		'calendar_month',
-		'schedule',
-		'location_on',
-		'language',
-		'account_circle',
-		'more_vert',
-	],
-	navigation: [
-		'arrow_back',
-		'arrow_forward',
-		'expand_more',
-		'chevron_left',
-		'chevron_right',
-		'open_in_new',
-		'arrow_upward',
-		'arrow_downward',
-		'first_page',
-		'last_page',
-		'fullscreen',
-		'fullscreen_exit',
-	],
-	actions: [
-		'add',
-		'delete',
-		'edit',
-		'download',
-		'upload',
-		'share',
-		'refresh',
-		'filter_list',
-		'sort',
-		'print',
-		'content_copy',
-		'undo',
-	],
-	communication: [
-		'mail',
-		'call',
-		'chat',
-		'notifications',
-		'person',
-		'group',
-		'send',
-		'forum',
-		'contacts',
-		'public',
-		'campaign',
-		'notifications_off',
-	],
-};
-
-const iconGroupLabels = [
-	{ label: 'Common', value: 'common' },
-	{ label: 'Navigation', value: 'navigation' },
-	{ label: 'Actions', value: 'actions' },
-	{ label: 'Communication', value: 'communication' },
-	{ label: 'All symbols', value: 'all' },
-];
-
-const japanesePunctuationGroups = {
-	punctuation: ['、', '。', '，', '．', '・', '：', '；', '！', '？'],
-	brackets: ['「', '」', '『', '』', '（', '）', '［', '］', '【', '】'],
-	marks: ['…', '‥', 'ー', '〜', '〝', '〟', '々', '〆', '〇'],
-	latin: [...'.,:;!?()[]'],
-};
-
-const japanesePunctuationLabels = [
-	{ label: 'Japanese', value: 'punctuation' },
-	{ label: 'Brackets', value: 'brackets' },
-	{ label: 'Marks', value: 'marks' },
-	{ label: 'Latin', value: 'latin' },
-];
-
-const digitalGroups = {
-	numbers: [...'0123456789'],
-	readouts: ['12:48', '36.90', '88:88', '24°C'],
-	punctuation: [...':.-+/'],
-	labels: ['AM', 'PM', 'ON', 'OFF'],
-};
-
-const digitalGroupLabels = [
-	{ label: 'Numbers', value: 'numbers' },
-	{ label: 'Readouts', value: 'readouts' },
-	{ label: 'Marks', value: 'punctuation' },
-	{ label: 'Labels', value: 'labels' },
-];
-
-const scriptGroupLabels = [
-	{ label: 'Sample', value: 'sample' },
-	{ label: 'Numbers', value: 'numbers' },
-	{ label: 'Punctuation', value: 'punctuation' },
-];
 
 const characterNames: Record<string, string> = {
 	'&': 'Ampersand',
@@ -252,17 +116,16 @@ const getSymbolDisplayValue = (value: string, useNameLigature: boolean) => {
 		: String.fromCodePoint(codepoint);
 };
 
-const getScriptGroups = (metadata: GetFontResponse) => {
-	const preview = getLanguagePreviewText(getPreferredPreviewSubset(metadata));
-	const unique = Array.from(
-		new Set(Array.from(preview).filter((character) => !/\s/u.test(character))),
+const getSampleCharacterGroups = (value: string) => {
+	const all = Array.from(
+		new Set(Array.from(value).filter((character) => !/\s/u.test(character))),
 	);
-	const punctuation = unique.filter((character) => /\p{P}/u.test(character));
-
 	return {
-		sample: unique,
-		numbers: [...'0123456789'],
-		punctuation: punctuation.length > 0 ? punctuation : [...'.,;:!?'],
+		all,
+		letters: all.filter((character) => /^(\p{L}|\p{M})$/u.test(character)),
+		numbers: all.filter((character) => /^\p{N}$/u.test(character)),
+		punctuation: all.filter((character) => /^\p{P}$/u.test(character)),
+		symbols: all.filter((character) => /^\p{S}$/u.test(character)),
 	};
 };
 
@@ -275,116 +138,49 @@ export const CharacterExplorer = ({
 	symbols,
 	capabilities,
 	capabilitySource,
-	registryUnavailable = false,
+	languageMetadataUnavailable = false,
 	capabilitiesUnavailable = false,
 	symbolsUnavailable = false,
 }: CharacterExplorerProps) => {
-	const catalogExpected = hasSymbolCatalog(registry);
+	const catalogExpected = Boolean(registry?.symbols);
 	const hasNamedLigatures = usesNameLigatures(registry);
-	const isSymbolFamily = isSymbolFontFamily(registry);
-	const isPunctuationFamily = isPunctuationFontFamily(registry);
-	const isDigitalFamily = isDigitalFontFamily(registry);
+	const familyKind = getRegistryFamilyKind(registry);
+	const isSymbolFamily = familyKind === 'symbols';
+	const isPunctuationFamily = familyKind === 'punctuation';
+	const isDigitalFamily = familyKind === 'digital';
 	const symbolCount = symbols?.length ?? 0;
 	const hasCatalogEntries = symbolCount > 0;
-	const previewSubset = getPreferredPreviewSubset(metadata);
+	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const isScriptFamily = !isLatinPreviewSubset(previewSubset);
-	const scriptGroups = useMemo(() => getScriptGroups(metadata), [metadata]);
-	const registryCharacterCatalog = useMemo(
+	const fallbackGroups = useMemo(
+		() =>
+			getSampleCharacterGroups(
+				registry?.sampleText?.long ??
+					registry?.sampleText?.short ??
+					getLanguagePreviewText(previewSubset),
+			),
+		[previewSubset, registry?.sampleText],
+	);
+	const registryCharacterGroups = useMemo(
 		() => getRegistryCharacterGroups(capabilities),
 		[capabilities],
 	);
-	const registryCharacterGroups = registryCharacterCatalog?.groups;
 	const symbolEntries = useMemo(
 		() =>
 			symbols?.map((symbol) => getSymbolKey(symbol.name, symbol.codepoint)) ??
 			[],
 		[symbols],
 	);
-	const firstSymbolEntryByName = useMemo(() => {
-		const entries = new Map<string, string>();
-		for (const symbol of symbols ?? []) {
-			if (!entries.has(symbol.name)) {
-				entries.set(symbol.name, getSymbolKey(symbol.name, symbol.codepoint));
-			}
-		}
-		return entries;
-	}, [symbols]);
-	const specialistAllGroup = registryCharacterGroups?.all;
 	const explorerGroups: Record<string, readonly string[]> = useMemo(
 		() =>
 			hasCatalogEntries
-				? {
-						...Object.fromEntries(
-							Object.entries(iconGroups).map(([name, entries]) => [
-								name,
-								entries.flatMap((entry) => {
-									const catalogEntry = firstSymbolEntryByName.get(entry);
-									return catalogEntry ? [catalogEntry] : [];
-								}),
-							]),
-						),
-						all: symbolEntries,
-					}
-				: catalogExpected
-					? (registryCharacterGroups ?? { all: [] })
-					: isPunctuationFamily
-						? {
-								...japanesePunctuationGroups,
-								...(specialistAllGroup ? { all: specialistAllGroup } : {}),
-							}
-						: isDigitalFamily
-							? {
-									...digitalGroups,
-									...(specialistAllGroup ? { all: specialistAllGroup } : {}),
-								}
-							: (registryCharacterGroups ??
-								(isScriptFamily ? scriptGroups : characterGroups)),
-		[
-			catalogExpected,
-			firstSymbolEntryByName,
-			hasCatalogEntries,
-			isDigitalFamily,
-			isPunctuationFamily,
-			isScriptFamily,
-			registryCharacterGroups,
-			scriptGroups,
-			specialistAllGroup,
-			symbolEntries,
-		],
+				? { all: symbolEntries }
+				: (registryCharacterGroups ?? fallbackGroups),
+		[fallbackGroups, hasCatalogEntries, registryCharacterGroups, symbolEntries],
 	);
-	const groupLabels = useMemo(() => {
-		if (hasCatalogEntries) {
-			return iconGroupLabels.filter(
-				(item) => (explorerGroups[item.value]?.length ?? 0) > 0,
-			);
-		}
-		if (catalogExpected) return [{ label: 'All', value: 'all' }];
-		if (isPunctuationFamily) {
-			return specialistAllGroup
-				? [...japanesePunctuationLabels, { label: 'All', value: 'all' }]
-				: japanesePunctuationLabels;
-		}
-		if (isDigitalFamily) {
-			return specialistAllGroup
-				? [...digitalGroupLabels, { label: 'All', value: 'all' }]
-				: digitalGroupLabels;
-		}
-		if (registryCharacterGroups) {
-			return registryCharacterGroupLabels.filter(
-				(item) => registryCharacterGroups[item.value].length > 0,
-			);
-		}
-		return isScriptFamily ? scriptGroupLabels : characterGroupLabels;
-	}, [
-		catalogExpected,
-		hasCatalogEntries,
-		isDigitalFamily,
-		isPunctuationFamily,
-		isScriptFamily,
-		explorerGroups,
-		registryCharacterGroups,
-		specialistAllGroup,
-	]);
+	const groupLabels = registryCharacterGroupLabels.filter(
+		(item) => (explorerGroups[item.value]?.length ?? 0) > 0,
+	);
 	const defaultGroup = groupLabels[0]?.value ?? 'all';
 	const [mode, setMode] = useState<ExplorerMode>('browse');
 	const [group, setGroup] = useState(defaultGroup);
@@ -399,7 +195,7 @@ export const CharacterExplorer = ({
 		)
 		.join(' ');
 	const [sample, setSample] = useState(
-		registry?.sampleText?.tester?.trim() ??
+		registry?.sampleText?.short.trim() ??
 			(catalogSample ||
 				(isScriptFamily
 					? getLanguagePreviewText(previewSubset)
@@ -452,16 +248,14 @@ export const CharacterExplorer = ({
 		hasNamedLigatures,
 		searchableCharacters,
 	]);
-	const visibleCharacters = matchingCharacters.slice(0, 120);
-	const activeCharacter = visibleCharacters.includes(selected)
+	const activeCharacter = matchingCharacters.includes(selected)
 		? selected
-		: visibleCharacters[0];
+		: matchingCharacters[0];
 	const resultSummary =
 		matchingCharacters.length === 0
 			? 'No matching characters'
 			: `${matchingCharacters.length.toLocaleString('en')} ${matchingCharacters.length === 1 ? 'character' : 'characters'}`;
-	const [announcedResultSummary, setAnnouncedResultSummary] =
-		useState(resultSummary);
+	const [announcedResultSummary] = useDebouncedValue(resultSummary, 250);
 	const activeIsCatalogEntry = activeCharacter
 		? isSymbolKey(activeCharacter)
 		: false;
@@ -473,10 +267,7 @@ export const CharacterExplorer = ({
 		? getSymbolName(activeCharacter ?? '')
 		: undefined;
 	const selectedName = activeSymbolName
-		? activeSymbolName
-				?.split('_')
-				.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-				.join(' ')
+		? formatFontLabel(activeSymbolName)
 		: activeCharacter
 			? getCharacterName(activeCharacter)
 			: '';
@@ -525,10 +316,7 @@ export const CharacterExplorer = ({
 			: isScriptFamily
 				? 'Search a character or code point'
 				: 'Search A, ampersand, or U+0026';
-	const familyLanguages =
-		languages?.filter((language) =>
-			registry?.languages.includes(language.id),
-		) ?? [];
+	const familyLanguages = languages ?? [];
 	const primaryLanguage = familyLanguages.find(
 		(language) => language.id === registry?.primaryLanguage,
 	);
@@ -559,7 +347,7 @@ export const CharacterExplorer = ({
 						? `${primaryLanguage.preferredName ?? primaryLanguage.name} is the primary language.`
 						: registry?.primaryScript
 							? `${registry.primaryScript} is the primary script.`
-							: registryUnavailable
+							: languageMetadataUnavailable
 								? 'Registry language details are temporarily unavailable.'
 								: 'Registry language metadata is not available for this family yet.';
 	const checkerLabel = catalogExpected
@@ -573,12 +361,12 @@ export const CharacterExplorer = ({
 				: 'Inspect your own text';
 	const sampleNotice = catalogExpected
 		? hasCatalogEntries
-			? `${symbolCount.toLocaleString('en')} symbols are verified from the registry catalog. Up to 120 matches are shown at once.`
+			? `${symbolCount.toLocaleString('en')} symbols are verified from the registry catalog.`
 			: symbolsUnavailable
 				? 'The registry symbol catalog is temporarily unavailable. Mapped-character coverage remains source-backed when capabilities are available.'
 				: 'The registry symbol catalog is currently empty.'
 		: capabilities
-			? `Exact coverage for ${capabilitySource?.filename ?? 'the selected source'}: ${capabilities.codepointCount.toLocaleString('en')} mapped characters and ${capabilities.glyphCount.toLocaleString('en')} glyphs.${registryCharacterCatalog?.truncated ? ' Browse shows a bounded sample; Inspect my text still checks the complete cmap.' : ''}`
+			? `Exact coverage for ${capabilitySource?.filename ?? 'the selected source'}: ${capabilities.codepointCount.toLocaleString('en')} mapped characters and ${capabilities.glyphCount.toLocaleString('en')} glyphs.`
 			: capabilitiesUnavailable
 				? 'Exact source coverage is temporarily unavailable, so a practical sample is shown.'
 				: 'This family does not publish source capability data.';
@@ -613,14 +401,6 @@ export const CharacterExplorer = ({
 						.join(' ')}${unmappedCharacters.length > 12 ? ' …' : ''}`
 			: 'Exact source coverage verification is unavailable.';
 
-	useEffect(() => {
-		const timeout = window.setTimeout(
-			() => setAnnouncedResultSummary(resultSummary),
-			250,
-		);
-		return () => window.clearTimeout(timeout);
-	}, [resultSummary]);
-
 	const moveGlyphFocus = (
 		event: KeyboardEvent<HTMLButtonElement>,
 		index: number,
@@ -654,15 +434,15 @@ export const CharacterExplorer = ({
 				nextIndex = 0;
 				break;
 			case 'End':
-				nextIndex = visibleCharacters.length - 1;
+				nextIndex = matchingCharacters.length - 1;
 				break;
 			default:
 				return;
 		}
 
 		event.preventDefault();
-		nextIndex = Math.min(visibleCharacters.length - 1, Math.max(0, nextIndex));
-		const nextCharacter = visibleCharacters[nextIndex];
+		nextIndex = Math.min(matchingCharacters.length - 1, Math.max(0, nextIndex));
+		const nextCharacter = matchingCharacters[nextIndex];
 		if (!nextCharacter) return;
 
 		setSelected(nextCharacter);
@@ -762,7 +542,7 @@ export const CharacterExplorer = ({
 					<div className={classes.filters}>
 						<label className={classes.search}>
 							<IconSearch aria-hidden height={18} />
-							<span className={classes.visuallyHidden}>Search characters</span>
+							<VisuallyHidden>Search characters</VisuallyHidden>
 							<input
 								type="search"
 								placeholder={searchPlaceholder}
@@ -808,10 +588,10 @@ export const CharacterExplorer = ({
 								style={specimenStyle}
 								data-glyph-grid
 							>
-								<legend className={classes.visuallyHidden}>
+								<VisuallyHidden component="legend">
 									{metadata.family} character results
-								</legend>
-								{visibleCharacters.map((character, index) => {
+								</VisuallyHidden>
+								{matchingCharacters.map((character, index) => {
 									const catalogEntry = isSymbolKey(character);
 									const displayCharacter = getSymbolDisplayValue(
 										character,
@@ -844,7 +624,7 @@ export const CharacterExplorer = ({
 										</button>
 									);
 								})}
-								{visibleCharacters.length === 0 && (
+								{matchingCharacters.length === 0 && (
 									<div className={classes.empty}>
 										<p>
 											{catalogExpected && symbolsUnavailable
@@ -861,14 +641,6 @@ export const CharacterExplorer = ({
 									</div>
 								)}
 							</fieldset>
-							{matchingCharacters.length > visibleCharacters.length && (
-								<p className={classes.resultLimit}>
-									Showing the first{' '}
-									{visibleCharacters.length.toLocaleString('en')} of{' '}
-									{matchingCharacters.length.toLocaleString('en')} matches.
-									Refine your search to narrow the catalog.
-								</p>
-							)}
 						</div>
 
 						{renderInspector(classes.desktopInspector)}
@@ -928,7 +700,7 @@ export const CharacterExplorer = ({
 					) : !isSymbolFamily && !isPunctuationFamily && !isDigitalFamily ? (
 						<ul className={classes.subsets} aria-label="Downloadable subsets">
 							{metadata.subsets.slice(0, 6).map((subset) => (
-								<li key={subset}>{subset.replaceAll('-', ' ')}</li>
+								<li key={subset}>{formatFontLabel(subset)}</li>
 							))}
 						</ul>
 					) : null}

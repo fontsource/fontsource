@@ -34,10 +34,6 @@ const projectItemSchema = z.object({
 		id: z.string().min(1).optional(),
 		url: z.string().min(1).optional(),
 		attribution: z.string().min(1).optional(),
-		registryRevision: z
-			.string()
-			.regex(/^[0-9a-f]{40}$/)
-			.optional(),
 	}),
 });
 
@@ -56,10 +52,5 @@ const currentProjectSnapshotSchema = z
 type ProjectItem = z.infer<typeof projectItemSchema>;
 type CurrentProjectSnapshot = z.infer<typeof currentProjectSnapshotSchema>;
 
-const createEmptyCurrentProjectSnapshot = (): CurrentProjectSnapshot => ({
-	version: 1,
-	items: [],
-});
-
 export type { CurrentProjectSnapshot, ProjectItem };
-export { createEmptyCurrentProjectSnapshot, currentProjectSnapshotSchema };
+export { currentProjectSnapshotSchema };

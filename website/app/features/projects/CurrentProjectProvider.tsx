@@ -1,9 +1,9 @@
-import type { Change } from '@legendapp/state';
-import { ObservablePersistLocalStorage } from '@legendapp/state/persist-plugins/local-storage';
 import { useMount } from '@legendapp/state/react';
 import { syncObservable } from '@legendapp/state/sync';
 import { createContext, type ReactNode, useContext, useState } from 'react';
 import invariant from 'tiny-invariant';
+
+import { FailSafeLocalStorage } from '@/utils/legend-persistence';
 
 import classes from './CurrentProjectProvider.module.css';
 import { currentProjectSnapshotSchema } from './model';
@@ -14,25 +14,6 @@ type StorageIssue = 'invalid' | 'unavailable';
 const CurrentProjectContext = createContext<CurrentProjectStore | undefined>(
 	undefined,
 );
-
-class CurrentProjectLocalStorage extends ObservablePersistLocalStorage {
-	private failed = false;
-
-	constructor(private readonly onError: () => void) {
-		super();
-	}
-
-	override set(table: string, changes: Change[]) {
-		if (this.failed) return;
-
-		try {
-			super.set(table, changes);
-		} catch {
-			this.failed = true;
-			this.onError();
-		}
-	}
-}
 
 const CurrentProjectProvider = ({ children }: { children: ReactNode }) => {
 	const [store] = useState(createCurrentProjectStore);
@@ -76,7 +57,7 @@ const CurrentProjectProvider = ({ children }: { children: ReactNode }) => {
 			syncObservable(store.state$, {
 				persist: {
 					name: STORAGE_KEY,
-					plugin: new CurrentProjectLocalStorage(() =>
+					plugin: new FailSafeLocalStorage(() =>
 						setStorageIssue('unavailable'),
 					),
 				},

@@ -188,34 +188,34 @@ export const Header = ({ ...other }: ContainerProps) => {
 						<LogoText height={31} isHeader />
 					</Link>
 					{isFontPage && (
-						<search className={classes.fontSearch}>
-							<Form action="/">
-								<button
-									type="submit"
-									className={classes.searchSubmit}
+						<>
+							<search className={classes.fontSearch}>
+								<Form action="/">
+									<button
+										type="submit"
+										className={classes.searchSubmit}
+										aria-label="Search fonts"
+									>
+										<IconSearch aria-hidden height={17} />
+									</button>
+									<input
+										type="search"
+										name="query"
+										aria-label="Search fonts"
+										placeholder="Search fonts"
+									/>
+								</Form>
+							</search>
+							<Tooltip label="Search fonts">
+								<Link
+									to="/"
+									className={classes.fontSearchShortcut}
 									aria-label="Search fonts"
 								>
-									<IconSearch aria-hidden height={17} />
-								</button>
-								<input
-									type="search"
-									name="query"
-									aria-label="Search fonts"
-									placeholder="Search fonts"
-								/>
-							</Form>
-						</search>
-					)}
-					{isFontPage && (
-						<Tooltip label="Search fonts">
-							<Link
-								to="/"
-								className={classes.fontSearchShortcut}
-								aria-label="Search fonts"
-							>
-								<IconSearch aria-hidden height={18} />
-							</Link>
-						</Tooltip>
+									<IconSearch aria-hidden height={18} />
+								</Link>
+							</Tooltip>
+						</>
 					)}
 					<Box className={classes.links} visibleFrom="sm">
 						<Tooltip.Group openDelay={600} closeDelay={100}>

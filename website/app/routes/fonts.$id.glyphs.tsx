@@ -3,114 +3,45 @@ import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import { CharacterExplorer } from '@/components/font-page/CharacterExplorer';
-import { TabsWrapper } from '@/components/preview/Tabs';
-import {
-	getFont,
-	getRegistryFamily,
-	getRegistryFamilySymbols,
-	getRegistrySourceCapabilities,
-	getVariableFont,
-	listRegistryLanguages,
-} from '@/generated/api';
+import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
+import { getRegistryFamilySymbols } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
-import { getFontPreviewCSS } from '@/utils/font-preview';
-import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import {
-	selectRegistryDistributionSource,
-	selectRegistryFamilyLanguages,
-	validateRegistryFamily,
-} from '@/utils/registry';
+	loadFontPageBase,
+	loadFontPageCapabilities,
+	loadFontPageLanguages,
+	loadOptional,
+} from '@/utils/font-page.server';
+import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
-	const parameters = { id };
-	const options = { signal: request.signal };
-	const metadataPromise = getFont(parameters, options);
-	const registryResultPromise = getRegistryFamily(parameters, options).then(
-		(value) => {
-			const registry = validateRegistryFamily(value);
-			return { value: registry, unavailable: !registry };
-		},
-		() => ({ value: undefined, unavailable: true }),
+	const basePromise = loadFontPageBase(id, request.signal);
+	const symbolsPromise = basePromise.then((base) =>
+		base.registry?.symbols
+			? loadOptional(
+					getRegistryFamilySymbols({ id }, { signal: request.signal }),
+				)
+			: { value: undefined, unavailable: false },
 	);
-	const variablePromise = metadataPromise.then((metadata) =>
-		metadata.variable
-			? getVariableFont(parameters, options).catch(() => undefined)
-			: undefined,
-	);
-	const languagesResultPromise = listRegistryLanguages(options).then(
-		(value) => ({ value, unavailable: false }),
-		() => ({ value: undefined, unavailable: true }),
-	);
-	const registryDetailsPromise = Promise.all([
-		metadataPromise,
-		registryResultPromise,
-		variablePromise,
-	]).then(async ([metadata, registryResult, variable]) => {
-		const style = metadata.styles.includes('normal')
-			? 'normal'
-			: (metadata.styles[0] ?? 'normal');
-		const weight = metadata.weights.includes(400)
-			? 400
-			: (metadata.weights[0] ?? 400);
-		const capabilitySource = selectRegistryDistributionSource(
-			registryResult.value,
-			{
-				format: variable ? 'variable' : 'static',
-				style,
-				weight,
-			},
-		);
-		const [symbolsResult, capabilitiesResult] = await Promise.all([
-			registryResult.value?.symbols
-				? getRegistryFamilySymbols(parameters, options).then(
-						(value) => ({ value, unavailable: false }),
-						() => ({ value: undefined, unavailable: true }),
-					)
-				: { value: undefined, unavailable: false },
-			capabilitySource
-				? getRegistrySourceCapabilities(
-						{ sha256: capabilitySource.sha256 },
-						options,
-					).then(
-						(value) => ({ value, unavailable: false }),
-						() => ({ value: undefined, unavailable: true }),
-					)
-				: { value: undefined, unavailable: false },
-		]);
-
-		return { capabilitySource, symbolsResult, capabilitiesResult };
-	});
-	const [metadata, variable, registryResult, languagesResult, registryDetails] =
+	const [base, languagesResult, capabilitiesResult, symbolsResult] =
 		await Promise.all([
-			metadataPromise,
-			variablePromise,
-			registryResultPromise,
-			languagesResultPromise,
-			registryDetailsPromise,
+			basePromise,
+			loadFontPageLanguages(basePromise, request.signal),
+			loadFontPageCapabilities(basePromise, request.signal),
+			symbolsPromise,
 		]);
-	const { capabilitySource, symbolsResult, capabilitiesResult } =
-		registryDetails;
-	const { staticCSS, variableCSS } = getFontPreviewCSS(metadata, variable);
-	const registryUnavailable =
-		registryResult.unavailable || languagesResult.unavailable;
-	const familyLanguages = selectRegistryFamilyLanguages(
-		registryResult.value,
-		languagesResult.value,
-	);
 
 	return data(
 		{
-			metadata,
-			staticCSS,
-			variableCSS,
-			registry: registryResult.value,
-			languages: familyLanguages,
+			...base,
+			languages: languagesResult.languages,
 			symbols: symbolsResult.value,
-			capabilities: capabilitiesResult.value,
-			capabilitySource,
-			registryUnavailable,
+			capabilities: capabilitiesResult.capabilities,
+			capabilitySource: capabilitiesResult.capabilitySource,
+			languageMetadataUnavailable:
+				base.registryUnavailable || languagesResult.unavailable,
 			capabilitiesUnavailable: capabilitiesResult.unavailable,
 			symbolsUnavailable: symbolsResult.unavailable,
 		},
@@ -141,13 +72,13 @@ export default function GlyphsPage() {
 		symbols,
 		capabilities,
 		capabilitySource,
-		registryUnavailable,
+		languageMetadataUnavailable,
 		capabilitiesUnavailable,
 		symbolsUnavailable,
 	} = useLoaderData<typeof loader>();
 
 	return (
-		<TabsWrapper
+		<FamilyPageShell
 			metadata={metadata}
 			registry={registry}
 			variableAvailable={Boolean(variableCSS)}
@@ -163,10 +94,10 @@ export default function GlyphsPage() {
 				symbols={symbols}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
-				registryUnavailable={registryUnavailable}
+				languageMetadataUnavailable={languageMetadataUnavailable}
 				capabilitiesUnavailable={capabilitiesUnavailable}
 				symbolsUnavailable={symbolsUnavailable}
 			/>
-		</TabsWrapper>
+		</FamilyPageShell>
 	);
 }

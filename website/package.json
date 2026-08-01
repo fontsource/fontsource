@@ -40,6 +40,7 @@
 		"fumadocs-mdx": "15.2.0",
 		"instantsearch.js": "^4.105.0",
 		"isbot": "^5.1.44",
+		"markdown-to-jsx": "^7.7.17",
 		"react": "19.2.7",
 		"react-dom": "19.2.7",
 		"react-instantsearch": "^7.39.0",

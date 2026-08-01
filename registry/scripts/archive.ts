@@ -87,6 +87,35 @@ const sourceCapabilities = (source: FamilySource) =>
 		colorTables: source.inspection.colorTables,
 	});
 
+const selectPreviewSource = (
+	distribution: ReturnType<typeof resolveDistributionSources>,
+): string => {
+	const variable = distribution.variable;
+	const variablePreview =
+		variable?.find(
+			(variant) => variant.axisKey === 'standard' && variant.style === 'normal',
+		) ??
+		variable?.find((variant) => variant.style === 'normal') ??
+		variable?.find((variant) => variant.axisKey === 'standard') ??
+		variable?.[0];
+	if (variablePreview) return variablePreview.source;
+
+	const staticPreview = distribution.static
+		?.toSorted((left, right) => {
+			const leftStyle = left.style === 'normal' ? 0 : 1;
+			const rightStyle = right.style === 'normal' ? 0 : 1;
+			return (
+				leftStyle - rightStyle ||
+				Math.abs(left.weight - 400) - Math.abs(right.weight - 400) ||
+				right.weight - left.weight
+			);
+		})
+		.at(0);
+	if (staticPreview) return staticPreview.source;
+
+	throw new Error('Registry distribution has no preview source');
+};
+
 const createArchivePlan = async (root: string, registryRevision: string) => {
 	await validateRegistry(root);
 
@@ -156,6 +185,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 					? ({ type: 'all' } as const)
 					: ({ type: 'subsets', ...distribution.characters } as const),
 		};
+		const previewSource = selectPreviewSource(publicDistribution);
 		const axes = [
 			...new Set(
 				family.sources.flatMap(({ inspection }) =>
@@ -219,6 +249,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 					languages: family.languages,
 					primaryLanguage: family.primaryLanguage,
 					primaryScript: family.primaryScript,
+					previewSubset: family.previewSubset,
 					sampleText: family.sampleText,
 					designer: family.designer,
 					dateAdded: family.dateAdded,
@@ -245,6 +276,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 							}
 						: undefined,
 					sources,
+					previewSource,
 					distribution: publicDistribution,
 				}),
 			),

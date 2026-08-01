@@ -65,35 +65,6 @@
 	padding: 32px;
 }
 
-.guidance {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 36px;
-	margin-top: 28px;
-	padding-top: 26px;
-	border-top: light-dark(1px solid #e1e3e8, 1px solid #303b55);
-
-	h3 {
-		margin: 0;
-		font-size: 0.84rem;
-		font-weight: 700;
-	}
-
-	ul {
-		display: grid;
-		gap: 8px;
-		margin: 13px 0 0;
-		padding-left: 18px;
-	}
-
-	li {
-		padding-left: 3px;
-		color: light-dark(#46546d, #b8c2d4);
-		font-size: 0.84rem;
-		line-height: 1.5;
-	}
-}
-
 .disclaimer {
 	margin: 24px 0 0;
 	color: light-dark(#68748a, #9eabc0);

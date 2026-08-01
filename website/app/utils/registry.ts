@@ -4,114 +4,31 @@ import type {
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 
-type RegistrySymbolInputMode = 'codepoint' | 'name-ligature';
-type RegistryFamily = Omit<
-	GetRegistryFamilyResponse,
-	'distribution' | 'license'
-> & {
-	license: Omit<GetRegistryFamilyResponse['license'], 'text'> & {
-		text: string;
-	};
-	distribution: NonNullable<GetRegistryFamilyResponse['distribution']>;
-	symbols?: {
-		catalogUrl: string;
-		inputModes: RegistrySymbolInputMode[];
-	};
-};
+type RegistryFamily = GetRegistryFamilyResponse;
 type RegistrySource = RegistryFamily['sources'][number];
 type UnicodeRange = readonly [number, number];
-
-const validateRegistryFamily = (
-	family: GetRegistryFamilyResponse,
-): RegistryFamily | undefined => {
-	const candidate = family as GetRegistryFamilyResponse & {
-		symbols?: unknown;
-	};
-	if (!candidate.distribution || !candidate.license.text?.trim()) return;
-
-	if (candidate.symbols !== undefined) {
-		if (
-			typeof candidate.symbols !== 'object' ||
-			candidate.symbols === null ||
-			!('catalogUrl' in candidate.symbols) ||
-			typeof candidate.symbols.catalogUrl !== 'string' ||
-			!candidate.symbols.catalogUrl ||
-			!('inputModes' in candidate.symbols) ||
-			!Array.isArray(candidate.symbols.inputModes) ||
-			candidate.symbols.inputModes.length === 0 ||
-			!candidate.symbols.inputModes.every(
-				(mode) => mode === 'codepoint' || mode === 'name-ligature',
-			)
-		) {
-			return;
-		}
-	}
-
-	return candidate as RegistryFamily;
-};
-
-const hasRegistryTag = (registry: RegistryFamily | undefined, tag: string) =>
-	registry?.tags.includes(tag) ?? false;
-
-const hasSymbolCatalog = (registry?: RegistryFamily) =>
-	Boolean(registry?.symbols);
-
-const isSymbolFontFamily = (registry?: RegistryFamily) =>
-	registry?.classifications.includes('symbols') ?? false;
+type RegistryFamilyKind = 'text' | 'symbols' | 'punctuation' | 'digital';
 
 const usesNameLigatures = (registry?: RegistryFamily) =>
 	registry?.symbols?.inputModes.includes('name-ligature') ?? false;
 
-const isPunctuationFontFamily = (registry?: RegistryFamily) =>
-	hasRegistryTag(registry, 'special-use/punctuation');
-
-const isDigitalFontFamily = (registry?: RegistryFamily) =>
-	hasRegistryTag(registry, 'special-use/digital-display');
-
-const sourceByHash = (
-	registry: RegistryFamily,
-	sha256?: string,
-): RegistrySource | undefined =>
-	sha256
-		? registry.sources.find((source) => source.sha256 === sha256)
-		: undefined;
-
-interface RegistrySourceSelection {
-	format: 'static' | 'variable';
-	style: 'normal' | 'italic';
-	weight?: number;
-}
-
-const selectRegistryDistributionSource = (
-	registry: RegistryFamily | undefined,
-	selection: RegistrySourceSelection,
-): RegistrySource | undefined => {
-	if (!registry) return;
-
-	const variable = registry.distribution.variable ?? [];
-	const staticVariants = registry.distribution.static ?? [];
-	const selectedVariable =
-		variable.find(
-			(variant) =>
-				variant.style === selection.style && variant.axisKey === 'standard',
-		) ?? variable.find((variant) => variant.style === selection.style);
-	const selectedStatic =
-		staticVariants.find(
-			(variant) =>
-				variant.style === selection.style &&
-				variant.weight === (selection.weight ?? 400),
-		) ?? staticVariants.find((variant) => variant.style === selection.style);
-	const preferredHashes =
-		selection.format === 'variable'
-			? [selectedVariable?.source]
-			: [selectedStatic?.source];
-
-	for (const sha256 of preferredHashes) {
-		const source = sourceByHash(registry, sha256);
-		if (source) return source;
+const getRegistryFamilyKind = (
+	registry?: RegistryFamily,
+): RegistryFamilyKind => {
+	if (registry?.tags.includes('special-use/punctuation')) return 'punctuation';
+	if (registry?.tags.includes('special-use/digital-display')) return 'digital';
+	if (registry?.symbols || registry?.classifications.includes('symbols')) {
+		return 'symbols';
 	}
+	return 'text';
+};
 
-	return;
+const getRegistryContent = (registry?: RegistryFamily) => {
+	const entries = Object.entries(registry?.content ?? {});
+	return (
+		entries.find(([locale]) => locale.toLowerCase().startsWith('en'))?.[1] ??
+		entries[0]?.[1]
+	);
 };
 
 const selectRegistryFamilyLanguages = (
@@ -141,7 +58,7 @@ const selectRegistryFamilyLanguages = (
 };
 
 const parseRegistryUnicodeRange = (value: string): UnicodeRange[] =>
-	value.split(', ').map((range) => {
+	value.split(/,\s*/).map((range) => {
 		const [startValue, endValue = startValue] = range.slice(2).split('-');
 		const start = Number.parseInt(startValue ?? '', 16);
 		const end = Number.parseInt(endValue ?? '', 16);
@@ -175,16 +92,10 @@ type RegistryCharacterGroups = Record<
 	'all' | 'letters' | 'numbers' | 'punctuation' | 'symbols',
 	string[]
 >;
-interface RegistryCharacterCatalog {
-	groups: RegistryCharacterGroups;
-	truncated: boolean;
-}
-
-const MAX_BROWSABLE_CODEPOINTS = 4096;
 
 const getRegistryCharacterGroups = (
 	capabilities?: GetRegistrySourceCapabilitiesResponse,
-): RegistryCharacterCatalog | undefined => {
+): RegistryCharacterGroups | undefined => {
 	if (!capabilities) return;
 
 	const groups: RegistryCharacterGroups = {
@@ -194,18 +105,10 @@ const getRegistryCharacterGroups = (
 		punctuation: [],
 		symbols: [],
 	};
-	let inspectedCodepoints = 0;
-	let truncated = false;
-
-	outer: for (const [start, end] of parseRegistryUnicodeRange(
+	for (const [start, end] of parseRegistryUnicodeRange(
 		capabilities.unicodeRange,
 	)) {
 		for (let codepoint = start; codepoint <= end; codepoint += 1) {
-			if (inspectedCodepoints >= MAX_BROWSABLE_CODEPOINTS) {
-				truncated = true;
-				break outer;
-			}
-			inspectedCodepoints += 1;
 			const character = String.fromCodePoint(codepoint);
 			if (!isBrowsableCharacter(character)) continue;
 			groups.all.push(character);
@@ -221,7 +124,7 @@ const getRegistryCharacterGroups = (
 		}
 	}
 
-	return { groups, truncated };
+	return groups;
 };
 
 const findUnmappedCharacters = (
@@ -271,27 +174,13 @@ const featureNames: Record<string, string> = {
 const getOpenTypeFeatureName = (tag: string) =>
 	featureNames[tag] ?? tag.toUpperCase();
 
-export type {
-	RegistryCharacterCatalog,
-	RegistryCharacterGroups,
-	RegistryFamily,
-	RegistrySource,
-	RegistrySourceSelection,
-	RegistrySymbolInputMode,
-	UnicodeRange,
-};
+export type { RegistryFamily, RegistryFamilyKind, RegistrySource };
 export {
 	findUnmappedCharacters,
 	getOpenTypeFeatureName,
 	getRegistryCharacterGroups,
-	hasRegistryTag,
-	hasSymbolCatalog,
-	isDigitalFontFamily,
-	isPunctuationFontFamily,
-	isSymbolFontFamily,
-	parseRegistryUnicodeRange,
-	selectRegistryDistributionSource,
+	getRegistryContent,
+	getRegistryFamilyKind,
 	selectRegistryFamilyLanguages,
 	usesNameLigatures,
-	validateRegistryFamily,
 };

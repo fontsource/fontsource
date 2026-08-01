@@ -598,57 +598,6 @@
 	font-weight: 600;
 }
 
-.codeBlock {
-	overflow: hidden;
-	border: light-dark(1px solid transparent, 1px solid var(--mantine-color-border-1));
-	border-radius: 5px;
-	background: light-dark(#07162f, #0a1020);
-	color: #f2f5ff;
-}
-
-.codeHeader {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	min-height: 52px;
-	padding: 0 12px;
-	border-bottom: 1px solid rgb(255 255 255 / 12%);
-	color: #aeb9d0;
-	font-family: var(--font-monospace);
-	font-size: 0.75rem;
-}
-
-.codeHeader button {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	min-height: 44px;
-	padding: 0 10px;
-	border: 0;
-	border-radius: 3px;
-	background: var(--mantine-color-purple-0);
-	color: white;
-	font: inherit;
-	cursor: pointer;
-	transition: background-color 120ms ease;
-}
-
-.codeHeader button:hover {
-	background: var(--mantine-color-purple-dark);
-}
-
-.codeBlock pre {
-	max-width: 100%;
-	margin: 0;
-	padding: 16px;
-	overflow-x: auto;
-	font-family: var(--font-monospace);
-	font-size: 0.8rem;
-	line-height: 1.65;
-	white-space: pre-wrap;
-	word-break: break-word;
-}
-
 .usageHelp {
 	margin: -6px 0 0;
 	padding: 14px 16px;
@@ -850,7 +799,6 @@
 .summaryTop button:focus-visible,
 .projectActionControls > a:focus-visible,
 .completeSetupButton:focus-visible,
-.codeHeader button:focus-visible,
 .advanced select:focus-visible,
 .axisControl input:focus-visible,
 .optimizationControl input:focus-visible,
@@ -858,18 +806,6 @@
 .guide a:focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
 	outline-offset: 2px;
-}
-
-.srOnly {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	border: 0;
-	overflow: hidden;
-	clip-path: inset(50%);
-	white-space: nowrap;
 }
 
 @media (max-width: 48em) {

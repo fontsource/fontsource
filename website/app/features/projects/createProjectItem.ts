@@ -5,7 +5,7 @@ import type {
 	GetFontVersionsResponse,
 	GetVariableFontResponse,
 } from '@/generated/api';
-import { hasSymbolCatalog, type RegistryFamily } from '@/utils/registry';
+import type { RegistryFamily } from '@/utils/registry';
 
 import type { ProjectItem } from './model';
 
@@ -35,19 +35,6 @@ const categoryClassifications: Record<
 	other: 'other',
 };
 
-const getSampleText = (
-	metadata: GetFontResponse,
-	registry?: RegistryFamily,
-	sampleText?: string,
-) => {
-	if (sampleText?.trim()) return sampleText.trim();
-	return (
-		registry?.sampleText?.tester?.trim() ||
-		registry?.sampleText?.styles?.trim() ||
-		metadata.family
-	);
-};
-
 const createProjectItem = ({
 	metadata,
 	versions,
@@ -62,7 +49,7 @@ const createProjectItem = ({
 }: CreateProjectItemOptions): ProjectItem => {
 	const isVariable =
 		format === 'variable' && Boolean(variable && versions.latestVariable);
-	const hasCatalog = hasSymbolCatalog(registry);
+	const hasCatalog = Boolean(registry?.symbols);
 	const packageName = isVariable
 		? `@fontsource-variable/${metadata.id}`
 		: `@fontsource/${metadata.id}`;
@@ -105,9 +92,13 @@ const createProjectItem = ({
 			: versions.latest,
 		cssFile,
 		fontFamily: isVariable ? `${metadata.family} Variable` : metadata.family,
-		sampleText: getSampleText(metadata, registry, sampleText),
+		sampleText:
+			sampleText?.trim() ||
+			registry?.sampleText?.short.trim() ||
+			registry?.sampleText?.long?.trim() ||
+			metadata.family,
 		symbolInputModes: registry?.symbols?.inputModes ?? [],
-		license: registry?.license
+		license: registry
 			? {
 					verified: true,
 					id: registry.license.id,

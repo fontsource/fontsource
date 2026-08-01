@@ -113,12 +113,15 @@ export const familyOverridesSchema = z.record(
 	z
 		.strictObject({
 			languages: z.array(languageIdSchema).optional(),
+			previewSubset: idSchema.optional(),
 			sampleText: sampleTextSchema.optional(),
 		})
 		.refine(
 			(value) =>
-				value.languages !== undefined || value.sampleText !== undefined,
-			{ message: 'must override languages or sample text' },
+				value.languages !== undefined ||
+				value.previewSubset !== undefined ||
+				value.sampleText !== undefined,
+			{ message: 'must override languages, preview subset, or sample text' },
 		),
 );
 
@@ -200,6 +203,7 @@ export const familySchema = z.strictObject({
 	languages: z.array(languageIdSchema),
 	primaryLanguage: languageIdSchema.optional(),
 	primaryScript: scriptSchema.optional(),
+	previewSubset: idSchema.optional(),
 	sampleText: sampleTextSchema.optional(),
 	designer: z.string().min(1).optional(),
 	dateAdded: dateSchema.optional(),

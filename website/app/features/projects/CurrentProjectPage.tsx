@@ -1,15 +1,6 @@
-/*
-THESIS: Font Set turns separate font decisions into one calm, exact setup and refuses cart chrome.
-OWN-WORLD: Open white work surfaces, ink typography, violet task state, flat ruled rows, and navy code panels.
-STORY: Choose fonts in their own specimens, keep one configured setup per family, then generate a combined delivery plan.
-FIRST VIEWPORT: A plain-language project heading leads into real font specimens; acquisition output waits until the set is understood.
-FORM: A full-page workbench extending Fontsource's established Operate mode; directly selected, with no concept seed required.
-*/
 import { useValue } from '@legendapp/state/react';
-import { useClipboard, useLocalStorage } from '@mantine/hooks';
+import { useLocalStorage } from '@mantine/hooks';
 import {
-	IconCheck,
-	IconCopy,
 	IconDownload,
 	IconExternalLink,
 	IconStack2,
@@ -18,9 +9,15 @@ import {
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router';
 
+import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { deserializeStoredChoice } from '@/utils/browser-storage';
-import { packageManagers } from '@/utils/docs/packageManagers';
+import {
+	getPackageManagerCommand,
+	packageManagers,
+	packageManagerValues,
+} from '@/utils/docs/packageManagers';
 import { triggerBlobDownload } from '@/utils/download';
+import { formatFontLabel } from '@/utils/font-labels';
 
 import classes from './CurrentProjectPage.module.css';
 import { useCurrentProjectStore } from './CurrentProjectProvider';
@@ -37,44 +34,6 @@ import {
 
 type DeliveryMethod = 'package' | 'cdn';
 type CssDownloadState = 'idle' | 'success' | 'error';
-const packageManagerValues = packageManagers.map((manager) => manager.value);
-
-const humanize = (value: string) =>
-	value
-		.split(/[-_]/)
-		.filter(Boolean)
-		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-		.join(' ');
-
-const ProjectCodeBlock = ({ code, label }: { code: string; label: string }) => {
-	const clipboard = useClipboard({ timeout: 1500 });
-	const copyLabel = clipboard.copied
-		? 'Copied'
-		: clipboard.error
-			? 'Copy failed'
-			: 'Copy';
-
-	return (
-		<div className={classes.codeBlock}>
-			<div className={classes.codeHeader}>
-				<span>{label}</span>
-				<button type="button" onClick={() => clipboard.copy(code)}>
-					{clipboard.copied ? (
-						<IconCheck aria-hidden size={16} />
-					) : (
-						<IconCopy aria-hidden size={16} />
-					)}
-					<span aria-live="polite" aria-atomic="true">
-						{copyLabel}
-					</span>
-				</button>
-			</div>
-			<pre>
-				<code>{code}</code>
-			</pre>
-		</div>
-	);
-};
 
 const ProjectFont = ({
 	item,
@@ -116,7 +75,8 @@ const ProjectFont = ({
 						<h2>{item.displayName}</h2>
 						<p>
 							{item.designer ? `By ${item.designer} · ` : ''}
-							{humanize(item.classification)} · Package {item.packageVersion}
+							{formatFontLabel(item.classification)} · Package{' '}
+							{item.packageVersion}
 						</p>
 					</div>
 					{(item.status === 'deprecated' || !item.registryFactsCurrent) && (
@@ -131,13 +91,13 @@ const ProjectFont = ({
 					)}
 				</div>
 				<p className={classes.setupSummary}>
-					{humanize(item.format)} ·{' '}
+					{formatFontLabel(item.format)} ·{' '}
 					{hasSymbolCatalog(item)
 						? usesNameLigatures(item)
 							? 'Symbol ligatures'
 							: 'Symbol catalog'
-						: humanize(item.subset)}{' '}
-					· {item.weight} {humanize(item.style)}
+						: formatFontLabel(item.subset)}{' '}
+					· {item.weight} {formatFontLabel(item.style)}
 				</p>
 				<div
 					className={classes.expandedDetails}
@@ -147,14 +107,14 @@ const ProjectFont = ({
 					{tags.length > 0 && (
 						<ul className={classes.tags}>
 							{tags.map((tag) => (
-								<li key={tag}>{humanize(tag)}</li>
+								<li key={tag}>{formatFontLabel(tag)}</li>
 							))}
 						</ul>
 					)}
 					<dl className={classes.setup}>
 						<div>
 							<dt>Font format</dt>
-							<dd>{humanize(item.format)}</dd>
+							<dd>{formatFontLabel(item.format)}</dd>
 						</div>
 						<div>
 							<dt>
@@ -162,14 +122,14 @@ const ProjectFont = ({
 							</dt>
 							<dd>
 								{hasSymbolCatalog(item)
-									? `${humanize(item.subset)} ${usesNameLigatures(item) ? 'symbol ligatures' : 'symbols'}`
-									: humanize(item.subset)}
+									? `${formatFontLabel(item.subset)} ${usesNameLigatures(item) ? 'symbol ligatures' : 'symbols'}`
+									: formatFontLabel(item.subset)}
 							</dd>
 						</div>
 						<div>
 							<dt>Weight &amp; style</dt>
 							<dd>
-								{item.weight} {humanize(item.style)}
+								{item.weight} {formatFontLabel(item.style)}
 							</dd>
 						</div>
 						<div>
@@ -240,10 +200,7 @@ const CurrentProjectPage = () => {
 	const packageNames = items
 		.map((item) => `${item.packageName}@${item.packageVersion}`)
 		.join(' ');
-	const manager =
-		packageManagers.find((item) => item.value === packageManager) ??
-		packageManagers[0];
-	const installCommand = manager.command(packageNames);
+	const installCommand = getPackageManagerCommand(packageManager, packageNames);
 	const imports = items
 		.map((item) => `import '${item.packageName}/${item.cssFile}';`)
 		.join('\n');
@@ -254,17 +211,12 @@ const CurrentProjectPage = () => {
 	const verifiedItems = items.filter((item) => item.license.verified);
 	const unverifiedItems = items.filter((item) => !item.license.verified);
 	const staleRegistryItems = items.filter((item) => !item.registryFactsCurrent);
-	const registryRevisions = Array.from(
-		new Set(
-			verifiedItems
-				.map((item) => item.license.registryRevision)
-				.filter((revision): revision is string => Boolean(revision)),
-		),
-	);
 	const licenseGroups = Object.entries(
 		verifiedItems.reduce<Record<string, ProjectItem[]>>((groups, item) => {
 			const id = item.license.id ?? 'Unknown license';
-			groups[id] = [...(groups[id] ?? []), item];
+			const group = groups[id] ?? [];
+			group.push(item);
+			groups[id] = group;
 			return groups;
 		}, {}),
 	).sort(([left], [right]) => left.localeCompare(right));
@@ -506,22 +458,22 @@ const CurrentProjectPage = () => {
 								<div className={classes.codeStack}>
 									{method === 'package' ? (
 										<>
-											<ProjectCodeBlock
+											<CopyCodeBlock
 												label={`1 · Install ${singleItem ? 'package' : 'packages'}`}
 												code={installCommand}
 											/>
-											<ProjectCodeBlock
+											<CopyCodeBlock
 												label={`2 · Import font ${singleItem ? 'style' : 'styles'}`}
 												code={imports}
 											/>
 										</>
 									) : (
-										<ProjectCodeBlock
+										<CopyCodeBlock
 											label="1 · Add stylesheet links to HTML"
 											code={cdnLinks}
 										/>
 									)}
-									<ProjectCodeBlock
+									<CopyCodeBlock
 										label={`${method === 'package' ? '3' : '2'} · Apply font ${singleItem ? 'class' : 'classes'} in CSS`}
 										code={usageCss}
 									/>
@@ -617,15 +569,6 @@ const CurrentProjectPage = () => {
 								Open each family above, review its registry license, then choose
 								“Update font set” to refresh this receipt before redistributing
 								the files.
-							</p>
-						)}
-						{registryRevisions.length > 0 && (
-							<p className={classes.receiptMeta}>
-								Registry snapshot{' '}
-								{registryRevisions
-									.map((revision) => revision.slice(0, 10))
-									.join(', ')}
-								. Package versions are pinned in each font setup above.
 							</p>
 						)}
 					</section>

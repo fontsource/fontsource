@@ -1,3 +1,4 @@
+import { VisuallyHidden } from '@mantine/core';
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
@@ -5,7 +6,7 @@ import {
 	FamilyActions,
 	FamilyIdentity,
 	FamilyTabs,
-} from '@/components/preview/Tabs';
+} from '@/components/font-page/FamilyPageShell';
 import { createProjectItem } from '@/features/projects/createProjectItem';
 import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type {
@@ -13,6 +14,7 @@ import type {
 	GetFontVersionsResponse,
 	GetVariableFontResponse,
 } from '@/generated/api';
+import { getAxisLabel } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
 	getPreferredPreviewSubset,
@@ -22,10 +24,7 @@ import {
 import { saveFontPreviewSelection } from '@/utils/font-preview-selection';
 import { getPreviewText as getLanguagePreviewText } from '@/utils/language/language';
 import {
-	hasSymbolCatalog,
-	isDigitalFontFamily,
-	isPunctuationFontFamily,
-	isSymbolFontFamily,
+	getRegistryFamilyKind,
 	type RegistryFamily,
 	usesNameLigatures,
 } from '@/utils/registry';
@@ -73,27 +72,24 @@ const getModeText = (
 	mode: PreviewMode,
 	registry?: RegistryFamily,
 ) => {
-	const previewSubset = getPreferredPreviewSubset(metadata);
-	const isDigitalFamily = isDigitalFontFamily(registry);
-	const isPunctuationFamily = isPunctuationFontFamily(registry);
-	const isSymbolPreviewFamily =
-		(hasSymbolCatalog(registry) || isSymbolFontFamily(registry)) &&
-		!isDigitalFamily &&
-		!isPunctuationFamily;
-	const registrySample =
-		registry?.sampleText?.tester?.trim() ??
-		registry?.sampleText?.styles?.trim();
+	const previewSubset = getPreferredPreviewSubset(metadata, registry);
+	const familyKind = getRegistryFamilyKind(registry);
+	const registrySample = (
+		mode === 'paragraph'
+			? (registry?.sampleText?.long ?? registry?.sampleText?.short)
+			: registry?.sampleText?.short
+	)?.trim();
 
 	if (
 		registrySample &&
-		(mode === 'headline' || mode === 'paragraph' || isSymbolPreviewFamily)
+		(mode === 'headline' || mode === 'paragraph' || familyKind === 'symbols')
 	) {
 		return registrySample;
 	}
 
-	if (isSymbolPreviewFamily) return '';
+	if (familyKind === 'symbols') return '';
 
-	if (isDigitalFamily) {
+	if (familyKind === 'digital') {
 		const digitalPreviews: Record<PreviewMode, string> = {
 			headline: '12:48:36',
 			paragraph: 'TEMPERATURE 24.5',
@@ -104,7 +100,7 @@ const getModeText = (
 		return digitalPreviews[mode];
 	}
 
-	if (isPunctuationFamily) {
+	if (familyKind === 'punctuation') {
 		return mode === 'numbers'
 			? '0123456789'
 			: '「ことば」を、心地よく。\n句読点まで、美しく。';
@@ -117,27 +113,6 @@ const getModeText = (
 	}
 
 	return previewModes[mode];
-};
-
-const axisNames: Record<string, string> = {
-	FILL: 'Fill',
-	GRAD: 'Grade',
-	SOFT: 'Softness',
-	WONK: 'Wonky',
-	opsz: 'Optical size',
-	slnt: 'Slant',
-	wdth: 'Width',
-};
-
-const getWeightSpecimen = (
-	metadata: GetFontResponse,
-	registry?: RegistryFamily,
-) => {
-	return (
-		registry?.sampleText?.styles ??
-		registry?.sampleText?.tester ??
-		metadata.family
-	);
 };
 
 const weightNames: Record<number, string> = {
@@ -177,19 +152,14 @@ export const FamilyPreview = ({
 	registryUnavailable = false,
 	variableUnavailable = false,
 }: FamilyPreviewProps) => {
-	const previewSubset = getPreferredPreviewSubset(metadata);
+	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const usesLatinPreview = isLatinPreviewSubset(previewSubset);
-	const hasCatalog = hasSymbolCatalog(registry);
+	const hasCatalog = Boolean(registry?.symbols);
 	const hasNamedLigatures = usesNameLigatures(registry);
-	const isDigitalFamily = isDigitalFontFamily(registry);
-	const isPunctuationFamily = isPunctuationFontFamily(registry);
-	const isSymbolPreviewFamily =
-		(hasCatalog || isSymbolFontFamily(registry)) &&
-		!isDigitalFamily &&
-		!isPunctuationFamily;
-	const registrySample =
-		registry?.sampleText?.tester?.trim() ??
-		registry?.sampleText?.styles?.trim();
+	const familyKind = getRegistryFamilyKind(registry);
+	const isDigitalFamily = familyKind === 'digital';
+	const isSymbolPreviewFamily = familyKind === 'symbols';
+	const registrySample = registry?.sampleText?.short.trim();
 	const symbolPreviewUnavailable = isSymbolPreviewFamily && !registrySample;
 	const initialWeight = nearestWeight(metadata.weights, 600);
 	const initialMode: PreviewMode = isSymbolPreviewFamily
@@ -238,7 +208,7 @@ export const FamilyPreview = ({
 		: usesLatinPreview
 			? modeLabels
 			: scriptModeLabels;
-	const weightSpecimen = getWeightSpecimen(metadata, registry);
+	const weightSpecimen = registry?.sampleText?.short ?? metadata.family;
 	const previewStyle = {
 		'--preview-size': `${size}px`,
 		fontFamily,
@@ -311,9 +281,9 @@ export const FamilyPreview = ({
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
 				dangerouslySetInnerHTML={{ __html: variableCSS ?? staticCSS }}
 			/>
-			<h2 className={classes.visuallyHidden} id="preview-heading">
+			<VisuallyHidden component="h2" id="preview-heading">
 				Preview {metadata.family}
-			</h2>
+			</VisuallyHidden>
 
 			<div className={classes.workbench}>
 				<div className={classes.identityPanel}>
@@ -341,7 +311,7 @@ export const FamilyPreview = ({
 					/>
 				</div>
 
-				<FamilyTabs activeTab="preview" metadata={metadata} contained />
+				<FamilyTabs metadata={metadata} contained />
 
 				<div className={classes.workspace}>
 					<div className={classes.workspaceHeader}>
@@ -508,12 +478,12 @@ export const FamilyPreview = ({
 							{adjustableAxes.map(([axis, range]) => (
 								<label className={classes.axisControl} key={axis}>
 									<span>
-										{axisNames[axis] ?? axis.toUpperCase()}
+										{getAxisLabel(axis)}
 										<output>{axisValues[axis]}</output>
 									</span>
 									<input
 										type="range"
-										aria-label={`${axisNames[axis] ?? axis} axis`}
+										aria-label={`${getAxisLabel(axis)} axis`}
 										min={Number(range.min)}
 										max={Number(range.max)}
 										step={Number(range.step)}
