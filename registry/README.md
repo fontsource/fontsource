@@ -32,7 +32,7 @@ language record are logged and omitted; other families are matched against the
 registry language requirements using the cmap shared by every source face.
 Reviewed corrections in `data/family-overrides.json` are applied after provider
 generation when character coverage alone would produce misleading language
-claims or an upstream specialist font has no useful specimen text.
+claims or a specialist font has no useful specimen text.
 
 The [registry archive workflow](../.github/workflows/registry-archive.yml)
 runs after registry data changes. It copies the exact registry files and every
