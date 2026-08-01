@@ -14,6 +14,7 @@ import {
 	getOpenTypeFeatureName,
 	getRegistryContent,
 	getRegistryFamilyKind,
+	type RegistryDataState,
 	type RegistryFamily,
 	type RegistrySource,
 	usesNameLigatures,
@@ -34,9 +35,9 @@ interface FamilyAboutProps {
 	taxonomy?: GetRegistryTaxonomyResponse;
 	capabilities?: GetRegistrySourceCapabilitiesResponse;
 	capabilitySource?: RegistrySource;
-	registryUnavailable?: boolean;
+	registryState: RegistryDataState;
 	enrichmentUnavailable?: boolean;
-	capabilitiesUnavailable?: boolean;
+	capabilitiesState: RegistryDataState;
 	variableUnavailable?: boolean;
 }
 
@@ -66,9 +67,9 @@ export const FamilyAbout = ({
 	taxonomy,
 	capabilities,
 	capabilitySource,
-	registryUnavailable = false,
+	registryState,
 	enrichmentUnavailable = false,
-	capabilitiesUnavailable = false,
+	capabilitiesState,
 	variableUnavailable = false,
 }: FamilyAboutProps) => {
 	const hasCatalog = Boolean(registry?.symbols);
@@ -77,6 +78,8 @@ export const FamilyAbout = ({
 	const isSymbolFamily = familyKind === 'symbols';
 	const isPunctuationFamily = familyKind === 'punctuation';
 	const isDigitalFamily = familyKind === 'digital';
+	const isSpecialUseFamily =
+		hasCatalog || isSymbolFamily || isPunctuationFamily || isDigitalFamily;
 	const content = getRegistryContent(registry);
 	const description =
 		content?.description ??
@@ -102,6 +105,7 @@ export const FamilyAbout = ({
 			label: taxonomy?.tags[id]?.label ?? formatFontLabel(id),
 		})) ?? [];
 	const familyLanguages = languages ?? [];
+	const languageCount = registry?.languages.length ?? familyLanguages.length;
 	const primaryLanguage = familyLanguages.find(
 		(language) => language.id === registry?.primaryLanguage,
 	);
@@ -122,26 +126,21 @@ export const FamilyAbout = ({
 				new Set([...capabilities.features.gsub, ...capabilities.features.gpos]),
 			).sort()
 		: [];
-	let availabilityMessage: string | undefined;
-	if (registryUnavailable) {
-		availabilityMessage =
-			'The family registry record is temporarily unavailable. Package facts and download options remain available.';
-	} else if (capabilitiesUnavailable) {
-		availabilityMessage =
-			'Exact source capabilities are temporarily unavailable. Family, package, and license information remain available.';
-	} else if (variableUnavailable) {
-		availabilityMessage =
-			'Variable-axis details are temporarily unavailable. Static preview and package facts remain available.';
-	} else if (enrichmentUnavailable) {
-		availabilityMessage =
-			'Some supporting registry details are temporarily unavailable. The family record and registry license remain available.';
-	}
+	const availabilityMessage =
+		registryState === 'unavailable'
+			? 'Some family details are temporarily unavailable. Preview and download options still work.'
+			: undefined;
+	const technicalAvailabilityMessage =
+		registryState === 'available' &&
+		(enrichmentUnavailable || capabilitiesState === 'unavailable')
+			? 'Some technical source details are temporarily unavailable. Preview, glyph browsing, and download options are unaffected.'
+			: undefined;
 	let coverageDescription =
-		'Registry language details are unavailable. The package subsets below describe downloadable character sets, not exact language support.';
+		'Exact language coverage is not listed. Downloadable subsets describe character groups, not guaranteed language support.';
 	if (hasCatalog) {
 		coverageDescription = hasNamedLigatures
-			? 'This family provides a verified catalog of named symbol ligatures and their Unicode mappings.'
-			: 'This family provides a verified catalog of mapped symbols.';
+			? 'This family includes a catalog of named symbol ligatures and their Unicode mappings.'
+			: 'This family includes a catalog of mapped symbols.';
 	} else if (isPunctuationFamily) {
 		coverageDescription =
 			'This family is designed to replace and space Japanese punctuation alongside another Japanese text font.';
@@ -152,12 +151,13 @@ export const FamilyAbout = ({
 		coverageDescription =
 			'This family is intended for mapped symbols rather than running language text.';
 	} else if (primaryLanguage) {
-		coverageDescription = `${primaryLanguage.preferredName ?? primaryLanguage.name} is the primary language.`;
+		coverageDescription = `${primaryLanguage.preferredName ?? primaryLanguage.name} is listed as the primary language.`;
 	} else if (registry?.primaryScript) {
-		coverageDescription = `${registry.primaryScript} is the primary script.`;
+		coverageDescription = `${registry.primaryScript} is listed as the primary script.`;
+	} else if (languageCount > 0) {
+		coverageDescription = `${languageCount.toLocaleString('en')} languages are listed for this family.`;
 	} else if (registry) {
-		coverageDescription =
-			'The registry does not list semantic language coverage for this family.';
+		coverageDescription = 'Language support is not listed for this family.';
 	}
 	return (
 		<section className={classes.page} aria-labelledby="about-heading">
@@ -174,7 +174,6 @@ export const FamilyAbout = ({
 
 			<div className={classes.intro}>
 				<div className={classes.story}>
-					<p className={classes.kicker}>About this family</p>
 					<h2 id="about-heading">{metadata.family}, in context.</h2>
 					<div className={classes.prose}>
 						<RegistryMarkdown value={description} />
@@ -202,7 +201,7 @@ export const FamilyAbout = ({
 						<dd>{classifications.join(', ')}</dd>
 					</div>
 					<div>
-						<dt>Languages</dt>
+						<dt>{isSpecialUseFamily ? 'Character use' : 'Languages'}</dt>
 						<dd>
 							{hasCatalog
 								? hasNamedLigatures
@@ -215,7 +214,9 @@ export const FamilyAbout = ({
 										: isSymbolFamily
 											? 'Mapped symbols'
 											: registry
-												? `${registry.languages.length.toLocaleString('en')} supported`
+												? registry.languages.length > 0
+													? `${registry.languages.length.toLocaleString('en')} supported`
+													: 'Not listed'
 												: `${metadata.subsets.length} downloadable subsets`}
 						</dd>
 					</div>
@@ -232,7 +233,7 @@ export const FamilyAbout = ({
 					{registry?.license.id && (
 						<div>
 							<dt>License</dt>
-							<dd>{registry.license.id} · verified</dd>
+							<dd>{registry.license.id}</dd>
 						</div>
 					)}
 				</dl>
@@ -243,6 +244,7 @@ export const FamilyAbout = ({
 					familyId={metadata.id}
 					family={metadata.family}
 					license={registry?.license}
+					registryState={registryState}
 					variant="detail"
 				/>
 			</div>
@@ -250,8 +252,8 @@ export const FamilyAbout = ({
 			{tags.length > 0 && (
 				<section className={classes.taxonomy} aria-labelledby="tags-heading">
 					<div>
-						<h2 id="tags-heading">How the registry describes it</h2>
-						<p>Reviewed categories and visual characteristics.</p>
+						<h2 id="tags-heading">Style and character</h2>
+						<p>Browse similar classifications and visual characteristics.</p>
 					</div>
 					<ul>
 						{tags.map((tag) => (
@@ -280,19 +282,19 @@ export const FamilyAbout = ({
 			>
 				<div className={classes.sectionHeading}>
 					<div>
-						<h2 id="coverage-heading">Coverage and capabilities</h2>
-						<p>
-							What the registry and published packages say this family supports.
-						</p>
+						<h2 id="coverage-heading">Characters and features</h2>
+						<p>What this family includes and how its files are structured.</p>
 					</div>
 					<Link to={`/fonts/${metadata.id}/glyphs`}>Explore glyphs →</Link>
 				</div>
 
 				<div className={classes.capabilityGrid}>
 					<div>
-						<h3>Languages and scripts</h3>
+						<h3>
+							{isSpecialUseFamily ? 'Character use' : 'Languages and scripts'}
+						</h3>
 						<p>{coverageDescription}</p>
-						{familyLanguages.length > 0 ? (
+						{!isSpecialUseFamily && familyLanguages.length > 0 ? (
 							<ul className={classes.languageList}>
 								{familyLanguages.slice(0, 6).map((language) => (
 									<li key={language.id}>
@@ -309,7 +311,7 @@ export const FamilyAbout = ({
 							!isDigitalFamily ? (
 							<p>{metadata.subsets.map(formatFontLabel).join(', ')}</p>
 						) : null}
-						{familyLanguages.length > 6 && (
+						{!isSpecialUseFamily && familyLanguages.length > 6 && (
 							<p className={classes.more}>
 								+{(registry?.languages.length ?? familyLanguages.length) - 6}{' '}
 								more languages
@@ -346,7 +348,11 @@ export const FamilyAbout = ({
 								})}
 							</dl>
 						) : metadata.variable ? (
-							<p>Variable-axis details are temporarily unavailable.</p>
+							<p>
+								{variableUnavailable
+									? 'Axis details are temporarily unavailable.'
+									: 'This variable font does not publish axis details.'}
+							</p>
 						) : (
 							<p>This release contains static font files.</p>
 						)}
@@ -382,11 +388,16 @@ export const FamilyAbout = ({
 				<summary>
 					<span className={classes.technicalLabel}>
 						<strong>Technical details</strong>
-						<small>Source files, provenance, and related families</small>
+						<small>Source files, provenance, and family history</small>
 					</span>
 					<span className={classes.disclosureIcon} aria-hidden="true" />
 				</summary>
 				<div className={classes.technicalContent}>
+					{technicalAvailabilityMessage && (
+						<p className={classes.technicalNotice}>
+							{technicalAvailabilityMessage}
+						</p>
+					)}
 					<section
 						className={classes.provenance}
 						aria-labelledby="source-heading"
@@ -518,8 +529,8 @@ export const FamilyAbout = ({
 								<div>
 									<h2 id="related-heading">Related families</h2>
 									<p>
-										The registry recommends a maintained successor for this
-										family.
+										The Fontsource Registry recommends a maintained successor
+										for this family.
 									</p>
 								</div>
 							</div>

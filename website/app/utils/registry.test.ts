@@ -9,6 +9,7 @@ import {
 	findUnmappedCharacters,
 	getRegistryCharacterGroups,
 	getRegistryFamilyKind,
+	getUnicodeCharacter,
 	type RegistryFamily,
 	selectRegistryFamilyLanguages,
 	usesNameLigatures,
@@ -97,6 +98,28 @@ describe('registry character capabilities', () => {
 		});
 
 		expect(groups?.all.length).toBeGreaterThan(4_096);
+	});
+
+	it('ignores malformed, reversed, and out-of-range capability entries', () => {
+		expect(
+			getRegistryCharacterGroups({
+				...capabilities,
+				unicodeRange: 'invalid, U+110000, U+0042-0041, U+0041',
+			}),
+		).toEqual({
+			all: ['A'],
+			letters: ['A'],
+			numbers: [],
+			punctuation: [],
+			symbols: [],
+		});
+	});
+
+	it('rejects values that are not Unicode scalar values', () => {
+		expect(getUnicodeCharacter(0x41)).toBe('A');
+		expect(getUnicodeCharacter(-1)).toBeUndefined();
+		expect(getUnicodeCharacter(0xd800)).toBeUndefined();
+		expect(getUnicodeCharacter(0x110000)).toBeUndefined();
 	});
 });
 

@@ -37,15 +37,6 @@
 	}
 }
 
-.kicker {
-	margin: 0 0 12px;
-	color: var(--mantine-color-purple-0);
-	font-size: 12px;
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-}
-
 .prose {
 	max-width: 68ch;
 	color: light-dark(#34435c, #cbd3e2);
@@ -315,6 +306,16 @@
 }
 
 .technicalContent {
+	.technicalNotice {
+		margin: 24px 0 0;
+		color: light-dark(#52617a, #aeb9cc);
+		font-size: 13px;
+	}
+
+	.technicalNotice + .provenance {
+		padding-top: 24px;
+	}
+
 	.provenance,
 	.related {
 		border-bottom: 0;

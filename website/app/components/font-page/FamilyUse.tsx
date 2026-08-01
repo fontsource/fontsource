@@ -31,6 +31,7 @@ import { getPreferredPreviewSubset } from '@/utils/font-preview';
 import { readFontPreviewSelection } from '@/utils/font-preview-selection';
 import {
 	getRegistryFamilyKind,
+	type RegistryDataState,
 	type RegistryFamily,
 	usesNameLigatures,
 } from '@/utils/registry';
@@ -45,6 +46,7 @@ interface FamilyUseProps {
 	staticCSS: string;
 	variableCSS?: string;
 	registry?: RegistryFamily;
+	registryState: RegistryDataState;
 }
 
 type Path = 'download' | 'web';
@@ -81,6 +83,7 @@ export const FamilyUse = ({
 	variableCSS,
 	versions,
 	registry,
+	registryState,
 }: FamilyUseProps) => {
 	const [searchParams] = useSearchParams();
 	const familyKind = getRegistryFamilyKind(registry);
@@ -243,9 +246,9 @@ export const FamilyUse = ({
 					: 'A desktop-ready TTF for the selected weight, style, and character set.';
 	const isPreparingDownload =
 		downloadState === 'fetching' || downloadState === 'building';
-	const hasVerifiedLicenseText = Boolean(registry);
-	const downloadButtonLabel = !hasVerifiedLicenseText
-		? 'License verification required'
+	const hasRegistryLicenseText = Boolean(registry);
+	const downloadButtonLabel = !hasRegistryLicenseText
+		? 'License details required'
 		: downloadState === 'fetching'
 			? 'Fetching files…'
 			: downloadState === 'building'
@@ -255,8 +258,8 @@ export const FamilyUse = ({
 					: downloadState === 'success'
 						? 'Download again'
 						: 'Download selected .zip';
-	const downloadStatus = !hasVerifiedLicenseText
-		? 'The registry license text must be available before Fontsource can build this custom archive.'
+	const downloadStatus = !hasRegistryLicenseText
+		? 'The Registry license text must be available before Fontsource can build this custom archive.'
 		: downloadState === 'fetching'
 			? 'Fetching the selected font and license…'
 			: downloadState === 'building'
@@ -440,6 +443,7 @@ export const FamilyUse = ({
 									familyId={metadata.id}
 									family={metadata.family}
 									license={registry?.license}
+									registryState={registryState}
 								/>
 							</div>
 							<fieldset
@@ -578,7 +582,7 @@ export const FamilyUse = ({
 									type="button"
 									className={classes.primaryButton}
 									data-busy={isPreparingDownload || undefined}
-									disabled={isPreparingDownload || !hasVerifiedLicenseText}
+									disabled={isPreparingDownload || !hasRegistryLicenseText}
 									onClick={() => void downloadSelectedFiles()}
 								>
 									<IconDownload aria-hidden height={18} stroke="currentColor" />
@@ -592,9 +596,9 @@ export const FamilyUse = ({
 									{downloadStatus}
 								</p>
 								<p className={classes.downloadProvenance}>
-									{hasVerifiedLicenseText
-										? 'The archive is assembled in your browser from Fontsource font files and the exact license text verified by the registry.'
-										: 'A custom archive cannot be built until the registry license text is available. The complete package download remains available below.'}
+									{hasRegistryLicenseText
+										? 'The archive is assembled in your browser from Fontsource font files and the license text published in the Registry.'
+										: 'A custom archive cannot be built until the Registry license text is available. The complete package download remains available below.'}
 								</p>
 								<a
 									className={classes.completeDownload}
@@ -640,6 +644,7 @@ export const FamilyUse = ({
 									familyId={metadata.id}
 									family={metadata.family}
 									license={registry?.license}
+									registryState={registryState}
 								/>
 							</div>
 							<fieldset className={classes.methodSwitch}>
