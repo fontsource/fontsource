@@ -9,7 +9,7 @@ import browserslist from 'browserslist';
 import mdx from 'fumadocs-mdx/vite';
 import { browserslistToTargets } from 'lightningcss';
 import { defineConfig } from 'vite';
-import * as MdxConfig from './source.config';
+import * as MdxConfig from './source.config.ts';
 
 const targets = browserslistToTargets(
 	browserslist([
