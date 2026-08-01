@@ -18,6 +18,7 @@ const baseItem: ProjectItem = {
 	tags: ['vintage'],
 	designer: 'Undercase Type',
 	status: 'active',
+	registryFactsCurrent: true,
 	format: 'variable',
 	subset: 'latin',
 	style: 'normal',
@@ -28,6 +29,7 @@ const baseItem: ProjectItem = {
 	cssFile: 'latin-full.css',
 	fontFamily: 'Fraunces Variable',
 	sampleText: 'Make something memorable.',
+	symbolInputModes: [],
 	license: {
 		verified: true,
 		id: 'OFL-1.1',
@@ -54,28 +56,34 @@ describe('current project output', () => {
 	it('keeps the full stylesheet and ligature guidance for icon families', () => {
 		const icon = {
 			...baseItem,
-			familyId: 'material-symbols-outlined',
+			familyId: 'catalog-family',
 			category: 'icons' as const,
 			cssFile: 'full.css',
 			fontFamily: 'Material Symbols Outlined Variable',
+			symbolInputModes: [
+				'codepoint',
+				'name-ligature',
+			] as ProjectItem['symbolInputModes'],
 		};
 
 		expect(getCdnUrl(icon).endsWith('/full.css')).toBe(true);
 		expect(getUsageBlock(icon)).toContain("font-feature-settings: 'liga';");
-		expect(getUsageNote(icon)).toContain('icon names as ligatures');
+		expect(getUsageNote(icon)).toContain('verified symbol names as ligatures');
 	});
 
 	it('uses specialist fallback and readout declarations', () => {
 		const yakuHan = {
 			...baseItem,
-			familyId: 'yakuhanjp',
+			familyId: 'punctuation-helper',
 			fontFamily: 'Yaku Han JP',
+			tags: ['special-use/punctuation'],
 		};
 		const dseg = {
 			...baseItem,
-			familyId: 'dseg7-classic',
+			familyId: 'digital-readout',
 			category: 'display' as const,
 			fontFamily: 'DSEG7 Classic',
+			tags: ['special-use/digital-display'],
 		};
 
 		expect(getFontStack(yakuHan)).toBe(

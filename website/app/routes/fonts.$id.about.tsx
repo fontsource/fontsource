@@ -17,8 +17,9 @@ import { cacheHeaders } from '@/utils/cache';
 import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import {
+	selectRegistryDistributionSource,
 	selectRegistryFamilyLanguages,
-	selectRegistrySource,
+	validateRegistryFamily,
 } from '@/utils/registry';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -28,7 +29,10 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const options = { signal: request.signal };
 	const metadataPromise = getFont(parameters, options);
 	const registryResultPromise = getRegistryFamily(parameters, options).then(
-		(value) => ({ value, unavailable: false }),
+		(value) => {
+			const registry = validateRegistryFamily(value);
+			return { value: registry, unavailable: !registry };
+		},
 		() => ({ value: undefined, unavailable: true }),
 	);
 	const variablePromise = metadataPromise.then((metadata) =>
@@ -36,21 +40,36 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			? getVariableFont(parameters, options).catch(() => undefined)
 			: undefined,
 	);
-	const capabilityDetailsPromise = registryResultPromise.then(
-		async (registryResult) => {
-			const capabilitySource = selectRegistrySource(registryResult.value);
-			const capabilitiesResult = capabilitySource
-				? await getRegistrySourceCapabilities(
-						{ sha256: capabilitySource.sha256 },
-						options,
-					).then(
-						(value) => ({ value, unavailable: false }),
-						() => ({ value: undefined, unavailable: true }),
-					)
-				: { value: undefined, unavailable: false };
-			return { capabilitySource, capabilitiesResult };
-		},
-	);
+	const capabilityDetailsPromise = Promise.all([
+		metadataPromise,
+		registryResultPromise,
+		variablePromise,
+	]).then(async ([metadata, registryResult, variable]) => {
+		const style = metadata.styles.includes('normal')
+			? 'normal'
+			: (metadata.styles[0] ?? 'normal');
+		const weight = metadata.weights.includes(400)
+			? 400
+			: (metadata.weights[0] ?? 400);
+		const capabilitySource = selectRegistryDistributionSource(
+			registryResult.value,
+			{
+				format: variable ? 'variable' : 'static',
+				style,
+				weight,
+			},
+		);
+		const capabilitiesResult = capabilitySource
+			? await getRegistrySourceCapabilities(
+					{ sha256: capabilitySource.sha256 },
+					options,
+				).then(
+					(value) => ({ value, unavailable: false }),
+					() => ({ value: undefined, unavailable: true }),
+				)
+			: { value: undefined, unavailable: false };
+		return { capabilitySource, capabilitiesResult };
+	});
 	const [
 		metadata,
 		variable,

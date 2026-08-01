@@ -1,91 +1,121 @@
 import type {
-	GetFontResponse,
 	GetRegistryFamilyResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 
-type RegistrySource = GetRegistryFamilyResponse['sources'][number];
+type RegistrySymbolInputMode = 'codepoint' | 'name-ligature';
+type RegistryFamily = Omit<
+	GetRegistryFamilyResponse,
+	'distribution' | 'license'
+> & {
+	license: Omit<GetRegistryFamilyResponse['license'], 'text'> & {
+		text: string;
+	};
+	distribution: NonNullable<GetRegistryFamilyResponse['distribution']>;
+	symbols?: {
+		catalogUrl: string;
+		inputModes: RegistrySymbolInputMode[];
+	};
+};
+type RegistrySource = RegistryFamily['sources'][number];
 type UnicodeRange = readonly [number, number];
-type FamilyIdentity = Pick<GetFontResponse, 'category' | 'id'>;
 
-const isIconFontFamily = (
-	metadata: FamilyIdentity,
-	registry?: GetRegistryFamilyResponse,
-) =>
-	Boolean(registry?.symbolsUrl) ||
-	Boolean(registry?.tags.includes('special-use/icons')) ||
-	metadata.category === 'icons';
+const validateRegistryFamily = (
+	family: GetRegistryFamilyResponse,
+): RegistryFamily | undefined => {
+	const candidate = family as GetRegistryFamilyResponse & {
+		symbols?: unknown;
+	};
+	if (!candidate.distribution || !candidate.license.text?.trim()) return;
 
-const isPunctuationFontFamily = (
-	metadata: FamilyIdentity,
-	registry?: GetRegistryFamilyResponse,
-) =>
-	Boolean(registry?.tags.includes('special-use/punctuation')) ||
-	metadata.id.startsWith('yakuhan');
+	if (candidate.symbols !== undefined) {
+		if (
+			typeof candidate.symbols !== 'object' ||
+			candidate.symbols === null ||
+			!('catalogUrl' in candidate.symbols) ||
+			typeof candidate.symbols.catalogUrl !== 'string' ||
+			!candidate.symbols.catalogUrl ||
+			!('inputModes' in candidate.symbols) ||
+			!Array.isArray(candidate.symbols.inputModes) ||
+			candidate.symbols.inputModes.length === 0 ||
+			!candidate.symbols.inputModes.every(
+				(mode) => mode === 'codepoint' || mode === 'name-ligature',
+			)
+		) {
+			return;
+		}
+	}
 
-const isDigitalFontFamily = (
-	metadata: FamilyIdentity,
-	registry?: GetRegistryFamilyResponse,
-) =>
-	Boolean(registry?.tags.includes('special-use/digital-display')) ||
-	metadata.id.startsWith('dseg');
+	return candidate as RegistryFamily;
+};
+
+const hasRegistryTag = (registry: RegistryFamily | undefined, tag: string) =>
+	registry?.tags.includes(tag) ?? false;
+
+const hasSymbolCatalog = (registry?: RegistryFamily) =>
+	Boolean(registry?.symbols);
+
+const isSymbolFontFamily = (registry?: RegistryFamily) =>
+	registry?.classifications.includes('symbols') ?? false;
+
+const usesNameLigatures = (registry?: RegistryFamily) =>
+	registry?.symbols?.inputModes.includes('name-ligature') ?? false;
+
+const isPunctuationFontFamily = (registry?: RegistryFamily) =>
+	hasRegistryTag(registry, 'special-use/punctuation');
+
+const isDigitalFontFamily = (registry?: RegistryFamily) =>
+	hasRegistryTag(registry, 'special-use/digital-display');
 
 const sourceByHash = (
-	registry: GetRegistryFamilyResponse,
+	registry: RegistryFamily,
 	sha256?: string,
 ): RegistrySource | undefined =>
 	sha256
 		? registry.sources.find((source) => source.sha256 === sha256)
 		: undefined;
 
-const selectRegistrySource = (
-	registry?: GetRegistryFamilyResponse,
+interface RegistrySourceSelection {
+	format: 'static' | 'variable';
+	style: 'normal' | 'italic';
+	weight?: number;
+}
+
+const selectRegistryDistributionSource = (
+	registry: RegistryFamily | undefined,
+	selection: RegistrySourceSelection,
 ): RegistrySource | undefined => {
 	if (!registry) return;
 
-	const variable = registry.distribution?.variable ?? [];
-	const staticVariants = registry.distribution?.static ?? [];
-	const preferredHashes = [
+	const variable = registry.distribution.variable ?? [];
+	const staticVariants = registry.distribution.static ?? [];
+	const selectedVariable =
 		variable.find(
-			(variant) => variant.style === 'normal' && variant.axisKey === 'standard',
-		)?.source,
-		variable.find(
-			(variant) => variant.style === 'normal' && variant.axisKey === 'full',
-		)?.source,
-		variable.find(
-			(variant) => variant.style === 'normal' && variant.axisKey === 'wght',
-		)?.source,
-		variable.find((variant) => variant.style === 'normal')?.source,
+			(variant) =>
+				variant.style === selection.style && variant.axisKey === 'standard',
+		) ?? variable.find((variant) => variant.style === selection.style);
+	const selectedStatic =
 		staticVariants.find(
-			(variant) => variant.style === 'normal' && variant.weight === 400,
-		)?.source,
-		staticVariants.find((variant) => variant.style === 'normal')?.source,
-		variable[0]?.source,
-		staticVariants[0]?.source,
-	];
+			(variant) =>
+				variant.style === selection.style &&
+				variant.weight === (selection.weight ?? 400),
+		) ?? staticVariants.find((variant) => variant.style === selection.style);
+	const preferredHashes =
+		selection.format === 'variable'
+			? [selectedVariable?.source]
+			: [selectedStatic?.source];
 
 	for (const sha256 of preferredHashes) {
 		const source = sourceByHash(registry, sha256);
 		if (source) return source;
 	}
 
-	return (
-		registry.sources.find(
-			(source) => source.type === 'variable' && source.style === 'normal',
-		) ??
-		registry.sources.find(
-			(source) =>
-				source.type === 'static' &&
-				source.style === 'normal' &&
-				source.weight === 400,
-		) ??
-		registry.sources[0]
-	);
+	return;
 };
 
 const selectRegistryFamilyLanguages = (
-	registry?: GetRegistryFamilyResponse,
+	registry?: RegistryFamily,
 	languages?: ListRegistryLanguagesResponse,
 	limit = 12,
 ) => {
@@ -244,17 +274,24 @@ const getOpenTypeFeatureName = (tag: string) =>
 export type {
 	RegistryCharacterCatalog,
 	RegistryCharacterGroups,
+	RegistryFamily,
 	RegistrySource,
+	RegistrySourceSelection,
+	RegistrySymbolInputMode,
 	UnicodeRange,
 };
 export {
 	findUnmappedCharacters,
 	getOpenTypeFeatureName,
 	getRegistryCharacterGroups,
+	hasRegistryTag,
+	hasSymbolCatalog,
 	isDigitalFontFamily,
-	isIconFontFamily,
 	isPunctuationFontFamily,
+	isSymbolFontFamily,
 	parseRegistryUnicodeRange,
+	selectRegistryDistributionSource,
 	selectRegistryFamilyLanguages,
-	selectRegistrySource,
+	usesNameLigatures,
+	validateRegistryFamily,
 };

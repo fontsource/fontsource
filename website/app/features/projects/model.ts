@@ -17,6 +17,7 @@ const projectItemSchema = z.object({
 	tags: z.array(z.string().min(1)),
 	designer: z.string().min(1).optional(),
 	status: z.enum(['active', 'deprecated']),
+	registryFactsCurrent: z.boolean().default(false),
 	format: z.enum(['variable', 'static']),
 	subset: z.string().min(1),
 	style: z.enum(['normal', 'italic']),
@@ -27,6 +28,7 @@ const projectItemSchema = z.object({
 	cssFile: z.string().min(1),
 	fontFamily: z.string().min(1),
 	sampleText: z.string().min(1),
+	symbolInputModes: z.array(z.enum(['codepoint', 'name-ligature'])).default([]),
 	license: z.object({
 		verified: z.boolean().default(false),
 		id: z.string().min(1).optional(),

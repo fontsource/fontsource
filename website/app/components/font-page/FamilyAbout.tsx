@@ -2,7 +2,6 @@ import { Link } from 'react-router';
 
 import type {
 	GetFontResponse,
-	GetRegistryFamilyResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetRegistryTaxonomyResponse,
 	GetVariableFontResponse,
@@ -12,10 +11,13 @@ import type {
 import { getFontFamilyStack } from '@/utils/font-preview';
 import {
 	getOpenTypeFeatureName,
+	hasSymbolCatalog,
 	isDigitalFontFamily,
-	isIconFontFamily,
 	isPunctuationFontFamily,
+	isSymbolFontFamily,
+	type RegistryFamily,
 	type RegistrySource,
+	usesNameLigatures,
 } from '@/utils/registry';
 
 import classes from './FamilyAbout.module.css';
@@ -26,7 +28,7 @@ interface FamilyAboutProps {
 	staticCSS: string;
 	variable?: GetVariableFontResponse;
 	variableCSS?: string;
-	registry?: GetRegistryFamilyResponse;
+	registry?: RegistryFamily;
 	languages?: ListRegistryLanguagesResponse;
 	axisRegistry?: ListRegistryAxesResponse;
 	taxonomy?: GetRegistryTaxonomyResponse;
@@ -60,7 +62,7 @@ const formatDate = (value?: string) => {
 const getRegistryAssetUrl = (value: string) =>
 	new URL(value, 'https://api.fontsource.org').toString();
 
-const getLocalizedContent = (registry?: GetRegistryFamilyResponse) => {
+const getLocalizedContent = (registry?: RegistryFamily) => {
 	const content = registry?.content;
 	if (!content) return;
 	const entries = Object.entries(content);
@@ -130,20 +132,12 @@ const MarkdownContent = ({ value }: { value: string }) => (
 	</>
 );
 
-const getSpecimen = (
-	metadata: GetFontResponse,
-	registry?: GetRegistryFamilyResponse,
-) => {
-	if (isIconFontFamily(metadata, registry)) {
-		return 'home  favorite  settings';
-	}
-	if (isDigitalFontFamily(metadata, registry)) {
-		return '12:48  36.90';
-	}
-	if (isPunctuationFontFamily(metadata, registry)) {
-		return '「、。」';
-	}
-	return 'Qf & g';
+const getSpecimen = (metadata: GetFontResponse, registry?: RegistryFamily) => {
+	return (
+		registry?.sampleText?.styles ??
+		registry?.sampleText?.tester ??
+		metadata.family
+	);
 };
 
 export const FamilyAbout = ({
@@ -162,9 +156,11 @@ export const FamilyAbout = ({
 	capabilitiesUnavailable = false,
 	variableUnavailable = false,
 }: FamilyAboutProps) => {
-	const isIconFamily = isIconFontFamily(metadata, registry);
-	const isPunctuationFamily = isPunctuationFontFamily(metadata, registry);
-	const isDigitalFamily = isDigitalFontFamily(metadata, registry);
+	const hasCatalog = hasSymbolCatalog(registry);
+	const hasNamedLigatures = usesNameLigatures(registry);
+	const isSymbolFamily = isSymbolFontFamily(registry);
+	const isPunctuationFamily = isPunctuationFontFamily(registry);
+	const isDigitalFamily = isDigitalFontFamily(registry);
 	const content = getLocalizedContent(registry);
 	const description =
 		content?.description ??
@@ -175,10 +171,10 @@ export const FamilyAbout = ({
 				? content.article.slice(content.description?.length ?? 0)
 				: content.article
 			: undefined;
-	const fontFamily = getFontFamilyStack(metadata, Boolean(variable));
+	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
 	const specimenStyle = {
 		fontFamily,
-		fontFeatureSettings: isIconFamily ? '"liga"' : undefined,
+		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
 	};
 	const classifications = registry?.classifications.map(
 		(value) => taxonomy?.classifications[value]?.label ?? humanize(value),
@@ -266,15 +262,19 @@ export const FamilyAbout = ({
 					<div>
 						<dt>Languages</dt>
 						<dd>
-							{isIconFamily
-								? 'Symbol catalog'
+							{hasCatalog
+								? hasNamedLigatures
+									? 'Named symbol catalog'
+									: 'Symbol catalog'
 								: isPunctuationFamily
 									? 'Japanese punctuation'
 									: isDigitalFamily
 										? 'Display characters'
-										: registry
-											? `${registry.languages.length.toLocaleString('en')} supported`
-											: `${metadata.subsets.length} downloadable subsets`}
+										: isSymbolFamily
+											? 'Mapped symbols'
+											: registry
+												? `${registry.languages.length.toLocaleString('en')} supported`
+												: `${metadata.subsets.length} downloadable subsets`}
 						</dd>
 					</div>
 					<div>
@@ -351,19 +351,25 @@ export const FamilyAbout = ({
 					<div>
 						<h3>Languages and scripts</h3>
 						<p>
-							{isIconFamily
-								? 'This is a named symbol family rather than a language text font.'
+							{hasCatalog
+								? hasNamedLigatures
+									? 'This family provides a verified catalog of named symbol ligatures and their Unicode mappings.'
+									: 'This family provides a verified catalog of mapped symbols.'
 								: isPunctuationFamily
 									? 'This family is designed to replace and space Japanese punctuation alongside another Japanese text font.'
 									: isDigitalFamily
 										? 'This family is designed for numerical readouts and compact display labels.'
-										: primaryLanguage
-											? `${primaryLanguage.preferredName ?? primaryLanguage.name} is the primary language.`
-											: registry?.primaryScript
-												? `${registry.primaryScript} is the primary script.`
-												: 'Language details are based on current registry metadata.'}
+										: isSymbolFamily
+											? 'This family is intended for mapped symbols rather than running language text.'
+											: primaryLanguage
+												? `${primaryLanguage.preferredName ?? primaryLanguage.name} is the primary language.`
+												: registry?.primaryScript
+													? `${registry.primaryScript} is the primary script.`
+													: registry
+														? 'The registry does not list semantic language coverage for this family.'
+														: 'Registry language details are unavailable. The package subsets below describe downloadable character sets, not exact language support.'}
 						</p>
-						{familyLanguages.length > 0 && !isIconFamily ? (
+						{familyLanguages.length > 0 ? (
 							<ul className={classes.languageList}>
 								{familyLanguages.slice(0, 6).map((language) => (
 									<li key={language.id}>
@@ -374,7 +380,10 @@ export const FamilyAbout = ({
 									</li>
 								))}
 							</ul>
-						) : !isIconFamily && !isPunctuationFamily && !isDigitalFamily ? (
+						) : !registry &&
+							!isSymbolFamily &&
+							!isPunctuationFamily &&
+							!isDigitalFamily ? (
 							<p>{metadata.subsets.map(humanize).join(', ')}</p>
 						) : null}
 						{familyLanguages.length > 6 && (
@@ -422,7 +431,7 @@ export const FamilyAbout = ({
 							<div className={classes.featureSummary}>
 								<strong>
 									OpenType features in{' '}
-									{capabilitySource?.filename ?? 'the representative source'}
+									{capabilitySource?.filename ?? 'the selected source'}
 								</strong>
 								<ul className={classes.featureList}>
 									{featureTags.slice(0, 8).map((tag) => (
@@ -514,19 +523,19 @@ export const FamilyAbout = ({
 							)}
 							{capabilitySource && capabilities && (
 								<div>
-									<dt>Capability sample</dt>
+									<dt>Selected capability source</dt>
 									<dd>{capabilitySource.filename}</dd>
 								</div>
 							)}
 							{capabilities && (
 								<div>
-									<dt>Sample outline</dt>
+									<dt>Selected source outline</dt>
 									<dd>{capabilities.outline.toUpperCase()}</dd>
 								</div>
 							)}
 							{capabilities && (
 								<div>
-									<dt>Sample cmap</dt>
+									<dt>Selected source cmap</dt>
 									<dd>
 										{capabilities.codepointCount.toLocaleString('en')}{' '}
 										codepoints

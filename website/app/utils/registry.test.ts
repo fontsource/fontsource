@@ -8,11 +8,14 @@ import type {
 import {
 	findUnmappedCharacters,
 	getRegistryCharacterGroups,
+	hasSymbolCatalog,
 	isDigitalFontFamily,
-	isIconFontFamily,
 	isPunctuationFontFamily,
+	type RegistryFamily,
+	selectRegistryDistributionSource,
 	selectRegistryFamilyLanguages,
-	selectRegistrySource,
+	usesNameLigatures,
+	validateRegistryFamily,
 } from './registry';
 
 const source = (sha256: string, type: 'static' | 'variable', weight: number) =>
@@ -42,7 +45,11 @@ const family = {
 	sourceModified: '2026-07-31',
 	axes: ['wght'],
 	languages: [],
-	license: { id: 'OFL-1.1', url: 'https://example.com/license' },
+	license: {
+		id: 'OFL-1.1',
+		url: 'https://example.com/license',
+		text: 'License text',
+	},
 	sources: [
 		source('static-400', 'static', 400),
 		source('variable-standard', 'variable', 400),
@@ -58,7 +65,7 @@ const family = {
 		],
 		characters: { type: 'all' },
 	},
-} satisfies GetRegistryFamilyResponse;
+} satisfies RegistryFamily;
 
 const capabilities = {
 	glyphCount: 6,
@@ -69,12 +76,17 @@ const capabilities = {
 	colorTables: [],
 } satisfies GetRegistrySourceCapabilitiesResponse;
 
-describe('selectRegistrySource', () => {
+describe('selectRegistryDistributionSource', () => {
 	it('prefers the normal standard variable distribution source', () => {
-		expect(selectRegistrySource(family)?.sha256).toBe('variable-standard');
+		expect(
+			selectRegistryDistributionSource(family, {
+				format: 'variable',
+				style: 'normal',
+			})?.sha256,
+		).toBe('variable-standard');
 	});
 
-	it('falls back to the normal regular static source', () => {
+	it('selects the requested static distribution source', () => {
 		const staticFamily = {
 			...family,
 			distribution: {
@@ -84,7 +96,102 @@ describe('selectRegistrySource', () => {
 				characters: { type: 'all' as const },
 			},
 		};
-		expect(selectRegistrySource(staticFamily)?.sha256).toBe('static-400');
+		expect(
+			selectRegistryDistributionSource(staticFamily, {
+				format: 'static',
+				style: 'normal',
+				weight: 400,
+			})?.sha256,
+		).toBe('static-400');
+	});
+
+	it('does not fall back to a raw source missing from distribution', () => {
+		const invalidFamily = {
+			...family,
+			distribution: {
+				static: [{ weight: 400, style: 'normal' as const, source: 'missing' }],
+				characters: { type: 'all' as const },
+			},
+		};
+
+		expect(
+			selectRegistryDistributionSource(invalidFamily, {
+				format: 'static',
+				style: 'normal',
+				weight: 400,
+			}),
+		).toBeUndefined();
+	});
+
+	it('does not report capabilities from a different style', () => {
+		const italicFamily = {
+			...family,
+			distribution: {
+				static: [
+					{ weight: 400, style: 'italic' as const, source: 'static-400' },
+				],
+				characters: { type: 'all' as const },
+			},
+		};
+
+		expect(
+			selectRegistryDistributionSource(italicFamily, {
+				format: 'static',
+				style: 'normal',
+				weight: 400,
+			}),
+		).toBeUndefined();
+	});
+
+	it('does not fall through to a different distributed format', () => {
+		const variableOnlyFamily = {
+			...family,
+			distribution: {
+				variable: family.distribution.variable,
+				characters: { type: 'all' as const },
+			},
+		};
+
+		expect(
+			selectRegistryDistributionSource(variableOnlyFamily, {
+				format: 'static',
+				style: 'normal',
+				weight: 400,
+			}),
+		).toBeUndefined();
+	});
+});
+
+describe('validateRegistryFamily', () => {
+	it('accepts the future required contract and explicit symbol semantics', () => {
+		const symbols = {
+			catalogUrl: '/v1/registry/families/example/symbols',
+			inputModes: ['codepoint', 'name-ligature'],
+		};
+		const candidate = {
+			...family,
+			symbols,
+		} as unknown as GetRegistryFamilyResponse;
+
+		expect(validateRegistryFamily(candidate)).toMatchObject({
+			id: 'example',
+			symbols,
+		});
+	});
+
+	it('rejects incomplete records before the UI treats them as authoritative', () => {
+		expect(
+			validateRegistryFamily({
+				...family,
+				distribution: undefined,
+			} as unknown as GetRegistryFamilyResponse),
+		).toBeUndefined();
+		expect(
+			validateRegistryFamily({
+				...family,
+				license: { ...family.license, text: '  ' },
+			} as GetRegistryFamilyResponse),
+		).toBeUndefined();
 	});
 });
 
@@ -120,22 +227,44 @@ describe('registry character capabilities', () => {
 });
 
 describe('registry family classification', () => {
-	it('uses registry specialist tags when they are available', () => {
+	it('uses reviewed specialist tags without family ID inference', () => {
 		expect(
-			isIconFontFamily(
-				{ id: 'catalog-icons', category: 'other' },
-				{ ...family, tags: ['special-use/icons'] },
-			),
+			isDigitalFontFamily({
+				...family,
+				id: 'unrelated-name',
+				tags: ['special-use/digital-display'],
+			}),
+		).toBe(true);
+		expect(
+			isPunctuationFontFamily({
+				...family,
+				id: 'unrelated-name',
+				tags: ['special-use/punctuation'],
+			}),
 		).toBe(true);
 	});
 
-	it('keeps legacy specialist detection while tags are being backfilled', () => {
+	it('requires explicit catalog semantics for named ligatures', () => {
+		const symbolFamily: RegistryFamily = {
+			...family,
+			classifications: ['symbols'],
+			symbols: {
+				catalogUrl: '/v1/registry/families/example/symbols',
+				inputModes: ['codepoint', 'name-ligature'],
+			},
+		};
+
+		expect(hasSymbolCatalog(symbolFamily)).toBe(true);
+		expect(usesNameLigatures(symbolFamily)).toBe(true);
 		expect(
-			isDigitalFontFamily({ id: 'dseg7-classic', category: 'other' }, family),
-		).toBe(true);
-		expect(
-			isPunctuationFontFamily({ id: 'yakuhanjp', category: 'other' }, family),
-		).toBe(true);
+			usesNameLigatures({
+				...symbolFamily,
+				symbols: {
+					catalogUrl: '/v1/registry/families/example/symbols',
+					inputModes: ['codepoint'],
+				},
+			}),
+		).toBe(false);
 	});
 });
 

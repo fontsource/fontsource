@@ -14,6 +14,7 @@ import {
 import { cacheHeaders } from '@/utils/cache';
 import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
+import { validateRegistryFamily } from '@/utils/registry';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
@@ -30,7 +31,10 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		),
 		getFontVersions(parameters, options),
 		getRegistryFamily(parameters, options).then(
-			(value) => ({ value, unavailable: false }),
+			(value) => {
+				const registry = validateRegistryFamily(value);
+				return { value: registry, unavailable: !registry };
+			},
 			() => ({ value: undefined, unavailable: true }),
 		),
 	]);
