@@ -1,0 +1,269 @@
+{
+	"bravura": {
+		"sampleText": {
+			"styles": "♩♪♫♬♭♮♯"
+		}
+	},
+	"bravura-text": {
+		"sampleText": {
+			"styles": "♩♪♫♬♭♮♯"
+		}
+	},
+	"dejavu-math": {
+		"sampleText": {
+			"styles": "∑ ∫ √ π ≈ ∞"
+		}
+	},
+	"dseg-weather": {
+		"sampleText": {
+			"styles": "0123456789ABCabc"
+		}
+	},
+	"dseg14-classic": {
+		"sampleText": {
+			"styles": "0123456789 ABCDEF"
+		}
+	},
+	"dseg14-classic-mini": {
+		"sampleText": {
+			"styles": "0123456789 ABCDEF"
+		}
+	},
+	"dseg14-modern": {
+		"sampleText": {
+			"styles": "0123456789 ABCDEF"
+		}
+	},
+	"dseg14-modern-mini": {
+		"sampleText": {
+			"styles": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-classic": {
+		"sampleText": {
+			"styles": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-classic-mini": {
+		"sampleText": {
+			"styles": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-modern": {
+		"sampleText": {
+			"styles": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-modern-mini": {
+		"sampleText": {
+			"styles": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-segg-chan": {
+		"sampleText": {
+			"styles": "0123456789"
+		}
+	},
+	"dseg7-segg-chan-mini": {
+		"sampleText": {
+			"styles": "0123456789"
+		}
+	},
+	"flow-block": {
+		"languages": [],
+		"sampleText": {
+			"styles": "Wireframe content"
+		}
+	},
+	"flow-circular": {
+		"languages": [],
+		"sampleText": {
+			"styles": "Wireframe content"
+		}
+	},
+	"flow-rounded": {
+		"languages": [],
+		"sampleText": {
+			"styles": "Wireframe content"
+		}
+	},
+	"jsmath-cmbx10": {
+		"languages": [],
+		"sampleText": {
+			"styles": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmex10": {
+		"languages": [],
+		"sampleText": {
+			"styles": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmmi10": {
+		"languages": [],
+		"sampleText": {
+			"styles": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmr10": {
+		"languages": [],
+		"sampleText": {
+			"styles": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmsy10": {
+		"languages": [],
+		"sampleText": {
+			"styles": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmti10": {
+		"languages": [],
+		"sampleText": {
+			"styles": "ABC xyz 123"
+		}
+	},
+	"libertinus-math": {
+		"languages": [],
+		"sampleText": {
+			"styles": "∑ ∫ √ π ≈ ∞"
+		}
+	},
+	"libre-barcode-128": {
+		"languages": []
+	},
+	"libre-barcode-128-text": {
+		"languages": []
+	},
+	"libre-barcode-39": {
+		"languages": [],
+		"sampleText": {
+			"styles": "*HELLO WORLD*"
+		}
+	},
+	"libre-barcode-39-extended": {
+		"languages": [],
+		"sampleText": {
+			"styles": "*Hello World*"
+		}
+	},
+	"libre-barcode-39-extended-text": {
+		"languages": [],
+		"sampleText": {
+			"styles": "*Hello World*"
+		}
+	},
+	"libre-barcode-39-text": {
+		"languages": [],
+		"sampleText": {
+			"styles": "*HELLO WORLD*"
+		}
+	},
+	"libre-barcode-ean13-text": {
+		"sampleText": {
+			"styles": "001234567890?"
+		}
+	},
+	"material-icons": {
+		"sampleText": {
+			"styles": "home"
+		}
+	},
+	"material-icons-outlined": {
+		"sampleText": {
+			"styles": "home"
+		}
+	},
+	"material-icons-round": {
+		"sampleText": {
+			"styles": "home"
+		}
+	},
+	"material-icons-sharp": {
+		"sampleText": {
+			"styles": "home"
+		}
+	},
+	"material-icons-two-tone": {
+		"sampleText": {
+			"styles": "home"
+		}
+	},
+	"material-symbols-outlined": {
+		"sampleText": {
+			"styles": "home"
+		}
+	},
+	"material-symbols-rounded": {
+		"sampleText": {
+			"styles": "home"
+		}
+	},
+	"material-symbols-sharp": {
+		"sampleText": {
+			"styles": "home"
+		}
+	},
+	"noto-color-emoji-compat-test": {
+		"sampleText": {
+			"styles": "🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜"
+		}
+	},
+	"noto-music": {
+		"languages": []
+	},
+	"noto-sans-math": {
+		"languages": []
+	},
+	"noto-znamenny-musical-notation": {
+		"languages": []
+	},
+	"redacted": {
+		"languages": [],
+		"sampleText": {
+			"styles": "Wireframe content"
+		}
+	},
+	"redacted-script": {
+		"languages": [],
+		"sampleText": {
+			"styles": "Wireframe content"
+		}
+	},
+	"stix-two-math": {
+		"languages": [],
+		"sampleText": {
+			"styles": "∑ ∫ √ π ≈ ∞"
+		}
+	},
+	"yakuhanjp": {
+		"sampleText": {
+			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanjps": {
+		"sampleText": {
+			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanmp": {
+		"sampleText": {
+			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanmps": {
+		"sampleText": {
+			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanrp": {
+		"sampleText": {
+			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanrps": {
+		"sampleText": {
+			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	}
+}

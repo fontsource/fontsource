@@ -38,12 +38,18 @@ describe('registry source archive', () => {
 		const wantedViews = new Set([
 			'families.json',
 			'families/abel.json',
+			'families/adwaita-sans.json',
 			'families/alegreya-sans.json',
+			'families/bravura.json',
 			'families/dejavu-math.json',
+			'families/dseg7-classic.json',
 			'families/ek-mukta.json',
+			'families/jsmath-cmr10.json',
 			'families/material-icons.json',
 			'families/material-icons/symbols.json',
 			'families/nebula-sans.json',
+			'families/noto-color-emoji-compat-test.json',
+			'families/yakuhanjp.json',
 			'languages.json',
 		]);
 		let manifest: unknown;
@@ -73,9 +79,13 @@ describe('registry source archive', () => {
 							Buffer.from(await object.read()).toString('utf8'),
 						);
 						views.set(path, value);
-						if (path === 'families/abel.json') {
-							const source = value.sources[0];
-							wantedViews.add(`sources/${source.sha256}/capabilities.json`);
+						if (
+							path === 'families/abel.json' ||
+							path === 'families/adwaita-sans.json'
+						) {
+							for (const source of value.sources) {
+								wantedViews.add(`sources/${source.sha256}/capabilities.json`);
+							}
 						}
 					}
 				}
@@ -104,6 +114,7 @@ describe('registry source archive', () => {
 			registry: expect.arrayContaining([
 				expect.objectContaining({ path: 'upstreams.json' }),
 				expect.objectContaining({ path: 'family-tags.json' }),
+				expect.objectContaining({ path: 'family-overrides.json' }),
 				expect.objectContaining({
 					path: 'families/google-icons/material-icons/icons.json',
 				}),
@@ -192,6 +203,17 @@ describe('registry source archive', () => {
 		expect(RegistrySourceCapabilitiesSchema.parse(capabilities)).toEqual(
 			capabilities,
 		);
+		const multiSourceFamily = views.get('families/adwaita-sans.json') as {
+			sources: Array<{ sha256: string }>;
+		};
+		const multiSourceCapabilities = multiSourceFamily.sources.map((source) =>
+			views.get(`sources/${source.sha256}/capabilities.json`),
+		) as Array<{ unicodeRange: string }>;
+		expect(
+			new Set(
+				multiSourceCapabilities.map((capability) => capability.unicodeRange),
+			).size,
+		).toBeGreaterThan(1);
 		const familyWithVariantOverride = views.get('families/alegreya-sans.json');
 		expect(familyWithVariantOverride).toMatchObject({
 			sources: expect.arrayContaining([
@@ -208,7 +230,35 @@ describe('registry source archive', () => {
 			familyWithVariantOverride,
 		);
 		expect(views.get('families/dejavu-math.json')).toMatchObject({
+			sampleText: { styles: '∑ ∫ √ π ≈ ∞' },
 			tags: expect.arrayContaining(['special-use/math']),
+		});
+		expect(views.get('families/bravura.json')).toMatchObject({
+			sampleText: { styles: '♩♪♫♬♭♮♯' },
+			tags: expect.arrayContaining(['special-use/music-symbols']),
+		});
+		expect(views.get('families/dseg7-classic.json')).toMatchObject({
+			sampleText: { styles: '0123456789 ABCDEF' },
+			tags: expect.arrayContaining(['special-use/digital-display']),
+		});
+		expect(views.get('families/jsmath-cmr10.json')).toMatchObject({
+			languages: [],
+			sampleText: { styles: 'ABC xyz 123' },
+			tags: expect.arrayContaining(['special-use/math']),
+		});
+		expect(views.get('families/yakuhanjp.json')).toMatchObject({
+			languages: [],
+			sampleText: expect.any(Object),
+			tags: expect.arrayContaining(['special-use/punctuation']),
+		});
+		expect(
+			views.get('families/noto-color-emoji-compat-test.json'),
+		).toMatchObject({
+			languages: [],
+			sampleText: {
+				styles: '🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜',
+			},
+			tags: expect.arrayContaining(['special-use/emoji']),
 		});
 		const obliqueFamily = views.get('families/nebula-sans.json');
 		expect(obliqueFamily).toMatchObject({
@@ -229,6 +279,7 @@ describe('registry source archive', () => {
 			classifications: ['symbols'],
 			tags: ['special-use/icons'],
 			languages: [],
+			sampleText: { styles: 'home' },
 			symbols: {
 				catalogUrl: '/v1/registry/families/material-icons/symbols',
 				inputModes: ['codepoint', 'name-ligature'],

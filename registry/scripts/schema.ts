@@ -112,6 +112,19 @@ export const upstreamsSchema = z.strictObject({
 
 export const replacementRegistrySchema = z.record(idSchema, idSchema);
 export const familyTagsSchema = z.record(tagIdSchema, z.array(idSchema).min(1));
+export const familyOverridesSchema = z.record(
+	idSchema,
+	z
+		.strictObject({
+			languages: z.array(languageIdSchema).optional(),
+			sampleText: sampleTextSchema.optional(),
+		})
+		.refine(
+			(value) =>
+				value.languages !== undefined || value.sampleText !== undefined,
+			{ message: 'must override languages or sample text' },
+		),
+);
 
 const archivedFileSchema = z.strictObject({
 	path: sourcePathSchema,
@@ -318,6 +331,7 @@ export const taxonomySchema = z.strictObject({
 });
 
 export type Family = z.infer<typeof familySchema>;
+export type FamilyOverrides = z.infer<typeof familyOverridesSchema>;
 export type FamilyProvider = z.infer<typeof familyProviderSchema>;
 export type FamilySource = Family['sources'][number];
 export type FamilyIcons = z.infer<typeof familyIconsSchema>;

@@ -15,6 +15,7 @@ import {
 	type FamilySource,
 	familyDistributionSchema,
 	familyIconsSchema,
+	familyOverridesSchema,
 	familyProviderSchema,
 	familySchema,
 	familyTagsSchema,
@@ -100,6 +101,19 @@ const validateRanges = (
 		previousEnd = end;
 	}
 };
+
+const isVariationSelector = (codepoint: number): boolean =>
+	// Variation sequences are inspected separately from the base cmap range.
+	(codepoint >= 0xfe00 && codepoint <= 0xfe0f) ||
+	(codepoint >= 0xe0100 && codepoint <= 0xe01ef);
+
+const supportsCodepoint = (unicodeRange: string, codepoint: number): boolean =>
+	unicodeRange.split(', ').some((range) => {
+		const [startValue, endValue = startValue] = range.slice(2).split('-');
+		const start = Number.parseInt(startValue ?? '', 16);
+		const end = Number.parseInt(endValue ?? '', 16);
+		return codepoint >= start && codepoint <= end;
+	});
 
 const expandRanges = (
 	ranges: ReadonlyArray<readonly [string, string]>,
@@ -332,6 +346,26 @@ const validateFamily = async (
 			);
 		}
 	}
+	if (family.sampleText) {
+		// Array.from iterates Unicode code points rather than UTF-16 code units.
+		const codepoints = new Set(
+			Array.from(Object.values(family.sampleText).join(''))
+				.filter((character) => character.trim())
+				.map((character) => character.codePointAt(0) as number)
+				.filter((codepoint) => !isVariationSelector(codepoint)),
+		);
+		for (const source of family.sources) {
+			for (const codepoint of codepoints) {
+				assert(
+					supportsCodepoint(source.inspection.unicodeRange, codepoint),
+					`${id} sample text contains U+${codepoint
+						.toString(16)
+						.toUpperCase()
+						.padStart(4, '0')} missing from ${source.path}`,
+				);
+			}
+		}
+	}
 
 	const iconsPath = join(directory, 'icons.json');
 	if (await pathExists(iconsPath)) {
@@ -505,6 +539,10 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		join(root, 'family-tags.json'),
 		familyTagsSchema,
 	);
+	const familyOverrides = await validateCanonicalJson(
+		join(root, 'family-overrides.json'),
+		familyOverridesSchema,
+	);
 	const languages = await validateCanonicalJson(
 		join(root, 'languages.json'),
 		languageCatalogSchema,
@@ -554,6 +592,24 @@ export const validateRegistry = async (root: string): Promise<void> => {
 			assert(familiesById.has(id), `${tag} references missing family ${id}`);
 		}
 	}
+	for (const [id, override] of Object.entries(familyOverrides)) {
+		const family = familiesById.get(id);
+		assert(family, `Family override ${id} does not exist`);
+		if (override.languages !== undefined) {
+			deepStrictEqual(
+				family.family.languages,
+				override.languages,
+				`${id} language override is not applied`,
+			);
+		}
+		if (override.sampleText !== undefined) {
+			deepStrictEqual(
+				family.family.sampleText,
+				override.sampleText,
+				`${id} sample text override is not applied`,
+			);
+		}
+	}
 	for (const [id, replacedBy] of Object.entries(replacements)) {
 		assert(id !== replacedBy, `${id} cannot replace itself`);
 		const family = familiesById.get(id);
@@ -576,6 +632,7 @@ export const validateRegistry = async (root: string): Promise<void> => {
 		'replacements.json',
 		'taxonomy.json',
 		'family-tags.json',
+		'family-overrides.json',
 		...subsetIds.map((id) => `subsets/${id}.json`),
 	]);
 	for (const family of familyKeys) {

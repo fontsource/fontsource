@@ -464,6 +464,16 @@ const seedRegistryRequirements = async (root: string): Promise<void> => {
 			),
 		),
 	);
+	await writeFixture(
+		root,
+		'family-overrides.json',
+		canonicalJson({
+			example: {
+				languages: [],
+				sampleText: { styles: 'ABC' },
+			},
+		}),
+	);
 };
 
 describe('registry ingestion', () => {
@@ -705,6 +715,14 @@ describe('registry ingestion', () => {
 			classifications: ['display', 'sans-serif'],
 			tags: ['sans/humanist'],
 		});
+		const overriddenFamily = await readJson(
+			join(registry, 'families/fontsource/example/family.json'),
+		);
+		expect(overriddenFamily).toMatchObject({
+			languages: [],
+			sampleText: { styles: 'ABC' },
+		});
+		expect(overriddenFamily).not.toHaveProperty('primaryLanguage');
 		expect(await readJson(join(registry, 'subsets/latin.json'))).toMatchObject({
 			source: { revision: nam.revision },
 		});

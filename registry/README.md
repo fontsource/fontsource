@@ -30,6 +30,9 @@ mappings.
 Google’s explicit language lists override cmap detection. References without a
 language record are logged and omitted; other families are matched against the
 registry language requirements using the cmap shared by every source face.
+Reviewed corrections in `data/family-overrides.json` are applied after provider
+generation when character coverage alone would produce misleading language
+claims or an upstream specialist font has no useful specimen text.
 
 The [registry archive workflow](../.github/workflows/registry-archive.yml)
 runs after registry data changes. It copies the exact registry files and every
@@ -94,6 +97,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - `data/replacements.json` records reviewed successor relationships between
   globally unique family IDs.
 - `data/family-tags.json` assigns reviewed cross-provider discovery tags.
+- `data/family-overrides.json` contains reviewed language and specimen
+  corrections that provider syncs must preserve.
 - `data/taxonomy.json` defines the reviewed classification and tag labels.
 - `data/subsets/` and `data/axes.json` contain shared Unicode and axis data.
 
@@ -111,6 +116,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - `github` provenance can recover a missing source from an exact commit;
   `registry` provenance requires the source to be promoted to R2 first.
 - Distribution is reviewed registry state, not derived from legacy catalogs.
+- Taxonomy describes discovery and context. It does not select input behavior;
+  symbol interaction comes only from a catalog's explicit input modes.
 - If a Google Fonts family omits its license file, sync preserves the reviewed
   license text already committed for that family and fails when none exists.
 - Published variants are explicit relations, not weight/style cross-products.

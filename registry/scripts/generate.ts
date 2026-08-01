@@ -6,6 +6,8 @@ import { generateGoogle } from './google.ts';
 import { generateGoogleIcons } from './google-icons.ts';
 import { generateNam } from './nam.ts';
 import {
+	type FamilyOverrides,
+	familyOverridesSchema,
 	familySchema,
 	familyTagsSchema,
 	languageCatalogSchema,
@@ -23,6 +25,32 @@ import {
 import { listFamilyKeys, validateRegistry } from './validator.ts';
 
 const logger = consola.withTag('registry');
+
+export const applyFamilyOverrides = async (
+	root: string,
+	families: readonly string[],
+	overrides: FamilyOverrides,
+): Promise<void> => {
+	const familyById = new Map(
+		families.map((key) => [key.slice(key.indexOf('/') + 1), key]),
+	);
+	await Promise.all(
+		Object.entries(overrides).map(async ([id, override]) => {
+			const familyKey = familyById.get(id);
+			if (!familyKey) throw new Error(`Family override ${id} does not exist`);
+			const path = join(root, 'families', familyKey, 'family.json');
+			const family = familySchema.parse(await readJson(path));
+			const updated = { ...family, ...override };
+			if (
+				updated.primaryLanguage &&
+				!updated.languages.includes(updated.primaryLanguage)
+			) {
+				delete updated.primaryLanguage;
+			}
+			await writeJson(path, updated);
+		}),
+	);
+};
 
 export const applyReplacements = async (
 	root: string,
@@ -68,6 +96,9 @@ export const generateRegistry = async (
 	const replacements = replacementRegistrySchema.parse(replacementsValue ?? {});
 	const familyTags = familyTagsSchema.parse(
 		(await readJsonIfExists(join(root, 'family-tags.json'))) ?? {},
+	);
+	const familyOverrides = familyOverridesSchema.parse(
+		(await readJsonIfExists(join(root, 'family-overrides.json'))) ?? {},
 	);
 	const previousGoogleIds = previousFamilies
 		.filter((family) => family.startsWith('google/'))
@@ -149,6 +180,8 @@ export const generateRegistry = async (
 	);
 	await writeJson(join(root, 'replacements.json'), replacements);
 	await writeJson(join(root, 'family-tags.json'), familyTags);
+	await writeJson(join(root, 'family-overrides.json'), familyOverrides);
+	await applyFamilyOverrides(root, families, familyOverrides);
 	await applyReplacements(root, families, replacements);
 	logger.start('Validating registry');
 	await validateRegistry(root);
