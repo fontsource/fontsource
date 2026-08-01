@@ -22,6 +22,9 @@
 		"revision": "f67c93c7336863d2cb6037eb86269cad5d545b7f",
 		"type": "github"
 	},
+	"sampleText": {
+		"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+	},
 	"sourceModified": "2026-07-27",
 	"sources": [
 		{

@@ -17,6 +17,9 @@
 		"revision": "528cb964c01fb2b09bc3b9208f82b6d8f8c1c1e2",
 		"type": "github"
 	},
+	"sampleText": {
+		"short": "home"
+	},
 	"sourceModified": "2026-07-24",
 	"sources": [
 		{

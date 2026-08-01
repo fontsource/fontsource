@@ -3,9 +3,10 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { consola } from 'consola';
 import { generateFontFiles } from './font-files.ts';
-import { applyReplacements } from './generate.ts';
+import { applyFamilyOverrides, applyReplacements } from './generate.ts';
 import { assertGitPathClean, getGitRevision, openGitSnapshot } from './git.ts';
 import {
+	familyOverridesSchema,
 	languageCatalogSchema,
 	replacementRegistrySchema,
 	upstreamsSchema,
@@ -37,6 +38,9 @@ try {
 	const replacements = replacementRegistrySchema.parse(
 		await readJson(join(root, 'replacements.json')),
 	);
+	const familyOverrides = familyOverridesSchema.parse(
+		await readJson(join(root, 'family-overrides.json')),
+	);
 	const familyKeys = await listFamilyKeys(root);
 	const previousFamilyIds = familyKeys
 		.filter((family) => family.startsWith('fontsource/'))
@@ -56,6 +60,7 @@ try {
 			revision,
 		},
 	});
+	await applyFamilyOverrides(root, await listFamilyKeys(root), familyOverrides);
 	await applyReplacements(
 		root,
 		familyIds.map((family) => `fontsource/${family}`),

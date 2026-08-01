@@ -429,8 +429,8 @@
 		"type": "github"
 	},
 	"sampleText": {
-		"styles": "𞴜𞴛𞴐𞴈",
-		"tester": "𞴁𞴂𞴃𞴄𞴅𞴆𞴇𞴈𞴉𞴊 𞴊𞴋𞴌𞴍𞴎𞴏𞴐𞴑𞴒𞴓 𞴓𞴔𞴕𞴖𞴗𞴘𞴙𞴚𞴛𞴜"
+		"long": "𞴁𞴂𞴃𞴄𞴅𞴆𞴇𞴈𞴉𞴊 𞴊𞴋𞴌𞴍𞴎𞴏𞴐𞴑𞴒𞴓 𞴓𞴔𞴕𞴖𞴗𞴘𞴙𞴚𞴛𞴜",
+		"short": "𞴜𞴛𞴐𞴈"
 	},
 	"sourceModified": "2026-03-12",
 	"sources": [

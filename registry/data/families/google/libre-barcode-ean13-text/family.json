@@ -23,8 +23,7 @@
 		"type": "github"
 	},
 	"sampleText": {
-		"styles": "abcdefghij x012345678 23456789 klmnopqrst",
-		"tester": "abcdefghij x012345678 23456789 klmnopqrst"
+		"short": "001234567890?"
 	},
 	"sourceModified": "2026-03-27",
 	"sources": [
