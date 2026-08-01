@@ -30,6 +30,9 @@ import {
 	getProjectCss,
 	getUsageBlock,
 	getUsageNote,
+	hasSymbolCatalog,
+	isDigitalFamily,
+	usesNameLigatures,
 } from './output';
 
 type DeliveryMethod = 'package' | 'cdn';
@@ -85,7 +88,9 @@ const ProjectFont = ({
 		.map(([axis, value]) => `"${axis}" ${value}`)
 		.join(', ');
 	const tags = item.tags.slice(0, 2);
-	const usageNote = getUsageNote(item);
+	const usageNote = item.registryFactsCurrent
+		? getUsageNote(item)
+		: 'Registry behavior facts are missing from this saved setup. Open the family and update it before using generated code.';
 
 	return (
 		<article className={classes.fontRow} data-expanded={expanded || undefined}>
@@ -93,13 +98,11 @@ const ProjectFont = ({
 			<div
 				className={classes.specimen}
 				data-compact={
-					item.category === 'icons' ||
-					item.familyId.startsWith('dseg') ||
-					undefined
+					hasSymbolCatalog(item) || isDigitalFamily(item) || undefined
 				}
 				style={{
 					fontFamily: item.fontFamily,
-					fontFeatureSettings: item.category === 'icons' ? '"liga"' : undefined,
+					fontFeatureSettings: usesNameLigatures(item) ? '"liga"' : undefined,
 					fontVariationSettings: variationSettings || undefined,
 					fontWeight: item.weight,
 					fontStyle: item.style,
@@ -116,14 +119,23 @@ const ProjectFont = ({
 							{humanize(item.classification)} · Package {item.packageVersion}
 						</p>
 					</div>
-					{item.status === 'deprecated' && (
-						<span className={classes.status}>Deprecated</span>
+					{(item.status === 'deprecated' || !item.registryFactsCurrent) && (
+						<span className={classes.status}>
+							{[
+								item.status === 'deprecated' ? 'Deprecated' : undefined,
+								!item.registryFactsCurrent ? 'Refresh needed' : undefined,
+							]
+								.filter(Boolean)
+								.join(' · ')}
+						</span>
 					)}
 				</div>
 				<p className={classes.setupSummary}>
 					{humanize(item.format)} ·{' '}
-					{item.category === 'icons'
-						? 'Symbol ligatures'
+					{hasSymbolCatalog(item)
+						? usesNameLigatures(item)
+							? 'Symbol ligatures'
+							: 'Symbol catalog'
 						: humanize(item.subset)}{' '}
 					· {item.weight} {humanize(item.style)}
 				</p>
@@ -146,13 +158,11 @@ const ProjectFont = ({
 						</div>
 						<div>
 							<dt>
-								{item.category === 'icons'
-									? 'Package subset'
-									: 'Character subset'}
+								{hasSymbolCatalog(item) ? 'Package subset' : 'Character subset'}
 							</dt>
 							<dd>
-								{item.category === 'icons'
-									? `${humanize(item.subset)} symbol ligatures`
+								{hasSymbolCatalog(item)
+									? `${humanize(item.subset)} ${usesNameLigatures(item) ? 'symbol ligatures' : 'symbols'}`
 									: humanize(item.subset)}
 							</dd>
 						</div>
@@ -243,6 +253,7 @@ const CurrentProjectPage = () => {
 	const usageCss = items.map(getUsageBlock).join('\n\n');
 	const verifiedItems = items.filter((item) => item.license.verified);
 	const unverifiedItems = items.filter((item) => !item.license.verified);
+	const staleRegistryItems = items.filter((item) => !item.registryFactsCurrent);
 	const registryRevisions = Array.from(
 		new Set(
 			verifiedItems
@@ -432,6 +443,18 @@ const CurrentProjectPage = () => {
 									</button>
 								</fieldset>
 							</div>
+							{staleRegistryItems.length > 0 && (
+								<p className={classes.licenseWarning} role="status">
+									{staleRegistryItems.length}{' '}
+									{staleRegistryItems.length === 1
+										? 'font needs'
+										: 'fonts need'}
+									a Registry refresh. Generated code preserves saved package
+									choices, but specialist behavior may be incomplete until you
+									update {staleRegistryItems.length === 1 ? 'it' : 'them'} from
+									the linked font page.
+								</p>
+							)}
 
 							<div className={classes.outputGrid}>
 								<aside className={classes.deliverySummary}>

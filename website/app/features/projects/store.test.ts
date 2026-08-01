@@ -14,6 +14,7 @@ const fraunces: ProjectItem = {
 	tags: ['soft-serif'],
 	designer: 'Undercase Type',
 	status: 'active',
+	registryFactsCurrent: true,
 	format: 'variable',
 	subset: 'latin',
 	style: 'normal',
@@ -24,6 +25,7 @@ const fraunces: ProjectItem = {
 	cssFile: 'latin-wght-normal.css',
 	fontFamily: 'Fraunces Variable',
 	sampleText: 'Make something memorable.',
+	symbolInputModes: [],
 	license: {
 		verified: true,
 		id: 'OFL-1.1',
@@ -105,6 +107,8 @@ describe('current project store', () => {
 	it('does not treat legacy saved license fields as registry verification', () => {
 		const legacy = {
 			...fraunces,
+			registryFactsCurrent: undefined,
+			symbolInputModes: undefined,
 			license: {
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org',
@@ -118,6 +122,10 @@ describe('current project store', () => {
 		expect(snapshot.items[0].license).toMatchObject({
 			verified: false,
 			id: 'OFL-1.1',
+		});
+		expect(snapshot.items[0]).toMatchObject({
+			registryFactsCurrent: false,
+			symbolInputModes: [],
 		});
 	});
 });

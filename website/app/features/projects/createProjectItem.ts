@@ -3,14 +3,9 @@ import { selectVariableAxisKey } from '@fontsource-utils/core';
 import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
-	GetRegistryFamilyResponse,
 	GetVariableFontResponse,
 } from '@/generated/api';
-import {
-	isDigitalFontFamily,
-	isIconFontFamily,
-	isPunctuationFontFamily,
-} from '@/utils/registry';
+import { hasSymbolCatalog, type RegistryFamily } from '@/utils/registry';
 
 import type { ProjectItem } from './model';
 
@@ -18,7 +13,7 @@ interface CreateProjectItemOptions {
 	metadata: GetFontResponse;
 	versions: GetFontVersionsResponse;
 	variable?: GetVariableFontResponse;
-	registry?: GetRegistryFamilyResponse;
+	registry?: RegistryFamily;
 	format: 'variable' | 'static';
 	subset: string;
 	style: 'normal' | 'italic';
@@ -42,20 +37,15 @@ const categoryClassifications: Record<
 
 const getSampleText = (
 	metadata: GetFontResponse,
-	registry?: GetRegistryFamilyResponse,
+	registry?: RegistryFamily,
 	sampleText?: string,
 ) => {
 	if (sampleText?.trim()) return sampleText.trim();
-	if (isIconFontFamily(metadata, registry)) {
-		return 'home  search  favorite';
-	}
-	if (isDigitalFontFamily(metadata, registry)) {
-		return '12:48:36';
-	}
-	if (isPunctuationFontFamily(metadata, registry)) {
-		return '「ことば」を、心地よく。';
-	}
-	return registry?.sampleText?.tester?.trim() || metadata.family;
+	return (
+		registry?.sampleText?.tester?.trim() ||
+		registry?.sampleText?.styles?.trim() ||
+		metadata.family
+	);
 };
 
 const createProjectItem = ({
@@ -72,13 +62,12 @@ const createProjectItem = ({
 }: CreateProjectItemOptions): ProjectItem => {
 	const isVariable =
 		format === 'variable' && Boolean(variable && versions.latestVariable);
-	const isIconFamily = isIconFontFamily(metadata, registry);
-	const isDigitalFamily = isDigitalFontFamily(metadata, registry);
+	const hasCatalog = hasSymbolCatalog(registry);
 	const packageName = isVariable
 		? `@fontsource-variable/${metadata.id}`
 		: `@fontsource/${metadata.id}`;
 	const iconUsesMultipleAxes =
-		isIconFamily && isVariable && Object.keys(variable?.axes ?? {}).length > 1;
+		hasCatalog && isVariable && Object.keys(variable?.axes ?? {}).length > 1;
 	const axisKey =
 		isVariable && variable
 			? selectVariableAxisKey(
@@ -100,12 +89,11 @@ const createProjectItem = ({
 		category: metadata.category,
 		classification:
 			registry?.classifications[0] ??
-			(isDigitalFamily
-				? 'display'
-				: categoryClassifications[metadata.category]),
+			categoryClassifications[metadata.category],
 		tags: registry?.tags ?? [],
 		designer: registry?.designer,
 		status: registry?.status ?? 'active',
+		registryFactsCurrent: Boolean(registry),
 		format: isVariable ? 'variable' : 'static',
 		subset,
 		style,
@@ -118,6 +106,7 @@ const createProjectItem = ({
 		cssFile,
 		fontFamily: isVariable ? `${metadata.family} Variable` : metadata.family,
 		sampleText: getSampleText(metadata, registry, sampleText),
+		symbolInputModes: registry?.symbols?.inputModes ?? [],
 		license: registry?.license
 			? {
 					verified: true,

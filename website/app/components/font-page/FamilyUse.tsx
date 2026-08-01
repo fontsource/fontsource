@@ -9,7 +9,6 @@ import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
-	GetRegistryFamilyResponse,
 	GetVariableFontResponse,
 } from '@/generated/api';
 import { deserializeStoredChoice } from '@/utils/browser-storage';
@@ -17,9 +16,11 @@ import { packageManagers } from '@/utils/docs/packageManagers';
 import { triggerBlobDownload } from '@/utils/download';
 import { readFontPreviewSelection } from '@/utils/font-preview-selection';
 import {
+	hasSymbolCatalog,
 	isDigitalFontFamily,
-	isIconFontFamily,
 	isPunctuationFontFamily,
+	type RegistryFamily,
+	usesNameLigatures,
 } from '@/utils/registry';
 
 import classes from './FamilyUse.module.css';
@@ -31,7 +32,7 @@ interface FamilyUseProps {
 	variable?: GetVariableFontResponse;
 	staticCSS: string;
 	variableCSS?: string;
-	registry?: GetRegistryFamilyResponse;
+	registry?: RegistryFamily;
 	registryUnavailable?: boolean;
 }
 
@@ -71,21 +72,30 @@ const axisNames: Record<string, string> = {
 
 const getUsageDetails = (
 	metadata: GetFontResponse,
-	registry: GetRegistryFamilyResponse | undefined,
+	registry: RegistryFamily | undefined,
 	familyName: string,
 	isVariable: boolean,
 	axisValues: Record<string, number>,
 	weight: number,
 	style: GetFontResponse['styles'][number],
 ) => {
-	const isIconFamily = isIconFontFamily(metadata, registry);
-	const isYakuHan = isPunctuationFontFamily(metadata, registry);
-	const isDseg = isDigitalFontFamily(metadata, registry);
+	const hasNamedLigatures = usesNameLigatures(registry);
+	const isPunctuationFamily = isPunctuationFontFamily(registry);
+	const isDigitalFamily = isDigitalFontFamily(registry);
+	const sampleText =
+		registry?.sampleText?.tester?.trim() ??
+		registry?.sampleText?.styles?.trim() ??
+		metadata.family;
+	const sampleName = sampleText.split(/\s+/)[0] ?? sampleText;
+	const escapedSampleText = sampleText
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;');
 	const className = `font-${metadata.id}`;
 	const formatCss = (declarations: string[]) =>
 		`.${className} {\n${declarations.map((line) => `  ${line}`).join('\n')}\n}`;
 
-	if (isIconFamily) {
+	if (hasNamedLigatures) {
 		const settings = isVariable
 			? Object.entries(axisValues)
 					.map(([axis, value]) => `'${axis}' ${value}`)
@@ -107,26 +117,26 @@ const getUsageDetails = (
 
 		return {
 			css: formatCss(declarations),
-			markup: `<span class="${className}" aria-hidden="true">home</span>`,
+			markup: `<span class="${className}" aria-hidden="true">${escapedSampleText}</span>`,
 			note: isVariable
-				? 'Use a ligature name such as home. This setup loads every variable axis so the CSS values above remain available.'
-				: 'Use a ligature name such as home. The font turns that name into the matching icon.',
+				? `Use a verified catalog name such as ${sampleName}. This setup loads every variable axis so the CSS values above remain available.`
+				: `Use a verified catalog name such as ${sampleName}. The font turns that name into the matching symbol.`,
 		};
 	}
 
-	if (isYakuHan) {
+	if (isPunctuationFamily) {
 		return {
 			css: formatCss([
 				`font-family: '${familyName}', 'Noto Sans JP', sans-serif;`,
 				`font-weight: ${weight};`,
 				`font-style: ${style};`,
 			]),
-			markup: `<p class="${className}">「ことば」を、心地よく。</p>`,
-			note: 'YakuHan replaces Japanese punctuation only. Keep it first, followed by the Japanese text font used by your project.',
+			markup: `<p class="${className}">${escapedSampleText}</p>`,
+			note: `${metadata.family} replaces Japanese punctuation only. Keep it first, followed by the Japanese text font used by your project.`,
 		};
 	}
 
-	if (isDseg) {
+	if (isDigitalFamily) {
 		return {
 			css: formatCss([
 				`font-family: '${familyName}', monospace;`,
@@ -136,7 +146,7 @@ const getUsageDetails = (
 				"font-feature-settings: 'tnum';",
 				'white-space: nowrap;',
 			]),
-			markup: `<span class="${className}">12:48:36</span>`,
+			markup: `<span class="${className}">${escapedSampleText}</span>`,
 			note: 'Tabular numerals and a single-line container keep changing readout values aligned.',
 		};
 	}
@@ -208,9 +218,10 @@ export const FamilyUse = ({
 	registryUnavailable = false,
 }: FamilyUseProps) => {
 	const [searchParams] = useSearchParams();
-	const isIconFamily = isIconFontFamily(metadata, registry);
-	const isPunctuationFamily = isPunctuationFontFamily(metadata, registry);
-	const isDigitalFamily = isDigitalFontFamily(metadata, registry);
+	const hasCatalog = hasSymbolCatalog(registry);
+	const hasNamedLigatures = usesNameLigatures(registry);
+	const isPunctuationFamily = isPunctuationFontFamily(registry);
+	const isDigitalFamily = isDigitalFontFamily(registry);
 	const supportsVariable = Boolean(variable && versions.latestVariable);
 	const [path, setPath] = useLocalStorage<Path | null>({
 		key: 'fontsource-acquisition-path',
@@ -274,10 +285,10 @@ export const FamilyUse = ({
 		? `${metadata.family} Variable`
 		: metadata.family;
 	const iconUsesMultipleAxes =
-		isIconFamily && isVariable && Object.keys(variable?.axes ?? {}).length > 1;
-	const subsetLabel = isIconFamily ? 'Package subset' : 'Character set';
-	const subsetValueLabel = isIconFamily
-		? `${humanize(subset)} symbol ligatures`
+		hasCatalog && isVariable && Object.keys(variable?.axes ?? {}).length > 1;
+	const subsetLabel = hasCatalog ? 'Package subset' : 'Character set';
+	const subsetValueLabel = hasCatalog
+		? `${humanize(subset)} ${hasNamedLigatures ? 'symbol ligatures' : 'symbols'}`
 		: humanize(subset);
 	const axisKey = variable
 		? selectVariableAxisKey(
@@ -322,13 +333,10 @@ export const FamilyUse = ({
 		weight,
 		style,
 	);
-	const proofText = isIconFamily
-		? 'home'
-		: isDigitalFamily
-			? '12:48:36'
-			: isPunctuationFamily
-				? '「ことば」を、心地よく。'
-				: (registry?.sampleText?.tester?.trim() ?? metadata.family);
+	const proofText =
+		registry?.sampleText?.tester?.trim() ??
+		registry?.sampleText?.styles?.trim() ??
+		metadata.family;
 	const proofVariationSettings = Object.entries(effectiveAxisValues)
 		.map(([axis, value]) => `'${axis}' ${value}`)
 		.join(', ');
@@ -347,7 +355,7 @@ export const FamilyUse = ({
 		? (versions.latestVariable ?? versions.latest)
 		: versions.latest;
 	const downloadAxisKey =
-		isIconFamily &&
+		hasCatalog &&
 		downloadIsVariable &&
 		Object.keys(variable?.axes ?? {}).length > 1
 			? 'full'
@@ -360,10 +368,10 @@ export const FamilyUse = ({
 		: `${metadata.id}@${downloadVersion}`;
 	const downloadAssetUrl = `https://api.fontsource.org/fonts/${encodeURIComponent(downloadTag)}/${encodeURIComponent(downloadAssetFile)}`;
 	const downloadArchiveName = `${metadata.id}-${subset}-${downloadIsVariable ? 'variable' : `${weight}-${style}`}.zip`;
-	const downloadDescription = isIconFamily
+	const downloadDescription = hasCatalog
 		? 'This archive contains the selected symbol font file.'
 		: isPunctuationFamily
-			? 'YakuHan adjusts Japanese punctuation. Pair it with the Japanese text font used by your project.'
+			? `${metadata.family} adjusts Japanese punctuation. Pair it with the Japanese text font used by your project.`
 			: isDigitalFamily
 				? 'This setup contains one display face. The complete family archive includes every published variation.'
 				: downloadIsVariable
@@ -371,7 +379,7 @@ export const FamilyUse = ({
 					: 'A desktop-ready TTF for the selected weight, style, and character set.';
 	const isPreparingDownload =
 		downloadState === 'fetching' || downloadState === 'building';
-	const hasVerifiedLicenseText = Boolean(registry?.license.text);
+	const hasVerifiedLicenseText = Boolean(registry?.license.text.trim());
 	const downloadButtonLabel = !hasVerifiedLicenseText
 		? 'License verification required'
 		: downloadState === 'fetching'
@@ -411,7 +419,7 @@ export const FamilyUse = ({
 	};
 
 	const downloadSelectedFiles = async () => {
-		if (!registry?.license.text || downloadInFlight.current) return;
+		if (!registry?.license.text.trim() || downloadInFlight.current) return;
 
 		downloadInFlight.current = true;
 		const controller = new AbortController();
@@ -711,7 +719,7 @@ export const FamilyUse = ({
 								<span className={classes.summaryLabel}>Your archive</span>
 								<strong>{downloadArchiveName}</strong>
 								<p>{downloadDescription}</p>
-								{isIconFamily && (
+								{hasCatalog && (
 									<Link
 										className={classes.contextLink}
 										to={`/fonts/${metadata.id}/glyphs`}
@@ -1087,9 +1095,9 @@ export const FamilyUse = ({
 									{usageNote && (
 										<div className={classes.usageHelp}>
 											<p>{usageNote}</p>
-											{isIconFamily && (
+											{hasCatalog && (
 												<Link to={`/fonts/${metadata.id}/glyphs`}>
-													Find symbol names in Glyphs
+													Explore the symbol catalog
 												</Link>
 											)}
 										</div>
@@ -1102,12 +1110,10 @@ export const FamilyUse = ({
 											</small>
 										</div>
 										<strong
-											data-special={
-												isIconFamily || isDigitalFamily || undefined
-											}
+											data-special={hasCatalog || isDigitalFamily || undefined}
 											style={{
 												fontFamily: familyName,
-												fontFeatureSettings: isIconFamily
+												fontFeatureSettings: hasNamedLigatures
 													? '"liga"'
 													: undefined,
 												fontVariationSettings:

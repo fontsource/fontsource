@@ -11,7 +11,6 @@ import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
-	GetRegistryFamilyResponse,
 	GetVariableFontResponse,
 } from '@/generated/api';
 import {
@@ -23,9 +22,12 @@ import {
 import { saveFontPreviewSelection } from '@/utils/font-preview-selection';
 import { getPreviewText as getLanguagePreviewText } from '@/utils/language/language';
 import {
+	hasSymbolCatalog,
 	isDigitalFontFamily,
-	isIconFontFamily,
 	isPunctuationFontFamily,
+	isSymbolFontFamily,
+	type RegistryFamily,
+	usesNameLigatures,
 } from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
@@ -36,7 +38,7 @@ interface FamilyPreviewProps {
 	variable?: GetVariableFontResponse;
 	variableCSS?: string;
 	versions: GetFontVersionsResponse;
-	registry?: GetRegistryFamilyResponse;
+	registry?: RegistryFamily;
 	registryUnavailable?: boolean;
 	variableUnavailable?: boolean;
 }
@@ -62,51 +64,34 @@ const modeLabels: Array<{ label: string; value: PreviewMode }> = [
 
 const scriptModeLabels = modeLabels.filter((item) => item.value !== 'code');
 
-const edgeCaseModeLabels: Partial<
-	Record<GetFontResponse['category'], typeof modeLabels>
-> = {
-	icons: [
-		{ label: 'Common', value: 'headline' },
-		{ label: 'Navigation', value: 'paragraph' },
-		{ label: 'Actions', value: 'numbers' },
-		{ label: 'Communication', value: 'code' },
-		{ label: 'All symbols', value: 'symbols' },
-	],
-};
+const symbolCatalogModeLabels: typeof modeLabels = [
+	{ label: 'Symbols', value: 'headline' },
+];
 
 const getModeText = (
 	metadata: GetFontResponse,
 	mode: PreviewMode,
-	registry?: GetRegistryFamilyResponse,
+	registry?: RegistryFamily,
 ) => {
 	const previewSubset = getPreferredPreviewSubset(metadata);
-	const isIconFamily = isIconFontFamily(metadata, registry);
-	const isDigitalFamily = isDigitalFontFamily(metadata, registry);
-	const isPunctuationFamily = isPunctuationFontFamily(metadata, registry);
+	const isDigitalFamily = isDigitalFontFamily(registry);
+	const isPunctuationFamily = isPunctuationFontFamily(registry);
+	const isSymbolPreviewFamily =
+		(hasSymbolCatalog(registry) || isSymbolFontFamily(registry)) &&
+		!isDigitalFamily &&
+		!isPunctuationFamily;
+	const registrySample =
+		registry?.sampleText?.tester?.trim() ??
+		registry?.sampleText?.styles?.trim();
 
-	if (isIconFamily) {
-		const iconPreviews: Record<PreviewMode, string> = {
-			headline: 'home  search  favorite  settings',
-			paragraph:
-				'arrow_back  arrow_forward  expand_more  chevron_left  chevron_right',
-			numbers: 'add  delete  edit  download  upload  share',
-			code: 'mail  call  chat  notifications  person  group',
-			symbols:
-				'home search favorite menu close settings add delete edit download upload share',
-		};
-		return iconPreviews[mode];
+	if (
+		registrySample &&
+		(mode === 'headline' || mode === 'paragraph' || isSymbolPreviewFamily)
+	) {
+		return registrySample;
 	}
 
-	if (metadata.id === 'dseg-weather') {
-		const weatherPreviews: Record<PreviewMode, string> = {
-			headline: 'ABC  24°C',
-			paragraph: 'SUNNY  24.5°C',
-			numbers: '0123456789',
-			code: 'HI  LO  88.8',
-			symbols: '+ − : . %',
-		};
-		return weatherPreviews[mode];
-	}
+	if (isSymbolPreviewFamily) return '';
 
 	if (isDigitalFamily) {
 		const digitalPreviews: Record<PreviewMode, string> = {
@@ -125,16 +110,9 @@ const getModeText = (
 			: '「ことば」を、心地よく。\n句読点まで、美しく。';
 	}
 
-	if (
-		(mode === 'headline' || mode === 'paragraph') &&
-		registry?.sampleText?.tester
-	) {
-		return registry.sampleText.tester;
-	}
-
 	if (!isLatinPreviewSubset(previewSubset)) {
 		if (mode === 'headline' || mode === 'paragraph') {
-			return getLanguagePreviewText(previewSubset, metadata.id);
+			return getLanguagePreviewText(previewSubset);
 		}
 	}
 
@@ -153,12 +131,13 @@ const axisNames: Record<string, string> = {
 
 const getWeightSpecimen = (
 	metadata: GetFontResponse,
-	registry?: GetRegistryFamilyResponse,
+	registry?: RegistryFamily,
 ) => {
-	if (isIconFontFamily(metadata, registry)) return 'home';
-	if (isDigitalFontFamily(metadata, registry)) return '12:48';
-	if (isPunctuationFontFamily(metadata, registry)) return '「、。」';
-	return registry?.sampleText?.styles ?? metadata.family;
+	return (
+		registry?.sampleText?.styles ??
+		registry?.sampleText?.tester ??
+		metadata.family
+	);
 };
 
 const weightNames: Record<number, string> = {
@@ -200,23 +179,32 @@ export const FamilyPreview = ({
 }: FamilyPreviewProps) => {
 	const previewSubset = getPreferredPreviewSubset(metadata);
 	const usesLatinPreview = isLatinPreviewSubset(previewSubset);
-	const isIconFamily = isIconFontFamily(metadata, registry);
-	const isDigitalFamily = isDigitalFontFamily(metadata, registry);
+	const hasCatalog = hasSymbolCatalog(registry);
+	const hasNamedLigatures = usesNameLigatures(registry);
+	const isDigitalFamily = isDigitalFontFamily(registry);
+	const isPunctuationFamily = isPunctuationFontFamily(registry);
+	const isSymbolPreviewFamily =
+		(hasCatalog || isSymbolFontFamily(registry)) &&
+		!isDigitalFamily &&
+		!isPunctuationFamily;
+	const registrySample =
+		registry?.sampleText?.tester?.trim() ??
+		registry?.sampleText?.styles?.trim();
+	const symbolPreviewUnavailable = isSymbolPreviewFamily && !registrySample;
 	const initialWeight = nearestWeight(metadata.weights, 600);
-	const initialMode: PreviewMode =
-		metadata.id === 'dseg-weather'
-			? 'headline'
-			: isDigitalFamily
-				? 'numbers'
-				: metadata.category === 'monospace'
-					? 'code'
-					: 'headline';
+	const initialMode: PreviewMode = isSymbolPreviewFamily
+		? 'headline'
+		: isDigitalFamily
+			? 'numbers'
+			: metadata.category === 'monospace'
+				? 'code'
+				: 'headline';
 	const [mode, setMode] = useState<PreviewMode>(initialMode);
 	const [text, setText] = useState<string>(
 		getModeText(metadata, initialMode, registry),
 	);
 	const [size, setSize] = useState(
-		metadata.category === 'monospace' || isIconFamily
+		metadata.category === 'monospace' || hasCatalog
 			? 80
 			: usesLatinPreview
 				? 104
@@ -244,9 +232,9 @@ export const FamilyPreview = ({
 		() => comparisonWeights(metadata.weights),
 		[metadata.weights],
 	);
-	const fontFamily = getFontFamilyStack(metadata, Boolean(variable));
-	const activeModeLabels = isIconFamily
-		? (edgeCaseModeLabels.icons ?? modeLabels)
+	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
+	const activeModeLabels = isSymbolPreviewFamily
+		? symbolCatalogModeLabels
 		: usesLatinPreview
 			? modeLabels
 			: scriptModeLabels;
@@ -258,7 +246,7 @@ export const FamilyPreview = ({
 		fontStyle: italic ? 'italic' : 'normal',
 		letterSpacing: `${tracking / 100}em`,
 		lineHeight,
-		fontFeatureSettings: isIconFamily ? '"liga"' : undefined,
+		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
 		fontVariationSettings:
 			adjustableAxes.length > 0
 				? Object.entries(axisValues)
@@ -358,21 +346,23 @@ export const FamilyPreview = ({
 				<div className={classes.workspace}>
 					<div className={classes.workspaceHeader}>
 						<div className={classes.controls}>
-							<label className={classes.control}>
-								<span className={classes.controlLabel}>Preset</span>
-								<select
-									value={mode}
-									onChange={(event) =>
-										selectMode(event.target.value as PreviewMode)
-									}
-								>
-									{activeModeLabels.map((item) => (
-										<option key={item.value} value={item.value}>
-											{item.label}
-										</option>
-									))}
-								</select>
-							</label>
+							{activeModeLabels.length > 1 && (
+								<label className={classes.control}>
+									<span className={classes.controlLabel}>Preset</span>
+									<select
+										value={mode}
+										onChange={(event) =>
+											selectMode(event.target.value as PreviewMode)
+										}
+									>
+										{activeModeLabels.map((item) => (
+											<option key={item.value} value={item.value}>
+												{item.label}
+											</option>
+										))}
+									</select>
+								</label>
+							)}
 							<div className={classes.quickAdjust}>
 								<label className={classes.control}>
 									<span className={classes.controlLabel}>Size</span>
@@ -417,6 +407,19 @@ export const FamilyPreview = ({
 						<p className={classes.handoffNotice} role="status">
 							Variable controls are temporarily unavailable. Previewing the
 							static release instead.
+						</p>
+					)}
+
+					{symbolPreviewUnavailable && (
+						<p className={classes.handoffNotice} role="status">
+							The registry does not provide a reviewed Preview sample yet. Enter
+							a mapped symbol below, or{' '}
+							<Link to={`/fonts/${metadata.id}/glyphs`}>
+								{hasCatalog
+									? 'browse the verified catalog'
+									: 'browse mapped glyphs'}
+							</Link>
+							.
 						</p>
 					)}
 
@@ -527,41 +530,46 @@ export const FamilyPreview = ({
 						</div>
 					)}
 
-					<div className={classes.styleRail}>
-						<div>
-							<h3>Compare weights</h3>
-							<span>{metadata.weights.length} available</span>
-						</div>
-						<fieldset
-							className={classes.weightStrip}
-							aria-label="Weight comparison"
-						>
-							{weights.map((value) => (
-								<button
-									key={value}
-									type="button"
-									className={classes.weightSample}
-									data-active={weight === value || undefined}
-									aria-pressed={weight === value}
-									onClick={() => setWeight(value)}
-								>
-									<span>
-										{weightNames[value] ?? 'Weight'} {value}
-									</span>
-									<strong
-										style={{
-											fontFamily,
-											fontFeatureSettings: isIconFamily ? '"liga"' : undefined,
-											fontVariationSettings: previewStyle.fontVariationSettings,
-											fontWeight: value,
-										}}
+					{!symbolPreviewUnavailable && (
+						<div className={classes.styleRail}>
+							<div>
+								<h3>Compare weights</h3>
+								<span>{metadata.weights.length} available</span>
+							</div>
+							<fieldset
+								className={classes.weightStrip}
+								aria-label="Weight comparison"
+							>
+								{weights.map((value) => (
+									<button
+										key={value}
+										type="button"
+										className={classes.weightSample}
+										data-active={weight === value || undefined}
+										aria-pressed={weight === value}
+										onClick={() => setWeight(value)}
 									>
-										{weightSpecimen}
-									</strong>
-								</button>
-							))}
-						</fieldset>
-					</div>
+										<span>
+											{weightNames[value] ?? 'Weight'} {value}
+										</span>
+										<strong
+											style={{
+												fontFamily,
+												fontFeatureSettings: hasNamedLigatures
+													? '"liga"'
+													: undefined,
+												fontVariationSettings:
+													previewStyle.fontVariationSettings,
+												fontWeight: value,
+											}}
+										>
+											{weightSpecimen}
+										</strong>
+									</button>
+								))}
+							</fieldset>
+						</div>
+					)}
 				</div>
 			</div>
 		</section>

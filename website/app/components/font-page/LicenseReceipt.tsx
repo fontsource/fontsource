@@ -2,12 +2,12 @@ import { useClipboard } from '@mantine/hooks';
 import { useState } from 'react';
 import { Link } from 'react-router';
 
-import type { GetRegistryFamilyResponse } from '@/generated/api';
 import { triggerBlobDownload } from '@/utils/download';
+import type { RegistryFamily } from '@/utils/registry';
 
 import classes from './LicenseReceipt.module.css';
 
-type RegistryLicense = GetRegistryFamilyResponse['license'];
+type RegistryLicense = RegistryFamily['license'];
 
 interface LicenseReceiptProps {
 	familyId: string;
@@ -63,7 +63,7 @@ const LicenseReceipt = ({
 		try {
 			triggerBlobDownload(
 				`${familyId}-LICENSE.txt`,
-				new Blob([license.text ?? ''], { type: 'text/plain' }),
+				new Blob([license.text], { type: 'text/plain' }),
 			);
 			setDownloadError(false);
 		} catch {
@@ -88,9 +88,8 @@ const LicenseReceipt = ({
 						<>
 							<strong>{title}</strong>
 							<p>
-								{license.text
-									? 'The complete license text is included below for review, copying, and download.'
-									: 'Open the legal source before redistributing or modifying this font.'}
+								The complete license text is included below for review, copying,
+								and download.
 							</p>
 						</>
 					) : (
@@ -125,25 +124,21 @@ const LicenseReceipt = ({
 									? 'Copy failed'
 									: 'Copy attribution'}
 						</button>
-						{license.text && (
-							<>
-								<button
-									type="button"
-									onClick={() => licenseClipboard.copy(license.text ?? '')}
-								>
-									{licenseClipboard.copied
-										? 'LICENSE copied'
-										: licenseClipboard.error
-											? 'Copy failed'
-											: 'Copy LICENSE'}
-								</button>
-								<button type="button" onClick={downloadLicense}>
-									{downloadError
-										? 'Try LICENSE download again'
-										: 'Download LICENSE'}
-								</button>
-							</>
-						)}
+						<button
+							type="button"
+							onClick={() => licenseClipboard.copy(license.text)}
+						>
+							{licenseClipboard.copied
+								? 'LICENSE copied'
+								: licenseClipboard.error
+									? 'Copy failed'
+									: 'Copy LICENSE'}
+						</button>
+						<button type="button" onClick={downloadLicense}>
+							{downloadError
+								? 'Try LICENSE download again'
+								: 'Download LICENSE'}
+						</button>
 					</div>
 					{attributionClipboard.error && (
 						<p className={classes.actionError} role="status">
@@ -163,12 +158,10 @@ const LicenseReceipt = ({
 							remains available below.
 						</p>
 					)}
-					{license.text && (
-						<details className={classes.fullText}>
-							<summary>Read the full license text</summary>
-							<pre>{license.text}</pre>
-						</details>
-					)}
+					<details className={classes.fullText}>
+						<summary>Read the full license text</summary>
+						<pre>{license.text}</pre>
+					</details>
 				</>
 			)}
 		</section>

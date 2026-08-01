@@ -4,11 +4,9 @@ import { Link, useLocation } from 'react-router';
 import { IconDownload } from '@/components/icons';
 import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
-import type {
-	GetFontResponse,
-	GetRegistryFamilyResponse,
-} from '@/generated/api';
+import type { GetFontResponse } from '@/generated/api';
 import { getFontFamilyStack } from '@/utils/font-preview';
+import { isSymbolFontFamily, type RegistryFamily } from '@/utils/registry';
 
 import classes from './Tabs.module.css';
 
@@ -17,7 +15,7 @@ type FontPageLocationState = { fontResults?: string };
 
 interface TabWrapperProps {
 	metadata: GetFontResponse;
-	registry?: GetRegistryFamilyResponse;
+	registry?: RegistryFamily;
 	variableAvailable?: boolean;
 	tabsValue: string;
 	children: React.ReactNode;
@@ -47,53 +45,7 @@ const sourceNames: Record<GetFontResponse['type'], string> = {
 	other: 'Open source',
 };
 
-const familyCopy: Record<string, { attribution: string; description: string }> =
-	{
-		fraunces: {
-			description:
-				'A display old-style soft serif inspired by early twentieth-century typefaces.',
-			attribution: 'Undercase Type',
-		},
-		inter: {
-			description:
-				'A carefully crafted sans serif designed for computer screens and interfaces.',
-			attribution: 'Rasmus Andersson',
-		},
-		'jetbrains-mono': {
-			description:
-				'A typeface made for developers, with clarity and rhythm tuned for reading code.',
-			attribution: 'JetBrains',
-		},
-		yakuhanjp: {
-			description:
-				'A punctuation-focused Japanese font for more balanced spacing in mixed text.',
-			attribution: 'Qrac',
-		},
-	};
-
-const getFamilyCopy = (metadata: GetFontResponse) => {
-	if (metadata.id.startsWith('material-symbols')) {
-		return {
-			description:
-				'A flexible symbol family for interfaces, navigation, and product systems.',
-			attribution: 'Google',
-		};
-	}
-
-	if (metadata.id.startsWith('dseg')) {
-		return {
-			description:
-				'A family of seven- and fourteen-segment display typefaces for digital readouts.',
-			attribution: 'Keshikan',
-		};
-	}
-
-	if (metadata.id.startsWith('yakuhan')) return familyCopy.yakuhanjp;
-
-	return familyCopy[metadata.id];
-};
-
-const getRegistryDescription = (registry?: GetRegistryFamilyResponse) => {
+const getRegistryDescription = (registry?: RegistryFamily) => {
 	if (!registry?.content) return;
 	return (
 		registry.content.en?.description ??
@@ -109,28 +61,21 @@ export const FamilyIdentity = ({
 	compact = false,
 }: {
 	metadata: GetFontResponse;
-	registry?: GetRegistryFamilyResponse;
+	registry?: RegistryFamily;
 	fontFamily: string;
 	compact?: boolean;
 }) => {
 	const category = categoryNames[metadata.category];
 	const weightLabel = `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`;
 	const subsetLabel = `${metadata.subsets.length} ${metadata.subsets.length === 1 ? 'subset' : 'subsets'}`;
-	const copy = getFamilyCopy(metadata);
-	const description = getRegistryDescription(registry) ?? copy?.description;
-	const attribution = registry?.designer ?? copy?.attribution;
-	const specialistClassification = metadata.id.startsWith('dseg')
-		? 'Digital display'
-		: metadata.id.startsWith('yakuhan')
-			? 'Japanese punctuation'
-			: undefined;
+	const description = getRegistryDescription(registry);
+	const attribution = registry?.designer;
 	const classification =
-		registry?.classifications[0]?.replaceAll('-', ' ') ??
-		specialistClassification ??
-		category;
+		registry?.classifications[0]?.replaceAll('-', ' ') ?? category;
 	const tags = registry?.tags.slice(0, 2) ?? [];
-	const useSpecimenTitle =
-		metadata.category !== 'icons' && metadata.category !== 'other';
+	const useSpecimenTitle = registry
+		? !isSymbolFontFamily(registry)
+		: metadata.category !== 'icons' && metadata.category !== 'other';
 
 	return (
 		<div className={classes.identity} data-compact={compact || undefined}>
@@ -286,7 +231,7 @@ export const TabsWrapper = ({
 			? 'glyphs'
 			: tabsValue;
 	const isPreview = activeTab === 'preview';
-	const fontFamily = getFontFamilyStack(metadata, variableAvailable);
+	const fontFamily = getFontFamilyStack(metadata, variableAvailable, registry);
 	const location = useLocation();
 	const locationState = location.state as FontPageLocationState | null;
 	const resultsUrl =

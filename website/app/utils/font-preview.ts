@@ -5,6 +5,11 @@ import type {
 	GetVariableFontResponse,
 } from '../generated/api';
 import { jsDelivrResolver } from './cdn';
+import {
+	isDigitalFontFamily,
+	isPunctuationFontFamily,
+	type RegistryFamily,
+} from './registry';
 
 type FontPreviewIdentity = Pick<GetFontResponse, 'family' | 'id' | 'variable'>;
 
@@ -66,16 +71,17 @@ export const getPreferredPreviewSubset = (metadata: GetFontResponse) => {
 export const getFontFamilyStack = (
 	metadata: FontPreviewIdentity,
 	variableAvailable = metadata.variable,
+	registry?: RegistryFamily,
 ) => {
 	const family = variableAvailable
 		? `${metadata.family} Variable`
 		: metadata.family;
 
-	if (metadata.id.startsWith('yakuhan')) {
+	if (isPunctuationFontFamily(registry)) {
 		return `"${family}", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif`;
 	}
 
-	if (metadata.id.startsWith('dseg')) {
+	if (isDigitalFontFamily(registry)) {
 		return `"${family}", ui-monospace, monospace`;
 	}
 

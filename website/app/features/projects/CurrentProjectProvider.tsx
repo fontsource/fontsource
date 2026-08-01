@@ -49,10 +49,24 @@ const CurrentProjectProvider = ({ children }: { children: ReactNode }) => {
 		}
 
 		if (storedValue !== null) {
+			let migratedValue: string;
 			try {
-				currentProjectSnapshotSchema.parse(JSON.parse(storedValue));
+				const parsedSnapshot = currentProjectSnapshotSchema.parse(
+					JSON.parse(storedValue),
+				);
+				migratedValue = JSON.stringify(parsedSnapshot);
 			} catch {
 				setStorageIssue('invalid');
+				store.ready$.set(true);
+				return;
+			}
+
+			try {
+				if (migratedValue !== storedValue) {
+					localStorage.setItem(STORAGE_KEY, migratedValue);
+				}
+			} catch {
+				setStorageIssue('unavailable');
 				store.ready$.set(true);
 				return;
 			}
