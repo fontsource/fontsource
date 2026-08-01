@@ -36,7 +36,9 @@ export const createClientConfig: CreateClientConfig = (config) => ({
 	baseUrl: 'https://api.fontsource.org',
 	fetch: async (input, init) => {
 		const request = new Request(input, init);
-		const response = await env.API.fetch(request);
+		const response = import.meta.env.DEV
+			? await fetch(request)
+			: await env.API.fetch(request);
 
 		if (!response.ok) {
 			await throwApiResponseError(response, request.url);
