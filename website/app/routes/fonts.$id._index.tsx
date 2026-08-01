@@ -49,7 +49,7 @@ export default function Font() {
 		variableCSS,
 		versions,
 		registry,
-		registryUnavailable,
+		registryState,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -67,7 +67,7 @@ export default function Font() {
 				variableCSS={variableCSS}
 				versions={versions}
 				registry={registry}
-				registryUnavailable={registryUnavailable}
+				registryState={registryState}
 				variableUnavailable={metadata.variable && !variable}
 			/>
 		</FamilyPageShell>

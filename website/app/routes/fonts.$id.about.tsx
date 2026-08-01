@@ -10,9 +10,9 @@ import {
 	loadFontPageBase,
 	loadFontPageCapabilities,
 	loadFontPageLanguages,
-	loadOptional,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
+import { loadOptionalRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
@@ -28,15 +28,15 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	] = await Promise.all([
 		basePromise,
 		loadFontPageLanguages(basePromise, request.signal),
-		loadOptional(listRegistryAxes(options)),
-		loadOptional(getRegistryTaxonomy(options)),
+		loadOptionalRegistryData(listRegistryAxes(options), request.signal),
+		loadOptionalRegistryData(getRegistryTaxonomy(options), request.signal),
 		loadFontPageCapabilities(basePromise, request.signal),
 	]);
 	const enrichmentUnavailable = [
 		languagesResult,
 		axesResult,
 		taxonomyResult,
-	].some((result) => result.unavailable);
+	].some((result) => result.state === 'unavailable');
 
 	return data(
 		{
@@ -47,7 +47,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
 			enrichmentUnavailable,
-			capabilitiesUnavailable: capabilitiesResult.unavailable,
+			capabilitiesState: capabilitiesResult.state,
 		},
 		{ headers: cacheHeaders.short },
 	);
@@ -78,9 +78,9 @@ export default function AboutPage() {
 		taxonomy,
 		capabilities,
 		capabilitySource,
-		registryUnavailable,
+		registryState,
 		enrichmentUnavailable,
-		capabilitiesUnavailable,
+		capabilitiesState,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -102,9 +102,9 @@ export default function AboutPage() {
 				taxonomy={taxonomy}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
-				registryUnavailable={registryUnavailable}
+				registryState={registryState}
 				enrichmentUnavailable={enrichmentUnavailable}
-				capabilitiesUnavailable={capabilitiesUnavailable}
+				capabilitiesState={capabilitiesState}
 				variableUnavailable={metadata.variable && !variable}
 			/>
 		</FamilyPageShell>

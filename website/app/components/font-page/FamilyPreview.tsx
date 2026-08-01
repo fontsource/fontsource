@@ -1,4 +1,3 @@
-import { VisuallyHidden } from '@mantine/core';
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
@@ -25,6 +24,7 @@ import { saveFontPreviewSelection } from '@/utils/font-preview-selection';
 import { getPreviewText as getLanguagePreviewText } from '@/utils/language/language';
 import {
 	getRegistryFamilyKind,
+	type RegistryDataState,
 	type RegistryFamily,
 	usesNameLigatures,
 } from '@/utils/registry';
@@ -38,7 +38,7 @@ interface FamilyPreviewProps {
 	variableCSS?: string;
 	versions: GetFontVersionsResponse;
 	registry?: RegistryFamily;
-	registryUnavailable?: boolean;
+	registryState: RegistryDataState;
 	variableUnavailable?: boolean;
 }
 
@@ -149,7 +149,7 @@ export const FamilyPreview = ({
 	variableCSS,
 	versions,
 	registry,
-	registryUnavailable = false,
+	registryState,
 	variableUnavailable = false,
 }: FamilyPreviewProps) => {
 	const previewSubset = getPreferredPreviewSubset(metadata, registry);
@@ -276,15 +276,11 @@ export const FamilyPreview = ({
 	};
 
 	return (
-		<section className={classes.page} aria-labelledby="preview-heading">
+		<section className={classes.page}>
 			<style
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
 				dangerouslySetInnerHTML={{ __html: variableCSS ?? staticCSS }}
 			/>
-			<VisuallyHidden component="h2" id="preview-heading">
-				Preview {metadata.family}
-			</VisuallyHidden>
-
 			<div className={classes.workbench}>
 				<div className={classes.identityPanel}>
 					<div>
@@ -298,10 +294,10 @@ export const FamilyPreview = ({
 							to={`/fonts/${metadata.id}/about#license`}
 						>
 							{registry?.license
-								? `${registry.license.id} license · verified registry record`
-								: registryUnavailable
-									? 'License verification temporarily unavailable'
-									: 'License record not verified'}
+								? `${registry.license.id} license`
+								: registryState === 'unavailable'
+									? 'License details temporarily unavailable'
+									: 'License details unavailable'}
 						</Link>
 					</div>
 					<FamilyActions
@@ -382,11 +378,11 @@ export const FamilyPreview = ({
 
 					{symbolPreviewUnavailable && (
 						<p className={classes.handoffNotice} role="status">
-							The registry does not provide a reviewed Preview sample yet. Enter
-							a mapped symbol below, or{' '}
+							No preview sample is available yet. Enter a mapped symbol below,
+							or{' '}
 							<Link to={`/fonts/${metadata.id}/glyphs`}>
 								{hasCatalog
-									? 'browse the verified catalog'
+									? 'browse the symbol catalog'
 									: 'browse mapped glyphs'}
 							</Link>
 							.

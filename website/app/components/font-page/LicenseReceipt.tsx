@@ -1,9 +1,9 @@
 import { useClipboard } from '@mantine/hooks';
 import { useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useRevalidator } from 'react-router';
 
 import { triggerBlobDownload } from '@/utils/download';
-import type { RegistryFamily } from '@/utils/registry';
+import type { RegistryDataState, RegistryFamily } from '@/utils/registry';
 
 import classes from './LicenseReceipt.module.css';
 
@@ -13,6 +13,7 @@ interface LicenseReceiptProps {
 	familyId: string;
 	family: string;
 	license?: RegistryLicense;
+	registryState: RegistryDataState;
 	variant?: 'receipt' | 'detail';
 }
 
@@ -20,14 +21,37 @@ const LicenseReceipt = ({
 	familyId,
 	family,
 	license,
+	registryState,
 	variant = 'receipt',
 }: LicenseReceiptProps) => {
 	const attributionClipboard = useClipboard({ timeout: 1500 });
 	const licenseClipboard = useClipboard({ timeout: 1500 });
+	const revalidator = useRevalidator();
 	const [downloadError, setDownloadError] = useState(false);
 	const isDetail = variant === 'detail';
 
 	if (!license) {
+		const temporarilyUnavailable = registryState === 'unavailable';
+		const missingCopy = temporarilyUnavailable
+			? {
+					status: 'License details unavailable',
+					title: 'Check the license before sharing',
+					description:
+						'You can still preview, install, or download this font. Try again before redistributing its files.',
+				}
+			: registryState === 'not-found'
+				? {
+						status: 'License details unavailable',
+						title: 'License details are not published yet',
+						description:
+							'Do not redistribute this font until its license details are available.',
+					}
+				: {
+						status: 'License details unavailable',
+						title: 'License details are incomplete',
+						description:
+							'Do not redistribute this font until the Registry includes its complete license details.',
+					};
 		return (
 			<section
 				className={classes.receipt}
@@ -37,16 +61,21 @@ const LicenseReceipt = ({
 			>
 				<div className={classes.heading}>
 					<div>
-						<span className={classes.status}>Verification unavailable</span>
-						<h2 id={`license-${familyId}`}>License needs verification</h2>
-						<p>
-							The registry license could not be verified. Fontsource does not
-							fall back to legacy license metadata.
-						</p>
+						<span className={classes.status}>{missingCopy.status}</span>
+						<h2 id={`license-${familyId}`}>{missingCopy.title}</h2>
+						<p>{missingCopy.description}</p>
 					</div>
-					<Link to={`/fonts/${familyId}/about#license`}>
-						Check license details
-					</Link>
+					{temporarilyUnavailable && (
+						<button
+							type="button"
+							disabled={revalidator.state !== 'idle'}
+							onClick={() => void revalidator.revalidate()}
+						>
+							{revalidator.state === 'idle'
+								? 'Try again'
+								: 'Checking Registry…'}
+						</button>
+					)}
 				</div>
 			</section>
 		);
@@ -77,39 +106,33 @@ const LicenseReceipt = ({
 		>
 			<div className={classes.heading}>
 				<div>
-					<span className={classes.status}>Registry license record</span>
+					<span className={classes.status}>License</span>
 					<h2 id={`license-${familyId}`}>
 						{isDetail ? 'License and permissions' : title}
 					</h2>
 					{isDetail ? (
 						<>
 							<strong>{title}</strong>
-							<p>
-								The complete license text is included below for review, copying,
-								and download.
-							</p>
+							<p>Review, copy, or download the complete license text.</p>
 						</>
 					) : (
-						<p>
-							{license.id} · Keep the supplied license with redistributed font
-							files.
-						</p>
+						<p>Keep a copy of this license with any font files you share.</p>
 					)}
 				</div>
 				{!isDetail && (
-					<Link to={`/fonts/${familyId}/about#license`}>License details</Link>
+					<Link to={`/fonts/${familyId}/about#license`}>Read license</Link>
 				)}
 			</div>
 
 			{isDetail && (
 				<>
 					<p className={classes.disclaimer}>
-						This summary is a practical guide, not legal advice. The exact
-						license text controls.
+						This summary is not legal advice. The full license text below sets
+						the terms.
 					</p>
 					<div className={classes.actions}>
 						<a href={license.url} target="_blank" rel="noreferrer">
-							Open legal source
+							Open license source
 						</a>
 						<button
 							type="button"
@@ -126,15 +149,15 @@ const LicenseReceipt = ({
 							onClick={() => licenseClipboard.copy(license.text)}
 						>
 							{licenseClipboard.copied
-								? 'LICENSE copied'
+								? 'License text copied'
 								: licenseClipboard.error
 									? 'Copy failed'
-									: 'Copy LICENSE'}
+									: 'Copy license text'}
 						</button>
 						<button type="button" onClick={downloadLicense}>
 							{downloadError
-								? 'Try LICENSE download again'
-								: 'Download LICENSE'}
+								? 'Try license download again'
+								: 'Download license text'}
 						</button>
 					</div>
 					{attributionClipboard.error && (
@@ -156,7 +179,7 @@ const LicenseReceipt = ({
 						</p>
 					)}
 					<details className={classes.fullText}>
-						<summary>Read the full license text</summary>
+						<summary>Read full license text</summary>
 						<pre>{license.text}</pre>
 					</details>
 				</>

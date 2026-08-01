@@ -10,9 +10,9 @@ import {
 	loadFontPageBase,
 	loadFontPageCapabilities,
 	loadFontPageLanguages,
-	loadOptional,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
+import { loadOptionalRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
@@ -20,10 +20,11 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const basePromise = loadFontPageBase(id, request.signal);
 	const symbolsPromise = basePromise.then((base) =>
 		base.registry?.symbols
-			? loadOptional(
+			? loadOptionalRegistryData(
 					getRegistryFamilySymbols({ id }, { signal: request.signal }),
+					request.signal,
 				)
-			: { value: undefined, unavailable: false },
+			: { value: undefined, state: 'not-found' as const },
 	);
 	const [base, languagesResult, capabilitiesResult, symbolsResult] =
 		await Promise.all([
@@ -40,10 +41,9 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			symbols: symbolsResult.value,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
-			languageMetadataUnavailable:
-				base.registryUnavailable || languagesResult.unavailable,
-			capabilitiesUnavailable: capabilitiesResult.unavailable,
-			symbolsUnavailable: symbolsResult.unavailable,
+			languageMetadataState: languagesResult.state,
+			capabilitiesState: capabilitiesResult.state,
+			symbolsState: symbolsResult.state,
 		},
 		{ headers: cacheHeaders.short },
 	);
@@ -72,9 +72,9 @@ export default function GlyphsPage() {
 		symbols,
 		capabilities,
 		capabilitySource,
-		languageMetadataUnavailable,
-		capabilitiesUnavailable,
-		symbolsUnavailable,
+		languageMetadataState,
+		capabilitiesState,
+		symbolsState,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -94,9 +94,9 @@ export default function GlyphsPage() {
 				symbols={symbols}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
-				languageMetadataUnavailable={languageMetadataUnavailable}
-				capabilitiesUnavailable={capabilitiesUnavailable}
-				symbolsUnavailable={symbolsUnavailable}
+				languageMetadataState={languageMetadataState}
+				capabilitiesState={capabilitiesState}
+				symbolsState={symbolsState}
 			/>
 		</FamilyPageShell>
 	);

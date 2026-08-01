@@ -33,8 +33,15 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 };
 
 export default function UsePage() {
-	const { metadata, staticCSS, variable, variableCSS, versions, registry } =
-		useLoaderData<typeof loader>();
+	const {
+		metadata,
+		staticCSS,
+		variable,
+		variableCSS,
+		versions,
+		registry,
+		registryState,
+	} = useLoaderData<typeof loader>();
 
 	return (
 		<FamilyPageShell
@@ -51,6 +58,7 @@ export default function UsePage() {
 				variableCSS={variableCSS}
 				versions={versions}
 				registry={registry}
+				registryState={registryState}
 			/>
 		</FamilyPageShell>
 	);

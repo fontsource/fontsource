@@ -6,8 +6,18 @@ import type {
 
 type RegistryFamily = GetRegistryFamilyResponse;
 type RegistrySource = RegistryFamily['sources'][number];
+type RegistryDataState = 'available' | 'not-found' | 'unavailable';
 type UnicodeRange = readonly [number, number];
 type RegistryFamilyKind = 'text' | 'symbols' | 'punctuation' | 'digital';
+
+const maxUnicodeCodepoint = 0x10ffff;
+const isUnicodeScalarValue = (value: number) =>
+	Number.isInteger(value) &&
+	value >= 0 &&
+	value <= maxUnicodeCodepoint &&
+	!(value >= 0xd800 && value <= 0xdfff);
+const getUnicodeCharacter = (value: number) =>
+	isUnicodeScalarValue(value) ? String.fromCodePoint(value) : undefined;
 
 const usesNameLigatures = (registry?: RegistryFamily) =>
 	registry?.symbols?.inputModes.includes('name-ligature') ?? false;
@@ -58,12 +68,22 @@ const selectRegistryFamilyLanguages = (
 };
 
 const parseRegistryUnicodeRange = (value: string): UnicodeRange[] =>
-	value.split(/,\s*/).map((range) => {
-		const [startValue, endValue = startValue] = range.slice(2).split('-');
-		const start = Number.parseInt(startValue ?? '', 16);
-		const end = Number.parseInt(endValue ?? '', 16);
-		return [start, end] as const;
-	});
+	value
+		.split(',')
+		.flatMap((range) => {
+			const match = /^U\+([\dA-F]{1,6})(?:-([\dA-F]{1,6}))?$/iu.exec(
+				range.trim(),
+			);
+			if (!match) return [];
+
+			const start = Number.parseInt(match[1] ?? '', 16);
+			const end = Number.parseInt(match[2] ?? match[1] ?? '', 16);
+			if (start > end || start < 0 || end > maxUnicodeCodepoint) {
+				return [];
+			}
+			return [[start, end] as const];
+		})
+		.sort((a, b) => a[0] - b[0]);
 
 const includesCodepoint = (ranges: readonly UnicodeRange[], value: number) => {
 	let lower = 0;
@@ -109,7 +129,8 @@ const getRegistryCharacterGroups = (
 		capabilities.unicodeRange,
 	)) {
 		for (let codepoint = start; codepoint <= end; codepoint += 1) {
-			const character = String.fromCodePoint(codepoint);
+			const character = getUnicodeCharacter(codepoint);
+			if (!character) continue;
 			if (!isBrowsableCharacter(character)) continue;
 			groups.all.push(character);
 			if (/^(\p{L}|\p{M})$/u.test(character)) {
@@ -174,13 +195,19 @@ const featureNames: Record<string, string> = {
 const getOpenTypeFeatureName = (tag: string) =>
 	featureNames[tag] ?? tag.toUpperCase();
 
-export type { RegistryFamily, RegistryFamilyKind, RegistrySource };
+export type {
+	RegistryDataState,
+	RegistryFamily,
+	RegistryFamilyKind,
+	RegistrySource,
+};
 export {
 	findUnmappedCharacters,
 	getOpenTypeFeatureName,
 	getRegistryCharacterGroups,
 	getRegistryContent,
 	getRegistryFamilyKind,
+	getUnicodeCharacter,
 	selectRegistryFamilyLanguages,
 	usesNameLigatures,
 };

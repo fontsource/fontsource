@@ -7,21 +7,7 @@ import {
 } from '@/generated/api';
 import { getFontPreviewCSS } from '@/utils/font-preview';
 import { selectRegistryFamilyLanguages } from '@/utils/registry';
-
-interface OptionalResult<T> {
-	value?: T;
-	unavailable: boolean;
-}
-
-const loadOptional = async <T>(
-	request: Promise<T>,
-): Promise<OptionalResult<T>> => {
-	try {
-		return { value: await request, unavailable: false };
-	} catch {
-		return { unavailable: true };
-	}
-};
+import { loadOptionalRegistryData } from '@/utils/registry-request.server';
 
 const loadFontPageBase = async (id: string, signal: AbortSignal) => {
 	const parameters = { id };
@@ -32,7 +18,10 @@ const loadFontPageBase = async (id: string, signal: AbortSignal) => {
 			? getVariableFont(parameters, options).catch(() => undefined)
 			: undefined,
 	);
-	const registryPromise = loadOptional(getRegistryFamily(parameters, options));
+	const registryPromise = loadOptionalRegistryData(
+		getRegistryFamily(parameters, options),
+		signal,
+	);
 	const [metadata, variable, registryResult] = await Promise.all([
 		metadataPromise,
 		variablePromise,
@@ -43,7 +32,7 @@ const loadFontPageBase = async (id: string, signal: AbortSignal) => {
 		metadata,
 		variable,
 		registry: registryResult.value,
-		registryUnavailable: registryResult.unavailable,
+		registryState: registryResult.state,
 		...getFontPreviewCSS(metadata, variable),
 	};
 };
@@ -55,24 +44,36 @@ const loadFontPageCapabilities = async (
 	signal: AbortSignal,
 ) => {
 	const base = await basePromise;
+	if (base.registryState !== 'available') {
+		return {
+			capabilitySource: undefined,
+			capabilities: undefined,
+			state: base.registryState,
+		};
+	}
 	const capabilitySource = base.registry?.sources.find(
 		(source) => source.sha256 === base.registry?.previewSource,
 	);
 
 	if (!capabilitySource) {
-		return { capabilitySource, capabilities: undefined, unavailable: false };
+		return {
+			capabilitySource,
+			capabilities: undefined,
+			state: 'not-found' as const,
+		};
 	}
 
-	const result = await loadOptional(
+	const result = await loadOptionalRegistryData(
 		getRegistrySourceCapabilities(
 			{ sha256: capabilitySource.sha256 },
 			{ signal },
 		),
+		signal,
 	);
 	return {
 		capabilitySource,
 		capabilities: result.value,
-		unavailable: result.unavailable,
+		state: result.state,
 	};
 };
 
@@ -82,17 +83,17 @@ const loadFontPageLanguages = async (
 ) => {
 	const [base, result] = await Promise.all([
 		basePromise,
-		loadOptional(listRegistryLanguages({ signal })),
+		loadOptionalRegistryData(listRegistryLanguages({ signal }), signal),
 	]);
+	const state =
+		base.registryState === 'available' ? result.state : base.registryState;
 	return {
-		languages: selectRegistryFamilyLanguages(base.registry, result.value),
-		unavailable: result.unavailable,
+		languages:
+			state === 'available'
+				? selectRegistryFamilyLanguages(base.registry, result.value)
+				: undefined,
+		state,
 	};
 };
 
-export {
-	loadFontPageBase,
-	loadFontPageCapabilities,
-	loadFontPageLanguages,
-	loadOptional,
-};
+export { loadFontPageBase, loadFontPageCapabilities, loadFontPageLanguages };
