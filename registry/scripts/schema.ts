@@ -69,14 +69,10 @@ const githubRepositorySchema = z
 	.string()
 	.regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/);
 
-const sampleTextSchema = z
-	.strictObject({
-		styles: z.string().min(1).optional(),
-		tester: z.string().min(1).optional(),
-	})
-	.refine((value) => value.styles || value.tester, {
-		message: 'must contain styles or tester text',
-	});
+const sampleTextSchema = z.strictObject({
+	short: z.string().min(1),
+	long: z.string().min(1).optional(),
+});
 
 export const languageCatalogSchema = z.record(
 	languageIdSchema,
@@ -112,6 +108,19 @@ export const upstreamsSchema = z.strictObject({
 
 export const replacementRegistrySchema = z.record(idSchema, idSchema);
 export const familyTagsSchema = z.record(tagIdSchema, z.array(idSchema).min(1));
+export const familyOverridesSchema = z.record(
+	idSchema,
+	z
+		.strictObject({
+			languages: z.array(languageIdSchema).optional(),
+			sampleText: sampleTextSchema.optional(),
+		})
+		.refine(
+			(value) =>
+				value.languages !== undefined || value.sampleText !== undefined,
+			{ message: 'must override languages or sample text' },
+		),
+);
 
 const archivedFileSchema = z.strictObject({
 	path: sourcePathSchema,
@@ -212,6 +221,7 @@ export const familySchema = z.strictObject({
 });
 
 export const familyIconsSchema = z.strictObject({
+	inputModes: z.array(z.enum(['codepoint', 'name-ligature'])).min(1),
 	icons: z
 		.array(
 			z.strictObject({
@@ -317,6 +327,7 @@ export const taxonomySchema = z.strictObject({
 });
 
 export type Family = z.infer<typeof familySchema>;
+export type FamilyOverrides = z.infer<typeof familyOverridesSchema>;
 export type FamilyProvider = z.infer<typeof familyProviderSchema>;
 export type FamilySource = Family['sources'][number];
 export type FamilyIcons = z.infer<typeof familyIconsSchema>;

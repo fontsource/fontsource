@@ -8801,6 +8801,10 @@
 			"name": "zoom_out_map"
 		}
 	],
+	"inputModes": [
+		"codepoint",
+		"name-ligature"
+	],
 	"source": {
 		"path": "font/MaterialIconsSharp-Regular.codepoints",
 		"revision": "f7bd4f25f3764883717c09a1fd867f560c9a9581",

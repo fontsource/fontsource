@@ -28,10 +28,11 @@ const UnicodeScalarSchema = z
 	.max(0x10ffff)
 	.refine((value) => value < 0xd800 || value > 0xdfff);
 const ScriptSchema = z.string().regex(/^[A-Z][a-z]{3}$/);
+const SymbolInputModeSchema = z.enum(['codepoint', 'name-ligature']);
 
 const SampleTextSchema = z.strictObject({
-	styles: z.string().min(1).optional(),
-	tester: z.string().min(1).optional(),
+	short: z.string().min(1).describe('Compact preview text'),
+	long: z.string().min(1).describe('Extended preview text').optional(),
 });
 
 const RangeShape = {
@@ -145,7 +146,7 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		id: z.string(),
 		url: z.url(),
 		attribution: z.string().optional(),
-		text: z.string().describe('Complete license text').optional(),
+		text: z.string().min(1).describe('Complete license text'),
 	}),
 	project: z
 		.strictObject({
@@ -154,9 +155,14 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		})
 		.optional(),
 	content: z.record(z.string().min(1), LocalizedContentSchema).optional(),
-	symbolsUrl: z.string().min(1).optional(),
+	symbols: z
+		.strictObject({
+			catalogUrl: z.string().min(1),
+			inputModes: z.array(SymbolInputModeSchema).min(1),
+		})
+		.optional(),
 	sources: z.array(RegistrySourceSchema).min(1),
-	distribution: RegistryDistributionSchema.optional(),
+	distribution: RegistryDistributionSchema,
 });
 
 export const RegistryFamilySymbolsSchema = z

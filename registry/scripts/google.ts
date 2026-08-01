@@ -19,7 +19,9 @@ import {
 import {
 	compareStrings,
 	normalizeText,
+	pathExists,
 	readJson,
+	readJsonIfExists,
 	sha256,
 	writeJson,
 } from './shared.ts';
@@ -130,14 +132,13 @@ const languageProto = loadProtoType(
 const normalizeSampleText = (
 	value: GoogleRawSampleText | undefined,
 ): GoogleSampleText | undefined => {
-	const styles = value?.styles?.trim();
-	const tester = value?.tester?.trim();
-	return styles || tester
-		? {
-				...(styles ? { styles } : {}),
-				...(tester ? { tester } : {}),
-			}
-		: undefined;
+	const short = value?.styles?.trim();
+	const long = value?.tester?.trim();
+	if (long && !short) {
+		throw new Error('Google sample text tester requires styles text');
+	}
+	if (!short) return undefined;
+	return { short, ...(long ? { long } : {}) };
 };
 
 const normalizeProject = (
@@ -654,14 +655,29 @@ const writeFamily = async (
 	});
 	const output = join(root, 'families', 'google', id);
 	await mkdir(output, { recursive: true });
-	await writeJson(join(output, 'family.json'), family);
+	const outputFamilyPath = join(output, 'family.json');
+	const outputLicensePath = join(output, 'license.txt');
+	if (!licensePath) {
+		if (!(await pathExists(outputLicensePath))) {
+			throw new Error(
+				`${id} has no license file in google/fonts or reviewed registry fallback`,
+			);
+		}
+		const previousFamily = familySchema.parse(
+			await readJsonIfExists(outputFamilyPath),
+		);
+		if (previousFamily.license.id !== license.id) {
+			throw new Error(
+				`${id} license changed from ${previousFamily.license.id} to ${license.id}; review its fallback`,
+			);
+		}
+	}
+	await writeJson(outputFamilyPath, family);
 	if (licensePath) {
 		await writeFile(
-			join(output, 'license.txt'),
+			outputLicensePath,
 			normalizeText(snapshot.read(licensePath).toString('utf8')),
 		);
-	} else {
-		await rm(join(output, 'license.txt'), { force: true });
 	}
 
 	for (const [sourcePath, outputName] of DOCUMENTS) {

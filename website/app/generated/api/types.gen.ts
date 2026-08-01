@@ -777,8 +777,14 @@ export type GetRegistryFamilyResponses = {
         primaryLanguage?: string;
         primaryScript?: string;
         sampleText?: {
-            styles?: string;
-            tester?: string;
+            /**
+             * Compact preview text
+             */
+            short: string;
+            /**
+             * Extended preview text
+             */
+            long?: string;
         };
         designer?: string;
         dateAdded?: string;
@@ -789,7 +795,7 @@ export type GetRegistryFamilyResponses = {
             /**
              * Complete license text
              */
-            text?: string;
+            text: string;
         };
         project?: {
             repository: string;
@@ -807,7 +813,10 @@ export type GetRegistryFamilyResponses = {
                 article?: string;
             };
         };
-        symbolsUrl?: string;
+        symbols?: {
+            catalogUrl: string;
+            inputModes: Array<'codepoint' | 'name-ligature'>;
+        };
         sources: Array<{
             sha256: string;
             filename: string;
@@ -879,7 +888,7 @@ export type GetRegistryFamilyResponses = {
                 default: number;
             }>;
         }>;
-        distribution?: {
+        distribution: {
             static?: Array<{
                 weight: number;
                 style: 'normal' | 'italic';
@@ -1005,8 +1014,14 @@ export type ListRegistryLanguagesResponses = {
         preferredName?: string;
         autonym?: string;
         sampleText?: {
-            styles?: string;
-            tester?: string;
+            /**
+             * Compact preview text
+             */
+            short: string;
+            /**
+             * Extended preview text
+             */
+            long?: string;
         };
     }>;
 };

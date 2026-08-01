@@ -515,8 +515,8 @@
 		"type": "github"
 	},
 	"sampleText": {
-		"styles": "print('Hello Google!')",
-		"tester": "print('Hello Google!')"
+		"long": "print('Hello Google!')",
+		"short": "print('Hello Google!')"
 	},
 	"sourceModified": "2026-04-27",
 	"sources": [

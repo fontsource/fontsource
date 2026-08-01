@@ -1,0 +1,269 @@
+{
+	"bravura": {
+		"sampleText": {
+			"short": "♩♪♫♬♭♮♯"
+		}
+	},
+	"bravura-text": {
+		"sampleText": {
+			"short": "♩♪♫♬♭♮♯"
+		}
+	},
+	"dejavu-math": {
+		"sampleText": {
+			"short": "∑ ∫ √ π ≈ ∞"
+		}
+	},
+	"dseg-weather": {
+		"sampleText": {
+			"short": "0123456789ABCabc"
+		}
+	},
+	"dseg14-classic": {
+		"sampleText": {
+			"short": "0123456789 ABCDEF"
+		}
+	},
+	"dseg14-classic-mini": {
+		"sampleText": {
+			"short": "0123456789 ABCDEF"
+		}
+	},
+	"dseg14-modern": {
+		"sampleText": {
+			"short": "0123456789 ABCDEF"
+		}
+	},
+	"dseg14-modern-mini": {
+		"sampleText": {
+			"short": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-classic": {
+		"sampleText": {
+			"short": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-classic-mini": {
+		"sampleText": {
+			"short": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-modern": {
+		"sampleText": {
+			"short": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-modern-mini": {
+		"sampleText": {
+			"short": "0123456789 ABCDEF"
+		}
+	},
+	"dseg7-segg-chan": {
+		"sampleText": {
+			"short": "0123456789"
+		}
+	},
+	"dseg7-segg-chan-mini": {
+		"sampleText": {
+			"short": "0123456789"
+		}
+	},
+	"flow-block": {
+		"languages": [],
+		"sampleText": {
+			"short": "Wireframe content"
+		}
+	},
+	"flow-circular": {
+		"languages": [],
+		"sampleText": {
+			"short": "Wireframe content"
+		}
+	},
+	"flow-rounded": {
+		"languages": [],
+		"sampleText": {
+			"short": "Wireframe content"
+		}
+	},
+	"jsmath-cmbx10": {
+		"languages": [],
+		"sampleText": {
+			"short": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmex10": {
+		"languages": [],
+		"sampleText": {
+			"short": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmmi10": {
+		"languages": [],
+		"sampleText": {
+			"short": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmr10": {
+		"languages": [],
+		"sampleText": {
+			"short": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmsy10": {
+		"languages": [],
+		"sampleText": {
+			"short": "ABC xyz 123"
+		}
+	},
+	"jsmath-cmti10": {
+		"languages": [],
+		"sampleText": {
+			"short": "ABC xyz 123"
+		}
+	},
+	"libertinus-math": {
+		"languages": [],
+		"sampleText": {
+			"short": "∑ ∫ √ π ≈ ∞"
+		}
+	},
+	"libre-barcode-128": {
+		"languages": []
+	},
+	"libre-barcode-128-text": {
+		"languages": []
+	},
+	"libre-barcode-39": {
+		"languages": [],
+		"sampleText": {
+			"short": "*HELLO WORLD*"
+		}
+	},
+	"libre-barcode-39-extended": {
+		"languages": [],
+		"sampleText": {
+			"short": "*Hello World*"
+		}
+	},
+	"libre-barcode-39-extended-text": {
+		"languages": [],
+		"sampleText": {
+			"short": "*Hello World*"
+		}
+	},
+	"libre-barcode-39-text": {
+		"languages": [],
+		"sampleText": {
+			"short": "*HELLO WORLD*"
+		}
+	},
+	"libre-barcode-ean13-text": {
+		"sampleText": {
+			"short": "001234567890?"
+		}
+	},
+	"material-icons": {
+		"sampleText": {
+			"short": "home"
+		}
+	},
+	"material-icons-outlined": {
+		"sampleText": {
+			"short": "home"
+		}
+	},
+	"material-icons-round": {
+		"sampleText": {
+			"short": "home"
+		}
+	},
+	"material-icons-sharp": {
+		"sampleText": {
+			"short": "home"
+		}
+	},
+	"material-icons-two-tone": {
+		"sampleText": {
+			"short": "home"
+		}
+	},
+	"material-symbols-outlined": {
+		"sampleText": {
+			"short": "home"
+		}
+	},
+	"material-symbols-rounded": {
+		"sampleText": {
+			"short": "home"
+		}
+	},
+	"material-symbols-sharp": {
+		"sampleText": {
+			"short": "home"
+		}
+	},
+	"noto-color-emoji-compat-test": {
+		"sampleText": {
+			"short": "🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜"
+		}
+	},
+	"noto-music": {
+		"languages": []
+	},
+	"noto-sans-math": {
+		"languages": []
+	},
+	"noto-znamenny-musical-notation": {
+		"languages": []
+	},
+	"redacted": {
+		"languages": [],
+		"sampleText": {
+			"short": "Wireframe content"
+		}
+	},
+	"redacted-script": {
+		"languages": [],
+		"sampleText": {
+			"short": "Wireframe content"
+		}
+	},
+	"stix-two-math": {
+		"languages": [],
+		"sampleText": {
+			"short": "∑ ∫ √ π ≈ ∞"
+		}
+	},
+	"yakuhanjp": {
+		"sampleText": {
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanjps": {
+		"sampleText": {
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanmp": {
+		"sampleText": {
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanmps": {
+		"sampleText": {
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanrp": {
+		"sampleText": {
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	},
+	"yakuhanrps": {
+		"sampleText": {
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+		}
+	}
+}
