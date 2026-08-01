@@ -3,125 +3,49 @@ import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import { FamilyAbout } from '@/components/font-page/FamilyAbout';
-import { TabsWrapper } from '@/components/preview/Tabs';
-import {
-	getFont,
-	getRegistryFamily,
-	getRegistrySourceCapabilities,
-	getRegistryTaxonomy,
-	getVariableFont,
-	listRegistryAxes,
-	listRegistryLanguages,
-} from '@/generated/api';
+import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
+import { getRegistryTaxonomy, listRegistryAxes } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
-import { getFontPreviewCSS } from '@/utils/font-preview';
-import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import {
-	selectRegistryDistributionSource,
-	selectRegistryFamilyLanguages,
-	validateRegistryFamily,
-} from '@/utils/registry';
+	loadFontPageBase,
+	loadFontPageCapabilities,
+	loadFontPageLanguages,
+	loadOptional,
+} from '@/utils/font-page.server';
+import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
-	const parameters = { id };
+	const basePromise = loadFontPageBase(id, request.signal);
 	const options = { signal: request.signal };
-	const metadataPromise = getFont(parameters, options);
-	const registryResultPromise = getRegistryFamily(parameters, options).then(
-		(value) => {
-			const registry = validateRegistryFamily(value);
-			return { value: registry, unavailable: !registry };
-		},
-		() => ({ value: undefined, unavailable: true }),
-	);
-	const variablePromise = metadataPromise.then((metadata) =>
-		metadata.variable
-			? getVariableFont(parameters, options).catch(() => undefined)
-			: undefined,
-	);
-	const capabilityDetailsPromise = Promise.all([
-		metadataPromise,
-		registryResultPromise,
-		variablePromise,
-	]).then(async ([metadata, registryResult, variable]) => {
-		const style = metadata.styles.includes('normal')
-			? 'normal'
-			: (metadata.styles[0] ?? 'normal');
-		const weight = metadata.weights.includes(400)
-			? 400
-			: (metadata.weights[0] ?? 400);
-		const capabilitySource = selectRegistryDistributionSource(
-			registryResult.value,
-			{
-				format: variable ? 'variable' : 'static',
-				style,
-				weight,
-			},
-		);
-		const capabilitiesResult = capabilitySource
-			? await getRegistrySourceCapabilities(
-					{ sha256: capabilitySource.sha256 },
-					options,
-				).then(
-					(value) => ({ value, unavailable: false }),
-					() => ({ value: undefined, unavailable: true }),
-				)
-			: { value: undefined, unavailable: false };
-		return { capabilitySource, capabilitiesResult };
-	});
 	const [
-		metadata,
-		variable,
-		registryResult,
+		base,
 		languagesResult,
 		axesResult,
 		taxonomyResult,
-		capabilityDetails,
+		capabilitiesResult,
 	] = await Promise.all([
-		metadataPromise,
-		variablePromise,
-		registryResultPromise,
-		listRegistryLanguages(options).then(
-			(value) => ({ value, unavailable: false }),
-			() => ({ value: undefined, unavailable: true }),
-		),
-		listRegistryAxes(options).then(
-			(value) => ({ value, unavailable: false }),
-			() => ({ value: undefined, unavailable: true }),
-		),
-		getRegistryTaxonomy(options).then(
-			(value) => ({ value, unavailable: false }),
-			() => ({ value: undefined, unavailable: true }),
-		),
-		capabilityDetailsPromise,
+		basePromise,
+		loadFontPageLanguages(basePromise, request.signal),
+		loadOptional(listRegistryAxes(options)),
+		loadOptional(getRegistryTaxonomy(options)),
+		loadFontPageCapabilities(basePromise, request.signal),
 	]);
-	const { staticCSS, variableCSS } = getFontPreviewCSS(metadata, variable);
-	const registryUnavailable = registryResult.unavailable;
 	const enrichmentUnavailable = [
 		languagesResult,
 		axesResult,
 		taxonomyResult,
 	].some((result) => result.unavailable);
-	const { capabilitySource, capabilitiesResult } = capabilityDetails;
-	const familyLanguages = selectRegistryFamilyLanguages(
-		registryResult.value,
-		languagesResult.value,
-	);
 
 	return data(
 		{
-			metadata,
-			staticCSS,
-			variable,
-			variableCSS,
-			registry: registryResult.value,
-			languages: familyLanguages,
+			...base,
+			languages: languagesResult.languages,
 			axisRegistry: axesResult.value,
 			taxonomy: taxonomyResult.value,
-			capabilities: capabilitiesResult.value,
-			capabilitySource,
-			registryUnavailable,
+			capabilities: capabilitiesResult.capabilities,
+			capabilitySource: capabilitiesResult.capabilitySource,
 			enrichmentUnavailable,
 			capabilitiesUnavailable: capabilitiesResult.unavailable,
 		},
@@ -160,7 +84,7 @@ export default function AboutPage() {
 	} = useLoaderData<typeof loader>();
 
 	return (
-		<TabsWrapper
+		<FamilyPageShell
 			metadata={metadata}
 			registry={registry}
 			variableAvailable={Boolean(variable)}
@@ -183,6 +107,6 @@ export default function AboutPage() {
 				capabilitiesUnavailable={capabilitiesUnavailable}
 				variableUnavailable={metadata.variable && !variable}
 			/>
-		</TabsWrapper>
+		</FamilyPageShell>
 	);
 }

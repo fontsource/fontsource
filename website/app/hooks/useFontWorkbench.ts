@@ -16,6 +16,7 @@ import {
 	type FontToolPreset,
 	useFontToolsSession,
 } from '@/components/tools/FontToolsProvider';
+import { triggerBlobDownload } from '@/utils/download';
 import { processWithConcurrency } from '@/utils/processWithConcurrency';
 
 export type {
@@ -49,17 +50,6 @@ const slugify = (value: string): string =>
 		.normalize('NFKD')
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/(^-|-$)/g, '') || 'font';
-
-const triggerDownload = (filename: string, blob: Blob) => {
-	const url = URL.createObjectURL(blob);
-	const link = document.createElement('a');
-	link.href = url;
-	link.download = filename;
-	document.body.appendChild(link);
-	link.click();
-	link.remove();
-	URL.revokeObjectURL(url);
-};
 
 const clearProcessingErrors = (sources: FontSourceEntry[]): FontSourceEntry[] =>
 	sources.map((source) =>
@@ -452,7 +442,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 	const downloadArtifact = (artifact: FontArtifact) => {
 		setProjectError(undefined);
 		try {
-			triggerDownload(
+			triggerBlobDownload(
 				artifact.filename.split('/').pop() ?? artifact.filename,
 				new Blob([artifact.data as BlobPart], {
 					type:
@@ -493,7 +483,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 					try {
 						const archive = new Blob(chunks, { type: 'application/zip' });
 						chunks.length = 0;
-						triggerDownload(
+						triggerBlobDownload(
 							preset === 'converter'
 								? 'fontsource-converted.zip'
 								: 'fontsource-webfonts.zip',

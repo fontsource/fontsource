@@ -4,18 +4,6 @@
 	padding: 40px 64px 64px;
 }
 
-.visuallyHidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
-}
-
 .headingRow {
 	display: flex;
 	align-items: flex-end;
@@ -347,19 +335,6 @@
 		outline: 2px solid var(--mantine-color-purple-0);
 		outline-offset: 2px;
 	}
-}
-
-.resultLimit {
-	margin: 0;
-	padding: 12px 18px 16px;
-	border-top: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
-	color: light-dark(#52617a, #aeb9cc);
-	font-family: var(--mantine-font-family);
-	font-size: 0.78rem;
-	line-height: 1.5;
 }
 
 .inspector {

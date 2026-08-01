@@ -1,10 +1,17 @@
 import { selectVariableAxisKey } from '@fontsource-utils/core';
+import { VisuallyHidden } from '@mantine/core';
 import { useClipboard, useLocalStorage } from '@mantine/hooks';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
+import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { IconCopy, IconDownload, IconExternal } from '@/components/icons';
 import { createProjectItem } from '@/features/projects/createProjectItem';
+import {
+	getUsageBlock,
+	getUsageMarkup,
+	getUsageNote,
+} from '@/features/projects/output';
 import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type {
 	GetFontResponse,
@@ -12,13 +19,18 @@ import type {
 	GetVariableFontResponse,
 } from '@/generated/api';
 import { deserializeStoredChoice } from '@/utils/browser-storage';
-import { packageManagers } from '@/utils/docs/packageManagers';
+import { getJsDelivrPackageUrl } from '@/utils/cdn';
+import {
+	getPackageManagerCommand,
+	packageManagers,
+	packageManagerValues,
+} from '@/utils/docs/packageManagers';
 import { triggerBlobDownload } from '@/utils/download';
+import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
+import { getPreferredPreviewSubset } from '@/utils/font-preview';
 import { readFontPreviewSelection } from '@/utils/font-preview-selection';
 import {
-	hasSymbolCatalog,
-	isDigitalFontFamily,
-	isPunctuationFontFamily,
+	getRegistryFamilyKind,
 	type RegistryFamily,
 	usesNameLigatures,
 } from '@/utils/registry';
@@ -33,158 +45,12 @@ interface FamilyUseProps {
 	staticCSS: string;
 	variableCSS?: string;
 	registry?: RegistryFamily;
-	registryUnavailable?: boolean;
 }
 
 type Path = 'download' | 'web';
 type Method = 'package' | 'cdn';
 type FamilyFormat = 'variable' | 'static';
 type DownloadState = 'idle' | 'fetching' | 'building' | 'success' | 'error';
-const packageManagerValues = packageManagers.map((manager) => manager.value);
-
-const humanize = (value: string) =>
-	value
-		.split(/[-_]/)
-		.filter(Boolean)
-		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-		.join(' ');
-
-const fallbacks: Record<GetFontResponse['category'], string> = {
-	'sans-serif': 'sans-serif',
-	serif: 'serif',
-	display: 'serif',
-	handwriting: 'cursive',
-	monospace: 'monospace',
-	icons: 'sans-serif',
-	other: 'sans-serif',
-};
-
-const axisNames: Record<string, string> = {
-	FILL: 'Fill',
-	GRAD: 'Grade',
-	SOFT: 'Softness',
-	WONK: 'Wonky',
-	opsz: 'Optical size',
-	slnt: 'Slant',
-	wdth: 'Width',
-	wght: 'Weight',
-};
-
-const getUsageDetails = (
-	metadata: GetFontResponse,
-	registry: RegistryFamily | undefined,
-	familyName: string,
-	isVariable: boolean,
-	axisValues: Record<string, number>,
-	weight: number,
-	style: GetFontResponse['styles'][number],
-) => {
-	const hasNamedLigatures = usesNameLigatures(registry);
-	const isPunctuationFamily = isPunctuationFontFamily(registry);
-	const isDigitalFamily = isDigitalFontFamily(registry);
-	const sampleText =
-		registry?.sampleText?.tester?.trim() ??
-		registry?.sampleText?.styles?.trim() ??
-		metadata.family;
-	const sampleName = sampleText.split(/\s+/)[0] ?? sampleText;
-	const escapedSampleText = sampleText
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;');
-	const className = `font-${metadata.id}`;
-	const formatCss = (declarations: string[]) =>
-		`.${className} {\n${declarations.map((line) => `  ${line}`).join('\n')}\n}`;
-
-	if (hasNamedLigatures) {
-		const settings = isVariable
-			? Object.entries(axisValues)
-					.map(([axis, value]) => `'${axis}' ${value}`)
-					.join(', ')
-			: '';
-		const declarations = [
-			`font-family: '${familyName}';`,
-			'font-style: normal;',
-			'font-weight: normal;',
-			'line-height: 1;',
-			'text-transform: none;',
-			'white-space: nowrap;',
-			"font-feature-settings: 'liga';",
-		];
-
-		if (settings) {
-			declarations.push(`font-variation-settings: ${settings};`);
-		}
-
-		return {
-			css: formatCss(declarations),
-			markup: `<span class="${className}" aria-hidden="true">${escapedSampleText}</span>`,
-			note: isVariable
-				? `Use a verified catalog name such as ${sampleName}. This setup loads every variable axis so the CSS values above remain available.`
-				: `Use a verified catalog name such as ${sampleName}. The font turns that name into the matching symbol.`,
-		};
-	}
-
-	if (isPunctuationFamily) {
-		return {
-			css: formatCss([
-				`font-family: '${familyName}', 'Noto Sans JP', sans-serif;`,
-				`font-weight: ${weight};`,
-				`font-style: ${style};`,
-			]),
-			markup: `<p class="${className}">${escapedSampleText}</p>`,
-			note: `${metadata.family} replaces Japanese punctuation only. Keep it first, followed by the Japanese text font used by your project.`,
-		};
-	}
-
-	if (isDigitalFamily) {
-		return {
-			css: formatCss([
-				`font-family: '${familyName}', monospace;`,
-				`font-weight: ${weight};`,
-				`font-style: ${style};`,
-				'font-variant-numeric: tabular-nums;',
-				"font-feature-settings: 'tnum';",
-				'white-space: nowrap;',
-			]),
-			markup: `<span class="${className}">${escapedSampleText}</span>`,
-			note: 'Tabular numerals and a single-line container keep changing readout values aligned.',
-		};
-	}
-
-	return {
-		css: formatCss([
-			`font-family: '${familyName}', ${fallbacks[metadata.category]};`,
-			`font-weight: ${weight};`,
-			`font-style: ${style};`,
-		]),
-	};
-};
-
-const CodeBlock = ({ code, language }: { code: string; language: string }) => {
-	const clipboard = useClipboard({ timeout: 1500 });
-	const copyLabel = clipboard.copied
-		? 'Copied'
-		: clipboard.error
-			? 'Copy failed'
-			: 'Copy';
-
-	return (
-		<div className={classes.codeBlock}>
-			<div className={classes.codeHeader}>
-				<span>{language}</span>
-				<button type="button" onClick={() => clipboard.copy(code)}>
-					<IconCopy aria-hidden height={16} stroke="currentColor" />
-					<span aria-live="polite" aria-atomic="true">
-						{copyLabel}
-					</span>
-				</button>
-			</div>
-			<pre>
-				<code>{code}</code>
-			</pre>
-		</div>
-	);
-};
 
 const CopyCompleteSetup = ({ code }: { code: string }) => {
 	const clipboard = useClipboard({ timeout: 1500 });
@@ -215,14 +81,15 @@ export const FamilyUse = ({
 	variableCSS,
 	versions,
 	registry,
-	registryUnavailable = false,
 }: FamilyUseProps) => {
 	const [searchParams] = useSearchParams();
-	const hasCatalog = hasSymbolCatalog(registry);
+	const familyKind = getRegistryFamilyKind(registry);
+	const hasCatalog = Boolean(registry?.symbols);
 	const hasNamedLigatures = usesNameLigatures(registry);
-	const isPunctuationFamily = isPunctuationFontFamily(registry);
-	const isDigitalFamily = isDigitalFontFamily(registry);
+	const isPunctuationFamily = familyKind === 'punctuation';
+	const isDigitalFamily = familyKind === 'digital';
 	const supportsVariable = Boolean(variable && versions.latestVariable);
+	const preferredSubset = getPreferredPreviewSubset(metadata, registry);
 	const [path, setPath] = useLocalStorage<Path | null>({
 		key: 'fontsource-acquisition-path',
 		defaultValue: null,
@@ -233,7 +100,7 @@ export const FamilyUse = ({
 	const [format, setFormat] = useState<FamilyFormat>(
 		supportsVariable ? 'variable' : 'static',
 	);
-	const [subset, setSubset] = useState(metadata.defSubset);
+	const [subset, setSubset] = useState(preferredSubset);
 	const [style, setStyle] = useState<GetFontResponse['styles'][number]>(
 		metadata.styles.includes('normal')
 			? 'normal'
@@ -275,35 +142,50 @@ export const FamilyUse = ({
 			deserializeStoredChoice(value, packageManagerValues, 'pnpm'),
 	});
 	const isVariable = format === 'variable' && supportsVariable;
-	const packageName = isVariable
-		? `@fontsource-variable/${metadata.id}`
-		: `@fontsource/${metadata.id}`;
-	const version = isVariable
-		? (versions.latestVariable ?? versions.latest)
-		: versions.latest;
-	const familyName = isVariable
-		? `${metadata.family} Variable`
-		: metadata.family;
-	const iconUsesMultipleAxes =
-		hasCatalog && isVariable && Object.keys(variable?.axes ?? {}).length > 1;
+	const projectItem = useMemo(
+		() =>
+			createProjectItem({
+				metadata,
+				versions,
+				variable,
+				registry,
+				format: isVariable ? 'variable' : 'static',
+				subset,
+				style,
+				weight,
+				axes: axisValues,
+			}),
+		[
+			axisValues,
+			isVariable,
+			metadata,
+			registry,
+			style,
+			subset,
+			variable,
+			versions,
+			weight,
+		],
+	);
+	const {
+		packageName,
+		packageVersion: version,
+		fontFamily: familyName,
+		cssFile: stylesheet,
+	} = projectItem;
+	const iconUsesMultipleAxes = stylesheet === 'full.css';
 	const subsetLabel = hasCatalog ? 'Package subset' : 'Character set';
 	const subsetValueLabel = hasCatalog
-		? `${humanize(subset)} ${hasNamedLigatures ? 'symbol ligatures' : 'symbols'}`
-		: humanize(subset);
+		? `${formatFontLabel(subset)} ${hasNamedLigatures ? 'symbol ligatures' : 'symbols'}`
+		: formatFontLabel(subset);
 	const axisKey = variable
 		? selectVariableAxisKey(
 				variable.axes,
 				Object.keys(variable.axes),
 			).toLowerCase()
 		: 'wght';
-	const stylesheet = isVariable
-		? `${subset}-${axisKey}${style === 'italic' ? '-italic' : ''}.css`
-		: `${subset}-${weight}${style === 'italic' ? '-italic' : ''}.css`;
 	const installCommand = useMemo(() => {
-		const manager =
-			packageManagers.find((item) => item.value === packageManager) ??
-			packageManagers[0];
-		return manager.command(packageName);
+		return getPackageManagerCommand(packageManager, packageName);
 	}, [packageManager, packageName]);
 	const importPath = iconUsesMultipleAxes
 		? `${packageName}/full.css`
@@ -315,29 +197,11 @@ export const FamilyUse = ({
 		: loadOnlySelection
 			? stylesheet
 			: 'index.css';
-	const cdnUrl = `https://cdn.jsdelivr.net/npm/${packageName}@${version}/${cdnPath}`;
-	const effectiveAxisValues =
-		isVariable && variable?.axes.wght
-			? { ...axisValues, wght: weight }
-			: axisValues;
-	const {
-		css: cssCode,
-		markup: usageMarkup,
-		note: usageNote,
-	} = getUsageDetails(
-		metadata,
-		registry,
-		familyName,
-		isVariable,
-		effectiveAxisValues,
-		weight,
-		style,
-	);
-	const proofText =
-		registry?.sampleText?.tester?.trim() ??
-		registry?.sampleText?.styles?.trim() ??
-		metadata.family;
-	const proofVariationSettings = Object.entries(effectiveAxisValues)
+	const cdnUrl = getJsDelivrPackageUrl(packageName, version, cdnPath);
+	const cssCode = getUsageBlock(projectItem);
+	const usageMarkup = getUsageMarkup(projectItem);
+	const usageNote = getUsageNote(projectItem);
+	const proofVariationSettings = Object.entries(projectItem.axes)
 		.map(([axis, value]) => `'${axis}' ${value}`)
 		.join(', ');
 	const fromSelectedFonts = searchParams.get('from') === 'selected-fonts';
@@ -379,7 +243,7 @@ export const FamilyUse = ({
 					: 'A desktop-ready TTF for the selected weight, style, and character set.';
 	const isPreparingDownload =
 		downloadState === 'fetching' || downloadState === 'building';
-	const hasVerifiedLicenseText = Boolean(registry?.license.text.trim());
+	const hasVerifiedLicenseText = Boolean(registry);
 	const downloadButtonLabel = !hasVerifiedLicenseText
 		? 'License verification required'
 		: downloadState === 'fetching'
@@ -411,7 +275,7 @@ export const FamilyUse = ({
 
 	const resetDownload = () => {
 		setDownloadFormat('static');
-		setSubset(metadata.defSubset);
+		setSubset(preferredSubset);
 		setStyle(recommendedStyle);
 		setWeight(recommendedWeight);
 		clearDownloadFeedback();
@@ -419,7 +283,7 @@ export const FamilyUse = ({
 	};
 
 	const downloadSelectedFiles = async () => {
-		if (!registry?.license.text.trim() || downloadInFlight.current) return;
+		if (!registry || downloadInFlight.current) return;
 
 		downloadInFlight.current = true;
 		const controller = new AbortController();
@@ -461,7 +325,7 @@ export const FamilyUse = ({
 						'',
 						`Format: ${downloadIsVariable ? 'Variable WOFF2' : 'Desktop TTF'}`,
 						`${subsetLabel}: ${subsetValueLabel}`,
-						`Style: ${humanize(style)}`,
+						`Style: ${formatFontLabel(style)}`,
 						...(downloadIsVariable ? [] : [`Weight: ${weight}`]),
 						'',
 						`Source: https://fontsource.org/fonts/${metadata.id}`,
@@ -528,32 +392,6 @@ export const FamilyUse = ({
 		[],
 	);
 
-	const projectItem = useMemo(
-		() =>
-			createProjectItem({
-				metadata,
-				versions,
-				variable,
-				registry,
-				format: isVariable ? 'variable' : 'static',
-				subset,
-				style,
-				weight,
-				axes: axisValues,
-			}),
-		[
-			axisValues,
-			isVariable,
-			metadata,
-			registry,
-			style,
-			subset,
-			variable,
-			versions,
-			weight,
-		],
-	);
-
 	return (
 		<section className={classes.page} aria-labelledby="use-heading">
 			<style
@@ -602,7 +440,6 @@ export const FamilyUse = ({
 									familyId={metadata.id}
 									family={metadata.family}
 									license={registry?.license}
-									registryUnavailable={registryUnavailable}
 								/>
 							</div>
 							<fieldset
@@ -663,7 +500,7 @@ export const FamilyUse = ({
 										>
 											{metadata.subsets.map((value) => (
 												<option key={value} value={value}>
-													{humanize(value)}
+													{formatFontLabel(value)}
 												</option>
 											))}
 										</select>
@@ -684,7 +521,7 @@ export const FamilyUse = ({
 										>
 											{metadata.styles.map((value) => (
 												<option key={value} value={value}>
-													{humanize(value)}
+													{formatFontLabel(value)}
 												</option>
 											))}
 										</select>
@@ -803,13 +640,12 @@ export const FamilyUse = ({
 									familyId={metadata.id}
 									family={metadata.family}
 									license={registry?.license}
-									registryUnavailable={registryUnavailable}
 								/>
 							</div>
 							<fieldset className={classes.methodSwitch}>
-								<legend className={classes.srOnly}>
+								<VisuallyHidden component="legend">
 									Choose how to add this font to a website
-								</legend>
+								</VisuallyHidden>
 								<button
 									type="button"
 									data-active={method === 'package' || undefined}
@@ -862,7 +698,7 @@ export const FamilyUse = ({
 										</div>
 										<div>
 											<dt>Style</dt>
-											<dd>{humanize(style)}</dd>
+											<dd>{formatFontLabel(style)}</dd>
 										</div>
 										<div>
 											<dt>Weight</dt>
@@ -910,7 +746,7 @@ export const FamilyUse = ({
 												>
 													{metadata.subsets.map((value) => (
 														<option key={value} value={value}>
-															{humanize(value)}
+															{formatFontLabel(value)}
 														</option>
 													))}
 												</select>
@@ -931,7 +767,7 @@ export const FamilyUse = ({
 												>
 													{metadata.styles.map((value) => (
 														<option key={value} value={value}>
-															{humanize(value)}
+															{formatFontLabel(value)}
 														</option>
 													))}
 												</select>
@@ -966,12 +802,12 @@ export const FamilyUse = ({
 														return (
 															<label className={classes.axisControl} key={axis}>
 																<span>
-																	{axisNames[axis] ?? axis.toUpperCase()}
+																	{getAxisLabel(axis)}
 																	<output>{value}</output>
 																</span>
 																<input
 																	type="range"
-																	aria-label={`${axisNames[axis] ?? axis} axis`}
+																	aria-label={`${getAxisLabel(axis)} axis`}
 																	min={Number(range.min)}
 																	max={Number(range.max)}
 																	step={Number(range.step)}
@@ -1054,15 +890,15 @@ export const FamilyUse = ({
 												<span className={classes.stepLabel}>
 													1 · Install the package
 												</span>
-												<CodeBlock code={installCommand} language="Terminal" />
+												<CopyCodeBlock code={installCommand} label="Terminal" />
 											</div>
 											<div>
 												<span className={classes.stepLabel}>
 													2 · Import the font stylesheet
 												</span>
-												<CodeBlock
+												<CopyCodeBlock
 													code={`import '${importPath}';`}
-													language="JavaScript"
+													label="JavaScript"
 												/>
 											</div>
 										</>
@@ -1071,9 +907,9 @@ export const FamilyUse = ({
 											<span className={classes.stepLabel}>
 												1 · Add the stylesheet link
 											</span>
-											<CodeBlock
+											<CopyCodeBlock
 												code={`<link rel="stylesheet" href="${cdnUrl}">`}
-												language="HTML"
+												label="HTML"
 											/>
 										</div>
 									)}
@@ -1081,7 +917,7 @@ export const FamilyUse = ({
 										<span className={classes.stepLabel}>
 											{method === 'package' ? '3' : '2'} · Apply the font in CSS
 										</span>
-										<CodeBlock code={cssCode} language="CSS" />
+										<CopyCodeBlock code={cssCode} label="CSS" />
 									</div>
 									{usageMarkup && (
 										<div>
@@ -1089,7 +925,7 @@ export const FamilyUse = ({
 												{method === 'package' ? '4' : '3'} · Add an example to
 												your page
 											</span>
-											<CodeBlock code={usageMarkup} language="HTML" />
+											<CopyCodeBlock code={usageMarkup} label="HTML" />
 										</div>
 									)}
 									{usageNote && (
@@ -1122,7 +958,7 @@ export const FamilyUse = ({
 												fontStyle: style,
 											}}
 										>
-											{proofText}
+											{projectItem.sampleText}
 										</strong>
 									</div>
 								</div>

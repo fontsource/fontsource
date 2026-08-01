@@ -8,14 +8,10 @@ import type {
 import {
 	findUnmappedCharacters,
 	getRegistryCharacterGroups,
-	hasSymbolCatalog,
-	isDigitalFontFamily,
-	isPunctuationFontFamily,
+	getRegistryFamilyKind,
 	type RegistryFamily,
-	selectRegistryDistributionSource,
 	selectRegistryFamilyLanguages,
 	usesNameLigatures,
-	validateRegistryFamily,
 } from './registry';
 
 const source = (sha256: string, type: 'static' | 'variable', weight: number) =>
@@ -54,6 +50,7 @@ const family = {
 		source('static-400', 'static', 400),
 		source('variable-standard', 'variable', 400),
 	],
+	previewSource: 'variable-standard',
 	distribution: {
 		static: [{ weight: 400, style: 'normal', source: 'static-400' }],
 		variable: [
@@ -76,136 +73,14 @@ const capabilities = {
 	colorTables: [],
 } satisfies GetRegistrySourceCapabilitiesResponse;
 
-describe('selectRegistryDistributionSource', () => {
-	it('prefers the normal standard variable distribution source', () => {
-		expect(
-			selectRegistryDistributionSource(family, {
-				format: 'variable',
-				style: 'normal',
-			})?.sha256,
-		).toBe('variable-standard');
-	});
-
-	it('selects the requested static distribution source', () => {
-		const staticFamily = {
-			...family,
-			distribution: {
-				static: [
-					{ weight: 400, style: 'normal' as const, source: 'static-400' },
-				],
-				characters: { type: 'all' as const },
-			},
-		};
-		expect(
-			selectRegistryDistributionSource(staticFamily, {
-				format: 'static',
-				style: 'normal',
-				weight: 400,
-			})?.sha256,
-		).toBe('static-400');
-	});
-
-	it('does not fall back to a raw source missing from distribution', () => {
-		const invalidFamily = {
-			...family,
-			distribution: {
-				static: [{ weight: 400, style: 'normal' as const, source: 'missing' }],
-				characters: { type: 'all' as const },
-			},
-		};
-
-		expect(
-			selectRegistryDistributionSource(invalidFamily, {
-				format: 'static',
-				style: 'normal',
-				weight: 400,
-			}),
-		).toBeUndefined();
-	});
-
-	it('does not report capabilities from a different style', () => {
-		const italicFamily = {
-			...family,
-			distribution: {
-				static: [
-					{ weight: 400, style: 'italic' as const, source: 'static-400' },
-				],
-				characters: { type: 'all' as const },
-			},
-		};
-
-		expect(
-			selectRegistryDistributionSource(italicFamily, {
-				format: 'static',
-				style: 'normal',
-				weight: 400,
-			}),
-		).toBeUndefined();
-	});
-
-	it('does not fall through to a different distributed format', () => {
-		const variableOnlyFamily = {
-			...family,
-			distribution: {
-				variable: family.distribution.variable,
-				characters: { type: 'all' as const },
-			},
-		};
-
-		expect(
-			selectRegistryDistributionSource(variableOnlyFamily, {
-				format: 'static',
-				style: 'normal',
-				weight: 400,
-			}),
-		).toBeUndefined();
-	});
-});
-
-describe('validateRegistryFamily', () => {
-	it('accepts the future required contract and explicit symbol semantics', () => {
-		const symbols = {
-			catalogUrl: '/v1/registry/families/example/symbols',
-			inputModes: ['codepoint', 'name-ligature'],
-		};
-		const candidate = {
-			...family,
-			symbols,
-		} as unknown as GetRegistryFamilyResponse;
-
-		expect(validateRegistryFamily(candidate)).toMatchObject({
-			id: 'example',
-			symbols,
-		});
-	});
-
-	it('rejects incomplete records before the UI treats them as authoritative', () => {
-		expect(
-			validateRegistryFamily({
-				...family,
-				distribution: undefined,
-			} as unknown as GetRegistryFamilyResponse),
-		).toBeUndefined();
-		expect(
-			validateRegistryFamily({
-				...family,
-				license: { ...family.license, text: '  ' },
-			} as GetRegistryFamilyResponse),
-		).toBeUndefined();
-	});
-});
-
 describe('registry character capabilities', () => {
 	it('groups exact mapped characters without invisible codepoints', () => {
 		expect(getRegistryCharacterGroups(capabilities)).toEqual({
-			groups: {
-				all: ['!', '1', 'A', 'a', '©', '́'],
-				letters: ['A', 'a', '́'],
-				numbers: ['1'],
-				punctuation: ['!'],
-				symbols: ['©'],
-			},
-			truncated: false,
+			all: ['!', '1', 'A', 'a', '©', '́'],
+			letters: ['A', 'a', '́'],
+			numbers: ['1'],
+			punctuation: ['!'],
+			symbols: ['©'],
 		});
 	});
 
@@ -213,35 +88,35 @@ describe('registry character capabilities', () => {
 		expect(findUnmappedCharacters('A B? B', capabilities)).toEqual(['B', '?']);
 	});
 
-	it('bounds browsing work for fonts that map most of Unicode', () => {
-		const catalog = getRegistryCharacterGroups({
+	it('returns every browsable mapped character', () => {
+		const groups = getRegistryCharacterGroups({
 			...capabilities,
-			glyphCount: 1_111_998,
-			codepointCount: 1_111_998,
-			unicodeRange: 'U+0000-10FFFF',
+			glyphCount: 5_120,
+			codepointCount: 5_120,
+			unicodeRange: 'U+1000-23FF',
 		});
 
-		expect(catalog?.truncated).toBe(true);
-		expect(catalog?.groups.all.length).toBeLessThanOrEqual(4096);
+		expect(groups?.all.length).toBeGreaterThan(4_096);
 	});
 });
 
 describe('registry family classification', () => {
 	it('uses reviewed specialist tags without family ID inference', () => {
 		expect(
-			isDigitalFontFamily({
+			getRegistryFamilyKind({
 				...family,
 				id: 'unrelated-name',
 				tags: ['special-use/digital-display'],
 			}),
-		).toBe(true);
+		).toBe('digital');
 		expect(
-			isPunctuationFontFamily({
+			getRegistryFamilyKind({
 				...family,
 				id: 'unrelated-name',
+				classifications: ['sans-serif', 'symbols'],
 				tags: ['special-use/punctuation'],
 			}),
-		).toBe(true);
+		).toBe('punctuation');
 	});
 
 	it('requires explicit catalog semantics for named ligatures', () => {
@@ -254,7 +129,6 @@ describe('registry family classification', () => {
 			},
 		};
 
-		expect(hasSymbolCatalog(symbolFamily)).toBe(true);
 		expect(usesNameLigatures(symbolFamily)).toBe(true);
 		expect(
 			usesNameLigatures({

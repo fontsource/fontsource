@@ -1,57 +1,22 @@
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
-
+import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyPreview } from '@/components/font-page/FamilyPreview';
-import { TabsWrapper } from '@/components/preview/Tabs';
-import {
-	type GetFontResponse,
-	getFont,
-	getFontVersions,
-	getRegistryFamily,
-	getVariableFont,
-} from '@/generated/api';
+import { type GetFontResponse, getFontVersions } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
-import { getFontPreviewCSS } from '@/utils/font-preview';
+import { loadFontPageBase } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
-import { validateRegistryFamily } from '@/utils/registry';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
-	const parameters = { id };
-	const options = { signal: request.signal };
-	const metadataPromise = getFont(parameters, options);
-	const [metadata, variable, versions, registryResult] = await Promise.all([
-		metadataPromise,
-		metadataPromise.then((metadata) =>
-			metadata.variable
-				? getVariableFont(parameters, options).catch(() => undefined)
-				: undefined,
-		),
-		getFontVersions(parameters, options),
-		getRegistryFamily(parameters, options).then(
-			(value) => {
-				const registry = validateRegistryFamily(value);
-				return { value: registry, unavailable: !registry };
-			},
-			() => ({ value: undefined, unavailable: true }),
-		),
+	const [base, versions] = await Promise.all([
+		loadFontPageBase(id, request.signal),
+		getFontVersions({ id }, { signal: request.signal }),
 	]);
-	const { staticCSS, variableCSS } = getFontPreviewCSS(metadata, variable);
 
-	return data(
-		{
-			metadata,
-			staticCSS,
-			variable,
-			variableCSS,
-			versions,
-			registry: registryResult.value,
-			registryUnavailable: registryResult.unavailable,
-		},
-		{ headers: cacheHeaders.short },
-	);
+	return data({ ...base, versions }, { headers: cacheHeaders.short });
 };
 
 const generateDescription = (metadata: GetFontResponse) => {
@@ -88,7 +53,7 @@ export default function Font() {
 	} = useLoaderData<typeof loader>();
 
 	return (
-		<TabsWrapper
+		<FamilyPageShell
 			metadata={metadata}
 			registry={registry}
 			variableAvailable={Boolean(variable)}
@@ -105,6 +70,6 @@ export default function Font() {
 				registryUnavailable={registryUnavailable}
 				variableUnavailable={metadata.variable && !variable}
 			/>
-		</TabsWrapper>
+		</FamilyPageShell>
 	);
 }

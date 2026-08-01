@@ -13,7 +13,6 @@ interface LicenseReceiptProps {
 	familyId: string;
 	family: string;
 	license?: RegistryLicense;
-	registryUnavailable?: boolean;
 	variant?: 'receipt' | 'detail';
 }
 
@@ -21,7 +20,6 @@ const LicenseReceipt = ({
 	familyId,
 	family,
 	license,
-	registryUnavailable = false,
 	variant = 'receipt',
 }: LicenseReceiptProps) => {
 	const attributionClipboard = useClipboard({ timeout: 1500 });
@@ -42,9 +40,8 @@ const LicenseReceipt = ({
 						<span className={classes.status}>Verification unavailable</span>
 						<h2 id={`license-${familyId}`}>License needs verification</h2>
 						<p>
-							{registryUnavailable
-								? 'The registry could not be reached, so Fontsource is not showing a legacy license as verified.'
-								: 'This family does not have a verified registry license record yet.'}
+							The registry license could not be verified. Fontsource does not
+							fall back to legacy license metadata.
 						</p>
 					</div>
 					<Link to={`/fonts/${familyId}/about#license`}>

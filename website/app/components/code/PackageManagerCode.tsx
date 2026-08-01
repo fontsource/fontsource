@@ -4,7 +4,7 @@ import { useLocalStorage } from '@mantine/hooks';
 import { deserializeStoredChoice } from '@/utils/browser-storage';
 import {
 	getPackageManagerCommands,
-	packageManagers,
+	packageManagerValues,
 } from '@/utils/docs/packageManagers';
 
 import { CodeHighlight, CodeWrapper } from './Code';
@@ -16,7 +16,6 @@ export interface PackageManagerProps {
 
 export const PackageManagerCode = ({ cmd }: PackageManagerProps) => {
 	const commands = getPackageManagerCommands(cmd);
-	const packageManagerValues = packageManagers.map((manager) => manager.value);
 
 	const [packageManager, setPackageManager] = useLocalStorage({
 		key: 'package-manager',

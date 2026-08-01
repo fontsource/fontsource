@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { getFontFamilyStack } from './font-preview';
+import type { GetFontResponse } from '@/generated/api';
+import { getFontFamilyStack, getPreferredPreviewSubset } from './font-preview';
 import type { RegistryFamily } from './registry';
 
 const registry = {
@@ -18,6 +19,7 @@ const registry = {
 		text: 'License text',
 	},
 	sources: [],
+	previewSource: 'source',
 	distribution: {
 		static: [],
 		characters: { type: 'all' },
@@ -59,5 +61,25 @@ describe('getFontFamilyStack', () => {
 				tags: ['special-use/digital-display'],
 			}),
 		).toContain('ui-monospace, monospace');
+	});
+});
+
+describe('getPreferredPreviewSubset', () => {
+	const metadata = {
+		defSubset: 'latin',
+		subsets: ['japanese', 'latin'],
+	} as GetFontResponse;
+
+	it('uses a distributed registry preview subset', () => {
+		expect(
+			getPreferredPreviewSubset(metadata, {
+				...registry,
+				previewSubset: 'japanese',
+			}),
+		).toBe('japanese');
+	});
+
+	it('falls back to the package default when no reviewed subset is available', () => {
+		expect(getPreferredPreviewSubset(metadata, registry)).toBe('latin');
 	});
 });

@@ -8,7 +8,3 @@ export const loader = ({ params }: LoaderFunctionArgs) => {
 
 	return redirect(`/fonts/${id}/glyphs`);
 };
-
-export default function CharactersPage() {
-	return null;
-}

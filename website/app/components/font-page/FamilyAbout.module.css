@@ -56,6 +56,16 @@
 		margin: 18px 0 0;
 	}
 
+	ul,
+	ol {
+		margin: 18px 0 0;
+		padding-inline-start: 1.4em;
+	}
+
+	li + li {
+		margin-top: 6px;
+	}
+
 	h3 {
 		margin: 30px 0 0;
 		color: light-dark(#01112c, #f5f7fb);
@@ -664,68 +674,6 @@
 	> p {
 		margin: 0;
 		padding: 0 20px 16px;
-	}
-}
-
-.license {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 32px;
-	padding-top: 34px;
-
-	h2,
-	p {
-		margin: 0;
-	}
-
-	h2 {
-		font-size: 24px;
-		font-weight: 600;
-		letter-spacing: -0.02em;
-	}
-
-	p {
-		max-width: 70ch;
-		margin-top: 6px;
-		color: light-dark(#52617a, #aeb9cc);
-		font-size: 14px;
-	}
-
-	a {
-		flex: 0 0 auto;
-		color: var(--mantine-color-purple-0);
-		font-size: 14px;
-		font-weight: 600;
-		text-decoration: none;
-	}
-}
-
-.licenseText {
-	margin-top: 14px;
-	font-size: 13px;
-
-	summary {
-		color: var(--mantine-color-purple-0);
-		font-weight: 600;
-		cursor: pointer;
-	}
-
-	pre {
-		max-width: min(760px, 86vw);
-		max-height: 320px;
-		margin: 12px 0 0;
-		padding: 16px;
-		overflow: auto;
-		border: light-dark(
-			1px solid var(--mantine-color-border-0),
-			1px solid var(--mantine-color-border-1)
-		);
-		background: light-dark(#f8f9fb, #0f1626);
-		font-family: var(--mantine-font-family-monospace);
-		font-size: 11px;
-		line-height: 1.55;
-		white-space: pre-wrap;
 	}
 }
 

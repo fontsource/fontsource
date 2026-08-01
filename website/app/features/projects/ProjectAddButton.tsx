@@ -12,7 +12,6 @@ interface ProjectAddButtonProps {
 
 interface Feedback {
 	previous?: ProjectItem;
-	updated: boolean;
 }
 
 const ProjectAddButton = ({ item }: ProjectAddButtonProps) => {
@@ -41,7 +40,7 @@ const ProjectAddButton = ({ item }: ProjectAddButtonProps) => {
 
 	const addItem = () => {
 		const previous = store.upsertItem(item);
-		setFeedback({ previous, updated: Boolean(previous) });
+		setFeedback({ previous });
 	};
 
 	const undo = () => {
@@ -80,7 +79,7 @@ const ProjectAddButton = ({ item }: ProjectAddButtonProps) => {
 					<>
 						<span>
 							<strong>{item.displayName}</strong>{' '}
-							{feedback.updated
+							{feedback.previous
 								? 'updated in your font set.'
 								: 'added to your font set.'}
 						</span>
