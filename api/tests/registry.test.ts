@@ -46,8 +46,12 @@ const VIEWS = [
 			license: {
 				id: 'OFL-1.1',
 				url: 'https://openfontlicense.org',
+				text: 'Test license',
 			},
-			symbolsUrl: '/v1/registry/families/abel/symbols',
+			symbols: {
+				catalogUrl: '/v1/registry/families/abel/symbols',
+				inputModes: ['codepoint', 'name-ligature'],
+			},
 			distribution: {
 				static: [{ weight: 400, style: 'normal', source: SOURCE_SHA256 }],
 				characters: {

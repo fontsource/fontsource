@@ -30,6 +30,7 @@ import {
 import {
 	canonicalJson,
 	compareStrings,
+	normalizeText,
 	pathExists,
 	readJson,
 } from './shared.ts';
@@ -270,6 +271,15 @@ const validateFamily = async (
 		);
 	}
 	assertSortedUnique(family.sources, (file) => file.path, `${id} source files`);
+	const licensePath = join(directory, 'license.txt');
+	assert(await pathExists(licensePath), `${id} is missing license.txt`);
+	const licenseText = await readFile(licensePath, 'utf8');
+	assert(licenseText.trim(), `${id} license.txt is empty`);
+	strictEqual(
+		licenseText,
+		normalizeText(licenseText),
+		`${id} license.txt is not normalized`,
+	);
 
 	for (const source of family.sources) {
 		const file = source.inspection;
@@ -335,6 +345,11 @@ const validateFamily = async (
 			`${id} has icons but is not classified as symbols`,
 		);
 		assertSortedUnique(
+			manifest.inputModes,
+			(value) => value,
+			`${id} icon input modes`,
+		);
+		assertSortedUnique(
 			manifest.icons,
 			(icon) => `${icon.name}\0${icon.codepoint.toString(16).padStart(6, '0')}`,
 			`${id} icons`,
@@ -342,7 +357,10 @@ const validateFamily = async (
 	}
 
 	const distributionPath = join(directory, 'distribution.json');
-	if (!(await pathExists(distributionPath))) return { id, family };
+	assert(
+		await pathExists(distributionPath),
+		`${id} is missing distribution.json`,
+	);
 	const distribution = await validateCanonicalJson(
 		distributionPath,
 		familyDistributionSchema,

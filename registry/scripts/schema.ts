@@ -212,6 +212,7 @@ export const familySchema = z.strictObject({
 });
 
 export const familyIconsSchema = z.strictObject({
+	inputModes: z.array(z.enum(['codepoint', 'name-ligature'])).min(1),
 	icons: z
 		.array(
 			z.strictObject({

@@ -17,7 +17,7 @@ pnpm --filter '@fontsource-utils/registry' archive
 All source revisions must be exact 40-character commits. Generation also
 requires complete Git history so per-path provenance is accurate; shallow
 repositories are rejected.
-Generation validates existing `distribution.json` files but never creates or
+Generation requires existing `distribution.json` files but never creates or
 changes distribution intent. Registry data is written to `data/` and refreshed
 weekly or on demand by the
 [registry sync workflow](../.github/workflows/registry-sync.yml), which
@@ -46,9 +46,10 @@ current.json
 Each snapshot includes family, language, subset, axis, symbol, and source
 capability views projected into the public API contract in
 [`api/shared/registry.ts`](../api/shared/registry.ts).
-Family detail views include the reviewed distribution with an explicit
-`all` or `subsets` character mode and links to lazy symbol and source
-capability views when available.
+Family detail views always include the complete license and reviewed
+distribution with an explicit `all` or `subsets` character mode. Icon families
+also declare their supported input modes and link to the lazy symbol catalog;
+every source links to its capability view.
 The committed registry format remains private and can change without changing
 those responses. The manifest maps every registry file, API view, and source to
 a SHA-256 object and is written before `current.json` selects the complete
@@ -81,13 +82,13 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   declarations, and inspected source properties, including glyph coverage,
   layout features, outlines, and color tables. IDs are globally unique across
   providers and are derived from directory names.
-- Reviewed families may include `distribution.json` with the exact static
-  variants, variable axis bundles, and character distribution Fontsource
-  publishes. Character distribution is either the full repertoire or named
-  subset mappings with an optional family-wide slicing strategy. Its absence
-  means the family has no official distribution.
-- Icon families also include `icons.json` with public names and Unicode
-  codepoints.
+- Every family includes `license.txt` and `distribution.json`. Distribution
+  records the exact static variants, variable axis bundles, and character
+  distribution Fontsource publishes. Character distribution is either the
+  full repertoire or named subset mappings with an optional family-wide
+  slicing strategy.
+- Icon families also include `icons.json` with public names, Unicode
+  codepoints, and supported input modes.
 - `data/languages.json` defines semantic languages, public names, and the
   private codepoint requirements used for automatic matching.
 - `data/replacements.json` records reviewed successor relationships between
@@ -110,6 +111,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - `github` provenance can recover a missing source from an exact commit;
   `registry` provenance requires the source to be promoted to R2 first.
 - Distribution is reviewed registry state, not derived from legacy catalogs.
+- If a Google Fonts family omits its license file, sync preserves the reviewed
+  license text already committed for that family and fails when none exists.
 - Published variants are explicit relations, not weight/style cross-products.
 - Named subset definitions and a slicing strategy are separate outputs. A
   family-wide slicing strategy replaces named subsets in aggregate CSS.

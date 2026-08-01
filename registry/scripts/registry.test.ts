@@ -432,11 +432,37 @@ const createFontFilesRepository = async (): Promise<{
 	};
 };
 
-const addDistribution = async (root: string): Promise<void> => {
-	await writeFixture(
-		root,
-		'families/google/abel/distribution.json',
-		canonicalJson(ABEL_DISTRIBUTION),
+const seedRegistryRequirements = async (root: string): Promise<void> => {
+	const families = [
+		'fontsource/example',
+		'fontsource/symbols',
+		'google/abel',
+		'google/recursive-sans',
+		'google/stale-sans',
+		'google-icons/material-icons',
+		'google-icons/material-icons-outlined',
+		'google-icons/material-icons-round',
+		'google-icons/material-icons-sharp',
+		'google-icons/material-icons-two-tone',
+		'google-icons/material-symbols-outlined',
+		'google-icons/material-symbols-rounded',
+		'google-icons/material-symbols-sharp',
+	];
+	await Promise.all(
+		families.map((family) =>
+			writeFixture(
+				root,
+				`families/${family}/distribution.json`,
+				canonicalJson(
+					family === 'google/abel'
+						? ABEL_DISTRIBUTION
+						: {
+								static: [{ weight: 400, style: 'normal' }],
+								characters: 'all',
+							},
+				),
+			),
+		),
 	);
 };
 
@@ -571,6 +597,7 @@ describe('registry ingestion', () => {
 		const nam = await createNamRepository();
 		const fontFiles = await createFontFilesRepository();
 		const registry = await temporaryDirectory('registry');
+		await seedRegistryRequirements(registry);
 
 		await generateRegistry(
 			google.repository,
@@ -583,13 +610,13 @@ describe('registry ingestion', () => {
 			fontFiles.revision,
 			registry,
 		);
-		await addDistribution(registry);
 		await writeFixture(
 			registry,
 			'replacements.json',
 			canonicalJson({ abel: 'recursive-sans' }),
 		);
 
+		await rm(join(google.repository, 'ofl/stalesans/OFL.txt'));
 		await writeFixture(
 			google.repository,
 			'README.md',
@@ -611,6 +638,18 @@ describe('registry ingestion', () => {
 			registry,
 		);
 		const freshRegistry = await temporaryDirectory('fresh-registry');
+		await seedRegistryRequirements(freshRegistry);
+		await generateRegistry(
+			google.repository,
+			google.revision,
+			googleIcons.repository,
+			googleIcons.revision,
+			nam.repository,
+			nam.revision,
+			fontFiles.repository,
+			fontFiles.revision,
+			freshRegistry,
+		);
 		await writeFixture(
 			freshRegistry,
 			'replacements.json',
@@ -627,7 +666,6 @@ describe('registry ingestion', () => {
 			fontFiles.revision,
 			freshRegistry,
 		);
-		await addDistribution(freshRegistry);
 		expect(await treeHashes(registry)).toEqual(await treeHashes(freshRegistry));
 		expect(
 			await readJson(join(registry, 'families/google/abel/family.json')),
@@ -674,6 +712,29 @@ describe('registry ingestion', () => {
 			await readJson(join(registry, 'families/google/abel/distribution.json')),
 		).toEqual(ABEL_DISTRIBUTION);
 		expect(
+			await readFile(
+				join(registry, 'families/google/stale-sans/license.txt'),
+				'utf8',
+			),
+		).toBe('License for stalesans\n');
+		const missingFallbackRegistry = await temporaryDirectory(
+			'missing-license-fallback',
+		);
+		await seedRegistryRequirements(missingFallbackRegistry);
+		await expect(
+			generateRegistry(
+				google.repository,
+				unrelatedRevision,
+				googleIcons.repository,
+				googleIcons.revision,
+				nam.repository,
+				nam.revision,
+				fontFiles.repository,
+				fontFiles.revision,
+				missingFallbackRegistry,
+			),
+		).rejects.toThrow('stale-sans has no license file');
+		expect(
 			await readJson(join(registry, 'families/fontsource/example/family.json')),
 		).toMatchObject({ status: 'active' });
 		expect(
@@ -716,6 +777,7 @@ describe('registry ingestion', () => {
 				join(registry, 'families/google-icons/material-icons/icons.json'),
 			),
 		).toMatchObject({
+			inputModes: ['codepoint', 'name-ligature'],
 			icons: [
 				{ name: 'flourescent', codepoint: 65 },
 				{ name: 'flourescent', codepoint: 66 },
@@ -800,6 +862,50 @@ describe('registry ingestion', () => {
 			status: 'deprecated',
 			provenance: { revision: googleIcons.revision },
 		});
+
+		const staleMetadataPath = join(
+			google.repository,
+			'ofl/stalesans/METADATA.pb',
+		);
+		await writeFile(
+			staleMetadataPath,
+			(await readFile(staleMetadataPath, 'utf8')).replace(
+				'license: "OFL"',
+				'license: "APACHE2"',
+			),
+		);
+		const changedLicenseRevision = commitAll(
+			google.repository,
+			'change Stale Sans license',
+		);
+		const changedLicenseRegistry = await temporaryDirectory(
+			'changed-license-fallback',
+		);
+		await seedRegistryRequirements(changedLicenseRegistry);
+		await generateRegistry(
+			google.repository,
+			google.revision,
+			googleIcons.repository,
+			googleIcons.revision,
+			nam.repository,
+			nam.revision,
+			fontFiles.repository,
+			fontFiles.revision,
+			changedLicenseRegistry,
+		);
+		await expect(
+			generateRegistry(
+				google.repository,
+				changedLicenseRevision,
+				googleIcons.repository,
+				removedGoogleIconsRevision,
+				nam.repository,
+				nam.revision,
+				fontFiles.repository,
+				removedFontFilesRevision,
+				changedLicenseRegistry,
+			),
+		).rejects.toThrow('stale-sans license changed from OFL-1.1 to Apache-2.0');
 
 		const replacementPath = join(
 			registry,

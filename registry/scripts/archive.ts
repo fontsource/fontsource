@@ -136,9 +136,6 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		const family = familySchema.parse(
 			await readJson(join(directory, 'family.json')),
 		);
-		const distributionValue = await readJsonIfExists(
-			join(directory, 'distribution.json'),
-		);
 		const iconsValue = await readJsonIfExists(join(directory, 'icons.json'));
 		const icons = iconsValue ? familyIconsSchema.parse(iconsValue) : undefined;
 		if (icons) {
@@ -149,18 +146,16 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				),
 			);
 		}
-		const distribution = distributionValue
-			? familyDistributionSchema.parse(distributionValue)
-			: undefined;
-		const publicDistribution = distribution
-			? {
-					...resolveDistributionSources(distribution, family, id),
-					characters:
-						distribution.characters === 'all'
-							? ({ type: 'all' } as const)
-							: ({ type: 'subsets', ...distribution.characters } as const),
-				}
-			: undefined;
+		const distribution = familyDistributionSchema.parse(
+			await readJson(join(directory, 'distribution.json')),
+		);
+		const publicDistribution = {
+			...resolveDistributionSources(distribution, family, id),
+			characters:
+				distribution.characters === 'all'
+					? ({ type: 'all' } as const)
+					: ({ type: 'subsets', ...distribution.characters } as const),
+		};
 		const axes = [
 			...new Set(
 				family.sources.flatMap(({ inspection }) =>
@@ -199,7 +194,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		const [description, article, licenseText] = await Promise.all([
 			readTextIfExists(join(directory, 'description.en-US.md')),
 			readTextIfExists(join(directory, 'article.en-US.md')),
-			readTextIfExists(join(directory, 'license.txt')),
+			readFile(join(directory, 'license.txt'), 'utf8'),
 		]);
 		const publicFamily = {
 			id,
@@ -243,7 +238,12 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 									},
 								}
 							: undefined,
-					symbolsUrl: icons ? `/v1/registry/families/${id}/symbols` : undefined,
+					symbols: icons
+						? {
+								catalogUrl: `/v1/registry/families/${id}/symbols`,
+								inputModes: icons.inputModes,
+							}
+						: undefined,
 					sources,
 					distribution: publicDistribution,
 				}),

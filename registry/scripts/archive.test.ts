@@ -229,7 +229,10 @@ describe('registry source archive', () => {
 			classifications: ['symbols'],
 			tags: ['special-use/icons'],
 			languages: [],
-			symbolsUrl: '/v1/registry/families/material-icons/symbols',
+			symbols: {
+				catalogUrl: '/v1/registry/families/material-icons/symbols',
+				inputModes: ['codepoint', 'name-ligature'],
+			},
 		});
 		expect(RegistryFamilyDetailSchema.parse(iconFamily)).toEqual(iconFamily);
 		const symbols = views.get('families/material-icons/symbols.json');

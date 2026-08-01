@@ -108,6 +108,7 @@ const readIcons = (
 	const changed = snapshot.lastChanged(path);
 	return {
 		manifest: familyIconsSchema.parse({
+			inputModes: ['codepoint', 'name-ligature'],
 			icons,
 			source: {
 				revision: changed.revision,
