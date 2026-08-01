@@ -470,7 +470,7 @@ const seedRegistryRequirements = async (root: string): Promise<void> => {
 		canonicalJson({
 			example: {
 				languages: [],
-				sampleText: { styles: 'ABC' },
+				sampleText: { short: 'ABC' },
 			},
 		}),
 	);
@@ -686,8 +686,8 @@ describe('registry ingestion', () => {
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
 			sampleText: {
-				styles: 'All people are born free',
-				tester: 'All people are born free and equal',
+				short: 'All people are born free',
+				long: 'All people are born free and equal',
 			},
 			provenance: { revision: google.revision },
 			status: 'deprecated',
@@ -720,7 +720,7 @@ describe('registry ingestion', () => {
 		);
 		expect(overriddenFamily).toMatchObject({
 			languages: [],
-			sampleText: { styles: 'ABC' },
+			sampleText: { short: 'ABC' },
 		});
 		expect(overriddenFamily).not.toHaveProperty('primaryLanguage');
 		expect(await readJson(join(registry, 'subsets/latin.json'))).toMatchObject({

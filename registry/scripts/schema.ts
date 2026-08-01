@@ -69,14 +69,10 @@ const githubRepositorySchema = z
 	.string()
 	.regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/);
 
-const sampleTextSchema = z
-	.strictObject({
-		styles: z.string().min(1).optional(),
-		tester: z.string().min(1).optional(),
-	})
-	.refine((value) => value.styles || value.tester, {
-		message: 'must contain styles or tester text',
-	});
+const sampleTextSchema = z.strictObject({
+	short: z.string().min(1),
+	long: z.string().min(1).optional(),
+});
 
 export const languageCatalogSchema = z.record(
 	languageIdSchema,

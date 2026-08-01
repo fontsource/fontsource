@@ -1,132 +1,132 @@
 {
 	"bravura": {
 		"sampleText": {
-			"styles": "♩♪♫♬♭♮♯"
+			"short": "♩♪♫♬♭♮♯"
 		}
 	},
 	"bravura-text": {
 		"sampleText": {
-			"styles": "♩♪♫♬♭♮♯"
+			"short": "♩♪♫♬♭♮♯"
 		}
 	},
 	"dejavu-math": {
 		"sampleText": {
-			"styles": "∑ ∫ √ π ≈ ∞"
+			"short": "∑ ∫ √ π ≈ ∞"
 		}
 	},
 	"dseg-weather": {
 		"sampleText": {
-			"styles": "0123456789ABCabc"
+			"short": "0123456789ABCabc"
 		}
 	},
 	"dseg14-classic": {
 		"sampleText": {
-			"styles": "0123456789 ABCDEF"
+			"short": "0123456789 ABCDEF"
 		}
 	},
 	"dseg14-classic-mini": {
 		"sampleText": {
-			"styles": "0123456789 ABCDEF"
+			"short": "0123456789 ABCDEF"
 		}
 	},
 	"dseg14-modern": {
 		"sampleText": {
-			"styles": "0123456789 ABCDEF"
+			"short": "0123456789 ABCDEF"
 		}
 	},
 	"dseg14-modern-mini": {
 		"sampleText": {
-			"styles": "0123456789 ABCDEF"
+			"short": "0123456789 ABCDEF"
 		}
 	},
 	"dseg7-classic": {
 		"sampleText": {
-			"styles": "0123456789 ABCDEF"
+			"short": "0123456789 ABCDEF"
 		}
 	},
 	"dseg7-classic-mini": {
 		"sampleText": {
-			"styles": "0123456789 ABCDEF"
+			"short": "0123456789 ABCDEF"
 		}
 	},
 	"dseg7-modern": {
 		"sampleText": {
-			"styles": "0123456789 ABCDEF"
+			"short": "0123456789 ABCDEF"
 		}
 	},
 	"dseg7-modern-mini": {
 		"sampleText": {
-			"styles": "0123456789 ABCDEF"
+			"short": "0123456789 ABCDEF"
 		}
 	},
 	"dseg7-segg-chan": {
 		"sampleText": {
-			"styles": "0123456789"
+			"short": "0123456789"
 		}
 	},
 	"dseg7-segg-chan-mini": {
 		"sampleText": {
-			"styles": "0123456789"
+			"short": "0123456789"
 		}
 	},
 	"flow-block": {
 		"languages": [],
 		"sampleText": {
-			"styles": "Wireframe content"
+			"short": "Wireframe content"
 		}
 	},
 	"flow-circular": {
 		"languages": [],
 		"sampleText": {
-			"styles": "Wireframe content"
+			"short": "Wireframe content"
 		}
 	},
 	"flow-rounded": {
 		"languages": [],
 		"sampleText": {
-			"styles": "Wireframe content"
+			"short": "Wireframe content"
 		}
 	},
 	"jsmath-cmbx10": {
 		"languages": [],
 		"sampleText": {
-			"styles": "ABC xyz 123"
+			"short": "ABC xyz 123"
 		}
 	},
 	"jsmath-cmex10": {
 		"languages": [],
 		"sampleText": {
-			"styles": "ABC xyz 123"
+			"short": "ABC xyz 123"
 		}
 	},
 	"jsmath-cmmi10": {
 		"languages": [],
 		"sampleText": {
-			"styles": "ABC xyz 123"
+			"short": "ABC xyz 123"
 		}
 	},
 	"jsmath-cmr10": {
 		"languages": [],
 		"sampleText": {
-			"styles": "ABC xyz 123"
+			"short": "ABC xyz 123"
 		}
 	},
 	"jsmath-cmsy10": {
 		"languages": [],
 		"sampleText": {
-			"styles": "ABC xyz 123"
+			"short": "ABC xyz 123"
 		}
 	},
 	"jsmath-cmti10": {
 		"languages": [],
 		"sampleText": {
-			"styles": "ABC xyz 123"
+			"short": "ABC xyz 123"
 		}
 	},
 	"libertinus-math": {
 		"languages": [],
 		"sampleText": {
-			"styles": "∑ ∫ √ π ≈ ∞"
+			"short": "∑ ∫ √ π ≈ ∞"
 		}
 	},
 	"libre-barcode-128": {
@@ -138,75 +138,75 @@
 	"libre-barcode-39": {
 		"languages": [],
 		"sampleText": {
-			"styles": "*HELLO WORLD*"
+			"short": "*HELLO WORLD*"
 		}
 	},
 	"libre-barcode-39-extended": {
 		"languages": [],
 		"sampleText": {
-			"styles": "*Hello World*"
+			"short": "*Hello World*"
 		}
 	},
 	"libre-barcode-39-extended-text": {
 		"languages": [],
 		"sampleText": {
-			"styles": "*Hello World*"
+			"short": "*Hello World*"
 		}
 	},
 	"libre-barcode-39-text": {
 		"languages": [],
 		"sampleText": {
-			"styles": "*HELLO WORLD*"
+			"short": "*HELLO WORLD*"
 		}
 	},
 	"libre-barcode-ean13-text": {
 		"sampleText": {
-			"styles": "001234567890?"
+			"short": "001234567890?"
 		}
 	},
 	"material-icons": {
 		"sampleText": {
-			"styles": "home"
+			"short": "home"
 		}
 	},
 	"material-icons-outlined": {
 		"sampleText": {
-			"styles": "home"
+			"short": "home"
 		}
 	},
 	"material-icons-round": {
 		"sampleText": {
-			"styles": "home"
+			"short": "home"
 		}
 	},
 	"material-icons-sharp": {
 		"sampleText": {
-			"styles": "home"
+			"short": "home"
 		}
 	},
 	"material-icons-two-tone": {
 		"sampleText": {
-			"styles": "home"
+			"short": "home"
 		}
 	},
 	"material-symbols-outlined": {
 		"sampleText": {
-			"styles": "home"
+			"short": "home"
 		}
 	},
 	"material-symbols-rounded": {
 		"sampleText": {
-			"styles": "home"
+			"short": "home"
 		}
 	},
 	"material-symbols-sharp": {
 		"sampleText": {
-			"styles": "home"
+			"short": "home"
 		}
 	},
 	"noto-color-emoji-compat-test": {
 		"sampleText": {
-			"styles": "🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜"
+			"short": "🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜"
 		}
 	},
 	"noto-music": {
@@ -221,49 +221,49 @@
 	"redacted": {
 		"languages": [],
 		"sampleText": {
-			"styles": "Wireframe content"
+			"short": "Wireframe content"
 		}
 	},
 	"redacted-script": {
 		"languages": [],
 		"sampleText": {
-			"styles": "Wireframe content"
+			"short": "Wireframe content"
 		}
 	},
 	"stix-two-math": {
 		"languages": [],
 		"sampleText": {
-			"styles": "∑ ∫ √ π ≈ ∞"
+			"short": "∑ ∫ √ π ≈ ∞"
 		}
 	},
 	"yakuhanjp": {
 		"sampleText": {
-			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
 		}
 	},
 	"yakuhanjps": {
 		"sampleText": {
-			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
 		}
 	},
 	"yakuhanmp": {
 		"sampleText": {
-			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
 		}
 	},
 	"yakuhanmps": {
 		"sampleText": {
-			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
 		}
 	},
 	"yakuhanrp": {
 		"sampleText": {
-			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
 		}
 	},
 	"yakuhanrps": {
 		"sampleText": {
-			"styles": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
 		}
 	}
 }

@@ -132,14 +132,13 @@ const languageProto = loadProtoType(
 const normalizeSampleText = (
 	value: GoogleRawSampleText | undefined,
 ): GoogleSampleText | undefined => {
-	const styles = value?.styles?.trim();
-	const tester = value?.tester?.trim();
-	return styles || tester
-		? {
-				...(styles ? { styles } : {}),
-				...(tester ? { tester } : {}),
-			}
-		: undefined;
+	const short = value?.styles?.trim();
+	const long = value?.tester?.trim();
+	if (long && !short) {
+		throw new Error('Google sample text tester requires styles text');
+	}
+	if (!short) return undefined;
+	return { short, ...(long ? { long } : {}) };
 };
 
 const normalizeProject = (

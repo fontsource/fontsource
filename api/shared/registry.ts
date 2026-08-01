@@ -31,8 +31,8 @@ const ScriptSchema = z.string().regex(/^[A-Z][a-z]{3}$/);
 const SymbolInputModeSchema = z.enum(['codepoint', 'name-ligature']);
 
 const SampleTextSchema = z.strictObject({
-	styles: z.string().min(1).optional(),
-	tester: z.string().min(1).optional(),
+	short: z.string().min(1).describe('Compact preview text'),
+	long: z.string().min(1).describe('Extended preview text').optional(),
 });
 
 const RangeShape = {

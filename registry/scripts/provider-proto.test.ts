@@ -46,8 +46,8 @@ describe('Google provider schema', () => {
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
 			sampleText: {
-				styles: 'All people are born free',
-				tester: 'All people are born free and equal',
+				short: 'All people are born free',
+				long: 'All people are born free and equal',
 			},
 			project: {
 				repository: 'https://github.com/librefonts/abel',
@@ -66,6 +66,14 @@ describe('Google provider schema', () => {
 		expect(() =>
 			parseGoogleFamily(ABEL_METADATA.replace('name: "Abel"\n', '')),
 		).toThrow(/missing required field/);
+	});
+
+	it('rejects long sample text without a short sample', () => {
+		expect(() =>
+			parseGoogleFamily(
+				ABEL_METADATA.replace('  styles: "All people are born free"\n', ''),
+			),
+		).toThrow('Google sample text tester requires styles text');
 	});
 
 	it('does not silently accept an upstream-reserved field', () => {

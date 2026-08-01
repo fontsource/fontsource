@@ -230,20 +230,20 @@ describe('registry source archive', () => {
 			familyWithVariantOverride,
 		);
 		expect(views.get('families/dejavu-math.json')).toMatchObject({
-			sampleText: { styles: '∑ ∫ √ π ≈ ∞' },
+			sampleText: { short: '∑ ∫ √ π ≈ ∞' },
 			tags: expect.arrayContaining(['special-use/math']),
 		});
 		expect(views.get('families/bravura.json')).toMatchObject({
-			sampleText: { styles: '♩♪♫♬♭♮♯' },
+			sampleText: { short: '♩♪♫♬♭♮♯' },
 			tags: expect.arrayContaining(['special-use/music-symbols']),
 		});
 		expect(views.get('families/dseg7-classic.json')).toMatchObject({
-			sampleText: { styles: '0123456789 ABCDEF' },
+			sampleText: { short: '0123456789 ABCDEF' },
 			tags: expect.arrayContaining(['special-use/digital-display']),
 		});
 		expect(views.get('families/jsmath-cmr10.json')).toMatchObject({
 			languages: [],
-			sampleText: { styles: 'ABC xyz 123' },
+			sampleText: { short: 'ABC xyz 123' },
 			tags: expect.arrayContaining(['special-use/math']),
 		});
 		expect(views.get('families/yakuhanjp.json')).toMatchObject({
@@ -256,7 +256,7 @@ describe('registry source archive', () => {
 		).toMatchObject({
 			languages: [],
 			sampleText: {
-				styles: '🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜',
+				short: '🥰💀✌️🌴🐢🐐🍄⚽🍻👑📸😬👀🚨🏡🕊️🏆😻🌟🧿🍀🎨🍜',
 			},
 			tags: expect.arrayContaining(['special-use/emoji']),
 		});
@@ -279,7 +279,7 @@ describe('registry source archive', () => {
 			classifications: ['symbols'],
 			tags: ['special-use/icons'],
 			languages: [],
-			sampleText: { styles: 'home' },
+			sampleText: { short: 'home' },
 			symbols: {
 				catalogUrl: '/v1/registry/families/material-icons/symbols',
 				inputModes: ['codepoint', 'name-ligature'],

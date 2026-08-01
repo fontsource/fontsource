@@ -777,8 +777,14 @@ export type GetRegistryFamilyResponses = {
         primaryLanguage?: string;
         primaryScript?: string;
         sampleText?: {
-            styles?: string;
-            tester?: string;
+            /**
+             * Compact preview text
+             */
+            short: string;
+            /**
+             * Extended preview text
+             */
+            long?: string;
         };
         designer?: string;
         dateAdded?: string;
@@ -1008,8 +1014,14 @@ export type ListRegistryLanguagesResponses = {
         preferredName?: string;
         autonym?: string;
         sampleText?: {
-            styles?: string;
-            tester?: string;
+            /**
+             * Compact preview text
+             */
+            short: string;
+            /**
+             * Extended preview text
+             */
+            long?: string;
         };
     }>;
 };

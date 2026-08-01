@@ -22,7 +22,7 @@
 		"type": "github"
 	},
 	"sampleText": {
-		"styles": "ABC xyz 123"
+		"short": "ABC xyz 123"
 	},
 	"sourceModified": "2026-03-25",
 	"sources": [

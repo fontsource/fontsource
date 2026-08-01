@@ -40,8 +40,8 @@ const VIEWS = [
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
 			sampleText: {
-				styles: 'All people are born free',
-				tester: 'All people are born free and equal',
+				short: 'All people are born free',
+				long: 'All people are born free and equal',
 			},
 			license: {
 				id: 'OFL-1.1',
@@ -95,8 +95,8 @@ const VIEWS = [
 				name: 'English',
 				autonym: 'English',
 				sampleText: {
-					styles: 'All people are born free',
-					tester: 'All people are born free and equal',
+					short: 'All people are born free',
+					long: 'All people are born free and equal',
 				},
 			},
 		]),

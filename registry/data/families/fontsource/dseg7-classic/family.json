@@ -190,7 +190,7 @@
 		"type": "github"
 	},
 	"sampleText": {
-		"styles": "0123456789 ABCDEF"
+		"short": "0123456789 ABCDEF"
 	},
 	"sourceModified": "2026-07-27",
 	"sources": [

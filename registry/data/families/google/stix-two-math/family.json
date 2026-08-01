@@ -22,7 +22,7 @@
 		"type": "github"
 	},
 	"sampleText": {
-		"styles": "∑ ∫ √ π ≈ ∞"
+		"short": "∑ ∫ √ π ≈ ∞"
 	},
 	"sourceModified": "2026-04-29",
 	"sources": [
