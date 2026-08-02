@@ -1,5 +1,11 @@
 {
 	"breakpoints": [375, 768, 1280],
 	"out": "./app/bones",
-	"routes": ["/", "/fonts/inter"]
+	"routes": [
+		"/",
+		"/fonts/inter",
+		"/fonts/inter/glyphs",
+		"/fonts/inter/about",
+		"/fonts/inter/use"
+	]
 }

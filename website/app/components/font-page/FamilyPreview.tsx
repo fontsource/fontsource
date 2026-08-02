@@ -15,6 +15,7 @@ import type {
 import { getAxisLabel } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
+	getFontPreviewFamily,
 	getPreferredPreviewSubset,
 	getPreviewDirection,
 	isLatinPreviewSubset,
@@ -30,6 +31,7 @@ import {
 } from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
+import { FontSkeleton } from './FontSkeleton';
 
 interface FamilyPreviewProps {
 	metadata: GetFontResponse;
@@ -200,6 +202,7 @@ export const FamilyPreview = ({
 		),
 	);
 	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
+	const previewFamily = getFontPreviewFamily(metadata, Boolean(variable));
 	const lineHeightPixels = size * lineHeight;
 	const supportsItalic = metadata.styles.includes('italic');
 	const activeModeLabels = isSymbolPreviewFamily
@@ -262,7 +265,7 @@ export const FamilyPreview = ({
 						<FamilyIdentity
 							metadata={metadata}
 							registry={registry}
-							fontFamily={fontFamily}
+							variableAvailable={Boolean(variable)}
 						/>
 						<Link
 							className={classes.licenseSignal}
@@ -335,11 +338,7 @@ export const FamilyPreview = ({
 									aria-pressed={italic}
 									onClick={() => setItalic((active) => !active)}
 								>
-									<span
-										className={classes.italicMark}
-										style={{ fontFamily }}
-										aria-hidden="true"
-									>
+									<span className={classes.italicMark} aria-hidden="true">
 										I
 									</span>
 									Italic
@@ -375,18 +374,25 @@ export const FamilyPreview = ({
 						</p>
 					)}
 
-					<label className={classes.canvasField}>
-						<span>Type your text</span>
-						<textarea
-							className={classes.canvas}
-							rows={3}
-							style={previewStyle}
-							dir={getPreviewDirection(previewSubset)}
-							value={text}
-							onChange={(event) => setText(event.currentTarget.value)}
-							spellCheck={false}
-						/>
-					</label>
+					<FontSkeleton
+						name="font-detail-canvas"
+						family={previewFamily}
+						weight={weight}
+						style={italic ? 'italic' : 'normal'}
+					>
+						<label className={classes.canvasField}>
+							<span>Type your text</span>
+							<textarea
+								className={classes.canvas}
+								rows={3}
+								style={previewStyle}
+								dir={getPreviewDirection(previewSubset)}
+								value={text}
+								onChange={(event) => setText(event.currentTarget.value)}
+								spellCheck={false}
+							/>
+						</label>
+					</FontSkeleton>
 
 					<div className={classes.customizePanel}>
 						<label className={classes.rangeControl}>
@@ -466,43 +472,50 @@ export const FamilyPreview = ({
 								<h3>Compare weights</h3>
 								<span>{metadata.weights.length} available</span>
 							</div>
-							<fieldset
-								className={classes.weightStrip}
-								aria-label="Weight comparison"
-								style={
-									{
-										'--weight-count': metadata.weights.length,
-									} as React.CSSProperties
-								}
+							<FontSkeleton
+								name="font-detail-weight-strip"
+								family={previewFamily}
+								weights={metadata.weights}
+								className={classes.weightSkeleton}
 							>
-								{metadata.weights.map((value) => (
-									<button
-										key={value}
-										type="button"
-										className={classes.weightSample}
-										data-active={weight === value || undefined}
-										aria-pressed={weight === value}
-										onClick={() => setWeight(value)}
-									>
-										<span>
-											{weightNames[value] ?? 'Weight'} {value}
-										</span>
-										<strong
-											style={{
-												fontFamily,
-												fontFeatureSettings: hasNamedLigatures
-													? '"liga"'
-													: undefined,
-												fontVariationSettings:
-													previewStyle.fontVariationSettings,
-												fontWeight: value,
-											}}
+								<fieldset
+									className={classes.weightStrip}
+									aria-label="Weight comparison"
+									style={
+										{
+											'--weight-count': metadata.weights.length,
+										} as React.CSSProperties
+									}
+								>
+									{metadata.weights.map((value) => (
+										<button
+											key={value}
+											type="button"
+											className={classes.weightSample}
+											data-active={weight === value || undefined}
+											aria-pressed={weight === value}
+											onClick={() => setWeight(value)}
 										>
-											{weightSpecimen}
-										</strong>
-									</button>
-								))}
-							</fieldset>
+											<span>
+												{weightNames[value] ?? 'Weight'} {value}
+											</span>
+											<strong
+												style={{
+													fontFamily,
+													fontFeatureSettings: hasNamedLigatures
+														? '"liga"'
+														: undefined,
+													fontVariationSettings:
+														previewStyle.fontVariationSettings,
+													fontWeight: value,
+												}}
+											>
+												{weightSpecimen}
+											</strong>
+										</button>
+									))}
+								</fieldset>
+							</FontSkeleton>
 						</div>
 					)}
 				</div>

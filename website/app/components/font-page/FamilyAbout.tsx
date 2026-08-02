@@ -12,7 +12,7 @@ import type {
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
-import { getFontFamilyStack } from '@/utils/font-preview';
+import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
 import {
 	getOpenTypeFeatureName,
 	getRegistryContent,
@@ -25,6 +25,7 @@ import {
 } from '@/utils/registry';
 
 import classes from './FamilyAbout.module.css';
+import { FontSkeleton } from './FontSkeleton';
 import { RegistryMarkdown } from './RegistryMarkdown';
 import { SearchableLanguageList } from './SearchableLanguageList';
 import listClasses from './SearchableMetadataList.module.css';
@@ -173,6 +174,7 @@ export const FamilyAbout = ({
 		article = article.slice(content.description.length).trim();
 	}
 	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
+	const previewFamily = getFontPreviewFamily(metadata, Boolean(variable));
 	const specimenText =
 		(registry?.sampleText ||
 		(registry?.primaryScript && registry.primaryScript !== 'Latn')
@@ -265,15 +267,21 @@ export const FamilyAbout = ({
 					<div className={classes.prose}>
 						<RegistryMarkdown value={description} />
 					</div>
-					<div
-						className={classes.specimen}
-						style={specimenStyle}
-						data-category={metadata.category}
-						role="img"
-						aria-label={`${metadata.family} specimen sample`}
+					<FontSkeleton
+						name="font-detail-about-specimen"
+						family={previewFamily}
+						weight={600}
 					>
-						{specimenText}
-					</div>
+						<div
+							className={classes.specimen}
+							style={specimenStyle}
+							data-category={metadata.category}
+							role="img"
+							aria-label={`${metadata.family} specimen sample`}
+						>
+							{specimenText}
+						</div>
+					</FontSkeleton>
 				</div>
 
 				<dl className={classes.facts}>

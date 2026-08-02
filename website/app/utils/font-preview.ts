@@ -32,6 +32,11 @@ export const isLatinPreviewSubset = (subset: string) =>
 export const getPreviewDirection = (subset: string): 'ltr' | 'rtl' =>
 	rtlPreviewSubsets.has(subset) ? 'rtl' : 'ltr';
 
+export const getFontPreviewFamily = (
+	metadata: FontPreviewIdentity,
+	variableAvailable = metadata.variable,
+) => (variableAvailable ? `${metadata.family} Variable` : metadata.family);
+
 export const getPreferredPreviewSubset = (
 	metadata: GetFontResponse,
 	registry?: RegistryFamily,
@@ -45,9 +50,7 @@ export const getFontFamilyStack = (
 	variableAvailable = metadata.variable,
 	registry?: RegistryFamily,
 ) => {
-	const family = variableAvailable
-		? `${metadata.family} Variable`
-		: metadata.family;
+	const family = getFontPreviewFamily(metadata, variableAvailable);
 
 	const familyKind = getRegistryFamilyKind(registry);
 	if (familyKind === 'punctuation') {
@@ -60,7 +63,6 @@ export const getFontFamilyStack = (
 
 	return `"${family}", "Fallback Outline"`;
 };
-
 export const getFontPreviewCSS = (
 	metadata: GetFontResponse,
 	variable?: GetVariableFontResponse,

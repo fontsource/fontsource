@@ -741,6 +741,10 @@
 	}
 }
 
+.renderedFontSkeleton {
+	min-width: 0;
+}
+
 .renderedDisclosure {
 	border-top: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 

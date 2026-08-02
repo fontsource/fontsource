@@ -6,7 +6,7 @@ import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu'
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import type { GetFontResponse } from '@/generated/api';
 import { formatFontLabel } from '@/utils/font-labels';
-import { getFontFamilyStack } from '@/utils/font-preview';
+import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
 import {
 	getRegistryContent,
 	getRegistryFamilyKind,
@@ -14,6 +14,7 @@ import {
 } from '@/utils/registry';
 
 import classes from './FamilyPageShell.module.css';
+import { FontSkeleton } from './FontSkeleton';
 import { RegistryMarkdown } from './RegistryMarkdown';
 
 type FamilyTab = 'preview' | 'glyphs' | 'about' | 'use';
@@ -44,14 +45,16 @@ const sourceNames: Record<GetFontResponse['type'], string> = {
 export const FamilyIdentity = ({
 	metadata,
 	registry,
-	fontFamily,
+	variableAvailable = false,
 	compact = false,
 }: {
 	metadata: GetFontResponse;
 	registry?: RegistryFamily;
-	fontFamily: string;
+	variableAvailable?: boolean;
 	compact?: boolean;
 }) => {
+	const fontFamily = getFontFamilyStack(metadata, variableAvailable, registry);
+	const previewFamily = getFontPreviewFamily(metadata, variableAvailable);
 	const category = formatFontLabel(metadata.category);
 	const weightLabel = `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`;
 	const subsetLabel = `${metadata.subsets.length} ${metadata.subsets.length === 1 ? 'subset' : 'subsets'}`;
@@ -69,16 +72,30 @@ export const FamilyIdentity = ({
 		? getRegistryFamilyKind(registry) !== 'symbols'
 		: metadata.category !== 'icons' && metadata.category !== 'other';
 
+	const title = (
+		<Title
+			order={1}
+			className={classes.title}
+			id="family-title"
+			style={useSpecimenTitle ? { fontFamily } : undefined}
+		>
+			{registry?.displayName ?? metadata.family}
+		</Title>
+	);
+
 	return (
 		<div className={classes.identity} data-compact={compact || undefined}>
-			<Title
-				order={1}
-				className={classes.title}
-				id="family-title"
-				style={useSpecimenTitle ? { fontFamily } : undefined}
-			>
-				{registry?.displayName ?? metadata.family}
-			</Title>
+			{useSpecimenTitle ? (
+				<FontSkeleton
+					name={compact ? 'font-detail-compact-title' : 'font-detail-title'}
+					family={previewFamily}
+					weight={500}
+				>
+					{title}
+				</FontSkeleton>
+			) : (
+				title
+			)}
 			{compact ? (
 				<div className={classes.compactMetadata}>
 					<span>{classification}</span>
@@ -226,7 +243,6 @@ export const FamilyPageShell = ({
 	children,
 }: FamilyPageShellProps) => {
 	const isPreview = tabsValue === 'preview';
-	const fontFamily = getFontFamilyStack(metadata, variableAvailable, registry);
 	const location = useLocation();
 	const locationState = location.state as FontPageLocationState | null;
 	const resultsUrl =
@@ -252,7 +268,7 @@ export const FamilyPageShell = ({
 					<FamilyIdentity
 						metadata={metadata}
 						registry={registry}
-						fontFamily={fontFamily}
+						variableAvailable={variableAvailable}
 						compact
 					/>
 					<FamilyActions
