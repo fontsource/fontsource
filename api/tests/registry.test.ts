@@ -82,7 +82,7 @@ const VIEWS = [
 		path: 'families/abel/symbols.json',
 		route: '/v1/registry/families/abel/symbols',
 		body: RegistryFamilySymbolsSchema.parse([
-			{ name: 'home', codepoint: 0xe88a },
+			{ name: 'home', codepoint: 0xe88a, categories: ['action', 'symbols'] },
 		]),
 	},
 	{
