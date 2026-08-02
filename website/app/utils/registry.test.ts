@@ -8,6 +8,8 @@ import type {
 
 import {
 	findUnmappedCharacters,
+	getOpenTypeFeatureDescription,
+	getOpenTypeFeatureName,
 	getRegistryCharacterGroups,
 	getRegistryFamilyKind,
 	getRegistryPreviewText,
@@ -18,6 +20,26 @@ import {
 	selectRegistryPreviewLanguage,
 	usesNameLigatures,
 } from './registry';
+
+describe('OpenType feature labels', () => {
+	it('explains registered and numbered features in plain language', () => {
+		expect(getOpenTypeFeatureName('rvrn')).toBe(
+			'Required variation alternates',
+		);
+		expect(getOpenTypeFeatureDescription('rvrn')).toContain(
+			'variable-font settings',
+		);
+		expect(getOpenTypeFeatureDescription('ss03')).toContain(
+			'alternate character designs',
+		);
+	});
+
+	it('keeps uncommon font-defined tags understandable', () => {
+		expect(getOpenTypeFeatureDescription('TEST')).toBe(
+			'Applies the font’s test behavior during text shaping.',
+		);
+	});
+});
 
 const source = (sha256: string, type: 'static' | 'variable', weight: number) =>
 	({

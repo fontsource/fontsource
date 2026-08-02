@@ -229,10 +229,12 @@ const findUnmappedCharacters = (
 
 const featureNames: Record<string, string> = {
 	aalt: 'Access all alternates',
+	c2sc: 'Small capitals from capitals',
 	calt: 'Contextual alternates',
 	case: 'Case-sensitive forms',
 	ccmp: 'Glyph composition',
 	clig: 'Contextual ligatures',
+	cpsp: 'Capital spacing',
 	dlig: 'Discretionary ligatures',
 	dnom: 'Denominators',
 	frac: 'Fractions',
@@ -247,6 +249,7 @@ const featureNames: Record<string, string> = {
 	ordn: 'Ordinals',
 	pnum: 'Proportional figures',
 	rlig: 'Required ligatures',
+	rvrn: 'Required variation alternates',
 	salt: 'Stylistic alternates',
 	sinf: 'Scientific inferiors',
 	smcp: 'Small capitals',
@@ -254,6 +257,38 @@ const featureNames: Record<string, string> = {
 	sups: 'Superscript',
 	tnum: 'Tabular figures',
 	zero: 'Slashed zero',
+};
+
+const featureDescriptions: Record<string, string> = {
+	aalt: 'Makes every alternate form in the font available for selection.',
+	c2sc: 'Replaces capital letters with forms designed to match small capitals.',
+	calt: 'Chooses alternate forms that work better beside the surrounding letters.',
+	case: 'Adjusts punctuation and symbols to align with capital letters.',
+	ccmp: 'Builds or separates glyphs so letters and marks shape correctly.',
+	clig: 'Uses ligatures that are helpful only in specific letter sequences.',
+	cpsp: 'Adds spacing designed specifically for all-capital text.',
+	dlig: 'Enables optional ligatures chosen for style rather than readability.',
+	dnom: 'Uses denominator figures designed for fractions.',
+	frac: 'Builds diagonal fractions from ordinary numbers.',
+	kern: 'Fine-tunes the space between specific pairs of characters.',
+	liga: 'Replaces common letter sequences with standard ligatures.',
+	lnum: 'Uses figures that align with the height of capital letters.',
+	locl: 'Uses character forms appropriate to the selected language or region.',
+	mark: 'Positions combining marks relative to their base characters.',
+	mkmk: 'Positions combining marks relative to other marks.',
+	numr: 'Uses numerator figures designed for fractions.',
+	onum: 'Uses figures with varied heights that sit naturally in body text.',
+	ordn: 'Uses letterforms designed for ordinal numbers.',
+	pnum: 'Uses figures with widths that follow each digit’s shape.',
+	rlig: 'Applies ligatures required for correct script shaping.',
+	rvrn: 'Selects alternate forms required at specific variable-font settings.',
+	salt: 'Offers stylistic alternatives for selected characters.',
+	sinf: 'Uses lowered figures and letters designed for scientific notation.',
+	smcp: 'Replaces lowercase letters with small capitals.',
+	subs: 'Uses glyphs designed to sit below the text baseline.',
+	sups: 'Uses glyphs designed to sit above the text baseline.',
+	tnum: 'Uses equal-width figures that align in tables and columns.',
+	zero: 'Distinguishes zero from the letter O, commonly with a slash.',
 };
 
 const getOpenTypeFeatureName = (tag: string) => {
@@ -266,6 +301,19 @@ const getOpenTypeFeatureName = (tag: string) => {
 	return featureNames[tag] ?? tag.toUpperCase();
 };
 
+const getOpenTypeFeatureDescription = (tag: string) => {
+	if (/^ss\d{2}$/.test(tag)) {
+		return 'Activates a coordinated set of alternate character designs.';
+	}
+	if (/^cv\d{2}$/.test(tag)) {
+		return 'Offers an alternate design for one or more specific characters.';
+	}
+	return (
+		featureDescriptions[tag] ??
+		`Applies the font’s ${getOpenTypeFeatureName(tag).toLowerCase()} behavior during text shaping.`
+	);
+};
+
 export type {
 	RegistryDataState,
 	RegistryFamily,
@@ -274,6 +322,7 @@ export type {
 };
 export {
 	findUnmappedCharacters,
+	getOpenTypeFeatureDescription,
 	getOpenTypeFeatureName,
 	getRegistryCharacterGroups,
 	getRegistryContent,

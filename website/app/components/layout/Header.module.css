@@ -183,7 +183,7 @@
 
 	&:hover,
 	&:focus-visible,
-	&.selectedFontsActive {
+	&[aria-current="page"] {
 		color: var(--mantine-color-purple-0);
 		background: light-dark(#efeeff, #172138);
 	}

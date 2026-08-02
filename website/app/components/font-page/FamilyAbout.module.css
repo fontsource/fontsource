@@ -136,6 +136,30 @@
 	}
 }
 
+.usageStats {
+	display: grid;
+	gap: 6px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 12px;
+	}
+
+	li > span:first-child {
+		color: light-dark(#34435c, #cbd3e2);
+		font-weight: 600;
+	}
+
+	.usageValue {
+		text-align: end;
+	}
+}
+
 .taxonomy {
 	display: grid;
 	grid-template-columns: minmax(220px, 4fr) minmax(0, 8fr);
@@ -381,7 +405,7 @@
 
 .capabilityGrid {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-columns: minmax(260px, 5fr) minmax(0, 7fr);
 	border: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -392,16 +416,16 @@
 		padding: 28px;
 	}
 
-	> .capabilityPanel:nth-child(2) {
+	> .axisPanel {
 		border-left: light-dark(
 			1px solid var(--mantine-color-border-0),
 			1px solid var(--mantine-color-border-1)
 		);
 	}
 
-	> .featurePanel {
+	> .languagePanel {
 		grid-column: 1 / -1;
-		border-top: light-dark(
+		border-bottom: light-dark(
 			1px solid var(--mantine-color-border-0),
 			1px solid var(--mantine-color-border-1)
 		);
@@ -426,17 +450,9 @@
 }
 
 .styleSummary {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 4px 18px;
+	margin-bottom: 0;
 	color: light-dark(#52617a, #aeb9cc);
 	font-size: 14px;
-
-	> span {
-		display: inline-flex;
-		align-items: center;
-	}
 }
 
 .axisIntro {
@@ -585,16 +601,15 @@
 	.capabilityGrid {
 		grid-template-columns: minmax(0, 1fr);
 
-		> .capabilityPanel:nth-child(2) {
+		> .axisPanel {
+			border-left: 0;
+		}
+
+		> .capabilityPanel:nth-child(3) {
 			border-top: light-dark(
 				1px solid var(--mantine-color-border-0),
 				1px solid var(--mantine-color-border-1)
 			);
-			border-left: 0;
-		}
-
-		> .featurePanel {
-			grid-column: auto;
 		}
 	}
 

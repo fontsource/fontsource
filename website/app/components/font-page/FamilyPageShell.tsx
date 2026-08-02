@@ -6,11 +6,17 @@ import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu'
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import type { GetFontResponse } from '@/generated/api';
 import { formatFontLabel } from '@/utils/font-labels';
-import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
+import {
+	getFontFamilyStack,
+	getFontPreviewFamily,
+	registrySourcePreviewFamily,
+} from '@/utils/font-preview';
 import {
 	getRegistryContent,
 	getRegistryFamilyKind,
+	getRegistrySourcePreviewStyle,
 	type RegistryFamily,
+	type RegistrySource,
 } from '@/utils/registry';
 
 import classes from './FamilyPageShell.module.css';
@@ -23,6 +29,7 @@ type FontPageLocationState = { fontResults?: string };
 interface FamilyPageShellProps {
 	metadata: GetFontResponse;
 	registry?: RegistryFamily;
+	previewSource?: RegistrySource;
 	variableAvailable?: boolean;
 	tabsValue: FamilyTab;
 	children: React.ReactNode;
@@ -45,16 +52,23 @@ const sourceNames: Record<GetFontResponse['type'], string> = {
 export const FamilyIdentity = ({
 	metadata,
 	registry,
+	previewSource,
 	variableAvailable = false,
 	compact = false,
 }: {
 	metadata: GetFontResponse;
 	registry?: RegistryFamily;
+	previewSource?: RegistrySource;
 	variableAvailable?: boolean;
 	compact?: boolean;
 }) => {
-	const fontFamily = getFontFamilyStack(metadata, variableAvailable, registry);
-	const previewFamily = getFontPreviewFamily(metadata, variableAvailable);
+	const sourcePreviewStyle = getRegistrySourcePreviewStyle(previewSource);
+	const fontFamily = previewSource
+		? `"${registrySourcePreviewFamily}", "Fallback Outline"`
+		: getFontFamilyStack(metadata, variableAvailable, registry);
+	const previewFamily = previewSource
+		? registrySourcePreviewFamily
+		: getFontPreviewFamily(metadata, variableAvailable);
 	const category = formatFontLabel(metadata.category);
 	const weightLabel = `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`;
 	const subsetLabel = `${metadata.subsets.length} ${metadata.subsets.length === 1 ? 'subset' : 'subsets'}`;
@@ -77,7 +91,9 @@ export const FamilyIdentity = ({
 			order={1}
 			className={classes.title}
 			id="family-title"
-			style={useSpecimenTitle ? { fontFamily } : undefined}
+			style={
+				useSpecimenTitle ? { fontFamily, ...sourcePreviewStyle } : undefined
+			}
 		>
 			{registry?.displayName ?? metadata.family}
 		</Title>
@@ -89,7 +105,8 @@ export const FamilyIdentity = ({
 				<FontSkeleton
 					name={compact ? 'font-detail-compact-title' : 'font-detail-title'}
 					family={previewFamily}
-					weight={500}
+					weight={sourcePreviewStyle.fontWeight ?? 500}
+					style={sourcePreviewStyle.fontStyle}
 				>
 					{title}
 				</FontSkeleton>
@@ -238,6 +255,7 @@ export const FamilyTabs = ({
 export const FamilyPageShell = ({
 	metadata,
 	registry,
+	previewSource,
 	variableAvailable,
 	tabsValue,
 	children,
@@ -268,6 +286,7 @@ export const FamilyPageShell = ({
 					<FamilyIdentity
 						metadata={metadata}
 						registry={registry}
+						previewSource={previewSource}
 						variableAvailable={variableAvailable}
 						compact
 					/>

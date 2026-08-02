@@ -10,6 +10,7 @@ import {
 	loadFontPageBase,
 	loadFontPageCapabilities,
 	loadFontPageLanguages,
+	loadFontPageStats,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import { loadOptionalRegistryData } from '@/utils/registry-request.server';
@@ -25,12 +26,14 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		axesResult,
 		taxonomyResult,
 		capabilitiesResult,
+		stats,
 	] = await Promise.all([
 		basePromise,
 		loadFontPageLanguages(basePromise, request.signal),
 		loadOptionalRegistryData(listRegistryAxes(options), request.signal),
 		loadOptionalRegistryData(getRegistryTaxonomy(options), request.signal),
 		loadFontPageCapabilities(basePromise, request.signal),
+		loadFontPageStats(id, request.signal),
 	]);
 	const enrichmentUnavailable = [
 		languagesResult,
@@ -46,6 +49,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			taxonomy: taxonomyResult.value,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
+			stats,
 			enrichmentUnavailable,
 			capabilitiesState: capabilitiesResult.state,
 		},
@@ -78,6 +82,7 @@ export default function AboutPage() {
 		taxonomy,
 		capabilities,
 		capabilitySource,
+		stats,
 		registryState,
 		enrichmentUnavailable,
 		capabilitiesState,
@@ -102,6 +107,7 @@ export default function AboutPage() {
 				taxonomy={taxonomy}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
+				stats={stats}
 				registryState={registryState}
 				enrichmentUnavailable={enrichmentUnavailable}
 				capabilitiesState={capabilitiesState}

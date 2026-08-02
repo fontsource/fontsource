@@ -32,6 +32,7 @@ export const ThemeButton = ({ ...others }: IconProps) => {
 		<Tooltip label="Toggle color scheme">
 			<ActionIcon
 				variant="transparent"
+				size={40}
 				aria-label="Toggle color scheme"
 				onClick={() => {
 					setColorScheme(colorScheme === 'dark' ? 'light' : 'dark');
