@@ -441,7 +441,6 @@ export const FamilyUse = ({
 							<div className={classes.pathLicense}>
 								<LicenseReceipt
 									familyId={metadata.id}
-									family={metadata.family}
 									license={registry?.license}
 									registryState={registryState}
 								/>
@@ -642,7 +641,6 @@ export const FamilyUse = ({
 							<div className={classes.pathLicense}>
 								<LicenseReceipt
 									familyId={metadata.id}
-									family={metadata.family}
 									license={registry?.license}
 									registryState={registryState}
 								/>

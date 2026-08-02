@@ -9,6 +9,7 @@ import {
 	findUnmappedCharacters,
 	getRegistryCharacterGroups,
 	getRegistryFamilyKind,
+	getRegistrySourcePreviewStyle,
 	getUnicodeCharacter,
 	type RegistryFamily,
 	selectRegistryFamilyLanguages,
@@ -66,9 +67,9 @@ const family = {
 } satisfies RegistryFamily;
 
 const capabilities = {
-	glyphCount: 6,
-	codepointCount: 6,
-	unicodeRange: 'U+0021, U+0031, U+0041, U+0061, U+00A9, U+0301',
+	glyphCount: 7,
+	codepointCount: 7,
+	unicodeRange: 'U+0021, U+0031, U+0041, U+0061, U+00A9, U+0301, U+E000',
 	features: { gsub: ['liga'], gpos: ['kern'] },
 	outline: 'glyf',
 	colorTables: [],
@@ -77,11 +78,13 @@ const capabilities = {
 describe('registry character capabilities', () => {
 	it('groups exact mapped characters without invisible codepoints', () => {
 		expect(getRegistryCharacterGroups(capabilities)).toEqual({
-			all: ['!', '1', 'A', 'a', '©', '́'],
-			letters: ['A', 'a', '́'],
+			all: ['!', '1', 'A', 'a', '©', '́', ''],
+			letters: ['A', 'a'],
+			marks: ['́'],
 			numbers: ['1'],
 			punctuation: ['!'],
 			symbols: ['©'],
+			privateUse: [''],
 		});
 	});
 
@@ -109,9 +112,11 @@ describe('registry character capabilities', () => {
 		).toEqual({
 			all: ['A'],
 			letters: ['A'],
+			marks: [],
 			numbers: [],
 			punctuation: [],
 			symbols: [],
+			privateUse: [],
 		});
 	});
 
@@ -120,6 +125,32 @@ describe('registry character capabilities', () => {
 		expect(getUnicodeCharacter(-1)).toBeUndefined();
 		expect(getUnicodeCharacter(0xd800)).toBeUndefined();
 		expect(getUnicodeCharacter(0x110000)).toBeUndefined();
+	});
+});
+
+describe('registry preview source', () => {
+	it('uses the source-scoped face for glyph rendering', () => {
+		expect(
+			getRegistrySourcePreviewStyle({
+				...source('static-700', 'static', 700),
+				style: 'oblique',
+				declaredVariant: { weight: 600, style: 'italic' },
+			}),
+		).toEqual({ fontStyle: 'italic', fontWeight: 600 });
+		const variableSource = source(
+			'variable-standard',
+			'variable',
+			400,
+		) as Extract<
+			GetRegistryFamilyResponse['sources'][number],
+			{ type: 'variable' }
+		>;
+		expect(
+			getRegistrySourcePreviewStyle({
+				...variableSource,
+				weight: { min: 100, max: 900, default: 450 },
+			}),
+		).toEqual({ fontStyle: 'normal', fontWeight: 450 });
 	});
 });
 
@@ -166,22 +197,37 @@ describe('registry family classification', () => {
 });
 
 describe('selectRegistryFamilyLanguages', () => {
-	it('returns only family languages with the primary language first', () => {
+	it('returns every family language with the primary language first', () => {
+		const additionalLanguages = Array.from({ length: 13 }, (_, index) => ({
+			id: `x${index}_Latn`,
+			language: `x${index}`,
+			script: 'Latn',
+			name: `Language ${index}`,
+		}));
 		const languages = [
 			{ id: 'de_Latn', language: 'de', script: 'Latn', name: 'German' },
 			{ id: 'en_Latn', language: 'en', script: 'Latn', name: 'English' },
 			{ id: 'fr_Latn', language: 'fr', script: 'Latn', name: 'French' },
+			...additionalLanguages,
 		];
 		const registryFamily = {
 			...family,
-			languages: ['en_Latn', 'de_Latn'],
+			languages: [
+				'en_Latn',
+				'de_Latn',
+				...additionalLanguages.map((language) => language.id),
+			],
 			primaryLanguage: 'en_Latn',
 		};
 
 		expect(
-			selectRegistryFamilyLanguages(registryFamily, languages, 2)?.map(
+			selectRegistryFamilyLanguages(registryFamily, languages)?.map(
 				(language) => language.id,
 			),
-		).toEqual(['en_Latn', 'de_Latn']);
+		).toEqual([
+			'en_Latn',
+			'de_Latn',
+			...additionalLanguages.map((language) => language.id),
+		]);
 	});
 });

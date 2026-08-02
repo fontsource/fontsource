@@ -44,7 +44,6 @@ const getRegistryContent = (registry?: RegistryFamily) => {
 const selectRegistryFamilyLanguages = (
 	registry?: RegistryFamily,
 	languages?: ListRegistryLanguagesResponse,
-	limit = 12,
 ) => {
 	if (!registry || !languages) return;
 
@@ -64,7 +63,7 @@ const selectRegistryFamilyLanguages = (
 			]
 		: familyLanguages;
 
-	return orderedLanguages.slice(0, limit);
+	return orderedLanguages;
 };
 
 const parseRegistryUnicodeRange = (value: string): UnicodeRange[] =>
@@ -109,7 +108,13 @@ const isBrowsableCharacter = (character: string) =>
 	!/^(\p{Cc}|\p{Cf}|\p{Cs}|\p{Cn}|\p{Z})$/u.test(character);
 
 type RegistryCharacterGroups = Record<
-	'all' | 'letters' | 'numbers' | 'punctuation' | 'symbols',
+	| 'all'
+	| 'letters'
+	| 'marks'
+	| 'numbers'
+	| 'punctuation'
+	| 'symbols'
+	| 'privateUse',
 	string[]
 >;
 
@@ -121,9 +126,11 @@ const getRegistryCharacterGroups = (
 	const groups: RegistryCharacterGroups = {
 		all: [],
 		letters: [],
+		marks: [],
 		numbers: [],
 		punctuation: [],
 		symbols: [],
+		privateUse: [],
 	};
 	for (const [start, end] of parseRegistryUnicodeRange(
 		capabilities.unicodeRange,
@@ -133,19 +140,36 @@ const getRegistryCharacterGroups = (
 			if (!character) continue;
 			if (!isBrowsableCharacter(character)) continue;
 			groups.all.push(character);
-			if (/^(\p{L}|\p{M})$/u.test(character)) {
+			if (/^\p{L}$/u.test(character)) {
 				groups.letters.push(character);
+			} else if (/^\p{M}$/u.test(character)) {
+				groups.marks.push(character);
 			} else if (/^\p{N}$/u.test(character)) {
 				groups.numbers.push(character);
 			} else if (/^\p{P}$/u.test(character)) {
 				groups.punctuation.push(character);
 			} else if (/^\p{S}$/u.test(character)) {
 				groups.symbols.push(character);
+			} else if (/^\p{Co}$/u.test(character)) {
+				groups.privateUse.push(character);
 			}
 		}
 	}
 
 	return groups;
+};
+
+const getRegistrySourcePreviewStyle = (source?: RegistrySource) => {
+	if (!source) return {};
+
+	return {
+		fontStyle: source.declaredVariant?.style ?? source.style,
+		fontWeight:
+			source.declaredVariant?.weight ??
+			(typeof source.weight === 'number'
+				? source.weight
+				: source.weight.default),
+	};
 };
 
 const findUnmappedCharacters = (
@@ -207,6 +231,7 @@ export {
 	getRegistryCharacterGroups,
 	getRegistryContent,
 	getRegistryFamilyKind,
+	getRegistrySourcePreviewStyle,
 	getUnicodeCharacter,
 	selectRegistryFamilyLanguages,
 	usesNameLigatures,

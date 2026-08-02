@@ -152,6 +152,11 @@
 	}
 }
 
+.coverageSearch {
+	max-width: 420px;
+	margin-top: 10px;
+}
+
 .subsets {
 	display: flex;
 	align-content: center;
@@ -230,6 +235,8 @@
 
 	button {
 		flex: 0 0 auto;
+		padding-inline: 9px;
+		font-size: 12px;
 	}
 }
 
@@ -308,6 +315,10 @@
 
 .catalog {
 	min-width: 0;
+	max-height: min(68vh, 640px);
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
 }
 
 .grid {
@@ -420,7 +431,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	justify-content: center;
+	justify-content: flex-start;
 	padding: 36px;
 	border-inline-start: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 	background: light-dark(#efeeff, #172138);
