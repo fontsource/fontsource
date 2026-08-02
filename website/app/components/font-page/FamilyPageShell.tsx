@@ -83,7 +83,7 @@ export const FamilyIdentity = ({
 		: category;
 	const tags = registry?.tags.slice(0, 2) ?? [];
 	const useSpecimenTitle = registry
-		? getRegistryFamilyKind(registry) !== 'symbols'
+		? getRegistryFamilyKind(registry) === 'text'
 		: metadata.category !== 'icons' && metadata.category !== 'other';
 
 	const title = (

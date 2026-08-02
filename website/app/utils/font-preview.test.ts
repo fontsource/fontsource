@@ -4,6 +4,7 @@ import {
 	getFontFamilyStack,
 	getPreferredPreviewSubset,
 	getRegistrySourcePreviewCSS,
+	selectRegistryPreviewSource,
 } from './font-preview';
 import type { RegistryFamily, RegistrySource } from './registry';
 
@@ -128,5 +129,128 @@ describe('getRegistrySourcePreviewCSS', () => {
 		expect(css).toContain('format("opentype")');
 		expect(css).toContain('font-style: italic;');
 		expect(css).toContain('font-weight: 100 900;');
+	});
+
+	it('keeps a variable weight range when the source declares a package variant', () => {
+		const source = {
+			sha256: 'variable-standard',
+			filename: 'example.ttf',
+			format: 'ttf',
+			size: 1,
+			downloadUrl: '/v1/registry/sources/variable-standard',
+			capabilitiesUrl: '/v1/registry/sources/variable-standard/capabilities',
+			fontVersion: null,
+			style: 'normal',
+			declaredVariant: { weight: 400, style: 'normal' },
+			type: 'variable',
+			weight: { min: 100, max: 900, default: 400 },
+			axes: [{ tag: 'wght', min: 100, max: 900, default: 400 }],
+		} satisfies RegistrySource;
+
+		expect(getRegistrySourcePreviewCSS(source)).toContain(
+			'font-weight: 100 900;',
+		);
+	});
+
+	it('supports a source-specific preview family name', () => {
+		const source = {
+			sha256: 'static-400',
+			filename: 'example.ttf',
+			format: 'ttf',
+			size: 1,
+			downloadUrl: '/v1/registry/sources/static-400',
+			capabilitiesUrl: '/v1/registry/sources/static-400/capabilities',
+			fontVersion: null,
+			style: 'normal',
+			type: 'static',
+			weight: 400,
+		} satisfies RegistrySource;
+
+		expect(getRegistrySourcePreviewCSS(source, 'Preview static-400')).toContain(
+			'font-family: "Preview static-400";',
+		);
+	});
+});
+
+describe('selectRegistryPreviewSource', () => {
+	const staticNormal = {
+		sha256: 'static-normal-400',
+		filename: 'normal.ttf',
+		format: 'ttf',
+		size: 1,
+		downloadUrl: '/normal.ttf',
+		capabilitiesUrl: '/normal.json',
+		fontVersion: null,
+		style: 'normal',
+		type: 'static',
+		weight: 400,
+	} satisfies RegistrySource;
+	const staticItalic = {
+		...staticNormal,
+		sha256: 'static-italic-700',
+		filename: 'italic.ttf',
+		downloadUrl: '/italic.ttf',
+		capabilitiesUrl: '/italic.json',
+		style: 'italic',
+		weight: 700,
+	} satisfies RegistrySource;
+	const variableItalic = {
+		...staticItalic,
+		sha256: 'variable-italic',
+		filename: 'italic-variable.ttf',
+		downloadUrl: '/italic-variable.ttf',
+		capabilitiesUrl: '/italic-variable.json',
+		type: 'variable',
+		weight: { min: 100, max: 900, default: 400 },
+		axes: [{ tag: 'wght', min: 100, max: 900, default: 400 }],
+	} satisfies RegistrySource;
+	const family = {
+		...registry,
+		sources: [staticNormal, staticItalic, variableItalic],
+		previewSource: staticNormal.sha256,
+		distribution: {
+			static: [
+				{ weight: 400, style: 'normal', source: staticNormal.sha256 },
+				{ weight: 700, style: 'italic', source: staticItalic.sha256 },
+			],
+			variable: [
+				{
+					axisKey: 'standard',
+					style: 'italic',
+					source: variableItalic.sha256,
+				},
+			],
+			characters: { type: 'all' as const },
+		},
+	} satisfies RegistryFamily;
+
+	it('follows the selected variable style source', () => {
+		expect(
+			selectRegistryPreviewSource(family, {
+				variableAvailable: true,
+				style: 'italic',
+				weight: 600,
+			}),
+		).toBe(variableItalic);
+	});
+
+	it('uses the nearest distributed static source', () => {
+		expect(
+			selectRegistryPreviewSource(family, {
+				variableAvailable: false,
+				style: 'italic',
+				weight: 600,
+			}),
+		).toBe(staticItalic);
+	});
+
+	it('falls back to the registry preview source', () => {
+		expect(
+			selectRegistryPreviewSource(family, {
+				variableAvailable: true,
+				style: 'normal',
+				weight: 400,
+			}),
+		).toBe(staticNormal);
 	});
 });

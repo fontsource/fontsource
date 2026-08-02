@@ -56,6 +56,7 @@ import '@mantine/core/styles/Progress.css';
 // Overlays
 import '@mantine/core/styles/Menu.css';
 import '@mantine/core/styles/Modal.css';
+import '@mantine/core/styles/Drawer.css';
 import '@mantine/core/styles/Tooltip.css';
 
 // Typography

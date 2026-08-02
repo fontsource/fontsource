@@ -44,25 +44,67 @@ export const getFontPreviewFamily = (
 	variableAvailable = metadata.variable,
 ) => (variableAvailable ? `${metadata.family} Variable` : metadata.family);
 
-export const getRegistrySourcePreviewCSS = (source: RegistrySource) => {
+export const getRegistrySourcePreviewCSS = (
+	source: RegistrySource,
+	fontFamily = registrySourcePreviewFamily,
+) => {
 	const format = source.format === 'ttf' ? 'truetype' : 'opentype';
 	const { fontStyle, fontWeight } = getRegistrySourcePreviewStyle(source);
 	const weight =
-		typeof source.weight === 'number' || source.declaredVariant
-			? fontWeight
-			: `${source.weight.min} ${source.weight.max}`;
+		source.type === 'variable' && typeof source.weight !== 'number'
+			? `${source.weight.min} ${source.weight.max}`
+			: fontWeight;
 	const sourceUrl = new URL(
 		source.downloadUrl,
 		'https://api.fontsource.org',
 	).toString();
 
 	return `@font-face {
-	font-family: "${registrySourcePreviewFamily}";
+	font-family: ${JSON.stringify(fontFamily)};
 	src: url(${JSON.stringify(sourceUrl)}) format("${format}");
 	font-style: ${fontStyle};
 	font-weight: ${weight};
 	font-display: swap;
 }`;
+};
+
+export const selectRegistryPreviewSource = (
+	registry: RegistryFamily | undefined,
+	options: {
+		variableAvailable: boolean;
+		style: 'normal' | 'italic';
+		weight: number;
+	},
+) => {
+	if (!registry) return;
+
+	const sourceByHash = new Map(
+		registry.sources.map((source) => [source.sha256, source]),
+	);
+	if (options.variableAvailable) {
+		const variableEntries = registry.distribution.variable?.filter(
+			(entry) => entry.style === options.style,
+		);
+		const variableEntry =
+			variableEntries?.find((entry) => entry.axisKey === 'standard') ??
+			variableEntries?.[0];
+		if (variableEntry) return sourceByHash.get(variableEntry.source);
+	}
+
+	const staticEntries = registry.distribution.static?.filter(
+		(entry) => entry.style === options.style,
+	);
+	const staticEntry = staticEntries?.length
+		? staticEntries.reduce((closest, entry) =>
+				Math.abs(entry.weight - options.weight) <
+				Math.abs(closest.weight - options.weight)
+					? entry
+					: closest,
+			)
+		: undefined;
+	if (staticEntry) return sourceByHash.get(staticEntry.source);
+
+	return sourceByHash.get(registry.previewSource);
 };
 
 export const getPreferredPreviewSubset = (

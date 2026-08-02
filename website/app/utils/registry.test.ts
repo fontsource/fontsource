@@ -32,6 +32,8 @@ describe('OpenType feature labels', () => {
 		expect(getOpenTypeFeatureDescription('ss03')).toContain(
 			'alternate character designs',
 		);
+		expect(getOpenTypeFeatureName('jp78')).toBe('JIS 1978 forms');
+		expect(getOpenTypeFeatureDescription('vert')).toContain('vertical text');
 	});
 
 	it('keeps uncommon font-defined tags understandable', () => {
