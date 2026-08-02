@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { IconSearch } from '@/components/icons';
 import type { ListRegistryLanguagesResponse } from '@/generated/api';
+import { getScriptLabel } from '@/utils/font-labels';
 
 import classes from './SearchableMetadataList.module.css';
 
@@ -32,6 +33,7 @@ const SearchableLanguageList = ({
 							language.preferredName,
 							language.autonym,
 							language.script,
+							getScriptLabel(language.script),
 						]
 							.filter(Boolean)
 							.some((value) =>
@@ -75,6 +77,7 @@ const SearchableLanguageList = ({
 				<ul id={listId} className={classes.list}>
 					{filteredLanguages.map((language) => {
 						const displayName = language.preferredName ?? language.name;
+						const script = getScriptLabel(language.script);
 						const autonym =
 							language.autonym && language.autonym !== displayName
 								? language.autonym
@@ -84,7 +87,7 @@ const SearchableLanguageList = ({
 								<strong>{displayName}</strong>
 								<span>
 									{autonym ? `${autonym} · ` : ''}
-									{language.script}
+									{script} script
 								</span>
 							</li>
 						);

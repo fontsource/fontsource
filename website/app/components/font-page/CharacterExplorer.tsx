@@ -24,7 +24,9 @@ import {
 	getFontPreviewFamily,
 	getPreferredPreviewSubset,
 	getPreviewDirection,
+	getRegistrySourcePreviewCSS,
 	isLatinPreviewSubset,
+	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
 import { getPreviewText as getLanguagePreviewText } from '@/utils/language/language';
 import {
@@ -48,7 +50,6 @@ import {
 
 import classes from './CharacterExplorer.module.css';
 import { FontSkeleton } from './FontSkeleton';
-import { SearchableLanguageList } from './SearchableLanguageList';
 
 interface CharacterExplorerProps {
 	metadata: GetFontResponse;
@@ -59,17 +60,15 @@ interface CharacterExplorerProps {
 	symbols?: GetRegistryFamilySymbolsResponse;
 	capabilities?: GetRegistrySourceCapabilitiesResponse;
 	capabilitySource?: RegistrySource;
-	languageMetadataState: RegistryDataState;
 	capabilitiesState: RegistryDataState;
 	symbolsState: RegistryDataState;
 }
 
 type ExplorerMode = 'browse' | 'check';
 
-const glyphBatchSize = 240;
+const glyphRenderBatchSize = 240;
 const maxSearchLength = 256;
 const maxDisplayedUnknownNameLength = 48;
-const glyphSkeletonSnapshotConfig = { leafTags: ['fieldset', 'aside'] };
 
 const registryCharacterGroupLabels = [
 	{ label: 'Sample', value: 'sample' },
@@ -79,8 +78,36 @@ const registryCharacterGroupLabels = [
 	{ label: 'Numbers', value: 'numbers' },
 	{ label: 'Punctuation', value: 'punctuation' },
 	{ label: 'Symbols', value: 'symbols' },
-	{ label: 'Private use', value: 'privateUse' },
 ] as const;
+
+const characterGroupNouns: Record<string, [singular: string, plural: string]> =
+	{
+		all: ['character', 'characters'],
+		letters: ['letter', 'letters'],
+		marks: ['mark', 'marks'],
+		numbers: ['number', 'numbers'],
+		punctuation: ['punctuation mark', 'punctuation marks'],
+		sample: ['sample character', 'sample characters'],
+		symbols: ['symbol', 'symbols'],
+	};
+
+const getResultNoun = (
+	group: string,
+	count: number,
+	isSymbolCatalog: boolean,
+	isSearching: boolean,
+) => {
+	if (isSearching) {
+		const noun = isSymbolCatalog ? 'symbol' : 'character';
+		return `matching ${count === 1 ? noun : `${noun}s`}`;
+	}
+
+	const nouns = isSymbolCatalog
+		? (['symbol', 'symbols'] as const)
+		: (characterGroupNouns[group] ?? characterGroupNouns.all);
+	const noun = nouns?.[count === 1 ? 0 : 1] ?? 'characters';
+	return noun;
+};
 
 const characterNames: Record<string, string> = {
 	'&': 'Ampersand',
@@ -167,7 +194,6 @@ const getSampleCharacterGroups = (value: string) => {
 		numbers: all.filter((character) => /^\p{N}$/u.test(character)),
 		punctuation: all.filter((character) => /^\p{P}$/u.test(character)),
 		symbols: all.filter((character) => /^\p{S}$/u.test(character)),
-		privateUse: all.filter((character) => /^\p{Co}$/u.test(character)),
 	};
 };
 
@@ -180,7 +206,6 @@ export const CharacterExplorer = ({
 	symbols,
 	capabilities,
 	capabilitySource,
-	languageMetadataState,
 	capabilitiesState,
 	symbolsState,
 }: CharacterExplorerProps) => {
@@ -257,7 +282,7 @@ export const CharacterExplorer = ({
 		: defaultGroup;
 	const [query, setQuery] = useState('');
 	const [visibleCharacterCount, setVisibleCharacterCount] =
-		useState(glyphBatchSize);
+		useState(glyphRenderBatchSize);
 	const loadMoreRef = useRef<HTMLDivElement>(null);
 	const [selected, setSelected] = useState(
 		explorerGroups[defaultGroup]?.[0] ?? '&',
@@ -283,12 +308,15 @@ export const CharacterExplorer = ({
 	);
 	const characterClipboard = useClipboard({ timeout: 1500 });
 	const codeClipboard = useClipboard({ timeout: 1500 });
-	const fontFamily = getFontFamilyStack(
-		metadata,
-		Boolean(variableCSS),
-		registry,
-	);
-	const previewFamily = getFontPreviewFamily(metadata, Boolean(variableCSS));
+	const sourceCSS = capabilitySource
+		? getRegistrySourcePreviewCSS(capabilitySource)
+		: undefined;
+	const previewFamily = sourceCSS
+		? registrySourcePreviewFamily
+		: getFontPreviewFamily(metadata, Boolean(variableCSS));
+	const fontFamily = sourceCSS
+		? `"${previewFamily}", "Fallback Outline"`
+		: getFontFamilyStack(metadata, Boolean(variableCSS), registry);
 	const deferredQuery = useDeferredValue(query);
 	const searchableCharacters = useMemo(
 		() =>
@@ -337,7 +365,6 @@ export const CharacterExplorer = ({
 		matchingCharacters.length - visibleCharacters.length,
 	);
 	const hasMoreCharacters = remainingCharacterCount > 0;
-	const nextBatchSize = Math.min(glyphBatchSize, remainingCharacterCount);
 	useEffect(() => {
 		const loadMore = loadMoreRef.current;
 		if (
@@ -357,7 +384,7 @@ export const CharacterExplorer = ({
 					return;
 				}
 				setVisibleCharacterCount((count) =>
-					Math.min(count + glyphBatchSize, matchingCharacters.length),
+					Math.min(count + glyphRenderBatchSize, matchingCharacters.length),
 				);
 			},
 			{ rootMargin: '240px 0px' },
@@ -373,10 +400,16 @@ export const CharacterExplorer = ({
 	const canRetryExplorer =
 		capabilitiesState === 'unavailable' ||
 		(catalogExpected && symbolsState === 'unavailable');
+	const resultNoun = getResultNoun(
+		activeGroup,
+		matchingCharacters.length,
+		hasCatalogEntries,
+		Boolean(deferredQuery),
+	);
 	const resultSummary =
 		matchingCharacters.length === 0
 			? `No matching ${hasCatalogEntries ? 'symbols' : 'characters'}`
-			: `${matchingCharacters.length.toLocaleString('en')} ${showingSampleCharacters ? 'sample ' : ''}${hasCatalogEntries ? (matchingCharacters.length === 1 ? 'symbol' : 'symbols') : matchingCharacters.length === 1 ? 'character' : 'characters'}${
+			: `${matchingCharacters.length.toLocaleString('en')} ${resultNoun}${
 					showingSampleCharacters
 						? capabilities
 							? ' · loading exact source coverage'
@@ -384,7 +417,7 @@ export const CharacterExplorer = ({
 								? ' · exact coverage temporarily unavailable'
 								: ' · exact coverage is not published'
 						: ''
-				}${hasMoreCharacters ? ` · showing ${visibleCharacters.length.toLocaleString('en')}` : ''}`;
+				}`;
 	const [announcedResultSummary] = useDebouncedValue(resultSummary, 250);
 	const activeIsCatalogEntry = activeCharacter
 		? isSymbolKey(activeCharacter)
@@ -448,42 +481,6 @@ export const CharacterExplorer = ({
 			: isScriptFamily
 				? 'Search a character or code point'
 				: 'Search A, ampersand, or U+0026';
-	const familyLanguages = languages ?? [];
-	const primaryLanguage = familyLanguages.find(
-		(language) => language.id === registry?.primaryLanguage,
-	);
-	const coverageTitle = catalogExpected
-		? hasNamedLigatures
-			? 'Named interface symbols'
-			: 'Catalogued symbols'
-		: isPunctuationFamily
-			? 'Japanese punctuation and spacing'
-			: isDigitalFamily
-				? 'Segment display characters'
-				: registry
-					? capabilities
-						? `${capabilities.codepointCount.toLocaleString('en')} mapped code points`
-						: `${registry.languages.length.toLocaleString('en')} supported languages`
-					: `${metadata.subsets.length} downloadable subsets`;
-	const coverageDescription = catalogExpected
-		? hasNamedLigatures
-			? 'Type or copy a symbol name such as home or arrow_forward.'
-			: 'Copy symbols directly from their Unicode mappings.'
-		: isPunctuationFamily
-			? 'Designed to adjust punctuation width when paired with Japanese body fonts.'
-			: isDigitalFamily
-				? 'Optimized for numbers, time, temperature, and compact status labels.'
-				: isSymbolFamily
-					? 'Designed for mapped symbols rather than running language text.'
-					: capabilities && registry?.languages.length
-						? 'Source character coverage and family language support are shown separately.'
-						: primaryLanguage
-							? `${primaryLanguage.preferredName ?? primaryLanguage.name} is listed as the primary language.`
-							: registry?.primaryScript
-								? `${registry.primaryScript} is listed as the primary script.`
-								: languageMetadataState === 'unavailable'
-									? 'Language details are temporarily unavailable.'
-									: 'Language details are not available for this family.';
 	const checkerLabel = catalogExpected
 		? hasNamedLigatures
 			? 'Preview symbol names'
@@ -493,17 +490,6 @@ export const CharacterExplorer = ({
 			: isDigitalFamily
 				? 'Try a readout'
 				: 'Inspect your own text';
-	const sampleNotice = catalogExpected
-		? hasCatalogEntries
-			? `${symbolCount.toLocaleString('en')} symbols are available in the Registry catalog.`
-			: symbolsState === 'unavailable'
-				? 'The symbol catalog is temporarily unavailable. You can still browse mapped characters when source coverage is available.'
-				: 'A named symbol catalog is not available for this family.'
-		: capabilities
-			? `Exact coverage for ${capabilitySource?.filename ?? 'the selected source'}: ${capabilities.codepointCount.toLocaleString('en')} mapped characters and ${capabilities.glyphCount.toLocaleString('en')} glyphs.`
-			: capabilitiesState === 'unavailable'
-				? 'Exact source coverage is temporarily unavailable, so a practical sample is shown.'
-				: 'Exact source coverage is not published, so a practical sample is shown.';
 	const unmappedCharacters = useMemo(
 		() => findUnmappedCharacters(sample, capabilities),
 		[sample, capabilities],
@@ -591,7 +577,7 @@ export const CharacterExplorer = ({
 	};
 	const updateQuery = (value: string) => {
 		setQuery(value);
-		setVisibleCharacterCount(glyphBatchSize);
+		setVisibleCharacterCount(glyphRenderBatchSize);
 		setSelected(value ? '' : (explorerGroups[activeGroup]?.[0] ?? '&'));
 	};
 	const primaryCopyValue =
@@ -655,7 +641,9 @@ export const CharacterExplorer = ({
 		<section className={classes.page} aria-labelledby="characters-heading">
 			<style
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-				dangerouslySetInnerHTML={{ __html: variableCSS ?? staticCSS }}
+				dangerouslySetInnerHTML={{
+					__html: sourceCSS ?? variableCSS ?? staticCSS,
+				}}
 			/>
 
 			<div className={classes.headingRow}>
@@ -707,27 +695,29 @@ export const CharacterExplorer = ({
 								onChange={(event) => updateQuery(event.currentTarget.value)}
 							/>
 						</label>
-						<fieldset
-							className={classes.groupSwitch}
-							aria-label="Character group"
-						>
-							{groupLabels.map((item) => (
-								<button
-									key={item.value}
-									type="button"
-									data-active={activeGroup === item.value || undefined}
-									aria-pressed={activeGroup === item.value}
-									onClick={() => {
-										setGroup(item.value);
-										setSelected(explorerGroups[item.value]?.[0] ?? '&');
-										setQuery('');
-										setVisibleCharacterCount(glyphBatchSize);
-									}}
-								>
-									{item.label}
-								</button>
-							))}
-						</fieldset>
+						{groupLabels.length > 1 && (
+							<fieldset
+								className={classes.groupSwitch}
+								aria-label="Character group"
+							>
+								{groupLabels.map((item) => (
+									<button
+										key={item.value}
+										type="button"
+										data-active={activeGroup === item.value || undefined}
+										aria-pressed={activeGroup === item.value}
+										onClick={() => {
+											setGroup(item.value);
+											setSelected(explorerGroups[item.value]?.[0] ?? '&');
+											setQuery('');
+											setVisibleCharacterCount(glyphRenderBatchSize);
+										}}
+									>
+										{item.label}
+									</button>
+								))}
+							</fieldset>
+						)}
 					</div>
 					<div className={classes.resultSummary}>
 						<span aria-live="polite" aria-atomic="true">
@@ -755,7 +745,6 @@ export const CharacterExplorer = ({
 								: 400
 						}
 						style={sourcePreviewStyle.fontStyle}
-						snapshotConfig={glyphSkeletonSnapshotConfig}
 					>
 						{renderInspector(classes.mobileInspector)}
 
@@ -826,13 +815,13 @@ export const CharacterExplorer = ({
 											onClick={() =>
 												setVisibleCharacterCount((count) =>
 													Math.min(
-														count + glyphBatchSize,
+														count + glyphRenderBatchSize,
 														matchingCharacters.length,
 													),
 												)
 											}
 										>
-											Show {nextBatchSize.toLocaleString('en')} more
+											Load more {hasCatalogEntries ? 'symbols' : 'characters'}
 										</button>
 									</div>
 								)}
@@ -858,49 +847,6 @@ export const CharacterExplorer = ({
 					</p>
 				</div>
 			)}
-
-			<details className={classes.coverage}>
-				<summary>
-					<span>Coverage</span>
-					<strong>{coverageTitle}</strong>
-					<span className={classes.disclosureIcon} aria-hidden="true" />
-				</summary>
-				<div className={classes.coverageDetails}>
-					<p>{coverageDescription}</p>
-					<p className={classes.sampleNotice}>{sampleNotice}</p>
-					{registry &&
-					!isSymbolFamily &&
-					!isPunctuationFamily &&
-					!isDigitalFamily ? (
-						<>
-							<strong>
-								{registry.languages.length.toLocaleString('en')} supported
-								languages
-							</strong>
-							{familyLanguages.length > 0 ? (
-								<SearchableLanguageList
-									familyId={metadata.id}
-									languages={familyLanguages}
-								/>
-							) : registry.languages.length > 0 ? (
-								<p className={classes.sampleNotice}>
-									Language names are temporarily unavailable. The Registry still
-									reports the exact family coverage count.
-								</p>
-							) : null}
-						</>
-					) : !registry &&
-						!isSymbolFamily &&
-						!isPunctuationFamily &&
-						!isDigitalFamily ? (
-						<ul className={classes.subsets} aria-label="Downloadable subsets">
-							{metadata.subsets.slice(0, 6).map((subset) => (
-								<li key={subset}>{formatFontLabel(subset)}</li>
-							))}
-						</ul>
-					) : null}
-				</div>
-			</details>
 		</section>
 	);
 };

@@ -1,7 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import type { GetFontResponse } from '@/generated/api';
-import { getFontFamilyStack, getPreferredPreviewSubset } from './font-preview';
-import type { RegistryFamily } from './registry';
+import {
+	getFontFamilyStack,
+	getPreferredPreviewSubset,
+	getRegistrySourcePreviewCSS,
+} from './font-preview';
+import type { RegistryFamily, RegistrySource } from './registry';
 
 const registry = {
 	id: 'example',
@@ -81,5 +85,48 @@ describe('getPreferredPreviewSubset', () => {
 
 	it('falls back to the package default when no reviewed subset is available', () => {
 		expect(getPreferredPreviewSubset(metadata, registry)).toBe('latin');
+	});
+});
+
+describe('getRegistrySourcePreviewCSS', () => {
+	it('loads the exact static Registry source', () => {
+		const source = {
+			sha256: 'static-400',
+			filename: 'example.ttf',
+			format: 'ttf',
+			size: 1,
+			downloadUrl: '/v1/registry/sources/static-400',
+			capabilitiesUrl: '/v1/registry/sources/static-400/capabilities',
+			fontVersion: null,
+			style: 'normal',
+			type: 'static',
+			weight: 400,
+		} satisfies RegistrySource;
+
+		expect(getRegistrySourcePreviewCSS(source)).toContain(
+			'src: url("https://api.fontsource.org/v1/registry/sources/static-400") format("truetype");',
+		);
+		expect(getRegistrySourcePreviewCSS(source)).toContain('font-weight: 400;');
+	});
+
+	it('preserves a variable source weight range', () => {
+		const source = {
+			sha256: 'variable-standard',
+			filename: 'example.otf',
+			format: 'otf',
+			size: 1,
+			downloadUrl: '/v1/registry/sources/variable-standard',
+			capabilitiesUrl: '/v1/registry/sources/variable-standard/capabilities',
+			fontVersion: null,
+			style: 'italic',
+			type: 'variable',
+			weight: { min: 100, max: 900, default: 450 },
+			axes: [{ tag: 'wght', min: 100, max: 900, default: 450 }],
+		} satisfies RegistrySource;
+
+		const css = getRegistrySourcePreviewCSS(source);
+		expect(css).toContain('format("opentype")');
+		expect(css).toContain('font-style: italic;');
+		expect(css).toContain('font-weight: 100 900;');
 	});
 });

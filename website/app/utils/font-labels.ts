@@ -19,6 +19,9 @@ const formatFontLabel = (value: string) =>
 		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
 		.join(' ');
 
-const getAxisLabel = (axis: string) => axisLabels[axis] ?? axis.toUpperCase();
+const scriptNames = new Intl.DisplayNames('en', { type: 'script' });
 
-export { formatFontLabel, getAxisLabel };
+const getAxisLabel = (axis: string) => axisLabels[axis] ?? axis.toUpperCase();
+const getScriptLabel = (script: string) => scriptNames.of(script) ?? script;
+
+export { formatFontLabel, getAxisLabel, getScriptLabel };

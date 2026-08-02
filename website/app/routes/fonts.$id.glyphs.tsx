@@ -41,7 +41,6 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			symbols: symbolsResult.value,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
-			languageMetadataState: languagesResult.state,
 			capabilitiesState: capabilitiesResult.state,
 			symbolsState: symbolsResult.state,
 		},
@@ -55,7 +54,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
 			? `${loaderData.metadata.family} glyphs | Fontsource`
 			: 'Explore font glyphs | Fontsource',
 		description: loaderData?.metadata.family
-			? `Browse glyphs, symbols, and language metadata for ${loaderData.metadata.family}.`
+			? `Browse, inspect, and copy mapped glyphs and symbols from ${loaderData.metadata.family}.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)
@@ -72,7 +71,6 @@ export default function GlyphsPage() {
 		symbols,
 		capabilities,
 		capabilitySource,
-		languageMetadataState,
 		capabilitiesState,
 		symbolsState,
 	} = useLoaderData<typeof loader>();
@@ -94,7 +92,6 @@ export default function GlyphsPage() {
 				symbols={symbols}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
-				languageMetadataState={languageMetadataState}
 				capabilitiesState={capabilitiesState}
 				symbolsState={symbolsState}
 			/>

@@ -35,9 +35,13 @@ interface SkeletonProps {
 	name: SkeletonName;
 	loading: boolean;
 	className?: string;
-	snapshotConfig?: SnapshotConfig;
 	children: ReactNode;
 }
+
+const getSnapshotConfig = (name: SkeletonName): SnapshotConfig | undefined =>
+	name === 'font-detail-glyph-explorer'
+		? { leafTags: ['fieldset', 'aside'] }
+		: undefined;
 
 const getFixture = (name: SkeletonName) => {
 	if (!import.meta.env.DEV) return undefined;
@@ -83,7 +87,6 @@ export const Skeleton = ({
 	name,
 	loading,
 	className,
-	snapshotConfig,
 	children,
 }: SkeletonProps) => {
 	const mounted = useMounted();
@@ -93,7 +96,7 @@ export const Skeleton = ({
 			name={name}
 			loading={!mounted || loading}
 			className={className}
-			snapshotConfig={snapshotConfig}
+			snapshotConfig={getSnapshotConfig(name)}
 			initialBones={skeletons[name]}
 			select="viewport"
 			fallback={<Fallback name={name} />}

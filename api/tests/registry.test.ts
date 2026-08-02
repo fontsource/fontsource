@@ -77,7 +77,6 @@ const VIEWS = [
 					declaredVariant: { weight: 400, style: 'normal' },
 				},
 			],
-			previewSource: SOURCE_SHA256,
 		}),
 	},
 	{

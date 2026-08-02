@@ -1,8 +1,9 @@
 import { VisuallyHidden } from '@mantine/core';
+import { useClipboard } from '@mantine/hooks';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
-
-import { IconSearch } from '@/components/icons';
+import { InfoTooltip } from '@/components/InfoTooltip';
+import { IconCopy, IconSearch } from '@/components/icons';
 import type {
 	GetFontResponse,
 	GetRegistrySourceCapabilitiesResponse,
@@ -11,7 +12,11 @@ import type {
 	ListRegistryAxesResponse,
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
-import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
+import {
+	formatFontLabel,
+	getAxisLabel,
+	getScriptLabel,
+} from '@/utils/font-labels';
 import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
 import {
 	getOpenTypeFeatureName,
@@ -64,6 +69,55 @@ const getRegistryAssetUrl = (value: string) =>
 
 const normalizeSearchValue = (value: string) =>
 	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
+
+const SourceFileItem = ({
+	source,
+	mappedCharacterCount,
+}: {
+	source: RegistrySource;
+	mappedCharacterCount?: number;
+}) => {
+	const clipboard = useClipboard({ timeout: 1500 });
+	const copyLabel = clipboard.copied
+		? 'Copied'
+		: clipboard.error
+			? 'Copy failed'
+			: 'Copy checksum';
+
+	return (
+		<li>
+			<div>
+				<strong>
+					<a
+						href={getRegistryAssetUrl(source.downloadUrl)}
+						target="_blank"
+						rel="noreferrer"
+					>
+						{source.filename}
+					</a>
+				</strong>
+				<span>
+					{formatFontLabel(source.type)} · {source.format.toUpperCase()} ·{' '}
+					{formatFontLabel(source.style)} · {(source.size / 1024).toFixed(0)} KB
+					{mappedCharacterCount === undefined
+						? ''
+						: ` · ${mappedCharacterCount.toLocaleString('en')} mapped characters`}
+				</span>
+			</div>
+			<button
+				type="button"
+				className={classes.sourceChecksum}
+				aria-label={`${copyLabel} for ${source.filename}`}
+				onClick={() => clipboard.copy(source.sha256)}
+			>
+				<IconCopy aria-hidden height={16} stroke="currentColor" />
+				<span aria-live="polite" aria-atomic="true">
+					{copyLabel}
+				</span>
+			</button>
+		</li>
+	);
+};
 
 const SearchableFeatureList = ({
 	familyId,
@@ -124,7 +178,7 @@ const SearchableFeatureList = ({
 			{filteredFeatures.length > 0 ? (
 				<ul id={listId} className={listClasses.list}>
 					{filteredFeatures.map(({ name, tag }) => (
-						<li key={tag} title={tag}>
+						<li key={tag}>
 							<strong>{name}</strong>
 							<code>{tag}</code>
 						</li>
@@ -133,6 +187,100 @@ const SearchableFeatureList = ({
 			) : (
 				<p id={listId} className={listClasses.empty} role="status">
 					No OpenType features match “{query}”.
+				</p>
+			)}
+		</div>
+	);
+};
+
+const SearchableAxisList = ({
+	familyId,
+	axes,
+	axisRegistry,
+}: {
+	familyId: string;
+	axes: Array<[string, GetVariableFontResponse['axes'][string]]>;
+	axisRegistry?: ListRegistryAxesResponse;
+}) => {
+	const [query, setQuery] = useState('');
+	const normalizedQuery = normalizeSearchValue(query);
+	const axisItems = useMemo(
+		() =>
+			axes.map(([tag, range]) => {
+				const definition = axisRegistry?.[tag];
+				return {
+					tag,
+					range,
+					name: definition?.name ?? getAxisLabel(tag),
+					description: definition?.description.trim(),
+				};
+			}),
+		[axes, axisRegistry],
+	);
+	const filteredAxes = useMemo(
+		() =>
+			normalizedQuery
+				? axisItems.filter(({ tag, name, description }) =>
+						normalizeSearchValue(
+							`${name} ${tag} ${description ?? ''}`,
+						).includes(normalizedQuery),
+					)
+				: axisItems,
+		[axisItems, normalizedQuery],
+	);
+	const listId = `axis-list-${familyId}`;
+
+	return (
+		<div className={listClasses.root}>
+			{axes.length > 6 && (
+				<label
+					htmlFor={`axis-search-${familyId}`}
+					className={listClasses.search}
+				>
+					<IconSearch aria-hidden height={16} />
+					<VisuallyHidden>Search variable font axes</VisuallyHidden>
+					<input
+						id={`axis-search-${familyId}`}
+						type="search"
+						autoComplete="off"
+						placeholder={`Search ${axes.length.toLocaleString('en')} axes`}
+						value={query}
+						aria-controls={listId}
+						onChange={(event) => setQuery(event.currentTarget.value)}
+					/>
+				</label>
+			)}
+
+			{query && filteredAxes.length > 0 && (
+				<p className={listClasses.status} role="status">
+					{filteredAxes.length.toLocaleString('en')} matching{' '}
+					{filteredAxes.length === 1 ? 'axis' : 'axes'}
+				</p>
+			)}
+
+			{filteredAxes.length > 0 ? (
+				<ul id={listId} className={listClasses.list}>
+					{filteredAxes.map(({ tag, range, name, description }) => (
+						<li key={tag}>
+							<div className={listClasses.itemHeader}>
+								<strong>{name}</strong>
+								{description && (
+									<InfoTooltip
+										ariaLabel={`What the ${name} axis does`}
+										label={description}
+									/>
+								)}
+							</div>
+							<span className={listClasses.itemMeta}>
+								<code>{tag}</code> · {range.min}–{range.max} · default{' '}
+								{range.default}
+							</span>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p id={listId} className={listClasses.empty} role="status">
+					No variable axes match “{query}”.
 				</p>
 			)}
 		</div>
@@ -199,17 +347,13 @@ export const FamilyAbout = ({
 		(language) => language.id === registry?.primaryLanguage,
 	);
 	const axes = Object.entries(variable?.axes ?? {});
+	const hasVariableWeight = axes.some(([axis]) => axis === 'wght');
 	const sources = registry?.sources ?? [];
 	const sourceFormats = Array.from(
 		new Set(sources.map((source) => source.format.toUpperCase())),
 	);
 	const repository = registry?.project?.repository ?? metadata.source;
 	const updated = formatDate(registry?.sourceModified ?? metadata.lastModified);
-	const totalSourceSize = sources.reduce(
-		(total, source) => total + source.size,
-		0,
-	);
-	const colorTables = capabilities?.colorTables ?? [];
 	const featureTags = capabilities
 		? Array.from(
 				new Set([...capabilities.features.gsub, ...capabilities.features.gpos]),
@@ -222,7 +366,7 @@ export const FamilyAbout = ({
 	const technicalAvailabilityMessage =
 		registryState === 'available' &&
 		(enrichmentUnavailable || capabilitiesState === 'unavailable')
-			? 'Some technical source details are temporarily unavailable. Preview, glyph browsing, and download options are unaffected.'
+			? 'Some source details are temporarily unavailable. Preview and downloads still work.'
 			: undefined;
 	let coverageDescription =
 		'Exact language coverage is not listed. Downloadable subsets describe character groups, not guaranteed language support.';
@@ -242,7 +386,7 @@ export const FamilyAbout = ({
 	} else if (primaryLanguage) {
 		coverageDescription = `${primaryLanguage.preferredName ?? primaryLanguage.name} is listed as the primary language.`;
 	} else if (registry?.primaryScript) {
-		coverageDescription = `${registry.primaryScript} is listed as the primary script.`;
+		coverageDescription = `${getScriptLabel(registry.primaryScript)} is the primary writing system.`;
 	} else if (languageCount > 0) {
 		coverageDescription = `${languageCount.toLocaleString('en')} languages are listed for this family.`;
 	} else if (registry) {
@@ -326,12 +470,10 @@ export const FamilyAbout = ({
 						</div>
 					)}
 					{registry?.license.id && (
-						<div className={classes.licenseFact} id="license">
+						<div>
 							<dt>License</dt>
 							<dd>
-								<a href={registry.license.url} target="_blank" rel="noreferrer">
-									{registry.license.id} ↗
-								</a>
+								<a href="#license">{registry.license.id}</a>
 							</dd>
 						</div>
 					)}
@@ -378,9 +520,11 @@ export const FamilyAbout = ({
 				</div>
 
 				<div className={classes.capabilityGrid}>
-					<div>
+					<div className={classes.capabilityPanel}>
 						<h3>
-							{isSpecialUseFamily ? 'Character use' : 'Languages and scripts'}
+							{isSpecialUseFamily
+								? 'Character use'
+								: 'Languages and writing systems'}
 						</h3>
 						<p>{coverageDescription}</p>
 						{!isSpecialUseFamily && familyLanguages.length > 0 ? (
@@ -396,34 +540,32 @@ export const FamilyAbout = ({
 						) : null}
 					</div>
 
-					<div>
+					<div className={classes.capabilityPanel}>
 						<h3>Styles and axes</h3>
-						<p>
-							{metadata.weights.length} weights ·{' '}
-							{metadata.styles.map(formatFontLabel).join(', ')}
-						</p>
+						<div className={classes.styleSummary}>
+							<span>
+								{hasVariableWeight && metadata.weights.length === 1
+									? 'Variable weight'
+									: `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`}
+								<InfoTooltip
+									ariaLabel="What font weight means"
+									label="Font weight controls how light or bold text appears. CSS commonly uses 400 for regular text and 700 for bold text."
+								/>
+							</span>
+							<span>{metadata.styles.map(formatFontLabel).join(', ')}</span>
+						</div>
 						{axes.length > 0 ? (
-							<dl className={classes.axisList}>
-								{axes.map(([axis, range]) => {
-									const definition = axisRegistry?.[axis];
-									return (
-										<div key={axis}>
-											<dt>
-												{definition?.name ?? getAxisLabel(axis)}
-												<code>{axis}</code>
-											</dt>
-											<dd>
-												{definition?.description && (
-													<span>{definition.description}</span>
-												)}
-												<code>
-													{range.min}–{range.max}
-												</code>
-											</dd>
-										</div>
-									);
-								})}
-							</dl>
+							<>
+								<p className={classes.axisIntro}>
+									Variable axes let you fine-tune the design between the values
+									shown.
+								</p>
+								<SearchableAxisList
+									familyId={metadata.id}
+									axes={axes}
+									axisRegistry={axisRegistry}
+								/>
+							</>
 						) : metadata.variable ? (
 							<p>
 								{variableUnavailable
@@ -433,187 +575,154 @@ export const FamilyAbout = ({
 						) : (
 							<p>This release contains static font files.</p>
 						)}
-						{featureTags.length > 0 && (
-							<div className={classes.featureSummary}>
-								<strong>
-									OpenType features in{' '}
-									{capabilitySource?.filename ?? 'the selected source'}
-								</strong>
-								<SearchableFeatureList
-									familyId={metadata.id}
-									featureTags={featureTags}
-								/>
-								<p>
-									Feature availability can vary by source, script, and language.
-								</p>
-							</div>
-						)}
 					</div>
+
+					{featureTags.length > 0 && (
+						<div
+							className={`${classes.capabilityPanel} ${classes.featurePanel}`}
+						>
+							<h3>OpenType features</h3>
+							<p>
+								Built-in substitutions and positioning. Availability can vary
+								between font files.
+							</p>
+							<SearchableFeatureList
+								familyId={metadata.id}
+								featureTags={featureTags}
+							/>
+						</div>
+					)}
 				</div>
 			</section>
 
-			<details className={classes.technical}>
-				<summary>
-					<span className={classes.technicalLabel}>
-						<strong>Technical details</strong>
-						<small>Source files, provenance, and family history</small>
-					</span>
-					<span className={classes.disclosureIcon} aria-hidden="true" />
-				</summary>
-				<div className={classes.technicalContent}>
-					{technicalAvailabilityMessage && (
-						<p className={classes.technicalNotice}>
-							{technicalAvailabilityMessage}
-						</p>
-					)}
-					<section
-						className={classes.provenance}
-						aria-labelledby="source-heading"
-					>
-						<div className={classes.sectionHeading}>
-							<div>
-								<h2 id="source-heading">Source and provenance</h2>
-								<p>
-									Where the files came from and what Fontsource distributes.
-								</p>
-							</div>
-							<a href={repository} target="_blank" rel="noreferrer">
-								View upstream project →
-							</a>
+			{registry?.license && (
+				<section
+					className={classes.license}
+					id="license"
+					aria-labelledby="license-heading"
+				>
+					<div className={classes.sectionHeading}>
+						<div>
+							<h2 id="license-heading">License</h2>
+							<p>Complete terms and attribution for this font.</p>
 						</div>
+						<a href={registry.license.url} target="_blank" rel="noreferrer">
+							View license source →
+						</a>
+					</div>
 
-						<dl className={classes.sourceSummary}>
-							<div>
-								<dt>Provider</dt>
-								<dd>
-									{registry
-										? formatFontLabel(registry.provider)
-										: formatFontLabel(metadata.type)}
-								</dd>
+					<div className={classes.licenseDocument}>
+						{registry.license.attribution && (
+							<div className={classes.licenseAttribution}>
+								<strong>Attribution</strong>
+								<p>{registry.license.attribution}</p>
 							</div>
-							{sources.length > 0 && (
-								<div>
-									<dt>Source files</dt>
-									<dd>{sources.length}</dd>
-								</div>
-							)}
-							{sourceFormats.length > 0 && (
-								<div>
-									<dt>Formats</dt>
-									<dd>{sourceFormats.join(', ')}</dd>
-								</div>
-							)}
-							{registry?.project?.revision && (
-								<div>
-									<dt>Revision</dt>
-									<dd>
-										<a
-											href={`${repository.replace(/\/$/, '')}/tree/${registry.project.revision}`}
-											target="_blank"
-											rel="noreferrer"
-										>
-											<code>{registry.project.revision.slice(0, 10)}</code>
-										</a>
-									</dd>
-								</div>
-							)}
-							{totalSourceSize > 0 && (
-								<div>
-									<dt>Source size</dt>
-									<dd>{(totalSourceSize / 1024 / 1024).toFixed(1)} MB</dd>
-								</div>
-							)}
-							{capabilitySource && capabilities && (
-								<div>
-									<dt>Selected capability source</dt>
-									<dd>{capabilitySource.filename}</dd>
-								</div>
-							)}
-							{capabilities && (
-								<div>
-									<dt>Selected source outline</dt>
-									<dd>{capabilities.outline.toUpperCase()}</dd>
-								</div>
-							)}
-							{capabilities && (
-								<div>
-									<dt>Selected source cmap</dt>
-									<dd>
-										{capabilities.codepointCount.toLocaleString('en')}{' '}
-										codepoints
-									</dd>
-								</div>
-							)}
-							{colorTables.length > 0 && (
-								<div>
-									<dt>Sample color tables</dt>
-									<dd>{colorTables.join(', ')}</dd>
-								</div>
-							)}
-						</dl>
-
-						{sources.length > 0 && (
-							<details className={classes.sourceFiles}>
-								<summary>Inspect source files</summary>
-								<ul>
-									{sources.slice(0, 12).map((source) => (
-										<li key={source.sha256}>
-											<div>
-												<strong>
-													<a
-														href={getRegistryAssetUrl(source.downloadUrl)}
-														target="_blank"
-														rel="noreferrer"
-													>
-														{source.filename}
-													</a>
-												</strong>
-												<span>
-													{source.type} · {source.format.toUpperCase()} ·{' '}
-													{source.style} · {(source.size / 1024).toFixed(0)} KB
-													{source.sha256 === capabilitySource?.sha256 &&
-													capabilities
-														? ` · ${capabilities.codepointCount.toLocaleString('en')} codepoints`
-														: ''}
-												</span>
-											</div>
-											<code>{source.sha256.slice(0, 12)}…</code>
-										</li>
-									))}
-								</ul>
-								{sources.length > 12 && (
-									<p>Showing 12 of {sources.length} source files.</p>
-								)}
-							</details>
 						)}
-					</section>
+						<textarea
+							className={classes.licenseText}
+							aria-label={`${registry.license.id} license text`}
+							readOnly
+							spellCheck={false}
+							value={registry.license.text}
+						/>
+					</div>
+				</section>
+			)}
 
-					{registry?.replacedBy && (
-						<section
-							className={classes.related}
-							aria-labelledby="related-heading"
-						>
-							<div className={classes.sectionHeading}>
-								<div>
-									<h2 id="related-heading">Related families</h2>
-									<p>
-										The Fontsource Registry recommends a maintained successor
-										for this family.
-									</p>
-								</div>
-							</div>
-							<ul>
-								<li>
-									<Link to={`/fonts/${registry.replacedBy}`}>
-										<strong>{formatFontLabel(registry.replacedBy)}</strong>
-										<span>Recommended replacement</span>
-									</Link>
-								</li>
-							</ul>
-						</section>
-					)}
+			<section className={classes.provenance} aria-labelledby="source-heading">
+				<div className={classes.sectionHeading}>
+					<div>
+						<h2 id="source-heading">Source and provenance</h2>
+						<p>Where the files came from and what Fontsource distributes.</p>
+					</div>
+					<a href={repository} target="_blank" rel="noreferrer">
+						View upstream project →
+					</a>
 				</div>
-			</details>
+
+				{technicalAvailabilityMessage && (
+					<p className={classes.technicalNotice}>
+						{technicalAvailabilityMessage}
+					</p>
+				)}
+
+				<dl className={classes.sourceSummary}>
+					<div>
+						<dt>Provider</dt>
+						<dd>
+							{registry
+								? formatFontLabel(registry.provider)
+								: formatFontLabel(metadata.type)}
+						</dd>
+					</div>
+					{sources.length > 0 && (
+						<div>
+							<dt>Source files</dt>
+							<dd>{sources.length}</dd>
+						</div>
+					)}
+					{sourceFormats.length > 0 && (
+						<div>
+							<dt>Formats</dt>
+							<dd>{sourceFormats.join(', ')}</dd>
+						</div>
+					)}
+					{registry?.project?.revision && (
+						<div>
+							<dt>Revision</dt>
+							<dd>
+								<a
+									href={`${repository.replace(/\/$/, '')}/tree/${registry.project.revision}`}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<code>{registry.project.revision.slice(0, 10)}</code>
+								</a>
+							</dd>
+						</div>
+					)}
+				</dl>
+
+				{sources.length > 0 && (
+					<div className={classes.sourceFiles}>
+						<ul aria-label="Source files">
+							{sources.map((source) => (
+								<SourceFileItem
+									key={source.sha256}
+									source={source}
+									mappedCharacterCount={
+										source.sha256 === capabilitySource?.sha256
+											? capabilities?.codepointCount
+											: undefined
+									}
+								/>
+							))}
+						</ul>
+					</div>
+				)}
+			</section>
+
+			{registry?.replacedBy && (
+				<section className={classes.related} aria-labelledby="related-heading">
+					<div className={classes.sectionHeading}>
+						<div>
+							<h2 id="related-heading">Related families</h2>
+							<p>
+								The Fontsource Registry recommends a maintained successor for
+								this family.
+							</p>
+						</div>
+					</div>
+					<ul>
+						<li>
+							<Link to={`/fonts/${registry.replacedBy}`}>
+								<strong>{formatFontLabel(registry.replacedBy)}</strong>
+								<span>Recommended replacement</span>
+							</Link>
+						</li>
+					</ul>
+				</section>
+			)}
 		</section>
 	);
 };

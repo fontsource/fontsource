@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
+import { DropdownSimple } from '@/components/Dropdown';
 import {
 	FamilyActions,
 	FamilyIdentity,
@@ -142,6 +143,8 @@ const nearestWeight = (weights: number[], target: number) =>
 
 const formatPixels = (value: number) =>
 	`${Number.isInteger(value) ? value : value.toFixed(1)} px`;
+
+const previewSizes = [64, 80, 104, 128];
 
 export const FamilyPreview = ({
 	metadata,
@@ -305,32 +308,35 @@ export const FamilyPreview = ({
 							</fieldset>
 						)}
 						<div className={classes.controls}>
-							<label className={classes.control}>
+							<div className={classes.control}>
 								<span className={classes.controlLabel}>Size</span>
-								<select
-									value={size}
-									onChange={(event) => setSize(Number(event.target.value))}
-								>
-									{[64, 80, 104, 128].map((value) => (
-										<option key={value} value={value}>
-											{value} px
-										</option>
-									))}
-								</select>
-							</label>
-							<label className={classes.control}>
+								<DropdownSimple
+									label={`${size} px`}
+									ariaLabel={`Size: ${size} pixels`}
+									items={previewSizes.map((value) => ({
+										label: `${value} px`,
+										value: String(value),
+										isRefined: size === value,
+									}))}
+									refine={(value) => setSize(Number(value))}
+									w={104}
+								/>
+							</div>
+							<div className={classes.control}>
 								<span className={classes.controlLabel}>Weight</span>
-								<select
-									value={weight}
-									onChange={(event) => setWeight(Number(event.target.value))}
-								>
-									{metadata.weights.map((value) => (
-										<option key={value} value={value}>
-											{value}
-										</option>
-									))}
-								</select>
-							</label>
+								<DropdownSimple
+									label={String(weight)}
+									ariaLabel={`Weight: ${weightNames[weight] ?? weight}, ${weight}`}
+									items={metadata.weights.map((value) => ({
+										label: `${weightNames[value] ?? 'Weight'} ${value}`,
+										value: String(value),
+										isRefined: weight === value,
+									}))}
+									refine={(value) => setWeight(Number(value))}
+									w={132}
+									dropdownWidth={180}
+								/>
+							</div>
 							{supportsItalic && (
 								<button
 									type="button"
