@@ -21,7 +21,6 @@ import {
 } from '@/utils/registry';
 
 import classes from './FamilyAbout.module.css';
-import { LicenseReceipt } from './LicenseReceipt';
 import { RegistryMarkdown } from './RegistryMarkdown';
 
 interface FamilyAboutProps {
@@ -231,22 +230,16 @@ export const FamilyAbout = ({
 						</div>
 					)}
 					{registry?.license.id && (
-						<div>
+						<div className={classes.licenseFact} id="license">
 							<dt>License</dt>
-							<dd>{registry.license.id}</dd>
+							<dd>
+								<a href={registry.license.url} target="_blank" rel="noreferrer">
+									{registry.license.id} ↗
+								</a>
+							</dd>
 						</div>
 					)}
 				</dl>
-			</div>
-
-			<div className={classes.licenseBlock}>
-				<LicenseReceipt
-					familyId={metadata.id}
-					family={metadata.family}
-					license={registry?.license}
-					registryState={registryState}
-					variant="detail"
-				/>
 			</div>
 
 			{tags.length > 0 && (

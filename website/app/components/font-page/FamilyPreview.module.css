@@ -81,7 +81,7 @@
 	line-height: 1.5;
 }
 
-.customizeButton,
+.italicToggle,
 .weightSample {
 	font: inherit;
 	color: inherit;
@@ -101,14 +101,8 @@
 	gap: 10px;
 }
 
-.quickAdjust {
-	min-width: 0;
-	display: flex;
-	align-items: flex-end;
-	gap: 10px;
-}
-
 .control {
+	min-width: 0;
 	display: grid;
 	gap: 5px;
 }
@@ -132,22 +126,41 @@
 	cursor: pointer;
 }
 
-.customizeButton {
+.italicToggle {
 	min-height: 38px;
-	padding: 0 8px;
-	border: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	padding: 0 12px;
+	border: light-dark(1px solid rgba(98, 91, 248, 0.2), 1px solid #2c3651);
+	border-radius: 4px;
 	color: light-dark(#34435c, #cbd3e2);
+	background: light-dark(rgba(255, 255, 255, 0.72), #121b31);
 	font-size: 12px;
 
-	&:hover,
-	&[aria-expanded="true"] {
+	&:hover {
 		color: var(--mantine-color-purple-0);
+	}
+
+	&[aria-pressed="true"] {
+		border-color: light-dark(rgba(98, 91, 248, 0.52), #6670e8);
+		color: var(--mantine-color-purple-0);
+		background: light-dark(rgba(98, 91, 248, 0.08), #1a2240);
+		box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
 	}
 
 	&:focus-visible {
 		outline: 2px solid var(--mantine-color-purple-0);
 		outline-offset: 2px;
 	}
+}
+
+.italicMark {
+	font-size: 17px;
+	font-style: italic;
+	font-weight: 600;
+	line-height: 1;
 }
 
 .canvasField {
@@ -218,7 +231,7 @@
 	min-width: 0;
 	max-width: 100%;
 	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-template-columns: repeat(var(--weight-count), minmax(0, 1fr));
 	gap: 1px;
 	margin: 0;
 	padding: 1px;
@@ -230,7 +243,7 @@
 
 .weightSample {
 	min-width: 0;
-	padding: 14px 12px;
+	padding: 12px;
 	border: 0;
 	background: light-dark(rgba(255, 255, 255, 0.76), #121b31);
 	text-align: left;
@@ -244,7 +257,7 @@
 	strong {
 		display: block;
 		margin-top: 5px;
-		font-size: 22px;
+		font-size: clamp(16px, 1.25vw, 22px);
 		line-height: 1.1;
 		white-space: nowrap;
 		overflow: hidden;
@@ -269,53 +282,81 @@
 
 .customizePanel {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 22px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px 32px;
 	padding: 20px 24px;
 	border-top: light-dark(1px solid rgba(98, 91, 248, 0.18), 1px solid #2c3651);
 	background: light-dark(rgba(255, 255, 255, 0.72), #121b31);
 
-	label {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		font-size: 12px;
-	}
-
 	input[type="range"] {
+		width: 100%;
 		min-width: 0;
-		flex: 1;
 		accent-color: var(--mantine-color-purple-0);
 	}
 }
 
-.mobileAdjust {
-	display: none;
+.rangeControl {
+	min-width: 0;
+	display: grid;
+	gap: 9px;
+	font-size: 12px;
 }
 
-.axisControl {
-	flex-direction: column;
-	align-items: stretch !important;
-	gap: 8px !important;
-
-	> span {
-		display: flex;
-		justify-content: space-between;
-		gap: 12px;
-	}
+.rangeLabel {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
 
 	output {
 		font-family: var(--mantine-font-family-monospace);
 		color: light-dark(#52617a, #aeb9cc);
+		font-size: 11px;
+		font-variant-numeric: tabular-nums;
 	}
 }
 
-.checkLabel {
-	justify-content: flex-start;
+.axisName {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 6px;
 
-	input {
-		accent-color: var(--mantine-color-purple-0);
+	code {
+		color: light-dark(#6c7890, #97a4ba);
+		font-size: 10px;
 	}
+}
+
+.variableControls {
+	min-width: 0;
+	grid-column: 1 / -1;
+	padding-top: 18px;
+	border-top: light-dark(1px solid rgba(98, 91, 248, 0.14), 1px solid #2c3651);
+}
+
+.variableHeader {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 16px;
+
+	h3 {
+		margin: 0;
+		font-size: 13px;
+		font-weight: 600;
+	}
+
+	span {
+		color: light-dark(#52617a, #aeb9cc);
+		font-size: 11px;
+	}
+}
+
+.axisGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 20px 32px;
 }
 
 @keyframes panel-enter {
@@ -381,7 +422,7 @@
 
 	.controls {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		align-items: end;
 	}
 
@@ -390,15 +431,9 @@
 		min-height: 42px;
 	}
 
-	.quickAdjust {
-		display: none;
-	}
-
-	.customizeButton {
+	.italicToggle {
 		min-height: 42px;
-		padding: 0 14px;
-		border: light-dark(1px solid rgba(98, 91, 248, 0.2), 1px solid #2c3651);
-		border-radius: 4px;
+		width: 100%;
 	}
 
 	.canvas {
@@ -410,13 +445,6 @@
 	.canvasField > span {
 		top: 16px;
 		left: 20px;
-	}
-
-	.mobileAdjust {
-		grid-column: 1 / -1;
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 12px;
 	}
 
 	.styleRail {
@@ -433,11 +461,17 @@
 
 	.customizePanel {
 		grid-template-columns: 1fr;
+		gap: 20px;
+		padding: 18px 20px;
+	}
+
+	.axisGrid {
+		grid-template-columns: 1fr;
 	}
 }
 
 @media (pointer: coarse) {
-	:is(.customizeButton, .weightSample) {
+	:is(.italicToggle, .weightSample) {
 		min-height: 44px;
 	}
 }

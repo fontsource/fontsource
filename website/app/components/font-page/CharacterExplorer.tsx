@@ -1,6 +1,7 @@
 import { VisuallyHidden } from '@mantine/core';
 import { useClipboard, useDebouncedValue } from '@mantine/hooks';
 import {
+	type CSSProperties,
 	type KeyboardEvent,
 	useDeferredValue,
 	useEffect,
@@ -29,12 +30,19 @@ import {
 	findUnmappedCharacters,
 	getRegistryCharacterGroups,
 	getRegistryFamilyKind,
+	getRegistrySourcePreviewStyle,
 	getUnicodeCharacter,
 	type RegistryDataState,
 	type RegistryFamily,
 	type RegistrySource,
 	usesNameLigatures,
 } from '@/utils/registry';
+import {
+	createSymbolSearch,
+	getSymbolSearchKey,
+	searchSymbolCatalog,
+	symbolSearchSeparator,
+} from '@/utils/symbol-search';
 
 import classes from './CharacterExplorer.module.css';
 
@@ -61,9 +69,11 @@ const maxDisplayedUnknownNameLength = 48;
 const registryCharacterGroupLabels = [
 	{ label: 'All', value: 'all' },
 	{ label: 'Letters', value: 'letters' },
+	{ label: 'Marks', value: 'marks' },
 	{ label: 'Numbers', value: 'numbers' },
 	{ label: 'Punctuation', value: 'punctuation' },
 	{ label: 'Symbols', value: 'symbols' },
+	{ label: 'Private use', value: 'privateUse' },
 ] as const;
 
 const characterNames: Record<string, string> = {
@@ -105,20 +115,17 @@ const getDisplayCharacter = (character?: string) =>
 const normalizeSearchValue = (value: string) =>
 	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
 
-const symbolSeparator = '\u0000';
-const getSymbolKey = (name: string, codepoint: number) =>
-	`${name}${symbolSeparator}${codepoint}`;
 const getSymbolName = (value: string) =>
-	value.split(symbolSeparator, 1)[0] ?? value;
+	value.split(symbolSearchSeparator, 1)[0] ?? value;
 const getSymbolCodepoint = (value: string) => {
-	const separatorIndex = value.lastIndexOf(symbolSeparator);
+	const separatorIndex = value.lastIndexOf(symbolSearchSeparator);
 	if (separatorIndex === -1) return undefined;
 	const codepoint = Number(
-		value.slice(separatorIndex + symbolSeparator.length),
+		value.slice(separatorIndex + symbolSearchSeparator.length),
 	);
 	return getUnicodeCharacter(codepoint) ? codepoint : undefined;
 };
-const isSymbolKey = (value: string) => value.includes(symbolSeparator);
+const isSymbolKey = (value: string) => value.includes(symbolSearchSeparator);
 const formatCodepoint = (codepoint: number) =>
 	`U+${codepoint.toString(16).toUpperCase().padStart(4, '0')}`;
 const getSymbolDisplayValue = (value: string, useNameLigature: boolean) => {
@@ -140,16 +147,21 @@ const truncateDisplayValue = (
 		: value;
 };
 
-const getSampleCharacterGroups = (value: string) => {
-	const all = Array.from(
+const getSampleCharacters = (value: string) =>
+	Array.from(
 		new Set(Array.from(value).filter((character) => !/\s/u.test(character))),
 	);
+
+const getSampleCharacterGroups = (value: string) => {
+	const all = getSampleCharacters(value);
 	return {
 		all,
-		letters: all.filter((character) => /^(\p{L}|\p{M})$/u.test(character)),
+		letters: all.filter((character) => /^\p{L}$/u.test(character)),
+		marks: all.filter((character) => /^\p{M}$/u.test(character)),
 		numbers: all.filter((character) => /^\p{N}$/u.test(character)),
 		punctuation: all.filter((character) => /^\p{P}$/u.test(character)),
 		symbols: all.filter((character) => /^\p{S}$/u.test(character)),
+		privateUse: all.filter((character) => /^\p{Co}$/u.test(character)),
 	};
 };
 
@@ -177,31 +189,42 @@ export const CharacterExplorer = ({
 	const hasCatalogEntries = symbolCount > 0;
 	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const isScriptFamily = !isLatinPreviewSubset(previewSubset);
-	const fallbackGroups = useMemo(
+	const fallbackSample = useMemo(
 		() =>
-			getSampleCharacterGroups(
-				registry?.sampleText?.long ??
-					registry?.sampleText?.short ??
-					getLanguagePreviewText(previewSubset),
-			),
+			registry?.sampleText?.long ??
+			registry?.sampleText?.short ??
+			getLanguagePreviewText(previewSubset),
 		[previewSubset, registry?.sampleText],
 	);
-	const registryCharacterGroups = useMemo(
-		() => getRegistryCharacterGroups(capabilities),
-		[capabilities],
+	const fallbackGroups = useMemo(
+		() => ({ all: getSampleCharacters(fallbackSample) }),
+		[fallbackSample],
 	);
+	const [resolvedCharacterGroups, setResolvedCharacterGroups] =
+		useState<ReturnType<typeof getRegistryCharacterGroups>>();
+	useEffect(() => {
+		// Unicode category data is runtime-owned. Resolve after hydration so Node
+		// and browsers with different Unicode versions cannot disagree during SSR.
+		setResolvedCharacterGroups(
+			getRegistryCharacterGroups(capabilities) ??
+				getSampleCharacterGroups(fallbackSample),
+		);
+	}, [capabilities, fallbackSample]);
 	const symbolEntries = useMemo(
-		() =>
-			symbols?.map((symbol) => getSymbolKey(symbol.name, symbol.codepoint)) ??
-			[],
+		() => symbols?.map(getSymbolSearchKey) ?? [],
 		[symbols],
+	);
+	const symbolSearch = useMemo(
+		() =>
+			hasCatalogEntries && symbols ? createSymbolSearch(symbols) : undefined,
+		[hasCatalogEntries, symbols],
 	);
 	const explorerGroups: Record<string, readonly string[]> = useMemo(
 		() =>
 			hasCatalogEntries
 				? { all: symbolEntries }
-				: (registryCharacterGroups ?? fallbackGroups),
-		[fallbackGroups, hasCatalogEntries, registryCharacterGroups, symbolEntries],
+				: (resolvedCharacterGroups ?? fallbackGroups),
+		[fallbackGroups, hasCatalogEntries, resolvedCharacterGroups, symbolEntries],
 	);
 	const groupLabels = registryCharacterGroupLabels.filter(
 		(item) => (explorerGroups[item.value]?.length ?? 0) > 0,
@@ -213,6 +236,7 @@ export const CharacterExplorer = ({
 		? group
 		: defaultGroup;
 	const [query, setQuery] = useState('');
+	const [languageQuery, setLanguageQuery] = useState('');
 	const [visibleCharacterCount, setVisibleCharacterCount] =
 		useState(glyphBatchSize);
 	const loadMoreRef = useRef<HTMLDivElement>(null);
@@ -253,6 +277,7 @@ export const CharacterExplorer = ({
 	const matchingCharacters = useMemo(() => {
 		const normalized = normalizeSearchValue(deferredQuery);
 		if (!normalized) return explorerGroups[activeGroup] ?? [];
+		if (symbolSearch) return searchSymbolCatalog(symbolSearch, deferredQuery);
 
 		return searchableCharacters.filter((character) => {
 			const catalogEntry = isSymbolKey(character);
@@ -281,6 +306,7 @@ export const CharacterExplorer = ({
 		activeGroup,
 		hasNamedLigatures,
 		searchableCharacters,
+		symbolSearch,
 	]);
 	const visibleCharacters = matchingCharacters.slice(0, visibleCharacterCount);
 	const remainingCharacterCount = Math.max(
@@ -320,19 +346,20 @@ export const CharacterExplorer = ({
 		? selected
 		: visibleCharacters[0];
 	const showingSampleCharacters =
-		!hasCatalogEntries && !registryCharacterGroups;
-	const canRetryCoverage =
-		languageMetadataState === 'unavailable' ||
+		!hasCatalogEntries && (!capabilities || !resolvedCharacterGroups);
+	const canRetryExplorer =
 		capabilitiesState === 'unavailable' ||
 		(catalogExpected && symbolsState === 'unavailable');
 	const resultSummary =
 		matchingCharacters.length === 0
-			? 'No matching characters'
-			: `${matchingCharacters.length.toLocaleString('en')} ${showingSampleCharacters ? 'sample ' : ''}${matchingCharacters.length === 1 ? 'character' : 'characters'}${
+			? `No matching ${hasCatalogEntries ? 'symbols' : 'characters'}`
+			: `${matchingCharacters.length.toLocaleString('en')} ${showingSampleCharacters ? 'sample ' : ''}${hasCatalogEntries ? (matchingCharacters.length === 1 ? 'symbol' : 'symbols') : matchingCharacters.length === 1 ? 'character' : 'characters'}${
 					showingSampleCharacters
-						? capabilitiesState === 'unavailable'
-							? ' · exact coverage temporarily unavailable'
-							: ' · exact coverage is not published'
+						? capabilities
+							? ' · loading exact source coverage'
+							: capabilitiesState === 'unavailable'
+								? ' · exact coverage temporarily unavailable'
+								: ' · exact coverage is not published'
 						: ''
 				}${hasMoreCharacters ? ` · showing ${visibleCharacters.length.toLocaleString('en')}` : ''}`;
 	const [announcedResultSummary] = useDebouncedValue(resultSummary, 250);
@@ -362,10 +389,11 @@ export const CharacterExplorer = ({
 		hasNamedLigatures && activeSymbolName
 			? `${selectedUnicode} · Name ligature: ${activeSymbolName}`
 			: selectedUnicode;
-	const specimenStyle = {
+	const specimenStyle: CSSProperties = {
 		fontFamily,
 		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
 		direction: getPreviewDirection(previewSubset),
+		...getRegistrySourcePreviewStyle(capabilitySource),
 	};
 	const heading = catalogExpected
 		? 'Find a symbol.'
@@ -397,6 +425,28 @@ export const CharacterExplorer = ({
 				? 'Search a character or code point'
 				: 'Search A, ampersand, or U+0026';
 	const familyLanguages = languages ?? [];
+	const normalizedLanguageQuery = normalizeSearchValue(languageQuery);
+	const filteredFamilyLanguages = useMemo(
+		() =>
+			normalizedLanguageQuery
+				? familyLanguages.filter((language) =>
+						[
+							language.id,
+							language.name,
+							language.preferredName,
+							language.autonym,
+							language.script,
+						]
+							.filter(Boolean)
+							.some((value) =>
+								normalizeSearchValue(String(value)).includes(
+									normalizedLanguageQuery,
+								),
+							),
+					)
+				: familyLanguages,
+		[familyLanguages, normalizedLanguageQuery],
+	);
 	const primaryLanguage = familyLanguages.find(
 		(language) => language.id === registry?.primaryLanguage,
 	);
@@ -410,7 +460,7 @@ export const CharacterExplorer = ({
 				? 'Segment display characters'
 				: registry
 					? capabilities
-						? `${capabilities.codepointCount.toLocaleString('en')} mapped characters`
+						? `${capabilities.codepointCount.toLocaleString('en')} mapped code points`
 						: `${registry.languages.length.toLocaleString('en')} supported languages`
 					: `${metadata.subsets.length} downloadable subsets`;
 	const coverageDescription = catalogExpected
@@ -423,13 +473,15 @@ export const CharacterExplorer = ({
 				? 'Optimized for numbers, time, temperature, and compact status labels.'
 				: isSymbolFamily
 					? 'Designed for mapped symbols rather than running language text.'
-					: primaryLanguage
-						? `${primaryLanguage.preferredName ?? primaryLanguage.name} is listed as the primary language.`
-						: registry?.primaryScript
-							? `${registry.primaryScript} is listed as the primary script.`
-							: languageMetadataState === 'unavailable'
-								? 'Language details are temporarily unavailable.'
-								: 'Language details are not available for this family.';
+					: capabilities && registry?.languages.length
+						? 'Source character coverage and family language support are shown separately.'
+						: primaryLanguage
+							? `${primaryLanguage.preferredName ?? primaryLanguage.name} is listed as the primary language.`
+							: registry?.primaryScript
+								? `${registry.primaryScript} is listed as the primary script.`
+								: languageMetadataState === 'unavailable'
+									? 'Language details are temporarily unavailable.'
+									: 'Language details are not available for this family.';
 	const checkerLabel = catalogExpected
 		? hasNamedLigatures
 			? 'Preview symbol names'
@@ -637,7 +689,9 @@ export const CharacterExplorer = ({
 							htmlFor={`character-search-${metadata.id}`}
 						>
 							<IconSearch aria-hidden height={18} />
-							<VisuallyHidden>Search characters</VisuallyHidden>
+							<VisuallyHidden>
+								{catalogExpected ? 'Search symbols' : 'Search characters'}
+							</VisuallyHidden>
 							<input
 								id={`character-search-${metadata.id}`}
 								type="search"
@@ -677,7 +731,7 @@ export const CharacterExplorer = ({
 						<span aria-live="polite" aria-atomic="true">
 							{announcedResultSummary}
 						</span>
-						{canRetryCoverage && (
+						{canRetryExplorer && (
 							<button
 								type="button"
 								disabled={revalidator.state !== 'idle'}
@@ -741,7 +795,7 @@ export const CharacterExplorer = ({
 											{catalogExpected && symbolsState === 'unavailable'
 												? 'The symbol catalog is temporarily unavailable.'
 												: query
-													? `No characters match “${query}”.`
+													? `No ${catalogExpected ? 'symbols' : 'characters'} match “${query}”.`
 													: 'No mapped characters are available for this source.'}
 										</p>
 										{query && (
@@ -800,32 +854,69 @@ export const CharacterExplorer = ({
 				<div className={classes.coverageDetails}>
 					<p>{coverageDescription}</p>
 					<p className={classes.sampleNotice}>{sampleNotice}</p>
-					{familyLanguages.length > 0 ? (
+					{registry &&
+					!isSymbolFamily &&
+					!isPunctuationFamily &&
+					!isDigitalFamily ? (
 						<>
 							<strong>
-								{(
-									registry?.languages.length ?? familyLanguages.length
-								).toLocaleString('en')}{' '}
-								supported languages
+								{registry.languages.length.toLocaleString('en')} supported
+								languages
 							</strong>
-							<ul className={classes.coverageLanguages}>
-								{familyLanguages.map((language) => (
-									<li key={language.id}>
-										<strong>{language.preferredName ?? language.name}</strong>
-										<span>
-											{language.autonym ?? language.name} · {language.script}
-										</span>
-									</li>
-								))}
-							</ul>
-							{(registry?.languages.length ?? 0) > familyLanguages.length && (
+							{familyLanguages.length > 0 ? (
+								<>
+									{familyLanguages.length > 12 && (
+										<label
+											className={`${classes.search} ${classes.coverageSearch}`}
+											htmlFor={`language-search-${metadata.id}`}
+										>
+											<IconSearch aria-hidden height={16} />
+											<VisuallyHidden>
+												Search supported languages
+											</VisuallyHidden>
+											<input
+												id={`language-search-${metadata.id}`}
+												type="search"
+												autoComplete="off"
+												placeholder={`Search ${familyLanguages.length.toLocaleString('en')} languages`}
+												value={languageQuery}
+												onChange={(event) =>
+													setLanguageQuery(event.currentTarget.value)
+												}
+											/>
+										</label>
+									)}
+									{filteredFamilyLanguages.length > 0 ? (
+										<ul className={classes.coverageLanguages}>
+											{filteredFamilyLanguages.map((language) => (
+												<li key={language.id}>
+													<strong>
+														{language.preferredName ?? language.name}
+													</strong>
+													<span>
+														{language.autonym ?? language.name} ·{' '}
+														{language.script}
+													</span>
+												</li>
+											))}
+										</ul>
+									) : (
+										<p className={classes.sampleNotice} role="status">
+											No supported languages match “{languageQuery}”.
+										</p>
+									)}
+								</>
+							) : registry.languages.length > 0 ? (
 								<p className={classes.sampleNotice}>
-									Showing {familyLanguages.length.toLocaleString('en')} entries,
-									with the primary language first.
+									Language names are temporarily unavailable. The Registry still
+									reports the exact family coverage count.
 								</p>
-							)}
+							) : null}
 						</>
-					) : !isSymbolFamily && !isPunctuationFamily && !isDigitalFamily ? (
+					) : !registry &&
+						!isSymbolFamily &&
+						!isPunctuationFamily &&
+						!isDigitalFamily ? (
 						<ul className={classes.subsets} aria-label="Downloadable subsets">
 							{metadata.subsets.slice(0, 6).map((subset) => (
 								<li key={subset}>{formatFontLabel(subset)}</li>

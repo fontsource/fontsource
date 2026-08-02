@@ -136,6 +136,10 @@
 	}
 }
 
+.licenseFact {
+	scroll-margin-top: 5rem;
+}
+
 .taxonomy {
 	display: grid;
 	grid-template-columns: minmax(220px, 4fr) minmax(0, 8fr);
@@ -196,14 +200,6 @@
 		color: var(--mantine-color-purple-0);
 		background: light-dark(#f2f0ff, #172138);
 	}
-}
-
-.licenseBlock {
-	padding: 34px 0;
-	border-bottom: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
 }
 
 .article {

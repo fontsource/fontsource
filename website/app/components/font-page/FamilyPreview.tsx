@@ -132,15 +132,8 @@ const nearestWeight = (weights: number[], target: number) =>
 		Math.abs(weight - target) < Math.abs(closest - target) ? weight : closest,
 	);
 
-const comparisonWeights = (weights: number[]) =>
-	Array.from(
-		new Set([
-			weights[0],
-			nearestWeight(weights, 400),
-			nearestWeight(weights, 600),
-			weights.at(-1) ?? weights[0],
-		]),
-	);
+const formatPixels = (value: number) =>
+	`${Number.isInteger(value) ? value : value.toFixed(1)} px`;
 
 export const FamilyPreview = ({
 	metadata,
@@ -184,7 +177,6 @@ export const FamilyPreview = ({
 	const [italic, setItalic] = useState(false);
 	const [tracking, setTracking] = useState(0);
 	const [lineHeight, setLineHeight] = useState(usesLatinPreview ? 0.95 : 1.2);
-	const [customizeOpen, setCustomizeOpen] = useState(false);
 	const [handoffUnavailable, setHandoffUnavailable] = useState(false);
 	const adjustableAxes = useMemo(
 		() =>
@@ -198,11 +190,9 @@ export const FamilyPreview = ({
 			adjustableAxes.map(([axis, range]) => [axis, Number(range.default)]),
 		),
 	);
-	const weights = useMemo(
-		() => comparisonWeights(metadata.weights),
-		[metadata.weights],
-	);
 	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
+	const lineHeightPixels = size * lineHeight;
+	const supportsItalic = metadata.styles.includes('italic');
 	const activeModeLabels = isSymbolPreviewFamily
 		? symbolCatalogModeLabels
 		: usesLatinPreview
@@ -214,7 +204,7 @@ export const FamilyPreview = ({
 		fontFamily,
 		fontWeight: weight,
 		fontStyle: italic ? 'italic' : 'normal',
-		letterSpacing: `${tracking / 100}em`,
+		letterSpacing: `${tracking}px`,
 		lineHeight,
 		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
 		fontVariationSettings:
@@ -329,43 +319,49 @@ export const FamilyPreview = ({
 									</select>
 								</label>
 							)}
-							<div className={classes.quickAdjust}>
-								<label className={classes.control}>
-									<span className={classes.controlLabel}>Size</span>
-									<select
-										value={size}
-										onChange={(event) => setSize(Number(event.target.value))}
+							<label className={classes.control}>
+								<span className={classes.controlLabel}>Size</span>
+								<select
+									value={size}
+									onChange={(event) => setSize(Number(event.target.value))}
+								>
+									{[64, 80, 104, 128].map((value) => (
+										<option key={value} value={value}>
+											{value} px
+										</option>
+									))}
+								</select>
+							</label>
+							<label className={classes.control}>
+								<span className={classes.controlLabel}>Weight</span>
+								<select
+									value={weight}
+									onChange={(event) => setWeight(Number(event.target.value))}
+								>
+									{metadata.weights.map((value) => (
+										<option key={value} value={value}>
+											{value}
+										</option>
+									))}
+								</select>
+							</label>
+							{supportsItalic && (
+								<button
+									type="button"
+									className={classes.italicToggle}
+									aria-pressed={italic}
+									onClick={() => setItalic((active) => !active)}
+								>
+									<span
+										className={classes.italicMark}
+										style={{ fontFamily }}
+										aria-hidden="true"
 									>
-										{[64, 80, 104, 128].map((value) => (
-											<option key={value} value={value}>
-												{value} px
-											</option>
-										))}
-									</select>
-								</label>
-								<label className={classes.control}>
-									<span className={classes.controlLabel}>Weight</span>
-									<select
-										value={weight}
-										onChange={(event) => setWeight(Number(event.target.value))}
-									>
-										{metadata.weights.map((value) => (
-											<option key={value} value={value}>
-												{value}
-											</option>
-										))}
-									</select>
-								</label>
-							</div>
-							<button
-								type="button"
-								className={classes.customizeButton}
-								aria-expanded={customizeOpen}
-								aria-controls="preview-customize"
-								onClick={() => setCustomizeOpen((open) => !open)}
-							>
-								{customizeOpen ? 'Hide adjustments' : 'Adjust'}
-							</button>
+										I
+									</span>
+									Italic
+								</button>
+							)}
 						</div>
 					</div>
 
@@ -409,92 +405,77 @@ export const FamilyPreview = ({
 						/>
 					</label>
 
-					{customizeOpen && (
-						<div className={classes.customizePanel} id="preview-customize">
-							<div className={classes.mobileAdjust}>
-								<label className={classes.control}>
-									<span className={classes.controlLabel}>Size</span>
-									<select
-										value={size}
-										onChange={(event) => setSize(Number(event.target.value))}
-									>
-										{[64, 80, 104, 128].map((value) => (
-											<option key={value} value={value}>
-												{value} px
-											</option>
-										))}
-									</select>
-								</label>
-								<label className={classes.control}>
-									<span className={classes.controlLabel}>Weight</span>
-									<select
-										value={weight}
-										onChange={(event) => setWeight(Number(event.target.value))}
-									>
-										{metadata.weights.map((value) => (
-											<option key={value} value={value}>
-												{value}
-											</option>
-										))}
-									</select>
-								</label>
-							</div>
-							<label>
-								<span>Letter spacing</span>
-								<input
-									type="range"
-									min={-5}
-									max={20}
-									value={tracking}
-									onChange={(event) => setTracking(Number(event.target.value))}
-								/>
-							</label>
-							<label>
-								<span>Line height</span>
-								<input
-									type="range"
-									min={0.8}
-									max={1.8}
-									step={0.05}
-									value={lineHeight}
-									onChange={(event) =>
-										setLineHeight(Number(event.target.value))
-									}
-								/>
-							</label>
-							<label className={classes.checkLabel}>
-								<input
-									type="checkbox"
-									checked={italic}
-									disabled={!metadata.styles.includes('italic')}
-									onChange={(event) => setItalic(event.currentTarget.checked)}
-								/>
-								<span>Italic</span>
-							</label>
-							{adjustableAxes.map(([axis, range]) => (
-								<label className={classes.axisControl} key={axis}>
+					<div className={classes.customizePanel}>
+						<label className={classes.rangeControl}>
+							<span className={classes.rangeLabel}>
+								Letter spacing
+								<output>{formatPixels(tracking)}</output>
+							</span>
+							<input
+								type="range"
+								min={-5}
+								max={20}
+								value={tracking}
+								aria-valuetext={formatPixels(tracking)}
+								onChange={(event) => setTracking(Number(event.target.value))}
+							/>
+						</label>
+						<label className={classes.rangeControl}>
+							<span className={classes.rangeLabel}>
+								Line height
+								<output>{formatPixels(lineHeightPixels)}</output>
+							</span>
+							<input
+								type="range"
+								min={0.8}
+								max={1.8}
+								step={0.01}
+								value={lineHeight}
+								aria-valuetext={formatPixels(lineHeightPixels)}
+								onChange={(event) => setLineHeight(Number(event.target.value))}
+							/>
+						</label>
+						{adjustableAxes.length > 0 && (
+							<section
+								className={classes.variableControls}
+								aria-labelledby="variable-axes-title"
+							>
+								<div className={classes.variableHeader}>
+									<h3 id="variable-axes-title">Variable axes</h3>
 									<span>
-										{getAxisLabel(axis)}
-										<output>{axisValues[axis]}</output>
+										{adjustableAxes.length}{' '}
+										{adjustableAxes.length === 1 ? 'axis' : 'axes'}
 									</span>
-									<input
-										type="range"
-										aria-label={`${getAxisLabel(axis)} axis`}
-										min={Number(range.min)}
-										max={Number(range.max)}
-										step={Number(range.step)}
-										value={axisValues[axis]}
-										onChange={(event) =>
-											setAxisValues((values) => ({
-												...values,
-												[axis]: Number(event.currentTarget.value),
-											}))
-										}
-									/>
-								</label>
-							))}
-						</div>
-					)}
+								</div>
+								<div className={classes.axisGrid}>
+									{adjustableAxes.map(([axis, range]) => (
+										<label className={classes.rangeControl} key={axis}>
+											<span className={classes.rangeLabel}>
+												<span className={classes.axisName}>
+													{getAxisLabel(axis)} <code>{axis}</code>
+												</span>
+												<output>{axisValues[axis]}</output>
+											</span>
+											<input
+												type="range"
+												aria-label={`${getAxisLabel(axis)} axis`}
+												min={Number(range.min)}
+												max={Number(range.max)}
+												step={Number(range.step)}
+												value={axisValues[axis]}
+												onChange={(event) =>
+													setAxisValues((values) => ({
+														...values,
+														[axis]: Number(event.currentTarget.value),
+													}))
+												}
+											/>
+										</label>
+									))}
+								</div>
+							</section>
+						)}
+					</div>
 
 					{!symbolPreviewUnavailable && (
 						<div className={classes.styleRail}>
@@ -505,8 +486,13 @@ export const FamilyPreview = ({
 							<fieldset
 								className={classes.weightStrip}
 								aria-label="Weight comparison"
+								style={
+									{
+										'--weight-count': metadata.weights.length,
+									} as React.CSSProperties
+								}
 							>
-								{weights.map((value) => (
+								{metadata.weights.map((value) => (
 									<button
 										key={value}
 										type="button"

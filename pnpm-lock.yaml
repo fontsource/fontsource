@@ -466,6 +466,9 @@ importers:
       tiny-invariant:
         specifier: ^1.3.3
         version: 1.3.3
+      zbsearch:
+        specifier: 3.3.4
+        version: 3.3.4
       zod:
         specifier: 4.4.3
         version: 4.4.3
