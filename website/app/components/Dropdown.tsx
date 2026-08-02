@@ -28,6 +28,7 @@ interface DropdownProps {
 	dropdownWidth?: number | string;
 	noBorder?: boolean;
 	showCount?: boolean;
+	searchable?: boolean;
 	search?: (query: string) => void;
 }
 
@@ -38,6 +39,7 @@ const DropdownSimple = ({
 	w,
 	dropdownWidth,
 	noBorder,
+	searchable = false,
 	refine,
 }: DropdownProps) => {
 	const selected = items.find((item) => item.isRefined)?.value ?? null;
@@ -50,6 +52,8 @@ const DropdownSimple = ({
 			}))}
 			value={selected}
 			allowDeselect={false}
+			searchable={searchable}
+			nothingFoundMessage={searchable ? 'No matches' : undefined}
 			maxDropdownHeight={240}
 			comboboxProps={{
 				position: 'bottom-start',

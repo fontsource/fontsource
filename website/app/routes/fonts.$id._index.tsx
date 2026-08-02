@@ -3,26 +3,43 @@ import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyPreview } from '@/components/font-page/FamilyPreview';
-import { type GetFontResponse, getFontVersions } from '@/generated/api';
+import {
+	type GetFontResponse,
+	getFontVersions,
+	listRegistryAxes,
+} from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import {
 	loadFontPageBase,
+	loadFontPageCapabilities,
 	loadFontPageLanguages,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
+import { loadOptionalRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
-	const [base, versions, languagesResult] = await Promise.all([
-		basePromise,
-		getFontVersions({ id }, { signal: request.signal }),
-		loadFontPageLanguages(basePromise, request.signal),
-	]);
+	const options = { signal: request.signal };
+	const [base, versions, languagesResult, axesResult, capabilitiesResult] =
+		await Promise.all([
+			basePromise,
+			getFontVersions({ id }, options),
+			loadFontPageLanguages(basePromise, request.signal),
+			loadOptionalRegistryData(listRegistryAxes(options), request.signal),
+			loadFontPageCapabilities(basePromise, request.signal),
+		]);
 
 	return data(
-		{ ...base, versions, languages: languagesResult.languages },
+		{
+			...base,
+			versions,
+			languages: languagesResult.languages,
+			axisRegistry: axesResult.value,
+			capabilities: capabilitiesResult.capabilities,
+			capabilitySource: capabilitiesResult.capabilitySource,
+		},
 		{ headers: cacheHeaders.short },
 	);
 };
@@ -59,6 +76,9 @@ export default function Font() {
 		registry,
 		registryState,
 		languages,
+		axisRegistry,
+		capabilities,
+		capabilitySource,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -78,6 +98,9 @@ export default function Font() {
 				registry={registry}
 				registryState={registryState}
 				languages={languages}
+				axisRegistry={axisRegistry}
+				capabilities={capabilities}
+				capabilitySource={capabilitySource}
 				variableUnavailable={metadata.variable && !variable}
 			/>
 		</FamilyPageShell>
