@@ -187,18 +187,17 @@ describe('registry source archive', () => {
 		const ibmPlexMono = RegistryFamilyDetailSchema.parse(
 			views.get('families/ibm-plex-mono.json'),
 		);
+		expect(ibmPlexMono.previewSource).toBe(
+			ibmPlexMono.distribution.static?.find(
+				(variant) => variant.weight === 400 && variant.style === 'normal',
+			)?.source,
+		);
+		const ibmPlexMonoCapabilities = views.get(
+			`sources/${ibmPlexMono.previewSource}/capabilities.json`,
+		);
 		expect(
-			ibmPlexMono.sources.find(
-				(source) => source.sha256 === ibmPlexMono.previewSource,
-			),
-		).toMatchObject({
-			filename: 'IBMPlexMono-Regular.ttf',
-			weight: 400,
-			style: 'normal',
-		});
-		expect(
-			views.get(`sources/${ibmPlexMono.previewSource}/capabilities.json`),
-		).toMatchObject({ glyphCount: 1033, codepointCount: 930 });
+			RegistrySourceCapabilitiesSchema.parse(ibmPlexMonoCapabilities),
+		).toEqual(ibmPlexMonoCapabilities);
 		const familySource = (
 			family as {
 				sources: Array<{ sha256: string }>;
@@ -221,9 +220,15 @@ describe('registry source archive', () => {
 		expect(RegistrySourceCapabilitiesSchema.parse(capabilities)).toEqual(
 			capabilities,
 		);
-		const multiSourceFamily = views.get('families/adwaita-sans.json') as {
-			sources: Array<{ sha256: string }>;
-		};
+		const multiSourceFamily = RegistryFamilyDetailSchema.parse(
+			views.get('families/adwaita-sans.json'),
+		);
+		expect(multiSourceFamily.previewSource).toBe(
+			multiSourceFamily.distribution.variable?.find(
+				(variant) =>
+					variant.axisKey === 'standard' && variant.style === 'normal',
+			)?.source,
+		);
 		const multiSourceCapabilities = multiSourceFamily.sources.map((source) =>
 			views.get(`sources/${source.sha256}/capabilities.json`),
 		) as Array<{ unicodeRange: string }>;

@@ -889,7 +889,7 @@ export type GetRegistryFamilyResponses = {
             }>;
         }>;
         /**
-         * Representative distributed source for previews and capability inspection
+         * Distributed source selected for default previews and source-scoped capability inspection
          */
         previewSource: string;
         distribution: {

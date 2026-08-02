@@ -163,7 +163,7 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		.optional(),
 	sources: z.array(RegistrySourceSchema).min(1),
 	previewSource: Sha256Schema.describe(
-		'Representative distributed source for previews and capability inspection',
+		'Distributed source selected for default previews and source-scoped capability inspection',
 	),
 	distribution: RegistryDistributionSchema,
 }).superRefine((family, context) => {
