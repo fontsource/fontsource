@@ -1,0 +1,50 @@
+{
+  "breakpoints": {
+    "375": {
+      "name": "font-detail-title",
+      "viewportWidth": 279,
+      "width": 279,
+      "height": 53,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          53,
+          8
+        ]
+      ]
+    },
+    "768": {
+      "name": "font-detail-title",
+      "viewportWidth": 672,
+      "width": 672,
+      "height": 72,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          72,
+          8
+        ]
+      ]
+    },
+    "1280": {
+      "name": "font-detail-title",
+      "viewportWidth": 819,
+      "width": 819,
+      "height": 64,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          64,
+          8
+        ]
+      ]
+    }
+  },
+  "_hash": "7d0f6fcb4602ad93da862d6f65941c53"
+}

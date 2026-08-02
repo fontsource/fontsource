@@ -21,6 +21,7 @@ import type {
 import { formatFontLabel } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
+	getFontPreviewFamily,
 	getPreferredPreviewSubset,
 	getPreviewDirection,
 	isLatinPreviewSubset,
@@ -46,6 +47,7 @@ import {
 } from '@/utils/symbol-search';
 
 import classes from './CharacterExplorer.module.css';
+import { FontSkeleton } from './FontSkeleton';
 import { SearchableLanguageList } from './SearchableLanguageList';
 
 interface CharacterExplorerProps {
@@ -67,6 +69,7 @@ type ExplorerMode = 'browse' | 'check';
 const glyphBatchSize = 240;
 const maxSearchLength = 256;
 const maxDisplayedUnknownNameLength = 48;
+const glyphSkeletonSnapshotConfig = { leafTags: ['fieldset', 'aside'] };
 
 const registryCharacterGroupLabels = [
 	{ label: 'Sample', value: 'sample' },
@@ -285,6 +288,7 @@ export const CharacterExplorer = ({
 		Boolean(variableCSS),
 		registry,
 	);
+	const previewFamily = getFontPreviewFamily(metadata, Boolean(variableCSS));
 	const deferredQuery = useDeferredValue(query);
 	const searchableCharacters = useMemo(
 		() =>
@@ -408,11 +412,12 @@ export const CharacterExplorer = ({
 		hasNamedLigatures && activeSymbolName
 			? `${selectedUnicode} · Name ligature: ${activeSymbolName}`
 			: selectedUnicode;
+	const sourcePreviewStyle = getRegistrySourcePreviewStyle(capabilitySource);
 	const specimenStyle: CSSProperties = {
 		fontFamily,
 		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
 		direction: getPreviewDirection(previewSubset),
-		...getRegistrySourcePreviewStyle(capabilitySource),
+		...sourcePreviewStyle,
 	};
 	const heading = catalogExpected
 		? 'Find a symbol.'
@@ -741,89 +746,101 @@ export const CharacterExplorer = ({
 						)}
 					</div>
 
-					{renderInspector(classes.mobileInspector)}
+					<FontSkeleton
+						name="font-detail-glyph-explorer"
+						family={previewFamily}
+						weight={
+							typeof sourcePreviewStyle.fontWeight === 'number'
+								? sourcePreviewStyle.fontWeight
+								: 400
+						}
+						style={sourcePreviewStyle.fontStyle}
+						snapshotConfig={glyphSkeletonSnapshotConfig}
+					>
+						{renderInspector(classes.mobileInspector)}
 
-					<div className={classes.explorer}>
-						<div className={classes.catalog}>
-							<fieldset
-								className={classes.grid}
-								style={specimenStyle}
-								data-glyph-grid
-							>
-								<VisuallyHidden component="legend">
-									{metadata.family} character results
-								</VisuallyHidden>
-								{visibleCharacters.map((character, index) => {
-									const catalogEntry = isSymbolKey(character);
-									const displayCharacter = getSymbolDisplayValue(
-										character,
-										hasNamedLigatures,
-									);
-									const symbolCodepoint = getSymbolCodepoint(character);
-									const symbolLabel =
-										symbolCodepoint === undefined
-											? ''
-											: `, ${formatCodepoint(symbolCodepoint)}`;
+						<div className={classes.explorer}>
+							<div className={classes.catalog}>
+								<fieldset
+									className={classes.grid}
+									style={specimenStyle}
+									data-glyph-grid
+								>
+									<VisuallyHidden component="legend">
+										{metadata.family} character results
+									</VisuallyHidden>
+									{visibleCharacters.map((character, index) => {
+										const catalogEntry = isSymbolKey(character);
+										const displayCharacter = getSymbolDisplayValue(
+											character,
+											hasNamedLigatures,
+										);
+										const symbolCodepoint = getSymbolCodepoint(character);
+										const symbolLabel =
+											symbolCodepoint === undefined
+												? ''
+												: `, ${formatCodepoint(symbolCodepoint)}`;
 
-									return (
-										<button
-											key={`${activeGroup}-${character}`}
-											id={`glyph-${metadata.id}-${index}`}
-											type="button"
-											aria-label={
-												catalogEntry
-													? `${getCharacterName(getSymbolName(character))}${hasNamedLigatures ? `, name ligature ${getSymbolName(character)}` : ''}${symbolLabel}`
-													: `${getCharacterName(character)}, ${getCodePoints(character)}`
-											}
-											aria-pressed={activeCharacter === character}
-											data-active={activeCharacter === character || undefined}
-											tabIndex={activeCharacter === character ? 0 : -1}
-											onClick={() => setSelected(character)}
-											onFocus={() => setSelected(character)}
-											onKeyDown={(event) => moveGlyphFocus(event, index)}
-										>
-											{displayCharacter}
-										</button>
-									);
-								})}
-								{matchingCharacters.length === 0 && (
-									<div className={classes.empty}>
-										<p>
-											{catalogExpected && symbolsState === 'unavailable'
-												? 'The symbol catalog is temporarily unavailable.'
-												: query
-													? `No ${catalogExpected ? 'symbols' : 'characters'} match “${query}”.`
-													: 'No mapped characters are available for this source.'}
-										</p>
-										{query && (
-											<button type="button" onClick={() => updateQuery('')}>
-												Clear search
+										return (
+											<button
+												key={`${activeGroup}-${character}`}
+												id={`glyph-${metadata.id}-${index}`}
+												type="button"
+												aria-label={
+													catalogEntry
+														? `${getCharacterName(getSymbolName(character))}${hasNamedLigatures ? `, name ligature ${getSymbolName(character)}` : ''}${symbolLabel}`
+														: `${getCharacterName(character)}, ${getCodePoints(character)}`
+												}
+												aria-pressed={activeCharacter === character}
+												data-active={activeCharacter === character || undefined}
+												tabIndex={activeCharacter === character ? 0 : -1}
+												onClick={() => setSelected(character)}
+												onFocus={() => setSelected(character)}
+												onKeyDown={(event) => moveGlyphFocus(event, index)}
+											>
+												{displayCharacter}
 											</button>
-										)}
+										);
+									})}
+									{matchingCharacters.length === 0 && (
+										<div className={classes.empty}>
+											<p>
+												{catalogExpected && symbolsState === 'unavailable'
+													? 'The symbol catalog is temporarily unavailable.'
+													: query
+														? `No ${catalogExpected ? 'symbols' : 'characters'} match “${query}”.`
+														: 'No mapped characters are available for this source.'}
+											</p>
+											{query && (
+												<button type="button" onClick={() => updateQuery('')}>
+													Clear search
+												</button>
+											)}
+										</div>
+									)}
+								</fieldset>
+								{hasMoreCharacters && (
+									<div className={classes.loadMore} ref={loadMoreRef}>
+										<button
+											type="button"
+											onClick={() =>
+												setVisibleCharacterCount((count) =>
+													Math.min(
+														count + glyphBatchSize,
+														matchingCharacters.length,
+													),
+												)
+											}
+										>
+											Show {nextBatchSize.toLocaleString('en')} more
+										</button>
 									</div>
 								)}
-							</fieldset>
-							{hasMoreCharacters && (
-								<div className={classes.loadMore} ref={loadMoreRef}>
-									<button
-										type="button"
-										onClick={() =>
-											setVisibleCharacterCount((count) =>
-												Math.min(
-													count + glyphBatchSize,
-													matchingCharacters.length,
-												),
-											)
-										}
-									>
-										Show {nextBatchSize.toLocaleString('en')} more
-									</button>
-								</div>
-							)}
-						</div>
+							</div>
 
-						{renderInspector(classes.desktopInspector)}
-					</div>
+							{renderInspector(classes.desktopInspector)}
+						</div>
+					</FontSkeleton>
 				</>
 			) : (
 				<div className={classes.checker}>

@@ -1,0 +1,50 @@
+{
+  "breakpoints": {
+    "375": {
+      "name": "font-detail-about-specimen",
+      "viewportWidth": 327,
+      "width": 327,
+      "height": 56,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          56,
+          8
+        ]
+      ]
+    },
+    "768": {
+      "name": "font-detail-about-specimen",
+      "viewportWidth": 720,
+      "width": 720,
+      "height": 59,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          59,
+          8
+        ]
+      ]
+    },
+    "1280": {
+      "name": "font-detail-about-specimen",
+      "viewportWidth": 630,
+      "width": 630,
+      "height": 98,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          98,
+          8
+        ]
+      ]
+    }
+  },
+  "_hash": "20215ff0ca8b0ced30066850611740ff"
+}

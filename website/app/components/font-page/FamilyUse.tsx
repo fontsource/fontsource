@@ -39,6 +39,7 @@ import {
 } from '@/utils/registry';
 
 import classes from './FamilyUse.module.css';
+import { FontSkeleton } from './FontSkeleton';
 import { LicenseReceipt } from './LicenseReceipt';
 
 interface FamilyUseProps {
@@ -942,23 +943,31 @@ export const FamilyUse = ({
 													Uses your selected family, style, and axes.
 												</small>
 											</div>
-											<strong
-												data-special={
-													hasCatalog || isDigitalFamily || undefined
-												}
-												style={{
-													fontFamily: familyName,
-													fontFeatureSettings: hasNamedLigatures
-														? '"liga"'
-														: undefined,
-													fontVariationSettings:
-														proofVariationSettings || undefined,
-													fontWeight: weight,
-													fontStyle: style,
-												}}
+											<FontSkeleton
+												name="font-preview-row"
+												family={familyName}
+												weight={weight}
+												style={style}
+												className={classes.renderedFontSkeleton}
 											>
-												{projectItem.sampleText}
-											</strong>
+												<strong
+													data-special={
+														hasCatalog || isDigitalFamily || undefined
+													}
+													style={{
+														fontFamily: familyName,
+														fontFeatureSettings: hasNamedLigatures
+															? '"liga"'
+															: undefined,
+														fontVariationSettings:
+															proofVariationSettings || undefined,
+														fontWeight: weight,
+														fontStyle: style,
+													}}
+												>
+													{projectItem.sampleText}
+												</strong>
+											</FontSkeleton>
 										</div>
 									</details>
 								</div>

@@ -308,6 +308,11 @@
 	overflow: hidden;
 }
 
+.styleRail > .weightSkeleton {
+	display: block;
+	margin: 0;
+}
+
 .weightSample {
 	min-width: 0;
 	padding: 12px;
