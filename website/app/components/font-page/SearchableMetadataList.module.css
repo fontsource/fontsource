@@ -84,6 +84,34 @@
 	}
 }
 
+.itemHeader {
+	min-width: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+
+	strong {
+		min-width: 0;
+	}
+}
+
+.itemMeta {
+	display: block;
+	margin-top: 2px;
+	color: light-dark(#52617a, #aeb9cc);
+	font-size: 11px;
+	line-height: 1.35;
+	overflow-wrap: anywhere;
+
+	code {
+		display: inline;
+		margin: 0;
+		color: inherit;
+		font-size: inherit;
+	}
+}
+
 .empty {
 	margin: 10px 0 0 !important;
 	color: light-dark(#52617a, #aeb9cc);

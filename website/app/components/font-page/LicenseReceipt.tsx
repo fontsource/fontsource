@@ -1,4 +1,4 @@
-import { useRevalidator } from 'react-router';
+import { Link, useRevalidator } from 'react-router';
 
 import type { RegistryDataState, RegistryFamily } from '@/utils/registry';
 
@@ -71,9 +71,9 @@ const LicenseReceipt = ({
 
 	return (
 		<p className={classes.licenseLine}>
-			<a href={license.url} target="_blank" rel="noreferrer">
-				Read the {license.id} license ↗
-			</a>
+			<Link to={`/fonts/${familyId}/about#license`}>
+				Read the {license.id} license
+			</Link>
 		</p>
 	);
 };

@@ -1,4 +1,3 @@
-import type { SnapshotConfig } from 'boneyard-js';
 import { type ReactNode, useMemo } from 'react';
 
 import { Skeleton, type SkeletonName } from '@/components/Skeleton';
@@ -11,7 +10,6 @@ interface FontSkeletonProps {
 	weights?: number[];
 	style?: string;
 	className?: string;
-	snapshotConfig?: SnapshotConfig;
 	children: ReactNode;
 }
 
@@ -22,7 +20,6 @@ export const FontSkeleton = ({
 	weights,
 	style = 'normal',
 	className,
-	snapshotConfig,
 	children,
 }: FontSkeletonProps) => {
 	const observedWeights = useMemo(
@@ -35,12 +32,7 @@ export const FontSkeleton = ({
 	});
 
 	return (
-		<Skeleton
-			name={name}
-			loading={!ready}
-			className={className}
-			snapshotConfig={snapshotConfig}
-		>
+		<Skeleton name={name} loading={!ready} className={className}>
 			{children}
 		</Skeleton>
 	);

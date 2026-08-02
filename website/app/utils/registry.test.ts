@@ -81,13 +81,12 @@ const capabilities = {
 describe('registry character capabilities', () => {
 	it('groups exact mapped characters without invisible codepoints', () => {
 		expect(getRegistryCharacterGroups(capabilities)).toEqual({
-			all: ['!', '1', 'A', 'a', '©', '́', ''],
+			all: ['!', '1', 'A', 'a', '©', '́'],
 			letters: ['A', 'a'],
 			marks: ['́'],
 			numbers: ['1'],
 			punctuation: ['!'],
 			symbols: ['©'],
-			privateUse: [''],
 		});
 	});
 
@@ -119,7 +118,6 @@ describe('registry character capabilities', () => {
 			numbers: [],
 			punctuation: [],
 			symbols: [],
-			privateUse: [],
 		});
 	});
 

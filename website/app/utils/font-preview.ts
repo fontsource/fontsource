@@ -5,7 +5,12 @@ import type {
 	GetVariableFontResponse,
 } from '../generated/api';
 import { jsDelivrResolver } from './cdn';
-import { getRegistryFamilyKind, type RegistryFamily } from './registry';
+import {
+	getRegistryFamilyKind,
+	getRegistrySourcePreviewStyle,
+	type RegistryFamily,
+	type RegistrySource,
+} from './registry';
 
 type FontPreviewIdentity = Pick<GetFontResponse, 'family' | 'id' | 'variable'>;
 
@@ -26,6 +31,8 @@ const rtlPreviewSubsets = new Set([
 	'thaana',
 ]);
 
+export const registrySourcePreviewFamily = 'Fontsource Registry Preview';
+
 export const isLatinPreviewSubset = (subset: string) =>
 	latinPreviewSubsets.has(subset);
 
@@ -36,6 +43,27 @@ export const getFontPreviewFamily = (
 	metadata: FontPreviewIdentity,
 	variableAvailable = metadata.variable,
 ) => (variableAvailable ? `${metadata.family} Variable` : metadata.family);
+
+export const getRegistrySourcePreviewCSS = (source: RegistrySource) => {
+	const format = source.format === 'ttf' ? 'truetype' : 'opentype';
+	const { fontStyle, fontWeight } = getRegistrySourcePreviewStyle(source);
+	const weight =
+		typeof source.weight === 'number' || source.declaredVariant
+			? fontWeight
+			: `${source.weight.min} ${source.weight.max}`;
+	const sourceUrl = new URL(
+		source.downloadUrl,
+		'https://api.fontsource.org',
+	).toString();
+
+	return `@font-face {
+	font-family: "${registrySourcePreviewFamily}";
+	src: url(${JSON.stringify(sourceUrl)}) format("${format}");
+	font-style: ${fontStyle};
+	font-weight: ${weight};
+	font-display: swap;
+}`;
+};
 
 export const getPreferredPreviewSubset = (
 	metadata: GetFontResponse,

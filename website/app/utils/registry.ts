@@ -151,16 +151,10 @@ const includesCodepoint = (ranges: readonly UnicodeRange[], value: number) => {
 };
 
 const isBrowsableCharacter = (character: string) =>
-	!/^(\p{Cc}|\p{Cf}|\p{Cs}|\p{Cn}|\p{Z})$/u.test(character);
+	!/^(\p{C}|\p{Z})$/u.test(character);
 
 type RegistryCharacterGroups = Record<
-	| 'all'
-	| 'letters'
-	| 'marks'
-	| 'numbers'
-	| 'punctuation'
-	| 'symbols'
-	| 'privateUse',
+	'all' | 'letters' | 'marks' | 'numbers' | 'punctuation' | 'symbols',
 	string[]
 >;
 
@@ -176,7 +170,6 @@ const getRegistryCharacterGroups = (
 		numbers: [],
 		punctuation: [],
 		symbols: [],
-		privateUse: [],
 	};
 	for (const [start, end] of parseRegistryUnicodeRange(
 		capabilities.unicodeRange,
@@ -196,8 +189,6 @@ const getRegistryCharacterGroups = (
 				groups.punctuation.push(character);
 			} else if (/^\p{S}$/u.test(character)) {
 				groups.symbols.push(character);
-			} else if (/^\p{Co}$/u.test(character)) {
-				groups.privateUse.push(character);
 			}
 		}
 	}
@@ -241,29 +232,39 @@ const featureNames: Record<string, string> = {
 	calt: 'Contextual alternates',
 	case: 'Case-sensitive forms',
 	ccmp: 'Glyph composition',
+	clig: 'Contextual ligatures',
 	dlig: 'Discretionary ligatures',
+	dnom: 'Denominators',
 	frac: 'Fractions',
 	kern: 'Kerning',
 	liga: 'Standard ligatures',
+	lnum: 'Lining figures',
 	locl: 'Localized forms',
 	mark: 'Mark positioning',
 	mkmk: 'Mark-to-mark positioning',
+	numr: 'Numerators',
 	onum: 'Oldstyle figures',
+	ordn: 'Ordinals',
 	pnum: 'Proportional figures',
+	rlig: 'Required ligatures',
 	salt: 'Stylistic alternates',
+	sinf: 'Scientific inferiors',
 	smcp: 'Small capitals',
-	ss01: 'Stylistic set 1',
-	ss02: 'Stylistic set 2',
-	ss03: 'Stylistic set 3',
-	ss04: 'Stylistic set 4',
-	ss05: 'Stylistic set 5',
-	sub: 'Subscript',
+	subs: 'Subscript',
 	sups: 'Superscript',
 	tnum: 'Tabular figures',
+	zero: 'Slashed zero',
 };
 
-const getOpenTypeFeatureName = (tag: string) =>
-	featureNames[tag] ?? tag.toUpperCase();
+const getOpenTypeFeatureName = (tag: string) => {
+	if (/^ss\d{2}$/.test(tag)) {
+		return `Stylistic set ${Number(tag.slice(2))}`;
+	}
+	if (/^cv\d{2}$/.test(tag)) {
+		return `Character variant ${Number(tag.slice(2))}`;
+	}
+	return featureNames[tag] ?? tag.toUpperCase();
+};
 
 export type {
 	RegistryDataState,

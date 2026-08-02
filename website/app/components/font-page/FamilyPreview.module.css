@@ -180,19 +180,6 @@
 	line-height: 1;
 }
 
-.control select {
-	min-height: 38px;
-	box-sizing: border-box;
-	padding: 0 28px 0 10px;
-	border: light-dark(1px solid rgba(98, 91, 248, 0.2), 1px solid #2c3651);
-	border-radius: 4px;
-	color: inherit;
-	background: light-dark(rgba(255, 255, 255, 0.72), #121b31);
-	font: inherit;
-	font-size: 12px;
-	cursor: pointer;
-}
-
 .italicToggle {
 	min-height: 38px;
 	display: inline-flex;
