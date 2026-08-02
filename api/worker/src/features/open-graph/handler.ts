@@ -2,6 +2,7 @@ import type { Context } from 'hono';
 import wasmModule, { init as initWasm, Renderer } from 'takumi-js/wasm';
 import logoSvg from '../../../../../website/public/logo.svg?raw';
 import type { SourceFontMetadata } from '../../../../shared/catalog';
+import { toResponseBody } from '../../../../shared/response';
 import { fetchPackageAssetBytes } from '../../../../shared/upstream';
 import type { AppEnv } from '../../env';
 import { notFound } from '../../utils/errors';
@@ -130,5 +131,5 @@ export const getFontOpenGraphImage = async (
 		headers.set('Last-Modified', new Date(lastModified).toUTCString());
 	}
 
-	return new Response(image, { headers });
+	return new Response(toResponseBody(image), { headers });
 };
