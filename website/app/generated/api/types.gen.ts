@@ -888,6 +888,10 @@ export type GetRegistryFamilyResponses = {
                 default: number;
             }>;
         }>;
+        /**
+         * Representative distributed source for previews and capability inspection
+         */
+        previewSource: string;
         distribution: {
             static?: Array<{
                 weight: number;

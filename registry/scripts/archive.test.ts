@@ -44,6 +44,7 @@ describe('registry source archive', () => {
 			'families/dejavu-math.json',
 			'families/dseg7-classic.json',
 			'families/ek-mukta.json',
+			'families/ibm-plex-mono.json',
 			'families/jsmath-cmr10.json',
 			'families/material-icons.json',
 			'families/material-icons/symbols.json',
@@ -81,7 +82,8 @@ describe('registry source archive', () => {
 						views.set(path, value);
 						if (
 							path === 'families/abel.json' ||
-							path === 'families/adwaita-sans.json'
+							path === 'families/adwaita-sans.json' ||
+							path === 'families/ibm-plex-mono.json'
 						) {
 							for (const source of value.sources) {
 								wantedViews.add(`sources/${source.sha256}/capabilities.json`);
@@ -166,6 +168,7 @@ describe('registry source archive', () => {
 					subsets: [{ id: 'latin', definition: 'latin' }],
 				},
 			},
+			previewSource: expect.stringMatching(/^[0-9a-f]{64}$/),
 			sources: [
 				expect.objectContaining({
 					format: 'ttf',
@@ -181,6 +184,21 @@ describe('registry source archive', () => {
 			],
 		});
 		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
+		const ibmPlexMono = RegistryFamilyDetailSchema.parse(
+			views.get('families/ibm-plex-mono.json'),
+		);
+		expect(
+			ibmPlexMono.sources.find(
+				(source) => source.sha256 === ibmPlexMono.previewSource,
+			),
+		).toMatchObject({
+			filename: 'IBMPlexMono-Regular.ttf',
+			weight: 400,
+			style: 'normal',
+		});
+		expect(
+			views.get(`sources/${ibmPlexMono.previewSource}/capabilities.json`),
+		).toMatchObject({ glyphCount: 1033, codepointCount: 930 });
 		const familySource = (
 			family as {
 				sources: Array<{ sha256: string }>;
