@@ -1,11 +1,11 @@
 import { selectVariableAxisKey } from '@fontsource-utils/core';
 import { VisuallyHidden } from '@mantine/core';
-import { useClipboard, useLocalStorage } from '@mantine/hooks';
+import { useLocalStorage } from '@mantine/hooks';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
-import { IconCopy, IconDownload, IconExternal } from '@/components/icons';
+import { IconDownload, IconExternal } from '@/components/icons';
 import { createProjectItem } from '@/features/projects/createProjectItem';
 import {
 	getUsageBlock,
@@ -17,6 +17,7 @@ import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
 	GetVariableFontResponse,
+	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 import { deserializeStoredChoice } from '@/utils/browser-storage';
 import { getJsDelivrPackageUrl } from '@/utils/cdn';
@@ -31,6 +32,7 @@ import { getPreferredPreviewSubset } from '@/utils/font-preview';
 import { readFontPreviewSelection } from '@/utils/font-preview-selection';
 import {
 	getRegistryFamilyKind,
+	getRegistryPreviewText,
 	type RegistryDataState,
 	type RegistryFamily,
 	usesNameLigatures,
@@ -47,34 +49,13 @@ interface FamilyUseProps {
 	variableCSS?: string;
 	registry?: RegistryFamily;
 	registryState: RegistryDataState;
+	languages?: ListRegistryLanguagesResponse;
 }
 
 type Path = 'download' | 'web';
 type Method = 'package' | 'cdn';
 type FamilyFormat = 'variable' | 'static';
 type DownloadState = 'idle' | 'fetching' | 'building' | 'success' | 'error';
-
-const CopyCompleteSetup = ({ code }: { code: string }) => {
-	const clipboard = useClipboard({ timeout: 1500 });
-	const copyLabel = clipboard.copied
-		? 'Setup copied'
-		: clipboard.error
-			? 'Copy failed — use the steps below'
-			: 'Copy complete setup';
-
-	return (
-		<button
-			type="button"
-			className={classes.completeSetupButton}
-			onClick={() => clipboard.copy(code)}
-		>
-			<IconCopy aria-hidden height={17} stroke="currentColor" />
-			<span aria-live="polite" aria-atomic="true">
-				{copyLabel}
-			</span>
-		</button>
-	);
-};
 
 export const FamilyUse = ({
 	metadata,
@@ -84,6 +65,7 @@ export const FamilyUse = ({
 	versions,
 	registry,
 	registryState,
+	languages,
 }: FamilyUseProps) => {
 	const [searchParams] = useSearchParams();
 	const familyKind = getRegistryFamilyKind(registry);
@@ -145,6 +127,7 @@ export const FamilyUse = ({
 			deserializeStoredChoice(value, packageManagerValues, 'pnpm'),
 	});
 	const isVariable = format === 'variable' && supportsVariable;
+	const projectSampleText = getRegistryPreviewText(registry, languages);
 	const projectItem = useMemo(
 		() =>
 			createProjectItem({
@@ -157,11 +140,13 @@ export const FamilyUse = ({
 				style,
 				weight,
 				axes: axisValues,
+				sampleText: projectSampleText,
 			}),
 		[
 			axisValues,
 			isVariable,
 			metadata,
+			projectSampleText,
 			registry,
 			style,
 			subset,
@@ -208,15 +193,6 @@ export const FamilyUse = ({
 		.map(([axis, value]) => `'${axis}' ${value}`)
 		.join(', ');
 	const fromSelectedFonts = searchParams.get('from') === 'selected-fonts';
-	const completeSetup = [
-		method === 'package'
-			? `# Install\n${installCommand}\n\n// Import\nimport '${importPath}';`
-			: `<!-- Add to your document head -->\n<link rel="stylesheet" href="${cdnUrl}">`,
-		`/* Apply the font */\n${cssCode}`,
-		usageMarkup ? `<!-- Example markup -->\n${usageMarkup}` : undefined,
-	]
-		.filter(Boolean)
-		.join('\n\n');
 	const downloadIsVariable = downloadFormat === 'variable' && supportsVariable;
 	const downloadVersion = downloadIsVariable
 		? (versions.latestVariable ?? versions.latest)
@@ -409,7 +385,8 @@ export const FamilyUse = ({
 				)}
 				<h2 id="use-heading">Get {metadata.family}</h2>
 				<p>
-					Choose what you are making. We will remember it for the next font.
+					Download the files or add the font to a website. You can change the
+					setup before copying it.
 				</p>
 			</div>
 
@@ -880,12 +857,27 @@ export const FamilyUse = ({
 								</aside>
 
 								<div className={classes.instructions}>
-									<div className={classes.completeSetup}>
+									<div className={classes.resultHeading}>
 										<div>
-											<strong>Complete setup</strong>
-											<span>Copy every step below in one action.</span>
+											<strong>
+												{method === 'package'
+													? 'Your package setup'
+													: 'Your quick embed'}
+											</strong>
+											<span>
+												{method === 'package'
+													? 'Install, import, then apply the font.'
+													: 'Add the stylesheet, then apply the font.'}
+											</span>
 										</div>
-										<CopyCompleteSetup code={completeSetup} />
+										<Link to="/docs/getting-started/install">
+											New to web fonts? Read the guide
+											<IconExternal
+												aria-hidden
+												height={15}
+												stroke="currentColor"
+											/>
+										</Link>
 									</div>
 									{method === 'package' ? (
 										<>
@@ -941,63 +933,53 @@ export const FamilyUse = ({
 											)}
 										</div>
 									)}
-									<div className={classes.renderedCheck}>
-										<div>
-											<span>Rendered check</span>
-											<small>
-												This uses your selected family, style, and axes.
-											</small>
+									<details className={classes.renderedDisclosure}>
+										<summary>Preview this setup</summary>
+										<div className={classes.renderedCheck}>
+											<div>
+												<span>Rendered check</span>
+												<small>
+													Uses your selected family, style, and axes.
+												</small>
+											</div>
+											<strong
+												data-special={
+													hasCatalog || isDigitalFamily || undefined
+												}
+												style={{
+													fontFamily: familyName,
+													fontFeatureSettings: hasNamedLigatures
+														? '"liga"'
+														: undefined,
+													fontVariationSettings:
+														proofVariationSettings || undefined,
+													fontWeight: weight,
+													fontStyle: style,
+												}}
+											>
+												{projectItem.sampleText}
+											</strong>
 										</div>
-										<strong
-											data-special={hasCatalog || isDigitalFamily || undefined}
-											style={{
-												fontFamily: familyName,
-												fontFeatureSettings: hasNamedLigatures
-													? '"liga"'
-													: undefined,
-												fontVariationSettings:
-													proofVariationSettings || undefined,
-												fontWeight: weight,
-												fontStyle: style,
-											}}
-										>
-											{projectItem.sampleText}
-										</strong>
-									</div>
+									</details>
 								</div>
 							</div>
 							<div className={classes.projectAction}>
 								<div>
-									<strong>Building with more fonts?</strong>
+									<strong>Use this setup with other fonts</strong>
 									<span>
-										Save this setup to a Font Set and generate combined code
-										when you are ready.
+										Add the exact configuration to your font set, then generate
+										one package or stylesheet.
 									</span>
 								</div>
 								<div className={classes.projectActionControls}>
 									<ProjectAddButton item={projectItem} />
-									<Link to="/selected-fonts">Open font set</Link>
+									<Link to="/selected-fonts">View font set</Link>
 								</div>
 							</div>
 						</div>
 					)}
 				</section>
 			</div>
-
-			{path === 'web' && (
-				<div className={classes.guide}>
-					<div>
-						<strong>New to web fonts?</strong>
-						<span>
-							A short guide explains packages, subsets, and self-hosting.
-						</span>
-					</div>
-					<Link to="/docs/getting-started/install">
-						Read the guide
-						<IconExternal aria-hidden height={16} stroke="currentColor" />
-					</Link>
-				</div>
-			)}
 		</section>
 	);
 };

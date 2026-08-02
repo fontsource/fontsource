@@ -5,18 +5,26 @@ import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyUse } from '@/components/font-page/FamilyUse';
 import { getFontVersions } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
-import { loadFontPageBase } from '@/utils/font-page.server';
+import {
+	loadFontPageBase,
+	loadFontPageLanguages,
+} from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
-	const [base, versions] = await Promise.all([
-		loadFontPageBase(id, request.signal),
+	const basePromise = loadFontPageBase(id, request.signal);
+	const [base, versions, languagesResult] = await Promise.all([
+		basePromise,
 		getFontVersions({ id }, { signal: request.signal }),
+		loadFontPageLanguages(basePromise, request.signal),
 	]);
 
-	return data({ ...base, versions }, { headers: cacheHeaders.short });
+	return data(
+		{ ...base, versions, languages: languagesResult.languages },
+		{ headers: cacheHeaders.short },
+	);
 };
 
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
@@ -41,6 +49,7 @@ export default function UsePage() {
 		versions,
 		registry,
 		registryState,
+		languages,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -59,6 +68,7 @@ export default function UsePage() {
 				versions={versions}
 				registry={registry}
 				registryState={registryState}
+				languages={languages}
 			/>
 		</FamilyPageShell>
 	);

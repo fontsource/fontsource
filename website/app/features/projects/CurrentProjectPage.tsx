@@ -258,7 +258,6 @@ const CurrentProjectPage = () => {
 		<div className={classes.page}>
 			<header className={classes.intro}>
 				<div>
-					<p className={classes.kicker}>Saved in this browser</p>
 					<h1>Font set</h1>
 					<p>
 						Keep exact font setups together. When you choose more than one,
@@ -301,8 +300,8 @@ const CurrentProjectPage = () => {
 					<div>
 						<h2>Your font set is empty.</h2>
 						<p>
-							Open a font, choose the settings you want, then select “Add to
-							font set.” Your choices stay in this browser.
+							Open Get font, choose your website setup, then select “Add this
+							setup.” Your choices stay in this browser.
 						</p>
 						<Link to="/">Choose a font</Link>
 					</div>

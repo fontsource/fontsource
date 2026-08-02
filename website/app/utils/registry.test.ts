@@ -3,16 +3,19 @@ import { describe, expect, it } from 'vitest';
 import type {
 	GetRegistryFamilyResponse,
 	GetRegistrySourceCapabilitiesResponse,
+	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 
 import {
 	findUnmappedCharacters,
 	getRegistryCharacterGroups,
 	getRegistryFamilyKind,
+	getRegistryPreviewText,
 	getRegistrySourcePreviewStyle,
 	getUnicodeCharacter,
 	type RegistryFamily,
 	selectRegistryFamilyLanguages,
+	selectRegistryPreviewLanguage,
 	usesNameLigatures,
 } from './registry';
 
@@ -229,5 +232,56 @@ describe('selectRegistryFamilyLanguages', () => {
 			'de_Latn',
 			...additionalLanguages.map((language) => language.id),
 		]);
+	});
+});
+
+describe('registry preview language', () => {
+	const languages = [
+		{
+			id: 'ain_Kana',
+			language: 'ain',
+			script: 'Kana',
+			name: 'Ainu',
+			sampleText: { short: 'アイヌ語' },
+		},
+		{
+			id: 'ja_Jpan',
+			language: 'ja',
+			script: 'Jpan',
+			name: 'Japanese',
+			sampleText: {
+				short: '美しい日本語',
+				long: '読みやすい日本語の文章です。',
+			},
+		},
+	] satisfies ListRegistryLanguagesResponse;
+	const japaneseFamily = {
+		...family,
+		languages: ['ain_Kana', 'ja_Jpan'],
+		primaryScript: 'Jpan',
+	};
+
+	it('selects a sampled family language matching the primary script', () => {
+		expect(selectRegistryPreviewLanguage(japaneseFamily, languages)?.id).toBe(
+			'ja_Jpan',
+		);
+		expect(getRegistryPreviewText(japaneseFamily, languages)).toBe(
+			'美しい日本語',
+		);
+		expect(getRegistryPreviewText(japaneseFamily, languages, 'long')).toBe(
+			'読みやすい日本語の文章です。',
+		);
+	});
+
+	it('keeps the reviewed family sample authoritative', () => {
+		expect(
+			getRegistryPreviewText(
+				{
+					...japaneseFamily,
+					sampleText: { short: '家族の見本' },
+				},
+				languages,
+			),
+		).toBe('家族の見本');
 	});
 });

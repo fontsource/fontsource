@@ -58,6 +58,7 @@ const ProjectAddButton = ({ item }: ProjectAddButtonProps) => {
 				type="button"
 				className={classes.button}
 				disabled={!ready}
+				title={!ready ? 'Your font set is loading' : undefined}
 				onClick={addItem}
 			>
 				{included ? (
@@ -65,7 +66,11 @@ const ProjectAddButton = ({ item }: ProjectAddButtonProps) => {
 				) : (
 					<IconStack2 aria-hidden size={18} />
 				)}
-				{included ? 'Update font set' : 'Add to font set'}
+				{!ready
+					? 'Font set loading…'
+					: included
+						? 'Update this setup'
+						: 'Add this setup'}
 			</button>
 			<div
 				ref={toastRef}
@@ -80,14 +85,14 @@ const ProjectAddButton = ({ item }: ProjectAddButtonProps) => {
 						<span>
 							<strong>{item.displayName}</strong>{' '}
 							{feedback.previous
-								? 'updated in your font set.'
-								: 'added to your font set.'}
+								? 'setup updated in your font set.'
+								: 'setup added to your font set.'}
 						</span>
 						<div>
 							<button type="button" onClick={undo}>
 								Undo
 							</button>
-							<Link to="/selected-fonts">Open font set</Link>
+							<Link to="/selected-fonts">View font set</Link>
 							<button
 								type="button"
 								className={classes.close}

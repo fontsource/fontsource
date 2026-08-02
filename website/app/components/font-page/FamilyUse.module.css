@@ -382,8 +382,6 @@
 .deliveryNote {
 	max-width: 700px;
 	margin: -10px 0 22px;
-	padding-left: 12px;
-	border-left: 2px solid light-dark(#c9c6ff, #4b477d);
 	color: light-dark(#52617a, #aeb9cc);
 	font-size: 0.8rem;
 	line-height: 1.55;
@@ -537,58 +535,46 @@
 
 .instructions {
 	display: grid;
-	gap: 26px;
+	gap: 22px;
 	padding: 24px;
 	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 	border-radius: 6px;
 }
 
-.completeSetup {
+.resultHeading {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 	gap: 20px;
 	padding-bottom: 20px;
 	border-bottom: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 
-	> div > strong,
-	> div > span {
+	strong,
+	span {
 		display: block;
 	}
 
-	> div > strong {
+	strong {
 		font-size: 0.9rem;
 	}
 
-	> div > span {
+	span {
 		margin-top: 3px;
 		color: light-dark(#52617a, #aeb9cc);
 		font-size: 0.78rem;
 	}
-}
 
-.completeSetupButton {
-	flex: 0 0 auto;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	min-height: 44px;
-	padding: 0 14px;
-	border: 0;
-	border-radius: 4px;
-	background: var(--mantine-color-purple-0);
-	color: white;
-	font: inherit;
-	font-size: 0.82rem;
-	font-weight: 600;
-	text-align: center;
-	white-space: normal;
-	cursor: pointer;
-}
-
-.completeSetupButton:hover {
-	background: var(--mantine-color-purple-dark);
+	a {
+		flex: 0 0 auto;
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		color: var(--mantine-color-purple-0);
+		font-size: 0.78rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
 }
 
 .stepLabel {
@@ -678,6 +664,7 @@
 }
 
 .optimizationControl {
+	min-height: 44px;
 	display: grid;
 	grid-template-columns: auto minmax(0, 1fr);
 	align-items: start;
@@ -754,38 +741,22 @@
 	}
 }
 
-.guide {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 24px;
-	margin-top: 30px;
-	padding: 20px 24px;
-	border-radius: 6px;
-	background: light-dark(#efeeff, #172138);
-}
+.renderedDisclosure {
+	border-top: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 
-.guide strong,
-.guide span {
-	display: block;
-}
+	summary {
+		min-height: 44px;
+		display: flex;
+		align-items: center;
+		color: var(--mantine-color-purple-0);
+		font-size: 0.82rem;
+		font-weight: 600;
+		cursor: pointer;
+	}
 
-.guide span {
-	margin-top: 3px;
-	color: light-dark(#52617a, #aeb9cc);
-	font-size: 0.86rem;
-}
-
-.guide a {
-	display: inline-flex;
-	align-items: center;
-	gap: 7px;
-	min-height: 44px;
-	color: var(--mantine-color-purple-0);
-	font-size: 0.86rem;
-	font-weight: 600;
-	text-decoration: none;
-	white-space: nowrap;
+	.renderedCheck {
+		margin-top: 8px;
+	}
 }
 
 .primaryButton:focus-visible,
@@ -798,12 +769,12 @@
 .manager button:focus-visible,
 .summaryTop button:focus-visible,
 .projectActionControls > a:focus-visible,
-.completeSetupButton:focus-visible,
+.resultHeading a:focus-visible,
+.renderedDisclosure summary:focus-visible,
 .advanced select:focus-visible,
 .axisControl input:focus-visible,
 .optimizationControl input:focus-visible,
-.usageHelp a:focus-visible,
-.guide a:focus-visible {
+.usageHelp a:focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
 	outline-offset: 2px;
 }
@@ -838,11 +809,6 @@
 		border-left: 0;
 	}
 
-	.guide {
-		align-items: flex-start;
-		flex-direction: column;
-	}
-
 	.webPanel {
 		padding-right: 0;
 		padding-left: 0;
@@ -870,13 +836,9 @@
 		grid-template-columns: 1fr;
 	}
 
-	.completeSetup {
+	.resultHeading {
 		align-items: stretch;
 		flex-direction: column;
-	}
-
-	.completeSetupButton {
-		width: 100%;
 	}
 
 	.renderedCheck {

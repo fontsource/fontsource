@@ -57,6 +57,9 @@ export const FamilyIdentity = ({
 	const subsetLabel = `${metadata.subsets.length} ${metadata.subsets.length === 1 ? 'subset' : 'subsets'}`;
 	const description = getRegistryContent(registry)?.description;
 	const descriptionSummary = description?.split(/\n\s*\n/, 1)[0]?.trim();
+	const showDescriptionLink = Boolean(
+		descriptionSummary && descriptionSummary.length > 180,
+	);
 	const attribution = registry?.designer;
 	const classification = registry?.classifications[0]
 		? formatFontLabel(registry.classifications[0])
@@ -94,6 +97,14 @@ export const FamilyIdentity = ({
 							}
 						/>
 					</p>
+					{showDescriptionLink && (
+						<Link
+							className={classes.descriptionLink}
+							to={`/fonts/${metadata.id}/about`}
+						>
+							Read more about {registry?.displayName ?? metadata.family}
+						</Link>
+					)}
 					<Text className={classes.source}>
 						{attribution ? (
 							<>
@@ -135,12 +146,10 @@ export const FamilyIdentity = ({
 export const FamilyActions = ({
 	metadata,
 	compact = false,
-	secondaryAction,
 	showGetFont = true,
 }: {
 	metadata: GetFontResponse;
 	compact?: boolean;
-	secondaryAction?: React.ReactNode;
 	showGetFont?: boolean;
 }) => {
 	const location = useLocation();
@@ -153,19 +162,11 @@ export const FamilyActions = ({
 	};
 
 	return (
-		<Group
-			className={classes.actions}
-			data-has-secondary={secondaryAction ? true : undefined}
-			gap="sm"
-			wrap="nowrap"
-		>
+		<Group className={classes.actions} gap="sm" wrap="nowrap">
 			<div className={classes.utilityActions}>
 				<FavoriteButton font={fontSummary} withLabel={!compact} />
 				<AddToCollectionMenu font={fontSummary} />
 			</div>
-			{secondaryAction && (
-				<div className={classes.secondaryAction}>{secondaryAction}</div>
-			)}
 			{showGetFont && (
 				<Link
 					className={classes.getFont}
@@ -182,12 +183,16 @@ export const FamilyActions = ({
 
 export const FamilyTabs = ({
 	metadata,
+	registry,
 	contained = false,
 }: {
 	metadata: GetFontResponse;
+	registry?: RegistryFamily;
 	contained?: boolean;
 }) => {
 	const location = useLocation();
+	const glyphsLabel =
+		getRegistryFamilyKind(registry) === 'symbols' ? 'Symbols' : 'Glyphs';
 
 	return (
 		<nav
@@ -205,7 +210,7 @@ export const FamilyTabs = ({
 						end={tab.value === 'preview'}
 						prefetch="intent"
 					>
-						{tab.label}
+						{tab.value === 'glyphs' ? glyphsLabel : tab.label}
 					</NavLink>
 				))}
 			</div>
@@ -258,7 +263,7 @@ export const FamilyPageShell = ({
 				</section>
 			)}
 
-			{!isPreview && <FamilyTabs metadata={metadata} />}
+			{!isPreview && <FamilyTabs metadata={metadata} registry={registry} />}
 
 			{registry?.status === 'deprecated' && (
 				<div className={classes.statusNotice} role="status">
