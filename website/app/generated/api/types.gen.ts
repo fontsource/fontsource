@@ -893,7 +893,7 @@ export type GetRegistryFamilyResponses = {
             }>;
         }>;
         /**
-         * Representative source for capability and glyph inspection
+         * Distributed source selected for default previews and source-scoped capability inspection
          */
         previewSource: string;
         distribution: {

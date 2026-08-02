@@ -166,16 +166,21 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		.optional(),
 	sources: z.array(RegistrySourceSchema).min(1),
 	previewSource: Sha256Schema.describe(
-		'Representative source for capability and glyph inspection',
+		'Distributed source selected for default previews and source-scoped capability inspection',
 	),
 	distribution: RegistryDistributionSchema,
 }).superRefine((family, context) => {
-	if (
-		!family.sources.some((source) => source.sha256 === family.previewSource)
-	) {
+	const sourceExists = family.sources.some(
+		(source) => source.sha256 === family.previewSource,
+	);
+	const isDistributed = [
+		...(family.distribution.static ?? []),
+		...(family.distribution.variable ?? []),
+	].some((variant) => variant.source === family.previewSource);
+	if (!sourceExists || !isDistributed) {
 		context.addIssue({
 			code: 'custom',
-			message: 'previewSource must reference sources',
+			message: 'previewSource must reference a distributed source',
 			path: ['previewSource'],
 		});
 	}

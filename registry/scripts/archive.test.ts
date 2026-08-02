@@ -44,6 +44,7 @@ describe('registry source archive', () => {
 			'families/dejavu-math.json',
 			'families/dseg7-classic.json',
 			'families/ek-mukta.json',
+			'families/ibm-plex-mono.json',
 			'families/jsmath-cmr10.json',
 			'families/material-icons.json',
 			'families/material-icons/symbols.json',
@@ -81,7 +82,8 @@ describe('registry source archive', () => {
 						views.set(path, value);
 						if (
 							path === 'families/abel.json' ||
-							path === 'families/adwaita-sans.json'
+							path === 'families/adwaita-sans.json' ||
+							path === 'families/ibm-plex-mono.json'
 						) {
 							for (const source of value.sources) {
 								wantedViews.add(`sources/${source.sha256}/capabilities.json`);
@@ -182,6 +184,20 @@ describe('registry source archive', () => {
 			],
 		});
 		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
+		const ibmPlexMono = RegistryFamilyDetailSchema.parse(
+			views.get('families/ibm-plex-mono.json'),
+		);
+		expect(ibmPlexMono.previewSource).toBe(
+			ibmPlexMono.distribution.static?.find(
+				(variant) => variant.weight === 400 && variant.style === 'normal',
+			)?.source,
+		);
+		const ibmPlexMonoCapabilities = views.get(
+			`sources/${ibmPlexMono.previewSource}/capabilities.json`,
+		);
+		expect(
+			RegistrySourceCapabilitiesSchema.parse(ibmPlexMonoCapabilities),
+		).toEqual(ibmPlexMonoCapabilities);
 		const familySource = (
 			family as {
 				sources: Array<{ sha256: string }>;
@@ -204,9 +220,15 @@ describe('registry source archive', () => {
 		expect(RegistrySourceCapabilitiesSchema.parse(capabilities)).toEqual(
 			capabilities,
 		);
-		const multiSourceFamily = views.get('families/adwaita-sans.json') as {
-			sources: Array<{ sha256: string }>;
-		};
+		const multiSourceFamily = RegistryFamilyDetailSchema.parse(
+			views.get('families/adwaita-sans.json'),
+		);
+		expect(multiSourceFamily.previewSource).toBe(
+			multiSourceFamily.distribution.variable?.find(
+				(variant) =>
+					variant.axisKey === 'standard' && variant.style === 'normal',
+			)?.source,
+		);
 		const multiSourceCapabilities = multiSourceFamily.sources.map((source) =>
 			views.get(`sources/${source.sha256}/capabilities.json`),
 		) as Array<{ unicodeRange: string }>;

@@ -90,17 +90,18 @@ const sourceCapabilities = (source: FamilySource) =>
 const selectPreviewSource = (
 	distribution: ReturnType<typeof resolveDistributionSources>,
 ): string => {
-	const variable = distribution.variable;
-	const variablePreview =
-		variable?.find(
+	// Prefer the normal variable source that represents the package's standard
+	// axes. It gives previews the broadest useful style range from one source.
+	const variable =
+		distribution.variable?.find(
 			(variant) => variant.axisKey === 'standard' && variant.style === 'normal',
 		) ??
-		variable?.find((variant) => variant.style === 'normal') ??
-		variable?.find((variant) => variant.axisKey === 'standard') ??
-		variable?.[0];
-	if (variablePreview) return variablePreview.source;
+		distribution.variable?.find((variant) => variant.style === 'normal') ??
+		distribution.variable?.find((variant) => variant.axisKey === 'standard') ??
+		distribution.variable?.[0];
+	if (variable) return variable.source;
 
-	const staticPreview = distribution.static
+	const staticSource = distribution.static
 		?.toSorted((left, right) => {
 			const leftStyle = left.style === 'normal' ? 0 : 1;
 			const rightStyle = right.style === 'normal' ? 0 : 1;
@@ -111,7 +112,7 @@ const selectPreviewSource = (
 			);
 		})
 		.at(0);
-	if (staticPreview) return staticPreview.source;
+	if (staticSource) return staticSource.source;
 
 	throw new Error('Registry distribution has no preview source');
 };
