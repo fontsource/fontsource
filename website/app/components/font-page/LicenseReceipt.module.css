@@ -11,6 +11,29 @@
 	background: light-dark(#fbf8ef, #211d16);
 }
 
+.licenseLine {
+	margin: 0;
+
+	a {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		color: var(--mantine-color-purple-0);
+		font-size: 0.82rem;
+		font-weight: 650;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--mantine-color-purple-0);
+			outline-offset: 2px;
+		}
+	}
+}
+
 .heading {
 	display: flex;
 	align-items: flex-start;

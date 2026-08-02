@@ -1,4 +1,4 @@
-import { Link, useRevalidator } from 'react-router';
+import { useRevalidator } from 'react-router';
 
 import type { RegistryDataState, RegistryFamily } from '@/utils/registry';
 
@@ -70,19 +70,11 @@ const LicenseReceipt = ({
 	}
 
 	return (
-		<section
-			className={classes.receipt}
-			aria-labelledby={`license-${familyId}`}
-		>
-			<div className={classes.heading}>
-				<div>
-					<span className={classes.status}>License</span>
-					<h2 id={`license-${familyId}`}>{license.id}</h2>
-					<p>Keep a copy of this license with any font files you share.</p>
-				</div>
-				<Link to={`/fonts/${familyId}/about#license`}>Read license</Link>
-			</div>
-		</section>
+		<p className={classes.licenseLine}>
+			<a href={license.url} target="_blank" rel="noreferrer">
+				Read the {license.id} license ↗
+			</a>
+		</p>
 	);
 };
 

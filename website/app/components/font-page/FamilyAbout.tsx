@@ -14,6 +14,7 @@ import {
 	getOpenTypeFeatureName,
 	getRegistryContent,
 	getRegistryFamilyKind,
+	getRegistryPreviewText,
 	type RegistryDataState,
 	type RegistryFamily,
 	type RegistrySource,
@@ -90,6 +91,11 @@ export const FamilyAbout = ({
 		article = article.slice(content.description.length).trim();
 	}
 	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
+	const specimenText =
+		(registry?.sampleText ||
+		(registry?.primaryScript && registry.primaryScript !== 'Latn')
+			? getRegistryPreviewText(registry, languages)
+			: undefined) ?? metadata.family;
 	const specimenStyle = {
 		fontFamily,
 		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
@@ -182,9 +188,9 @@ export const FamilyAbout = ({
 						style={specimenStyle}
 						data-category={metadata.category}
 						role="img"
-						aria-label={`${metadata.family} letter sample`}
+						aria-label={`${metadata.family} specimen sample`}
 					>
-						{registry?.sampleText?.short ?? metadata.family}
+						{specimenText}
 					</div>
 				</div>
 

@@ -292,7 +292,7 @@
 	input {
 		min-width: 0;
 		width: 100%;
-		height: 40px;
+		height: 44px;
 		border: 0;
 		outline: 0;
 		color: inherit;
@@ -654,6 +654,12 @@
 
 	.search input {
 		font-size: 1rem;
+	}
+}
+
+@media (pointer: coarse) {
+	:is(.modeSwitch button, .groupSwitch button, .resultSummary button) {
+		min-height: 48px;
 	}
 }
 

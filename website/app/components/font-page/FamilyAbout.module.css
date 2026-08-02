@@ -73,19 +73,19 @@
 .specimen {
 	max-width: 100%;
 	margin-top: 30px;
-	overflow: hidden;
-	font-size: clamp(66px, 11vw, 156px);
+	font-size: clamp(58px, 8vw, 112px);
 	font-weight: 600;
-	line-height: 0.9;
-	letter-spacing: -0.05em;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+	line-height: 0.96;
+	letter-spacing: -0.04em;
+	overflow-wrap: anywhere;
+	text-wrap: balance;
 
 	&[data-category="icons"] {
 		font-size: clamp(58px, 7vw, 102px);
 		line-height: 1.15;
 		letter-spacing: 0;
-		text-overflow: clip;
+		white-space: nowrap;
+		overflow: hidden;
 	}
 }
 
@@ -785,5 +785,13 @@
 
 	.related ul {
 		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media (pointer: coarse) {
+	:is(.facts a, .taxonomy a, .sectionHeading a, .sourceFiles a, .related a) {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
 	}
 }

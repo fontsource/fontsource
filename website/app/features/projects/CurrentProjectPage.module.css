@@ -32,13 +32,6 @@
 	}
 }
 
-.kicker {
-	margin: 0 0 12px;
-	color: var(--mantine-color-purple-0);
-	font-size: 0.82rem;
-	font-weight: 700;
-}
-
 .introActions {
 	display: flex;
 	align-items: center;

@@ -75,6 +75,26 @@
 	color: light-dark(#34435c, #cbd3e2);
 }
 
+.descriptionLink {
+	min-height: 36px;
+	display: inline-flex;
+	align-items: center;
+	margin-top: 4px;
+	color: var(--mantine-color-purple-0);
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--mantine-color-purpleHover-3);
+		outline-offset: 2px;
+	}
+}
+
 .source {
 	margin-top: 10px;
 	font-size: 14px;
@@ -140,11 +160,6 @@
 	display: flex;
 	align-items: center;
 	gap: var(--mantine-spacing-sm);
-}
-
-.secondaryAction {
-	display: flex;
-	align-items: center;
 }
 
 .compactHeader .actions {
@@ -323,23 +338,6 @@
 		width: 100%;
 	}
 
-	.actions[data-has-secondary] {
-		display: grid;
-		grid-template-columns: auto minmax(0, 1fr);
-		align-items: center;
-		gap: 12px;
-	}
-
-	.actions[data-has-secondary] .secondaryAction {
-		min-width: 0;
-		justify-self: end;
-	}
-
-	.actions[data-has-secondary] .getFont {
-		grid-column: 1 / -1;
-		width: 100%;
-	}
-
 	.actions > * {
 		min-width: 0;
 	}
@@ -381,16 +379,10 @@
 		}
 	}
 
-	.actions[data-has-secondary] {
-		grid-template-columns: minmax(0, 1fr);
-	}
+}
 
-	.actions[data-has-secondary] .secondaryAction {
-		grid-column: 1;
-		width: 100%;
-
-		> * {
-			width: 100%;
-		}
+@media (pointer: coarse) {
+	:is(.backBar a, .descriptionLink, .tags a, .actions button) {
+		min-height: 44px;
 	}
 }

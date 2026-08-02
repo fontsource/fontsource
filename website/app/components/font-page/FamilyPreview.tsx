@@ -6,12 +6,11 @@ import {
 	FamilyIdentity,
 	FamilyTabs,
 } from '@/components/font-page/FamilyPageShell';
-import { createProjectItem } from '@/features/projects/createProjectItem';
-import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
 	GetVariableFontResponse,
+	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 import { getAxisLabel } from '@/utils/font-labels';
 import {
@@ -24,6 +23,7 @@ import { saveFontPreviewSelection } from '@/utils/font-preview-selection';
 import { getPreviewText as getLanguagePreviewText } from '@/utils/language/language';
 import {
 	getRegistryFamilyKind,
+	getRegistryPreviewText,
 	type RegistryDataState,
 	type RegistryFamily,
 	usesNameLigatures,
@@ -39,6 +39,7 @@ interface FamilyPreviewProps {
 	versions: GetFontVersionsResponse;
 	registry?: RegistryFamily;
 	registryState: RegistryDataState;
+	languages?: ListRegistryLanguagesResponse;
 	variableUnavailable?: boolean;
 }
 
@@ -54,8 +55,8 @@ const previewModes = {
 type PreviewMode = keyof typeof previewModes;
 
 const modeLabels: Array<{ label: string; value: PreviewMode }> = [
-	{ label: 'Text', value: 'headline' },
-	{ label: 'Paragraph', value: 'paragraph' },
+	{ label: 'Headlines', value: 'headline' },
+	{ label: 'Paragraphs', value: 'paragraph' },
 	{ label: 'Numbers', value: 'numbers' },
 	{ label: 'Code', value: 'code' },
 	{ label: 'Symbols', value: 'symbols' },
@@ -71,14 +72,19 @@ const getModeText = (
 	metadata: GetFontResponse,
 	mode: PreviewMode,
 	registry?: RegistryFamily,
+	languages?: ListRegistryLanguagesResponse,
 ) => {
 	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const familyKind = getRegistryFamilyKind(registry);
-	const registrySample = (
-		mode === 'paragraph'
-			? (registry?.sampleText?.long ?? registry?.sampleText?.short)
-			: registry?.sampleText?.short
-	)?.trim();
+	const registrySample =
+		registry?.sampleText ||
+		(registry?.primaryScript && registry.primaryScript !== 'Latn')
+			? getRegistryPreviewText(
+					registry,
+					languages,
+					mode === 'paragraph' ? 'long' : 'short',
+				)
+			: undefined;
 
 	if (
 		registrySample &&
@@ -143,10 +149,13 @@ export const FamilyPreview = ({
 	versions,
 	registry,
 	registryState,
+	languages,
 	variableUnavailable = false,
 }: FamilyPreviewProps) => {
 	const previewSubset = getPreferredPreviewSubset(metadata, registry);
-	const usesLatinPreview = isLatinPreviewSubset(previewSubset);
+	const usesLatinPreview = registry?.primaryScript
+		? registry.primaryScript === 'Latn'
+		: isLatinPreviewSubset(previewSubset);
 	const hasCatalog = Boolean(registry?.symbols);
 	const hasNamedLigatures = usesNameLigatures(registry);
 	const familyKind = getRegistryFamilyKind(registry);
@@ -164,7 +173,7 @@ export const FamilyPreview = ({
 				: 'headline';
 	const [mode, setMode] = useState<PreviewMode>(initialMode);
 	const [text, setText] = useState<string>(
-		getModeText(metadata, initialMode, registry),
+		getModeText(metadata, initialMode, registry, languages),
 	);
 	const [size, setSize] = useState(
 		metadata.category === 'monospace' || hasCatalog
@@ -198,7 +207,10 @@ export const FamilyPreview = ({
 		: usesLatinPreview
 			? modeLabels
 			: scriptModeLabels;
-	const weightSpecimen = registry?.sampleText?.short ?? metadata.family;
+	const weightSpecimen =
+		(registry?.sampleText || !usesLatinPreview
+			? getRegistryPreviewText(registry, languages)
+			: undefined) ?? metadata.family;
 	const previewStyle = {
 		'--preview-size': `${size}px`,
 		fontFamily,
@@ -214,33 +226,6 @@ export const FamilyPreview = ({
 						.join(', ')
 				: undefined,
 	} as React.CSSProperties;
-	const projectItem = useMemo(
-		() =>
-			createProjectItem({
-				metadata,
-				versions,
-				variable,
-				registry,
-				format: variable && versions.latestVariable ? 'variable' : 'static',
-				subset: previewSubset,
-				style: italic ? 'italic' : 'normal',
-				weight,
-				axes: axisValues,
-				sampleText: text,
-			}),
-		[
-			axisValues,
-			italic,
-			metadata,
-			previewSubset,
-			registry,
-			text,
-			variable,
-			versions,
-			weight,
-		],
-	);
-
 	useEffect(() => {
 		const saved = saveFontPreviewSelection(metadata.id, {
 			format: variable && versions.latestVariable ? 'variable' : 'static',
@@ -262,7 +247,7 @@ export const FamilyPreview = ({
 
 	const selectMode = (nextMode: PreviewMode) => {
 		setMode(nextMode);
-		setText(getModeText(metadata, nextMode, registry));
+		setText(getModeText(metadata, nextMode, registry, languages));
 	};
 
 	return (
@@ -290,35 +275,33 @@ export const FamilyPreview = ({
 									: 'License details unavailable'}
 						</Link>
 					</div>
-					<FamilyActions
-						metadata={metadata}
-						compact
-						secondaryAction={<ProjectAddButton item={projectItem} />}
-					/>
+					<FamilyActions metadata={metadata} compact />
 				</div>
 
-				<FamilyTabs metadata={metadata} contained />
+				<FamilyTabs metadata={metadata} registry={registry} contained />
 
 				<div className={classes.workspace}>
 					<div className={classes.workspaceHeader}>
+						{activeModeLabels.length > 1 && (
+							<fieldset className={classes.purposeChooser}>
+								<legend>Try it as</legend>
+								<div>
+									{activeModeLabels.map((item) => (
+										<label key={item.value}>
+											<input
+												type="radio"
+												name={`preview-purpose-${metadata.id}`}
+												value={item.value}
+												checked={mode === item.value}
+												onChange={() => selectMode(item.value)}
+											/>
+											<span>{item.label}</span>
+										</label>
+									))}
+								</div>
+							</fieldset>
+						)}
 						<div className={classes.controls}>
-							{activeModeLabels.length > 1 && (
-								<label className={classes.control}>
-									<span className={classes.controlLabel}>Preset</span>
-									<select
-										value={mode}
-										onChange={(event) =>
-											selectMode(event.target.value as PreviewMode)
-										}
-									>
-										{activeModeLabels.map((item) => (
-											<option key={item.value} value={item.value}>
-												{item.label}
-											</option>
-										))}
-									</select>
-								</label>
-							)}
 							<label className={classes.control}>
 								<span className={classes.controlLabel}>Size</span>
 								<select

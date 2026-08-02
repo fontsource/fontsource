@@ -66,6 +66,52 @@ const selectRegistryFamilyLanguages = (
 	return orderedLanguages;
 };
 
+const selectRegistryPreviewLanguage = (
+	registry?: RegistryFamily,
+	languages?: ListRegistryLanguagesResponse,
+) => {
+	const familyLanguages = selectRegistryFamilyLanguages(registry, languages);
+	const languagesWithSamples = familyLanguages?.filter((language) =>
+		language.sampleText?.short.trim(),
+	);
+	if (!languagesWithSamples?.length) return;
+
+	return (
+		languagesWithSamples.find(
+			(language) => language.id === registry?.primaryLanguage,
+		) ??
+		languagesWithSamples.find(
+			(language) => language.script === registry?.primaryScript,
+		) ??
+		languagesWithSamples[0]
+	);
+};
+
+const getRegistryPreviewText = (
+	registry?: RegistryFamily,
+	languages?: ListRegistryLanguagesResponse,
+	length: 'short' | 'long' = 'short',
+) => {
+	const familySample = registry?.sampleText;
+	if (familySample) {
+		return (
+			(length === 'long' ? familySample.long : familySample.short)?.trim() ??
+			familySample.short.trim()
+		);
+	}
+
+	const languageSample = selectRegistryPreviewLanguage(
+		registry,
+		languages,
+	)?.sampleText;
+	return (
+		(length === 'long'
+			? languageSample?.long
+			: languageSample?.short
+		)?.trim() ?? languageSample?.short.trim()
+	);
+};
+
 const parseRegistryUnicodeRange = (value: string): UnicodeRange[] =>
 	value
 		.split(',')
@@ -231,8 +277,10 @@ export {
 	getRegistryCharacterGroups,
 	getRegistryContent,
 	getRegistryFamilyKind,
+	getRegistryPreviewText,
 	getRegistrySourcePreviewStyle,
 	getUnicodeCharacter,
 	selectRegistryFamilyLanguages,
+	selectRegistryPreviewLanguage,
 	usesNameLigatures,
 };

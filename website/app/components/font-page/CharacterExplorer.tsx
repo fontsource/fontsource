@@ -30,6 +30,7 @@ import {
 	findUnmappedCharacters,
 	getRegistryCharacterGroups,
 	getRegistryFamilyKind,
+	getRegistryPreviewText,
 	getRegistrySourcePreviewStyle,
 	getUnicodeCharacter,
 	type RegistryDataState,
@@ -67,6 +68,7 @@ const maxSearchLength = 256;
 const maxDisplayedUnknownNameLength = 48;
 
 const registryCharacterGroupLabels = [
+	{ label: 'Sample', value: 'sample' },
 	{ label: 'All', value: 'all' },
 	{ label: 'Letters', value: 'letters' },
 	{ label: 'Marks', value: 'marks' },
@@ -188,16 +190,23 @@ export const CharacterExplorer = ({
 	const symbolCount = symbols?.length ?? 0;
 	const hasCatalogEntries = symbolCount > 0;
 	const previewSubset = getPreferredPreviewSubset(metadata, registry);
-	const isScriptFamily = !isLatinPreviewSubset(previewSubset);
+	const isScriptFamily = registry?.primaryScript
+		? registry.primaryScript !== 'Latn'
+		: !isLatinPreviewSubset(previewSubset);
+	const registryPreviewText =
+		registry?.sampleText || isScriptFamily
+			? getRegistryPreviewText(registry, languages, 'long')
+			: undefined;
 	const fallbackSample = useMemo(
-		() =>
-			registry?.sampleText?.long ??
-			registry?.sampleText?.short ??
-			getLanguagePreviewText(previewSubset),
-		[previewSubset, registry?.sampleText],
+		() => registryPreviewText ?? getLanguagePreviewText(previewSubset),
+		[previewSubset, registryPreviewText],
 	);
 	const fallbackGroups = useMemo(
-		() => ({ all: getSampleCharacters(fallbackSample) }),
+		() => getSampleCharacterGroups(fallbackSample),
+		[fallbackSample],
+	);
+	const representativeCharacters = useMemo(
+		() => getSampleCharacters(fallbackSample),
 		[fallbackSample],
 	);
 	const [resolvedCharacterGroups, setResolvedCharacterGroups] =
@@ -219,13 +228,20 @@ export const CharacterExplorer = ({
 			hasCatalogEntries && symbols ? createSymbolSearch(symbols) : undefined,
 		[hasCatalogEntries, symbols],
 	);
-	const explorerGroups: Record<string, readonly string[]> = useMemo(
-		() =>
-			hasCatalogEntries
-				? { all: symbolEntries }
-				: (resolvedCharacterGroups ?? fallbackGroups),
-		[fallbackGroups, hasCatalogEntries, resolvedCharacterGroups, symbolEntries],
-	);
+	const explorerGroups: Record<string, readonly string[]> = useMemo(() => {
+		if (hasCatalogEntries) return { all: symbolEntries };
+		const characterGroups = resolvedCharacterGroups ?? fallbackGroups;
+		return isScriptFamily
+			? { sample: representativeCharacters, ...characterGroups }
+			: characterGroups;
+	}, [
+		fallbackGroups,
+		hasCatalogEntries,
+		isScriptFamily,
+		representativeCharacters,
+		resolvedCharacterGroups,
+		symbolEntries,
+	]);
 	const groupLabels = registryCharacterGroupLabels.filter(
 		(item) => (explorerGroups[item.value]?.length ?? 0) > 0,
 	);
@@ -251,7 +267,10 @@ export const CharacterExplorer = ({
 				: (getUnicodeCharacter(symbol.codepoint) ?? symbol.name),
 		)
 		.join(' ');
-	const registrySample = registry?.sampleText?.short.trim();
+	const registrySample =
+		registry?.sampleText || isScriptFamily
+			? getRegistryPreviewText(registry, languages)
+			: undefined;
 	const [sample, setSample] = useState(
 		registrySample ||
 			catalogSample ||
