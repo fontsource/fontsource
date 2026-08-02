@@ -205,6 +205,7 @@ export const RegistryFamilySymbolsSchema = z
 		z.strictObject({
 			name: z.string().min(1).regex(/^\S+$/),
 			codepoint: UnicodeScalarSchema,
+			categories: z.array(IdSchema).min(1).optional(),
 		}),
 	)
 	.min(1);

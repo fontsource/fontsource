@@ -974,6 +974,7 @@ export type GetRegistryFamilySymbolsResponses = {
     200: Array<{
         name: string;
         codepoint: number;
+        categories?: Array<string>;
     }>;
 };
 

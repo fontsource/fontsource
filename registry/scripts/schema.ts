@@ -231,9 +231,17 @@ export const familyIconsSchema = z.strictObject({
 			z.strictObject({
 				name: z.string().min(1).regex(/^\S+$/),
 				codepoint: unicodeScalarSchema,
+				categories: z.array(idSchema).min(1).optional(),
 			}),
 		)
 		.min(1),
+	categoriesSource: z
+		.strictObject({
+			revision: revisionSchema,
+			path: sourcePathSchema,
+			sha256: sha256Schema,
+		})
+		.optional(),
 	source: z.strictObject({
 		revision: revisionSchema,
 		path: sourcePathSchema,
