@@ -46,6 +46,7 @@ import {
 } from '@/utils/symbol-search';
 
 import classes from './CharacterExplorer.module.css';
+import { SearchableLanguageList } from './SearchableLanguageList';
 
 interface CharacterExplorerProps {
 	metadata: GetFontResponse;
@@ -252,7 +253,6 @@ export const CharacterExplorer = ({
 		? group
 		: defaultGroup;
 	const [query, setQuery] = useState('');
-	const [languageQuery, setLanguageQuery] = useState('');
 	const [visibleCharacterCount, setVisibleCharacterCount] =
 		useState(glyphBatchSize);
 	const loadMoreRef = useRef<HTMLDivElement>(null);
@@ -444,28 +444,6 @@ export const CharacterExplorer = ({
 				? 'Search a character or code point'
 				: 'Search A, ampersand, or U+0026';
 	const familyLanguages = languages ?? [];
-	const normalizedLanguageQuery = normalizeSearchValue(languageQuery);
-	const filteredFamilyLanguages = useMemo(
-		() =>
-			normalizedLanguageQuery
-				? familyLanguages.filter((language) =>
-						[
-							language.id,
-							language.name,
-							language.preferredName,
-							language.autonym,
-							language.script,
-						]
-							.filter(Boolean)
-							.some((value) =>
-								normalizeSearchValue(String(value)).includes(
-									normalizedLanguageQuery,
-								),
-							),
-					)
-				: familyLanguages,
-		[familyLanguages, normalizedLanguageQuery],
-	);
 	const primaryLanguage = familyLanguages.find(
 		(language) => language.id === registry?.primaryLanguage,
 	);
@@ -883,48 +861,10 @@ export const CharacterExplorer = ({
 								languages
 							</strong>
 							{familyLanguages.length > 0 ? (
-								<>
-									{familyLanguages.length > 12 && (
-										<label
-											className={`${classes.search} ${classes.coverageSearch}`}
-											htmlFor={`language-search-${metadata.id}`}
-										>
-											<IconSearch aria-hidden height={16} />
-											<VisuallyHidden>
-												Search supported languages
-											</VisuallyHidden>
-											<input
-												id={`language-search-${metadata.id}`}
-												type="search"
-												autoComplete="off"
-												placeholder={`Search ${familyLanguages.length.toLocaleString('en')} languages`}
-												value={languageQuery}
-												onChange={(event) =>
-													setLanguageQuery(event.currentTarget.value)
-												}
-											/>
-										</label>
-									)}
-									{filteredFamilyLanguages.length > 0 ? (
-										<ul className={classes.coverageLanguages}>
-											{filteredFamilyLanguages.map((language) => (
-												<li key={language.id}>
-													<strong>
-														{language.preferredName ?? language.name}
-													</strong>
-													<span>
-														{language.autonym ?? language.name} ·{' '}
-														{language.script}
-													</span>
-												</li>
-											))}
-										</ul>
-									) : (
-										<p className={classes.sampleNotice} role="status">
-											No supported languages match “{languageQuery}”.
-										</p>
-									)}
-								</>
+								<SearchableLanguageList
+									familyId={metadata.id}
+									languages={familyLanguages}
+								/>
 							) : registry.languages.length > 0 ? (
 								<p className={classes.sampleNotice}>
 									Language names are temporarily unavailable. The Registry still

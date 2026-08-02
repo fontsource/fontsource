@@ -1,5 +1,8 @@
+import { VisuallyHidden } from '@mantine/core';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
+import { IconSearch } from '@/components/icons';
 import type {
 	GetFontResponse,
 	GetRegistrySourceCapabilitiesResponse,
@@ -23,6 +26,8 @@ import {
 
 import classes from './FamilyAbout.module.css';
 import { RegistryMarkdown } from './RegistryMarkdown';
+import { SearchableLanguageList } from './SearchableLanguageList';
+import listClasses from './SearchableMetadataList.module.css';
 
 interface FamilyAboutProps {
 	metadata: GetFontResponse;
@@ -55,6 +60,83 @@ const formatDate = (value?: string) => {
 
 const getRegistryAssetUrl = (value: string) =>
 	new URL(value, 'https://api.fontsource.org').toString();
+
+const normalizeSearchValue = (value: string) =>
+	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
+
+const SearchableFeatureList = ({
+	familyId,
+	featureTags,
+}: {
+	familyId: string;
+	featureTags: string[];
+}) => {
+	const [query, setQuery] = useState('');
+	const normalizedQuery = normalizeSearchValue(query);
+	const features = useMemo(
+		() =>
+			featureTags.map((tag) => ({
+				tag,
+				name: getOpenTypeFeatureName(tag),
+			})),
+		[featureTags],
+	);
+	const filteredFeatures = useMemo(
+		() =>
+			normalizedQuery
+				? features.filter(({ name, tag }) =>
+						normalizeSearchValue(`${name} ${tag}`).includes(normalizedQuery),
+					)
+				: features,
+		[features, normalizedQuery],
+	);
+	const listId = `feature-list-${familyId}`;
+
+	return (
+		<div className={listClasses.root}>
+			{featureTags.length > 8 && (
+				<label
+					htmlFor={`feature-search-${familyId}`}
+					className={listClasses.search}
+				>
+					<IconSearch aria-hidden height={16} />
+					<VisuallyHidden>Search OpenType features</VisuallyHidden>
+					<input
+						id={`feature-search-${familyId}`}
+						type="search"
+						autoComplete="off"
+						placeholder={`Search ${featureTags.length.toLocaleString('en')} features`}
+						value={query}
+						aria-controls={listId}
+						onChange={(event) => setQuery(event.currentTarget.value)}
+					/>
+				</label>
+			)}
+
+			{query && filteredFeatures.length > 0 && (
+				<p className={listClasses.status} role="status">
+					{filteredFeatures.length.toLocaleString('en')} matching{' '}
+					{filteredFeatures.length === 1 ? 'feature' : 'features'}
+				</p>
+			)}
+
+			{filteredFeatures.length > 0 ? (
+				<ul id={listId} className={listClasses.list}>
+					{filteredFeatures.map(({ name, tag }) => (
+						<li key={tag} title={tag}>
+							<strong>{name}</strong>
+							<code>{tag}</code>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p id={listId} className={listClasses.empty} role="status">
+					No OpenType features match “{query}”.
+				</p>
+			)}
+		</div>
+	);
+};
 
 export const FamilyAbout = ({
 	metadata,
@@ -294,28 +376,16 @@ export const FamilyAbout = ({
 						</h3>
 						<p>{coverageDescription}</p>
 						{!isSpecialUseFamily && familyLanguages.length > 0 ? (
-							<ul className={classes.languageList}>
-								{familyLanguages.slice(0, 6).map((language) => (
-									<li key={language.id}>
-										{language.preferredName ?? language.name}
-										{language.autonym &&
-											language.autonym !== language.name &&
-											` · ${language.autonym}`}
-									</li>
-								))}
-							</ul>
+							<SearchableLanguageList
+								familyId={metadata.id}
+								languages={familyLanguages}
+							/>
 						) : !registry &&
 							!isSymbolFamily &&
 							!isPunctuationFamily &&
 							!isDigitalFamily ? (
 							<p>{metadata.subsets.map(formatFontLabel).join(', ')}</p>
 						) : null}
-						{!isSpecialUseFamily && familyLanguages.length > 6 && (
-							<p className={classes.more}>
-								+{(registry?.languages.length ?? familyLanguages.length) - 6}{' '}
-								more languages
-							</p>
-						)}
 					</div>
 
 					<div>
@@ -361,19 +431,10 @@ export const FamilyAbout = ({
 									OpenType features in{' '}
 									{capabilitySource?.filename ?? 'the selected source'}
 								</strong>
-								<ul className={classes.featureList}>
-									{featureTags.slice(0, 8).map((tag) => (
-										<li key={tag} title={tag}>
-											{getOpenTypeFeatureName(tag)}
-											<code>{tag}</code>
-										</li>
-									))}
-								</ul>
-								{featureTags.length > 8 && (
-									<p className={classes.more}>
-										+{featureTags.length - 8} more detected features
-									</p>
-								)}
+								<SearchableFeatureList
+									familyId={metadata.id}
+									featureTags={featureTags}
+								/>
 								<p>
 									Feature availability can vary by source, script, and language.
 								</p>

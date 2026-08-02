@@ -110,53 +110,6 @@
 	}
 }
 
-.coverageLanguages {
-	max-height: 320px;
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 0;
-	margin: 10px 0 0;
-	padding: 0;
-	overflow-y: auto;
-	border-top: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
-	list-style: none;
-
-	li {
-		min-width: 0;
-		padding: 10px 12px 10px 0;
-		border-bottom: light-dark(
-			1px solid var(--mantine-color-border-0),
-			1px solid var(--mantine-color-border-1)
-		);
-	}
-
-	strong,
-	span {
-		display: block;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-	}
-
-	strong {
-		font-size: 13px;
-	}
-
-	span {
-		margin-top: 2px;
-		color: light-dark(#52617a, #aeb9cc);
-		font-size: 11px;
-	}
-}
-
-.coverageSearch {
-	max-width: 420px;
-	margin-top: 10px;
-}
-
 .subsets {
 	display: flex;
 	align-content: center;
@@ -574,10 +527,6 @@
 	.headingRow {
 		align-items: flex-start;
 		flex-direction: column;
-	}
-
-	.coverageLanguages {
-		grid-template-columns: minmax(0, 1fr);
 	}
 
 	.subsets {
