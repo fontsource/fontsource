@@ -348,6 +348,16 @@ const createGoogleIconsRepository = async (): Promise<{
 			'home 41\nsettings 42\n',
 		);
 	}
+	await writeFixture(
+		repository,
+		'update/current_versions.json',
+		canonicalJson({
+			'action::flourescent': 1,
+			'action::home': 1,
+			'action::settings': 1,
+			'symbols::home': 1,
+		}),
+	);
 	await writeFixture(repository, 'LICENSE', 'Apache License\n');
 	return {
 		repository,
@@ -797,9 +807,10 @@ describe('registry ingestion', () => {
 		).toMatchObject({
 			inputModes: ['codepoint', 'name-ligature'],
 			icons: [
-				{ name: 'flourescent', codepoint: 65 },
-				{ name: 'flourescent', codepoint: 66 },
+				{ name: 'flourescent', codepoint: 65, categories: ['action'] },
+				{ name: 'flourescent', codepoint: 66, categories: ['action'] },
 			],
+			categoriesSource: { path: 'update/current_versions.json' },
 			source: {
 				path: 'font/MaterialIcons-Regular.codepoints',
 			},
