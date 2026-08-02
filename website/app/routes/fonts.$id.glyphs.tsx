@@ -79,6 +79,7 @@ export default function GlyphsPage() {
 		<FamilyPageShell
 			metadata={metadata}
 			registry={registry}
+			previewSource={capabilitySource}
 			variableAvailable={Boolean(variableCSS)}
 			tabsValue="glyphs"
 		>

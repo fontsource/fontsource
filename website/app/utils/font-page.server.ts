@@ -1,5 +1,6 @@
 import {
 	getFont,
+	getFontStats,
 	getRegistryFamily,
 	getRegistrySourceCapabilities,
 	getVariableFont,
@@ -35,6 +36,15 @@ const loadFontPageBase = async (id: string, signal: AbortSignal) => {
 		registryState: registryResult.state,
 		...getFontPreviewCSS(metadata, variable),
 	};
+};
+
+const loadFontPageStats = async (id: string, signal: AbortSignal) => {
+	try {
+		return await getFontStats({ id }, { signal });
+	} catch (error) {
+		if (signal.aborted) throw error;
+		return undefined;
+	}
 };
 
 type FontPageBase = Awaited<ReturnType<typeof loadFontPageBase>>;
@@ -96,4 +106,9 @@ const loadFontPageLanguages = async (
 	};
 };
 
-export { loadFontPageBase, loadFontPageCapabilities, loadFontPageLanguages };
+export {
+	loadFontPageBase,
+	loadFontPageCapabilities,
+	loadFontPageLanguages,
+	loadFontPageStats,
+};

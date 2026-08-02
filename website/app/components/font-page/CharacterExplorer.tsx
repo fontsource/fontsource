@@ -1,5 +1,11 @@
 import { VisuallyHidden } from '@mantine/core';
-import { useClipboard, useDebouncedValue } from '@mantine/hooks';
+import {
+	useClipboard,
+	useDebouncedValue,
+	useElementSize,
+	useMergedRef,
+} from '@mantine/hooks';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import {
 	type CSSProperties,
 	type KeyboardEvent,
@@ -10,7 +16,7 @@ import {
 	useState,
 } from 'react';
 import { useRevalidator } from 'react-router';
-
+import { DropdownSimple } from '@/components/Dropdown';
 import { IconCopy, IconSearch } from '@/components/icons';
 import type {
 	GetFontResponse,
@@ -66,7 +72,9 @@ interface CharacterExplorerProps {
 
 type ExplorerMode = 'browse' | 'check';
 
-const glyphRenderBatchSize = 240;
+const glyphCellSize = 58;
+const glyphGridPadding = 36;
+const initialGlyphRowCount = 8;
 const maxSearchLength = 256;
 const maxDisplayedUnknownNameLength = 48;
 
@@ -79,6 +87,36 @@ const registryCharacterGroupLabels = [
 	{ label: 'Punctuation', value: 'punctuation' },
 	{ label: 'Symbols', value: 'symbols' },
 ] as const;
+
+const symbolCategoryLabels: Record<string, string> = {
+	action: 'Actions',
+	alert: 'Alerts',
+	av: 'Audio & video',
+	communication: 'Communication',
+	content: 'Content',
+	device: 'Devices',
+	editor: 'Editing',
+	file: 'Files',
+	hardware: 'Hardware',
+	home: 'Home',
+	image: 'Images',
+	maps: 'Maps',
+	navigation: 'Navigation',
+	notification: 'Notifications',
+	places: 'Places',
+	search: 'Search',
+	social: 'Social',
+	symbols: 'Symbols',
+	toggle: 'Toggles',
+};
+
+type CatalogSymbol = GetRegistryFamilySymbolsResponse[number] & {
+	categories?: string[];
+};
+
+const getSymbolCategoryValue = (category: string) => `category:${category}`;
+const getSymbolCategoryLabel = (category: string) =>
+	symbolCategoryLabels[category] ?? formatFontLabel(category);
 
 const characterGroupNouns: Record<string, [singular: string, plural: string]> =
 	{
@@ -137,13 +175,15 @@ const getCodePoints = (characters: string) =>
 		)
 		.join(' ');
 
+const isCombiningMark = (character: string) => /^\p{M}+$/u.test(character);
+
 const getCharacterName = (character: string) =>
 	characterNames[character] ??
-	(/^\p{M}+$/u.test(character) ? 'Combining mark' : undefined) ??
+	(isCombiningMark(character) ? 'Combining mark' : undefined) ??
 	(character.length === 1 ? `Character ${character}` : character);
 
 const getDisplayCharacter = (character?: string) =>
-	character && /^\p{M}+$/u.test(character) ? `◌${character}` : character;
+	character && isCombiningMark(character) ? `◌${character}` : character;
 
 const normalizeSearchValue = (value: string) =>
 	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
@@ -252,13 +292,40 @@ export const CharacterExplorer = ({
 		() => symbols?.map(getSymbolSearchKey) ?? [],
 		[symbols],
 	);
+	const symbolCategories = useMemo(() => {
+		const entries = symbols as CatalogSymbol[] | undefined;
+		return Array.from(
+			new Set(entries?.flatMap((symbol) => symbol.categories ?? []) ?? []),
+		).sort((left, right) =>
+			getSymbolCategoryLabel(left).localeCompare(getSymbolCategoryLabel(right)),
+		);
+	}, [symbols]);
+	const symbolCategoriesByKey = useMemo(() => {
+		const entries = symbols as CatalogSymbol[] | undefined;
+		return new Map(
+			entries?.map((symbol) => [
+				getSymbolSearchKey(symbol),
+				symbol.categories ?? [],
+			]) ?? [],
+		);
+	}, [symbols]);
 	const symbolSearch = useMemo(
 		() =>
 			hasCatalogEntries && symbols ? createSymbolSearch(symbols) : undefined,
 		[hasCatalogEntries, symbols],
 	);
 	const explorerGroups: Record<string, readonly string[]> = useMemo(() => {
-		if (hasCatalogEntries) return { all: symbolEntries };
+		if (hasCatalogEntries) {
+			return Object.fromEntries([
+				['all', symbolEntries],
+				...symbolCategories.map((category) => [
+					getSymbolCategoryValue(category),
+					symbolEntries.filter((entry) =>
+						symbolCategoriesByKey.get(entry)?.includes(category),
+					),
+				]),
+			]);
+		}
 		const characterGroups = resolvedCharacterGroups ?? fallbackGroups;
 		return isScriptFamily
 			? { sample: representativeCharacters, ...characterGroups }
@@ -269,11 +336,21 @@ export const CharacterExplorer = ({
 		isScriptFamily,
 		representativeCharacters,
 		resolvedCharacterGroups,
+		symbolCategories,
+		symbolCategoriesByKey,
 		symbolEntries,
 	]);
-	const groupLabels = registryCharacterGroupLabels.filter(
-		(item) => (explorerGroups[item.value]?.length ?? 0) > 0,
-	);
+	const groupLabels = hasCatalogEntries
+		? [
+				{ label: 'All categories', value: 'all' },
+				...symbolCategories.map((category) => ({
+					label: getSymbolCategoryLabel(category),
+					value: getSymbolCategoryValue(category),
+				})),
+			]
+		: registryCharacterGroupLabels.filter(
+				(item) => (explorerGroups[item.value]?.length ?? 0) > 0,
+			);
 	const defaultGroup = groupLabels[0]?.value ?? 'all';
 	const [mode, setMode] = useState<ExplorerMode>('browse');
 	const [group, setGroup] = useState(defaultGroup);
@@ -281,9 +358,12 @@ export const CharacterExplorer = ({
 		? group
 		: defaultGroup;
 	const [query, setQuery] = useState('');
-	const [visibleCharacterCount, setVisibleCharacterCount] =
-		useState(glyphRenderBatchSize);
-	const loadMoreRef = useRef<HTMLDivElement>(null);
+	const [mounted, setMounted] = useState(false);
+	useEffect(() => setMounted(true), []);
+	const catalogRef = useRef<HTMLDivElement>(null);
+	const { ref: catalogSizeRef, width: catalogWidth } =
+		useElementSize<HTMLDivElement>();
+	const mergedCatalogRef = useMergedRef(catalogRef, catalogSizeRef);
 	const [selected, setSelected] = useState(
 		explorerGroups[defaultGroup]?.[0] ?? '&',
 	);
@@ -328,7 +408,12 @@ export const CharacterExplorer = ({
 	const matchingCharacters = useMemo(() => {
 		const normalized = normalizeSearchValue(deferredQuery);
 		if (!normalized) return explorerGroups[activeGroup] ?? [];
-		if (symbolSearch) return searchSymbolCatalog(symbolSearch, deferredQuery);
+		if (symbolSearch) {
+			const activeCharacters = new Set(explorerGroups[activeGroup] ?? []);
+			return searchSymbolCatalog(symbolSearch, deferredQuery).filter((entry) =>
+				activeCharacters.has(entry),
+			);
+		}
 
 		return searchableCharacters.filter((character) => {
 			const catalogEntry = isSymbolKey(character);
@@ -359,42 +444,46 @@ export const CharacterExplorer = ({
 		searchableCharacters,
 		symbolSearch,
 	]);
-	const visibleCharacters = matchingCharacters.slice(0, visibleCharacterCount);
-	const remainingCharacterCount = Math.max(
-		0,
-		matchingCharacters.length - visibleCharacters.length,
+	const columnCount = Math.max(
+		1,
+		Math.floor(
+			Math.max(catalogWidth - glyphGridPadding, glyphCellSize) / glyphCellSize,
+		),
 	);
-	const hasMoreCharacters = remainingCharacterCount > 0;
-	useEffect(() => {
-		const loadMore = loadMoreRef.current;
-		if (
-			!loadMore ||
-			!hasMoreCharacters ||
-			typeof IntersectionObserver === 'undefined'
-		) {
-			return;
-		}
-
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (
-					!entry?.isIntersecting ||
-					loadMore.contains(document.activeElement)
-				) {
-					return;
-				}
-				setVisibleCharacterCount((count) =>
-					Math.min(count + glyphRenderBatchSize, matchingCharacters.length),
-				);
-			},
-			{ rootMargin: '240px 0px' },
-		);
-		observer.observe(loadMore);
-		return () => observer.disconnect();
-	}, [hasMoreCharacters, matchingCharacters.length]);
-	const activeCharacter = visibleCharacters.includes(selected)
+	const characterRows = useMemo(
+		() =>
+			Array.from(
+				{ length: Math.ceil(matchingCharacters.length / columnCount) },
+				(_, index) =>
+					matchingCharacters.slice(
+						index * columnCount,
+						(index + 1) * columnCount,
+					),
+			),
+		[matchingCharacters, columnCount],
+	);
+	const rowVirtualizer = useVirtualizer({
+		count: mounted ? characterRows.length : 0,
+		getScrollElement: () => catalogRef.current,
+		estimateSize: () => glyphCellSize,
+		getItemKey: (index) => characterRows[index]?.[0] ?? index,
+		overscan: 5,
+	});
+	const virtualRows = rowVirtualizer.getVirtualItems();
+	const renderedRows = mounted
+		? virtualRows
+		: characterRows.slice(0, initialGlyphRowCount).map((_, index) => ({
+				index,
+				key: index,
+				start: index * glyphCellSize,
+				size: glyphCellSize,
+			}));
+	const virtualGridHeight = mounted
+		? rowVirtualizer.getTotalSize()
+		: renderedRows.length * glyphCellSize;
+	const activeCharacter = matchingCharacters.includes(selected)
 		? selected
-		: visibleCharacters[0];
+		: matchingCharacters[0];
 	const showingSampleCharacters =
 		!hasCatalogEntries && (!capabilities || !resolvedCharacterGroups);
 	const canRetryExplorer =
@@ -422,18 +511,25 @@ export const CharacterExplorer = ({
 	const activeIsCatalogEntry = activeCharacter
 		? isSymbolKey(activeCharacter)
 		: false;
-	const activeDisplayCharacter = activeCharacter
-		? getSymbolDisplayValue(activeCharacter, hasNamedLigatures)
-		: undefined;
 	const activeSymbolCodepoint = getSymbolCodepoint(activeCharacter ?? '');
 	const activeSymbolName = activeIsCatalogEntry
 		? getSymbolName(activeCharacter ?? '')
 		: undefined;
+	const markPreviewBase = explorerGroups.letters?.[0] ?? '\u00a0';
+	const activeIsCombiningMark = activeCharacter
+		? isCombiningMark(activeCharacter)
+		: false;
+	const getPreviewCharacter = (character: string) =>
+		isCombiningMark(character)
+			? `${markPreviewBase}${character}`
+			: getSymbolDisplayValue(character, hasNamedLigatures);
 	const selectedName = activeSymbolName
 		? formatFontLabel(activeSymbolName)
-		: activeCharacter
-			? getCharacterName(activeCharacter)
-			: '';
+		: activeIsCombiningMark
+			? `Combining mark on ${markPreviewBase.trim() || 'a spacing guide'}`
+			: activeCharacter
+				? getCharacterName(activeCharacter)
+				: '';
 	const selectedUnicode = activeIsCatalogEntry
 		? activeSymbolCodepoint === undefined
 			? ''
@@ -530,16 +626,6 @@ export const CharacterExplorer = ({
 		event: KeyboardEvent<HTMLButtonElement>,
 		index: number,
 	) => {
-		const grid = event.currentTarget.closest('[data-glyph-grid]');
-		const columnCount = grid
-			? Math.max(
-					1,
-					window
-						.getComputedStyle(grid)
-						.gridTemplateColumns.split(' ')
-						.filter(Boolean).length,
-				)
-			: 1;
 		let nextIndex = index;
 
 		switch (event.key) {
@@ -559,31 +645,42 @@ export const CharacterExplorer = ({
 				nextIndex = 0;
 				break;
 			case 'End':
-				nextIndex = visibleCharacters.length - 1;
+				nextIndex = matchingCharacters.length - 1;
 				break;
 			default:
 				return;
 		}
 
 		event.preventDefault();
-		nextIndex = Math.min(visibleCharacters.length - 1, Math.max(0, nextIndex));
-		const nextCharacter = visibleCharacters[nextIndex];
+		nextIndex = Math.min(matchingCharacters.length - 1, Math.max(0, nextIndex));
+		const nextCharacter = matchingCharacters[nextIndex];
 		if (!nextCharacter) return;
 
 		setSelected(nextCharacter);
+		rowVirtualizer.scrollToIndex(Math.floor(nextIndex / columnCount), {
+			align: 'auto',
+		});
 		window.requestAnimationFrame(() => {
-			document.getElementById(`glyph-${metadata.id}-${nextIndex}`)?.focus();
+			window.requestAnimationFrame(() => {
+				document.getElementById(`glyph-${metadata.id}-${nextIndex}`)?.focus();
+			});
 		});
 	};
 	const updateQuery = (value: string) => {
 		setQuery(value);
-		setVisibleCharacterCount(glyphRenderBatchSize);
 		setSelected(value ? '' : (explorerGroups[activeGroup]?.[0] ?? '&'));
+		catalogRef.current?.scrollTo({ top: 0 });
+	};
+	const updateGroup = (value: string) => {
+		setGroup(value);
+		setSelected(explorerGroups[value]?.[0] ?? '&');
+		setQuery('');
+		catalogRef.current?.scrollTo({ top: 0 });
 	};
 	const primaryCopyValue =
 		hasNamedLigatures && activeSymbolName
 			? activeSymbolName
-			: (activeDisplayCharacter ?? '');
+			: (activeCharacter ?? '');
 
 	const renderInspector = (variantClass: string) =>
 		activeCharacter ? (
@@ -594,7 +691,7 @@ export const CharacterExplorer = ({
 				}
 			>
 				<div className={classes.largeCharacter} style={specimenStyle}>
-					{activeDisplayCharacter}
+					{getPreviewCharacter(activeCharacter)}
 				</div>
 				<strong>{selectedName}</strong>
 				<code>{selectedCodePoint}</code>
@@ -612,7 +709,9 @@ export const CharacterExplorer = ({
 								? 'Copy ligature'
 								: activeIsCatalogEntry
 									? 'Copy symbol'
-									: 'Copy character'}
+									: activeIsCombiningMark
+										? 'Copy mark'
+										: 'Copy character'}
 				</button>
 				{selectedUnicode && (
 					<button
@@ -695,7 +794,22 @@ export const CharacterExplorer = ({
 								onChange={(event) => updateQuery(event.currentTarget.value)}
 							/>
 						</label>
-						{groupLabels.length > 1 && (
+						{hasCatalogEntries && groupLabels.length > 1 ? (
+							<DropdownSimple
+								label={
+									groupLabels.find((item) => item.value === activeGroup)
+										?.label ?? 'All categories'
+								}
+								ariaLabel="Filter symbols by category"
+								items={groupLabels.map((item) => ({
+									...item,
+									isRefined: item.value === activeGroup,
+								}))}
+								refine={updateGroup}
+								w={180}
+								dropdownWidth={220}
+							/>
+						) : groupLabels.length > 1 ? (
 							<fieldset
 								className={classes.groupSwitch}
 								aria-label="Character group"
@@ -706,18 +820,13 @@ export const CharacterExplorer = ({
 										type="button"
 										data-active={activeGroup === item.value || undefined}
 										aria-pressed={activeGroup === item.value}
-										onClick={() => {
-											setGroup(item.value);
-											setSelected(explorerGroups[item.value]?.[0] ?? '&');
-											setQuery('');
-											setVisibleCharacterCount(glyphRenderBatchSize);
-										}}
+										onClick={() => updateGroup(item.value)}
 									>
 										{item.label}
 									</button>
 								))}
 							</fieldset>
-						)}
+						) : null}
 					</div>
 					<div className={classes.resultSummary}>
 						<span aria-live="polite" aria-atomic="true">
@@ -749,7 +858,7 @@ export const CharacterExplorer = ({
 						{renderInspector(classes.mobileInspector)}
 
 						<div className={classes.explorer}>
-							<div className={classes.catalog}>
+							<div className={classes.catalog} ref={mergedCatalogRef}>
 								<fieldset
 									className={classes.grid}
 									style={specimenStyle}
@@ -758,39 +867,65 @@ export const CharacterExplorer = ({
 									<VisuallyHidden component="legend">
 										{metadata.family} character results
 									</VisuallyHidden>
-									{visibleCharacters.map((character, index) => {
-										const catalogEntry = isSymbolKey(character);
-										const displayCharacter = getSymbolDisplayValue(
-											character,
-											hasNamedLigatures,
-										);
-										const symbolCodepoint = getSymbolCodepoint(character);
-										const symbolLabel =
-											symbolCodepoint === undefined
-												? ''
-												: `, ${formatCodepoint(symbolCodepoint)}`;
+									<div
+										className={classes.virtualGrid}
+										style={{ height: virtualGridHeight }}
+									>
+										{renderedRows.map((virtualRow) => {
+											const row = characterRows[virtualRow.index] ?? [];
+											return (
+												<div
+													key={virtualRow.key}
+													className={classes.virtualRow}
+													style={{
+														gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
+														transform: `translateY(${virtualRow.start}px)`,
+													}}
+												>
+													{row.map((character, columnIndex) => {
+														const index =
+															virtualRow.index * columnCount + columnIndex;
+														const catalogEntry = isSymbolKey(character);
+														const displayCharacter =
+															getPreviewCharacter(character);
+														const symbolCodepoint =
+															getSymbolCodepoint(character);
+														const symbolLabel =
+															symbolCodepoint === undefined
+																? ''
+																: `, ${formatCodepoint(symbolCodepoint)}`;
 
-										return (
-											<button
-												key={`${activeGroup}-${character}`}
-												id={`glyph-${metadata.id}-${index}`}
-												type="button"
-												aria-label={
-													catalogEntry
-														? `${getCharacterName(getSymbolName(character))}${hasNamedLigatures ? `, name ligature ${getSymbolName(character)}` : ''}${symbolLabel}`
-														: `${getCharacterName(character)}, ${getCodePoints(character)}`
-												}
-												aria-pressed={activeCharacter === character}
-												data-active={activeCharacter === character || undefined}
-												tabIndex={activeCharacter === character ? 0 : -1}
-												onClick={() => setSelected(character)}
-												onFocus={() => setSelected(character)}
-												onKeyDown={(event) => moveGlyphFocus(event, index)}
-											>
-												{displayCharacter}
-											</button>
-										);
-									})}
+														return (
+															<button
+																key={`${activeGroup}-${character}`}
+																id={`glyph-${metadata.id}-${index}`}
+																type="button"
+																aria-label={
+																	catalogEntry
+																		? `${getCharacterName(getSymbolName(character))}${hasNamedLigatures ? `, name ligature ${getSymbolName(character)}` : ''}${symbolLabel}`
+																		: `${getCharacterName(character)}, ${getCodePoints(character)}${isCombiningMark(character) ? `, previewed on ${markPreviewBase.trim() || 'a spacing guide'}` : ''}`
+																}
+																aria-pressed={activeCharacter === character}
+																data-active={
+																	activeCharacter === character || undefined
+																}
+																tabIndex={
+																	activeCharacter === character ? 0 : -1
+																}
+																onClick={() => setSelected(character)}
+																onFocus={() => setSelected(character)}
+																onKeyDown={(event) =>
+																	moveGlyphFocus(event, index)
+																}
+															>
+																{displayCharacter}
+															</button>
+														);
+													})}
+												</div>
+											);
+										})}
+									</div>
 									{matchingCharacters.length === 0 && (
 										<div className={classes.empty}>
 											<p>
@@ -808,23 +943,6 @@ export const CharacterExplorer = ({
 										</div>
 									)}
 								</fieldset>
-								{hasMoreCharacters && (
-									<div className={classes.loadMore} ref={loadMoreRef}>
-										<button
-											type="button"
-											onClick={() =>
-												setVisibleCharacterCount((count) =>
-													Math.min(
-														count + glyphRenderBatchSize,
-														matchingCharacters.length,
-													),
-												)
-											}
-										>
-											Load more {hasCatalogEntries ? 'symbols' : 'characters'}
-										</button>
-									</div>
-								)}
 							</div>
 
 							{renderInspector(classes.desktopInspector)}

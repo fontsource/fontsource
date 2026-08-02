@@ -49,6 +49,10 @@
 	text-overflow: ellipsis;
 }
 
+.checkboxInput {
+	font-weight: 400;
+}
+
 .caret {
 	transition: transform 120ms ease;
 }

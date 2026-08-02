@@ -84,16 +84,29 @@
 	}
 }
 
-.itemHeader {
-	min-width: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 8px;
+.languageList {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	max-height: 280px;
+}
 
-	strong {
-		min-width: 0;
-	}
+.axisList {
+	grid-template-columns: minmax(0, 1fr);
+	max-height: 380px;
+}
+
+.featureList {
+	max-height: 380px;
+}
+
+.itemDescription {
+	max-width: 54ch;
+	margin-top: 5px !important;
+	font-size: 12px !important;
+	line-height: 1.5 !important;
+}
+
+.itemTag {
+	margin-top: 7px !important;
 }
 
 .itemMeta {
@@ -119,7 +132,8 @@
 }
 
 @media (--lt-sm) {
-	.list {
+	.list,
+	.languageList {
 		grid-template-columns: minmax(0, 1fr);
 	}
 

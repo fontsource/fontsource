@@ -74,21 +74,25 @@ const SearchableLanguageList = ({
 			)}
 
 			{filteredLanguages.length > 0 ? (
-				<ul id={listId} className={classes.list}>
+				<ul id={listId} className={`${classes.list} ${classes.languageList}`}>
 					{filteredLanguages.map((language) => {
 						const displayName = language.preferredName ?? language.name;
-						const script = getScriptLabel(language.script);
+						const scriptLabel = getScriptLabel(language.script);
 						const autonym =
 							language.autonym && language.autonym !== displayName
 								? language.autonym
 								: undefined;
+						const showScript = !normalizeSearchValue(displayName).includes(
+							normalizeSearchValue(scriptLabel),
+						);
+						const details = [
+							autonym,
+							showScript ? scriptLabel : undefined,
+						].filter((value): value is string => Boolean(value));
 						return (
 							<li key={language.id}>
 								<strong>{displayName}</strong>
-								<span>
-									{autonym ? `${autonym} · ` : ''}
-									{script} script
-								</span>
+								{details.length > 0 && <span>{details.join(' · ')}</span>}
 							</li>
 						);
 					})}

@@ -41,6 +41,7 @@ const Icon = ({ label, icon, href, ...others }: IconProps) => {
 				target="_blank"
 				rel="noreferrer"
 				variant="transparent"
+				size={40}
 				aria-label={label}
 				{...others}
 			>
@@ -90,11 +91,7 @@ const SelectedFontsLink = ({
 			<NavLink
 				to="/selected-fonts"
 				aria-label={label}
-				className={({ isActive }) =>
-					isActive
-						? cx(classes.selectedFonts, classes.selectedFontsActive)
-						: classes.selectedFonts
-				}
+				className={classes.selectedFonts}
 			>
 				<IconStack2 aria-hidden size={20} stroke={1.8} />
 				{ready && count > 0 && (

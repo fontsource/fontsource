@@ -6,7 +6,7 @@
 
 .headingRow {
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: space-between;
 	gap: 32px;
 	margin-bottom: 24px;
@@ -173,12 +173,23 @@
 
 .grid {
 	min-width: 0;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
-	align-content: start;
 	margin: 0;
 	padding: 18px;
 	border: 0;
+}
+
+.virtualGrid {
+	position: relative;
+	min-width: 0;
+}
+
+.virtualRow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: grid;
+	height: 58px;
 
 	> button {
 		min-width: 0;
@@ -205,42 +216,6 @@
 		&:focus-visible {
 			outline: 2px solid var(--mantine-color-purple-0);
 			outline-offset: -3px;
-		}
-	}
-}
-
-.loadMore {
-	display: flex;
-	justify-content: center;
-	padding: 14px 18px 18px;
-	overflow-anchor: none;
-	border-top: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
-
-	button {
-		min-height: 44px;
-		padding: 0 18px;
-		border: light-dark(
-			1px solid var(--mantine-color-border-0),
-			1px solid var(--mantine-color-border-1)
-		);
-		border-radius: 4px;
-		color: var(--mantine-color-purple-0);
-		background: transparent;
-		font: inherit;
-		font-size: 13px;
-		font-weight: 650;
-		cursor: pointer;
-
-		&:hover {
-			background: light-dark(#efeeff, #172138);
-		}
-
-		&:focus-visible {
-			outline: 2px solid var(--mantine-color-purple-0);
-			outline-offset: 2px;
 		}
 	}
 }

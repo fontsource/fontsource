@@ -2,10 +2,10 @@ import { VisuallyHidden } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
-import { InfoTooltip } from '@/components/InfoTooltip';
 import { IconCopy, IconSearch } from '@/components/icons';
 import type {
 	GetFontResponse,
+	GetFontStatsResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetRegistryTaxonomyResponse,
 	GetVariableFontResponse,
@@ -19,6 +19,7 @@ import {
 } from '@/utils/font-labels';
 import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
 import {
+	getOpenTypeFeatureDescription,
 	getOpenTypeFeatureName,
 	getRegistryContent,
 	getRegistryFamilyKind,
@@ -46,6 +47,7 @@ interface FamilyAboutProps {
 	taxonomy?: GetRegistryTaxonomyResponse;
 	capabilities?: GetRegistrySourceCapabilitiesResponse;
 	capabilitySource?: RegistrySource;
+	stats?: GetFontStatsResponse;
 	registryState: RegistryDataState;
 	enrichmentUnavailable?: boolean;
 	capabilitiesState: RegistryDataState;
@@ -64,11 +66,24 @@ const formatDate = (value?: string) => {
 	}).format(date);
 };
 
+const compactNumber = new Intl.NumberFormat('en', {
+	notation: 'compact',
+	maximumFractionDigits: 2,
+});
+
+const exactNumber = new Intl.NumberFormat('en');
+
 const getRegistryAssetUrl = (value: string) =>
 	new URL(value, 'https://api.fontsource.org').toString();
 
 const normalizeSearchValue = (value: string) =>
 	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
+
+const summarizeDescription = (value?: string) => {
+	const description = value?.trim();
+	if (!description) return;
+	return description.match(/^.*?[.!?](?:\s|$)/u)?.[0].trim() ?? description;
+};
 
 const SourceFileItem = ({
 	source,
@@ -133,14 +148,17 @@ const SearchableFeatureList = ({
 			featureTags.map((tag) => ({
 				tag,
 				name: getOpenTypeFeatureName(tag),
+				description: getOpenTypeFeatureDescription(tag),
 			})),
 		[featureTags],
 	);
 	const filteredFeatures = useMemo(
 		() =>
 			normalizedQuery
-				? features.filter(({ name, tag }) =>
-						normalizeSearchValue(`${name} ${tag}`).includes(normalizedQuery),
+				? features.filter(({ name, tag, description }) =>
+						normalizeSearchValue(
+							`${name} ${tag} ${description ?? ''}`,
+						).includes(normalizedQuery),
 					)
 				: features,
 		[features, normalizedQuery],
@@ -176,11 +194,19 @@ const SearchableFeatureList = ({
 			)}
 
 			{filteredFeatures.length > 0 ? (
-				<ul id={listId} className={listClasses.list}>
-					{filteredFeatures.map(({ name, tag }) => (
+				<ul
+					id={listId}
+					className={`${listClasses.list} ${listClasses.featureList}`}
+				>
+					{filteredFeatures.map(({ name, tag, description }) => (
 						<li key={tag}>
 							<strong>{name}</strong>
-							<code>{tag}</code>
+							{description && (
+								<span className={listClasses.itemDescription}>
+									{description}
+								</span>
+							)}
+							<code className={listClasses.itemTag}>{tag}</code>
 						</li>
 					))}
 				</ul>
@@ -212,7 +238,7 @@ const SearchableAxisList = ({
 					tag,
 					range,
 					name: definition?.name ?? getAxisLabel(tag),
-					description: definition?.description.trim(),
+					description: summarizeDescription(definition?.description),
 				};
 			}),
 		[axes, axisRegistry],
@@ -259,18 +285,18 @@ const SearchableAxisList = ({
 			)}
 
 			{filteredAxes.length > 0 ? (
-				<ul id={listId} className={listClasses.list}>
+				<ul
+					id={listId}
+					className={`${listClasses.list} ${listClasses.axisList}`}
+				>
 					{filteredAxes.map(({ tag, range, name, description }) => (
 						<li key={tag}>
-							<div className={listClasses.itemHeader}>
-								<strong>{name}</strong>
-								{description && (
-									<InfoTooltip
-										ariaLabel={`What the ${name} axis does`}
-										label={description}
-									/>
-								)}
-							</div>
+							<strong>{name}</strong>
+							{description && (
+								<span className={listClasses.itemDescription}>
+									{description}
+								</span>
+							)}
 							<span className={listClasses.itemMeta}>
 								<code>{tag}</code> · {range.min}–{range.max} · default{' '}
 								{range.default}
@@ -298,6 +324,7 @@ export const FamilyAbout = ({
 	taxonomy,
 	capabilities,
 	capabilitySource,
+	stats,
 	registryState,
 	enrichmentUnavailable = false,
 	capabilitiesState,
@@ -353,7 +380,25 @@ export const FamilyAbout = ({
 		new Set(sources.map((source) => source.format.toUpperCase())),
 	);
 	const repository = registry?.project?.repository ?? metadata.source;
+	const provider = registry?.provider ?? metadata.type;
+	const providerLabel = ['google', 'google-icons'].includes(provider)
+		? 'Google Fonts'
+		: formatFontLabel(provider);
 	const updated = formatDate(registry?.sourceModified ?? metadata.lastModified);
+	const monthlyUsage = stats
+		? [
+				{
+					provider: 'npm',
+					value: stats.total.npmDownloadMonthly,
+					unit: 'downloads',
+				},
+				{
+					provider: 'jsDelivr',
+					value: stats.total.jsDelivrHitsMonthly,
+					unit: 'requests',
+				},
+			].filter(({ value }) => value > 0)
+		: [];
 	const featureTags = capabilities
 		? Array.from(
 				new Set([...capabilities.features.gsub, ...capabilities.features.gpos]),
@@ -407,7 +452,7 @@ export const FamilyAbout = ({
 
 			<div className={classes.intro}>
 				<div className={classes.story}>
-					<h2 id="about-heading">{metadata.family}, in context.</h2>
+					<h2 id="about-heading">About {metadata.family}.</h2>
 					<div className={classes.prose}>
 						<RegistryMarkdown value={description} />
 					</div>
@@ -469,6 +514,28 @@ export const FamilyAbout = ({
 							<dd>{updated}</dd>
 						</div>
 					)}
+					{monthlyUsage.length > 0 && (
+						<div>
+							<dt>Monthly usage</dt>
+							<dd>
+								<ul className={classes.usageStats}>
+									{monthlyUsage.map(({ provider, value, unit }) => (
+										<li key={provider}>
+											<span>{provider}</span>
+											<span className={classes.usageValue}>
+												<span aria-hidden="true">
+													{compactNumber.format(value)} {unit}
+												</span>
+												<VisuallyHidden>
+													{exactNumber.format(value)} {unit} last month
+												</VisuallyHidden>
+											</span>
+										</li>
+									))}
+								</ul>
+							</dd>
+						</div>
+					)}
 					{registry?.license.id && (
 						<div>
 							<dt>License</dt>
@@ -520,7 +587,9 @@ export const FamilyAbout = ({
 				</div>
 
 				<div className={classes.capabilityGrid}>
-					<div className={classes.capabilityPanel}>
+					<div
+						className={`${classes.capabilityPanel} ${classes.languagePanel}`}
+					>
 						<h3>
 							{isSpecialUseFamily
 								? 'Character use'
@@ -540,20 +609,16 @@ export const FamilyAbout = ({
 						) : null}
 					</div>
 
-					<div className={classes.capabilityPanel}>
+					<div className={`${classes.capabilityPanel} ${classes.axisPanel}`}>
 						<h3>Styles and axes</h3>
-						<div className={classes.styleSummary}>
-							<span>
-								{hasVariableWeight && metadata.weights.length === 1
-									? 'Variable weight'
-									: `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`}
-								<InfoTooltip
-									ariaLabel="What font weight means"
-									label="Font weight controls how light or bold text appears. CSS commonly uses 400 for regular text and 700 for bold text."
-								/>
-							</span>
-							<span>{metadata.styles.map(formatFontLabel).join(', ')}</span>
-						</div>
+						<p className={classes.styleSummary}>
+							{hasVariableWeight && metadata.weights.length === 1
+								? 'A continuous range of weights'
+								: `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`}{' '}
+							in{' '}
+							{metadata.styles.map(formatFontLabel).join(' and ').toLowerCase()}{' '}
+							{metadata.styles.length === 1 ? 'style' : 'styles'}.
+						</p>
 						{axes.length > 0 ? (
 							<>
 								<p className={classes.axisIntro}>
@@ -578,13 +643,11 @@ export const FamilyAbout = ({
 					</div>
 
 					{featureTags.length > 0 && (
-						<div
-							className={`${classes.capabilityPanel} ${classes.featurePanel}`}
-						>
+						<div className={classes.capabilityPanel}>
 							<h3>OpenType features</h3>
 							<p>
-								Built-in substitutions and positioning. Availability can vary
-								between font files.
+								Typographic behaviors that adjust character forms, spacing, and
+								positioning. Availability can vary between files.
 							</p>
 							<SearchableFeatureList
 								familyId={metadata.id}
@@ -649,11 +712,7 @@ export const FamilyAbout = ({
 				<dl className={classes.sourceSummary}>
 					<div>
 						<dt>Provider</dt>
-						<dd>
-							{registry
-								? formatFontLabel(registry.provider)
-								: formatFontLabel(metadata.type)}
-						</dd>
+						<dd>{providerLabel}</dd>
 					</div>
 					{sources.length > 0 && (
 						<div>
