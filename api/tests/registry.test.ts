@@ -48,6 +48,7 @@ const VIEWS = [
 				url: 'https://openfontlicense.org',
 				text: 'Test license',
 			},
+			previewSource: SOURCE_SHA256,
 			symbols: {
 				catalogUrl: '/v1/registry/families/abel/symbols',
 				inputModes: ['codepoint', 'name-ligature'],

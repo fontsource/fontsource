@@ -87,6 +87,36 @@ const sourceCapabilities = (source: FamilySource) =>
 		colorTables: source.inspection.colorTables,
 	});
 
+const selectPreviewSource = (
+	distribution: ReturnType<typeof resolveDistributionSources>,
+): string => {
+	// Prefer the normal variable source that represents the package's standard
+	// axes. It gives previews the broadest useful style range from one source.
+	const variable =
+		distribution.variable?.find(
+			(variant) => variant.axisKey === 'standard' && variant.style === 'normal',
+		) ??
+		distribution.variable?.find((variant) => variant.style === 'normal') ??
+		distribution.variable?.find((variant) => variant.axisKey === 'standard') ??
+		distribution.variable?.[0];
+	if (variable) return variable.source;
+
+	const staticSource = distribution.static
+		?.toSorted((left, right) => {
+			const leftStyle = left.style === 'normal' ? 0 : 1;
+			const rightStyle = right.style === 'normal' ? 0 : 1;
+			return (
+				leftStyle - rightStyle ||
+				Math.abs(left.weight - 400) - Math.abs(right.weight - 400) ||
+				right.weight - left.weight
+			);
+		})
+		.at(0);
+	if (staticSource) return staticSource.source;
+
+	throw new Error('Registry distribution has no preview source');
+};
+
 const createArchivePlan = async (root: string, registryRevision: string) => {
 	await validateRegistry(root);
 
@@ -156,6 +186,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 					? ({ type: 'all' } as const)
 					: ({ type: 'subsets', ...distribution.characters } as const),
 		};
+		const previewSource = selectPreviewSource(publicDistribution);
 		const axes = [
 			...new Set(
 				family.sources.flatMap(({ inspection }) =>
@@ -245,6 +276,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 							}
 						: undefined,
 					sources,
+					previewSource,
 					distribution: publicDistribution,
 				}),
 			),
