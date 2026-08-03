@@ -77,6 +77,17 @@ type PreviewMode = 'headline' | 'paragraph' | 'waterfall' | 'compare';
 type PreviewAlignment = 'start' | 'center' | 'end';
 type RegistryLanguage = ListRegistryLanguagesResponse[number];
 
+interface PreviewTypography {
+	size: number;
+	weight: number;
+	italic: boolean;
+	tracking: number;
+	lineHeight: number;
+	alignment: PreviewAlignment;
+}
+
+type PreviewTypographyByMode = Record<PreviewMode, PreviewTypography>;
+
 interface PreviewAxis {
 	tag: string;
 	name: string;
@@ -99,7 +110,7 @@ const symbolModeLabels = [{ label: 'Symbols', value: 'headline' as const }];
 const defaultPreviewText: Record<PreviewMode, string> = {
 	headline: 'Make something\nmemorable.',
 	paragraph:
-		'Good typography makes a page easier to enter, understand, and remember.',
+		'Good typography makes a page easier to enter, understand, and remember. The right rhythm gives every sentence room to breathe while keeping the reader moving.',
 	waterfall: 'Sphinx of black quartz',
 	compare: 'A typeface for every context.',
 };
@@ -153,6 +164,17 @@ const formatNumber = (value: number) =>
 	Number.isInteger(value) ? String(value) : String(Number(value.toFixed(2)));
 
 const formatPixels = (value: number) => `${formatNumber(value)} px`;
+
+const typographyMatches = (
+	current: PreviewTypography,
+	initial: PreviewTypography,
+) =>
+	current.size === initial.size &&
+	current.weight === initial.weight &&
+	current.italic === initial.italic &&
+	current.tracking === initial.tracking &&
+	current.lineHeight === initial.lineHeight &&
+	current.alignment === initial.alignment;
 
 const summarizeDescription = (value?: string) => {
 	const description = value?.trim();
@@ -319,6 +341,7 @@ const RangeControl = ({
 	step,
 	onChange,
 	formatValue = formatNumber,
+	unit,
 	marks,
 	restrictToMarks = false,
 	disabled = false,
@@ -333,11 +356,14 @@ const RangeControl = ({
 	step: number;
 	onChange: (value: number) => void;
 	formatValue?: (value: number) => string;
+	unit?: string;
 	marks?: Array<{ value: number }>;
 	restrictToMarks?: boolean;
 	disabled?: boolean;
 }) => {
 	const descriptionId = description ? `${id}-description` : undefined;
+	const unitId = unit ? `${id}-unit` : undefined;
+	const describedBy = [descriptionId, unitId].filter(Boolean).join(' ');
 	const setValue = (nextValue: number) => {
 		if (!Number.isFinite(nextValue)) return;
 		onChange(clamp(nextValue, min, max));
@@ -346,23 +372,27 @@ const RangeControl = ({
 	return (
 		<div className={classes.rangeControl}>
 			<div className={classes.rangeHeading}>
-				<div>
+				<div className={classes.rangeLabel}>
 					<label htmlFor={`${id}-value`}>{label}</label>
 					{tag && <code>{tag}</code>}
 				</div>
-				<input
-					id={`${id}-value`}
-					className={classes.numberInput}
-					type="number"
-					inputMode="decimal"
-					min={min}
-					max={max}
-					step={step}
-					value={formatNumber(value)}
-					aria-describedby={descriptionId}
-					disabled={disabled}
-					onChange={(event) => setValue(event.currentTarget.valueAsNumber)}
-				/>
+				<div className={classes.numberField}>
+					<input
+						id={`${id}-value`}
+						className={classes.numberInput}
+						type="number"
+						inputMode="decimal"
+						min={min}
+						max={max}
+						step={step}
+						value={formatNumber(value)}
+						aria-describedby={describedBy || undefined}
+						data-unit={unit || undefined}
+						disabled={disabled}
+						onChange={(event) => setValue(event.currentTarget.valueAsNumber)}
+					/>
+					{unit && <span id={unitId}>{unit}</span>}
+				</div>
 			</div>
 			{description && (
 				<p id={descriptionId} className={classes.controlDescription}>
@@ -433,7 +463,55 @@ export const FamilyPreview = ({
 	const initialWeight = initialWeightAxis
 		? clamp(600, initialWeightAxis.min, initialWeightAxis.max)
 		: nearestWeight(metadata.weights, 600);
+	const regularWeight = initialWeightAxis
+		? clamp(400, initialWeightAxis.min, initialWeightAxis.max)
+		: nearestWeight(metadata.weights, 400);
 	const initialLineHeight = usesLatinPreview ? 0.95 : 1.2;
+	const initialTypography = useMemo<PreviewTypographyByMode>(
+		() => ({
+			headline: {
+				size: initialSize,
+				weight: initialWeight,
+				italic: false,
+				tracking: 0,
+				lineHeight: initialLineHeight,
+				alignment: 'start',
+			},
+			paragraph: {
+				size: familyKind === 'digital' ? 32 : usesLatinPreview ? 24 : 22,
+				weight: regularWeight,
+				italic: false,
+				tracking: 0,
+				lineHeight:
+					familyKind === 'digital' ? 1.25 : usesLatinPreview ? 1.55 : 1.7,
+				alignment: 'start',
+			},
+			waterfall: {
+				size: initialSize,
+				weight: initialWeight,
+				italic: false,
+				tracking: 0,
+				lineHeight: Math.max(1.05, initialLineHeight),
+				alignment: 'start',
+			},
+			compare: {
+				size: 32,
+				weight: regularWeight,
+				italic: false,
+				tracking: 0,
+				lineHeight: 1.15,
+				alignment: 'start',
+			},
+		}),
+		[
+			familyKind,
+			initialLineHeight,
+			initialSize,
+			initialWeight,
+			regularWeight,
+			usesLatinPreview,
+		],
+	);
 	const initialVerifiedLanguages = getVerifiedLanguages(
 		languages,
 		capabilities,
@@ -451,12 +529,10 @@ export const FamilyPreview = ({
 			? createLanguageModeTexts(initialLanguage)
 			: createModeTexts(metadata, registry, languages),
 	);
-	const [size, setSize] = useState(initialSize);
-	const [weight, setWeight] = useState(initialWeight);
-	const [italic, setItalic] = useState(false);
-	const [tracking, setTracking] = useState(0);
-	const [lineHeight, setLineHeight] = useState(initialLineHeight);
-	const [alignment, setAlignment] = useState<PreviewAlignment>('start');
+	const [typographyByMode, setTypographyByMode] =
+		useState<PreviewTypographyByMode>(() => initialTypography);
+	const { size, weight, italic, tracking, lineHeight, alignment } =
+		typographyByMode[mode];
 	const [selectedLanguageId, setSelectedLanguageId] = useState(
 		initialLanguage?.id ?? '',
 	);
@@ -491,15 +567,30 @@ export const FamilyPreview = ({
 	const capabilitiesLoading = Boolean(
 		activeSourceHash && !hasCachedCapabilities,
 	);
+	const capabilitiesUnavailable = Boolean(
+		activeSourceHash &&
+			hasCachedCapabilities &&
+			capabilitiesBySource[activeSourceHash] === null,
+	);
 
 	useEffect(() => {
 		if (!activeSource || hasCachedCapabilities) return;
 		const controller = new AbortController();
 		let current = true;
-		const capabilitiesUrl = new URL(
-			activeSource.capabilitiesUrl,
-			'https://api.fontsource.org',
-		);
+		let capabilitiesUrl: URL;
+
+		try {
+			capabilitiesUrl = new URL(
+				activeSource.capabilitiesUrl,
+				'https://api.fontsource.org',
+			);
+		} catch {
+			setCapabilitiesBySource((cached) => ({
+				...cached,
+				[activeSource.sha256]: null,
+			}));
+			return;
+		}
 
 		fetch(capabilitiesUrl, { signal: controller.signal })
 			.then((response) => {
@@ -564,8 +655,14 @@ export const FamilyPreview = ({
 	const weightStep = weightAxis?.step ?? 1;
 
 	useEffect(() => {
-		setWeight((currentWeight) => clamp(currentWeight, weightMin, weightMax));
-	}, [weightMax, weightMin]);
+		setTypographyByMode((current) => ({
+			...current,
+			[mode]: {
+				...current[mode],
+				weight: clamp(current[mode].weight, weightMin, weightMax),
+			},
+		}));
+	}, [mode, weightMax, weightMin]);
 
 	const verifiedLanguages = useMemo(
 		() => getVerifiedLanguages(languages, activeCapabilities),
@@ -633,6 +730,22 @@ export const FamilyPreview = ({
 				)
 			: featureTags;
 	}, [featureQuery, featureTags]);
+	const typographyChanged = !typographyMatches(
+		typographyByMode[mode],
+		initialTypography[mode],
+	);
+	const anyTypographyChanged = modeLabels.some(
+		({ value }) =>
+			!typographyMatches(typographyByMode[value], initialTypography[value]),
+	);
+	const axesChanged = adjustableAxes.some(
+		(axis) => (axisValues[axis.tag] ?? axis.default) !== axis.default,
+	);
+	const featuresChanged = featureTags.some(
+		(tag) =>
+			Boolean(featureValues[tag]) !== enabledByDefaultFeatureTags.has(tag),
+	);
+	const stylingChanged = anyTypographyChanged || axesChanged || featuresChanged;
 
 	const packagePreviewFamily = getFontPreviewFamily(
 		metadata,
@@ -649,6 +762,15 @@ export const FamilyPreview = ({
 			? 'rtl'
 			: 'ltr'
 		: getPreviewDirection(previewSubset);
+	const StartAlignmentIcon =
+		previewDirection === 'rtl' ? IconAlignRight : IconAlignLeft;
+	const EndAlignmentIcon =
+		previewDirection === 'rtl' ? IconAlignLeft : IconAlignRight;
+	const alignmentOptions = [
+		['start', 'Align text to start', StartAlignmentIcon],
+		['center', 'Center text', IconAlignCenter],
+		['end', 'Align text to end', EndAlignmentIcon],
+	] as const;
 	const lineHeightPixels = size * lineHeight;
 	const featureSettings = [
 		...featureTags.map((tag) => `"${tag}" ${featureValues[tag] ? 1 : 0}`),
@@ -672,6 +794,11 @@ export const FamilyPreview = ({
 	const activeModeLabels = isSymbolPreviewFamily
 		? symbolModeLabels
 		: modeLabels;
+	const editorLabel = isSymbolPreviewFamily
+		? hasNamedLigatures
+			? 'Enter a symbol name or character'
+			: 'Enter or paste a symbol'
+		: 'Type your text';
 
 	useEffect(() => {
 		const saved = saveFontPreviewSelection(metadata.id, {
@@ -694,6 +821,21 @@ export const FamilyPreview = ({
 
 	const setActiveText = (text: string) => {
 		setTexts((currentTexts) => ({ ...currentTexts, [mode]: text }));
+	};
+	const updateTypography = (values: Partial<PreviewTypography>) => {
+		setTypographyByMode((current) => ({
+			...current,
+			[mode]: { ...current[mode], ...values },
+		}));
+	};
+	const retryCapabilities = () => {
+		if (!activeSourceHash) return;
+
+		setCapabilitiesBySource((cached) => {
+			const next = { ...cached };
+			delete next[activeSourceHash];
+			return next;
+		});
 	};
 
 	const selectLanguage = (languageId: string) => {
@@ -720,12 +862,10 @@ export const FamilyPreview = ({
 	};
 
 	const resetTypography = () => {
-		setSize(initialSize);
-		setWeight(initialWeight);
-		setItalic(false);
-		setTracking(0);
-		setLineHeight(initialLineHeight);
-		setAlignment('start');
+		setTypographyByMode((current) => ({
+			...current,
+			[mode]: initialTypography[mode],
+		}));
 	};
 	const resetAxes = () => {
 		setAxisValues(
@@ -742,8 +882,8 @@ export const FamilyPreview = ({
 			),
 		}));
 	};
-	const resetAll = () => {
-		resetTypography();
+	const resetStyling = () => {
+		setTypographyByMode(initialTypography);
 		resetAxes();
 		resetFeatures();
 	};
@@ -753,19 +893,29 @@ export const FamilyPreview = ({
 			{embedded ? (
 				<div className={classes.inspectorHeading}>
 					<div>
-						<h2>Adjust preview</h2>
-						<p>Fine-tune this specimen.</p>
+						<h2>Preview settings</h2>
+						<p>Size, weight, and spacing stay with each view.</p>
 					</div>
-					<button type="button" onClick={resetAll}>
+					<button
+						type="button"
+						aria-label="Reset preview styling"
+						disabled={!stylingChanged}
+						onClick={resetStyling}
+					>
 						<IconRotate aria-hidden height={15} />
-						Reset all
+						Reset styling
 					</button>
 				</div>
 			) : (
 				<div className={classes.drawerReset}>
-					<button type="button" onClick={resetAll}>
+					<button
+						type="button"
+						aria-label="Reset preview styling"
+						disabled={!stylingChanged}
+						onClick={resetStyling}
+					>
 						<IconRotate aria-hidden height={15} />
-						Reset all
+						Reset styling
 					</button>
 				</div>
 			)}
@@ -773,19 +923,25 @@ export const FamilyPreview = ({
 			<section className={classes.inspectorSection}>
 				<div className={classes.sectionHeading}>
 					<h3>Typography</h3>
-					<button type="button" onClick={resetTypography}>
+					<button
+						type="button"
+						aria-label="Reset typography settings"
+						disabled={!typographyChanged}
+						onClick={resetTypography}
+					>
 						Reset
 					</button>
 				</div>
 				<RangeControl
 					id={`${idPrefix}-size`}
-					label="Size"
+					label="Font size"
 					value={size}
 					min={8}
 					max={300}
 					step={1}
 					formatValue={formatPixels}
-					onChange={setSize}
+					unit="px"
+					onChange={(value) => updateTypography({ size: value })}
 				/>
 				<RangeControl
 					id={`${idPrefix}-weight`}
@@ -801,7 +957,7 @@ export const FamilyPreview = ({
 					}
 					restrictToMarks={!weightAxis && metadata.weights.length > 1}
 					disabled={weightMin === weightMax}
-					onChange={setWeight}
+					onChange={(value) => updateTypography({ weight: value })}
 				/>
 				{supportsItalic && (
 					<div className={classes.segmentedField}>
@@ -822,7 +978,9 @@ export const FamilyPreview = ({
 									value: 'italic',
 								},
 							]}
-							onChange={(value) => setItalic(value === 'italic')}
+							onChange={(value) =>
+								updateTypography({ italic: value === 'italic' })
+							}
 						/>
 					</div>
 				)}
@@ -836,7 +994,8 @@ export const FamilyPreview = ({
 							max={40}
 							step={0.5}
 							formatValue={formatPixels}
-							onChange={setTracking}
+							unit="px"
+							onChange={(value) => updateTypography({ tracking: value })}
 						/>
 						<RangeControl
 							id={`${idPrefix}-line-height`}
@@ -846,7 +1005,10 @@ export const FamilyPreview = ({
 							max={Number((size * 2).toFixed(1))}
 							step={0.5}
 							formatValue={formatPixels}
-							onChange={(value) => setLineHeight(value / size)}
+							unit="px"
+							onChange={(value) =>
+								updateTypography({ lineHeight: value / size })
+							}
 						/>
 					</>
 				)}
@@ -856,13 +1018,18 @@ export const FamilyPreview = ({
 				<section className={classes.inspectorSection}>
 					<div className={classes.sectionHeading}>
 						<div>
-							<h3>Variable design</h3>
+							<h3>Variable axes</h3>
 							<span>
 								{adjustableAxes.length}{' '}
 								{adjustableAxes.length === 1 ? 'axis' : 'axes'}
 							</span>
 						</div>
-						<button type="button" onClick={resetAxes}>
+						<button
+							type="button"
+							aria-label="Reset variable axes"
+							disabled={!axesChanged}
+							onClick={resetAxes}
+						>
 							Reset
 						</button>
 					</div>
@@ -873,7 +1040,7 @@ export const FamilyPreview = ({
 							<input
 								type="search"
 								autoComplete="off"
-								placeholder={`Search ${adjustableAxes.length} axes`}
+								placeholder="Search by name or tag"
 								value={axisQuery}
 								onChange={(event) => setAxisQuery(event.currentTarget.value)}
 							/>
@@ -901,7 +1068,7 @@ export const FamilyPreview = ({
 						))}
 						{filteredAxes.length === 0 && (
 							<p className={classes.emptyState} role="status">
-								No axes match “{axisQuery}”.
+								No variable axes match “{axisQuery}”.
 							</p>
 						)}
 					</div>
@@ -912,10 +1079,15 @@ export const FamilyPreview = ({
 				<section className={classes.inspectorSection}>
 					<div className={classes.sectionHeading}>
 						<div>
-							<h3>Features</h3>
-							<span>Optional OpenType behaviors</span>
+							<h3>OpenType features</h3>
+							<span>Ligatures, alternates, and number styles</span>
 						</div>
-						<button type="button" onClick={resetFeatures}>
+						<button
+							type="button"
+							aria-label="Reset OpenType features"
+							disabled={!featuresChanged}
+							onClick={resetFeatures}
+						>
 							Reset
 						</button>
 					</div>
@@ -926,7 +1098,7 @@ export const FamilyPreview = ({
 							<input
 								type="search"
 								autoComplete="off"
-								placeholder={`Search ${featureTags.length} features`}
+								placeholder="Search by name or tag"
 								value={featureQuery}
 								onChange={(event) => setFeatureQuery(event.currentTarget.value)}
 							/>
@@ -960,16 +1132,24 @@ export const FamilyPreview = ({
 					</ul>
 					{filteredFeatures.length === 0 && (
 						<p className={classes.emptyState} role="status">
-							No features match “{featureQuery}”.
+							No OpenType features match “{featureQuery}”.
 						</p>
 					)}
 				</section>
 			)}
 
 			{capabilitiesLoading && (
-				<p className={classes.capabilitiesStatus} role="status">
+				<p className={classes.capabilitiesStatus}>
 					Checking the selected style’s available features…
 				</p>
+			)}
+			{capabilitiesUnavailable && (
+				<div className={classes.capabilitiesStatus} role="status">
+					<span>Some preview options couldn’t load.</span>
+					<button type="button" onClick={retryCapabilities}>
+						Try again
+					</button>
+				</div>
 			)}
 		</div>
 	);
@@ -986,7 +1166,7 @@ export const FamilyPreview = ({
 			return (
 				<div className={classes.derivedCanvas} dir={previewDirection}>
 					<label className={classes.derivedEditor}>
-						<span>Type your text</span>
+						<span>{editorLabel}</span>
 						<input
 							type="text"
 							value={activeText.replaceAll('\n', ' ')}
@@ -1012,7 +1192,7 @@ export const FamilyPreview = ({
 			return (
 				<div className={classes.derivedCanvas} dir={previewDirection}>
 					<label className={classes.derivedEditor}>
-						<span>Type your text</span>
+						<span>{editorLabel}</span>
 						<input
 							type="text"
 							value={activeText.replaceAll('\n', ' ')}
@@ -1033,7 +1213,7 @@ export const FamilyPreview = ({
 									type="button"
 									data-active={weight === value || undefined}
 									aria-pressed={weight === value}
-									onClick={() => setWeight(value)}
+									onClick={() => updateTypography({ weight: value })}
 								>
 									<span>
 										{weightNames[value] ?? 'Weight'} {value}
@@ -1047,7 +1227,7 @@ export const FamilyPreview = ({
 												registry,
 											),
 											fontWeight: value,
-											fontSize: 'clamp(20px, 2.4vw, 34px)',
+											fontSize: size,
 										}}
 									>
 										{activeText}
@@ -1062,7 +1242,7 @@ export const FamilyPreview = ({
 
 		return (
 			<label className={classes.canvasField} data-mode={mode}>
-				<span>Type your text</span>
+				<span>{editorLabel}</span>
 				<textarea
 					className={classes.canvas}
 					rows={mode === 'paragraph' ? 6 : 3}
@@ -1118,14 +1298,14 @@ export const FamilyPreview = ({
 
 				{variableUnavailable && (
 					<p className={classes.handoffNotice} role="status">
-						Variable controls are temporarily unavailable. Previewing the static
-						release instead.
+						Variable controls are temporarily unavailable. You can still preview
+						the available styles.
 					</p>
 				)}
 
 				{symbolPreviewUnavailable && (
 					<p className={classes.handoffNotice} role="status">
-						Enter a mapped symbol below, or{' '}
+						Enter or paste a supported symbol below, or{' '}
 						<Link to={`/fonts/${metadata.id}/glyphs`}>
 							{hasCatalog
 								? 'browse the symbol catalog'
@@ -1137,8 +1317,8 @@ export const FamilyPreview = ({
 
 				{handoffUnavailable && (
 					<p className={classes.handoffNotice} role="status">
-						Preview choices cannot be remembered in this browser. Get font will
-						start from the family defaults.
+						This browser can’t save your preview settings. The Get font tab will
+						use this family’s defaults.
 					</p>
 				)}
 
@@ -1148,7 +1328,7 @@ export const FamilyPreview = ({
 							{activeModeLabels.length > 1 && (
 								<SegmentedControl
 									className={classes.modeChooser}
-									aria-label="Preview purpose"
+									aria-label="Preview view"
 									value={mode}
 									data={activeModeLabels}
 									onChange={(value) => setMode(value as PreviewMode)}
@@ -1156,45 +1336,41 @@ export const FamilyPreview = ({
 							)}
 							<div className={classes.toolbarActions}>
 								{familyKind === 'text' && verifiedLanguages.length > 0 && (
-									<DropdownSimple
-										label={
-											selectedLanguage?.preferredName ??
-											selectedLanguage?.name ??
-											'Language'
-										}
-										ariaLabel="Preview language"
-										items={verifiedLanguages.map((language) => ({
-											label:
-												language.autonym && language.autonym !== language.name
-													? `${language.preferredName ?? language.name} · ${language.autonym}`
-													: (language.preferredName ?? language.name),
-											value: language.id,
-											isRefined: language.id === selectedLanguageId,
-										}))}
-										searchable={verifiedLanguages.length > 6}
-										refine={selectLanguage}
-										w={180}
-										dropdownWidth={280}
-									/>
+									<div className={classes.languageControl}>
+										<DropdownSimple
+											label={
+												selectedLanguage?.preferredName ??
+												selectedLanguage?.name ??
+												'Language'
+											}
+											ariaLabel="Preview language"
+											items={verifiedLanguages.map((language) => ({
+												label:
+													language.autonym && language.autonym !== language.name
+														? `${language.preferredName ?? language.name} · ${language.autonym}`
+														: (language.preferredName ?? language.name),
+												value: language.id,
+												isRefined: language.id === selectedLanguageId,
+											}))}
+											searchable={verifiedLanguages.length > 6}
+											refine={selectLanguage}
+											w="100%"
+											dropdownWidth={280}
+										/>
+									</div>
 								)}
 								{!isSymbolPreviewFamily && (
 									<fieldset className={classes.alignmentControl}>
 										<VisuallyHidden component="legend">
-											Text alignment
+											Preview text alignment
 										</VisuallyHidden>
-										{(
-											[
-												['start', 'Align start', IconAlignLeft],
-												['center', 'Align center', IconAlignCenter],
-												['end', 'Align end', IconAlignRight],
-											] as const
-										).map(([value, label, Icon]) => (
+										{alignmentOptions.map(([value, label, Icon]) => (
 											<button
 												key={value}
 												type="button"
 												aria-label={label}
 												aria-pressed={alignment === value}
-												onClick={() => setAlignment(value)}
+												onClick={() => updateTypography({ alignment: value })}
 											>
 												<Icon aria-hidden size={17} stroke={1.8} />
 											</button>
@@ -1211,7 +1387,7 @@ export const FamilyPreview = ({
 										size={18}
 										stroke={1.8}
 									/>
-									Adjust
+									Settings
 								</button>
 							</div>
 						</div>
@@ -1227,7 +1403,7 @@ export const FamilyPreview = ({
 						</FontSkeleton>
 					</div>
 
-					<aside className={classes.inspector} aria-label="Preview adjustments">
+					<aside className={classes.inspector} aria-label="Preview settings">
 						{renderInspector('desktop-preview', true)}
 					</aside>
 				</div>
@@ -1238,8 +1414,8 @@ export const FamilyPreview = ({
 				onClose={() => setInspectorOpened(false)}
 				position="bottom"
 				size="min(86dvh, 760px)"
-				title="Adjust preview"
-				closeButtonProps={{ 'aria-label': 'Close preview adjustments' }}
+				title="Preview settings"
+				closeButtonProps={{ 'aria-label': 'Close preview settings' }}
 				classNames={{
 					content: classes.drawerContent,
 					header: classes.drawerHeader,

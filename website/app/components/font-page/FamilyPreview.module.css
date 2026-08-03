@@ -85,6 +85,7 @@
 
 .specimenToolbar {
 	min-width: 0;
+	min-height: 76px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -134,6 +135,11 @@
 	align-items: center;
 	justify-content: flex-end;
 	gap: 8px;
+}
+
+.languageControl {
+	min-width: 0;
+	width: 180px;
 }
 
 .alignmentControl {
@@ -195,6 +201,12 @@
 	display: flex;
 }
 
+.canvasSkeleton > div {
+	min-width: 0;
+	flex: 1;
+	display: flex;
+}
+
 .canvasField {
 	position: relative;
 	min-width: 0;
@@ -215,13 +227,19 @@
 	line-height: 1;
 }
 
+.canvasField > span {
+	margin: -4px -8px;
+	padding: 4px 8px;
+	background: light-dark(#fff, #121b31);
+}
+
 .canvas {
 	box-sizing: border-box;
 	width: 100%;
 	min-height: 570px;
 	flex: 1;
 	resize: none;
-	padding: 72px 32px 42px;
+	padding: 72px 32px 40px;
 	border: 0;
 	border-radius: 0;
 	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
@@ -232,8 +250,8 @@
 }
 
 .canvasField[data-mode='paragraph'] .canvas {
-	max-width: none;
-	padding-inline-end: max(32px, 14%);
+	max-inline-size: none;
+	padding-inline-end: max(32px, calc(100% - 68ch));
 }
 
 .canvas:focus-visible,
@@ -275,7 +293,7 @@
 .waterfall {
 	min-width: 0;
 	display: grid;
-	padding: 6px 32px 28px;
+	padding: 8px 32px 24px;
 	overflow: auto;
 }
 
@@ -285,7 +303,7 @@
 	grid-template-columns: 44px minmax(0, 1fr);
 	align-items: baseline;
 	gap: 16px;
-	padding-block: 19px;
+	padding-block: 20px;
 	border-bottom: light-dark(1px solid #e1e5ec, 1px solid #2c3651);
 }
 
@@ -336,6 +354,10 @@
 	background: light-dark(#efeeff, #1a2240);
 }
 
+.compareGrid button[data-active='true'] {
+	box-shadow: inset 0 -2px var(--mantine-color-purple-0);
+}
+
 .compareGrid button:focus-visible {
 	position: relative;
 	z-index: 1;
@@ -365,7 +387,7 @@
 
 .inspectorContent {
 	min-width: 0;
-	max-height: 720px;
+	max-block-size: min(720px, 100dvh);
 	overflow-y: auto;
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
@@ -378,6 +400,11 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 16px;
+}
+
+.inspectorHeading > div,
+.sectionHeading > div {
+	min-width: 0;
 }
 
 .inspectorHeading {
@@ -429,11 +456,18 @@
 	cursor: pointer;
 }
 
-.inspectorHeading button:hover,
-.drawerReset button:hover,
-.sectionHeading button:hover {
+.inspectorHeading button:not(:disabled):hover,
+.drawerReset button:not(:disabled):hover,
+.sectionHeading button:not(:disabled):hover {
 	text-decoration: underline;
 	text-underline-offset: 3px;
+}
+
+.inspectorHeading button:disabled,
+.drawerReset button:disabled,
+.sectionHeading button:disabled {
+	color: light-dark(#8b96a8, #68758c);
+	cursor: default;
 }
 
 .inspectorHeading button:focus-visible,
@@ -473,7 +507,7 @@
 	gap: 16px;
 }
 
-.rangeHeading > div {
+.rangeLabel {
 	min-width: 0;
 	display: flex;
 	align-items: baseline;
@@ -485,6 +519,7 @@
 	color: light-dark(#1f2c43, #e6eaf2);
 	font-size: 0.76rem;
 	font-weight: 650;
+	overflow-wrap: anywhere;
 }
 
 .rangeHeading code,
@@ -494,20 +529,43 @@
 	font-size: 0.66rem;
 }
 
-.numberInput {
-	width: 76px;
-	min-height: 32px;
-	padding: 0 8px;
+.numberField {
+	width: 88px;
+	flex: 0 0 auto;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
 	border: light-dark(1px solid #d7dce5, 1px solid #34405a);
 	border-radius: 4px;
-	color: light-dark(#07152f, #f4f6fb);
 	background: light-dark(#fff, #121b31);
+}
+
+.numberField > span {
+	padding-inline-end: 8px;
+	color: light-dark(#697790, #9ca8bd);
+	font-family: var(--mantine-font-family-monospace);
+	font-size: 0.66rem;
+	pointer-events: none;
+}
+
+.numberInput {
+	min-width: 0;
+	width: 100%;
+	min-height: 32px;
+	padding: 0 4px 0 8px;
+	border: 0;
+	color: light-dark(#07152f, #f4f6fb);
+	background: transparent;
 	font-family: var(--mantine-font-family-monospace);
 	font-size: 0.72rem;
 	text-align: end;
 }
 
-.numberInput:focus-visible,
+.numberInput:focus-visible {
+	outline: 0;
+}
+
+.numberField:focus-within,
 .inspectorSearch:focus-within {
 	border-color: var(--mantine-color-purple-0);
 	outline: 2px solid color-mix(in srgb, var(--mantine-color-purple-0) 24%, transparent);
@@ -519,6 +577,7 @@
 	color: light-dark(#697790, #9ca8bd);
 	font-size: 0.7rem;
 	line-height: 1.45;
+	overflow-wrap: anywhere;
 }
 
 .slider {
@@ -617,6 +676,7 @@
 .featureControl strong {
 	font-size: 0.75rem;
 	font-weight: 650;
+	overflow-wrap: anywhere;
 }
 
 .featureControl small {
@@ -625,6 +685,7 @@
 	color: light-dark(#697790, #9ca8bd);
 	font-size: 0.68rem;
 	line-height: 1.4;
+	overflow-wrap: anywhere;
 }
 
 .featureControl input {
@@ -673,7 +734,33 @@
 }
 
 .capabilitiesStatus {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
 	padding: 14px 20px;
+}
+
+.capabilitiesStatus button {
+	min-height: 32px;
+	padding: 0;
+	border: 0;
+	color: var(--mantine-color-purple-0);
+	background: transparent;
+	font: inherit;
+	font-weight: 650;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.capabilitiesStatus button:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.capabilitiesStatus button:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 3px;
 }
 
 .drawerContent {
@@ -707,6 +794,10 @@
 }
 
 @media (--lt-lg) {
+	.specimenToolbar {
+		flex-wrap: wrap;
+	}
+
 	.studio {
 		grid-template-columns: minmax(0, 1fr);
 	}
@@ -800,11 +891,7 @@
 
 	.modeChooser {
 		overflow-x: auto;
-		scrollbar-width: none;
-	}
-
-	.modeChooser::-webkit-scrollbar {
-		display: none;
+		scrollbar-width: thin;
 	}
 
 	.modeChooser :global(.mantine-SegmentedControl-root) {
@@ -813,12 +900,19 @@
 
 	.toolbarActions {
 		align-items: stretch;
-		gap: 6px;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 8px;
 	}
 
-	.toolbarActions > :first-child {
+	.languageControl {
 		min-width: 0;
-		flex: 1;
+		width: 100%;
+		grid-column: 1 / -1;
+	}
+
+	.alignmentControl {
+		justify-self: start;
 	}
 
 	.alignmentControl button,
@@ -871,6 +965,8 @@
 }
 
 @media (pointer: coarse) {
+	.alignmentControl button,
+	.adjustButton,
 	.modeChooser :global(.mantine-SegmentedControl-label),
 	.segmentedField :global(.mantine-SegmentedControl-label),
 	.inspectorHeading button,
