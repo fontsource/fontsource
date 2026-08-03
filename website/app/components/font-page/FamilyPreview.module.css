@@ -116,17 +116,23 @@
 	background: var(--preview-chrome-subtle);
 }
 
+.symbolToolbar {
+	display: none;
+}
+
 .modeChooser {
 	flex: 0 1 auto;
 }
 
-.modeChooser :global(.mantine-SegmentedControl-root),
-.segmentedField :global(.mantine-SegmentedControl-root) {
+.modeChooser,
+.segmentedField :global(.mantine-SegmentedControl-root),
+.inspectorSectionChooser :global(.mantine-SegmentedControl-root) {
 	background: light-dark(#e9edf2, #171f32);
 }
 
 .modeChooser :global(.mantine-SegmentedControl-label),
-.segmentedField :global(.mantine-SegmentedControl-label) {
+.segmentedField :global(.mantine-SegmentedControl-label),
+.inspectorSectionChooser :global(.mantine-SegmentedControl-label) {
 	min-height: 34px;
 	display: flex;
 	align-items: center;
@@ -138,12 +144,15 @@
 }
 
 .modeChooser :global(.mantine-SegmentedControl-label[data-active]),
-.segmentedField :global(.mantine-SegmentedControl-label[data-active]) {
+.segmentedField :global(.mantine-SegmentedControl-label[data-active]),
+.inspectorSectionChooser
+	:global(.mantine-SegmentedControl-label[data-active]) {
 	color: var(--preview-text);
 }
 
 .modeChooser :global(.mantine-SegmentedControl-indicator),
-.segmentedField :global(.mantine-SegmentedControl-indicator) {
+.segmentedField :global(.mantine-SegmentedControl-indicator),
+.inspectorSectionChooser :global(.mantine-SegmentedControl-indicator) {
 	border: light-dark(1px solid #d4d9e2, 1px solid #34405a);
 	border-radius: 3px;
 	background: light-dark(#fff, #232d45);
@@ -236,22 +245,46 @@
 	display: flex;
 }
 
-.canvasField > span,
-.derivedEditor > span {
+.editorHeader {
 	position: absolute;
 	inset-block-start: 22px;
 	inset-inline-start: 32px;
+	inset-inline-end: 32px;
 	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.editorHeader label {
 	color: var(--preview-text-muted);
 	font-size: var(--preview-type-label);
 	font-weight: 600;
 	line-height: 1;
 }
 
-.canvasField > span {
-	margin: -4px -8px;
-	padding: 4px 8px;
-	background: var(--preview-surface);
+.editorHeader button {
+	min-height: 32px;
+	padding: 0;
+	border: 0;
+	color: var(--mantine-color-purple-0);
+	background: transparent;
+	font: inherit;
+	font-size: var(--preview-type-label);
+	font-weight: 650;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.editorHeader button:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.editorHeader button:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 3px;
 }
 
 .canvas {
@@ -296,7 +329,7 @@
 	border-bottom: var(--preview-border);
 }
 
-.derivedEditor > span {
+.derivedEditor .editorHeader {
 	inset-block-start: 18px;
 }
 
@@ -437,6 +470,15 @@
 	background: var(--preview-chrome);
 }
 
+.inspectorSectionChooser {
+	position: sticky;
+	inset-block-start: 72px;
+	z-index: 1;
+	padding: 12px 20px;
+	border-bottom: var(--preview-border);
+	background: var(--preview-chrome);
+}
+
 .inspectorHeading h2,
 .inspectorHeading p,
 .sectionHeading h3,
@@ -544,53 +586,48 @@
 }
 
 .rangeHeading code,
-.featureControl code {
+.featureLabel code {
 	color: var(--preview-text-muted);
 	font-family: var(--mantine-font-family-monospace);
 	font-size: 0.66rem;
 }
 
-.numberField {
+.numberControl {
 	width: 88px;
 	flex: 0 0 auto;
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) auto;
-	align-items: center;
-	border: var(--preview-border-strong);
-	border-radius: 4px;
-	background: var(--preview-surface);
-}
-
-.numberField > span {
-	padding-inline-end: 8px;
-	color: var(--preview-text-muted);
-	font-family: var(--mantine-font-family-monospace);
-	font-size: 0.66rem;
-	pointer-events: none;
 }
 
 .numberInput {
 	min-width: 0;
 	width: 100%;
 	min-height: 32px;
-	padding: 0 4px 0 8px;
-	border: 0;
+	padding-inline: 8px;
+	border: var(--preview-border-strong);
+	border-radius: 4px;
 	color: var(--preview-text);
-	background: transparent;
+	background: var(--preview-surface);
 	font-family: var(--mantine-font-family-monospace);
 	font-size: var(--preview-type-label);
 	text-align: end;
 }
 
-.numberInput:focus-visible {
-	outline: 0;
-}
-
-.numberField:focus-within,
 .inspectorSearch:focus-within {
 	border-color: var(--mantine-color-purple-0);
 	outline: 2px solid color-mix(in srgb, var(--mantine-color-purple-0) 24%, transparent);
 	outline-offset: 1px;
+}
+
+.numberInput:focus,
+.numberInput:focus-within {
+	border-color: var(--mantine-color-purple-0);
+	outline: 2px solid color-mix(in srgb, var(--mantine-color-purple-0) 24%, transparent);
+	outline-offset: 1px;
+}
+
+.numberInput:disabled {
+	color: var(--preview-text-disabled);
+	background: var(--preview-chrome-subtle);
+	cursor: not-allowed;
 }
 
 .controlDescription {
@@ -676,17 +713,76 @@
 	border-top: var(--preview-border);
 }
 
+.featureGroupLabel {
+	margin: 0;
+	color: var(--preview-text-soft);
+	font-size: var(--preview-type-label);
+	font-weight: 700;
+}
+
+.featureDetails {
+	border-top: var(--preview-border);
+}
+
+.featureDetails summary {
+	min-height: 44px;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto auto;
+	align-items: center;
+	gap: 8px;
+	color: var(--preview-text-soft);
+	font-size: var(--preview-type-label);
+	font-weight: 700;
+	cursor: pointer;
+	list-style: none;
+}
+
+.featureDetails summary::-webkit-details-marker {
+	display: none;
+}
+
+.featureDetails summary:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 3px;
+}
+
+.featureDetailsCount {
+	color: var(--preview-text-muted);
+	font-family: var(--mantine-font-family-monospace);
+	font-size: 0.66rem;
+	font-weight: 500;
+}
+
+.featureDetailsIcon {
+	transition: rotate 120ms ease;
+}
+
+.featureDetails[open] .featureDetailsIcon {
+	rotate: 180deg;
+}
+
+.featureDetails .featureList {
+	border-top: var(--preview-border);
+}
+
 .featureControl {
-	min-width: 0;
+	padding-block: 14px;
+}
+
+.featureSwitchBody {
+	width: 100%;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) auto;
 	align-items: center;
 	gap: 16px;
-	padding-block: 14px;
 	cursor: pointer;
 }
 
-.featureControl > span {
+.featureText {
+	min-width: 0;
+}
+
+.featureLabel {
 	min-width: 0;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) auto;
@@ -694,57 +790,18 @@
 	column-gap: 8px;
 }
 
-.featureControl strong {
+.featureLabel strong {
 	font-size: 0.75rem;
 	font-weight: 650;
 	overflow-wrap: anywhere;
 }
 
-.featureControl small {
-	grid-column: 1 / -1;
+.featureDescription {
 	margin-top: 3px;
 	color: var(--preview-text-muted);
 	font-size: 0.68rem;
 	line-height: 1.4;
 	overflow-wrap: anywhere;
-}
-
-.featureControl input {
-	appearance: none;
-	position: relative;
-	width: 34px;
-	height: 20px;
-	margin: 0;
-	border: light-dark(1px solid #b2bac7, 1px solid #59667e);
-	border-radius: 999px;
-	background: var(--preview-track);
-	cursor: pointer;
-}
-
-.featureControl input::after {
-	content: '';
-	position: absolute;
-	inset-block-start: 3px;
-	inset-inline-start: 3px;
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-	background: #fff;
-	transition: translate 120ms ease;
-}
-
-.featureControl input:checked {
-	border-color: var(--mantine-color-purple-0);
-	background: var(--mantine-color-purple-0);
-}
-
-.featureControl input:checked::after {
-	translate: 14px 0;
-}
-
-.featureControl input:focus-visible {
-	outline: 2px solid var(--mantine-color-purple-0);
-	outline-offset: 3px;
 }
 
 .emptyState,
@@ -760,6 +817,10 @@
 	justify-content: space-between;
 	gap: 12px;
 	padding: 14px 20px;
+}
+
+.inspectorSection .capabilitiesStatus {
+	padding: 8px 0;
 }
 
 .capabilitiesStatus button {
@@ -814,9 +875,26 @@
 	padding-inline: 0;
 }
 
+.drawerBody .inspectorSectionChooser {
+	inset-block-start: 0;
+	margin-inline: -20px;
+	padding: 0 20px 16px;
+}
+
 @media (--lt-lg) {
 	.specimenToolbar {
 		flex-wrap: wrap;
+	}
+
+	.symbolToolbar {
+		min-height: auto;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.symbolToolbar .toolbarActions {
+		width: 100%;
+		justify-content: flex-end;
 	}
 
 	.studio {
@@ -856,6 +934,11 @@
 		padding-inline: 16px;
 	}
 
+	.symbolToolbar {
+		align-items: center;
+		flex-direction: row;
+	}
+
 	.modeChooser {
 		width: 100%;
 	}
@@ -864,9 +947,9 @@
 		justify-content: space-between;
 	}
 
-	.canvasField > span,
-	.derivedEditor > span {
+	.editorHeader {
 		inset-inline-start: 24px;
+		inset-inline-end: 24px;
 	}
 
 	.canvas {
@@ -911,12 +994,18 @@
 	}
 
 	.modeChooser {
-		overflow-x: auto;
-		scrollbar-width: thin;
+		width: 100%;
+		overflow: visible;
 	}
 
-	.modeChooser :global(.mantine-SegmentedControl-root) {
-		min-width: max-content;
+	.modeChooser :global(.mantine-SegmentedControl-control) {
+		min-width: 0;
+		flex: 1 1 0;
+	}
+
+	.modeChooser :global(.mantine-SegmentedControl-label) {
+		min-width: 0;
+		padding-inline: 4px;
 	}
 
 	.toolbarActions {
@@ -924,6 +1013,10 @@
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto;
 		gap: 8px;
+	}
+
+	.symbolToolbar .toolbarActions {
+		display: flex;
 	}
 
 	.languageControl {
@@ -957,9 +1050,9 @@
 		padding-block-start: 62px;
 	}
 
-	.canvasField > span,
-	.derivedEditor > span {
+	.editorHeader {
 		inset-inline-start: 18px;
+		inset-inline-end: 18px;
 	}
 
 	.derivedEditor input {
@@ -983,6 +1076,11 @@
 	.drawerBody {
 		padding-inline: 16px;
 	}
+
+	.drawerBody .inspectorSectionChooser {
+		margin-inline: -16px;
+		padding-inline: 16px;
+	}
 }
 
 @media (pointer: coarse) {
@@ -990,9 +1088,11 @@
 	.adjustButton,
 	.modeChooser :global(.mantine-SegmentedControl-label),
 	.segmentedField :global(.mantine-SegmentedControl-label),
+	.inspectorSectionChooser :global(.mantine-SegmentedControl-label),
 	.inspectorHeading button,
 	.drawerReset button,
 	.sectionHeading button,
+	.editorHeader button,
 	.numberInput,
 	.inspectorSearch {
 		min-height: 48px;
@@ -1001,30 +1101,22 @@
 	.featureControl {
 		min-height: 48px;
 	}
-
-	.featureControl input {
-		width: 40px;
-		height: 24px;
-	}
-
-	.featureControl input::after {
-		width: 16px;
-		height: 16px;
-	}
-
-	.featureControl input:checked::after {
-		translate: 16px 0;
-	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.featureControl input::after {
+	.featureDetailsIcon {
 		transition: none;
 	}
 }
 
 @media (forced-colors: active) {
-	.featureControl input {
-		appearance: auto;
+	.alignmentControl button[aria-pressed='true'],
+	.compareGrid button[data-active='true'],
+	.modeChooser :global(.mantine-SegmentedControl-label[data-active]),
+	.segmentedField :global(.mantine-SegmentedControl-label[data-active]),
+	.inspectorSectionChooser
+		:global(.mantine-SegmentedControl-label[data-active]) {
+		outline: 2px solid Highlight;
+		outline-offset: -3px;
 	}
 }
