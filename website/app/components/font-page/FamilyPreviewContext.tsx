@@ -1,11 +1,13 @@
 import { batch } from '@legendapp/state';
 import { observer, useObservable, useValue } from '@legendapp/state/react';
+import { useIsomorphicEffect } from '@mantine/hooks';
 import {
 	createContext,
 	type PropsWithChildren,
 	useContext,
 	useEffect,
 	useMemo,
+	useRef,
 } from 'react';
 
 import type { GetRegistrySourceCapabilitiesResponse } from '@/generated/api';
@@ -14,7 +16,10 @@ import {
 	getRegistrySourcePreviewCSS,
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
-import { saveFontPreviewSelection } from '@/utils/font-preview-selection';
+import {
+	type FontPreviewSelection,
+	saveFontPreviewSelection,
+} from '@/utils/font-preview-selection';
 
 import classes from './FamilyPreview.module.css';
 import {
@@ -37,6 +42,19 @@ import {
 
 const PreviewEditorContext = createContext<PreviewEditorModel | null>(null);
 const capabilitiesTimeoutMs = 12_000;
+const previewSelectionSaveDelayMs = 160;
+const compactPreviewQuery = '(max-width: 48em)';
+const compactHeadlineMaxSize = 56;
+
+const persistPreviewSelection = (
+	model: PreviewEditorModel,
+	selection: FontPreviewSelection,
+) => {
+	const saved = saveFontPreviewSelection(model.metadata.id, selection);
+	if (model.state$.handoffUnavailable.peek() !== !saved) {
+		model.state$.handoffUnavailable.set(!saved);
+	}
+};
 
 const usePreviewEditor = () => {
 	const model = useContext(PreviewEditorContext);
@@ -57,9 +75,40 @@ const PreviewRuntimeEffects = observer(() => {
 	const italic = useValue(model.state$.typographyByMode[mode].italic);
 	const selectedLanguageId = useValue(model.state$.selectedLanguageId);
 	const axisValues = useValue(model.state$.axisValues);
+	const selection = useMemo<FontPreviewSelection>(
+		() => ({
+			format:
+				model.variable && model.versions.latestVariable ? 'variable' : 'static',
+			subset: model.previewSubset,
+			style: italic ? 'italic' : 'normal',
+			weight,
+			axes: axisValues,
+		}),
+		[axisValues, italic, model, weight],
+	);
+	const pendingSelection = useRef(selection);
 	const hasCachedCapabilities = activeSource
 		? Object.hasOwn(capabilitiesBySource, activeSource.sha256)
 		: false;
+
+	useIsomorphicEffect(() => {
+		if (
+			model.familyKind === 'symbols' ||
+			!window.matchMedia(compactPreviewQuery).matches
+		) {
+			return;
+		}
+
+		const initialHeadline = model.initialTypography.headline;
+		const previousSize = initialHeadline.size;
+		const compactSize = Math.min(previousSize, compactHeadlineMaxSize);
+		if (compactSize === previousSize) return;
+
+		initialHeadline.size = compactSize;
+		if (model.state$.typographyByMode.headline.size.peek() === previousSize) {
+			model.state$.typographyByMode.headline.size.set(compactSize);
+		}
+	}, [model]);
 
 	useEffect(() => {
 		if (!activeSource || hasCachedCapabilities) return;
@@ -207,18 +256,18 @@ const PreviewRuntimeEffects = observer(() => {
 	}, [featureTags, model]);
 
 	useEffect(() => {
-		const saved = saveFontPreviewSelection(model.metadata.id, {
-			format:
-				model.variable && model.versions.latestVariable ? 'variable' : 'static',
-			subset: model.previewSubset,
-			style: italic ? 'italic' : 'normal',
-			weight,
-			axes: axisValues,
-		});
-		if (model.state$.handoffUnavailable.peek() !== !saved) {
-			model.state$.handoffUnavailable.set(!saved);
-		}
-	}, [axisValues, italic, model, weight]);
+		pendingSelection.current = selection;
+		const timeoutId = window.setTimeout(
+			() => persistPreviewSelection(model, selection),
+			previewSelectionSaveDelayMs,
+		);
+		return () => window.clearTimeout(timeoutId);
+	}, [model, selection]);
+
+	useEffect(
+		() => () => persistPreviewSelection(model, pendingSelection.current),
+		[model],
+	);
 
 	return null;
 });

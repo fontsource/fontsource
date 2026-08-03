@@ -239,8 +239,8 @@ const PreviewCanvas = observer(() => {
 				: mode === 'paragraph'
 					? 'Paragraph text'
 					: mode === 'waterfall'
-						? 'Sample across sizes'
-						: 'Text to compare';
+						? 'Waterfall text'
+						: 'Comparison text';
 	const textInputId = `font-preview-${mode}-text`;
 	const sampleChanged = activeText !== sampleText;
 	const setActiveText = (text: string) => model.state$.texts[mode].set(text);
