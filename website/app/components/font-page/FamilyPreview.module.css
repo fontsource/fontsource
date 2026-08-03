@@ -4,6 +4,27 @@
 	padding: 32px 64px 48px;
 }
 
+.workbench,
+.drawerContent {
+	--preview-surface: light-dark(#fff, #121b31);
+	--preview-chrome: light-dark(#f7f8fa, #0f1626);
+	--preview-chrome-subtle: light-dark(#f6f7f9, #0f1626);
+	--preview-notice: light-dark(#f8f9fb, #0f1626);
+	--preview-border: light-dark(1px solid #dce1e9, 1px solid #2c3651);
+	--preview-border-strong: light-dark(1px solid #d7dce5, 1px solid #34405a);
+	--preview-text: light-dark(#07152f, #f4f6fb);
+	--preview-text-soft: light-dark(#1f2c43, #e6eaf2);
+	--preview-text-muted: light-dark(#52617a, #9ca8bd);
+	--preview-text-disabled: light-dark(#8b96a8, #68758c);
+	--preview-selection: light-dark(#efeeff, #1a2240);
+	--preview-track: light-dark(#d8dde6, #34405a);
+	--preview-type-micro: 0.7rem;
+	--preview-type-label: 0.72rem;
+	--preview-type-control: 0.76rem;
+	--preview-type-section: 0.82rem;
+	--preview-type-title: 0.92rem;
+}
+
 .workbench {
 	min-width: 0;
 	border: light-dark(
@@ -11,7 +32,7 @@
 		1px solid var(--mantine-color-border-1)
 	);
 	border-radius: 8px;
-	background: light-dark(#fff, #121b31);
+	background: var(--preview-surface);
 	overflow: clip;
 }
 
@@ -43,7 +64,7 @@
 	display: inline-flex;
 	align-items: center;
 	margin-top: 10px;
-	color: light-dark(#52617a, #aeb9cc);
+	color: var(--preview-text-muted);
 	font-size: 0.75rem;
 	font-weight: 600;
 	text-decoration-color: light-dark(#aeb6c4, #66738a);
@@ -58,9 +79,9 @@
 .handoffNotice {
 	margin: 0;
 	padding: 10px 36px;
-	border-bottom: light-dark(1px solid #d7dce5, 1px solid #34405a);
-	background: light-dark(#f8f9fb, #0f1626);
-	color: light-dark(#52617a, #aeb9cc);
+	border-bottom: var(--preview-border-strong);
+	background: var(--preview-notice);
+	color: var(--preview-text-muted);
 	font-size: 0.78rem;
 	line-height: 1.5;
 }
@@ -74,7 +95,7 @@
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
 	min-height: 640px;
-	background: light-dark(#fff, #121b31);
+	background: var(--preview-surface);
 }
 
 .specimenColumn {
@@ -91,8 +112,8 @@
 	justify-content: space-between;
 	gap: 16px;
 	padding: 12px 20px;
-	border-bottom: light-dark(1px solid #dce1e9, 1px solid #2c3651);
-	background: light-dark(#f6f7f9, #0f1626);
+	border-bottom: var(--preview-border);
+	background: var(--preview-chrome-subtle);
 }
 
 .modeChooser {
@@ -111,14 +132,14 @@
 	align-items: center;
 	justify-content: center;
 	padding-inline: 12px;
-	color: light-dark(#52617a, #aeb9cc);
-	font-size: 0.76rem;
+	color: var(--preview-text-muted);
+	font-size: var(--preview-type-control);
 	font-weight: 600;
 }
 
 .modeChooser :global(.mantine-SegmentedControl-label[data-active]),
 .segmentedField :global(.mantine-SegmentedControl-label[data-active]) {
-	color: light-dark(#07152f, #f4f6fb);
+	color: var(--preview-text);
 }
 
 .modeChooser :global(.mantine-SegmentedControl-indicator),
@@ -146,7 +167,7 @@
 	display: flex;
 	margin: 0;
 	padding: 0;
-	border: light-dark(1px solid #d7dce5, 1px solid #34405a);
+	border: var(--preview-border-strong);
 	border-radius: 4px;
 	overflow: hidden;
 }
@@ -159,13 +180,13 @@
 	align-items: center;
 	justify-content: center;
 	border: 0;
-	color: light-dark(#52617a, #aeb9cc);
-	background: light-dark(#fff, #121b31);
+	color: var(--preview-text-muted);
+	background: var(--preview-surface);
 	cursor: pointer;
 }
 
 .alignmentControl button + button {
-	border-inline-start: light-dark(1px solid #d7dce5, 1px solid #34405a);
+	border-inline-start: var(--preview-border-strong);
 }
 
 .alignmentControl button:hover,
@@ -174,7 +195,7 @@
 .adjustButton:hover,
 .adjustButton:focus-visible {
 	color: var(--mantine-color-purple-0);
-	background: light-dark(#efeeff, #1a2240);
+	background: var(--preview-selection);
 }
 
 .alignmentControl button:focus-visible,
@@ -189,9 +210,9 @@
 	display: none;
 	gap: 7px;
 	padding-inline: 12px;
-	border: light-dark(1px solid #d7dce5, 1px solid #34405a);
+	border: var(--preview-border-strong);
 	border-radius: 4px;
-	font-size: 0.78rem;
+	font-size: var(--preview-type-control);
 	font-weight: 600;
 }
 
@@ -221,8 +242,8 @@
 	inset-block-start: 22px;
 	inset-inline-start: 32px;
 	z-index: 1;
-	color: light-dark(#697790, #9ca8bd);
-	font-size: 0.72rem;
+	color: var(--preview-text-muted);
+	font-size: var(--preview-type-label);
 	font-weight: 600;
 	line-height: 1;
 }
@@ -230,7 +251,7 @@
 .canvasField > span {
 	margin: -4px -8px;
 	padding: 4px 8px;
-	background: light-dark(#fff, #121b31);
+	background: var(--preview-surface);
 }
 
 .canvas {
@@ -266,13 +287,13 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	background: light-dark(#fff, #121b31);
+	background: var(--preview-surface);
 }
 
 .derivedEditor {
 	position: relative;
 	display: block;
-	border-bottom: light-dark(1px solid #dce1e9, 1px solid #2c3651);
+	border-bottom: var(--preview-border);
 }
 
 .derivedEditor > span {
@@ -285,7 +306,7 @@
 	min-height: 76px;
 	padding: 34px 32px 12px;
 	border: 0;
-	color: light-dark(#07152f, #f4f6fb);
+	color: var(--preview-text);
 	background: transparent;
 	font: inherit;
 }
@@ -304,19 +325,19 @@
 	align-items: baseline;
 	gap: 16px;
 	padding-block: 20px;
-	border-bottom: light-dark(1px solid #e1e5ec, 1px solid #2c3651);
+	border-bottom: var(--preview-border);
 }
 
 .waterfall span {
-	color: light-dark(#697790, #9ca8bd);
+	color: var(--preview-text-muted);
 	font-family: var(--mantine-font-family-monospace);
-	font-size: 0.7rem;
+	font-size: var(--preview-type-micro);
 }
 
 .waterfall p {
 	min-width: 0;
 	margin: 0;
-	color: light-dark(#07152f, #f4f6fb);
+	color: var(--preview-text);
 	overflow-wrap: anywhere;
 }
 
@@ -328,8 +349,8 @@
 .compareGrid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	border-top: light-dark(1px solid #dce1e9, 1px solid #2c3651);
-	border-inline-start: light-dark(1px solid #dce1e9, 1px solid #2c3651);
+	border-top: var(--preview-border);
+	border-inline-start: var(--preview-border);
 }
 
 .compareGrid button {
@@ -340,8 +361,8 @@
 	gap: 16px;
 	padding: 18px;
 	border: 0;
-	border-inline-end: light-dark(1px solid #dce1e9, 1px solid #2c3651);
-	border-bottom: light-dark(1px solid #dce1e9, 1px solid #2c3651);
+	border-inline-end: var(--preview-border);
+	border-bottom: var(--preview-border);
 	color: inherit;
 	background: transparent;
 	text-align: start;
@@ -351,7 +372,7 @@
 .compareGrid button:hover,
 .compareGrid button:focus-visible,
 .compareGrid button[data-active='true'] {
-	background: light-dark(#efeeff, #1a2240);
+	background: var(--preview-selection);
 }
 
 .compareGrid button[data-active='true'] {
@@ -366,14 +387,14 @@
 }
 
 .compareGrid button > span {
-	color: light-dark(#697790, #9ca8bd);
-	font-size: 0.72rem;
+	color: var(--preview-text-muted);
+	font-size: var(--preview-type-label);
 	font-weight: 600;
 }
 
 .compareGrid strong {
 	min-width: 0;
-	color: light-dark(#07152f, #f4f6fb);
+	color: var(--preview-text);
 	font-weight: inherit;
 	line-height: 1.05;
 	overflow-wrap: anywhere;
@@ -381,8 +402,8 @@
 
 .inspector {
 	min-width: 0;
-	border-inline-start: light-dark(1px solid #dce1e9, 1px solid #2c3651);
-	background: light-dark(#f7f8fa, #0f1626);
+	border-inline-start: var(--preview-border);
+	background: var(--preview-chrome);
 }
 
 .inspectorContent {
@@ -412,8 +433,8 @@
 	inset-block-start: 0;
 	z-index: 2;
 	padding: 18px 20px;
-	border-bottom: light-dark(1px solid #dce1e9, 1px solid #2c3651);
-	background: light-dark(#f7f8fa, #0f1626);
+	border-bottom: var(--preview-border);
+	background: var(--preview-chrome);
 }
 
 .inspectorHeading h2,
@@ -427,15 +448,15 @@
 }
 
 .inspectorHeading h2 {
-	font-size: 0.92rem;
+	font-size: var(--preview-type-title);
 	font-weight: 650;
 }
 
 .inspectorHeading p,
 .sectionHeading span {
 	margin-top: 2px;
-	color: light-dark(#697790, #9ca8bd);
-	font-size: 0.7rem;
+	color: var(--preview-text-muted);
+	font-size: var(--preview-type-micro);
 	line-height: 1.35;
 }
 
@@ -451,7 +472,7 @@
 	color: var(--mantine-color-purple-0);
 	background: transparent;
 	font: inherit;
-	font-size: 0.72rem;
+	font-size: var(--preview-type-label);
 	font-weight: 650;
 	cursor: pointer;
 }
@@ -466,7 +487,7 @@
 .inspectorHeading button:disabled,
 .drawerReset button:disabled,
 .sectionHeading button:disabled {
-	color: light-dark(#8b96a8, #68758c);
+	color: var(--preview-text-disabled);
 	cursor: default;
 }
 
@@ -486,11 +507,11 @@
 	display: grid;
 	gap: 20px;
 	padding: 20px;
-	border-bottom: light-dark(1px solid #dce1e9, 1px solid #2c3651);
+	border-bottom: var(--preview-border);
 }
 
 .sectionHeading h3 {
-	font-size: 0.82rem;
+	font-size: var(--preview-type-section);
 	font-weight: 700;
 }
 
@@ -516,15 +537,15 @@
 
 .rangeHeading label,
 .segmentedField > span {
-	color: light-dark(#1f2c43, #e6eaf2);
-	font-size: 0.76rem;
+	color: var(--preview-text-soft);
+	font-size: var(--preview-type-control);
 	font-weight: 650;
 	overflow-wrap: anywhere;
 }
 
 .rangeHeading code,
 .featureControl code {
-	color: light-dark(#697790, #9ca8bd);
+	color: var(--preview-text-muted);
 	font-family: var(--mantine-font-family-monospace);
 	font-size: 0.66rem;
 }
@@ -535,14 +556,14 @@
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) auto;
 	align-items: center;
-	border: light-dark(1px solid #d7dce5, 1px solid #34405a);
+	border: var(--preview-border-strong);
 	border-radius: 4px;
-	background: light-dark(#fff, #121b31);
+	background: var(--preview-surface);
 }
 
 .numberField > span {
 	padding-inline-end: 8px;
-	color: light-dark(#697790, #9ca8bd);
+	color: var(--preview-text-muted);
 	font-family: var(--mantine-font-family-monospace);
 	font-size: 0.66rem;
 	pointer-events: none;
@@ -554,10 +575,10 @@
 	min-height: 32px;
 	padding: 0 4px 0 8px;
 	border: 0;
-	color: light-dark(#07152f, #f4f6fb);
+	color: var(--preview-text);
 	background: transparent;
 	font-family: var(--mantine-font-family-monospace);
-	font-size: 0.72rem;
+	font-size: var(--preview-type-label);
 	text-align: end;
 }
 
@@ -574,8 +595,8 @@
 
 .controlDescription {
 	max-width: 36ch;
-	color: light-dark(#697790, #9ca8bd);
-	font-size: 0.7rem;
+	color: var(--preview-text-muted);
+	font-size: var(--preview-type-micro);
 	line-height: 1.45;
 	overflow-wrap: anywhere;
 }
@@ -585,7 +606,7 @@
 }
 
 .slider :global(.mantine-Slider-track) {
-	background: light-dark(#d8dde6, #34405a);
+	background: var(--preview-track);
 }
 
 .slider :global(.mantine-Slider-thumb) {
@@ -594,7 +615,7 @@
 }
 
 .slider :global(.mantine-Slider-mark) {
-	border-color: light-dark(#fff, #121b31);
+	border-color: var(--preview-surface);
 	background: light-dark(#a4adbb, #66738a);
 }
 
@@ -621,20 +642,20 @@
 	gap: 9px;
 	min-height: 40px;
 	padding-inline: 11px;
-	border: light-dark(1px solid #d7dce5, 1px solid #34405a);
+	border: var(--preview-border-strong);
 	border-radius: 4px;
-	color: light-dark(#697790, #9ca8bd);
-	background: light-dark(#fff, #121b31);
+	color: var(--preview-text-muted);
+	background: var(--preview-surface);
 }
 
 .inspectorSearch input {
 	min-width: 0;
 	border: 0;
 	outline: 0;
-	color: light-dark(#07152f, #f4f6fb);
+	color: var(--preview-text);
 	background: transparent;
 	font: inherit;
-	font-size: 0.76rem;
+	font-size: var(--preview-type-control);
 }
 
 .controlList,
@@ -652,7 +673,7 @@
 }
 
 .featureList li + li {
-	border-top: light-dark(1px solid #dce1e9, 1px solid #2c3651);
+	border-top: var(--preview-border);
 }
 
 .featureControl {
@@ -682,7 +703,7 @@
 .featureControl small {
 	grid-column: 1 / -1;
 	margin-top: 3px;
-	color: light-dark(#697790, #9ca8bd);
+	color: var(--preview-text-muted);
 	font-size: 0.68rem;
 	line-height: 1.4;
 	overflow-wrap: anywhere;
@@ -696,7 +717,7 @@
 	margin: 0;
 	border: light-dark(1px solid #b2bac7, 1px solid #59667e);
 	border-radius: 999px;
-	background: light-dark(#d8dde6, #34405a);
+	background: var(--preview-track);
 	cursor: pointer;
 }
 
@@ -728,8 +749,8 @@
 
 .emptyState,
 .capabilitiesStatus {
-	color: light-dark(#697790, #9ca8bd);
-	font-size: 0.72rem;
+	color: var(--preview-text-muted);
+	font-size: var(--preview-type-label);
 	line-height: 1.5;
 }
 
@@ -765,18 +786,18 @@
 
 .drawerContent {
 	border-radius: 8px 8px 0 0;
-	background: light-dark(#f7f8fa, #0f1626);
+	background: var(--preview-chrome);
 }
 
 .drawerHeader {
 	min-height: 56px;
 	padding-inline: 20px;
-	border-bottom: light-dark(1px solid #dce1e9, 1px solid #2c3651);
+	border-bottom: var(--preview-border);
 	background: inherit;
 }
 
 .drawerHeader :global(.mantine-Drawer-title) {
-	font-size: 0.92rem;
+	font-size: var(--preview-type-title);
 	font-weight: 700;
 }
 

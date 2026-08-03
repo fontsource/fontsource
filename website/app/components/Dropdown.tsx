@@ -6,7 +6,7 @@ import {
 	rem,
 	UnstyledButton,
 } from '@mantine/core';
-import { useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 
 import { IconCaret } from '@/components/icons';
 
@@ -32,7 +32,7 @@ interface DropdownProps {
 	search?: (query: string) => void;
 }
 
-const DropdownSimple = ({
+const DropdownSimple = memo(function DropdownSimple({
 	label,
 	ariaLabel,
 	items,
@@ -41,15 +41,20 @@ const DropdownSimple = ({
 	noBorder,
 	searchable = false,
 	refine,
-}: DropdownProps) => {
+}: DropdownProps) {
 	const selected = items.find((item) => item.isRefined)?.value ?? null;
+	const data = useMemo(
+		() =>
+			items.map(({ label: itemLabel, value }) => ({
+				label: itemLabel,
+				value,
+			})),
+		[items],
+	);
 
 	return (
 		<ComboboxPopover
-			data={items.map(({ label: itemLabel, value }) => ({
-				label: itemLabel,
-				value,
-			}))}
+			data={data}
 			value={selected}
 			allowDeselect={false}
 			searchable={searchable}
@@ -79,7 +84,7 @@ const DropdownSimple = ({
 			</ComboboxPopover.Target>
 		</ComboboxPopover>
 	);
-};
+});
 
 const DropdownCheckbox = ({
 	label,
@@ -93,7 +98,18 @@ const DropdownCheckbox = ({
 	search,
 }: DropdownProps) => {
 	const [searchQuery, setSearchQuery] = useState('');
-	const itemByValue = new Map(items.map((item) => [item.value, item]));
+	const data = useMemo(
+		() =>
+			items.map(({ label: itemLabel, value }) => ({
+				label: itemLabel,
+				value,
+			})),
+		[items],
+	);
+	const itemByValue = useMemo(
+		() => new Map(items.map((item) => [item.value, item])),
+		[items],
+	);
 	const selected = items
 		.filter((item) => item.isRefined)
 		.map((item) => item.value);
@@ -106,10 +122,7 @@ const DropdownCheckbox = ({
 	return (
 		<ComboboxPopover
 			multiple
-			data={items.map(({ label: itemLabel, value }) => ({
-				label: itemLabel,
-				value,
-			}))}
+			data={data}
 			value={selected}
 			searchable={Boolean(search)}
 			searchValue={search ? searchQuery : undefined}

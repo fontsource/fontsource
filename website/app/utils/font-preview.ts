@@ -14,6 +14,11 @@ import {
 
 type FontPreviewIdentity = Pick<GetFontResponse, 'family' | 'id' | 'variable'>;
 
+type PreviewLanguage = {
+	language: string;
+	script: string;
+};
+
 const latinPreviewSubsets = new Set([
 	'all',
 	'latin',
@@ -38,6 +43,9 @@ export const isLatinPreviewSubset = (subset: string) =>
 
 export const getPreviewDirection = (subset: string): 'ltr' | 'rtl' =>
 	rtlPreviewSubsets.has(subset) ? 'rtl' : 'ltr';
+
+export const getPreviewLanguageTag = (language?: PreviewLanguage) =>
+	language ? `${language.language}-${language.script}` : undefined;
 
 export const getFontPreviewFamily = (
 	metadata: FontPreviewIdentity,

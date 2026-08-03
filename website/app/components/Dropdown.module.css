@@ -68,6 +68,12 @@
 	margin-left: auto;
 }
 
+@media (pointer: coarse) {
+	.input {
+		min-height: 48px;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.input,
 	.caret {
