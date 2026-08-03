@@ -21,6 +21,7 @@ import { usesNameLigatures } from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
 import { usePreviewEditor } from './FamilyPreviewContext';
+import { PreviewCoverage } from './FamilyPreviewCoverage';
 import {
 	createLanguageModeTexts,
 	getActiveFeatureTags,
@@ -278,6 +279,7 @@ const PreviewCanvas = observer(() => {
 							spellCheck={false}
 							onChange={(event) => setActiveText(event.currentTarget.value)}
 						/>
+						<PreviewCoverage />
 					</div>
 					<div className={classes.waterfall}>
 						{sizes.map((previewSize) => (
@@ -309,6 +311,7 @@ const PreviewCanvas = observer(() => {
 							spellCheck={false}
 							onChange={(event) => setActiveText(event.currentTarget.value)}
 						/>
+						<PreviewCoverage />
 					</div>
 					<FontSkeleton
 						name="font-detail-weight-strip"
@@ -366,6 +369,7 @@ const PreviewCanvas = observer(() => {
 					spellCheck={false}
 					onChange={(event) => setActiveText(event.currentTarget.value)}
 				/>
+				<PreviewCoverage />
 			</div>
 		);
 	})();

@@ -37,6 +37,7 @@ export const FamilyPreview = ({
 	axisRegistry,
 	capabilities,
 	capabilitySource,
+	symbols,
 	variableUnavailable = false,
 }: FamilyPreviewProps) => {
 	const hasCatalog = Boolean(registry?.symbols);
@@ -56,6 +57,7 @@ export const FamilyPreview = ({
 			axisRegistry={axisRegistry}
 			capabilities={capabilities}
 			capabilitySource={capabilitySource}
+			symbols={symbols}
 		>
 			<section className={classes.page}>
 				<PreviewFontStyle />

@@ -40,6 +40,7 @@ import '@mantine/core/styles/ColorInput.css';
 import '@mantine/core/styles/Combobox.css';
 import '@mantine/core/styles/SegmentedControl.css';
 import '@mantine/core/styles/Slider.css';
+import '@mantine/core/styles/Switch.css';
 
 // Buttons
 import '@mantine/core/styles/Button.css';

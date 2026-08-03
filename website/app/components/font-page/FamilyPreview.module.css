@@ -9,6 +9,7 @@
 	--preview-surface: light-dark(#fff, #121b31);
 	--preview-chrome: light-dark(#f7f8fa, #0f1626);
 	--preview-chrome-subtle: light-dark(#f6f7f9, #0f1626);
+	--preview-inspector-tabs: light-dark(#f1f0ff, #171f32);
 	--preview-notice: light-dark(#f8f9fb, #0f1626);
 	--preview-border: light-dark(1px solid #dce1e9, 1px solid #2c3651);
 	--preview-border-strong: light-dark(1px solid #d7dce5, 1px solid #34405a);
@@ -243,6 +244,7 @@
 	min-height: 570px;
 	flex: 1;
 	display: flex;
+	flex-direction: column;
 }
 
 .editorHeader {
@@ -290,7 +292,7 @@
 .canvas {
 	box-sizing: border-box;
 	width: 100%;
-	min-height: 570px;
+	min-height: 0;
 	flex: 1;
 	resize: none;
 	padding: 72px 32px 40px;
@@ -301,6 +303,57 @@
 	font-size: var(--preview-size);
 	text-wrap: pretty;
 	overflow: auto;
+}
+
+.coverageStatus {
+	min-width: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 10px 32px;
+	border-top: var(--preview-border);
+	background: var(--preview-chrome-subtle);
+	color: var(--preview-text-muted);
+	font-size: var(--preview-type-label);
+	line-height: 1.45;
+
+	p {
+		min-width: 0;
+		display: flex;
+		align-items: baseline;
+		gap: 8px;
+		margin: 0;
+		overflow-wrap: anywhere;
+	}
+
+	strong {
+		flex: 0 0 auto;
+		color: var(--preview-text-soft);
+		font-weight: 650;
+	}
+
+	a {
+		flex: 0 0 auto;
+		color: var(--mantine-color-purple-0);
+		font-weight: 650;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	a:hover {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	a:focus-visible {
+		outline: 2px solid var(--mantine-color-purple-0);
+		outline-offset: 3px;
+	}
+}
+
+.coverageStatus[data-unsupported] strong {
+	color: light-dark(#72551f, #e0c781);
 }
 
 .canvasField[data-mode='paragraph'] .canvas {
@@ -436,7 +489,7 @@
 .inspector {
 	min-width: 0;
 	border-inline-start: var(--preview-border);
-	background: var(--preview-chrome);
+	background: var(--preview-surface);
 }
 
 .inspectorContent {
@@ -467,7 +520,7 @@
 	z-index: 2;
 	padding: 18px 20px;
 	border-bottom: var(--preview-border);
-	background: var(--preview-chrome);
+	background: var(--preview-surface);
 }
 
 .inspectorSectionChooser {
@@ -476,7 +529,25 @@
 	z-index: 1;
 	padding: 12px 20px;
 	border-bottom: var(--preview-border);
-	background: var(--preview-chrome);
+	background: var(--preview-surface);
+}
+
+.inspectorSectionChooser :global(.mantine-SegmentedControl-root) {
+	padding: 3px;
+	border: var(--preview-border);
+	background: var(--preview-inspector-tabs);
+}
+
+.inspectorSectionChooser
+	:global(.mantine-SegmentedControl-label[data-active]) {
+	color: var(--mantine-color-purple-0);
+}
+
+.inspectorSectionChooser
+	:global(.mantine-SegmentedControl-indicator) {
+	border-color: light-dark(rgb(98 91 248 / 28%), #465074);
+	background: var(--preview-surface);
+	box-shadow: inset 0 -2px var(--mantine-color-purple-0);
 }
 
 .inspectorHeading h2,
@@ -550,6 +621,11 @@
 	gap: 20px;
 	padding: 20px;
 	border-bottom: var(--preview-border);
+	background: var(--preview-surface);
+}
+
+.sectionHeading {
+	align-items: flex-start;
 }
 
 .sectionHeading h3 {
@@ -746,6 +822,10 @@
 	outline-offset: 3px;
 }
 
+.featureDetails summary:hover {
+	color: var(--mantine-color-purple-0);
+}
+
 .featureDetailsCount {
 	color: var(--preview-text-muted);
 	font-family: var(--mantine-font-family-monospace);
@@ -766,16 +846,26 @@
 }
 
 .featureControl {
-	padding-block: 14px;
+	margin-inline: -8px;
+	padding: 14px 8px;
+	border-radius: 4px;
+}
+
+.featureControl:hover {
+	background: var(--preview-selection);
 }
 
 .featureSwitchBody {
 	width: 100%;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) auto;
-	align-items: center;
+	align-items: start;
 	gap: 16px;
 	cursor: pointer;
+}
+
+.featureSwitchTrack {
+	margin-block-start: 2px;
 }
 
 .featureText {
@@ -847,7 +937,7 @@
 
 .drawerContent {
 	border-radius: 8px 8px 0 0;
-	background: var(--preview-chrome);
+	background: var(--preview-surface);
 }
 
 .drawerHeader {
@@ -1048,6 +1138,19 @@
 	.canvas {
 		padding-inline: 18px;
 		padding-block-start: 62px;
+	}
+
+	.coverageStatus {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 6px;
+		padding-inline: 18px;
+
+		p {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 2px;
+		}
 	}
 
 	.editorHeader {

@@ -31,7 +31,6 @@
 	}
 }
 
-.modeSwitch,
 .groupSwitch {
 	min-width: 0;
 	max-width: 100%;
@@ -174,7 +173,7 @@
 .grid {
 	min-width: 0;
 	margin: 0;
-	padding: 18px;
+	padding: 0;
 	border: 0;
 }
 
@@ -281,6 +280,26 @@
 	display: none;
 }
 
+.inspectorEmpty {
+	max-width: 26ch;
+	margin: auto;
+	text-align: center;
+
+	h3 {
+		margin: 0;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	p {
+		margin: 8px 0 0;
+		color: light-dark(#52617a, #aeb9cc);
+		font-size: 0.8125rem;
+		line-height: 1.5;
+		text-wrap: balance;
+	}
+}
+
 .largeCharacter {
 	max-width: 100%;
 	overflow: hidden;
@@ -338,44 +357,6 @@
 	overflow-wrap: anywhere;
 }
 
-.checker {
-	min-width: 0;
-	padding: 38px;
-	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
-	border-radius: 4px;
-
-	label {
-		font-size: 22px;
-		font-weight: 600;
-	}
-
-	p {
-		margin: 8px 0 24px;
-		color: light-dark(#52617a, #aeb9cc);
-		overflow-wrap: anywhere;
-	}
-
-	textarea {
-		min-width: 0;
-		box-sizing: border-box;
-		width: 100%;
-		padding: 28px;
-		border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
-		border-radius: 4px;
-		color: inherit;
-		background: transparent;
-		font-size: clamp(34px, 5vw, 72px);
-		line-height: 1.2;
-		resize: vertical;
-	}
-}
-
-.checkHint {
-	margin: 14px 0 0 !important;
-	font-size: 13px;
-	overflow-wrap: anywhere;
-}
-
 @media (--lt-md) {
 	.page {
 		padding-left: 32px;
@@ -406,14 +387,6 @@
 	.headingRow {
 		align-items: flex-start;
 		flex-direction: column;
-	}
-
-	.modeSwitch {
-		width: 100%;
-
-		button {
-			flex: 1;
-		}
 	}
 
 	.filters {
@@ -455,6 +428,17 @@
 			grid-column: 1 / -1;
 			margin-top: 8px;
 		}
+
+		.inspectorEmpty {
+			grid-column: 1 / -1;
+			max-width: none;
+			margin: 0;
+			text-align: start;
+
+			p {
+				text-wrap: pretty;
+			}
+		}
 	}
 
 	.desktopInspector {
@@ -463,15 +447,13 @@
 
 	.grid {
 		grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-		padding: 12px;
 
 		> button {
 			min-height: 50px;
 		}
 	}
 
-	.inspector,
-	.checker {
+	.inspector {
 		padding: 24px;
 	}
 
@@ -481,13 +463,12 @@
 }
 
 @media (pointer: coarse) {
-	:is(.modeSwitch button, .groupSwitch button, .resultSummary button) {
+	:is(.groupSwitch button, .resultSummary button) {
 		min-height: 48px;
 	}
 }
 
 @media (forced-colors: active) {
-	.modeSwitch button[data-active],
 	.groupSwitch button[data-active],
 	.grid > button[data-active] {
 		outline: 2px solid Highlight;
