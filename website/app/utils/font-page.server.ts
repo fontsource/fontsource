@@ -2,6 +2,7 @@ import {
 	getFont,
 	getFontStats,
 	getRegistryFamily,
+	getRegistryFamilySymbols,
 	getRegistrySourceCapabilities,
 	getVariableFont,
 	listRegistryLanguages,
@@ -106,9 +107,26 @@ const loadFontPageLanguages = async (
 	};
 };
 
+const loadFontPageSymbols = async (
+	basePromise: Promise<FontPageBase>,
+	signal: AbortSignal,
+) => {
+	const base = await basePromise;
+	if (!base.registry?.symbols) {
+		return { symbols: undefined, state: 'not-found' as const };
+	}
+
+	const result = await loadOptionalRegistryData(
+		getRegistryFamilySymbols({ id: base.metadata.id }, { signal }),
+		signal,
+	);
+	return { symbols: result.value, state: result.state };
+};
+
 export {
 	loadFontPageBase,
 	loadFontPageCapabilities,
 	loadFontPageLanguages,
 	loadFontPageStats,
+	loadFontPageSymbols,
 };

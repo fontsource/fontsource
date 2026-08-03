@@ -1,9 +1,12 @@
 import { useValue } from '@legendapp/state/react';
 import { ActionIcon, Button, Tooltip } from '@mantine/core';
+import { useReducedMotion } from '@mantine/hooks';
 import { IconHeart } from '@tabler/icons-react';
+import { useState } from 'react';
 
 import type { FontSummary } from '@/utils/font-summary';
 import { useCollectionsStore } from './CollectionsProvider';
+import classes from './FavoriteButton.module.css';
 
 interface FavoriteButtonProps {
 	font: FontSummary;
@@ -12,6 +15,8 @@ interface FavoriteButtonProps {
 
 const FavoriteButton = ({ font, withLabel }: FavoriteButtonProps) => {
 	const store = useCollectionsStore();
+	const reducedMotion = useReducedMotion();
+	const [animateFavorite, setAnimateFavorite] = useState(false);
 	const ready = useValue(store.ready$);
 	const favoritesId = useValue(store.getFavoritesCollectionId);
 	const favorite = useValue(() => store.hasFont(favoritesId, font.id));
@@ -19,11 +24,29 @@ const FavoriteButton = ({ font, withLabel }: FavoriteButtonProps) => {
 
 	const handleClick = () => {
 		if (favorite) {
+			setAnimateFavorite(false);
 			store.removeFontFromCollection(favoritesId, font.id);
 		} else {
+			if (!reducedMotion) {
+				setAnimateFavorite(true);
+			}
 			store.addFontToCollection(favoritesId, font);
 		}
 	};
+
+	const icon = (
+		<span
+			className={classes.icon}
+			data-animate={animateFavorite || undefined}
+			onAnimationEnd={() => setAnimateFavorite(false)}
+		>
+			<IconHeart
+				aria-hidden="true"
+				fill={favorite ? 'currentColor' : 'none'}
+				size={withLabel ? 18 : 20}
+			/>
+		</span>
+	);
 
 	if (withLabel) {
 		return (
@@ -31,13 +54,7 @@ const FavoriteButton = ({ font, withLabel }: FavoriteButtonProps) => {
 				aria-label={label}
 				aria-pressed={favorite}
 				disabled={!ready}
-				leftSection={
-					<IconHeart
-						aria-hidden="true"
-						fill={favorite ? 'currentColor' : 'none'}
-						size={18}
-					/>
-				}
+				leftSection={icon}
 				onClick={handleClick}
 				type="button"
 				variant="default"
@@ -60,7 +77,7 @@ const FavoriteButton = ({ font, withLabel }: FavoriteButtonProps) => {
 				type="button"
 				variant="transparent"
 			>
-				<IconHeart fill={favorite ? 'currentColor' : 'none'} size={20} />
+				{icon}
 			</ActionIcon>
 		</Tooltip>
 	);

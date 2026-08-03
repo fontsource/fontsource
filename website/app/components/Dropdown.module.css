@@ -10,7 +10,7 @@
 	background-color: light-dark(transparent, var(--mantine-color-background-4));
 	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 	font-size: var(--mantine-font-size-sm);
-	font-weight: 500;
+	font-weight: 400;
 	transition:
 		background-color 120ms ease,
 		border-color 120ms ease;
@@ -47,10 +47,6 @@
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-}
-
-.checkboxInput {
-	font-weight: 400;
 }
 
 .caret {

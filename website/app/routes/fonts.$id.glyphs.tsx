@@ -4,41 +4,32 @@ import invariant from 'tiny-invariant';
 
 import { CharacterExplorer } from '@/components/font-page/CharacterExplorer';
 import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
-import { getRegistryFamilySymbols } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import {
 	loadFontPageBase,
 	loadFontPageCapabilities,
 	loadFontPageLanguages,
+	loadFontPageSymbols,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
-import { loadOptionalRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
-	const symbolsPromise = basePromise.then((base) =>
-		base.registry?.symbols
-			? loadOptionalRegistryData(
-					getRegistryFamilySymbols({ id }, { signal: request.signal }),
-					request.signal,
-				)
-			: { value: undefined, state: 'not-found' as const },
-	);
 	const [base, languagesResult, capabilitiesResult, symbolsResult] =
 		await Promise.all([
 			basePromise,
 			loadFontPageLanguages(basePromise, request.signal),
 			loadFontPageCapabilities(basePromise, request.signal),
-			symbolsPromise,
+			loadFontPageSymbols(basePromise, request.signal),
 		]);
 
 	return data(
 		{
 			...base,
 			languages: languagesResult.languages,
-			symbols: symbolsResult.value,
+			symbols: symbolsResult.symbols,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
 			capabilitiesState: capabilitiesResult.state,

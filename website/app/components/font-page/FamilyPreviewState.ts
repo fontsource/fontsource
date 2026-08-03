@@ -3,6 +3,7 @@ import { batch, type ObservableObject } from '@legendapp/state';
 import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
+	GetRegistryFamilySymbolsResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetVariableFontResponse,
 	ListRegistryAxesResponse,
@@ -96,6 +97,7 @@ interface PreviewEditorProps {
 	axisRegistry?: ListRegistryAxesResponse;
 	capabilities?: GetRegistrySourceCapabilitiesResponse;
 	capabilitySource?: RegistrySource;
+	symbols?: GetRegistryFamilySymbolsResponse;
 }
 
 interface PreviewEditorModel
@@ -495,6 +497,7 @@ export {
 	createPreviewEditorSetup,
 	enabledByDefaultFeatureTags,
 	getActiveAxes,
+	getActiveCapabilities,
 	getActiveFeatureTags,
 	getActiveLanguages,
 	getActiveSource,

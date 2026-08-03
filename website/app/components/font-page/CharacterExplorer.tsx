@@ -36,7 +36,6 @@ import {
 } from '@/utils/font-preview';
 import { getPreviewText as getLanguagePreviewText } from '@/utils/language/language';
 import {
-	findUnmappedCharacters,
 	getRegistryCharacterGroups,
 	getRegistryFamilyKind,
 	getRegistryPreviewText,
@@ -70,13 +69,10 @@ interface CharacterExplorerProps {
 	symbolsState: RegistryDataState;
 }
 
-type ExplorerMode = 'browse' | 'check';
-
 const glyphCellSize = 58;
 const glyphGridPadding = 36;
 const initialGlyphRowCount = 8;
 const maxSearchLength = 256;
-const maxDisplayedUnknownNameLength = 48;
 
 const registryCharacterGroupLabels = [
 	{ label: 'Sample', value: 'sample' },
@@ -208,16 +204,6 @@ const getSymbolDisplayValue = (value: string, useNameLigature: boolean) => {
 	return codepoint === undefined
 		? getSymbolName(value)
 		: (getUnicodeCharacter(codepoint) ?? getSymbolName(value));
-};
-
-const truncateDisplayValue = (
-	value: string,
-	maxLength = maxDisplayedUnknownNameLength,
-) => {
-	const characters = Array.from(value);
-	return characters.length > maxLength
-		? `${characters.slice(0, maxLength - 1).join('')}…`
-		: value;
 };
 
 const getSampleCharacters = (value: string) =>
@@ -352,7 +338,6 @@ export const CharacterExplorer = ({
 				(item) => (explorerGroups[item.value]?.length ?? 0) > 0,
 			);
 	const defaultGroup = groupLabels[0]?.value ?? 'all';
-	const [mode, setMode] = useState<ExplorerMode>('browse');
 	const [group, setGroup] = useState(defaultGroup);
 	const activeGroup = groupLabels.some((item) => item.value === group)
 		? group
@@ -364,28 +349,7 @@ export const CharacterExplorer = ({
 	const { ref: catalogSizeRef, width: catalogWidth } =
 		useElementSize<HTMLDivElement>();
 	const mergedCatalogRef = useMergedRef(catalogRef, catalogSizeRef);
-	const [selected, setSelected] = useState(
-		explorerGroups[defaultGroup]?.[0] ?? '&',
-	);
-	const catalogSample = symbols
-		?.slice(0, 5)
-		.map((symbol) =>
-			hasNamedLigatures
-				? symbol.name
-				: (getUnicodeCharacter(symbol.codepoint) ?? symbol.name),
-		)
-		.join(' ');
-	const registrySample =
-		registry?.sampleText || isScriptFamily
-			? getRegistryPreviewText(registry, languages)
-			: undefined;
-	const [sample, setSample] = useState(
-		registrySample ||
-			catalogSample ||
-			(isScriptFamily
-				? getLanguagePreviewText(previewSubset)
-				: metadata.family),
-	);
+	const [selected, setSelected] = useState('');
 	const characterClipboard = useClipboard({ timeout: 1500 });
 	const codeClipboard = useClipboard({ timeout: 1500 });
 	const sourceCSS = capabilitySource
@@ -483,7 +447,8 @@ export const CharacterExplorer = ({
 		: renderedRows.length * glyphCellSize;
 	const activeCharacter = matchingCharacters.includes(selected)
 		? selected
-		: matchingCharacters[0];
+		: undefined;
+	const focusableCharacter = activeCharacter ?? matchingCharacters[0];
 	const showingSampleCharacters =
 		!hasCatalogEntries && (!capabilities || !resolvedCharacterGroups);
 	const canRetryExplorer =
@@ -567,7 +532,7 @@ export const CharacterExplorer = ({
 			? `Compare punctuation forms and try ${metadata.family} in Japanese context.`
 			: isDigitalFamily
 				? `Compose numbers, labels, and display patterns with ${metadata.family}.`
-				: `Browse a practical character set or inspect your own text in ${metadata.family}.`;
+				: `Browse characters, inspect their Unicode values, and copy what you need from ${metadata.family}.`;
 	const searchPlaceholder = catalogExpected
 		? hasNamedLigatures
 			? 'Search home, arrow, or settings'
@@ -577,51 +542,6 @@ export const CharacterExplorer = ({
 			: isScriptFamily
 				? 'Search a character or code point'
 				: 'Search A, ampersand, or U+0026';
-	const checkerLabel = catalogExpected
-		? hasNamedLigatures
-			? 'Preview symbol names'
-			: 'Preview symbols'
-		: isPunctuationFamily
-			? 'Try punctuation in context'
-			: isDigitalFamily
-				? 'Try a readout'
-				: 'Inspect your own text';
-	const unmappedCharacters = useMemo(
-		() => findUnmappedCharacters(sample, capabilities),
-		[sample, capabilities],
-	);
-	const unknownSymbols = useMemo(() => {
-		if (!hasNamedLigatures || !hasCatalogEntries || !symbols) return [];
-		const knownNames = new Set(symbols.map((symbol) => symbol.name));
-		return Array.from(
-			new Set(
-				sample
-					.trim()
-					.split(/\s+/)
-					.filter((name) => name && !knownNames.has(name)),
-			),
-		);
-	}, [hasCatalogEntries, hasNamedLigatures, sample, symbols]);
-	const coverageCheckMessage = hasNamedLigatures
-		? hasCatalogEntries
-			? unknownSymbols.length === 0
-				? 'Every entered symbol name is in the Registry catalog.'
-				: `${unknownSymbols.length.toLocaleString('en')} ${unknownSymbols.length === 1 ? 'name is' : 'names are'} not in the Registry catalog: ${unknownSymbols
-						.slice(0, 6)
-						.map((name) => truncateDisplayValue(name))
-						.join(', ')}${unknownSymbols.length > 6 ? '…' : ''}`
-			: 'Symbol catalog details are unavailable.'
-		: capabilities
-			? unmappedCharacters.length === 0
-				? `Every visible character is mapped by ${capabilitySource?.filename ?? 'the selected source'}.`
-				: `${unmappedCharacters.length.toLocaleString('en')} ${unmappedCharacters.length === 1 ? 'character is' : 'characters are'} not mapped directly: ${unmappedCharacters
-						.slice(0, 12)
-						.map((character) => getDisplayCharacter(character))
-						.join(' ')}${unmappedCharacters.length > 12 ? ' …' : ''}`
-			: capabilitiesState === 'unavailable'
-				? 'Exact source coverage is temporarily unavailable.'
-				: 'Exact source coverage is not published for this family.';
-
 	const moveGlyphFocus = (
 		event: KeyboardEvent<HTMLButtonElement>,
 		index: number,
@@ -668,12 +588,12 @@ export const CharacterExplorer = ({
 	};
 	const updateQuery = (value: string) => {
 		setQuery(value);
-		setSelected(value ? '' : (explorerGroups[activeGroup]?.[0] ?? '&'));
+		setSelected('');
 		catalogRef.current?.scrollTo({ top: 0 });
 	};
 	const updateGroup = (value: string) => {
 		setGroup(value);
-		setSelected(explorerGroups[value]?.[0] ?? '&');
+		setSelected('');
 		setQuery('');
 		catalogRef.current?.scrollTo({ top: 0 });
 	};
@@ -682,59 +602,81 @@ export const CharacterExplorer = ({
 			? activeSymbolName
 			: (activeCharacter ?? '');
 
-	const renderInspector = (variantClass: string) =>
-		activeCharacter ? (
-			<aside
-				className={`${classes.inspector} ${variantClass}`}
-				aria-label={
-					activeIsCatalogEntry ? 'Selected symbol' : 'Selected character'
-				}
-			>
-				<div className={classes.largeCharacter} style={specimenStyle}>
-					{getPreviewCharacter(activeCharacter)}
-				</div>
-				<strong>{selectedName}</strong>
-				<code>{selectedCodePoint}</code>
-				<button
-					type="button"
-					className={classes.primaryCopy}
-					onClick={() => characterClipboard.copy(primaryCopyValue)}
-				>
-					<IconCopy aria-hidden stroke="currentColor" />
-					{characterClipboard.copied
-						? 'Copied'
-						: characterClipboard.error
-							? 'Copy failed'
-							: hasNamedLigatures && activeSymbolName
-								? 'Copy ligature'
-								: activeIsCatalogEntry
-									? 'Copy symbol'
-									: activeIsCombiningMark
-										? 'Copy mark'
-										: 'Copy character'}
-				</button>
-				{selectedUnicode && (
+	const renderInspector = (variantClass: string) => (
+		<aside
+			className={`${classes.inspector} ${variantClass}`}
+			aria-label={
+				activeCharacter
+					? activeIsCatalogEntry
+						? 'Selected symbol'
+						: 'Selected character'
+					: catalogExpected || isSymbolFamily
+						? 'Symbol details'
+						: 'Character details'
+			}
+		>
+			{activeCharacter ? (
+				<>
+					<div className={classes.largeCharacter} style={specimenStyle}>
+						{getPreviewCharacter(activeCharacter)}
+					</div>
+					<strong>{selectedName}</strong>
+					<code>{selectedCodePoint}</code>
 					<button
 						type="button"
-						className={classes.secondaryCopy}
-						onClick={() => codeClipboard.copy(selectedUnicode)}
+						className={classes.primaryCopy}
+						onClick={() => characterClipboard.copy(primaryCopyValue)}
 					>
-						<IconCopy aria-hidden />
-						{codeClipboard.copied
+						<IconCopy aria-hidden stroke="currentColor" />
+						{characterClipboard.copied
 							? 'Copied'
-							: codeClipboard.error
+							: characterClipboard.error
 								? 'Copy failed'
-								: `Copy ${selectedUnicode}`}
+								: hasNamedLigatures && activeSymbolName
+									? 'Copy ligature'
+									: activeIsCatalogEntry
+										? 'Copy symbol'
+										: activeIsCombiningMark
+											? 'Copy mark'
+											: 'Copy character'}
 					</button>
-				)}
-				{(characterClipboard.error || codeClipboard.error) && (
-					<p className={classes.copyError} role="status">
-						Clipboard access was blocked. Select the character or code shown
-						above and copy it manually.
+					{selectedUnicode && (
+						<button
+							type="button"
+							className={classes.secondaryCopy}
+							onClick={() => codeClipboard.copy(selectedUnicode)}
+						>
+							<IconCopy aria-hidden />
+							{codeClipboard.copied
+								? 'Copied'
+								: codeClipboard.error
+									? 'Copy failed'
+									: `Copy ${selectedUnicode}`}
+						</button>
+					)}
+					{(characterClipboard.error || codeClipboard.error) && (
+						<p className={classes.copyError} role="status">
+							Clipboard access was blocked. Select the character or code shown
+							above and copy it manually.
+						</p>
+					)}
+				</>
+			) : (
+				<div className={classes.inspectorEmpty}>
+					<h3>
+						{catalogExpected || isSymbolFamily
+							? 'Select a symbol'
+							: 'Select a character'}
+					</h3>
+					<p>
+						{catalogExpected || isSymbolFamily
+							? 'Choose any symbol to inspect its mapping and copy it.'
+							: 'Choose any glyph to inspect its Unicode value and copy it.'}
 					</p>
-				)}
-			</aside>
-		) : null;
+				</div>
+			)}
+		</aside>
+	);
 
 	return (
 		<section className={classes.page} aria-labelledby="characters-heading">
@@ -750,221 +692,176 @@ export const CharacterExplorer = ({
 					<h2 id="characters-heading">{heading}</h2>
 					<p>{description}</p>
 				</div>
-				<fieldset className={classes.modeSwitch} aria-label="Character tools">
-					<button
-						type="button"
-						data-active={mode === 'browse' || undefined}
-						aria-pressed={mode === 'browse'}
-						onClick={() => setMode('browse')}
-					>
-						{showingSampleCharacters ? 'Browse sample' : 'Browse glyphs'}
-					</button>
-					<button
-						type="button"
-						data-active={mode === 'check' || undefined}
-						aria-pressed={mode === 'check'}
-						onClick={() => setMode('check')}
-					>
-						Inspect my text
-					</button>
-				</fieldset>
 			</div>
 
-			{mode === 'browse' ? (
-				<>
-					<div className={classes.filters}>
-						<label
-							className={classes.search}
-							htmlFor={`character-search-${metadata.id}`}
-						>
-							<IconSearch aria-hidden height={18} />
-							<VisuallyHidden>
-								{catalogExpected ? 'Search symbols' : 'Search characters'}
-							</VisuallyHidden>
-							<input
-								id={`character-search-${metadata.id}`}
-								type="search"
-								autoCapitalize="none"
-								autoComplete="off"
-								autoCorrect="off"
-								maxLength={maxSearchLength}
-								placeholder={searchPlaceholder}
-								spellCheck={false}
-								value={query}
-								onChange={(event) => updateQuery(event.currentTarget.value)}
-							/>
-						</label>
-						{hasCatalogEntries && groupLabels.length > 1 ? (
-							<DropdownSimple
-								label={
-									groupLabels.find((item) => item.value === activeGroup)
-										?.label ?? 'All categories'
-								}
-								ariaLabel="Filter symbols by category"
-								items={groupLabels.map((item) => ({
-									...item,
-									isRefined: item.value === activeGroup,
-								}))}
-								refine={updateGroup}
-								w={180}
-								dropdownWidth={220}
-							/>
-						) : groupLabels.length > 1 ? (
-							<fieldset
-								className={classes.groupSwitch}
-								aria-label="Character group"
-							>
-								{groupLabels.map((item) => (
-									<button
-										key={item.value}
-										type="button"
-										data-active={activeGroup === item.value || undefined}
-										aria-pressed={activeGroup === item.value}
-										onClick={() => updateGroup(item.value)}
-									>
-										{item.label}
-									</button>
-								))}
-							</fieldset>
-						) : null}
-					</div>
-					<div className={classes.resultSummary}>
-						<span aria-live="polite" aria-atomic="true">
-							{announcedResultSummary}
-						</span>
-						{canRetryExplorer && (
-							<button
-								type="button"
-								disabled={revalidator.state !== 'idle'}
-								onClick={() => void revalidator.revalidate()}
-							>
-								{revalidator.state === 'idle'
-									? 'Try again'
-									: 'Checking Registry…'}
-							</button>
-						)}
-					</div>
-
-					<FontSkeleton
-						name="font-detail-glyph-explorer"
-						family={previewFamily}
-						weight={
-							typeof sourcePreviewStyle.fontWeight === 'number'
-								? sourcePreviewStyle.fontWeight
-								: 400
-						}
-						style={sourcePreviewStyle.fontStyle}
-					>
-						{renderInspector(classes.mobileInspector)}
-
-						<div className={classes.explorer}>
-							<div className={classes.catalog} ref={mergedCatalogRef}>
-								<fieldset
-									className={classes.grid}
-									style={specimenStyle}
-									data-glyph-grid
-								>
-									<VisuallyHidden component="legend">
-										{metadata.family} character results
-									</VisuallyHidden>
-									<div
-										className={classes.virtualGrid}
-										style={{ height: virtualGridHeight }}
-									>
-										{renderedRows.map((virtualRow) => {
-											const row = characterRows[virtualRow.index] ?? [];
-											return (
-												<div
-													key={virtualRow.key}
-													className={classes.virtualRow}
-													style={{
-														gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
-														transform: `translateY(${virtualRow.start}px)`,
-													}}
-												>
-													{row.map((character, columnIndex) => {
-														const index =
-															virtualRow.index * columnCount + columnIndex;
-														const catalogEntry = isSymbolKey(character);
-														const displayCharacter =
-															getPreviewCharacter(character);
-														const symbolCodepoint =
-															getSymbolCodepoint(character);
-														const symbolLabel =
-															symbolCodepoint === undefined
-																? ''
-																: `, ${formatCodepoint(symbolCodepoint)}`;
-
-														return (
-															<button
-																key={`${activeGroup}-${character}`}
-																id={`glyph-${metadata.id}-${index}`}
-																type="button"
-																aria-label={
-																	catalogEntry
-																		? `${getCharacterName(getSymbolName(character))}${hasNamedLigatures ? `, name ligature ${getSymbolName(character)}` : ''}${symbolLabel}`
-																		: `${getCharacterName(character)}, ${getCodePoints(character)}${isCombiningMark(character) ? `, previewed on ${markPreviewBase.trim() || 'a spacing guide'}` : ''}`
-																}
-																aria-pressed={activeCharacter === character}
-																data-active={
-																	activeCharacter === character || undefined
-																}
-																tabIndex={
-																	activeCharacter === character ? 0 : -1
-																}
-																onClick={() => setSelected(character)}
-																onFocus={() => setSelected(character)}
-																onKeyDown={(event) =>
-																	moveGlyphFocus(event, index)
-																}
-															>
-																{displayCharacter}
-															</button>
-														);
-													})}
-												</div>
-											);
-										})}
-									</div>
-									{matchingCharacters.length === 0 && (
-										<div className={classes.empty}>
-											<p>
-												{catalogExpected && symbolsState === 'unavailable'
-													? 'The symbol catalog is temporarily unavailable.'
-													: query
-														? `No ${catalogExpected ? 'symbols' : 'characters'} match “${query}”.`
-														: 'No mapped characters are available for this source.'}
-											</p>
-											{query && (
-												<button type="button" onClick={() => updateQuery('')}>
-													Clear search
-												</button>
-											)}
-										</div>
-									)}
-								</fieldset>
-							</div>
-
-							{renderInspector(classes.desktopInspector)}
-						</div>
-					</FontSkeleton>
-				</>
-			) : (
-				<div className={classes.checker}>
-					<label htmlFor="character-checker">{checkerLabel}</label>
-					<p>Paste the words, names, numbers, or symbols you plan to use.</p>
-					<textarea
-						id="character-checker"
-						rows={5}
-						value={sample}
-						onChange={(event) => setSample(event.currentTarget.value)}
-						style={specimenStyle}
+			<div className={classes.filters}>
+				<label
+					className={classes.search}
+					htmlFor={`character-search-${metadata.id}`}
+				>
+					<IconSearch aria-hidden height={18} />
+					<VisuallyHidden>
+						{catalogExpected ? 'Search symbols' : 'Search characters'}
+					</VisuallyHidden>
+					<input
+						id={`character-search-${metadata.id}`}
+						type="search"
+						autoCapitalize="none"
+						autoComplete="off"
+						autoCorrect="off"
+						maxLength={maxSearchLength}
+						placeholder={searchPlaceholder}
+						spellCheck={false}
+						value={query}
+						onChange={(event) => updateQuery(event.currentTarget.value)}
 					/>
-					<p className={classes.checkHint}>
-						This previews shaping and spacing. {coverageCheckMessage}
-					</p>
+				</label>
+				{hasCatalogEntries && groupLabels.length > 1 ? (
+					<DropdownSimple
+						label={
+							groupLabels.find((item) => item.value === activeGroup)?.label ??
+							'All categories'
+						}
+						ariaLabel="Filter symbols by category"
+						items={groupLabels.map((item) => ({
+							...item,
+							isRefined: item.value === activeGroup,
+						}))}
+						refine={updateGroup}
+						w={180}
+						dropdownWidth={220}
+					/>
+				) : groupLabels.length > 1 ? (
+					<fieldset
+						className={classes.groupSwitch}
+						aria-label="Character group"
+					>
+						{groupLabels.map((item) => (
+							<button
+								key={item.value}
+								type="button"
+								data-active={activeGroup === item.value || undefined}
+								aria-pressed={activeGroup === item.value}
+								onClick={() => updateGroup(item.value)}
+							>
+								{item.label}
+							</button>
+						))}
+					</fieldset>
+				) : null}
+			</div>
+			<div className={classes.resultSummary}>
+				<span aria-live="polite" aria-atomic="true">
+					{announcedResultSummary}
+				</span>
+				{canRetryExplorer && (
+					<button
+						type="button"
+						disabled={revalidator.state !== 'idle'}
+						onClick={() => void revalidator.revalidate()}
+					>
+						{revalidator.state === 'idle' ? 'Try again' : 'Checking Registry…'}
+					</button>
+				)}
+			</div>
+
+			<FontSkeleton
+				name="font-detail-glyph-explorer"
+				family={previewFamily}
+				weight={
+					typeof sourcePreviewStyle.fontWeight === 'number'
+						? sourcePreviewStyle.fontWeight
+						: 400
+				}
+				style={sourcePreviewStyle.fontStyle}
+			>
+				{renderInspector(classes.mobileInspector)}
+
+				<div className={classes.explorer}>
+					<div className={classes.catalog} ref={mergedCatalogRef}>
+						<fieldset
+							className={classes.grid}
+							style={specimenStyle}
+							data-glyph-grid
+						>
+							<VisuallyHidden component="legend">
+								{metadata.family} character results
+							</VisuallyHidden>
+							<div
+								className={classes.virtualGrid}
+								style={{ height: virtualGridHeight }}
+							>
+								{renderedRows.map((virtualRow) => {
+									const row = characterRows[virtualRow.index] ?? [];
+									return (
+										<div
+											key={virtualRow.key}
+											className={classes.virtualRow}
+											style={{
+												gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
+												transform: `translateY(${virtualRow.start}px)`,
+											}}
+										>
+											{row.map((character, columnIndex) => {
+												const index =
+													virtualRow.index * columnCount + columnIndex;
+												const catalogEntry = isSymbolKey(character);
+												const displayCharacter = getPreviewCharacter(character);
+												const symbolCodepoint = getSymbolCodepoint(character);
+												const symbolLabel =
+													symbolCodepoint === undefined
+														? ''
+														: `, ${formatCodepoint(symbolCodepoint)}`;
+
+												return (
+													<button
+														key={`${activeGroup}-${character}`}
+														id={`glyph-${metadata.id}-${index}`}
+														type="button"
+														aria-label={
+															catalogEntry
+																? `${getCharacterName(getSymbolName(character))}${hasNamedLigatures ? `, name ligature ${getSymbolName(character)}` : ''}${symbolLabel}`
+																: `${getCharacterName(character)}, ${getCodePoints(character)}${isCombiningMark(character) ? `, previewed on ${markPreviewBase.trim() || 'a spacing guide'}` : ''}`
+														}
+														aria-pressed={activeCharacter === character}
+														data-active={
+															activeCharacter === character || undefined
+														}
+														tabIndex={focusableCharacter === character ? 0 : -1}
+														onClick={() => setSelected(character)}
+														onFocus={() => setSelected(character)}
+														onKeyDown={(event) => moveGlyphFocus(event, index)}
+													>
+														{displayCharacter}
+													</button>
+												);
+											})}
+										</div>
+									);
+								})}
+							</div>
+							{matchingCharacters.length === 0 && (
+								<div className={classes.empty}>
+									<p>
+										{catalogExpected && symbolsState === 'unavailable'
+											? 'The symbol catalog is temporarily unavailable.'
+											: query
+												? `No ${catalogExpected ? 'symbols' : 'characters'} match “${query}”.`
+												: 'No mapped characters are available for this source.'}
+									</p>
+									{query && (
+										<button type="button" onClick={() => updateQuery('')}>
+											Clear search
+										</button>
+									)}
+								</div>
+							)}
+						</fieldset>
+					</div>
+
+					{renderInspector(classes.desktopInspector)}
 				</div>
-			)}
+			</FontSkeleton>
 		</section>
 	);
 };

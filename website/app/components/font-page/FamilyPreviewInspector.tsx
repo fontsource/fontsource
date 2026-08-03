@@ -499,6 +499,7 @@ const PreviewFeatureControls = observer(() => {
 						className={classes.featureControl}
 						classNames={{
 							body: classes.featureSwitchBody,
+							track: classes.featureSwitchTrack,
 							labelWrapper: classes.featureText,
 							label: classes.featureLabel,
 							description: classes.featureDescription,

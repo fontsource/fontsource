@@ -164,7 +164,7 @@ const DropdownCheckbox = ({
 				<UnstyledButton
 					type="button"
 					aria-label={ariaLabel ?? label}
-					className={`${classes.input} ${classes.checkboxInput}`}
+					className={classes.input}
 					w={w ?? rem(250)}
 					data-no-border={noBorder}
 					disabled={items.length === 0 && !search}

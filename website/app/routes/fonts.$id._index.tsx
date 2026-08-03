@@ -13,6 +13,7 @@ import {
 	loadFontPageBase,
 	loadFontPageCapabilities,
 	loadFontPageLanguages,
+	loadFontPageSymbols,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import { loadOptionalRegistryData } from '@/utils/registry-request.server';
@@ -22,14 +23,21 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
 	const options = { signal: request.signal };
-	const [base, versions, languagesResult, axesResult, capabilitiesResult] =
-		await Promise.all([
-			basePromise,
-			getFontVersions({ id }, options),
-			loadFontPageLanguages(basePromise, request.signal),
-			loadOptionalRegistryData(listRegistryAxes(options), request.signal),
-			loadFontPageCapabilities(basePromise, request.signal),
-		]);
+	const [
+		base,
+		versions,
+		languagesResult,
+		axesResult,
+		capabilitiesResult,
+		symbolsResult,
+	] = await Promise.all([
+		basePromise,
+		getFontVersions({ id }, options),
+		loadFontPageLanguages(basePromise, request.signal),
+		loadOptionalRegistryData(listRegistryAxes(options), request.signal),
+		loadFontPageCapabilities(basePromise, request.signal),
+		loadFontPageSymbols(basePromise, request.signal),
+	]);
 
 	return data(
 		{
@@ -39,6 +47,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			axisRegistry: axesResult.value,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
+			symbols: symbolsResult.symbols,
 		},
 		{ headers: cacheHeaders.short },
 	);
@@ -79,6 +88,7 @@ export default function Font() {
 		axisRegistry,
 		capabilities,
 		capabilitySource,
+		symbols,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -101,6 +111,7 @@ export default function Font() {
 				axisRegistry={axisRegistry}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
+				symbols={symbols}
 				variableUnavailable={metadata.variable && !variable}
 			/>
 		</FamilyPageShell>
