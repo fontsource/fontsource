@@ -233,19 +233,19 @@ const PreviewInspectorHeader = observer(
 						<h2>Preview settings</h2>
 						<p>
 							{model.familyKind === 'symbols'
-								? 'Adjust the symbol size, weight, and variable style.'
-								: 'Each view keeps its own size, weight, and spacing.'}
+								? 'Adjust how symbols appear in this preview.'
+								: 'Adjust this view without changing the others.'}
 						</p>
 					</div>
 				)}
 				{showResetAll && (
 					<button
 						type="button"
-						aria-label="Reset all preview styles"
+						aria-label="Reset all preview settings"
 						onClick={() => resetStyling(model)}
 					>
 						<IconRotate aria-hidden height={15} />
-						Reset all styles
+						Reset all settings
 					</button>
 				)}
 			</div>
@@ -394,25 +394,27 @@ const PreviewAxisControls = observer(({ idPrefix }: { idPrefix: string }) => {
 		<section className={classes.inspectorSection}>
 			<div className={classes.sectionHeading}>
 				<div>
-					<h3>Variable axes</h3>
+					<h3>Variable font controls</h3>
 					<span>
 						{adjustableAxes.length}{' '}
-						{adjustableAxes.length === 1 ? 'axis' : 'axes'}
+						{adjustableAxes.length === 1
+							? 'adjustable control'
+							: 'adjustable controls'}
 					</span>
 				</div>
 				<button
 					type="button"
-					aria-label="Reset variable axes"
+					aria-label="Reset variable font controls"
 					disabled={!changed}
 					onClick={() => resetAxes(model)}
 				>
-					Reset axes
+					Reset controls
 				</button>
 			</div>
 			{adjustableAxes.length > 6 && (
 				<InspectorSearch
-					label="Search variable axes"
-					placeholder="Search by name or tag"
+					label="Search variable font controls"
+					placeholder="Search controls by name or tag"
 					value={axisQuery}
 					onChange={model.state$.axisQuery.set}
 				/>
@@ -439,7 +441,7 @@ const PreviewAxisControls = observer(({ idPrefix }: { idPrefix: string }) => {
 				))}
 				{filteredAxes.length === 0 && (
 					<p className={classes.emptyState} role="status">
-						No variable axes match “{axisQuery}”.
+						No variable font controls match “{axisQuery}”.
 					</p>
 				)}
 			</div>
@@ -528,7 +530,7 @@ const PreviewFeatureControls = observer(() => {
 			<div className={classes.sectionHeading}>
 				<div>
 					<h3>OpenType features</h3>
-					<span>Ligatures, alternates, and number styles</span>
+					<span>Control ligatures, alternates, and number styles</span>
 				</div>
 				{featureTags.length > 0 && (
 					<button

@@ -50,20 +50,20 @@ const PreviewCoverage = observer(() => {
 		const unknownNames = names.filter((name) => !catalogNames.has(name));
 		unsupported = unknownNames.length > 0;
 		message = unsupported
-			? `${unknownNames.length.toLocaleString('en')} ${unknownNames.length === 1 ? 'symbol name is' : 'symbol names are'} unavailable: ${unknownNames
+			? `${unknownNames.length.toLocaleString('en')} ${unknownNames.length === 1 ? 'symbol name isn’t' : 'symbol names aren’t'} available: ${unknownNames
 					.slice(0, visibleItemLimit)
 					.map(truncateName)
 					.join(', ')}${unknownNames.length > visibleItemLimit ? ', …' : ''}.`
 			: names.length === 1
-				? 'This symbol name is available.'
-				: 'All entered symbol names are available.';
+				? 'Symbol name available.'
+				: 'All symbol names available.';
 	} else {
 		if (!capabilities) return null;
 		const unmapped = findUnmappedCharacters(text, capabilities);
 		unsupported = unmapped.length > 0;
 		message = unsupported
-			? `${unmapped.length.toLocaleString('en')} ${unmapped.length === 1 ? 'character is' : 'characters are'} unavailable in this preview style: ${formatUnsupportedCharacters(unmapped)}${unmapped.length > visibleItemLimit ? ' …' : ''}.`
-			: 'Every character in this preview is supported.';
+			? `${unmapped.length.toLocaleString('en')} ${unmapped.length === 1 ? 'character isn’t' : 'characters aren’t'} available in this style: ${formatUnsupportedCharacters(unmapped)}${unmapped.length > visibleItemLimit ? ' …' : ''}.`
+			: 'All characters are available in this style.';
 	}
 
 	return (
@@ -74,7 +74,11 @@ const PreviewCoverage = observer(() => {
 			aria-atomic="true"
 		>
 			<p>
-				<strong>Coverage</strong>
+				<strong>
+					{model.familyKind === 'symbols'
+						? 'Symbol support'
+						: 'Character support'}
+				</strong>
 				<span>{message}</span>
 			</p>
 			{unsupported && (
