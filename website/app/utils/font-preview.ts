@@ -62,10 +62,15 @@ export const getRegistrySourcePreviewCSS = (
 		source.type === 'variable' && typeof source.weight !== 'number'
 			? `${source.weight.min} ${source.weight.max}`
 			: fontWeight;
-	const sourceUrl = new URL(
-		source.downloadUrl,
-		'https://api.fontsource.org',
-	).toString();
+	let sourceUrl: string;
+	try {
+		sourceUrl = new URL(
+			source.downloadUrl,
+			'https://api.fontsource.org',
+		).toString();
+	} catch {
+		return '';
+	}
 
 	return `@font-face {
 	font-family: ${JSON.stringify(fontFamily)};

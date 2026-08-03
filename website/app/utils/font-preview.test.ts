@@ -186,6 +186,23 @@ describe('getRegistrySourcePreviewCSS', () => {
 			'font-family: "Preview static-400";',
 		);
 	});
+
+	it('ignores an invalid source URL instead of breaking the preview', () => {
+		const source = {
+			sha256: 'static-400',
+			filename: 'example.ttf',
+			format: 'ttf',
+			size: 1,
+			downloadUrl: 'https://%',
+			capabilitiesUrl: '/v1/registry/sources/static-400/capabilities',
+			fontVersion: null,
+			style: 'normal',
+			type: 'static',
+			weight: 400,
+		} satisfies RegistrySource;
+
+		expect(getRegistrySourcePreviewCSS(source)).toBe('');
+	});
 });
 
 describe('selectRegistryPreviewSource', () => {

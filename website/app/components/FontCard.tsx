@@ -9,8 +9,6 @@ import { getPreviewText } from '@/utils/language/language';
 import classes from './FontCard.module.css';
 import { Skeleton } from './Skeleton';
 
-const DEFAULT_PREVIEW_TEXT = 'Sphinx of black quartz, judge my vow.';
-
 interface FontCardProps {
 	font: FontSummary;
 	layout?: 'grid' | 'list';
@@ -63,7 +61,7 @@ const FontCard = ({
 		preview ||
 		(isNotLatin
 			? getPreviewText(font.defSubset, font.id)
-			: DEFAULT_PREVIEW_TEXT);
+			: getPreviewText('latin'));
 
 	return (
 		<Box

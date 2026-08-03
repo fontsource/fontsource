@@ -7,8 +7,10 @@ import {
 	Menu,
 	TextInput,
 } from '@mantine/core';
+import { Fragment } from 'react';
 
 import { IconCaret } from '@/components/icons';
+import { previewText } from '@/utils/preview-text';
 
 import type { SearchState } from './observables';
 import classes from './PreviewTextInput.module.css';
@@ -82,36 +84,14 @@ const PreviewSelector = observer(({ state$ }: PreviewProps) => {
 					</Button>
 				</Menu.Target>
 				<Menu.Dropdown>
-					<PreviewMenuDivider label="Sentences" />
-					<ItemButton
-						label="Sentence"
-						value="The quick brown fox jumps over the lazy dog."
-						state$={state$}
-					/>
-					<ItemButton
-						label="Sentence"
-						value="Sphinx of black quartz, judge my vow."
-						state$={state$}
-					/>
-					<PreviewMenuDivider label="Alphabets" />
-					<ItemButton
-						label="Alphabet"
-						value="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-						state$={state$}
-					/>
-					<ItemButton
-						label="Alphabet"
-						value="abcdefghijklmnopqrstuvwxyz"
-						state$={state$}
-					/>
-					<PreviewMenuDivider label="Numbers" />
-					<ItemButton label="Number" value="0123456789" state$={state$} />
-					<PreviewMenuDivider label="Symbols" />
-					<ItemButton
-						label="Symbol"
-						value="!@#$%^&*()_+-=[]{}|;':,./<>?"
-						state$={state$}
-					/>
+					{previewText.search.groups.map((group) => (
+						<Fragment key={group.label}>
+							<PreviewMenuDivider label={group.label} />
+							{group.options.map((option) => (
+								<ItemButton key={option.value} {...option} state$={state$} />
+							))}
+						</Fragment>
+					))}
 				</Menu.Dropdown>
 			</Menu>
 			<TextInput
