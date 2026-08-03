@@ -3,6 +3,8 @@ import type { GetFontResponse } from '@/generated/api';
 import {
 	getFontFamilyStack,
 	getPreferredPreviewSubset,
+	getPreviewDirection,
+	getPreviewLanguageTag,
 	getRegistrySourcePreviewCSS,
 	selectRegistryPreviewSource,
 } from './font-preview';
@@ -86,6 +88,20 @@ describe('getPreferredPreviewSubset', () => {
 
 	it('falls back to the package default when no reviewed subset is available', () => {
 		expect(getPreferredPreviewSubset(metadata, registry)).toBe('latin');
+	});
+});
+
+describe('preview language semantics', () => {
+	it('builds a BCP 47 tag from registry language and script metadata', () => {
+		expect(getPreviewLanguageTag({ language: 'ar', script: 'Arab' })).toBe(
+			'ar-Arab',
+		);
+		expect(getPreviewLanguageTag()).toBeUndefined();
+	});
+
+	it('preserves right-to-left direction for known preview subsets', () => {
+		expect(getPreviewDirection('arabic')).toBe('rtl');
+		expect(getPreviewDirection('latin')).toBe('ltr');
 	});
 });
 
