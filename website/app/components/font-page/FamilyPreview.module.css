@@ -20,6 +20,10 @@
 	--preview-text-disabled: light-dark(#8b96a8, #68758c);
 	--preview-selection: light-dark(#efeeff, #1a2240);
 	--preview-track: light-dark(#d8dde6, #34405a);
+	--preview-warning-surface: light-dark(#fffaf0, #211d14);
+	--preview-warning-border: light-dark(#e2c986, #635425);
+	--preview-warning-text: light-dark(#60490f, #ead692);
+	--preview-active-shadow: inset 0 -2px var(--mantine-color-purple-0);
 	--preview-type-micro: 0.72rem;
 	--preview-type-label: 0.75rem;
 	--preview-type-control: 0.8rem;
@@ -176,7 +180,8 @@
 .inspectorSectionChooser :global(.mantine-SegmentedControl-label) {
 	transition:
 		color 120ms ease,
-		background-color 120ms ease;
+		background-color 120ms ease,
+		outline-color 120ms ease;
 }
 
 .modeChooser :global(.mantine-SegmentedControl-label[data-active]),
@@ -190,18 +195,32 @@
 	color: var(--mantine-color-purple-0);
 }
 
-.modeChooser :global(.mantine-SegmentedControl-indicator),
-.segmentedField :global(.mantine-SegmentedControl-indicator),
-.inspectorSectionChooser :global(.mantine-SegmentedControl-indicator) {
+.segmentedField :global(.mantine-SegmentedControl-indicator) {
 	border: 1px solid var(--preview-border-color-strong);
 	border-radius: var(--mantine-radius-sm);
 	background: light-dark(#fff, #232d45);
 	box-shadow: none;
 }
 
-.modeChooser :global(.mantine-SegmentedControl-indicator) {
-	border-color: var(--mantine-color-purple-0);
-	background: var(--preview-surface);
+.modeChooser :global(.mantine-SegmentedControl-indicator),
+.inspectorSectionChooser :global(.mantine-SegmentedControl-indicator) {
+	border: 0;
+	border-radius: 0;
+	background: var(--preview-selection);
+	box-shadow: var(--preview-active-shadow);
+}
+
+.modeChooser:has(input:focus-visible),
+.inspectorSectionChooser
+	:global(.mantine-SegmentedControl-root):has(input:focus-visible),
+.alignmentControl:has(button:focus-visible) {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}
+
+.modeChooser input:focus-visible + label,
+.inspectorSectionChooser input:focus-visible + label {
+	outline: 0;
 }
 
 .toolbarActions {
@@ -274,16 +293,19 @@
 	position: relative;
 	z-index: 1;
 	color: var(--mantine-color-purple-0);
-	background: var(--preview-surface);
-	box-shadow: inset 0 0 0 1px var(--mantine-color-purple-0);
+	background: var(--preview-selection);
+	box-shadow: var(--preview-active-shadow);
 }
 
-.alignmentControl button:focus-visible,
-.adjustButton:focus-visible {
+.alignmentControl button:focus-visible {
 	position: relative;
 	z-index: 1;
+	outline: 0;
+}
+
+.adjustButton:focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
-	outline-offset: -3px;
+	outline-offset: 2px;
 }
 
 .adjustButton {
@@ -376,31 +398,35 @@
 	overflow: auto;
 }
 
-.coverageStatus {
+.coverageWarning {
 	min-width: 0;
-	display: flex;
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
 	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	padding: 10px 32px;
-	border-top: var(--preview-border);
-	background: var(--preview-chrome-subtle);
+	gap: 12px;
+	padding: 12px 32px;
+	border-top: 1px solid var(--preview-warning-border);
+	background: var(--preview-warning-surface);
 	color: var(--preview-text-muted);
 	font-size: var(--preview-type-label);
 	line-height: 1.45;
 
+	> svg {
+		align-self: start;
+		margin-top: 1px;
+		color: var(--preview-warning-text);
+	}
+
 	p {
 		min-width: 0;
-		display: flex;
-		align-items: baseline;
-		gap: 8px;
+		display: grid;
+		gap: 2px;
 		margin: 0;
 		overflow-wrap: anywhere;
 	}
 
 	strong {
-		flex: 0 0 auto;
-		color: var(--preview-text-soft);
+		color: var(--preview-warning-text);
 		font-weight: 650;
 	}
 
@@ -421,10 +447,6 @@
 		outline: 2px solid var(--mantine-color-purple-0);
 		outline-offset: 3px;
 	}
-}
-
-.coverageStatus[data-unsupported] strong {
-	color: light-dark(#72551f, #e0c781);
 }
 
 .canvasField[data-mode='paragraph'] .canvas {
@@ -637,14 +659,6 @@
 .inspectorSectionChooser
 	:global(.mantine-SegmentedControl-label[data-active]) {
 	color: var(--mantine-color-purple-0);
-}
-
-.inspectorSectionChooser
-	:global(.mantine-SegmentedControl-indicator) {
-	border: 1px solid var(--mantine-color-purple-0);
-	border-radius: var(--mantine-radius-sm);
-	background: var(--preview-surface);
-	box-shadow: none;
 }
 
 .inspectorHeading h2,
@@ -1252,16 +1266,13 @@
 		padding-block-start: 62px;
 	}
 
-	.coverageStatus {
-		align-items: flex-start;
-		flex-direction: column;
-		gap: 6px;
+	.coverageWarning {
+		grid-template-columns: auto minmax(0, 1fr);
+		gap: 4px 10px;
 		padding-inline: 18px;
 
-		p {
-			align-items: flex-start;
-			flex-direction: column;
-			gap: 2px;
+		a {
+			grid-column: 2;
 		}
 	}
 
