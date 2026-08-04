@@ -55,6 +55,7 @@ import {
 
 import classes from './CharacterExplorer.module.css';
 import { FontSkeleton } from './FontSkeleton';
+import { GlyphSpecimen } from './GlyphSpecimen';
 
 interface CharacterExplorerProps {
 	metadata: GetFontResponse;
@@ -601,7 +602,6 @@ export const CharacterExplorer = ({
 		hasNamedLigatures && activeSymbolName
 			? activeSymbolName
 			: (activeCharacter ?? '');
-
 	const renderInspector = (variantClass: string) => (
 		<aside
 			className={`${classes.inspector} ${variantClass}`}
@@ -617,14 +617,27 @@ export const CharacterExplorer = ({
 		>
 			{activeCharacter ? (
 				<>
-					<div className={classes.largeCharacter} style={specimenStyle}>
-						{getPreviewCharacter(activeCharacter)}
-					</div>
+					<GlyphSpecimen
+						canInspectMetrics={
+							!activeIsCatalogEntry &&
+							!activeIsCombiningMark &&
+							Array.from(getPreviewCharacter(activeCharacter)).length === 1
+						}
+						character={getPreviewCharacter(activeCharacter)}
+						copied={characterClipboard.copied}
+						showLatinGuides={
+							/^\p{Script=Latin}$/u.test(activeCharacter) &&
+							searchableCharacters.includes('H') &&
+							searchableCharacters.includes('x')
+						}
+						style={specimenStyle}
+					/>
 					<strong>{selectedName}</strong>
 					<code>{selectedCodePoint}</code>
 					<button
 						type="button"
 						className={classes.primaryCopy}
+						data-copied={characterClipboard.copied || undefined}
 						onClick={() => characterClipboard.copy(primaryCopyValue)}
 					>
 						<IconCopy aria-hidden stroke="currentColor" />

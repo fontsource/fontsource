@@ -301,12 +301,105 @@
 }
 
 .largeCharacter {
+	position: relative;
+	box-sizing: border-box;
+	block-size: 184px;
 	max-width: 100%;
+	display: grid;
+	place-items: center;
+	padding-block: 8px;
 	overflow: hidden;
-	font-size: clamp(72px, 13vw, 190px);
-	line-height: 0.9;
+	contain: layout paint;
+	font-size: clamp(72px, 11vw, 152px);
+	line-height: normal;
 	text-align: center;
-	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.glyphShape {
+	max-width: 100%;
+	display: block;
+	transition:
+		color 160ms cubic-bezier(0.16, 1, 0.3, 1),
+		transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.metricsToggle {
+	position: absolute;
+	z-index: 2;
+	inset-block-start: 4px;
+	inset-inline-end: 4px;
+	width: 28px;
+	height: 28px;
+	display: grid;
+	place-items: center;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	color: light-dark(#52617a, #aeb9cc);
+	background: transparent;
+	opacity: 0;
+	pointer-events: none;
+	cursor: pointer;
+	transition:
+		opacity 120ms ease,
+		background-color 120ms ease,
+		color 120ms ease;
+
+	&:hover {
+		color: light-dark(#01112c, #fff);
+		background: light-dark(rgb(255 255 255 / 0.64), rgb(15 22 38 / 0.64));
+	}
+
+	&[aria-pressed='true'] {
+		color: var(--mantine-color-purple-0);
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	&:focus-visible {
+		opacity: 1;
+		pointer-events: auto;
+		outline: 2px solid var(--mantine-color-purple-0);
+		outline-offset: 2px;
+	}
+}
+
+.largeCharacter:hover .metricsToggle,
+.largeCharacter:focus-within .metricsToggle {
+	opacity: 0.72;
+	pointer-events: auto;
+}
+
+.largeCharacter .metricsToggle:hover,
+.largeCharacter .metricsToggle:focus-visible,
+.largeCharacter .metricsToggle[aria-pressed='true'] {
+	opacity: 1;
+}
+
+.metricsView {
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: visible;
+
+	line {
+		stroke: light-dark(rgb(98 91 248 / 0.48), rgb(124 118 255 / 0.58));
+		stroke-dasharray: 3 3;
+		vector-effect: non-scaling-stroke;
+	}
+}
+
+.metricLabel {
+	fill: light-dark(#52617a, #aeb9cc);
+	font-family: var(--mantine-font-family);
+	font-size: 9px;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+}
+
+.largeCharacter[data-copied] .glyphShape {
+	animation: glyph-copy-echo 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .primaryCopy,
@@ -339,6 +432,11 @@
 	border: 1px solid #01112c;
 	color: #fff;
 	background: #01112c;
+
+	&[data-copied] {
+		border-color: var(--mantine-color-purple-0);
+		background: var(--mantine-color-purple-0);
+	}
 }
 
 .secondaryCopy {
@@ -410,9 +508,19 @@
 		text-align: start;
 
 		.largeCharacter {
+			block-size: 72px;
 			grid-row: 1 / span 2;
-			font-size: 58px;
-			line-height: 1;
+			padding-block: 4px;
+			font-size: 52px;
+		}
+
+		.metricsToggle {
+			display: none;
+		}
+
+		.metricsView line,
+		.metricLabel {
+			display: none;
 		}
 
 		strong {
@@ -462,9 +570,34 @@
 	}
 }
 
+@keyframes glyph-copy-echo {
+	50% {
+		color: var(--mantine-color-purple-0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.glyphShape,
+	.primaryCopy,
+	.metricsToggle {
+		transition: none;
+	}
+
+	.largeCharacter[data-copied] .glyphShape {
+		animation: none;
+	}
+}
+
 @media (pointer: coarse) {
 	:is(.groupSwitch button, .resultSummary button) {
 		min-height: 48px;
+	}
+
+	.metricsToggle {
+		min-width: 44px;
+		min-height: 44px;
+		opacity: 0.64;
+		pointer-events: auto;
 	}
 }
 

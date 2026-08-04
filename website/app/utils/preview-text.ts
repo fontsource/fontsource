@@ -285,9 +285,9 @@ export const previewText: PreviewTextCorpus = {
 			compare: 'short',
 		},
 		defaults: {
-			headline: 'Make something\nmemorable.',
+			headline: 'Every letter has\na point of view.',
 			paragraph:
-				'Good typography makes a page easier to enter, understand, and remember. The right rhythm gives every sentence room to breathe while keeping the reader moving.',
+				'A typeface changes the temperature of a sentence before its meaning has time to settle. Set a few lines, adjust the rhythm, and see an ordinary paragraph find its own voice.',
 			waterfall: 'Sphinx of black quartz',
 		},
 		familyKinds: {
