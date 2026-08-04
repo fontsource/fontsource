@@ -24,6 +24,8 @@
 	--preview-warning-border: light-dark(#e2c986, #635425);
 	--preview-warning-text: light-dark(#60490f, #ead692);
 	--preview-active-shadow: inset 0 -2px var(--mantine-color-purple-0);
+	--preview-control-duration: 160ms;
+	--preview-control-ease: cubic-bezier(0.16, 1, 0.3, 1);
 	--preview-type-micro: 0.72rem;
 	--preview-type-label: 0.75rem;
 	--preview-type-control: 0.8rem;
@@ -129,6 +131,9 @@
 }
 
 .modeChooser {
+	--sc-transition-duration: var(--preview-control-duration);
+	--sc-transition-timing-function: var(--preview-control-ease);
+
 	flex: 0 1 auto;
 	padding: 0;
 	border: var(--preview-border-strong);
@@ -138,7 +143,15 @@
 }
 
 .segmentedField :global(.mantine-SegmentedControl-root) {
+	--sc-transition-duration: var(--preview-control-duration);
+	--sc-transition-timing-function: var(--preview-control-ease);
+
 	background: light-dark(#e9edf2, #171f32);
+}
+
+.inspectorSectionChooser :global(.mantine-SegmentedControl-root) {
+	--sc-transition-duration: var(--preview-control-duration);
+	--sc-transition-timing-function: var(--preview-control-ease);
 }
 
 .modeChooser :global(.mantine-SegmentedControl-label),
@@ -179,9 +192,8 @@
 .modeChooser :global(.mantine-SegmentedControl-label),
 .inspectorSectionChooser :global(.mantine-SegmentedControl-label) {
 	transition:
-		color 120ms ease,
-		background-color 120ms ease,
-		outline-color 120ms ease;
+		color var(--preview-control-duration) var(--preview-control-ease),
+		background-color 120ms ease-out;
 }
 
 .modeChooser :global(.mantine-SegmentedControl-label[data-active]),
@@ -208,6 +220,7 @@
 	border-radius: 0;
 	background: var(--preview-selection);
 	box-shadow: var(--preview-active-shadow);
+	transition-timing-function: var(--preview-control-ease);
 }
 
 .modeChooser:has(input:focus-visible),
@@ -252,12 +265,34 @@
 }
 
 .alignmentControl {
+	position: relative;
 	display: flex;
 	margin: 0;
 	padding: 0;
 	border: var(--preview-border-strong);
 	border-radius: var(--mantine-radius-sm);
 	overflow: hidden;
+}
+
+.alignmentControl::after {
+	content: '';
+	position: absolute;
+	z-index: 2;
+	inset-block-end: 0;
+	inset-inline-start: 0;
+	width: calc(100% / 3);
+	height: 2px;
+	background: var(--mantine-color-purple-0);
+	pointer-events: none;
+	transition: transform var(--preview-control-duration) var(--preview-control-ease);
+}
+
+.alignmentControl:has(button:nth-of-type(2)[aria-pressed='true'])::after {
+	transform: translateX(100%);
+}
+
+.alignmentControl:has(button:nth-of-type(3)[aria-pressed='true'])::after {
+	transform: translateX(200%);
 }
 
 .alignmentControl button,
@@ -272,9 +307,8 @@
 	background: var(--preview-surface);
 	cursor: pointer;
 	transition:
-		color 120ms ease,
-		background-color 120ms ease,
-		box-shadow 120ms ease;
+		color var(--preview-control-duration) var(--preview-control-ease),
+		background-color 120ms ease-out;
 }
 
 .alignmentControl button + button {
@@ -294,7 +328,6 @@
 	z-index: 1;
 	color: var(--mantine-color-purple-0);
 	background: var(--preview-selection);
-	box-shadow: var(--preview-active-shadow);
 }
 
 .alignmentControl button:focus-visible {
@@ -917,63 +950,6 @@
 	border-top: var(--preview-border);
 }
 
-.featureGroupLabel {
-	margin: 0;
-	color: var(--preview-text-soft);
-	font-size: var(--preview-type-label);
-	font-weight: 700;
-}
-
-.featureDetails {
-	border-top: var(--preview-border);
-}
-
-.featureDetails summary {
-	min-height: 44px;
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) auto auto;
-	align-items: center;
-	gap: 8px;
-	color: var(--preview-text-soft);
-	font-size: var(--preview-type-label);
-	font-weight: 700;
-	cursor: pointer;
-	list-style: none;
-	transition: color 120ms ease;
-}
-
-.featureDetails summary::-webkit-details-marker {
-	display: none;
-}
-
-.featureDetails summary:focus-visible {
-	outline: 2px solid var(--mantine-color-purple-0);
-	outline-offset: 3px;
-}
-
-.featureDetails summary:hover {
-	color: var(--mantine-color-purple-0);
-}
-
-.featureDetailsCount {
-	color: var(--preview-text-muted);
-	font-family: var(--mantine-font-family-monospace);
-	font-size: var(--preview-type-micro);
-	font-weight: 500;
-}
-
-.featureDetailsIcon {
-	transition: rotate 120ms ease;
-}
-
-.featureDetails[open] .featureDetailsIcon {
-	rotate: 180deg;
-}
-
-.featureDetails .featureList {
-	border-top: var(--preview-border);
-}
-
 .featureControl {
 	margin-inline: -8px;
 	padding: 14px 8px;
@@ -1330,6 +1306,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+	.modeChooser :global(.mantine-SegmentedControl-indicator),
+	.segmentedField :global(.mantine-SegmentedControl-indicator),
+	.inspectorSectionChooser :global(.mantine-SegmentedControl-indicator),
+	.alignmentControl::after,
 	.modeChooser :global(.mantine-SegmentedControl-label),
 	.inspectorSectionChooser :global(.mantine-SegmentedControl-label),
 	.languageControl button,
@@ -1343,8 +1323,6 @@
 	.numberInput,
 	.slider :global(.mantine-Slider-thumb),
 	.inspectorSearch,
-	.featureDetails summary,
-	.featureDetailsIcon,
 	.featureControl,
 	.capabilitiesStatus button {
 		transition: none;

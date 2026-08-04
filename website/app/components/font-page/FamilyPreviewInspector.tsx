@@ -7,7 +7,7 @@ import {
 	Switch,
 	VisuallyHidden,
 } from '@mantine/core';
-import { IconChevronDown, IconItalic, IconSearch } from '@tabler/icons-react';
+import { IconItalic, IconSearch } from '@tabler/icons-react';
 
 import { IconRotate } from '@/components/icons';
 import {
@@ -39,19 +39,6 @@ const exclusiveFeatureGroups = [
 	['lnum', 'onum'],
 	['pnum', 'tnum'],
 	['subs', 'sups'],
-] as const;
-
-const commonFeatureTagOrder = [
-	'kern',
-	'liga',
-	'calt',
-	'clig',
-	'dlig',
-	'frac',
-	'onum',
-	'tnum',
-	'zero',
-	'smcp',
 ] as const;
 
 const formatNumber = (value: number) =>
@@ -480,19 +467,6 @@ const PreviewFeatureControls = observer(() => {
 		}
 		model.state$.featureValues.set(next);
 	};
-	const featureTagSet = new Set(featureTags);
-	const commonFeatures = commonFeatureTagOrder
-		.filter((tag) => featureTagSet.has(tag))
-		.slice(0, 8);
-	const commonFeatureSet = new Set<string>(commonFeatures);
-	const additionalFeatures = featureTags.filter(
-		(tag) => !commonFeatureSet.has(tag),
-	);
-	const distillFeatureList =
-		!query &&
-		featureTags.length > 8 &&
-		commonFeatures.length > 0 &&
-		additionalFeatures.length > 0;
 	const renderFeatureList = (tags: readonly string[]) => (
 		<ul className={classes.featureList}>
 			{tags.map((tag) => (
@@ -555,31 +529,7 @@ const PreviewFeatureControls = observer(() => {
 							onChange={model.state$.featureQuery.set}
 						/>
 					)}
-					{query &&
-						filteredFeatures.length > 0 &&
-						renderFeatureList(filteredFeatures)}
-					{!query && !distillFeatureList && renderFeatureList(featureTags)}
-					{distillFeatureList && (
-						<>
-							<p className={classes.featureGroupLabel}>Common features</p>
-							{renderFeatureList(commonFeatures)}
-							<details className={classes.featureDetails}>
-								<summary>
-									<span>All features</span>
-									<span className={classes.featureDetailsCount}>
-										{featureTags.length}
-									</span>
-									<IconChevronDown
-										className={classes.featureDetailsIcon}
-										aria-hidden
-										size={16}
-										stroke={1.75}
-									/>
-								</summary>
-								{renderFeatureList(additionalFeatures)}
-							</details>
-						</>
-					)}
+					{filteredFeatures.length > 0 && renderFeatureList(filteredFeatures)}
 				</>
 			)}
 			{query && filteredFeatures.length === 0 && (
