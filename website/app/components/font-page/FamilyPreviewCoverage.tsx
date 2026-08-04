@@ -1,5 +1,6 @@
 import { observer, useValue } from '@legendapp/state/react';
 import { useDebouncedValue } from '@mantine/hooks';
+import { IconAlertTriangle } from '@tabler/icons-react';
 import { useMemo } from 'react';
 import { Link } from 'react-router';
 
@@ -41,51 +42,39 @@ const PreviewCoverage = observer(() => {
 
 	if (!text.trim()) return null;
 
+	let title: string;
 	let message: string;
-	let unsupported = false;
 
 	if (checksSymbolNames) {
 		if (catalogNames.size === 0) return null;
 		const names = Array.from(new Set(text.trim().split(/\s+/u)));
 		const unknownNames = names.filter((name) => !catalogNames.has(name));
-		unsupported = unknownNames.length > 0;
-		message = unsupported
-			? `${unknownNames.length.toLocaleString('en')} ${unknownNames.length === 1 ? 'symbol name isn’t' : 'symbol names aren’t'} available: ${unknownNames
-					.slice(0, visibleItemLimit)
-					.map(truncateName)
-					.join(', ')}${unknownNames.length > visibleItemLimit ? ', …' : ''}.`
-			: names.length === 1
-				? 'Symbol name available.'
-				: 'All symbol names available.';
+		if (unknownNames.length === 0) return null;
+
+		title = 'Some symbol names aren’t available';
+		message = `${unknownNames.length.toLocaleString('en')} ${unknownNames.length === 1 ? 'name' : 'names'} in this preview: ${unknownNames
+			.slice(0, visibleItemLimit)
+			.map(truncateName)
+			.join(', ')}${unknownNames.length > visibleItemLimit ? ', …' : ''}.`;
 	} else {
 		if (!capabilities) return null;
 		const unmapped = findUnmappedCharacters(text, capabilities);
-		unsupported = unmapped.length > 0;
-		message = unsupported
-			? `${unmapped.length.toLocaleString('en')} ${unmapped.length === 1 ? 'character isn’t' : 'characters aren’t'} available in this style: ${formatUnsupportedCharacters(unmapped)}${unmapped.length > visibleItemLimit ? ' …' : ''}.`
-			: 'All characters are available in this style.';
+		if (unmapped.length === 0) return null;
+
+		title = 'Some characters aren’t available';
+		message = `${unmapped.length.toLocaleString('en')} ${unmapped.length === 1 ? 'character' : 'characters'} in this preview: ${formatUnsupportedCharacters(unmapped)}${unmapped.length > visibleItemLimit ? ' …' : ''}.`;
 	}
 
 	return (
-		<div
-			className={classes.coverageStatus}
-			data-unsupported={unsupported || undefined}
-			role="status"
-			aria-atomic="true"
-		>
+		<div className={classes.coverageWarning} role="status" aria-atomic="true">
+			<IconAlertTriangle aria-hidden="true" size={18} stroke={1.8} />
 			<p>
-				<strong>
-					{model.familyKind === 'symbols'
-						? 'Symbol support'
-						: 'Character support'}
-				</strong>
+				<strong>{title}</strong>
 				<span>{message}</span>
 			</p>
-			{unsupported && (
-				<Link to={`/fonts/${model.metadata.id}/glyphs`}>
-					{model.familyKind === 'symbols' ? 'Browse symbols' : 'Browse glyphs'}
-				</Link>
-			)}
+			<Link to={`/fonts/${model.metadata.id}/glyphs`}>
+				{model.familyKind === 'symbols' ? 'Browse symbols' : 'Browse glyphs'}
+			</Link>
 		</div>
 	);
 });
