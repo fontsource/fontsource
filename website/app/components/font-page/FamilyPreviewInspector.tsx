@@ -89,9 +89,16 @@ const RangeControl = ({
 	return (
 		<div className={classes.rangeControl}>
 			<div className={classes.rangeHeading}>
-				<div className={classes.rangeLabel}>
-					<label htmlFor={`${id}-value`}>{label}</label>
-					{tag && <code>{tag}</code>}
+				<div className={classes.rangeCopy}>
+					<div className={classes.rangeLabel}>
+						<label htmlFor={`${id}-value`}>{label}</label>
+						{tag && <code>{tag}</code>}
+					</div>
+					{description && (
+						<p id={descriptionId} className={classes.controlDescription}>
+							{description}
+						</p>
+					)}
 				</div>
 				<NumberInput
 					id={`${id}-value`}
@@ -117,28 +124,29 @@ const RangeControl = ({
 					}}
 				/>
 			</div>
-			{description && (
-				<p id={descriptionId} className={classes.controlDescription}>
-					{description}
-				</p>
-			)}
-			<Slider
-				classNames={{ root: classes.slider, bar: classes.sliderBar }}
-				color="purple.0"
-				size="xs"
-				thumbSize={16}
-				thumbLabel={label}
-				thumbValueText={(currentValue) => formatValue(currentValue)}
-				label={formatValue}
-				min={min}
-				max={max}
-				step={step}
-				marks={marks}
-				restrictToMarks={restrictToMarks}
-				value={value}
-				disabled={disabled}
-				onChange={setValue}
-			/>
+			<div className={classes.sliderGroup}>
+				<Slider
+					classNames={{ root: classes.slider, bar: classes.sliderBar }}
+					color="purple.0"
+					size="sm"
+					thumbSize={20}
+					thumbLabel={description ? `${label}. ${description}` : label}
+					thumbValueText={(currentValue) => formatValue(currentValue)}
+					label={formatValue}
+					min={min}
+					max={max}
+					step={step}
+					marks={marks}
+					restrictToMarks={restrictToMarks}
+					value={value}
+					disabled={disabled}
+					onChange={setValue}
+				/>
+				<div className={classes.rangeBounds} aria-hidden="true">
+					<span>{formatValue(min)}</span>
+					<span>{formatValue(max)}</span>
+				</div>
+			</div>
 		</div>
 	);
 };
@@ -258,19 +266,23 @@ const PreviewTypographyControls = observer(
 		return (
 			<section className={classes.inspectorSection}>
 				<div className={classes.sectionHeading}>
-					<h3>Typography</h3>
+					<div>
+						<h3>Typography</h3>
+						<span>Size, weight, spacing, and style</span>
+					</div>
 					<button
 						type="button"
 						aria-label="Reset typography settings"
 						disabled={!changed}
 						onClick={() => resetCurrentTypography(model)}
 					>
-						Reset typography
+						Reset
 					</button>
 				</div>
 				<RangeControl
 					id={`${idPrefix}-size`}
 					label="Font size"
+					description="Sets the scale of this preview."
 					value={typography.size}
 					min={8}
 					max={300}
@@ -282,6 +294,11 @@ const PreviewTypographyControls = observer(
 				<RangeControl
 					id={`${idPrefix}-weight`}
 					label="Weight"
+					description={
+						weightAxis
+							? 'Fine-tunes the strokes from light to bold.'
+							: 'Chooses an available weight from light to bold.'
+					}
 					value={typography.weight}
 					min={weightMin}
 					max={weightMax}
@@ -297,10 +314,21 @@ const PreviewTypographyControls = observer(
 				/>
 				{model.metadata.styles.includes('italic') && (
 					<div className={classes.segmentedField}>
-						<span>Style</span>
+						<div className={classes.rangeCopy}>
+							<div className={classes.rangeLabel}>
+								<span>Style</span>
+							</div>
+							<p
+								id={`${idPrefix}-style-description`}
+								className={classes.controlDescription}
+							>
+								Switches between upright and italic forms.
+							</p>
+						</div>
 						<SegmentedControl
 							fullWidth
 							aria-label="Font style"
+							aria-describedby={`${idPrefix}-style-description`}
 							value={typography.italic ? 'italic' : 'normal'}
 							data={[
 								{ label: 'Normal', value: 'normal' },
@@ -325,6 +353,7 @@ const PreviewTypographyControls = observer(
 						<RangeControl
 							id={`${idPrefix}-tracking`}
 							label="Letter spacing"
+							description="Changes the space between characters."
 							value={typography.tracking}
 							min={-10}
 							max={40}
@@ -338,6 +367,7 @@ const PreviewTypographyControls = observer(
 						<RangeControl
 							id={`${idPrefix}-line-height`}
 							label="Line height"
+							description="Changes the vertical space between lines."
 							value={Number(
 								(typography.size * typography.lineHeight).toFixed(1),
 							)}
@@ -381,27 +411,27 @@ const PreviewAxisControls = observer(({ idPrefix }: { idPrefix: string }) => {
 		<section className={classes.inspectorSection}>
 			<div className={classes.sectionHeading}>
 				<div>
-					<h3>Variable font controls</h3>
+					<h3>Variable axes</h3>
 					<span>
 						{adjustableAxes.length}{' '}
 						{adjustableAxes.length === 1
-							? 'adjustable control'
-							: 'adjustable controls'}
+							? 'adjustable axis for this font'
+							: 'adjustable axes for this font'}
 					</span>
 				</div>
 				<button
 					type="button"
-					aria-label="Reset variable font controls"
+					aria-label="Reset variable axes"
 					disabled={!changed}
 					onClick={() => resetAxes(model)}
 				>
-					Reset controls
+					Reset
 				</button>
 			</div>
 			{adjustableAxes.length > 6 && (
 				<InspectorSearch
-					label="Search variable font controls"
-					placeholder="Search controls by name or tag"
+					label="Search variable axes"
+					placeholder="Search axes by name or tag"
 					value={axisQuery}
 					onChange={model.state$.axisQuery.set}
 				/>
@@ -428,7 +458,7 @@ const PreviewAxisControls = observer(({ idPrefix }: { idPrefix: string }) => {
 				))}
 				{filteredAxes.length === 0 && (
 					<p className={classes.emptyState} role="status">
-						No variable font controls match “{axisQuery}”.
+						No variable axes match “{axisQuery}”.
 					</p>
 				)}
 			</div>
@@ -513,7 +543,7 @@ const PreviewFeatureControls = observer(() => {
 						disabled={!changed}
 						onClick={() => resetFeatures(model)}
 					>
-						Reset features
+						Reset
 					</button>
 				)}
 			</div>
@@ -600,7 +630,7 @@ const PreviewInspector = observer(
 		}> = [
 			{ label: 'Typography', value: 'typography' },
 			...(adjustableAxes.length
-				? [{ label: 'Variable font', value: 'axes' as const }]
+				? [{ label: 'Variable', value: 'axes' as const }]
 				: []),
 			...(showFeatureSection
 				? [{ label: 'Features', value: 'features' as const }]

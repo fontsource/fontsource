@@ -784,14 +784,19 @@
 .rangeControl {
 	min-width: 0;
 	display: grid;
-	gap: 9px;
+	gap: 8px;
 }
 
 .rangeHeading {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 	gap: 16px;
+}
+
+.rangeCopy {
+	min-width: 0;
+	flex: 1;
 }
 
 .rangeLabel {
@@ -802,7 +807,7 @@
 }
 
 .rangeHeading label,
-.segmentedField > span {
+.segmentedField .rangeLabel > span {
 	color: var(--preview-text-soft);
 	font-size: var(--preview-type-control);
 	font-weight: 650;
@@ -817,7 +822,7 @@
 }
 
 .numberControl {
-	width: 88px;
+	width: 82px;
 	flex: 0 0 auto;
 }
 
@@ -825,13 +830,14 @@
 	min-width: 0;
 	width: 100%;
 	min-height: 32px;
-	padding-inline: 8px;
+	padding-inline: 9px;
 	border: var(--preview-border-strong);
 	border-radius: var(--mantine-radius-sm);
 	color: var(--preview-text);
-	background: var(--preview-surface);
+	background: var(--preview-chrome-subtle);
 	font-family: var(--mantine-font-family-monospace);
 	font-size: var(--preview-type-label);
+	font-variant-numeric: tabular-nums;
 	text-align: end;
 	transition:
 		border-color 120ms ease,
@@ -847,6 +853,7 @@
 
 .numberInput:focus-visible {
 	border-color: var(--mantine-color-purple-0);
+	background: var(--preview-surface);
 	outline: 2px solid color-mix(in srgb, var(--mantine-color-purple-0) 24%, transparent);
 	outline-offset: 1px;
 }
@@ -859,30 +866,42 @@
 
 .controlDescription {
 	max-width: 36ch;
+	margin-top: 3px;
 	color: var(--preview-text-muted);
 	font-size: var(--preview-type-micro);
 	line-height: 1.45;
 	overflow-wrap: anywhere;
 }
 
+.sliderGroup {
+	min-width: 0;
+	display: grid;
+	gap: 1px;
+}
+
 .slider {
-	margin: 2px 8px 8px;
+	margin-inline: 4px;
+	padding-block: 8px;
 }
 
 .slider :global(.mantine-Slider-track) {
+	border-radius: 999px;
 	background: var(--preview-track);
 }
 
 .slider :global(.mantine-Slider-thumb) {
-	border-color: var(--mantine-color-purple-0);
-	background: var(--mantine-color-purple-0);
-	transition: box-shadow 120ms ease;
+	border: 2px solid var(--mantine-color-purple-0);
+	background: var(--preview-surface);
+	transition:
+		background-color 120ms ease,
+		box-shadow 120ms ease;
 }
 
 .slider:hover :global(.mantine-Slider-thumb),
 .slider :global(.mantine-Slider-thumb:focus-visible) {
-	box-shadow: 0 0 0 3px
-		color-mix(in srgb, var(--mantine-color-purple-0) 18%, transparent);
+	background: var(--preview-selection);
+	box-shadow: 0 2px 7px
+		color-mix(in srgb, var(--preview-text) 18%, transparent);
 }
 
 .slider :global(.mantine-Slider-mark) {
@@ -892,6 +911,18 @@
 
 .sliderBar {
 	background: var(--mantine-color-purple-0);
+}
+
+.rangeBounds {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	margin-inline: 3px;
+	color: var(--preview-text-disabled);
+	font-family: var(--mantine-font-family-monospace);
+	font-size: var(--preview-type-micro);
+	font-variant-numeric: tabular-nums;
+	line-height: 1;
 }
 
 .segmentedField {

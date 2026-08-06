@@ -306,7 +306,7 @@ export const previewText: PreviewTextCorpus = {
 		},
 		categories: {
 			monospace: {
-				headline: 'const type = "beautiful";',
+				headline: 'Same width.\nDifferent shapes.',
 			},
 		},
 	},
