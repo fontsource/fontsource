@@ -1,5 +1,18 @@
 # @fontsource-utils/core
 
+## [0.4.0](https://github.com/fontsource/fontsource/compare/core-v0.3.0...core-v0.4.0) (2026-08-08)
+
+
+### Features
+
+* **fonts:** build composite distributions ([#1225](https://github.com/fontsource/fontsource/issues/1225)) ([e50a906](https://github.com/fontsource/fontsource/commit/e50a906d3026beac81ebc47b5436c9d7c2e3a070))
+* **registry:** expose discovery capabilities ([#1227](https://github.com/fontsource/fontsource/issues/1227)) ([4f95176](https://github.com/fontsource/fontsource/commit/4f951764c6d63c7c2d9f6f8984404deb60826685))
+
+
+### Bug Fixes
+
+* **processor:** pin unused axes in static font builds ([#1212](https://github.com/fontsource/fontsource/issues/1212)) ([be1b8a6](https://github.com/fontsource/fontsource/commit/be1b8a659ff74c8603b98d5fa9a74bbd516d4615))
+
 ## [0.3.0](https://github.com/fontsource/fontsource/compare/core-v0.2.0...core-v0.3.0) (2026-07-26)
 
 
