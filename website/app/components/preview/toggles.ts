@@ -2,7 +2,7 @@
  * Toggle one active key in a sparse selection map where only enabled entries
  * are stored.
  */
-export const toggleKey = (
+const toggleKey = (
 	values: Record<string, boolean>,
 	value: string | number,
 ): Record<string, boolean> => {

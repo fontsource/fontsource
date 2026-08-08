@@ -1,0 +1,36 @@
+{
+	"$schema": "https://unpkg.com/knip@6/schema.json",
+	"treatConfigHintsAsErrors": true,
+	"workspaces": {
+		"api": {
+			// The Docker build resolves this server and isolated tests at runtime.
+			"entry": ["container/server.ts", "container/**/*.test.ts"],
+			"ignoreDependencies": ["cloudflare"]
+		},
+		"packages/cli": {
+			// This source file backs the package's public browser export condition.
+			"entry": ["src/index.ts", "src/browser.ts"]
+		},
+		"packages/core": {
+			"entry": ["src/index.{ts,tsx}", "tests/**/*.test.ts"]
+		},
+		"packages/scss": {
+			// Sass resolves these test fixtures from runtime pkg: specifiers.
+			"ignoreDependencies": [
+				"@fontsource-variable/recursive",
+				"@fontsource/carlito",
+				"@fontsource/noto-sans-jp"
+			]
+		},
+		"website": {
+			// Vite config reads a workspace-relative stylesheet, so retain its static import graph.
+			"entry": ["vite.config.ts", "docs/**/*.mdx", "app/**/*.test.ts"],
+			"vite": { "config": [] },
+			"react-router": { "config": ["react-router.config.ts"] },
+			"ignoreDependencies": ["cloudflare", "collections"],
+			"ignoreIssues": {
+				"app/generated/api/**": ["exports", "types"]
+			}
+		}
+	}
+}

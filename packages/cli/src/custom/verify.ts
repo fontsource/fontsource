@@ -7,7 +7,7 @@ import colors from 'picocolors';
 import type { Metadata } from '../types';
 import { getDirectories } from './utils';
 
-export const verifyFilenames = async (metadata: Metadata, dir: string) => {
+const verifyFilenames = async (metadata: Metadata, dir: string) => {
 	// Read all the filenames in the files directory
 	const filenames = await fs.readdir(path.join(dir, 'files'));
 

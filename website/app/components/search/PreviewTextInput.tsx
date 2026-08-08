@@ -17,7 +17,7 @@ interface PreviewProps {
 	state$: SearchState;
 }
 
-export const PreviewMenuDivider = ({ label, ...others }: DividerProps) => {
+const PreviewMenuDivider = ({ label, ...others }: DividerProps) => {
 	return (
 		<Menu.Item disabled>
 			<div className={classes.separator}>

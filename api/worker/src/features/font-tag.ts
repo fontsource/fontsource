@@ -24,7 +24,7 @@ const normalizeVersion = (version: string): string =>
  * Normalises, deduplicates, and sorts a version list in descending semver order.
  * Versions that do not match the exact `MAJOR.MINOR.PATCH` format are discarded.
  */
-export const sortVersionsDesc = (versions: readonly string[]): string[] => {
+const sortVersionsDesc = (versions: readonly string[]): string[] => {
 	const seen = new Set<string>();
 
 	return versions

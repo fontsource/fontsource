@@ -66,7 +66,7 @@ const renderAllDocsMarkdown = async () => {
 	return chunks.join('\n\n---\n\n');
 };
 
-export const getDocsPageMarkdown = (page: MarkdownPage) => {
+const getDocsPageMarkdown = (page: MarkdownPage) => {
 	if (!cacheDocsMarkdown) return renderDocsPageMarkdown(page);
 
 	let text = markdownCache.get(page.url);

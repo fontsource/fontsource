@@ -3,12 +3,12 @@ export interface Axes {
 	max: number | string;
 }
 
-export interface Source {
+interface Source {
 	url: string;
 	format: 'woff2' | 'woff' | 'woff2-variations' | string;
 }
 
-export interface Variable {
+interface Variable {
 	wght?: Axes;
 	stretch?: Axes; // wdth
 	slnt?: Axes;

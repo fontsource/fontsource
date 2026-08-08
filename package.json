@@ -9,8 +9,9 @@
 		"build": "pnpm --workspace-concurrency=1 --recursive --if-present run build",
 		"build:packages": "pnpm --workspace-concurrency=1 --recursive --filter './packages/*' --if-present run build",
 		"check": "biome check .",
-		"ci": "pnpm check && pnpm build && pnpm typecheck:all && pnpm test:all && pnpm pack:check",
+		"ci": "pnpm check && pnpm knip && pnpm build && pnpm typecheck:all && pnpm test:all && pnpm pack:check",
 		"fix": "biome check --write .",
+		"knip": "knip --cache",
 		"pack:check": "pnpm --workspace-concurrency=1 --recursive --filter './packages/*' pack --dry-run",
 		"test": "pnpm build:packages && pnpm test:all",
 		"test:all": "pnpm --workspace-concurrency=1 --recursive --if-present run test",
@@ -22,7 +23,8 @@
 		"typecheck:packages": "pnpm --workspace-concurrency=1 --recursive --filter './packages/*' --if-present run typecheck"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "catalog:"
+		"@biomejs/biome": "catalog:",
+		"knip": "catalog:"
 	},
 	"engines": {
 		"node": ">=24.18.0 <25",

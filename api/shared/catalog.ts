@@ -1,4 +1,4 @@
-export interface LicenseData {
+interface LicenseData {
 	type: string;
 	url: string;
 	attribution: string;
@@ -20,7 +20,7 @@ type FontStyle = (typeof FONT_STYLES)[number];
 type FontCategory = (typeof FONT_CATEGORIES)[number];
 type FontType = (typeof FONT_TYPES)[number];
 
-export interface AxisValue {
+interface AxisValue {
 	default: string;
 	min: string;
 	max: string;
@@ -33,7 +33,7 @@ export type VariableAxes = Record<string, AxisValue>;
  * Upstream subset keys may be wrapped in brackets, so callers should normalize
  * them before comparing against published asset filenames.
  */
-export type UnicodeRangeMap = Record<string, string>;
+type UnicodeRangeMap = Record<string, string>;
 
 interface SourceFontSummary {
 	id: string;
@@ -59,7 +59,7 @@ export interface SourceFontMetadata extends SourceFontSummary {
 export type FontCatalog = Record<string, SourceFontMetadata>;
 export type VariableCatalog = Record<string, VariableFontDetail>;
 
-export interface FontVariantUrls {
+interface FontVariantUrls {
 	woff2: string;
 	woff: string;
 	ttf: string;
@@ -82,7 +82,7 @@ export interface FontDetail extends FontListItem {
 	variants: FontVariants;
 }
 
-export interface VariableFontDetail {
+interface VariableFontDetail {
 	family: string;
 	axes: VariableAxes;
 }
