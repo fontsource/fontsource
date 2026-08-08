@@ -6,7 +6,7 @@ import {
 	rem,
 	UnstyledButton,
 } from '@mantine/core';
-import { memo, useMemo, useState } from 'react';
+import { memo, useEffect, useMemo, useRef, useState } from 'react';
 
 import { IconCaret } from '@/components/icons';
 
@@ -29,6 +29,7 @@ interface DropdownProps {
 	noBorder?: boolean;
 	showCount?: boolean;
 	searchable?: boolean;
+	searchPlaceholder?: string;
 	search?: (query: string) => void;
 }
 
@@ -40,8 +41,11 @@ const DropdownSimple = memo(function DropdownSimple({
 	dropdownWidth,
 	noBorder,
 	searchable = false,
+	searchPlaceholder,
 	refine,
 }: DropdownProps) {
+	const targetRef = useRef<HTMLButtonElement>(null);
+	const [dropdownOpened, setDropdownOpened] = useState(false);
 	const selected = items.find((item) => item.isRefined)?.value ?? null;
 	const data = useMemo(
 		() =>
@@ -51,6 +55,23 @@ const DropdownSimple = memo(function DropdownSimple({
 			})),
 		[items],
 	);
+	useEffect(() => {
+		if (!dropdownOpened || !searchPlaceholder) return;
+
+		const timer = window.setTimeout(() => {
+			// ComboboxPopover does not expose search input props, so follow the
+			// target's aria-controls relationship once the popover has mounted.
+			const optionsId = targetRef.current?.getAttribute('aria-controls');
+			const searchInput = optionsId
+				? document.querySelector<HTMLInputElement>(
+						`input[aria-controls="${CSS.escape(optionsId)}"]`,
+					)
+				: null;
+			if (searchInput) searchInput.placeholder = searchPlaceholder;
+		}, 0);
+
+		return () => window.clearTimeout(timer);
+	}, [dropdownOpened, searchPlaceholder]);
 
 	return (
 		<ComboboxPopover
@@ -58,6 +79,12 @@ const DropdownSimple = memo(function DropdownSimple({
 			value={selected}
 			allowDeselect={false}
 			searchable={searchable}
+			onDropdownOpen={
+				searchPlaceholder ? () => setDropdownOpened(true) : undefined
+			}
+			onDropdownClose={
+				searchPlaceholder ? () => setDropdownOpened(false) : undefined
+			}
 			nothingFoundMessage={searchable ? 'No matches' : undefined}
 			maxDropdownHeight={240}
 			comboboxProps={{
@@ -71,6 +98,7 @@ const DropdownSimple = memo(function DropdownSimple({
 		>
 			<ComboboxPopover.Target>
 				<UnstyledButton
+					ref={targetRef}
 					type="button"
 					aria-label={ariaLabel ?? label}
 					className={classes.input}

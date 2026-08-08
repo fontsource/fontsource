@@ -19,6 +19,7 @@
 	--preview-text-muted: light-dark(#52617a, #9ca8bd);
 	--preview-text-disabled: light-dark(#8b96a8, #68758c);
 	--preview-selection: light-dark(#efeeff, #1a2240);
+	--preview-control-active: light-dark(#fff, #232d45);
 	--preview-track: light-dark(#d8dde6, #34405a);
 	--preview-warning-surface: light-dark(#fffaf0, #211d14);
 	--preview-warning-border: light-dark(#e2c986, #635425);
@@ -210,7 +211,7 @@
 .segmentedField :global(.mantine-SegmentedControl-indicator) {
 	border: 1px solid var(--preview-border-color-strong);
 	border-radius: var(--mantine-radius-sm);
-	background: light-dark(#fff, #232d45);
+	background: var(--preview-control-active);
 	box-shadow: none;
 }
 
@@ -834,7 +835,7 @@
 	border: var(--preview-border-strong);
 	border-radius: var(--mantine-radius-sm);
 	color: var(--preview-text);
-	background: var(--preview-chrome-subtle);
+	background: var(--preview-surface);
 	font-family: var(--mantine-font-family-monospace);
 	font-size: var(--preview-type-label);
 	font-variant-numeric: tabular-nums;
@@ -843,6 +844,18 @@
 		border-color 120ms ease,
 		outline-color 120ms ease,
 		background-color 120ms ease;
+}
+
+.inputDescription {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	clip-path: inset(50%);
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .inspectorSearch:focus-within {
@@ -890,7 +903,18 @@
 }
 
 .slider :global(.mantine-Slider-thumb) {
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	transition: none;
+}
+
+.slider :global(.mantine-Slider-thumb)::after {
+	content: '';
+	width: 20px;
+	height: 20px;
 	border: 2px solid var(--mantine-color-purple-0);
+	border-radius: 999px;
 	background: var(--preview-surface);
 	transition:
 		background-color 120ms ease,
@@ -899,6 +923,11 @@
 
 .slider:hover :global(.mantine-Slider-thumb),
 .slider :global(.mantine-Slider-thumb:focus-visible) {
+	box-shadow: none;
+}
+
+.slider:hover :global(.mantine-Slider-thumb)::after,
+.slider :global(.mantine-Slider-thumb:focus-visible)::after {
 	background: var(--preview-selection);
 	box-shadow: 0 2px 7px
 		color-mix(in srgb, var(--preview-text) 18%, transparent);
@@ -906,7 +935,7 @@
 
 .slider :global(.mantine-Slider-mark) {
 	border-color: var(--preview-surface);
-	background: light-dark(#a4adbb, #66738a);
+	background: var(--preview-text-muted);
 }
 
 .sliderBar {
@@ -918,7 +947,7 @@
 	justify-content: space-between;
 	gap: 12px;
 	margin-inline: 3px;
-	color: var(--preview-text-disabled);
+	color: var(--preview-text-muted);
 	font-family: var(--mantine-font-family-monospace);
 	font-size: var(--preview-type-micro);
 	font-variant-numeric: tabular-nums;
@@ -1331,6 +1360,28 @@
 		min-height: 48px;
 	}
 
+	.inspectorHeading button,
+	.drawerReset button,
+	.sectionHeading button,
+	.drawerHeader :global(.mantine-Drawer-close) {
+		min-width: 44px;
+		min-height: 44px;
+	}
+
+	.numberControl {
+		width: 96px;
+	}
+
+	.numberInput {
+		font-size: 1rem;
+	}
+
+	.slider {
+		--slider-thumb-size: 44px !important;
+
+		padding-block: 16px;
+	}
+
 	.featureControl {
 		min-height: 48px;
 	}
@@ -1353,6 +1404,7 @@
 	.sectionHeading button,
 	.numberInput,
 	.slider :global(.mantine-Slider-thumb),
+	.slider :global(.mantine-Slider-thumb)::after,
 	.inspectorSearch,
 	.featureControl,
 	.capabilitiesStatus button {

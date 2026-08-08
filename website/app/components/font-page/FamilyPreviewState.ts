@@ -318,7 +318,7 @@ const createPreviewEditorSetup = ({
 	const regularWeight = initialWeightAxis
 		? clamp(400, initialWeightAxis.min, initialWeightAxis.max)
 		: nearestWeight(availableWeights, 400);
-	const initialLineHeight = usesLatinPreview ? 0.95 : 1.2;
+	const initialLineHeight = usesLatinPreview ? 1.1 : 1.2;
 	const initialTypography: PreviewTypographyByMode = {
 		headline: {
 			size: initialSize,

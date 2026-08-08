@@ -1,8 +1,6 @@
-import { Tooltip } from '@mantine/core';
 import { useIsomorphicEffect } from '@mantine/hooks';
 import type { CSSProperties } from 'react';
-import { useState } from 'react';
-import { IconVertical } from '@/components/icons';
+import { useRef, useState } from 'react';
 
 import classes from './CharacterExplorer.module.css';
 
@@ -16,15 +14,16 @@ interface GlyphSpecimenProps {
 
 interface GlyphMetrics {
 	baseline: number;
+	fitted: boolean;
 	fontSize: number;
 	guides: Array<{ label: string; y: number }>;
 }
 
-const viewWidth = 320;
-const viewHeight = 184;
-const baseFontSize = 128;
+const viewWidth = 220;
+const viewHeight = 220;
+const baseFontSize = 152;
 const specimenTop = 24;
-const specimenBottom = 150;
+const specimenBottom = viewHeight - specimenTop;
 
 const getCanvasFont = (style: CSSProperties) => {
 	const fontStyle = style.fontStyle ?? 'normal';
@@ -77,6 +76,7 @@ const measureGlyph = (
 
 	return {
 		baseline,
+		fitted: false,
 		fontSize: baseFontSize * scale,
 		guides,
 	} satisfies GlyphMetrics;
@@ -89,80 +89,107 @@ export const GlyphSpecimen = ({
 	showLatinGuides,
 	style,
 }: GlyphSpecimenProps) => {
-	const [showMetrics, setShowMetrics] = useState(false);
+	const glyphRef = useRef<SVGTextElement>(null);
+	const [metricsPinned, setMetricsPinned] = useState(false);
 	const [metrics, setMetrics] = useState<GlyphMetrics>();
 	const canvasFont = getCanvasFont(style);
-	const metricsEnabled = showMetrics && canInspectMetrics;
 
 	useIsomorphicEffect(() => {
 		setMetrics(undefined);
-		if (!metricsEnabled) {
-			return;
-		}
-
 		let cancelled = false;
-		void document.fonts.ready.then(() => {
+		const updateMetrics = () => {
 			if (!cancelled) {
 				setMetrics(measureGlyph(character, canvasFont, showLatinGuides));
 			}
-		});
+		};
+
+		void document.fonts
+			.load(canvasFont, character)
+			.then(updateMetrics, () => {});
 
 		return () => {
 			cancelled = true;
 		};
-	}, [canvasFont, character, metricsEnabled, showLatinGuides]);
+	}, [canvasFont, character, showLatinGuides]);
 
-	return (
-		<div className={classes.largeCharacter} data-copied={copied || undefined}>
+	useIsomorphicEffect(() => {
+		if (!metrics || metrics.fitted || !glyphRef.current) return;
+
+		const bounds = glyphRef.current.getBBox();
+		const scale = Math.min(
+			1,
+			(viewWidth - 72) / Math.max(bounds.width, 1),
+			(specimenBottom - specimenTop) / Math.max(bounds.height, 1),
+		);
+		const baseline =
+			viewHeight / 2 -
+			(bounds.y + bounds.height / 2 - metrics.baseline) * scale;
+
+		setMetrics({
+			baseline,
+			fitted: true,
+			fontSize: metrics.fontSize * scale,
+			guides: metrics.guides.map((guide) => ({
+				...guide,
+				y: baseline + (guide.y - metrics.baseline) * scale,
+			})),
+		});
+	}, [metrics]);
+
+	const specimen = (
+		<svg
+			className={classes.metricsView}
+			viewBox={`0 0 ${viewWidth} ${viewHeight}`}
+			aria-label={`Character ${character}`}
+			role="img"
+		>
 			{canInspectMetrics && (
-				<Tooltip
-					label={metricsEnabled ? 'Hide metrics' : 'Show metrics'}
-					openDelay={500}
-					withArrow
-				>
-					<button
-						type="button"
-						className={classes.metricsToggle}
-						aria-label={metricsEnabled ? 'Hide metrics' : 'Show metrics'}
-						aria-pressed={metricsEnabled}
-						onClick={() => setShowMetrics((visible) => !visible)}
-					>
-						<IconVertical aria-hidden height={16} />
-					</button>
-				</Tooltip>
-			)}
-
-			{metrics ? (
-				<svg
-					className={classes.metricsView}
-					viewBox={`0 0 ${viewWidth} ${viewHeight}`}
-					aria-label={`${character} with typographic guides`}
-					role="img"
-				>
-					{metrics.guides.map((guide) => (
+				<g className={classes.metricsGuides}>
+					{metrics?.guides.map((guide) => (
 						<g key={guide.label}>
-							<line x1="58" x2="312" y1={guide.y} y2={guide.y} />
+							<line x1="46" x2="212" y1={guide.y} y2={guide.y} />
 							<text x="8" y={guide.y + 4} className={classes.metricLabel}>
 								{guide.label}
 							</text>
 						</g>
 					))}
-					<text
-						x={viewWidth / 2}
-						y={metrics.baseline}
-						fill="currentColor"
-						fontSize={metrics.fontSize}
-						style={style}
-						textAnchor="middle"
-					>
-						{character}
-					</text>
-				</svg>
-			) : (
-				<span className={classes.glyphShape} style={style}>
-					{character}
-				</span>
+				</g>
 			)}
-		</div>
+			<text
+				ref={glyphRef}
+				className={classes.glyphShape}
+				x={viewWidth / 2}
+				y={metrics?.baseline ?? viewHeight / 2}
+				dominantBaseline={metrics ? undefined : 'central'}
+				fill="currentColor"
+				fontSize={metrics?.fontSize ?? 112}
+				style={style}
+				textAnchor="middle"
+			>
+				{character}
+			</text>
+		</svg>
+	);
+
+	if (!canInspectMetrics) {
+		return (
+			<div className={classes.largeCharacter} data-copied={copied || undefined}>
+				{specimen}
+			</div>
+		);
+	}
+
+	return (
+		<button
+			type="button"
+			className={classes.largeCharacter}
+			aria-label={`${metricsPinned ? 'Unpin' : 'Pin'} metrics for ${character}`}
+			aria-pressed={metricsPinned}
+			data-copied={copied || undefined}
+			data-metrics-pinned={metricsPinned || undefined}
+			onClick={() => setMetricsPinned((pinned) => !pinned)}
+		>
+			{specimen}
+		</button>
 	);
 };

@@ -1,4 +1,4 @@
-import { VisuallyHidden } from '@mantine/core';
+import { Tooltip, VisuallyHidden } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
@@ -119,17 +119,28 @@ const SourceFileItem = ({
 						: ` · ${mappedCharacterCount.toLocaleString('en')} mapped characters`}
 				</span>
 			</div>
-			<button
-				type="button"
-				className={classes.sourceChecksum}
-				aria-label={`${copyLabel} for ${source.filename}`}
-				onClick={() => clipboard.copy(source.sha256)}
+			<Tooltip
+				multiline
+				w={360}
+				withArrow
+				openDelay={300}
+				closeDelay={100}
+				events={{ hover: true, focus: true, touch: true }}
+				classNames={{ tooltip: classes.checksumTooltip }}
+				label={source.sha256}
 			>
-				<IconCopy aria-hidden height={16} stroke="currentColor" />
-				<span aria-live="polite" aria-atomic="true">
-					{copyLabel}
-				</span>
-			</button>
+				<button
+					type="button"
+					className={classes.sourceChecksum}
+					aria-label={`${copyLabel} for ${source.filename}`}
+					onClick={() => clipboard.copy(source.sha256)}
+				>
+					<IconCopy aria-hidden height={16} stroke="currentColor" />
+					<span aria-live="polite" aria-atomic="true">
+						{copyLabel}
+					</span>
+				</button>
+			</Tooltip>
 		</li>
 	);
 };
@@ -692,10 +703,13 @@ export const FamilyAbout = ({
 				</section>
 			)}
 
-			<section className={classes.provenance} aria-labelledby="source-heading">
+			<section
+				className={classes.provenance}
+				aria-labelledby="provenance-heading"
+			>
 				<div className={classes.sectionHeading}>
 					<div>
-						<h2 id="source-heading">Source and provenance</h2>
+						<h2 id="provenance-heading">Provenance</h2>
 						<p>Where the files came from and what Fontsource distributes.</p>
 					</div>
 					<a href={repository} target="_blank" rel="noreferrer">

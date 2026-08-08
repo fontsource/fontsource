@@ -460,21 +460,25 @@ const CurrentProjectPage = () => {
 											<CopyCodeBlock
 												label={`1 · Install ${singleItem ? 'package' : 'packages'}`}
 												code={installCommand}
+												language="sh"
 											/>
 											<CopyCodeBlock
 												label={`2 · Import font ${singleItem ? 'style' : 'styles'}`}
 												code={imports}
+												language="js"
 											/>
 										</>
 									) : (
 										<CopyCodeBlock
 											label="1 · Add stylesheet links to HTML"
 											code={cdnLinks}
+											language="html"
 										/>
 									)}
 									<CopyCodeBlock
 										label={`${method === 'package' ? '3' : '2'} · Apply font ${singleItem ? 'class' : 'classes'} in CSS`}
 										code={usageCss}
+										language="css"
 									/>
 								</div>
 							</div>

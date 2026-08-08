@@ -1,5 +1,4 @@
-import { selectVariableAxisKey } from '@fontsource-utils/core';
-import { VisuallyHidden } from '@mantine/core';
+import { Tabs, VisuallyHidden } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
@@ -8,11 +7,11 @@ import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { IconDownload, IconExternal } from '@/components/icons';
 import { createProjectItem } from '@/features/projects/createProjectItem';
 import {
+	getSelectedCssFiles,
 	getUsageBlock,
 	getUsageMarkup,
 	getUsageNote,
 } from '@/features/projects/output';
-import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
@@ -26,20 +25,16 @@ import {
 	packageManagers,
 	packageManagerValues,
 } from '@/utils/docs/packageManagers';
-import { triggerBlobDownload } from '@/utils/download';
 import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
 import { getPreferredPreviewSubset } from '@/utils/font-preview';
 import { readFontPreviewSelection } from '@/utils/font-preview-selection';
 import {
-	getRegistryFamilyKind,
 	getRegistryPreviewText,
 	type RegistryDataState,
 	type RegistryFamily,
-	usesNameLigatures,
 } from '@/utils/registry';
 
 import classes from './FamilyUse.module.css';
-import { FontSkeleton } from './FontSkeleton';
 import { LicenseReceipt } from './LicenseReceipt';
 
 interface FamilyUseProps {
@@ -53,10 +48,37 @@ interface FamilyUseProps {
 	languages?: ListRegistryLanguagesResponse;
 }
 
-type Path = 'download' | 'web';
 type Method = 'package' | 'cdn';
+type AcquisitionPath = 'download' | 'web';
 type FamilyFormat = 'variable' | 'static';
-type DownloadState = 'idle' | 'fetching' | 'building' | 'success' | 'error';
+type FontStyle = GetFontResponse['styles'][number];
+
+const toggleRequiredValue = <T,>(selected: T[], value: T, available: T[]) => {
+	const next = selected.includes(value)
+		? selected.length === 1
+			? selected
+			: selected.filter((item) => item !== value)
+		: [...selected, value];
+	return available.filter((item) => next.includes(item));
+};
+
+const weightNames: Record<number, string> = {
+	100: 'Thin',
+	200: 'Extra light',
+	300: 'Light',
+	400: 'Regular',
+	500: 'Medium',
+	600: 'Semi bold',
+	700: 'Bold',
+	800: 'Extra bold',
+	900: 'Black',
+};
+
+const sameValues = <T,>(left: T[], right: T[]) =>
+	left.length === right.length && left.every((value) => right.includes(value));
+
+const getWeightLabel = (weight: number) =>
+	weightNames[weight] ? `${weight} ${weightNames[weight]}` : String(weight);
 
 export const FamilyUse = ({
 	metadata,
@@ -69,66 +91,75 @@ export const FamilyUse = ({
 	languages,
 }: FamilyUseProps) => {
 	const [searchParams] = useSearchParams();
-	const familyKind = getRegistryFamilyKind(registry);
-	const hasCatalog = Boolean(registry?.symbols);
-	const hasNamedLigatures = usesNameLigatures(registry);
-	const isPunctuationFamily = familyKind === 'punctuation';
-	const isDigitalFamily = familyKind === 'digital';
 	const supportsVariable = Boolean(variable && versions.latestVariable);
+	const supportsStatic = Boolean(versions.latest);
 	const preferredSubset = getPreferredPreviewSubset(metadata, registry);
-	const [path, setPath] = useLocalStorage<Path | null>({
-		key: 'fontsource-acquisition-path',
-		defaultValue: null,
-		deserialize: (value) =>
-			deserializeStoredChoice(value, ['download', 'web', null] as const, null),
-	});
-	const [method, setMethod] = useState<Method>('package');
-	const [format, setFormat] = useState<FamilyFormat>(
-		supportsVariable ? 'variable' : 'static',
-	);
-	const [subset, setSubset] = useState(preferredSubset);
-	const [style, setStyle] = useState<GetFontResponse['styles'][number]>(
-		metadata.styles.includes('normal')
-			? 'normal'
-			: (metadata.styles[0] ?? 'normal'),
-	);
-	const [weight, setWeight] = useState(
-		metadata.weights.includes(400) ? 400 : metadata.weights[0],
-	);
 	const recommendedStyle = metadata.styles.includes('normal')
 		? 'normal'
 		: (metadata.styles[0] ?? 'normal');
 	const recommendedWeight = metadata.weights.includes(400)
 		? 400
-		: metadata.weights[0];
-	const [downloadFormat, setDownloadFormat] = useState<FamilyFormat>('static');
-	const [downloadState, setDownloadState] = useState<DownloadState>('idle');
-	const [downloadError, setDownloadError] = useState<string>();
-	const downloadInFlight = useRef(false);
-	const downloadController = useRef<AbortController | null>(null);
-	const [advancedOpen, setAdvancedOpen] = useState(false);
-	const [loadOnlySelection, setLoadOnlySelection] = useState(false);
+		: (metadata.weights[0] ?? 400);
+	const [path, setPath] = useState<AcquisitionPath>('download');
+	const [method, setMethod] = useState<Method>('package');
+	const [format, setFormat] = useState<FamilyFormat>(
+		supportsVariable ? 'variable' : 'static',
+	);
+	const [selectedStyles, setSelectedStyles] = useState<FontStyle[]>([
+		recommendedStyle,
+	]);
+	const [selectedWeights, setSelectedWeights] = useState<number[]>([
+		recommendedWeight,
+	]);
+	const [customizationOpen, setCustomizationOpen] = useState(false);
 	const defaultAxisValues = useMemo(
 		() =>
 			Object.fromEntries(
-				Object.entries(variable?.axes ?? {}).map(([axis, range]) => [
-					axis,
-					Number(range.default),
-				]),
+				Object.entries(variable?.axes ?? {})
+					.filter(([axis]) => axis.toLowerCase() !== 'ital')
+					.map(([axis, range]) => [axis, Number(range.default)]),
 			),
 		[variable],
 	);
 	const [axisValues, setAxisValues] =
 		useState<Record<string, number>>(defaultAxisValues);
 	const [previewSettingsApplied, setPreviewSettingsApplied] = useState(false);
+	const previewSettingsFamily = useRef<string | null>(null);
 	const [packageManager, setPackageManager] = useLocalStorage({
 		key: 'package-manager',
-		defaultValue: 'pnpm',
+		defaultValue: 'npm',
 		deserialize: (value) =>
-			deserializeStoredChoice(value, packageManagerValues, 'pnpm'),
+			deserializeStoredChoice(value, packageManagerValues, 'npm'),
 	});
+
 	const isVariable = format === 'variable' && supportsVariable;
-	const projectSampleText = getRegistryPreviewText(registry, languages);
+	const styles = useMemo(
+		() => [
+			...metadata.styles.filter(
+				(style) => style === 'normal' && selectedStyles.includes(style),
+			),
+			...metadata.styles.filter(
+				(style) => style !== 'normal' && selectedStyles.includes(style),
+			),
+		],
+		[metadata.styles, selectedStyles],
+	);
+	const weights = useMemo(
+		() => metadata.weights.filter((weight) => selectedWeights.includes(weight)),
+		[metadata.weights, selectedWeights],
+	);
+	const primaryStyle = styles[0] ?? recommendedStyle;
+	const primaryWeight = isVariable
+		? (axisValues.wght ?? recommendedWeight)
+		: (weights[0] ?? recommendedWeight);
+	const defaultFormat: FamilyFormat = supportsVariable ? 'variable' : 'static';
+	const axesAreDefault = Object.entries(defaultAxisValues).every(
+		([axis, value]) => axisValues[axis] === value,
+	);
+	const isRecommendedSetup =
+		format === defaultFormat &&
+		sameValues(styles, [recommendedStyle]) &&
+		(isVariable ? axesAreDefault : sameValues(weights, [recommendedWeight]));
 	const projectItem = useMemo(
 		() =>
 			createProjectItem({
@@ -137,240 +168,137 @@ export const FamilyUse = ({
 				variable,
 				registry,
 				format: isVariable ? 'variable' : 'static',
-				subset,
-				style,
-				weight,
+				subset: preferredSubset,
+				style: primaryStyle,
+				weight: primaryWeight,
 				axes: axisValues,
-				sampleText: projectSampleText,
+				sampleText: getRegistryPreviewText(registry, languages),
 			}),
 		[
 			axisValues,
 			isVariable,
+			languages,
 			metadata,
-			projectSampleText,
+			preferredSubset,
+			primaryStyle,
+			primaryWeight,
 			registry,
-			style,
-			subset,
 			variable,
 			versions,
-			weight,
 		],
 	);
-	const {
-		packageName,
-		packageVersion: version,
-		fontFamily: familyName,
-		cssFile: stylesheet,
-	} = projectItem;
-	const iconUsesMultipleAxes = stylesheet === 'full.css';
-	const subsetLabel = hasCatalog ? 'Package subset' : 'Character set';
-	const subsetValueLabel = hasCatalog
-		? `${formatFontLabel(subset)} ${hasNamedLigatures ? 'symbol ligatures' : 'symbols'}`
-		: formatFontLabel(subset);
-	const axisKey = variable
-		? selectVariableAxisKey(
-				variable.axes,
-				Object.keys(variable.axes),
-			).toLowerCase()
-		: 'wght';
-	const installCommand = useMemo(() => {
-		return getPackageManagerCommand(packageManager, packageName);
-	}, [packageManager, packageName]);
-	const importPath = iconUsesMultipleAxes
-		? `${packageName}/full.css`
-		: loadOnlySelection
-			? `${packageName}/${stylesheet}`
-			: packageName;
-	const cdnPath = iconUsesMultipleAxes
-		? 'full.css'
-		: loadOnlySelection
-			? stylesheet
-			: 'index.css';
-	const cdnUrl = getJsDelivrPackageUrl(packageName, version, cdnPath);
-	const cssCode = getUsageBlock(projectItem);
+	const { packageName, packageVersion } = projectItem;
+	const cssFiles = useMemo(
+		() => getSelectedCssFiles(projectItem, styles, weights),
+		[projectItem, styles, weights],
+	);
+	const packageImports = isRecommendedSetup
+		? `import '${packageName}';`
+		: cssFiles.map((file) => `import '${packageName}/${file}';`).join('\n');
+	const cdnLinks = (isRecommendedSetup ? ['index.css'] : cssFiles)
+		.map(
+			(file) =>
+				`<link rel="stylesheet" href="${getJsDelivrPackageUrl(packageName, packageVersion, file)}">`,
+		)
+		.join('\n');
+	const installCommand = getPackageManagerCommand(packageManager, packageName);
+	const usageProjectItem = isRecommendedSetup
+		? { ...projectItem, axes: {} }
+		: projectItem;
+	const cssCode = getUsageBlock(usageProjectItem);
 	const usageMarkup = getUsageMarkup(projectItem);
 	const usageNote = getUsageNote(projectItem);
-	const proofVariationSettings = Object.entries(projectItem.axes)
-		.map(([axis, value]) => `'${axis}' ${value}`)
-		.join(', ');
 	const fromSelectedFonts = searchParams.get('from') === 'selected-fonts';
-	const downloadIsVariable = downloadFormat === 'variable' && supportsVariable;
-	const downloadVersion = downloadIsVariable
-		? (versions.latestVariable ?? versions.latest)
-		: versions.latest;
-	const downloadAxisKey =
-		hasCatalog &&
-		downloadIsVariable &&
-		Object.keys(variable?.axes ?? {}).length > 1
-			? 'full'
-			: axisKey;
-	const downloadAssetFile = downloadIsVariable
-		? `${subset}-${downloadAxisKey}-${style}.woff2`
-		: `${subset}-${weight}-${style}.ttf`;
-	const downloadTag = downloadIsVariable
-		? `${metadata.id}:vf@${downloadVersion}`
-		: `${metadata.id}@${downloadVersion}`;
-	const downloadAssetUrl = `https://api.fontsource.org/fonts/${encodeURIComponent(downloadTag)}/${encodeURIComponent(downloadAssetFile)}`;
-	const downloadArchiveName = `${metadata.id}-${subset}-${downloadIsVariable ? 'variable' : `${weight}-${style}`}.zip`;
-	const downloadDescription = hasCatalog
-		? 'This archive contains the selected symbol font file.'
-		: isPunctuationFamily
-			? `${metadata.family} adjusts Japanese punctuation. Pair it with the Japanese text font used by your project.`
-			: isDigitalFamily
-				? 'This setup contains one display face. The complete family archive includes every published variation.'
-				: downloadIsVariable
-					? 'One flexible webfont file contains the available weight range.'
-					: 'A desktop-ready TTF for the selected weight, style, and character set.';
-	const isPreparingDownload =
-		downloadState === 'fetching' || downloadState === 'building';
-	const hasRegistryLicenseText = Boolean(registry);
-	const downloadButtonLabel = !hasRegistryLicenseText
-		? 'License details required'
-		: downloadState === 'fetching'
-			? 'Fetching files…'
-			: downloadState === 'building'
-				? 'Building archive…'
-				: downloadState === 'error'
-					? 'Try again'
-					: downloadState === 'success'
-						? 'Download again'
-						: 'Download selected .zip';
-	const downloadStatus = !hasRegistryLicenseText
-		? 'The Registry license text must be available before Fontsource can build this custom archive.'
-		: downloadState === 'fetching'
-			? 'Fetching the selected font and license…'
-			: downloadState === 'building'
-				? `Building ${downloadArchiveName} in your browser…`
-				: downloadState === 'success'
-					? `Downloaded ${downloadArchiveName}.`
-					: downloadState === 'error'
-						? (downloadError ??
-							'The custom archive could not be prepared. Your settings are preserved; try again or download the complete family.')
-						: 'Ready to create a ZIP in your browser.';
-
-	const clearDownloadFeedback = () => {
-		setDownloadState('idle');
-		setDownloadError(undefined);
-	};
-
-	const resetDownload = () => {
-		setDownloadFormat('static');
-		setSubset(preferredSubset);
-		setStyle(recommendedStyle);
-		setWeight(recommendedWeight);
-		clearDownloadFeedback();
+	const canCustomize =
+		(supportsStatic && supportsVariable) ||
+		metadata.styles.length > 1 ||
+		(!isVariable && metadata.weights.length > 1) ||
+		(isVariable && Object.keys(variable?.axes ?? {}).length > 0);
+	const variableWeightRange = variable?.axes.wght
+		? `${Number(variable.axes.wght.min)}–${Number(variable.axes.wght.max)}`
+		: `${Math.min(...metadata.weights)}–${Math.max(...metadata.weights)}`;
+	const selectionSummary = isVariable
+		? `Variable · ${variableWeightRange} weight · ${styles.map(formatFontLabel).join(' + ')}`
+		: weights.length === 1 && styles.length === 1
+			? `${formatFontLabel(primaryStyle)} · ${getWeightLabel(primaryWeight)}`
+			: `${cssFiles.length} faces · ${styles.map(formatFontLabel).join(' + ')}`;
+	const exampleFace = `${formatFontLabel(primaryStyle)} ${Math.round(primaryWeight)}`;
+	const outputExplanation = isRecommendedSetup
+		? isVariable
+			? `The default import loads the variable weight range. The CSS example starts at ${exampleFace}.`
+			: `The default import loads ${exampleFace}. Choose specific faces only when your project needs them.`
+		: isVariable
+			? `The import loads the selected variable file. The CSS example uses ${exampleFace} and your chosen axes.`
+			: `The imports load ${cssFiles.length} selected ${cssFiles.length === 1 ? 'face' : 'faces'}. The CSS example uses ${exampleFace}.`;
+	const hasRegularBoldPreset =
+		metadata.styles.includes('normal') &&
+		metadata.weights.includes(400) &&
+		metadata.weights.includes(700);
+	const setStaticPreset = (preset: 'default' | 'regular-bold' | 'all') => {
+		if (preset === 'all') {
+			setSelectedStyles(metadata.styles);
+			setSelectedWeights(metadata.weights);
+		} else if (preset === 'regular-bold') {
+			setSelectedStyles(['normal']);
+			setSelectedWeights([400, 700]);
+		} else {
+			setSelectedStyles([recommendedStyle]);
+			setSelectedWeights([recommendedWeight]);
+		}
 		setPreviewSettingsApplied(false);
 	};
 
-	const downloadSelectedFiles = async () => {
-		if (!registry || downloadInFlight.current) return;
-
-		downloadInFlight.current = true;
-		const controller = new AbortController();
-		downloadController.current = controller;
-		let timedOut = false;
-		let responseError: string | undefined;
-		const timeout = window.setTimeout(() => {
-			timedOut = true;
-			controller.abort();
-		}, 30_000);
-
-		setDownloadError(undefined);
-		setDownloadState('fetching');
-
-		try {
-			const [fontResponse, { strToU8, zipSync }] = await Promise.all([
-				fetch(downloadAssetUrl, { signal: controller.signal }),
-				import('fflate'),
-			]);
-			if (!fontResponse.ok) {
-				responseError =
-					fontResponse.status === 404
-						? 'That exact font file is not available. Try another format or download the complete family.'
-						: fontResponse.status === 429
-							? 'Fontsource is receiving too many download requests. Wait a moment, then try again.'
-							: 'Fontsource could not fetch the selected font file. Try again or download the complete family.';
-				throw new Error(responseError);
-			}
-
-			setDownloadState('building');
-			const archive = zipSync({
-				[`${metadata.id}-${downloadAssetFile}`]: new Uint8Array(
-					await fontResponse.arrayBuffer(),
-				),
-				LICENSE: strToU8(registry.license.text),
-				'README.txt': strToU8(
-					[
-						`${metadata.family} from Fontsource`,
-						'',
-						`Format: ${downloadIsVariable ? 'Variable WOFF2' : 'Desktop TTF'}`,
-						`${subsetLabel}: ${subsetValueLabel}`,
-						`Style: ${formatFontLabel(style)}`,
-						...(downloadIsVariable ? [] : [`Weight: ${weight}`]),
-						'',
-						`Source: https://fontsource.org/fonts/${metadata.id}`,
-					].join('\n'),
-				),
-			});
-			triggerBlobDownload(
-				downloadArchiveName,
-				new Blob([archive], { type: 'application/zip' }),
-			);
-			setDownloadState('success');
-		} catch {
-			setDownloadError(
-				timedOut
-					? 'The download took too long and was stopped. Check your connection, then try again.'
-					: (responseError ??
-							'The archive could not be built in this browser. Try again or download the complete family.'),
-			);
-			setDownloadState('error');
-		} finally {
-			window.clearTimeout(timeout);
-			if (downloadController.current === controller) {
-				downloadController.current = null;
-			}
-			downloadInFlight.current = false;
-		}
-	};
-
 	useEffect(() => {
+		if (previewSettingsFamily.current === metadata.id) return;
+		previewSettingsFamily.current = metadata.id;
+		setFormat(supportsVariable ? 'variable' : 'static');
+		setSelectedStyles([recommendedStyle]);
+		setSelectedWeights([recommendedWeight]);
+		setAxisValues(defaultAxisValues);
+		setPreviewSettingsApplied(false);
+
 		const saved = readFontPreviewSelection(metadata.id);
 		if (!saved) return;
 
 		setFormat(
-			saved.format === 'variable' && supportsVariable ? 'variable' : 'static',
+			saved.format === 'variable' && supportsVariable
+				? 'variable'
+				: supportsStatic
+					? 'static'
+					: 'variable',
 		);
-		if (metadata.subsets.includes(saved.subset)) setSubset(saved.subset);
-		if (metadata.styles.includes(saved.style)) setStyle(saved.style);
-		if (metadata.weights.includes(saved.weight)) setWeight(saved.weight);
+		if (metadata.styles.includes(saved.style)) {
+			setSelectedStyles([saved.style]);
+		}
+		if (metadata.weights.includes(saved.weight)) {
+			setSelectedWeights([saved.weight]);
+		}
 		setAxisValues(
 			Object.fromEntries(
-				Object.entries(variable?.axes ?? {}).map(([axis, range]) => {
-					const value =
-						axis === 'wght'
-							? saved.weight
-							: (saved.axes[axis] ?? Number(range.default));
-					return [
-						axis,
-						Math.min(Number(range.max), Math.max(Number(range.min), value)),
-					];
-				}),
+				Object.entries(variable?.axes ?? {})
+					.filter(([axis]) => axis.toLowerCase() !== 'ital')
+					.map(([axis, range]) => {
+						const value =
+							axis === 'wght'
+								? saved.weight
+								: (saved.axes[axis] ?? Number(range.default));
+						return [
+							axis,
+							Math.min(Number(range.max), Math.max(Number(range.min), value)),
+						];
+					}),
 			),
 		);
 		setPreviewSettingsApplied(true);
-	}, [metadata, supportsVariable, variable]);
-
-	useEffect(() => {
-		if (fromSelectedFonts) setPath('web');
-	}, [fromSelectedFonts, setPath]);
-
-	useEffect(
-		() => () => {
-			downloadController.current?.abort();
-		},
-		[],
-	);
+	}, [
+		defaultAxisValues,
+		metadata,
+		recommendedStyle,
+		recommendedWeight,
+		supportsStatic,
+		supportsVariable,
+		variable,
+	]);
 
 	return (
 		<section className={classes.page} aria-labelledby="use-heading">
@@ -385,610 +313,344 @@ export const FamilyUse = ({
 					</Link>
 				)}
 				<h2 id="use-heading">Get {metadata.family}</h2>
-				<p>
-					Download the files or add the font to a website. You can change the
-					setup before copying it.
-				</p>
+				<p>Choose where you want to use {metadata.family}.</p>
 			</div>
-
-			<div className={classes.paths} data-selected={path ?? undefined}>
-				<section
-					className={classes.path}
-					data-open={path === 'download' || undefined}
-				>
-					<button
-						type="button"
-						className={classes.pathToggle}
-						aria-expanded={path === 'download'}
-						aria-controls={path === 'download' ? 'download-setup' : undefined}
-						onClick={() => setPath('download')}
-					>
-						<span>
-							<strong>Download font files</strong>
-							<small>
-								For design apps, documents, desktop use, or custom workflows.
-							</small>
+			<Tabs
+				className={classes.acquisition}
+				value={path}
+				onChange={(value) => {
+					if (value) setPath(value as AcquisitionPath);
+				}}
+			>
+				<Tabs.List className={classes.taskTabs} grow>
+					<Tabs.Tab value="download">
+						<span className={classes.taskTabLabel}>
+							<strong>Download files</strong>
+							<small>For design apps, desktop, and font managers</small>
 						</span>
-						<span className={classes.pathAction} aria-hidden="true">
-							{path === 'download' ? 'Selected' : 'Customize download'}
+					</Tabs.Tab>
+					<Tabs.Tab value="web">
+						<span className={classes.taskTabLabel}>
+							<strong>Developer setup</strong>
+							<small>For packages, frameworks, and CDN</small>
 						</span>
-					</button>
+					</Tabs.Tab>
+				</Tabs.List>
 
-					{path === 'download' && (
-						<div className={classes.downloadPanel} id="download-setup">
-							<div className={classes.pathLicense}>
-								<LicenseReceipt
-									familyId={metadata.id}
-									license={registry?.license}
-									registryState={registryState}
-								/>
-							</div>
-							<fieldset
-								className={classes.downloadOptions}
-								disabled={isPreparingDownload}
+				<Tabs.Panel className={classes.taskPanel} value="download">
+					<div className={classes.downloadPanel}>
+						<div className={classes.downloadDetails}>
+							<h3>Complete family (.zip)</h3>
+							<p>TTF, WOFF, WOFF2, CSS, and the original license.</p>
+						</div>
+						<div className={classes.downloadAction}>
+							<a
+								className={classes.primaryButton}
+								href={`/fonts/${metadata.id}/download`}
+								target="_blank"
+								rel="noreferrer"
 							>
-								<legend>Recommended download</legend>
-								<div className={classes.downloadOptionsHeading}>
-									<p>
-										This starts with your Preview choices. Character set, style,
-										and weight stay in sync with Website setup. Downloads begin
-										with desktop-compatible TTF.
-									</p>
-									<button type="button" onClick={resetDownload}>
-										Reset
-									</button>
+								<IconDownload aria-hidden height={18} stroke="currentColor" />
+								Download complete family (.zip)
+							</a>
+							<LicenseReceipt
+								familyId={metadata.id}
+								license={registry?.license}
+								registryState={registryState}
+							/>
+						</div>
+					</div>
+				</Tabs.Panel>
+
+				<Tabs.Panel className={classes.taskPanel} value="web">
+					<div className={classes.webPanel}>
+						<fieldset className={classes.methodSwitch}>
+							<VisuallyHidden component="legend">
+								Choose how to add this font to a website
+							</VisuallyHidden>
+							<button
+								type="button"
+								data-active={method === 'package' || undefined}
+								aria-pressed={method === 'package'}
+								onClick={() => setMethod('package')}
+							>
+								Package
+							</button>
+							<button
+								type="button"
+								data-active={method === 'cdn' || undefined}
+								aria-pressed={method === 'cdn'}
+								onClick={() => setMethod('cdn')}
+							>
+								Quick embed
+							</button>
+						</fieldset>
+
+						{method === 'cdn' && (
+							<p className={classes.deliveryNote}>
+								Loads a versioned stylesheet from jsDelivr. Package is
+								recommended when you can bundle and self-host the font.
+							</p>
+						)}
+
+						<div className={classes.setupSummary}>
+							<div>
+								<strong>
+									{isRecommendedSetup ? 'Recommended setup' : 'Current setup'}
+								</strong>
+								<span>{selectionSummary}</span>
+							</div>
+							{canCustomize && (
+								<button
+									type="button"
+									className={classes.customizeButton}
+									aria-expanded={customizationOpen}
+									aria-controls="web-font-options"
+									onClick={() => setCustomizationOpen((open) => !open)}
+								>
+									{customizationOpen ? 'Done customizing' : 'Customize setup'}
+								</button>
+							)}
+						</div>
+
+						{previewSettingsApplied && !customizationOpen && (
+							<p className={classes.previewHandoff}>
+								Using your latest choices from Preview.
+							</p>
+						)}
+
+						{customizationOpen && (
+							<div className={classes.customization} id="web-font-options">
+								<div className={classes.customizationHeading}>
+									<strong>Choose only what your project uses</strong>
+									<span>The code below updates automatically.</span>
 								</div>
 
-								<div className={classes.downloadFields}>
-									<div>
-										<label htmlFor="download-format">File format</label>
-										<select
-											id="download-format"
-											aria-describedby="download-format-help"
-											value={downloadFormat}
-											onChange={(event) => {
-												setDownloadFormat(
-													event.currentTarget.value as FamilyFormat,
-												);
-												clearDownloadFeedback();
-											}}
-										>
-											<option value="static">
-												Desktop TTF — best for design apps
-											</option>
-											{supportsVariable && (
-												<option value="variable">
-													Variable WOFF2 — for websites and compatible tools
-												</option>
-											)}
-										</select>
-										<p className={classes.fieldHelp} id="download-format-help">
-											{downloadIsVariable
-												? 'A browser-focused file that may not install in every desktop design app.'
-												: 'Installs in most desktop design apps and works in documents.'}
-										</p>
-									</div>
-									<div>
-										<label htmlFor="download-subset">{subsetLabel}</label>
-										<select
-											id="download-subset"
-											value={subset}
-											onChange={(event) => {
-												setSubset(event.currentTarget.value);
-												clearDownloadFeedback();
-												setPreviewSettingsApplied(false);
-											}}
-										>
-											{metadata.subsets.map((value) => (
-												<option key={value} value={value}>
-													{formatFontLabel(value)}
-												</option>
-											))}
-										</select>
-									</div>
-									<div>
-										<label htmlFor="download-style">Style</label>
-										<select
-											id="download-style"
-											value={style}
-											onChange={(event) => {
-												setStyle(
-													event.currentTarget
-														.value as GetFontResponse['styles'][number],
-												);
-												clearDownloadFeedback();
-												setPreviewSettingsApplied(false);
-											}}
-										>
-											{metadata.styles.map((value) => (
-												<option key={value} value={value}>
-													{formatFontLabel(value)}
-												</option>
-											))}
-										</select>
-									</div>
-									{!downloadIsVariable && (
+								{supportsStatic && supportsVariable && (
+									<fieldset className={classes.formatSwitch}>
+										<legend>Font format</legend>
 										<div>
-											<label htmlFor="download-weight">Weight</label>
-											<select
-												id="download-weight"
-												value={weight}
-												onChange={(event) => {
-													setWeight(Number(event.currentTarget.value));
-													clearDownloadFeedback();
+											<button
+												type="button"
+												data-active={isVariable || undefined}
+												aria-pressed={isVariable}
+												onClick={() => {
+													setFormat('variable');
 													setPreviewSettingsApplied(false);
 												}}
 											>
-												{metadata.weights.map((value) => (
-													<option key={value} value={value}>
-														{value}
-													</option>
-												))}
-											</select>
+												Variable
+											</button>
+											<button
+												type="button"
+												data-active={!isVariable || undefined}
+												aria-pressed={!isVariable}
+												onClick={() => {
+													setFormat('static');
+													setPreviewSettingsApplied(false);
+												}}
+											>
+												Static
+											</button>
 										</div>
-									)}
-								</div>
-							</fieldset>
-
-							<aside
-								className={classes.downloadSummary}
-								aria-busy={isPreparingDownload}
-							>
-								<span className={classes.summaryLabel}>Your archive</span>
-								<strong>{downloadArchiveName}</strong>
-								<p>{downloadDescription}</p>
-								{hasCatalog && (
-									<Link
-										className={classes.contextLink}
-										to={`/fonts/${metadata.id}/glyphs`}
-									>
-										Explore symbol names and axes
-									</Link>
+									</fieldset>
 								)}
-								<dl>
-									<div>
-										<dt>Font file</dt>
-										<dd>{downloadAssetFile}</dd>
-									</div>
-									<div>
-										<dt>Also included</dt>
-										<dd>License and readme</dd>
-									</div>
-								</dl>
-								<button
-									type="button"
-									className={classes.primaryButton}
-									data-busy={isPreparingDownload || undefined}
-									disabled={isPreparingDownload || !hasRegistryLicenseText}
-									onClick={() => void downloadSelectedFiles()}
-								>
-									<IconDownload aria-hidden height={18} stroke="currentColor" />
-									{downloadButtonLabel}
-								</button>
-								<p
-									className={classes.downloadStatus}
-									aria-live="polite"
-									aria-atomic="true"
-								>
-									{downloadStatus}
-								</p>
-								<p className={classes.downloadProvenance}>
-									{hasRegistryLicenseText
-										? 'The archive is assembled in your browser from Fontsource font files and the license text published in the Registry.'
-										: 'A custom archive cannot be built until the Registry license text is available. The complete package download remains available below.'}
-								</p>
-								<a
-									className={classes.completeDownload}
-									href={`/fonts/${metadata.id}/download`}
-									target="_blank"
-									rel="noreferrer"
-								>
-									Download the complete family
-									<IconExternal aria-hidden height={15} stroke="currentColor" />
-								</a>
-							</aside>
-						</div>
-					)}
-				</section>
 
-				<section
-					className={classes.path}
-					data-open={path === 'web' || undefined}
-				>
-					<button
-						type="button"
-						className={classes.pathToggle}
-						aria-expanded={path === 'web'}
-						aria-controls={path === 'web' ? 'web-setup' : undefined}
-						onClick={() => setPath('web')}
-					>
-						<span>
-							<strong>Use on a website</strong>
-							<small>
-								Self-host with a package, or copy a public CDN link for a quick
-								embed.
-							</small>
-						</span>
-						<span className={classes.pathAction} aria-hidden="true">
-							{path === 'web' ? 'Selected' : 'View setup'}
-						</span>
-					</button>
-
-					{path === 'web' && (
-						<div className={classes.webPanel} id="web-setup">
-							<div className={classes.pathLicense}>
-								<LicenseReceipt
-									familyId={metadata.id}
-									license={registry?.license}
-									registryState={registryState}
-								/>
-							</div>
-							<fieldset className={classes.methodSwitch}>
-								<VisuallyHidden component="legend">
-									Choose how to add this font to a website
-								</VisuallyHidden>
-								<button
-									type="button"
-									data-active={method === 'package' || undefined}
-									aria-pressed={method === 'package'}
-									onClick={() => setMethod('package')}
-								>
-									<strong>Package</strong>
-									<small>Recommended · self-hosted</small>
-								</button>
-								<button
-									type="button"
-									data-active={method === 'cdn' || undefined}
-									aria-pressed={method === 'cdn'}
-									onClick={() => setMethod('cdn')}
-								>
-									<strong>Quick embed</strong>
-									<small>jsDelivr CDN · no install</small>
-								</button>
-							</fieldset>
-
-							{method === 'cdn' && (
-								<p className={classes.deliveryNote}>
-									Loads fonts from jsDelivr, a public third-party CDN. Choose
-									Package for self-hosting, offline availability, and more
-									delivery control.
-								</p>
-							)}
-
-							<div className={classes.setupGrid}>
-								<aside className={classes.summary}>
-									<div className={classes.summaryTop}>
-										<span>Font settings</span>
-										<button
-											type="button"
-											aria-expanded={advancedOpen}
-											aria-controls="advanced-font-setup"
-											onClick={() => setAdvancedOpen((open) => !open)}
-										>
-											{advancedOpen ? 'Hide options' : 'Change options'}
-										</button>
-									</div>
-									<dl>
+								{!isVariable && metadata.weights.length > 1 && (
+									<fieldset className={classes.presetGroup}>
+										<legend>Quick selections</legend>
 										<div>
-											<dt>Format</dt>
-											<dd>{isVariable ? 'Variable' : 'Static'}</dd>
-										</div>
-										<div>
-											<dt>Subset</dt>
-											<dd>{subsetValueLabel}</dd>
-										</div>
-										<div>
-											<dt>Style</dt>
-											<dd>{formatFontLabel(style)}</dd>
-										</div>
-										<div>
-											<dt>Weight</dt>
-											<dd>{weight}</dd>
-										</div>
-									</dl>
-
-									{previewSettingsApplied && (
-										<p className={classes.previewHandoff}>
-											Using your latest choices from Preview.
-										</p>
-									)}
-
-									{advancedOpen && (
-										<div
-											className={classes.advanced}
-											id="advanced-font-setup"
-											data-format={isVariable ? 'variable' : 'static'}
-										>
-											<div>
-												<label htmlFor="family-format">Format</label>
-												<select
-													id="family-format"
-													value={format}
-													onChange={(event) =>
-														setFormat(event.currentTarget.value as FamilyFormat)
+											<button
+												type="button"
+												aria-pressed={
+													sameValues(styles, [recommendedStyle]) &&
+													sameValues(weights, [recommendedWeight])
+												}
+												onClick={() => setStaticPreset('default')}
+											>
+												Default
+											</button>
+											{hasRegularBoldPreset && (
+												<button
+													type="button"
+													aria-pressed={
+														sameValues(styles, ['normal']) &&
+														sameValues(weights, [400, 700])
 													}
+													onClick={() => setStaticPreset('regular-bold')}
 												>
-													{supportsVariable && (
-														<option value="variable">Variable</option>
-													)}
-													<option value="static">Static</option>
-												</select>
-											</div>
-											<div>
-												<label htmlFor="font-subset">{subsetLabel}</label>
-												<select
-													id="font-subset"
-													value={subset}
-													onChange={(event) => {
-														setSubset(event.currentTarget.value);
-														setDownloadState('idle');
-														setPreviewSettingsApplied(false);
-													}}
-												>
-													{metadata.subsets.map((value) => (
-														<option key={value} value={value}>
-															{formatFontLabel(value)}
-														</option>
-													))}
-												</select>
-											</div>
-											<div>
-												<label htmlFor="font-style">Style</label>
-												<select
-													id="font-style"
-													value={style}
-													onChange={(event) => {
-														setStyle(
-															event.currentTarget
-																.value as GetFontResponse['styles'][number],
-														);
-														setDownloadState('idle');
-														setPreviewSettingsApplied(false);
-													}}
-												>
-													{metadata.styles.map((value) => (
-														<option key={value} value={value}>
-															{formatFontLabel(value)}
-														</option>
-													))}
-												</select>
-											</div>
-											{!isVariable && (
-												<div>
-													<label htmlFor="font-weight">Weight</label>
-													<select
-														id="font-weight"
-														value={weight}
+													Regular + Bold
+												</button>
+											)}
+											<button
+												type="button"
+												aria-pressed={
+													sameValues(styles, metadata.styles) &&
+													sameValues(weights, metadata.weights)
+												}
+												onClick={() => setStaticPreset('all')}
+											>
+												All faces
+											</button>
+										</div>
+									</fieldset>
+								)}
+
+								{metadata.styles.length > 1 && (
+									<fieldset className={classes.optionGroup}>
+										<legend>Styles</legend>
+										<div>
+											{metadata.styles.map((style) => {
+												const selected = styles.includes(style);
+												return (
+													<label key={style}>
+														<input
+															type="checkbox"
+															checked={selected}
+															disabled={selected && styles.length === 1}
+															onChange={() => {
+																setSelectedStyles((current) =>
+																	toggleRequiredValue(
+																		current,
+																		style,
+																		metadata.styles,
+																	),
+																);
+																setPreviewSettingsApplied(false);
+															}}
+														/>
+														<span>{formatFontLabel(style)}</span>
+													</label>
+												);
+											})}
+										</div>
+									</fieldset>
+								)}
+
+								{!isVariable && metadata.weights.length > 1 && (
+									<fieldset className={classes.optionGroup}>
+										<legend>Weights</legend>
+										<div>
+											{metadata.weights.map((weight) => {
+												const selected = weights.includes(weight);
+												return (
+													<label key={weight}>
+														<input
+															type="checkbox"
+															checked={selected}
+															disabled={selected && weights.length === 1}
+															onChange={() => {
+																setSelectedWeights((current) =>
+																	toggleRequiredValue(
+																		current,
+																		weight,
+																		metadata.weights,
+																	),
+																);
+																setPreviewSettingsApplied(false);
+															}}
+														/>
+														<span>{getWeightLabel(weight)}</span>
+													</label>
+												);
+											})}
+										</div>
+									</fieldset>
+								)}
+
+								{isVariable &&
+									Object.entries(variable?.axes ?? {})
+										.filter(([axis]) => axis.toLowerCase() !== 'ital')
+										.map(([axis, range]) => {
+											const value = axisValues[axis] ?? Number(range.default);
+											return (
+												<label className={classes.axisControl} key={axis}>
+													<span>
+														{getAxisLabel(axis)}
+														<output>{value}</output>
+													</span>
+													<input
+														type="range"
+														min={Number(range.min)}
+														max={Number(range.max)}
+														step={Number(range.step)}
+														value={value}
 														onChange={(event) => {
-															setWeight(Number(event.currentTarget.value));
-															setDownloadState('idle');
+															setAxisValues((values) => ({
+																...values,
+																[axis]: Number(event.currentTarget.value),
+															}));
 															setPreviewSettingsApplied(false);
 														}}
-													>
-														{metadata.weights.map((value) => (
-															<option key={value} value={value}>
-																{value}
-															</option>
-														))}
-													</select>
-												</div>
-											)}
-											{isVariable &&
-												Object.entries(variable?.axes ?? {}).map(
-													([axis, range]) => {
-														const value =
-															axis === 'wght'
-																? weight
-																: (axisValues[axis] ?? Number(range.default));
-														return (
-															<label className={classes.axisControl} key={axis}>
-																<span>
-																	{getAxisLabel(axis)}
-																	<output>{value}</output>
-																</span>
-																<input
-																	type="range"
-																	aria-label={`${getAxisLabel(axis)} axis`}
-																	min={Number(range.min)}
-																	max={Number(range.max)}
-																	step={Number(range.step)}
-																	value={value}
-																	onChange={(event) => {
-																		const nextValue = Number(
-																			event.currentTarget.value,
-																		);
-																		if (axis === 'wght') {
-																			setWeight(nextValue);
-																		} else {
-																			setAxisValues((values) => ({
-																				...values,
-																				[axis]: nextValue,
-																			}));
-																		}
-																		setPreviewSettingsApplied(false);
-																	}}
-																/>
-															</label>
-														);
-													},
-												)}
-											{!iconUsesMultipleAxes && (
-												<label className={classes.optimizationControl}>
-													<input
-														type="checkbox"
-														checked={loadOnlySelection}
-														onChange={(event) =>
-															setLoadOnlySelection(event.currentTarget.checked)
-														}
 													/>
-													<span>
-														<strong>
-															Load only this character set and style
-														</strong>
-														<small>
-															Uses a smaller, exact stylesheet instead of the
-															package default.
-														</small>
-													</span>
 												</label>
-											)}
-										</div>
-									)}
-
-									{method === 'package' && (
-										<div className={classes.manager}>
-											<span>Package manager</span>
-											<div>
-												{packageManagers.map((manager) => (
-													<button
-														key={manager.value}
-														type="button"
-														data-active={
-															packageManager === manager.value || undefined
-														}
-														aria-pressed={packageManager === manager.value}
-														onClick={() => setPackageManager(manager.value)}
-													>
-														{manager.value}
-													</button>
-												))}
-											</div>
-										</div>
-									)}
-								</aside>
-
-								<div className={classes.instructions}>
-									<div className={classes.resultHeading}>
-										<div>
-											<strong>
-												{method === 'package'
-													? 'Your package setup'
-													: 'Your quick embed'}
-											</strong>
-											<span>
-												{method === 'package'
-													? 'Install, import, then apply the font.'
-													: 'Add the stylesheet, then apply the font.'}
-											</span>
-										</div>
-										<Link to="/docs/getting-started/install">
-											New to web fonts? Read the guide
-											<IconExternal
-												aria-hidden
-												height={15}
-												stroke="currentColor"
-											/>
-										</Link>
-									</div>
-									{method === 'package' ? (
-										<>
-											<div>
-												<span className={classes.stepLabel}>
-													1 · Install the package
-												</span>
-												<CopyCodeBlock code={installCommand} label="Terminal" />
-											</div>
-											<div>
-												<span className={classes.stepLabel}>
-													2 · Import the font stylesheet
-												</span>
-												<CopyCodeBlock
-													code={`import '${importPath}';`}
-													label="JavaScript"
-												/>
-											</div>
-										</>
-									) : (
-										<div>
-											<span className={classes.stepLabel}>
-												1 · Add the stylesheet link
-											</span>
-											<CopyCodeBlock
-												code={`<link rel="stylesheet" href="${cdnUrl}">`}
-												label="HTML"
-											/>
-										</div>
-									)}
-									<div>
-										<span className={classes.stepLabel}>
-											{method === 'package' ? '3' : '2'} · Apply the font in CSS
-										</span>
-										<CopyCodeBlock code={cssCode} label="CSS" />
-									</div>
-									{usageMarkup && (
-										<div>
-											<span className={classes.stepLabel}>
-												{method === 'package' ? '4' : '3'} · Add an example to
-												your page
-											</span>
-											<CopyCodeBlock code={usageMarkup} label="HTML" />
-										</div>
-									)}
-									{usageNote && (
-										<div className={classes.usageHelp}>
-											<p>{usageNote}</p>
-											{hasCatalog && (
-												<Link to={`/fonts/${metadata.id}/glyphs`}>
-													Explore the symbol catalog
-												</Link>
-											)}
-										</div>
-									)}
-									<details className={classes.renderedDisclosure}>
-										<summary>Preview this setup</summary>
-										<div className={classes.renderedCheck}>
-											<div>
-												<span>Rendered check</span>
-												<small>
-													Uses your selected family, style, and axes.
-												</small>
-											</div>
-											<FontSkeleton
-												name="font-preview-row"
-												family={familyName}
-												weight={weight}
-												style={style}
-												className={classes.renderedFontSkeleton}
-											>
-												<strong
-													data-special={
-														hasCatalog || isDigitalFamily || undefined
-													}
-													style={{
-														fontFamily: familyName,
-														fontFeatureSettings: hasNamedLigatures
-															? '"liga"'
-															: undefined,
-														fontVariationSettings:
-															proofVariationSettings || undefined,
-														fontWeight: weight,
-														fontStyle: style,
-													}}
-												>
-													{projectItem.sampleText}
-												</strong>
-											</FontSkeleton>
-										</div>
-									</details>
-								</div>
+											);
+										})}
 							</div>
-							<div className={classes.projectAction}>
+						)}
+
+						{method === 'package' && (
+							<fieldset className={classes.manager}>
+								<legend>Install with</legend>
 								<div>
-									<strong>Use this setup with other fonts</strong>
-									<span>
-										Add the exact configuration to your font set, then generate
-										one package or stylesheet.
-									</span>
+									{packageManagers.map((manager) => (
+										<button
+											key={manager.value}
+											type="button"
+											data-active={
+												packageManager === manager.value || undefined
+											}
+											aria-pressed={packageManager === manager.value}
+											onClick={() => setPackageManager(manager.value)}
+										>
+											{manager.value}
+										</button>
+									))}
 								</div>
-								<div className={classes.projectActionControls}>
-									<ProjectAddButton item={projectItem} />
-									<Link to="/selected-fonts">View font set</Link>
-								</div>
-							</div>
+							</fieldset>
+						)}
+
+						<div className={classes.instructions}>
+							{method === 'package' && (
+								<CopyCodeBlock
+									code={installCommand}
+									label="Install"
+									language="sh"
+								/>
+							)}
+							<CopyCodeBlock
+								code={method === 'package' ? packageImports : cdnLinks}
+								label={
+									method === 'package' ? 'Import files' : 'HTML stylesheet'
+								}
+								language={method === 'package' ? 'js' : 'html'}
+							/>
+							<CopyCodeBlock
+								code={cssCode}
+								label={`Example CSS · ${exampleFace}`}
+								language="css"
+							/>
+							{usageMarkup && (
+								<CopyCodeBlock
+									code={usageMarkup}
+									label="HTML example"
+									language="html"
+								/>
+							)}
 						</div>
-					)}
-				</section>
-			</div>
+						<p className={classes.outputExplanation}>{outputExplanation}</p>
+
+						{usageNote && <p className={classes.usageHelp}>{usageNote}</p>}
+						<Link
+							className={classes.guideLink}
+							to="/docs/getting-started/install"
+						>
+							New to web fonts? Read the guide
+							<IconExternal aria-hidden height={15} stroke="currentColor" />
+						</Link>
+					</div>
+				</Tabs.Panel>
+			</Tabs>
 		</section>
 	);
 };

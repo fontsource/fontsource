@@ -14,6 +14,30 @@ const fallbacks: Record<ProjectItem['category'], string> = {
 const getCdnUrl = (item: ProjectItem) =>
 	getJsDelivrPackageUrl(item.packageName, item.packageVersion, item.cssFile);
 
+const getSelectedCssFiles = (
+	item: Pick<ProjectItem, 'cssFile' | 'format' | 'subset'>,
+	styles: ProjectItem['style'][],
+	weights: number[],
+) => {
+	if (item.cssFile === 'full.css') return ['full.css'];
+	if (item.format === 'variable') {
+		const axisKey = item.cssFile
+			.replace(`${item.subset}-`, '')
+			.replace('-italic.css', '')
+			.replace('.css', '');
+		return styles.map(
+			(style) =>
+				`${item.subset}-${axisKey}${style === 'italic' ? '-italic' : ''}.css`,
+		);
+	}
+	return styles.flatMap((style) =>
+		weights.map(
+			(weight) =>
+				`${item.subset}-${weight}${style === 'italic' ? '-italic' : ''}.css`,
+		),
+	);
+};
+
 const hasTag = (item: ProjectItem, tag: string) => item.tags.includes(tag);
 const hasSymbolCatalog = (item: ProjectItem) =>
 	item.symbolInputModes.length > 0;
@@ -128,6 +152,7 @@ export {
 	getCdnUrl,
 	getFontStack,
 	getProjectCss,
+	getSelectedCssFiles,
 	getUsageBlock,
 	getUsageMarkup,
 	getUsageNote,

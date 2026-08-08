@@ -135,6 +135,7 @@ const PreviewToolbar = observer(() => {
 							ariaLabel="Preview language"
 							items={languageItems}
 							searchable={verifiedLanguages.length > 6}
+							searchPlaceholder={`Search ${verifiedLanguages.length.toLocaleString('en')} languages`}
 							refine={selectLanguage}
 							w="100%"
 							dropdownWidth={280}

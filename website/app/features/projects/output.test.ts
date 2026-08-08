@@ -5,6 +5,7 @@ import {
 	getCdnUrl,
 	getFontStack,
 	getProjectCss,
+	getSelectedCssFiles,
 	getUsageBlock,
 	getUsageNote,
 } from './output';
@@ -67,8 +68,28 @@ describe('current project output', () => {
 		};
 
 		expect(getCdnUrl(icon).endsWith('/full.css')).toBe(true);
+		expect(getSelectedCssFiles(icon, ['normal'], [400])).toEqual(['full.css']);
 		expect(getUsageBlock(icon)).toContain("font-feature-settings: 'liga';");
 		expect(getUsageNote(icon)).toContain('verified symbol names as ligatures');
+	});
+
+	it('builds every selected static and variable stylesheet', () => {
+		expect(
+			getSelectedCssFiles(
+				{ ...baseItem, format: 'static', cssFile: 'latin-400.css' },
+				['normal', 'italic'],
+				[400, 700],
+			),
+		).toEqual([
+			'latin-400.css',
+			'latin-700.css',
+			'latin-400-italic.css',
+			'latin-700-italic.css',
+		]);
+		expect(getSelectedCssFiles(baseItem, ['normal', 'italic'], [400])).toEqual([
+			'latin-full.css',
+			'latin-full-italic.css',
+		]);
 	});
 
 	it('uses specialist fallback and readout declarations', () => {
