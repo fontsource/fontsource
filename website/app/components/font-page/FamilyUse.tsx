@@ -1,6 +1,6 @@
 import { Tabs, VisuallyHidden } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
@@ -101,14 +101,10 @@ export const FamilyUse = ({
 	const recommendedWeight = metadata.weights.includes(400)
 		? 400
 		: (metadata.weights[0] ?? 400);
-	const defaultAxisValues = useMemo(
-		() =>
-			Object.fromEntries(
-				Object.entries(variable?.axes ?? {})
-					.filter(([axis]) => axis.toLowerCase() !== 'ital')
-					.map(([axis, range]) => [axis, Number(range.default)]),
-			),
-		[variable],
+	const defaultAxisValues = Object.fromEntries(
+		Object.entries(variable?.axes ?? {})
+			.filter(([axis]) => axis.toLowerCase() !== 'ital')
+			.map(([axis, range]) => [axis, Number(range.default)]),
 	);
 	const requestedStyles = searchParams
 		.get('styles')
@@ -164,20 +160,15 @@ export const FamilyUse = ({
 	});
 
 	const isVariable = format === 'variable' && supportsVariable;
-	const availableStyles = useMemo(
-		() => [
-			...metadata.styles.filter((style) => style === 'normal'),
-			...metadata.styles.filter((style) => style !== 'normal'),
-		],
-		[metadata.styles],
+	const availableStyles = [
+		...metadata.styles.filter((style) => style === 'normal'),
+		...metadata.styles.filter((style) => style !== 'normal'),
+	];
+	const styles = availableStyles.filter((style) =>
+		selectedStyles.includes(style),
 	);
-	const styles = useMemo(
-		() => availableStyles.filter((style) => selectedStyles.includes(style)),
-		[availableStyles, selectedStyles],
-	);
-	const weights = useMemo(
-		() => metadata.weights.filter((weight) => selectedWeights.includes(weight)),
-		[metadata.weights, selectedWeights],
+	const weights = metadata.weights.filter((weight) =>
+		selectedWeights.includes(weight),
 	);
 	const primaryStyle = styles[0] ?? recommendedStyle;
 	const primaryWeight = isVariable
@@ -191,42 +182,21 @@ export const FamilyUse = ({
 		format === defaultFormat &&
 		sameValues(styles, [recommendedStyle]) &&
 		(isVariable ? axesAreDefault : sameValues(weights, [recommendedWeight]));
-	const projectItem = useMemo(
-		() =>
-			createProjectItem({
-				metadata,
-				versions,
-				variable,
-				registry,
-				format: isVariable ? 'variable' : 'static',
-				subset: preferredSubset,
-				style: primaryStyle,
-				weight: primaryWeight,
-				axes: axisValues,
-				sampleText: getRegistryPreviewText(registry, languages),
-			}),
-		[
-			axisValues,
-			isVariable,
-			languages,
-			metadata,
-			preferredSubset,
-			primaryStyle,
-			primaryWeight,
-			registry,
-			variable,
-			versions,
-		],
-	);
+	const projectItem = createProjectItem({
+		metadata,
+		versions,
+		variable,
+		registry,
+		format: isVariable ? 'variable' : 'static',
+		subset: preferredSubset,
+		style: primaryStyle,
+		weight: primaryWeight,
+		axes: axisValues,
+		sampleText: getRegistryPreviewText(registry, languages),
+	});
 	const { packageName, packageVersion } = projectItem;
-	const cssFiles = useMemo(
-		() => getSelectedCssFiles(projectItem, styles, weights),
-		[projectItem, styles, weights],
-	);
-	const fontSetItem = useMemo(
-		() => ({ ...projectItem, cssFiles, styles, weights }),
-		[cssFiles, projectItem, styles, weights],
-	);
+	const cssFiles = getSelectedCssFiles(projectItem, styles, weights);
+	const fontSetItem = { ...projectItem, cssFiles, styles, weights };
 
 	const packageImports = isRecommendedSetup
 		? `import '${packageName}';`
