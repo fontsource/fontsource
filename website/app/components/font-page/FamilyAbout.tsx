@@ -85,6 +85,21 @@ const summarizeDescription = (value?: string) => {
 	return description.match(/^.*?[.!?](?:\s|$)/u)?.[0].trim() ?? description;
 };
 
+const weightNames: Record<number, string> = {
+	100: 'Thin',
+	200: 'Extra light',
+	300: 'Light',
+	400: 'Regular',
+	500: 'Medium',
+	600: 'Semibold',
+	700: 'Bold',
+	800: 'Extra bold',
+	900: 'Black',
+};
+
+const getWeightLabel = (weight: number) =>
+	weightNames[weight] ? `${weightNames[weight]} ${weight}` : String(weight);
+
 const SourceFileItem = ({
 	source,
 	mappedCharacterCount,
@@ -366,6 +381,11 @@ export const FamilyAbout = ({
 		(registry?.primaryScript && registry.primaryScript !== 'Latn')
 			? getRegistryPreviewText(registry, languages)
 			: undefined) ?? metadata.family;
+	const weightSpecimenText = hasNamedLigatures
+		? (specimenText.split(/\s+/u).find(Boolean) ?? metadata.family)
+		: isSpecialUseFamily
+			? Array.from(specimenText).slice(0, 3).join('')
+			: metadata.family;
 	const specimenStyle = {
 		fontFamily,
 		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
@@ -476,8 +496,9 @@ export const FamilyAbout = ({
 							className={classes.specimen}
 							style={specimenStyle}
 							data-category={metadata.category}
+							data-family-kind={familyKind}
 							role="img"
-							aria-label={`${metadata.family} specimen sample`}
+							aria-label={`${metadata.family} specimen`}
 						>
 							{specimenText}
 						</div>
@@ -562,15 +583,11 @@ export const FamilyAbout = ({
 				<section className={classes.taxonomy} aria-labelledby="tags-heading">
 					<div>
 						<h2 id="tags-heading">Style and character</h2>
-						<p>Browse similar classifications and visual characteristics.</p>
+						<p>Visual characteristics associated with this family.</p>
 					</div>
 					<ul>
 						{tags.map((tag) => (
-							<li key={tag.id}>
-								<Link to={`/?query=${encodeURIComponent(tag.label)}`}>
-									{tag.label}
-								</Link>
-							</li>
+							<li key={tag.id}>{tag.label}</li>
 						))}
 					</ul>
 				</section>
@@ -620,8 +637,12 @@ export const FamilyAbout = ({
 						) : null}
 					</div>
 
-					<div className={`${classes.capabilityPanel} ${classes.axisPanel}`}>
-						<h3>Styles and axes</h3>
+					<div
+						className={`${classes.capabilityPanel} ${classes.axisPanel} ${featureTags.length === 0 ? classes.fullWidthPanel : ''}`}
+					>
+						<h3>
+							{metadata.variable ? 'Styles and axes' : 'Styles and weights'}
+						</h3>
 						<p className={classes.styleSummary}>
 							{hasVariableWeight && metadata.weights.length === 1
 								? 'A continuous range of weights'
@@ -649,7 +670,30 @@ export const FamilyAbout = ({
 									: 'This variable font does not publish axis details.'}
 							</p>
 						) : (
-							<p>This release contains static font files.</p>
+							<>
+								<p className={classes.axisIntro}>
+									Each weight is provided as a separate font file.
+								</p>
+								<ul className={classes.weightList}>
+									{metadata.weights.map((weight) => (
+										<li key={weight}>
+											<span
+												aria-hidden="true"
+												className={classes.weightSample}
+												style={{
+													...specimenStyle,
+													fontWeight: weight,
+												}}
+											>
+												{weightSpecimenText}
+											</span>
+											<span className={classes.weightLabel}>
+												{getWeightLabel(weight)}
+											</span>
+										</li>
+									))}
+								</ul>
+							</>
 						)}
 					</div>
 

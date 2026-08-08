@@ -14,6 +14,7 @@ import {
 	getRegistryFamilyKind,
 	getRegistryPreviewText,
 	getRegistrySourcePreviewStyle,
+	getSupportedPreviewFallback,
 	getUnicodeCharacter,
 	type RegistryFamily,
 	selectRegistryFamilyLanguages,
@@ -116,6 +117,11 @@ describe('registry character capabilities', () => {
 
 	it('reports unique visible characters without a cmap entry', () => {
 		expect(findUnmappedCharacters('A B? B', capabilities)).toEqual(['B', '?']);
+	});
+
+	it('creates a supported preview when a family has no authored sample', () => {
+		expect(getSupportedPreviewFallback('A 1', capabilities)).toBe('A 1');
+		expect(getSupportedPreviewFallback('Missing', capabilities)).toBe('Aa');
 	});
 
 	it('returns every browsable mapped character', () => {

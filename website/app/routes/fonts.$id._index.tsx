@@ -33,7 +33,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	] = await Promise.all([
 		basePromise,
 		getFontVersions({ id }, options),
-		loadFontPageLanguages(basePromise, request.signal),
+		loadFontPageLanguages(basePromise, request.signal, 'all'),
 		loadOptionalRegistryData(listRegistryAxes(options), request.signal),
 		loadFontPageCapabilities(basePromise, request.signal),
 		loadFontPageSymbols(basePromise, request.signal),

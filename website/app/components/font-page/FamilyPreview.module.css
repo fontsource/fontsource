@@ -95,10 +95,6 @@
 	line-height: 1.5;
 }
 
-.handoffNotice a {
-	font-weight: 600;
-}
-
 .studio {
 	--preview-canvas-min: clamp(460px, 52dvh, 570px);
 
@@ -827,6 +823,18 @@
 	flex: 0 0 auto;
 }
 
+.fixedValue {
+	min-width: 82px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 7px 9px;
+	color: var(--preview-text-muted);
+	font-family: var(--mantine-font-family-monospace);
+	font-size: var(--preview-type-label);
+	font-variant-numeric: tabular-nums;
+}
+
 .numberInput {
 	min-width: 0;
 	width: 100%;
@@ -869,12 +877,6 @@
 	background: var(--preview-surface);
 	outline: 2px solid color-mix(in srgb, var(--mantine-color-purple-0) 24%, transparent);
 	outline-offset: 1px;
-}
-
-.numberInput:disabled {
-	color: var(--preview-text-disabled);
-	background: var(--preview-chrome-subtle);
-	cursor: not-allowed;
 }
 
 .controlDescription {
@@ -934,8 +936,7 @@
 }
 
 .slider :global(.mantine-Slider-mark) {
-	border-color: var(--preview-surface);
-	background: var(--preview-text-muted);
+	display: none;
 }
 
 .sliderBar {

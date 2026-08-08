@@ -63,7 +63,7 @@ const RangeControl = ({
 	unit,
 	marks,
 	restrictToMarks = false,
-	disabled = false,
+	fixed = false,
 }: {
 	id: string;
 	label: string;
@@ -78,7 +78,7 @@ const RangeControl = ({
 	unit?: string;
 	marks?: Array<{ value: number }>;
 	restrictToMarks?: boolean;
-	disabled?: boolean;
+	fixed?: boolean;
 }) => {
 	const descriptionId = description ? `${id}-description` : undefined;
 	const decimalScale = step < 1 ? String(step).split('.')[1]?.length : 0;
@@ -100,57 +100,66 @@ const RangeControl = ({
 						</p>
 					)}
 				</div>
-				<NumberInput
-					id={`${id}-value`}
-					className={classes.numberControl}
-					classNames={{
-						description: classes.inputDescription,
-						input: classes.numberInput,
-					}}
-					description={description}
-					descriptionProps={{ id: descriptionId }}
-					value={value}
-					min={min}
-					max={max}
-					step={step}
-					decimalScale={decimalScale}
-					suffix={unit ? ` ${unit}` : undefined}
-					hideControls
-					clampBehavior="strict"
-					disabled={disabled}
-					aria-valuemax={max}
-					aria-valuemin={min}
-					aria-valuenow={value}
-					aria-valuetext={formatValue(value)}
-					role="spinbutton"
-					onChange={(nextValue) => {
-						if (typeof nextValue === 'number') setValue(nextValue);
-					}}
-				/>
+				{fixed ? (
+					<output
+						className={classes.fixedValue}
+						aria-label={`${label}: ${formatValue(value)}`}
+					>
+						{formatValue(value)}
+					</output>
+				) : (
+					<NumberInput
+						id={`${id}-value`}
+						className={classes.numberControl}
+						classNames={{
+							description: classes.inputDescription,
+							input: classes.numberInput,
+						}}
+						description={description}
+						descriptionProps={{ id: descriptionId }}
+						value={value}
+						min={min}
+						max={max}
+						step={step}
+						decimalScale={decimalScale}
+						suffix={unit ? ` ${unit}` : undefined}
+						hideControls
+						clampBehavior="strict"
+						aria-valuemax={max}
+						aria-valuemin={min}
+						aria-valuenow={value}
+						aria-valuetext={formatValue(value)}
+						role="spinbutton"
+						onChange={(nextValue) => {
+							if (typeof nextValue === 'number') setValue(nextValue);
+						}}
+					/>
+				)}
 			</div>
-			<div className={classes.sliderGroup}>
-				<Slider
-					classNames={{ root: classes.slider, bar: classes.sliderBar }}
-					color="purple.0"
-					size="sm"
-					thumbSize={20}
-					thumbLabel={description ? `${label}. ${description}` : label}
-					thumbValueText={(currentValue) => formatValue(currentValue)}
-					label={formatValue}
-					min={min}
-					max={max}
-					step={step}
-					marks={marks}
-					restrictToMarks={restrictToMarks}
-					value={value}
-					disabled={disabled}
-					onChange={setValue}
-				/>
-				<div className={classes.rangeBounds} aria-hidden="true">
-					<span>{formatValue(min)}</span>
-					<span>{formatValue(max)}</span>
+			{!fixed && (
+				<div className={classes.sliderGroup}>
+					<Slider
+						classNames={{ root: classes.slider, bar: classes.sliderBar }}
+						color="purple.0"
+						size="sm"
+						thumbSize={20}
+						thumbLabel={description ? `${label}. ${description}` : label}
+						thumbValueText={(currentValue) => formatValue(currentValue)}
+						label={formatValue}
+						min={min}
+						max={max}
+						step={step}
+						marks={marks}
+						restrictToMarks={restrictToMarks}
+						value={value}
+						onChange={setValue}
+					/>
+					<div className={classes.rangeBounds} aria-hidden="true">
+						<span>{formatValue(min)}</span>
+						<span>{formatValue(max)}</span>
+					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 };
@@ -299,9 +308,11 @@ const PreviewTypographyControls = observer(
 					id={`${idPrefix}-weight`}
 					label="Weight"
 					description={
-						weightAxis
-							? 'Fine-tunes the strokes from light to bold.'
-							: 'Chooses an available weight from light to bold.'
+						weightMin === weightMax
+							? 'This family provides one fixed weight.'
+							: weightAxis
+								? 'Fine-tunes the strokes from light to bold.'
+								: 'Chooses an available weight from light to bold.'
 					}
 					value={typography.weight}
 					min={weightMin}
@@ -313,7 +324,7 @@ const PreviewTypographyControls = observer(
 							: availableWeights.map((value) => ({ value }))
 					}
 					restrictToMarks={!weightAxis && availableWeights.length > 1}
-					disabled={weightMin === weightMax}
+					fixed={weightMin === weightMax}
 					onChange={(weight) => updateCurrentTypography(model, { weight })}
 				/>
 				{model.metadata.styles.includes('italic') && (

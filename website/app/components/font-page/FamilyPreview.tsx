@@ -5,10 +5,7 @@ import {
 	FamilyIdentity,
 	FamilyTabs,
 } from '@/components/font-page/FamilyPageShell';
-import {
-	getRegistryFamilyKind,
-	type RegistryDataState,
-} from '@/utils/registry';
+import type { RegistryDataState } from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
 import {
@@ -40,11 +37,6 @@ export const FamilyPreview = ({
 	symbols,
 	variableUnavailable = false,
 }: FamilyPreviewProps) => {
-	const hasCatalog = Boolean(registry?.symbols);
-	const symbolPreviewUnavailable =
-		getRegistryFamilyKind(registry) === 'symbols' &&
-		!registry?.sampleText?.short.trim();
-
 	return (
 		<PreviewProvider
 			metadata={metadata}
@@ -90,18 +82,6 @@ export const FamilyPreview = ({
 						<p className={classes.handoffNotice} role="status">
 							Variable controls are temporarily unavailable. You can still
 							preview the available styles.
-						</p>
-					)}
-
-					{symbolPreviewUnavailable && (
-						<p className={classes.handoffNotice} role="status">
-							Enter or paste a supported symbol below, or{' '}
-							<Link to={`/fonts/${metadata.id}/glyphs`}>
-								{hasCatalog
-									? 'browse the symbol catalog'
-									: 'browse mapped glyphs'}
-							</Link>
-							.
 						</p>
 					)}
 

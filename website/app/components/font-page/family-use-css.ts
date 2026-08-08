@@ -4,7 +4,11 @@ import {
 	type UrlResolver,
 } from '@fontsource-utils/core';
 
-import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
+import type {
+	GetFontResponse,
+	GetRegistrySubsetResponse,
+	GetVariableFontResponse,
+} from '@/generated/api';
 import { jsDelivrResolver } from '../../utils/cdn';
 
 type FontDisplay = 'auto' | 'swap' | 'block' | 'fallback' | 'optional';
@@ -22,6 +26,7 @@ interface FamilyUseCSSOptions {
 	display: FontDisplay;
 	version: string;
 	delivery: 'package' | 'cdn';
+	subsetDefinitions?: GetRegistrySubsetResponse[];
 }
 
 const fontDisplays: FontDisplay[] = [
@@ -51,6 +56,7 @@ const buildFamilyUseCSS = ({
 	display,
 	version,
 	delivery,
+	subsetDefinitions = [],
 }: FamilyUseCSSOptions) => {
 	const packageName = isVariable
 		? `@fontsource-variable/${metadata.id}`
@@ -59,6 +65,24 @@ const buildFamilyUseCSS = ({
 		delivery === 'package'
 			? packageResolver(packageName)
 			: jsDelivrResolver(metadata.id, isVariable, version);
+	const subsetSlices = Object.fromEntries(
+		subsetDefinitions.flatMap((definition) => {
+			if (!definition.slices?.length) return [];
+			return [
+				[
+					definition.id,
+					definition.slices.map((slice) => ({
+						id: Number(slice.id),
+						unicodeRange: slice.ranges
+							.map(([start, end]) =>
+								start === end ? `U+${start}` : `U+${start}-${end}`,
+							)
+							.join(', '),
+					})),
+				],
+			];
+		}),
+	);
 
 	return generateCSS(
 		{
@@ -68,6 +92,7 @@ const buildFamilyUseCSS = ({
 			weights,
 			styles,
 			unicodeRange: metadata.unicodeRange,
+			subsetSlices,
 			formats: isVariable ? ['woff2'] : formats,
 			...(isVariable && variable ? { variable: variable.axes } : {}),
 		},

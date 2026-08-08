@@ -76,7 +76,6 @@ const initialGlyphRowCount = 8;
 const maxSearchLength = 256;
 
 const registryCharacterGroupLabels = [
-	{ label: 'Sample', value: 'sample' },
 	{ label: 'All', value: 'all' },
 	{ label: 'Letters', value: 'letters' },
 	{ label: 'Marks', value: 'marks' },
@@ -122,7 +121,6 @@ const characterGroupNouns: Record<string, [singular: string, plural: string]> =
 		marks: ['mark', 'marks'],
 		numbers: ['number', 'numbers'],
 		punctuation: ['punctuation mark', 'punctuation marks'],
-		sample: ['sample character', 'sample characters'],
 		symbols: ['symbol', 'symbols'],
 	};
 
@@ -207,13 +205,13 @@ const getSymbolDisplayValue = (value: string, useNameLigature: boolean) => {
 		: (getUnicodeCharacter(codepoint) ?? getSymbolName(value));
 };
 
-const getSampleCharacters = (value: string) =>
+const getFallbackCharacters = (value: string) =>
 	Array.from(
 		new Set(Array.from(value).filter((character) => !/\s/u.test(character))),
 	);
 
-const getSampleCharacterGroups = (value: string) => {
-	const all = getSampleCharacters(value);
+const getFallbackCharacterGroups = (value: string) => {
+	const all = getFallbackCharacters(value);
 	return {
 		all,
 		letters: all.filter((character) => /^\p{L}$/u.test(character)),
@@ -253,17 +251,13 @@ export const CharacterExplorer = ({
 		registry?.sampleText || isScriptFamily
 			? getRegistryPreviewText(registry, languages, 'long')
 			: undefined;
-	const fallbackSample = useMemo(
+	const fallbackText = useMemo(
 		() => registryPreviewText ?? getLanguagePreviewText(previewSubset),
 		[previewSubset, registryPreviewText],
 	);
 	const fallbackGroups = useMemo(
-		() => getSampleCharacterGroups(fallbackSample),
-		[fallbackSample],
-	);
-	const representativeCharacters = useMemo(
-		() => getSampleCharacters(fallbackSample),
-		[fallbackSample],
+		() => getFallbackCharacterGroups(fallbackText),
+		[fallbackText],
 	);
 	const [resolvedCharacterGroups, setResolvedCharacterGroups] =
 		useState<ReturnType<typeof getRegistryCharacterGroups>>();
@@ -272,9 +266,9 @@ export const CharacterExplorer = ({
 		// and browsers with different Unicode versions cannot disagree during SSR.
 		setResolvedCharacterGroups(
 			getRegistryCharacterGroups(capabilities) ??
-				getSampleCharacterGroups(fallbackSample),
+				getFallbackCharacterGroups(fallbackText),
 		);
-	}, [capabilities, fallbackSample]);
+	}, [capabilities, fallbackText]);
 	const symbolEntries = useMemo(
 		() => symbols?.map(getSymbolSearchKey) ?? [],
 		[symbols],
@@ -313,15 +307,10 @@ export const CharacterExplorer = ({
 				]),
 			]);
 		}
-		const characterGroups = resolvedCharacterGroups ?? fallbackGroups;
-		return isScriptFamily
-			? { sample: representativeCharacters, ...characterGroups }
-			: characterGroups;
+		return resolvedCharacterGroups ?? fallbackGroups;
 	}, [
 		fallbackGroups,
 		hasCatalogEntries,
-		isScriptFamily,
-		representativeCharacters,
 		resolvedCharacterGroups,
 		symbolCategories,
 		symbolCategoriesByKey,
@@ -338,7 +327,7 @@ export const CharacterExplorer = ({
 		: registryCharacterGroupLabels.filter(
 				(item) => (explorerGroups[item.value]?.length ?? 0) > 0,
 			);
-	const defaultGroup = groupLabels[0]?.value ?? 'all';
+	const defaultGroup = 'all';
 	const [group, setGroup] = useState(defaultGroup);
 	const activeGroup = groupLabels.some((item) => item.value === group)
 		? group
@@ -450,7 +439,7 @@ export const CharacterExplorer = ({
 		? selected
 		: undefined;
 	const focusableCharacter = activeCharacter ?? matchingCharacters[0];
-	const showingSampleCharacters =
+	const showingFallbackCharacters =
 		!hasCatalogEntries && (!capabilities || !resolvedCharacterGroups);
 	const canRetryExplorer =
 		capabilitiesState === 'unavailable' ||
@@ -465,7 +454,7 @@ export const CharacterExplorer = ({
 		matchingCharacters.length === 0
 			? `No matching ${hasCatalogEntries ? 'symbols' : 'characters'}`
 			: `${matchingCharacters.length.toLocaleString('en')} ${resultNoun}${
-					showingSampleCharacters
+					showingFallbackCharacters
 						? capabilities
 							? ' · loading exact source coverage'
 							: capabilitiesState === 'unavailable'
