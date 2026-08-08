@@ -28,9 +28,4 @@ const packagerIconsVariable = async (id: string, opts: BuildOptions) => {
 	}
 };
 
-export {
-	generateIconStaticCSS,
-	generateIconVariableCSS,
-	packagerIconsStatic,
-	packagerIconsVariable,
-};
+export { packagerIconsStatic, packagerIconsVariable };

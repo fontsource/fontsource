@@ -1,4 +1,4 @@
-export interface AxisRegistryEntry {
+interface AxisRegistryEntry {
 	name: string;
 	description: string;
 	min: number;

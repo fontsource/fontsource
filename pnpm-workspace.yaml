@@ -15,6 +15,7 @@ catalog:
   '@cloudflare/vite-plugin': 1.50.0
   '@vitest/coverage-v8': 4.1.10
   esbuild: 0.28.1
+  knip: 6.32.0
   tsdown: 0.22.9
   tsx: 4.23.1
   typescript: 7.0.2

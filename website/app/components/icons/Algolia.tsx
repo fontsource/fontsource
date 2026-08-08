@@ -57,4 +57,4 @@ const SearchByAlgolia = (props: IconProps) => {
 	);
 };
 
-export { IconAlgolia, SearchByAlgolia };
+export { SearchByAlgolia };

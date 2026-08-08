@@ -115,7 +115,7 @@ export const resolveFontRequest = async (
  * option. Returns `undefined` when the object does not exist in R2, and a
  * `not_modified` state object when the conditional check short-circuits.
  */
-export const getStoredBinaryAsset = async (
+const getStoredBinaryAsset = async (
 	c: Context<AppEnv>,
 	tag: Pick<ParsedFontTag, 'id' | 'isVariable' | 'version'>,
 	file: string,

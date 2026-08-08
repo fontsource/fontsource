@@ -27,7 +27,7 @@ const client = new S3Client({
 	requestChecksumCalculation: 'WHEN_REQUIRED',
 });
 
-export const objectMatches = async (
+const objectMatches = async (
 	key: string,
 	size: number,
 	expectedSha256: string,

@@ -1,4 +1,4 @@
-export const packageManagers = [
+const packageManagers = [
 	{ value: 'npm', command: (cmd: string) => `npm install ${cmd}` },
 	{ value: 'yarn', command: (cmd: string) => `yarn add ${cmd}` },
 	{ value: 'pnpm', command: (cmd: string) => `pnpm add ${cmd}` },

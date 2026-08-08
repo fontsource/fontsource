@@ -212,7 +212,7 @@ export const testAxisRegistry: AxisRegistry = {
 	},
 };
 
-export const scheduledAxisRegistry = [
+const scheduledAxisRegistry = [
 	{
 		tag: 'MONO',
 		name: 'Monospace',
@@ -224,7 +224,7 @@ export const scheduledAxisRegistry = [
 	},
 ];
 
-export const testVersions: Record<string, VersionResponse> = {
+const testVersions: Record<string, VersionResponse> = {
 	abel: {
 		latest: '5.0.0',
 		static: ['5.0.0'],
@@ -368,7 +368,7 @@ export const seedStats = async (env: Env): Promise<void> => {
 	]);
 };
 
-export const clearFontBucket = async (env: Env): Promise<void> => {
+const clearFontBucket = async (env: Env): Promise<void> => {
 	const list = await env.FONTS.list();
 
 	await Promise.all(list.objects.map((object) => env.FONTS.delete(object.key)));

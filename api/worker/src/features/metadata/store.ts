@@ -105,7 +105,7 @@ const getDerivedView = async <T>(
  * Returns the normalized catalog, using KV before falling back to an upstream
  * refresh.
  */
-export const getCatalog = (c: Context<AppEnv>): Promise<FontCatalog> =>
+const getCatalog = (c: Context<AppEnv>): Promise<FontCatalog> =>
 	readKvJsonOrRefresh(c, KV_KEYS.catalog, refreshCatalog);
 
 /**

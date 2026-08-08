@@ -47,6 +47,9 @@ jobs:
       - name: Check formatting and lint rules
         run: pnpm check
 
+      - name: Check unused files, exports, and dependencies
+        run: pnpm knip
+
   packages:
     runs-on: ubuntu-latest
     timeout-minutes: 20

@@ -29,7 +29,7 @@ const cssUnicodeRangeSchema = z
 	.regex(
 		/^U\+[0-9A-F]{4,6}(?:-[0-9A-F]{4,6})?(?:, U\+[0-9A-F]{4,6}(?:-[0-9A-F]{4,6})?)*$/,
 	);
-export const fontClassificationSchema = z.enum([
+const fontClassificationSchema = z.enum([
 	'serif',
 	'sans-serif',
 	'slab-serif',
