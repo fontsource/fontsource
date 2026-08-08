@@ -1,5 +1,11 @@
 import { useValue } from '@legendapp/state/react';
-import { ActionIcon, Menu, ScrollArea, VisuallyHidden } from '@mantine/core';
+import {
+	ActionIcon,
+	Button,
+	Menu,
+	ScrollArea,
+	VisuallyHidden,
+} from '@mantine/core';
 import { IconFolderPlus, IconPlus, IconSettings } from '@tabler/icons-react';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -13,11 +19,12 @@ import menuClasses from './CollectionMenu.module.css';
 import { useCollectionsStore } from './CollectionsProvider';
 import { normalizeCollectionName } from './model';
 
-interface AddToCollectionMenuProps {
-	font: FontSummary;
+interface CollectionPickerProps {
+	fonts: readonly FontSummary[];
+	variant: 'font' | 'font-set';
 }
 
-const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
+const CollectionPicker = ({ fonts, variant }: CollectionPickerProps) => {
 	const store = useCollectionsStore();
 	const navigate = useNavigate();
 	const ready = useValue(store.ready$);
@@ -25,23 +32,32 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 	const customCollections = collections.filter(
 		(collection) => collection.kind === 'custom',
 	);
+	const selectableCollections =
+		variant === 'font-set' ? collections : customCollections;
 	const [query, setQuery] = useState('');
 	const normalizedQuery = normalizeCollectionName(query);
 	const visibleCollections = normalizedQuery
-		? customCollections.filter((collection) =>
+		? selectableCollections.filter((collection) =>
 				normalizeCollectionName(collection.name).includes(normalizedQuery),
 			)
-		: customCollections;
+		: selectableCollections;
 	const [createOpened, setCreateOpened] = useState(false);
 	const [manageOpened, setManageOpened] = useState(false);
+	const [announcement, setAnnouncement] = useState('');
 	const targetRef = useRef<HTMLButtonElement>(null);
-	const label = `Manage collections for ${font.family}`;
+	const fontLabel =
+		fonts.length === 1 ? fonts[0].family : `${fonts.length} fonts`;
+	const label =
+		variant === 'font'
+			? `Manage collections for ${fontLabel}`
+			: `Add all ${fonts.length} fonts to a collection`;
 	const restoreFocus = () => {
 		if (!createOpened && !manageOpened) targetRef.current?.focus();
 	};
 
 	return (
 		<>
+			<VisuallyHidden role="status">{announcement}</VisuallyHidden>
 			<Menu
 				classNames={{ dropdown: menuClasses.dropdown }}
 				closeOnItemClick={false}
@@ -50,22 +66,36 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 				shadow="md"
 			>
 				<Menu.Target>
-					<ActionIcon
-						aria-label={label}
-						color="purple.0"
-						disabled={!ready}
-						ref={targetRef}
-						size="lg"
-						title={label}
-						type="button"
-						variant="transparent"
-					>
-						<IconFolderPlus size={20} />
-					</ActionIcon>
+					{variant === 'font' ? (
+						<ActionIcon
+							aria-label={label}
+							color="purple.0"
+							disabled={!ready}
+							ref={targetRef}
+							size="lg"
+							title={label}
+							type="button"
+							variant="transparent"
+						>
+							<IconFolderPlus size={20} />
+						</ActionIcon>
+					) : (
+						<Button
+							disabled={!ready || fonts.length === 0}
+							leftSection={<IconFolderPlus size={17} />}
+							ref={targetRef}
+							type="button"
+							variant="subtle"
+						>
+							{fonts.length === 1
+								? 'Add to collection'
+								: 'Add all to collection'}
+						</Button>
+					)}
 				</Menu.Target>
 				<Menu.Dropdown>
 					<Menu.Label>Collections</Menu.Label>
-					{customCollections.length >= 9 && (
+					{selectableCollections.length >= 9 && (
 						<Menu.Search
 							aria-label="Search collections"
 							dir="auto"
@@ -82,20 +112,38 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 					<ScrollArea.Autosize mah={240} type="scroll">
 						{visibleCollections.length > 0 ? (
 							visibleCollections.map((collection) => {
-								const included = collection.fontIds.includes(font.id);
+								const includedCount = fonts.filter((font) =>
+									collection.fontIds.includes(font.id),
+								).length;
+								const allIncluded = includedCount === fonts.length;
 								return (
 									<Menu.CheckboxItem
-										checked={included}
+										checked={allIncluded}
 										key={collection.id}
 										onChange={(checked) => {
 											if (checked) {
-												store.addFontToCollection(collection.id, font);
+												const added =
+													store.addFontsToCollection(collection.id, fonts) ?? 0;
+												setAnnouncement(
+													`Added ${added} ${added === 1 ? 'font' : 'fonts'} to ${collection.name}.`,
+												);
 											} else {
-												store.removeFontFromCollection(collection.id, font.id);
+												const removed =
+													store.removeFontsFromCollection(
+														collection.id,
+														fonts.map((font) => font.id),
+													) ?? 0;
+												setAnnouncement(
+													`Removed ${removed} ${removed === 1 ? 'font' : 'fonts'} from ${collection.name}.`,
+												);
 											}
 										}}
 									>
 										<span dir="auto">{collection.name}</span>
+										{variant === 'font-set' &&
+											includedCount > 0 &&
+											!allIncluded &&
+											` · ${includedCount} already added`}
 									</Menu.CheckboxItem>
 								);
 							})
@@ -103,7 +151,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 							<Menu.Label>
 								{normalizedQuery
 									? 'No matching collections'
-									: 'No custom collections yet'}
+									: 'No collections yet'}
 							</Menu.Label>
 						)}
 					</ScrollArea.Autosize>
@@ -125,10 +173,10 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 				</Menu.Dropdown>
 			</Menu>
 			<CreateCollectionModal
-				font={font}
+				fonts={fonts}
 				onClose={() => setCreateOpened(false)}
 				onCreated={(collectionId) =>
-					store.addFontToCollection(collectionId, font)
+					store.addFontsToCollection(collectionId, fonts)
 				}
 				onExitTransitionEnd={restoreFocus}
 				opened={createOpened}
@@ -151,4 +199,14 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 	);
 };
 
-export { AddToCollectionMenu };
+const AddToCollectionMenu = ({ font }: { font: FontSummary }) => (
+	<CollectionPicker fonts={[font]} variant="font" />
+);
+
+const AddFontSetToCollectionMenu = ({
+	fonts,
+}: {
+	fonts: readonly FontSummary[];
+}) => <CollectionPicker fonts={fonts} variant="font-set" />;
+
+export { AddFontSetToCollectionMenu, AddToCollectionMenu };

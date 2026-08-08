@@ -10,8 +10,6 @@ const createCurrentProjectStore = (
 
 	const isReady = () => ready$.peek();
 	const getItems = () => state$.items.map((item$) => item$.get());
-	const hasItem = (familyId: string) =>
-		state$.items.some((item$) => item$.familyId.peek() === familyId);
 
 	const upsertItem = (item: ProjectItem) => {
 		if (!isReady()) return;
@@ -27,6 +25,23 @@ const createCurrentProjectStore = (
 		const previous = state$.items[index].peek();
 		state$.items[index].set(item);
 		return previous;
+	};
+
+	const addItems = (items: readonly ProjectItem[]) => {
+		if (!isReady()) return 0;
+
+		const existingIds = new Set(
+			state$.items.peek().map((item) => item.familyId),
+		);
+		const additions = items.filter((item) => {
+			if (existingIds.has(item.familyId)) return false;
+			existingIds.add(item.familyId);
+			return true;
+		});
+		if (additions.length > 0) {
+			state$.items.set([...additions, ...state$.items.peek()]);
+		}
+		return additions.length;
 	};
 
 	const removeItem = (familyId: string) => {
@@ -46,8 +61,8 @@ const createCurrentProjectStore = (
 		state$,
 		ready$,
 		getItems,
-		hasItem,
 		upsertItem,
+		addItems,
 		removeItem,
 		clear,
 	};

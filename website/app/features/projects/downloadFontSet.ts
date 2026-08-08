@@ -121,7 +121,7 @@ const createFontSetArchive = async (
 	}
 
 	if (signal?.aborted) throw abortError();
-	files['fontsource-font-set.css'] = strToU8(getProjectCss(items));
+	files['fontsource-font-set-cdn.css'] = strToU8(getProjectCss(items));
 	const data = await new Promise<Uint8Array>((resolve, reject) => {
 		zip(files, { consume: true, level: 6 }, (error, result) => {
 			if (error) reject(error);

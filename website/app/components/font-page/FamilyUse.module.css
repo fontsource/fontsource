@@ -190,8 +190,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 18px;
-	padding: 15px 0 0;
+	gap: 24px;
+	padding: 18px 0 0;
 }
 
 .downloadAction .fontSetPrompt {
@@ -209,13 +209,13 @@
 }
 
 .fontSetPrompt strong {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 650;
 }
 
 .fontSetPrompt span {
 	color: light-dark(#52617a, #9ca8bd);
-	font-size: 13px;
+	font-size: 12px;
 	line-height: 1.45;
 }
 
@@ -547,6 +547,10 @@
 	display: grid;
 	gap: 12px;
 	margin-top: 14px;
+}
+
+.exampleControl {
+	padding: 8px 0 2px;
 }
 
 .usageHelp {

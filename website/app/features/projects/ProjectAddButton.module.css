@@ -13,11 +13,10 @@
 	font: inherit;
 	font-size: 14px;
 	font-weight: 600;
+	text-decoration: none;
 	white-space: nowrap;
 	cursor: pointer;
-	transition:
-		background-color 120ms ease,
-		transform 120ms ease;
+	transition: background-color 120ms ease;
 
 	&:hover:not(:disabled) {
 		border-color: var(--mantine-color-purple-0);
@@ -49,7 +48,6 @@
 	border-radius: 6px;
 	background: light-dark(#fff, #121b31);
 	color: light-dark(#01112c, #f5f7f9);
-	box-shadow: 0 12px 34px rgb(1 17 44 / 16%);
 	font-size: 14px;
 
 	&[data-open],

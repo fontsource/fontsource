@@ -18,6 +18,8 @@ const projectItemSchema = z.object({
 	designer: z.string().min(1).optional(),
 	status: z.enum(['active', 'deprecated']),
 	registryFactsCurrent: z.boolean().default(false),
+	variableAvailable: z.boolean().optional(),
+	defaultSubset: z.string().min(1).optional(),
 	format: z.enum(['variable', 'static']),
 	subset: z.string().min(1),
 	style: z.enum(['normal', 'italic']),

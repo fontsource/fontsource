@@ -124,22 +124,39 @@ const createCollectionsStore = (
 		});
 	};
 
-	const addFontToCollection = (collectionId: string, font: FontSummary) => {
+	const addFontsToCollection = (
+		collectionId: string,
+		fonts: readonly FontSummary[],
+	) => {
 		if (!isReady()) return;
 
 		const collectionIndex = getCollectionIndex(collectionId);
 		if (collectionIndex === -1) return;
 
 		const fontIds$ = state$.collections[collectionIndex].fontIds;
-		if (fontIds$.peek().includes(font.id)) return;
+		const existingIds = new Set(fontIds$.peek());
+		const additions = fonts.filter((font) => {
+			if (existingIds.has(font.id)) return false;
+			existingIds.add(font.id);
+			return true;
+		});
+		if (additions.length === 0) return 0;
 
 		// Publish metadata and membership together so collection views never receive
 		// a font identifier before its preview data exists.
 		batch(() => {
-			state$.fontCache[font.id].set(font);
-			fontIds$.unshift(font.id);
+			for (const font of additions) {
+				if (!state$.fontCache[font.id].peek()) {
+					state$.fontCache[font.id].set(font);
+				}
+			}
+			fontIds$.set([...additions.map((font) => font.id), ...fontIds$.peek()]);
 		});
+		return additions.length;
 	};
+
+	const addFontToCollection = (collectionId: string, font: FontSummary) =>
+		addFontsToCollection(collectionId, [font]);
 
 	const removeFontFromCollection = (collectionId: string, fontId: string) => {
 		if (!isReady()) return;
@@ -158,6 +175,27 @@ const createCollectionsStore = (
 		});
 	};
 
+	const removeFontsFromCollection = (
+		collectionId: string,
+		fontIds: readonly string[],
+	) => {
+		if (!isReady()) return;
+
+		const collectionIndex = getCollectionIndex(collectionId);
+		if (collectionIndex === -1) return;
+
+		const removedIds = new Set(fontIds);
+		const currentIds = state$.collections[collectionIndex].fontIds.peek();
+		const remainingIds = currentIds.filter((fontId) => !removedIds.has(fontId));
+		if (remainingIds.length === currentIds.length) return 0;
+
+		batch(() => {
+			state$.collections[collectionIndex].fontIds.set(remainingIds);
+			fontIds.forEach(pruneFont);
+		});
+		return currentIds.length - remainingIds.length;
+	};
+
 	return {
 		state$,
 		collections$: state$.collections,
@@ -169,7 +207,9 @@ const createCollectionsStore = (
 		renameCollection,
 		deleteCollection,
 		addFontToCollection,
+		addFontsToCollection,
 		removeFontFromCollection,
+		removeFontsFromCollection,
 	};
 };
 

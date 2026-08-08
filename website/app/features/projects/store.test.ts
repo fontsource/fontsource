@@ -71,6 +71,16 @@ describe('current project store', () => {
 		expect(store.getItems()).toEqual([]);
 	});
 
+	it('adds missing collection families without replacing configured setups', () => {
+		const store = createReadyStore();
+		const configured = { ...fraunces, weight: 700, axes: { wght: 700 } };
+		const inter = { ...fraunces, familyId: 'inter', family: 'Inter' };
+		store.upsertItem(configured);
+
+		expect(store.addItems([fraunces, inter, inter])).toBe(1);
+		expect(store.getItems()).toEqual([inter, configured]);
+	});
+
 	it('rejects persisted duplicate family setups', () => {
 		const result = currentProjectSnapshotSchema.safeParse({
 			version: 1,
@@ -83,6 +93,8 @@ describe('current project store', () => {
 	it('preserves exact package and registry license metadata', () => {
 		const licensedItem = {
 			...fraunces,
+			variableAvailable: true,
+			defaultSubset: 'latin',
 			cssFiles: ['latin-wght-normal.css', 'latin-wght-italic.css'],
 			subsets: ['latin', 'cyrillic'],
 			activeAxes: ['wght', 'SOFT'],
@@ -107,6 +119,8 @@ describe('current project store', () => {
 		});
 
 		expect(snapshot.items[0]).toMatchObject({
+			variableAvailable: true,
+			defaultSubset: 'latin',
 			cssFiles: licensedItem.cssFiles,
 			subsets: licensedItem.subsets,
 			activeAxes: licensedItem.activeAxes,

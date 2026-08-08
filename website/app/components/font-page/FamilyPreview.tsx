@@ -5,6 +5,7 @@ import {
 	FamilyIdentity,
 	FamilyTabs,
 } from '@/components/font-page/FamilyPageShell';
+import { createDefaultProjectItem } from '@/features/projects/createProjectItem';
 import type { RegistryDataState } from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
@@ -37,6 +38,13 @@ export const FamilyPreview = ({
 	symbols,
 	variableUnavailable = false,
 }: FamilyPreviewProps) => {
+	const fontSetItem = createDefaultProjectItem({
+		metadata,
+		versions,
+		variable,
+		registry,
+	});
+
 	return (
 		<PreviewProvider
 			metadata={metadata}
@@ -73,7 +81,11 @@ export const FamilyPreview = ({
 										: 'License details unavailable'}
 							</Link>
 						</div>
-						<FamilyActions metadata={metadata} compact />
+						<FamilyActions
+							metadata={metadata}
+							fontSetItem={fontSetItem}
+							compact
+						/>
 					</div>
 
 					<FamilyTabs metadata={metadata} registry={registry} contained />

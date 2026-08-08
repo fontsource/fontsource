@@ -48,6 +48,7 @@ describe('current project output', () => {
 		expect(getUsageBlock(baseItem)).toContain(
 			"font-variation-settings: 'wght' 600, 'SOFT' 50;",
 		);
+		expect(getUsageBlock(baseItem, 'body')).toMatch(/^body \{/);
 		expect(getProjectCss([baseItem])).toContain(
 			"@import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/fraunces@5.3.0/latin-full.css');",
 		);

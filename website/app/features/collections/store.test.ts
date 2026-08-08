@@ -123,4 +123,42 @@ describe('collections store', () => {
 		expect(store.state$.collections.peek()).toHaveLength(1);
 		expect(store.state$.fontCache[inter.id].peek()).toBeUndefined();
 	});
+
+	it('adds and removes font sets without duplicating collection entries', () => {
+		const store = createReadyStore();
+		const collectionId = store.createCollection('Website set');
+		if (!collectionId) throw new Error('Expected a collection to be created.');
+		const roboto = { ...inter, id: 'roboto', family: 'Roboto' };
+
+		expect(
+			store.addFontsToCollection(collectionId, [inter, roboto, inter]),
+		).toBe(2);
+		expect(store.addFontsToCollection(collectionId, [inter])).toBe(0);
+		expect(store.state$.collections[1].fontIds.peek()).toEqual([
+			'inter',
+			'roboto',
+		]);
+
+		expect(
+			store.removeFontsFromCollection(collectionId, [inter.id, 'missing']),
+		).toBe(1);
+		expect(store.state$.fontCache[inter.id].peek()).toBeUndefined();
+		expect(store.state$.fontCache[roboto.id].peek()).toEqual(roboto);
+	});
+
+	it('preserves shared canonical metadata when adding a font to another collection', () => {
+		const store = createReadyStore();
+		const firstCollection = store.createCollection('First');
+		const secondCollection = store.createCollection('Second');
+		if (!firstCollection || !secondCollection) throw new Error('missing ids');
+
+		store.addFontToCollection(firstCollection, inter);
+		store.addFontToCollection(secondCollection, {
+			...inter,
+			defSubset: 'cyrillic',
+			variable: false,
+		});
+
+		expect(store.state$.fontCache.inter.peek()).toEqual(inter);
+	});
 });

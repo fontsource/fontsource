@@ -4,6 +4,8 @@ import { Link, NavLink, useLocation } from 'react-router';
 import { IconDownload } from '@/components/icons';
 import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
+import type { ProjectItem } from '@/features/projects/model';
+import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type { GetFontResponse } from '@/generated/api';
 import { formatFontLabel } from '@/utils/font-labels';
 import {
@@ -179,14 +181,17 @@ export const FamilyIdentity = ({
 
 export const FamilyActions = ({
 	metadata,
+	fontSetItem,
 	compact = false,
 	showGetFont = true,
 }: {
 	metadata: GetFontResponse;
+	fontSetItem?: ProjectItem;
 	compact?: boolean;
 	showGetFont?: boolean;
 }) => {
 	const location = useLocation();
+	const isGetFontPage = location.pathname.endsWith('/use');
 	const fontSummary = {
 		id: metadata.id,
 		family: metadata.family,
@@ -196,11 +201,19 @@ export const FamilyActions = ({
 	};
 
 	return (
-		<Group className={classes.actions} gap="sm" wrap="nowrap">
+		<Group className={classes.actions} gap="sm" wrap="wrap">
 			<div className={classes.utilityActions}>
 				<FavoriteButton font={fontSummary} withLabel={!compact} />
 				<AddToCollectionMenu font={fontSummary} />
 			</div>
+			{fontSetItem && !isGetFontPage && (
+				<ProjectAddButton
+					item={fontSetItem}
+					label="Add to font set"
+					includedLabel="In font set"
+					includedAction="view"
+				/>
+			)}
 			{showGetFont && (
 				<Link
 					className={classes.getFont}

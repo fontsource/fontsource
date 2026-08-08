@@ -5,10 +5,7 @@ import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyUse } from '@/components/font-page/FamilyUse';
 import { getFontVersions, getRegistrySubset } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
-import {
-	loadFontPageBase,
-	loadFontPageLanguages,
-} from '@/utils/font-page.server';
+import { loadFontPageBase } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -42,19 +39,16 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			return [];
 		}
 	});
-	const [base, versions, languagesResult, subsetDefinitions] =
-		await Promise.all([
-			basePromise,
-			getFontVersions({ id }, { signal: request.signal }),
-			loadFontPageLanguages(basePromise, request.signal),
-			subsetDefinitionsPromise,
-		]);
+	const [base, versions, subsetDefinitions] = await Promise.all([
+		basePromise,
+		getFontVersions({ id }, { signal: request.signal }),
+		subsetDefinitionsPromise,
+	]);
 
 	return data(
 		{
 			...base,
 			versions,
-			languages: languagesResult.languages,
 			subsetDefinitions,
 		},
 		{ headers: cacheHeaders.short },
@@ -83,7 +77,6 @@ export default function UsePage() {
 		versions,
 		registry,
 		registryState,
-		languages,
 		subsetDefinitions,
 	} = useLoaderData<typeof loader>();
 
@@ -103,7 +96,6 @@ export default function UsePage() {
 				versions={versions}
 				registry={registry}
 				registryState={registryState}
-				languages={languages}
 				subsetDefinitions={subsetDefinitions}
 			/>
 		</FamilyPageShell>

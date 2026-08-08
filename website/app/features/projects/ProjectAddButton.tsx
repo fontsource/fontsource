@@ -7,9 +7,11 @@ import type { ProjectItem } from './model';
 import classes from './ProjectAddButton.module.css';
 
 interface ProjectAddButtonProps {
+	includedAction?: 'update' | 'view';
 	includedLabel?: string;
 	item: ProjectItem;
 	label?: string;
+	savedLabel?: string;
 }
 
 interface Feedback {
@@ -17,18 +19,26 @@ interface Feedback {
 }
 
 const ProjectAddButton = ({
+	includedAction = 'update',
 	includedLabel = 'Update this setup',
 	item,
 	label = 'Add this setup',
+	savedLabel = 'Saved in font set',
 }: ProjectAddButtonProps) => {
 	const store = useCurrentProjectStore();
 	const ready = useValue(store.ready$);
-	const included = useValue(() => store.hasItem(item.familyId));
+	const savedItem = useValue(() =>
+		store.getItems().find((saved) => saved.familyId === item.familyId),
+	);
 	const [hydrated, setHydrated] = useState(false);
 	const [feedback, setFeedback] = useState<Feedback>();
 	const toastRef = useRef<HTMLDivElement>(null);
 	const interactive = hydrated && ready;
-	const displayIncluded = interactive && included;
+	const displayIncluded = interactive && savedItem !== undefined;
+	const saved =
+		displayIncluded && JSON.stringify(savedItem) === JSON.stringify(item);
+	const viewIncluded =
+		displayIncluded && (includedAction === 'view' || saved === true);
 
 	useEffect(() => setHydrated(true), []);
 
@@ -65,24 +75,31 @@ const ProjectAddButton = ({
 
 	return (
 		<>
-			<button
-				type="button"
-				className={classes.button}
-				disabled={!interactive}
-				title={!interactive ? 'Your font set is loading' : undefined}
-				onClick={addItem}
-			>
-				{displayIncluded ? (
+			{viewIncluded ? (
+				<Link className={classes.button} to="/selected-fonts">
 					<IconCheck aria-hidden size={18} />
-				) : (
-					<IconStack2 aria-hidden size={18} />
-				)}
-				{!interactive
-					? 'Font set loading…'
-					: displayIncluded
-						? includedLabel
-						: label}
-			</button>
+					{saved ? savedLabel : includedLabel}
+				</Link>
+			) : (
+				<button
+					type="button"
+					className={classes.button}
+					disabled={!interactive}
+					title={!interactive ? 'Your font set is loading' : undefined}
+					onClick={addItem}
+				>
+					{displayIncluded ? (
+						<IconCheck aria-hidden size={18} />
+					) : (
+						<IconStack2 aria-hidden size={18} />
+					)}
+					{!interactive
+						? 'Font set loading…'
+						: displayIncluded
+							? includedLabel
+							: label}
+				</button>
+			)}
 			<div
 				ref={toastRef}
 				className={classes.toast}

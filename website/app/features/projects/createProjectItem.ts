@@ -5,6 +5,7 @@ import type {
 	GetFontVersionsResponse,
 	GetVariableFontResponse,
 } from '@/generated/api';
+import { getPreferredPreviewSubset } from '@/utils/font-preview';
 import type { RegistryFamily } from '@/utils/registry';
 
 import type { ProjectItem } from './model';
@@ -21,6 +22,11 @@ interface CreateProjectItemOptions {
 	axes?: Record<string, number>;
 	sampleText?: string;
 }
+
+type CreateDefaultProjectItemOptions = Pick<
+	CreateProjectItemOptions,
+	'metadata' | 'registry' | 'variable' | 'versions'
+>;
 
 const categoryClassifications: Record<
 	GetFontResponse['category'],
@@ -81,6 +87,8 @@ const createProjectItem = ({
 		designer: registry?.designer,
 		status: registry?.status ?? 'active',
 		registryFactsCurrent: Boolean(registry),
+		variableAvailable: metadata.variable,
+		defaultSubset: metadata.defSubset,
 		format: isVariable ? 'variable' : 'static',
 		subset,
 		style,
@@ -109,4 +117,38 @@ const createProjectItem = ({
 	};
 };
 
-export { createProjectItem };
+const createDefaultProjectItem = ({
+	metadata,
+	versions,
+	variable,
+	registry,
+}: CreateDefaultProjectItemOptions) => {
+	const style = metadata.styles.includes('normal')
+		? 'normal'
+		: (metadata.styles[0] ?? 'normal');
+	const weight = metadata.weights.includes(400)
+		? 400
+		: (metadata.weights[0] ?? 400);
+	const useVariable = Boolean(variable && versions.latestVariable);
+	const axes = useVariable
+		? Object.fromEntries(
+				Object.entries(variable?.axes ?? {})
+					.filter(([axis]) => axis.toLowerCase() !== 'ital')
+					.map(([axis, range]) => [axis, Number(range.default)]),
+			)
+		: {};
+
+	return createProjectItem({
+		metadata,
+		versions,
+		variable,
+		registry,
+		format: useVariable ? 'variable' : 'static',
+		subset: getPreferredPreviewSubset(metadata, registry),
+		style,
+		weight,
+		axes,
+	});
+};
+
+export { createDefaultProjectItem, createProjectItem };

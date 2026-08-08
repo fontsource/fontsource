@@ -1,15 +1,12 @@
 import { useValue } from '@legendapp/state/react';
+import { Button, Group, Modal, Text } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
-import {
-	IconDownload,
-	IconExternalLink,
-	IconStack2,
-	IconTrash,
-} from '@tabler/icons-react';
+import { IconDownload, IconExternalLink, IconTrash } from '@tabler/icons-react';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
+import { AddFontSetToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
 import { deserializeStoredChoice } from '@/utils/browser-storage';
 import {
 	getPackageManagerCommand,
@@ -18,6 +15,7 @@ import {
 } from '@/utils/docs/packageManagers';
 import { triggerBlobDownload } from '@/utils/download';
 import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
+import type { FontSummary } from '@/utils/font-summary';
 
 import classes from './CurrentProjectPage.module.css';
 import { useCurrentProjectStore } from './CurrentProjectProvider';
@@ -40,21 +38,28 @@ type DeliveryMethod = 'package' | 'cdn';
 type CssDownloadState = 'idle' | 'success' | 'error';
 type ZipDownloadState = 'idle' | 'preparing' | 'success' | 'error';
 
+interface FontSetImportLocationState {
+	fontSetImport?: {
+		collectionName: string;
+		addedCount: number;
+		existingCount: number;
+		failedCount: number;
+	};
+}
+
 const ProjectFont = ({
+	busy,
 	item,
 	onRemove,
 }: {
+	busy: boolean;
 	item: ProjectItem;
 	onRemove: () => void;
 }) => {
-	const [expanded, setExpanded] = useState(false);
 	const variationSettings = Object.entries(item.axes)
 		.map(([axis, value]) => `"${axis}" ${value}`)
 		.join(', ');
 	const tags = item.tags.slice(0, 2);
-	const stylesheetCount = item.cdnFontFaceCSS
-		? (item.cdnFontFaceCSS.match(/@font-face/g) ?? []).length
-		: getProjectCssFiles(item).length;
 	const selectedStyles = item.styles ?? [item.style];
 	const selectedWeights = item.weights ?? [item.weight];
 	const selectedSubsets = item.subsets ?? [item.subset];
@@ -62,16 +67,26 @@ const ProjectFont = ({
 		item.format === 'variable'
 			? `${selectedStyles.map(formatFontLabel).join(' + ')} · ${item.activeAxes?.map(getAxisLabel).join(' + ') ?? 'Variable axes'}`
 			: `${selectedStyles.map(formatFontLabel).join(' + ')} · weights ${selectedWeights.join(' + ')}`;
-	const subsetSelection =
-		selectedSubsets.length === 1
-			? formatFontLabel(selectedSubsets[0])
-			: `${selectedSubsets.length} character sets`;
-	const usageNote = item.registryFactsCurrent
-		? getUsageNote(item)
-		: 'Registry behavior facts are missing from this saved setup. Open the family and update it before using generated code.';
+	const usesSpecializedSpecimen =
+		hasSymbolCatalog(item) ||
+		isDigitalFamily(item) ||
+		item.tags.includes('special-use/punctuation');
+	const supportsLatin = selectedSubsets.some(
+		(subset) => subset === 'latin' || subset.startsWith('latin-'),
+	);
+	const specimenText = hasSymbolCatalog(item)
+		? usesNameLigatures(item)
+			? 'home settings favorite'
+			: item.sampleText
+		: isDigitalFamily(item)
+			? '0123456789'
+			: usesSpecializedSpecimen || !supportsLatin
+				? item.sampleText
+				: item.displayName;
+	const usageNote = item.registryFactsCurrent ? getUsageNote(item) : undefined;
 
 	return (
-		<article className={classes.fontRow} data-expanded={expanded || undefined}>
+		<article className={classes.fontRow}>
 			<link rel="stylesheet" href={getCdnUrl(item)} />
 			<div
 				className={classes.specimen}
@@ -86,7 +101,7 @@ const ProjectFont = ({
 					fontStyle: item.style,
 				}}
 			>
-				{item.sampleText}
+				{specimenText}
 			</div>
 			<div className={classes.fontDetails}>
 				<div className={classes.fontTitle}>
@@ -98,32 +113,11 @@ const ProjectFont = ({
 							{item.packageVersion}
 						</p>
 					</div>
-					{(item.status === 'deprecated' || !item.registryFactsCurrent) && (
-						<span className={classes.status}>
-							{[
-								item.status === 'deprecated' ? 'Deprecated' : undefined,
-								!item.registryFactsCurrent ? 'Refresh needed' : undefined,
-							]
-								.filter(Boolean)
-								.join(' · ')}
-						</span>
+					{item.status === 'deprecated' && (
+						<span className={classes.status}>Deprecated</span>
 					)}
 				</div>
-				<p className={classes.setupSummary}>
-					{formatFontLabel(item.format)} ·{' '}
-					{hasSymbolCatalog(item)
-						? usesNameLigatures(item)
-							? 'Symbol ligatures'
-							: 'Symbol catalog'
-						: subsetSelection}{' '}
-					· {setupSelection}
-					{stylesheetCount > 1 ? ` · ${stylesheetCount} stylesheets` : ''}
-				</p>
-				<div
-					className={classes.expandedDetails}
-					id={`selected-font-details-${item.familyId}`}
-					hidden={!expanded}
-				>
+				<div className={classes.expandedDetails}>
 					{tags.length > 0 && (
 						<ul className={classes.tags}>
 							{tags.map((tag) => (
@@ -173,7 +167,7 @@ const ProjectFont = ({
 								item.license.url &&
 								item.license.id ? (
 									<a href={item.license.url} target="_blank" rel="noreferrer">
-										{item.license.id} · verified
+										{item.license.id}
 										<IconExternalLink aria-hidden size={13} />
 									</a>
 								) : (
@@ -187,16 +181,18 @@ const ProjectFont = ({
 					{usageNote && <p className={classes.usageNote}>{usageNote}</p>}
 				</div>
 				<div className={classes.rowActions}>
-					<Link to={getProjectEditUrl(item)}>Edit setup</Link>
+					<Link
+						to={getProjectEditUrl(item)}
+						aria-label={`Edit ${item.displayName} setup`}
+					>
+						Edit setup
+					</Link>
 					<button
 						type="button"
-						aria-expanded={expanded}
-						aria-controls={`selected-font-details-${item.familyId}`}
-						onClick={() => setExpanded((value) => !value)}
+						disabled={busy}
+						aria-label={`Remove ${item.displayName} from font set`}
+						onClick={onRemove}
 					>
-						{expanded ? 'Hide details' : 'Show details'}
-					</button>
-					<button type="button" onClick={onRemove}>
 						<IconTrash aria-hidden size={16} />
 						Remove
 					</button>
@@ -208,6 +204,12 @@ const ProjectFont = ({
 
 const CurrentProjectPage = () => {
 	const store = useCurrentProjectStore();
+	const location = useLocation();
+	const navigate = useNavigate();
+	const initialImportResult = (
+		location.state as FontSetImportLocationState | null
+	)?.fontSetImport;
+	const [importResult] = useState(initialImportResult);
 	const ready = useValue(store.ready$);
 	const items = useValue(store.getItems);
 	const [method, setMethod] = useLocalStorage<DeliveryMethod>({
@@ -222,7 +224,8 @@ const CurrentProjectPage = () => {
 		deserialize: (value) =>
 			deserializeStoredChoice(value, packageManagerValues, 'pnpm'),
 	});
-	const [singleSetupFamilyId, setSingleSetupFamilyId] = useState<string>();
+	const [removedItem, setRemovedItem] = useState<ProjectItem>();
+	const [clearConfirmationOpen, setClearConfirmationOpen] = useState(false);
 	const [cssDownloadState, setCssDownloadState] =
 		useState<CssDownloadState>('idle');
 	const [zipDownloadState, setZipDownloadState] =
@@ -231,12 +234,18 @@ const CurrentProjectPage = () => {
 	const [zipError, setZipError] = useState<string>();
 	const zipAbortController = useRef<AbortController | undefined>(undefined);
 	const singleItem = items.length === 1 ? items[0] : undefined;
-	const showSingleSetup =
-		singleItem !== undefined && singleSetupFamilyId === singleItem.familyId;
-	const showDelivery = items.length > 1 || showSingleSetup;
+	const showDelivery = items.length > 0;
+	const zipBusy = zipDownloadState === 'preparing';
 	const packageNames = items
 		.map((item) => `${item.packageName}@${item.packageVersion}`)
 		.join(' ');
+	const collectionFonts: FontSummary[] = items.map((item) => ({
+		id: item.familyId,
+		family: item.family,
+		defSubset: item.defaultSubset ?? item.subset,
+		category: item.category,
+		variable: item.variableAvailable ?? item.format === 'variable',
+	}));
 	const installCommand = getPackageManagerCommand(packageManager, packageNames);
 	const imports = items
 		.flatMap((item) =>
@@ -254,7 +263,7 @@ const CurrentProjectPage = () => {
 				: getProjectCdnUrls(item).map((url) => `@import url('${url}');`),
 		)
 		.join('\n');
-	const usageCss = items.map(getUsageBlock).join('\n\n');
+	const usageCss = items.map((item) => getUsageBlock(item)).join('\n\n');
 	const verifiedItems = items.filter((item) => item.license.verified);
 	const unverifiedItems = items.filter((item) => !item.license.verified);
 	const staleRegistryItems = items.filter((item) => !item.registryFactsCurrent);
@@ -314,25 +323,28 @@ const CurrentProjectPage = () => {
 
 	useEffect(() => () => zipAbortController.current?.abort(), []);
 
+	useEffect(() => {
+		if (!initialImportResult) return;
+		navigate(location.pathname, { replace: true, state: null });
+	}, [initialImportResult, location.pathname, navigate]);
+
 	const clearProject = () => {
-		if (
-			window.confirm(
-				`Remove all ${items.length} ${items.length === 1 ? 'font' : 'fonts'} from this set?\n\nTheir saved settings will be deleted from this browser.`,
-			)
-		) {
-			store.clear();
-		}
+		if (zipBusy) return;
+		store.clear();
+		setRemovedItem(undefined);
+		setClearConfirmationOpen(false);
 	};
 
-	const revealSingleSetup = () => {
-		if (!singleItem) return;
+	const removeItem = (item: ProjectItem) => {
+		if (zipBusy) return;
+		store.removeItem(item.familyId);
+		setRemovedItem(item);
+	};
 
-		setSingleSetupFamilyId(singleItem.familyId);
-		window.setTimeout(() => {
-			document
-				.getElementById('selected-fonts-code')
-				?.scrollIntoView({ block: 'start' });
-		});
+	const undoRemove = () => {
+		if (!removedItem) return;
+		store.upsertItem(removedItem);
+		setRemovedItem(undefined);
 	};
 
 	return (
@@ -347,29 +359,54 @@ const CurrentProjectPage = () => {
 				</div>
 				{items.length > 0 && (
 					<div className={classes.introActions}>
-						{singleItem ? (
-							<>
-								<Link className={classes.generateLink} to="/">
-									Add another font
-								</Link>
-								<button type="button" onClick={revealSingleSetup}>
-									Generate this setup
-								</button>
-							</>
-						) : (
-							<>
-								<a className={classes.generateLink} href="#selected-fonts-code">
-									Generate combined code
-								</a>
-								<Link to="/">Browse more fonts</Link>
-							</>
-						)}
-						<button type="button" onClick={clearProject}>
+						<Link className={classes.generateLink} to="/">
+							Browse more fonts
+						</Link>
+						<a href="#selected-fonts-code">Website setup</a>
+						<AddFontSetToCollectionMenu fonts={collectionFonts} />
+						<button
+							type="button"
+							disabled={zipBusy}
+							onClick={() => setClearConfirmationOpen(true)}
+						>
 							Remove all fonts
 						</button>
 					</div>
 				)}
 			</header>
+
+			{importResult && (
+				<p className={classes.importNotice} role="status">
+					<strong>{importResult.collectionName}</strong>
+					{' · '}
+					{importResult.addedCount > 0
+						? `${importResult.addedCount} ${importResult.addedCount === 1 ? 'font' : 'fonts'} added`
+						: 'No new fonts added'}
+					{importResult.existingCount > 0 &&
+						` · ${importResult.existingCount} already in this font set`}
+					{importResult.failedCount > 0 &&
+						` · ${importResult.failedCount} unavailable`}
+				</p>
+			)}
+
+			{removedItem && (
+				<div className={classes.undoNotice} role="status">
+					<span>
+						<strong>{removedItem.displayName}</strong> removed from this font
+						set.
+					</span>
+					<button type="button" onClick={undoRemove}>
+						Undo
+					</button>
+					<button
+						type="button"
+						aria-label="Dismiss removal confirmation"
+						onClick={() => setRemovedItem(undefined)}
+					>
+						Dismiss
+					</button>
+				</div>
+			)}
 
 			{!ready ? (
 				<p className={classes.loading} role="status">
@@ -403,8 +440,9 @@ const CurrentProjectPage = () => {
 						{items.map((item) => (
 							<ProjectFont
 								key={item.familyId}
+								busy={zipBusy}
 								item={item}
-								onRemove={() => store.removeItem(item.familyId)}
+								onRemove={() => removeItem(item)}
 							/>
 						))}
 					</section>
@@ -417,7 +455,8 @@ const CurrentProjectPage = () => {
 							<h2 id="font-set-download-heading">Download font set</h2>
 							<p>
 								Get the latest complete desktop and web files for every family,
-								organized by font. Combined CSS keeps your saved website
+								organized by font. Each folder includes local CSS;
+								fontsource-font-set-cdn.css preserves your saved website
 								versions.
 							</p>
 							{zipDownloadState !== 'idle' && (
@@ -447,31 +486,6 @@ const CurrentProjectPage = () => {
 									: 'Download all families (.zip)'}
 						</button>
 					</section>
-
-					{singleItem && !showSingleSetup && (
-						<section
-							className={classes.singlePrompt}
-							aria-labelledby="single-prompt-heading"
-						>
-							<IconStack2 aria-hidden size={28} stroke={1.7} />
-							<div>
-								<h2 id="single-prompt-heading">
-									Add another font to build a combined setup
-								</h2>
-								<p>
-									{singleItem.displayName} is saved. Its individual package,
-									CDN, and download instructions remain available on the font
-									page.
-								</p>
-							</div>
-							<div>
-								<Link to="/">Browse fonts</Link>
-								<button type="button" onClick={revealSingleSetup}>
-									Generate only {singleItem.displayName}
-								</button>
-							</div>
-						</section>
-					)}
 
 					{showDelivery && (
 						<section
@@ -515,16 +529,25 @@ const CurrentProjectPage = () => {
 								</fieldset>
 							</div>
 							{staleRegistryItems.length > 0 && (
-								<p className={classes.licenseWarning} role="status">
-									{staleRegistryItems.length}{' '}
-									{staleRegistryItems.length === 1
-										? 'font needs'
-										: 'fonts need'}{' '}
-									a Registry refresh. Generated code preserves saved package
-									choices, but specialist behavior may be incomplete until you
-									update {staleRegistryItems.length === 1 ? 'it' : 'them'} from
-									the linked font page.
-								</p>
+								<div className={classes.reviewNotice} role="status">
+									<strong>Review saved setups</strong>
+									<p>
+										Your generated code still uses the saved package choices.
+										Open{' '}
+										{staleRegistryItems.map((item, index) => (
+											<Fragment key={item.familyId}>
+												{index > 0 &&
+													(index === staleRegistryItems.length - 1
+														? ' and '
+														: ', ')}
+												<Link to={getProjectEditUrl(item)}>
+													{item.displayName}
+												</Link>
+											</Fragment>
+										))}{' '}
+										to refresh specialist behavior and license details.
+									</p>
+								</div>
 							)}
 
 							<div className={classes.outputGrid}>
@@ -685,16 +708,33 @@ const CurrentProjectPage = () => {
 								</li>
 							)}
 						</ul>
-						{unverifiedItems.length > 0 && (
-							<p className={classes.licenseWarning}>
-								Open each family above, review its registry license, then save
-								the setup again to refresh this receipt before redistributing
-								the files.
-							</p>
-						)}
 					</section>
 				</>
 			)}
+
+			<Modal
+				centered
+				onClose={() => setClearConfirmationOpen(false)}
+				opened={clearConfirmationOpen}
+				size="sm"
+				title="Clear this font set?"
+			>
+				<Text c="dimmed" fz="sm">
+					This removes {items.length} {items.length === 1 ? 'font' : 'fonts'}
+					and their saved website settings from this browser.
+				</Text>
+				<Group justify="flex-end" mt="xl">
+					<Button
+						variant="subtle"
+						onClick={() => setClearConfirmationOpen(false)}
+					>
+						Keep fonts
+					</Button>
+					<Button color="red" onClick={clearProject}>
+						Remove all
+					</Button>
+				</Group>
+			</Modal>
 		</div>
 	);
 };
