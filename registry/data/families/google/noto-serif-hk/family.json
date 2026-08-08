@@ -22,6 +22,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "chinese-hongkong",
 	"primaryScript": "Hant",
 	"project": {
 		"repository": "https://www.github.com/notofonts/noto-cjk",

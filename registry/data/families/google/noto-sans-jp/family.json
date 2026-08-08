@@ -19,6 +19,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "japanese",
 	"primaryScript": "Jpan",
 	"project": {
 		"repository": "https://github.com/notofonts/noto-cjk",

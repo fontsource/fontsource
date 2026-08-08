@@ -1,3 +1,4 @@
+import { useValue } from '@legendapp/state/react';
 import type { ActionIconProps, ContainerProps } from '@mantine/core';
 import {
 	ActionIcon,
@@ -13,12 +14,14 @@ import {
 	UnstyledButton,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { IconStack2 } from '@tabler/icons-react';
 import cx from 'clsx';
-import { Link, NavLink, useLocation } from 'react-router';
+import { Form, Link, NavLink, useLocation } from 'react-router';
 
 import { LeftSidebar } from '@/components/docs/LeftSidebar';
-import { IconDiscord, IconGithub } from '@/components/icons';
+import { IconDiscord, IconGithub, IconSearch } from '@/components/icons';
 import { LogoText } from '@/components/logo/LogoText';
+import { useCurrentProjectStore } from '@/features/projects/CurrentProjectProvider';
 
 import classes from './Header.module.css';
 import { ThemeButton, ThemeButtonMobile } from './ThemeButton';
@@ -38,6 +41,7 @@ const Icon = ({ label, icon, href, ...others }: IconProps) => {
 				target="_blank"
 				rel="noreferrer"
 				variant="transparent"
+				size={40}
 				aria-label={label}
 				{...others}
 			>
@@ -70,6 +74,36 @@ const HeaderNavLink = ({ label, to, toggle }: HeaderNavLinkProps) => {
 	);
 };
 
+const SelectedFontsLink = ({
+	count,
+	ready,
+}: {
+	count: number;
+	ready: boolean;
+}) => {
+	const label =
+		ready && count > 0
+			? `Font set, ${count} ${count === 1 ? 'font' : 'fonts'}`
+			: 'Font set';
+
+	return (
+		<Tooltip label="Font set">
+			<NavLink
+				to="/selected-fonts"
+				aria-label={label}
+				className={classes.selectedFonts}
+			>
+				<IconStack2 aria-hidden size={20} stroke={1.8} />
+				{ready && count > 0 && (
+					<span className={classes.selectedCount} aria-hidden>
+						{count > 99 ? '99+' : count}
+					</span>
+				)}
+			</NavLink>
+		</Tooltip>
+	);
+};
+
 const MobileExternalIcon = ({ icon, label, href }: IconProps) => {
 	return (
 		<UnstyledButton
@@ -89,9 +123,10 @@ const MobileExternalIcon = ({ icon, label, href }: IconProps) => {
 
 interface MobileHeaderProps {
 	toggle: () => void;
+	selectedLabel: string;
 }
 
-const MobileHeader = ({ toggle }: MobileHeaderProps) => {
+const MobileHeader = ({ toggle, selectedLabel }: MobileHeaderProps) => {
 	const isDocs = useLocation().pathname.startsWith('/docs');
 
 	return (
@@ -101,6 +136,11 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 					<HeaderNavLink label="Fonts" to="/" toggle={toggle} />
 					<HeaderNavLink label="Documentation" to="/docs" toggle={toggle} />
 					<HeaderNavLink label="Tools" to="/tools" toggle={toggle} />
+					<HeaderNavLink
+						label={selectedLabel}
+						to="/selected-fonts"
+						toggle={toggle}
+					/>
 					<HeaderNavLink label="Privacy Policy" to="/privacy" toggle={toggle} />
 					<Divider />
 					<ThemeButtonMobile />
@@ -128,6 +168,14 @@ const MobileHeader = ({ toggle }: MobileHeaderProps) => {
 
 export const Header = ({ ...other }: ContainerProps) => {
 	const [opened, { toggle }] = useDisclosure(false);
+	const projectStore = useCurrentProjectStore();
+	const projectReady = useValue(projectStore.ready$);
+	const projectCount = useValue(() => projectStore.getItems().length);
+	const selectedLabel =
+		projectReady && projectCount > 0
+			? `Font set (${projectCount})`
+			: 'Font set';
+	const isFontPage = useLocation().pathname.startsWith('/fonts/');
 
 	return (
 		<>
@@ -136,6 +184,36 @@ export const Header = ({ ...other }: ContainerProps) => {
 					<Link to="/" prefetch="intent" aria-label="Fontsource home">
 						<LogoText height={31} isHeader />
 					</Link>
+					{isFontPage && (
+						<>
+							<search className={classes.fontSearch}>
+								<Form action="/">
+									<button
+										type="submit"
+										className={classes.searchSubmit}
+										aria-label="Search fonts"
+									>
+										<IconSearch aria-hidden height={17} />
+									</button>
+									<input
+										type="search"
+										name="query"
+										aria-label="Search fonts"
+										placeholder="Search fonts"
+									/>
+								</Form>
+							</search>
+							<Tooltip label="Search fonts">
+								<Link
+									to="/"
+									className={classes.fontSearchShortcut}
+									aria-label="Search fonts"
+								>
+									<IconSearch aria-hidden height={18} />
+								</Link>
+							</Tooltip>
+						</>
+					)}
 					<Box className={classes.links} visibleFrom="sm">
 						<Tooltip.Group openDelay={600} closeDelay={100}>
 							<Group gap="md" justify="right">
@@ -143,6 +221,7 @@ export const Header = ({ ...other }: ContainerProps) => {
 								<HeaderNavLink label="Documentation" to="/docs" />
 
 								<HeaderNavLink label="Tools" to="/tools" />
+								<SelectedFontsLink count={projectCount} ready={projectReady} />
 
 								<ThemeButton />
 								<Icon
@@ -154,17 +233,19 @@ export const Header = ({ ...other }: ContainerProps) => {
 							</Group>
 						</Tooltip.Group>
 					</Box>
-					<Burger
-						className={classes.burger}
-						opened={opened}
-						onClick={toggle}
-						hiddenFrom="sm"
-						size="sm"
-						aria-label={opened ? 'Close navigation' : 'Open navigation'}
-					/>
+					<Group gap="sm" hiddenFrom="sm">
+						<SelectedFontsLink count={projectCount} ready={projectReady} />
+						<Burger
+							className={classes.burger}
+							opened={opened}
+							onClick={toggle}
+							size="sm"
+							aria-label={opened ? 'Close navigation' : 'Open navigation'}
+						/>
+					</Group>
 				</Container>
 			</Box>
-			{opened && <MobileHeader toggle={toggle} />}
+			{opened && <MobileHeader toggle={toggle} selectedLabel={selectedLabel} />}
 		</>
 	);
 };

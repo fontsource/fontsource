@@ -8,6 +8,7 @@ import {
 	staticWoff2Bytes,
 	testCatalog,
 	testEnv,
+	toResponse,
 	variableWoff2Bytes,
 } from './helpers';
 
@@ -89,7 +90,7 @@ describe('font Open Graph route', () => {
 		);
 		const fontUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${id}@latest/files/${id}-latin-400-normal.woff2`;
 		installUpstreamFetchMock({
-			[fontUrl]: new Response(staticWoff2Bytes),
+			[fontUrl]: toResponse(staticWoff2Bytes),
 		});
 		const errorSpy = vi
 			.spyOn(console, 'error')
@@ -123,8 +124,8 @@ describe('font Open Graph route', () => {
 		const firstUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${firstId}@latest/files/${firstId}-latin-400-normal.woff2`;
 		const secondUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${secondId}@latest/files/${secondId}-latin-400-normal.woff2`;
 		installUpstreamFetchMock({
-			[firstUrl]: new Response(staticWoff2Bytes),
-			[secondUrl]: new Response(variableWoff2Bytes),
+			[firstUrl]: toResponse(staticWoff2Bytes),
+			[secondUrl]: toResponse(variableWoff2Bytes),
 		});
 
 		const [first, second] = await Promise.all([

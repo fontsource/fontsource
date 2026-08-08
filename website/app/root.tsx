@@ -40,6 +40,7 @@ import '@mantine/core/styles/ColorInput.css';
 import '@mantine/core/styles/Combobox.css';
 import '@mantine/core/styles/SegmentedControl.css';
 import '@mantine/core/styles/Slider.css';
+import '@mantine/core/styles/Switch.css';
 
 // Buttons
 import '@mantine/core/styles/Button.css';
@@ -56,6 +57,7 @@ import '@mantine/core/styles/Progress.css';
 // Overlays
 import '@mantine/core/styles/Menu.css';
 import '@mantine/core/styles/Modal.css';
+import '@mantine/core/styles/Drawer.css';
 import '@mantine/core/styles/Tooltip.css';
 
 // Typography
@@ -99,6 +101,7 @@ import {
 import { ErrorBoundary as ErrorBoundaryComponent } from '@/components/ErrorBoundary';
 import { AppShell } from '@/components/layout/AppShell';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
+import { CurrentProjectProvider } from '@/features/projects/CurrentProjectProvider';
 import { theme } from '@/styles/theme';
 import { cacheHeaders } from '@/utils/cache';
 import { getCanonicalUrl, ogMeta } from '@/utils/meta';
@@ -181,7 +184,9 @@ export const Document = ({ children }: DocumentProps) => {
 				<MantineProvider theme={theme}>
 					<ReactRouterProvider>
 						<CollectionsProvider>
-							<AppShell>{children}</AppShell>
+							<CurrentProjectProvider>
+								<AppShell>{children}</AppShell>
+							</CurrentProjectProvider>
 						</CollectionsProvider>
 					</ReactRouterProvider>
 					<ScrollRestoration />

@@ -9,6 +9,12 @@
 			"short": "♩♪♫♬♭♮♯"
 		}
 	},
+	"chiron-goround-tc": {
+		"previewSubset": "chinese-traditional"
+	},
+	"chiron-sung-hk": {
+		"previewSubset": "chinese-hongkong"
+	},
 	"dejavu-math": {
 		"sampleText": {
 			"short": "∑ ∫ √ π ≈ ∞"
@@ -87,6 +93,12 @@
 			"short": "Wireframe content"
 		}
 	},
+	"ibm-plex-sans-jp": {
+		"previewSubset": "japanese"
+	},
+	"ibm-plex-sans-kr": {
+		"previewSubset": "korean"
+	},
 	"jsmath-cmbx10": {
 		"languages": [],
 		"sampleText": {
@@ -164,6 +176,12 @@
 			"short": "001234567890?"
 		}
 	},
+	"lxgw-wenkai-mono-tc": {
+		"previewSubset": "chinese-traditional"
+	},
+	"lxgw-wenkai-tc": {
+		"previewSubset": "chinese-traditional"
+	},
 	"material-icons": {
 		"sampleText": {
 			"short": "home"
@@ -212,8 +230,45 @@
 	"noto-music": {
 		"languages": []
 	},
+	"noto-sans-hk": {
+		"previewSubset": "chinese-hongkong"
+	},
+	"noto-sans-jp": {
+		"previewSubset": "japanese"
+	},
+	"noto-sans-kr": {
+		"previewSubset": "korean"
+	},
 	"noto-sans-math": {
-		"languages": []
+		"languages": [],
+		"previewSubset": "math"
+	},
+	"noto-sans-sc": {
+		"previewSubset": "chinese-simplified"
+	},
+	"noto-sans-symbols": {
+		"previewSubset": "symbols"
+	},
+	"noto-sans-symbols-2": {
+		"previewSubset": "symbols"
+	},
+	"noto-sans-tc": {
+		"previewSubset": "chinese-traditional"
+	},
+	"noto-serif-hk": {
+		"previewSubset": "chinese-hongkong"
+	},
+	"noto-serif-jp": {
+		"previewSubset": "japanese"
+	},
+	"noto-serif-kr": {
+		"previewSubset": "korean"
+	},
+	"noto-serif-sc": {
+		"previewSubset": "chinese-simplified"
+	},
+	"noto-serif-tc": {
+		"previewSubset": "chinese-traditional"
 	},
 	"noto-znamenny-musical-notation": {
 		"languages": []
@@ -235,6 +290,12 @@
 		"sampleText": {
 			"short": "∑ ∫ √ π ≈ ∞"
 		}
+	},
+	"wdxl-lubrifont-sc": {
+		"previewSubset": "chinese-simplified"
+	},
+	"wdxl-lubrifont-tc": {
+		"previewSubset": "chinese-traditional"
 	},
 	"yakuhanjp": {
 		"sampleText": {

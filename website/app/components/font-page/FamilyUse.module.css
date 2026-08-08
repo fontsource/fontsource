@@ -1,0 +1,623 @@
+.page {
+	box-sizing: border-box;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 44px 64px 96px;
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+}
+
+.heading {
+	max-width: 760px;
+	margin-bottom: 30px;
+}
+
+.returnLink {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	margin-bottom: 8px;
+	color: var(--mantine-color-purple-0);
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.heading h2 {
+	margin: 0;
+	font-size: clamp(32px, 4vw, 42px);
+	font-weight: 700;
+	letter-spacing: -0.035em;
+	line-height: 1;
+	text-wrap: balance;
+}
+
+.heading p,
+.downloadDetails p {
+	color: light-dark(#52617a, #9ca8bd);
+}
+
+.heading p {
+	max-width: 620px;
+	margin: 12px 0 0;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.acquisition {
+	max-width: 1120px;
+}
+
+.taskTabs {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 6px;
+	overflow: hidden;
+	background: light-dark(
+		var(--mantine-color-background-0),
+		var(--mantine-color-background-4)
+	);
+}
+
+.taskTabs::before {
+	display: none;
+}
+
+.taskTabs button {
+	justify-content: flex-start;
+	min-height: 76px;
+	padding: 12px 20px;
+	border: 0;
+	border-radius: 0;
+	color: light-dark(#52617a, #9ca8bd);
+	text-align: left;
+	transition:
+		background-color 120ms ease,
+		color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+.taskTabs button + button {
+	border-left: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+}
+
+.taskTabs button:hover {
+	background: light-dark(#f5f7f9, #121b31);
+	color: light-dark(#4338ca, #c2bfff);
+}
+
+.taskTabs button[data-active] {
+	background: light-dark(#f5f7f9, #0f1626);
+	color: light-dark(#4338ca, #c2bfff);
+	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
+}
+
+.taskTabs button > span {
+	width: 100%;
+	min-width: 0;
+}
+
+.taskTabLabel {
+	display: grid;
+	gap: 3px;
+	width: 100%;
+	min-width: 0;
+	line-height: 1.3;
+	white-space: normal;
+}
+
+.taskTabLabel strong {
+	font-size: 0.9375rem;
+	font-weight: 650;
+}
+
+.taskTabLabel small {
+	font-size: 0.8125rem;
+	font-weight: 500;
+	opacity: 0.82;
+}
+
+.taskPanel {
+	min-width: 0;
+	margin-top: 16px;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 6px;
+	background: light-dark(
+		var(--mantine-color-background-0),
+		var(--mantine-color-background-4)
+	);
+}
+
+.downloadPanel {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+	align-items: start;
+	gap: 48px;
+	padding: 42px 40px;
+}
+
+.webPanel {
+	max-width: 880px;
+	margin: 0 auto;
+	padding: 42px 40px 48px;
+}
+
+.downloadDetails h3 {
+	margin: 0;
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.25;
+}
+
+.downloadDetails p {
+	max-width: 52ch;
+	margin: 9px 0 0;
+	font-size: 0.875rem;
+	line-height: 1.55;
+}
+
+.downloadAction {
+	display: grid;
+	gap: 12px;
+}
+
+.primaryButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	min-height: 52px;
+	padding: 0 20px;
+	border-radius: 4px;
+	background: light-dark(#01112c, #f5f7f9);
+	color: light-dark(#fff, #01112c);
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: none;
+	transition:
+		background-color 120ms ease,
+		color 120ms ease;
+}
+
+.primaryButton:hover {
+	background: light-dark(#121b31, #e6ebf0);
+}
+
+.methodSwitch,
+.formatSwitch,
+.manager,
+.optionGroup,
+.presetGroup {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.methodSwitch {
+	display: inline-grid;
+	grid-template-columns: repeat(2, minmax(126px, 1fr));
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.methodSwitch button,
+.formatSwitch button,
+.manager button,
+.customizeButton {
+	border: 0;
+	background: transparent;
+	color: light-dark(#52617a, #9ca8bd);
+	font: inherit;
+	cursor: pointer;
+	transition:
+		background-color 120ms ease,
+		color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+.methodSwitch button {
+	min-height: 48px;
+	padding: 0 18px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.methodSwitch button + button,
+.formatSwitch button + button {
+	border-left: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+}
+
+.methodSwitch button:hover,
+.formatSwitch button:hover,
+.manager button:hover {
+	background: light-dark(#f5f7f9, #121b31);
+	color: var(--mantine-color-purple-0);
+}
+
+.methodSwitch button[data-active],
+.formatSwitch button[data-active],
+.manager button[data-active] {
+	background: light-dark(#f5f7f9, #0f1626);
+	color: light-dark(#4338ca, #c2bfff);
+	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
+}
+
+.deliveryNote {
+	max-width: 62ch;
+	margin: 14px 0 0;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	line-height: 1.55;
+}
+
+.setupSummary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	margin-top: 22px;
+	padding: 16px 0;
+	border-top: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-bottom: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+}
+
+.setupSummary > div {
+	display: grid;
+	gap: 4px;
+}
+
+.setupSummary strong {
+	font-size: 14px;
+	font-weight: 650;
+	line-height: 1.4;
+}
+
+.formatSwitch {
+	display: grid;
+	gap: 10px;
+}
+
+.formatSwitch > div {
+	display: inline-grid;
+	grid-template-columns: repeat(2, minmax(112px, 1fr));
+	justify-self: start;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.formatSwitch button {
+	min-height: 44px;
+	padding: 0 12px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.setupSummary span {
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	line-height: 1.45;
+}
+
+.customizeButton {
+	flex: 0 0 auto;
+	min-height: 44px;
+	padding: 0 2px;
+	color: var(--mantine-color-purple-0);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.customizeButton:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.previewHandoff {
+	margin: 10px 0 0;
+	color: var(--mantine-color-purple-0);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.customization {
+	display: grid;
+	gap: 22px;
+	margin-top: 14px;
+	padding: 22px 0;
+	border-top: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-bottom: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+}
+
+.customizationHeading {
+	display: grid;
+	gap: 4px;
+}
+
+.customizationHeading strong {
+	font-size: 15px;
+	font-weight: 650;
+}
+
+.customizationHeading span {
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.optionGroup legend,
+.manager legend,
+.formatSwitch legend,
+.presetGroup legend {
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 650;
+}
+
+.optionGroup > div,
+.manager > div,
+.presetGroup > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+}
+
+.presetGroup button {
+	min-height: 40px;
+	padding: 0 12px;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 4px;
+	background: transparent;
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	font: inherit;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.presetGroup button:hover,
+.presetGroup button[aria-pressed="true"] {
+	border-color: var(--mantine-color-purple-0);
+	background: light-dark(#f5f7f9, #121b31);
+	color: light-dark(#4338ca, #c2bfff);
+}
+
+.optionGroup label {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	min-height: 40px;
+	padding: 0 11px;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.optionGroup label:has(input:checked) {
+	border-color: var(--mantine-color-purple-0);
+	background: light-dark(#f5f7f9, #121b31);
+}
+
+.optionGroup input {
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	accent-color: var(--mantine-color-purple-0);
+}
+
+.optionGroup input:disabled {
+	cursor: not-allowed;
+}
+
+.axisControl {
+	display: grid;
+	gap: 8px;
+}
+
+.axisControl > span {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.axisControl output {
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	font-variant-numeric: tabular-nums;
+}
+
+.axisControl input {
+	width: 100%;
+	min-height: 36px;
+	margin: 0;
+	accent-color: var(--mantine-color-purple-0);
+}
+
+.manager {
+	margin-top: 20px;
+}
+
+.manager button {
+	min-width: 44px;
+	min-height: 40px;
+	padding: 0 10px;
+	border-radius: 4px;
+	font-family: var(--font-monospace);
+	font-size: 14px;
+}
+
+.instructions {
+	display: grid;
+	gap: 12px;
+	margin-top: 14px;
+}
+
+.usageHelp {
+	margin: 12px 0 0;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	line-height: 1.55;
+}
+
+.outputExplanation {
+	max-width: 64ch;
+	margin: 12px 0 0;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	line-height: 1.55;
+}
+
+.guideLink {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 44px;
+	margin-top: 8px;
+	color: var(--mantine-color-purple-0);
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.guideLink:hover,
+.returnLink:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.primaryButton:focus-visible,
+.returnLink:focus-visible,
+.taskTabs button:focus-visible,
+.methodSwitch button:focus-visible,
+.formatSwitch button:focus-visible,
+.manager button:focus-visible,
+.customizeButton:focus-visible,
+.presetGroup button:focus-visible,
+.optionGroup input:focus-visible,
+.axisControl input:focus-visible,
+.guideLink:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}
+
+.taskTabs button:focus-visible,
+.methodSwitch button:focus-visible,
+.formatSwitch button:focus-visible {
+	outline-offset: -3px;
+}
+
+@media (max-width: 64em) {
+	.downloadPanel {
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+
+	.downloadAction {
+		max-width: 520px;
+	}
+}
+
+@media (max-width: 48em) {
+	.page {
+		padding: 32px 24px 72px;
+	}
+
+	.heading {
+		margin-bottom: 26px;
+	}
+
+	.downloadPanel,
+	.webPanel {
+		padding: 30px 24px;
+	}
+
+	.methodSwitch {
+		display: grid;
+		width: 100%;
+	}
+
+	.setupSummary {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.formatSwitch > div {
+		grid-template-columns: repeat(2, 1fr);
+		width: 100%;
+	}
+
+	.customizeButton {
+		align-self: flex-start;
+	}
+}
+
+@media (max-width: 30em) {
+	.taskTabs button {
+		min-height: 88px;
+		padding-inline: 14px;
+	}
+
+	.downloadPanel,
+	.webPanel {
+		padding: 26px 20px;
+	}
+
+	.primaryButton {
+		width: 100%;
+		white-space: normal;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.primaryButton,
+	.taskTabs button,
+	.methodSwitch button,
+	.formatSwitch button,
+	.manager button,
+	.customizeButton,
+	.presetGroup button {
+		transition: none;
+	}
+}

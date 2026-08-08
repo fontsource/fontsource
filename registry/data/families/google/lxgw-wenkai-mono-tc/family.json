@@ -994,6 +994,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "chinese-traditional",
 	"primaryLanguage": "zh_Hant",
 	"primaryScript": "Hant",
 	"project": {

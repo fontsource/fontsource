@@ -1,0 +1,15 @@
+.root {
+	min-width: 0;
+}
+
+.label {
+	display: block;
+	margin-bottom: 8px;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.root > figure {
+	margin: 0;
+}

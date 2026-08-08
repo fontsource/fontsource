@@ -27,6 +27,7 @@ import {
 	BINARY_CONTENT_TYPES,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../shared/http-metadata';
+import { toResponseBody } from '../shared/response';
 import {
 	getDownloadKey,
 	getStaticAssetKey,
@@ -258,8 +259,11 @@ export const staticWoffBytes = decodeInlineAsset(staticWoffUrl);
 export const variableWoff2Bytes = decodeInlineAsset(variableWoff2Url);
 export const staticTtfBytes = new Uint8Array([0, 1, 2, 3]);
 
-const toResponse = (body: BodyInit, init?: ResponseInit): Response =>
-	new Response(body, {
+export const toResponse = (
+	body: BodyInit | Uint8Array<ArrayBufferLike>,
+	init?: ResponseInit,
+): Response =>
+	new Response(toResponseBody(body), {
 		status: 200,
 		headers: {
 			...(body instanceof Uint8Array

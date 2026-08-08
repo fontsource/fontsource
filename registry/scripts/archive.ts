@@ -250,6 +250,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 					languages: family.languages,
 					primaryLanguage: family.primaryLanguage,
 					primaryScript: family.primaryScript,
+					previewSubset: family.previewSubset,
 					sampleText: family.sampleText,
 					designer: family.designer,
 					dateAdded: family.dateAdded,

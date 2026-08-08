@@ -776,6 +776,10 @@ export type GetRegistryFamilyResponses = {
         languages: Array<string>;
         primaryLanguage?: string;
         primaryScript?: string;
+        /**
+         * Reviewed package subset for previews and default acquisition
+         */
+        previewSubset?: string;
         sampleText?: {
             /**
              * Compact preview text

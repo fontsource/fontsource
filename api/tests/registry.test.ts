@@ -39,6 +39,7 @@ const VIEWS = [
 			languages: ['en_Latn'],
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
+			previewSubset: 'latin',
 			sampleText: {
 				short: 'All people are born free',
 				long: 'All people are born free and equal',

@@ -139,6 +139,9 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		.describe('Semantic language IDs, distinct from package subsets'),
 	primaryLanguage: LanguageIdSchema.optional(),
 	primaryScript: ScriptSchema.optional(),
+	previewSubset: IdSchema.optional().describe(
+		'Reviewed package subset for previews and default acquisition',
+	),
 	sampleText: SampleTextSchema.optional(),
 	designer: z.string().optional(),
 	dateAdded: z.iso.date().optional(),
@@ -180,6 +183,20 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 			message: 'previewSource must reference a distributed source',
 			path: ['previewSource'],
 		});
+	}
+	if (family.previewSubset) {
+		if (
+			family.distribution.characters.type !== 'subsets' ||
+			!family.distribution.characters.subsets.some(
+				(subset) => subset.id === family.previewSubset,
+			)
+		) {
+			context.addIssue({
+				code: 'custom',
+				message: 'previewSubset must reference a distributed subset',
+				path: ['previewSubset'],
+			});
+		}
 	}
 });
 

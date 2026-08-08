@@ -1,5 +1,7 @@
 import type { ObservableObject } from '@legendapp/state';
 
+import { previewText } from '../../utils/preview-text';
+
 interface SearchObject {
 	size: number;
 	collectionId: string | null;
@@ -18,8 +20,8 @@ const createSearchState = (): SearchObject => ({
 	size: 32,
 	collectionId: null,
 	preview: {
-		presetLabel: 'Sentence',
-		presetValue: 'Sphinx of black quartz, judge my vow.',
+		presetLabel: previewText.search.default.label,
+		presetValue: previewText.search.default.value,
 		customValue: '',
 	},
 	language: 'latin',

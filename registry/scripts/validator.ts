@@ -424,6 +424,12 @@ const validateFamily = async (
 			publicSubsets.some((subset) => subset.id === defaultSubset),
 			`${id} default subset is not mapped`,
 		);
+		if (family.previewSubset) {
+			assert(
+				publicSubsets.some((subset) => subset.id === family.previewSubset),
+				`${id} preview subset is not mapped`,
+			);
+		}
 		for (const subset of publicSubsets) {
 			const definition = subsets.get(subset.definition);
 			assert(
@@ -440,6 +446,8 @@ const validateFamily = async (
 			assert(definition, `${id} references missing slicing ${slicing}`);
 			assert(definition.slices, `${id} slicing ${slicing} must contain slices`);
 		}
+	} else {
+		assert(!family.previewSubset, `${id} cannot select a preview subset`);
 	}
 	validateDistributionResolution(distribution, family, id);
 	return { id, family };
@@ -607,6 +615,13 @@ export const validateRegistry = async (root: string): Promise<void> => {
 				family.family.sampleText,
 				override.sampleText,
 				`${id} sample text override is not applied`,
+			);
+		}
+		if (override.previewSubset !== undefined) {
+			strictEqual(
+				family.family.previewSubset,
+				override.previewSubset,
+				`${id} preview subset override is not applied`,
 			);
 		}
 	}

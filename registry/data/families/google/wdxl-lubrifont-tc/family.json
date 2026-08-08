@@ -409,6 +409,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "chinese-traditional",
 	"primaryScript": "Hant",
 	"project": {
 		"repository": "https://github.com/NightFurySL2001/WD-XL-font",

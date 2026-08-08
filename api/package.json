@@ -40,7 +40,7 @@
 		"@vitest/coverage-v8": "catalog:",
 		"esbuild": "catalog:",
 		"tsx": "catalog:",
-		"typescript": "catalog:",
+		"typescript": "6.0.3",
 		"vite": "catalog:",
 		"vitest": "catalog:",
 		"wrangler": "catalog:"

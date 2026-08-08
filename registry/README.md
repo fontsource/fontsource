@@ -53,6 +53,9 @@ Family detail views always include the complete license and reviewed
 distribution with an explicit `all` or `subsets` character mode. Icon families
 also declare their supported input modes and link to the lazy symbol catalog;
 every source links to its capability view.
+Each family detail also identifies the representative source used for capability
+inspection. Families whose best preview subset differs from their package
+default expose that reviewed subset explicitly.
 The committed registry format remains private and can change without changing
 those responses. The manifest maps every registry file, API view, and source to
 a SHA-256 object and is written before `current.json` selects the complete
@@ -97,8 +100,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - `data/replacements.json` records reviewed successor relationships between
   globally unique family IDs.
 - `data/family-tags.json` assigns reviewed cross-provider discovery tags.
-- `data/family-overrides.json` contains reviewed language and specimen
-  corrections that provider syncs must preserve.
+- `data/family-overrides.json` contains reviewed language, specimen, and preview
+  subset corrections that provider syncs must preserve.
 - `data/taxonomy.json` defines the reviewed classification and tag labels.
 - `data/subsets/` and `data/axes.json` contain shared Unicode and axis data.
 
