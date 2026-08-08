@@ -9,6 +9,7 @@ import {
 	Code as MantineCode,
 	Text,
 	Tooltip,
+	VisuallyHidden,
 } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
 import cx from 'clsx';
@@ -65,10 +66,20 @@ interface CodeWrapperProps {
 
 export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 	const clipboard = useClipboard({ timeout: 1500 });
-	const copyLabel = clipboard.copied ? 'Copied' : 'Copy code';
+	const copyLabel = clipboard.copied
+		? 'Copied'
+		: clipboard.error
+			? 'Copy failed. Try again.'
+			: 'Copy code';
+	const copyStatus = clipboard.copied
+		? 'Code copied to clipboard.'
+		: clipboard.error
+			? 'Could not copy code. Select and copy it manually.'
+			: '';
 
 	return (
 		<figure className={classes.root} translate="no">
+			<VisuallyHidden aria-live="polite">{copyStatus}</VisuallyHidden>
 			<Text component="span" className={classes.dots} aria-hidden="true">
 				&#11044;&#11044;
 			</Text>

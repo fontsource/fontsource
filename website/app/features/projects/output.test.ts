@@ -4,7 +4,9 @@ import type { ProjectItem } from './model';
 import {
 	getCdnUrl,
 	getFontStack,
+	getProjectCdnUrls,
 	getProjectCss,
+	getProjectEditUrl,
 	getSelectedCssFiles,
 	getUsageBlock,
 	getUsageNote,
@@ -90,6 +92,31 @@ describe('current project output', () => {
 			'latin-full.css',
 			'latin-full-italic.css',
 		]);
+	});
+
+	it('preserves every saved stylesheet in combined output', () => {
+		const configuredItem = {
+			...baseItem,
+			format: 'static' as const,
+			packageName: '@fontsource/fraunces',
+			cssFile: 'latin-400.css',
+			cssFiles: [
+				'latin-400.css',
+				'latin-700.css',
+				'latin-400-italic.css',
+				'latin-700-italic.css',
+			],
+			styles: ['normal', 'italic'] as ProjectItem['styles'],
+			weights: [400, 700],
+		};
+
+		expect(getProjectCdnUrls(configuredItem)).toHaveLength(4);
+		expect(getProjectEditUrl(configuredItem)).toContain(
+			'format=static&styles=normal%2Citalic&weights=400%2C700',
+		);
+		expect(getProjectCss([configuredItem])).toContain(
+			"@import url('https://cdn.jsdelivr.net/npm/@fontsource/fraunces@5.3.0/latin-700-italic.css');",
+		);
 	});
 
 	it('uses specialist fallback and readout declarations', () => {

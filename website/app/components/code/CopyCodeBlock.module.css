@@ -4,12 +4,20 @@
 
 .label {
 	display: block;
-	margin-bottom: 8px;
 	color: light-dark(#52617a, #9ca8bd);
 	font-size: 0.875rem;
 	font-weight: 600;
 }
 
+.description {
+	display: block;
+	max-width: 64ch;
+	margin-top: 3px;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 0.8125rem;
+	line-height: 1.5;
+}
+
 .root > figure {
-	margin: 0;
+	margin: 8px 0 0;
 }

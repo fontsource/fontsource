@@ -307,6 +307,65 @@
 	}
 }
 
+.archiveDownload {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 32px;
+	padding: 28px 0;
+	border-bottom: light-dark(1px solid #e1e3ec, 1px solid #2c3651);
+
+	h2 {
+		margin: 0;
+		font-size: 1.2rem;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+	}
+
+	p {
+		max-width: 68ch;
+		margin: 6px 0 0;
+		color: light-dark(#52617a, #aeb9cc);
+		font-size: 0.86rem;
+		line-height: 1.55;
+	}
+
+	button {
+		min-height: 46px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding: 0 18px;
+		border: 0;
+		border-radius: 4px;
+		background: light-dark(#01112c, #f5f7f9);
+		color: light-dark(#fff, #01112c);
+		font: inherit;
+		font-size: 0.84rem;
+		font-weight: 600;
+		white-space: nowrap;
+		cursor: pointer;
+	}
+
+	button:disabled {
+		cursor: wait;
+		opacity: 0.65;
+	}
+
+	.downloadFeedback {
+		display: block;
+		margin-top: 9px;
+		color: light-dark(#3f6b4f, #99d3aa);
+		font-size: 0.78rem;
+		font-weight: 600;
+	}
+
+	.downloadFeedback[data-error] {
+		color: light-dark(#8c6415, #e2bd69);
+	}
+}
+
 .singlePrompt {
 	display: grid;
 	grid-template-columns: auto minmax(0, 1fr) auto;
@@ -655,6 +714,7 @@
 		.singlePrompt button,
 		.methodSwitch button,
 		.packageManagers button,
+		.archiveDownload button,
 		.downloadBar button
 	):focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
@@ -691,6 +751,7 @@
 	}
 
 	.intro,
+	.archiveDownload,
 	.deliveryHeading,
 	.downloadBar {
 		align-items: flex-start;
@@ -760,6 +821,10 @@
 	.downloadBar button {
 		width: 100%;
 		justify-content: center;
+	}
+
+	.archiveDownload button {
+		width: 100%;
 	}
 
 	.licenseReceiptHeading {

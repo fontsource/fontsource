@@ -1,6 +1,6 @@
 import { Tabs, VisuallyHidden } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
@@ -12,6 +12,7 @@ import {
 	getUsageMarkup,
 	getUsageNote,
 } from '@/features/projects/output';
+import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
@@ -27,7 +28,6 @@ import {
 } from '@/utils/docs/packageManagers';
 import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
 import { getPreferredPreviewSubset } from '@/utils/font-preview';
-import { readFontPreviewSelection } from '@/utils/font-preview-selection';
 import {
 	getRegistryPreviewText,
 	type RegistryDataState,
@@ -91,6 +91,7 @@ export const FamilyUse = ({
 	languages,
 }: FamilyUseProps) => {
 	const [searchParams] = useSearchParams();
+	const fromSelectedFonts = searchParams.get('from') === 'selected-fonts';
 	const supportsVariable = Boolean(variable && versions.latestVariable);
 	const supportsStatic = Boolean(versions.latest);
 	const preferredSubset = getPreferredPreviewSubset(metadata, registry);
@@ -100,18 +101,6 @@ export const FamilyUse = ({
 	const recommendedWeight = metadata.weights.includes(400)
 		? 400
 		: (metadata.weights[0] ?? 400);
-	const [path, setPath] = useState<AcquisitionPath>('download');
-	const [method, setMethod] = useState<Method>('package');
-	const [format, setFormat] = useState<FamilyFormat>(
-		supportsVariable ? 'variable' : 'static',
-	);
-	const [selectedStyles, setSelectedStyles] = useState<FontStyle[]>([
-		recommendedStyle,
-	]);
-	const [selectedWeights, setSelectedWeights] = useState<number[]>([
-		recommendedWeight,
-	]);
-	const [customizationOpen, setCustomizationOpen] = useState(false);
 	const defaultAxisValues = useMemo(
 		() =>
 			Object.fromEntries(
@@ -121,10 +110,52 @@ export const FamilyUse = ({
 			),
 		[variable],
 	);
-	const [axisValues, setAxisValues] =
-		useState<Record<string, number>>(defaultAxisValues);
-	const [previewSettingsApplied, setPreviewSettingsApplied] = useState(false);
-	const previewSettingsFamily = useRef<string | null>(null);
+	const requestedStyles = searchParams
+		.get('styles')
+		?.split(',')
+		.filter((style): style is FontStyle =>
+			metadata.styles.includes(style as FontStyle),
+		);
+	const requestedWeights = searchParams
+		.get('weights')
+		?.split(',')
+		.map(Number)
+		.filter((weight) => metadata.weights.includes(weight));
+	const requestedAxes = Object.fromEntries(
+		(searchParams.get('axes')?.split(',') ?? []).flatMap((entry) => {
+			const [axis, rawValue] = entry.split(':');
+			const range = variable?.axes[axis];
+			const value = Number(rawValue);
+			if (!range || !Number.isFinite(value) || axis.toLowerCase() === 'ital') {
+				return [];
+			}
+			return [
+				[axis, Math.min(Number(range.max), Math.max(Number(range.min), value))],
+			];
+		}),
+	);
+	const [path, setPath] = useState<AcquisitionPath>(
+		fromSelectedFonts ? 'web' : 'download',
+	);
+	const [method, setMethod] = useState<Method>('package');
+	const [format, setFormat] = useState<FamilyFormat>(
+		searchParams.get('format') === 'static' && supportsStatic
+			? 'static'
+			: supportsVariable
+				? 'variable'
+				: 'static',
+	);
+	const [selectedStyles, setSelectedStyles] = useState<FontStyle[]>(
+		requestedStyles?.length ? requestedStyles : [recommendedStyle],
+	);
+	const [selectedWeights, setSelectedWeights] = useState<number[]>(
+		requestedWeights?.length ? requestedWeights : [recommendedWeight],
+	);
+	const [customizationOpen, setCustomizationOpen] = useState(false);
+	const [axisValues, setAxisValues] = useState<Record<string, number>>({
+		...defaultAxisValues,
+		...requestedAxes,
+	});
 	const [packageManager, setPackageManager] = useLocalStorage({
 		key: 'package-manager',
 		defaultValue: 'npm',
@@ -133,16 +164,16 @@ export const FamilyUse = ({
 	});
 
 	const isVariable = format === 'variable' && supportsVariable;
-	const styles = useMemo(
+	const availableStyles = useMemo(
 		() => [
-			...metadata.styles.filter(
-				(style) => style === 'normal' && selectedStyles.includes(style),
-			),
-			...metadata.styles.filter(
-				(style) => style !== 'normal' && selectedStyles.includes(style),
-			),
+			...metadata.styles.filter((style) => style === 'normal'),
+			...metadata.styles.filter((style) => style !== 'normal'),
 		],
-		[metadata.styles, selectedStyles],
+		[metadata.styles],
+	);
+	const styles = useMemo(
+		() => availableStyles.filter((style) => selectedStyles.includes(style)),
+		[availableStyles, selectedStyles],
 	);
 	const weights = useMemo(
 		() => metadata.weights.filter((weight) => selectedWeights.includes(weight)),
@@ -192,6 +223,11 @@ export const FamilyUse = ({
 		() => getSelectedCssFiles(projectItem, styles, weights),
 		[projectItem, styles, weights],
 	);
+	const fontSetItem = useMemo(
+		() => ({ ...projectItem, cssFiles, styles, weights }),
+		[cssFiles, projectItem, styles, weights],
+	);
+
 	const packageImports = isRecommendedSetup
 		? `import '${packageName}';`
 		: cssFiles.map((file) => `import '${packageName}/${file}';`).join('\n');
@@ -208,7 +244,6 @@ export const FamilyUse = ({
 	const cssCode = getUsageBlock(usageProjectItem);
 	const usageMarkup = getUsageMarkup(projectItem);
 	const usageNote = getUsageNote(projectItem);
-	const fromSelectedFonts = searchParams.get('from') === 'selected-fonts';
 	const canCustomize =
 		(supportsStatic && supportsVariable) ||
 		metadata.styles.length > 1 ||
@@ -218,87 +253,33 @@ export const FamilyUse = ({
 		? `${Number(variable.axes.wght.min)}–${Number(variable.axes.wght.max)}`
 		: `${Math.min(...metadata.weights)}–${Math.max(...metadata.weights)}`;
 	const selectionSummary = isVariable
-		? `Variable · ${variableWeightRange} weight · ${styles.map(formatFontLabel).join(' + ')}`
+		? `Variable · weights ${variableWeightRange} · ${styles.map(formatFontLabel).join(' + ')}`
 		: weights.length === 1 && styles.length === 1
-			? `${formatFontLabel(primaryStyle)} · ${getWeightLabel(primaryWeight)}`
-			: `${cssFiles.length} faces · ${styles.map(formatFontLabel).join(' + ')}`;
+			? `Static · ${formatFontLabel(primaryStyle)} · ${getWeightLabel(primaryWeight)}`
+			: `Static · ${styles.map(formatFontLabel).join(' + ')} · weights ${weights.join(' + ')}`;
 	const exampleFace = `${formatFontLabel(primaryStyle)} ${Math.round(primaryWeight)}`;
-	const outputExplanation = isRecommendedSetup
-		? isVariable
-			? `The default import loads the variable weight range. The CSS example starts at ${exampleFace}.`
-			: `The default import loads ${exampleFace}. Choose specific faces only when your project needs them.`
-		: isVariable
-			? `The import loads the selected variable file. The CSS example uses ${exampleFace} and your chosen axes.`
-			: `The imports load ${cssFiles.length} selected ${cssFiles.length === 1 ? 'face' : 'faces'}. The CSS example uses ${exampleFace}.`;
-	const hasRegularBoldPreset =
-		metadata.styles.includes('normal') &&
-		metadata.weights.includes(400) &&
-		metadata.weights.includes(700);
-	const setStaticPreset = (preset: 'default' | 'regular-bold' | 'all') => {
-		if (preset === 'all') {
-			setSelectedStyles(metadata.styles);
-			setSelectedWeights(metadata.weights);
-		} else if (preset === 'regular-bold') {
-			setSelectedStyles(['normal']);
-			setSelectedWeights([400, 700]);
-		} else {
-			setSelectedStyles([recommendedStyle]);
-			setSelectedWeights([recommendedWeight]);
-		}
-		setPreviewSettingsApplied(false);
-	};
-
-	useEffect(() => {
-		if (previewSettingsFamily.current === metadata.id) return;
-		previewSettingsFamily.current = metadata.id;
-		setFormat(supportsVariable ? 'variable' : 'static');
+	const useRecommendedSetup = () => {
+		setFormat(defaultFormat);
 		setSelectedStyles([recommendedStyle]);
 		setSelectedWeights([recommendedWeight]);
 		setAxisValues(defaultAxisValues);
-		setPreviewSettingsApplied(false);
-
-		const saved = readFontPreviewSelection(metadata.id);
-		if (!saved) return;
-
-		setFormat(
-			saved.format === 'variable' && supportsVariable
-				? 'variable'
-				: supportsStatic
-					? 'static'
-					: 'variable',
-		);
-		if (metadata.styles.includes(saved.style)) {
-			setSelectedStyles([saved.style]);
-		}
-		if (metadata.weights.includes(saved.weight)) {
-			setSelectedWeights([saved.weight]);
-		}
-		setAxisValues(
-			Object.fromEntries(
-				Object.entries(variable?.axes ?? {})
-					.filter(([axis]) => axis.toLowerCase() !== 'ital')
-					.map(([axis, range]) => {
-						const value =
-							axis === 'wght'
-								? saved.weight
-								: (saved.axes[axis] ?? Number(range.default));
-						return [
-							axis,
-							Math.min(Number(range.max), Math.max(Number(range.min), value)),
-						];
-					}),
-			),
-		);
-		setPreviewSettingsApplied(true);
-	}, [
-		defaultAxisValues,
-		metadata,
-		recommendedStyle,
-		recommendedWeight,
-		supportsStatic,
-		supportsVariable,
-		variable,
-	]);
+		setCustomizationOpen(false);
+	};
+	const formatDescription = isVariable
+		? `Each selected style uses one variable stylesheet covering weights ${variableWeightRange}. Choose only the styles and axes your project uses.`
+		: 'Choose any combination of weights and styles. Each combination adds one stylesheet import.';
+	const importExplanation = isRecommendedSetup
+		? isVariable
+			? 'Loads the complete variable weight range in the selected style.'
+			: `Loads ${exampleFace}. Customize only when your project needs other faces.`
+		: isVariable
+			? `Loads ${cssFiles.length} selected variable ${cssFiles.length === 1 ? 'stylesheet' : 'stylesheets'}.`
+			: `Loads ${cssFiles.length} selected ${cssFiles.length === 1 ? 'stylesheet' : 'stylesheets'}.`;
+	const cssExplanation = isVariable
+		? `Applies ${exampleFace}${isRecommendedSetup ? '' : ' and your selected axes'}.`
+		: cssFiles.length === 1
+			? `Applies ${exampleFace} from the loaded stylesheet.`
+			: `Uses ${exampleFace}; add matching CSS rules for the other selected stylesheets.`;
 
 	return (
 		<section className={classes.page} aria-labelledby="use-heading">
@@ -326,13 +307,21 @@ export const FamilyUse = ({
 					<Tabs.Tab value="download">
 						<span className={classes.taskTabLabel}>
 							<strong>Download files</strong>
-							<small>For design apps, desktop, and font managers</small>
+							<small className={classes.taskTabDesktop}>
+								For design apps, desktop, and font managers
+							</small>
+							<small className={classes.taskTabCompact}>
+								Design and desktop
+							</small>
 						</span>
 					</Tabs.Tab>
 					<Tabs.Tab value="web">
 						<span className={classes.taskTabLabel}>
 							<strong>Developer setup</strong>
-							<small>For packages, frameworks, and CDN</small>
+							<small className={classes.taskTabDesktop}>
+								For packages, frameworks, and CDN
+							</small>
+							<small className={classes.taskTabCompact}>Packages and CDN</small>
 						</span>
 					</Tabs.Tab>
 				</Tabs.List>
@@ -341,7 +330,13 @@ export const FamilyUse = ({
 					<div className={classes.downloadPanel}>
 						<div className={classes.downloadDetails}>
 							<h3>Complete family (.zip)</h3>
-							<p>TTF, WOFF, WOFF2, CSS, and the original license.</p>
+							<p className={classes.downloadOutcome}>
+								Ready for design apps, desktop installation, and font managers.
+							</p>
+							<p className={classes.downloadContents}>
+								Includes every TTF weight and style, plus WOFF and WOFF2
+								webfonts, CSS, and the original license.
+							</p>
 						</div>
 						<div className={classes.downloadAction}>
 							<a
@@ -352,12 +347,27 @@ export const FamilyUse = ({
 							>
 								<IconDownload aria-hidden height={18} stroke="currentColor" />
 								Download complete family (.zip)
+								<VisuallyHidden> (opens in a new tab)</VisuallyHidden>
 							</a>
 							<LicenseReceipt
 								familyId={metadata.id}
 								license={registry?.license}
 								registryState={registryState}
 							/>
+							<div className={classes.fontSetPrompt}>
+								<p>
+									<strong>Downloading more fonts?</strong>
+									<span>
+										Add this family to a font set, keep browsing, and download
+										everything together.
+									</span>
+								</p>
+								<ProjectAddButton
+									includedLabel="Update font set"
+									item={fontSetItem}
+									label="Add to font set"
+								/>
+							</div>
 						</div>
 					</div>
 				</Tabs.Panel>
@@ -386,12 +396,11 @@ export const FamilyUse = ({
 							</button>
 						</fieldset>
 
-						{method === 'cdn' && (
-							<p className={classes.deliveryNote}>
-								Loads a versioned stylesheet from jsDelivr. Package is
-								recommended when you can bundle and self-host the font.
-							</p>
-						)}
+						<p className={classes.deliveryNote}>
+							{method === 'package'
+								? 'Package bundles and self-hosts the font with your app. Recommended.'
+								: 'Quick embed loads a versioned stylesheet from jsDelivr when package-based self-hosting is not practical.'}
+						</p>
 
 						<div className={classes.setupSummary}>
 							<div>
@@ -400,44 +409,59 @@ export const FamilyUse = ({
 								</strong>
 								<span>{selectionSummary}</span>
 							</div>
-							{canCustomize && (
-								<button
-									type="button"
-									className={classes.customizeButton}
-									aria-expanded={customizationOpen}
-									aria-controls="web-font-options"
-									onClick={() => setCustomizationOpen((open) => !open)}
-								>
-									{customizationOpen ? 'Done customizing' : 'Customize setup'}
-								</button>
-							)}
+							<div className={classes.setupActions}>
+								{!isRecommendedSetup && (
+									<button
+										type="button"
+										className={classes.resetButton}
+										onClick={useRecommendedSetup}
+									>
+										Use recommended
+									</button>
+								)}
+								{canCustomize && (
+									<button
+										type="button"
+										className={classes.customizeButton}
+										aria-expanded={customizationOpen}
+										aria-controls="web-font-options"
+										onClick={() => setCustomizationOpen((open) => !open)}
+									>
+										{customizationOpen ? 'Done customizing' : 'Customize setup'}
+									</button>
+								)}
+							</div>
 						</div>
-
-						{previewSettingsApplied && !customizationOpen && (
-							<p className={classes.previewHandoff}>
-								Using your latest choices from Preview.
+						<div className={classes.fontSetPrompt}>
+							<p>
+								<strong>Building a font stack?</strong>
+								<span>
+									Save this exact setup, keep browsing, and generate combined
+									code later.
+								</span>
 							</p>
-						)}
+							<ProjectAddButton item={fontSetItem} />
+						</div>
 
 						{customizationOpen && (
 							<div className={classes.customization} id="web-font-options">
 								<div className={classes.customizationHeading}>
-									<strong>Choose only what your project uses</strong>
-									<span>The code below updates automatically.</span>
+									<strong>Customize generated code</strong>
+									<span>Only the selected stylesheets are imported.</span>
 								</div>
 
 								{supportsStatic && supportsVariable && (
-									<fieldset className={classes.formatSwitch}>
-										<legend>Font format</legend>
+									<fieldset
+										className={classes.formatSwitch}
+										aria-describedby="font-format-help"
+									>
+										<legend>Font type</legend>
 										<div>
 											<button
 												type="button"
 												data-active={isVariable || undefined}
 												aria-pressed={isVariable}
-												onClick={() => {
-													setFormat('variable');
-													setPreviewSettingsApplied(false);
-												}}
+												onClick={() => setFormat('variable')}
 											>
 												Variable
 											</button>
@@ -445,79 +469,52 @@ export const FamilyUse = ({
 												type="button"
 												data-active={!isVariable || undefined}
 												aria-pressed={!isVariable}
-												onClick={() => {
-													setFormat('static');
-													setPreviewSettingsApplied(false);
-												}}
+												onClick={() => setFormat('static')}
 											>
 												Static
 											</button>
 										</div>
+										<p className={classes.selectionHelp} id="font-format-help">
+											{formatDescription}
+										</p>
 									</fieldset>
 								)}
-
-								{!isVariable && metadata.weights.length > 1 && (
-									<fieldset className={classes.presetGroup}>
-										<legend>Quick selections</legend>
-										<div>
-											<button
-												type="button"
-												aria-pressed={
-													sameValues(styles, [recommendedStyle]) &&
-													sameValues(weights, [recommendedWeight])
-												}
-												onClick={() => setStaticPreset('default')}
-											>
-												Default
-											</button>
-											{hasRegularBoldPreset && (
-												<button
-													type="button"
-													aria-pressed={
-														sameValues(styles, ['normal']) &&
-														sameValues(weights, [400, 700])
-													}
-													onClick={() => setStaticPreset('regular-bold')}
-												>
-													Regular + Bold
-												</button>
-											)}
-											<button
-												type="button"
-												aria-pressed={
-													sameValues(styles, metadata.styles) &&
-													sameValues(weights, metadata.weights)
-												}
-												onClick={() => setStaticPreset('all')}
-											>
-												All faces
-											</button>
-										</div>
-									</fieldset>
+								{!(supportsStatic && supportsVariable) && (
+									<p className={classes.formatSummary}>{formatDescription}</p>
 								)}
 
 								{metadata.styles.length > 1 && (
-									<fieldset className={classes.optionGroup}>
+									<fieldset
+										className={classes.optionGroup}
+										aria-describedby={`${metadata.id}-style-help`}
+									>
 										<legend>Styles</legend>
+										<p
+											className={classes.selectionHelp}
+											id={`${metadata.id}-style-help`}
+										>
+											Choose one or more. At least one is required.
+										</p>
 										<div>
-											{metadata.styles.map((style) => {
+											{availableStyles.map((style) => {
 												const selected = styles.includes(style);
+												const inputId = `${metadata.id}-style-${style}`;
 												return (
-													<label key={style}>
+													<label htmlFor={inputId} key={style}>
 														<input
+															id={inputId}
 															type="checkbox"
 															checked={selected}
 															disabled={selected && styles.length === 1}
-															onChange={() => {
+															onChange={() =>
 																setSelectedStyles((current) =>
 																	toggleRequiredValue(
 																		current,
 																		style,
 																		metadata.styles,
 																	),
-																);
-																setPreviewSettingsApplied(false);
-															}}
+																)
+															}
 														/>
 														<span>{formatFontLabel(style)}</span>
 													</label>
@@ -528,27 +525,37 @@ export const FamilyUse = ({
 								)}
 
 								{!isVariable && metadata.weights.length > 1 && (
-									<fieldset className={classes.optionGroup}>
+									<fieldset
+										className={classes.optionGroup}
+										aria-describedby={`${metadata.id}-weight-help`}
+									>
 										<legend>Weights</legend>
+										<p
+											className={classes.selectionHelp}
+											id={`${metadata.id}-weight-help`}
+										>
+											Choose one or more weights. At least one is required.
+										</p>
 										<div>
 											{metadata.weights.map((weight) => {
 												const selected = weights.includes(weight);
+												const inputId = `${metadata.id}-weight-${weight}`;
 												return (
-													<label key={weight}>
+													<label htmlFor={inputId} key={weight}>
 														<input
+															id={inputId}
 															type="checkbox"
 															checked={selected}
 															disabled={selected && weights.length === 1}
-															onChange={() => {
+															onChange={() =>
 																setSelectedWeights((current) =>
 																	toggleRequiredValue(
 																		current,
 																		weight,
 																		metadata.weights,
 																	),
-																);
-																setPreviewSettingsApplied(false);
-															}}
+																)
+															}
 														/>
 														<span>{getWeightLabel(weight)}</span>
 													</label>
@@ -563,13 +570,21 @@ export const FamilyUse = ({
 										.filter(([axis]) => axis.toLowerCase() !== 'ital')
 										.map(([axis, range]) => {
 											const value = axisValues[axis] ?? Number(range.default);
+											const inputId = `${metadata.id}-axis-${axis}`;
 											return (
-												<label className={classes.axisControl} key={axis}>
+												<label
+													className={classes.axisControl}
+													htmlFor={inputId}
+													key={axis}
+												>
 													<span>
-														{getAxisLabel(axis)}
-														<output>{value}</output>
+														{axis.toLowerCase() === 'wght'
+															? 'Example weight'
+															: getAxisLabel(axis)}
+														<output htmlFor={inputId}>{value}</output>
 													</span>
 													<input
+														id={inputId}
 														type="range"
 														min={Number(range.min)}
 														max={Number(range.max)}
@@ -580,7 +595,6 @@ export const FamilyUse = ({
 																...values,
 																[axis]: Number(event.currentTarget.value),
 															}));
-															setPreviewSettingsApplied(false);
 														}}
 													/>
 												</label>
@@ -620,13 +634,17 @@ export const FamilyUse = ({
 							)}
 							<CopyCodeBlock
 								code={method === 'package' ? packageImports : cdnLinks}
+								description={importExplanation}
 								label={
-									method === 'package' ? 'Import files' : 'HTML stylesheet'
+									method === 'package'
+										? 'Import stylesheets'
+										: 'HTML stylesheets'
 								}
 								language={method === 'package' ? 'js' : 'html'}
 							/>
 							<CopyCodeBlock
 								code={cssCode}
+								description={cssExplanation}
 								label={`Example CSS · ${exampleFace}`}
 								language="css"
 							/>
@@ -638,8 +656,6 @@ export const FamilyUse = ({
 								/>
 							)}
 						</div>
-						<p className={classes.outputExplanation}>{outputExplanation}</p>
-
 						{usageNote && <p className={classes.usageHelp}>{usageNote}</p>}
 						<Link
 							className={classes.guideLink}
