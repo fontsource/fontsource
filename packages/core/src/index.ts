@@ -23,6 +23,7 @@ export type {
 	FontFileFormat,
 	FontSource,
 	FontStyle,
+	FontSubsetSlice,
 	StaticFontBuildConfig,
 	SubsetFontBuildCharacters,
 	VariableAxisConfig,

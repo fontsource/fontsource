@@ -5,15 +5,13 @@ description: Install Fontsource packages and import fonts into a bundled web app
 
 # Install
 
-Fontsource provides a straightforward process for installing fonts into your web application. This guide will walk you through the installation steps.
+Fontsource packages let you bundle and self-host fonts with your web application. When a family supports variable fonts, start with its variable package. It provides a continuous range of weights and often needs fewer files than several static faces.
 
 ## Prerequisites
 
 Before proceeding with the installation, ensure that you are using a bundler, such as Vite or Webpack, to handle importing CSS into your final bundle. Please refer to the [Fontsource Guides](/docs/guides) section to see detailed instructions for your preferred framework.
 
-> **Variable Fonts**
->
-> If your chosen font supports variable fonts, Fontsource **highly recommends** using them, especially when working with multiple weights, as it helps reduce bundle sizes. To learn more about using variable fonts, refer to the dedicated [Variable Fonts](/docs/getting-started/variable) guide.
+If a family does not provide a variable package, use its static package instead.
 
 ## Setup
 
@@ -25,9 +23,9 @@ Select the font package you wish to install. Each font package corresponds to a 
 
 ### 2. Install the Package
 
-Use your preferred package manager to install the font package. For example, to install the Open Sans font, run the following command:
+Use your preferred package manager to install the variable package. For example, to install Open Sans, run:
 
-<PackageManagerCode cmd="@fontsource/open-sans" />
+<PackageManagerCode cmd="@fontsource-variable/open-sans" />
 
 > **Note:** Alternatively, you can download the font files yourself in each directory listing.
 
@@ -35,23 +33,38 @@ Use your preferred package manager to install the font package. For example, to 
 
 In your application's entry file, page, or site component, import the font package. The import method determines which font files are included.
 
-#### Default Import
+#### Recommended Import
 
-The most straightforward way to import a font is using its package name directly. This will import the most common weight, which is **400** for most fonts.
-
-```jsx
-import "@fontsource/open-sans"; // Defaults to weight 400.
-```
-
-#### Specific Weights and Styles
-
-To minimize your bundle size, it is recommended to import only the specific weights and styles you need. A single import statement will load **one** font file.
+Import the package once in your application's entry file. The default variable face usually includes the full weight range in the normal style.
 
 ```jsx
-import "@fontsource/open-sans/300.css"; // Includes weight 300.
-import "@fontsource/open-sans/900-italic.css"; // Includes weight 900 in italic style.
+import "@fontsource-variable/open-sans";
 ```
 
+The generated CSS uses `unicode-range`, so the browser downloads only the character sets used on the page. You normally do not need to choose subsets manually. See [Subsets](/docs/getting-started/subsets) for the uncommon cases that need explicit subset imports.
+
+To use italic or additional variable axes, see the [Variable Fonts](/docs/getting-started/variable) guide.
+
+#### Static Fonts
+
+Use the static package when a family has no variable font or when your project specifically needs fixed font faces.
+
+<PackageManagerCode cmd="@fontsource/open-sans" />
+
+Import only the weights and styles the project uses. Each import adds one fixed face.
+
+The root import provides the default weight, which is **400** for most families:
+
+```jsx
+import "@fontsource/open-sans";
+```
+
+Specific weights and styles use their own imports:
+
+```jsx
+import "@fontsource/open-sans/300.css";
+import "@fontsource/open-sans/900-italic.css";
+```
 
 If you need both a regular and an italic style for the same weight, you'll need two separate imports. The import for a normal style **does not** include its italic variant.
 
@@ -60,7 +73,7 @@ import "@fontsource/open-sans/900.css"; // Includes weight 900.
 import "@fontsource/open-sans/900-italic.css"; // Includes weight 900 in italic style.
 ```
 
-If you need to use **all** available weights and styles, you must import each one individually. Due to the large file size, this is generally not recommended unless you have a specific use case.
+If you need many weights, prefer the variable package instead of adding every static face.
 
 > **Note:** Each font package will provide information on the supported weights and styles in the directory listing or package README.
 

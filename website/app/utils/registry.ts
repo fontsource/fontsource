@@ -227,6 +227,28 @@ const findUnmappedCharacters = (
 	);
 };
 
+const getSupportedPreviewFallback = (
+	preferredText: string,
+	capabilities?: GetRegistrySourceCapabilitiesResponse,
+) => {
+	if (!capabilities) return preferredText;
+	if (findUnmappedCharacters(preferredText, capabilities).length === 0) {
+		return preferredText;
+	}
+
+	const groups = getRegistryCharacterGroups(capabilities);
+	const mappedCharacters = groups?.letters.length
+		? groups.letters
+		: groups?.numbers.length
+			? groups.numbers
+			: groups?.symbols.length
+				? groups.symbols
+				: groups?.punctuation.length
+					? groups.punctuation
+					: groups?.all;
+	return mappedCharacters?.slice(0, 12).join('') || preferredText;
+};
+
 const featureNames: Record<string, string> = {
 	aalt: 'Access all alternates',
 	afrc: 'Alternative fractions',
@@ -365,6 +387,7 @@ export {
 	getRegistryFamilyKind,
 	getRegistryPreviewText,
 	getRegistrySourcePreviewStyle,
+	getSupportedPreviewFallback,
 	getUnicodeCharacter,
 	selectRegistryFamilyLanguages,
 	selectRegistryPreviewLanguage,

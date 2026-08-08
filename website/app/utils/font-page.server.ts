@@ -49,6 +49,7 @@ const loadFontPageStats = async (id: string, signal: AbortSignal) => {
 };
 
 type FontPageBase = Awaited<ReturnType<typeof loadFontPageBase>>;
+type LanguageScope = 'family' | 'all';
 
 const loadFontPageCapabilities = async (
 	basePromise: Promise<FontPageBase>,
@@ -91,6 +92,7 @@ const loadFontPageCapabilities = async (
 const loadFontPageLanguages = async (
 	basePromise: Promise<FontPageBase>,
 	signal: AbortSignal,
+	scope: LanguageScope = 'family',
 ) => {
 	const [base, result] = await Promise.all([
 		basePromise,
@@ -101,7 +103,9 @@ const loadFontPageLanguages = async (
 	return {
 		languages:
 			state === 'available'
-				? selectRegistryFamilyLanguages(base.registry, result.value)
+				? scope === 'all'
+					? result.value
+					: selectRegistryFamilyLanguages(base.registry, result.value)
 				: undefined,
 		state,
 	};

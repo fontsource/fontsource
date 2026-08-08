@@ -73,4 +73,38 @@ describe('buildFamilyUseCSS', () => {
 		expect(css).toContain('font-stretch: 75% 125%;');
 		expect(css).toContain('@fontsource-variable/example/files/');
 	});
+
+	it('expands a semantic subset into every registry-defined slice', () => {
+		const css = buildFamilyUseCSS({
+			metadata: {
+				...metadata,
+				subsets: ['japanese'],
+				unicodeRange: { japanese: 'U+3000-30FF' },
+			},
+			isVariable: false,
+			styles: ['normal'],
+			weights: [400],
+			subsets: ['japanese'],
+			activeAxes: [],
+			formats: ['woff2'],
+			display: 'swap',
+			version: '5.3.0',
+			delivery: 'cdn',
+			subsetDefinitions: [
+				{
+					id: 'japanese',
+					ranges: [['3000', '30FF']],
+					slices: [
+						{ id: '1', ranges: [['3000', '303F']] },
+						{ id: '2', ranges: [['3040', '30FF']] },
+					],
+				},
+			],
+		});
+
+		expect(css).toContain('japanese-400-normal-1.woff2');
+		expect(css).toContain('japanese-400-normal-2.woff2');
+		expect(css).toContain('unicode-range: U+3000-303F;');
+		expect(css.match(/@font-face/g)).toHaveLength(2);
+	});
 });

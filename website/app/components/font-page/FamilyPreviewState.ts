@@ -25,6 +25,7 @@ import {
 	findUnmappedCharacters,
 	getRegistryFamilyKind,
 	getRegistryPreviewText,
+	getSupportedPreviewFallback,
 	type RegistryFamily,
 	type RegistrySource,
 } from '@/utils/registry';
@@ -154,6 +155,7 @@ const getModeText = (
 	mode: PreviewMode,
 	registry?: RegistryFamily,
 	languages?: ListRegistryLanguagesResponse,
+	capabilities?: GetRegistrySourceCapabilitiesResponse,
 ) => {
 	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const familyKind = getRegistryFamilyKind(registry);
@@ -163,7 +165,12 @@ const getModeText = (
 		previewText.editor.sampleLengths[mode],
 	);
 
-	if (familyKind === 'symbols') return registrySample ?? '';
+	if (familyKind === 'symbols') {
+		return (
+			registrySample ??
+			getSupportedPreviewFallback(metadata.family, capabilities)
+		);
+	}
 	if (familyKind === 'digital')
 		return previewText.editor.familyKinds.digital[mode];
 	if (registrySample && registry?.sampleText) return registrySample;
@@ -186,11 +193,30 @@ const createModeTexts = (
 	metadata: GetFontResponse,
 	registry?: RegistryFamily,
 	languages?: ListRegistryLanguagesResponse,
+	capabilities?: GetRegistrySourceCapabilitiesResponse,
 ): Record<PreviewMode, string> => ({
-	headline: getModeText(metadata, 'headline', registry, languages),
-	paragraph: getModeText(metadata, 'paragraph', registry, languages),
-	waterfall: getModeText(metadata, 'waterfall', registry, languages),
-	compare: getModeText(metadata, 'compare', registry, languages),
+	headline: getModeText(
+		metadata,
+		'headline',
+		registry,
+		languages,
+		capabilities,
+	),
+	paragraph: getModeText(
+		metadata,
+		'paragraph',
+		registry,
+		languages,
+		capabilities,
+	),
+	waterfall: getModeText(
+		metadata,
+		'waterfall',
+		registry,
+		languages,
+		capabilities,
+	),
+	compare: getModeText(metadata, 'compare', registry, languages, capabilities),
 });
 
 const createLanguageModeTexts = (
@@ -365,7 +391,7 @@ const createPreviewEditorSetup = ({
 		registry.primaryScript !== 'Latn' &&
 		initialLanguage
 			? createLanguageModeTexts(initialLanguage)
-			: createModeTexts(metadata, registry, languages);
+			: createModeTexts(metadata, registry, languages, capabilities);
 	const initialCapabilitySource =
 		capabilitySource ??
 		selectRegistryPreviewSource(registry, {

@@ -3,7 +3,7 @@ import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyUse } from '@/components/font-page/FamilyUse';
-import { getFontVersions } from '@/generated/api';
+import { getFontVersions, getRegistrySubset } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import {
 	loadFontPageBase,
@@ -15,14 +15,48 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
-	const [base, versions, languagesResult] = await Promise.all([
-		basePromise,
-		getFontVersions({ id }, { signal: request.signal }),
-		loadFontPageLanguages(basePromise, request.signal),
-	]);
+	const subsetDefinitionsPromise = basePromise.then(async (base) => {
+		const characters = base.registry?.distribution.characters;
+		if (base.registryState !== 'available' || characters?.type !== 'subsets') {
+			return [];
+		}
+		const slicing = characters.slicing;
+		if (!slicing) return [];
+		const slicingTokens = slicing
+			.split('-')
+			.filter((token) => token !== 'web')
+			.sort()
+			.join('-');
+		const slicedSubset = characters.subsets.find(
+			(subset) => subset.id.split('-').sort().join('-') === slicingTokens,
+		);
+		if (!slicedSubset) return [];
+		try {
+			const definition = await getRegistrySubset(
+				{ id: slicing },
+				{ signal: request.signal },
+			);
+			return [{ ...definition, id: slicedSubset.id }];
+		} catch (error) {
+			if (request.signal.aborted) throw error;
+			return [];
+		}
+	});
+	const [base, versions, languagesResult, subsetDefinitions] =
+		await Promise.all([
+			basePromise,
+			getFontVersions({ id }, { signal: request.signal }),
+			loadFontPageLanguages(basePromise, request.signal),
+			subsetDefinitionsPromise,
+		]);
 
 	return data(
-		{ ...base, versions, languages: languagesResult.languages },
+		{
+			...base,
+			versions,
+			languages: languagesResult.languages,
+			subsetDefinitions,
+		},
 		{ headers: cacheHeaders.short },
 	);
 };
@@ -50,6 +84,7 @@ export default function UsePage() {
 		registry,
 		registryState,
 		languages,
+		subsetDefinitions,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -69,6 +104,7 @@ export default function UsePage() {
 				registry={registry}
 				registryState={registryState}
 				languages={languages}
+				subsetDefinitions={subsetDefinitions}
 			/>
 		</FamilyPageShell>
 	);
