@@ -251,11 +251,11 @@
 
 .inspector {
 	min-width: 0;
-	min-height: 420px;
+	min-height: 560px;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	justify-content: flex-start;
+	justify-content: center;
 	padding: 36px;
 	border-inline-start: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 	background: light-dark(#efeeff, #172138);
@@ -303,83 +303,60 @@
 .largeCharacter {
 	position: relative;
 	box-sizing: border-box;
-	block-size: 184px;
+	block-size: 220px;
+	inline-size: 100%;
 	max-width: 100%;
-	display: grid;
-	place-items: center;
-	padding-block: 8px;
-	overflow: hidden;
-	contain: layout paint;
-	font-size: clamp(72px, 11vw, 152px);
-	line-height: normal;
-	text-align: center;
-	white-space: nowrap;
-}
-
-.glyphShape {
-	max-width: 100%;
-	display: block;
-	transition:
-		color 160ms cubic-bezier(0.16, 1, 0.3, 1),
-		transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.metricsToggle {
-	position: absolute;
-	z-index: 2;
-	inset-block-start: 4px;
-	inset-inline-end: 4px;
-	width: 28px;
-	height: 28px;
 	display: grid;
 	place-items: center;
 	padding: 0;
 	border: 0;
 	border-radius: 4px;
-	color: light-dark(#52617a, #aeb9cc);
+	overflow: hidden;
+	contain: layout paint;
+	color: inherit;
 	background: transparent;
-	opacity: 0;
-	pointer-events: none;
-	cursor: pointer;
+	font: inherit;
+	text-align: center;
 	transition:
-		opacity 120ms ease,
 		background-color 120ms ease,
-		color 120ms ease;
+		outline-color 120ms ease;
 
-	&:hover {
-		color: light-dark(#01112c, #fff);
-		background: light-dark(rgb(255 255 255 / 0.64), rgb(15 22 38 / 0.64));
-	}
-
-	&[aria-pressed='true'] {
-		color: var(--mantine-color-purple-0);
-		opacity: 1;
-		pointer-events: auto;
+	&:where(button) {
+		cursor: pointer;
 	}
 
 	&:focus-visible {
-		opacity: 1;
-		pointer-events: auto;
 		outline: 2px solid var(--mantine-color-purple-0);
-		outline-offset: 2px;
+		outline-offset: -2px;
 	}
 }
 
-.largeCharacter:hover .metricsToggle,
-.largeCharacter:focus-within .metricsToggle {
-	opacity: 0.72;
-	pointer-events: auto;
+.glyphShape {
+	transition:
+		color 160ms cubic-bezier(0.16, 1, 0.3, 1),
+		transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.largeCharacter .metricsToggle:hover,
-.largeCharacter .metricsToggle:focus-visible,
-.largeCharacter .metricsToggle[aria-pressed='true'] {
+.metricsGuides {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 120ms ease;
+}
+
+.largeCharacter:where(:focus-visible, [data-metrics-pinned]) .metricsGuides {
 	opacity: 1;
 }
 
+@media (hover: hover) and (pointer: fine) {
+	.largeCharacter:hover .metricsGuides {
+		opacity: 1;
+	}
+}
+
 .metricsView {
-	width: 100%;
-	height: 100%;
+	width: min(100%, 220px);
+	height: auto;
+	aspect-ratio: 1;
 	display: block;
 	overflow: visible;
 
@@ -500,6 +477,7 @@
 		display: grid;
 		grid-template-columns: 72px minmax(0, 1fr);
 		align-items: center;
+		justify-content: normal;
 		gap: 4px 16px;
 		margin-bottom: 16px;
 		padding: 16px;
@@ -514,11 +492,6 @@
 			font-size: 52px;
 		}
 
-		.metricsToggle {
-			display: none;
-		}
-
-		.metricsView line,
 		.metricLabel {
 			display: none;
 		}
@@ -579,7 +552,7 @@
 @media (prefers-reduced-motion: reduce) {
 	.glyphShape,
 	.primaryCopy,
-	.metricsToggle {
+	.metricsGuides {
 		transition: none;
 	}
 
@@ -591,13 +564,6 @@
 @media (pointer: coarse) {
 	:is(.groupSwitch button, .resultSummary button) {
 		min-height: 48px;
-	}
-
-	.metricsToggle {
-		min-width: 44px;
-		min-height: 44px;
-		opacity: 0.64;
-		pointer-events: auto;
 	}
 }
 

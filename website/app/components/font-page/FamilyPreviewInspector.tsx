@@ -95,7 +95,7 @@ const RangeControl = ({
 						{tag && <code>{tag}</code>}
 					</div>
 					{description && (
-						<p id={descriptionId} className={classes.controlDescription}>
+						<p className={classes.controlDescription} aria-hidden="true">
 							{description}
 						</p>
 					)}
@@ -103,7 +103,12 @@ const RangeControl = ({
 				<NumberInput
 					id={`${id}-value`}
 					className={classes.numberControl}
-					classNames={{ input: classes.numberInput }}
+					classNames={{
+						description: classes.inputDescription,
+						input: classes.numberInput,
+					}}
+					description={description}
+					descriptionProps={{ id: descriptionId }}
 					value={value}
 					min={min}
 					max={max}
@@ -113,7 +118,6 @@ const RangeControl = ({
 					hideControls
 					clampBehavior="strict"
 					disabled={disabled}
-					aria-describedby={descriptionId}
 					aria-valuemax={max}
 					aria-valuemin={min}
 					aria-valuenow={value}

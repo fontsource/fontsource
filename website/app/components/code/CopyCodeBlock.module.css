@@ -1,57 +1,15 @@
 .root {
 	min-width: 0;
-	overflow: hidden;
-	border: light-dark(1px solid transparent, 1px solid var(--mantine-color-border-1));
-	border-radius: 5px;
-	background: light-dark(#07162f, #0a1020);
-	color: #f2f5ff;
 }
 
-.header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	min-height: 52px;
-	padding: 0 12px;
-	border-bottom: 1px solid rgb(255 255 255 / 12%);
-	color: #aeb9d0;
-	font-family: var(--mantine-font-family-monospace);
-	font-size: 0.75rem;
-
-	button {
-		display: inline-flex;
-		align-items: center;
-		gap: 6px;
-		min-height: 44px;
-		padding: 0 10px;
-		border: 0;
-		border-radius: 3px;
-		background: var(--mantine-color-purple-0);
-		color: white;
-		font: inherit;
-		cursor: pointer;
-		transition: background-color 120ms ease;
-	}
-
-	button:hover {
-		background: var(--mantine-color-purple-dark);
-	}
-
-	button:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-3);
-		outline-offset: 2px;
-	}
+.label {
+	display: block;
+	margin-bottom: 8px;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 0.875rem;
+	font-weight: 600;
 }
 
-.root pre {
-	max-width: 100%;
+.root > figure {
 	margin: 0;
-	padding: 16px;
-	overflow-x: auto;
-	font-family: var(--mantine-font-family-monospace);
-	font-size: 0.8rem;
-	line-height: 1.65;
-	white-space: pre-wrap;
-	overflow-wrap: anywhere;
 }

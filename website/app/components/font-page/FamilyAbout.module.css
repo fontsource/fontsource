@@ -588,6 +588,11 @@
 	}
 }
 
+.checksumTooltip {
+	font-family: var(--mantine-font-family-monospace);
+	overflow-wrap: anywhere;
+}
+
 @media (--lt-md) {
 	.page {
 		padding-right: 32px;
