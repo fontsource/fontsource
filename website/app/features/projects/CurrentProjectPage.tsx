@@ -6,7 +6,7 @@ import {
 	IconStack2,
 	IconTrash,
 } from '@tabler/icons-react';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
@@ -21,10 +21,14 @@ import { formatFontLabel } from '@/utils/font-labels';
 
 import classes from './CurrentProjectPage.module.css';
 import { useCurrentProjectStore } from './CurrentProjectProvider';
+import { createFontSetArchive, FontSetArchiveError } from './downloadFontSet';
 import type { ProjectItem } from './model';
 import {
 	getCdnUrl,
+	getProjectCdnUrls,
 	getProjectCss,
+	getProjectCssFiles,
+	getProjectEditUrl,
 	getUsageBlock,
 	getUsageNote,
 	hasSymbolCatalog,
@@ -34,6 +38,7 @@ import {
 
 type DeliveryMethod = 'package' | 'cdn';
 type CssDownloadState = 'idle' | 'success' | 'error';
+type ZipDownloadState = 'idle' | 'preparing' | 'success' | 'error';
 
 const ProjectFont = ({
 	item,
@@ -47,6 +52,11 @@ const ProjectFont = ({
 		.map(([axis, value]) => `"${axis}" ${value}`)
 		.join(', ');
 	const tags = item.tags.slice(0, 2);
+	const stylesheetCount = getProjectCssFiles(item).length;
+	const selectedStyles = item.styles ?? [item.style];
+	const selectedWeights = item.weights ?? [item.weight];
+	const setupSelection = `${selectedStyles.map(formatFontLabel).join(' + ')} · weights ${selectedWeights.join(' + ')}`;
+	const editSetupUrl = getProjectEditUrl(item);
 	const usageNote = item.registryFactsCurrent
 		? getUsageNote(item)
 		: 'Registry behavior facts are missing from this saved setup. Open the family and update it before using generated code.';
@@ -97,7 +107,8 @@ const ProjectFont = ({
 							? 'Symbol ligatures'
 							: 'Symbol catalog'
 						: formatFontLabel(item.subset)}{' '}
-					· {item.weight} {formatFontLabel(item.style)}
+					· {setupSelection}
+					{stylesheetCount > 1 ? ` · ${stylesheetCount} stylesheets` : ''}
 				</p>
 				<div
 					className={classes.expandedDetails}
@@ -113,7 +124,7 @@ const ProjectFont = ({
 					)}
 					<dl className={classes.setup}>
 						<div>
-							<dt>Font format</dt>
+							<dt>Font type</dt>
 							<dd>{formatFontLabel(item.format)}</dd>
 						</div>
 						<div>
@@ -128,9 +139,7 @@ const ProjectFont = ({
 						</div>
 						<div>
 							<dt>Weight &amp; style</dt>
-							<dd>
-								{item.weight} {formatFontLabel(item.style)}
-							</dd>
+							<dd>{setupSelection}</dd>
 						</div>
 						<div>
 							<dt>License</dt>
@@ -153,9 +162,7 @@ const ProjectFont = ({
 					{usageNote && <p className={classes.usageNote}>{usageNote}</p>}
 				</div>
 				<div className={classes.rowActions}>
-					<Link to={`/fonts/${item.familyId}/use?from=selected-fonts`}>
-						Edit setup
-					</Link>
+					<Link to={editSetupUrl}>Edit setup</Link>
 					<button
 						type="button"
 						aria-expanded={expanded}
@@ -193,6 +200,11 @@ const CurrentProjectPage = () => {
 	const [singleSetupFamilyId, setSingleSetupFamilyId] = useState<string>();
 	const [cssDownloadState, setCssDownloadState] =
 		useState<CssDownloadState>('idle');
+	const [zipDownloadState, setZipDownloadState] =
+		useState<ZipDownloadState>('idle');
+	const [zipProgress, setZipProgress] = useState(0);
+	const [zipError, setZipError] = useState<string>();
+	const zipAbortController = useRef<AbortController | undefined>(undefined);
 	const singleItem = items.length === 1 ? items[0] : undefined;
 	const showSingleSetup =
 		singleItem !== undefined && singleSetupFamilyId === singleItem.familyId;
@@ -202,10 +214,18 @@ const CurrentProjectPage = () => {
 		.join(' ');
 	const installCommand = getPackageManagerCommand(packageManager, packageNames);
 	const imports = items
-		.map((item) => `import '${item.packageName}/${item.cssFile}';`)
+		.flatMap((item) =>
+			getProjectCssFiles(item).map(
+				(file) => `import '${item.packageName}/${file}';`,
+			),
+		)
 		.join('\n');
 	const cdnLinks = items
-		.map((item) => `<link rel="stylesheet" href="${getCdnUrl(item)}">`)
+		.flatMap((item) =>
+			getProjectCdnUrls(item).map(
+				(url) => `<link rel="stylesheet" href="${url}">`,
+			),
+		)
 		.join('\n');
 	const usageCss = items.map(getUsageBlock).join('\n\n');
 	const verifiedItems = items.filter((item) => item.license.verified);
@@ -232,6 +252,40 @@ const CurrentProjectPage = () => {
 			setCssDownloadState('error');
 		}
 	};
+
+	const downloadZip = async () => {
+		if (zipDownloadState === 'preparing') return;
+		const controller = new AbortController();
+		zipAbortController.current = controller;
+		setZipDownloadState('preparing');
+		setZipProgress(0);
+		setZipError(undefined);
+
+		try {
+			const archive = await createFontSetArchive(items, setZipProgress, {
+				signal: controller.signal,
+			});
+			triggerBlobDownload('fontsource-font-set.zip', archive);
+			setZipDownloadState('success');
+		} catch (error) {
+			if (controller.signal.aborted) {
+				setZipDownloadState('idle');
+				return;
+			}
+			setZipError(
+				error instanceof FontSetArchiveError && error.code === 'too-large'
+					? 'This font set is too large to prepare safely in your browser. Download the families separately.'
+					: 'The font set could not be downloaded. Check your connection and try again.',
+			);
+			setZipDownloadState('error');
+		} finally {
+			if (zipAbortController.current === controller) {
+				zipAbortController.current = undefined;
+			}
+		}
+	};
+
+	useEffect(() => () => zipAbortController.current?.abort(), []);
 
 	const clearProject = () => {
 		if (
@@ -260,8 +314,8 @@ const CurrentProjectPage = () => {
 				<div>
 					<h1>Font set</h1>
 					<p>
-						Keep exact font setups together. When you choose more than one,
-						Fontsource combines them into one website setup.
+						Keep fonts together while you browse. Download every family in one
+						archive or generate one combined website setup.
 					</p>
 				</div>
 				{items.length > 0 && (
@@ -300,8 +354,8 @@ const CurrentProjectPage = () => {
 					<div>
 						<h2>Your font set is empty.</h2>
 						<p>
-							Open Get font, choose your website setup, then select “Add this
-							setup.” Your choices stay in this browser.
+							Open Get font and add a family, or save a developer setup. Your
+							choices stay in this browser.
 						</p>
 						<Link to="/">Choose a font</Link>
 					</div>
@@ -326,6 +380,45 @@ const CurrentProjectPage = () => {
 								onRemove={() => store.removeItem(item.familyId)}
 							/>
 						))}
+					</section>
+
+					<section
+						className={classes.archiveDownload}
+						aria-labelledby="font-set-download-heading"
+					>
+						<div>
+							<h2 id="font-set-download-heading">Download font set</h2>
+							<p>
+								Get the latest complete desktop and web files for every family,
+								organized by font. Combined CSS keeps your saved website
+								versions.
+							</p>
+							{zipDownloadState !== 'idle' && (
+								<span
+									className={classes.downloadFeedback}
+									data-error={zipDownloadState === 'error' || undefined}
+									role="status"
+								>
+									{zipDownloadState === 'preparing'
+										? `Preparing ${zipProgress} of ${items.length} ${items.length === 1 ? 'font' : 'fonts'}…`
+										: zipDownloadState === 'success'
+											? 'Font set download started.'
+											: zipError}
+								</span>
+							)}
+						</div>
+						<button
+							type="button"
+							disabled={zipDownloadState === 'preparing'}
+							onClick={downloadZip}
+						>
+							<IconDownload aria-hidden size={18} />
+							{zipDownloadState === 'preparing'
+								? 'Preparing ZIP…'
+								: zipDownloadState === 'error'
+									? 'Try ZIP download again'
+									: 'Download all families (.zip)'}
+						</button>
 					</section>
 
 					{singleItem && !showSingleSetup && (
@@ -399,7 +492,7 @@ const CurrentProjectPage = () => {
 									{staleRegistryItems.length}{' '}
 									{staleRegistryItems.length === 1
 										? 'font needs'
-										: 'fonts need'}
+										: 'fonts need'}{' '}
 									a Registry refresh. Generated code preserves saved package
 									choices, but specialist behavior may be incomplete until you
 									update {staleRegistryItems.length === 1 ? 'it' : 'them'} from
@@ -556,9 +649,7 @@ const CurrentProjectPage = () => {
 										{unverifiedItems.map((item, index) => (
 											<Fragment key={item.familyId}>
 												{index > 0 && ', '}
-												<Link
-													to={`/fonts/${item.familyId}/use?from=selected-fonts`}
-												>
+												<Link to={getProjectEditUrl(item)}>
 													{item.displayName}
 												</Link>
 											</Fragment>
@@ -569,8 +660,8 @@ const CurrentProjectPage = () => {
 						</ul>
 						{unverifiedItems.length > 0 && (
 							<p className={classes.licenseWarning}>
-								Open each family above, review its registry license, then choose
-								“Update font set” to refresh this receipt before redistributing
+								Open each family above, review its registry license, then save
+								the setup again to refresh this receipt before redistributing
 								the files.
 							</p>
 						)}

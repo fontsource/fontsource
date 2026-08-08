@@ -83,6 +83,9 @@ describe('current project store', () => {
 	it('preserves exact package and registry license metadata', () => {
 		const licensedItem = {
 			...fraunces,
+			cssFiles: ['latin-wght-normal.css', 'latin-wght-italic.css'],
+			styles: ['normal', 'italic'] as const,
+			weights: [400, 700],
 			packageVersion: '5.3.1',
 			status: 'deprecated' as const,
 			license: {
@@ -98,6 +101,9 @@ describe('current project store', () => {
 		});
 
 		expect(snapshot.items[0]).toMatchObject({
+			cssFiles: licensedItem.cssFiles,
+			styles: licensedItem.styles,
+			weights: licensedItem.weights,
 			packageVersion: '5.3.1',
 			status: 'deprecated',
 			license: licensedItem.license,

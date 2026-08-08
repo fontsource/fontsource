@@ -123,6 +123,10 @@
 	opacity: 0.82;
 }
 
+.taskTabCompact {
+	display: none;
+}
+
 .taskPanel {
 	min-width: 0;
 	margin-top: 16px;
@@ -166,9 +170,53 @@
 	line-height: 1.55;
 }
 
+.downloadDetails .downloadOutcome {
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	font-weight: 600;
+}
+
+.downloadDetails .downloadContents {
+	max-width: 58ch;
+	margin-top: 7px;
+	font-size: 0.8125rem;
+}
+
 .downloadAction {
 	display: grid;
 	gap: 12px;
+}
+
+.fontSetPrompt {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	padding: 15px 0 0;
+}
+
+.downloadAction .fontSetPrompt {
+	border-top: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+}
+
+.fontSetPrompt p {
+	display: grid;
+	gap: 3px;
+	min-width: 0;
+	margin: 0;
+}
+
+.fontSetPrompt strong {
+	font-size: 14px;
+	font-weight: 650;
+}
+
+.fontSetPrompt span {
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 13px;
+	line-height: 1.45;
 }
 
 .primaryButton {
@@ -197,8 +245,7 @@
 .methodSwitch,
 .formatSwitch,
 .manager,
-.optionGroup,
-.presetGroup {
+.optionGroup {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -218,7 +265,8 @@
 .methodSwitch button,
 .formatSwitch button,
 .manager button,
-.customizeButton {
+.customizeButton,
+.resetButton {
 	border: 0;
 	background: transparent;
 	color: light-dark(#52617a, #9ca8bd);
@@ -326,25 +374,34 @@
 	line-height: 1.45;
 }
 
-.customizeButton {
+.setupActions {
+	display: flex;
+	flex: 0 0 auto;
+	align-items: center;
+	gap: 16px;
+}
+
+.customizeButton,
+.resetButton {
 	flex: 0 0 auto;
 	min-height: 44px;
 	padding: 0 2px;
-	color: var(--mantine-color-purple-0);
 	font-size: 14px;
 	font-weight: 600;
 }
 
-.customizeButton:hover {
+.customizeButton {
+	color: var(--mantine-color-purple-0);
+}
+
+.resetButton {
+	color: light-dark(#52617a, #9ca8bd);
+}
+
+.customizeButton:hover,
+.resetButton:hover {
 	text-decoration: underline;
 	text-underline-offset: 3px;
-}
-
-.previewHandoff {
-	margin: 10px 0 0;
-	color: var(--mantine-color-purple-0);
-	font-size: 14px;
-	font-weight: 600;
 }
 
 .customization {
@@ -380,55 +437,48 @@
 
 .optionGroup legend,
 .manager legend,
-.formatSwitch legend,
-.presetGroup legend {
+.formatSwitch legend {
 	margin-bottom: 10px;
 	font-size: 14px;
 	font-weight: 650;
 }
 
 .optionGroup > div,
-.manager > div,
-.presetGroup > div {
+.manager > div {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 7px;
 }
 
-.presetGroup button {
-	min-height: 40px;
-	padding: 0 12px;
-	border: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
-	border-radius: 4px;
-	background: transparent;
-	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
-	font: inherit;
+.selectionHelp,
+.formatSummary {
+	max-width: 62ch;
+	color: light-dark(#52617a, #9ca8bd);
 	font-size: 14px;
-	cursor: pointer;
+	line-height: 1.5;
 }
 
-.presetGroup button:hover,
-.presetGroup button[aria-pressed="true"] {
-	border-color: var(--mantine-color-purple-0);
-	background: light-dark(#f5f7f9, #121b31);
-	color: light-dark(#4338ca, #c2bfff);
+.selectionHelp {
+	margin: -3px 0 10px;
+}
+
+.formatSummary {
+	margin: -4px 0 0;
 }
 
 .optionGroup label {
 	display: inline-flex;
 	align-items: center;
 	gap: 7px;
-	min-height: 40px;
-	padding: 0 11px;
+	min-height: 44px;
+	padding: 8px 11px;
 	border: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
 	);
 	border-radius: 4px;
 	font-size: 14px;
+	line-height: 1.3;
 	cursor: pointer;
 }
 
@@ -446,6 +496,10 @@
 
 .optionGroup input:disabled {
 	cursor: not-allowed;
+}
+
+.optionGroup label:has(input:disabled) {
+	cursor: default;
 }
 
 .axisControl {
@@ -470,7 +524,7 @@
 
 .axisControl input {
 	width: 100%;
-	min-height: 36px;
+	min-height: 44px;
 	margin: 0;
 	accent-color: var(--mantine-color-purple-0);
 }
@@ -481,7 +535,7 @@
 
 .manager button {
 	min-width: 44px;
-	min-height: 40px;
+	min-height: 44px;
 	padding: 0 10px;
 	border-radius: 4px;
 	font-family: var(--font-monospace);
@@ -495,14 +549,6 @@
 }
 
 .usageHelp {
-	margin: 12px 0 0;
-	color: light-dark(#52617a, #9ca8bd);
-	font-size: 14px;
-	line-height: 1.55;
-}
-
-.outputExplanation {
-	max-width: 64ch;
 	margin: 12px 0 0;
 	color: light-dark(#52617a, #9ca8bd);
 	font-size: 14px;
@@ -534,7 +580,7 @@
 .formatSwitch button:focus-visible,
 .manager button:focus-visible,
 .customizeButton:focus-visible,
-.presetGroup button:focus-visible,
+.resetButton:focus-visible,
 .optionGroup input:focus-visible,
 .axisControl input:focus-visible,
 .guideLink:focus-visible {
@@ -583,6 +629,17 @@
 		flex-direction: column;
 	}
 
+	.fontSetPrompt {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.setupActions {
+		align-self: flex-start;
+		flex-wrap: wrap;
+	}
+
 	.formatSwitch > div {
 		grid-template-columns: repeat(2, 1fr);
 		width: 100%;
@@ -595,8 +652,16 @@
 
 @media (max-width: 30em) {
 	.taskTabs button {
-		min-height: 88px;
+		min-height: 76px;
 		padding-inline: 14px;
+	}
+
+	.taskTabDesktop {
+		display: none;
+	}
+
+	.taskTabCompact {
+		display: inline;
 	}
 
 	.downloadPanel,
@@ -617,7 +682,7 @@
 	.formatSwitch button,
 	.manager button,
 	.customizeButton,
-	.presetGroup button {
+	.resetButton {
 		transition: none;
 	}
 }

@@ -22,10 +22,16 @@ const projectItemSchema = z.object({
 	subset: z.string().min(1),
 	style: z.enum(['normal', 'italic']),
 	weight: z.number(),
+	styles: z
+		.array(z.enum(['normal', 'italic']))
+		.min(1)
+		.optional(),
+	weights: z.array(z.number()).min(1).optional(),
 	axes: z.record(z.string(), z.number()),
 	packageName: z.string().min(1),
 	packageVersion: z.string().min(1),
 	cssFile: z.string().min(1),
+	cssFiles: z.array(z.string().min(1)).optional(),
 	fontFamily: z.string().min(1),
 	sampleText: z.string().min(1),
 	symbolInputModes: z.array(z.enum(['codepoint', 'name-ligature'])).default([]),

@@ -7,19 +7,30 @@ import type { ProjectItem } from './model';
 import classes from './ProjectAddButton.module.css';
 
 interface ProjectAddButtonProps {
+	includedLabel?: string;
 	item: ProjectItem;
+	label?: string;
 }
 
 interface Feedback {
 	previous?: ProjectItem;
 }
 
-const ProjectAddButton = ({ item }: ProjectAddButtonProps) => {
+const ProjectAddButton = ({
+	includedLabel = 'Update this setup',
+	item,
+	label = 'Add this setup',
+}: ProjectAddButtonProps) => {
 	const store = useCurrentProjectStore();
 	const ready = useValue(store.ready$);
 	const included = useValue(() => store.hasItem(item.familyId));
+	const [hydrated, setHydrated] = useState(false);
 	const [feedback, setFeedback] = useState<Feedback>();
 	const toastRef = useRef<HTMLDivElement>(null);
+	const interactive = hydrated && ready;
+	const displayIncluded = interactive && included;
+
+	useEffect(() => setHydrated(true), []);
 
 	useEffect(() => {
 		const toast = toastRef.current;
@@ -57,20 +68,20 @@ const ProjectAddButton = ({ item }: ProjectAddButtonProps) => {
 			<button
 				type="button"
 				className={classes.button}
-				disabled={!ready}
-				title={!ready ? 'Your font set is loading' : undefined}
+				disabled={!interactive}
+				title={!interactive ? 'Your font set is loading' : undefined}
 				onClick={addItem}
 			>
-				{included ? (
+				{displayIncluded ? (
 					<IconCheck aria-hidden size={18} />
 				) : (
 					<IconStack2 aria-hidden size={18} />
 				)}
-				{!ready
+				{!interactive
 					? 'Font set loading…'
-					: included
-						? 'Update this setup'
-						: 'Add this setup'}
+					: displayIncluded
+						? includedLabel
+						: label}
 			</button>
 			<div
 				ref={toastRef}
