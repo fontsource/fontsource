@@ -20,9 +20,9 @@ interface Feedback {
 
 const ProjectAddButton = ({
 	includedAction = 'update',
-	includedLabel = 'Update this setup',
+	includedLabel = 'Update font set',
 	item,
-	label = 'Add this setup',
+	label = 'Add to font set',
 	savedLabel = 'Saved in font set',
 }: ProjectAddButtonProps) => {
 	const store = useCurrentProjectStore();

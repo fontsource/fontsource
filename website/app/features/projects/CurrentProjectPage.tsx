@@ -35,6 +35,7 @@ import {
 } from './output';
 
 type DeliveryMethod = 'package' | 'cdn';
+type FontSetView = 'files' | 'website';
 type CssDownloadState = 'idle' | 'success' | 'error';
 type ZipDownloadState = 'idle' | 'preparing' | 'success' | 'error';
 
@@ -46,6 +47,80 @@ interface FontSetImportLocationState {
 		failedCount: number;
 	};
 }
+
+const FontSecondaryDetails = ({
+	item,
+	selectedSubsets,
+	tags,
+}: {
+	item: ProjectItem;
+	selectedSubsets: string[];
+	tags: string[];
+}) => {
+	const usageNote = item.registryFactsCurrent ? getUsageNote(item) : undefined;
+
+	return (
+		<>
+			{tags.length > 0 && (
+				<ul className={classes.tags}>
+					{tags.map((tag) => (
+						<li key={tag}>{formatFontLabel(tag)}</li>
+					))}
+				</ul>
+			)}
+			<dl className={classes.secondarySetup}>
+				<div className={classes.mobileSource}>
+					<dt>Source</dt>
+					<dd>
+						{item.designer ? `By ${item.designer} · ` : ''}
+						{formatFontLabel(item.classification)} · Package{' '}
+						{item.packageVersion}
+					</dd>
+				</div>
+				<div>
+					<dt>
+						{hasSymbolCatalog(item) ? 'Package subset' : 'Character subset'}
+					</dt>
+					<dd>
+						{hasSymbolCatalog(item)
+							? `${formatFontLabel(item.subset)} ${usesNameLigatures(item) ? 'symbol ligatures' : 'symbols'}`
+							: selectedSubsets.map(formatFontLabel).join(', ')}
+					</dd>
+				</div>
+				{item.fontDisplay && (
+					<div>
+						<dt>Font display</dt>
+						<dd>{formatFontLabel(item.fontDisplay)}</dd>
+					</div>
+				)}
+				{item.formats?.length && (
+					<div>
+						<dt>Webfont formats</dt>
+						<dd>
+							{item.formats.map((format) => format.toUpperCase()).join(', ')}
+						</dd>
+					</div>
+				)}
+				<div>
+					<dt>License</dt>
+					<dd>
+						{item.license.verified && item.license.url && item.license.id ? (
+							<a href={item.license.url} target="_blank" rel="noreferrer">
+								{item.license.id}
+								<IconExternalLink aria-hidden size={13} />
+							</a>
+						) : (
+							<Link to={`/fonts/${item.familyId}/about#license`}>
+								Needs verification
+							</Link>
+						)}
+					</dd>
+				</div>
+			</dl>
+			{usageNote && <p className={classes.usageNote}>{usageNote}</p>}
+		</>
+	);
+};
 
 const ProjectFont = ({
 	busy,
@@ -74,31 +149,40 @@ const ProjectFont = ({
 	const supportsLatin = selectedSubsets.some(
 		(subset) => subset === 'latin' || subset.startsWith('latin-'),
 	);
-	const specimenText = hasSymbolCatalog(item)
-		? usesNameLigatures(item)
-			? 'home settings favorite'
-			: item.sampleText
-		: isDigitalFamily(item)
-			? '0123456789'
-			: usesSpecializedSpecimen || !supportsLatin
-				? item.sampleText
-				: item.displayName;
-	const usageNote = item.registryFactsCurrent ? getUsageNote(item) : undefined;
+	const staleSpecializedSpecimen =
+		!item.registryFactsCurrent && usesSpecializedSpecimen;
+	const specimenText = staleSpecializedSpecimen
+		? item.displayName
+		: hasSymbolCatalog(item)
+			? usesNameLigatures(item)
+				? 'home settings favorite'
+				: item.sampleText
+			: isDigitalFamily(item)
+				? '0123456789'
+				: usesSpecializedSpecimen || !supportsLatin
+					? item.sampleText
+					: item.displayName;
 
 	return (
 		<article className={classes.fontRow}>
 			<link rel="stylesheet" href={getCdnUrl(item)} />
 			<div
 				className={classes.specimen}
+				data-ui-fallback={staleSpecializedSpecimen || undefined}
 				data-compact={
 					hasSymbolCatalog(item) || isDigitalFamily(item) || undefined
 				}
 				style={{
-					fontFamily: item.fontFamily,
-					fontFeatureSettings: usesNameLigatures(item) ? '"liga"' : undefined,
-					fontVariationSettings: variationSettings || undefined,
-					fontWeight: item.weight,
-					fontStyle: item.style,
+					fontFamily: staleSpecializedSpecimen ? undefined : item.fontFamily,
+					fontFeatureSettings:
+						!staleSpecializedSpecimen && usesNameLigatures(item)
+							? '"liga"'
+							: undefined,
+					fontVariationSettings: staleSpecializedSpecimen
+						? undefined
+						: variationSettings || undefined,
+					fontWeight: staleSpecializedSpecimen ? undefined : item.weight,
+					fontStyle: staleSpecializedSpecimen ? undefined : item.style,
 				}}
 			>
 				{specimenText}
@@ -107,7 +191,7 @@ const ProjectFont = ({
 				<div className={classes.fontTitle}>
 					<div>
 						<h2>{item.displayName}</h2>
-						<p>
+						<p className={classes.fontMeta}>
 							{item.designer ? `By ${item.designer} · ` : ''}
 							{formatFontLabel(item.classification)} · Package{' '}
 							{item.packageVersion}
@@ -117,69 +201,37 @@ const ProjectFont = ({
 						<span className={classes.status}>Deprecated</span>
 					)}
 				</div>
-				<div className={classes.expandedDetails}>
-					{tags.length > 0 && (
-						<ul className={classes.tags}>
-							{tags.map((tag) => (
-								<li key={tag}>{formatFontLabel(tag)}</li>
-							))}
-						</ul>
-					)}
-					<dl className={classes.setup}>
-						<div>
-							<dt>Font type</dt>
-							<dd>{formatFontLabel(item.format)}</dd>
-						</div>
-						<div>
-							<dt>
-								{hasSymbolCatalog(item) ? 'Package subset' : 'Character subset'}
-							</dt>
-							<dd>
-								{hasSymbolCatalog(item)
-									? `${formatFontLabel(item.subset)} ${usesNameLigatures(item) ? 'symbol ligatures' : 'symbols'}`
-									: selectedSubsets.map(formatFontLabel).join(', ')}
-							</dd>
-						</div>
-						<div>
-							<dt>Weight &amp; style</dt>
-							<dd>{setupSelection}</dd>
-						</div>
-						{item.fontDisplay && (
-							<div>
-								<dt>Font display</dt>
-								<dd>{formatFontLabel(item.fontDisplay)}</dd>
-							</div>
-						)}
-						{item.formats?.length && (
-							<div>
-								<dt>Webfont formats</dt>
-								<dd>
-									{item.formats
-										.map((format) => format.toUpperCase())
-										.join(', ')}
-								</dd>
-							</div>
-						)}
-						<div>
-							<dt>License</dt>
-							<dd>
-								{item.license.verified &&
-								item.license.url &&
-								item.license.id ? (
-									<a href={item.license.url} target="_blank" rel="noreferrer">
-										{item.license.id}
-										<IconExternalLink aria-hidden size={13} />
-									</a>
-								) : (
-									<Link to={`/fonts/${item.familyId}/about#license`}>
-										Needs verification
-									</Link>
-								)}
-							</dd>
-						</div>
-					</dl>
-					{usageNote && <p className={classes.usageNote}>{usageNote}</p>}
+				{!item.registryFactsCurrent && (
+					<p className={classes.staleSetup}>
+						<span>Saved setup needs refresh.</span>{' '}
+						<Link to={getProjectEditUrl(item)}>Refresh setup</Link>
+					</p>
+				)}
+				<dl className={classes.primarySetup}>
+					<div>
+						<dt>Font type</dt>
+						<dd>{formatFontLabel(item.format)}</dd>
+					</div>
+					<div>
+						<dt>Weight &amp; style</dt>
+						<dd>{setupSelection}</dd>
+					</div>
+				</dl>
+				<div className={classes.desktopSecondary}>
+					<FontSecondaryDetails
+						item={item}
+						selectedSubsets={selectedSubsets}
+						tags={tags}
+					/>
 				</div>
+				<details className={classes.mobileSecondary}>
+					<summary>More details</summary>
+					<FontSecondaryDetails
+						item={item}
+						selectedSubsets={selectedSubsets}
+						tags={tags}
+					/>
+				</details>
 				<div className={classes.rowActions}>
 					<Link
 						to={getProjectEditUrl(item)}
@@ -218,6 +270,7 @@ const CurrentProjectPage = () => {
 		deserialize: (value) =>
 			deserializeStoredChoice(value, ['package', 'cdn'] as const, 'package'),
 	});
+	const [view, setView] = useState<FontSetView>('files');
 	const [packageManager, setPackageManager] = useLocalStorage({
 		key: 'package-manager',
 		defaultValue: 'pnpm',
@@ -234,7 +287,6 @@ const CurrentProjectPage = () => {
 	const [zipError, setZipError] = useState<string>();
 	const zipAbortController = useRef<AbortController | undefined>(undefined);
 	const singleItem = items.length === 1 ? items[0] : undefined;
-	const showDelivery = items.length > 0;
 	const zipBusy = zipDownloadState === 'preparing';
 	const packageNames = items
 		.map((item) => `${item.packageName}@${item.packageVersion}`)
@@ -362,15 +414,29 @@ const CurrentProjectPage = () => {
 						<Link className={classes.generateLink} to="/">
 							Browse more fonts
 						</Link>
-						<a href="#selected-fonts-code">Website setup</a>
-						<AddFontSetToCollectionMenu fonts={collectionFonts} />
-						<button
-							type="button"
-							disabled={zipBusy}
-							onClick={() => setClearConfirmationOpen(true)}
-						>
-							Remove all fonts
-						</button>
+						<div className={classes.desktopUtilities}>
+							<AddFontSetToCollectionMenu fonts={collectionFonts} />
+							<button
+								type="button"
+								disabled={zipBusy}
+								onClick={() => setClearConfirmationOpen(true)}
+							>
+								Remove all fonts
+							</button>
+						</div>
+						<details className={classes.mobileUtilities}>
+							<summary>More actions</summary>
+							<div>
+								<AddFontSetToCollectionMenu fonts={collectionFonts} />
+								<button
+									type="button"
+									disabled={zipBusy}
+									onClick={() => setClearConfirmationOpen(true)}
+								>
+									Remove all fonts
+								</button>
+							</div>
+						</details>
 					</div>
 				)}
 			</header>
@@ -447,47 +513,70 @@ const CurrentProjectPage = () => {
 						))}
 					</section>
 
-					<section
-						className={classes.archiveDownload}
-						aria-labelledby="font-set-download-heading"
-					>
-						<div>
-							<h2 id="font-set-download-heading">Download font set</h2>
-							<p>
-								Get the latest complete desktop and web files for every family,
-								organized by font. Each folder includes local CSS;
-								fontsource-font-set-cdn.css preserves your saved website
-								versions.
-							</p>
-							{zipDownloadState !== 'idle' && (
-								<span
-									className={classes.downloadFeedback}
-									data-error={zipDownloadState === 'error' || undefined}
-									role="status"
-								>
-									{zipDownloadState === 'preparing'
-										? `Preparing ${zipProgress} of ${items.length} ${items.length === 1 ? 'font' : 'fonts'}…`
-										: zipDownloadState === 'success'
-											? 'Font set download started.'
-											: zipError}
-								</span>
-							)}
-						</div>
+					<nav className={classes.taskSwitch} aria-label="Font set output">
 						<button
 							type="button"
-							disabled={zipDownloadState === 'preparing'}
-							onClick={downloadZip}
+							aria-pressed={view === 'files'}
+							data-active={view === 'files' || undefined}
+							onClick={() => setView('files')}
 						>
-							<IconDownload aria-hidden size={18} />
-							{zipDownloadState === 'preparing'
-								? 'Preparing ZIP…'
-								: zipDownloadState === 'error'
-									? 'Try ZIP download again'
-									: 'Download all families (.zip)'}
+							<strong>Files</strong>
+							<span>Download complete font families</span>
 						</button>
-					</section>
+						<button
+							type="button"
+							aria-pressed={view === 'website'}
+							data-active={view === 'website' || undefined}
+							onClick={() => setView('website')}
+						>
+							<strong>Website</strong>
+							<span>Generate package or CDN code</span>
+						</button>
+					</nav>
 
-					{showDelivery && (
+					{view === 'files' && (
+						<section
+							className={classes.archiveDownload}
+							aria-labelledby="font-set-download-heading"
+						>
+							<div>
+								<h2 id="font-set-download-heading">Download font set</h2>
+								<p>
+									Get the latest complete desktop and web files for every
+									family, organized by font. Each folder includes local CSS;
+									fontsource-font-set-cdn.css preserves your saved website
+									versions.
+								</p>
+								{zipDownloadState !== 'idle' && (
+									<span
+										className={classes.downloadFeedback}
+										data-error={zipDownloadState === 'error' || undefined}
+										role="status"
+									>
+										{zipDownloadState === 'preparing'
+											? `Preparing ${zipProgress} of ${items.length} ${items.length === 1 ? 'font' : 'fonts'}…`
+											: zipDownloadState === 'success'
+												? 'Font set download started.'
+												: zipError}
+									</span>
+								)}
+							</div>
+							<button
+								type="button"
+								disabled={zipDownloadState === 'preparing'}
+								onClick={downloadZip}
+							>
+								<IconDownload aria-hidden size={18} />
+								{zipDownloadState === 'preparing'
+									? 'Preparing ZIP…'
+									: zipDownloadState === 'error'
+										? 'Try ZIP download again'
+										: 'Download all families (.zip)'}
+							</button>
+						</section>
+					)}
+
+					{view === 'website' && (
 						<section
 							className={classes.delivery}
 							id="selected-fonts-code"
@@ -720,8 +809,9 @@ const CurrentProjectPage = () => {
 				title="Clear this font set?"
 			>
 				<Text c="dimmed" fz="sm">
-					This removes {items.length} {items.length === 1 ? 'font' : 'fonts'}
-					and their saved website settings from this browser.
+					This removes {items.length} {items.length === 1 ? 'font' : 'fonts'}{' '}
+					and {items.length === 1 ? 'its' : 'their'} saved website settings from
+					this browser.
 				</Text>
 				<Group justify="flex-end" mt="xl">
 					<Button

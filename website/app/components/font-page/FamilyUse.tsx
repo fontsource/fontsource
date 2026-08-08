@@ -411,16 +411,17 @@ export const FamilyUse = ({
 							/>
 							<div className={classes.fontSetPrompt}>
 								<p>
-									<strong>Build a font set</strong>
+									<strong>Keep browsing</strong>
 									<span>
-										Save this family, keep browsing, then download every family
-										together.
+										Add this family to your font set, then download every saved
+										family together.
 									</span>
 								</p>
 								<ProjectAddButton
 									includedLabel="Update font set"
 									item={fontSetItem}
 									label="Add to font set"
+									savedLabel="Saved in font set"
 								/>
 							</div>
 						</div>
@@ -774,12 +775,18 @@ export const FamilyUse = ({
 
 						<div className={classes.fontSetPrompt}>
 							<p>
-								<strong>Combine with other fonts</strong>
+								<strong>Keep browsing</strong>
 								<span>
-									Save this website setup and generate one set of code later.
+									Add this website setup to your font set and generate combined
+									code later.
 								</span>
 							</p>
-							<ProjectAddButton item={fontSetItem} />
+							<ProjectAddButton
+								includedLabel="Update font set"
+								item={fontSetItem}
+								label="Add to font set"
+								savedLabel="Saved in font set"
+							/>
 						</div>
 
 						{method === 'package' && (
