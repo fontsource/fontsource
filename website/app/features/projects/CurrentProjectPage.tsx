@@ -56,7 +56,6 @@ const ProjectFont = ({
 	const selectedStyles = item.styles ?? [item.style];
 	const selectedWeights = item.weights ?? [item.weight];
 	const setupSelection = `${selectedStyles.map(formatFontLabel).join(' + ')} · weights ${selectedWeights.join(' + ')}`;
-	const editSetupUrl = getProjectEditUrl(item);
 	const usageNote = item.registryFactsCurrent
 		? getUsageNote(item)
 		: 'Registry behavior facts are missing from this saved setup. Open the family and update it before using generated code.';
@@ -162,7 +161,7 @@ const ProjectFont = ({
 					{usageNote && <p className={classes.usageNote}>{usageNote}</p>}
 				</div>
 				<div className={classes.rowActions}>
-					<Link to={editSetupUrl}>Edit setup</Link>
+					<Link to={getProjectEditUrl(item)}>Edit setup</Link>
 					<button
 						type="button"
 						aria-expanded={expanded}
