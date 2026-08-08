@@ -32,6 +32,17 @@ const projectItemSchema = z.object({
 	packageVersion: z.string().min(1),
 	cssFile: z.string().min(1),
 	cssFiles: z.array(z.string().min(1)).optional(),
+	subsets: z.array(z.string().min(1)).min(1).optional(),
+	activeAxes: z.array(z.string().min(1)).min(1).optional(),
+	formats: z
+		.array(z.enum(['woff2', 'woff']))
+		.min(1)
+		.optional(),
+	fontDisplay: z
+		.enum(['auto', 'swap', 'block', 'fallback', 'optional'])
+		.optional(),
+	packageFontFaceCSS: z.string().min(1).optional(),
+	cdnFontFaceCSS: z.string().min(1).optional(),
 	fontFamily: z.string().min(1),
 	sampleText: z.string().min(1),
 	symbolInputModes: z.array(z.enum(['codepoint', 'name-ligature'])).default([]),

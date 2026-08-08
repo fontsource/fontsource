@@ -119,6 +119,25 @@ describe('current project output', () => {
 		);
 	});
 
+	it('preserves generated font-face CSS and its editable setup', () => {
+		const configuredItem = {
+			...baseItem,
+			subsets: ['latin', 'cyrillic'],
+			activeAxes: ['wght', 'SOFT'],
+			formats: ['woff2'] as ProjectItem['formats'],
+			fontDisplay: 'optional' as const,
+			packageFontFaceCSS: '@font-face { src: url(package-font.woff2); }',
+			cdnFontFaceCSS: '@font-face { src: url(cdn-font.woff2); }',
+		};
+
+		const editUrl = getProjectEditUrl(configuredItem);
+		expect(editUrl).toContain('subsets=latin%2Ccyrillic');
+		expect(editUrl).toContain('activeAxes=wght%2CSOFT');
+		expect(editUrl).toContain('display=optional');
+		expect(getProjectCss([configuredItem])).toContain('cdn-font.woff2');
+		expect(getProjectCss([configuredItem])).not.toContain('latin-full.css');
+	});
+
 	it('uses specialist fallback and readout declarations', () => {
 		const yakuHan = {
 			...baseItem,

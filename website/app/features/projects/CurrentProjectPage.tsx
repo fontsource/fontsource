@@ -17,7 +17,7 @@ import {
 	packageManagerValues,
 } from '@/utils/docs/packageManagers';
 import { triggerBlobDownload } from '@/utils/download';
-import { formatFontLabel } from '@/utils/font-labels';
+import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
 
 import classes from './CurrentProjectPage.module.css';
 import { useCurrentProjectStore } from './CurrentProjectProvider';
@@ -52,10 +52,20 @@ const ProjectFont = ({
 		.map(([axis, value]) => `"${axis}" ${value}`)
 		.join(', ');
 	const tags = item.tags.slice(0, 2);
-	const stylesheetCount = getProjectCssFiles(item).length;
+	const stylesheetCount = item.cdnFontFaceCSS
+		? (item.cdnFontFaceCSS.match(/@font-face/g) ?? []).length
+		: getProjectCssFiles(item).length;
 	const selectedStyles = item.styles ?? [item.style];
 	const selectedWeights = item.weights ?? [item.weight];
-	const setupSelection = `${selectedStyles.map(formatFontLabel).join(' + ')} · weights ${selectedWeights.join(' + ')}`;
+	const selectedSubsets = item.subsets ?? [item.subset];
+	const setupSelection =
+		item.format === 'variable'
+			? `${selectedStyles.map(formatFontLabel).join(' + ')} · ${item.activeAxes?.map(getAxisLabel).join(' + ') ?? 'Variable axes'}`
+			: `${selectedStyles.map(formatFontLabel).join(' + ')} · weights ${selectedWeights.join(' + ')}`;
+	const subsetSelection =
+		selectedSubsets.length === 1
+			? formatFontLabel(selectedSubsets[0])
+			: `${selectedSubsets.length} character sets`;
 	const usageNote = item.registryFactsCurrent
 		? getUsageNote(item)
 		: 'Registry behavior facts are missing from this saved setup. Open the family and update it before using generated code.';
@@ -105,7 +115,7 @@ const ProjectFont = ({
 						? usesNameLigatures(item)
 							? 'Symbol ligatures'
 							: 'Symbol catalog'
-						: formatFontLabel(item.subset)}{' '}
+						: subsetSelection}{' '}
 					· {setupSelection}
 					{stylesheetCount > 1 ? ` · ${stylesheetCount} stylesheets` : ''}
 				</p>
@@ -133,13 +143,29 @@ const ProjectFont = ({
 							<dd>
 								{hasSymbolCatalog(item)
 									? `${formatFontLabel(item.subset)} ${usesNameLigatures(item) ? 'symbol ligatures' : 'symbols'}`
-									: formatFontLabel(item.subset)}
+									: selectedSubsets.map(formatFontLabel).join(', ')}
 							</dd>
 						</div>
 						<div>
 							<dt>Weight &amp; style</dt>
 							<dd>{setupSelection}</dd>
 						</div>
+						{item.fontDisplay && (
+							<div>
+								<dt>Font display</dt>
+								<dd>{formatFontLabel(item.fontDisplay)}</dd>
+							</div>
+						)}
+						{item.formats?.length && (
+							<div>
+								<dt>Webfont formats</dt>
+								<dd>
+									{item.formats
+										.map((format) => format.toUpperCase())
+										.join(', ')}
+								</dd>
+							</div>
+						)}
 						<div>
 							<dt>License</dt>
 							<dd>
@@ -214,16 +240,18 @@ const CurrentProjectPage = () => {
 	const installCommand = getPackageManagerCommand(packageManager, packageNames);
 	const imports = items
 		.flatMap((item) =>
-			getProjectCssFiles(item).map(
-				(file) => `import '${item.packageName}/${file}';`,
-			),
+			item.packageFontFaceCSS
+				? [item.packageFontFaceCSS]
+				: getProjectCssFiles(item).map(
+						(file) => `@import '${item.packageName}/${file}';`,
+					),
 		)
 		.join('\n');
 	const cdnLinks = items
 		.flatMap((item) =>
-			getProjectCdnUrls(item).map(
-				(url) => `<link rel="stylesheet" href="${url}">`,
-			),
+			item.cdnFontFaceCSS
+				? [item.cdnFontFaceCSS]
+				: getProjectCdnUrls(item).map((url) => `@import url('${url}');`),
 		)
 		.join('\n');
 	const usageCss = items.map(getUsageBlock).join('\n\n');
@@ -555,16 +583,16 @@ const CurrentProjectPage = () => {
 												language="sh"
 											/>
 											<CopyCodeBlock
-												label={`2 · Import font ${singleItem ? 'style' : 'styles'}`}
+												label="2 · Add font-face CSS"
 												code={imports}
-												language="js"
+												language="css"
 											/>
 										</>
 									) : (
 										<CopyCodeBlock
-											label="1 · Add stylesheet links to HTML"
+											label="1 · Add font-face CSS"
 											code={cdnLinks}
-											language="html"
+											language="css"
 										/>
 									)}
 									<CopyCodeBlock
