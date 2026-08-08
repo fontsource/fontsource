@@ -265,7 +265,6 @@
 .methodSwitch button,
 .formatSwitch button,
 .manager button,
-.customizeButton,
 .resetButton {
 	border: 0;
 	background: transparent;
@@ -316,29 +315,19 @@
 	line-height: 1.55;
 }
 
-.setupSummary {
+.configurationHeading {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 18px;
-	margin-top: 22px;
-	padding: 16px 0;
-	border-top: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
-	border-bottom: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
 }
 
-.setupSummary > div {
+.configurationHeading > div {
 	display: grid;
 	gap: 4px;
 }
 
-.setupSummary strong {
+.configurationHeading strong {
 	font-size: 14px;
 	font-weight: 650;
 	line-height: 1.4;
@@ -368,20 +357,12 @@
 	font-weight: 600;
 }
 
-.setupSummary span {
+.configurationHeading span {
 	color: light-dark(#52617a, #9ca8bd);
 	font-size: 14px;
 	line-height: 1.45;
 }
 
-.setupActions {
-	display: flex;
-	flex: 0 0 auto;
-	align-items: center;
-	gap: 16px;
-}
-
-.customizeButton,
 .resetButton {
 	flex: 0 0 auto;
 	min-height: 44px;
@@ -390,24 +371,20 @@
 	font-weight: 600;
 }
 
-.customizeButton {
-	color: var(--mantine-color-purple-0);
-}
-
 .resetButton {
 	color: light-dark(#52617a, #9ca8bd);
 }
 
-.customizeButton:hover,
 .resetButton:hover {
 	text-decoration: underline;
 	text-underline-offset: 3px;
 }
 
-.customization {
+.configuration {
 	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 22px;
-	margin-top: 14px;
+	margin-top: 22px;
 	padding: 22px 0;
 	border-top: light-dark(
 		1px solid var(--mantine-color-border-0),
@@ -419,20 +396,10 @@
 	);
 }
 
-.customizationHeading {
-	display: grid;
-	gap: 4px;
-}
-
-.customizationHeading strong {
-	font-size: 15px;
-	font-weight: 650;
-}
-
-.customizationHeading span {
-	color: light-dark(#52617a, #9ca8bd);
-	font-size: 14px;
-	line-height: 1.5;
+.configurationHeading,
+.configuration > .formatSwitch,
+.configuration > .formatSummary {
+	grid-column: 1 / -1;
 }
 
 .optionGroup legend,
@@ -579,7 +546,6 @@
 .methodSwitch button:focus-visible,
 .formatSwitch button:focus-visible,
 .manager button:focus-visible,
-.customizeButton:focus-visible,
 .resetButton:focus-visible,
 .optionGroup input:focus-visible,
 .axisControl input:focus-visible,
@@ -624,9 +590,13 @@
 		width: 100%;
 	}
 
-	.setupSummary {
+	.configurationHeading {
 		align-items: stretch;
 		flex-direction: column;
+	}
+
+	.configuration {
+		grid-template-columns: 1fr;
 	}
 
 	.fontSetPrompt {
@@ -635,17 +605,12 @@
 		gap: 12px;
 	}
 
-	.setupActions {
-		align-self: flex-start;
-		flex-wrap: wrap;
-	}
-
 	.formatSwitch > div {
 		grid-template-columns: repeat(2, 1fr);
 		width: 100%;
 	}
 
-	.customizeButton {
+	.resetButton {
 		align-self: flex-start;
 	}
 }
@@ -681,7 +646,6 @@
 	.methodSwitch button,
 	.formatSwitch button,
 	.manager button,
-	.customizeButton,
 	.resetButton {
 		transition: none;
 	}

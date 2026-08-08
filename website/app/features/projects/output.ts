@@ -28,6 +28,11 @@ const getProjectEditUrl = (item: ProjectItem) => {
 		styles: (item.styles ?? [item.style]).join(','),
 		weights: (item.weights ?? [item.weight]).join(','),
 	});
+	if (item.subsets?.length) params.set('subsets', item.subsets.join(','));
+	if (item.activeAxes?.length)
+		params.set('activeAxes', item.activeAxes.join(','));
+	if (item.formats?.length) params.set('formats', item.formats.join(','));
+	if (item.fontDisplay) params.set('display', item.fontDisplay);
 	const axes = Object.entries(item.axes)
 		.map(([axis, value]) => `${axis}:${value}`)
 		.join(',');
@@ -164,7 +169,9 @@ const getProjectCss = (items: ProjectItem[]) => {
 		.join('\n');
 	const imports = items
 		.flatMap((item) =>
-			getProjectCdnUrls(item).map((url) => `@import url('${url}');`),
+			item.cdnFontFaceCSS
+				? [item.cdnFontFaceCSS]
+				: getProjectCdnUrls(item).map((url) => `@import url('${url}');`),
 		)
 		.join('\n');
 	const usage = items.map(getUsageBlock).join('\n\n');

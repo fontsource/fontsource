@@ -84,6 +84,12 @@ describe('current project store', () => {
 		const licensedItem = {
 			...fraunces,
 			cssFiles: ['latin-wght-normal.css', 'latin-wght-italic.css'],
+			subsets: ['latin', 'cyrillic'],
+			activeAxes: ['wght', 'SOFT'],
+			formats: ['woff2'] as const,
+			fontDisplay: 'optional' as const,
+			packageFontFaceCSS: '@font-face { src: url(package-font.woff2); }',
+			cdnFontFaceCSS: '@font-face { src: url(cdn-font.woff2); }',
 			styles: ['normal', 'italic'] as const,
 			weights: [400, 700],
 			packageVersion: '5.3.1',
@@ -102,6 +108,12 @@ describe('current project store', () => {
 
 		expect(snapshot.items[0]).toMatchObject({
 			cssFiles: licensedItem.cssFiles,
+			subsets: licensedItem.subsets,
+			activeAxes: licensedItem.activeAxes,
+			formats: licensedItem.formats,
+			fontDisplay: licensedItem.fontDisplay,
+			packageFontFaceCSS: licensedItem.packageFontFaceCSS,
+			cdnFontFaceCSS: licensedItem.cdnFontFaceCSS,
 			styles: licensedItem.styles,
 			weights: licensedItem.weights,
 			packageVersion: '5.3.1',
