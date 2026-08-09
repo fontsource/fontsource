@@ -18,6 +18,7 @@ import {
 } from 'react-instantsearch';
 import {
 	data,
+	type HeadersFunction,
 	type LinksFunction,
 	type LoaderFunctionArgs,
 	type MetaFunction,
@@ -42,6 +43,7 @@ import { normalizeCollectionName } from '@/features/collections/model';
 import type { CollectionsStore } from '@/features/collections/store';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
+import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
 import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
@@ -89,6 +91,14 @@ export const meta: MetaFunction = ({ location }) => [
 	...ogMeta({}),
 	...(location.search ? [{ name: 'robots', content: 'noindex, follow' }] : []),
 ];
+
+export const headers: HeadersFunction = ({ parentHeaders }) => {
+	for (const link of HOME_DISCOVERY_LINKS) {
+		parentHeaders.append('Link', link);
+	}
+
+	return parentHeaders;
+};
 
 const sortMap: Record<string, string> = {
 	prod_POPULAR: 'popular',
