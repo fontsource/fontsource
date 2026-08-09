@@ -27,11 +27,10 @@ import {
 	IconTrash,
 	IconX,
 } from '@tabler/icons-react';
-import { type FormEvent, useEffect, useRef, useState } from 'react';
-import { useFetcher, useNavigate } from 'react-router';
+import { type FormEvent, useRef, useState } from 'react';
+import { useNavigate } from 'react-router';
 
-import { useCurrentProjectStore } from '@/features/projects/CurrentProjectProvider';
-import type { ProjectItem } from '@/features/projects/model';
+import { useCurrentProjectStoreOptional } from '@/features/projects/CurrentProjectProvider';
 import type { FontSummary } from '@/utils/font-summary';
 import classes from './CollectionManager.module.css';
 import menuClasses from './CollectionMenu.module.css';
@@ -57,13 +56,6 @@ interface ManageCollectionsModalProps {
 	onExitTransitionEnd: () => void;
 	onViewCollection: (collectionId: string) => void;
 	opened: boolean;
-}
-
-interface FontSetItemsResponse {
-	requestId: string;
-	items: ProjectItem[];
-	failedIds: string[];
-	error?: string;
 }
 
 const getDuplicateName = (
@@ -197,22 +189,17 @@ const ManageCollectionsModal = ({
 	opened,
 }: ManageCollectionsModalProps) => {
 	const store = useCollectionsStore();
-	const projectStore = useCurrentProjectStore();
+	const projectStore = useCurrentProjectStoreOptional();
 	const navigate = useNavigate();
-	const fontSetFetcher = useFetcher<FontSetItemsResponse>();
 	const collections = useValue(store.getCollections);
 	const fontCache = useValue(store.state$.fontCache);
-	const fontSetReady = useValue(projectStore.ready$);
+	const fontSetReady = useValue(() => projectStore?.ready$.get() ?? false);
 	const fullScreen = useMediaQuery('(max-width: 48em)');
 	const [query, setQuery] = useState('');
 	const [editingId, setEditingId] = useState<string | null>(null);
 	const [editingName, setEditingName] = useState('');
 	const [pendingDeleteId, setPendingDeleteId] = useState<string | null>(null);
 	const [announcement, setAnnouncement] = useState('');
-	const [pendingCollectionId, setPendingCollectionId] = useState<string | null>(
-		null,
-	);
-	const handledRequestId = useRef<string | undefined>(undefined);
 	const searchRef = useRef<HTMLInputElement>(null);
 	const normalizedQuery = normalizeCollectionName(query);
 	const visibleCollections = normalizedQuery
@@ -255,75 +242,43 @@ const ManageCollectionsModal = ({
 		onClose();
 	};
 
-	useEffect(() => {
-		const result = fontSetFetcher.data;
-		if (!result || handledRequestId.current === result.requestId) return;
-		handledRequestId.current = result.requestId;
+	const addCollectionToFontSet = (collectionId: string) => {
+		const collection = collections.find((item) => item.id === collectionId);
+		if (!projectStore || !collection || collection.fontIds.length === 0) return;
 
-		const collection = collections.find(
-			(item) => item.id === pendingCollectionId,
+		const existingIds = new Set(
+			projectStore.getItems().map((item) => item.familyId),
 		);
-		if (result.error) {
-			setAnnouncement(result.error);
-			setPendingCollectionId(null);
-			return;
-		}
-		const addedCount = projectStore.addItems(result.items);
-		const existingCount = result.items.length - addedCount;
-		const parts = [
+		const existingCount = collection.fontIds.filter((familyId) =>
+			existingIds.has(familyId),
+		).length;
+		const { addedCount, limitReached } = projectStore.addItems(
+			collection.fontIds.map((familyId) => ({ familyId })),
+		);
+		const skippedCount = collection.fontIds.length - existingCount - addedCount;
+		const importSummary = [
 			addedCount > 0
 				? `${addedCount} ${addedCount === 1 ? 'font' : 'fonts'} added`
 				: undefined,
 			existingCount > 0
 				? `${existingCount} already in your font set`
 				: undefined,
-			result.failedIds.length > 0
-				? `${result.failedIds.length} unavailable`
-				: undefined,
+			limitReached ? 'font set limit reached' : undefined,
 		].filter(Boolean);
-		setAnnouncement(
-			`${collection?.name ?? 'Collection'}: ${parts.join(', ') || 'no fonts to add'}.`,
-		);
-		setPendingCollectionId(null);
-
-		if (result.items.length > 0) {
-			setQuery('');
-			setEditingId(null);
-			setPendingDeleteId(null);
-			onClose();
-			navigate('/selected-fonts', {
-				state: {
-					fontSetImport: {
-						collectionName: collection?.name ?? 'Collection',
-						addedCount,
-						existingCount,
-						failedCount: result.failedIds.length,
-					},
+		setAnnouncement(`${collection.name}: ${importSummary.join(', ')}.`);
+		setQuery('');
+		setEditingId(null);
+		setPendingDeleteId(null);
+		onClose();
+		navigate('/selected-fonts', {
+			state: {
+				fontSetImport: {
+					collectionName: collection.name,
+					addedCount,
+					existingCount,
+					skippedCount,
 				},
-			});
-		}
-	}, [
-		collections,
-		fontSetFetcher.data,
-		navigate,
-		onClose,
-		pendingCollectionId,
-		projectStore,
-	]);
-
-	const addCollectionToFontSet = (
-		collectionId: string,
-		fontIds: readonly string[],
-	) => {
-		const formData = new FormData();
-		const requestId = crypto.randomUUID();
-		formData.set('requestId', requestId);
-		for (const fontId of fontIds) formData.append('fontId', fontId);
-		setAnnouncement('');
-		setPendingCollectionId(collectionId);
-		fontSetFetcher.submit(formData, {
-			action: '/resources/font-set-items',
-			method: 'post',
+			},
 		});
 	};
 
@@ -498,19 +453,10 @@ const ManageCollectionsModal = ({
 														<ActionIcon
 															aria-label={`Add ${collection.name} to font set`}
 															disabled={
-																!fontSetReady ||
-																collection.fontIds.length === 0 ||
-																fontSetFetcher.state !== 'idle'
-															}
-															loading={
-																pendingCollectionId === collection.id &&
-																fontSetFetcher.state !== 'idle'
+																!fontSetReady || collection.fontIds.length === 0
 															}
 															onClick={() =>
-																addCollectionToFontSet(
-																	collection.id,
-																	collection.fontIds,
-																)
+																addCollectionToFontSet(collection.id)
 															}
 															variant="transparent"
 														>

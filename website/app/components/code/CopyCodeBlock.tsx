@@ -1,9 +1,11 @@
+import type { ReactNode } from 'react';
+
 import { CodeHighlight, CodeWrapper } from './Code';
 import classes from './CopyCodeBlock.module.css';
 
 interface CopyCodeBlockProps {
 	code: string;
-	description?: string;
+	description?: ReactNode;
 	label: string;
 	language: string;
 	scrollable?: boolean;

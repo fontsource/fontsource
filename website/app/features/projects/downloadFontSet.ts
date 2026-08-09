@@ -1,5 +1,4 @@
-import type { ProjectItem } from './model';
-import { getProjectCss } from './output';
+import type { FontSetItem } from './model';
 
 const DOWNLOAD_ORIGIN = 'https://api.fontsource.org';
 const MAX_ARCHIVE_ATTEMPTS = 20;
@@ -83,7 +82,7 @@ interface FontSetArchiveOptions {
 }
 
 const createFontSetArchive = async (
-	items: ProjectItem[],
+	items: readonly FontSetItem[],
 	onProgress: (completed: number) => void,
 	{
 		getFamilyArchive = getArchive,
@@ -91,7 +90,7 @@ const createFontSetArchive = async (
 		signal,
 	}: FontSetArchiveOptions = {},
 ) => {
-	const { strToU8, unzip, zip } = await import('fflate');
+	const { unzip, zip } = await import('fflate');
 	const files: Record<string, Uint8Array> = {};
 	let expandedBytes = 0;
 
@@ -121,7 +120,6 @@ const createFontSetArchive = async (
 	}
 
 	if (signal?.aborted) throw abortError();
-	files['fontsource-font-set-cdn.css'] = strToU8(getProjectCss(items));
 	const data = await new Promise<Uint8Array>((resolve, reject) => {
 		zip(files, { consume: true, level: 6 }, (error, result) => {
 			if (error) reject(error);

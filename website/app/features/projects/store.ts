@@ -1,67 +1,79 @@
 import { observable, syncState } from '@legendapp/state';
 
-import type { CurrentProjectSnapshot, ProjectItem } from './model';
+import {
+	type CurrentProjectSnapshot,
+	type FontSetItem,
+	MAX_FONT_SET_SIZE,
+} from './model';
 
 const createCurrentProjectStore = (
-	initialSnapshot: CurrentProjectSnapshot = { version: 1, items: [] },
+	initialSnapshot: CurrentProjectSnapshot = [],
 ) => {
 	const state$ = observable<CurrentProjectSnapshot>(initialSnapshot);
 	const ready$ = syncState(state$).isPersistLoaded;
 
 	const isReady = () => ready$.peek();
-	const getItems = () => state$.items.map((item$) => item$.get());
+	const getItems = () => state$.map((item$) => item$.get());
 
-	const upsertItem = (item: ProjectItem) => {
-		if (!isReady()) return;
+	const addItem = (
+		item: FontSetItem,
+	): 'added' | 'exists' | 'full' | 'not-ready' => {
+		if (!isReady()) return 'not-ready';
 
-		const index = state$.items
-			.peek()
-			.findIndex((current) => current.familyId === item.familyId);
-		if (index === -1) {
-			state$.items.unshift(item);
-			return;
+		const items = state$.peek();
+		if (items.some((current) => current.familyId === item.familyId)) {
+			return 'exists';
 		}
+		if (items.length >= MAX_FONT_SET_SIZE) return 'full';
 
-		const previous = state$.items[index].peek();
-		state$.items[index].set(item);
-		return previous;
+		state$.unshift({ familyId: item.familyId });
+		return 'added';
 	};
 
-	const addItems = (items: readonly ProjectItem[]) => {
-		if (!isReady()) return 0;
+	const addItems = (
+		items: readonly FontSetItem[],
+	): { addedCount: number; limitReached: boolean } => {
+		if (!isReady()) return { addedCount: 0, limitReached: false };
 
-		const existingIds = new Set(
-			state$.items.peek().map((item) => item.familyId),
-		);
-		const additions = items.filter((item) => {
+		const currentItems = state$.peek();
+		const existingIds = new Set(currentItems.map((item) => item.familyId));
+		const missingItems = items.filter((item) => {
 			if (existingIds.has(item.familyId)) return false;
 			existingIds.add(item.familyId);
 			return true;
 		});
+		const additions = missingItems.slice(
+			0,
+			Math.max(0, MAX_FONT_SET_SIZE - currentItems.length),
+		);
 		if (additions.length > 0) {
-			state$.items.set([...additions, ...state$.items.peek()]);
+			state$.set([
+				...additions.map(({ familyId }) => ({ familyId })),
+				...currentItems,
+			]);
 		}
-		return additions.length;
+		return {
+			addedCount: additions.length,
+			limitReached: additions.length < missingItems.length,
+		};
 	};
 
 	const removeItem = (familyId: string) => {
 		if (!isReady()) return;
 
-		const index = state$.items
-			.peek()
-			.findIndex((item) => item.familyId === familyId);
-		if (index !== -1) state$.items[index].delete();
+		const index = state$.peek().findIndex((item) => item.familyId === familyId);
+		if (index !== -1) state$[index].delete();
 	};
 
 	const clear = () => {
-		if (isReady()) state$.items.set([]);
+		if (isReady()) state$.set([]);
 	};
 
 	return {
 		state$,
 		ready$,
 		getItems,
-		upsertItem,
+		addItem,
 		addItems,
 		removeItem,
 		clear,

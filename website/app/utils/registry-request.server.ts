@@ -38,5 +38,4 @@ const loadOptionalRegistryData = async <T>(
 	}
 };
 
-export type { RegistryRequestResult };
 export { loadOptionalRegistryData };

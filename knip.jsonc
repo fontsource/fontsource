@@ -24,7 +24,7 @@
 		},
 		"website": {
 			// Vite config reads a workspace-relative stylesheet, so retain its static import graph.
-			"entry": ["vite.config.ts", "docs/**/*.mdx", "app/**/*.test.ts"],
+			"entry": ["vite.config.ts", "docs/**/*.mdx", "app/**/*.test.{ts,tsx}"],
 			// Fumadocs generates these local modules during React Router type generation.
 			"paths": {
 				"collections/*": [".source/*"]

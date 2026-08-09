@@ -2,70 +2,69 @@
   "breakpoints": {
     "375": {
       "name": "font-detail-canvas",
-      "viewportWidth": 327,
-      "width": 327,
-      "height": 330,
+      "viewportWidth": 349,
+      "width": 349,
+      "height": 470,
       "bones": [
         [
-          6.1162,
-          16,
-          21.4067,
-          11,
+          5.1576,
+          22,
+          21.3825,
+          12,
           8
         ],
         [
           0,
           0,
           100,
-          330,
+          470,
           8
         ]
       ]
     },
     "768": {
       "name": "font-detail-canvas",
-      "viewportWidth": 720,
-      "width": 720,
-      "height": 363,
+      "viewportWidth": 742,
+      "width": 742,
+      "height": 470,
       "bones": [
         [
-          2.7778,
-          16,
-          9.7222,
-          11,
+          2.4259,
+          22,
+          10.0573,
+          12,
           8
         ],
         [
           0,
           0,
           100,
-          363,
+          470,
           8
         ]
       ]
     },
     "1280": {
       "name": "font-detail-canvas",
-      "viewportWidth": 1150,
-      "width": 1150,
-      "height": 349,
+      "viewportWidth": 792,
+      "width": 792,
+      "height": 468,
       "bones": [
         [
-          3.1304,
-          18,
-          6.087,
-          11,
+          4.0424,
+          22,
+          9.427,
+          12,
           8
         ],
         [
           0,
           0,
           100,
-          349,
+          468,
           8
         ]
       ]
     }
-  },
-  "_hash": "5d3d11b9104bc9e0ef96f31b601a954e"
+  }
 }

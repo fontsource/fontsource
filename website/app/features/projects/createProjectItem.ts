@@ -8,29 +8,18 @@ import type {
 import { getPreferredPreviewSubset } from '@/utils/font-preview';
 import type { RegistryFamily } from '@/utils/registry';
 
-import type { ProjectItem } from './model';
+import type { ResolvedFontSetFamily } from './model';
 
-interface CreateProjectItemOptions {
+interface ResolveFontSetFamilyOptions {
 	metadata: GetFontResponse;
 	versions: GetFontVersionsResponse;
 	variable?: GetVariableFontResponse;
 	registry?: RegistryFamily;
-	format: 'variable' | 'static';
-	subset: string;
-	style: 'normal' | 'italic';
-	weight: number;
-	axes?: Record<string, number>;
-	sampleText?: string;
 }
-
-type CreateDefaultProjectItemOptions = Pick<
-	CreateProjectItemOptions,
-	'metadata' | 'registry' | 'variable' | 'versions'
->;
 
 const categoryClassifications: Record<
 	GetFontResponse['category'],
-	ProjectItem['classification']
+	ResolvedFontSetFamily['classification']
 > = {
 	'sans-serif': 'sans-serif',
 	serif: 'serif',
@@ -41,32 +30,31 @@ const categoryClassifications: Record<
 	other: 'other',
 };
 
-const createProjectItem = ({
+const resolveFontSetFamily = ({
 	metadata,
 	versions,
 	variable,
 	registry,
-	format,
-	subset,
-	style,
-	weight,
-	axes = {},
-	sampleText,
-}: CreateProjectItemOptions): ProjectItem => {
-	const isVariable =
-		format === 'variable' && Boolean(variable && versions.latestVariable);
-	const hasCatalog = Boolean(registry?.symbols);
+}: ResolveFontSetFamilyOptions): ResolvedFontSetFamily => {
+	const style = metadata.styles.includes('normal')
+		? 'normal'
+		: (metadata.styles[0] ?? 'normal');
+	const weight = metadata.weights.includes(400)
+		? 400
+		: (metadata.weights[0] ?? 400);
+	const isVariable = Boolean(variable && versions.latestVariable);
+	const weightAxis = variable?.axes.wght;
+	const axes: Record<string, number> =
+		isVariable && weightAxis ? { wght: Number(weightAxis.default) } : {};
 	const packageName = isVariable
 		? `@fontsource-variable/${metadata.id}`
 		: `@fontsource/${metadata.id}`;
+	const hasCatalog = Boolean(registry?.symbols);
 	const iconUsesMultipleAxes =
 		hasCatalog && isVariable && Object.keys(variable?.axes ?? {}).length > 1;
 	const axisKey =
 		isVariable && variable
-			? selectVariableAxisKey(
-					variable.axes,
-					Object.keys(variable.axes),
-				).toLowerCase()
+			? selectVariableAxisKey(variable.axes, Object.keys(axes)).toLowerCase()
 			: 'wght';
 	const styleSuffix = style === 'italic' ? '-italic' : '';
 	const cssFile = iconUsesMultipleAxes
@@ -90,10 +78,10 @@ const createProjectItem = ({
 		variableAvailable: metadata.variable,
 		defaultSubset: metadata.defSubset,
 		format: isVariable ? 'variable' : 'static',
-		subset,
+		subset: getPreferredPreviewSubset(metadata, registry),
 		style,
 		weight,
-		axes: isVariable ? { ...axes, wght: weight } : {},
+		axes,
 		packageName,
 		packageVersion: isVariable
 			? (versions.latestVariable ?? versions.latest)
@@ -101,7 +89,6 @@ const createProjectItem = ({
 		cssFile,
 		fontFamily: isVariable ? `${metadata.family} Variable` : metadata.family,
 		sampleText:
-			sampleText?.trim() ||
 			registry?.sampleText?.short.trim() ||
 			registry?.sampleText?.long?.trim() ||
 			metadata.family,
@@ -117,38 +104,4 @@ const createProjectItem = ({
 	};
 };
 
-const createDefaultProjectItem = ({
-	metadata,
-	versions,
-	variable,
-	registry,
-}: CreateDefaultProjectItemOptions) => {
-	const style = metadata.styles.includes('normal')
-		? 'normal'
-		: (metadata.styles[0] ?? 'normal');
-	const weight = metadata.weights.includes(400)
-		? 400
-		: (metadata.weights[0] ?? 400);
-	const useVariable = Boolean(variable && versions.latestVariable);
-	const axes = useVariable
-		? Object.fromEntries(
-				Object.entries(variable?.axes ?? {})
-					.filter(([axis]) => axis.toLowerCase() !== 'ital')
-					.map(([axis, range]) => [axis, Number(range.default)]),
-			)
-		: {};
-
-	return createProjectItem({
-		metadata,
-		versions,
-		variable,
-		registry,
-		format: useVariable ? 'variable' : 'static',
-		subset: getPreferredPreviewSubset(metadata, registry),
-		style,
-		weight,
-		axes,
-	});
-};
-
-export { createDefaultProjectItem, createProjectItem };
+export { resolveFontSetFamily };

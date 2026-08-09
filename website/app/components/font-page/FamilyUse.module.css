@@ -11,17 +11,6 @@
 	margin-bottom: 30px;
 }
 
-.returnLink {
-	display: inline-flex;
-	align-items: center;
-	min-height: 44px;
-	margin-bottom: 8px;
-	color: var(--mantine-color-purple-0);
-	font-size: 0.875rem;
-	font-weight: 600;
-	text-decoration: none;
-}
-
 .heading h2 {
 	margin: 0;
 	font-size: clamp(32px, 4vw, 42px);
@@ -184,60 +173,9 @@
 }
 
 .downloadAction {
-	container: font-set-prompt / inline-size;
 	display: grid;
 	align-content: start;
 	gap: 12px;
-}
-
-.fontSetPrompt {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 24px;
-	padding: 18px 0 0;
-}
-
-.downloadAction .fontSetPrompt {
-	border-top: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
-}
-
-.webContinuation {
-	margin-top: 24px;
-	padding-top: 20px;
-	border-top: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
-}
-
-.fontSetPrompt p {
-	display: grid;
-	gap: 3px;
-	min-width: 0;
-	margin: 0;
-}
-
-.fontSetPrompt strong {
-	font-size: 13px;
-	font-weight: 650;
-}
-
-.fontSetPrompt span {
-	color: light-dark(#52617a, #9ca8bd);
-	font-size: 12px;
-	line-height: 1.45;
-}
-
-@container font-set-prompt (max-width: 30rem) {
-	.fontSetPrompt {
-		align-items: flex-start;
-		flex-direction: column;
-		gap: 12px;
-	}
 }
 
 .primaryButton {
@@ -274,8 +212,9 @@
 }
 
 .methodSwitch {
-	display: inline-grid;
-	grid-template-columns: repeat(2, minmax(126px, 1fr));
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	width: 100%;
 	border: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -285,8 +224,9 @@
 }
 
 .setupSwitch {
-	display: inline-grid;
-	grid-template-columns: repeat(2, minmax(128px, 1fr));
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	width: 100%;
 	margin: 20px 0 0;
 	padding: 0;
 	border: light-dark(
@@ -522,33 +462,6 @@
 	cursor: default;
 }
 
-.axisControl {
-	display: grid;
-	gap: 8px;
-}
-
-.axisControl > span {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	color: light-dark(#52617a, #9ca8bd);
-	font-size: 14px;
-	font-weight: 600;
-}
-
-.axisControl output {
-	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
-	font-variant-numeric: tabular-nums;
-}
-
-.axisControl input {
-	width: 100%;
-	min-height: 44px;
-	margin: 0;
-	accent-color: var(--mantine-color-purple-0);
-}
-
 .manager {
 	margin-top: 20px;
 }
@@ -568,15 +481,20 @@
 	margin-top: 14px;
 }
 
-.exampleControl {
-	padding: 8px 0 2px;
-}
-
-.usageHelp {
-	margin: 12px 0 0;
+.weightRange {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 0;
+	padding: 8px 0;
 	color: light-dark(#52617a, #9ca8bd);
 	font-size: 14px;
-	line-height: 1.55;
+}
+
+.weightRange strong {
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	font-variant-numeric: tabular-nums;
 }
 
 .guideLink {
@@ -591,23 +509,20 @@
 	text-decoration: none;
 }
 
-.guideLink:hover,
-.returnLink:hover {
+.guideLink:hover {
 	text-decoration: underline;
 	text-underline-offset: 3px;
 }
 
 .primaryButton:focus-visible,
-.returnLink:focus-visible,
 .taskTabs button:focus-visible,
 .methodSwitch button:focus-visible,
 .setupSwitch button:focus-visible,
 .formatSwitch button:focus-visible,
 .manager button:focus-visible,
-.resetButton:focus-visible,
-.optionGroup input:focus-visible,
-.axisControl input:focus-visible,
-.guideLink:focus-visible {
+	.resetButton:focus-visible,
+	.optionGroup input:focus-visible,
+	.guideLink:focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
 	outline-offset: 2px;
 }
@@ -642,16 +557,6 @@
 	.downloadPanel,
 	.webPanel {
 		padding: 30px 24px;
-	}
-
-	.methodSwitch {
-		display: grid;
-		width: 100%;
-	}
-
-	.setupSwitch {
-		display: grid;
-		width: 100%;
 	}
 
 	.configurationHeading {

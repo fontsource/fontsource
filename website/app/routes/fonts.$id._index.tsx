@@ -3,11 +3,7 @@ import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyPreview } from '@/components/font-page/FamilyPreview';
-import {
-	type GetFontResponse,
-	getFontVersions,
-	listRegistryAxes,
-} from '@/generated/api';
+import { type GetFontResponse, listRegistryAxes } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import {
 	loadFontPageBase,
@@ -23,26 +19,18 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
 	const options = { signal: request.signal };
-	const [
-		base,
-		versions,
-		languagesResult,
-		axesResult,
-		capabilitiesResult,
-		symbolsResult,
-	] = await Promise.all([
-		basePromise,
-		getFontVersions({ id }, options),
-		loadFontPageLanguages(basePromise, request.signal, 'all'),
-		loadOptionalRegistryData(listRegistryAxes(options), request.signal),
-		loadFontPageCapabilities(basePromise, request.signal),
-		loadFontPageSymbols(basePromise, request.signal),
-	]);
+	const [base, languagesResult, axesResult, capabilitiesResult, symbolsResult] =
+		await Promise.all([
+			basePromise,
+			loadFontPageLanguages(basePromise, request.signal, 'all'),
+			loadOptionalRegistryData(listRegistryAxes(options), request.signal),
+			loadFontPageCapabilities(basePromise, request.signal),
+			loadFontPageSymbols(basePromise, request.signal),
+		]);
 
 	return data(
 		{
 			...base,
-			versions,
 			languages: languagesResult.languages,
 			axisRegistry: axesResult.value,
 			capabilities: capabilitiesResult.capabilities,
@@ -95,7 +83,7 @@ export default function Font() {
 		<FamilyPageShell
 			metadata={metadata}
 			registry={registry}
-			variableAvailable={Boolean(variable)}
+			variable={variable}
 			tabsValue="preview"
 		>
 			<FamilyPreview

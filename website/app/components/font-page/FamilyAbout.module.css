@@ -615,29 +615,39 @@
 		);
 	}
 
-	li div {
+	.sourceFileDetails {
 		min-width: 0;
 	}
 
-	li > div > strong,
-	li > div > span {
+	.sourceFileDetails > strong,
+	.sourceFileDetails > span,
+	.sourcePath {
 		display: block;
 	}
 
-	li > div > strong {
+	.sourceFileDetails > strong {
 		overflow: hidden;
 		font-size: 13px;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 	}
 
-	li > div > strong a {
+	.sourceFileDetails > strong a {
 		color: inherit;
 		text-decoration-color: light-dark(#aeb6c4, #66738a);
 		text-underline-offset: 3px;
 	}
 
-	li > div > span {
+	.sourcePath {
+		margin-top: 3px;
+		color: light-dark(#52617a, #aeb9cc);
+		font-size: 11px;
+		line-height: 1.5;
+		overflow-wrap: anywhere;
+	}
+
+	.sourceFileMeta {
+		margin-top: 3px;
 		color: light-dark(#52617a, #aeb9cc);
 		font-size: 12px;
 		line-height: 1.5;
@@ -663,6 +673,14 @@
 			outline-offset: 2px;
 		}
 	}
+}
+
+.provenanceLinks {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 10px 22px;
 }
 
 .checksumTooltip {
@@ -740,6 +758,13 @@
 		align-items: flex-start;
 		flex-direction: column;
 		gap: 16px;
+	}
+
+	.provenanceLinks {
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-direction: column;
+		gap: 10px;
 	}
 
 	.licenseAttribution {

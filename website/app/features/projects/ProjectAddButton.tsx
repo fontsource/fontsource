@@ -3,42 +3,32 @@ import { IconCheck, IconStack2, IconX } from '@tabler/icons-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { useCurrentProjectStore } from './CurrentProjectProvider';
-import type { ProjectItem } from './model';
+import { MAX_FONT_SET_SIZE } from './model';
 import classes from './ProjectAddButton.module.css';
 
 interface ProjectAddButtonProps {
-	includedAction?: 'update' | 'view';
+	displayName: string;
+	familyId: string;
 	includedLabel?: string;
-	item: ProjectItem;
 	label?: string;
-	savedLabel?: string;
-}
-
-interface Feedback {
-	previous?: ProjectItem;
 }
 
 const ProjectAddButton = ({
-	includedAction = 'update',
-	includedLabel = 'Update font set',
-	item,
+	displayName,
+	familyId,
+	includedLabel = 'In font set',
 	label = 'Add to font set',
-	savedLabel = 'Saved in font set',
 }: ProjectAddButtonProps) => {
 	const store = useCurrentProjectStore();
 	const ready = useValue(store.ready$);
-	const savedItem = useValue(() =>
-		store.getItems().find((saved) => saved.familyId === item.familyId),
+	const included = useValue(() =>
+		store.getItems().some((saved) => saved.familyId === familyId),
 	);
 	const [hydrated, setHydrated] = useState(false);
-	const [feedback, setFeedback] = useState<Feedback>();
+	const [feedback, setFeedback] = useState<'added' | 'full' | false>(false);
 	const toastRef = useRef<HTMLDivElement>(null);
 	const interactive = hydrated && ready;
-	const displayIncluded = interactive && savedItem !== undefined;
-	const saved =
-		displayIncluded && JSON.stringify(savedItem) === JSON.stringify(item);
-	const viewIncluded =
-		displayIncluded && (includedAction === 'view' || saved === true);
+	const displayIncluded = interactive && included;
 
 	useEffect(() => setHydrated(true), []);
 
@@ -50,7 +40,7 @@ const ProjectAddButton = ({
 			if ('showPopover' in toast && !toast.matches(':popover-open')) {
 				toast.showPopover();
 			}
-			const timeout = window.setTimeout(() => setFeedback(undefined), 6500);
+			const timeout = window.setTimeout(() => setFeedback(false), 6500);
 			return () => window.clearTimeout(timeout);
 		}
 
@@ -60,25 +50,22 @@ const ProjectAddButton = ({
 	}, [feedback]);
 
 	const addItem = () => {
-		const previous = store.upsertItem(item);
-		setFeedback({ previous });
+		const result = store.addItem({ familyId });
+		if (result === 'added') setFeedback('added');
+		if (result === 'full') setFeedback('full');
 	};
 
 	const undo = () => {
-		if (feedback?.previous) {
-			store.upsertItem(feedback.previous);
-		} else {
-			store.removeItem(item.familyId);
-		}
-		setFeedback(undefined);
+		store.removeItem(familyId);
+		setFeedback(false);
 	};
 
 	return (
 		<>
-			{viewIncluded ? (
+			{displayIncluded ? (
 				<Link className={classes.button} to="/selected-fonts">
 					<IconCheck aria-hidden size={18} />
-					{saved ? savedLabel : includedLabel}
+					{includedLabel}
 				</Link>
 			) : (
 				<button
@@ -88,16 +75,8 @@ const ProjectAddButton = ({
 					title={!interactive ? 'Your font set is loading' : undefined}
 					onClick={addItem}
 				>
-					{displayIncluded ? (
-						<IconCheck aria-hidden size={18} />
-					) : (
-						<IconStack2 aria-hidden size={18} />
-					)}
-					{!interactive
-						? 'Font set loading…'
-						: displayIncluded
-							? includedLabel
-							: label}
+					<IconStack2 aria-hidden size={18} />
+					{!interactive ? 'Font set loading…' : label}
 				</button>
 			)}
 			<div
@@ -111,21 +90,28 @@ const ProjectAddButton = ({
 				{feedback && (
 					<>
 						<span>
-							<strong>{item.displayName}</strong>{' '}
-							{feedback.previous
-								? 'setup updated in your font set.'
-								: 'setup added to your font set.'}
+							{feedback === 'added' ? (
+								<>
+									<strong>{displayName}</strong> added to your font set.
+								</>
+							) : (
+								<>
+									Your font set can contain up to {MAX_FONT_SET_SIZE} families.
+								</>
+							)}
 						</span>
 						<div>
-							<button type="button" onClick={undo}>
-								Undo
-							</button>
+							{feedback === 'added' && (
+								<button type="button" onClick={undo}>
+									Undo
+								</button>
+							)}
 							<Link to="/selected-fonts">View font set</Link>
 							<button
 								type="button"
 								className={classes.close}
 								aria-label="Dismiss confirmation"
-								onClick={() => setFeedback(undefined)}
+								onClick={() => setFeedback(false)}
 							>
 								<IconX aria-hidden size={17} />
 							</button>

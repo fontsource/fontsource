@@ -9,7 +9,7 @@ import classes from './CurrentProjectProvider.module.css';
 import { currentProjectSnapshotSchema } from './model';
 import { type CurrentProjectStore, createCurrentProjectStore } from './store';
 
-const STORAGE_KEY = 'fontsource.current-project';
+const STORAGE_KEY = 'fontsource.font-set';
 type StorageIssue = 'invalid' | 'unavailable';
 const CurrentProjectContext = createContext<CurrentProjectStore | undefined>(
 	undefined,
@@ -30,24 +30,10 @@ const CurrentProjectProvider = ({ children }: { children: ReactNode }) => {
 		}
 
 		if (storedValue !== null) {
-			let migratedValue: string;
 			try {
-				const parsedSnapshot = currentProjectSnapshotSchema.parse(
-					JSON.parse(storedValue),
-				);
-				migratedValue = JSON.stringify(parsedSnapshot);
+				currentProjectSnapshotSchema.parse(JSON.parse(storedValue));
 			} catch {
 				setStorageIssue('invalid');
-				store.ready$.set(true);
-				return;
-			}
-
-			try {
-				if (migratedValue !== storedValue) {
-					localStorage.setItem(STORAGE_KEY, migratedValue);
-				}
-			} catch {
-				setStorageIssue('unavailable');
 				store.ready$.set(true);
 				return;
 			}
@@ -107,4 +93,10 @@ const useCurrentProjectStore = () => {
 	return store;
 };
 
-export { CurrentProjectProvider, useCurrentProjectStore };
+const useCurrentProjectStoreOptional = () => useContext(CurrentProjectContext);
+
+export {
+	CurrentProjectProvider,
+	useCurrentProjectStore,
+	useCurrentProjectStoreOptional,
+};

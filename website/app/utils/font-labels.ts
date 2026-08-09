@@ -12,6 +12,18 @@ const axisLabels: Record<string, string> = {
 	wght: 'Weight',
 };
 
+const fontWeightNames: Readonly<Record<number, string>> = {
+	100: 'Thin',
+	200: 'Extra light',
+	300: 'Light',
+	400: 'Regular',
+	500: 'Medium',
+	600: 'Semibold',
+	700: 'Bold',
+	800: 'Extra bold',
+	900: 'Black',
+};
+
 const formatFontLabel = (value: string) =>
 	value
 		.split(/[-_/]/)
@@ -24,4 +36,4 @@ const scriptNames = new Intl.DisplayNames('en', { type: 'script' });
 const getAxisLabel = (axis: string) => axisLabels[axis] ?? axis.toUpperCase();
 const getScriptLabel = (script: string) => scriptNames.of(script) ?? script;
 
-export { formatFontLabel, getAxisLabel, getScriptLabel };
+export { fontWeightNames, formatFontLabel, getAxisLabel, getScriptLabel };

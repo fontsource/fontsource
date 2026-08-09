@@ -14,6 +14,7 @@ import {
 	getOpenTypeFeatureDescription,
 	getOpenTypeFeatureName,
 } from '@/utils/registry';
+import { normalizeSearchValue } from '@/utils/search';
 
 import classes from './FamilyPreview.module.css';
 import { usePreviewEditor } from './FamilyPreviewContext';
@@ -45,9 +46,6 @@ const formatNumber = (value: number) =>
 	Number.isInteger(value) ? String(value) : String(Number(value.toFixed(2)));
 
 const formatPixels = (value: number) => `${formatNumber(value)} px`;
-
-const normalizeSearchValue = (value: string) =>
-	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
 
 const RangeControl = ({
 	id,

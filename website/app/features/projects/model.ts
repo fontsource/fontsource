@@ -1,75 +1,60 @@
 import { z } from 'zod';
 
-const projectItemSchema = z.object({
+const MAX_FONT_SET_SIZE = 100;
+
+interface ResolvedFontSetFamily {
+	familyId: string;
+	family: string;
+	displayName: string;
+	category:
+		| 'sans-serif'
+		| 'serif'
+		| 'display'
+		| 'handwriting'
+		| 'monospace'
+		| 'icons'
+		| 'other';
+	classification: string;
+	tags: string[];
+	designer?: string;
+	status: 'active' | 'deprecated';
+	registryFactsCurrent: boolean;
+	variableAvailable: boolean;
+	defaultSubset: string;
+	format: 'variable' | 'static';
+	subset: string;
+	style: 'normal' | 'italic';
+	weight: number;
+	axes: Record<string, number>;
+	packageName: string;
+	packageVersion: string;
+	cssFile: string;
+	fontFamily: string;
+	sampleText: string;
+	symbolInputModes: Array<'codepoint' | 'name-ligature'>;
+	license: {
+		verified: boolean;
+		id?: string;
+		url?: string;
+		attribution?: string;
+	};
+}
+
+const fontSetItemSchema = z.object({
 	familyId: z.string().min(1),
-	family: z.string().min(1),
-	displayName: z.string().min(1),
-	category: z.enum([
-		'sans-serif',
-		'serif',
-		'display',
-		'handwriting',
-		'monospace',
-		'icons',
-		'other',
-	]),
-	classification: z.string().min(1),
-	tags: z.array(z.string().min(1)),
-	designer: z.string().min(1).optional(),
-	status: z.enum(['active', 'deprecated']),
-	registryFactsCurrent: z.boolean().default(false),
-	variableAvailable: z.boolean().optional(),
-	defaultSubset: z.string().min(1).optional(),
-	format: z.enum(['variable', 'static']),
-	subset: z.string().min(1),
-	style: z.enum(['normal', 'italic']),
-	weight: z.number(),
-	styles: z
-		.array(z.enum(['normal', 'italic']))
-		.min(1)
-		.optional(),
-	weights: z.array(z.number()).min(1).optional(),
-	axes: z.record(z.string(), z.number()),
-	packageName: z.string().min(1),
-	packageVersion: z.string().min(1),
-	cssFile: z.string().min(1),
-	cssFiles: z.array(z.string().min(1)).optional(),
-	subsets: z.array(z.string().min(1)).min(1).optional(),
-	activeAxes: z.array(z.string().min(1)).min(1).optional(),
-	formats: z
-		.array(z.enum(['woff2', 'woff']))
-		.min(1)
-		.optional(),
-	fontDisplay: z
-		.enum(['auto', 'swap', 'block', 'fallback', 'optional'])
-		.optional(),
-	packageFontFaceCSS: z.string().min(1).optional(),
-	cdnFontFaceCSS: z.string().min(1).optional(),
-	fontFamily: z.string().min(1),
-	sampleText: z.string().min(1),
-	symbolInputModes: z.array(z.enum(['codepoint', 'name-ligature'])).default([]),
-	license: z.object({
-		verified: z.boolean().default(false),
-		id: z.string().min(1).optional(),
-		url: z.string().min(1).optional(),
-		attribution: z.string().min(1).optional(),
-	}),
 });
 
 const currentProjectSnapshotSchema = z
-	.object({
-		version: z.literal(1),
-		items: z.array(projectItemSchema),
-	})
+	.array(fontSetItemSchema)
+	.max(MAX_FONT_SET_SIZE)
 	.refine(
-		(snapshot) =>
-			new Set(snapshot.items.map((item) => item.familyId)).size ===
-			snapshot.items.length,
-		{ message: 'Selected Fonts can contain one setup per family.' },
+		(items) =>
+			new Set(items.map((item) => item.familyId)).size === items.length,
+		{ message: 'A Font Set can contain each family once.' },
 	);
 
-type ProjectItem = z.infer<typeof projectItemSchema>;
+type FontSetItem = z.infer<typeof fontSetItemSchema>;
 type CurrentProjectSnapshot = z.infer<typeof currentProjectSnapshotSchema>;
 
-export type { CurrentProjectSnapshot, ProjectItem };
-export { currentProjectSnapshotSchema };
+export type { CurrentProjectSnapshot, FontSetItem, ResolvedFontSetFamily };
+export { currentProjectSnapshotSchema, MAX_FONT_SET_SIZE };

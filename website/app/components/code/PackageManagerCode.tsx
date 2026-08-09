@@ -1,11 +1,7 @@
 import { Tabs } from '@mantine/core';
-import { useLocalStorage } from '@mantine/hooks';
 
-import { deserializeStoredChoice } from '@/utils/browser-storage';
-import {
-	getPackageManagerCommands,
-	packageManagerValues,
-} from '@/utils/docs/packageManagers';
+import { usePackageManager } from '@/hooks/usePackageManager';
+import { getPackageManagerCommands } from '@/utils/docs/packageManagers';
 
 import { CodeHighlight, CodeWrapper } from './Code';
 import classes from './PackageManagerCode.module.css';
@@ -17,12 +13,7 @@ export interface PackageManagerProps {
 export const PackageManagerCode = ({ cmd }: PackageManagerProps) => {
 	const commands = getPackageManagerCommands(cmd);
 
-	const [packageManager, setPackageManager] = useLocalStorage({
-		key: 'package-manager',
-		defaultValue: 'npm',
-		deserialize: (value) =>
-			deserializeStoredChoice(value, packageManagerValues, 'npm'),
-	});
+	const [packageManager, setPackageManager] = usePackageManager('npm');
 
 	return (
 		<Tabs

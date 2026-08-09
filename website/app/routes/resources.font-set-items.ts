@@ -1,17 +1,11 @@
 import type { ActionFunctionArgs } from 'react-router';
 
-import { createDefaultProjectItem } from '@/features/projects/createProjectItem';
-import {
-	getFont,
-	getFontVersions,
-	getRegistryFamily,
-	getVariableFont,
-} from '@/generated/api';
+import { resolveFontSetFamily } from '@/features/projects/createProjectItem';
+import { MAX_FONT_SET_SIZE } from '@/features/projects/model';
+import { loadFontFamilyRecord } from '@/utils/font-page.server';
 import { processWithConcurrency } from '@/utils/processWithConcurrency';
-import { loadOptionalRegistryData } from '@/utils/registry-request.server';
 
 const familyIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const MAX_FONT_SET_IMPORT_SIZE = 100;
 const MAX_FAMILY_ID_LENGTH = 96;
 
 export const action = async ({ request }: ActionFunctionArgs) => {
@@ -25,13 +19,13 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		.getAll('fontId')
 		.filter((value): value is string => typeof value === 'string');
 	const fontIds = [...new Set(submittedIds)];
-	if (fontIds.length > MAX_FONT_SET_IMPORT_SIZE) {
+	if (fontIds.length > MAX_FONT_SET_SIZE) {
 		return Response.json(
 			{
 				requestId,
 				items: [],
 				failedIds: [],
-				error: `A collection can add up to ${MAX_FONT_SET_IMPORT_SIZE} fonts at once.`,
+				error: `A font set can contain up to ${MAX_FONT_SET_SIZE} families.`,
 			},
 			{ status: 413 },
 		);
@@ -47,35 +41,16 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		validIds,
 		async (id) => {
 			try {
-				const parameters = { id };
-				const options = { signal: request.signal };
-				const metadataPromise = getFont(parameters, options);
-				const variablePromise = metadataPromise.then((metadata) =>
-					metadata.variable
-						? getVariableFont(parameters, options).catch((error) => {
-								if (request.signal.aborted) throw error;
-								return undefined;
-							})
-						: undefined,
-				);
-				const [metadata, versions, registryResult, variable] =
-					await Promise.all([
-						metadataPromise,
-						getFontVersions(parameters, options),
-						loadOptionalRegistryData(
-							getRegistryFamily(parameters, options),
-							request.signal,
-						),
-						variablePromise,
-					]);
+				const { metadata, versions, registry, variable } =
+					await loadFontFamilyRecord(id, request.signal);
 
 				return {
 					id,
-					item: createDefaultProjectItem({
+					item: resolveFontSetFamily({
 						metadata,
 						versions,
 						variable,
-						registry: registryResult.value,
+						registry,
 					}),
 				};
 			} catch (error) {

@@ -647,6 +647,7 @@
 	overflow-y: auto;
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
+	isolation: isolate;
 }
 
 .inspectorHeading,
@@ -666,7 +667,7 @@
 .inspectorHeading {
 	position: sticky;
 	inset-block-start: 0;
-	z-index: 2;
+	z-index: 10;
 	padding: 18px 20px;
 	border-bottom: var(--preview-border);
 	background: var(--preview-surface);
@@ -675,7 +676,7 @@
 .inspectorSectionChooser {
 	position: sticky;
 	inset-block-start: 72px;
-	z-index: 1;
+	z-index: 9;
 	padding: 14px 20px 0;
 	background: var(--preview-surface);
 }
@@ -954,6 +955,7 @@
 	display: flex;
 	justify-content: space-between;
 	gap: 12px;
+	margin-block-start: 8px;
 	margin-inline: 3px;
 	color: var(--preview-text-muted);
 	font-family: var(--mantine-font-family-monospace);
@@ -1395,6 +1397,10 @@
 		--slider-thumb-size: 44px !important;
 
 		padding-block: 16px;
+	}
+
+	.rangeBounds {
+		margin-block-start: 12px;
 	}
 
 	.featureControl {

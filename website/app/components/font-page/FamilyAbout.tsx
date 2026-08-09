@@ -1,8 +1,7 @@
 import { Tooltip, VisuallyHidden } from '@mantine/core';
 import { useClipboard } from '@mantine/hooks';
-import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
-import { IconCopy, IconSearch } from '@/components/icons';
+import { IconCopy } from '@/components/icons';
 import type {
 	GetFontResponse,
 	GetFontStatsResponse,
@@ -13,6 +12,7 @@ import type {
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 import {
+	fontWeightNames,
 	formatFontLabel,
 	getAxisLabel,
 	getScriptLabel,
@@ -34,6 +34,7 @@ import classes from './FamilyAbout.module.css';
 import { FontSkeleton } from './FontSkeleton';
 import { RegistryMarkdown } from './RegistryMarkdown';
 import { SearchableLanguageList } from './SearchableLanguageList';
+import { SearchableMetadataList } from './SearchableMetadataList';
 import listClasses from './SearchableMetadataList.module.css';
 
 interface FamilyAboutProps {
@@ -46,7 +47,6 @@ interface FamilyAboutProps {
 	axisRegistry?: ListRegistryAxesResponse;
 	taxonomy?: GetRegistryTaxonomyResponse;
 	capabilities?: GetRegistrySourceCapabilitiesResponse;
-	capabilitySource?: RegistrySource;
 	stats?: GetFontStatsResponse;
 	registryState: RegistryDataState;
 	enrichmentUnavailable?: boolean;
@@ -76,9 +76,6 @@ const exactNumber = new Intl.NumberFormat('en');
 const getRegistryAssetUrl = (value: string) =>
 	new URL(value, 'https://api.fontsource.org').toString();
 
-const normalizeSearchValue = (value: string) =>
-	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
-
 const summarizeDescription = (value?: string) => {
 	const description = value?.trim();
 	if (!description) return;
@@ -89,28 +86,20 @@ const summarizeDescription = (value?: string) => {
 	);
 };
 
-const weightNames: Record<number, string> = {
-	100: 'Thin',
-	200: 'Extra light',
-	300: 'Light',
-	400: 'Regular',
-	500: 'Medium',
-	600: 'Semibold',
-	700: 'Bold',
-	800: 'Extra bold',
-	900: 'Black',
+const getWeightLabel = (weight: number) =>
+	fontWeightNames[weight]
+		? `${fontWeightNames[weight]} ${weight}`
+		: String(weight);
+
+const getSourceWeightLabel = (source: RegistrySource) => {
+	if (typeof source.weight === 'number') {
+		return getWeightLabel(source.weight);
+	}
+
+	return `${source.weight.min}–${source.weight.max} weight`;
 };
 
-const getWeightLabel = (weight: number) =>
-	weightNames[weight] ? `${weightNames[weight]} ${weight}` : String(weight);
-
-const SourceFileItem = ({
-	source,
-	mappedCharacterCount,
-}: {
-	source: RegistrySource;
-	mappedCharacterCount?: number;
-}) => {
+const SourceFileItem = ({ source }: { source: RegistrySource }) => {
 	const clipboard = useClipboard({ timeout: 1500 });
 	const copyLabel = clipboard.copied
 		? 'Copied'
@@ -120,7 +109,7 @@ const SourceFileItem = ({
 
 	return (
 		<li>
-			<div>
+			<div className={classes.sourceFileDetails}>
 				<strong>
 					<a
 						href={getRegistryAssetUrl(source.downloadUrl)}
@@ -130,12 +119,17 @@ const SourceFileItem = ({
 						{source.filename}
 					</a>
 				</strong>
-				<span>
+				<code className={classes.sourcePath}>{source.path}</code>
+				<span className={classes.sourceFileMeta}>
 					{formatFontLabel(source.type)} · {source.format.toUpperCase()} ·{' '}
-					{formatFontLabel(source.style)} · {(source.size / 1024).toFixed(0)} KB
-					{mappedCharacterCount === undefined
-						? ''
-						: ` · ${mappedCharacterCount.toLocaleString('en')} mapped characters`}
+					{formatFontLabel(source.style)} · {getSourceWeightLabel(source)}
+					{source.type === 'variable'
+						? ` · ${source.axes.length} ${source.axes.length === 1 ? 'axis' : 'axes'}`
+						: ''}
+					{source.fontVersion ? ` · ${source.fontVersion}` : ''} ·{' '}
+					{(source.size / 1024).toFixed(0)} KB ·{' '}
+					{source.codepointCount.toLocaleString('en')} mapped codepoints ·{' '}
+					{source.glyphCount.toLocaleString('en')} glyphs
 				</span>
 			</div>
 			<Tooltip
@@ -171,81 +165,36 @@ const SearchableFeatureList = ({
 	familyId: string;
 	featureTags: string[];
 }) => {
-	const [query, setQuery] = useState('');
-	const normalizedQuery = normalizeSearchValue(query);
-	const features = useMemo(
-		() =>
-			featureTags.map((tag) => ({
-				tag,
-				name: getOpenTypeFeatureName(tag),
-				description: getOpenTypeFeatureDescription(tag),
-			})),
-		[featureTags],
-	);
-	const filteredFeatures = useMemo(
-		() =>
-			normalizedQuery
-				? features.filter(({ name, tag, description }) =>
-						normalizeSearchValue(
-							`${name} ${tag} ${description ?? ''}`,
-						).includes(normalizedQuery),
-					)
-				: features,
-		[features, normalizedQuery],
-	);
-	const listId = `feature-list-${familyId}`;
+	const features = featureTags.map((tag) => ({
+		tag,
+		name: getOpenTypeFeatureName(tag),
+		description: getOpenTypeFeatureDescription(tag),
+	}));
 
 	return (
-		<div className={listClasses.root}>
-			{featureTags.length > 8 && (
-				<label
-					htmlFor={`feature-search-${familyId}`}
-					className={listClasses.search}
-				>
-					<IconSearch aria-hidden height={16} />
-					<VisuallyHidden>Search OpenType features</VisuallyHidden>
-					<input
-						id={`feature-search-${familyId}`}
-						type="search"
-						autoComplete="off"
-						placeholder={`Search ${featureTags.length.toLocaleString('en')} features`}
-						value={query}
-						aria-controls={listId}
-						onChange={(event) => setQuery(event.currentTarget.value)}
-					/>
-				</label>
+		<SearchableMetadataList
+			emptyLabel="No OpenType features match"
+			getKey={(feature) => feature.tag}
+			getSearchText={({ name, tag, description }) =>
+				`${name} ${tag} ${description ?? ''}`
+			}
+			itemName={{ singular: 'feature', plural: 'features' }}
+			items={features}
+			listClassName={listClasses.featureList}
+			listId={`feature-list-${familyId}`}
+			renderItem={({ name, tag, description }) => (
+				<>
+					<strong>{name}</strong>
+					{description && (
+						<span className={listClasses.itemDescription}>{description}</span>
+					)}
+					<code className={listClasses.itemTag}>{tag}</code>
+				</>
 			)}
-
-			{query && filteredFeatures.length > 0 && (
-				<p className={listClasses.status} role="status">
-					{filteredFeatures.length.toLocaleString('en')} matching{' '}
-					{filteredFeatures.length === 1 ? 'feature' : 'features'}
-				</p>
-			)}
-
-			{filteredFeatures.length > 0 ? (
-				<ul
-					id={listId}
-					className={`${listClasses.list} ${listClasses.featureList}`}
-				>
-					{filteredFeatures.map(({ name, tag, description }) => (
-						<li key={tag}>
-							<strong>{name}</strong>
-							{description && (
-								<span className={listClasses.itemDescription}>
-									{description}
-								</span>
-							)}
-							<code className={listClasses.itemTag}>{tag}</code>
-						</li>
-					))}
-				</ul>
-			) : (
-				<p id={listId} className={listClasses.empty} role="status">
-					No OpenType features match “{query}”.
-				</p>
-			)}
-		</div>
+			searchId={`feature-search-${familyId}`}
+			searchLabel="Search OpenType features"
+			searchThreshold={8}
+		/>
 	);
 };
 
@@ -258,88 +207,43 @@ const SearchableAxisList = ({
 	axes: Array<[string, GetVariableFontResponse['axes'][string]]>;
 	axisRegistry?: ListRegistryAxesResponse;
 }) => {
-	const [query, setQuery] = useState('');
-	const normalizedQuery = normalizeSearchValue(query);
-	const axisItems = useMemo(
-		() =>
-			axes.map(([tag, range]) => {
-				const definition = axisRegistry?.[tag];
-				return {
-					tag,
-					range,
-					name: definition?.name ?? getAxisLabel(tag),
-					description: summarizeDescription(definition?.description),
-				};
-			}),
-		[axes, axisRegistry],
-	);
-	const filteredAxes = useMemo(
-		() =>
-			normalizedQuery
-				? axisItems.filter(({ tag, name, description }) =>
-						normalizeSearchValue(
-							`${name} ${tag} ${description ?? ''}`,
-						).includes(normalizedQuery),
-					)
-				: axisItems,
-		[axisItems, normalizedQuery],
-	);
-	const listId = `axis-list-${familyId}`;
+	const axisItems = axes.map(([tag, range]) => {
+		const definition = axisRegistry?.[tag];
+		return {
+			tag,
+			range,
+			name: definition?.name ?? getAxisLabel(tag),
+			description: summarizeDescription(definition?.description),
+		};
+	});
 
 	return (
-		<div className={listClasses.root}>
-			{axes.length > 6 && (
-				<label
-					htmlFor={`axis-search-${familyId}`}
-					className={listClasses.search}
-				>
-					<IconSearch aria-hidden height={16} />
-					<VisuallyHidden>Search variable font axes</VisuallyHidden>
-					<input
-						id={`axis-search-${familyId}`}
-						type="search"
-						autoComplete="off"
-						placeholder={`Search ${axes.length.toLocaleString('en')} axes`}
-						value={query}
-						aria-controls={listId}
-						onChange={(event) => setQuery(event.currentTarget.value)}
-					/>
-				</label>
+		<SearchableMetadataList
+			emptyLabel="No variable axes match"
+			getKey={(axis) => axis.tag}
+			getSearchText={({ tag, name, description }) =>
+				`${name} ${tag} ${description ?? ''}`
+			}
+			itemName={{ singular: 'axis', plural: 'axes' }}
+			items={axisItems}
+			listClassName={listClasses.axisList}
+			listId={`axis-list-${familyId}`}
+			renderItem={({ tag, range, name, description }) => (
+				<>
+					<strong>{name}</strong>
+					{description && (
+						<span className={listClasses.itemDescription}>{description}</span>
+					)}
+					<span className={listClasses.itemMeta}>
+						<code>{tag}</code> · {range.min}–{range.max} · default{' '}
+						{range.default}
+					</span>
+				</>
 			)}
-
-			{query && filteredAxes.length > 0 && (
-				<p className={listClasses.status} role="status">
-					{filteredAxes.length.toLocaleString('en')} matching{' '}
-					{filteredAxes.length === 1 ? 'axis' : 'axes'}
-				</p>
-			)}
-
-			{filteredAxes.length > 0 ? (
-				<ul
-					id={listId}
-					className={`${listClasses.list} ${listClasses.axisList}`}
-				>
-					{filteredAxes.map(({ tag, range, name, description }) => (
-						<li key={tag}>
-							<strong>{name}</strong>
-							{description && (
-								<span className={listClasses.itemDescription}>
-									{description}
-								</span>
-							)}
-							<span className={listClasses.itemMeta}>
-								<code>{tag}</code> · {range.min}–{range.max} · default{' '}
-								{range.default}
-							</span>
-						</li>
-					))}
-				</ul>
-			) : (
-				<p id={listId} className={listClasses.empty} role="status">
-					No variable axes match “{query}”.
-				</p>
-			)}
-		</div>
+			searchId={`axis-search-${familyId}`}
+			searchLabel="Search variable font axes"
+			searchThreshold={6}
+		/>
 	);
 };
 
@@ -353,7 +257,6 @@ export const FamilyAbout = ({
 	axisRegistry,
 	taxonomy,
 	capabilities,
-	capabilitySource,
 	stats,
 	registryState,
 	enrichmentUnavailable = false,
@@ -373,11 +276,18 @@ export const FamilyAbout = ({
 		content?.description ??
 		`${metadata.family} is an open-source ${formatFontLabel(metadata.category).toLowerCase()} family distributed by Fontsource.`;
 	const summary = summarizeDescription(description) ?? description;
-	let article = content?.article;
-	if (!article || article === content?.description) {
-		article = undefined;
-	} else if (content.description && article.startsWith(content.description)) {
-		article = article.slice(content.description.length).trim();
+	const descriptionStory = description.startsWith(summary)
+		? description.slice(summary.length).trim()
+		: '';
+	let story = descriptionStory;
+	const article = content?.article?.trim();
+	if (article && article !== content?.description) {
+		if (content?.description && article.startsWith(content.description)) {
+			const articleStory = article.slice(content.description.length).trim();
+			story = [descriptionStory, articleStory].filter(Boolean).join('\n\n');
+		} else {
+			story = article;
+		}
 	}
 	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
 	const previewFamily = getFontPreviewFamily(metadata, Boolean(variable));
@@ -416,6 +326,14 @@ export const FamilyAbout = ({
 		new Set(sources.map((source) => source.format.toUpperCase())),
 	);
 	const repository = registry?.project?.repository ?? metadata.source;
+	const provenanceRepository =
+		registry?.provenance.type === 'github'
+			? registry.provenance.repository
+			: undefined;
+	const provenanceRevision =
+		registry?.provenance.type === 'github'
+			? registry.provenance.revision
+			: undefined;
 	const provider = registry?.provider ?? metadata.type;
 	const providerLabel = ['google', 'google-icons'].includes(provider)
 		? 'Google Fonts'
@@ -598,11 +516,11 @@ export const FamilyAbout = ({
 				</section>
 			)}
 
-			{article && (
+			{story && (
 				<article className={classes.article}>
 					<h2>The story</h2>
 					<div className={classes.prose}>
-						<RegistryMarkdown value={article} />
+						<RegistryMarkdown value={story} />
 					</div>
 				</article>
 			)}
@@ -762,9 +680,20 @@ export const FamilyAbout = ({
 						<h2 id="provenance-heading">Provenance</h2>
 						<p>Where the files came from and what Fontsource distributes.</p>
 					</div>
-					<a href={repository} target="_blank" rel="noreferrer">
-						View upstream project →
-					</a>
+					<div className={classes.provenanceLinks}>
+						{provenanceRepository && provenanceRevision && (
+							<a
+								href={`${provenanceRepository.replace(/\/$/, '')}/tree/${provenanceRevision}`}
+								target="_blank"
+								rel="noreferrer"
+							>
+								View source snapshot →
+							</a>
+						)}
+						<a href={repository} target="_blank" rel="noreferrer">
+							View upstream project →
+						</a>
+					</div>
 				</div>
 
 				{technicalAvailabilityMessage && (
@@ -778,6 +707,16 @@ export const FamilyAbout = ({
 						<dt>Provider</dt>
 						<dd>{providerLabel}</dd>
 					</div>
+					{registry && (
+						<div>
+							<dt>Source snapshot</dt>
+							<dd>
+								{registry.provenance.type === 'github'
+									? 'GitHub repository'
+									: 'Fontsource Registry'}
+							</dd>
+						</div>
+					)}
 					{sources.length > 0 && (
 						<div>
 							<dt>Source files</dt>
@@ -790,16 +729,16 @@ export const FamilyAbout = ({
 							<dd>{sourceFormats.join(', ')}</dd>
 						</div>
 					)}
-					{registry?.project?.revision && (
+					{provenanceRevision && provenanceRepository && (
 						<div>
 							<dt>Revision</dt>
 							<dd>
 								<a
-									href={`${repository.replace(/\/$/, '')}/tree/${registry.project.revision}`}
+									href={`${provenanceRepository.replace(/\/$/, '')}/commit/${provenanceRevision}`}
 									target="_blank"
 									rel="noreferrer"
 								>
-									<code>{registry.project.revision.slice(0, 10)}</code>
+									<code>{provenanceRevision.slice(0, 10)}</code>
 								</a>
 							</dd>
 						</div>
@@ -810,15 +749,7 @@ export const FamilyAbout = ({
 					<div className={classes.sourceFiles}>
 						<ul aria-label="Source files">
 							{sources.map((source) => (
-								<SourceFileItem
-									key={source.sha256}
-									source={source}
-									mappedCharacterCount={
-										source.sha256 === capabilitySource?.sha256
-											? capabilities?.codepointCount
-											: undefined
-									}
-								/>
+								<SourceFileItem key={source.sha256} source={source} />
 							))}
 						</ul>
 					</div>

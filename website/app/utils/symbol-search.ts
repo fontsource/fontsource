@@ -1,4 +1,5 @@
 import { create, insertMultiple, search, type ZBSearch } from 'zbsearch';
+import { normalizeSearchValue } from './search';
 
 export interface SearchableSymbol {
 	name: string;
@@ -21,9 +22,6 @@ interface SymbolSearchIndex {
 	symbols: readonly SearchableSymbol[];
 }
 
-const normalizeSymbolName = (value: string) =>
-	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
-
 export const symbolSearchSeparator = '\u0000';
 export const getSymbolSearchKey = ({ name, codepoint }: SearchableSymbol) =>
 	`${name}${symbolSearchSeparator}${codepoint}`;
@@ -34,7 +32,7 @@ export const createSymbolSearch = (
 	const database = create({ schema: symbolSearchSchema });
 	const documents = symbols.map((symbol) => ({
 		key: getSymbolSearchKey(symbol),
-		name: normalizeSymbolName(symbol.name),
+		name: normalizeSearchValue(symbol.name),
 	}));
 
 	insertMultiple(database, documents);
@@ -72,7 +70,7 @@ export const searchSymbolCatalog = (
 			.map(getSymbolSearchKey);
 	}
 
-	const normalized = normalizeSymbolName(trimmed);
+	const normalized = normalizeSearchValue(trimmed);
 	const directMatches = index.documents
 		.map((document) => ({
 			document,

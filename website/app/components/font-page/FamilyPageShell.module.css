@@ -135,7 +135,7 @@
 		text-transform: capitalize;
 	}
 
-	a {
+	span {
 		min-height: 30px;
 		display: inline-flex;
 		align-items: center;
@@ -145,8 +145,7 @@
 		text-decoration: none;
 	}
 
-	a:hover,
-	a:focus-visible {
+	span:hover {
 		color: var(--mantine-color-purple-0);
 		background: light-dark(#e9e7ff, #202b47);
 	}

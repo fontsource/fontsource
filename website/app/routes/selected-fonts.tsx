@@ -7,7 +7,7 @@ export const meta: MetaFunction = () =>
 	ogMeta({
 		title: 'Font Set | Fontsource',
 		description:
-			'Keep configured fonts together and generate combined package, CDN, or CSS output.',
+			'Keep font families together, download them in one bundle, or generate a combined website starting point.',
 	});
 
 export default function SelectedFontsPage() {

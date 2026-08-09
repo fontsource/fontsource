@@ -372,12 +372,7 @@ const getOpenTypeFeatureDescription = (tag: string) => {
 	);
 };
 
-export type {
-	RegistryDataState,
-	RegistryFamily,
-	RegistryFamilyKind,
-	RegistrySource,
-};
+export type { RegistryDataState, RegistryFamily, RegistrySource };
 export {
 	findUnmappedCharacters,
 	getOpenTypeFeatureDescription,

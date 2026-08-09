@@ -1,31 +1,26 @@
 import { Tabs, VisuallyHidden } from '@mantine/core';
-import { useLocalStorage } from '@mantine/hooks';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { IconDownload, IconExternal } from '@/components/icons';
-import { createProjectItem } from '@/features/projects/createProjectItem';
-import {
-	getUsageBlock,
-	getUsageMarkup,
-	getUsageNote,
-} from '@/features/projects/output';
-import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type {
 	GetFontResponse,
 	GetFontVersionsResponse,
 	GetRegistrySubsetResponse,
 	GetVariableFontResponse,
 } from '@/generated/api';
-import { deserializeStoredChoice } from '@/utils/browser-storage';
+import { usePackageManager } from '@/hooks/usePackageManager';
 import { getJsDelivrPackageUrl } from '@/utils/cdn';
 import {
 	getPackageManagerCommand,
 	packageManagers,
-	packageManagerValues,
 } from '@/utils/docs/packageManagers';
-import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
+import {
+	fontWeightNames,
+	formatFontLabel,
+	getAxisLabel,
+} from '@/utils/font-labels';
 import { getPreferredPreviewSubset } from '@/utils/font-preview';
 import type { RegistryDataState, RegistryFamily } from '@/utils/registry';
 
@@ -53,8 +48,53 @@ interface FamilyUseProps {
 type Method = 'package' | 'cdn';
 type AcquisitionPath = 'download' | 'web';
 type FamilyFormat = 'variable' | 'static';
-type SetupMode = 'standard' | 'custom';
 type FontStyle = GetFontResponse['styles'][number];
+
+interface RequiredOptionGroupProps<T extends number | string> {
+	description: string;
+	id: string;
+	legend: string;
+	onChange: (value: T) => void;
+	options: readonly T[];
+	selected: readonly T[];
+	toLabel: (value: T) => string;
+}
+
+const RequiredOptionGroup = <T extends number | string>({
+	description,
+	id,
+	legend,
+	onChange,
+	options,
+	selected,
+	toLabel,
+}: RequiredOptionGroupProps<T>) => (
+	<fieldset className={classes.optionGroup} aria-describedby={`${id}-help`}>
+		<legend>{legend}</legend>
+		<p className={classes.selectionHelp} id={`${id}-help`}>
+			{description}
+		</p>
+		<div>
+			{options.map((option) => {
+				const checked = selected.includes(option);
+				const inputId = `${id}-${option}`;
+
+				return (
+					<label htmlFor={inputId} key={option}>
+						<input
+							id={inputId}
+							type="checkbox"
+							checked={checked}
+							disabled={checked && selected.length === 1}
+							onChange={() => onChange(option)}
+						/>
+						<span>{toLabel(option)}</span>
+					</label>
+				);
+			})}
+		</div>
+	</fieldset>
+);
 
 const toggleRequiredValue = <T,>(selected: T[], value: T, available: T[]) => {
 	const next = selected.includes(value)
@@ -65,23 +105,13 @@ const toggleRequiredValue = <T,>(selected: T[], value: T, available: T[]) => {
 	return available.filter((item) => next.includes(item));
 };
 
-const weightNames: Record<number, string> = {
-	100: 'Thin',
-	200: 'Extra light',
-	300: 'Light',
-	400: 'Regular',
-	500: 'Medium',
-	600: 'Semi bold',
-	700: 'Bold',
-	800: 'Extra bold',
-	900: 'Black',
-};
-
 const sameValues = <T,>(left: T[], right: T[]) =>
 	left.length === right.length && left.every((value) => right.includes(value));
 
 const getWeightLabel = (weight: number) =>
-	weightNames[weight] ? `${weight} ${weightNames[weight]}` : String(weight);
+	fontWeightNames[weight]
+		? `${weight} ${fontWeightNames[weight]}`
+		: String(weight);
 
 export const FamilyUse = ({
 	metadata,
@@ -94,7 +124,6 @@ export const FamilyUse = ({
 	subsetDefinitions,
 }: FamilyUseProps) => {
 	const [searchParams, setSearchParams] = useSearchParams();
-	const fromSelectedFonts = searchParams.get('from') === 'selected-fonts';
 	const supportsVariable = Boolean(variable && versions.latestVariable);
 	const supportsStatic = Boolean(versions.latest);
 	const preferredSubset = getPreferredPreviewSubset(metadata, registry);
@@ -104,66 +133,13 @@ export const FamilyUse = ({
 	const recommendedWeight = metadata.weights.includes(400)
 		? 400
 		: (metadata.weights[0] ?? 400);
-	const defaultAxisValues = Object.fromEntries(
-		Object.entries(variable?.axes ?? {})
-			.filter(([axis]) => axis.toLowerCase() !== 'ital')
-			.map(([axis, range]) => [axis, Number(range.default)]),
-	);
 	const availableAxes = Object.keys(variable?.axes ?? {}).filter(
 		(axis) => axis.toLowerCase() !== 'ital',
 	);
 	const defaultActiveAxes = availableAxes.includes('wght')
 		? ['wght']
 		: availableAxes.slice(0, 1);
-	const requestedStyles = searchParams
-		.get('styles')
-		?.split(',')
-		.filter((style): style is FontStyle =>
-			metadata.styles.includes(style as FontStyle),
-		);
-	const requestedWeights = searchParams
-		.get('weights')
-		?.split(',')
-		.map(Number)
-		.filter((weight) => metadata.weights.includes(weight));
-	const requestedActiveAxes = searchParams
-		.get('activeAxes')
-		?.split(',')
-		.filter((axis) => availableAxes.includes(axis));
-	const requestedDisplay = fontDisplays.find(
-		(display) => display === searchParams.get('display'),
-	);
-	const requestedFormats = searchParams
-		.get('formats')
-		?.split(',')
-		.filter((format): format is WebFontFormat =>
-			webFontFormats.includes(format as WebFontFormat),
-		);
-	const requestedAxes = Object.fromEntries(
-		(searchParams.get('axes')?.split(',') ?? []).flatMap((entry) => {
-			const [axis, rawValue] = entry.split(':');
-			const range = variable?.axes[axis];
-			const value = Number(rawValue);
-			if (!range || !Number.isFinite(value) || axis.toLowerCase() === 'ital') {
-				return [];
-			}
-			return [
-				[axis, Math.min(Number(range.max), Math.max(Number(range.min), value))],
-			];
-		}),
-	);
-	const hasRequestedCustomSetup =
-		fromSelectedFonts ||
-		[
-			'format',
-			'styles',
-			'weights',
-			'activeAxes',
-			'display',
-			'formats',
-			'axes',
-		].some((parameter) => searchParams.has(parameter));
-	const defaultPath: AcquisitionPath = fromSelectedFonts ? 'web' : 'download';
+	const defaultPath: AcquisitionPath = 'download';
 	const requestedPath = searchParams.get('tab');
 	const path: AcquisitionPath =
 		requestedPath === 'download' || requestedPath === 'web'
@@ -171,13 +147,12 @@ export const FamilyUse = ({
 			: defaultPath;
 	const method: Method =
 		searchParams.get('method') === 'cdn' ? 'cdn' : 'package';
-	const defaultSetup = hasRequestedCustomSetup ? 'custom' : 'simple';
 	const requestedSetup = searchParams.get('setup');
 	const setup =
 		requestedSetup === 'simple' || requestedSetup === 'custom'
 			? requestedSetup
-			: defaultSetup;
-	const setupMode: SetupMode = setup === 'custom' ? 'custom' : 'standard';
+			: 'simple';
+	const customSetup = setup === 'custom';
 
 	const setNavigationChoice = (
 		parameter: 'tab' | 'method' | 'setup',
@@ -187,43 +162,27 @@ export const FamilyUse = ({
 		const next = new URLSearchParams(searchParams);
 		if (value === defaultValue) next.delete(parameter);
 		else next.set(parameter, value);
-		setSearchParams(next);
+		setSearchParams(next, {
+			flushSync: true,
+			preventScrollReset: true,
+		});
 	};
 	const [format, setFormat] = useState<FamilyFormat>(
-		searchParams.get('format') === 'static' && supportsStatic
-			? 'static'
-			: supportsVariable
-				? 'variable'
-				: 'static',
+		supportsVariable ? 'variable' : 'static',
 	);
-	const [selectedStyles, setSelectedStyles] = useState<FontStyle[]>(
-		requestedStyles?.length ? requestedStyles : [recommendedStyle],
-	);
-	const [selectedWeights, setSelectedWeights] = useState<number[]>(
-		requestedWeights?.length ? requestedWeights : [recommendedWeight],
-	);
+	const [selectedStyles, setSelectedStyles] = useState<FontStyle[]>([
+		recommendedStyle,
+	]);
+	const [selectedWeights, setSelectedWeights] = useState<number[]>([
+		recommendedWeight,
+	]);
 	const selectedSubsets = metadata.subsets.length
 		? metadata.subsets
 		: [preferredSubset];
-	const [activeAxes, setActiveAxes] = useState<string[]>(
-		requestedActiveAxes?.length ? requestedActiveAxes : defaultActiveAxes,
-	);
-	const [fontDisplay, setFontDisplay] = useState<FontDisplay>(
-		requestedDisplay ?? 'swap',
-	);
-	const [formats, setFormats] = useState<WebFontFormat[]>(
-		requestedFormats?.length ? requestedFormats : ['woff2'],
-	);
-	const [axisValues, setAxisValues] = useState<Record<string, number>>({
-		...defaultAxisValues,
-		...requestedAxes,
-	});
-	const [packageManager, setPackageManager] = useLocalStorage({
-		key: 'package-manager',
-		defaultValue: 'npm',
-		deserialize: (value) =>
-			deserializeStoredChoice(value, packageManagerValues, 'npm'),
-	});
+	const [activeAxes, setActiveAxes] = useState<string[]>(defaultActiveAxes);
+	const [fontDisplay, setFontDisplay] = useState<FontDisplay>('swap');
+	const [formats, setFormats] = useState<WebFontFormat[]>(['woff2']);
+	const [packageManager, setPackageManager] = usePackageManager('npm');
 
 	const isVariable = format === 'variable' && supportsVariable;
 	const availableStyles = [
@@ -237,39 +196,22 @@ export const FamilyUse = ({
 		selectedWeights.includes(weight),
 	);
 	const primaryStyle = styles[0] ?? recommendedStyle;
-	const selectedAxisValues = Object.fromEntries(
-		activeAxes.map((axis) => [
-			axis,
-			axisValues[axis] ?? defaultAxisValues[axis],
-		]),
-	);
-	const primaryWeight = isVariable
-		? (selectedAxisValues.wght ?? recommendedWeight)
-		: (weights[0] ?? recommendedWeight);
+	const primaryWeight = weights[0] ?? recommendedWeight;
 	const defaultFormat: FamilyFormat = supportsVariable ? 'variable' : 'static';
-	const axesAreDefault = Object.entries(selectedAxisValues).every(
-		([axis, value]) => defaultAxisValues[axis] === value,
-	);
 	const isDefaultSetup =
 		format === defaultFormat &&
 		sameValues(styles, [recommendedStyle]) &&
 		fontDisplay === 'swap' &&
 		(isVariable
-			? axesAreDefault && sameValues(activeAxes, defaultActiveAxes)
+			? sameValues(activeAxes, defaultActiveAxes)
 			: sameValues(weights, [recommendedWeight]) &&
 				sameValues(formats, ['woff2']));
-	const projectItem = createProjectItem({
-		metadata,
-		versions,
-		variable,
-		registry,
-		format: isVariable ? 'variable' : 'static',
-		subset: selectedSubsets[0] ?? preferredSubset,
-		style: primaryStyle,
-		weight: primaryWeight,
-		axes: selectedAxisValues,
-	});
-	const { packageName, packageVersion } = projectItem;
+	const packageName = isVariable
+		? `@fontsource-variable/${metadata.id}`
+		: `@fontsource/${metadata.id}`;
+	const packageVersion = isVariable
+		? (versions.latestVariable ?? versions.latest)
+		: versions.latest;
 	const cssOptions = {
 		metadata,
 		variable,
@@ -291,20 +233,6 @@ export const FamilyUse = ({
 		...cssOptions,
 		delivery: 'cdn',
 	});
-	const fontSetItem =
-		setupMode === 'custom'
-			? {
-					...projectItem,
-					styles,
-					weights,
-					subsets: selectedSubsets,
-					activeAxes,
-					formats,
-					fontDisplay,
-					packageFontFaceCSS,
-					cdnFontFaceCSS,
-				}
-			: projectItem;
 	const installCommand = getPackageManagerCommand(packageManager, packageName);
 	const packageImport = `import '${packageName}';`;
 	const cdnImport = `@import url('${getJsDelivrPackageUrl(
@@ -312,20 +240,18 @@ export const FamilyUse = ({
 		packageVersion,
 		'index.css',
 	)}');`;
-	const usageMarkup = getUsageMarkup(projectItem);
-	const cssCode = getUsageBlock(projectItem, usageMarkup ? undefined : 'body');
-	const usageNote = getUsageNote(projectItem);
-	const variableWeightRange = variable?.axes.wght
-		? `${Number(variable.axes.wght.min)}–${Number(variable.axes.wght.max)}`
-		: `${Math.min(...metadata.weights)}–${Math.max(...metadata.weights)}`;
-	const exampleWeightRange =
-		isVariable && activeAxes.includes('wght') ? variable?.axes.wght : undefined;
+	const minWeight = variable?.axes.wght
+		? Number(variable.axes.wght.min)
+		: Math.min(...metadata.weights);
+	const maxWeight = variable?.axes.wght
+		? Number(variable.axes.wght.max)
+		: Math.max(...metadata.weights);
+	const variableWeightRange = `${minWeight}–${maxWeight}`;
 	const selectionSummary = isVariable
 		? `Variable · ${styles.map(formatFontLabel).join(' + ')} · display ${fontDisplay}`
 		: weights.length === 1 && styles.length === 1
 			? `Static · ${formatFontLabel(primaryStyle)} · ${getWeightLabel(primaryWeight)} · display ${fontDisplay}`
 			: `Static · ${styles.map(formatFontLabel).join(' + ')} · weights ${weights.join(' + ')} · display ${fontDisplay}`;
-	const exampleFace = `${formatFontLabel(primaryStyle)} ${Math.round(primaryWeight)}`;
 	const hasSlicedSelection = subsetDefinitions?.some(
 		(definition) =>
 			selectedSubsets.includes(definition.id) && definition.slices?.length,
@@ -337,24 +263,46 @@ export const FamilyUse = ({
 		setActiveAxes(defaultActiveAxes);
 		setFontDisplay('swap');
 		setFormats(['woff2']);
-		setAxisValues(defaultAxisValues);
 	};
 	const formatDescription = isVariable
 		? `Each selected style uses one stylesheet covering weights ${variableWeightRange} and the selected axes.`
 		: 'Choose the exact fixed weights and styles your site uses.';
-	const standardImportDescription = isVariable
-		? `${method === 'package' ? 'Import once in your app entry file.' : 'Add this to your CSS.'} All weights from ${variableWeightRange} are available, while Unicode ranges let the browser fetch only the characters it needs.`
-		: method === 'package'
-			? 'Import once in your app entry file. The package provides the default face and handles Unicode ranges automatically.'
-			: 'Add this to your CSS. The aggregate stylesheet includes every Unicode slice required by the font.';
+	const packageImportLead = (
+		<>
+			<Link to="/docs/getting-started/install">Import once</Link> in your app
+			entry file.
+		</>
+	);
+	const unicodeRangeLink = (
+		<a
+			href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/unicode-range"
+			target="_blank"
+			rel="noreferrer"
+		>
+			Unicode ranges
+		</a>
+	);
+	const standardImportDescription = isVariable ? (
+		<>
+			{method === 'package' ? packageImportLead : 'Add this to your CSS.'} All
+			weights from {variableWeightRange} are available, while {unicodeRangeLink}{' '}
+			let the browser fetch only the characters it needs.
+		</>
+	) : method === 'package' ? (
+		<>
+			{packageImportLead} The package provides the default face and handles{' '}
+			{unicodeRangeLink} automatically.
+		</>
+	) : (
+		<>
+			Add this to your CSS. The aggregate stylesheet includes all{' '}
+			{unicodeRangeLink} required by the font.
+		</>
+	);
 	const fontFaceExplanation =
 		method === 'package'
 			? 'Paste this into a stylesheet after installing the package. Your bundler resolves the local font files.'
 			: `Paste this version-pinned CSS into your project. Font files load from jsDelivr.${hasSlicedSelection ? ' Every Unicode slice published for the family is included.' : ''}`;
-	const cssExplanation = isVariable
-		? `Applies ${exampleFace} and your current variable-axis values.`
-		: `Applies ${exampleFace} from the generated stylesheet.`;
-
 	return (
 		<section className={classes.page} aria-labelledby="use-heading">
 			<style
@@ -362,11 +310,6 @@ export const FamilyUse = ({
 				dangerouslySetInnerHTML={{ __html: variableCSS ?? staticCSS }}
 			/>
 			<div className={classes.heading}>
-				{fromSelectedFonts && (
-					<Link className={classes.returnLink} to="/selected-fonts">
-						← Back to font set
-					</Link>
-				)}
 				<h2 id="use-heading">Get {metadata.family}</h2>
 				<p>Choose where you want to use {metadata.family}.</p>
 			</div>
@@ -430,21 +373,6 @@ export const FamilyUse = ({
 								license={registry?.license}
 								registryState={registryState}
 							/>
-							<div className={classes.fontSetPrompt}>
-								<p>
-									<strong>Keep browsing</strong>
-									<span>
-										Add this family to your font set, then download every saved
-										family together.
-									</span>
-								</p>
-								<ProjectAddButton
-									includedLabel="Update font set"
-									item={fontSetItem}
-									label="Add to font set"
-									savedLabel="Saved in font set"
-								/>
-							</div>
 						</div>
 					</div>
 				</Tabs.Panel>
@@ -493,11 +421,11 @@ export const FamilyUse = ({
 							</VisuallyHidden>
 							<button
 								type="button"
-								data-active={setupMode === 'standard' || undefined}
-								aria-pressed={setupMode === 'standard'}
+								data-active={!customSetup || undefined}
+								aria-pressed={!customSetup}
 								onClick={() => {
 									if (setup !== 'simple') {
-										setNavigationChoice('setup', 'simple', defaultSetup);
+										setNavigationChoice('setup', 'simple', 'simple');
 									}
 								}}
 							>
@@ -505,11 +433,11 @@ export const FamilyUse = ({
 							</button>
 							<button
 								type="button"
-								data-active={setupMode === 'custom' || undefined}
-								aria-pressed={setupMode === 'custom'}
+								data-active={customSetup || undefined}
+								aria-pressed={customSetup}
 								onClick={() => {
 									if (setup !== 'custom') {
-										setNavigationChoice('setup', 'custom', defaultSetup);
+										setNavigationChoice('setup', 'custom', 'simple');
 									}
 								}}
 							>
@@ -517,7 +445,7 @@ export const FamilyUse = ({
 							</button>
 						</fieldset>
 
-						{setupMode === 'custom' && (
+						{customSetup && (
 							<div className={classes.configuration}>
 								<div className={classes.configurationHeading}>
 									<div>
@@ -535,274 +463,126 @@ export const FamilyUse = ({
 									)}
 								</div>
 
-								{setupMode === 'custom' &&
-									supportsStatic &&
-									supportsVariable && (
-										<fieldset
-											className={classes.formatSwitch}
-											aria-describedby="font-format-help"
-										>
-											<legend>Font type</legend>
-											<div>
-												<button
-													type="button"
-													data-active={isVariable || undefined}
-													aria-pressed={isVariable}
-													onClick={() => setFormat('variable')}
-												>
-													Variable
-												</button>
-												<button
-													type="button"
-													data-active={!isVariable || undefined}
-													aria-pressed={!isVariable}
-													onClick={() => setFormat('static')}
-												>
-													Static
-												</button>
-											</div>
-											<p
-												className={classes.selectionHelp}
-												id="font-format-help"
+								{supportsStatic && supportsVariable && (
+									<fieldset
+										className={classes.formatSwitch}
+										aria-describedby="font-format-help"
+									>
+										<legend>Font type</legend>
+										<div>
+											<button
+												type="button"
+												data-active={isVariable || undefined}
+												aria-pressed={isVariable}
+												onClick={() => setFormat('variable')}
 											>
-												{formatDescription}
-											</p>
-										</fieldset>
-									)}
+												Variable
+											</button>
+											<button
+												type="button"
+												data-active={!isVariable || undefined}
+												aria-pressed={!isVariable}
+												onClick={() => setFormat('static')}
+											>
+												Static
+											</button>
+										</div>
+										<p className={classes.selectionHelp} id="font-format-help">
+											{formatDescription}
+										</p>
+									</fieldset>
+								)}
 								{!(supportsStatic && supportsVariable) && (
 									<p className={classes.formatSummary}>{formatDescription}</p>
 								)}
 
-								{setupMode === 'custom' && metadata.styles.length > 1 && (
-									<fieldset
-										className={classes.optionGroup}
-										aria-describedby={`${metadata.id}-style-help`}
-									>
-										<legend>Styles</legend>
-										<p
-											className={classes.selectionHelp}
-											id={`${metadata.id}-style-help`}
-										>
-											Choose one or more. At least one is required.
-										</p>
-										<div>
-											{availableStyles.map((style) => {
-												const selected = styles.includes(style);
-												const inputId = `${metadata.id}-style-${style}`;
-												return (
-													<label htmlFor={inputId} key={style}>
-														<input
-															id={inputId}
-															type="checkbox"
-															checked={selected}
-															disabled={selected && styles.length === 1}
-															onChange={() =>
-																setSelectedStyles((current) =>
-																	toggleRequiredValue(
-																		current,
-																		style,
-																		metadata.styles,
-																	),
-																)
-															}
-														/>
-														<span>{formatFontLabel(style)}</span>
-													</label>
-												);
-											})}
-										</div>
-									</fieldset>
+								{metadata.styles.length > 1 && (
+									<RequiredOptionGroup
+										description="Choose one or more. At least one is required."
+										id={`${metadata.id}-style`}
+										legend="Styles"
+										onChange={(style) =>
+											setSelectedStyles((current) =>
+												toggleRequiredValue(current, style, metadata.styles),
+											)
+										}
+										options={availableStyles}
+										selected={styles}
+										toLabel={formatFontLabel}
+									/>
 								)}
 
-								{setupMode === 'custom' &&
-									!isVariable &&
-									metadata.weights.length > 1 && (
-										<fieldset
-											className={classes.optionGroup}
-											aria-describedby={`${metadata.id}-weight-help`}
-										>
-											<legend>Weights</legend>
-											<p
-												className={classes.selectionHelp}
-												id={`${metadata.id}-weight-help`}
-											>
-												Choose one or more weights. At least one is required.
-											</p>
-											<div>
-												{metadata.weights.map((weight) => {
-													const selected = weights.includes(weight);
-													const inputId = `${metadata.id}-weight-${weight}`;
-													return (
-														<label htmlFor={inputId} key={weight}>
-															<input
-																id={inputId}
-																type="checkbox"
-																checked={selected}
-																disabled={selected && weights.length === 1}
-																onChange={() =>
-																	setSelectedWeights((current) =>
-																		toggleRequiredValue(
-																			current,
-																			weight,
-																			metadata.weights,
-																		),
-																	)
-																}
-															/>
-															<span>{getWeightLabel(weight)}</span>
-														</label>
-													);
-												})}
-											</div>
-										</fieldset>
-									)}
-
-								{setupMode === 'custom' &&
-									isVariable &&
-									availableAxes.length > 1 && (
-										<fieldset
-											className={classes.optionGroup}
-											aria-describedby={`${metadata.id}-axes-help`}
-										>
-											<legend>Variable axes</legend>
-											<p
-												className={classes.selectionHelp}
-												id={`${metadata.id}-axes-help`}
-											>
-												Choose the controls your project needs. Fewer axes
-												usually mean a smaller font file.
-											</p>
-											<div>
-												{availableAxes.map((axis) => {
-													const selected = activeAxes.includes(axis);
-													const inputId = `${metadata.id}-active-axis-${axis}`;
-													return (
-														<label htmlFor={inputId} key={axis}>
-															<input
-																id={inputId}
-																type="checkbox"
-																checked={selected}
-																disabled={selected && activeAxes.length === 1}
-																onChange={() =>
-																	setActiveAxes((current) =>
-																		toggleRequiredValue(
-																			current,
-																			axis,
-																			availableAxes,
-																		),
-																	)
-																}
-															/>
-															<span>{getAxisLabel(axis)}</span>
-														</label>
-													);
-												})}
-											</div>
-										</fieldset>
-									)}
-
-								{setupMode === 'custom' &&
-									isVariable &&
-									Object.entries(variable?.axes ?? {})
-										.filter(
-											([axis]) =>
-												activeAxes.includes(axis) &&
-												axis.toLowerCase() !== 'wght',
-										)
-										.map(([axis, range]) => {
-											const value = axisValues[axis] ?? Number(range.default);
-											const inputId = `${metadata.id}-axis-${axis}`;
-											return (
-												<label
-													className={classes.axisControl}
-													htmlFor={inputId}
-													key={axis}
-												>
-													<span>
-														{getAxisLabel(axis)}
-														<output htmlFor={inputId}>{value}</output>
-													</span>
-													<input
-														id={inputId}
-														type="range"
-														min={Number(range.min)}
-														max={Number(range.max)}
-														step={Number(range.step)}
-														value={value}
-														onChange={(event) => {
-															setAxisValues((values) => ({
-																...values,
-																[axis]: Number(event.currentTarget.value),
-															}));
-														}}
-													/>
-												</label>
-											);
-										})}
-
-								{setupMode === 'custom' && (
-									<fieldset className={classes.optionGroup}>
-										<legend>Font display</legend>
-										<p className={classes.selectionHelp}>
-											Controls how text behaves while the font loads. Swap is
-											the default.
-										</p>
-										<div>
-											{fontDisplays.map((display) => (
-												<label
-													htmlFor={`${metadata.id}-display-${display}`}
-													key={display}
-												>
-													<input
-														id={`${metadata.id}-display-${display}`}
-														type="radio"
-														name={`${metadata.id}-font-display`}
-														checked={fontDisplay === display}
-														onChange={() => setFontDisplay(display)}
-													/>
-													<span>{formatFontLabel(display)}</span>
-												</label>
-											))}
-										</div>
-									</fieldset>
+								{!isVariable && metadata.weights.length > 1 && (
+									<RequiredOptionGroup
+										description="Choose one or more weights. At least one is required."
+										id={`${metadata.id}-weight`}
+										legend="Weights"
+										onChange={(weight) =>
+											setSelectedWeights((current) =>
+												toggleRequiredValue(current, weight, metadata.weights),
+											)
+										}
+										options={metadata.weights}
+										selected={weights}
+										toLabel={getWeightLabel}
+									/>
 								)}
 
-								{setupMode === 'custom' && !isVariable && (
-									<fieldset className={classes.optionGroup}>
-										<legend>Webfont formats</legend>
-										<p className={classes.selectionHelp}>
-											WOFF2 is the default. Add WOFF only for older browser
-											support.
-										</p>
-										<div>
-											{webFontFormats.map((webFormat) => {
-												const selected = formats.includes(webFormat);
-												return (
-													<label
-														htmlFor={`${metadata.id}-web-format-${webFormat}`}
-														key={webFormat}
-													>
-														<input
-															id={`${metadata.id}-web-format-${webFormat}`}
-															type="checkbox"
-															checked={selected}
-															disabled={selected && formats.length === 1}
-															onChange={() =>
-																setFormats((current) =>
-																	toggleRequiredValue(
-																		current,
-																		webFormat,
-																		webFontFormats,
-																	),
-																)
-															}
-														/>
-														<span>{webFormat.toUpperCase()}</span>
-													</label>
-												);
-											})}
-										</div>
-									</fieldset>
+								{isVariable && availableAxes.length > 1 && (
+									<RequiredOptionGroup
+										description="Choose the controls your project needs. Generated CSS uses each selected axis’s font default."
+										id={`${metadata.id}-active-axis`}
+										legend="Variable axes"
+										onChange={(axis) =>
+											setActiveAxes((current) =>
+												toggleRequiredValue(current, axis, availableAxes),
+											)
+										}
+										options={availableAxes}
+										selected={activeAxes}
+										toLabel={getAxisLabel}
+									/>
+								)}
+
+								<fieldset className={classes.optionGroup}>
+									<legend>Font display</legend>
+									<p className={classes.selectionHelp}>
+										Controls how text behaves while the font loads. Swap is the
+										default.
+									</p>
+									<div>
+										{fontDisplays.map((display) => (
+											<label
+												htmlFor={`${metadata.id}-display-${display}`}
+												key={display}
+											>
+												<input
+													id={`${metadata.id}-display-${display}`}
+													type="radio"
+													name={`${metadata.id}-font-display`}
+													checked={fontDisplay === display}
+													onChange={() => setFontDisplay(display)}
+												/>
+												<span>{formatFontLabel(display)}</span>
+											</label>
+										))}
+									</div>
+								</fieldset>
+
+								{!isVariable && (
+									<RequiredOptionGroup
+										description="WOFF2 is the default. Add WOFF only for older browser support."
+										id={`${metadata.id}-web-format`}
+										legend="Webfont formats"
+										onChange={(webFormat) =>
+											setFormats((current) =>
+												toggleRequiredValue(current, webFormat, webFontFormats),
+											)
+										}
+										options={webFontFormats}
+										selected={formats}
+										toLabel={(webFormat) => webFormat.toUpperCase()}
+									/>
 								)}
 							</div>
 						)}
@@ -836,7 +616,7 @@ export const FamilyUse = ({
 									language="sh"
 								/>
 							)}
-							{setupMode === 'standard' ? (
+							{!customSetup ? (
 								<CopyCodeBlock
 									code={method === 'package' ? packageImport : cdnImport}
 									description={standardImportDescription}
@@ -854,48 +634,17 @@ export const FamilyUse = ({
 									scrollable
 								/>
 							)}
-							{exampleWeightRange && (
-								<label
-									className={`${classes.axisControl} ${classes.exampleControl}`}
-									htmlFor={`${metadata.id}-example-weight`}
-								>
-									<span>
-										Example weight
-										<output htmlFor={`${metadata.id}-example-weight`}>
-											{primaryWeight}
-										</output>
-									</span>
-									<input
-										id={`${metadata.id}-example-weight`}
-										type="range"
-										min={Number(exampleWeightRange.min)}
-										max={Number(exampleWeightRange.max)}
-										step={Number(exampleWeightRange.step)}
-										value={primaryWeight}
-										onChange={(event) => {
-											setAxisValues((values) => ({
-												...values,
-												wght: Number(event.currentTarget.value),
-											}));
-										}}
-									/>
-								</label>
-							)}
-							<CopyCodeBlock
-								code={cssCode}
-								description={cssExplanation}
-								label={`Example CSS · ${exampleFace}`}
-								language="css"
-							/>
-							{usageMarkup && (
-								<CopyCodeBlock
-									code={usageMarkup}
-									label="HTML example"
-									language="html"
-								/>
-							)}
+							<p className={classes.weightRange}>
+								<span>
+									{minWeight === maxWeight
+										? 'Available weight'
+										: 'Weight range'}
+								</span>
+								<strong>
+									{minWeight === maxWeight ? minWeight : variableWeightRange}
+								</strong>
+							</p>
 						</div>
-						{usageNote && <p className={classes.usageHelp}>{usageNote}</p>}
 						<Link
 							className={classes.guideLink}
 							to="/docs/getting-started/install"
@@ -903,24 +652,6 @@ export const FamilyUse = ({
 							New to web fonts? Read the guide
 							<IconExternal aria-hidden height={15} stroke="currentColor" />
 						</Link>
-
-						<div
-							className={`${classes.fontSetPrompt} ${classes.webContinuation}`}
-						>
-							<p>
-								<strong>Keep browsing</strong>
-								<span>
-									Save this setup to your font set and generate combined code
-									when you are ready.
-								</span>
-							</p>
-							<ProjectAddButton
-								includedLabel="Update font set"
-								item={fontSetItem}
-								label="Add to font set"
-								savedLabel="Saved in font set"
-							/>
-						</div>
 					</div>
 				</Tabs.Panel>
 			</Tabs>

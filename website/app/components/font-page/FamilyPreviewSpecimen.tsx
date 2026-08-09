@@ -11,6 +11,7 @@ import { type CSSProperties, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 
 import { DropdownSimple } from '@/components/Dropdown';
+import { fontWeightNames } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
 	getFontPreviewFamily,
@@ -36,18 +37,6 @@ import {
 import { FontSkeleton } from './FontSkeleton';
 
 const symbolModeLabels = [{ label: 'Symbols', value: 'headline' as const }];
-
-const weightNames: Record<number, string> = {
-	100: 'Thin',
-	200: 'Extra light',
-	300: 'Light',
-	400: 'Regular',
-	500: 'Medium',
-	600: 'Semibold',
-	700: 'Bold',
-	800: 'Extra bold',
-	900: 'Black',
-};
 
 const rtlScripts = new Set([
 	'Adlm',
@@ -351,7 +340,7 @@ const PreviewCanvas = observer(() => {
 									}
 								>
 									<span>
-										{weightNames[value] ?? 'Weight'} {value}
+										{fontWeightNames[value] ?? 'Weight'} {value}
 									</span>
 									<strong
 										style={{

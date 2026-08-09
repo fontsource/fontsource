@@ -1,6 +1,7 @@
 import {
 	getFont,
 	getFontStats,
+	getFontVersions,
 	getRegistryFamily,
 	getRegistryFamilySymbols,
 	getRegistrySourceCapabilities,
@@ -11,31 +12,39 @@ import { getFontPreviewCSS } from '@/utils/font-preview';
 import { selectRegistryFamilyLanguages } from '@/utils/registry';
 import { loadOptionalRegistryData } from '@/utils/registry-request.server';
 
-const loadFontPageBase = async (id: string, signal: AbortSignal) => {
+const loadFontFamilyRecord = async (id: string, signal: AbortSignal) => {
 	const parameters = { id };
 	const options = { signal };
 	const metadataPromise = getFont(parameters, options);
+	const versionsPromise = getFontVersions(parameters, options);
 	const variablePromise = metadataPromise.then((metadata) =>
-		metadata.variable
-			? getVariableFont(parameters, options).catch(() => undefined)
-			: undefined,
+		metadata.variable ? getVariableFont(parameters, options) : undefined,
 	);
 	const registryPromise = loadOptionalRegistryData(
 		getRegistryFamily(parameters, options),
 		signal,
 	);
-	const [metadata, variable, registryResult] = await Promise.all([
+	const [metadata, versions, variable, registryResult] = await Promise.all([
 		metadataPromise,
+		versionsPromise,
 		variablePromise,
 		registryPromise,
 	]);
 
 	return {
 		metadata,
+		versions,
 		variable,
 		registry: registryResult.value,
 		registryState: registryResult.state,
-		...getFontPreviewCSS(metadata, variable),
+	};
+};
+
+const loadFontPageBase = async (id: string, signal: AbortSignal) => {
+	const record = await loadFontFamilyRecord(id, signal);
+	return {
+		...record,
+		...getFontPreviewCSS(record.metadata, record.variable),
 	};
 };
 
@@ -128,6 +137,7 @@ const loadFontPageSymbols = async (
 };
 
 export {
+	loadFontFamilyRecord,
 	loadFontPageBase,
 	loadFontPageCapabilities,
 	loadFontPageLanguages,

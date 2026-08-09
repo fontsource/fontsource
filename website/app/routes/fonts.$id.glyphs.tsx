@@ -56,6 +56,7 @@ export default function GlyphsPage() {
 	const {
 		metadata,
 		staticCSS,
+		variable,
 		variableCSS,
 		registry,
 		languages,
@@ -71,7 +72,7 @@ export default function GlyphsPage() {
 			metadata={metadata}
 			registry={registry}
 			previewSource={capabilitySource}
-			variableAvailable={Boolean(variableCSS)}
+			variable={variable}
 			tabsValue="glyphs"
 		>
 			<CharacterExplorer

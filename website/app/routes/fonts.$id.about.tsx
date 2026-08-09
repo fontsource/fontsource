@@ -48,7 +48,6 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			axisRegistry: axesResult.value,
 			taxonomy: taxonomyResult.value,
 			capabilities: capabilitiesResult.capabilities,
-			capabilitySource: capabilitiesResult.capabilitySource,
 			stats,
 			enrichmentUnavailable,
 			capabilitiesState: capabilitiesResult.state,
@@ -81,7 +80,6 @@ export default function AboutPage() {
 		axisRegistry,
 		taxonomy,
 		capabilities,
-		capabilitySource,
 		stats,
 		registryState,
 		enrichmentUnavailable,
@@ -92,7 +90,7 @@ export default function AboutPage() {
 		<FamilyPageShell
 			metadata={metadata}
 			registry={registry}
-			variableAvailable={Boolean(variable)}
+			variable={variable}
 			tabsValue="about"
 		>
 			<FamilyAbout
@@ -106,7 +104,6 @@ export default function AboutPage() {
 				axisRegistry={axisRegistry}
 				taxonomy={taxonomy}
 				capabilities={capabilities}
-				capabilitySource={capabilitySource}
 				stats={stats}
 				registryState={registryState}
 				enrichmentUnavailable={enrichmentUnavailable}

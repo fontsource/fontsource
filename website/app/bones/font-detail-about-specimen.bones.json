@@ -4,13 +4,13 @@
       "name": "font-detail-about-specimen",
       "viewportWidth": 327,
       "width": 327,
-      "height": 56,
+      "height": 67,
       "bones": [
         [
           0,
           0,
           100,
-          56,
+          67,
           8
         ]
       ]
@@ -19,13 +19,13 @@
       "name": "font-detail-about-specimen",
       "viewportWidth": 720,
       "width": 720,
-      "height": 59,
+      "height": 71,
       "bones": [
         [
           0,
           0,
           100,
-          59,
+          71,
           8
         ]
       ]
@@ -34,17 +34,16 @@
       "name": "font-detail-about-specimen",
       "viewportWidth": 630,
       "width": 630,
-      "height": 98,
+      "height": 118,
       "bones": [
         [
           0,
           0,
           100,
-          98,
+          118,
           8
         ]
       ]
     }
-  },
-  "_hash": "20215ff0ca8b0ced30066850611740ff"
+  }
 }

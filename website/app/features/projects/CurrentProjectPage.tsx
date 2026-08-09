@@ -1,37 +1,31 @@
 import { useValue } from '@legendapp/state/react';
 import { Button, Group, Modal, Text } from '@mantine/core';
-import { useLocalStorage } from '@mantine/hooks';
-import { IconDownload, IconExternalLink, IconTrash } from '@tabler/icons-react';
+import { IconDownload } from '@tabler/icons-react';
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate, useSearchParams } from 'react-router';
+import {
+	Link,
+	useFetcher,
+	useLocation,
+	useNavigate,
+	useSearchParams,
+} from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { AddFontSetToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
-import { deserializeStoredChoice } from '@/utils/browser-storage';
+import { usePackageManager } from '@/hooks/usePackageManager';
 import {
 	getPackageManagerCommand,
 	packageManagers,
-	packageManagerValues,
 } from '@/utils/docs/packageManagers';
 import { triggerBlobDownload } from '@/utils/download';
-import { formatFontLabel, getAxisLabel } from '@/utils/font-labels';
 import type { FontSummary } from '@/utils/font-summary';
 
 import classes from './CurrentProjectPage.module.css';
 import { useCurrentProjectStore } from './CurrentProjectProvider';
 import { createFontSetArchive, FontSetArchiveError } from './downloadFontSet';
-import type { ProjectItem } from './model';
-import {
-	getPreviewCdnUrl,
-	getProjectCdnUrls,
-	getProjectCssFiles,
-	getProjectEditUrl,
-	getUsageBlock,
-	getUsageNote,
-	hasSymbolCatalog,
-	isDigitalFamily,
-	usesNameLigatures,
-} from './output';
+import { FontSetFamilyRow } from './FontSetFamilyRow';
+import type { ResolvedFontSetFamily } from './model';
+import { getCdnStylesheetUrl, getUsageBlock } from './output';
 
 type DeliveryMethod = 'package' | 'cdn';
 type FontSetView = 'files' | 'website';
@@ -42,224 +36,57 @@ interface FontSetImportLocationState {
 		collectionName: string;
 		addedCount: number;
 		existingCount: number;
-		failedCount: number;
+		skippedCount: number;
 	};
 }
 
-const FontSecondaryDetails = ({
-	item,
-	tags,
-}: {
-	item: ProjectItem;
-	tags: string[];
-}) => {
-	const usageNote = item.registryFactsCurrent ? getUsageNote(item) : undefined;
-
-	return (
-		<>
-			{tags.length > 0 && (
-				<ul className={classes.tags}>
-					{tags.map((tag) => (
-						<li key={tag}>{formatFontLabel(tag)}</li>
-					))}
-				</ul>
-			)}
-			<dl className={classes.secondarySetup}>
-				<div className={classes.mobileSource}>
-					<dt>Source</dt>
-					<dd>
-						{item.designer ? `By ${item.designer} · ` : ''}
-						{formatFontLabel(item.classification)} · Package{' '}
-						{item.packageVersion}
-					</dd>
-				</div>
-				{item.fontDisplay && (
-					<div>
-						<dt>Font display</dt>
-						<dd>{formatFontLabel(item.fontDisplay)}</dd>
-					</div>
-				)}
-				{item.formats?.length && (
-					<div>
-						<dt>Webfont formats</dt>
-						<dd>
-							{item.formats.map((format) => format.toUpperCase()).join(', ')}
-						</dd>
-					</div>
-				)}
-				<div>
-					<dt>License</dt>
-					<dd>
-						{item.license.verified && item.license.url && item.license.id ? (
-							<a href={item.license.url} target="_blank" rel="noreferrer">
-								{item.license.id}
-								<IconExternalLink aria-hidden size={13} />
-							</a>
-						) : (
-							<Link to={`/fonts/${item.familyId}/about#license`}>
-								Needs verification
-							</Link>
-						)}
-					</dd>
-				</div>
-			</dl>
-			{usageNote && <p className={classes.usageNote}>{usageNote}</p>}
-		</>
-	);
-};
-
-const ProjectFont = ({
-	busy,
-	item,
-	onRemove,
-}: {
-	busy: boolean;
-	item: ProjectItem;
-	onRemove: () => void;
-}) => {
-	const variationSettings = Object.entries(item.axes)
-		.map(([axis, value]) => `"${axis}" ${value}`)
-		.join(', ');
-	const tags = item.tags.slice(0, 2);
-	const selectedStyles = item.styles ?? [item.style];
-	const selectedWeights = item.weights ?? [item.weight];
-	const selectedSubsets = item.subsets ?? [item.subset];
-	const setupSelection =
-		item.format === 'variable'
-			? `${selectedStyles.map(formatFontLabel).join(' + ')} · ${item.activeAxes?.map(getAxisLabel).join(' + ') ?? 'Variable axes'}`
-			: `${selectedStyles.map(formatFontLabel).join(' + ')} · weights ${selectedWeights.join(' + ')}`;
-	const usesSpecializedSpecimen =
-		hasSymbolCatalog(item) ||
-		isDigitalFamily(item) ||
-		item.tags.includes('special-use/punctuation');
-	const supportsLatin = selectedSubsets.some(
-		(subset) => subset === 'latin' || subset.startsWith('latin-'),
-	);
-	const isBarcodeFamily = item.tags.some((tag) => tag.includes('barcode'));
-	const staleSpecializedSpecimen =
-		!item.registryFactsCurrent && usesSpecializedSpecimen;
-	const specimenText = staleSpecializedSpecimen
-		? item.displayName
-		: hasSymbolCatalog(item)
-			? usesNameLigatures(item)
-				? 'home settings favorite'
-				: item.sampleText
-			: isDigitalFamily(item) || isBarcodeFamily
-				? '0123456789'
-				: usesSpecializedSpecimen || !supportsLatin
-					? item.sampleText
-					: item.displayName;
-
-	return (
-		<article className={classes.fontRow}>
-			{item.cdnFontFaceCSS ? (
-				<style
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from the saved Fontsource setup.
-					dangerouslySetInnerHTML={{ __html: item.cdnFontFaceCSS }}
-				/>
-			) : (
-				<link rel="stylesheet" href={getPreviewCdnUrl(item)} />
-			)}
-			<div
-				className={classes.specimen}
-				data-ui-fallback={staleSpecializedSpecimen || undefined}
-				data-compact={
-					hasSymbolCatalog(item) ||
-					isDigitalFamily(item) ||
-					isBarcodeFamily ||
-					undefined
-				}
-				style={{
-					fontFamily: staleSpecializedSpecimen ? undefined : item.fontFamily,
-					fontFeatureSettings:
-						!staleSpecializedSpecimen && usesNameLigatures(item)
-							? '"liga"'
-							: undefined,
-					fontVariationSettings: staleSpecializedSpecimen
-						? undefined
-						: variationSettings || undefined,
-					fontWeight: staleSpecializedSpecimen ? undefined : item.weight,
-					fontStyle: staleSpecializedSpecimen ? undefined : item.style,
-				}}
-			>
-				{specimenText}
-			</div>
-			<div className={classes.fontDetails}>
-				<div className={classes.fontTitle}>
-					<div>
-						<h2>
-							<Link to={`/fonts/${item.familyId}`}>{item.displayName}</Link>
-						</h2>
-						<p className={classes.fontMeta}>
-							{item.designer ? `By ${item.designer} · ` : ''}
-							{formatFontLabel(item.classification)}
-						</p>
-					</div>
-					{item.status === 'deprecated' && (
-						<span className={classes.status}>Deprecated</span>
-					)}
-				</div>
-				{!item.registryFactsCurrent && (
-					<p className={classes.staleSetup}>
-						<span>Saved setup needs refresh.</span>{' '}
-						<Link to={getProjectEditUrl(item)}>Refresh setup</Link>
-					</p>
-				)}
-				<dl className={classes.primarySetup}>
-					<div>
-						<dt>Font type</dt>
-						<dd>{formatFontLabel(item.format)}</dd>
-					</div>
-					<div>
-						<dt>Weight &amp; style</dt>
-						<dd>{setupSelection}</dd>
-					</div>
-				</dl>
-				<div className={classes.desktopSecondary}>
-					<FontSecondaryDetails item={item} tags={tags} />
-				</div>
-				<details className={classes.mobileSecondary}>
-					<summary>More details</summary>
-					<FontSecondaryDetails item={item} tags={tags} />
-				</details>
-				<div className={classes.rowActions}>
-					<button
-						type="button"
-						disabled={busy}
-						aria-label={`Remove ${item.displayName} from font set`}
-						onClick={onRemove}
-					>
-						<IconTrash aria-hidden size={16} />
-						Remove
-					</button>
-				</div>
-			</div>
-		</article>
-	);
-};
+interface FontSetItemsResponse {
+	requestId: string;
+	items: ResolvedFontSetFamily[];
+	failedIds: string[];
+	error?: string;
+}
 
 const CurrentProjectPage = () => {
 	const store = useCurrentProjectStore();
 	const location = useLocation();
 	const navigate = useNavigate();
+	const itemFetcher = useFetcher<FontSetItemsResponse>();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const initialImportResult = (
 		location.state as FontSetImportLocationState | null
 	)?.fontSetImport;
 	const [importResult] = useState(initialImportResult);
 	const ready = useValue(store.ready$);
-	const items = useValue(store.getItems);
+	const savedItems = useValue(store.getItems);
+	const savedFamilyIds = savedItems.map((item) => item.familyId);
+	const savedFamilySignature = savedFamilyIds.join(',');
+	const [reloadVersion, setReloadVersion] = useState(0);
+	const requestId = `${savedFamilySignature}:${reloadVersion}`;
+	const loadedResponse =
+		itemFetcher.data?.requestId === requestId ? itemFetcher.data : undefined;
+	const loadedItems = new Map(
+		(loadedResponse?.items ?? []).map((item) => [item.familyId, item]),
+	);
+	const items = savedFamilyIds.flatMap((familyId) => {
+		const item = loadedItems.get(familyId);
+		return item ? [item] : [];
+	});
+	const fontSetLoading =
+		ready &&
+		savedItems.length > 0 &&
+		(!loadedResponse || itemFetcher.state !== 'idle');
+	const outputsReady =
+		Boolean(loadedResponse) &&
+		!loadedResponse?.error &&
+		loadedResponse?.failedIds.length === 0 &&
+		items.length === savedItems.length;
 	const method: DeliveryMethod =
 		searchParams.get('method') === 'cdn' ? 'cdn' : 'package';
 	const view: FontSetView =
 		searchParams.get('view') === 'website' ? 'website' : 'files';
-	const [packageManager, setPackageManager] = useLocalStorage({
-		key: 'package-manager',
-		defaultValue: 'pnpm',
-		deserialize: (value) =>
-			deserializeStoredChoice(value, packageManagerValues, 'pnpm'),
-	});
-	const [removedItem, setRemovedItem] = useState<ProjectItem>();
+	const [packageManager, setPackageManager] = usePackageManager('pnpm');
+	const [removedItem, setRemovedItem] = useState<ResolvedFontSetFamily>();
 	const [clearConfirmationOpen, setClearConfirmationOpen] = useState(false);
 	const [zipDownloadState, setZipDownloadState] =
 		useState<ZipDownloadState>('idle');
@@ -268,31 +95,21 @@ const CurrentProjectPage = () => {
 	const zipAbortController = useRef<AbortController | undefined>(undefined);
 	const singleItem = items.length === 1 ? items[0] : undefined;
 	const zipBusy = zipDownloadState === 'preparing';
-	const packageNames = items
-		.map((item) => `${item.packageName}@${item.packageVersion}`)
-		.join(' ');
+	const packageNames = items.map((item) => item.packageName).join(' ');
 	const collectionFonts: FontSummary[] = items.map((item) => ({
 		id: item.familyId,
 		family: item.family,
-		defSubset: item.defaultSubset ?? item.subset,
+		defSubset: item.defaultSubset,
 		category: item.category,
-		variable: item.variableAvailable ?? item.format === 'variable',
+		variable: item.variableAvailable,
 	}));
 	const installCommand = getPackageManagerCommand(packageManager, packageNames);
 	const imports = items
-		.flatMap((item) =>
-			item.packageFontFaceCSS
-				? [item.packageFontFaceCSS]
-				: getProjectCssFiles(item).map(
-						(file) => `@import '${item.packageName}/${file}';`,
-					),
-		)
+		.map((item) => `import "${item.packageName}/${item.cssFile}";`)
 		.join('\n');
 	const cdnLinks = items
-		.flatMap((item) =>
-			item.cdnFontFaceCSS
-				? [item.cdnFontFaceCSS]
-				: getProjectCdnUrls(item).map((url) => `@import url('${url}');`),
+		.map(
+			(item) => `<link rel="stylesheet" href="${getCdnStylesheetUrl(item)}" />`,
 		)
 		.join('\n');
 	const usageCss = items.map((item) => getUsageBlock(item)).join('\n\n');
@@ -342,6 +159,20 @@ const CurrentProjectPage = () => {
 	useEffect(() => () => zipAbortController.current?.abort(), []);
 
 	useEffect(() => {
+		if (!ready || !savedFamilySignature) return;
+
+		const formData = new FormData();
+		formData.set('requestId', requestId);
+		for (const familyId of savedFamilySignature.split(',')) {
+			formData.append('fontId', familyId);
+		}
+		itemFetcher.submit(formData, {
+			action: '/resources/font-set-items',
+			method: 'post',
+		});
+	}, [itemFetcher.submit, ready, requestId, savedFamilySignature]);
+
+	useEffect(() => {
 		if (!initialImportResult) return;
 		navigate(location.pathname, { replace: true, state: null });
 	}, [initialImportResult, location.pathname, navigate]);
@@ -353,7 +184,7 @@ const CurrentProjectPage = () => {
 		setClearConfirmationOpen(false);
 	};
 
-	const removeItem = (item: ProjectItem) => {
+	const removeItem = (item: ResolvedFontSetFamily) => {
 		if (zipBusy) return;
 		store.removeItem(item.familyId);
 		setRemovedItem(item);
@@ -361,7 +192,7 @@ const CurrentProjectPage = () => {
 
 	const undoRemove = () => {
 		if (!removedItem) return;
-		store.upsertItem(removedItem);
+		store.addItem({ familyId: removedItem.familyId });
 		setRemovedItem(undefined);
 	};
 
@@ -375,7 +206,7 @@ const CurrentProjectPage = () => {
 						archive or generate one combined website setup.
 					</p>
 				</div>
-				{items.length > 0 && (
+				{savedItems.length > 0 && (
 					<div className={classes.introActions}>
 						<Link className={classes.generateLink} to="/">
 							Browse more fonts
@@ -416,8 +247,8 @@ const CurrentProjectPage = () => {
 						: 'No new fonts added'}
 					{importResult.existingCount > 0 &&
 						` · ${importResult.existingCount} already in this font set`}
-					{importResult.failedCount > 0 &&
-						` · ${importResult.failedCount} unavailable`}
+					{importResult.skippedCount > 0 &&
+						` · ${importResult.skippedCount} not added because the font set is full`}
 				</p>
 			)}
 
@@ -440,46 +271,79 @@ const CurrentProjectPage = () => {
 				</div>
 			)}
 
-			{!ready ? (
+			{loadedResponse?.error || loadedResponse?.failedIds.length ? (
+				<div className={classes.undoNotice} role="alert">
+					<span>
+						{loadedResponse.error ??
+							`${loadedResponse.failedIds.length} ${
+								loadedResponse.failedIds.length === 1 ? 'font is' : 'fonts are'
+							} currently unavailable.`}
+					</span>
+					<button
+						type="button"
+						onClick={() => setReloadVersion((current) => current + 1)}
+					>
+						Try again
+					</button>
+				</div>
+			) : null}
+
+			{!ready || fontSetLoading ? (
 				<p className={classes.loading} role="status">
-					Loading your saved fonts…
+					Loading your font set…
 				</p>
-			) : items.length === 0 ? (
+			) : savedItems.length === 0 ? (
 				<section className={classes.empty}>
 					<div className={classes.emptySpecimen}>Aa</div>
 					<div>
 						<h2>Your font set is empty.</h2>
 						<p>
-							Open Get font and add a family, or save a developer setup. Your
-							choices stay in this browser.
+							Add families while you browse. Your font set stays in this
+							browser.
 						</p>
 						<Link to="/">Choose a font</Link>
 					</div>
 				</section>
+			) : items.length === 0 ? (
+				<section className={classes.empty}>
+					<div className={classes.emptySpecimen}>Aa</div>
+					<div>
+						<h2>Your fonts could not be loaded.</h2>
+						<p>Check your connection and try again.</p>
+						<button
+							type="button"
+							onClick={() => setReloadVersion((current) => current + 1)}
+						>
+							Try again
+						</button>
+					</div>
+				</section>
 			) : (
 				<>
-					<nav className={classes.taskSwitch} aria-label="Font set output">
-						<button
-							type="button"
-							aria-pressed={view === 'files'}
-							data-active={view === 'files' || undefined}
-							onClick={() => setNavigationChoice('view', 'files', 'files')}
-						>
-							<strong>Files</strong>
-							<span>Download complete font families</span>
-						</button>
-						<button
-							type="button"
-							aria-pressed={view === 'website'}
-							data-active={view === 'website' || undefined}
-							onClick={() => setNavigationChoice('view', 'website', 'files')}
-						>
-							<strong>Website</strong>
-							<span>Generate package or CDN code</span>
-						</button>
-					</nav>
+					{outputsReady && (
+						<nav className={classes.taskSwitch} aria-label="Font set output">
+							<button
+								type="button"
+								aria-pressed={view === 'files'}
+								data-active={view === 'files' || undefined}
+								onClick={() => setNavigationChoice('view', 'files', 'files')}
+							>
+								<strong>Files</strong>
+								<span>Download complete font families</span>
+							</button>
+							<button
+								type="button"
+								aria-pressed={view === 'website'}
+								data-active={view === 'website' || undefined}
+								onClick={() => setNavigationChoice('view', 'website', 'files')}
+							>
+								<strong>Website</strong>
+								<span>Generate package or CDN code</span>
+							</button>
+						</nav>
+					)}
 
-					{view === 'files' && (
+					{outputsReady && view === 'files' && (
 						<section
 							className={classes.archiveDownload}
 							aria-labelledby="font-set-download-heading"
@@ -488,9 +352,8 @@ const CurrentProjectPage = () => {
 								<h2 id="font-set-download-heading">Download font set</h2>
 								<p>
 									Get the latest complete desktop and web files for every
-									family, organized by font. Each folder includes local CSS;
-									fontsource-font-set-cdn.css preserves your saved website
-									versions.
+									family, organized by font. Each family folder includes its
+									font files, stylesheets, and license.
 								</p>
 								{zipDownloadState !== 'idle' && (
 									<span
@@ -521,7 +384,7 @@ const CurrentProjectPage = () => {
 						</section>
 					)}
 
-					{view === 'website' && (
+					{outputsReady && view === 'website' && (
 						<section
 							className={classes.delivery}
 							id="selected-fonts-code"
@@ -595,17 +458,17 @@ const CurrentProjectPage = () => {
 											language="sh"
 										/>
 										<CopyCodeBlock
-											label="2 · Add font-face CSS"
+											label="2 · Import fonts"
 											code={imports}
-											language="css"
+											language="js"
 											scrollable
 										/>
 									</>
 								) : (
 									<CopyCodeBlock
-										label="1 · Add font-face CSS"
+										label="1 · Link stylesheets"
 										code={cdnLinks}
-										language="css"
+										language="html"
 										scrollable
 									/>
 								)}
@@ -624,14 +487,13 @@ const CurrentProjectPage = () => {
 							<div>
 								<h2 id="fonts-heading">Your font set</h2>
 								<p>
-									{items.length} {items.length === 1 ? 'font' : 'fonts'}. Each
-									family keeps one setup. Updating it replaces its previous
-									settings.
+									{items.length} {items.length === 1 ? 'font' : 'fonts'}, ready
+									to download together.
 								</p>
 							</div>
 						</div>
 						{items.map((item) => (
-							<ProjectFont
+							<FontSetFamilyRow
 								key={item.familyId}
 								busy={zipBusy}
 								item={item}
@@ -650,9 +512,8 @@ const CurrentProjectPage = () => {
 				title="Clear this font set?"
 			>
 				<Text c="dimmed" fz="sm">
-					This removes {items.length} {items.length === 1 ? 'font' : 'fonts'}{' '}
-					and {items.length === 1 ? 'its' : 'their'} saved website settings from
-					this browser.
+					This removes {savedItems.length}{' '}
+					{savedItems.length === 1 ? 'font' : 'fonts'} from this browser.
 				</Text>
 				<Group justify="flex-end" mt="xl">
 					<Button

@@ -4,9 +4,8 @@ import { Link, NavLink, useLocation } from 'react-router';
 import { IconDownload } from '@/components/icons';
 import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
-import type { ProjectItem } from '@/features/projects/model';
 import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
-import type { GetFontResponse } from '@/generated/api';
+import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 import { formatFontLabel } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
@@ -32,7 +31,7 @@ interface FamilyPageShellProps {
 	metadata: GetFontResponse;
 	registry?: RegistryFamily;
 	previewSource?: RegistrySource;
-	variableAvailable?: boolean;
+	variable?: GetVariableFontResponse;
 	tabsValue: FamilyTab;
 	children: React.ReactNode;
 }
@@ -163,11 +162,7 @@ export const FamilyIdentity = ({
 								const tagValue = tag.split('/').at(-1) ?? tag;
 								return (
 									<li key={tag}>
-										<Link
-											to={`/?query=${encodeURIComponent(tagValue.replaceAll('-', ' '))}`}
-										>
-											{formatFontLabel(tagValue)}
-										</Link>
+										<span>{formatFontLabel(tagValue)}</span>
 									</li>
 								);
 							})}
@@ -181,17 +176,16 @@ export const FamilyIdentity = ({
 
 export const FamilyActions = ({
 	metadata,
-	fontSetItem,
+	registry,
 	compact = false,
 	showGetFont = true,
 }: {
 	metadata: GetFontResponse;
-	fontSetItem?: ProjectItem;
+	registry?: RegistryFamily;
 	compact?: boolean;
 	showGetFont?: boolean;
 }) => {
 	const location = useLocation();
-	const isGetFontPage = location.pathname.endsWith('/use');
 	const fontSummary = {
 		id: metadata.id,
 		family: metadata.family,
@@ -206,14 +200,12 @@ export const FamilyActions = ({
 				<FavoriteButton font={fontSummary} withLabel={!compact} />
 				<AddToCollectionMenu font={fontSummary} />
 			</div>
-			{fontSetItem && !isGetFontPage && (
-				<ProjectAddButton
-					item={fontSetItem}
-					label="Add to font set"
-					includedLabel="In font set"
-					includedAction="view"
-				/>
-			)}
+			<ProjectAddButton
+				displayName={registry?.displayName ?? metadata.family}
+				familyId={metadata.id}
+				label="Add to font set"
+				includedLabel="In font set"
+			/>
 			{showGetFont && (
 				<Link
 					className={classes.getFont}
@@ -269,7 +261,7 @@ export const FamilyPageShell = ({
 	metadata,
 	registry,
 	previewSource,
-	variableAvailable,
+	variable,
 	tabsValue,
 	children,
 }: FamilyPageShellProps) => {
@@ -280,7 +272,6 @@ export const FamilyPageShell = ({
 		typeof locationState?.fontResults === 'string'
 			? locationState.fontResults
 			: '/';
-
 	return (
 		<Box
 			className={classes.shell}
@@ -300,11 +291,12 @@ export const FamilyPageShell = ({
 						metadata={metadata}
 						registry={registry}
 						previewSource={previewSource}
-						variableAvailable={variableAvailable}
+						variableAvailable={Boolean(variable)}
 						compact
 					/>
 					<FamilyActions
 						metadata={metadata}
+						registry={registry}
 						compact
 						showGetFont={tabsValue !== 'use'}
 					/>

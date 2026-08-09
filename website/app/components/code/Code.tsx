@@ -171,24 +171,3 @@ export const CodeMdx = (props: CodeProps) => {
 		</CodeWrapper>
 	);
 };
-
-interface CodeDirectProps extends CodeProps {
-	language: string;
-}
-
-export const Code = ({ language, children, ...others }: CodeDirectProps) => {
-	if (language === '')
-		return (
-			<MantineCode className={classes['inline-code']} {...others}>
-				{children}
-			</MantineCode>
-		);
-
-	const code = children?.toString() ?? '';
-
-	return (
-		<CodeWrapper language={highlightLanguage(language)} code={code}>
-			<CodeHighlight code={code} language={language} />
-		</CodeWrapper>
-	);
-};

@@ -296,7 +296,6 @@
 	}
 }
 
-.primarySetup,
 .secondarySetup {
 	display: grid;
 	gap: 12px;
@@ -326,10 +325,6 @@
 	}
 }
 
-.primarySetup {
-	grid-template-columns: minmax(90px, 0.45fr) minmax(0, 1.55fr);
-}
-
 .secondarySetup {
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -340,19 +335,6 @@
 
 .mobileSource {
 	display: none;
-}
-
-.staleSetup {
-	margin: 16px 0 0;
-	color: light-dark(#52617a, #aeb9cc);
-	font-size: 0.8rem;
-	line-height: 1.5;
-
-	a {
-		color: inherit;
-		font-weight: 600;
-		text-underline-offset: 3px;
-	}
 }
 
 .usageNote {
@@ -741,12 +723,6 @@
 	.fontMeta,
 	.desktopSecondary {
 		display: none;
-	}
-
-	.primarySetup {
-		grid-template-columns: minmax(88px, 0.45fr) minmax(0, 1.55fr);
-		gap: 12px;
-		margin-top: 18px;
 	}
 
 	.mobileSecondary {

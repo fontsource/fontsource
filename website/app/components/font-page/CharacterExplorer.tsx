@@ -46,6 +46,7 @@ import {
 	type RegistrySource,
 	usesNameLigatures,
 } from '@/utils/registry';
+import { normalizeSearchValue } from '@/utils/search';
 import {
 	createSymbolSearch,
 	getSymbolSearchKey,
@@ -179,9 +180,6 @@ const getCharacterName = (character: string) =>
 
 const getDisplayCharacter = (character?: string) =>
 	character && isCombiningMark(character) ? `◌${character}` : character;
-
-const normalizeSearchValue = (value: string) =>
-	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
 
 const getSymbolName = (value: string) =>
 	value.split(symbolSearchSeparator, 1)[0] ?? value;

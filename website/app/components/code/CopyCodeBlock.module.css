@@ -18,6 +18,16 @@
 	line-height: 1.5;
 }
 
+.description a {
+	color: var(--mantine-color-purple-0);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+.description a:hover {
+	text-decoration-thickness: 2px;
+}
+
 .root > figure {
 	margin: 8px 0 0;
 }

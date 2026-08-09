@@ -1,9 +1,13 @@
-import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
+import type {
+	LoaderFunctionArgs,
+	MetaFunction,
+	ShouldRevalidateFunctionArgs,
+} from 'react-router';
 import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyUse } from '@/components/font-page/FamilyUse';
-import { getFontVersions, getRegistrySubset } from '@/generated/api';
+import { getRegistrySubset } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { loadFontPageBase } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
@@ -39,20 +43,32 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			return [];
 		}
 	});
-	const [base, versions, subsetDefinitions] = await Promise.all([
+	const [base, subsetDefinitions] = await Promise.all([
 		basePromise,
-		getFontVersions({ id }, { signal: request.signal }),
 		subsetDefinitionsPromise,
 	]);
 
 	return data(
 		{
 			...base,
-			versions,
 			subsetDefinitions,
 		},
 		{ headers: cacheHeaders.short },
 	);
+};
+
+export const shouldRevalidate = ({
+	currentUrl,
+	nextUrl,
+	formMethod,
+	defaultShouldRevalidate,
+}: ShouldRevalidateFunctionArgs) => {
+	const isSearchOnlyNavigation =
+		!formMethod &&
+		currentUrl.pathname === nextUrl.pathname &&
+		currentUrl.search !== nextUrl.search;
+
+	return isSearchOnlyNavigation ? false : defaultShouldRevalidate;
 };
 
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
@@ -84,7 +100,7 @@ export default function UsePage() {
 		<FamilyPageShell
 			metadata={metadata}
 			registry={registry}
-			variableAvailable={Boolean(variable)}
+			variable={variable}
 			tabsValue="use"
 		>
 			<FamilyUse

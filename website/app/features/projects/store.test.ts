@@ -1,37 +1,8 @@
 import { observe } from '@legendapp/state';
 import { describe, expect, it } from 'vitest';
 
-import type { ProjectItem } from './model';
-import { currentProjectSnapshotSchema } from './model';
+import { currentProjectSnapshotSchema, MAX_FONT_SET_SIZE } from './model';
 import { createCurrentProjectStore } from './store';
-
-const fraunces: ProjectItem = {
-	familyId: 'fraunces',
-	family: 'Fraunces',
-	displayName: 'Fraunces',
-	category: 'serif',
-	classification: 'serif',
-	tags: ['soft-serif'],
-	designer: 'Undercase Type',
-	status: 'active',
-	registryFactsCurrent: true,
-	format: 'variable',
-	subset: 'latin',
-	style: 'normal',
-	weight: 600,
-	axes: { wght: 600, SOFT: 50 },
-	packageName: '@fontsource-variable/fraunces',
-	packageVersion: '5.2.8',
-	cssFile: 'latin-wght-normal.css',
-	fontFamily: 'Fraunces Variable',
-	sampleText: 'Make something memorable.',
-	symbolInputModes: [],
-	license: {
-		verified: true,
-		id: 'OFL-1.1',
-		url: 'https://openfontlicense.org',
-	},
-};
 
 const createReadyStore = () => {
 	const store = createCurrentProjectStore();
@@ -39,125 +10,76 @@ const createReadyStore = () => {
 	return store;
 };
 
-describe('current project store', () => {
-	it('keeps one configured setup per family', () => {
+describe('font set store', () => {
+	it('stores each family once without configuration', () => {
 		const store = createReadyStore();
 		let count = 0;
 		const dispose = observe(() => {
 			count = store.getItems().length;
 		});
 
-		expect(store.upsertItem(fraunces)).toBeUndefined();
-		const previous = store.upsertItem({
-			...fraunces,
-			weight: 700,
-			axes: { ...fraunces.axes, wght: 700 },
-		});
+		expect(store.addItem({ familyId: 'fraunces' })).toBe('added');
+		expect(store.addItem({ familyId: 'fraunces' })).toBe('exists');
 
-		expect(previous).toEqual(fraunces);
 		expect(count).toBe(1);
-		expect(store.getItems()[0].weight).toBe(700);
+		expect(store.getItems()).toEqual([{ familyId: 'fraunces' }]);
 		dispose();
 	});
 
-	it('removes individual families and clears the project', () => {
+	it('removes individual families and clears the set', () => {
 		const store = createReadyStore();
-		store.upsertItem(fraunces);
-		store.removeItem(fraunces.familyId);
+		store.addItem({ familyId: 'fraunces' });
+		store.removeItem('fraunces');
 		expect(store.getItems()).toEqual([]);
 
-		store.upsertItem(fraunces);
+		store.addItem({ familyId: 'fraunces' });
 		store.clear();
 		expect(store.getItems()).toEqual([]);
 	});
 
-	it('adds missing collection families without replacing configured setups', () => {
+	it('adds missing collection families without duplicates', () => {
 		const store = createReadyStore();
-		const configured = { ...fraunces, weight: 700, axes: { wght: 700 } };
-		const inter = { ...fraunces, familyId: 'inter', family: 'Inter' };
-		store.upsertItem(configured);
+		store.addItem({ familyId: 'fraunces' });
 
-		expect(store.addItems([fraunces, inter, inter])).toBe(1);
-		expect(store.getItems()).toEqual([inter, configured]);
+		expect(
+			store.addItems([
+				{ familyId: 'fraunces' },
+				{ familyId: 'inter' },
+				{ familyId: 'inter' },
+			]),
+		).toEqual({ addedCount: 1, limitReached: false });
+		expect(store.getItems()).toEqual([
+			{ familyId: 'inter' },
+			{ familyId: 'fraunces' },
+		]);
 	});
 
-	it('rejects persisted duplicate family setups', () => {
-		const result = currentProjectSnapshotSchema.safeParse({
-			version: 1,
-			items: [fraunces, { ...fraunces, weight: 700 }],
-		});
+	it('rejects persisted duplicate families', () => {
+		const result = currentProjectSnapshotSchema.safeParse([
+			{ familyId: 'fraunces' },
+			{ familyId: 'fraunces' },
+		]);
 
 		expect(result.success).toBe(false);
 	});
 
-	it('preserves exact package and registry license metadata', () => {
-		const licensedItem = {
-			...fraunces,
-			variableAvailable: true,
-			defaultSubset: 'latin',
-			cssFiles: ['latin-wght-normal.css', 'latin-wght-italic.css'],
-			subsets: ['latin', 'cyrillic'],
-			activeAxes: ['wght', 'SOFT'],
-			formats: ['woff2'] as const,
-			fontDisplay: 'optional' as const,
-			packageFontFaceCSS: '@font-face { src: url(package-font.woff2); }',
-			cdnFontFaceCSS: '@font-face { src: url(cdn-font.woff2); }',
-			styles: ['normal', 'italic'] as const,
-			weights: [400, 700],
-			packageVersion: '5.3.1',
-			status: 'deprecated' as const,
-			license: {
-				verified: true,
-				id: 'LicenseRef-Example',
-				url: 'https://example.com/license',
-				attribution: 'Example Type',
-			},
-		};
-		const snapshot = currentProjectSnapshotSchema.parse({
-			version: 1,
-			items: [licensedItem],
-		});
+	it('reports when the family limit prevents additions', () => {
+		const store = createReadyStore();
+		const families = Array.from({ length: MAX_FONT_SET_SIZE }, (_, index) => ({
+			familyId: `family-${index}`,
+		}));
 
-		expect(snapshot.items[0]).toMatchObject({
-			variableAvailable: true,
-			defaultSubset: 'latin',
-			cssFiles: licensedItem.cssFiles,
-			subsets: licensedItem.subsets,
-			activeAxes: licensedItem.activeAxes,
-			formats: licensedItem.formats,
-			fontDisplay: licensedItem.fontDisplay,
-			packageFontFaceCSS: licensedItem.packageFontFaceCSS,
-			cdnFontFaceCSS: licensedItem.cdnFontFaceCSS,
-			styles: licensedItem.styles,
-			weights: licensedItem.weights,
-			packageVersion: '5.3.1',
-			status: 'deprecated',
-			license: licensedItem.license,
+		expect(store.addItems(families)).toEqual({
+			addedCount: MAX_FONT_SET_SIZE,
+			limitReached: false,
 		});
-	});
-
-	it('does not treat legacy saved license fields as registry verification', () => {
-		const legacy = {
-			...fraunces,
-			registryFactsCurrent: undefined,
-			symbolInputModes: undefined,
-			license: {
-				id: 'OFL-1.1',
-				url: 'https://openfontlicense.org',
-			},
-		};
-		const snapshot = currentProjectSnapshotSchema.parse({
-			version: 1,
-			items: [legacy],
-		});
-
-		expect(snapshot.items[0].license).toMatchObject({
-			verified: false,
-			id: 'OFL-1.1',
-		});
-		expect(snapshot.items[0]).toMatchObject({
-			registryFactsCurrent: false,
-			symbolInputModes: [],
-		});
+		expect(store.addItem({ familyId: 'one-more' })).toBe('full');
+		expect(
+			store.addItems([
+				{ familyId: 'family-0' },
+				{ familyId: 'another-family' },
+			]),
+		).toEqual({ addedCount: 0, limitReached: true });
+		expect(store.getItems()).toHaveLength(MAX_FONT_SET_SIZE);
 	});
 });
