@@ -25,8 +25,8 @@ const getSourceValue = (
 		: `./files/${source.filename}`;
 
 	if (source.format === 'woff2') {
-		const technology = face.isVariable ? ' tech(variations)' : '';
-		return `url(${url}) format(woff2)${technology}`;
+		const format = face.isVariable ? "'woff2-variations'" : 'woff2';
+		return `url(${url}) format(${format})`;
 	}
 
 	let format = 'woff';
