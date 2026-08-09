@@ -31,7 +31,7 @@
 			},
 			"vite": { "config": [] },
 			"react-router": { "config": ["react-router.config.ts"] },
-			"ignoreDependencies": ["cloudflare"],
+			"ignoreDependencies": ["cloudflare", "collections"],
 			"ignoreIssues": {
 				"app/generated/api/**": ["exports", "types"]
 			}
