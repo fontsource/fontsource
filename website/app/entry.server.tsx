@@ -3,6 +3,8 @@ import { renderToReadableStream } from 'react-dom/server';
 import type { EntryContext, RouterContextProvider } from 'react-router';
 import { ServerRouter } from 'react-router';
 
+import { HOME_DISCOVERY_LINKS } from './utils/agent-discovery';
+
 export default async function handleRequest(
 	request: Request,
 	responseStatusCode: number,
@@ -33,6 +35,12 @@ export default async function handleRequest(
 	// https://react.dev/reference/react-dom/server/renderToPipeableStream#waiting-for-all-content-to-load-for-crawlers-and-static-generation
 	if ((userAgent && isbot(userAgent)) || routerContext.isSpaMode) {
 		await body.allReady;
+	}
+
+	if (new URL(request.url).pathname === '/') {
+		for (const link of HOME_DISCOVERY_LINKS) {
+			responseHeaders.append('Link', link);
+		}
 	}
 
 	responseHeaders.set('Content-Type', 'text/html');

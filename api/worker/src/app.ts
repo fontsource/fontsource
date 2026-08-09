@@ -48,7 +48,7 @@ app.use('*', async (c, next) => {
 	const policy =
 		c.res.status === 404
 			? CACHE_POLICIES.notFound
-			: c.res.status === 301 || c.res.status === 302
+			: c.res.status === 301 || c.res.status === 302 || c.res.status === 308
 				? CACHE_POLICIES.redirect
 				: c.res.status >= 400
 					? CACHE_POLICIES.noStore
@@ -75,6 +75,13 @@ const apiEtag = etag({
 		'last-modified',
 		...RETAINED_304_HEADERS,
 	],
+});
+
+const websiteApiCatalogUrl = 'https://fontsource.org/.well-known/api-catalog';
+
+app.get('/.well-known/api-catalog', (c) => {
+	c.header('Link', `<${websiteApiCatalogUrl}>; rel="api-catalog"`);
+	return c.redirect(websiteApiCatalogUrl, 308);
 });
 
 for (const path of [

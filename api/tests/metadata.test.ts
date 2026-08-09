@@ -256,6 +256,24 @@ describe('metadata routes', () => {
 		expect(body).toContain('/openapi.json');
 	});
 
+	it('redirects API catalog discovery to the canonical publisher catalog', async () => {
+		const { response, settle } = await dispatch(
+			new Request('https://fontsource.test/.well-known/api-catalog', {
+				redirect: 'manual',
+			}),
+		);
+		await settle();
+
+		expect(response.status).toBe(308);
+		expect(response.headers.get('Location')).toBe(
+			'https://fontsource.org/.well-known/api-catalog',
+		);
+		expect(response.headers.get('Link')).toBe(
+			'<https://fontsource.org/.well-known/api-catalog>; rel="api-catalog"',
+		);
+		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
+	});
+
 	it('refreshes scheduled metadata caches from upstream', async () => {
 		const ctrl = createScheduledController({
 			cron: '0 */3 * * *',

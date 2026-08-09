@@ -4,6 +4,7 @@ import { cacheHeaders } from '@/utils/cache';
 
 const prod = `User-agent: *
 Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 Sitemap: https://fontsource.org/sitemap.xml`;
 
