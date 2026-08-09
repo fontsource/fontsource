@@ -34,7 +34,6 @@
 
 .acquisition {
 	width: 100%;
-	max-width: 1120px;
 }
 
 .taskTabs {
@@ -499,9 +498,9 @@
 
 .instructionStep {
 	display: grid;
-	grid-template-columns: 32px minmax(0, 1fr);
-	gap: 16px;
-	padding: 20px 0 24px;
+	grid-template-columns: 36px minmax(0, 1fr);
+	gap: 20px;
+	padding: 28px 0 32px;
 	border-top: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -512,8 +511,8 @@
 .instructionStep::before {
 	display: grid;
 	place-items: center;
-	width: 30px;
-	height: 30px;
+	width: 32px;
+	height: 32px;
 	border: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -634,6 +633,7 @@
 	.instructionStep {
 		grid-template-columns: 28px minmax(0, 1fr);
 		gap: 12px;
+		padding: 24px 0 28px;
 	}
 
 	.instructionStep::before {

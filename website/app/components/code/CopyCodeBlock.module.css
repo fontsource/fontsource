@@ -4,41 +4,59 @@
 
 .label {
 	display: block;
-	color: light-dark(#52617a, #9ca8bd);
-	font-size: 0.875rem;
-	font-weight: 600;
+	color: light-dark(#26344d, #e1e7f3);
+	font-size: 1rem;
+	font-weight: 650;
+	line-height: 1.4;
 }
 
 .description {
 	display: block;
-	max-width: 64ch;
-	margin-top: 3px;
+	max-width: 72ch;
+	margin-top: 6px;
 	color: light-dark(#52617a, #9ca8bd);
-	font-size: 0.8125rem;
-	line-height: 1.5;
+	font-size: 0.9375rem;
+	line-height: 1.65;
+	text-wrap: pretty;
 }
 
 .description a {
 	color: var(--mantine-color-purple-0);
+	font-weight: 500;
+	text-decoration-color: light-dark(
+		rgba(98, 91, 248, 0.36),
+		rgba(98, 91, 248, 0.54)
+	);
 	text-decoration-thickness: 1px;
 	text-underline-offset: 3px;
+	transition:
+		color 100ms ease,
+		text-decoration-color 100ms ease;
 }
 
-.description a:hover {
-	text-decoration-thickness: 2px;
+.description a:hover,
+.description a:focus-visible {
+	color: light-dark(#473ef6, #8f8aff);
+	text-decoration-color: currentColor;
+}
+
+.description a:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 3px;
+	border-radius: 3px;
 }
 
 .root > figure {
-	margin: 8px 0 0;
+	margin: 14px 0 0;
 }
 
 .root[data-compact] > figure {
-	margin-top: 6px;
+	margin-top: 12px;
 }
 
 .root[data-compact] > figure pre {
-	padding-top: 2rem;
-	padding-bottom: 0.75rem;
+	padding-top: 2.5rem;
+	padding-bottom: 1rem;
 }
 
 .scroller {
