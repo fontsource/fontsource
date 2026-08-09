@@ -146,6 +146,19 @@
 	padding: 42px 40px 48px;
 }
 
+.deliveryHeader {
+	display: grid;
+	grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+	align-items: start;
+	gap: 24px;
+}
+
+.deliveryContext {
+	display: grid;
+	align-content: start;
+	gap: 4px;
+}
+
 .downloadDetails h3 {
 	margin: 0;
 	font-size: 1.25rem;
@@ -214,7 +227,7 @@
 .methodSwitch {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	width: 100%;
+	width: min(100%, 320px);
 	border: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -224,17 +237,16 @@
 }
 
 .setupSwitch {
-	display: grid;
+	display: inline-grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	width: 100%;
-	margin: 20px 0 0;
+	width: min(100%, 320px);
+	margin: 28px 0 0;
 	padding: 0;
-	border: light-dark(
+	border: 0;
+	border-bottom: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
 	);
-	border-radius: 4px;
-	overflow: hidden;
 }
 
 .methodSwitch button,
@@ -277,7 +289,6 @@
 }
 
 .methodSwitch button + button,
-.setupSwitch button + button,
 .formatSwitch button + button {
 	border-left: light-dark(
 		1px solid var(--mantine-color-border-0),
@@ -286,7 +297,6 @@
 }
 
 .methodSwitch button:hover,
-.setupSwitch button:hover,
 .formatSwitch button:hover,
 .manager button:hover {
 	background: light-dark(#f5f7f9, #121b31);
@@ -294,7 +304,6 @@
 }
 
 .methodSwitch button[data-active],
-.setupSwitch button[data-active],
 .formatSwitch button[data-active],
 .manager button[data-active] {
 	background: light-dark(#f5f7f9, #0f1626);
@@ -302,9 +311,18 @@
 	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
 }
 
+.setupSwitch button:hover {
+	color: light-dark(#4338ca, #c2bfff);
+}
+
+.setupSwitch button[data-active] {
+	color: light-dark(#4338ca, #c2bfff);
+	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
+}
+
 .deliveryNote {
 	max-width: 62ch;
-	margin: 14px 0 0;
+	margin: 0;
 	color: light-dark(#52617a, #9ca8bd);
 	font-size: 14px;
 	line-height: 1.55;
@@ -463,7 +481,11 @@
 }
 
 .manager {
-	margin-top: 20px;
+	margin-bottom: 12px;
+}
+
+.manager legend {
+	margin-bottom: 7px;
 }
 
 .manager button {
@@ -477,24 +499,44 @@
 
 .instructions {
 	display: grid;
-	gap: 12px;
-	margin-top: 14px;
+	gap: 0;
+	margin: 28px 0 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: instruction;
 }
 
-.weightRange {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
+.instructionStep {
+	display: grid;
+	grid-template-columns: 32px minmax(0, 1fr);
 	gap: 16px;
-	margin: 0;
-	padding: 8px 0;
-	color: light-dark(#52617a, #9ca8bd);
-	font-size: 14px;
+	padding: 20px 0 24px;
+	border-top: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	counter-increment: instruction;
 }
 
-.weightRange strong {
-	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
-	font-variant-numeric: tabular-nums;
+.instructionStep::before {
+	display: grid;
+	place-items: center;
+	width: 30px;
+	height: 30px;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 4px;
+	color: light-dark(#4338ca, #c2bfff);
+	font-family: var(--font-monospace);
+	font-size: 0.8125rem;
+	font-weight: 650;
+	content: counter(instruction);
+}
+
+.instructionBody {
+	min-width: 0;
 }
 
 .guideLink {
@@ -502,7 +544,8 @@
 	align-items: center;
 	gap: 6px;
 	min-height: 44px;
-	margin-top: 8px;
+	justify-self: start;
+	margin: 0;
 	color: var(--mantine-color-purple-0);
 	font-size: 14px;
 	font-weight: 600;
@@ -520,9 +563,9 @@
 .setupSwitch button:focus-visible,
 .formatSwitch button:focus-visible,
 .manager button:focus-visible,
-	.resetButton:focus-visible,
-	.optionGroup input:focus-visible,
-	.guideLink:focus-visible {
+.resetButton:focus-visible,
+.optionGroup input:focus-visible,
+.guideLink:focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
 	outline-offset: 2px;
 }
@@ -577,6 +620,26 @@
 	.resetButton {
 		align-self: flex-start;
 	}
+
+	.deliveryHeader {
+		grid-template-columns: 1fr;
+		gap: 14px;
+	}
+
+	.methodSwitch {
+		width: 100%;
+	}
+
+	.instructionStep {
+		grid-template-columns: 28px minmax(0, 1fr);
+		gap: 12px;
+	}
+
+	.instructionStep::before {
+		width: 28px;
+		height: 28px;
+	}
+
 }
 
 @media (max-width: 30em) {

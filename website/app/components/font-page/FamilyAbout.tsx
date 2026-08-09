@@ -76,6 +76,15 @@ const exactNumber = new Intl.NumberFormat('en');
 const getRegistryAssetUrl = (value: string) =>
 	new URL(value, 'https://api.fontsource.org').toString();
 
+const getSourceSnapshotUrl = (
+	repository: string,
+	revision: string,
+	path: string,
+) => {
+	const encodedPath = path.split('/').map(encodeURIComponent).join('/');
+	return `${repository.replace(/\/$/, '')}/blob/${encodeURIComponent(revision)}/${encodedPath}`;
+};
+
 const summarizeDescription = (value?: string) => {
 	const description = value?.trim();
 	if (!description) return;
@@ -99,7 +108,13 @@ const getSourceWeightLabel = (source: RegistrySource) => {
 	return `${source.weight.min}–${source.weight.max} weight`;
 };
 
-const SourceFileItem = ({ source }: { source: RegistrySource }) => {
+const SourceFileItem = ({
+	source,
+	snapshotUrl,
+}: {
+	source: RegistrySource;
+	snapshotUrl?: string;
+}) => {
 	const clipboard = useClipboard({ timeout: 1500 });
 	const copyLabel = clipboard.copied
 		? 'Copied'
@@ -112,24 +127,19 @@ const SourceFileItem = ({ source }: { source: RegistrySource }) => {
 			<div className={classes.sourceFileDetails}>
 				<strong>
 					<a
-						href={getRegistryAssetUrl(source.downloadUrl)}
+						href={snapshotUrl ?? getRegistryAssetUrl(source.downloadUrl)}
 						target="_blank"
 						rel="noreferrer"
+						aria-label={`View ${source.filename} source file`}
 					>
-						{source.filename}
+						{source.filename} <span aria-hidden="true">↗</span>
 					</a>
 				</strong>
-				<code className={classes.sourcePath}>{source.path}</code>
 				<span className={classes.sourceFileMeta}>
-					{formatFontLabel(source.type)} · {source.format.toUpperCase()} ·{' '}
-					{formatFontLabel(source.style)} · {getSourceWeightLabel(source)}
-					{source.type === 'variable'
-						? ` · ${source.axes.length} ${source.axes.length === 1 ? 'axis' : 'axes'}`
-						: ''}
+					{formatFontLabel(source.type)} · {formatFontLabel(source.style)} ·{' '}
+					{getSourceWeightLabel(source)}
 					{source.fontVersion ? ` · ${source.fontVersion}` : ''} ·{' '}
-					{(source.size / 1024).toFixed(0)} KB ·{' '}
-					{source.codepointCount.toLocaleString('en')} mapped codepoints ·{' '}
-					{source.glyphCount.toLocaleString('en')} glyphs
+					{(source.size / 1024).toFixed(0)} KB
 				</span>
 			</div>
 			<Tooltip
@@ -275,20 +285,13 @@ export const FamilyAbout = ({
 	const description =
 		content?.description ??
 		`${metadata.family} is an open-source ${formatFontLabel(metadata.category).toLowerCase()} family distributed by Fontsource.`;
-	const summary = summarizeDescription(description) ?? description;
-	const descriptionStory = description.startsWith(summary)
-		? description.slice(summary.length).trim()
-		: '';
-	let story = descriptionStory;
 	const article = content?.article?.trim();
-	if (article && article !== content?.description) {
-		if (content?.description && article.startsWith(content.description)) {
-			const articleStory = article.slice(content.description.length).trim();
-			story = [descriptionStory, articleStory].filter(Boolean).join('\n\n');
-		} else {
-			story = article;
-		}
-	}
+	const story =
+		article && article !== description
+			? article.startsWith(description)
+				? article.slice(description.length).trim()
+				: article
+			: '';
 	const fontFamily = getFontFamilyStack(metadata, Boolean(variable), registry);
 	const previewFamily = getFontPreviewFamily(metadata, Boolean(variable));
 	const specimenText =
@@ -408,7 +411,7 @@ export const FamilyAbout = ({
 				<div className={classes.story}>
 					<h2 id="about-heading">About {metadata.family}.</h2>
 					<div className={classes.prose}>
-						<RegistryMarkdown value={summary} />
+						<RegistryMarkdown value={description} />
 					</div>
 					<FontSkeleton
 						name="font-detail-about-specimen"
@@ -680,20 +683,9 @@ export const FamilyAbout = ({
 						<h2 id="provenance-heading">Provenance</h2>
 						<p>Where the files came from and what Fontsource distributes.</p>
 					</div>
-					<div className={classes.provenanceLinks}>
-						{provenanceRepository && provenanceRevision && (
-							<a
-								href={`${provenanceRepository.replace(/\/$/, '')}/tree/${provenanceRevision}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								View source snapshot →
-							</a>
-						)}
-						<a href={repository} target="_blank" rel="noreferrer">
-							View upstream project →
-						</a>
-					</div>
+					<a href={repository} target="_blank" rel="noreferrer">
+						View upstream project →
+					</a>
 				</div>
 
 				{technicalAvailabilityMessage && (
@@ -707,16 +699,6 @@ export const FamilyAbout = ({
 						<dt>Provider</dt>
 						<dd>{providerLabel}</dd>
 					</div>
-					{registry && (
-						<div>
-							<dt>Source snapshot</dt>
-							<dd>
-								{registry.provenance.type === 'github'
-									? 'GitHub repository'
-									: 'Fontsource Registry'}
-							</dd>
-						</div>
-					)}
 					{sources.length > 0 && (
 						<div>
 							<dt>Source files</dt>
@@ -749,7 +731,19 @@ export const FamilyAbout = ({
 					<div className={classes.sourceFiles}>
 						<ul aria-label="Source files">
 							{sources.map((source) => (
-								<SourceFileItem key={source.sha256} source={source} />
+								<SourceFileItem
+									key={source.sha256}
+									source={source}
+									snapshotUrl={
+										provenanceRepository && provenanceRevision
+											? getSourceSnapshotUrl(
+													provenanceRepository,
+													provenanceRevision,
+													source.path,
+												)
+											: undefined
+									}
+								/>
 							))}
 						</ul>
 					</div>

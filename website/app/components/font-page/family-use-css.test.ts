@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 
-import { buildFamilyUseCSS } from './family-use-css';
+import { buildFamilyUsageCSS, buildFamilyUseCSS } from './family-use-css';
 
 const metadata = {
 	id: 'example',
@@ -34,6 +34,16 @@ const variable = {
 } satisfies GetVariableFontResponse;
 
 describe('buildFamilyUseCSS', () => {
+	it('generates a valid body rule for a variable family', () => {
+		const css = buildFamilyUsageCSS(metadata, true, 400, 'normal');
+
+		expect(css).toBe(`body {
+  font-family: 'Example Variable', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}`);
+	});
+
 	it('generates all selected static faces, formats, and display behavior', () => {
 		const css = buildFamilyUseCSS({
 			metadata,

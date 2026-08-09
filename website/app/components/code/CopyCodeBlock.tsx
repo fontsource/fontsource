@@ -5,6 +5,7 @@ import classes from './CopyCodeBlock.module.css';
 
 interface CopyCodeBlockProps {
 	code: string;
+	compact?: boolean;
 	description?: ReactNode;
 	label: string;
 	language: string;
@@ -13,6 +14,7 @@ interface CopyCodeBlockProps {
 
 const CopyCodeBlock = ({
 	code,
+	compact = false,
 	description,
 	label,
 	language,
@@ -21,7 +23,11 @@ const CopyCodeBlock = ({
 	const highlightedCode = <CodeHighlight code={code} language={language} />;
 
 	return (
-		<div className={classes.root} translate="no">
+		<div
+			className={classes.root}
+			data-compact={compact || undefined}
+			translate="no"
+		>
 			<span className={classes.label}>{label}</span>
 			{description && (
 				<span className={classes.description}>{description}</span>

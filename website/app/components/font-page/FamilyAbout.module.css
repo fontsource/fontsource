@@ -556,17 +556,6 @@
 		}
 	}
 
-	div:nth-child(n + 5) {
-		border-top: light-dark(
-			1px solid var(--mantine-color-border-0),
-			1px solid var(--mantine-color-border-1)
-		);
-	}
-
-	div:nth-child(4n + 1) {
-		border-left: 0;
-	}
-
 	dt {
 		color: light-dark(#52617a, #aeb9cc);
 		font-size: 12px;
@@ -620,8 +609,7 @@
 	}
 
 	.sourceFileDetails > strong,
-	.sourceFileDetails > span,
-	.sourcePath {
+	.sourceFileDetails > span {
 		display: block;
 	}
 
@@ -636,14 +624,6 @@
 		color: inherit;
 		text-decoration-color: light-dark(#aeb6c4, #66738a);
 		text-underline-offset: 3px;
-	}
-
-	.sourcePath {
-		margin-top: 3px;
-		color: light-dark(#52617a, #aeb9cc);
-		font-size: 11px;
-		line-height: 1.5;
-		overflow-wrap: anywhere;
 	}
 
 	.sourceFileMeta {
@@ -673,14 +653,6 @@
 			outline-offset: 2px;
 		}
 	}
-}
-
-.provenanceLinks {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	flex-wrap: wrap;
-	gap: 10px 22px;
 }
 
 .checksumTooltip {
@@ -760,13 +732,6 @@
 		gap: 16px;
 	}
 
-	.provenanceLinks {
-		align-items: flex-start;
-		justify-content: flex-start;
-		flex-direction: column;
-		gap: 10px;
-	}
-
 	.licenseAttribution {
 		grid-template-columns: minmax(0, 1fr);
 		gap: 4px;
@@ -791,8 +756,7 @@
 	.sourceSummary {
 		grid-template-columns: minmax(0, 1fr);
 
-		div + div,
-		div:nth-child(3) {
+		div + div {
 			border-top: light-dark(
 				1px solid var(--mantine-color-border-0),
 				1px solid var(--mantine-color-border-1)

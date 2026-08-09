@@ -26,6 +26,7 @@ import type { RegistryDataState, RegistryFamily } from '@/utils/registry';
 
 import classes from './FamilyUse.module.css';
 import {
+	buildFamilyUsageCSS,
 	buildFamilyUseCSS,
 	type FontDisplay,
 	fontDisplays,
@@ -247,6 +248,15 @@ export const FamilyUse = ({
 		? Number(variable.axes.wght.max)
 		: Math.max(...metadata.weights);
 	const variableWeightRange = `${minWeight}–${maxWeight}`;
+	const usageCSS = buildFamilyUsageCSS(
+		metadata,
+		isVariable,
+		primaryWeight,
+		primaryStyle,
+	);
+	const usageDescription = isVariable
+		? `Apply the family, then choose any font weight from ${variableWeightRange}. ${primaryWeight} is a practical starting point.`
+		: `Apply the selected ${getWeightLabel(primaryWeight).toLowerCase()} ${primaryStyle} face.`;
 	const selectionSummary = isVariable
 		? `Variable · ${styles.map(formatFontLabel).join(' + ')} · display ${fontDisplay}`
 		: weights.length === 1 && styles.length === 1
@@ -379,41 +389,52 @@ export const FamilyUse = ({
 
 				<Tabs.Panel className={classes.taskPanel} value="web">
 					<div className={classes.webPanel}>
-						<fieldset className={classes.methodSwitch}>
-							<VisuallyHidden component="legend">
-								Choose how to add this font to a website
-							</VisuallyHidden>
-							<button
-								type="button"
-								data-active={method === 'package' || undefined}
-								aria-pressed={method === 'package'}
-								onClick={() => {
-									if (method !== 'package') {
-										setNavigationChoice('method', 'package', 'package');
-									}
-								}}
-							>
-								Package
-							</button>
-							<button
-								type="button"
-								data-active={method === 'cdn' || undefined}
-								aria-pressed={method === 'cdn'}
-								onClick={() => {
-									if (method !== 'cdn') {
-										setNavigationChoice('method', 'cdn', 'package');
-									}
-								}}
-							>
-								CDN
-							</button>
-						</fieldset>
+						<div className={classes.deliveryHeader}>
+							<fieldset className={classes.methodSwitch}>
+								<VisuallyHidden component="legend">
+									Choose how to add this font to a website
+								</VisuallyHidden>
+								<button
+									type="button"
+									data-active={method === 'package' || undefined}
+									aria-pressed={method === 'package'}
+									onClick={() => {
+										if (method !== 'package') {
+											setNavigationChoice('method', 'package', 'package');
+										}
+									}}
+								>
+									Package
+								</button>
+								<button
+									type="button"
+									data-active={method === 'cdn' || undefined}
+									aria-pressed={method === 'cdn'}
+									onClick={() => {
+										if (method !== 'cdn') {
+											setNavigationChoice('method', 'cdn', 'package');
+										}
+									}}
+								>
+									CDN
+								</button>
+							</fieldset>
 
-						<p className={classes.deliveryNote}>
-							{method === 'package'
-								? 'Install the font from npm and bundle it with your app.'
-								: 'Load a version-pinned stylesheet from jsDelivr without installing a package.'}
-						</p>
+							<div className={classes.deliveryContext}>
+								<p className={classes.deliveryNote}>
+									{method === 'package'
+										? 'Install the font from npm and bundle it with your app.'
+										: 'Load a version-pinned stylesheet from jsDelivr without installing a package.'}
+								</p>
+								<Link
+									className={classes.guideLink}
+									to="/docs/getting-started/install"
+								>
+									Read the installation guide
+									<IconExternal aria-hidden height={15} stroke="currentColor" />
+								</Link>
+							</div>
+						</div>
 
 						<fieldset className={classes.setupSwitch}>
 							<VisuallyHidden component="legend">
@@ -587,71 +608,75 @@ export const FamilyUse = ({
 							</div>
 						)}
 
-						{method === 'package' && (
-							<fieldset className={classes.manager}>
-								<legend>Install with</legend>
-								<div>
-									{packageManagers.map((manager) => (
-										<button
-											key={manager.value}
-											type="button"
-											data-active={
-												packageManager === manager.value || undefined
-											}
-											aria-pressed={packageManager === manager.value}
-											onClick={() => setPackageManager(manager.value)}
-										>
-											{manager.value}
-										</button>
-									))}
-								</div>
-							</fieldset>
-						)}
-
-						<div className={classes.instructions}>
+						<ol className={classes.instructions}>
 							{method === 'package' && (
-								<CopyCodeBlock
-									code={installCommand}
-									label="Install"
-									language="sh"
-								/>
+								<li className={classes.instructionStep}>
+									<div className={classes.instructionBody}>
+										<fieldset className={classes.manager}>
+											<legend>Package manager</legend>
+											<div>
+												{packageManagers.map((manager) => (
+													<button
+														key={manager.value}
+														type="button"
+														data-active={
+															packageManager === manager.value || undefined
+														}
+														aria-pressed={packageManager === manager.value}
+														onClick={() => setPackageManager(manager.value)}
+													>
+														{manager.value}
+													</button>
+												))}
+											</div>
+										</fieldset>
+										<CopyCodeBlock
+											code={installCommand}
+											compact
+											label="Install"
+											language="sh"
+										/>
+									</div>
+								</li>
 							)}
-							{!customSetup ? (
-								<CopyCodeBlock
-									code={method === 'package' ? packageImport : cdnImport}
-									description={standardImportDescription}
-									label={method === 'package' ? 'Import' : 'Stylesheet import'}
-									language={method === 'package' ? 'js' : 'css'}
-								/>
-							) : (
-								<CopyCodeBlock
-									code={
-										method === 'package' ? packageFontFaceCSS : cdnFontFaceCSS
-									}
-									description={fontFaceExplanation}
-									label="Font-face CSS"
-									language="css"
-									scrollable
-								/>
-							)}
-							<p className={classes.weightRange}>
-								<span>
-									{minWeight === maxWeight
-										? 'Available weight'
-										: 'Weight range'}
-								</span>
-								<strong>
-									{minWeight === maxWeight ? minWeight : variableWeightRange}
-								</strong>
-							</p>
-						</div>
-						<Link
-							className={classes.guideLink}
-							to="/docs/getting-started/install"
-						>
-							New to web fonts? Read the guide
-							<IconExternal aria-hidden height={15} stroke="currentColor" />
-						</Link>
+							<li className={classes.instructionStep}>
+								<div className={classes.instructionBody}>
+									{!customSetup ? (
+										<CopyCodeBlock
+											code={method === 'package' ? packageImport : cdnImport}
+											compact
+											description={standardImportDescription}
+											label={
+												method === 'package' ? 'Import' : 'Stylesheet import'
+											}
+											language={method === 'package' ? 'js' : 'css'}
+										/>
+									) : (
+										<CopyCodeBlock
+											code={
+												method === 'package'
+													? packageFontFaceCSS
+													: cdnFontFaceCSS
+											}
+											description={fontFaceExplanation}
+											label="Font-face CSS"
+											language="css"
+											scrollable
+										/>
+									)}
+								</div>
+							</li>
+							<li className={classes.instructionStep}>
+								<div className={classes.instructionBody}>
+									<CopyCodeBlock
+										code={usageCSS}
+										description={usageDescription}
+										label="Use the font"
+										language="css"
+									/>
+								</div>
+							</li>
+						</ol>
 					</div>
 				</Tabs.Panel>
 			</Tabs>

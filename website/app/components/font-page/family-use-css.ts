@@ -14,6 +14,16 @@ import { jsDelivrResolver } from '../../utils/cdn';
 type FontDisplay = 'auto' | 'swap' | 'block' | 'fallback' | 'optional';
 type WebFontFormat = 'woff2' | 'woff';
 
+const fallbackFamilies: Record<GetFontResponse['category'], string> = {
+	'sans-serif': 'sans-serif',
+	serif: 'serif',
+	display: 'serif',
+	handwriting: 'cursive',
+	monospace: 'monospace',
+	icons: 'sans-serif',
+	other: 'sans-serif',
+};
+
 interface FamilyUseCSSOptions {
 	metadata: GetFontResponse;
 	variable?: GetVariableFontResponse;
@@ -106,7 +116,20 @@ const buildFamilyUseCSS = ({
 	);
 };
 
+const buildFamilyUsageCSS = (
+	metadata: GetFontResponse,
+	isVariable: boolean,
+	weight: number,
+	style: GetFontResponse['styles'][number],
+) => {
+	const family =
+		`${metadata.family}${isVariable ? ' Variable' : ''}`.replaceAll("'", "\\'");
+
+	return `body {\n  font-family: '${family}', ${fallbackFamilies[metadata.category]};\n  font-weight: ${weight};\n  font-style: ${style};\n}`;
+};
+
 export {
+	buildFamilyUsageCSS,
 	buildFamilyUseCSS,
 	type FontDisplay,
 	fontDisplays,
