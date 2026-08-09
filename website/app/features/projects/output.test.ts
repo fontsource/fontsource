@@ -4,8 +4,10 @@ import type { ProjectItem } from './model';
 import {
 	getCdnUrl,
 	getFontStack,
+	getPreviewCdnUrl,
 	getProjectCdnUrls,
 	getProjectCss,
+	getProjectCssFiles,
 	getProjectEditUrl,
 	getSelectedCssFiles,
 	getUsageBlock,
@@ -29,7 +31,7 @@ const baseItem: ProjectItem = {
 	axes: { wght: 600, SOFT: 50 },
 	packageName: '@fontsource-variable/fraunces',
 	packageVersion: '5.3.0',
-	cssFile: 'latin-full.css',
+	cssFile: 'wght.css',
 	fontFamily: 'Fraunces Variable',
 	sampleText: 'Make something memorable.',
 	symbolInputModes: [],
@@ -43,18 +45,34 @@ const baseItem: ProjectItem = {
 describe('current project output', () => {
 	it('pins package versions in CDN imports and preserves variable axes', () => {
 		expect(getCdnUrl(baseItem)).toBe(
-			'https://cdn.jsdelivr.net/npm/@fontsource-variable/fraunces@5.3.0/latin-full.css',
+			'https://cdn.jsdelivr.net/npm/@fontsource-variable/fraunces@5.3.0/wght.css',
 		);
 		expect(getUsageBlock(baseItem)).toContain(
 			"font-variation-settings: 'wght' 600, 'SOFT' 50;",
 		);
 		expect(getUsageBlock(baseItem, 'body')).toMatch(/^body \{/);
 		expect(getProjectCss([baseItem])).toContain(
-			"@import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/fraunces@5.3.0/latin-full.css');",
+			"@import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/fraunces@5.3.0/wght.css');",
 		);
 		expect(getProjectCss([baseItem])).toContain(
 			'Fraunces: OFL-1.1 (registry verified)',
 		);
+	});
+
+	it('loads the aggregate package stylesheet for font-set specimens', () => {
+		expect(getPreviewCdnUrl(baseItem)).toBe(
+			'https://cdn.jsdelivr.net/npm/@fontsource-variable/fraunces@5.3.0/index.css',
+		);
+	});
+
+	it('normalizes legacy subset-prefixed variable stylesheets', () => {
+		expect(
+			getProjectCssFiles({
+				...baseItem,
+				cssFile: 'latin-wght-normal.css',
+				cssFiles: ['latin-wght-normal.css', 'latin-wght-italic.css'],
+			}),
+		).toEqual(['wght.css', 'wght-italic.css']);
 	});
 
 	it('keeps the full stylesheet and ligature guidance for icon families', () => {
@@ -83,15 +101,10 @@ describe('current project output', () => {
 				['normal', 'italic'],
 				[400, 700],
 			),
-		).toEqual([
-			'latin-400.css',
-			'latin-700.css',
-			'latin-400-italic.css',
-			'latin-700-italic.css',
-		]);
+		).toEqual(['400.css', '700.css', '400-italic.css', '700-italic.css']);
 		expect(getSelectedCssFiles(baseItem, ['normal', 'italic'], [400])).toEqual([
-			'latin-full.css',
-			'latin-full-italic.css',
+			'wght.css',
+			'wght-italic.css',
 		]);
 	});
 
@@ -115,8 +128,10 @@ describe('current project output', () => {
 		expect(getProjectEditUrl(configuredItem)).toContain(
 			'format=static&styles=normal%2Citalic&weights=400%2C700',
 		);
+		expect(getProjectEditUrl(configuredItem)).toContain('tab=web');
+		expect(getProjectEditUrl(configuredItem)).toContain('setup=custom');
 		expect(getProjectCss([configuredItem])).toContain(
-			"@import url('https://cdn.jsdelivr.net/npm/@fontsource/fraunces@5.3.0/latin-700-italic.css');",
+			"@import url('https://cdn.jsdelivr.net/npm/@fontsource/fraunces@5.3.0/700-italic.css');",
 		);
 	});
 
@@ -136,7 +151,7 @@ describe('current project output', () => {
 		expect(editUrl).toContain('activeAxes=wght%2CSOFT');
 		expect(editUrl).toContain('display=optional');
 		expect(getProjectCss([configuredItem])).toContain('cdn-font.woff2');
-		expect(getProjectCss([configuredItem])).not.toContain('latin-full.css');
+		expect(getProjectCss([configuredItem])).not.toContain('wght.css');
 	});
 
 	it('uses specialist fallback and readout declarations', () => {

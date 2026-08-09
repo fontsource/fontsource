@@ -44,6 +44,7 @@
 }
 
 .acquisition {
+	width: 100%;
 	max-width: 1120px;
 }
 
@@ -150,6 +151,7 @@
 }
 
 .webPanel {
+	container: font-set-prompt / inline-size;
 	max-width: 880px;
 	margin: 0 auto;
 	padding: 42px 40px 48px;
@@ -182,7 +184,9 @@
 }
 
 .downloadAction {
+	container: font-set-prompt / inline-size;
 	display: grid;
+	align-content: start;
 	gap: 12px;
 }
 
@@ -195,6 +199,15 @@
 }
 
 .downloadAction .fontSetPrompt {
+	border-top: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+}
+
+.webContinuation {
+	margin-top: 24px;
+	padding-top: 20px;
 	border-top: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -217,6 +230,14 @@
 	color: light-dark(#52617a, #9ca8bd);
 	font-size: 12px;
 	line-height: 1.45;
+}
+
+@container font-set-prompt (max-width: 30rem) {
+	.fontSetPrompt {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 12px;
+	}
 }
 
 .primaryButton {
@@ -401,12 +422,9 @@
 	flex: 0 0 auto;
 	min-height: 44px;
 	padding: 0 2px;
+	color: light-dark(#52617a, #9ca8bd);
 	font-size: 14px;
 	font-weight: 600;
-}
-
-.resetButton {
-	color: light-dark(#52617a, #9ca8bd);
 }
 
 .resetButton:hover {
@@ -417,9 +435,10 @@
 .configuration {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 22px;
+	column-gap: 40px;
+	row-gap: 28px;
 	margin-top: 22px;
-	padding: 22px 0;
+	padding: 28px 0;
 	border-top: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -642,12 +661,7 @@
 
 	.configuration {
 		grid-template-columns: 1fr;
-	}
-
-	.fontSetPrompt {
-		align-items: flex-start;
-		flex-direction: column;
-		gap: 12px;
+		row-gap: 26px;
 	}
 
 	.formatSwitch > div {

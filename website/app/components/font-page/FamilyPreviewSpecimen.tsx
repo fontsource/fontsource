@@ -7,7 +7,8 @@ import {
 	IconAlignLeft,
 	IconAlignRight,
 } from '@tabler/icons-react';
-import type { CSSProperties } from 'react';
+import { type CSSProperties, useEffect } from 'react';
+import { useSearchParams } from 'react-router';
 
 import { DropdownSimple } from '@/components/Dropdown';
 import {
@@ -17,6 +18,7 @@ import {
 	getPreviewLanguageTag,
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
+import type { PreviewMode } from '@/utils/preview-text';
 import { usesNameLigatures } from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
@@ -60,7 +62,14 @@ const rtlScripts = new Set([
 
 const PreviewToolbar = observer(() => {
 	const model = usePreviewEditor();
-	const mode = useValue(model.state$.mode);
+	const [searchParams, setSearchParams] = useSearchParams();
+	const stateMode = useValue(model.state$.mode);
+	const requestedMode = searchParams.get('view');
+	const mode: PreviewMode =
+		model.familyKind !== 'symbols' &&
+		modeLabels.some((option) => option.value === requestedMode)
+			? (requestedMode as PreviewMode)
+			: 'headline';
 	const alignment = useValue(model.state$.typographyByMode[mode].alignment);
 	const selectedLanguageId = useValue(model.state$.selectedLanguageId);
 	const verifiedLanguages = useValue(() => getActiveLanguages(model));
@@ -83,6 +92,16 @@ const PreviewToolbar = observer(() => {
 	] as const;
 	const activeModeLabels =
 		model.familyKind === 'symbols' ? symbolModeLabels : modeLabels;
+	useEffect(() => {
+		if (stateMode !== mode) model.state$.mode.set(mode);
+	}, [mode, model, stateMode]);
+	const selectMode = (nextMode: PreviewMode) => {
+		if (nextMode === mode) return;
+		const next = new URLSearchParams(searchParams);
+		if (nextMode === 'headline') next.delete('view');
+		else next.set('view', nextMode);
+		setSearchParams(next);
+	};
 	const languageItems = verifiedLanguages.map((language) => ({
 		label:
 			language.autonym && language.autonym !== language.name
@@ -120,7 +139,7 @@ const PreviewToolbar = observer(() => {
 					aria-label="Preview view"
 					value={mode}
 					data={activeModeLabels}
-					onChange={(value) => model.state$.mode.set(value as typeof mode)}
+					onChange={(value) => selectMode(value as PreviewMode)}
 				/>
 			)}
 			<div className={classes.toolbarActions}>

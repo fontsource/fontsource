@@ -56,7 +56,7 @@ describe('font set archive', () => {
 			'roboto/web/font.woff2',
 		]);
 		expect(strFromU8(archive['fontsource-font-set-cdn.css'])).toContain(
-			'@fontsource/roboto@5.3.0/latin-700-italic.css',
+			'@fontsource/roboto@5.3.0/700-italic.css',
 		);
 		expect(progress).toHaveBeenCalledWith(1);
 	});

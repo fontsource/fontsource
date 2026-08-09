@@ -21,3 +21,16 @@
 .root > figure {
 	margin: 8px 0 0;
 }
+
+.scroller {
+	max-block-size: min(30rem, 60dvb);
+	overflow: auto;
+	border-radius: 0.625rem;
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
+}
+
+.scroller:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}

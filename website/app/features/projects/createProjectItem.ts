@@ -72,8 +72,8 @@ const createProjectItem = ({
 	const cssFile = iconUsesMultipleAxes
 		? 'full.css'
 		: isVariable
-			? `${subset}-${axisKey}${styleSuffix}.css`
-			: `${subset}-${weight}${styleSuffix}.css`;
+			? `${axisKey}${styleSuffix}.css`
+			: `${weight}${styleSuffix}.css`;
 
 	return {
 		familyId: metadata.id,

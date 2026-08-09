@@ -101,14 +101,18 @@
 	min-width: 0;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) clamp(340px, 28vw, 380px);
+	block-size: calc(var(--preview-canvas-min) + 76px);
 	min-height: calc(var(--preview-canvas-min) + 76px);
 	background: var(--preview-surface);
 }
 
 .specimenColumn {
 	min-width: 0;
+	min-height: 0;
+	block-size: 100%;
 	display: flex;
 	flex-direction: column;
+	overflow: clip;
 }
 
 .specimenToolbar {
@@ -352,6 +356,7 @@
 	min-height: 0;
 	flex: 1;
 	display: flex;
+	overflow: clip;
 }
 
 .canvasSkeleton > div {
@@ -492,11 +497,12 @@
 
 .derivedCanvas {
 	min-width: 0;
-	min-height: var(--preview-canvas-min);
+	min-height: 0;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	background: var(--preview-surface);
+	overflow: clip;
 }
 
 .derivedEditor {
@@ -522,9 +528,13 @@
 
 .waterfall {
 	min-width: 0;
+	min-height: 0;
+	flex: 1;
 	display: grid;
 	padding: 8px 32px 24px;
 	overflow: auto;
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
 }
 
 .waterfall > div {
@@ -551,8 +561,13 @@
 }
 
 .compareSkeleton {
+	min-height: 0;
+	flex: 1;
 	display: block;
 	padding: 0 32px 32px;
+	overflow: auto;
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
 }
 
 .compareGrid {
@@ -618,13 +633,17 @@
 
 .inspector {
 	min-width: 0;
+	min-height: 0;
+	block-size: 100%;
 	border-inline-start: var(--preview-border);
 	background: var(--preview-surface);
+	overflow: clip;
 }
 
 .inspectorContent {
 	min-width: 0;
-	max-block-size: min(720px, 100dvh);
+	block-size: 100%;
+	max-block-size: 100%;
 	overflow-y: auto;
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
@@ -852,18 +871,6 @@
 		border-color 120ms ease,
 		outline-color 120ms ease,
 		background-color 120ms ease;
-}
-
-.inputDescription {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	border: 0;
-	clip-path: inset(50%);
-	overflow: hidden;
-	white-space: nowrap;
 }
 
 .inspectorSearch:focus-within {
@@ -1158,7 +1165,13 @@
 	.studio {
 		--preview-canvas-min: clamp(460px, 58dvh, 520px);
 
+		block-size: auto;
 		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.canvasSkeleton {
+		block-size: var(--preview-canvas-min);
+		flex: 0 0 var(--preview-canvas-min);
 	}
 
 	.inspector {
@@ -1265,6 +1278,7 @@
 	.modeChooser :global(.mantine-SegmentedControl-label) {
 		min-width: 0;
 		padding-inline: 4px;
+		font-size: var(--preview-type-label);
 	}
 
 	.toolbarActions {

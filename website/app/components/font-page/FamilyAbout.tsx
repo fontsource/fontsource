@@ -82,7 +82,11 @@ const normalizeSearchValue = (value: string) =>
 const summarizeDescription = (value?: string) => {
 	const description = value?.trim();
 	if (!description) return;
-	return description.match(/^.*?[.!?](?:\s|$)/u)?.[0].trim() ?? description;
+	const firstParagraph =
+		description.split(/\n\s*\n/u).find(Boolean) ?? description;
+	return (
+		firstParagraph.match(/^.*?[.!?](?:\s|$)/su)?.[0].trim() ?? firstParagraph
+	);
 };
 
 const weightNames: Record<number, string> = {
@@ -368,6 +372,7 @@ export const FamilyAbout = ({
 	const description =
 		content?.description ??
 		`${metadata.family} is an open-source ${formatFontLabel(metadata.category).toLowerCase()} family distributed by Fontsource.`;
+	const summary = summarizeDescription(description) ?? description;
 	let article = content?.article;
 	if (!article || article === content?.description) {
 		article = undefined;
@@ -485,7 +490,7 @@ export const FamilyAbout = ({
 				<div className={classes.story}>
 					<h2 id="about-heading">About {metadata.family}.</h2>
 					<div className={classes.prose}>
-						<RegistryMarkdown value={description} />
+						<RegistryMarkdown value={summary} />
 					</div>
 					<FontSkeleton
 						name="font-detail-about-specimen"
@@ -736,13 +741,14 @@ export const FamilyAbout = ({
 								<p>{registry.license.attribution}</p>
 							</div>
 						)}
-						<textarea
+						<section
 							className={classes.licenseText}
 							aria-label={`${registry.license.id} license text`}
-							readOnly
-							spellCheck={false}
-							value={registry.license.text}
-						/>
+							// biome-ignore lint/a11y/noNoninteractiveTabindex: Keyboard users need to scroll the bounded license document independently.
+							tabIndex={0}
+						>
+							<pre>{registry.license.text}</pre>
+						</section>
 					</div>
 				</section>
 			)}

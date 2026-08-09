@@ -93,7 +93,7 @@ export const FamilyUse = ({
 	registryState,
 	subsetDefinitions,
 }: FamilyUseProps) => {
-	const [searchParams] = useSearchParams();
+	const [searchParams, setSearchParams] = useSearchParams();
 	const fromSelectedFonts = searchParams.get('from') === 'selected-fonts';
 	const supportsVariable = Boolean(variable && versions.latestVariable);
 	const supportsStatic = Boolean(versions.latest);
@@ -152,10 +152,6 @@ export const FamilyUse = ({
 			];
 		}),
 	);
-	const [path, setPath] = useState<AcquisitionPath>(
-		fromSelectedFonts ? 'web' : 'download',
-	);
-	const [method, setMethod] = useState<Method>('package');
 	const hasRequestedCustomSetup =
 		fromSelectedFonts ||
 		[
@@ -167,9 +163,32 @@ export const FamilyUse = ({
 			'formats',
 			'axes',
 		].some((parameter) => searchParams.has(parameter));
-	const [setupMode, setSetupMode] = useState<SetupMode>(
-		hasRequestedCustomSetup ? 'custom' : 'standard',
-	);
+	const defaultPath: AcquisitionPath = fromSelectedFonts ? 'web' : 'download';
+	const requestedPath = searchParams.get('tab');
+	const path: AcquisitionPath =
+		requestedPath === 'download' || requestedPath === 'web'
+			? requestedPath
+			: defaultPath;
+	const method: Method =
+		searchParams.get('method') === 'cdn' ? 'cdn' : 'package';
+	const defaultSetup = hasRequestedCustomSetup ? 'custom' : 'simple';
+	const requestedSetup = searchParams.get('setup');
+	const setup =
+		requestedSetup === 'simple' || requestedSetup === 'custom'
+			? requestedSetup
+			: defaultSetup;
+	const setupMode: SetupMode = setup === 'custom' ? 'custom' : 'standard';
+
+	const setNavigationChoice = (
+		parameter: 'tab' | 'method' | 'setup',
+		value: string,
+		defaultValue: string,
+	) => {
+		const next = new URLSearchParams(searchParams);
+		if (value === defaultValue) next.delete(parameter);
+		else next.set(parameter, value);
+		setSearchParams(next);
+	};
 	const [format, setFormat] = useState<FamilyFormat>(
 		searchParams.get('format') === 'static' && supportsStatic
 			? 'static'
@@ -355,7 +374,9 @@ export const FamilyUse = ({
 				className={classes.acquisition}
 				value={path}
 				onChange={(value) => {
-					if (value) setPath(value as AcquisitionPath);
+					if (value && value !== path) {
+						setNavigationChoice('tab', value, defaultPath);
+					}
 				}}
 			>
 				<Tabs.List className={classes.taskTabs} grow>
@@ -438,7 +459,11 @@ export const FamilyUse = ({
 								type="button"
 								data-active={method === 'package' || undefined}
 								aria-pressed={method === 'package'}
-								onClick={() => setMethod('package')}
+								onClick={() => {
+									if (method !== 'package') {
+										setNavigationChoice('method', 'package', 'package');
+									}
+								}}
 							>
 								Package
 							</button>
@@ -446,7 +471,11 @@ export const FamilyUse = ({
 								type="button"
 								data-active={method === 'cdn' || undefined}
 								aria-pressed={method === 'cdn'}
-								onClick={() => setMethod('cdn')}
+								onClick={() => {
+									if (method !== 'cdn') {
+										setNavigationChoice('method', 'cdn', 'package');
+									}
+								}}
 							>
 								CDN
 							</button>
@@ -467,8 +496,9 @@ export const FamilyUse = ({
 								data-active={setupMode === 'standard' || undefined}
 								aria-pressed={setupMode === 'standard'}
 								onClick={() => {
-									resetToSimpleSetup();
-									setSetupMode('standard');
+									if (setup !== 'simple') {
+										setNavigationChoice('setup', 'simple', defaultSetup);
+									}
 								}}
 							>
 								Simple
@@ -477,7 +507,11 @@ export const FamilyUse = ({
 								type="button"
 								data-active={setupMode === 'custom' || undefined}
 								aria-pressed={setupMode === 'custom'}
-								onClick={() => setSetupMode('custom')}
+								onClick={() => {
+									if (setup !== 'custom') {
+										setNavigationChoice('setup', 'custom', defaultSetup);
+									}
+								}}
 							>
 								Custom CSS
 							</button>
@@ -773,22 +807,6 @@ export const FamilyUse = ({
 							</div>
 						)}
 
-						<div className={classes.fontSetPrompt}>
-							<p>
-								<strong>Keep browsing</strong>
-								<span>
-									Add this website setup to your font set and generate combined
-									code later.
-								</span>
-							</p>
-							<ProjectAddButton
-								includedLabel="Update font set"
-								item={fontSetItem}
-								label="Add to font set"
-								savedLabel="Saved in font set"
-							/>
-						</div>
-
 						{method === 'package' && (
 							<fieldset className={classes.manager}>
 								<legend>Install with</legend>
@@ -833,6 +851,7 @@ export const FamilyUse = ({
 									description={fontFaceExplanation}
 									label="Font-face CSS"
 									language="css"
+									scrollable
 								/>
 							)}
 							{exampleWeightRange && (
@@ -884,6 +903,24 @@ export const FamilyUse = ({
 							New to web fonts? Read the guide
 							<IconExternal aria-hidden height={15} stroke="currentColor" />
 						</Link>
+
+						<div
+							className={`${classes.fontSetPrompt} ${classes.webContinuation}`}
+						>
+							<p>
+								<strong>Keep browsing</strong>
+								<span>
+									Save this setup to your font set and generate combined code
+									when you are ready.
+								</span>
+							</p>
+							<ProjectAddButton
+								includedLabel="Update font set"
+								item={fontSetItem}
+								label="Add to font set"
+								savedLabel="Saved in font set"
+							/>
+						</div>
 					</div>
 				</Tabs.Panel>
 			</Tabs>

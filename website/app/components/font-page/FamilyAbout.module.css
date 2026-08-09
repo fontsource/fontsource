@@ -15,6 +15,7 @@
 
 .intro {
 	display: grid;
+	align-items: start;
 	grid-template-columns: minmax(0, 7fr) minmax(300px, 5fr);
 	gap: 72px;
 	padding-bottom: 48px;
@@ -34,6 +35,7 @@
 		font-weight: 600;
 		line-height: 1.04;
 		letter-spacing: -0.04em;
+		text-wrap: balance;
 	}
 }
 
@@ -42,6 +44,7 @@
 	color: light-dark(#34435c, #cbd3e2);
 	font-size: 16px;
 	line-height: 1.75;
+	text-wrap: pretty;
 
 	p {
 		margin: 18px 0 0;
@@ -77,7 +80,8 @@
 	font-weight: 600;
 	line-height: 1.15;
 	letter-spacing: -0.04em;
-	overflow-wrap: anywhere;
+	overflow-wrap: break-word;
+	word-break: normal;
 	text-wrap: balance;
 
 	&:is(
@@ -220,6 +224,18 @@
 		color: light-dark(#34435c, #cbd3e2);
 		background: light-dark(#fbfcfe, #10192d);
 		font-size: 13px;
+		transition:
+			border-color 120ms ease,
+			color 120ms ease,
+			background-color 120ms ease;
+	}
+}
+
+@media (hover: hover) {
+	.taxonomy li:hover {
+		border-color: light-dark(#c8c5ff, #5852cc);
+		color: light-dark(#201a73, #dedcff);
+		background: light-dark(#f7f6ff, #171735);
 	}
 }
 
@@ -307,17 +323,21 @@
 	overflow: auto;
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
-	resize: none;
 	border: 0;
 	border-radius: 0;
 	outline: 0;
 	color: light-dark(#34435c, #cbd3e2);
 	background: transparent;
-	font-family: inherit;
 	font-size: 13px;
 	line-height: 1.7;
-	white-space: pre-wrap;
-	overflow-wrap: anywhere;
+	tab-size: 4;
+
+	pre {
+		margin: 0;
+		font: inherit;
+		white-space: pre-wrap;
+		overflow-wrap: anywhere;
+	}
 
 	&:focus-visible {
 		outline: 2px solid var(--mantine-color-purple-0);
@@ -401,6 +421,16 @@
 		font-size: 14px;
 		font-weight: 600;
 		text-decoration: none;
+		text-underline-offset: 4px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--mantine-color-purple-0);
+			outline-offset: 4px;
+		}
 	}
 }
 
@@ -610,6 +640,7 @@
 	li > div > span {
 		color: light-dark(#52617a, #aeb9cc);
 		font-size: 12px;
+		line-height: 1.5;
 	}
 
 	.sourceChecksum {
@@ -720,6 +751,16 @@
 	.licenseText {
 		height: min(56vh, 26rem);
 		padding: 18px;
+	}
+
+	.sourceFiles li {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 2px;
+	}
+
+	.sourceFiles .sourceChecksum {
+		margin-inline-start: -4px;
 	}
 
 	.sourceSummary {

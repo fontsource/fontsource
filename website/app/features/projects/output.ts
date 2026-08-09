@@ -11,8 +11,23 @@ const fallbacks: Record<ProjectItem['category'], string> = {
 	other: 'sans-serif',
 };
 
-const getProjectCssFiles = (item: ProjectItem) =>
-	item.cssFiles?.length ? item.cssFiles : [item.cssFile];
+const getAggregateCssFile = (
+	item: Pick<ProjectItem, 'format' | 'subset'>,
+	file: string,
+) => {
+	const subsetPrefix = `${item.subset}-`;
+	const aggregateFile = file.startsWith(subsetPrefix)
+		? file.slice(subsetPrefix.length)
+		: file;
+	return item.format === 'variable'
+		? aggregateFile.replace('-normal.css', '.css')
+		: aggregateFile;
+};
+
+const getProjectCssFiles = (item: ProjectItem) => {
+	const files = item.cssFiles?.length ? item.cssFiles : [item.cssFile];
+	return files.map((file) => getAggregateCssFile(item, file));
+};
 
 const getProjectCdnUrls = (item: ProjectItem) =>
 	getProjectCssFiles(item).map((file) =>
@@ -21,6 +36,9 @@ const getProjectCdnUrls = (item: ProjectItem) =>
 
 const getCdnUrl = (item: ProjectItem) => getProjectCdnUrls(item)[0];
 
+const getPreviewCdnUrl = (item: ProjectItem) =>
+	getJsDelivrPackageUrl(item.packageName, item.packageVersion, 'index.css');
+
 const getProjectEditUrl = (item: ProjectItem) => {
 	const params = new URLSearchParams({
 		from: 'selected-fonts',
@@ -28,6 +46,8 @@ const getProjectEditUrl = (item: ProjectItem) => {
 		styles: (item.styles ?? [item.style]).join(','),
 		weights: (item.weights ?? [item.weight]).join(','),
 	});
+	params.set('tab', 'web');
+	params.set('setup', 'custom');
 	if (item.subsets?.length) params.set('subsets', item.subsets.join(','));
 	if (item.activeAxes?.length)
 		params.set('activeAxes', item.activeAxes.join(','));
@@ -52,14 +72,12 @@ const getSelectedCssFiles = (
 			.replace('-italic.css', '')
 			.replace('.css', '');
 		return styles.map(
-			(style) =>
-				`${item.subset}-${axisKey}${style === 'italic' ? '-italic' : ''}.css`,
+			(style) => `${axisKey}${style === 'italic' ? '-italic' : ''}.css`,
 		);
 	}
 	return styles.flatMap((style) =>
 		weights.map(
-			(weight) =>
-				`${item.subset}-${weight}${style === 'italic' ? '-italic' : ''}.css`,
+			(weight) => `${weight}${style === 'italic' ? '-italic' : ''}.css`,
 		),
 	);
 };
@@ -184,6 +202,7 @@ const getProjectCss = (items: ProjectItem[]) => {
 export {
 	getCdnUrl,
 	getFontStack,
+	getPreviewCdnUrl,
 	getProjectCdnUrls,
 	getProjectCss,
 	getProjectCssFiles,

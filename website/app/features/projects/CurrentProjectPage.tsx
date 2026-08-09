@@ -2,8 +2,8 @@ import { useValue } from '@legendapp/state/react';
 import { Button, Group, Modal, Text } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
 import { IconDownload, IconExternalLink, IconTrash } from '@tabler/icons-react';
-import { Fragment, useEffect, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { AddFontSetToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
@@ -22,7 +22,7 @@ import { useCurrentProjectStore } from './CurrentProjectProvider';
 import { createFontSetArchive, FontSetArchiveError } from './downloadFontSet';
 import type { ProjectItem } from './model';
 import {
-	getCdnUrl,
+	getPreviewCdnUrl,
 	getProjectCdnUrls,
 	getProjectCss,
 	getProjectCssFiles,
@@ -50,11 +50,9 @@ interface FontSetImportLocationState {
 
 const FontSecondaryDetails = ({
 	item,
-	selectedSubsets,
 	tags,
 }: {
 	item: ProjectItem;
-	selectedSubsets: string[];
 	tags: string[];
 }) => {
 	const usageNote = item.registryFactsCurrent ? getUsageNote(item) : undefined;
@@ -75,16 +73,6 @@ const FontSecondaryDetails = ({
 						{item.designer ? `By ${item.designer} · ` : ''}
 						{formatFontLabel(item.classification)} · Package{' '}
 						{item.packageVersion}
-					</dd>
-				</div>
-				<div>
-					<dt>
-						{hasSymbolCatalog(item) ? 'Package subset' : 'Character subset'}
-					</dt>
-					<dd>
-						{hasSymbolCatalog(item)
-							? `${formatFontLabel(item.subset)} ${usesNameLigatures(item) ? 'symbol ligatures' : 'symbols'}`
-							: selectedSubsets.map(formatFontLabel).join(', ')}
 					</dd>
 				</div>
 				{item.fontDisplay && (
@@ -149,6 +137,7 @@ const ProjectFont = ({
 	const supportsLatin = selectedSubsets.some(
 		(subset) => subset === 'latin' || subset.startsWith('latin-'),
 	);
+	const isBarcodeFamily = item.tags.some((tag) => tag.includes('barcode'));
 	const staleSpecializedSpecimen =
 		!item.registryFactsCurrent && usesSpecializedSpecimen;
 	const specimenText = staleSpecializedSpecimen
@@ -157,7 +146,7 @@ const ProjectFont = ({
 			? usesNameLigatures(item)
 				? 'home settings favorite'
 				: item.sampleText
-			: isDigitalFamily(item)
+			: isDigitalFamily(item) || isBarcodeFamily
 				? '0123456789'
 				: usesSpecializedSpecimen || !supportsLatin
 					? item.sampleText
@@ -165,12 +154,22 @@ const ProjectFont = ({
 
 	return (
 		<article className={classes.fontRow}>
-			<link rel="stylesheet" href={getCdnUrl(item)} />
+			{item.cdnFontFaceCSS ? (
+				<style
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from the saved Fontsource setup.
+					dangerouslySetInnerHTML={{ __html: item.cdnFontFaceCSS }}
+				/>
+			) : (
+				<link rel="stylesheet" href={getPreviewCdnUrl(item)} />
+			)}
 			<div
 				className={classes.specimen}
 				data-ui-fallback={staleSpecializedSpecimen || undefined}
 				data-compact={
-					hasSymbolCatalog(item) || isDigitalFamily(item) || undefined
+					hasSymbolCatalog(item) ||
+					isDigitalFamily(item) ||
+					isBarcodeFamily ||
+					undefined
 				}
 				style={{
 					fontFamily: staleSpecializedSpecimen ? undefined : item.fontFamily,
@@ -190,11 +189,12 @@ const ProjectFont = ({
 			<div className={classes.fontDetails}>
 				<div className={classes.fontTitle}>
 					<div>
-						<h2>{item.displayName}</h2>
+						<h2>
+							<Link to={`/fonts/${item.familyId}`}>{item.displayName}</Link>
+						</h2>
 						<p className={classes.fontMeta}>
 							{item.designer ? `By ${item.designer} · ` : ''}
-							{formatFontLabel(item.classification)} · Package{' '}
-							{item.packageVersion}
+							{formatFontLabel(item.classification)}
 						</p>
 					</div>
 					{item.status === 'deprecated' && (
@@ -218,27 +218,13 @@ const ProjectFont = ({
 					</div>
 				</dl>
 				<div className={classes.desktopSecondary}>
-					<FontSecondaryDetails
-						item={item}
-						selectedSubsets={selectedSubsets}
-						tags={tags}
-					/>
+					<FontSecondaryDetails item={item} tags={tags} />
 				</div>
 				<details className={classes.mobileSecondary}>
 					<summary>More details</summary>
-					<FontSecondaryDetails
-						item={item}
-						selectedSubsets={selectedSubsets}
-						tags={tags}
-					/>
+					<FontSecondaryDetails item={item} tags={tags} />
 				</details>
 				<div className={classes.rowActions}>
-					<Link
-						to={getProjectEditUrl(item)}
-						aria-label={`Edit ${item.displayName} setup`}
-					>
-						Edit setup
-					</Link>
 					<button
 						type="button"
 						disabled={busy}
@@ -258,19 +244,17 @@ const CurrentProjectPage = () => {
 	const store = useCurrentProjectStore();
 	const location = useLocation();
 	const navigate = useNavigate();
+	const [searchParams, setSearchParams] = useSearchParams();
 	const initialImportResult = (
 		location.state as FontSetImportLocationState | null
 	)?.fontSetImport;
 	const [importResult] = useState(initialImportResult);
 	const ready = useValue(store.ready$);
 	const items = useValue(store.getItems);
-	const [method, setMethod] = useLocalStorage<DeliveryMethod>({
-		key: 'current-project-delivery',
-		defaultValue: 'package',
-		deserialize: (value) =>
-			deserializeStoredChoice(value, ['package', 'cdn'] as const, 'package'),
-	});
-	const [view, setView] = useState<FontSetView>('files');
+	const method: DeliveryMethod =
+		searchParams.get('method') === 'cdn' ? 'cdn' : 'package';
+	const view: FontSetView =
+		searchParams.get('view') === 'website' ? 'website' : 'files';
 	const [packageManager, setPackageManager] = useLocalStorage({
 		key: 'package-manager',
 		defaultValue: 'pnpm',
@@ -316,18 +300,16 @@ const CurrentProjectPage = () => {
 		)
 		.join('\n');
 	const usageCss = items.map((item) => getUsageBlock(item)).join('\n\n');
-	const verifiedItems = items.filter((item) => item.license.verified);
-	const unverifiedItems = items.filter((item) => !item.license.verified);
-	const staleRegistryItems = items.filter((item) => !item.registryFactsCurrent);
-	const licenseGroups = Object.entries(
-		verifiedItems.reduce<Record<string, ProjectItem[]>>((groups, item) => {
-			const id = item.license.id ?? 'Unknown license';
-			const group = groups[id] ?? [];
-			group.push(item);
-			groups[id] = group;
-			return groups;
-		}, {}),
-	).sort(([left], [right]) => left.localeCompare(right));
+	const setNavigationChoice = (
+		parameter: 'view' | 'method',
+		value: string,
+		defaultValue: string,
+	) => {
+		const next = new URLSearchParams(searchParams);
+		if (value === defaultValue) next.delete(parameter);
+		else next.set(parameter, value);
+		setSearchParams(next);
+	};
 
 	const downloadCss = () => {
 		try {
@@ -492,33 +474,12 @@ const CurrentProjectPage = () => {
 				</section>
 			) : (
 				<>
-					<section className={classes.fonts} aria-labelledby="fonts-heading">
-						<div className={classes.sectionHeading}>
-							<div>
-								<h2 id="fonts-heading">Your font set</h2>
-								<p>
-									{items.length} {items.length === 1 ? 'font' : 'fonts'}. Each
-									family keeps one setup. Updating it replaces its previous
-									settings.
-								</p>
-							</div>
-						</div>
-						{items.map((item) => (
-							<ProjectFont
-								key={item.familyId}
-								busy={zipBusy}
-								item={item}
-								onRemove={() => removeItem(item)}
-							/>
-						))}
-					</section>
-
 					<nav className={classes.taskSwitch} aria-label="Font set output">
 						<button
 							type="button"
 							aria-pressed={view === 'files'}
 							data-active={view === 'files' || undefined}
-							onClick={() => setView('files')}
+							onClick={() => setNavigationChoice('view', 'files', 'files')}
 						>
 							<strong>Files</strong>
 							<span>Download complete font families</span>
@@ -527,7 +488,7 @@ const CurrentProjectPage = () => {
 							type="button"
 							aria-pressed={view === 'website'}
 							data-active={view === 'website' || undefined}
-							onClick={() => setView('website')}
+							onClick={() => setNavigationChoice('view', 'website', 'files')}
 						>
 							<strong>Website</strong>
 							<span>Generate package or CDN code</span>
@@ -591,8 +552,8 @@ const CurrentProjectPage = () => {
 									</h2>
 									<p>
 										{singleItem
-											? 'This is the same configured family available from its Get font page. Install the package to self-host it, or use an exact-version public CDN link.'
-											: 'Install the packages to self-host every family, or use exact-version links from the public CDN.'}
+											? 'Install the package to self-host it, or load it from the public CDN.'
+											: 'Install the packages to self-host every family, or load them from the public CDN.'}
 									</p>
 								</div>
 								<fieldset className={classes.methodSwitch}>
@@ -603,7 +564,9 @@ const CurrentProjectPage = () => {
 										type="button"
 										data-active={method === 'package' || undefined}
 										aria-pressed={method === 'package'}
-										onClick={() => setMethod('package')}
+										onClick={() =>
+											setNavigationChoice('method', 'package', 'package')
+										}
 									>
 										Packages
 									</button>
@@ -611,108 +574,63 @@ const CurrentProjectPage = () => {
 										type="button"
 										data-active={method === 'cdn' || undefined}
 										aria-pressed={method === 'cdn'}
-										onClick={() => setMethod('cdn')}
+										onClick={() =>
+											setNavigationChoice('method', 'cdn', 'package')
+										}
 									>
-										CDN links
+										CDN
 									</button>
 								</fieldset>
 							</div>
-							{staleRegistryItems.length > 0 && (
-								<div className={classes.reviewNotice} role="status">
-									<strong>Review saved setups</strong>
-									<p>
-										Your generated code still uses the saved package choices.
-										Open{' '}
-										{staleRegistryItems.map((item, index) => (
-											<Fragment key={item.familyId}>
-												{index > 0 &&
-													(index === staleRegistryItems.length - 1
-														? ' and '
-														: ', ')}
-												<Link to={getProjectEditUrl(item)}>
-													{item.displayName}
-												</Link>
-											</Fragment>
-										))}{' '}
-										to refresh specialist behavior and license details.
-									</p>
-								</div>
-							)}
-
-							<div className={classes.outputGrid}>
-								<aside className={classes.deliverySummary}>
-									<p>Generated code</p>
-									<dl>
+							<div className={classes.codeStack}>
+								{method === 'package' && (
+									<fieldset className={classes.packageManagers}>
+										<legend>Package manager</legend>
 										<div>
-											<dt>Fonts</dt>
-											<dd>{items.length}</dd>
+											{packageManagers.map((item) => (
+												<button
+													key={item.value}
+													type="button"
+													data-active={
+														packageManager === item.value || undefined
+													}
+													aria-pressed={packageManager === item.value}
+													onClick={() => setPackageManager(item.value)}
+												>
+													{item.value}
+												</button>
+											))}
 										</div>
-										<div>
-											<dt>Loads from</dt>
-											<dd>
-												{method === 'package' ? 'Your website' : 'Public CDN'}
-											</dd>
-										</div>
-										<div>
-											<dt>Font versions</dt>
-											<dd>Exact versions</dd>
-										</div>
-										<div>
-											<dt>License records</dt>
-											<dd>
-												{verifiedItems.length}/{items.length} verified
-											</dd>
-										</div>
-									</dl>
-									{method === 'package' && (
-										<div className={classes.packageManagers}>
-											<span>Package manager</span>
-											<div>
-												{packageManagers.map((item) => (
-													<button
-														key={item.value}
-														type="button"
-														data-active={
-															packageManager === item.value || undefined
-														}
-														aria-pressed={packageManager === item.value}
-														onClick={() => setPackageManager(item.value)}
-													>
-														{item.value}
-													</button>
-												))}
-											</div>
-										</div>
-									)}
-								</aside>
-
-								<div className={classes.codeStack}>
-									{method === 'package' ? (
-										<>
-											<CopyCodeBlock
-												label={`1 · Install ${singleItem ? 'package' : 'packages'}`}
-												code={installCommand}
-												language="sh"
-											/>
-											<CopyCodeBlock
-												label="2 · Add font-face CSS"
-												code={imports}
-												language="css"
-											/>
-										</>
-									) : (
+									</fieldset>
+								)}
+								{method === 'package' ? (
+									<>
 										<CopyCodeBlock
-											label="1 · Add font-face CSS"
-											code={cdnLinks}
-											language="css"
+											label={`1 · Install ${singleItem ? 'package' : 'packages'}`}
+											code={installCommand}
+											language="sh"
 										/>
-									)}
+										<CopyCodeBlock
+											label="2 · Add font-face CSS"
+											code={imports}
+											language="css"
+											scrollable
+										/>
+									</>
+								) : (
 									<CopyCodeBlock
-										label={`${method === 'package' ? '3' : '2'} · Apply font ${singleItem ? 'class' : 'classes'} in CSS`}
-										code={usageCss}
+										label="1 · Add font-face CSS"
+										code={cdnLinks}
 										language="css"
+										scrollable
 									/>
-								</div>
+								)}
+								<CopyCodeBlock
+									label={`${method === 'package' ? '3' : '2'} · Apply font ${singleItem ? 'class' : 'classes'} in CSS`}
+									code={usageCss}
+									language="css"
+									scrollable
+								/>
 							</div>
 
 							<div className={classes.downloadBar}>
@@ -723,9 +641,8 @@ const CurrentProjectPage = () => {
 											: 'Need one CDN-ready CSS file?'}
 									</strong>
 									<span>
-										This imports the same exact font{' '}
-										{singleItem ? 'version' : 'versions'} from jsDelivr and
-										includes the {singleItem ? 'class' : 'classes'} above.
+										This combines the CDN imports and font{' '}
+										{singleItem ? 'class' : 'classes'} above.
 									</span>
 									{cssDownloadState !== 'idle' && (
 										<span
@@ -749,54 +666,25 @@ const CurrentProjectPage = () => {
 						</section>
 					)}
 
-					<section
-						className={classes.licenseReceipt}
-						aria-labelledby="font-set-license-heading"
-					>
-						<div className={classes.licenseReceiptHeading}>
+					<section className={classes.fonts} aria-labelledby="fonts-heading">
+						<div className={classes.sectionHeading}>
 							<div>
-								<h2 id="font-set-license-heading">License receipt</h2>
+								<h2 id="fonts-heading">Your font set</h2>
 								<p>
-									Each family keeps its own registry-verified license. Include
-									the matching license when you redistribute font files.
+									{items.length} {items.length === 1 ? 'font' : 'fonts'}. Each
+									family keeps one setup. Updating it replaces its previous
+									settings.
 								</p>
 							</div>
-							<strong>
-								{verifiedItems.length}/{items.length} verified
-							</strong>
 						</div>
-						<ul>
-							{licenseGroups.map(([licenseId, licensedItems]) => (
-								<li key={licenseId}>
-									<strong>{licenseId}</strong>
-									<span className={classes.licensedFamilies}>
-										{licensedItems.map((item, index) => (
-											<Fragment key={item.familyId}>
-												{index > 0 && ', '}
-												<Link to={`/fonts/${item.familyId}/about#license`}>
-													{item.displayName}
-												</Link>
-											</Fragment>
-										))}
-									</span>
-								</li>
-							))}
-							{unverifiedItems.length > 0 && (
-								<li data-warning>
-									<strong>Needs verification</strong>
-									<span className={classes.licensedFamilies}>
-										{unverifiedItems.map((item, index) => (
-											<Fragment key={item.familyId}>
-												{index > 0 && ', '}
-												<Link to={getProjectEditUrl(item)}>
-													{item.displayName}
-												</Link>
-											</Fragment>
-										))}
-									</span>
-								</li>
-							)}
-						</ul>
+						{items.map((item) => (
+							<ProjectFont
+								key={item.familyId}
+								busy={zipBusy}
+								item={item}
+								onRemove={() => removeItem(item)}
+							/>
+						))}
 					</section>
 				</>
 			)}

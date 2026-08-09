@@ -95,7 +95,7 @@ const RangeControl = ({
 						{tag && <code>{tag}</code>}
 					</div>
 					{description && (
-						<p className={classes.controlDescription} aria-hidden="true">
+						<p id={descriptionId} className={classes.controlDescription}>
 							{description}
 						</p>
 					)}
@@ -111,12 +111,8 @@ const RangeControl = ({
 					<NumberInput
 						id={`${id}-value`}
 						className={classes.numberControl}
-						classNames={{
-							description: classes.inputDescription,
-							input: classes.numberInput,
-						}}
-						description={description}
-						descriptionProps={{ id: descriptionId }}
+						classNames={{ input: classes.numberInput }}
+						aria-describedby={descriptionId}
 						value={value}
 						min={min}
 						max={max}
@@ -241,8 +237,8 @@ const PreviewInspectorHeader = observer(
 						<h2>Preview settings</h2>
 						<p>
 							{model.familyKind === 'symbols'
-								? 'Adjust how symbols appear in this preview.'
-								: 'Adjust this view without changing the others.'}
+								? 'Fine-tune how symbols appear in this preview.'
+								: 'Fine-tune this view. Other previews keep their settings.'}
 						</p>
 					</div>
 				)}
@@ -253,7 +249,7 @@ const PreviewInspectorHeader = observer(
 						onClick={() => resetStyling(model)}
 					>
 						<IconRotate aria-hidden height={15} />
-						Reset all settings
+						Reset all views
 					</button>
 				)}
 			</div>
@@ -289,7 +285,7 @@ const PreviewTypographyControls = observer(
 						disabled={!changed}
 						onClick={() => resetCurrentTypography(model)}
 					>
-						Reset
+						Reset typography
 					</button>
 				</div>
 				<RangeControl
@@ -440,7 +436,7 @@ const PreviewAxisControls = observer(({ idPrefix }: { idPrefix: string }) => {
 					disabled={!changed}
 					onClick={() => resetAxes(model)}
 				>
-					Reset
+					Reset axes
 				</button>
 			</div>
 			{adjustableAxes.length > 6 && (
@@ -558,7 +554,7 @@ const PreviewFeatureControls = observer(() => {
 						disabled={!changed}
 						onClick={() => resetFeatures(model)}
 					>
-						Reset
+						Reset features
 					</button>
 				)}
 			</div>
