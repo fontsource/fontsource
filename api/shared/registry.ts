@@ -93,9 +93,22 @@ const FamilySummarySchema = z.strictObject({
 	axes: z.array(z.string().length(4)),
 });
 
+const RegistryProvenanceSchema = z.discriminatedUnion('type', [
+	z.strictObject({
+		type: z.literal('github'),
+		repository: z.url().describe('Repository containing the archived sources'),
+		revision: z.string().min(1).describe('Pinned repository revision'),
+	}),
+	z.strictObject({ type: z.literal('registry') }),
+]);
+
 const SourceCommonShape = {
 	sha256: Sha256Schema,
 	filename: z.string().min(1),
+	path: z
+		.string()
+		.min(1)
+		.describe('Provider-relative path within the provenance snapshot'),
 	format: z.enum(['ttf', 'otf']),
 	size: z.number().int().nonnegative(),
 	downloadUrl: z.string().min(1).describe('Relative source download URL'),
@@ -104,6 +117,12 @@ const SourceCommonShape = {
 		.min(1)
 		.describe('Relative source capabilities URL'),
 	fontVersion: z.string().nullable(),
+	glyphCount: z.number().int().positive().describe('Total source glyphs'),
+	codepointCount: z
+		.number()
+		.int()
+		.positive()
+		.describe('Mapped Unicode codepoints in the source'),
 	style: z
 		.enum(['normal', 'italic', 'oblique'])
 		.describe('Inspected font style'),
@@ -153,7 +172,11 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 			repository: z.url(),
 			revision: z.string().optional(),
 		})
+		.describe('Author-maintained upstream font project')
 		.optional(),
+	provenance: RegistryProvenanceSchema.describe(
+		'Source snapshot ingested by Fontsource',
+	),
 	content: z.record(z.string().min(1), LocalizedContentSchema).optional(),
 	symbols: z
 		.strictObject({

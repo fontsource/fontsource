@@ -48,6 +48,7 @@ describe('registry source archive', () => {
 			'families/jsmath-cmr10.json',
 			'families/material-icons.json',
 			'families/material-icons/symbols.json',
+			'families/metropolis.json',
 			'families/nebula-sans.json',
 			'families/noto-color-emoji-compat-test.json',
 			'families/yakuhanjp.json',
@@ -139,7 +140,9 @@ describe('registry source archive', () => {
 			schemaVersion: 1,
 			registryRevision: REVISION,
 		});
-		const family = views.get('families/abel.json');
+		const family = RegistryFamilyDetailSchema.parse(
+			views.get('families/abel.json'),
+		);
 		expect(family).toMatchObject({
 			id: 'abel',
 			classifications: ['sans-serif'],
@@ -173,6 +176,8 @@ describe('registry source archive', () => {
 				expect.objectContaining({
 					format: 'ttf',
 					filename: 'Abel-Regular.ttf',
+					glyphCount: expect.any(Number),
+					codepointCount: expect.any(Number),
 					downloadUrl: expect.stringMatching(
 						/^\/v1\/registry\/sources\/[0-9a-f]{64}$/,
 					),
@@ -183,7 +188,6 @@ describe('registry source archive', () => {
 				}),
 			],
 		});
-		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
 		const ibmPlexMono = RegistryFamilyDetailSchema.parse(
 			views.get('families/ibm-plex-mono.json'),
 		);
@@ -198,13 +202,9 @@ describe('registry source archive', () => {
 		expect(
 			RegistrySourceCapabilitiesSchema.parse(ibmPlexMonoCapabilities),
 		).toEqual(ibmPlexMonoCapabilities);
-		const familySource = (
-			family as {
-				sources: Array<{ sha256: string }>;
-			}
-		).sources[0];
-		const capabilities = views.get(
-			`sources/${familySource?.sha256}/capabilities.json`,
+		const familySource = family.sources[0];
+		const capabilities = RegistrySourceCapabilitiesSchema.parse(
+			views.get(`sources/${familySource?.sha256}/capabilities.json`),
 		);
 		expect(capabilities).toMatchObject({
 			glyphCount: expect.any(Number),
@@ -217,9 +217,10 @@ describe('registry source archive', () => {
 			outline: 'glyf',
 			colorTables: expect.any(Array),
 		});
-		expect(RegistrySourceCapabilitiesSchema.parse(capabilities)).toEqual(
-			capabilities,
-		);
+		expect(familySource).toMatchObject({
+			glyphCount: capabilities.glyphCount,
+			codepointCount: capabilities.codepointCount,
+		});
 		const multiSourceFamily = RegistryFamilyDetailSchema.parse(
 			views.get('families/adwaita-sans.json'),
 		);
@@ -309,6 +310,19 @@ describe('registry source archive', () => {
 			},
 		});
 		expect(RegistryFamilyDetailSchema.parse(iconFamily)).toEqual(iconFamily);
+		expect(views.get('families/metropolis.json')).toMatchObject({
+			provider: 'fontsource',
+			provenance: {
+				type: 'github',
+				repository: 'https://github.com/fontsource/font-files',
+				revision: expect.stringMatching(/^[0-9a-f]{40}$/),
+			},
+			sources: expect.arrayContaining([
+				expect.objectContaining({
+					path: expect.stringMatching(/^sources\/metropolis\/files\//),
+				}),
+			]),
+		});
 		const symbols = views.get('families/material-icons/symbols.json');
 		expect(RegistryFamilySymbolsSchema.parse(symbols)).toEqual(symbols);
 		const replacement = views.get('families/ek-mukta.json');

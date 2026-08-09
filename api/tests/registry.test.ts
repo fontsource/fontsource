@@ -36,6 +36,11 @@ const VIEWS = [
 		route: '/v1/registry/families/abel',
 		body: RegistryFamilyDetailSchema.parse({
 			...FAMILY_SUMMARY,
+			provenance: {
+				type: 'github',
+				repository: 'https://github.com/google/fonts',
+				revision: REVISION,
+			},
 			languages: ['en_Latn'],
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
@@ -65,12 +70,15 @@ const VIEWS = [
 				{
 					sha256: SOURCE_SHA256,
 					filename: 'Abel-Regular.ttf',
+					path: 'ofl/abel/Abel-Regular.ttf',
 					format: 'ttf',
 					size: SOURCE_BYTES.byteLength,
 					downloadUrl: `/v1/registry/sources/${SOURCE_SHA256}`,
 					capabilitiesUrl: `/v1/registry/sources/${SOURCE_SHA256}/capabilities`,
 					type: 'static',
 					fontVersion: 'Version 1.0',
+					glyphCount: 2,
+					codepointCount: 2,
 					weight: 400,
 					style: 'normal',
 					declaredVariant: { weight: 400, style: 'normal' },

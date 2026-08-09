@@ -797,9 +797,28 @@ export type GetRegistryFamilyResponses = {
              */
             text: string;
         };
+        /**
+         * Author-maintained upstream font project
+         */
         project?: {
             repository: string;
             revision?: string;
+        };
+        /**
+         * Source snapshot ingested by Fontsource
+         */
+        provenance: {
+            type: 'github';
+            /**
+             * Repository containing the archived sources
+             */
+            repository: string;
+            /**
+             * Pinned repository revision
+             */
+            revision: string;
+        } | {
+            type: 'registry';
         };
         content?: {
             [key: string]: {
@@ -820,6 +839,10 @@ export type GetRegistryFamilyResponses = {
         sources: Array<{
             sha256: string;
             filename: string;
+            /**
+             * Provider-relative path within the provenance snapshot
+             */
+            path: string;
             format: 'ttf' | 'otf';
             size: number;
             /**
@@ -831,6 +854,14 @@ export type GetRegistryFamilyResponses = {
              */
             capabilitiesUrl: string;
             fontVersion: string | null;
+            /**
+             * Total source glyphs
+             */
+            glyphCount: number;
+            /**
+             * Mapped Unicode codepoints in the source
+             */
+            codepointCount: number;
             /**
              * Inspected font style
              */
@@ -850,6 +881,10 @@ export type GetRegistryFamilyResponses = {
         } | {
             sha256: string;
             filename: string;
+            /**
+             * Provider-relative path within the provenance snapshot
+             */
+            path: string;
             format: 'ttf' | 'otf';
             size: number;
             /**
@@ -861,6 +896,14 @@ export type GetRegistryFamilyResponses = {
              */
             capabilitiesUrl: string;
             fontVersion: string | null;
+            /**
+             * Total source glyphs
+             */
+            glyphCount: number;
+            /**
+             * Mapped Unicode codepoints in the source
+             */
+            codepointCount: number;
             /**
              * Inspected font style
              */

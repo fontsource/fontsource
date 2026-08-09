@@ -200,11 +200,14 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			const common = {
 				sha256: source.sha256,
 				filename: basename(source.path),
+				path: source.path,
 				format,
 				size: source.size,
 				downloadUrl: `/v1/registry/sources/${source.sha256}`,
 				capabilitiesUrl: `/v1/registry/sources/${source.sha256}/capabilities`,
 				fontVersion: source.inspection.fontVersion,
+				glyphCount: source.inspection.glyphs,
+				codepointCount: source.inspection.codepoints,
 				style: source.inspection.style,
 				declaredVariant: source.variant,
 			};
@@ -260,6 +263,14 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 						text: licenseText,
 					},
 					project: family.project,
+					provenance:
+						family.provenance.type === 'github'
+							? {
+									type: family.provenance.type,
+									repository: `https://github.com/${family.provenance.repository}`,
+									revision: family.provenance.revision,
+								}
+							: { type: family.provenance.type },
 					content:
 						description || article
 							? {
