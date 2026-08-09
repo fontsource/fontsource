@@ -614,54 +614,6 @@
 	gap: 20px;
 }
 
-.downloadBar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 28px;
-	margin-top: 22px;
-	padding-top: 22px;
-	border-top: light-dark(1px solid #d7dae3, 1px solid #39435d);
-
-	strong,
-	span {
-		display: block;
-	}
-
-	span {
-		margin-top: 4px;
-		color: light-dark(#52617a, #aeb9cc);
-		font-size: 0.82rem;
-	}
-
-	.downloadFeedback {
-		margin-top: 9px;
-		color: light-dark(#3f6b4f, #99d3aa);
-		font-weight: 600;
-	}
-
-	.downloadFeedback[data-error] {
-		color: light-dark(#8c6415, #e2bd69);
-	}
-
-	button {
-		min-height: 44px;
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-		padding: 0 16px;
-		border: light-dark(1px solid #c8ccda, 1px solid #46516d);
-		border-radius: 4px;
-		background: transparent;
-		color: var(--mantine-color-purple-0);
-		font: inherit;
-		font-size: 0.84rem;
-		font-weight: 600;
-		white-space: nowrap;
-		cursor: pointer;
-	}
-}
-
 :is(
 		.introActions a,
 		.introActions button,
@@ -673,7 +625,6 @@
 		.packageManagers button,
 		.taskSwitch button,
 		.archiveDownload button,
-		.downloadBar button,
 		.mobileUtilities summary,
 		.mobileSecondary summary
 	):focus-visible {
@@ -705,10 +656,6 @@
 	.intro,
 	.archiveDownload,
 	.deliveryHeading,
-	.downloadBar {
-		align-items: flex-start;
-		flex-direction: column;
-	}
 
 	.introActions {
 		width: 100%;
@@ -870,11 +817,6 @@
 
 	.codeStack {
 		padding: 18px;
-	}
-
-	.downloadBar button {
-		width: 100%;
-		justify-content: center;
 	}
 
 	.archiveDownload button {

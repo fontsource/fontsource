@@ -24,7 +24,6 @@ import type { ProjectItem } from './model';
 import {
 	getPreviewCdnUrl,
 	getProjectCdnUrls,
-	getProjectCss,
 	getProjectCssFiles,
 	getProjectEditUrl,
 	getUsageBlock,
@@ -36,7 +35,6 @@ import {
 
 type DeliveryMethod = 'package' | 'cdn';
 type FontSetView = 'files' | 'website';
-type CssDownloadState = 'idle' | 'success' | 'error';
 type ZipDownloadState = 'idle' | 'preparing' | 'success' | 'error';
 
 interface FontSetImportLocationState {
@@ -263,8 +261,6 @@ const CurrentProjectPage = () => {
 	});
 	const [removedItem, setRemovedItem] = useState<ProjectItem>();
 	const [clearConfirmationOpen, setClearConfirmationOpen] = useState(false);
-	const [cssDownloadState, setCssDownloadState] =
-		useState<CssDownloadState>('idle');
 	const [zipDownloadState, setZipDownloadState] =
 		useState<ZipDownloadState>('idle');
 	const [zipProgress, setZipProgress] = useState(0);
@@ -309,18 +305,6 @@ const CurrentProjectPage = () => {
 		if (value === defaultValue) next.delete(parameter);
 		else next.set(parameter, value);
 		setSearchParams(next);
-	};
-
-	const downloadCss = () => {
-		try {
-			triggerBlobDownload(
-				'fontsource-font-set.css',
-				new Blob([getProjectCss(items)], { type: 'text/css' }),
-			);
-			setCssDownloadState('success');
-		} catch {
-			setCssDownloadState('error');
-		}
 	};
 
 	const downloadZip = async () => {
@@ -631,37 +615,6 @@ const CurrentProjectPage = () => {
 									language="css"
 									scrollable
 								/>
-							</div>
-
-							<div className={classes.downloadBar}>
-								<div>
-									<strong>
-										{singleItem
-											? 'Need a CDN-ready CSS file?'
-											: 'Need one CDN-ready CSS file?'}
-									</strong>
-									<span>
-										This combines the CDN imports and font{' '}
-										{singleItem ? 'class' : 'classes'} above.
-									</span>
-									{cssDownloadState !== 'idle' && (
-										<span
-											className={classes.downloadFeedback}
-											data-error={cssDownloadState === 'error' || undefined}
-											role="status"
-										>
-											{cssDownloadState === 'success'
-												? 'CSS download started.'
-												: 'The CSS file could not be downloaded in this browser. Copy the generated code above instead.'}
-										</span>
-									)}
-								</div>
-								<button type="button" onClick={downloadCss}>
-									<IconDownload aria-hidden size={18} />
-									{cssDownloadState === 'error'
-										? 'Try CSS download again'
-										: 'Download CDN CSS'}
-								</button>
 							</div>
 						</section>
 					)}
