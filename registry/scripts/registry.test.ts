@@ -32,6 +32,28 @@ const ABEL_DISTRIBUTION = {
 	},
 } as const;
 
+const STATIC_LATIN_DISTRIBUTION = {
+	static: [{ weight: 400, style: 'normal' }],
+	characters: {
+		defaultSubset: 'latin',
+		subsets: [{ id: 'latin', definition: 'latin' }],
+	},
+} as const;
+
+const RECURSIVE_DISTRIBUTION = {
+	static: [300, 400, 500, 600, 700, 800, 900, 1000].map((weight) => ({
+		weight,
+		style: 'normal',
+	})),
+	variable: ['CASL', 'CRSV', 'full', 'MONO', 'slnt', 'standard', 'wght'].map(
+		(axisKey) => ({ axisKey, style: 'normal' }),
+	),
+	characters: {
+		defaultSubset: 'latin',
+		subsets: [{ id: 'latin', definition: 'latin' }],
+	},
+} as const;
+
 const TEST_LANGUAGES = languageCatalogSchema.parse({
 	en_Latn: {
 		language: 'en',
@@ -187,6 +209,7 @@ fonts {
   copyright: "Copyright Recursive"
 }
 subsets: "latin"
+subsets: "menu"
 `,
 	);
 	await writeFixture(
@@ -447,8 +470,6 @@ const seedRegistryRequirements = async (root: string): Promise<void> => {
 		'fontsource/example',
 		'fontsource/symbols',
 		'google/abel',
-		'google/recursive-sans',
-		'google/stale-sans',
 		'google-icons/material-icons',
 		'google-icons/material-icons-outlined',
 		'google-icons/material-icons-round',
@@ -739,6 +760,16 @@ describe('registry ingestion', () => {
 		expect(
 			await readJson(join(registry, 'families/google/abel/distribution.json')),
 		).toEqual(ABEL_DISTRIBUTION);
+		expect(
+			await readJson(
+				join(registry, 'families/google/recursive-sans/distribution.json'),
+			),
+		).toEqual(RECURSIVE_DISTRIBUTION);
+		expect(
+			await readJson(
+				join(registry, 'families/google/stale-sans/distribution.json'),
+			),
+		).toEqual(STATIC_LATIN_DISTRIBUTION);
 		expect(
 			await readFile(
 				join(registry, 'families/google/stale-sans/license.txt'),

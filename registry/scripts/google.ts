@@ -1,6 +1,11 @@
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { basename, join } from 'node:path';
-import { createFontContext, inspectFont } from '@fontsource-utils/core';
+import {
+	createFontContext,
+	getVariableAxisKeys,
+	inspectFont,
+	type VariableAxisConfig,
+} from '@fontsource-utils/core';
 import { consola } from 'consola';
 import { parse } from 'csv-parse/sync';
 import TurndownService from 'turndown';
@@ -11,6 +16,7 @@ import { loadProtoType, parseProto } from './protobuf.ts';
 import {
 	axisRegistrySchema,
 	type Family,
+	type FamilyDistribution,
 	familySchema,
 	type LanguageCatalog,
 	languageCatalogSchema,
@@ -63,6 +69,7 @@ type GoogleFamily = {
 	category: string;
 	dateAdded: string;
 	fonts: GoogleFont[];
+	subsets: string[];
 	stroke?: string;
 	classifications: string[];
 	displayName?: string;
@@ -85,6 +92,7 @@ type GoogleFamilyProto = {
 		filename: string;
 		copyright?: string;
 	}>;
+	subsets: string[];
 	stroke?: string;
 	classifications: string[];
 	display_name?: string;
@@ -188,6 +196,7 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 		category,
 		dateAdded: family.date_added,
 		fonts,
+		subsets: family.subsets,
 		...(family.stroke ? { stroke: family.stroke } : {}),
 		classifications: family.classifications ?? [],
 		...(family.display_name ? { displayName: family.display_name } : {}),
@@ -198,6 +207,112 @@ export const parseGoogleFamily = (source: string): GoogleFamily => {
 			: {}),
 		...(family.primary_script ? { primaryScript: family.primary_script } : {}),
 		...(sampleText ? { sampleText } : {}),
+	};
+};
+
+const STATIC_WEIGHTS = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+// Google names the complete CJK repertoire; Fontsource publishes the matching
+// NAM definition as smaller web slices.
+const SLICING_BY_SUBSET: Readonly<Partial<Record<string, string>>> = {
+	'chinese-hongkong': 'hongkong-chinese-web',
+	'chinese-simplified': 'simplified-chinese-web',
+	'chinese-traditional': 'traditional-chinese-web',
+	japanese: 'japanese-web',
+	korean: 'korean-web',
+};
+
+const createGoogleDistribution = (
+	google: GoogleFamily,
+	sources: Family['sources'],
+): FamilyDistribution => {
+	const staticVariants = new Map<
+		string,
+		NonNullable<FamilyDistribution['static']>[number]
+	>();
+	const variableVariants = new Map<
+		string,
+		NonNullable<FamilyDistribution['variable']>[number]
+	>();
+
+	for (const source of sources) {
+		if (source.inspection.axes.length === 0) {
+			if (source.variant) {
+				staticVariants.set(
+					`${source.variant.weight}:${source.variant.style}`,
+					source.variant,
+				);
+			}
+			continue;
+		}
+
+		const italic = source.inspection.axes.find(
+			(axis) => axis.tag.toLowerCase() === 'ital',
+		);
+		const styles: Array<'normal' | 'italic'> =
+			italic && italic.min <= 0 && italic.max >= 1
+				? ['italic', 'normal']
+				: [source.inspection.style === 'italic' ? 'italic' : 'normal'];
+		const weight = source.inspection.weight;
+		const weights =
+			typeof weight === 'number'
+				? [weight]
+				: STATIC_WEIGHTS.filter(
+						(value) => value >= weight.min && value <= weight.max,
+					);
+		for (const value of weights) {
+			for (const style of styles) {
+				staticVariants.set(`${value}:${style}`, { weight: value, style });
+			}
+		}
+
+		const axes: VariableAxisConfig = Object.fromEntries(
+			source.inspection.axes.map((axis) => [
+				axis.tag,
+				{ min: axis.min, max: axis.max, default: axis.default },
+			]),
+		);
+		for (const axisKey of getVariableAxisKeys(axes)) {
+			for (const style of styles) {
+				variableVariants.set(`${axisKey.toLowerCase()}:${style}`, {
+					axisKey,
+					style,
+				});
+			}
+		}
+	}
+
+	const subsets = Array.from(
+		new Set(google.subsets.filter((subset) => subset !== 'menu')),
+	).toSorted(compareStrings);
+	const slicing = subsets
+		.map((subset) => SLICING_BY_SUBSET[subset])
+		.filter((value): value is string => Boolean(value));
+	if (slicing.length > 1) {
+		throw new Error(`${google.name} has multiple slicing subsets`);
+	}
+	const staticEntries = Array.from(staticVariants.values()).toSorted(
+		(left, right) =>
+			left.weight - right.weight || compareStrings(left.style, right.style),
+	);
+	const variableEntries = Array.from(variableVariants.values()).toSorted(
+		(left, right) =>
+			compareStrings(left.axisKey.toLowerCase(), right.axisKey.toLowerCase()) ||
+			compareStrings(left.style, right.style),
+	);
+	const defaultSubset = subsets.includes('latin') ? 'latin' : subsets[0];
+
+	return {
+		...(staticEntries.length > 0 ? { static: staticEntries } : {}),
+		...(variableEntries.length > 0 ? { variable: variableEntries } : {}),
+		characters:
+			defaultSubset === undefined
+				? 'all'
+				: {
+						defaultSubset,
+						subsets: subsets.map((id) => ({ id, definition: id })),
+						...(slicing[0] ? { slicing: slicing[0] } : {}),
+					},
 	};
 };
 
@@ -592,6 +707,7 @@ const writeFamily = async (
 	tags: readonly string[],
 	languageCatalog: LanguageCatalog,
 	matchLanguages: ReturnType<typeof createLanguageMatcher>,
+	isNew: boolean,
 ): Promise<void> => {
 	const { directory, family: google, files } = source;
 	const license = LICENSES[google.license];
@@ -673,6 +789,12 @@ const writeFamily = async (
 		}
 	}
 	await writeJson(outputFamilyPath, family);
+	if (isNew) {
+		await writeJson(
+			join(output, 'distribution.json'),
+			createGoogleDistribution(google, sources),
+		);
+	}
 	if (licensePath) {
 		await writeFile(
 			outputLicensePath,
@@ -727,6 +849,7 @@ export const generateGoogle = async (
 
 	try {
 		for (const [index, [id, family]] of sortedFamilies.entries()) {
+			const isNew = !familyIds.has(id);
 			await writeFamily(
 				snapshot,
 				id,
@@ -736,6 +859,7 @@ export const generateGoogle = async (
 				tagsByFamily.get(family.family.name) ?? [],
 				languageCatalog,
 				matchLanguages,
+				isNew,
 			);
 			familyIds.add(id);
 			const processed = index + 1;

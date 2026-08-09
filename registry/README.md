@@ -17,9 +17,10 @@ pnpm --filter '@fontsource-utils/registry' archive
 All source revisions must be exact 40-character commits. Generation also
 requires complete Git history so per-path provenance is accurate; shallow
 repositories are rejected.
-Generation requires existing `distribution.json` files but never creates or
-changes distribution intent. Registry data is written to `data/` and refreshed
-weekly or on demand by the
+Generation preserves existing `distribution.json` files. New Google families
+receive an initial distribution from their declared subsets and inspected
+source variants. Registry data is written to `data/` and refreshed weekly or
+on demand by the
 [registry sync workflow](../.github/workflows/registry-sync.yml), which
 validates changes before committing them to `main`.
 Families present in the previous registry but absent from their provider are
@@ -115,7 +116,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   successor and never aliases its binaries.
 - `github` provenance can recover a missing source from an exact commit;
   `registry` provenance requires the source to be promoted to R2 first.
-- Distribution is reviewed registry state, not derived from legacy catalogs.
+- Distribution is registry state, not derived from legacy catalogs. Provider
+  metadata only initializes new Google families; later syncs preserve it.
 - Taxonomy describes discovery and context. It does not select input behavior;
   symbol interaction comes only from a catalog's explicit input modes.
 - If a Google Fonts family omits its license file, sync preserves the reviewed
