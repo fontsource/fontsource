@@ -106,9 +106,8 @@ export default function UsePage() {
 			<FamilyUse
 				key={metadata.id}
 				metadata={metadata}
-				staticCSS={staticCSS}
+				previewCSS={variableCSS ?? staticCSS}
 				variable={variable}
-				variableCSS={variableCSS}
 				versions={versions}
 				registry={registry}
 				registryState={registryState}

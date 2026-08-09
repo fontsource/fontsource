@@ -39,8 +39,7 @@ interface FamilyUseProps {
 	metadata: GetFontResponse;
 	versions: GetFontVersionsResponse;
 	variable?: GetVariableFontResponse;
-	staticCSS: string;
-	variableCSS?: string;
+	previewCSS: string;
 	registry?: RegistryFamily;
 	registryState: RegistryDataState;
 	subsetDefinitions?: GetRegistrySubsetResponse[];
@@ -50,6 +49,13 @@ type Method = 'package' | 'cdn';
 type AcquisitionPath = 'download' | 'web';
 type FamilyFormat = 'variable' | 'static';
 type FontStyle = GetFontResponse['styles'][number];
+type NavigationParameter = 'tab' | 'method' | 'setup';
+
+const navigationDefaults: Record<NavigationParameter, string> = {
+	tab: 'download',
+	method: 'package',
+	setup: 'simple',
+};
 
 interface RequiredOptionGroupProps<T extends number | string> {
 	description: string;
@@ -116,9 +122,8 @@ const getWeightLabel = (weight: number) =>
 
 export const FamilyUse = ({
 	metadata,
-	staticCSS,
+	previewCSS,
 	variable,
-	variableCSS,
 	versions,
 	registry,
 	registryState,
@@ -140,37 +145,26 @@ export const FamilyUse = ({
 	const defaultActiveAxes = availableAxes.includes('wght')
 		? ['wght']
 		: availableAxes.slice(0, 1);
-	const defaultPath: AcquisitionPath = 'download';
-	const requestedPath = searchParams.get('tab');
 	const path: AcquisitionPath =
-		requestedPath === 'download' || requestedPath === 'web'
-			? requestedPath
-			: defaultPath;
+		searchParams.get('tab') === 'web' ? 'web' : 'download';
 	const method: Method =
 		searchParams.get('method') === 'cdn' ? 'cdn' : 'package';
-	const requestedSetup = searchParams.get('setup');
-	const setup =
-		requestedSetup === 'simple' || requestedSetup === 'custom'
-			? requestedSetup
-			: 'simple';
-	const customSetup = setup === 'custom';
+	const customSetup = searchParams.get('setup') === 'custom';
 
 	const setNavigationChoice = (
-		parameter: 'tab' | 'method' | 'setup',
+		parameter: NavigationParameter,
 		value: string,
-		defaultValue: string,
 	) => {
 		const next = new URLSearchParams(searchParams);
-		if (value === defaultValue) next.delete(parameter);
+		if (value === navigationDefaults[parameter]) next.delete(parameter);
 		else next.set(parameter, value);
 		setSearchParams(next, {
 			flushSync: true,
 			preventScrollReset: true,
 		});
 	};
-	const [format, setFormat] = useState<FamilyFormat>(
-		supportsVariable ? 'variable' : 'static',
-	);
+	const defaultFormat: FamilyFormat = supportsVariable ? 'variable' : 'static';
+	const [format, setFormat] = useState<FamilyFormat>(defaultFormat);
 	const [selectedStyles, setSelectedStyles] = useState<FontStyle[]>([
 		recommendedStyle,
 	]);
@@ -184,7 +178,6 @@ export const FamilyUse = ({
 	const [fontDisplay, setFontDisplay] = useState<FontDisplay>('swap');
 	const [formats, setFormats] = useState<WebFontFormat[]>(['woff2']);
 	const [packageManager, setPackageManager] = usePackageManager('npm');
-
 	const isVariable = format === 'variable' && supportsVariable;
 	const availableStyles = [
 		...metadata.styles.filter((style) => style === 'normal'),
@@ -198,7 +191,6 @@ export const FamilyUse = ({
 	);
 	const primaryStyle = styles[0] ?? recommendedStyle;
 	const primaryWeight = weights[0] ?? recommendedWeight;
-	const defaultFormat: FamilyFormat = supportsVariable ? 'variable' : 'static';
 	const isDefaultSetup =
 		format === defaultFormat &&
 		sameValues(styles, [recommendedStyle]) &&
@@ -213,34 +205,31 @@ export const FamilyUse = ({
 	const packageVersion = isVariable
 		? (versions.latestVariable ?? versions.latest)
 		: versions.latest;
-	const cssOptions = {
-		metadata,
-		variable,
-		isVariable,
-		styles,
-		weights: isVariable ? metadata.weights : weights,
-		subsets: selectedSubsets,
-		activeAxes,
-		formats,
-		display: fontDisplay,
-		version: packageVersion,
-		subsetDefinitions,
-	};
-	const packageFontFaceCSS = buildFamilyUseCSS({
-		...cssOptions,
-		delivery: 'package',
-	});
-	const cdnFontFaceCSS = buildFamilyUseCSS({
-		...cssOptions,
-		delivery: 'cdn',
-	});
+	const fontFaceCSS = customSetup
+		? buildFamilyUseCSS({
+				metadata,
+				variable,
+				isVariable,
+				styles,
+				weights: isVariable ? metadata.weights : weights,
+				subsets: selectedSubsets,
+				activeAxes,
+				formats,
+				display: fontDisplay,
+				version: packageVersion,
+				subsetDefinitions,
+				delivery: method,
+			})
+		: '';
 	const installCommand = getPackageManagerCommand(packageManager, packageName);
-	const packageImport = `import '${packageName}';`;
-	const cdnImport = `@import url('${getJsDelivrPackageUrl(
-		packageName,
-		packageVersion,
-		'index.css',
-	)}');`;
+	const standardImport =
+		method === 'package'
+			? `import '${packageName}';`
+			: `@import url('${getJsDelivrPackageUrl(
+					packageName,
+					packageVersion,
+					'index.css',
+				)}');`;
 	const minWeight = variable?.axes.wght
 		? Number(variable.axes.wght.min)
 		: Math.min(...metadata.weights);
@@ -257,15 +246,6 @@ export const FamilyUse = ({
 	const usageDescription = isVariable
 		? `Apply the family, then choose any font weight from ${variableWeightRange}. ${primaryWeight} is a practical starting point.`
 		: `Apply the selected ${getWeightLabel(primaryWeight).toLowerCase()} ${primaryStyle} face.`;
-	const selectionSummary = isVariable
-		? `Variable · ${styles.map(formatFontLabel).join(' + ')} · display ${fontDisplay}`
-		: weights.length === 1 && styles.length === 1
-			? `Static · ${formatFontLabel(primaryStyle)} · ${getWeightLabel(primaryWeight)} · display ${fontDisplay}`
-			: `Static · ${styles.map(formatFontLabel).join(' + ')} · weights ${weights.join(' + ')} · display ${fontDisplay}`;
-	const hasSlicedSelection = subsetDefinitions?.some(
-		(definition) =>
-			selectedSubsets.includes(definition.id) && definition.slices?.length,
-	);
 	const resetToSimpleSetup = () => {
 		setFormat(defaultFormat);
 		setSelectedStyles([recommendedStyle]);
@@ -275,8 +255,8 @@ export const FamilyUse = ({
 		setFormats(['woff2']);
 	};
 	const formatDescription = isVariable
-		? `Each selected style uses one stylesheet covering weights ${variableWeightRange} and the selected axes.`
-		: 'Choose the exact fixed weights and styles your site uses.';
+		? `Covers every weight from ${variableWeightRange} in each selected style. Best for flexible typography.`
+		: 'Creates CSS for only the fixed weights and styles you select.';
 	const packageImportLead = (
 		<>
 			<Link to="/docs/getting-started/install">Import once</Link> in your app
@@ -312,23 +292,25 @@ export const FamilyUse = ({
 	const fontFaceExplanation =
 		method === 'package'
 			? 'Paste this into a stylesheet after installing the package. Your bundler resolves the local font files.'
-			: `Paste this version-pinned CSS into your project. Font files load from jsDelivr.${hasSlicedSelection ? ' Every Unicode slice published for the family is included.' : ''}`;
+			: 'Paste this version-pinned CSS into your project. Font files load from jsDelivr.';
 	return (
 		<section className={classes.page} aria-labelledby="use-heading">
 			<style
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-				dangerouslySetInnerHTML={{ __html: variableCSS ?? staticCSS }}
+				dangerouslySetInnerHTML={{ __html: previewCSS }}
 			/>
 			<div className={classes.heading}>
 				<h2 id="use-heading">Get {metadata.family}</h2>
-				<p>Choose where you want to use {metadata.family}.</p>
+				<p>
+					Download the full family for design tools, or add it to a website.
+				</p>
 			</div>
 			<Tabs
 				className={classes.acquisition}
 				value={path}
 				onChange={(value) => {
 					if (value && value !== path) {
-						setNavigationChoice('tab', value, defaultPath);
+						setNavigationChoice('tab', value);
 					}
 				}}
 			>
@@ -363,8 +345,8 @@ export const FamilyUse = ({
 								Ready for design apps, desktop installation, and font managers.
 							</p>
 							<p className={classes.downloadContents}>
-								Includes every TTF weight and style, plus WOFF and WOFF2
-								webfonts, CSS, and the original license.
+								Includes every desktop TTF weight and style. A separate webfonts
+								folder contains WOFF, WOFF2, CSS, and the original license.
 							</p>
 						</div>
 						<div className={classes.downloadAction}>
@@ -399,7 +381,7 @@ export const FamilyUse = ({
 										aria-pressed={method === 'package'}
 										onClick={() => {
 											if (method !== 'package') {
-												setNavigationChoice('method', 'package', 'package');
+												setNavigationChoice('method', 'package');
 											}
 										}}
 									>
@@ -411,7 +393,7 @@ export const FamilyUse = ({
 										aria-pressed={method === 'cdn'}
 										onClick={() => {
 											if (method !== 'cdn') {
-												setNavigationChoice('method', 'cdn', 'package');
+												setNavigationChoice('method', 'cdn');
 											}
 										}}
 									>
@@ -420,27 +402,27 @@ export const FamilyUse = ({
 								</div>
 							</fieldset>
 							<fieldset className={classes.controlGroup}>
-								<legend className={classes.controlLabel}>Output</legend>
+								<legend className={classes.controlLabel}>CSS output</legend>
 								<div className={classes.setupSwitch}>
 									<button
 										type="button"
 										data-active={!customSetup || undefined}
 										aria-pressed={!customSetup}
 										onClick={() => {
-											if (setup !== 'simple') {
-												setNavigationChoice('setup', 'simple', 'simple');
+											if (customSetup) {
+												setNavigationChoice('setup', 'simple');
 											}
 										}}
 									>
-										Simple
+										Ready-made
 									</button>
 									<button
 										type="button"
 										data-active={customSetup || undefined}
 										aria-pressed={customSetup}
 										onClick={() => {
-											if (setup !== 'custom') {
-												setNavigationChoice('setup', 'custom', 'simple');
+											if (!customSetup) {
+												setNavigationChoice('setup', 'custom');
 											}
 										}}
 									>
@@ -449,20 +431,15 @@ export const FamilyUse = ({
 								</div>
 							</fieldset>
 
-							<div className={classes.deliveryContext}>
-								<p className={classes.deliveryNote}>
-									{method === 'package'
-										? 'Install the font from npm and bundle it with your app.'
-										: 'Load a version-pinned stylesheet from jsDelivr without installing a package.'}
-								</p>
-								<Link
-									className={classes.guideLink}
-									to="/docs/getting-started/install"
-								>
-									Read the installation guide
-									<IconExternal aria-hidden height={15} stroke="currentColor" />
-								</Link>
-							</div>
+							<p className={classes.deliveryNote}>
+								{method === 'package'
+									? customSetup
+										? 'Install the package, then generate explicit font-face CSS for the files you choose.'
+										: 'Install the package and import its ready-made stylesheet. Your app serves the font files.'
+									: customSetup
+										? 'Generate version-pinned font-face CSS for the files you choose. Fonts load from jsDelivr.'
+										: 'Load the ready-made stylesheet from jsDelivr. No package manager or build step is needed.'}
+							</p>
 						</div>
 
 						{customSetup && (
@@ -470,7 +447,9 @@ export const FamilyUse = ({
 								<div className={classes.configurationHeading}>
 									<div>
 										<strong>Custom font setup</strong>
-										<span>{selectionSummary}</span>
+										<span>
+											Choose the files and loading behavior your project needs.
+										</span>
 									</div>
 									{!isDefaultSetup && (
 										<button
@@ -567,8 +546,8 @@ export const FamilyUse = ({
 								<fieldset className={classes.optionGroup}>
 									<legend>Font display</legend>
 									<p className={classes.selectionHelp}>
-										Controls how text behaves while the font loads. Swap is the
-										default.
+										Swap shows fallback text immediately. Change this only when
+										your loading strategy needs different behavior.
 									</p>
 									<div>
 										{fontDisplays.map((display) => (
@@ -635,6 +614,17 @@ export const FamilyUse = ({
 											label="Install"
 											language="sh"
 										/>
+										<Link
+											className={classes.guideLink}
+											to="/docs/getting-started/install"
+										>
+											Read the installation guide
+											<IconExternal
+												aria-hidden
+												height={15}
+												stroke="currentColor"
+											/>
+										</Link>
 									</div>
 								</li>
 							)}
@@ -642,7 +632,7 @@ export const FamilyUse = ({
 								<div className={classes.instructionBody}>
 									{!customSetup ? (
 										<CopyCodeBlock
-											code={method === 'package' ? packageImport : cdnImport}
+											code={standardImport}
 											compact
 											description={standardImportDescription}
 											label={
@@ -652,16 +642,25 @@ export const FamilyUse = ({
 										/>
 									) : (
 										<CopyCodeBlock
-											code={
-												method === 'package'
-													? packageFontFaceCSS
-													: cdnFontFaceCSS
-											}
+											code={fontFaceCSS}
 											description={fontFaceExplanation}
 											label="Font-face CSS"
 											language="css"
 											scrollable
 										/>
+									)}
+									{method === 'cdn' && (
+										<Link
+											className={classes.guideLink}
+											to="/docs/getting-started/install"
+										>
+											Read the web font guide
+											<IconExternal
+												aria-hidden
+												height={15}
+												stroke="currentColor"
+											/>
+										</Link>
 									)}
 								</div>
 							</li>
