@@ -141,22 +141,45 @@
 
 .webPanel {
 	container: font-set-prompt / inline-size;
-	max-width: 880px;
+	max-width: 960px;
 	margin: 0 auto;
-	padding: 42px 40px 48px;
+	padding: 38px 40px 48px;
 }
 
 .deliveryHeader {
 	display: grid;
-	grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	align-items: start;
-	gap: 24px;
+	column-gap: 20px;
+	row-gap: 18px;
+}
+
+.controlGroup {
+	display: grid;
+	gap: 8px;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.controlLabel {
+	padding: 0;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 0.75rem;
+	font-weight: 650;
+	letter-spacing: 0.04em;
+	line-height: 1.4;
+	text-transform: uppercase;
 }
 
 .deliveryContext {
-	display: grid;
-	align-content: start;
-	gap: 4px;
+	grid-column: 1 / -1;
+	display: flex;
+	align-items: safe center;
+	justify-content: space-between;
+	gap: 16px 24px;
+	min-width: 0;
 }
 
 .downloadDetails h3 {
@@ -214,8 +237,6 @@
 	background: light-dark(#121b31, #e6ebf0);
 }
 
-.methodSwitch,
-.setupSwitch,
 .formatSwitch,
 .manager,
 .optionGroup {
@@ -227,7 +248,7 @@
 .methodSwitch {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	width: min(100%, 320px);
+	width: 100%;
 	border: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -237,16 +258,15 @@
 }
 
 .setupSwitch {
-	display: inline-grid;
+	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	width: min(100%, 320px);
-	margin: 28px 0 0;
-	padding: 0;
-	border: 0;
-	border-bottom: light-dark(
+	width: 100%;
+	border: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
 	);
+	border-radius: 4px;
+	overflow: hidden;
 }
 
 .methodSwitch button,
@@ -289,6 +309,7 @@
 }
 
 .methodSwitch button + button,
+.setupSwitch button + button,
 .formatSwitch button + button {
 	border-left: light-dark(
 		1px solid var(--mantine-color-border-0),
@@ -316,6 +337,7 @@
 }
 
 .setupSwitch button[data-active] {
+	background: light-dark(#f8f9fb, #0f1626);
 	color: light-dark(#4338ca, #c2bfff);
 	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
 }
@@ -481,7 +503,7 @@
 }
 
 .manager {
-	margin-bottom: 12px;
+	margin-bottom: 16px;
 }
 
 .manager legend {
@@ -500,7 +522,7 @@
 .instructions {
 	display: grid;
 	gap: 0;
-	margin: 28px 0 0;
+	margin: 30px 0 0;
 	padding: 0;
 	list-style: none;
 	counter-reset: instruction;
@@ -510,7 +532,7 @@
 	display: grid;
 	grid-template-columns: 32px minmax(0, 1fr);
 	gap: 16px;
-	padding: 20px 0 24px;
+	padding: 24px 0 28px;
 	border-top: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -623,11 +645,13 @@
 
 	.deliveryHeader {
 		grid-template-columns: 1fr;
-		gap: 14px;
+		gap: 16px;
 	}
 
-	.methodSwitch {
-		width: 100%;
+	.deliveryContext {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 2px;
 	}
 
 	.instructionStep {
@@ -639,7 +663,6 @@
 		width: 28px;
 		height: 28px;
 	}
-
 }
 
 @media (max-width: 30em) {

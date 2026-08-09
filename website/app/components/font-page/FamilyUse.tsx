@@ -390,34 +390,63 @@ export const FamilyUse = ({
 				<Tabs.Panel className={classes.taskPanel} value="web">
 					<div className={classes.webPanel}>
 						<div className={classes.deliveryHeader}>
-							<fieldset className={classes.methodSwitch}>
-								<VisuallyHidden component="legend">
-									Choose how to add this font to a website
-								</VisuallyHidden>
-								<button
-									type="button"
-									data-active={method === 'package' || undefined}
-									aria-pressed={method === 'package'}
-									onClick={() => {
-										if (method !== 'package') {
-											setNavigationChoice('method', 'package', 'package');
-										}
-									}}
-								>
-									Package
-								</button>
-								<button
-									type="button"
-									data-active={method === 'cdn' || undefined}
-									aria-pressed={method === 'cdn'}
-									onClick={() => {
-										if (method !== 'cdn') {
-											setNavigationChoice('method', 'cdn', 'package');
-										}
-									}}
-								>
-									CDN
-								</button>
+							<fieldset className={classes.controlGroup}>
+								<legend className={classes.controlLabel}>Delivery</legend>
+								<div className={classes.methodSwitch}>
+									<button
+										type="button"
+										data-active={method === 'package' || undefined}
+										aria-pressed={method === 'package'}
+										onClick={() => {
+											if (method !== 'package') {
+												setNavigationChoice('method', 'package', 'package');
+											}
+										}}
+									>
+										Package
+									</button>
+									<button
+										type="button"
+										data-active={method === 'cdn' || undefined}
+										aria-pressed={method === 'cdn'}
+										onClick={() => {
+											if (method !== 'cdn') {
+												setNavigationChoice('method', 'cdn', 'package');
+											}
+										}}
+									>
+										CDN
+									</button>
+								</div>
+							</fieldset>
+							<fieldset className={classes.controlGroup}>
+								<legend className={classes.controlLabel}>Output</legend>
+								<div className={classes.setupSwitch}>
+									<button
+										type="button"
+										data-active={!customSetup || undefined}
+										aria-pressed={!customSetup}
+										onClick={() => {
+											if (setup !== 'simple') {
+												setNavigationChoice('setup', 'simple', 'simple');
+											}
+										}}
+									>
+										Simple
+									</button>
+									<button
+										type="button"
+										data-active={customSetup || undefined}
+										aria-pressed={customSetup}
+										onClick={() => {
+											if (setup !== 'custom') {
+												setNavigationChoice('setup', 'custom', 'simple');
+											}
+										}}
+									>
+										Custom CSS
+									</button>
+								</div>
 							</fieldset>
 
 							<div className={classes.deliveryContext}>
@@ -435,36 +464,6 @@ export const FamilyUse = ({
 								</Link>
 							</div>
 						</div>
-
-						<fieldset className={classes.setupSwitch}>
-							<VisuallyHidden component="legend">
-								Choose the level of font setup
-							</VisuallyHidden>
-							<button
-								type="button"
-								data-active={!customSetup || undefined}
-								aria-pressed={!customSetup}
-								onClick={() => {
-									if (setup !== 'simple') {
-										setNavigationChoice('setup', 'simple', 'simple');
-									}
-								}}
-							>
-								Simple
-							</button>
-							<button
-								type="button"
-								data-active={customSetup || undefined}
-								aria-pressed={customSetup}
-								onClick={() => {
-									if (setup !== 'custom') {
-										setNavigationChoice('setup', 'custom', 'simple');
-									}
-								}}
-							>
-								Custom CSS
-							</button>
-						</fieldset>
 
 						{customSetup && (
 							<div className={classes.configuration}>
