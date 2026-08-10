@@ -11,7 +11,7 @@
 		"check": "biome check .",
 		"ci": "pnpm check && pnpm knip && pnpm build && pnpm typecheck:all && pnpm test:all && pnpm pack:check",
 		"fix": "biome check --write .",
-		"knip": "knip --cache",
+		"knip": "pnpm --dir website typecheck && knip --cache",
 		"pack:check": "pnpm --workspace-concurrency=1 --recursive --filter './packages/*' pack --dry-run",
 		"test": "pnpm build:packages && pnpm test:all",
 		"test:all": "pnpm --workspace-concurrency=1 --recursive --if-present run test",
