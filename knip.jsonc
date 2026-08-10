@@ -27,7 +27,7 @@
 			"entry": ["vite.config.ts", "docs/**/*.mdx", "app/**/*.test.ts"],
 			"vite": { "config": [] },
 			"react-router": { "config": ["react-router.config.ts"] },
-			"ignoreDependencies": ["cloudflare", "collections"],
+			"ignoreDependencies": ["cloudflare"],
 			"ignoreIssues": {
 				"app/generated/api/**": ["exports", "types"]
 			}

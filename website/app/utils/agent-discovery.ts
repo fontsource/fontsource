@@ -1,9 +1,8 @@
-export const API_CATALOG_URL = 'https://fontsource.org/.well-known/api-catalog';
-
 export const API_CATALOG_CONTENT_TYPE =
 	'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"';
 
-export const API_CATALOG_LINK = `<${API_CATALOG_URL}>; rel="api-catalog"`;
+export const API_CATALOG_LINK =
+	'<https://fontsource.org/.well-known/api-catalog>; rel="api-catalog"';
 
 export const API_CATALOG = {
 	linkset: [
