@@ -205,6 +205,8 @@ export const FamilyUse = ({
 	const packageVersion = isVariable
 		? (versions.latestVariable ?? versions.latest)
 		: versions.latest;
+	const npmPackageUrl = `https://www.npmjs.com/package/${packageName}`;
+	const jsDelivrPackagePageUrl = `https://www.jsdelivr.com/package/npm/${packageName}`;
 	const fontFaceCSS = customSetup
 		? buildFamilyUseCSS({
 				metadata,
@@ -246,6 +248,23 @@ export const FamilyUse = ({
 	const usageDescription = isVariable
 		? `Apply the family, then choose any font weight from ${variableWeightRange}. ${primaryWeight} is a practical starting point.`
 		: `Apply the selected ${getWeightLabel(primaryWeight).toLowerCase()} ${primaryStyle} face.`;
+	const developerResources = (
+		<nav className={classes.resourceLinks} aria-label="Developer resources">
+			<a href={npmPackageUrl} target="_blank" rel="noreferrer">
+				View on npm
+				<IconExternal aria-hidden height={15} stroke="currentColor" />
+				<VisuallyHidden> (opens in a new tab)</VisuallyHidden>
+			</a>
+			<a href={jsDelivrPackagePageUrl} target="_blank" rel="noreferrer">
+				Browse on jsDelivr
+				<IconExternal aria-hidden height={15} stroke="currentColor" />
+				<VisuallyHidden> (opens in a new tab)</VisuallyHidden>
+			</a>
+			<Link to="/docs/getting-started/install">
+				Read the installation guide
+			</Link>
+		</nav>
+	);
 	const resetToSimpleSetup = () => {
 		setFormat(defaultFormat);
 		setSelectedStyles([recommendedStyle]);
@@ -269,7 +288,7 @@ export const FamilyUse = ({
 			target="_blank"
 			rel="noreferrer"
 		>
-			Unicode ranges
+			unicode ranges
 		</a>
 	);
 	const standardImportDescription = isVariable ? (
@@ -414,7 +433,7 @@ export const FamilyUse = ({
 											}
 										}}
 									>
-										Ready-made
+										Standard
 									</button>
 									<button
 										type="button"
@@ -435,10 +454,10 @@ export const FamilyUse = ({
 								{method === 'package'
 									? customSetup
 										? 'Install the package, then generate explicit font-face CSS for the files you choose.'
-										: 'Install the package and import its ready-made stylesheet. Your app serves the font files.'
+										: 'Install the package and import its standard stylesheet. Your app serves the font files.'
 									: customSetup
 										? 'Generate version-pinned font-face CSS for the files you choose. Fonts load from jsDelivr.'
-										: 'Load the ready-made stylesheet from jsDelivr. No package manager or build step is needed.'}
+										: 'Load the standard stylesheet from jsDelivr. No package manager or build step is needed.'}
 							</p>
 						</div>
 
@@ -614,17 +633,7 @@ export const FamilyUse = ({
 											label="Install"
 											language="sh"
 										/>
-										<Link
-											className={classes.guideLink}
-											to="/docs/getting-started/install"
-										>
-											Read the installation guide
-											<IconExternal
-												aria-hidden
-												height={15}
-												stroke="currentColor"
-											/>
-										</Link>
+										{developerResources}
 									</div>
 								</li>
 							)}
@@ -649,19 +658,7 @@ export const FamilyUse = ({
 											scrollable
 										/>
 									)}
-									{method === 'cdn' && (
-										<Link
-											className={classes.guideLink}
-											to="/docs/getting-started/install"
-										>
-											Read the web font guide
-											<IconExternal
-												aria-hidden
-												height={15}
-												stroke="currentColor"
-											/>
-										</Link>
-									)}
+									{method === 'cdn' && developerResources}
 								</div>
 							</li>
 							<li className={classes.instructionStep}>

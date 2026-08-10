@@ -12,7 +12,6 @@
 
 .description {
 	display: block;
-	max-width: 72ch;
 	margin-top: 6px;
 	color: light-dark(#52617a, #9ca8bd);
 	font-size: 0.9375rem;
@@ -36,14 +35,14 @@
 
 .description a:hover,
 .description a:focus-visible {
-	color: light-dark(#473ef6, #8f8aff);
+	color: light-dark(#473ef6, #7c76ff);
 	text-decoration-color: currentColor;
 }
 
 .description a:focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
 	outline-offset: 3px;
-	border-radius: 3px;
+	border-radius: 4px;
 }
 
 .root > figure {

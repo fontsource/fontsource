@@ -78,6 +78,7 @@ import '@mantine/dropzone/styles.css';
 import '@/styles/global.css';
 
 import ibmLatinURL from '@fontsource-variable/ibm-plex-sans/files/ibm-plex-sans-latin-wght-normal.woff2?url';
+import sourceCodeProLatinURL from '@fontsource-variable/source-code-pro/files/source-code-pro-latin-wght-normal.woff2?url';
 import {
 	ColorSchemeScript,
 	MantineProvider,
@@ -124,6 +125,13 @@ export const links: LinksFunction = () => [
 		type: 'font/woff2',
 		crossOrigin: 'anonymous',
 		href: ibmLatinURL,
+	},
+	{
+		rel: 'preload',
+		as: 'font',
+		type: 'font/woff2',
+		crossOrigin: 'anonymous',
+		href: sourceCodeProLatinURL,
 	},
 	{
 		rel: 'apple-touch-icon',

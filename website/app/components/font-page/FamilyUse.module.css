@@ -3,6 +3,7 @@
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 32px 64px 80px;
+	font-family: var(--mantine-font-family);
 	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 }
 
@@ -148,13 +149,13 @@
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	align-items: start;
-	column-gap: 20px;
-	row-gap: 14px;
+	column-gap: 32px;
+	row-gap: 20px;
 }
 
 .controlGroup {
 	display: grid;
-	gap: 8px;
+	gap: 10px;
 	min-width: 0;
 	margin: 0;
 	padding: 0;
@@ -311,11 +312,12 @@
 }
 
 .deliveryNote {
-	max-width: 62ch;
+	max-width: 78ch;
 	margin: 0;
 	color: light-dark(#52617a, #9ca8bd);
-	font-size: 14px;
-	line-height: 1.55;
+	font-size: 15px;
+	line-height: 1.6;
+	text-wrap: pretty;
 }
 
 .configurationHeading {
@@ -529,20 +531,26 @@
 	min-width: 0;
 }
 
-.guideLink {
+.resourceLinks {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 4px 24px;
+	margin-top: 10px;
+}
+
+.resourceLinks a {
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;
 	min-height: 44px;
-	justify-self: start;
-	margin: 8px 0 0;
 	color: var(--mantine-color-purple-0);
 	font-size: 14px;
 	font-weight: 600;
 	text-decoration: none;
 }
 
-.guideLink:hover {
+.resourceLinks a:hover {
 	text-decoration: underline;
 	text-underline-offset: 3px;
 }
@@ -555,7 +563,7 @@
 .manager button:focus-visible,
 .resetButton:focus-visible,
 .optionGroup input:focus-visible,
-.guideLink:focus-visible {
+.resourceLinks a:focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
 	outline-offset: 2px;
 }

@@ -282,12 +282,14 @@ export const FamilyAbout = ({
 	const isSpecialUseFamily =
 		hasCatalog || isSymbolFamily || isPunctuationFamily || isDigitalFamily;
 	const content = getRegistryContent(registry);
-	const description =
-		content?.description ??
-		`${metadata.family} is an open-source ${formatFontLabel(metadata.category).toLowerCase()} family distributed by Fontsource.`;
+	const description = content?.description?.trim();
 	const article = content?.article?.trim();
+	const introduction =
+		description ??
+		article ??
+		`${metadata.family} is an open-source ${formatFontLabel(metadata.category).toLowerCase()} family distributed by Fontsource.`;
 	const story =
-		article && article !== description
+		description && article && article !== description
 			? article.startsWith(description)
 				? article.slice(description.length).trim()
 				: article
@@ -411,7 +413,7 @@ export const FamilyAbout = ({
 				<div className={classes.story}>
 					<h2 id="about-heading">About {metadata.family}.</h2>
 					<div className={classes.prose}>
-						<RegistryMarkdown value={description} />
+						<RegistryMarkdown value={introduction} />
 					</div>
 					<FontSkeleton
 						name="font-detail-about-specimen"
