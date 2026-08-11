@@ -50,7 +50,7 @@ describe('current project output', () => {
 
 	it('loads the aggregate package stylesheet for font-set specimens', () => {
 		expect(getPreviewCdnUrl(baseItem)).toBe(
-			'https://cdn.jsdelivr.net/fontsource/css/fraunces:vf@5.3.0/index.css',
+			'https://cdn.jsdelivr.net/npm/@fontsource-variable/fraunces@5.3.0/index.css',
 		);
 	});
 

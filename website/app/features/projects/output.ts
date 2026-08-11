@@ -19,7 +19,7 @@ const getCdnStylesheetUrl = (
 };
 
 const getPreviewCdnUrl = (item: ResolvedFontSetFamily) =>
-	getCdnStylesheetUrl(item, 'index.css');
+	`https://cdn.jsdelivr.net/npm/${item.packageName}@${item.packageVersion}/index.css`;
 
 const hasTag = (item: ResolvedFontSetFamily, tag: string) =>
 	item.tags.includes(tag);
