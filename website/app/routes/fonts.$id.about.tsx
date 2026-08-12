@@ -13,7 +13,7 @@ import {
 	loadFontPageStats,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
-import { loadOptionalRegistryData } from '@/utils/registry-request.server';
+import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
@@ -30,27 +30,27 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	] = await Promise.all([
 		basePromise,
 		loadFontPageLanguages(basePromise, request.signal),
-		loadOptionalRegistryData(listRegistryAxes(options), request.signal),
-		loadOptionalRegistryData(getRegistryTaxonomy(options), request.signal),
+		loadRequiredRegistryData(
+			listRegistryAxes(options),
+			request.signal,
+			'Variable axis data',
+		),
+		loadRequiredRegistryData(
+			getRegistryTaxonomy(options),
+			request.signal,
+			'Font taxonomy',
+		),
 		loadFontPageCapabilities(basePromise, request.signal),
 		loadFontPageStats(id, request.signal),
 	]);
-	const enrichmentUnavailable = [
-		languagesResult,
-		axesResult,
-		taxonomyResult,
-	].some((result) => result.state === 'unavailable');
-
 	return data(
 		{
 			...base,
-			languages: languagesResult.languages,
-			axisRegistry: axesResult.value,
-			taxonomy: taxonomyResult.value,
+			languages: languagesResult.languages ?? [],
+			axisRegistry: axesResult,
+			taxonomy: taxonomyResult,
 			capabilities: capabilitiesResult.capabilities,
 			stats,
-			enrichmentUnavailable,
-			capabilitiesState: capabilitiesResult.state,
 		},
 		{ headers: cacheHeaders.short },
 	);
@@ -81,9 +81,6 @@ export default function AboutPage() {
 		taxonomy,
 		capabilities,
 		stats,
-		registryState,
-		enrichmentUnavailable,
-		capabilitiesState,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -105,10 +102,6 @@ export default function AboutPage() {
 				taxonomy={taxonomy}
 				capabilities={capabilities}
 				stats={stats}
-				registryState={registryState}
-				enrichmentUnavailable={enrichmentUnavailable}
-				capabilitiesState={capabilitiesState}
-				variableUnavailable={metadata.variable && !variable}
 			/>
 		</FamilyPageShell>
 	);

@@ -12,6 +12,7 @@ const inter: FontSummary = {
 	category: 'sans-serif',
 	variable: true,
 };
+const interLabel = { family: inter.family };
 
 const createReadyStore = () => {
 	const store = createCollectionsStore();
@@ -22,17 +23,10 @@ const createReadyStore = () => {
 describe('collections store', () => {
 	it('rejects persisted duplicate collection names', () => {
 		const result = collectionsSnapshotSchema.safeParse({
-			version: 1,
+			favoriteFontIds: [],
 			collections: [
 				{
-					id: 'favorites',
-					kind: 'favorites',
-					name: 'Favorites',
-					fontIds: [],
-				},
-				{
 					id: 'duplicate',
-					kind: 'custom',
 					name: ' favorites ',
 					fontIds: [],
 				},
@@ -41,6 +35,25 @@ describe('collections store', () => {
 		});
 
 		expect(result.success).toBe(false);
+	});
+
+	it('rejects duplicate persisted collection and font IDs', () => {
+		const duplicateCollectionIds = collectionsSnapshotSchema.safeParse({
+			favoriteFontIds: [],
+			collections: [
+				{ id: 'review', name: 'Review', fontIds: [] },
+				{ id: 'review', name: 'Later', fontIds: [] },
+			],
+			fontCache: {},
+		});
+		const duplicateFontIds = collectionsSnapshotSchema.safeParse({
+			favoriteFontIds: ['inter', 'inter'],
+			collections: [],
+			fontCache: { inter: { family: 'Inter' } },
+		});
+
+		expect(duplicateCollectionIds.success).toBe(false);
+		expect(duplicateFontIds.success).toBe(false);
 	});
 
 	it('reacts to new collections and favorite changes', () => {
@@ -95,14 +108,13 @@ describe('collections store', () => {
 		expect(store.hasFont(collectionId, inter.id)).toBe(true);
 
 		store.removeFontFromCollection(favoritesId, inter.id);
-		expect(store.state$.fontCache[inter.id].peek()).toEqual(inter);
+		expect(store.state$.fontCache[inter.id].peek()).toEqual(interLabel);
 
 		expect(store.renameCollection(collectionId, 'Shortlist')).toBe(true);
 		store.removeFontFromCollection(collectionId, inter.id);
 		expect(store.state$.fontCache[inter.id].peek()).toBeUndefined();
 		expect(store.state$.collections.peek()).toContainEqual({
 			id: collectionId,
-			kind: 'custom',
 			name: 'Shortlist',
 			fontIds: [],
 		});
@@ -120,11 +132,11 @@ describe('collections store', () => {
 
 		store.addFontToCollection(collectionId, inter);
 		store.deleteCollection(collectionId);
-		expect(store.state$.collections.peek()).toHaveLength(1);
+		expect(store.state$.collections.peek()).toHaveLength(0);
 		expect(store.state$.fontCache[inter.id].peek()).toBeUndefined();
 	});
 
-	it('adds and removes font sets without duplicating collection entries', () => {
+	it('adds font sets without duplicating collection entries', () => {
 		const store = createReadyStore();
 		const collectionId = store.createCollection('Website set');
 		if (!collectionId) throw new Error('Expected a collection to be created.');
@@ -134,16 +146,10 @@ describe('collections store', () => {
 			store.addFontsToCollection(collectionId, [inter, roboto, inter]),
 		).toBe(2);
 		expect(store.addFontsToCollection(collectionId, [inter])).toBe(0);
-		expect(store.state$.collections[1].fontIds.peek()).toEqual([
+		expect(store.state$.collections[0].fontIds.peek()).toEqual([
 			'inter',
 			'roboto',
 		]);
-
-		expect(
-			store.removeFontsFromCollection(collectionId, [inter.id, 'missing']),
-		).toBe(1);
-		expect(store.state$.fontCache[inter.id].peek()).toBeUndefined();
-		expect(store.state$.fontCache[roboto.id].peek()).toEqual(roboto);
 	});
 
 	it('preserves shared canonical metadata when adding a font to another collection', () => {
@@ -154,11 +160,26 @@ describe('collections store', () => {
 
 		store.addFontToCollection(firstCollection, inter);
 		store.addFontToCollection(secondCollection, {
-			...inter,
-			defSubset: 'cyrillic',
-			variable: false,
+			id: inter.id,
+			family: 'Different cached label',
 		});
 
-		expect(store.state$.fontCache.inter.peek()).toEqual(inter);
+		expect(store.state$.fontCache.inter.peek()).toEqual(interLabel);
+	});
+
+	it('derives Favorites without persisting it as a collection', () => {
+		const store = createReadyStore();
+		const favoritesId = store.getFavoritesCollectionId();
+
+		store.addFontToCollection(favoritesId, inter);
+
+		expect(store.state$.favoriteFontIds.peek()).toEqual([inter.id]);
+		expect(store.state$.collections.peek()).toEqual([]);
+		expect(store.getCollections()[0]).toMatchObject({
+			id: favoritesId,
+			kind: 'favorites',
+			name: 'Favorites',
+			fontIds: [inter.id],
+		});
 	});
 });

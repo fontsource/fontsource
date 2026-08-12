@@ -12,7 +12,6 @@ import type {
 import { jsDelivrResolver } from '../../utils/cdn';
 
 type FontDisplay = 'auto' | 'swap' | 'block' | 'fallback' | 'optional';
-type WebFontFormat = 'woff2' | 'woff';
 
 const fallbackFamilies: Record<GetFontResponse['category'], string> = {
 	'sans-serif': 'sans-serif',
@@ -32,7 +31,6 @@ interface FamilyUseCSSOptions {
 	weights: number[];
 	subsets: string[];
 	activeAxes: string[];
-	formats: WebFontFormat[];
 	display: FontDisplay;
 	version: string;
 	delivery: 'package' | 'cdn';
@@ -47,8 +45,6 @@ const fontDisplays: FontDisplay[] = [
 	'auto',
 ];
 
-const webFontFormats: WebFontFormat[] = ['woff2', 'woff'];
-
 const packageResolver =
 	(packageName: string): UrlResolver =>
 	({ source }) =>
@@ -62,7 +58,6 @@ const buildFamilyUseCSS = ({
 	weights,
 	subsets,
 	activeAxes,
-	formats,
 	display,
 	version,
 	delivery,
@@ -103,7 +98,7 @@ const buildFamilyUseCSS = ({
 			styles,
 			unicodeRange: metadata.unicodeRange,
 			subsetSlices,
-			formats: isVariable ? ['woff2'] : formats,
+			formats: ['woff2'],
 			...(isVariable && variable ? { variable: variable.axes } : {}),
 		},
 		{
@@ -133,6 +128,4 @@ export {
 	buildFamilyUseCSS,
 	type FontDisplay,
 	fontDisplays,
-	type WebFontFormat,
-	webFontFormats,
 };

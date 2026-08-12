@@ -7,7 +7,6 @@ import {
 	useContext,
 	useEffect,
 	useMemo,
-	useRef,
 } from 'react';
 
 import type { GetRegistrySourceCapabilitiesResponse } from '@/generated/api';
@@ -16,12 +15,6 @@ import {
 	getRegistrySourcePreviewCSS,
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
-import {
-	type FontPreviewSelection,
-	saveFontPreviewSelection,
-} from '@/utils/font-preview-selection';
-
-import classes from './FamilyPreview.module.css';
 import {
 	clamp,
 	createLanguageModeTexts,
@@ -42,19 +35,8 @@ import {
 
 const PreviewEditorContext = createContext<PreviewEditorModel | null>(null);
 const capabilitiesTimeoutMs = 12_000;
-const previewSelectionSaveDelayMs = 160;
 const compactPreviewQuery = '(max-width: 48em)';
 const compactHeadlineMaxSize = 56;
-
-const persistPreviewSelection = (
-	model: PreviewEditorModel,
-	selection: FontPreviewSelection,
-) => {
-	const saved = saveFontPreviewSelection(model.metadata.id, selection);
-	if (model.state$.handoffUnavailable.peek() !== !saved) {
-		model.state$.handoffUnavailable.set(!saved);
-	}
-};
 
 const usePreviewEditor = () => {
 	const model = useContext(PreviewEditorContext);
@@ -72,21 +54,7 @@ const PreviewRuntimeEffects = observer(() => {
 	const featureTags = useValue(() => getActiveFeatureTags(model));
 	const mode = useValue(model.state$.mode);
 	const weight = useValue(model.state$.typographyByMode[mode].weight);
-	const italic = useValue(model.state$.typographyByMode[mode].italic);
 	const selectedLanguageId = useValue(model.state$.selectedLanguageId);
-	const axisValues = useValue(model.state$.axisValues);
-	const selection = useMemo<FontPreviewSelection>(
-		() => ({
-			format:
-				model.variable && model.versions.latestVariable ? 'variable' : 'static',
-			subset: model.previewSubset,
-			style: italic ? 'italic' : 'normal',
-			weight,
-			axes: axisValues,
-		}),
-		[axisValues, italic, model, weight],
-	);
-	const pendingSelection = useRef(selection);
 	const hasCachedCapabilities = activeSource
 		? Object.hasOwn(capabilitiesBySource, activeSource.sha256)
 		: false;
@@ -210,7 +178,7 @@ const PreviewRuntimeEffects = observer(() => {
 		}
 		const fallbackLanguage = getPreferredLanguage(
 			verifiedLanguages,
-			model.registry?.primaryLanguage,
+			model.registry.primaryLanguage,
 		);
 		if (!fallbackLanguage) {
 			model.state$.selectedLanguageId.set('');
@@ -254,20 +222,6 @@ const PreviewRuntimeEffects = observer(() => {
 			),
 		});
 	}, [featureTags, model]);
-
-	useEffect(() => {
-		pendingSelection.current = selection;
-		const timeoutId = window.setTimeout(
-			() => persistPreviewSelection(model, selection),
-			previewSelectionSaveDelayMs,
-		);
-		return () => window.clearTimeout(timeoutId);
-	}, [model, selection]);
-
-	useEffect(
-		() => () => persistPreviewSelection(model, pendingSelection.current),
-		[model],
-	);
 
 	return null;
 });
@@ -377,21 +331,4 @@ const PreviewFontStyle = observer(() => {
 	);
 });
 
-const PreviewHandoffNotice = observer(() => {
-	const model = usePreviewEditor();
-	const unavailable = useValue(model.state$.handoffUnavailable);
-	if (!unavailable) return null;
-	return (
-		<p className={classes.handoffNotice} role="status">
-			This browser can’t save your preview settings. The Get font tab will use
-			this family’s defaults.
-		</p>
-	);
-});
-
-export {
-	PreviewFontStyle,
-	PreviewHandoffNotice,
-	PreviewProvider,
-	usePreviewEditor,
-};
+export { PreviewFontStyle, PreviewProvider, usePreviewEditor };

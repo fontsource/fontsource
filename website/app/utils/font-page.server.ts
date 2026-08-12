@@ -10,7 +10,10 @@ import {
 } from '@/generated/api';
 import { getFontPreviewCSS } from '@/utils/font-preview';
 import { selectRegistryFamilyLanguages } from '@/utils/registry';
-import { loadOptionalRegistryData } from '@/utils/registry-request.server';
+import {
+	loadOptionalRegistryData,
+	loadRequiredRegistryData,
+} from '@/utils/registry-request.server';
 
 const loadFontFamilyRecord = async (id: string, signal: AbortSignal) => {
 	const parameters = { id };
@@ -20,11 +23,12 @@ const loadFontFamilyRecord = async (id: string, signal: AbortSignal) => {
 	const variablePromise = metadataPromise.then((metadata) =>
 		metadata.variable ? getVariableFont(parameters, options) : undefined,
 	);
-	const registryPromise = loadOptionalRegistryData(
+	const registryPromise = loadRequiredRegistryData(
 		getRegistryFamily(parameters, options),
 		signal,
+		'Font registry record',
 	);
-	const [metadata, versions, variable, registryResult] = await Promise.all([
+	const [metadata, versions, variable, registry] = await Promise.all([
 		metadataPromise,
 		versionsPromise,
 		variablePromise,
@@ -35,8 +39,7 @@ const loadFontFamilyRecord = async (id: string, signal: AbortSignal) => {
 		metadata,
 		versions,
 		variable,
-		registry: registryResult.value,
-		registryState: registryResult.state,
+		registry,
 	};
 };
 
@@ -65,36 +68,28 @@ const loadFontPageCapabilities = async (
 	signal: AbortSignal,
 ) => {
 	const base = await basePromise;
-	if (base.registryState !== 'available') {
-		return {
-			capabilitySource: undefined,
-			capabilities: undefined,
-			state: base.registryState,
-		};
-	}
-	const capabilitySource = base.registry?.sources.find(
-		(source) => source.sha256 === base.registry?.previewSource,
+	const capabilitySource = base.registry.sources.find(
+		(source) => source.sha256 === base.registry.previewSource,
 	);
 
 	if (!capabilitySource) {
-		return {
-			capabilitySource,
-			capabilities: undefined,
-			state: 'not-found' as const,
-		};
+		throw new Response('The font preview source is invalid.', {
+			status: 503,
+			statusText: 'Service Unavailable',
+		});
 	}
 
-	const result = await loadOptionalRegistryData(
+	const capabilities = await loadRequiredRegistryData(
 		getRegistrySourceCapabilities(
 			{ sha256: capabilitySource.sha256 },
 			{ signal },
 		),
 		signal,
+		'Font character data',
 	);
 	return {
 		capabilitySource,
-		capabilities: result.value,
-		state: result.state,
+		capabilities,
 	};
 };
 
@@ -105,18 +100,17 @@ const loadFontPageLanguages = async (
 ) => {
 	const [base, result] = await Promise.all([
 		basePromise,
-		loadOptionalRegistryData(listRegistryLanguages({ signal }), signal),
+		loadRequiredRegistryData(
+			listRegistryLanguages({ signal }),
+			signal,
+			'Language data',
+		),
 	]);
-	const state =
-		base.registryState === 'available' ? result.state : base.registryState;
 	return {
 		languages:
-			state === 'available'
-				? scope === 'all'
-					? result.value
-					: selectRegistryFamilyLanguages(base.registry, result.value)
-				: undefined,
-		state,
+			scope === 'all'
+				? result
+				: selectRegistryFamilyLanguages(base.registry, result),
 	};
 };
 
@@ -125,19 +119,19 @@ const loadFontPageSymbols = async (
 	signal: AbortSignal,
 ) => {
 	const base = await basePromise;
-	if (!base.registry?.symbols) {
-		return { symbols: undefined, state: 'not-found' as const };
+	if (!base.registry.symbols) {
+		return { symbols: undefined };
 	}
 
 	const result = await loadOptionalRegistryData(
 		getRegistryFamilySymbols({ id: base.metadata.id }, { signal }),
 		signal,
+		'Font symbol catalog',
 	);
-	return { symbols: result.value, state: result.state };
+	return { symbols: result };
 };
 
 export {
-	loadFontFamilyRecord,
 	loadFontPageBase,
 	loadFontPageCapabilities,
 	loadFontPageLanguages,

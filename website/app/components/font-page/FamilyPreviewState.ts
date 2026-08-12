@@ -12,10 +12,8 @@ import type {
 import { getAxisLabel } from '@/utils/font-labels';
 import {
 	getPreferredPreviewSubset,
-	isLatinPreviewSubset,
 	selectRegistryPreviewSource,
 } from '@/utils/font-preview';
-import { getPreviewText as getLanguagePreviewText } from '@/utils/language/language';
 import {
 	type PreviewMode,
 	previewModeOptions,
@@ -75,7 +73,6 @@ interface PreviewEditorValue {
 	featureQuery: string;
 	inspectorOpened: boolean;
 	inspectorSection: PreviewInspectorSection;
-	handoffUnavailable: boolean;
 	capabilitiesBySource: Record<
 		string,
 		GetRegistrySourceCapabilitiesResponse | null
@@ -93,11 +90,11 @@ interface PreviewEditorProps {
 	variable?: GetVariableFontResponse;
 	variableCSS?: string;
 	versions: GetFontVersionsResponse;
-	registry?: RegistryFamily;
-	languages?: ListRegistryLanguagesResponse;
+	registry: RegistryFamily;
+	languages: ListRegistryLanguagesResponse;
 	axisRegistry?: ListRegistryAxesResponse;
-	capabilities?: GetRegistrySourceCapabilitiesResponse;
-	capabilitySource?: RegistrySource;
+	capabilities: GetRegistrySourceCapabilitiesResponse;
+	capabilitySource: RegistrySource;
 	symbols?: GetRegistryFamilySymbolsResponse;
 }
 
@@ -153,11 +150,10 @@ const summarizeDescription = (value?: string) => {
 const getModeText = (
 	metadata: GetFontResponse,
 	mode: PreviewMode,
-	registry?: RegistryFamily,
-	languages?: ListRegistryLanguagesResponse,
-	capabilities?: GetRegistrySourceCapabilitiesResponse,
+	registry: RegistryFamily,
+	languages: ListRegistryLanguagesResponse,
+	capabilities: GetRegistrySourceCapabilitiesResponse,
 ) => {
-	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const familyKind = getRegistryFamilyKind(registry);
 	const registrySample = getRegistryPreviewText(
 		registry,
@@ -165,25 +161,9 @@ const getModeText = (
 		previewText.editor.sampleLengths[mode],
 	);
 
+	if (registrySample) return registrySample;
 	if (familyKind === 'symbols') {
-		return (
-			registrySample ??
-			getSupportedPreviewFallback(metadata.family, capabilities)
-		);
-	}
-	if (familyKind === 'digital')
-		return previewText.editor.familyKinds.digital[mode];
-	if (registrySample && registry?.sampleText) return registrySample;
-	if (familyKind === 'punctuation')
-		return previewText.editor.familyKinds.punctuation[mode];
-
-	const usesLatinPreview = isLatinPreviewSubset(previewSubset);
-	if (!usesLatinPreview && registrySample) return registrySample;
-	if (!usesLatinPreview && mode !== 'compare') {
-		return getLanguagePreviewText(previewSubset);
-	}
-	if (metadata.category === 'monospace' && mode === 'headline') {
-		return previewText.editor.categories.monospace.headline;
+		return getSupportedPreviewFallback(metadata.family, capabilities);
 	}
 	if (mode === 'compare') return metadata.family;
 	return previewText.editor.defaults[mode];
@@ -191,9 +171,9 @@ const getModeText = (
 
 const createModeTexts = (
 	metadata: GetFontResponse,
-	registry?: RegistryFamily,
-	languages?: ListRegistryLanguagesResponse,
-	capabilities?: GetRegistrySourceCapabilitiesResponse,
+	registry: RegistryFamily,
+	languages: ListRegistryLanguagesResponse,
+	capabilities: GetRegistrySourceCapabilitiesResponse,
 ): Record<PreviewMode, string> => ({
 	headline: getModeText(
 		metadata,
@@ -318,17 +298,6 @@ const createPreviewEditorSetup = ({
 >) => {
 	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const familyKind = getRegistryFamilyKind(registry);
-	const usesLatinPreview = registry?.primaryScript
-		? registry.primaryScript === 'Latn'
-		: isLatinPreviewSubset(previewSubset);
-	const initialSize =
-		metadata.category === 'monospace'
-			? 64
-			: familyKind === 'symbols'
-				? 80
-				: usesLatinPreview
-					? 72
-					: 64;
 	const initialSourceAxes = getPreviewAxes(
 		capabilitySource,
 		variable,
@@ -344,31 +313,29 @@ const createPreviewEditorSetup = ({
 	const regularWeight = initialWeightAxis
 		? clamp(400, initialWeightAxis.min, initialWeightAxis.max)
 		: nearestWeight(availableWeights, 400);
-	const initialLineHeight = usesLatinPreview ? 1.1 : 1.2;
 	const initialTypography: PreviewTypographyByMode = {
 		headline: {
-			size: initialSize,
+			size: 72,
 			weight: initialWeight,
 			italic: false,
 			tracking: 0,
-			lineHeight: initialLineHeight,
+			lineHeight: 1.15,
 			alignment: 'start',
 		},
 		paragraph: {
-			size: familyKind === 'digital' ? 32 : usesLatinPreview ? 24 : 22,
+			size: 24,
 			weight: regularWeight,
 			italic: false,
 			tracking: 0,
-			lineHeight:
-				familyKind === 'digital' ? 1.25 : usesLatinPreview ? 1.55 : 1.7,
+			lineHeight: 1.6,
 			alignment: 'start',
 		},
 		waterfall: {
-			size: initialSize,
+			size: 72,
 			weight: initialWeight,
 			italic: false,
 			tracking: 0,
-			lineHeight: Math.max(1.05, initialLineHeight),
+			lineHeight: 1.15,
 			alignment: 'start',
 		},
 		compare: {
@@ -383,15 +350,14 @@ const createPreviewEditorSetup = ({
 	const verifiedLanguages = getVerifiedLanguages(languages, capabilities);
 	const initialLanguage = getPreferredLanguage(
 		verifiedLanguages,
-		registry?.primaryLanguage,
+		registry.primaryLanguage,
 	);
-	const initialTexts =
-		familyKind === 'text' &&
-		registry?.primaryScript &&
-		registry.primaryScript !== 'Latn' &&
-		initialLanguage
-			? createLanguageModeTexts(initialLanguage)
-			: createModeTexts(metadata, registry, languages, capabilities);
+	const initialTexts = createModeTexts(
+		metadata,
+		registry,
+		languages,
+		capabilities,
+	);
 	const initialCapabilitySource =
 		capabilitySource ??
 		selectRegistryPreviewSource(registry, {
@@ -411,7 +377,6 @@ const createPreviewEditorSetup = ({
 		featureQuery: '',
 		inspectorOpened: false,
 		inspectorSection: 'typography',
-		handoffUnavailable: false,
 		capabilitiesBySource:
 			initialCapabilitySource && capabilities
 				? { [initialCapabilitySource.sha256]: capabilities }

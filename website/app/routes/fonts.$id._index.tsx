@@ -12,7 +12,7 @@ import {
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
-import { loadOptionalRegistryData } from '@/utils/registry-request.server';
+import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
@@ -23,7 +23,11 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		await Promise.all([
 			basePromise,
 			loadFontPageLanguages(basePromise, request.signal, 'all'),
-			loadOptionalRegistryData(listRegistryAxes(options), request.signal),
+			loadRequiredRegistryData(
+				listRegistryAxes(options),
+				request.signal,
+				'Variable axis data',
+			),
 			loadFontPageCapabilities(basePromise, request.signal),
 			loadFontPageSymbols(basePromise, request.signal),
 		]);
@@ -32,7 +36,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		{
 			...base,
 			languages: languagesResult.languages,
-			axisRegistry: axesResult.value,
+			axisRegistry: axesResult,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
 			symbols: symbolsResult.symbols,
@@ -71,7 +75,6 @@ export default function Font() {
 		variableCSS,
 		versions,
 		registry,
-		registryState,
 		languages,
 		axisRegistry,
 		capabilities,
@@ -94,13 +97,11 @@ export default function Font() {
 				variableCSS={variableCSS}
 				versions={versions}
 				registry={registry}
-				registryState={registryState}
 				languages={languages}
 				axisRegistry={axisRegistry}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
 				symbols={symbols}
-				variableUnavailable={metadata.variable && !variable}
 			/>
 		</FamilyPageShell>
 	);

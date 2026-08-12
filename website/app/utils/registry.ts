@@ -6,9 +6,8 @@ import type {
 
 type RegistryFamily = GetRegistryFamilyResponse;
 type RegistrySource = RegistryFamily['sources'][number];
-type RegistryDataState = 'available' | 'not-found' | 'unavailable';
 type UnicodeRange = readonly [number, number];
-type RegistryFamilyKind = 'text' | 'symbols' | 'punctuation' | 'digital';
+type RegistryFamilyKind = 'text' | 'symbols';
 
 const maxUnicodeCodepoint = 0x10ffff;
 const isUnicodeScalarValue = (value: number) =>
@@ -19,22 +18,20 @@ const isUnicodeScalarValue = (value: number) =>
 const getUnicodeCharacter = (value: number) =>
 	isUnicodeScalarValue(value) ? String.fromCodePoint(value) : undefined;
 
-const usesNameLigatures = (registry?: RegistryFamily) =>
-	registry?.symbols?.inputModes.includes('name-ligature') ?? false;
+const usesNameLigatures = (registry: RegistryFamily) =>
+	registry.symbols?.inputModes.includes('name-ligature') ?? false;
 
 const getRegistryFamilyKind = (
-	registry?: RegistryFamily,
+	registry: RegistryFamily,
 ): RegistryFamilyKind => {
-	if (registry?.tags.includes('special-use/punctuation')) return 'punctuation';
-	if (registry?.tags.includes('special-use/digital-display')) return 'digital';
-	if (registry?.symbols || registry?.classifications.includes('symbols')) {
+	if (registry.symbols) {
 		return 'symbols';
 	}
 	return 'text';
 };
 
-const getRegistryContent = (registry?: RegistryFamily) => {
-	const entries = Object.entries(registry?.content ?? {});
+const getRegistryContent = (registry: RegistryFamily) => {
+	const entries = Object.entries(registry.content ?? {});
 	return (
 		entries.find(([locale]) => locale.toLowerCase().startsWith('en'))?.[1] ??
 		entries[0]?.[1]
@@ -42,11 +39,9 @@ const getRegistryContent = (registry?: RegistryFamily) => {
 };
 
 const selectRegistryFamilyLanguages = (
-	registry?: RegistryFamily,
-	languages?: ListRegistryLanguagesResponse,
+	registry: RegistryFamily,
+	languages: ListRegistryLanguagesResponse,
 ) => {
-	if (!registry || !languages) return;
-
 	const familyLanguageIds = new Set(registry.languages);
 	const familyLanguages = languages.filter((language) =>
 		familyLanguageIds.has(language.id),
@@ -67,32 +62,32 @@ const selectRegistryFamilyLanguages = (
 };
 
 const selectRegistryPreviewLanguage = (
-	registry?: RegistryFamily,
-	languages?: ListRegistryLanguagesResponse,
+	registry: RegistryFamily,
+	languages: ListRegistryLanguagesResponse,
 ) => {
 	const familyLanguages = selectRegistryFamilyLanguages(registry, languages);
-	const languagesWithSamples = familyLanguages?.filter((language) =>
+	const languagesWithSamples = familyLanguages.filter((language) =>
 		language.sampleText?.short.trim(),
 	);
-	if (!languagesWithSamples?.length) return;
+	if (!languagesWithSamples.length) return;
 
 	return (
 		languagesWithSamples.find(
-			(language) => language.id === registry?.primaryLanguage,
+			(language) => language.id === registry.primaryLanguage,
 		) ??
 		languagesWithSamples.find(
-			(language) => language.script === registry?.primaryScript,
+			(language) => language.script === registry.primaryScript,
 		) ??
 		languagesWithSamples[0]
 	);
 };
 
 const getRegistryPreviewText = (
-	registry?: RegistryFamily,
-	languages?: ListRegistryLanguagesResponse,
+	registry: RegistryFamily,
+	languages: ListRegistryLanguagesResponse,
 	length: 'short' | 'long' = 'short',
 ) => {
-	const familySample = registry?.sampleText;
+	const familySample = registry.sampleText;
 	if (familySample) {
 		return (
 			(length === 'long' ? familySample.long : familySample.short)?.trim() ??
@@ -150,6 +145,13 @@ const includesCodepoint = (ranges: readonly UnicodeRange[], value: number) => {
 	return false;
 };
 
+const createRegistryCodepointMatcher = (
+	capabilities: GetRegistrySourceCapabilitiesResponse,
+) => {
+	const ranges = parseRegistryUnicodeRange(capabilities.unicodeRange);
+	return (value: number) => includesCodepoint(ranges, value);
+};
+
 const isBrowsableCharacter = (character: string) =>
 	!/^(\p{C}|\p{Z})$/u.test(character);
 
@@ -160,6 +162,7 @@ type RegistryCharacterGroups = Record<
 
 const getRegistryCharacterGroups = (
 	capabilities?: GetRegistrySourceCapabilitiesResponse,
+	includePrivateUse = false,
 ): RegistryCharacterGroups | undefined => {
 	if (!capabilities) return;
 
@@ -177,6 +180,11 @@ const getRegistryCharacterGroups = (
 		for (let codepoint = start; codepoint <= end; codepoint += 1) {
 			const character = getUnicodeCharacter(codepoint);
 			if (!character) continue;
+			if (includePrivateUse && /^\p{Co}$/u.test(character)) {
+				groups.all.push(character);
+				groups.symbols.push(character);
+				continue;
+			}
 			if (!isBrowsableCharacter(character)) continue;
 			groups.all.push(character);
 			if (/^\p{L}$/u.test(character)) {
@@ -372,8 +380,9 @@ const getOpenTypeFeatureDescription = (tag: string) => {
 	);
 };
 
-export type { RegistryDataState, RegistryFamily, RegistrySource };
+export type { RegistryFamily, RegistrySource };
 export {
+	createRegistryCodepointMatcher,
 	findUnmappedCharacters,
 	getOpenTypeFeatureDescription,
 	getOpenTypeFeatureName,

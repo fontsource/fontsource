@@ -11,22 +11,4 @@
 	color: var(--mantine-color-white);
 	background: var(--mantine-color-red-7);
 	box-shadow: var(--mantine-shadow-md);
-
-	button {
-		width: fit-content;
-		min-height: 44px;
-		padding: 0 10px;
-		border: 1px solid currentColor;
-		border-radius: 4px;
-		background: transparent;
-		color: inherit;
-		font: inherit;
-		font-weight: 650;
-		cursor: pointer;
-	}
-
-	button:focus-visible {
-		outline: 3px solid var(--mantine-color-white);
-		outline-offset: 2px;
-	}
 }

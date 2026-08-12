@@ -85,16 +85,6 @@
 	color: var(--mantine-color-purple-0);
 }
 
-.handoffNotice {
-	margin: 0;
-	padding: 10px 36px;
-	border-bottom: var(--preview-border-strong);
-	background: var(--preview-notice);
-	color: var(--preview-text-muted);
-	font-size: var(--preview-type-control);
-	line-height: 1.5;
-}
-
 .studio {
 	--preview-canvas-min: clamp(460px, 52dvh, 570px);
 
@@ -1252,10 +1242,6 @@
 
 	.identityPanel h1 {
 		font-size: clamp(2.2rem, 13vw, 3.5rem);
-	}
-
-	.handoffNotice {
-		padding-inline: 16px;
 	}
 
 	.studio {

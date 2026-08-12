@@ -4,15 +4,6 @@
 	padding: 40px 64px 64px;
 }
 
-.availabilityNotice {
-	margin: -16px 0 30px;
-	padding: 10px 12px;
-	border-left: 1px solid var(--mantine-color-purple-0);
-	color: light-dark(#52617a, #aeb9cc);
-	background: light-dark(#f7f6ff, #172138);
-	font-size: 13px;
-}
-
 .intro {
 	display: grid;
 	align-items: start;
@@ -85,8 +76,6 @@
 	text-wrap: balance;
 
 	&:is(
-		[data-family-kind="punctuation"],
-		[data-family-kind="digital"],
 		[data-family-kind="symbols"]
 	) {
 		line-height: 1.35;
@@ -343,12 +332,6 @@
 		outline: 2px solid var(--mantine-color-purple-0);
 		outline-offset: -3px;
 	}
-}
-
-.technicalNotice {
-	margin: -10px 0 22px;
-	color: light-dark(#52617a, #aeb9cc);
-	font-size: 13px;
 }
 
 .related {

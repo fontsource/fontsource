@@ -15,33 +15,23 @@ import {
 	useRef,
 	useState,
 } from 'react';
-import { useRevalidator } from 'react-router';
 import { DropdownSimple } from '@/components/Dropdown';
 import { IconCopy, IconSearch } from '@/components/icons';
 import type {
 	GetFontResponse,
 	GetRegistryFamilySymbolsResponse,
 	GetRegistrySourceCapabilitiesResponse,
-	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 import { formatFontLabel } from '@/utils/font-labels';
 import {
-	getFontFamilyStack,
-	getFontPreviewFamily,
-	getPreferredPreviewSubset,
-	getPreviewDirection,
 	getRegistrySourcePreviewCSS,
-	isLatinPreviewSubset,
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
-import { getPreviewText as getLanguagePreviewText } from '@/utils/language/language';
 import {
+	createRegistryCodepointMatcher,
 	getRegistryCharacterGroups,
-	getRegistryFamilyKind,
-	getRegistryPreviewText,
 	getRegistrySourcePreviewStyle,
 	getUnicodeCharacter,
-	type RegistryDataState,
 	type RegistryFamily,
 	type RegistrySource,
 	usesNameLigatures,
@@ -60,15 +50,10 @@ import { GlyphSpecimen } from './GlyphSpecimen';
 
 interface CharacterExplorerProps {
 	metadata: GetFontResponse;
-	staticCSS: string;
-	variableCSS?: string;
-	registry?: RegistryFamily;
-	languages?: ListRegistryLanguagesResponse;
+	registry: RegistryFamily;
 	symbols?: GetRegistryFamilySymbolsResponse;
-	capabilities?: GetRegistrySourceCapabilitiesResponse;
-	capabilitySource?: RegistrySource;
-	capabilitiesState: RegistryDataState;
-	symbolsState: RegistryDataState;
+	capabilities: GetRegistrySourceCapabilitiesResponse;
+	capabilitySource: RegistrySource;
 }
 
 const glyphCellSize = 58;
@@ -143,23 +128,6 @@ const getResultNoun = (
 	return noun;
 };
 
-const characterNames: Record<string, string> = {
-	'&': 'Ampersand',
-	'@': 'At sign',
-	'#': 'Number sign',
-	'%': 'Percent sign',
-	'€': 'Euro sign',
-	'£': 'Pound sign',
-	'¥': 'Yen sign',
-	'©': 'Copyright sign',
-	'®': 'Registered sign',
-	'™': 'Trademark sign',
-	fi: 'Fi ligature',
-	fl: 'Fl ligature',
-	ffi: 'Ffi ligature',
-	ffl: 'Ffl ligature',
-};
-
 const getCodePoints = (characters: string) =>
 	Array.from(characters)
 		.map(
@@ -174,7 +142,6 @@ const getCodePoints = (characters: string) =>
 const isCombiningMark = (character: string) => /^\p{M}+$/u.test(character);
 
 const getCharacterName = (character: string) =>
-	characterNames[character] ??
 	(isCombiningMark(character) ? 'Combining mark' : undefined) ??
 	(character.length === 1 ? `Character ${character}` : character);
 
@@ -203,95 +170,78 @@ const getSymbolDisplayValue = (value: string, useNameLigature: boolean) => {
 		: (getUnicodeCharacter(codepoint) ?? getSymbolName(value));
 };
 
-const getFallbackCharacters = (value: string) =>
-	Array.from(
-		new Set(Array.from(value).filter((character) => !/\s/u.test(character))),
-	);
+const emptyCharacterGroups = {
+	all: [],
+	letters: [],
+	marks: [],
+	numbers: [],
+	punctuation: [],
+	symbols: [],
+} as const;
 
-const getFallbackCharacterGroups = (value: string) => {
-	const all = getFallbackCharacters(value);
-	return {
-		all,
-		letters: all.filter((character) => /^\p{L}$/u.test(character)),
-		marks: all.filter((character) => /^\p{M}$/u.test(character)),
-		numbers: all.filter((character) => /^\p{N}$/u.test(character)),
-		punctuation: all.filter((character) => /^\p{P}$/u.test(character)),
-		symbols: all.filter((character) => /^\p{S}$/u.test(character)),
-	};
-};
+const getExactCharacterGroups = (
+	capabilities: GetRegistrySourceCapabilitiesResponse,
+	includePrivateUse: boolean,
+) => getRegistryCharacterGroups(capabilities, includePrivateUse);
 
 export const CharacterExplorer = ({
 	metadata,
-	staticCSS,
-	variableCSS,
 	registry,
-	languages,
 	symbols,
 	capabilities,
 	capabilitySource,
-	capabilitiesState,
-	symbolsState,
 }: CharacterExplorerProps) => {
-	const revalidator = useRevalidator();
-	const catalogExpected = Boolean(registry?.symbols);
+	const catalogExpected = Boolean(registry.symbols);
 	const hasNamedLigatures = usesNameLigatures(registry);
-	const familyKind = getRegistryFamilyKind(registry);
-	const isSymbolFamily = familyKind === 'symbols';
-	const isPunctuationFamily = familyKind === 'punctuation';
-	const isDigitalFamily = familyKind === 'digital';
-	const symbolCount = symbols?.length ?? 0;
+	const supportsCodepoint = useMemo(
+		() => createRegistryCodepointMatcher(capabilities),
+		[capabilities],
+	);
+	const mappedSymbols = useMemo(
+		() =>
+			(symbols as CatalogSymbol[] | undefined)?.filter((symbol) =>
+				supportsCodepoint(symbol.codepoint),
+			),
+		[supportsCodepoint, symbols],
+	);
+	const symbolCount = mappedSymbols?.length ?? 0;
 	const hasCatalogEntries = symbolCount > 0;
-	const previewSubset = getPreferredPreviewSubset(metadata, registry);
-	const isScriptFamily = registry?.primaryScript
-		? registry.primaryScript !== 'Latn'
-		: !isLatinPreviewSubset(previewSubset);
-	const registryPreviewText =
-		registry?.sampleText || isScriptFamily
-			? getRegistryPreviewText(registry, languages, 'long')
-			: undefined;
-	const fallbackText = useMemo(
-		() => registryPreviewText ?? getLanguagePreviewText(previewSubset),
-		[previewSubset, registryPreviewText],
-	);
-	const fallbackGroups = useMemo(
-		() => getFallbackCharacterGroups(fallbackText),
-		[fallbackText],
-	);
 	const [resolvedCharacterGroups, setResolvedCharacterGroups] =
 		useState<ReturnType<typeof getRegistryCharacterGroups>>();
 	useEffect(() => {
 		// Unicode category data is runtime-owned. Resolve after hydration so Node
 		// and browsers with different Unicode versions cannot disagree during SSR.
 		setResolvedCharacterGroups(
-			getRegistryCharacterGroups(capabilities) ??
-				getFallbackCharacterGroups(fallbackText),
+			getExactCharacterGroups(capabilities, catalogExpected),
 		);
-	}, [capabilities, fallbackText]);
+	}, [capabilities, catalogExpected]);
 	const symbolEntries = useMemo(
-		() => symbols?.map(getSymbolSearchKey) ?? [],
-		[symbols],
+		() => mappedSymbols?.map(getSymbolSearchKey) ?? [],
+		[mappedSymbols],
 	);
 	const symbolCategories = useMemo(() => {
-		const entries = symbols as CatalogSymbol[] | undefined;
 		return Array.from(
-			new Set(entries?.flatMap((symbol) => symbol.categories ?? []) ?? []),
+			new Set(
+				mappedSymbols?.flatMap((symbol) => symbol.categories ?? []) ?? [],
+			),
 		).sort((left, right) =>
 			getSymbolCategoryLabel(left).localeCompare(getSymbolCategoryLabel(right)),
 		);
-	}, [symbols]);
+	}, [mappedSymbols]);
 	const symbolCategoriesByKey = useMemo(() => {
-		const entries = symbols as CatalogSymbol[] | undefined;
 		return new Map(
-			entries?.map((symbol) => [
+			mappedSymbols?.map((symbol) => [
 				getSymbolSearchKey(symbol),
 				symbol.categories ?? [],
 			]) ?? [],
 		);
-	}, [symbols]);
+	}, [mappedSymbols]);
 	const symbolSearch = useMemo(
 		() =>
-			hasCatalogEntries && symbols ? createSymbolSearch(symbols) : undefined,
-		[hasCatalogEntries, symbols],
+			hasCatalogEntries && mappedSymbols
+				? createSymbolSearch(mappedSymbols)
+				: undefined,
+		[hasCatalogEntries, mappedSymbols],
 	);
 	const explorerGroups: Record<string, readonly string[]> = useMemo(() => {
 		if (hasCatalogEntries) {
@@ -305,9 +255,8 @@ export const CharacterExplorer = ({
 				]),
 			]);
 		}
-		return resolvedCharacterGroups ?? fallbackGroups;
+		return resolvedCharacterGroups ?? emptyCharacterGroups;
 	}, [
-		fallbackGroups,
 		hasCatalogEntries,
 		resolvedCharacterGroups,
 		symbolCategories,
@@ -340,15 +289,9 @@ export const CharacterExplorer = ({
 	const [selected, setSelected] = useState('');
 	const characterClipboard = useClipboard({ timeout: 1500 });
 	const codeClipboard = useClipboard({ timeout: 1500 });
-	const sourceCSS = capabilitySource
-		? getRegistrySourcePreviewCSS(capabilitySource)
-		: undefined;
-	const previewFamily = sourceCSS
-		? registrySourcePreviewFamily
-		: getFontPreviewFamily(metadata, Boolean(variableCSS));
-	const fontFamily = sourceCSS
-		? `"${previewFamily}", "Fallback Outline"`
-		: getFontFamilyStack(metadata, Boolean(variableCSS), registry);
+	const sourceCSS = getRegistrySourcePreviewCSS(capabilitySource);
+	const previewFamily = registrySourcePreviewFamily;
+	const fontFamily = `"${previewFamily}", "Fallback Outline"`;
 	const deferredQuery = useDeferredValue(query);
 	const searchableCharacters = useMemo(
 		() =>
@@ -373,10 +316,6 @@ export const CharacterExplorer = ({
 				character,
 				hasNamedLigatures,
 			);
-			const catalogName = catalogEntry ? getSymbolName(character) : undefined;
-			const name = normalizeSearchValue(
-				catalogName ?? getCharacterName(displayCharacter),
-			);
 			const searchableCharacter = normalizeSearchValue(displayCharacter);
 			const codePoint = catalogEntry
 				? (getSymbolCodepoint(character)?.toString(16).toLowerCase() ??
@@ -384,7 +323,6 @@ export const CharacterExplorer = ({
 				: getCodePoints(character).toLowerCase();
 			return (
 				searchableCharacter.includes(normalized) ||
-				name.includes(normalized) ||
 				codePoint.includes(normalized)
 			);
 		});
@@ -437,11 +375,6 @@ export const CharacterExplorer = ({
 		? selected
 		: undefined;
 	const focusableCharacter = activeCharacter ?? matchingCharacters[0];
-	const showingFallbackCharacters =
-		!hasCatalogEntries && (!capabilities || !resolvedCharacterGroups);
-	const canRetryExplorer =
-		capabilitiesState === 'unavailable' ||
-		(catalogExpected && symbolsState === 'unavailable');
 	const resultNoun = getResultNoun(
 		activeGroup,
 		matchingCharacters.length,
@@ -450,16 +383,10 @@ export const CharacterExplorer = ({
 	);
 	const resultSummary =
 		matchingCharacters.length === 0
-			? `No matching ${hasCatalogEntries ? 'symbols' : 'characters'}`
-			: `${matchingCharacters.length.toLocaleString('en')} ${resultNoun}${
-					showingFallbackCharacters
-						? capabilities
-							? ' · loading exact source coverage'
-							: capabilitiesState === 'unavailable'
-								? ' · exact coverage temporarily unavailable'
-								: ' · exact coverage is not published'
-						: ''
-				}`;
+			? deferredQuery
+				? `No matching ${hasCatalogEntries ? 'symbols' : 'characters'}`
+				: `No mapped ${hasCatalogEntries ? 'symbols' : 'characters'}`
+			: `${matchingCharacters.length.toLocaleString('en')} ${resultNoun}`;
 	const [announcedResultSummary] = useDebouncedValue(resultSummary, 250);
 	const activeIsCatalogEntry = activeCharacter
 		? isSymbolKey(activeCharacter)
@@ -498,38 +425,21 @@ export const CharacterExplorer = ({
 	const specimenStyle: CSSProperties = {
 		fontFamily,
 		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
-		direction: getPreviewDirection(previewSubset),
+		direction: registry.primaryDirection ?? 'ltr',
 		...sourcePreviewStyle,
 	};
-	const heading = catalogExpected
-		? 'Find a symbol.'
-		: isPunctuationFamily
-			? 'Explore punctuation.'
-			: isDigitalFamily
-				? 'Build a readout.'
-				: isSymbolFamily
-					? 'Explore mapped symbols.'
-					: isScriptFamily
-						? 'Explore the script.'
-						: 'Explore glyphs.';
+	const heading = catalogExpected ? 'Find a symbol.' : 'Explore glyphs.';
 	const description = catalogExpected
-		? hasNamedLigatures
+		? hasCatalogEntries && hasNamedLigatures
 			? `Search symbol names, inspect their mappings, and copy what you need from ${metadata.family}.`
-			: `Search the symbol catalog and copy mapped characters from ${metadata.family}.`
-		: isPunctuationFamily
-			? `Compare punctuation forms and try ${metadata.family} in Japanese context.`
-			: isDigitalFamily
-				? `Compose numbers, labels, and display patterns with ${metadata.family}.`
-				: `Browse characters, inspect their Unicode values, and copy what you need from ${metadata.family}.`;
-	const searchPlaceholder = catalogExpected
-		? hasNamedLigatures
-			? 'Search home, arrow, or settings'
-			: 'Search a symbol name or code point'
-		: isDigitalFamily
-			? 'Search 8, colon, or U+003A'
-			: isScriptFamily
-				? 'Search a character or code point'
-				: 'Search A, ampersand, or U+0026';
+			: hasCatalogEntries
+				? `Search the symbol catalog and copy mapped characters from ${metadata.family}.`
+				: `Browse mapped code points and copy what you need from ${metadata.family}.`
+		: `Browse characters, inspect their Unicode values, and copy what you need from ${metadata.family}.`;
+	const searchPlaceholder =
+		hasCatalogEntries && hasNamedLigatures
+			? 'Search symbols by name or code point'
+			: 'Search characters or code points';
 	const moveGlyphFocus = (
 		event: KeyboardEvent<HTMLButtonElement>,
 		index: number,
@@ -597,7 +507,7 @@ export const CharacterExplorer = ({
 					? activeIsCatalogEntry
 						? 'Selected symbol'
 						: 'Selected character'
-					: catalogExpected || isSymbolFamily
+					: catalogExpected
 						? 'Symbol details'
 						: 'Character details'
 			}
@@ -663,13 +573,9 @@ export const CharacterExplorer = ({
 				</>
 			) : (
 				<div className={classes.inspectorEmpty}>
-					<h3>
-						{catalogExpected || isSymbolFamily
-							? 'Select a symbol'
-							: 'Select a character'}
-					</h3>
+					<h3>{catalogExpected ? 'Select a symbol' : 'Select a character'}</h3>
 					<p>
-						{catalogExpected || isSymbolFamily
+						{catalogExpected
 							? 'Choose any symbol to inspect its mapping and copy it.'
 							: 'Choose any glyph to inspect its Unicode value and copy it.'}
 					</p>
@@ -682,9 +588,7 @@ export const CharacterExplorer = ({
 		<section className={classes.page} aria-labelledby="characters-heading">
 			<style
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-				dangerouslySetInnerHTML={{
-					__html: sourceCSS ?? variableCSS ?? staticCSS,
-				}}
+				dangerouslySetInnerHTML={{ __html: sourceCSS }}
 			/>
 
 			<div className={classes.headingRow}>
@@ -701,7 +605,7 @@ export const CharacterExplorer = ({
 				>
 					<IconSearch aria-hidden height={18} />
 					<VisuallyHidden>
-						{catalogExpected ? 'Search symbols' : 'Search characters'}
+						{hasCatalogEntries ? 'Search symbols' : 'Search characters'}
 					</VisuallyHidden>
 					<input
 						id={`character-search-${metadata.id}`}
@@ -754,15 +658,6 @@ export const CharacterExplorer = ({
 				<span aria-live="polite" aria-atomic="true">
 					{announcedResultSummary}
 				</span>
-				{canRetryExplorer && (
-					<button
-						type="button"
-						disabled={revalidator.state !== 'idle'}
-						onClick={() => void revalidator.revalidate()}
-					>
-						{revalidator.state === 'idle' ? 'Try again' : 'Checking Registry…'}
-					</button>
-				)}
 			</div>
 
 			<FontSkeleton
@@ -843,10 +738,10 @@ export const CharacterExplorer = ({
 							{matchingCharacters.length === 0 && (
 								<div className={classes.empty}>
 									<p>
-										{catalogExpected && symbolsState === 'unavailable'
-											? 'The symbol catalog is temporarily unavailable.'
+										{!resolvedCharacterGroups
+											? 'Exact source coverage is not published for this font.'
 											: query
-												? `No ${catalogExpected ? 'symbols' : 'characters'} match “${query}”.`
+												? `No ${hasCatalogEntries ? 'symbols' : 'characters'} match “${query}”.`
 												: 'No mapped characters are available for this source.'}
 									</p>
 									{query && (

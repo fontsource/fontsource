@@ -28,13 +28,12 @@ import {
 	IconX,
 } from '@tabler/icons-react';
 import { type FormEvent, useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
 
 import { useCurrentProjectStoreOptional } from '@/features/projects/CurrentProjectProvider';
-import type { FontSummary } from '@/utils/font-summary';
 import classes from './CollectionManager.module.css';
 import menuClasses from './CollectionMenu.module.css';
 import { useCollectionsStore } from './CollectionsProvider';
+import type { CollectionFontLabel } from './model';
 import {
 	formatCollectionName,
 	getCollectionNameLength,
@@ -43,7 +42,7 @@ import {
 } from './model';
 
 interface CreateCollectionModalProps {
-	fonts?: readonly FontSummary[];
+	fonts?: readonly CollectionFontLabel[];
 	onClose: () => void;
 	onCreated?: (collectionId: string) => void;
 	onExitTransitionEnd: () => void;
@@ -156,12 +155,6 @@ const CreateCollectionModal = ({
 								<Text className={classes['context-copy']} fz="sm">
 									{fontLabel} will be added to this collection
 								</Text>
-								{fontCount === 1 && (
-									<Text c="dimmed" fz="sm">
-										{fonts[0].category} ·{' '}
-										{fonts[0].variable ? 'variable' : 'static'}
-									</Text>
-								)}
 							</div>
 						)}
 						<Group className={classes['create-actions']} justify="flex-end">
@@ -190,7 +183,6 @@ const ManageCollectionsModal = ({
 }: ManageCollectionsModalProps) => {
 	const store = useCollectionsStore();
 	const projectStore = useCurrentProjectStoreOptional();
-	const navigate = useNavigate();
 	const collections = useValue(store.getCollections);
 	const fontCache = useValue(store.state$.fontCache);
 	const fontSetReady = useValue(() => projectStore?.ready$.get() ?? false);
@@ -263,23 +255,12 @@ const ManageCollectionsModal = ({
 			existingCount > 0
 				? `${existingCount} already in your font set`
 				: undefined,
-			limitReached ? 'font set limit reached' : undefined,
+			skippedCount > 0
+				? `${skippedCount} skipped because the font set is full`
+				: undefined,
+			limitReached && skippedCount === 0 ? 'font set limit reached' : undefined,
 		].filter(Boolean);
 		setAnnouncement(`${collection.name}: ${importSummary.join(', ')}.`);
-		setQuery('');
-		setEditingId(null);
-		setPendingDeleteId(null);
-		onClose();
-		navigate('/selected-fonts', {
-			state: {
-				fontSetImport: {
-					collectionName: collection.name,
-					addedCount,
-					existingCount,
-					skippedCount,
-				},
-			},
-		});
 	};
 
 	return (

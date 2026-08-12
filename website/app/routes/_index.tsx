@@ -3,7 +3,7 @@ import { observable } from '@legendapp/state';
 import { useObservable, useValue } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
-import type { UiState } from 'instantsearch.js';
+import type { SearchClient, UiState } from 'instantsearch.js';
 import { history } from 'instantsearch.js/es/lib/routers';
 import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
 import type { RouterProps } from 'instantsearch.js/es/middlewares';
@@ -22,6 +22,7 @@ import {
 	type LinksFunction,
 	type LoaderFunctionArgs,
 	type MetaFunction,
+	StaticRouter,
 	useLoaderData,
 	useNavigate,
 	useNavigation,
@@ -39,8 +40,6 @@ import {
 	CollectionsProvider,
 	useCollectionsStore,
 } from '@/features/collections/CollectionsProvider';
-import { normalizeCollectionName } from '@/features/collections/model';
-import type { CollectionsStore } from '@/features/collections/store';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
 import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
@@ -69,7 +68,14 @@ interface SearchRouteState {
 
 const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 const ALGOLIA_APP_ID = 'WNATE69PVR';
-const attributesToRetrieve = ['family', 'defSubset', 'category', 'variable'];
+const attributesToRetrieve = [
+	'family',
+	'defSubset',
+	'category',
+	'variable',
+	'previewSubset',
+	'sampleText',
+];
 
 const searchClient = algoliasearch(
 	ALGOLIA_APP_ID,
@@ -78,6 +84,37 @@ const searchClient = algoliasearch(
 		requester: createFetchRequester(),
 	},
 );
+
+export const getSearchServerState = (
+	serverUrl: string,
+	discovery?: DiscoveryPage,
+	client: SearchClient = searchClient,
+) => {
+	const state$ = observable(createPageSearchState(discovery));
+	const requestUrl = new URL(serverUrl);
+
+	return getServerState(
+		<StaticRouter location={`${requestUrl.pathname}${requestUrl.search}`}>
+			<MantineProvider theme={theme}>
+				<InstantSearchSSRProvider>
+					<InstantSearch
+						searchClient={client}
+						indexName="prod_POPULAR"
+						routing={routing(serverUrl, state$, discovery)}
+						future={{ preserveSharedStateOnUnmount: true }}
+					>
+						<CollectionsProvider>
+							<Configure attributesToRetrieve={attributesToRetrieve} />
+							<Filters state$={state$} />
+							<InfiniteHits state$={state$} />
+						</CollectionsProvider>
+					</InstantSearch>
+				</InstantSearchSSRProvider>
+			</MantineProvider>
+		</StaticRouter>,
+		{ renderToString },
+	);
+};
 
 export const links: LinksFunction = () => [
 	{
@@ -135,7 +172,6 @@ const createPageSearchState = (discovery?: DiscoveryPage) => {
 const routing = (
 	serverUrl: string,
 	state$: SearchState,
-	collectionsStore?: CollectionsStore,
 	discovery?: DiscoveryPage,
 	navigate?: (url: string) => void,
 ): RouterProps<UiState, SearchRouteState> => {
@@ -170,14 +206,10 @@ const routing = (
 		stateMapping: {
 			stateToRoute(uiState) {
 				const index = uiState[indexName];
-				// Collection selection lives in Legend rather than InstantSearch state.
 				const collectionId = state$.collectionId.peek();
-				const collectionName = collectionsStore?.collections$
-					.peek()
-					.find((collection) => collection.id === collectionId)?.name;
 				const result = {
 					query: index.query,
-					...(collectionName ? { collection: collectionName } : {}),
+					...(collectionId ? { collection: collectionId } : {}),
 					// RefinementList facets
 					...(index.refinementList?.subsets
 						? { subsets: index.refinementList.subsets.join(',') }
@@ -196,17 +228,7 @@ const routing = (
 					? { ...discovery.routeState, ...routeState }
 					: routeState;
 				const subsets = parseSubsets(resolvedRouteState.subsets);
-				// URLs use readable collection names while state keeps the stable local ID.
-				const normalizedCollectionName = resolvedRouteState.collection
-					? normalizeCollectionName(resolvedRouteState.collection)
-					: undefined;
-				const collection = collectionsStore?.collections$
-					.peek()
-					.find(
-						(item) =>
-							normalizeCollectionName(item.name) === normalizedCollectionName,
-					);
-				state$.collectionId.set(collection?.id ?? null);
+				state$.collectionId.set(resolvedRouteState.collection ?? null);
 
 				const state = {
 					query: resolvedRouteState.query,
@@ -255,9 +277,6 @@ export const loadSearch = async (
 	const { ALGOLIA } = env;
 	const cacheKey = buildAlgoliaCacheKey(serverUrl);
 
-	// Generate default state object for ssr
-	const state$ = observable(createPageSearchState(discovery));
-
 	// Check local cache for server state first to avoid unnecessary API calls
 	let serverState = cacheKey
 		? await ALGOLIA.get<InstantSearchServerState>(cacheKey, 'json')
@@ -276,27 +295,7 @@ export const loadSearch = async (
 		);
 	}
 
-	serverState = await getServerState(
-		<MantineProvider theme={theme}>
-			<InstantSearchSSRProvider>
-				<InstantSearch
-					searchClient={searchClient}
-					indexName="prod_POPULAR"
-					routing={routing(serverUrl, state$, undefined, discovery)}
-					future={{ preserveSharedStateOnUnmount: true }}
-				>
-					<CollectionsProvider>
-						<Configure attributesToRetrieve={attributesToRetrieve} />
-						<Filters state$={state$} />
-						<InfiniteHits state$={state$} />
-					</CollectionsProvider>
-				</InstantSearch>
-			</InstantSearchSSRProvider>
-		</MantineProvider>,
-		{
-			renderToString,
-		},
-	);
+	serverState = await getSearchServerState(serverUrl, discovery);
 
 	// Add server state to local cache before responding
 	if (cacheKey) {
@@ -338,7 +337,7 @@ export function CatalogSearchPage() {
 	};
 
 	const state$ = useObservable(createPageSearchState(discovery));
-	// Resolve the collection name only after Legend has restored local persistence.
+	// Avoid clearing a persisted collection before Legend restores it.
 	if (hasCollectionFilter && !collectionsReady) return null;
 
 	return (
@@ -349,7 +348,6 @@ export function CatalogSearchPage() {
 				routing={routing(
 					serverUrl,
 					state$,
-					collectionsStore,
 					discovery,
 					discovery ? navigateSearch : undefined,
 				)}

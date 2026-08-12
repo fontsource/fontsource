@@ -1,42 +1,21 @@
 import { z } from 'zod';
 
+import type { ListRegistryFamiliesResponse } from '@/generated/api';
+
 const MAX_FONT_SET_SIZE = 100;
 
 interface ResolvedFontSetFamily {
 	familyId: string;
 	family: string;
-	displayName: string;
-	category:
-		| 'sans-serif'
-		| 'serif'
-		| 'display'
-		| 'handwriting'
-		| 'monospace'
-		| 'icons'
-		| 'other';
-	classification: string;
-	tags: string[];
+	classification: ListRegistryFamiliesResponse[number]['classifications'][number];
 	designer?: string;
-	status: 'active' | 'deprecated';
-	registryFactsCurrent: boolean;
-	variableAvailable: boolean;
-	defaultSubset: string;
-	format: 'variable' | 'static';
-	subset: string;
-	style: 'normal' | 'italic';
-	weight: number;
-	axes: Record<string, number>;
 	packageName: string;
 	packageVersion: string;
-	cssFile: string;
 	fontFamily: string;
-	sampleText: string;
-	symbolInputModes: Array<'codepoint' | 'name-ligature'>;
+	previewText?: string;
 	license: {
-		verified: boolean;
-		id?: string;
+		id: string;
 		url?: string;
-		attribution?: string;
 	};
 }
 

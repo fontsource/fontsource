@@ -59,9 +59,7 @@ const FontCard = ({
 		font.category === 'other';
 	const previewText =
 		preview ||
-		(isNotLatin
-			? getPreviewText(font.defSubset, font.id)
-			: getPreviewText('latin'));
+		(isNotLatin ? getPreviewText(font.defSubset) : getPreviewText('latin'));
 
 	return (
 		<Box

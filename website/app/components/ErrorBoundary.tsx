@@ -37,6 +37,11 @@ export function ErrorBoundary() {
 			description =
 				responseMessage ??
 				'The upstream service could not complete the request. Please try again.';
+		} else if (status === 503) {
+			title = 'Temporarily unavailable';
+			description =
+				responseMessage ??
+				'This page is unavailable right now. Please try again.';
 		} else {
 			title = 'Server error';
 			description = responseMessage ?? error.statusText ?? description;

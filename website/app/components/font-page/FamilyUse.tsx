@@ -1,4 +1,4 @@
-import { Tabs, VisuallyHidden } from '@mantine/core';
+import { SegmentedControl, Tabs, VisuallyHidden } from '@mantine/core';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
@@ -21,8 +21,7 @@ import {
 	formatFontLabel,
 	getAxisLabel,
 } from '@/utils/font-labels';
-import { getPreferredPreviewSubset } from '@/utils/font-preview';
-import type { RegistryDataState, RegistryFamily } from '@/utils/registry';
+import type { RegistryFamily } from '@/utils/registry';
 
 import classes from './FamilyUse.module.css';
 import {
@@ -30,18 +29,14 @@ import {
 	buildFamilyUseCSS,
 	type FontDisplay,
 	fontDisplays,
-	type WebFontFormat,
-	webFontFormats,
 } from './family-use-css';
-import { LicenseReceipt } from './LicenseReceipt';
 
 interface FamilyUseProps {
 	metadata: GetFontResponse;
 	versions: GetFontVersionsResponse;
 	variable?: GetVariableFontResponse;
 	previewCSS: string;
-	registry?: RegistryFamily;
-	registryState: RegistryDataState;
+	registry: RegistryFamily;
 	subsetDefinitions?: GetRegistrySubsetResponse[];
 }
 
@@ -126,13 +121,11 @@ export const FamilyUse = ({
 	variable,
 	versions,
 	registry,
-	registryState,
 	subsetDefinitions,
 }: FamilyUseProps) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const supportsVariable = Boolean(variable && versions.latestVariable);
 	const supportsStatic = Boolean(versions.latest);
-	const preferredSubset = getPreferredPreviewSubset(metadata, registry);
 	const recommendedStyle = metadata.styles.includes('normal')
 		? 'normal'
 		: (metadata.styles[0] ?? 'normal');
@@ -171,12 +164,8 @@ export const FamilyUse = ({
 	const [selectedWeights, setSelectedWeights] = useState<number[]>([
 		recommendedWeight,
 	]);
-	const selectedSubsets = metadata.subsets.length
-		? metadata.subsets
-		: [preferredSubset];
 	const [activeAxes, setActiveAxes] = useState<string[]>(defaultActiveAxes);
 	const [fontDisplay, setFontDisplay] = useState<FontDisplay>('swap');
-	const [formats, setFormats] = useState<WebFontFormat[]>(['woff2']);
 	const [packageManager, setPackageManager] = usePackageManager('npm');
 	const isVariable = format === 'variable' && supportsVariable;
 	const availableStyles = [
@@ -197,8 +186,7 @@ export const FamilyUse = ({
 		fontDisplay === 'swap' &&
 		(isVariable
 			? sameValues(activeAxes, defaultActiveAxes)
-			: sameValues(weights, [recommendedWeight]) &&
-				sameValues(formats, ['woff2']));
+			: sameValues(weights, [recommendedWeight]));
 	const packageName = isVariable
 		? `@fontsource-variable/${metadata.id}`
 		: `@fontsource/${metadata.id}`;
@@ -214,9 +202,8 @@ export const FamilyUse = ({
 				isVariable,
 				styles,
 				weights: isVariable ? metadata.weights : weights,
-				subsets: selectedSubsets,
+				subsets: metadata.subsets,
 				activeAxes,
-				formats,
 				display: fontDisplay,
 				version: packageVersion,
 				subsetDefinitions,
@@ -271,7 +258,6 @@ export const FamilyUse = ({
 		setSelectedWeights([recommendedWeight]);
 		setActiveAxes(defaultActiveAxes);
 		setFontDisplay('swap');
-		setFormats(['woff2']);
 	};
 	const formatDescription = isVariable
 		? `Covers every weight from ${variableWeightRange} in each selected style. Best for flexible typography.`
@@ -379,11 +365,12 @@ export const FamilyUse = ({
 								Download complete family (.zip)
 								<VisuallyHidden> (opens in a new tab)</VisuallyHidden>
 							</a>
-							<LicenseReceipt
-								familyId={metadata.id}
-								license={registry?.license}
-								registryState={registryState}
-							/>
+							<Link
+								className={classes.licenseLink}
+								to={`/fonts/${metadata.id}/about#license`}
+							>
+								Read the {registry.license.id} license
+							</Link>
 						</div>
 					</div>
 				</Tabs.Panel>
@@ -393,61 +380,29 @@ export const FamilyUse = ({
 						<div className={classes.deliveryHeader}>
 							<fieldset className={classes.controlGroup}>
 								<legend className={classes.controlLabel}>Delivery</legend>
-								<div className={classes.methodSwitch}>
-									<button
-										type="button"
-										data-active={method === 'package' || undefined}
-										aria-pressed={method === 'package'}
-										onClick={() => {
-											if (method !== 'package') {
-												setNavigationChoice('method', 'package');
-											}
-										}}
-									>
-										Package
-									</button>
-									<button
-										type="button"
-										data-active={method === 'cdn' || undefined}
-										aria-pressed={method === 'cdn'}
-										onClick={() => {
-											if (method !== 'cdn') {
-												setNavigationChoice('method', 'cdn');
-											}
-										}}
-									>
-										CDN
-									</button>
-								</div>
+								<SegmentedControl<Method>
+									className={classes.methodSwitch}
+									fullWidth
+									value={method}
+									data={[
+										{ label: 'Package', value: 'package' },
+										{ label: 'CDN', value: 'cdn' },
+									]}
+									onChange={(value) => setNavigationChoice('method', value)}
+								/>
 							</fieldset>
 							<fieldset className={classes.controlGroup}>
 								<legend className={classes.controlLabel}>CSS output</legend>
-								<div className={classes.setupSwitch}>
-									<button
-										type="button"
-										data-active={!customSetup || undefined}
-										aria-pressed={!customSetup}
-										onClick={() => {
-											if (customSetup) {
-												setNavigationChoice('setup', 'simple');
-											}
-										}}
-									>
-										Standard
-									</button>
-									<button
-										type="button"
-										data-active={customSetup || undefined}
-										aria-pressed={customSetup}
-										onClick={() => {
-											if (!customSetup) {
-												setNavigationChoice('setup', 'custom');
-											}
-										}}
-									>
-										Custom CSS
-									</button>
-								</div>
+								<SegmentedControl<'simple' | 'custom'>
+									className={classes.setupSwitch}
+									fullWidth
+									value={customSetup ? 'custom' : 'simple'}
+									data={[
+										{ label: 'Standard', value: 'simple' },
+										{ label: 'Custom CSS', value: 'custom' },
+									]}
+									onChange={(value) => setNavigationChoice('setup', value)}
+								/>
 							</fieldset>
 
 							<p className={classes.deliveryNote}>
@@ -487,24 +442,15 @@ export const FamilyUse = ({
 										aria-describedby="font-format-help"
 									>
 										<legend>Font type</legend>
-										<div>
-											<button
-												type="button"
-												data-active={isVariable || undefined}
-												aria-pressed={isVariable}
-												onClick={() => setFormat('variable')}
-											>
-												Variable
-											</button>
-											<button
-												type="button"
-												data-active={!isVariable || undefined}
-												aria-pressed={!isVariable}
-												onClick={() => setFormat('static')}
-											>
-												Static
-											</button>
-										</div>
+										<SegmentedControl<FamilyFormat>
+											className={classes.formatControl}
+											value={format}
+											data={[
+												{ label: 'Variable', value: 'variable' },
+												{ label: 'Static', value: 'static' },
+											]}
+											onChange={setFormat}
+										/>
 										<p className={classes.selectionHelp} id="font-format-help">
 											{formatDescription}
 										</p>
@@ -586,22 +532,6 @@ export const FamilyUse = ({
 										))}
 									</div>
 								</fieldset>
-
-								{!isVariable && (
-									<RequiredOptionGroup
-										description="WOFF2 is the default. Add WOFF only for older browser support."
-										id={`${metadata.id}-web-format`}
-										legend="Webfont formats"
-										onChange={(webFormat) =>
-											setFormats((current) =>
-												toggleRequiredValue(current, webFormat, webFontFormats),
-											)
-										}
-										options={webFontFormats}
-										selected={formats}
-										toLabel={(webFormat) => webFormat.toUpperCase()}
-									/>
-								)}
 							</div>
 						)}
 
@@ -611,21 +541,12 @@ export const FamilyUse = ({
 									<div className={classes.instructionBody}>
 										<fieldset className={classes.manager}>
 											<legend>Package manager</legend>
-											<div>
-												{packageManagers.map((manager) => (
-													<button
-														key={manager.value}
-														type="button"
-														data-active={
-															packageManager === manager.value || undefined
-														}
-														aria-pressed={packageManager === manager.value}
-														onClick={() => setPackageManager(manager.value)}
-													>
-														{manager.value}
-													</button>
-												))}
-											</div>
+											<SegmentedControl
+												className={classes.managerControl}
+												value={packageManager}
+												data={packageManagers.map(({ value }) => value)}
+												onChange={setPackageManager}
+											/>
 										</fieldset>
 										<CopyCodeBlock
 											code={installCommand}

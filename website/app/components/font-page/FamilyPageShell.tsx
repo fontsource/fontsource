@@ -29,7 +29,7 @@ type FontPageLocationState = { fontResults?: string };
 
 interface FamilyPageShellProps {
 	metadata: GetFontResponse;
-	registry?: RegistryFamily;
+	registry: RegistryFamily;
 	previewSource?: RegistrySource;
 	variable?: GetVariableFontResponse;
 	tabsValue: FamilyTab;
@@ -58,7 +58,7 @@ export const FamilyIdentity = ({
 	compact = false,
 }: {
 	metadata: GetFontResponse;
-	registry?: RegistryFamily;
+	registry: RegistryFamily;
 	previewSource?: RegistrySource;
 	variableAvailable?: boolean;
 	compact?: boolean;
@@ -78,14 +78,12 @@ export const FamilyIdentity = ({
 	const showDescriptionLink = Boolean(
 		descriptionSummary && descriptionSummary.length > 180,
 	);
-	const attribution = registry?.designer;
-	const classification = registry?.classifications[0]
+	const attribution = registry.designer;
+	const classification = registry.classifications[0]
 		? formatFontLabel(registry.classifications[0])
 		: category;
-	const tags = registry?.tags.slice(0, 2) ?? [];
-	const useSpecimenTitle = registry
-		? getRegistryFamilyKind(registry) === 'text'
-		: metadata.category !== 'icons' && metadata.category !== 'other';
+	const tags = registry.tags.slice(0, 2);
+	const useSpecimenTitle = getRegistryFamilyKind(registry) === 'text';
 
 	const title = (
 		<Title
@@ -96,7 +94,7 @@ export const FamilyIdentity = ({
 				useSpecimenTitle ? { fontFamily, ...sourcePreviewStyle } : undefined
 			}
 		>
-			{registry?.displayName ?? metadata.family}
+			{registry.displayName ?? metadata.family}
 		</Title>
 	);
 
@@ -137,7 +135,7 @@ export const FamilyIdentity = ({
 							className={classes.descriptionLink}
 							to={`/fonts/${metadata.id}/about`}
 						>
-							Read more about {registry?.displayName ?? metadata.family}
+							Read more about {registry.displayName ?? metadata.family}
 						</Link>
 					)}
 					<Text className={classes.source}>
@@ -181,7 +179,7 @@ export const FamilyActions = ({
 	showGetFont = true,
 }: {
 	metadata: GetFontResponse;
-	registry?: RegistryFamily;
+	registry: RegistryFamily;
 	compact?: boolean;
 	showGetFont?: boolean;
 }) => {
@@ -201,7 +199,7 @@ export const FamilyActions = ({
 				<AddToCollectionMenu font={fontSummary} />
 			</div>
 			<ProjectAddButton
-				displayName={registry?.displayName ?? metadata.family}
+				displayName={registry.displayName ?? metadata.family}
 				familyId={metadata.id}
 				label="Add to font set"
 				includedLabel="In font set"
@@ -226,7 +224,7 @@ export const FamilyTabs = ({
 	contained = false,
 }: {
 	metadata: GetFontResponse;
-	registry?: RegistryFamily;
+	registry: RegistryFamily;
 	contained?: boolean;
 }) => {
 	const location = useLocation();
@@ -305,7 +303,7 @@ export const FamilyPageShell = ({
 
 			{!isPreview && <FamilyTabs metadata={metadata} registry={registry} />}
 
-			{registry?.status === 'deprecated' && (
+			{registry.status === 'deprecated' && (
 				<div className={classes.statusNotice} role="status">
 					<strong>This family is no longer actively maintained.</strong>
 					<span>

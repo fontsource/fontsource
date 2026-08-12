@@ -6,7 +6,6 @@ import type {
 } from '../generated/api';
 import { jsDelivrResolver } from './cdn';
 import {
-	getRegistryFamilyKind,
 	getRegistrySourcePreviewStyle,
 	type RegistryFamily,
 	type RegistrySource,
@@ -19,30 +18,7 @@ type PreviewLanguage = {
 	script: string;
 };
 
-const latinPreviewSubsets = new Set([
-	'all',
-	'latin',
-	'latin-ext',
-	'vietnamese',
-]);
-const rtlPreviewSubsets = new Set([
-	'adlam',
-	'arabic',
-	'hebrew',
-	'mandaic',
-	'nko',
-	'samaritan',
-	'syriac',
-	'thaana',
-]);
-
 export const registrySourcePreviewFamily = 'Fontsource Registry Preview';
-
-export const isLatinPreviewSubset = (subset: string) =>
-	latinPreviewSubsets.has(subset);
-
-export const getPreviewDirection = (subset: string): 'ltr' | 'rtl' =>
-	rtlPreviewSubsets.has(subset) ? 'rtl' : 'ltr';
 
 export const getPreviewLanguageTag = (language?: PreviewLanguage) =>
 	language ? `${language.language}-${language.script}` : undefined;
@@ -82,15 +58,13 @@ export const getRegistrySourcePreviewCSS = (
 };
 
 export const selectRegistryPreviewSource = (
-	registry: RegistryFamily | undefined,
+	registry: RegistryFamily,
 	options: {
 		variableAvailable: boolean;
 		style: 'normal' | 'italic';
 		weight: number;
 	},
 ) => {
-	if (!registry) return;
-
 	const sourceByHash = new Map(
 		registry.sources.map((source) => [source.sha256, source]),
 	);
@@ -122,29 +96,37 @@ export const selectRegistryPreviewSource = (
 
 export const getPreferredPreviewSubset = (
 	metadata: GetFontResponse,
-	registry?: RegistryFamily,
+	registry: RegistryFamily,
 ) =>
-	registry?.previewSubset && metadata.subsets.includes(registry.previewSubset)
+	registry.previewSubset && metadata.subsets.includes(registry.previewSubset)
 		? registry.previewSubset
 		: metadata.defSubset;
 
 export const getFontFamilyStack = (
 	metadata: FontPreviewIdentity,
 	variableAvailable = metadata.variable,
-	registry?: RegistryFamily,
+	registry: RegistryFamily,
 ) => {
 	const family = getFontPreviewFamily(metadata, variableAvailable);
-
-	const familyKind = getRegistryFamilyKind(registry);
-	if (familyKind === 'punctuation') {
-		return `"${family}", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif`;
-	}
-
-	if (familyKind === 'digital') {
-		return `"${family}", ui-monospace, monospace`;
-	}
-
-	return `"${family}", "Fallback Outline"`;
+	const genericFamilies = new Set([
+		'sans-serif',
+		'serif',
+		'monospace',
+		'cursive',
+		'fantasy',
+		'system-ui',
+		'ui-sans-serif',
+		'ui-serif',
+		'ui-monospace',
+		'ui-rounded',
+	]);
+	const fallbacks = registry.previewContext?.fallbackFamilies ?? [
+		'Fallback Outline',
+	];
+	const quotedFallbacks = fallbacks.map((fallback) =>
+		genericFamilies.has(fallback) ? fallback : `"${fallback}"`,
+	);
+	return [`"${family}"`, ...quotedFallbacks].join(', ');
 };
 export const getFontPreviewCSS = (
 	metadata: GetFontResponse,

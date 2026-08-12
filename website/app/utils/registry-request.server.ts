@@ -1,10 +1,3 @@
-import type { RegistryDataState } from '@/utils/registry';
-
-interface RegistryRequestResult<T> {
-	value?: T;
-	state: RegistryDataState;
-}
-
 const isRecord = (value: unknown): value is Record<string, unknown> =>
 	typeof value === 'object' && value !== null;
 
@@ -27,15 +20,41 @@ const isAbortError = (error: unknown) =>
 const loadOptionalRegistryData = async <T>(
 	request: Promise<T>,
 	signal?: AbortSignal,
-): Promise<RegistryRequestResult<T>> => {
+	resource = 'Optional font data',
+): Promise<T | undefined> => {
 	try {
-		return { value: await request, state: 'available' };
+		return await request;
 	} catch (error) {
 		if (signal?.aborted || isAbortError(error)) throw error;
-		return {
-			state: getResponseStatus(error) === 404 ? 'not-found' : 'unavailable',
-		};
+		if (getResponseStatus(error) === 404) return undefined;
+		throw new Response(`${resource} is temporarily unavailable.`, {
+			status: 503,
+			statusText: 'Service Unavailable',
+		});
 	}
 };
 
-export { loadOptionalRegistryData };
+const loadRequiredRegistryData = async <T>(
+	request: Promise<T>,
+	signal?: AbortSignal,
+	resource = 'Font data',
+): Promise<T> => {
+	try {
+		return await request;
+	} catch (error) {
+		if (signal?.aborted || isAbortError(error)) throw error;
+		const status = getResponseStatus(error);
+		if (status === 404) {
+			throw new Response(`${resource} was not found.`, {
+				status: 404,
+				statusText: 'Not Found',
+			});
+		}
+		throw new Response(`${resource} is temporarily unavailable.`, {
+			status: 503,
+			statusText: 'Service Unavailable',
+		});
+	}
+};
+
+export { loadOptionalRegistryData, loadRequiredRegistryData };

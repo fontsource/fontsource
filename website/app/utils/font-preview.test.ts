@@ -3,7 +3,6 @@ import type { GetFontResponse } from '@/generated/api';
 import {
 	getFontFamilyStack,
 	getPreferredPreviewSubset,
-	getPreviewDirection,
 	getPreviewLanguageTag,
 	getRegistrySourcePreviewCSS,
 	selectRegistryPreviewSource,
@@ -41,15 +40,15 @@ describe('getFontFamilyStack', () => {
 			variable: true,
 		};
 
-		expect(getFontFamilyStack(metadata, false)).toBe(
+		expect(getFontFamilyStack(metadata, false, registry)).toBe(
 			'"Fraunces", "Fallback Outline"',
 		);
-		expect(getFontFamilyStack(metadata, true)).toBe(
+		expect(getFontFamilyStack(metadata, true, registry)).toBe(
 			'"Fraunces Variable", "Fallback Outline"',
 		);
 	});
 
-	it('uses specialist registry tags instead of family IDs', () => {
+	it('uses a Registry preview context instead of family IDs', () => {
 		const metadata = {
 			id: 'unrelated-name',
 			family: 'Specialist',
@@ -59,15 +58,11 @@ describe('getFontFamilyStack', () => {
 		expect(
 			getFontFamilyStack(metadata, false, {
 				...registry,
-				tags: ['special-use/punctuation'],
+				previewContext: {
+					fallbackFamilies: ['Noto Sans JP', 'sans-serif'],
+				},
 			}),
 		).toContain('"Noto Sans JP", sans-serif');
-		expect(
-			getFontFamilyStack(metadata, false, {
-				...registry,
-				tags: ['special-use/digital-display'],
-			}),
-		).toContain('ui-monospace, monospace');
 	});
 });
 
@@ -97,11 +92,6 @@ describe('preview language semantics', () => {
 			'ar-Arab',
 		);
 		expect(getPreviewLanguageTag()).toBeUndefined();
-	});
-
-	it('preserves right-to-left direction for known preview subsets', () => {
-		expect(getPreviewDirection('arabic')).toBe('rtl');
-		expect(getPreviewDirection('latin')).toBe('ltr');
 	});
 });
 

@@ -13,12 +13,6 @@ describe('getPreviewText', () => {
 		);
 	});
 
-	it('prefers a family-specific preview', () => {
-		expect(getPreviewText('latin', 'material-symbols-outlined')).toBe(
-			'searchsettingshomepersonaddshopping_cartcheck_circlefavoritelogouttrophy',
-		);
-	});
-
 	it('uses the Latin fallback for an unknown subset', () => {
 		expect(getPreviewText('unknown')).toBe(
 			'Sphinx of black quartz, judge my vow.',

@@ -15,7 +15,6 @@ import { fontWeightNames } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
 	getFontPreviewFamily,
-	getPreviewDirection,
 	getPreviewLanguageTag,
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
@@ -38,17 +37,6 @@ import { FontSkeleton } from './FontSkeleton';
 
 const symbolModeLabels = [{ label: 'Symbols', value: 'headline' as const }];
 
-const rtlScripts = new Set([
-	'Adlm',
-	'Arab',
-	'Hebr',
-	'Mand',
-	'Nkoo',
-	'Samr',
-	'Syrc',
-	'Thaa',
-]);
-
 const PreviewToolbar = observer(() => {
 	const model = usePreviewEditor();
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -65,11 +53,8 @@ const PreviewToolbar = observer(() => {
 	const selectedLanguage = verifiedLanguages.find(
 		(language) => language.id === selectedLanguageId,
 	);
-	const previewDirection = selectedLanguage
-		? rtlScripts.has(selectedLanguage.script)
-			? 'rtl'
-			: 'ltr'
-		: getPreviewDirection(model.previewSubset);
+	const previewDirection =
+		selectedLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
 	const StartAlignmentIcon =
 		previewDirection === 'rtl' ? IconAlignRight : IconAlignLeft;
 	const EndAlignmentIcon =
@@ -143,7 +128,6 @@ const PreviewToolbar = observer(() => {
 							ariaLabel="Preview language"
 							items={languageItems}
 							searchable={verifiedLanguages.length > 6}
-							searchPlaceholder={`Search ${verifiedLanguages.length.toLocaleString('en')} languages`}
 							refine={selectLanguage}
 							w="100%"
 							dropdownWidth={280}
@@ -213,11 +197,8 @@ const PreviewCanvas = observer(() => {
 				Boolean(model.variable),
 				model.registry,
 			);
-	const previewDirection = selectedLanguage
-		? rtlScripts.has(selectedLanguage.script)
-			? 'rtl'
-			: 'ltr'
-		: getPreviewDirection(model.previewSubset);
+	const previewDirection =
+		selectedLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
 	const previewLanguage = getPreviewLanguageTag(selectedLanguage);
 	const hasNamedLigatures = usesNameLigatures(model.registry);
 	const featureSettings = [

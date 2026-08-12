@@ -17,31 +17,17 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
 	const subsetDefinitionsPromise = basePromise.then(async (base) => {
-		const characters = base.registry?.distribution.characters;
-		if (base.registryState !== 'available' || characters?.type !== 'subsets') {
+		const characters = base.registry.distribution.characters;
+		if (characters?.type !== 'subsets') {
 			return [];
 		}
 		const slicing = characters.slicing;
 		if (!slicing) return [];
-		const slicingTokens = slicing
-			.split('-')
-			.filter((token) => token !== 'web')
-			.sort()
-			.join('-');
-		const slicedSubset = characters.subsets.find(
-			(subset) => subset.id.split('-').sort().join('-') === slicingTokens,
+		const definition = await getRegistrySubset(
+			{ id: slicing.definition },
+			{ signal: request.signal },
 		);
-		if (!slicedSubset) return [];
-		try {
-			const definition = await getRegistrySubset(
-				{ id: slicing },
-				{ signal: request.signal },
-			);
-			return [{ ...definition, id: slicedSubset.id }];
-		} catch (error) {
-			if (request.signal.aborted) throw error;
-			return [];
-		}
+		return [{ ...definition, id: slicing.subset }];
 	});
 	const [base, subsetDefinitions] = await Promise.all([
 		basePromise,
@@ -92,7 +78,6 @@ export default function UsePage() {
 		variableCSS,
 		versions,
 		registry,
-		registryState,
 		subsetDefinitions,
 	} = useLoaderData<typeof loader>();
 
@@ -110,7 +95,6 @@ export default function UsePage() {
 				variable={variable}
 				versions={versions}
 				registry={registry}
-				registryState={registryState}
 				subsetDefinitions={subsetDefinitions}
 			/>
 		</FamilyPageShell>

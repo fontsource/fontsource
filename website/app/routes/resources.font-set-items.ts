@@ -1,9 +1,9 @@
 import type { ActionFunctionArgs } from 'react-router';
 
-import { resolveFontSetFamily } from '@/features/projects/createProjectItem';
 import { MAX_FONT_SET_SIZE } from '@/features/projects/model';
-import { loadFontFamilyRecord } from '@/utils/font-page.server';
-import { processWithConcurrency } from '@/utils/processWithConcurrency';
+import { resolveFontSetFamily } from '@/features/projects/resolveFontSetFamily';
+import { listRegistryFamilies, resolveFontPackages } from '@/generated/api';
+import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
 const familyIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const MAX_FAMILY_ID_LENGTH = 96;
@@ -37,37 +37,30 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		(id) => id.length <= MAX_FAMILY_ID_LENGTH && familyIdPattern.test(id),
 	);
 
-	const { results } = await processWithConcurrency(
-		validIds,
-		async (id) => {
-			try {
-				const { metadata, versions, registry, variable } =
-					await loadFontFamilyRecord(id, request.signal);
-
-				return {
-					id,
-					item: resolveFontSetFamily({
-						metadata,
-						versions,
-						variable,
-						registry,
-					}),
-				};
-			} catch (error) {
-				if (request.signal.aborted) throw error;
-				return { id };
-			}
-		},
-		() => request.signal.aborted,
-		4,
+	const options = { signal: request.signal };
+	const [packages, registryFamilies] = await Promise.all([
+		resolveFontPackages({ ids: validIds }, options),
+		loadRequiredRegistryData(
+			listRegistryFamilies(options),
+			request.signal,
+			'Font registry',
+		),
+	]);
+	const registryById = new Map(
+		registryFamilies.map((family) => [family.id, family]),
 	);
+	const items = packages.items.flatMap((artifact) => {
+		const registry = registryById.get(artifact.id);
+		return registry ? [resolveFontSetFamily({ artifact, registry })] : [];
+	});
+	const resolvedIds = new Set(items.map((item) => item.familyId));
 
 	return {
 		requestId,
-		items: results.flatMap((result) => (result.item ? [result.item] : [])),
+		items,
 		failedIds: [
 			...invalidIds,
-			...results.flatMap((result) => (result.item ? [] : [result.id])),
+			...validIds.filter((id) => !resolvedIds.has(id)),
 		],
 	};
 };

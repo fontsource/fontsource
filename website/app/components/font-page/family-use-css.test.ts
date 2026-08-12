@@ -44,7 +44,7 @@ describe('buildFamilyUseCSS', () => {
 }`);
 	});
 
-	it('generates all selected static faces, formats, and display behavior', () => {
+	it('generates all selected static faces as WOFF2 with display behavior', () => {
 		const css = buildFamilyUseCSS({
 			metadata,
 			isVariable: false,
@@ -52,7 +52,6 @@ describe('buildFamilyUseCSS', () => {
 			weights: [400, 700],
 			subsets: ['latin', 'cyrillic'],
 			activeAxes: [],
-			formats: ['woff2', 'woff'],
 			display: 'optional',
 			version: '5.3.0',
 			delivery: 'cdn',
@@ -60,7 +59,6 @@ describe('buildFamilyUseCSS', () => {
 
 		expect(css).toContain('font-display: optional;');
 		expect(css).toContain('cyrillic-700-italic.woff2');
-		expect(css).toContain('cyrillic-700-italic.woff');
 		expect(css.match(/@font-face/g)).toHaveLength(8);
 	});
 
@@ -73,7 +71,6 @@ describe('buildFamilyUseCSS', () => {
 			weights: metadata.weights,
 			subsets: ['latin'],
 			activeAxes: ['wght', 'wdth'],
-			formats: ['woff2'],
 			display: 'swap',
 			version: '5.3.0',
 			delivery: 'package',
@@ -96,7 +93,6 @@ describe('buildFamilyUseCSS', () => {
 			weights: [400],
 			subsets: ['japanese'],
 			activeAxes: [],
-			formats: ['woff2'],
 			display: 'swap',
 			version: '5.3.0',
 			delivery: 'cdn',

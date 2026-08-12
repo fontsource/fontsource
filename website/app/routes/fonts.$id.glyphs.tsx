@@ -8,7 +8,6 @@ import { cacheHeaders } from '@/utils/cache';
 import {
 	loadFontPageBase,
 	loadFontPageCapabilities,
-	loadFontPageLanguages,
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
@@ -17,23 +16,18 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
-	const [base, languagesResult, capabilitiesResult, symbolsResult] =
-		await Promise.all([
-			basePromise,
-			loadFontPageLanguages(basePromise, request.signal),
-			loadFontPageCapabilities(basePromise, request.signal),
-			loadFontPageSymbols(basePromise, request.signal),
-		]);
+	const [base, capabilitiesResult, symbolsResult] = await Promise.all([
+		basePromise,
+		loadFontPageCapabilities(basePromise, request.signal),
+		loadFontPageSymbols(basePromise, request.signal),
+	]);
 
 	return data(
 		{
 			...base,
-			languages: languagesResult.languages,
 			symbols: symbolsResult.symbols,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
-			capabilitiesState: capabilitiesResult.state,
-			symbolsState: symbolsResult.state,
 		},
 		{ headers: cacheHeaders.short },
 	);
@@ -55,16 +49,11 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
 export default function GlyphsPage() {
 	const {
 		metadata,
-		staticCSS,
 		variable,
-		variableCSS,
 		registry,
-		languages,
 		symbols,
 		capabilities,
 		capabilitySource,
-		capabilitiesState,
-		symbolsState,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -78,15 +67,10 @@ export default function GlyphsPage() {
 			<CharacterExplorer
 				key={metadata.id}
 				metadata={metadata}
-				staticCSS={staticCSS}
-				variableCSS={variableCSS}
 				registry={registry}
-				languages={languages}
 				symbols={symbols}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
-				capabilitiesState={capabilitiesState}
-				symbolsState={symbolsState}
 			/>
 		</FamilyPageShell>
 	);

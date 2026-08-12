@@ -1,9 +1,8 @@
 import { useMount } from '@legendapp/state/react';
-import { syncObservable } from '@legendapp/state/sync';
 import { createContext, type ReactNode, useContext, useState } from 'react';
 import invariant from 'tiny-invariant';
 
-import { FailSafeLocalStorage } from '@/utils/legend-persistence';
+import { syncValidatedLocalStorage } from '@/utils/legend-persistence';
 
 import classes from './CollectionsProvider.module.css';
 import { collectionsSnapshotSchema } from './model';
@@ -19,24 +18,12 @@ const CollectionsProvider = ({ children }: { children: ReactNode }) => {
 	const [storageError, setStorageError] = useState(false);
 
 	useMount(() => {
-		try {
-			// Legend restores persisted values without applying the Zod schema. Validate
-			// first so incompatible or partial snapshots never enter the live store.
-			const storedValue = localStorage.getItem(STORAGE_KEY);
-			if (storedValue !== null) {
-				collectionsSnapshotSchema.parse(JSON.parse(storedValue));
-			}
-		} catch {
-			setStorageError(true);
-			store.ready$.set(true);
-			return;
-		}
-
-		syncObservable(store.state$, {
-			persist: {
-				name: STORAGE_KEY,
-				plugin: new FailSafeLocalStorage(() => setStorageError(true)),
-			},
+		syncValidatedLocalStorage({
+			key: STORAGE_KEY,
+			schema: collectionsSnapshotSchema,
+			state$: store.state$,
+			ready$: store.ready$,
+			onUnavailable: () => setStorageError(true),
 		});
 	});
 

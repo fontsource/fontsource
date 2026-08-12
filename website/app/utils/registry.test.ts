@@ -7,6 +7,7 @@ import type {
 } from '@/generated/api';
 
 import {
+	createRegistryCodepointMatcher,
 	findUnmappedCharacters,
 	getOpenTypeFeatureDescription,
 	getOpenTypeFeatureName,
@@ -115,6 +116,20 @@ describe('registry character capabilities', () => {
 		});
 	});
 
+	it('can include exact private-use mappings for declared symbol catalogs', () => {
+		expect(getRegistryCharacterGroups(capabilities, true)?.symbols).toContain(
+			'\uE000',
+		);
+	});
+
+	it('creates a reusable exact coverage matcher', () => {
+		const supportsCodepoint = createRegistryCodepointMatcher(capabilities);
+
+		expect(supportsCodepoint(0x41)).toBe(true);
+		expect(supportsCodepoint(0x42)).toBe(false);
+		expect(supportsCodepoint(0xe000)).toBe(true);
+	});
+
 	it('reports unique visible characters without a cmap entry', () => {
 		expect(findUnmappedCharacters('A B? B', capabilities)).toEqual(['B', '?']);
 	});
@@ -186,14 +201,14 @@ describe('registry preview source', () => {
 });
 
 describe('registry family classification', () => {
-	it('uses reviewed specialist tags without family ID inference', () => {
+	it('reserves a distinct experience for declared symbol catalogs', () => {
 		expect(
 			getRegistryFamilyKind({
 				...family,
 				id: 'unrelated-name',
 				tags: ['special-use/digital-display'],
 			}),
-		).toBe('digital');
+		).toBe('text');
 		expect(
 			getRegistryFamilyKind({
 				...family,
@@ -201,7 +216,7 @@ describe('registry family classification', () => {
 				classifications: ['sans-serif', 'symbols'],
 				tags: ['special-use/punctuation'],
 			}),
-		).toBe('punctuation');
+		).toBe('text');
 	});
 
 	it('requires explicit catalog semantics for named ligatures', () => {
@@ -233,12 +248,31 @@ describe('selectRegistryFamilyLanguages', () => {
 			id: `x${index}_Latn`,
 			language: `x${index}`,
 			script: 'Latn',
+			direction: 'ltr' as const,
 			name: `Language ${index}`,
 		}));
 		const languages = [
-			{ id: 'de_Latn', language: 'de', script: 'Latn', name: 'German' },
-			{ id: 'en_Latn', language: 'en', script: 'Latn', name: 'English' },
-			{ id: 'fr_Latn', language: 'fr', script: 'Latn', name: 'French' },
+			{
+				id: 'de_Latn',
+				language: 'de',
+				script: 'Latn',
+				direction: 'ltr' as const,
+				name: 'German',
+			},
+			{
+				id: 'en_Latn',
+				language: 'en',
+				script: 'Latn',
+				direction: 'ltr' as const,
+				name: 'English',
+			},
+			{
+				id: 'fr_Latn',
+				language: 'fr',
+				script: 'Latn',
+				direction: 'ltr' as const,
+				name: 'French',
+			},
 			...additionalLanguages,
 		];
 		const registryFamily = {
@@ -252,7 +286,7 @@ describe('selectRegistryFamilyLanguages', () => {
 		};
 
 		expect(
-			selectRegistryFamilyLanguages(registryFamily, languages)?.map(
+			selectRegistryFamilyLanguages(registryFamily, languages).map(
 				(language) => language.id,
 			),
 		).toEqual([
@@ -269,6 +303,7 @@ describe('registry preview language', () => {
 			id: 'ain_Kana',
 			language: 'ain',
 			script: 'Kana',
+			direction: 'ltr',
 			name: 'Ainu',
 			sampleText: { short: 'アイヌ語' },
 		},
@@ -276,6 +311,7 @@ describe('registry preview language', () => {
 			id: 'ja_Jpan',
 			language: 'ja',
 			script: 'Jpan',
+			direction: 'ltr',
 			name: 'Japanese',
 			sampleText: {
 				short: '美しい日本語',

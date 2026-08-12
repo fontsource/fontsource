@@ -209,6 +209,25 @@
 	gap: 12px;
 }
 
+.licenseLink {
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+	color: var(--mantine-color-purple-0);
+	font-size: 0.82rem;
+	font-weight: 650;
+	text-decoration: none;
+}
+
+.licenseLink:hover {
+	text-decoration: underline;
+}
+
+.licenseLink:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}
+
 .primaryButton {
 	display: inline-flex;
 	align-items: center;
@@ -241,22 +260,22 @@
 }
 
 .methodSwitch,
-.setupSwitch {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+.setupSwitch,
+.formatControl {
+	--sc-padding: 0;
+	--sc-transition-duration: 120ms;
+
 	width: 100%;
+	padding: 0;
 	border: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
 	);
 	border-radius: 4px;
+	background: transparent;
 	overflow: hidden;
 }
 
-.methodSwitch button,
-.setupSwitch button,
-.formatSwitch button,
-.manager button,
 .resetButton {
 	border: 0;
 	background: transparent;
@@ -269,46 +288,66 @@
 		box-shadow 120ms ease;
 }
 
-.methodSwitch button,
-.setupSwitch button {
+.methodSwitch :global(.mantine-SegmentedControl-label),
+.setupSwitch :global(.mantine-SegmentedControl-label),
+.formatControl :global(.mantine-SegmentedControl-label),
+.managerControl :global(.mantine-SegmentedControl-label) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	min-height: 44px;
 	padding: 0 18px;
+	color: light-dark(#52617a, #9ca8bd);
 	font-size: 14px;
 	font-weight: 600;
+	transition:
+		background-color 120ms ease,
+		color 120ms ease;
 }
 
-.methodSwitch button + button,
-.setupSwitch button + button,
-.formatSwitch button + button {
-	border-left: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
+.methodSwitch :global(.mantine-SegmentedControl-control)::before,
+.setupSwitch :global(.mantine-SegmentedControl-control)::before,
+.formatControl :global(.mantine-SegmentedControl-control)::before {
+	border-color: light-dark(
+		var(--mantine-color-border-0),
+		var(--mantine-color-border-1)
 	);
 }
 
-.methodSwitch button:hover,
-.formatSwitch button:hover,
-.manager button:hover {
+.methodSwitch
+	:global(.mantine-SegmentedControl-label:not([data-active]):hover),
+.formatControl
+	:global(.mantine-SegmentedControl-label:not([data-active]):hover),
+.managerControl
+	:global(.mantine-SegmentedControl-label:not([data-active]):hover) {
 	background: light-dark(#f5f7f9, #121b31);
 	color: var(--mantine-color-purple-0);
 }
 
-.methodSwitch button[data-active],
-.formatSwitch button[data-active],
-.manager button[data-active] {
+.methodSwitch :global(.mantine-SegmentedControl-label[data-active]),
+.setupSwitch :global(.mantine-SegmentedControl-label[data-active]),
+.formatControl :global(.mantine-SegmentedControl-label[data-active]),
+.managerControl :global(.mantine-SegmentedControl-label[data-active]) {
+	color: light-dark(#4338ca, #c2bfff);
+}
+
+.methodSwitch :global(.mantine-SegmentedControl-indicator),
+.setupSwitch :global(.mantine-SegmentedControl-indicator),
+.formatControl :global(.mantine-SegmentedControl-indicator),
+.managerControl :global(.mantine-SegmentedControl-indicator) {
+	border: 0;
+	border-radius: 0;
 	background: light-dark(#f5f7f9, #0f1626);
-	color: light-dark(#4338ca, #c2bfff);
 	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
 }
 
-.setupSwitch button:hover {
+.setupSwitch
+	:global(.mantine-SegmentedControl-label:not([data-active]):hover) {
 	color: light-dark(#4338ca, #c2bfff);
 }
 
-.setupSwitch button[data-active] {
+.setupSwitch :global(.mantine-SegmentedControl-indicator) {
 	background: light-dark(#f8f9fb, #0f1626);
-	color: light-dark(#4338ca, #c2bfff);
-	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
 }
 
 .deliveryNote {
@@ -343,23 +382,8 @@
 	gap: 10px;
 }
 
-.formatSwitch > div {
-	display: inline-grid;
-	grid-template-columns: repeat(2, minmax(112px, 1fr));
-	justify-self: start;
-	border: light-dark(
-		1px solid var(--mantine-color-border-0),
-		1px solid var(--mantine-color-border-1)
-	);
-	border-radius: 4px;
-	overflow: hidden;
-}
-
-.formatSwitch button {
-	min-height: 44px;
-	padding: 0 12px;
-	font-size: 14px;
-	font-weight: 600;
+.formatControl {
+	max-width: 320px;
 }
 
 .configurationHeading span {
@@ -413,8 +437,7 @@
 	font-weight: 650;
 }
 
-.optionGroup > div,
-.manager > div {
+.optionGroup > div {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 7px;
@@ -480,13 +503,24 @@
 	margin-bottom: 7px;
 }
 
-.manager button {
+.managerControl {
+	--sc-padding: 0;
+	--sc-transition-duration: 120ms;
+
+	width: fit-content;
+	padding: 0;
+	background: transparent;
+	overflow: hidden;
+}
+
+.managerControl :global(.mantine-SegmentedControl-label) {
 	min-width: 44px;
-	min-height: 44px;
-	padding: 0 10px;
-	border-radius: 4px;
+	padding-inline: 10px;
 	font-family: var(--font-monospace);
-	font-size: 14px;
+}
+
+.managerControl :global(.mantine-SegmentedControl-indicator) {
+	border-radius: 4px;
 }
 
 .instructions {
@@ -557,10 +591,6 @@
 
 .primaryButton:focus-visible,
 .taskTabs button:focus-visible,
-.methodSwitch button:focus-visible,
-.setupSwitch button:focus-visible,
-.formatSwitch button:focus-visible,
-.manager button:focus-visible,
 .resetButton:focus-visible,
 .optionGroup input:focus-visible,
 .resourceLinks a:focus-visible {
@@ -568,11 +598,23 @@
 	outline-offset: 2px;
 }
 
-.taskTabs button:focus-visible,
-.methodSwitch button:focus-visible,
-.setupSwitch button:focus-visible,
-.formatSwitch button:focus-visible {
+.taskTabs button:focus-visible {
 	outline-offset: -3px;
+}
+
+.methodSwitch:has(input:focus-visible),
+.setupSwitch:has(input:focus-visible),
+.formatControl:has(input:focus-visible),
+.managerControl:has(input:focus-visible) {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}
+
+.methodSwitch input:focus-visible + label,
+.setupSwitch input:focus-visible + label,
+.formatControl input:focus-visible + label,
+.managerControl input:focus-visible + label {
+	outline: 0;
 }
 
 @media (max-width: 64em) {
@@ -610,9 +652,8 @@
 		row-gap: 26px;
 	}
 
-	.formatSwitch > div {
-		grid-template-columns: repeat(2, 1fr);
-		width: 100%;
+	.formatControl {
+		max-width: none;
 	}
 
 	.resetButton {
@@ -669,8 +710,8 @@
 		padding: 20px;
 	}
 
-	.methodSwitch button,
-	.setupSwitch button {
+	.methodSwitch :global(.mantine-SegmentedControl-label),
+	.setupSwitch :global(.mantine-SegmentedControl-label) {
 		padding-inline: 8px;
 	}
 
@@ -683,11 +724,18 @@
 @media (prefers-reduced-motion: reduce) {
 	.primaryButton,
 	.taskTabs button,
-	.methodSwitch button,
-	.setupSwitch button,
-	.formatSwitch button,
-	.manager button,
 	.resetButton {
+		transition: none;
+	}
+
+	.methodSwitch :global(.mantine-SegmentedControl-indicator),
+	.setupSwitch :global(.mantine-SegmentedControl-indicator),
+	.formatControl :global(.mantine-SegmentedControl-indicator),
+	.managerControl :global(.mantine-SegmentedControl-indicator),
+	.methodSwitch :global(.mantine-SegmentedControl-label),
+	.setupSwitch :global(.mantine-SegmentedControl-label),
+	.formatControl :global(.mantine-SegmentedControl-label),
+	.managerControl :global(.mantine-SegmentedControl-label) {
 		transition: none;
 	}
 }

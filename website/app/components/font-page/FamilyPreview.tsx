@@ -5,22 +5,14 @@ import {
 	FamilyIdentity,
 	FamilyTabs,
 } from '@/components/font-page/FamilyPageShell';
-import type { RegistryDataState } from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
-import {
-	PreviewFontStyle,
-	PreviewHandoffNotice,
-	PreviewProvider,
-} from './FamilyPreviewContext';
+import { PreviewFontStyle, PreviewProvider } from './FamilyPreviewContext';
 import { PreviewDrawer, PreviewInspector } from './FamilyPreviewInspector';
 import { PreviewCanvas, PreviewToolbar } from './FamilyPreviewSpecimen';
 import type { PreviewEditorProps } from './FamilyPreviewState';
 
-interface FamilyPreviewProps extends PreviewEditorProps {
-	registryState: RegistryDataState;
-	variableUnavailable?: boolean;
-}
+type FamilyPreviewProps = PreviewEditorProps;
 
 export const FamilyPreview = ({
 	metadata,
@@ -29,13 +21,11 @@ export const FamilyPreview = ({
 	variableCSS,
 	versions,
 	registry,
-	registryState,
 	languages,
 	axisRegistry,
 	capabilities,
 	capabilitySource,
 	symbols,
-	variableUnavailable = false,
 }: FamilyPreviewProps) => {
 	return (
 		<PreviewProvider
@@ -66,26 +56,13 @@ export const FamilyPreview = ({
 								className={classes.licenseSignal}
 								to={`/fonts/${metadata.id}/about#license`}
 							>
-								{registry?.license
-									? `${registry.license.id} license`
-									: registryState === 'unavailable'
-										? 'License details temporarily unavailable'
-										: 'License details unavailable'}
+								{`${registry.license.id} license`}
 							</Link>
 						</div>
 						<FamilyActions metadata={metadata} registry={registry} compact />
 					</div>
 
 					<FamilyTabs metadata={metadata} registry={registry} contained />
-
-					{variableUnavailable && (
-						<p className={classes.handoffNotice} role="status">
-							Variable controls are temporarily unavailable. You can still
-							preview the available styles.
-						</p>
-					)}
-
-					<PreviewHandoffNotice />
 
 					<div className={classes.studio}>
 						<div className={classes.specimenColumn}>

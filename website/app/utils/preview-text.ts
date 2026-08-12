@@ -11,7 +11,6 @@ interface PreviewTextOption {
 interface PreviewTextCorpus {
 	language: {
 		fallback: string;
-		families: Readonly<Record<string, string>>;
 		subsets: Readonly<Record<string, string>>;
 	};
 	search: {
@@ -21,22 +20,12 @@ interface PreviewTextCorpus {
 	editor: {
 		sampleLengths: Record<PreviewMode, PreviewSampleLength>;
 		defaults: Record<Exclude<PreviewMode, 'compare'>, string>;
-		familyKinds: Record<'digital' | 'punctuation', Record<PreviewMode, string>>;
-		categories: { monospace: Pick<Record<PreviewMode, string>, 'headline'> };
 	};
 }
 
 const sharedPreviewText = {
 	digits: '0123456789',
-	digitalTime: '12:48:36',
 	latinSentence: 'Sphinx of black quartz, judge my vow.',
-	materialIcons:
-		'photo_camerathumb_upassignmentcreate_new_folderinsert_invitationdraftscredit_cardtimercheck_boxclose',
-	materialSymbols:
-		'searchsettingshomepersonaddshopping_cartcheck_circlefavoritelogouttrophy',
-	punctuation: '「ことば」を、心地よく。\n句読点まで、美しく。',
-	yakuHan: '、。！？〈〉《》「」『』【】〔〕・（）：；［］｛｝',
-	yakuHanBrackets: '〈〉《》「」『』【】〔〕（）［］｛｝',
 } as const;
 
 export const previewModeOptions: Array<{
@@ -52,28 +41,6 @@ export const previewModeOptions: Array<{
 export const previewText: PreviewTextCorpus = {
 	language: {
 		fallback: sharedPreviewText.latinSentence,
-		families: {
-			'dseg-weather': '0123456789 ABC',
-			'dseg7-segg-chan': '0123456789',
-			'dseg7-segg-chan-mini': '0123456789',
-			'material-icons': sharedPreviewText.materialIcons,
-			'material-icons-outlined': sharedPreviewText.materialIcons,
-			'material-icons-round': sharedPreviewText.materialIcons,
-			'material-icons-sharp': sharedPreviewText.materialIcons,
-			'material-icons-two-tone': sharedPreviewText.materialIcons,
-			'material-symbols-outlined': sharedPreviewText.materialSymbols,
-			'material-symbols-rounded': sharedPreviewText.materialSymbols,
-			'material-symbols-sharp': sharedPreviewText.materialSymbols,
-			'noto-sans-symbols': '⛾⛿☯☸ ⛩⛰⛱⛴⛷⛸ ♸⚥☊☍☓☤ 🄰🄱🆈🆉 ⚖♇♪♬',
-			'noto-sans-symbols-2': '⌚✋⯧☔🛪🏟⛅🞽🕖 🚲🡽🨄 🡢🡱🏠💻🐿👁📽',
-			'noto-sans-math': '𝞉𝞩𝟃𞻰⟥⦀⦁ 𝚢𝚣𝚤𝖿𝗀𝗁𝗂 𝑻𝑼𝑽𝗔𝗕𝗖𝗗 ϑϕϰϱϵℊℎ ⊰⊱⊲⊳⊴⊵⫕ 𞹴𞹵𞹶𞹷𞹹𞹺𞹻',
-			yakuhanjp: sharedPreviewText.yakuHan,
-			yakuhanrp: sharedPreviewText.yakuHan,
-			yakuhanjps: sharedPreviewText.yakuHanBrackets,
-			yakuhanrps: sharedPreviewText.yakuHanBrackets,
-			yakuhanmp: '、。！？《》「」『』【】〔〕・（）：；［］｛｝',
-			yakuhanmps: '《》「」『』【】〔〕（）［］｛｝',
-		},
 		subsets: {
 			latin: sharedPreviewText.latinSentence,
 			'latin-ext': sharedPreviewText.latinSentence,
@@ -289,25 +256,6 @@ export const previewText: PreviewTextCorpus = {
 			paragraph:
 				'A typeface changes the temperature of a sentence before its meaning has time to settle. Set a few lines, adjust the rhythm, and see an ordinary paragraph find its own voice.',
 			waterfall: 'Sphinx of black quartz',
-		},
-		familyKinds: {
-			digital: {
-				headline: sharedPreviewText.digitalTime,
-				paragraph: 'TEMPERATURE 24.5   DISTANCE 120.8',
-				waterfall: sharedPreviewText.digitalTime,
-				compare: sharedPreviewText.digits,
-			},
-			punctuation: {
-				headline: sharedPreviewText.punctuation,
-				paragraph: sharedPreviewText.punctuation,
-				waterfall: sharedPreviewText.punctuation,
-				compare: sharedPreviewText.punctuation,
-			},
-		},
-		categories: {
-			monospace: {
-				headline: 'Same width.\nDifferent shapes.',
-			},
 		},
 	},
 };
