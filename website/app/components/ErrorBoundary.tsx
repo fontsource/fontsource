@@ -1,16 +1,10 @@
 import { Button, Center, Flex, Stack, Text, Title } from '@mantine/core';
-import {
-	isRouteErrorResponse,
-	Link,
-	useLocation,
-	useRouteError,
-} from 'react-router';
+import { isRouteErrorResponse, Link, useRouteError } from 'react-router';
 import styles from './ErrorBoundary.module.css';
 import { IconGithub } from './icons/Github';
 
 export function ErrorBoundary() {
 	const error = useRouteError();
-	const location = useLocation();
 
 	let status = 500;
 	let title = 'Something went wrong';
@@ -50,7 +44,11 @@ export function ErrorBoundary() {
 		description = error.message;
 	}
 
-	const canRetry = status >= 500 && status < 600;
+	const retry = () => {
+		const url = new URL(window.location.href);
+		url.searchParams.set('__retry', Date.now().toString());
+		window.location.replace(url);
+	};
 
 	return (
 		<Center className={styles.container}>
@@ -65,15 +63,26 @@ export function ErrorBoundary() {
 
 				<Stack className={styles.actions} gap={12}>
 					<Button
-						component={Link}
-						to={canRetry ? `${location.pathname}${location.search}` : '/'}
-						reloadDocument={canRetry}
+						type="button"
+						onClick={retry}
 						size="md"
 						fullWidth
 						className={styles.primaryButton}
 					>
-						{canRetry ? 'Try again' : 'Go home'}
+						Reload page
 					</Button>
+					{status === 404 && (
+						<Button
+							component={Link}
+							to="/"
+							variant="outline"
+							size="md"
+							fullWidth
+							className={styles.outlineButton}
+						>
+							Go home
+						</Button>
+					)}
 					<Button
 						component="a"
 						href="https://github.com/fontsource/fontsource/issues/new"
