@@ -106,7 +106,9 @@ const capabilities = {
 
 describe('registry character capabilities', () => {
 	it('groups exact mapped characters without invisible codepoints', () => {
-		expect(getRegistryCharacterGroups(capabilities)).toEqual({
+		const groups = getRegistryCharacterGroups(capabilities);
+
+		expect(groups).toEqual({
 			all: ['!', '1', 'A', 'a', '©', '́'],
 			letters: ['A', 'a'],
 			marks: ['́'],
@@ -114,6 +116,9 @@ describe('registry character capabilities', () => {
 			punctuation: ['!'],
 			symbols: ['©'],
 		});
+		for (const characters of Object.values(groups ?? {})) {
+			expect(groups?.all).toEqual(expect.arrayContaining(characters));
+		}
 	});
 
 	it('can include exact private-use mappings for declared symbol catalogs', () => {

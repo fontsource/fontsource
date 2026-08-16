@@ -252,7 +252,6 @@
 }
 
 .formatSwitch,
-.manager,
 .optionGroup {
 	margin: 0;
 	padding: 0;
@@ -290,8 +289,7 @@
 
 .methodSwitch :global(.mantine-SegmentedControl-label),
 .setupSwitch :global(.mantine-SegmentedControl-label),
-.formatControl :global(.mantine-SegmentedControl-label),
-.managerControl :global(.mantine-SegmentedControl-label) {
+.formatControl :global(.mantine-SegmentedControl-label) {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -317,8 +315,6 @@
 .methodSwitch
 	:global(.mantine-SegmentedControl-label:not([data-active]):hover),
 .formatControl
-	:global(.mantine-SegmentedControl-label:not([data-active]):hover),
-.managerControl
 	:global(.mantine-SegmentedControl-label:not([data-active]):hover) {
 	background: light-dark(#f5f7f9, #121b31);
 	color: var(--mantine-color-purple-0);
@@ -326,15 +322,13 @@
 
 .methodSwitch :global(.mantine-SegmentedControl-label[data-active]),
 .setupSwitch :global(.mantine-SegmentedControl-label[data-active]),
-.formatControl :global(.mantine-SegmentedControl-label[data-active]),
-.managerControl :global(.mantine-SegmentedControl-label[data-active]) {
+.formatControl :global(.mantine-SegmentedControl-label[data-active]) {
 	color: light-dark(#4338ca, #c2bfff);
 }
 
 .methodSwitch :global(.mantine-SegmentedControl-indicator),
 .setupSwitch :global(.mantine-SegmentedControl-indicator),
-.formatControl :global(.mantine-SegmentedControl-indicator),
-.managerControl :global(.mantine-SegmentedControl-indicator) {
+.formatControl :global(.mantine-SegmentedControl-indicator) {
 	border: 0;
 	border-radius: 0;
 	background: light-dark(#f5f7f9, #0f1626);
@@ -430,7 +424,6 @@
 }
 
 .optionGroup legend,
-.manager legend,
 .formatSwitch legend {
 	margin-bottom: 10px;
 	font-size: 14px;
@@ -493,34 +486,6 @@
 
 .optionGroup label:has(input:disabled) {
 	cursor: default;
-}
-
-.manager {
-	margin-bottom: 12px;
-}
-
-.manager legend {
-	margin-bottom: 7px;
-}
-
-.managerControl {
-	--sc-padding: 0;
-	--sc-transition-duration: 120ms;
-
-	width: fit-content;
-	padding: 0;
-	background: transparent;
-	overflow: hidden;
-}
-
-.managerControl :global(.mantine-SegmentedControl-label) {
-	min-width: 44px;
-	padding-inline: 10px;
-	font-family: var(--font-monospace);
-}
-
-.managerControl :global(.mantine-SegmentedControl-indicator) {
-	border-radius: 4px;
 }
 
 .instructions {
@@ -604,16 +569,14 @@
 
 .methodSwitch:has(input:focus-visible),
 .setupSwitch:has(input:focus-visible),
-.formatControl:has(input:focus-visible),
-.managerControl:has(input:focus-visible) {
+.formatControl:has(input:focus-visible) {
 	outline: 2px solid var(--mantine-color-purple-0);
 	outline-offset: 2px;
 }
 
 .methodSwitch input:focus-visible + label,
 .setupSwitch input:focus-visible + label,
-.formatControl input:focus-visible + label,
-.managerControl input:focus-visible + label {
+.formatControl input:focus-visible + label {
 	outline: 0;
 }
 
@@ -731,11 +694,9 @@
 	.methodSwitch :global(.mantine-SegmentedControl-indicator),
 	.setupSwitch :global(.mantine-SegmentedControl-indicator),
 	.formatControl :global(.mantine-SegmentedControl-indicator),
-	.managerControl :global(.mantine-SegmentedControl-indicator),
 	.methodSwitch :global(.mantine-SegmentedControl-label),
 	.setupSwitch :global(.mantine-SegmentedControl-label),
-	.formatControl :global(.mantine-SegmentedControl-label),
-	.managerControl :global(.mantine-SegmentedControl-label) {
+	.formatControl :global(.mantine-SegmentedControl-label) {
 		transition: none;
 	}
 }

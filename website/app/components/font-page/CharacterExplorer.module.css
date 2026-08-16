@@ -163,8 +163,10 @@
 }
 
 .catalog {
+	box-sizing: border-box;
 	min-width: 0;
 	max-height: min(68vh, 640px);
+	padding-inline: 12px;
 	overflow-y: auto;
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
@@ -185,8 +187,7 @@
 .virtualRow {
 	position: absolute;
 	top: 0;
-	left: 0;
-	right: 0;
+	inset-inline: 0;
 	display: grid;
 	height: 58px;
 

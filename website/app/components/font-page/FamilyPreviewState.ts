@@ -352,12 +352,9 @@ const createPreviewEditorSetup = ({
 		verifiedLanguages,
 		registry.primaryLanguage,
 	);
-	const initialTexts = createModeTexts(
-		metadata,
-		registry,
-		languages,
-		capabilities,
-	);
+	const initialTexts = initialLanguage
+		? createLanguageModeTexts(initialLanguage)
+		: createModeTexts(metadata, registry, languages, capabilities);
 	const initialCapabilitySource =
 		capabilitySource ??
 		selectRegistryPreviewSource(registry, {

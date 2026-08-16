@@ -57,7 +57,10 @@ interface CharacterExplorerProps {
 }
 
 const glyphCellSize = 58;
-const glyphGridPadding = 36;
+const glyphGridInlineInset = 12;
+const glyphGridScrollbarReserve = 12;
+const glyphGridReservedInlineSpace =
+	glyphGridInlineInset * 2 + glyphGridScrollbarReserve;
 const initialGlyphRowCount = 8;
 const maxSearchLength = 256;
 
@@ -293,24 +296,18 @@ export const CharacterExplorer = ({
 	const previewFamily = registrySourcePreviewFamily;
 	const fontFamily = `"${previewFamily}", "Fallback Outline"`;
 	const deferredQuery = useDeferredValue(query);
-	const searchableCharacters = useMemo(
-		() =>
-			explorerGroups.all && explorerGroups.all.length > 0
-				? explorerGroups.all
-				: Array.from(new Set(Object.values(explorerGroups).flat())),
-		[explorerGroups],
-	);
 	const matchingCharacters = useMemo(() => {
 		const normalized = normalizeSearchValue(deferredQuery);
-		if (!normalized) return explorerGroups[activeGroup] ?? [];
+		const activeCharacters = explorerGroups[activeGroup] ?? [];
+		if (!normalized) return activeCharacters;
 		if (symbolSearch) {
-			const activeCharacters = new Set(explorerGroups[activeGroup] ?? []);
+			const activeCharacterSet = new Set(activeCharacters);
 			return searchSymbolCatalog(symbolSearch, deferredQuery).filter((entry) =>
-				activeCharacters.has(entry),
+				activeCharacterSet.has(entry),
 			);
 		}
 
-		return searchableCharacters.filter((character) => {
+		return activeCharacters.filter((character) => {
 			const catalogEntry = isSymbolKey(character);
 			const displayCharacter = getSymbolDisplayValue(
 				character,
@@ -331,13 +328,13 @@ export const CharacterExplorer = ({
 		explorerGroups,
 		activeGroup,
 		hasNamedLigatures,
-		searchableCharacters,
 		symbolSearch,
 	]);
 	const columnCount = Math.max(
 		1,
 		Math.floor(
-			Math.max(catalogWidth - glyphGridPadding, glyphCellSize) / glyphCellSize,
+			Math.max(catalogWidth - glyphGridReservedInlineSpace, glyphCellSize) /
+				glyphCellSize,
 		),
 	);
 	const characterRows = useMemo(
@@ -524,8 +521,8 @@ export const CharacterExplorer = ({
 						copied={characterClipboard.copied}
 						showLatinGuides={
 							/^\p{Script=Latin}$/u.test(activeCharacter) &&
-							searchableCharacters.includes('H') &&
-							searchableCharacters.includes('x')
+							explorerGroups.all?.includes('H') &&
+							explorerGroups.all?.includes('x')
 						}
 						style={specimenStyle}
 					/>

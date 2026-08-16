@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
+import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import { IconDownload, IconExternal } from '@/components/icons';
 import type {
 	GetFontResponse,
@@ -10,12 +11,7 @@ import type {
 	GetRegistrySubsetResponse,
 	GetVariableFontResponse,
 } from '@/generated/api';
-import { usePackageManager } from '@/hooks/usePackageManager';
 import { getJsDelivrPackageUrl } from '@/utils/cdn';
-import {
-	getPackageManagerCommand,
-	packageManagers,
-} from '@/utils/docs/packageManagers';
 import {
 	fontWeightNames,
 	formatFontLabel,
@@ -166,7 +162,6 @@ export const FamilyUse = ({
 	]);
 	const [activeAxes, setActiveAxes] = useState<string[]>(defaultActiveAxes);
 	const [fontDisplay, setFontDisplay] = useState<FontDisplay>('swap');
-	const [packageManager, setPackageManager] = usePackageManager('npm');
 	const isVariable = format === 'variable' && supportsVariable;
 	const availableStyles = [
 		...metadata.styles.filter((style) => style === 'normal'),
@@ -210,7 +205,6 @@ export const FamilyUse = ({
 				delivery: method,
 			})
 		: '';
-	const installCommand = getPackageManagerCommand(packageManager, packageName);
 	const standardImport =
 		method === 'package'
 			? `import '${packageName}';`
@@ -233,7 +227,7 @@ export const FamilyUse = ({
 		primaryStyle,
 	);
 	const usageDescription = isVariable
-		? `Apply the family, then choose any font weight from ${variableWeightRange}. ${primaryWeight} is a practical starting point.`
+		? `Apply the family, then choose any font weight from ${variableWeightRange}.`
 		: `Apply the selected ${getWeightLabel(primaryWeight).toLowerCase()} ${primaryStyle} face.`;
 	const developerResources = (
 		<nav className={classes.resourceLinks} aria-label="Developer resources">
@@ -324,7 +318,7 @@ export const FamilyUse = ({
 						<span className={classes.taskTabLabel}>
 							<strong>Download files</strong>
 							<small className={classes.taskTabDesktop}>
-								For design apps, desktop, and font managers
+								For design apps, desktop, and self-hosting
 							</small>
 							<small className={classes.taskTabCompact}>
 								Design and desktop
@@ -335,9 +329,11 @@ export const FamilyUse = ({
 						<span className={classes.taskTabLabel}>
 							<strong>Developer setup</strong>
 							<small className={classes.taskTabDesktop}>
-								For packages, frameworks, and CDN
+								For packages, frameworks, and websites
 							</small>
-							<small className={classes.taskTabCompact}>Packages and CDN</small>
+							<small className={classes.taskTabCompact}>
+								Packages and websites
+							</small>
 						</span>
 					</Tabs.Tab>
 				</Tabs.List>
@@ -347,7 +343,7 @@ export const FamilyUse = ({
 						<div className={classes.downloadDetails}>
 							<h3>Complete family (.zip)</h3>
 							<p className={classes.downloadOutcome}>
-								Ready for design apps, desktop installation, and font managers.
+								Ready for design apps, desktop use, and self-hosting.
 							</p>
 							<p className={classes.downloadContents}>
 								Includes every desktop TTF weight and style. A separate webfonts
@@ -539,21 +535,7 @@ export const FamilyUse = ({
 							{method === 'package' && (
 								<li className={classes.instructionStep}>
 									<div className={classes.instructionBody}>
-										<fieldset className={classes.manager}>
-											<legend>Package manager</legend>
-											<SegmentedControl
-												className={classes.managerControl}
-												value={packageManager}
-												data={packageManagers.map(({ value }) => value)}
-												onChange={setPackageManager}
-											/>
-										</fieldset>
-										<CopyCodeBlock
-											code={installCommand}
-											compact
-											label="Install"
-											language="sh"
-										/>
+										<PackageManagerCode cmd={packageName} />
 										{developerResources}
 									</div>
 								</li>
