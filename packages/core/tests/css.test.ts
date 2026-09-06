@@ -849,6 +849,28 @@ describe('generateCSS', () => {
 		expect(css).toContain('./files/inter-latin-400-normal.woff');
 	});
 
+	it('renders registry-defined subset slices with their published filenames', () => {
+		const css = generateCSS({
+			id: 'noto-sans-jp',
+			family: 'Noto Sans JP',
+			subsets: ['japanese'],
+			weights: [400],
+			styles: ['normal'],
+			formats: ['woff2'],
+			subsetSlices: {
+				japanese: [
+					{ id: 1, unicodeRange: 'U+3000-303F' },
+					{ id: 2, unicodeRange: 'U+3040-30FF' },
+				],
+			},
+		});
+
+		expect(css.match(/@font-face/g)).toHaveLength(2);
+		expect(css).toContain('noto-sans-jp-japanese-400-normal-1.woff2');
+		expect(css).toContain('noto-sans-jp-japanese-400-normal-2.woff2');
+		expect(css).toContain('unicode-range: U+3000-303F;');
+	});
+
 	it('uses every published variable axis key in one combined stylesheet by default', () => {
 		const css = generateCSS({
 			id: 'recursive',

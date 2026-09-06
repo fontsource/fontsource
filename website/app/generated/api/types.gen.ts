@@ -238,6 +238,32 @@ export type GetFontResponses = {
 
 export type GetFontResponse = GetFontResponses[keyof GetFontResponses];
 
+export type ResolveFontPackagesData = {
+    body?: {
+        ids: Array<string>;
+    };
+    path?: never;
+    query?: never;
+    url: '/v1/font-packages';
+};
+
+export type ResolveFontPackagesResponses = {
+    /**
+     * Resolved package projections and unresolved family IDs
+     */
+    200: {
+        items: Array<{
+            id: string;
+            packageName: string;
+            packageVersion: string;
+            fontFamily: string;
+        }>;
+        failedIds: Array<string>;
+    };
+};
+
+export type ResolveFontPackagesResponse = ResolveFontPackagesResponses[keyof ResolveFontPackagesResponses];
+
 export type ListVariableFontsData = {
     body?: never;
     path?: never;
@@ -707,6 +733,34 @@ export type ListRegistryFamiliesResponses = {
         tags: Array<string>;
         sourceModified: string;
         axes: Array<string>;
+        primaryLanguage?: string;
+        primaryScript?: string;
+        primaryDirection?: 'ltr' | 'rtl';
+        /**
+         * Reviewed package subset for previews and default acquisition
+         */
+        previewSubset?: string;
+        sampleText?: {
+            /**
+             * Compact preview text
+             */
+            short: string;
+            /**
+             * Extended preview text
+             */
+            long?: string;
+        };
+        /**
+         * Fallback families needed to demonstrate the font in its intended context
+         */
+        previewContext?: {
+            fallbackFamilies: Array<string>;
+        };
+        designer?: string;
+        license?: {
+            id: string;
+            url: string;
+        };
     }>;
 };
 
@@ -770,12 +824,13 @@ export type GetRegistryFamilyResponses = {
         tags: Array<string>;
         sourceModified: string;
         axes: Array<string>;
-        /**
-         * Semantic language IDs, distinct from package subsets
-         */
-        languages: Array<string>;
         primaryLanguage?: string;
         primaryScript?: string;
+        primaryDirection?: 'ltr' | 'rtl';
+        /**
+         * Reviewed package subset for previews and default acquisition
+         */
+        previewSubset?: string;
         sampleText?: {
             /**
              * Compact preview text
@@ -786,8 +841,13 @@ export type GetRegistryFamilyResponses = {
              */
             long?: string;
         };
+        /**
+         * Fallback families needed to demonstrate the font in its intended context
+         */
+        previewContext?: {
+            fallbackFamilies: Array<string>;
+        };
         designer?: string;
-        dateAdded?: string;
         license: {
             id: string;
             url: string;
@@ -797,6 +857,11 @@ export type GetRegistryFamilyResponses = {
              */
             text: string;
         };
+        /**
+         * Semantic language IDs, distinct from package subsets
+         */
+        languages: Array<string>;
+        dateAdded?: string;
         /**
          * Author-maintained upstream font project
          */
@@ -956,6 +1021,7 @@ export type GetRegistryFamilyResponses = {
                     definition: string;
                 }>;
                 slicing?: string;
+                slicingSubset?: string;
             };
         };
     };
@@ -1058,6 +1124,7 @@ export type ListRegistryLanguagesResponses = {
          * ISO 15924 script code
          */
         script: string;
+        direction?: 'ltr' | 'rtl';
         name: string;
         preferredName?: string;
         autonym?: string;

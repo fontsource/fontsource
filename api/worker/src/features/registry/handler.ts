@@ -67,6 +67,29 @@ export const getRegistryView = async (
 	);
 };
 
+export const readRegistryView = async <T>(
+	c: Context<AppEnv>,
+	path: string,
+	schema: z.ZodType<T>,
+	notFoundMessage?: string,
+): Promise<T> => {
+	const revision = await getCurrentRevision(c);
+	const object = await c.env.REGISTRY.get(`snapshots/${revision}/api/${path}`);
+	if (!object) {
+		if (notFoundMessage) {
+			throw notFound(notFoundMessage);
+		}
+		throw badGateway('Bad Gateway. Registry snapshot is incomplete.');
+	}
+
+	const parsed = schema.safeParse(await object.json());
+	if (!parsed.success) {
+		throw badGateway('Bad Gateway. Registry snapshot view is invalid.');
+	}
+
+	return parsed.data;
+};
+
 export const getRegistrySource = async (
 	c: Context<AppEnv>,
 	sha256: string,

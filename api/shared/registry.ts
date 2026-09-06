@@ -65,6 +65,7 @@ const CharacterDistributionSchema = z.discriminatedUnion('type', [
 			.array(z.strictObject({ id: IdSchema, definition: IdSchema }))
 			.min(1),
 		slicing: IdSchema.optional(),
+		slicingSubset: IdSchema.optional(),
 	}),
 ]);
 const RegistryDistributionSchema = z
@@ -80,6 +81,10 @@ const RegistryDistributionSchema = z
 		message: 'must declare static or variable outputs',
 	});
 
+const PreviewContextSchema = z.strictObject({
+	fallbackFamilies: z.array(z.string().min(1)).min(1),
+});
+
 const FamilySummarySchema = z.strictObject({
 	id: IdSchema,
 	family: z.string(),
@@ -91,6 +96,23 @@ const FamilySummarySchema = z.strictObject({
 	tags: z.array(TagIdSchema),
 	sourceModified: z.iso.date(),
 	axes: z.array(z.string().length(4)),
+	primaryLanguage: LanguageIdSchema.optional(),
+	primaryScript: ScriptSchema.optional(),
+	primaryDirection: z.enum(['ltr', 'rtl']).optional(),
+	previewSubset: IdSchema.optional().describe(
+		'Reviewed package subset for previews and default acquisition',
+	),
+	sampleText: SampleTextSchema.optional(),
+	previewContext: PreviewContextSchema.optional().describe(
+		'Fallback families needed to demonstrate the font in its intended context',
+	),
+	designer: z.string().optional(),
+	license: z
+		.strictObject({
+			id: z.string(),
+			url: z.url(),
+		})
+		.optional(),
 });
 
 const RegistryProvenanceSchema = z.discriminatedUnion('type', [
@@ -156,10 +178,6 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 	languages: z
 		.array(LanguageIdSchema)
 		.describe('Semantic language IDs, distinct from package subsets'),
-	primaryLanguage: LanguageIdSchema.optional(),
-	primaryScript: ScriptSchema.optional(),
-	sampleText: SampleTextSchema.optional(),
-	designer: z.string().optional(),
 	dateAdded: z.iso.date().optional(),
 	license: z.strictObject({
 		id: z.string(),
@@ -204,7 +222,23 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 			path: ['previewSource'],
 		});
 	}
+	if (family.previewSubset) {
+		if (
+			family.distribution.characters.type !== 'subsets' ||
+			!family.distribution.characters.subsets.some(
+				(subset) => subset.id === family.previewSubset,
+			)
+		) {
+			context.addIssue({
+				code: 'custom',
+				message: 'previewSubset must reference a distributed subset',
+				path: ['previewSubset'],
+			});
+		}
+	}
 });
+
+export type RegistryFamilyDetail = z.infer<typeof RegistryFamilyDetailSchema>;
 
 export const RegistryFamilySymbolsSchema = z
 	.array(
@@ -238,6 +272,7 @@ const RegistryLanguageSchema = z.strictObject({
 	id: LanguageIdSchema,
 	language: z.string().min(1).describe('BCP 47 language subtag'),
 	script: ScriptSchema.describe('ISO 15924 script code'),
+	direction: z.enum(['ltr', 'rtl']).optional(),
 	name: z.string().min(1),
 	preferredName: z.string().min(1).optional(),
 	autonym: z.string().min(1).optional(),

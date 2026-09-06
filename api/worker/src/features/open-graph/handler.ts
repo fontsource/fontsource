@@ -2,11 +2,17 @@ import type { Context } from 'hono';
 import wasmModule, { init as initWasm, Renderer } from 'takumi-js/wasm';
 import logoSvg from '../../../../../website/public/logo.svg?raw';
 import type { SourceFontMetadata } from '../../../../shared/catalog';
+import {
+	type RegistryFamilyDetail,
+	RegistryFamilyDetailSchema,
+} from '../../../../shared/registry';
+import { toResponseBody } from '../../../../shared/response';
 import { fetchPackageAssetBytes } from '../../../../shared/upstream';
 import type { AppEnv } from '../../env';
 import { notFound } from '../../utils/errors';
 import { getFontById } from '../metadata/store';
-import { getOpenGraphPreviewSubset } from './font-exceptions';
+import { readRegistryView } from '../registry/handler';
+import { getOpenGraphPreviewSubset } from './font-presentation';
 import {
 	createFontOpenGraphNode,
 	fitOpenGraphText,
@@ -48,6 +54,7 @@ const createRenderer = async (): Promise<Renderer> => {
 
 const loadPreviewFont = async (
 	metadata: SourceFontMetadata,
+	registry: RegistryFamilyDetail,
 ): Promise<Uint8Array> => {
 	const style = metadata.styles.includes('normal')
 		? 'normal'
@@ -55,12 +62,13 @@ const loadPreviewFont = async (
 	const weight = metadata.weights.includes(400)
 		? 400
 		: (metadata.weights[0] ?? 400);
-	const file = `${getOpenGraphPreviewSubset(metadata)}-${weight}-${style}.woff2`;
+	const file = `${getOpenGraphPreviewSubset(metadata, registry)}-${weight}-${style}.woff2`;
 	return fetchPackageAssetBytes(metadata.id, 'latest', file);
 };
 
 const renderImage = async (
 	metadata: SourceFontMetadata,
+	registry: RegistryFamilyDetail,
 	font: Uint8Array | undefined,
 ): Promise<Uint8Array<ArrayBufferLike>> => {
 	const renderer = await createRenderer();
@@ -76,10 +84,15 @@ const renderImage = async (
 		}
 
 		const hasPreviewFont = Boolean(font);
-		const layout = await fitOpenGraphText(renderer, metadata, hasPreviewFont);
+		const layout = await fitOpenGraphText(
+			renderer,
+			metadata,
+			registry,
+			hasPreviewFont,
+		);
 		return Uint8Array.from(
 			await renderer.render(
-				createFontOpenGraphNode(metadata, layout, hasPreviewFont),
+				createFontOpenGraphNode(metadata, registry, layout, hasPreviewFont),
 				{
 					width: OPEN_GRAPH_WIDTH,
 					height: OPEN_GRAPH_HEIGHT,
@@ -107,10 +120,20 @@ export const getFontOpenGraphImage = async (
 	if (!metadata) {
 		throw notFound(`Not Found. Font "${id}" does not exist.`);
 	}
+	const registry = await readRegistryView(
+		c,
+		`families/${id}.json`,
+		RegistryFamilyDetailSchema,
+		'Not Found. Registry family does not exist.',
+	);
 
 	let image: Uint8Array<ArrayBufferLike>;
 	try {
-		image = await renderImage(metadata, await loadPreviewFont(metadata));
+		image = await renderImage(
+			metadata,
+			registry,
+			await loadPreviewFont(metadata, registry),
+		);
 	} catch (error) {
 		console.error(
 			JSON.stringify({
@@ -119,7 +142,7 @@ export const getFontOpenGraphImage = async (
 				error: error instanceof Error ? error.message : String(error),
 			}),
 		);
-		image = await renderImage(metadata, undefined);
+		image = await renderImage(metadata, registry, undefined);
 	}
 
 	const headers = new Headers({
@@ -130,5 +153,5 @@ export const getFontOpenGraphImage = async (
 		headers.set('Last-Modified', new Date(lastModified).toUTCString());
 	}
 
-	return new Response(image, { headers });
+	return new Response(toResponseBody(image), { headers });
 };

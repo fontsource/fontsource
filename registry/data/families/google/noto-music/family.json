@@ -12,6 +12,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "music",
 	"project": {
 		"repository": "https://github.com/notofonts/music",
 		"revision": "2c97b9ea6927a3a80bc7289d663d9115b070f365"

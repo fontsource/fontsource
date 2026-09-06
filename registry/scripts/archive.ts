@@ -118,6 +118,23 @@ const selectPreviewSource = (
 	throw new Error('Registry distribution has no preview source');
 };
 
+const resolvePublicCharacterDistribution = (
+	characters: ReturnType<typeof familyDistributionSchema.parse>['characters'],
+) => {
+	if (characters === 'all') return { type: 'all' } as const;
+
+	const slicing = characters.slicing;
+	if (!slicing) return { type: 'subsets', ...characters } as const;
+
+	return {
+		type: 'subsets',
+		defaultSubset: characters.defaultSubset,
+		subsets: characters.subsets,
+		slicing: slicing.definition,
+		slicingSubset: slicing.subset,
+	} as const;
+};
+
 const createArchivePlan = async (root: string, registryRevision: string) => {
 	await validateRegistry(root);
 
@@ -146,11 +163,20 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const languages = languageCatalogSchema.parse(
 		await readJson(join(root, 'languages.json')),
 	);
+	const getLanguageDirection = (
+		language: (typeof languages)[string],
+	): 'ltr' | 'rtl' => {
+		const locale = new Intl.Locale(`und-${language.script}`) as Intl.Locale & {
+			getTextInfo: () => { direction: 'ltr' | 'rtl' };
+		};
+		return locale.getTextInfo().direction;
+	};
 	const languageSummaries = Object.entries(languages)
 		.map(([id, language]) => ({
 			id,
 			language: language.language,
 			script: language.script,
+			direction: getLanguageDirection(language),
 			name: language.name,
 			preferredName: language.preferredName,
 			autonym: language.autonym,
@@ -182,10 +208,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		);
 		const publicDistribution = {
 			...resolveDistributionSources(distribution, family, id),
-			characters:
-				distribution.characters === 'all'
-					? ({ type: 'all' } as const)
-					: ({ type: 'subsets', ...distribution.characters } as const),
+			characters: resolvePublicCharacterDistribution(distribution.characters),
 		};
 		const previewSource = selectPreviewSource(publicDistribution);
 		const axes = [
@@ -244,6 +267,19 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			).toSorted(compareStrings),
 			sourceModified: family.sourceModified,
 			axes,
+			primaryLanguage: family.primaryLanguage,
+			primaryScript: family.primaryScript,
+			primaryDirection: family.primaryLanguage
+				? getLanguageDirection(languages[family.primaryLanguage])
+				: undefined,
+			previewSubset: family.previewSubset,
+			sampleText: family.sampleText,
+			previewContext: family.previewContext,
+			designer: family.designer,
+			license: {
+				id: family.license.id,
+				url: family.license.url,
+			},
 		};
 		familySummaries.push(publicFamily);
 		familyViews.push(
@@ -252,10 +288,6 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				RegistryFamilyDetailSchema.parse({
 					...publicFamily,
 					languages: family.languages,
-					primaryLanguage: family.primaryLanguage,
-					primaryScript: family.primaryScript,
-					sampleText: family.sampleText,
-					designer: family.designer,
 					dateAdded: family.dateAdded,
 					license: {
 						id: family.license.id,

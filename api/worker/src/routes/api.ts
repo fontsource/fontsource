@@ -8,6 +8,7 @@ import {
 	listFonts,
 	listFontValues,
 } from '../features/metadata/catalog/handler';
+import { resolveFontPackages } from '../features/metadata/packages/handler';
 import {
 	getFontStats,
 	getStatsBadge,
@@ -27,6 +28,8 @@ import {
 	FontListItemSchema,
 	FontlistQuerySchema,
 	FontlistResponseSchema,
+	FontPackageRequestSchema,
+	FontPackageResponseSchema,
 	StatsBadgeMetricSchema,
 	StatsBadgeSchema,
 	StatsMapSchema,
@@ -120,6 +123,30 @@ export class GetFontRoute extends OpenAPIRoute {
 	async handle(c: AppContext) {
 		const data = await this.getValidatedData<typeof this.schema>();
 		return getFont(c, data.params.id);
+	}
+}
+
+export class ResolveFontPackagesRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['Metadata'],
+		operationId: 'resolveFontPackages',
+		summary: 'Resolve standard font packages',
+		description:
+			'Returns the current standard package identity and version for multiple font families.',
+		request: {
+			body: contentJson(FontPackageRequestSchema),
+		},
+		responses: {
+			'200': {
+				description: 'Resolved package projections and unresolved family IDs',
+				...contentJson(FontPackageResponseSchema),
+			},
+		},
+	};
+
+	async handle(c: AppContext) {
+		const data = await this.getValidatedData<typeof this.schema>();
+		return resolveFontPackages(c, data.body.ids);
 	}
 }
 

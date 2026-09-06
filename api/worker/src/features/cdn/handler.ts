@@ -8,6 +8,7 @@ import {
 	findFontPackageEntry,
 	resolveFontPackageManifest,
 } from '../../../../shared/font-package-manifest';
+import { toResponseBody } from '../../../../shared/response';
 import { getBinaryKey, getDownloadKey } from '../../../../shared/storage';
 import {
 	fetchPackageFileList,
@@ -244,7 +245,7 @@ const respondWithBinary = (
 		`attachment; filename="${options.filename}"`,
 	);
 
-	return new Response(body.body, { status: 200, headers });
+	return new Response(toResponseBody(body.body), { status: 200, headers });
 };
 
 export const getDownloadAsset = async (

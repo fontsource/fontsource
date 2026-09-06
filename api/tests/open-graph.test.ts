@@ -8,10 +8,88 @@ import {
 	staticWoff2Bytes,
 	testCatalog,
 	testEnv,
+	toResponse,
 	variableWoff2Bytes,
 } from './helpers';
 
 const PNG_SIGNATURE = [137, 80, 78, 71, 13, 10, 26, 10];
+const REGISTRY_REVISION = '1'.repeat(40);
+const SOURCE_SHA256 = '2'.repeat(64);
+
+const seedRegistryFamilies = async (
+	families: ReadonlyArray<{ id: string; family: string }>,
+): Promise<void> => {
+	const existing = await testEnv.REGISTRY.list();
+	await Promise.all(
+		existing.objects.map(({ key }) => testEnv.REGISTRY.delete(key)),
+	);
+	await testEnv.REGISTRY.put(
+		'current.json',
+		JSON.stringify({
+			schemaVersion: 1,
+			registryRevision: REGISTRY_REVISION,
+		}),
+	);
+	await Promise.all(
+		families.map(({ id, family }) =>
+			testEnv.REGISTRY.put(
+				`snapshots/${REGISTRY_REVISION}/api/families/${id}.json`,
+				JSON.stringify({
+					id,
+					family,
+					provider: 'google',
+					status: 'active',
+					classifications: ['sans-serif'],
+					tags: [],
+					sourceModified: '2024-01-01',
+					axes: [],
+					previewSubset: 'latin',
+					sampleText: { short: family },
+					license: {
+						id: 'OFL-1.1',
+						url: 'https://openfontlicense.org',
+						text: 'Test license',
+					},
+					languages: [],
+					provenance: { type: 'registry' },
+					previewSource: SOURCE_SHA256,
+					distribution: {
+						static: [
+							{
+								weight: 400,
+								style: 'normal',
+								source: SOURCE_SHA256,
+							},
+						],
+						characters: {
+							type: 'subsets',
+							defaultSubset: 'latin',
+							subsets: [{ id: 'latin', definition: 'latin' }],
+							slicing: 'japanese-web',
+						},
+					},
+					sources: [
+						{
+							sha256: SOURCE_SHA256,
+							filename: `${id}.ttf`,
+							path: `${id}.ttf`,
+							format: 'ttf',
+							size: 1,
+							downloadUrl: `/v1/registry/sources/${SOURCE_SHA256}`,
+							capabilitiesUrl: `/v1/registry/sources/${SOURCE_SHA256}/capabilities`,
+							fontVersion: null,
+							glyphCount: 1,
+							codepointCount: 1,
+							style: 'normal',
+							type: 'static',
+							weight: 400,
+						},
+					],
+				}),
+			),
+		),
+	);
+};
 
 const readUint32 = (bytes: Uint8Array, offset: number): number =>
 	new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength).getUint32(
@@ -21,6 +99,9 @@ const readUint32 = (bytes: Uint8Array, offset: number): number =>
 describe('font Open Graph route', () => {
 	beforeEach(async () => {
 		await setupWorkerTest();
+		await seedRegistryFamilies([
+			{ id: staticMetadata.id, family: staticMetadata.family },
+		]);
 	});
 
 	afterEach(() => {
@@ -87,9 +168,13 @@ describe('font Open Graph route', () => {
 			KV_KEYS.catalog,
 			JSON.stringify({ ...testCatalog, [id]: metadata }),
 		);
+		await seedRegistryFamilies([
+			{ id: staticMetadata.id, family: staticMetadata.family },
+			{ id, family: metadata.family },
+		]);
 		const fontUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${id}@latest/files/${id}-latin-400-normal.woff2`;
 		installUpstreamFetchMock({
-			[fontUrl]: new Response(staticWoff2Bytes),
+			[fontUrl]: toResponse(staticWoff2Bytes),
 		});
 		const errorSpy = vi
 			.spyOn(console, 'error')
@@ -120,11 +205,15 @@ describe('font Open Graph route', () => {
 				[secondId]: { ...metadata, id: secondId },
 			}),
 		);
+		await seedRegistryFamilies([
+			{ id: firstId, family: metadata.family },
+			{ id: secondId, family: metadata.family },
+		]);
 		const firstUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${firstId}@latest/files/${firstId}-latin-400-normal.woff2`;
 		const secondUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${secondId}@latest/files/${secondId}-latin-400-normal.woff2`;
 		installUpstreamFetchMock({
-			[firstUrl]: new Response(staticWoff2Bytes),
-			[secondUrl]: new Response(variableWoff2Bytes),
+			[firstUrl]: toResponse(staticWoff2Bytes),
+			[secondUrl]: toResponse(variableWoff2Bytes),
 		});
 
 		const [first, second] = await Promise.all([

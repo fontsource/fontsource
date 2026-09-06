@@ -2,7 +2,7 @@
 
 import { buildClientParams, type Client, type ClientMeta, type Options as Options2, type RequestResult, type TDataShape } from './client';
 import { client } from './client.gen';
-import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses } from './types.gen';
+import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses, ResolveFontPackagesResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -106,6 +106,28 @@ export const getFont = <ThrowOnError extends boolean = true>(parameters: {
         url: '/v1/fonts/{id}',
         ...options,
         ...params
+    });
+};
+
+/**
+ * Resolve standard font packages
+ *
+ * Returns the current standard package identity and version for multiple font families.
+ */
+export const resolveFontPackages = <ThrowOnError extends boolean = true>(parameters: {
+    ids: Array<string>;
+}, options?: Options<never, ThrowOnError>): RequestResult<ResolveFontPackagesResponses, unknown, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'body', key: 'ids' }] }]);
+    return (options?.client ?? client).post<ResolveFontPackagesResponses, unknown, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/font-packages',
+        ...options,
+        ...params,
+        headers: {
+            'Content-Type': 'application/json',
+            ...options?.headers,
+            ...params.headers
+        }
     });
 };
 

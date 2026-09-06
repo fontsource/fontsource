@@ -1,12 +1,13 @@
 import type { Node } from 'takumi-js';
 import type { Renderer } from 'takumi-js/wasm';
 import type { SourceFontMetadata } from '../../../../shared/catalog';
+import type { RegistryFamilyDetail } from '../../../../shared/registry';
 import {
 	getOpenGraphIconLigatures,
 	getOpenGraphSpecimenMaxFontSize,
 	getOpenGraphSpecimenText,
 	shouldUseOpenGraphPreviewTitle,
-} from './font-exceptions';
+} from './font-presentation';
 
 export const OPEN_GRAPH_WIDTH = 1200;
 export const OPEN_GRAPH_HEIGHT = 630;
@@ -103,10 +104,11 @@ const measureText = async (
 export const fitOpenGraphText = async (
 	renderer: Renderer,
 	metadata: SourceFontMetadata,
+	registry: RegistryFamilyDetail,
 	hasPreviewFont: boolean,
 ): Promise<OpenGraphTextLayout> => {
 	const previewFontFamily =
-		hasPreviewFont && shouldUseOpenGraphPreviewTitle(metadata)
+		hasPreviewFont && shouldUseOpenGraphPreviewTitle(metadata, registry)
 			? PREVIEW_FONT_FAMILY
 			: UI_FONT_FAMILY;
 	const measurements = new Map<string, { height: number; width: number }>();
@@ -154,8 +156,8 @@ export const fitOpenGraphText = async (
 	const specimenFontFamily = hasPreviewFont
 		? PREVIEW_FONT_FAMILY
 		: UI_FONT_FAMILY;
-	const specimenText = getOpenGraphSpecimenText(metadata);
-	const isIconFont = Boolean(getOpenGraphIconLigatures(metadata));
+	const specimenText = getOpenGraphSpecimenText(registry);
+	const isIconFont = Boolean(getOpenGraphIconLigatures(registry));
 	const specimenMeasurement = isIconFont
 		? { height: MEASURE_FONT_SIZE, width: MEASURE_FONT_SIZE }
 		: await measureText(renderer, specimenText, specimenFontFamily);
@@ -163,7 +165,7 @@ export const fitOpenGraphText = async (
 		? 62
 		: Math.min(
 				getOpenGraphSpecimenMaxFontSize(
-					metadata,
+					registry,
 					metadata.category === 'handwriting'
 						? MAX_HANDWRITING_SPECIMEN_FONT_SIZE
 						: MAX_SPECIMEN_FONT_SIZE,
@@ -232,11 +234,11 @@ const createMetadataChildren = (metadata: SourceFontMetadata): Node[] => {
 };
 
 const createSpecimenNode = (
-	metadata: SourceFontMetadata,
+	registry: RegistryFamilyDetail,
 	layout: OpenGraphTextLayout,
 	hasPreviewFont: boolean,
 ): Node => {
-	const iconLigatures = getOpenGraphIconLigatures(metadata);
+	const iconLigatures = getOpenGraphIconLigatures(registry);
 	const previewFontFamily = hasPreviewFont
 		? PREVIEW_FONT_FAMILY
 		: UI_FONT_FAMILY;
@@ -289,11 +291,12 @@ const createSpecimenNode = (
 
 const createTitleNode = (
 	metadata: SourceFontMetadata,
+	registry: RegistryFamilyDetail,
 	hasPreviewFont: boolean,
 	layout: OpenGraphTextLayout,
 ): Node => {
 	const previewFontFamily =
-		hasPreviewFont && shouldUseOpenGraphPreviewTitle(metadata)
+		hasPreviewFont && shouldUseOpenGraphPreviewTitle(metadata, registry)
 			? PREVIEW_FONT_FAMILY
 			: UI_FONT_FAMILY;
 
@@ -330,6 +333,7 @@ const createTitleNode = (
 
 export const createFontOpenGraphNode = (
 	metadata: SourceFontMetadata,
+	registry: RegistryFamilyDetail,
 	layout: OpenGraphTextLayout,
 	hasPreviewFont: boolean,
 ): Node => ({
@@ -357,7 +361,7 @@ export const createFontOpenGraphNode = (
 				width: 240,
 			},
 		},
-		createTitleNode(metadata, hasPreviewFont, layout),
+		createTitleNode(metadata, registry, hasPreviewFont, layout),
 		{
 			type: 'container',
 			style: {
@@ -397,7 +401,7 @@ export const createFontOpenGraphNode = (
 						},
 					}),
 				),
-				createSpecimenNode(metadata, layout, hasPreviewFont),
+				createSpecimenNode(registry, layout, hasPreviewFont),
 			],
 		},
 		{

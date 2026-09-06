@@ -419,6 +419,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "symbols",
 	"project": {
 		"repository": "https://github.com/notofonts/symbols",
 		"revision": "b61fa7f86fb7d4163ee11d46d0977393f98d4f7a"

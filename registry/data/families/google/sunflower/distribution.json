@@ -1,7 +1,10 @@
 {
 	"characters": {
 		"defaultSubset": "korean",
-		"slicing": "korean-web",
+		"slicing": {
+			"definition": "korean-web",
+			"subset": "korean"
+		},
 		"subsets": [
 			{
 				"definition": "korean",

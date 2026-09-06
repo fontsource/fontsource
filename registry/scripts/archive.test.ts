@@ -50,6 +50,7 @@ describe('registry source archive', () => {
 			'families/material-icons/symbols.json',
 			'families/metropolis.json',
 			'families/nebula-sans.json',
+			'families/noto-sans-jp.json',
 			'families/noto-color-emoji-compat-test.json',
 			'families/yakuhanjp.json',
 			'languages.json',
@@ -339,6 +340,10 @@ describe('registry source archive', () => {
 		expect(abelSummary).toMatchObject({
 			id: 'abel',
 			axes: [],
+			license: {
+				id: 'OFL-1.1',
+				url: expect.any(String),
+			},
 		});
 		expect(abelSummary).not.toHaveProperty('languages');
 		expect(abelSummary).not.toHaveProperty('variable');
@@ -347,10 +352,24 @@ describe('registry source archive', () => {
 			expect.arrayContaining([
 				expect.objectContaining({
 					id: 'fa_Arab',
+					direction: 'rtl',
 					sampleText: expect.any(Object),
 				}),
 			]),
 		);
+		const notoSansJp = RegistryFamilyDetailSchema.parse(
+			views.get('families/noto-sans-jp.json'),
+		);
+		expect(notoSansJp).toMatchObject({
+			previewSubset: 'japanese',
+			distribution: {
+				characters: {
+					type: 'subsets',
+					slicing: 'japanese-web',
+					slicingSubset: 'japanese',
+				},
+			},
+		});
 		expect(JSON.stringify(languageCatalog)).not.toContain('requiredCodepoints');
 	}, 15_000);
 });

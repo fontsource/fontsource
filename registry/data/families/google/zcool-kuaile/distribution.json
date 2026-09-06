@@ -1,7 +1,10 @@
 {
 	"characters": {
 		"defaultSubset": "latin",
-		"slicing": "simplified-chinese-web",
+		"slicing": {
+			"definition": "simplified-chinese-web",
+			"subset": "chinese-simplified"
+		},
 		"subsets": [
 			{
 				"definition": "chinese-simplified",

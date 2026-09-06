@@ -17,6 +17,7 @@ import {
 	ListFontValuesRoute,
 	ListStatsRoute,
 	ListVariableFontsRoute,
+	ResolveFontPackagesRoute,
 } from './routes/api';
 import { GetBinaryAssetRoute, GetCssFileRoute } from './routes/cdn';
 import {
@@ -167,6 +168,7 @@ const openapi = fromHono(app, {
 openapi.get('/fontlist', ListFontValuesRoute);
 openapi.get('/v1/fonts', ListFontsRoute);
 openapi.get('/v1/fonts/:id', GetFontRoute);
+openapi.post('/v1/font-packages', ResolveFontPackagesRoute);
 openapi.get('/v1/variable', ListVariableFontsRoute);
 openapi.get('/v1/variable/:id', GetVariableFontRoute);
 openapi.get('/v1/axis-registry', ListAxisRegistryRoute);

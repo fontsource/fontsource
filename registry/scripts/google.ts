@@ -285,9 +285,10 @@ const createGoogleDistribution = (
 	const subsets = Array.from(
 		new Set(google.subsets.filter((subset) => subset !== 'menu')),
 	).toSorted(compareStrings);
-	const slicing = subsets
-		.map((subset) => SLICING_BY_SUBSET[subset])
-		.filter((value): value is string => Boolean(value));
+	const slicing = subsets.flatMap((subset) => {
+		const definition = SLICING_BY_SUBSET[subset];
+		return definition ? [{ definition, subset }] : [];
+	});
 	if (slicing.length > 1) {
 		throw new Error(`${google.name} has multiple slicing subsets`);
 	}

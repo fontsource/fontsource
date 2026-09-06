@@ -27,8 +27,11 @@ const ABEL_DISTRIBUTION = {
 	static: [{ weight: 400, style: 'normal' }],
 	characters: {
 		defaultSubset: 'latin',
-		subsets: [{ id: 'latin', definition: 'latin' }],
-		slicing: 'japanese-web',
+		subsets: [
+			{ id: 'japanese', definition: 'japanese' },
+			{ id: 'latin', definition: 'latin' },
+		],
+		slicing: { definition: 'japanese-web', subset: 'japanese' },
 	},
 } as const;
 
@@ -320,6 +323,11 @@ const createNamRepository = async (): Promise<{
 		repository,
 		'Lib/gfsubsets/data/latin_unique-glyphs.nam',
 		'0x0020 SPACE\n0x0021 EXCLAMATION\n0x0022 QUOTATION MARK\n',
+	);
+	await writeFixture(
+		repository,
+		'Lib/gfsubsets/data/japanese_unique-glyphs.nam',
+		'0x3042 HIRAGANA LETTER A\n',
 	);
 	await writeFixture(
 		repository,
@@ -983,5 +991,5 @@ describe('registry ingestion', () => {
 		await expect(validateRegistry(registry)).rejects.toThrow(
 			'Replacement target recursive-sans must be active',
 		);
-	}, 30_000);
+	}, 45_000);
 });

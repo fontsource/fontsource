@@ -3,6 +3,7 @@ import { packTar } from 'modern-tar';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { BuildVersionRequest } from '../shared/build';
 import { resolveFontPackageManifest } from '../shared/font-package-manifest';
+import { toResponseBody } from '../shared/response';
 import {
 	staticMetadata,
 	staticTtfBytes,
@@ -108,7 +109,7 @@ describe('container artifact builder', () => {
 	};
 
 	const tarballStream = (tarball: Uint8Array): ReadableStream<Uint8Array> => {
-		const body = new Response(tarball).body;
+		const body = new Response(toResponseBody(tarball)).body;
 		if (!body) {
 			throw new Error('Missing test tarball body');
 		}

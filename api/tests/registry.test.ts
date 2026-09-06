@@ -24,6 +24,10 @@ const FAMILY_SUMMARY = {
 	tags: ['sans/humanist'],
 	sourceModified: '2026-07-15',
 	axes: [],
+	license: {
+		id: 'OFL-1.1',
+		url: 'https://openfontlicense.org',
+	},
 } as const;
 const VIEWS = [
 	{
@@ -44,6 +48,7 @@ const VIEWS = [
 			languages: ['en_Latn'],
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
+			previewSubset: 'latin',
 			sampleText: {
 				short: 'All people are born free',
 				long: 'All people are born free and equal',
@@ -101,6 +106,7 @@ const VIEWS = [
 				id: 'en_Latn',
 				language: 'en',
 				script: 'Latn',
+				direction: 'ltr',
 				name: 'English',
 				autonym: 'English',
 				sampleText: {

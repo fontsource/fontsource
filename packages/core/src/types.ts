@@ -6,6 +6,13 @@ export type FontFileFormat = WebFontFormat | 'ttf';
 
 type UnicodeRangeMap = Record<string, string>;
 
+export interface FontSubsetSlice {
+	/** Published numeric suffix for this slice. */
+	id: number;
+	/** CSS unicode-range covered by this slice. */
+	unicodeRange: string;
+}
+
 export interface VariableFontAxis {
 	default?: string | number;
 	min: string | number;
@@ -73,6 +80,8 @@ interface FontSelection {
 	weights: number[];
 	styles: FontStyle[];
 	unicodeRange?: UnicodeRangeMap;
+	/** Optional precomputed slices for large Unicode subsets such as CJK fonts. */
+	subsetSlices?: Record<string, FontSubsetSlice[]>;
 }
 
 interface FormatOptions<TFormat extends FontFileFormat> {

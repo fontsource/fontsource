@@ -110,6 +110,22 @@ export const VersionResponseSchema = z.object({
 	variable: z.array(z.string()).optional(),
 });
 
+export const FontPackageRequestSchema = z.object({
+	ids: z.array(z.string().min(1)).max(100),
+});
+
+const FontPackageItemSchema = z.object({
+	id: z.string(),
+	packageName: z.string(),
+	packageVersion: z.string(),
+	fontFamily: z.string(),
+});
+
+export const FontPackageResponseSchema = z.object({
+	items: z.array(FontPackageItemSchema),
+	failedIds: z.array(z.string()),
+});
+
 export const FontlistResponseSchema = z.record(
 	z.string(),
 	z.union([z.string(), z.array(z.string()), z.array(z.number()), z.boolean()]),

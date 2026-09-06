@@ -74,6 +74,10 @@ const sampleTextSchema = z.strictObject({
 	long: z.string().min(1).optional(),
 });
 
+const previewContextSchema = z.strictObject({
+	fallbackFamilies: z.array(z.string().min(1)).min(1),
+});
+
 export const languageCatalogSchema = z.record(
 	languageIdSchema,
 	z.strictObject({
@@ -113,12 +117,20 @@ export const familyOverridesSchema = z.record(
 	z
 		.strictObject({
 			languages: z.array(languageIdSchema).optional(),
+			previewSubset: idSchema.optional(),
 			sampleText: sampleTextSchema.optional(),
+			previewContext: previewContextSchema.optional(),
 		})
 		.refine(
 			(value) =>
-				value.languages !== undefined || value.sampleText !== undefined,
-			{ message: 'must override languages or sample text' },
+				value.languages !== undefined ||
+				value.previewSubset !== undefined ||
+				value.sampleText !== undefined ||
+				value.previewContext !== undefined,
+			{
+				message:
+					'must override languages, preview subset, sample text, or preview context',
+			},
 		),
 );
 
@@ -200,7 +212,9 @@ export const familySchema = z.strictObject({
 	languages: z.array(languageIdSchema),
 	primaryLanguage: languageIdSchema.optional(),
 	primaryScript: scriptSchema.optional(),
+	previewSubset: idSchema.optional(),
 	sampleText: sampleTextSchema.optional(),
+	previewContext: previewContextSchema.optional(),
 	designer: z.string().min(1).optional(),
 	dateAdded: dateSchema.optional(),
 	sourceModified: dateSchema,
@@ -278,7 +292,9 @@ const subsetDistributionSchema = z.strictObject({
 	subsets: z
 		.array(z.strictObject({ id: idSchema, definition: idSchema }))
 		.min(1),
-	slicing: idSchema.optional(),
+	slicing: z
+		.strictObject({ definition: idSchema, subset: idSchema })
+		.optional(),
 });
 
 export const familyDistributionSchema = z
