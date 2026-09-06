@@ -1,5 +1,20 @@
 # @fontsource-utils/core
 
+## [0.4.0](https://github.com/fontsource/fontsource/compare/core-v0.3.0...core-v0.4.0) (2026-09-06)
+
+
+### Features
+
+* **api:** support registry-backed font experience ([#1243](https://github.com/fontsource/fontsource/issues/1243)) ([958b9ff](https://github.com/fontsource/fontsource/commit/958b9ff10af5fea1ca7251434f84d036adea6d45))
+* **fonts:** build composite distributions ([#1225](https://github.com/fontsource/fontsource/issues/1225)) ([e50a906](https://github.com/fontsource/fontsource/commit/e50a906d3026beac81ebc47b5436c9d7c2e3a070))
+* **registry:** expose discovery capabilities ([#1227](https://github.com/fontsource/fontsource/issues/1227)) ([4f95176](https://github.com/fontsource/fontsource/commit/4f951764c6d63c7c2d9f6f8984404deb60826685))
+
+
+### Bug Fixes
+
+* **css:** use legacy variable font format hint ([#1239](https://github.com/fontsource/fontsource/issues/1239)) ([1de4d63](https://github.com/fontsource/fontsource/commit/1de4d6398235efe85aad6d8c3c0aede3f2fe5636))
+* **processor:** pin unused axes in static font builds ([#1212](https://github.com/fontsource/fontsource/issues/1212)) ([be1b8a6](https://github.com/fontsource/fontsource/commit/be1b8a659ff74c8603b98d5fa9a74bbd516d4615))
+
 ## [0.3.0](https://github.com/fontsource/fontsource/compare/core-v0.2.0...core-v0.3.0) (2026-07-26)
 
 
