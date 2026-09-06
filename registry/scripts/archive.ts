@@ -43,7 +43,8 @@ import {
 	validateRegistry,
 } from './validator.ts';
 
-const CONCURRENCY = 16;
+// Keep concurrent retries within the S3 client's shared retry budget.
+const CONCURRENCY = 8;
 const REPOSITORY_ROOT = resolve(import.meta.dirname, '../..');
 const REGISTRY_ROOT = join(REPOSITORY_ROOT, 'registry', 'data');
 const logger = consola.withTag('registry');
