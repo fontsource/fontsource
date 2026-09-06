@@ -22,6 +22,9 @@ const client = new S3Client({
 		secretAccessKey: requireEnv('REGISTRY_R2_SECRET_ACCESS_KEY'),
 	},
 	region: 'auto',
+	// Archive requests are idempotent, so tolerate transient R2 connectivity
+	// failures beyond the SDK's default three attempts.
+	maxAttempts: 10,
 	// R2 does not support the SDK's default full-object CRC32 uploads; the
 	// archive verifies each object against its registry SHA-256 instead.
 	requestChecksumCalculation: 'WHEN_REQUIRED',
