@@ -56,6 +56,15 @@ describe('resolveFontSetFamily', () => {
 		});
 	});
 
+	it('does not resolve a family without license metadata', () => {
+		expect(
+			resolveFontSetFamily({
+				artifact,
+				registry: { ...registry, license: undefined },
+			}),
+		).toBeUndefined();
+	});
+
 	it('uses registry display, sample, designer, and license data without persisting capabilities', () => {
 		const detailedRegistry = {
 			...registry,

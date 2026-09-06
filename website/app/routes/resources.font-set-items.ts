@@ -51,7 +51,10 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 	);
 	const items = packages.items.flatMap((artifact) => {
 		const registry = registryById.get(artifact.id);
-		return registry ? [resolveFontSetFamily({ artifact, registry })] : [];
+		const item = registry
+			? resolveFontSetFamily({ artifact, registry })
+			: undefined;
+		return item ? [item] : [];
 	});
 	const resolvedIds = new Set(items.map((item) => item.familyId));
 

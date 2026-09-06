@@ -22,12 +22,13 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			return [];
 		}
 		const slicing = characters.slicing;
-		if (!slicing) return [];
+		const slicingSubset = characters.slicingSubset;
+		if (!slicing || !slicingSubset) return [];
 		const definition = await getRegistrySubset(
-			{ id: slicing.definition },
+			{ id: slicing },
 			{ signal: request.signal },
 		);
-		return [{ ...definition, id: slicing.subset }];
+		return [{ ...definition, id: slicingSubset }];
 	});
 	const [base, subsetDefinitions] = await Promise.all([
 		basePromise,

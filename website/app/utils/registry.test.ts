@@ -49,8 +49,11 @@ const source = (sha256: string, type: 'static' | 'variable', weight: number) =>
 	({
 		sha256,
 		filename: `${sha256}.ttf`,
+		path: `files/${sha256}.ttf`,
 		format: 'ttf',
 		size: 1,
+		glyphCount: 1,
+		codepointCount: 1,
 		downloadUrl: `/sources/${sha256}`,
 		capabilitiesUrl: `/sources/${sha256}/capabilities`,
 		fontVersion: null,
@@ -77,6 +80,7 @@ const family = {
 		url: 'https://example.com/license',
 		text: 'License text',
 	},
+	provenance: { type: 'registry' },
 	sources: [
 		source('static-400', 'static', 400),
 		source('variable-standard', 'variable', 400),

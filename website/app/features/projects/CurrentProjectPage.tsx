@@ -9,7 +9,7 @@ import { AddFontSetToCollectionMenu } from '@/features/collections/AddToCollecti
 import { usePackageManager } from '@/hooks/usePackageManager';
 import {
 	getPackageManagerCommand,
-	packageManagers,
+	packageManagerValues,
 } from '@/utils/docs/packageManagers';
 import { triggerBlobDownload } from '@/utils/download';
 import { formatFontLabel } from '@/utils/font-labels';
@@ -394,17 +394,15 @@ const CurrentProjectPage = () => {
 									<fieldset className={classes.packageManagers}>
 										<legend>Package manager</legend>
 										<div>
-											{packageManagers.map((item) => (
+											{packageManagerValues.map((value) => (
 												<button
-													key={item.value}
+													key={value}
 													type="button"
-													data-active={
-														packageManager === item.value || undefined
-													}
-													aria-pressed={packageManager === item.value}
-													onClick={() => setPackageManager(item.value)}
+													data-active={packageManager === value || undefined}
+													aria-pressed={packageManager === value}
+													onClick={() => setPackageManager(value)}
 												>
-													{item.value}
+													{value}
 												</button>
 											))}
 										</div>
