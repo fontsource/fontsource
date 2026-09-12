@@ -3,7 +3,6 @@ import type { ActionFunctionArgs } from 'react-router';
 import { MAX_FONT_SET_SIZE } from '@/features/projects/model';
 import { resolveFontSetFamily } from '@/features/projects/resolveFontSetFamily';
 import { listRegistryFamilies, resolveFontPackages } from '@/generated/api';
-import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
 const familyIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const MAX_FAMILY_ID_LENGTH = 96;
@@ -36,34 +35,42 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 	const validIds = fontIds.filter(
 		(id) => id.length <= MAX_FAMILY_ID_LENGTH && familyIdPattern.test(id),
 	);
+	if (validIds.length === 0) {
+		return { requestId, items: [], failedIds: invalidIds };
+	}
 
-	const options = { signal: request.signal };
-	const [packages, registryFamilies] = await Promise.all([
-		resolveFontPackages({ ids: validIds }, options),
-		loadRequiredRegistryData(
+	try {
+		const options = { signal: request.signal };
+		const [packages, registryFamilies] = await Promise.all([
+			resolveFontPackages({ ids: validIds }, options),
 			listRegistryFamilies(options),
-			request.signal,
-			'Font registry',
-		),
-	]);
-	const registryById = new Map(
-		registryFamilies.map((family) => [family.id, family]),
-	);
-	const items = packages.items.flatMap((artifact) => {
-		const registry = registryById.get(artifact.id);
-		const item = registry
-			? resolveFontSetFamily({ artifact, registry })
-			: undefined;
-		return item ? [item] : [];
-	});
-	const resolvedIds = new Set(items.map((item) => item.familyId));
-
-	return {
-		requestId,
-		items,
-		failedIds: [
-			...invalidIds,
-			...validIds.filter((id) => !resolvedIds.has(id)),
-		],
-	};
+		]);
+		const registryById = new Map(
+			registryFamilies.map((family) => [family.id, family]),
+		);
+		const items = packages.items.flatMap((artifact) => {
+			const registry = registryById.get(artifact.id);
+			const item = registry
+				? resolveFontSetFamily({ artifact, registry })
+				: undefined;
+			return item ? [item] : [];
+		});
+		const resolvedIds = new Set(items.map((item) => item.familyId));
+		return {
+			requestId,
+			items,
+			failedIds: [
+				...invalidIds,
+				...validIds.filter((id) => !resolvedIds.has(id)),
+			],
+		};
+	} catch (error) {
+		if (request.signal.aborted) throw error;
+		return {
+			requestId,
+			items: [],
+			failedIds: fontIds,
+			error: 'Font details could not be loaded. Try again.',
+		};
+	}
 };

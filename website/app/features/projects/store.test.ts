@@ -54,13 +54,14 @@ describe('font set store', () => {
 		]);
 	});
 
-	it('rejects persisted duplicate families', () => {
-		const result = currentProjectSnapshotSchema.safeParse([
+	it('deduplicates persisted families without clearing the set', () => {
+		const result = currentProjectSnapshotSchema.parse([
 			{ familyId: 'fraunces' },
+			{ familyId: 'inter' },
 			{ familyId: 'fraunces' },
 		]);
 
-		expect(result.success).toBe(false);
+		expect(result).toEqual([{ familyId: 'fraunces' }, { familyId: 'inter' }]);
 	});
 
 	it('reports when the family limit prevents additions', () => {

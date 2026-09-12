@@ -1,6 +1,15 @@
+import { getJsDelivrPackageUrl } from '@/utils/cdn';
 import type { ResolvedFontSetFamily } from './model';
 
 const getCdnStylesheetUrl = (item: ResolvedFontSetFamily) =>
-	`https://cdn.jsdelivr.net/npm/${item.packageName}@${item.packageVersion}/index.css`;
+	getJsDelivrPackageUrl(item.packageName, item.packageVersion, 'index.css');
 
-export { getCdnStylesheetUrl };
+const getFontSetUsageCSS = (items: ResolvedFontSetFamily[]) =>
+	items
+		.map(
+			(item) =>
+				`.font-${item.familyId} {\n  font-family: ${JSON.stringify(item.fontFamily)};\n}`,
+		)
+		.join('\n\n');
+
+export { getCdnStylesheetUrl, getFontSetUsageCSS };

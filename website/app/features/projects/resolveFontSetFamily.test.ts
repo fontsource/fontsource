@@ -1,10 +1,5 @@
 import { describe, expect, it } from 'vitest';
 
-import type {
-	ListRegistryFamiliesResponse,
-	ResolveFontPackagesResponse,
-} from '@/generated/api';
-
 import { resolveFontSetFamily } from './resolveFontSetFamily';
 
 const artifact = {
@@ -12,7 +7,7 @@ const artifact = {
 	packageName: '@fontsource-variable/example',
 	packageVersion: '5.3.0',
 	fontFamily: 'Example Variable',
-} satisfies ResolveFontPackagesResponse['items'][number];
+};
 
 const registry = {
 	id: 'example',
@@ -24,11 +19,11 @@ const registry = {
 	sourceModified: '2026-08-01',
 	axes: ['wght'],
 	license: { id: 'OFL-1.1', url: 'https://example.com/license' },
-} satisfies ListRegistryFamiliesResponse[number];
+} satisfies Parameters<typeof resolveFontSetFamily>[0]['registry'];
 
 describe('resolveFontSetFamily', () => {
 	it('resolves the standard variable package', () => {
-		const item = resolveFontSetFamily({ artifact, registry });
+		const item = resolveFontSetFamily({ registry, artifact });
 
 		expect(item).toMatchObject({
 			familyId: 'example',
@@ -39,18 +34,20 @@ describe('resolveFontSetFamily', () => {
 		});
 	});
 
-	it('uses the standard static package for a static-only family', () => {
+	it('uses the published static package when selected by the API', () => {
 		const item = resolveFontSetFamily({
+			registry,
 			artifact: {
 				...artifact,
 				packageName: '@fontsource/example',
+				packageVersion: '5.2.1',
 				fontFamily: 'Example',
 			},
-			registry,
 		});
 
 		expect(item).toMatchObject({
 			packageName: '@fontsource/example',
+			packageVersion: '5.2.1',
 			fontFamily: 'Example',
 			family: 'Example',
 		});
@@ -71,17 +68,15 @@ describe('resolveFontSetFamily', () => {
 			family: 'Example Symbols',
 			designer: 'Example Studio',
 			classifications: ['symbols'],
-			tags: ['special-use/icons'],
-			status: 'active',
 			sampleText: { short: 'home settings' },
 			license: {
 				id: 'Apache-2.0',
 				url: 'https://www.apache.org/licenses/LICENSE-2.0',
 			},
-		} satisfies ListRegistryFamiliesResponse[number];
+		} satisfies Parameters<typeof resolveFontSetFamily>[0]['registry'];
 		const item = resolveFontSetFamily({
-			artifact,
 			registry: detailedRegistry,
+			artifact,
 		});
 
 		expect(item).toMatchObject({

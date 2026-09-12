@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import type { ResolvedFontSetFamily } from './model';
-import { getCdnStylesheetUrl } from './output';
+import { getCdnStylesheetUrl, getFontSetUsageCSS } from './output';
 
 const baseItem: ResolvedFontSetFamily = {
 	familyId: 'fraunces',
@@ -19,10 +19,21 @@ const baseItem: ResolvedFontSetFamily = {
 };
 
 describe('font set output', () => {
-	it('uses the standard exact-version package stylesheet for CDN and previews', () => {
+	it('uses the standard package stylesheet for CDN and previews', () => {
 		const stylesheet =
 			'https://cdn.jsdelivr.net/npm/@fontsource-variable/fraunces@5.3.0/index.css';
 
 		expect(getCdnStylesheetUrl(baseItem)).toBe(stylesheet);
+	});
+
+	it('applies exact family names without assigning design roles', () => {
+		expect(
+			getFontSetUsageCSS([
+				baseItem,
+				{ ...baseItem, familyId: 'inter', fontFamily: 'Inter Variable' },
+			]),
+		).toBe(
+			'.font-fraunces {\n  font-family: "Fraunces Variable";\n}\n\n.font-inter {\n  font-family: "Inter Variable";\n}',
+		);
 	});
 });

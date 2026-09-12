@@ -79,6 +79,10 @@ const syncValidatedLocalStorage = <T>({
 	}
 
 	try {
+		if (stored.status === 'valid') {
+			state$.set(stored.value);
+			localStorage.setItem(key, JSON.stringify(stored.value));
+		}
 		syncObservable(state$, {
 			persist: {
 				name: key,

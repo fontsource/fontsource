@@ -109,7 +109,7 @@ const HitComponent = observer(
 				return (
 					hit.sampleText?.short?.trim() ||
 					hit.sampleText?.long?.trim() ||
-					getPreviewText(hit.previewSubset ?? hit.defSubset)
+					getPreviewText(hit.previewSubset ?? hit.defSubset, hit.objectID)
 				);
 			}
 

@@ -1,16 +1,19 @@
 import { useValue } from '@legendapp/state/react';
-import { Button, Group, Modal, Text } from '@mantine/core';
+import {
+	Button,
+	Group,
+	Modal,
+	SegmentedControl,
+	Tabs,
+	Text,
+} from '@mantine/core';
 import { IconDownload } from '@tabler/icons-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useFetcher, useSearchParams } from 'react-router';
 
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
+import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import { AddFontSetToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
-import { usePackageManager } from '@/hooks/usePackageManager';
-import {
-	getPackageManagerCommand,
-	packageManagerValues,
-} from '@/utils/docs/packageManagers';
 import { triggerBlobDownload } from '@/utils/download';
 import { formatFontLabel } from '@/utils/font-labels';
 import classes from './CurrentProjectPage.module.css';
@@ -18,7 +21,7 @@ import { useCurrentProjectStore } from './CurrentProjectProvider';
 import { createFontSetArchive, FontSetArchiveError } from './downloadFontSet';
 import { FontSetFamilyRow } from './FontSetFamilyRow';
 import type { ResolvedFontSetFamily } from './model';
-import { getCdnStylesheetUrl } from './output';
+import { getCdnStylesheetUrl, getFontSetUsageCSS } from './output';
 
 type DeliveryMethod = 'package' | 'cdn';
 type FontSetView = 'files' | 'website';
@@ -49,7 +52,7 @@ const CurrentProjectPage = () => {
 	const loadedResponse =
 		itemFetcher.data?.requestId === requestId ? itemFetcher.data : undefined;
 	const loadedItems = new Map(
-		(loadedResponse?.items ?? []).map((item) => [item.familyId, item]),
+		(itemFetcher.data?.items ?? []).map((item) => [item.familyId, item]),
 	);
 	const items = savedFamilyIds.flatMap((familyId) => {
 		const item = loadedItems.get(familyId);
@@ -60,12 +63,16 @@ const CurrentProjectPage = () => {
 		savedItems.length > 0 &&
 		(!loadedResponse || itemFetcher.state !== 'idle');
 	const outputsReady =
-		Boolean(loadedResponse) && !loadedResponse?.error && items.length > 0;
+		!fontSetLoading &&
+		Boolean(loadedResponse) &&
+		!loadedResponse?.error &&
+		loadedResponse?.failedIds.length === 0 &&
+		items.length > 0 &&
+		items.length === savedItems.length;
 	const method: DeliveryMethod =
 		searchParams.get('method') === 'cdn' ? 'cdn' : 'package';
 	const view: FontSetView =
 		searchParams.get('view') === 'website' ? 'website' : 'files';
-	const [packageManager, setPackageManager] = usePackageManager('pnpm');
 	const [removedItem, setRemovedItem] = useState<RemovedFontSetItem>();
 	const [clearConfirmationOpen, setClearConfirmationOpen] = useState(false);
 	const [zipDownloadState, setZipDownloadState] =
@@ -73,16 +80,14 @@ const CurrentProjectPage = () => {
 	const [zipProgress, setZipProgress] = useState(0);
 	const [zipError, setZipError] = useState<string>();
 	const zipAbortController = useRef<AbortController | undefined>(undefined);
-	const singleItem = items.length === 1 ? items[0] : undefined;
 	const zipBusy = zipDownloadState === 'preparing';
 	const packageNames = items.map((item) => item.packageName).join(' ');
 	const collectionFonts = items.map((item) => ({
 		id: item.familyId,
 		family: item.family,
 	}));
-	const installCommand = getPackageManagerCommand(packageManager, packageNames);
 	const imports = items
-		.map((item) => `import "${item.packageName}";`)
+		.map((item) => `import "${item.packageName}/index.css";`)
 		.join('\n');
 	const cdnLinks = items
 		.map(
@@ -97,11 +102,11 @@ const CurrentProjectPage = () => {
 		const next = new URLSearchParams(searchParams);
 		if (value === defaultValue) next.delete(parameter);
 		else next.set(parameter, value);
-		setSearchParams(next);
+		setSearchParams(next, { preventScrollReset: true });
 	};
 
 	const downloadZip = async () => {
-		if (zipDownloadState === 'preparing') return;
+		if (!outputsReady || zipBusy) return;
 		const controller = new AbortController();
 		zipAbortController.current = controller;
 		setZipDownloadState('preparing');
@@ -163,6 +168,7 @@ const CurrentProjectPage = () => {
 
 	const undoRemove = () => {
 		if (!removedItem) return;
+		setReloadVersion((current) => current + 1);
 		store.addItem({ familyId: removedItem.familyId });
 		setRemovedItem(undefined);
 	};
@@ -171,305 +177,219 @@ const CurrentProjectPage = () => {
 		<div className={classes.page}>
 			<header className={classes.intro}>
 				<div>
-					<h1>Font set</h1>
-					<p>
-						Keep fonts together while you browse. Download every family in one
-						archive or generate one combined website setup.
-					</p>
+					<h1>
+						Font set
+						{ready && savedItems.length > 0 && <span>{savedItems.length}</span>}
+					</h1>
+					<p>Download your fonts together, or use them on a website.</p>
 				</div>
 				{savedItems.length > 0 && (
-					<div className={classes.introActions}>
-						<Link className={classes.generateLink} to="/">
-							Browse more fonts
-						</Link>
-						<div className={classes.desktopUtilities}>
-							<AddFontSetToCollectionMenu
-								fonts={outputsReady ? collectionFonts : []}
-							/>
-							<button
-								type="button"
-								disabled={zipBusy}
-								onClick={() => setClearConfirmationOpen(true)}
-							>
-								Remove all fonts
-							</button>
-						</div>
-						<details className={classes.mobileUtilities}>
-							<summary>More actions</summary>
-							<div>
-								<AddFontSetToCollectionMenu
-									fonts={outputsReady ? collectionFonts : []}
-								/>
-								<button
-									type="button"
-									disabled={zipBusy}
-									onClick={() => setClearConfirmationOpen(true)}
-								>
-									Remove all fonts
-								</button>
-							</div>
-						</details>
-					</div>
+					<Group gap="xs" className={classes.utilities}>
+						<Button component={Link} to="/" variant="subtle">
+							Browse fonts
+						</Button>
+						<AddFontSetToCollectionMenu
+							fonts={outputsReady ? collectionFonts : []}
+						/>
+						<Button
+							variant="subtle"
+							color="gray"
+							disabled={zipBusy}
+							onClick={() => setClearConfirmationOpen(true)}
+						>
+							Remove all
+						</Button>
+					</Group>
 				)}
 			</header>
 
 			{removedItem && (
-				<div className={classes.undoNotice} role="status">
-					<span>
-						<strong>{removedItem.family}</strong> removed from this font set.
-					</span>
-					<button type="button" onClick={undoRemove}>
+				<div className={classes.notice} role="status">
+					<span>{removedItem.family} removed.</span>
+					<Button variant="subtle" disabled={zipBusy} onClick={undoRemove}>
 						Undo
-					</button>
-					<button
-						type="button"
-						aria-label="Dismiss removal confirmation"
+					</Button>
+					<Button
+						variant="subtle"
+						color="gray"
 						onClick={() => setRemovedItem(undefined)}
 					>
 						Dismiss
-					</button>
+					</Button>
 				</div>
 			)}
 
-			{loadedResponse?.error || loadedResponse?.failedIds.length ? (
-				<div className={classes.undoNotice} role="alert">
-					<span>
-						{loadedResponse.error ??
-							`${loadedResponse.failedIds.length} ${
-								loadedResponse.failedIds.length === 1 ? 'font is' : 'fonts are'
-							} currently unavailable. ${items.length > 0 ? `The outputs below include the ${items.length} available ${items.length === 1 ? 'font' : 'fonts'}.` : ''}`}
-					</span>
-					<button
-						type="button"
-						onClick={() => setReloadVersion((current) => current + 1)}
-					>
-						Try again
-					</button>
-				</div>
-			) : null}
-
-			{!ready || fontSetLoading ? (
-				<p className={classes.loading} role="status">
-					Loading your font set…
-				</p>
+			{!ready ? (
+				<p role="status">Loading your font set…</p>
 			) : savedItems.length === 0 ? (
 				<section className={classes.empty}>
-					<div className={classes.emptySpecimen}>Aa</div>
-					<div>
-						<h2>Your font set is empty.</h2>
-						<p>
-							Add families while you browse. Your font set stays in this
-							browser.
-						</p>
-						<Link to="/">Choose a font</Link>
-					</div>
-				</section>
-			) : loadedResponse?.error && items.length === 0 ? (
-				<section className={classes.empty}>
-					<div className={classes.emptySpecimen}>Aa</div>
-					<div>
-						<h2>Your fonts could not be loaded.</h2>
-						<p>Check your connection and try again.</p>
-						<button
-							type="button"
-							onClick={() => setReloadVersion((current) => current + 1)}
-						>
-							Try again
-						</button>
-					</div>
+					<h2>Your font set is empty.</h2>
+					<p>
+						Add fonts while you browse. Your selection stays in this browser.
+					</p>
+					<Button component={Link} to="/">
+						Browse fonts
+					</Button>
 				</section>
 			) : (
 				<>
-					{outputsReady && (
-						<nav className={classes.taskSwitch} aria-label="Font set output">
-							<button
-								type="button"
-								aria-pressed={view === 'files'}
-								data-active={view === 'files' || undefined}
-								onClick={() => setNavigationChoice('view', 'files', 'files')}
-							>
-								<strong>Files</strong>
-								<span>Download complete font families</span>
-							</button>
-							<button
-								type="button"
-								aria-pressed={view === 'website'}
-								data-active={view === 'website' || undefined}
-								onClick={() => setNavigationChoice('view', 'website', 'files')}
-							>
-								<strong>Website</strong>
-								<span>Generate package or CDN code</span>
-							</button>
-						</nav>
-					)}
-
-					{outputsReady && view === 'files' && (
-						<section
-							className={classes.archiveDownload}
-							aria-labelledby="font-set-download-heading"
-						>
+					<Tabs
+						value={view}
+						onChange={(value) =>
+							value && setNavigationChoice('view', value, 'files')
+						}
+					>
+						<Tabs.List aria-label="Font set output">
+							<Tabs.Tab value="files">Download files</Tabs.Tab>
+							<Tabs.Tab value="website">Website setup</Tabs.Tab>
+						</Tabs.List>
+						<Tabs.Panel value="files" className={classes.download}>
 							<div>
-								<h2 id="font-set-download-heading">Download font set</h2>
+								<h2>All your fonts, one ZIP</h2>
 								<p>
-									Get the latest complete desktop and web files for every
-									family, organized by font. Each family folder includes its
-									font files, stylesheets, and license.
+									Complete desktop and web files, stylesheets, and licenses.
+									Organized by family.
 								</p>
-								{zipDownloadState !== 'idle' && (
-									<span
-										className={classes.downloadFeedback}
-										data-error={zipDownloadState === 'error' || undefined}
-										role="status"
-									>
-										{zipDownloadState === 'preparing'
-											? `Preparing ${zipProgress} of ${items.length} ${items.length === 1 ? 'font' : 'fonts'}…`
-											: zipDownloadState === 'success'
-												? 'Font set download started.'
-												: zipError}
-									</span>
-								)}
 							</div>
-							<button
-								type="button"
-								disabled={zipDownloadState === 'preparing'}
+							<Button
+								className={classes.downloadButton}
+								leftSection={<IconDownload aria-hidden size={18} />}
+								disabled={!outputsReady || zipBusy}
 								onClick={downloadZip}
 							>
-								<IconDownload aria-hidden size={18} />
-								{zipDownloadState === 'preparing'
-									? 'Preparing ZIP…'
-									: zipDownloadState === 'error'
-										? 'Try ZIP download again'
-										: 'Download all families (.zip)'}
-							</button>
-						</section>
-					)}
-
-					{outputsReady && view === 'website' && (
-						<section
-							className={classes.delivery}
-							id="selected-fonts-code"
-							aria-labelledby="delivery-heading"
-						>
+								{zipBusy ? 'Preparing ZIP…' : 'Download all (.zip)'}
+							</Button>
+						</Tabs.Panel>
+						<Tabs.Panel value="website" className={classes.website}>
 							<div className={classes.deliveryHeading}>
 								<div>
-									<h2 id="delivery-heading">
-										{singleItem
-											? `Website setup for ${singleItem.family}`
-											: 'Add this font set to a website'}
-									</h2>
+									<h2>Use your fonts on the web</h2>
 									<p>
-										{singleItem
-											? 'Install the package to self-host it, or load it from the public CDN.'
-											: 'Install the packages to self-host every family, or load them from the public CDN.'}
+										{method === 'package'
+											? 'Install the packages to serve the fonts with your app.'
+											: 'Load the stylesheets from jsDelivr in your HTML.'}
 									</p>
 								</div>
-								<fieldset className={classes.methodSwitch}>
-									<legend>
-										Choose how to load {singleItem ? 'the font' : 'the fonts'}
-									</legend>
-									<button
-										type="button"
-										data-active={method === 'package' || undefined}
-										aria-pressed={method === 'package'}
-										onClick={() =>
-											setNavigationChoice('method', 'package', 'package')
-										}
-									>
-										Packages
-									</button>
-									<button
-										type="button"
-										data-active={method === 'cdn' || undefined}
-										aria-pressed={method === 'cdn'}
-										onClick={() =>
-											setNavigationChoice('method', 'cdn', 'package')
-										}
-									>
-										CDN
-									</button>
-								</fieldset>
+								<SegmentedControl
+									aria-label="Font delivery"
+									value={method}
+									onChange={(value) =>
+										setNavigationChoice('method', value, 'package')
+									}
+									data={[
+										{ label: 'Packages', value: 'package' },
+										{ label: 'CDN', value: 'cdn' },
+									]}
+								/>
 							</div>
-							<div className={classes.codeStack}>
-								{method === 'package' && (
-									<fieldset className={classes.packageManagers}>
-										<legend>Package manager</legend>
-										<div>
-											{packageManagerValues.map((value) => (
-												<button
-													key={value}
-													type="button"
-													data-active={packageManager === value || undefined}
-													aria-pressed={packageManager === value}
-													onClick={() => setPackageManager(value)}
-												>
-													{value}
-												</button>
-											))}
-										</div>
-									</fieldset>
-								)}
-								{method === 'package' ? (
-									<>
+							{outputsReady && (
+								<div className={classes.codeStack}>
+									{method === 'package' ? (
+										<>
+											<PackageManagerCode cmd={packageNames} />
+											<CopyCodeBlock
+												label="Import fonts"
+												description={
+													<>
+														Import these stylesheets once in your app’s entry
+														file.{' '}
+														<Link to="/docs/getting-started/install">
+															Installation guide
+														</Link>
+													</>
+												}
+												code={imports}
+												language="js"
+												scrollable
+											/>
+										</>
+									) : (
 										<CopyCodeBlock
-											label={`1 · Install ${singleItem ? 'package' : 'packages'}`}
-											code={installCommand}
-											language="sh"
-										/>
-										<CopyCodeBlock
-											label="2 · Import fonts"
-											code={imports}
-											language="js"
+											label="Link stylesheets"
+											description={
+												<>
+													Add these links inside your HTML{' '}
+													<code>&lt;head&gt;</code>.
+												</>
+											}
+											code={cdnLinks}
+											language="html"
 											scrollable
 										/>
-									</>
-								) : (
+									)}
 									<CopyCodeBlock
-										label="1 · Link stylesheets"
-										code={cdnLinks}
-										language="html"
+										label="Apply the fonts"
+										description="Use these classes on your elements, or copy a font-family declaration into your existing CSS."
+										code={getFontSetUsageCSS(items)}
+										language="css"
 										scrollable
 									/>
-								)}
-							</div>
-						</section>
-					)}
+								</div>
+							)}
+						</Tabs.Panel>
+					</Tabs>
 
-					<section className={classes.fonts} aria-labelledby="fonts-heading">
-						<div className={classes.sectionHeading}>
-							<div>
-								<h2 id="fonts-heading">Your font set</h2>
-								<p>
-									{items.length} {items.length === 1 ? 'font' : 'fonts'} ready
-									{loadedResponse?.failedIds.length
-										? ` · ${loadedResponse.failedIds.length} unavailable`
-										: ''}
-									.
-								</p>
+					{zipDownloadState !== 'idle' && (
+						<p role="status" className={classes.feedback}>
+							{zipBusy
+								? `Preparing ${zipProgress} of ${items.length} fonts…`
+								: zipDownloadState === 'success'
+									? 'Font set download started.'
+									: zipError}
+						</p>
+					)}
+					{fontSetLoading ? (
+						<p role="status">Loading font details…</p>
+					) : (
+						!outputsReady && (
+							<div className={classes.notice} role="alert">
+								<span>
+									{loadedResponse?.error ??
+										'Some fonts could not be loaded. Retry or remove them to use the complete set.'}
+								</span>
+								<Button
+									variant="subtle"
+									onClick={() => setReloadVersion((current) => current + 1)}
+								>
+									Try again
+								</Button>
 							</div>
-						</div>
-						{items.map((item) => (
-							<FontSetFamilyRow
-								key={item.familyId}
-								busy={zipBusy}
-								item={item}
-								onRemove={() => removeItem(item)}
-							/>
-						))}
-						{loadedResponse?.failedIds.map((familyId) => {
+						)
+					)}
+					<section className={classes.fonts} aria-label="Selected fonts">
+						{savedFamilyIds.map((familyId) => {
+							const item = loadedItems.get(familyId);
+							if (item)
+								return (
+									<FontSetFamilyRow
+										key={familyId}
+										busy={zipBusy}
+										item={item}
+										onRemove={() => removeItem(item)}
+									/>
+								);
 							const family = formatFontLabel(familyId);
 							return (
 								<article className={classes.unavailableFontRow} key={familyId}>
 									<div>
-										<h2>{family}</h2>
-										<p>This font could not be loaded. Retry or remove it.</p>
+										<h2>
+											<Link to={`/fonts/${familyId}`}>{family}</Link>
+										</h2>
+										<p>
+											{fontSetLoading
+												? 'Loading font details…'
+												: 'Font details unavailable.'}
+										</p>
 									</div>
-									<button
-										type="button"
+									<Button
+										variant="subtle"
+										color="gray"
 										disabled={zipBusy}
+										aria-label={`Remove ${family} from font set`}
 										onClick={() => removeItem({ familyId, family })}
 									>
 										Remove
-									</button>
+									</Button>
 								</article>
 							);
 						})}
@@ -495,7 +415,7 @@ const CurrentProjectPage = () => {
 					>
 						Keep fonts
 					</Button>
-					<Button color="red" onClick={clearProject}>
+					<Button color="red" disabled={zipBusy} onClick={clearProject}>
 						Remove all
 					</Button>
 				</Group>

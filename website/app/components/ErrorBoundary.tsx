@@ -5,6 +5,7 @@ import { IconGithub } from './icons/Github';
 
 export function ErrorBoundary() {
 	const error = useRouteError();
+	const isNotFound = isRouteErrorResponse(error) && error.status === 404;
 
 	let status = 500;
 	let title = 'Something went wrong';
@@ -22,7 +23,7 @@ export function ErrorBoundary() {
 					? error.data.error
 					: undefined;
 
-		if (status === 404) {
+		if (isNotFound) {
 			title = 'Page not found';
 			description =
 				responseMessage ?? "The page you're looking for doesn't exist.";
@@ -45,9 +46,7 @@ export function ErrorBoundary() {
 	}
 
 	const retry = () => {
-		const url = new URL(window.location.href);
-		url.searchParams.set('__retry', Date.now().toString());
-		window.location.replace(url);
+		window.location.reload();
 	};
 
 	return (
@@ -71,7 +70,7 @@ export function ErrorBoundary() {
 					>
 						Reload page
 					</Button>
-					{status === 404 && (
+					{isNotFound && (
 						<Button
 							component={Link}
 							to="/"

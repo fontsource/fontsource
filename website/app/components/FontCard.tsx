@@ -53,13 +53,7 @@ const FontCard = ({
 		}
 	}, [isStylesheetLoaded, shouldLoadStylesheet, stylesheetHref]);
 
-	const isNotLatin =
-		font.defSubset !== 'latin' ||
-		font.category === 'icons' ||
-		font.category === 'other';
-	const previewText =
-		preview ||
-		(isNotLatin ? getPreviewText(font.defSubset) : getPreviewText('latin'));
+	const previewText = preview || getPreviewText(font.defSubset, font.id);
 
 	return (
 		<Box

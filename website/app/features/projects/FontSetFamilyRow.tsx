@@ -1,3 +1,4 @@
+import { Button } from '@mantine/core';
 import { IconExternalLink, IconTrash } from '@tabler/icons-react';
 import { Link } from 'react-router';
 
@@ -5,31 +6,6 @@ import { formatFontLabel } from '@/utils/font-labels';
 import classes from './CurrentProjectPage.module.css';
 import type { ResolvedFontSetFamily } from './model';
 import { getCdnStylesheetUrl } from './output';
-
-const FontSecondaryDetails = ({ item }: { item: ResolvedFontSetFamily }) => (
-	<dl className={classes.secondarySetup}>
-		<div className={classes.mobileSource}>
-			<dt>Source</dt>
-			<dd>
-				{item.designer ? `By ${item.designer} · ` : ''}
-				{formatFontLabel(item.classification)}
-			</dd>
-		</div>
-		<div>
-			<dt>License</dt>
-			<dd>
-				{item.license.url ? (
-					<a href={item.license.url} target="_blank" rel="noreferrer">
-						{item.license.id}
-						<IconExternalLink aria-hidden size={13} />
-					</a>
-				) : (
-					<Link to={`/fonts/${item.familyId}/about#license`}>View license</Link>
-				)}
-			</dd>
-		</div>
-	</dl>
-);
 
 const FontSetFamilyRow = ({
 	busy,
@@ -40,11 +16,8 @@ const FontSetFamilyRow = ({
 	item: ResolvedFontSetFamily;
 	onRemove: () => void;
 }) => {
-	const previewFontFamily = `${JSON.stringify(item.fontFamily)}, var(--mantine-font-family)`;
-	const previewText = item.previewText ?? item.family;
 	const useSpecimenFont =
 		item.classification !== 'symbols' || Boolean(item.previewText);
-
 	return (
 		<article className={classes.fontRow}>
 			{useSpecimenFont && (
@@ -52,43 +25,48 @@ const FontSetFamilyRow = ({
 			)}
 			<div
 				className={classes.specimen}
-				data-ui-fallback={!useSpecimenFont || undefined}
-				style={useSpecimenFont ? { fontFamily: previewFontFamily } : undefined}
+				style={
+					useSpecimenFont
+						? {
+								fontFamily: `${JSON.stringify(item.fontFamily)}, var(--mantine-font-family)`,
+							}
+						: undefined
+				}
 			>
-				{previewText}
+				{item.previewText ?? item.family}
 			</div>
 			<div className={classes.fontDetails}>
-				<div className={classes.fontTitle}>
-					<div>
-						<h2>
-							<Link to={`/fonts/${item.familyId}`}>{item.family}</Link>
-						</h2>
-						<p className={classes.fontMeta}>
-							{item.designer ? `By ${item.designer} · ` : ''}
-							{formatFontLabel(item.classification)}
-						</p>
-					</div>
-				</div>
-				<div className={classes.desktopSecondary}>
-					<FontSecondaryDetails item={item} />
-				</div>
-				<details className={classes.mobileSecondary}>
-					<summary>More details</summary>
-					<FontSecondaryDetails item={item} />
-				</details>
+				<h2>
+					<Link to={`/fonts/${item.familyId}`}>{item.family}</Link>
+				</h2>
+				<p>
+					{item.designer ? `By ${item.designer} · ` : ''}
+					{formatFontLabel(item.classification)}
+				</p>
 				<div className={classes.rowActions}>
+					{item.license.url ? (
+						<a href={item.license.url} target="_blank" rel="noreferrer">
+							{item.license.id}
+							<IconExternalLink aria-hidden size={14} />
+						</a>
+					) : (
+						<Link to={`/fonts/${item.familyId}/about#license`}>
+							View license
+						</Link>
+					)}
 					<Link to={`/fonts/${item.familyId}/use?tab=web`}>
 						View instructions
 					</Link>
-					<button
-						type="button"
+					<Button
+						variant="subtle"
+						color="gray"
 						disabled={busy}
+						leftSection={<IconTrash aria-hidden size={16} />}
 						aria-label={`Remove ${item.family} from font set`}
 						onClick={onRemove}
 					>
-						<IconTrash aria-hidden size={16} />
 						Remove
-					</button>
+					</Button>
 				</div>
 			</div>
 		</article>
