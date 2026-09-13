@@ -98,6 +98,39 @@ const capabilities = {
 } satisfies GetRegistrySourceCapabilitiesResponse;
 
 describe('createPreviewEditorSetup', () => {
+	it.each([false, true])(
+		'preserves curated samples with symbol mode %s',
+		(symbols) => {
+			const { editorValue } = createPreviewEditorSetup({
+				metadata,
+				registry: {
+					...registry,
+					sampleText: {
+						short: 'home search',
+						long: 'home search favorite settings',
+					},
+					...(symbols
+						? {
+								symbols: {
+									catalogUrl: '/symbols',
+									inputModes: ['name-ligature' as const],
+								},
+							}
+						: {}),
+				},
+				languages,
+				capabilities,
+				capabilitySource: source,
+			});
+			expect(editorValue.selectedLanguageId).toBe('');
+			expect(editorValue.texts).toEqual({
+				headline: 'home search',
+				paragraph: 'home search favorite settings',
+				waterfall: 'home search',
+				compare: 'home search',
+			});
+		},
+	);
 	it('initializes preview copy from the selected English language', () => {
 		const { editorValue } = createPreviewEditorSetup({
 			metadata,

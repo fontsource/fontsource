@@ -176,6 +176,12 @@ const PreviewRuntimeEffects = observer(() => {
 		) {
 			return;
 		}
+		// Curated specimens are not language samples, even when their letters map.
+		if (
+			model.familyKind === 'symbols' ||
+			(model.registry.sampleText && !selectedLanguageId)
+		)
+			return;
 		const fallbackLanguage = getPreferredLanguage(
 			verifiedLanguages,
 			model.registry.primaryLanguage,

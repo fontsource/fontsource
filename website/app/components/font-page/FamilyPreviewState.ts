@@ -155,11 +155,13 @@ const getModeText = (
 	capabilities: GetRegistrySourceCapabilitiesResponse,
 ) => {
 	const familyKind = getRegistryFamilyKind(registry);
-	const registrySample = getRegistryPreviewText(
-		registry,
-		languages,
-		previewText.editor.sampleLengths[mode],
-	);
+	const registrySample =
+		(registry.sampleText || familyKind === 'text') &&
+		getRegistryPreviewText(
+			registry,
+			languages,
+			previewText.editor.sampleLengths[mode],
+		);
 
 	if (registrySample) return registrySample;
 	if (familyKind === 'symbols') {
@@ -348,10 +350,10 @@ const createPreviewEditorSetup = ({
 		},
 	};
 	const verifiedLanguages = getVerifiedLanguages(languages, capabilities);
-	const initialLanguage = getPreferredLanguage(
-		verifiedLanguages,
-		registry.primaryLanguage,
-	);
+	const initialLanguage =
+		!registry.sampleText && familyKind === 'text'
+			? getPreferredLanguage(verifiedLanguages, registry.primaryLanguage)
+			: undefined;
 	const initialTexts = initialLanguage
 		? createLanguageModeTexts(initialLanguage)
 		: createModeTexts(metadata, registry, languages, capabilities);

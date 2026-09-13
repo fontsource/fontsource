@@ -105,7 +105,7 @@ export const getPreferredPreviewSubset = (
 export const getFontFamilyStack = (
 	metadata: FontPreviewIdentity,
 	variableAvailable = metadata.variable,
-	registry: RegistryFamily,
+	registry: Pick<RegistryFamily, 'previewContext'>,
 ) => {
 	const family = getFontPreviewFamily(metadata, variableAvailable);
 	const genericFamilies = new Set([

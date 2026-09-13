@@ -22,7 +22,7 @@
 	},
 	"dseg-weather": {
 		"sampleText": {
-			"short": "0123456789ABCabc"
+			"short": "0123456789 ABC"
 		}
 	},
 	"dseg14-classic": {
@@ -183,43 +183,83 @@
 		"previewSubset": "chinese-traditional"
 	},
 	"material-icons": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-icons-outlined": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-icons-round": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-icons-sharp": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-icons-two-tone": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-symbols-outlined": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "search settings home person add shopping_cart check_circle favorite logout trophy"
 		}
 	},
 	"material-symbols-rounded": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "search settings home person add shopping_cart check_circle favorite logout trophy"
 		}
 	},
 	"material-symbols-sharp": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "search settings home person add shopping_cart check_circle favorite logout trophy"
 		}
 	},
 	"noto-color-emoji-compat-test": {
@@ -307,7 +347,7 @@
 			]
 		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "、。！？〈〉《》「」『』【】〔〕・（）：；［］｛｝"
 		}
 	},
 	"yakuhanjps": {
@@ -320,7 +360,7 @@
 			]
 		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』【】〔〕（）［］｛｝"
 		}
 	},
 	"yakuhanmp": {
@@ -333,7 +373,7 @@
 			]
 		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "、。！？《》「」『』【】〔〕・（）：；［］｛｝"
 		}
 	},
 	"yakuhanmps": {
@@ -346,7 +386,7 @@
 			]
 		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "《》「」『』【】〔〕（）［］｛｝"
 		}
 	},
 	"yakuhanrp": {
@@ -359,7 +399,7 @@
 			]
 		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "、。！？〈〉《》「」『』【】〔〕・（）：；［］｛｝"
 		}
 	},
 	"yakuhanrps": {
@@ -372,7 +412,7 @@
 			]
 		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』【】〔〕（）［］｛｝"
 		}
 	}
 }

@@ -2,10 +2,11 @@ import { Box, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
-
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
+import { getFontFamilyStack } from '@/utils/font-preview';
 import type { FontSummary } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
+import familyOverrides from '../../../registry/data/family-overrides.json';
 import classes from './FontCard.module.css';
 import { Skeleton } from './Skeleton';
 
@@ -54,6 +55,12 @@ const FontCard = ({
 	}, [isStylesheetLoaded, shouldLoadStylesheet, stylesheetHref]);
 
 	const previewText = preview || getPreviewText(font.defSubset, font.id);
+	const override = familyOverrides[font.id as keyof typeof familyOverrides];
+	const fontFamily = getFontFamilyStack(
+		font,
+		false,
+		override && 'previewContext' in override ? override : {},
+	);
 
 	return (
 		<Box
@@ -80,7 +87,7 @@ const FontCard = ({
 						<Text
 							fz={size}
 							mih={layout === 'grid' ? previewHeight : undefined}
-							style={{ fontFamily: `"${font.family}", "Fallback Outline"` }}
+							style={{ fontFamily }}
 						>
 							{previewText}
 						</Text>

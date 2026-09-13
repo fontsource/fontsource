@@ -190,13 +190,11 @@ const PreviewCanvas = observer(() => {
 	const activePreviewFamily = activeSource
 		? `${registrySourcePreviewFamily} ${activeSource.sha256.slice(0, 12)}`
 		: packagePreviewFamily;
-	const fontFamily = activeSource
-		? `${JSON.stringify(activePreviewFamily)}, "Fallback Outline"`
-		: getFontFamilyStack(
-				model.metadata,
-				Boolean(model.variable),
-				model.registry,
-			);
+	const fontFamily = getFontFamilyStack(
+		{ ...model.metadata, family: activePreviewFamily },
+		false,
+		model.registry,
+	);
 	const previewDirection =
 		selectedLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
 	const previewLanguage = getPreviewLanguageTag(selectedLanguage);

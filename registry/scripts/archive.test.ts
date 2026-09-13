@@ -304,7 +304,10 @@ describe('registry source archive', () => {
 			classifications: ['symbols'],
 			tags: ['special-use/icons'],
 			languages: [],
-			sampleText: { short: 'home' },
+			sampleText: {
+				short:
+					'photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close',
+			},
 			symbols: {
 				catalogUrl: '/v1/registry/families/material-icons/symbols',
 				inputModes: ['codepoint', 'name-ligature'],

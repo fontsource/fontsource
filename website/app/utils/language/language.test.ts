@@ -13,9 +13,13 @@ describe('getPreviewText', () => {
 		'material-symbols-rounded',
 		'material-symbols-sharp',
 	])(
-		'uses a renderable icon name for %s without search-index samples',
+		'restores the original icon selection for %s without search-index samples',
 		(id) => {
-			expect(getPreviewText('latin', id)).toBe('home');
+			expect(getPreviewText('latin', id)).toBe(
+				id.startsWith('material-icons')
+					? 'photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close'
+					: 'search settings home person add shopping_cart check_circle favorite logout trophy',
+			);
 		},
 	);
 

@@ -9,7 +9,7 @@ import {
 } from './font-preview';
 import type { RegistryFamily, RegistrySource } from './registry';
 
-const registry = {
+const registry: RegistryFamily = {
 	id: 'example',
 	family: 'Example',
 	provider: 'fontsource',
@@ -31,7 +31,7 @@ const registry = {
 		static: [],
 		characters: { type: 'all' },
 	},
-} satisfies RegistryFamily;
+};
 
 describe('getFontFamilyStack', () => {
 	it('uses the static family when variable metadata is unavailable', () => {
