@@ -54,8 +54,11 @@ const FontSetFamilyRow = ({
 							View license
 						</Link>
 					)}
-					<Link to={`/fonts/${item.familyId}/use?tab=web`}>
-						View instructions
+					<Link
+						to={`/fonts/${item.familyId}/use?tab=web`}
+						aria-label={`Developer setup for ${item.family}`}
+					>
+						Developer setup
 					</Link>
 					<Button
 						variant="subtle"

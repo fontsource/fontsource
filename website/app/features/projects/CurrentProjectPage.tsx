@@ -87,7 +87,7 @@ const CurrentProjectPage = () => {
 		family: item.family,
 	}));
 	const imports = items
-		.map((item) => `import "${item.packageName}/index.css";`)
+		.map((item) => `import "${item.packageName}";`)
 		.join('\n');
 	const cdnLinks = items
 		.map(
@@ -241,7 +241,7 @@ const CurrentProjectPage = () => {
 					>
 						<Tabs.List aria-label="Font set output">
 							<Tabs.Tab value="files">Download files</Tabs.Tab>
-							<Tabs.Tab value="website">Website setup</Tabs.Tab>
+							<Tabs.Tab value="website">Developer setup</Tabs.Tab>
 						</Tabs.List>
 						<Tabs.Panel value="files" className={classes.download}>
 							<div>
@@ -263,7 +263,7 @@ const CurrentProjectPage = () => {
 						<Tabs.Panel value="website" className={classes.website}>
 							<div className={classes.deliveryHeading}>
 								<div>
-									<h2>Use your fonts on the web</h2>
+									<h2>Use your fonts</h2>
 									<p>
 										{method === 'package'
 											? 'Install the packages to serve the fonts with your app.'
@@ -289,19 +289,14 @@ const CurrentProjectPage = () => {
 											<PackageManagerCode cmd={packageNames} />
 											<CopyCodeBlock
 												label="Import fonts"
-												description={
-													<>
-														Import these stylesheets once in your app’s entry
-														file.{' '}
-														<Link to="/docs/getting-started/install">
-															Installation guide
-														</Link>
-													</>
-												}
+												description="Import these stylesheets once in your app’s entry file."
 												code={imports}
 												language="js"
 												scrollable
 											/>
+											<Link to="/docs/getting-started/install">
+												Installation guide
+											</Link>
 										</>
 									) : (
 										<CopyCodeBlock
