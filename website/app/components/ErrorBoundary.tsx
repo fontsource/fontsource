@@ -1,16 +1,11 @@
 import { Button, Center, Flex, Stack, Text, Title } from '@mantine/core';
-import {
-	isRouteErrorResponse,
-	Link,
-	useLocation,
-	useRouteError,
-} from 'react-router';
+import { isRouteErrorResponse, Link, useRouteError } from 'react-router';
 import styles from './ErrorBoundary.module.css';
 import { IconGithub } from './icons/Github';
 
 export function ErrorBoundary() {
 	const error = useRouteError();
-	const location = useLocation();
+	const isNotFound = isRouteErrorResponse(error) && error.status === 404;
 
 	let status = 500;
 	let title = 'Something went wrong';
@@ -28,7 +23,7 @@ export function ErrorBoundary() {
 					? error.data.error
 					: undefined;
 
-		if (status === 404) {
+		if (isNotFound) {
 			title = 'Page not found';
 			description =
 				responseMessage ?? "The page you're looking for doesn't exist.";
@@ -37,6 +32,11 @@ export function ErrorBoundary() {
 			description =
 				responseMessage ??
 				'The upstream service could not complete the request. Please try again.';
+		} else if (status === 503) {
+			title = 'Temporarily unavailable';
+			description =
+				responseMessage ??
+				'This page is unavailable right now. Please try again.';
 		} else {
 			title = 'Server error';
 			description = responseMessage ?? error.statusText ?? description;
@@ -45,7 +45,9 @@ export function ErrorBoundary() {
 		description = error.message;
 	}
 
-	const canRetry = status >= 500 && status < 600;
+	const retry = () => {
+		window.location.reload();
+	};
 
 	return (
 		<Center className={styles.container}>
@@ -60,15 +62,26 @@ export function ErrorBoundary() {
 
 				<Stack className={styles.actions} gap={12}>
 					<Button
-						component={Link}
-						to={canRetry ? `${location.pathname}${location.search}` : '/'}
-						reloadDocument={canRetry}
+						type="button"
+						onClick={retry}
 						size="md"
 						fullWidth
 						className={styles.primaryButton}
 					>
-						{canRetry ? 'Try again' : 'Go home'}
+						Reload page
 					</Button>
+					{isNotFound && (
+						<Button
+							component={Link}
+							to="/"
+							variant="outline"
+							size="md"
+							fullWidth
+							className={styles.outlineButton}
+						>
+							Go home
+						</Button>
+					)}
 					<Button
 						component="a"
 						href="https://github.com/fontsource/fontsource/issues/new"

@@ -1,15 +1,14 @@
 import { Box, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router';
-
+import { Link, useLocation } from 'react-router';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
+import { getFontFamilyStack } from '@/utils/font-preview';
 import type { FontSummary } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
+import familyOverrides from '../../../registry/data/family-overrides.json';
 import classes from './FontCard.module.css';
 import { Skeleton } from './Skeleton';
-
-const DEFAULT_PREVIEW_TEXT = 'Sphinx of black quartz, judge my vow.';
 
 interface FontCardProps {
 	font: FontSummary;
@@ -28,6 +27,7 @@ const FontCard = ({
 	size,
 	eagerStylesheet = false,
 }: FontCardProps) => {
+	const location = useLocation();
 	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${font.id}@latest/index.css`;
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
@@ -54,15 +54,13 @@ const FontCard = ({
 		}
 	}, [isStylesheetLoaded, shouldLoadStylesheet, stylesheetHref]);
 
-	const isNotLatin =
-		font.defSubset !== 'latin' ||
-		font.category === 'icons' ||
-		font.category === 'other';
-	const previewText =
-		preview ||
-		(isNotLatin
-			? getPreviewText(font.defSubset, font.id)
-			: DEFAULT_PREVIEW_TEXT);
+	const previewText = preview || getPreviewText(font.defSubset, font.id);
+	const override = familyOverrides[font.id as keyof typeof familyOverrides];
+	const fontFamily = getFontFamilyStack(
+		font,
+		false,
+		override && 'previewContext' in override ? override : {},
+	);
 
 	return (
 		<Box
@@ -78,13 +76,18 @@ const FontCard = ({
 					onError={() => setStylesheetLoaded(true)}
 				/>
 			)}
-			<Link className={classes.link} prefetch="intent" to={`/fonts/${font.id}`}>
+			<Link
+				className={classes.link}
+				prefetch="intent"
+				to={`/fonts/${font.id}`}
+				state={{ fontResults: `${location.pathname}${location.search}` }}
+			>
 				<div className={classes.preview}>
 					<Skeleton name="search-hit-preview" loading={!isFontReady}>
 						<Text
 							fz={size}
 							mih={layout === 'grid' ? previewHeight : undefined}
-							style={{ fontFamily: `"${font.family}", "Fallback Outline"` }}
+							style={{ fontFamily }}
 						>
 							{previewText}
 						</Text>

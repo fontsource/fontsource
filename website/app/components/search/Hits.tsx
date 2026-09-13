@@ -36,6 +36,8 @@ interface AlgoliaMetadata extends BaseHit {
 	defSubset: string;
 	category: string;
 	variable: boolean;
+	previewSubset?: string;
+	sampleText?: { short?: string; long?: string };
 }
 
 interface HitComponentProps {
@@ -104,7 +106,11 @@ const HitComponent = observer(
 
 			// Use language-specific preview for non-latin fonts when no custom input
 			if (isNotLatin) {
-				return getPreviewText(hit.defSubset, hit.objectID);
+				return (
+					hit.sampleText?.short?.trim() ||
+					hit.sampleText?.long?.trim() ||
+					getPreviewText(hit.previewSubset ?? hit.defSubset, hit.objectID)
+				);
 			}
 
 			return state$.preview.presetValue.get();
@@ -319,15 +325,11 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		const unsubscribe = state$.language.onChange((e) => {
 			// Keep the preset current while custom text is active so clearing it
 			// immediately restores the selected language preview.
-			const firstHit = items[0];
-			if (firstHit) {
-				const newPreview = getPreviewText(e.value, firstHit.objectID);
-				state$.preview.presetValue.set(newPreview);
-			}
+			state$.preview.presetValue.set(getPreviewText(e.value));
 		});
 
 		return unsubscribe;
-	}, [state$.preview, state$.language, items]);
+	}, [state$.preview, state$.language]);
 
 	if (status === 'error') {
 		return (
