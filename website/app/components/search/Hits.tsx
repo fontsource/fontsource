@@ -24,6 +24,7 @@ import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { FontCard } from '@/components/FontCard';
 import { Skeleton } from '@/components/Skeleton';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
+import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 
 import classes from './Hits.module.css';
@@ -36,17 +37,17 @@ interface AlgoliaMetadata extends BaseHit {
 	defSubset: string;
 	category: string;
 	variable: boolean;
-	previewSubset?: string;
-	sampleText?: { short?: string; long?: string };
 }
 
 interface HitComponentProps {
+	preview?: FontPreview;
 	state$: SearchState;
 	hit: AlgoliaMetadata;
 	eagerStylesheet?: boolean;
 }
 
 interface InfiniteHitsProps {
+	previews: Record<string, FontPreview>;
 	state$: SearchState;
 }
 
@@ -86,7 +87,7 @@ const getNoResultsMessage = (
 };
 
 const HitComponent = observer(
-	({ eagerStylesheet, hit, state$ }: HitComponentProps) => {
+	({ eagerStylesheet, hit, state$, preview }: HitComponentProps) => {
 		const display = useValue(state$.display);
 		const size = useValue(state$.size);
 
@@ -105,11 +106,11 @@ const HitComponent = observer(
 			}
 
 			// Use language-specific preview for non-latin fonts when no custom input
-			if (isNotLatin) {
+			if (preview?.sampleText || isNotLatin) {
 				return (
-					hit.sampleText?.short?.trim() ||
-					hit.sampleText?.long?.trim() ||
-					getPreviewText(hit.previewSubset ?? hit.defSubset, hit.objectID)
+					preview?.sampleText?.short?.trim() ||
+					preview?.sampleText?.long?.trim() ||
+					getPreviewText(preview?.previewSubset ?? hit.defSubset)
 				);
 			}
 
@@ -119,6 +120,7 @@ const HitComponent = observer(
 		return (
 			<FontCard
 				font={{
+					...preview,
 					id: hit.objectID,
 					family: hit.family,
 					defSubset: hit.defSubset,
@@ -174,7 +176,7 @@ const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 	</div>
 );
 
-const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
+const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 	const collectionsStore = useCollectionsStore();
 	const collectionId = useValue(state$.collectionId);
 	const collections = useValue(collectionsStore.getCollections);
@@ -397,6 +399,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 													key={hit.objectID}
 													state$={state$}
 													hit={hit}
+													preview={previews[hit.objectID]}
 													eagerStylesheet={
 														virtualRow.index === 0 &&
 														hitIndex < eagerStylesheetCount
@@ -424,6 +427,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 								key={hit.objectID}
 								state$={state$}
 								hit={hit}
+								preview={previews[hit.objectID]}
 								eagerStylesheet={index < eagerStylesheetCount}
 							/>
 						))}

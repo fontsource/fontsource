@@ -6,7 +6,6 @@ import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { getFontFamilyStack } from '@/utils/font-preview';
 import type { FontSummary } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
-import familyOverrides from '../../../registry/data/family-overrides.json';
 import classes from './FontCard.module.css';
 import { Skeleton } from './Skeleton';
 
@@ -54,13 +53,11 @@ const FontCard = ({
 		}
 	}, [isStylesheetLoaded, shouldLoadStylesheet, stylesheetHref]);
 
-	const previewText = preview || getPreviewText(font.defSubset, font.id);
-	const override = familyOverrides[font.id as keyof typeof familyOverrides];
-	const fontFamily = getFontFamilyStack(
-		font,
-		false,
-		override && 'previewContext' in override ? override : {},
-	);
+	const previewText =
+		preview ||
+		font.sampleText?.short ||
+		getPreviewText(font.previewSubset ?? font.defSubset);
+	const fontFamily = getFontFamilyStack(font, false, font);
 
 	return (
 		<Box

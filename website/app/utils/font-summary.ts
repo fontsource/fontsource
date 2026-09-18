@@ -1,4 +1,11 @@
-interface FontSummary {
+import type { RegistryFamily } from '@/utils/registry';
+
+type FontPreview = Pick<
+	RegistryFamily,
+	'sampleText' | 'previewSubset' | 'previewContext'
+>;
+
+interface FontSummary extends FontPreview {
 	id: string;
 	family: string;
 	defSubset: string;
@@ -6,4 +13,4 @@ interface FontSummary {
 	variable: boolean;
 }
 
-export type { FontSummary };
+export type { FontPreview, FontSummary };

@@ -40,6 +40,7 @@ import {
 	CollectionsProvider,
 	useCollectionsStore,
 } from '@/features/collections/CollectionsProvider';
+import { listRegistryFamilies } from '@/generated/api';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
 import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
@@ -47,10 +48,12 @@ import { buildAlgoliaCacheKey } from '@/utils/algolia';
 import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
+import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
 
 export interface SearchProps {
+	previews: Record<string, FontPreview>;
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
 	serverState?: InstantSearchServerState;
@@ -68,14 +71,7 @@ interface SearchRouteState {
 
 const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 const ALGOLIA_APP_ID = 'WNATE69PVR';
-const attributesToRetrieve = [
-	'family',
-	'defSubset',
-	'category',
-	'variable',
-	'previewSubset',
-	'sampleText',
-];
+const attributesToRetrieve = ['family', 'defSubset', 'category', 'variable'];
 
 const searchClient = algoliasearch(
 	ALGOLIA_APP_ID,
@@ -89,6 +85,7 @@ export const getSearchServerState = (
 	serverUrl: string,
 	discovery?: DiscoveryPage,
 	client: SearchClient = searchClient,
+	previews: Record<string, FontPreview> = {},
 ) => {
 	const state$ = observable(createPageSearchState(discovery));
 	const requestUrl = new URL(serverUrl);
@@ -106,7 +103,7 @@ export const getSearchServerState = (
 						<CollectionsProvider>
 							<Configure attributesToRetrieve={attributesToRetrieve} />
 							<Filters state$={state$} />
-							<InfiniteHits state$={state$} />
+							<InfiniteHits state$={state$} previews={previews} />
 						</CollectionsProvider>
 					</InstantSearch>
 				</InstantSearchSSRProvider>
@@ -260,15 +257,27 @@ const routing = (
 
 export const loadSearch = async (
 	{ request, context }: LoaderFunctionArgs,
+	families: readonly (FontPreview & { id: string })[],
 	discovery?: DiscoveryPage,
 ) => {
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
 	const hasCollectionFilter = requestUrl.searchParams.has('collection');
+	const previews = Object.fromEntries(
+		families
+			.filter(
+				(family) =>
+					family.sampleText || family.previewSubset || family.previewContext,
+			)
+			.map(({ id, sampleText, previewSubset, previewContext }) => [
+				id,
+				{ sampleText, previewSubset, previewContext },
+			]),
+	);
 	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
-			{ discovery, hasCollectionFilter, serverUrl },
+			{ discovery, hasCollectionFilter, serverUrl, previews },
 			{ headers: cacheHeaders.short },
 		);
 	}
@@ -288,6 +297,7 @@ export const loadSearch = async (
 				hasCollectionFilter,
 				serverState,
 				serverUrl,
+				previews,
 			},
 			{
 				headers: cacheHeaders.short,
@@ -295,7 +305,12 @@ export const loadSearch = async (
 		);
 	}
 
-	serverState = await getSearchServerState(serverUrl, discovery);
+	serverState = await getSearchServerState(
+		serverUrl,
+		discovery,
+		searchClient,
+		previews,
+	);
 
 	// Add server state to local cache before responding
 	if (cacheKey) {
@@ -312,6 +327,7 @@ export const loadSearch = async (
 			hasCollectionFilter,
 			serverState,
 			serverUrl,
+			previews,
 		},
 		{
 			headers: cacheHeaders.short,
@@ -319,10 +335,11 @@ export const loadSearch = async (
 	);
 };
 
-export const loader = (args: LoaderFunctionArgs) => loadSearch(args);
+export const loader = async (args: LoaderFunctionArgs) =>
+	loadSearch(args, await listRegistryFamilies({ signal: args.request.signal }));
 
 export function CatalogSearchPage() {
-	const { discovery, hasCollectionFilter, serverState, serverUrl } =
+	const { discovery, hasCollectionFilter, serverState, serverUrl, previews } =
 		useLoaderData<SearchProps>();
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
@@ -370,7 +387,7 @@ export function CatalogSearchPage() {
 					</Box>
 				</Box>
 				<Box className={classes.container}>
-					<InfiniteHits state$={state$} />
+					<InfiniteHits state$={state$} previews={previews} />
 					<ScrollToTop containerId="#hits" targetRef={searchRef} />
 				</Box>
 			</InstantSearch>
