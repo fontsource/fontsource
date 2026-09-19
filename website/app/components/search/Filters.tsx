@@ -14,7 +14,12 @@ import { IconTrash } from '@/components/icons';
 import { CollectionFilter } from '@/features/collections/CollectionFilter';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 
-import { CategoriesDropdown, LanguagesDropdown } from './Dropdowns';
+import {
+	CategoriesDropdown,
+	LanguagesDropdown,
+	type SearchFacets,
+	TagsDropdown,
+} from './Dropdowns';
 import classes from './Filters.module.css';
 import type { SearchState } from './observables';
 import { PreviewSelector } from './PreviewTextInput';
@@ -22,7 +27,7 @@ import { SearchBar } from './SearchTextInput';
 import { SizeSlider } from './SizeSlider';
 import { getSortItems } from './Sort';
 
-interface FilterProps {
+interface FilterProps extends SearchFacets {
 	state$: SearchState;
 }
 
@@ -37,7 +42,7 @@ const buildCollectionFilter = (fontIds: string[]) =>
 				.map((fontId) => `objectID:${JSON.stringify(fontId)}`)
 				.join(' OR ');
 
-const Filters = ({ state$ }: FilterProps) => {
+const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 	const collectionsStore = useCollectionsStore();
 	const collectionId = useValue(state$.collectionId);
 	const collections = useValue(collectionsStore.getCollections);
@@ -90,8 +95,9 @@ const Filters = ({ state$ }: FilterProps) => {
 						onChange={handleCollectionChange}
 						value={collectionId}
 					/>
-					<CategoriesDropdown />
-					<LanguagesDropdown state$={state$} />
+					<CategoriesDropdown taxonomy={taxonomy} />
+					<LanguagesDropdown languages={languages} />
+					<TagsDropdown taxonomy={taxonomy} />
 				</Group>
 				<Group justify="center" wrap="nowrap">
 					<Checkbox

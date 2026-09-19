@@ -121,6 +121,7 @@ const DropdownCheckbox = ({
 	return (
 		<ComboboxPopover
 			multiple
+			filter={search ? ({ options }) => options : undefined}
 			data={data}
 			value={selected}
 			searchable={Boolean(search)}

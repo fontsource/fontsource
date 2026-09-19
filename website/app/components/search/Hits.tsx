@@ -20,10 +20,10 @@ import {
 	useState,
 } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
-
 import { FontCard } from '@/components/FontCard';
 import { Skeleton } from '@/components/Skeleton';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
+import type { ListRegistryLanguagesResponse } from '@/generated/api';
 import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 
@@ -40,6 +40,7 @@ interface AlgoliaMetadata extends BaseHit {
 }
 
 interface HitComponentProps {
+	languageSample?: string;
 	preview?: FontPreview;
 	state$: SearchState;
 	hit: AlgoliaMetadata;
@@ -47,6 +48,7 @@ interface HitComponentProps {
 }
 
 interface InfiniteHitsProps {
+	languages: ListRegistryLanguagesResponse;
 	previews: Record<string, FontPreview>;
 	state$: SearchState;
 }
@@ -87,7 +89,13 @@ const getNoResultsMessage = (
 };
 
 const HitComponent = observer(
-	({ eagerStylesheet, hit, state$, preview }: HitComponentProps) => {
+	({
+		eagerStylesheet,
+		hit,
+		state$,
+		preview,
+		languageSample,
+	}: HitComponentProps) => {
 		const display = useValue(state$.display);
 		const size = useValue(state$.size);
 
@@ -104,6 +112,8 @@ const HitComponent = observer(
 			if (customValue !== '') {
 				return customValue;
 			}
+
+			if (languageSample) return languageSample;
 
 			// Use language-specific preview for non-latin fonts when no custom input
 			if (preview?.sampleText || isNotLatin) {
@@ -176,7 +186,8 @@ const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 	</div>
 );
 
-const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
+const InfiniteHits = observer((props: InfiniteHitsProps) => {
+	const { state$, previews, languages } = props;
 	const collectionsStore = useCollectionsStore();
 	const collectionId = useValue(state$.collectionId);
 	const collections = useValue(collectionsStore.getCollections);
@@ -222,6 +233,11 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 		sortBy: indexUiState.sortBy ?? '',
 		toggle: indexUiState.toggle ?? {},
 	});
+	const selectedLanguage = languages.find(
+		(language) => language.id === indexUiState.refinementList?.languageIds?.[0],
+	);
+	const languageSample =
+		selectedLanguage?.sampleText?.short || selectedLanguage?.sampleText?.long;
 	const hasQuery = Boolean(indexUiState.query?.trim());
 	const hasActiveFilters =
 		Object.values(indexUiState.menu ?? {}).some(Boolean) ||
@@ -396,6 +412,7 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 										<div className={getRowClassName(display)}>
 											{row.map((hit, hitIndex) => (
 												<HitComponent
+													languageSample={languageSample}
 													key={hit.objectID}
 													state$={state$}
 													hit={hit}
@@ -424,6 +441,7 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 					>
 						{items.map((hit, index) => (
 							<HitComponent
+								languageSample={languageSample}
 								key={hit.objectID}
 								state$={state$}
 								hit={hit}

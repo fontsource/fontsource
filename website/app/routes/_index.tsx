@@ -29,6 +29,7 @@ import {
 } from 'react-router';
 
 import { ContentHeader } from '@/components/layout/ContentHeader';
+import type { SearchFacets } from '@/components/search/Dropdowns';
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import {
@@ -40,7 +41,11 @@ import {
 	CollectionsProvider,
 	useCollectionsStore,
 } from '@/features/collections/CollectionsProvider';
-import { listRegistryFamilies } from '@/generated/api';
+import {
+	getRegistryTaxonomy,
+	listRegistryFamilies,
+	listRegistryLanguages,
+} from '@/generated/api';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
 import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
@@ -52,7 +57,7 @@ import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
 
-export interface SearchProps {
+export interface SearchProps extends SearchFacets {
 	previews: Record<string, FontPreview>;
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
@@ -66,6 +71,9 @@ interface SearchRouteState {
 	query?: string;
 	sort?: string;
 	subsets?: string | string[];
+	classifications?: string | string[];
+	languages?: string | string[];
+	tags?: string | string[];
 	variable?: boolean;
 }
 
@@ -86,6 +94,10 @@ export const getSearchServerState = (
 	discovery?: DiscoveryPage,
 	client: SearchClient = searchClient,
 	previews: Record<string, FontPreview> = {},
+	facets: SearchFacets = {
+		languages: [],
+		taxonomy: { classifications: {}, tags: {}, tagGroups: {} },
+	},
 ) => {
 	const state$ = observable(createPageSearchState(discovery));
 	const requestUrl = new URL(serverUrl);
@@ -102,8 +114,12 @@ export const getSearchServerState = (
 					>
 						<CollectionsProvider>
 							<Configure attributesToRetrieve={attributesToRetrieve} />
-							<Filters state$={state$} />
-							<InfiniteHits state$={state$} previews={previews} />
+							<Filters state$={state$} {...facets} />
+							<InfiniteHits
+								state$={state$}
+								previews={previews}
+								languages={facets.languages}
+							/>
 						</CollectionsProvider>
 					</InstantSearch>
 				</InstantSearchSSRProvider>
@@ -208,8 +224,19 @@ const routing = (
 					query: index.query,
 					...(collectionId ? { collection: collectionId } : {}),
 					// RefinementList facets
-					...(index.refinementList?.subsets
+					...(index.refinementList?.subsets?.length
 						? { subsets: index.refinementList.subsets.join(',') }
+						: {}),
+					...(index.refinementList?.classifications?.length
+						? {
+								classifications: index.refinementList.classifications.join(','),
+							}
+						: {}),
+					...(index.refinementList?.languageIds?.length
+						? { languages: index.refinementList.languageIds.join(',') }
+						: {}),
+					...(index.refinementList?.tags?.length
+						? { tags: index.refinementList.tags.join(',') }
 						: {}),
 					// Menu facets
 					...(index.menu?.category ? { category: index.menu.category } : {}),
@@ -230,7 +257,13 @@ const routing = (
 				const state = {
 					query: resolvedRouteState.query,
 					// RefinementList facets
-					...(subsets?.length ? { refinementList: { subsets } } : {}),
+					refinementList: {
+						...(subsets?.length ? { subsets } : {}),
+						classifications:
+							parseSubsets(resolvedRouteState.classifications) ?? [],
+						languageIds: parseSubsets(resolvedRouteState.languages) ?? [],
+						tags: parseSubsets(resolvedRouteState.tags) ?? [],
+					},
 					// Menu facets
 					...(resolvedRouteState.category
 						? { menu: { category: resolvedRouteState.category } }
@@ -258,6 +291,7 @@ const routing = (
 export const loadSearch = async (
 	{ request, context }: LoaderFunctionArgs,
 	families: readonly (FontPreview & { id: string })[],
+	facets: SearchFacets,
 	discovery?: DiscoveryPage,
 ) => {
 	const requestUrl = new URL(request.url);
@@ -277,7 +311,7 @@ export const loadSearch = async (
 	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
-			{ discovery, hasCollectionFilter, serverUrl, previews },
+			{ discovery, hasCollectionFilter, serverUrl, previews, ...facets },
 			{ headers: cacheHeaders.short },
 		);
 	}
@@ -298,6 +332,7 @@ export const loadSearch = async (
 				serverState,
 				serverUrl,
 				previews,
+				...facets,
 			},
 			{
 				headers: cacheHeaders.short,
@@ -310,6 +345,7 @@ export const loadSearch = async (
 		discovery,
 		searchClient,
 		previews,
+		facets,
 	);
 
 	// Add server state to local cache before responding
@@ -328,6 +364,7 @@ export const loadSearch = async (
 			serverState,
 			serverUrl,
 			previews,
+			...facets,
 		},
 		{
 			headers: cacheHeaders.short,
@@ -335,12 +372,26 @@ export const loadSearch = async (
 	);
 };
 
-export const loader = async (args: LoaderFunctionArgs) =>
-	loadSearch(args, await listRegistryFamilies({ signal: args.request.signal }));
+export const loader = async (args: LoaderFunctionArgs) => {
+	const options = { signal: args.request.signal };
+	const [families, languages, taxonomy] = await Promise.all([
+		listRegistryFamilies(options),
+		listRegistryLanguages(options),
+		getRegistryTaxonomy(options),
+	]);
+	return loadSearch(args, families, { languages, taxonomy });
+};
 
 export function CatalogSearchPage() {
-	const { discovery, hasCollectionFilter, serverState, serverUrl, previews } =
-		useLoaderData<SearchProps>();
+	const {
+		discovery,
+		hasCollectionFilter,
+		serverState,
+		serverUrl,
+		previews,
+		languages,
+		taxonomy,
+	} = useLoaderData<SearchProps>();
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
 	const navigate = useNavigate();
@@ -383,11 +434,19 @@ export function CatalogSearchPage() {
 						pt={discovery ? 24 : undefined}
 						ref={searchRef}
 					>
-						<Filters state$={state$} />
+						<Filters
+							state$={state$}
+							languages={languages}
+							taxonomy={taxonomy}
+						/>
 					</Box>
 				</Box>
 				<Box className={classes.container}>
-					<InfiniteHits state$={state$} previews={previews} />
+					<InfiniteHits
+						state$={state$}
+						previews={previews}
+						languages={languages}
+					/>
 					<ScrollToTop containerId="#hits" targetRef={searchRef} />
 				</Box>
 			</InstantSearch>
