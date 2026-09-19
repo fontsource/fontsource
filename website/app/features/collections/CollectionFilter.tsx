@@ -37,7 +37,6 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 	const selectedCollection = collections.find(
 		(collection) => collection.id === value,
 	);
-	const selectedCollectionName = selectedCollection?.name;
 	const normalizedQuery = normalizeCollectionName(query);
 	const visibleCollections = normalizedQuery
 		? collections.filter((collection) =>
@@ -52,18 +51,6 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 	useEffect(() => {
 		if (ready && value && !selectedCollection) onChange(null);
 	}, [onChange, ready, selectedCollection, value]);
-
-	// Collection selection lives outside InstantSearch state, so renames do not
-	// trigger its router. Keep the readable collection name in the URL in sync.
-	useEffect(() => {
-		if (!ready || !value || !selectedCollectionName) return;
-
-		const url = new URL(window.location.href);
-		if (url.searchParams.get('collection') === selectedCollectionName) return;
-
-		url.searchParams.set('collection', selectedCollectionName);
-		window.history.replaceState(window.history.state, '', url);
-	}, [ready, selectedCollectionName, value]);
 
 	return (
 		<>

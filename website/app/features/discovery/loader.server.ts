@@ -1,4 +1,5 @@
 import type { LoaderFunctionArgs } from 'react-router';
+import { listRegistryFamilies } from '@/generated/api';
 
 import { loadSearch } from '@/routes/_index';
 import { cacheHeaders } from '@/utils/cache';
@@ -20,5 +21,9 @@ export const loader = async (args: LoaderFunctionArgs) => {
 		});
 	}
 
-	return loadSearch(args, page);
+	return loadSearch(
+		args,
+		await listRegistryFamilies({ signal: args.request.signal }),
+		page,
+	);
 };

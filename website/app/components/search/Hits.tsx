@@ -24,6 +24,7 @@ import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 import { FontCard } from '@/components/FontCard';
 import { Skeleton } from '@/components/Skeleton';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
+import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 
 import classes from './Hits.module.css';
@@ -39,12 +40,14 @@ interface AlgoliaMetadata extends BaseHit {
 }
 
 interface HitComponentProps {
+	preview?: FontPreview;
 	state$: SearchState;
 	hit: AlgoliaMetadata;
 	eagerStylesheet?: boolean;
 }
 
 interface InfiniteHitsProps {
+	previews: Record<string, FontPreview>;
 	state$: SearchState;
 }
 
@@ -84,7 +87,7 @@ const getNoResultsMessage = (
 };
 
 const HitComponent = observer(
-	({ eagerStylesheet, hit, state$ }: HitComponentProps) => {
+	({ eagerStylesheet, hit, state$, preview }: HitComponentProps) => {
 		const display = useValue(state$.display);
 		const size = useValue(state$.size);
 
@@ -103,8 +106,12 @@ const HitComponent = observer(
 			}
 
 			// Use language-specific preview for non-latin fonts when no custom input
-			if (isNotLatin) {
-				return getPreviewText(hit.defSubset, hit.objectID);
+			if (preview?.sampleText || isNotLatin) {
+				return (
+					preview?.sampleText?.short?.trim() ||
+					preview?.sampleText?.long?.trim() ||
+					getPreviewText(preview?.previewSubset ?? hit.defSubset)
+				);
 			}
 
 			return state$.preview.presetValue.get();
@@ -113,6 +120,7 @@ const HitComponent = observer(
 		return (
 			<FontCard
 				font={{
+					...preview,
 					id: hit.objectID,
 					family: hit.family,
 					defSubset: hit.defSubset,
@@ -168,7 +176,7 @@ const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 	</div>
 );
 
-const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
+const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 	const collectionsStore = useCollectionsStore();
 	const collectionId = useValue(state$.collectionId);
 	const collections = useValue(collectionsStore.getCollections);
@@ -319,15 +327,11 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		const unsubscribe = state$.language.onChange((e) => {
 			// Keep the preset current while custom text is active so clearing it
 			// immediately restores the selected language preview.
-			const firstHit = items[0];
-			if (firstHit) {
-				const newPreview = getPreviewText(e.value, firstHit.objectID);
-				state$.preview.presetValue.set(newPreview);
-			}
+			state$.preview.presetValue.set(getPreviewText(e.value));
 		});
 
 		return unsubscribe;
-	}, [state$.preview, state$.language, items]);
+	}, [state$.preview, state$.language]);
 
 	if (status === 'error') {
 		return (
@@ -395,6 +399,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 													key={hit.objectID}
 													state$={state$}
 													hit={hit}
+													preview={previews[hit.objectID]}
 													eagerStylesheet={
 														virtualRow.index === 0 &&
 														hitIndex < eagerStylesheetCount
@@ -422,6 +427,7 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 								key={hit.objectID}
 								state$={state$}
 								hit={hit}
+								preview={previews[hit.objectID]}
 								eagerStylesheet={index < eagerStylesheetCount}
 							/>
 						))}

@@ -1,6 +1,6 @@
 import { Tabs } from '@mantine/core';
-import { useLocalStorage } from '@mantine/hooks';
 
+import { usePackageManager } from '@/hooks/usePackageManager';
 import { getPackageManagerCommands } from '@/utils/docs/packageManagers';
 
 import { CodeHighlight, CodeWrapper } from './Code';
@@ -13,10 +13,7 @@ export interface PackageManagerProps {
 export const PackageManagerCode = ({ cmd }: PackageManagerProps) => {
 	const commands = getPackageManagerCommands(cmd);
 
-	const [packageManager, setPackageManager] = useLocalStorage({
-		key: 'package-manager',
-		defaultValue: 'npm',
-	});
+	const [packageManager, setPackageManager] = usePackageManager('npm');
 
 	return (
 		<Tabs

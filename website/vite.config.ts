@@ -52,15 +52,7 @@ export default defineConfig({
 		},
 		cloudflare({
 			viteEnvironment: { name: 'ssr' },
-			auxiliaryWorkers: [
-				{
-					configPath: '../api/wrangler.toml',
-					devOnly: true,
-					config: (config) => {
-						config.containers = [];
-					},
-				},
-			],
+			remoteBindings: false,
 		}),
 		mdx(MdxConfig),
 		babel({

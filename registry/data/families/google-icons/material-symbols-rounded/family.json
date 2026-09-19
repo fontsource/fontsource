@@ -8,6 +8,11 @@
 		"id": "Apache-2.0",
 		"url": "https://www.apache.org/licenses/LICENSE-2.0"
 	},
+	"previewContext": {
+		"fallbackFamilies": [
+			"sans-serif"
+		]
+	},
 	"project": {
 		"repository": "https://github.com/google/material-design-icons"
 	},
@@ -18,7 +23,7 @@
 		"type": "github"
 	},
 	"sampleText": {
-		"short": "home"
+		"short": "search settings home person add shopping_cart check_circle favorite logout trophy"
 	},
 	"sourceModified": "2026-08-28",
 	"sources": [

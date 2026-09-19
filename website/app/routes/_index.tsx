@@ -3,7 +3,7 @@ import { observable } from '@legendapp/state';
 import { useObservable, useValue } from '@legendapp/state/react';
 import { Box, MantineProvider } from '@mantine/core';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
-import type { UiState } from 'instantsearch.js';
+import type { SearchClient, UiState } from 'instantsearch.js';
 import { history } from 'instantsearch.js/es/lib/routers';
 import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
 import type { RouterProps } from 'instantsearch.js/es/middlewares';
@@ -22,6 +22,7 @@ import {
 	type LinksFunction,
 	type LoaderFunctionArgs,
 	type MetaFunction,
+	StaticRouter,
 	useLoaderData,
 	useNavigate,
 	useNavigation,
@@ -39,8 +40,7 @@ import {
 	CollectionsProvider,
 	useCollectionsStore,
 } from '@/features/collections/CollectionsProvider';
-import { normalizeCollectionName } from '@/features/collections/model';
-import type { CollectionsStore } from '@/features/collections/store';
+import { listRegistryFamilies } from '@/generated/api';
 import classes from '@/styles/global.module.css';
 import { theme } from '@/styles/theme';
 import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
@@ -48,10 +48,12 @@ import { buildAlgoliaCacheKey } from '@/utils/algolia';
 import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
+import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
 
 export interface SearchProps {
+	previews: Record<string, FontPreview>;
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
 	serverState?: InstantSearchServerState;
@@ -78,6 +80,38 @@ const searchClient = algoliasearch(
 		requester: createFetchRequester(),
 	},
 );
+
+export const getSearchServerState = (
+	serverUrl: string,
+	discovery?: DiscoveryPage,
+	client: SearchClient = searchClient,
+	previews: Record<string, FontPreview> = {},
+) => {
+	const state$ = observable(createPageSearchState(discovery));
+	const requestUrl = new URL(serverUrl);
+
+	return getServerState(
+		<StaticRouter location={`${requestUrl.pathname}${requestUrl.search}`}>
+			<MantineProvider theme={theme}>
+				<InstantSearchSSRProvider>
+					<InstantSearch
+						searchClient={client}
+						indexName="prod_POPULAR"
+						routing={routing(serverUrl, state$, discovery)}
+						future={{ preserveSharedStateOnUnmount: true }}
+					>
+						<CollectionsProvider>
+							<Configure attributesToRetrieve={attributesToRetrieve} />
+							<Filters state$={state$} />
+							<InfiniteHits state$={state$} previews={previews} />
+						</CollectionsProvider>
+					</InstantSearch>
+				</InstantSearchSSRProvider>
+			</MantineProvider>
+		</StaticRouter>,
+		{ renderToString },
+	);
+};
 
 export const links: LinksFunction = () => [
 	{
@@ -135,7 +169,6 @@ const createPageSearchState = (discovery?: DiscoveryPage) => {
 const routing = (
 	serverUrl: string,
 	state$: SearchState,
-	collectionsStore?: CollectionsStore,
 	discovery?: DiscoveryPage,
 	navigate?: (url: string) => void,
 ): RouterProps<UiState, SearchRouteState> => {
@@ -170,14 +203,10 @@ const routing = (
 		stateMapping: {
 			stateToRoute(uiState) {
 				const index = uiState[indexName];
-				// Collection selection lives in Legend rather than InstantSearch state.
 				const collectionId = state$.collectionId.peek();
-				const collectionName = collectionsStore?.collections$
-					.peek()
-					.find((collection) => collection.id === collectionId)?.name;
 				const result = {
 					query: index.query,
-					...(collectionName ? { collection: collectionName } : {}),
+					...(collectionId ? { collection: collectionId } : {}),
 					// RefinementList facets
 					...(index.refinementList?.subsets
 						? { subsets: index.refinementList.subsets.join(',') }
@@ -196,17 +225,7 @@ const routing = (
 					? { ...discovery.routeState, ...routeState }
 					: routeState;
 				const subsets = parseSubsets(resolvedRouteState.subsets);
-				// URLs use readable collection names while state keeps the stable local ID.
-				const normalizedCollectionName = resolvedRouteState.collection
-					? normalizeCollectionName(resolvedRouteState.collection)
-					: undefined;
-				const collection = collectionsStore?.collections$
-					.peek()
-					.find(
-						(item) =>
-							normalizeCollectionName(item.name) === normalizedCollectionName,
-					);
-				state$.collectionId.set(collection?.id ?? null);
+				state$.collectionId.set(resolvedRouteState.collection ?? null);
 
 				const state = {
 					query: resolvedRouteState.query,
@@ -238,15 +257,27 @@ const routing = (
 
 export const loadSearch = async (
 	{ request, context }: LoaderFunctionArgs,
+	families: readonly (FontPreview & { id: string })[],
 	discovery?: DiscoveryPage,
 ) => {
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
 	const hasCollectionFilter = requestUrl.searchParams.has('collection');
+	const previews = Object.fromEntries(
+		families
+			.filter(
+				(family) =>
+					family.sampleText || family.previewSubset || family.previewContext,
+			)
+			.map(({ id, sampleText, previewSubset, previewContext }) => [
+				id,
+				{ sampleText, previewSubset, previewContext },
+			]),
+	);
 	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
-			{ discovery, hasCollectionFilter, serverUrl },
+			{ discovery, hasCollectionFilter, serverUrl, previews },
 			{ headers: cacheHeaders.short },
 		);
 	}
@@ -254,9 +285,6 @@ export const loadSearch = async (
 	const { env, ctx } = context.get(cloudflareContext);
 	const { ALGOLIA } = env;
 	const cacheKey = buildAlgoliaCacheKey(serverUrl);
-
-	// Generate default state object for ssr
-	const state$ = observable(createPageSearchState(discovery));
 
 	// Check local cache for server state first to avoid unnecessary API calls
 	let serverState = cacheKey
@@ -269,6 +297,7 @@ export const loadSearch = async (
 				hasCollectionFilter,
 				serverState,
 				serverUrl,
+				previews,
 			},
 			{
 				headers: cacheHeaders.short,
@@ -276,26 +305,11 @@ export const loadSearch = async (
 		);
 	}
 
-	serverState = await getServerState(
-		<MantineProvider theme={theme}>
-			<InstantSearchSSRProvider>
-				<InstantSearch
-					searchClient={searchClient}
-					indexName="prod_POPULAR"
-					routing={routing(serverUrl, state$, undefined, discovery)}
-					future={{ preserveSharedStateOnUnmount: true }}
-				>
-					<CollectionsProvider>
-						<Configure attributesToRetrieve={attributesToRetrieve} />
-						<Filters state$={state$} />
-						<InfiniteHits state$={state$} />
-					</CollectionsProvider>
-				</InstantSearch>
-			</InstantSearchSSRProvider>
-		</MantineProvider>,
-		{
-			renderToString,
-		},
+	serverState = await getSearchServerState(
+		serverUrl,
+		discovery,
+		searchClient,
+		previews,
 	);
 
 	// Add server state to local cache before responding
@@ -313,6 +327,7 @@ export const loadSearch = async (
 			hasCollectionFilter,
 			serverState,
 			serverUrl,
+			previews,
 		},
 		{
 			headers: cacheHeaders.short,
@@ -320,10 +335,11 @@ export const loadSearch = async (
 	);
 };
 
-export const loader = (args: LoaderFunctionArgs) => loadSearch(args);
+export const loader = async (args: LoaderFunctionArgs) =>
+	loadSearch(args, await listRegistryFamilies({ signal: args.request.signal }));
 
 export function CatalogSearchPage() {
-	const { discovery, hasCollectionFilter, serverState, serverUrl } =
+	const { discovery, hasCollectionFilter, serverState, serverUrl, previews } =
 		useLoaderData<SearchProps>();
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
@@ -338,7 +354,7 @@ export function CatalogSearchPage() {
 	};
 
 	const state$ = useObservable(createPageSearchState(discovery));
-	// Resolve the collection name only after Legend has restored local persistence.
+	// Avoid clearing a persisted collection before Legend restores it.
 	if (hasCollectionFilter && !collectionsReady) return null;
 
 	return (
@@ -349,7 +365,6 @@ export function CatalogSearchPage() {
 				routing={routing(
 					serverUrl,
 					state$,
-					collectionsStore,
 					discovery,
 					discovery ? navigateSearch : undefined,
 				)}
@@ -372,7 +387,7 @@ export function CatalogSearchPage() {
 					</Box>
 				</Box>
 				<Box className={classes.container}>
-					<InfiniteHits state$={state$} />
+					<InfiniteHits state$={state$} previews={previews} />
 					<ScrollToTop containerId="#hits" targetRef={searchRef} />
 				</Box>
 			</InstantSearch>
