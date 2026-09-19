@@ -2,7 +2,7 @@
 	"extends": "../tsconfig.json",
 	"compilerOptions": {
 		"lib": ["es2022"],
-		"types": ["@cloudflare/vitest-pool-workers", "vite/client"]
+		"types": ["@cloudflare/vitest-plugin", "vite/client"]
 	},
 	"include": [
 		"./src/**/*.ts",

@@ -4,7 +4,7 @@ import { cacheHeaders } from '@/utils/cache';
 import { getDocsLLMsIndex } from '@/utils/docs/source.server';
 
 export const loader: LoaderFunction = async () => {
-	return new Response(getDocsLLMsIndex(), {
+	return new Response(await getDocsLLMsIndex(), {
 		headers: {
 			'Content-Type': 'text/plain; charset=utf-8',
 			...cacheHeaders.stable,
