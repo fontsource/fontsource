@@ -3,7 +3,7 @@ import { RouterContextProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
 import { listRegistryFamilies } from '@/generated/api';
-import { getSearchServerState, loader } from '@/routes/_index';
+import { getSearchServerState, loader } from '@/utils/search.server';
 
 vi.mock('@/generated/api', () => ({ listRegistryFamilies: vi.fn() }));
 
