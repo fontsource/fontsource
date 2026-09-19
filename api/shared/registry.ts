@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+export const REGISTRY_PREVIEW_VERSION = 1;
+
 const IdSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const LanguageIdSchema = z
 	.string()
@@ -134,6 +136,11 @@ const SourceCommonShape = {
 	format: z.enum(['ttf', 'otf']),
 	size: z.number().int().nonnegative(),
 	downloadUrl: z.string().min(1).describe('Relative source download URL'),
+	previewUrl: z
+		.string()
+		.min(1)
+		.describe('Relative full-coverage WOFF2 preview URL')
+		.optional(),
 	capabilitiesUrl: z
 		.string()
 		.min(1)

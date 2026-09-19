@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { convertFont, createFontContext } from '../src';
-import { loadStaticFontFixture } from './font-fixture';
+import { convertFont, createFontContext, inspectFont } from '../src';
+import { loadStaticFontFixture, loadVariableFontFixture } from './font-fixture';
 
 const getHeader = (bytes: Uint8Array, length = 4): string =>
 	Array.from(bytes.slice(0, length))
@@ -8,6 +8,31 @@ const getHeader = (bytes: Uint8Array, length = 4): string =>
 		.join('');
 
 describe('convertFont smoke tests', () => {
+	it.each([
+		['static', loadStaticFontFixture],
+		['variable', loadVariableFontFixture],
+	] as const)(
+		'preserves full %s font coverage, features, and axes in WOFF2',
+		async (_name, loadFixture) => {
+			const source = loadFixture();
+			const ctx = createFontContext();
+			try {
+				const before = await inspectFont(ctx, source);
+				const [compressed] = await convertFont(
+					ctx,
+					source,
+					['woff2'],
+					'preview.ttf',
+				);
+				expect(await inspectFont(ctx, compressed.data)).toEqual(before);
+				expect(compressed.data.byteLength).toBeLessThan(source.byteLength);
+			} finally {
+				ctx.destroy();
+			}
+		},
+		30_000,
+	);
+
 	it('converts a TTF fixture into multiple output formats', async () => {
 		const buffer = loadStaticFontFixture();
 
