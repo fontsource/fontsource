@@ -1,3 +1,4 @@
+import { copyFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { consola } from 'consola';
 import { generateFontFiles } from './font-files.ts';
@@ -7,6 +8,7 @@ import { generateGoogleIcons } from './google-icons.ts';
 import { generateNam } from './nam.ts';
 import {
 	type FamilyOverrides,
+	familyDistributionSchema,
 	familyOverridesSchema,
 	familySchema,
 	familyTagsSchema,
@@ -22,7 +24,11 @@ import {
 	readJsonIfExists,
 	writeJson,
 } from './shared.ts';
-import { listFamilyKeys, validateRegistry } from './validator.ts';
+import {
+	listFamilyKeys,
+	validateDistributionResolution,
+	validateRegistry,
+} from './validator.ts';
 
 const logger = consola.withTag('registry');
 
@@ -122,6 +128,28 @@ export const generateRegistry = async (
 		taxonomy,
 	);
 	logger.success(`Generated ${googleFamilies.length} Google font families`);
+	for (const id of previousFontsourceIds) {
+		if (!googleFamilies.includes(id)) continue;
+		const previous = join(root, 'families', 'fontsource', id);
+		const output = join(root, 'families', 'google', id);
+		const distribution = familyDistributionSchema.parse(
+			await readJson(join(previous, 'distribution.json')),
+		);
+		const family = familySchema.parse(
+			await readJson(join(output, 'family.json')),
+		);
+		validateDistributionResolution(
+			distribution,
+			family,
+			`${id} Google migration`,
+		);
+		await copyFile(
+			join(previous, 'distribution.json'),
+			join(output, 'distribution.json'),
+		);
+		await rm(previous, { recursive: true });
+		logger.info(`Migrated ${id} from Fontsource to Google`);
+	}
 	logger.start(
 		`Generating families from google/material-design-icons@${googleIcons.revision}`,
 	);
@@ -142,6 +170,7 @@ export const generateRegistry = async (
 		root,
 		previousFontsourceIds,
 		languages,
+		googleFamilies,
 	);
 	logger.success(
 		`Generated ${fontsourceFamilies.length} Fontsource font families`,

@@ -26,6 +26,11 @@ validates changes before committing them to `main`.
 Families present in the previous registry but absent from their provider are
 retained with their original sources and marked `deprecated`. A reappearing
 family is generated as active again unless it has a reviewed replacement.
+Google owns a family when its ID also exists in `fontsource/font-files`.
+Sync migrates the existing distribution to Google after checking that every
+published variant resolves against Google's sources, then removes the old
+Fontsource record. Later syncs do not recreate it, even if Google removes the
+family and its retained Google record becomes deprecated.
 Successors are never guessed: `data/replacements.json` contains only reviewed
 mappings.
 Google’s explicit language lists override cmap detection. References without a
@@ -113,7 +118,7 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - Public API views explicitly map registry records rather than exposing them.
 - Provenance comes from Git history, not prior generated metadata.
 - Each provider owns its directory; one adapter never changes another
-  provider's records.
+  provider's records. The registry coordinator owns migrations to Google.
 - Removed provider families remain buildable but are marked `deprecated`.
 - Replaced families retain their own sources; `replacedBy` recommends an active
   successor and never aliases its binaries.
