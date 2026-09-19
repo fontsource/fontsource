@@ -74,7 +74,10 @@ const PreviewToolbar = observer(() => {
 		const next = new URLSearchParams(searchParams);
 		if (nextMode === 'headline') next.delete('view');
 		else next.set('view', nextMode);
-		setSearchParams(next);
+		setSearchParams(next, {
+			defaultShouldRevalidate: false,
+			preventScrollReset: true,
+		});
 	};
 	const languageItems = verifiedLanguages.map((language) => ({
 		label:
