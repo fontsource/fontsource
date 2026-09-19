@@ -14,10 +14,12 @@ import { describe, expect, it, onTestFinished } from 'vitest';
 import { generateFontFiles } from './font-files.ts';
 import { generateRegistry } from './generate.ts';
 import { assertGitPathClean, openGitSnapshot } from './git.ts';
+import { generateGoogle } from './google.ts';
 import {
 	familySchema,
 	languageCatalogSchema,
 	sourceFamilySchema,
+	taxonomySchema,
 	upstreamsSchema,
 } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
@@ -516,6 +518,34 @@ const seedRegistryRequirements = async (root: string): Promise<void> => {
 };
 
 describe('registry ingestion', () => {
+	it('identifies the upstream revision and path for invalid Google metadata', async () => {
+		const google = await createGoogleRepository();
+		const path = 'ofl/abel/METADATA.pb';
+		const metadata = await readFile(join(google.repository, path), 'utf8');
+		await writeFixture(
+			google.repository,
+			path,
+			metadata.replace('license: "OFL"\n', ''),
+		);
+		const revision = commitAll(google.repository, 'remove required license');
+		const registry = await temporaryDirectory('invalid-google-metadata');
+		const taxonomy = taxonomySchema.parse(
+			await readJson(join(import.meta.dirname, '..', 'data', 'taxonomy.json')),
+		);
+
+		await expect(
+			generateGoogle(
+				openGitSnapshot(google.repository, revision),
+				registry,
+				[],
+				taxonomy,
+			),
+		).rejects.toMatchObject({
+			message: `Failed to parse google/fonts@${revision}:${path}`,
+			cause: { message: expect.stringContaining('license') },
+		});
+	});
+
 	it('archives only committed registry data', async () => {
 		const repository = await createGitRepository('committed-registry');
 		await writeFixture(repository, 'registry/data/upstreams.json', '{}\n');
