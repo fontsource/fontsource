@@ -250,6 +250,7 @@ describe('metadata routes', () => {
 			'/v1/registry/languages',
 			'/v1/registry/sources/{sha256}',
 			'/v1/registry/sources/{sha256}/capabilities',
+			'/v1/registry/sources/{sha256}/preview/{file}',
 			'/v1/registry/subsets',
 			'/v1/registry/subsets/{id}',
 			'/v1/registry/taxonomy',

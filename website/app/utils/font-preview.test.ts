@@ -166,6 +166,14 @@ describe('getRegistrySourcePreviewCSS', () => {
 		expect(getRegistrySourcePreviewCSS(source)).toContain(
 			'font-weight: 100 900;',
 		);
+		const previewCSS = getRegistrySourcePreviewCSS({
+			...source,
+			previewUrl: `${source.downloadUrl}/preview/1.woff2`,
+		});
+		expect(previewCSS).toContain(
+			'src: url("https://api.fontsource.org/v1/registry/sources/variable-standard/preview/1.woff2") format("woff2"), url("https://api.fontsource.org/v1/registry/sources/variable-standard") format("truetype");',
+		);
+		expect(previewCSS).toContain('font-weight: 100 900;');
 	});
 
 	it('supports a source-specific preview family name', () => {

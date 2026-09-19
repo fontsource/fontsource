@@ -1,5 +1,12 @@
-import { PutObjectCommand, S3ServiceException } from '@aws-sdk/client-s3';
-import { describe, expect, it, vi } from 'vitest';
+import { readFile } from 'node:fs/promises';
+import {
+	GetObjectCommand,
+	HeadObjectCommand,
+	PutObjectCommand,
+	S3ServiceException,
+} from '@aws-sdk/client-s3';
+import { createFontContext, inspectFont } from '@fontsource-utils/core';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { sha256 } from './shared.ts';
 
 const s3 = vi.hoisted(() => {
@@ -19,9 +26,109 @@ vi.mock('@aws-sdk/client-s3', async (importOriginal) => {
 	};
 });
 
-import { putCurrentObject, putObject } from './r2.ts';
+import { putCurrentObject, putObject, putSourcePreview } from './r2.ts';
 
 describe('R2 source archive', () => {
+	beforeEach(() => {
+		s3.send.mockReset();
+	});
+
+	it('backfills a full-source preview, retries failed uploads, and reuses stored bytes', async () => {
+		const original = await readFile(
+			new URL(
+				'../../packages/core/tests/fixtures/fonts/abel-latin-400-normal.ttf',
+				import.meta.url,
+			),
+		);
+		const source = { sha256: sha256(original), size: original.byteLength };
+		const sourceKey = `sources/sha256/${source.sha256}`;
+		const previewKey = `${sourceKey}/preview-1.woff2`;
+		const objects = new Map<
+			string,
+			{
+				body: Uint8Array;
+				contentType: string;
+				metadata: Record<string, string>;
+			}
+		>([
+			[
+				sourceKey,
+				{
+					body: original,
+					contentType: 'font/ttf',
+					metadata: { sha256: source.sha256 },
+				},
+			],
+		]);
+		let failUpload = true;
+		let sourceReads = 0;
+		s3.send.mockImplementation(async (command) => {
+			const key = command.input.Key;
+			const object = objects.get(key);
+			if (command instanceof PutObjectCommand) {
+				if (failUpload) throw new Error('Upload interrupted');
+				objects.set(key, {
+					body: command.input.Body as Uint8Array,
+					contentType: command.input.ContentType ?? '',
+					metadata: command.input.Metadata ?? {},
+				});
+				return {};
+			}
+			if (!object)
+				throw new S3ServiceException({
+					name: 'NotFound',
+					$fault: 'client',
+					$metadata: { httpStatusCode: 404 },
+				});
+			if (command instanceof HeadObjectCommand) {
+				return {
+					ContentLength: object.body.byteLength,
+					ContentType: object.contentType,
+					Metadata: object.metadata,
+				};
+			}
+			if (command instanceof GetObjectCommand) {
+				sourceReads++;
+				return { Body: { transformToByteArray: async () => object.body } };
+			}
+			throw new Error('Unexpected S3 command');
+		});
+		const ctx = createFontContext();
+		try {
+			await expect(putSourcePreview(ctx, source)).rejects.toThrow(
+				'Unable to archive preview',
+			);
+			expect(objects.has(previewKey)).toBe(false);
+			failUpload = false;
+			await putSourcePreview(ctx, source);
+			const preview = objects.get(previewKey);
+			if (!preview) throw new Error('Preview was not stored');
+			expect(preview.contentType).toBe('font/woff2');
+			expect(preview.metadata.sha256).toBe(sha256(preview.body));
+			expect(await inspectFont(ctx, preview.body)).toEqual(
+				await inspectFont(ctx, original),
+			);
+			const reads = sourceReads;
+			await putSourcePreview(ctx, source);
+			expect(sourceReads).toBe(reads);
+			expect(objects.get(previewKey)).toBe(preview);
+			expect(objects.get(sourceKey)?.body).toBe(original);
+
+			objects.delete(previewKey);
+			objects.set(sourceKey, {
+				body: new Uint8Array([0]),
+				contentType: 'font/ttf',
+				metadata: { sha256: source.sha256 },
+			});
+			await expect(putSourcePreview(ctx, source)).rejects.toThrow(
+				'Unable to archive preview',
+			);
+			expect(objects.has(previewKey)).toBe(false);
+		} finally {
+			ctx.destroy();
+		}
+	});
+
 	it('verifies bodies and conditionally uploads only missing objects', async () => {
 		const body = new TextEncoder().encode('font');
 		const hash = sha256(body);
