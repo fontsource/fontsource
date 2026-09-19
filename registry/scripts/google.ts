@@ -597,7 +597,15 @@ const readGoogleFamilies = (
 		if (directory.endsWith('_todelist')) continue;
 		const path = `${directory}/METADATA.pb`;
 		if (!files.has(path)) continue;
-		const family = parseGoogleFamily(snapshot.read(path).toString('utf8'));
+		let family: GoogleFamily;
+		try {
+			family = parseGoogleFamily(snapshot.read(path).toString('utf8'));
+		} catch (cause) {
+			throw new Error(
+				`Failed to parse google/fonts@${snapshot.revision}:${path}`,
+				{ cause },
+			);
+		}
 		const id = family.name.toLowerCase().replace(/\s+/g, '-');
 		const previous = families.get(id);
 		if (previous && previous.directory !== directory) {
