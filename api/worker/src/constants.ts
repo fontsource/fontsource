@@ -11,6 +11,11 @@ export const KV_KEYS = {
 export { UPSTREAM_URLS } from '../../shared/upstream';
 
 export const CACHE_POLICIES = {
+	registry: {
+		'Cache-Control': 'public, max-age=60',
+		'CDN-Cache-Control': 'public, max-age=300',
+		'Cloudflare-CDN-Cache-Control': 'public, max-age=300',
+	},
 	metadata: {
 		'Cache-Control': 'public, max-age=300',
 		'CDN-Cache-Control': 'public, max-age=86400',

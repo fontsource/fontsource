@@ -1,4 +1,8 @@
-import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
+import type {
+	HeadersFunction,
+	LoaderFunctionArgs,
+	MetaFunction,
+} from 'react-router';
 import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 
@@ -11,6 +15,9 @@ import {
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
+
+export const headers: HeadersFunction = ({ errorHeaders }) =>
+	errorHeaders ?? cacheHeaders.registry;
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
@@ -29,7 +36,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
 		},
-		{ headers: cacheHeaders.short },
+		{ headers: cacheHeaders.registry },
 	);
 };
 

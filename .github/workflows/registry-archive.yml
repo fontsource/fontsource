@@ -7,10 +7,12 @@ on:
     paths:
       - 'registry/data/**'
       - 'registry/scripts/archive.ts'
+      - 'registry/scripts/archive-snapshot.ts'
       - 'registry/scripts/r2.ts'
       - 'registry/scripts/schema.ts'
       - 'registry/scripts/shared.ts'
       - 'api/shared/registry.ts'
+      - 'api/shared/registry-archive.ts'
       - '.github/workflows/registry-archive.yml'
   workflow_dispatch:
 

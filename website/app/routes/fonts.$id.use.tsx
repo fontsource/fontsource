@@ -1,4 +1,5 @@
 import type {
+	HeadersFunction,
 	LoaderFunctionArgs,
 	MetaFunction,
 	ShouldRevalidateFunctionArgs,
@@ -11,6 +12,9 @@ import { getRegistrySubset } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { loadFontPageBase } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
+
+export const headers: HeadersFunction = ({ errorHeaders }) =>
+	errorHeaders ?? cacheHeaders.registry;
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
@@ -40,7 +44,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			...base,
 			subsetDefinitions,
 		},
-		{ headers: cacheHeaders.short },
+		{ headers: cacheHeaders.registry },
 	);
 };
 

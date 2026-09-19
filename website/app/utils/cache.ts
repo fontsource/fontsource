@@ -1,6 +1,11 @@
 export const PUBLIC_ORIGIN = 'https://fontsource.org';
 
 export const cacheHeaders = {
+	registry: {
+		'Cache-Control': 'public, max-age=0',
+		'CDN-Cache-Control': 'public, max-age=60',
+		'Cloudflare-CDN-Cache-Control': 'public, max-age=60',
+	},
 	document: {
 		'Cache-Control': 'public, max-age=0',
 		'Cloudflare-CDN-Cache-Control':

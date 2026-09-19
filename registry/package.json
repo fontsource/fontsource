@@ -4,6 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"archive": "pnpm --filter '@fontsource-utils/core' build && node scripts/archive.ts",
+		"archive:migrate": "node scripts/migrate-archive.ts",
 		"generate": "pnpm --filter '@fontsource-utils/core' build && node scripts/generate.ts",
 		"test": "pnpm --filter '@fontsource-utils/core' build && vitest run",
 		"typecheck": "pnpm --filter '@fontsource-utils/core' build && tsc --noEmit",

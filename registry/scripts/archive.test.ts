@@ -7,6 +7,7 @@ import {
 } from '../../api/shared/registry.ts';
 
 const r2 = vi.hoisted(() => ({
+	getObject: vi.fn(async () => null as Uint8Array | null),
 	putCurrentObject: vi.fn(),
 	putObject: vi.fn(),
 }));
@@ -23,7 +24,7 @@ describe('registry source archive', () => {
 	it('rejects non-commit snapshot revisions', () => {
 		expect(() =>
 			archiveManifestSchema.parse({
-				schemaVersion: 1,
+				schemaVersion: 2,
 				registryRevision: 'latest',
 				registry: [],
 				views: [],
@@ -58,6 +59,7 @@ describe('registry source archive', () => {
 		let manifest: unknown;
 		let current: unknown;
 		let sourceContentType: string | undefined;
+		const viewReaders = new Map<string, () => Promise<Uint8Array>>();
 		r2.putObject.mockImplementation(
 			async (object: {
 				key: string;
@@ -72,27 +74,29 @@ describe('registry source archive', () => {
 					manifest = JSON.parse(
 						Buffer.from(await object.read()).toString('utf8'),
 					);
-				}
-				const marker = '/api/';
-				const viewIndex = object.key.indexOf(marker);
-				if (viewIndex >= 0) {
-					const path = object.key.slice(viewIndex + marker.length);
-					if (wantedViews.has(path)) {
+					for (const file of archiveManifestSchema.parse(manifest).views) {
+						if (!wantedViews.has(file.path)) continue;
+						const read = viewReaders.get(file.sha256);
+						if (!read) throw new Error(`Missing uploaded view ${file.path}`);
 						const value = JSON.parse(
-							Buffer.from(await object.read()).toString('utf8'),
+							Buffer.from(await read()).toString('utf8'),
 						);
-						views.set(path, value);
+						views.set(file.path, value);
 						if (
-							path === 'families/abel.json' ||
-							path === 'families/adwaita-sans.json' ||
-							path === 'families/ibm-plex-mono.json'
+							[
+								'families/abel.json',
+								'families/adwaita-sans.json',
+								'families/ibm-plex-mono.json',
+							].includes(file.path)
 						) {
-							for (const source of value.sources) {
+							for (const source of value.sources)
 								wantedViews.add(`sources/${source.sha256}/capabilities.json`);
-							}
 						}
 					}
 				}
+				if (object.key.startsWith('api/sha256/'))
+					viewReaders.set(object.key.slice('api/sha256/'.length), object.read);
+				return true;
 			},
 		);
 		r2.putCurrentObject.mockImplementation(async (body: Uint8Array) => {
@@ -102,18 +106,15 @@ describe('registry source archive', () => {
 
 		await publishArchive(REGISTRY_ROOT, REVISION);
 
-		expect(keys.at(-2)).toBe(`snapshots/${REVISION}/manifest.json`);
+		expect(keys.at(-3)).toBe(`snapshots/v2/${REVISION}/index.json`);
+		expect(keys.at(-2)).toBe(`snapshots/v2/${REVISION}/manifest.json`);
 		expect(keys.at(-1)).toBe('current.json');
 		expect(keys.some((key) => key.startsWith('registry/sha256/'))).toBe(true);
 		expect(keys.some((key) => key.startsWith('sources/sha256/'))).toBe(true);
 		expect(sourceContentType).toMatch(/^font\/(?:otf|ttf)$/);
-		expect(
-			keys.some(
-				(key) => key === `snapshots/${REVISION}/api/families/abel.json`,
-			),
-		).toBe(true);
+		expect(keys.some((key) => key.startsWith('api/sha256/'))).toBe(true);
 		expect(manifest).toMatchObject({
-			schemaVersion: 1,
+			schemaVersion: 2,
 			registryRevision: REVISION,
 			registry: expect.arrayContaining([
 				expect.objectContaining({ path: 'upstreams.json' }),
@@ -374,5 +375,33 @@ describe('registry source archive', () => {
 			},
 		});
 		expect(JSON.stringify(languageCatalog)).not.toContain('requiredCodepoints');
-	}, 15_000);
+
+		// Another revision with identical content writes only its index, manifest and pointer.
+		const previous = Buffer.from(JSON.stringify(manifest));
+		r2.getObject.mockImplementation(async (key?: string) =>
+			key === 'current.json' ? Buffer.from(JSON.stringify(current)) : previous,
+		);
+		keys.length = 0;
+		await publishArchive(REGISTRY_ROOT, 'b'.repeat(40));
+		expect(keys).toEqual([
+			`snapshots/v2/${'b'.repeat(40)}/index.json`,
+			`snapshots/v2/${'b'.repeat(40)}/manifest.json`,
+			'current.json',
+		]);
+
+		// A failed upload cannot publish an index or advance the live pointer.
+		r2.getObject.mockResolvedValue(null);
+		keys.length = 0;
+		r2.putObject.mockImplementation(async (object: { key: string }) => {
+			keys.push(object.key);
+			if (object.key.startsWith('api/sha256/'))
+				throw new Error('upload failed');
+			return true;
+		});
+		await expect(publishArchive(REGISTRY_ROOT, 'c'.repeat(40))).rejects.toThrow(
+			'upload failed',
+		);
+		expect(keys).not.toContain('current.json');
+		expect(keys.some((key) => key.startsWith('snapshots/'))).toBe(false);
+	}, 60_000);
 });

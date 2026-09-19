@@ -1,5 +1,6 @@
 import type { HeadObjectCommandOutput } from '@aws-sdk/client-s3';
 import {
+	GetObjectCommand,
 	HeadObjectCommand,
 	PutObjectCommand,
 	S3Client,
@@ -67,7 +68,7 @@ interface ImmutableObject {
 	read?: () => Promise<Uint8Array>;
 }
 
-export const putObject = async (object: ImmutableObject): Promise<void> => {
+export const putObject = async (object: ImmutableObject): Promise<boolean> => {
 	if (
 		await objectMatches(
 			object.key,
@@ -76,7 +77,7 @@ export const putObject = async (object: ImmutableObject): Promise<void> => {
 			object.contentType,
 		)
 	)
-		return;
+		return false;
 	if (!object.read) {
 		throw new Error(`Missing required R2 object ${object.key}`);
 	}
@@ -98,6 +99,24 @@ export const putObject = async (object: ImmutableObject): Promise<void> => {
 		);
 	} catch (error) {
 		throw new Error(`Unable to upload ${object.key}`, { cause: error });
+	}
+	return true;
+};
+
+export const getObject = async (key: string): Promise<Uint8Array | null> => {
+	try {
+		const object = await client.send(
+			new GetObjectCommand({ Bucket: BUCKET, Key: key }),
+		);
+		if (!object.Body) throw new Error(`Empty R2 response for ${key}`);
+		return await object.Body.transformToByteArray();
+	} catch (error) {
+		if (
+			error instanceof S3ServiceException &&
+			error.$metadata.httpStatusCode === 404
+		)
+			return null;
+		throw new Error(`Unable to read ${key}`, { cause: error });
 	}
 };
 

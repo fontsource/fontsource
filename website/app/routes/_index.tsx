@@ -126,7 +126,11 @@ export const meta: MetaFunction = ({ location }) => [
 	...(location.search ? [{ name: 'robots', content: 'noindex, follow' }] : []),
 ];
 
-export const headers: HeadersFunction = ({ parentHeaders }) => {
+export const headers: HeadersFunction = ({ parentHeaders, errorHeaders }) => {
+	if (errorHeaders) return errorHeaders;
+	for (const [name, value] of Object.entries(cacheHeaders.registry)) {
+		parentHeaders.set(name, value);
+	}
 	for (const link of HOME_DISCOVERY_LINKS) {
 		parentHeaders.append('Link', link);
 	}
@@ -278,7 +282,7 @@ export const loadSearch = async (
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
 			{ discovery, hasCollectionFilter, serverUrl, previews },
-			{ headers: cacheHeaders.short },
+			{ headers: cacheHeaders.registry },
 		);
 	}
 
@@ -300,7 +304,7 @@ export const loadSearch = async (
 				previews,
 			},
 			{
-				headers: cacheHeaders.short,
+				headers: cacheHeaders.registry,
 			},
 		);
 	}
@@ -330,7 +334,7 @@ export const loadSearch = async (
 			previews,
 		},
 		{
-			headers: cacheHeaders.short,
+			headers: cacheHeaders.registry,
 		},
 	);
 };

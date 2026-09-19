@@ -141,7 +141,7 @@ const archivedFileSchema = z.strictObject({
 });
 
 export const archiveManifestSchema = z.strictObject({
-	schemaVersion: z.literal(1),
+	schemaVersion: z.literal(2),
 	registryRevision: revisionSchema,
 	registry: z.array(archivedFileSchema),
 	views: z.array(archivedFileSchema),
