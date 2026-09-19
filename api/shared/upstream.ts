@@ -164,7 +164,7 @@ export const fetchPackageTarball = async (
 	id: string,
 	version: string,
 	isVariable = false,
-): Promise<ReadableStream<Uint8Array>> => {
+): Promise<ReadableStream<Uint8Array<ArrayBuffer>>> => {
 	const url = `${UPSTREAM_URLS.npmRegistry}/${packageName(id, isVariable)}/-/${id}-${version}.tgz`;
 	const response = await fetchWithCache(url);
 
