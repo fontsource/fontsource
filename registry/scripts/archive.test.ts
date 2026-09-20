@@ -1,5 +1,5 @@
 import { resolve } from 'node:path';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
@@ -9,6 +9,7 @@ import {
 const r2 = vi.hoisted(() => ({
 	putCurrentObject: vi.fn(),
 	putObject: vi.fn(),
+	putSourcePreview: vi.fn(),
 }));
 
 vi.mock('./r2.ts', () => r2);
@@ -20,6 +21,10 @@ const REGISTRY_ROOT = resolve(import.meta.dirname, '../data');
 const REVISION = 'a'.repeat(40);
 
 describe('registry source archive', () => {
+	beforeEach(() => {
+		vi.resetAllMocks();
+		r2.putObject.mockResolvedValue(undefined);
+	});
 	it('rejects non-commit snapshot revisions', () => {
 		expect(() =>
 			archiveManifestSchema.parse({
@@ -35,6 +40,8 @@ describe('registry source archive', () => {
 	it('publishes archive objects before the manifest and current pointer', async () => {
 		const keys: string[] = [];
 		const views = new Map<string, unknown>();
+		const previewHashes = new Set<string>();
+		const distributedHashes = new Set<string>();
 		const wantedViews = new Set([
 			'families.json',
 			'families/abel.json',
@@ -77,6 +84,23 @@ describe('registry source archive', () => {
 				const viewIndex = object.key.indexOf(marker);
 				if (viewIndex >= 0) {
 					const path = object.key.slice(viewIndex + marker.length);
+					if (path.startsWith('families/') && !path.endsWith('/symbols.json')) {
+						const family = RegistryFamilyDetailSchema.parse(
+							JSON.parse(Buffer.from(await object.read()).toString('utf8')),
+						);
+						const distributed = new Set(
+							[
+								...(family.distribution.static ?? []),
+								...(family.distribution.variable ?? []),
+							].map(({ source }) => source),
+						);
+						for (const source of family.sources) {
+							expect(Boolean(source.previewUrl)).toBe(
+								distributed.has(source.sha256),
+							);
+						}
+						for (const hash of distributed) distributedHashes.add(hash);
+					}
 					if (wantedViews.has(path)) {
 						const value = JSON.parse(
 							Buffer.from(await object.read()).toString('utf8'),
@@ -99,11 +123,19 @@ describe('registry source archive', () => {
 			keys.push('current.json');
 			current = JSON.parse(Buffer.from(body).toString('utf8'));
 		});
+		r2.putSourcePreview.mockImplementation(
+			async (_ctx, source: { sha256: string }) => {
+				expect(previewHashes.has(source.sha256)).toBe(false);
+				previewHashes.add(source.sha256);
+				keys.push(`preview/${source.sha256}`);
+			},
+		);
 
 		await publishArchive(REGISTRY_ROOT, REVISION);
 
 		expect(keys.at(-2)).toBe(`snapshots/${REVISION}/manifest.json`);
 		expect(keys.at(-1)).toBe('current.json');
+		expect(previewHashes).toEqual(distributedHashes);
 		expect(keys.some((key) => key.startsWith('registry/sha256/'))).toBe(true);
 		expect(keys.some((key) => key.startsWith('sources/sha256/'))).toBe(true);
 		expect(sourceContentType).toMatch(/^font\/(?:otf|ttf)$/);
@@ -181,6 +213,9 @@ describe('registry source archive', () => {
 					codepointCount: expect.any(Number),
 					downloadUrl: expect.stringMatching(
 						/^\/v1\/registry\/sources\/[0-9a-f]{64}$/,
+					),
+					previewUrl: expect.stringMatching(
+						/^\/v1\/registry\/sources\/[0-9a-f]{64}\/preview\/1\.woff2$/,
 					),
 					capabilitiesUrl: expect.stringMatching(
 						/^\/v1\/registry\/sources\/[0-9a-f]{64}\/capabilities$/,
@@ -374,5 +409,20 @@ describe('registry source archive', () => {
 			},
 		});
 		expect(JSON.stringify(languageCatalog)).not.toContain('requiredCodepoints');
+	}, 15_000);
+
+	it('does not promote a snapshot when a preview cannot be archived', async () => {
+		r2.putSourcePreview.mockRejectedValueOnce(
+			new Error('preview upload failed'),
+		);
+		await expect(publishArchive(REGISTRY_ROOT, REVISION)).rejects.toThrow(
+			'preview upload failed',
+		);
+		expect(r2.putCurrentObject).not.toHaveBeenCalled();
+		expect(
+			r2.putObject.mock.calls.some(([object]) =>
+				object.key.endsWith('/manifest.json'),
+			),
+		).toBe(false);
 	}, 15_000);
 });
