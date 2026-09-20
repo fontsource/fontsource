@@ -238,11 +238,13 @@ const PreviewCanvas = observer(() => {
 	const editorHeader = (
 		<div className={classes.editorHeader}>
 			<label htmlFor={textInputId}>{editorLabel}</label>
-			{sampleChanged && (
-				<button type="button" onClick={() => setActiveText(sampleText)}>
-					Restore sample
-				</button>
-			)}
+			<button
+				type="button"
+				style={{ visibility: sampleChanged ? 'visible' : 'hidden' }}
+				onClick={() => setActiveText(sampleText)}
+			>
+				Restore sample
+			</button>
 		</div>
 	);
 

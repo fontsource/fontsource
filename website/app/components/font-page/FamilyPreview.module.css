@@ -481,8 +481,15 @@
 
 .canvas:focus-visible,
 .derivedEditor input:focus-visible {
-	outline: 2px solid var(--mantine-color-purple-0);
-	outline-offset: -4px;
+	outline: none;
+}
+
+.canvasField:has(.canvas:focus-visible) .editorHeader label,
+.derivedEditor:has(input:focus-visible) .editorHeader label {
+	text-decoration: underline;
+	text-decoration-color: var(--mantine-color-purple-0);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 5px;
 }
 
 .derivedCanvas {
