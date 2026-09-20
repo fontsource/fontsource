@@ -235,10 +235,8 @@ const PreviewRuntimeEffects = observer(() => {
 const PreviewProvider = ({
 	children,
 	metadata,
-	staticCSS,
+	previewCSS,
 	variable,
-	variableCSS,
-	versions,
 	registry,
 	languages,
 	axisRegistry,
@@ -272,10 +270,8 @@ const PreviewProvider = ({
 		() => ({
 			state$,
 			metadata,
-			staticCSS,
+			previewCSS,
 			variable,
-			variableCSS,
-			versions,
 			registry,
 			languages,
 			axisRegistry,
@@ -292,10 +288,8 @@ const PreviewProvider = ({
 			metadata,
 			registry,
 			symbols,
-			staticCSS,
+			previewCSS,
 			variable,
-			variableCSS,
-			versions,
 			setup,
 			state$,
 		],
@@ -325,7 +319,7 @@ const PreviewFontStyle = observer(() => {
 			// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
 			dangerouslySetInnerHTML={{
 				__html: [
-					model.variableCSS ?? model.staticCSS,
+					model.previewCSS,
 					activeSource
 						? getRegistrySourcePreviewCSS(activeSource, activePreviewFamily)
 						: '',

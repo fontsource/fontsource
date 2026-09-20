@@ -7,7 +7,7 @@ import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyUse } from '@/components/font-page/FamilyUse';
-import { getRegistrySubset } from '@/generated/api';
+import { getFontVersions, getRegistrySubset } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { loadFontPageBase } from '@/utils/font-page.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
@@ -30,14 +30,16 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		);
 		return [{ ...definition, id: slicingSubset }];
 	});
-	const [base, subsetDefinitions] = await Promise.all([
+	const [base, subsetDefinitions, versions] = await Promise.all([
 		basePromise,
 		subsetDefinitionsPromise,
+		getFontVersions({ id }, { signal: request.signal }),
 	]);
 
 	return data(
 		{
 			...base,
+			versions,
 			subsetDefinitions,
 		},
 		{ headers: cacheHeaders.short },
@@ -74,9 +76,8 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 export default function UsePage() {
 	const {
 		metadata,
-		staticCSS,
+		previewCSS,
 		variable,
-		variableCSS,
 		versions,
 		registry,
 		subsetDefinitions,
@@ -92,7 +93,7 @@ export default function UsePage() {
 			<FamilyUse
 				key={metadata.id}
 				metadata={metadata}
-				previewCSS={variableCSS ?? staticCSS}
+				previewCSS={previewCSS}
 				variable={variable}
 				versions={versions}
 				registry={registry}

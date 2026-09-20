@@ -70,10 +70,8 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 export default function Font() {
 	const {
 		metadata,
-		staticCSS,
+		previewCSS,
 		variable,
-		variableCSS,
-		versions,
 		registry,
 		languages,
 		axisRegistry,
@@ -92,10 +90,8 @@ export default function Font() {
 			<FamilyPreview
 				key={metadata.id}
 				metadata={metadata}
-				staticCSS={staticCSS}
+				previewCSS={previewCSS}
 				variable={variable}
-				variableCSS={variableCSS}
-				versions={versions}
 				registry={registry}
 				languages={languages}
 				axisRegistry={axisRegistry}

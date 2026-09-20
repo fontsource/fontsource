@@ -144,11 +144,7 @@ export const getFontPreviewCSS = (
 		styles: metadata.styles,
 		unicodeRange: metadata.unicodeRange,
 	};
-	const staticCSS = generateCSS(cssConfig, {
-		resolver: jsDelivrResolver(metadata.id),
-		display: 'swap',
-	});
-	const variableCSS = variable
+	return variable
 		? generateCSS(
 				{ ...cssConfig, variable: variable.axes },
 				{
@@ -159,7 +155,8 @@ export const getFontPreviewCSS = (
 					display: 'swap',
 				},
 			)
-		: undefined;
-
-	return { staticCSS, variableCSS };
+		: generateCSS(cssConfig, {
+				resolver: jsDelivrResolver(metadata.id),
+				display: 'swap',
+			});
 };
