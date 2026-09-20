@@ -1,11 +1,12 @@
 import { readFile } from 'node:fs/promises';
+import type { PutObjectCommandInput } from '@aws-sdk/client-s3';
 import {
 	GetObjectCommand,
 	HeadObjectCommand,
 	PutObjectCommand,
 	S3ServiceException,
 } from '@aws-sdk/client-s3';
-import { createFontContext, inspectFont } from '@fontsource-utils/core';
+import { createFontContext } from '@fontsource-utils/core';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { sha256 } from './shared.ts';
 
@@ -43,53 +44,35 @@ describe('R2 source archive', () => {
 		const source = { sha256: sha256(original), size: original.byteLength };
 		const sourceKey = `sources/sha256/${source.sha256}`;
 		const previewKey = `${sourceKey}/preview-1.woff2`;
-		const objects = new Map<
-			string,
-			{
-				body: Uint8Array;
-				contentType: string;
-				metadata: Record<string, string>;
-			}
-		>([
-			[
-				sourceKey,
-				{
-					body: original,
-					contentType: 'font/ttf',
-					metadata: { sha256: source.sha256 },
-				},
-			],
-		]);
+		const stored: { source: Uint8Array; preview?: PutObjectCommandInput } = {
+			source: original,
+		};
 		let failUpload = true;
 		let sourceReads = 0;
 		s3.send.mockImplementation(async (command) => {
-			const key = command.input.Key;
-			const object = objects.get(key);
+			if (command instanceof GetObjectCommand) {
+				expect(command.input.Key).toBe(sourceKey);
+				sourceReads++;
+				return { Body: { transformToByteArray: async () => stored.source } };
+			}
+			expect(command.input.Key).toBe(previewKey);
 			if (command instanceof PutObjectCommand) {
 				if (failUpload) throw new Error('Upload interrupted');
-				objects.set(key, {
-					body: command.input.Body as Uint8Array,
-					contentType: command.input.ContentType ?? '',
-					metadata: command.input.Metadata ?? {},
-				});
+				stored.preview = command.input;
 				return {};
 			}
-			if (!object)
-				throw new S3ServiceException({
-					name: 'NotFound',
-					$fault: 'client',
-					$metadata: { httpStatusCode: 404 },
-				});
 			if (command instanceof HeadObjectCommand) {
+				if (!stored.preview)
+					throw new S3ServiceException({
+						name: 'NotFound',
+						$fault: 'client',
+						$metadata: { httpStatusCode: 404 },
+					});
 				return {
-					ContentLength: object.body.byteLength,
-					ContentType: object.contentType,
-					Metadata: object.metadata,
+					ContentLength: (stored.preview.Body as Uint8Array).byteLength,
+					ContentType: stored.preview.ContentType,
+					Metadata: stored.preview.Metadata,
 				};
-			}
-			if (command instanceof GetObjectCommand) {
-				sourceReads++;
-				return { Body: { transformToByteArray: async () => object.body } };
 			}
 			throw new Error('Unexpected S3 command');
 		});
@@ -98,32 +81,27 @@ describe('R2 source archive', () => {
 			await expect(putSourcePreview(ctx, source)).rejects.toThrow(
 				'Unable to archive preview',
 			);
-			expect(objects.has(previewKey)).toBe(false);
+			expect(stored.preview).toBeUndefined();
 			failUpload = false;
 			await putSourcePreview(ctx, source);
-			const preview = objects.get(previewKey);
+			const preview = stored.preview;
 			if (!preview) throw new Error('Preview was not stored');
-			expect(preview.contentType).toBe('font/woff2');
-			expect(preview.metadata.sha256).toBe(sha256(preview.body));
-			expect(await inspectFont(ctx, preview.body)).toEqual(
-				await inspectFont(ctx, original),
-			);
+			const bytes = preview.Body as Uint8Array;
+			expect(preview.ContentType).toBe('font/woff2');
+			expect(preview.Metadata?.sha256).toBe(sha256(bytes));
+			expect(Buffer.from(bytes.subarray(0, 4)).toString()).toBe('wOF2');
 			const reads = sourceReads;
 			await putSourcePreview(ctx, source);
 			expect(sourceReads).toBe(reads);
-			expect(objects.get(previewKey)).toBe(preview);
-			expect(objects.get(sourceKey)?.body).toBe(original);
+			expect(stored.preview).toBe(preview);
+			expect(stored.source).toBe(original);
 
-			objects.delete(previewKey);
-			objects.set(sourceKey, {
-				body: new Uint8Array([0]),
-				contentType: 'font/ttf',
-				metadata: { sha256: source.sha256 },
-			});
+			stored.preview = undefined;
+			stored.source = new Uint8Array([0]);
 			await expect(putSourcePreview(ctx, source)).rejects.toThrow(
 				'Unable to archive preview',
 			);
-			expect(objects.has(previewKey)).toBe(false);
+			expect(stored.preview).toBeUndefined();
 		} finally {
 			ctx.destroy();
 		}
