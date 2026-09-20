@@ -94,6 +94,7 @@ const DropdownCheckbox = ({
 	noBorder,
 	refine,
 	showCount,
+	searchable,
 	search,
 }: DropdownProps) => {
 	const [searchQuery, setSearchQuery] = useState('');
@@ -124,7 +125,7 @@ const DropdownCheckbox = ({
 			filter={search ? ({ options }) => options : undefined}
 			data={data}
 			value={selected}
-			searchable={Boolean(search)}
+			searchable={searchable || Boolean(search)}
 			searchValue={search ? searchQuery : undefined}
 			nothingFoundMessage="No matches"
 			withCheckIcon={false}

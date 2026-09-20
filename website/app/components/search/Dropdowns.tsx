@@ -120,7 +120,6 @@ const CategoriesDropdown = ({ taxonomy }: Pick<SearchFacets, 'taxonomy'>) => {
 };
 
 const TagsDropdown = ({ taxonomy }: Pick<SearchFacets, 'taxonomy'>) => {
-	const [query, setQuery] = useState('');
 	const { items, refine } = useRefinementList({
 		attribute: 'tags',
 		operator: 'and',
@@ -140,15 +139,9 @@ const TagsDropdown = ({ taxonomy }: Pick<SearchFacets, 'taxonomy'>) => {
 			)}
 			showCount
 			ariaLabel="Tags (match all selected)"
-			items={tags.filter(
-				(item) =>
-					item.isRefined ||
-					item.label
-						.toLocaleLowerCase()
-						.includes(query.trim().toLocaleLowerCase()),
-			)}
+			items={tags}
 			refine={refine}
-			search={setQuery}
+			searchable
 		/>
 	);
 };

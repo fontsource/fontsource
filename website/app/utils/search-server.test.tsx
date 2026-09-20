@@ -2,7 +2,11 @@ import type { SearchClient } from 'instantsearch.js';
 import { RouterContextProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
-import { listRegistryFamilies } from '@/generated/api';
+import {
+	getRegistryTaxonomy,
+	listRegistryFamilies,
+	listRegistryLanguages,
+} from '@/generated/api';
 import { getSearchServerState, loader } from '@/utils/search.server';
 
 vi.mock('@/generated/api', () => ({
@@ -89,6 +93,10 @@ describe('getSearchServerState', () => {
 
 		const state = await getSearchServerState(
 			'https://fontsource.org/?query=yakuhan%27',
+			{
+				languages: await listRegistryLanguages(),
+				taxonomy: await getRegistryTaxonomy(),
+			},
 			undefined,
 			client,
 		);
@@ -115,6 +123,10 @@ it('preserves legacy filters alongside registry filters in SSR requests', async 
 	);
 	await getSearchServerState(
 		'https://fontsource.org/?category=icons&subsets=japanese&classifications=symbols,display&languages=ja_Jpan,zh_Hant&tags=theme/fantasy,purpose/headline',
+		{
+			languages: await listRegistryLanguages(),
+			taxonomy: await getRegistryTaxonomy(),
+		},
 		undefined,
 		{ search } as unknown as SearchClient,
 	);

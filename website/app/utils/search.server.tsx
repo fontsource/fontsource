@@ -38,13 +38,10 @@ const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 
 export const getSearchServerState = (
 	serverUrl: string,
+	facets: SearchFacets,
 	discovery?: DiscoveryPage,
 	client: SearchClient = searchClient,
 	previews: Record<string, FontPreview> = {},
-	facets: SearchFacets = {
-		languages: [],
-		taxonomy: { classifications: {}, tags: {}, tagGroups: {} },
-	},
 ) => {
 	const state$ = observable(createPageSearchState(discovery));
 	const requestUrl = new URL(serverUrl);
@@ -130,10 +127,10 @@ export const loadSearch = async (
 
 	serverState = await getSearchServerState(
 		serverUrl,
+		facets,
 		discovery,
 		searchClient,
 		previews,
-		facets,
 	);
 
 	// Add server state to local cache before responding
