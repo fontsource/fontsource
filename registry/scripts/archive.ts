@@ -498,38 +498,34 @@ export const publishArchive = async (
 		}
 	}
 
-	const registryObjects = [
-		...new Map(plan.registry.map((file) => [file.sha256, file])).values(),
-	];
 	const objects = [
-		...registryObjects.map((file) => ({
+		...plan.registry.map((file) => ({
 			key: `registry/sha256/${file.sha256}`,
 			size: file.size,
 			sha256: file.sha256,
 			read: async () => file.bytes,
 		})),
-		...[...new Map(plan.views.map((file) => [file.sha256, file])).values()].map(
-			(file) => ({
-				key: `api/sha256/${file.sha256}`,
-				size: file.size,
-				sha256: file.sha256,
-				contentType: 'application/json',
-				read: async () => file.bytes,
-			}),
-		),
+		...plan.views.map((file) => ({
+			key: `api/sha256/${file.sha256}`,
+			size: file.size,
+			sha256: file.sha256,
+			contentType: 'application/json',
+			read: async () => file.bytes,
+		})),
 		...plan.sources.map((source) => ({
 			...source,
 			key: `sources/sha256/${source.sha256}`,
 		})),
 	];
-	const pending = objects.filter((object) => {
+	const uniqueObjects = new Map(objects.map((object) => [object.key, object]));
+	const pending = [...uniqueObjects.values()].filter((object) => {
 		const size = known.get(object.key);
 		if (size !== undefined && size !== object.size)
 			throw new Error(`Published object size does not match ${object.key}`);
 		return size === undefined;
 	});
 	logger.start(
-		`Reusing ${objects.length - pending.length} objects; checking ${pending.length} new objects`,
+		`Reusing ${uniqueObjects.size - pending.length} objects; checking ${pending.length} new objects`,
 	);
 	const uploadStarted = performance.now();
 	const uploads = fastq.promise(putObject, CONCURRENCY);

@@ -89,7 +89,9 @@ describe('archive cutover over S3', () => {
 		vi.stubEnv('REGISTRY_R2_ENDPOINT', `http://127.0.0.1:${address.port}`);
 		vi.stubEnv('REGISTRY_R2_ACCESS_KEY_ID', 'test');
 		vi.stubEnv('REGISTRY_R2_SECRET_ACCESS_KEY', 'test');
-		onTestFinished(() => vi.unstubAllEnvs());
+		onTestFinished(() => {
+			vi.unstubAllEnvs();
+		});
 		const { migrateArchive } = await import('./migrate-archive.ts');
 
 		const firstLegacyKey = `snapshots/${revision}/api/${paths[0]}`;

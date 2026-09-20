@@ -1,7 +1,7 @@
 import type { z } from 'zod';
 import {
 	REGISTRY_SNAPSHOT_PREFIX,
-	RegistrySnapshotIndexSchema,
+	type RegistrySnapshotIndexSchema,
 } from '../../api/shared/registry-archive.ts';
 import { putObject } from './r2.ts';
 import type { archiveManifestSchema } from './schema.ts';
@@ -11,13 +11,13 @@ import { canonicalJson, sha256 } from './shared.ts';
 export const writeSnapshot = async (
 	manifest: z.infer<typeof archiveManifestSchema>,
 ): Promise<void> => {
-	const index = RegistrySnapshotIndexSchema.parse({
+	const index: z.infer<typeof RegistrySnapshotIndexSchema> = {
 		schemaVersion: 2,
 		registryRevision: manifest.registryRevision,
 		views: Object.fromEntries(
 			manifest.views.map(({ path, sha256 }) => [path, sha256]),
 		),
-	});
+	};
 	for (const [name, value] of [
 		['index', index],
 		['manifest', manifest],
