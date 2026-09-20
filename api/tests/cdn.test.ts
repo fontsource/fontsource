@@ -793,5 +793,15 @@ describe('cdn routes', () => {
 		expect(
 			await jsonSnapshot('https://fontsource.test/v1/version/recursive'),
 		).toMatchSnapshot();
+
+		const conditional = await dispatch(
+			new Request('https://fontsource.test/v1/version/recursive', {
+				headers: { 'If-None-Match': '*' },
+			}),
+		);
+		expect(conditional.response.status).toBe(502);
+		expect(conditional.response.headers.has('ETag')).toBe(false);
+		await conditional.response.arrayBuffer();
+		await conditional.settle();
 	});
 });

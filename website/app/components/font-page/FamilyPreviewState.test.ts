@@ -148,4 +148,33 @@ describe('createPreviewEditorSetup', () => {
 			compare: 'English',
 		});
 	});
+	it('verifies both samples against the current source while preserving language order', () => {
+		const samples = [
+			{ short: 'A\u2003\u200d\ue000', long: 'A\nA' },
+			{ short: 'A', long: 'A\u0301' },
+			{ short: '𐐀' },
+			{ short: 'A', long: 'B' },
+			{ short: '  ', long: 'A' },
+		];
+		const previewLanguages = samples.map((sampleText, index) => ({
+			...languages[0],
+			id: `sample-${index}`,
+			sampleText,
+		}));
+		for (const [unicodeRange, supportedIndices] of [
+			['U+0041, U+0301, U+10400', [0, 1, 2]],
+			['U+0041', [0]],
+		] as const) {
+			const { editorValue } = createPreviewEditorSetup({
+				metadata,
+				registry,
+				languages: previewLanguages,
+				capabilities: { ...capabilities, unicodeRange },
+				capabilitySource: source,
+			});
+			expect(editorValue.verifiedLanguagesBySource[source.sha256]).toEqual(
+				supportedIndices.map((index) => previewLanguages[index]),
+			);
+		}
+	});
 });

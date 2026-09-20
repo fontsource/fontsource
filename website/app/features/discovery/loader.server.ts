@@ -5,9 +5,9 @@ import {
 	listRegistryLanguages,
 } from '@/generated/api';
 
-import { loadSearch } from '@/routes/_index';
 import { cacheHeaders } from '@/utils/cache';
 import { loadDiscoveryPages } from '@/utils/discovery.server';
+import { loadSearch } from '@/utils/search.server';
 
 export const loader = async (args: LoaderFunctionArgs) => {
 	const pathname = args.params.language

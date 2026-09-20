@@ -1,7 +1,7 @@
 import { convertFont, createFontContext } from '@fontsource-utils/core';
 import { zipSync } from 'fflate';
 import limitConcur from 'limit-concur';
-import { createGzipDecoder, unpackTar } from 'modern-tar';
+import { unpackTar } from 'modern-tar';
 import type {
 	BuildDownloadRequest,
 	BuildPackageRequest,
@@ -147,7 +147,7 @@ const readPackageArchive = async (
 	const assetPrefix = `package/files/${id}-`;
 	const entries = await unpackTar(
 		(await fetchPackageTarball(id, version, isVariable)).pipeThrough(
-			createGzipDecoder(),
+			new DecompressionStream('gzip'),
 		),
 		{
 			strict: true,

@@ -12,7 +12,7 @@ export const source = loader({
 const docsSearch = createFromSource(source);
 const cacheDocsData = import.meta.env.PROD;
 let serializedPageTree: Promise<SerializedPageTree> | undefined;
-let docsLLMsIndex: string | undefined;
+let docsLLMsIndex: Promise<string> | undefined;
 
 export const getSerializedPageTree = () => {
 	if (!cacheDocsData) return source.serializePageTree(source.pageTree);

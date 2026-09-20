@@ -51,7 +51,6 @@ exports[`cdn routes > returns 502 when version lookup upstream fails 1`] = `
     "cdnCacheControl": "no-store",
     "contentType": "application/json",
     "edgeCacheControl": "no-store",
-    "etag": "<etag>",
   },
   "status": 502,
 }

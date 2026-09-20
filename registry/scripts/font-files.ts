@@ -168,9 +168,15 @@ export const generateFontFiles = async (
 	root: string,
 	previousFamilyIds: readonly string[],
 	languages: LanguageCatalog,
+	googleFamilyIds: readonly string[],
 ): Promise<string[]> => {
-	const families = readFamilies(snapshot);
-	const familyIds = new Set(previousFamilyIds);
+	const googleIds = new Set(googleFamilyIds);
+	const families = readFamilies(snapshot).filter(
+		(family) => !googleIds.has(family.metadata.id),
+	);
+	const familyIds = new Set(
+		previousFamilyIds.filter((id) => !googleIds.has(id)),
+	);
 	const ctx = createFontContext();
 	const matchLanguages = createLanguageMatcher(languages);
 	try {
@@ -190,6 +196,7 @@ export const generateFontFiles = async (
 
 	const currentIds = new Set(families.map((family) => family.metadata.id));
 	for (const id of previousFamilyIds) {
+		if (googleIds.has(id)) continue;
 		if (currentIds.has(id)) continue;
 		const familyPath = join(root, 'families', 'fontsource', id, 'family.json');
 		const family = familySchema.parse(await readJson(familyPath));
