@@ -6,6 +6,8 @@ import {
 	S3Client,
 	S3ServiceException,
 } from '@aws-sdk/client-s3';
+import { convertFont, type FontContext } from '@fontsource-utils/core';
+import { REGISTRY_PREVIEW_VERSION } from '../../api/shared/registry.ts';
 import { sha256 } from './shared.ts';
 
 const BUCKET = 'fontsource-registry';
@@ -31,15 +33,11 @@ const client = new S3Client({
 	requestChecksumCalculation: 'WHEN_REQUIRED',
 });
 
-const objectMatches = async (
+const headObject = async (
 	key: string,
-	size: number,
-	expectedSha256: string,
-	contentType?: string,
-): Promise<boolean> => {
-	let object: HeadObjectCommandOutput;
+): Promise<HeadObjectCommandOutput | undefined> => {
 	try {
-		object = await client.send(
+		return await client.send(
 			new HeadObjectCommand({ Bucket: BUCKET, Key: key }),
 		);
 	} catch (error) {
@@ -47,10 +45,20 @@ const objectMatches = async (
 			error instanceof S3ServiceException &&
 			error.$metadata.httpStatusCode === 404
 		) {
-			return false;
+			return undefined;
 		}
 		throw new Error(`Unable to inspect ${key}`, { cause: error });
 	}
+};
+
+const objectMatches = async (
+	key: string,
+	size: number,
+	expectedSha256: string,
+	contentType?: string,
+): Promise<boolean> => {
+	const object = await headObject(key);
+	if (!object) return false;
 	if (
 		object.ContentLength !== size ||
 		object.Metadata?.sha256 !== expectedSha256
@@ -117,6 +125,51 @@ export const getObject = async (key: string): Promise<Uint8Array | null> => {
 		)
 			return null;
 		throw new Error(`Unable to read ${key}`, { cause: error });
+	}
+};
+
+export const putSourcePreview = async (
+	ctx: FontContext,
+	source: Pick<ImmutableObject, 'sha256' | 'size'>,
+): Promise<void> => {
+	const sourceKey = `sources/sha256/${source.sha256}`;
+	const key = `${sourceKey}/preview-${REGISTRY_PREVIEW_VERSION}.woff2`;
+	// Keep each encoding version immutable, even after the encoder is upgraded.
+	const existing = await headObject(key);
+	if (existing) {
+		if (
+			existing.ContentType !== 'font/woff2' ||
+			!existing.ContentLength ||
+			!/^[0-9a-f]{64}$/.test(existing.Metadata?.sha256 ?? '')
+		) {
+			throw new Error(`Invalid archived preview ${key}`);
+		}
+		return;
+	}
+
+	try {
+		// Read the verified archive, including sources without a GitHub upstream.
+		const original = await client.send(
+			new GetObjectCommand({ Bucket: BUCKET, Key: sourceKey }),
+		);
+		const bytes = await original.Body?.transformToByteArray();
+		if (
+			!bytes ||
+			bytes.byteLength !== source.size ||
+			sha256(bytes) !== source.sha256
+		) {
+			throw new Error(`Object body does not match ${sourceKey}`);
+		}
+		const [preview] = await convertFont(ctx, bytes, ['woff2'], source.sha256);
+		await putObject({
+			key,
+			size: preview.data.byteLength,
+			sha256: sha256(preview.data),
+			contentType: 'font/woff2',
+			read: async () => preview.data,
+		});
+	} catch (error) {
+		throw new Error(`Unable to archive preview ${key}`, { cause: error });
 	}
 };
 

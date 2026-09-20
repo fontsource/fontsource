@@ -220,16 +220,18 @@ const getRegistrySourcePreviewStyle = (source?: RegistrySource) => {
 const findUnmappedCharacters = (
 	value: string,
 	capabilities?: GetRegistrySourceCapabilitiesResponse,
+	supportsCodepoint?: (value: number) => boolean,
 ): string[] => {
 	if (!capabilities) return [];
-	const ranges = parseRegistryUnicodeRange(capabilities.unicodeRange);
+	const isMapped =
+		supportsCodepoint ?? createRegistryCodepointMatcher(capabilities);
 
 	return Array.from(
 		new Set(
 			Array.from(value).filter(
 				(character) =>
 					isBrowsableCharacter(character) &&
-					!includesCodepoint(ranges, character.codePointAt(0) ?? 0),
+					!isMapped(character.codePointAt(0) ?? 0),
 			),
 		),
 	);

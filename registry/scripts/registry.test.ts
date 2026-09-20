@@ -14,10 +14,12 @@ import { describe, expect, it, onTestFinished } from 'vitest';
 import { generateFontFiles } from './font-files.ts';
 import { generateRegistry } from './generate.ts';
 import { assertGitPathClean, openGitSnapshot } from './git.ts';
+import { generateGoogle } from './google.ts';
 import {
 	familySchema,
 	languageCatalogSchema,
 	sourceFamilySchema,
+	taxonomySchema,
 	upstreamsSchema,
 } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
@@ -516,6 +518,34 @@ const seedRegistryRequirements = async (root: string): Promise<void> => {
 };
 
 describe('registry ingestion', () => {
+	it('identifies the upstream revision and path for invalid Google metadata', async () => {
+		const google = await createGoogleRepository();
+		const path = 'ofl/abel/METADATA.pb';
+		const metadata = await readFile(join(google.repository, path), 'utf8');
+		await writeFixture(
+			google.repository,
+			path,
+			metadata.replace('license: "OFL"\n', ''),
+		);
+		const revision = commitAll(google.repository, 'remove required license');
+		const registry = await temporaryDirectory('invalid-google-metadata');
+		const taxonomy = taxonomySchema.parse(
+			await readJson(join(import.meta.dirname, '..', 'data', 'taxonomy.json')),
+		);
+
+		await expect(
+			generateGoogle(
+				openGitSnapshot(google.repository, revision),
+				registry,
+				[],
+				taxonomy,
+			),
+		).rejects.toMatchObject({
+			message: `Failed to parse google/fonts@${revision}:${path}`,
+			cause: { message: expect.stringContaining('license') },
+		});
+	});
+
 	it('archives only committed registry data', async () => {
 		const repository = await createGitRepository('committed-registry');
 		await writeFixture(repository, 'registry/data/upstreams.json', '{}\n');
@@ -591,7 +621,7 @@ describe('registry ingestion', () => {
 		const snapshot = openGitSnapshot(source.repository, source.revision);
 
 		await expect(
-			generateFontFiles(snapshot, registry, [], TEST_LANGUAGES),
+			generateFontFiles(snapshot, registry, [], TEST_LANGUAGES, []),
 		).resolves.toEqual(['example', 'symbols']);
 		expect(
 			await readJson(join(registry, 'families/fontsource/example/family.json')),
@@ -639,6 +669,95 @@ describe('registry ingestion', () => {
 			}).success,
 		).toBe(false);
 	});
+
+	it('migrates Fontsource families to Google without losing their distribution or restoring the old provider', async () => {
+		const google = await createGoogleRepository();
+		const googleIcons = await createGoogleIconsRepository();
+		const nam = await createNamRepository();
+		const fontFiles = await createFontFilesRepository();
+		const registry = await temporaryDirectory('registry-migration');
+		await seedRegistryRequirements(registry);
+		const generate = (revision: string) =>
+			generateRegistry(
+				google.repository,
+				revision,
+				googleIcons.repository,
+				googleIcons.revision,
+				nam.repository,
+				nam.revision,
+				fontFiles.repository,
+				fontFiles.revision,
+				registry,
+			);
+		await generate(google.revision);
+		const previous = join(registry, 'families/fontsource/example');
+		const output = join(registry, 'families/google/example');
+		const distribution = await readFile(
+			join(previous, 'distribution.json'),
+			'utf8',
+		);
+		await cp(
+			join(google.repository, 'ofl/abel'),
+			join(google.repository, 'ofl/example'),
+			{ recursive: true },
+		);
+		await writeFixture(
+			google.repository,
+			'ofl/example/METADATA.pb',
+			(
+				await readFile(join(google.repository, 'ofl/abel/METADATA.pb'), 'utf8')
+			).replaceAll('name: "Abel"', 'name: "Example"'),
+		);
+		const migrationRevision = commitAll(
+			google.repository,
+			'add Example to Google',
+		);
+
+		// A takeover must not silently drop a previously published variant.
+		await writeFixture(
+			registry,
+			'families/fontsource/example/distribution.json',
+			canonicalJson({
+				static: [{ weight: 700, style: 'normal' }],
+				characters: 'all',
+			}),
+		);
+		const previousHashes = await treeHashes(previous);
+		await expect(generate(migrationRevision)).rejects.toThrow(
+			'example Google migration static 700 normal must resolve to one source',
+		);
+		expect(await treeHashes(previous)).toEqual(previousHashes);
+		await writeFile(join(previous, 'distribution.json'), distribution);
+		await generate(migrationRevision);
+		expect(await listFamilyKeys(registry)).toContain('google/example');
+		expect(await listFamilyKeys(registry)).not.toContain('fontsource/example');
+		expect(await readFile(join(output, 'distribution.json'), 'utf8')).toBe(
+			distribution,
+		);
+		expect(await readJson(join(output, 'family.json'))).toMatchObject({
+			status: 'active',
+			designer: 'MADType',
+			provenance: {
+				repository: 'google/fonts',
+				directory: 'ofl/example',
+				revision: migrationRevision,
+			},
+		});
+		const hashes = await treeHashes(registry);
+		await generate(migrationRevision);
+		expect(await treeHashes(registry)).toEqual(hashes);
+
+		await rm(join(google.repository, 'ofl/example'), { recursive: true });
+		await generate(commitAll(google.repository, 'remove Example from Google'));
+		expect(await listFamilyKeys(registry)).not.toContain('fontsource/example');
+		expect(await readJson(join(output, 'family.json'))).toMatchObject({
+			status: 'deprecated',
+			provenance: { repository: 'google/fonts' },
+		});
+		expect(await readFile(join(output, 'distribution.json'), 'utf8')).toBe(
+			distribution,
+		);
+	}, 45_000);
 
 	it('regenerates deterministically, applies replacements, and retains missing families', async () => {
 		const google = await createGoogleRepository();

@@ -45,6 +45,9 @@ try {
 	const previousFamilyIds = familyKeys
 		.filter((family) => family.startsWith('fontsource/'))
 		.map((family) => family.slice('fontsource/'.length));
+	const googleFamilyIds = familyKeys
+		.filter((family) => family.startsWith('google/'))
+		.map((family) => family.slice('google/'.length));
 
 	logger.start(`Checking fontsource/font-files@${revision}`);
 	const familyIds = await generateFontFiles(
@@ -52,6 +55,7 @@ try {
 		root,
 		previousFamilyIds,
 		languages,
+		googleFamilyIds,
 	);
 	await writeJson(join(root, 'upstreams.json'), {
 		...upstreams,

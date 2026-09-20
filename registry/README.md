@@ -26,6 +26,11 @@ validates changes before committing them to `main`.
 Families present in the previous registry but absent from their provider are
 retained with their original sources and marked `deprecated`. A reappearing
 family is generated as active again unless it has a reviewed replacement.
+Google owns a family when its ID also exists in `fontsource/font-files`.
+Sync migrates the existing distribution to Google after checking that every
+published variant resolves against Google's sources, then removes the old
+Fontsource record. Later syncs do not recreate it, even if Google removes the
+family and its retained Google record becomes deprecated.
 Successors are never guessed: `data/replacements.json` contains only reviewed
 mappings.
 Google’s explicit language lists override cmap detection. References without a
@@ -42,6 +47,7 @@ verified source font into the private `fontsource-registry` R2 bucket:
 ~~~text
 registry/sha256/<sha256>
 sources/sha256/<sha256>
+sources/sha256/<source-sha256>/preview-1.woff2
 api/sha256/<sha256>
 snapshots/v2/<fontsource-commit>/index.json
 snapshots/v2/<fontsource-commit>/manifest.json
@@ -107,6 +113,21 @@ aws --endpoint-url "$REGISTRY_R2_ENDPOINT" s3 cp registry-current-before-v2.json
 Google font and icon sources can be recovered from their pinned GitHub commit.
 Registry-managed sources must already exist at their content-addressed R2 key.
 
+Archiving also creates full-source WOFF2 previews for sources referenced by a
+distribution. Compression preserves the source's complete character coverage,
+features, and axes; it does not use package subsetting. Previews are read from
+the verified R2 originals, so the same archive command backfills existing
+sources, including registry-managed ones. Existing previews are reused without
+reconversion. The encoding version keeps their URLs immutable.
+
+Family source views advertise `previewUrl` only for these derivatives; original
+`downloadUrl` values are unchanged. All previews must be stored before a new
+snapshot becomes current. Deploy API support before the archive and website
+when possible. CSS retains the original as a second source while deployments
+overlap, and older snapshots without `previewUrl` continue using originals.
+The next archive run publishes the backfill; interrupted runs reuse previews
+already uploaded and leave the current snapshot unchanged.
+
 The workflow needs `REGISTRY_R2_ENDPOINT` and bucket-scoped Object Read & Write
 credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 `REGISTRY_R2_SECRET_ACCESS_KEY`.
@@ -155,7 +176,7 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - Public API views explicitly map registry records rather than exposing them.
 - Provenance comes from Git history, not prior generated metadata.
 - Each provider owns its directory; one adapter never changes another
-  provider's records.
+  provider's records. The registry coordinator owns migrations to Google.
 - Removed provider families remain buildable but are marked `deprecated`.
 - Replaced families retain their own sources; `replacedBy` recommends an active
   successor and never aliases its binaries.

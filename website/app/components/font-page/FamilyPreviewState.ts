@@ -20,6 +20,7 @@ import {
 	previewText,
 } from '@/utils/preview-text';
 import {
+	createRegistryCodepointMatcher,
 	findUnmappedCharacters,
 	getRegistryFamilyKind,
 	getRegistryPreviewText,
@@ -219,13 +220,17 @@ const getVerifiedLanguages = (
 	capabilities?: GetRegistrySourceCapabilitiesResponse,
 ) => {
 	if (!languages || !capabilities) return [];
+	const supportsCodepoint = createRegistryCodepointMatcher(capabilities);
 	return languages.filter((language) => {
 		const short = language.sampleText?.short.trim();
 		if (!short) return false;
 		const samples = [short, language.sampleText?.long?.trim()]
 			.filter(Boolean)
 			.join(' ');
-		return findUnmappedCharacters(samples, capabilities).length === 0;
+		return (
+			findUnmappedCharacters(samples, capabilities, supportsCodepoint)
+				.length === 0
+		);
 	});
 };
 

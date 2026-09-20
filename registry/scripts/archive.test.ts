@@ -1,5 +1,5 @@
 import { resolve } from 'node:path';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
@@ -10,6 +10,7 @@ const r2 = vi.hoisted(() => ({
 	getObject: vi.fn(async () => null as Uint8Array | null),
 	putCurrentObject: vi.fn(),
 	putObject: vi.fn(),
+	putSourcePreview: vi.fn(),
 }));
 
 vi.mock('./r2.ts', () => r2);
@@ -21,6 +22,11 @@ const REGISTRY_ROOT = resolve(import.meta.dirname, '../data');
 const REVISION = 'a'.repeat(40);
 
 describe('registry source archive', () => {
+	beforeEach(() => {
+		vi.resetAllMocks();
+		r2.putObject.mockResolvedValue(true);
+		r2.getObject.mockResolvedValue(null);
+	});
 	it('rejects non-commit snapshot revisions', () => {
 		expect(() =>
 			archiveManifestSchema.parse({
@@ -36,6 +42,8 @@ describe('registry source archive', () => {
 	it('publishes archive objects before the manifest and current pointer', async () => {
 		const keys: string[] = [];
 		const views = new Map<string, unknown>();
+		const previewHashes = new Set<string>();
+		const distributedHashes = new Set<string>();
 		const wantedViews = new Set([
 			'families.json',
 			'families/abel.json',
@@ -75,12 +83,30 @@ describe('registry source archive', () => {
 						Buffer.from(await object.read()).toString('utf8'),
 					);
 					for (const file of archiveManifestSchema.parse(manifest).views) {
-						if (!wantedViews.has(file.path)) continue;
+						const isFamily =
+							file.path.startsWith('families/') &&
+							!file.path.endsWith('/symbols.json');
+						if (!wantedViews.has(file.path) && !isFamily) continue;
 						const read = viewReaders.get(file.sha256);
 						if (!read) throw new Error(`Missing uploaded view ${file.path}`);
 						const value = JSON.parse(
 							Buffer.from(await read()).toString('utf8'),
 						);
+						if (isFamily) {
+							const family = RegistryFamilyDetailSchema.parse(value);
+							const distributed = new Set(
+								[
+									...(family.distribution.static ?? []),
+									...(family.distribution.variable ?? []),
+								].map(({ source }) => source),
+							);
+							for (const source of family.sources)
+								expect(Boolean(source.previewUrl)).toBe(
+									distributed.has(source.sha256),
+								);
+							for (const hash of distributed) distributedHashes.add(hash);
+						}
+						if (!wantedViews.has(file.path)) continue;
 						views.set(file.path, value);
 						if (
 							[
@@ -103,12 +129,20 @@ describe('registry source archive', () => {
 			keys.push('current.json');
 			current = JSON.parse(Buffer.from(body).toString('utf8'));
 		});
+		r2.putSourcePreview.mockImplementation(
+			async (_ctx, source: { sha256: string }) => {
+				expect(previewHashes.has(source.sha256)).toBe(false);
+				previewHashes.add(source.sha256);
+				keys.push(`preview/${source.sha256}`);
+			},
+		);
 
 		await publishArchive(REGISTRY_ROOT, REVISION);
 
 		expect(keys.at(-3)).toBe(`snapshots/v2/${REVISION}/index.json`);
 		expect(keys.at(-2)).toBe(`snapshots/v2/${REVISION}/manifest.json`);
 		expect(keys.at(-1)).toBe('current.json');
+		expect(previewHashes).toEqual(distributedHashes);
 		expect(keys.some((key) => key.startsWith('registry/sha256/'))).toBe(true);
 		expect(keys.some((key) => key.startsWith('sources/sha256/'))).toBe(true);
 		expect(sourceContentType).toMatch(/^font\/(?:otf|ttf)$/);
@@ -182,6 +216,9 @@ describe('registry source archive', () => {
 					codepointCount: expect.any(Number),
 					downloadUrl: expect.stringMatching(
 						/^\/v1\/registry\/sources\/[0-9a-f]{64}$/,
+					),
+					previewUrl: expect.stringMatching(
+						/^\/v1\/registry\/sources\/[0-9a-f]{64}\/preview\/1\.woff2$/,
 					),
 					capabilitiesUrl: expect.stringMatching(
 						/^\/v1\/registry\/sources\/[0-9a-f]{64}\/capabilities$/,
@@ -382,8 +419,9 @@ describe('registry source archive', () => {
 			key === 'current.json' ? Buffer.from(JSON.stringify(current)) : previous,
 		);
 		keys.length = 0;
+		previewHashes.clear();
 		await publishArchive(REGISTRY_ROOT, 'b'.repeat(40));
-		expect(keys).toEqual([
+		expect(keys.filter((key) => !key.startsWith('preview/'))).toEqual([
 			`snapshots/v2/${'b'.repeat(40)}/index.json`,
 			`snapshots/v2/${'b'.repeat(40)}/manifest.json`,
 			'current.json',
@@ -404,4 +442,19 @@ describe('registry source archive', () => {
 		expect(keys).not.toContain('current.json');
 		expect(keys.some((key) => key.startsWith('snapshots/'))).toBe(false);
 	}, 60_000);
+
+	it('does not promote a snapshot when a preview cannot be archived', async () => {
+		r2.putSourcePreview.mockRejectedValueOnce(
+			new Error('preview upload failed'),
+		);
+		await expect(publishArchive(REGISTRY_ROOT, REVISION)).rejects.toThrow(
+			'preview upload failed',
+		);
+		expect(r2.putCurrentObject).not.toHaveBeenCalled();
+		expect(
+			r2.putObject.mock.calls.some(([object]) =>
+				object.key.endsWith('/manifest.json'),
+			),
+		).toBe(false);
+	}, 15_000);
 });

@@ -915,6 +915,10 @@ export type GetRegistryFamilyResponses = {
              */
             downloadUrl: string;
             /**
+             * Relative full-coverage WOFF2 preview URL
+             */
+            previewUrl?: string;
+            /**
              * Relative source capabilities URL
              */
             capabilitiesUrl: string;
@@ -956,6 +960,10 @@ export type GetRegistryFamilyResponses = {
              * Relative source download URL
              */
             downloadUrl: string;
+            /**
+             * Relative full-coverage WOFF2 preview URL
+             */
+            previewUrl?: string;
             /**
              * Relative source capabilities URL
              */
@@ -1336,6 +1344,62 @@ export type GetRegistrySourceResponses = {
 };
 
 export type GetRegistrySourceResponse = GetRegistrySourceResponses[keyof GetRegistrySourceResponses];
+
+export type GetRegistrySourcePreviewData = {
+    body?: never;
+    path: {
+        /**
+         * Archived source font SHA-256 digest
+         */
+        sha256: string;
+        /**
+         * Versioned WOFF2 filename
+         */
+        file: string;
+    };
+    query?: never;
+    url: '/v1/registry/sources/{sha256}/preview/{file}';
+};
+
+export type GetRegistrySourcePreviewErrors = {
+    /**
+     * Registry source preview not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The archived source preview metadata is invalid
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistrySourcePreviewError = GetRegistrySourcePreviewErrors[keyof GetRegistrySourcePreviewErrors];
+
+export type GetRegistrySourcePreviewResponses = {
+    /**
+     * WOFF2 source font preserving all glyphs, features, and axes
+     */
+    200: string;
+};
+
+export type GetRegistrySourcePreviewResponse = GetRegistrySourcePreviewResponses[keyof GetRegistrySourcePreviewResponses];
 
 export type GetRegistrySourceCapabilitiesData = {
     body?: never;

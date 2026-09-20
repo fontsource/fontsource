@@ -29,6 +29,7 @@ import {
 	GetRegistryFamilyRoute,
 	GetRegistryFamilySymbolsRoute,
 	GetRegistrySourceCapabilitiesRoute,
+	GetRegistrySourcePreviewRoute,
 	GetRegistrySourceRoute,
 	GetRegistrySubsetRoute,
 	GetRegistryTaxonomyRoute,
@@ -187,6 +188,10 @@ openapi.get('/v1/registry/subsets', ListRegistrySubsetsRoute);
 openapi.get('/v1/registry/subsets/:id', GetRegistrySubsetRoute);
 openapi.get('/v1/registry/axes', ListRegistryAxesRoute);
 openapi.get('/v1/registry/sources/:sha256', GetRegistrySourceRoute);
+openapi.get(
+	'/v1/registry/sources/:sha256/preview/:file',
+	GetRegistrySourcePreviewRoute,
+);
 openapi.get(
 	'/v1/registry/sources/:sha256/capabilities',
 	GetRegistrySourceCapabilitiesRoute,

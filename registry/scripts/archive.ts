@@ -1,8 +1,10 @@
 import { readFile } from 'node:fs/promises';
 import { basename, join, resolve } from 'node:path';
+import { createFontContext } from '@fontsource-utils/core';
 import { consola } from 'consola';
 import fastq from 'fastq';
 import {
+	REGISTRY_PREVIEW_VERSION,
 	RegistryAxesSchema,
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
@@ -19,7 +21,12 @@ import {
 } from '../../api/shared/registry-archive.ts';
 import { writeSnapshot } from './archive-snapshot.ts';
 import { assertGitPathClean, getGitRevision } from './git.ts';
-import { getObject, putCurrentObject, putObject } from './r2.ts';
+import {
+	getObject,
+	putCurrentObject,
+	putObject,
+	putSourcePreview,
+} from './r2.ts';
 import {
 	archiveManifestSchema,
 	axisRegistrySchema,
@@ -189,6 +196,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		}))
 		.toSorted((left, right) => compareStrings(left.id, right.id));
 	const sourceMap = new Map<string, SourceFile>();
+	const previewHashes = new Set<string>();
 	const familySummaries = [];
 	const familyViews: ArchiveFile[] = [];
 	const symbolViews: ArchiveFile[] = [];
@@ -216,6 +224,11 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			characters: resolvePublicCharacterDistribution(distribution.characters),
 		};
 		const previewSource = selectPreviewSource(publicDistribution);
+		const distributedSources = new Set([
+			...(publicDistribution.static?.map(({ source }) => source) ?? []),
+			...(publicDistribution.variable?.map(({ source }) => source) ?? []),
+		]);
+		for (const hash of distributedSources) previewHashes.add(hash);
 		const axes = [
 			...new Set(
 				family.sources.flatMap(({ inspection }) =>
@@ -233,6 +246,9 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				format,
 				size: source.size,
 				downloadUrl: `/v1/registry/sources/${source.sha256}`,
+				previewUrl: distributedSources.has(source.sha256)
+					? `/v1/registry/sources/${source.sha256}/preview/${REGISTRY_PREVIEW_VERSION}.woff2`
+					: undefined,
 				capabilitiesUrl: `/v1/registry/sources/${source.sha256}/capabilities`,
 				fontVersion: source.inspection.fontVersion,
 				glyphCount: source.inspection.glyphs,
@@ -416,6 +432,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		registry,
 		views,
 		sources,
+		previewSources: sources.filter(({ sha256 }) => previewHashes.has(sha256)),
 		manifest: archiveManifestSchema.parse({
 			schemaVersion: 2,
 			registryRevision,
@@ -546,6 +563,23 @@ export const publishArchive = async (
 	logger.success(
 		`Uploaded ${uploaded}, already stored ${pending.length - uploaded} in ${((performance.now() - uploadStarted) / 1000).toFixed(1)}s`,
 	);
+	logger.start(
+		`Archiving ${plan.previewSources.length} full-source WOFF2 previews`,
+	);
+	const ctx = createFontContext();
+	try {
+		// Compress one source at a time to bound WASM memory for large CJK fonts.
+		for (const [index, source] of plan.previewSources.entries()) {
+			await putSourcePreview(ctx, source);
+			if ((index + 1) % 500 === 0) {
+				logger.info(
+					`Processed ${index + 1}/${plan.previewSources.length} previews`,
+				);
+			}
+		}
+	} finally {
+		ctx.destroy();
+	}
 	logger.start('Publishing snapshot index and manifest');
 	await writeSnapshot(plan.manifest);
 	await putCurrentObject(
