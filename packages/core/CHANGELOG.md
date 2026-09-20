@@ -1,5 +1,12 @@
 # @fontsource-utils/core
 
+## [0.5.0](https://github.com/fontsource/fontsource/compare/core-v0.4.0...core-v0.5.0) (2026-09-20)
+
+
+### Features
+
+* **registry:** serve full-source woff2 previews ([#1250](https://github.com/fontsource/fontsource/issues/1250)) ([8fe05c1](https://github.com/fontsource/fontsource/commit/8fe05c14d80edfb02483997af453a7ba01ed6948))
+
 ## [0.4.0](https://github.com/fontsource/fontsource/compare/core-v0.3.0...core-v0.4.0) (2026-09-06)
 
 
