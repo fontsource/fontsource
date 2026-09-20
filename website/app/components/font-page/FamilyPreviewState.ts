@@ -2,7 +2,6 @@ import { batch, type ObservableObject } from '@legendapp/state';
 
 import type {
 	GetFontResponse,
-	GetFontVersionsResponse,
 	GetRegistryFamilySymbolsResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetVariableFontResponse,
@@ -87,10 +86,8 @@ type PreviewEditorState = ObservableObject<PreviewEditorValue>;
 
 interface PreviewEditorProps {
 	metadata: GetFontResponse;
-	staticCSS: string;
+	previewCSS: string;
 	variable?: GetVariableFontResponse;
-	variableCSS?: string;
-	versions: GetFontVersionsResponse;
 	registry: RegistryFamily;
 	languages: ListRegistryLanguagesResponse;
 	axisRegistry?: ListRegistryAxesResponse;

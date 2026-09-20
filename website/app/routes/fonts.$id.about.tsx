@@ -72,9 +72,8 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
 export default function AboutPage() {
 	const {
 		metadata,
-		staticCSS,
+		previewCSS,
 		variable,
-		variableCSS,
 		registry,
 		languages,
 		axisRegistry,
@@ -93,9 +92,8 @@ export default function AboutPage() {
 			<FamilyAbout
 				key={metadata.id}
 				metadata={metadata}
-				staticCSS={staticCSS}
+				previewCSS={previewCSS}
 				variable={variable}
-				variableCSS={variableCSS}
 				registry={registry}
 				languages={languages}
 				axisRegistry={axisRegistry}

@@ -16,10 +16,8 @@ type FamilyPreviewProps = PreviewEditorProps;
 
 export const FamilyPreview = ({
 	metadata,
-	staticCSS,
+	previewCSS,
 	variable,
-	variableCSS,
-	versions,
 	registry,
 	languages,
 	axisRegistry,
@@ -30,10 +28,8 @@ export const FamilyPreview = ({
 	return (
 		<PreviewProvider
 			metadata={metadata}
-			staticCSS={staticCSS}
+			previewCSS={previewCSS}
 			variable={variable}
-			variableCSS={variableCSS}
-			versions={versions}
 			registry={registry}
 			languages={languages}
 			axisRegistry={axisRegistry}
