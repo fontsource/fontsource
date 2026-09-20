@@ -481,8 +481,7 @@
 
 .canvas:focus-visible,
 .derivedEditor input:focus-visible {
-	outline: 2px solid var(--mantine-color-purple-0);
-	outline-offset: -4px;
+	outline: none;
 }
 
 .derivedCanvas {
