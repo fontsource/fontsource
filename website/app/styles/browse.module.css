@@ -7,11 +7,15 @@
 }
 
 .toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	background: light-dark(#fff, #121b31);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 24px;
-	padding-block: 24px;
+	padding-block: 14px;
 	border-bottom: 1px solid var(--directory-border);
 }
 
@@ -44,6 +48,9 @@
 }
 
 .sectionHeading {
+	align-self: start;
+	position: sticky;
+	top: 104px;
 	h2 { margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -0.02em; }
 	p { margin: 12px 0 0; color: var(--directory-muted); font-size: 15px; line-height: 1.5; max-width: 24ch; }
 }
@@ -74,12 +81,15 @@
 
 .count { color: var(--directory-muted); font-size: 13px; font-variant-numeric: tabular-nums; flex-shrink: 0; font-weight: 400; }
 
-.categories {
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	column-gap: 40px;
-	.link { border-bottom: 1px solid var(--directory-border); min-height: 72px; font-size: 24px; letter-spacing: -0.02em; font-weight: 500; }
-	svg { flex-shrink: 0; color: var(--directory-muted); }
-}
+.categories { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.categoryLink { display: block; padding: 20px 0; border-bottom: 1px solid var(--directory-border); color: inherit; text-decoration: none; }
+.categoryLabel { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 550; }
+.categoryLabel .count { margin-left: auto; }
+.categoryLabel svg { flex-shrink: 0; }
+.specimen { display: block; font-size: clamp(26px, 2.8vw, 38px); font-weight: 400; line-height: 1.5; margin-top: 16px; overflow-wrap: anywhere; }
+.specimenCredit { display: block; margin-top: 8px; color: var(--directory-muted); font-size: 12px; }
+.categoryLink:hover .categoryLabel { color: light-dark(#473ef6, #aaa6ff); }
+.categoryLink:focus-visible { outline: 2px solid var(--mantine-color-purple-0); outline-offset: 4px; }
 
 .variable {
 	display: flex;
@@ -95,7 +105,7 @@
 
 .variableDescription { display: block; margin-top: 4px; font-size: 14px; color: var(--directory-muted); }
 .tagGroups { display: grid; gap: 32px; }
-.tagGroups h3 { margin: 0 0 8px; padding-bottom: 12px; border-bottom: 1px solid var(--directory-border); font-size: 16px; font-weight: 600; }
+.tagGroups h3 { margin: 0 0 8px; font-size: 16px; font-weight: 600; }
 
 .link:hover, .variable:hover, .navigation a:hover { color: light-dark(#473ef6, #aaa6ff); text-decoration: underline; text-underline-offset: 4px; }
 .link:focus-visible, .variable:focus-visible, .navigation a:focus-visible { outline: 2px solid var(--mantine-color-purple-0); outline-offset: 4px; border-radius: 2px; }
@@ -106,7 +116,7 @@
 	.content { padding-inline: 32px; }
 	.section { grid-template-columns: minmax(140px, 1fr) minmax(0, 3fr); gap: 32px; }
 	.directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-	.categories .link { font-size: 20px; }
+
 }
 
 @media (--lt-sm) {
@@ -115,12 +125,21 @@
 	.search { width: 100%; }
 	.navigation { justify-content: space-between; gap: 8px; }
 	.section { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 32px; }
+	.sectionHeading { position: static; }
+	.section { scroll-margin-top: 156px; }
 	.sectionHeading p { max-width: none; margin-top: 8px; }
 	.categories { grid-template-columns: minmax(0, 1fr); }
-	.categories .link { min-height: 56px; }
+
 	.directory { gap: 0 24px; }
 	.variable { flex-wrap: wrap; }
 	.variable > span:first-child { flex-basis: 100%; }
 }
 
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.header { max-width: 1440px; margin-inline: auto; padding: 32px 64px 24px; }
+.header h1 { margin: 0; font-size: clamp(32px, 3.5vw, 44px); font-weight: 650; line-height: 1.1; letter-spacing: -0.03em; }
+.header p { margin: 12px 0 0; color: light-dark(#4a566d, #bdc6d9); font-size: 16px; }
+.groupDescription { margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--directory-border); color: var(--directory-muted); font-size: 14px; line-height: 1.5; max-width: 70ch; }
+@media (--lt-md) { .header { padding-inline: 32px; } }
+@media (--lt-sm) { .header { padding: 24px 24px 16px; } .specimen { font-size: 32px; } .toolbar { gap: 8px; } }

@@ -4,7 +4,6 @@ import { useState } from 'react';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, Link, useLoaderData } from 'react-router';
 
-import { ContentHeader } from '@/components/layout/ContentHeader';
 import classes from '@/styles/browse.module.css';
 import { cacheHeaders } from '@/utils/cache';
 import type { DiscoveryPage } from '@/utils/discovery';
@@ -26,29 +25,117 @@ export const meta: MetaFunction = () =>
 			'Browse open-source fonts by category, style, language, and variable-font support, then preview and self-host your selection with Fontsource.',
 	});
 
-const Directory = ({
-	pages,
-	large = false,
-}: {
-	pages: DiscoveryPage[];
-	large?: boolean;
-}) => (
-	<ul className={large ? classes.categories : classes.directory}>
+const specimens: Record<string, { id: string; family: string; text: string }> =
+	{
+		'/categories/display': {
+			id: 'bebas-neue',
+			family: 'Bebas Neue',
+			text: 'Make an impression',
+		},
+		'/categories/handwriting': {
+			id: 'caveat',
+			family: 'Caveat',
+			text: 'A personal touch',
+		},
+		'/categories/icons': {
+			id: 'material-icons',
+			family: 'Material Icons',
+			text: 'home favorite search',
+		},
+		'/categories/monospace': {
+			id: 'space-mono',
+			family: 'Space Mono',
+			text: 'Type with rhythm.',
+		},
+		'/categories/sans-serif': {
+			id: 'dm-sans',
+			family: 'DM Sans',
+			text: 'Simply speaking.',
+		},
+		'/categories/serif': {
+			id: 'lora',
+			family: 'Lora',
+			text: 'The finer details.',
+		},
+		'/categories/slab-serif': {
+			id: 'roboto-slab',
+			family: 'Roboto Slab',
+			text: 'A solid foundation.',
+		},
+		'/categories/symbols': {
+			id: 'noto-sans-symbols-2',
+			family: 'Noto Sans Symbols 2',
+			text: '♜ ♞ ♝ ♛ ♚',
+		},
+	};
+
+const groupDescriptions: Record<string, string> = {
+	expressive:
+		'Mood and personality: these tags describe an impression, rather than a letterform.',
+	purpose: 'Typefaces grouped by tasks such as reading or learning to write.',
+	sans: 'Details of sans-serif construction, from geometric shapes to humanist forms.',
+	serif: 'Different traditions and forms of serif lettering.',
+	slab: 'Variations on prominent, block-like serifs.',
+	script:
+		'Connected and handwritten forms, from formal scripts to casual lettering.',
+	seasonal: 'Themes associated with holidays and celebrations.',
+	'special-use':
+		'Fonts for symbols, notation, icons, and other specialist uses.',
+	theme: 'Visual treatments and references to periods, materials, and styles.',
+};
+
+const Directory = ({ pages }: { pages: DiscoveryPage[] }) => (
+	<ul className={classes.directory}>
 		{pages.map((page) => (
 			<li key={page.path}>
 				<Link to={page.path} prefetch="intent" className={classes.link}>
 					<span>{page.label}</span>
-					<span
-						className={classes.count}
-						title={`${page.count.toLocaleString('en-US')} families`}
-					>
+					<span className={classes.count}>
 						{page.count.toLocaleString('en-US')}
 						<span className={classes.srOnly}> families</span>
 					</span>
-					{large && <IconArrowRight size={20} aria-hidden />}
 				</Link>
 			</li>
 		))}
+	</ul>
+);
+
+const Categories = ({ pages }: { pages: DiscoveryPage[] }) => (
+	<ul className={classes.categories}>
+		{pages.map((page) => {
+			const specimen = specimens[page.path];
+			return (
+				<li key={page.path}>
+					<Link
+						to={page.path}
+						prefetch="intent"
+						className={classes.categoryLink}
+					>
+						<span className={classes.categoryLabel}>
+							<span>{page.label}</span>
+							<span className={classes.count}>
+								{page.count.toLocaleString('en-US')} families
+							</span>
+							<IconArrowRight size={18} aria-hidden />
+						</span>
+						{specimen && (
+							<>
+								<span
+									className={classes.specimen}
+									style={{ fontFamily: `"${specimen.family}"` }}
+									aria-hidden
+								>
+									{specimen.text}
+								</span>
+								<span className={classes.specimenCredit}>
+									{specimen.family}
+								</span>
+							</>
+						)}
+					</Link>
+				</li>
+			);
+		})}
 	</ul>
 );
 
@@ -78,10 +165,17 @@ export default function Browse() {
 
 	return (
 		<>
-			<ContentHeader
-				title="Browse fonts"
-				description="Find a starting point. Explore by category, language, or the details that give a typeface its character."
-			/>
+			{Object.values(specimens).map((specimen) => (
+				<link
+					key={specimen.id}
+					rel="stylesheet"
+					href={`https://cdn.jsdelivr.net/fontsource/css/${specimen.id}@latest/index.css`}
+				/>
+			))}
+			<header className={classes.header}>
+				<h1>Browse fonts</h1>
+				<p>Find your type. Explore letterforms, languages, and character.</p>
+			</header>
 			<div className={classes.content}>
 				<div className={classes.toolbar}>
 					<nav aria-label="Browse sections" className={classes.navigation}>
@@ -126,10 +220,10 @@ export default function Browse() {
 				>
 					<div className={classes.sectionHeading}>
 						<h2>Categories</h2>
-						<p>Start with the shape of the letters.</p>
+						<p>Different forms. Different voices.</p>
 					</div>
 					<div>
-						<Directory pages={categories} large />
+						<Categories pages={categories} />
 						{variable && (
 							<Link to={variable.path} className={classes.variable}>
 								<span>
@@ -152,8 +246,8 @@ export default function Browse() {
 					hidden={!languages.length}
 				>
 					<div className={classes.sectionHeading}>
-						<h2>Languages</h2>
-						<p>Find the character support you need.</p>
+						<h2>Languages &amp; scripts</h2>
+						<p>Find the writing systems your project needs.</p>
 					</div>
 					<Directory pages={languages} />
 				</section>
@@ -166,6 +260,11 @@ export default function Browse() {
 						{groups.map((group) => (
 							<section key={group.id} aria-labelledby={`tag-group-${group.id}`}>
 								<h3 id={`tag-group-${group.id}`}>{group.label}</h3>
+								{groupDescriptions[group.id] && (
+									<p className={classes.groupDescription}>
+										{groupDescriptions[group.id]}
+									</p>
+								)}
 								<Directory pages={group.pages} />
 							</section>
 						))}
