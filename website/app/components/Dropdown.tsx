@@ -234,7 +234,11 @@ const DropdownCheckbox = ({
 							})}
 						</div>
 					</div>
-					{items.length === 0 && <Combobox.Empty>No matches</Combobox.Empty>}
+					{items.length === 0 && (
+						<Combobox.Empty>
+							{search ? 'No matching languages' : 'No matches'}
+						</Combobox.Empty>
+					)}
 				</Combobox.Options>
 			</Combobox.Dropdown>
 		</Combobox>

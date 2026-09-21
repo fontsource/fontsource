@@ -25,7 +25,7 @@ const selectionLabel = (labels: string[], fallback: string) =>
 const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 	const [query, setQuery] = useState('');
 	const { indexUiState } = useInstantSearch();
-	const { items, refine } = useRefinementList({
+	const { items, refine, hasExhaustiveItems } = useRefinementList({
 		attribute: 'languageIds',
 		operator: 'and',
 		limit: 1000,
@@ -44,7 +44,8 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 		value: language.id,
 		label: language.preferredName ?? language.name,
 		isRefined: selected.includes(language.id),
-		count: counts.get(language.id),
+		// Missing values are only zero when Algolia returned the complete facet list.
+		count: counts.get(language.id) ?? (hasExhaustiveItems ? 0 : undefined),
 		matches: [
 			language.name,
 			language.preferredName,
@@ -67,7 +68,12 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 			w="100%"
 			dropdownWidth="target"
 			ariaLabel="Languages"
-			items={[...legacyItems, ...languageItems.filter((item) => item.matches)]}
+			items={[
+				...legacyItems,
+				...languageItems.filter(
+					(item) => item.isRefined || (item.matches && item.count !== 0),
+				),
+			]}
 			refine={(value) =>
 				value.startsWith('subset:')
 					? legacy.refine(value.slice(7))
