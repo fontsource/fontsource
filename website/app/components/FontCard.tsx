@@ -1,10 +1,8 @@
 import { Box, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
-import { useEffect, useState } from 'react';
-import { preinit } from 'react-dom';
 import { Link, useLocation } from 'react-router';
-import invariant from 'tiny-invariant';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
+import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
 import { getFontFamilyStack } from '@/utils/font-preview';
 import type { FontSummary } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
@@ -33,45 +31,11 @@ const FontCard = ({
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
 	});
-	const [shouldLoadStylesheet, setShouldLoadStylesheet] =
-		useState(eagerStylesheet);
-	const [isStylesheetReady, setStylesheetReady] = useState(false);
+	const isStylesheetReady = usePreviewStylesheet(
+		stylesheetHref,
+		eagerStylesheet || Boolean(entry?.isIntersecting),
+	);
 	const isFontReady = useIsFontReady(font.family, isStylesheetReady);
-
-	useEffect(() => {
-		// Keep loading enabled when a card leaves the viewport mid-request.
-		if (eagerStylesheet || entry?.isIntersecting) {
-			setShouldLoadStylesheet(true);
-		}
-	}, [eagerStylesheet, entry?.isIntersecting]);
-
-	useEffect(() => {
-		if (!shouldLoadStylesheet) return;
-
-		// React retains and deduplicates the stylesheet across virtualized cards.
-		preinit(stylesheetHref, { as: 'style', precedence: 'font-preview' });
-		const stylesheet = document.querySelector<HTMLLinkElement>(
-			`link[rel="stylesheet"][href="${CSS.escape(stylesheetHref)}"]`,
-		);
-		invariant(stylesheet, 'Missing preview stylesheet');
-		let active = true;
-		const ready = () => {
-			stylesheet.dataset.fontPreviewReady = 'true';
-			stylesheet.removeEventListener('load', ready);
-			stylesheet.removeEventListener('error', ready);
-			if (active) setStylesheetReady(true);
-		};
-		if (stylesheet.sheet || stylesheet.dataset.fontPreviewReady) {
-			ready();
-			return;
-		}
-		stylesheet.addEventListener('load', ready);
-		stylesheet.addEventListener('error', ready);
-		return () => {
-			// Remember failures even if this card unmounts before the request settles.
-			active = false;
-		};
-	}, [shouldLoadStylesheet, stylesheetHref]);
 
 	const previewText =
 		preview ||
