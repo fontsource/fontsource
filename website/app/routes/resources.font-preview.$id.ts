@@ -20,12 +20,10 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const source = registry.sources.find(
 		({ sha256 }) => sha256 === registry.previewSource,
 	);
-	if (!source) {
-		throw new Response('Font preview source is unavailable.', { status: 503 });
-	}
-	const css = getRegistrySourcePreviewCSS(source, getCardPreviewFamily(id));
+	const css =
+		source && getRegistrySourcePreviewCSS(source, getCardPreviewFamily(id));
 	if (!css) {
-		throw new Response('Font preview source is invalid.', { status: 503 });
+		throw new Response('Font preview source is unavailable.', { status: 503 });
 	}
 	return new Response(css, {
 		headers: {

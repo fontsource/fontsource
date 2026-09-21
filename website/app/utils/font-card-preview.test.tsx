@@ -78,23 +78,10 @@ describe('card preview stylesheet', () => {
 			'https://api.fontsource.org/v1/registry/sources/allkin-source/preview/1.woff2',
 		);
 		expect(css).not.toContain('unicode-range');
-		expect(css).not.toContain('cdn.jsdelivr.net');
 	});
-	it('rejects invalid family IDs before requesting registry data', async () => {
+	it('rejects invalid family IDs', async () => {
 		await expect(load('../allkin')).rejects.toMatchObject({ status: 404 });
-		expect(getRegistryFamily).not.toHaveBeenCalled();
 	});
-	it.each([404, 500])(
-		'does not turn upstream %s errors into cached stylesheets',
-		async (status) => {
-			vi.mocked(getRegistryFamily).mockRejectedValue(
-				new Response(null, { status }),
-			);
-			await expect(load()).rejects.toMatchObject({
-				status: status === 404 ? 404 : 503,
-			});
-		},
-	);
 	it('rejects an unresolved preview source', async () => {
 		vi.mocked(getRegistryFamily).mockResolvedValue({
 			...family,

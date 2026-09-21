@@ -52,8 +52,9 @@ const FontCard = ({
 	useEffect(() => {
 		if (!shouldLoadStylesheet || isStylesheetLoaded) return;
 
+		const href = new URL(stylesheetHref, window.location.href).href;
 		for (const sheet of document.styleSheets) {
-			if (sheet.href === new URL(stylesheetHref, window.location.href).href) {
+			if (sheet.href === href) {
 				setStylesheetLoaded(true);
 				return;
 			}
