@@ -639,8 +639,6 @@
 	isolation: isolate;
 }
 
-.inspectorHeading,
-.drawerReset,
 .sectionHeading {
 	display: flex;
 	align-items: center;
@@ -648,7 +646,6 @@
 	gap: 16px;
 }
 
-.inspectorHeading > div,
 .sectionHeading > div {
 	min-width: 0;
 }
@@ -701,7 +698,6 @@
 }
 
 .inspectorHeading h2,
-.inspectorHeading p,
 .sectionHeading h3,
 .sectionHeading span,
 .controlDescription,
@@ -715,7 +711,6 @@
 	font-weight: 650;
 }
 
-.inspectorHeading p,
 .sectionHeading span {
 	margin-top: 2px;
 	color: var(--preview-text-muted);
@@ -723,8 +718,6 @@
 	line-height: 1.35;
 }
 
-.inspectorHeading button,
-.drawerReset button,
 .sectionHeading button {
 	min-height: 32px;
 	display: inline-flex;
@@ -741,30 +734,19 @@
 	transition: color 120ms ease;
 }
 
-.inspectorHeading button:not(:disabled):hover,
-.drawerReset button:not(:disabled):hover,
 .sectionHeading button:not(:disabled):hover {
 	text-decoration: underline;
 	text-underline-offset: 3px;
 }
 
-.inspectorHeading button:disabled,
-.drawerReset button:disabled,
 .sectionHeading button:disabled {
 	color: var(--preview-text-disabled);
 	cursor: default;
 }
 
-.inspectorHeading button:focus-visible,
-.drawerReset button:focus-visible,
 .sectionHeading button:focus-visible {
 	outline: 2px solid var(--mantine-color-purple-0);
 	outline-offset: 3px;
-}
-
-.drawerReset {
-	justify-content: flex-end;
-	padding: 0 0 10px;
 }
 
 .inspectorSection {
@@ -1353,8 +1335,6 @@
 	.modeChooser :global(.mantine-SegmentedControl-label),
 	.segmentedField :global(.mantine-SegmentedControl-label),
 	.inspectorSectionChooser :global(.mantine-SegmentedControl-label),
-	.inspectorHeading button,
-	.drawerReset button,
 	.sectionHeading button,
 	.editorHeader button,
 	.numberInput,
@@ -1362,8 +1342,6 @@
 		min-height: 48px;
 	}
 
-	.inspectorHeading button,
-	.drawerReset button,
 	.sectionHeading button,
 	.drawerHeader :global(.mantine-Drawer-close) {
 		min-width: 44px;
@@ -1405,8 +1383,6 @@
 	.adjustButton,
 	.editorHeader button,
 	.compareGrid button,
-	.inspectorHeading button,
-	.drawerReset button,
 	.sectionHeading button,
 	.numberInput,
 	.slider :global(.mantine-Slider-thumb),

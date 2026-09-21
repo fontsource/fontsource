@@ -1,4 +1,4 @@
-import { batch, type ObservableObject } from '@legendapp/state';
+import type { ObservableObject } from '@legendapp/state';
 
 import type {
 	GetFontResponse,
@@ -472,16 +472,6 @@ const resetFeatures = (model: PreviewEditorModel) => {
 	});
 };
 
-const resetStyling = (model: PreviewEditorModel) => {
-	batch(() => {
-		model.state$.typographyByMode.set(
-			cloneTypographyByMode(model.initialTypography),
-		);
-		resetAxes(model);
-		resetFeatures(model);
-	});
-};
-
 export type { PreviewEditorModel, PreviewEditorProps, PreviewInspectorSection };
 export {
 	clamp,
@@ -501,7 +491,6 @@ export {
 	resetAxes,
 	resetCurrentTypography,
 	resetFeatures,
-	resetStyling,
 	typographyMatches,
 	updateCurrentTypography,
 };
