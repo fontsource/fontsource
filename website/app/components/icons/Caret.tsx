@@ -1,14 +1,16 @@
+import clsx from 'clsx';
+
 import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
-const IconCaret = ({ height, ...others }: IconProps) => {
+const IconCaret = ({ height, className, ...others }: IconProps) => {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			height={height ?? 6}
 			viewBox="0 0 10 6"
 			fill="none"
-			className={classes.icon}
+			className={clsx(classes.icon, className)}
 			{...others}
 		>
 			<title>Caret Icon</title>
