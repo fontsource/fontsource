@@ -6,16 +6,17 @@ import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history
 import type { RouterProps } from 'instantsearch.js/es/middlewares';
 import type { InstantSearchServerState } from 'react-instantsearch';
 import type { SearchFacets } from '@/components/search/Dropdowns';
-
 import {
 	createSearchState,
 	type SearchState,
 } from '@/components/search/observables';
+import type { GetRegistryLanguageMembershipResponse } from '@/generated/api';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 
 export interface SearchProps extends SearchFacets {
+	languageMembership: GetRegistryLanguageMembershipResponse | null;
 	previews: Record<string, FontPreview>;
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
@@ -35,7 +36,13 @@ interface SearchRouteState {
 }
 
 const ALGOLIA_APP_ID = 'WNATE69PVR';
-const attributesToRetrieve = ['family', 'defSubset', 'category', 'variable'];
+const attributesToRetrieve = [
+	'family',
+	'defSubset',
+	'category',
+	'variable',
+	'languageMembershipVersion',
+];
 
 const searchClient: SearchClient = algoliasearch(
 	ALGOLIA_APP_ID,

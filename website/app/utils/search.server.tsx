@@ -16,6 +16,7 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import {
+	getRegistryLanguageMembership,
 	getRegistryTaxonomy,
 	listRegistryFamilies,
 	listRegistryLanguages,
@@ -26,6 +27,7 @@ import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { FontPreview } from '@/utils/font-summary';
+import { createLanguageSearchClient } from '@/utils/language-facets';
 import {
 	attributesToRetrieve,
 	createPageSearchState,
@@ -79,6 +81,15 @@ export const loadSearch = async (
 	facets: SearchFacets,
 	discovery?: DiscoveryPage,
 ) => {
+	const languageMembership = await getRegistryLanguageMembership({
+		signal: request.signal,
+	}).catch((error: unknown) => {
+		if (request.signal.aborted) throw error;
+		console.warn(
+			'Registry language membership is unavailable; using Algolia facets',
+		);
+		return null;
+	});
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
 	const hasCollectionFilter = requestUrl.searchParams.has('collection');
@@ -115,7 +126,14 @@ export const loadSearch = async (
 	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
-			{ discovery, hasCollectionFilter, serverUrl, previews, ...facets },
+			{
+				discovery,
+				hasCollectionFilter,
+				serverUrl,
+				previews,
+				languageMembership,
+				...facets,
+			},
 			{ headers: cacheHeaders.short },
 		);
 	}
@@ -136,6 +154,7 @@ export const loadSearch = async (
 				serverState,
 				serverUrl,
 				previews,
+				languageMembership,
 				...facets,
 			},
 			{
@@ -148,7 +167,9 @@ export const loadSearch = async (
 		serverUrl,
 		facets,
 		discovery,
-		searchClient,
+		languageMembership
+			? createLanguageSearchClient(searchClient, languageMembership)
+			: searchClient,
 		previews,
 	);
 
@@ -168,6 +189,7 @@ export const loadSearch = async (
 			serverState,
 			serverUrl,
 			previews,
+			languageMembership,
 			...facets,
 		},
 		{

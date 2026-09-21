@@ -1151,6 +1151,55 @@ export type ListRegistryLanguagesResponses = {
 
 export type ListRegistryLanguagesResponse = ListRegistryLanguagesResponses[keyof ListRegistryLanguagesResponses];
 
+export type GetRegistryLanguageMembershipData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/registry/language-membership';
+};
+
+export type GetRegistryLanguageMembershipErrors = {
+    /**
+     * The current registry snapshot is unavailable or incomplete
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetRegistryLanguageMembershipError = GetRegistryLanguageMembershipErrors[keyof GetRegistryLanguageMembershipErrors];
+
+export type GetRegistryLanguageMembershipResponses = {
+    /**
+     * Registry data from the current snapshot
+     */
+    200: {
+        /**
+         * Fingerprint of sorted family IDs and their sorted language IDs
+         */
+        version: string;
+        /**
+         * Sorted family IDs indexed by membership bits
+         */
+        families: Array<string>;
+        /**
+         * Base64 bitsets; family i uses bit i % 8 of byte floor(i / 8), least significant bit first
+         */
+        languages: {
+            [key: string]: string;
+        };
+    };
+};
+
+export type GetRegistryLanguageMembershipResponse = GetRegistryLanguageMembershipResponses[keyof GetRegistryLanguageMembershipResponses];
+
 export type ListRegistrySubsetsData = {
     body?: never;
     path?: never;

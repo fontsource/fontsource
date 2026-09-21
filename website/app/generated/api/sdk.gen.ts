@@ -2,7 +2,7 @@
 
 import { buildClientParams, type Client, type ClientMeta, type Options as Options2, type RequestResult, type TDataShape } from './client';
 import { client } from './client.gen';
-import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourcePreviewErrors, GetRegistrySourcePreviewResponses, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses, ResolveFontPackagesResponses } from './types.gen';
+import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistryLanguageMembershipErrors, GetRegistryLanguageMembershipResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourcePreviewErrors, GetRegistrySourcePreviewResponses, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses, ResolveFontPackagesResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -310,6 +310,15 @@ export const getRegistryFamilySymbols = <ThrowOnError extends boolean = true>(pa
 export const listRegistryLanguages = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<ListRegistryLanguagesResponses, ListRegistryLanguagesErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<ListRegistryLanguagesResponses, ListRegistryLanguagesErrors, ThrowOnError, 'data'>({
     responseStyle: 'data',
     url: '/v1/registry/languages',
+    ...options
+});
+
+/**
+ * Get complete registry language membership
+ */
+export const getRegistryLanguageMembership = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<GetRegistryLanguageMembershipResponses, GetRegistryLanguageMembershipErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<GetRegistryLanguageMembershipResponses, GetRegistryLanguageMembershipErrors, ThrowOnError, 'data'>({
+    responseStyle: 'data',
+    url: '/v1/registry/language-membership',
     ...options
 });
 
