@@ -64,7 +64,7 @@ const DropdownSimple = memo(function DropdownSimple({
 			maxDropdownHeight={240}
 			comboboxProps={{
 				position: 'bottom-start',
-				shadow: 'md',
+				shadow: 'xs',
 				classNames: { dropdown: classes.dropdown, option: classes.item },
 				transitionProps: { duration: 100, transition: 'fade' },
 				width: dropdownWidth ?? w ?? rem(250),
@@ -146,7 +146,7 @@ const DropdownCheckbox = ({
 		<Combobox
 			store={combobox}
 			position="bottom-start"
-			shadow="md"
+			shadow="xs"
 			transitionProps={{ duration: 100, transition: 'fade' }}
 			classNames={{ dropdown: classes.dropdown, option: classes.item }}
 			width={dropdownWidth ?? w ?? rem(250)}

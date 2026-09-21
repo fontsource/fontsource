@@ -60,7 +60,7 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 				onClose={() => setQuery('')}
 				position="bottom-start"
 				width="target"
-				shadow="md"
+				shadow="xs"
 				transitionProps={{ duration: 100, transition: 'fade' }}
 			>
 				<Menu.Target>
