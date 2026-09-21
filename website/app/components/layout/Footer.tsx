@@ -63,17 +63,19 @@ export const Footer = ({ ...other }: ContainerProps) => {
 							<FooterNavLink label="Browse" to="/browse" />
 							<FooterNavLink label="Documentation" to="/docs" />
 							<FooterNavLink label="Privacy Policy" to="/privacy" />
-							<ThemeButton stroke="white" />
-							<Icon
-								label="GitHub"
-								href="https://github.com/fontsource/fontsource"
-								icon={<IconGithub stroke="white" />}
-							/>
-							<Icon
-								label="Discord"
-								href="/discord"
-								icon={<IconDiscord stroke="white" />}
-							/>
+							<Group gap={4} wrap="nowrap">
+								<ThemeButton stroke="white" />
+								<Icon
+									label="GitHub"
+									href="https://github.com/fontsource/fontsource"
+									icon={<IconGithub stroke="white" />}
+								/>
+								<Icon
+									label="Discord"
+									href="/discord"
+									icon={<IconDiscord stroke="white" />}
+								/>
+							</Group>
 						</Group>
 					</Tooltip.Group>
 				</Box>
