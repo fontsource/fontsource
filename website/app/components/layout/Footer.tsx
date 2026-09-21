@@ -56,11 +56,11 @@ export const Footer = ({ ...other }: ContainerProps) => {
 				<Link to="/" prefetch="intent" className={classes.logo}>
 					<LogoText height={31} />
 				</Link>
-				<Box className={classes.links} visibleFrom="sm">
+				<Box className={classes.links}>
 					<Tooltip.Group openDelay={600} closeDelay={100}>
 						<Group gap="md" justify="right">
 							<FooterNavLink label="Fonts" to="/" />
-							<FooterNavLink label="Browse" to="/browse" />
+							<FooterNavLink label="Categories & tags" to="/browse" />
 							<FooterNavLink label="Documentation" to="/docs" />
 							<FooterNavLink label="Privacy Policy" to="/privacy" />
 							<Group gap={4} wrap="nowrap">
