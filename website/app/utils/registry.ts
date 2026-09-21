@@ -201,6 +201,10 @@ const getRegistryCharacterGroups = (
 		}
 	}
 
+	// Private-use-only fonts such as Allkin have no ordinary Unicode characters.
+	if (!includePrivateUse && groups.all.length === 0) {
+		return getRegistryCharacterGroups(capabilities, true);
+	}
 	return groups;
 };
 

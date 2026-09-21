@@ -131,6 +131,18 @@ describe('registry character capabilities', () => {
 		);
 	});
 
+	it('includes Allkin private-use glyphs without a symbol catalog', () => {
+		const groups = getRegistryCharacterGroups({
+			...capabilities,
+			unicodeRange: 'U+0000, U+000D, U+0020, U+E000-E00B, U+E00D-E0C4',
+		});
+		expect(groups?.all).toHaveLength(196);
+		expect(groups?.symbols).toEqual(groups?.all);
+		expect(groups?.all).toContain('\uE000');
+		expect(groups?.all).toContain('\uE0C4');
+		expect(groups?.all).not.toContain('\uE00C');
+	});
+
 	it('creates a reusable exact coverage matcher', () => {
 		const supportsCodepoint = createRegistryCodepointMatcher(capabilities);
 

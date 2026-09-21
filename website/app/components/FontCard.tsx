@@ -3,7 +3,7 @@ import { useIntersection } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
-import { getFontFamilyStack } from '@/utils/font-preview';
+import { getCardPreviewFamily, getFontFamilyStack } from '@/utils/font-preview';
 import type { FontSummary } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 import classes from './FontCard.module.css';
@@ -27,14 +27,21 @@ const FontCard = ({
 	eagerStylesheet = false,
 }: FontCardProps) => {
 	const location = useLocation();
-	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${font.id}@latest/index.css`;
+	// Authored specimens can use glyphs excluded from the package subset.
+	const useRegistryPreview = Boolean(font.sampleText);
+	const stylesheetHref = useRegistryPreview
+		? `/resources/font-preview/${font.id}`
+		: `https://cdn.jsdelivr.net/fontsource/css/${font.id}@latest/${font.previewSubset ?? 'index'}.css`;
+	const previewFamily = useRegistryPreview
+		? getCardPreviewFamily(font.id)
+		: font.family;
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
 	});
 	const [shouldLoadStylesheet, setShouldLoadStylesheet] =
 		useState(eagerStylesheet);
 	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
-	const isFontReady = useIsFontReady(font.family, isStylesheetLoaded);
+	const isFontReady = useIsFontReady(previewFamily, isStylesheetLoaded);
 
 	useEffect(() => {
 		if (eagerStylesheet || entry?.isIntersecting) {
@@ -46,7 +53,7 @@ const FontCard = ({
 		if (!shouldLoadStylesheet || isStylesheetLoaded) return;
 
 		for (const sheet of document.styleSheets) {
-			if (sheet.href === stylesheetHref) {
+			if (sheet.href === new URL(stylesheetHref, window.location.href).href) {
 				setStylesheetLoaded(true);
 				return;
 			}
@@ -57,7 +64,11 @@ const FontCard = ({
 		preview ||
 		font.sampleText?.short ||
 		getPreviewText(font.previewSubset ?? font.defSubset);
-	const fontFamily = getFontFamilyStack(font, false, font);
+	const fontFamily = getFontFamilyStack(
+		{ ...font, family: previewFamily },
+		false,
+		font,
+	);
 
 	return (
 		<Box
