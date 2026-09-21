@@ -1,5 +1,15 @@
-import { resolve } from 'node:path';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { cp, mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join, resolve } from 'node:path';
+import {
+	afterAll,
+	beforeAll,
+	beforeEach,
+	describe,
+	expect,
+	it,
+	vi,
+} from 'vitest';
 import {
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
@@ -15,12 +25,89 @@ const r2 = vi.hoisted(() => ({
 vi.mock('./r2.ts', () => r2);
 
 import { publishArchive } from './archive.ts';
-import { archiveManifestSchema } from './schema.ts';
+import {
+	archiveManifestSchema,
+	familyOverridesSchema,
+	familyTagsSchema,
+	replacementRegistrySchema,
+} from './schema.ts';
+import { readJson, writeJson } from './shared.ts';
 
 const REGISTRY_ROOT = resolve(import.meta.dirname, '../data');
 const REVISION = 'a'.repeat(40);
+// Keep archive coverage independent of the growing catalog. CI validates the full registry.
+const FAMILY_KEYS = [
+	'google/abel',
+	'fontsource/adwaita-sans',
+	'google/alegreya-sans',
+	'fontsource/bravura',
+	'fontsource/dejavu-math',
+	'fontsource/dseg7-classic',
+	'google/ek-mukta',
+	'google/ibm-plex-mono',
+	'google/jsmath-cmr10',
+	'google-icons/material-icons',
+	'fontsource/metropolis',
+	'fontsource/nebula-sans',
+	'google/noto-sans-jp',
+	'google/noto-color-emoji-compat-test',
+	'fontsource/yakuhanjp',
+	'google/mukta', // Replacement target for ek-mukta.
+];
 
 describe('registry source archive', () => {
+	let root: string;
+	beforeAll(async () => {
+		root = await mkdtemp(join(tmpdir(), 'registry-archive-'));
+		await Promise.all(
+			[
+				'upstreams.json',
+				'axes.json',
+				'languages.json',
+				'taxonomy.json',
+				'subsets',
+				...FAMILY_KEYS.map((key) => `families/${key}`),
+			].map((path) =>
+				cp(join(REGISTRY_ROOT, path), join(root, path), { recursive: true }),
+			),
+		);
+		const ids = new Set(FAMILY_KEYS.map((key) => key.split('/')[1]));
+		const tags = familyTagsSchema.parse(
+			await readJson(join(REGISTRY_ROOT, 'family-tags.json')),
+		);
+		await writeJson(
+			join(root, 'family-tags.json'),
+			Object.fromEntries(
+				Object.entries(tags)
+					.map(
+						([tag, families]) =>
+							[tag, families.filter((id) => ids.has(id))] as const,
+					)
+					.filter(([, families]) => families.length > 0),
+			),
+		);
+		const overrides = familyOverridesSchema.parse(
+			await readJson(join(REGISTRY_ROOT, 'family-overrides.json')),
+		);
+		await writeJson(
+			join(root, 'family-overrides.json'),
+			Object.fromEntries(
+				Object.entries(overrides).filter(([id]) => ids.has(id)),
+			),
+		);
+		const replacements = replacementRegistrySchema.parse(
+			await readJson(join(REGISTRY_ROOT, 'replacements.json')),
+		);
+		await writeJson(
+			join(root, 'replacements.json'),
+			Object.fromEntries(
+				Object.entries(replacements).filter(([id]) => ids.has(id)),
+			),
+		);
+	});
+	afterAll(async () => {
+		if (root) await rm(root, { recursive: true, force: true });
+	});
 	beforeEach(() => {
 		vi.resetAllMocks();
 		r2.putObject.mockResolvedValue(undefined);
@@ -131,7 +218,7 @@ describe('registry source archive', () => {
 			},
 		);
 
-		await publishArchive(REGISTRY_ROOT, REVISION);
+		await publishArchive(root, REVISION);
 
 		expect(keys.at(-2)).toBe(`snapshots/${REVISION}/manifest.json`);
 		expect(keys.at(-1)).toBe('current.json');
@@ -409,13 +496,13 @@ describe('registry source archive', () => {
 			},
 		});
 		expect(JSON.stringify(languageCatalog)).not.toContain('requiredCodepoints');
-	}, 15_000);
+	});
 
 	it('does not promote a snapshot when a preview cannot be archived', async () => {
 		r2.putSourcePreview.mockRejectedValueOnce(
 			new Error('preview upload failed'),
 		);
-		await expect(publishArchive(REGISTRY_ROOT, REVISION)).rejects.toThrow(
+		await expect(publishArchive(root, REVISION)).rejects.toThrow(
 			'preview upload failed',
 		);
 		expect(r2.putCurrentObject).not.toHaveBeenCalled();
@@ -424,5 +511,5 @@ describe('registry source archive', () => {
 				object.key.endsWith('/manifest.json'),
 			),
 		).toBe(false);
-	}, 15_000);
+	});
 });
