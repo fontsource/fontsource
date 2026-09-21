@@ -405,7 +405,7 @@ export const CharacterExplorer = ({
 		: activeIsCombiningMark
 			? `Combining mark on ${markPreviewBase.trim() || 'a spacing guide'}`
 			: activeCharacter
-				? getCharacterName(activeCharacter)
+				? 'Character'
 				: '';
 	const selectedUnicode = activeIsCatalogEntry
 		? activeSymbolCodepoint === undefined
