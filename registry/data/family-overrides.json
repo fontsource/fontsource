@@ -176,6 +176,11 @@
 			"short": "001234567890?"
 		}
 	},
+	"linefont": {
+		"sampleText": {
+			"short": "acegikmoqsuwyACEGIKMOQSUWYUSQOMKIGECAywusqomkigeca"
+		}
+	},
 	"lxgw-wenkai-mono-tc": {
 		"previewSubset": "chinese-traditional"
 	},
@@ -329,6 +334,11 @@
 		"languages": [],
 		"sampleText": {
 			"short": "∑ ∫ √ π ≈ ∞"
+		}
+	},
+	"wavefont": {
+		"sampleText": {
+			"short": "acegikmoqsuwyACEGIKMOQSUWYUSQOMKIGECAywusqomkigeca"
 		}
 	},
 	"wdxl-lubrifont-sc": {
