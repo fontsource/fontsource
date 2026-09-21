@@ -13,10 +13,10 @@ if (import.meta.env.PROD) {
 		capture_pageview: 'history_change',
 		disable_session_recording: true,
 		disable_surveys: true,
-		capture_performance: false,
-		capture_exceptions: false,
-		capture_heatmaps: false,
-		capture_dead_clicks: false,
+		capture_performance: { web_vitals: true, network_timing: false },
+		capture_exceptions: true,
+		capture_heatmaps: true,
+		capture_dead_clicks: true,
 		advanced_disable_flags: true,
 	});
 }
