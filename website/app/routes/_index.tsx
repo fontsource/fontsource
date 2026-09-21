@@ -22,6 +22,7 @@ import { ScrollToTop } from '@/components/search/ScrollToTop';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 import classes from '@/styles/global.module.css';
 import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
+import { cacheHeaders } from '@/utils/cache';
 import { ogMeta } from '@/utils/meta';
 import {
 	ALGOLIA_APP_ID,
@@ -47,7 +48,11 @@ export const meta: MetaFunction = ({ location }) => [
 	...(location.search ? [{ name: 'robots', content: 'noindex, follow' }] : []),
 ];
 
-export const headers: HeadersFunction = ({ parentHeaders }) => {
+export const headers: HeadersFunction = ({ parentHeaders, errorHeaders }) => {
+	if (errorHeaders) return errorHeaders;
+	for (const [name, value] of Object.entries(cacheHeaders.registry)) {
+		parentHeaders.set(name, value);
+	}
 	for (const link of HOME_DISCOVERY_LINKS) {
 		parentHeaders.append('Link', link);
 	}

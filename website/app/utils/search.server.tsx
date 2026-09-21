@@ -86,7 +86,7 @@ export const loadSearch = async (
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
 			{ discovery, hasCollectionFilter, serverUrl, previews },
-			{ headers: cacheHeaders.short },
+			{ headers: cacheHeaders.registry },
 		);
 	}
 
@@ -108,7 +108,7 @@ export const loadSearch = async (
 				previews,
 			},
 			{
-				headers: cacheHeaders.short,
+				headers: cacheHeaders.registry,
 			},
 		);
 	}
@@ -138,7 +138,7 @@ export const loadSearch = async (
 			previews,
 		},
 		{
-			headers: cacheHeaders.short,
+			headers: cacheHeaders.registry,
 		},
 	);
 };

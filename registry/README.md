@@ -48,8 +48,9 @@ verified source font into the private `fontsource-registry` R2 bucket:
 registry/sha256/<sha256>
 sources/sha256/<sha256>
 sources/sha256/<source-sha256>/preview-1.woff2
-snapshots/<fontsource-commit>/api/...
-snapshots/<fontsource-commit>/manifest.json
+api/sha256/<sha256>
+snapshots/v2/<fontsource-commit>/index.json
+snapshots/v2/<fontsource-commit>/manifest.json
 current.json
 ~~~
 
@@ -67,6 +68,47 @@ The committed registry format remains private and can change without changing
 those responses. The manifest maps every registry file, API view, and source to
 a SHA-256 object and is written before `current.json` selects the complete
 snapshot.
+
+The compact index maps public view paths to API object hashes. Publishing
+reuses immutable objects recorded in the previous successful manifest and checks
+only new hashes. Do not delete published blobs: normal publication deliberately
+does not audit unchanged objects. New uploads are still verified by size and hash.
+Failures leave the current pointer unchanged; rerunning reuses completed uploads.
+Mutable registry responses use ETags rather than blob upload dates for conditional
+requests, since a new snapshot can reuse older content. Source-font caching is unchanged.
+
+### One-time v2 cutover
+
+The new reader does not support the old layout. Before merging/deploying this
+change (which enables the new publisher):
+
+1. Pause Registry Archive runs and wait for any active run to finish. Keep it
+   paused throughout the cutover; the old publisher must not advance the pointer.
+   Save the current `current.json` for rollback.
+2. With the existing bucket credentials, run
+   `pnpm --filter '@fontsource-utils/registry' archive:migrate` from this branch.
+   It copies the current snapshot's API views to verified hashed objects and writes
+   its v2 index/manifest without changing `current.json` or legacy objects.
+3. Deploy the new API reader from this branch. Verify list, family, symbol, and
+   source-capability endpoints before enabling the new publisher on main.
+4. Resume Registry Archive and verify its first successful publication and API
+   responses. Deploy the website cache changes. Existing cached responses retain
+   their old TTL until expiry or an explicitly authorized cache purge.
+
+The migration is retryable and rejects a pointer changed during migration.
+For rollback before the first v2 publication, redeploy the old reader. After a v2
+publication, pause publishing and restore the captured pre-cutover pointer before
+redeploying the old reader; newer snapshots have no legacy API views. Keep old
+objects until the cutover is accepted. No automatic garbage collection is included.
+
+For capture/restore with the AWS CLI, configure `AWS_ACCESS_KEY_ID` and
+`AWS_SECRET_ACCESS_KEY` with the same bucket credentials. Run the first command
+before migration; run the second **only for rollback with publishing paused**:
+
+~~~sh
+aws --endpoint-url "$REGISTRY_R2_ENDPOINT" s3 cp s3://fontsource-registry/current.json registry-current-before-v2.json
+aws --endpoint-url "$REGISTRY_R2_ENDPOINT" s3 cp registry-current-before-v2.json s3://fontsource-registry/current.json --content-type application/json
+~~~
 
 Google font and icon sources can be recovered from their pinned GitHub commit.
 Registry-managed sources must already exist at their content-addressed R2 key.

@@ -12,6 +12,7 @@ import {
 	RegistryTaxonomySchema,
 } from '../shared/registry';
 import { dispatch, jsonSnapshot, setupWorkerTest, testEnv } from './helpers';
+import { seedRegistryViews } from './registry-fixture';
 
 const REVISION = '1'.repeat(40);
 const SOURCE_SHA256 = '2'.repeat(64);
@@ -186,17 +187,12 @@ const putJson = async (key: string, value: unknown): Promise<void> => {
 };
 
 const seedRegistry = async (): Promise<void> => {
-	const prefix = `snapshots/${REVISION}/api`;
 	const existing = await testEnv.REGISTRY.list();
 	await Promise.all(
 		existing.objects.map(({ key }) => testEnv.REGISTRY.delete(key)),
 	);
 	await Promise.all([
-		putJson('current.json', {
-			schemaVersion: 1,
-			registryRevision: REVISION,
-		}),
-		...VIEWS.map(({ path, body }) => putJson(`${prefix}/${path}`, body)),
+		seedRegistryViews(VIEWS),
 		testEnv.REGISTRY.put(PREVIEW_KEY, SOURCE_BYTES, {
 			httpMetadata: { contentType: 'font/woff2' },
 		}),
@@ -222,9 +218,88 @@ describe('registry routes', () => {
 		);
 		for (const response of responses) {
 			expect(response.status).toBe(200);
-			expect(response.headers.cacheControl).toBe('public, max-age=300');
+			expect(response.headers.cacheControl).toBe('public, max-age=60');
 			expect(response.headers.etag).toBe('<etag>');
 		}
+	});
+
+	it('follows publication and rollback and preserves conditional view requests', async () => {
+		const original = await testEnv.REGISTRY.get('current.json');
+		const pointer = await original?.text();
+		if (!pointer) throw new Error('Missing registry fixture pointer');
+		const url = 'https://fontsource.test/v1/registry/families';
+		const first = await dispatch(url);
+		await first.response.text();
+		await first.settle();
+		const etag = first.response.headers.get('ETag') ?? '';
+		expect(etag).not.toBe('');
+		expect(first.response.headers.has('Last-Modified')).toBe(false);
+		const cached = await dispatch(
+			new Request(url, { headers: { 'If-None-Match': etag } }),
+		);
+		await cached.settle();
+		expect(cached.response.status).toBe(304);
+		expect(cached.response.headers.get('Cloudflare-CDN-Cache-Control')).toBe(
+			'public, max-age=300',
+		);
+
+		await seedRegistryViews([{ path: 'families.json', body: [] }]);
+		const updated = await dispatch(
+			new Request(url, { headers: { 'If-None-Match': etag } }),
+		);
+		expect(updated.response.status).toBe(200);
+		expect(await updated.response.json()).toEqual([]);
+		await updated.settle();
+
+		await testEnv.REGISTRY.put('current.json', pointer);
+		expect((await jsonSnapshot(url)).body).toEqual(VIEWS[0].body);
+		const dated = await dispatch(
+			new Request(url, {
+				headers: { 'If-Modified-Since': 'Fri, 01 Jan 2100 00:00:00 GMT' },
+			}),
+		);
+		expect(dated.response.status).toBe(200);
+		expect(await dated.response.json()).toEqual(VIEWS[0].body);
+		expect(dated.response.headers.has('Last-Modified')).toBe(false);
+		await dated.settle();
+	});
+
+	it.each(['missing', 'malformed', 'wrong-revision'])(
+		'returns 502 for a %s snapshot index',
+		async (failure) => {
+			const revision = 'a'.repeat(40);
+			await putJson('current.json', {
+				schemaVersion: 1,
+				registryRevision: revision,
+			});
+			if (failure === 'malformed') {
+				await testEnv.REGISTRY.put(`snapshots/v2/${revision}/index.json`, '{');
+			} else if (failure === 'wrong-revision') {
+				await putJson(`snapshots/v2/${revision}/index.json`, {
+					schemaVersion: 2,
+					registryRevision: REVISION,
+					views: {},
+				});
+			}
+			expect(
+				(
+					await jsonSnapshot(
+						'https://fontsource.test/v1/registry/families/abel',
+					)
+				).status,
+			).toBe(502);
+		},
+	);
+
+	it('returns 502 rather than 404 when a referenced object is missing', async () => {
+		const index = await seedRegistryViews(VIEWS);
+		await testEnv.REGISTRY.delete(
+			`api/sha256/${index.views['families/abel.json']}`,
+		);
+		expect(
+			(await jsonSnapshot('https://fontsource.test/v1/registry/families/abel'))
+				.status,
+		).toBe(502);
 	});
 
 	it.each([

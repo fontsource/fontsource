@@ -15,8 +15,18 @@ import {
 	RegistrySubsetsSchema,
 	RegistryTaxonomySchema,
 } from '../../api/shared/registry.ts';
+import {
+	CurrentRegistrySnapshotSchema,
+	REGISTRY_SNAPSHOT_PREFIX,
+} from '../../api/shared/registry-archive.ts';
+import { writeSnapshot } from './archive-snapshot.ts';
 import { assertGitPathClean, getGitRevision } from './git.ts';
-import { putCurrentObject, putObject, putSourcePreview } from './r2.ts';
+import {
+	getObject,
+	putCurrentObject,
+	putObject,
+	putSourcePreview,
+} from './r2.ts';
 import {
 	archiveManifestSchema,
 	axisRegistrySchema,
@@ -424,7 +434,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		sources,
 		previewSources: sources.filter(({ sha256 }) => previewHashes.has(sha256)),
 		manifest: archiveManifestSchema.parse({
-			schemaVersion: 1,
+			schemaVersion: 2,
 			registryRevision,
 			registry: registry.map(({ path, size, sha256 }) => ({
 				path,
@@ -467,27 +477,56 @@ export const publishArchive = async (
 	root: string,
 	registryRevision: string,
 ): Promise<void> => {
+	const started = performance.now();
 	logger.start(`Planning snapshot ${registryRevision}`);
 	const plan = await createArchivePlan(root, registryRevision);
 	logger.success(
 		`Planned ${plan.registry.length} registry files, ${plan.views.length} API views, and ${plan.sources.length} source fonts`,
 	);
-	const manifestBytes = Buffer.from(canonicalJson(plan.manifest));
+	logger.info(
+		`Plan completed in ${((performance.now() - started) / 1000).toFixed(1)}s`,
+	);
+	const currentBytes = await getObject('current.json');
+	const known = new Map<string, number>();
+	if (currentBytes) {
+		const current = CurrentRegistrySnapshotSchema.parse(
+			JSON.parse(Buffer.from(currentBytes).toString('utf8')),
+		);
+		const bytes = await getObject(
+			`${REGISTRY_SNAPSHOT_PREFIX}/${current.registryRevision}/manifest.json`,
+		);
+		if (!bytes)
+			throw new Error(
+				'Current snapshot has not been migrated. Run archive:migrate before publishing.',
+			);
+		const previous = archiveManifestSchema.parse(
+			JSON.parse(Buffer.from(bytes).toString('utf8')),
+		);
+		if (previous.registryRevision !== current.registryRevision)
+			throw new Error('Current snapshot manifest revision does not match');
+		// Published blobs are immutable. Reuse the successful manifest, not a bucket-wide scan.
+		for (const [prefix, files] of [
+			['registry', previous.registry],
+			['api', previous.views],
+			['sources', previous.sources],
+		] as const) {
+			for (const file of files)
+				known.set(`${prefix}/sha256/${file.sha256}`, file.size);
+		}
+	}
 
-	const registryObjects = [
-		...new Map(plan.registry.map((file) => [file.sha256, file])).values(),
-	];
 	const objects = [
-		...registryObjects.map((file) => ({
+		...plan.registry.map((file) => ({
 			key: `registry/sha256/${file.sha256}`,
 			size: file.size,
 			sha256: file.sha256,
 			read: async () => file.bytes,
 		})),
 		...plan.views.map((file) => ({
-			key: `snapshots/${registryRevision}/api/${file.path}`,
+			key: `api/sha256/${file.sha256}`,
 			size: file.size,
 			sha256: file.sha256,
+			contentType: 'application/json',
 			read: async () => file.bytes,
 		})),
 		...plan.sources.map((source) => ({
@@ -495,19 +534,35 @@ export const publishArchive = async (
 			key: `sources/sha256/${source.sha256}`,
 		})),
 	];
-	logger.start(`Processing ${objects.length} archive objects`);
+	const uniqueObjects = new Map(objects.map((object) => [object.key, object]));
+	const pending = [...uniqueObjects.values()].filter((object) => {
+		const size = known.get(object.key);
+		if (size !== undefined && size !== object.size)
+			throw new Error(`Published object size does not match ${object.key}`);
+		return size === undefined;
+	});
+	logger.start(
+		`Reusing ${uniqueObjects.size - pending.length} objects; checking ${pending.length} new objects`,
+	);
+	const uploadStarted = performance.now();
 	const uploads = fastq.promise(putObject, CONCURRENCY);
 	let processed = 0;
-	await Promise.all(
-		objects.map(async (object) => {
-			await uploads.push(object);
+	let uploaded = 0;
+	// Drain in-flight work before reporting failure, so retries cannot overlap a failed run.
+	const results = await Promise.allSettled(
+		pending.map(async (object) => {
+			if (await uploads.push(object)) uploaded += 1;
 			processed += 1;
-			if (processed % 500 === 0 && processed < objects.length) {
-				logger.info(`Processed ${processed}/${objects.length} archive objects`);
+			if (processed % 500 === 0 && processed < pending.length) {
+				logger.info(`Processed ${processed}/${pending.length} archive objects`);
 			}
 		}),
 	);
-	logger.success(`Processed ${objects.length} archive objects`);
+	const failure = results.find((result) => result.status === 'rejected');
+	if (failure?.status === 'rejected') throw failure.reason;
+	logger.success(
+		`Uploaded ${uploaded}, already stored ${pending.length - uploaded} in ${((performance.now() - uploadStarted) / 1000).toFixed(1)}s`,
+	);
 	logger.start(
 		`Archiving ${plan.previewSources.length} full-source WOFF2 previews`,
 	);
@@ -525,19 +580,14 @@ export const publishArchive = async (
 	} finally {
 		ctx.destroy();
 	}
-	logger.start('Publishing snapshot manifest');
-	await putObject({
-		key: `snapshots/${registryRevision}/manifest.json`,
-		size: manifestBytes.byteLength,
-		sha256: sha256(manifestBytes),
-		read: async () => manifestBytes,
-	});
+	logger.start('Publishing snapshot index and manifest');
+	await writeSnapshot(plan.manifest);
 	await putCurrentObject(
 		Buffer.from(canonicalJson({ schemaVersion: 1, registryRevision })),
 	);
 
 	logger.success(
-		`Archived snapshot ${registryRevision} with ${plan.registry.length} registry files, ${plan.views.length} API views, and ${plan.sources.length} source fonts`,
+		`Archived snapshot ${registryRevision} in ${((performance.now() - started) / 1000).toFixed(1)}s with ${plan.registry.length} registry files, ${plan.views.length} API views, and ${plan.sources.length} source fonts`,
 	);
 };
 

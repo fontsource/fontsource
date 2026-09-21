@@ -1,24 +1,30 @@
 import type { Context } from 'hono';
-import { z } from 'zod';
+import type { z } from 'zod';
+import {
+	CurrentRegistrySnapshotSchema,
+	REGISTRY_SNAPSHOT_PREFIX,
+	RegistrySnapshotIndexSchema,
+} from '../../../../shared/registry-archive';
 import { CACHE_POLICIES } from '../../constants';
 import type { AppEnv } from '../../env';
 import { toHttpDate } from '../../utils/cache';
 import { badGateway, notFound } from '../../utils/errors';
 
-const CurrentSnapshotSchema = z.strictObject({
-	schemaVersion: z.literal(1),
-	registryRevision: z.string().regex(/^[0-9a-f]{40}$/),
-});
+// Keep only a completed immutable index per bucket; never share request-bound I/O.
+const snapshotIndexes = new WeakMap<
+	R2Bucket,
+	z.infer<typeof RegistrySnapshotIndexSchema>
+>();
 
 const respondWithObject = (
 	object: R2Object | R2ObjectBody,
 	contentType: string,
 	cachePolicy: HeadersInit,
+	lastModified: string | undefined,
 ): Response => {
 	const headers = new Headers(cachePolicy);
 	headers.set('Content-Type', contentType);
 	headers.set('ETag', object.httpEtag);
-	const lastModified = toHttpDate(object.uploaded);
 	if (lastModified) {
 		headers.set('Last-Modified', lastModified);
 	}
@@ -36,7 +42,9 @@ const getCurrentRevision = async (c: Context<AppEnv>): Promise<string> => {
 		throw badGateway('Bad Gateway. Registry snapshot is unavailable.');
 	}
 
-	const current = CurrentSnapshotSchema.safeParse(await object.json());
+	const current = CurrentRegistrySnapshotSchema.safeParse(
+		await object.json().catch(() => null),
+	);
 	if (!current.success) {
 		throw badGateway('Bad Gateway. Registry snapshot pointer is invalid.');
 	}
@@ -44,26 +52,59 @@ const getCurrentRevision = async (c: Context<AppEnv>): Promise<string> => {
 	return current.data.registryRevision;
 };
 
+const getRegistryViewKey = async (
+	c: Context<AppEnv>,
+	path: string,
+	notFoundMessage?: string,
+): Promise<string> => {
+	const revision = await getCurrentRevision(c);
+	let index = snapshotIndexes.get(c.env.REGISTRY);
+	if (index?.registryRevision !== revision) {
+		const object = await c.env.REGISTRY.get(
+			`${REGISTRY_SNAPSHOT_PREFIX}/${revision}/index.json`,
+		);
+		if (!object) {
+			throw badGateway('Bad Gateway. Registry snapshot index is unavailable.');
+		}
+		const parsed = RegistrySnapshotIndexSchema.safeParse(
+			await object.json().catch(() => null),
+		);
+		if (!parsed.success || parsed.data.registryRevision !== revision) {
+			throw badGateway('Bad Gateway. Registry snapshot index is invalid.');
+		}
+		index = parsed.data;
+		snapshotIndexes.set(c.env.REGISTRY, index);
+	}
+	const hash = index.views[path];
+	if (!hash) {
+		if (notFoundMessage) throw notFound(notFoundMessage);
+		throw badGateway('Bad Gateway. Registry snapshot is incomplete.');
+	}
+	return `api/sha256/${hash}`;
+};
+
 export const getRegistryView = async (
 	c: Context<AppEnv>,
 	path: string,
 	notFoundMessage?: string,
 ): Promise<Response> => {
-	const revision = await getCurrentRevision(c);
-	const object = await c.env.REGISTRY.get(`snapshots/${revision}/api/${path}`, {
-		onlyIf: c.req.raw.headers,
+	const key = await getRegistryViewKey(c, path, notFoundMessage);
+	// A reused blob's upload date does not describe the current public view.
+	const conditions = new Headers(c.req.raw.headers);
+	conditions.delete('If-Modified-Since');
+	conditions.delete('If-Unmodified-Since');
+	const object = await c.env.REGISTRY.get(key, {
+		onlyIf: conditions,
 	});
 	if (!object) {
-		if (notFoundMessage) {
-			throw notFound(notFoundMessage);
-		}
 		throw badGateway('Bad Gateway. Registry snapshot is incomplete.');
 	}
 
 	return respondWithObject(
 		object,
 		'application/json; charset=utf-8',
-		CACHE_POLICIES.metadata,
+		CACHE_POLICIES.registry,
+		undefined,
 	);
 };
 
@@ -73,16 +114,13 @@ export const readRegistryView = async <T>(
 	schema: z.ZodType<T>,
 	notFoundMessage?: string,
 ): Promise<T> => {
-	const revision = await getCurrentRevision(c);
-	const object = await c.env.REGISTRY.get(`snapshots/${revision}/api/${path}`);
+	const key = await getRegistryViewKey(c, path, notFoundMessage);
+	const object = await c.env.REGISTRY.get(key);
 	if (!object) {
-		if (notFoundMessage) {
-			throw notFound(notFoundMessage);
-		}
 		throw badGateway('Bad Gateway. Registry snapshot is incomplete.');
 	}
 
-	const parsed = schema.safeParse(await object.json());
+	const parsed = schema.safeParse(await object.json().catch(() => null));
 	if (!parsed.success) {
 		throw badGateway('Bad Gateway. Registry snapshot view is invalid.');
 	}
@@ -106,7 +144,12 @@ export const getRegistrySource = async (
 		throw badGateway('Bad Gateway. Registry source metadata is invalid.');
 	}
 
-	return respondWithObject(object, contentType, CACHE_POLICIES.immutable);
+	return respondWithObject(
+		object,
+		contentType,
+		CACHE_POLICIES.immutable,
+		toHttpDate(object.uploaded),
+	);
 };
 
 export const getRegistrySourcePreview = async (
@@ -126,5 +169,10 @@ export const getRegistrySourcePreview = async (
 			'Bad Gateway. Registry source preview metadata is invalid.',
 		);
 	}
-	return respondWithObject(object, 'font/woff2', CACHE_POLICIES.immutable);
+	return respondWithObject(
+		object,
+		'font/woff2',
+		CACHE_POLICIES.immutable,
+		toHttpDate(object.uploaded),
+	);
 };

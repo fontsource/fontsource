@@ -11,9 +11,9 @@ import {
 	toResponse,
 	variableWoff2Bytes,
 } from './helpers';
+import { seedRegistryViews } from './registry-fixture';
 
 const PNG_SIGNATURE = [137, 80, 78, 71, 13, 10, 26, 10];
-const REGISTRY_REVISION = '1'.repeat(40);
 const SOURCE_SHA256 = '2'.repeat(64);
 
 const seedRegistryFamilies = async (
@@ -23,71 +23,62 @@ const seedRegistryFamilies = async (
 	await Promise.all(
 		existing.objects.map(({ key }) => testEnv.REGISTRY.delete(key)),
 	);
-	await testEnv.REGISTRY.put(
-		'current.json',
-		JSON.stringify({
-			schemaVersion: 1,
-			registryRevision: REGISTRY_REVISION,
-		}),
-	);
-	await Promise.all(
-		families.map(({ id, family }) =>
-			testEnv.REGISTRY.put(
-				`snapshots/${REGISTRY_REVISION}/api/families/${id}.json`,
-				JSON.stringify({
-					id,
-					family,
-					provider: 'google',
-					status: 'active',
-					classifications: ['sans-serif'],
-					tags: [],
-					sourceModified: '2024-01-01',
-					axes: [],
-					previewSubset: 'latin',
-					sampleText: { short: family },
-					license: {
-						id: 'OFL-1.1',
-						url: 'https://openfontlicense.org',
-						text: 'Test license',
-					},
-					languages: [],
-					provenance: { type: 'registry' },
-					previewSource: SOURCE_SHA256,
-					distribution: {
-						static: [
-							{
-								weight: 400,
-								style: 'normal',
-								source: SOURCE_SHA256,
-							},
-						],
-						characters: {
-							type: 'subsets',
-							defaultSubset: 'latin',
-							subsets: [{ id: 'latin', definition: 'latin' }],
-							slicing: 'japanese-web',
-						},
-					},
-					sources: [
+	await seedRegistryViews(
+		families.map(({ id, family }) => ({
+			path: `families/${id}.json`,
+			body: {
+				id,
+				family,
+				provider: 'google',
+				status: 'active',
+				classifications: ['sans-serif'],
+				tags: [],
+				sourceModified: '2024-01-01',
+				axes: [],
+				previewSubset: 'latin',
+				sampleText: { short: family },
+				license: {
+					id: 'OFL-1.1',
+					url: 'https://openfontlicense.org',
+					text: 'Test license',
+				},
+				languages: [],
+				provenance: { type: 'registry' },
+				previewSource: SOURCE_SHA256,
+				distribution: {
+					static: [
 						{
-							sha256: SOURCE_SHA256,
-							filename: `${id}.ttf`,
-							path: `${id}.ttf`,
-							format: 'ttf',
-							size: 1,
-							downloadUrl: `/v1/registry/sources/${SOURCE_SHA256}`,
-							capabilitiesUrl: `/v1/registry/sources/${SOURCE_SHA256}/capabilities`,
-							fontVersion: null,
-							glyphCount: 1,
-							codepointCount: 1,
-							style: 'normal',
-							type: 'static',
 							weight: 400,
+							style: 'normal',
+							source: SOURCE_SHA256,
 						},
 					],
-				}),
-			),
-		),
+					characters: {
+						type: 'subsets',
+						defaultSubset: 'latin',
+						subsets: [{ id: 'latin', definition: 'latin' }],
+						slicing: 'japanese-web',
+					},
+				},
+				sources: [
+					{
+						sha256: SOURCE_SHA256,
+						filename: `${id}.ttf`,
+						path: `${id}.ttf`,
+						format: 'ttf',
+						size: 1,
+						downloadUrl: `/v1/registry/sources/${SOURCE_SHA256}`,
+						capabilitiesUrl: `/v1/registry/sources/${SOURCE_SHA256}/capabilities`,
+						fontVersion: null,
+						glyphCount: 1,
+						codepointCount: 1,
+						style: 'normal',
+						type: 'static',
+						weight: 400,
+					},
+				],
+			},
+		})),
 	);
 };
 
