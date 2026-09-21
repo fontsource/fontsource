@@ -20,8 +20,6 @@ type PreviewLanguage = {
 
 export const registrySourcePreviewFamily = 'Fontsource Registry Preview';
 
-export const getCardPreviewFamily = (id: string) => `Fontsource Card ${id}`;
-
 export const getPreviewLanguageTag = (language?: PreviewLanguage) =>
 	language ? `${language.language}-${language.script}` : undefined;
 
