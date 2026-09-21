@@ -9,7 +9,7 @@ export const meta: MetaFunction = () =>
 	ogMeta({
 		title: 'Privacy Policy | Fontsource',
 		description:
-			'How Fontsource approaches privacy across its website and services.',
+			'How Fontsource and its service providers handle information across the website, API, and public CDN.',
 	});
 
 const sections = [
@@ -17,6 +17,7 @@ const sections = [
 	{ href: '#search', label: 'Search' },
 	{ href: '#advertising', label: 'Advertising' },
 	{ href: '#browser-storage', label: 'Browser storage' },
+	{ href: '#analytics', label: 'Analytics' },
 	{ href: '#contact', label: 'Contact' },
 	{ href: '#changes', label: 'Changes' },
 ];
@@ -47,27 +48,14 @@ export default function PrivacyPage() {
 		<>
 			<ContentHeader
 				title="Privacy Policy"
-				description={
-					<>
-						Fontsource is an{' '}
-						<Anchor
-							href="https://github.com/fontsource/fontsource"
-							target="_blank"
-							rel="noreferrer"
-							inherit
-						>
-							open-source
-						</Anchor>{' '}
-						project for self-hostable fonts.
-					</>
-				}
+				description="How Fontsource and its service providers handle information when you use the website, API, and public CDN."
 			/>
 			<Container className={classes.container}>
 				<Box className={classes.layout}>
 					<Box component="aside" className={classes.sidebar}>
 						<Box className={classes.updated}>
 							<Text className={classes.label}>Last updated</Text>
-							<Text className={classes.date}>July 25, 2026</Text>
+							<Text className={classes.date}>September 21, 2026</Text>
 						</Box>
 
 						<Box component="nav" aria-label="Privacy policy sections">
@@ -104,9 +92,9 @@ export default function PrivacyPage() {
 						>
 							<Text>
 								Fontsource uses Cloudflare to deliver and protect its website
-								and API, and partners with jsDelivr to provide its public CDN.
-								These providers may process technical information needed to
-								provide those services. You can read the{' '}
+								and API. Our public content delivery network (CDN) uses
+								jsDelivr. These providers may process technical information
+								needed to provide those services. You can read the{' '}
 								<Anchor
 									href="https://www.cloudflare.com/privacypolicy/"
 									target="_blank"
@@ -125,17 +113,16 @@ export default function PrivacyPage() {
 								.
 							</Text>
 							<Text>
-								Using the Fontsource public CDN causes browsers to connect to
-								jsDelivr and the services it uses to deliver files. Installing
-								and self-hosting Fontsource packages avoids those CDN requests.
+								If you use the public CDN on your website, your visitors'
+								browsers connect to jsDelivr and its delivery providers to load
+								fonts. Self-hosting Fontsource packages avoids these requests.
 							</Text>
 						</PolicySection>
 
 						<PolicySection id="search" number="02" title="Search">
 							<Text>
-								Fontsource uses Algolia to provide catalogue search. Algolia may
-								process information needed to return search results. You can
-								read the{' '}
+								We use Algolia for font search. Your search terms and filters
+								are sent to Algolia to return matching fonts. You can read the{' '}
 								<Anchor
 									href="https://www.algolia.com/policies/privacy"
 									target="_blank"
@@ -149,9 +136,9 @@ export default function PrivacyPage() {
 
 						<PolicySection id="advertising" number="03" title="Advertising">
 							<Text>
-								Some pages may display ads provided by Carbon Ads. Carbon may
-								process information needed to deliver and measure those ads and
-								may use browser storage. You can read the{' '}
+								Some pages display ads from Carbon Ads. Carbon may process
+								information needed to deliver and measure those ads and may use
+								browser storage. You can read the{' '}
 								<Anchor
 									href="https://www.carbonads.net/privacy"
 									target="_blank"
@@ -169,16 +156,43 @@ export default function PrivacyPage() {
 							title="Information stored in your browser"
 						>
 							<Text>
-								Fontsource may store information in your browser to support site
-								features. You can remove it by clearing the site's data in your
-								browser.
+								We save your collections and current font set in your browser so
+								they are available when you return. Clearing Fontsource's site
+								data in your browser removes these saved items.
 							</Text>
 							<Text>
-								Some tools may also process information locally in your browser.
+								Our font tools process the files you select locally in your
+								browser, without uploading them to a server.
 							</Text>
 						</PolicySection>
 
-						<PolicySection id="contact" number="05" title="Contact">
+						<PolicySection id="analytics" number="05" title="Analytics">
+							<Text>
+								We use PostHog to understand how people use the website and
+								improve it. PostHog collects page views, interactions such as
+								clicks, and browser and device information.
+							</Text>
+							<Text>
+								We use cookieless analytics: PostHog does not store analytics
+								identifiers in cookies, local storage, or session storage. It
+								processes technical request information, including IP address
+								and browser information, to generate a temporary identifier on
+								its servers.
+							</Text>
+							<Text>
+								We use PostHog's EU hosting region. You can read the{' '}
+								<Anchor
+									href="https://posthog.com/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									PostHog Privacy Policy
+								</Anchor>
+								.
+							</Text>
+						</PolicySection>
+
+						<PolicySection id="contact" number="06" title="Contact">
 							<Text>
 								For privacy questions, email{' '}
 								<Anchor href="mailto:hello@ayuhito.com">
@@ -190,7 +204,7 @@ export default function PrivacyPage() {
 
 						<PolicySection
 							id="changes"
-							number="06"
+							number="07"
 							title="Changes to this policy"
 						>
 							<Text>
