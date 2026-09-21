@@ -30,7 +30,10 @@ import { Skeleton } from '@/components/Skeleton';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 import type { ListRegistryLanguagesResponse } from '@/generated/api';
 import type { FontPreview } from '@/utils/font-summary';
-import { getPreviewText } from '@/utils/language/language';
+import {
+	getPreviewText,
+	getRecommendedPreviewText,
+} from '@/utils/language/language';
 
 import classes from './Hits.module.css';
 import type { SearchState } from './observables';
@@ -46,6 +49,8 @@ interface AlgoliaMetadata extends BaseHit {
 
 interface HitComponentProps {
 	languageSample?: string;
+	languages: ListRegistryLanguagesResponse;
+	previewLanguageId?: string;
 	preview?: FontPreview;
 	state$: SearchState;
 	hit: AlgoliaMetadata;
@@ -121,6 +126,8 @@ const HitComponent = observer(
 		state$,
 		preview,
 		languageSample,
+		languages,
+		previewLanguageId,
 	}: HitComponentProps) => {
 		const display = useValue(state$.display);
 		const size = useValue(state$.size);
@@ -142,11 +149,15 @@ const HitComponent = observer(
 			if (languageSample) return languageSample;
 
 			// Use language-specific preview for non-latin fonts when no custom input
-			if (preview?.sampleText || isNotLatin) {
-				return (
-					preview?.sampleText?.short?.trim() ||
-					preview?.sampleText?.long?.trim() ||
-					getPreviewText(preview?.previewSubset ?? hit.defSubset)
+			if (
+				preview?.sampleText ||
+				(preview?.primaryScript && preview.primaryScript !== 'Latn') ||
+				isNotLatin
+			) {
+				return getRecommendedPreviewText(
+					{ ...hit, ...preview },
+					'short',
+					languages,
 				);
 			}
 
@@ -165,6 +176,8 @@ const HitComponent = observer(
 				}}
 				layout={display}
 				preview={currentPreview}
+				languages={languages}
+				previewLanguageId={previewLanguageId}
 				previewHeight={getGridPreviewHeight(size)}
 				size={size}
 				eagerStylesheet={eagerStylesheet}
@@ -449,6 +462,8 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 											{row.map((hit, hitIndex) => (
 												<HitComponent
 													languageSample={languageSample}
+													languages={languages}
+													previewLanguageId={selectedLanguage?.id}
 													key={hit.objectID}
 													state$={state$}
 													hit={hit}
@@ -478,6 +493,8 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 						{items.map((hit, index) => (
 							<HitComponent
 								languageSample={languageSample}
+								languages={languages}
+								previewLanguageId={selectedLanguage?.id}
 								key={hit.objectID}
 								state$={state$}
 								hit={hit}

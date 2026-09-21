@@ -1,11 +1,18 @@
 import { Box, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { Link, useLocation } from 'react-router';
+import type { ListRegistryLanguagesResponse } from '@/generated/api';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
-import { getFontFamilyStack } from '@/utils/font-preview';
+import {
+	getFontFamilyStack,
+	getPreviewLanguageTag,
+} from '@/utils/font-preview';
 import type { FontSummary } from '@/utils/font-summary';
-import { getPreviewText } from '@/utils/language/language';
+import {
+	getRecommendedPreviewLanguage,
+	getRecommendedPreviewText,
+} from '@/utils/language/language';
 import classes from './FontCard.module.css';
 import { Skeleton } from './Skeleton';
 
@@ -13,6 +20,8 @@ interface FontCardProps {
 	font: FontSummary;
 	layout?: 'grid' | 'list';
 	preview?: string;
+	previewLanguageId?: string;
+	languages?: ListRegistryLanguagesResponse;
 	previewHeight?: number;
 	size: number;
 	eagerStylesheet?: boolean;
@@ -22,6 +31,8 @@ const FontCard = ({
 	font,
 	layout = 'grid',
 	preview,
+	previewLanguageId,
+	languages,
 	previewHeight,
 	size,
 	eagerStylesheet = false,
@@ -38,9 +49,10 @@ const FontCard = ({
 	const isFontReady = useIsFontReady(font.family, isStylesheetReady);
 
 	const previewText =
-		preview ||
-		font.sampleText?.short ||
-		getPreviewText(font.previewSubset ?? font.defSubset);
+		preview ?? getRecommendedPreviewText(font, 'short', languages);
+	const sampleLanguage =
+		languages?.find((language) => language.id === previewLanguageId) ??
+		getRecommendedPreviewLanguage(font, languages ?? []);
 	const fontFamily = getFontFamilyStack(font, false, font);
 
 	return (
@@ -56,11 +68,17 @@ const FontCard = ({
 				className={classes.link}
 				prefetch="intent"
 				to={`/fonts/${font.id}`}
-				state={{ fontResults: `${location.pathname}${location.search}` }}
+				state={{
+					fontResults: `${location.pathname}${location.search}`,
+					previewText: preview,
+					previewLanguageId,
+				}}
 			>
 				<div className={classes.preview}>
 					<Skeleton name="search-hit-preview" loading={!isFontReady}>
 						<Text
+							dir={sampleLanguage?.direction}
+							lang={getPreviewLanguageTag(sampleLanguage)}
 							fz={size}
 							mih={layout === 'grid' ? previewHeight : undefined}
 							style={{ fontFamily }}

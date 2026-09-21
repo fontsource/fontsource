@@ -118,9 +118,6 @@
 	background: var(--preview-surface);
 }
 
-.symbolToolbar {
-	display: none;
-}
 
 .modeChooser {
 	--sc-transition-duration: var(--preview-control-duration);
@@ -382,30 +379,6 @@
 	font-size: var(--preview-type-label);
 	font-weight: 600;
 	line-height: 1;
-}
-
-.editorHeader button {
-	min-height: 32px;
-	padding: 0;
-	border: 0;
-	color: var(--mantine-color-purple-0);
-	background: transparent;
-	font: inherit;
-	font-size: var(--preview-type-label);
-	font-weight: 650;
-	cursor: pointer;
-	white-space: nowrap;
-	transition: color 120ms ease;
-}
-
-.editorHeader button:hover {
-	text-decoration: underline;
-	text-underline-offset: 3px;
-}
-
-.editorHeader button:focus-visible {
-	outline: 2px solid var(--mantine-color-purple-0);
-	outline-offset: 3px;
 }
 
 .canvas {
@@ -1089,16 +1062,7 @@
 		flex-wrap: wrap;
 	}
 
-	.symbolToolbar {
-		min-height: auto;
-		display: flex;
-		justify-content: flex-end;
-	}
 
-	.symbolToolbar .toolbarActions {
-		width: 100%;
-		justify-content: flex-end;
-	}
 
 	.studio {
 		--preview-canvas-min: clamp(460px, 58dvh, 520px);
@@ -1140,10 +1104,6 @@
 		padding-inline: 16px;
 	}
 
-	.symbolToolbar {
-		align-items: center;
-		flex-direction: row;
-	}
 
 	.modeChooser {
 		width: 100%;
@@ -1220,9 +1180,6 @@
 		gap: 8px;
 	}
 
-	.symbolToolbar .toolbarActions {
-		display: flex;
-	}
 
 	.languageControl {
 		min-width: 0;
@@ -1299,7 +1256,6 @@
 	.segmentedField :global(.mantine-SegmentedControl-label),
 	.inspectorSectionChooser :global(.mantine-SegmentedControl-label),
 	.sectionHeading button,
-	.editorHeader button,
 	.numberInput,
 	.inspectorSearch {
 		min-height: 48px;
@@ -1344,7 +1300,6 @@
 	.languageControl button,
 	.alignmentControl button,
 	.adjustButton,
-	.editorHeader button,
 	.sectionHeading button,
 	.numberInput,
 	.slider :global(.mantine-Slider-thumb),

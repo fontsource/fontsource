@@ -2,7 +2,11 @@ import type { RegistryFamily } from '@/utils/registry';
 
 type FontPreview = Pick<
 	RegistryFamily,
-	'sampleText' | 'previewSubset' | 'previewContext'
+	| 'sampleText'
+	| 'previewSubset'
+	| 'previewContext'
+	| 'primaryLanguage'
+	| 'primaryScript'
 >;
 
 interface FontSummary extends FontPreview {

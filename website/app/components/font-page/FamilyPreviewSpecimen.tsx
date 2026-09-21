@@ -18,6 +18,7 @@ import {
 	getPreviewLanguageTag,
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
+import { getRecommendedPreviewLanguage } from '@/utils/language/language';
 import type { PreviewMode } from '@/utils/preview-text';
 import { usesNameLigatures } from '@/utils/registry';
 
@@ -25,17 +26,15 @@ import classes from './FamilyPreview.module.css';
 import { usePreviewEditor } from './FamilyPreviewContext';
 import { PreviewCoverage } from './FamilyPreviewCoverage';
 import {
-	createLanguageModeTexts,
 	getActiveFeatureTags,
 	getActiveLanguages,
+	getActivePreviewText,
 	getActiveSource,
 	getAvailableWeights,
 	modeLabels,
 	updateCurrentTypography,
 } from './FamilyPreviewState';
 import { FontSkeleton } from './FontSkeleton';
-
-const symbolModeLabels = [{ label: 'Symbols', value: 'headline' as const }];
 
 const PreviewToolbar = observer(() => {
 	const model = usePreviewEditor();
@@ -50,11 +49,14 @@ const PreviewToolbar = observer(() => {
 	const alignment = useValue(model.state$.typographyByMode[mode].alignment);
 	const selectedLanguageId = useValue(model.state$.selectedLanguageId);
 	const verifiedLanguages = useValue(() => getActiveLanguages(model));
-	const selectedLanguage = verifiedLanguages.find(
+	const selectedLanguage = model.languages.find(
 		(language) => language.id === selectedLanguageId,
 	);
+	const sampleLanguage =
+		selectedLanguage ??
+		getRecommendedPreviewLanguage(model.registry, model.languages);
 	const previewDirection =
-		selectedLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
+		sampleLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
 	const StartAlignmentIcon =
 		previewDirection === 'rtl' ? IconAlignRight : IconAlignLeft;
 	const EndAlignmentIcon =
@@ -64,8 +66,6 @@ const PreviewToolbar = observer(() => {
 		['center', 'Center text', IconAlignCenter],
 		['end', 'Align text to end', EndAlignmentIcon],
 	] as const;
-	const activeModeLabels =
-		model.familyKind === 'symbols' ? symbolModeLabels : modeLabels;
 	useEffect(() => {
 		if (stateMode !== mode) model.state$.mode.set(mode);
 	}, [mode, model, stateMode]);
@@ -79,22 +79,28 @@ const PreviewToolbar = observer(() => {
 			preventScrollReset: true,
 		});
 	};
-	const languageItems = verifiedLanguages.map((language) => ({
-		label:
-			language.autonym && language.autonym !== language.name
-				? `${language.preferredName ?? language.name} · ${language.autonym}`
-				: (language.preferredName ?? language.name),
-		value: language.id,
-		isRefined: language.id === selectedLanguageId,
-	}));
+	const customText = useValue(model.state$.customText);
+	const languageItems = [
+		{
+			label: 'Recommended',
+			value: '',
+			isRefined: !selectedLanguageId && customText === null,
+		},
+		...(model.familyKind === 'symbols' ? [] : verifiedLanguages).map(
+			(language) => ({
+				label:
+					language.autonym && language.autonym !== language.name
+						? `${language.preferredName ?? language.name} · ${language.autonym}`
+						: (language.preferredName ?? language.name),
+				value: language.id,
+				isRefined: language.id === selectedLanguageId && customText === null,
+			}),
+		),
+	];
 	const selectLanguage = (languageId: string) => {
-		const language = verifiedLanguages.find((item) => item.id === languageId);
-		if (!language?.sampleText) return;
-		const texts = createLanguageModeTexts(language);
 		batch(() => {
-			model.state$.selectedLanguageId.set(language.id);
-			model.state$.texts.set(texts);
-			model.state$.sampleTexts.set(texts);
+			model.state$.selectedLanguageId.set(languageId);
+			model.state$.customText.set(null);
 		});
 	};
 	const openSettings = () => {
@@ -105,38 +111,34 @@ const PreviewToolbar = observer(() => {
 	};
 
 	return (
-		<div
-			className={`${classes.specimenToolbar} ${
-				model.familyKind === 'symbols' ? classes.symbolToolbar : ''
-			}`}
-		>
-			{activeModeLabels.length > 1 && (
+		<div className={classes.specimenToolbar}>
+			{model.familyKind !== 'symbols' && (
 				<SegmentedControl
 					className={classes.modeChooser}
 					aria-label="Preview view"
 					value={mode}
-					data={activeModeLabels}
+					data={modeLabels}
 					onChange={(value) => selectMode(value as PreviewMode)}
 				/>
 			)}
 			<div className={classes.toolbarActions}>
-				{model.familyKind === 'text' && verifiedLanguages.length > 0 && (
-					<div className={classes.languageControl}>
-						<DropdownSimple
-							label={
-								selectedLanguage?.preferredName ??
-								selectedLanguage?.name ??
-								'Language'
-							}
-							ariaLabel="Preview language"
-							items={languageItems}
-							searchable={verifiedLanguages.length > 6}
-							refine={selectLanguage}
-							w="100%"
-							dropdownWidth={280}
-						/>
-					</div>
-				)}
+				<div className={classes.languageControl}>
+					<DropdownSimple
+						label={
+							customText !== null
+								? 'Custom text'
+								: (selectedLanguage?.preferredName ??
+									selectedLanguage?.name ??
+									'Recommended')
+						}
+						ariaLabel="Preview sample"
+						items={languageItems}
+						searchable={verifiedLanguages.length > 6}
+						refine={selectLanguage}
+						w="100%"
+						dropdownWidth={280}
+					/>
+				</div>
 				{model.familyKind !== 'symbols' && (
 					<fieldset className={classes.alignmentControl}>
 						<VisuallyHidden component="legend">
@@ -173,18 +175,15 @@ const PreviewToolbar = observer(() => {
 const PreviewCanvas = observer(() => {
 	const model = usePreviewEditor();
 	const mode = useValue(model.state$.mode);
-	const textMode = mode === 'paragraph' ? 'paragraph' : 'headline';
-	const activeText = useValue(model.state$.texts[textMode]);
-	const sampleText = useValue(model.state$.sampleTexts[textMode]);
+	const activeText = useValue(() => getActivePreviewText(model));
 	const typography = useValue(model.state$.typographyByMode[mode]);
 	const axisValues = useValue(model.state$.axisValues);
 	const featureValues = useValue(model.state$.featureValues);
 	const selectedLanguageId = useValue(model.state$.selectedLanguageId);
 	const activeSource = useValue(() => getActiveSource(model));
 	const featureTags = useValue(() => getActiveFeatureTags(model));
-	const verifiedLanguages = useValue(() => getActiveLanguages(model));
 	const availableWeights = getAvailableWeights(model.metadata.weights);
-	const selectedLanguage = verifiedLanguages.find(
+	const selectedLanguage = model.languages.find(
 		(language) => language.id === selectedLanguageId,
 	);
 	const packagePreviewFamily = getFontPreviewFamily(
@@ -199,9 +198,12 @@ const PreviewCanvas = observer(() => {
 		false,
 		model.registry,
 	);
+	const sampleLanguage =
+		selectedLanguage ??
+		getRecommendedPreviewLanguage(model.registry, model.languages);
 	const previewDirection =
-		selectedLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
-	const previewLanguage = getPreviewLanguageTag(selectedLanguage);
+		sampleLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
+	const previewLanguage = getPreviewLanguageTag(sampleLanguage);
 	const hasNamedLigatures = usesNameLigatures(model.registry);
 	const featureSettings = [
 		...featureTags.map((tag) => `"${tag}" ${featureValues[tag] ? 1 : 0}`),
@@ -234,19 +236,10 @@ const PreviewCanvas = observer(() => {
 						? 'Waterfall text'
 						: 'Comparison text';
 	const textInputId = `font-preview-${mode}-text`;
-	const sampleChanged = activeText !== sampleText;
-	const setActiveText = (text: string) =>
-		model.state$.texts[textMode].set(text);
+	const setActiveText = (text: string) => model.state$.customText.set(text);
 	const editorHeader = (
 		<div className={classes.editorHeader}>
 			<label htmlFor={textInputId}>{editorLabel}</label>
-			<button
-				type="button"
-				style={{ visibility: sampleChanged ? 'visible' : 'hidden' }}
-				onClick={() => setActiveText(sampleText)}
-			>
-				Restore sample
-			</button>
 		</div>
 	);
 
