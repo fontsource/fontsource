@@ -24,13 +24,7 @@ export const createLanguageSearchClient = (
 	const familyPositions = new Map(
 		languageIndex.families.map((id, index) => [id, index]),
 	);
-	const languageBits = Object.entries(languageIndex.languages).map(
-		([id, encoded]) =>
-			[
-				id,
-				Uint8Array.from(atob(encoded), (character) => character.charCodeAt(0)),
-			] as const,
-	);
+	let languageBits: (readonly [string, Uint8Array])[] | undefined;
 
 	const countLanguages = (ids: Set<string>) => {
 		const matches = new Uint8Array(
@@ -41,6 +35,17 @@ export const createLanguageSearchClient = (
 			if (index === undefined) return undefined;
 			matches[index >> 3] |= 1 << (index & 7);
 		}
+		// SSR already supplies initial counts. Decode once, when search needs new ones.
+		languageBits ??= Object.entries(languageIndex.languages).map(
+			([id, encoded]) => {
+				const decoded = atob(encoded);
+				const bits = new Uint8Array(decoded.length);
+				for (let index = 0; index < decoded.length; index++) {
+					bits[index] = decoded.charCodeAt(index);
+				}
+				return [id, bits] as const;
+			},
+		);
 		return Object.fromEntries(
 			languageBits.map(([id, bits]) => {
 				let count = 0;

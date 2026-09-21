@@ -15,17 +15,18 @@ export const getRecommendedPreviewLanguage = (
 	languages: ListRegistryLanguagesResponse,
 ) => {
 	if (font.sampleText || font.previewSubset) return undefined;
-	return (
-		languages.find(
-			(language) => language.id === font.primaryLanguage && language.sampleText,
-		) ??
-		languages.find(
-			(language) =>
-				(!font.defSubset || !previewText.language.subsets[font.defSubset]) &&
-				font.primaryScript !== 'Latn' &&
-				language.script === font.primaryScript &&
-				language.sampleText,
-		)
+	const primaryLanguage = languages.find(
+		(language) => language.id === font.primaryLanguage && language.sampleText,
+	);
+	if (primaryLanguage) return primaryLanguage;
+	if (
+		(font.defSubset && previewText.language.subsets[font.defSubset]) ||
+		font.primaryScript === 'Latn'
+	) {
+		return undefined;
+	}
+	return languages.find(
+		(language) => language.script === font.primaryScript && language.sampleText,
 	);
 };
 

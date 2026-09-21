@@ -21,9 +21,9 @@ import {
 } from '@/utils/preview-text';
 import {
 	createRegistryCodepointMatcher,
-	findUnmappedCharacters,
 	getRegistryFamilyKind,
 	getSupportedPreviewFallback,
+	isRegistryTextSupported,
 	type RegistryFamily,
 	type RegistrySource,
 } from '@/utils/registry';
@@ -177,12 +177,12 @@ const getVerifiedLanguages = (
 	return languages.filter((language) => {
 		const short = language.sampleText?.short.trim();
 		if (!short) return false;
-		const samples = [short, language.sampleText?.long?.trim()]
-			.filter(Boolean)
-			.join(' ');
 		return (
-			findUnmappedCharacters(samples, capabilities, supportsCodepoint)
-				.length === 0
+			isRegistryTextSupported(short, supportsCodepoint) &&
+			isRegistryTextSupported(
+				language.sampleText?.long ?? '',
+				supportsCodepoint,
+			)
 		);
 	});
 };
