@@ -101,18 +101,20 @@ export const FamilyIdentity = ({
 
 	return (
 		<div className={classes.identity} data-compact={compact || undefined}>
-			{useSpecimenTitle ? (
-				<FontSkeleton
-					name={compact ? 'font-detail-compact-title' : 'font-detail-title'}
-					family={previewFamily}
-					weight={sourcePreviewStyle.fontWeight ?? 500}
-					style={sourcePreviewStyle.fontStyle}
-				>
-					{title}
-				</FontSkeleton>
-			) : (
-				title
-			)}
+			<div className={classes.titleFrame}>
+				{useSpecimenTitle ? (
+					<FontSkeleton
+						name={compact ? 'font-detail-compact-title' : 'font-detail-title'}
+						family={previewFamily}
+						weight={sourcePreviewStyle.fontWeight ?? 500}
+						style={sourcePreviewStyle.fontStyle}
+					>
+						{title}
+					</FontSkeleton>
+				) : (
+					title
+				)}
+			</div>
 			{compact ? (
 				<div className={classes.compactMetadata}>
 					<span>{classification}</span>

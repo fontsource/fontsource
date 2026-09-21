@@ -46,6 +46,8 @@
 }
 
 .identityPanel {
+	--family-title-size: clamp(2.35rem, 4vw, 3.75rem);
+
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) auto;
 	align-items: end;
@@ -59,7 +61,6 @@
 
 .identityPanel h1 {
 	max-width: 100%;
-	font-size: clamp(2.35rem, 4vw, 3.75rem);
 	letter-spacing: -0.035em;
 	overflow-wrap: break-word;
 }
@@ -1218,11 +1219,9 @@
 	}
 
 	.identityPanel {
-		padding: 20px 16px;
-	}
+		--family-title-size: clamp(2.2rem, 13vw, 3.5rem);
 
-	.identityPanel h1 {
-		font-size: clamp(2.2rem, 13vw, 3.5rem);
+		padding: 20px 16px;
 	}
 
 	.studio {
