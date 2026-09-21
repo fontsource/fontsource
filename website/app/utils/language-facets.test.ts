@@ -34,7 +34,13 @@ const languageIndex = {
 const clientWith = (
 	search: ReturnType<typeof vi.fn>,
 	index: GetRegistryLanguageIndexResponse = languageIndex,
-) => createLanguageSearchClient({ search } as unknown as SearchClient, index);
+	legacyFamilyIds: string[] = [],
+) =>
+	createLanguageSearchClient(
+		{ search } as unknown as SearchClient,
+		index,
+		legacyFamilyIds,
+	);
 
 describe('complete language facets', () => {
 	it('counts all languages, including beyond the facet cap, using complete hits without extra requests', async () => {
@@ -62,7 +68,7 @@ describe('complete language facets', () => {
 		expect(search).toHaveBeenCalledTimes(1);
 	});
 
-	it('retrieves complete IDs in bounded batches with the original search and filters', async () => {
+	it('includes catalog-only fonts in bounded queries without adding language counts', async () => {
 		const families = Array.from({ length: 1001 }, (_, i) => `font-${i}`);
 		const bits = Buffer.alloc(Math.ceil(families.length / 8));
 		bits.fill(255);
@@ -70,13 +76,13 @@ describe('complete language facets', () => {
 		const search = vi
 			.fn()
 			.mockResolvedValueOnce({
-				results: [response(families.slice(0, 20), families.length)],
+				results: [response(families.slice(0, 20), families.length + 1)],
 			})
 			.mockResolvedValueOnce({
 				results: [
 					response(families.slice(0, 500)),
 					response(families.slice(500, 1000)),
-					response(families.slice(1000)),
+					response([...families.slice(1000), 'legacy-font']),
 				],
 			});
 		const params = {
@@ -90,16 +96,21 @@ describe('complete language facets', () => {
 				'variable:true',
 			],
 		};
-		const result = await clientWith(search, {
-			version: languageIndex.version,
-			families,
-			languages: { en_Latn: bits.toString('base64') },
-		}).search(request(params));
+		const result = await clientWith(
+			search,
+			{
+				version: languageIndex.version,
+				families,
+				languages: { en_Latn: bits.toString('base64') },
+			},
+			['legacy-font'],
+		).search(request(params));
 		expect(result.results[0]).toMatchObject({
 			facets: { languageIds: { en_Latn: 1001 } },
 		});
 		const batches = search.mock.calls[1][0];
 		expect(batches).toHaveLength(3);
+		expect(batches[2].params.filters).toContain('objectID:"legacy-font"');
 		for (const batch of batches) {
 			expect(batch).toMatchObject({
 				indexName: 'prod_POPULAR',
@@ -134,6 +145,19 @@ describe('complete language facets', () => {
 				params: expect.objectContaining({ ...params, hitsPerPage: 1000 }),
 			}),
 		]);
+	});
+
+	it('counts complete filtered hits containing catalog-only fonts', async () => {
+		const search = vi
+			.fn()
+			.mockResolvedValue({ results: [response(['a', 'legacy-font'])] });
+		const result = await clientWith(search, languageIndex, [
+			'legacy-font',
+		]).search(request());
+		expect(result.results[0]).toMatchObject({
+			facets: { languageIds: { en_Latn: 1, peo_Xpeo: 0 } },
+		});
+		expect(search).toHaveBeenCalledOnce();
 	});
 
 	it('does not invent zeros when registry IDs cannot account for all search results', async () => {

@@ -18,6 +18,7 @@ import { CollectionsProvider } from '@/features/collections/CollectionsProvider'
 import {
 	getRegistryLanguageIndex,
 	getRegistryTaxonomy,
+	listFontValues,
 	listRegistryFamilies,
 	listRegistryLanguages,
 } from '@/generated/api';
@@ -80,18 +81,30 @@ export const loadSearch = async (
 	discovery?: DiscoveryPage,
 ) => {
 	const options = { signal: request.signal };
-	const [families, languages, taxonomy, languageIndex] = await Promise.all([
-		listRegistryFamilies(options),
-		listRegistryLanguages(options),
-		getRegistryTaxonomy(options),
-		getRegistryLanguageIndex(options).catch((error: unknown) => {
-			if (request.signal.aborted) throw error;
-			console.warn(
-				'Registry language index is unavailable; using Algolia facets',
-			);
-			return null;
-		}),
-	]);
+	const [families, languages, taxonomy, languageIndex, fontCatalog] =
+		await Promise.all([
+			listRegistryFamilies(options),
+			listRegistryLanguages(options),
+			getRegistryTaxonomy(options),
+			getRegistryLanguageIndex(options).catch((error: unknown) => {
+				if (request.signal.aborted) throw error;
+				console.warn(
+					'Registry language index is unavailable; using Algolia facets',
+				);
+				return null;
+			}),
+			listFontValues(undefined, options).catch((error: unknown) => {
+				if (request.signal.aborted) throw error;
+				console.warn(
+					'Font catalog is unavailable; legacy language counts may be incomplete',
+				);
+				return {};
+			}),
+		]);
+	const registryIds = new Set(languageIndex?.families);
+	const legacyFamilyIds = languageIndex
+		? Object.keys(fontCatalog).filter((id) => !registryIds.has(id))
+		: [];
 	const facets = { languages, taxonomy };
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
@@ -135,6 +148,7 @@ export const loadSearch = async (
 				serverUrl,
 				previews,
 				languageIndex,
+				legacyFamilyIds,
 				...facets,
 			},
 			{ headers: cacheHeaders.short },
@@ -158,6 +172,7 @@ export const loadSearch = async (
 				serverUrl,
 				previews,
 				languageIndex,
+				legacyFamilyIds,
 				...facets,
 			},
 			{
@@ -171,7 +186,7 @@ export const loadSearch = async (
 		facets,
 		discovery,
 		languageIndex
-			? createLanguageSearchClient(searchClient, languageIndex)
+			? createLanguageSearchClient(searchClient, languageIndex, legacyFamilyIds)
 			: searchClient,
 		previews,
 	);
@@ -193,6 +208,7 @@ export const loadSearch = async (
 			serverUrl,
 			previews,
 			languageIndex,
+			legacyFamilyIds,
 			...facets,
 		},
 		{

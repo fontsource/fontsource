@@ -5,6 +5,7 @@ import { describe, expect, it, vi } from 'vitest';
 import {
 	getRegistryLanguageIndex,
 	getRegistryTaxonomy,
+	listFontValues,
 	listRegistryFamilies,
 	listRegistryLanguages,
 } from '@/generated/api';
@@ -12,6 +13,7 @@ import { getSearchServerState, loader } from '@/utils/search.server';
 import { createLanguageSearchClient } from './language-facets';
 
 vi.mock('@/generated/api', () => ({
+	listFontValues: vi.fn().mockResolvedValue({}),
 	getRegistryLanguageIndex: vi.fn().mockResolvedValue({
 		version: 'a'.repeat(64),
 		families: [],
@@ -53,6 +55,15 @@ it('loads published registry previews for client-only collection searches', asyn
 			previewContext: { fallbackFamilies: ['sans-serif'] },
 		},
 	]);
+	vi.mocked(getRegistryLanguageIndex).mockResolvedValueOnce({
+		version: 'a'.repeat(64),
+		families: ['material-icons'],
+		languages: {},
+	});
+	vi.mocked(listFontValues).mockResolvedValueOnce({
+		'material-icons': 'google',
+		'legacy-font': 'google',
+	});
 	const result = await loader({
 		request: new Request('https://fontsource.org/?collection=example'),
 		url: new URL('https://fontsource.org/?collection=example'),
@@ -60,6 +71,7 @@ it('loads published registry previews for client-only collection searches', asyn
 		params: {},
 		context: new RouterContextProvider(),
 	});
+	expect(result.data.legacyFamilyIds).toEqual(['legacy-font']);
 	expect(result.data.languages).toEqual([
 		expect.objectContaining({ id: 'ja_Jpan', autonym: '日本語' }),
 	]);
@@ -208,6 +220,7 @@ it('keeps collection search available when membership has not been published', a
 	vi.mocked(getRegistryLanguageIndex).mockRejectedValueOnce(
 		new Error('snapshot missing'),
 	);
+	vi.mocked(listFontValues).mockResolvedValueOnce({ 'legacy-font': 'google' });
 	const warning = vi.spyOn(console, 'warn').mockImplementation(() => {});
 	try {
 		const result = await loader({
@@ -218,8 +231,27 @@ it('keeps collection search available when membership has not been published', a
 			context: new RouterContextProvider(),
 		});
 		expect(result.data.languageIndex).toBeNull();
+		expect(result.data.legacyFamilyIds).toEqual([]);
 		expect(result.data.hasCollectionFilter).toBe(true);
 		expect(warning).toHaveBeenCalledOnce();
+	} finally {
+		warning.mockRestore();
+	}
+});
+
+it('keeps search available when the legacy font catalog cannot be loaded', async () => {
+	vi.mocked(listFontValues).mockRejectedValueOnce(new Error('offline'));
+	const warning = vi.spyOn(console, 'warn').mockImplementation(() => {});
+	try {
+		const result = await loader({
+			request: new Request('https://fontsource.org/?collection=example'),
+			url: new URL('https://fontsource.org/?collection=example'),
+			pattern: '/',
+			params: {},
+			context: new RouterContextProvider(),
+		});
+		expect(result.data.legacyFamilyIds).toEqual([]);
+		expect(result.data.languageIndex).not.toBeNull();
 	} finally {
 		warning.mockRestore();
 	}

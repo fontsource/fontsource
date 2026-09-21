@@ -20,7 +20,10 @@ const isSearchResponse = <T>(
 export const createLanguageSearchClient = (
 	client: SearchClient,
 	languageIndex: GetRegistryLanguageIndexResponse,
+	legacyFamilyIds: string[] = [],
 ): SearchClient => {
+	const legacyFamilies = new Set(legacyFamilyIds);
+	const families = [...languageIndex.families, ...legacyFamilies];
 	const familyPositions = new Map(
 		languageIndex.families.map((id, index) => [id, index]),
 	);
@@ -38,7 +41,11 @@ export const createLanguageSearchClient = (
 		);
 		for (const id of ids) {
 			const index = familyPositions.get(id);
-			if (index === undefined) return undefined;
+			if (index === undefined) {
+				// The matching index version guarantees catalog-only fonts have no languages.
+				if (legacyFamilies.has(id)) continue;
+				return undefined;
+			}
 			matches[index >> 3] |= 1 << (index & 7);
 		}
 		return Object.fromEntries(
@@ -92,12 +99,8 @@ export const createLanguageSearchClient = (
 			if (result.nbHits <= 1000) {
 				requests.push({ indexName, params: idParams });
 			} else {
-				for (
-					let offset = 0;
-					offset < languageIndex.families.length;
-					offset += BATCH_SIZE
-				) {
-					const filter = languageIndex.families
+				for (let offset = 0; offset < families.length; offset += BATCH_SIZE) {
+					const filter = families
 						.slice(offset, offset + BATCH_SIZE)
 						.map((id) => `objectID:${JSON.stringify(id)}`)
 						.join(' OR ');

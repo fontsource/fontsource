@@ -1,4 +1,4 @@
-const ALGOLIA_CACHE_KEY_PREFIX = 'algolia:ssr:language-index-v1';
+const ALGOLIA_CACHE_KEY_PREFIX = 'algolia:ssr:language-index-v2';
 
 export const buildAlgoliaCacheKey = (
 	requestUrl: string,

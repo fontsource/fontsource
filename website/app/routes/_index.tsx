@@ -90,13 +90,18 @@ export function CatalogSearchPage() {
 		languages,
 		taxonomy,
 		languageIndex,
+		legacyFamilyIds,
 	} = useLoaderData<SearchProps>();
 	const languageSearchClient = useMemo(
 		() =>
 			languageIndex
-				? createLanguageSearchClient(searchClient, languageIndex)
+				? createLanguageSearchClient(
+						searchClient,
+						languageIndex,
+						legacyFamilyIds,
+					)
 				: searchClient,
-		[languageIndex],
+		[languageIndex, legacyFamilyIds],
 	);
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);

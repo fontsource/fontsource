@@ -17,6 +17,7 @@ import { getPreviewText } from '@/utils/language/language';
 
 export interface SearchProps extends SearchFacets {
 	languageIndex: GetRegistryLanguageIndexResponse | null;
+	legacyFamilyIds: string[];
 	previews: Record<string, FontPreview>;
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
