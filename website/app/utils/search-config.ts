@@ -5,6 +5,7 @@ import { history } from 'instantsearch.js/es/lib/routers';
 import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
 import type { RouterProps } from 'instantsearch.js/es/middlewares';
 import type { InstantSearchServerState } from 'react-instantsearch';
+import type { SearchFacets } from '@/components/search/Dropdowns';
 
 import {
 	createSearchState,
@@ -14,7 +15,7 @@ import type { DiscoveryPage } from '@/utils/discovery';
 import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 
-export interface SearchProps {
+export interface SearchProps extends SearchFacets {
 	previews: Record<string, FontPreview>;
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
@@ -28,6 +29,8 @@ interface SearchRouteState {
 	query?: string;
 	sort?: string;
 	subsets?: string | string[];
+	classifications?: string | string[];
+	languages?: string | string[];
 	variable?: boolean;
 }
 
@@ -118,8 +121,16 @@ const routing = (
 					query: index.query,
 					...(collectionId ? { collection: collectionId } : {}),
 					// RefinementList facets
-					...(index.refinementList?.subsets
+					...(index.refinementList?.subsets?.length
 						? { subsets: index.refinementList.subsets.join(',') }
+						: {}),
+					...(index.refinementList?.classifications?.length
+						? {
+								classifications: index.refinementList.classifications.join(','),
+							}
+						: {}),
+					...(index.refinementList?.languageIds?.length
+						? { languages: index.refinementList.languageIds.join(',') }
 						: {}),
 					// Menu facets
 					...(index.menu?.category ? { category: index.menu.category } : {}),
@@ -140,7 +151,12 @@ const routing = (
 				const state = {
 					query: resolvedRouteState.query,
 					// RefinementList facets
-					...(subsets?.length ? { refinementList: { subsets } } : {}),
+					refinementList: {
+						...(subsets?.length ? { subsets } : {}),
+						classifications:
+							parseSubsets(resolvedRouteState.classifications) ?? [],
+						languageIds: parseSubsets(resolvedRouteState.languages) ?? [],
+					},
 					// Menu facets
 					...(resolvedRouteState.category
 						? { menu: { category: resolvedRouteState.category } }

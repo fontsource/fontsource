@@ -1,6 +1,6 @@
 /* Filters */
 .container {
-	height: 128px;
+	min-height: 128px;
 	border-radius: 4px;
 
 	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
@@ -8,14 +8,12 @@
 
 .filters {
 	display: flex;
-	height: 64px;
+	min-height: 64px;
+	flex-wrap: wrap;
 	align-items: center;
-	gap: 24px;
+	gap: 12px 24px;
 	justify-content: space-between;
-	padding: 0 24px;
-
-	overflow-x: auto;
-	overflow-y: hidden;
+	padding: 12px 24px;
 
 	&:focus-within {
 		border-bottom-color: var(--mantine-color-purple-0);
@@ -37,3 +35,10 @@
 		background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-6));
 	}
 }
+
+.dropdowns {
+	flex: 0 1 774px;
+	width: 100%;
+	min-width: 0;
+}
+

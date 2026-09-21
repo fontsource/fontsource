@@ -80,8 +80,15 @@ export const headers: HeadersFunction = ({ parentHeaders }) => {
 };
 
 export function CatalogSearchPage() {
-	const { discovery, hasCollectionFilter, serverState, serverUrl, previews } =
-		useLoaderData<SearchProps>();
+	const {
+		discovery,
+		hasCollectionFilter,
+		serverState,
+		serverUrl,
+		previews,
+		languages,
+		taxonomy,
+	} = useLoaderData<SearchProps>();
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
 	const navigate = useNavigate();
@@ -135,11 +142,19 @@ export function CatalogSearchPage() {
 						pt={discovery ? 24 : undefined}
 						ref={searchRef}
 					>
-						<Filters state$={state$} />
+						<Filters
+							state$={state$}
+							languages={languages}
+							taxonomy={taxonomy}
+						/>
 					</Box>
 				</Box>
 				<Box className={classes.container}>
-					<InfiniteHits state$={state$} previews={previews} />
+					<InfiniteHits
+						state$={state$}
+						previews={previews}
+						languages={languages}
+					/>
 					<ScrollToTop containerId="#hits" targetRef={searchRef} />
 				</Box>
 			</InstantSearch>

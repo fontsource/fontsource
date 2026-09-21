@@ -14,7 +14,11 @@ import { IconTrash } from '@/components/icons';
 import { CollectionFilter } from '@/features/collections/CollectionFilter';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 
-import { CategoriesDropdown, LanguagesDropdown } from './Dropdowns';
+import {
+	CategoriesDropdown,
+	LanguagesDropdown,
+	type SearchFacets,
+} from './Dropdowns';
 import classes from './Filters.module.css';
 import type { SearchState } from './observables';
 import { PreviewSelector } from './PreviewTextInput';
@@ -22,7 +26,7 @@ import { SearchBar } from './SearchTextInput';
 import { SizeSlider } from './SizeSlider';
 import { getSortItems } from './Sort';
 
-interface FilterProps {
+interface FilterProps extends SearchFacets {
 	state$: SearchState;
 }
 
@@ -37,7 +41,7 @@ const buildCollectionFilter = (fontIds: string[]) =>
 				.map((fontId) => `objectID:${JSON.stringify(fontId)}`)
 				.join(' OR ');
 
-const Filters = ({ state$ }: FilterProps) => {
+const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 	const collectionsStore = useCollectionsStore();
 	const collectionId = useValue(state$.collectionId);
 	const collections = useValue(collectionsStore.getCollections);
@@ -85,24 +89,27 @@ const Filters = ({ state$ }: FilterProps) => {
 				<SizeSlider state$={state$} />
 			</SimpleGrid>
 			<Box className={classes.filters}>
-				<Group justify="center" wrap="nowrap">
+				<SimpleGrid
+					cols={{ base: 1, xs: 3 }}
+					spacing="sm"
+					className={classes.dropdowns}
+				>
 					<CollectionFilter
 						onChange={handleCollectionChange}
 						value={collectionId}
 					/>
-					<CategoriesDropdown />
-					<LanguagesDropdown state$={state$} />
-				</Group>
-				<Group justify="center" wrap="nowrap">
+					<CategoriesDropdown taxonomy={taxonomy} />
+					<LanguagesDropdown languages={languages} />
+				</SimpleGrid>
+				<Group justify="space-between" gap="sm">
 					<Checkbox
 						checked={variableValue.isRefined}
 						color="purple.0"
 						disabled={!canRefine}
-						label="Show only variable fonts"
+						label="Variable fonts"
 						onChange={() => {
 							variableRefine(variableValue);
 						}}
-						w={200}
 					/>
 					<Button
 						leftSection={<IconTrash aria-hidden="true" />}
@@ -112,7 +119,7 @@ const Filters = ({ state$ }: FilterProps) => {
 							handleClearRefinement();
 						}}
 					>
-						Clear all filters
+						Clear filters
 					</Button>
 				</Group>
 			</Box>

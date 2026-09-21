@@ -56,10 +56,11 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 		<>
 			<Menu
 				classNames={{
-					dropdown: `${menuClasses.dropdown} ${classes.dropdown}`,
+					dropdown: menuClasses.dropdown,
 				}}
 				onClose={() => setQuery('')}
 				position="bottom-start"
+				width="target"
 				shadow="md"
 			>
 				<Menu.Target>
@@ -72,7 +73,7 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 						ref={targetRef}
 						rightSection={<IconCaret aria-hidden="true" />}
 						rightSectionPointerEvents="none"
-						w={250}
+						w="100%"
 					>
 						<span dir="auto">{selectedCollection?.name ?? 'All fonts'}</span>
 					</InputBase>

@@ -10,11 +10,16 @@ import {
 	InstantSearchSSRProvider,
 } from 'react-instantsearch';
 import { data, type LoaderFunctionArgs, StaticRouter } from 'react-router';
+import type { SearchFacets } from '@/components/search/Dropdowns';
 
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
-import { listRegistryFamilies } from '@/generated/api';
+import {
+	getRegistryTaxonomy,
+	listRegistryFamilies,
+	listRegistryLanguages,
+} from '@/generated/api';
 import { theme } from '@/styles/theme';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
 import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
@@ -33,6 +38,7 @@ const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 
 export const getSearchServerState = (
 	serverUrl: string,
+	facets: SearchFacets,
 	discovery?: DiscoveryPage,
 	client: SearchClient = searchClient,
 	previews: Record<string, FontPreview> = {},
@@ -52,8 +58,12 @@ export const getSearchServerState = (
 					>
 						<CollectionsProvider>
 							<Configure attributesToRetrieve={attributesToRetrieve} />
-							<Filters state$={state$} />
-							<InfiniteHits state$={state$} previews={previews} />
+							<Filters state$={state$} {...facets} />
+							<InfiniteHits
+								state$={state$}
+								previews={previews}
+								languages={facets.languages}
+							/>
 						</CollectionsProvider>
 					</InstantSearch>
 				</InstantSearchSSRProvider>
@@ -66,6 +76,7 @@ export const getSearchServerState = (
 export const loadSearch = async (
 	{ request, context }: LoaderFunctionArgs,
 	families: readonly (FontPreview & { id: string })[],
+	facets: SearchFacets,
 	discovery?: DiscoveryPage,
 ) => {
 	const requestUrl = new URL(request.url);
@@ -85,7 +96,7 @@ export const loadSearch = async (
 	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
-			{ discovery, hasCollectionFilter, serverUrl, previews },
+			{ discovery, hasCollectionFilter, serverUrl, previews, ...facets },
 			{ headers: cacheHeaders.short },
 		);
 	}
@@ -106,6 +117,7 @@ export const loadSearch = async (
 				serverState,
 				serverUrl,
 				previews,
+				...facets,
 			},
 			{
 				headers: cacheHeaders.short,
@@ -115,6 +127,7 @@ export const loadSearch = async (
 
 	serverState = await getSearchServerState(
 		serverUrl,
+		facets,
 		discovery,
 		searchClient,
 		previews,
@@ -136,6 +149,7 @@ export const loadSearch = async (
 			serverState,
 			serverUrl,
 			previews,
+			...facets,
 		},
 		{
 			headers: cacheHeaders.short,
@@ -143,5 +157,12 @@ export const loadSearch = async (
 	);
 };
 
-export const loader = async (args: LoaderFunctionArgs) =>
-	loadSearch(args, await listRegistryFamilies({ signal: args.request.signal }));
+export const loader = async (args: LoaderFunctionArgs) => {
+	const options = { signal: args.request.signal };
+	const [families, languages, taxonomy] = await Promise.all([
+		listRegistryFamilies(options),
+		listRegistryLanguages(options),
+		getRegistryTaxonomy(options),
+	]);
+	return loadSearch(args, families, { languages, taxonomy });
+};

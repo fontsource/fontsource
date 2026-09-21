@@ -2,10 +2,30 @@ import type { SearchClient } from 'instantsearch.js';
 import { RouterContextProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
-import { listRegistryFamilies } from '@/generated/api';
+import {
+	getRegistryTaxonomy,
+	listRegistryFamilies,
+	listRegistryLanguages,
+} from '@/generated/api';
 import { getSearchServerState, loader } from '@/utils/search.server';
 
-vi.mock('@/generated/api', () => ({ listRegistryFamilies: vi.fn() }));
+vi.mock('@/generated/api', () => ({
+	listRegistryFamilies: vi.fn(),
+	listRegistryLanguages: vi.fn().mockResolvedValue([
+		{
+			id: 'ja_Jpan',
+			language: 'ja',
+			script: 'Jpan',
+			name: 'Japanese',
+			autonym: '日本語',
+		},
+	]),
+	getRegistryTaxonomy: vi.fn().mockResolvedValue({
+		classifications: { symbols: { label: 'Symbols' } },
+		tags: {},
+		tagGroups: {},
+	}),
+}));
 
 it('loads published registry previews for client-only collection searches', async () => {
 	vi.mocked(listRegistryFamilies).mockResolvedValue([
@@ -32,6 +52,12 @@ it('loads published registry previews for client-only collection searches', asyn
 		pattern: '/',
 		params: {},
 		context: new RouterContextProvider(),
+	});
+	expect(result.data.languages).toEqual([
+		expect.objectContaining({ id: 'ja_Jpan', autonym: '日本語' }),
+	]);
+	expect(result.data.taxonomy.classifications.symbols).toEqual({
+		label: 'Symbols',
 	});
 	expect(result.data.previews['material-icons']).toEqual({
 		sampleText: { short: 'search favorite' },
@@ -67,6 +93,10 @@ describe('getSearchServerState', () => {
 
 		const state = await getSearchServerState(
 			'https://fontsource.org/?query=yakuhan%27',
+			{
+				languages: await listRegistryLanguages(),
+				taxonomy: await getRegistryTaxonomy(),
+			},
 			undefined,
 			client,
 		);
@@ -74,4 +104,43 @@ describe('getSearchServerState', () => {
 		expect(state.initialResults).toBeDefined();
 		expect(search).toHaveBeenCalled();
 	});
+});
+
+it('preserves legacy filters alongside registry filters in SSR requests', async () => {
+	const search = vi.fn().mockImplementation((requests) =>
+		Promise.resolve({
+			results: requests.map((request: { indexName: string }) => ({
+				hits: [],
+				index: request.indexName,
+				hitsPerPage: 12,
+				nbHits: 0,
+				nbPages: 0,
+				page: 0,
+				processingTimeMS: 1,
+				query: '',
+			})),
+		}),
+	);
+	await getSearchServerState(
+		'https://fontsource.org/?category=icons&subsets=japanese&classifications=symbols,display&languages=ja_Jpan,zh_Hant',
+		{
+			languages: await listRegistryLanguages(),
+			taxonomy: await getRegistryTaxonomy(),
+		},
+		undefined,
+		{ search } as unknown as SearchClient,
+	);
+	const filters = search.mock.calls[0][0][0].params.facetFilters;
+	expect(filters).toEqual(
+		expect.arrayContaining([
+			['category:icons'],
+			'subsets:japanese',
+			'languageIds:ja_Jpan',
+			'languageIds:zh_Hant',
+			expect.arrayContaining([
+				'classifications:symbols',
+				'classifications:display',
+			]),
+		]),
+	);
 });

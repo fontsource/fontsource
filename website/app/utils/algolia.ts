@@ -1,4 +1,4 @@
-const ALGOLIA_CACHE_KEY_PREFIX = 'algolia:ssr';
+const ALGOLIA_CACHE_KEY_PREFIX = 'algolia:ssr:registry-v1';
 
 export const buildAlgoliaCacheKey = (
 	requestUrl: string,
@@ -6,13 +6,22 @@ export const buildAlgoliaCacheKey = (
 	const url = new URL(requestUrl);
 	const source = url.searchParams;
 
+	const searchParams = new Set([
+		'query',
+		'category',
+		'variable',
+		'sort',
+		'subsets',
+		'classifications',
+		'languages',
+	]);
+	// qs also accepts bracket arrays such as languages[0]=ja_Jpan.
 	if (
-		['query', 'category', 'variable', 'sort'].some((param) =>
-			source.getAll(param).some((value) => value.trim()),
-		) ||
-		source
-			.getAll('subsets')
-			.some((value) => value.split(',').some((subset) => subset.trim()))
+		[...source].some(
+			([key, value]) =>
+				searchParams.has(key.split('[')[0]) &&
+				value.split(',').some((item) => item.trim()),
+		)
 	) {
 		return undefined;
 	}
