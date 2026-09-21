@@ -368,10 +368,6 @@
 	inset-inline-start: 32px;
 	inset-inline-end: 32px;
 	z-index: 1;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
 }
 
 .editorHeader label {
@@ -466,12 +462,6 @@
 	flex-direction: column;
 	background: var(--preview-surface);
 	overflow: clip;
-}
-
-.derivedCanvas > .editorHeader {
-	position: static;
-	flex-shrink: 0;
-	padding: 18px 32px;
 }
 
 .sampleInput {
@@ -1127,10 +1117,6 @@
 		padding-inline-end: 24px;
 	}
 
-	.derivedCanvas > .editorHeader {
-		padding-inline: 24px;
-	}
-
 	.waterfall,
 	.compareSkeleton {
 		padding-inline: 24px;
@@ -1219,10 +1205,6 @@
 	.editorHeader {
 		inset-inline-start: 18px;
 		inset-inline-end: 18px;
-	}
-
-	.derivedCanvas > .editorHeader {
-		padding-inline: 18px;
 	}
 
 	.waterfall,
