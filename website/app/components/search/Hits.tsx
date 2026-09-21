@@ -32,6 +32,7 @@ import type { ListRegistryLanguagesResponse } from '@/generated/api';
 import type { FontPreview } from '@/utils/font-summary';
 import {
 	getPreviewText,
+	getRecommendedPreviewLanguage,
 	getRecommendedPreviewText,
 } from '@/utils/language/language';
 
@@ -151,7 +152,11 @@ const HitComponent = observer(
 			// Use language-specific preview for non-latin fonts when no custom input
 			if (
 				preview?.sampleText ||
-				(preview?.primaryScript && preview.primaryScript !== 'Latn') ||
+				preview?.previewSubset ||
+				getRecommendedPreviewLanguage(
+					{ ...hit, ...preview },
+					languages ?? [],
+				) ||
 				isNotLatin
 			) {
 				return getRecommendedPreviewText(

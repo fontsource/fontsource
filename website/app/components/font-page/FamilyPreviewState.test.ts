@@ -9,6 +9,7 @@ import {
 	getRecommendedPreviewLanguage,
 	getRecommendedPreviewText,
 } from '@/utils/language/language';
+import { previewText } from '@/utils/preview-text';
 import type { RegistryFamily } from '@/utils/registry';
 
 import {
@@ -143,21 +144,21 @@ describe('preview samples', () => {
 		},
 	);
 
-	it('uses the primary script sample even when the package defaults to Latin and English is available', () => {
-		const model = createModel({ ...registry, primaryScript: 'Xsux' });
+	it('prefers the default subset over an unrelated primary script sample', () => {
+		const model = createModel({ ...registry, primaryScript: 'Deva' });
 		model.languages = [
 			...languages,
 			{
-				id: 'akk_Xsux',
-				language: 'akk',
-				script: 'Xsux',
-				name: 'Akkadian',
+				id: 'bap_Deva',
+				language: 'bap',
+				script: 'Deva',
+				name: 'Bantawa',
 				direction: 'ltr',
-				sampleText: { short: '𒆪𒌋𒀭', long: '𒆪𒌋𒀭𒆷𒈦' },
+				sampleText: { short: 'झाराक मनाचि' },
 			},
 		];
 		const text = getActivePreviewText(model);
-		expect(text).toBe('𒆪𒌋𒀭');
+		expect(text).toBe(previewText.language.subsets.latin);
 		expect(text).toBe(
 			getRecommendedPreviewText(
 				{ ...metadata, ...model.registry },
@@ -169,6 +170,19 @@ describe('preview samples', () => {
 		expect(getActivePreviewText(model)).toBe(text);
 	});
 
+	it('preserves explicit preview subsets and primary languages', () => {
+		expect(
+			getRecommendedPreviewText({ ...metadata, previewSubset: 'devanagari' }),
+		).toBe(previewText.language.subsets.devanagari);
+		expect(
+			getRecommendedPreviewText(
+				{ ...metadata, primaryLanguage: 'aa_Latn' },
+				'short',
+				languages,
+			),
+		).toBe(languages[0].sampleText.short);
+	});
+
 	it('derives direction from the recommended script sample', () => {
 		const arabic = {
 			id: 'ar_Arab',
@@ -178,7 +192,7 @@ describe('preview samples', () => {
 			direction: 'rtl' as const,
 			sampleText: { short: 'اختبار' },
 		};
-		const family = { ...registry, primaryScript: 'Arab' };
+		const family = { ...registry, primaryScript: 'Arab', defSubset: 'custom' };
 		expect(getRecommendedPreviewLanguage(family, [arabic])?.direction).toBe(
 			'rtl',
 		);
