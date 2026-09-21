@@ -56,7 +56,12 @@ const SearchableLanguageList = ({
 		getKey={(language) => language.id}
 		getSearchText={getLanguageSearchText}
 		itemName={{ singular: 'language', plural: 'languages' }}
-		items={languages}
+		items={[...languages].sort((a, b) =>
+			(a.preferredName ?? a.name).localeCompare(
+				b.preferredName ?? b.name,
+				'en',
+			),
+		)}
 		listClassName={classes.languageList}
 		listId={`language-list-${familyId}`}
 		renderItem={renderLanguage}

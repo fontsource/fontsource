@@ -494,7 +494,11 @@ export const FamilyAbout = ({
 						className={`${classes.capabilityPanel} ${classes.languagePanel}`}
 					>
 						<h3>Language and character coverage</h3>
-						<p>{coverageDescription}</p>
+						{(hasCatalog ||
+							primaryLanguage ||
+							registry.primaryScript ||
+							!languageCount ||
+							familyLanguages.length <= 12) && <p>{coverageDescription}</p>}
 						{familyLanguages.length > 0 ? (
 							<SearchableLanguageList
 								familyId={metadata.id}
@@ -513,9 +517,7 @@ export const FamilyAbout = ({
 							{hasVariableWeight && metadata.weights.length === 1
 								? 'A continuous range of weights'
 								: `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`}{' '}
-							in{' '}
-							{metadata.styles.map(formatFontLabel).join(' and ').toLowerCase()}{' '}
-							{metadata.styles.length === 1 ? 'style' : 'styles'}.
+							· {metadata.styles.map(formatFontLabel).join(', ')}
 						</p>
 						{axes.length > 0 ? (
 							<>
@@ -562,10 +564,7 @@ export const FamilyAbout = ({
 					{featureTags.length > 0 && (
 						<div className={classes.capabilityPanel}>
 							<h3>OpenType features</h3>
-							<p>
-								Typographic behaviors that adjust character forms, spacing, and
-								positioning. Availability can vary between files.
-							</p>
+							<p>Availability can vary between files.</p>
 							<SearchableFeatureList
 								familyId={metadata.id}
 								featureTags={featureTags}
