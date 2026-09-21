@@ -44,10 +44,11 @@ describe('complete language facets', () => {
 		const search = vi
 			.fn()
 			.mockResolvedValue({ results: [response(['a', 'b', 'c'])] });
-		const result = await clientWith(search, {
+		const client = clientWith(search, {
 			...languageIndex,
 			languages: { ...languages, ...languageIndex.languages },
-		}).search(request());
+		});
+		const result = await client.search(request());
 		expect(result.results[0]).toMatchObject({
 			facets: {
 				languageIds: {
@@ -60,6 +61,15 @@ describe('complete language facets', () => {
 			},
 		});
 		expect(search).toHaveBeenCalledTimes(1);
+
+		search.mockResolvedValue({ results: [response(['c'])] });
+		expect(
+			(await client.search(request({ query: 'c' }))).results[0],
+		).toMatchObject({
+			facets: {
+				languageIds: { en_Latn: 0, peo_Xpeo: 1, 'language-1699': 0 },
+			},
+		});
 	});
 
 	it('retrieves complete IDs in bounded batches with the original search and filters', async () => {

@@ -155,6 +155,21 @@ const createRegistryCodepointMatcher = (
 const isBrowsableCharacter = (character: string) =>
 	!/^[\p{Cc}\p{Cf}\p{Cs}\p{Cn}\p{Z}]$/u.test(character);
 
+const isRegistryTextSupported = (
+	value: string,
+	supportsCodepoint: (value: number) => boolean,
+) => {
+	for (const character of value) {
+		if (
+			isBrowsableCharacter(character) &&
+			!supportsCodepoint(character.codePointAt(0) ?? 0)
+		) {
+			return false;
+		}
+	}
+	return true;
+};
+
 type RegistryCharacterGroups = Record<
 	'all' | 'letters' | 'marks' | 'numbers' | 'punctuation' | 'symbols',
 	string[]
@@ -389,6 +404,7 @@ export {
 	getRegistrySourcePreviewStyle,
 	getSupportedPreviewFallback,
 	getUnicodeCharacter,
+	isRegistryTextSupported,
 	selectRegistryFamilyLanguages,
 	selectRegistryPreviewLanguage,
 	usesNameLigatures,
