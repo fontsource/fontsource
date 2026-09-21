@@ -5,6 +5,7 @@ import {
 	Configure,
 	useClearRefinements,
 	useInstantSearch,
+	useRefinementList,
 	useSearchBox,
 	useSortBy,
 	useToggleRefinement,
@@ -49,7 +50,12 @@ const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 	const collectionFilter = collection
 		? buildCollectionFilter(collection.fontIds)
 		: '';
-	const { setIndexUiState } = useInstantSearch();
+	const { setIndexUiState, indexUiState } = useInstantSearch();
+	const { refine: refineTag } = useRefinementList({
+		attribute: 'tags',
+		operator: 'and',
+	});
+	const selectedTags = indexUiState.refinementList?.tags ?? [];
 	const {
 		value: variableValue,
 		refine: variableRefine,
@@ -101,6 +107,26 @@ const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 					<CategoriesDropdown taxonomy={taxonomy} />
 					<LanguagesDropdown languages={languages} />
 				</SimpleGrid>
+				{selectedTags.length > 0 && (
+					<Group gap="xs" role="group" aria-label="Selected tags">
+						{selectedTags.map((tag) => {
+							const label = taxonomy.tags[tag]?.label ?? tag;
+							const group = taxonomy.tagGroups[tag.split('/')[0]]?.label;
+							const title = group ? `${label} (${group})` : label;
+							return (
+								<Button
+									key={tag}
+									variant="subtle"
+									className={classes.button}
+									aria-label={`Remove ${title} tag filter`}
+									onClick={() => refineTag(tag)}
+								>
+									{title} ×
+								</Button>
+							);
+						})}
+					</Group>
+				)}
 				<Group justify="space-between" gap="sm">
 					<Checkbox
 						checked={variableValue.isRefined}

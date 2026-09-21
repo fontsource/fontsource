@@ -1,3 +1,4 @@
+import { observable } from '@legendapp/state';
 import type { SearchClient } from 'instantsearch.js';
 import { RouterContextProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
@@ -9,7 +10,9 @@ import {
 	listRegistryLanguages,
 } from '@/generated/api';
 import { getSearchServerState, loader } from '@/utils/search.server';
+import type { DiscoveryPage } from './discovery';
 import { createLanguageSearchClient } from './language-facets';
+import { createPageSearchState, routing } from './search-config';
 
 vi.mock('@/generated/api', () => ({
 	getRegistryLanguageIndex: vi.fn().mockResolvedValue({
@@ -129,7 +132,7 @@ it('preserves legacy filters alongside registry filters in SSR requests', async 
 		}),
 	);
 	await getSearchServerState(
-		'https://fontsource.org/?category=icons&subsets=japanese&classifications=symbols,display&languages=ja_Jpan,zh_Hant',
+		'https://fontsource.org/?category=icons&subsets=japanese&classifications=symbols,display&languages=ja_Jpan,zh_Hant&tags=sans/geometric',
 		{
 			languages: await listRegistryLanguages(),
 			taxonomy: await getRegistryTaxonomy(),
@@ -144,6 +147,7 @@ it('preserves legacy filters alongside registry filters in SSR requests', async 
 			'subsets:japanese',
 			'languageIds:ja_Jpan',
 			'languageIds:zh_Hant',
+			'tags:sans/geometric',
 			expect.arrayContaining([
 				'classifications:symbols',
 				'classifications:display',
@@ -223,4 +227,85 @@ it('keeps collection search available when membership has not been published', a
 	} finally {
 		warning.mockRestore();
 	}
+});
+
+const taxonomyPages: DiscoveryPage[] = [
+	{
+		count: 20,
+		description: 'Geometric sans-serif fonts',
+		heading: 'Geometric Sans Serif Fonts',
+		intro: 'Browse geometric sans-serif fonts.',
+		kind: 'tag',
+		label: 'Geometric',
+		path: '/tags/sans/geometric',
+		routeState: { tags: 'sans/geometric' },
+		indexable: true,
+	},
+	{
+		count: 20,
+		description: 'Symbols fonts',
+		heading: 'Symbols Fonts',
+		intro: 'Browse symbols fonts.',
+		kind: 'category',
+		label: 'Symbols',
+		path: '/categories/symbols',
+		routeState: { classifications: 'symbols' },
+		indexable: true,
+	},
+];
+
+it.each(taxonomyPages)(
+	'applies discovery defaults to SSR for $path',
+	async (page) => {
+		const search = vi.fn().mockImplementation((requests) =>
+			Promise.resolve({
+				results: requests.map((request: { indexName: string }) => ({
+					hits: [],
+					index: request.indexName,
+					hitsPerPage: 12,
+					nbHits: 0,
+					nbPages: 0,
+					page: 0,
+					processingTimeMS: 1,
+					query: '',
+				})),
+			}),
+		);
+		await getSearchServerState(
+			`https://fontsource.org${page.path}`,
+			{
+				languages: await listRegistryLanguages(),
+				taxonomy: await getRegistryTaxonomy(),
+			},
+			page,
+			{ search } as unknown as SearchClient,
+		);
+		const filters = search.mock.calls[0][0][0].params.facetFilters.flat();
+		const [attribute, value] = Object.entries(page.routeState)[0];
+		expect(filters).toEqual([`${attribute}:${value}`]);
+	},
+);
+
+it('round-trips tag routing alongside collections, classification and sort', () => {
+	const config = routing(
+		'https://fontsource.org/',
+		observable(createPageSearchState()),
+	);
+	const { stateMapping } = config;
+	if (!stateMapping)
+		throw new Error('Search routing must expose state mapping');
+	const route = {
+		tags: 'sans/geometric,theme/blackletter',
+		classifications: 'sans-serif',
+		collection: 'favorites',
+		sort: 'name',
+	};
+	const state = stateMapping.routeToState(route);
+	expect(state.prod_POPULAR.refinementList?.tags).toEqual([
+		'sans/geometric',
+		'theme/blackletter',
+	]);
+	expect(stateMapping.stateToRoute(state)).toEqual(route);
+	expect(stateMapping.routeToState({}).prod_POPULAR.refinementList).toEqual({});
+	expect(stateMapping.stateToRoute({ prod_POPULAR: {} })).toEqual({});
 });

@@ -200,7 +200,7 @@
 		list-style: none;
 	}
 
-	li {
+	a {
 		min-height: 44px;
 		display: inline-flex;
 		align-items: center;
@@ -213,15 +213,21 @@
 		color: light-dark(#34435c, #cbd3e2);
 		background: light-dark(#fbfcfe, #10192d);
 		font-size: 13px;
+		text-decoration: none;
 		transition:
 			border-color 120ms ease,
 			color 120ms ease,
 			background-color 120ms ease;
+
+		&:focus-visible {
+			outline: 2px solid var(--mantine-color-purple-0);
+			outline-offset: 2px;
+		}
 	}
 }
 
 @media (hover: hover) {
-	.taxonomy li:hover {
+	.taxonomy a:hover {
 		border-color: light-dark(#c8c5ff, #5852cc);
 		color: light-dark(#201a73, #dedcff);
 		background: light-dark(#f7f6ff, #171735);

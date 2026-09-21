@@ -1,4 +1,11 @@
-import { type ListFontValuesResponse, listFontValues } from '@/generated/api';
+import {
+	type GetRegistryTaxonomyResponse,
+	getRegistryTaxonomy,
+	type ListFontValuesResponse,
+	type ListRegistryFamiliesResponse,
+	listFontValues,
+	listRegistryFamilies,
+} from '@/generated/api';
 import { getDiscoveryPages } from '@/utils/discovery';
 
 const countProjection = (
@@ -18,19 +25,43 @@ const countProjection = (
 	return counts;
 };
 
-const loadDiscoveryCounts = async (signal?: AbortSignal) => {
-	const [subsets, categories, variable] = await Promise.all([
-		listFontValues({ subsets: '' }, { signal }),
-		listFontValues({ category: '' }, { signal }),
-		listFontValues({ variable: '' }, { signal }),
-	]);
+export type DiscoveryRegistry = {
+	families: ListRegistryFamiliesResponse;
+	taxonomy: GetRegistryTaxonomyResponse;
+};
 
-	return {
+export const loadDiscoveryData = async (signal?: AbortSignal) => {
+	const [subsets, categories, variable, families, taxonomy] = await Promise.all(
+		[
+			listFontValues({ subsets: '' }, { signal }),
+			listFontValues({ category: '' }, { signal }),
+			listFontValues({ variable: '' }, { signal }),
+			listRegistryFamilies({ signal }),
+			getRegistryTaxonomy({ signal }),
+		],
+	);
+
+	// Search indexes the published font catalog, not every registry family.
+	const catalogFamilies = families.filter((family) =>
+		Object.hasOwn(categories, family.id),
+	);
+	const counts = {
 		subsets: countProjection(subsets),
 		categories: countProjection(categories),
 		variable: countProjection(variable).true ?? 0,
+		classifications: countProjection(
+			Object.fromEntries(
+				catalogFamilies.map((family) => [family.id, family.classifications]),
+			),
+		),
+		tags: countProjection(
+			Object.fromEntries(
+				catalogFamilies.map((family) => [family.id, family.tags]),
+			),
+		),
+	};
+	return {
+		pages: getDiscoveryPages(counts, taxonomy),
+		registry: { families, taxonomy },
 	};
 };
-
-export const loadDiscoveryPages = async (signal?: AbortSignal) =>
-	getDiscoveryPages(await loadDiscoveryCounts(signal));

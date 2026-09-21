@@ -26,6 +26,7 @@ import { buildAlgoliaCacheKey } from '@/utils/algolia';
 import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
+import type { DiscoveryRegistry } from '@/utils/discovery.server';
 import type { FontPreview } from '@/utils/font-summary';
 import { createLanguageSearchClient } from '@/utils/language-facets';
 import {
@@ -78,12 +79,13 @@ export const getSearchServerState = (
 export const loadSearch = async (
 	{ request, context }: LoaderFunctionArgs,
 	discovery?: DiscoveryPage,
+	registry?: DiscoveryRegistry,
 ) => {
 	const options = { signal: request.signal };
 	const [families, languages, taxonomy, languageIndex] = await Promise.all([
-		listRegistryFamilies(options),
+		registry?.families ?? listRegistryFamilies(options),
 		listRegistryLanguages(options),
-		getRegistryTaxonomy(options),
+		registry?.taxonomy ?? getRegistryTaxonomy(options),
 		getRegistryLanguageIndex(options).catch((error: unknown) => {
 			if (request.signal.aborted) throw error;
 			console.warn(

@@ -1,17 +1,19 @@
 import type { LoaderFunctionArgs } from 'react-router';
 import { cacheHeaders } from '@/utils/cache';
-import { loadDiscoveryPages } from '@/utils/discovery.server';
+import { loadDiscoveryData } from '@/utils/discovery.server';
 import { loadSearch } from '@/utils/search.server';
 
 export const loader = async (args: LoaderFunctionArgs) => {
-	const pathname = args.params.language
-		? `/languages/${args.params.language}`
-		: args.params.category
-			? `/categories/${args.params.category}`
-			: '/variable-fonts';
-	const page = (await loadDiscoveryPages(args.request.signal)).find(
-		(item) => item.path === pathname,
-	);
+	const pathname =
+		args.params.group && args.params.tag
+			? `/tags/${args.params.group}/${args.params.tag}`
+			: args.params.language
+				? `/languages/${args.params.language}`
+				: args.params.category
+					? `/categories/${args.params.category}`
+					: '/variable-fonts';
+	const { pages, registry } = await loadDiscoveryData(args.request.signal);
+	const page = pages.find((item) => item.path === pathname);
 	if (!page) {
 		throw new Response('Not found', {
 			status: 404,
@@ -19,5 +21,5 @@ export const loader = async (args: LoaderFunctionArgs) => {
 		});
 	}
 
-	return loadSearch(args, page);
+	return loadSearch(args, page, registry);
 };

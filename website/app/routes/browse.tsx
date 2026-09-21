@@ -15,20 +15,22 @@ import { ContentHeader } from '@/components/layout/ContentHeader';
 import classes from '@/styles/browse.module.css';
 import { cacheHeaders } from '@/utils/cache';
 import type { DiscoveryPage } from '@/utils/discovery';
-import { loadDiscoveryPages } from '@/utils/discovery.server';
+import { loadDiscoveryData } from '@/utils/discovery.server';
 import { ogMeta } from '@/utils/meta';
 
-export const loader = async ({ request }: LoaderFunctionArgs) =>
-	data(
-		{ pages: await loadDiscoveryPages(request.signal) },
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+	const { pages } = await loadDiscoveryData(request.signal);
+	return data(
+		{ pages: pages.filter((page) => page.indexable) },
 		{ headers: cacheHeaders.short },
 	);
+};
 
 export const meta: MetaFunction = () =>
 	ogMeta({
 		title: 'Browse Open-Source Fonts | Fontsource',
 		description:
-			'Browse open-source fonts by language, category, and variable-font support, then preview and self-host your selection with Fontsource.',
+			'Browse open-source fonts by category, style, language, and variable-font support, then preview and self-host your selection with Fontsource.',
 	});
 
 const StyleGrid = ({ pages }: { pages: DiscoveryPage[] }) => (
@@ -91,13 +93,16 @@ const LanguageDirectory = ({ pages }: { pages: DiscoveryPage[] }) => (
 export default function Browse() {
 	const { pages } = useLoaderData<typeof loader>();
 	const languages = pages.filter((page) => page.kind === 'language');
-	const stylesAndFeatures = pages.filter((page) => page.kind !== 'language');
+	const stylesAndFeatures = pages.filter(
+		(page) => page.kind === 'category' || page.kind === 'variable',
+	);
+	const tags = pages.filter((page) => page.kind === 'tag');
 
 	return (
 		<>
 			<ContentHeader
 				title="Browse Fonts"
-				description="Choose a style, language, or variable-font format. Every page includes the full catalog filters and preview controls."
+				description="Choose a category, style, language, or variable-font format. Every page includes the full catalog filters and preview controls."
 			/>
 			<Container size="xl" py="xl">
 				<Stack gap={48}>
@@ -108,6 +113,13 @@ export default function Browse() {
 							fonts.
 						</Text>
 						<StyleGrid pages={stylesAndFeatures} />
+					</section>
+					<section>
+						<Title order={2}>Style and character</Title>
+						<Text c="dimmed" mt="xs" mb="md">
+							Explore visual characteristics, themes, and specialist uses.
+						</Text>
+						<StyleGrid pages={tags} />
 					</section>
 					<section>
 						<Title order={2}>Fonts by language</Title>
