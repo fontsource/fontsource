@@ -146,6 +146,10 @@ const routing = (
 					? { ...discovery.routeState, ...routeState }
 					: routeState;
 				const subsets = parseSubsets(resolvedRouteState.subsets);
+				const classifications = parseSubsets(
+					resolvedRouteState.classifications,
+				);
+				const languageIds = parseSubsets(resolvedRouteState.languages);
 				state$.collectionId.set(resolvedRouteState.collection ?? null);
 
 				const state = {
@@ -153,9 +157,8 @@ const routing = (
 					// RefinementList facets
 					refinementList: {
 						...(subsets?.length ? { subsets } : {}),
-						classifications:
-							parseSubsets(resolvedRouteState.classifications) ?? [],
-						languageIds: parseSubsets(resolvedRouteState.languages) ?? [],
+						...(classifications?.length ? { classifications } : {}),
+						...(languageIds?.length ? { languageIds } : {}),
 					},
 					// Menu facets
 					...(resolvedRouteState.category
