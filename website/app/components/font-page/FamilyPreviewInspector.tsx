@@ -84,16 +84,9 @@ const RangeControl = ({
 	return (
 		<div className={classes.rangeControl}>
 			<div className={classes.rangeHeading}>
-				<div className={classes.rangeCopy}>
-					<div className={classes.rangeLabel}>
-						<label htmlFor={`${id}-value`}>{label}</label>
-						{tag && <code>{tag}</code>}
-					</div>
-					{description && (
-						<p id={descriptionId} className={classes.controlDescription}>
-							{description}
-						</p>
-					)}
+				<div className={classes.rangeLabel}>
+					<label htmlFor={`${id}-value`}>{label}</label>
+					{tag && <code>{tag}</code>}
 				</div>
 				{fixed ? (
 					<output
@@ -125,6 +118,11 @@ const RangeControl = ({
 							if (typeof nextValue === 'number') setValue(nextValue);
 						}}
 					/>
+				)}
+				{description && (
+					<p id={descriptionId} className={classes.controlDescription}>
+						{description}
+					</p>
 				)}
 			</div>
 			{!fixed && (
@@ -599,13 +597,15 @@ const PreviewInspector = observer(
 						/>
 					</div>
 				)}
-				{activeSection === 'typography' && (
-					<PreviewTypographyControls idPrefix={idPrefix} />
-				)}
-				{activeSection === 'axes' && (
-					<PreviewAxisControls idPrefix={idPrefix} />
-				)}
-				{activeSection === 'features' && <PreviewFeatureControls />}
+				<div key={activeSection} className={classes.inspectorScroll}>
+					{activeSection === 'typography' && (
+						<PreviewTypographyControls idPrefix={idPrefix} />
+					)}
+					{activeSection === 'axes' && (
+						<PreviewAxisControls idPrefix={idPrefix} />
+					)}
+					{activeSection === 'features' && <PreviewFeatureControls />}
+				</div>
 			</div>
 		);
 	},
