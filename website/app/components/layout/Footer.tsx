@@ -1,12 +1,5 @@
 import type { ActionIconProps, ContainerProps } from '@mantine/core';
-import {
-	ActionIcon,
-	Box,
-	Container,
-	Group,
-	Text,
-	Tooltip,
-} from '@mantine/core';
+import { ActionIcon, Box, Container, Group, Tooltip } from '@mantine/core';
 import { Link } from 'react-router';
 
 import { IconDiscord, IconGithub } from '@/components/icons';
@@ -46,11 +39,9 @@ interface FooterNavLinkProps {
 
 const FooterNavLink = ({ label, to }: FooterNavLinkProps) => {
 	return (
-		<Text>
-			<Link to={to} className={classes.link} prefetch="intent">
-				{label}
-			</Link>
-		</Text>
+		<Link to={to} className={classes.link} prefetch="intent">
+			{label}
+		</Link>
 	);
 };
 
@@ -61,7 +52,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 	return (
 		<Box component="footer" className={classes.header} {...other}>
 			<Container className={classes.inner}>
-				<Link to="/" prefetch="intent">
+				<Link to="/" prefetch="intent" className={classes.logo}>
 					<LogoText height={31} />
 				</Link>
 				<Box className={classes.links} visibleFrom="sm">
