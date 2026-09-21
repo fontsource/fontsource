@@ -142,6 +142,51 @@ const SourceTable = ({
 	</Table>
 );
 
+interface SourceListBodyProps {
+	sources: FontSourceEntry[];
+	onRemove: (id: number) => void;
+	disabled: boolean;
+	expanded: boolean;
+	onToggleExpanded: () => void;
+}
+
+const SourceListBody = ({
+	sources,
+	onRemove,
+	disabled,
+	expanded,
+	onToggleExpanded,
+}: SourceListBodyProps) => {
+	const visibleSources = expanded
+		? sources
+		: sources.slice(0, SOURCE_PREVIEW_LIMIT);
+	const hiddenCount = Math.max(0, sources.length - SOURCE_PREVIEW_LIMIT);
+	const duplicateLabels = buildDuplicateFilenameLabels(sources);
+
+	return (
+		<>
+			<SourceTable
+				sources={visibleSources}
+				duplicateFilenameLabels={duplicateLabels}
+				onRemove={onRemove}
+				disabled={disabled}
+			/>
+			{hiddenCount > 0 && (
+				<Button
+					variant="subtle"
+					size="compact-sm"
+					className={classes.showMore}
+					onClick={onToggleExpanded}
+				>
+					{expanded
+						? 'Show fewer files'
+						: `Show ${hiddenCount} more ${hiddenCount === 1 ? 'file' : 'files'}`}
+				</Button>
+			)}
+		</>
+	);
+};
+
 export const FileList = ({
 	sources,
 	onRemove,
@@ -177,21 +222,17 @@ export const FileList = ({
 					.join(' · ')
 			: undefined;
 	const inspectionState = unreadableCount > 0 ? 'warning' : 'reading';
-	const fullBatchSummary = inspectionSummary ? (
+	// Keep text inside elements that React owns when browser translation replaces it.
+	const fullBatchSummary = (
 		<>
-			{batchSummary} ·{' '}
-			<span className={classes.batchStatus} data-state={inspectionState}>
-				{inspectionSummary}
-			</span>
+			<span>{batchSummary}</span>
+			{inspectionSummary && (
+				<span className={classes.batchStatus} data-state={inspectionState}>
+					{` · ${inspectionSummary}`}
+				</span>
+			)}
 		</>
-	) : (
-		batchSummary
 	);
-	const visibleSources = expanded
-		? sources
-		: sources.slice(0, SOURCE_PREVIEW_LIMIT);
-	const hiddenCount = Math.max(0, sources.length - SOURCE_PREVIEW_LIMIT);
-	const duplicateLabels = buildDuplicateFilenameLabels(sources);
 	const restoreFocus = (hasRemainingSources: boolean) => {
 		requestAnimationFrame(() => {
 			if (hasRemainingSources) {
@@ -209,6 +250,16 @@ export const FileList = ({
 		onClear();
 		restoreFocus(false);
 	};
+
+	const listBody = (
+		<SourceListBody
+			sources={sources}
+			onRemove={removeSource}
+			disabled={disabled}
+			expanded={expanded}
+			onToggleExpanded={() => setExpanded((current) => !current)}
+		/>
+	);
 
 	if (collapsed) {
 		return (
@@ -228,24 +279,7 @@ export const FileList = ({
 							Remove all files
 						</Button>
 					</Group>
-					<SourceTable
-						sources={visibleSources}
-						duplicateFilenameLabels={duplicateLabels}
-						onRemove={removeSource}
-						disabled={disabled}
-					/>
-					{hiddenCount > 0 && (
-						<Button
-							variant="subtle"
-							size="compact-sm"
-							className={classes.showMore}
-							onClick={() => setExpanded((current) => !current)}
-						>
-							{expanded
-								? 'Show fewer files'
-								: `Show ${hiddenCount} more ${hiddenCount === 1 ? 'file' : 'files'}`}
-						</Button>
-					)}
+					{listBody}
 				</Stack>
 			</details>
 		);
@@ -278,24 +312,7 @@ export const FileList = ({
 				</Button>
 			</Group>
 
-			<SourceTable
-				sources={visibleSources}
-				duplicateFilenameLabels={duplicateLabels}
-				onRemove={removeSource}
-				disabled={disabled}
-			/>
-			{hiddenCount > 0 && (
-				<Button
-					variant="subtle"
-					size="compact-sm"
-					className={classes.showMore}
-					onClick={() => setExpanded((current) => !current)}
-				>
-					{expanded
-						? 'Show fewer files'
-						: `Show ${hiddenCount} more ${hiddenCount === 1 ? 'file' : 'files'}`}
-				</Button>
-			)}
+			{listBody}
 		</Stack>
 	);
 };
