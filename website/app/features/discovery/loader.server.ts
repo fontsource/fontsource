@@ -12,7 +12,10 @@ export const loader = async (args: LoaderFunctionArgs) => {
 				: args.params.category
 					? `/categories/${args.params.category}`
 					: '/variable-fonts';
-	const { pages, registry } = await loadDiscoveryData(args.request.signal);
+	const { pages, registry } = await loadDiscoveryData(
+		args.request.signal,
+		pathname,
+	);
 	const page = pages.find((item) => item.path === pathname);
 	if (!page) {
 		throw new Response('Not found', {

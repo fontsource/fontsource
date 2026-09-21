@@ -1,4 +1,5 @@
 import { expect, it, vi } from 'vitest';
+import { listFontValues } from '@/generated/api';
 import { loadDiscoveryData } from './discovery.server';
 
 vi.mock('@/generated/api', () => ({
@@ -43,3 +44,22 @@ it('does not count unpublished registry families toward discovery indexing', asy
 		}),
 	]);
 });
+
+it.each([
+	['/tags/serif/modern', ['category']],
+	['/categories/serif', ['category']],
+	['/languages/latin', ['subsets', 'category']],
+	['/variable-fonts', ['category', 'variable']],
+	[undefined, ['subsets', 'category', 'variable']],
+] as const)(
+	'loads only necessary catalog projections for %s',
+	async (pathname, fields) => {
+		vi.mocked(listFontValues).mockClear();
+		await loadDiscoveryData(undefined, pathname);
+		expect(
+			vi
+				.mocked(listFontValues)
+				.mock.calls.map(([query]) => Object.keys(query ?? {})[0]),
+		).toEqual(fields);
+	},
+);

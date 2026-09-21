@@ -30,12 +30,20 @@ export type DiscoveryRegistry = {
 	taxonomy: GetRegistryTaxonomyResponse;
 };
 
-export const loadDiscoveryData = async (signal?: AbortSignal) => {
+export const loadDiscoveryData = async (
+	signal?: AbortSignal,
+	pathname?: string,
+) => {
+	// Browse and the sitemap need every projection; a landing page only needs its own.
 	const [subsets, categories, variable, families, taxonomy] = await Promise.all(
 		[
-			listFontValues({ subsets: '' }, { signal }),
+			!pathname || pathname.startsWith('/languages/')
+				? listFontValues({ subsets: '' }, { signal })
+				: {},
 			listFontValues({ category: '' }, { signal }),
-			listFontValues({ variable: '' }, { signal }),
+			!pathname || pathname === '/variable-fonts'
+				? listFontValues({ variable: '' }, { signal })
+				: {},
 			listRegistryFamilies({ signal }),
 			getRegistryTaxonomy({ signal }),
 		],
