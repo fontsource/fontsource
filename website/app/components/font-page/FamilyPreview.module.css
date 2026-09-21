@@ -655,16 +655,19 @@
 	position: sticky;
 	inset-block-start: 0;
 	z-index: 10;
-	padding: 18px 20px;
+	min-height: 56px;
+	display: flex;
+	align-items: center;
+	padding: 12px 20px;
 	border-bottom: var(--preview-border);
 	background: var(--preview-surface);
 }
 
 .inspectorSectionChooser {
 	position: sticky;
-	inset-block-start: 72px;
+	inset-block-start: 56px;
 	z-index: 9;
-	padding: 14px 20px 0;
+	padding: 16px 20px;
 	background: var(--preview-surface);
 }
 
@@ -710,9 +713,11 @@
 .inspectorHeading h2 {
 	font-size: var(--preview-type-title);
 	font-weight: 650;
+	line-height: 24px;
 }
 
 .sectionHeading span {
+	display: block;
 	margin-top: 2px;
 	color: var(--preview-text-muted);
 	font-size: var(--preview-type-micro);
@@ -726,16 +731,18 @@
 	gap: 6px;
 	padding: 0;
 	border: 0;
-	color: var(--mantine-color-purple-0);
+	color: var(--preview-text-muted);
 	background: transparent;
 	font: inherit;
 	font-size: var(--preview-type-label);
-	font-weight: 650;
+	font-weight: 500;
+	white-space: nowrap;
 	cursor: pointer;
 	transition: color 120ms ease;
 }
 
 .sectionHeading button:not(:disabled):hover {
+	color: var(--mantine-color-purple-0);
 	text-decoration: underline;
 	text-underline-offset: 3px;
 }
@@ -754,11 +761,11 @@
 	box-sizing: border-box;
 	display: grid;
 	gap: 20px;
-	margin: 16px 20px 20px;
-	padding: 20px;
-	border: var(--preview-border);
-	border-radius: var(--mantine-radius-sm);
-	background: var(--preview-surface);
+	margin: 16px 20px 24px;
+}
+
+.inspectorSectionChooser + .inspectorSection {
+	margin-block-start: 0;
 }
 
 .sectionHeading {
@@ -777,10 +784,16 @@
 }
 
 .rangeHeading {
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	gap: 16px;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 4px 16px;
+}
+
+.rangeHeading > .controlDescription {
+	grid-column: 1 / -1;
+	max-width: none;
+	margin: 0;
 }
 
 .rangeCopy {
@@ -1092,7 +1105,7 @@
 
 .drawerHeader {
 	min-height: 56px;
-	padding-inline: 20px;
+	padding: 4px 20px;
 	border-bottom: var(--preview-border);
 	background: inherit;
 }
@@ -1112,11 +1125,11 @@
 }
 
 .drawerBody .inspectorSection {
-	margin: 16px 0 0;
+	margin: 0;
 }
 
 .drawerBody .inspectorSectionChooser {
-	inset-block-start: 0;
+	inset-block-start: 56px;
 	padding: 0 0 16px;
 }
 
