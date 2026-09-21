@@ -298,7 +298,9 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 						</div>
 
 						<details className={classes.advanced}>
-							<summary>Output settings</summary>
+							<summary>
+								<span>Output settings</span>
+							</summary>
 							<Stack gap="md" className={classes.advancedContent}>
 								<Checkbox
 									label="Include WOFF fallback"
@@ -342,6 +344,12 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 											<TextInput
 												label="CSS font path"
 												description="Prepended to font URLs in index.css."
+												inputWrapperOrder={[
+													'label',
+													'input',
+													'description',
+													'error',
+												]}
 												value={workbench.output.path}
 												classNames={{ description: classes.supportingText }}
 												disabled={workbench.isSessionProcessing}

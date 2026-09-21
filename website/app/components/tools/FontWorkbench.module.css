@@ -98,6 +98,10 @@
 	font-weight: 600;
 }
 
+.advanced summary span {
+	margin-inline-start: var(--mantine-spacing-xs);
+}
+
 .advancedContent {
 	padding-top: var(--mantine-spacing-md);
 }
