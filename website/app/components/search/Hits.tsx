@@ -8,7 +8,6 @@ import {
 	Text,
 	VisuallyHidden,
 } from '@mantine/core';
-import { useMounted, useViewportSize } from '@mantine/hooks';
 import {
 	useWindowVirtualizer,
 	type VirtualItem,
@@ -23,6 +22,7 @@ import {
 	useMemo,
 	useRef,
 	useState,
+	useSyncExternalStore,
 } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
 
@@ -76,6 +76,15 @@ const hitsCache: InfiniteHitsCache<AlgoliaMetadata> = {
 	},
 };
 let cachedMeasurements: { key: string; rows: VirtualItem[] } | undefined;
+
+const subscribeToViewport = (onChange: () => void) => {
+	window.addEventListener('resize', onChange);
+	window.addEventListener('orientationchange', onChange);
+	return () => {
+		window.removeEventListener('resize', onChange);
+		window.removeEventListener('orientationchange', onChange);
+	};
+};
 type Display = 'grid' | 'list';
 interface LoadingPlaceholderProps {
 	display: Display;
@@ -210,9 +219,14 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
-	const mounted = useMounted();
+	// Match SSR during hydration, but virtualize immediately on client navigation.
+	const viewportWidth = useSyncExternalStore(
+		subscribeToViewport,
+		() => window.innerWidth,
+		() => 0,
+	);
+	const mounted = viewportWidth > 0;
 	const [scrollMargin, setScrollMargin] = useState(0);
-	const { width: viewportWidth } = useViewportSize();
 	const columns =
 		display === 'list'
 			? 1
@@ -271,7 +285,7 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 	const showLoadingRow = !isLastPage && items.length > 0;
 	const virtualRowCount = rows.length + (showLoadingRow ? 1 : 0);
 	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${size}:${previewValue}`;
-	const previousMeasurementKey = useRef<string | null>(null);
+	const previousMeasurementKey = useRef(measurementKey);
 	const rowVirtualizer = useWindowVirtualizer<HTMLDivElement>({
 		count: mounted ? virtualRowCount : 0,
 		enabled: mounted,
@@ -311,10 +325,7 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 
 	useLayoutEffect(() => {
 		if (!mounted) return;
-		if (
-			previousMeasurementKey.current !== null &&
-			previousMeasurementKey.current !== measurementKey
-		) {
+		if (previousMeasurementKey.current !== measurementKey) {
 			rowVirtualizer.measure();
 		}
 		previousMeasurementKey.current = measurementKey;
