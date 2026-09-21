@@ -23,6 +23,7 @@ const Icon = ({ label, icon, href, ...others }: IconProps) => {
 				target="_blank"
 				rel="noreferrer"
 				variant="transparent"
+				size={40}
 				aria-label={label}
 				{...others}
 			>
