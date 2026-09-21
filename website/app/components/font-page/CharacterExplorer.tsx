@@ -145,8 +145,7 @@ const getCodePoints = (characters: string) =>
 const isCombiningMark = (character: string) => /^\p{M}+$/u.test(character);
 
 const getCharacterName = (character: string) =>
-	(isCombiningMark(character) ? 'Combining mark' : undefined) ??
-	(character.length === 1 ? `Character ${character}` : character);
+	isCombiningMark(character) ? 'Combining mark' : 'Character';
 
 const getDisplayCharacter = (character?: string) =>
 	character && isCombiningMark(character) ? `◌${character}` : character;
@@ -182,11 +181,6 @@ const emptyCharacterGroups = {
 	symbols: [],
 } as const;
 
-const getExactCharacterGroups = (
-	capabilities: GetRegistrySourceCapabilitiesResponse,
-	includePrivateUse: boolean,
-) => getRegistryCharacterGroups(capabilities, includePrivateUse);
-
 export const CharacterExplorer = ({
 	metadata,
 	registry,
@@ -214,10 +208,8 @@ export const CharacterExplorer = ({
 	useEffect(() => {
 		// Unicode category data is runtime-owned. Resolve after hydration so Node
 		// and browsers with different Unicode versions cannot disagree during SSR.
-		setResolvedCharacterGroups(
-			getExactCharacterGroups(capabilities, catalogExpected),
-		);
-	}, [capabilities, catalogExpected]);
+		setResolvedCharacterGroups(getRegistryCharacterGroups(capabilities));
+	}, [capabilities]);
 	const symbolEntries = useMemo(
 		() => mappedSymbols?.map(getSymbolSearchKey) ?? [],
 		[mappedSymbols],
@@ -707,7 +699,7 @@ export const CharacterExplorer = ({
 														type="button"
 														aria-label={
 															catalogEntry
-																? `${getCharacterName(getSymbolName(character))}${hasNamedLigatures ? `, name ligature ${getSymbolName(character)}` : ''}${symbolLabel}`
+																? `${getSymbolName(character)}${hasNamedLigatures ? `, name ligature ${getSymbolName(character)}` : ''}${symbolLabel}`
 																: `${getCharacterName(character)}, ${getCodePoints(character)}${isCombiningMark(character) ? `, previewed on ${markPreviewBase.trim() || 'a spacing guide'}` : ''}`
 														}
 														aria-pressed={activeCharacter === character}
