@@ -15,8 +15,9 @@ export const meta: MetaFunction = () =>
 const sections = [
 	{ href: '#requests', label: 'Website, API, and CDN' },
 	{ href: '#search', label: 'Search' },
-	{ href: '#advertising', label: 'Advertising' },
 	{ href: '#browser-storage', label: 'Browser storage' },
+	{ href: '#analytics', label: 'Analytics' },
+	{ href: '#advertising', label: 'Advertising' },
 	{ href: '#contact', label: 'Contact' },
 	{ href: '#changes', label: 'Changes' },
 ];
@@ -47,27 +48,14 @@ export default function PrivacyPage() {
 		<>
 			<ContentHeader
 				title="Privacy Policy"
-				description={
-					<>
-						Fontsource is an{' '}
-						<Anchor
-							href="https://github.com/fontsource/fontsource"
-							target="_blank"
-							rel="noreferrer"
-							inherit
-						>
-							open-source
-						</Anchor>{' '}
-						project for self-hostable fonts.
-					</>
-				}
+				description="How Fontsource approaches privacy across its website and services."
 			/>
 			<Container className={classes.container}>
 				<Box className={classes.layout}>
 					<Box component="aside" className={classes.sidebar}>
 						<Box className={classes.updated}>
 							<Text className={classes.label}>Last updated</Text>
-							<Text className={classes.date}>July 25, 2026</Text>
+							<Text className={classes.date}>September 21, 2026</Text>
 						</Box>
 
 						<Box component="nav" aria-label="Privacy policy sections">
@@ -103,10 +91,10 @@ export default function PrivacyPage() {
 							title="Website, API, and CDN requests"
 						>
 							<Text>
-								Fontsource uses Cloudflare to deliver and protect its website
-								and API, and partners with jsDelivr to provide its public CDN.
-								These providers may process technical information needed to
-								provide those services. You can read the{' '}
+								We use Cloudflare for our website and API, and Cloudflare and
+								jsDelivr for our public CDN. These providers may process
+								technical information to deliver and protect these services. You
+								can read the{' '}
 								<Anchor
 									href="https://www.cloudflare.com/privacypolicy/"
 									target="_blank"
@@ -125,17 +113,15 @@ export default function PrivacyPage() {
 								.
 							</Text>
 							<Text>
-								Using the Fontsource public CDN causes browsers to connect to
-								jsDelivr and the services it uses to deliver files. Installing
-								and self-hosting Fontsource packages avoids those CDN requests.
+								Using our public CDN sends font requests to these providers.
+								Self-hosting Fontsource packages avoids these requests.
 							</Text>
 						</PolicySection>
 
 						<PolicySection id="search" number="02" title="Search">
 							<Text>
-								Fontsource uses Algolia to provide catalogue search. Algolia may
-								process information needed to return search results. You can
-								read the{' '}
+								We send your search terms and filters to Algolia to find
+								matching fonts. You can read the{' '}
 								<Anchor
 									href="https://www.algolia.com/policies/privacy"
 									target="_blank"
@@ -147,11 +133,50 @@ export default function PrivacyPage() {
 							</Text>
 						</PolicySection>
 
-						<PolicySection id="advertising" number="03" title="Advertising">
+						<PolicySection
+							id="browser-storage"
+							number="03"
+							title="Information stored in your browser"
+						>
 							<Text>
-								Some pages may display ads provided by Carbon Ads. Carbon may
-								process information needed to deliver and measure those ads and
-								may use browser storage. You can read the{' '}
+								Your collections and current font set are saved in your browser.
+								You can remove them by clearing Fontsource's site data.
+							</Text>
+							<Text>
+								Our font tools process your files in your browser without
+								uploading them.
+							</Text>
+						</PolicySection>
+
+						<PolicySection id="analytics" number="04" title="Analytics">
+							<Text>
+								We use PostHog to see which pages people visit, how they use the
+								site, and where things are slow or break. It also collects
+								browser and device information to help us understand these
+								issues.
+							</Text>
+							<Text>
+								PostHog uses your IP address and browser information to create a
+								temporary identifier on its servers. It does not save analytics
+								identifiers in cookies or browser storage.
+							</Text>
+							<Text>
+								We use PostHog's EU hosting. You can read the{' '}
+								<Anchor
+									href="https://posthog.com/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									PostHog Privacy Policy
+								</Anchor>
+								.
+							</Text>
+						</PolicySection>
+
+						<PolicySection id="advertising" number="05" title="Advertising">
+							<Text>
+								Some pages show Carbon Ads. Carbon may collect information and
+								use browser storage to deliver and measure ads. You can read the{' '}
 								<Anchor
 									href="https://www.carbonads.net/privacy"
 									target="_blank"
@@ -163,22 +188,7 @@ export default function PrivacyPage() {
 							</Text>
 						</PolicySection>
 
-						<PolicySection
-							id="browser-storage"
-							number="04"
-							title="Information stored in your browser"
-						>
-							<Text>
-								Fontsource may store information in your browser to support site
-								features. You can remove it by clearing the site's data in your
-								browser.
-							</Text>
-							<Text>
-								Some tools may also process information locally in your browser.
-							</Text>
-						</PolicySection>
-
-						<PolicySection id="contact" number="05" title="Contact">
+						<PolicySection id="contact" number="06" title="Contact">
 							<Text>
 								For privacy questions, email{' '}
 								<Anchor href="mailto:hello@ayuhito.com">
@@ -190,7 +200,7 @@ export default function PrivacyPage() {
 
 						<PolicySection
 							id="changes"
-							number="06"
+							number="07"
 							title="Changes to this policy"
 						>
 							<Text>

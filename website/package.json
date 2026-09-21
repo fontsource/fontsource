@@ -41,6 +41,7 @@
 		"instantsearch.js": "^4.117.0",
 		"isbot": "^5.2.2",
 		"markdown-to-jsx": "^9.10.3",
+		"posthog-js": "^1.434.2",
 		"react": "19.3.0",
 		"react-dom": "19.3.0",
 		"react-instantsearch": "^7.49.1",
