@@ -632,8 +632,17 @@
 
 .inspectorContent {
 	min-width: 0;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
 	block-size: 100%;
 	max-block-size: 100%;
+	overflow: hidden;
+}
+
+.inspectorScroll {
+	min-height: 0;
+	flex: 1;
 	overflow-y: auto;
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
@@ -652,9 +661,7 @@
 }
 
 .inspectorHeading {
-	position: sticky;
-	inset-block-start: 0;
-	z-index: 10;
+	flex-shrink: 0;
 	min-height: 56px;
 	display: flex;
 	align-items: center;
@@ -664,9 +671,7 @@
 }
 
 .inspectorSectionChooser {
-	position: sticky;
-	inset-block-start: 56px;
-	z-index: 9;
+	flex-shrink: 0;
 	padding: 16px 20px;
 	background: var(--preview-surface);
 }
@@ -764,7 +769,7 @@
 	margin: 16px 20px 24px;
 }
 
-.inspectorSectionChooser + .inspectorSection {
+.inspectorSectionChooser + .inspectorScroll .inspectorSection {
 	margin-block-start: 0;
 }
 
@@ -1099,11 +1104,16 @@
 }
 
 .drawerContent {
+	display: flex;
+	flex-direction: column;
 	border-radius: 8px 8px 0 0;
 	background: var(--preview-surface);
+	overflow: hidden;
 }
 
 .drawerHeader {
+	position: static;
+	flex-shrink: 0;
 	min-height: 56px;
 	padding: 4px 20px;
 	border-bottom: var(--preview-border);
@@ -1116,12 +1126,19 @@
 }
 
 .drawerBody {
-	padding: 16px 20px max(24px, env(safe-area-inset-bottom));
+	min-height: 0;
+	flex: 1;
+	display: flex;
+	padding: 16px 20px 0;
 }
 
 .drawerBody .inspectorContent {
-	max-height: none;
-	overflow: visible;
+	block-size: auto;
+	flex: 1;
+}
+
+.drawerBody .inspectorScroll {
+	padding-block-end: max(24px, env(safe-area-inset-bottom));
 }
 
 .drawerBody .inspectorSection {
@@ -1129,7 +1146,6 @@
 }
 
 .drawerBody .inspectorSectionChooser {
-	inset-block-start: 56px;
 	padding: 0 0 16px;
 }
 

@@ -595,13 +595,15 @@ const PreviewInspector = observer(
 						/>
 					</div>
 				)}
-				{activeSection === 'typography' && (
-					<PreviewTypographyControls idPrefix={idPrefix} />
-				)}
-				{activeSection === 'axes' && (
-					<PreviewAxisControls idPrefix={idPrefix} />
-				)}
-				{activeSection === 'features' && <PreviewFeatureControls />}
+				<div key={activeSection} className={classes.inspectorScroll}>
+					{activeSection === 'typography' && (
+						<PreviewTypographyControls idPrefix={idPrefix} />
+					)}
+					{activeSection === 'axes' && (
+						<PreviewAxisControls idPrefix={idPrefix} />
+					)}
+					{activeSection === 'features' && <PreviewFeatureControls />}
+				</div>
 			</div>
 		);
 	},
