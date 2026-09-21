@@ -1,13 +1,21 @@
+import { observable } from '@legendapp/state';
 import { describe, expect, it } from 'vitest';
-
 import type {
 	GetFontResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
+import {
+	getRecommendedPreviewLanguage,
+	getRecommendedPreviewText,
+} from '@/utils/language/language';
 import type { RegistryFamily } from '@/utils/registry';
 
-import { createPreviewEditorSetup } from './FamilyPreviewState';
+import {
+	createPreviewEditorSetup,
+	getActivePreviewText,
+	type PreviewEditorModel,
+} from './FamilyPreviewState';
 
 const metadata = {
 	id: 'example',
@@ -97,57 +105,126 @@ const capabilities = {
 	colorTables: [],
 } satisfies GetRegistrySourceCapabilitiesResponse;
 
-describe('createPreviewEditorSetup', () => {
+const createModel = (family: RegistryFamily = registry): PreviewEditorModel => {
+	const props = {
+		metadata,
+		registry: family,
+		languages,
+		capabilities,
+		capabilitySource: source,
+		previewCSS: '',
+	};
+	const { editorValue, ...setup } = createPreviewEditorSetup(props);
+	return { ...props, ...setup, state$: observable(editorValue) };
+};
+
+describe('preview samples', () => {
 	it.each([false, true])(
-		'preserves curated samples with symbol mode %s',
+		'preserves curated short and long samples with symbol mode %s',
 		(symbols) => {
-			const { editorValue } = createPreviewEditorSetup({
-				metadata,
-				registry: {
-					...registry,
-					sampleText: {
-						short: 'home search',
-						long: 'home search favorite settings',
-					},
-					...(symbols
-						? {
-								symbols: {
-									catalogUrl: '/symbols',
-									inputModes: ['name-ligature' as const],
-								},
-							}
-						: {}),
+			const model = createModel({
+				...registry,
+				sampleText: {
+					short: 'home search',
+					long: 'home search favorite settings',
 				},
-				languages,
-				capabilities,
-				capabilitySource: source,
+				...(symbols
+					? {
+							symbols: {
+								catalogUrl: '/symbols',
+								inputModes: ['name-ligature' as const],
+							},
+						}
+					: {}),
 			});
-			expect(editorValue.selectedLanguageId).toBe('');
-			expect(editorValue.texts).toEqual({
-				headline: 'home search',
-				paragraph: 'home search favorite settings',
-				waterfall: 'home search',
-				compare: 'home search',
-			});
+			expect(getActivePreviewText(model)).toBe('home search');
+			model.state$.mode.set('paragraph');
+			expect(getActivePreviewText(model)).toBe('home search favorite settings');
 		},
 	);
-	it('initializes preview copy from the selected English language', () => {
-		const { editorValue } = createPreviewEditorSetup({
-			metadata,
-			registry,
-			languages,
-			capabilities,
-			capabilitySource: source,
-		});
 
-		expect(editorValue.selectedLanguageId).toBe('en_Latn');
-		expect(editorValue.texts).toEqual({
-			headline: 'English',
-			paragraph: 'English preview text.',
-			waterfall: 'English',
-			compare: 'English',
-		});
+	it('uses the primary script sample even when the package defaults to Latin and English is available', () => {
+		const model = createModel({ ...registry, primaryScript: 'Xsux' });
+		model.languages = [
+			...languages,
+			{
+				id: 'akk_Xsux',
+				language: 'akk',
+				script: 'Xsux',
+				name: 'Akkadian',
+				direction: 'ltr',
+				sampleText: { short: '𒆪𒌋𒀭', long: '𒆪𒌋𒀭𒆷𒈦' },
+			},
+		];
+		const text = getActivePreviewText(model);
+		expect(text).toBe('𒆪𒌋𒀭');
+		expect(text).toBe(
+			getRecommendedPreviewText(
+				{ ...metadata, ...model.registry },
+				'short',
+				model.languages,
+			),
+		);
+		model.state$.typographyByMode.headline.weight.set(700);
+		expect(getActivePreviewText(model)).toBe(text);
 	});
+
+	it('derives direction from the recommended script sample', () => {
+		const arabic = {
+			id: 'ar_Arab',
+			language: 'ar',
+			script: 'Arab',
+			name: 'Arabic',
+			direction: 'rtl' as const,
+			sampleText: { short: 'اختبار' },
+		};
+		const family = { ...registry, primaryScript: 'Arab' };
+		expect(getRecommendedPreviewLanguage(family, [arabic])?.direction).toBe(
+			'rtl',
+		);
+		expect(
+			getRecommendedPreviewText({ ...metadata, ...family }, 'short', [arabic]),
+		).toBe(arabic.sampleText.short);
+	});
+
+	it('keeps mapped glyphs for symbol fonts without a curated specimen', () => {
+		const model = createModel({
+			...registry,
+			symbols: { catalogUrl: '/symbols', inputModes: ['codepoint'] },
+		});
+		model.capabilities = { ...capabilities, unicodeRange: 'U+2600-2602' };
+		expect(getActivePreviewText(model)).toBe('☀☁☂');
+	});
+
+	it('shares custom text across views, preserves empty edits, and returns to the selected sample', () => {
+		const model = createModel();
+		model.state$.selectedLanguageId.set('aa_Latn');
+		expect(getActivePreviewText(model)).toBe('Seehada');
+		model.state$.customText.set('My own text');
+		for (const mode of [
+			'headline',
+			'paragraph',
+			'waterfall',
+			'compare',
+		] as const) {
+			model.state$.mode.set(mode);
+			expect(getActivePreviewText(model)).toBe('My own text');
+		}
+		model.state$.customText.set('');
+		expect(getActivePreviewText(model)).toBe('');
+		model.state$.customText.set(null);
+		model.state$.mode.set('paragraph');
+		expect(getActivePreviewText(model)).toBe('Seehada le karaamat.');
+		model.state$.selectedLanguageId.set('');
+		expect(getActivePreviewText(model)).toBe(
+			getRecommendedPreviewText(
+				{ ...metadata, ...registry },
+				'short',
+				languages,
+			),
+		);
+	});
+
 	it('verifies both samples against the current source while preserving language order', () => {
 		const samples = [
 			{ short: 'A\u2003\u200d\ue000', long: 'A\nA' },

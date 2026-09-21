@@ -8,7 +8,10 @@ import { findUnmappedCharacters, usesNameLigatures } from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
 import { usePreviewEditor } from './FamilyPreviewContext';
-import { getActiveCapabilities } from './FamilyPreviewState';
+import {
+	getActiveCapabilities,
+	getActivePreviewText,
+} from './FamilyPreviewState';
 
 const visibleItemLimit = 6;
 const visibleNameLength = 32;
@@ -30,8 +33,7 @@ const formatUnsupportedCharacters = (characters: string[]) =>
 
 const PreviewCoverage = observer(() => {
 	const model = usePreviewEditor();
-	const mode = useValue(model.state$.mode);
-	const activeText = useValue(model.state$.texts[mode]);
+	const activeText = useValue(() => getActivePreviewText(model));
 	const capabilities = useValue(() => getActiveCapabilities(model));
 	const [text] = useDebouncedValue(activeText, 300);
 	const catalogNames = useMemo(

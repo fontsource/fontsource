@@ -8,27 +8,24 @@ import {
 	useEffect,
 	useMemo,
 } from 'react';
-
+import { useLocation } from 'react-router';
 import type { GetRegistrySourceCapabilitiesResponse } from '@/generated/api';
 import {
 	getFontPreviewFamily,
 	getRegistrySourcePreviewCSS,
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
+import { getRecommendedPreviewText } from '@/utils/language/language';
 import {
 	clamp,
-	createLanguageModeTexts,
 	createPreviewEditorSetup,
 	enabledByDefaultFeatureTags,
 	getActiveAxes,
 	getActiveFeatureTags,
-	getActiveLanguages,
 	getActiveSource,
 	getAdjustableAxes,
 	getAvailableWeights,
-	getPreferredLanguage,
 	getVerifiedLanguages,
-	modeLabels,
 	type PreviewEditorModel,
 	type PreviewEditorProps,
 } from './FamilyPreviewState';
@@ -50,11 +47,9 @@ const PreviewRuntimeEffects = observer(() => {
 	const capabilitiesBySource = useValue(model.state$.capabilitiesBySource);
 	const adjustableAxes = useValue(() => getAdjustableAxes(model));
 	const activeAxes = useValue(() => getActiveAxes(model));
-	const verifiedLanguages = useValue(() => getActiveLanguages(model));
 	const featureTags = useValue(() => getActiveFeatureTags(model));
 	const mode = useValue(model.state$.mode);
 	const weight = useValue(model.state$.typographyByMode[mode].weight);
-	const selectedLanguageId = useValue(model.state$.selectedLanguageId);
 	const hasCachedCapabilities = activeSource
 		? Object.hasOwn(capabilitiesBySource, activeSource.sha256)
 		: false;
@@ -164,60 +159,6 @@ const PreviewRuntimeEffects = observer(() => {
 	}, [activeAxes, mode, model, weight]);
 
 	useEffect(() => {
-		if (
-			activeSource &&
-			(!hasCachedCapabilities ||
-				capabilitiesBySource[activeSource.sha256] === null)
-		) {
-			return;
-		}
-		if (
-			verifiedLanguages.some((language) => language.id === selectedLanguageId)
-		) {
-			return;
-		}
-		// Curated specimens are not language samples, even when their letters map.
-		if (
-			model.familyKind === 'symbols' ||
-			(model.registry.sampleText && !selectedLanguageId)
-		)
-			return;
-		const fallbackLanguage = getPreferredLanguage(
-			verifiedLanguages,
-			model.registry.primaryLanguage,
-		);
-		if (!fallbackLanguage) {
-			model.state$.selectedLanguageId.set('');
-			return;
-		}
-
-		const currentTexts = model.state$.texts.peek();
-		const currentSamples = model.state$.sampleTexts.peek();
-		const nextSamples = createLanguageModeTexts(fallbackLanguage);
-		const nextTexts = Object.fromEntries(
-			modeLabels.map(({ value }) => [
-				value,
-				currentTexts[value] === currentSamples[value]
-					? nextSamples[value]
-					: currentTexts[value],
-			]),
-		) as typeof currentTexts;
-
-		batch(() => {
-			model.state$.selectedLanguageId.set(fallbackLanguage.id);
-			model.state$.texts.set(nextTexts);
-			model.state$.sampleTexts.set(nextSamples);
-		});
-	}, [
-		activeSource,
-		capabilitiesBySource,
-		hasCachedCapabilities,
-		model,
-		selectedLanguageId,
-		verifiedLanguages,
-	]);
-
-	useEffect(() => {
 		const values = model.state$.featureValues.peek();
 		const missing = featureTags.filter((tag) => values[tag] === undefined);
 		if (!missing.length) return;
@@ -265,7 +206,28 @@ const PreviewProvider = ({
 			variable,
 		],
 	);
-	const state$ = useObservable(setup.editorValue);
+	const location = useLocation();
+	const previewText = location.state?.previewText;
+	const language = languages.find(
+		(item) => item.id === location.state?.previewLanguageId,
+	);
+	const recommendedText = getRecommendedPreviewText(
+		{
+			...metadata,
+			...registry,
+			sampleText: language?.sampleText ?? registry.sampleText,
+		},
+		'short',
+		languages,
+	);
+	const state$ = useObservable({
+		...setup.editorValue,
+		selectedLanguageId: language?.id ?? '',
+		customText:
+			typeof previewText === 'string' && previewText !== recommendedText
+				? previewText
+				: null,
+	});
 	const model = useMemo<PreviewEditorModel>(
 		() => ({
 			state$,

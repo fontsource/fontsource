@@ -19,7 +19,6 @@ interface PreviewTextCorpus {
 	};
 	editor: {
 		sampleLengths: Record<PreviewMode, PreviewSampleLength>;
-		defaults: Record<Exclude<PreviewMode, 'compare'>, string>;
 	};
 }
 
@@ -250,12 +249,6 @@ export const previewText: PreviewTextCorpus = {
 			paragraph: 'long',
 			waterfall: 'short',
 			compare: 'short',
-		},
-		defaults: {
-			headline: 'Every letter has\na point of view.',
-			paragraph:
-				'A typeface changes the temperature of a sentence before its meaning has time to settle. Set a few lines, adjust the rhythm, and see an ordinary paragraph find its own voice.',
-			waterfall: 'Sphinx of black quartz',
 		},
 	},
 };
