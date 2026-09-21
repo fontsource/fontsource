@@ -32,7 +32,10 @@ export default function ToolsIndexPage() {
 		<div className={classes.page}>
 			<header className={classes.header}>
 				<h1>Font tools</h1>
-				<p>Convert files or build WOFF2/CSS packages locally.</p>
+				<p>
+					Convert font files or prepare them for your website. Everything runs
+					in your browser.
+				</p>
 			</header>
 			<div className={classes.directory}>
 				{tools.map((tool) => (
