@@ -37,12 +37,8 @@
 }
 
 .dropdowns {
-	flex: 1 1 480px;
+	flex: 0 1 774px;
+	width: 100%;
 	min-width: 0;
 }
 
-@media (max-width: 575px) {
-	.collection {
-		grid-column: 1 / -1;
-	}
-}

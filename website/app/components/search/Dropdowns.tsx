@@ -25,9 +25,11 @@ const selectionLabel = (labels: string[], fallback: string) =>
 const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 	const [query, setQuery] = useState('');
 	const { indexUiState } = useInstantSearch();
-	const { refine } = useRefinementList({
+	const { items, refine } = useRefinementList({
 		attribute: 'languageIds',
 		operator: 'and',
+		limit: 1000,
+		sortBy: ['count:desc', 'name:asc'],
 	});
 	// Keep published subset links as subset filters, rather than guessing a language.
 	const legacy = useRefinementList({
@@ -37,11 +39,13 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 	});
 	const selected = indexUiState.refinementList?.languageIds ?? [];
 	const subsets = indexUiState.refinementList?.subsets ?? [];
+	const counts = new Map(items.map((item) => [item.value, item.count]));
 	const normalizedQuery = query.trim().toLocaleLowerCase();
 	const languageItems = languages.map((language) => ({
 		value: language.id,
 		label: language.preferredName ?? language.name,
 		isRefined: selected.includes(language.id),
+		count: counts.get(language.id),
 		matches: [
 			language.name,
 			language.preferredName,
@@ -49,7 +53,10 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 			language.id,
 		].some((value) => value?.toLocaleLowerCase().includes(normalizedQuery)),
 	}));
-	languageItems.sort((a, b) => a.label.localeCompare(b.label, 'en'));
+	languageItems.sort(
+		(a, b) =>
+			(b.count ?? -1) - (a.count ?? -1) || a.label.localeCompare(b.label, 'en'),
+	);
 	const legacyItems = subsets.map((subset) => ({
 		value: `subset:${subset}`,
 		label: `${subsetToLanguage(subset)} (subset)`,
@@ -60,6 +67,7 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 	return (
 		<DropdownCheckbox
 			label={selectionLabel(labels, 'All languages')}
+			showCount
 			w="100%"
 			dropdownWidth="target"
 			ariaLabel="Languages"

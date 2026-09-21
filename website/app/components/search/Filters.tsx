@@ -90,16 +90,14 @@ const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 			</SimpleGrid>
 			<Box className={classes.filters}>
 				<SimpleGrid
-					cols={{ base: 2, xs: 3 }}
+					cols={{ base: 1, xs: 3 }}
 					spacing="sm"
 					className={classes.dropdowns}
 				>
-					<Box className={classes.collection}>
-						<CollectionFilter
-							onChange={handleCollectionChange}
-							value={collectionId}
-						/>
-					</Box>
+					<CollectionFilter
+						onChange={handleCollectionChange}
+						value={collectionId}
+					/>
 					<CategoriesDropdown taxonomy={taxonomy} />
 					<LanguagesDropdown languages={languages} />
 				</SimpleGrid>
