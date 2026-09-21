@@ -47,6 +47,7 @@ verified source font into the private `fontsource-registry` R2 bucket:
 ~~~text
 registry/sha256/<sha256>
 sources/sha256/<sha256>
+sources/sha256/<source-sha256>/preview-1.woff2
 snapshots/<fontsource-commit>/api/...
 snapshots/<fontsource-commit>/manifest.json
 current.json
@@ -69,6 +70,21 @@ snapshot.
 
 Google font and icon sources can be recovered from their pinned GitHub commit.
 Registry-managed sources must already exist at their content-addressed R2 key.
+
+Archiving also creates full-source WOFF2 previews for sources referenced by a
+distribution. Compression preserves the source's complete character coverage,
+features, and axes; it does not use package subsetting. Previews are read from
+the verified R2 originals, so the same archive command backfills existing
+sources, including registry-managed ones. Existing previews are reused without
+reconversion. The encoding version keeps their URLs immutable.
+
+Family source views advertise `previewUrl` only for these derivatives; original
+`downloadUrl` values are unchanged. All previews must be stored before a new
+snapshot becomes current. Deploy API support before the archive and website
+when possible. CSS retains the original as a second source while deployments
+overlap, and older snapshots without `previewUrl` continue using originals.
+The next archive run publishes the backfill; interrupted runs reuse previews
+already uploaded and leave the current snapshot unchanged.
 
 The workflow needs `REGISTRY_R2_ENDPOINT` and bucket-scoped Object Read & Write
 credentials in `REGISTRY_R2_ACCESS_KEY_ID` and

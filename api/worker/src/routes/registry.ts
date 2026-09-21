@@ -17,6 +17,7 @@ import {
 import type { AppEnv } from '../env';
 import {
 	getRegistrySource,
+	getRegistrySourcePreview,
 	getRegistryView,
 } from '../features/registry/handler';
 import { ErrorResponseSchema } from '../schemas/common';
@@ -216,6 +217,45 @@ export class GetRegistrySourceRoute extends OpenAPIRoute {
 	async handle(c: AppContext) {
 		const data = await this.getValidatedData<typeof this.schema>();
 		return getRegistrySource(c, data.params.sha256);
+	}
+}
+
+export class GetRegistrySourcePreviewRoute extends OpenAPIRoute {
+	schema = {
+		tags: ['Registry'],
+		operationId: 'getRegistrySourcePreview',
+		summary: 'Get a full-coverage WOFF2 source font preview',
+		request: {
+			params: RegistrySourceParamSchema.extend({
+				file: z
+					.string()
+					.regex(/^[1-9][0-9]*\.woff2$/)
+					.describe('Versioned WOFF2 filename'),
+			}),
+		},
+		responses: {
+			'200': {
+				description:
+					'WOFF2 source font preserving all glyphs, features, and axes',
+				content: { 'font/woff2': { schema: z.string() } },
+			},
+			'304': {
+				description: 'Not modified (conditional request)',
+			},
+			'404': {
+				description: 'Registry source preview not found',
+				...contentJson(ErrorResponseSchema),
+			},
+			'502': {
+				description: 'The archived source preview metadata is invalid',
+				...contentJson(ErrorResponseSchema),
+			},
+		},
+	};
+
+	async handle(c: AppContext) {
+		const data = await this.getValidatedData<typeof this.schema>();
+		return getRegistrySourcePreview(c, data.params.sha256, data.params.file);
 	}
 }
 

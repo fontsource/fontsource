@@ -108,3 +108,23 @@ export const getRegistrySource = async (
 
 	return respondWithObject(object, contentType, CACHE_POLICIES.immutable);
 };
+
+export const getRegistrySourcePreview = async (
+	c: Context<AppEnv>,
+	sha256: string,
+	file: string,
+): Promise<Response> => {
+	const object = await c.env.REGISTRY.get(
+		`sources/sha256/${sha256}/preview-${file}`,
+		{ onlyIf: c.req.raw.headers },
+	);
+	if (!object) {
+		throw notFound('Not Found. Registry source preview does not exist.');
+	}
+	if (object.httpMetadata?.contentType !== 'font/woff2') {
+		throw badGateway(
+			'Bad Gateway. Registry source preview metadata is invalid.',
+		);
+	}
+	return respondWithObject(object, 'font/woff2', CACHE_POLICIES.immutable);
+};

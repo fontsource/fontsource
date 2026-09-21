@@ -1,8 +1,7 @@
-import { batch, type ObservableObject } from '@legendapp/state';
+import type { ObservableObject } from '@legendapp/state';
 
 import type {
 	GetFontResponse,
-	GetFontVersionsResponse,
 	GetRegistryFamilySymbolsResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetVariableFontResponse,
@@ -87,10 +86,8 @@ type PreviewEditorState = ObservableObject<PreviewEditorValue>;
 
 interface PreviewEditorProps {
 	metadata: GetFontResponse;
-	staticCSS: string;
+	previewCSS: string;
 	variable?: GetVariableFontResponse;
-	variableCSS?: string;
-	versions: GetFontVersionsResponse;
 	registry: RegistryFamily;
 	languages: ListRegistryLanguagesResponse;
 	axisRegistry?: ListRegistryAxesResponse;
@@ -475,16 +472,6 @@ const resetFeatures = (model: PreviewEditorModel) => {
 	});
 };
 
-const resetStyling = (model: PreviewEditorModel) => {
-	batch(() => {
-		model.state$.typographyByMode.set(
-			cloneTypographyByMode(model.initialTypography),
-		);
-		resetAxes(model);
-		resetFeatures(model);
-	});
-};
-
 export type { PreviewEditorModel, PreviewEditorProps, PreviewInspectorSection };
 export {
 	clamp,
@@ -504,7 +491,6 @@ export {
 	resetAxes,
 	resetCurrentTypography,
 	resetFeatures,
-	resetStyling,
 	typographyMatches,
 	updateCurrentTypography,
 };

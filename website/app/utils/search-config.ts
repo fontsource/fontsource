@@ -111,7 +111,7 @@ const routing = (
 					: routeState;
 			},
 			...(navigate ? { push: (url: string) => void navigate(url) } : {}),
-			cleanUrlOnDispose: !discovery,
+			cleanUrlOnDispose: false,
 		} satisfies Partial<BrowserHistoryArgs<SearchRouteState>>),
 		stateMapping: {
 			stateToRoute(uiState) {

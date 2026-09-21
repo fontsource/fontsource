@@ -32,25 +32,35 @@ export const getRegistrySourcePreviewCSS = (
 	source: RegistrySource,
 	fontFamily = registrySourcePreviewFamily,
 ) => {
-	const format = source.format === 'ttf' ? 'truetype' : 'opentype';
+	const files = [
+		{
+			url: source.downloadUrl,
+			format: source.format === 'ttf' ? 'truetype' : 'opentype',
+		},
+	];
+	// API, snapshot, and website releases can overlap during the backfill.
+	if (source.previewUrl)
+		files.unshift({ url: source.previewUrl, format: 'woff2' });
 	const { fontStyle, fontWeight } = getRegistrySourcePreviewStyle(source);
 	const weight =
 		source.type === 'variable' && typeof source.weight !== 'number'
 			? `${source.weight.min} ${source.weight.max}`
 			: fontWeight;
-	let sourceUrl: string;
+	let sources: string;
 	try {
-		sourceUrl = new URL(
-			source.downloadUrl,
-			'https://api.fontsource.org',
-		).toString();
+		sources = files
+			.map(
+				({ url, format }) =>
+					`url(${JSON.stringify(new URL(url, 'https://api.fontsource.org').toString())}) format("${format}")`,
+			)
+			.join(', ');
 	} catch {
 		return '';
 	}
 
 	return `@font-face {
 	font-family: ${JSON.stringify(fontFamily)};
-	src: url(${JSON.stringify(sourceUrl)}) format("${format}");
+	src: ${sources};
 	font-style: ${fontStyle};
 	font-weight: ${weight};
 	font-display: swap;
@@ -144,11 +154,7 @@ export const getFontPreviewCSS = (
 		styles: metadata.styles,
 		unicodeRange: metadata.unicodeRange,
 	};
-	const staticCSS = generateCSS(cssConfig, {
-		resolver: jsDelivrResolver(metadata.id),
-		display: 'swap',
-	});
-	const variableCSS = variable
+	return variable
 		? generateCSS(
 				{ ...cssConfig, variable: variable.axes },
 				{
@@ -159,7 +165,8 @@ export const getFontPreviewCSS = (
 					display: 'swap',
 				},
 			)
-		: undefined;
-
-	return { staticCSS, variableCSS };
+		: generateCSS(cssConfig, {
+				resolver: jsDelivrResolver(metadata.id),
+				display: 'swap',
+			});
 };

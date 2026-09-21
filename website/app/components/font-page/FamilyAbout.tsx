@@ -38,9 +38,8 @@ import listClasses from './SearchableMetadataList.module.css';
 
 interface FamilyAboutProps {
 	metadata: GetFontResponse;
-	staticCSS: string;
+	previewCSS: string;
 	variable?: GetVariableFontResponse;
-	variableCSS?: string;
 	registry: RegistryFamily;
 	languages: ListRegistryLanguagesResponse;
 	axisRegistry: ListRegistryAxesResponse;
@@ -254,9 +253,8 @@ const SearchableAxisList = ({
 
 export const FamilyAbout = ({
 	metadata,
-	staticCSS,
+	previewCSS,
 	variable,
-	variableCSS,
 	registry,
 	languages,
 	axisRegistry,
@@ -365,7 +363,7 @@ export const FamilyAbout = ({
 		<section className={classes.page} aria-labelledby="about-heading">
 			<style
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-				dangerouslySetInnerHTML={{ __html: variableCSS ?? staticCSS }}
+				dangerouslySetInnerHTML={{ __html: previewCSS }}
 			/>
 
 			<div className={classes.intro}>
