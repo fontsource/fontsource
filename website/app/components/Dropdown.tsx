@@ -6,7 +6,6 @@ import {
 	rem,
 	UnstyledButton,
 } from '@mantine/core';
-import { useDebouncedCallback } from '@mantine/hooks';
 import { memo, useMemo, useState } from 'react';
 
 import { IconCaret } from '@/components/icons';
@@ -30,7 +29,6 @@ interface DropdownProps {
 	noBorder?: boolean;
 	showCount?: boolean;
 	searchable?: boolean;
-	search?: (query: string) => void;
 }
 
 const DropdownSimple = memo(function DropdownSimple({
@@ -95,12 +93,9 @@ const DropdownCheckbox = ({
 	noBorder,
 	refine,
 	showCount,
-	search,
+	searchable = false,
 }: DropdownProps) => {
 	const [searchQuery, setSearchQuery] = useState('');
-	const debouncedSearch = useDebouncedCallback((query: string) => {
-		search?.(query);
-	}, 300);
 	const data = useMemo(
 		() =>
 			items.map(({ label: itemLabel, value }) => ({
@@ -117,23 +112,13 @@ const DropdownCheckbox = ({
 		.filter((item) => item.isRefined)
 		.map((item) => item.value);
 
-	const updateSearch = (query: string) => {
-		setSearchQuery(query);
-		if (query) {
-			debouncedSearch(query);
-		} else {
-			debouncedSearch.cancel();
-			search?.('');
-		}
-	};
-
 	return (
 		<ComboboxPopover
 			multiple
 			data={data}
 			value={selected}
-			searchable={Boolean(search)}
-			searchValue={search ? searchQuery : undefined}
+			searchable={searchable}
+			searchValue={searchQuery}
 			nothingFoundMessage="No matches"
 			withCheckIcon={false}
 			maxDropdownHeight={240}
@@ -142,9 +127,9 @@ const DropdownCheckbox = ({
 				transitionProps: { duration: 100, transition: 'fade' },
 				width: dropdownWidth ?? w ?? rem(250),
 			}}
-			onSearchChange={search ? updateSearch : undefined}
+			onSearchChange={setSearchQuery}
 			onDropdownClose={() => {
-				if (searchQuery) updateSearch('');
+				setSearchQuery('');
 			}}
 			onOptionSubmit={(value) => refine?.(String(value))}
 			renderOption={({ option, checked }) => {
@@ -175,7 +160,7 @@ const DropdownCheckbox = ({
 					className={classes.input}
 					w={w ?? rem(250)}
 					data-no-border={noBorder}
-					disabled={items.length === 0 && !search}
+					disabled={items.length === 0 && !searchable}
 				>
 					<span className={classes.label}>{label}</span>
 					<IconCaret className={classes.caret} aria-hidden="true" />

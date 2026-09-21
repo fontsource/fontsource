@@ -35,11 +35,12 @@ const transformCategories = (items: MenuItem[]): MenuItem[] => {
 };
 
 const LanguagesDropdown = ({ state$ }: LanguagesDropdownProps) => {
-	const { items, refine, searchForItems } = useRefinementList({
+	const { items, refine } = useRefinementList({
 		attribute: 'subsets',
 		operator: 'and',
 		sortBy: ['isRefined', 'count:desc'],
-		limit: 100,
+		// Fetch all subset options for local filtering, including uncommon scripts.
+		limit: 1000,
 		transformItems: transformSubsets,
 	});
 
@@ -74,7 +75,7 @@ const LanguagesDropdown = ({ state$ }: LanguagesDropdownProps) => {
 			items={items}
 			refine={refineLanguage}
 			showCount
-			search={searchForItems}
+			searchable
 		/>
 	);
 };

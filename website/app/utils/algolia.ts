@@ -1,4 +1,4 @@
-const ALGOLIA_CACHE_KEY_PREFIX = 'algolia:ssr';
+const ALGOLIA_CACHE_KEY_PREFIX = 'algolia:ssr:v2';
 
 export const buildAlgoliaCacheKey = (
 	requestUrl: string,
