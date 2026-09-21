@@ -198,13 +198,13 @@ const TagPreview = ({
 	const { ref, entry } = useIntersection<HTMLLIElement>({
 		rootMargin: '200px',
 	});
-	const stylesheetReady = usePreviewStylesheet(
+	const stylesheetStatus = usePreviewStylesheet(
 		`https://cdn.jsdelivr.net/fontsource/css/${specimen?.id}@latest/index.css`,
 		Boolean(specimen && entry?.isIntersecting),
 	);
 	const ready = useIsFontReady(
 		specimen?.family ?? '',
-		Boolean(specimen && stylesheetReady),
+		Boolean(specimen && stylesheetStatus !== 'loading'),
 	);
 	return (
 		<li ref={ref}>
