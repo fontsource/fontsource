@@ -39,6 +39,7 @@ const FontCard = ({
 	const isFontReady = useIsFontReady(font.family, isStylesheetReady);
 
 	useEffect(() => {
+		// Keep loading enabled when a card leaves the viewport mid-request.
 		if (eagerStylesheet || entry?.isIntersecting) {
 			setShouldLoadStylesheet(true);
 		}
