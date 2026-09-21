@@ -54,17 +54,19 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 		label: `${subsetToLanguage(subset)} (subset)`,
 		isRefined: true,
 	}));
-	const labels = [
-		...legacyItems,
-		...languageItems.filter((item) => item.isRefined),
-	].map((item) => item.label);
+	const selectedItems = languageItems.filter((item) => item.isRefined);
+	const labels = [...legacyItems, ...selectedItems].map((item) => item.label);
 	return (
 		<DropdownCheckbox
-			label={selectionLabel(labels, 'All languages')}
+			label={selectionLabel(labels, 'Search all languages')}
 			ariaLabel="Languages"
 			items={[
 				...legacyItems,
-				...languageItems.filter((item) => item.isRefined || item.matches),
+				...selectedItems,
+				// Search the full dictionary, but only render a small result list.
+				...languageItems
+					.filter((item) => !item.isRefined && item.matches)
+					.slice(0, 50),
 			]}
 			refine={(value) =>
 				value.startsWith('subset:')
