@@ -3,7 +3,7 @@ import { RouterContextProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
 import {
-	getRegistryLanguageMembership,
+	getRegistryLanguageIndex,
 	getRegistryTaxonomy,
 	listRegistryFamilies,
 	listRegistryLanguages,
@@ -12,7 +12,7 @@ import { getSearchServerState, loader } from '@/utils/search.server';
 import { createLanguageSearchClient } from './language-facets';
 
 vi.mock('@/generated/api', () => ({
-	getRegistryLanguageMembership: vi.fn().mockResolvedValue({
+	getRegistryLanguageIndex: vi.fn().mockResolvedValue({
 		version: 'a'.repeat(64),
 		families: [],
 		languages: {},
@@ -159,7 +159,7 @@ it('hydrates complete language counts rather than capped Algolia facets', async 
 				hits: [
 					{
 						objectID: 'old-persian',
-						languageMembershipVersion: 'a'.repeat(64),
+						languageIndexVersion: 'a'.repeat(64),
 						family: 'Old Persian',
 						defSubset: 'latin',
 						category: 'sans-serif',
@@ -205,7 +205,7 @@ it('hydrates complete language counts rather than capped Algolia facets', async 
 });
 
 it('keeps collection search available when membership has not been published', async () => {
-	vi.mocked(getRegistryLanguageMembership).mockRejectedValueOnce(
+	vi.mocked(getRegistryLanguageIndex).mockRejectedValueOnce(
 		new Error('snapshot missing'),
 	);
 	const warning = vi.spyOn(console, 'warn').mockImplementation(() => {});
@@ -217,7 +217,7 @@ it('keeps collection search available when membership has not been published', a
 			params: {},
 			context: new RouterContextProvider(),
 		});
-		expect(result.data.languageMembership).toBeNull();
+		expect(result.data.languageIndex).toBeNull();
 		expect(result.data.hasCollectionFilter).toBe(true);
 		expect(warning).toHaveBeenCalledOnce();
 	} finally {

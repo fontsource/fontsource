@@ -1,13 +1,13 @@
 import type { SearchClient, SearchOptions } from 'instantsearch.js';
 import { describe, expect, it, vi } from 'vitest';
 
-import type { GetRegistryLanguageMembershipResponse } from '@/generated/api';
+import type { GetRegistryLanguageIndexResponse } from '@/generated/api';
 import { createLanguageSearchClient } from './language-facets';
 
 const response = (ids: string[], nbHits = ids.length) => ({
 	hits: ids.map((objectID) => ({
 		objectID,
-		languageMembershipVersion: 'a'.repeat(64),
+		languageIndexVersion: 'a'.repeat(64),
 	})),
 	nbHits,
 	nbPages: 1,
@@ -25,7 +25,7 @@ const request = (params: SearchOptions = {}) => [
 	},
 ];
 
-const membership = {
+const languageIndex = {
 	version: 'a'.repeat(64),
 	families: ['a', 'b', 'c'],
 	languages: { en_Latn: 'Aw==', peo_Xpeo: 'BA==', missing: 'AA==' },
@@ -33,7 +33,7 @@ const membership = {
 
 const clientWith = (
 	search: ReturnType<typeof vi.fn>,
-	index: GetRegistryLanguageMembershipResponse = membership,
+	index: GetRegistryLanguageIndexResponse = languageIndex,
 ) => createLanguageSearchClient({ search } as unknown as SearchClient, index);
 
 describe('complete language facets', () => {
@@ -45,8 +45,8 @@ describe('complete language facets', () => {
 			.fn()
 			.mockResolvedValue({ results: [response(['a', 'b', 'c'])] });
 		const result = await clientWith(search, {
-			...membership,
-			languages: { ...languages, ...membership.languages },
+			...languageIndex,
+			languages: { ...languages, ...languageIndex.languages },
 		}).search(request());
 		expect(result.results[0]).toMatchObject({
 			facets: {
@@ -91,7 +91,7 @@ describe('complete language facets', () => {
 			],
 		};
 		const result = await clientWith(search, {
-			version: membership.version,
+			version: languageIndex.version,
 			families,
 			languages: { en_Latn: bits.toString('base64') },
 		}).search(request(params));
@@ -109,7 +109,7 @@ describe('complete language facets', () => {
 					page: 0,
 					hitsPerPage: 500,
 					facets: [],
-					attributesToRetrieve: ['objectID', 'languageMembershipVersion'],
+					attributesToRetrieve: ['objectID', 'languageIndexVersion'],
 					analytics: false,
 					clickAnalytics: false,
 					removeWordsIfNoResults: 'none',
@@ -180,7 +180,7 @@ describe('complete language facets', () => {
 		for (const version of [undefined, 'b'.repeat(64)]) {
 			const stale = {
 				...original,
-				hits: [{ objectID: 'a', languageMembershipVersion: version }],
+				hits: [{ objectID: 'a', languageIndexVersion: version }],
 			};
 			const search = vi.fn().mockResolvedValue({ results: [stale] });
 			expect((await clientWith(search).search(request())).results[0]).toEqual(
@@ -197,8 +197,8 @@ describe('complete language facets', () => {
 					{
 						...response(['a', 'b']),
 						hits: [
-							{ objectID: 'a', languageMembershipVersion: 'b'.repeat(64) },
-							{ objectID: 'b', languageMembershipVersion: membership.version },
+							{ objectID: 'a', languageIndexVersion: 'b'.repeat(64) },
+							{ objectID: 'b', languageIndexVersion: languageIndex.version },
 						],
 					},
 				],

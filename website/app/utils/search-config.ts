@@ -10,13 +10,13 @@ import {
 	createSearchState,
 	type SearchState,
 } from '@/components/search/observables';
-import type { GetRegistryLanguageMembershipResponse } from '@/generated/api';
+import type { GetRegistryLanguageIndexResponse } from '@/generated/api';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 
 export interface SearchProps extends SearchFacets {
-	languageMembership: GetRegistryLanguageMembershipResponse | null;
+	languageIndex: GetRegistryLanguageIndexResponse | null;
 	previews: Record<string, FontPreview>;
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
@@ -41,7 +41,7 @@ const attributesToRetrieve = [
 	'defSubset',
 	'category',
 	'variable',
-	'languageMembershipVersion',
+	'languageIndexVersion',
 ];
 
 const searchClient: SearchClient = algoliasearch(

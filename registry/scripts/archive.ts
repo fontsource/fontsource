@@ -16,7 +16,7 @@ import {
 	RegistryTaxonomySchema,
 } from '../../api/shared/registry.ts';
 import { assertGitPathClean, getGitRevision } from './git.ts';
-import { createLanguageMembership } from './language-membership.ts';
+import { createLanguageIndex } from './language-index.ts';
 import { putCurrentObject, putObject, putSourcePreview } from './r2.ts';
 import {
 	archiveManifestSchema,
@@ -414,8 +414,8 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			RegistryLanguagesSchema.parse(languageSummaries),
 		),
 		createJsonFile(
-			'language-membership.json',
-			createLanguageMembership(familyLanguages, Object.keys(languages)),
+			'language-index.json',
+			createLanguageIndex(familyLanguages, Object.keys(languages)),
 		),
 		createJsonFile('axes.json', RegistryAxesSchema.parse(axes)),
 		createJsonFile('taxonomy.json', RegistryTaxonomySchema.parse(taxonomy)),

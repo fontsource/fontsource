@@ -13,7 +13,7 @@ import {
 import {
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
-	RegistryLanguageMembershipSchema,
+	RegistryLanguageIndexSchema,
 	RegistrySourceCapabilitiesSchema,
 } from '../../api/shared/registry.ts';
 
@@ -149,7 +149,7 @@ describe('registry source archive', () => {
 			'families/noto-color-emoji-compat-test.json',
 			'families/yakuhanjp.json',
 			'languages.json',
-			'language-membership.json',
+			'language-index.json',
 		]);
 		let manifest: unknown;
 		let current: unknown;
@@ -255,7 +255,7 @@ describe('registry source archive', () => {
 					path: 'families/material-icons/symbols.json',
 				}),
 				expect.objectContaining({ path: 'languages.json' }),
-				expect.objectContaining({ path: 'language-membership.json' }),
+				expect.objectContaining({ path: 'language-index.json' }),
 				expect.objectContaining({ path: 'taxonomy.json' }),
 			]),
 		});
@@ -475,8 +475,8 @@ describe('registry source archive', () => {
 		});
 		expect(abelSummary).not.toHaveProperty('languages');
 		expect(abelSummary).not.toHaveProperty('variable');
-		const membership = RegistryLanguageMembershipSchema.parse(
-			views.get('language-membership.json'),
+		const membership = RegistryLanguageIndexSchema.parse(
+			views.get('language-index.json'),
 		);
 		expect(membership.families).toEqual(
 			familyCatalog?.map(({ id }) => id).sort(),

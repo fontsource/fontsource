@@ -1151,14 +1151,14 @@ export type ListRegistryLanguagesResponses = {
 
 export type ListRegistryLanguagesResponse = ListRegistryLanguagesResponses[keyof ListRegistryLanguagesResponses];
 
-export type GetRegistryLanguageMembershipData = {
+export type GetRegistryLanguageIndexData = {
     body?: never;
     path?: never;
     query?: never;
-    url: '/v1/registry/language-membership';
+    url: '/v1/registry/language-index';
 };
 
-export type GetRegistryLanguageMembershipErrors = {
+export type GetRegistryLanguageIndexErrors = {
     /**
      * The current registry snapshot is unavailable or incomplete
      */
@@ -1174,9 +1174,9 @@ export type GetRegistryLanguageMembershipErrors = {
     };
 };
 
-export type GetRegistryLanguageMembershipError = GetRegistryLanguageMembershipErrors[keyof GetRegistryLanguageMembershipErrors];
+export type GetRegistryLanguageIndexError = GetRegistryLanguageIndexErrors[keyof GetRegistryLanguageIndexErrors];
 
-export type GetRegistryLanguageMembershipResponses = {
+export type GetRegistryLanguageIndexResponses = {
     /**
      * Registry data from the current snapshot
      */
@@ -1198,7 +1198,7 @@ export type GetRegistryLanguageMembershipResponses = {
     };
 };
 
-export type GetRegistryLanguageMembershipResponse = GetRegistryLanguageMembershipResponses[keyof GetRegistryLanguageMembershipResponses];
+export type GetRegistryLanguageIndexResponse = GetRegistryLanguageIndexResponses[keyof GetRegistryLanguageIndexResponses];
 
 export type ListRegistrySubsetsData = {
     body?: never;

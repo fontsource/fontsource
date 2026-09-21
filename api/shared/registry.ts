@@ -288,7 +288,7 @@ const RegistryLanguageSchema = z.strictObject({
 
 export const RegistryLanguagesSchema = z.array(RegistryLanguageSchema);
 
-export const RegistryLanguageMembershipSchema = z
+export const RegistryLanguageIndexSchema = z
 	.strictObject({
 		version: Sha256Schema.describe(
 			'Fingerprint of sorted family IDs and their sorted language IDs',

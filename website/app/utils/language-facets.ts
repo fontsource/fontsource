@@ -5,7 +5,7 @@ import type {
 	SearchResponses,
 } from 'instantsearch.js';
 
-import type { GetRegistryLanguageMembershipResponse } from '@/generated/api';
+import type { GetRegistryLanguageIndexResponse } from '@/generated/api';
 
 // Stay below Algolia's pagination and combined-filter limits.
 const BATCH_SIZE = 500;
@@ -19,12 +19,12 @@ const isSearchResponse = <T>(
 
 export const createLanguageSearchClient = (
 	client: SearchClient,
-	membership: GetRegistryLanguageMembershipResponse,
+	languageIndex: GetRegistryLanguageIndexResponse,
 ): SearchClient => {
-	const positions = new Map(
-		membership.families.map((id, index) => [id, index]),
+	const familyPositions = new Map(
+		languageIndex.families.map((id, index) => [id, index]),
 	);
-	const languages = Object.entries(membership.languages).map(
+	const languageBits = Object.entries(languageIndex.languages).map(
 		([id, encoded]) =>
 			[
 				id,
@@ -33,14 +33,16 @@ export const createLanguageSearchClient = (
 	);
 
 	const countLanguages = (ids: Set<string>) => {
-		const matches = new Uint8Array(Math.ceil(membership.families.length / 8));
+		const matches = new Uint8Array(
+			Math.ceil(languageIndex.families.length / 8),
+		);
 		for (const id of ids) {
-			const index = positions.get(id);
+			const index = familyPositions.get(id);
 			if (index === undefined) return undefined;
 			matches[index >> 3] |= 1 << (index & 7);
 		}
 		return Object.fromEntries(
-			languages.map(([id, bits]) => {
+			languageBits.map(([id, bits]) => {
 				let count = 0;
 				for (let index = 0; index < matches.length; index++) {
 					let byte = matches[index] & bits[index];
@@ -54,7 +56,7 @@ export const createLanguageSearchClient = (
 		);
 	};
 
-	const completeCounts = async <T>(
+	const getLanguageCounts = async <T>(
 		indexName: string,
 		params: SearchOptions,
 		result: SearchResponse<T> & { nbHits: number },
@@ -67,20 +69,20 @@ export const createLanguageSearchClient = (
 		if (
 			result.hits.some(
 				(hit) =>
-					!('languageMembershipVersion' in hit) ||
-					hit.languageMembershipVersion !== membership.version,
+					!('languageIndexVersion' in hit) ||
+					hit.languageIndexVersion !== languageIndex.version,
 			)
 		)
 			return undefined;
 		let ids = new Set(result.hits.map((hit) => hit.objectID));
 		if (ids.size !== result.nbHits) {
-			const matchParams: SearchOptions = {
+			const idParams: SearchOptions = {
 				...params,
 				removeWordsIfNoResults: 'none',
 				page: 0,
 				hitsPerPage: 1000,
 				facets: [],
-				attributesToRetrieve: ['objectID', 'languageMembershipVersion'],
+				attributesToRetrieve: ['objectID', 'languageIndexVersion'],
 				attributesToHighlight: [],
 				attributesToSnippet: [],
 				analytics: false,
@@ -88,21 +90,21 @@ export const createLanguageSearchClient = (
 			};
 			const requests = [];
 			if (result.nbHits <= 1000) {
-				requests.push({ indexName, params: matchParams });
+				requests.push({ indexName, params: idParams });
 			} else {
 				for (
 					let offset = 0;
-					offset < membership.families.length;
+					offset < languageIndex.families.length;
 					offset += BATCH_SIZE
 				) {
-					const filter = membership.families
+					const filter = languageIndex.families
 						.slice(offset, offset + BATCH_SIZE)
 						.map((id) => `objectID:${JSON.stringify(id)}`)
 						.join(' OR ');
 					requests.push({
 						indexName,
 						params: {
-							...matchParams,
+							...idParams,
 							hitsPerPage: BATCH_SIZE,
 							filters: params.filters
 								? `(${params.filters}) AND (${filter})`
@@ -121,8 +123,8 @@ export const createLanguageSearchClient = (
 							true ||
 						response.hits.some(
 							(hit) =>
-								!('languageMembershipVersion' in hit) ||
-								hit.languageMembershipVersion !== membership.version,
+								!('languageIndexVersion' in hit) ||
+								hit.languageIndexVersion !== languageIndex.version,
 						),
 				)
 			)
@@ -151,12 +153,14 @@ export const createLanguageSearchClient = (
 						!params.facets?.includes('languageIds')
 					)
 						return result;
-					const counts = await completeCounts(indexName, params, result).catch(
-						() => {
-							console.warn('Unable to complete language facet counts');
-							return undefined;
-						},
-					);
+					const counts = await getLanguageCounts(
+						indexName,
+						params,
+						result,
+					).catch(() => {
+						console.warn('Unable to complete language facet counts');
+						return undefined;
+					});
 					return counts
 						? { ...result, facets: { ...result.facets, languageIds: counts } }
 						: result;

@@ -89,14 +89,14 @@ export function CatalogSearchPage() {
 		previews,
 		languages,
 		taxonomy,
-		languageMembership,
+		languageIndex,
 	} = useLoaderData<SearchProps>();
 	const languageSearchClient = useMemo(
 		() =>
-			languageMembership
-				? createLanguageSearchClient(searchClient, languageMembership)
+			languageIndex
+				? createLanguageSearchClient(searchClient, languageIndex)
 				: searchClient,
-		[languageMembership],
+		[languageIndex],
 	);
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);

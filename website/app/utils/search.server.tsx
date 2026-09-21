@@ -16,7 +16,7 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import {
-	getRegistryLanguageMembership,
+	getRegistryLanguageIndex,
 	getRegistryTaxonomy,
 	listRegistryFamilies,
 	listRegistryLanguages,
@@ -81,12 +81,12 @@ export const loadSearch = async (
 	facets: SearchFacets,
 	discovery?: DiscoveryPage,
 ) => {
-	const languageMembership = await getRegistryLanguageMembership({
+	const languageIndex = await getRegistryLanguageIndex({
 		signal: request.signal,
 	}).catch((error: unknown) => {
 		if (request.signal.aborted) throw error;
 		console.warn(
-			'Registry language membership is unavailable; using Algolia facets',
+			'Registry language index is unavailable; using Algolia facets',
 		);
 		return null;
 	});
@@ -131,7 +131,7 @@ export const loadSearch = async (
 				hasCollectionFilter,
 				serverUrl,
 				previews,
-				languageMembership,
+				languageIndex,
 				...facets,
 			},
 			{ headers: cacheHeaders.short },
@@ -154,7 +154,7 @@ export const loadSearch = async (
 				serverState,
 				serverUrl,
 				previews,
-				languageMembership,
+				languageIndex,
 				...facets,
 			},
 			{
@@ -167,8 +167,8 @@ export const loadSearch = async (
 		serverUrl,
 		facets,
 		discovery,
-		languageMembership
-			? createLanguageSearchClient(searchClient, languageMembership)
+		languageIndex
+			? createLanguageSearchClient(searchClient, languageIndex)
 			: searchClient,
 		previews,
 	);
@@ -189,7 +189,7 @@ export const loadSearch = async (
 			serverState,
 			serverUrl,
 			previews,
-			languageMembership,
+			languageIndex,
 			...facets,
 		},
 		{

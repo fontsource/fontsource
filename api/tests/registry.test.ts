@@ -5,7 +5,7 @@ import {
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
-	RegistryLanguageMembershipSchema,
+	RegistryLanguageIndexSchema,
 	RegistryLanguagesSchema,
 	RegistrySourceCapabilitiesSchema,
 	RegistrySubsetSchema,
@@ -104,9 +104,9 @@ const VIEWS = [
 		]),
 	},
 	{
-		path: 'language-membership.json',
-		route: '/v1/registry/language-membership',
-		body: RegistryLanguageMembershipSchema.parse({
+		path: 'language-index.json',
+		route: '/v1/registry/language-index',
+		body: RegistryLanguageIndexSchema.parse({
 			version: 'a'.repeat(64),
 			families: ['abel'],
 			languages: { en_Latn: 'AQ==' },
@@ -237,8 +237,8 @@ describe('registry routes', () => {
 		}
 	});
 
-	it('revalidates cached language membership with its ETag', async () => {
-		const url = 'https://fontsource.test/v1/registry/language-membership';
+	it('revalidates cached language index with its ETag', async () => {
+		const url = 'https://fontsource.test/v1/registry/language-index';
 		const first = await dispatch(url);
 		await first.response.text();
 		await first.settle();
