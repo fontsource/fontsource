@@ -339,7 +339,11 @@ const createPreviewEditorSetup = ({
 const getActiveSource = (model: PreviewEditorModel) => {
 	const mode = model.state$.mode.get();
 	const italic = model.state$.typographyByMode[mode].italic.get();
-	const weight = model.state$.typographyByMode[mode].weight.get();
+	// Compare has no selected weight; capabilities use its default reference weight.
+	const weight =
+		mode === 'compare'
+			? model.initialTypography.compare.weight
+			: model.state$.typographyByMode[mode].weight.get();
 	return selectRegistryPreviewSource(model.registry, {
 		variableAvailable: Boolean(model.variable),
 		style: italic ? 'italic' : 'normal',

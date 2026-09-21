@@ -1,6 +1,6 @@
 import { batch } from '@legendapp/state';
 import { observer, useValue } from '@legendapp/state/react';
-import { SegmentedControl, VisuallyHidden } from '@mantine/core';
+import { SegmentedControl, Textarea, VisuallyHidden } from '@mantine/core';
 import {
 	IconAdjustmentsHorizontal,
 	IconAlignCenter,
@@ -230,11 +230,7 @@ const PreviewCanvas = observer(() => {
 				: 'Symbol character'
 			: mode === 'headline'
 				? 'Headline text'
-				: mode === 'paragraph'
-					? 'Paragraph text'
-					: mode === 'waterfall'
-						? 'Waterfall text'
-						: 'Comparison text';
+				: 'Paragraph text';
 	const textInputId = `font-preview-${mode}-text`;
 	const setActiveText = (text: string) => model.state$.customText.set(text);
 	const editorHeader = (
@@ -244,7 +240,7 @@ const PreviewCanvas = observer(() => {
 	);
 
 	const content = (() => {
-		if (mode === 'waterfall') {
+		if (mode === 'waterfall' || mode === 'compare') {
 			const sizes = Array.from(
 				new Set(
 					[1, 0.72, 0.48, 0.3].map((scale) =>
@@ -258,87 +254,74 @@ const PreviewCanvas = observer(() => {
 					dir={previewDirection}
 					lang={previewLanguage}
 				>
-					<div className={classes.derivedEditor}>
-						{editorHeader}
-						<input
-							id={textInputId}
-							type="text"
-							value={activeText.replaceAll('\n', ' ')}
-							spellCheck={false}
-							onChange={(event) => setActiveText(event.currentTarget.value)}
-						/>
-						<PreviewCoverage />
-					</div>
-					<div className={classes.waterfall}>
-						{sizes.map((previewSize) => (
-							<div key={previewSize}>
-								<span>{previewSize}</span>
-								<p style={{ ...previewStyle, fontSize: previewSize }}>
-									{activeText}
-								</p>
-							</div>
-						))}
-					</div>
-				</div>
-			);
-		}
-
-		if (mode === 'compare') {
-			return (
-				<div
-					className={classes.derivedCanvas}
-					dir={previewDirection}
-					lang={previewLanguage}
-				>
-					<div className={classes.derivedEditor}>
-						{editorHeader}
-						<input
-							id={textInputId}
-							type="text"
-							value={activeText.replaceAll('\n', ' ')}
-							spellCheck={false}
-							onChange={(event) => setActiveText(event.currentTarget.value)}
-						/>
-						<PreviewCoverage />
-					</div>
-					<FontSkeleton
-						name="font-detail-weight-strip"
-						family={packagePreviewFamily}
-						weights={availableWeights}
-						className={classes.compareSkeleton}
-					>
-						<div className={classes.compareGrid}>
-							{availableWeights.map((value) => (
-								<button
-									key={value}
-									type="button"
-									data-active={typography.weight === value || undefined}
-									aria-pressed={typography.weight === value}
-									onClick={() =>
-										updateCurrentTypography(model, { weight: value })
-									}
-								>
-									<span>
-										{fontWeightNames[value] ?? 'Weight'} {value}
-									</span>
-									<strong
-										style={{
-											...previewStyle,
-											fontFamily: getFontFamilyStack(
-												model.metadata,
-												Boolean(model.variable),
-												model.registry,
-											),
-											fontWeight: value,
-											fontSize: typography.size,
+					{mode === 'waterfall' ? (
+						<div className={classes.waterfall}>
+							{sizes.map((previewSize, index) => (
+								<div key={previewSize}>
+									<span>{previewSize}</span>
+									<Textarea
+										id={index === 0 ? textInputId : undefined}
+										aria-label={`Waterfall text at ${previewSize} pixels`}
+										unstyled
+										autosize
+										minRows={1}
+										classNames={{ input: classes.sampleInput }}
+										styles={{
+											input: { ...previewStyle, fontSize: previewSize },
 										}}
-									>
-										{activeText}
-									</strong>
-								</button>
+										value={activeText}
+										spellCheck={false}
+										onChange={(event) =>
+											setActiveText(event.currentTarget.value)
+										}
+									/>
+								</div>
 							))}
 						</div>
-					</FontSkeleton>
+					) : (
+						<FontSkeleton
+							name="font-detail-weight-strip"
+							family={packagePreviewFamily}
+							weights={availableWeights}
+							className={classes.compareSkeleton}
+						>
+							<div className={classes.compareGrid}>
+								{availableWeights.map((value, index) => (
+									<div key={value}>
+										<span>
+											{fontWeightNames[value] ?? 'Weight'} {value}
+										</span>
+										<Textarea
+											id={index === 0 ? textInputId : undefined}
+											aria-label={`Comparison text at weight ${value}`}
+											unstyled
+											autosize
+											minRows={1}
+											classNames={{ input: classes.sampleInput }}
+											value={activeText}
+											spellCheck={false}
+											onChange={(event) =>
+												setActiveText(event.currentTarget.value)
+											}
+											styles={{
+												input: {
+													...previewStyle,
+													fontFamily: getFontFamilyStack(
+														model.metadata,
+														Boolean(model.variable),
+														model.registry,
+													),
+													fontWeight: value,
+													fontSize: typography.size,
+												},
+											}}
+										/>
+									</div>
+								))}
+							</div>
+						</FontSkeleton>
+					)}
+					<PreviewCoverage />
 				</div>
 			);
 		}
