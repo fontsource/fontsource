@@ -1,21 +1,19 @@
 import { useValue } from '@legendapp/state/react';
 import {
-	InputBase,
+	Badge,
 	Menu,
 	ScrollArea,
-	Text,
+	UnstyledButton,
 	VisuallyHidden,
 } from '@mantine/core';
 import { IconPlus, IconSettings } from '@tabler/icons-react';
 import { useEffect, useRef, useState } from 'react';
-
+import classes from '@/components/Dropdown.module.css';
 import { IconCaret } from '@/components/icons';
-import classes from './CollectionFilter.module.css';
 import {
 	CreateCollectionModal,
 	ManageCollectionsModal,
 } from './CollectionManager';
-import menuClasses from './CollectionMenu.module.css';
 import { useCollectionsStore } from './CollectionsProvider';
 import { normalizeCollectionName } from './model';
 
@@ -56,27 +54,29 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 		<>
 			<Menu
 				classNames={{
-					dropdown: menuClasses.dropdown,
+					dropdown: classes.dropdown,
+					item: classes.item,
 				}}
 				onClose={() => setQuery('')}
 				position="bottom-start"
 				width="target"
-				shadow="md"
+				shadow="xs"
+				transitionProps={{ duration: 100, transition: 'fade' }}
 			>
 				<Menu.Target>
-					<InputBase
+					<UnstyledButton
 						aria-label={`Font collection: ${selectedCollection?.name ?? 'All fonts'}`}
-						classNames={{ input: classes.input }}
-						component="button"
+						className={classes.input}
+						type="button"
 						disabled={!ready}
-						pointer
 						ref={targetRef}
-						rightSection={<IconCaret aria-hidden="true" />}
-						rightSectionPointerEvents="none"
 						w="100%"
 					>
-						<span dir="auto">{selectedCollection?.name ?? 'All fonts'}</span>
-					</InputBase>
+						<span className={classes.label} dir="auto">
+							{selectedCollection?.name ?? 'All fonts'}
+						</span>
+						<IconCaret className={classes.caret} aria-hidden="true" />
+					</UnstyledButton>
 				</Menu.Target>
 				<Menu.Dropdown>
 					<Menu.RadioGroup
@@ -110,13 +110,18 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 										closeMenuOnClick
 										key={collection.id}
 										rightSection={
-											<Text className={classes.count} c="dimmed" fz="xs">
+											<Badge
+												className={classes.count}
+												variant="light"
+												color="gray"
+												size="sm"
+											>
 												{collection.fontIds.length}
 												<VisuallyHidden>
 													{' '}
 													{collection.fontIds.length === 1 ? 'font' : 'fonts'}
 												</VisuallyHidden>
-											</Text>
+											</Badge>
 										}
 										value={collection.id}
 									>

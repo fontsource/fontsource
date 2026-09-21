@@ -11,6 +11,7 @@
 	border: light-dark(1px solid var(--mantine-color-border-0), 1px solid var(--mantine-color-border-1));
 	font-size: var(--mantine-font-size-sm);
 	font-weight: 400;
+	text-align: start;
 	transition:
 		background-color 120ms ease,
 		border-color 120ms ease;
@@ -23,7 +24,8 @@
 		background-color: light-dark(var(--mantine-color-purple-hover), var(--mantine-color-background-6));
 	}
 
-	&[aria-expanded="true"] {
+	&[aria-expanded="true"],
+	&[data-expanded="true"] {
 		border-color: var(--mantine-color-purple-0);
 
 		.caret {
@@ -50,7 +52,27 @@
 }
 
 .caret {
+	width: 10px;
+	height: 6px;
+	flex-shrink: 0;
 	transition: transform 120ms ease;
+}
+
+.dropdown {
+	background-color: light-dark(var(--mantine-color-background-0), var(--mantine-color-background-4));
+	border-color: light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+}
+
+.item {
+	min-height: 44px;
+	padding: 6px 10px;
+	display: flex;
+	align-items: center;
+
+	&:where(:hover, :focus-visible, [data-menu-active], [data-combobox-selected]):not(:disabled, [data-disabled], [data-combobox-disabled]) {
+		background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-4));
+		color: inherit;
+	}
 }
 
 .option {
@@ -61,6 +83,7 @@
 }
 
 .count {
+	font-variant-numeric: tabular-nums;
 	flex-shrink: 0;
 	margin-left: auto;
 }

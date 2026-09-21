@@ -64,6 +64,8 @@ const DropdownSimple = memo(function DropdownSimple({
 			maxDropdownHeight={240}
 			comboboxProps={{
 				position: 'bottom-start',
+				shadow: 'xs',
+				classNames: { dropdown: classes.dropdown, option: classes.item },
 				transitionProps: { duration: 100, transition: 'fade' },
 				width: dropdownWidth ?? w ?? rem(250),
 			}}
@@ -144,6 +146,9 @@ const DropdownCheckbox = ({
 		<Combobox
 			store={combobox}
 			position="bottom-start"
+			shadow="xs"
+			transitionProps={{ duration: 100, transition: 'fade' }}
+			classNames={{ dropdown: classes.dropdown, option: classes.item }}
 			width={dropdownWidth ?? w ?? rem(250)}
 			resetSelectionOnOptionHover={false}
 			onOptionSubmit={(value) => refine?.(value)}
@@ -207,7 +212,7 @@ const DropdownCheckbox = ({
 											transform: `translateY(${row.start}px)`,
 										}}
 									>
-										<Group gap="sm" wrap="nowrap" h="100%">
+										<Group gap="sm" wrap="nowrap" h="100%" w="100%">
 											<Checkbox.Indicator
 												checked={item.isRefined}
 												aria-hidden
