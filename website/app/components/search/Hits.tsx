@@ -79,11 +79,7 @@ let cachedMeasurements: { key: string; rows: VirtualItem[] } | undefined;
 
 const subscribeToViewport = (onChange: () => void) => {
 	window.addEventListener('resize', onChange);
-	window.addEventListener('orientationchange', onChange);
-	return () => {
-		window.removeEventListener('resize', onChange);
-		window.removeEventListener('orientationchange', onChange);
-	};
+	return () => window.removeEventListener('resize', onChange);
 };
 type Display = 'grid' | 'list';
 interface LoadingPlaceholderProps {
@@ -303,13 +299,14 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 		overscan: 2,
 		scrollMargin,
 		useAnimationFrameWithResizeObserver: true,
+		// Restore measured row sizes before Back navigation restores the scroll position.
 		initialMeasurementsCache:
 			cachedMeasurements?.key === measurementKey
 				? cachedMeasurements.rows
 				: undefined,
 	});
 	const virtualRows = rowVirtualizer.getVirtualItems();
-	const lastVirtualIndex = virtualRows[virtualRows.length - 1]?.index ?? -1;
+	const lastVirtualIndex = virtualRows.at(-1)?.index ?? -1;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: viewport changes can move the results below responsive controls.
 	useLayoutEffect(() => {
