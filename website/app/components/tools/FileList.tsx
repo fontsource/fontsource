@@ -44,8 +44,9 @@ const sourceIdentity = (source: FontSourceEntry): string | undefined => {
 };
 
 interface SourceTableProps {
+	expanded: boolean;
+	onToggleExpanded: () => void;
 	sources: FontSourceEntry[];
-	duplicateFilenameLabels: ReadonlyMap<number, string>;
 	onRemove: (id: number) => void;
 	disabled: boolean;
 }
@@ -73,104 +74,82 @@ const buildDuplicateFilenameLabels = (
 
 const SourceTable = ({
 	sources,
-	duplicateFilenameLabels,
-	onRemove,
-	disabled,
-}: SourceTableProps) => (
-	<Table verticalSpacing="sm">
-		<Table.Thead>
-			<Table.Tr>
-				<Table.Th>Filename</Table.Th>
-				<Table.Th className={classes.secondaryColumn}>Format</Table.Th>
-				<Table.Th className={classes.secondaryColumn}>Size</Table.Th>
-				<Table.Th aria-label="Actions" />
-			</Table.Tr>
-		</Table.Thead>
-		<Table.Tbody>
-			{sources.map((source) => {
-				const identity = sourceIdentity(source);
-
-				return (
-					<Table.Tr key={source.id}>
-						<Table.Td className={classes.filenameCell}>
-							<Text fw={500}>{source.file.name}</Text>
-							{identity && (
-								<Text size="xs" mt={4} className={classes.supportingText}>
-									{identity}
-								</Text>
-							)}
-							<Text
-								size="xs"
-								mt={4}
-								className={`${classes.mobileMetadata} ${classes.supportingText}`}
-							>
-								{sourceFormat(source.file.name)} ·{' '}
-								{formatFileSize(source.file.size)}
-							</Text>
-							{source.error && (
-								<Text size="xs" c="red" mt={4}>
-									{source.error}
-								</Text>
-							)}
-							{!source.inspection && !source.error && (
-								<Text size="xs" mt={4} className={classes.supportingText}>
-									Reading metadata…
-								</Text>
-							)}
-						</Table.Td>
-						<Table.Td className={classes.secondaryColumn}>
-							{sourceFormat(source.file.name)}
-						</Table.Td>
-						<Table.Td className={classes.secondaryColumn}>
-							{formatFileSize(source.file.size)}
-						</Table.Td>
-						<Table.Td ta="right">
-							<ActionIcon
-								variant="subtle"
-								color="red"
-								aria-label={`Remove ${source.file.name}${duplicateFilenameLabels.get(source.id) ?? ''}`}
-								onClick={() => onRemove(source.id)}
-								disabled={disabled}
-							>
-								<IconX size={16} aria-hidden="true" />
-							</ActionIcon>
-						</Table.Td>
-					</Table.Tr>
-				);
-			})}
-		</Table.Tbody>
-	</Table>
-);
-
-interface SourceListBodyProps {
-	sources: FontSourceEntry[];
-	onRemove: (id: number) => void;
-	disabled: boolean;
-	expanded: boolean;
-	onToggleExpanded: () => void;
-}
-
-const SourceListBody = ({
-	sources,
 	onRemove,
 	disabled,
 	expanded,
 	onToggleExpanded,
-}: SourceListBodyProps) => {
+}: SourceTableProps) => {
 	const visibleSources = expanded
 		? sources
 		: sources.slice(0, SOURCE_PREVIEW_LIMIT);
-	const hiddenCount = Math.max(0, sources.length - SOURCE_PREVIEW_LIMIT);
-	const duplicateLabels = buildDuplicateFilenameLabels(sources);
+	const hiddenCount = sources.length - SOURCE_PREVIEW_LIMIT;
+	const duplicateFilenameLabels = buildDuplicateFilenameLabels(sources);
 
 	return (
 		<>
-			<SourceTable
-				sources={visibleSources}
-				duplicateFilenameLabels={duplicateLabels}
-				onRemove={onRemove}
-				disabled={disabled}
-			/>
+			<Table verticalSpacing="sm">
+				<Table.Thead>
+					<Table.Tr>
+						<Table.Th>Filename</Table.Th>
+						<Table.Th className={classes.secondaryColumn}>Format</Table.Th>
+						<Table.Th className={classes.secondaryColumn}>Size</Table.Th>
+						<Table.Th aria-label="Actions" />
+					</Table.Tr>
+				</Table.Thead>
+				<Table.Tbody>
+					{visibleSources.map((source) => {
+						const identity = sourceIdentity(source);
+
+						return (
+							<Table.Tr key={source.id}>
+								<Table.Td className={classes.filenameCell}>
+									<Text fw={500}>{source.file.name}</Text>
+									{identity && (
+										<Text size="xs" mt={4} className={classes.supportingText}>
+											{identity}
+										</Text>
+									)}
+									<Text
+										size="xs"
+										mt={4}
+										className={`${classes.mobileMetadata} ${classes.supportingText}`}
+									>
+										{sourceFormat(source.file.name)} ·{' '}
+										{formatFileSize(source.file.size)}
+									</Text>
+									{source.error && (
+										<Text size="xs" c="red" mt={4}>
+											{source.error}
+										</Text>
+									)}
+									{!source.inspection && !source.error && (
+										<Text size="xs" mt={4} className={classes.supportingText}>
+											Reading metadata…
+										</Text>
+									)}
+								</Table.Td>
+								<Table.Td className={classes.secondaryColumn}>
+									{sourceFormat(source.file.name)}
+								</Table.Td>
+								<Table.Td className={classes.secondaryColumn}>
+									{formatFileSize(source.file.size)}
+								</Table.Td>
+								<Table.Td ta="right">
+									<ActionIcon
+										variant="subtle"
+										color="red"
+										aria-label={`Remove ${source.file.name}${duplicateFilenameLabels.get(source.id) ?? ''}`}
+										onClick={() => onRemove(source.id)}
+										disabled={disabled}
+									>
+										<IconX size={16} aria-hidden="true" />
+									</ActionIcon>
+								</Table.Td>
+							</Table.Tr>
+						);
+					})}
+				</Table.Tbody>
+			</Table>
 			{hiddenCount > 0 && (
 				<Button
 					variant="subtle"
@@ -251,16 +230,6 @@ export const FileList = ({
 		restoreFocus(false);
 	};
 
-	const listBody = (
-		<SourceListBody
-			sources={sources}
-			onRemove={removeSource}
-			disabled={disabled}
-			expanded={expanded}
-			onToggleExpanded={() => setExpanded((current) => !current)}
-		/>
-	);
-
 	if (collapsed) {
 		return (
 			<details className={classes.sourceDetails}>
@@ -279,7 +248,13 @@ export const FileList = ({
 							Remove all files
 						</Button>
 					</Group>
-					{listBody}
+					<SourceTable
+						sources={sources}
+						onRemove={removeSource}
+						disabled={disabled}
+						expanded={expanded}
+						onToggleExpanded={() => setExpanded((current) => !current)}
+					/>
 				</Stack>
 			</details>
 		);
@@ -312,7 +287,13 @@ export const FileList = ({
 				</Button>
 			</Group>
 
-			{listBody}
+			<SourceTable
+				sources={sources}
+				onRemove={removeSource}
+				disabled={disabled}
+				expanded={expanded}
+				onToggleExpanded={() => setExpanded((current) => !current)}
+			/>
 		</Stack>
 	);
 };
