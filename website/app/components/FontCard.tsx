@@ -33,25 +33,13 @@ const FontCard = ({
 	});
 	const [shouldLoadStylesheet, setShouldLoadStylesheet] =
 		useState(eagerStylesheet);
-	const [isStylesheetLoaded, setStylesheetLoaded] = useState(false);
-	const isFontReady = useIsFontReady(font.family, isStylesheetLoaded);
+	const isFontReady = useIsFontReady(font.family, shouldLoadStylesheet);
 
 	useEffect(() => {
 		if (eagerStylesheet || entry?.isIntersecting) {
 			setShouldLoadStylesheet(true);
 		}
 	}, [eagerStylesheet, entry?.isIntersecting]);
-
-	useEffect(() => {
-		if (!shouldLoadStylesheet || isStylesheetLoaded) return;
-
-		for (const sheet of document.styleSheets) {
-			if (sheet.href === stylesheetHref) {
-				setStylesheetLoaded(true);
-				return;
-			}
-		}
-	}, [isStylesheetLoaded, shouldLoadStylesheet, stylesheetHref]);
 
 	const previewText =
 		preview ||
@@ -69,8 +57,7 @@ const FontCard = ({
 				<link
 					rel="stylesheet"
 					href={stylesheetHref}
-					onLoad={() => setStylesheetLoaded(true)}
-					onError={() => setStylesheetLoaded(true)}
+					precedence="font-preview"
 				/>
 			)}
 			<Link
