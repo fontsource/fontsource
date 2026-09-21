@@ -29,7 +29,6 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 		attribute: 'languageIds',
 		operator: 'and',
 		limit: 1000,
-		sortBy: ['count:desc', 'name:asc'],
 	});
 	// Keep published subset links as subset filters, rather than guessing a language.
 	const legacy = useRefinementList({
@@ -53,10 +52,7 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 			language.id,
 		].some((value) => value?.toLocaleLowerCase().includes(normalizedQuery)),
 	}));
-	languageItems.sort(
-		(a, b) =>
-			(b.count ?? -1) - (a.count ?? -1) || a.label.localeCompare(b.label, 'en'),
-	);
+	languageItems.sort((a, b) => a.label.localeCompare(b.label, 'en'));
 	const legacyItems = subsets.map((subset) => ({
 		value: `subset:${subset}`,
 		label: `${subsetToLanguage(subset)} (subset)`,
