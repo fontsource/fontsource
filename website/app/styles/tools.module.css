@@ -1,0 +1,12 @@
+.page {
+    max-width: 1440px;
+    width: 100%;
+    margin-inline: auto;
+    padding: 32px 64px 80px;
+}
+.header { margin-bottom: 32px; }
+.header h1 { margin: 0; font-size: clamp(32px, 3.5vw, 44px); font-weight: 650; line-height: 1.1; letter-spacing: -0.03em; }
+.header p { margin: 12px 0 0; color: light-dark(#4a566d, #bdc6d9); font-size: 16px; }
+.directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+@media (--lt-md) { .page { padding-inline: 32px; } }
+@media (--lt-sm) { .page { padding: 24px 24px 48px; } .directory { grid-template-columns: minmax(0, 1fr); gap: 0; } }

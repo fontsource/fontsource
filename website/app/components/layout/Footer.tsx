@@ -60,7 +60,7 @@ export const Footer = ({ ...other }: ContainerProps) => {
 					<Tooltip.Group openDelay={600} closeDelay={100}>
 						<Group gap="md" justify="right">
 							<FooterNavLink label="Fonts" to="/" />
-							<FooterNavLink label="Browse fonts" to="/browse" />
+							<FooterNavLink label="Categories" to="/browse" />
 							<FooterNavLink label="Documentation" to="/docs" />
 							<FooterNavLink label="Privacy Policy" to="/privacy" />
 							<Group gap={4} wrap="nowrap">
