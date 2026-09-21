@@ -1,12 +1,13 @@
-import type { MetaFunction } from 'react-router';
+import { Stack, Text, Title } from '@mantine/core';
+import { Link, type MetaFunction } from 'react-router';
 import { FontWorkbench } from '@/components/tools/FontWorkbench';
 import { getCanonicalUrl, ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => [
 	...ogMeta({
-		title: 'Webfont Optimizer — WOFF2 & CSS | Fontsource',
+		title: 'Webfont Optimizer — Subset Fonts & WOFF2 | Fontsource',
 		description:
-			'Optimize TTF, OTF, WOFF, and WOFF2 fonts into compressed WOFF2 files with generated @font-face CSS. Review savings and download a ready-to-host package.',
+			'Subset TTF, OTF, WOFF, and WOFF2 fonts by character set or custom text, locally in your browser. Compare file sizes and download WOFF2 fonts with matching CSS.',
 	}),
 	{
 		'script:ld+json': {
@@ -31,5 +32,24 @@ export const meta: MetaFunction = () => [
 ];
 
 export default function OptimizerPage() {
-	return <FontWorkbench preset="optimizer" />;
+	return (
+		<>
+			<FontWorkbench preset="optimizer" />
+			<Stack component="section" mt="xl" maw="65ch" gap="sm">
+				<Title order={2} size="h3">
+					Smaller webfonts with font subsetting
+				</Title>
+				<Text>
+					Font subsetting removes characters you do not need. Choose character
+					sets for a website or exact text for a logo or heading, then download
+					WOFF2 files and matching @font-face CSS. Savings depend on your fonts
+					and selection.
+				</Text>
+				<Text>
+					Only need a different file format? Use the{' '}
+					<Link to="/tools/converter">font converter</Link>.
+				</Text>
+			</Stack>
+		</>
+	);
 }

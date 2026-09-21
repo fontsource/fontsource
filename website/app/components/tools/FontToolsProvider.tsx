@@ -12,6 +12,7 @@ import {
 	useState,
 } from 'react';
 import invariant from 'tiny-invariant';
+import type { CharacterSelection } from './characters';
 
 export type FontToolPreset = 'converter' | 'optimizer';
 
@@ -23,6 +24,7 @@ export interface FontSourceEntry {
 }
 
 export interface FontOutputSettings {
+	characters: CharacterSelection;
 	formats: { woff2: boolean; woff: boolean; ttf: boolean };
 	includeCss: boolean;
 	display: string;
@@ -43,6 +45,7 @@ interface FontToolsSession {
 }
 
 const defaultOutput = (preset: FontToolPreset): FontOutputSettings => ({
+	characters: { mode: 'all', subsets: [], text: '' },
 	formats: { woff2: true, woff: false, ttf: false },
 	includeCss: preset === 'optimizer',
 	display: 'swap',

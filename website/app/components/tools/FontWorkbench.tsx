@@ -13,7 +13,7 @@ import {
 	VisuallyHidden,
 } from '@mantine/core';
 import { IconBolt, IconPlayerStop, IconTransform } from '@tabler/icons-react';
-import { useRef } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
 import {
 	type FontToolPreset,
@@ -25,6 +25,8 @@ import classes from './FontWorkbench.module.css';
 import { FormatSelector } from './FormatSelector';
 import { ResultsTable } from './ResultsTable';
 import { formatFileSize } from './utils';
+
+const CharacterSelector = lazy(() => import('./CharacterSelector'));
 
 interface FontWorkbenchProps {
 	preset: FontToolPreset;
@@ -38,7 +40,8 @@ const pageContent = {
 	},
 	optimizer: {
 		title: 'Webfont Optimizer',
-		description: 'Build compressed WOFF2 files and matching CSS locally.',
+		description:
+			'Subset and compress fonts into WOFF2 + CSS. Processed in your browser.',
 		action: 'Optimize',
 	},
 } as const;
@@ -57,34 +60,43 @@ const sizeComparison = (inputSize: number, outputSize: number) => {
 
 	if (percentage > 1) {
 		return {
-			headline: `${Math.round(percentage)}% Smaller as WOFF2`,
-			detail: `Input ${formatFileSize(inputSize)} → output ${formatFileSize(outputSize)} · saved ${formatFileSize(difference)}`,
-			tone: 'success',
+			headline: `${Math.round(percentage)}% smaller`,
+			detail: `Input ${formatFileSize(inputSize)} → WOFF2 ${formatFileSize(outputSize)} · saved ${formatFileSize(difference)}`,
 		};
 	}
 
 	if (percentage >= -1) {
 		return {
-			headline: 'Already Optimized as WOFF2',
-			detail: `Input ${formatFileSize(inputSize)} → output ${formatFileSize(outputSize)} · no meaningful change`,
-			tone: 'info',
+			headline: 'No meaningful size change',
+			detail: `Input ${formatFileSize(inputSize)} → WOFF2 ${formatFileSize(outputSize)} · no meaningful change`,
 		};
 	}
 
 	return {
-		headline: 'WOFF2 Is Larger',
-		detail: `Input ${formatFileSize(inputSize)} → output ${formatFileSize(outputSize)} · ${formatFileSize(-difference)} larger`,
-		tone: 'warning',
+		headline: 'WOFF2 output is larger',
+		detail: `Input ${formatFileSize(inputSize)} → WOFF2 ${formatFileSize(outputSize)} · ${formatFileSize(-difference)} larger`,
 	};
 };
 
 export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 	const workbench = useFontWorkbench(preset);
+	const resultsRef = useRef<HTMLElement>(null);
+	const wasProcessing = useRef(false);
 	const uploadRef = useRef<HTMLDivElement>(null);
 	const content = pageContent[preset];
 	const readySources = workbench.sources.filter((source) => source.inspection);
 	const hasOutputFormat = Object.values(workbench.output.formats).some(Boolean);
 	const hasResults = workbench.artifacts.length > 0 && !workbench.isProcessing;
+	useEffect(() => {
+		if (wasProcessing.current && hasResults) {
+			resultsRef.current?.focus({ preventScroll: true });
+			resultsRef.current?.scrollIntoView({
+				block: 'start',
+				behavior: 'instant',
+			});
+		}
+		wasProcessing.current = workbench.isProcessing;
+	}, [hasResults, workbench.isProcessing]);
 	const failedFamilies = workbench.families.filter(
 		(family) => workbench.familyErrors[family.id],
 	);
@@ -268,16 +280,25 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 				) : (
 					<Stack gap="sm">
 						<div>
-							<Title order={2} size="h3">
-								Package Contents
-							</Title>
-							<Text size="sm" mt={4} className={classes.supportingText}>
-								{packageDescription}
+							<Suspense
+								fallback={<Text size="sm">Loading character options…</Text>}
+							>
+								<CharacterSelector
+									value={workbench.output.characters}
+									error={workbench.characterError}
+									disabled={workbench.isSessionProcessing}
+									onChange={(characters) =>
+										workbench.updateOutput({ ...workbench.output, characters })
+									}
+								/>
+							</Suspense>
+							<Text size="sm" mt="md" className={classes.supportingText}>
+								Output: {packageDescription}
 							</Text>
 						</div>
 
 						<details className={classes.advanced}>
-							<summary>Advanced Options</summary>
+							<summary>Output settings</summary>
 							<Stack gap="md" className={classes.advancedContent}>
 								<Checkbox
 									label="Include WOFF fallback"
@@ -348,6 +369,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 
 			<Button
 				className={classes.primaryAction}
+				variant={hasResults ? 'subtle' : 'filled'}
 				size="md"
 				leftSection={
 					workbench.isProcessing ? (
@@ -426,28 +448,20 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 							: 'Optimization results'
 					}
 					className={classes.results}
+					ref={resultsRef}
+					tabIndex={-1}
 				>
-					{optimizerSummary && (
-						<div
-							className={classes.resultSummary}
-							data-tone={optimizerSummary.tone}
-						>
-							<Title order={2} size="h3" className={classes.resultTitle}>
-								{optimizerSummary.headline}
-							</Title>
-							<Text size="sm" mt={4} className={classes.resultDetail}>
-								{optimizerSummary.detail}
-							</Text>
-						</div>
-					)}
-
 					<div className={classes.section}>
 						<ResultsTable
 							artifacts={workbench.artifacts}
 							title={
-								preset === 'converter' ? 'Converted Files' : 'Package Files'
+								preset === 'converter' ? 'Converted Files' : 'Optimized Files'
 							}
 							description={resultDescription}
+							summary={
+								optimizerSummary &&
+								`${optimizerSummary.headline} · ${optimizerSummary.detail}`
+							}
 							zipLabel={
 								preset === 'converter' ? 'Download ZIP' : 'Download package'
 							}
