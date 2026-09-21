@@ -1,26 +1,18 @@
+import { IconBrandDiscord as TablerIcon } from '@tabler/icons-react';
+
 import classes from './Icon.module.css';
 import type { IconProps } from './types';
 
-const IconDiscord = ({ height, stroke, ...others }: IconProps) => {
-	return (
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			height={height ?? 20}
-			viewBox="0 0 22 20"
-			fill="none"
-			className={classes.icon}
-			{...others}
-		>
-			<title>Discord Icon</title>
-			<path
-				stroke={stroke}
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				strokeWidth={1.5}
-				d="M17.942 3.523a16.288 16.288 0 0 0-4.126-1.296c-.178.32-.386.753-.529 1.097a15.15 15.15 0 0 0-4.573 0 11.73 11.73 0 0 0-.535-1.097c-1.448.25-2.834.692-4.129 1.3C1.44 7.471.731 11.32 1.085 15.113a16.495 16.495 0 0 0 5.06 2.593c.408-.56.771-1.157 1.084-1.785a10.65 10.65 0 0 1-1.706-.83c.143-.107.283-.218.418-.332 3.29 1.54 6.866 1.54 10.118 0 .137.114.277.225.418.331a10.63 10.63 0 0 1-1.71.833c.314.626.675 1.224 1.084 1.785a16.464 16.464 0 0 0 5.064-2.595c.415-4.398-.71-8.21-2.973-11.59ZM7.678 12.781c-.988 0-1.798-.922-1.798-2.046 0-1.123.792-2.046 1.798-2.046 1.005 0 1.815.922 1.798 2.046.001 1.124-.793 2.046-1.798 2.046Zm6.644 0c-.988 0-1.798-.922-1.798-2.046 0-1.123.793-2.046 1.798-2.046 1.006 0 1.816.922 1.798 2.046 0 1.124-.793 2.046-1.798 2.046Z"
-			/>
-		</svg>
-	);
-};
+const IconDiscord = ({ height = 20, stroke, style, ...others }: IconProps) => (
+	<TablerIcon
+		size={height}
+		stroke={1.8}
+		className={classes.icon}
+		style={{ stroke, ...style }}
+		{...others}
+	>
+		<title>Discord Icon</title>
+	</TablerIcon>
+);
 
 export { IconDiscord };

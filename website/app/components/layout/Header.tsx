@@ -221,15 +221,24 @@ export const Header = ({ ...other }: ContainerProps) => {
 								<HeaderNavLink label="Documentation" to="/docs" />
 
 								<HeaderNavLink label="Tools" to="/tools" />
-								<SelectedFontsLink count={projectCount} ready={projectReady} />
+								<Group gap={4} wrap="nowrap">
+									<SelectedFontsLink
+										count={projectCount}
+										ready={projectReady}
+									/>
 
-								<ThemeButton />
-								<Icon
-									label="GitHub"
-									href="https://github.com/fontsource/fontsource"
-									icon={<IconGithub />}
-								/>
-								<Icon label="Discord" href="/discord" icon={<IconDiscord />} />
+									<ThemeButton />
+									<Icon
+										label="GitHub"
+										href="https://github.com/fontsource/fontsource"
+										icon={<IconGithub />}
+									/>
+									<Icon
+										label="Discord"
+										href="/discord"
+										icon={<IconDiscord />}
+									/>
+								</Group>
 							</Group>
 						</Tooltip.Group>
 					</Box>
