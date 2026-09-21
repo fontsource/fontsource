@@ -38,15 +38,16 @@ const taxonomy = {
 };
 
 describe('discovery pages', () => {
-	it('indexes populated catalog views only when they have ten families', () => {
+	it('publishes populated taxonomy pages while retaining language thresholds', () => {
 		expect(
-			getDiscoveryPages(counts, taxonomy)
-				.filter((page) => page.indexable)
-				.map((page) => page.path),
+			getDiscoveryPages(counts, taxonomy).map((page) => page.path),
 		).toEqual([
 			'/languages/arabic',
 			'/tags/sans/geometric',
+			'/tags/slab/geometric',
+			'/categories/icons',
 			'/categories/serif',
+			'/categories/slab-serif',
 			'/variable-fonts',
 		]);
 	});
@@ -58,7 +59,6 @@ describe('discovery pages', () => {
 		).toMatchObject({
 			heading: 'Geometric Slab Serif Fonts',
 			count: 2,
-			indexable: false,
 			routeState: { tags: 'slab/geometric' },
 		});
 		expect(
@@ -66,12 +66,11 @@ describe('discovery pages', () => {
 		).toMatchObject({
 			heading: 'Geometric Sans Serif Fonts',
 			count: 12,
-			indexable: true,
 			routeState: { tags: 'sans/geometric' },
 		});
 		expect(
 			pages.find((page) => page.path === '/categories/slab-serif'),
-		).toMatchObject({ indexable: false, count: 2 });
+		).toMatchObject({ count: 2 });
 		expect(pages.map((page) => page.path)).not.toEqual(
 			expect.arrayContaining(['/tags/unknown/tag']),
 		);

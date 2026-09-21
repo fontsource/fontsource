@@ -15,7 +15,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData, location }) => {
 			title: `${page.heading} | Fontsource`,
 			description: page.description,
 		}),
-		...(!page.indexable || location.search
+		...(location.search
 			? [{ name: 'robots', content: 'noindex, follow' }]
 			: []),
 		{

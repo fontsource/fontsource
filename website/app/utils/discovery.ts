@@ -21,7 +21,6 @@ export interface DiscoveryPage {
 	description: string;
 	heading: string;
 	intro: string;
-	indexable: boolean;
 	kind: 'category' | 'tag' | 'language' | 'variable';
 	label: string;
 	path: string;
@@ -40,7 +39,7 @@ export const getDiscoveryPages = (
 	counts: DiscoveryCounts,
 	taxonomy: GetRegistryTaxonomyResponse,
 ): DiscoveryPage[] => {
-	const pages: Omit<DiscoveryPage, 'indexable'>[] = [
+	const pages: DiscoveryPage[] = [
 		...Object.entries(languageDiscoveryContent).map(([subset, content]) => {
 			const label = subsetToLanguage(subset);
 			return {
@@ -118,9 +117,5 @@ export const getDiscoveryPages = (
 					? 1
 					: MIN_DISCOVERY_FAMILIES),
 		)
-		.map((page) => ({
-			...page,
-			indexable: page.count >= MIN_DISCOVERY_FAMILIES,
-		}))
 		.sort((a, b) => a.heading.localeCompare(b.heading));
 };

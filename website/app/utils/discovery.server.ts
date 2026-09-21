@@ -8,12 +8,12 @@ import {
 } from '@/generated/api';
 import { getDiscoveryPages } from '@/utils/discovery';
 
-const countProjection = (
-	projection: ListFontValuesResponse,
+const countValues = (
+	familyValues: ListFontValuesResponse[string][],
 ): Record<string, number> => {
 	const counts: Record<string, number> = {};
 
-	for (const value of Object.values(projection)) {
+	for (const value of familyValues) {
 		const values = new Set(
 			(Array.isArray(value) ? value : [value]).map((item) => String(item)),
 		);
@@ -54,19 +54,13 @@ export const loadDiscoveryData = async (
 		Object.hasOwn(categories, family.id),
 	);
 	const counts = {
-		subsets: countProjection(subsets),
-		categories: countProjection(categories),
-		variable: countProjection(variable).true ?? 0,
-		classifications: countProjection(
-			Object.fromEntries(
-				catalogFamilies.map((family) => [family.id, family.classifications]),
-			),
+		subsets: countValues(Object.values(subsets)),
+		categories: countValues(Object.values(categories)),
+		variable: countValues(Object.values(variable)).true ?? 0,
+		classifications: countValues(
+			catalogFamilies.map((family) => family.classifications),
 		),
-		tags: countProjection(
-			Object.fromEntries(
-				catalogFamilies.map((family) => [family.id, family.tags]),
-			),
-		),
+		tags: countValues(catalogFamilies.map((family) => family.tags)),
 	};
 	return {
 		pages: getDiscoveryPages(counts, taxonomy),

@@ -239,7 +239,6 @@ const taxonomyPages: DiscoveryPage[] = [
 		label: 'Geometric',
 		path: '/tags/sans/geometric',
 		routeState: { tags: 'sans/geometric' },
-		indexable: true,
 	},
 	{
 		count: 20,
@@ -250,7 +249,6 @@ const taxonomyPages: DiscoveryPage[] = [
 		label: 'Symbols',
 		path: '/categories/symbols',
 		routeState: { classifications: 'symbols' },
-		indexable: true,
 	},
 ];
 

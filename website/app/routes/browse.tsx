@@ -20,10 +20,7 @@ import { ogMeta } from '@/utils/meta';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
 	const { pages } = await loadDiscoveryData(request.signal);
-	return data(
-		{ pages: pages.filter((page) => page.indexable) },
-		{ headers: cacheHeaders.short },
-	);
+	return data({ pages }, { headers: cacheHeaders.short });
 };
 
 export const meta: MetaFunction = () =>

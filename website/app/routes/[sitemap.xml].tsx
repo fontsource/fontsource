@@ -38,7 +38,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 		});
 	}
 
-	for (const page of pages.filter((page) => page.indexable)) {
+	for (const page of pages) {
 		smStream.write({
 			url: page.path,
 			changefreq: 'weekly',

@@ -29,18 +29,16 @@ vi.mock('@/generated/api', () => ({
 	}),
 }));
 
-it('does not count unpublished registry families toward discovery indexing', async () => {
+it('does not count unpublished registry families toward discovery totals', async () => {
 	const { pages } = await loadDiscoveryData();
 	expect(pages).toEqual([
 		expect.objectContaining({
 			path: '/tags/serif/modern',
 			count: 9,
-			indexable: false,
 		}),
 		expect.objectContaining({
 			path: '/categories/serif',
 			count: 9,
-			indexable: false,
 		}),
 	]);
 });
