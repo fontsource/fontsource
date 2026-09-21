@@ -153,7 +153,7 @@ const createRegistryCodepointMatcher = (
 };
 
 const isBrowsableCharacter = (character: string) =>
-	!/^(\p{C}|\p{Z})$/u.test(character);
+	!/^[\p{Cc}\p{Cf}\p{Cs}\p{Cn}\p{Z}]$/u.test(character);
 
 type RegistryCharacterGroups = Record<
 	'all' | 'letters' | 'marks' | 'numbers' | 'punctuation' | 'symbols',
@@ -162,7 +162,6 @@ type RegistryCharacterGroups = Record<
 
 const getRegistryCharacterGroups = (
 	capabilities?: GetRegistrySourceCapabilitiesResponse,
-	includePrivateUse = false,
 ): RegistryCharacterGroups | undefined => {
 	if (!capabilities) return;
 
@@ -180,11 +179,6 @@ const getRegistryCharacterGroups = (
 		for (let codepoint = start; codepoint <= end; codepoint += 1) {
 			const character = getUnicodeCharacter(codepoint);
 			if (!character) continue;
-			if (includePrivateUse && /^\p{Co}$/u.test(character)) {
-				groups.all.push(character);
-				groups.symbols.push(character);
-				continue;
-			}
 			if (!isBrowsableCharacter(character)) continue;
 			groups.all.push(character);
 			if (/^\p{L}$/u.test(character)) {
@@ -195,7 +189,7 @@ const getRegistryCharacterGroups = (
 				groups.numbers.push(character);
 			} else if (/^\p{P}$/u.test(character)) {
 				groups.punctuation.push(character);
-			} else if (/^\p{S}$/u.test(character)) {
+			} else if (/^[\p{S}\p{Co}]$/u.test(character)) {
 				groups.symbols.push(character);
 			}
 		}

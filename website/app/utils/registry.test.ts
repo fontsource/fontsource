@@ -113,22 +113,37 @@ describe('registry character capabilities', () => {
 		const groups = getRegistryCharacterGroups(capabilities);
 
 		expect(groups).toEqual({
-			all: ['!', '1', 'A', 'a', '©', '́'],
+			all: ['!', '1', 'A', 'a', '©', '́', '\uE000'],
 			letters: ['A', 'a'],
 			marks: ['́'],
 			numbers: ['1'],
 			punctuation: ['!'],
-			symbols: ['©'],
+			symbols: ['©', '\uE000'],
 		});
 		for (const characters of Object.values(groups ?? {})) {
 			expect(groups?.all).toEqual(expect.arrayContaining(characters));
 		}
 	});
 
-	it('can include exact private-use mappings for declared symbol catalogs', () => {
-		expect(getRegistryCharacterGroups(capabilities, true)?.symbols).toContain(
-			'\uE000',
-		);
+	it('includes supplementary private-use mappings but excludes controls and separators', () => {
+		const groups = getRegistryCharacterGroups({
+			...capabilities,
+			unicodeRange: 'U+0000, U+0020, U+0378, U+200D, U+E000, U+F0000, U+100000',
+		});
+		expect(groups?.all).toEqual(['\uE000', '\u{F0000}', '\u{100000}']);
+		expect(groups?.symbols).toEqual(groups?.all);
+	});
+
+	it('includes Allkin private-use glyphs without a symbol catalog', () => {
+		const groups = getRegistryCharacterGroups({
+			...capabilities,
+			unicodeRange: 'U+0000, U+000D, U+0020, U+E000-E00B, U+E00D-E0C4',
+		});
+		expect(groups?.all).toHaveLength(196);
+		expect(groups?.symbols).toEqual(groups?.all);
+		expect(groups?.all).toContain('\uE000');
+		expect(groups?.all).toContain('\uE0C4');
+		expect(groups?.all).not.toContain('\uE00C');
 	});
 
 	it('creates a reusable exact coverage matcher', () => {

@@ -162,8 +162,9 @@ describe('createPreviewEditorSetup', () => {
 			sampleText,
 		}));
 		for (const [unicodeRange, supportedIndices] of [
-			['U+0041, U+0301, U+10400', [0, 1, 2]],
-			['U+0041', [0]],
+			['U+0041, U+0301, U+10400', [1, 2]],
+			['U+0041', []],
+			['U+0041, U+E000', [0]],
 		] as const) {
 			const { editorValue } = createPreviewEditorSetup({
 				metadata,

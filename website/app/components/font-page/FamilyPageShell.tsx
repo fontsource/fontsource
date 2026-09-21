@@ -83,7 +83,8 @@ export const FamilyIdentity = ({
 		? formatFontLabel(registry.classifications[0])
 		: category;
 	const tags = registry.tags.slice(0, 2);
-	const useSpecimenTitle = getRegistryFamilyKind(registry) === 'text';
+	const useSpecimenTitle =
+		getRegistryFamilyKind(registry) === 'text' && registry.languages.length > 0;
 
 	const title = (
 		<Title
