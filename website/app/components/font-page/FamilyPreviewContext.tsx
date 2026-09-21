@@ -28,7 +28,6 @@ import {
 	getAvailableWeights,
 	getPreferredLanguage,
 	getVerifiedLanguages,
-	modeLabels,
 	type PreviewEditorModel,
 	type PreviewEditorProps,
 } from './FamilyPreviewState';
@@ -195,7 +194,7 @@ const PreviewRuntimeEffects = observer(() => {
 		const currentSamples = model.state$.sampleTexts.peek();
 		const nextSamples = createLanguageModeTexts(fallbackLanguage);
 		const nextTexts = Object.fromEntries(
-			modeLabels.map(({ value }) => [
+			(['headline', 'paragraph'] as const).map((value) => [
 				value,
 				currentTexts[value] === currentSamples[value]
 					? nextSamples[value]

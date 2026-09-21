@@ -31,7 +31,8 @@ const formatUnsupportedCharacters = (characters: string[]) =>
 const PreviewCoverage = observer(() => {
 	const model = usePreviewEditor();
 	const mode = useValue(model.state$.mode);
-	const activeText = useValue(model.state$.texts[mode]);
+	const textMode = mode === 'paragraph' ? 'paragraph' : 'headline';
+	const activeText = useValue(model.state$.texts[textMode]);
 	const capabilities = useValue(() => getActiveCapabilities(model));
 	const [text] = useDebouncedValue(activeText, 300);
 	const catalogNames = useMemo(

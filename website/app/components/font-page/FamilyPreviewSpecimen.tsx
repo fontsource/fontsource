@@ -1,6 +1,6 @@
 import { batch } from '@legendapp/state';
 import { observer, useValue } from '@legendapp/state/react';
-import { SegmentedControl, VisuallyHidden } from '@mantine/core';
+import { SegmentedControl, Textarea, VisuallyHidden } from '@mantine/core';
 import {
 	IconAdjustmentsHorizontal,
 	IconAlignCenter,
@@ -173,8 +173,9 @@ const PreviewToolbar = observer(() => {
 const PreviewCanvas = observer(() => {
 	const model = usePreviewEditor();
 	const mode = useValue(model.state$.mode);
-	const activeText = useValue(model.state$.texts[mode]);
-	const sampleText = useValue(model.state$.sampleTexts[mode]);
+	const textMode = mode === 'paragraph' ? 'paragraph' : 'headline';
+	const activeText = useValue(model.state$.texts[textMode]);
+	const sampleText = useValue(model.state$.sampleTexts[textMode]);
 	const typography = useValue(model.state$.typographyByMode[mode]);
 	const axisValues = useValue(model.state$.axisValues);
 	const featureValues = useValue(model.state$.featureValues);
@@ -234,7 +235,8 @@ const PreviewCanvas = observer(() => {
 						: 'Comparison text';
 	const textInputId = `font-preview-${mode}-text`;
 	const sampleChanged = activeText !== sampleText;
-	const setActiveText = (text: string) => model.state$.texts[mode].set(text);
+	const setActiveText = (text: string) =>
+		model.state$.texts[textMode].set(text);
 	const editorHeader = (
 		<div className={classes.editorHeader}>
 			<label htmlFor={textInputId}>{editorLabel}</label>
@@ -263,27 +265,27 @@ const PreviewCanvas = observer(() => {
 					dir={previewDirection}
 					lang={previewLanguage}
 				>
-					<div className={classes.derivedEditor}>
-						{editorHeader}
-						<input
-							id={textInputId}
-							type="text"
-							value={activeText.replaceAll('\n', ' ')}
-							spellCheck={false}
-							onChange={(event) => setActiveText(event.currentTarget.value)}
-						/>
-						<PreviewCoverage />
-					</div>
+					{editorHeader}
 					<div className={classes.waterfall}>
-						{sizes.map((previewSize) => (
+						{sizes.map((previewSize, index) => (
 							<div key={previewSize}>
 								<span>{previewSize}</span>
-								<p style={{ ...previewStyle, fontSize: previewSize }}>
-									{activeText}
-								</p>
+								<Textarea
+									id={index === 0 ? textInputId : undefined}
+									aria-label={`Waterfall text at ${previewSize} pixels`}
+									unstyled
+									autosize
+									minRows={1}
+									classNames={{ input: classes.sampleInput }}
+									styles={{ input: { ...previewStyle, fontSize: previewSize } }}
+									value={activeText}
+									spellCheck={false}
+									onChange={(event) => setActiveText(event.currentTarget.value)}
+								/>
 							</div>
 						))}
 					</div>
+					<PreviewCoverage />
 				</div>
 			);
 		}
@@ -295,17 +297,7 @@ const PreviewCanvas = observer(() => {
 					dir={previewDirection}
 					lang={previewLanguage}
 				>
-					<div className={classes.derivedEditor}>
-						{editorHeader}
-						<input
-							id={textInputId}
-							type="text"
-							value={activeText.replaceAll('\n', ' ')}
-							spellCheck={false}
-							onChange={(event) => setActiveText(event.currentTarget.value)}
-						/>
-						<PreviewCoverage />
-					</div>
+					{editorHeader}
 					<FontSkeleton
 						name="font-detail-weight-strip"
 						family={packagePreviewFamily}
@@ -313,37 +305,41 @@ const PreviewCanvas = observer(() => {
 						className={classes.compareSkeleton}
 					>
 						<div className={classes.compareGrid}>
-							{availableWeights.map((value) => (
-								<button
-									key={value}
-									type="button"
-									data-active={typography.weight === value || undefined}
-									aria-pressed={typography.weight === value}
-									onClick={() =>
-										updateCurrentTypography(model, { weight: value })
-									}
-								>
+							{availableWeights.map((value, index) => (
+								<div key={value}>
 									<span>
 										{fontWeightNames[value] ?? 'Weight'} {value}
 									</span>
-									<strong
-										style={{
-											...previewStyle,
-											fontFamily: getFontFamilyStack(
-												model.metadata,
-												Boolean(model.variable),
-												model.registry,
-											),
-											fontWeight: value,
-											fontSize: typography.size,
+									<Textarea
+										id={index === 0 ? textInputId : undefined}
+										aria-label={`Comparison text at weight ${value}`}
+										unstyled
+										autosize
+										minRows={1}
+										classNames={{ input: classes.sampleInput }}
+										value={activeText}
+										spellCheck={false}
+										onChange={(event) =>
+											setActiveText(event.currentTarget.value)
+										}
+										styles={{
+											input: {
+												...previewStyle,
+												fontFamily: getFontFamilyStack(
+													model.metadata,
+													Boolean(model.variable),
+													model.registry,
+												),
+												fontWeight: value,
+												fontSize: typography.size,
+											},
 										}}
-									>
-										{activeText}
-									</strong>
-								</button>
+									/>
+								</div>
 							))}
 						</div>
 					</FontSkeleton>
+					<PreviewCoverage />
 				</div>
 			);
 		}

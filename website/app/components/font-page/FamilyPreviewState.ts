@@ -65,8 +65,8 @@ interface PreviewAxis {
 
 interface PreviewEditorValue {
 	mode: PreviewMode;
-	texts: Record<PreviewMode, string>;
-	sampleTexts: Record<PreviewMode, string>;
+	texts: Record<'headline' | 'paragraph', string>;
+	sampleTexts: Record<'headline' | 'paragraph', string>;
 	typographyByMode: PreviewTypographyByMode;
 	selectedLanguageId: string;
 	axisQuery: string;
@@ -147,7 +147,7 @@ const summarizeDescription = (value?: string) => {
 
 const getModeText = (
 	metadata: GetFontResponse,
-	mode: PreviewMode,
+	mode: 'headline' | 'paragraph',
 	registry: RegistryFamily,
 	languages: ListRegistryLanguagesResponse,
 	capabilities: GetRegistrySourceCapabilitiesResponse,
@@ -165,7 +165,6 @@ const getModeText = (
 	if (familyKind === 'symbols') {
 		return getSupportedPreviewFallback(metadata.family, capabilities);
 	}
-	if (mode === 'compare') return metadata.family;
 	return previewText.editor.defaults[mode];
 };
 
@@ -174,7 +173,7 @@ const createModeTexts = (
 	registry: RegistryFamily,
 	languages: ListRegistryLanguagesResponse,
 	capabilities: GetRegistrySourceCapabilitiesResponse,
-): Record<PreviewMode, string> => ({
+): Record<'headline' | 'paragraph', string> => ({
 	headline: getModeText(
 		metadata,
 		'headline',
@@ -189,26 +188,16 @@ const createModeTexts = (
 		languages,
 		capabilities,
 	),
-	waterfall: getModeText(
-		metadata,
-		'waterfall',
-		registry,
-		languages,
-		capabilities,
-	),
-	compare: getModeText(metadata, 'compare', registry, languages, capabilities),
 });
 
 const createLanguageModeTexts = (
 	language: RegistryLanguage,
-): Record<PreviewMode, string> => {
+): Record<'headline' | 'paragraph', string> => {
 	const short = language.sampleText?.short.trim() ?? '';
 	const long = language.sampleText?.long?.trim() || short;
 	return {
 		headline: short,
 		paragraph: long,
-		waterfall: short,
-		compare: short,
 	};
 };
 
@@ -404,7 +393,11 @@ const createPreviewEditorSetup = ({
 const getActiveSource = (model: PreviewEditorModel) => {
 	const mode = model.state$.mode.get();
 	const italic = model.state$.typographyByMode[mode].italic.get();
-	const weight = model.state$.typographyByMode[mode].weight.get();
+	// Compare has no selected weight; capabilities use its default reference weight.
+	const weight =
+		mode === 'compare'
+			? model.initialTypography.compare.weight
+			: model.state$.typographyByMode[mode].weight.get();
 	return selectRegistryPreviewSource(model.registry, {
 		variableAvailable: Boolean(model.variable),
 		style: italic ? 'italic' : 'normal',

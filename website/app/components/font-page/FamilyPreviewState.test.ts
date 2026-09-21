@@ -126,8 +126,6 @@ describe('createPreviewEditorSetup', () => {
 			expect(editorValue.texts).toEqual({
 				headline: 'home search',
 				paragraph: 'home search favorite settings',
-				waterfall: 'home search',
-				compare: 'home search',
 			});
 		},
 	);
@@ -144,8 +142,6 @@ describe('createPreviewEditorSetup', () => {
 		expect(editorValue.texts).toEqual({
 			headline: 'English',
 			paragraph: 'English preview text.',
-			waterfall: 'English',
-			compare: 'English',
 		});
 	});
 	it('verifies both samples against the current source while preserving language order', () => {

@@ -222,29 +222,31 @@ const PreviewTypographyControls = observer(
 					unit="px"
 					onChange={(size) => updateCurrentTypography(model, { size })}
 				/>
-				<RangeControl
-					id={`${idPrefix}-weight`}
-					label="Weight"
-					description={
-						weightMin === weightMax
-							? 'This family provides one fixed weight.'
-							: weightAxis
-								? 'Fine-tunes the strokes from light to bold.'
-								: 'Chooses an available weight from light to bold.'
-					}
-					value={typography.weight}
-					min={weightMin}
-					max={weightMax}
-					step={weightAxis?.step ?? 1}
-					marks={
-						weightAxis
-							? undefined
-							: availableWeights.map((value) => ({ value }))
-					}
-					restrictToMarks={!weightAxis && availableWeights.length > 1}
-					fixed={weightMin === weightMax}
-					onChange={(weight) => updateCurrentTypography(model, { weight })}
-				/>
+				{mode !== 'compare' && (
+					<RangeControl
+						id={`${idPrefix}-weight`}
+						label="Weight"
+						description={
+							weightMin === weightMax
+								? 'This family provides one fixed weight.'
+								: weightAxis
+									? 'Fine-tunes the strokes from light to bold.'
+									: 'Chooses an available weight from light to bold.'
+						}
+						value={typography.weight}
+						min={weightMin}
+						max={weightMax}
+						step={weightAxis?.step ?? 1}
+						marks={
+							weightAxis
+								? undefined
+								: availableWeights.map((value) => ({ value }))
+						}
+						restrictToMarks={!weightAxis && availableWeights.length > 1}
+						fixed={weightMin === weightMax}
+						onChange={(weight) => updateCurrentTypography(model, { weight })}
+					/>
+				)}
 				{model.metadata.styles.includes('italic') && (
 					<div className={classes.segmentedField}>
 						<div className={classes.rangeCopy}>
