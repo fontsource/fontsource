@@ -292,10 +292,10 @@ export const FamilyAbout = ({
 		fontFamily,
 		fontFeatureSettings: hasNamedLigatures ? '"liga"' : undefined,
 	};
-	const classifications = registry.classifications.map(
-		(value) =>
-			taxonomy?.classifications[value]?.label ?? formatFontLabel(value),
-	);
+	const classifications = registry.classifications.map((id) => ({
+		id,
+		label: taxonomy?.classifications[id]?.label ?? formatFontLabel(id),
+	}));
 	const tags = registry.tags.map((id) => ({
 		id,
 		label: taxonomy?.tags[id]?.label ?? formatFontLabel(id),
@@ -399,7 +399,16 @@ export const FamilyAbout = ({
 					)}
 					<div>
 						<dt>Classification</dt>
-						<dd>{classifications.join(', ')}</dd>
+						<dd>
+							{classifications.map((classification, index) => (
+								<span key={classification.id}>
+									{index > 0 && ', '}
+									<Link to={`/categories/${classification.id}`}>
+										{classification.label}
+									</Link>
+								</span>
+							))}
+						</dd>
 					</div>
 					<div>
 						<dt>Coverage</dt>
@@ -462,7 +471,9 @@ export const FamilyAbout = ({
 					</div>
 					<ul>
 						{tags.map((tag) => (
-							<li key={tag.id}>{tag.label}</li>
+							<li key={tag.id}>
+								<Link to={`/tags/${tag.id}`}>{tag.label}</Link>
+							</li>
 						))}
 					</ul>
 				</section>

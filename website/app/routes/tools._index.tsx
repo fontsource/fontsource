@@ -1,7 +1,7 @@
-import { SimpleGrid } from '@mantine/core';
 import { IconBolt, IconTransform } from '@tabler/icons-react';
 import type { MetaFunction } from 'react-router';
 import { ToolCard } from '@/components/tools/ToolCard';
+import classes from '@/styles/tools.module.css';
 import { ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => {
@@ -30,16 +30,25 @@ const tools = [
 
 export default function ToolsIndexPage() {
 	return (
-		<SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
-			{tools.map((tool) => (
-				<ToolCard
-					key={tool.title}
-					title={tool.title}
-					description={tool.description}
-					link={tool.link}
-					icon={tool.icon}
-				/>
-			))}
-		</SimpleGrid>
+		<div className={classes.page}>
+			<header className={classes.header}>
+				<h1>Font tools</h1>
+				<p>
+					Convert font files or prepare them for your website. Everything runs
+					in your browser.
+				</p>
+			</header>
+			<div className={classes.directory}>
+				{tools.map((tool) => (
+					<ToolCard
+						key={tool.title}
+						title={tool.title}
+						description={tool.description}
+						link={tool.link}
+						icon={tool.icon}
+					/>
+				))}
+			</div>
+		</div>
 	);
 }

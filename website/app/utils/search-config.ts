@@ -31,6 +31,7 @@ interface SearchRouteState {
 	sort?: string;
 	subsets?: string | string[];
 	classifications?: string | string[];
+	tags?: string | string[];
 	languages?: string | string[];
 	variable?: boolean;
 }
@@ -136,6 +137,9 @@ const routing = (
 								classifications: index.refinementList.classifications.join(','),
 							}
 						: {}),
+					...(index.refinementList?.tags?.length
+						? { tags: index.refinementList.tags.join(',') }
+						: {}),
 					...(index.refinementList?.languageIds?.length
 						? { languages: index.refinementList.languageIds.join(',') }
 						: {}),
@@ -156,6 +160,7 @@ const routing = (
 				const classifications = parseSubsets(
 					resolvedRouteState.classifications,
 				);
+				const tags = parseSubsets(resolvedRouteState.tags);
 				const languageIds = parseSubsets(resolvedRouteState.languages);
 				state$.collectionId.set(resolvedRouteState.collection ?? null);
 
@@ -165,6 +170,7 @@ const routing = (
 					refinementList: {
 						...(subsets?.length ? { subsets } : {}),
 						...(classifications?.length ? { classifications } : {}),
+						...(tags?.length ? { tags } : {}),
 						...(languageIds?.length ? { languageIds } : {}),
 					},
 					// Menu facets

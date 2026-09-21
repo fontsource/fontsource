@@ -1,12 +1,19 @@
-import { type ListFontValuesResponse, listFontValues } from '@/generated/api';
+import {
+	type GetRegistryTaxonomyResponse,
+	getRegistryTaxonomy,
+	type ListFontValuesResponse,
+	type ListRegistryFamiliesResponse,
+	listFontValues,
+	listRegistryFamilies,
+} from '@/generated/api';
 import { getDiscoveryPages } from '@/utils/discovery';
 
-const countProjection = (
-	projection: ListFontValuesResponse,
+const countValues = (
+	familyValues: ListFontValuesResponse[string][],
 ): Record<string, number> => {
 	const counts: Record<string, number> = {};
 
-	for (const value of Object.values(projection)) {
+	for (const value of familyValues) {
 		const values = new Set(
 			(Array.isArray(value) ? value : [value]).map((item) => String(item)),
 		);
@@ -18,19 +25,47 @@ const countProjection = (
 	return counts;
 };
 
-const loadDiscoveryCounts = async (signal?: AbortSignal) => {
-	const [subsets, categories, variable] = await Promise.all([
-		listFontValues({ subsets: '' }, { signal }),
-		listFontValues({ category: '' }, { signal }),
-		listFontValues({ variable: '' }, { signal }),
-	]);
-
-	return {
-		subsets: countProjection(subsets),
-		categories: countProjection(categories),
-		variable: countProjection(variable).true ?? 0,
-	};
+export type DiscoveryRegistry = {
+	families: ListRegistryFamiliesResponse;
+	taxonomy: GetRegistryTaxonomyResponse;
 };
 
-export const loadDiscoveryPages = async (signal?: AbortSignal) =>
-	getDiscoveryPages(await loadDiscoveryCounts(signal));
+export const loadDiscoveryData = async (
+	signal?: AbortSignal,
+	pathname?: string,
+) => {
+	// Browse and the sitemap need every projection; a landing page only needs its own.
+	const [subsets, categories, variable, families, taxonomy] = await Promise.all(
+		[
+			!pathname || pathname.startsWith('/languages/')
+				? listFontValues({ subsets: '' }, { signal })
+				: Promise.resolve<ListFontValuesResponse>({}),
+			listFontValues({ category: '' }, { signal }),
+			!pathname || pathname === '/variable-fonts'
+				? listFontValues({ variable: '' }, { signal })
+				: Promise.resolve<ListFontValuesResponse>({}),
+			listRegistryFamilies({ signal }),
+			getRegistryTaxonomy({ signal }),
+		],
+	);
+
+	// Search indexes the published font catalog, not every registry family.
+	const catalogFamilies = families.filter((family) =>
+		Object.hasOwn(categories, family.id),
+	);
+	const counts = {
+		subsets: countValues(Object.values(subsets)),
+		categories: countValues(Object.values(categories)),
+		variable: countValues(Object.values(variable)).true ?? 0,
+		classifications: countValues(
+			catalogFamilies.map((family) => family.classifications),
+		),
+		tags: countValues(catalogFamilies.map((family) => family.tags)),
+	};
+	return {
+		pages: getDiscoveryPages(counts, taxonomy),
+		catalogFamilies,
+		catalogSubsets: subsets,
+		registry: { families, taxonomy },
+	};
+};

@@ -120,7 +120,10 @@ export const languageDiscoveryContent = {
 	},
 } satisfies Record<string, DiscoveryContent>;
 
-export const categoryDiscoveryContent = {
+export const categoryDiscoveryContent: Record<
+	string,
+	DiscoveryContent & { label: string }
+> = {
 	display: {
 		description:
 			'Browse open-source display fonts for headlines, posters, and branding. Preview your text, compare styles, and self-host with Fontsource.',
@@ -155,6 +158,20 @@ export const categoryDiscoveryContent = {
 		intro:
 			'Explore versatile typefaces for interfaces, branding, and clear everyday reading.',
 		label: 'Sans Serif',
+	},
+	'slab-serif': {
+		label: 'Slab Serif',
+		description:
+			'Browse open-source slab serif fonts with substantial, block-like serifs. Preview families for headlines, branding, and text, then self-host with Fontsource.',
+		intro:
+			'Explore typefaces with substantial, block-like serifs, from geometric designs to softer styles for text and headlines.',
+	},
+	symbols: {
+		label: 'Symbols',
+		description:
+			'Explore open-source symbol fonts for icons, mathematics, music, and pictograms. Compare families and self-host with Fontsource.',
+		intro:
+			'Find specialist typefaces for symbols, from interface icons and pictograms to mathematical and musical notation.',
 	},
 	serif: {
 		description:

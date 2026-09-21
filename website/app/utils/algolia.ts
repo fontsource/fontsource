@@ -1,4 +1,4 @@
-const ALGOLIA_CACHE_KEY_PREFIX = 'algolia:ssr:language-index-v1';
+const ALGOLIA_CACHE_KEY_PREFIX = 'algolia:ssr:taxonomy-v2';
 
 export const buildAlgoliaCacheKey = (
 	requestUrl: string,
@@ -13,6 +13,7 @@ export const buildAlgoliaCacheKey = (
 		'sort',
 		'subsets',
 		'classifications',
+		'tags',
 		'languages',
 	]);
 	// qs also accepts bracket arrays such as languages[0]=ja_Jpan.

@@ -1,26 +1,15 @@
 .toolCard {
-	text-decoration: none;
-	color: inherit;
-	transition: all 150ms ease;
-	border: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
-	border-radius: var(--mantine-radius-lg);
-	background-color: light-dark(var(--mantine-color-background-1), var(--mantine-color-background-4));
-
-	&:hover {
-		text-decoration: none;
-		background-color: light-dark(var(--mantine-color-background-2), var(--mantine-color-background-5));
-		transform: translateY(-1px);
-	}
-
-	&:focus-visible {
-		outline: 2px solid var(--mantine-color-purpleHover-2);
-		outline-offset: -3px;
-	}
+    display: block;
+    padding-block: 24px;
+    border-block: 1px solid light-dark(var(--mantine-color-border-0), var(--mantine-color-border-1));
+    text-decoration: none;
+    color: inherit;
 }
-
-.description {
-	color: light-dark(
-		var(--mantine-color-gray-7),
-		var(--mantine-color-dark-1)
-	);
-}
+.heading { display: flex; gap: 12px; align-items: center; }
+.heading h2 { margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3; }
+.heading svg { flex-shrink: 0; }
+.arrow { margin-left: auto; }
+.description { margin: 16px 0 0; color: light-dark(#4a566d, #bdc6d9); font-size: 15px; line-height: 1.5; }
+.toolCard:hover h2 { color: light-dark(#473ef6, #aaa6ff); text-decoration: underline; text-underline-offset: 4px; }
+.toolCard:focus-visible { outline: 2px solid var(--mantine-color-purple-0); outline-offset: 4px; }
+@media (--lt-sm) { .toolCard + .toolCard { border-top: 0; } .heading h2 { font-size: 20px; } }
