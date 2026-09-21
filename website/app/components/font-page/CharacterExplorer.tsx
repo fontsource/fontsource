@@ -403,17 +403,12 @@ export const CharacterExplorer = ({
 	const selectedName = activeSymbolName
 		? formatFontLabel(activeSymbolName)
 		: activeIsCombiningMark
-			? `Combining mark on ${markPreviewBase.trim() || 'a spacing guide'}`
-			: activeCharacter
-				? 'Character'
-				: '';
-	const selectedUnicode = activeIsCatalogEntry
-		? activeSymbolCodepoint === undefined
-			? ''
-			: formatCodepoint(activeSymbolCodepoint)
-		: activeCharacter
-			? getCodePoints(activeCharacter)
-			: '';
+			? 'Combining mark'
+			: 'Character';
+	const selectedUnicode =
+		activeSymbolCodepoint === undefined
+			? getCodePoints(activeCharacter ?? '')
+			: formatCodepoint(activeSymbolCodepoint);
 	const selectedCodePoint =
 		hasNamedLigatures && activeSymbolName
 			? `${selectedUnicode} · Name ligature: ${activeSymbolName}`
