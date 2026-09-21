@@ -21,10 +21,12 @@ const categoriesMap: Record<string, string> = {
 };
 
 const transformSubsets = (items: MenuItem[]): MenuItem[] => {
-	return items.map((item) => ({
-		...item,
-		label: subsetToLanguage(item.label),
-	}));
+	return items
+		.filter((item) => item.isRefined || item.count > 0)
+		.map((item) => ({
+			...item,
+			label: subsetToLanguage(item.label),
+		}));
 };
 
 const transformCategories = (items: MenuItem[]): MenuItem[] => {

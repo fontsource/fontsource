@@ -113,7 +113,11 @@ const DropdownBase = ({
 				)}
 				<Combobox.Options>
 					<ScrollArea.Autosize type="scroll" mah={240} scrollbars="y">
-						{options}
+						{search && options.length === 0 ? (
+							<Combobox.Empty>No matching languages</Combobox.Empty>
+						) : (
+							options
+						)}
 					</ScrollArea.Autosize>
 				</Combobox.Options>
 			</Combobox.Dropdown>
