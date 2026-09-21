@@ -34,7 +34,7 @@ export const FormatSelector = ({
 	return (
 		<ToolOptions title="Output Formats">
 			<Text size="sm" className={classes.supportingText}>
-				Choose one or more formats. OTF is supported as an input format only.
+				Choose one or more formats.
 			</Text>
 			<Group mt="sm" gap="xl" align="flex-start">
 				{formatOptions.map(({ key, label, description }) => (
