@@ -9,7 +9,6 @@ import {
 } from '@mantine/core';
 import { IconItalic, IconSearch } from '@tabler/icons-react';
 
-import { IconRotate } from '@/components/icons';
 import {
 	getOpenTypeFeatureDescription,
 	getOpenTypeFeatureName,
@@ -26,12 +25,10 @@ import {
 	getActiveSource,
 	getAdjustableAxes,
 	getAvailableWeights,
-	modeLabels,
 	type PreviewInspectorSection,
 	resetAxes,
 	resetCurrentTypography,
 	resetFeatures,
-	resetStyling,
 	typographyMatches,
 	updateCurrentTypography,
 } from './FamilyPreviewState';
@@ -182,77 +179,10 @@ const InspectorSearch = ({
 	</label>
 );
 
-const PreviewInspectorHeader = observer(
-	({ embedded }: { embedded: boolean }) => {
-		const model = usePreviewEditor();
-		const mode = useValue(model.state$.mode);
-		const inspectorSection = useValue(model.state$.inspectorSection);
-		const typographyByMode = useValue(model.state$.typographyByMode);
-		const axisValues = useValue(model.state$.axisValues);
-		const featureValues = useValue(model.state$.featureValues);
-		const adjustableAxes = useValue(() => getAdjustableAxes(model));
-		const featureTags = useValue(() => getActiveFeatureTags(model));
-		const changedTypographyModes = modeLabels.filter(
-			({ value }) =>
-				!typographyMatches(
-					typographyByMode[value],
-					model.initialTypography[value],
-				),
-		);
-		const typographyChanged = changedTypographyModes.length > 0;
-		const currentTypographyChanged = changedTypographyModes.some(
-			({ value }) => value === mode,
-		);
-		const axesChanged = adjustableAxes.some(
-			(axis) => (axisValues[axis.tag] ?? axis.default) !== axis.default,
-		);
-		const featuresChanged = featureTags.some(
-			(tag) =>
-				Boolean(featureValues[tag]) !== enabledByDefaultFeatureTags.has(tag),
-		);
-		const changedGroups = [
-			typographyChanged,
-			axesChanged,
-			featuresChanged,
-		].filter(Boolean).length;
-		const showResetAll =
-			changedGroups > 1 ||
-			(typographyChanged &&
-				(inspectorSection !== 'typography' ||
-					!currentTypographyChanged ||
-					changedTypographyModes.length > 1)) ||
-			(axesChanged && inspectorSection !== 'axes') ||
-			(featuresChanged && inspectorSection !== 'features');
-
-		if (!embedded && !showResetAll) return null;
-
-		return (
-			<div
-				className={embedded ? classes.inspectorHeading : classes.drawerReset}
-			>
-				{embedded && (
-					<div>
-						<h2>Preview settings</h2>
-						<p>
-							{model.familyKind === 'symbols'
-								? 'Fine-tune how symbols appear in this preview.'
-								: 'Fine-tune this view. Other previews keep their settings.'}
-						</p>
-					</div>
-				)}
-				{showResetAll && (
-					<button
-						type="button"
-						aria-label="Reset all preview settings"
-						onClick={() => resetStyling(model)}
-					>
-						<IconRotate aria-hidden height={15} />
-						Reset all views
-					</button>
-				)}
-			</div>
-		);
-	},
+const PreviewInspectorHeader = () => (
+	<div className={classes.inspectorHeading}>
+		<h2>Preview settings</h2>
+	</div>
 );
 
 const PreviewTypographyControls = observer(
@@ -653,7 +583,7 @@ const PreviewInspector = observer(
 
 		return (
 			<div className={classes.inspectorContent}>
-				<PreviewInspectorHeader embedded={embedded} />
+				{embedded && <PreviewInspectorHeader />}
 				{sections.length > 1 && (
 					<div className={classes.inspectorSectionChooser}>
 						<SegmentedControl
