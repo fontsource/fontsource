@@ -1,4 +1,5 @@
 import { Checkbox, Group, Text } from '@mantine/core';
+import classes from './FontWorkbench.module.css';
 import { ToolOptions } from './ToolOptions';
 
 interface Formats {
@@ -14,9 +15,13 @@ interface FormatSelectorProps {
 }
 
 const formatOptions = [
-	{ key: 'woff2', label: 'WOFF2 (recommended)' },
-	{ key: 'woff', label: 'WOFF' },
-	{ key: 'ttf', label: 'TTF' },
+	{
+		key: 'woff2',
+		label: 'WOFF2 (recommended)',
+		description: 'For modern websites.',
+	},
+	{ key: 'woff', label: 'WOFF', description: 'For older browsers.' },
+	{ key: 'ttf', label: 'TTF', description: 'For desktop apps.' },
 ] as const;
 
 export const FormatSelector = ({
@@ -28,11 +33,17 @@ export const FormatSelector = ({
 
 	return (
 		<ToolOptions title="Output Formats">
-			<Group mt="sm">
-				{formatOptions.map(({ key, label }) => (
+			<Text size="sm" className={classes.supportingText}>
+				Choose one or more formats.
+			</Text>
+			<Group mt="sm" gap="xl" align="flex-start">
+				{formatOptions.map(({ key, label, description }) => (
 					<Checkbox
 						key={key}
 						label={label}
+						description={
+							<span className={classes.supportingText}>{description}</span>
+						}
 						checked={formats[key]}
 						disabled={disabled}
 						onChange={({ currentTarget: { checked } }) =>
