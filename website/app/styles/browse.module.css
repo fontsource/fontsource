@@ -107,7 +107,7 @@
 .tagGroups { display: grid; gap: 32px; }
 .tagGroups h3 { margin: 0 0 8px; font-size: 16px; font-weight: 600; }
 
-.link:hover, .variable:hover, .navigation a:hover { color: light-dark(#473ef6, #aaa6ff); text-decoration: underline; text-underline-offset: 4px; }
+.link:hover > span:first-child, .variable:hover strong, .navigation a:hover { color: light-dark(#473ef6, #aaa6ff); text-decoration: underline; text-underline-offset: 4px; }
 .link:focus-visible, .variable:focus-visible, .navigation a:focus-visible { outline: 2px solid var(--mantine-color-purple-0); outline-offset: 4px; border-radius: 2px; }
 .results { display: flex; align-items: center; gap: 16px; color: var(--directory-muted); margin-block: 24px 0; }
 .empty { padding-block: 48px; color: var(--directory-muted); }
@@ -149,7 +149,7 @@
 .tagLink .categoryLabel { font-size: 13px; align-items: baseline; }
 .tagSpecimen { display: block; height: 3em; overflow: hidden; font-size: 28px; font-weight: 400; line-height: 1.5; margin-top: 12px; overflow-wrap: anywhere; visibility: hidden; }
 .tagSpecimen[data-ready] { visibility: visible; }
-.tagLink:hover .categoryLabel { color: light-dark(#473ef6, #aaa6ff); text-decoration: underline; text-underline-offset: 4px; }
+.tagLink:hover .categoryLabel > span:first-child { color: light-dark(#473ef6, #aaa6ff); text-decoration: underline; text-underline-offset: 4px; }
 .tagLink:focus-visible { outline: 2px solid var(--mantine-color-purple-0); outline-offset: 4px; }
 @media (--lt-md) { .tagDirectory { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (--lt-sm) { .tagDirectory { grid-template-columns: minmax(0, 1fr); } .tagSpecimen { height: auto; max-height: 3em; min-height: 1.5em; font-size: 30px; } }
