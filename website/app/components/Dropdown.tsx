@@ -165,16 +165,16 @@ const DropdownCheckbox = ({
 			key={item.value}
 			active={item.isRefined}
 		>
-			<Group gap="sm" justify="flex-start">
+			<Group gap="sm" wrap="nowrap">
 				<Checkbox
 					checked={item.isRefined}
 					aria-hidden
 					tabIndex={-1}
-					style={{ pointerEvents: 'none' }}
+					style={{ pointerEvents: 'none', flexShrink: 0 }}
 					readOnly
 				/>
 				<span className={classes.option}>{item.label ?? item.value}</span>
-				{showCount && item.count && (
+				{showCount && item.count !== undefined && (
 					<Badge
 						variant="light"
 						color="gray"

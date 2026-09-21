@@ -14,9 +14,16 @@
 }
 
 .option {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 	text-transform: capitalize;
 }
 
 .count {
-	margin-left: auto;
+	flex-shrink: 0;
+	min-width: 3rem;
+	font-variant-numeric: tabular-nums;
 }
