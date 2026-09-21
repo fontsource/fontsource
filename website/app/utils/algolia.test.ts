@@ -46,7 +46,7 @@ describe('buildAlgoliaCacheKey', () => {
 	});
 });
 
-it.each(['classifications', 'languages', 'tags'])(
+it.each(['classifications', 'languages'])(
 	'does not reuse unfiltered SSR cache for %s',
 	(filter) => {
 		expect(

@@ -18,7 +18,6 @@ import {
 	CategoriesDropdown,
 	LanguagesDropdown,
 	type SearchFacets,
-	TagsDropdown,
 } from './Dropdowns';
 import classes from './Filters.module.css';
 import type { SearchState } from './observables';
@@ -90,25 +89,29 @@ const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 				<SizeSlider state$={state$} />
 			</SimpleGrid>
 			<Box className={classes.filters}>
-				<Group justify="center" wrap="nowrap">
-					<CollectionFilter
-						onChange={handleCollectionChange}
-						value={collectionId}
-					/>
+				<SimpleGrid
+					cols={{ base: 2, xs: 3 }}
+					spacing="sm"
+					className={classes.dropdowns}
+				>
+					<Box className={classes.collection}>
+						<CollectionFilter
+							onChange={handleCollectionChange}
+							value={collectionId}
+						/>
+					</Box>
 					<CategoriesDropdown taxonomy={taxonomy} />
 					<LanguagesDropdown languages={languages} />
-					<TagsDropdown taxonomy={taxonomy} />
-				</Group>
-				<Group justify="center" wrap="nowrap">
+				</SimpleGrid>
+				<Group justify="space-between" gap="sm">
 					<Checkbox
 						checked={variableValue.isRefined}
 						color="purple.0"
 						disabled={!canRefine}
-						label="Show only variable fonts"
+						label="Variable fonts"
 						onChange={() => {
 							variableRefine(variableValue);
 						}}
-						w={200}
 					/>
 					<Button
 						leftSection={<IconTrash aria-hidden="true" />}
@@ -118,7 +121,7 @@ const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 							handleClearRefinement();
 						}}
 					>
-						Clear all filters
+						Clear filters
 					</Button>
 				</Group>
 			</Box>

@@ -17,6 +17,24 @@ export interface SearchFacets {
 	taxonomy: GetRegistryTaxonomyResponse;
 }
 
+// A curated starting order; coverage counts favor small alphabets, not popularity.
+const commonLanguages = new Map(
+	[
+		'en_Latn',
+		'es_Latn',
+		'fr_Latn',
+		'de_Latn',
+		'pt_Latn',
+		'zh_Hans',
+		'zh_Hant',
+		'ja_Jpan',
+		'ko_Kore',
+		'ar_Arab',
+		'hi_Deva',
+		'ru_Cyrl',
+	].map((id, index) => [id, index]),
+);
+
 const selectionLabel = (labels: string[], fallback: string) =>
 	labels.length > 1
 		? `${labels[0]} + ${labels.length - 1}`
@@ -49,6 +67,12 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 			language.id,
 		].some((value) => value?.toLocaleLowerCase().includes(normalizedQuery)),
 	}));
+	languageItems.sort(
+		(a, b) =>
+			(commonLanguages.get(a.value) ?? commonLanguages.size) -
+				(commonLanguages.get(b.value) ?? commonLanguages.size) ||
+			a.label.localeCompare(b.label),
+	);
 	const legacyItems = subsets.map((subset) => ({
 		value: `subset:${subset}`,
 		label: `${subsetToLanguage(subset)} (subset)`,
@@ -59,6 +83,8 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 	return (
 		<DropdownCheckbox
 			label={selectionLabel(labels, 'Search all languages')}
+			w="100%"
+			dropdownWidth={250}
 			ariaLabel="Languages"
 			items={[
 				...legacyItems,
@@ -110,6 +136,8 @@ const CategoriesDropdown = ({ taxonomy }: Pick<SearchFacets, 'taxonomy'>) => {
 				'All categories',
 			)}
 			showCount
+			w="100%"
+			dropdownWidth={250}
 			ariaLabel="Categories"
 			items={categories}
 			refine={(value) =>
@@ -121,31 +149,4 @@ const CategoriesDropdown = ({ taxonomy }: Pick<SearchFacets, 'taxonomy'>) => {
 	);
 };
 
-const TagsDropdown = ({ taxonomy }: Pick<SearchFacets, 'taxonomy'>) => {
-	const { items, refine } = useRefinementList({
-		attribute: 'tags',
-		operator: 'and',
-		limit: 100,
-	});
-	const tags = items.map((item) => ({
-		...item,
-		label: taxonomy.tags[item.value]
-			? `${taxonomy.tagGroups[item.value.split('/')[0]]?.label ?? item.value.split('/')[0]}: ${taxonomy.tags[item.value].label}`
-			: item.value,
-	}));
-	return (
-		<DropdownCheckbox
-			label={selectionLabel(
-				tags.filter((item) => item.isRefined).map((item) => item.label),
-				'All tags',
-			)}
-			showCount
-			ariaLabel="Tags (match all selected)"
-			items={tags}
-			refine={refine}
-			searchable
-		/>
-	);
-};
-
-export { CategoriesDropdown, LanguagesDropdown, TagsDropdown };
+export { CategoriesDropdown, LanguagesDropdown };

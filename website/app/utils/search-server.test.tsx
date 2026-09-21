@@ -122,7 +122,7 @@ it('preserves legacy filters alongside registry filters in SSR requests', async 
 		}),
 	);
 	await getSearchServerState(
-		'https://fontsource.org/?category=icons&subsets=japanese&classifications=symbols,display&languages=ja_Jpan,zh_Hant&tags=theme/fantasy,purpose/headline',
+		'https://fontsource.org/?category=icons&subsets=japanese&classifications=symbols,display&languages=ja_Jpan,zh_Hant',
 		{
 			languages: await listRegistryLanguages(),
 			taxonomy: await getRegistryTaxonomy(),
@@ -137,8 +137,6 @@ it('preserves legacy filters alongside registry filters in SSR requests', async 
 			'subsets:japanese',
 			'languageIds:ja_Jpan',
 			'languageIds:zh_Hant',
-			'tags:theme/fantasy',
-			'tags:purpose/headline',
 			expect.arrayContaining([
 				'classifications:symbols',
 				'classifications:display',

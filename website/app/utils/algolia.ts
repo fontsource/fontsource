@@ -14,7 +14,6 @@ export const buildAlgoliaCacheKey = (
 		'subsets',
 		'classifications',
 		'languages',
-		'tags',
 	]);
 	// qs also accepts bracket arrays such as languages[0]=ja_Jpan.
 	if (
