@@ -1,14 +1,31 @@
 import { isbot } from 'isbot';
 import { renderToReadableStream } from 'react-dom/server';
-import type { EntryContext, RouterContextProvider } from 'react-router';
+import type {
+	EntryContext,
+	HandleErrorFunction,
+	RouterContextProvider,
+} from 'react-router';
 import { ServerRouter } from 'react-router';
+import { cloudflareContext } from '@/utils/cloudflare-context';
+import { captureServerError } from '@/utils/posthog.server';
+
+export const handleError: HandleErrorFunction = (
+	error,
+	{ request, context },
+) => {
+	if (request.signal.aborted) return;
+	console.error(error);
+	context
+		.get(cloudflareContext)
+		.ctx.waitUntil(captureServerError(error, request));
+};
 
 export default async function handleRequest(
 	request: Request,
 	responseStatusCode: number,
 	responseHeaders: Headers,
 	routerContext: EntryContext,
-	_loadContext: RouterContextProvider,
+	loadContext: RouterContextProvider,
 ) {
 	let shellRendered = false;
 	const userAgent = request.headers.get('user-agent');
@@ -22,7 +39,7 @@ export default async function handleRequest(
 				// errors encountered during initial shell rendering since they'll
 				// reject and get logged in handleDocumentRequest.
 				if (shellRendered) {
-					console.error(error);
+					handleError(error, { request, context: loadContext, params: {} });
 				}
 			},
 		},

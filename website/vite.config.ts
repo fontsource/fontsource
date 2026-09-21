@@ -26,6 +26,7 @@ export default defineConfig({
 	build: {
 		cssMinify: 'lightningcss',
 		minify: 'terser',
+		sourcemap: process.env.POSTHOG_API_KEY ? 'hidden' : false,
 	},
 	worker: {
 		format: 'es',

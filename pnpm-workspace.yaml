@@ -6,6 +6,7 @@ packages:
 
 allowBuilds:
   '@parcel/watcher': true
+  '@posthog/cli': true
   core-js: false
   esbuild: true
   sharp: true
