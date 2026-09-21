@@ -297,14 +297,7 @@ export const RegistryLanguageMembershipSchema = z
 			.array(IdSchema)
 			.describe('Sorted family IDs indexed by membership bits'),
 		languages: z
-			.record(
-				LanguageIdSchema,
-				z
-					.string()
-					.regex(
-						/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/,
-					),
-			)
+			.record(LanguageIdSchema, z.base64())
 			.describe(
 				'Base64 bitsets; family i uses bit i % 8 of byte floor(i / 8), least significant bit first',
 			),
