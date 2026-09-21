@@ -165,9 +165,9 @@ export default function PrivacyPage() {
 
 						<PolicySection id="analytics" number="05" title="Analytics">
 							<Text>
-								We use PostHog to help improve the website. It
-								collects page views, interactions such as clicks, and browser
-								and device information.
+								We use PostHog to help improve the website. It collects page
+								views, interactions such as clicks, and browser and device
+								information.
 							</Text>
 							<Text>
 								PostHog uses your IP address and browser information to create a
