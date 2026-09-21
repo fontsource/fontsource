@@ -11,7 +11,7 @@ export const getRecommendedPreviewLanguage = (
 	font: Pick<
 		GetRegistryFamilyResponse,
 		'sampleText' | 'previewSubset' | 'primaryLanguage' | 'primaryScript'
-	>,
+	> & { defSubset?: string },
 	languages: ListRegistryLanguagesResponse,
 ) => {
 	if (font.sampleText || font.previewSubset) return undefined;
@@ -21,6 +21,7 @@ export const getRecommendedPreviewLanguage = (
 		) ??
 		languages.find(
 			(language) =>
+				(!font.defSubset || !previewText.language.subsets[font.defSubset]) &&
 				font.primaryScript !== 'Latn' &&
 				language.script === font.primaryScript &&
 				language.sampleText,

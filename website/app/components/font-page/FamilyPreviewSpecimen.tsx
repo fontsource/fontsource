@@ -54,7 +54,10 @@ const PreviewToolbar = observer(() => {
 	);
 	const sampleLanguage =
 		selectedLanguage ??
-		getRecommendedPreviewLanguage(model.registry, model.languages);
+		getRecommendedPreviewLanguage(
+			{ ...model.metadata, ...model.registry },
+			model.languages,
+		);
 	const previewDirection =
 		sampleLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
 	const StartAlignmentIcon =
@@ -200,7 +203,10 @@ const PreviewCanvas = observer(() => {
 	);
 	const sampleLanguage =
 		selectedLanguage ??
-		getRecommendedPreviewLanguage(model.registry, model.languages);
+		getRecommendedPreviewLanguage(
+			{ ...model.metadata, ...model.registry },
+			model.languages,
+		);
 	const previewDirection =
 		sampleLanguage?.direction ?? model.registry.primaryDirection ?? 'ltr';
 	const previewLanguage = getPreviewLanguageTag(sampleLanguage);
