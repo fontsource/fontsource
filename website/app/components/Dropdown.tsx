@@ -1,6 +1,6 @@
 import {
 	Badge,
-	Checkbox,
+	CheckboxIndicator,
 	Combobox,
 	Group,
 	InputBase,
@@ -67,13 +67,6 @@ const DropdownBase = ({
 		if (closeOnSelect) combobox.closeDropdown();
 	};
 
-	const handleSearchQuery = (query: string) => {
-		if (search) {
-			search(query);
-			setSearchQuery(query);
-		}
-	};
-
 	return (
 		<Combobox
 			store={combobox}
@@ -106,7 +99,9 @@ const DropdownBase = ({
 						aria-label="Search languages"
 						value={searchQuery}
 						onChange={(event) => {
-							handleSearchQuery(event.currentTarget.value);
+							const query = event.currentTarget.value;
+							setSearchQuery(query);
+							search(query);
 						}}
 						placeholder="Search languages"
 					/>
@@ -170,12 +165,10 @@ const DropdownCheckbox = ({
 			active={item.isRefined}
 		>
 			<Group gap="sm" wrap="nowrap">
-				<Checkbox
+				<CheckboxIndicator
 					checked={item.isRefined}
 					aria-hidden
-					tabIndex={-1}
 					style={{ pointerEvents: 'none', flexShrink: 0 }}
-					readOnly
 				/>
 				<span className={classes.option}>{item.label ?? item.value}</span>
 				{showCount && item.count !== undefined && (
