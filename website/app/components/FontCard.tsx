@@ -1,9 +1,9 @@
 import { Box, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
-import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import type { ListRegistryLanguagesResponse } from '@/generated/api';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
+import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
 import {
 	getFontFamilyStack,
 	getPreviewLanguageTag,
@@ -42,15 +42,11 @@ const FontCard = ({
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
 	});
-	const [shouldLoadStylesheet, setShouldLoadStylesheet] =
-		useState(eagerStylesheet);
-	const isFontReady = useIsFontReady(font.family, shouldLoadStylesheet);
-
-	useEffect(() => {
-		if (eagerStylesheet || entry?.isIntersecting) {
-			setShouldLoadStylesheet(true);
-		}
-	}, [eagerStylesheet, entry?.isIntersecting]);
+	const isStylesheetReady = usePreviewStylesheet(
+		stylesheetHref,
+		eagerStylesheet || Boolean(entry?.isIntersecting),
+	);
+	const isFontReady = useIsFontReady(font.family, isStylesheetReady);
 
 	const previewText =
 		preview ?? getRecommendedPreviewText(font, 'short', languages);
@@ -65,12 +61,8 @@ const FontCard = ({
 			mih={{ base: '150px', sm: layout === 'grid' ? '332px' : '150px' }}
 			ref={ref}
 		>
-			{shouldLoadStylesheet && (
-				<link
-					rel="stylesheet"
-					href={stylesheetHref}
-					precedence="font-preview"
-				/>
+			{eagerStylesheet && (
+				<link rel="preload" as="style" href={stylesheetHref} />
 			)}
 			<Link
 				className={classes.link}

@@ -90,7 +90,7 @@ export const loadSearch = async (
 					family.previewSubset ||
 					family.previewContext ||
 					family.primaryLanguage ||
-					family.primaryScript,
+					(family.primaryScript && family.primaryScript !== 'Latn'),
 			)
 			.map(
 				({
