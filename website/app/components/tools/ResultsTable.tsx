@@ -21,6 +21,7 @@ interface ResultsTableProps {
 	onDownload: (artifact: FontArtifact) => void;
 	onDownloadAll: () => void;
 	isCreatingZip?: boolean;
+	summary?: string;
 }
 
 export const ResultsTable = ({
@@ -31,6 +32,7 @@ export const ResultsTable = ({
 	onDownload,
 	onDownloadAll,
 	isCreatingZip = false,
+	summary,
 }: ResultsTableProps) => {
 	const [expanded, setExpanded] = useState(false);
 	if (artifacts.length === 0) return null;
@@ -50,6 +52,11 @@ export const ResultsTable = ({
 					<Text size="sm" mt={4} className={classes.supportingText}>
 						{description}
 					</Text>
+					{summary && (
+						<Text size="sm" mt={4} className={classes.supportingText}>
+							{summary}
+						</Text>
+					)}
 				</div>
 				<Button
 					leftSection={<IconDownload size={17} aria-hidden="true" />}

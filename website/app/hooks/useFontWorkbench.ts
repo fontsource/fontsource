@@ -69,6 +69,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 	} = useFontToolsSession();
 	const [artifacts, setArtifacts] = useState<FontArtifact[]>([]);
 	const [familyErrors, setFamilyErrors] = useState<Record<string, string>>({});
+	const [characterError, setCharacterError] = useState<string>();
 	const [projectError, setProjectError] = useState<string>();
 	const [projectNotice, setProjectNotice] = useState<string>();
 	const [isCreatingZip, setIsCreatingZip] = useState(false);
@@ -110,6 +111,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 	}, [sources]);
 
 	const resetResults = () => {
+		setCharacterError(undefined);
 		setArtifacts([]);
 		setFamilyErrors({});
 		setSources(clearProcessingErrors);
@@ -189,6 +191,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 	};
 
 	const clearAll = () => {
+		setCharacterError(undefined);
 		setSources([]);
 		setArtifacts([]);
 		setFamilyErrors({});
@@ -273,9 +276,19 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 	};
 
 	const runPackageBuild = async () => {
+		const { hasCharacter, resolveCharacters } = await import(
+			'@/components/tools/characters'
+		);
 		const formats = (['woff2', 'woff'] as const).filter(
 			(format) => output.formats[format],
 		);
+		const { characters, codepoints } = await resolveCharacters(
+			output.characters,
+		);
+		const meaningfulCodepoints = codepoints.filter(
+			(point) => !/[\p{Cc}\p{Cf}\p{Z}]/u.test(String.fromCodePoint(point)),
+		);
+		const notices: string[] = [];
 		const ctx = createFontContext();
 		const errors: Record<string, string> = {};
 		const familyProgress = Array<number>(families.length).fill(0);
@@ -302,10 +315,55 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 					const familyArtifacts: FontArtifact[] = [];
 
 					try {
+						if (characters !== 'all') {
+							const emptySource = familySources.find(
+								(source) =>
+									source.inspection &&
+									!(
+										output.characters.mode === 'text'
+											? codepoints
+											: meaningfulCodepoints
+									).some(
+										(point) =>
+											source.inspection &&
+											hasCharacter(source.inspection, point),
+									),
+							);
+							if (emptySource) {
+								errors[family.id] =
+									`${emptySource.file.name} has none of the selected characters beyond spacing or controls. Choose another set or text.`;
+								return [];
+							}
+							for (const source of familySources) {
+								const missing = (
+									output.characters.mode === 'text'
+										? codepoints
+										: meaningfulCodepoints
+								).filter(
+									(point) =>
+										source.inspection &&
+										!hasCharacter(source.inspection, point),
+								);
+								if (missing.length > 0)
+									notices.push(
+										`${source.file.name}: ${missing.length} requested ${missing.length === 1 ? 'character is' : 'characters are'} missing from the source${
+											output.characters.mode === 'text'
+												? ` (${missing
+														.slice(0, 8)
+														.map(
+															(point) =>
+																`U+${point.toString(16).toUpperCase().padStart(4, '0')}`,
+														)
+														.join(', ')}${missing.length > 8 ? ', …' : ''})`
+												: ''
+										}. Other fonts may be used for these characters.`,
+									);
+							}
+						}
 						const shared = {
 							id: family.id,
 							family: family.name,
-							characters: 'all' as const,
+							characters,
 							formats,
 						};
 						const config: FontBuildConfig = family.faces.some(
@@ -314,6 +372,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 							? {
 									...shared,
 									type: 'variable',
+									axisKeys: ['full'],
 								}
 							: { ...shared, type: 'static' };
 						const buffers: Uint8Array[] = [];
@@ -369,6 +428,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 			);
 			setArtifacts(processed.results.flat());
 			setFamilyErrors(errors);
+			if (notices.length > 0) setProjectNotice(notices.join(' '));
 
 			return {
 				processedCount: processed.processedCount,
@@ -390,6 +450,22 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 			return;
 		}
 
+		if (packageOutput && output.characters.mode !== 'all') {
+			if (
+				output.characters.mode === 'text'
+					? !output.characters.text.trim()
+					: output.characters.subsets.length === 0
+			) {
+				setCharacterError(
+					output.characters.mode === 'text'
+						? 'Enter the text you want to keep.'
+						: 'Choose at least one character set.',
+				);
+				return;
+			}
+		}
+
+		setCharacterError(undefined);
 		setActivePreset(preset);
 		setProjectError(undefined);
 		setProjectNotice(undefined);
@@ -519,6 +595,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 		updateOutput,
 		familyErrors,
 		projectError,
+		characterError,
 		projectNotice,
 		isInspecting,
 		isProcessing,

@@ -1,4 +1,6 @@
 .skipLink {
+	opacity: 0;
+	pointer-events: none;
 	position: fixed;
 	top: 12px;
 	left: 16px;
@@ -14,7 +16,9 @@
 	transform: translateY(calc(-100% - 24px));
 	transition: transform 120ms ease;
 
-	&:focus-visible {
+	&:focus {
+		opacity: 1;
+		pointer-events: auto;
 		outline: 2px solid var(--mantine-color-purpleHover-2);
 		outline-offset: 2px;
 		transform: translateY(0);

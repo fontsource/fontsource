@@ -1,5 +1,5 @@
 import { Checkbox, Group, Text } from '@mantine/core';
-import classes from './FontWorkbench.module.css';
+import { ToolOptions } from './ToolOptions';
 
 interface Formats {
 	ttf: boolean;
@@ -27,8 +27,7 @@ export const FormatSelector = ({
 	const hasFormat = Object.values(formats).some(Boolean);
 
 	return (
-		<fieldset className={classes.fieldset}>
-			<legend className={classes.legend}>Output Formats</legend>
+		<ToolOptions title="Output Formats">
 			<Group mt="sm">
 				{formatOptions.map(({ key, label }) => (
 					<Checkbox
@@ -47,6 +46,6 @@ export const FormatSelector = ({
 					Select at least one output format.
 				</Text>
 			)}
-		</fieldset>
+		</ToolOptions>
 	);
 };
