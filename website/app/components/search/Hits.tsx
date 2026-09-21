@@ -282,7 +282,7 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 			),
 		[items],
 	);
-	const showLoadingRow = !isLastPage && items.length > 0;
+	const showLoadingRow = !isLastPage && items.length > 0 && status !== 'error';
 	const virtualRowCount = rows.length + (showLoadingRow ? 1 : 0);
 	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${size}:${previewValue}`;
 	const previousMeasurementKey = useRef(measurementKey);
@@ -373,26 +373,25 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 		return unsubscribe;
 	}, [state$.preview, state$.language]);
 
-	if (status === 'error') {
-		return (
-			<Box px={4} py={24} role="alert">
-				<Stack align="flex-start" gap="xs">
-					<Text fw={600}>Font results could not load.</Text>
-					<Text c="dimmed">
-						We could not reach the font search service. Check your connection,
-						then try again.
-					</Text>
-					<Button onClick={() => refresh()} size="sm">
-						Reload results
-					</Button>
-				</Stack>
-			</Box>
-		);
-	}
+	const searchError = status === 'error' && (
+		<Box px={4} py={24} role="alert">
+			<Stack align="flex-start" gap="xs">
+				<Text fw={600}>Font results could not load.</Text>
+				<Text c="dimmed">
+					We could not reach the font search service. Check your connection,
+					then try again.
+				</Text>
+				<Button onClick={() => refresh()} size="sm">
+					Try again
+				</Button>
+			</Stack>
+		</Box>
+	);
+	if (searchError && items.length === 0) return searchError;
 
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
-	if (!results.__isArtificial && results.nbHits === 0) {
+	if (status !== 'error' && !results.__isArtificial && results.nbHits === 0) {
 		return (
 			<Box>
 				<Text aria-atomic="true" role="status">
@@ -474,6 +473,7 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 					</SimpleGrid>
 				)}
 			</div>
+			{searchError}
 		</div>
 	);
 });
