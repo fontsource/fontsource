@@ -6,6 +6,7 @@ import {
 	rem,
 	UnstyledButton,
 } from '@mantine/core';
+import { useDebouncedCallback } from '@mantine/hooks';
 import { memo, useMemo, useState } from 'react';
 
 import { IconCaret } from '@/components/icons';
@@ -97,6 +98,9 @@ const DropdownCheckbox = ({
 	search,
 }: DropdownProps) => {
 	const [searchQuery, setSearchQuery] = useState('');
+	const debouncedSearch = useDebouncedCallback((query: string) => {
+		search?.(query);
+	}, 300);
 	const data = useMemo(
 		() =>
 			items.map(({ label: itemLabel, value }) => ({
@@ -115,7 +119,12 @@ const DropdownCheckbox = ({
 
 	const updateSearch = (query: string) => {
 		setSearchQuery(query);
-		search?.(query);
+		if (query) {
+			debouncedSearch(query);
+		} else {
+			debouncedSearch.cancel();
+			search?.('');
+		}
 	};
 
 	return (
