@@ -56,10 +56,11 @@ const CollectionFilter = ({ onChange, value }: CollectionFilterProps) => {
 		<>
 			<Menu
 				classNames={{
-					dropdown: `${menuClasses.dropdown} ${classes.dropdown}`,
+					dropdown: menuClasses.dropdown,
 				}}
 				onClose={() => setQuery('')}
 				position="bottom-start"
+				width="target"
 				shadow="md"
 			>
 				<Menu.Target>

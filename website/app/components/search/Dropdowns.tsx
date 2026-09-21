@@ -61,7 +61,7 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 		<DropdownCheckbox
 			label={selectionLabel(labels, 'All languages')}
 			w="100%"
-			dropdownWidth={250}
+			dropdownWidth="target"
 			ariaLabel="Languages"
 			items={[...legacyItems, ...languageItems.filter((item) => item.matches)]}
 			refine={(value) =>
@@ -107,7 +107,7 @@ const CategoriesDropdown = ({ taxonomy }: Pick<SearchFacets, 'taxonomy'>) => {
 			)}
 			showCount
 			w="100%"
-			dropdownWidth={250}
+			dropdownWidth="target"
 			ariaLabel="Categories"
 			items={categories}
 			refine={(value) =>
