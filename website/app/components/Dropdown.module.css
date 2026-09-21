@@ -83,10 +83,24 @@
 	text-overflow: ellipsis;
 }
 
-.count {
-	font-variant-numeric: tabular-nums;
+.options {
+	display: flex;
+	flex-direction: column;
+}
+
+.selectedOptions {
 	flex-shrink: 0;
-	margin-left: auto;
+	max-height: 132px;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	border-bottom: 1px solid var(--mantine-color-border-0);
+}
+
+.viewport {
+	flex: 1;
+	min-height: 0;
+	overflow-y: auto;
+	overscroll-behavior: contain;
 }
 
 @media (pointer: coarse) {
