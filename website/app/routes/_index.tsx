@@ -1,6 +1,6 @@
 import { useObservable, useValue } from '@legendapp/state/react';
 import { Box } from '@mantine/core';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
 	Configure,
 	InstantSearch,
@@ -10,7 +10,9 @@ import {
 	type HeadersFunction,
 	type LinksFunction,
 	type MetaFunction,
+	type ShouldRevalidateFunctionArgs,
 	useLoaderData,
+	useLocation,
 	useNavigate,
 	useNavigation,
 } from 'react-router';
@@ -33,6 +35,28 @@ import {
 } from '@/utils/search-config';
 
 export { loader } from '@/utils/search.server';
+
+let previousSearch:
+	| {
+			key: string;
+			state: ReturnType<typeof createPageSearchState>;
+	  }
+	| undefined;
+
+export const shouldRevalidate = ({
+	currentUrl,
+	nextUrl,
+	formMethod,
+	defaultShouldRevalidate,
+}: ShouldRevalidateFunctionArgs) => {
+	// InstantSearch owns client-side refinements; keep its loaded pages in place.
+	const isSearchOnlyNavigation =
+		!formMethod &&
+		currentUrl.pathname === nextUrl.pathname &&
+		currentUrl.search !== nextUrl.search;
+
+	return isSearchOnlyNavigation ? false : defaultShouldRevalidate;
+};
 
 export const links: LinksFunction = () => [
 	{
@@ -61,16 +85,32 @@ export function CatalogSearchPage() {
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
 	const navigate = useNavigate();
+	const location = useLocation();
 	const navigation = useNavigation();
 	const navigationState = useRef(navigation.state);
 	const searchRef = useRef<HTMLDivElement>(null);
 	navigationState.current = navigation.state;
 	// Ignore delayed search URL writes once React Router is leaving this page.
 	const navigateSearch = (url: string) => {
-		if (navigationState.current === 'idle') void navigate(url);
+		if (
+			navigationState.current === 'idle' &&
+			url !== `${window.location.pathname}${window.location.search}`
+		) {
+			void navigate(url, { preventScrollReset: true });
+		}
 	};
 
-	const state$ = useObservable(createPageSearchState(discovery));
+	const state$ = useObservable(() =>
+		previousSearch?.key === location.key
+			? previousSearch.state
+			: createPageSearchState(discovery),
+	);
+	useEffect(
+		() => () => {
+			previousSearch = { key: location.key, state: state$.peek() };
+		},
+		[location.key, state$],
+	);
 	// Avoid clearing a persisted collection before Legend restores it.
 	if (hasCollectionFilter && !collectionsReady) return null;
 
@@ -79,12 +119,7 @@ export function CatalogSearchPage() {
 			<InstantSearch
 				searchClient={searchClient}
 				indexName="prod_POPULAR"
-				routing={routing(
-					serverUrl,
-					state$,
-					discovery,
-					discovery ? navigateSearch : undefined,
-				)}
+				routing={routing(serverUrl, state$, discovery, navigateSearch)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
 				<Configure attributesToRetrieve={attributesToRetrieve} />

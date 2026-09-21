@@ -9,8 +9,13 @@ import {
 	VisuallyHidden,
 } from '@mantine/core';
 import { useMounted, useViewportSize } from '@mantine/hooks';
-import { useWindowVirtualizer } from '@tanstack/react-virtual';
+import {
+	useWindowVirtualizer,
+	type VirtualItem,
+} from '@tanstack/react-virtual';
 import type { BaseHit } from 'instantsearch.js';
+import type { InfiniteHitsCache } from 'instantsearch.js/es/connectors/infinite-hits/connectInfiniteHits';
+import { isEqual } from 'instantsearch.js/es/lib/utils/isEqual';
 import {
 	useEffect,
 	useId,
@@ -55,6 +60,22 @@ const hitsPerVirtualRow = 12;
 const eagerStylesheetCount = 4;
 const rowGap = 16;
 const loadingPlaceholderKeys = [0, 1, 2, 3];
+// Keep loaded pages across route changes, but not across SSR requests or reloads.
+let cachedHits:
+	| Parameters<InfiniteHitsCache<AlgoliaMetadata>['write']>[0]
+	| null = null;
+const hitsCache: InfiniteHitsCache<AlgoliaMetadata> = {
+	read({ state: { page: _page, ...state } }) {
+		if (typeof window === 'undefined') return null;
+		return cachedHits && isEqual(cachedHits.state, state)
+			? cachedHits.hits
+			: null;
+	},
+	write({ state: { page: _page, ...state }, hits }) {
+		if (typeof window !== 'undefined') cachedHits = { state, hits };
+	},
+};
+let cachedMeasurements: { key: string; rows: VirtualItem[] } | undefined;
 type Display = 'grid' | 'list';
 interface LoadingPlaceholderProps {
 	display: Display;
@@ -190,7 +211,6 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
 	const mounted = useMounted();
-	const [isLoadingMore, setIsLoadingMore] = useState(false);
 	const [scrollMargin, setScrollMargin] = useState(0);
 	const { width: viewportWidth } = useViewportSize();
 	const columns =
@@ -208,7 +228,13 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 	const { indexUiState, refresh, results, status } = useInstantSearch({
 		catchError: true,
 	});
-	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
+	const [requestedResults, setRequestedResults] = useState<
+		typeof results | null
+	>(null);
+	const isLoadingMore = requestedResults === results && status !== 'error';
+	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>({
+		cache: hitsCache,
+	});
 	const isSearchLoading = status === 'loading' || status === 'stalled';
 	const size = state$.size.get();
 	const gridPreviewHeight = getGridPreviewHeight(size);
@@ -229,7 +255,6 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 			(values) => values.length > 0,
 		) ||
 		Object.values(indexUiState.toggle ?? {}).some(Boolean);
-	const previousSearchKeyRef = useRef(searchKey);
 	// Twelve fills complete rows at every supported grid width: 1, 2, 3, and 4 columns.
 	const rows = useMemo(
 		() =>
@@ -245,6 +270,8 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 	);
 	const showLoadingRow = !isLastPage && items.length > 0;
 	const virtualRowCount = rows.length + (showLoadingRow ? 1 : 0);
+	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${size}:${previewValue}`;
+	const previousMeasurementKey = useRef<string | null>(null);
 	const rowVirtualizer = useWindowVirtualizer<HTMLDivElement>({
 		count: mounted ? virtualRowCount : 0,
 		enabled: mounted,
@@ -262,10 +289,13 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 		overscan: 2,
 		scrollMargin,
 		useAnimationFrameWithResizeObserver: true,
+		initialMeasurementsCache:
+			cachedMeasurements?.key === measurementKey
+				? cachedMeasurements.rows
+				: undefined,
 	});
 	const virtualRows = rowVirtualizer.getVirtualItems();
 	const lastVirtualIndex = virtualRows[virtualRows.length - 1]?.index ?? -1;
-	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${size}:${previewValue}`;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: viewport changes can move the results below responsive controls.
 	useLayoutEffect(() => {
@@ -281,8 +311,19 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 
 	useLayoutEffect(() => {
 		if (!mounted) return;
-		void measurementKey;
-		rowVirtualizer.measure();
+		if (
+			previousMeasurementKey.current !== null &&
+			previousMeasurementKey.current !== measurementKey
+		) {
+			rowVirtualizer.measure();
+		}
+		previousMeasurementKey.current = measurementKey;
+		return () => {
+			cachedMeasurements = {
+				key: measurementKey,
+				rows: rowVirtualizer.takeSnapshot(),
+			};
+		};
 	}, [measurementKey, mounted, rowVirtualizer]);
 
 	useEffect(() => {
@@ -290,13 +331,14 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 			!mounted ||
 			lastVirtualIndex < rows.length - 1 ||
 			isLastPage ||
+			status === 'error' ||
 			isSearchLoading ||
 			isLoadingMore
 		) {
 			return;
 		}
 
-		setIsLoadingMore(true);
+		setRequestedResults(results);
 		showMore();
 	}, [
 		mounted,
@@ -306,22 +348,9 @@ const InfiniteHits = observer(({ state$, previews }: InfiniteHitsProps) => {
 		lastVirtualIndex,
 		rows.length,
 		showMore,
+		results,
+		status,
 	]);
-
-	useEffect(() => {
-		if (!isSearchLoading) {
-			setIsLoadingMore(false);
-		}
-	}, [isSearchLoading]);
-
-	useEffect(() => {
-		if (previousSearchKeyRef.current === searchKey) {
-			return;
-		}
-
-		previousSearchKeyRef.current = searchKey;
-		setIsLoadingMore(false);
-	}, [searchKey]);
 
 	useEffect(() => {
 		const unsubscribe = state$.language.onChange((e) => {
