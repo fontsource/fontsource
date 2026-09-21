@@ -15,9 +15,9 @@ export const meta: MetaFunction = () =>
 const sections = [
 	{ href: '#requests', label: 'Website, API, and CDN' },
 	{ href: '#search', label: 'Search' },
-	{ href: '#advertising', label: 'Advertising' },
 	{ href: '#browser-storage', label: 'Browser storage' },
 	{ href: '#analytics', label: 'Analytics' },
+	{ href: '#advertising', label: 'Advertising' },
 	{ href: '#contact', label: 'Contact' },
 	{ href: '#changes', label: 'Changes' },
 ];
@@ -133,24 +133,9 @@ export default function PrivacyPage() {
 							</Text>
 						</PolicySection>
 
-						<PolicySection id="advertising" number="03" title="Advertising">
-							<Text>
-								Some pages show Carbon Ads. Carbon may collect information and
-								use browser storage to deliver and measure ads. You can read the{' '}
-								<Anchor
-									href="https://www.carbonads.net/privacy"
-									target="_blank"
-									rel="noreferrer"
-								>
-									Carbon Ads Privacy Policy
-								</Anchor>
-								.
-							</Text>
-						</PolicySection>
-
 						<PolicySection
 							id="browser-storage"
-							number="04"
+							number="03"
 							title="Information stored in your browser"
 						>
 							<Text>
@@ -163,7 +148,7 @@ export default function PrivacyPage() {
 							</Text>
 						</PolicySection>
 
-						<PolicySection id="analytics" number="05" title="Analytics">
+						<PolicySection id="analytics" number="04" title="Analytics">
 							<Text>
 								We use PostHog to help improve the website. It collects page
 								views, interactions such as clicks, and browser and device
@@ -182,6 +167,21 @@ export default function PrivacyPage() {
 									rel="noreferrer"
 								>
 									PostHog Privacy Policy
+								</Anchor>
+								.
+							</Text>
+						</PolicySection>
+
+						<PolicySection id="advertising" number="05" title="Advertising">
+							<Text>
+								Some pages show Carbon Ads. Carbon may collect information and
+								use browser storage to deliver and measure ads. You can read the{' '}
+								<Anchor
+									href="https://www.carbonads.net/privacy"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Carbon Ads Privacy Policy
 								</Anchor>
 								.
 							</Text>
