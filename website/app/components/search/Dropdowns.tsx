@@ -17,24 +17,6 @@ export interface SearchFacets {
 	taxonomy: GetRegistryTaxonomyResponse;
 }
 
-// A curated starting order; coverage counts favor small alphabets, not popularity.
-const commonLanguages = new Map(
-	[
-		'en_Latn',
-		'es_Latn',
-		'fr_Latn',
-		'de_Latn',
-		'pt_Latn',
-		'zh_Hans',
-		'zh_Hant',
-		'ja_Jpan',
-		'ko_Kore',
-		'ar_Arab',
-		'hi_Deva',
-		'ru_Cyrl',
-	].map((id, index) => [id, index]),
-);
-
 const selectionLabel = (labels: string[], fallback: string) =>
 	labels.length > 1
 		? `${labels[0]} + ${labels.length - 1}`
@@ -67,12 +49,7 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 			language.id,
 		].some((value) => value?.toLocaleLowerCase().includes(normalizedQuery)),
 	}));
-	languageItems.sort(
-		(a, b) =>
-			(commonLanguages.get(a.value) ?? commonLanguages.size) -
-				(commonLanguages.get(b.value) ?? commonLanguages.size) ||
-			a.label.localeCompare(b.label),
-	);
+	languageItems.sort((a, b) => a.label.localeCompare(b.label, 'en'));
 	const legacyItems = subsets.map((subset) => ({
 		value: `subset:${subset}`,
 		label: `${subsetToLanguage(subset)} (subset)`,
@@ -82,18 +59,11 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 	const labels = [...legacyItems, ...selectedItems].map((item) => item.label);
 	return (
 		<DropdownCheckbox
-			label={selectionLabel(labels, 'Search all languages')}
+			label={selectionLabel(labels, 'All languages')}
 			w="100%"
 			dropdownWidth={250}
 			ariaLabel="Languages"
-			items={[
-				...legacyItems,
-				...selectedItems,
-				// Search the full dictionary, but only render a small result list.
-				...languageItems
-					.filter((item) => !item.isRefined && item.matches)
-					.slice(0, 50),
-			]}
+			items={[...legacyItems, ...languageItems.filter((item) => item.matches)]}
 			refine={(value) =>
 				value.startsWith('subset:')
 					? legacy.refine(value.slice(7))

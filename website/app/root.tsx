@@ -36,6 +36,7 @@ import '@mantine/core/styles/Stack.css';
 
 // Inputs
 import '@mantine/core/styles/Checkbox.css';
+import '@mantine/core/styles/CheckboxIndicator.css';
 import '@mantine/core/styles/ColorInput.css';
 import '@mantine/core/styles/Combobox.css';
 import '@mantine/core/styles/SegmentedControl.css';
