@@ -7,7 +7,9 @@ export const usePreviewStylesheet = (
 	enabled: boolean,
 ) => {
 	const [shouldLoadStylesheet, setShouldLoadStylesheet] = useState(enabled);
-	const [isStylesheetReady, setStylesheetReady] = useState(false);
+	const [status, setStatus] = useState<'loading' | 'loaded' | 'failed'>(
+		'loading',
+	);
 
 	useEffect(() => {
 		// Keep loading enabled when a card leaves the viewport mid-request.
@@ -18,6 +20,7 @@ export const usePreviewStylesheet = (
 
 	useEffect(() => {
 		if (!shouldLoadStylesheet) return;
+		setStatus('loading');
 
 		// React retains and deduplicates the stylesheet across virtualized cards.
 		preinit(stylesheetHref, { as: 'style', precedence: 'font-preview' });
@@ -26,23 +29,36 @@ export const usePreviewStylesheet = (
 		);
 		invariant(stylesheet, 'Missing preview stylesheet');
 		let active = true;
-		const ready = () => {
-			stylesheet.dataset.fontPreviewReady = 'true';
-			stylesheet.removeEventListener('load', ready);
-			stylesheet.removeEventListener('error', ready);
-			if (active) setStylesheetReady(true);
+		let timeoutId: number | undefined;
+		const finish = (nextStatus: 'loaded' | 'failed') => {
+			stylesheet.dataset.fontPreviewStatus = nextStatus;
+			window.clearTimeout(timeoutId);
+			stylesheet.removeEventListener('load', loaded);
+			stylesheet.removeEventListener('error', failed);
+			if (active) setStatus(nextStatus);
 		};
-		if (stylesheet.sheet || stylesheet.dataset.fontPreviewReady) {
-			ready();
+		const loaded = () => finish('loaded');
+		const failed = () => finish('failed');
+		if (stylesheet.sheet || stylesheet.dataset.fontPreviewStatus === 'loaded') {
+			loaded();
 			return;
 		}
-		stylesheet.addEventListener('load', ready);
-		stylesheet.addEventListener('error', ready);
+		if (stylesheet.dataset.fontPreviewStatus === 'failed') {
+			failed();
+			return;
+		}
+		stylesheet.addEventListener('load', loaded);
+		stylesheet.addEventListener('error', failed);
+		timeoutId = window.setTimeout(() => {
+			// A slow stylesheet may still finish and recover without a reload.
+			if (active) setStatus('failed');
+		}, 15_000);
 		return () => {
-			// Remember failures even if this card unmounts before the request settles.
+			// Retain the result across virtualized cards, even if this one unmounts.
 			active = false;
+			window.clearTimeout(timeoutId);
 		};
 	}, [shouldLoadStylesheet, stylesheetHref]);
 
-	return isStylesheetReady;
+	return status;
 };

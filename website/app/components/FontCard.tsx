@@ -1,4 +1,4 @@
-import { Box, Group, Text } from '@mantine/core';
+import { Box, Button, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { Link, useLocation } from 'react-router';
 import type { ListRegistryLanguagesResponse } from '@/generated/api';
@@ -42,11 +42,15 @@ const FontCard = ({
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
 	});
-	const isStylesheetReady = usePreviewStylesheet(
+	const stylesheetStatus = usePreviewStylesheet(
 		stylesheetHref,
 		eagerStylesheet || Boolean(entry?.isIntersecting),
 	);
-	const isFontReady = useIsFontReady(font.family, isStylesheetReady);
+	const isFontReady = useIsFontReady(
+		font.family,
+		stylesheetStatus === 'loaded',
+	);
+	const previewFailed = stylesheetStatus === 'failed';
 
 	const previewText =
 		preview ?? getRecommendedPreviewText(font, 'short', languages);
@@ -75,17 +79,23 @@ const FontCard = ({
 				}}
 			>
 				<div className={classes.preview}>
-					<Skeleton name="search-hit-preview" loading={!isFontReady}>
-						<Text
-							dir={sampleLanguage?.direction}
-							lang={getPreviewLanguageTag(sampleLanguage)}
-							fz={size}
-							mih={layout === 'grid' ? previewHeight : undefined}
-							style={{ fontFamily }}
-						>
-							{previewText}
+					{previewFailed ? (
+						<Text c="dimmed" mih={layout === 'grid' ? previewHeight : 72}>
+							Preview unavailable
 						</Text>
-					</Skeleton>
+					) : (
+						<Skeleton name="search-hit-preview" loading={!isFontReady}>
+							<Text
+								dir={sampleLanguage?.direction}
+								lang={getPreviewLanguageTag(sampleLanguage)}
+								fz={size}
+								mih={layout === 'grid' ? previewHeight : undefined}
+								style={{ fontFamily }}
+							>
+								{previewText}
+							</Text>
+						</Skeleton>
+					)}
 				</div>
 				<Group className={classes['text-group']}>
 					<Text fz={18} fw={700} component="span">
@@ -98,6 +108,18 @@ const FontCard = ({
 					)}
 				</Group>
 			</Link>
+			{previewFailed && (
+				<Button
+					pos="absolute"
+					top={64}
+					left={24}
+					size="xs"
+					variant="default"
+					onClick={() => window.location.reload()}
+				>
+					Reload page
+				</Button>
+			)}
 		</Box>
 	);
 };
