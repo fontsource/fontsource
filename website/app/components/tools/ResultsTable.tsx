@@ -100,8 +100,8 @@ export const ResultsTable = ({
 							</Table.Td>
 							<Table.Td ta="right">
 								<Button
-									variant="subtle"
-									size="compact-sm"
+									variant="outline"
+									size="md"
 									leftSection={<IconDownload size={15} aria-hidden="true" />}
 									onClick={() => onDownload(artifact)}
 									disabled={isCreatingZip}
