@@ -1,5 +1,5 @@
 import { resolve } from 'node:path';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
@@ -9,6 +9,7 @@ import {
 const r2 = vi.hoisted(() => ({
 	putCurrentObject: vi.fn(),
 	putObject: vi.fn(),
+	putSourcePreview: vi.fn(),
 }));
 
 vi.mock('./r2.ts', () => r2);
@@ -20,6 +21,10 @@ const REGISTRY_ROOT = resolve(import.meta.dirname, '../data');
 const REVISION = 'a'.repeat(40);
 
 describe('registry source archive', () => {
+	beforeEach(() => {
+		vi.resetAllMocks();
+		r2.putObject.mockResolvedValue(undefined);
+	});
 	it('rejects non-commit snapshot revisions', () => {
 		expect(() =>
 			archiveManifestSchema.parse({
@@ -35,6 +40,8 @@ describe('registry source archive', () => {
 	it('publishes archive objects before the manifest and current pointer', async () => {
 		const keys: string[] = [];
 		const views = new Map<string, unknown>();
+		const previewHashes = new Set<string>();
+		const distributedHashes = new Set<string>();
 		const wantedViews = new Set([
 			'families.json',
 			'families/abel.json',
@@ -44,10 +51,13 @@ describe('registry source archive', () => {
 			'families/dejavu-math.json',
 			'families/dseg7-classic.json',
 			'families/ek-mukta.json',
+			'families/ibm-plex-mono.json',
 			'families/jsmath-cmr10.json',
 			'families/material-icons.json',
 			'families/material-icons/symbols.json',
+			'families/metropolis.json',
 			'families/nebula-sans.json',
+			'families/noto-sans-jp.json',
 			'families/noto-color-emoji-compat-test.json',
 			'families/yakuhanjp.json',
 			'languages.json',
@@ -74,6 +84,23 @@ describe('registry source archive', () => {
 				const viewIndex = object.key.indexOf(marker);
 				if (viewIndex >= 0) {
 					const path = object.key.slice(viewIndex + marker.length);
+					if (path.startsWith('families/') && !path.endsWith('/symbols.json')) {
+						const family = RegistryFamilyDetailSchema.parse(
+							JSON.parse(Buffer.from(await object.read()).toString('utf8')),
+						);
+						const distributed = new Set(
+							[
+								...(family.distribution.static ?? []),
+								...(family.distribution.variable ?? []),
+							].map(({ source }) => source),
+						);
+						for (const source of family.sources) {
+							expect(Boolean(source.previewUrl)).toBe(
+								distributed.has(source.sha256),
+							);
+						}
+						for (const hash of distributed) distributedHashes.add(hash);
+					}
 					if (wantedViews.has(path)) {
 						const value = JSON.parse(
 							Buffer.from(await object.read()).toString('utf8'),
@@ -81,7 +108,8 @@ describe('registry source archive', () => {
 						views.set(path, value);
 						if (
 							path === 'families/abel.json' ||
-							path === 'families/adwaita-sans.json'
+							path === 'families/adwaita-sans.json' ||
+							path === 'families/ibm-plex-mono.json'
 						) {
 							for (const source of value.sources) {
 								wantedViews.add(`sources/${source.sha256}/capabilities.json`);
@@ -95,11 +123,19 @@ describe('registry source archive', () => {
 			keys.push('current.json');
 			current = JSON.parse(Buffer.from(body).toString('utf8'));
 		});
+		r2.putSourcePreview.mockImplementation(
+			async (_ctx, source: { sha256: string }) => {
+				expect(previewHashes.has(source.sha256)).toBe(false);
+				previewHashes.add(source.sha256);
+				keys.push(`preview/${source.sha256}`);
+			},
+		);
 
 		await publishArchive(REGISTRY_ROOT, REVISION);
 
 		expect(keys.at(-2)).toBe(`snapshots/${REVISION}/manifest.json`);
 		expect(keys.at(-1)).toBe('current.json');
+		expect(previewHashes).toEqual(distributedHashes);
 		expect(keys.some((key) => key.startsWith('registry/sha256/'))).toBe(true);
 		expect(keys.some((key) => key.startsWith('sources/sha256/'))).toBe(true);
 		expect(sourceContentType).toMatch(/^font\/(?:otf|ttf)$/);
@@ -137,7 +173,9 @@ describe('registry source archive', () => {
 			schemaVersion: 1,
 			registryRevision: REVISION,
 		});
-		const family = views.get('families/abel.json');
+		const family = RegistryFamilyDetailSchema.parse(
+			views.get('families/abel.json'),
+		);
 		expect(family).toMatchObject({
 			id: 'abel',
 			classifications: ['sans-serif'],
@@ -166,12 +204,18 @@ describe('registry source archive', () => {
 					subsets: [{ id: 'latin', definition: 'latin' }],
 				},
 			},
+			previewSource: expect.stringMatching(/^[0-9a-f]{64}$/),
 			sources: [
 				expect.objectContaining({
 					format: 'ttf',
 					filename: 'Abel-Regular.ttf',
+					glyphCount: expect.any(Number),
+					codepointCount: expect.any(Number),
 					downloadUrl: expect.stringMatching(
 						/^\/v1\/registry\/sources\/[0-9a-f]{64}$/,
+					),
+					previewUrl: expect.stringMatching(
+						/^\/v1\/registry\/sources\/[0-9a-f]{64}\/preview\/1\.woff2$/,
 					),
 					capabilitiesUrl: expect.stringMatching(
 						/^\/v1\/registry\/sources\/[0-9a-f]{64}\/capabilities$/,
@@ -180,14 +224,23 @@ describe('registry source archive', () => {
 				}),
 			],
 		});
-		expect(RegistryFamilyDetailSchema.parse(family)).toEqual(family);
-		const familySource = (
-			family as {
-				sources: Array<{ sha256: string }>;
-			}
-		).sources[0];
-		const capabilities = views.get(
-			`sources/${familySource?.sha256}/capabilities.json`,
+		const ibmPlexMono = RegistryFamilyDetailSchema.parse(
+			views.get('families/ibm-plex-mono.json'),
+		);
+		expect(ibmPlexMono.previewSource).toBe(
+			ibmPlexMono.distribution.static?.find(
+				(variant) => variant.weight === 400 && variant.style === 'normal',
+			)?.source,
+		);
+		const ibmPlexMonoCapabilities = views.get(
+			`sources/${ibmPlexMono.previewSource}/capabilities.json`,
+		);
+		expect(
+			RegistrySourceCapabilitiesSchema.parse(ibmPlexMonoCapabilities),
+		).toEqual(ibmPlexMonoCapabilities);
+		const familySource = family.sources[0];
+		const capabilities = RegistrySourceCapabilitiesSchema.parse(
+			views.get(`sources/${familySource?.sha256}/capabilities.json`),
 		);
 		expect(capabilities).toMatchObject({
 			glyphCount: expect.any(Number),
@@ -200,12 +253,19 @@ describe('registry source archive', () => {
 			outline: 'glyf',
 			colorTables: expect.any(Array),
 		});
-		expect(RegistrySourceCapabilitiesSchema.parse(capabilities)).toEqual(
-			capabilities,
+		expect(familySource).toMatchObject({
+			glyphCount: capabilities.glyphCount,
+			codepointCount: capabilities.codepointCount,
+		});
+		const multiSourceFamily = RegistryFamilyDetailSchema.parse(
+			views.get('families/adwaita-sans.json'),
 		);
-		const multiSourceFamily = views.get('families/adwaita-sans.json') as {
-			sources: Array<{ sha256: string }>;
-		};
+		expect(multiSourceFamily.previewSource).toBe(
+			multiSourceFamily.distribution.variable?.find(
+				(variant) =>
+					variant.axisKey === 'standard' && variant.style === 'normal',
+			)?.source,
+		);
 		const multiSourceCapabilities = multiSourceFamily.sources.map((source) =>
 			views.get(`sources/${source.sha256}/capabilities.json`),
 		) as Array<{ unicodeRange: string }>;
@@ -279,13 +339,29 @@ describe('registry source archive', () => {
 			classifications: ['symbols'],
 			tags: ['special-use/icons'],
 			languages: [],
-			sampleText: { short: 'home' },
+			sampleText: {
+				short:
+					'photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close',
+			},
 			symbols: {
 				catalogUrl: '/v1/registry/families/material-icons/symbols',
 				inputModes: ['codepoint', 'name-ligature'],
 			},
 		});
 		expect(RegistryFamilyDetailSchema.parse(iconFamily)).toEqual(iconFamily);
+		expect(views.get('families/metropolis.json')).toMatchObject({
+			provider: 'fontsource',
+			provenance: {
+				type: 'github',
+				repository: 'https://github.com/fontsource/font-files',
+				revision: expect.stringMatching(/^[0-9a-f]{40}$/),
+			},
+			sources: expect.arrayContaining([
+				expect.objectContaining({
+					path: expect.stringMatching(/^sources\/metropolis\/files\//),
+				}),
+			]),
+		});
 		const symbols = views.get('families/material-icons/symbols.json');
 		expect(RegistryFamilySymbolsSchema.parse(symbols)).toEqual(symbols);
 		const replacement = views.get('families/ek-mukta.json');
@@ -302,6 +378,10 @@ describe('registry source archive', () => {
 		expect(abelSummary).toMatchObject({
 			id: 'abel',
 			axes: [],
+			license: {
+				id: 'OFL-1.1',
+				url: expect.any(String),
+			},
 		});
 		expect(abelSummary).not.toHaveProperty('languages');
 		expect(abelSummary).not.toHaveProperty('variable');
@@ -310,10 +390,39 @@ describe('registry source archive', () => {
 			expect.arrayContaining([
 				expect.objectContaining({
 					id: 'fa_Arab',
+					direction: 'rtl',
 					sampleText: expect.any(Object),
 				}),
 			]),
 		);
+		const notoSansJp = RegistryFamilyDetailSchema.parse(
+			views.get('families/noto-sans-jp.json'),
+		);
+		expect(notoSansJp).toMatchObject({
+			previewSubset: 'japanese',
+			distribution: {
+				characters: {
+					type: 'subsets',
+					slicing: 'japanese-web',
+					slicingSubset: 'japanese',
+				},
+			},
+		});
 		expect(JSON.stringify(languageCatalog)).not.toContain('requiredCodepoints');
+	}, 15_000);
+
+	it('does not promote a snapshot when a preview cannot be archived', async () => {
+		r2.putSourcePreview.mockRejectedValueOnce(
+			new Error('preview upload failed'),
+		);
+		await expect(publishArchive(REGISTRY_ROOT, REVISION)).rejects.toThrow(
+			'preview upload failed',
+		);
+		expect(r2.putCurrentObject).not.toHaveBeenCalled();
+		expect(
+			r2.putObject.mock.calls.some(([object]) =>
+				object.key.endsWith('/manifest.json'),
+			),
+		).toBe(false);
 	}, 15_000);
 });

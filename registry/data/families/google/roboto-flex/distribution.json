@@ -64,6 +64,10 @@
 		{
 			"style": "normal",
 			"weight": 900
+		},
+		{
+			"style": "normal",
+			"weight": 1000
 		}
 	],
 	"variable": [

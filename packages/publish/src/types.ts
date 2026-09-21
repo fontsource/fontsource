@@ -24,7 +24,7 @@ export interface ChangedFlags {
 	ignoreExtension?: string;
 	commitMessage?: string;
 }
-export interface ChangedObj {
+interface ChangedObj {
 	name: string;
 	path: string;
 	hash: string;

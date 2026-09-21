@@ -13,6 +13,8 @@ colors:
   night-chrome: "#0F1626"
   border-light: "#E1E3EC"
   border-dark: "#2C3651"
+  muted-ink: "#52617A"
+  muted-ink-dark: "#9CA8BD"
   code-lavender: "#C2BFFF"
 typography:
   display:
@@ -162,6 +164,8 @@ The canonical palette is a cool, high-contrast light-mode pairing of Fontsource 
 - **Night Chrome** (#0F1626): deeper dark-theme header and control chrome.
 - **Light Border** (#E1E3EC): hairline structure on light surfaces.
 - **Dark Border** (#2C3651): hairline structure on dark surfaces.
+- **Muted Ink** (#52617A): secondary light-theme text that remains readable on white and Cloud Paper work surfaces.
+- **Dark Muted Ink** (#9CA8BD): the matching secondary-text role on Night Surface and Night Chrome.
 - **Code Lavender** (#C2BFFF): readable code foreground that relates to violet without becoming an action color.
 
 **The Paired-Canvas Rule.** Every structural surface must have an intentional light and dark role; do not obtain dark mode by merely inverting colors.

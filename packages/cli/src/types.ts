@@ -25,7 +25,7 @@ interface AxisOptions {
 
 export type Axes = Record<string, AxisOptions>;
 
-export type VariableMetadata = boolean | Axes;
+type VariableMetadata = boolean | Axes;
 
 const CATEGORY_NAMES = [
 	'sans-serif',
@@ -40,7 +40,7 @@ export type CategoryNames = (typeof CATEGORY_NAMES)[number];
 export const isCategoryName = (value: string): value is CategoryNames =>
 	CATEGORY_NAMES.includes(value as CategoryNames);
 
-export type TypeNames = 'google' | 'league' | 'icons' | 'other';
+type TypeNames = 'google' | 'league' | 'icons' | 'other';
 
 export interface Metadata {
 	id: string;

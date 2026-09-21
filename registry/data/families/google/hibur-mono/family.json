@@ -455,15 +455,15 @@
 	"primaryScript": "Ethi",
 	"project": {
 		"repository": "https://github.com/typehabesha/HiburMono",
-		"revision": "ea9fe744a13815eb4efeb297c072ce61b4c335df"
+		"revision": "ff7211ea4674598efa977f266bd61f1ee6b9e5d2"
 	},
 	"provenance": {
 		"directory": "ofl/hiburmono",
 		"repository": "google/fonts",
-		"revision": "679abcaab3e391cc59c0e4f5ee53385ef80dd187",
+		"revision": "6ac3b2c19093da6c58d42dc26ee441803cc10083",
 		"type": "github"
 	},
-	"sourceModified": "2026-06-26",
+	"sourceModified": "2026-08-14",
 	"sources": [
 		{
 			"inspection": {
@@ -483,7 +483,7 @@
 						"sups"
 					]
 				},
-				"fontVersion": "Version 1.000; ttfautohint (v1.8.4.16-eb64)",
+				"fontVersion": "Version 1.001; ttfautohint (v1.8.4.16-eb64)",
 				"glyphs": 991,
 				"outline": "glyf",
 				"style": "normal",
@@ -491,7 +491,7 @@
 				"weight": 400
 			},
 			"path": "ofl/hiburmono/HiburMono-Regular.ttf",
-			"sha256": "b57cd76dab909593d4b6a9336508f07864ea06dadce77312fc57ba1bb1f2cfe1",
+			"sha256": "b53037ea7a7610a99fda2b1eaf29cabcf19225f4c9b97f635d2ae6ff00bcd8bb",
 			"size": 210352,
 			"variant": {
 				"style": "normal",

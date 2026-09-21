@@ -116,7 +116,7 @@ const triggerFontLoad = (cacheKey: string, fontFaces: FontFace[]) => {
 		});
 };
 
-export const useFontStatus = (
+const useFontStatus = (
 	family: string,
 	enabled = true,
 	options?: ObserverOptions,

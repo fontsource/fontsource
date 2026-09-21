@@ -1,0 +1,702 @@
+.page {
+	box-sizing: border-box;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 32px 64px 80px;
+	font-family: var(--mantine-font-family);
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+}
+
+.heading {
+	max-width: 760px;
+	margin-bottom: 20px;
+}
+
+.heading h2 {
+	margin: 0;
+	font-size: clamp(32px, 4vw, 42px);
+	font-weight: 700;
+	letter-spacing: -0.035em;
+	line-height: 1;
+	text-wrap: balance;
+}
+
+.heading p,
+.downloadDetails p {
+	color: light-dark(#52617a, #9ca8bd);
+}
+
+.heading p {
+	max-width: 620px;
+	margin: 8px 0 0;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.acquisition {
+	width: 100%;
+}
+
+.taskTabs {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 6px;
+	overflow: hidden;
+	background: light-dark(
+		var(--mantine-color-background-0),
+		var(--mantine-color-background-4)
+	);
+}
+
+.taskTabs::before {
+	display: none;
+}
+
+.taskTabs button {
+	justify-content: flex-start;
+	min-height: 68px;
+	padding: 12px 20px;
+	border: 0;
+	border-radius: 0;
+	color: light-dark(#52617a, #9ca8bd);
+	text-align: left;
+	transition:
+		background-color 120ms ease,
+		color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+.taskTabs button + button {
+	border-left: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+}
+
+.taskTabs button:hover {
+	background: light-dark(#f5f7f9, #121b31);
+	color: light-dark(#4338ca, #c2bfff);
+}
+
+.taskTabs button[data-active] {
+	background: light-dark(#f5f7f9, #0f1626);
+	color: light-dark(#4338ca, #c2bfff);
+	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
+}
+
+.taskTabs button > span {
+	width: 100%;
+	min-width: 0;
+}
+
+.taskTabLabel {
+	display: grid;
+	gap: 3px;
+	width: 100%;
+	min-width: 0;
+	line-height: 1.3;
+	white-space: normal;
+}
+
+.taskTabLabel strong {
+	font-size: 0.9375rem;
+	font-weight: 650;
+}
+
+.taskTabLabel small {
+	font-size: 0.8125rem;
+	font-weight: 500;
+	opacity: 0.82;
+}
+
+.taskTabCompact {
+	display: none;
+}
+
+.taskPanel {
+	min-width: 0;
+	margin-top: 12px;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 6px;
+	background: light-dark(
+		var(--mantine-color-background-0),
+		var(--mantine-color-background-4)
+	);
+}
+
+.downloadPanel {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+	align-items: start;
+	gap: 48px;
+	padding: 36px 40px;
+}
+
+.webPanel {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 24px 40px 40px;
+}
+
+.deliveryHeader {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: start;
+	column-gap: 32px;
+	row-gap: 20px;
+}
+
+.controlGroup {
+	display: grid;
+	gap: 10px;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.controlLabel {
+	padding: 0;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 0.75rem;
+	font-weight: 650;
+	letter-spacing: 0.04em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.deliveryNote {
+	grid-column: 1 / -1;
+	min-width: 0;
+}
+
+.downloadDetails h3 {
+	margin: 0;
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.25;
+}
+
+.downloadDetails p {
+	max-width: 52ch;
+	margin: 9px 0 0;
+	font-size: 0.875rem;
+	line-height: 1.55;
+}
+
+.downloadDetails .downloadOutcome {
+	color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
+	font-weight: 600;
+}
+
+.downloadDetails .downloadContents {
+	max-width: 58ch;
+	margin-top: 7px;
+	font-size: 0.8125rem;
+}
+
+.downloadAction {
+	display: grid;
+	align-content: start;
+	gap: 12px;
+}
+
+.licenseLink {
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+	color: var(--mantine-color-purple-0);
+	font-size: 0.82rem;
+	font-weight: 650;
+	text-decoration: none;
+}
+
+.licenseLink:hover {
+	text-decoration: underline;
+}
+
+.licenseLink:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}
+
+.primaryButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	min-height: 52px;
+	padding: 0 20px;
+	border-radius: 4px;
+	background: light-dark(#01112c, #f5f7f9);
+	color: light-dark(#fff, #01112c);
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: none;
+	transition:
+		background-color 120ms ease,
+		color 120ms ease;
+}
+
+.primaryButton:hover {
+	background: light-dark(#121b31, #e6ebf0);
+}
+
+.formatSwitch,
+.optionGroup {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.methodSwitch,
+.setupSwitch,
+.formatControl {
+	--sc-padding: 0;
+	--sc-transition-duration: 120ms;
+
+	width: 100%;
+	padding: 0;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 4px;
+	background: transparent;
+	overflow: hidden;
+}
+
+.resetButton {
+	border: 0;
+	background: transparent;
+	color: light-dark(#52617a, #9ca8bd);
+	font: inherit;
+	cursor: pointer;
+	transition:
+		background-color 120ms ease,
+		color 120ms ease,
+		box-shadow 120ms ease;
+}
+
+.methodSwitch :global(.mantine-SegmentedControl-label),
+.setupSwitch :global(.mantine-SegmentedControl-label),
+.formatControl :global(.mantine-SegmentedControl-label) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
+	padding: 0 18px;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	font-weight: 600;
+	transition:
+		background-color 120ms ease,
+		color 120ms ease;
+}
+
+.methodSwitch :global(.mantine-SegmentedControl-control)::before,
+.setupSwitch :global(.mantine-SegmentedControl-control)::before,
+.formatControl :global(.mantine-SegmentedControl-control)::before {
+	border-color: light-dark(
+		var(--mantine-color-border-0),
+		var(--mantine-color-border-1)
+	);
+}
+
+.methodSwitch
+	:global(.mantine-SegmentedControl-label:not([data-active]):hover),
+.formatControl
+	:global(.mantine-SegmentedControl-label:not([data-active]):hover) {
+	background: light-dark(#f5f7f9, #121b31);
+	color: var(--mantine-color-purple-0);
+}
+
+.methodSwitch :global(.mantine-SegmentedControl-label[data-active]),
+.setupSwitch :global(.mantine-SegmentedControl-label[data-active]),
+.formatControl :global(.mantine-SegmentedControl-label[data-active]) {
+	color: light-dark(#4338ca, #c2bfff);
+}
+
+.methodSwitch :global(.mantine-SegmentedControl-indicator),
+.setupSwitch :global(.mantine-SegmentedControl-indicator),
+.formatControl :global(.mantine-SegmentedControl-indicator) {
+	border: 0;
+	border-radius: 0;
+	background: light-dark(#f5f7f9, #0f1626);
+	box-shadow: inset 0 -2px 0 var(--mantine-color-purple-0);
+}
+
+.setupSwitch
+	:global(.mantine-SegmentedControl-label:not([data-active]):hover) {
+	color: light-dark(#4338ca, #c2bfff);
+}
+
+.setupSwitch :global(.mantine-SegmentedControl-indicator) {
+	background: light-dark(#f8f9fb, #0f1626);
+}
+
+.deliveryNote {
+	max-width: 78ch;
+	margin: 0;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 15px;
+	line-height: 1.6;
+	text-wrap: pretty;
+}
+
+.configurationHeading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+}
+
+.configurationHeading > div {
+	display: grid;
+	gap: 4px;
+}
+
+.configurationHeading strong {
+	font-size: 14px;
+	font-weight: 650;
+	line-height: 1.4;
+}
+
+.formatSwitch {
+	display: grid;
+	gap: 10px;
+}
+
+.formatControl {
+	max-width: 320px;
+}
+
+.configurationHeading span {
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	line-height: 1.45;
+}
+
+.resetButton {
+	flex: 0 0 auto;
+	min-height: 44px;
+	padding: 0 2px;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.resetButton:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.configuration {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 40px;
+	row-gap: 28px;
+	margin-top: 22px;
+	padding: 28px 0;
+	border-top: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-bottom: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+}
+
+.configurationHeading,
+.configuration > .formatSwitch,
+.configuration > .formatSummary {
+	grid-column: 1 / -1;
+}
+
+.optionGroup legend,
+.formatSwitch legend {
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 650;
+}
+
+.optionGroup > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+}
+
+.selectionHelp,
+.formatSummary {
+	max-width: 62ch;
+	color: light-dark(#52617a, #9ca8bd);
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.selectionHelp {
+	margin: -3px 0 10px;
+}
+
+.formatSummary {
+	margin: -4px 0 0;
+}
+
+.optionGroup label {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	min-height: 44px;
+	padding: 8px 11px;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 1.3;
+	cursor: pointer;
+}
+
+.optionGroup label:has(input:checked) {
+	border-color: var(--mantine-color-purple-0);
+	background: light-dark(#f5f7f9, #121b31);
+}
+
+.optionGroup input {
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	accent-color: var(--mantine-color-purple-0);
+}
+
+.optionGroup input:disabled {
+	cursor: not-allowed;
+}
+
+.optionGroup label:has(input:disabled) {
+	cursor: default;
+}
+
+.instructions {
+	display: grid;
+	gap: 0;
+	margin: 20px 0 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: instruction;
+}
+
+.instructionStep {
+	display: grid;
+	grid-template-columns: 36px minmax(0, 1fr);
+	gap: 20px;
+	padding: 28px 0 32px;
+	border-top: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	counter-increment: instruction;
+}
+
+.instructionStep::before {
+	display: grid;
+	place-items: center;
+	width: 32px;
+	height: 32px;
+	border: light-dark(
+		1px solid var(--mantine-color-border-0),
+		1px solid var(--mantine-color-border-1)
+	);
+	border-radius: 4px;
+	color: light-dark(#4338ca, #c2bfff);
+	font-family: var(--font-monospace);
+	font-size: 0.8125rem;
+	font-weight: 650;
+	content: counter(instruction);
+}
+
+.instructionBody {
+	min-width: 0;
+}
+
+.resourceLinks {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 4px 24px;
+	margin-top: 10px;
+}
+
+.resourceLinks a {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 44px;
+	color: var(--mantine-color-purple-0);
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.resourceLinks a:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.primaryButton:focus-visible,
+.taskTabs button:focus-visible,
+.resetButton:focus-visible,
+.optionGroup input:focus-visible,
+.resourceLinks a:focus-visible {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}
+
+.taskTabs button:focus-visible {
+	outline-offset: -3px;
+}
+
+.methodSwitch:has(input:focus-visible),
+.setupSwitch:has(input:focus-visible),
+.formatControl:has(input:focus-visible) {
+	outline: 2px solid var(--mantine-color-purple-0);
+	outline-offset: 2px;
+}
+
+.methodSwitch input:focus-visible + label,
+.setupSwitch input:focus-visible + label,
+.formatControl input:focus-visible + label {
+	outline: 0;
+}
+
+@media (max-width: 64em) {
+	.downloadPanel {
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+
+	.downloadAction {
+		max-width: 520px;
+	}
+}
+
+@media (max-width: 48em) {
+	.page {
+		padding: 24px 24px 64px;
+	}
+
+	.heading {
+		margin-bottom: 20px;
+	}
+
+	.downloadPanel,
+	.webPanel {
+		padding: 24px;
+	}
+
+	.configurationHeading {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.configuration {
+		grid-template-columns: 1fr;
+		row-gap: 26px;
+	}
+
+	.formatControl {
+		max-width: none;
+	}
+
+	.resetButton {
+		align-self: flex-start;
+	}
+
+	.deliveryHeader {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+
+	.controlGroup {
+		display: block;
+		position: relative;
+		min-height: 44px;
+		padding-left: 84px;
+	}
+
+	.controlLabel {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+
+	.instructionStep {
+		grid-template-columns: 28px minmax(0, 1fr);
+		gap: 12px;
+		padding: 24px 0 28px;
+	}
+
+	.instructionStep::before {
+		width: 28px;
+		height: 28px;
+	}
+}
+
+@media (max-width: 30em) {
+	.taskTabs button {
+		min-height: 68px;
+		padding-inline: 14px;
+	}
+
+	.taskTabDesktop {
+		display: none;
+	}
+
+	.taskTabCompact {
+		display: inline;
+	}
+
+	.downloadPanel,
+	.webPanel {
+		padding: 20px;
+	}
+
+	.methodSwitch :global(.mantine-SegmentedControl-label),
+	.setupSwitch :global(.mantine-SegmentedControl-label) {
+		padding-inline: 8px;
+	}
+
+	.primaryButton {
+		width: 100%;
+		white-space: normal;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.primaryButton,
+	.taskTabs button,
+	.resetButton {
+		transition: none;
+	}
+
+	.methodSwitch :global(.mantine-SegmentedControl-indicator),
+	.setupSwitch :global(.mantine-SegmentedControl-indicator),
+	.formatControl :global(.mantine-SegmentedControl-indicator),
+	.methodSwitch :global(.mantine-SegmentedControl-label),
+	.setupSwitch :global(.mantine-SegmentedControl-label),
+	.formatControl :global(.mantine-SegmentedControl-label) {
+		transition: none;
+	}
+}

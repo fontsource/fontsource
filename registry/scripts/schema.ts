@@ -29,7 +29,7 @@ const cssUnicodeRangeSchema = z
 	.regex(
 		/^U\+[0-9A-F]{4,6}(?:-[0-9A-F]{4,6})?(?:, U\+[0-9A-F]{4,6}(?:-[0-9A-F]{4,6})?)*$/,
 	);
-export const fontClassificationSchema = z.enum([
+const fontClassificationSchema = z.enum([
 	'serif',
 	'sans-serif',
 	'slab-serif',
@@ -74,6 +74,10 @@ const sampleTextSchema = z.strictObject({
 	long: z.string().min(1).optional(),
 });
 
+const previewContextSchema = z.strictObject({
+	fallbackFamilies: z.array(z.string().min(1)).min(1),
+});
+
 export const languageCatalogSchema = z.record(
 	languageIdSchema,
 	z.strictObject({
@@ -113,12 +117,20 @@ export const familyOverridesSchema = z.record(
 	z
 		.strictObject({
 			languages: z.array(languageIdSchema).optional(),
+			previewSubset: idSchema.optional(),
 			sampleText: sampleTextSchema.optional(),
+			previewContext: previewContextSchema.optional(),
 		})
 		.refine(
 			(value) =>
-				value.languages !== undefined || value.sampleText !== undefined,
-			{ message: 'must override languages or sample text' },
+				value.languages !== undefined ||
+				value.previewSubset !== undefined ||
+				value.sampleText !== undefined ||
+				value.previewContext !== undefined,
+			{
+				message:
+					'must override languages, preview subset, sample text, or preview context',
+			},
 		),
 );
 
@@ -200,7 +212,9 @@ export const familySchema = z.strictObject({
 	languages: z.array(languageIdSchema),
 	primaryLanguage: languageIdSchema.optional(),
 	primaryScript: scriptSchema.optional(),
+	previewSubset: idSchema.optional(),
 	sampleText: sampleTextSchema.optional(),
+	previewContext: previewContextSchema.optional(),
 	designer: z.string().min(1).optional(),
 	dateAdded: dateSchema.optional(),
 	sourceModified: dateSchema,
@@ -227,9 +241,17 @@ export const familyIconsSchema = z.strictObject({
 			z.strictObject({
 				name: z.string().min(1).regex(/^\S+$/),
 				codepoint: unicodeScalarSchema,
+				categories: z.array(idSchema).min(1).optional(),
 			}),
 		)
 		.min(1),
+	categoriesSource: z
+		.strictObject({
+			revision: revisionSchema,
+			path: sourcePathSchema,
+			sha256: sha256Schema,
+		})
+		.optional(),
 	source: z.strictObject({
 		revision: revisionSchema,
 		path: sourcePathSchema,
@@ -270,7 +292,9 @@ const subsetDistributionSchema = z.strictObject({
 	subsets: z
 		.array(z.strictObject({ id: idSchema, definition: idSchema }))
 		.min(1),
-	slicing: idSchema.optional(),
+	slicing: z
+		.strictObject({ definition: idSchema, subset: idSchema })
+		.optional(),
 });
 
 export const familyDistributionSchema = z

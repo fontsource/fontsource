@@ -427,10 +427,10 @@
 	"provenance": {
 		"directory": "ofl/yuyushort",
 		"repository": "google/fonts",
-		"revision": "665d47ccfd8219f2b0724292bb2055935f8ebe86",
+		"revision": "e6a071ac75da31628fa79c537f51f8eeaaed57fb",
 		"type": "github"
 	},
-	"sourceModified": "2026-06-05",
+	"sourceModified": "2026-08-21",
 	"sources": [
 		{
 			"inspection": {

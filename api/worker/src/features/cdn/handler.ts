@@ -8,6 +8,7 @@ import {
 	findFontPackageEntry,
 	resolveFontPackageManifest,
 } from '../../../../shared/font-package-manifest';
+import { toResponseBody } from '../../../../shared/response';
 import { getBinaryKey, getDownloadKey } from '../../../../shared/storage';
 import {
 	fetchPackageFileList,
@@ -115,7 +116,7 @@ export const resolveFontRequest = async (
  * option. Returns `undefined` when the object does not exist in R2, and a
  * `not_modified` state object when the conditional check short-circuits.
  */
-export const getStoredBinaryAsset = async (
+const getStoredBinaryAsset = async (
 	c: Context<AppEnv>,
 	tag: Pick<ParsedFontTag, 'id' | 'isVariable' | 'version'>,
 	file: string,
@@ -244,7 +245,7 @@ const respondWithBinary = (
 		`attachment; filename="${options.filename}"`,
 	);
 
-	return new Response(body.body, { status: 200, headers });
+	return new Response(toResponseBody(body.body), { status: 200, headers });
 };
 
 export const getDownloadAsset = async (

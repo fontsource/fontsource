@@ -17,14 +17,20 @@ pnpm --filter '@fontsource-utils/registry' archive
 All source revisions must be exact 40-character commits. Generation also
 requires complete Git history so per-path provenance is accurate; shallow
 repositories are rejected.
-Generation requires existing `distribution.json` files but never creates or
-changes distribution intent. Registry data is written to `data/` and refreshed
-weekly or on demand by the
+Generation preserves existing `distribution.json` files. New Google families
+receive an initial distribution from their declared subsets and inspected
+source variants. Registry data is written to `data/` and refreshed weekly or
+on demand by the
 [registry sync workflow](../.github/workflows/registry-sync.yml), which
 validates changes before committing them to `main`.
 Families present in the previous registry but absent from their provider are
 retained with their original sources and marked `deprecated`. A reappearing
 family is generated as active again unless it has a reviewed replacement.
+Google owns a family when its ID also exists in `fontsource/font-files`.
+Sync migrates the existing distribution to Google after checking that every
+published variant resolves against Google's sources, then removes the old
+Fontsource record. Later syncs do not recreate it, even if Google removes the
+family and its retained Google record becomes deprecated.
 Successors are never guessed: `data/replacements.json` contains only reviewed
 mappings.
 Google’s explicit language lists override cmap detection. References without a
@@ -41,6 +47,7 @@ verified source font into the private `fontsource-registry` R2 bucket:
 ~~~text
 registry/sha256/<sha256>
 sources/sha256/<sha256>
+sources/sha256/<source-sha256>/preview-1.woff2
 snapshots/<fontsource-commit>/api/...
 snapshots/<fontsource-commit>/manifest.json
 current.json
@@ -53,6 +60,9 @@ Family detail views always include the complete license and reviewed
 distribution with an explicit `all` or `subsets` character mode. Icon families
 also declare their supported input modes and link to the lazy symbol catalog;
 every source links to its capability view.
+Each family detail also identifies the representative source used for capability
+inspection. Families whose best preview subset differs from their package
+default expose that reviewed subset explicitly.
 The committed registry format remains private and can change without changing
 those responses. The manifest maps every registry file, API view, and source to
 a SHA-256 object and is written before `current.json` selects the complete
@@ -60,6 +70,21 @@ snapshot.
 
 Google font and icon sources can be recovered from their pinned GitHub commit.
 Registry-managed sources must already exist at their content-addressed R2 key.
+
+Archiving also creates full-source WOFF2 previews for sources referenced by a
+distribution. Compression preserves the source's complete character coverage,
+features, and axes; it does not use package subsetting. Previews are read from
+the verified R2 originals, so the same archive command backfills existing
+sources, including registry-managed ones. Existing previews are reused without
+reconversion. The encoding version keeps their URLs immutable.
+
+Family source views advertise `previewUrl` only for these derivatives; original
+`downloadUrl` values are unchanged. All previews must be stored before a new
+snapshot becomes current. Deploy API support before the archive and website
+when possible. CSS retains the original as a second source while deployments
+overlap, and older snapshots without `previewUrl` continue using originals.
+The next archive run publishes the backfill; interrupted runs reuse previews
+already uploaded and leave the current snapshot unchanged.
 
 The workflow needs `REGISTRY_R2_ENDPOINT` and bucket-scoped Object Read & Write
 credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
@@ -97,8 +122,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - `data/replacements.json` records reviewed successor relationships between
   globally unique family IDs.
 - `data/family-tags.json` assigns reviewed cross-provider discovery tags.
-- `data/family-overrides.json` contains reviewed language and specimen
-  corrections that provider syncs must preserve.
+- `data/family-overrides.json` contains reviewed language, specimen, and preview
+  subset corrections that provider syncs must preserve.
 - `data/taxonomy.json` defines the reviewed classification and tag labels.
 - `data/subsets/` and `data/axes.json` contain shared Unicode and axis data.
 
@@ -109,13 +134,14 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 - Public API views explicitly map registry records rather than exposing them.
 - Provenance comes from Git history, not prior generated metadata.
 - Each provider owns its directory; one adapter never changes another
-  provider's records.
+  provider's records. The registry coordinator owns migrations to Google.
 - Removed provider families remain buildable but are marked `deprecated`.
 - Replaced families retain their own sources; `replacedBy` recommends an active
   successor and never aliases its binaries.
 - `github` provenance can recover a missing source from an exact commit;
   `registry` provenance requires the source to be promoted to R2 first.
-- Distribution is reviewed registry state, not derived from legacy catalogs.
+- Distribution is registry state, not derived from legacy catalogs. Provider
+  metadata only initializes new Google families; later syncs preserve it.
 - Taxonomy describes discovery and context. It does not select input behavior;
   symbol interaction comes only from a catalog's explicit input modes.
 - If a Google Fonts family omits its license file, sync preserves the reviewed

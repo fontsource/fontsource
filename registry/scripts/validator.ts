@@ -424,6 +424,12 @@ const validateFamily = async (
 			publicSubsets.some((subset) => subset.id === defaultSubset),
 			`${id} default subset is not mapped`,
 		);
+		if (family.previewSubset) {
+			assert(
+				publicSubsets.some((subset) => subset.id === family.previewSubset),
+				`${id} preview subset is not mapped`,
+			);
+		}
 		for (const subset of publicSubsets) {
 			const definition = subsets.get(subset.definition);
 			assert(
@@ -436,10 +442,22 @@ const validateFamily = async (
 			);
 		}
 		if (slicing) {
-			const definition = subsets.get(slicing);
-			assert(definition, `${id} references missing slicing ${slicing}`);
-			assert(definition.slices, `${id} slicing ${slicing} must contain slices`);
+			assert(
+				publicSubsets.some((subset) => subset.id === slicing.subset),
+				`${id} slicing subset ${slicing.subset} is not mapped`,
+			);
+			const definition = subsets.get(slicing.definition);
+			assert(
+				definition,
+				`${id} references missing slicing ${slicing.definition}`,
+			);
+			assert(
+				definition.slices,
+				`${id} slicing ${slicing.definition} must contain slices`,
+			);
 		}
+	} else {
+		assert(!family.previewSubset, `${id} cannot select a preview subset`);
 	}
 	validateDistributionResolution(distribution, family, id);
 	return { id, family };
@@ -607,6 +625,20 @@ export const validateRegistry = async (root: string): Promise<void> => {
 				family.family.sampleText,
 				override.sampleText,
 				`${id} sample text override is not applied`,
+			);
+		}
+		if (override.previewContext !== undefined) {
+			deepStrictEqual(
+				family.family.previewContext,
+				override.previewContext,
+				`${id} preview context override is not applied`,
+			);
+		}
+		if (override.previewSubset !== undefined) {
+			strictEqual(
+				family.family.previewSubset,
+				override.previewSubset,
+				`${id} preview subset override is not applied`,
 			);
 		}
 	}

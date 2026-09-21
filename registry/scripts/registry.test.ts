@@ -14,10 +14,12 @@ import { describe, expect, it, onTestFinished } from 'vitest';
 import { generateFontFiles } from './font-files.ts';
 import { generateRegistry } from './generate.ts';
 import { assertGitPathClean, openGitSnapshot } from './git.ts';
+import { generateGoogle } from './google.ts';
 import {
 	familySchema,
 	languageCatalogSchema,
 	sourceFamilySchema,
+	taxonomySchema,
 	upstreamsSchema,
 } from './schema.ts';
 import { canonicalJson, compareStrings, readJson, sha256 } from './shared.ts';
@@ -27,8 +29,33 @@ const ABEL_DISTRIBUTION = {
 	static: [{ weight: 400, style: 'normal' }],
 	characters: {
 		defaultSubset: 'latin',
+		subsets: [
+			{ id: 'japanese', definition: 'japanese' },
+			{ id: 'latin', definition: 'latin' },
+		],
+		slicing: { definition: 'japanese-web', subset: 'japanese' },
+	},
+} as const;
+
+const STATIC_LATIN_DISTRIBUTION = {
+	static: [{ weight: 400, style: 'normal' }],
+	characters: {
+		defaultSubset: 'latin',
 		subsets: [{ id: 'latin', definition: 'latin' }],
-		slicing: 'japanese-web',
+	},
+} as const;
+
+const RECURSIVE_DISTRIBUTION = {
+	static: [300, 400, 500, 600, 700, 800, 900, 1000].map((weight) => ({
+		weight,
+		style: 'normal',
+	})),
+	variable: ['CASL', 'CRSV', 'full', 'MONO', 'slnt', 'standard', 'wght'].map(
+		(axisKey) => ({ axisKey, style: 'normal' }),
+	),
+	characters: {
+		defaultSubset: 'latin',
+		subsets: [{ id: 'latin', definition: 'latin' }],
 	},
 } as const;
 
@@ -187,6 +214,7 @@ fonts {
   copyright: "Copyright Recursive"
 }
 subsets: "latin"
+subsets: "menu"
 `,
 	);
 	await writeFixture(
@@ -300,6 +328,11 @@ const createNamRepository = async (): Promise<{
 	);
 	await writeFixture(
 		repository,
+		'Lib/gfsubsets/data/japanese_unique-glyphs.nam',
+		'0x3042 HIRAGANA LETTER A\n',
+	);
+	await writeFixture(
+		repository,
 		'slices/japanese_default.txt',
 		'subsets { codepoints: 66 }\nsubsets { codepoints: 65 }\n',
 	);
@@ -348,6 +381,16 @@ const createGoogleIconsRepository = async (): Promise<{
 			'home 41\nsettings 42\n',
 		);
 	}
+	await writeFixture(
+		repository,
+		'update/current_versions.json',
+		canonicalJson({
+			'action::flourescent': 1,
+			'action::home': 1,
+			'action::settings': 1,
+			'symbols::home': 1,
+		}),
+	);
 	await writeFixture(repository, 'LICENSE', 'Apache License\n');
 	return {
 		repository,
@@ -437,8 +480,6 @@ const seedRegistryRequirements = async (root: string): Promise<void> => {
 		'fontsource/example',
 		'fontsource/symbols',
 		'google/abel',
-		'google/recursive-sans',
-		'google/stale-sans',
 		'google-icons/material-icons',
 		'google-icons/material-icons-outlined',
 		'google-icons/material-icons-round',
@@ -477,6 +518,34 @@ const seedRegistryRequirements = async (root: string): Promise<void> => {
 };
 
 describe('registry ingestion', () => {
+	it('identifies the upstream revision and path for invalid Google metadata', async () => {
+		const google = await createGoogleRepository();
+		const path = 'ofl/abel/METADATA.pb';
+		const metadata = await readFile(join(google.repository, path), 'utf8');
+		await writeFixture(
+			google.repository,
+			path,
+			metadata.replace('license: "OFL"\n', ''),
+		);
+		const revision = commitAll(google.repository, 'remove required license');
+		const registry = await temporaryDirectory('invalid-google-metadata');
+		const taxonomy = taxonomySchema.parse(
+			await readJson(join(import.meta.dirname, '..', 'data', 'taxonomy.json')),
+		);
+
+		await expect(
+			generateGoogle(
+				openGitSnapshot(google.repository, revision),
+				registry,
+				[],
+				taxonomy,
+			),
+		).rejects.toMatchObject({
+			message: `Failed to parse google/fonts@${revision}:${path}`,
+			cause: { message: expect.stringContaining('license') },
+		});
+	});
+
 	it('archives only committed registry data', async () => {
 		const repository = await createGitRepository('committed-registry');
 		await writeFixture(repository, 'registry/data/upstreams.json', '{}\n');
@@ -552,7 +621,7 @@ describe('registry ingestion', () => {
 		const snapshot = openGitSnapshot(source.repository, source.revision);
 
 		await expect(
-			generateFontFiles(snapshot, registry, [], TEST_LANGUAGES),
+			generateFontFiles(snapshot, registry, [], TEST_LANGUAGES, []),
 		).resolves.toEqual(['example', 'symbols']);
 		expect(
 			await readJson(join(registry, 'families/fontsource/example/family.json')),
@@ -600,6 +669,95 @@ describe('registry ingestion', () => {
 			}).success,
 		).toBe(false);
 	});
+
+	it('migrates Fontsource families to Google without losing their distribution or restoring the old provider', async () => {
+		const google = await createGoogleRepository();
+		const googleIcons = await createGoogleIconsRepository();
+		const nam = await createNamRepository();
+		const fontFiles = await createFontFilesRepository();
+		const registry = await temporaryDirectory('registry-migration');
+		await seedRegistryRequirements(registry);
+		const generate = (revision: string) =>
+			generateRegistry(
+				google.repository,
+				revision,
+				googleIcons.repository,
+				googleIcons.revision,
+				nam.repository,
+				nam.revision,
+				fontFiles.repository,
+				fontFiles.revision,
+				registry,
+			);
+		await generate(google.revision);
+		const previous = join(registry, 'families/fontsource/example');
+		const output = join(registry, 'families/google/example');
+		const distribution = await readFile(
+			join(previous, 'distribution.json'),
+			'utf8',
+		);
+		await cp(
+			join(google.repository, 'ofl/abel'),
+			join(google.repository, 'ofl/example'),
+			{ recursive: true },
+		);
+		await writeFixture(
+			google.repository,
+			'ofl/example/METADATA.pb',
+			(
+				await readFile(join(google.repository, 'ofl/abel/METADATA.pb'), 'utf8')
+			).replaceAll('name: "Abel"', 'name: "Example"'),
+		);
+		const migrationRevision = commitAll(
+			google.repository,
+			'add Example to Google',
+		);
+
+		// A takeover must not silently drop a previously published variant.
+		await writeFixture(
+			registry,
+			'families/fontsource/example/distribution.json',
+			canonicalJson({
+				static: [{ weight: 700, style: 'normal' }],
+				characters: 'all',
+			}),
+		);
+		const previousHashes = await treeHashes(previous);
+		await expect(generate(migrationRevision)).rejects.toThrow(
+			'example Google migration static 700 normal must resolve to one source',
+		);
+		expect(await treeHashes(previous)).toEqual(previousHashes);
+		await writeFile(join(previous, 'distribution.json'), distribution);
+		await generate(migrationRevision);
+		expect(await listFamilyKeys(registry)).toContain('google/example');
+		expect(await listFamilyKeys(registry)).not.toContain('fontsource/example');
+		expect(await readFile(join(output, 'distribution.json'), 'utf8')).toBe(
+			distribution,
+		);
+		expect(await readJson(join(output, 'family.json'))).toMatchObject({
+			status: 'active',
+			designer: 'MADType',
+			provenance: {
+				repository: 'google/fonts',
+				directory: 'ofl/example',
+				revision: migrationRevision,
+			},
+		});
+		const hashes = await treeHashes(registry);
+		await generate(migrationRevision);
+		expect(await treeHashes(registry)).toEqual(hashes);
+
+		await rm(join(google.repository, 'ofl/example'), { recursive: true });
+		await generate(commitAll(google.repository, 'remove Example from Google'));
+		expect(await listFamilyKeys(registry)).not.toContain('fontsource/example');
+		expect(await readJson(join(output, 'family.json'))).toMatchObject({
+			status: 'deprecated',
+			provenance: { repository: 'google/fonts' },
+		});
+		expect(await readFile(join(output, 'distribution.json'), 'utf8')).toBe(
+			distribution,
+		);
+	}, 45_000);
 
 	it('regenerates deterministically, applies replacements, and retains missing families', async () => {
 		const google = await createGoogleRepository();
@@ -730,6 +888,16 @@ describe('registry ingestion', () => {
 			await readJson(join(registry, 'families/google/abel/distribution.json')),
 		).toEqual(ABEL_DISTRIBUTION);
 		expect(
+			await readJson(
+				join(registry, 'families/google/recursive-sans/distribution.json'),
+			),
+		).toEqual(RECURSIVE_DISTRIBUTION);
+		expect(
+			await readJson(
+				join(registry, 'families/google/stale-sans/distribution.json'),
+			),
+		).toEqual(STATIC_LATIN_DISTRIBUTION);
+		expect(
 			await readFile(
 				join(registry, 'families/google/stale-sans/license.txt'),
 				'utf8',
@@ -797,9 +965,10 @@ describe('registry ingestion', () => {
 		).toMatchObject({
 			inputModes: ['codepoint', 'name-ligature'],
 			icons: [
-				{ name: 'flourescent', codepoint: 65 },
-				{ name: 'flourescent', codepoint: 66 },
+				{ name: 'flourescent', codepoint: 65, categories: ['action'] },
+				{ name: 'flourescent', codepoint: 66, categories: ['action'] },
 			],
+			categoriesSource: { path: 'update/current_versions.json' },
 			source: {
 				path: 'font/MaterialIcons-Regular.codepoints',
 			},
@@ -941,5 +1110,5 @@ describe('registry ingestion', () => {
 		await expect(validateRegistry(registry)).rejects.toThrow(
 			'Replacement target recursive-sans must be active',
 		);
-	}, 30_000);
+	}, 45_000);
 });

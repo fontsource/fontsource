@@ -1,7 +1,10 @@
 {
 	"characters": {
 		"defaultSubset": "japanese",
-		"slicing": "japanese-web",
+		"slicing": {
+			"definition": "japanese-web",
+			"subset": "japanese"
+		},
 		"subsets": [
 			{
 				"definition": "cyrillic",

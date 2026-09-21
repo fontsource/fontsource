@@ -7,3 +7,7 @@ The family consists of two variations that share the same capital letters: Yuyu 
 _"This font is, in many ways, like a child to me. It has featured in every sketch and project for years. Seeing it today transformed into a complete typographic tool is the start of a new chapter. This is my voice, now available for yours."_ — Julia García López
 
 To contribute, see [github.com/JuliaGarciaLopez/Yuyu-Font](https://github.com/JuliaGarciaLopez/Yuyu-Font).
+
+* * *
+
+![](yuyu-promotional-sample1.png) ![](yuyu-promotional-sample2.png) ![](yuyu-promotional-sample3.png) ![](yuyu-promotional-sample4.png)

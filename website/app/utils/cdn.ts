@@ -1,5 +1,11 @@
 import type { UrlResolver } from '@fontsource-utils/core';
 
+export const getJsDelivrPackageUrl = (
+	packageName: string,
+	version: string,
+	path: string,
+) => `https://cdn.jsdelivr.net/npm/${packageName}@${version}/${path}`;
+
 export const jsDelivrResolver = (
 	fontId: string,
 	variable = false,

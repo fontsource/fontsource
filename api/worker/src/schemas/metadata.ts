@@ -5,14 +5,14 @@ import {
 	FONT_TYPES,
 } from '../../../shared/catalog';
 
-export const AxisValueSchema = z.object({
+const AxisValueSchema = z.object({
 	default: z.string(),
 	min: z.string(),
 	max: z.string(),
 	step: z.string(),
 });
 
-export const VariableAxesSchema = z.record(z.string(), AxisValueSchema);
+const VariableAxesSchema = z.record(z.string(), AxisValueSchema);
 
 export const FontListItemSchema = z.object({
 	id: z.string(),
@@ -28,13 +28,13 @@ export const FontListItemSchema = z.object({
 	type: z.enum(FONT_TYPES),
 });
 
-export const FontVariantUrlsSchema = z.object({
+const FontVariantUrlsSchema = z.object({
 	woff2: z.string(),
 	woff: z.string(),
 	ttf: z.string(),
 });
 
-export const FontVariantsSchema = z.record(
+const FontVariantsSchema = z.record(
 	z.string(),
 	z.record(
 		z.string(),
@@ -60,7 +60,7 @@ export const VariableCatalogSchema = z.record(
 	VariableFontDetailSchema,
 );
 
-export const DownloadStatsSchema = z.object({
+const DownloadStatsSchema = z.object({
 	npmDownloadTotal: z.number().int(),
 	npmDownloadMonthly: z.number().int(),
 	jsDelivrHitsTotal: z.number().int(),
@@ -89,7 +89,7 @@ export const StatsBadgeSchema = z.object({
 	color: z.string(),
 });
 
-export const AxisRegistryEntrySchema = z.object({
+const AxisRegistryEntrySchema = z.object({
 	name: z.string(),
 	description: z.string(),
 	min: z.number(),
@@ -108,6 +108,22 @@ export const VersionResponseSchema = z.object({
 	static: z.array(z.string()),
 	latestVariable: z.string().optional(),
 	variable: z.array(z.string()).optional(),
+});
+
+export const FontPackageRequestSchema = z.object({
+	ids: z.array(z.string().min(1)).max(100),
+});
+
+const FontPackageItemSchema = z.object({
+	id: z.string(),
+	packageName: z.string(),
+	packageVersion: z.string(),
+	fontFamily: z.string(),
+});
+
+export const FontPackageResponseSchema = z.object({
+	items: z.array(FontPackageItemSchema),
+	failedIds: z.array(z.string()),
 });
 
 export const FontlistResponseSchema = z.record(

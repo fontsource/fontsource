@@ -1,0 +1,94 @@
+{
+  "breakpoints": {
+    "375": {
+      "name": "font-detail-glyph-explorer",
+      "viewportWidth": 327,
+      "width": 327,
+      "height": 752,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          122,
+          4
+        ],
+        [
+          0,
+          138,
+          100,
+          614,
+          4,
+          true
+        ],
+        [
+          3.9755,
+          139,
+          92.0489,
+          30276,
+          8
+        ]
+      ]
+    },
+    "768": {
+      "name": "font-detail-glyph-explorer",
+      "viewportWidth": 720,
+      "width": 720,
+      "height": 732,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          102,
+          4
+        ],
+        [
+          0,
+          118,
+          100,
+          614,
+          4,
+          true
+        ],
+        [
+          1.8056,
+          119,
+          96.3889,
+          11020,
+          8
+        ]
+      ]
+    },
+    "1280": {
+      "name": "font-detail-glyph-explorer",
+      "viewportWidth": 1152,
+      "width": 1152,
+      "height": 614,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          614,
+          4,
+          true
+        ],
+        [
+          1.1285,
+          1,
+          64.4667,
+          10092,
+          8
+        ],
+        [
+          66.6368,
+          1,
+          33.2764,
+          612,
+          8
+        ]
+      ]
+    }
+  }
+}

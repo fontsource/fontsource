@@ -9,6 +9,12 @@
 			"short": "♩♪♫♬♭♮♯"
 		}
 	},
+	"chiron-goround-tc": {
+		"previewSubset": "chinese-traditional"
+	},
+	"chiron-sung-hk": {
+		"previewSubset": "chinese-hongkong"
+	},
 	"dejavu-math": {
 		"sampleText": {
 			"short": "∑ ∫ √ π ≈ ∞"
@@ -16,7 +22,7 @@
 	},
 	"dseg-weather": {
 		"sampleText": {
-			"short": "0123456789ABCabc"
+			"short": "0123456789 ABC"
 		}
 	},
 	"dseg14-classic": {
@@ -86,6 +92,12 @@
 		"sampleText": {
 			"short": "Wireframe content"
 		}
+	},
+	"ibm-plex-sans-jp": {
+		"previewSubset": "japanese"
+	},
+	"ibm-plex-sans-kr": {
+		"previewSubset": "korean"
 	},
 	"jsmath-cmbx10": {
 		"languages": [],
@@ -164,44 +176,95 @@
 			"short": "001234567890?"
 		}
 	},
-	"material-icons": {
+	"linefont": {
 		"sampleText": {
-			"short": "home"
+			"short": "acegikmoqsuwyACEGIKMOQSUWYUSQOMKIGECAywusqomkigeca"
+		}
+	},
+	"lxgw-wenkai-mono-tc": {
+		"previewSubset": "chinese-traditional"
+	},
+	"lxgw-wenkai-tc": {
+		"previewSubset": "chinese-traditional"
+	},
+	"material-icons": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
+		"sampleText": {
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-icons-outlined": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-icons-round": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-icons-sharp": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-icons-two-tone": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "photo_camera thumb_up assignment create_new_folder insert_invitation drafts credit_card timer check_box close"
 		}
 	},
 	"material-symbols-outlined": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "search settings home person add shopping_cart check_circle favorite logout trophy"
 		}
 	},
 	"material-symbols-rounded": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "search settings home person add shopping_cart check_circle favorite logout trophy"
 		}
 	},
 	"material-symbols-sharp": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "home"
+			"short": "search settings home person add shopping_cart check_circle favorite logout trophy"
 		}
 	},
 	"noto-color-emoji-compat-test": {
@@ -212,8 +275,45 @@
 	"noto-music": {
 		"languages": []
 	},
+	"noto-sans-hk": {
+		"previewSubset": "chinese-hongkong"
+	},
+	"noto-sans-jp": {
+		"previewSubset": "japanese"
+	},
+	"noto-sans-kr": {
+		"previewSubset": "korean"
+	},
 	"noto-sans-math": {
-		"languages": []
+		"languages": [],
+		"previewSubset": "math"
+	},
+	"noto-sans-sc": {
+		"previewSubset": "chinese-simplified"
+	},
+	"noto-sans-symbols": {
+		"previewSubset": "symbols"
+	},
+	"noto-sans-symbols-2": {
+		"previewSubset": "symbols"
+	},
+	"noto-sans-tc": {
+		"previewSubset": "chinese-traditional"
+	},
+	"noto-serif-hk": {
+		"previewSubset": "chinese-hongkong"
+	},
+	"noto-serif-jp": {
+		"previewSubset": "japanese"
+	},
+	"noto-serif-kr": {
+		"previewSubset": "korean"
+	},
+	"noto-serif-sc": {
+		"previewSubset": "chinese-simplified"
+	},
+	"noto-serif-tc": {
+		"previewSubset": "chinese-traditional"
 	},
 	"noto-znamenny-musical-notation": {
 		"languages": []
@@ -236,34 +336,93 @@
 			"short": "∑ ∫ √ π ≈ ∞"
 		}
 	},
-	"yakuhanjp": {
+	"wavefont": {
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "acegikmoqsuwyACEGIKMOQSUWYUSQOMKIGECAywusqomkigeca"
+		}
+	},
+	"wdxl-lubrifont-sc": {
+		"previewSubset": "chinese-simplified"
+	},
+	"wdxl-lubrifont-tc": {
+		"previewSubset": "chinese-traditional"
+	},
+	"yakuhanjp": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"Hiragino Sans",
+				"Yu Gothic",
+				"Noto Sans JP",
+				"sans-serif"
+			]
+		},
+		"sampleText": {
+			"short": "、。！？〈〉《》「」『』【】〔〕・（）：；［］｛｝"
 		}
 	},
 	"yakuhanjps": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"Hiragino Sans",
+				"Yu Gothic",
+				"Noto Sans JP",
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』【】〔〕（）［］｛｝"
 		}
 	},
 	"yakuhanmp": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"Hiragino Sans",
+				"Yu Gothic",
+				"Noto Sans JP",
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "、。！？《》「」『』【】〔〕・（）：；［］｛｝"
 		}
 	},
 	"yakuhanmps": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"Hiragino Sans",
+				"Yu Gothic",
+				"Noto Sans JP",
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "《》「」『』【】〔〕（）［］｛｝"
 		}
 	},
 	"yakuhanrp": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"Hiragino Sans",
+				"Yu Gothic",
+				"Noto Sans JP",
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "、。！？〈〉《》「」『』【】〔〕・（）：；［］｛｝"
 		}
 	},
 	"yakuhanrps": {
+		"previewContext": {
+			"fallbackFamilies": [
+				"Hiragino Sans",
+				"Yu Gothic",
+				"Noto Sans JP",
+				"sans-serif"
+			]
+		},
 		"sampleText": {
-			"short": "〈〉《》「」『』〔〕【】（）［］｛｝"
+			"short": "〈〉《》「」『』【】〔〕（）［］｛｝"
 		}
 	}
 }

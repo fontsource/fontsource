@@ -34,7 +34,7 @@ export interface BuildVersionFailure {
 	error: string;
 }
 
-export interface BuildVersionBuilding {
+interface BuildVersionBuilding {
 	state: 'building';
 	buildKey: string;
 }

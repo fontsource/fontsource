@@ -36,10 +36,12 @@ import '@mantine/core/styles/Stack.css';
 
 // Inputs
 import '@mantine/core/styles/Checkbox.css';
+import '@mantine/core/styles/CheckboxIndicator.css';
 import '@mantine/core/styles/ColorInput.css';
 import '@mantine/core/styles/Combobox.css';
 import '@mantine/core/styles/SegmentedControl.css';
 import '@mantine/core/styles/Slider.css';
+import '@mantine/core/styles/Switch.css';
 
 // Buttons
 import '@mantine/core/styles/Button.css';
@@ -56,6 +58,7 @@ import '@mantine/core/styles/Progress.css';
 // Overlays
 import '@mantine/core/styles/Menu.css';
 import '@mantine/core/styles/Modal.css';
+import '@mantine/core/styles/Drawer.css';
 import '@mantine/core/styles/Tooltip.css';
 
 // Typography
@@ -76,6 +79,7 @@ import '@mantine/dropzone/styles.css';
 import '@/styles/global.css';
 
 import ibmLatinURL from '@fontsource-variable/ibm-plex-sans/files/ibm-plex-sans-latin-wght-normal.woff2?url';
+import sourceCodeProLatinURL from '@fontsource-variable/source-code-pro/files/source-code-pro-latin-wght-normal.woff2?url';
 import {
 	ColorSchemeScript,
 	MantineProvider,
@@ -99,6 +103,7 @@ import {
 import { ErrorBoundary as ErrorBoundaryComponent } from '@/components/ErrorBoundary';
 import { AppShell } from '@/components/layout/AppShell';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
+import { CurrentProjectProvider } from '@/features/projects/CurrentProjectProvider';
 import { theme } from '@/styles/theme';
 import { cacheHeaders } from '@/utils/cache';
 import { getCanonicalUrl, ogMeta } from '@/utils/meta';
@@ -121,6 +126,13 @@ export const links: LinksFunction = () => [
 		type: 'font/woff2',
 		crossOrigin: 'anonymous',
 		href: ibmLatinURL,
+	},
+	{
+		rel: 'preload',
+		as: 'font',
+		type: 'font/woff2',
+		crossOrigin: 'anonymous',
+		href: sourceCodeProLatinURL,
 	},
 	{
 		rel: 'apple-touch-icon',
@@ -181,7 +193,9 @@ export const Document = ({ children }: DocumentProps) => {
 				<MantineProvider theme={theme}>
 					<ReactRouterProvider>
 						<CollectionsProvider>
-							<AppShell>{children}</AppShell>
+							<CurrentProjectProvider>
+								<AppShell>{children}</AppShell>
+							</CurrentProjectProvider>
 						</CollectionsProvider>
 					</ReactRouterProvider>
 					<ScrollRestoration />

@@ -23,6 +23,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "chinese-hongkong",
 	"primaryLanguage": "yue_Hant",
 	"primaryScript": "Hant",
 	"project": {
@@ -97,8 +98,6 @@
 	],
 	"status": "active",
 	"tags": [
-		"expressive/calm",
-		"expressive/competent",
 		"expressive/sincere",
 		"sans/humanist"
 	]

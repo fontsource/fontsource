@@ -12,6 +12,7 @@
 		"ami_Latn",
 		"amr_Latn",
 		"ar_Arab",
+		"arb_Arab",
 		"arp_Latn",
 		"art_Latn",
 		"arz_Arab",
@@ -97,6 +98,7 @@
 		"kw_Latn",
 		"la_Latn",
 		"lad_Latn",
+		"lah_Arab",
 		"lfn_Latn",
 		"lln_Latn",
 		"lot_Latn",
@@ -206,66 +208,67 @@
 		"zu_Latn"
 	],
 	"license": {
-		"attribution": "Copyright 2021 The Qahiri Project Authors (github.com/alif-type/qahiri).",
+		"attribution": "Copyright 2021 The Qahiri Project Authors (github.com/aliftype/qahiri).",
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
 	"primaryScript": "Arab",
 	"project": {
-		"repository": "https://github.com/alif-type/qahiri",
-		"revision": "2fbfe8ca2e5ed04b0455e15c717774766f174ad1"
+		"repository": "https://github.com/aliftype/qahiri",
+		"revision": "964c2f87c703108cba828161f1c61797c9cf099e"
 	},
 	"provenance": {
 		"directory": "ofl/qahiri",
 		"repository": "google/fonts",
-		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"revision": "334d06de39eee58a8f4e1522197b36356f4c5a3d",
 		"type": "github"
 	},
 	"sampleText": {
 		"long": "ولما كان تناسي حقوق الإنسان وازدراؤها قد أفضيا إلى أعمال همجية",
 		"short": "لما كان الاعتراف بالكرامة المتأصلة في جميع"
 	},
-	"sourceModified": "2026-03-12",
+	"sourceModified": "2026-07-24",
 	"sources": [
 		{
 			"inspection": {
 				"axes": [],
-				"codepoints": 195,
+				"codepoints": 206,
 				"colorTables": [],
 				"features": {
 					"gpos": [
 						"curs",
 						"kern",
-						"mark"
+						"mark",
+						"mkmk"
 					],
 					"gsub": [
-						"calt",
 						"ccmp",
 						"clig",
 						"dnom",
 						"fina",
 						"init",
-						"isol",
 						"locl",
 						"medi",
 						"numr",
 						"onum",
 						"rclt",
+						"rlig",
 						"salt",
 						"ss01",
-						"ss02"
+						"ss02",
+						"ss03"
 					]
 				},
-				"fontVersion": "Version 3.00",
-				"glyphs": 548,
+				"fontVersion": "Version 4.000",
+				"glyphs": 512,
 				"outline": "glyf",
 				"style": "normal",
-				"unicodeRange": "U+0020-0022, U+0025, U+0027-0029, U+002C-003B, U+003F, U+0041-005D, U+005F, U+0061-007B, U+007D, U+00A0-00A1, U+00AB, U+00AD, U+00B7, U+00BB, U+00BF, U+060C, U+0615, U+061B, U+061F, U+0621-063A, U+0640-064A, U+0654-0655, U+0660-066A, U+066E-066F, U+0671, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A1-06A2, U+06A4, U+06A7, U+06A9, U+06AF, U+06BA, U+06BE, U+06C1-06C3, U+06CC, U+06D2-06D4, U+06F0-06F9, U+08BB-08BD, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044",
+				"unicodeRange": "U+0020-0022, U+0025, U+0027-0029, U+002C-003B, U+003F, U+0041-005D, U+005F, U+0061-007B, U+007D, U+00A0-00A1, U+00AB, U+00B7, U+00BB, U+00BF, U+060C, U+0615, U+061B, U+061F, U+0621-063A, U+0640-0656, U+0660-066A, U+066E-0671, U+0679, U+067E, U+0686, U+0688, U+0691, U+0698, U+06A1-06A2, U+06A4, U+06A7, U+06A9, U+06AF, U+06BA, U+06BE, U+06C1-06C3, U+06CC, U+06D2-06D5, U+06F0-06F9, U+08BB-08BD, U+2010-2011, U+2013-2014, U+2018-201A, U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044",
 				"weight": 400
 			},
 			"path": "ofl/qahiri/Qahiri-Regular.ttf",
-			"sha256": "68e31a245a8613d8b49d55f7ceffdd88b26f2abace2a9dd094a076d78f53a203",
-			"size": 35996,
+			"sha256": "9c4d8cfba7b663dad7eeeeb52a625749f3e1f5ec472a0a6333e1684a2f43dbdf",
+			"size": 40728,
 			"variant": {
 				"style": "normal",
 				"weight": 400

@@ -427,10 +427,10 @@
 	"provenance": {
 		"directory": "ofl/yuyu",
 		"repository": "google/fonts",
-		"revision": "3a49e53a5f41b206ef578654425d241c3ccbb03c",
+		"revision": "e25bd256837604af95522c7593a5cd19c2f6b104",
 		"type": "github"
 	},
-	"sourceModified": "2026-06-05",
+	"sourceModified": "2026-08-21",
 	"sources": [
 		{
 			"inspection": {

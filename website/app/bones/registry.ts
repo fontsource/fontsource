@@ -3,11 +3,23 @@
 import { registerBones } from 'boneyard-js/react'
 
 import _docs_search_results from './docs-search-results.bones.json'
+import _font_detail_about_specimen from './font-detail-about-specimen.bones.json'
+import _font_detail_canvas from './font-detail-canvas.bones.json'
+import _font_detail_compact_title from './font-detail-compact-title.bones.json'
+import _font_detail_glyph_explorer from './font-detail-glyph-explorer.bones.json'
+import _font_detail_title from './font-detail-title.bones.json'
+import _font_detail_weight_strip from './font-detail-weight-strip.bones.json'
 import _font_preview_row from './font-preview-row.bones.json'
 import _search_hit_preview from './search-hit-preview.bones.json'
 
 registerBones({
   "docs-search-results": _docs_search_results,
+  "font-detail-about-specimen": _font_detail_about_specimen,
+  "font-detail-canvas": _font_detail_canvas,
+  "font-detail-compact-title": _font_detail_compact_title,
+  "font-detail-glyph-explorer": _font_detail_glyph_explorer,
+  "font-detail-title": _font_detail_title,
+  "font-detail-weight-strip": _font_detail_weight_strip,
   "font-preview-row": _font_preview_row,
   "search-hit-preview": _search_hit_preview,
 })

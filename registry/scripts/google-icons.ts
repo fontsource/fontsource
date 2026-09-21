@@ -19,6 +19,7 @@ const LICENSE = {
 	url: 'https://www.apache.org/licenses/LICENSE-2.0',
 } as const;
 const TAGS = ['special-use/icons'] as const;
+const CATEGORIES_PATH = 'update/current_versions.json';
 
 type FamilyDefinition = {
 	id: string;
@@ -81,10 +82,40 @@ const FAMILIES: readonly FamilyDefinition[] = [
 const codepointsPath = (fontPath: string): string =>
 	`${fontPath.slice(0, -extname(fontPath).length)}.codepoints`;
 
+const readIconCategories = (snapshot: GitSnapshot) => {
+	const contents = snapshot.read(CATEGORIES_PATH);
+	const value: unknown = JSON.parse(contents.toString('utf8'));
+	if (!value || typeof value !== 'object' || Array.isArray(value)) {
+		throw new Error(`${CATEGORIES_PATH} is not an object`);
+	}
+
+	const categories = new Map<string, string[]>();
+	for (const key of Object.keys(value)) {
+		const [category, name, ...rest] = key.split('::');
+		if (!category || !name || rest.length > 0) {
+			throw new Error(`${CATEGORIES_PATH} has an invalid key: ${key}`);
+		}
+		const current = categories.get(name) ?? [];
+		current.push(category);
+		categories.set(name, current);
+	}
+
+	const changed = snapshot.lastChanged(CATEGORIES_PATH);
+	return {
+		categories,
+		source: {
+			revision: changed.revision,
+			path: CATEGORIES_PATH,
+			sha256: sha256(contents),
+		},
+	};
+};
+
 const readIcons = (
 	snapshot: GitSnapshot,
 	path: string,
 ): { manifest: FamilyIcons; modified: string } => {
+	const categoryCatalog = readIconCategories(snapshot);
 	const contents = snapshot.read(path);
 	const icons = contents
 		.toString('utf8')
@@ -98,6 +129,7 @@ const readIcons = (
 			return {
 				name: match[1],
 				codepoint: Number.parseInt(match[2], 16),
+				categories: categoryCatalog.categories.get(match[1]),
 			};
 		})
 		.toSorted(
@@ -110,6 +142,7 @@ const readIcons = (
 		manifest: familyIconsSchema.parse({
 			inputModes: ['codepoint', 'name-ligature'],
 			icons,
+			categoriesSource: categoryCatalog.source,
 			source: {
 				revision: changed.revision,
 				path,

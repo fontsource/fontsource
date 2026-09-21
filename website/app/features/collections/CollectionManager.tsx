@@ -23,15 +23,17 @@ import {
 	IconPencil,
 	IconPlus,
 	IconSearch,
+	IconStackPush,
 	IconTrash,
 	IconX,
 } from '@tabler/icons-react';
 import { type FormEvent, useRef, useState } from 'react';
 
-import type { FontSummary } from '@/utils/font-summary';
+import { useCurrentProjectStoreOptional } from '@/features/projects/CurrentProjectProvider';
 import classes from './CollectionManager.module.css';
 import menuClasses from './CollectionMenu.module.css';
 import { useCollectionsStore } from './CollectionsProvider';
+import type { CollectionFontLabel } from './model';
 import {
 	formatCollectionName,
 	getCollectionNameLength,
@@ -40,7 +42,7 @@ import {
 } from './model';
 
 interface CreateCollectionModalProps {
-	font?: FontSummary;
+	fonts?: readonly CollectionFontLabel[];
 	onClose: () => void;
 	onCreated?: (collectionId: string) => void;
 	onExitTransitionEnd: () => void;
@@ -69,7 +71,7 @@ const getDuplicateName = (
 };
 
 const CreateCollectionModal = ({
-	font,
+	fonts = [],
 	onClose,
 	onCreated,
 	onExitTransitionEnd,
@@ -81,6 +83,8 @@ const CreateCollectionModal = ({
 	const [name, setName] = useState('');
 	const [announcement, setAnnouncement] = useState('');
 	const normalizedName = formatCollectionName(name);
+	const fontCount = fonts.length;
+	const fontLabel = fontCount === 1 ? fonts[0].family : `${fontCount} fonts`;
 	const duplicateName = getDuplicateName(collections, normalizedName);
 	const nameTooLong =
 		getCollectionNameLength(normalizedName) > MAX_COLLECTION_NAME_LENGTH;
@@ -103,8 +107,8 @@ const CreateCollectionModal = ({
 
 		setName('');
 		setAnnouncement(
-			font
-				? `Created ${normalizedName} and added ${font.family}.`
+			fontCount > 0
+				? `Created ${normalizedName} and added ${fontLabel}.`
 				: `Created ${normalizedName}.`,
 		);
 		onCreated?.(collectionId);
@@ -145,14 +149,11 @@ const CreateCollectionModal = ({
 							onChange={(event) => setName(event.currentTarget.value)}
 							value={name}
 						/>
-						{font && (
+						{fontCount > 0 && (
 							<div className={classes.context}>
 								<IconHeart aria-hidden="true" size={18} />
 								<Text className={classes['context-copy']} fz="sm">
-									{font.family} will be added to this collection
-								</Text>
-								<Text c="dimmed" fz="sm">
-									{font.category} · {font.variable ? 'variable' : 'static'}
+									{fontLabel} will be added to this collection
 								</Text>
 							</div>
 						)}
@@ -161,7 +162,9 @@ const CreateCollectionModal = ({
 								Cancel
 							</Button>
 							<Button disabled={!normalizedName || !!nameError} type="submit">
-								{font ? `Create and add ${font.family}` : 'Create collection'}
+								{fontCount > 0
+									? `Create and add ${fontLabel}`
+									: 'Create collection'}
 							</Button>
 						</Group>
 					</Stack>
@@ -179,8 +182,10 @@ const ManageCollectionsModal = ({
 	opened,
 }: ManageCollectionsModalProps) => {
 	const store = useCollectionsStore();
+	const projectStore = useCurrentProjectStoreOptional();
 	const collections = useValue(store.getCollections);
 	const fontCache = useValue(store.state$.fontCache);
+	const fontSetReady = useValue(() => projectStore?.ready$.get() ?? false);
 	const fullScreen = useMediaQuery('(max-width: 48em)');
 	const [query, setQuery] = useState('');
 	const [editingId, setEditingId] = useState<string | null>(null);
@@ -225,281 +230,333 @@ const ManageCollectionsModal = ({
 		setQuery('');
 		setEditingId(null);
 		setPendingDeleteId(null);
+		setAnnouncement('');
 		onClose();
 	};
 
-	return (
-		<>
-			<VisuallyHidden role="status">{announcement}</VisuallyHidden>
-			<Modal.Root
-				centered
-				classNames={{
-					content: classes['modal-content'],
-					header: classes['modal-header'],
-				}}
-				fullScreen={fullScreen}
-				onClose={close}
-				onExitTransitionEnd={onExitTransitionEnd}
-				opened={opened}
-				returnFocus={false}
-				size="xl"
-			>
-				<Modal.Overlay />
-				<Modal.Content>
-					<Modal.Header>
-						<Modal.Title>
-							<Group gap="xs">
-								<Text c="purple.0" fw={700} fz="xl">
-									Collections
-								</Text>
-								<Text className={classes.count} fz="xs">
-									{collections.length}
-								</Text>
-							</Group>
-						</Modal.Title>
-						<Modal.CloseButton aria-label="Close collection manager" />
-					</Modal.Header>
-					<div className={classes['manage-body']}>
-						<Stack gap="md">
-							<Group className={classes.controls} justify="space-between">
-								<TextInput
-									aria-label="Find a collection"
-									attributes={{ input: { dir: 'auto' } }}
-									data-autofocus
-									leftSection={<IconSearch size={16} />}
-									onChange={(event) => setQuery(event.currentTarget.value)}
-									placeholder="Find a collection"
-									ref={searchRef}
-									value={query}
-								/>
-								<Button
-									className={classes['primary-action']}
-									leftSection={<IconPlus size={18} />}
-									onClick={() => {
-										close();
-										onCreateCollection();
-									}}
-									variant="subtle"
-								>
-									New collection
-								</Button>
-							</Group>
-							<VisuallyHidden role="status">
-								{normalizedQuery
-									? `${visibleCollections.length} matching ${visibleCollections.length === 1 ? 'collection' : 'collections'}.`
-									: ''}
-							</VisuallyHidden>
-							<ScrollArea.Autosize mah="55vh" type="scroll">
-								<ul className={classes.list}>
-									{visibleCollections.length > 0 ? (
-										visibleCollections.map((collection) => {
-											const isEditing = editingId === collection.id;
-											const isDeleting = pendingDeleteId === collection.id;
-											const isCustom = collection.kind === 'custom';
-											const familyNames = collection.fontIds
-												.slice(0, 3)
-												.map((fontId) => fontCache[fontId].family);
-											const remainingFonts =
-												collection.fontIds.length - familyNames.length;
-											const familySummary =
-												familyNames.length === 0
-													? 'No fonts yet'
-													: `${familyNames.join(', ')}${remainingFonts > 0 ? ` +${remainingFonts}` : ''}`;
+	const addCollectionToFontSet = (collectionId: string) => {
+		const collection = collections.find((item) => item.id === collectionId);
+		if (!projectStore || !collection || collection.fontIds.length === 0) return;
 
-											return (
-												<li className={classes.row} key={collection.id}>
-													<div className={classes['collection-icon']}>
-														{collection.kind === 'favorites' ? (
-															<IconHeart
-																aria-hidden="true"
-																fill="currentColor"
-																size={21}
-															/>
-														) : (
-															<IconFolder aria-hidden="true" size={20} />
-														)}
-													</div>
-													<div className={classes.details}>
-														{isEditing ? (
-															<TextInput
-																aria-label={`Rename ${collection.name}`}
-																attributes={{ input: { dir: 'auto' } }}
-																classNames={{ error: classes.error }}
-																data-autofocus
-																error={editingNameError}
-																errorProps={{ role: 'alert' }}
-																onChange={(event) =>
-																	setEditingName(event.currentTarget.value)
+		const existingIds = new Set(
+			projectStore.getItems().map((item) => item.familyId),
+		);
+		const existingCount = collection.fontIds.filter((familyId) =>
+			existingIds.has(familyId),
+		).length;
+		const { addedCount, limitReached } = projectStore.addItems(
+			collection.fontIds.map((familyId) => ({ familyId })),
+		);
+		const skippedCount = collection.fontIds.length - existingCount - addedCount;
+		const importSummary = [
+			addedCount > 0
+				? `${addedCount} ${addedCount === 1 ? 'font' : 'fonts'} added`
+				: undefined,
+			existingCount > 0
+				? `${existingCount} already in your font set`
+				: undefined,
+			skippedCount > 0
+				? `${skippedCount} skipped because the font set is full`
+				: undefined,
+			limitReached && skippedCount === 0 ? 'font set limit reached' : undefined,
+		].filter(Boolean);
+		setAnnouncement(`${collection.name}: ${importSummary.join(', ')}.`);
+	};
+
+	return (
+		<Modal.Root
+			centered
+			classNames={{
+				content: classes['modal-content'],
+				header: classes['modal-header'],
+			}}
+			fullScreen={fullScreen}
+			onClose={close}
+			onExitTransitionEnd={onExitTransitionEnd}
+			opened={opened}
+			returnFocus={false}
+			size="xl"
+		>
+			<Modal.Overlay />
+			<Modal.Content>
+				<Modal.Header>
+					<Modal.Title>
+						<Group gap="xs">
+							<Text c="purple.0" fw={700} fz="xl">
+								Collections
+							</Text>
+							<Text className={classes.count} fz="xs">
+								{collections.length}
+							</Text>
+						</Group>
+					</Modal.Title>
+					<Modal.CloseButton aria-label="Close collection manager" />
+				</Modal.Header>
+				<div className={classes['manage-body']}>
+					<Stack gap="md">
+						{announcement && (
+							<Text c="dimmed" fz="sm" role="status">
+								{announcement}
+							</Text>
+						)}
+						<Group className={classes.controls} justify="space-between">
+							<TextInput
+								aria-label="Find a collection"
+								attributes={{ input: { dir: 'auto' } }}
+								data-autofocus
+								leftSection={<IconSearch size={16} />}
+								onChange={(event) => setQuery(event.currentTarget.value)}
+								placeholder="Find a collection"
+								ref={searchRef}
+								value={query}
+							/>
+							<Button
+								className={classes['primary-action']}
+								leftSection={<IconPlus size={18} />}
+								onClick={() => {
+									close();
+									onCreateCollection();
+								}}
+								variant="subtle"
+							>
+								New collection
+							</Button>
+						</Group>
+						<VisuallyHidden role="status">
+							{normalizedQuery
+								? `${visibleCollections.length} matching ${visibleCollections.length === 1 ? 'collection' : 'collections'}.`
+								: ''}
+						</VisuallyHidden>
+						<ScrollArea.Autosize mah="55vh" type="scroll">
+							<ul className={classes.list}>
+								{visibleCollections.length > 0 ? (
+									visibleCollections.map((collection) => {
+										const isEditing = editingId === collection.id;
+										const isDeleting = pendingDeleteId === collection.id;
+										const isCustom = collection.kind === 'custom';
+										const familyNames = collection.fontIds
+											.slice(0, 3)
+											.map((fontId) => fontCache[fontId].family);
+										const remainingFonts =
+											collection.fontIds.length - familyNames.length;
+										const familySummary =
+											familyNames.length === 0
+												? 'No fonts yet'
+												: `${familyNames.join(', ')}${remainingFonts > 0 ? ` +${remainingFonts}` : ''}`;
+
+										return (
+											<li className={classes.row} key={collection.id}>
+												<div className={classes['collection-icon']}>
+													{collection.kind === 'favorites' ? (
+														<IconHeart
+															aria-hidden="true"
+															fill="currentColor"
+															size={21}
+														/>
+													) : (
+														<IconFolder aria-hidden="true" size={20} />
+													)}
+												</div>
+												<div className={classes.details}>
+													{isEditing ? (
+														<TextInput
+															aria-label={`Rename ${collection.name}`}
+															attributes={{ input: { dir: 'auto' } }}
+															classNames={{ error: classes.error }}
+															data-autofocus
+															error={editingNameError}
+															errorProps={{ role: 'alert' }}
+															onChange={(event) =>
+																setEditingName(event.currentTarget.value)
+															}
+															onKeyDown={(event) => {
+																if (event.nativeEvent.isComposing) return;
+																if (event.key === 'Enter')
+																	saveCollectionName(collection.id);
+																if (event.key === 'Escape') {
+																	setEditingId(null);
+																	focusSearch();
 																}
-																onKeyDown={(event) => {
-																	if (event.nativeEvent.isComposing) return;
-																	if (event.key === 'Enter')
-																		saveCollectionName(collection.id);
-																	if (event.key === 'Escape') {
+															}}
+															value={editingName}
+														/>
+													) : (
+														<Group gap={6} wrap="nowrap">
+															<Text
+																className={classes.name}
+																dir="auto"
+																fw={600}
+															>
+																{collection.name}
+															</Text>
+															{collection.kind === 'favorites' && (
+																<IconLock
+																	aria-label="Built-in collection"
+																	size={14}
+																/>
+															)}
+														</Group>
+													)}
+													{!isEditing && (
+														<Text c="dimmed" dir="auto" fz="sm" lineClamp={1}>
+															{familySummary}
+														</Text>
+													)}
+												</div>
+												<Text c="dimmed" fz="sm">
+													{collection.fontIds.length}{' '}
+													{collection.fontIds.length === 1 ? 'font' : 'fonts'}
+												</Text>
+												<Group
+													className={classes.actions}
+													gap="xs"
+													wrap="nowrap"
+												>
+													<Tooltip label={`View ${collection.name}`}>
+														<ActionIcon
+															aria-label={`View ${collection.name}`}
+															onClick={() => {
+																onViewCollection(collection.id);
+																close();
+															}}
+															variant="transparent"
+														>
+															<IconEye size={18} />
+														</ActionIcon>
+													</Tooltip>
+													<Tooltip
+														label={
+															collection.fontIds.length === 0
+																? `${collection.name} has no fonts`
+																: `Add ${collection.name} to font set`
+														}
+													>
+														<ActionIcon
+															aria-label={`Add ${collection.name} to font set`}
+															disabled={
+																!fontSetReady || collection.fontIds.length === 0
+															}
+															onClick={() =>
+																addCollectionToFontSet(collection.id)
+															}
+															variant="transparent"
+														>
+															<IconStackPush size={18} />
+														</ActionIcon>
+													</Tooltip>
+													{isCustom && isEditing ? (
+														<>
+															<Tooltip label="Save name">
+																<ActionIcon
+																	aria-label={`Save ${collection.name} name`}
+																	disabled={
+																		!formatCollectionName(editingName) ||
+																		!!editingNameError
+																	}
+																	onClick={() =>
+																		saveCollectionName(collection.id)
+																	}
+																	variant="transparent"
+																>
+																	<IconCheck size={18} />
+																</ActionIcon>
+															</Tooltip>
+															<Tooltip label="Cancel rename">
+																<ActionIcon
+																	aria-label={`Cancel renaming ${collection.name}`}
+																	onClick={() => {
 																		setEditingId(null);
 																		focusSearch();
-																	}
-																}}
-																value={editingName}
-															/>
-														) : (
-															<Group gap={6} wrap="nowrap">
-																<Text
-																	className={classes.name}
-																	dir="auto"
-																	fw={600}
-																>
-																	{collection.name}
-																</Text>
-																{collection.kind === 'favorites' && (
-																	<IconLock
-																		aria-label="Built-in collection"
-																		size={14}
-																	/>
-																)}
-															</Group>
-														)}
-														{!isEditing && (
-															<Text c="dimmed" dir="auto" fz="sm" lineClamp={1}>
-																{familySummary}
-															</Text>
-														)}
-													</div>
-													<Text c="dimmed" fz="sm">
-														{collection.fontIds.length}{' '}
-														{collection.fontIds.length === 1 ? 'font' : 'fonts'}
-													</Text>
-													<Group
-														className={classes.actions}
-														gap="xs"
-														wrap="nowrap"
-													>
-														<Tooltip label={`View ${collection.name}`}>
-															<ActionIcon
-																aria-label={`View ${collection.name}`}
-																onClick={() => {
-																	onViewCollection(collection.id);
-																	close();
-																}}
-																variant="transparent"
-															>
-																<IconEye size={18} />
-															</ActionIcon>
-														</Tooltip>
-														{isCustom && isEditing ? (
-															<>
-																<Tooltip label="Save name">
-																	<ActionIcon
-																		aria-label={`Save ${collection.name} name`}
-																		disabled={
-																			!formatCollectionName(editingName) ||
-																			!!editingNameError
-																		}
-																		onClick={() =>
-																			saveCollectionName(collection.id)
-																		}
-																		variant="transparent"
-																	>
-																		<IconCheck size={18} />
-																	</ActionIcon>
-																</Tooltip>
-																<Tooltip label="Cancel rename">
-																	<ActionIcon
-																		aria-label={`Cancel renaming ${collection.name}`}
-																		onClick={() => {
-																			setEditingId(null);
-																			focusSearch();
-																		}}
-																		variant="transparent"
-																	>
-																		<IconX size={18} />
-																	</ActionIcon>
-																</Tooltip>
-															</>
-														) : isCustom && isDeleting ? (
-															<>
-																<Button
-																	color="red"
-																	onClick={() => {
-																		store.deleteCollection(collection.id);
-																		setAnnouncement(
-																			`Deleted ${collection.name}.`,
-																		);
-																		setPendingDeleteId(null);
-																		focusSearch();
 																	}}
-																	size="compact-sm"
-																	variant="light"
+																	variant="transparent"
+																>
+																	<IconX size={18} />
+																</ActionIcon>
+															</Tooltip>
+														</>
+													) : isCustom && isDeleting ? (
+														<>
+															<Button
+																color="red"
+																onClick={() => {
+																	store.deleteCollection(collection.id);
+																	setAnnouncement(
+																		`Deleted ${collection.name}.`,
+																	);
+																	setPendingDeleteId(null);
+																	focusSearch();
+																}}
+																size="compact-sm"
+																variant="light"
+															>
+																Delete
+															</Button>
+															<Button
+																onClick={() => {
+																	setPendingDeleteId(null);
+																	focusSearch();
+																}}
+																size="compact-sm"
+																variant="subtle"
+															>
+																Cancel
+															</Button>
+														</>
+													) : isCustom ? (
+														<Menu
+															classNames={{
+																dropdown: menuClasses.dropdown,
+															}}
+															position="bottom-end"
+															shadow="md"
+														>
+															<Menu.Target>
+																<ActionIcon
+																	aria-label={`More actions for ${collection.name}`}
+																	variant="transparent"
+																>
+																	<IconDots size={18} />
+																</ActionIcon>
+															</Menu.Target>
+															<Menu.Dropdown>
+																<Menu.Item
+																	leftSection={<IconPencil size={16} />}
+																	onClick={() => {
+																		setEditingId(collection.id);
+																		setEditingName(collection.name);
+																	}}
+																>
+																	Rename
+																</Menu.Item>
+																<Menu.Item
+																	color="red"
+																	leftSection={<IconTrash size={16} />}
+																	onClick={() =>
+																		setPendingDeleteId(collection.id)
+																	}
 																>
 																	Delete
-																</Button>
-																<Button
-																	onClick={() => {
-																		setPendingDeleteId(null);
-																		focusSearch();
-																	}}
-																	size="compact-sm"
-																	variant="subtle"
-																>
-																	Cancel
-																</Button>
-															</>
-														) : isCustom ? (
-															<Menu
-																classNames={{
-																	dropdown: menuClasses.dropdown,
-																}}
-																position="bottom-end"
-																shadow="md"
-															>
-																<Menu.Target>
-																	<ActionIcon
-																		aria-label={`More actions for ${collection.name}`}
-																		variant="transparent"
-																	>
-																		<IconDots size={18} />
-																	</ActionIcon>
-																</Menu.Target>
-																<Menu.Dropdown>
-																	<Menu.Item
-																		leftSection={<IconPencil size={16} />}
-																		onClick={() => {
-																			setEditingId(collection.id);
-																			setEditingName(collection.name);
-																		}}
-																	>
-																		Rename
-																	</Menu.Item>
-																	<Menu.Item
-																		color="red"
-																		leftSection={<IconTrash size={16} />}
-																		onClick={() =>
-																			setPendingDeleteId(collection.id)
-																		}
-																	>
-																		Delete
-																	</Menu.Item>
-																</Menu.Dropdown>
-															</Menu>
-														) : null}
-													</Group>
-												</li>
-											);
-										})
-									) : (
-										<li>
-											<Text c="dimmed" py="xl" ta="center">
-												No matching collections
-											</Text>
-										</li>
-									)}
-								</ul>
-							</ScrollArea.Autosize>
-						</Stack>
-					</div>
-				</Modal.Content>
-			</Modal.Root>
-		</>
+																</Menu.Item>
+															</Menu.Dropdown>
+														</Menu>
+													) : null}
+												</Group>
+											</li>
+										);
+									})
+								) : (
+									<li>
+										<Text c="dimmed" py="xl" ta="center">
+											No matching collections
+										</Text>
+									</li>
+								)}
+							</ul>
+						</ScrollArea.Autosize>
+					</Stack>
+				</div>
+			</Modal.Content>
+		</Modal.Root>
 	);
 };
 

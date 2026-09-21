@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+export const REGISTRY_PREVIEW_VERSION = 1;
+
 const IdSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const LanguageIdSchema = z
 	.string()
@@ -65,6 +67,7 @@ const CharacterDistributionSchema = z.discriminatedUnion('type', [
 			.array(z.strictObject({ id: IdSchema, definition: IdSchema }))
 			.min(1),
 		slicing: IdSchema.optional(),
+		slicingSubset: IdSchema.optional(),
 	}),
 ]);
 const RegistryDistributionSchema = z
@@ -80,6 +83,10 @@ const RegistryDistributionSchema = z
 		message: 'must declare static or variable outputs',
 	});
 
+const PreviewContextSchema = z.strictObject({
+	fallbackFamilies: z.array(z.string().min(1)).min(1),
+});
+
 const FamilySummarySchema = z.strictObject({
 	id: IdSchema,
 	family: z.string(),
@@ -91,19 +98,60 @@ const FamilySummarySchema = z.strictObject({
 	tags: z.array(TagIdSchema),
 	sourceModified: z.iso.date(),
 	axes: z.array(z.string().length(4)),
+	primaryLanguage: LanguageIdSchema.optional(),
+	primaryScript: ScriptSchema.optional(),
+	primaryDirection: z.enum(['ltr', 'rtl']).optional(),
+	previewSubset: IdSchema.optional().describe(
+		'Reviewed package subset for previews and default acquisition',
+	),
+	sampleText: SampleTextSchema.optional(),
+	previewContext: PreviewContextSchema.optional().describe(
+		'Fallback families needed to demonstrate the font in its intended context',
+	),
+	designer: z.string().optional(),
+	license: z
+		.strictObject({
+			id: z.string(),
+			url: z.url(),
+		})
+		.optional(),
 });
+
+const RegistryProvenanceSchema = z.discriminatedUnion('type', [
+	z.strictObject({
+		type: z.literal('github'),
+		repository: z.url().describe('Repository containing the archived sources'),
+		revision: z.string().min(1).describe('Pinned repository revision'),
+	}),
+	z.strictObject({ type: z.literal('registry') }),
+]);
 
 const SourceCommonShape = {
 	sha256: Sha256Schema,
 	filename: z.string().min(1),
+	path: z
+		.string()
+		.min(1)
+		.describe('Provider-relative path within the provenance snapshot'),
 	format: z.enum(['ttf', 'otf']),
 	size: z.number().int().nonnegative(),
 	downloadUrl: z.string().min(1).describe('Relative source download URL'),
+	previewUrl: z
+		.string()
+		.min(1)
+		.describe('Relative full-coverage WOFF2 preview URL')
+		.optional(),
 	capabilitiesUrl: z
 		.string()
 		.min(1)
 		.describe('Relative source capabilities URL'),
 	fontVersion: z.string().nullable(),
+	glyphCount: z.number().int().positive().describe('Total source glyphs'),
+	codepointCount: z
+		.number()
+		.int()
+		.positive()
+		.describe('Mapped Unicode codepoints in the source'),
 	style: z
 		.enum(['normal', 'italic', 'oblique'])
 		.describe('Inspected font style'),
@@ -137,10 +185,6 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 	languages: z
 		.array(LanguageIdSchema)
 		.describe('Semantic language IDs, distinct from package subsets'),
-	primaryLanguage: LanguageIdSchema.optional(),
-	primaryScript: ScriptSchema.optional(),
-	sampleText: SampleTextSchema.optional(),
-	designer: z.string().optional(),
 	dateAdded: z.iso.date().optional(),
 	license: z.strictObject({
 		id: z.string(),
@@ -153,7 +197,11 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 			repository: z.url(),
 			revision: z.string().optional(),
 		})
+		.describe('Author-maintained upstream font project')
 		.optional(),
+	provenance: RegistryProvenanceSchema.describe(
+		'Source snapshot ingested by Fontsource',
+	),
 	content: z.record(z.string().min(1), LocalizedContentSchema).optional(),
 	symbols: z
 		.strictObject({
@@ -162,14 +210,49 @@ export const RegistryFamilyDetailSchema = FamilySummarySchema.extend({
 		})
 		.optional(),
 	sources: z.array(RegistrySourceSchema).min(1),
+	previewSource: Sha256Schema.describe(
+		'Distributed source selected for default previews and source-scoped capability inspection',
+	),
 	distribution: RegistryDistributionSchema,
+}).superRefine((family, context) => {
+	const sourceExists = family.sources.some(
+		(source) => source.sha256 === family.previewSource,
+	);
+	const isDistributed = [
+		...(family.distribution.static ?? []),
+		...(family.distribution.variable ?? []),
+	].some((variant) => variant.source === family.previewSource);
+	if (!sourceExists || !isDistributed) {
+		context.addIssue({
+			code: 'custom',
+			message: 'previewSource must reference a distributed source',
+			path: ['previewSource'],
+		});
+	}
+	if (family.previewSubset) {
+		if (
+			family.distribution.characters.type !== 'subsets' ||
+			!family.distribution.characters.subsets.some(
+				(subset) => subset.id === family.previewSubset,
+			)
+		) {
+			context.addIssue({
+				code: 'custom',
+				message: 'previewSubset must reference a distributed subset',
+				path: ['previewSubset'],
+			});
+		}
+	}
 });
+
+export type RegistryFamilyDetail = z.infer<typeof RegistryFamilyDetailSchema>;
 
 export const RegistryFamilySymbolsSchema = z
 	.array(
 		z.strictObject({
 			name: z.string().min(1).regex(/^\S+$/),
 			codepoint: UnicodeScalarSchema,
+			categories: z.array(IdSchema).min(1).optional(),
 		}),
 	)
 	.min(1);
@@ -196,6 +279,7 @@ const RegistryLanguageSchema = z.strictObject({
 	id: LanguageIdSchema,
 	language: z.string().min(1).describe('BCP 47 language subtag'),
 	script: ScriptSchema.describe('ISO 15924 script code'),
+	direction: z.enum(['ltr', 'rtl']).optional(),
 	name: z.string().min(1),
 	preferredName: z.string().min(1).optional(),
 	autonym: z.string().min(1).optional(),

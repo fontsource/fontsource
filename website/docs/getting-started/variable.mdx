@@ -18,11 +18,11 @@ To use a variable font with Fontsource, you need to install the corresponding va
 After installing the package, you can import the font into your project like this:
 
 ```jsx
-// Supports weights 200-1000 in a single small file.
+// Supports weights 200-1000 with one variable face per subset.
 import "@fontsource-variable/nunito-sans";
 ```
 
-This will import the standard weight of the font. If you want to use a specific weight or variation, you can import the corresponding CSS file instead:
+This imports the default variable face, usually the normal style across the full weight range. The CSS also uses `unicode-range`, so browsers fetch only the character sets used on the page. If you want an italic style or a different set of axes, import the corresponding CSS file instead:
 
 ```jsx
 // Supports weights 200-1000 in italic style.

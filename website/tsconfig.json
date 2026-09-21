@@ -13,6 +13,7 @@
 		"vite.config.ts"
 	],
 	"compilerOptions": {
+		"allowImportingTsExtensions": true,
 		"checkJs": true,
 		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,

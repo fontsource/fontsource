@@ -10,7 +10,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   font-style: normal;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-wght-normal-1.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-wght-normal-1.woff2) format('woff2-variations');
   unicode-range: U+42;
 }
 
@@ -20,7 +20,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   font-style: normal;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-wght-normal-2.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-wght-normal-2.woff2) format('woff2-variations');
   unicode-range: U+41;
 }",
       "filename": "wght.css",
@@ -32,7 +32,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-slnt-normal-1.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-slnt-normal-1.woff2) format('woff2-variations');
   unicode-range: U+42;
 }
 
@@ -42,7 +42,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-slnt-normal-2.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-slnt-normal-2.woff2) format('woff2-variations');
   unicode-range: U+41;
 }",
       "filename": "slnt-italic.css",
@@ -54,7 +54,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-standard-normal-1.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-standard-normal-1.woff2) format('woff2-variations');
   unicode-range: U+42;
 }
 
@@ -64,7 +64,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-standard-normal-2.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-standard-normal-2.woff2) format('woff2-variations');
   unicode-range: U+41;
 }",
       "filename": "standard-italic.css",
@@ -76,7 +76,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-standard-normal-1.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-standard-normal-1.woff2) format('woff2-variations');
   unicode-range: U+42;
 }
 
@@ -86,7 +86,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-standard-normal-2.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-standard-normal-2.woff2) format('woff2-variations');
   unicode-range: U+41;
 }",
       "filename": "index.css",
@@ -235,7 +235,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
   font-style: normal;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-wght-normal.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-wght-normal.woff2) format('woff2-variations');
   unicode-range: U+20-22;
 }",
       "filename": "wght.css",
@@ -247,7 +247,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-slnt-normal.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-slnt-normal.woff2) format('woff2-variations');
   unicode-range: U+20-22;
 }",
       "filename": "slnt-italic.css",
@@ -259,7 +259,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
   font-style: normal;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-casl-normal.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-casl-normal.woff2) format('woff2-variations');
   unicode-range: U+20-22;
 }",
       "filename": "CASL.css",
@@ -271,7 +271,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-standard-normal.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-standard-normal.woff2) format('woff2-variations');
   unicode-range: U+20-22;
 }",
       "filename": "standard-italic.css",
@@ -283,7 +283,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-full-normal.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
   unicode-range: U+20-22;
 }",
       "filename": "full-italic.css",
@@ -295,7 +295,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 1000;
-  src: url(./files/recursive-latin-full-normal.woff2) format(woff2) tech(variations);
+  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
   unicode-range: U+20-22;
 }",
       "filename": "index.css",

@@ -128,6 +128,37 @@ describe('metadata routes', () => {
 		expect(body).toEqual({ state: 'building', version: '5.0.0' });
 	});
 
+	it('resolves standard packages for multiple font families', async () => {
+		const { response, settle } = await dispatch(
+			new Request('https://fontsource.test/v1/font-packages', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ ids: ['abel', 'recursive', 'missing', 'abel'] }),
+			}),
+		);
+		const body = await response.json();
+		await settle();
+
+		expect(response.status).toBe(200);
+		expect(body).toEqual({
+			items: [
+				{
+					id: 'abel',
+					packageName: '@fontsource/abel',
+					packageVersion: '5.0.0',
+					fontFamily: 'Abel',
+				},
+				{
+					id: 'recursive',
+					packageName: '@fontsource-variable/recursive',
+					packageVersion: '5.0.0',
+					fontFamily: 'Recursive Variable',
+				},
+			],
+			failedIds: ['missing'],
+		});
+	});
+
 	it('redirects legacy font download aliases to jsDelivr like the public API', async () => {
 		const { response, settle } = await dispatch(
 			new Request('https://fontsource.test/v1/fonts/abel/download.zip', {
@@ -208,6 +239,7 @@ describe('metadata routes', () => {
 			'/og/fonts/{id}',
 			'/v1/axis-registry',
 			'/v1/download/{id}',
+			'/v1/font-packages',
 			'/v1/fonts',
 			'/v1/fonts/{id}',
 			'/v1/fonts/{id}/{file}',
@@ -218,6 +250,7 @@ describe('metadata routes', () => {
 			'/v1/registry/languages',
 			'/v1/registry/sources/{sha256}',
 			'/v1/registry/sources/{sha256}/capabilities',
+			'/v1/registry/sources/{sha256}/preview/{file}',
 			'/v1/registry/subsets',
 			'/v1/registry/subsets/{id}',
 			'/v1/registry/taxonomy',
@@ -254,6 +287,24 @@ describe('metadata routes', () => {
 		expect(response.status).toBe(200);
 		expect(response.headers.get('Content-Type')).toContain('text/html');
 		expect(body).toContain('/openapi.json');
+	});
+
+	it('redirects API catalog discovery to the canonical publisher catalog', async () => {
+		const { response, settle } = await dispatch(
+			new Request('https://fontsource.test/.well-known/api-catalog', {
+				redirect: 'manual',
+			}),
+		);
+		await settle();
+
+		expect(response.status).toBe(308);
+		expect(response.headers.get('Location')).toBe(
+			'https://fontsource.org/.well-known/api-catalog',
+		);
+		expect(response.headers.get('Link')).toBe(
+			'<https://fontsource.org/.well-known/api-catalog>; rel="api-catalog"',
+		);
+		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 	});
 
 	it('refreshes scheduled metadata caches from upstream', async () => {

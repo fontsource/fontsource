@@ -108,6 +108,14 @@
 		{
 			"style": "normal",
 			"weight": 900
+		},
+		{
+			"style": "italic",
+			"weight": 1000
+		},
+		{
+			"style": "normal",
+			"weight": 1000
 		}
 	],
 	"variable": [

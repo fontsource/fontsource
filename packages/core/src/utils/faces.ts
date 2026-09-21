@@ -30,6 +30,7 @@ export const resolveFontFaces = (
 		weights,
 		styles,
 		unicodeRange = {},
+		subsetSlices = {},
 		variable,
 		formats = ['woff2'],
 	} = config;
@@ -56,55 +57,68 @@ export const resolveFontFaces = (
 			const stretch = getFaceStretch(axisKey, axisConfig);
 
 			for (const subset of subsets) {
-				for (const style of styles) {
-					faces.push({
-						subset,
-						weight: cssWeight,
-						style: getFaceStyle(axisKey, style, axisConfig),
-						isVariable: true,
-						unicodeRange: unicodeRange[subset] ?? '',
-						sources: variableFormats.map((format) => ({
-							format,
-							filename: generateVariableFilename(
-								familyId,
-								subset,
-								axisKey,
-								style,
-								0,
+				const characterSets = subsetSlices[subset]?.length
+					? subsetSlices[subset]
+					: [{ id: 0, unicodeRange: unicodeRange[subset] ?? '' }];
+				for (const {
+					id: sliceIndex,
+					unicodeRange: faceRange,
+				} of characterSets) {
+					for (const style of styles) {
+						faces.push({
+							subset,
+							weight: cssWeight,
+							style: getFaceStyle(axisKey, style, axisConfig),
+							isVariable: true,
+							unicodeRange: faceRange,
+							sources: variableFormats.map((format) => ({
 								format,
-							),
-						})),
-						axisKey,
-						stretch,
-						sliceIndex: 0,
-					});
+								filename: generateVariableFilename(
+									familyId,
+									subset,
+									axisKey,
+									style,
+									sliceIndex,
+									format,
+								),
+							})),
+							axisKey,
+							stretch,
+							sliceIndex,
+						});
+					}
 				}
 			}
 		}
 	} else {
 		// Generate one unique face per subset, weight, and style combination for static faces.
 		for (const subset of subsets) {
-			for (const weight of weights) {
-				for (const style of styles) {
-					faces.push({
-						subset,
-						weight,
-						style,
-						isVariable: false,
-						unicodeRange: unicodeRange[subset] ?? '',
-						sources: formats.map((format) => ({
-							format,
-							filename: generateStaticFilename(
-								familyId,
-								subset,
-								weight,
-								style,
-								0,
+			const characterSets = subsetSlices[subset]?.length
+				? subsetSlices[subset]
+				: [{ id: 0, unicodeRange: unicodeRange[subset] ?? '' }];
+			for (const { id: sliceIndex, unicodeRange: faceRange } of characterSets) {
+				for (const weight of weights) {
+					for (const style of styles) {
+						faces.push({
+							subset,
+							weight,
+							style,
+							isVariable: false,
+							unicodeRange: faceRange,
+							sources: formats.map((format) => ({
 								format,
-							),
-						})),
-						sliceIndex: 0,
-					});
+								filename: generateStaticFilename(
+									familyId,
+									subset,
+									weight,
+									style,
+									sliceIndex,
+									format,
+								),
+							})),
+							sliceIndex,
+						});
+					}
 				}
 			}
 		}

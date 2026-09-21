@@ -3,7 +3,7 @@
 		"sans-serif"
 	],
 	"dateAdded": "2024-10-07",
-	"designer": "LY Corporation, Fontrix, Fontworks",
+	"designer": "LY Corporation, RixFont, Fontworks",
 	"family": "LINE Seed JP",
 	"languages": [
 		"aa_Latn",
@@ -433,10 +433,10 @@
 	"provenance": {
 		"directory": "ofl/lineseedjp",
 		"repository": "google/fonts",
-		"revision": "ca50ef7e44e4d5bc811b512708ff43c21acbac3e",
+		"revision": "874ec71eac706dd23900d1305449abed6767b7df",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-03",
+	"sourceModified": "2026-07-23",
 	"sources": [
 		{
 			"inspection": {

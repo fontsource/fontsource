@@ -23,6 +23,7 @@
 		"id": "OFL-1.1",
 		"url": "https://openfontlicense.org/open-font-license-official-text/"
 	},
+	"previewSubset": "chinese-simplified",
 	"primaryLanguage": "zh_Hans",
 	"primaryScript": "Hans",
 	"project": {
@@ -97,8 +98,6 @@
 	],
 	"status": "active",
 	"tags": [
-		"expressive/calm",
-		"expressive/competent",
 		"expressive/rugged",
 		"expressive/sincere",
 		"sans/humanist"

@@ -12,21 +12,22 @@ allowBuilds:
 
 catalog:
   '@biomejs/biome': 2.5.4
-  '@cloudflare/vite-plugin': 1.45.1
-  '@vitest/coverage-v8': 4.1.10
-  esbuild: 0.28.1
+  '@cloudflare/vite-plugin': 1.55.0
+  '@vitest/coverage-v8': 4.1.11
+  esbuild: 0.28.2
+  knip: 6.32.0
   tsdown: 0.22.9
-  tsx: 4.23.1
-  typescript: 6.0.3
-  vite: 8.1.5
-  vitest: 4.1.10
-  wrangler: 4.112.0
+  tsx: 4.23.13
+  typescript: 7.0.2
+  vite: 8.3.0
+  vitest: 4.1.11
+  wrangler: 4.134.0
 
 catalogs:
   node20:
     '@types/node': 20.19.43
   node24:
-    '@types/node': 24.13.3
+    '@types/node': 24.13.5
 
 catalogMode: manual
 cleanupUnusedCatalogs: true

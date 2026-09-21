@@ -17,6 +17,7 @@ import {
 	ListFontValuesRoute,
 	ListStatsRoute,
 	ListVariableFontsRoute,
+	ResolveFontPackagesRoute,
 } from './routes/api';
 import { GetBinaryAssetRoute, GetCssFileRoute } from './routes/cdn';
 import {
@@ -28,6 +29,7 @@ import {
 	GetRegistryFamilyRoute,
 	GetRegistryFamilySymbolsRoute,
 	GetRegistrySourceCapabilitiesRoute,
+	GetRegistrySourcePreviewRoute,
 	GetRegistrySourceRoute,
 	GetRegistrySubsetRoute,
 	GetRegistryTaxonomyRoute,
@@ -48,7 +50,7 @@ app.use('*', async (c, next) => {
 	const policy =
 		c.res.status === 404
 			? CACHE_POLICIES.notFound
-			: c.res.status === 301 || c.res.status === 302
+			: c.res.status === 301 || c.res.status === 302 || c.res.status === 308
 				? CACHE_POLICIES.redirect
 				: c.res.status >= 400
 					? CACHE_POLICIES.noStore
@@ -75,6 +77,13 @@ const apiEtag = etag({
 		'last-modified',
 		...RETAINED_304_HEADERS,
 	],
+});
+
+const websiteApiCatalogUrl = 'https://fontsource.org/.well-known/api-catalog';
+
+app.get('/.well-known/api-catalog', (c) => {
+	c.header('Link', `<${websiteApiCatalogUrl}>; rel="api-catalog"`);
+	return c.redirect(websiteApiCatalogUrl, 308);
 });
 
 for (const path of [
@@ -160,6 +169,7 @@ const openapi = fromHono(app, {
 openapi.get('/fontlist', ListFontValuesRoute);
 openapi.get('/v1/fonts', ListFontsRoute);
 openapi.get('/v1/fonts/:id', GetFontRoute);
+openapi.post('/v1/font-packages', ResolveFontPackagesRoute);
 openapi.get('/v1/variable', ListVariableFontsRoute);
 openapi.get('/v1/variable/:id', GetVariableFontRoute);
 openapi.get('/v1/axis-registry', ListAxisRegistryRoute);
@@ -178,6 +188,10 @@ openapi.get('/v1/registry/subsets', ListRegistrySubsetsRoute);
 openapi.get('/v1/registry/subsets/:id', GetRegistrySubsetRoute);
 openapi.get('/v1/registry/axes', ListRegistryAxesRoute);
 openapi.get('/v1/registry/sources/:sha256', GetRegistrySourceRoute);
+openapi.get(
+	'/v1/registry/sources/:sha256/preview/:file',
+	GetRegistrySourcePreviewRoute,
+);
 openapi.get(
 	'/v1/registry/sources/:sha256/capabilities',
 	GetRegistrySourceCapabilitiesRoute,

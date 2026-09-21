@@ -1,8 +1,10 @@
 import { readFile } from 'node:fs/promises';
 import { basename, join, resolve } from 'node:path';
+import { createFontContext } from '@fontsource-utils/core';
 import { consola } from 'consola';
 import fastq from 'fastq';
 import {
+	REGISTRY_PREVIEW_VERSION,
 	RegistryAxesSchema,
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
@@ -14,7 +16,7 @@ import {
 	RegistryTaxonomySchema,
 } from '../../api/shared/registry.ts';
 import { assertGitPathClean, getGitRevision } from './git.ts';
-import { putCurrentObject, putObject } from './r2.ts';
+import { putCurrentObject, putObject, putSourcePreview } from './r2.ts';
 import {
 	archiveManifestSchema,
 	axisRegistrySchema,
@@ -43,7 +45,8 @@ import {
 	validateRegistry,
 } from './validator.ts';
 
-const CONCURRENCY = 16;
+// Keep concurrent retries within the S3 client's shared retry budget.
+const CONCURRENCY = 8;
 const REPOSITORY_ROOT = resolve(import.meta.dirname, '../..');
 const REGISTRY_ROOT = join(REPOSITORY_ROOT, 'registry', 'data');
 const logger = consola.withTag('registry');
@@ -87,6 +90,53 @@ const sourceCapabilities = (source: FamilySource) =>
 		colorTables: source.inspection.colorTables,
 	});
 
+const selectPreviewSource = (
+	distribution: ReturnType<typeof resolveDistributionSources>,
+): string => {
+	// Prefer the normal variable source that represents the package's standard
+	// axes. It gives previews the broadest useful style range from one source.
+	const variable =
+		distribution.variable?.find(
+			(variant) => variant.axisKey === 'standard' && variant.style === 'normal',
+		) ??
+		distribution.variable?.find((variant) => variant.style === 'normal') ??
+		distribution.variable?.find((variant) => variant.axisKey === 'standard') ??
+		distribution.variable?.[0];
+	if (variable) return variable.source;
+
+	const staticSource = distribution.static
+		?.toSorted((left, right) => {
+			const leftStyle = left.style === 'normal' ? 0 : 1;
+			const rightStyle = right.style === 'normal' ? 0 : 1;
+			return (
+				leftStyle - rightStyle ||
+				Math.abs(left.weight - 400) - Math.abs(right.weight - 400) ||
+				right.weight - left.weight
+			);
+		})
+		.at(0);
+	if (staticSource) return staticSource.source;
+
+	throw new Error('Registry distribution has no preview source');
+};
+
+const resolvePublicCharacterDistribution = (
+	characters: ReturnType<typeof familyDistributionSchema.parse>['characters'],
+) => {
+	if (characters === 'all') return { type: 'all' } as const;
+
+	const slicing = characters.slicing;
+	if (!slicing) return { type: 'subsets', ...characters } as const;
+
+	return {
+		type: 'subsets',
+		defaultSubset: characters.defaultSubset,
+		subsets: characters.subsets,
+		slicing: slicing.definition,
+		slicingSubset: slicing.subset,
+	} as const;
+};
+
 const createArchivePlan = async (root: string, registryRevision: string) => {
 	await validateRegistry(root);
 
@@ -115,11 +165,20 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const languages = languageCatalogSchema.parse(
 		await readJson(join(root, 'languages.json')),
 	);
+	const getLanguageDirection = (
+		language: (typeof languages)[string],
+	): 'ltr' | 'rtl' => {
+		const locale = new Intl.Locale(`und-${language.script}`) as Intl.Locale & {
+			getTextInfo: () => { direction: 'ltr' | 'rtl' };
+		};
+		return locale.getTextInfo().direction;
+	};
 	const languageSummaries = Object.entries(languages)
 		.map(([id, language]) => ({
 			id,
 			language: language.language,
 			script: language.script,
+			direction: getLanguageDirection(language),
 			name: language.name,
 			preferredName: language.preferredName,
 			autonym: language.autonym,
@@ -127,6 +186,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		}))
 		.toSorted((left, right) => compareStrings(left.id, right.id));
 	const sourceMap = new Map<string, SourceFile>();
+	const previewHashes = new Set<string>();
 	const familySummaries = [];
 	const familyViews: ArchiveFile[] = [];
 	const symbolViews: ArchiveFile[] = [];
@@ -151,11 +211,14 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		);
 		const publicDistribution = {
 			...resolveDistributionSources(distribution, family, id),
-			characters:
-				distribution.characters === 'all'
-					? ({ type: 'all' } as const)
-					: ({ type: 'subsets', ...distribution.characters } as const),
+			characters: resolvePublicCharacterDistribution(distribution.characters),
 		};
+		const previewSource = selectPreviewSource(publicDistribution);
+		const distributedSources = new Set([
+			...(publicDistribution.static?.map(({ source }) => source) ?? []),
+			...(publicDistribution.variable?.map(({ source }) => source) ?? []),
+		]);
+		for (const hash of distributedSources) previewHashes.add(hash);
 		const axes = [
 			...new Set(
 				family.sources.flatMap(({ inspection }) =>
@@ -169,11 +232,17 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			const common = {
 				sha256: source.sha256,
 				filename: basename(source.path),
+				path: source.path,
 				format,
 				size: source.size,
 				downloadUrl: `/v1/registry/sources/${source.sha256}`,
+				previewUrl: distributedSources.has(source.sha256)
+					? `/v1/registry/sources/${source.sha256}/preview/${REGISTRY_PREVIEW_VERSION}.woff2`
+					: undefined,
 				capabilitiesUrl: `/v1/registry/sources/${source.sha256}/capabilities`,
 				fontVersion: source.inspection.fontVersion,
+				glyphCount: source.inspection.glyphs,
+				codepointCount: source.inspection.codepoints,
 				style: source.inspection.style,
 				declaredVariant: source.variant,
 			};
@@ -209,6 +278,19 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 			).toSorted(compareStrings),
 			sourceModified: family.sourceModified,
 			axes,
+			primaryLanguage: family.primaryLanguage,
+			primaryScript: family.primaryScript,
+			primaryDirection: family.primaryLanguage
+				? getLanguageDirection(languages[family.primaryLanguage])
+				: undefined,
+			previewSubset: family.previewSubset,
+			sampleText: family.sampleText,
+			previewContext: family.previewContext,
+			designer: family.designer,
+			license: {
+				id: family.license.id,
+				url: family.license.url,
+			},
 		};
 		familySummaries.push(publicFamily);
 		familyViews.push(
@@ -217,10 +299,6 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 				RegistryFamilyDetailSchema.parse({
 					...publicFamily,
 					languages: family.languages,
-					primaryLanguage: family.primaryLanguage,
-					primaryScript: family.primaryScript,
-					sampleText: family.sampleText,
-					designer: family.designer,
 					dateAdded: family.dateAdded,
 					license: {
 						id: family.license.id,
@@ -229,6 +307,14 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 						text: licenseText,
 					},
 					project: family.project,
+					provenance:
+						family.provenance.type === 'github'
+							? {
+									type: family.provenance.type,
+									repository: `https://github.com/${family.provenance.repository}`,
+									revision: family.provenance.revision,
+								}
+							: { type: family.provenance.type },
 					content:
 						description || article
 							? {
@@ -245,6 +331,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 							}
 						: undefined,
 					sources,
+					previewSource,
 					distribution: publicDistribution,
 				}),
 			),
@@ -335,6 +422,7 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		registry,
 		views,
 		sources,
+		previewSources: sources.filter(({ sha256 }) => previewHashes.has(sha256)),
 		manifest: archiveManifestSchema.parse({
 			schemaVersion: 1,
 			registryRevision,
@@ -420,6 +508,23 @@ export const publishArchive = async (
 		}),
 	);
 	logger.success(`Processed ${objects.length} archive objects`);
+	logger.start(
+		`Archiving ${plan.previewSources.length} full-source WOFF2 previews`,
+	);
+	const ctx = createFontContext();
+	try {
+		// Compress one source at a time to bound WASM memory for large CJK fonts.
+		for (const [index, source] of plan.previewSources.entries()) {
+			await putSourcePreview(ctx, source);
+			if ((index + 1) % 500 === 0) {
+				logger.info(
+					`Processed ${index + 1}/${plan.previewSources.length} previews`,
+				);
+			}
+		}
+	} finally {
+		ctx.destroy();
+	}
 	logger.start('Publishing snapshot manifest');
 	await putObject({
 		key: `snapshots/${registryRevision}/manifest.json`,

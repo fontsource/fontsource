@@ -4,7 +4,7 @@
 		"sans-serif"
 	],
 	"dateAdded": "2026-07-01",
-	"designer": "Magdalena Alonso",
+	"designer": "Magdalena Alonso Rebollo",
 	"displayName": "Caacupé One",
 	"family": "Caacupe One",
 	"languages": [
@@ -442,10 +442,10 @@
 	"provenance": {
 		"directory": "ofl/caacupeone",
 		"repository": "google/fonts",
-		"revision": "3c23a4aff8c5863149399edac80bb983c319a121",
+		"revision": "c08c736766aa0dadd691094d725abd0326661495",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-01",
+	"sourceModified": "2026-08-05",
 	"sources": [
 		{
 			"inspection": {

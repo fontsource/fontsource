@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import {
+	REGISTRY_PREVIEW_VERSION,
 	RegistryAxesSchema,
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
@@ -14,6 +15,8 @@ import { dispatch, jsonSnapshot, setupWorkerTest, testEnv } from './helpers';
 
 const REVISION = '1'.repeat(40);
 const SOURCE_SHA256 = '2'.repeat(64);
+const PREVIEW_PATH = `/v1/registry/sources/${SOURCE_SHA256}/preview/${REGISTRY_PREVIEW_VERSION}.woff2`;
+const PREVIEW_KEY = `sources/sha256/${SOURCE_SHA256}/preview-${REGISTRY_PREVIEW_VERSION}.woff2`;
 const SOURCE_BYTES = new TextEncoder().encode('test font');
 const FAMILY_SUMMARY = {
 	id: 'abel',
@@ -24,6 +27,10 @@ const FAMILY_SUMMARY = {
 	tags: ['sans/humanist'],
 	sourceModified: '2026-07-15',
 	axes: [],
+	license: {
+		id: 'OFL-1.1',
+		url: 'https://openfontlicense.org',
+	},
 } as const;
 const VIEWS = [
 	{
@@ -36,9 +43,15 @@ const VIEWS = [
 		route: '/v1/registry/families/abel',
 		body: RegistryFamilyDetailSchema.parse({
 			...FAMILY_SUMMARY,
+			provenance: {
+				type: 'github',
+				repository: 'https://github.com/google/fonts',
+				revision: REVISION,
+			},
 			languages: ['en_Latn'],
 			primaryLanguage: 'en_Latn',
 			primaryScript: 'Latn',
+			previewSubset: 'latin',
 			sampleText: {
 				short: 'All people are born free',
 				long: 'All people are born free and equal',
@@ -48,6 +61,7 @@ const VIEWS = [
 				url: 'https://openfontlicense.org',
 				text: 'Test license',
 			},
+			previewSource: SOURCE_SHA256,
 			symbols: {
 				catalogUrl: '/v1/registry/families/abel/symbols',
 				inputModes: ['codepoint', 'name-ligature'],
@@ -64,12 +78,16 @@ const VIEWS = [
 				{
 					sha256: SOURCE_SHA256,
 					filename: 'Abel-Regular.ttf',
+					path: 'ofl/abel/Abel-Regular.ttf',
 					format: 'ttf',
 					size: SOURCE_BYTES.byteLength,
 					downloadUrl: `/v1/registry/sources/${SOURCE_SHA256}`,
+					previewUrl: PREVIEW_PATH,
 					capabilitiesUrl: `/v1/registry/sources/${SOURCE_SHA256}/capabilities`,
 					type: 'static',
 					fontVersion: 'Version 1.0',
+					glyphCount: 2,
+					codepointCount: 2,
 					weight: 400,
 					style: 'normal',
 					declaredVariant: { weight: 400, style: 'normal' },
@@ -81,7 +99,7 @@ const VIEWS = [
 		path: 'families/abel/symbols.json',
 		route: '/v1/registry/families/abel/symbols',
 		body: RegistryFamilySymbolsSchema.parse([
-			{ name: 'home', codepoint: 0xe88a },
+			{ name: 'home', codepoint: 0xe88a, categories: ['action', 'symbols'] },
 		]),
 	},
 	{
@@ -92,6 +110,7 @@ const VIEWS = [
 				id: 'en_Latn',
 				language: 'en',
 				script: 'Latn',
+				direction: 'ltr',
 				name: 'English',
 				autonym: 'English',
 				sampleText: {
@@ -178,6 +197,9 @@ const seedRegistry = async (): Promise<void> => {
 			registryRevision: REVISION,
 		}),
 		...VIEWS.map(({ path, body }) => putJson(`${prefix}/${path}`, body)),
+		testEnv.REGISTRY.put(PREVIEW_KEY, SOURCE_BYTES, {
+			httpMetadata: { contentType: 'font/woff2' },
+		}),
 		testEnv.REGISTRY.put(`sources/sha256/${SOURCE_SHA256}`, SOURCE_BYTES, {
 			httpMetadata: { contentType: 'font/ttf' },
 		}),
@@ -205,32 +227,82 @@ describe('registry routes', () => {
 		}
 	});
 
-	it('streams immutable source fonts and supports conditional requests', async () => {
-		const url = `https://fontsource.test/v1/registry/sources/${SOURCE_SHA256}`;
-		const first = await dispatch(url);
-		const body = new Uint8Array(await first.response.arrayBuffer());
-		await first.settle();
+	it.each([
+		{ path: `/v1/registry/sources/${SOURCE_SHA256}`, contentType: 'font/ttf' },
+		{ path: PREVIEW_PATH, contentType: 'font/woff2' },
+	])(
+		'streams immutable $contentType fonts and supports conditional requests',
+		async ({ path, contentType }) => {
+			const url = `https://fontsource.test${path}`;
+			const first = await dispatch(url);
+			const body = new Uint8Array(await first.response.arrayBuffer());
+			await first.settle();
 
-		expect(first.response.status).toBe(200);
-		expect(body).toEqual(SOURCE_BYTES);
-		expect(first.response.headers.get('Content-Type')).toBe('font/ttf');
-		expect(first.response.headers.get('Cache-Control')).toBe(
-			'public, max-age=31536000, immutable',
-		);
+			expect(first.response.status).toBe(200);
+			expect(body).toEqual(SOURCE_BYTES);
+			expect(first.response.headers.get('Content-Type')).toBe(contentType);
+			expect(first.response.headers.get('Cache-Control')).toBe(
+				'public, max-age=31536000, immutable',
+			);
 
-		const second = await dispatch(
-			new Request(url, {
-				headers: {
-					'If-None-Match': first.response.headers.get('ETag') ?? '',
-				},
-			}),
-		);
-		await second.settle();
+			const second = await dispatch(
+				new Request(url, {
+					headers: {
+						'If-None-Match': first.response.headers.get('ETag') ?? '',
+					},
+				}),
+			);
+			await second.settle();
 
-		expect(second.response.status).toBe(304);
-		expect(second.response.headers.get('ETag')).toBe(
-			first.response.headers.get('ETag'),
+			expect(second.response.status).toBe(304);
+			expect(second.response.headers.get('ETag')).toBe(
+				first.response.headers.get('ETag'),
+			);
+		},
+	);
+
+	it('serves independently archived preview versions', async () => {
+		const secondVersion = new TextEncoder().encode('second preview encoding');
+		await testEnv.REGISTRY.put(
+			`sources/sha256/${SOURCE_SHA256}/preview-2.woff2`,
+			secondVersion,
+			{
+				httpMetadata: { contentType: 'font/woff2' },
+			},
 		);
+		for (const [version, bytes] of [
+			[1, SOURCE_BYTES],
+			[2, secondVersion],
+		] as const) {
+			const result = await dispatch(
+				`https://fontsource.test/v1/registry/sources/${SOURCE_SHA256}/preview/${version}.woff2`,
+			);
+			expect(result.response.status).toBe(200);
+			expect(new Uint8Array(await result.response.arrayBuffer())).toEqual(
+				bytes,
+			);
+			await result.settle();
+		}
+	});
+
+	it('rejects invalid preview filenames', async () => {
+		for (const filename of ['0.woff2', '1.ttf', 'preview-1.woff2']) {
+			const response = await jsonSnapshot(
+				`https://fontsource.test/v1/registry/sources/${SOURCE_SHA256}/preview/${filename}`,
+			);
+			expect(response.status).toBe(400);
+		}
+	});
+
+	it('rejects invalid preview metadata', async () => {
+		await testEnv.REGISTRY.put(PREVIEW_KEY, SOURCE_BYTES, {
+			httpMetadata: { contentType: 'font/ttf' },
+		});
+		const response = await jsonSnapshot(
+			`https://fontsource.test${PREVIEW_PATH}`,
+		);
+		expect(response.status).toBe(502);
+		expect(response.headers.cacheControl).toBe('no-store');
 	});
 
 	it('returns not found for unknown registry records', async () => {
@@ -240,6 +312,7 @@ describe('registry routes', () => {
 				'/v1/registry/families/unknown/symbols',
 				`/v1/registry/sources/${'8'.repeat(64)}`,
 				`/v1/registry/sources/${'8'.repeat(64)}/capabilities`,
+				`/v1/registry/sources/${'8'.repeat(64)}/preview/${REGISTRY_PREVIEW_VERSION}.woff2`,
 			].map((path) => jsonSnapshot(`https://fontsource.test${path}`)),
 		);
 

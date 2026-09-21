@@ -1,5 +1,11 @@
 import { useValue } from '@legendapp/state/react';
-import { ActionIcon, Menu, ScrollArea, VisuallyHidden } from '@mantine/core';
+import {
+	ActionIcon,
+	Button,
+	Menu,
+	ScrollArea,
+	VisuallyHidden,
+} from '@mantine/core';
 import { IconFolderPlus, IconPlus, IconSettings } from '@tabler/icons-react';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -11,13 +17,10 @@ import {
 } from './CollectionManager';
 import menuClasses from './CollectionMenu.module.css';
 import { useCollectionsStore } from './CollectionsProvider';
+import type { CollectionFontLabel } from './model';
 import { normalizeCollectionName } from './model';
 
-interface AddToCollectionMenuProps {
-	font: FontSummary;
-}
-
-const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
+const AddToCollectionMenu = ({ font }: { font: FontSummary }) => {
 	const store = useCollectionsStore();
 	const navigate = useNavigate();
 	const ready = useValue(store.ready$);
@@ -34,6 +37,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 		: customCollections;
 	const [createOpened, setCreateOpened] = useState(false);
 	const [manageOpened, setManageOpened] = useState(false);
+	const [announcement, setAnnouncement] = useState('');
 	const targetRef = useRef<HTMLButtonElement>(null);
 	const label = `Manage collections for ${font.family}`;
 	const restoreFocus = () => {
@@ -42,6 +46,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 
 	return (
 		<>
+			<VisuallyHidden role="status">{announcement}</VisuallyHidden>
 			<Menu
 				classNames={{ dropdown: menuClasses.dropdown }}
 				closeOnItemClick={false}
@@ -93,6 +98,9 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 											} else {
 												store.removeFontFromCollection(collection.id, font.id);
 											}
+											setAnnouncement(
+												`${checked ? 'Added' : 'Removed'} ${font.family} ${checked ? 'to' : 'from'} ${collection.name}.`,
+											);
 										}}
 									>
 										<span dir="auto">{collection.name}</span>
@@ -103,7 +111,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 							<Menu.Label>
 								{normalizedQuery
 									? 'No matching collections'
-									: 'No custom collections yet'}
+									: 'No collections yet'}
 							</Menu.Label>
 						)}
 					</ScrollArea.Autosize>
@@ -125,7 +133,7 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 				</Menu.Dropdown>
 			</Menu>
 			<CreateCollectionModal
-				font={font}
+				fonts={[font]}
 				onClose={() => setCreateOpened(false)}
 				onCreated={(collectionId) =>
 					store.addFontToCollection(collectionId, font)
@@ -137,18 +145,48 @@ const AddToCollectionMenu = ({ font }: AddToCollectionMenuProps) => {
 				onClose={() => setManageOpened(false)}
 				onCreateCollection={() => setCreateOpened(true)}
 				onExitTransitionEnd={restoreFocus}
-				onViewCollection={(collectionId) => {
-					const collection = collections.find(
-						(item) => item.id === collectionId,
-					);
-					if (collection) {
-						navigate(`/?collection=${encodeURIComponent(collection.name)}`);
-					}
-				}}
+				onViewCollection={(collectionId) =>
+					navigate(`/?collection=${encodeURIComponent(collectionId)}`)
+				}
 				opened={manageOpened}
 			/>
 		</>
 	);
 };
 
-export { AddToCollectionMenu };
+const AddFontSetToCollectionMenu = ({
+	fonts,
+}: {
+	fonts: readonly CollectionFontLabel[];
+}) => {
+	const store = useCollectionsStore();
+	const ready = useValue(store.ready$);
+	const [opened, setOpened] = useState(false);
+	const targetRef = useRef<HTMLButtonElement>(null);
+
+	return (
+		<>
+			<Button
+				disabled={!ready || fonts.length === 0}
+				leftSection={<IconFolderPlus size={17} />}
+				onClick={() => setOpened(true)}
+				ref={targetRef}
+				type="button"
+				variant="subtle"
+			>
+				Save as collection
+			</Button>
+			<CreateCollectionModal
+				fonts={fonts}
+				onClose={() => setOpened(false)}
+				onCreated={(collectionId) =>
+					store.addFontsToCollection(collectionId, fonts)
+				}
+				onExitTransitionEnd={() => targetRef.current?.focus()}
+				opened={opened}
+			/>
+		</>
+	);
+};
+
+export { AddFontSetToCollectionMenu, AddToCollectionMenu };

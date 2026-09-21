@@ -1,0 +1,33 @@
+.icon {
+	display: inline-grid;
+	place-items: center;
+	transform-origin: 50% 62%;
+
+	svg {
+		transition: fill 140ms ease;
+	}
+
+	&[data-animate] {
+		animation: favorite-pop 240ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+}
+
+@keyframes favorite-pop {
+	0% {
+		transform: scale(0.82);
+	}
+
+	58% {
+		transform: scale(1.12);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.icon svg {
+		transition: none;
+	}
+}

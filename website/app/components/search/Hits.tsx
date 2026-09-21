@@ -8,9 +8,13 @@ import {
 	Text,
 	VisuallyHidden,
 } from '@mantine/core';
-import { useMounted, useViewportSize } from '@mantine/hooks';
-import { useWindowVirtualizer } from '@tanstack/react-virtual';
+import {
+	useWindowVirtualizer,
+	type VirtualItem,
+} from '@tanstack/react-virtual';
 import type { BaseHit } from 'instantsearch.js';
+import type { InfiniteHitsCache } from 'instantsearch.js/es/connectors/infinite-hits/connectInfiniteHits';
+import { isEqual } from 'instantsearch.js/es/lib/utils/isEqual';
 import {
 	useEffect,
 	useId,
@@ -18,12 +22,14 @@ import {
 	useMemo,
 	useRef,
 	useState,
+	useSyncExternalStore,
 } from 'react';
 import { useInfiniteHits, useInstantSearch } from 'react-instantsearch';
-
 import { FontCard } from '@/components/FontCard';
 import { Skeleton } from '@/components/Skeleton';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
+import type { ListRegistryLanguagesResponse } from '@/generated/api';
+import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 
 import classes from './Hits.module.css';
@@ -39,12 +45,16 @@ interface AlgoliaMetadata extends BaseHit {
 }
 
 interface HitComponentProps {
+	languageSample?: string;
+	preview?: FontPreview;
 	state$: SearchState;
 	hit: AlgoliaMetadata;
 	eagerStylesheet?: boolean;
 }
 
 interface InfiniteHitsProps {
+	languages: ListRegistryLanguagesResponse;
+	previews: Record<string, FontPreview>;
 	state$: SearchState;
 }
 
@@ -52,6 +62,27 @@ const hitsPerVirtualRow = 12;
 const eagerStylesheetCount = 4;
 const rowGap = 16;
 const loadingPlaceholderKeys = [0, 1, 2, 3];
+// Keep loaded pages across route changes, but not across SSR requests or reloads.
+let cachedHits:
+	| Parameters<InfiniteHitsCache<AlgoliaMetadata>['write']>[0]
+	| null = null;
+const hitsCache: InfiniteHitsCache<AlgoliaMetadata> = {
+	read({ state: { page: _page, ...state } }) {
+		if (typeof window === 'undefined') return null;
+		return cachedHits && isEqual(cachedHits.state, state)
+			? cachedHits.hits
+			: null;
+	},
+	write({ state: { page: _page, ...state }, hits }) {
+		if (typeof window !== 'undefined') cachedHits = { state, hits };
+	},
+};
+let cachedMeasurements: { key: string; rows: VirtualItem[] } | undefined;
+
+const subscribeToViewport = (onChange: () => void) => {
+	window.addEventListener('resize', onChange);
+	return () => window.removeEventListener('resize', onChange);
+};
 type Display = 'grid' | 'list';
 interface LoadingPlaceholderProps {
 	display: Display;
@@ -84,7 +115,13 @@ const getNoResultsMessage = (
 };
 
 const HitComponent = observer(
-	({ eagerStylesheet, hit, state$ }: HitComponentProps) => {
+	({
+		eagerStylesheet,
+		hit,
+		state$,
+		preview,
+		languageSample,
+	}: HitComponentProps) => {
 		const display = useValue(state$.display);
 		const size = useValue(state$.size);
 
@@ -102,9 +139,15 @@ const HitComponent = observer(
 				return customValue;
 			}
 
+			if (languageSample) return languageSample;
+
 			// Use language-specific preview for non-latin fonts when no custom input
-			if (isNotLatin) {
-				return getPreviewText(hit.defSubset, hit.objectID);
+			if (preview?.sampleText || isNotLatin) {
+				return (
+					preview?.sampleText?.short?.trim() ||
+					preview?.sampleText?.long?.trim() ||
+					getPreviewText(preview?.previewSubset ?? hit.defSubset)
+				);
 			}
 
 			return state$.preview.presetValue.get();
@@ -113,6 +156,7 @@ const HitComponent = observer(
 		return (
 			<FontCard
 				font={{
+					...preview,
 					id: hit.objectID,
 					family: hit.family,
 					defSubset: hit.defSubset,
@@ -168,7 +212,8 @@ const LoadingRow = ({ display, previewHeight }: LoadingPlaceholderProps) => (
 	</div>
 );
 
-const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
+const InfiniteHits = observer((props: InfiniteHitsProps) => {
+	const { state$, previews, languages } = props;
 	const collectionsStore = useCollectionsStore();
 	const collectionId = useValue(state$.collectionId);
 	const collections = useValue(collectionsStore.getCollections);
@@ -181,10 +226,14 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
-	const mounted = useMounted();
-	const [isLoadingMore, setIsLoadingMore] = useState(false);
+	// Match SSR during hydration, but virtualize immediately on client navigation.
+	const viewportWidth = useSyncExternalStore(
+		subscribeToViewport,
+		() => window.innerWidth,
+		() => 0,
+	);
+	const mounted = viewportWidth > 0;
 	const [scrollMargin, setScrollMargin] = useState(0);
-	const { width: viewportWidth } = useViewportSize();
 	const columns =
 		display === 'list'
 			? 1
@@ -200,7 +249,13 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 	const { indexUiState, refresh, results, status } = useInstantSearch({
 		catchError: true,
 	});
-	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>();
+	const [requestedResults, setRequestedResults] = useState<
+		typeof results | null
+	>(null);
+	const isLoadingMore = requestedResults === results && status !== 'error';
+	const { items, isLastPage, showMore } = useInfiniteHits<AlgoliaMetadata>({
+		cache: hitsCache,
+	});
 	const isSearchLoading = status === 'loading' || status === 'stalled';
 	const size = state$.size.get();
 	const gridPreviewHeight = getGridPreviewHeight(size);
@@ -214,6 +269,11 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		sortBy: indexUiState.sortBy ?? '',
 		toggle: indexUiState.toggle ?? {},
 	});
+	const selectedLanguage = languages.find(
+		(language) => language.id === indexUiState.refinementList?.languageIds?.[0],
+	);
+	const languageSample =
+		selectedLanguage?.sampleText?.short || selectedLanguage?.sampleText?.long;
 	const hasQuery = Boolean(indexUiState.query?.trim());
 	const hasActiveFilters =
 		Object.values(indexUiState.menu ?? {}).some(Boolean) ||
@@ -221,7 +281,6 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 			(values) => values.length > 0,
 		) ||
 		Object.values(indexUiState.toggle ?? {}).some(Boolean);
-	const previousSearchKeyRef = useRef(searchKey);
 	// Twelve fills complete rows at every supported grid width: 1, 2, 3, and 4 columns.
 	const rows = useMemo(
 		() =>
@@ -235,8 +294,10 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 			),
 		[items],
 	);
-	const showLoadingRow = !isLastPage && items.length > 0;
+	const showLoadingRow = !isLastPage && items.length > 0 && status !== 'error';
 	const virtualRowCount = rows.length + (showLoadingRow ? 1 : 0);
+	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${size}:${previewValue}`;
+	const previousMeasurementKey = useRef(measurementKey);
 	const rowVirtualizer = useWindowVirtualizer<HTMLDivElement>({
 		count: mounted ? virtualRowCount : 0,
 		enabled: mounted,
@@ -254,10 +315,14 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		overscan: 2,
 		scrollMargin,
 		useAnimationFrameWithResizeObserver: true,
+		// Restore measured row sizes before Back navigation restores the scroll position.
+		initialMeasurementsCache:
+			cachedMeasurements?.key === measurementKey
+				? cachedMeasurements.rows
+				: undefined,
 	});
 	const virtualRows = rowVirtualizer.getVirtualItems();
-	const lastVirtualIndex = virtualRows[virtualRows.length - 1]?.index ?? -1;
-	const measurementKey = `${searchKey}:${display}:${viewportWidth}:${size}:${previewValue}`;
+	const lastVirtualIndex = virtualRows.at(-1)?.index ?? -1;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: viewport changes can move the results below responsive controls.
 	useLayoutEffect(() => {
@@ -273,8 +338,16 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 
 	useLayoutEffect(() => {
 		if (!mounted) return;
-		void measurementKey;
-		rowVirtualizer.measure();
+		if (previousMeasurementKey.current !== measurementKey) {
+			rowVirtualizer.measure();
+		}
+		previousMeasurementKey.current = measurementKey;
+		return () => {
+			cachedMeasurements = {
+				key: measurementKey,
+				rows: rowVirtualizer.takeSnapshot(),
+			};
+		};
 	}, [measurementKey, mounted, rowVirtualizer]);
 
 	useEffect(() => {
@@ -282,13 +355,14 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 			!mounted ||
 			lastVirtualIndex < rows.length - 1 ||
 			isLastPage ||
+			status === 'error' ||
 			isSearchLoading ||
 			isLoadingMore
 		) {
 			return;
 		}
 
-		setIsLoadingMore(true);
+		setRequestedResults(results);
 		showMore();
 	}, [
 		mounted,
@@ -298,57 +372,39 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 		lastVirtualIndex,
 		rows.length,
 		showMore,
+		results,
+		status,
 	]);
-
-	useEffect(() => {
-		if (!isSearchLoading) {
-			setIsLoadingMore(false);
-		}
-	}, [isSearchLoading]);
-
-	useEffect(() => {
-		if (previousSearchKeyRef.current === searchKey) {
-			return;
-		}
-
-		previousSearchKeyRef.current = searchKey;
-		setIsLoadingMore(false);
-	}, [searchKey]);
 
 	useEffect(() => {
 		const unsubscribe = state$.language.onChange((e) => {
 			// Keep the preset current while custom text is active so clearing it
 			// immediately restores the selected language preview.
-			const firstHit = items[0];
-			if (firstHit) {
-				const newPreview = getPreviewText(e.value, firstHit.objectID);
-				state$.preview.presetValue.set(newPreview);
-			}
+			state$.preview.presetValue.set(getPreviewText(e.value));
 		});
 
 		return unsubscribe;
-	}, [state$.preview, state$.language, items]);
+	}, [state$.preview, state$.language]);
 
-	if (status === 'error') {
-		return (
-			<Box px={4} py={24} role="alert">
-				<Stack align="flex-start" gap="xs">
-					<Text fw={600}>Font results could not load.</Text>
-					<Text c="dimmed">
-						We could not reach the font search service. Check your connection,
-						then try again.
-					</Text>
-					<Button onClick={() => refresh()} size="sm">
-						Reload results
-					</Button>
-				</Stack>
-			</Box>
-		);
-	}
+	const searchError = status === 'error' && (
+		<Box px={4} py={24} role="alert">
+			<Stack align="flex-start" gap="xs">
+				<Text fw={600}>Font results could not load.</Text>
+				<Text c="dimmed">
+					We could not reach the font search service. Check your connection,
+					then try again.
+				</Text>
+				<Button onClick={() => refresh()} size="sm">
+					Try again
+				</Button>
+			</Stack>
+		</Box>
+	);
+	if (searchError && items.length === 0) return searchError;
 
 	// The `__isArtificial` flag makes sure to not display the No Results message
 	// when no hits have been returned yet.
-	if (!results.__isArtificial && results.nbHits === 0) {
+	if (status !== 'error' && !results.__isArtificial && results.nbHits === 0) {
 		return (
 			<Box>
 				<Text aria-atomic="true" role="status">
@@ -392,9 +448,11 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 										<div className={getRowClassName(display)}>
 											{row.map((hit, hitIndex) => (
 												<HitComponent
+													languageSample={languageSample}
 													key={hit.objectID}
 													state$={state$}
 													hit={hit}
+													preview={previews[hit.objectID]}
 													eagerStylesheet={
 														virtualRow.index === 0 &&
 														hitIndex < eagerStylesheetCount
@@ -419,15 +477,18 @@ const InfiniteHits = observer(({ state$ }: InfiniteHitsProps) => {
 					>
 						{items.map((hit, index) => (
 							<HitComponent
+								languageSample={languageSample}
 								key={hit.objectID}
 								state$={state$}
 								hit={hit}
+								preview={previews[hit.objectID]}
 								eagerStylesheet={index < eagerStylesheetCount}
 							/>
 						))}
 					</SimpleGrid>
 				)}
 			</div>
+			{searchError}
 		</div>
 	);
 });

@@ -3,7 +3,7 @@ import { defineConfig, defineDocs } from 'fumadocs-mdx/config';
 import remarkSmartypants from 'remark-smartypants';
 import { z } from 'zod';
 
-import { fontsourceCodeTheme } from './app/components/code/theme';
+import { fontsourceCodeTheme } from './app/components/code/theme.ts';
 
 export const docs = defineDocs({
 	dir: 'docs',
