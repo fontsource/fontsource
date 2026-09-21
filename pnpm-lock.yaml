@@ -445,6 +445,9 @@ importers:
       posthog-js:
         specifier: ^1.434.2
         version: 1.434.2(@types/react@19.3.0)(react@19.3.0)
+      posthog-node:
+        specifier: 5.52.4
+        version: 5.52.4
       react:
         specifier: 19.3.0
         version: 19.3.0
@@ -482,6 +485,9 @@ importers:
       '@cloudflare/vite-plugin':
         specifier: 'catalog:'
         version: 1.55.0(@types/node@26.1.2)(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))(wrangler@4.134.0(@types/node@26.1.2))
+      '@posthog/cli':
+        specifier: 0.16.2
+        version: 0.16.2
       '@react-router/dev':
         specifier: ^8.4.0
         version: 8.4.0(react-router@8.4.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(typescript@7.0.2)(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))(wrangler@4.134.0(@types/node@26.1.2))
@@ -1980,6 +1986,11 @@ packages:
 
   '@posthog/browser-common@0.9.0':
     resolution: {integrity: sha512-EWoVzs1vVY7ihpn8yOjj3jyjriHUEEMVSBNL/TW3hk09fTriWRe76vJXrRg0G0yjTYxHmtlSkNn4mOV24ZEzzA==}
+
+  '@posthog/cli@0.16.2':
+    resolution: {integrity: sha512-h8bpf9ffBUH/Z9IoyGV+wiI+vS8rIPorKT3eKQXuzuwawO0G7Qvy+hDd7HQ9YJjHByYZ77yPPQvrSs4WsqTUCg==}
+    engines: {node: '>=14.14', npm: '>=6'}
+    hasBin: true
 
   '@posthog/core@1.55.0':
     resolution: {integrity: sha512-x+0FR+uHsK3uJeofd5X4S2YS7hjaWkzkPN0X1GROHm9SvKw2RJ91kfQ7gT1bPtFwZSHNiRtteB7fX/xEMRN0IQ==}
@@ -4432,6 +4443,15 @@ packages:
       react:
         optional: true
 
+  posthog-node@5.52.4:
+    resolution: {integrity: sha512-P3p4OouGQfw/ouv+Px4gcVWLNwYsFB4JPyksYmxv7QRX4niwp1/C9XjQSUyl0nt+KoQnK14zFDfONHWVthwKDA==}
+    engines: {node: ^20.20.0 || >=22.22.0}
+    peerDependencies:
+      rxjs: ^7.0.0
+    peerDependenciesMeta:
+      rxjs:
+        optional: true
+
   powershell-utils@0.1.0:
     resolution: {integrity: sha512-dM0jVuXJPsDN6DvRpea484tCUaMiXWjuCn++HGTqUWzGDjv5tZkEZldAJ/UMlqRYGFrD/etByo4/xOuC/snX2A==}
     engines: {node: '>=20'}
@@ -6654,6 +6674,10 @@ snapshots:
     dependencies:
       '@posthog/core': 1.55.0
       '@posthog/types': 1.412.2
+
+  '@posthog/cli@0.16.2':
+    dependencies:
+      detect-libc: 2.1.2
 
   '@posthog/core@1.55.0':
     dependencies:
@@ -9112,6 +9136,10 @@ snapshots:
       react: 19.3.0
     transitivePeerDependencies:
       - preact-render-to-string
+
+  posthog-node@5.52.4:
+    dependencies:
+      '@posthog/core': 1.55.0
 
   powershell-utils@0.1.0: {}
 
