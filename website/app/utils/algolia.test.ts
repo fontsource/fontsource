@@ -8,7 +8,7 @@ describe('buildAlgoliaCacheKey', () => {
 			buildAlgoliaCacheKey(
 				'https://fontsource.org/?utm_source=bot&fbclid=garbage',
 			),
-		).toBe('algolia:ssr:registry-v1:root');
+		).toBe('algolia:ssr:language-index-v1:root');
 
 		expect(
 			buildAlgoliaCacheKey(
@@ -27,14 +27,14 @@ describe('buildAlgoliaCacheKey', () => {
 
 	it('omits an empty query', () => {
 		expect(buildAlgoliaCacheKey('https://fontsource.org/?query=%20%20')).toBe(
-			'algolia:ssr:registry-v1:root',
+			'algolia:ssr:language-index-v1:root',
 		);
 	});
 
 	it('isolates clean discovery paths from the homepage cache', () => {
 		expect(
 			buildAlgoliaCacheKey('https://fontsource.org/languages/vietnamese'),
-		).toBe('algolia:ssr:registry-v1:languages:vietnamese');
+		).toBe('algolia:ssr:language-index-v1:languages:vietnamese');
 	});
 
 	it('skips known params with arbitrary values', () => {

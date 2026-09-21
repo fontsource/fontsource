@@ -5,6 +5,7 @@ import {
 	RegistryFamiliesSchema,
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
+	RegistryLanguageIndexSchema,
 	RegistryLanguagesSchema,
 	RegistrySourceCapabilitiesSchema,
 	RegistrySubsetSchema,
@@ -101,6 +102,15 @@ const VIEWS = [
 		body: RegistryFamilySymbolsSchema.parse([
 			{ name: 'home', codepoint: 0xe88a, categories: ['action', 'symbols'] },
 		]),
+	},
+	{
+		path: 'language-index.json',
+		route: '/v1/registry/language-index',
+		body: RegistryLanguageIndexSchema.parse({
+			version: 'a'.repeat(64),
+			families: ['abel'],
+			languages: { en_Latn: 'AQ==' },
+		}),
 	},
 	{
 		path: 'languages.json',
@@ -225,6 +235,23 @@ describe('registry routes', () => {
 			expect(response.headers.cacheControl).toBe('public, max-age=300');
 			expect(response.headers.etag).toBe('<etag>');
 		}
+	});
+
+	it('revalidates cached language index with its ETag', async () => {
+		const url = 'https://fontsource.test/v1/registry/language-index';
+		const first = await dispatch(url);
+		await first.response.text();
+		await first.settle();
+		const etag = first.response.headers.get('ETag');
+		expect(etag).toBeTruthy();
+		const second = await dispatch(
+			new Request(url, {
+				headers: { 'If-None-Match': etag ?? '' },
+			}),
+		);
+		await second.settle();
+		expect(second.response.status).toBe(304);
+		expect(second.response.headers.get('ETag')).toBe(etag);
 	});
 
 	it.each([

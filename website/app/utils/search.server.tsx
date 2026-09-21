@@ -16,6 +16,7 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import {
+	getRegistryLanguageIndex,
 	getRegistryTaxonomy,
 	listRegistryFamilies,
 	listRegistryLanguages,
@@ -26,6 +27,7 @@ import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { FontPreview } from '@/utils/font-summary';
+import { createLanguageSearchClient } from '@/utils/language-facets';
 import {
 	attributesToRetrieve,
 	createPageSearchState,
@@ -75,10 +77,22 @@ export const getSearchServerState = (
 
 export const loadSearch = async (
 	{ request, context }: LoaderFunctionArgs,
-	families: readonly (FontPreview & { id: string })[],
-	facets: SearchFacets,
 	discovery?: DiscoveryPage,
 ) => {
+	const options = { signal: request.signal };
+	const [families, languages, taxonomy, languageIndex] = await Promise.all([
+		listRegistryFamilies(options),
+		listRegistryLanguages(options),
+		getRegistryTaxonomy(options),
+		getRegistryLanguageIndex(options).catch((error: unknown) => {
+			if (request.signal.aborted) throw error;
+			console.warn(
+				'Registry language index is unavailable; using Algolia facets',
+			);
+			return null;
+		}),
+	]);
+	const facets = { languages, taxonomy };
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
 	const hasCollectionFilter = requestUrl.searchParams.has('collection');
@@ -115,7 +129,14 @@ export const loadSearch = async (
 	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {
 		return data<SearchProps>(
-			{ discovery, hasCollectionFilter, serverUrl, previews, ...facets },
+			{
+				discovery,
+				hasCollectionFilter,
+				serverUrl,
+				previews,
+				languageIndex,
+				...facets,
+			},
 			{ headers: cacheHeaders.short },
 		);
 	}
@@ -136,6 +157,7 @@ export const loadSearch = async (
 				serverState,
 				serverUrl,
 				previews,
+				languageIndex,
 				...facets,
 			},
 			{
@@ -148,7 +170,9 @@ export const loadSearch = async (
 		serverUrl,
 		facets,
 		discovery,
-		searchClient,
+		languageIndex
+			? createLanguageSearchClient(searchClient, languageIndex)
+			: searchClient,
 		previews,
 	);
 
@@ -168,6 +192,7 @@ export const loadSearch = async (
 			serverState,
 			serverUrl,
 			previews,
+			languageIndex,
 			...facets,
 		},
 		{
@@ -176,12 +201,4 @@ export const loadSearch = async (
 	);
 };
 
-export const loader = async (args: LoaderFunctionArgs) => {
-	const options = { signal: args.request.signal };
-	const [families, languages, taxonomy] = await Promise.all([
-		listRegistryFamilies(options),
-		listRegistryLanguages(options),
-		getRegistryTaxonomy(options),
-	]);
-	return loadSearch(args, families, { languages, taxonomy });
-};
+export const loader = (args: LoaderFunctionArgs) => loadSearch(args);

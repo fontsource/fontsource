@@ -3,13 +3,20 @@ import { RouterContextProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 
 import {
+	getRegistryLanguageIndex,
 	getRegistryTaxonomy,
 	listRegistryFamilies,
 	listRegistryLanguages,
 } from '@/generated/api';
 import { getSearchServerState, loader } from '@/utils/search.server';
+import { createLanguageSearchClient } from './language-facets';
 
 vi.mock('@/generated/api', () => ({
+	getRegistryLanguageIndex: vi.fn().mockResolvedValue({
+		version: 'a'.repeat(64),
+		families: [],
+		languages: {},
+	}),
 	listRegistryFamilies: vi.fn(),
 	listRegistryLanguages: vi.fn().mockResolvedValue([
 		{
@@ -143,4 +150,77 @@ it('preserves legacy filters alongside registry filters in SSR requests', async 
 			]),
 		]),
 	);
+});
+
+it('hydrates complete language counts rather than capped Algolia facets', async () => {
+	const search = vi.fn().mockImplementation((requests) =>
+		Promise.resolve({
+			results: requests.map((request: { indexName: string }) => ({
+				hits: [
+					{
+						objectID: 'old-persian',
+						languageIndexVersion: 'a'.repeat(64),
+						family: 'Old Persian',
+						defSubset: 'latin',
+						category: 'sans-serif',
+						variable: false,
+					},
+				],
+				index: request.indexName,
+				hitsPerPage: 12,
+				nbHits: 1,
+				nbPages: 1,
+				page: 0,
+				processingTimeMS: 0,
+				query: '',
+				exhaustiveNbHits: true,
+				facets: { languageIds: {} },
+			})),
+		}),
+	);
+	const languages = Array.from({ length: 1700 }, (_, i) => ({
+		id: `language-${i}`,
+		language: 'en',
+		script: 'Latn',
+		name: `Language ${i}`,
+	}));
+	const state = await getSearchServerState(
+		'https://fontsource.org/',
+		{
+			languages,
+			taxonomy: await getRegistryTaxonomy(),
+		},
+		undefined,
+		createLanguageSearchClient({ search } as unknown as SearchClient, {
+			version: 'a'.repeat(64),
+			families: ['old-persian'],
+			languages: Object.fromEntries(languages.map(({ id }) => [id, 'AQ=='])),
+		}),
+	);
+	const facets =
+		state.initialResults.prod_POPULAR.results?.[0].facets?.languageIds;
+	expect(Object.keys(facets ?? {})).toHaveLength(1700);
+	expect(facets?.['language-1699']).toBe(1);
+	expect(search).toHaveBeenCalledOnce();
+});
+
+it('keeps collection search available when membership has not been published', async () => {
+	vi.mocked(getRegistryLanguageIndex).mockRejectedValueOnce(
+		new Error('snapshot missing'),
+	);
+	const warning = vi.spyOn(console, 'warn').mockImplementation(() => {});
+	try {
+		const result = await loader({
+			request: new Request('https://fontsource.org/?collection=example'),
+			url: new URL('https://fontsource.org/?collection=example'),
+			pattern: '/',
+			params: {},
+			context: new RouterContextProvider(),
+		});
+		expect(result.data.languageIndex).toBeNull();
+		expect(result.data.hasCollectionFilter).toBe(true);
+		expect(warning).toHaveBeenCalledOnce();
+	} finally {
+		warning.mockRestore();
+	}
 });

@@ -1,6 +1,6 @@
 import { useObservable, useValue } from '@legendapp/state/react';
 import { Box } from '@mantine/core';
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import {
 	Configure,
 	InstantSearch,
@@ -24,6 +24,7 @@ import { ScrollToTop } from '@/components/search/ScrollToTop';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 import classes from '@/styles/global.module.css';
 import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
+import { createLanguageSearchClient } from '@/utils/language-facets';
 import { ogMeta } from '@/utils/meta';
 import {
 	ALGOLIA_APP_ID,
@@ -88,7 +89,15 @@ export function CatalogSearchPage() {
 		previews,
 		languages,
 		taxonomy,
+		languageIndex,
 	} = useLoaderData<SearchProps>();
+	const languageSearchClient = useMemo(
+		() =>
+			languageIndex
+				? createLanguageSearchClient(searchClient, languageIndex)
+				: searchClient,
+		[languageIndex],
+	);
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
 	const navigate = useNavigate();
@@ -124,7 +133,7 @@ export function CatalogSearchPage() {
 	return (
 		<InstantSearchSSRProvider {...serverState}>
 			<InstantSearch
-				searchClient={searchClient}
+				searchClient={languageSearchClient}
 				indexName="prod_POPULAR"
 				routing={routing(serverUrl, state$, discovery, navigateSearch)}
 				future={{ preserveSharedStateOnUnmount: true }}

@@ -24,8 +24,8 @@ const selectionLabel = (labels: string[], fallback: string) =>
 
 const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 	const [query, setQuery] = useState('');
-	const { indexUiState } = useInstantSearch();
-	const { items, refine, hasExhaustiveItems } = useRefinementList({
+	const { indexUiState, results } = useInstantSearch();
+	const { refine, hasExhaustiveItems } = useRefinementList({
 		attribute: 'languageIds',
 		operator: 'and',
 		limit: 1000,
@@ -38,7 +38,11 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 	});
 	const selected = indexUiState.refinementList?.languageIds ?? [];
 	const subsets = indexUiState.refinementList?.subsets ?? [];
-	const counts = new Map(items.map((item) => [item.value, item.count]));
+	const counts = new Map<string, number>(
+		Object.entries(
+			results.facets.find((facet) => facet.name === 'languageIds')?.data ?? {},
+		),
+	);
 	const normalizedQuery = query.trim().toLocaleLowerCase();
 	const languageItems = languages.map((language) => ({
 		value: language.id,
