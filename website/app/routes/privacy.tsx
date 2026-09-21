@@ -9,7 +9,7 @@ export const meta: MetaFunction = () =>
 	ogMeta({
 		title: 'Privacy Policy | Fontsource',
 		description:
-			'How Fontsource and its service providers handle information across the website, API, and public CDN.',
+			'How Fontsource approaches privacy across its website and services.',
 	});
 
 const sections = [
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
 		<>
 			<ContentHeader
 				title="Privacy Policy"
-				description="How Fontsource and its service providers handle information when you use the website, API, and public CDN."
+				description="How Fontsource approaches privacy across its website and services."
 			/>
 			<Container className={classes.container}>
 				<Box className={classes.layout}>
@@ -91,10 +91,10 @@ export default function PrivacyPage() {
 							title="Website, API, and CDN requests"
 						>
 							<Text>
-								Fontsource uses Cloudflare to deliver and protect its website
-								and API. Our public content delivery network (CDN) uses
-								jsDelivr. These providers may process technical information
-								needed to provide those services. You can read the{' '}
+								We use Cloudflare for our website and API, and Cloudflare and
+								jsDelivr for our public CDN. These providers may process
+								technical information to deliver and protect these services. You
+								can read the{' '}
 								<Anchor
 									href="https://www.cloudflare.com/privacypolicy/"
 									target="_blank"
@@ -113,16 +113,15 @@ export default function PrivacyPage() {
 								.
 							</Text>
 							<Text>
-								If you use the public CDN on your website, your visitors'
-								browsers connect to jsDelivr and its delivery providers to load
-								fonts. Self-hosting Fontsource packages avoids these requests.
+								Using our public CDN sends font requests to these providers.
+								Self-hosting Fontsource packages avoids these requests.
 							</Text>
 						</PolicySection>
 
 						<PolicySection id="search" number="02" title="Search">
 							<Text>
-								We use Algolia for font search. Your search terms and filters
-								are sent to Algolia to return matching fonts. You can read the{' '}
+								We send your search terms and filters to Algolia to find
+								matching fonts. You can read the{' '}
 								<Anchor
 									href="https://www.algolia.com/policies/privacy"
 									target="_blank"
@@ -136,9 +135,8 @@ export default function PrivacyPage() {
 
 						<PolicySection id="advertising" number="03" title="Advertising">
 							<Text>
-								Some pages display ads from Carbon Ads. Carbon may process
-								information needed to deliver and measure those ads and may use
-								browser storage. You can read the{' '}
+								Some pages show Carbon Ads. Carbon may collect information and
+								use browser storage to deliver and measure ads. You can read the{' '}
 								<Anchor
 									href="https://www.carbonads.net/privacy"
 									target="_blank"
@@ -156,31 +154,28 @@ export default function PrivacyPage() {
 							title="Information stored in your browser"
 						>
 							<Text>
-								We save your collections and current font set in your browser so
-								they are available when you return. Clearing Fontsource's site
-								data in your browser removes these saved items.
+								Your collections and current font set are saved in your browser.
+								You can remove them by clearing Fontsource's site data.
 							</Text>
 							<Text>
-								Our font tools process the files you select locally in your
-								browser, without uploading them to a server.
+								Our font tools process your files in your browser without
+								uploading them.
 							</Text>
 						</PolicySection>
 
 						<PolicySection id="analytics" number="05" title="Analytics">
 							<Text>
-								We use PostHog to understand how people use the website and
-								improve it. PostHog collects page views, interactions such as
-								clicks, and browser and device information.
+								We use PostHog to help improve the website. It
+								collects page views, interactions such as clicks, and browser
+								and device information.
 							</Text>
 							<Text>
-								We use cookieless analytics: PostHog does not store analytics
-								identifiers in cookies, local storage, or session storage. It
-								processes technical request information, including IP address
-								and browser information, to generate a temporary identifier on
-								its servers.
+								PostHog uses your IP address and browser information to create a
+								temporary identifier on its servers. It does not save analytics
+								identifiers in cookies or browser storage.
 							</Text>
 							<Text>
-								We use PostHog's EU hosting region. You can read the{' '}
+								We use PostHog's EU hosting. You can read the{' '}
 								<Anchor
 									href="https://posthog.com/privacy"
 									target="_blank"
