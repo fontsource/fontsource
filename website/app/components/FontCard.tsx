@@ -1,7 +1,9 @@
 import { Box, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { useEffect, useState } from 'react';
+import { preinit } from 'react-dom';
 import { Link, useLocation } from 'react-router';
+import invariant from 'tiny-invariant';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { getFontFamilyStack } from '@/utils/font-preview';
 import type { FontSummary } from '@/utils/font-summary';
@@ -33,13 +35,42 @@ const FontCard = ({
 	});
 	const [shouldLoadStylesheet, setShouldLoadStylesheet] =
 		useState(eagerStylesheet);
-	const isFontReady = useIsFontReady(font.family, shouldLoadStylesheet);
+	const [isStylesheetReady, setStylesheetReady] = useState(false);
+	const isFontReady = useIsFontReady(font.family, isStylesheetReady);
 
 	useEffect(() => {
 		if (eagerStylesheet || entry?.isIntersecting) {
 			setShouldLoadStylesheet(true);
 		}
 	}, [eagerStylesheet, entry?.isIntersecting]);
+
+	useEffect(() => {
+		if (!shouldLoadStylesheet) return;
+
+		// React retains and deduplicates the stylesheet across virtualized cards.
+		preinit(stylesheetHref, { as: 'style', precedence: 'font-preview' });
+		const stylesheet = document.querySelector<HTMLLinkElement>(
+			`link[rel="stylesheet"][href="${CSS.escape(stylesheetHref)}"]`,
+		);
+		invariant(stylesheet, 'Missing preview stylesheet');
+		let active = true;
+		const ready = () => {
+			stylesheet.dataset.fontPreviewReady = 'true';
+			stylesheet.removeEventListener('load', ready);
+			stylesheet.removeEventListener('error', ready);
+			if (active) setStylesheetReady(true);
+		};
+		if (stylesheet.sheet || stylesheet.dataset.fontPreviewReady) {
+			ready();
+			return;
+		}
+		stylesheet.addEventListener('load', ready);
+		stylesheet.addEventListener('error', ready);
+		return () => {
+			// Remember failures even if this card unmounts before the request settles.
+			active = false;
+		};
+	}, [shouldLoadStylesheet, stylesheetHref]);
 
 	const previewText =
 		preview ||
@@ -53,12 +84,8 @@ const FontCard = ({
 			mih={{ base: '150px', sm: layout === 'grid' ? '332px' : '150px' }}
 			ref={ref}
 		>
-			{shouldLoadStylesheet && (
-				<link
-					rel="stylesheet"
-					href={stylesheetHref}
-					precedence="font-preview"
-				/>
+			{eagerStylesheet && (
+				<link rel="preload" as="style" href={stylesheetHref} />
 			)}
 			<Link
 				className={classes.link}
