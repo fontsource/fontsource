@@ -77,19 +77,22 @@ export const getSearchServerState = (
 
 export const loadSearch = async (
 	{ request, context }: LoaderFunctionArgs,
-	families: readonly (FontPreview & { id: string })[],
-	facets: SearchFacets,
 	discovery?: DiscoveryPage,
 ) => {
-	const languageIndex = await getRegistryLanguageIndex({
-		signal: request.signal,
-	}).catch((error: unknown) => {
-		if (request.signal.aborted) throw error;
-		console.warn(
-			'Registry language index is unavailable; using Algolia facets',
-		);
-		return null;
-	});
+	const options = { signal: request.signal };
+	const [families, languages, taxonomy, languageIndex] = await Promise.all([
+		listRegistryFamilies(options),
+		listRegistryLanguages(options),
+		getRegistryTaxonomy(options),
+		getRegistryLanguageIndex(options).catch((error: unknown) => {
+			if (request.signal.aborted) throw error;
+			console.warn(
+				'Registry language index is unavailable; using Algolia facets',
+			);
+			return null;
+		}),
+	]);
+	const facets = { languages, taxonomy };
 	const requestUrl = new URL(request.url);
 	const serverUrl = `${PUBLIC_ORIGIN}${requestUrl.pathname}${requestUrl.search}`;
 	const hasCollectionFilter = requestUrl.searchParams.has('collection');
@@ -198,12 +201,4 @@ export const loadSearch = async (
 	);
 };
 
-export const loader = async (args: LoaderFunctionArgs) => {
-	const options = { signal: args.request.signal };
-	const [families, languages, taxonomy] = await Promise.all([
-		listRegistryFamilies(options),
-		listRegistryLanguages(options),
-		getRegistryTaxonomy(options),
-	]);
-	return loadSearch(args, families, { languages, taxonomy });
-};
+export const loader = (args: LoaderFunctionArgs) => loadSearch(args);

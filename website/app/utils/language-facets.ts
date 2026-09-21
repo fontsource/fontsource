@@ -114,28 +114,23 @@ export const createLanguageSearchClient = (
 				}
 			}
 			const matches = await client.search(requests);
-			if (
-				matches.results.some(
-					(response) =>
-						!isSearchResponse(response) ||
-						response.hits.length !== response.nbHits ||
-						(response.exhaustive?.nbHits ?? response.exhaustiveNbHits) !==
-							true ||
-						response.hits.some(
-							(hit) =>
-								!('languageIndexVersion' in hit) ||
-								hit.languageIndexVersion !== languageIndex.version,
-						),
+			ids = new Set<string>();
+			for (const response of matches.results) {
+				if (
+					!isSearchResponse(response) ||
+					response.hits.length !== response.nbHits ||
+					(response.exhaustive?.nbHits ?? response.exhaustiveNbHits) !== true
 				)
-			)
-				return undefined;
-			ids = new Set(
-				matches.results.flatMap((response) =>
-					isSearchResponse(response)
-						? response.hits.map((hit) => hit.objectID)
-						: [],
-				),
-			);
+					return undefined;
+				for (const hit of response.hits) {
+					if (
+						!('languageIndexVersion' in hit) ||
+						hit.languageIndexVersion !== languageIndex.version
+					)
+						return undefined;
+					ids.add(hit.objectID);
+				}
+			}
 		}
 		// Registry and search publish independently. Never turn a partial match set into zeros.
 		return ids.size === result.nbHits ? countLanguages(ids) : undefined;

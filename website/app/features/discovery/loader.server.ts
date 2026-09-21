@@ -1,10 +1,4 @@
 import type { LoaderFunctionArgs } from 'react-router';
-import {
-	getRegistryTaxonomy,
-	listRegistryFamilies,
-	listRegistryLanguages,
-} from '@/generated/api';
-
 import { cacheHeaders } from '@/utils/cache';
 import { loadDiscoveryPages } from '@/utils/discovery.server';
 import { loadSearch } from '@/utils/search.server';
@@ -25,11 +19,5 @@ export const loader = async (args: LoaderFunctionArgs) => {
 		});
 	}
 
-	const options = { signal: args.request.signal };
-	const [families, languages, taxonomy] = await Promise.all([
-		listRegistryFamilies(options),
-		listRegistryLanguages(options),
-		getRegistryTaxonomy(options),
-	]);
-	return loadSearch(args, families, { languages, taxonomy }, page);
+	return loadSearch(args, page);
 };
