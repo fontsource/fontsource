@@ -179,12 +179,6 @@ const InspectorSearch = ({
 	</label>
 );
 
-const PreviewInspectorHeader = () => (
-	<div className={classes.inspectorHeading}>
-		<h2>Preview settings</h2>
-	</div>
-);
-
 const PreviewTypographyControls = observer(
 	({ idPrefix }: { idPrefix: string }) => {
 		const model = usePreviewEditor();
@@ -583,7 +577,11 @@ const PreviewInspector = observer(
 
 		return (
 			<div className={classes.inspectorContent}>
-				{embedded && <PreviewInspectorHeader />}
+				{embedded && (
+					<div className={classes.inspectorHeading}>
+						<h2>Preview settings</h2>
+					</div>
+				)}
 				{sections.length > 1 && (
 					<div className={classes.inspectorSectionChooser}>
 						<SegmentedControl

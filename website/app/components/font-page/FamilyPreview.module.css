@@ -639,7 +639,6 @@
 	isolation: isolate;
 }
 
-.inspectorHeading,
 .sectionHeading {
 	display: flex;
 	align-items: center;
@@ -647,7 +646,6 @@
 	gap: 16px;
 }
 
-.inspectorHeading > div,
 .sectionHeading > div {
 	min-width: 0;
 }
@@ -700,7 +698,6 @@
 }
 
 .inspectorHeading h2,
-.inspectorHeading p,
 .sectionHeading h3,
 .sectionHeading span,
 .controlDescription,
@@ -714,7 +711,6 @@
 	font-weight: 650;
 }
 
-.inspectorHeading p,
 .sectionHeading span {
 	margin-top: 2px;
 	color: var(--preview-text-muted);
