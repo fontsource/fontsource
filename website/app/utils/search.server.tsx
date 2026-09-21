@@ -86,12 +86,31 @@ export const loadSearch = async (
 		families
 			.filter(
 				(family) =>
-					family.sampleText || family.previewSubset || family.previewContext,
+					family.sampleText ||
+					family.previewSubset ||
+					family.previewContext ||
+					family.primaryLanguage ||
+					(family.primaryScript && family.primaryScript !== 'Latn'),
 			)
-			.map(({ id, sampleText, previewSubset, previewContext }) => [
-				id,
-				{ sampleText, previewSubset, previewContext },
-			]),
+			.map(
+				({
+					id,
+					sampleText,
+					previewSubset,
+					previewContext,
+					primaryLanguage,
+					primaryScript,
+				}) => [
+					id,
+					{
+						sampleText,
+						previewSubset,
+						previewContext,
+						primaryLanguage,
+						primaryScript,
+					},
+				],
+			),
 	);
 	// Collection membership exists only in localStorage and is unavailable to SSR.
 	if (hasCollectionFilter) {

@@ -13,6 +13,7 @@ import {
 	getPreferredPreviewSubset,
 	selectRegistryPreviewSource,
 } from '@/utils/font-preview';
+import { getRecommendedPreviewText } from '@/utils/language/language';
 import {
 	type PreviewMode,
 	previewModeOptions,
@@ -22,7 +23,6 @@ import {
 	createRegistryCodepointMatcher,
 	findUnmappedCharacters,
 	getRegistryFamilyKind,
-	getRegistryPreviewText,
 	getSupportedPreviewFallback,
 	type RegistryFamily,
 	type RegistrySource,
@@ -65,8 +65,7 @@ interface PreviewAxis {
 
 interface PreviewEditorValue {
 	mode: PreviewMode;
-	texts: Record<PreviewMode, string>;
-	sampleTexts: Record<PreviewMode, string>;
+	customText: string | null;
 	typographyByMode: PreviewTypographyByMode;
 	selectedLanguageId: string;
 	axisQuery: string;
@@ -145,71 +144,28 @@ const summarizeDescription = (value?: string) => {
 	return description.match(/^.*?[.!?](?:\s|$)/u)?.[0].trim() ?? description;
 };
 
-const getModeText = (
-	metadata: GetFontResponse,
-	mode: PreviewMode,
-	registry: RegistryFamily,
-	languages: ListRegistryLanguagesResponse,
-	capabilities: GetRegistrySourceCapabilitiesResponse,
-) => {
-	const familyKind = getRegistryFamilyKind(registry);
-	const registrySample =
-		(registry.sampleText || familyKind === 'text') &&
-		getRegistryPreviewText(
-			registry,
-			languages,
-			previewText.editor.sampleLengths[mode],
+const getActivePreviewText = (model: PreviewEditorModel) => {
+	const customText = model.state$.customText.get();
+	if (customText !== null) return customText;
+	const mode = model.state$.mode.get();
+	const languageId = model.state$.selectedLanguageId.get();
+	const language = model.languages.find((item) => item.id === languageId);
+	const length = previewText.editor.sampleLengths[mode];
+	if (model.familyKind === 'symbols' && !model.registry.sampleText) {
+		return getSupportedPreviewFallback(
+			model.metadata.family,
+			model.capabilities,
 		);
-
-	if (registrySample) return registrySample;
-	if (familyKind === 'symbols') {
-		return getSupportedPreviewFallback(metadata.family, capabilities);
 	}
-	if (mode === 'compare') return metadata.family;
-	return previewText.editor.defaults[mode];
-};
-
-const createModeTexts = (
-	metadata: GetFontResponse,
-	registry: RegistryFamily,
-	languages: ListRegistryLanguagesResponse,
-	capabilities: GetRegistrySourceCapabilitiesResponse,
-): Record<PreviewMode, string> => ({
-	headline: getModeText(
-		metadata,
-		'headline',
-		registry,
-		languages,
-		capabilities,
-	),
-	paragraph: getModeText(
-		metadata,
-		'paragraph',
-		registry,
-		languages,
-		capabilities,
-	),
-	waterfall: getModeText(
-		metadata,
-		'waterfall',
-		registry,
-		languages,
-		capabilities,
-	),
-	compare: getModeText(metadata, 'compare', registry, languages, capabilities),
-});
-
-const createLanguageModeTexts = (
-	language: RegistryLanguage,
-): Record<PreviewMode, string> => {
-	const short = language.sampleText?.short.trim() ?? '';
-	const long = language.sampleText?.long?.trim() || short;
-	return {
-		headline: short,
-		paragraph: long,
-		waterfall: short,
-		compare: short,
-	};
+	return getRecommendedPreviewText(
+		{
+			...model.metadata,
+			...model.registry,
+			sampleText: language?.sampleText ?? model.registry.sampleText,
+		},
+		length,
+		model.languages,
+	);
 };
 
 const getVerifiedLanguages = (
@@ -230,19 +186,6 @@ const getVerifiedLanguages = (
 		);
 	});
 };
-
-const getPreferredLanguage = (
-	languages: RegistryLanguage[],
-	primaryLanguage?: string,
-) =>
-	languages.find((language) => language.id === primaryLanguage) ??
-	languages.find(
-		(language) =>
-			language.id === 'en' ||
-			language.id === 'eng' ||
-			language.name === 'English',
-	) ??
-	languages[0];
 
 const getFeatureTags = (
 	capabilities?: GetRegistrySourceCapabilitiesResponse,
@@ -352,13 +295,6 @@ const createPreviewEditorSetup = ({
 		},
 	};
 	const verifiedLanguages = getVerifiedLanguages(languages, capabilities);
-	const initialLanguage =
-		!registry.sampleText && familyKind === 'text'
-			? getPreferredLanguage(verifiedLanguages, registry.primaryLanguage)
-			: undefined;
-	const initialTexts = initialLanguage
-		? createLanguageModeTexts(initialLanguage)
-		: createModeTexts(metadata, registry, languages, capabilities);
 	const initialCapabilitySource =
 		capabilitySource ??
 		selectRegistryPreviewSource(registry, {
@@ -370,10 +306,9 @@ const createPreviewEditorSetup = ({
 		initialCapabilitySource?.sha256 ?? defaultCapabilitiesKey;
 	const editorValue: PreviewEditorValue = {
 		mode: 'headline',
-		texts: { ...initialTexts },
-		sampleTexts: { ...initialTexts },
+		customText: null,
 		typographyByMode: cloneTypographyByMode(initialTypography),
-		selectedLanguageId: initialLanguage?.id ?? '',
+		selectedLanguageId: '',
 		axisQuery: '',
 		featureQuery: '',
 		inspectorOpened: false,
@@ -475,17 +410,16 @@ const resetFeatures = (model: PreviewEditorModel) => {
 export type { PreviewEditorModel, PreviewEditorProps, PreviewInspectorSection };
 export {
 	clamp,
-	createLanguageModeTexts,
 	createPreviewEditorSetup,
 	enabledByDefaultFeatureTags,
 	getActiveAxes,
 	getActiveCapabilities,
 	getActiveFeatureTags,
 	getActiveLanguages,
+	getActivePreviewText,
 	getActiveSource,
 	getAdjustableAxes,
 	getAvailableWeights,
-	getPreferredLanguage,
 	getVerifiedLanguages,
 	modeLabels,
 	resetAxes,
