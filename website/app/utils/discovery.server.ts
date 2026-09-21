@@ -39,11 +39,11 @@ export const loadDiscoveryData = async (
 		[
 			!pathname || pathname.startsWith('/languages/')
 				? listFontValues({ subsets: '' }, { signal })
-				: {},
+				: Promise.resolve<ListFontValuesResponse>({}),
 			listFontValues({ category: '' }, { signal }),
 			!pathname || pathname === '/variable-fonts'
 				? listFontValues({ variable: '' }, { signal })
-				: {},
+				: Promise.resolve<ListFontValuesResponse>({}),
 			listRegistryFamilies({ signal }),
 			getRegistryTaxonomy({ signal }),
 		],
@@ -64,6 +64,8 @@ export const loadDiscoveryData = async (
 	};
 	return {
 		pages: getDiscoveryPages(counts, taxonomy),
+		catalogFamilies,
+		catalogSubsets: subsets,
 		registry: { families, taxonomy },
 	};
 };

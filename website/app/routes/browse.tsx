@@ -1,19 +1,63 @@
 import { Button, TextInput } from '@mantine/core';
+import { useIntersection } from '@mantine/hooks';
 import { IconArrowRight, IconSearch } from '@tabler/icons-react';
 import { useState } from 'react';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, Link, useLoaderData } from 'react-router';
-
+import { useIsFontReady } from '@/hooks/useIsFontLoaded';
+import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
 import classes from '@/styles/browse.module.css';
 import { cacheHeaders } from '@/utils/cache';
 import type { DiscoveryPage } from '@/utils/discovery';
 import { loadDiscoveryData } from '@/utils/discovery.server';
+import { getRecommendedPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-	const { pages, registry } = await loadDiscoveryData(request.signal);
+	const { pages, registry, catalogFamilies, catalogSubsets } =
+		await loadDiscoveryData(request.signal);
+	const tagSpecimens: Record<
+		string,
+		{ id: string; family: string; text: string; direction?: 'ltr' | 'rtl' }
+	> = {};
+	const usedFamilies = new Set<string>();
+	for (const page of pages) {
+		const tag = page.routeState.tags;
+		if (!tag) continue;
+		const candidates = catalogFamilies.filter((family) =>
+			family.tags.includes(tag),
+		);
+		const latinCandidates = candidates.filter((family) => {
+			const subsets = catalogSubsets[family.id];
+			return (
+				Array.isArray(subsets) &&
+				subsets.some((subset) => subset === 'latin') &&
+				!family.classifications.includes('symbols')
+			);
+		});
+		const family =
+			latinCandidates.find((family) => !usedFamilies.has(family.id)) ??
+			latinCandidates[0] ??
+			candidates.find((family) => !usedFamilies.has(family.id)) ??
+			candidates[0];
+		if (!family) continue;
+		usedFamilies.add(family.id);
+		tagSpecimens[page.path] = {
+			id: family.id,
+			family: family.family,
+			text: latinCandidates.includes(family)
+				? page.label
+				: getRecommendedPreviewText({
+						...family,
+						defSubset: family.previewSubset ?? 'latin',
+					}),
+			direction: latinCandidates.includes(family)
+				? 'ltr'
+				: family.primaryDirection,
+		};
+	}
 	return data(
-		{ pages, tagGroups: registry.taxonomy.tagGroups },
+		{ pages, tagGroups: registry.taxonomy.tagGroups, tagSpecimens },
 		{ headers: cacheHeaders.short },
 	);
 };
@@ -139,8 +183,60 @@ const Categories = ({ pages }: { pages: DiscoveryPage[] }) => (
 	</ul>
 );
 
+const TagPreview = ({
+	page,
+	specimen,
+}: {
+	page: DiscoveryPage;
+	specimen?: {
+		id: string;
+		family: string;
+		text: string;
+		direction?: 'ltr' | 'rtl';
+	};
+}) => {
+	const { ref, entry } = useIntersection<HTMLLIElement>({
+		rootMargin: '200px',
+	});
+	const stylesheetReady = usePreviewStylesheet(
+		`https://cdn.jsdelivr.net/fontsource/css/${specimen?.id}@latest/index.css`,
+		Boolean(specimen && entry?.isIntersecting),
+	);
+	const ready = useIsFontReady(
+		specimen?.family ?? '',
+		Boolean(specimen && stylesheetReady),
+	);
+	return (
+		<li ref={ref}>
+			<Link to={page.path} prefetch="intent" className={classes.tagLink}>
+				<span className={classes.categoryLabel}>
+					<span>{page.label}</span>
+					<span className={classes.count}>
+						{page.count.toLocaleString('en-US')}
+						<span className={classes.srOnly}> families</span>
+					</span>
+				</span>
+				{specimen && (
+					<>
+						<span
+							className={classes.tagSpecimen}
+							data-ready={ready || undefined}
+							style={{ fontFamily: `"${specimen.family}"` }}
+							dir={specimen.direction}
+							aria-hidden
+						>
+							{specimen.text}
+						</span>
+						<span className={classes.specimenCredit}>{specimen.family}</span>
+					</>
+				)}
+			</Link>
+		</li>
+	);
+};
+
 export default function Browse() {
-	const { pages, tagGroups } = useLoaderData<typeof loader>();
+	const { pages, tagGroups, tagSpecimens } = useLoaderData<typeof loader>();
 	const [query, setQuery] = useState('');
 	const normalizedQuery = query.trim().toLocaleLowerCase();
 	const matchingPages = pages.filter((page) => {
@@ -265,7 +361,15 @@ export default function Browse() {
 										{groupDescriptions[group.id]}
 									</p>
 								)}
-								<Directory pages={group.pages} />
+								<ul className={classes.tagDirectory}>
+									{group.pages.map((page) => (
+										<TagPreview
+											key={page.path}
+											page={page}
+											specimen={tagSpecimens[page.path]}
+										/>
+									))}
+								</ul>
 							</section>
 						))}
 					</div>
