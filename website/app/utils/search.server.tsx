@@ -1,6 +1,5 @@
 import { observable } from '@legendapp/state';
 import { MantineProvider } from '@mantine/core';
-import type { SearchClient } from 'instantsearch.js';
 import { renderToString } from 'react-dom/server';
 import {
 	Configure,
@@ -15,7 +14,6 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import {
-	getRegistryLanguageIndex,
 	getRegistryTaxonomy,
 	listRegistryFamilies,
 	listRegistryLanguages,
@@ -28,10 +26,10 @@ import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { DiscoveryRegistry } from '@/utils/discovery.server';
 import type { FontPreview } from '@/utils/font-summary';
-import { createLanguageSearchClient } from '@/utils/language-facets';
 import {
 	attributesToRetrieve,
 	createPageSearchState,
+	hitsPerPage,
 	routing,
 	type SearchProps,
 } from '@/utils/search-config';
@@ -42,7 +40,6 @@ const getSearchServerState = (
 	serverUrl: string,
 	facets: SearchFacets,
 	discovery?: DiscoveryPage,
-	client: SearchClient = searchClient,
 	previews: Record<string, FontPreview> = {},
 ) => {
 	const state$ = observable(createPageSearchState(discovery));
@@ -53,13 +50,16 @@ const getSearchServerState = (
 			<MantineProvider theme={theme}>
 				<InstantSearchSSRProvider>
 					<InstantSearch
-						searchClient={client}
+						searchClient={searchClient}
 						indexName={DEFAULT_SEARCH_INDEX}
 						routing={routing(serverUrl, state$, discovery)}
 						future={{ preserveSharedStateOnUnmount: true }}
 					>
 						<CollectionsProvider>
-							<Configure attributesToRetrieve={attributesToRetrieve} />
+							<Configure
+								attributesToRetrieve={attributesToRetrieve}
+								hitsPerPage={hitsPerPage}
+							/>
 							<Filters state$={state$} {...facets} />
 							<InfiniteHits
 								state$={state$}
@@ -81,17 +81,10 @@ export const loadSearch = async (
 	registry?: DiscoveryRegistry,
 ) => {
 	const options = { signal: request.signal };
-	const [families, languages, taxonomy, languageIndex] = await Promise.all([
+	const [families, languages, taxonomy] = await Promise.all([
 		registry?.families ?? listRegistryFamilies(options),
 		listRegistryLanguages(options),
 		registry?.taxonomy ?? getRegistryTaxonomy(options),
-		getRegistryLanguageIndex(options).catch((error: unknown) => {
-			if (request.signal.aborted) throw error;
-			console.warn(
-				'Registry language index is unavailable; using Algolia facets',
-			);
-			return null;
-		}),
 	]);
 	const facets = { languages, taxonomy };
 	const requestUrl = new URL(request.url);
@@ -135,7 +128,6 @@ export const loadSearch = async (
 				hasCollectionFilter,
 				serverUrl,
 				previews,
-				languageIndex,
 				...facets,
 			},
 			{ headers: cacheHeaders.short },
@@ -144,7 +136,7 @@ export const loadSearch = async (
 
 	const { env, ctx } = context.get(cloudflareContext);
 	const { ALGOLIA } = env;
-	const cacheKey = buildAlgoliaCacheKey(serverUrl);
+	const cacheKey = await buildAlgoliaCacheKey(serverUrl);
 
 	// Check local cache for server state first to avoid unnecessary API calls
 	let serverState = cacheKey
@@ -158,7 +150,6 @@ export const loadSearch = async (
 				serverState,
 				serverUrl,
 				previews,
-				languageIndex,
 				...facets,
 			},
 			{
@@ -171,9 +162,6 @@ export const loadSearch = async (
 		serverUrl,
 		facets,
 		discovery,
-		languageIndex
-			? createLanguageSearchClient(searchClient, languageIndex)
-			: searchClient,
 		previews,
 	);
 
@@ -193,7 +181,6 @@ export const loadSearch = async (
 			serverState,
 			serverUrl,
 			previews,
-			languageIndex,
 			...facets,
 		},
 		{

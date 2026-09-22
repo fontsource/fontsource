@@ -236,6 +236,9 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
+	const [loadMoreElement, setLoadMoreElement] = useState<HTMLDivElement | null>(
+		null,
+	);
 	// Match SSR during hydration, but virtualize immediately on client navigation.
 	const viewportWidth = useSyncExternalStore(
 		subscribeToViewport,
@@ -332,7 +335,6 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 				: undefined,
 	});
 	const virtualRows = rowVirtualizer.getVirtualItems();
-	const lastVirtualIndex = virtualRows.at(-1)?.index ?? -1;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: viewport changes can move the results below responsive controls.
 	useLayoutEffect(() => {
@@ -363,7 +365,7 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 	useEffect(() => {
 		if (
 			!mounted ||
-			lastVirtualIndex < rows.length - 1 ||
+			!loadMoreElement ||
 			isLastPage ||
 			status === 'error' ||
 			isSearchLoading ||
@@ -372,15 +374,24 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 			return;
 		}
 
-		setRequestedResults(results);
-		showMore();
+		// Rendering overscan can be several screens ahead; fetch near the viewport.
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (!entry.isIntersecting) return;
+				observer.disconnect();
+				setRequestedResults(results);
+				showMore();
+			},
+			{ rootMargin: '400px 0px' },
+		);
+		observer.observe(loadMoreElement);
+		return () => observer.disconnect();
 	}, [
 		mounted,
 		isLastPage,
 		isLoadingMore,
 		isSearchLoading,
-		lastVirtualIndex,
-		rows.length,
+		loadMoreElement,
 		showMore,
 		results,
 		status,
@@ -473,10 +484,12 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 											))}
 										</div>
 									) : (
-										<LoadingRow
-											display={display}
-											previewHeight={gridPreviewHeight}
-										/>
+										<div ref={setLoadMoreElement}>
+											<LoadingRow
+												display={display}
+												previewHeight={gridPreviewHeight}
+											/>
+										</div>
 									)}
 								</div>
 							);

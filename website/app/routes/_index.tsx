@@ -1,6 +1,6 @@
 import { useObservable, useValue } from '@legendapp/state/react';
 import { Box } from '@mantine/core';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
 	Configure,
 	InstantSearch,
@@ -28,11 +28,11 @@ import {
 	DEFAULT_SEARCH_INDEX,
 	searchClient,
 } from '@/utils/algolia-client';
-import { createLanguageSearchClient } from '@/utils/language-facets';
 import { ogMeta } from '@/utils/meta';
 import {
 	attributesToRetrieve,
 	createPageSearchState,
+	hitsPerPage,
 	routing,
 	type SearchProps,
 } from '@/utils/search-config';
@@ -91,15 +91,7 @@ export function CatalogSearchPage() {
 		previews,
 		languages,
 		taxonomy,
-		languageIndex,
 	} = useLoaderData<SearchProps>();
-	const languageSearchClient = useMemo(
-		() =>
-			languageIndex
-				? createLanguageSearchClient(searchClient, languageIndex)
-				: searchClient,
-		[languageIndex],
-	);
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
 	const navigate = useNavigate();
@@ -135,12 +127,15 @@ export function CatalogSearchPage() {
 	return (
 		<InstantSearchSSRProvider {...serverState}>
 			<InstantSearch
-				searchClient={languageSearchClient}
+				searchClient={searchClient}
 				indexName={DEFAULT_SEARCH_INDEX}
 				routing={routing(serverUrl, state$, discovery, navigateSearch)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
-				<Configure attributesToRetrieve={attributesToRetrieve} />
+				<Configure
+					attributesToRetrieve={attributesToRetrieve}
+					hitsPerPage={hitsPerPage}
+				/>
 				{discovery && (
 					<ContentHeader
 						title={discovery.heading}

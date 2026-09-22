@@ -39,33 +39,24 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 		[languages],
 	);
 	const [query, setQuery] = useState('');
-	const { indexUiState, results } = useInstantSearch();
-	const { refine, hasExhaustiveItems } = useRefinementList({
+	const { indexUiState } = useInstantSearch();
+	const { refine } = useRefinementList({
 		attribute: 'languageIds',
 		operator: 'and',
-		limit: 1000,
 	});
 	// Keep published subset links as subset filters, rather than guessing a language.
 	const legacy = useRefinementList({
 		attribute: 'subsets',
 		operator: 'and',
-		limit: 100,
 	});
 	const selected = indexUiState.refinementList?.languageIds ?? [];
 	const subsets = indexUiState.refinementList?.subsets ?? [];
-	const counts = new Map<string, number>(
-		Object.entries(
-			results.facets.find((facet) => facet.name === 'languageIds')?.data ?? {},
-		),
-	);
 	const normalizedQuery = query.trim().toLocaleLowerCase();
 	const languageItems = languageOptions.map(
 		({ value, label, searchFields }) => ({
 			value,
 			label,
 			isRefined: selected.includes(value),
-			// Missing values are only zero when Algolia returned the complete facet list.
-			count: counts.get(value) ?? (hasExhaustiveItems ? 0 : undefined),
 			matches: searchFields.some((field) => field?.includes(normalizedQuery)),
 		}),
 	);
@@ -84,9 +75,7 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 			ariaLabel="Languages"
 			items={[
 				...legacyItems,
-				...languageItems.filter(
-					(item) => item.isRefined || (item.matches && item.count !== 0),
-				),
+				...languageItems.filter((item) => item.isRefined || item.matches),
 			]}
 			refine={(value) =>
 				value.startsWith('subset:')
