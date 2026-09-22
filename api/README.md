@@ -38,12 +38,6 @@ pnpm build
 
 ## Error tracking
 
-Production builds report unexpected request errors and scheduled/queue failures to
-the website's PostHog project, tagged `source: api-worker`. Expected HTTP 4xx
-responses are excluded; Cloudflare logging and queue retries remain in place.
-
-Set `POSTHOG_API_KEY` in the API's Cloudflare build environment to upload source
-maps to PostHog during `pnpm build`, using the same personal API key permissions
-as the website build. The PostHog Vite plugin handles source maps and release
-metadata, then removes maps after upload. Local development and tests do not
-send errors.
+Production errors go to the website's PostHog project as `source: api-worker`.
+Set `POSTHOG_API_KEY` in the Cloudflare build environment to enable source-map
+uploads through the PostHog Vite plugin.

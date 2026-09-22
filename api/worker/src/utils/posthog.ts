@@ -1,5 +1,8 @@
 import { PostHog } from 'posthog-node';
 
+// Public project token shared with the website.
+const projectToken = 'phc_uBg2yEfqQmKYBHvceqQ7BbXgBg6xnNV6Y7PCtVvN4k5H';
+
 export async function captureApiError(
 	error: unknown,
 	properties: Record<string, string>,
@@ -7,18 +10,13 @@ export async function captureApiError(
 	if (!import.meta.env.PROD) return;
 
 	try {
-		// Public project token, shared with the website. One client per error avoids
-		// sharing request-scoped I/O across Worker invocations.
-		const posthog = new PostHog(
-			'phc_uBg2yEfqQmKYBHvceqQ7BbXgBg6xnNV6Y7PCtVvN4k5H',
-			{
-				host: 'https://eu.i.posthog.com',
-				flushInterval: 0,
-				requestTimeout: 5000,
-				fetchRetryCount: 1,
-				disableGeoip: true,
-			},
-		);
+		const posthog = new PostHog(projectToken, {
+			host: 'https://eu.i.posthog.com',
+			flushInterval: 0,
+			requestTimeout: 5000,
+			fetchRetryCount: 1,
+			disableGeoip: true,
+		});
 		await posthog.captureExceptionImmediate(error, undefined, {
 			...properties,
 			source: 'api-worker',
