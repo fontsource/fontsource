@@ -1,5 +1,4 @@
 import {
-	Badge,
 	Checkbox,
 	Combobox,
 	ComboboxPopover,
@@ -9,7 +8,15 @@ import {
 	useVirtualizedCombobox,
 } from '@mantine/core';
 import { defaultRangeExtractor, useVirtualizer } from '@tanstack/react-virtual';
-import { memo, useId, useMemo, useRef, useState } from 'react';
+import {
+	type CSSProperties,
+	memo,
+	useEffect,
+	useId,
+	useMemo,
+	useRef,
+	useState,
+} from 'react';
 
 import { IconCaret } from '@/components/icons';
 
@@ -19,7 +26,6 @@ interface DropdownItem {
 	label: string;
 	value: string;
 	isRefined: boolean;
-	count?: number;
 }
 
 interface DropdownProps {
@@ -30,7 +36,6 @@ interface DropdownProps {
 	w?: number | string;
 	dropdownWidth?: number | string;
 	noBorder?: boolean;
-	showCount?: boolean;
 	searchable?: boolean;
 	search?: (query: string) => void;
 }
@@ -98,49 +103,95 @@ const DropdownCheckbox = ({
 	dropdownWidth,
 	noBorder,
 	refine,
-	showCount,
 	search,
 }: DropdownProps) => {
 	const [searchQuery, setSearchQuery] = useState('');
-	const [selectedIndex, setSelectedIndex] = useState(-1);
+	const [activeValue, setActiveValue] = useState<string | null>(null);
+	const selectedItems = items.filter((item) => item.isRefined);
+	const availableItems = items.filter((item) => !item.isRefined);
+	const orderedItems = [...selectedItems, ...availableItems];
+	const selectedIndex = orderedItems.findIndex(
+		(item) => item.value === activeValue,
+	);
+	const activeRow = selectedIndex - selectedItems.length;
+	const selectedViewport = useRef<HTMLDivElement>(null);
 	const viewport = useRef<HTMLDivElement>(null);
 	const id = useId();
 	const virtualizer = useVirtualizer({
-		count: items.length,
+		count: availableItems.length,
+		getItemKey: (index) => availableItems[index].value,
 		getScrollElement: () => viewport.current,
 		estimateSize: () => 44,
 		overscan: 4,
 		rangeExtractor: (range) => {
 			const indices = defaultRangeExtractor(range);
 			if (
-				selectedIndex >= 0 &&
-				selectedIndex < items.length &&
-				!indices.includes(selectedIndex)
+				activeRow >= 0 &&
+				activeRow < availableItems.length &&
+				!indices.includes(activeRow)
 			)
-				indices.push(selectedIndex);
+				indices.push(activeRow);
 			return indices.sort((a, b) => a - b);
 		},
 	});
 	const updateSearch = (query: string) => {
 		setSearchQuery(query);
-		setSelectedIndex(-1);
+		setActiveValue(null);
 		virtualizer.scrollToOffset(0);
 		search?.(query);
+	};
+	const submit = (value: string) => {
+		setActiveValue(value);
+		virtualizer.scrollToOffset(0);
+		refine?.(value);
 	};
 	const combobox = useVirtualizedCombobox({
 		totalOptionsCount: items.length,
 		selectedOptionIndex: selectedIndex,
 		setSelectedOptionIndex: (index) => {
-			setSelectedIndex(index);
-			if (index >= 0) virtualizer.scrollToIndex(index);
+			setActiveValue(orderedItems[index]?.value ?? null);
+			if (index < 0) return;
+			if (index >= selectedItems.length) {
+				virtualizer.scrollToIndex(index - selectedItems.length);
+			}
 		},
-		getOptionId: (index) => `${id}-${index}`,
-		onSelectedOptionSubmit: (index) => refine?.(items[index].value),
+		getOptionId: (index) => `${id}-${orderedItems[index].value}`,
+		onSelectedOptionSubmit: (index) => submit(orderedItems[index].value),
 		onDropdownOpen: () => {
 			if (search) combobox.focusSearchInput();
 		},
 		onDropdownClose: () => updateSearch(''),
 	});
+
+	useEffect(() => {
+		if (selectedIndex >= 0 && selectedIndex < selectedItems.length) {
+			selectedViewport.current?.children[selectedIndex]?.scrollIntoView({
+				block: 'nearest',
+			});
+		}
+	}, [selectedIndex, selectedItems.length]);
+
+	const renderOption = (
+		item: DropdownItem,
+		index: number,
+		style?: CSSProperties,
+	) => (
+		<Combobox.Option
+			key={item.value}
+			id={`${id}-${item.value}`}
+			value={item.value}
+			selected={selectedIndex === index}
+			aria-selected={item.isRefined}
+			aria-posinset={index + 1}
+			aria-setsize={items.length}
+			style={{ height: 44, ...style }}
+		>
+			<Group gap="sm" wrap="nowrap" h="100%" w="100%">
+				<Checkbox.Indicator checked={item.isRefined} aria-hidden />
+				<span className={classes.option}>{item.label}</span>
+			</Group>
+		</Combobox.Option>
+	);
 
 	return (
 		<Combobox
@@ -151,7 +202,7 @@ const DropdownCheckbox = ({
 			classNames={{ dropdown: classes.dropdown, option: classes.item }}
 			width={dropdownWidth ?? w ?? rem(250)}
 			resetSelectionOnOptionHover={false}
-			onOptionSubmit={(value) => refine?.(value)}
+			onOptionSubmit={submit}
 		>
 			<Combobox.Target targetType="button" withAriaAttributes={!search}>
 				<UnstyledButton
@@ -175,70 +226,53 @@ const DropdownCheckbox = ({
 						onChange={(event) => updateSearch(event.currentTarget.value)}
 						placeholder="Search languages…"
 						aria-label="Search languages"
+						aria-activedescendant={
+							selectedIndex >= 0 ? `${id}-${activeValue}` : undefined
+						}
 					/>
 				)}
-				<Combobox.Options aria-label={ariaLabel ?? label} aria-multiselectable>
-					<div
-						ref={viewport}
-						style={{
-							height: Math.min(items.length * 44, 264),
-							overflowY: 'auto',
-							overscrollBehavior: 'contain',
-						}}
-					>
+				<Combobox.Options
+					aria-label={ariaLabel ?? label}
+					aria-multiselectable
+					className={classes.options}
+					style={{ height: search ? 264 : Math.min(items.length * 44, 264) }}
+				>
+					{selectedItems.length > 0 && (
+						<div ref={selectedViewport} className={classes.selectedOptions}>
+							{selectedItems.map((item, index) => renderOption(item, index))}
+						</div>
+					)}
+					<div ref={viewport} className={classes.viewport}>
 						<div
 							style={{
 								height: virtualizer.getTotalSize(),
 								position: 'relative',
 							}}
 						>
-							{virtualizer.getVirtualItems().map((row) => {
-								const item = items[row.index];
-								return (
-									<Combobox.Option
-										key={item.value}
-										id={`${id}-${row.index}`}
-										value={item.value}
-										selected={selectedIndex === row.index}
-										aria-selected={item.isRefined}
-										aria-posinset={row.index + 1}
-										aria-setsize={items.length}
-										style={{
-											position: 'absolute',
-											top: 0,
-											left: 0,
-											width: '100%',
-											height: row.size,
-											transform: `translateY(${row.start}px)`,
-										}}
-									>
-										<Group gap="sm" wrap="nowrap" h="100%" w="100%">
-											<Checkbox.Indicator
-												checked={item.isRefined}
-												aria-hidden
-											/>
-											<span className={classes.option}>{item.label}</span>
-											{showCount && item.count !== undefined && (
-												<Badge
-													variant="light"
-													color="gray"
-													size="sm"
-													className={classes.count}
-												>
-													{item.count}
-												</Badge>
-											)}
-										</Group>
-									</Combobox.Option>
-								);
-							})}
+							{virtualizer.getVirtualItems().map((row) =>
+								renderOption(
+									availableItems[row.index],
+									selectedItems.length + row.index,
+									{
+										position: 'absolute',
+										top: 0,
+										left: 0,
+										width: '100%',
+										transform: `translateY(${row.start}px)`,
+									},
+								),
+							)}
 						</div>
+						{availableItems.length === 0 && (
+							<Combobox.Empty>
+								{selectedItems.length > 0
+									? 'No other matches'
+									: search
+										? 'No matching languages'
+										: 'No matches'}
+							</Combobox.Empty>
+						)}
 					</div>
-					{items.length === 0 && (
-						<Combobox.Empty>
-							{search ? 'No matching languages' : 'No matches'}
-						</Combobox.Empty>
-					)}
 				</Combobox.Options>
 			</Combobox.Dropdown>
 		</Combobox>
