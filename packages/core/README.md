@@ -57,8 +57,10 @@ to Latin. Callers must supply coverage matching the referenced artifact.
 `buildFont()` returns resolved `faces` and package `css`. Render those faces
 directly when different CSS output is needed. Metadata-based callers first use
 `resolveFontFaces(config, axisKeys?)` to plan filenames and select variable
-bundles, then pass the result to either generator. Rendering options only control
-display, URL resolution and minification; they never select additional faces.
+bundles, then pass the result to either generator. Axis selections use distinct,
+case-sensitive metadata tags: omitted means all bundles, an empty list means none.
+Rendering options only control display, URL resolution and minification; they
+never select additional faces.
 
 CSS serialization, face planning, and package entrypoints live in
 `@fontsource-utils/core/css`. The CLI and registry previews use the same typed

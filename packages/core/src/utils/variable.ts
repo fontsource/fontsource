@@ -36,14 +36,12 @@ export const determineAxisKey = (
 	// If there are any custom axes, we prefer those as the default entrypoint since they
 	// are more specific. If there's more than one custom axis, we fall back to `full`.
 	if (custom.length > 0) {
-		return standard.length > 0 || custom.length > 1
-			? 'full'
-			: (custom[0] ?? '');
+		return standard.length > 0 || custom.length > 1 ? 'full' : custom[0];
 	}
 
 	// If there are no custom axes, we prefer the standard axes.
 	// If there's more than one, we fall back to `standard`.
-	return standard.length > 1 ? 'standard' : (standard[0] ?? '');
+	return standard.length > 1 ? 'standard' : standard[0];
 };
 
 /**
@@ -122,88 +120,32 @@ export const pickAxisConfig = (
 	);
 };
 
-const findAxisKey = (
-	axisKeys: readonly VariableAxisKey[],
-	candidate: string,
-): VariableAxisKey | undefined =>
-	axisKeys.find((axisKey) => axisKey.toLowerCase() === candidate.toLowerCase());
-
 /**
- * Pick the smallest published axis key that can satisfy a selected set of axes. For example:
- *
- * - `wght` only -> `wght`
- * - `wght` plus one extra axis -> that direct axis key
- * - multiple standard axes -> `standard`
- * - anything involving multiple custom axes -> `full`
+ * Select the smallest published bundle for metadata axis tags.
+ * Callers supply distinct tags with their original OpenType casing.
  */
 export const selectVariableAxisKey = (
 	variableConfig: VariableAxisConfig,
-	selectedAxes: Iterable<string>,
+	selectedAxes: readonly string[],
 ): VariableAxisKey => {
-	const publishedAxisKeys = getVariableAxisKeys(variableConfig);
+	const published = getVariableAxisKeys(variableConfig);
 	const defaultKey = determineAxisKey(variableConfig);
-
-	// Normalize all axes for comparison.
-	const activeAxes = Array.from(selectedAxes)
-		.map((axis) => axis.trim().toLowerCase())
-		.filter(Boolean)
-		.filter((axis) => axis !== 'ital');
-
-	// Deduplicate after normalization.
-	const uniqueAxes = [...new Set(activeAxes)];
-
-	if (uniqueAxes.length === 0) {
-		return defaultKey;
+	// Weight and italic are implicit in the other published bundles.
+	const axes = selectedAxes.filter((axis) => axis !== 'ital');
+	if (axes.length === 0) return defaultKey;
+	if (axes.length === 1) {
+		return published.includes(axes[0]) ? axes[0] : defaultKey;
 	}
 
-	// Single axis should go for a direct lookup.
-	if (uniqueAxes.length === 1) {
-		return findAxisKey(publishedAxisKeys, uniqueAxes[0]) ?? defaultKey;
+	const extraAxes = axes.filter((axis) => axis !== 'wght');
+	if (extraAxes.length === 1 && published.includes(extraAxes[0])) {
+		return extraAxes[0];
 	}
-
-	// Two axes where one is `wght` should still try for a direct lookup of the other axis as `wght` is implicit in most bundles.
-	if (uniqueAxes.length === 2 && uniqueAxes.includes('wght')) {
-		const directAxis = uniqueAxes.find((axis) => axis !== 'wght');
-
-		if (directAxis) {
-			const directAxisKey = findAxisKey(publishedAxisKeys, directAxis);
-			if (directAxisKey) {
-				return directAxisKey;
-			}
-		}
+	if (
+		axes.every((axis) => STANDARD_VARIABLE_AXES.has(axis)) &&
+		published.includes('standard')
+	) {
+		return 'standard';
 	}
-
-	// If every requested axis is a standard axis, try the `standard` bundle.
-	const allStandard = uniqueAxes.every((axis) =>
-		STANDARD_VARIABLE_AXES.has(axis),
-	);
-
-	if (allStandard) {
-		const standardAxisKey = findAxisKey(publishedAxisKeys, 'standard');
-		if (standardAxisKey) {
-			return standardAxisKey;
-		}
-	}
-
-	// Fall back to the `full` bundle which contains every axis.
-	return findAxisKey(publishedAxisKeys, 'full') ?? defaultKey;
-};
-
-/**
- * Return the axis keys a caller actually wants to emit. Providing an empty list defaults to all
- * axis keys.
- */
-export const getRequestedAxisKeys = (
-	variableConfig: VariableAxisConfig,
-	axisKeys: readonly VariableAxisKey[] | undefined,
-): VariableAxisKey[] => {
-	// Filter out any empty keys.
-	const normalized = axisKeys?.map((key) => key.trim()).filter(Boolean);
-
-	if (normalized && normalized.length > 0) {
-		return [...new Set(normalized)];
-	}
-
-	// Default to all keys if the caller didn't specify any.
-	return getVariableAxisKeys(variableConfig);
+	return published.includes('full') ? 'full' : defaultKey;
 };

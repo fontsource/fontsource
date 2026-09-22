@@ -1,6 +1,6 @@
 import type { FontFace, FontSource } from '../types';
 
-/** A resolved CSS face. Package names, URLs and coverage are supplied by its owner. */
+/** Validated face data. The renderer escapes CSS syntax; callers own metadata validation. */
 export interface CSSFontFace {
 	family: string;
 	style: string;
@@ -38,9 +38,6 @@ export const renderFontFaceRule = (
 ): string => {
 	if (face.sources.length === 0) {
 		throw new Error('renderFontFace requires at least one source');
-	}
-	if (face.unicodeRange === undefined) {
-		throw new Error('Font face coverage must be a Unicode range or null');
 	}
 
 	const family =

@@ -32,7 +32,7 @@ import {
 import {
 	getFaceStretch,
 	getFaceStyle,
-	getRequestedAxisKeys,
+	getVariableAxisKeys,
 	pickAxisConfig,
 } from './utils/variable';
 
@@ -389,7 +389,7 @@ export const buildFont = async (
 			? [undefined]
 			: keepAllCharacters && !config.axisKeys
 				? ['full']
-				: getRequestedAxisKeys(variableConfig ?? {}, config.axisKeys);
+				: (config.axisKeys ?? getVariableAxisKeys(variableConfig ?? {}));
 
 	// Generate a unique key for each face based on its defining properties.
 	const getFaceKey = (

@@ -10,13 +10,13 @@ import { normalizeKebabCase } from './text';
 import {
 	getFaceStretch,
 	getFaceStyle,
-	getRequestedAxisKeys,
+	getVariableAxisKeys,
 	pickAxisConfig,
 } from './variable';
 
 /**
  * Plan filenames and faces from metadata. axisKeys limits variable bundles;
- * omitting it includes every published bundle.
+ * Omit axisKeys for every published bundle; an empty list selects none.
  */
 export const resolveFontFaces = (
 	config: FontConfig,
@@ -39,7 +39,7 @@ export const resolveFontFaces = (
 	const familyId = id ?? normalizeKebabCase(family);
 
 	if (isVariable) {
-		const requestedAxes = getRequestedAxisKeys(variable, axisKeys);
+		const requestedAxes = axisKeys ?? getVariableAxisKeys(variable);
 
 		// Filter out ttf formats for variable fonts.
 		const variableFormats = formats.filter(
