@@ -71,6 +71,9 @@ describe('metadata routes', () => {
 		const etag = first.response.headers.get('ETag');
 
 		expect(etag).toBeTruthy();
+		expect(first.response.headers.get('Last-Modified')).toBe(
+			'Mon, 01 Jan 2024 00:00:00 GMT',
+		);
 
 		const second = await dispatch(
 			new Request('https://fontsource.test/v1/fonts/abel', {
