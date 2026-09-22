@@ -54,10 +54,10 @@ const PreviewCoverage = observer(() => {
 	);
 	const unmapped = useMemo(
 		() =>
-			!checksSymbolNames && text.trim()
+			supportsCodepoint
 				? findUnmappedCharacters(text, capabilities, supportsCodepoint)
 				: [],
-		[capabilities, checksSymbolNames, supportsCodepoint, text],
+		[capabilities, supportsCodepoint, text],
 	);
 
 	if (!text.trim()) return null;
@@ -77,7 +77,6 @@ const PreviewCoverage = observer(() => {
 			.map(truncateName)
 			.join(', ')}${unknownNames.length > visibleItemLimit ? ', …' : ''}.`;
 	} else {
-		if (!capabilities) return null;
 		if (unmapped.length === 0) return null;
 
 		title = 'Some characters aren’t available';
