@@ -125,17 +125,15 @@
 	border-top: 0;
 
 	.tabList {
-		padding-inline: calc(var(--tab-gap) / 2);
+		padding-inline: var(--family-header-inset);
 	}
 }
 
 .tabList {
-	--tab-gap: 36px;
-
 	max-width: var(--family-page-max);
 	margin: 0 auto;
 	display: flex;
-	gap: var(--tab-gap);
+	gap: 36px;
 	padding: 0 64px;
 }
 
@@ -250,7 +248,7 @@
 	}
 
 	.tabList {
-		--tab-gap: 28px;
+		gap: 28px;
 		overflow-x: auto;
 		scrollbar-width: thin;
 	}
@@ -264,7 +262,7 @@
 
 @media (max-width: 22em) {
 	.tabList {
-		--tab-gap: 20px;
+		gap: 20px;
 	}
 
 }
