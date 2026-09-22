@@ -39,7 +39,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
 			? `${loaderData.metadata.family} Glyph Explorer | Fontsource`
 			: 'Font Glyph Explorer | Fontsource',
 		description: loaderData?.metadata.family
-			? `Browse the characters and symbols in ${loaderData.metadata.family}. View Unicode values and copy individual characters with the interactive glyph explorer.`
+			? `Explore ${loaderData.metadata.family} glyphs, characters, and symbols. View Unicode values and copy individual characters with the interactive glyph viewer.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)

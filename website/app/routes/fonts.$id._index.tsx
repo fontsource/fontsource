@@ -58,7 +58,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 		: 'Fontsource';
 
 	const description = loaderData?.metadata
-		? `${loaderData.fontSummary} Preview your own text and download the font for apps or websites.`
+		? `${loaderData.fontSummary} Preview your text, download${loaderData.metadata.variable ? ' this variable font' : ' the font'}, or self-host it on your website.`
 		: undefined;
 	const image = loaderData?.metadata
 		? getFontOpenGraphImage(loaderData.metadata)

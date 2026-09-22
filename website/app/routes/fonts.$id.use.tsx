@@ -65,7 +65,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 	return ogMeta({
 		title: family ? `Download ${family} Font | Fontsource` : undefined,
 		description: family
-			? `Download ${family} font files for design apps, or add the font to your website with npm or a CDN.`
+			? `Download ${family} in TTF, WOFF, and WOFF2 formats with CSS. Self-host with npm packages, or use a CDN.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)

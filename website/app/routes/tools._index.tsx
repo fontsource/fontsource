@@ -7,7 +7,7 @@ import { ogMeta } from '@/utils/meta';
 export const meta: MetaFunction = () => {
 	const title = 'Font Tools | Fontsource';
 	const description =
-		'Convert font formats, remove unneeded characters, and compress webfonts. Files are processed in your browser without uploading them.';
+		'Convert TTF, OTF, WOFF, and WOFF2 fonts, subset characters, and compress webfonts with matching CSS. Free browser tools with no uploads.';
 
 	return ogMeta({ title, description });
 };
@@ -16,7 +16,7 @@ const tools = [
 	{
 		title: 'Font Converter',
 		description:
-			'Convert font files to WOFF2, WOFF, or TTF for websites and design apps.',
+			'Convert TTF, OTF, WOFF, and WOFF2 files to WOFF2, WOFF, or TTF.',
 		link: '/tools/converter',
 		icon: IconTransform,
 	},

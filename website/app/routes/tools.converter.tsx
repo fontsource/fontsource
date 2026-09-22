@@ -5,7 +5,7 @@ import { getCanonicalUrl, ogMeta } from '@/utils/meta';
 export const meta: MetaFunction = () => {
 	const title = 'Font Converter — TTF, OTF, WOFF & WOFF2 | Fontsource';
 	const description =
-		'Convert TTF, OTF, WOFF, or WOFF2 files to WOFF2, WOFF, or TTF for websites and design apps. Your fonts stay in your browser.';
+		'Convert TTF to WOFF2, OTF to TTF, WOFF2 to TTF, and other supported font formats in your browser. Free, with no uploads.';
 
 	return [
 		...ogMeta({ title, description }),

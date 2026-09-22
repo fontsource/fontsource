@@ -1,9 +1,9 @@
 import type { MetaDescriptor } from 'react-router';
 
 const SITE_ORIGIN = 'https://fontsource.org';
-const DEFAULT_TITLE = 'Fontsource — Browse & Download Open-Source Fonts';
+const DEFAULT_TITLE = 'Fontsource — Download & Self-Host Open-Source Fonts';
 const DEFAULT_DESCRIPTION =
-	'Browse open-source fonts, preview your own text, and download font files for design apps or websites. npm packages and CDN links are also available.';
+	'Browse free, open-source and variable fonts. Preview and download font files, or self-host web fonts with npm packages and CSS. CDN links are also available.';
 const API_ORIGIN = 'https://api.fontsource.org';
 
 interface OpenGraphImage {
