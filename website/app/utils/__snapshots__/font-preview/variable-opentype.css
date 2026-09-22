@@ -3,5 +3,5 @@
   font-style: italic;
   font-display: swap;
   font-weight: 100 900;
-  src: url("https://api.fontsource.org/v1/registry/sources/variable-standard") format("opentype");
+  src: url(https://api.fontsource.org/v1/registry/sources/variable-standard) format(opentype);
 }

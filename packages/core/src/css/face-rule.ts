@@ -31,6 +31,17 @@ const quote = (value: string): string =>
 	// biome-ignore lint/suspicious/noControlCharactersInRegex: CSS strings must escape control characters.
 	`"${value.replace(/[\0-\x1f\x7f"\\]/g, (character) => `\\${character.charCodeAt(0).toString(16)} `)}"`;
 
+// Ordinary asset URLs need no quotes; whitespace, delimiters and escapes do.
+const quoteURL = (url: string): string =>
+	/[\0-\x20\x7f"'()\\]/.test(url) ? quote(url) : url;
+
+// Only standard format keywords can be bare. In particular, variation hints
+// such as "woff2-variations" must stay strings to retain their support check.
+const quoteFormat = (format: string): string =>
+	/^(woff2?|truetype|opentype|collection|embedded-opentype|svg)$/.test(format)
+		? format
+		: quote(format);
+
 /** Render one face in the same canonical form for packages, CDN responses and previews. */
 export const renderFontFaceRule = (
 	face: CSSFontFace,
@@ -49,6 +60,7 @@ export const renderFontFaceRule = (
 			: face.family;
 	const space = minify ? '' : ' ';
 	const declarations = [
+		// Quoting preserves names containing punctuation, digits or CSS keywords.
 		`font-family:${space}${quote(family)};`,
 		`font-style:${space}${face.style};`,
 		`font-display:${space}${display};`,
@@ -57,7 +69,7 @@ export const renderFontFaceRule = (
 	if (face.stretch) declarations.push(`font-stretch:${space}${face.stretch};`);
 
 	const sources = face.sources.map(
-		({ url, format }) => `url(${quote(url)}) format(${quote(format)})`,
+		({ url, format }) => `url(${quoteURL(url)}) format(${quoteFormat(format)})`,
 	);
 	declarations.push(`src:${space}${sources.join(`,${space}`)};`);
 	if (face.unicodeRange) {

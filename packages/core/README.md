@@ -68,9 +68,10 @@ stretch, ordered `{ url, format }` sources, and an explicit `unicodeRange`
 `Variable` family suffix; an existing suffix is preserved. Source formats are
 CSS hints such as `woff2`, `woff2-variations`, `truetype`, or `opentype`.
 
-Rendering uses one canonical format with escaped strings and no generated
-comments. `{ minify: true }` produces compact CSS directly, including through
-`generateCSS` and the asset generators. The CLI bundles this pure entrypoint
+Rendering omits unnecessary quotes from URLs and standard format hints, while
+preserving quoted family names, variation hints and URLs that need escaping.
+It emits no generated comments. `{ minify: true }` produces compact CSS directly,
+including through `generateCSS` and the asset generators. The CLI bundles this pure entrypoint
 into its browser and CommonJS builds without loading font-processing modules.
 Google metadata adapters preserve its explicit source variants and only emit
 formats selected by the downloader. Missing legacy coverage is passed as

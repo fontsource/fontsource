@@ -32,9 +32,18 @@ const generateFaceCSSAssets = (
 	const indexFaces = indexCSSFile ? facesByFile.get(indexCSSFile) : undefined;
 	if (indexFaces) facesByFile.set('index.css', indexFaces);
 
+	// Subset, weight and index entrypoints share faces. Resolve URLs and render
+	// each face once per build, without retaining anything between builds.
+	const rendered = new Map<FontFace, string>();
 	return Array.from(facesByFile, ([filename, faces]) => ({
 		filename,
-		content: generateFaceCSS(family, faces, options),
+		content: faces
+			.map((face) => {
+				const css = rendered.get(face) ?? renderFontFace(face, family, options);
+				rendered.set(face, css);
+				return css;
+			})
+			.join(options.minify ? '' : '\n\n'),
 	}));
 };
 

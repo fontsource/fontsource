@@ -67,10 +67,12 @@ const staticFaces = (
 	makePath: StaticPath,
 	tag?: string,
 	ranges?: Record<string, string>,
-) =>
-	Object.entries(metadata.variants).flatMap(([weight, styles]) =>
-		Object.entries(styles).flatMap(([style, subsets]) =>
-			Object.entries(subsets).flatMap(([subset, { url }]) => {
+) => {
+	const faces = [];
+	// Follow actual variant records: the weight/style lists are only summaries.
+	for (const [weight, styles] of Object.entries(metadata.variants)) {
+		for (const [style, subsets] of Object.entries(styles)) {
+			for (const [subset, { url }] of Object.entries(subsets)) {
 				const sources = (['woff2', 'woff'] as const)
 					.filter((format) => available(url[format]))
 					.map((format) => ({
@@ -83,24 +85,38 @@ const staticFaces = (
 						),
 						format,
 					}));
-				if (!sources.length) return [];
-				return [
-					{
-						subset,
-						weight: Number(weight),
+				if (!sources.length) continue;
+				faces.push({
+					subset,
+					weight: Number(weight),
+					style,
+					css: renderFontFaceRule({
+						family: metadata.family,
 						style,
-						css: renderFontFaceRule({
-							family: metadata.family,
-							style,
-							weight,
-							sources,
-							unicodeRange: ranges?.[subset] ?? null,
-						}),
-					},
-				];
-			}),
-		),
+						weight,
+						sources,
+						// Some legacy records have no coverage; never guess a range.
+						unicodeRange: ranges?.[subset] ?? null,
+					}),
+				});
+			}
+		}
+	}
+	return faces;
+};
+
+// index.css prefers normal, then the first available style, nearest to 400.
+// Keep the first weight on ties, matching existing Google package defaults.
+const defaultStaticFace = (faces: { style: string; weight: number }[]) => {
+	const style = faces.some((face) => face.style === 'normal')
+		? 'normal'
+		: faces[0]?.style;
+	const weight = findClosest(
+		faces.filter((face) => face.style === style).map((face) => face.weight),
+		400,
 	);
+	return { style, weight };
+};
 
 const append = (
 	assets: Map<string, string[]>,
@@ -148,18 +164,10 @@ export const generateV2CSS = (
 ): CSSGenerate => {
 	const faces = staticFaces(metadata, makePath, tag, metadata.unicodeRange);
 	const assets = new Map<string, string[]>();
-	const defaultStyle = faces.some((face) => face.style === 'normal')
-		? 'normal'
-		: faces[0]?.style;
-	const defaultWeight = findClosest(
-		faces
-			.filter((face) => face.style === defaultStyle)
-			.map((face) => face.weight),
-		400,
-	);
+	const index = defaultStaticFace(faces);
 	for (const { weight, style, css } of faces) {
 		append(assets, `${weight}${styleSuffix(style)}.css`, css);
-		if (weight === defaultWeight && style === defaultStyle)
+		if (weight === index.weight && style === index.style)
 			append(assets, 'index.css', css);
 	}
 	return finish(assets);
@@ -172,21 +180,13 @@ export const generateIconStaticCSS = (
 ): CSSGenerate => {
 	const faces = staticFaces(metadata, makePath, tag);
 	const assets = new Map<string, string[]>();
-	const defaultStyle = faces.some((face) => face.style === 'normal')
-		? 'normal'
-		: faces[0]?.style;
-	const defaultWeight = findClosest(
-		faces
-			.filter((face) => face.style === defaultStyle)
-			.map((face) => face.weight),
-		400,
-	);
+	const index = defaultStaticFace(faces);
 	for (const { subset, weight, style, css } of faces) {
 		const suffix = styleSuffix(style);
 		append(assets, `${weight}${suffix}.css`, css);
 		append(assets, `${subset}-${weight}${suffix}.css`, css);
 		append(assets, `${subset}.css`, css);
-		if (weight === defaultWeight && style === defaultStyle)
+		if (weight === index.weight && style === index.style)
 			append(assets, 'index.css', css);
 	}
 	return finish(assets);
@@ -201,19 +201,23 @@ const variableCSS = (
 	makePath: VariablePath,
 ): CSSGenerate => {
 	const assets = new Map<string, string[]>();
+	const fontWeight = axes.wght ? formatAxisValue(axes.wght) : weight;
 	for (const [axisKey, styles] of Object.entries(variants)) {
 		for (const [style, subsets] of Object.entries(styles)) {
+			const filename = `${axisKey.toLowerCase()}${styleSuffix(style)}.css`;
+			const fontStyle = getFaceStyle(axisKey, style as FontStyle, axes);
+			const stretch = getFaceStretch(axisKey, axes);
 			for (const [subset, url] of Object.entries(subsets)) {
 				if (!available(url)) continue;
 				append(
 					assets,
-					`${axisKey.toLowerCase()}${styleSuffix(style)}.css`,
+					filename,
 					renderFontFaceRule({
 						family,
 						isVariable: true,
-						style: getFaceStyle(axisKey, style as FontStyle, axes),
-						stretch: getFaceStretch(axisKey, axes),
-						weight: axes.wght ? formatAxisValue(axes.wght) : weight,
+						style: fontStyle,
+						stretch,
+						weight: fontWeight,
 						unicodeRange: ranges?.[subset] ?? null,
 						sources: [
 							{

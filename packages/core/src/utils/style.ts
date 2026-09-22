@@ -36,6 +36,7 @@ export const formatStretchValue = (axis: VariableFontAxis): string =>
 		: `${axis.min}% ${axis.max}%`;
 
 export const formatSlantValue = (axis: VariableFontAxis): string => {
+	// OpenType slnt and CSS oblique use opposite signs; reverse the endpoints too.
 	const min = Number(axis.min);
 	const max = Number(axis.max);
 	const minDegrees = -max;
