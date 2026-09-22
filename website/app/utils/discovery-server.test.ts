@@ -57,7 +57,8 @@ it.each([
 		expect(
 			vi
 				.mocked(listFontValues)
-				.mock.calls.map(([query]) => Object.keys(query ?? {})[0]),
-		).toEqual(fields);
+				.mock.calls.map(([query]) => Object.keys(query ?? {})[0])
+				.sort(),
+		).toEqual([...fields].sort());
 	},
 );

@@ -75,176 +75,175 @@ exports[`metadata routes > lists all variable fonts 1`] = `
 }
 `;
 
-exports[`metadata routes > matches public metadata responses 1`] = `
+exports[`metadata routes > matches public metadata response for /fontlist 1`] = `
 {
-  "axisRegistry": {
-    "body": {
-      "MONO": {
-        "default": 0,
-        "description": "Monospace axis",
-        "max": 1,
-        "min": 0,
-        "name": "Monospace",
-        "precision": 1,
-      },
-    },
-    "headers": {
-      "cacheControl": "public, max-age=300",
-      "cdnCacheControl": "public, max-age=86400",
-      "contentType": "application/json",
-      "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
-      "etag": "<etag>",
-    },
-    "status": 200,
+  "body": {
+    "abel": "google",
+    "familypack": "google",
+    "recursive": "google",
   },
-  "download": {
-    "body": {
-      "state": "building",
-      "version": "5.0.0",
-    },
-    "headers": {
-      "cacheControl": "no-store",
-      "cdnCacheControl": "no-store",
-      "contentType": "application/json",
-      "edgeCacheControl": "no-store",
-    },
-    "retryAfter": "3",
-    "status": 202,
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
+    "etag": "<etag>",
   },
-  "font": {
-    "body": {
-      "category": "sans-serif",
-      "defSubset": "latin",
-      "family": "Abel",
-      "id": "abel",
-      "lastModified": "2024-01-01",
-      "license": "OFL-1.1",
-      "source": "https://example.com",
-      "styles": [
-        "normal",
-      ],
-      "subsets": [
-        "latin",
-      ],
-      "type": "google",
-      "unicodeRange": {
-        "latin": "U+0000-00FF",
-      },
-      "variable": false,
-      "variants": {
-        "400": {
-          "normal": {
-            "latin": {
-              "url": {
-                "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.ttf",
-                "woff": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff",
-                "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff2",
-              },
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > matches public metadata response for /v1/axis-registry?tag=mono 1`] = `
+{
+  "body": {
+    "MONO": {
+      "default": 0,
+      "description": "Monospace axis",
+      "max": 1,
+      "min": 0,
+      "name": "Monospace",
+      "precision": 1,
+    },
+  },
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
+    "etag": "<etag>",
+  },
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > matches public metadata response for /v1/fonts/abel 1`] = `
+{
+  "body": {
+    "category": "sans-serif",
+    "defSubset": "latin",
+    "family": "Abel",
+    "id": "abel",
+    "lastModified": "2024-01-01",
+    "license": "OFL-1.1",
+    "source": "https://example.com",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "google",
+    "unicodeRange": {
+      "latin": "U+0000-00FF",
+    },
+    "variable": false,
+    "variants": {
+      "400": {
+        "normal": {
+          "latin": {
+            "url": {
+              "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.ttf",
+              "woff": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff",
+              "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff2",
             },
           },
         },
       },
-      "version": "v1",
-      "weights": [
-        400,
-      ],
     },
-    "headers": {
-      "cacheControl": "public, max-age=300",
-      "cdnCacheControl": "public, max-age=86400",
-      "contentType": "application/json",
-      "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
-      "etag": "<etag>",
-      "lastModified": "<last-modified>",
-    },
-    "status": 200,
+    "version": "v1",
+    "weights": [
+      400,
+    ],
   },
-  "fontlist": {
-    "body": {
-      "abel": "google",
-      "familypack": "google",
-      "recursive": "google",
-    },
-    "headers": {
-      "cacheControl": "public, max-age=300",
-      "cdnCacheControl": "public, max-age=86400",
-      "contentType": "application/json",
-      "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
-      "etag": "<etag>",
-    },
-    "status": 200,
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
+    "etag": "<etag>",
+    "lastModified": "<last-modified>",
   },
-  "stats": {
-    "body": {
-      "static": {
-        "jsDelivrHitsMonthly": 10,
-        "jsDelivrHitsTotal": 100,
-        "npmDownloadMonthly": 5,
-        "npmDownloadTotal": 50,
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > matches public metadata response for /v1/stats/recursive 1`] = `
+{
+  "body": {
+    "static": {
+      "jsDelivrHitsMonthly": 10,
+      "jsDelivrHitsTotal": 100,
+      "npmDownloadMonthly": 5,
+      "npmDownloadTotal": 50,
+    },
+    "total": {
+      "jsDelivrHitsMonthly": 25,
+      "jsDelivrHitsTotal": 250,
+      "npmDownloadMonthly": 15,
+      "npmDownloadTotal": 150,
+    },
+    "variable": {
+      "jsDelivrHitsMonthly": 15,
+      "jsDelivrHitsTotal": 150,
+      "npmDownloadMonthly": 10,
+      "npmDownloadTotal": 100,
+    },
+  },
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400",
+    "etag": "<etag>",
+  },
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > matches public metadata response for /v1/variable/recursive 1`] = `
+{
+  "body": {
+    "axes": {
+      "MONO": {
+        "default": "0",
+        "max": "1",
+        "min": "0",
+        "step": "1",
       },
-      "total": {
-        "jsDelivrHitsMonthly": 25,
-        "jsDelivrHitsTotal": 250,
-        "npmDownloadMonthly": 15,
-        "npmDownloadTotal": 150,
-      },
-      "variable": {
-        "jsDelivrHitsMonthly": 15,
-        "jsDelivrHitsTotal": 150,
-        "npmDownloadMonthly": 10,
-        "npmDownloadTotal": 100,
-      },
     },
-    "headers": {
-      "cacheControl": "public, max-age=300",
-      "cdnCacheControl": "public, max-age=86400",
-      "contentType": "application/json",
-      "edgeCacheControl": "public, max-age=86400, stale-while-revalidate=86400, stale-if-error=86400",
-      "etag": "<etag>",
-    },
-    "status": 200,
+    "family": "Recursive",
   },
-  "variable": {
-    "body": {
-      "axes": {
-        "MONO": {
-          "default": "0",
-          "max": "1",
-          "min": "0",
-          "step": "1",
-        },
-      },
-      "family": "Recursive",
-    },
-    "headers": {
-      "cacheControl": "public, max-age=300",
-      "cdnCacheControl": "public, max-age=86400",
-      "contentType": "application/json",
-      "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
-      "etag": "<etag>",
-    },
-    "status": 200,
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
+    "etag": "<etag>",
   },
-  "version": {
-    "body": {
-      "latest": "5.0.0",
-      "latestVariable": "5.0.0",
-      "static": [
-        "5.0.0",
-      ],
-      "variable": [
-        "5.0.0",
-      ],
-    },
-    "headers": {
-      "cacheControl": "public, max-age=300",
-      "cdnCacheControl": "public, max-age=86400",
-      "contentType": "application/json",
-      "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
-      "etag": "<etag>",
-    },
-    "status": 200,
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > matches public metadata response for /v1/version/recursive 1`] = `
+{
+  "body": {
+    "latest": "5.0.0",
+    "latestVariable": "5.0.0",
+    "static": [
+      "5.0.0",
+    ],
+    "variable": [
+      "5.0.0",
+    ],
   },
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
+    "etag": "<etag>",
+  },
+  "status": 200,
 }
 `;
 

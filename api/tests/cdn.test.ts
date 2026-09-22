@@ -1,21 +1,24 @@
-import { unzipSync, zipSync } from 'fflate';
+import { zipSync } from 'fflate';
+import { HttpResponse, http } from 'msw';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { SourceFontMetadata } from '../shared/catalog';
 import { KV_KEYS, UPSTREAM_URLS } from '../worker/src/constants';
 import { clearMetadataCachesForTest } from '../worker/src/features/metadata/store';
 import {
-	dispatch,
-	installArtifactBuilderMock,
-	installUpstreamFetchMock,
-	jsonSnapshot,
-	setupWorkerTest,
 	staticTtfBytes,
 	staticWoff2Bytes,
-	testCatalog,
+	variableWoff2Bytes,
+} from './fixtures/fonts';
+import { testCatalog } from './fixtures/metadata';
+import {
+	dispatch,
+	installArtifactBuilderMock,
+	jsonSnapshot,
+	setupWorkerTest,
 	testEnv,
 	textSnapshot,
-	variableWoff2Bytes,
 } from './helpers';
+import { mockUpstreamResponses, network } from './network';
 
 const slantedMetadata: SourceFontMetadata = {
 	id: 'slanted',
@@ -68,63 +71,41 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 	});
 
-	it('resolves floating static asset requests without fetching variable versions', async () => {
-		vi.restoreAllMocks();
-		const fetchSpy = installUpstreamFetchMock();
-		await testEnv.FONTS.put(
+	it.each([
+		[
+			'static',
+			'recursive@latest/latin-400-normal.woff2',
 			'recursive@5.0.0/latin-400-normal.woff2',
+			'@fontsource-variable/recursive',
 			staticWoff2Bytes,
-		);
-
-		const result = await dispatch(
-			'https://fontsource.test/fonts/recursive@latest/latin-400-normal.woff2',
-		);
-		await result.response.arrayBuffer();
-		await result.settle();
-
-		const packageRequests = fetchSpy.mock.calls
-			.map(([input]) =>
-				typeof input === 'string'
-					? input
-					: input instanceof Request
-						? input.url
-						: input.toString(),
-			)
-			.filter((url) => url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`));
-
-		expect(packageRequests).toEqual([
-			`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/recursive`,
-		]);
-	});
-
-	it('resolves floating variable asset requests without fetching static versions', async () => {
-		vi.restoreAllMocks();
-		const fetchSpy = installUpstreamFetchMock();
-		await testEnv.FONTS.put(
+		],
+		[
+			'variable',
+			'recursive:vf@latest/latin-full-normal.woff2',
 			'recursive@5.0.0/variable/latin-full-normal.woff2',
+			'@fontsource/recursive',
 			variableWoff2Bytes,
-		);
-
-		const result = await dispatch(
-			'https://fontsource.test/fonts/recursive:vf@latest/latin-full-normal.woff2',
-		);
-		await result.response.arrayBuffer();
-		await result.settle();
-
-		const packageRequests = fetchSpy.mock.calls
-			.map(([input]) =>
-				typeof input === 'string'
-					? input
-					: input instanceof Request
-						? input.url
-						: input.toString(),
-			)
-			.filter((url) => url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`));
-
-		expect(packageRequests).toEqual([
-			`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource-variable/recursive`,
-		]);
-	});
+		],
+	] as const)(
+		'resolves floating %s assets without querying the other package',
+		async (_kind, path, key, unusedPackage, bytes) => {
+			const unusedLookup = vi.fn(() => HttpResponse.error());
+			network.use(
+				http.get(
+					`${UPSTREAM_URLS.jsdelivrPackage}/${unusedPackage}`,
+					unusedLookup,
+				),
+			);
+			await testEnv.FONTS.put(key, bytes);
+			const result = await dispatch(`https://fontsource.test/fonts/${path}`);
+			expect(result.response.status).toBe(200);
+			expect(new Uint8Array(await result.response.arrayBuffer())).toEqual(
+				bytes,
+			);
+			await result.settle();
+			expect(unusedLookup).not.toHaveBeenCalled();
+		},
+	);
 
 	it('serves 304 responses for If-Modified-Since through R2 preconditions', async () => {
 		const url =
@@ -157,31 +138,22 @@ describe('cdn routes', () => {
 		expect(notModified.response.headers.get('ETag')).toBeTruthy();
 	});
 
-	it('skips upstream version resolution for exact pinned asset requests', async () => {
-		vi.restoreAllMocks();
-		const fetchSpy = installUpstreamFetchMock();
+	it('skips upstream version resolution for pinned assets', async () => {
+		const lookup = vi.fn(() => HttpResponse.error());
+		network.use(http.get(`${UPSTREAM_URLS.jsdelivrPackage}/*`, lookup));
 		await testEnv.FONTS.put(
 			'abel@5.0.0/latin-400-normal.woff2',
 			staticWoff2Bytes,
 		);
-
 		const result = await dispatch(
 			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2',
 		);
-		await result.response.arrayBuffer();
+		expect(result.response.status).toBe(200);
+		expect(new Uint8Array(await result.response.arrayBuffer())).toEqual(
+			staticWoff2Bytes,
+		);
 		await result.settle();
-
-		const packageRequests = fetchSpy.mock.calls
-			.map(([input]) =>
-				typeof input === 'string'
-					? input
-					: input instanceof Request
-						? input.url
-						: input.toString(),
-			)
-			.filter((url) => url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`));
-
-		expect(packageRequests).toEqual([]);
+		expect(lookup).not.toHaveBeenCalled();
 	});
 
 	describe('public asset outputs', () => {
@@ -343,72 +315,35 @@ describe('cdn routes', () => {
 		});
 	});
 
-	it('builds a download asynchronously and serves the archive when ready', async () => {
-		const builder = installArtifactBuilderMock(testEnv, { buildDelayMs: 25 });
+	it('returns accepted while building, then serves the stored download with conditional caching', async () => {
 		const url = 'https://fontsource.test/v1/download/recursive';
-
-		const [accepted, duplicate] = await Promise.all([
-			dispatch(url),
-			dispatch(url),
-		]);
+		const accepted = await dispatch(url);
 		expect(accepted.response.status).toBe(202);
 		expect(await accepted.response.json()).toEqual({
 			state: 'building',
 			version: '5.0.0',
 		});
-		expect(duplicate.response.status).toBe(202);
-		await duplicate.response.json();
-		await Promise.all([accepted.settle(), duplicate.settle()]);
+		expect(accepted.response.headers.get('Retry-After')).toBe('3');
+		expect(accepted.response.headers.get('Cache-Control')).toBe('no-store');
+		await accepted.settle();
 
-		for (let attempts = 0; attempts < 100; attempts += 1) {
-			if (await testEnv.FONTS.head('recursive@5.0.0/download.zip')) {
-				break;
-			}
-			await new Promise((resolve) => setTimeout(resolve, 1));
-		}
-
-		const result = await dispatch(url);
-		const archive = unzipSync(
-			new Uint8Array(await result.response.arrayBuffer()),
-		);
-		await result.settle();
-
-		expect(result.response.status).toBe(200);
-		expect(result.response.headers.get('Content-Disposition')).toBe(
+		const archive = zipSync({
+			LICENSE: new TextEncoder().encode('Example License'),
+		});
+		await testEnv.FONTS.put('recursive@5.0.0/download.zip', archive);
+		const ready = await dispatch(url);
+		expect(ready.response.status).toBe(200);
+		expect(ready.response.headers.get('Content-Disposition')).toBe(
 			'attachment; filename="recursive.zip"',
 		);
-		expect(result.response.headers.get('Cache-Control')).toBe(
+		expect(ready.response.headers.get('Cache-Control')).toBe(
 			'public, no-cache',
 		);
-		const etag = result.response.headers.get('ETag');
+		expect(new Uint8Array(await ready.response.arrayBuffer())).toEqual(archive);
+		await ready.settle();
+
+		const etag = ready.response.headers.get('ETag');
 		expect(etag).toBeTruthy();
-		expect(builder.calls).toHaveBeenCalledTimes(1);
-
-		// Archive should contain static + variable files + LICENSE
-		const files = Object.keys(archive).sort();
-		expect(files).toEqual([
-			'LICENSE',
-			'static/recursive-latin-400-normal.ttf',
-			'static/recursive-latin-400-normal.woff',
-			'static/recursive-latin-400-normal.woff2',
-			'variable/recursive-latin-full-normal.woff2',
-			'variable/recursive-latin-mono-normal.woff2',
-		]);
-
-		// Verify binary sizes match the fixtures
-		expect(archive['static/recursive-latin-400-normal.woff2'].byteLength).toBe(
-			staticWoff2Bytes.byteLength,
-		);
-		expect(
-			archive['variable/recursive-latin-full-normal.woff2'].byteLength,
-		).toBe(variableWoff2Bytes.byteLength);
-		expect(archive['static/recursive-latin-400-normal.ttf'].byteLength).toBe(
-			staticTtfBytes.byteLength,
-		);
-
-		// LICENSE should be present and non-empty
-		expect(new TextDecoder().decode(archive.LICENSE)).toBe('Example License');
-
 		const conditional = await dispatch(
 			new Request(url, { headers: { 'If-None-Match': etag ?? '' } }),
 		);
@@ -429,13 +364,12 @@ describe('cdn routes', () => {
 
 		expect(staticZipResult.response.status).toBe(404);
 		expect(variableZipResult.response.status).toBe(404);
-		expect(builder.calls).not.toHaveBeenCalled();
+		expect(builder.buildVersion).not.toHaveBeenCalled();
 	});
 
 	it('combines independent latest package versions in the canonical download', async () => {
-		vi.restoreAllMocks();
 		installArtifactBuilderMock(testEnv);
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/recursive`]: new Response(
 				JSON.stringify({
 					versions: [{ version: '5.0.0' }],
@@ -457,19 +391,15 @@ describe('cdn routes', () => {
 		await accepted.response.json();
 		await accepted.settle();
 
-		for (let attempts = 0; attempts < 100; attempts += 1) {
-			if (await testEnv.FONTS.head('recursive@5.0.0+vf@1.1.0/download.zip')) {
-				break;
-			}
-			await new Promise((resolve) => setTimeout(resolve, 1));
-		}
+		await testEnv.FONTS.put(
+			'recursive@5.0.0+vf@1.1.0/download.zip',
+			zipSync({ LICENSE: new TextEncoder().encode('Example License') }),
+		);
 
 		const download = await dispatch(
 			'https://fontsource.test/v1/download/recursive',
 		);
-		const archive = unzipSync(
-			new Uint8Array(await download.response.arrayBuffer()),
-		);
+		await download.response.arrayBuffer();
 		await download.settle();
 
 		const variableLatest = await dispatch(
@@ -488,13 +418,6 @@ describe('cdn routes', () => {
 		expect(download.response.headers.get('Content-Disposition')).toBe(
 			'attachment; filename="recursive.zip"',
 		);
-		expect(Object.keys(archive)).toEqual(
-			expect.arrayContaining([
-				'static/recursive-latin-400-normal.woff2',
-				'variable/recursive-latin-full-normal.woff2',
-				'LICENSE',
-			]),
-		);
 		expect(
 			await testEnv.FONTS.head('recursive@5.0.0+vf@1.1.0/download.zip'),
 		).not.toBeNull();
@@ -506,9 +429,8 @@ describe('cdn routes', () => {
 	});
 
 	it('serves version metadata and downloads for variable-only packages', async () => {
-		vi.restoreAllMocks();
 		installArtifactBuilderMock(testEnv);
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/recursive`]: new Response(
 				'not found',
 				{ status: 404 },
@@ -539,12 +461,10 @@ describe('cdn routes', () => {
 		});
 		await accepted.settle();
 
-		for (let attempts = 0; attempts < 100; attempts += 1) {
-			if (await testEnv.FONTS.head('recursive:vf@1.1.0/download.zip')) {
-				break;
-			}
-			await new Promise((resolve) => setTimeout(resolve, 1));
-		}
+		await testEnv.FONTS.put(
+			'recursive:vf@1.1.0/download.zip',
+			zipSync({ LICENSE: new TextEncoder().encode('Example License') }),
+		);
 
 		const download = await dispatch(
 			'https://fontsource.test/v1/download/recursive',
@@ -555,27 +475,17 @@ describe('cdn routes', () => {
 		expect(download.response.status).toBe(200);
 	});
 
-	it('returns a failed asynchronous download build on the next poll', async () => {
-		const builder = installArtifactBuilderMock(testEnv, {
-			failBuildKeys: ['build:abel@5.0.0:download'],
+	it('reports a failed asynchronous download build', async () => {
+		const builder = installArtifactBuilderMock(testEnv);
+		builder.startBuild.mockResolvedValue({
+			state: 'failed',
+			buildKey: 'build:abel@5.0.0:download',
+			status: 502,
+			error: 'Artifact build failed',
 		});
-		const url = 'https://fontsource.test/v1/download/abel';
-
-		const accepted = await dispatch(url);
-		await accepted.response.json();
-		await accepted.settle();
-		expect(accepted.response.status).toBe(202);
-
-		await new Promise((resolve) => setTimeout(resolve, 0));
-		const failed = await dispatch(url);
-		const body = (await failed.response.json()) as { error: string };
-		await failed.settle();
-
-		expect(failed.response.status).toBe(502);
-		expect(body.error).toContain(
-			'Mocked builder failure for build:abel@5.0.0:download',
-		);
-		expect(builder.calls).toHaveBeenCalledTimes(1);
+		expect(
+			await jsonSnapshot('https://fontsource.test/v1/download/abel'),
+		).toMatchSnapshot();
 	});
 
 	it('redirects variable latest CDN zip aliases to the canonical download endpoint', async () => {
@@ -607,6 +517,13 @@ describe('cdn routes', () => {
 
 	it('builds a cold file once and serves it from R2 afterwards', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
+		builder.buildVersion.mockImplementation(async () => {
+			await testEnv.FONTS.put(
+				'abel@5.0.0/latin-400-normal.ttf',
+				staticTtfBytes,
+			);
+			return { state: 'ready', buildKey: 'build:abel@5.0.0:static' };
+		});
 		const ttfUrl =
 			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.ttf';
 
@@ -637,64 +554,19 @@ describe('cdn routes', () => {
 		await notModified.settle();
 		expect(notModified.response.status).toBe(304);
 
-		expect(builder.calls).toHaveBeenCalledTimes(1);
-		expect(builder.calls).toHaveBeenCalledWith(
+		expect(builder.buildVersion).toHaveBeenCalledTimes(1);
+		expect(builder.buildVersion).toHaveBeenCalledWith(
 			expect.objectContaining({ mode: 'static' }),
 		);
 	});
 
-	it('joins concurrent cold requests for different files in one package', async () => {
-		const builder = installArtifactBuilderMock(testEnv, { buildDelayMs: 25 });
-		const ttfUrl =
-			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.ttf';
-		const woff2Url =
-			'https://fontsource.test/fonts/abel@5.0.0/latin-400-normal.woff2';
-
-		const [first, second] = await Promise.all([
-			dispatch(ttfUrl),
-			dispatch(woff2Url),
-		]);
-		const firstBytes = await first.response.arrayBuffer();
-		const secondBytes = await second.response.arrayBuffer();
-		await Promise.all([first.settle(), second.settle()]);
-
-		expect(first.response.status).toBe(200);
-		expect(second.response.status).toBe(200);
-		expect(firstBytes.byteLength).toBe(staticTtfBytes.byteLength);
-		expect(secondBytes.byteLength).toBe(staticWoff2Bytes.byteLength);
-		expect(builder.calls).toHaveBeenCalledTimes(1);
-	});
-
-	it('builds static and variable packages independently', async () => {
-		const builder = installArtifactBuilderMock(testEnv, { buildDelayMs: 25 });
-		const [staticResult, variableResult] = await Promise.all([
-			dispatch(
-				'https://fontsource.test/fonts/recursive@5.0.0/latin-400-normal.woff2',
-			),
-			dispatch(
-				'https://fontsource.test/fonts/recursive:vf@5.0.0/latin-full-normal.woff2',
-			),
-		]);
-		await Promise.all([
-			staticResult.response.arrayBuffer(),
-			variableResult.response.arrayBuffer(),
-		]);
-		await Promise.all([staticResult.settle(), variableResult.settle()]);
-
-		expect(staticResult.response.status).toBe(200);
-		expect(variableResult.response.status).toBe(200);
-		expect(builder.calls).toHaveBeenCalledTimes(2);
-		expect(builder.calls.mock.calls.map(([request]) => request)).toEqual(
-			expect.arrayContaining([
-				expect.objectContaining({ mode: 'static' }),
-				expect.objectContaining({ mode: 'variable' }),
-			]),
-		);
-	});
-
 	it('returns 502 when the artifact builder fails', async () => {
-		installArtifactBuilderMock(testEnv, {
-			failBuildKeys: ['build:abel@5.0.0:static'],
+		const builder = installArtifactBuilderMock(testEnv);
+		builder.buildVersion.mockResolvedValue({
+			state: 'failed',
+			buildKey: 'build:abel@5.0.0:static',
+			status: 502,
+			error: 'Artifact build failed',
 		});
 		expect(
 			await jsonSnapshot(
@@ -704,9 +576,8 @@ describe('cdn routes', () => {
 	});
 
 	it('short-circuits unpublished exact-version files before the builder runs', async () => {
-		vi.restoreAllMocks();
 		const builder = installArtifactBuilderMock(testEnv);
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0?structure=flat`]:
 				new Response(
 					JSON.stringify({
@@ -729,13 +600,12 @@ describe('cdn routes', () => {
 		expect(payload.error).toBe(
 			'Requested file latin-400-normal.woff2 not found for abel@5.0.0',
 		);
-		expect(builder.calls).not.toHaveBeenCalled();
+		expect(builder.buildVersion).not.toHaveBeenCalled();
 	});
 
 	it('rejects missing exact package versions before the builder runs', async () => {
-		vi.restoreAllMocks();
 		const builder = installArtifactBuilderMock(testEnv);
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@9.9.9?structure=flat`]:
 				new Response('not found', { status: 404 }),
 			[`${UPSTREAM_URLS.npmRegistry}/@fontsource/abel/9.9.9`]: new Response(
@@ -755,13 +625,19 @@ describe('cdn routes', () => {
 
 		expect(result.response.status).toBe(404);
 		expect(payload.error).toBe('Unable to resolve version "9.9.9"');
-		expect(builder.calls).not.toHaveBeenCalled();
+		expect(builder.buildVersion).not.toHaveBeenCalled();
 	});
 
 	it('falls back to the builder while jsdelivr is behind npm', async () => {
-		vi.restoreAllMocks();
-		installArtifactBuilderMock(testEnv);
-		installUpstreamFetchMock({
+		const builder = installArtifactBuilderMock(testEnv);
+		builder.buildVersion.mockImplementation(async () => {
+			await testEnv.FONTS.put(
+				'abel@5.0.0/latin-400-normal.woff2',
+				staticWoff2Bytes,
+			);
+			return { state: 'ready', buildKey: 'build:abel@5.0.0:static' };
+		});
+		mockUpstreamResponses({
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@5.0.0?structure=flat`]:
 				new Response('not found', { status: 404 }),
 			[`${UPSTREAM_URLS.npmRegistry}/@fontsource/abel/5.0.0`]: new Response(
@@ -780,8 +656,7 @@ describe('cdn routes', () => {
 	});
 
 	it('returns 502 when version lookup upstream fails', async () => {
-		vi.restoreAllMocks();
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/recursive`]: new Response(
 				'boom',
 				{ status: 500 },

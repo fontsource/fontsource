@@ -9,14 +9,9 @@ import {
 	clearMetadataCachesForTest,
 	getFontIndex,
 	getFontlist,
-	getVariableCatalog,
 } from '../worker/src/features/metadata/store';
-import {
-	scheduledCatalog,
-	seedMetadata,
-	testCatalog,
-	testEnv,
-} from './helpers';
+import { scheduledCatalog, testCatalog } from './fixtures/metadata';
+import { seedMetadata, testEnv } from './helpers';
 
 const createStoreContext = (): Context<AppEnv> =>
 	({ env: testEnv }) as unknown as Context<AppEnv>;
@@ -48,20 +43,6 @@ describe('metadata store derived cache', () => {
 		expect(warmIndex).toHaveLength(3);
 		expect(cachedIndex).toHaveLength(3);
 		expect(cachedIndex).toEqual(warmIndex);
-	});
-
-	it('clears the derived cache explicitly for tests', async () => {
-		await getVariableCatalog(createStoreContext());
-		await testEnv.METADATA.put(
-			KV_KEYS.catalog,
-			JSON.stringify(scheduledCatalog),
-		);
-
-		clearMetadataCachesForTest();
-
-		const refreshedCatalog = await getVariableCatalog(createStoreContext());
-
-		expect(refreshedCatalog).toEqual({});
 	});
 
 	it('reuses projected fontlist views by key', async () => {

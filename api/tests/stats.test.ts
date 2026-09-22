@@ -14,12 +14,9 @@ import {
 	seedStatsPackages,
 } from '../worker/src/features/metadata/stats/repository';
 import worker from '../worker/src/index';
-import {
-	installUpstreamFetchMock,
-	setupWorkerTest,
-	testCatalog,
-	testEnv,
-} from './helpers';
+import { testCatalog } from './fixtures/metadata';
+import { setupWorkerTest, testEnv } from './helpers';
+import { mockUpstreamResponses } from './network';
 
 const processQueueMessage = async (packageName = '@fontsource/abel') => {
 	const batch = createMessageBatch<StatsQueueMessage>('fontsource-stats', [
@@ -42,8 +39,8 @@ describe('download stats ingestion', () => {
 		await setupWorkerTest();
 	});
 	afterEach(() => {
-		vi.useRealTimers();
 		vi.restoreAllMocks();
+		vi.useRealTimers();
 	});
 
 	it('seeds the complete package set from the daily cron', async () => {
@@ -193,7 +190,7 @@ describe('download stats ingestion', () => {
 	it('records upstream failures and retries the package message', async () => {
 		await seedStatsPackages(testEnv, testCatalog);
 		vi.spyOn(scheduler, 'wait').mockResolvedValue();
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			'https://api.npmjs.org/downloads/point/last-month/%40fontsource%2Fabel':
 				new Response('{}', { status: 500 }),
 		});
@@ -224,7 +221,7 @@ describe('download stats ingestion', () => {
 			)
 				.bind('@fontsource/abel')
 				.first<number>('active');
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			'https://registry.npmjs.org/%40fontsource%2Fabel': new Response('', {
 				status: 404,
 			}),
@@ -245,21 +242,19 @@ describe('download stats ingestion', () => {
 	it('paces npm requests and backs off rate limits in-process', async () => {
 		const wait = vi.spyOn(scheduler, 'wait').mockResolvedValue();
 		vi.spyOn(console, 'warn').mockImplementation(() => undefined);
-		vi.mocked(globalThis.fetch)
-			.mockResolvedValueOnce(new Response('', { status: 429 }))
-			.mockResolvedValueOnce(
-				new Response('', {
-					status: 429,
-					headers: { 'Retry-After': '7' },
-				}),
-			)
-			.mockResolvedValueOnce(
-				new Response(
-					JSON.stringify({
-						downloads: [{ day: '2026-07-12', downloads: 1 }],
-					}),
-				),
-			);
+		const responses = [
+			new Response('', { status: 429 }),
+			new Response('', { status: 429, headers: { 'Retry-After': '7' } }),
+			Response.json({ downloads: [{ day: '2026-07-12', downloads: 1 }] }),
+		];
+		mockUpstreamResponses({
+			'https://api.npmjs.org/downloads/range/2026-07-12:2026-07-12/%40fontsource%2Fabel':
+				() => {
+					const response = responses.shift();
+					if (!response) throw new Error('Unexpected retry');
+					return response;
+				},
+		});
 
 		await expect(
 			fetchNpmDownloads('@fontsource/abel', 2026, '2026-07-12', '2026-07-12'),
@@ -274,7 +269,7 @@ describe('download stats ingestion', () => {
 		vi.spyOn(scheduler, 'wait').mockResolvedValue();
 		const currentYearUrl =
 			'https://api.npmjs.org/downloads/range/2026-01-01:2026-07-12/%40fontsource%2Fabel';
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[currentYearUrl]: new Response('{}', { status: 500 }),
 		});
 
@@ -304,7 +299,7 @@ describe('download stats ingestion', () => {
 
 		const historicalYearUrl =
 			'https://api.npmjs.org/downloads/range/2025-01-01:2025-12-31/%40fontsource%2Fabel';
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[historicalYearUrl]: new Response('{}', { status: 500 }),
 		});
 		const secondResult = await processQueueMessage();
@@ -324,7 +319,7 @@ describe('download stats ingestion', () => {
 	});
 
 	it('rejects silently truncated npm ranges', async () => {
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			'https://api.npmjs.org/downloads/range/2026-01-01:2026-07-12/%40fontsource%2Fabel':
 				new Response(
 					JSON.stringify({

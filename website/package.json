@@ -11,11 +11,14 @@
 		"deploy": "wrangler deploy",
 		"dev": "react-router dev",
 		"start": "wrangler dev",
-		"test": "vitest run",
-		"test:coverage": "vitest run --coverage",
+		"test": "pnpm test:unit && pnpm test:browser",
+		"test:browser:install": "playwright install --with-deps chromium",
+		"test:browser": "vitest run --config vitest.browser.config.ts",
+		"test:coverage": "vitest run --coverage && vitest run --coverage --config vitest.browser.config.ts",
+		"test:unit": "vitest run",
 		"test:watch": "vitest",
-		"typegen": "wrangler types",
-		"typecheck": "react-router typegen && tsc"
+		"typecheck": "react-router typegen && tsc",
+		"typegen": "wrangler types"
 	},
 	"dependencies": {
 		"@algolia/requester-fetch": "^5.59.0",
@@ -65,14 +68,18 @@
 		"@types/react": "^19.3.0",
 		"@types/react-dom": "^19.3.0",
 		"@vitejs/plugin-react": "^6.1.1",
+		"@vitest/browser-playwright": "5.0.1",
 		"@vitest/coverage-v8": "5.0.1",
 		"babel-plugin-react-compiler": "^1.0.0",
 		"lightningcss": "^1.33.0",
+		"msw": "2.15.0",
+		"playwright": "1.63.0",
 		"remark-smartypants": "^3.0.3",
 		"terser": "^5.51.2",
 		"typescript": "catalog:",
 		"vite": "catalog:",
 		"vitest": "5.0.1",
+		"vitest-browser-react": "2.3.0",
 		"wrangler": "catalog:"
 	}
 }

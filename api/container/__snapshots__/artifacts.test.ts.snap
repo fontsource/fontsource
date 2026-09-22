@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`container artifact builder > assembles download entries from the correct built artifacts 1`] = `
+[
+  "LICENSE",
+  "static/familypack-latin-400-normal.ttf",
+  "static/familypack-latin-400-normal.woff",
+  "static/familypack-latin-400-normal.woff2",
+  "static/familypack-latin-700-normal.ttf",
+  "static/familypack-latin-700-normal.woff",
+  "static/familypack-latin-700-normal.woff2",
+  "static/familypack-latin-ext-400-normal.ttf",
+  "static/familypack-latin-ext-400-normal.woff",
+  "static/familypack-latin-ext-400-normal.woff2",
+  "static/familypack-latin-ext-700-normal.ttf",
+  "static/familypack-latin-ext-700-normal.woff",
+  "static/familypack-latin-ext-700-normal.woff2",
+]
+`;
+
+exports[`container artifact builder > filters download artifacts to files published for that version 1`] = `
+[
+  "LICENSE",
+  "static/familypack-latin-400-normal.ttf",
+  "static/familypack-latin-400-normal.woff",
+  "static/familypack-latin-400-normal.woff2",
+  "static/familypack-latin-700-normal.ttf",
+  "static/familypack-latin-700-normal.woff",
+  "static/familypack-latin-700-normal.woff2",
+]
+`;

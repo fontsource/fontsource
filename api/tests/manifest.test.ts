@@ -1,7 +1,11 @@
 import { expect, it } from 'vitest';
 import type { SourceFontMetadata, VariableAxes } from '../shared/catalog';
 import { resolveFontPackageManifest } from '../shared/font-package-manifest';
-import { staticMetadata, variableAxes, variableMetadata } from './helpers';
+import {
+	staticMetadata,
+	variableAxes,
+	variableMetadata,
+} from './fixtures/metadata';
 
 it('generates static manifest entries', () => {
 	expect(resolveFontPackageManifest(staticMetadata).static).toMatchSnapshot();

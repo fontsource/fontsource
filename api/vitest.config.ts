@@ -28,6 +28,11 @@ export default defineConfig({
 		target: 'webworker',
 	},
 	test: {
+		coverage: {
+			provider: 'istanbul',
+			reportsDirectory: './coverage/worker',
+			include: ['worker/src/**/*.ts', 'shared/**/*.ts'],
+		},
 		include: ['tests/**/*.test.ts'],
 	},
 });

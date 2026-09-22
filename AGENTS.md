@@ -51,11 +51,16 @@ Publish, deploy, release, upload, and version operations exist for CI and mainta
 
 ## Testing
 
-- Use Vitest patterns already present in the target package or worker.
-- Add or update tests for changed behavior, close to the changed package/worker/component.
-- Start with targeted tests; use broader root checks for cross-workspace changes.
-- API worker tests may use Miniflare or `@cloudflare/vitest-pool-workers`; follow the package's `vitest.config.ts`.
-- Snapshot tests are common for CSS, generated metadata, API responses, and fixtures. Do not update snapshots blindly; inspect whether the output change is intended.
+- Add permanent tests for plausible wrong outcomes that existing coverage would miss. Zero new tests is valid; prefer extending an existing scenario over duplicating its protection.
+- Prefer real functions, stores, local font/archive fixtures, and runtime bindings. Mock external, expensive, nondeterministic, or controlled-failure boundaries. Never reimplement production algorithms or state machines in test doubles.
+- Assert observable results. Assert calls, order, or counts only when they protect a meaningful protocol, cost, retry, or side-effect contract. Do not calculate expected results with the same production helper being tested.
+- Prefer small, readable snapshots for stable CSS, JSON, and artifact manifests. Review snapshot changes; normalize only genuinely unstable values. Keep explicit security, conditional-request, failure, and state-transition assertions.
+- Delete redundant tests and incidental implementation assertions while preserving distinct public API, persistence, security, compatibility, and failure protection. Do not add tests merely to raise coverage percentages.
+- Run Worker tests through `@cloudflare/vitest-plugin` with local KV/R2/D1 bindings; use Istanbul coverage. Run container tests in the Node configuration with V8 coverage. Keep Vitest and provider versions compatible with their runtime plugins.
+- Use browser tests for DOM interactions, focus, effects, and hydration. Static HTML assertions cannot prove those behaviors. Keep pure functions and server rendering in the Node suite.
+- Tests must run independently. Reset modified storage and network handlers between scenarios; Cloudflare storage isolation is per file. Prefer controlled promises over sleeps and polling loops.
+- Reuse small fixtures and setup helpers where actual consumers share the same contract. Keep fixture data independent of runtime setup; avoid a generic test framework or production seams introduced solely for tests.
+- Keep tests near the owning feature. Start with targeted checks; use broader root checks for cross-workspace changes. Coverage reports should include unimported owned source files and exclude generated code and test infrastructure.
 - If local validation cannot run, explain why and give the next-best command.
 
 ## Website

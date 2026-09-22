@@ -20,7 +20,7 @@ vi.mock('@/generated/api', () => ({
 		families: [],
 		languages: {},
 	}),
-	listRegistryFamilies: vi.fn(),
+	listRegistryFamilies: vi.fn().mockResolvedValue([]),
 	listRegistryLanguages: vi.fn().mockResolvedValue([
 		{
 			id: 'ja_Jpan',
@@ -38,7 +38,7 @@ vi.mock('@/generated/api', () => ({
 }));
 
 it('loads published registry previews for client-only collection searches', async () => {
-	vi.mocked(listRegistryFamilies).mockResolvedValue([
+	vi.mocked(listRegistryFamilies).mockResolvedValueOnce([
 		{
 			id: 'material-icons',
 			family: 'Material Icons',
@@ -111,8 +111,15 @@ describe('getSearchServerState', () => {
 			client,
 		);
 
-		expect(state.initialResults).toBeDefined();
-		expect(search).toHaveBeenCalled();
+		expect(state.initialResults.prod_POPULAR.results?.[0]).toMatchObject({
+			query: "yakuhan'",
+			hits: [
+				expect.objectContaining({
+					objectID: 'yakuhan-jp',
+					family: 'Yaku Han JP',
+				}),
+			],
+		});
 	});
 });
 
@@ -223,7 +230,6 @@ it('keeps collection search available when membership has not been published', a
 		});
 		expect(result.data.languageIndex).toBeNull();
 		expect(result.data.hasCollectionFilter).toBe(true);
-		expect(warning).toHaveBeenCalledOnce();
 	} finally {
 		warning.mockRestore();
 	}

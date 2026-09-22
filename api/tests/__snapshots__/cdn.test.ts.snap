@@ -24,10 +24,26 @@ exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = 
 }
 `;
 
+exports[`cdn routes > reports a failed asynchronous download build 1`] = `
+{
+  "body": {
+    "error": "Artifact build failed",
+    "status": 502,
+  },
+  "headers": {
+    "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
+    "contentType": "application/json",
+    "edgeCacheControl": "no-store",
+  },
+  "status": 502,
+}
+`;
+
 exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
 {
   "body": {
-    "error": "Bad Gateway. Artifact build failed for build:abel@5.0.0:static: Mocked builder failure for build:abel@5.0.0:static",
+    "error": "Artifact build failed",
     "status": 502,
   },
   "headers": {
