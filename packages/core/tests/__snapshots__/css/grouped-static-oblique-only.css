@@ -4,7 +4,7 @@
   font-style: oblique 12deg;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/oblique.woff2) format(woff2);
+  src: url('./files/oblique.woff2') format(woff2);
 }
 /* latin.css */
 @font-face {
@@ -12,7 +12,7 @@
   font-style: oblique 12deg;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/oblique.woff2) format(woff2);
+  src: url('./files/oblique.woff2') format(woff2);
 }
 /* latin-italic.css */
 @font-face {
@@ -20,7 +20,7 @@
   font-style: oblique 12deg;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/oblique.woff2) format(woff2);
+  src: url('./files/oblique.woff2') format(woff2);
 }
 /* index.css */
 @font-face {
@@ -28,5 +28,5 @@
   font-style: oblique 12deg;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/oblique.woff2) format(woff2);
+  src: url('./files/oblique.woff2') format(woff2);
 }

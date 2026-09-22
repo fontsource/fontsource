@@ -4,7 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/inter-latin-400-normal.woff2) format(woff2);
+  src: url('./files/inter-latin-400-normal.woff2') format(woff2);
   unicode-range: U+0000-00FF;
 }
 /* latin.css */
@@ -13,7 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/inter-latin-400-normal.woff2) format(woff2);
+  src: url('./files/inter-latin-400-normal.woff2') format(woff2);
   unicode-range: U+0000-00FF;
 }
 
@@ -22,7 +22,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/inter-latin-400-italic.woff2) format(woff2);
+  src: url('./files/inter-latin-400-italic.woff2') format(woff2);
   unicode-range: U+0000-00FF;
 }
 
@@ -31,7 +31,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src: url(./files/inter-latin-700-normal.woff2) format(woff2);
+  src: url('./files/inter-latin-700-normal.woff2') format(woff2);
   unicode-range: U+0000-00FF;
 }
 /* 400-italic.css */
@@ -40,7 +40,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/inter-latin-400-italic.woff2) format(woff2);
+  src: url('./files/inter-latin-400-italic.woff2') format(woff2);
   unicode-range: U+0000-00FF;
 }
 /* latin-italic.css */
@@ -49,7 +49,7 @@
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/inter-latin-400-italic.woff2) format(woff2);
+  src: url('./files/inter-latin-400-italic.woff2') format(woff2);
   unicode-range: U+0000-00FF;
 }
 /* 700.css */
@@ -58,7 +58,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src: url(./files/inter-latin-700-normal.woff2) format(woff2);
+  src: url('./files/inter-latin-700-normal.woff2') format(woff2);
   unicode-range: U+0000-00FF;
 }
 /* index.css */
@@ -67,6 +67,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/inter-latin-400-normal.woff2) format(woff2);
+  src: url('./files/inter-latin-400-normal.woff2') format(woff2);
   unicode-range: U+0000-00FF;
 }

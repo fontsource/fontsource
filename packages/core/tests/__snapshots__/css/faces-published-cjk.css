@@ -3,7 +3,7 @@
   font-style: normal;
   font-display: optional;
   font-weight: 100 900;
-  src: url(https://example.com/5.3.0/noto-sans-sc-4-wght-normal.woff2) format('woff2-variations');
+  src: url('https://example.com/5.3.0/noto-sans-sc-4-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+1F1E9-1F1F5;
 }
 
@@ -12,6 +12,6 @@
   font-style: normal;
   font-display: optional;
   font-weight: 100 900;
-  src: url(https://example.com/5.3.0/noto-sans-sc-5-wght-normal.woff2) format('woff2-variations');
+  src: url('https://example.com/5.3.0/noto-sans-sc-5-wght-normal.woff2') format('woff2-variations');
   unicode-range: U+FEE3,U+FEF3;
 }

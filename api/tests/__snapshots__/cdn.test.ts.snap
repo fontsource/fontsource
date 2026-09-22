@@ -7,7 +7,7 @@ exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = 
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2) format(woff2), url(https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff) format(woff);
+  src: url('https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2') format(woff2), url('https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff') format(woff);
   unicode-range: U+0000-00FF;
 }",
   "headers": {
@@ -28,12 +28,12 @@ exports[`cdn routes > public asset outputs > generates variable CSS output 1`] =
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/recursive:vf@5.0.0/latin-mono-normal.woff2) format('woff2-variations');
+  src: url('https://cdn.jsdelivr.net/fontsource/fonts/recursive:vf@5.0.0/latin-mono-normal.woff2') format('woff2-variations');
   unicode-range: U+0000-00FF;
 }"
 `;
 
-exports[`cdn routes > public asset outputs > serves minified CSS aliases 1`] = `"@font-face{font-family:'Family Pack';font-style:normal;font-display:swap;font-weight:400;src:url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-400-normal.woff2) format(woff2),url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-400-normal.woff) format(woff);unicode-range:U+0000-00FF;}@font-face{font-family:'Family Pack';font-style:normal;font-display:swap;font-weight:700;src:url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-700-normal.woff2) format(woff2),url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-700-normal.woff) format(woff);unicode-range:U+0000-00FF;}"`;
+exports[`cdn routes > public asset outputs > serves minified CSS aliases 1`] = `"@font-face{font-family:'Family Pack';font-style:normal;font-display:swap;font-weight:400;src:url('https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-400-normal.woff2') format(woff2),url('https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-400-normal.woff') format(woff);unicode-range:U+0000-00FF;}@font-face{font-family:'Family Pack';font-style:normal;font-display:swap;font-weight:700;src:url('https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-700-normal.woff2') format(woff2),url('https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-700-normal.woff') format(woff);unicode-range:U+0000-00FF;}"`;
 
 exports[`cdn routes > reports a failed asynchronous download build 1`] = `
 {

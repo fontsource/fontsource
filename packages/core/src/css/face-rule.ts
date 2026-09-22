@@ -1,3 +1,4 @@
+import cssesc from 'cssesc';
 import type { FontFace, FontSource } from '../types';
 
 /** Validated face data. The renderer escapes CSS syntax; callers own metadata validation. */
@@ -23,11 +24,6 @@ export type UrlResolver = (input: {
 	source: FontSource;
 }) => string;
 
-// CSS strings use hexadecimal escapes for control characters, quotes and backslashes.
-const quote = (value: string): string =>
-	// biome-ignore lint/suspicious/noControlCharactersInRegex: CSS strings must escape control characters.
-	`'${value.replace(/[\0-\x1f\x7f'\\]/g, (character) => `\\${character.charCodeAt(0).toString(16)} `)}'`;
-
 /** Render one face in the same canonical form for packages, CDN responses and previews. */
 export const renderFontFaceRule = (
 	face: CSSFontFace,
@@ -47,7 +43,7 @@ export const renderFontFaceRule = (
 	const space = minify ? '' : ' ';
 	const declarations = [
 		// Quoting preserves names containing punctuation, digits or CSS keywords.
-		`font-family:${space}${quote(family)};`,
+		`font-family:${space}${cssesc(family, { wrap: true })};`,
 		`font-style:${space}${face.style};`,
 		`font-display:${space}${display};`,
 		`font-weight:${space}${face.weight};`,
@@ -55,16 +51,14 @@ export const renderFontFaceRule = (
 	if (face.stretch) declarations.push(`font-stretch:${space}${face.stretch};`);
 
 	const sources = face.sources.map(({ url, format }) => {
-		// Published URLs are bare; custom URLs may contain spaces or delimiters.
-		const sourceUrl = /[\0-\x20\x7f"'()\\]/.test(url) ? quote(url) : url;
 		// Legacy hints such as 'woff2-variations' require string syntax.
 		const sourceFormat =
 			/^(woff2?|truetype|opentype|collection|embedded-opentype|svg)$/.test(
 				format,
 			)
 				? format
-				: quote(format);
-		return `url(${sourceUrl}) format(${sourceFormat})`;
+				: cssesc(format, { wrap: true });
+		return `url(${cssesc(url, { wrap: true })}) format(${sourceFormat})`;
 	});
 	declarations.push(`src:${space}${sources.join(`,${space}`)};`);
 	if (face.unicodeRange) {
