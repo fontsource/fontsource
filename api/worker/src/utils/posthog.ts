@@ -1,4 +1,5 @@
 import { PostHog } from 'posthog-node';
+import { logger } from '../../../shared/logger';
 
 // Public project token shared with the website.
 const projectToken = 'phc_uBg2yEfqQmKYBHvceqQ7BbXgBg6xnNV6Y7PCtVvN4k5H';
@@ -24,6 +25,9 @@ export async function captureApiError(
 			$process_person_profile: false,
 		});
 	} catch (captureError) {
-		console.error('Failed to report API error to PostHog', captureError);
+		logger.error(
+			{ err: captureError },
+			'Failed to report API error to PostHog',
+		);
 	}
 }

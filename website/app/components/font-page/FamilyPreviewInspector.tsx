@@ -509,7 +509,7 @@ const PreviewCapabilitiesStatus = observer(() => {
 	const activeSource = useValue(() => getActiveSource(model));
 	const capabilitiesBySource = useValue(model.state$.capabilitiesBySource);
 	if (!activeSource) return null;
-	const cached = Object.hasOwn(capabilitiesBySource, activeSource.sha256);
+	const cached = capabilitiesBySource[activeSource.sha256] !== undefined;
 	if (!cached) {
 		return (
 			<p className={classes.capabilitiesStatus} role="status">
@@ -545,7 +545,7 @@ const PreviewInspector = observer(
 		const activeSource = useValue(() => getActiveSource(model));
 		const capabilitiesBySource = useValue(model.state$.capabilitiesBySource);
 		const activeCapabilitiesCached = activeSource
-			? Object.hasOwn(capabilitiesBySource, activeSource.sha256)
+			? capabilitiesBySource[activeSource.sha256] !== undefined
 			: true;
 		const activeCapabilities = activeSource
 			? capabilitiesBySource[activeSource.sha256]

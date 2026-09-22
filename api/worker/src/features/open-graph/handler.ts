@@ -2,6 +2,7 @@ import type { Context } from 'hono';
 import wasmModule, { init as initWasm, Renderer } from 'takumi-js/wasm';
 import logoSvg from '../../../../../website/public/logo.svg?raw';
 import type { SourceFontMetadata } from '../../../../shared/catalog';
+import { logger } from '../../../../shared/logger';
 import {
 	type RegistryFamilyDetail,
 	RegistryFamilyDetailSchema,
@@ -135,12 +136,9 @@ export const getFontOpenGraphImage = async (
 			await loadPreviewFont(metadata, registry),
 		);
 	} catch (error) {
-		console.error(
-			JSON.stringify({
-				message: 'Falling back while rendering a font Open Graph image',
-				fontId: id,
-				error: error instanceof Error ? error.message : String(error),
-			}),
+		logger.error(
+			{ err: error, fontId: id },
+			'Falling back while rendering a font Open Graph image',
 		);
 		image = await renderImage(metadata, registry, undefined);
 	}

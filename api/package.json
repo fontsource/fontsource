@@ -29,6 +29,8 @@
 		"hono": "^4.13.8",
 		"limit-concur": "^4.0.0",
 		"modern-tar": "0.8.5",
+		"pino": "10.3.1",
+		"pino-std-serializers": "7.1.0",
 		"posthog-node": "5.52.4",
 		"takumi-js": "2.14.0",
 		"zod": "4.6.5"

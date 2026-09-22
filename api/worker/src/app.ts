@@ -3,6 +3,8 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { etag, RETAINED_304_HEADERS } from 'hono/etag';
 import { HTTPException } from 'hono/http-exception';
+import { logger } from '../../shared/logger';
+
 import { CACHE_POLICIES } from './constants';
 import type { AppEnv } from './env';
 import {
@@ -217,7 +219,7 @@ app.notFound((c) =>
 
 app.onError(async (error, c) => {
 	if (!(error instanceof HTTPException) || error.status >= 500) {
-		console.error(error);
+		logger.error({ err: error }, 'Request failed');
 		if (!c.req.raw.signal.aborted) {
 			c.executionCtx.waitUntil(
 				captureApiError(error, {

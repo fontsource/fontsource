@@ -37,16 +37,12 @@ const ProjectAddButton = ({
 		if (!toast) return;
 
 		if (feedback) {
-			if ('showPopover' in toast && !toast.matches(':popover-open')) {
-				toast.showPopover();
-			}
+			toast.showPopover?.();
 			const timeout = window.setTimeout(() => setFeedback(false), 6500);
 			return () => window.clearTimeout(timeout);
 		}
 
-		if ('hidePopover' in toast && toast.matches(':popover-open')) {
-			toast.hidePopover();
-		}
+		toast.hidePopover?.();
 	}, [feedback]);
 
 	const addItem = () => {

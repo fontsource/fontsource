@@ -1,62 +1,65 @@
 import { useEffect, useState } from 'react';
-import { preinit } from 'react-dom';
-import invariant from 'tiny-invariant';
+
+type StylesheetStatus = 'loading' | 'loaded' | 'failed';
+interface PreviewStylesheet {
+	link: HTMLLinkElement;
+	status: StylesheetStatus;
+}
+const stylesheets = new Map<string, PreviewStylesheet>();
+
+const loadStylesheet = (href: string) => {
+	let stylesheet = stylesheets.get(href);
+	if (!stylesheet) {
+		const link = document.createElement('link');
+		const resource: PreviewStylesheet = { link, status: 'loading' };
+		link.rel = 'stylesheet';
+		link.href = href;
+		// Cache the result independently of cards, including when all unmount.
+		link.onload = () => {
+			resource.status = 'loaded';
+		};
+		link.onerror = () => {
+			resource.status = 'failed';
+		};
+		stylesheets.set(href, resource);
+		// Native links avoid preinit's unhandled rejection on stylesheet errors.
+		document.head.appendChild(link);
+		stylesheet = resource;
+	}
+	return stylesheet;
+};
 
 export const usePreviewStylesheet = (
 	stylesheetHref: string,
 	enabled: boolean,
 ) => {
 	const [shouldLoadStylesheet, setShouldLoadStylesheet] = useState(enabled);
-	const [status, setStatus] = useState<'loading' | 'loaded' | 'failed'>(
-		'loading',
+	const [status, setStatus] = useState<StylesheetStatus>(
+		() => stylesheets.get(stylesheetHref)?.status ?? 'loading',
 	);
 
 	useEffect(() => {
 		// Keep loading enabled when a card leaves the viewport mid-request.
-		if (enabled) {
-			setShouldLoadStylesheet(true);
-		}
+		if (enabled) setShouldLoadStylesheet(true);
 	}, [enabled]);
 
 	useEffect(() => {
 		if (!shouldLoadStylesheet) return;
-		setStatus('loading');
+		const stylesheet = loadStylesheet(stylesheetHref);
+		setStatus(stylesheet.status);
+		if (stylesheet.status !== 'loading') return;
 
-		// React retains and deduplicates the stylesheet across virtualized cards.
-		preinit(stylesheetHref, { as: 'style', precedence: 'font-preview' });
-		const stylesheet = document.querySelector<HTMLLinkElement>(
-			`link[rel="stylesheet"][href="${CSS.escape(stylesheetHref)}"]`,
-		);
-		invariant(stylesheet, 'Missing preview stylesheet');
-		let active = true;
-		let timeoutId: number | undefined;
-		const finish = (nextStatus: 'loaded' | 'failed') => {
-			stylesheet.dataset.fontPreviewStatus = nextStatus;
+		const timeoutId = window.setTimeout(() => setStatus('failed'), 15_000);
+		const settled = () => {
 			window.clearTimeout(timeoutId);
-			stylesheet.removeEventListener('load', loaded);
-			stylesheet.removeEventListener('error', failed);
-			if (active) setStatus(nextStatus);
+			setStatus(stylesheet.status);
 		};
-		const loaded = () => finish('loaded');
-		const failed = () => finish('failed');
-		if (stylesheet.sheet || stylesheet.dataset.fontPreviewStatus === 'loaded') {
-			loaded();
-			return;
-		}
-		if (stylesheet.dataset.fontPreviewStatus === 'failed') {
-			failed();
-			return;
-		}
-		stylesheet.addEventListener('load', loaded);
-		stylesheet.addEventListener('error', failed);
-		timeoutId = window.setTimeout(() => {
-			// A slow stylesheet may still finish and recover without a reload.
-			if (active) setStatus('failed');
-		}, 15_000);
+		stylesheet.link.addEventListener('load', settled);
+		stylesheet.link.addEventListener('error', settled);
 		return () => {
-			// Retain the result across virtualized cards, even if this one unmounts.
-			active = false;
 			window.clearTimeout(timeoutId);
+			stylesheet.link.removeEventListener('load', settled);
+			stylesheet.link.removeEventListener('error', settled);
 		};
 	}, [shouldLoadStylesheet, stylesheetHref]);
 

@@ -50,8 +50,7 @@
 	color: light-dark(#01112c, #f5f7f9);
 	font-size: 14px;
 
-	&[data-open],
-	&:popover-open {
+	&[data-open] {
 		display: flex;
 	}
 
