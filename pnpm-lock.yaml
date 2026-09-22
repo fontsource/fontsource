@@ -49,6 +49,9 @@ catalogs:
       specifier: 24.13.5
       version: 24.13.5
 
+patchedDependencies:
+  '@glypht/core@0.0.9': 78a6a49e718359b57b08202ab97c59aeb61b2aa9e6d401333825e1280aaad436
+
 importers:
 
   .:
@@ -204,7 +207,7 @@ importers:
         version: 0.0.9
       '@glypht/core':
         specifier: ^0.0.9
-        version: 0.0.9
+        version: 0.0.9(patch_hash=78a6a49e718359b57b08202ab97c59aeb61b2aa9e6d401333825e1280aaad436)
     devDependencies:
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -6119,9 +6122,9 @@ snapshots:
 
   '@glypht/bundler-utils@0.0.9':
     dependencies:
-      '@glypht/core': 0.0.9
+      '@glypht/core': 0.0.9(patch_hash=78a6a49e718359b57b08202ab97c59aeb61b2aa9e6d401333825e1280aaad436)
 
-  '@glypht/core@0.0.9':
+  '@glypht/core@0.0.9(patch_hash=78a6a49e718359b57b08202ab97c59aeb61b2aa9e6d401333825e1280aaad436)':
     dependencies:
       '@glypht/web-worker': 1.7.1
       '@smol-range/decompress': 0.1.0

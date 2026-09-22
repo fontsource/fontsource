@@ -170,7 +170,7 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 									? {
 											...source,
 											error:
-												'We could not read this file as a font. Try another copy.',
+												'We could not read this font. Check your connection and try again. If it still fails, try another copy.',
 										}
 									: source,
 							),

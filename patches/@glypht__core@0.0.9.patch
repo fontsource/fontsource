@@ -1,0 +1,23 @@
+diff --git a/dist/compression.js b/dist/compression.js
+index 1c21dce740f26c247fc59a21a1b42789b19f0f17..197675fa842967735ac7b1ee20240f3ca76847c9 100644
+--- a/dist/compression.js
++++ b/dist/compression.js
+@@ -203,6 +203,9 @@ class WoffCompressionContext {
+             }
+             return new WorkerPool(workers);
+         })();
++        // Initialization may fail before any compression operation consumes it.
++        // Keep the original promise rejected so operations still receive the error.
++        void this.pool.catch(() => {});
+     }
+     /**
+      * @returns The resolved number of worker threads, e.g. for ETA or progress estimation.
+@@ -280,7 +283,7 @@ class WoffCompressionContext {
+      * processing work is finished.
+      */
+     destroy() {
+-        void this.pool.then(pool => pool.destroy());
++        void this.pool.then(pool => pool.destroy(), () => {});
+         this.destroyed = true;
+     }
+ }

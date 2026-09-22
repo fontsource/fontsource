@@ -38,3 +38,5 @@ injectWorkspacePackages: true
 strictPeerDependencies: true
 syncInjectedDepsAfterScripts:
   - build
+patchedDependencies:
+  '@glypht/core@0.0.9': patches/@glypht__core@0.0.9.patch
