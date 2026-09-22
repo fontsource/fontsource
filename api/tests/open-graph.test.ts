@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { logger } from '../shared/logger';
 import { KV_KEYS, UPSTREAM_URLS } from '../worker/src/constants';
 import {
 	dispatch,
@@ -146,7 +147,7 @@ describe('font Open Graph route', () => {
 		installUpstreamFetchMock({
 			[fontUrl]: new Response('missing', { status: 404 }),
 		});
-		vi.spyOn(console, 'error').mockImplementation(() => undefined);
+		vi.spyOn(logger, 'error').mockImplementation(() => undefined);
 
 		const result = await dispatch('https://fontsource.test/og/fonts/abel');
 		const bytes = new Uint8Array(await result.response.arrayBuffer());
@@ -177,7 +178,7 @@ describe('font Open Graph route', () => {
 			[fontUrl]: toResponse(staticWoff2Bytes),
 		});
 		const errorSpy = vi
-			.spyOn(console, 'error')
+			.spyOn(logger, 'error')
 			.mockImplementation(() => undefined);
 
 		const result = await dispatch(`https://fontsource.test/og/fonts/${id}`);

@@ -3,6 +3,9 @@ import { cloudflareTest, readD1Migrations } from '@cloudflare/vitest-plugin';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
+	resolve: {
+		alias: { pino: 'pino/browser.js' },
+	},
 	plugins: [
 		cloudflareTest(async () => ({
 			wrangler: {

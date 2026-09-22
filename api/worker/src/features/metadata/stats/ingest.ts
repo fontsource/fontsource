@@ -1,4 +1,5 @@
 import type { FontCatalog } from '../../../../../shared/catalog';
+import { logger } from '../../../../../shared/logger';
 import { KV_KEYS } from '../../../constants';
 import { refreshCatalog } from '../refresh';
 import {
@@ -160,7 +161,7 @@ export const consumeStatsQueue = async (
 ): Promise<void> => {
 	for (const message of batch.messages) {
 		if (!isStatsQueueMessage(message.body)) {
-			console.error('Discarding invalid stats queue message');
+			logger.error('Discarding invalid stats queue message');
 			message.ack();
 			continue;
 		}

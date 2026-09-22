@@ -3,6 +3,7 @@ import { packTar } from 'modern-tar';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { BuildVersionRequest } from '../shared/build';
 import { resolveFontPackageManifest } from '../shared/font-package-manifest';
+import { logger } from '../shared/logger';
 import { toResponseBody } from '../shared/response';
 import {
 	staticMetadata,
@@ -333,7 +334,7 @@ describe('container artifact builder', () => {
 
 	it('keeps the download available when an individual warm upload fails', async () => {
 		const { buildArtifacts } = await import('../container/src/artifacts');
-		const errorLog = vi.spyOn(console, 'error').mockImplementation(() => {});
+		const errorLog = vi.spyOn(logger, 'error').mockImplementation(() => {});
 		putObject
 			.mockResolvedValueOnce(undefined)
 			.mockRejectedValueOnce(new Error('artifact upload failed'));
@@ -350,8 +351,11 @@ describe('container artifact builder', () => {
 			putObject.mock.calls.some(([key]) => key === 'abel@1.0.0/download.zip'),
 		).toBe(true);
 		expect(errorLog).toHaveBeenCalledWith(
-			expect.stringContaining('failed to warm 1/'),
-			expect.arrayContaining([expect.any(Error)]),
+			expect.objectContaining({
+				failedCount: 1,
+				err: expect.any(AggregateError),
+			}),
+			'[artifacts] failed to warm individual artifacts',
 		);
 		errorLog.mockRestore();
 	});
