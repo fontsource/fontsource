@@ -115,7 +115,7 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 16px;
-	padding: 12px 20px;
+	padding: 12px var(--family-header-inset);
 	border-bottom: var(--preview-border);
 	background: var(--preview-surface);
 }
@@ -1126,7 +1126,6 @@
 	.specimenToolbar {
 		align-items: stretch;
 		flex-direction: column;
-		padding-inline: 16px;
 	}
 
 
@@ -1179,7 +1178,7 @@
 
 	.specimenToolbar {
 		gap: 10px;
-		padding: 10px;
+		padding-block: 10px;
 	}
 
 	.modeChooser {

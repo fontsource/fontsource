@@ -36,10 +36,10 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
 	ogMeta({
 		title: loaderData?.metadata.family
-			? `${loaderData.metadata.family} glyphs | Fontsource`
-			: 'Explore font glyphs | Fontsource',
+			? `${loaderData.metadata.family} Glyph Explorer | Fontsource`
+			: 'Font Glyph Explorer | Fontsource',
 		description: loaderData?.metadata.family
-			? `Browse, inspect, and copy mapped glyphs and symbols from ${loaderData.metadata.family}.`
+			? `Explore ${loaderData.metadata.family} glyphs, characters, and symbols. View Unicode values and copy individual characters with the interactive glyph viewer.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)

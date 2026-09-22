@@ -7,7 +7,7 @@ export const meta: MetaFunction = () => [
 	...ogMeta({
 		title: 'Webfont Optimizer — Subset Fonts & WOFF2 | Fontsource',
 		description:
-			'Subset TTF, OTF, WOFF, and WOFF2 fonts by character set or custom text, locally in your browser. Compare file sizes and download WOFF2 fonts with matching CSS.',
+			'Subset and compress TTF, OTF, WOFF, and WOFF2 fonts in your browser. Reduce font file size and download WOFF2 files with matching @font-face CSS.',
 	}),
 	{
 		'script:ld+json': {

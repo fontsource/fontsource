@@ -299,9 +299,9 @@ export const FamilyUse = ({
 				dangerouslySetInnerHTML={{ __html: previewCSS }}
 			/>
 			<div className={classes.heading}>
-				<h2 id="use-heading">Get {metadata.family}</h2>
+				<h2 id="use-heading">Download {metadata.family}</h2>
 				<p>
-					Download the full family for design tools, or add it to a website.
+					Download the font family for design apps, or add it to your website.
 				</p>
 			</div>
 			<Tabs
