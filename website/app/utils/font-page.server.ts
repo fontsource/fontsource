@@ -7,7 +7,6 @@ import {
 	getVariableFont,
 	listRegistryLanguages,
 } from '@/generated/api';
-import { selectRegistryFamilyLanguages } from '@/utils/registry';
 import {
 	loadOptionalRegistryData,
 	loadRequiredRegistryData,
@@ -49,7 +48,6 @@ const loadFontPageStats = async (id: string, signal: AbortSignal) => {
 };
 
 type FontPageBase = Awaited<ReturnType<typeof loadFontPageBase>>;
-type LanguageScope = 'family' | 'all';
 
 const loadFontPageCapabilities = async (
 	basePromise: Promise<FontPageBase>,
@@ -81,42 +79,25 @@ const loadFontPageCapabilities = async (
 	};
 };
 
-const loadFontPageLanguages = async (
-	basePromise: Promise<FontPageBase>,
-	signal: AbortSignal,
-	scope: LanguageScope = 'family',
-) => {
-	const [base, result] = await Promise.all([
-		basePromise,
-		loadRequiredRegistryData(
-			listRegistryLanguages({ signal }),
-			signal,
-			'Language data',
-		),
-	]);
-	return {
-		languages:
-			scope === 'all'
-				? result
-				: selectRegistryFamilyLanguages(base.registry, result),
-	};
-};
+const loadFontPageLanguages = (signal: AbortSignal) =>
+	loadRequiredRegistryData(
+		listRegistryLanguages({ signal }),
+		signal,
+		'Language data',
+	);
 
 const loadFontPageSymbols = async (
 	basePromise: Promise<FontPageBase>,
 	signal: AbortSignal,
 ) => {
 	const base = await basePromise;
-	if (!base.registry.symbols) {
-		return { symbols: undefined };
-	}
+	if (!base.registry.symbols) return undefined;
 
-	const result = await loadOptionalRegistryData(
+	return loadOptionalRegistryData(
 		getRegistryFamilySymbols({ id: base.metadata.id }, { signal }),
 		signal,
 		'Font symbol catalog',
 	);
-	return { symbols: result };
 };
 
 export {

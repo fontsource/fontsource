@@ -3,7 +3,6 @@ import type { GetFontResponse } from '@/generated/api';
 import {
 	getFontFamilyStack,
 	getFontPreviewCSS,
-	getPreferredPreviewSubset,
 	getPreviewLanguageTag,
 	getRegistrySourcePreviewCSS,
 	selectRegistryPreviewSource,
@@ -116,26 +115,6 @@ describe('getFontFamilyStack', () => {
 				},
 			}),
 		).toContain('"Noto Sans JP", sans-serif');
-	});
-});
-
-describe('getPreferredPreviewSubset', () => {
-	const metadata = {
-		defSubset: 'latin',
-		subsets: ['japanese', 'latin'],
-	} as GetFontResponse;
-
-	it('uses a distributed registry preview subset', () => {
-		expect(
-			getPreferredPreviewSubset(metadata, {
-				...registry,
-				previewSubset: 'japanese',
-			}),
-		).toBe('japanese');
-	});
-
-	it('falls back to the package default when no reviewed subset is available', () => {
-		expect(getPreferredPreviewSubset(metadata, registry)).toBe('latin');
 	});
 });
 

@@ -16,7 +16,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
-	const [base, capabilitiesResult, symbolsResult] = await Promise.all([
+	const [base, capabilitiesResult, symbols] = await Promise.all([
 		basePromise,
 		loadFontPageCapabilities(basePromise, request.signal),
 		loadFontPageSymbols(basePromise, request.signal),
@@ -25,7 +25,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
-			symbols: symbolsResult.symbols,
+			symbols,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
 		},

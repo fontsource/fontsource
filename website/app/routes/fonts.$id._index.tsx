@@ -20,10 +20,10 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
 	const options = { signal: request.signal };
-	const [base, languagesResult, axesResult, capabilitiesResult, symbolsResult] =
+	const [base, languages, axesResult, capabilitiesResult, symbols] =
 		await Promise.all([
 			basePromise,
-			loadFontPageLanguages(basePromise, request.signal, 'all'),
+			loadFontPageLanguages(request.signal),
 			loadRequiredRegistryData(
 				listRegistryAxes(options),
 				request.signal,
@@ -44,13 +44,13 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		{
 			...base,
 			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
-			languages: languagesResult.languages,
+			languages,
 			axisRegistry: Object.fromEntries(
 				Object.entries(axesResult).filter(([tag]) => axisTags.has(tag)),
 			),
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
-			symbolNames: symbolsResult.symbols?.map((symbol) => symbol.name),
+			symbolNames: symbols?.map((symbol) => symbol.name),
 		},
 		{ headers: cacheHeaders.short },
 	);

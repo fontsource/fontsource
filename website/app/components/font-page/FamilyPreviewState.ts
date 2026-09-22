@@ -8,10 +8,7 @@ import type {
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 import { getAxisLabel } from '@/utils/font-labels';
-import {
-	getPreferredPreviewSubset,
-	selectRegistryPreviewSource,
-} from '@/utils/font-preview';
+import { selectRegistryPreviewSource } from '@/utils/font-preview';
 import { getRecommendedPreviewText } from '@/utils/language/language';
 import {
 	type PreviewMode,
@@ -97,7 +94,6 @@ interface PreviewEditorProps {
 interface PreviewEditorModel
 	extends Omit<PreviewEditorProps, 'capabilitySource'> {
 	state$: PreviewEditorState;
-	previewSubset: string;
 	familyKind: ReturnType<typeof getRegistryFamilyKind>;
 	initialTypography: PreviewTypographyByMode;
 }
@@ -242,7 +238,6 @@ const createPreviewEditorSetup = ({
 	| 'capabilities'
 	| 'capabilitySource'
 >) => {
-	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const familyKind = getRegistryFamilyKind(registry);
 	const initialSourceAxes = getPreviewAxes(
 		capabilitySource,
@@ -332,7 +327,7 @@ const createPreviewEditorSetup = ({
 		),
 	};
 
-	return { editorValue, familyKind, initialTypography, previewSubset };
+	return { editorValue, familyKind, initialTypography };
 };
 
 const getActiveSource = (model: PreviewEditorModel) => {

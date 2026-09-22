@@ -104,14 +104,6 @@ export const selectRegistryPreviewSource = (
 	return sourceByHash.get(registry.previewSource);
 };
 
-export const getPreferredPreviewSubset = (
-	metadata: Omit<GetFontResponse, 'variants'>,
-	registry: RegistryFamily,
-) =>
-	registry.previewSubset && metadata.subsets.includes(registry.previewSubset)
-		? registry.previewSubset
-		: metadata.defSubset;
-
 export const getFontFamilyStack = (
 	metadata: FontPreviewIdentity,
 	variableAvailable = metadata.variable,

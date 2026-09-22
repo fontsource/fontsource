@@ -12,8 +12,6 @@ import { PreviewDrawer, PreviewInspector } from './FamilyPreviewInspector';
 import { PreviewCanvas, PreviewToolbar } from './FamilyPreviewSpecimen';
 import type { PreviewEditorProps } from './FamilyPreviewState';
 
-type FamilyPreviewProps = PreviewEditorProps;
-
 export const FamilyPreview = ({
 	metadata,
 	previewCSS,
@@ -24,7 +22,7 @@ export const FamilyPreview = ({
 	capabilities,
 	capabilitySource,
 	symbolNames,
-}: FamilyPreviewProps) => {
+}: PreviewEditorProps) => {
 	return (
 		<PreviewProvider
 			metadata={metadata}

@@ -249,7 +249,6 @@ const PreviewProvider = ({
 			axisRegistry,
 			capabilities,
 			symbolNames,
-			previewSubset: setup.previewSubset,
 			familyKind: setup.familyKind,
 			initialTypography: setup.initialTypography,
 		}),
