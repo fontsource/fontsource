@@ -11,6 +11,7 @@ import {
 	loadFontPageLanguages,
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
+import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
@@ -32,20 +33,30 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			loadFontPageSymbols(basePromise, request.signal),
 		]);
 
+	const axisTags = new Set([
+		...Object.keys(base.variable?.axes ?? {}),
+		...base.registry.sources.flatMap((source) =>
+			source.type === 'variable' ? source.axes.map((axis) => axis.tag) : [],
+		),
+	]);
+
 	return data(
 		{
 			...base,
+			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
 			languages: languagesResult.languages,
-			axisRegistry: axesResult,
+			axisRegistry: Object.fromEntries(
+				Object.entries(axesResult).filter(([tag]) => axisTags.has(tag)),
+			),
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
-			symbols: symbolsResult.symbols,
+			symbolNames: symbolsResult.symbols?.map((symbol) => symbol.name),
 		},
 		{ headers: cacheHeaders.short },
 	);
 };
 
-const generateDescription = (metadata: GetFontResponse) => {
+const generateDescription = (metadata: Omit<GetFontResponse, 'variants'>) => {
 	const { family, category, variable } = metadata;
 
 	const variableDesc = variable ? 'variable ' : '';
@@ -77,7 +88,7 @@ export default function Font() {
 		axisRegistry,
 		capabilities,
 		capabilitySource,
-		symbols,
+		symbolNames,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -97,7 +108,7 @@ export default function Font() {
 				axisRegistry={axisRegistry}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
-				symbols={symbols}
+				symbolNames={symbolNames}
 			/>
 		</FamilyPageShell>
 	);

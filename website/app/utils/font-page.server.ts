@@ -7,14 +7,13 @@ import {
 	getVariableFont,
 	listRegistryLanguages,
 } from '@/generated/api';
-import { getFontPreviewCSS } from '@/utils/font-preview';
 import { selectRegistryFamilyLanguages } from '@/utils/registry';
 import {
 	loadOptionalRegistryData,
 	loadRequiredRegistryData,
 } from '@/utils/registry-request.server';
 
-const loadFontFamilyRecord = async (id: string, signal: AbortSignal) => {
+const loadFontPageBase = async (id: string, signal: AbortSignal) => {
 	const parameters = { id };
 	const options = { signal };
 	const metadataPromise = getFont(parameters, options);
@@ -32,18 +31,11 @@ const loadFontFamilyRecord = async (id: string, signal: AbortSignal) => {
 		registryPromise,
 	]);
 
+	const { variants: _variants, ...pageMetadata } = metadata;
 	return {
-		metadata,
+		metadata: pageMetadata,
 		variable,
 		registry,
-	};
-};
-
-const loadFontPageBase = async (id: string, signal: AbortSignal) => {
-	const record = await loadFontFamilyRecord(id, signal);
-	return {
-		...record,
-		previewCSS: getFontPreviewCSS(record.metadata, record.variable),
 	};
 };
 

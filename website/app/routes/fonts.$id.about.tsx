@@ -12,6 +12,7 @@ import {
 	loadFontPageLanguages,
 	loadFontPageStats,
 } from '@/utils/font-page.server';
+import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
@@ -46,6 +47,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
+			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
 			languages: languagesResult.languages ?? [],
 			axisRegistry: axesResult,
 			taxonomy: taxonomyResult,

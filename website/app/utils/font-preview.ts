@@ -105,7 +105,7 @@ export const selectRegistryPreviewSource = (
 };
 
 export const getPreferredPreviewSubset = (
-	metadata: GetFontResponse,
+	metadata: Omit<GetFontResponse, 'variants'>,
 	registry: RegistryFamily,
 ) =>
 	registry.previewSubset && metadata.subsets.includes(registry.previewSubset)
@@ -139,7 +139,7 @@ export const getFontFamilyStack = (
 	return [`"${family}"`, ...quotedFallbacks].join(', ');
 };
 export const getFontPreviewCSS = (
-	metadata: GetFontResponse,
+	metadata: Omit<GetFontResponse, 'variants'>,
 	variable?: GetVariableFontResponse,
 ) => {
 	const unicodeRange = Object.fromEntries(

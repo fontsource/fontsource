@@ -23,7 +23,7 @@ export const FamilyPreview = ({
 	axisRegistry,
 	capabilities,
 	capabilitySource,
-	symbols,
+	symbolNames,
 }: FamilyPreviewProps) => {
 	return (
 		<PreviewProvider
@@ -35,7 +35,7 @@ export const FamilyPreview = ({
 			axisRegistry={axisRegistry}
 			capabilities={capabilities}
 			capabilitySource={capabilitySource}
-			symbols={symbols}
+			symbolNames={symbolNames}
 		>
 			<section className={classes.page}>
 				<PreviewFontStyle />

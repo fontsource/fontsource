@@ -2,7 +2,6 @@ import type { ObservableObject } from '@legendapp/state';
 
 import type {
 	GetFontResponse,
-	GetRegistryFamilySymbolsResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetVariableFontResponse,
 	ListRegistryAxesResponse,
@@ -84,7 +83,7 @@ interface PreviewEditorValue {
 type PreviewEditorState = ObservableObject<PreviewEditorValue>;
 
 interface PreviewEditorProps {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	previewCSS: string;
 	variable?: GetVariableFontResponse;
 	registry: RegistryFamily;
@@ -92,7 +91,7 @@ interface PreviewEditorProps {
 	axisRegistry?: ListRegistryAxesResponse;
 	capabilities: GetRegistrySourceCapabilitiesResponse;
 	capabilitySource: RegistrySource;
-	symbols?: GetRegistryFamilySymbolsResponse;
+	symbolNames?: string[];
 }
 
 interface PreviewEditorModel
