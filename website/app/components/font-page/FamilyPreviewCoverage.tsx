@@ -4,7 +4,11 @@ import { IconAlertTriangle } from '@tabler/icons-react';
 import { useMemo } from 'react';
 import { Link } from 'react-router';
 
-import { findUnmappedCharacters, usesNameLigatures } from '@/utils/registry';
+import {
+	createRegistryCodepointMatcher,
+	findUnmappedCharacters,
+	usesNameLigatures,
+} from '@/utils/registry';
 
 import classes from './FamilyPreview.module.css';
 import { usePreviewEditor } from './FamilyPreviewContext';
@@ -41,6 +45,20 @@ const PreviewCoverage = observer(() => {
 		[model.symbols],
 	);
 	const checksSymbolNames = usesNameLigatures(model.registry);
+	const supportsCodepoint = useMemo(
+		() =>
+			capabilities && !checksSymbolNames
+				? createRegistryCodepointMatcher(capabilities)
+				: undefined,
+		[capabilities, checksSymbolNames],
+	);
+	const unmapped = useMemo(
+		() =>
+			supportsCodepoint
+				? findUnmappedCharacters(text, capabilities, supportsCodepoint)
+				: [],
+		[capabilities, supportsCodepoint, text],
+	);
 
 	if (!text.trim()) return null;
 
@@ -59,8 +77,6 @@ const PreviewCoverage = observer(() => {
 			.map(truncateName)
 			.join(', ')}${unknownNames.length > visibleItemLimit ? ', …' : ''}.`;
 	} else {
-		if (!capabilities) return null;
-		const unmapped = findUnmappedCharacters(text, capabilities);
 		if (unmapped.length === 0) return null;
 
 		title = 'Some characters aren’t available';
