@@ -44,6 +44,6 @@ responses are excluded; Cloudflare logging and queue retries remain in place.
 
 Set `POSTHOG_API_KEY` in the API's Cloudflare build environment to upload source
 maps to PostHog during `pnpm build`, using the same personal API key permissions
-as the website build. Maps are removed after upload. `WORKERS_CI_COMMIT_SHA`
-(or `GITHUB_SHA`) identifies the release in captured errors. Local development
-and tests do not send errors.
+as the website build. The PostHog Vite plugin handles source maps and release
+metadata, then removes maps after upload. Local development and tests do not
+send errors.

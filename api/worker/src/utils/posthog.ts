@@ -19,14 +19,10 @@ export async function captureApiError(
 				disableGeoip: true,
 			},
 		);
-		posthog.on('error', (captureError) => {
-			console.error('Failed to report API error to PostHog', captureError);
-		});
 		await posthog.captureExceptionImmediate(error, undefined, {
 			...properties,
 			source: 'api-worker',
 			environment: import.meta.env.MODE,
-			release: import.meta.env.API_RELEASE,
 			$process_person_profile: false,
 		});
 	} catch (captureError) {

@@ -4,7 +4,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "pnpm --filter '@fontsource-utils/core' run build && vite build && node scripts/upload-sourcemaps.ts",
+		"build": "pnpm --filter '@fontsource-utils/core' run build && vite build",
 		"cf-typegen": "wrangler types",
 		"container:build": "tsx scripts/build-container.ts",
 		"container:start": "node container/dist/server.mjs",
@@ -37,7 +37,7 @@
 		"@cloudflare/vite-plugin": "catalog:",
 		"@cloudflare/vitest-plugin": "^1.1.12",
 		"@hey-api/openapi-ts": "0.99.0",
-		"@posthog/cli": "0.16.2",
+		"@posthog/rollup-plugin": "1.6.0",
 		"@types/node": "catalog:node24",
 		"@vitest/coverage-v8": "catalog:",
 		"esbuild": "catalog:",
