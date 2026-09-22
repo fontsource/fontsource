@@ -12,7 +12,7 @@
 		"dev": "react-router dev",
 		"start": "wrangler dev",
 		"test": "pnpm test:unit && pnpm test:browser",
-		"test:browser:install": "playwright install --with-deps chromium",
+		"test:browser:install": "playwright install --with-deps --only-shell chromium",
 		"test:browser": "vitest run --config vitest.browser.config.ts",
 		"test:coverage": "vitest run --coverage && vitest run --coverage --config vitest.browser.config.ts",
 		"test:unit": "vitest run",

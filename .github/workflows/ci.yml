@@ -121,7 +121,7 @@ jobs:
         run: pnpm --filter api typecheck
 
       - name: Test API
-        run: pnpm --filter api test:coverage
+        run: pnpm --filter api test
 
       - name: Build API
         run: pnpm --filter api build
@@ -161,7 +161,7 @@ jobs:
         run: pnpm --filter website test:browser:install
 
       - name: Test website
-        run: pnpm --filter website test:coverage
+        run: pnpm --filter website test
 
       - name: Build website
         run: pnpm --filter website build
