@@ -43,7 +43,13 @@ export const getFontSummary = (
 		return /[.!?]$/u.test(sentence) ? sentence : `${sentence}.`;
 	}
 
-	const fact = `${metadata.family} is a ${metadata.category.toLowerCase()} font`;
+	const kind =
+		metadata.category === 'icons'
+			? 'an icon'
+			: metadata.category === 'other'
+				? 'a'
+				: `a ${metadata.category}`;
+	const fact = `${metadata.family} is ${kind} font`;
 	const credit = designer?.trim();
 	return credit && `${fact} by ${credit}.`.length <= summaryLength
 		? `${fact} by ${credit}.`

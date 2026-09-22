@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { getFontSummary } from './font-summary.server';
 
-const metadata = { family: 'Example', category: 'sans-serif' };
+const metadata = { family: 'Example', category: 'sans-serif' } as const;
 
 describe('font search summaries', () => {
 	it('keeps readable text and abbreviations without Markdown or link URLs', () => {
