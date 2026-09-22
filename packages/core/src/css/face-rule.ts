@@ -1,4 +1,3 @@
-import cssesc from 'cssesc';
 import type { FontFace, FontSource } from '../types';
 
 /** Validated face data. The renderer escapes CSS syntax; callers own metadata validation. */
@@ -10,7 +9,10 @@ export interface CSSFontFace {
 	stretch?: string | null;
 	/** null deliberately omits the descriptor for an unrestricted face. */
 	unicodeRange: string | null;
-	sources: readonly { url: string; format: string }[];
+	sources: readonly {
+		url: string;
+		format: 'woff' | 'woff2' | 'truetype' | 'opentype' | 'woff2-variations';
+	}[];
 }
 
 export interface CSSOptions {
@@ -23,6 +25,15 @@ export type UrlResolver = (input: {
 	face: FontFace;
 	source: FontSource;
 }) => string;
+
+// Escape single-quoted CSS strings; metadata validation belongs to callers.
+const quote = (value: string): string =>
+	`'${value
+		.replaceAll('\\', '\\\\')
+		.replaceAll("'", "\\'")
+		.replaceAll('\n', '\\a ')
+		.replaceAll('\r', '\\d ')
+		.replaceAll('\f', '\\c ')}'`;
 
 /** Render one face in the same canonical form for packages, CDN responses and previews. */
 export const renderFontFaceRule = (
@@ -43,7 +54,7 @@ export const renderFontFaceRule = (
 	const space = minify ? '' : ' ';
 	const declarations = [
 		// Quoting preserves names containing punctuation, digits or CSS keywords.
-		`font-family:${space}${cssesc(family, { wrap: true })};`,
+		`font-family:${space}${quote(family)};`,
 		`font-style:${space}${face.style};`,
 		`font-display:${space}${display};`,
 		`font-weight:${space}${face.weight};`,
@@ -53,12 +64,8 @@ export const renderFontFaceRule = (
 	const sources = face.sources.map(({ url, format }) => {
 		// Legacy hints such as 'woff2-variations' require string syntax.
 		const sourceFormat =
-			/^(woff2?|truetype|opentype|collection|embedded-opentype|svg)$/.test(
-				format,
-			)
-				? format
-				: cssesc(format, { wrap: true });
-		return `url(${cssesc(url, { wrap: true })}) format(${sourceFormat})`;
+			format === 'woff2-variations' ? "'woff2-variations'" : format;
+		return `url(${quote(url)}) format(${sourceFormat})`;
 	});
 	declarations.push(`src:${space}${sources.join(`,${space}`)};`);
 	if (face.unicodeRange) {

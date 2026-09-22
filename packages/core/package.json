@@ -30,9 +30,7 @@
 		"@glypht/core": "^0.0.9"
 	},
 	"devDependencies": {
-		"@types/cssesc": "^3.0.2",
 		"@vitest/coverage-v8": "catalog:",
-		"cssesc": "^3.0.0",
 		"tsdown": "catalog:",
 		"typescript": "catalog:",
 		"vitest": "catalog:"

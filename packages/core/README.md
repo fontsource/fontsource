@@ -71,8 +71,8 @@ stretch, ordered `{ url, format }` sources, and an explicit `unicodeRange`
 CSS hints such as `woff2`, `woff2-variations`, `truetype`, or `opentype`.
 
 Rendering uses single-quoted family names and URLs, with bare standard format
-hints. Legacy variation hints remain quoted. CSS string escaping uses cssesc,
-bundled into the build without an additional runtime dependency.
+hints. Legacy variation hints remain quoted. Supported formats are enforced by
+TypeScript; a small local serializer escapes quotes, backslashes and line breaks.
 `{ minify: true }` produces compact CSS directly, including through `generateCSS`
 and the asset generators. The CLI bundles this pure entrypoint
 into its browser and CommonJS builds without loading font-processing modules.

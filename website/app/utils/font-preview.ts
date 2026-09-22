@@ -1,4 +1,5 @@
 import {
+	type CSSFontFace,
 	generateCSS,
 	renderFontFaceRule,
 	resolveFontFaces,
@@ -33,7 +34,7 @@ export const getRegistrySourcePreviewCSS = (
 	source: RegistrySource,
 	fontFamily = registrySourcePreviewFamily,
 ) => {
-	const files = [
+	const files: CSSFontFace['sources'][number][] = [
 		{
 			url: source.downloadUrl,
 			format: source.format === 'ttf' ? 'truetype' : 'opentype',
