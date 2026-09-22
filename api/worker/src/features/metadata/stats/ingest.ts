@@ -1,6 +1,7 @@
 import type { FontCatalog } from '../../../../../shared/catalog';
 import { logger } from '../../../../../shared/logger';
 import { KV_KEYS } from '../../../constants';
+import { captureApiError } from '../../../utils/posthog';
 import { refreshCatalog } from '../refresh';
 import {
 	fetchJsDelivrDownloads,
@@ -158,6 +159,7 @@ const isStatsQueueMessage = (value: unknown): value is StatsQueueMessage =>
 export const consumeStatsQueue = async (
 	batch: MessageBatch<StatsQueueMessage>,
 	env: Env,
+	ctx: ExecutionContext,
 ): Promise<void> => {
 	for (const message of batch.messages) {
 		if (!isStatsQueueMessage(message.body)) {
@@ -170,6 +172,13 @@ export const consumeStatsQueue = async (
 			await processStatsPackage(env, message.body.packageName);
 			message.ack();
 		} catch (error) {
+			ctx.waitUntil(
+				captureApiError(error, {
+					handler: 'queue',
+					queue: batch.queue,
+					packageName: message.body.packageName,
+				}),
+			);
 			const statsError =
 				error instanceof Error ? error : new Error(String(error));
 			await recordStatsFailure(

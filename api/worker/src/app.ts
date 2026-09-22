@@ -41,6 +41,7 @@ import {
 	ListRegistrySubsetsRoute,
 } from './routes/registry';
 import { DEFAULT_NOT_FOUND_MESSAGE, toErrorResponse } from './utils/errors';
+import { captureApiError } from './utils/posthog';
 
 const app = new Hono<AppEnv>();
 
@@ -219,6 +220,15 @@ app.notFound((c) =>
 app.onError(async (error, c) => {
 	if (!(error instanceof HTTPException) || error.status >= 500) {
 		logger.error({ err: error }, 'Request failed');
+		if (!c.req.raw.signal.aborted) {
+			c.executionCtx.waitUntil(
+				captureApiError(error, {
+					handler: 'fetch',
+					pathname: c.req.path,
+					method: c.req.method,
+				}),
+			);
+		}
 	}
 	return toErrorResponse(c, error);
 });

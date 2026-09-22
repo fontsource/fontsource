@@ -35,3 +35,9 @@ pnpm test
 pnpm typecheck
 pnpm build
 ```
+
+## Error tracking
+
+Production errors go to the website's PostHog project as `source: api-worker`.
+Set `POSTHOG_API_KEY` in the Cloudflare build environment to enable source-map
+uploads through the PostHog Vite plugin.
