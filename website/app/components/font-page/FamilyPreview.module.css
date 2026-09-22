@@ -35,6 +35,8 @@
 }
 
 .workbench {
+	--family-header-inset: 36px;
+
 	min-width: 0;
 	border: light-dark(
 		1px solid var(--mantine-color-border-0),
@@ -52,7 +54,7 @@
 	grid-template-columns: minmax(0, 1fr) auto;
 	align-items: end;
 	gap: 40px;
-	padding: 28px 36px;
+	padding: 28px var(--family-header-inset);
 	border-bottom: light-dark(
 		1px solid var(--mantine-color-border-0),
 		1px solid var(--mantine-color-border-1)
@@ -1106,6 +1108,10 @@
 }
 
 @media (--lt-md) {
+	.workbench {
+		--family-header-inset: 24px;
+	}
+
 	.page {
 		padding: 24px;
 	}
@@ -1114,7 +1120,7 @@
 		grid-template-columns: minmax(0, 1fr);
 		align-items: start;
 		gap: 18px;
-		padding: 24px;
+		padding-block: 24px;
 	}
 
 	.specimenToolbar {
@@ -1153,6 +1159,10 @@
 }
 
 @media (--lt-sm) {
+	.workbench {
+		--family-header-inset: 16px;
+	}
+
 	.page {
 		padding: 16px 12px 32px;
 	}
@@ -1160,7 +1170,7 @@
 	.identityPanel {
 		--family-title-size: clamp(2.2rem, 13vw, 3.5rem);
 
-		padding: 20px 16px;
+		padding-block: 20px;
 	}
 
 	.studio {
