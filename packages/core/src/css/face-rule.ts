@@ -57,9 +57,18 @@ export const renderFontFaceRule = (
 	];
 	if (face.stretch) declarations.push(`font-stretch:${space}${face.stretch};`);
 
-	const sources = face.sources.map(
-		({ url, format }) => `url(${quote(url)}) format(${quote(format)})`,
-	);
+	const sources = face.sources.map(({ url, format }) => {
+		// Published URLs are bare; custom URLs may contain spaces or delimiters.
+		const sourceUrl = /[\0-\x20\x7f"'()\\]/.test(url) ? quote(url) : url;
+		// Legacy hints such as 'woff2-variations' require string syntax.
+		const sourceFormat =
+			/^(woff2?|truetype|opentype|collection|embedded-opentype|svg)$/.test(
+				format,
+			)
+				? format
+				: quote(format);
+		return `url(${sourceUrl}) format(${sourceFormat})`;
+	});
 	declarations.push(`src:${space}${sources.join(`,${space}`)};`);
 	if (face.unicodeRange) {
 		declarations.push(`unicode-range:${space}${face.unicodeRange};`);

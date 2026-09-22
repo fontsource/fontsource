@@ -68,7 +68,8 @@ stretch, ordered `{ url, format }` sources, and an explicit `unicodeRange`
 `Variable` family suffix; an existing suffix is preserved. Source formats are
 CSS hints such as `woff2`, `woff2-variations`, `truetype`, or `opentype`.
 
-Rendering uses single-quoted, escaped CSS strings and emits no generated comments.
+Rendering uses single-quoted family names, bare URLs and standard format hints.
+URLs containing special characters and legacy variation hints remain quoted.
 `{ minify: true }` produces compact CSS directly, including through `generateCSS`
 and the asset generators. The CLI bundles this pure entrypoint
 into its browser and CommonJS builds without loading font-processing modules.

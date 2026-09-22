@@ -3,7 +3,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300 700;
-  src: url('./files/recursive-latin-wght-normal.woff2') format('woff2-variations');
+  src: url(./files/recursive-latin-wght-normal.woff2) format('woff2-variations');
   unicode-range: U+0000-00FF;
 }
 
@@ -12,7 +12,7 @@
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 700;
-  src: url('./files/recursive-latin-slnt-normal.woff2') format('woff2-variations');
+  src: url(./files/recursive-latin-slnt-normal.woff2) format('woff2-variations');
   unicode-range: U+0000-00FF;
 }
 
@@ -21,6 +21,6 @@
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 700;
-  src: url('./files/recursive-latin-standard-normal.woff2') format('woff2-variations');
+  src: url(./files/recursive-latin-standard-normal.woff2) format('woff2-variations');
   unicode-range: U+0000-00FF;
 }
