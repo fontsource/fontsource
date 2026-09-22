@@ -289,15 +289,6 @@ const createPreviewEditorSetup = ({
 		},
 	};
 	const verifiedLanguages = getVerifiedLanguages(languages, capabilities);
-	const initialCapabilitySource =
-		capabilitySource ??
-		selectRegistryPreviewSource(registry, {
-			variableAvailable: Boolean(variable),
-			style: 'normal',
-			weight: initialWeight,
-		});
-	const capabilitiesKey =
-		initialCapabilitySource?.sha256 ?? defaultCapabilitiesKey;
 	const editorValue: PreviewEditorValue = {
 		mode: 'headline',
 		customText: null,
@@ -307,13 +298,10 @@ const createPreviewEditorSetup = ({
 		featureQuery: '',
 		inspectorOpened: false,
 		inspectorSection: 'typography',
-		capabilitiesBySource:
-			initialCapabilitySource && capabilities
-				? { [initialCapabilitySource.sha256]: capabilities }
-				: {},
-		verifiedLanguagesBySource: capabilities
-			? { [capabilitiesKey]: verifiedLanguages }
-			: {},
+		capabilitiesBySource: { [capabilitySource.sha256]: capabilities },
+		verifiedLanguagesBySource: {
+			[capabilitySource.sha256]: verifiedLanguages,
+		},
 		axisValues: Object.fromEntries(
 			initialSourceAxes
 				.filter((axis) => axis.tag !== 'wght' && axis.tag !== 'ital')

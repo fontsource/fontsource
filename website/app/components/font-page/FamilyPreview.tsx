@@ -12,29 +12,10 @@ import { PreviewDrawer, PreviewInspector } from './FamilyPreviewInspector';
 import { PreviewCanvas, PreviewToolbar } from './FamilyPreviewSpecimen';
 import type { PreviewEditorProps } from './FamilyPreviewState';
 
-export const FamilyPreview = ({
-	metadata,
-	previewCSS,
-	variable,
-	registry,
-	languages,
-	axisRegistry,
-	capabilities,
-	capabilitySource,
-	symbolNames,
-}: PreviewEditorProps) => {
+export const FamilyPreview = (props: PreviewEditorProps) => {
+	const { metadata, variable, registry } = props;
 	return (
-		<PreviewProvider
-			metadata={metadata}
-			previewCSS={previewCSS}
-			variable={variable}
-			registry={registry}
-			languages={languages}
-			axisRegistry={axisRegistry}
-			capabilities={capabilities}
-			capabilitySource={capabilitySource}
-			symbolNames={symbolNames}
-		>
+		<PreviewProvider {...props}>
 			<section className={classes.page}>
 				<PreviewFontStyle />
 				<div className={classes.workbench}>
