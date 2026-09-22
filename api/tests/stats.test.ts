@@ -6,7 +6,6 @@ import {
 } from 'cloudflare:test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import legacyFontIds from '../shared/legacy-fonts.json';
-import { logger } from '../shared/logger';
 import { STATS_CRON } from '../worker/src/constants';
 import type { StatsQueueMessage } from '../worker/src/features/metadata/stats/ingest';
 import { fetchNpmDownloads } from '../worker/src/features/metadata/stats/providers';
@@ -245,7 +244,7 @@ describe('download stats ingestion', () => {
 
 	it('paces npm requests and backs off rate limits in-process', async () => {
 		const wait = vi.spyOn(scheduler, 'wait').mockResolvedValue();
-		vi.spyOn(logger, 'warn').mockImplementation(() => undefined);
+		vi.spyOn(console, 'warn').mockImplementation(() => undefined);
 		vi.mocked(globalThis.fetch)
 			.mockResolvedValueOnce(new Response('', { status: 429 }))
 			.mockResolvedValueOnce(

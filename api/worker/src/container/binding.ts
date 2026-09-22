@@ -46,7 +46,7 @@ export class ArtifactBuilder extends Container<Env> {
 	private failedBuild?: BuildVersionFailure;
 
 	override onStop({ exitCode, reason }: StopParams): void {
-		logger.info({ exitCode, reason }, '[container] stopped');
+		console.log('[container] stopped', { exitCode, reason });
 	}
 
 	override async onActivityExpired(): Promise<void> {

@@ -75,9 +75,8 @@ const buildStaticArtifacts = async (
 		filename.endsWith('.woff2'),
 	);
 
-	logger.info(
-		{ copy: copyPlan.length, convert: convertPlan.length },
-		'[artifacts] static build plan',
+	console.log(
+		`[artifacts] static build plan: copy=${copyPlan.length}, convert=${convertPlan.length}`,
 	);
 
 	const copied = copyPlan.map(([filename, bytes]) =>
@@ -129,7 +128,7 @@ const buildVariableArtifacts = (
 	const sources = [...packageFiles].filter(([filename]) =>
 		filename.endsWith('.woff2'),
 	);
-	logger.info({ files: sources.length }, '[artifacts] variable build plan');
+	console.log(`[artifacts] variable build plan: files=${sources.length}`);
 
 	return sources.map(([filename, bytes]) =>
 		createArtifact(
@@ -194,14 +193,8 @@ const buildPackageArtifacts = async (
 
 	await Promise.all(uploadArtifacts(built));
 
-	logger.info(
-		{
-			artifactCount: built.length,
-			mode: request.mode,
-			fontId: request.tag.id,
-			version: request.tag.version,
-		},
-		'[artifacts] built package artifacts',
+	console.log(
+		`[artifacts] built ${built.length} ${request.mode} package artifacts for ${request.tag.id}@${request.tag.version}`,
 	);
 
 	return built.length;

@@ -1,5 +1,4 @@
 import { AwsClient } from 'aws4fetch';
-import { logger } from '../../shared/logger';
 
 const requireEnv = (key: string): string => {
 	const value = process.env[key];
@@ -66,5 +65,5 @@ export const putObject = async (
 		);
 	}
 
-	logger.info({ key, bytes: body.byteLength }, '[r2] PUT');
+	console.log(`[r2] PUT ${key} (${body.byteLength} bytes)`);
 };

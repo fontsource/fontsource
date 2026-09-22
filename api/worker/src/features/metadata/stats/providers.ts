@@ -1,4 +1,3 @@
-import { logger } from '../../../../../shared/logger';
 import { UPSTREAM_URLS } from '../../../constants';
 
 const NPM_STATS_START_DAY = '2015-01-10';
@@ -65,7 +64,7 @@ const fetchJson = async (
 
 		const delayMs =
 			retryAfterMs(response.headers.get('Retry-After')) ?? retryDelay;
-		logger.warn({
+		console.warn({
 			event: 'stats_upstream_retry',
 			provider: 'npm',
 			status: response.status,

@@ -48,16 +48,12 @@ export const createContainerApp = (
 
 			const buildKey = getBuildKey(payload);
 			const startedAt = Date.now();
-			logger.info(
-				{ mode: payload.mode, buildKey },
-				'[container] starting build',
-			);
+			console.log(`[container] starting ${payload.mode} build ${buildKey}`);
 			const artifactCount = await buildArtifacts(payload);
 			const durationMs = Date.now() - startedAt;
 
-			logger.info(
-				{ mode: payload.mode, buildKey, artifactCount, durationMs },
-				'[container] finished build',
+			console.log(
+				`[container] finished ${payload.mode} build ${buildKey} - ${artifactCount} artifacts in ${durationMs}ms`,
 			);
 
 			return c.json({ state: 'ready', buildKey });
@@ -80,9 +76,8 @@ export const createContainerApp = (
 
 	app.notFound((c) => {
 		const url = new URL(c.req.url);
-		logger.warn(
-			{ method: c.req.method, pathname: url.pathname },
-			'[container] unmatched request',
+		console.warn(
+			`[container] unmatched request ${c.req.method} ${url.pathname}${url.search}`,
 		);
 		return c.json({ status: 404, error: 'Not Found.' }, 404);
 	});
@@ -92,6 +87,6 @@ export const createContainerApp = (
 
 if (import.meta.main) {
 	serve({ fetch: createContainerApp().fetch, port: PORT }, () => {
-		logger.info({ port: PORT }, '[container] listening');
+		console.log(`[container] listening on port ${PORT}`);
 	});
 }
