@@ -11,6 +11,7 @@ import {
 	loadFontPageLanguages,
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
+import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontSummary } from '@/utils/font-summary.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import { getRegistryContent } from '@/utils/registry';
@@ -21,10 +22,10 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
 	const options = { signal: request.signal };
-	const [base, languagesResult, axesResult, capabilitiesResult, symbolsResult] =
+	const [base, languages, axesResult, capabilitiesResult, symbols] =
 		await Promise.all([
 			basePromise,
-			loadFontPageLanguages(basePromise, request.signal, 'all'),
+			loadFontPageLanguages(request.signal),
 			loadRequiredRegistryData(
 				listRegistryAxes(options),
 				request.signal,
@@ -34,19 +35,29 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			loadFontPageSymbols(basePromise, request.signal),
 		]);
 
+	const axisTags = new Set([
+		...Object.keys(base.variable?.axes ?? {}),
+		...base.registry.sources.flatMap((source) =>
+			source.type === 'variable' ? source.axes.map((axis) => axis.tag) : [],
+		),
+	]);
+
 	return data(
 		{
 			...base,
+			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
 			fontSummary: getFontSummary(
 				base.metadata,
 				getRegistryContent(base.registry)?.description,
 				base.registry.designer,
 			),
-			languages: languagesResult.languages,
-			axisRegistry: axesResult,
+			languages,
+			axisRegistry: Object.fromEntries(
+				Object.entries(axesResult).filter(([tag]) => axisTags.has(tag)),
+			),
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
-			symbols: symbolsResult.symbols,
+			symbolNames: symbols?.map((symbol) => symbol.name),
 		},
 		{ headers: cacheHeaders.short },
 	);
@@ -76,7 +87,7 @@ export default function Font() {
 		axisRegistry,
 		capabilities,
 		capabilitySource,
-		symbols,
+		symbolNames,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -96,7 +107,7 @@ export default function Font() {
 				axisRegistry={axisRegistry}
 				capabilities={capabilities}
 				capabilitySource={capabilitySource}
-				symbols={symbols}
+				symbolNames={symbolNames}
 			/>
 		</FamilyPageShell>
 	);

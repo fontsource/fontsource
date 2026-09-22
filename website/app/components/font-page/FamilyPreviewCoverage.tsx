@@ -41,8 +41,8 @@ const PreviewCoverage = observer(() => {
 	const capabilities = useValue(() => getActiveCapabilities(model));
 	const [text] = useDebouncedValue(activeText, 300);
 	const catalogNames = useMemo(
-		() => new Set(model.symbols?.map((symbol) => symbol.name) ?? []),
-		[model.symbols],
+		() => new Set(model.symbolNames ?? []),
+		[model.symbolNames],
 	);
 	const checksSymbolNames = usesNameLigatures(model.registry);
 	const supportsCodepoint = useMemo(
