@@ -1,4 +1,12 @@
 .wrapper {
+	min-height: calc(9.375rem * var(--mantine-scale));
+
+	@media (--gt-sm) {
+		&[data-layout='grid'] {
+			min-height: calc(20.75rem * var(--mantine-scale));
+		}
+	}
+
 	position: relative;
 	width: 100%;
 	overflow-wrap: anywhere;

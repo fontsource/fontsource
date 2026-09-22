@@ -39,8 +39,7 @@ export const FileUpload = forwardRef<HTMLDivElement, FileUploadProps>(
 					justify={compact ? 'flex-start' : 'center'}
 					gap={compact ? 'sm' : 'xl'}
 					wrap={compact ? 'nowrap' : 'wrap'}
-					mih={compact ? 48 : { base: 160, sm: 220 }}
-					style={{ pointerEvents: 'none' }}
+					className={classes.content}
 				>
 					<Dropzone.Accept>
 						<IconUpload

@@ -31,7 +31,6 @@ import '@mantine/core/styles/ColorPicker.css';
 import '@mantine/core/styles/Center.css';
 import '@mantine/core/styles/Container.css';
 import '@mantine/core/styles/Grid.css';
-import '@mantine/core/styles/SimpleGrid.css';
 import '@mantine/core/styles/Stack.css';
 
 // Inputs
