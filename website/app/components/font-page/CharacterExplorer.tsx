@@ -413,13 +413,12 @@ export const CharacterExplorer = ({
 		...sourcePreviewStyle,
 	};
 	const heading = catalogExpected ? 'Symbol Explorer' : 'Glyph Explorer';
-	const description = catalogExpected
-		? hasCatalogEntries && hasNamedLigatures
-			? `Search symbols in ${metadata.family} by name, view their Unicode values, and copy their names.`
-			: hasCatalogEntries
-				? `Search the symbols in ${metadata.family}, view their Unicode values, and copy individual characters.`
-				: `Browse the characters in ${metadata.family}, view their Unicode values, and copy individual characters.`
-		: `Browse the characters in ${metadata.family}, view their Unicode values, and copy individual characters.`;
+	const description =
+		catalogExpected && hasCatalogEntries
+			? hasNamedLigatures
+				? `Search symbols in ${metadata.family} by name, view their Unicode values, and copy their names.`
+				: `Search the symbols in ${metadata.family}, view their Unicode values, and copy individual characters.`
+			: `Browse the characters in ${metadata.family}, view their Unicode values, and copy individual characters.`;
 	const searchPlaceholder =
 		hasCatalogEntries && hasNamedLigatures
 			? 'Search symbols by name or code point'

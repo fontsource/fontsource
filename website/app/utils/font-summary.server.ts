@@ -33,11 +33,8 @@ export const getFontSummary = (
 	const text = paragraph
 		? paragraphText(paragraph.children).replace(/\s+/gu, ' ').trim()
 		: '';
-	const sentence = sentences
-		.segment(text)
-		[Symbol.iterator]()
-		.next()
-		.value?.segment.trim();
+	const [firstSentence] = sentences.segment(text);
+	const sentence = firstSentence?.segment.trim();
 	// Keep complete sentences; long upstream stories fall back to structured facts.
 	if (sentence && sentence.length <= summaryLength) {
 		return /[.!?]$/u.test(sentence) ? sentence : `${sentence}.`;
