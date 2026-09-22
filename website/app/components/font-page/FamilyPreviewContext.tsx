@@ -51,7 +51,7 @@ const PreviewRuntimeEffects = observer(() => {
 	const mode = useValue(model.state$.mode);
 	const weight = useValue(model.state$.typographyByMode[mode].weight);
 	const hasCachedCapabilities = activeSource
-		? Object.hasOwn(capabilitiesBySource, activeSource.sha256)
+		? capabilitiesBySource[activeSource.sha256] !== undefined
 		: false;
 
 	useIsomorphicEffect(() => {
