@@ -46,7 +46,6 @@ export const FamilyPreview = ({
 								metadata={metadata}
 								registry={registry}
 								variableAvailable={Boolean(variable)}
-								compact
 							/>
 							<Link
 								className={classes.licenseSignal}
@@ -55,7 +54,7 @@ export const FamilyPreview = ({
 								{`${registry.license.id} license`}
 							</Link>
 						</div>
-						<FamilyActions metadata={metadata} registry={registry} compact />
+						<FamilyActions metadata={metadata} registry={registry} />
 					</div>
 
 					<FamilyTabs metadata={metadata} registry={registry} contained />
