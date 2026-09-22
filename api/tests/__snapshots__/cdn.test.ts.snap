@@ -35,10 +35,26 @@ exports[`cdn routes > public asset outputs > generates variable CSS output 1`] =
 
 exports[`cdn routes > public asset outputs > serves minified CSS aliases 1`] = `"@font-face{font-family:'Family Pack';font-style:normal;font-display:swap;font-weight:400;src:url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-400-normal.woff2) format(woff2),url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-400-normal.woff) format(woff);unicode-range:U+0000-00FF;}@font-face{font-family:'Family Pack';font-style:normal;font-display:swap;font-weight:700;src:url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-700-normal.woff2) format(woff2),url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-700-normal.woff) format(woff);unicode-range:U+0000-00FF;}"`;
 
+exports[`cdn routes > reports a failed asynchronous download build 1`] = `
+{
+  "body": {
+    "error": "Artifact build failed",
+    "status": 502,
+  },
+  "headers": {
+    "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
+    "contentType": "application/json",
+    "edgeCacheControl": "no-store",
+  },
+  "status": 502,
+}
+`;
+
 exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
 {
   "body": {
-    "error": "Bad Gateway. Artifact build failed for build:abel@5.0.0:static: Mocked builder failure for build:abel@5.0.0:static",
+    "error": "Artifact build failed",
     "status": 502,
   },
   "headers": {

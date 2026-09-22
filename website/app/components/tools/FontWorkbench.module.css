@@ -106,6 +106,16 @@
 	padding-top: var(--mantine-spacing-md);
 }
 
+.outputSettings {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: var(--mantine-spacing-md);
+
+	@media (--gt-sm) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
 .pathPreview {
 	font-size: inherit;
 }

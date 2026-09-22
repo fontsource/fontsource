@@ -16,7 +16,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
-	const [base, capabilitiesResult, symbolsResult] = await Promise.all([
+	const [base, capabilitiesResult, symbols] = await Promise.all([
 		basePromise,
 		loadFontPageCapabilities(basePromise, request.signal),
 		loadFontPageSymbols(basePromise, request.signal),
@@ -25,7 +25,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
-			symbols: symbolsResult.symbols,
+			symbols,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
 		},
@@ -36,10 +36,10 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
 	ogMeta({
 		title: loaderData?.metadata.family
-			? `${loaderData.metadata.family} glyphs | Fontsource`
-			: 'Explore font glyphs | Fontsource',
+			? `${loaderData.metadata.family} Glyph Explorer | Fontsource`
+			: 'Font Glyph Explorer | Fontsource',
 		description: loaderData?.metadata.family
-			? `Browse, inspect, and copy mapped glyphs and symbols from ${loaderData.metadata.family}.`
+			? `Explore ${loaderData.metadata.family} glyphs, characters, and symbols. View Unicode values and copy individual characters with the interactive glyph viewer.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)

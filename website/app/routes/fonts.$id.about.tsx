@@ -12,7 +12,13 @@ import {
 	loadFontPageLanguages,
 	loadFontPageStats,
 } from '@/utils/font-page.server';
+import { getFontPreviewCSS } from '@/utils/font-preview';
+import { getFontSummary } from '@/utils/font-summary.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
+import {
+	getRegistryContent,
+	selectRegistryFamilyLanguages,
+} from '@/utils/registry';
 import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -22,14 +28,14 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const options = { signal: request.signal };
 	const [
 		base,
-		languagesResult,
+		languages,
 		axesResult,
 		taxonomyResult,
 		capabilitiesResult,
 		stats,
 	] = await Promise.all([
 		basePromise,
-		loadFontPageLanguages(basePromise, request.signal),
+		loadFontPageLanguages(request.signal),
 		loadRequiredRegistryData(
 			listRegistryAxes(options),
 			request.signal,
@@ -46,7 +52,13 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
-			languages: languagesResult.languages ?? [],
+			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
+			fontSummary: getFontSummary(
+				base.metadata,
+				getRegistryContent(base.registry)?.description,
+				base.registry.designer,
+			),
+			languages: selectRegistryFamilyLanguages(base.registry, languages),
 			axisRegistry: axesResult,
 			taxonomy: taxonomyResult,
 			capabilities: capabilitiesResult.capabilities,
@@ -59,10 +71,10 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
 	ogMeta({
 		title: loaderData?.metadata.family
-			? `About ${loaderData.metadata.family} | Fontsource`
-			: 'About this font | Fontsource',
+			? `${loaderData.metadata.family} — Font Details & License | Fontsource`
+			: 'About This Font | Fontsource',
 		description: loaderData?.metadata.family
-			? `Learn about ${loaderData.metadata.family}, its source, license, styles, and capabilities.`
+			? `${loaderData.fontSummary} Explore its design, language support, and license.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)

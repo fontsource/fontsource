@@ -25,7 +25,7 @@ const fallbackFamilies: Record<GetFontResponse['category'], string> = {
 };
 
 interface FamilyUseCSSOptions {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	variable?: GetVariableFontResponse;
 	isVariable: boolean;
 	styles: GetFontResponse['styles'];
@@ -110,7 +110,7 @@ const buildFamilyUseCSS = ({
 };
 
 const buildFamilyUsageCSS = (
-	metadata: GetFontResponse,
+	metadata: Omit<GetFontResponse, 'variants'>,
 	isVariable: boolean,
 	weight: number,
 	style: GetFontResponse['styles'][number],

@@ -3,6 +3,7 @@ import { Hono } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import { type BuildVersionRequest, getBuildKey } from '../shared/build';
+import { logger } from '../shared/logger';
 import { UpstreamNotFoundError } from '../shared/upstream';
 
 const PORT = 3000;
@@ -57,10 +58,9 @@ export const createContainerApp = (
 
 			return c.json({ state: 'ready', buildKey });
 		} catch (error) {
-			console.error(
+			logger.error(
+				{ err: error, buildKey: payload ? getBuildKey(payload) : undefined },
 				'[container] build failed',
-				payload ? getBuildKey(payload) : '(no payload)',
-				error,
 			);
 
 			return c.json(

@@ -1,15 +1,8 @@
-import { resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 
 import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 
 import { buildFamilyUsageCSS, buildFamilyUseCSS } from './family-use-css';
-
-const snapshotDir = resolve(
-	fileURLToPath(import.meta.url),
-	'../__snapshots__/family-use-css',
-);
 
 const metadata = {
 	id: 'example',
@@ -41,12 +34,14 @@ const variable = {
 } satisfies GetVariableFontResponse;
 
 describe('buildFamilyUseCSS', () => {
-	it('generates a valid body rule for a variable family', async () => {
+	it('generates a valid body rule for a variable family', () => {
 		const css = buildFamilyUsageCSS(metadata, true, 400, 'normal');
 
-		await expect(css).toMatchFileSnapshot(
-			resolve(snapshotDir, 'body-variable.css'),
-		);
+		expect(css).toBe(`body {
+  font-family: 'Example Variable', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}`);
 	});
 
 	it('generates all selected static faces as WOFF2 with display behavior', async () => {
@@ -63,7 +58,7 @@ describe('buildFamilyUseCSS', () => {
 		});
 
 		await expect(css).toMatchFileSnapshot(
-			resolve(snapshotDir, 'static-cdn.css'),
+			'./__snapshots__/family-use-static.css',
 		);
 	});
 
@@ -82,7 +77,7 @@ describe('buildFamilyUseCSS', () => {
 		});
 
 		await expect(css).toMatchFileSnapshot(
-			resolve(snapshotDir, 'variable-package.css'),
+			'./__snapshots__/family-use-variable.css',
 		);
 	});
 
@@ -114,7 +109,7 @@ describe('buildFamilyUseCSS', () => {
 		});
 
 		await expect(css).toMatchFileSnapshot(
-			resolve(snapshotDir, 'sliced-cdn.css'),
+			'./__snapshots__/family-use-sliced.css',
 		);
 	});
 });

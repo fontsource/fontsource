@@ -1,7 +1,0 @@
-@font-face {
-  font-family: 'Fontsource Registry Preview';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url(https://api.fontsource.org/v1/registry/sources/variable-standard/preview/1.woff2) format(woff2), url(https://api.fontsource.org/v1/registry/sources/variable-standard) format(truetype);
-}

@@ -37,7 +37,7 @@ import { SearchableMetadataList } from './SearchableMetadataList';
 import listClasses from './SearchableMetadataList.module.css';
 
 interface FamilyAboutProps {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	previewCSS: string;
 	variable?: GetVariableFontResponse;
 	registry: RegistryFamily;

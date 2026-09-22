@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import {
 	useInstantSearch,
 	useMenu,
@@ -22,7 +22,22 @@ const selectionLabel = (labels: string[], fallback: string) =>
 		? `${labels[0]} + ${labels.length - 1}`
 		: (labels[0] ?? fallback);
 
+const languageCollator = new Intl.Collator('en');
+
 const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
+	const languageOptions = useMemo(
+		() =>
+			languages
+				.map(({ id, name, preferredName, autonym }) => ({
+					value: id,
+					label: preferredName ?? name,
+					searchFields: [name, preferredName, autonym, id].map((value) =>
+						value?.toLocaleLowerCase(),
+					),
+				}))
+				.sort((a, b) => languageCollator.compare(a.label, b.label)),
+		[languages],
+	);
 	const [query, setQuery] = useState('');
 	const { indexUiState, results } = useInstantSearch();
 	const { refine, hasExhaustiveItems } = useRefinementList({
@@ -44,20 +59,16 @@ const LanguagesDropdown = ({ languages }: Pick<SearchFacets, 'languages'>) => {
 		),
 	);
 	const normalizedQuery = query.trim().toLocaleLowerCase();
-	const languageItems = languages.map((language) => ({
-		value: language.id,
-		label: language.preferredName ?? language.name,
-		isRefined: selected.includes(language.id),
-		// Missing values are only zero when Algolia returned the complete facet list.
-		count: counts.get(language.id) ?? (hasExhaustiveItems ? 0 : undefined),
-		matches: [
-			language.name,
-			language.preferredName,
-			language.autonym,
-			language.id,
-		].some((value) => value?.toLocaleLowerCase().includes(normalizedQuery)),
-	}));
-	languageItems.sort((a, b) => a.label.localeCompare(b.label, 'en'));
+	const languageItems = languageOptions.map(
+		({ value, label, searchFields }) => ({
+			value,
+			label,
+			isRefined: selected.includes(value),
+			// Missing values are only zero when Algolia returned the complete facet list.
+			count: counts.get(value) ?? (hasExhaustiveItems ? 0 : undefined),
+			matches: searchFields.some((field) => field?.includes(normalizedQuery)),
+		}),
+	);
 	const legacyItems = subsets.map((subset) => ({
 		value: `subset:${subset}`,
 		label: `${subsetToLanguage(subset)} (subset)`,

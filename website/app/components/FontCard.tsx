@@ -1,4 +1,4 @@
-import { Box, Button, Group, Text } from '@mantine/core';
+import { Button, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { Link, useLocation } from 'react-router';
 import type { ListRegistryLanguagesResponse } from '@/generated/api';
@@ -60,11 +60,7 @@ const FontCard = ({
 	const fontFamily = getFontFamilyStack(font, false, font);
 
 	return (
-		<Box
-			className={classes.wrapper}
-			mih={{ base: '150px', sm: layout === 'grid' ? '332px' : '150px' }}
-			ref={ref}
-		>
+		<div className={classes.wrapper} data-layout={layout} ref={ref}>
 			{eagerStylesheet && (
 				<link rel="preload" as="style" href={stylesheetHref} />
 			)}
@@ -120,7 +116,7 @@ const FontCard = ({
 					Reload page
 				</Button>
 			)}
-		</Box>
+		</div>
 	);
 };
 

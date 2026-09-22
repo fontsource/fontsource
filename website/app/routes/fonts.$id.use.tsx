@@ -10,6 +10,7 @@ import { FamilyUse } from '@/components/font-page/FamilyUse';
 import { getFontVersions, getRegistrySubset } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { loadFontPageBase } from '@/utils/font-page.server';
+import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -39,6 +40,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
+			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
 			versions,
 			subsetDefinitions,
 		},
@@ -63,9 +65,9 @@ export const shouldRevalidate = ({
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 	const family = loaderData?.metadata.family;
 	return ogMeta({
-		title: family ? `Get ${family} | Fontsource` : undefined,
+		title: family ? `Download ${family} Font | Fontsource` : undefined,
 		description: family
-			? `Download ${family} or add it to a website with a package or CDN.`
+			? `Download ${family} in TTF, WOFF, and WOFF2 formats with CSS. Self-host with npm packages, or use a CDN.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)

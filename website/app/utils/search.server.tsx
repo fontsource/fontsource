@@ -11,7 +11,6 @@ import {
 } from 'react-instantsearch';
 import { data, type LoaderFunctionArgs, StaticRouter } from 'react-router';
 import type { SearchFacets } from '@/components/search/Dropdowns';
-
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
@@ -23,6 +22,7 @@ import {
 } from '@/generated/api';
 import { theme } from '@/styles/theme';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
+import { DEFAULT_SEARCH_INDEX, searchClient } from '@/utils/algolia-client';
 import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
@@ -34,12 +34,11 @@ import {
 	createPageSearchState,
 	routing,
 	type SearchProps,
-	searchClient,
 } from '@/utils/search-config';
 
 const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 
-export const getSearchServerState = (
+const getSearchServerState = (
 	serverUrl: string,
 	facets: SearchFacets,
 	discovery?: DiscoveryPage,
@@ -55,7 +54,7 @@ export const getSearchServerState = (
 				<InstantSearchSSRProvider>
 					<InstantSearch
 						searchClient={client}
-						indexName="prod_POPULAR"
+						indexName={DEFAULT_SEARCH_INDEX}
 						routing={routing(serverUrl, state$, discovery)}
 						future={{ preserveSharedStateOnUnmount: true }}
 					>

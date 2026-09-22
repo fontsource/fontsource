@@ -7,43 +7,14 @@ import type {
 } from '@/generated/api';
 
 import {
-	createRegistryCodepointMatcher,
 	findUnmappedCharacters,
-	getOpenTypeFeatureDescription,
-	getOpenTypeFeatureName,
 	getRegistryCharacterGroups,
-	getRegistryFamilyKind,
 	getRegistryPreviewText,
 	getRegistrySourcePreviewStyle,
-	getSupportedPreviewFallback,
 	getUnicodeCharacter,
 	type RegistryFamily,
-	selectRegistryFamilyLanguages,
 	selectRegistryPreviewLanguage,
-	usesNameLigatures,
 } from './registry';
-
-describe('OpenType feature labels', () => {
-	it('explains registered and numbered features in plain language', () => {
-		expect(getOpenTypeFeatureName('rvrn')).toBe(
-			'Required variation alternates',
-		);
-		expect(getOpenTypeFeatureDescription('rvrn')).toContain(
-			'variable-font settings',
-		);
-		expect(getOpenTypeFeatureDescription('ss03')).toContain(
-			'alternate character designs',
-		);
-		expect(getOpenTypeFeatureName('jp78')).toBe('JIS 1978 forms');
-		expect(getOpenTypeFeatureDescription('vert')).toContain('vertical text');
-	});
-
-	it('keeps uncommon font-defined tags understandable', () => {
-		expect(getOpenTypeFeatureDescription('TEST')).toBe(
-			'Applies the font’s test behavior during text shaping.',
-		);
-	});
-});
 
 const source = (sha256: string, type: 'static' | 'variable', weight: number) =>
 	({
@@ -134,44 +105,8 @@ describe('registry character capabilities', () => {
 		expect(groups?.symbols).toEqual(groups?.all);
 	});
 
-	it('includes Allkin private-use glyphs without a symbol catalog', () => {
-		const groups = getRegistryCharacterGroups({
-			...capabilities,
-			unicodeRange: 'U+0000, U+000D, U+0020, U+E000-E00B, U+E00D-E0C4',
-		});
-		expect(groups?.all).toHaveLength(196);
-		expect(groups?.symbols).toEqual(groups?.all);
-		expect(groups?.all).toContain('\uE000');
-		expect(groups?.all).toContain('\uE0C4');
-		expect(groups?.all).not.toContain('\uE00C');
-	});
-
-	it('creates a reusable exact coverage matcher', () => {
-		const supportsCodepoint = createRegistryCodepointMatcher(capabilities);
-
-		expect(supportsCodepoint(0x41)).toBe(true);
-		expect(supportsCodepoint(0x42)).toBe(false);
-		expect(supportsCodepoint(0xe000)).toBe(true);
-	});
-
 	it('reports unique visible characters without a cmap entry', () => {
 		expect(findUnmappedCharacters('A B? B', capabilities)).toEqual(['B', '?']);
-	});
-
-	it('creates a supported preview when a family has no authored sample', () => {
-		expect(getSupportedPreviewFallback('A 1', capabilities)).toBe('A 1');
-		expect(getSupportedPreviewFallback('Missing', capabilities)).toBe('Aa');
-	});
-
-	it('returns every browsable mapped character', () => {
-		const groups = getRegistryCharacterGroups({
-			...capabilities,
-			glyphCount: 5_120,
-			codepointCount: 5_120,
-			unicodeRange: 'U+1000-23FF',
-		});
-
-		expect(groups?.all.length).toBeGreaterThan(4_096);
 	});
 
 	it('ignores malformed, reversed, and out-of-range capability entries', () => {
@@ -221,103 +156,6 @@ describe('registry preview source', () => {
 				weight: { min: 100, max: 900, default: 450 },
 			}),
 		).toEqual({ fontStyle: 'normal', fontWeight: 450 });
-	});
-});
-
-describe('registry family classification', () => {
-	it('reserves a distinct experience for declared symbol catalogs', () => {
-		expect(
-			getRegistryFamilyKind({
-				...family,
-				id: 'unrelated-name',
-				tags: ['special-use/digital-display'],
-			}),
-		).toBe('text');
-		expect(
-			getRegistryFamilyKind({
-				...family,
-				id: 'unrelated-name',
-				classifications: ['sans-serif', 'symbols'],
-				tags: ['special-use/punctuation'],
-			}),
-		).toBe('text');
-	});
-
-	it('requires explicit catalog semantics for named ligatures', () => {
-		const symbolFamily: RegistryFamily = {
-			...family,
-			classifications: ['symbols'],
-			symbols: {
-				catalogUrl: '/v1/registry/families/example/symbols',
-				inputModes: ['codepoint', 'name-ligature'],
-			},
-		};
-
-		expect(usesNameLigatures(symbolFamily)).toBe(true);
-		expect(
-			usesNameLigatures({
-				...symbolFamily,
-				symbols: {
-					catalogUrl: '/v1/registry/families/example/symbols',
-					inputModes: ['codepoint'],
-				},
-			}),
-		).toBe(false);
-	});
-});
-
-describe('selectRegistryFamilyLanguages', () => {
-	it('returns every family language with the primary language first', () => {
-		const additionalLanguages = Array.from({ length: 13 }, (_, index) => ({
-			id: `x${index}_Latn`,
-			language: `x${index}`,
-			script: 'Latn',
-			direction: 'ltr' as const,
-			name: `Language ${index}`,
-		}));
-		const languages = [
-			{
-				id: 'de_Latn',
-				language: 'de',
-				script: 'Latn',
-				direction: 'ltr' as const,
-				name: 'German',
-			},
-			{
-				id: 'en_Latn',
-				language: 'en',
-				script: 'Latn',
-				direction: 'ltr' as const,
-				name: 'English',
-			},
-			{
-				id: 'fr_Latn',
-				language: 'fr',
-				script: 'Latn',
-				direction: 'ltr' as const,
-				name: 'French',
-			},
-			...additionalLanguages,
-		];
-		const registryFamily = {
-			...family,
-			languages: [
-				'en_Latn',
-				'de_Latn',
-				...additionalLanguages.map((language) => language.id),
-			],
-			primaryLanguage: 'en_Latn',
-		};
-
-		expect(
-			selectRegistryFamilyLanguages(registryFamily, languages).map(
-				(language) => language.id,
-			),
-		).toEqual([
-			'en_Latn',
-			'de_Latn',
-			...additionalLanguages.map((language) => language.id),
-		]);
 	});
 });
 

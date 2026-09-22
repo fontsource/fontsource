@@ -14,8 +14,8 @@
 		"test": "vitest run",
 		"test:coverage": "vitest run --coverage",
 		"test:watch": "vitest",
-		"typegen": "wrangler types",
-		"typecheck": "react-router typegen && tsc"
+		"typecheck": "react-router typegen && tsc",
+		"typegen": "wrangler types"
 	},
 	"dependencies": {
 		"@algolia/requester-fetch": "^5.59.0",

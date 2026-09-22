@@ -99,14 +99,6 @@ export const selectRegistryPreviewSource = (
 	return sourceByHash.get(registry.previewSource);
 };
 
-export const getPreferredPreviewSubset = (
-	metadata: GetFontResponse,
-	registry: RegistryFamily,
-) =>
-	registry.previewSubset && metadata.subsets.includes(registry.previewSubset)
-		? registry.previewSubset
-		: metadata.defSubset;
-
 export const getFontFamilyStack = (
 	metadata: FontPreviewIdentity,
 	variableAvailable = metadata.variable,
@@ -134,12 +126,16 @@ export const getFontFamilyStack = (
 	return [`"${family}"`, ...quotedFallbacks].join(', ');
 };
 export const getFontPreviewCSS = (
-	metadata: GetFontResponse,
+	metadata: Omit<GetFontResponse, 'variants'>,
 	variable?: GetVariableFontResponse,
 ) => {
-	const unicodeKeys = Object.keys(metadata.unicodeRange).map((key) =>
-		key.replace('[', '').replace(']', ''),
+	const unicodeRange = Object.fromEntries(
+		Object.entries(metadata.unicodeRange).map(([key, range]) => [
+			key.replace('[', '').replace(']', ''),
+			range,
+		]),
 	);
+	const unicodeKeys = Object.keys(unicodeRange);
 	const subsets = unicodeKeys.length > 0 ? unicodeKeys : metadata.subsets;
 	const faces = resolveFontFaces(
 		{
@@ -148,7 +144,7 @@ export const getFontPreviewCSS = (
 			subsets,
 			weights: metadata.weights,
 			styles: metadata.styles,
-			unicodeRange: metadata.unicodeRange,
+			unicodeRange,
 			variable: variable?.axes,
 		},
 		variable

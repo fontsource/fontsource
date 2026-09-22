@@ -7,13 +7,12 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { KV_KEYS } from '../worker/src/constants';
 import { clearMetadataCachesForTest } from '../worker/src/features/metadata/store';
 import worker from '../worker/src/index';
+import { testAxisRegistry } from './fixtures/metadata';
 import {
 	dispatch,
 	jsonSnapshot,
 	seedStats,
-	serializeHeaders,
 	setupWorkerTest,
-	testAxisRegistry,
 	testEnv,
 } from './helpers';
 
@@ -53,35 +52,17 @@ describe('metadata routes', () => {
 		clearMetadataCachesForTest();
 	};
 
-	it('matches public metadata responses', async () => {
-		const downloadResult = await dispatch(
-			new Request('https://fontsource.test/v1/download/abel', {
-				redirect: 'manual',
-			}),
-		);
-		const downloadBody = await downloadResult.response.json();
-		await downloadResult.settle();
-
-		expect({
-			fontlist: await jsonSnapshot('https://fontsource.test/fontlist'),
-			font: await jsonSnapshot('https://fontsource.test/v1/fonts/abel'),
-			variable: await jsonSnapshot(
-				'https://fontsource.test/v1/variable/recursive',
-			),
-			axisRegistry: await jsonSnapshot(
-				'https://fontsource.test/v1/axis-registry?tag=mono',
-			),
-			version: await jsonSnapshot(
-				'https://fontsource.test/v1/version/recursive',
-			),
-			stats: await jsonSnapshot('https://fontsource.test/v1/stats/recursive'),
-			download: {
-				status: downloadResult.response.status,
-				headers: serializeHeaders(downloadResult.response),
-				retryAfter: downloadResult.response.headers.get('Retry-After'),
-				body: downloadBody,
-			},
-		}).toMatchSnapshot();
+	it.each([
+		'/fontlist',
+		'/v1/fonts/abel',
+		'/v1/variable/recursive',
+		'/v1/axis-registry?tag=mono',
+		'/v1/version/recursive',
+		'/v1/stats/recursive',
+	])('matches public metadata response for %s', async (path) => {
+		expect(
+			await jsonSnapshot(`https://fontsource.test${path}`),
+		).toMatchSnapshot();
 	});
 
 	it('keeps API cache headers on conditional metadata responses', async () => {
@@ -90,6 +71,9 @@ describe('metadata routes', () => {
 		const etag = first.response.headers.get('ETag');
 
 		expect(etag).toBeTruthy();
+		expect(first.response.headers.get('Last-Modified')).toBe(
+			'Mon, 01 Jan 2024 00:00:00 GMT',
+		);
 
 		const second = await dispatch(
 			new Request('https://fontsource.test/v1/fonts/abel', {

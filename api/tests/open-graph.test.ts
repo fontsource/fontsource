@@ -1,16 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { logger } from '../shared/logger';
 import { KV_KEYS, UPSTREAM_URLS } from '../worker/src/constants';
-import {
-	dispatch,
-	installUpstreamFetchMock,
-	setupWorkerTest,
-	staticMetadata,
-	staticWoff2Bytes,
-	testCatalog,
-	testEnv,
-	toResponse,
-	variableWoff2Bytes,
-} from './helpers';
+import { staticWoff2Bytes, variableWoff2Bytes } from './fixtures/fonts';
+import { staticMetadata, testCatalog } from './fixtures/metadata';
+import { dispatch, setupWorkerTest, testEnv } from './helpers';
+import { mockUpstreamResponses, toResponse } from './network';
 
 const PNG_SIGNATURE = [137, 80, 78, 71, 13, 10, 26, 10];
 const REGISTRY_REVISION = '1'.repeat(40);
@@ -143,10 +137,10 @@ describe('font Open Graph route', () => {
 
 	it('uses the stable fallback when the preview font cannot be loaded', async () => {
 		const fontUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/abel@latest/files/abel-latin-400-normal.woff2`;
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[fontUrl]: new Response('missing', { status: 404 }),
 		});
-		vi.spyOn(console, 'error').mockImplementation(() => undefined);
+		vi.spyOn(logger, 'error').mockImplementation(() => undefined);
 
 		const result = await dispatch('https://fontsource.test/og/fonts/abel');
 		const bytes = new Uint8Array(await result.response.arrayBuffer());
@@ -173,11 +167,11 @@ describe('font Open Graph route', () => {
 			{ id, family: metadata.family },
 		]);
 		const fontUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${id}@latest/files/${id}-latin-400-normal.woff2`;
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[fontUrl]: toResponse(staticWoff2Bytes),
 		});
 		const errorSpy = vi
-			.spyOn(console, 'error')
+			.spyOn(logger, 'error')
 			.mockImplementation(() => undefined);
 
 		const result = await dispatch(`https://fontsource.test/og/fonts/${id}`);
@@ -211,7 +205,7 @@ describe('font Open Graph route', () => {
 		]);
 		const firstUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${firstId}@latest/files/${firstId}-latin-400-normal.woff2`;
 		const secondUrl = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/${secondId}@latest/files/${secondId}-latin-400-normal.woff2`;
-		installUpstreamFetchMock({
+		mockUpstreamResponses({
 			[firstUrl]: toResponse(staticWoff2Bytes),
 			[secondUrl]: toResponse(variableWoff2Bytes),
 		});

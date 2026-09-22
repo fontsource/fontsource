@@ -12,6 +12,7 @@ import {
 	BINARY_CONTENT_TYPES,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../../shared/http-metadata';
+import { logger } from '../../shared/logger';
 import {
 	getDownloadKey,
 	getStaticAssetKey,
@@ -272,9 +273,18 @@ const buildDownloadArtifacts = async (
 	);
 	if (warmFailures.length > 0) {
 		const version = request.staticVersion ?? `vf@${request.variableVersion}`;
-		console.error(
-			`[artifacts] failed to warm ${warmFailures.length}/${artifacts.length} individual artifacts for ${id}@${version}`,
-			warmFailures.map((result) => result.reason),
+		logger.error(
+			{
+				failedCount: warmFailures.length,
+				artifactCount: artifacts.length,
+				fontId: id,
+				version,
+				err: new AggregateError(
+					warmFailures.map((result) => result.reason),
+					'Artifact warm uploads failed',
+				),
+			},
+			'[artifacts] failed to warm individual artifacts',
 		);
 	}
 

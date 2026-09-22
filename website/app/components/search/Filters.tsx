@@ -1,5 +1,5 @@
 import { useValue } from '@legendapp/state/react';
-import { Box, Button, Checkbox, Group, SimpleGrid } from '@mantine/core';
+import { Box, Button, Checkbox, Group } from '@mantine/core';
 import { useCallback } from 'react';
 import {
 	Configure,
@@ -10,10 +10,10 @@ import {
 	useSortBy,
 	useToggleRefinement,
 } from 'react-instantsearch';
-
 import { IconTrash } from '@/components/icons';
 import { CollectionFilter } from '@/features/collections/CollectionFilter';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
+import { DEFAULT_SEARCH_INDEX } from '@/utils/algolia-client';
 
 import {
 	CategoriesDropdown,
@@ -73,7 +73,7 @@ const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 		state$.collectionId.set(null);
 		clearQueries('');
 		clearRefinements();
-		clearSortBy('prod_POPULAR');
+		clearSortBy(DEFAULT_SEARCH_INDEX);
 	};
 	const handleCollectionChange = useCallback(
 		(value: string | null) => {
@@ -89,24 +89,20 @@ const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 	return (
 		<Box className={classes.container}>
 			<Configure filters={collectionFilter} />
-			<SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing={0}>
+			<div className={classes.controls}>
 				<SearchBar />
 				<PreviewSelector state$={state$} />
 				<SizeSlider state$={state$} />
-			</SimpleGrid>
+			</div>
 			<Box className={classes.filters}>
-				<SimpleGrid
-					cols={{ base: 1, xs: 3 }}
-					spacing="sm"
-					className={classes.dropdowns}
-				>
+				<div className={classes.dropdowns}>
 					<CollectionFilter
 						onChange={handleCollectionChange}
 						value={collectionId}
 					/>
 					<CategoriesDropdown taxonomy={taxonomy} />
 					<LanguagesDropdown languages={languages} />
-				</SimpleGrid>
+				</div>
 				{selectedTags.length > 0 && (
 					<Group gap="xs" role="group" aria-label="Selected tags">
 						{selectedTags.map((tag) => {

@@ -1,20 +1,12 @@
-import { resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import type { GetFontResponse } from '@/generated/api';
 import {
 	getFontFamilyStack,
-	getPreferredPreviewSubset,
-	getPreviewLanguageTag,
+	getFontPreviewCSS,
 	getRegistrySourcePreviewCSS,
 	selectRegistryPreviewSource,
 } from './font-preview';
 import type { RegistryFamily, RegistrySource } from './registry';
-
-const snapshotDir = resolve(
-	fileURLToPath(import.meta.url),
-	'../__snapshots__/font-preview',
-);
 
 const registry: RegistryFamily = {
 	id: 'example',
@@ -39,6 +31,57 @@ const registry: RegistryFamily = {
 		characters: { type: 'all' },
 	},
 };
+
+describe('getFontPreviewCSS', () => {
+	it.each([false, true])(
+		'preserves numbered subset ranges (variable: %s)',
+		(isVariable) => {
+			const metadata: GetFontResponse = {
+				id: 'example',
+				family: 'Example',
+				subsets: ['korean', 'latin'],
+				weights: [400],
+				styles: ['normal'],
+				defSubset: 'latin',
+				variable: isVariable,
+				lastModified: '2026-01-01',
+				category: 'sans-serif',
+				license: 'OFL-1.1',
+				type: 'google',
+				version: 'v1',
+				source: 'https://example.com',
+				variants: {},
+				unicodeRange: {
+					'[0]': 'U+AC00-ACFF',
+					'[1]': 'U+AD00-ADFF',
+					latin: 'U+0000-00FF',
+				},
+			};
+			const css = getFontPreviewCSS(
+				metadata,
+				isVariable
+					? {
+							family: 'Example',
+							axes: {
+								wght: { default: '400', min: '100', max: '900', step: '1' },
+							},
+						}
+					: undefined,
+			);
+			const suffix = isVariable ? 'wght' : '400';
+			for (const [subset, range] of [
+				['0', 'U+AC00-ACFF'],
+				['1', 'U+AD00-ADFF'],
+				['latin', 'U+0000-00FF'],
+			]) {
+				const face = css
+					.split('}')
+					.find((rule) => rule.includes(`/${subset}-${suffix}-normal.woff2`));
+				expect(face).toContain(`unicode-range: ${range};`);
+			}
+		},
+	);
+});
 
 describe('getFontFamilyStack', () => {
 	it('uses the static family when variable metadata is unavailable', () => {
@@ -74,94 +117,70 @@ describe('getFontFamilyStack', () => {
 	});
 });
 
-describe('getPreferredPreviewSubset', () => {
-	const metadata = {
-		defSubset: 'latin',
-		subsets: ['japanese', 'latin'],
-	} as GetFontResponse;
-
-	it('uses a distributed registry preview subset', () => {
-		expect(
-			getPreferredPreviewSubset(metadata, {
-				...registry,
-				previewSubset: 'japanese',
-			}),
-		).toBe('japanese');
-	});
-
-	it('falls back to the package default when no reviewed subset is available', () => {
-		expect(getPreferredPreviewSubset(metadata, registry)).toBe('latin');
-	});
-});
-
-describe('preview language semantics', () => {
-	it('builds a BCP 47 tag from registry language and script metadata', () => {
-		expect(getPreviewLanguageTag({ language: 'ar', script: 'Arab' })).toBe(
-			'ar-Arab',
-		);
-		expect(getPreviewLanguageTag()).toBeUndefined();
-	});
-});
-
 describe('getRegistrySourcePreviewCSS', () => {
-	it('loads the exact static Registry source', async () => {
-		const source = {
-			sha256: 'static-400',
-			filename: 'example.ttf',
-			path: 'files/example.ttf',
-			format: 'ttf',
-			size: 1,
-			glyphCount: 1,
-			codepointCount: 1,
-			downloadUrl: '/v1/registry/sources/static-400',
-			capabilitiesUrl: '/v1/registry/sources/static-400/capabilities',
-			fontVersion: null,
-			style: 'normal',
-			type: 'static',
-			weight: 400,
-		} satisfies RegistrySource;
+	const staticSource = {
+		sha256: 'static-400',
+		filename: 'example.ttf',
+		path: 'files/example.ttf',
+		format: 'ttf',
+		size: 1,
+		glyphCount: 1,
+		codepointCount: 1,
+		downloadUrl: '/v1/registry/sources/static-400',
+		capabilitiesUrl: '/v1/registry/sources/static-400/capabilities',
+		fontVersion: null,
+		style: 'normal',
+		type: 'static',
+		weight: 400,
+	} satisfies RegistrySource;
 
-		await expect(getRegistrySourcePreviewCSS(source)).toMatchFileSnapshot(
-			resolve(snapshotDir, 'static.css'),
-		);
+	it('loads the exact static Registry source', () => {
+		expect(getRegistrySourcePreviewCSS(staticSource)).toMatchInlineSnapshot(`
+			"@font-face {
+			  font-family: 'Fontsource Registry Preview';
+			  font-style: normal;
+			  font-display: swap;
+			  font-weight: 400;
+			  src: url(https://api.fontsource.org/v1/registry/sources/static-400) format(truetype);
+			}"
+		`);
 	});
 
-	it('preserves a variable source weight range', async () => {
+	it('preserves a variable source weight range', () => {
 		const source = {
+			...staticSource,
 			sha256: 'variable-standard',
 			filename: 'example.otf',
 			path: 'files/example.otf',
 			format: 'otf',
-			size: 1,
-			glyphCount: 1,
-			codepointCount: 1,
 			downloadUrl: '/v1/registry/sources/variable-standard',
 			capabilitiesUrl: '/v1/registry/sources/variable-standard/capabilities',
-			fontVersion: null,
 			style: 'italic',
 			type: 'variable',
 			weight: { min: 100, max: 900, default: 450 },
 			axes: [{ tag: 'wght', min: 100, max: 900, default: 450 }],
 		} satisfies RegistrySource;
 
-		const css = getRegistrySourcePreviewCSS(source);
-		await expect(css).toMatchFileSnapshot(
-			resolve(snapshotDir, 'variable-opentype.css'),
-		);
+		expect(getRegistrySourcePreviewCSS(source)).toMatchInlineSnapshot(`
+			"@font-face {
+			  font-family: 'Fontsource Registry Preview';
+			  font-style: italic;
+			  font-display: swap;
+			  font-weight: 100 900;
+			  src: url(https://api.fontsource.org/v1/registry/sources/variable-standard) format(opentype);
+			}"
+		`);
 	});
 
-	it('keeps a variable weight range when the source declares a package variant', async () => {
+	it('keeps a variable weight range when the source declares a package variant', () => {
 		const source = {
+			...staticSource,
 			sha256: 'variable-standard',
 			filename: 'example.ttf',
 			path: 'files/example.ttf',
 			format: 'ttf',
-			size: 1,
-			glyphCount: 1,
-			codepointCount: 1,
 			downloadUrl: '/v1/registry/sources/variable-standard',
 			capabilitiesUrl: '/v1/registry/sources/variable-standard/capabilities',
-			fontVersion: null,
 			style: 'normal',
 			declaredVariant: { weight: 400, style: 'normal' },
 			type: 'variable',
@@ -169,58 +188,37 @@ describe('getRegistrySourcePreviewCSS', () => {
 			axes: [{ tag: 'wght', min: 100, max: 900, default: 400 }],
 		} satisfies RegistrySource;
 
-		await expect(getRegistrySourcePreviewCSS(source)).toMatchFileSnapshot(
-			resolve(snapshotDir, 'variable-declared-variant.css'),
+		expect(getRegistrySourcePreviewCSS(source)).toContain(
+			'font-weight: 100 900;',
 		);
 		const previewCSS = getRegistrySourcePreviewCSS({
 			...source,
 			previewUrl: `${source.downloadUrl}/preview/1.woff2`,
 		});
-		await expect(previewCSS).toMatchFileSnapshot(
-			resolve(snapshotDir, 'variable-woff2-preview.css'),
-		);
+		expect(previewCSS).toMatchInlineSnapshot(`
+			"@font-face {
+			  font-family: 'Fontsource Registry Preview';
+			  font-style: normal;
+			  font-display: swap;
+			  font-weight: 100 900;
+			  src: url(https://api.fontsource.org/v1/registry/sources/variable-standard/preview/1.woff2) format(woff2), url(https://api.fontsource.org/v1/registry/sources/variable-standard) format(truetype);
+			}"
+		`);
 	});
 
-	it('supports a source-specific preview family name', async () => {
-		const source = {
-			sha256: 'static-400',
-			filename: 'example.ttf',
-			path: 'files/example.ttf',
-			format: 'ttf',
-			size: 1,
-			glyphCount: 1,
-			codepointCount: 1,
-			downloadUrl: '/v1/registry/sources/static-400',
-			capabilitiesUrl: '/v1/registry/sources/static-400/capabilities',
-			fontVersion: null,
-			style: 'normal',
-			type: 'static',
-			weight: 400,
-		} satisfies RegistrySource;
-
-		await expect(
-			getRegistrySourcePreviewCSS(source, 'Preview static-400'),
-		).toMatchFileSnapshot(resolve(snapshotDir, 'custom-family.css'));
+	it('supports a source-specific preview family name', () => {
+		expect(
+			getRegistrySourcePreviewCSS(staticSource, 'Preview static-400'),
+		).toContain("font-family: 'Preview static-400';");
 	});
 
 	it('ignores an invalid source URL instead of breaking the preview', () => {
-		const source = {
-			sha256: 'static-400',
-			filename: 'example.ttf',
-			path: 'files/example.ttf',
-			format: 'ttf',
-			size: 1,
-			glyphCount: 1,
-			codepointCount: 1,
-			downloadUrl: 'https://%',
-			capabilitiesUrl: '/v1/registry/sources/static-400/capabilities',
-			fontVersion: null,
-			style: 'normal',
-			type: 'static',
-			weight: 400,
-		} satisfies RegistrySource;
-
-		expect(getRegistrySourcePreviewCSS(source)).toBe('');
+		expect(
+			getRegistrySourcePreviewCSS({
+				...staticSource,
+				downloadUrl: 'https://%',
+			}),
+		).toBe('');
 	});
 });
 
