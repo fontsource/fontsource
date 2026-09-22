@@ -1,5 +1,10 @@
 import { batch } from '@legendapp/state';
-import { observer, useObservable, useValue } from '@legendapp/state/react';
+import {
+	observer,
+	useMount,
+	useObservable,
+	useValue,
+} from '@legendapp/state/react';
 import { useIsomorphicEffect } from '@mantine/hooks';
 import {
 	createContext,
@@ -207,26 +212,31 @@ const PreviewProvider = ({
 		],
 	);
 	const location = useLocation();
-	const previewText = location.state?.previewText;
-	const language = languages.find(
-		(item) => item.id === location.state?.previewLanguageId,
-	);
-	const recommendedText = getRecommendedPreviewText(
-		{
-			...metadata,
-			...registry,
-			sampleText: language?.sampleText ?? registry.sampleText,
-		},
-		'short',
-		languages,
-	);
-	const state$ = useObservable({
-		...setup.editorValue,
-		selectedLanguageId: language?.id ?? '',
-		customText:
-			typeof previewText === 'string' && previewText !== recommendedText
-				? previewText
-				: null,
+	const state$ = useObservable(setup.editorValue);
+	// History state survives reloads but is unavailable to the server.
+	useMount(() => {
+		if (!location.state) return;
+
+		const previewText = location.state?.previewText;
+		const language = languages.find(
+			(item) => item.id === location.state?.previewLanguageId,
+		);
+		const recommendedText = getRecommendedPreviewText(
+			{
+				...metadata,
+				...registry,
+				sampleText: language?.sampleText ?? registry.sampleText,
+			},
+			'short',
+			languages,
+		);
+		state$.assign({
+			selectedLanguageId: language?.id ?? '',
+			customText:
+				typeof previewText === 'string' && previewText !== recommendedText
+					? previewText
+					: null,
+		});
 	});
 	const model = useMemo<PreviewEditorModel>(
 		() => ({
