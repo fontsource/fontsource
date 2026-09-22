@@ -26,7 +26,7 @@ type FamilyTab = 'preview' | 'glyphs' | 'about' | 'use';
 type FontPageLocationState = { fontResults?: string };
 
 interface FamilyPageShellProps {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	registry: RegistryFamily;
 	previewSource?: RegistrySource;
 	variable?: GetVariableFontResponse;
@@ -47,7 +47,7 @@ export const FamilyIdentity = ({
 	previewSource,
 	variableAvailable = false,
 }: {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	registry: RegistryFamily;
 	previewSource?: RegistrySource;
 	variableAvailable?: boolean;
@@ -110,7 +110,7 @@ export const FamilyActions = ({
 	registry,
 	showGetFont = true,
 }: {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	registry: RegistryFamily;
 	showGetFont?: boolean;
 }) => {
@@ -154,7 +154,7 @@ export const FamilyTabs = ({
 	registry,
 	contained = false,
 }: {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	registry: RegistryFamily;
 	contained?: boolean;
 }) => {

@@ -49,7 +49,7 @@ import { FontSkeleton } from './FontSkeleton';
 import { GlyphSpecimen } from './GlyphSpecimen';
 
 interface CharacterExplorerProps {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	registry: RegistryFamily;
 	symbols?: GetRegistryFamilySymbolsResponse;
 	capabilities: GetRegistrySourceCapabilitiesResponse;

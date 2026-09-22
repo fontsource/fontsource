@@ -28,7 +28,7 @@ import {
 } from './family-use-css';
 
 interface FamilyUseProps {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	versions: GetFontVersionsResponse;
 	variable?: GetVariableFontResponse;
 	previewCSS: string;

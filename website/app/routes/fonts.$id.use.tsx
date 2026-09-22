@@ -10,6 +10,7 @@ import { FamilyUse } from '@/components/font-page/FamilyUse';
 import { getFontVersions, getRegistrySubset } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { loadFontPageBase } from '@/utils/font-page.server';
+import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -39,6 +40,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
+			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
 			versions,
 			subsetDefinitions,
 		},

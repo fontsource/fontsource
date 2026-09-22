@@ -188,7 +188,7 @@ const PreviewProvider = ({
 	axisRegistry,
 	capabilities,
 	capabilitySource,
-	symbols,
+	symbolNames,
 }: PropsWithChildren<PreviewEditorProps>) => {
 	const setup = useMemo(
 		() =>
@@ -248,8 +248,7 @@ const PreviewProvider = ({
 			languages,
 			axisRegistry,
 			capabilities,
-			symbols,
-			previewSubset: setup.previewSubset,
+			symbolNames,
 			familyKind: setup.familyKind,
 			initialTypography: setup.initialTypography,
 		}),
@@ -259,7 +258,7 @@ const PreviewProvider = ({
 			languages,
 			metadata,
 			registry,
-			symbols,
+			symbolNames,
 			previewCSS,
 			variable,
 			setup,
