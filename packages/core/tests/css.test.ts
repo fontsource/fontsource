@@ -82,12 +82,12 @@ describe('renderFontFaceRule', () => {
 		stretch: '75% 125%',
 		unicodeRange: 'U+2190-2300',
 		sources: [
-			{ url: './font (1).woff2?label="test"', format: 'woff2-variations' },
+			{ url: './font.woff2', format: 'woff2-variations' },
 			{ url: './font.otf', format: 'opentype' },
 		],
 	};
 
-	it('renders escaped strings and ordered sources in regular and compact CSS', async () => {
+	it('renders escaped family names and ordered sources in regular and compact CSS', async () => {
 		await expect(
 			renderFontFaceRule(face, { display: 'optional' }),
 		).toMatchFileSnapshot(resolve(snapshotDir, 'rule-escaped.css'));

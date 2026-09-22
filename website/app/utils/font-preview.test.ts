@@ -141,7 +141,7 @@ describe('getRegistrySourcePreviewCSS', () => {
 			  font-style: normal;
 			  font-display: swap;
 			  font-weight: 400;
-			  src: url('https://api.fontsource.org/v1/registry/sources/static-400') format(truetype);
+			  src: url(https://api.fontsource.org/v1/registry/sources/static-400) format(truetype);
 			}"
 		`);
 	});
@@ -167,7 +167,7 @@ describe('getRegistrySourcePreviewCSS', () => {
 			  font-style: italic;
 			  font-display: swap;
 			  font-weight: 100 900;
-			  src: url('https://api.fontsource.org/v1/registry/sources/variable-standard') format(opentype);
+			  src: url(https://api.fontsource.org/v1/registry/sources/variable-standard) format(opentype);
 			}"
 		`);
 	});
@@ -201,7 +201,7 @@ describe('getRegistrySourcePreviewCSS', () => {
 			  font-style: normal;
 			  font-display: swap;
 			  font-weight: 100 900;
-			  src: url('https://api.fontsource.org/v1/registry/sources/variable-standard/preview/1.woff2') format(woff2), url('https://api.fontsource.org/v1/registry/sources/variable-standard') format(truetype);
+			  src: url(https://api.fontsource.org/v1/registry/sources/variable-standard/preview/1.woff2) format(woff2), url(https://api.fontsource.org/v1/registry/sources/variable-standard) format(truetype);
 			}"
 		`);
 	});

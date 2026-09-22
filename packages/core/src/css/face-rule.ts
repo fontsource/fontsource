@@ -10,6 +10,7 @@ export interface CSSFontFace {
 	/** null deliberately omits the descriptor for an unrestricted face. */
 	unicodeRange: string | null;
 	sources: readonly {
+		/** Trusted URL, already safe for unquoted CSS url(). */
 		url: string;
 		format: 'woff' | 'woff2' | 'truetype' | 'opentype' | 'woff2-variations';
 	}[];
@@ -65,7 +66,7 @@ export const renderFontFaceRule = (
 		// Legacy hints such as 'woff2-variations' require string syntax.
 		const sourceFormat =
 			format === 'woff2-variations' ? "'woff2-variations'" : format;
-		return `url(${quote(url)}) format(${sourceFormat})`;
+		return `url(${url}) format(${sourceFormat})`;
 	});
 	declarations.push(`src:${space}${sources.join(`,${space}`)};`);
 	if (face.unicodeRange) {

@@ -4,7 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300 800;
-  src: url('./files/inter-japanese-wght-normal-1.woff2') format('woff2-variations');
+  src: url(./files/inter-japanese-wght-normal-1.woff2) format('woff2-variations');
   unicode-range: U+3041-3042;
 }
 
@@ -13,7 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300 800;
-  src: url('./files/inter-japanese-wght-normal-2.woff2') format('woff2-variations');
+  src: url(./files/inter-japanese-wght-normal-2.woff2) format('woff2-variations');
   unicode-range: U+3044-3045;
 }
 /* index.css */
@@ -22,7 +22,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300 800;
-  src: url('./files/inter-japanese-wght-normal-1.woff2') format('woff2-variations');
+  src: url(./files/inter-japanese-wght-normal-1.woff2) format('woff2-variations');
   unicode-range: U+3041-3042;
 }
 
@@ -31,6 +31,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300 800;
-  src: url('./files/inter-japanese-wght-normal-2.woff2') format('woff2-variations');
+  src: url(./files/inter-japanese-wght-normal-2.woff2) format('woff2-variations');
   unicode-range: U+3044-3045;
 }

@@ -8,7 +8,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src: url('./files/example-latin-300-normal.woff2') format(woff2);
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
 }",
     "filename": "300.css",
   },
@@ -18,7 +18,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src: url('./files/example-latin-300-normal.woff2') format(woff2);
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
 }",
     "filename": "latin-300.css",
   },
@@ -28,7 +28,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src: url('./files/example-latin-300-normal.woff2') format(woff2);
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
 }
 
 @font-face {
@@ -36,7 +36,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-latin-400-normal.woff2') format(woff2), url('./files/example-latin-400-normal.woff') format(woff);
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
 }",
     "filename": "latin.css",
   },
@@ -46,7 +46,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-latin-400-normal.woff2') format(woff2), url('./files/example-latin-400-normal.woff') format(woff);
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
 }",
     "filename": "400.css",
   },
@@ -56,7 +56,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-latin-400-normal.woff2') format(woff2), url('./files/example-latin-400-normal.woff') format(woff);
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
 }",
     "filename": "latin-400.css",
   },
@@ -66,7 +66,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-latin-400-normal.woff2') format(woff2), url('./files/example-latin-400-normal.woff') format(woff);
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
 }",
     "filename": "index.css",
   },
@@ -76,7 +76,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-0-400-italic.woff2') format(woff2);
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
 }",
     "filename": "400-italic.css",
   },
@@ -86,7 +86,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-0-400-italic.woff2') format(woff2);
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
 }",
     "filename": "[0]-400-italic.css",
   },
@@ -96,7 +96,7 @@ exports[`actual static variants > emits icon entrypoints once and selects only t
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-0-400-italic.woff2') format(woff2);
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
 }",
     "filename": "[0].css",
   },
@@ -111,7 +111,7 @@ exports[`actual static variants > includes known coverage in subset entrypoints 
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src: url('./files/example-latin-300-normal.woff2') format(woff2);
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
   unicode-range: U+0000-00FF;
 }",
     "filename": "latin-300.css",
@@ -122,7 +122,7 @@ exports[`actual static variants > includes known coverage in subset entrypoints 
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src: url('./files/example-latin-300-normal.woff2') format(woff2);
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
   unicode-range: U+0000-00FF;
 }
 
@@ -131,7 +131,7 @@ exports[`actual static variants > includes known coverage in subset entrypoints 
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-latin-400-normal.woff2') format(woff2), url('./files/example-latin-400-normal.woff') format(woff);
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
   unicode-range: U+0000-00FF;
 }",
     "filename": "latin.css",
@@ -142,7 +142,7 @@ exports[`actual static variants > includes known coverage in subset entrypoints 
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-latin-400-normal.woff2') format(woff2), url('./files/example-latin-400-normal.woff') format(woff);
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
   unicode-range: U+0000-00FF;
 }",
     "filename": "latin-400.css",
@@ -153,7 +153,7 @@ exports[`actual static variants > includes known coverage in subset entrypoints 
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-0-400-italic.woff2') format(woff2);
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
   unicode-range: U+0100-017F;
 }",
     "filename": "[0]-400-italic.css",
@@ -164,7 +164,7 @@ exports[`actual static variants > includes known coverage in subset entrypoints 
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-0-400-italic.woff2') format(woff2);
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
   unicode-range: U+0100-017F;
 }",
     "filename": "[0]-italic.css",
@@ -184,7 +184,7 @@ exports[`actual static variants > renders only available subsets and formats wit
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src: url('./files/example-latin-300-normal.woff2') format(woff2);
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
   unicode-range: U+0000-00FF;
 }",
     "filename": "300.css",
@@ -195,7 +195,7 @@ exports[`actual static variants > renders only available subsets and formats wit
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-latin-400-normal.woff2') format(woff2), url('./files/example-latin-400-normal.woff') format(woff);
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
   unicode-range: U+0000-00FF;
 }",
     "filename": "400.css",
@@ -206,7 +206,7 @@ exports[`actual static variants > renders only available subsets and formats wit
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-latin-400-normal.woff2') format(woff2), url('./files/example-latin-400-normal.woff') format(woff);
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
   unicode-range: U+0000-00FF;
 }",
     "filename": "index.css",
@@ -217,7 +217,7 @@ exports[`actual static variants > renders only available subsets and formats wit
   font-style: italic;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/example-0-400-italic.woff2') format(woff2);
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
   unicode-range: U+0100-017F;
 }",
     "filename": "400-italic.css",
@@ -233,7 +233,7 @@ exports[`prefers a normal variable entrypoint even when italic is listed first 1
   font-style: italic;
   font-display: swap;
   font-weight: 100 900;
-  src: url('./files/variable-latin-wght-italic.woff2') format('woff2-variations');
+  src: url(./files/variable-latin-wght-italic.woff2) format('woff2-variations');
   unicode-range: U+0000-00FF;
 }",
     "filename": "wght-italic.css",
@@ -244,7 +244,7 @@ exports[`prefers a normal variable entrypoint even when italic is listed first 1
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url('./files/variable-latin-wght-normal.woff2') format('woff2-variations');
+  src: url(./files/variable-latin-wght-normal.woff2) format('woff2-variations');
   unicode-range: U+0000-00FF;
 }
 
@@ -253,7 +253,7 @@ exports[`prefers a normal variable entrypoint even when italic is listed first 1
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url('./files/variable-fallback-wght-normal.woff2') format('woff2-variations');
+  src: url(./files/variable-fallback-wght-normal.woff2) format('woff2-variations');
 }",
     "filename": "wght.css",
   },
@@ -263,7 +263,7 @@ exports[`prefers a normal variable entrypoint even when italic is listed first 1
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url('./files/variable-latin-wght-normal.woff2') format('woff2-variations');
+  src: url(./files/variable-latin-wght-normal.woff2) format('woff2-variations');
   unicode-range: U+0000-00FF;
 }
 
@@ -272,7 +272,7 @@ exports[`prefers a normal variable entrypoint even when italic is listed first 1
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url('./files/variable-fallback-wght-normal.woff2') format('woff2-variations');
+  src: url(./files/variable-fallback-wght-normal.woff2) format('woff2-variations');
 }",
     "filename": "index.css",
   },

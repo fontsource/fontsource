@@ -4,7 +4,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/noto-sans-math-400-normal.woff2') format(woff2);
+  src: url(./files/noto-sans-math-400-normal.woff2) format(woff2);
   unicode-range: U+2190-2300;
 }
 /* math.css */
@@ -13,7 +13,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/noto-sans-math-400-normal.woff2') format(woff2);
+  src: url(./files/noto-sans-math-400-normal.woff2) format(woff2);
   unicode-range: U+2190-2300;
 }
 /* index.css */
@@ -22,6 +22,6 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/noto-sans-math-400-normal.woff2') format(woff2);
+  src: url(./files/noto-sans-math-400-normal.woff2) format(woff2);
   unicode-range: U+2190-2300;
 }

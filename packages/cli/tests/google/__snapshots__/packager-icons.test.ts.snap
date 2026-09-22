@@ -10,7 +10,7 @@ exports[`packager icons > should generate Material Icons CSS successfully (stati
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/material-icons-latin-400-normal.woff2') format(woff2), url('./files/material-icons-latin-400-normal.woff') format(woff);
+  src: url(./files/material-icons-latin-400-normal.woff2) format(woff2), url(./files/material-icons-latin-400-normal.woff) format(woff);
 }",
     ],
     [
@@ -20,7 +20,7 @@ exports[`packager icons > should generate Material Icons CSS successfully (stati
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/material-icons-latin-400-normal.woff2') format(woff2), url('./files/material-icons-latin-400-normal.woff') format(woff);
+  src: url(./files/material-icons-latin-400-normal.woff2) format(woff2), url(./files/material-icons-latin-400-normal.woff) format(woff);
 }",
     ],
     [
@@ -30,7 +30,7 @@ exports[`packager icons > should generate Material Icons CSS successfully (stati
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/material-icons-latin-400-normal.woff2') format(woff2), url('./files/material-icons-latin-400-normal.woff') format(woff);
+  src: url(./files/material-icons-latin-400-normal.woff2) format(woff2), url(./files/material-icons-latin-400-normal.woff) format(woff);
 }",
     ],
     [
@@ -40,7 +40,7 @@ exports[`packager icons > should generate Material Icons CSS successfully (stati
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('./files/material-icons-latin-400-normal.woff2') format(woff2), url('./files/material-icons-latin-400-normal.woff') format(woff);
+  src: url(./files/material-icons-latin-400-normal.woff2) format(woff2), url(./files/material-icons-latin-400-normal.woff) format(woff);
 }",
     ],
   ],
@@ -75,7 +75,7 @@ exports[`packager icons > should generate Material Symbols Sharp CSS successfull
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url('./files/material-symbols-sharp-latin-opsz-normal.woff2') format('woff2-variations');
+  src: url(./files/material-symbols-sharp-latin-opsz-normal.woff2) format('woff2-variations');
 }",
     ],
     [
@@ -85,7 +85,7 @@ exports[`packager icons > should generate Material Symbols Sharp CSS successfull
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url('./files/material-symbols-sharp-latin-fill-normal.woff2') format('woff2-variations');
+  src: url(./files/material-symbols-sharp-latin-fill-normal.woff2) format('woff2-variations');
 }",
     ],
     [
@@ -95,7 +95,7 @@ exports[`packager icons > should generate Material Symbols Sharp CSS successfull
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url('./files/material-symbols-sharp-latin-grad-normal.woff2') format('woff2-variations');
+  src: url(./files/material-symbols-sharp-latin-grad-normal.woff2) format('woff2-variations');
 }",
     ],
     [
@@ -105,7 +105,7 @@ exports[`packager icons > should generate Material Symbols Sharp CSS successfull
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url('./files/material-symbols-sharp-latin-wght-normal.woff2') format('woff2-variations');
+  src: url(./files/material-symbols-sharp-latin-wght-normal.woff2) format('woff2-variations');
 }",
     ],
     [
@@ -115,7 +115,7 @@ exports[`packager icons > should generate Material Symbols Sharp CSS successfull
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url('./files/material-symbols-sharp-latin-full-normal.woff2') format('woff2-variations');
+  src: url(./files/material-symbols-sharp-latin-full-normal.woff2) format('woff2-variations');
 }",
     ],
     [
@@ -125,7 +125,7 @@ exports[`packager icons > should generate Material Symbols Sharp CSS successfull
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url('./files/material-symbols-sharp-latin-standard-normal.woff2') format('woff2-variations');
+  src: url(./files/material-symbols-sharp-latin-standard-normal.woff2) format('woff2-variations');
 }",
     ],
     [
@@ -135,7 +135,7 @@ exports[`packager icons > should generate Material Symbols Sharp CSS successfull
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url('./files/material-symbols-sharp-latin-wght-normal.woff2') format('woff2-variations');
+  src: url(./files/material-symbols-sharp-latin-wght-normal.woff2) format('woff2-variations');
 }",
     ],
   ],

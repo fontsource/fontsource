@@ -3,7 +3,7 @@
   font-style: normal;
   font-display: optional;
   font-weight: 400;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/latin-400-normal.woff2') format(woff2);
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/latin-400-normal.woff2) format(woff2);
   unicode-range: U+0000-00FF;
 }
 
@@ -12,7 +12,7 @@
   font-style: italic;
   font-display: optional;
   font-weight: 400;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/latin-400-italic.woff2') format(woff2);
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/latin-400-italic.woff2) format(woff2);
   unicode-range: U+0000-00FF;
 }
 
@@ -21,7 +21,7 @@
   font-style: normal;
   font-display: optional;
   font-weight: 700;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/latin-700-normal.woff2') format(woff2);
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/latin-700-normal.woff2) format(woff2);
   unicode-range: U+0000-00FF;
 }
 
@@ -30,7 +30,7 @@
   font-style: italic;
   font-display: optional;
   font-weight: 700;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/latin-700-italic.woff2') format(woff2);
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/latin-700-italic.woff2) format(woff2);
   unicode-range: U+0000-00FF;
 }
 
@@ -39,7 +39,7 @@
   font-style: normal;
   font-display: optional;
   font-weight: 400;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/cyrillic-400-normal.woff2') format(woff2);
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/cyrillic-400-normal.woff2) format(woff2);
   unicode-range: U+0400-04FF;
 }
 
@@ -48,7 +48,7 @@
   font-style: italic;
   font-display: optional;
   font-weight: 400;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/cyrillic-400-italic.woff2') format(woff2);
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/cyrillic-400-italic.woff2) format(woff2);
   unicode-range: U+0400-04FF;
 }
 
@@ -57,7 +57,7 @@
   font-style: normal;
   font-display: optional;
   font-weight: 700;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/cyrillic-700-normal.woff2') format(woff2);
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/cyrillic-700-normal.woff2) format(woff2);
   unicode-range: U+0400-04FF;
 }
 
@@ -66,6 +66,6 @@
   font-style: italic;
   font-display: optional;
   font-weight: 700;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/cyrillic-700-italic.woff2') format(woff2);
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@5.3.0/cyrillic-700-italic.woff2) format(woff2);
   unicode-range: U+0400-04FF;
 }
