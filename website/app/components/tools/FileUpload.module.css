@@ -28,6 +28,19 @@
 	padding: 4px var(--mantine-spacing-md);
 }
 
+.content {
+	min-height: calc(10rem * var(--mantine-scale));
+	pointer-events: none;
+
+	@media (--gt-sm) {
+		min-height: calc(13.75rem * var(--mantine-scale));
+	}
+}
+
+.dropzone[data-compact='true'] .content {
+	min-height: calc(3rem * var(--mantine-scale));
+}
+
 .idleIcon,
 .acceptIcon,
 .rejectIcon {

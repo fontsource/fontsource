@@ -1,13 +1,5 @@
 import { observer, useValue } from '@legendapp/state/react';
-import {
-	Box,
-	Button,
-	Group,
-	SimpleGrid,
-	Stack,
-	Text,
-	VisuallyHidden,
-} from '@mantine/core';
+import { Box, Button, Group, Stack, Text, VisuallyHidden } from '@mantine/core';
 import {
 	useWindowVirtualizer,
 	type VirtualItem,
@@ -197,7 +189,7 @@ const HitPlaceholder = ({
 }: LoadingPlaceholderProps) => (
 	<Box
 		className={`${classes.wrapper} ${classes.placeholder}`}
-		mih={{ base: '150px', sm: display === 'grid' ? '332px' : '150px' }}
+		data-layout={display}
 		aria-hidden="true"
 	>
 		<Skeleton name="search-hit-preview" loading>
@@ -491,10 +483,7 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 						})}
 					</div>
 				) : (
-					<SimpleGrid
-						cols={display === 'grid' ? { base: 1, sm: 2, md: 3, xl: 4 } : 1}
-						spacing={rowGap}
-					>
+					<div className={classes['initial-results']} data-layout={display}>
 						{items.map((hit, index) => (
 							<HitComponent
 								languageSample={languageSample}
@@ -507,7 +496,7 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 								eagerStylesheet={index < eagerStylesheetCount}
 							/>
 						))}
-					</SimpleGrid>
+					</div>
 				)}
 			</div>
 			{searchError}

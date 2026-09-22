@@ -5,7 +5,6 @@ import {
 	Code,
 	Progress,
 	Select,
-	SimpleGrid,
 	Stack,
 	Text,
 	TextInput,
@@ -327,7 +326,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 								/>
 								{workbench.output.includeCss && (
 									<>
-										<SimpleGrid cols={{ base: 1, sm: 2 }}>
+										<div className={classes.outputSettings}>
 											<Select
 												label="font-display"
 												data={fontDisplayOptions}
@@ -360,7 +359,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 													})
 												}
 											/>
-										</SimpleGrid>
+										</div>
 										<Text size="xs" className={classes.supportingText}>
 											Generated URL:{' '}
 											<Code className={classes.pathPreview}>
