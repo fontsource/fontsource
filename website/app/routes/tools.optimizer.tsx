@@ -5,9 +5,9 @@ import { getCanonicalUrl, ogMeta } from '@/utils/meta';
 
 export const meta: MetaFunction = () => [
 	...ogMeta({
-		title: 'Webfont Optimizer — Subset Fonts & WOFF2 | Fontsource',
+		title: 'Webfont Optimizer — Subset and Compress Fonts | Fontsource',
 		description:
-			'Subset TTF, OTF, WOFF, and WOFF2 fonts by character set or custom text, locally in your browser. Compare file sizes and download WOFF2 fonts with matching CSS.',
+			'Subset and compress fonts in your browser. Choose the characters to keep, then download WOFF2 files and matching CSS.',
 	}),
 	{
 		'script:ld+json': {

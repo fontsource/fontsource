@@ -412,14 +412,14 @@ export const CharacterExplorer = ({
 		direction: registry.primaryDirection ?? 'ltr',
 		...sourcePreviewStyle,
 	};
-	const heading = catalogExpected ? 'Find a symbol.' : 'Explore glyphs.';
+	const heading = catalogExpected ? 'Symbol Explorer' : 'Glyph Explorer';
 	const description = catalogExpected
 		? hasCatalogEntries && hasNamedLigatures
-			? `Search symbol names, inspect their mappings, and copy what you need from ${metadata.family}.`
+			? `Search symbols in ${metadata.family} by name, view their Unicode values, and copy their names.`
 			: hasCatalogEntries
-				? `Search the symbol catalog and copy mapped characters from ${metadata.family}.`
-				: `Browse mapped code points and copy what you need from ${metadata.family}.`
-		: `Browse characters, inspect their Unicode values, and copy what you need from ${metadata.family}.`;
+				? `Search the symbols in ${metadata.family}, view their Unicode values, and copy individual characters.`
+				: `Browse the characters in ${metadata.family}, view their Unicode values, and copy individual characters.`
+		: `Browse the characters in ${metadata.family}, view their Unicode values, and copy individual characters.`;
 	const searchPlaceholder =
 		hasCatalogEntries && hasNamedLigatures
 			? 'Search symbols by name or code point'

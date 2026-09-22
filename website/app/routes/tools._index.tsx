@@ -7,7 +7,7 @@ import { ogMeta } from '@/utils/meta';
 export const meta: MetaFunction = () => {
 	const title = 'Font Tools | Fontsource';
 	const description =
-		'Browser-based tools for converting TTF, OTF, WOFF, and WOFF2 files, subsetting and compressing web fonts, and generating @font-face CSS. No uploads.';
+		'Convert font formats, remove unneeded characters, and compress webfonts. Files are processed in your browser without uploading them.';
 
 	return ogMeta({ title, description });
 };
@@ -15,14 +15,15 @@ export const meta: MetaFunction = () => {
 const tools = [
 	{
 		title: 'Font Converter',
-		description: 'Convert TTF, OTF, WOFF, and WOFF2 files.',
+		description:
+			'Convert font files to WOFF2, WOFF, or TTF for websites and design apps.',
 		link: '/tools/converter',
 		icon: IconTransform,
 	},
 	{
 		title: 'Webfont Optimizer',
 		description:
-			'Subset fonts by character set or text. Download WOFF2 and CSS.',
+			'Subset and compress fonts into WOFF2 files with matching CSS.',
 		link: '/tools/optimizer',
 		icon: IconBolt,
 	},
@@ -32,7 +33,7 @@ export default function ToolsIndexPage() {
 	return (
 		<div className={classes.page}>
 			<header className={classes.header}>
-				<h1>Font tools</h1>
+				<h1>Font Tools</h1>
 				<p>
 					Convert font files or prepare them for your website. Everything runs
 					in your browser.
