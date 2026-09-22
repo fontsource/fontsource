@@ -1,6 +1,4 @@
-import { createFetchRequester } from '@algolia/requester-fetch';
-import { liteClient as algoliasearch } from 'algoliasearch/lite';
-import type { SearchClient, UiState } from 'instantsearch.js';
+import type { UiState } from 'instantsearch.js';
 import { history } from 'instantsearch.js/es/lib/routers';
 import type { BrowserHistoryArgs } from 'instantsearch.js/es/lib/routers/history';
 import type { RouterProps } from 'instantsearch.js/es/middlewares';
@@ -11,6 +9,7 @@ import {
 	type SearchState,
 } from '@/components/search/observables';
 import type { GetRegistryLanguageIndexResponse } from '@/generated/api';
+import { DEFAULT_SEARCH_INDEX } from '@/utils/algolia-client';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
@@ -36,7 +35,6 @@ interface SearchRouteState {
 	variable?: boolean;
 }
 
-const ALGOLIA_APP_ID = 'WNATE69PVR';
 const attributesToRetrieve = [
 	'family',
 	'defSubset',
@@ -45,21 +43,13 @@ const attributesToRetrieve = [
 	'languageIndexVersion',
 ];
 
-const searchClient: SearchClient = algoliasearch(
-	ALGOLIA_APP_ID,
-	'8b36fe56fca654afaeab5e6f822c14bd',
-	{
-		requester: createFetchRequester(),
-	},
-);
-
 const sortMap: Record<string, string> = {
-	prod_POPULAR: 'popular',
+	[DEFAULT_SEARCH_INDEX]: 'popular',
 	prod_NEWEST: 'newest',
 	prod_NAME: 'name',
 	prod_RANDOM: 'random',
 
-	popular: 'prod_POPULAR',
+	popular: DEFAULT_SEARCH_INDEX,
 	newest: 'prod_NEWEST',
 	name: 'prod_NAME',
 	random: 'prod_RANDOM',
@@ -93,7 +83,7 @@ const routing = (
 	discovery?: DiscoveryPage,
 	navigate?: (url: string) => void,
 ): RouterProps<UiState, SearchRouteState> => {
-	const indexName = 'prod_POPULAR';
+	const indexName = DEFAULT_SEARCH_INDEX;
 	return {
 		router: history({
 			getLocation: () => {
@@ -197,10 +187,4 @@ const routing = (
 	};
 };
 
-export {
-	ALGOLIA_APP_ID,
-	attributesToRetrieve,
-	createPageSearchState,
-	routing,
-	searchClient,
-};
+export { attributesToRetrieve, createPageSearchState, routing };

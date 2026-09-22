@@ -10,10 +10,10 @@ import {
 	useSortBy,
 	useToggleRefinement,
 } from 'react-instantsearch';
-
 import { IconTrash } from '@/components/icons';
 import { CollectionFilter } from '@/features/collections/CollectionFilter';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
+import { DEFAULT_SEARCH_INDEX } from '@/utils/algolia-client';
 
 import {
 	CategoriesDropdown,
@@ -73,7 +73,7 @@ const Filters = ({ state$, languages, taxonomy }: FilterProps) => {
 		state$.collectionId.set(null);
 		clearQueries('');
 		clearRefinements();
-		clearSortBy('prod_POPULAR');
+		clearSortBy(DEFAULT_SEARCH_INDEX);
 	};
 	const handleCollectionChange = useCallback(
 		(value: string | null) => {

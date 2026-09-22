@@ -16,14 +16,15 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import { IconStack2 } from '@tabler/icons-react';
 import cx from 'clsx';
-import { Form, Link, NavLink, useLocation } from 'react-router';
+import { Link, NavLink, useLocation } from 'react-router';
 
 import { LeftSidebar } from '@/components/docs/LeftSidebar';
-import { IconDiscord, IconGithub, IconSearch } from '@/components/icons';
+import { IconDiscord, IconGithub } from '@/components/icons';
 import { LogoText } from '@/components/logo/LogoText';
 import { useCurrentProjectStore } from '@/features/projects/CurrentProjectProvider';
 
 import classes from './Header.module.css';
+import { HeaderSearch } from './HeaderSearch';
 import { ThemeButton, ThemeButtonMobile } from './ThemeButton';
 
 interface IconProps extends ActionIconProps {
@@ -184,36 +185,7 @@ export const Header = ({ ...other }: ContainerProps) => {
 					<Link to="/" prefetch="intent" aria-label="Fontsource home">
 						<LogoText height={31} isHeader />
 					</Link>
-					{isFontPage && (
-						<>
-							<search className={classes.fontSearch}>
-								<Form action="/">
-									<button
-										type="submit"
-										className={classes.searchSubmit}
-										aria-label="Search fonts"
-									>
-										<IconSearch aria-hidden height={17} />
-									</button>
-									<input
-										type="search"
-										name="query"
-										aria-label="Search fonts"
-										placeholder="Search fonts"
-									/>
-								</Form>
-							</search>
-							<Tooltip label="Search fonts">
-								<Link
-									to="/"
-									className={classes.fontSearchShortcut}
-									aria-label="Search fonts"
-								>
-									<IconSearch aria-hidden height={18} />
-								</Link>
-							</Tooltip>
-						</>
-					)}
+					{isFontPage && <HeaderSearch />}
 					<Box className={classes.links} visibleFrom="sm">
 						<Tooltip.Group openDelay={600} closeDelay={100}>
 							<Group gap="md" justify="right">
