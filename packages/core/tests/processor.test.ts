@@ -108,7 +108,7 @@ describe('buildFont integration with real fixtures', () => {
 		const indexCSS = result.css.find((asset) => asset.filename === 'index.css');
 		expect(indexCSS?.content).toContain('font-display: block');
 		expect(indexCSS?.content).toContain(
-			'url(/fonts/abel-full-400-normal.woff2)',
+			"url('/fonts/abel-full-400-normal.woff2')",
 		);
 		expect(progress.length).toBeGreaterThan(0);
 	});

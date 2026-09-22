@@ -6,41 +6,41 @@ exports[`packager icons > should generate Material Icons CSS successfully (stati
     [
       "test/material-icons/400.css",
       "@font-face {
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/material-icons-latin-400-normal.woff2) format(woff2), url(./files/material-icons-latin-400-normal.woff) format(woff);
+  src: url('./files/material-icons-latin-400-normal.woff2') format('woff2'), url('./files/material-icons-latin-400-normal.woff') format('woff');
 }",
     ],
     [
       "test/material-icons/latin-400.css",
       "@font-face {
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/material-icons-latin-400-normal.woff2) format(woff2), url(./files/material-icons-latin-400-normal.woff) format(woff);
+  src: url('./files/material-icons-latin-400-normal.woff2') format('woff2'), url('./files/material-icons-latin-400-normal.woff') format('woff');
 }",
     ],
     [
       "test/material-icons/latin.css",
       "@font-face {
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/material-icons-latin-400-normal.woff2) format(woff2), url(./files/material-icons-latin-400-normal.woff) format(woff);
+  src: url('./files/material-icons-latin-400-normal.woff2') format('woff2'), url('./files/material-icons-latin-400-normal.woff') format('woff');
 }",
     ],
     [
       "test/material-icons/index.css",
       "@font-face {
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/material-icons-latin-400-normal.woff2) format(woff2), url(./files/material-icons-latin-400-normal.woff) format(woff);
+  src: url('./files/material-icons-latin-400-normal.woff2') format('woff2'), url('./files/material-icons-latin-400-normal.woff') format('woff');
 }",
     ],
   ],
@@ -71,71 +71,71 @@ exports[`packager icons > should generate Material Symbols Sharp CSS successfull
     [
       "test/material-symbols-sharp/opsz.css",
       "@font-face {
-  font-family: "Material Symbols Sharp Variable";
+  font-family: 'Material Symbols Sharp Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url(./files/material-symbols-sharp-latin-opsz-normal.woff2) format("woff2-variations");
+  src: url('./files/material-symbols-sharp-latin-opsz-normal.woff2') format('woff2-variations');
 }",
     ],
     [
       "test/material-symbols-sharp/fill.css",
       "@font-face {
-  font-family: "Material Symbols Sharp Variable";
+  font-family: 'Material Symbols Sharp Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url(./files/material-symbols-sharp-latin-fill-normal.woff2) format("woff2-variations");
+  src: url('./files/material-symbols-sharp-latin-fill-normal.woff2') format('woff2-variations');
 }",
     ],
     [
       "test/material-symbols-sharp/grad.css",
       "@font-face {
-  font-family: "Material Symbols Sharp Variable";
+  font-family: 'Material Symbols Sharp Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url(./files/material-symbols-sharp-latin-grad-normal.woff2) format("woff2-variations");
+  src: url('./files/material-symbols-sharp-latin-grad-normal.woff2') format('woff2-variations');
 }",
     ],
     [
       "test/material-symbols-sharp/wght.css",
       "@font-face {
-  font-family: "Material Symbols Sharp Variable";
+  font-family: 'Material Symbols Sharp Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url(./files/material-symbols-sharp-latin-wght-normal.woff2) format("woff2-variations");
+  src: url('./files/material-symbols-sharp-latin-wght-normal.woff2') format('woff2-variations');
 }",
     ],
     [
       "test/material-symbols-sharp/full.css",
       "@font-face {
-  font-family: "Material Symbols Sharp Variable";
+  font-family: 'Material Symbols Sharp Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url(./files/material-symbols-sharp-latin-full-normal.woff2) format("woff2-variations");
+  src: url('./files/material-symbols-sharp-latin-full-normal.woff2') format('woff2-variations');
 }",
     ],
     [
       "test/material-symbols-sharp/standard.css",
       "@font-face {
-  font-family: "Material Symbols Sharp Variable";
+  font-family: 'Material Symbols Sharp Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url(./files/material-symbols-sharp-latin-standard-normal.woff2) format("woff2-variations");
+  src: url('./files/material-symbols-sharp-latin-standard-normal.woff2') format('woff2-variations');
 }",
     ],
     [
       "test/material-symbols-sharp/index.css",
       "@font-face {
-  font-family: "Material Symbols Sharp Variable";
+  font-family: 'Material Symbols Sharp Variable';
   font-style: normal;
   font-display: swap;
   font-weight: 100 700;
-  src: url(./files/material-symbols-sharp-latin-wght-normal.woff2) format("woff2-variations");
+  src: url('./files/material-symbols-sharp-latin-wght-normal.woff2') format('woff2-variations');
 }",
     ],
   ],

@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "TestFont Variable";
+  font-family: 'TestFont Variable';
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 400 700;
-  src: url(./files/testfont-latin-standard-italic.woff2) format("woff2-variations");
+  src: url('./files/testfont-latin-standard-italic.woff2') format('woff2-variations');
   unicode-range: U+0000-00FF;
 }

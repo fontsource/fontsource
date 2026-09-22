@@ -6,11 +6,7 @@ import {
 	getFaceStyle,
 	renderFontFaceRule,
 } from '@fontsource-utils/core/css';
-import type {
-	FontObjectV1,
-	FontObjectV2,
-	FontObjectVariable,
-} from 'google-font-metadata';
+import type { FontObjectV1, FontObjectVariable } from 'google-font-metadata';
 import type { CSSGenerate } from '../types';
 import { findClosest } from '../utils';
 
@@ -19,25 +15,13 @@ type GenerateMetadataV1 = Pick<
 	'id' | 'family' | 'styles' | 'weights' | 'subsets' | 'variants'
 > & { unicodeRange?: Record<string, string> };
 
-type GenerateMetadataV2 = Pick<
-	FontObjectV2['id'],
-	| 'id'
-	| 'family'
-	| 'styles'
-	| 'weights'
-	| 'subsets'
-	| 'variants'
-	| 'unicodeRange'
->;
+type GenerateMetadataV2 = GenerateMetadataV1 & {
+	unicodeRange: Record<string, string>;
+};
 
 type GenerateMetadataVariable = Pick<
 	FontObjectVariable['id'],
 	'axes' | 'variants'
->;
-
-type GenerateIconStatic = Pick<
-	FontObjectV2['id'],
-	'id' | 'family' | 'styles' | 'weights' | 'subsets' | 'variants'
 >;
 
 type GenerateIconVariable = Pick<
@@ -174,7 +158,7 @@ export const generateV2CSS = (
 };
 
 export const generateIconStaticCSS = (
-	metadata: GenerateIconStatic,
+	metadata: GenerateMetadataV1,
 	makePath: StaticPath,
 	tag?: string,
 ): CSSGenerate => {
