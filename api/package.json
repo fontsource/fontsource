@@ -4,7 +4,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "pnpm --filter '@fontsource-utils/core' run build && vite build",
+		"build": "pnpm --filter '@fontsource-utils/core' run build && vite build && node scripts/upload-sourcemaps.ts",
 		"cf-typegen": "wrangler types",
 		"container:build": "tsx scripts/build-container.ts",
 		"container:start": "node container/dist/server.mjs",
@@ -29,6 +29,7 @@
 		"hono": "^4.13.8",
 		"limit-concur": "^4.0.0",
 		"modern-tar": "0.8.5",
+		"posthog-node": "5.52.4",
 		"takumi-js": "2.14.0",
 		"zod": "4.6.5"
 	},
@@ -36,6 +37,7 @@
 		"@cloudflare/vite-plugin": "catalog:",
 		"@cloudflare/vitest-plugin": "^1.1.12",
 		"@hey-api/openapi-ts": "0.99.0",
+		"@posthog/cli": "0.16.2",
 		"@types/node": "catalog:node24",
 		"@vitest/coverage-v8": "catalog:",
 		"esbuild": "catalog:",

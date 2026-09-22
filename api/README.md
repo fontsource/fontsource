@@ -35,3 +35,15 @@ pnpm test
 pnpm typecheck
 pnpm build
 ```
+
+## Error tracking
+
+Production builds report unexpected request errors and scheduled/queue failures to
+the website's PostHog project, tagged `source: api-worker`. Expected HTTP 4xx
+responses are excluded; Cloudflare logging and queue retries remain in place.
+
+Set `POSTHOG_API_KEY` in the API's Cloudflare build environment to upload source
+maps to PostHog during `pnpm build`, using the same personal API key permissions
+as the website build. Maps are removed after upload. `WORKERS_CI_COMMIT_SHA`
+(or `GITHUB_SHA`) identifies the release in captured errors. Local development
+and tests do not send errors.

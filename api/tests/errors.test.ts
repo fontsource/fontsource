@@ -1,5 +1,13 @@
+import {
+	createExecutionContext,
+	createScheduledController,
+	waitOnExecutionContext,
+} from 'cloudflare:test';
+import { gunzipSync } from 'node:zlib';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { dispatch, setupWorkerTest } from './helpers';
+import { STATS_CRON } from '../worker/src/constants';
+import worker from '../worker/src/index';
+import { dispatch, setupWorkerTest, testEnv } from './helpers';
 
 describe('error responses', () => {
 	beforeEach(async () => {
@@ -8,6 +16,85 @@ describe('error responses', () => {
 
 	afterEach(() => {
 		vi.restoreAllMocks();
+		vi.unstubAllEnvs();
+	});
+
+	it.each([200, 400])(
+		'reports a request failure even when PostHog returns %i',
+		async (posthogStatus) => {
+			vi.stubEnv('PROD', true);
+			vi.spyOn(testEnv.METADATA, 'get').mockRejectedValue(
+				new Error('KV unavailable'),
+			);
+			const capture = vi
+				.spyOn(globalThis, 'fetch')
+				.mockResolvedValue(new Response('{}', { status: posthogStatus }));
+			const { response, settle } = await dispatch(
+				new Request('https://fontsource.test/v1/fonts', {
+					headers: { Authorization: 'Bearer private-value' },
+				}),
+			);
+			await settle();
+			expect(response.status).toBe(500);
+			expect(response.headers.get('Cache-Control')).toBe('no-store');
+			expect(capture).toHaveBeenCalledTimes(1);
+			const [url, options] = capture.mock.calls[0] ?? [];
+			expect(String(url)).toContain('https://eu.i.posthog.com/');
+			const payload = JSON.parse(
+				gunzipSync(await new Response(options?.body).arrayBuffer()).toString(),
+			);
+			expect(payload.batch[0]).toMatchObject({
+				event: '$exception',
+				properties: {
+					source: 'api-worker',
+					handler: 'fetch',
+					pathname: '/v1/fonts',
+					method: 'GET',
+					$process_person_profile: false,
+				},
+			});
+			expect(JSON.stringify(payload)).not.toContain('private-value');
+		},
+	);
+
+	it('reports scheduled failures without swallowing them', async () => {
+		vi.stubEnv('PROD', true);
+		const error = new Error('KV unavailable');
+		vi.spyOn(testEnv.METADATA, 'get').mockRejectedValue(error);
+		const capture = vi
+			.spyOn(globalThis, 'fetch')
+			.mockResolvedValue(new Response('{}'));
+		const ctx = createExecutionContext();
+		await expect(
+			worker.scheduled(
+				createScheduledController({ cron: STATS_CRON }),
+				testEnv,
+				ctx,
+			),
+		).rejects.toThrow(error);
+		await waitOnExecutionContext(ctx);
+		const payload = JSON.parse(
+			gunzipSync(
+				await new Response(capture.mock.calls[0]?.[1]?.body).arrayBuffer(),
+			).toString(),
+		);
+		expect(payload.batch[0].properties).toMatchObject({
+			handler: 'scheduled',
+			cron: STATS_CRON,
+		});
+	});
+
+	it('does not report local development failures', async () => {
+		vi.spyOn(testEnv.METADATA, 'get').mockRejectedValue(
+			new Error('KV unavailable'),
+		);
+		const capture = vi.spyOn(globalThis, 'fetch');
+		const { response, settle } = await dispatch(
+			'https://fontsource.test/v1/fonts',
+		);
+		await settle();
+		expect(response.status).toBe(500);
+		expect(capture).not.toHaveBeenCalled();
 	});
 
 	it.each([
@@ -79,10 +166,15 @@ describe('error responses', () => {
 			'Not Found',
 		],
 	])('%s returns %i', async (_label, url, expectedStatus, errorContains) => {
+		vi.stubEnv('PROD', true);
+		const capture = vi.spyOn(globalThis, 'fetch');
 		const { response, settle } = await dispatch(url);
 		const body = (await response.json()) as { status: number; error: string };
 		await settle();
 
+		expect(
+			capture.mock.calls.some(([url]) => String(url).includes('posthog.com')),
+		).toBe(false);
 		expect(response.status).toBe(expectedStatus);
 		expect(body.status).toBe(expectedStatus);
 		expect(body.error.toLowerCase()).toContain(errorContains.toLowerCase());

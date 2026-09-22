@@ -95,6 +95,9 @@ importers:
       modern-tar:
         specifier: 0.8.5
         version: 0.8.5
+      posthog-node:
+        specifier: 5.52.4
+        version: 5.52.4
       takumi-js:
         specifier: 2.14.0
         version: 2.14.0(csstype@3.2.3)(preact@10.29.7)(react@19.3.0)
@@ -111,6 +114,9 @@ importers:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
         version: 0.99.0(magicast@0.5.4)(typescript@6.0.3)
+      '@posthog/cli':
+        specifier: 0.16.2
+        version: 0.16.2
       '@types/node':
         specifier: catalog:node24
         version: 24.13.5

@@ -1,4 +1,5 @@
 import { app } from './app';
+import { captureApiError } from './utils/posthog';
 
 export { ArtifactBuilder } from './container/binding';
 
@@ -26,34 +27,61 @@ const worker = {
 		env: Env,
 		ctx: ExecutionContext,
 	): Promise<Response> => {
-		parseEnv(env);
-		return app.fetch(request, env, ctx);
+		try {
+			parseEnv(env);
+			return await app.fetch(request, env, ctx);
+		} catch (error) {
+			if (!request.signal.aborted) {
+				ctx.waitUntil(
+					captureApiError(error, {
+						handler: 'fetch',
+						pathname: new URL(request.url).pathname,
+						method: request.method,
+					}),
+				);
+			}
+			throw error;
+		}
 	},
 
 	scheduled: async (
 		event: ScheduledController,
 		env: Env,
-		_ctx: ExecutionContext,
+		ctx: ExecutionContext,
 	): Promise<void> => {
-		parseEnv(env);
+		try {
+			parseEnv(env);
 
-		if (event.cron === STATS_CRON) {
-			await scheduleStatsRefresh(env);
-			return;
-		}
+			if (event.cron === STATS_CRON) {
+				await scheduleStatsRefresh(env);
+				return;
+			}
 
-		if (event.cron === METADATA_CRON) {
-			await Promise.all([refreshCatalog(env), refreshAxisRegistry(env)]);
+			if (event.cron === METADATA_CRON) {
+				await Promise.all([refreshCatalog(env), refreshAxisRegistry(env)]);
+			}
+		} catch (error) {
+			ctx.waitUntil(
+				captureApiError(error, { handler: 'scheduled', cron: event.cron }),
+			);
+			throw error;
 		}
 	},
 
 	queue: async (
 		batch: MessageBatch<StatsQueueMessage>,
 		env: Env,
-		_ctx: ExecutionContext,
+		ctx: ExecutionContext,
 	): Promise<void> => {
-		parseEnv(env);
-		await consumeStatsQueue(batch, env);
+		try {
+			parseEnv(env);
+			await consumeStatsQueue(batch, env, ctx);
+		} catch (error) {
+			ctx.waitUntil(
+				captureApiError(error, { handler: 'queue', queue: batch.queue }),
+			);
+			throw error;
+		}
 	},
 } satisfies ExportedHandler<Env, StatsQueueMessage>;
 

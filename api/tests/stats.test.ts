@@ -4,6 +4,7 @@ import {
 	createScheduledController,
 	getQueueResult,
 } from 'cloudflare:test';
+import { gunzipSync } from 'node:zlib';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import legacyFontIds from '../shared/legacy-fonts.json';
 import { STATS_CRON } from '../worker/src/constants';
@@ -44,6 +45,7 @@ describe('download stats ingestion', () => {
 	afterEach(() => {
 		vi.useRealTimers();
 		vi.restoreAllMocks();
+		vi.unstubAllEnvs();
 	});
 
 	it('seeds the complete package set from the daily cron', async () => {
@@ -191,13 +193,25 @@ describe('download stats ingestion', () => {
 	});
 
 	it('records upstream failures and retries the package message', async () => {
+		vi.stubEnv('PROD', true);
 		await seedStatsPackages(testEnv, testCatalog);
 		vi.spyOn(scheduler, 'wait').mockResolvedValue();
-		installUpstreamFetchMock({
+		const capture = installUpstreamFetchMock({
 			'https://api.npmjs.org/downloads/point/last-month/%40fontsource%2Fabel':
 				new Response('{}', { status: 500 }),
+			'https://eu.i.posthog.com/batch/': new Response('{}', { status: 400 }),
 		});
 		const result = await processQueueMessage();
+		const captured = capture.mock.calls.find(([url]) =>
+			String(url).startsWith('https://eu.i.posthog.com/'),
+		);
+		expect(
+			JSON.parse(
+				gunzipSync(
+					await new Response(captured?.[1]?.body).arrayBuffer(),
+				).toString(),
+			).batch[0].properties,
+		).toMatchObject({ handler: 'queue', packageName: '@fontsource/abel' });
 
 		const failed = await testEnv.STATS.prepare(
 			`SELECT last_error, last_success_at FROM stats_packages

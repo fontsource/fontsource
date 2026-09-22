@@ -3,7 +3,6 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { etag, RETAINED_304_HEADERS } from 'hono/etag';
 import { HTTPException } from 'hono/http-exception';
-
 import { CACHE_POLICIES } from './constants';
 import type { AppEnv } from './env';
 import {
@@ -40,6 +39,7 @@ import {
 	ListRegistrySubsetsRoute,
 } from './routes/registry';
 import { DEFAULT_NOT_FOUND_MESSAGE, toErrorResponse } from './utils/errors';
+import { captureApiError } from './utils/posthog';
 
 const app = new Hono<AppEnv>();
 
@@ -218,6 +218,15 @@ app.notFound((c) =>
 app.onError(async (error, c) => {
 	if (!(error instanceof HTTPException) || error.status >= 500) {
 		console.error(error);
+		if (!c.req.raw.signal.aborted) {
+			c.executionCtx.waitUntil(
+				captureApiError(error, {
+					handler: 'fetch',
+					pathname: c.req.path,
+					method: c.req.method,
+				}),
+			);
+		}
 	}
 	return toErrorResponse(c, error);
 });
