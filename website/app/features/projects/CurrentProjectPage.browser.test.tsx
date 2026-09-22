@@ -44,18 +44,15 @@ afterEach(async () => {
 	localStorage.clear();
 });
 
-async function renderFontSet(
-	action: (args: ActionFunctionArgs) => unknown,
-	url = '/selected-fonts',
-) {
+async function renderFontSet(action: (args: ActionFunctionArgs) => unknown) {
 	const router = createMemoryRouter(
 		[
 			{ path: '/selected-fonts', element: <CurrentProjectPage /> },
 			{ path: '/resources/font-set-items', action },
 		],
-		{ initialEntries: [url] },
+		{ initialEntries: ['/selected-fonts'] },
 	);
-	const screen = await render(
+	return render(
 		<MantineProvider>
 			<CollectionsProvider>
 				<CurrentProjectProvider>
@@ -64,7 +61,6 @@ async function renderFontSet(
 			</CollectionsProvider>
 		</MantineProvider>,
 	);
-	return screen;
 }
 
 async function resolveFamilies({ request }: ActionFunctionArgs) {
@@ -101,8 +97,23 @@ it('hydrates saved fonts, persists remove/undo, and renders complete developer o
 		.toBe(JSON.stringify([{ familyId: 'inter' }, { familyId: 'poppins' }]));
 	await screen.getByRole('tab', { name: 'Developer setup' }).click();
 	await expect
-		.element(screen.getByText('Apply the fonts', { exact: true }))
-		.toBeVisible();
+		.element(
+			screen
+				.getByRole('region', { name: 'Apply the fonts code' })
+				.getByRole('code'),
+		)
+		.toHaveTextContent(
+			'.font-inter { font-family: "Inter"; } .font-poppins { font-family: "Poppins"; }',
+		);
+	await expect
+		.element(
+			screen
+				.getByRole('region', { name: 'Import fonts code' })
+				.getByRole('code'),
+		)
+		.toHaveTextContent(
+			'import "@fontsource/inter"; import "@fontsource/poppins";',
+		);
 });
 
 it('keeps unavailable rows and disables output until retry resolves the complete set', async () => {
@@ -132,12 +143,12 @@ it('keeps unavailable rows and disables output until retry resolves the complete
 		.toBeDisabled();
 	await screen.getByRole('tab', { name: 'Developer setup' }).click();
 	await expect
-		.element(screen.getByText('Apply the fonts', { exact: true }))
+		.element(screen.getByRole('region', { name: 'Apply the fonts code' }))
 		.not.toBeInTheDocument();
 	incomplete = false;
 	await screen.getByRole('button', { name: 'Try again' }).click();
 	await expect
-		.element(screen.getByText('Apply the fonts', { exact: true }))
+		.element(screen.getByRole('region', { name: 'Apply the fonts code' }))
 		.toBeVisible();
 	await screen.getByRole('tab', { name: 'Download files' }).click();
 	await expect
@@ -164,12 +175,23 @@ it('withholds stale output while the changed selection is loading', async () => 
 		.toBeDisabled();
 	await screen.getByRole('tab', { name: 'Developer setup' }).click();
 	await expect
-		.element(screen.getByText('Apply the fonts', { exact: true }))
+		.element(screen.getByRole('region', { name: 'Apply the fonts code' }))
 		.not.toBeInTheDocument();
 	pending.resolve();
 	await expect
-		.element(screen.getByText('Apply the fonts', { exact: true }))
-		.toBeVisible();
+		.element(
+			screen
+				.getByRole('region', { name: 'Apply the fonts code' })
+				.getByRole('code'),
+		)
+		.toHaveTextContent('.font-poppins { font-family: "Poppins"; }');
+	await expect
+		.element(
+			screen
+				.getByRole('region', { name: 'Import fonts code' })
+				.getByRole('code'),
+		)
+		.toHaveTextContent('import "@fontsource/poppins";');
 	await screen.getByRole('tab', { name: 'Download files' }).click();
 	await expect
 		.element(screen.getByRole('button', { name: 'Download all (.zip)' }))

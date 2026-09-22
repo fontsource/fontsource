@@ -17,25 +17,15 @@ import {
 	testVersions,
 } from './fixtures/metadata';
 
-export const toResponse = (
-	body: BodyInit | Uint8Array<ArrayBufferLike>,
-	init?: ResponseInit,
-): Response =>
+export const toResponse = (body: string | Uint8Array<ArrayBufferLike>) =>
 	new Response(toResponseBody(body), {
-		status: 200,
 		headers: {
-			...(body instanceof Uint8Array
-				? { 'Content-Length': String(body.byteLength) }
-				: typeof body === 'string'
-					? {
-							'Content-Length': String(
-								new TextEncoder().encode(body).byteLength,
-							),
-						}
-					: {}),
-			...(init?.headers ?? {}),
+			'Content-Length': String(
+				typeof body === 'string'
+					? new TextEncoder().encode(body).byteLength
+					: body.byteLength,
+			),
 		},
-		...init,
 	});
 
 const dailyDownloads = (from: string, to: string) => {
@@ -98,6 +88,7 @@ const versionPayloads: Record<string, string[]> = {
 };
 
 const unexpectedRequests: string[] = [];
+const handlerErrors: Error[] = [];
 
 const handlers = [
 	http.get(`${UPSTREAM_URLS.npmRegistry}/*`, ({ request }) => {
@@ -191,6 +182,9 @@ const handlers = [
 ];
 
 export const network = setupNetwork();
+network.events.on('unhandledException', ({ error }) => {
+	handlerErrors.push(error);
+});
 
 beforeAll(() => {
 	network.enable();
@@ -199,7 +193,9 @@ beforeAll(() => {
 afterEach(() => {
 	network.resetHandlers(...handlers);
 	const requests = unexpectedRequests.splice(0);
+	const errors = handlerErrors.splice(0);
 	expect(requests, 'Unexpected outbound requests').toEqual([]);
+	expect(errors, 'Unhandled network handler errors').toEqual([]);
 });
 afterAll(() => network.disable());
 
