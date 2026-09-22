@@ -12,6 +12,7 @@ import {
 	BINARY_CONTENT_TYPES,
 	IMMUTABLE_ASSET_CACHE_CONTROL,
 } from '../../shared/http-metadata';
+import { logger } from '../../shared/logger';
 import {
 	getDownloadKey,
 	getStaticAssetKey,
@@ -74,8 +75,9 @@ const buildStaticArtifacts = async (
 		filename.endsWith('.woff2'),
 	);
 
-	console.log(
-		`[artifacts] static build plan: copy=${copyPlan.length}, convert=${convertPlan.length}`,
+	logger.info(
+		{ copy: copyPlan.length, convert: convertPlan.length },
+		'[artifacts] static build plan',
 	);
 
 	const copied = copyPlan.map(([filename, bytes]) =>
@@ -127,7 +129,7 @@ const buildVariableArtifacts = (
 	const sources = [...packageFiles].filter(([filename]) =>
 		filename.endsWith('.woff2'),
 	);
-	console.log(`[artifacts] variable build plan: files=${sources.length}`);
+	logger.info({ files: sources.length }, '[artifacts] variable build plan');
 
 	return sources.map(([filename, bytes]) =>
 		createArtifact(
@@ -192,8 +194,14 @@ const buildPackageArtifacts = async (
 
 	await Promise.all(uploadArtifacts(built));
 
-	console.log(
-		`[artifacts] built ${built.length} ${request.mode} package artifacts for ${request.tag.id}@${request.tag.version}`,
+	logger.info(
+		{
+			artifactCount: built.length,
+			mode: request.mode,
+			fontId: request.tag.id,
+			version: request.tag.version,
+		},
+		'[artifacts] built package artifacts',
 	);
 
 	return built.length;
@@ -272,9 +280,18 @@ const buildDownloadArtifacts = async (
 	);
 	if (warmFailures.length > 0) {
 		const version = request.staticVersion ?? `vf@${request.variableVersion}`;
-		console.error(
-			`[artifacts] failed to warm ${warmFailures.length}/${artifacts.length} individual artifacts for ${id}@${version}`,
-			warmFailures.map((result) => result.reason),
+		logger.error(
+			{
+				failedCount: warmFailures.length,
+				artifactCount: artifacts.length,
+				fontId: id,
+				version,
+				err: new AggregateError(
+					warmFailures.map((result) => result.reason),
+					'Artifact warm uploads failed',
+				),
+			},
+			'[artifacts] failed to warm individual artifacts',
 		);
 	}
 

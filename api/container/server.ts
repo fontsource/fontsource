@@ -3,6 +3,7 @@ import { Hono } from 'hono';
 import { HTTPException } from 'hono/http-exception';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import { type BuildVersionRequest, getBuildKey } from '../shared/build';
+import { logger } from '../shared/logger';
 import { UpstreamNotFoundError } from '../shared/upstream';
 
 const PORT = 3000;
@@ -47,20 +48,23 @@ export const createContainerApp = (
 
 			const buildKey = getBuildKey(payload);
 			const startedAt = Date.now();
-			console.log(`[container] starting ${payload.mode} build ${buildKey}`);
+			logger.info(
+				{ mode: payload.mode, buildKey },
+				'[container] starting build',
+			);
 			const artifactCount = await buildArtifacts(payload);
 			const durationMs = Date.now() - startedAt;
 
-			console.log(
-				`[container] finished ${payload.mode} build ${buildKey} - ${artifactCount} artifacts in ${durationMs}ms`,
+			logger.info(
+				{ mode: payload.mode, buildKey, artifactCount, durationMs },
+				'[container] finished build',
 			);
 
 			return c.json({ state: 'ready', buildKey });
 		} catch (error) {
-			console.error(
+			logger.error(
+				{ err: error, buildKey: payload ? getBuildKey(payload) : undefined },
 				'[container] build failed',
-				payload ? getBuildKey(payload) : '(no payload)',
-				error,
 			);
 
 			return c.json(
@@ -76,8 +80,9 @@ export const createContainerApp = (
 
 	app.notFound((c) => {
 		const url = new URL(c.req.url);
-		console.warn(
-			`[container] unmatched request ${c.req.method} ${url.pathname}${url.search}`,
+		logger.warn(
+			{ method: c.req.method, pathname: url.pathname },
+			'[container] unmatched request',
 		);
 		return c.json({ status: 404, error: 'Not Found.' }, 404);
 	});
@@ -87,6 +92,6 @@ export const createContainerApp = (
 
 if (import.meta.main) {
 	serve({ fetch: createContainerApp().fetch, port: PORT }, () => {
-		console.log(`[container] listening on port ${PORT}`);
+		logger.info({ port: PORT }, '[container] listening');
 	});
 }

@@ -8,6 +8,7 @@ import {
 	findFontPackageEntry,
 	resolveFontPackageManifest,
 } from '../../../../shared/font-package-manifest';
+import { logger } from '../../../../shared/logger';
 import { toResponseBody } from '../../../../shared/response';
 import { getBinaryKey, getDownloadKey } from '../../../../shared/storage';
 import {
@@ -206,9 +207,15 @@ const ensurePublishedPinnedAsset = async (
 			throw error;
 		}
 
-		console.warn(
-			`[cdn] published-file preflight skipped for ${resolved.tag.id}${resolved.tag.isVariable ? ':vf' : ''}@${resolved.tag.version}/${file}`,
-			error,
+		logger.warn(
+			{
+				err: error,
+				fontId: resolved.tag.id,
+				version: resolved.tag.version,
+				isVariable: resolved.tag.isVariable,
+				file,
+			},
+			'[cdn] published-file preflight skipped',
 		);
 	}
 };

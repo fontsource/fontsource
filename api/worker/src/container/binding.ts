@@ -1,5 +1,4 @@
 import { Container, type StopParams } from '@cloudflare/containers';
-
 import type {
 	BuildVersionFailure,
 	BuildVersionRequest,
@@ -8,6 +7,7 @@ import type {
 	BuildVersionStatus,
 } from '../../../shared/build';
 import { getBuildKey } from '../../../shared/build';
+import { logger } from '../../../shared/logger';
 import { getBuilderStartupEnv } from '../env';
 
 const BUILD_TIMEOUT_MS = 10 * 60_000;
@@ -46,7 +46,7 @@ export class ArtifactBuilder extends Container<Env> {
 	private failedBuild?: BuildVersionFailure;
 
 	override onStop({ exitCode, reason }: StopParams): void {
-		console.log('[container] stopped', { exitCode, reason });
+		logger.info({ exitCode, reason }, '[container] stopped');
 	}
 
 	override async onActivityExpired(): Promise<void> {
@@ -104,9 +104,9 @@ export class ArtifactBuilder extends Container<Env> {
 			try {
 				await this.destroy();
 			} catch (error) {
-				console.error(
+				logger.error(
+					{ err: error },
 					'[container] failed to destroy completed instance',
-					error,
 				);
 			}
 		}
