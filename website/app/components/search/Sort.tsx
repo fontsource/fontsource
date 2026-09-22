@@ -7,9 +7,9 @@ import {
 	VisuallyHidden,
 } from '@mantine/core';
 import { useSortBy } from 'react-instantsearch';
-
 import { DropdownSimple } from '@/components/Dropdown';
 import { IconGrid, IconList } from '@/components/icons';
+import { DEFAULT_SEARCH_INDEX } from '@/utils/algolia-client';
 
 import type { SearchState } from './observables';
 import classes from './Sort.module.css';
@@ -20,7 +20,7 @@ interface SortProps {
 }
 
 const sortMap: Record<string, string> = {
-	prod_POPULAR: 'Most Popular',
+	[DEFAULT_SEARCH_INDEX]: 'Most Popular',
 	prod_NEWEST: 'Last Updated',
 	prod_NAME: 'Name',
 	prod_RANDOM: 'Random',

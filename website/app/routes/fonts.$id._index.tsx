@@ -3,7 +3,7 @@ import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyPreview } from '@/components/font-page/FamilyPreview';
-import { type GetFontResponse, listRegistryAxes } from '@/generated/api';
+import { listRegistryAxes } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import {
 	loadFontPageBase,
@@ -11,7 +11,9 @@ import {
 	loadFontPageLanguages,
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
+import { getFontSummary } from '@/utils/font-summary.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
+import { getRegistryContent } from '@/utils/registry';
 import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -35,6 +37,11 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
+			fontSummary: getFontSummary(
+				base.metadata,
+				getRegistryContent(base.registry)?.description,
+				base.registry.designer,
+			),
 			languages: languagesResult.languages,
 			axisRegistry: axesResult,
 			capabilities: capabilitiesResult.capabilities,
@@ -45,21 +52,13 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	);
 };
 
-const generateDescription = (metadata: GetFontResponse) => {
-	const { family, category, variable } = metadata;
-
-	const variableDesc = variable ? 'variable ' : '';
-
-	return `Download the ${family} ${variableDesc}${category} font family web typeface. Self-host typography for your website.`;
-};
-
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 	const title = loaderData?.metadata.family
-		? `${loaderData.metadata.family} | Fontsource`
+		? `${loaderData.metadata.family} — Font Preview & Download | Fontsource`
 		: 'Fontsource';
 
 	const description = loaderData?.metadata
-		? generateDescription(loaderData.metadata)
+		? `${loaderData.fontSummary} Preview your text, download${loaderData.metadata.variable ? ' this variable font' : ' the font'}, or self-host it on your website.`
 		: undefined;
 	const image = loaderData?.metadata
 		? getFontOpenGraphImage(loaderData.metadata)

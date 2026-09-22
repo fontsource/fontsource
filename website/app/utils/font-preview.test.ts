@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
+import type { GetFontResponse } from '@/generated/api';
 import {
 	getFontFamilyStack,
+	getFontPreviewCSS,
 	getRegistrySourcePreviewCSS,
 	selectRegistryPreviewSource,
 } from './font-preview';
@@ -29,6 +31,57 @@ const registry: RegistryFamily = {
 		characters: { type: 'all' },
 	},
 };
+
+describe('getFontPreviewCSS', () => {
+	it.each([false, true])(
+		'preserves numbered subset ranges (variable: %s)',
+		(isVariable) => {
+			const metadata: GetFontResponse = {
+				id: 'example',
+				family: 'Example',
+				subsets: ['korean', 'latin'],
+				weights: [400],
+				styles: ['normal'],
+				defSubset: 'latin',
+				variable: isVariable,
+				lastModified: '2026-01-01',
+				category: 'sans-serif',
+				license: 'OFL-1.1',
+				type: 'google',
+				version: 'v1',
+				source: 'https://example.com',
+				variants: {},
+				unicodeRange: {
+					'[0]': 'U+AC00-ACFF',
+					'[1]': 'U+AD00-ADFF',
+					latin: 'U+0000-00FF',
+				},
+			};
+			const css = getFontPreviewCSS(
+				metadata,
+				isVariable
+					? {
+							family: 'Example',
+							axes: {
+								wght: { default: '400', min: '100', max: '900', step: '1' },
+							},
+						}
+					: undefined,
+			);
+			const suffix = isVariable ? 'wght' : '400';
+			for (const [subset, range] of [
+				['0', 'U+AC00-ACFF'],
+				['1', 'U+AD00-ADFF'],
+				['latin', 'U+0000-00FF'],
+			]) {
+				const face = css
+					.split('}')
+					.find((rule) => rule.includes(`/${subset}-${suffix}-normal.woff2`));
+				expect(face).toContain(`unicode-range: ${range};`);
+			}
+		},
+	);
+});
 
 describe('getFontFamilyStack', () => {
 	it('uses the static family when variable metadata is unavailable', () => {

@@ -34,13 +34,14 @@ interface FontWorkbenchProps {
 const pageContent = {
 	converter: {
 		title: 'Font Converter',
-		description: 'Convert TTF, OTF, WOFF, and WOFF2 files locally.',
+		description:
+			'Convert TTF, OTF, WOFF, and WOFF2 fonts for websites and design apps. Files stay in your browser.',
 		action: 'Convert',
 	},
 	optimizer: {
 		title: 'Webfont Optimizer',
 		description:
-			'Subset and compress fonts into WOFF2 + CSS. Processed in your browser.',
+			'Subset and compress TTF, OTF, WOFF, and WOFF2 fonts. Choose the characters to keep, then download WOFF2 files and matching CSS.',
 		action: 'Optimize',
 	},
 } as const;

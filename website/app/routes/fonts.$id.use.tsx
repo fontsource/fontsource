@@ -63,9 +63,9 @@ export const shouldRevalidate = ({
 export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 	const family = loaderData?.metadata.family;
 	return ogMeta({
-		title: family ? `Get ${family} | Fontsource` : undefined,
+		title: family ? `Download ${family} Font | Fontsource` : undefined,
 		description: family
-			? `Download ${family} or add it to a website with a package or CDN.`
+			? `Download ${family} in TTF, WOFF, and WOFF2 formats with CSS. Self-host with npm packages, or use a CDN.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)

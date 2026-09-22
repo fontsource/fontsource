@@ -16,7 +16,6 @@ import {
 	useNavigate,
 	useNavigation,
 } from 'react-router';
-
 import { ContentHeader } from '@/components/layout/ContentHeader';
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
@@ -24,15 +23,18 @@ import { ScrollToTop } from '@/components/search/ScrollToTop';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 import classes from '@/styles/global.module.css';
 import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
+import {
+	ALGOLIA_APP_ID,
+	DEFAULT_SEARCH_INDEX,
+	searchClient,
+} from '@/utils/algolia-client';
 import { createLanguageSearchClient } from '@/utils/language-facets';
 import { ogMeta } from '@/utils/meta';
 import {
-	ALGOLIA_APP_ID,
 	attributesToRetrieve,
 	createPageSearchState,
 	routing,
 	type SearchProps,
-	searchClient,
 } from '@/utils/search-config';
 
 export { loader } from '@/utils/search.server';
@@ -134,7 +136,7 @@ export function CatalogSearchPage() {
 		<InstantSearchSSRProvider {...serverState}>
 			<InstantSearch
 				searchClient={languageSearchClient}
-				indexName="prod_POPULAR"
+				indexName={DEFAULT_SEARCH_INDEX}
 				routing={routing(serverUrl, state$, discovery, navigateSearch)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>

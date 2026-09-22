@@ -1,4 +1,4 @@
-import { Box, Group, Text, Title } from '@mantine/core';
+import { Box, Group, Title } from '@mantine/core';
 import { Link, NavLink, useLocation } from 'react-router';
 
 import { IconDownload } from '@/components/icons';
@@ -13,7 +13,6 @@ import {
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
 import {
-	getRegistryContent,
 	getRegistryFamilyKind,
 	getRegistrySourcePreviewStyle,
 	type RegistryFamily,
@@ -22,7 +21,6 @@ import {
 
 import classes from './FamilyPageShell.module.css';
 import { FontSkeleton } from './FontSkeleton';
-import { RegistryMarkdown } from './RegistryMarkdown';
 
 type FamilyTab = 'preview' | 'glyphs' | 'about' | 'use';
 type FontPageLocationState = { fontResults?: string };
@@ -43,25 +41,16 @@ const tabs: Array<{ label: string; value: FamilyTab; suffix: string }> = [
 	{ label: 'Get font', value: 'use', suffix: '/use' },
 ];
 
-const sourceNames: Record<GetFontResponse['type'], string> = {
-	google: 'Google Fonts',
-	league: 'The League of Moveable Type',
-	icons: 'Icon family',
-	other: 'Open source',
-};
-
 export const FamilyIdentity = ({
 	metadata,
 	registry,
 	previewSource,
 	variableAvailable = false,
-	compact = false,
 }: {
 	metadata: GetFontResponse;
 	registry: RegistryFamily;
 	previewSource?: RegistrySource;
 	variableAvailable?: boolean;
-	compact?: boolean;
 }) => {
 	const sourcePreviewStyle = getRegistrySourcePreviewStyle(previewSource);
 	const fontFamily = previewSource
@@ -72,17 +61,9 @@ export const FamilyIdentity = ({
 		: getFontPreviewFamily(metadata, variableAvailable);
 	const category = formatFontLabel(metadata.category);
 	const weightLabel = `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`;
-	const subsetLabel = `${metadata.subsets.length} ${metadata.subsets.length === 1 ? 'subset' : 'subsets'}`;
-	const description = getRegistryContent(registry)?.description;
-	const descriptionSummary = description?.split(/\n\s*\n/, 1)[0]?.trim();
-	const showDescriptionLink = Boolean(
-		descriptionSummary && descriptionSummary.length > 180,
-	);
-	const attribution = registry.designer;
 	const classification = registry.classifications[0]
 		? formatFontLabel(registry.classifications[0])
 		: category;
-	const tags = registry.tags.slice(0, 2);
 	const useSpecimenTitle =
 		getRegistryFamilyKind(registry) === 'text' && registry.languages.length > 0;
 
@@ -100,11 +81,11 @@ export const FamilyIdentity = ({
 	);
 
 	return (
-		<div className={classes.identity} data-compact={compact || undefined}>
+		<div className={classes.identity}>
 			<div className={classes.titleFrame}>
 				{useSpecimenTitle ? (
 					<FontSkeleton
-						name={compact ? 'font-detail-compact-title' : 'font-detail-title'}
+						name="font-detail-compact-title"
 						family={previewFamily}
 						weight={sourcePreviewStyle.fontWeight ?? 500}
 						style={sourcePreviewStyle.fontStyle}
@@ -115,62 +96,11 @@ export const FamilyIdentity = ({
 					title
 				)}
 			</div>
-			{compact ? (
-				<div className={classes.compactMetadata}>
-					<span>{classification}</span>
-					<span>{metadata.variable ? 'Variable' : 'Static'}</span>
-					<span>{weightLabel}</span>
-				</div>
-			) : (
-				<>
-					<p className={classes.description}>
-						<RegistryMarkdown
-							inline
-							links={false}
-							value={
-								descriptionSummary ||
-								`A ${category.toLowerCase()} family with ${weightLabel} and ${subsetLabel}.`
-							}
-						/>
-					</p>
-					{showDescriptionLink && (
-						<Link
-							className={classes.descriptionLink}
-							to={`/fonts/${metadata.id}/about`}
-						>
-							Read more about {registry.displayName ?? metadata.family}
-						</Link>
-					)}
-					<Text className={classes.source}>
-						{attribution ? (
-							<>
-								Designed by <span>{attribution}</span>
-							</>
-						) : (
-							<>
-								Source: <span>{sourceNames[metadata.type]}</span>
-							</>
-						)}
-					</Text>
-					<div className={classes.metadata}>
-						<span>{classification}</span>
-						<span>{metadata.variable ? 'Variable' : 'Static'}</span>
-						<span>{weightLabel}</span>
-					</div>
-					{tags.length > 0 && (
-						<ul className={classes.tags}>
-							{tags.map((tag) => {
-								const tagValue = tag.split('/').at(-1) ?? tag;
-								return (
-									<li key={tag}>
-										<span>{formatFontLabel(tagValue)}</span>
-									</li>
-								);
-							})}
-						</ul>
-					)}
-				</>
-			)}
+			<div className={classes.compactMetadata}>
+				<span>{classification}</span>
+				<span>{metadata.variable ? 'Variable' : 'Static'}</span>
+				<span>{weightLabel}</span>
+			</div>
 		</div>
 	);
 };
@@ -178,12 +108,10 @@ export const FamilyIdentity = ({
 export const FamilyActions = ({
 	metadata,
 	registry,
-	compact = false,
 	showGetFont = true,
 }: {
 	metadata: GetFontResponse;
 	registry: RegistryFamily;
-	compact?: boolean;
 	showGetFont?: boolean;
 }) => {
 	const location = useLocation();
@@ -198,7 +126,7 @@ export const FamilyActions = ({
 	return (
 		<Group className={classes.actions} gap="sm" wrap="wrap">
 			<div className={classes.utilityActions}>
-				<FavoriteButton font={fontSummary} withLabel={!compact} />
+				<FavoriteButton font={fontSummary} withLabel={false} />
 				<AddToCollectionMenu font={fontSummary} />
 			</div>
 			<ProjectAddButton
@@ -293,12 +221,10 @@ export const FamilyPageShell = ({
 						registry={registry}
 						previewSource={previewSource}
 						variableAvailable={Boolean(variable)}
-						compact
 					/>
 					<FamilyActions
 						metadata={metadata}
 						registry={registry}
-						compact
 						showGetFont={tabsValue !== 'use'}
 					/>
 				</section>

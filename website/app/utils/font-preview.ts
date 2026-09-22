@@ -142,9 +142,13 @@ export const getFontPreviewCSS = (
 	metadata: GetFontResponse,
 	variable?: GetVariableFontResponse,
 ) => {
-	const unicodeKeys = Object.keys(metadata.unicodeRange).map((key) =>
-		key.replace('[', '').replace(']', ''),
+	const unicodeRange = Object.fromEntries(
+		Object.entries(metadata.unicodeRange).map(([key, range]) => [
+			key.replace('[', '').replace(']', ''),
+			range,
+		]),
 	);
+	const unicodeKeys = Object.keys(unicodeRange);
 	const subsets = unicodeKeys.length > 0 ? unicodeKeys : metadata.subsets;
 	const cssConfig = {
 		id: metadata.id,
@@ -152,7 +156,7 @@ export const getFontPreviewCSS = (
 		subsets,
 		weights: metadata.weights,
 		styles: metadata.styles,
-		unicodeRange: metadata.unicodeRange,
+		unicodeRange,
 	};
 	return variable
 		? generateCSS(
