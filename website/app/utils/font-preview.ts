@@ -1,4 +1,8 @@
-import { generateCSS, selectVariableAxisKey } from '@fontsource-utils/core';
+import {
+	generateCSS,
+	renderFontFaceRule,
+	selectVariableAxisKey,
+} from '@fontsource-utils/core/css';
 
 import type {
 	GetFontResponse,
@@ -58,13 +62,16 @@ export const getRegistrySourcePreviewCSS = (
 		return '';
 	}
 
-	return `@font-face {
-	font-family: ${JSON.stringify(fontFamily)};
-	src: ${sources};
-	font-style: ${fontStyle};
-	font-weight: ${weight};
-	font-display: swap;
-}`;
+	return renderFontFaceRule(
+		[
+			['font-family', JSON.stringify(fontFamily)],
+			['src', sources],
+			['font-style', `${fontStyle}`],
+			['font-weight', `${weight}`],
+			['font-display', 'swap'],
+		],
+		{ spacer: '\n\t' },
+	);
 };
 
 export const selectRegistryPreviewSource = (

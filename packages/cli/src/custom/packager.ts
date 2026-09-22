@@ -1,7 +1,6 @@
-import { generateFontFace } from '@fontsource-utils/generate';
 import fs from 'fs-extra';
 import path from 'pathe';
-
+import { generateFontFace } from '../css';
 import type { Metadata } from '../types';
 import { findClosest, makeFontFilePath } from '../utils';
 

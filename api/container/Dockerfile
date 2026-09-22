@@ -8,7 +8,6 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY api/package.json ./api/package.json
 COPY packages/cli/package.json ./packages/cli/package.json
 COPY packages/core/package.json ./packages/core/package.json
-COPY packages/generate/package.json ./packages/generate/package.json
 COPY packages/publish/package.json ./packages/publish/package.json
 COPY packages/scss/package.json ./packages/scss/package.json
 COPY website/package.json ./website/package.json

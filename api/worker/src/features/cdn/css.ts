@@ -3,7 +3,7 @@ import {
 	type CSSOptions,
 	type FontConfig,
 	generateCSSAssets,
-} from '@fontsource-utils/core';
+} from '@fontsource-utils/core/css';
 import type { Context } from 'hono';
 import type {
 	SourceFontMetadata,

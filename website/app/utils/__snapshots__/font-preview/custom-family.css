@@ -1,0 +1,7 @@
+@font-face {
+	font-family: "Preview static-400";
+	src: url("https://api.fontsource.org/v1/registry/sources/static-400") format("truetype");
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+}

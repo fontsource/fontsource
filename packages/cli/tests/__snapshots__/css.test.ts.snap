@@ -1,5 +1,15 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generate font face > preserves fixed variable weight and source formats 1`] = `
+"@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2'), url(./example.otf) format('opentype');
+}"
+`;
+
 exports[`generate font face > should generate a single font face with all variable axis 1`] = `
 "/* latin */
 @font-face {

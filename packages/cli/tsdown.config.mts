@@ -20,4 +20,6 @@ export default defineConfig({
 		entry: Object.values(libraryEntries),
 	},
 	target: 'node20',
+	// Bundle the pure CSS entrypoint into the CLI's browser and CommonJS outputs.
+	deps: { alwaysBundle: ['@fontsource-utils/core'] },
 });

@@ -15,6 +15,61 @@ pnpm add @fontsource-utils/core
 - **CSS generation**: Automatically generate CSS files with proper `@font-face` declarations
 - **Slicing support**: Handle large fonts by splitting them into smaller chunks
 
+## Standalone CSS generation
+
+Import `@fontsource-utils/core/css` to generate CSS without loading the font
+processing or WASM modules. It accepts resolved faces from a build or a versioned
+artifact manifest; it does not fetch registry data, inspect binaries, or infer
+filenames from subset names.
+
+```ts
+import { generateFaceCSS, type FontFace } from '@fontsource-utils/core/css';
+
+const faces: FontFace[] = [{
+  subset: 'math',
+  weight: 400,
+  style: 'normal',
+  isVariable: false,
+  sliceIndex: 0,
+  unicodeRange: 'U+2190-2300',
+  sources: [{ format: 'woff2', filename: 'example-math-400-normal.woff2' }],
+}];
+
+const css = generateFaceCSS('Example Math', faces, {
+  display: 'swap',
+  resolver: ({ source }) => `https://example.com/fonts/v1/${source.filename}`,
+});
+```
+
+`generateFaceCSS` renders the supplied faces in order as one stylesheet. Select
+faces before calling it; it never expands weights, styles, axes, or subsets into
+additional faces. Without a resolver, URLs use `./files/<filename>`.
+
+`generateFaceCSSAssets(family, faces, options)` applies the existing package
+entrypoint rules to produce files such as `400.css`, `math.css`, and `index.css`.
+For variable packages, pass `options.variable` with the axis definitions so the
+generator can select the default `index.css` entrypoint.
+
+Both functions preserve each face's Unicode range. An empty `unicodeRange`
+deliberately omits the descriptor for an unrestricted face; it does not default
+to Latin. Callers must supply coverage matching the referenced artifact.
+
+The existing `buildFont()` result already includes `faces`, so source TTF/OTF
+builds can use these functions directly. Standard package CSS remains available
+in the result's `css` field. The existing config-based `generateCSS` and
+`generateCSSAssets` APIs remain available for callers that need filename
+planning rather than rendering known artifacts.
+
+CSS serialization, face planning, and package entrypoints all live in
+`@fontsource-utils/core/css`. Core's face renderer, the CLI, and registry previews
+share `renderFontFaceRule`; callers own source data and URL resolution. The CLI
+bundles this pure entrypoint into its browser and CommonJS builds, without a
+runtime dependency on font-processing modules.
+
+CSS output is covered by readable snapshots. Review changes to declarations,
+Unicode ranges, filenames, and entrypoints before updating a snapshot; matching
+a snapshot does not establish that the referenced binary has the claimed glyphs.
+
 ## License
 
 MIT

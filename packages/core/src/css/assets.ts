@@ -1,4 +1,4 @@
-import type { CSSAsset, FontConfig, FontFace } from '../types';
+import type { CSSAsset, FontFace, VariableAxisConfig } from '../types';
 import { type FontFaceOptions, renderFontFace } from './face-rule';
 import {
 	groupFacesByCSSFile,
@@ -6,38 +6,34 @@ import {
 	pickVariableIndexCSS,
 } from './planner';
 
+/** Render the supplied faces in order, preserving their filenames and coverage. */
+const generateFaceCSS = (
+	family: string,
+	faces: readonly FontFace[],
+	options: FontFaceOptions = {},
+): string =>
+	faces.map((face) => renderFontFace(face, family, options)).join('\n\n');
+
 // Group resolved faces into published CSS assets.
 const generateFaceCSSAssets = (
 	family: string,
-	faces: FontFace[],
-	options: FontFaceOptions & { variable?: FontConfig['variable'] } = {},
+	faces: readonly FontFace[],
+	options: FontFaceOptions & { variable?: VariableAxisConfig } = {},
 ): CSSAsset[] => {
-	const { variable, ...fontFaceOptions } = options;
+	const { variable } = options;
 	const facesByFile = groupFacesByCSSFile(faces);
 
 	const indexCSSFile = variable
 		? pickVariableIndexCSS(variable, facesByFile)
 		: pickStaticIndexCSS(faces);
 
-	// If an index CSS file is selected, also publish it as `index.css`.
-	if (indexCSSFile) {
-		const indexFaces = facesByFile.get(indexCSSFile);
-		if (indexFaces) {
-			facesByFile.set('index.css', indexFaces);
-		}
-	}
+	const indexFaces = indexCSSFile ? facesByFile.get(indexCSSFile) : undefined;
+	if (indexFaces) facesByFile.set('index.css', indexFaces);
 
-	// Render each CSS file with the appropriate faces.
-	const assets: CSSAsset[] = [];
-	for (const [filename, faces] of facesByFile) {
-		const content = faces
-			.map((face) => renderFontFace(face, family, fontFaceOptions))
-			.join('\n\n');
-
-		assets.push({ filename, content });
-	}
-
-	return assets;
+	return Array.from(facesByFile, ([filename, faces]) => ({
+		filename,
+		content: generateFaceCSS(family, faces, options),
+	}));
 };
 
-export { generateFaceCSSAssets, renderFontFace };
+export { generateFaceCSS, generateFaceCSSAssets };

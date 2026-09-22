@@ -1,11 +1,10 @@
-import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
 import type {
 	APIIconResponse,
 	FontObjectV1,
 	FontObjectV2,
 	FontObjectVariable,
 } from 'google-font-metadata';
-
+import { type FontObject, generateFontFace } from '../css';
 import type { CSSGenerate } from '../types';
 import { findClosest } from '../utils';
 

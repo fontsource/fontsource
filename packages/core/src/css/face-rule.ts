@@ -1,5 +1,7 @@
 import type { FontFace, FontSource } from '../types';
-import { formatStyle, normalizeKebabCase } from '../utils';
+import { formatStyle } from '../utils/style';
+import { normalizeKebabCase } from '../utils/text';
+import { type FontFaceDeclaration, renderFontFaceRule } from './rule';
 
 export type UrlResolver = (input: {
 	face: FontFace;
@@ -10,9 +12,6 @@ export interface FontFaceOptions {
 	display?: string;
 	resolver?: UrlResolver;
 }
-
-const declarationIndent = '  ';
-type CSSValue = string | string[];
 
 // Build one `src` entry per source file.
 const getSourceValue = (
@@ -29,11 +28,7 @@ const getSourceValue = (
 		return `url(${url}) format(${format})`;
 	}
 
-	let format = 'woff';
-	if (source.format === 'ttf') {
-		format = 'truetype';
-	}
-
+	const format = source.format === 'ttf' ? 'truetype' : 'woff';
 	return `url(${url}) format('${format}')`;
 };
 
@@ -50,23 +45,6 @@ const getFaceComment = (family: string, face: FontFace): string => {
 	return comment;
 };
 
-// Variable fonts get a "Variable" suffix in their family name to avoid conflicts with static faces.
-// We need it when variable fonts are included and static files are present as a fallback.
-const getResolvedFamilyName = (family: string, isVariable: boolean): string =>
-	isVariable && !family.endsWith(' Variable') ? `${family} Variable` : family;
-
-const renderDeclaration = (property: string, value: CSSValue): string => {
-	if (!Array.isArray(value)) {
-		return `${declarationIndent}${property}: ${value};`;
-	}
-
-	const continuationIndent = ' '.repeat(
-		`${declarationIndent + property}: `.length,
-	);
-
-	return `${declarationIndent}${property}: ${value.join(`,\n${continuationIndent}`)};`;
-};
-
 const renderFontFace = (
 	face: FontFace,
 	family: string,
@@ -78,8 +56,13 @@ const renderFontFace = (
 		throw new Error('renderFontFace requires at least one source');
 	}
 
-	const declarations: Array<readonly [property: string, value: CSSValue]> = [
-		['font-family', `'${getResolvedFamilyName(family, face.isVariable)}'`],
+	// Keep variable and static families distinct without appending the suffix twice.
+	const familyName =
+		face.isVariable && !family.endsWith(' Variable')
+			? `${family} Variable`
+			: family;
+	const declarations: FontFaceDeclaration[] = [
+		['font-family', `'${familyName}'`],
 		['font-style', face.style],
 		['font-display', display],
 		['font-weight', `${face.weight}`],
@@ -99,12 +82,9 @@ const renderFontFace = (
 		declarations.push(['unicode-range', face.unicodeRange]);
 	}
 
-	const comment = getFaceComment(family, face);
-	const content = declarations
-		.map(([property, value]) => renderDeclaration(property, value))
-		.join('\n');
-
-	return `${comment ? `/* ${comment} */\n` : ''}@font-face {\n${content}\n}`;
+	return renderFontFaceRule(declarations, {
+		comment: getFaceComment(family, face),
+	});
 };
 
 export { renderFontFace };

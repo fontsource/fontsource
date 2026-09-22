@@ -1,0 +1,7 @@
+@font-face {
+	font-family: "Fontsource Registry Preview";
+	src: url("https://api.fontsource.org/v1/registry/sources/variable-standard") format("opentype");
+	font-style: italic;
+	font-weight: 100 900;
+	font-display: swap;
+}

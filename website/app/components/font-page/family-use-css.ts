@@ -2,7 +2,7 @@ import {
 	generateCSS,
 	selectVariableAxisKey,
 	type UrlResolver,
-} from '@fontsource-utils/core';
+} from '@fontsource-utils/core/css';
 
 import type {
 	GetFontResponse,

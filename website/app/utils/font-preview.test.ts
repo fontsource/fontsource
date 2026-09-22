@@ -1,3 +1,5 @@
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import type { GetFontResponse } from '@/generated/api';
 import {
@@ -8,6 +10,11 @@ import {
 	selectRegistryPreviewSource,
 } from './font-preview';
 import type { RegistryFamily, RegistrySource } from './registry';
+
+const snapshotDir = resolve(
+	fileURLToPath(import.meta.url),
+	'../__snapshots__/font-preview',
+);
 
 const registry: RegistryFamily = {
 	id: 'example',
@@ -97,7 +104,7 @@ describe('preview language semantics', () => {
 });
 
 describe('getRegistrySourcePreviewCSS', () => {
-	it('loads the exact static Registry source', () => {
+	it('loads the exact static Registry source', async () => {
 		const source = {
 			sha256: 'static-400',
 			filename: 'example.ttf',
@@ -114,13 +121,12 @@ describe('getRegistrySourcePreviewCSS', () => {
 			weight: 400,
 		} satisfies RegistrySource;
 
-		expect(getRegistrySourcePreviewCSS(source)).toContain(
-			'src: url("https://api.fontsource.org/v1/registry/sources/static-400") format("truetype");',
+		await expect(getRegistrySourcePreviewCSS(source)).toMatchFileSnapshot(
+			resolve(snapshotDir, 'static.css'),
 		);
-		expect(getRegistrySourcePreviewCSS(source)).toContain('font-weight: 400;');
 	});
 
-	it('preserves a variable source weight range', () => {
+	it('preserves a variable source weight range', async () => {
 		const source = {
 			sha256: 'variable-standard',
 			filename: 'example.otf',
@@ -139,12 +145,12 @@ describe('getRegistrySourcePreviewCSS', () => {
 		} satisfies RegistrySource;
 
 		const css = getRegistrySourcePreviewCSS(source);
-		expect(css).toContain('format("opentype")');
-		expect(css).toContain('font-style: italic;');
-		expect(css).toContain('font-weight: 100 900;');
+		await expect(css).toMatchFileSnapshot(
+			resolve(snapshotDir, 'variable-opentype.css'),
+		);
 	});
 
-	it('keeps a variable weight range when the source declares a package variant', () => {
+	it('keeps a variable weight range when the source declares a package variant', async () => {
 		const source = {
 			sha256: 'variable-standard',
 			filename: 'example.ttf',
@@ -163,20 +169,19 @@ describe('getRegistrySourcePreviewCSS', () => {
 			axes: [{ tag: 'wght', min: 100, max: 900, default: 400 }],
 		} satisfies RegistrySource;
 
-		expect(getRegistrySourcePreviewCSS(source)).toContain(
-			'font-weight: 100 900;',
+		await expect(getRegistrySourcePreviewCSS(source)).toMatchFileSnapshot(
+			resolve(snapshotDir, 'variable-declared-variant.css'),
 		);
 		const previewCSS = getRegistrySourcePreviewCSS({
 			...source,
 			previewUrl: `${source.downloadUrl}/preview/1.woff2`,
 		});
-		expect(previewCSS).toContain(
-			'src: url("https://api.fontsource.org/v1/registry/sources/variable-standard/preview/1.woff2") format("woff2"), url("https://api.fontsource.org/v1/registry/sources/variable-standard") format("truetype");',
+		await expect(previewCSS).toMatchFileSnapshot(
+			resolve(snapshotDir, 'variable-woff2-preview.css'),
 		);
-		expect(previewCSS).toContain('font-weight: 100 900;');
 	});
 
-	it('supports a source-specific preview family name', () => {
+	it('supports a source-specific preview family name', async () => {
 		const source = {
 			sha256: 'static-400',
 			filename: 'example.ttf',
@@ -193,9 +198,9 @@ describe('getRegistrySourcePreviewCSS', () => {
 			weight: 400,
 		} satisfies RegistrySource;
 
-		expect(getRegistrySourcePreviewCSS(source, 'Preview static-400')).toContain(
-			'font-family: "Preview static-400";',
-		);
+		await expect(
+			getRegistrySourcePreviewCSS(source, 'Preview static-400'),
+		).toMatchFileSnapshot(resolve(snapshotDir, 'custom-family.css'));
 	});
 
 	it('ignores an invalid source URL instead of breaking the preview', () => {

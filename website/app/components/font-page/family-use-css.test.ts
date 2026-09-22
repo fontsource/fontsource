@@ -1,8 +1,15 @@
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 
 import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 
 import { buildFamilyUsageCSS, buildFamilyUseCSS } from './family-use-css';
+
+const snapshotDir = resolve(
+	fileURLToPath(import.meta.url),
+	'../__snapshots__/family-use-css',
+);
 
 const metadata = {
 	id: 'example',
@@ -34,17 +41,15 @@ const variable = {
 } satisfies GetVariableFontResponse;
 
 describe('buildFamilyUseCSS', () => {
-	it('generates a valid body rule for a variable family', () => {
+	it('generates a valid body rule for a variable family', async () => {
 		const css = buildFamilyUsageCSS(metadata, true, 400, 'normal');
 
-		expect(css).toBe(`body {
-  font-family: 'Example Variable', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}`);
+		await expect(css).toMatchFileSnapshot(
+			resolve(snapshotDir, 'body-variable.css'),
+		);
 	});
 
-	it('generates all selected static faces as WOFF2 with display behavior', () => {
+	it('generates all selected static faces as WOFF2 with display behavior', async () => {
 		const css = buildFamilyUseCSS({
 			metadata,
 			isVariable: false,
@@ -57,12 +62,12 @@ describe('buildFamilyUseCSS', () => {
 			delivery: 'cdn',
 		});
 
-		expect(css).toContain('font-display: optional;');
-		expect(css).toContain('cyrillic-700-italic.woff2');
-		expect(css.match(/@font-face/g)).toHaveLength(8);
+		await expect(css).toMatchFileSnapshot(
+			resolve(snapshotDir, 'static-cdn.css'),
+		);
 	});
 
-	it('generates the selected variable-axis package for self-hosting', () => {
+	it('generates the selected variable-axis package for self-hosting', async () => {
 		const css = buildFamilyUseCSS({
 			metadata,
 			variable,
@@ -76,12 +81,12 @@ describe('buildFamilyUseCSS', () => {
 			delivery: 'package',
 		});
 
-		expect(css).toContain("font-family: 'Example Variable';");
-		expect(css).toContain('font-stretch: 75% 125%;');
-		expect(css).toContain('@fontsource-variable/example/files/');
+		await expect(css).toMatchFileSnapshot(
+			resolve(snapshotDir, 'variable-package.css'),
+		);
 	});
 
-	it('expands a semantic subset into every registry-defined slice', () => {
+	it('expands a semantic subset into every registry-defined slice', async () => {
 		const css = buildFamilyUseCSS({
 			metadata: {
 				...metadata,
@@ -108,9 +113,8 @@ describe('buildFamilyUseCSS', () => {
 			],
 		});
 
-		expect(css).toContain('japanese-400-normal-1.woff2');
-		expect(css).toContain('japanese-400-normal-2.woff2');
-		expect(css).toContain('unicode-range: U+3000-303F;');
-		expect(css.match(/@font-face/g)).toHaveLength(2);
+		await expect(css).toMatchFileSnapshot(
+			resolve(snapshotDir, 'sliced-cdn.css'),
+		);
 	});
 });

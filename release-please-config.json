@@ -6,10 +6,6 @@
 	"include-v-in-tag": true,
 	"separate-pull-requests": false,
 	"packages": {
-		"packages/generate": {
-			"component": "generate",
-			"release-type": "node"
-		},
 		"packages/cli": {
 			"component": "cli",
 			"release-type": "node"
