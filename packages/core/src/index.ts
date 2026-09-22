@@ -1,12 +1,6 @@
 export { createFontContext, type FontContext } from './context';
 export { type ConversionResult, convertFont } from './conversion';
 export {
-	type CSSOptions,
-	generateCSS,
-	generateCSSAssets,
-	type UrlResolver,
-} from './css';
-export {
 	type FontInspection,
 	type FontInspectionAxis,
 	inspectFont,
@@ -32,9 +26,4 @@ export type {
 	VariableFontBuildConfig,
 	WebFontFormat,
 } from './types';
-export {
-	determineAxisKey,
-	getVariableAxisKeys,
-	resolveFontFaces,
-	selectVariableAxisKey,
-} from './utils';
+export { getVariableAxisKeys } from './utils';

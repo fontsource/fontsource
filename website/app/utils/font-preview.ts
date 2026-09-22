@@ -1,6 +1,7 @@
 import {
 	generateCSS,
 	renderFontFaceRule,
+	resolveFontFaces,
 	selectVariableAxisKey,
 } from '@fontsource-utils/core/css';
 
@@ -140,27 +141,21 @@ export const getFontPreviewCSS = (
 		key.replace('[', '').replace(']', ''),
 	);
 	const subsets = unicodeKeys.length > 0 ? unicodeKeys : metadata.subsets;
-	const cssConfig = {
-		id: metadata.id,
-		family: metadata.family,
-		subsets,
-		weights: metadata.weights,
-		styles: metadata.styles,
-		unicodeRange: metadata.unicodeRange,
-	};
-	return variable
-		? generateCSS(
-				{ ...cssConfig, variable: variable.axes },
-				{
-					axisKeys: [
-						selectVariableAxisKey(variable.axes, Object.keys(variable.axes)),
-					],
-					resolver: jsDelivrResolver(metadata.id, true),
-					display: 'swap',
-				},
-			)
-		: generateCSS(cssConfig, {
-				resolver: jsDelivrResolver(metadata.id),
-				display: 'swap',
-			});
+	const faces = resolveFontFaces(
+		{
+			id: metadata.id,
+			family: metadata.family,
+			subsets,
+			weights: metadata.weights,
+			styles: metadata.styles,
+			unicodeRange: metadata.unicodeRange,
+			variable: variable?.axes,
+		},
+		variable
+			? [selectVariableAxisKey(variable.axes, Object.keys(variable.axes))]
+			: undefined,
+	);
+	return generateCSS(metadata.family, faces, {
+		resolver: jsDelivrResolver(metadata.id, !!variable),
+	});
 };

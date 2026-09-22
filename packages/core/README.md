@@ -23,7 +23,7 @@ artifact manifest; it does not fetch registry data, inspect binaries, or infer
 filenames from subset names.
 
 ```ts
-import { generateFaceCSS, type FontFace } from '@fontsource-utils/core/css';
+import { generateCSS, type FontFace } from '@fontsource-utils/core/css';
 
 const faces: FontFace[] = [{
   subset: 'math',
@@ -35,17 +35,17 @@ const faces: FontFace[] = [{
   sources: [{ format: 'woff2', filename: 'example-math-400-normal.woff2' }],
 }];
 
-const css = generateFaceCSS('Example Math', faces, {
+const css = generateCSS('Example Math', faces, {
   display: 'swap',
   resolver: ({ source }) => `https://example.com/fonts/v1/${source.filename}`,
 });
 ```
 
-`generateFaceCSS` renders the supplied faces in order as one stylesheet. Select
+`generateCSS` renders the supplied faces in order as one stylesheet. Select
 faces before calling it; it never expands weights, styles, axes, or subsets into
 additional faces. Without a resolver, URLs use `./files/<filename>`.
 
-`generateFaceCSSAssets(family, faces, options)` applies the existing package
+`generateCSSAssets(family, faces, options)` applies the existing package
 entrypoint rules to produce files such as `400.css`, `math.css`, and `index.css`.
 For variable packages, pass `options.variable` with the axis definitions so the
 generator can select the default `index.css` entrypoint.
@@ -54,11 +54,11 @@ Both functions preserve each face's Unicode range. An empty `unicodeRange`
 deliberately omits the descriptor for an unrestricted face; it does not default
 to Latin. Callers must supply coverage matching the referenced artifact.
 
-The existing `buildFont()` result already includes `faces`, so source TTF/OTF
-builds can use these functions directly. Standard package CSS remains available
-in the result's `css` field. The existing config-based `generateCSS` and
-`generateCSSAssets` APIs remain available for callers that need filename
-planning rather than rendering known artifacts.
+`buildFont()` returns resolved `faces` and package `css`. Render those faces
+directly when different CSS output is needed. Metadata-based callers first use
+`resolveFontFaces(config, axisKeys?)` to plan filenames and select variable
+bundles, then pass the result to either generator. Rendering options only control
+display, URL resolution and minification; they never select additional faces.
 
 CSS serialization, face planning, and package entrypoints live in
 `@fontsource-utils/core/css`. The CLI and registry previews use the same typed

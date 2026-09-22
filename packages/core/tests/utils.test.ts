@@ -199,7 +199,7 @@ describe('resolveFontFaces', () => {
 					wdth: { min: 75, max: 100 },
 				},
 			},
-			{ axisKeys: ['standard'] },
+			['standard'],
 		);
 
 		expect(face).toMatchObject({
@@ -225,7 +225,7 @@ describe('resolveFontFaces', () => {
 					slnt: { min: -15, max: 0 },
 				},
 			},
-			{ axisKeys: ['MONO', 'standard', 'full'] },
+			['MONO', 'standard', 'full'],
 		);
 
 		expect(faces.map((face) => face.axisKey)).toEqual([

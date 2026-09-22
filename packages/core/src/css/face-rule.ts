@@ -12,19 +12,16 @@ export interface CSSFontFace {
 	sources: readonly { url: string; format: string }[];
 }
 
-export interface CSSRenderOptions {
+export interface CSSOptions {
 	display?: string;
 	minify?: boolean;
+	resolver?: UrlResolver;
 }
 
 export type UrlResolver = (input: {
 	face: FontFace;
 	source: FontSource;
 }) => string;
-
-export interface FontFaceOptions extends CSSRenderOptions {
-	resolver?: UrlResolver;
-}
 
 // CSS strings use hexadecimal escapes for control characters, quotes and backslashes.
 const quote = (value: string): string =>
@@ -34,7 +31,10 @@ const quote = (value: string): string =>
 /** Render one face in the same canonical form for packages, CDN responses and previews. */
 export const renderFontFaceRule = (
 	face: CSSFontFace,
-	{ display = 'swap', minify = false }: CSSRenderOptions = {},
+	{
+		display = 'swap',
+		minify = false,
+	}: Pick<CSSOptions, 'display' | 'minify'> = {},
 ): string => {
 	if (face.sources.length === 0) {
 		throw new Error('renderFontFace requires at least one source');
@@ -83,7 +83,7 @@ export const renderFontFaceRule = (
 export const renderFontFace = (
 	face: FontFace,
 	family: string,
-	options: FontFaceOptions = {},
+	options: CSSOptions = {},
 ): string =>
 	renderFontFaceRule(
 		{

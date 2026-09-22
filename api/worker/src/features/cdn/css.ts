@@ -1,8 +1,8 @@
 import {
 	type CSSAsset,
-	type CSSOptions,
 	type FontConfig,
 	generateCSSAssets,
+	resolveFontFaces,
 } from '@fontsource-utils/core/css';
 import type { Context } from 'hono';
 import type {
@@ -15,15 +15,6 @@ import type { AppEnv } from '../../env';
 import { toHttpDate } from '../../utils/cache';
 import { notFound } from '../../utils/errors';
 import { getAssetCachePolicy, resolveFontRequest } from './handler';
-
-/**
- * CDN CSS responses always use `font-display: swap` so the generated stylesheets
- * match the public package defaults.
- */
-const CSS_DISPLAY = 'swap';
-const PUBLIC_CDN_BASE = `${UPSTREAM_URLS.publicCdn}/`;
-
-const buildPublicUrl = (path: string): string => `${PUBLIC_CDN_BASE}${path}`;
 
 const getPublicFilename = (id: string, filename: string): string => {
 	const prefix = `${id}-`;
@@ -56,7 +47,6 @@ const findCssAsset = (
 	filename: string,
 	resolvedTag: string,
 	options: {
-		display: CSSOptions['display'];
 		minify: boolean;
 		axes?: VariableAxes;
 	},
@@ -67,21 +57,13 @@ const findCssAsset = (
 	const config = buildFontConfig(metadata, { formats, axes: options.axes });
 
 	// Variable package CSS filenames are lowercase even when custom axis tags are not.
-	return generateCSSAssets(config, {
-		...options,
-		resolver: ({ face, source }) => {
-			if (options.axes) {
-				if (!face.axisKey || source.format !== 'woff2') {
-					throw new Error(`Invalid variable CSS source "${source.filename}"`);
-				}
-			} else {
-				if (source.format !== 'woff2' && source.format !== 'woff') {
-					throw new Error(`Invalid static CSS source "${source.filename}"`);
-				}
-			}
-
+	return generateCSSAssets(config.family, resolveFontFaces(config), {
+		variable: config.variable,
+		minify: options.minify,
+		// Sources use the formats selected above; only the public URL needs adapting.
+		resolver: ({ source }) => {
 			const publicFilename = getPublicFilename(metadata.id, source.filename);
-			return buildPublicUrl(`fonts/${resolvedTag}/${publicFilename}`);
+			return `${UPSTREAM_URLS.publicCdn}/fonts/${resolvedTag}/${publicFilename}`;
 		},
 	}).find(
 		(asset) =>
@@ -111,7 +93,6 @@ export const getCssAsset = async (
 	const assetFilename = filename.replace(/\.min\.css$/, '.css');
 
 	const asset = findCssAsset(metadata, assetFilename, resolvedTag, {
-		display: CSS_DISPLAY,
 		minify: isMinified,
 		axes: tag.isVariable ? axes : undefined,
 	});

@@ -5,12 +5,16 @@ import {
 	type CSSFontFace,
 	generateCSS,
 	generateCSSAssets,
-	generateFaceCSS,
-	generateFaceCSSAssets,
 	renderFontFaceRule,
+	resolveFontFaces,
 } from '../src/css';
 import { renderFontFace } from '../src/css/face-rule';
-import type { FontFace, FontFileFormat, FontSource } from '../src/types';
+import type {
+	FontConfig,
+	FontFace,
+	FontFileFormat,
+	FontSource,
+} from '../src/types';
 
 const snapshotDir = resolve(
 	fileURLToPath(import.meta.url),
@@ -93,7 +97,7 @@ describe('renderFontFaceRule', () => {
 	});
 });
 
-describe('generateFaceCSS', () => {
+describe('generateCSS', () => {
 	it('preserves published CJK filenames and ranges without reconstructing slices', async () => {
 		const faces = [
 			variableFace({
@@ -109,7 +113,7 @@ describe('generateFaceCSS', () => {
 				unicodeRange: 'U+FEE3,U+FEF3',
 			}),
 		] as const;
-		const css = generateFaceCSS('Noto Sans SC', faces, {
+		const css = generateCSS('Noto Sans SC', faces, {
 			display: 'optional',
 			resolver: ({ source }) => `https://example.com/5.3.0/${source.filename}`,
 		});
@@ -128,8 +132,8 @@ describe('generateFaceCSS', () => {
 				unicodeRange: 'U+2190-2300',
 			}),
 		] as const;
-		const combined = generateFaceCSS('Noto Sans Math', faces);
-		const assets = generateFaceCSSAssets('Noto Sans Math', faces);
+		const combined = generateCSS('Noto Sans Math', faces);
+		const assets = generateCSSAssets('Noto Sans Math', faces);
 
 		await expect(combined).toMatchFileSnapshot(
 			resolve(snapshotDir, 'faces-math.css'),
@@ -137,7 +141,7 @@ describe('generateFaceCSS', () => {
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-math.css'),
 		);
-		const unrestricted = generateFaceCSS('Noto Sans Math', [
+		const unrestricted = generateCSS('Noto Sans Math', [
 			{ ...faces[0], unicodeRange: '' },
 		]);
 		await expect(unrestricted).toMatchFileSnapshot(
@@ -489,12 +493,12 @@ describe('renderFontFace', () => {
 });
 
 // ---------------------------------------------------------------------------
-// generateFaceCSSAssets — grouped file output snapshots
+// generateCSSAssets — grouped file output snapshots
 // ---------------------------------------------------------------------------
 
-describe('generateFaceCSSAssets', () => {
+describe('generateCSSAssets', () => {
 	it('publishes the default for oblique-only faces', async () => {
-		const assets = generateFaceCSSAssets('Oblique', [
+		const assets = generateCSSAssets('Oblique', [
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -508,13 +512,16 @@ describe('generateFaceCSSAssets', () => {
 	});
 
 	it('ignores the implicit italic axis when selecting the default bundle', async () => {
-		const assets = generateCSSAssets({
+		const config: FontConfig = {
 			family: 'Example',
 			weights: [400],
 			styles: ['normal', 'italic'],
 			subsets: ['latin'],
 			unicodeRange: { latin: 'U+0000-00FF' },
 			variable: { wght: { min: 100, max: 900 }, ital: { min: 0, max: 1 } },
+		};
+		const assets = generateCSSAssets(config.family, resolveFontFaces(config), {
+			variable: config.variable,
 		});
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-variable-ital-axis.css'),
@@ -537,7 +544,7 @@ describe('generateFaceCSSAssets', () => {
 			);
 		});
 
-		const assets = generateFaceCSSAssets('Inter', variants);
+		const assets = generateCSSAssets('Inter', variants);
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-static-full.css'),
@@ -545,7 +552,7 @@ describe('generateFaceCSSAssets', () => {
 	});
 
 	it('returns no assets when no faces are provided', () => {
-		expect(generateFaceCSSAssets('Inter', [])).toEqual([]);
+		expect(generateCSSAssets('Inter', [])).toEqual([]);
 	});
 
 	it('static: asymmetric variants (400+400i+700, no 700i)', async () => {
@@ -571,7 +578,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants);
+		const assets = generateCSSAssets('Inter', variants);
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-static-asymmetric.css'),
@@ -589,7 +596,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants);
+		const assets = generateCSSAssets('Inter', variants);
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-static-italic-only.css'),
@@ -613,7 +620,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants);
+		const assets = generateCSSAssets('Inter', variants);
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-static-normal-fallback.css'),
 		);
@@ -634,7 +641,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants, {
+		const assets = generateCSSAssets('Inter', variants, {
 			variable: { wght: { min: 100, max: 900 } },
 		});
 
@@ -653,7 +660,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants, {
+		const assets = generateCSSAssets('Inter', variants, {
 			variable: { wght: { min: 100, max: 900 } },
 		});
 
@@ -680,7 +687,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants, {
+		const assets = generateCSSAssets('Inter', variants, {
 			variable: { wght: { min: 300, max: 800 } },
 		});
 
@@ -701,7 +708,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('TestFont', variants, {
+		const assets = generateCSSAssets('TestFont', variants, {
 			variable: { wdth: { min: 75, max: 125 } },
 		});
 
@@ -729,7 +736,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants, {
+		const assets = generateCSSAssets('Inter', variants, {
 			variable: { wght: { min: 400, max: 600 } },
 		});
 
@@ -780,7 +787,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants);
+		const assets = generateCSSAssets('Inter', variants);
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
 			resolve(snapshotDir, 'grouped-static-comprehensive.css'),
@@ -831,7 +838,7 @@ describe('generateFaceCSSAssets', () => {
 			}),
 		];
 
-		const assets = generateFaceCSSAssets('Inter', variants, {
+		const assets = generateCSSAssets('Inter', variants, {
 			variable: { wght: { min: 100, max: 900 } },
 		});
 
@@ -842,12 +849,12 @@ describe('generateFaceCSSAssets', () => {
 });
 
 // ---------------------------------------------------------------------------
-// generateCSS — convenience wrapper
+// Config planning and CSS rendering
 // ---------------------------------------------------------------------------
 
 describe('generateCSS', () => {
 	it('static config expands correctly', async () => {
-		const assets = generateCSSAssets({
+		const config: FontConfig = {
 			id: 'inter',
 			family: 'Inter',
 			subsets: ['latin', 'latin-ext'],
@@ -857,6 +864,9 @@ describe('generateCSS', () => {
 				latin: 'U+0000-00FF',
 				'latin-ext': 'U+0100-024F',
 			},
+		};
+		const assets = generateCSSAssets(config.family, resolveFontFaces(config), {
+			variable: config.variable,
 		});
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
@@ -865,7 +875,7 @@ describe('generateCSS', () => {
 	});
 
 	it('variable config expands correctly', async () => {
-		const assets = generateCSSAssets({
+		const config: FontConfig = {
 			id: 'inter',
 			family: 'Inter',
 			subsets: ['latin'],
@@ -875,6 +885,9 @@ describe('generateCSS', () => {
 			variable: {
 				wght: { min: 100, max: 900 },
 			},
+		};
+		const assets = generateCSSAssets(config.family, resolveFontFaces(config), {
+			variable: config.variable,
 		});
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
@@ -883,23 +896,23 @@ describe('generateCSS', () => {
 	});
 
 	it('variable config can emit multiple published axis keys', async () => {
+		const config: FontConfig = {
+			id: 'recursive',
+			family: 'Recursive',
+			subsets: ['latin'],
+			weights: [300, 700],
+			styles: ['normal', 'italic'],
+			unicodeRange: { latin: 'U+0000-00FF' },
+			variable: {
+				MONO: { min: 0, max: 1 },
+				wght: { min: 300, max: 700 },
+				slnt: { min: -15, max: 0 },
+			},
+		};
 		const assets = generateCSSAssets(
-			{
-				id: 'recursive',
-				family: 'Recursive',
-				subsets: ['latin'],
-				weights: [300, 700],
-				styles: ['normal', 'italic'],
-				unicodeRange: { latin: 'U+0000-00FF' },
-				variable: {
-					MONO: { min: 0, max: 1 },
-					wght: { min: 300, max: 700 },
-					slnt: { min: -15, max: 0 },
-				},
-			},
-			{
-				axisKeys: ['MONO', 'standard', 'full'],
-			},
+			config.family,
+			resolveFontFaces(config, ['MONO', 'standard', 'full']),
+			{ variable: config.variable },
 		);
 
 		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
@@ -910,7 +923,7 @@ describe('generateCSS', () => {
 
 describe('generateCSS', () => {
 	it('renders one deduplicated stylesheet for preview callers', async () => {
-		const css = generateCSS({
+		const config: FontConfig = {
 			id: 'inter',
 			family: 'Inter',
 			subsets: ['latin'],
@@ -918,7 +931,8 @@ describe('generateCSS', () => {
 			styles: ['normal'],
 			unicodeRange: { latin: 'U+0000-00FF' },
 			formats: ['woff2', 'woff'],
-		});
+		};
+		const css = generateCSS(config.family, resolveFontFaces(config));
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'config-combined-multiple-formats.css'),
@@ -926,7 +940,7 @@ describe('generateCSS', () => {
 	});
 
 	it('renders registry-defined subset slices with their published filenames', async () => {
-		const css = generateCSS({
+		const config: FontConfig = {
 			id: 'noto-sans-jp',
 			family: 'Noto Sans JP',
 			subsets: ['japanese'],
@@ -939,7 +953,8 @@ describe('generateCSS', () => {
 					{ id: 2, unicodeRange: 'U+3040-30FF' },
 				],
 			},
-		});
+		};
+		const css = generateCSS(config.family, resolveFontFaces(config));
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'config-combined-sliced.css'),
@@ -947,7 +962,7 @@ describe('generateCSS', () => {
 	});
 
 	it('uses every published variable axis key in one combined stylesheet by default', async () => {
-		const css = generateCSS({
+		const config: FontConfig = {
 			id: 'recursive',
 			family: 'Recursive',
 			subsets: ['latin'],
@@ -959,7 +974,8 @@ describe('generateCSS', () => {
 				wght: { min: 300, max: 700 },
 				slnt: { min: -15, max: 0 },
 			},
-		});
+		};
+		const css = generateCSS(config.family, resolveFontFaces(config));
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'config-combined-variable-axis-keys.css'),

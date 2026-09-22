@@ -1,5 +1,5 @@
 import type { CSSAsset, FontFace, VariableAxisConfig } from '../types';
-import { type FontFaceOptions, renderFontFace } from './face-rule';
+import { type CSSOptions, renderFontFace } from './face-rule';
 import {
 	groupFacesByCSSFile,
 	pickStaticIndexCSS,
@@ -7,20 +7,20 @@ import {
 } from './planner';
 
 /** Render the supplied faces in order, preserving their filenames and coverage. */
-const generateFaceCSS = (
+const generateCSS = (
 	family: string,
 	faces: readonly FontFace[],
-	options: FontFaceOptions = {},
+	options: CSSOptions = {},
 ): string =>
 	faces
 		.map((face) => renderFontFace(face, family, options))
 		.join(options.minify ? '' : '\n\n');
 
 // Group resolved faces into published CSS assets.
-const generateFaceCSSAssets = (
+const generateCSSAssets = (
 	family: string,
 	faces: readonly FontFace[],
-	options: FontFaceOptions & { variable?: VariableAxisConfig } = {},
+	options: CSSOptions & { variable?: VariableAxisConfig } = {},
 ): CSSAsset[] => {
 	const { variable } = options;
 	const facesByFile = groupFacesByCSSFile(faces);
@@ -47,4 +47,4 @@ const generateFaceCSSAssets = (
 	}));
 };
 
-export { generateFaceCSS, generateFaceCSSAssets };
+export { generateCSS, generateCSSAssets };

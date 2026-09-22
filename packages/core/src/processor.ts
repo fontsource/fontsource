@@ -6,8 +6,8 @@ import {
 } from '@glypht/bundler-utils';
 import type { FontRef, StyleValues } from '@glypht/core';
 import type { FontContext } from './context';
-import type { CSSOptions } from './css';
-import { generateFaceCSSAssets } from './css/assets';
+import { generateCSSAssets } from './css/assets';
+import type { CSSOptions } from './css/face-rule';
 import { normalizeFontBuffer } from './normalize';
 import { generateSubsetData } from './subsets';
 import type {
@@ -531,7 +531,7 @@ export const buildFont = async (
 	// Convert the face map into an array for CSS generation.
 	const faces = Array.from(faceMap.values());
 
-	const cssAssets = generateFaceCSSAssets(config.family, faces, {
+	const cssAssets = generateCSSAssets(config.family, faces, {
 		...options.css,
 		variable: variableConfig,
 	});

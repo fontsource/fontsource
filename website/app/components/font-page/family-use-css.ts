@@ -1,5 +1,6 @@
 import {
 	generateCSS,
+	resolveFontFaces,
 	selectVariableAxisKey,
 	type UrlResolver,
 } from '@fontsource-utils/core/css';
@@ -89,7 +90,7 @@ const buildFamilyUseCSS = ({
 		}),
 	);
 
-	return generateCSS(
+	const faces = resolveFontFaces(
 		{
 			id: metadata.id,
 			family: metadata.family,
@@ -99,16 +100,13 @@ const buildFamilyUseCSS = ({
 			unicodeRange: metadata.unicodeRange,
 			subsetSlices,
 			formats: ['woff2'],
-			...(isVariable && variable ? { variable: variable.axes } : {}),
+			variable: isVariable ? variable?.axes : undefined,
 		},
-		{
-			display,
-			resolver,
-			...(isVariable && variable
-				? { axisKeys: [selectVariableAxisKey(variable.axes, activeAxes)] }
-				: {}),
-		},
+		isVariable && variable
+			? [selectVariableAxisKey(variable.axes, activeAxes)]
+			: undefined,
 	);
+	return generateCSS(metadata.family, faces, { display, resolver });
 };
 
 const buildFamilyUsageCSS = (
