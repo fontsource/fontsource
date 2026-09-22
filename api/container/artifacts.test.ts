@@ -3,7 +3,6 @@ import { gzipSync, unzipSync } from 'fflate';
 import { packTar } from 'modern-tar';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { BuildVersionRequest } from '../shared/build';
-import { resolveFontPackageManifest } from '../shared/font-package-manifest';
 import { logger } from '../shared/logger';
 import { toResponseBody } from '../shared/response';
 import {
@@ -11,6 +10,7 @@ import {
 	testCatalog,
 	variableMetadata,
 } from '../tests/fixtures/metadata';
+import { publishedFiles } from '../tests/fixtures/published-files';
 
 const staticWoff2Bytes = new Uint8Array(
 	readFileSync(
@@ -52,27 +52,14 @@ describe('container artifact builder', () => {
 	const createPackageTarball = async (
 		id: string,
 		isVariable = false,
-		publishedFiles?: ReadonlySet<string>,
+		filenames = publishedFiles[
+			`@fontsource${isVariable ? '-variable' : ''}/${id}`
+		],
 	): Promise<Uint8Array> => {
-		const metadata = testCatalog[id];
-		if (!metadata) {
-			throw new Error(`Missing test metadata for ${id}`);
-		}
-
-		const manifest = resolveFontPackageManifest(
-			metadata,
-			isVariable ? metadata.variable || undefined : undefined,
-		);
-		const entries = isVariable ? manifest.variable : manifest.static;
+		if (!filenames) throw new Error(`Missing published files for ${id}`);
 		const files: Array<[string, Uint8Array]> = [];
 
-		for (const filename of new Set(
-			entries.map((item) => item.sourceFilename),
-		)) {
-			if (publishedFiles && !publishedFiles.has(filename)) {
-				continue;
-			}
-
+		for (const filename of filenames) {
 			const bytes = isVariable
 				? variableWoff2Bytes
 				: filename.endsWith('.woff2')
@@ -124,11 +111,10 @@ describe('container artifact builder', () => {
 		const { buildArtifacts } = await import('./src/artifacts');
 		fetchPackageTarball.mockResolvedValueOnce(
 			tarballStream(
-				await createPackageTarball(
-					testCatalog.familypack.id,
-					false,
-					new Set(['latin-400-normal.woff2', 'latin-400-normal.woff']),
-				),
+				await createPackageTarball(testCatalog.familypack.id, false, [
+					'latin-400-normal.woff2',
+					'latin-400-normal.woff',
+				]),
 			),
 		);
 		const request: BuildVersionRequest = {
@@ -165,19 +151,12 @@ describe('container artifact builder', () => {
 			metadata: variableMetadata,
 		};
 
-		const variableManifest = resolveFontPackageManifest(
-			variableMetadata,
-			variableMetadata.variable || undefined,
-		).variable;
-		await expect(buildArtifacts(request)).resolves.toBe(
-			variableManifest.length,
-		);
+		await expect(buildArtifacts(request)).resolves.toBe(2);
 
-		expect(putObject.mock.calls.map(([key]) => key).sort()).toEqual(
-			variableManifest
-				.map((entry) => `recursive@1.0.0/variable/${entry.filename}`)
-				.sort(),
-		);
+		expect(putObject.mock.calls.map(([key]) => key).sort()).toEqual([
+			'recursive@1.0.0/variable/latin-full-normal.woff2',
+			'recursive@1.0.0/variable/latin-mono-normal.woff2',
+		]);
 		expect(fetchPackageTarball).toHaveBeenCalledWith(
 			'recursive',
 			'1.0.0',
@@ -349,16 +328,12 @@ describe('container artifact builder', () => {
 		const { buildArtifacts } = await import('./src/artifacts');
 		fetchPackageTarball.mockResolvedValueOnce(
 			tarballStream(
-				await createPackageTarball(
-					testCatalog.familypack.id,
-					false,
-					new Set([
-						'latin-400-normal.woff2',
-						'latin-400-normal.woff',
-						'latin-700-normal.woff2',
-						'latin-700-normal.woff',
-					]),
-				),
+				await createPackageTarball(testCatalog.familypack.id, false, [
+					'latin-400-normal.woff2',
+					'latin-400-normal.woff',
+					'latin-700-normal.woff2',
+					'latin-700-normal.woff',
+				]),
 			),
 		);
 

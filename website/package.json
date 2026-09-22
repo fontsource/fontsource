@@ -14,7 +14,7 @@
 		"test": "pnpm test:unit && pnpm test:browser",
 		"test:browser:install": "playwright install --with-deps --only-shell chromium",
 		"test:browser": "vitest run --config vitest.browser.config.ts",
-		"test:coverage": "vitest run --coverage && vitest run --coverage --config vitest.browser.config.ts",
+		"test:coverage": "vitest run --coverage",
 		"test:unit": "vitest run",
 		"test:watch": "vitest",
 		"typecheck": "react-router typegen && tsc",

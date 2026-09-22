@@ -7,18 +7,6 @@ export default defineConfig({
 	resolve: { tsconfigPaths: true },
 	test: {
 		include: ['app/**/*.browser.test.{ts,tsx}'],
-		coverage: {
-			provider: 'v8',
-			reportsDirectory: './coverage/browser',
-			// Route loaders and server utilities belong to the Node coverage report.
-			include: [
-				'app/components/**/*.{ts,tsx}',
-				'app/features/projects/**/*.{ts,tsx}',
-				'app/hooks/**/*.{ts,tsx}',
-				'app/bones/**/*.{ts,tsx}',
-			],
-			exclude: ['app/generated/**', '**/*.test.{ts,tsx}', 'app/test/**'],
-		},
 		browser: {
 			enabled: true,
 			headless: true,

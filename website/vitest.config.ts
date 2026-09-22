@@ -4,6 +4,7 @@ export default defineConfig({
 	resolve: { tsconfigPaths: true },
 	test: {
 		exclude: [...configDefaults.exclude, '**/*.browser.test.{ts,tsx}'],
+		// Coverage measures this Node suite; browser scenarios run separately.
 		coverage: {
 			provider: 'v8',
 			reportsDirectory: './coverage/node',

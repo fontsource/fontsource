@@ -1,8 +1,6 @@
 import { setupNetwork } from '@msw/cloudflare';
 import { HttpResponse, http, passthrough } from 'msw';
 import { afterAll, afterEach, beforeAll, expect } from 'vitest';
-import type { VariableAxes } from '../shared/catalog';
-import { resolveFontPackageManifest } from '../shared/font-package-manifest';
 import { toResponseBody } from '../shared/response';
 import { UPSTREAM_URLS } from '../worker/src/constants';
 import {
@@ -13,9 +11,9 @@ import {
 import {
 	scheduledAxisRegistry,
 	scheduledCatalog,
-	testCatalog,
 	testVersions,
 } from './fixtures/metadata';
+import { publishedFiles } from './fixtures/published-files';
 
 export const toResponse = (body: string | Uint8Array<ArrayBufferLike>) =>
 	new Response(toResponseBody(body), {
@@ -54,24 +52,12 @@ const staticBinaryResponse = (url: string): Response => {
 };
 
 const packageFileMetaResponse = (packageName: string): Response => {
-	const isVariable = packageName.startsWith('@fontsource-variable/');
 	const id = packageName.replace(/^@fontsource(?:-variable)?\//, '');
-	const metadata = testCatalog[id];
-
-	if (!metadata) {
+	const filenames = publishedFiles[packageName];
+	if (!filenames) {
 		throw new Error(`Unexpected package file metadata fetch: ${packageName}`);
 	}
-
-	const manifest = resolveFontPackageManifest(
-		metadata,
-		isVariable ? (metadata.variable as VariableAxes | undefined) : undefined,
-	);
-	const entries = isVariable ? manifest.variable : manifest.static;
-	const files = Array.from(
-		new Set(entries.map((item) => item.sourceFilename)),
-	).map((name) => ({
-		name: `/files/${id}-${name}`,
-	}));
+	const files = filenames.map((name) => ({ name: `/files/${id}-${name}` }));
 
 	return toResponse(
 		JSON.stringify({

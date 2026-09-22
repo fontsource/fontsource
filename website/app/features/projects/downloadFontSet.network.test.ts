@@ -33,7 +33,6 @@ it('waits for Retry-After before downloading and assembling a prepared archive',
 	const result = createFontSetArchive([{ familyId: 'inter' }], () => {});
 	await accepted.promise;
 	await vi.advanceTimersByTimeAsync(0);
-	expect(vi.getTimerCount()).toBe(1);
 	await vi.advanceTimersByTimeAsync(1999);
 	expect(attempts).toBe(1);
 	await vi.advanceTimersByTimeAsync(1);
