@@ -92,7 +92,7 @@ const serializeHeaders = (response: Response): Record<string, string> => {
 	return result;
 };
 
-export const seedMetadata = async (env: Env): Promise<void> => {
+const seedMetadata = async (env: Env): Promise<void> => {
 	await env.METADATA.put(KV_KEYS.catalog, JSON.stringify(testCatalog));
 	await env.METADATA.put(
 		KV_KEYS.axisRegistry,

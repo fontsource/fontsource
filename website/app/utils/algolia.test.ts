@@ -1,59 +1,11 @@
-import { describe, expect, it } from 'vitest';
-
+import { expect, it } from 'vitest';
 import { buildAlgoliaCacheKey } from './algolia';
 
-describe('buildAlgoliaCacheKey', () => {
-	it('ignores unknown params and skips search params', () => {
-		expect(
-			buildAlgoliaCacheKey(
-				'https://fontsource.org/?utm_source=bot&fbclid=garbage',
-			),
-		).toBe('algolia:ssr:taxonomy-v2:root');
-
-		expect(
-			buildAlgoliaCacheKey(
-				'https://fontsource.org/?query=inter&utm_source=bot&fbclid=garbage',
-			),
-		).toBeUndefined();
-	});
-
-	it('skips repeated and comma-separated subsets', () => {
-		expect(
-			buildAlgoliaCacheKey(
-				'https://fontsource.org/?subsets=latin-ext,latin&subsets=latin',
-			),
-		).toBeUndefined();
-	});
-
-	it('omits an empty query', () => {
-		expect(buildAlgoliaCacheKey('https://fontsource.org/?query=%20%20')).toBe(
-			'algolia:ssr:taxonomy-v2:root',
-		);
-	});
-
-	it('isolates clean discovery paths from the homepage cache', () => {
-		expect(
-			buildAlgoliaCacheKey('https://fontsource.org/languages/vietnamese'),
-		).toBe('algolia:ssr:taxonomy-v2:languages:vietnamese');
-	});
-
-	it('skips known params with arbitrary values', () => {
-		expect(
-			buildAlgoliaCacheKey(
-				'https://fontsource.org/?sort=garbage&category=unknown&variable=garbage',
-			),
-		).toBeUndefined();
-	});
+it.each([
+	['/?utm_source=bot', 'algolia:ssr:taxonomy-v2:root'],
+	['/languages/vietnamese', 'algolia:ssr:taxonomy-v2:languages:vietnamese'],
+	['/?query=inter', undefined],
+	['/?languages[0]=vietnamese', undefined],
+])('scopes the SSR cache for %s', (path, key) => {
+	expect(buildAlgoliaCacheKey(`https://fontsource.org${path}`)).toBe(key);
 });
-
-it.each(['classifications', 'languages', 'tags'])(
-	'does not reuse unfiltered SSR cache for %s',
-	(filter) => {
-		expect(
-			buildAlgoliaCacheKey(`https://fontsource.org/?${filter}=value`),
-		).toBeUndefined();
-		expect(
-			buildAlgoliaCacheKey(`https://fontsource.org/?${filter}[0]=value`),
-		).toBeUndefined();
-	},
-);

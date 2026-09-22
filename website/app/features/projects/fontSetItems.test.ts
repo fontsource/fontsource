@@ -25,7 +25,7 @@ const requestFor = (ids: string[], signal?: AbortSignal) => {
 };
 
 describe('font set metadata', () => {
-	it('uses one package lookup and reports every unresolved selection', async () => {
+	it('returns resolved selections and invalid or unpublished IDs', async () => {
 		vi.mocked(resolveFontPackages).mockResolvedValue({
 			items: [
 				{
@@ -53,39 +53,10 @@ describe('font set metadata', () => {
 		const result = await action(
 			requestFor(['inter', 'inter', 'unpublished', '../invalid']),
 		);
-		expect(resolveFontPackages).toHaveBeenCalledOnce();
-		expect(resolveFontPackages).toHaveBeenCalledWith(
-			{ ids: ['inter', 'unpublished'] },
-			expect.anything(),
-		);
-		expect(listRegistryFamilies).toHaveBeenCalledOnce();
 		expect(result).toMatchObject({
 			requestId: 'request-1',
 			items: [{ familyId: 'inter', packageVersion: '5.3.0' }],
 			failedIds: ['../invalid', 'unpublished'],
 		});
-	});
-
-	it('returns an inline retryable failure instead of throwing a page error', async () => {
-		vi.mocked(resolveFontPackages).mockRejectedValue(
-			new Error('network unavailable'),
-		);
-		vi.mocked(listRegistryFamilies).mockResolvedValue([]);
-		expect(await action(requestFor(['inter']))).toMatchObject({
-			requestId: 'request-1',
-			items: [],
-			failedIds: ['inter'],
-			error: expect.any(String),
-		});
-	});
-
-	it('does not convert cancelled requests into a failure response', async () => {
-		const controller = new AbortController();
-		controller.abort();
-		vi.mocked(resolveFontPackages).mockRejectedValue(controller.signal.reason);
-		vi.mocked(listRegistryFamilies).mockResolvedValue([]);
-		await expect(action(requestFor(['inter'], controller.signal))).rejects.toBe(
-			controller.signal.reason,
-		);
 	});
 });

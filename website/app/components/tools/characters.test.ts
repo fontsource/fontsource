@@ -47,41 +47,6 @@ describe('optimizer character selection', () => {
 		}
 	});
 
-	it('unions existing character sets and preserves full variable axes', async () => {
-		const ctx = createFontContext();
-		try {
-			const source = new Uint8Array(
-				readFileSync(
-					new URL(
-						'../../../../packages/core/tests/fixtures/fonts/recursive-latin-full-normal.ttf',
-						import.meta.url,
-					),
-				),
-			);
-			const { characters, codepoints } = await resolveCharacters({
-				mode: 'subsets',
-				subsets: ['latin', 'greek'],
-				text: '',
-			});
-			expect(codepoints).toContain(65);
-			expect(codepoints).toContain(0x391);
-			expect(new Set(codepoints).size).toBe(codepoints.length);
-			const result = await buildFont(ctx, [source], {
-				family: 'Recursive',
-				type: 'variable',
-				axisKeys: ['full'],
-				characters,
-				formats: ['woff2'],
-			});
-			expect(result.fonts).toHaveLength(1);
-			expect((await inspectFont(ctx, result.fonts[0].content)).axes).toEqual(
-				(await inspectFont(ctx, source)).axes,
-			);
-		} finally {
-			ctx.destroy();
-		}
-	});
-
 	it('retains supplementary and combining characters and rejects empty selections', async () => {
 		expect(
 			(

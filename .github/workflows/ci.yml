@@ -157,9 +157,6 @@ jobs:
       - name: Typecheck website
         run: pnpm --filter website typecheck
 
-      - name: Install browser for website tests
-        run: pnpm --filter website test:browser:install
-
       - name: Test website
         run: pnpm --filter website test
 

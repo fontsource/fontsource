@@ -524,9 +524,6 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^6.1.1
         version: 6.1.1(@rolldown/plugin-babel@0.2.4(@babel/core@8.0.5)(rolldown@1.2.9)(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0)))(babel-plugin-react-compiler@1.0.0)(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))
-      '@vitest/browser-playwright':
-        specifier: 5.0.1
-        version: 5.0.1(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(playwright@1.63.0)(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))(vitest@5.0.1)
       '@vitest/coverage-v8':
         specifier: 5.0.1
         version: 5.0.1(@vitest/browser@5.0.1)(vitest@5.0.1)
@@ -536,12 +533,6 @@ importers:
       lightningcss:
         specifier: ^1.33.0
         version: 1.33.0
-      msw:
-        specifier: 2.15.0
-        version: 2.15.0(@types/node@26.1.2)(typescript@7.0.2)
-      playwright:
-        specifier: 1.63.0
-        version: 1.63.0
       remark-smartypants:
         specifier: ^3.0.3
         version: 3.0.3
@@ -557,9 +548,6 @@ importers:
       vitest:
         specifier: 5.0.1
         version: 5.0.1(@types/node@26.1.2)(@vitest/browser-playwright@5.0.1)(@vitest/coverage-v8@5.0.1)(@vitest/ui@5.0.1)(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))
-      vitest-browser-react:
-        specifier: 2.3.0
-        version: 2.3.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(vitest@5.0.1)
       wrangler:
         specifier: 'catalog:'
         version: 4.134.0(@types/node@26.1.2)
@@ -5395,20 +5383,6 @@ packages:
       yaml:
         optional: true
 
-  vitest-browser-react@2.3.0:
-    resolution: {integrity: sha512-S5vdGHHA93j2Z6dbmIJI1wtxT3AXPTRlmC1Meo+ekG011yNnEutMAnHrwyj8qFlGhgBYA8ENGK6+o1Q+vnFz6A==}
-    peerDependencies:
-      '@types/react': ^18.0.0 || ^19.0.0
-      '@types/react-dom': ^18.0.0 || ^19.0.0
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-      vitest: ^4.0.0 || ^5.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-
   vitest@4.1.11:
     resolution: {integrity: sha512-fhACrNXUidIbGSBr5FlbuBkO7VWC1ZyLl0DO4CU2DrQoAPxX84Ysxs+HeGQpii5lZWV1Q4gBZTTu49mF+A6Edw==}
     engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
@@ -6113,7 +6087,8 @@ snapshots:
   '@biomejs/cli-win32-x64@2.5.4':
     optional: true
 
-  '@blazediff/core@1.10.0': {}
+  '@blazediff/core@1.10.0':
+    optional: true
 
   '@chenglou/pretext@0.0.5':
     optional: true
@@ -6631,6 +6606,7 @@ snapshots:
       '@inquirer/type': 4.1.1(@types/node@26.1.2)
     optionalDependencies:
       '@types/node': 26.1.2
+    optional: true
 
   '@inquirer/core@12.0.3(@types/node@20.19.43)':
     dependencies:
@@ -6668,6 +6644,7 @@ snapshots:
       signal-exit: 4.1.0
     optionalDependencies:
       '@types/node': 26.1.2
+    optional: true
 
   '@inquirer/figures@2.0.9': {}
 
@@ -6683,6 +6660,7 @@ snapshots:
   '@inquirer/type@4.1.1(@types/node@26.1.2)':
     optionalDependencies:
       '@types/node': 26.1.2
+    optional: true
 
   '@istanbuljs/schema@0.1.6': {}
 
@@ -7081,7 +7059,8 @@ snapshots:
 
   '@pinojs/redact@0.4.0': {}
 
-  '@polka/url@1.0.0-next.29': {}
+  '@polka/url@1.0.0-next.29':
+    optional: true
 
   '@poppinss/colors@4.1.6':
     dependencies:
@@ -7692,6 +7671,7 @@ snapshots:
       - msw
       - utf-8-validate
       - vite
+    optional: true
 
   '@vitest/browser@5.0.1(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))(vitest@5.0.1)':
     dependencies:
@@ -7710,6 +7690,7 @@ snapshots:
       - msw
       - utf-8-validate
       - vite
+    optional: true
 
   '@vitest/coverage-istanbul@4.1.11(vitest@4.1.11)':
     dependencies:
@@ -7823,6 +7804,7 @@ snapshots:
   '@vitest/pretty-format@5.0.1':
     dependencies:
       tinyrainbow: 3.1.1
+    optional: true
 
   '@vitest/runner@4.1.11':
     dependencies:
@@ -7849,6 +7831,7 @@ snapshots:
       sirv: 3.0.2
       tinyrainbow: 3.1.1
       vitest: 5.0.1(@types/node@26.1.2)(@vitest/browser-playwright@5.0.1)(@vitest/coverage-v8@5.0.1)(@vitest/ui@5.0.1)(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))
+    optional: true
 
   '@vitest/utils@4.1.11':
     dependencies:
@@ -7861,6 +7844,7 @@ snapshots:
       '@vitest/pretty-format': 5.0.1
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.1
+    optional: true
 
   '@yuku-analyzer/binding-android-arm64@0.9.5':
     optional: true
@@ -8509,7 +8493,8 @@ snapshots:
 
   file-selector@5.0.1: {}
 
-  flatted@3.4.4: {}
+  flatted@3.4.4:
+    optional: true
 
   formatly@0.3.0:
     dependencies:
@@ -9479,7 +9464,8 @@ snapshots:
 
   modern-tar@0.8.5: {}
 
-  mrmime@2.0.1: {}
+  mrmime@2.0.1:
+    optional: true
 
   ms@2.1.3: {}
 
@@ -9584,6 +9570,7 @@ snapshots:
       typescript: 7.0.2
     transitivePeerDependencies:
       - '@types/node'
+    optional: true
 
   mute-stream@3.0.0: {}
 
@@ -9782,7 +9769,8 @@ snapshots:
     dependencies:
       playwright-core: 1.63.0
 
-  pngjs@7.0.0: {}
+  pngjs@7.0.0:
+    optional: true
 
   postcss@8.5.28:
     dependencies:
@@ -10301,6 +10289,7 @@ snapshots:
       '@polka/url': 1.0.0-next.29
       mrmime: 2.0.1
       totalist: 3.0.1
+    optional: true
 
   sisteransi@1.0.5: {}
 
@@ -10425,7 +10414,8 @@ snapshots:
     dependencies:
       tldts-core: 7.4.13
 
-  totalist@3.0.1: {}
+  totalist@3.0.1:
+    optional: true
 
   tough-cookie@6.0.2:
     dependencies:
@@ -10688,15 +10678,6 @@ snapshots:
       tsx: 4.23.13
       yaml: 2.9.0
 
-  vitest-browser-react@2.3.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(vitest@5.0.1):
-    dependencies:
-      react: 19.3.0
-      react-dom: 19.3.0(react@19.3.0)
-      vitest: 5.0.1(@types/node@26.1.2)(@vitest/browser-playwright@5.0.1)(@vitest/coverage-v8@5.0.1)(@vitest/ui@5.0.1)(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(vite@8.3.0(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))
-    optionalDependencies:
-      '@types/react': 19.3.0
-      '@types/react-dom': 19.3.0(@types/react@19.3.0)
-
   vitest@4.1.11(@types/node@20.19.43)(@vitest/coverage-istanbul@4.1.11)(@vitest/coverage-v8@4.1.11)(msw@2.15.0(@types/node@20.19.43)(typescript@7.0.2))(vite@8.3.0(@types/node@20.19.43)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.101.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.11
@@ -10904,7 +10885,8 @@ snapshots:
 
   ws@8.21.0: {}
 
-  ws@8.21.3: {}
+  ws@8.21.3:
+    optional: true
 
   wsl-utils@0.3.1:
     dependencies:
