@@ -363,14 +363,7 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 	}, [measurementKey, mounted, rowVirtualizer]);
 
 	useEffect(() => {
-		if (
-			!mounted ||
-			!loadMoreElement ||
-			isLastPage ||
-			status === 'error' ||
-			isSearchLoading ||
-			isLoadingMore
-		) {
+		if (!loadMoreElement || isLastPage || status !== 'idle' || isLoadingMore) {
 			return;
 		}
 
@@ -386,16 +379,7 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 		);
 		observer.observe(loadMoreElement);
 		return () => observer.disconnect();
-	}, [
-		mounted,
-		isLastPage,
-		isLoadingMore,
-		isSearchLoading,
-		loadMoreElement,
-		showMore,
-		results,
-		status,
-	]);
+	}, [isLastPage, isLoadingMore, loadMoreElement, showMore, results, status]);
 
 	useEffect(() => {
 		const unsubscribe = state$.language.onChange((e) => {

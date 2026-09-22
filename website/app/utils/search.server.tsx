@@ -39,8 +39,8 @@ const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 const getSearchServerState = (
 	serverUrl: string,
 	facets: SearchFacets,
-	discovery?: DiscoveryPage,
-	previews: Record<string, FontPreview> = {},
+	discovery: DiscoveryPage | undefined,
+	previews: Record<string, FontPreview>,
 ) => {
 	const state$ = observable(createPageSearchState(discovery));
 	const requestUrl = new URL(serverUrl);
@@ -120,58 +120,25 @@ export const loadSearch = async (
 				],
 			),
 	);
+	let serverState: InstantSearchServerState | undefined;
 	// Collection membership exists only in localStorage and is unavailable to SSR.
-	if (hasCollectionFilter) {
-		return data<SearchProps>(
-			{
-				discovery,
-				hasCollectionFilter,
-				serverUrl,
-				previews,
-				...facets,
-			},
-			{ headers: cacheHeaders.short },
-		);
-	}
+	if (!hasCollectionFilter) {
+		const { env, ctx } = context.get(cloudflareContext);
+		const cacheKey = await buildAlgoliaCacheKey(serverUrl);
+		const cachedState = cacheKey
+			? await env.ALGOLIA.get<InstantSearchServerState>(cacheKey, 'json')
+			: null;
+		serverState =
+			cachedState ??
+			(await getSearchServerState(serverUrl, facets, discovery, previews));
 
-	const { env, ctx } = context.get(cloudflareContext);
-	const { ALGOLIA } = env;
-	const cacheKey = await buildAlgoliaCacheKey(serverUrl);
-
-	// Check local cache for server state first to avoid unnecessary API calls
-	let serverState = cacheKey
-		? await ALGOLIA.get<InstantSearchServerState>(cacheKey, 'json')
-		: null;
-	if (serverState) {
-		return data<SearchProps>(
-			{
-				discovery,
-				hasCollectionFilter,
-				serverState,
-				serverUrl,
-				previews,
-				...facets,
-			},
-			{
-				headers: cacheHeaders.short,
-			},
-		);
-	}
-
-	serverState = await getSearchServerState(
-		serverUrl,
-		facets,
-		discovery,
-		previews,
-	);
-
-	// Add server state to local cache before responding
-	if (cacheKey) {
-		ctx.waitUntil(
-			ALGOLIA.put(cacheKey, JSON.stringify(serverState), {
-				expirationTtl: ALGOLIA_TTL_SECONDS,
-			}),
-		);
+		if (cacheKey && !cachedState) {
+			ctx.waitUntil(
+				env.ALGOLIA.put(cacheKey, JSON.stringify(serverState), {
+					expirationTtl: ALGOLIA_TTL_SECONDS,
+				}),
+			);
+		}
 	}
 
 	return data<SearchProps>(
