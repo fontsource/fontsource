@@ -18,8 +18,8 @@ export const determineAxisKey = (
 	variableConfig: VariableAxisConfig,
 ): VariableAxisKey => {
 	// Filter out any inactive axes and `ital` since it's always included.
-	const active = Object.keys(variableConfig).filter((axisKey) =>
-		Boolean(variableConfig[axisKey]),
+	const active = Object.keys(variableConfig).filter(
+		(axisKey) => axisKey !== 'ital' && Boolean(variableConfig[axisKey]),
 	);
 
 	if (active.length === 0) {

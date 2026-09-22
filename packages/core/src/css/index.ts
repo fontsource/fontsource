@@ -9,11 +9,22 @@ export type {
 	FontConfig,
 	FontFace,
 	FontSource,
+	FontStyle,
 	VariableAxisConfig,
 } from '../types';
-export { selectVariableAxisKey } from '../utils/variable';
-export type { FontFaceOptions } from './face-rule';
-export { type FontFaceDeclaration, renderFontFaceRule } from './rule';
+export { formatAxisValue } from '../utils/style';
+export {
+	determineAxisKey,
+	getFaceStretch,
+	getFaceStyle,
+	selectVariableAxisKey,
+} from '../utils/variable';
+export {
+	type CSSFontFace,
+	type CSSRenderOptions,
+	type FontFaceOptions,
+	renderFontFaceRule,
+} from './face-rule';
 
 /**
  * Generate publishable CSS assets from a config suitable for NPM packages. It generates

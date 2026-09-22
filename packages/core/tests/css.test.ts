@@ -2,10 +2,12 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
+	type CSSFontFace,
 	generateCSS,
 	generateCSSAssets,
 	generateFaceCSS,
 	generateFaceCSSAssets,
+	renderFontFaceRule,
 } from '../src/css';
 import { renderFontFace } from '../src/css/face-rule';
 import type { FontFace, FontFileFormat, FontSource } from '../src/types';
@@ -66,6 +68,30 @@ const variableFace = (
 const serialiseAssets = (
 	assets: { filename: string; content: string }[],
 ): string => assets.map((a) => `/* ${a.filename} */\n${a.content}`).join('\n');
+
+describe('renderFontFaceRule', () => {
+	const face: CSSFontFace = {
+		family: 'Example "Font"\\Name\n',
+		style: 'oblique -20deg 10deg',
+		weight: '100 900',
+		isVariable: true,
+		stretch: '75% 125%',
+		unicodeRange: 'U+2190-2300',
+		sources: [
+			{ url: './font (1).woff2?label="test"', format: 'woff2-variations' },
+			{ url: './font.otf', format: 'opentype' },
+		],
+	};
+
+	it('renders escaped strings and ordered sources in regular and compact CSS', async () => {
+		await expect(
+			renderFontFaceRule(face, { display: 'optional' }),
+		).toMatchFileSnapshot(resolve(snapshotDir, 'rule-escaped.css'));
+		await expect(
+			renderFontFaceRule(face, { display: 'optional', minify: true }),
+		).toMatchFileSnapshot(resolve(snapshotDir, 'rule-escaped.min.css'));
+	});
+});
 
 describe('generateFaceCSS', () => {
 	it('preserves published CJK filenames and ranges without reconstructing slices', async () => {
@@ -467,6 +493,34 @@ describe('renderFontFace', () => {
 // ---------------------------------------------------------------------------
 
 describe('generateFaceCSSAssets', () => {
+	it('publishes the default for oblique-only faces', async () => {
+		const assets = generateFaceCSSAssets('Oblique', [
+			staticFace({
+				subset: 'latin',
+				weight: 400,
+				style: 'oblique 12deg',
+				filename: 'oblique.woff2',
+			}),
+		]);
+		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
+			resolve(snapshotDir, 'grouped-static-oblique-only.css'),
+		);
+	});
+
+	it('ignores the implicit italic axis when selecting the default bundle', async () => {
+		const assets = generateCSSAssets({
+			family: 'Example',
+			weights: [400],
+			styles: ['normal', 'italic'],
+			subsets: ['latin'],
+			unicodeRange: { latin: 'U+0000-00FF' },
+			variable: { wght: { min: 100, max: 900 }, ital: { min: 0, max: 1 } },
+		});
+		await expect(serialiseAssets(assets)).toMatchFileSnapshot(
+			resolve(snapshotDir, 'grouped-variable-ital-axis.css'),
+		);
+	});
+
 	it('static: two subsets, two weights, two styles', async () => {
 		const variants: FontFace[] = ['latin', 'latin-ext'].flatMap((subset) => {
 			const ur = subset === 'latin' ? 'U+0000-00FF' : 'U+0100-024F';

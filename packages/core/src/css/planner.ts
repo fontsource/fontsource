@@ -30,7 +30,7 @@ const pickStaticIndexCSS = (faces: readonly FontFace[]): string | undefined => {
 
 	return index.style === 'normal'
 		? `${index.weight}.css`
-		: `${index.weight}-${index.style}.css`;
+		: `${index.weight}-${formatStyle(index.style)}.css`;
 };
 
 const pickVariableIndexCSS = (

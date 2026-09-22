@@ -30,27 +30,6 @@ const getPublicFilename = (id: string, filename: string): string => {
 	return filename.startsWith(prefix) ? filename.slice(prefix.length) : filename;
 };
 
-const minifyCss = (content: string): string => {
-	let minified = '';
-
-	// The core generator emits one comment, block marker, or declaration per line.
-	for (const rawLine of content.split('\n')) {
-		const line = rawLine.trim();
-		if (!line || line.startsWith('/*')) {
-			continue;
-		}
-
-		if (line === '@font-face {') {
-			minified += '@font-face{';
-			continue;
-		}
-
-		minified += line.replace(': ', ':');
-	}
-
-	return minified;
-};
-
 const createCssResponse = (
 	content: string,
 	requestedVersion: string,
@@ -78,6 +57,7 @@ const findCssAsset = (
 	resolvedTag: string,
 	options: {
 		display: CSSOptions['display'];
+		minify: boolean;
 		axes?: VariableAxes;
 	},
 ): CSSAsset | undefined => {
@@ -132,6 +112,7 @@ export const getCssAsset = async (
 
 	const asset = findCssAsset(metadata, assetFilename, resolvedTag, {
 		display: CSS_DISPLAY,
+		minify: isMinified,
 		axes: tag.isVariable ? axes : undefined,
 	});
 
@@ -140,7 +121,7 @@ export const getCssAsset = async (
 	}
 
 	return createCssResponse(
-		isMinified ? minifyCss(asset.content) : asset.content,
+		asset.content,
 		tag.requestedVersion,
 		metadata.lastModified,
 	);

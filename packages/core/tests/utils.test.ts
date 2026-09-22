@@ -84,7 +84,8 @@ describe('variable axis helpers', () => {
 		expect(formatStretchValue({ min: 75, max: 125 })).toBe('75% 125%');
 		expect(formatSlantValue({ min: -12, max: -12 })).toBe('12deg');
 		expect(formatSlantValue({ min: -15, max: 0 })).toBe('0deg 15deg');
-		expect(formatSlantValue({ min: 0, max: 15 })).toBe('0deg 15deg');
+		expect(formatSlantValue({ min: 0, max: 15 })).toBe('-15deg 0deg');
+		expect(formatSlantValue({ min: -10, max: 20 })).toBe('-20deg 10deg');
 	});
 
 	it('derives all published variable axis keys', () => {

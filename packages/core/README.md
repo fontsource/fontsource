@@ -60,11 +60,21 @@ in the result's `css` field. The existing config-based `generateCSS` and
 `generateCSSAssets` APIs remain available for callers that need filename
 planning rather than rendering known artifacts.
 
-CSS serialization, face planning, and package entrypoints all live in
-`@fontsource-utils/core/css`. Core's face renderer, the CLI, and registry previews
-share `renderFontFaceRule`; callers own source data and URL resolution. The CLI
-bundles this pure entrypoint into its browser and CommonJS builds, without a
-runtime dependency on font-processing modules.
+CSS serialization, face planning, and package entrypoints live in
+`@fontsource-utils/core/css`. The CLI and registry previews use the same typed
+`renderFontFaceRule` renderer. It takes a final family, style, weight, optional
+stretch, ordered `{ url, format }` sources, and an explicit `unicodeRange`
+(string or `null` for unrestricted coverage). Set `isVariable` to append the
+`Variable` family suffix; an existing suffix is preserved. Source formats are
+CSS hints such as `woff2`, `woff2-variations`, `truetype`, or `opentype`.
+
+Rendering uses one canonical format with escaped strings and no generated
+comments. `{ minify: true }` produces compact CSS directly, including through
+`generateCSS` and the asset generators. The CLI bundles this pure entrypoint
+into its browser and CommonJS builds without loading font-processing modules.
+Google metadata adapters preserve its explicit source variants and only emit
+formats selected by the downloader. Missing legacy coverage is passed as
+`null`; the renderer does not invent a Unicode range.
 
 CSS output is covered by readable snapshots. Review changes to declarations,
 Unicode ranges, filenames, and entrypoints before updating a snapshot; matching

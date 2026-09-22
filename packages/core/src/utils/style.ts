@@ -38,12 +38,10 @@ export const formatStretchValue = (axis: VariableFontAxis): string =>
 export const formatSlantValue = (axis: VariableFontAxis): string => {
 	const min = Number(axis.min);
 	const max = Number(axis.max);
-	const minDegrees = Math.abs(min);
-	const maxDegrees = Math.abs(max);
+	const minDegrees = -max;
+	const maxDegrees = -min;
 
-	return min === max
-		? `${minDegrees}deg`
-		: `${Math.min(minDegrees, maxDegrees)}deg ${Math.max(minDegrees, maxDegrees)}deg`;
+	return min === max ? `${minDegrees}deg` : `${minDegrees}deg ${maxDegrees}deg`;
 };
 
 export const findClosestWeight = (weights: number[], target = 400): number => {

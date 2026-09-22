@@ -12,7 +12,9 @@ const generateFaceCSS = (
 	faces: readonly FontFace[],
 	options: FontFaceOptions = {},
 ): string =>
-	faces.map((face) => renderFontFace(face, family, options)).join('\n\n');
+	faces
+		.map((face) => renderFontFace(face, family, options))
+		.join(options.minify ? '' : '\n\n');
 
 // Group resolved faces into published CSS assets.
 const generateFaceCSSAssets = (

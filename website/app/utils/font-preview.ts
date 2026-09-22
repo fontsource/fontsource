@@ -9,11 +9,7 @@ import type {
 	GetVariableFontResponse,
 } from '../generated/api';
 import { jsDelivrResolver } from './cdn';
-import {
-	getRegistrySourcePreviewStyle,
-	type RegistryFamily,
-	type RegistrySource,
-} from './registry';
+import type { RegistryFamily, RegistrySource } from './registry';
 
 type FontPreviewIdentity = Pick<GetFontResponse, 'family' | 'id' | 'variable'>;
 
@@ -45,33 +41,24 @@ export const getRegistrySourcePreviewCSS = (
 	// API, snapshot, and website releases can overlap during the backfill.
 	if (source.previewUrl)
 		files.unshift({ url: source.previewUrl, format: 'woff2' });
-	const { fontStyle, fontWeight } = getRegistrySourcePreviewStyle(source);
 	const weight =
-		source.type === 'variable' && typeof source.weight !== 'number'
-			? `${source.weight.min} ${source.weight.max}`
-			: fontWeight;
-	let sources: string;
+		typeof source.weight === 'number'
+			? (source.declaredVariant?.weight ?? source.weight)
+			: `${source.weight.min} ${source.weight.max}`;
 	try {
-		sources = files
-			.map(
-				({ url, format }) =>
-					`url(${JSON.stringify(new URL(url, 'https://api.fontsource.org').toString())}) format("${format}")`,
-			)
-			.join(', ');
+		return renderFontFaceRule({
+			family: fontFamily,
+			style: source.declaredVariant?.style ?? source.style,
+			weight,
+			unicodeRange: null,
+			sources: files.map(({ url, format }) => ({
+				url: new URL(url, 'https://api.fontsource.org').toString(),
+				format,
+			})),
+		});
 	} catch {
 		return '';
 	}
-
-	return renderFontFaceRule(
-		[
-			['font-family', JSON.stringify(fontFamily)],
-			['src', sources],
-			['font-style', `${fontStyle}`],
-			['font-weight', `${weight}`],
-			['font-display', 'swap'],
-		],
-		{ spacer: '\n\t' },
-	);
 };
 
 export const selectRegistryPreviewSource = (

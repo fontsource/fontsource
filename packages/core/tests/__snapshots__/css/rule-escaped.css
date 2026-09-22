@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Example \22 Font\22 \5c Name\a  Variable";
+  font-style: oblique -20deg 10deg;
+  font-display: optional;
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  src: url("./font (1).woff2?label=\22 test\22 ") format("woff2-variations"), url("./font.otf") format("opentype");
+  unicode-range: U+2190-2300;
+}

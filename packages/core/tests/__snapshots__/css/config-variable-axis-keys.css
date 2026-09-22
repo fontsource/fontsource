@@ -1,80 +1,72 @@
 /* MONO.css */
-/* recursive-latin-mono-normal */
 @font-face {
-  font-family: 'Recursive Variable';
+  font-family: "Recursive Variable";
   font-style: normal;
   font-display: swap;
   font-weight: 300 700;
-  src: url(./files/recursive-latin-mono-normal.woff2) format('woff2-variations');
+  src: url("./files/recursive-latin-mono-normal.woff2") format("woff2-variations");
   unicode-range: U+0000-00FF;
 }
 /* MONO-italic.css */
-/* recursive-latin-mono-italic */
 @font-face {
-  font-family: 'Recursive Variable';
+  font-family: "Recursive Variable";
   font-style: italic;
   font-display: swap;
   font-weight: 300 700;
-  src: url(./files/recursive-latin-mono-italic.woff2) format('woff2-variations');
+  src: url("./files/recursive-latin-mono-italic.woff2") format("woff2-variations");
   unicode-range: U+0000-00FF;
 }
 /* standard-italic.css */
-/* recursive-latin-standard-italic */
 @font-face {
-  font-family: 'Recursive Variable';
+  font-family: "Recursive Variable";
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 700;
-  src: url(./files/recursive-latin-standard-normal.woff2) format('woff2-variations');
+  src: url("./files/recursive-latin-standard-normal.woff2") format("woff2-variations");
   unicode-range: U+0000-00FF;
 }
 
-/* recursive-latin-standard-italic */
 @font-face {
-  font-family: 'Recursive Variable';
+  font-family: "Recursive Variable";
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 700;
-  src: url(./files/recursive-latin-standard-italic.woff2) format('woff2-variations');
+  src: url("./files/recursive-latin-standard-italic.woff2") format("woff2-variations");
   unicode-range: U+0000-00FF;
 }
 /* full-italic.css */
-/* recursive-latin-full-italic */
 @font-face {
-  font-family: 'Recursive Variable';
+  font-family: "Recursive Variable";
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 700;
-  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
+  src: url("./files/recursive-latin-full-normal.woff2") format("woff2-variations");
   unicode-range: U+0000-00FF;
 }
 
-/* recursive-latin-full-italic */
 @font-face {
-  font-family: 'Recursive Variable';
+  font-family: "Recursive Variable";
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 700;
-  src: url(./files/recursive-latin-full-italic.woff2) format('woff2-variations');
+  src: url("./files/recursive-latin-full-italic.woff2") format("woff2-variations");
   unicode-range: U+0000-00FF;
 }
 /* index.css */
-/* recursive-latin-full-italic */
 @font-face {
-  font-family: 'Recursive Variable';
+  font-family: "Recursive Variable";
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 700;
-  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
+  src: url("./files/recursive-latin-full-normal.woff2") format("woff2-variations");
   unicode-range: U+0000-00FF;
 }
 
-/* recursive-latin-full-italic */
 @font-face {
-  font-family: 'Recursive Variable';
+  font-family: "Recursive Variable";
   font-style: oblique 0deg 15deg;
   font-display: swap;
   font-weight: 300 700;
-  src: url(./files/recursive-latin-full-italic.woff2) format('woff2-variations');
+  src: url("./files/recursive-latin-full-italic.woff2") format("woff2-variations");
   unicode-range: U+0000-00FF;
 }
