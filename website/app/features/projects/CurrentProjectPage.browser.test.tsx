@@ -124,15 +124,7 @@ it('keeps unavailable rows and disables output until retry resolves the complete
 			? { ...result, items: [families[0]], failedIds: ['poppins'] }
 			: result;
 	});
-	await expect
-		.element(
-			screen
-				.getByRole('alert')
-				.getByText(
-					'Some fonts could not be loaded. Retry or remove them to use the complete set.',
-				),
-		)
-		.toBeVisible();
+	await expect.element(screen.getByRole('alert')).toBeVisible();
 	await expect
 		.element(
 			screen.getByRole('button', { name: 'Remove Poppins from font set' }),

@@ -11,6 +11,7 @@ import {
 	variableMetadata,
 } from '../tests/fixtures/metadata';
 import { publishedFiles } from '../tests/fixtures/published-files';
+import { buildArtifacts } from './src/artifacts';
 
 const staticWoff2Bytes = new Uint8Array(
 	readFileSync(
@@ -104,11 +105,10 @@ describe('container artifact builder', () => {
 	});
 
 	afterEach(() => {
-		vi.clearAllMocks();
+		vi.restoreAllMocks();
 	});
 
 	it('builds every published static artifact in package mode', async () => {
-		const { buildArtifacts } = await import('./src/artifacts');
 		fetchPackageTarball.mockResolvedValueOnce(
 			tarballStream(
 				await createPackageTarball(testCatalog.familypack.id, false, [
@@ -141,7 +141,6 @@ describe('container artifact builder', () => {
 	});
 
 	it('builds every published variable artifact in package mode', async () => {
-		const { buildArtifacts } = await import('./src/artifacts');
 		const request: BuildVersionRequest = {
 			mode: 'variable',
 			tag: {
@@ -165,7 +164,6 @@ describe('container artifact builder', () => {
 	});
 
 	it('assembles download entries from the correct built artifacts', async () => {
-		const { buildArtifacts } = await import('./src/artifacts');
 		const request: BuildVersionRequest = {
 			mode: 'download',
 			staticVersion: '1.0.0',
@@ -198,8 +196,8 @@ describe('container artifact builder', () => {
 	});
 
 	it('combines exact package versions using published variable filenames', async () => {
-		const { buildArtifacts } = await import('./src/artifacts');
 		const fallbackFilename = 'fallback-mono-normal.woff2';
+		// The static package supplies LICENSE; the variable package need not repeat it.
 		const variableTarball = gzipSync(
 			await packTar([
 				{
@@ -251,8 +249,6 @@ describe('container artifact builder', () => {
 	});
 
 	it('builds downloads from a variable package without a static package', async () => {
-		const { buildArtifacts } = await import('./src/artifacts');
-
 		await buildArtifacts({
 			mode: 'download',
 			variableVersion: '2.0.0',
@@ -273,8 +269,7 @@ describe('container artifact builder', () => {
 	});
 
 	it('keeps the download available when an individual warm upload fails', async () => {
-		const { buildArtifacts } = await import('./src/artifacts');
-		const errorLog = vi.spyOn(logger, 'error').mockImplementation(() => {});
+		vi.spyOn(logger, 'error').mockImplementation(() => {});
 		putObject
 			.mockResolvedValueOnce(undefined)
 			.mockRejectedValueOnce(new Error('artifact upload failed'));
@@ -290,11 +285,9 @@ describe('container artifact builder', () => {
 		expect(
 			putObject.mock.calls.some(([key]) => key === 'abel@1.0.0/download.zip'),
 		).toBe(true);
-		errorLog.mockRestore();
 	});
 
 	it('publishes the download before individual warming completes', async () => {
-		const { buildArtifacts } = await import('./src/artifacts');
 		const warming = Promise.withResolvers<void>();
 		const releaseUploads = Promise.withResolvers<void>();
 		putObject.mockImplementation(async (key: string) => {
@@ -325,7 +318,6 @@ describe('container artifact builder', () => {
 	});
 
 	it('filters download artifacts to files published for that version', async () => {
-		const { buildArtifacts } = await import('./src/artifacts');
 		fetchPackageTarball.mockResolvedValueOnce(
 			tarballStream(
 				await createPackageTarball(testCatalog.familypack.id, false, [
