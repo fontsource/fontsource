@@ -38,7 +38,7 @@ import {
 
 const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 
-export const getSearchServerState = (
+const getSearchServerState = (
 	serverUrl: string,
 	facets: SearchFacets,
 	discovery?: DiscoveryPage,

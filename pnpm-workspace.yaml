@@ -9,6 +9,7 @@ allowBuilds:
   '@posthog/cli': true
   core-js: false
   esbuild: true
+  msw: false
   sharp: true
   workerd: true
 
