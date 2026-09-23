@@ -281,12 +281,10 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 							disabled={workbench.isSessionProcessing}
 						/>
 						{showSponsor && (
-							<aside
-								className={classes.converterSponsor}
-								aria-label="Advertisement"
-							>
-								<CarbonAd layout="horizontal" />
-							</aside>
+							<CarbonAd
+								layout="horizontal"
+								slotClassName={classes.converterSponsor}
+							/>
 						)}
 					</div>
 				) : (

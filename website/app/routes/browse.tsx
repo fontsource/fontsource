@@ -320,12 +320,10 @@ export default function Browse() {
 						<h2>Categories</h2>
 						<p>Different forms. Different voices.</p>
 						{showSponsor && (
-							<aside
-								className={classes.categorySponsor}
-								aria-label="Advertisement"
-							>
-								<CarbonAd className={classes.categoryAd} />
-							</aside>
+							<CarbonAd
+								className={classes.categoryAd}
+								slotClassName={classes.categorySponsor}
+							/>
 						)}
 					</div>
 					<div>

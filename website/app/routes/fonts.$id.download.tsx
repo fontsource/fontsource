@@ -115,9 +115,7 @@ export default function Download() {
 					</Button>
 				)}
 				{showSponsor && isReady && (
-					<aside className={classes.sponsor} aria-label="Advertisement">
-						<CarbonAd layout="horizontal" />
-					</aside>
+					<CarbonAd layout="horizontal" slotClassName={classes.sponsor} />
 				)}
 			</Flex>
 		</Center>

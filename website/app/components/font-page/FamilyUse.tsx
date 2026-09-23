@@ -308,9 +308,10 @@ export const FamilyUse = ({
 					</p>
 				</div>
 				{showSponsor && (
-					<aside className={classes.headingSponsor} aria-label="Advertisement">
-						<CarbonAd layout="horizontal" />
-					</aside>
+					<CarbonAd
+						layout="horizontal"
+						slotClassName={classes.headingSponsor}
+					/>
 				)}
 			</div>
 			<Tabs

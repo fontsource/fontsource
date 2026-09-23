@@ -74,3 +74,7 @@
 		align-self: start;
 	}
 }
+
+.slot[data-ad-ready='false'] {
+	display: none;
+}
