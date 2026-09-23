@@ -236,9 +236,6 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 	const display = state$.display.get();
 	const loadingStatusId = useId();
 	const resultsRootRef = useRef<HTMLDivElement | null>(null);
-	const [loadMoreElement, setLoadMoreElement] = useState<HTMLDivElement | null>(
-		null,
-	);
 	// Match SSR during hydration, but virtualize immediately on client navigation.
 	const viewportWidth = useSyncExternalStore(
 		subscribeToViewport,
@@ -335,6 +332,7 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 				: undefined,
 	});
 	const virtualRows = rowVirtualizer.getVirtualItems();
+	const lastVirtualIndex = virtualRows.at(-1)?.index ?? -1;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: viewport changes can move the results below responsive controls.
 	useLayoutEffect(() => {
@@ -363,23 +361,29 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 	}, [measurementKey, mounted, rowVirtualizer]);
 
 	useEffect(() => {
-		if (!loadMoreElement || isLastPage || status !== 'idle' || isLoadingMore) {
+		if (
+			!mounted ||
+			lastVirtualIndex < rows.length - 1 ||
+			isLastPage ||
+			status !== 'idle' ||
+			isLoadingMore
+		) {
 			return;
 		}
 
-		// Rendering overscan can be several screens ahead; fetch near the viewport.
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (!entry.isIntersecting) return;
-				observer.disconnect();
-				setRequestedResults(results);
-				showMore();
-			},
-			{ rootMargin: '400px 0px' },
-		);
-		observer.observe(loadMoreElement);
-		return () => observer.disconnect();
-	}, [isLastPage, isLoadingMore, loadMoreElement, showMore, results, status]);
+		// Prefetch into the overscan buffer so fast scrolling stays ahead of the network.
+		setRequestedResults(results);
+		showMore();
+	}, [
+		mounted,
+		isLastPage,
+		isLoadingMore,
+		lastVirtualIndex,
+		rows.length,
+		showMore,
+		results,
+		status,
+	]);
 
 	useEffect(() => {
 		const unsubscribe = state$.language.onChange((e) => {
@@ -468,12 +472,10 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 											))}
 										</div>
 									) : (
-										<div ref={setLoadMoreElement}>
-											<LoadingRow
-												display={display}
-												previewHeight={gridPreviewHeight}
-											/>
-										</div>
+										<LoadingRow
+											display={display}
+											previewHeight={gridPreviewHeight}
+										/>
 									)}
 								</div>
 							);
