@@ -324,7 +324,7 @@ export default function Browse() {
 								className={classes.categorySponsor}
 								aria-label="Advertisement"
 							>
-								<CarbonAd mt={0} ml={0} />
+								<CarbonAd className={classes.categoryAd} />
 							</aside>
 						)}
 					</div>

@@ -167,3 +167,7 @@
 .categorySponsor:not(:has(:global(.carbon-wrap))) {
 	display: none;
 }
+
+.categorySponsor .categoryAd {
+	margin: 0;
+}

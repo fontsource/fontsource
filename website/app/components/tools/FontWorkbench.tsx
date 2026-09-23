@@ -285,7 +285,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 								className={classes.converterSponsor}
 								aria-label="Advertisement"
 							>
-								<CarbonAd layout="horizontal" mt={0} ml={0} />
+								<CarbonAd layout="horizontal" />
 							</aside>
 						)}
 					</div>

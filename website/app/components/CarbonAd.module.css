@@ -1,7 +1,3 @@
-/* CarbonAd
- * All other styles can be found in styles/global.css
- */
-
 .wrapper {
 	display: flex;
 	margin-top: 24px;
@@ -13,12 +9,40 @@
 		color: light-dark(var(--mantine-color-text-1), var(--mantine-color-text-0));
 	}
 
+	:global(#carbonads) > span {
+		text-align: center;
+		display: grid;
+		padding: 1em;
+		box-sizing: border-box;
+		border-radius: 4px;
+		width: 238px;
+	}
+
+	:global(#carbonads .carbon-wrap) {
+		display: grid;
+		row-gap: 8px;
+	}
+
+	:global(#carbonads .carbon-text) {
+		font-size: 12px;
+		margin-bottom: 4px;
+	}
+
+	:global(#carbonads .carbon-poweredby) {
+		font-size: 0.75em;
+		opacity: 0.5;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+	}
+
 	@media (--lt-md) {
 		display: none;
 	}
 }
 
 .wrapper[data-layout='horizontal'] {
+	margin: 0;
 	justify-content: flex-start;
 
 	:global(#carbonads) > span {

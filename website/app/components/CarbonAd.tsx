@@ -1,5 +1,6 @@
 import type { BoxProps } from '@mantine/core';
 import { Box } from '@mantine/core';
+import clsx from 'clsx';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 import Balancer from 'react-wrap-balancer';
@@ -60,12 +61,15 @@ const refreshCarbonAd = () => {
 	host.appendChild(script);
 };
 
+interface CarbonAdProps extends BoxProps {
+	layout?: 'vertical' | 'horizontal';
+}
+
 export const CarbonAd = ({
 	layout = 'vertical',
+	className,
 	...props
-}: BoxProps & {
-	layout?: 'vertical' | 'horizontal';
-}) => {
+}: CarbonAdProps) => {
 	const { pathname } = useLocation();
 	const mountRef = useRef<HTMLSpanElement>(null);
 
@@ -88,7 +92,11 @@ export const CarbonAd = ({
 	}, [pathname]);
 
 	return (
-		<Box className={classes.wrapper} data-layout={layout} {...props}>
+		<Box
+			{...props}
+			className={clsx(classes.wrapper, className)}
+			data-layout={layout}
+		>
 			{layout === 'vertical' ? (
 				<Balancer>
 					<span ref={mountRef} />
