@@ -9,28 +9,17 @@ import classes from './ProjectAddButton.module.css';
 interface ProjectAddButtonProps {
 	displayName: string;
 	familyId: string;
-	includedLabel?: string;
-	label?: string;
 }
 
-const ProjectAddButton = ({
-	displayName,
-	familyId,
-	includedLabel = 'In font set',
-	label = 'Add to font set',
-}: ProjectAddButtonProps) => {
+const ProjectAddButton = ({ displayName, familyId }: ProjectAddButtonProps) => {
 	const store = useCurrentProjectStore();
 	const ready = useValue(store.ready$);
 	const included = useValue(() =>
 		store.getItems().some((saved) => saved.familyId === familyId),
 	);
-	const [hydrated, setHydrated] = useState(false);
 	const [feedback, setFeedback] = useState<'added' | 'full' | false>(false);
 	const toastRef = useRef<HTMLDivElement>(null);
-	const interactive = hydrated && ready;
-	const displayIncluded = interactive && included;
-
-	useEffect(() => setHydrated(true), []);
+	const displayIncluded = ready && included;
 
 	useEffect(() => {
 		const toast = toastRef.current;
@@ -61,18 +50,18 @@ const ProjectAddButton = ({
 			{displayIncluded ? (
 				<Link className={classes.button} to="/selected-fonts">
 					<IconCheck aria-hidden size={18} />
-					{includedLabel}
+					In font set
 				</Link>
 			) : (
 				<button
 					type="button"
 					className={classes.button}
-					disabled={!interactive}
-					title={!interactive ? 'Your font set is loading' : undefined}
+					disabled={!ready}
+					title={!ready ? 'Your font set is loading' : undefined}
 					onClick={addItem}
 				>
 					<IconStack2 aria-hidden size={18} />
-					{!interactive ? 'Font set loading…' : label}
+					{!ready ? 'Font set loading…' : 'Add to font set'}
 				</button>
 			)}
 			<div
