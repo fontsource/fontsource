@@ -13,10 +13,10 @@ import { findClosest } from '../utils';
 type GenerateMetadataV1 = Pick<
 	FontObjectV1['id'],
 	'id' | 'family' | 'styles' | 'weights' | 'subsets' | 'variants'
-> & { unicodeRange?: Record<string, string> };
+>;
 
 type GenerateMetadataV2 = GenerateMetadataV1 & {
-	unicodeRange: Record<string, string>;
+	unicodeRange?: Record<string, string>;
 };
 
 type GenerateMetadataVariable = Pick<
@@ -124,11 +124,11 @@ export const generateV1CSS = (
 	tag?: string,
 ): CSSGenerate => {
 	const assets = new Map<string, string[]>();
+	// V2 subset names do not establish coverage for legacy V1 files.
 	for (const { subset, weight, style, css } of staticFaces(
 		metadata,
 		makePath,
 		tag,
-		metadata.unicodeRange,
 	)) {
 		const suffix = styleSuffix(style);
 		append(assets, `${subset}-${weight}${suffix}.css`, css);
@@ -181,7 +181,7 @@ const variableCSS = (
 	family: string,
 	{ axes, variants }: GenerateMetadataVariable,
 	weight: number,
-	ranges: Record<string, string> | null,
+	ranges: Record<string, string> | undefined,
 	makePath: VariablePath,
 ): CSSGenerate => {
 	const assets = new Map<string, string[]>();
@@ -259,6 +259,6 @@ export const generateIconVariableCSS = (
 		metadata.family,
 		metadata,
 		Number(metadata.axes.wght?.default ?? 400),
-		null,
+		undefined,
 		makePath,
 	);
