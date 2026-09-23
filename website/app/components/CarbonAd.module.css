@@ -52,7 +52,7 @@
 	justify-content: flex-start;
 
 	:global(#carbonads) > span {
-		width: 280px;
+		width: 360px;
 		max-width: 100%;
 		padding: 0;
 		text-align: left;
@@ -81,9 +81,9 @@
 	}
 }
 
-/* Include room for longer creative copy, not just the 100px image. */
+/* Reserve the image height while the horizontal creative loads. */
 .slot[data-layout='horizontal'] {
-	min-height: 160px;
+	min-height: 100px;
 }
 
 .slot[data-layout='vertical'] {
