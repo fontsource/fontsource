@@ -8,7 +8,7 @@ vi.mock('@/utils/algolia-client', () => ({
 	searchClient: { searchForHits },
 }));
 
-import { loader } from '../routes/resources.font-suggestions';
+import { loader } from '../../app/routes/resources.font-suggestions';
 
 const load = (query: string) =>
 	loader({
