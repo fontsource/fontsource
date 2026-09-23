@@ -702,16 +702,35 @@
 }
 
 @media (min-width: 1201px) {
-	.heading {
-		max-width: none;
+	.page {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) 360px;
-		align-items: start;
-		gap: 48px;
+		grid-template-columns: minmax(0, 1fr) 280px;
+		column-gap: 48px;
 	}
-}
 
-.headingSponsor {
-	display: flex;
-	justify-content: flex-end;
+	.heading,
+	.acquisition {
+		display: contents;
+	}
+
+	.heading > div {
+		grid-column: 1;
+		grid-row: 1;
+		margin-bottom: 20px;
+	}
+
+	.headingSponsor {
+		grid-column: 2;
+		grid-row: 1 / 3;
+		align-self: start;
+	}
+
+	.taskTabs {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.taskPanel {
+		grid-column: 1 / -1;
+	}
 }
