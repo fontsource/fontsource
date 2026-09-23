@@ -185,9 +185,3 @@ export const useIsFontReady = (
 	const status = useFontStatus(family, enabled, options);
 	return status === 'loaded' || status === 'failed';
 };
-
-export const useIsFontLoaded = (
-	family: string,
-	enabled = true,
-	options?: ObserverOptions,
-) => useFontStatus(family, enabled, options) === 'loaded';

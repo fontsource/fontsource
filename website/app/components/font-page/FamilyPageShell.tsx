@@ -1,5 +1,4 @@
 import { Box, Group, Title } from '@mantine/core';
-import { useMemo } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
 
 import { IconDownload } from '@/components/icons';
@@ -7,11 +6,9 @@ import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu'
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
-import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import { formatFontLabel } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
-	getFontPreviewFamily,
 	registrySourcePreviewFamily,
 } from '@/utils/font-preview';
 import {
@@ -57,9 +54,6 @@ export const FamilyIdentity = ({
 	const fontFamily = previewSource
 		? `"${registrySourcePreviewFamily}", "Fallback Outline"`
 		: getFontFamilyStack(metadata, variableAvailable, registry);
-	const previewFamily = previewSource
-		? registrySourcePreviewFamily
-		: getFontPreviewFamily(metadata, variableAvailable);
 	const category = formatFontLabel(metadata.category);
 	const weightLabel = `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`;
 	const classification = registry.classifications[0]
@@ -67,14 +61,6 @@ export const FamilyIdentity = ({
 		: category;
 	const useSpecimenTitle =
 		getRegistryFamilyKind(registry) === 'text' && registry.languages.length > 0;
-	const titleWeights = useMemo(
-		() => [sourcePreviewStyle.fontWeight ?? 500],
-		[sourcePreviewStyle.fontWeight],
-	);
-	const titleFontLoaded = useIsFontLoaded(previewFamily, useSpecimenTitle, {
-		weights: titleWeights,
-		style: sourcePreviewStyle.fontStyle,
-	});
 
 	return (
 		<div className={classes.identity}>
@@ -84,7 +70,12 @@ export const FamilyIdentity = ({
 					className={classes.title}
 					id="family-title"
 					style={
-						titleFontLoaded ? { fontFamily, ...sourcePreviewStyle } : undefined
+						useSpecimenTitle
+							? {
+									fontFamily: `${fontFamily}, var(--mantine-font-family)`,
+									...sourcePreviewStyle,
+								}
+							: undefined
 					}
 				>
 					{registry.displayName ?? metadata.family}
