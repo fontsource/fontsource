@@ -10,6 +10,8 @@ import { useEffect, useId, useState } from 'react';
 import { Form, Link, useNavigate } from 'react-router';
 
 import { IconSearch } from '@/components/icons';
+import { DEFAULT_SEARCH_INDEX, searchClient } from '@/utils/algolia-client';
+
 import classes from './HeaderSearch.module.css';
 
 interface FontMatch {
@@ -47,13 +49,19 @@ export const HeaderSearch = () => {
 		let active = true;
 		const timeout = window.setTimeout(async () => {
 			try {
-				const response = await fetch(
-					`/resources/font-suggestions?${new URLSearchParams({ query: searchQuery })}`,
-				);
-				if (!response.ok) throw new Error('Font suggestions unavailable');
-				const results = (await response.json()) as FontMatch[];
+				const { results } = await searchClient.searchForHits<FontMatch>({
+					requests: [
+						{
+							indexName: DEFAULT_SEARCH_INDEX,
+							query: searchQuery,
+							hitsPerPage: 5,
+							attributesToRetrieve: ['family', 'category'],
+							attributesToHighlight: [],
+						},
+					],
+				});
 				if (active) {
-					setMatches(results);
+					setMatches(results[0].hits);
 					setStatus('ready');
 				}
 			} catch {
