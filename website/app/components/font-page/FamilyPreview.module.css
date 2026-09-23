@@ -71,6 +71,14 @@
 	margin-top: 0;
 }
 
+.summary {
+	max-width: 70ch;
+	margin: 12px 0 0;
+	color: var(--preview-text-muted);
+	font-size: 14px;
+	line-height: 1.5;
+}
+
 .licenseSignal {
 	min-height: 32px;
 	display: inline-flex;

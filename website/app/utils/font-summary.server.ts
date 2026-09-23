@@ -22,10 +22,9 @@ const paragraphText = (nodes: MarkdownToJSX.ASTNode[]): string =>
 		})
 		.join('');
 
-export const getFontSummary = (
-	metadata: Pick<GetFontResponse, 'family' | 'category'>,
+export const getFontDescriptionSummary = (
 	description?: string,
-	designer?: string,
+	maxLength = summaryLength,
 ) => {
 	const paragraph = description
 		? parser(description).find((node) => node.type === RuleType.paragraph)
@@ -35,10 +34,19 @@ export const getFontSummary = (
 		: '';
 	const [firstSentence] = sentences.segment(text);
 	const sentence = firstSentence?.segment.trim();
-	// Keep complete sentences; long upstream stories fall back to structured facts.
-	if (sentence && sentence.length <= summaryLength) {
+	if (sentence && sentence.length <= maxLength) {
 		return /[.!?]$/u.test(sentence) ? sentence : `${sentence}.`;
 	}
+};
+
+export const getFontSummary = (
+	metadata: Pick<GetFontResponse, 'family' | 'category'>,
+	description?: string,
+	designer?: string,
+) => {
+	// Keep complete sentences; long upstream stories fall back to structured facts.
+	const sentence = getFontDescriptionSummary(description);
+	if (sentence) return sentence;
 
 	const kind =
 		metadata.category === 'icons'

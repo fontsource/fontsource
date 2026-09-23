@@ -1,4 +1,5 @@
 import { Box, Group, Title } from '@mantine/core';
+import { useMemo } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
 
 import { IconDownload } from '@/components/icons';
@@ -6,6 +7,7 @@ import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu'
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
+import { useIsFontLoaded } from '@/hooks/useIsFontLoaded';
 import { formatFontLabel } from '@/utils/font-labels';
 import {
 	getFontFamilyStack,
@@ -20,7 +22,6 @@ import {
 } from '@/utils/registry';
 
 import classes from './FamilyPageShell.module.css';
-import { FontSkeleton } from './FontSkeleton';
 
 type FamilyTab = 'preview' | 'glyphs' | 'about' | 'use';
 type FontPageLocationState = { fontResults?: string };
@@ -66,35 +67,28 @@ export const FamilyIdentity = ({
 		: category;
 	const useSpecimenTitle =
 		getRegistryFamilyKind(registry) === 'text' && registry.languages.length > 0;
-
-	const title = (
-		<Title
-			order={1}
-			className={classes.title}
-			id="family-title"
-			style={
-				useSpecimenTitle ? { fontFamily, ...sourcePreviewStyle } : undefined
-			}
-		>
-			{registry.displayName ?? metadata.family}
-		</Title>
+	const titleWeights = useMemo(
+		() => [sourcePreviewStyle.fontWeight ?? 500],
+		[sourcePreviewStyle.fontWeight],
 	);
+	const titleFontLoaded = useIsFontLoaded(previewFamily, useSpecimenTitle, {
+		weights: titleWeights,
+		style: sourcePreviewStyle.fontStyle,
+	});
 
 	return (
 		<div className={classes.identity}>
 			<div className={classes.titleFrame}>
-				{useSpecimenTitle ? (
-					<FontSkeleton
-						name="font-detail-compact-title"
-						family={previewFamily}
-						weight={sourcePreviewStyle.fontWeight ?? 500}
-						style={sourcePreviewStyle.fontStyle}
-					>
-						{title}
-					</FontSkeleton>
-				) : (
-					title
-				)}
+				<Title
+					order={1}
+					className={classes.title}
+					id="family-title"
+					style={
+						titleFontLoaded ? { fontFamily, ...sourcePreviewStyle } : undefined
+					}
+				>
+					{registry.displayName ?? metadata.family}
+				</Title>
 			</div>
 			<div className={classes.compactMetadata}>
 				<span>{classification}</span>
