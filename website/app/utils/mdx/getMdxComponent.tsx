@@ -1,5 +1,5 @@
 import {
-	type BlockquoteProps,
+	Box,
 	type BoxProps,
 	type CodeProps,
 	Divider,
@@ -25,7 +25,6 @@ import cx from 'clsx';
 import type { ComponentProps } from 'react';
 import { Link } from 'react-router';
 
-import { Blockquote } from '@/components/Blockquote';
 import { CodeMdx, CodePre } from '@/components/code/Code';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import docsMdxClasses from '@/components/docs/Mdx.module.css';
@@ -149,7 +148,14 @@ const mdxComponents = {
 
 	// Other
 	hr: (props: DividerProps) => <Divider mb="md" {...props} />,
-	blockquote: (props: BlockquoteProps) => <Blockquote fz={16} {...props} />,
+	blockquote: (props: BoxProps) => (
+		<Box
+			component="blockquote"
+			fz={16}
+			className={docsMdxClasses.blockquote}
+			{...props}
+		/>
+	),
 	a: MdxLink,
 	DocsLink: MdxLink,
 	DocsExternalLinkIcon: MdxExternalLinkIcon,
