@@ -11,9 +11,11 @@ import {
 	Title,
 	VisuallyHidden,
 } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { IconBolt, IconPlayerStop, IconTransform } from '@tabler/icons-react';
 import { lazy, Suspense, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
+import { CarbonAd } from '@/components/CarbonAd';
 import {
 	type FontToolPreset,
 	useFontWorkbench,
@@ -79,6 +81,7 @@ const sizeComparison = (inputSize: number, outputSize: number) => {
 
 export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 	const workbench = useFontWorkbench(preset);
+	const showSponsor = useMediaQuery('(min-width: 1201px)');
 	const resultsRef = useRef<HTMLElement>(null);
 	const wasProcessing = useRef(false);
 	const uploadRef = useRef<HTMLDivElement>(null);
@@ -271,11 +274,24 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 
 			<section className={classes.section}>
 				{preset === 'converter' ? (
-					<FormatSelector
-						formats={workbench.output.formats}
-						onChange={updateFormat}
-						disabled={workbench.isSessionProcessing}
-					/>
+					<div
+						className={classes.converterOptions}
+						data-sponsored={showSponsor || undefined}
+					>
+						<FormatSelector
+							formats={workbench.output.formats}
+							onChange={updateFormat}
+							disabled={workbench.isSessionProcessing}
+						/>
+						{showSponsor && (
+							<aside
+								className={classes.converterSponsor}
+								aria-label="Advertisement"
+							>
+								<CarbonAd layout="horizontal" mt={0} ml={0} />
+							</aside>
+						)}
+					</div>
 				) : (
 					<Stack gap="sm">
 						<div>

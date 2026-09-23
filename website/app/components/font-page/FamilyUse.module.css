@@ -700,3 +700,17 @@
 		transition: none;
 	}
 }
+
+.heading[data-sponsored] {
+	max-width: none;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 360px;
+	align-items: start;
+	gap: 48px;
+}
+
+.headingSponsor {
+	min-height: 100px;
+	display: flex;
+	justify-content: flex-end;
+}

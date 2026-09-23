@@ -1,5 +1,6 @@
 import { env } from 'cloudflare:workers';
 import { Button, Center, Flex, Loader, Text, Title } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { useEffect, useRef } from 'react';
 import type {
@@ -10,7 +11,9 @@ import type {
 import { useLoaderData, useRevalidator } from 'react-router';
 import invariant from 'tiny-invariant';
 
+import { CarbonAd } from '@/components/CarbonAd';
 import styles from '@/components/ErrorBoundary.module.css';
+import classes from '@/styles/download.module.css';
 import { throwApiResponseError } from '@/utils/api.server';
 import { cacheHeaders } from '@/utils/cache';
 
@@ -49,6 +52,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 };
 
 export default function Download() {
+	const showSponsor = useMediaQuery('(min-width: 1201px)');
 	const download = useLoaderData<typeof loader>();
 	const { revalidate, state } = useRevalidator();
 	const startedDownload = useRef(false);
@@ -75,7 +79,11 @@ export default function Download() {
 
 	return (
 		<Center className={styles.container}>
-			<Flex align="center" className={styles.content} direction="column">
+			<Flex
+				align="center"
+				className={`${styles.content} ${classes.content}`}
+				direction="column"
+			>
 				<Flex
 					align="center"
 					className={styles.errorInfo}
@@ -105,6 +113,11 @@ export default function Download() {
 					<Button component="a" href={download.downloadUrl}>
 						Download
 					</Button>
+				)}
+				{showSponsor && isReady && (
+					<aside className={classes.sponsor} aria-label="Advertisement">
+						<CarbonAd layout="horizontal" mt={0} ml={0} />
+					</aside>
 				)}
 			</Flex>
 		</Center>

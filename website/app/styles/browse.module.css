@@ -153,3 +153,13 @@
 .tagLink:focus-visible { outline: 2px solid var(--mantine-color-purple-0); outline-offset: 4px; }
 @media (--lt-md) { .tagDirectory { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (--lt-sm) { .tagDirectory { grid-template-columns: minmax(0, 1fr); } .tagSpecimen { height: auto; max-height: 3em; min-height: 1.5em; font-size: 30px; } }
+
+
+.categorySponsor {
+	margin-top: 40px;
+	width: 238px;
+}
+
+.sectionHeading:has(.categorySponsor) {
+	position: static;
+}

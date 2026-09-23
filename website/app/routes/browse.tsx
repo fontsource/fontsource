@@ -1,9 +1,10 @@
 import { Button, TextInput } from '@mantine/core';
-import { useIntersection } from '@mantine/hooks';
+import { useIntersection, useMediaQuery } from '@mantine/hooks';
 import { IconArrowRight, IconSearch } from '@tabler/icons-react';
 import { useState } from 'react';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, Link, useLoaderData } from 'react-router';
+import { CarbonAd } from '@/components/CarbonAd';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
 import classes from '@/styles/browse.module.css';
@@ -236,6 +237,7 @@ const TagPreview = ({
 };
 
 export default function Browse() {
+	const showSponsor = useMediaQuery('(min-width: 1201px)');
 	const { pages, tagGroups, tagSpecimens } = useLoaderData<typeof loader>();
 	const [query, setQuery] = useState('');
 	const normalizedQuery = query.trim().toLocaleLowerCase();
@@ -317,6 +319,14 @@ export default function Browse() {
 					<div className={classes.sectionHeading}>
 						<h2>Categories</h2>
 						<p>Different forms. Different voices.</p>
+						{showSponsor && (
+							<aside
+								className={classes.categorySponsor}
+								aria-label="Advertisement"
+							>
+								<CarbonAd mt={0} ml={0} />
+							</aside>
+						)}
 					</div>
 					<div>
 						<Categories pages={categories} />

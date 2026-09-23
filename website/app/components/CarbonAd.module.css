@@ -17,3 +17,36 @@
 		display: none;
 	}
 }
+
+.wrapper[data-layout='horizontal'] {
+	justify-content: flex-start;
+
+	:global(#carbonads) > span {
+		width: 360px;
+		max-width: 100%;
+		padding: 0;
+		text-align: left;
+		grid-template-columns: 130px minmax(0, 1fr);
+		column-gap: 16px;
+	}
+
+	:global(#carbonads .carbon-wrap) {
+		display: contents;
+	}
+
+	:global(#carbonads .carbon-wrap) > :first-child {
+		grid-column: 1;
+		grid-row: 1 / 3;
+	}
+
+	:global(#carbonads .carbon-text) {
+		grid-column: 2;
+		align-self: end;
+		margin: 0 0 8px;
+	}
+
+	:global(#carbonads .carbon-poweredby) {
+		grid-column: 2;
+		align-self: start;
+	}
+}

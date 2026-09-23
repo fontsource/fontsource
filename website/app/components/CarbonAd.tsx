@@ -60,7 +60,12 @@ const refreshCarbonAd = () => {
 	host.appendChild(script);
 };
 
-export const CarbonAd = ({ ...props }: BoxProps) => {
+export const CarbonAd = ({
+	layout = 'vertical',
+	...props
+}: BoxProps & {
+	layout?: 'vertical' | 'horizontal';
+}) => {
 	const { pathname } = useLocation();
 	const mountRef = useRef<HTMLSpanElement>(null);
 
@@ -83,7 +88,7 @@ export const CarbonAd = ({ ...props }: BoxProps) => {
 	}, [pathname]);
 
 	return (
-		<Box className={classes.wrapper} {...props}>
+		<Box className={classes.wrapper} data-layout={layout} {...props}>
 			<Balancer>
 				<span ref={mountRef} />
 			</Balancer>

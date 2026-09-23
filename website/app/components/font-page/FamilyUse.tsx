@@ -1,7 +1,8 @@
 import { SegmentedControl, Tabs, VisuallyHidden } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
-
+import { CarbonAd } from '@/components/CarbonAd';
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import { IconDownload, IconExternal } from '@/components/icons';
@@ -119,6 +120,7 @@ export const FamilyUse = ({
 	registry,
 	subsetDefinitions,
 }: FamilyUseProps) => {
+	const showSponsor = useMediaQuery('(min-width: 1201px)');
 	const [searchParams, setSearchParams] = useSearchParams();
 	const supportsVariable = Boolean(variable && versions.latestVariable);
 	const supportsStatic = Boolean(versions.latest);
@@ -298,11 +300,21 @@ export const FamilyUse = ({
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
 				dangerouslySetInnerHTML={{ __html: previewCSS }}
 			/>
-			<div className={classes.heading}>
-				<h2 id="use-heading">Get {metadata.family}</h2>
-				<p>
-					Download the full family for design tools, or add it to a website.
-				</p>
+			<div
+				className={classes.heading}
+				data-sponsored={showSponsor || undefined}
+			>
+				<div>
+					<h2 id="use-heading">Get {metadata.family}</h2>
+					<p>
+						Download the full family for design tools, or add it to a website.
+					</p>
+				</div>
+				{showSponsor && (
+					<aside className={classes.headingSponsor} aria-label="Advertisement">
+						<CarbonAd layout="horizontal" mt={0} ml={0} />
+					</aside>
+				)}
 			</div>
 			<Tabs
 				className={classes.acquisition}
