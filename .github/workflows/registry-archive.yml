@@ -7,7 +7,6 @@ on:
     paths:
       - 'registry/data/**'
       - 'registry/scripts/archive.ts'
-      - 'registry/scripts/language-index.ts'
       - 'registry/scripts/r2.ts'
       - 'registry/scripts/schema.ts'
       - 'registry/scripts/shared.ts'

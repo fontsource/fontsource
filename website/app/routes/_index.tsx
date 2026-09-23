@@ -1,6 +1,6 @@
 import { useObservable, useValue } from '@legendapp/state/react';
 import { Box } from '@mantine/core';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
 	Configure,
 	InstantSearch,
@@ -16,7 +16,6 @@ import {
 	useNavigate,
 	useNavigation,
 } from 'react-router';
-
 import { ContentHeader } from '@/components/layout/ContentHeader';
 import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
@@ -24,15 +23,18 @@ import { ScrollToTop } from '@/components/search/ScrollToTop';
 import { useCollectionsStore } from '@/features/collections/CollectionsProvider';
 import classes from '@/styles/global.module.css';
 import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
-import { createLanguageSearchClient } from '@/utils/language-facets';
-import { ogMeta } from '@/utils/meta';
 import {
 	ALGOLIA_APP_ID,
+	DEFAULT_SEARCH_INDEX,
+	searchClient,
+} from '@/utils/algolia-client';
+import { ogMeta } from '@/utils/meta';
+import {
 	attributesToRetrieve,
 	createPageSearchState,
+	hitsPerPage,
 	routing,
 	type SearchProps,
-	searchClient,
 } from '@/utils/search-config';
 
 export { loader } from '@/utils/search.server';
@@ -89,15 +91,7 @@ export function CatalogSearchPage() {
 		previews,
 		languages,
 		taxonomy,
-		languageIndex,
 	} = useLoaderData<SearchProps>();
-	const languageSearchClient = useMemo(
-		() =>
-			languageIndex
-				? createLanguageSearchClient(searchClient, languageIndex)
-				: searchClient,
-		[languageIndex],
-	);
 	const collectionsStore = useCollectionsStore();
 	const collectionsReady = useValue(collectionsStore.ready$);
 	const navigate = useNavigate();
@@ -133,12 +127,15 @@ export function CatalogSearchPage() {
 	return (
 		<InstantSearchSSRProvider {...serverState}>
 			<InstantSearch
-				searchClient={languageSearchClient}
-				indexName="prod_POPULAR"
+				searchClient={searchClient}
+				indexName={DEFAULT_SEARCH_INDEX}
 				routing={routing(serverUrl, state$, discovery, navigateSearch)}
 				future={{ preserveSharedStateOnUnmount: true }}
 			>
-				<Configure attributesToRetrieve={attributesToRetrieve} />
+				<Configure
+					attributesToRetrieve={attributesToRetrieve}
+					hitsPerPage={hitsPerPage}
+				/>
 				{discovery && (
 					<ContentHeader
 						title={discovery.heading}

@@ -288,30 +288,6 @@ const RegistryLanguageSchema = z.strictObject({
 
 export const RegistryLanguagesSchema = z.array(RegistryLanguageSchema);
 
-export const RegistryLanguageIndexSchema = z
-	.strictObject({
-		version: Sha256Schema.describe(
-			'Fingerprint of sorted family IDs and their sorted language IDs',
-		),
-		families: z
-			.array(IdSchema)
-			.describe('Sorted family IDs indexed by membership bits'),
-		languages: z
-			.record(LanguageIdSchema, z.base64())
-			.describe(
-				'Base64 bitsets; family i uses bit i % 8 of byte floor(i / 8), least significant bit first',
-			),
-	})
-	.refine(({ families, languages }) => {
-		const bytes = Math.ceil(families.length / 8);
-		return Object.values(languages).every(
-			(value) =>
-				(value.length / 4) * 3 -
-					(value.endsWith('==') ? 2 : value.endsWith('=') ? 1 : 0) ===
-				bytes,
-		);
-	}, 'Language membership bitsets must match the family count');
-
 export const RegistrySubsetSchema = z.strictObject({
 	id: IdSchema,
 	ranges: z.array(UnicodeRangeSchema),

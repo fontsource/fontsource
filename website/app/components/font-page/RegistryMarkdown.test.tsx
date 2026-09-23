@@ -10,8 +10,9 @@ describe('RegistryMarkdown', () => {
 			/>,
 		);
 
-		expect(html).toContain('<h3 id="story">Story</h3>');
-		expect(html).toContain('<strong>friendly</strong>');
+		expect(html).toMatchInlineSnapshot(
+			`"<h3 id="story">Story</h3><p>A <strong>friendly</strong> font.</p><p>&lt;script&gt;alert(1)&lt;/script&gt;</p>"`,
+		);
 		expect(html).not.toContain('<script>');
 	});
 
@@ -20,7 +21,7 @@ describe('RegistryMarkdown', () => {
 			<RegistryMarkdown inline value={'A **friendly** font.'} />,
 		);
 
-		expect(html).toBe('A <strong>friendly</strong> font.');
+		expect(html).toMatchInlineSnapshot(`"A <strong>friendly</strong> font."`);
 	});
 
 	it('renders links as text for non-interactive summaries', () => {
@@ -32,6 +33,6 @@ describe('RegistryMarkdown', () => {
 			/>,
 		);
 
-		expect(html).toBe('Made by <span>Type Foundry</span>.');
+		expect(html).toMatchInlineSnapshot(`"Made by <span>Type Foundry</span>."`);
 	});
 });

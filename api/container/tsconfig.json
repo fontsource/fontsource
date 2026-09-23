@@ -1,7 +1,7 @@
 {
 	"extends": "../tsconfig.json",
 	"compilerOptions": {
-		"lib": ["es2022", "dom"],
+		"lib": ["es2024", "dom"],
 		"types": ["node"]
 	},
 	"include": [

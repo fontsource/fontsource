@@ -49,7 +49,7 @@ import { FontSkeleton } from './FontSkeleton';
 import { GlyphSpecimen } from './GlyphSpecimen';
 
 interface CharacterExplorerProps {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	registry: RegistryFamily;
 	symbols?: GetRegistryFamilySymbolsResponse;
 	capabilities: GetRegistrySourceCapabilitiesResponse;
@@ -412,14 +412,13 @@ export const CharacterExplorer = ({
 		direction: registry.primaryDirection ?? 'ltr',
 		...sourcePreviewStyle,
 	};
-	const heading = catalogExpected ? 'Find a symbol.' : 'Explore glyphs.';
-	const description = catalogExpected
-		? hasCatalogEntries && hasNamedLigatures
-			? `Search symbol names, inspect their mappings, and copy what you need from ${metadata.family}.`
-			: hasCatalogEntries
-				? `Search the symbol catalog and copy mapped characters from ${metadata.family}.`
-				: `Browse mapped code points and copy what you need from ${metadata.family}.`
-		: `Browse characters, inspect their Unicode values, and copy what you need from ${metadata.family}.`;
+	const heading = catalogExpected ? 'Symbol Explorer' : 'Glyph Explorer';
+	const description =
+		catalogExpected && hasCatalogEntries
+			? hasNamedLigatures
+				? `Search symbols in ${metadata.family} by name, view their Unicode values, and copy their names.`
+				: `Search the symbols in ${metadata.family}, view their Unicode values, and copy individual characters.`
+			: `Browse the characters in ${metadata.family}, view their Unicode values, and copy individual characters.`;
 	const searchPlaceholder =
 		hasCatalogEntries && hasNamedLigatures
 			? 'Search symbols by name or code point'

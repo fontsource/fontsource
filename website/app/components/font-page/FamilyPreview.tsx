@@ -12,31 +12,10 @@ import { PreviewDrawer, PreviewInspector } from './FamilyPreviewInspector';
 import { PreviewCanvas, PreviewToolbar } from './FamilyPreviewSpecimen';
 import type { PreviewEditorProps } from './FamilyPreviewState';
 
-type FamilyPreviewProps = PreviewEditorProps;
-
-export const FamilyPreview = ({
-	metadata,
-	previewCSS,
-	variable,
-	registry,
-	languages,
-	axisRegistry,
-	capabilities,
-	capabilitySource,
-	symbols,
-}: FamilyPreviewProps) => {
+export const FamilyPreview = (props: PreviewEditorProps) => {
+	const { metadata, variable, registry } = props;
 	return (
-		<PreviewProvider
-			metadata={metadata}
-			previewCSS={previewCSS}
-			variable={variable}
-			registry={registry}
-			languages={languages}
-			axisRegistry={axisRegistry}
-			capabilities={capabilities}
-			capabilitySource={capabilitySource}
-			symbols={symbols}
-		>
+		<PreviewProvider {...props}>
 			<section className={classes.page}>
 				<PreviewFontStyle />
 				<div className={classes.workbench}>
@@ -46,7 +25,6 @@ export const FamilyPreview = ({
 								metadata={metadata}
 								registry={registry}
 								variableAvailable={Boolean(variable)}
-								compact
 							/>
 							<Link
 								className={classes.licenseSignal}
@@ -55,7 +33,7 @@ export const FamilyPreview = ({
 								{`${registry.license.id} license`}
 							</Link>
 						</div>
-						<FamilyActions metadata={metadata} registry={registry} compact />
+						<FamilyActions metadata={metadata} registry={registry} />
 					</div>
 
 					<FamilyTabs metadata={metadata} registry={registry} contained />

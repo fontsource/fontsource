@@ -2,17 +2,13 @@ import type { ObservableObject } from '@legendapp/state';
 
 import type {
 	GetFontResponse,
-	GetRegistryFamilySymbolsResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetVariableFontResponse,
 	ListRegistryAxesResponse,
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 import { getAxisLabel } from '@/utils/font-labels';
-import {
-	getPreferredPreviewSubset,
-	selectRegistryPreviewSource,
-} from '@/utils/font-preview';
+import { selectRegistryPreviewSource } from '@/utils/font-preview';
 import { getRecommendedPreviewText } from '@/utils/language/language';
 import {
 	type PreviewMode,
@@ -84,7 +80,7 @@ interface PreviewEditorValue {
 type PreviewEditorState = ObservableObject<PreviewEditorValue>;
 
 interface PreviewEditorProps {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	previewCSS: string;
 	variable?: GetVariableFontResponse;
 	registry: RegistryFamily;
@@ -92,13 +88,12 @@ interface PreviewEditorProps {
 	axisRegistry?: ListRegistryAxesResponse;
 	capabilities: GetRegistrySourceCapabilitiesResponse;
 	capabilitySource: RegistrySource;
-	symbols?: GetRegistryFamilySymbolsResponse;
+	symbolNames?: string[];
 }
 
 interface PreviewEditorModel
 	extends Omit<PreviewEditorProps, 'capabilitySource'> {
 	state$: PreviewEditorState;
-	previewSubset: string;
 	familyKind: ReturnType<typeof getRegistryFamilyKind>;
 	initialTypography: PreviewTypographyByMode;
 }
@@ -243,7 +238,6 @@ const createPreviewEditorSetup = ({
 	| 'capabilities'
 	| 'capabilitySource'
 >) => {
-	const previewSubset = getPreferredPreviewSubset(metadata, registry);
 	const familyKind = getRegistryFamilyKind(registry);
 	const initialSourceAxes = getPreviewAxes(
 		capabilitySource,
@@ -295,15 +289,6 @@ const createPreviewEditorSetup = ({
 		},
 	};
 	const verifiedLanguages = getVerifiedLanguages(languages, capabilities);
-	const initialCapabilitySource =
-		capabilitySource ??
-		selectRegistryPreviewSource(registry, {
-			variableAvailable: Boolean(variable),
-			style: 'normal',
-			weight: initialWeight,
-		});
-	const capabilitiesKey =
-		initialCapabilitySource?.sha256 ?? defaultCapabilitiesKey;
 	const editorValue: PreviewEditorValue = {
 		mode: 'headline',
 		customText: null,
@@ -313,13 +298,10 @@ const createPreviewEditorSetup = ({
 		featureQuery: '',
 		inspectorOpened: false,
 		inspectorSection: 'typography',
-		capabilitiesBySource:
-			initialCapabilitySource && capabilities
-				? { [initialCapabilitySource.sha256]: capabilities }
-				: {},
-		verifiedLanguagesBySource: capabilities
-			? { [capabilitiesKey]: verifiedLanguages }
-			: {},
+		capabilitiesBySource: { [capabilitySource.sha256]: capabilities },
+		verifiedLanguagesBySource: {
+			[capabilitySource.sha256]: verifiedLanguages,
+		},
 		axisValues: Object.fromEntries(
 			initialSourceAxes
 				.filter((axis) => axis.tag !== 'wght' && axis.tag !== 'ital')
@@ -333,7 +315,7 @@ const createPreviewEditorSetup = ({
 		),
 	};
 
-	return { editorValue, familyKind, initialTypography, previewSubset };
+	return { editorValue, familyKind, initialTypography };
 };
 
 const getActiveSource = (model: PreviewEditorModel) => {

@@ -51,11 +51,17 @@ Publish, deploy, release, upload, and version operations exist for CI and mainta
 
 ## Testing
 
-- Use Vitest patterns already present in the target package or worker.
-- Add or update tests for changed behavior, close to the changed package/worker/component.
-- Start with targeted tests; use broader root checks for cross-workspace changes.
-- API worker tests may use Miniflare or `@cloudflare/vitest-pool-workers`; follow the package's `vitest.config.ts`.
-- Snapshot tests are common for CSS, generated metadata, API responses, and fixtures. Do not update snapshots blindly; inspect whether the output change is intended.
+- Keep the testing pipeline lightweight. Choose the cheapest test that reliably detects the failure; weigh CI runtime, flakiness, brittleness, and maintenance against the protection gained.
+- Favor small input/output unit tests and externally meaningful output contracts: API responses, headers, generated CSS, fonts, and archives. Do not add frontend interaction, reactive-store, internal orchestration, or cache-mechanics tests by default. Zero new tests is valid; prefer extending existing output coverage over testing each internal layer.
+- Prefer real functions, stores, local font/archive fixtures, and runtime bindings. Mock external, expensive, nondeterministic, or controlled-failure boundaries. Never reimplement production algorithms or state machines in test doubles.
+- Assert observable results. Assert calls, order, or counts only when they protect a meaningful protocol, cost, retry, or side-effect contract. Do not calculate expected results with the same production helper being tested.
+- Prefer small, readable snapshots for stable CSS, JSON, and artifact manifests. Review snapshot changes; normalize only genuinely unstable values. Keep explicit assertions for security, conditional requests, and public failure responses.
+- Delete redundant tests and incidental implementation assertions while preserving meaningful public API, generated-output, security, and compatibility protection. Do not add tests merely to raise coverage percentages.
+- Run Worker tests through `@cloudflare/vitest-plugin` with local KV/R2/D1 bindings; use Istanbul coverage. Run container tests in the Node configuration with V8 coverage. Keep Vitest and provider versions compatible with their runtime plugins.
+- Keep the website suite in Node. Adding browser or end-to-end infrastructure requires a concrete, agreed output gap; distinct UI state coverage alone does not justify it. Accept reduced internal coverage rather than rebuilding removed tests at another layer.
+- Tests must run independently. Reset modified storage and network handlers between scenarios; Cloudflare storage isolation is per file. Prefer controlled promises over sleeps and polling loops.
+- Reuse small fixtures and setup helpers where actual consumers share the same contract. Keep fixture data independent of runtime setup; avoid a generic test framework or production seams introduced solely for tests.
+- Keep tests near the owning feature. Start with targeted checks; use broader root checks for cross-workspace changes. Coverage reports should include unimported owned source files and exclude generated code and test infrastructure.
 - If local validation cannot run, explain why and give the next-best command.
 
 ## Website

@@ -67,7 +67,7 @@ export const meta: MetaFunction = () =>
 	ogMeta({
 		title: 'Browse Open-Source Fonts | Fontsource',
 		description:
-			'Browse open-source fonts by category, style, language, and variable-font support, then preview and self-host your selection with Fontsource.',
+			'Browse open-source and variable fonts by style and language. Preview your text, compare font families, and download fonts for design apps or self-hosting.',
 	});
 
 const specimens: Record<string, { id: string; family: string; text: string }> =

@@ -29,7 +29,7 @@ import {
 } from './family-use-css';
 
 interface FamilyUseProps {
-	metadata: GetFontResponse;
+	metadata: Omit<GetFontResponse, 'variants'>;
 	versions: GetFontVersionsResponse;
 	variable?: GetVariableFontResponse;
 	previewCSS: string;
@@ -302,9 +302,9 @@ export const FamilyUse = ({
 			/>
 			<div className={classes.heading}>
 				<div>
-					<h2 id="use-heading">Get {metadata.family}</h2>
+					<h2 id="use-heading">Download {metadata.family}</h2>
 					<p>
-						Download the full family for design tools, or add it to a website.
+						Download the font family for design apps, or add it to your website.
 					</p>
 				</div>
 				{showSponsor && (

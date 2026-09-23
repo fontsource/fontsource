@@ -32,8 +32,14 @@ describe('font set output', () => {
 				baseItem,
 				{ ...baseItem, familyId: 'inter', fontFamily: 'Inter Variable' },
 			]),
-		).toBe(
-			'.font-fraunces {\n  font-family: "Fraunces Variable";\n}\n\n.font-inter {\n  font-family: "Inter Variable";\n}',
-		);
+		).toMatchInlineSnapshot(`
+			".font-fraunces {
+			  font-family: "Fraunces Variable";
+			}
+
+			.font-inter {
+			  font-family: "Inter Variable";
+			}"
+		`);
 	});
 });

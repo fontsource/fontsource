@@ -13,7 +13,6 @@ import {
 import {
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
-	RegistryLanguageIndexSchema,
 	RegistrySourceCapabilitiesSchema,
 } from '../../api/shared/registry.ts';
 
@@ -149,7 +148,6 @@ describe('registry source archive', () => {
 			'families/noto-color-emoji-compat-test.json',
 			'families/yakuhanjp.json',
 			'languages.json',
-			'language-index.json',
 		]);
 		let manifest: unknown;
 		let current: unknown;
@@ -255,7 +253,6 @@ describe('registry source archive', () => {
 					path: 'families/material-icons/symbols.json',
 				}),
 				expect.objectContaining({ path: 'languages.json' }),
-				expect.objectContaining({ path: 'language-index.json' }),
 				expect.objectContaining({ path: 'taxonomy.json' }),
 			]),
 		});
@@ -475,23 +472,6 @@ describe('registry source archive', () => {
 		});
 		expect(abelSummary).not.toHaveProperty('languages');
 		expect(abelSummary).not.toHaveProperty('variable');
-		const membership = RegistryLanguageIndexSchema.parse(
-			views.get('language-index.json'),
-		);
-		expect(membership.families).toEqual(
-			familyCatalog?.map(({ id }) => id).sort(),
-		);
-		const abelIndex = membership.families.indexOf('abel');
-		const abel = RegistryFamilyDetailSchema.parse(
-			views.get('families/abel.json'),
-		);
-		for (const [language, bits] of Object.entries(membership.languages)) {
-			expect(
-				Boolean(
-					Buffer.from(bits, 'base64')[abelIndex >> 3] & (1 << (abelIndex % 8)),
-				),
-			).toBe(abel.languages.includes(language));
-		}
 		const languageCatalog = views.get('languages.json');
 		expect(languageCatalog).toEqual(
 			expect.arrayContaining([

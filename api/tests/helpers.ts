@@ -1,47 +1,29 @@
+import './network';
 import {
 	applyD1Migrations,
 	createExecutionContext,
+	reset,
 	waitOnExecutionContext,
 } from 'cloudflare:test';
 import { env } from 'cloudflare:workers';
-import type { Zippable } from 'fflate';
-import { zipSync } from 'fflate';
-import { vi } from 'vitest';
-import type { AxisRegistry } from '../shared/axis-registry';
+import { afterEach, vi } from 'vitest';
+
 import {
-	type BuildDownloadRequest,
-	type BuildVersionFailure,
 	type BuildVersionRequest,
-	type BuildVersionResponse,
 	type BuildVersionResult,
 	type BuildVersionStatus,
 	getBuildKey,
 } from '../shared/build';
-import type {
-	FontCatalog,
-	SourceFontMetadata,
-	VariableAxes,
-} from '../shared/catalog';
-import { resolveFontPackageManifest } from '../shared/font-package-manifest';
-import {
-	BINARY_CONTENT_TYPES,
-	IMMUTABLE_ASSET_CACHE_CONTROL,
-} from '../shared/http-metadata';
-import { toResponseBody } from '../shared/response';
-import {
-	getDownloadKey,
-	getStaticAssetKey,
-	getVariableAssetKey,
-} from '../shared/storage';
-import { KV_KEYS, UPSTREAM_URLS } from '../worker/src/constants';
-import type { VersionResponse } from '../worker/src/features/metadata/store';
+import { KV_KEYS } from '../worker/src/constants';
 import { clearMetadataCachesForTest } from '../worker/src/features/metadata/store';
 import worker from '../worker/src/index';
-import staticWoffUrl from './fixtures/fonts/abel-latin-400-normal.woff?inline';
-import staticWoff2Url from './fixtures/fonts/abel-latin-400-normal.woff2?inline';
-import variableWoff2Url from './fixtures/fonts/recursive-latin-full-normal.woff2?inline';
+import { testAxisRegistry, testCatalog } from './fixtures/metadata';
 
 export const testEnv = env as unknown as Env;
+const artifactBuilder = testEnv.ARTIFACT_BUILDER;
+afterEach(() => {
+	testEnv.ARTIFACT_BUILDER = artifactBuilder;
+});
 
 export const dispatch = async (
 	input: string | Request,
@@ -73,8 +55,8 @@ export const textSnapshot = async (input: string | Request) => {
 };
 
 export const setupWorkerTest = async (): Promise<void> => {
+	await reset();
 	clearMetadataCachesForTest();
-	installUpstreamFetchMock();
 	installArtifactBuilderMock(testEnv);
 	await applyD1Migrations(
 		testEnv.STATS,
@@ -84,17 +66,10 @@ export const setupWorkerTest = async (): Promise<void> => {
 			}
 		).TEST_MIGRATIONS,
 	);
-	await testEnv.STATS.batch([
-		testEnv.STATS.prepare('DELETE FROM stats_periods'),
-		testEnv.STATS.prepare('DELETE FROM stats_packages'),
-	]);
-	await clearFontBucket(testEnv);
 	await seedMetadata(testEnv);
 };
 
-export const serializeHeaders = (
-	response: Response,
-): Record<string, string> => {
+const serializeHeaders = (response: Response): Record<string, string> => {
 	const result: Record<string, string> = {};
 	const cacheControl = response.headers.get('Cache-Control');
 	const cdnCacheControl = response.headers.get('CDN-Cache-Control');
@@ -117,225 +92,7 @@ export const serializeHeaders = (
 	return result;
 };
 
-export const testCatalog: FontCatalog = {
-	abel: {
-		id: 'abel',
-		family: 'Abel',
-		subsets: ['latin'],
-		weights: [400],
-		styles: ['normal'],
-		defSubset: 'latin',
-		variable: false,
-		lastModified: '2024-01-01',
-		version: 'v1',
-		category: 'sans-serif',
-		license: {
-			type: 'OFL-1.1',
-			url: 'https://example.com/ofl',
-			attribution: 'Example',
-		},
-		source: 'https://example.com',
-		type: 'google',
-		unicodeRange: {
-			latin: 'U+0000-00FF',
-		},
-	},
-	recursive: {
-		id: 'recursive',
-		family: 'Recursive',
-		subsets: ['latin'],
-		weights: [400],
-		styles: ['normal'],
-		defSubset: 'latin',
-		variable: {
-			MONO: {
-				default: '0',
-				min: '0',
-				max: '1',
-				step: '1',
-			},
-		},
-		lastModified: '2024-01-02',
-		version: 'v1',
-		category: 'sans-serif',
-		license: {
-			type: 'OFL-1.1',
-			url: 'https://example.com/ofl',
-			attribution: 'Example',
-		},
-		source: 'https://example.com',
-		type: 'google',
-		unicodeRange: {
-			latin: 'U+0000-00FF',
-		},
-	},
-	familypack: {
-		id: 'familypack',
-		family: 'Family Pack',
-		subsets: ['latin', 'latin-ext'],
-		weights: [400, 700],
-		styles: ['normal'],
-		defSubset: 'latin',
-		variable: false,
-		lastModified: '2024-01-03',
-		version: 'v1',
-		category: 'sans-serif',
-		license: {
-			type: 'OFL-1.1',
-			url: 'https://example.com/ofl',
-			attribution: 'Example',
-		},
-		source: 'https://example.com',
-		type: 'google',
-		unicodeRange: {
-			latin: 'U+0000-00FF',
-			'latin-ext': 'U+0100-024F',
-		},
-	},
-};
-
-export const scheduledCatalog = {
-	abel: testCatalog.abel,
-} satisfies FontCatalog;
-
-export const staticMetadata: SourceFontMetadata = testCatalog.abel;
-export const variableMetadata: SourceFontMetadata = testCatalog.recursive;
-export const variableAxes = testCatalog.recursive.variable as VariableAxes;
-
-export const testAxisRegistry: AxisRegistry = {
-	MONO: {
-		name: 'Monospace',
-		description: 'Monospace axis',
-		min: 0,
-		max: 1,
-		default: 0,
-		precision: 1,
-	},
-};
-
-const scheduledAxisRegistry = [
-	{
-		tag: 'MONO',
-		name: 'Monospace',
-		description: 'Monospace axis',
-		min: 0,
-		max: 1,
-		default: 0,
-		precision: 1,
-	},
-];
-
-const testVersions: Record<string, VersionResponse> = {
-	abel: {
-		latest: '5.0.0',
-		static: ['5.0.0'],
-	},
-	recursive: {
-		latest: '5.0.0',
-		static: ['5.0.0'],
-		latestVariable: '5.0.0',
-		variable: ['5.0.0'],
-	},
-	familypack: {
-		latest: '5.0.0',
-		static: ['5.0.0'],
-	},
-};
-
-const decodeInlineAsset = (value: string): Uint8Array => {
-	const [, encoded = ''] = value.split(',', 2);
-	const binary = atob(encoded);
-	const bytes = new Uint8Array(binary.length);
-
-	for (let index = 0; index < binary.length; index += 1) {
-		bytes[index] = binary.charCodeAt(index);
-	}
-
-	return bytes;
-};
-
-export const staticWoff2Bytes = decodeInlineAsset(staticWoff2Url);
-export const staticWoffBytes = decodeInlineAsset(staticWoffUrl);
-export const variableWoff2Bytes = decodeInlineAsset(variableWoff2Url);
-export const staticTtfBytes = new Uint8Array([0, 1, 2, 3]);
-
-export const toResponse = (
-	body: BodyInit | Uint8Array<ArrayBufferLike>,
-	init?: ResponseInit,
-): Response =>
-	new Response(toResponseBody(body), {
-		status: 200,
-		headers: {
-			...(body instanceof Uint8Array
-				? { 'Content-Length': String(body.byteLength) }
-				: typeof body === 'string'
-					? {
-							'Content-Length': String(
-								new TextEncoder().encode(body).byteLength,
-							),
-						}
-					: {}),
-			...(init?.headers ?? {}),
-		},
-		...init,
-	});
-
-const dailyDownloads = (from: string, to: string) => {
-	const values: Array<{ day: string; downloads: number }> = [];
-	const current = new Date(`${from}T00:00:00.000Z`);
-	const end = new Date(`${to}T00:00:00.000Z`);
-
-	while (current <= end) {
-		values.push({ day: current.toISOString().slice(0, 10), downloads: 1 });
-		current.setUTCDate(current.getUTCDate() + 1);
-	}
-
-	return values;
-};
-
-const staticBinaryResponse = (url: string): Response => {
-	if (url.endsWith('.woff2')) {
-		return toResponse(staticWoff2Bytes);
-	}
-
-	if (url.endsWith('.woff')) {
-		return toResponse(staticWoffBytes);
-	}
-
-	throw new Error(`Unexpected static asset URL: ${url}`);
-};
-
-const packageFileMetaResponse = (
-	packageName: string,
-	_version: string,
-): Response => {
-	const isVariable = packageName.startsWith('@fontsource-variable/');
-	const id = packageName.replace(/^@fontsource(?:-variable)?\//, '');
-	const metadata = testCatalog[id];
-
-	if (!metadata) {
-		throw new Error(`Unexpected package file metadata fetch: ${packageName}`);
-	}
-
-	const manifest = resolveFontPackageManifest(
-		metadata,
-		isVariable ? (metadata.variable as VariableAxes | undefined) : undefined,
-	);
-	const entries = isVariable ? manifest.variable : manifest.static;
-	const files = Array.from(
-		new Set(entries.map((item) => item.sourceFilename)),
-	).map((name) => ({
-		name: `/files/${id}-${name}`,
-	}));
-
-	return toResponse(
-		JSON.stringify({
-			files,
-		}),
-	);
-};
-
-export const seedMetadata = async (env: Env): Promise<void> => {
+const seedMetadata = async (env: Env): Promise<void> => {
 	await env.METADATA.put(KV_KEYS.catalog, JSON.stringify(testCatalog));
 	await env.METADATA.put(
 		KV_KEYS.axisRegistry,
@@ -372,459 +129,21 @@ export const seedStats = async (env: Env): Promise<void> => {
 	]);
 };
 
-const clearFontBucket = async (env: Env): Promise<void> => {
-	const list = await env.FONTS.list();
-
-	await Promise.all(list.objects.map((object) => env.FONTS.delete(object.key)));
-};
-
-const putBuiltObject = async (
-	env: Env,
-	key: string,
-	body: Uint8Array,
-	options: {
-		contentType: keyof typeof BINARY_CONTENT_TYPES;
-	},
-): Promise<void> => {
-	await env.FONTS.put(key, body, {
-		httpMetadata: {
-			cacheControl: IMMUTABLE_ASSET_CACHE_CONTROL,
-			contentType: BINARY_CONTENT_TYPES[options.contentType],
-		},
-	});
-};
-
-const putStaticArtifact = async (
-	env: Env,
-	metadata: SourceFontMetadata,
-	version: string,
-	item: ReturnType<typeof resolveFontPackageManifest>['static'][number],
-): Promise<Uint8Array> => {
-	const bytes =
-		item.extension === 'woff2'
-			? staticWoff2Bytes
-			: item.extension === 'woff'
-				? staticWoffBytes
-				: staticTtfBytes;
-
-	await putBuiltObject(
-		env,
-		getStaticAssetKey(metadata.id, version, item.filename),
-		bytes,
-		{
-			contentType: item.extension,
-		},
+export const installArtifactBuilderMock = (env: Env) => {
+	const buildVersion = vi.fn(
+		async (request: BuildVersionRequest): Promise<BuildVersionResult> => ({
+			state: 'ready',
+			buildKey: getBuildKey(request),
+		}),
 	);
-
-	return bytes;
-};
-
-const putVariableArtifact = async (
-	env: Env,
-	metadata: SourceFontMetadata,
-	version: string,
-	item: ReturnType<typeof resolveFontPackageManifest>['variable'][number],
-): Promise<Uint8Array> => {
-	await putBuiltObject(
-		env,
-		getVariableAssetKey(metadata.id, version, item.filename),
-		variableWoff2Bytes,
-		{
-			contentType: item.extension,
-		},
-	);
-
-	return variableWoff2Bytes;
-};
-
-const putStaticArtifacts = async (
-	env: Env,
-	metadata: SourceFontMetadata,
-	version: string,
-	zipFiles: Zippable,
-): Promise<number> => {
-	let artifactCount = 0;
-
-	for (const item of resolveFontPackageManifest(metadata).static) {
-		const bytes = await putStaticArtifact(env, metadata, version, item);
-		zipFiles[`static/${metadata.id}-${item.filename}`] =
-			item.extension === 'ttf' ? bytes : [bytes, { level: 0 }];
-		artifactCount += 1;
-	}
-
-	return artifactCount;
-};
-
-const putVariableArtifacts = async (
-	env: Env,
-	metadata: SourceFontMetadata,
-	axes: VariableAxes,
-	version: string,
-	zipFiles: Zippable,
-): Promise<number> => {
-	let artifactCount = 0;
-
-	for (const item of resolveFontPackageManifest(metadata, axes).variable) {
-		const bytes = await putVariableArtifact(env, metadata, version, item);
-		zipFiles[`variable/${metadata.id}-${item.filename}`] = [
-			bytes,
-			{ level: 0 },
-		];
-		artifactCount += 1;
-	}
-
-	return artifactCount;
-};
-
-const putDownloadArtifacts = async (
-	env: Env,
-	request: BuildDownloadRequest,
-): Promise<number> => {
-	const { metadata } = request;
-	const axes = metadata.variable || undefined;
-	const zipFiles: Zippable = {};
-	let artifactCount = request.staticVersion
-		? await putStaticArtifacts(env, metadata, request.staticVersion, zipFiles)
-		: 0;
-
-	if (axes && request.variableVersion) {
-		artifactCount += await putVariableArtifacts(
-			env,
-			metadata,
-			axes,
-			request.variableVersion,
-			zipFiles,
-		);
-	}
-
-	if (artifactCount === 0) {
-		const version = request.staticVersion ?? `vf@${request.variableVersion}`;
-		throw new Error(
-			`Mocked build produced no artifacts for ${metadata.id}@${version}`,
-		);
-	}
-
-	zipFiles.LICENSE = new TextEncoder().encode('Example License');
-	await putBuiltObject(
-		env,
-		getDownloadKey(metadata.id, request.staticVersion, request.variableVersion),
-		zipSync(zipFiles),
-		{
-			contentType: 'zip',
-		},
-	);
-
-	return artifactCount + 1;
-};
-
-const putBuiltArtifacts = async (
-	env: Env,
-	request: BuildVersionRequest,
-): Promise<void> => {
-	if (request.mode === 'download') {
-		await putDownloadArtifacts(env, request);
-		return;
-	}
-
-	const manifest = resolveFontPackageManifest(
-		request.metadata,
-		request.metadata.variable || undefined,
-	);
-	const entries =
-		request.mode === 'variable' ? manifest.variable : manifest.static;
-	if (entries.length === 0) {
-		throw new Error(
-			`Mocked build produced no ${request.mode} artifacts for ${request.tag.id}@${request.tag.version}`,
-		);
-	}
-
-	if (request.mode === 'variable') {
-		await Promise.all(
-			manifest.variable.map((entry) =>
-				putVariableArtifact(env, request.metadata, request.tag.version, entry),
-			),
-		);
-	} else {
-		await Promise.all(
-			manifest.static.map((entry) =>
-				putStaticArtifact(env, request.metadata, request.tag.version, entry),
-			),
-		);
-	}
-};
-
-export const installArtifactBuilderMock = (
-	env: Env,
-	options: {
-		failBuildKeys?: string[];
-		buildDelayMs?: number;
-	} = {},
-) => {
-	const failBuildKeys = new Set(options.failBuildKeys ?? []);
-	const buildDelayMs = options.buildDelayMs ?? 0;
-	const calls = vi.fn<(request: BuildVersionRequest) => void>();
-	const activeBuilds = new Map<string, Promise<BuildVersionResponse>>();
-	const failedBuilds = new Map<string, BuildVersionFailure>();
-
-	const ensureBuilt = async (
-		request: BuildVersionRequest,
-	): Promise<BuildVersionResponse> => {
-		const buildKey = getBuildKey(request);
-		const activeBuild = activeBuilds.get(buildKey);
-
-		if (activeBuild) {
-			return await activeBuild;
-		}
-
-		calls(request);
-
-		if (failBuildKeys.has(buildKey)) {
-			return await Promise.reject(
-				new Error(`Mocked builder failure for ${buildKey}`),
-			);
-		}
-
-		const buildPromise = (async () => {
-			if (buildDelayMs > 0) {
-				await new Promise((resolve) => setTimeout(resolve, buildDelayMs));
-			}
-
-			await putBuiltArtifacts(env, request);
-			const response = {
-				state: 'ready',
-				buildKey,
-			} satisfies BuildVersionResponse;
-			return response;
-		})().finally(() => {
-			activeBuilds.delete(buildKey);
-		});
-
-		activeBuilds.set(buildKey, buildPromise);
-		return await buildPromise;
-	};
-	const buildVersion = async (
-		request: BuildVersionRequest,
-	): Promise<BuildVersionResult> => {
-		try {
-			return await ensureBuilt(request);
-		} catch (error) {
-			const buildKey = getBuildKey(request);
-			return {
-				state: 'failed',
-				buildKey,
-				status: 502,
-				error: `Bad Gateway. Artifact build failed for ${buildKey}: ${error instanceof Error ? error.message : String(error)}`,
-			};
-		}
-	};
-	const startBuild = async (
-		request: BuildVersionRequest,
-	): Promise<BuildVersionStatus> => {
-		const buildKey = getBuildKey(request);
-		const failed = failedBuilds.get(buildKey);
-
-		if (failed) {
-			failedBuilds.delete(buildKey);
-			return failed;
-		}
-
-		if (activeBuilds.has(buildKey)) {
-			return {
-				state: 'building',
-				buildKey,
-			};
-		}
-
-		void buildVersion(request).then((result) => {
-			if (result.state === 'failed') {
-				failedBuilds.set(buildKey, result);
-			}
-		});
-
-		return {
+	const startBuild = vi.fn(
+		async (request: BuildVersionRequest): Promise<BuildVersionStatus> => ({
 			state: 'building',
-			buildKey,
-		};
-	};
-
-	const artifactBuilder = {
-		getByName() {
-			return {
-				buildVersion,
-				startBuild,
-			} as unknown as ReturnType<Env['ARTIFACT_BUILDER']['getByName']>;
-		},
-	};
-
-	(
-		env as Env & {
-			ARTIFACT_BUILDER: Env['ARTIFACT_BUILDER'];
-		}
-	).ARTIFACT_BUILDER = artifactBuilder as unknown as Env['ARTIFACT_BUILDER'];
-
-	return { calls };
-};
-
-export const installUpstreamFetchMock = (
-	overrides: Record<
-		string,
-		Response | (() => Response | Promise<Response>)
-	> = {},
-) => {
-	const originalFetch = globalThis.fetch.bind(globalThis);
-
-	return vi
-		.spyOn(globalThis, 'fetch')
-		.mockImplementation(async (input, init) => {
-			const versionPayloads: Record<string, string[]> = {
-				'@fontsource/abel': testVersions.abel.static,
-				'@fontsource/recursive': testVersions.recursive.static,
-				'@fontsource/familypack': testVersions.familypack.static,
-				'@fontsource-variable/recursive': testVersions.recursive.variable ?? [],
-			};
-
-			const url =
-				typeof input === 'string'
-					? input
-					: input instanceof Request
-						? input.url
-						: input.toString();
-
-			const override = overrides[url];
-			if (override) {
-				return typeof override === 'function'
-					? await override()
-					: override.clone();
-			}
-
-			if (url.startsWith(`${UPSTREAM_URLS.npmRegistry}/`)) {
-				const packageName = decodeURIComponent(
-					url.slice(`${UPSTREAM_URLS.npmRegistry}/`.length),
-				);
-				if (
-					!Object.hasOwn(versionPayloads, packageName) &&
-					packageName !== 'fontsource-abel'
-				) {
-					return toResponse('', { status: 404 });
-				}
-
-				return toResponse(
-					JSON.stringify({ time: { created: '2025-01-01T00:00:00.000Z' } }),
-				);
-			}
-
-			if (url.startsWith(`${UPSTREAM_URLS.npmDownloadsPoint}/last-month/`)) {
-				return toResponse(JSON.stringify({ downloads: 42 }));
-			}
-
-			if (url.startsWith(`${UPSTREAM_URLS.npmDownloads}/`)) {
-				const [period] = url
-					.slice(`${UPSTREAM_URLS.npmDownloads}/`.length)
-					.split('/', 1);
-				const [from, to] = period?.split(':') ?? [];
-				if (!from || !to) {
-					throw new Error(`Unexpected npm stats URL: ${url}`);
-				}
-
-				return toResponse(
-					JSON.stringify({
-						start: from,
-						end: to,
-						downloads: dailyDownloads(from, to),
-					}),
-				);
-			}
-
-			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrStats}/`)) {
-				const packagePath = new URL(url).pathname.slice(
-					'/v1/stats/packages/npm/'.length,
-				);
-				if (packagePath.includes('/')) {
-					throw new Error(`Unexpected scoped jsDelivr stats URL: ${url}`);
-				}
-				const period = new URL(url).searchParams.get('period');
-				const currentYear = new Date().getUTCFullYear();
-				if (period === String(currentYear)) {
-					return toResponse('', { status: 400 });
-				}
-
-				const hits =
-					period === 'year'
-						? {
-								total: 1200,
-								dates: {
-									[`${currentYear - 1}-12-31`]: 1000,
-									[`${currentYear}-01-01`]: 80,
-									[`${currentYear}-01-02`]: 120,
-								},
-							}
-						: { total: period === 'month' ? 20 : 200 };
-				return toResponse(JSON.stringify({ hits }));
-			}
-
-			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrPackage}/`)) {
-				const path = url.slice(`${UPSTREAM_URLS.jsdelivrPackage}/`.length);
-
-				if (path.endsWith('?structure=flat')) {
-					const packageVersion = path.slice(0, -'?structure=flat'.length);
-					const packageRef = packageVersion.replace(/@([^@/]+)$/, '');
-					const version = packageVersion.match(/@([^@/]+)$/)?.[1];
-
-					if (!version) {
-						throw new Error(`Unexpected jsDelivr flat URL: ${url}`);
-					}
-
-					return packageFileMetaResponse(packageRef, version);
-				}
-
-				const versions = versionPayloads[path];
-
-				if (!versions) {
-					throw new Error(`Unexpected package metadata fetch: ${url}`);
-				}
-
-				return toResponse(
-					JSON.stringify({
-						versions: versions.map((version: string) => ({ version })),
-					}),
-				);
-			}
-
-			if (url.startsWith(`${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/`)) {
-				if (url.endsWith('/LICENSE')) {
-					return toResponse('Example License');
-				}
-
-				return staticBinaryResponse(url);
-			}
-
-			if (
-				url.startsWith(`${UPSTREAM_URLS.jsdelivrNpm}/@fontsource-variable/`)
-			) {
-				if (url.endsWith('/LICENSE')) {
-					return toResponse('Example License');
-				}
-
-				if (url.endsWith('.woff2')) {
-					return toResponse(variableWoff2Bytes);
-				}
-			}
-
-			switch (url) {
-				case UPSTREAM_URLS.catalog:
-					return toResponse(JSON.stringify(scheduledCatalog));
-				case UPSTREAM_URLS.axisRegistry:
-					return toResponse(JSON.stringify(scheduledAxisRegistry));
-				default:
-					if (
-						url.startsWith('data:') ||
-						url.endsWith('.wasm') ||
-						url.includes('.wasm?')
-					) {
-						return await originalFetch(input, init);
-					}
-
-					throw new Error(`Unexpected upstream fetch: ${url}`);
-			}
-		});
+			buildKey: getBuildKey(request),
+		}),
+	);
+	env.ARTIFACT_BUILDER = {
+		getByName: () => ({ buildVersion, startBuild }),
+	} as unknown as Env['ARTIFACT_BUILDER'];
+	return { buildVersion, startBuild };
 };
