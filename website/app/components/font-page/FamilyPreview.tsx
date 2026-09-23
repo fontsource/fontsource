@@ -12,9 +12,10 @@ import { PreviewDrawer, PreviewInspector } from './FamilyPreviewInspector';
 import { PreviewCanvas, PreviewToolbar } from './FamilyPreviewSpecimen';
 import type { PreviewEditorProps } from './FamilyPreviewState';
 
-type FamilyPreviewProps = PreviewEditorProps & { summary?: string };
-
-export const FamilyPreview = ({ summary, ...props }: FamilyPreviewProps) => {
+export const FamilyPreview = ({
+	summary,
+	...props
+}: PreviewEditorProps & { summary: string }) => {
 	const { metadata, variable, registry } = props;
 	return (
 		<PreviewProvider {...props}>
@@ -28,7 +29,7 @@ export const FamilyPreview = ({ summary, ...props }: FamilyPreviewProps) => {
 								registry={registry}
 								variableAvailable={Boolean(variable)}
 							/>
-							{summary && <p className={classes.summary}>{summary}</p>}
+							<p className={classes.summary}>{summary}</p>
 							<Link
 								className={classes.licenseSignal}
 								to={`/fonts/${metadata.id}/about#license`}

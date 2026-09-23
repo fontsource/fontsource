@@ -12,10 +12,7 @@ import {
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
 import { getFontPreviewCSS } from '@/utils/font-preview';
-import {
-	getFontDescriptionSummary,
-	getFontSummary,
-} from '@/utils/font-summary.server';
+import { getFontSummary } from '@/utils/font-summary.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 import { getRegistryContent } from '@/utils/registry';
 import { loadRequiredRegistryData } from '@/utils/registry-request.server';
@@ -44,7 +41,6 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			source.type === 'variable' ? source.axes.map((axis) => axis.tag) : [],
 		),
 	]);
-	const description = getRegistryContent(base.registry)?.description;
 
 	return data(
 		{
@@ -52,10 +48,14 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
 			fontSummary: getFontSummary(
 				base.metadata,
-				description,
+				getRegistryContent(base.registry)?.description,
 				base.registry.designer,
 			),
-			previewSummary: getFontDescriptionSummary(description, 200),
+			previewSummary: getFontSummary(
+				base.metadata,
+				undefined,
+				base.registry.designer,
+			),
 			languages,
 			axisRegistry: Object.fromEntries(
 				Object.entries(axesResult).filter(([tag]) => axisTags.has(tag)),
