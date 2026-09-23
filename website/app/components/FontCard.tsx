@@ -25,6 +25,7 @@ interface FontCardProps {
 	previewHeight?: number;
 	size: number;
 	eagerStylesheet?: boolean;
+	priority?: boolean;
 }
 
 const FontCard = ({
@@ -36,6 +37,7 @@ const FontCard = ({
 	previewHeight,
 	size,
 	eagerStylesheet = false,
+	priority = false,
 }: FontCardProps) => {
 	const location = useLocation();
 	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${font.id}@latest/index.css`;
@@ -61,8 +63,12 @@ const FontCard = ({
 
 	return (
 		<div className={classes.wrapper} data-layout={layout} ref={ref}>
-			{eagerStylesheet && (
-				<link rel="preload" as="style" href={stylesheetHref} />
+			{priority ? (
+				<link rel="stylesheet" href={stylesheetHref} precedence="low" />
+			) : (
+				eagerStylesheet && (
+					<link rel="preload" as="style" href={stylesheetHref} />
+				)
 			)}
 			<Link
 				className={classes.link}
@@ -75,6 +81,14 @@ const FontCard = ({
 				}}
 			>
 				<div className={classes.preview}>
+					{priority && !isFontReady && (
+						<span
+							aria-hidden="true"
+							style={{ position: 'absolute', opacity: 0, fontFamily }}
+						>
+							{previewText}
+						</span>
+					)}
 					{previewFailed ? (
 						<Text c="dimmed" mih={layout === 'grid' ? previewHeight : 72}>
 							Preview unavailable

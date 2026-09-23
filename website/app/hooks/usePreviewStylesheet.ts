@@ -10,10 +10,18 @@ const stylesheets = new Map<string, PreviewStylesheet>();
 const loadStylesheet = (href: string) => {
 	let stylesheet = stylesheets.get(href);
 	if (!stylesheet) {
-		const link = document.createElement('link');
-		const resource: PreviewStylesheet = { link, status: 'loading' };
-		link.rel = 'stylesheet';
-		link.href = href;
+		const existingLink = Array.from(
+			document.querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"]'),
+		).find((link) => link.href === href);
+		const link = existingLink ?? document.createElement('link');
+		const resource: PreviewStylesheet = {
+			link,
+			status: existingLink?.sheet ? 'loaded' : 'loading',
+		};
+		if (!existingLink) {
+			link.rel = 'stylesheet';
+			link.href = href;
+		}
 		// Cache the result independently of cards, including when all unmount.
 		link.onload = () => {
 			resource.status = 'loaded';
@@ -23,7 +31,7 @@ const loadStylesheet = (href: string) => {
 		};
 		stylesheets.set(href, resource);
 		// Native links avoid preinit's unhandled rejection on stylesheet errors.
-		document.head.appendChild(link);
+		if (!existingLink) document.head.appendChild(link);
 		stylesheet = resource;
 	}
 	return stylesheet;
