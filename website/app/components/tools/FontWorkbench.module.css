@@ -192,7 +192,7 @@
 	}
 }
 
-.converterOptions[data-sponsored] {
+.converterOptions:has(:global(.carbon-wrap)) {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) 360px;
 	gap: 48px;
@@ -202,4 +202,8 @@
 .converterSponsor {
 	display: flex;
 	justify-content: flex-end;
+}
+
+.converterSponsor:not(:has(:global(.carbon-wrap))) {
+	display: none;
 }

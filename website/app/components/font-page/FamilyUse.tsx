@@ -300,10 +300,7 @@ export const FamilyUse = ({
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
 				dangerouslySetInnerHTML={{ __html: previewCSS }}
 			/>
-			<div
-				className={classes.heading}
-				data-sponsored={showSponsor || undefined}
-			>
+			<div className={classes.heading}>
 				<div>
 					<h2 id="use-heading">Get {metadata.family}</h2>
 					<p>

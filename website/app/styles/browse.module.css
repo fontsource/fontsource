@@ -160,6 +160,10 @@
 	width: 238px;
 }
 
-.sectionHeading:has(.categorySponsor) {
+.sectionHeading:has(.categorySponsor :global(.carbon-wrap)) {
 	position: static;
+}
+
+.categorySponsor:not(:has(:global(.carbon-wrap))) {
+	display: none;
 }

@@ -89,9 +89,13 @@ export const CarbonAd = ({
 
 	return (
 		<Box className={classes.wrapper} data-layout={layout} {...props}>
-			<Balancer>
+			{layout === 'vertical' ? (
+				<Balancer>
+					<span ref={mountRef} />
+				</Balancer>
+			) : (
 				<span ref={mountRef} />
-			</Balancer>
+			)}
 		</Box>
 	);
 };

@@ -274,10 +274,7 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 
 			<section className={classes.section}>
 				{preset === 'converter' ? (
-					<div
-						className={classes.converterOptions}
-						data-sponsored={showSponsor || undefined}
-					>
+					<div className={classes.converterOptions}>
 						<FormatSelector
 							formats={workbench.output.formats}
 							onChange={updateFormat}

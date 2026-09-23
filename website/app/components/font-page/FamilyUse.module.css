@@ -701,7 +701,7 @@
 	}
 }
 
-.heading[data-sponsored] {
+.heading:has(:global(.carbon-wrap)) {
 	max-width: none;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) 360px;
@@ -713,4 +713,8 @@
 	min-height: 100px;
 	display: flex;
 	justify-content: flex-end;
+}
+
+.headingSponsor:not(:has(:global(.carbon-wrap))) {
+	display: none;
 }

@@ -9,3 +9,7 @@
 	min-height: 100px;
 	margin-top: 40px;
 }
+
+.sponsor:not(:has(:global(.carbon-wrap))) {
+	display: none;
+}

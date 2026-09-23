@@ -22,7 +22,7 @@
 	justify-content: flex-start;
 
 	:global(#carbonads) > span {
-		width: 360px;
+		width: 280px;
 		max-width: 100%;
 		padding: 0;
 		text-align: left;
