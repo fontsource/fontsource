@@ -95,7 +95,6 @@ const PageLink = ({
 			className={className}
 			to={node.url}
 			prefetch="intent"
-			data-active={active}
 			aria-current={active ? 'page' : undefined}
 			onClick={toggle}
 		>
@@ -187,7 +186,6 @@ const RootSection = ({
 					className={classes.rootSection}
 					to={url}
 					prefetch="intent"
-					data-active={active}
 					aria-current={active ? 'location' : undefined}
 					onClick={toggle}
 				>

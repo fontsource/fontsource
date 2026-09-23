@@ -1,6 +1,5 @@
 import { observable } from '@legendapp/state';
 import { MantineProvider } from '@mantine/core';
-import type { SearchClient } from 'instantsearch.js';
 import { renderToString } from 'react-dom/server';
 import {
 	Configure,
@@ -15,7 +14,6 @@ import { Filters } from '@/components/search/Filters';
 import { InfiniteHits } from '@/components/search/Hits';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import {
-	getRegistryLanguageIndex,
 	getRegistryTaxonomy,
 	listRegistryFamilies,
 	listRegistryLanguages,
@@ -28,10 +26,10 @@ import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { DiscoveryRegistry } from '@/utils/discovery.server';
 import type { FontPreview } from '@/utils/font-summary';
-import { createLanguageSearchClient } from '@/utils/language-facets';
 import {
 	attributesToRetrieve,
 	createPageSearchState,
+	hitsPerPage,
 	routing,
 	type SearchProps,
 } from '@/utils/search-config';
@@ -41,9 +39,8 @@ const ALGOLIA_TTL_SECONDS = 6 * 60 * 60; // 6 hours
 const getSearchServerState = (
 	serverUrl: string,
 	facets: SearchFacets,
-	discovery?: DiscoveryPage,
-	client: SearchClient = searchClient,
-	previews: Record<string, FontPreview> = {},
+	discovery: DiscoveryPage | undefined,
+	previews: Record<string, FontPreview>,
 ) => {
 	const state$ = observable(createPageSearchState(discovery));
 	const requestUrl = new URL(serverUrl);
@@ -53,13 +50,16 @@ const getSearchServerState = (
 			<MantineProvider theme={theme}>
 				<InstantSearchSSRProvider>
 					<InstantSearch
-						searchClient={client}
+						searchClient={searchClient}
 						indexName={DEFAULT_SEARCH_INDEX}
 						routing={routing(serverUrl, state$, discovery)}
 						future={{ preserveSharedStateOnUnmount: true }}
 					>
 						<CollectionsProvider>
-							<Configure attributesToRetrieve={attributesToRetrieve} />
+							<Configure
+								attributesToRetrieve={attributesToRetrieve}
+								hitsPerPage={hitsPerPage}
+							/>
 							<Filters state$={state$} {...facets} />
 							<InfiniteHits
 								state$={state$}
@@ -81,17 +81,10 @@ export const loadSearch = async (
 	registry?: DiscoveryRegistry,
 ) => {
 	const options = { signal: request.signal };
-	const [families, languages, taxonomy, languageIndex] = await Promise.all([
+	const [families, languages, taxonomy] = await Promise.all([
 		registry?.families ?? listRegistryFamilies(options),
 		listRegistryLanguages(options),
 		registry?.taxonomy ?? getRegistryTaxonomy(options),
-		getRegistryLanguageIndex(options).catch((error: unknown) => {
-			if (request.signal.aborted) throw error;
-			console.warn(
-				'Registry language index is unavailable; using Algolia facets',
-			);
-			return null;
-		}),
 	]);
 	const facets = { languages, taxonomy };
 	const requestUrl = new URL(request.url);
@@ -127,63 +120,25 @@ export const loadSearch = async (
 				],
 			),
 	);
+	let serverState: InstantSearchServerState | undefined;
 	// Collection membership exists only in localStorage and is unavailable to SSR.
-	if (hasCollectionFilter) {
-		return data<SearchProps>(
-			{
-				discovery,
-				hasCollectionFilter,
-				serverUrl,
-				previews,
-				languageIndex,
-				...facets,
-			},
-			{ headers: cacheHeaders.short },
-		);
-	}
+	if (!hasCollectionFilter) {
+		const { env, ctx } = context.get(cloudflareContext);
+		const cacheKey = await buildAlgoliaCacheKey(serverUrl);
+		const cachedState = cacheKey
+			? await env.ALGOLIA.get<InstantSearchServerState>(cacheKey, 'json')
+			: null;
+		serverState =
+			cachedState ??
+			(await getSearchServerState(serverUrl, facets, discovery, previews));
 
-	const { env, ctx } = context.get(cloudflareContext);
-	const { ALGOLIA } = env;
-	const cacheKey = buildAlgoliaCacheKey(serverUrl);
-
-	// Check local cache for server state first to avoid unnecessary API calls
-	let serverState = cacheKey
-		? await ALGOLIA.get<InstantSearchServerState>(cacheKey, 'json')
-		: null;
-	if (serverState) {
-		return data<SearchProps>(
-			{
-				discovery,
-				hasCollectionFilter,
-				serverState,
-				serverUrl,
-				previews,
-				languageIndex,
-				...facets,
-			},
-			{
-				headers: cacheHeaders.short,
-			},
-		);
-	}
-
-	serverState = await getSearchServerState(
-		serverUrl,
-		facets,
-		discovery,
-		languageIndex
-			? createLanguageSearchClient(searchClient, languageIndex)
-			: searchClient,
-		previews,
-	);
-
-	// Add server state to local cache before responding
-	if (cacheKey) {
-		ctx.waitUntil(
-			ALGOLIA.put(cacheKey, JSON.stringify(serverState), {
-				expirationTtl: ALGOLIA_TTL_SECONDS,
-			}),
-		);
+		if (cacheKey && !cachedState) {
+			ctx.waitUntil(
+				env.ALGOLIA.put(cacheKey, JSON.stringify(serverState), {
+					expirationTtl: ALGOLIA_TTL_SECONDS,
+				}),
+			);
+		}
 	}
 
 	return data<SearchProps>(
@@ -193,7 +148,6 @@ export const loadSearch = async (
 			serverState,
 			serverUrl,
 			previews,
-			languageIndex,
 			...facets,
 		},
 		{

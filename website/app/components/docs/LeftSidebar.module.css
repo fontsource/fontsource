@@ -54,7 +54,7 @@
 		outline-offset: 2px;
 	}
 
-	&[data-active="true"] {
+	&[aria-current] {
 		background: var(--mantine-color-purpleHover-0);
 		color: var(--docs-accent-on-tint);
 		box-shadow: inset 2px 0 0 var(--docs-accent-on-tint);
@@ -122,7 +122,7 @@
 		outline-offset: 2px;
 	}
 
-	&[data-active="true"] {
+	&[aria-current] {
 		background: var(--mantine-color-purpleHover-0);
 		box-shadow: inset 2px 0 0 var(--docs-accent-on-tint);
 		color: var(--docs-accent-on-tint);
