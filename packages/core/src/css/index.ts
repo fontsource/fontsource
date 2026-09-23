@@ -7,9 +7,8 @@ export {
 	getFaceStyle,
 	selectVariableAxisKey,
 } from '../utils/variable';
-export { generateCSS, generateCSSAssets } from './assets';
+export { generateCSS, generateCSSAssets, type UrlResolver } from './assets';
 export {
 	type CSSFontFace,
 	renderFontFaceRule,
-	type UrlResolver,
 } from './face-rule';

@@ -1,10 +1,53 @@
-import type { CSSAsset, FontFace, VariableAxisConfig } from '../types';
-import { type CSSOptions, renderFontFace } from './face-rule';
+import type {
+	CSSAsset,
+	FontFace,
+	FontSource,
+	VariableAxisConfig,
+} from '../types';
+import { type CSSRenderOptions, renderFontFaceRule } from './face-rule';
 import {
 	groupFacesByCSSFile,
 	pickStaticIndexCSS,
 	pickVariableIndexCSS,
 } from './planner';
+
+export interface CSSOptions extends CSSRenderOptions {
+	resolver?: UrlResolver;
+}
+
+export type UrlResolver = (input: {
+	face: FontFace;
+	source: FontSource;
+}) => string;
+
+/** Adapt build faces without inferring additional variants or filenames. */
+const renderFontFace = (
+	face: FontFace,
+	family: string,
+	options: CSSOptions,
+): string =>
+	renderFontFaceRule(
+		{
+			family,
+			style: face.style,
+			weight: face.weight,
+			isVariable: face.isVariable,
+			stretch: face.stretch,
+			unicodeRange: face.unicodeRange === '' ? null : face.unicodeRange,
+			sources: face.sources.map((source) => ({
+				url: options.resolver
+					? options.resolver({ face, source })
+					: `./files/${source.filename}`,
+				format:
+					source.format === 'ttf'
+						? 'truetype'
+						: source.format === 'woff2' && face.isVariable
+							? 'woff2-variations'
+							: source.format,
+			})),
+		},
+		options,
+	);
 
 /** Render the supplied faces in order, preserving their filenames and coverage. */
 const generateCSS = (

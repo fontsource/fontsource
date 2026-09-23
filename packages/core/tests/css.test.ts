@@ -8,7 +8,6 @@ import {
 	renderFontFaceRule,
 	resolveFontFaces,
 } from '../src/css';
-import { renderFontFace } from '../src/css/face-rule';
 import type {
 	FontConfig,
 	FontFace,
@@ -150,17 +149,16 @@ describe('generateCSS', () => {
 	});
 });
 
-describe('renderFontFace', () => {
+describe('generateCSS single faces', () => {
 	it('static font-face', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			staticFace({
 				subset: 'latin',
 				weight: 400,
 				unicodeRange: 'U+0000-00FF',
 				filename: 'inter-latin-400-normal.woff2',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-static.css'),
@@ -168,15 +166,14 @@ describe('renderFontFace', () => {
 	});
 
 	it('static bold font-face', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			staticFace({
 				subset: 'latin',
 				weight: 700,
 				unicodeRange: 'U+0000-00FF',
 				filename: 'inter-latin-700-normal.woff2',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-static-bold.css'),
@@ -184,7 +181,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('static italic font-face', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -192,8 +189,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'inter-latin-400-italic.woff2',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-static-italic.css'),
@@ -201,7 +197,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('static oblique with decimal degrees', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			staticFace({
 				subset: 'latin-ext',
 				weight: 700,
@@ -209,8 +205,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0100-024F',
 				filename: 'inter-latin-ext-700-italic.woff2',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-static-oblique-decimal.css'),
@@ -218,7 +213,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('static oblique with integer degrees', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			staticFace({
 				subset: 'latin-ext',
 				weight: 700,
@@ -226,8 +221,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0100-024F',
 				filename: 'inter-latin-ext-700-italic.woff2',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-static-oblique-integer.css'),
@@ -235,14 +229,13 @@ describe('renderFontFace', () => {
 	});
 
 	it('variable font-face with wght axis', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			variableFace({
 				subset: 'latin',
 				unicodeRange: 'U+0000-00FF',
 				filename: 'inter-latin-wght-normal.woff2',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-wght.css'),
@@ -250,7 +243,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('variable font-face with width stretch', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('TestFont', [
 			variableFace({
 				subset: 'latin',
 				weight: '400',
@@ -259,8 +252,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'testfont-latin-wdth-normal.woff2',
 			}),
-			'TestFont',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-stretch.css'),
@@ -268,7 +260,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('variable font-face with fixed width value', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('TestFont', [
 			variableFace({
 				subset: 'latin',
 				weight: '400',
@@ -277,8 +269,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'testfont-latin-wdth-normal.woff2',
 			}),
-			'TestFont',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-fixed-width.css'),
@@ -286,7 +277,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('variable font-face with slant axis and oblique style', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('TestFont', [
 			variableFace({
 				subset: 'latin',
 				weight: '400 700',
@@ -295,8 +286,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'testfont-latin-standard-italic.woff2',
 			}),
-			'TestFont',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-slant.css'),
@@ -304,7 +294,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('sliced subset with slice index', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			variableFace({
 				subset: 'japanese',
 				weight: '300 800',
@@ -312,8 +302,7 @@ describe('renderFontFace', () => {
 				filename: 'inter-japanese-variable-1.woff2',
 				sliceIndex: 1,
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-sliced.css'),
@@ -321,14 +310,16 @@ describe('renderFontFace', () => {
 	});
 
 	it('resolver overrides url', async () => {
-		const css = renderFontFace(
-			staticFace({
-				subset: 'latin',
-				weight: 400,
-				unicodeRange: 'U+0000-00FF',
-				filename: 'inter-latin-400-normal.woff2',
-			}),
+		const css = generateCSS(
 			'Inter',
+			[
+				staticFace({
+					subset: 'latin',
+					weight: 400,
+					unicodeRange: 'U+0000-00FF',
+					filename: 'inter-latin-400-normal.woff2',
+				}),
+			],
 			{
 				resolver: ({ source }) =>
 					`https://cdn.jsdelivr.net/fontsource/fonts/inter@latest/${source.filename}`,
@@ -341,14 +332,16 @@ describe('renderFontFace', () => {
 	});
 
 	it('custom display value', async () => {
-		const css = renderFontFace(
-			staticFace({
-				subset: 'latin',
-				weight: 400,
-				unicodeRange: 'U+0000-00FF',
-				filename: 'inter-latin-400-normal.woff2',
-			}),
+		const css = generateCSS(
 			'Inter',
+			[
+				staticFace({
+					subset: 'latin',
+					weight: 400,
+					unicodeRange: 'U+0000-00FF',
+					filename: 'inter-latin-400-normal.woff2',
+				}),
+			],
 			{ display: 'block' },
 		);
 
@@ -358,14 +351,13 @@ describe('renderFontFace', () => {
 	});
 
 	it('omits unicode-range when empty', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			staticFace({
 				subset: 'latin',
 				weight: 400,
 				filename: 'inter-latin-400-normal.woff2',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-static-no-unicode-range.css'),
@@ -373,14 +365,13 @@ describe('renderFontFace', () => {
 	});
 
 	it('does not double-append Variable to family name', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter Variable', [
 			variableFace({
 				subset: 'latin',
 				unicodeRange: 'U+0000-00FF',
 				filename: 'inter-latin-wght-normal.woff2',
 			}),
-			'Inter Variable',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-already-named.css'),
@@ -388,7 +379,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('woff format detection', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -396,8 +387,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'inter-latin-400-normal.woff',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-static-woff.css'),
@@ -405,7 +395,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('ttf format detection', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			staticFace({
 				subset: 'latin',
 				weight: 400,
@@ -413,8 +403,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'inter-latin-400-normal.ttf',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-static-ttf.css'),
@@ -422,7 +411,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('variable font-face with fixed slant value', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('TestFont', [
 			variableFace({
 				subset: 'latin',
 				weight: '300 600',
@@ -431,8 +420,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'testfont-latin-standard-italic.woff2',
 			}),
-			'TestFont',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-fixed-slant.css'),
@@ -440,7 +428,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('variable font-face with slant axis only', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('TestFont', [
 			variableFace({
 				subset: 'latin',
 				weight: '400',
@@ -449,8 +437,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'testfont-latin-slnt-italic.woff2',
 			}),
-			'TestFont',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-slant-only.css'),
@@ -458,7 +445,7 @@ describe('renderFontFace', () => {
 	});
 
 	it('variable font-face with no recognized axis', async () => {
-		const css = renderFontFace(
+		const css = generateCSS('Inter', [
 			variableFace({
 				subset: 'latin',
 				weight: '100 900',
@@ -466,8 +453,7 @@ describe('renderFontFace', () => {
 				unicodeRange: 'U+0000-00FF',
 				filename: 'no-axis.woff2',
 			}),
-			'Inter',
-		);
+		]);
 
 		await expect(css).toMatchFileSnapshot(
 			resolve(snapshotDir, 'face-variable-no-axis.css'),
@@ -476,7 +462,7 @@ describe('renderFontFace', () => {
 
 	it('throws when no backing source is provided', () => {
 		expect(() =>
-			renderFontFace(
+			generateCSS('Inter', [
 				{
 					subset: 'latin',
 					weight: 400,
@@ -486,8 +472,7 @@ describe('renderFontFace', () => {
 					sources: [],
 					sliceIndex: 0,
 				},
-				'Inter',
-			),
+			]),
 		).toThrow('renderFontFace requires at least one source');
 	});
 });

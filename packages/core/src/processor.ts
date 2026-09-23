@@ -6,8 +6,7 @@ import {
 } from '@glypht/bundler-utils';
 import type { FontRef, StyleValues } from '@glypht/core';
 import type { FontContext } from './context';
-import { generateCSSAssets } from './css/assets';
-import type { CSSOptions } from './css/face-rule';
+import { type CSSOptions, generateCSSAssets } from './css/assets';
 import { normalizeFontBuffer } from './normalize';
 import { generateSubsetData } from './subsets';
 import type {

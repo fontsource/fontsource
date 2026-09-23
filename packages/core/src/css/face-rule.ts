@@ -1,5 +1,3 @@
-import type { FontFace, FontSource } from '../types';
-
 /** Validated face data. The renderer escapes CSS syntax; callers own metadata validation. */
 export interface CSSFontFace {
 	family: string;
@@ -16,16 +14,10 @@ export interface CSSFontFace {
 	}[];
 }
 
-export interface CSSOptions {
+export interface CSSRenderOptions {
 	display?: string;
 	minify?: boolean;
-	resolver?: UrlResolver;
 }
-
-export type UrlResolver = (input: {
-	face: FontFace;
-	source: FontSource;
-}) => string;
 
 // Escape single-quoted CSS strings; metadata validation belongs to callers.
 const quote = (value: string): string =>
@@ -39,10 +31,7 @@ const quote = (value: string): string =>
 /** Render one face in the same canonical form for packages, CDN responses and previews. */
 export const renderFontFaceRule = (
 	face: CSSFontFace,
-	{
-		display = 'swap',
-		minify = false,
-	}: Pick<CSSOptions, 'display' | 'minify'> = {},
+	{ display = 'swap', minify = false }: CSSRenderOptions = {},
 ): string => {
 	if (face.sources.length === 0) {
 		throw new Error('renderFontFace requires at least one source');
@@ -77,32 +66,3 @@ export const renderFontFaceRule = (
 		? `@font-face{${declarations.join('')}}`
 		: `@font-face {\n  ${declarations.join('\n  ')}\n}`;
 };
-
-/** Adapt build faces without inferring additional variants or filenames. */
-export const renderFontFace = (
-	face: FontFace,
-	family: string,
-	options: CSSOptions = {},
-): string =>
-	renderFontFaceRule(
-		{
-			family,
-			style: face.style,
-			weight: face.weight,
-			isVariable: face.isVariable,
-			stretch: face.stretch,
-			unicodeRange: face.unicodeRange === '' ? null : face.unicodeRange,
-			sources: face.sources.map((source) => ({
-				url: options.resolver
-					? options.resolver({ face, source })
-					: `./files/${source.filename}`,
-				format:
-					source.format === 'ttf'
-						? 'truetype'
-						: source.format === 'woff2' && face.isVariable
-							? 'woff2-variations'
-							: source.format,
-			})),
-		},
-		options,
-	);
