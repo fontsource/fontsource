@@ -706,7 +706,7 @@
 		max-width: none;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) 360px;
-		align-items: start;
+		align-items: center;
 		gap: 48px;
 	}
 }

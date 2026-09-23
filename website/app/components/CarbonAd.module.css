@@ -32,6 +32,7 @@
 		display: block;
 		width: 130px;
 		height: 100px;
+		margin-inline: auto;
 	}
 
 	:global(#carbonads .carbon-poweredby) {
