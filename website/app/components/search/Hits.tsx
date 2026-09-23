@@ -365,20 +365,19 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 			!mounted ||
 			lastVirtualIndex < rows.length - 1 ||
 			isLastPage ||
-			status === 'error' ||
-			isSearchLoading ||
+			status !== 'idle' ||
 			isLoadingMore
 		) {
 			return;
 		}
 
+		// Prefetch into the overscan buffer so fast scrolling stays ahead of the network.
 		setRequestedResults(results);
 		showMore();
 	}, [
 		mounted,
 		isLastPage,
 		isLoadingMore,
-		isSearchLoading,
 		lastVirtualIndex,
 		rows.length,
 		showMore,

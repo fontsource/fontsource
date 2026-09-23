@@ -7,7 +7,6 @@ import {
 	RegistryFamilyDetailSchema,
 	RegistryFamilySymbolsSchema,
 	RegistryIdParamSchema,
-	RegistryLanguageIndexSchema,
 	RegistryLanguagesSchema,
 	RegistrySourceCapabilitiesSchema,
 	RegistrySourceParamSchema,
@@ -129,19 +128,6 @@ export class ListRegistryLanguagesRoute extends OpenAPIRoute {
 
 	async handle(c: AppContext) {
 		return getRegistryView(c, 'languages.json');
-	}
-}
-
-export class GetRegistryLanguageIndexRoute extends OpenAPIRoute {
-	schema = {
-		tags: ['Registry'],
-		operationId: 'getRegistryLanguageIndex',
-		summary: 'Get complete registry language index',
-		responses: registryResponses(RegistryLanguageIndexSchema),
-	};
-
-	async handle(c: AppContext) {
-		return getRegistryView(c, 'language-index.json');
 	}
 }
 

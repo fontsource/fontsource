@@ -8,14 +8,12 @@ import {
 	createSearchState,
 	type SearchState,
 } from '@/components/search/observables';
-import type { GetRegistryLanguageIndexResponse } from '@/generated/api';
 import { DEFAULT_SEARCH_INDEX } from '@/utils/algolia-client';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
 
 export interface SearchProps extends SearchFacets {
-	languageIndex: GetRegistryLanguageIndexResponse | null;
 	previews: Record<string, FontPreview>;
 	discovery?: DiscoveryPage;
 	hasCollectionFilter: boolean;
@@ -35,13 +33,9 @@ interface SearchRouteState {
 	variable?: boolean;
 }
 
-const attributesToRetrieve = [
-	'family',
-	'defSubset',
-	'category',
-	'variable',
-	'languageIndexVersion',
-];
+export const hitsPerPage = 48;
+
+const attributesToRetrieve = ['family', 'defSubset', 'category', 'variable'];
 
 const sortMap: Record<string, string> = {
 	[DEFAULT_SEARCH_INDEX]: 'popular',

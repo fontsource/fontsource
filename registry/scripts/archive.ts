@@ -16,7 +16,6 @@ import {
 	RegistryTaxonomySchema,
 } from '../../api/shared/registry.ts';
 import { assertGitPathClean, getGitRevision } from './git.ts';
-import { createLanguageIndex } from './language-index.ts';
 import { putCurrentObject, putObject, putSourcePreview } from './r2.ts';
 import {
 	archiveManifestSchema,
@@ -189,7 +188,6 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 	const sourceMap = new Map<string, SourceFile>();
 	const previewHashes = new Set<string>();
 	const familySummaries = [];
-	const familyLanguages = [];
 	const familyViews: ArchiveFile[] = [];
 	const symbolViews: ArchiveFile[] = [];
 	for (const familyKey of familyKeys) {
@@ -198,7 +196,6 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		const family = familySchema.parse(
 			await readJson(join(directory, 'family.json')),
 		);
-		familyLanguages.push({ id, languages: family.languages });
 		const iconsValue = await readJsonIfExists(join(directory, 'icons.json'));
 		const icons = iconsValue ? familyIconsSchema.parse(iconsValue) : undefined;
 		if (icons) {
@@ -412,10 +409,6 @@ const createArchivePlan = async (root: string, registryRevision: string) => {
 		createJsonFile(
 			'languages.json',
 			RegistryLanguagesSchema.parse(languageSummaries),
-		),
-		createJsonFile(
-			'language-index.json',
-			createLanguageIndex(familyLanguages, Object.keys(languages)),
 		),
 		createJsonFile('axes.json', RegistryAxesSchema.parse(axes)),
 		createJsonFile('taxonomy.json', RegistryTaxonomySchema.parse(taxonomy)),
