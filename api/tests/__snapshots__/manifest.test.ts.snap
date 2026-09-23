@@ -26,6 +26,14 @@ exports[`generates static manifest entries 1`] = `
     "subset": "latin",
     "weight": 400,
   },
+  {
+    "extension": "otf",
+    "filename": "latin-400-normal.otf",
+    "sourceFilename": "latin-400-normal.woff2",
+    "style": "normal",
+    "subset": "latin",
+    "weight": 400,
+  },
 ]
 `;
 

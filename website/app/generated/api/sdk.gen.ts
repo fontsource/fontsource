@@ -395,7 +395,7 @@ export const getRegistrySourceCapabilities = <ThrowOnError extends boolean = tru
 /**
  * Get binary font asset
  *
- * Serves binary font files (woff2, woff, ttf) from the CDN. Supports pinned and floating version tags. Latest download aliases redirect to the download endpoint.
+ * Serves binary font files (woff2, woff, ttf, otf) from the CDN. Supports pinned and floating version tags. Latest download aliases redirect to the download endpoint.
  */
 export const getBinaryAsset = <ThrowOnError extends boolean = true>(parameters: {
     tag: string;

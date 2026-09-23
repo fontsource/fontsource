@@ -1,6 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { convertFont, createFontContext, inspectFont } from '../src';
-import { loadStaticFontFixture, loadVariableFontFixture } from './font-fixture';
+import {
+	convertFont,
+	createFontContext,
+	inspectFont,
+	UnsupportedCffToTtfError,
+} from '../src';
+import {
+	loadCffFontFixture,
+	loadStaticFontFixture,
+	loadVariableFontFixture,
+} from './font-fixture';
 
 const getHeader = (bytes: Uint8Array, length = 4): string =>
 	Array.from(bytes.slice(0, length))
@@ -104,6 +113,25 @@ describe('convertFont smoke tests', () => {
 
 			expect(roundTripped.filename).not.toBe('font.woff2');
 			expect(roundTripped.data.length).toBeGreaterThan(0);
+		} finally {
+			ctx.destroy();
+		}
+	});
+
+	it('preserves CFF outlines in WOFF and rejects TTF output', async () => {
+		const ctx = createFontContext();
+		try {
+			const source = loadCffFontFixture();
+			await expect(
+				convertFont(ctx, source, ['ttf'], 'synthetic-cff.otf'),
+			).rejects.toThrow(UnsupportedCffToTtfError);
+			const [woff] = await convertFont(
+				ctx,
+				source,
+				['woff'],
+				'synthetic-cff.otf',
+			);
+			expect((await inspectFont(ctx, woff.data)).tables).toContain('CFF ');
 		} finally {
 			ctx.destroy();
 		}
