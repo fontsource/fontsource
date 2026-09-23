@@ -712,7 +712,6 @@
 }
 
 .headingSponsor {
-	min-height: 100px;
 	display: flex;
 	justify-content: flex-end;
 }

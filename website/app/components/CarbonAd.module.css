@@ -28,6 +28,12 @@
 		margin-bottom: 4px;
 	}
 
+	:global(#carbonads .carbon-img img) {
+		display: block;
+		width: 130px;
+		height: 100px;
+	}
+
 	:global(#carbonads .carbon-poweredby) {
 		font-size: 0.75em;
 		opacity: 0.5;
@@ -75,9 +81,13 @@
 	}
 }
 
-/* Reserve space through loading and no-fill so nearby controls stay still. */
+/* Include room for longer creative copy, not just the 100px image. */
 .slot[data-layout='horizontal'] {
-	min-height: 100px;
+	min-height: 160px;
+}
+
+.slot[data-layout='vertical'] {
+	min-height: 256px;
 }
 
 @media (max-width: 1200px) {
