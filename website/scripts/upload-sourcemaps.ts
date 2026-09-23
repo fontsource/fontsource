@@ -11,6 +11,8 @@ if (process.env.POSTHOG_API_KEY) {
 			'build',
 			'--release-name',
 			'fontsource-website',
+			'--release-mode',
+			'symbol-set',
 			'--delete-after',
 		],
 		{
