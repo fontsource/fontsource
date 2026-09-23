@@ -43,12 +43,11 @@ const Sort = observer(({ count, state$ }: SortProps) => {
 		items: sortItems,
 	});
 
-	const sortMenuItems = sortItems.map((item, index) => {
+	const sortMenuItems = sortItems.map((item) => {
 		return {
 			label: item.label,
 			value: item.value,
 			isRefined: item.value === currentRefinement,
-			count: index,
 		};
 	});
 
