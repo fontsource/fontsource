@@ -15,7 +15,6 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconStack2 } from '@tabler/icons-react';
-import cx from 'clsx';
 import { Link, NavLink, useLocation } from 'react-router';
 
 import { LeftSidebar } from '@/components/docs/LeftSidebar';
@@ -64,9 +63,7 @@ const HeaderNavLink = ({ label, to, toggle }: HeaderNavLinkProps) => {
 			<NavLink
 				to={to}
 				prefetch="intent"
-				className={({ isActive }) =>
-					isActive ? cx(classes.link, classes.active) : classes.link
-				}
+				className={classes.link}
 				onClick={toggle}
 			>
 				{label}

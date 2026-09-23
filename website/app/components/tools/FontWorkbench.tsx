@@ -185,11 +185,6 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 					<Link
 						to="/tools/converter"
 						className={classes.modeLink}
-						data-active={preset === 'converter'}
-						data-disabled={
-							workbench.isSessionProcessing &&
-							workbench.activePreset !== 'converter'
-						}
 						aria-current={preset === 'converter' ? 'page' : undefined}
 						aria-disabled={
 							workbench.isSessionProcessing &&
@@ -209,11 +204,6 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 					<Link
 						to="/tools/optimizer"
 						className={classes.modeLink}
-						data-active={preset === 'optimizer'}
-						data-disabled={
-							workbench.isSessionProcessing &&
-							workbench.activePreset !== 'optimizer'
-						}
 						aria-current={preset === 'optimizer' ? 'page' : undefined}
 						aria-disabled={
 							workbench.isSessionProcessing &&

@@ -61,7 +61,7 @@
 	}
 }
 
-.active {
+.link[aria-current="page"] {
 	font-weight: 700;
 
 	color: var(--mantine-color-purple-0);

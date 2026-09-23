@@ -63,7 +63,7 @@
 			border-inline-end: 0;
 		}
 
-		&[data-active] {
+		&[aria-pressed='true'] {
 			color: var(--mantine-color-purple-0);
 			background: light-dark(#efeeff, #172138);
 		}
@@ -208,7 +208,7 @@
 			color 120ms ease;
 
 		&:hover,
-		&[data-active] {
+		&[aria-pressed='true'] {
 			color: var(--mantine-color-purple-0);
 			background: light-dark(#efeeff, #172138);
 		}
@@ -569,8 +569,8 @@
 }
 
 @media (forced-colors: active) {
-	.groupSwitch button[data-active],
-	.grid > button[data-active] {
+	.groupSwitch button[aria-pressed='true'],
+	.grid > button[aria-pressed='true'] {
 		outline: 2px solid Highlight;
 		outline-offset: -3px;
 	}
