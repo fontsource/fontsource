@@ -10,7 +10,9 @@ import type {
 import { useLoaderData, useRevalidator } from 'react-router';
 import invariant from 'tiny-invariant';
 
+import { CarbonAd } from '@/components/CarbonAd';
 import styles from '@/components/ErrorBoundary.module.css';
+import classes from '@/styles/download.module.css';
 import { throwApiResponseError } from '@/utils/api.server';
 import { cacheHeaders } from '@/utils/cache';
 
@@ -75,7 +77,11 @@ export default function Download() {
 
 	return (
 		<Center className={styles.container}>
-			<Flex align="center" className={styles.content} direction="column">
+			<Flex
+				align="center"
+				className={`${styles.content} ${classes.content}`}
+				direction="column"
+			>
 				<Flex
 					align="center"
 					className={styles.errorInfo}
@@ -105,6 +111,9 @@ export default function Download() {
 					<Button component="a" href={download.downloadUrl}>
 						Download
 					</Button>
+				)}
+				{isReady && (
+					<CarbonAd layout="horizontal" slotClassName={classes.sponsor} />
 				)}
 			</Flex>
 		</Center>

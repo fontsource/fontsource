@@ -4,6 +4,7 @@ import { IconArrowRight, IconSearch } from '@tabler/icons-react';
 import { useState } from 'react';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, Link, useLoaderData } from 'react-router';
+import { CarbonAd } from '@/components/CarbonAd';
 import { useIsFontReady } from '@/hooks/useIsFontLoaded';
 import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
 import classes from '@/styles/browse.module.css';
@@ -317,6 +318,10 @@ export default function Browse() {
 					<div className={classes.sectionHeading}>
 						<h2>Categories</h2>
 						<p>Different forms. Different voices.</p>
+						<CarbonAd
+							className={classes.categoryAd}
+							slotClassName={classes.categorySponsor}
+						/>
 					</div>
 					<div>
 						<Categories pages={categories} />

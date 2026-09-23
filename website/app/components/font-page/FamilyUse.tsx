@@ -1,7 +1,7 @@
 import { SegmentedControl, Tabs, VisuallyHidden } from '@mantine/core';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
-
+import { CarbonAd } from '@/components/CarbonAd';
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import { IconDownload, IconExternal } from '@/components/icons';
@@ -299,10 +299,13 @@ export const FamilyUse = ({
 				dangerouslySetInnerHTML={{ __html: previewCSS }}
 			/>
 			<div className={classes.heading}>
-				<h2 id="use-heading">Download {metadata.family}</h2>
-				<p>
-					Download the font family for design apps, or add it to your website.
-				</p>
+				<div>
+					<h2 id="use-heading">Download {metadata.family}</h2>
+					<p>
+						Download the font family for design apps, or add it to your website.
+					</p>
+				</div>
+				<CarbonAd layout="horizontal" slotClassName={classes.headingSponsor} />
 			</div>
 			<Tabs
 				className={classes.acquisition}

@@ -1,5 +1,7 @@
 import type { BoxProps } from '@mantine/core';
 import { Box } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import clsx from 'clsx';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 import Balancer from 'react-wrap-balancer';
@@ -60,12 +62,25 @@ const refreshCarbonAd = () => {
 	host.appendChild(script);
 };
 
-export const CarbonAd = ({ ...props }: BoxProps) => {
+interface CarbonAdProps extends BoxProps {
+	layout?: 'vertical' | 'horizontal';
+	slotClassName?: string;
+}
+
+export const CarbonAd = ({
+	layout = 'vertical',
+	className,
+	slotClassName,
+	...props
+}: CarbonAdProps) => {
 	const { pathname } = useLocation();
 	const mountRef = useRef<HTMLSpanElement>(null);
+	const desktop = useMediaQuery('(min-width: 1201px)');
+	const shouldLoad = !slotClassName || desktop;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Refresh the ad when the tab route changes.
 	useEffect(() => {
+		if (!shouldLoad) return;
 		const host = getCarbonHost();
 		host.hidden = false;
 		mountRef.current?.appendChild(host);
@@ -80,13 +95,33 @@ export const CarbonAd = ({ ...props }: BoxProps) => {
 			host.hidden = true;
 			document.body.appendChild(host);
 		};
-	}, [pathname]);
+	}, [pathname, shouldLoad]);
 
-	return (
-		<Box className={classes.wrapper} {...props}>
-			<Balancer>
+	const ad = (
+		<Box
+			{...props}
+			className={clsx(classes.wrapper, className)}
+			data-layout={layout}
+		>
+			{layout === 'vertical' ? (
+				<Balancer>
+					<span ref={mountRef} />
+				</Balancer>
+			) : (
 				<span ref={mountRef} />
-			</Balancer>
+			)}
 		</Box>
+	);
+
+	return slotClassName ? (
+		<aside
+			className={clsx(classes.slot, slotClassName)}
+			data-layout={layout}
+			aria-label="Advertisement"
+		>
+			{ad}
+		</aside>
+	) : (
+		ad
 	);
 };

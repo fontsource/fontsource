@@ -14,6 +14,7 @@ import {
 import { IconBolt, IconPlayerStop, IconTransform } from '@tabler/icons-react';
 import { lazy, Suspense, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
+import { CarbonAd } from '@/components/CarbonAd';
 import {
 	type FontToolPreset,
 	useFontWorkbench,
@@ -262,11 +263,17 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 
 			<section className={classes.section}>
 				{preset === 'converter' ? (
-					<FormatSelector
-						formats={workbench.output.formats}
-						onChange={updateFormat}
-						disabled={workbench.isSessionProcessing}
-					/>
+					<div className={classes.converterOptions}>
+						<FormatSelector
+							formats={workbench.output.formats}
+							onChange={updateFormat}
+							disabled={workbench.isSessionProcessing}
+						/>
+						<CarbonAd
+							layout="horizontal"
+							slotClassName={classes.converterSponsor}
+						/>
+					</div>
 				) : (
 					<Stack gap="sm">
 						<div>
