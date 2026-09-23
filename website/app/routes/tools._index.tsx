@@ -16,7 +16,7 @@ const tools = [
 	{
 		title: 'Font Converter',
 		description:
-			'Convert TTF, OTF, WOFF, and WOFF2 files to WOFF2, WOFF, or TTF.',
+			'Convert TTF, OTF, WOFF, and WOFF2 fonts for websites and design apps.',
 		link: '/tools/converter',
 		icon: IconTransform,
 	},

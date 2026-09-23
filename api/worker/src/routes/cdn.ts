@@ -15,7 +15,7 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 		operationId: 'getBinaryAsset',
 		summary: 'Get binary font asset',
 		description:
-			'Serves binary font files (woff2, woff, ttf) from the CDN. ' +
+			'Serves binary font files (woff2, woff, ttf, otf) from the CDN. ' +
 			'Supports pinned and floating version tags. Latest download aliases redirect to the download endpoint.',
 		request: {
 			params: TagFileParamSchema,
@@ -31,6 +31,9 @@ export class GetBinaryAssetRoute extends OpenAPIRoute {
 						schema: z.string(),
 					},
 					'font/ttf': {
+						schema: z.string(),
+					},
+					'font/otf': {
 						schema: z.string(),
 					},
 				},

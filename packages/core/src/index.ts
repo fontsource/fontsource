@@ -1,5 +1,11 @@
 export { createFontContext, type FontContext } from './context';
-export { type ConversionResult, convertFont } from './conversion';
+export {
+	type ConversionResult,
+	convertFont,
+	planConversionFormats,
+	UnsupportedCffToTtfError,
+} from './conversion';
+export { decodeDesktopFont } from './desktop-font';
 export {
 	type FontInspection,
 	type FontInspectionAxis,

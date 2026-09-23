@@ -5,5 +5,6 @@ export const BINARY_CONTENT_TYPES = {
 	woff2: 'font/woff2',
 	woff: 'font/woff',
 	ttf: 'font/ttf',
+	otf: 'font/otf',
 	zip: 'application/zip',
 } as const;
