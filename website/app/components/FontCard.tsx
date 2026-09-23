@@ -2,8 +2,7 @@ import { Button, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { Link, useLocation } from 'react-router';
 import type { ListRegistryLanguagesResponse } from '@/generated/api';
-import { useIsFontReady } from '@/hooks/useIsFontLoaded';
-import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
+import { useFontPreview } from '@/hooks/useFontPreview';
 import {
 	getFontFamilyStack,
 	getPreviewLanguageTag,
@@ -25,7 +24,6 @@ interface FontCardProps {
 	previewHeight?: number;
 	size: number;
 	eagerStylesheet?: boolean;
-	priority?: boolean;
 }
 
 const FontCard = ({
@@ -37,25 +35,23 @@ const FontCard = ({
 	previewHeight,
 	size,
 	eagerStylesheet = false,
-	priority = false,
 }: FontCardProps) => {
 	const location = useLocation();
 	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${font.id}@latest/index.css`;
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
 	});
-	const stylesheetStatus = usePreviewStylesheet(
-		stylesheetHref,
-		eagerStylesheet || Boolean(entry?.isIntersecting),
-	);
-	const isFontReady = useIsFontReady(
-		font.family,
-		stylesheetStatus === 'loaded',
-	);
-	const previewFailed = stylesheetStatus === 'failed';
-
 	const previewText =
 		preview ?? getRecommendedPreviewText(font, 'short', languages);
+	const previewStatus = useFontPreview({
+		family: font.family,
+		text: previewText,
+		stylesheetHref,
+		enabled: eagerStylesheet || Boolean(entry?.isIntersecting),
+	});
+	const isFontReady = previewStatus === 'ready';
+	const previewFailed = previewStatus === 'stylesheet-error';
+
 	const sampleLanguage =
 		languages?.find((language) => language.id === previewLanguageId) ??
 		getRecommendedPreviewLanguage(font, languages ?? []);
@@ -63,12 +59,8 @@ const FontCard = ({
 
 	return (
 		<div className={classes.wrapper} data-layout={layout} ref={ref}>
-			{priority ? (
-				<link rel="stylesheet" href={stylesheetHref} precedence="low" />
-			) : (
-				eagerStylesheet && (
-					<link rel="preload" as="style" href={stylesheetHref} />
-				)
+			{eagerStylesheet && (
+				<link rel="preload" as="style" href={stylesheetHref} />
 			)}
 			<Link
 				className={classes.link}
@@ -81,14 +73,6 @@ const FontCard = ({
 				}}
 			>
 				<div className={classes.preview}>
-					{priority && !isFontReady && (
-						<span
-							aria-hidden="true"
-							style={{ position: 'absolute', opacity: 0, fontFamily }}
-						>
-							{previewText}
-						</span>
-					)}
 					{previewFailed ? (
 						<Text c="dimmed" mih={layout === 'grid' ? previewHeight : 72}>
 							Preview unavailable

@@ -48,7 +48,6 @@ interface HitComponentProps {
 	state$: SearchState;
 	hit: AlgoliaMetadata;
 	eagerStylesheet?: boolean;
-	priority?: boolean;
 }
 
 interface InfiniteHitsProps {
@@ -116,7 +115,6 @@ const getNoResultsMessage = (
 const HitComponent = observer(
 	({
 		eagerStylesheet,
-		priority,
 		hit,
 		state$,
 		preview,
@@ -180,7 +178,6 @@ const HitComponent = observer(
 				previewHeight={getGridPreviewHeight(size)}
 				size={size}
 				eagerStylesheet={eagerStylesheet}
-				priority={priority}
 			/>
 		);
 	},
@@ -471,7 +468,6 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 														virtualRow.index === 0 &&
 														hitIndex < eagerStylesheetCount
 													}
-													priority={virtualRow.index === 0 && hitIndex === 0}
 												/>
 											))}
 										</div>
@@ -497,7 +493,6 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 								hit={hit}
 								preview={previews[hit.objectID]}
 								eagerStylesheet={index < eagerStylesheetCount}
-								priority={index === 0}
 							/>
 						))}
 					</div>

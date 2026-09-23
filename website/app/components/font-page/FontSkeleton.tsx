@@ -1,7 +1,7 @@
 import { type ReactNode, useMemo } from 'react';
 
 import { Skeleton, type SkeletonName } from '@/components/Skeleton';
-import { useIsFontReady } from '@/hooks/useIsFontLoaded';
+import { useFontPreview } from '@/hooks/useFontPreview';
 
 interface FontSkeletonProps {
 	name: SkeletonName;
@@ -26,13 +26,14 @@ export const FontSkeleton = ({
 		() => weights ?? (weight === undefined ? undefined : [weight]),
 		[weight, weights],
 	);
-	const ready = useIsFontReady(family, true, {
+	const status = useFontPreview({
+		family,
 		weights: observedWeights,
 		style,
 	});
 
 	return (
-		<Skeleton name={name} loading={!ready} className={className}>
+		<Skeleton name={name} loading={status === 'loading'} className={className}>
 			{children}
 		</Skeleton>
 	);
