@@ -5,7 +5,6 @@ import type { ReactNode } from 'react';
 import docsSearchResultsBones from '@/bones/docs-search-results.bones.json';
 import fontDetailAboutSpecimenBones from '@/bones/font-detail-about-specimen.bones.json';
 import fontDetailCanvasBones from '@/bones/font-detail-canvas.bones.json';
-import fontDetailCompactTitleBones from '@/bones/font-detail-compact-title.bones.json';
 import fontDetailGlyphExplorerBones from '@/bones/font-detail-glyph-explorer.bones.json';
 import fontDetailTitleBones from '@/bones/font-detail-title.bones.json';
 import fontDetailWeightStripBones from '@/bones/font-detail-weight-strip.bones.json';
@@ -21,7 +20,6 @@ const skeletons = {
 	'docs-search-results': docsSearchResultsBones,
 	'font-detail-about-specimen': fontDetailAboutSpecimenBones,
 	'font-detail-canvas': fontDetailCanvasBones,
-	'font-detail-compact-title': fontDetailCompactTitleBones,
 	'font-detail-glyph-explorer': fontDetailGlyphExplorerBones,
 	'font-detail-title': fontDetailTitleBones,
 	'font-detail-weight-strip': fontDetailWeightStripBones,
