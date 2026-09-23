@@ -1,6 +1,5 @@
 import { env } from 'cloudflare:workers';
 import { Button, Center, Flex, Loader, Text, Title } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 import { IconCircleCheck } from '@tabler/icons-react';
 import { useEffect, useRef } from 'react';
 import type {
@@ -52,7 +51,6 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 };
 
 export default function Download() {
-	const showSponsor = useMediaQuery('(min-width: 1201px)');
 	const download = useLoaderData<typeof loader>();
 	const { revalidate, state } = useRevalidator();
 	const startedDownload = useRef(false);
@@ -114,7 +112,7 @@ export default function Download() {
 						Download
 					</Button>
 				)}
-				{showSponsor && isReady && (
+				{isReady && (
 					<CarbonAd layout="horizontal" slotClassName={classes.sponsor} />
 				)}
 			</Flex>

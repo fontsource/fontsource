@@ -192,11 +192,13 @@
 	}
 }
 
-.converterOptions:has([data-ad-ready='true']) {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) 360px;
-	gap: 48px;
-	align-items: start;
+@media (min-width: 1201px) {
+	.converterOptions {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 360px;
+		gap: 48px;
+		align-items: start;
+	}
 }
 
 .converterSponsor {

@@ -1,5 +1,4 @@
 import { SegmentedControl, Tabs, VisuallyHidden } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { CarbonAd } from '@/components/CarbonAd';
@@ -120,7 +119,6 @@ export const FamilyUse = ({
 	registry,
 	subsetDefinitions,
 }: FamilyUseProps) => {
-	const showSponsor = useMediaQuery('(min-width: 1201px)');
 	const [searchParams, setSearchParams] = useSearchParams();
 	const supportsVariable = Boolean(variable && versions.latestVariable);
 	const supportsStatic = Boolean(versions.latest);
@@ -307,12 +305,7 @@ export const FamilyUse = ({
 						Download the font family for design apps, or add it to your website.
 					</p>
 				</div>
-				{showSponsor && (
-					<CarbonAd
-						layout="horizontal"
-						slotClassName={classes.headingSponsor}
-					/>
-				)}
+				<CarbonAd layout="horizontal" slotClassName={classes.headingSponsor} />
 			</div>
 			<Tabs
 				className={classes.acquisition}

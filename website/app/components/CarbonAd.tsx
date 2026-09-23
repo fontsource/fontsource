@@ -1,7 +1,8 @@
 import type { BoxProps } from '@mantine/core';
 import { Box } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import clsx from 'clsx';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 import Balancer from 'react-wrap-balancer';
 
@@ -74,10 +75,12 @@ export const CarbonAd = ({
 }: CarbonAdProps) => {
 	const { pathname } = useLocation();
 	const mountRef = useRef<HTMLSpanElement>(null);
-	const [ready, setReady] = useState(false);
+	const desktop = useMediaQuery('(min-width: 1201px)');
+	const shouldLoad = !slotClassName || desktop;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Refresh the ad when the tab route changes.
 	useEffect(() => {
+		if (!shouldLoad) return;
 		const host = getCarbonHost();
 		host.hidden = false;
 		mountRef.current?.appendChild(host);
@@ -92,19 +95,7 @@ export const CarbonAd = ({
 			host.hidden = true;
 			document.body.appendChild(host);
 		};
-	}, [pathname]);
-
-	useEffect(() => {
-		if (!slotClassName) return;
-		const mount = mountRef.current;
-		if (!mount) return;
-		const updateReady = () =>
-			setReady(Boolean(mount.querySelector('.carbon-wrap')));
-		const observer = new MutationObserver(updateReady);
-		observer.observe(mount, { childList: true, subtree: true });
-		updateReady();
-		return () => observer.disconnect();
-	}, [slotClassName]);
+	}, [pathname, shouldLoad]);
 
 	const ad = (
 		<Box
@@ -125,7 +116,7 @@ export const CarbonAd = ({
 	return slotClassName ? (
 		<aside
 			className={clsx(classes.slot, slotClassName)}
-			data-ad-ready={ready}
+			data-layout={layout}
 			aria-label="Advertisement"
 		>
 			{ad}

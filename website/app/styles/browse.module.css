@@ -160,8 +160,10 @@
 	width: 238px;
 }
 
-.sectionHeading:has(.categorySponsor[data-ad-ready='true']) {
-	position: static;
+@media (min-width: 1201px) {
+	.sectionHeading:has(.categorySponsor) {
+		position: static;
+	}
 }
 
 

@@ -11,7 +11,6 @@ import {
 	Title,
 	VisuallyHidden,
 } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 import { IconBolt, IconPlayerStop, IconTransform } from '@tabler/icons-react';
 import { lazy, Suspense, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
@@ -82,7 +81,6 @@ const sizeComparison = (inputSize: number, outputSize: number) => {
 
 export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 	const workbench = useFontWorkbench(preset);
-	const showSponsor = useMediaQuery('(min-width: 1201px)');
 	const resultsRef = useRef<HTMLElement>(null);
 	const wasProcessing = useRef(false);
 	const uploadRef = useRef<HTMLDivElement>(null);
@@ -281,12 +279,10 @@ export const FontWorkbench = ({ preset }: FontWorkbenchProps) => {
 							onChange={updateFormat}
 							disabled={workbench.isSessionProcessing}
 						/>
-						{showSponsor && (
-							<CarbonAd
-								layout="horizontal"
-								slotClassName={classes.converterSponsor}
-							/>
-						)}
+						<CarbonAd
+							layout="horizontal"
+							slotClassName={classes.converterSponsor}
+						/>
 					</div>
 				) : (
 					<Stack gap="sm">

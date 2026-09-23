@@ -701,12 +701,14 @@
 	}
 }
 
-.heading:has([data-ad-ready='true']) {
-	max-width: none;
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) 360px;
-	align-items: start;
-	gap: 48px;
+@media (min-width: 1201px) {
+	.heading {
+		max-width: none;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 360px;
+		align-items: start;
+		gap: 48px;
+	}
 }
 
 .headingSponsor {

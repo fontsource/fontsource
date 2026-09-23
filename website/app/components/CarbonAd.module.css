@@ -75,6 +75,13 @@
 	}
 }
 
-.slot[data-ad-ready='false'] {
-	display: none;
+/* Reserve space through loading and no-fill so nearby controls stay still. */
+.slot[data-layout='horizontal'] {
+	min-height: 100px;
+}
+
+@media (max-width: 1200px) {
+	.slot[data-layout] {
+		display: none;
+	}
 }
