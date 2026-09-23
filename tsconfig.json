@@ -4,7 +4,6 @@
 		{ "path": "api" },
 		{ "path": "packages/cli" },
 		{ "path": "packages/core" },
-		{ "path": "packages/generate" },
 		{ "path": "packages/publish" },
 		{ "path": "website" }
 	],

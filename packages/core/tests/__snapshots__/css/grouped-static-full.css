@@ -1,5 +1,4 @@
 /* 400.css */
-/* inter-latin-400-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -9,7 +8,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-ext-400-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -19,7 +17,6 @@
   unicode-range: U+0100-024F;
 }
 /* latin.css */
-/* inter-latin-400-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -29,7 +26,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-400-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -39,7 +35,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-700-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -49,7 +44,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-700-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -59,7 +53,6 @@
   unicode-range: U+0000-00FF;
 }
 /* 400-italic.css */
-/* inter-latin-400-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -69,7 +62,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-ext-400-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -79,7 +71,6 @@
   unicode-range: U+0100-024F;
 }
 /* latin-italic.css */
-/* inter-latin-400-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -89,7 +80,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-700-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -99,7 +89,6 @@
   unicode-range: U+0000-00FF;
 }
 /* 700.css */
-/* inter-latin-700-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -109,7 +98,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-ext-700-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -119,7 +107,6 @@
   unicode-range: U+0100-024F;
 }
 /* 700-italic.css */
-/* inter-latin-700-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -129,7 +116,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-ext-700-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -139,7 +125,6 @@
   unicode-range: U+0100-024F;
 }
 /* latin-ext.css */
-/* inter-latin-ext-400-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -149,7 +134,6 @@
   unicode-range: U+0100-024F;
 }
 
-/* inter-latin-ext-400-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -159,7 +143,6 @@
   unicode-range: U+0100-024F;
 }
 
-/* inter-latin-ext-700-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -169,7 +152,6 @@
   unicode-range: U+0100-024F;
 }
 
-/* inter-latin-ext-700-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -179,7 +161,6 @@
   unicode-range: U+0100-024F;
 }
 /* latin-ext-italic.css */
-/* inter-latin-ext-400-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -189,7 +170,6 @@
   unicode-range: U+0100-024F;
 }
 
-/* inter-latin-ext-700-italic */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -199,7 +179,6 @@
   unicode-range: U+0100-024F;
 }
 /* index.css */
-/* inter-latin-400-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -209,7 +188,6 @@
   unicode-range: U+0000-00FF;
 }
 
-/* inter-latin-ext-400-normal */
 @font-face {
   font-family: 'Inter';
   font-style: normal;

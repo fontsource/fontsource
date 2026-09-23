@@ -1,4 +1,4 @@
-import { resolveFontFaces } from '@fontsource-utils/core';
+import { resolveFontFaces } from '@fontsource-utils/core/css';
 import type { SourceFontMetadata, VariableAxes } from './catalog';
 import { buildFontConfig } from './font-config';
 

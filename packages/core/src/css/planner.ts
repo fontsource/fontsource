@@ -1,5 +1,6 @@
-import type { FontConfig, FontFace } from '../types';
-import { determineAxisKey, findClosestWeight, formatStyle } from '../utils';
+import type { FontFace, VariableAxisConfig } from '../types';
+import { findClosestWeight, formatStyle } from '../utils/style';
+import { determineAxisKey } from '../utils/variable';
 
 type StaticFace = FontFace & { isVariable: false; weight: number };
 
@@ -8,7 +9,7 @@ const isStaticFace = (face: FontFace): face is StaticFace =>
 
 // Packages prefer a 400 weight normal face for `index.css`, but there are fonts
 // which do not have weight 400, or are only italic.
-const pickStaticIndexCSS = (faces: FontFace[]): string | undefined => {
+const pickStaticIndexCSS = (faces: readonly FontFace[]): string | undefined => {
 	const findClosestFace = (candidates: readonly StaticFace[]) => {
 		if (candidates.length === 0) {
 			return undefined;
@@ -29,36 +30,28 @@ const pickStaticIndexCSS = (faces: FontFace[]): string | undefined => {
 
 	return index.style === 'normal'
 		? `${index.weight}.css`
-		: `${index.weight}-${index.style}.css`;
+		: `${index.weight}-${formatStyle(index.style)}.css`;
 };
 
 const pickVariableIndexCSS = (
-	variable: FontConfig['variable'],
+	variable: VariableAxisConfig,
 	facesByCSSFile: ReadonlyMap<string, readonly FontFace[]>,
 ): string | undefined => {
-	if (!variable) {
-		return undefined;
-	}
-
 	// Prefer the primary-axis normal file, but fall back to the italic file.
 	const axisKey = determineAxisKey(variable);
-	const normalKey = `${axisKey}.css`;
-
-	if (facesByCSSFile.has(normalKey)) {
-		return normalKey;
-	}
-
-	const italicKey = `${axisKey}-italic.css`;
-	return facesByCSSFile.has(italicKey) ? italicKey : undefined;
+	return [`${axisKey}.css`, `${axisKey}-italic.css`].find((filename) =>
+		facesByCSSFile.has(filename),
+	);
 };
 
 // One resolved face can feed multiple published CSS files, for example a static
 // italic face contributes to both `400-italic.css` and `latin-italic.css`.
-const groupFacesByCSSFile = (faces: FontFace[]): Map<string, FontFace[]> => {
+const groupFacesByCSSFile = (
+	faces: readonly FontFace[],
+): Map<string, FontFace[]> => {
 	const facesByCSSFile = new Map<string, FontFace[]>();
 	const useSlicedAggregate = faces.some((face) => face.sliceIndex > 0);
 
-	// Iterate over each face and assign it to the appropriate CSS files based on its properties.
 	for (const face of faces) {
 		for (const cssFile of getCSSFiles(face, useSlicedAggregate)) {
 			const cssFaces = facesByCSSFile.get(cssFile);
@@ -97,11 +90,8 @@ const getCSSFiles = (face: FontFace, useSlicedAggregate = false): string[] => {
 	// Named subsets and full-repertoire builds keep their direct entrypoints.
 	if (!isSlice) {
 		assetFilenames.push(`${face.subset}.css`);
-	}
-
-	// Keep the legacy subset italic entrypoint.
-	if (!isSlice && style !== 'normal') {
-		assetFilenames.push(`${face.subset}-italic.css`);
+		// Keep the legacy subset italic entrypoint.
+		if (style !== 'normal') assetFilenames.push(`${face.subset}-italic.css`);
 	}
 
 	return assetFilenames;

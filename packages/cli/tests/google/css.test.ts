@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest';
 
-import { generateVariableCSS } from '../../src/google/css';
+import {
+	generateIconStaticCSS,
+	generateV1CSS,
+	generateV2CSS,
+	generateVariableCSS,
+} from '../../src/google/css';
 
 describe('generate variable css', () => {
 	it('uses the full bundle as the default for multiple custom axes', () => {
@@ -15,7 +20,7 @@ describe('generate variable css', () => {
 				variants: {
 					400: {
 						normal: {
-							latin: { url: { woff2: 'fixture.woff2' } },
+							latin: { url: { woff2: 'https://example.com/fixture.woff2' } },
 						},
 					},
 				},
@@ -26,9 +31,9 @@ describe('generate variable css', () => {
 					SCAN: { default: '0', min: '-53', max: '100', step: '1' },
 				},
 				variants: {
-					BLED: { normal: { latin: 'fixture.woff2' } },
-					SCAN: { normal: { latin: 'fixture.woff2' } },
-					full: { normal: { latin: 'fixture.woff2' } },
+					BLED: { normal: { latin: 'https://example.com/fixture.woff2' } },
+					SCAN: { normal: { latin: 'https://example.com/fixture.woff2' } },
+					full: { normal: { latin: 'https://example.com/fixture.woff2' } },
 				},
 			},
 			(id, subset, axes, style) =>
@@ -54,7 +59,7 @@ describe('generate variable css', () => {
 				variants: {
 					400: {
 						normal: {
-							latin: { url: { woff2: 'fixture.woff2' } },
+							latin: { url: { woff2: 'https://example.com/fixture.woff2' } },
 						},
 					},
 				},
@@ -64,7 +69,7 @@ describe('generate variable css', () => {
 					MONO: { default: '0', min: '0', max: '1', step: '1' },
 				},
 				variants: {
-					MONO: { normal: { latin: 'fixture.woff2' } },
+					MONO: { normal: { latin: 'https://example.com/fixture.woff2' } },
 				},
 			},
 			(id, subset, axes, style) =>
@@ -90,7 +95,7 @@ describe('generate variable css', () => {
 				variants: {
 					400: {
 						italic: {
-							latin: { url: { woff2: 'fixture.woff2' } },
+							latin: { url: { woff2: 'https://example.com/fixture.woff2' } },
 						},
 					},
 				},
@@ -100,7 +105,7 @@ describe('generate variable css', () => {
 					slnt: { default: '0', min: '-15', max: '0', step: '1' },
 				},
 				variants: {
-					slnt: { italic: { latin: 'fixture.woff2' } },
+					slnt: { italic: { latin: 'https://example.com/fixture.woff2' } },
 				},
 			},
 			(id, subset, axes, style) =>
@@ -115,4 +120,89 @@ describe('generate variable css', () => {
 		expect(index?.css).toBe(slntItalic?.css);
 		expect(index?.css).toContain('molle-latin-slnt-italic.woff2');
 	});
+});
+
+describe('actual static variants', () => {
+	const metadata = {
+		id: 'example',
+		family: 'Example',
+		styles: ['normal', 'italic'],
+		weights: [300, 400],
+		subsets: ['latin', 'cyrillic'],
+		unicodeRange: { latin: 'U+0000-00FF', '[0]': 'U+0100-017F' },
+		variants: {
+			300: {
+				normal: {
+					latin: { url: { woff2: 'https://example.com/light.woff2' } },
+				},
+			},
+			400: {
+				normal: {
+					latin: {
+						url: {
+							woff2: 'https://example.com/regular.woff2',
+							woff: 'https://example.com/regular.woff',
+						},
+					},
+				},
+				italic: {
+					'[0]': {
+						url: {
+							woff2: 'https://example.com/italic.woff2',
+							woff: 'not available',
+						},
+					},
+				},
+			},
+		},
+	};
+	const path = (
+		id: string,
+		subset: string,
+		weight: string,
+		style: string,
+		extension: string,
+	) => `./files/${id}-${subset}-${weight}-${style}.${extension}`;
+	it('renders only available subsets and formats with their coverage', () => {
+		expect(generateV2CSS(metadata, path)).toMatchSnapshot();
+	});
+	it('includes known coverage in subset entrypoints', () => {
+		expect(generateV1CSS(metadata, path)).toMatchSnapshot();
+	});
+	it('emits icon entrypoints once and selects only the default face', () => {
+		expect(generateIconStaticCSS(metadata, path)).toMatchSnapshot();
+	});
+});
+
+it('prefers a normal variable entrypoint even when italic is listed first', () => {
+	expect(
+		generateVariableCSS(
+			{
+				id: 'variable',
+				family: 'Variable Example',
+				weights: [400],
+				styles: ['italic', 'normal'],
+				subsets: ['latin'],
+				variants: {},
+				unicodeRange: { latin: 'U+0000-00FF' },
+			},
+			{
+				axes: {
+					wght: { min: '100', max: '900', default: '400', step: '1' },
+					ital: { min: '0', max: '1', default: '0', step: '1' },
+				},
+				variants: {
+					wght: {
+						italic: { latin: 'https://example.com/italic.woff2' },
+						normal: {
+							latin: 'https://example.com/normal.woff2',
+							fallback: 'https://example.com/fallback.woff2',
+						},
+					},
+				},
+			},
+			(id, subset, axis, style) =>
+				`./files/${id}-${subset}-${axis}-${style}.woff2`,
+		),
+	).toMatchSnapshot();
 });

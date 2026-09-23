@@ -5,8 +5,7 @@ exports[`packager variable > should generate standard variable font successfully
   "calls": [
     [
       "test/cabin/wdth.css",
-      "/* cabin-vietnamese-wdth-normal */
-@font-face {
+      "@font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
   font-display: swap;
@@ -16,7 +15,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* cabin-latin-ext-wdth-normal */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
@@ -27,7 +25,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* cabin-latin-wdth-normal */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
@@ -40,8 +37,7 @@ exports[`packager variable > should generate standard variable font successfully
     ],
     [
       "test/cabin/wdth-italic.css",
-      "/* cabin-vietnamese-wdth-italic */
-@font-face {
+      "@font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
   font-display: swap;
@@ -51,7 +47,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* cabin-latin-ext-wdth-italic */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
@@ -62,7 +57,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* cabin-latin-wdth-italic */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
@@ -75,8 +69,7 @@ exports[`packager variable > should generate standard variable font successfully
     ],
     [
       "test/cabin/wght.css",
-      "/* cabin-vietnamese-wght-normal */
-@font-face {
+      "@font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
   font-display: swap;
@@ -85,7 +78,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* cabin-latin-ext-wght-normal */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
@@ -95,7 +87,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* cabin-latin-wght-normal */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
@@ -107,8 +98,7 @@ exports[`packager variable > should generate standard variable font successfully
     ],
     [
       "test/cabin/wght-italic.css",
-      "/* cabin-vietnamese-wght-italic */
-@font-face {
+      "@font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
   font-display: swap;
@@ -117,7 +107,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* cabin-latin-ext-wght-italic */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
@@ -127,7 +116,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* cabin-latin-wght-italic */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
@@ -139,8 +127,7 @@ exports[`packager variable > should generate standard variable font successfully
     ],
     [
       "test/cabin/standard.css",
-      "/* cabin-vietnamese-standard-normal */
-@font-face {
+      "@font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
   font-display: swap;
@@ -150,7 +137,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* cabin-latin-ext-standard-normal */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
@@ -161,7 +147,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* cabin-latin-standard-normal */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
@@ -174,8 +159,7 @@ exports[`packager variable > should generate standard variable font successfully
     ],
     [
       "test/cabin/standard-italic.css",
-      "/* cabin-vietnamese-standard-italic */
-@font-face {
+      "@font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
   font-display: swap;
@@ -185,7 +169,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* cabin-latin-ext-standard-italic */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
@@ -196,7 +179,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* cabin-latin-standard-italic */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: italic;
@@ -209,8 +191,7 @@ exports[`packager variable > should generate standard variable font successfully
     ],
     [
       "test/cabin/index.css",
-      "/* cabin-vietnamese-wght-normal */
-@font-face {
+      "@font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
   font-display: swap;
@@ -219,7 +200,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* cabin-latin-ext-wght-normal */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
@@ -229,7 +209,6 @@ exports[`packager variable > should generate standard variable font successfully
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* cabin-latin-wght-normal */
 @font-face {
   font-family: 'Cabin Variable';
   font-style: normal;
@@ -278,8 +257,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   "calls": [
     [
       "test/roboto-flex/opsz.css",
-      "/* roboto-flex-cyrillic-ext-opsz-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -288,7 +266,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-opsz-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -298,7 +275,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-opsz-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -308,7 +284,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-opsz-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -318,7 +293,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-opsz-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -328,7 +302,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-opsz-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -340,8 +313,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/slnt.css",
-      "/* roboto-flex-cyrillic-ext-slnt-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
   font-display: swap;
@@ -350,7 +322,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-slnt-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -360,7 +331,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-slnt-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -370,7 +340,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-slnt-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -380,7 +349,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-slnt-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -390,7 +358,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-slnt-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -402,8 +369,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/wdth.css",
-      "/* roboto-flex-cyrillic-ext-wdth-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -413,7 +379,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-wdth-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -424,7 +389,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-wdth-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -435,7 +399,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-wdth-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -446,7 +409,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-wdth-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -457,7 +419,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-wdth-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -470,8 +431,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/grad.css",
-      "/* roboto-flex-cyrillic-ext-grad-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -480,7 +440,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -490,7 +449,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -500,7 +458,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -510,7 +467,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -520,7 +476,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-grad-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -532,8 +487,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/xtra.css",
-      "/* roboto-flex-cyrillic-ext-xtra-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -542,7 +496,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -552,7 +505,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -562,7 +514,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -572,7 +523,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -582,7 +532,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-xtra-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -594,8 +543,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/yopq.css",
-      "/* roboto-flex-cyrillic-ext-yopq-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -604,7 +552,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -614,7 +561,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -624,7 +570,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -634,7 +579,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -644,7 +588,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-yopq-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -656,8 +599,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/ytas.css",
-      "/* roboto-flex-cyrillic-ext-ytas-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -666,7 +608,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -676,7 +617,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -686,7 +626,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -696,7 +635,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -706,7 +644,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-ytas-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -718,8 +655,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/ytde.css",
-      "/* roboto-flex-cyrillic-ext-ytde-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -728,7 +664,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -738,7 +673,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -748,7 +682,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -758,7 +691,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -768,7 +700,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-ytde-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -780,8 +711,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/ytfi.css",
-      "/* roboto-flex-cyrillic-ext-ytfi-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -790,7 +720,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -800,7 +729,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -810,7 +738,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -820,7 +747,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -830,7 +756,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-ytfi-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -842,8 +767,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/ytlc.css",
-      "/* roboto-flex-cyrillic-ext-ytlc-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -852,7 +776,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -862,7 +785,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -872,7 +794,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -882,7 +803,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -892,7 +812,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-ytlc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -904,8 +823,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/ytuc.css",
-      "/* roboto-flex-cyrillic-ext-ytuc-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -914,7 +832,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -924,7 +841,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -934,7 +850,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -944,7 +859,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -954,7 +868,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-ytuc-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -966,8 +879,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/wght.css",
-      "/* roboto-flex-cyrillic-ext-wght-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -976,7 +888,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -986,7 +897,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -996,7 +906,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -1006,7 +915,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -1016,7 +924,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -1028,8 +935,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/full.css",
-      "/* roboto-flex-cyrillic-ext-full-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
   font-display: swap;
@@ -1039,7 +945,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-full-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1050,7 +955,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-full-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1061,7 +965,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-full-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1072,7 +975,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-full-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1083,7 +985,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-full-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1096,8 +997,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/standard.css",
-      "/* roboto-flex-cyrillic-ext-standard-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
   font-display: swap;
@@ -1107,7 +1007,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-standard-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1118,7 +1017,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-standard-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1129,7 +1027,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-standard-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1140,7 +1037,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-standard-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1151,7 +1047,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-standard-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: oblique 0deg 10deg;
@@ -1164,8 +1059,7 @@ exports[`packager variable > should generate variable font with lots of axes (ro
     ],
     [
       "test/roboto-flex/index.css",
-      "/* roboto-flex-cyrillic-ext-wght-normal */
-@font-face {
+      "@font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
   font-display: swap;
@@ -1174,7 +1068,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
 }
 
-/* roboto-flex-cyrillic-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -1184,7 +1077,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
 }
 
-/* roboto-flex-greek-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -1194,7 +1086,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0370-03FF;
 }
 
-/* roboto-flex-vietnamese-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -1204,7 +1095,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* roboto-flex-latin-ext-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -1214,7 +1104,6 @@ exports[`packager variable > should generate variable font with lots of axes (ro
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* roboto-flex-latin-wght-normal */
 @font-face {
   font-family: 'Roboto Flex Variable';
   font-style: normal;
@@ -1295,8 +1184,7 @@ exports[`packager variable > should generate variable font without wght successf
   "calls": [
     [
       "test/ballet/opsz.css",
-      "/* ballet-vietnamese-opsz-normal */
-@font-face {
+      "@font-face {
   font-family: 'Ballet Variable';
   font-style: normal;
   font-display: swap;
@@ -1305,7 +1193,6 @@ exports[`packager variable > should generate variable font without wght successf
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* ballet-latin-ext-opsz-normal */
 @font-face {
   font-family: 'Ballet Variable';
   font-style: normal;
@@ -1315,7 +1202,6 @@ exports[`packager variable > should generate variable font without wght successf
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* ballet-latin-opsz-normal */
 @font-face {
   font-family: 'Ballet Variable';
   font-style: normal;
@@ -1327,8 +1213,7 @@ exports[`packager variable > should generate variable font without wght successf
     ],
     [
       "test/ballet/standard.css",
-      "/* ballet-vietnamese-standard-normal */
-@font-face {
+      "@font-face {
   font-family: 'Ballet Variable';
   font-style: normal;
   font-display: swap;
@@ -1337,7 +1222,6 @@ exports[`packager variable > should generate variable font without wght successf
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* ballet-latin-ext-standard-normal */
 @font-face {
   font-family: 'Ballet Variable';
   font-style: normal;
@@ -1347,7 +1231,6 @@ exports[`packager variable > should generate variable font without wght successf
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* ballet-latin-standard-normal */
 @font-face {
   font-family: 'Ballet Variable';
   font-style: normal;
@@ -1359,8 +1242,7 @@ exports[`packager variable > should generate variable font without wght successf
     ],
     [
       "test/ballet/index.css",
-      "/* ballet-vietnamese-opsz-normal */
-@font-face {
+      "@font-face {
   font-family: 'Ballet Variable';
   font-style: normal;
   font-display: swap;
@@ -1369,7 +1251,6 @@ exports[`packager variable > should generate variable font without wght successf
   unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;
 }
 
-/* ballet-latin-ext-opsz-normal */
 @font-face {
   font-family: 'Ballet Variable';
   font-style: normal;
@@ -1379,7 +1260,6 @@ exports[`packager variable > should generate variable font without wght successf
   unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
-/* ballet-latin-opsz-normal */
 @font-face {
   font-family: 'Ballet Variable';
   font-style: normal;

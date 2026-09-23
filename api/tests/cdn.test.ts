@@ -205,7 +205,7 @@ describe('cdn routes', () => {
 			expect(css).not.toContain('\n');
 			expect(css).not.toContain('/*');
 			expect(css.match(/@font-face{/g)).toHaveLength(2);
-			expect(css).toContain("font-family:'Family Pack';");
+			expect(css).toMatchSnapshot();
 		});
 
 		it('generates variable CSS output', async () => {
@@ -219,9 +219,7 @@ describe('cdn routes', () => {
 			expect(response.headers.get('Content-Type')).toBe(
 				'text/css; charset=utf-8',
 			);
-			expect(css).toContain("font-family: 'Recursive Variable'");
-			expect(css).toContain('recursive:vf@5.0.0/');
-			expect(css).toContain('.woff2');
+			expect(css).toMatchSnapshot();
 		});
 
 		it('serves published CSS filenames for custom variable axes', async () => {

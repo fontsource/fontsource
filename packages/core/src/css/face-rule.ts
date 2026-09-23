@@ -1,110 +1,68 @@
-import type { FontFace, FontSource } from '../types';
-import { formatStyle, normalizeKebabCase } from '../utils';
-
-export type UrlResolver = (input: {
-	face: FontFace;
-	source: FontSource;
-}) => string;
-
-export interface FontFaceOptions {
-	display?: string;
-	resolver?: UrlResolver;
+/** Validated face data. The renderer escapes CSS syntax; callers own metadata validation. */
+export interface CSSFontFace {
+	family: string;
+	style: string;
+	weight: number | string;
+	isVariable?: boolean;
+	stretch?: string | null;
+	/** null deliberately omits the descriptor for an unrestricted face. */
+	unicodeRange: string | null;
+	sources: readonly {
+		/** Trusted URL, already safe for unquoted CSS url(). */
+		url: string;
+		format: 'woff' | 'woff2' | 'truetype' | 'opentype' | 'woff2-variations';
+	}[];
 }
 
-const declarationIndent = '  ';
-type CSSValue = string | string[];
+export interface CSSRenderOptions {
+	display?: string;
+	minify?: boolean;
+}
 
-// Build one `src` entry per source file.
-const getSourceValue = (
-	face: FontFace,
-	source: FontSource,
-	resolver?: UrlResolver,
+// Escape single-quoted CSS strings; metadata validation belongs to callers.
+const quote = (value: string): string =>
+	`'${value
+		.replaceAll('\\', '\\\\')
+		.replaceAll("'", "\\'")
+		.replaceAll('\n', '\\a ')
+		.replaceAll('\r', '\\d ')
+		.replaceAll('\f', '\\c ')}'`;
+
+/** Render one face in the same canonical form for packages, CDN responses and previews. */
+export const renderFontFaceRule = (
+	face: CSSFontFace,
+	{ display = 'swap', minify = false }: CSSRenderOptions = {},
 ): string => {
-	const url = resolver
-		? resolver({ face, source })
-		: `./files/${source.filename}`;
-
-	if (source.format === 'woff2') {
-		const format = face.isVariable ? "'woff2-variations'" : 'woff2';
-		return `url(${url}) format(${format})`;
-	}
-
-	let format = 'woff';
-	if (source.format === 'ttf') {
-		format = 'truetype';
-	}
-
-	return `url(${url}) format('${format}')`;
-};
-
-const getFaceComment = (family: string, face: FontFace): string => {
-	const axisOrWeight =
-		typeof face.axisKey === 'string' ? face.axisKey.toLowerCase() : face.weight;
-
-	let comment = `${normalizeKebabCase(family)}-${face.subset}-${axisOrWeight}-${formatStyle(face.style)}`;
-
-	if (face.sliceIndex > 0) {
-		comment += `-${face.sliceIndex}`;
-	}
-
-	return comment;
-};
-
-// Variable fonts get a "Variable" suffix in their family name to avoid conflicts with static faces.
-// We need it when variable fonts are included and static files are present as a fallback.
-const getResolvedFamilyName = (family: string, isVariable: boolean): string =>
-	isVariable && !family.endsWith(' Variable') ? `${family} Variable` : family;
-
-const renderDeclaration = (property: string, value: CSSValue): string => {
-	if (!Array.isArray(value)) {
-		return `${declarationIndent}${property}: ${value};`;
-	}
-
-	const continuationIndent = ' '.repeat(
-		`${declarationIndent + property}: `.length,
-	);
-
-	return `${declarationIndent}${property}: ${value.join(`,\n${continuationIndent}`)};`;
-};
-
-const renderFontFace = (
-	face: FontFace,
-	family: string,
-	options: FontFaceOptions = {},
-): string => {
-	const { display = 'swap', resolver } = options;
-
 	if (face.sources.length === 0) {
 		throw new Error('renderFontFace requires at least one source');
 	}
 
-	const declarations: Array<readonly [property: string, value: CSSValue]> = [
-		['font-family', `'${getResolvedFamilyName(family, face.isVariable)}'`],
-		['font-style', face.style],
-		['font-display', display],
-		['font-weight', `${face.weight}`],
+	const family =
+		face.isVariable && !face.family.endsWith(' Variable')
+			? `${face.family} Variable`
+			: face.family;
+	const space = minify ? '' : ' ';
+	const declarations = [
+		// Quoting preserves names containing punctuation, digits or CSS keywords.
+		`font-family:${space}${quote(family)};`,
+		`font-style:${space}${face.style};`,
+		`font-display:${space}${display};`,
+		`font-weight:${space}${face.weight};`,
 	];
+	if (face.stretch) declarations.push(`font-stretch:${space}${face.stretch};`);
 
-	if (face.stretch) {
-		declarations.push(['font-stretch', face.stretch]);
-	}
-
-	// Multiple files for one face stay in one rule.
-	declarations.push([
-		'src',
-		face.sources.map((source) => getSourceValue(face, source, resolver)),
-	]);
-
+	const sources = face.sources.map(({ url, format }) => {
+		// Legacy hints such as 'woff2-variations' require string syntax.
+		const sourceFormat =
+			format === 'woff2-variations' ? "'woff2-variations'" : format;
+		return `url(${url}) format(${sourceFormat})`;
+	});
+	declarations.push(`src:${space}${sources.join(`,${space}`)};`);
 	if (face.unicodeRange) {
-		declarations.push(['unicode-range', face.unicodeRange]);
+		declarations.push(`unicode-range:${space}${face.unicodeRange};`);
 	}
 
-	const comment = getFaceComment(family, face);
-	const content = declarations
-		.map(([property, value]) => renderDeclaration(property, value))
-		.join('\n');
-
-	return `${comment ? `/* ${comment} */\n` : ''}@font-face {\n${content}\n}`;
+	return minify
+		? `@font-face{${declarations.join('')}}`
+		: `@font-face {\n  ${declarations.join('\n  ')}\n}`;
 };
-
-export { renderFontFace };

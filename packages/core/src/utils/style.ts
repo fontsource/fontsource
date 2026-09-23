@@ -36,14 +36,13 @@ export const formatStretchValue = (axis: VariableFontAxis): string =>
 		: `${axis.min}% ${axis.max}%`;
 
 export const formatSlantValue = (axis: VariableFontAxis): string => {
+	// OpenType slnt and CSS oblique use opposite signs; reverse the endpoints too.
 	const min = Number(axis.min);
 	const max = Number(axis.max);
-	const minDegrees = Math.abs(min);
-	const maxDegrees = Math.abs(max);
+	const minDegrees = -max;
+	const maxDegrees = -min;
 
-	return min === max
-		? `${minDegrees}deg`
-		: `${Math.min(minDegrees, maxDegrees)}deg ${Math.max(minDegrees, maxDegrees)}deg`;
+	return min === max ? `${minDegrees}deg` : `${minDegrees}deg ${maxDegrees}deg`;
 };
 
 export const findClosestWeight = (weights: number[], target = 400): number => {

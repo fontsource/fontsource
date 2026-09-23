@@ -1,7 +1,7 @@
 import type {
-	CSSBuildOptions,
 	FontConfig,
 	FontFace,
+	VariableAxisKey,
 	WebFontFormat,
 } from '../types';
 import { generateStaticFilename, generateVariableFilename } from './filename';
@@ -10,18 +10,17 @@ import { normalizeKebabCase } from './text';
 import {
 	getFaceStretch,
 	getFaceStyle,
-	getRequestedAxisKeys,
+	getVariableAxisKeys,
 	pickAxisConfig,
 } from './variable';
 
-type ResolveFontFaceOptions = CSSBuildOptions;
-
 /**
- * Get the full list of font faces to generate for a given font configuration.
+ * Plan filenames and faces from metadata. axisKeys limits variable bundles;
+ * Omit axisKeys for every published bundle; an empty list selects none.
  */
 export const resolveFontFaces = (
 	config: FontConfig,
-	options: ResolveFontFaceOptions = {},
+	axisKeys?: VariableAxisKey[],
 ): FontFace[] => {
 	const {
 		id,
@@ -40,7 +39,7 @@ export const resolveFontFaces = (
 	const familyId = id ?? normalizeKebabCase(family);
 
 	if (isVariable) {
-		const axisKeys = getRequestedAxisKeys(variable, options.axisKeys);
+		const requestedAxes = axisKeys ?? getVariableAxisKeys(variable);
 
 		// Filter out ttf formats for variable fonts.
 		const variableFormats = formats.filter(
@@ -48,7 +47,7 @@ export const resolveFontFaces = (
 		);
 
 		// Generate one face per axis key, with the weight set to the closest available weight.
-		for (const axisKey of axisKeys) {
+		for (const axisKey of requestedAxes) {
 			const axisConfig = pickAxisConfig(variable, axisKey);
 			const cssWeight = axisConfig.wght
 				? formatAxisValue(axisConfig.wght)

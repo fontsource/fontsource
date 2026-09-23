@@ -48,7 +48,6 @@
 	"license": "MIT",
 	"dependencies": {
 		"@clack/prompts": "^1.7.0",
-		"@fontsource-utils/generate": "workspace:^",
 		"cac": "^7.0.0",
 		"consola": "^3.1.0",
 		"dotenv": "^17.4.2",
@@ -59,6 +58,7 @@
 		"picocolors": "^1.0.0"
 	},
 	"devDependencies": {
+		"@fontsource-utils/core": "workspace:*",
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "catalog:node20",
 		"@vitest/coverage-v8": "catalog:",

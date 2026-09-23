@@ -1,5 +1,4 @@
 /* wdth.css */
-/* testfont-latin-wdth-normal */
 @font-face {
   font-family: 'TestFont Variable';
   font-style: normal;
@@ -10,7 +9,6 @@
   unicode-range: U+0000-00FF;
 }
 /* index.css */
-/* testfont-latin-wdth-normal */
 @font-face {
   font-family: 'TestFont Variable';
   font-style: normal;

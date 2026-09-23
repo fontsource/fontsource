@@ -1,0 +1,280 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`actual static variants > emits icon entrypoints once and selects only the default face 1`] = `
+[
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
+}",
+    "filename": "300.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
+}",
+    "filename": "latin-300.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
+}",
+    "filename": "latin.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
+}",
+    "filename": "400.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
+}",
+    "filename": "latin-400.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
+}",
+    "filename": "index.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
+}",
+    "filename": "400-italic.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
+}",
+    "filename": "[0]-400-italic.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
+}",
+    "filename": "[0].css",
+  },
+]
+`;
+
+exports[`actual static variants > includes known coverage in subset entrypoints 1`] = `
+[
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
+  unicode-range: U+0000-00FF;
+}",
+    "filename": "latin-300.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
+  unicode-range: U+0000-00FF;
+}",
+    "filename": "latin.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
+  unicode-range: U+0000-00FF;
+}",
+    "filename": "latin-400.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
+  unicode-range: U+0100-017F;
+}",
+    "filename": "[0]-400-italic.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
+  unicode-range: U+0100-017F;
+}",
+    "filename": "[0]-italic.css",
+  },
+  {
+    "css": "",
+    "filename": "cyrillic.css",
+  },
+]
+`;
+
+exports[`actual static variants > renders only available subsets and formats with their coverage 1`] = `
+[
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/example-latin-300-normal.woff2) format(woff2);
+  unicode-range: U+0000-00FF;
+}",
+    "filename": "300.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
+  unicode-range: U+0000-00FF;
+}",
+    "filename": "400.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-latin-400-normal.woff2) format(woff2), url(./files/example-latin-400-normal.woff) format(woff);
+  unicode-range: U+0000-00FF;
+}",
+    "filename": "index.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Example';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/example-0-400-italic.woff2) format(woff2);
+  unicode-range: U+0100-017F;
+}",
+    "filename": "400-italic.css",
+  },
+]
+`;
+
+exports[`prefers a normal variable entrypoint even when italic is listed first 1`] = `
+[
+  {
+    "css": "@font-face {
+  font-family: 'Variable Example Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/variable-latin-wght-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}",
+    "filename": "wght-italic.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Variable Example Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/variable-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: 'Variable Example Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/variable-fallback-wght-normal.woff2) format('woff2-variations');
+}",
+    "filename": "wght.css",
+  },
+  {
+    "css": "@font-face {
+  font-family: 'Variable Example Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/variable-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: 'Variable Example Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/variable-fallback-wght-normal.woff2) format('woff2-variations');
+}",
+    "filename": "index.css",
+  },
+]
+`;

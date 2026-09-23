@@ -1,0 +1,72 @@
+/* MONO.css */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(./files/recursive-latin-mono-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+/* MONO-italic.css */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(./files/recursive-latin-mono-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+/* standard-italic.css */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(./files/recursive-latin-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(./files/recursive-latin-standard-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+/* full-italic.css */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(./files/recursive-latin-full-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+/* index.css */
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(./files/recursive-latin-full-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: 'Recursive Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(./files/recursive-latin-full-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
