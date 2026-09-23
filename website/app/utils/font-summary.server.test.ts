@@ -3,25 +3,21 @@ import { getFontSummary } from './font-summary.server';
 
 const metadata = { family: 'Example', category: 'sans-serif' } as const;
 
-describe('font search summaries', () => {
-	it('keeps readable text and abbreviations without Markdown or link URLs', () => {
+describe('font summaries', () => {
+	it('uses complete category and designer facts', () => {
 		expect(
 			getFontSummary(
-				metadata,
-				'An **uppercase** font inspired by [U.S. currency](https://example.com). More history follows.',
+				{ family: 'Roboto', category: 'sans-serif' },
+				'Christian Robertson, ParaType, Font Bureau',
 			),
-		).toBe('An uppercase font inspired by U.S. currency.');
+		).toBe(
+			'Roboto is a sans-serif font by Christian Robertson, ParaType, Font Bureau.',
+		);
 	});
 
-	it('uses structured facts when the opening sentence is too long', () => {
-		expect(
-			getFontSummary(metadata, `A ${'long story '.repeat(20)}.`, 'A Designer'),
-		).toBe('Example is a sans-serif font by A Designer.');
-	});
-
-	it('handles missing prose and omits an overly long designer list', () => {
+	it('omits missing or overly long designer lists', () => {
 		expect(getFontSummary(metadata)).toBe('Example is a sans-serif font.');
-		expect(getFontSummary(metadata, undefined, 'Designer, '.repeat(30))).toBe(
+		expect(getFontSummary(metadata, 'Designer, '.repeat(30))).toBe(
 			'Example is a sans-serif font.',
 		);
 	});

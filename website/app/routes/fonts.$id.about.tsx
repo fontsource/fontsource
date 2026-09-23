@@ -15,10 +15,7 @@ import {
 import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontSummary } from '@/utils/font-summary.server';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
-import {
-	getRegistryContent,
-	selectRegistryFamilyLanguages,
-} from '@/utils/registry';
+import { selectRegistryFamilyLanguages } from '@/utils/registry';
 import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -53,11 +50,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		{
 			...base,
 			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
-			fontSummary: getFontSummary(
-				base.metadata,
-				getRegistryContent(base.registry)?.description,
-				base.registry.designer,
-			),
+			fontSummary: getFontSummary(base.metadata, base.registry.designer),
 			languages: selectRegistryFamilyLanguages(base.registry, languages),
 			axisRegistry: axesResult,
 			taxonomy: taxonomyResult,
