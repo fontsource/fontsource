@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/euphoriascript",
-		"revision": "78d99652827fb969c23ab117ca38d93152b32bce"
+		"revision": "5c641480f1c300fc9424db0fe888bf5cfc285e10"
 	},
 	"provenance": {
 		"directory": "ofl/euphoriascript",
 		"repository": "google/fonts",
-		"revision": "55420926a1299419643df7eaf1b872d7049c8877",
+		"revision": "46d3d3db90a721278313893c6614f59c70170d0f",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

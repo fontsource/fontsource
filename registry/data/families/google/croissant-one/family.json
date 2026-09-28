@@ -68,6 +68,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -430,15 +431,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/croissantone",
-		"revision": "0747cf401c74b546f997a820cb036a39513ba09c"
+		"revision": "62d7d39fdbd2c94bc1ab7593d4c984ce327146eb"
 	},
 	"provenance": {
 		"directory": "ofl/croissantone",
 		"repository": "google/fonts",
-		"revision": "389b770410cc0b7c21c85673bfa2077420fe7f65",
+		"revision": "26b6c8167677b8e0050218cfa400629e40e696ea",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

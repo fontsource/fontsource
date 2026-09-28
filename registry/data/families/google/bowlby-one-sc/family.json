@@ -380,15 +380,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/bowlbyonesc",
-		"revision": "7fc977deba6f6a55ede3fd17ebfc9d299afdfd83"
+		"revision": "7cdb4c893d50681fe94144c3de09a285f01f8845"
 	},
 	"provenance": {
 		"directory": "ofl/bowlbyonesc",
 		"repository": "google/fonts",
-		"revision": "159256c52af581499b67837efedbb6ecd051c485",
+		"revision": "eb8cc723903b083ff94f666b72e80cfad74b4a0c",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

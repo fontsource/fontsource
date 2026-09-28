@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/chicle",
-		"revision": "f68c0fa9e45e089b7cb3fb7bbef873b9e7bf8123"
+		"revision": "07b8112c518449245b5c2c195c31f73cd993ab64"
 	},
 	"provenance": {
 		"directory": "ofl/chicle",
 		"repository": "google/fonts",
-		"revision": "383c6f09a0a4efd39825d4b1cec9c0bcc2708558",
+		"revision": "efb6ebafed85126be621b8d8e57dc1a0a42164ca",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

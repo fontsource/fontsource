@@ -344,15 +344,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/anticdidone",
-		"revision": "a69ba5c398a94f60b93bf779c1d9c2dc27975258"
+		"revision": "078e3e73a45ea71a9b0b1b67e7df91ce0e0b2f9b"
 	},
 	"provenance": {
 		"directory": "ofl/anticdidone",
 		"repository": "google/fonts",
-		"revision": "4f45bb1715060a307b79e4606719f4451e54e690",
+		"revision": "2f2308031f7ee31b57b4bea9a88b217e1f8dc32f",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -82,7 +82,7 @@
 		],
 		[
 			"20AD",
-			"20C0"
+			"20C4"
 		],
 		[
 			"2113",
@@ -94,29 +94,21 @@
 		],
 		[
 			"A720",
-			"A7CD"
+			"A7DD"
 		],
 		[
-			"A7D0",
-			"A7D1"
+			"A7E2",
+			"A7E2"
 		],
 		[
-			"A7D3",
-			"A7D3"
-		],
-		[
-			"A7D5",
-			"A7DC"
-		],
-		[
-			"A7F2",
+			"A7F1",
 			"A7FF"
 		]
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/latin-ext_unique-glyphs.nam",
-		"revision": "8a65dc667ffd2321c2b3649ba81fda21c9acbec5",
-		"sha256": "380bffeed1eacae9b71fda9f61f3f258f34b830aae27acb2e5d6028601e942a2",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "d83f0af51553e696698be24cab56ef455ae966899bc08b64cb8304ab66ef6c37",
 		"upstream": "namFiles"
 	}
 }

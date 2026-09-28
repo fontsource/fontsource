@@ -66,6 +66,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -426,10 +427,10 @@
 	"provenance": {
 		"directory": "ofl/fragmentmonosc",
 		"repository": "google/fonts",
-		"revision": "c43b48b86c1cd991e696398ce9851245390ad61f",
+		"revision": "f012a7a02e51c917b4398ab9bb921117d66f5d04",
 		"type": "github"
 	},
-	"sourceModified": "2026-05-29",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

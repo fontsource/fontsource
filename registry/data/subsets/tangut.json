@@ -30,21 +30,21 @@
 		],
 		[
 			"17000",
-			"187F7"
-		],
-		[
-			"18800",
 			"18AFF"
 		],
 		[
 			"18D00",
-			"18D08"
+			"18D20"
+		],
+		[
+			"18D80",
+			"18DF2"
 		]
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/tangut_unique-glyphs.nam",
-		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
-		"sha256": "4c314e13459609b82bef29d1eb6448be7189b6ddc9ef56f59cbfae75cc2d0da9",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "679dfc9ccf2418e84618df3c1d9dc1af2565d7ed7aebf42e31593721cbdc3036",
 		"upstream": "namFiles"
 	}
 }

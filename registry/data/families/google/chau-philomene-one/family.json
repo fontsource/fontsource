@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/chauphilomeneone",
-		"revision": "d7246600bbdfd898596bb8ebab13c484e5b21a55"
+		"revision": "a1f00e1a92747fb44b1120ddaa31d3421e31ed69"
 	},
 	"provenance": {
 		"directory": "ofl/chauphilomeneone",
 		"repository": "google/fonts",
-		"revision": "df37fa0949643559f29a9ce5d94970c648f2fc48",
+		"revision": "c07114671e3c72db1b7355726574b9d561634b24",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

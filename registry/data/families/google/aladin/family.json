@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/aladin",
-		"revision": "b9b4da7c18ceab08e86942dd5a0a181a6f2d1be3"
+		"revision": "acd3f4b4e28fc7b6a6932a1ff3110c53d09bc987"
 	},
 	"provenance": {
 		"directory": "ofl/aladin",
 		"repository": "google/fonts",
-		"revision": "b22e12643cf5a7d5bb0d889744357bdedfbe46e8",
+		"revision": "45fd80ace8fb8b3e892defc7274bcd41b3824ecf",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

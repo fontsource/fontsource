@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/fjordone",
-		"revision": "a6c1784e33666b26db68a0170055b9f41086240e"
+		"revision": "2ca608793920a72b6d11a00ca83a2f04b15d89b8"
 	},
 	"provenance": {
 		"directory": "ofl/fjordone",
 		"repository": "google/fonts",
-		"revision": "9b57bf5f195f0cbc6653b93d9fe9c63b85b8ad24",
+		"revision": "0d401612d0d2813f981b23bc90d8f9b206c90e7c",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

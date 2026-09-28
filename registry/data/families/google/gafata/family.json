@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/gafata",
-		"revision": "145c6761d3cf3aa1522f0bcec92b5378f67e4139"
+		"revision": "d3a34e7cacb38c4cde02605a7f1d8168e6cfd32a"
 	},
 	"provenance": {
 		"directory": "ofl/gafata",
 		"repository": "google/fonts",
-		"revision": "a08ab43d5e3fd99d68e8a0a7258a0398a5a23c91",
+		"revision": "8edf0edf149cbf92807da3fdb1674116986c9581",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

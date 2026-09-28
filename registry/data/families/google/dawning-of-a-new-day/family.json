@@ -362,15 +362,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/dawningofanewday",
-		"revision": "a0c504721994bbcde597e453115c481419e7c43f"
+		"revision": "7becafaca78e29d8545909eaaa059819bb5959ff"
 	},
 	"provenance": {
 		"directory": "ofl/dawningofanewday",
 		"repository": "google/fonts",
-		"revision": "41decb3c007576c198db1817b9d210b7ed98c129",
+		"revision": "ce9e2c700f188f86067c84c43ed735682fae577a",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

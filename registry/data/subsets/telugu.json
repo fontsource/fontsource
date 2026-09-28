@@ -25,6 +25,10 @@
 			"965"
 		],
 		[
+			"B83",
+			"B83"
+		],
+		[
 			"C00",
 			"C0C"
 		],
@@ -61,7 +65,7 @@
 			"C5A"
 		],
 		[
-			"C5D",
+			"C5C",
 			"C5D"
 		],
 		[
@@ -75,6 +79,14 @@
 		[
 			"C77",
 			"C7F"
+		],
+		[
+			"1CD5",
+			"1CD6"
+		],
+		[
+			"1CD8",
+			"1CD8"
 		],
 		[
 			"1CDA",
@@ -95,8 +107,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/telugu_unique-glyphs.nam",
-		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
-		"sha256": "62da7cd98288319c04bb27e788c480fd4dbaed65bb75d1ae946ca1369626b5aa",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "c5e099a1b2f97594f941c7f70c660b82f8386462df11815335c9a0570cf2a8bf",
 		"upstream": "namFiles"
 	}
 }

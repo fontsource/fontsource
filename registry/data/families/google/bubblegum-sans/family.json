@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/bubblegumsans",
-		"revision": "ad8f70f6b46d0c3e66f2e38f943435eb2b6bb625"
+		"revision": "a2d0062318639fe63f2a8ffd78fec793ee8e6248"
 	},
 	"provenance": {
 		"directory": "ofl/bubblegumsans",
 		"repository": "google/fonts",
-		"revision": "3d942604a9e5ab6153f59e90addcbff4c1b26828",
+		"revision": "a03b73f9e72fa787ecca3e4e4182838a3aa71cf2",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

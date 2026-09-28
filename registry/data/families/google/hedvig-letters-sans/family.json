@@ -66,6 +66,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -433,20 +434,20 @@
 	},
 	"project": {
 		"repository": "https://github.com/KanonFoundry/HedvigLetters",
-		"revision": "345b4d9015af6a26eb05e436460ca41fc42784df"
+		"revision": "d05ac773fd287039be44147027a3787188ddb859"
 	},
 	"provenance": {
 		"directory": "ofl/hedvigletterssans",
 		"repository": "google/fonts",
-		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"revision": "191be87cd60e4adebf3a3f28cbabd33a102a1cc7",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-03",
+	"sourceModified": "2026-08-27",
 	"sources": [
 		{
 			"inspection": {
 				"axes": [],
-				"codepoints": 414,
+				"codepoints": 416,
 				"colorTables": [],
 				"features": {
 					"gpos": [
@@ -472,16 +473,16 @@
 						"sups"
 					]
 				},
-				"fontVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
-				"glyphs": 457,
+				"fontVersion": "Version 1.001; ttfautohint (v1.8.4.16-eb64)",
+				"glyphs": 459,
 				"outline": "glyf",
 				"style": "normal",
-				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00B4, U+00B6-0113, U+0116-012B, U+012E-0137, U+0139-013E, U+0141-0148, U+014A-014D, U+0150-0165, U+0168-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0312, U+0326-0328, U+1E20-1E21, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+1EF8-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2153-215E, U+2190-2193, U+2196-2199, U+2202, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24BD, U+25F0",
+				"unicodeRange": "U+0020-007E, U+00A0-00AC, U+00AE-00B4, U+00B6-0113, U+0116-012B, U+012E-0137, U+0139-013E, U+0141-0148, U+014A-014D, U+0150-0165, U+0168-017E, U+0192, U+0218-021B, U+0237, U+02C6-02C7, U+02D8-02DD, U+0300-0304, U+0306-0308, U+030A-030C, U+0312, U+0326-0328, U+1E20-1E21, U+1E80-1E85, U+1E9E, U+1EF2-1EF3, U+1EF8-1EF9, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2028-2029, U+2030, U+2039-203A, U+2044, U+2070, U+2074-2079, U+2080-2089, U+20AC, U+2122, U+2153-215E, U+2190-2193, U+2196-2199, U+2202, U+220F, U+2211-2212, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+24BD, U+25F0",
 				"weight": 400
 			},
 			"path": "ofl/hedvigletterssans/HedvigLettersSans-Regular.ttf",
-			"sha256": "ee35016e71917e3960b310607480f4621d511720ebd1cedff8d44674cf09ae80",
-			"size": 80700,
+			"sha256": "d4f20dfa9c65f2ed46af3ec66e055aaa56c30abf1d587ed2dd23f38146647df1",
+			"size": 80828,
 			"variant": {
 				"style": "normal",
 				"weight": 400

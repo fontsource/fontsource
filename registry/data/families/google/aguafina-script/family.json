@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/aguafinascript",
-		"revision": "0cd0eecf14f34e946400cb472a9241616e4833ac"
+		"revision": "723ec37b4f2657506b004f6db007c482f3a8af02"
 	},
 	"provenance": {
 		"directory": "ofl/aguafinascript",
 		"repository": "google/fonts",
-		"revision": "d7b3b6c3c6ac39284d34f716d9e7ab32a0f3cdde",
+		"revision": "52c2e47b7c479397c3664aee52686555d89f66f9",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

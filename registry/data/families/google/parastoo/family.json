@@ -84,6 +84,7 @@
 		"ckb_Arab",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -562,8 +563,6 @@
 	],
 	"status": "active",
 	"tags": [
-		"expressive/sincere",
-		"expressive/vintage",
 		"serif/transitional"
 	]
 }

@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/durusans",
-		"revision": "d1fe3f7222addb4f12bf8fd244a26e9304a7a376"
+		"revision": "43875057a510192707f378af813ecd280b6bbc02"
 	},
 	"provenance": {
 		"directory": "ofl/durusans",
 		"repository": "google/fonts",
-		"revision": "344e15e2e01aa95569f677bb0d626edc5bf91735",
+		"revision": "f28eff3142d6945e73b1e1598f7c0a88f196e4d8",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

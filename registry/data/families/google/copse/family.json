@@ -342,15 +342,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/copse",
-		"revision": "3022d037cd17945ad478f853ce401fc51185f8d0"
+		"revision": "53eac2d38908f158fbbf0cc1863240a5fc8bc7a4"
 	},
 	"provenance": {
 		"directory": "ofl/copse",
 		"repository": "google/fonts",
-		"revision": "75c7de8d2a85f4da7083e72bb800161463e8ce07",
+		"revision": "a4f7a22f3ea6f19ffb320eac5fe83068db7d1a3f",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

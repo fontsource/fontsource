@@ -345,15 +345,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/acme",
-		"revision": "d78cd61343e6d3bb3d00d8836d727fa1b7ac02fa"
+		"revision": "33ccde2d61442c1f6c09125ba26fe4ff0ccee834"
 	},
 	"provenance": {
 		"directory": "ofl/acme",
 		"repository": "google/fonts",
-		"revision": "1e6b7aac1e7f9eb9e22b72486af83cd30ced2e05",
+		"revision": "9483d5e08cae351dd44cd1343a8ef5d9e52d37a6",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -345,15 +345,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/contrailone",
-		"revision": "755f2a5959072b2ce7e09b555cc55917bf3c7ce0"
+		"revision": "7a15438313700f49eaabd97d35a71d6987c8f6d6"
 	},
 	"provenance": {
 		"directory": "ofl/contrailone",
 		"repository": "google/fonts",
-		"revision": "e4ea616b8d0a774e0320f5c8f9e9be6ff2b2c872",
+		"revision": "b7a3a26191f2d1e508da7c4ace578f19b4c1d253",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

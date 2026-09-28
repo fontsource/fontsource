@@ -347,15 +347,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/almendrasc",
-		"revision": "e4303f5636ecd733268fc4ae29dd16d2c894cc3d"
+		"revision": "1b444171b7021e5d011427d7404387cf31bd88fc"
 	},
 	"provenance": {
 		"directory": "ofl/almendrasc",
 		"repository": "google/fonts",
-		"revision": "001f4973e8de99e2339422a025798df9b7233763",
+		"revision": "bfd5ab64f1dbab91e810edf43cc0d4322e17b8b5",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

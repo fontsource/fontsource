@@ -62,6 +62,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -399,10 +400,10 @@
 	"provenance": {
 		"directory": "ofl/hindjalandhar",
 		"repository": "google/fonts",
-		"revision": "b3da6516a278bc434699e17bda77534792ca113e",
+		"revision": "223adf869ed3b3455b173926f7ad22b84f002618",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-27",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

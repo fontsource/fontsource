@@ -82,6 +82,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -549,7 +550,6 @@
 	],
 	"status": "active",
 	"tags": [
-		"expressive/vintage",
 		"seasonal/lunar-new-year",
 		"seasonal/valentines-day"
 	]

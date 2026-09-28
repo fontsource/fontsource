@@ -87,6 +87,8 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Cyrl",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -510,10 +512,10 @@
 	"provenance": {
 		"directory": "ofl/alumnisanscollegiateonesc",
 		"repository": "google/fonts",
-		"revision": "fffdadf0f0c9cc1ec8b407063424a8bfbee05611",
+		"revision": "107938374d47f7f28b054a70f12446abfd1c0647",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-03",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

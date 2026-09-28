@@ -86,6 +86,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -512,10 +513,10 @@
 	"provenance": {
 		"directory": "ofl/bigshoulderstextsc",
 		"repository": "google/fonts",
-		"revision": "fbbcba5083e08f4057768066d2b4a76b0ae2d52f",
+		"revision": "350c3591d3c477535484bcdf33c1bd055fda00bc",
 		"type": "github"
 	},
-	"sourceModified": "2026-05-29",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

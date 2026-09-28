@@ -166,11 +166,7 @@
 		],
 		[
 			"2074",
-			"208E"
-		],
-		[
-			"2090",
-			"209C"
+			"209F"
 		],
 		[
 			"20D0",
@@ -402,7 +398,7 @@
 		],
 		[
 			"1D552",
-			"1D6A5"
+			"1D6A6"
 		],
 		[
 			"1D6A8",
@@ -551,8 +547,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/math_unique-glyphs.nam",
-		"revision": "8a65dc667ffd2321c2b3649ba81fda21c9acbec5",
-		"sha256": "4ba8f963715ecdddbe626fbc22388e861c9a730d9e4122ae99e8242def2f7bbe",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "9116d4caaca61c683b6cad6a3ba07292205c7ff5cc3109cccafb7ae75824acbd",
 		"upstream": "namFiles"
 	}
 }

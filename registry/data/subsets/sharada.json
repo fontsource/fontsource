@@ -37,6 +37,14 @@
 			"1CE0"
 		],
 		[
+			"1CEA",
+			"1CEA"
+		],
+		[
+			"1CED",
+			"1CED"
+		],
+		[
 			"200B",
 			"200D"
 		],
@@ -55,12 +63,16 @@
 		[
 			"11180",
 			"111DF"
+		],
+		[
+			"11B60",
+			"11B67"
 		]
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/sharada_unique-glyphs.nam",
-		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
-		"sha256": "45599572be924a7ec956851ccda86437718582e5dfa348c8fb248af6abb61f2d",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "3021de4a3e7b21c824f935e8c92a9e68cd213bbf064d7b23ad413df0f9de75ec",
 		"upstream": "namFiles"
 	}
 }

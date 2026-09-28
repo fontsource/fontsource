@@ -26,6 +26,10 @@
 		],
 		[
 			"1CD0",
+			"1CF4"
+		],
+		[
+			"1CF7",
 			"1CF9"
 		],
 		[
@@ -62,13 +66,13 @@
 		],
 		[
 			"11B00",
-			"11B09"
+			"11B0A"
 		]
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/devanagari_unique-glyphs.nam",
-		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
-		"sha256": "08cc799816a75b0ab56341fa691717b1298b351181146cd5608098a9ca9967db",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "ea5460b3e9839d2d599c13b40e413ce9d7282dd084cc7aa915773e67fda4252c",
 		"upstream": "namFiles"
 	}
 }

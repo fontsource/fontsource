@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/bowlbyone",
-		"revision": "d469e83e10f7c1e7294e5586da5da1d9725f417c"
+		"revision": "8e8163e23a6573833332ef4f10b2c48d78be2c7b"
 	},
 	"provenance": {
 		"directory": "ofl/bowlbyone",
 		"repository": "google/fonts",
-		"revision": "5e3c21be88b011e0a5eeec8ade23bba0698a7805",
+		"revision": "622e423dfc26f899eb30e52c3f20a092b138b739",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

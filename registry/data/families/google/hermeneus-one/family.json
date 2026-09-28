@@ -82,6 +82,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -475,10 +476,10 @@
 	"provenance": {
 		"directory": "ofl/hermeneusone",
 		"repository": "google/fonts",
-		"revision": "fa806749e3c2bd8d128027f0c69e2119bf5b232d",
+		"revision": "201da8ed9a5248f9b794332764e47504df3f9ce0",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-25",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

@@ -142,6 +142,7 @@
 		"cme_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -838,7 +839,6 @@
 	"status": "active",
 	"tags": [
 		"expressive/competent",
-		"expressive/sincere",
 		"sans/humanist",
 		"seasonal/kwanzaa"
 	]

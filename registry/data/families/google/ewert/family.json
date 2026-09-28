@@ -344,15 +344,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/ewert",
-		"revision": "1fdc40c5b4f330020515d69ca4e3d1fd18e1df64"
+		"revision": "2923c2b66dd871ce269cccaba064c6621d1dec0e"
 	},
 	"provenance": {
 		"directory": "ofl/ewert",
 		"repository": "google/fonts",
-		"revision": "3d5d4e152624e6c00dd4d4588ada3e1615988b70",
+		"revision": "760c02b38b9f4c3089898818fbe7d7fbff8fc4c8",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

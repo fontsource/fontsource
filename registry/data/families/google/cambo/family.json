@@ -344,15 +344,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/cambo",
-		"revision": "a2c35dbad5014c97b1ca438b895d95c7411e0e04"
+		"revision": "b011c20463fc7ab1930253d978d6504da299e848"
 	},
 	"provenance": {
 		"directory": "ofl/cambo",
 		"repository": "google/fonts",
-		"revision": "32112919e1c4bc4ad1563ee3babd397e2ee3d553",
+		"revision": "59c227c18d99bc460053324116007a405e9f27c9",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

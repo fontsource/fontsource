@@ -354,15 +354,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/chango",
-		"revision": "fed28f46958e46610efc52780476adcfc91745e6"
+		"revision": "cc5a73fc2986d109343d4a42aacaf5428274ad12"
 	},
 	"provenance": {
 		"directory": "ofl/chango",
 		"repository": "google/fonts",
-		"revision": "ddfa0ba99f6b164d163ea672910847dfb7c5b9b9",
+		"revision": "b6a73b7e76d9d0c7ed1946c33ef01dc39091ac69",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

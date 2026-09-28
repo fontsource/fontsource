@@ -347,15 +347,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/delius",
-		"revision": "99e93e1a8034bf205d3978eaa98b8254a8faff3e"
+		"revision": "ed462df7139cca792e2a3df0111c5f43dd2bafce"
 	},
 	"provenance": {
 		"directory": "ofl/delius",
 		"repository": "google/fonts",
-		"revision": "f97069559867f2df0764b9fb57bda905e5d99e50",
+		"revision": "24832a1348d91510ca5b339540d3eb5aa304b602",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

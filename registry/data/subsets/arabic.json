@@ -26,10 +26,6 @@
 		],
 		[
 			"870",
-			"88E"
-		],
-		[
-			"890",
 			"891"
 		],
 		[
@@ -58,18 +54,6 @@
 		],
 		[
 			"FB50",
-			"FBC2"
-		],
-		[
-			"FBD3",
-			"FD8F"
-		],
-		[
-			"FD92",
-			"FDC7"
-		],
-		[
-			"FDCF",
 			"FDCF"
 		],
 		[
@@ -94,10 +78,14 @@
 		],
 		[
 			"10EC2",
-			"10EC4"
+			"10EC7"
 		],
 		[
-			"10EFC",
+			"10EC9",
+			"10EEE"
+		],
+		[
+			"10EF0",
 			"10EFF"
 		],
 		[
@@ -239,8 +227,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/arabic_unique-glyphs.nam",
-		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
-		"sha256": "a77f9528534c378018d2c5901b0f7b7260ffccada52d27667c532baf25603d08",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "424d300d540ea005254f65aa8cd4286a9d73e5df84da16e5a835a6f870026d54",
 		"upstream": "namFiles"
 	}
 }

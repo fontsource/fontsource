@@ -344,15 +344,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/convergence",
-		"revision": "0f57768c9ddc32b357bf4d32897b8ea4e846d71e"
+		"revision": "343573d0ed24387f782b02c8536316f243ac03d2"
 	},
 	"provenance": {
 		"directory": "ofl/convergence",
 		"repository": "google/fonts",
-		"revision": "0f759a14de06d1aeafaf03f129fdfc840921f351",
+		"revision": "4b1a00ac7bff0f803d8f5ca52244de319e4a73f2",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -72,6 +72,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -438,15 +439,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/breeserif",
-		"revision": "80b004f6325a65a90f50de70facec1c98d36ff9d"
+		"revision": "31562b2b04ee21afb0c750ca2343fb761ae36dfb"
 	},
 	"provenance": {
 		"directory": "ofl/breeserif",
 		"repository": "google/fonts",
-		"revision": "7ff5c685b4fd9476e50ebb7bfa3e2228873fd6c6",
+		"revision": "7e3be94aca03febf473611cd5eb99a526086e3c4",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {
