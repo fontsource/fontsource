@@ -154,6 +154,8 @@ const routing = (
 						typeof resolvedRouteState.query === 'string'
 							? resolvedRouteState.query
 									.slice(0, MAX_SEARCH_QUERY_LENGTH)
+									// slice counts UTF-16 units and can cut an emoji in half.
+									// Remove a trailing high surrogate (the first half of a pair).
 									.replace(/[\uD800-\uDBFF]$/u, '')
 							: '',
 					// RefinementList facets
