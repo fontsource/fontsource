@@ -3,7 +3,6 @@ import { useEffect, useEffectEvent, useMemo, useState } from 'react';
 import { loadPreviewStylesheet } from '@/utils/preview-stylesheet';
 
 type PreviewStatus = 'loading' | 'ready' | 'stylesheet-error';
-const defaultWeights = [400];
 
 interface FontPreviewOptions {
 	family: string;
@@ -13,6 +12,13 @@ interface FontPreviewOptions {
 	weights?: number[];
 	style?: string;
 }
+
+interface FontPreviewResult {
+	key: string;
+	status: PreviewStatus;
+}
+
+const defaultWeights = [400];
 
 export const useFontPreview = ({
 	family,
@@ -30,10 +36,8 @@ export const useFontPreview = ({
 		[family, weights, style],
 	);
 	const key = JSON.stringify([fonts, stylesheetHref]);
-	const [result, setResult] = useState<{
-		key: string;
-		status: PreviewStatus;
-	}>();
+	const [result, setResult] = useState<FontPreviewResult>();
+
 	// Once requested, finish loading even if the card leaves the viewport.
 	const [shouldLoad, setShouldLoad] = useState(enabled);
 	if (enabled && !shouldLoad) setShouldLoad(true);
@@ -45,20 +49,24 @@ export const useFontPreview = ({
 
 	useEffect(() => {
 		if (!shouldLoad) return;
+
 		let cancelled = false;
 		let timer: ReturnType<typeof setTimeout> | undefined;
+
 		const settle = (status: PreviewStatus) => {
-			if (!cancelled) {
-				setResult((previous) =>
-					previous?.key === key && previous.status === status
-						? previous
-						: { key, status },
-				);
-			}
+			if (cancelled) return;
+
+			setResult((previous) =>
+				previous?.key === key && previous.status === status
+					? previous
+					: { key, status },
+			);
 		};
+
 		const load = async () => {
 			if (stylesheetHref) {
 				timer = setTimeout(() => settle('stylesheet-error'), 15_000);
+
 				try {
 					// Keep observing a slow stylesheet so it can recover after timeout.
 					await loadPreviewStylesheet(stylesheetHref);
@@ -69,9 +77,12 @@ export const useFontPreview = ({
 					clearTimeout(timer);
 				}
 			}
+
 			if (cancelled) return;
+
 			// Font errors and timeouts reveal fallback text instead of hiding it.
 			timer = setTimeout(() => settle('ready'), 15_000);
+
 			try {
 				await onStylesheetLoaded();
 			} catch (error) {
@@ -79,9 +90,12 @@ export const useFontPreview = ({
 			} finally {
 				clearTimeout(timer);
 			}
+
 			settle('ready');
 		};
+
 		void load();
+
 		return () => {
 			cancelled = true;
 			clearTimeout(timer);

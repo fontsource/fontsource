@@ -18,7 +18,7 @@ export const FontSkeleton = ({
 	family,
 	weight,
 	weights,
-	style = 'normal',
+	style,
 	className,
 	children,
 }: FontSkeletonProps) => {
