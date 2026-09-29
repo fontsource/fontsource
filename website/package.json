@@ -27,6 +27,7 @@
 		"@mantine/core": "^9.6.2",
 		"@mantine/dropzone": "^9.6.2",
 		"@mantine/hooks": "^9.6.2",
+		"@mantine/notifications": "9.6.2",
 		"@react-router/fs-routes": "^8.4.0",
 		"@tabler/icons-react": "^3.47.0",
 		"@tanstack/react-virtual": "^3.14.13",

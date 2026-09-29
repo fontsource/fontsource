@@ -35,11 +35,7 @@
 }
 
 .toast {
-	position: fixed;
-	inset: auto 24px 24px auto;
-	z-index: 1000;
-	max-width: min(520px, calc(100% - 48px));
-	display: none;
+	display: flex;
 	align-items: center;
 	gap: 24px;
 	margin: 0;
@@ -50,9 +46,6 @@
 	color: light-dark(#01112c, #f5f7f9);
 	font-size: 14px;
 
-	&[data-open] {
-		display: flex;
-	}
 
 	> div {
 		display: flex;
@@ -95,10 +88,6 @@
 	}
 
 	.toast {
-		right: 16px;
-		bottom: 16px;
-		left: 16px;
-		max-width: none;
 		align-items: flex-start;
 		flex-direction: column;
 		gap: 10px;

@@ -1,0 +1,14 @@
+.container[data-position='bottom-right'] {
+	right: 24px;
+	bottom: 24px;
+	width: calc(100% - 48px);
+}
+
+@media (--lt-sm) {
+	.container[data-position='bottom-right'] {
+		right: 16px;
+		bottom: 16px;
+		width: calc(100% - 32px);
+		max-width: none;
+	}
+}

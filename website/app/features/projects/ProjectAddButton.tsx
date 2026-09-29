@@ -1,6 +1,7 @@
 import { useValue } from '@legendapp/state/react';
+import { notifications } from '@mantine/notifications';
 import { IconCheck, IconStack2, IconX } from '@tabler/icons-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId } from 'react';
 import { Link } from 'react-router';
 import { useCurrentProjectStore } from './CurrentProjectProvider';
 import { MAX_FONT_SET_SIZE } from './model';
@@ -17,36 +18,64 @@ const ProjectAddButton = ({ displayName, familyId }: ProjectAddButtonProps) => {
 	const included = useValue(() =>
 		store.getItems().some((saved) => saved.familyId === familyId),
 	);
-	const [feedback, setFeedback] = useState<'added' | 'full' | false>(false);
-	const toastRef = useRef<HTMLDivElement>(null);
+	const notificationId = `${useId()}-${familyId}`;
 	const displayIncluded = ready && included;
 
-	useEffect(() => {
-		const toast = toastRef.current;
-		if (!toast) return;
-
-		if (feedback) {
-			if (toast.showPopover && !toast.matches(':popover-open')) {
-				toast.showPopover();
-			}
-			const timeout = window.setTimeout(() => setFeedback(false), 6500);
-			return () => window.clearTimeout(timeout);
-		}
-
-		if (toast.hidePopover && toast.matches(':popover-open')) {
-			toast.hidePopover();
-		}
-	}, [feedback]);
+	useEffect(
+		() => () => {
+			notifications.hide(notificationId);
+		},
+		[notificationId],
+	);
 
 	const addItem = () => {
 		const result = store.addItem({ familyId });
-		if (result === 'added') setFeedback('added');
-		if (result === 'full') setFeedback('full');
-	};
+		if (result !== 'added' && result !== 'full') return;
 
-	const undo = () => {
-		store.removeItem(familyId);
-		setFeedback(false);
+		notifications.hide(notificationId);
+		notifications.show({
+			id: notificationId,
+			message: '',
+			role: 'status',
+			'aria-live': 'polite',
+			'aria-atomic': true,
+			autoClose: 6500,
+			renderNotification: () => (
+				<div className={classes.toast}>
+					<span>
+						{result === 'added' ? (
+							<>
+								<strong>{displayName}</strong> added to your font set.
+							</>
+						) : (
+							<>Your font set can contain up to {MAX_FONT_SET_SIZE} families.</>
+						)}
+					</span>
+					<div>
+						{result === 'added' && (
+							<button
+								type="button"
+								onClick={() => {
+									store.removeItem(familyId);
+									notifications.hide(notificationId);
+								}}
+							>
+								Undo
+							</button>
+						)}
+						<Link to="/selected-fonts">View font set</Link>
+						<button
+							type="button"
+							className={classes.close}
+							aria-label="Dismiss confirmation"
+							onClick={() => notifications.hide(notificationId)}
+						>
+							<IconX aria-hidden size={17} />
+						</button>
+					</div>
+				</div>
+			),
+		});
 	};
 
 	return (
@@ -68,46 +97,6 @@ const ProjectAddButton = ({ displayName, familyId }: ProjectAddButtonProps) => {
 					{!ready ? 'Font set loading…' : 'Add to font set'}
 				</button>
 			)}
-			<div
-				ref={toastRef}
-				className={classes.toast}
-				popover="manual"
-				data-open={feedback || undefined}
-				aria-live="polite"
-				aria-atomic="true"
-			>
-				{feedback && (
-					<>
-						<span>
-							{feedback === 'added' ? (
-								<>
-									<strong>{displayName}</strong> added to your font set.
-								</>
-							) : (
-								<>
-									Your font set can contain up to {MAX_FONT_SET_SIZE} families.
-								</>
-							)}
-						</span>
-						<div>
-							{feedback === 'added' && (
-								<button type="button" onClick={undo}>
-									Undo
-								</button>
-							)}
-							<Link to="/selected-fonts">View font set</Link>
-							<button
-								type="button"
-								className={classes.close}
-								aria-label="Dismiss confirmation"
-								onClick={() => setFeedback(false)}
-							>
-								<IconX aria-hidden size={17} />
-							</button>
-						</div>
-					</>
-				)}
-			</div>
 		</>
 	);
 };
