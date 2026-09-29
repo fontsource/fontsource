@@ -26,12 +26,16 @@ const ProjectAddButton = ({ displayName, familyId }: ProjectAddButtonProps) => {
 		if (!toast) return;
 
 		if (feedback) {
-			toast.showPopover?.();
+			if (toast.showPopover && !toast.matches(':popover-open')) {
+				toast.showPopover();
+			}
 			const timeout = window.setTimeout(() => setFeedback(false), 6500);
 			return () => window.clearTimeout(timeout);
 		}
 
-		toast.hidePopover?.();
+		if (toast.hidePopover && toast.matches(':popover-open')) {
+			toast.hidePopover();
+		}
 	}, [feedback]);
 
 	const addItem = () => {
