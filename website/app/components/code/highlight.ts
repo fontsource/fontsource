@@ -67,14 +67,19 @@ export const codeHighlightAdapter: CodeHighlightAdapter = {
 		({ code, language }) => {
 			if (!highlighter) return { highlightedCode: code, isHighlighted: false };
 
-			return {
-				highlightedCode: stripShikiCodeBlocks(
-					highlighter.codeToHtml(code, {
-						lang: highlightLanguage(language ?? 'plaintext'),
-						theme: fontsourceCodeTheme.name,
-					}),
-				),
-				isHighlighted: true,
-			};
+			try {
+				return {
+					highlightedCode: stripShikiCodeBlocks(
+						highlighter.codeToHtml(code, {
+							lang: highlightLanguage(language ?? 'plaintext'),
+							theme: fontsourceCodeTheme.name,
+						}),
+					),
+					isHighlighted: true,
+				};
+			} catch (error) {
+				if (!(error instanceof SyntaxError)) throw error;
+				return { highlightedCode: code, isHighlighted: false };
+			}
 		},
 };
