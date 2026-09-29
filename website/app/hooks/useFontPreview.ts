@@ -1,59 +1,9 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useEffectEvent, useMemo, useState } from 'react';
+
+import { loadPreviewStylesheet } from '@/utils/preview-stylesheet';
 
 type PreviewStatus = 'loading' | 'ready' | 'stylesheet-error';
-const stylesheets = new Map<string, Promise<void>>();
 const defaultWeights = [400];
-
-const loadStylesheet = (href: string) => {
-	let promise = stylesheets.get(href);
-	if (!promise) {
-		promise = new Promise<void>((resolve, reject) => {
-			const existing = Array.from(
-				document.querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"]'),
-			).find((link) => link.href === href);
-			if (existing?.sheet) return resolve();
-			const link = existing ?? document.createElement('link');
-			const loaded = () => {
-				cleanup();
-				resolve();
-			};
-			const failed = () => {
-				cleanup();
-				reject(new Error(`Stylesheet failed to load: ${href}`));
-			};
-			const cleanup = () => {
-				link.removeEventListener('load', loaded);
-				link.removeEventListener('error', failed);
-			};
-			link.addEventListener('load', loaded);
-			link.addEventListener('error', failed);
-			if (!existing) {
-				link.rel = 'stylesheet';
-				link.href = href;
-				document.head.appendChild(link);
-			}
-		});
-		stylesheets.set(href, promise);
-	}
-	return promise;
-};
-
-const withTimeout = async (promise: Promise<unknown>) => {
-	let timer: ReturnType<typeof setTimeout> | undefined;
-	try {
-		await Promise.race([
-			promise,
-			new Promise<never>((_, reject) => {
-				timer = setTimeout(
-					() => reject(new Error('Font preview timed out')),
-					15_000,
-				);
-			}),
-		]);
-	} finally {
-		clearTimeout(timer);
-	}
-};
 
 interface FontPreviewOptions {
 	family: string;
@@ -79,55 +29,65 @@ export const useFontPreview = ({
 			),
 		[family, weights, style],
 	);
-	// Editing an already visible preview should not flash the skeleton.
 	const key = JSON.stringify([fonts, stylesheetHref]);
 	const [result, setResult] = useState<{
 		key: string;
 		status: PreviewStatus;
 	}>();
+	// Once requested, finish loading even if the card leaves the viewport.
+	const [shouldLoad, setShouldLoad] = useState(enabled);
+	if (enabled && !shouldLoad) setShouldLoad(true);
+
+	// Read the latest text when CSS arrives without restarting the load on edits.
+	const onStylesheetLoaded = useEffectEvent(() =>
+		Promise.all(fonts.map((font) => document.fonts.load(font, text))),
+	);
 
 	useEffect(() => {
-		if (!enabled) return;
+		if (!shouldLoad) return;
 		let cancelled = false;
+		let timer: ReturnType<typeof setTimeout> | undefined;
+		const settle = (status: PreviewStatus) => {
+			if (!cancelled) {
+				setResult((previous) =>
+					previous?.key === key && previous.status === status
+						? previous
+						: { key, status },
+				);
+			}
+		};
 		const load = async () => {
 			if (stylesheetHref) {
-				const timer = setTimeout(() => {
-					if (!cancelled) setResult({ key, status: 'stylesheet-error' });
-				}, 15_000);
+				timer = setTimeout(() => settle('stylesheet-error'), 15_000);
 				try {
-					// A slow stylesheet can still recover after showing the error.
-					await loadStylesheet(stylesheetHref);
+					// Keep observing a slow stylesheet so it can recover after timeout.
+					await loadPreviewStylesheet(stylesheetHref);
 				} catch {
-					if (!cancelled) setResult({ key, status: 'stylesheet-error' });
+					settle('stylesheet-error');
 					return;
 				} finally {
 					clearTimeout(timer);
 				}
 			}
 			if (cancelled) return;
+			// Font errors and timeouts reveal fallback text instead of hiding it.
+			timer = setTimeout(() => settle('ready'), 15_000);
 			try {
-				if (document.fonts) {
-					await withTimeout(
-						Promise.all(
-							fonts.map(async (font) => {
-								const faces = await document.fonts.load(font, text);
-								if (!faces.length) throw new Error(`Font not found: ${font}`);
-							}),
-						),
-					);
-				}
+				await onStylesheetLoaded();
 			} catch (error) {
-				// Preserve fallback text when the font fails or times out.
-				console.warn('Failed to load font preview:', error);
+				if (!cancelled) console.warn('Failed to load font preview:', error);
+			} finally {
+				clearTimeout(timer);
 			}
-			if (!cancelled) setResult({ key, status: 'ready' });
+			settle('ready');
 		};
 		void load();
-		// Already started requests remain available to other previews.
 		return () => {
 			cancelled = true;
+			clearTimeout(timer);
 		};
-	}, [enabled, fonts, key, stylesheetHref, text]);
+	}, [shouldLoad, key, stylesheetHref]);
 
+	// Once visible, CSS handles subset loading as the preview text changes.
 	return result?.key === key ? result.status : 'loading';
 };
