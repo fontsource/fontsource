@@ -1,13 +1,15 @@
 const normalizeSearchValue = (value: string) =>
 	value.trim().toLowerCase().replace(/[_-]+/g, ' ');
 
-const searchQueryEncoder = new TextEncoder();
+const MAX_SEARCH_QUERY_LENGTH = 128;
 
 const normalizeSearchQuery = (value: unknown): string => {
 	if (typeof value !== 'string') return '';
 
-	const { read } = searchQueryEncoder.encodeInto(value, new Uint8Array(512));
-	return value.slice(0, read);
+	// Do not leave half of a surrogate pair at the truncation boundary.
+	return value
+		.slice(0, MAX_SEARCH_QUERY_LENGTH)
+		.replace(/[\uD800-\uDBFF]$/u, '');
 };
 
-export { normalizeSearchQuery, normalizeSearchValue };
+export { MAX_SEARCH_QUERY_LENGTH, normalizeSearchQuery, normalizeSearchValue };

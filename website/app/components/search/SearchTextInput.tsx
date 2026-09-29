@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useSearchBox } from 'react-instantsearch';
 
 import { IconSearch, SearchByAlgolia } from '@/components/icons';
-import { normalizeSearchQuery } from '@/utils/search';
+import { MAX_SEARCH_QUERY_LENGTH } from '@/utils/search';
 
 import classes from './SearchTextInput.module.css';
 
@@ -18,9 +18,8 @@ const SearchBar = () => {
 	}, 300);
 
 	const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const value = normalizeSearchQuery(event.currentTarget.value);
-		setInputValue(value);
-		handleSearch(value);
+		setInputValue(event.currentTarget.value);
+		handleSearch(event.currentTarget.value);
 	};
 
 	// Track when the InstantSearch query changes to synchronize it with
@@ -46,7 +45,7 @@ const SearchBar = () => {
 			autoComplete="off"
 			autoCorrect="off"
 			spellCheck={false}
-			maxLength={512}
+			maxLength={MAX_SEARCH_QUERY_LENGTH}
 			ref={ref}
 			leftSection={
 				<IconSearch

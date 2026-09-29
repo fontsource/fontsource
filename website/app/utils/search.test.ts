@@ -3,11 +3,11 @@ import { normalizeSearchQuery } from './search';
 
 it.each([
 	['  IBM Plex  ', '  IBM Plex  '],
-	['a'.repeat(512), 'a'.repeat(512)],
-	['a'.repeat(513), 'a'.repeat(512)],
-	['字'.repeat(171), '字'.repeat(170)],
-	[`${'a'.repeat(508)}😀x`, `${'a'.repeat(508)}😀`],
-	[`${'a'.repeat(509)}😀`, 'a'.repeat(509)],
+	['a'.repeat(128), 'a'.repeat(128)],
+	['a'.repeat(129), 'a'.repeat(128)],
+	['字'.repeat(129), '字'.repeat(128)],
+	[`${'a'.repeat(126)}😀x`, `${'a'.repeat(126)}😀`],
+	[`${'a'.repeat(127)}😀`, 'a'.repeat(127)],
 	[undefined, ''],
 	[['inter', 'roboto'], ''],
 	[{ query: 'inter' }, ''],
