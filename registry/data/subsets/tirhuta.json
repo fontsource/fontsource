@@ -29,6 +29,14 @@
 			"9F7"
 		],
 		[
+			"1CD5",
+			"1CD5"
+		],
+		[
+			"1CE2",
+			"1CE2"
+		],
+		[
 			"1CF2",
 			"1CF2"
 		],
@@ -55,8 +63,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/tirhuta_unique-glyphs.nam",
-		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
-		"sha256": "50f3e47234abfa304f468b0524a604aad1370859f1e37f8ab1aa1ae1a1ecdf25",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "eacae4400fb94f1c1203934c10713fb8e4cb57d84108d772e3ac6e9335968ab6",
 		"upstream": "namFiles"
 	}
 }

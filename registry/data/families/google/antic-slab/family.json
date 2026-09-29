@@ -344,15 +344,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/anticslab",
-		"revision": "94821708c44ba2ac3c9bcd011141dbb888b0b26d"
+		"revision": "53727d3f8f4e4ab3bf0f28aace4ecf7c8eecfb34"
 	},
 	"provenance": {
 		"directory": "ofl/anticslab",
 		"repository": "google/fonts",
-		"revision": "bcb26a04a8a5d079ef434c8a28bc05239a5dd3e1",
+		"revision": "b92da4e589435fdd5464e0e050bf741a89fbe570",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

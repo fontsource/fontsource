@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/cantataone",
-		"revision": "12fb64c8cad39f95d18ea97713683cdebe08693a"
+		"revision": "d5dba9030c571d45e9e9e6971ffa20d4336529ff"
 	},
 	"provenance": {
 		"directory": "ofl/cantataone",
 		"repository": "google/fonts",
-		"revision": "869fdc8b046114b41e52ff92850988074d203e92",
+		"revision": "c28a13c1fea251b78e60eede7bd756df56be5d5d",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

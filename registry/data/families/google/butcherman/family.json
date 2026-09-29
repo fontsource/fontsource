@@ -401,15 +401,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/butcherman",
-		"revision": "f4f7f3e2cd993e09bb72e154c5fd34f3dc99d3c0"
+		"revision": "6101b20d2e2ba2773da7d92f0c92c1ce707b6287"
 	},
 	"provenance": {
 		"directory": "ofl/butcherman",
 		"repository": "google/fonts",
-		"revision": "4955dafd4f6b9eb058170c910fabec6dedb4c66e",
+		"revision": "304d1a7013a7d879d9b7c491f7d1f35ce84bfd6e",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

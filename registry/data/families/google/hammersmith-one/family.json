@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/hammersmithone",
-		"revision": "fa842a5d78963d24a139bb95c3b5d81d3a307c2b"
+		"revision": "6459b0722c0ab3bdfb742cb5672dbaf572f4eca5"
 	},
 	"provenance": {
 		"directory": "ofl/hammersmithone",
 		"repository": "google/fonts",
-		"revision": "ac1fd266e59b4c9bdf10048e75dda0976e5f7c5b",
+		"revision": "491721e2e214bb660771ae96ad48edcfb7929331",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -355,15 +355,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/concertone",
-		"revision": "b002b9370c7365b13d6a79e4718eb6aa8e3d0dc6"
+		"revision": "d68fc365f489c262c4fb6c3d8488f06f6941c569"
 	},
 	"provenance": {
 		"directory": "ofl/concertone",
 		"repository": "google/fonts",
-		"revision": "0c6810dbbf4ebf3002024e900e3536bac45bc2e5",
+		"revision": "5e21376a904f8a9a26686d7e84281e35d204f292",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -344,15 +344,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/montaga",
-		"revision": "c01e6e195c2d67a0b9d5c3091f3c436991cafd90"
+		"revision": "90712149c2d25ebaff039e96e375b7bb2bc2f7f7"
 	},
 	"provenance": {
 		"directory": "ofl/montaga",
 		"repository": "google/fonts",
-		"revision": "fcac85673a0a7847abf5a986b38732ceee069668",
+		"revision": "622a06e0fe18e4a47d34f6fcee3b49855abf9a38",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -1,0 +1,30 @@
+{
+	"ranges": [
+		[
+			"0",
+			"0"
+		],
+		[
+			"D",
+			"D"
+		],
+		[
+			"20",
+			"20"
+		],
+		[
+			"A0",
+			"A0"
+		],
+		[
+			"3D000",
+			"3FC3F"
+		]
+	],
+	"source": {
+		"path": "Lib/gfsubsets/data/small-seal_unique-glyphs.nam",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "95755cd37dd8e979d87b76ae50e7628f1040d61c378bd48e519aeeebf5886b91",
+		"upstream": "namFiles"
+	}
+}

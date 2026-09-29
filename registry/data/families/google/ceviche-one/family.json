@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/cevicheone",
-		"revision": "1af833a0fd47b174386916453a54e6bf1f6d5a34"
+		"revision": "72a6df0567207a62272bd172230a8a089197036b"
 	},
 	"provenance": {
 		"directory": "ofl/cevicheone",
 		"repository": "google/fonts",
-		"revision": "6b1ef8b34e7f6cba12aa8da5ad4a2bd2bb3ee92e",
+		"revision": "2cec571050f274cde801f34ee37ccd7ba3321c8e",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

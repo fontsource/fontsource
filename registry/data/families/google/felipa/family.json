@@ -355,15 +355,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/felipa",
-		"revision": "1ba44f83532b9074cc71a2c13c526dea5118bb50"
+		"revision": "43b2f5ee04fe88c90359d44ec195e13be4d0eab1"
 	},
 	"provenance": {
 		"directory": "ofl/felipa",
 		"repository": "google/fonts",
-		"revision": "38d9b1eb604e6c6e4bbbe67143e7069d0fe1f727",
+		"revision": "db95b2f11a2accff36a6bb2f170e85943fc757f0",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

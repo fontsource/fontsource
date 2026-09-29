@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/condiment",
-		"revision": "a89340dd6409f34edd3d00dba5326e870b910f2a"
+		"revision": "e9c65b8fd13846909ca137e6c36112ba2d959807"
 	},
 	"provenance": {
 		"directory": "ofl/condiment",
 		"repository": "google/fonts",
-		"revision": "980c0731bc99909f9dcff641f6a24c020ce8501a",
+		"revision": "b6008720a5295eeaf2f7f916fa67c585da4c1955",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

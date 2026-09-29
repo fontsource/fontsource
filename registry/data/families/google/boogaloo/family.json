@@ -363,15 +363,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/boogaloo",
-		"revision": "254753cf202453c11d1aa39066b9ca5294d2dc5f"
+		"revision": "c06afd6c55940a7cb72a434450a77575142f0249"
 	},
 	"provenance": {
 		"directory": "ofl/boogaloo",
 		"repository": "google/fonts",
-		"revision": "7fb1393a205555a7ef79239566f4218bc768ee77",
+		"revision": "de9704d5e36498cb035cae644e7563b477d86fc0",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

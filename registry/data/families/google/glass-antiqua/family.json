@@ -69,6 +69,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/glassantiqua",
-		"revision": "64763eadb6bf4a38f7fe638b06683ef7cea15266"
+		"revision": "b1c269f4671ac3926d35635dd6d87db0945dd9d8"
 	},
 	"provenance": {
 		"directory": "ofl/glassantiqua",
 		"repository": "google/fonts",
-		"revision": "9aa07ca8f267a3ad6935b9fa99187371c4fc04dd",
+		"revision": "6024de5889700f35510dfb6637211f3b789141e0",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

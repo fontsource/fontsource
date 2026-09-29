@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/inder",
-		"revision": "e4d4209a92fbe490892b0a6dbac6d61369f32f60"
+		"revision": "0021128e5c59fff5b5df39abf96267d089922311"
 	},
 	"provenance": {
 		"directory": "ofl/inder",
 		"repository": "google/fonts",
-		"revision": "9a310b2f8aec43f9b83744b50d9b330d0d4466e6",
+		"revision": "d20a88ed97d0961c350ed763ff1a358f0d49c779",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

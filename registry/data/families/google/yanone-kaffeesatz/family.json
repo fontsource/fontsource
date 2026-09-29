@@ -73,6 +73,8 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Cyrl",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -522,7 +524,6 @@
 	],
 	"status": "active",
 	"tags": [
-		"expressive/rugged",
 		"sans/humanist",
 		"seasonal/hanukkah"
 	]

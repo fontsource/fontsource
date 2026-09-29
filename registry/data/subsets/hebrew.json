@@ -26,7 +26,7 @@
 		],
 		[
 			"591",
-			"5C7"
+			"5C9"
 		],
 		[
 			"5D0",
@@ -75,8 +75,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/hebrew_unique-glyphs.nam",
-		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
-		"sha256": "583e4d241bcf362e301533ffb61f6c65ccfeb622b9d59e256a113f2ecf128d81",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "14ec15202132d1c3c5a725e6ef75b90dab84862f03e5b92847cbafa3b1b6517b",
 		"upstream": "namFiles"
 	}
 }

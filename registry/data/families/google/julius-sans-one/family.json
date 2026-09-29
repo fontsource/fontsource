@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/juliussansone",
-		"revision": "6e629197948d3aef530fba4cfa8f9e754b947cc1"
+		"revision": "cc06b179d53ad0be099838f083c556b5d1415ca6"
 	},
 	"provenance": {
 		"directory": "ofl/juliussansone",
 		"repository": "google/fonts",
-		"revision": "2cb4abadc09f1e4e6cb20c863515593375c8873e",
+		"revision": "68bb597fe0769d4f74c6bf56d89d26f63921beb4",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

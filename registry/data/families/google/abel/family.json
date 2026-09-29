@@ -353,15 +353,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/abel",
-		"revision": "a68e5cfb801dfe266cdd8f5651e977f330757df2"
+		"revision": "287af627694c877eed0e2fe6d375378e7d00720d"
 	},
 	"provenance": {
 		"directory": "ofl/abel",
 		"repository": "google/fonts",
-		"revision": "84bc33042700f5de962575a20b573fec506c4e1e",
+		"revision": "9437b806936896fa1a8c812e561067a5f30f5933",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

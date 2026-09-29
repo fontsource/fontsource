@@ -396,15 +396,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/architectsdaughter",
-		"revision": "0912d302495d684898c33d02a4a0f24f32ec3da3"
+		"revision": "55246f9edaf98669853e024e60e0575bd9d52ada"
 	},
 	"provenance": {
 		"directory": "ofl/architectsdaughter",
 		"repository": "google/fonts",
-		"revision": "7bff203357176e2eb63ecfcc965d85921be3adc9",
+		"revision": "f81a0e9fb2ff01bf783fff251ece4ffe2df61278",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

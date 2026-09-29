@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/geostarfill",
-		"revision": "61aec9b9308292407c258a90b15a66b0449135bc"
+		"revision": "4bee66afd797da22ee772995c2344fce81817c6e"
 	},
 	"provenance": {
 		"directory": "ofl/geostarfill",
 		"repository": "google/fonts",
-		"revision": "f240fc790df03eea4ba973ca1f094bf2c59f9d02",
+		"revision": "187445b6891ffdf8807477236ea4152301745406",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

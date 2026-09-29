@@ -336,15 +336,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/allerta",
-		"revision": "2efd2499258022f0a5b1887da95ecfc62a5793cd"
+		"revision": "bdd9557493a2cdd003d2dcbc9a37d47868ec3606"
 	},
 	"provenance": {
 		"directory": "ofl/allerta",
 		"repository": "google/fonts",
-		"revision": "5df9bbca36bd2dcd07ccfc90af2db79d397b8619",
+		"revision": "3c0bcaf4742598f617da033174486aa247f25c4d",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

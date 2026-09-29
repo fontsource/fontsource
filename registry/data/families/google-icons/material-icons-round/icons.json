@@ -1,8 +1,8 @@
 {
 	"categoriesSource": {
 		"path": "update/current_versions.json",
-		"revision": "84ccef280841abfac506afc4ad4a2782f6d0a1d0",
-		"sha256": "bf43ff282c0c714d9f9e61aa1e4fd16f346ba58658c7751c14bd036424b30211"
+		"revision": "bd8cb85bd4bad964fe6918f79665bb40c3a8efef",
+		"sha256": "352eb13041f1cb19abdf7bdda89a4190bcc510117e97e86c1c855470f02c101e"
 	},
 	"icons": [
 		{

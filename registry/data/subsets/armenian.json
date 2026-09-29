@@ -29,11 +29,7 @@
 			"556"
 		],
 		[
-			"559",
-			"58A"
-		],
-		[
-			"58D",
+			"558",
 			"58F"
 		],
 		[
@@ -55,8 +51,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/armenian_unique-glyphs.nam",
-		"revision": "ba4c153a3be2d197aa1929977d1be9da68944559",
-		"sha256": "1d3da12746689d79f98fe8b7dbad48e03b2c644140507c7b8061a42382b92dbe",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "890d5aa3a41944fa0d98bf1880dee1524bd4c5d91b855665f48c0e5add65a3bc",
 		"upstream": "namFiles"
 	}
 }

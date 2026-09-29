@@ -21,6 +21,34 @@
 			"B7"
 		],
 		[
+			"951",
+			"952"
+		],
+		[
+			"1CD5",
+			"1CD5"
+		],
+		[
+			"1CD7",
+			"1CD8"
+		],
+		[
+			"1CE2",
+			"1CE2"
+		],
+		[
+			"1CE9",
+			"1CE9"
+		],
+		[
+			"1CEB",
+			"1CEB"
+		],
+		[
+			"1CED",
+			"1CED"
+		],
+		[
 			"1DFB",
 			"1DFB"
 		],
@@ -43,8 +71,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/newa_unique-glyphs.nam",
-		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
-		"sha256": "139b95174856794f952710a8831912c5dd3116ec714d203efc1a164f294e5a8e",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "e3a02e06d2336e299689ed3f084ebc15f3b713b3ac7bc2b4e8a5b388f18f9b19",
 		"upstream": "namFiles"
 	}
 }

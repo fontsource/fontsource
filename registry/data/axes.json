@@ -306,7 +306,7 @@
 	"XTRA": {
 		"default": 400,
 		"description": "A parametric axis for varying counter widths in the X dimension.",
-		"max": 2000,
+		"max": 3330,
 		"min": -1000,
 		"name": "Counter Width",
 		"precision": 0
@@ -442,7 +442,7 @@
 	"wdth": {
 		"default": 100,
 		"description": "Adjust the style from narrower to wider, by varying the proportions of counters, strokes, spacing and kerning, and other aspects of the type. This typically changes the typographic color in a subtle way, and so may be used in conjunction with Weight and Grade axes.",
-		"max": 200,
+		"max": 300,
 		"min": 25,
 		"name": "Width",
 		"precision": -1

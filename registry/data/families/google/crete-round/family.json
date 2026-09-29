@@ -72,6 +72,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -438,15 +439,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/creteround",
-		"revision": "65f7a13699e262832f4fa0cd2a61908da6da811d"
+		"revision": "64e1c753a1216a4f5b71198ec15fde39a9016af5"
 	},
 	"provenance": {
 		"directory": "ofl/creteround",
 		"repository": "google/fonts",
-		"revision": "c168c82b7ee7d2395f249ddecae93f6be7871326",
+		"revision": "6566e1bb5f46dcd215fc69cfcd10c1f4e236d39c",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

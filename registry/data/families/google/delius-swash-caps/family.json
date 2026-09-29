@@ -347,15 +347,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/deliusswashcaps",
-		"revision": "2bcc0f94b70fdc0c94bc30d803f8c646224c1eab"
+		"revision": "d5570948565c7ed27cfeaaf163cb3835f6742445"
 	},
 	"provenance": {
 		"directory": "ofl/deliusswashcaps",
 		"repository": "google/fonts",
-		"revision": "9258aff6a1889eca542b8e9b03a4c7d5902525d3",
+		"revision": "0afb8bada17d2300e99d18852d86aa0599d52e3b",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

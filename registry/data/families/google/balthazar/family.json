@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/balthazar",
-		"revision": "40ec71e48349bc565c42eb3c750b50a5d8d19087"
+		"revision": "3aa1b5a856e450e64d0f9c088bc1d9dd40c74a50"
 	},
 	"provenance": {
 		"directory": "ofl/balthazar",
 		"repository": "google/fonts",
-		"revision": "581ebd3a6f63ba326456f9c010f532f004d23068",
+		"revision": "7b9c47ef6c570ba357f5fd3f457c61949ee56451",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

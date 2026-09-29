@@ -330,10 +330,10 @@
 	"provenance": {
 		"directory": "ofl/digitalnumbers",
 		"repository": "google/fonts",
-		"revision": "2701058bea5e3d33a01b44fb02fd8d188c34ab48",
+		"revision": "db63e7c0e6aebf44cf062aafb56266760e8ce5ab",
 		"type": "github"
 	},
-	"sourceModified": "2026-02-26",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

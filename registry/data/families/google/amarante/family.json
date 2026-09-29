@@ -68,6 +68,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -429,15 +430,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/amarante",
-		"revision": "46979134e6b96a867f1441e91d06bbecc3eba8d2"
+		"revision": "0eda1ae2955c3b3a56da48abf1517afac0e8391f"
 	},
 	"provenance": {
 		"directory": "ofl/amarante",
 		"repository": "google/fonts",
-		"revision": "0f81999aba70ca8df5af47faa1effc19d16ebc5a",
+		"revision": "bdb024d63a89e9f55c84f025706e6c103ae59e6c",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

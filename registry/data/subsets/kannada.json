@@ -25,6 +25,10 @@
 			"965"
 		],
 		[
+			"B83",
+			"B83"
+		],
+		[
 			"C80",
 			"C8C"
 		],
@@ -61,7 +65,7 @@
 			"CD6"
 		],
 		[
-			"CDD",
+			"CDC",
 			"CDE"
 		],
 		[
@@ -115,8 +119,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/kannada_unique-glyphs.nam",
-		"revision": "4e66b61575c44f45d065fc5b2cf7c3a85b259472",
-		"sha256": "73d3e0f7a8fbdda587f78b273d45a36a08093bf382b6a4cbac2f3e7e8e0784f9",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "08c7048490e742f20d46881fbf83480e31e8d4cf15ce558291610ab576fd034e",
 		"upstream": "namFiles"
 	}
 }

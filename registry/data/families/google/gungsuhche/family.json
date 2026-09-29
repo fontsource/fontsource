@@ -72,6 +72,7 @@
 		"cjy_Hant",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -453,10 +454,10 @@
 	"provenance": {
 		"directory": "ofl/gungsuhche",
 		"repository": "google/fonts",
-		"revision": "c1eda9233c33ad7775b27efd794f931095cf6133",
+		"revision": "ea0b460c38eb969efd77df5970b33d126641f08a",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-03",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

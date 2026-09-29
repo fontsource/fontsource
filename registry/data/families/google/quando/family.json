@@ -68,6 +68,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -429,15 +430,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/quando",
-		"revision": "bba03c60be43e46037df543ccce62fe7c7582b64"
+		"revision": "097ef0d66cfa4118a3e05bc76d55ccf103129e82"
 	},
 	"provenance": {
 		"directory": "ofl/quando",
 		"repository": "google/fonts",
-		"revision": "00e726a90e0b9698971c37b88c35ef958965448b",
+		"revision": "8be71ebeaeb2e729400b7d39309e4779db117a6c",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -64,6 +64,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -412,15 +413,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/benchnine",
-		"revision": "dd9d771443fa68ea48ef0819d28fc64e0fded42f"
+		"revision": "c8159512c8ad0159a551fd074c00b60c044c3748"
 	},
 	"provenance": {
 		"directory": "ofl/benchnine",
 		"repository": "google/fonts",
-		"revision": "84c3a6ae75cebc1a746f9cc4e541ad092752854c",
+		"revision": "36f215ccd29c6623f49171e2ee3722e5f49ec930",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

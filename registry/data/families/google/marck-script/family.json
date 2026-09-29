@@ -71,6 +71,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -426,15 +427,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/marckscript",
-		"revision": "b85fe9173d03ac8c339274ead43f34f0752c0819"
+		"revision": "f4e66d73d1cc7190be547d491b99a0979c60fb10"
 	},
 	"provenance": {
 		"directory": "ofl/marckscript",
 		"repository": "google/fonts",
-		"revision": "cf6322a90b377645c94f780fcd8187b7c0c92c61",
+		"revision": "c2ef852f23814b921f6fa74795fc7fe9556eb343",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

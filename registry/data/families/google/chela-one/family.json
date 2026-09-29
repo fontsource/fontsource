@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/chelaone",
-		"revision": "cb7da0a381984ec348a9c88e2095f9592149c838"
+		"revision": "b0f6d8fe1f2023702a20caeb83f74e2b5245749c"
 	},
 	"provenance": {
 		"directory": "ofl/chelaone",
 		"repository": "google/fonts",
-		"revision": "611dbc9e1b26245dc4317b71876c195b854ba8ae",
+		"revision": "4c2f5e2b43d611b6bc20d116c76971f6e82cbcc6",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

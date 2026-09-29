@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/bilboswashcaps",
-		"revision": "ee601350e786d859e659a17d05934e1a62cb4785"
+		"revision": "43f17107cce1c680ccf6d8e959f26dc4ac7d1823"
 	},
 	"provenance": {
 		"directory": "ofl/bilboswashcaps",
 		"repository": "google/fonts",
-		"revision": "c697535f4d7958bf9b5d34941d28d1992ca0c0ea",
+		"revision": "fa3ca0d392492430563d5c258c6cb5ae526ff788",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

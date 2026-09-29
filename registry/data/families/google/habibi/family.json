@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/habibi",
-		"revision": "dca56369c22e74471cceec90e257533271629472"
+		"revision": "f84251c19559b3f2aae7053bb271ea0758b85c27"
 	},
 	"provenance": {
 		"directory": "ofl/habibi",
 		"repository": "google/fonts",
-		"revision": "6aaa7d22a693fe71a6bb36a5c61412eff6c48279",
+		"revision": "7d574b064861359d7205e113af6dbcecc58b88c6",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

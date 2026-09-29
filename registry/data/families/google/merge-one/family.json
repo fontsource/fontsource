@@ -65,6 +65,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -402,10 +403,10 @@
 	"provenance": {
 		"directory": "ofl/mergeone",
 		"repository": "google/fonts",
-		"revision": "a997b8fe3050dda7713410f09f444c87e58ee511",
+		"revision": "c39579d87840bc9637e9333abe09f232dd1e7e9a",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-25",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

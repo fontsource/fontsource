@@ -1,0 +1,9 @@
+Google Sans Flex is the variable-font member of Google's Sans type family, giving a single font file the range of dozens of styles. Designers can dial in six independent axes — weight, width, optical size, slant and roundedness — to match the typeface's tone to a product, a mood, or a screen size. Developed with variable-font specialists at Font Bureau and Pathfinders, it was released as an open-source font in 2025 alongside [Google Sans](https://github.com/googlefonts/googlesans) itself.
+
+That flexibility is more than aesthetic. Research with over 3,000 readers showed that taller, more elegant styles feel more premium and engaging, while the optical size axis automatically adjusts letter shapes to stay legible at any size, from a smartwatch to a billboard — work that earned Google Sans Flex a Red Dot Award in 2024.
+
+Google Sans was originally a proprietary typeface, which meant a fragmented experience across the digital ecosystem — Google Sans in Gmail, but Roboto or a device font elsewhere. Open-sourcing both fonts in 2025 is meant to close that gap, giving developers and designers a shared tool to build more consistent, polished interfaces across first- and third-party apps.
+
+Read more [here](https://design.google/library/google-sans-flex-font).
+
+To contribute, see [github.com/googlefonts/googlesans-flex](https://github.com/googlefonts/googlesans-flex).

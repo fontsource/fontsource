@@ -62,6 +62,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -400,10 +401,10 @@
 	"provenance": {
 		"directory": "ofl/hindcolombo",
 		"repository": "google/fonts",
-		"revision": "3f7e4e26d33a0693b605b23a540b6ea188d5c1fd",
+		"revision": "07eb5642192cfd7d8f86fc89d714195158180211",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-27",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

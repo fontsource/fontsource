@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/fenix",
-		"revision": "cfae6dd0422933ef47db060c6710166fb5ed30d1"
+		"revision": "4b215f7cc3c4a4be844dcbcb504d271c8a5086a1"
 	},
 	"provenance": {
 		"directory": "ofl/fenix",
 		"repository": "google/fonts",
-		"revision": "41d47d905edb6818aa0806c6821eef4776e3380f",
+		"revision": "d3a5983d9167c4546aae14222c9a88401308e630",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -356,15 +356,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/carterone",
-		"revision": "dfb0d97f8eb2fa66680b6098cdde15277b069b2b"
+		"revision": "7055fdb03b89cff87481cd41dfee324ab89b5a7d"
 	},
 	"provenance": {
 		"directory": "ofl/carterone",
 		"repository": "google/fonts",
-		"revision": "4c163cc5600734ea58b7ea6e410949028c698f4e",
+		"revision": "239e606ebe47078055b280c5a4e14746b293e1c7",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -65,6 +65,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -399,15 +400,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/giveyouglory",
-		"revision": "79ab8c04f2f381fa7439e09957fe3257ff113333"
+		"revision": "3a257cd1804b255dc7caac164c6cd2965c0119fc"
 	},
 	"provenance": {
 		"directory": "ofl/giveyouglory",
 		"repository": "google/fonts",
-		"revision": "9332a3b8326ffed1d9671db90e81a2b609c1a6b6",
+		"revision": "4fb11026bb584709681597bc6e4ed1889eeb54b6",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

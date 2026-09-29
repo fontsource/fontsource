@@ -73,6 +73,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -460,10 +461,10 @@
 	"provenance": {
 		"directory": "ofl/hiburmono",
 		"repository": "google/fonts",
-		"revision": "6ac3b2c19093da6c58d42dc26ee441803cc10083",
+		"revision": "09a8fd71f8db8d6818c195865d0699748e460245",
 		"type": "github"
 	},
-	"sourceModified": "2026-08-14",
+	"sourceModified": "2026-09-10",
 	"sources": [
 		{
 			"inspection": {

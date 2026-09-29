@@ -328,10 +328,10 @@
 	"provenance": {
 		"directory": "ofl/betaniapatmosguideline",
 		"repository": "google/fonts",
-		"revision": "82703246c7523e7ae2b35cf7aa3c92b77117f898",
+		"revision": "44d12a174315a6c8849a5ccaa507e0d2e90bcc6b",
 		"type": "github"
 	},
-	"sourceModified": "2026-04-27",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

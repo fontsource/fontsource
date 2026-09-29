@@ -72,6 +72,7 @@
 		"cjy_Hant",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -453,10 +454,10 @@
 	"provenance": {
 		"directory": "ofl/batangche",
 		"repository": "google/fonts",
-		"revision": "c13390277dfb1fcc7415d84ef7ef9cfc1e52f8c1",
+		"revision": "d36882a6669cd47370c0f361e994e503885cb108",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-03",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

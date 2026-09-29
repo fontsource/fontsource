@@ -11,7 +11,7 @@ interface FontEntry {
 
 export interface StaticFontEntry extends FontEntry {
 	weight: number;
-	extension: 'woff2' | 'woff' | 'ttf';
+	extension: 'woff2' | 'woff' | 'ttf' | 'otf';
 }
 
 export interface VariableFontEntry extends FontEntry {
@@ -66,7 +66,7 @@ const buildStaticPlan = (metadata: SourceFontMetadata): StaticFontEntry[] => {
 				return [];
 			}
 
-			return {
+			const entry = {
 				filename: source.publicFilename,
 				sourceFilename:
 					source.format === 'ttf'
@@ -77,6 +77,20 @@ const buildStaticPlan = (metadata: SourceFontMetadata): StaticFontEntry[] => {
 				style: face.style,
 				extension: source.format,
 			} satisfies StaticFontEntry;
+			if (source.format !== 'ttf') {
+				return [entry];
+			}
+
+			// Metadata cannot distinguish TrueType from CFF outlines. Expose both
+			// candidate names; the builder publishes only the matching extension.
+			return [
+				entry,
+				{
+					...entry,
+					filename: entry.filename.replace(/\.ttf$/, '.otf'),
+					extension: 'otf' as const,
+				},
+			];
 		});
 	});
 };

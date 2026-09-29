@@ -346,8 +346,9 @@ export const FamilyUse = ({
 								Ready for design apps, desktop use, and self-hosting.
 							</p>
 							<p className={classes.downloadContents}>
-								Includes every desktop TTF weight and style. A separate webfonts
-								folder contains WOFF, WOFF2, CSS, and the original license.
+								Includes desktop fonts for every static weight and style. A
+								separate webfonts folder contains WOFF, WOFF2, CSS, and the
+								original license.
 							</p>
 						</div>
 						<div className={classes.downloadAction}>

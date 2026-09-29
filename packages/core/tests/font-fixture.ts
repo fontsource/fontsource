@@ -18,3 +18,6 @@ export const loadStaticWoff2Fixture = (): Uint8Array =>
 
 export const loadVariableFontFixture = (): Uint8Array =>
 	loadFontFixture('recursive-latin-full-normal.ttf');
+
+export const loadCffFontFixture = (): Uint8Array =>
+	loadFontFixture('synthetic-cff.otf');

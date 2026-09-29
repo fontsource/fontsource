@@ -5,3 +5,7 @@ Castoro is named for the North American beaver, Castor canadensis. Robust serif 
 The roman was designed by John Hudson, and the italic with his Tiro colleague Paul Hanslow, assisted by Kaja Słojewska.
 
 To contribute, see [github.com/TiroTypeworks/Castoro](https://github.com/TiroTypeworks/Castoro).
+
+* * *
+
+![](castorobanner.png)

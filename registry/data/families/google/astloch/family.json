@@ -342,15 +342,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/astloch",
-		"revision": "48ba7212e16d35d8f5991fac7f46c8c134106d30"
+		"revision": "e6ac0a83f48c458c055180c7fb695732d6b5559a"
 	},
 	"provenance": {
 		"directory": "ofl/astloch",
 		"repository": "google/fonts",
-		"revision": "b540b01bc6e44e9aaa2fb31918d31b294eeafce9",
+		"revision": "fb4b1c35d457051917066d3a173dd52aba77995c",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

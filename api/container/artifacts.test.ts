@@ -37,6 +37,11 @@ const variableWoff2Bytes = new Uint8Array(
 		),
 	),
 );
+const cffWoff2Bytes = new Uint8Array(
+	readFileSync(
+		new URL('../tests/fixtures/fonts/synthetic-cff.woff2', import.meta.url),
+	),
+);
 
 const { putObject, fetchPackageTarball } = vi.hoisted(() => ({
 	putObject: vi.fn(),
@@ -56,6 +61,7 @@ describe('container artifact builder', () => {
 		filenames = publishedFiles[
 			`@fontsource${isVariable ? '-variable' : ''}/${id}`
 		],
+		staticWoff2: Uint8Array = staticWoff2Bytes,
 	): Promise<Uint8Array> => {
 		if (!filenames) throw new Error(`Missing published files for ${id}`);
 		const files: Array<[string, Uint8Array]> = [];
@@ -64,7 +70,7 @@ describe('container artifact builder', () => {
 			const bytes = isVariable
 				? variableWoff2Bytes
 				: filename.endsWith('.woff2')
-					? staticWoff2Bytes
+					? staticWoff2
 					: staticWoffBytes;
 			files.push([`package/files/${id}-${filename}`, bytes]);
 		}
@@ -137,6 +143,45 @@ describe('container artifact builder', () => {
 			'familypack',
 			'1.0.0',
 			false,
+		);
+	});
+
+	it('publishes CFF as OTF and includes it in downloads', async () => {
+		const tarball = await createPackageTarball(
+			'abel',
+			false,
+			['latin-400-normal.woff2'],
+			cffWoff2Bytes,
+		);
+		fetchPackageTarball.mockImplementation(async () => tarballStream(tarball));
+
+		await buildArtifacts({
+			mode: 'static',
+			tag: { id: 'abel', version: '1.0.0' },
+			metadata: staticMetadata,
+		});
+		expect(putObject.mock.calls.map(([key]) => key).sort()).toEqual([
+			'abel@1.0.0/latin-400-normal.otf',
+			'abel@1.0.0/latin-400-normal.woff2',
+		]);
+		const otfPut = putObject.mock.calls.find(([key]) => key.endsWith('.otf'));
+		expect(otfPut?.[1].slice(0, 4)).toEqual(
+			new Uint8Array([0x4f, 0x54, 0x54, 0x4f]),
+		);
+		expect(otfPut?.[2].contentType).toBe('font/otf');
+		putObject.mockClear();
+		await buildArtifacts({
+			mode: 'download',
+			staticVersion: '1.0.0',
+			metadata: staticMetadata,
+		});
+		const zipPut = putObject.mock.calls.find(([key]) =>
+			key.endsWith('/download.zip'),
+		);
+		const archive = unzipSync(zipPut?.[1] as Uint8Array);
+		expect(Object.keys(archive)).toContain('static/abel-latin-400-normal.otf');
+		expect(Object.keys(archive)).not.toContain(
+			'static/abel-latin-400-normal.ttf',
 		);
 	});
 

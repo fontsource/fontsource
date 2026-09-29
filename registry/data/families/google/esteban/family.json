@@ -355,15 +355,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/esteban",
-		"revision": "6e017f92549326738359a4c43c5ac7302ca773f7"
+		"revision": "c268b4f87279884fe0765e8d40eb65e0d17621ef"
 	},
 	"provenance": {
 		"directory": "ofl/esteban",
 		"repository": "google/fonts",
-		"revision": "2f6daa88e1e71320a6fe71cc91ecbfc018928737",
+		"revision": "14ada84e50f44185c11e407c4861d87d0023670e",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

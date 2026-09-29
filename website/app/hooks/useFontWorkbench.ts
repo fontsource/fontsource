@@ -6,6 +6,8 @@ import {
 	type FontFileFormat,
 	type FontInspection,
 	inspectFont,
+	planConversionFormats,
+	UnsupportedCffToTtfError,
 } from '@fontsource-utils/core';
 import { Zip, ZipPassThrough } from 'fflate';
 import { useMemo, useState } from 'react';
@@ -221,26 +223,35 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 				validSources,
 				async (source) => {
 					try {
+						const { formats, skippedTtf } = planConversionFormats(
+							source.inspection,
+							requestedFormats,
+						);
+						if (formats.length === 0) {
+							throw new UnsupportedCffToTtfError();
+						}
 						const converted = await convertFont(
 							ctx,
 							new Uint8Array(await source.file.arrayBuffer()),
-							requestedFormats,
+							formats,
 							source.file.name,
 						);
-						return { source, converted };
-					} catch {
+						return { source, converted, skippedTtf };
+					} catch (error) {
 						setSources((current) =>
 							current.map((entry) =>
 								entry.id === source.id
 									? {
 											...entry,
 											error:
-												'We could not convert this font. Try another copy.',
+												error instanceof UnsupportedCffToTtfError
+													? error.message
+													: 'We could not convert this font. Try another copy.',
 										}
 									: entry,
 							),
 						);
-						return { source, converted: [] };
+						return { source, converted: [], skippedTtf: false };
 					} finally {
 						completed++;
 						setProgress({
@@ -259,11 +270,21 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 				})),
 			);
 			setArtifacts(resolved.artifacts);
+			const skippedTtfCount = processed.results.filter(
+				({ skippedTtf }) => skippedTtf,
+			).length;
+			const notices: string[] = [];
+			if (skippedTtfCount > 0) {
+				notices.push(
+					`TTF could not be created for ${skippedTtfCount} ${skippedTtfCount === 1 ? 'font' : 'fonts'}. Other selected formats are ready below.`,
+				);
+			}
 			if (resolved.renamedArtifactCount > 0) {
-				setProjectNotice(
+				notices.push(
 					`Renamed ${resolved.renamedArtifactCount} output ${resolved.renamedArtifactCount === 1 ? 'file' : 'files'} to avoid duplicate ${resolved.renamedArtifactCount === 1 ? 'filename' : 'filenames'}.`,
 				);
 			}
+			setProjectNotice(notices.join(' ') || undefined);
 
 			return {
 				processedCount: processed.processedCount,

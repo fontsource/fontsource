@@ -1,8 +1,8 @@
 {
 	"categoriesSource": {
 		"path": "update/current_versions.json",
-		"revision": "84ccef280841abfac506afc4ad4a2782f6d0a1d0",
-		"sha256": "bf43ff282c0c714d9f9e61aa1e4fd16f346ba58658c7751c14bd036424b30211"
+		"revision": "bd8cb85bd4bad964fe6918f79665bb40c3a8efef",
+		"sha256": "352eb13041f1cb19abdf7bdda89a4190bcc510117e97e86c1c855470f02c101e"
 	},
 	"icons": [
 		{
@@ -1991,6 +1991,13 @@
 			],
 			"codepoint": 59340,
 			"name": "apps_outage"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048231,
+			"name": "apps_plus"
 		},
 		{
 			"categories": [
@@ -5447,6 +5454,13 @@
 			"categories": [
 				"symbols"
 			],
+			"codepoint": 1048254,
+			"name": "car_seat_off"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
 			"codepoint": 62691,
 			"name": "car_tag"
 		},
@@ -5803,6 +5817,13 @@
 			],
 			"codepoint": 61165,
 			"name": "chat_dashed"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048236,
+			"name": "chat_display"
 		},
 		{
 			"categories": [
@@ -6385,6 +6406,13 @@
 			],
 			"codepoint": 61916,
 			"name": "closed_caption_disabled"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048235,
+			"name": "closed_caption_display"
 		},
 		{
 			"categories": [
@@ -8236,6 +8264,13 @@
 		},
 		{
 			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048248,
+			"name": "device_swoosh_star"
+		},
+		{
+			"categories": [
 				"device",
 				"symbols"
 			],
@@ -8654,6 +8689,13 @@
 		},
 		{
 			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048234,
+			"name": "display_group"
+		},
+		{
+			"categories": [
 				"action",
 				"symbols"
 			],
@@ -8858,6 +8900,13 @@
 			],
 			"codepoint": 62341,
 			"name": "document_search"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048230,
+			"name": "document_share"
 		},
 		{
 			"categories": [
@@ -9503,6 +9552,13 @@
 			],
 			"codepoint": 63628,
 			"name": "edit_document"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048229,
+			"name": "edit_line"
 		},
 		{
 			"categories": [
@@ -11064,6 +11120,13 @@
 		},
 		{
 			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048228,
+			"name": "filter_cancel"
+		},
+		{
+			"categories": [
 				"image",
 				"symbols"
 			],
@@ -11125,6 +11188,13 @@
 			],
 			"codepoint": 58336,
 			"name": "filter_none"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048227,
+			"name": "filter_plus"
 		},
 		{
 			"categories": [
@@ -12527,6 +12597,13 @@
 		},
 		{
 			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048226,
+			"name": "function_search"
+		},
+		{
+			"categories": [
 				"editor",
 				"symbols"
 			],
@@ -13302,6 +13379,13 @@
 			],
 			"codepoint": 59376,
 			"name": "group_add"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048225,
+			"name": "group_eye"
 		},
 		{
 			"categories": [
@@ -14705,6 +14789,13 @@
 			],
 			"codepoint": 59605,
 			"name": "import_export"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048233,
+			"name": "import_spark"
 		},
 		{
 			"categories": [
@@ -17191,6 +17282,13 @@
 			"categories": [
 				"symbols"
 			],
+			"codepoint": 1048224,
+			"name": "markdown_convert"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
 			"codepoint": 62803,
 			"name": "markdown_copy"
 		},
@@ -17198,8 +17296,22 @@
 			"categories": [
 				"symbols"
 			],
+			"codepoint": 1048223,
+			"name": "markdown_document"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
 			"codepoint": 62804,
 			"name": "markdown_paste"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048232,
+			"name": "markdown_spark"
 		},
 		{
 			"categories": [
@@ -18000,6 +18112,13 @@
 			],
 			"codepoint": 62240,
 			"name": "mobile_speaker"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048242,
+			"name": "mobile_tap"
 		},
 		{
 			"categories": [
@@ -20872,6 +20991,20 @@
 			],
 			"codepoint": 59937,
 			"name": "people_outline"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048241,
+			"name": "people_size_decrease"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048240,
+			"name": "people_size_increase"
 		},
 		{
 			"categories": [
@@ -25045,6 +25178,13 @@
 			"categories": [
 				"symbols"
 			],
+			"codepoint": 1048221,
+			"name": "sheets_column_swap"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
 			"codepoint": 63523,
 			"name": "sheets_rtl"
 		},
@@ -26202,6 +26342,13 @@
 			"categories": [
 				"symbols"
 			],
+			"codepoint": 1048246,
+			"name": "spatial_gallery"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
 			"codepoint": 62671,
 			"name": "spatial_speaker"
 		},
@@ -26227,6 +26374,13 @@
 			],
 			"codepoint": 1048433,
 			"name": "speaker_2"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048247,
+			"name": "speaker_3"
 		},
 		{
 			"categories": [
@@ -27059,6 +27213,13 @@
 			],
 			"codepoint": 62163,
 			"name": "stay_primary_portrait"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048253,
+			"name": "steering_wheel_cool"
 		},
 		{
 			"categories": [
@@ -28282,6 +28443,13 @@
 			],
 			"codepoint": 59161,
 			"name": "target"
+		},
+		{
+			"categories": [
+				"symbols"
+			],
+			"codepoint": 1048243,
+			"name": "target_check"
 		},
 		{
 			"categories": [
@@ -32028,7 +32196,7 @@
 	],
 	"source": {
 		"path": "variablefont/MaterialSymbolsSharp[FILL,GRAD,opsz,wght].codepoints",
-		"revision": "84ccef280841abfac506afc4ad4a2782f6d0a1d0",
-		"sha256": "2ceabd8b6eba5ef81ff6f2fa8a801397f550841bf9cc42b03b5cc2e2d7aec9f1"
+		"revision": "bd8cb85bd4bad964fe6918f79665bb40c3a8efef",
+		"sha256": "225bd09137103cb7746bc93dc08d08764c9f0c3bd04f4b958d4a3c3c19432dd6"
 	}
 }

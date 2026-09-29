@@ -62,6 +62,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -374,15 +375,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/candal",
-		"revision": "ed7ac22d003047196e34bcf6465f2ad5871493e8"
+		"revision": "bfbce57a92b0b258efd685880d366d2c81e85777"
 	},
 	"provenance": {
 		"directory": "ofl/candal",
 		"repository": "google/fonts",
-		"revision": "5a2ebe25cc5e5d2e5fef0fe01934b2f8eb594b8c",
+		"revision": "d8d74f0eb5956c8d1f5750cc08e575d316bafbc9",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {
