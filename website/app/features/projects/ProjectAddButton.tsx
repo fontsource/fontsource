@@ -78,26 +78,22 @@ const ProjectAddButton = ({ displayName, familyId }: ProjectAddButtonProps) => {
 		});
 	};
 
-	return (
-		<>
-			{displayIncluded ? (
-				<Link className={classes.button} to="/selected-fonts">
-					<IconCheck aria-hidden size={18} />
-					In font set
-				</Link>
-			) : (
-				<button
-					type="button"
-					className={classes.button}
-					disabled={!ready}
-					title={!ready ? 'Your font set is loading' : undefined}
-					onClick={addItem}
-				>
-					<IconStack2 aria-hidden size={18} />
-					{!ready ? 'Font set loading…' : 'Add to font set'}
-				</button>
-			)}
-		</>
+	return displayIncluded ? (
+		<Link className={classes.button} to="/selected-fonts">
+			<IconCheck aria-hidden size={18} />
+			In font set
+		</Link>
+	) : (
+		<button
+			type="button"
+			className={classes.button}
+			disabled={!ready}
+			title={!ready ? 'Your font set is loading' : undefined}
+			onClick={addItem}
+		>
+			<IconStack2 aria-hidden size={18} />
+			{!ready ? 'Font set loading…' : 'Add to font set'}
+		</button>
 	);
 };
 
