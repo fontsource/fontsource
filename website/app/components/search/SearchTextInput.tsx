@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useSearchBox } from 'react-instantsearch';
 
 import { IconSearch, SearchByAlgolia } from '@/components/icons';
+import { normalizeSearchQuery } from '@/utils/search';
 
 import classes from './SearchTextInput.module.css';
 
@@ -17,8 +18,9 @@ const SearchBar = () => {
 	}, 300);
 
 	const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setInputValue(event.currentTarget.value);
-		handleSearch(event.currentTarget.value);
+		const value = normalizeSearchQuery(event.currentTarget.value);
+		setInputValue(value);
+		handleSearch(value);
 	};
 
 	// Track when the InstantSearch query changes to synchronize it with

@@ -12,6 +12,7 @@ import { DEFAULT_SEARCH_INDEX } from '@/utils/algolia-client';
 import type { DiscoveryPage } from '@/utils/discovery';
 import type { FontPreview } from '@/utils/font-summary';
 import { getPreviewText } from '@/utils/language/language';
+import { normalizeSearchQuery } from '@/utils/search';
 
 export interface SearchProps extends SearchFacets {
 	previews: Record<string, FontPreview>;
@@ -149,7 +150,7 @@ const routing = (
 				state$.collectionId.set(resolvedRouteState.collection ?? null);
 
 				const state = {
-					query: resolvedRouteState.query,
+					query: normalizeSearchQuery(resolvedRouteState.query),
 					// RefinementList facets
 					refinementList: {
 						...(subsets?.length ? { subsets } : {}),

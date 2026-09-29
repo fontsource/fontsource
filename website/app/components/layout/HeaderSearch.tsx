@@ -11,6 +11,7 @@ import { Form, Link, useNavigate } from 'react-router';
 
 import { IconSearch } from '@/components/icons';
 import { DEFAULT_SEARCH_INDEX, searchClient } from '@/utils/algolia-client';
+import { normalizeSearchQuery } from '@/utils/search';
 
 import classes from './HeaderSearch.module.css';
 
@@ -113,7 +114,7 @@ export const HeaderSearch = () => {
 							maxLength={512}
 							value={query}
 							onChange={(event) => {
-								const value = event.currentTarget.value;
+								const value = normalizeSearchQuery(event.currentTarget.value);
 								setQuery(value);
 								if (value.trim() !== searchQuery) {
 									setMatches([]);
