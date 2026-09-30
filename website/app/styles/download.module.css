@@ -1,0 +1,10 @@
+.content {
+	gap: 24px;
+}
+
+.sponsor {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 40px;
+}

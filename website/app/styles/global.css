@@ -59,32 +59,3 @@ body {
 a {
 	color: light-dark(var(--mantine-color-text-7), var(--mantine-color-text-0));
 }
-
-/* CarbonAds */
-
-#carbonads > span {
-	text-align: center;
-	display: grid;
-	padding: 1em;
-	box-sizing: border-box;
-	border-radius: 4px;
-	width: 238px;
-}
-
-#carbonads .carbon-wrap {
-	display: grid;
-	row-gap: 8px;
-}
-
-#carbonads .carbon-text {
-	font-size: 12px;
-	margin-bottom: 4px;
-}
-
-#carbonads .carbon-poweredby {
-	font-size: 0.75em;
-	opacity: 0.5;
-	text-transform: uppercase;
-	font-weight: 600;
-	letter-spacing: 0.5px;
-}

@@ -700,3 +700,18 @@
 		transition: none;
 	}
 }
+
+@media (min-width: 1201px) {
+	.heading {
+		max-width: none;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 360px;
+		align-items: center;
+		gap: 48px;
+	}
+}
+
+.headingSponsor {
+	display: flex;
+	justify-content: flex-end;
+}
