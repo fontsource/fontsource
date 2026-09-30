@@ -1,6 +1,6 @@
 {
 	"packages/cli": "0.7.4",
-	"packages/core": "0.5.1",
+	"packages/core": "0.5.2",
 	"packages/publish": "0.4.2",
 	"packages/scss": "0.2.4"
 }
