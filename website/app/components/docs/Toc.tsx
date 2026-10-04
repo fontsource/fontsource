@@ -46,6 +46,6 @@ export const Toc = ({ toc, editUrl }: TocProps) => (
 				<IconExternalLink size={14} stroke={1.8} aria-hidden="true" />
 			</a>
 		</Stack>
-		<CarbonAd w={238} mt={0} />
+		<CarbonAd className={classes.sponsor} />
 	</aside>
 );
