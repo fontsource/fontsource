@@ -12,66 +12,9 @@ type CarbonWindow = typeof window & {
 	_carbonads?: { refresh(): void };
 };
 
-// Carbon finds its insertion point by a global script ID after its request
-// completes. Keep that host connected and serialize normal refreshes.
-// Carbon has no completion callback for no-fill or failed ad requests.
+// Carbon inserts ads beside its script asynchronously. Keep the host connected
+// across route changes so pending responses always have an insertion point.
 let carbonHost: HTMLSpanElement | undefined;
-let isRefreshing = false;
-let refreshQueued = false;
-
-const getCarbonHost = () => {
-	carbonHost ??= document.createElement('span');
-	return carbonHost;
-};
-
-const refreshCarbonAd = () => {
-	const host = getCarbonHost();
-	isRefreshing = true;
-	let settled = false;
-	const timeout = window.setTimeout(() => completeRefresh(false), 30_000);
-
-	const observer = new MutationObserver(() => {
-		if (host.querySelector('#carbonads')) completeRefresh(true);
-	});
-	function completeRefresh(loaded: boolean) {
-		if (settled) return;
-		settled = true;
-		window.clearTimeout(timeout);
-		observer.disconnect();
-		isRefreshing = false;
-		const shouldRefresh = loaded && refreshQueued && !host.hidden;
-		refreshQueued = false;
-		// Failed attempts can retry on the next content change, never in a loop.
-		if (shouldRefresh) refreshCarbonAd();
-	}
-
-	observer.observe(host, { childList: true, subtree: true });
-
-	const carbon = (window as CarbonWindow)._carbonads;
-	if (carbon) {
-		try {
-			carbon.refresh();
-		} catch {
-			completeRefresh(false);
-		}
-		return;
-	}
-
-	// A slow initial script may still execute after the timeout. Reuse its host
-	// rather than injecting a second script with the same global ID.
-	if (host.querySelector('#_carbonads_js')) return;
-
-	const script = document.createElement('script');
-	script.src =
-		'//cdn.carbonads.com/carbon.js?serve=CEAI42QN&placement=fontsourceorg';
-	script.id = '_carbonads_js';
-	script.async = true;
-	script.onerror = () => {
-		script.remove();
-		completeRefresh(false);
-	};
-	host.appendChild(script);
-};
 
 interface CarbonAdProps extends BoxProps {
 	layout?: 'vertical' | 'horizontal';
@@ -92,14 +35,22 @@ export const CarbonAd = ({
 	// biome-ignore lint/correctness/useExhaustiveDependencies: Refresh the ad when the tab route changes.
 	useEffect(() => {
 		if (!shouldLoad) return;
-		const host = getCarbonHost();
+		carbonHost ??= document.createElement('span');
+		const host = carbonHost;
 		host.hidden = false;
 		mountRef.current?.appendChild(host);
 
-		if (isRefreshing) {
-			refreshQueued = true;
-		} else {
-			refreshCarbonAd();
+		const carbon = (window as CarbonWindow)._carbonads;
+		if (carbon) {
+			carbon.refresh();
+		} else if (!host.querySelector('#_carbonads_js')) {
+			const script = document.createElement('script');
+			script.src =
+				'//cdn.carbonads.com/carbon.js?serve=CEAI42QN&placement=fontsourceorg';
+			script.id = '_carbonads_js';
+			script.async = true;
+			script.onerror = () => script.remove();
+			host.appendChild(script);
 		}
 
 		return () => {
