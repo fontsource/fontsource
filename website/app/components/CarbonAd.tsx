@@ -13,10 +13,12 @@ type CarbonWindow = typeof window & {
 };
 
 // Carbon finds its insertion point by a global script ID after its request
-// completes. Keep that host connected and never refresh it concurrently.
+// completes. Keep that host connected and serialize normal refreshes.
+// Carbon has no completion callback for no-fill or failed ad requests.
 let carbonHost: HTMLSpanElement | undefined;
 let isRefreshing = false;
 let refreshQueued = false;
+const REFRESH_TIMEOUT_MS = 30_000;
 
 const getCarbonHost = () => {
 	carbonHost ??= document.createElement('span');
@@ -26,29 +28,42 @@ const getCarbonHost = () => {
 const refreshCarbonAd = () => {
 	const host = getCarbonHost();
 	isRefreshing = true;
+	let settled = false;
+	const timeout = window.setTimeout(
+		() => completeRefresh(false),
+		REFRESH_TIMEOUT_MS,
+	);
 
 	const observer = new MutationObserver(() => {
-		if (host.querySelector('.carbon-wrap')) completeRefresh();
+		if (host.querySelector('#carbonads')) completeRefresh(true);
 	});
-	function completeRefresh() {
+	function completeRefresh(loaded: boolean) {
+		if (settled) return;
+		settled = true;
+		window.clearTimeout(timeout);
 		observer.disconnect();
-
-		if (refreshQueued) {
-			refreshQueued = false;
-			refreshCarbonAd();
-			return;
-		}
-
 		isRefreshing = false;
+		const shouldRefresh = loaded && refreshQueued && !host.hidden;
+		refreshQueued = false;
+		// Failed attempts can retry on the next content change, never in a loop.
+		if (shouldRefresh) refreshCarbonAd();
 	}
 
 	observer.observe(host, { childList: true, subtree: true });
 
 	const carbon = (window as CarbonWindow)._carbonads;
 	if (carbon) {
-		carbon.refresh();
+		try {
+			carbon.refresh();
+		} catch {
+			completeRefresh(false);
+		}
 		return;
 	}
+
+	// A slow initial script may still execute after the timeout. Reuse its host
+	// rather than injecting a second script with the same global ID.
+	if (host.querySelector('#_carbonads_js')) return;
 
 	const script = document.createElement('script');
 	script.src =
@@ -57,7 +72,7 @@ const refreshCarbonAd = () => {
 	script.async = true;
 	script.onerror = () => {
 		script.remove();
-		completeRefresh();
+		completeRefresh(false);
 	};
 	host.appendChild(script);
 };
@@ -65,20 +80,23 @@ const refreshCarbonAd = () => {
 interface CarbonAdProps extends BoxProps {
 	layout?: 'vertical' | 'horizontal';
 	slotClassName?: string;
+	/** Identity of meaningful content that changes without route navigation. */
+	refreshKey?: string;
 }
 
 export const CarbonAd = ({
 	layout = 'vertical',
 	className,
 	slotClassName,
+	refreshKey,
 	...props
 }: CarbonAdProps) => {
-	const { pathname } = useLocation();
+	const { pathname, search } = useLocation();
 	const mountRef = useRef<HTMLSpanElement>(null);
 	const desktop = useMediaQuery('(min-width: 1201px)');
 	const shouldLoad = !slotClassName || desktop;
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: Refresh the ad when the tab route changes.
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Refresh on route or explicit content changes.
 	useEffect(() => {
 		if (!shouldLoad) return;
 		const host = getCarbonHost();
@@ -95,7 +113,7 @@ export const CarbonAd = ({
 			host.hidden = true;
 			document.body.appendChild(host);
 		};
-	}, [pathname, shouldLoad]);
+	}, [pathname, search, refreshKey, shouldLoad]);
 
 	const ad = (
 		<Box

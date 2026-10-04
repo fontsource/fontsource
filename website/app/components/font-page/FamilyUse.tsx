@@ -305,7 +305,11 @@ export const FamilyUse = ({
 						Download the font family for design apps, or add it to your website.
 					</p>
 				</div>
-				<CarbonAd layout="horizontal" slotClassName={classes.headingSponsor} />
+				<CarbonAd
+					layout="horizontal"
+					slotClassName={classes.headingSponsor}
+					refreshKey={path === 'web' && customSetup ? format : undefined}
+				/>
 			</div>
 			<Tabs
 				className={classes.acquisition}
