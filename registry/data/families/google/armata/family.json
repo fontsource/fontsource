@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/armata",
-		"revision": "acd66b422a3b61baae8fee57c197e9f782b87f57"
+		"revision": "8594fe9afcf0f561d1150067067ddca7e44e91c9"
 	},
 	"provenance": {
 		"directory": "ofl/armata",
 		"repository": "google/fonts",
-		"revision": "70e996edb7ad98f4c44df7a3e144b2bd84cfb007",
+		"revision": "d93ee354ba97c8e8e1bf7e56ccb0634b2cea9455",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

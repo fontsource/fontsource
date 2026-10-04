@@ -359,15 +359,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/cherryswash",
-		"revision": "f1c0f2dbc3f64ef4f85e54544626e6d629599e4c"
+		"revision": "d676530fe73151137f5e69519a1ee4beb0c12c49"
 	},
 	"provenance": {
 		"directory": "ofl/cherryswash",
 		"repository": "google/fonts",
-		"revision": "516a71e52ea2e8f7fbff3f397cf293d22364b137",
+		"revision": "89724bbe3e58622d61f3206ca32774322ced8d6f",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

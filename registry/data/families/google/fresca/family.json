@@ -354,15 +354,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/fresca",
-		"revision": "6f0f0d00ca1fc37032e87cb12c365a1a31bea443"
+		"revision": "c21be75086b74f71a72e992977f05243c9c99ef3"
 	},
 	"provenance": {
 		"directory": "ofl/fresca",
 		"repository": "google/fonts",
-		"revision": "f2dc3ac29933d87fd2a00f7f2f26968e9c71b6f0",
+		"revision": "072894f9f40b7c03bcb80349541f01412dd1856f",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

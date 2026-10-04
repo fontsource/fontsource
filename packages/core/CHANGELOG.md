@@ -1,5 +1,12 @@
 # @fontsource-utils/core
 
+## [0.5.1](https://github.com/fontsource/fontsource/compare/core-v0.5.0...core-v0.5.1) (2026-09-23)
+
+
+### Bug Fixes
+
+* **css:** centralize font-face generation and correct package CSS output ([8d2fb46](https://github.com/fontsource/fontsource/commit/8d2fb4693cdc8145f92c3dd89d9a2b1ede84b8d0))
+
 ## [0.5.0](https://github.com/fontsource/fontsource/compare/core-v0.4.0...core-v0.5.0) (2026-09-20)
 
 

@@ -376,15 +376,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/inika",
-		"revision": "07bb78b80a644c3e4979fbd4b6a6a6548d5a2934"
+		"revision": "445fa596f166fc6c91c293eccd75b588d9b1fef4"
 	},
 	"provenance": {
 		"directory": "ofl/inika",
 		"repository": "google/fonts",
-		"revision": "b9102fa47dc4b0fab5ec39160ca9183d3e9ea543",
+		"revision": "085073fea7cece3bde73e894bcac7d07bd6e78a9",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

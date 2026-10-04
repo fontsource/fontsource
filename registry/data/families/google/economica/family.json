@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/economica",
-		"revision": "03c3c4473a043aa560421b3d54d67f66d4a98a31"
+		"revision": "97d9d775227f19b63adc1b073ecc073f43cebefc"
 	},
 	"provenance": {
 		"directory": "ofl/economica",
 		"repository": "google/fonts",
-		"revision": "f1dda8eec6eddb03b18e448ba4896fa38c2b98d7",
+		"revision": "9ca547db19953adb7f7c3254ca14dc443239228e",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

@@ -4,8 +4,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
 {
   "css": [
     {
-      "content": "/* recursive-latin-wght-normal-1 */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: normal;
   font-display: swap;
@@ -14,7 +13,6 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   unicode-range: U+42;
 }
 
-/* recursive-latin-wght-normal-2 */
 @font-face {
   font-family: 'Recursive Variable';
   font-style: normal;
@@ -26,8 +24,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
       "filename": "wght.css",
     },
     {
-      "content": "/* recursive-latin-slnt-italic-1 */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
   font-display: swap;
@@ -36,7 +33,6 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   unicode-range: U+42;
 }
 
-/* recursive-latin-slnt-italic-2 */
 @font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
@@ -48,8 +44,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
       "filename": "slnt-italic.css",
     },
     {
-      "content": "/* recursive-latin-standard-italic-1 */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
   font-display: swap;
@@ -58,7 +53,6 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   unicode-range: U+42;
 }
 
-/* recursive-latin-standard-italic-2 */
 @font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
@@ -70,8 +64,7 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
       "filename": "standard-italic.css",
     },
     {
-      "content": "/* recursive-latin-standard-italic-1 */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
   font-display: swap;
@@ -80,7 +73,6 @@ exports[`buildFont integration with real fixtures > builds variable slices for r
   unicode-range: U+42;
 }
 
-/* recursive-latin-standard-italic-2 */
 @font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
@@ -229,8 +221,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
 {
   "css": [
     {
-      "content": "/* recursive-latin-wght-normal */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: normal;
   font-display: swap;
@@ -241,8 +232,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
       "filename": "wght.css",
     },
     {
-      "content": "/* recursive-latin-slnt-italic */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
   font-display: swap;
@@ -253,8 +243,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
       "filename": "slnt-italic.css",
     },
     {
-      "content": "/* recursive-latin-casl-normal */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: normal;
   font-display: swap;
@@ -265,8 +254,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
       "filename": "CASL.css",
     },
     {
-      "content": "/* recursive-latin-standard-italic */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
   font-display: swap;
@@ -277,8 +265,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
       "filename": "standard-italic.css",
     },
     {
-      "content": "/* recursive-latin-full-italic */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
   font-display: swap;
@@ -289,8 +276,7 @@ exports[`buildFont integration with real fixtures > emits every published axis k
       "filename": "full-italic.css",
     },
     {
-      "content": "/* recursive-latin-full-italic */
-@font-face {
+      "content": "@font-face {
   font-family: 'Recursive Variable';
   font-style: oblique 0deg 15deg;
   font-display: swap;
@@ -417,40 +403,34 @@ exports[`buildFont integration with real fixtures > infers static metadata and g
 {
   "css": [
     {
-      "content": "/* abel-latin-400-normal */
-@font-face {
+      "content": "@font-face {
   font-family: 'Abel';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/abel-latin-400-normal.woff2) format(woff2),
-       url(./files/abel-latin-400-normal.woff) format('woff');
+  src: url(./files/abel-latin-400-normal.woff2) format(woff2), url(./files/abel-latin-400-normal.woff) format(woff);
   unicode-range: U+20-22;
 }",
       "filename": "400.css",
     },
     {
-      "content": "/* abel-latin-400-normal */
-@font-face {
+      "content": "@font-face {
   font-family: 'Abel';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/abel-latin-400-normal.woff2) format(woff2),
-       url(./files/abel-latin-400-normal.woff) format('woff');
+  src: url(./files/abel-latin-400-normal.woff2) format(woff2), url(./files/abel-latin-400-normal.woff) format(woff);
   unicode-range: U+20-22;
 }",
       "filename": "latin.css",
     },
     {
-      "content": "/* abel-latin-400-normal */
-@font-face {
+      "content": "@font-face {
   font-family: 'Abel';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/abel-latin-400-normal.woff2) format(woff2),
-       url(./files/abel-latin-400-normal.woff) format('woff');
+  src: url(./files/abel-latin-400-normal.woff2) format(woff2), url(./files/abel-latin-400-normal.woff) format(woff);
   unicode-range: U+20-22;
 }",
       "filename": "index.css",
@@ -497,49 +477,41 @@ exports[`buildFont integration with real fixtures > preserves sliced static subs
 {
   "css": [
     {
-      "content": "/* abel-latin-400-normal-1 */
-@font-face {
+      "content": "@font-face {
   font-family: 'Abel';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/abel-latin-400-normal-1.woff2) format(woff2),
-       url(./files/abel-latin-400-normal-1.woff) format('woff');
+  src: url(./files/abel-latin-400-normal-1.woff2) format(woff2), url(./files/abel-latin-400-normal-1.woff) format(woff);
   unicode-range: U+42;
 }
 
-/* abel-latin-400-normal-2 */
 @font-face {
   font-family: 'Abel';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/abel-latin-400-normal-2.woff2) format(woff2),
-       url(./files/abel-latin-400-normal-2.woff) format('woff');
+  src: url(./files/abel-latin-400-normal-2.woff2) format(woff2), url(./files/abel-latin-400-normal-2.woff) format(woff);
   unicode-range: U+41;
 }",
       "filename": "400.css",
     },
     {
-      "content": "/* abel-latin-400-normal-1 */
-@font-face {
+      "content": "@font-face {
   font-family: 'Abel';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/abel-latin-400-normal-1.woff2) format(woff2),
-       url(./files/abel-latin-400-normal-1.woff) format('woff');
+  src: url(./files/abel-latin-400-normal-1.woff2) format(woff2), url(./files/abel-latin-400-normal-1.woff) format(woff);
   unicode-range: U+42;
 }
 
-/* abel-latin-400-normal-2 */
 @font-face {
   font-family: 'Abel';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(./files/abel-latin-400-normal-2.woff2) format(woff2),
-       url(./files/abel-latin-400-normal-2.woff) format('woff');
+  src: url(./files/abel-latin-400-normal-2.woff2) format(woff2), url(./files/abel-latin-400-normal-2.woff) format(woff);
   unicode-range: U+41;
 }",
       "filename": "index.css",

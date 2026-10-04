@@ -86,6 +86,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -512,10 +513,10 @@
 	"provenance": {
 		"directory": "ofl/bigshouldersstencildisplaysc",
 		"repository": "google/fonts",
-		"revision": "f892d358de8e4cf825e8e017b56d123ec4b31469",
+		"revision": "0fc990ac0be17f7bb0423f8f43f722ac4b6f2535",
 		"type": "github"
 	},
-	"sourceModified": "2026-05-29",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

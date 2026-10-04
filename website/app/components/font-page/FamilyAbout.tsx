@@ -209,10 +209,10 @@ const SearchableAxisList = ({
 }: {
 	familyId: string;
 	axes: Array<[string, GetVariableFontResponse['axes'][string]]>;
-	axisRegistry?: ListRegistryAxesResponse;
+	axisRegistry: ListRegistryAxesResponse;
 }) => {
 	const axisItems = axes.map(([tag, range]) => {
-		const definition = axisRegistry?.[tag];
+		const definition = axisRegistry[tag];
 		return {
 			tag,
 			range,
@@ -294,15 +294,14 @@ export const FamilyAbout = ({
 	};
 	const classifications = registry.classifications.map((id) => ({
 		id,
-		label: taxonomy?.classifications[id]?.label ?? formatFontLabel(id),
+		label: taxonomy.classifications[id]?.label ?? formatFontLabel(id),
 	}));
 	const tags = registry.tags.map((id) => ({
 		id,
-		label: taxonomy?.tags[id]?.label ?? formatFontLabel(id),
+		label: taxonomy.tags[id]?.label ?? formatFontLabel(id),
 	}));
-	const familyLanguages = languages;
 	const languageCount = registry.languages.length;
-	const primaryLanguage = familyLanguages.find(
+	const primaryLanguage = languages.find(
 		(language) => language.id === registry.primaryLanguage,
 	);
 	const axes = Object.entries(variable?.axes ?? {});
@@ -339,11 +338,9 @@ export const FamilyAbout = ({
 				},
 			].filter(({ value }) => value > 0)
 		: [];
-	const featureTags = capabilities
-		? Array.from(
-				new Set([...capabilities.features.gsub, ...capabilities.features.gpos]),
-			).sort()
-		: [];
+	const featureTags = Array.from(
+		new Set([...capabilities.features.gsub, ...capabilities.features.gpos]),
+	).sort();
 	let coverageDescription =
 		'Exact language coverage is not listed. Downloadable subsets describe character groups, not guaranteed language support.';
 	if (hasCatalog) {
@@ -509,11 +506,11 @@ export const FamilyAbout = ({
 							primaryLanguage ||
 							registry.primaryScript ||
 							!languageCount ||
-							familyLanguages.length <= 12) && <p>{coverageDescription}</p>}
-						{familyLanguages.length > 0 ? (
+							languages.length <= 12) && <p>{coverageDescription}</p>}
+						{languages.length > 0 ? (
 							<SearchableLanguageList
 								familyId={metadata.id}
-								languages={familyLanguages}
+								languages={languages}
 							/>
 						) : null}
 					</div>

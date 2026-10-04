@@ -354,15 +354,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/gochihand",
-		"revision": "af523d983cfa89c7216edbb907db7e39cef756d2"
+		"revision": "3b094579959c9489e3b401d001c895cb2dfaad02"
 	},
 	"provenance": {
 		"directory": "ofl/gochihand",
 		"repository": "google/fonts",
-		"revision": "9e38c10af6591f6d4ee57c0006bfc58ed07e0d71",
+		"revision": "47be017e2beab9d6980d93a2c49d85e4ed837867",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

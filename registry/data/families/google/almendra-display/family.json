@@ -316,15 +316,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/almendradisplay",
-		"revision": "d0f84bf66891b9e398cec31f5f7314897f897ee2"
+		"revision": "6a40f5fc91d58ab9cbd9a92e1a037dc9d71fa1aa"
 	},
 	"provenance": {
 		"directory": "ofl/almendradisplay",
 		"repository": "google/fonts",
-		"revision": "358edee480058d32c78a08ee6e41acb555e548d5",
+		"revision": "3ee554de43234e6b98bab39ca55f3d336b507a13",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

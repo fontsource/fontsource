@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -429,15 +430,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/averagesans",
-		"revision": "25392b948053363b34308e1f95e29c5401997b00"
+		"revision": "1b1058cd63195d26fe2ccc70a7662d90220373ac"
 	},
 	"provenance": {
 		"directory": "ofl/averagesans",
 		"repository": "google/fonts",
-		"revision": "87e74fb4b7937adee6de4f8f868447a3ae751586",
+		"revision": "7caf692a6f3397ed7c5ae4b97e849d174f78ea7f",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

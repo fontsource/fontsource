@@ -374,15 +374,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/daysone",
-		"revision": "5a4d7f229c497dd3f4cf1b8c23da954c3e45e2cf"
+		"revision": "4a7c150f858a8de260b27e12d95902e4de213286"
 	},
 	"provenance": {
 		"directory": "ofl/daysone",
 		"repository": "google/fonts",
-		"revision": "37bc5c0003907017d5d5af10b860f1541454048e",
+		"revision": "9fc301befec7123e3170cb33424a3a17efed269b",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

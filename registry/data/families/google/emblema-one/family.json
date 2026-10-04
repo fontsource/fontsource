@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/emblemaone",
-		"revision": "79205499f351bf5c95c8dcf6121180c18789f62f"
+		"revision": "70b9d48e6e1d27d74cc177bf7f12f958fe13dd28"
 	},
 	"provenance": {
 		"directory": "ofl/emblemaone",
 		"repository": "google/fonts",
-		"revision": "a007fa0a87212ca71a8d1ec870c8ce849ea21cea",
+		"revision": "7519421c9686ac3eb20e6a755e0b37d65f920d98",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

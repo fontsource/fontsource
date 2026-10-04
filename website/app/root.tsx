@@ -53,6 +53,7 @@ import '@mantine/core/styles/Tabs.css';
 // Feedback
 import '@mantine/core/styles/Alert.css';
 import '@mantine/core/styles/Progress.css';
+import '@mantine/core/styles/Notification.css';
 
 // Overlays
 import '@mantine/core/styles/Menu.css';
@@ -75,6 +76,7 @@ import '@mantine/core/styles/Title.css';
 // Extensions
 import '@mantine/code-highlight/styles.css';
 import '@mantine/dropzone/styles.css';
+import '@mantine/notifications/styles.css';
 import '@/styles/global.css';
 
 import ibmLatinURL from '@fontsource-variable/ibm-plex-sans/files/ibm-plex-sans-latin-wght-normal.woff2?url';
@@ -84,6 +86,7 @@ import {
 	MantineProvider,
 	mantineHtmlProps,
 } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import { ReactRouterProvider } from 'fumadocs-core/framework/react-router';
 import type {
 	HeadersFunction,
@@ -103,6 +106,7 @@ import { ErrorBoundary as ErrorBoundaryComponent } from '@/components/ErrorBound
 import { AppShell } from '@/components/layout/AppShell';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import { CurrentProjectProvider } from '@/features/projects/CurrentProjectProvider';
+import notificationClasses from '@/styles/notifications.module.css';
 import { theme } from '@/styles/theme';
 import { cacheHeaders } from '@/utils/cache';
 import { getCanonicalUrl, ogMeta } from '@/utils/meta';
@@ -191,6 +195,15 @@ export const Document = ({ children }: DocumentProps) => {
 			<body>
 				<MantineProvider theme={theme}>
 					<ReactRouterProvider>
+						<Notifications
+							position="bottom-right"
+							containerWidth={520}
+							zIndex={1000}
+							transitionDuration={0}
+							allowDragDismiss={false}
+							allowScrollDismiss={false}
+							classNames={{ root: notificationClasses.container }}
+						/>
 						<CollectionsProvider>
 							<CurrentProjectProvider>
 								<AppShell>{children}</AppShell>

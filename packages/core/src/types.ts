@@ -135,13 +135,6 @@ export interface CSSAsset {
 	content: string;
 }
 
-export interface CSSBuildOptions {
-	/**
-	 * Variable axis-key outputs to include explicitly. When omitted, expand to every published axis key.
-	 */
-	axisKeys?: VariableAxisKey[];
-}
-
 export interface FontBuildResult {
 	css: CSSAsset[];
 	fonts: FontAsset[];

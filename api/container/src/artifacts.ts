@@ -1,4 +1,4 @@
-import { convertFont, createFontContext } from '@fontsource-utils/core';
+import { createFontContext, decodeDesktopFont } from '@fontsource-utils/core';
 import { zipSync } from 'fflate';
 import limitConcur from 'limit-concur';
 import { unpackTar } from 'modern-tar';
@@ -25,7 +25,7 @@ interface BuiltArtifact {
 	key: string;
 	filename: string;
 	bytes: Uint8Array;
-	extension: 'woff2' | 'woff' | 'ttf';
+	extension: 'woff2' | 'woff' | 'ttf' | 'otf';
 }
 
 const createArtifact = (
@@ -97,19 +97,17 @@ const buildStaticArtifacts = async (
 		const converted = await Promise.all(
 			convertPlan.map(
 				limitConcur(8, async ([sourceFilename, bytes]) => {
-					const filename = sourceFilename.replace(/\.woff2$/, '.ttf');
-					const [{ data }] = await convertFont(
+					const { bytes: desktopBytes, extension } = await decodeDesktopFont(
 						ctx,
 						bytes,
-						['ttf'],
-						`${tag.id}-${sourceFilename}`,
 					);
+					const filename = sourceFilename.replace(/\.woff2$/, `.${extension}`);
 
 					return createArtifact(
 						getStaticAssetKey(tag.id, tag.version, filename),
 						filename,
-						data,
-						'ttf',
+						desktopBytes,
+						extension,
 					);
 				}),
 			),
@@ -247,7 +245,7 @@ const buildDownloadArtifacts = async (
 		Object.fromEntries([
 			...staticArtifacts.map((artifact) => [
 				`static/${id}-${artifact.filename}`,
-				artifact.extension === 'ttf'
+				artifact.extension === 'ttf' || artifact.extension === 'otf'
 					? artifact.bytes
 					: [artifact.bytes, { level: 0 }],
 			]),

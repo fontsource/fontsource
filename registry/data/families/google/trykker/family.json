@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -469,7 +470,6 @@
 	"tags": [
 		"expressive/business",
 		"expressive/rugged",
-		"expressive/sincere",
 		"serif/transitional"
 	]
 }

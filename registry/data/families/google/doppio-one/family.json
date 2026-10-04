@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/doppioone",
-		"revision": "34f9329a27b33de4a879733d65daaee5e7eb61d5"
+		"revision": "f2fcd625359c4aa7d2b76aa5ab99b760707f6669"
 	},
 	"provenance": {
 		"directory": "ofl/doppioone",
 		"repository": "google/fonts",
-		"revision": "d14234d12918faa291401af25f02f0ee66519b29",
+		"revision": "f8cf0d02f4edd07bbbbed39fef2f9b7f825be2f3",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

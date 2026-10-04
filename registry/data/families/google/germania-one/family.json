@@ -361,15 +361,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/germaniaone",
-		"revision": "8c373b1705299e083f48de2a4c5a818b35c83ad4"
+		"revision": "fea6803846d3270d2fde56a8678004cf67841852"
 	},
 	"provenance": {
 		"directory": "ofl/germaniaone",
 		"repository": "google/fonts",
-		"revision": "c0d3ea5176e1892b7a9138c6a423b891b00b94c5",
+		"revision": "78305a4ac01b4cf6b1ebb78624c3d557c7219924",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

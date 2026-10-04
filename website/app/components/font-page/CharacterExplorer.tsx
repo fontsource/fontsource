@@ -627,7 +627,6 @@ export const CharacterExplorer = ({
 							<button
 								key={item.value}
 								type="button"
-								data-active={activeGroup === item.value || undefined}
 								aria-pressed={activeGroup === item.value}
 								onClick={() => updateGroup(item.value)}
 							>
@@ -702,9 +701,6 @@ export const CharacterExplorer = ({
 																: `${getCharacterName(character)}, ${getCodePoints(character)}${isCombiningMark(character) ? `, previewed on ${markPreviewBase.trim() || 'a spacing guide'}` : ''}`
 														}
 														aria-pressed={activeCharacter === character}
-														data-active={
-															activeCharacter === character || undefined
-														}
 														tabIndex={focusableCharacter === character ? 0 : -1}
 														onClick={() => setSelected(character)}
 														onFocus={() => setSelected(character)}

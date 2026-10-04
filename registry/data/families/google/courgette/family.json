@@ -68,6 +68,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -429,15 +430,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/courgette",
-		"revision": "dcdd6f44e43530c55ae4d154b23b8f2fbb0e137f"
+		"revision": "c7884413c3ff6401df0abd685b20e7d419db2684"
 	},
 	"provenance": {
 		"directory": "ofl/courgette",
 		"repository": "google/fonts",
-		"revision": "59d7e3d2e775fc8dce75382f3889f429942817ec",
+		"revision": "801436966114aa59ed4e9805c135b7790afa20de",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

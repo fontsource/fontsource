@@ -73,6 +73,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -439,15 +440,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/jockeyone",
-		"revision": "4f6087374d94a145a80a2b297f27db8b52e52dd9"
+		"revision": "328c36706235aca94efbd2c56d2ee7b69d494bb0"
 	},
 	"provenance": {
 		"directory": "ofl/jockeyone",
 		"repository": "google/fonts",
-		"revision": "0e4bbb7818f63ae05fe12cf0911196b9d05fec1f",
+		"revision": "b56302e1b605d06e00cd2b003d26abb1aa730bf5",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

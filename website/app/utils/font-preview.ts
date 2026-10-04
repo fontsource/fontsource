@@ -1,15 +1,17 @@
-import { generateCSS, selectVariableAxisKey } from '@fontsource-utils/core';
+import {
+	type CSSFontFace,
+	generateCSS,
+	renderFontFaceRule,
+	resolveFontFaces,
+	selectVariableAxisKey,
+} from '@fontsource-utils/core/css';
 
 import type {
 	GetFontResponse,
 	GetVariableFontResponse,
 } from '../generated/api';
 import { jsDelivrResolver } from './cdn';
-import {
-	getRegistrySourcePreviewStyle,
-	type RegistryFamily,
-	type RegistrySource,
-} from './registry';
+import type { RegistryFamily, RegistrySource } from './registry';
 
 type FontPreviewIdentity = Pick<GetFontResponse, 'family' | 'id' | 'variable'>;
 
@@ -32,7 +34,7 @@ export const getRegistrySourcePreviewCSS = (
 	source: RegistrySource,
 	fontFamily = registrySourcePreviewFamily,
 ) => {
-	const files = [
+	const files: CSSFontFace['sources'][number][] = [
 		{
 			url: source.downloadUrl,
 			format: source.format === 'ttf' ? 'truetype' : 'opentype',
@@ -41,30 +43,24 @@ export const getRegistrySourcePreviewCSS = (
 	// API, snapshot, and website releases can overlap during the backfill.
 	if (source.previewUrl)
 		files.unshift({ url: source.previewUrl, format: 'woff2' });
-	const { fontStyle, fontWeight } = getRegistrySourcePreviewStyle(source);
 	const weight =
-		source.type === 'variable' && typeof source.weight !== 'number'
-			? `${source.weight.min} ${source.weight.max}`
-			: fontWeight;
-	let sources: string;
+		typeof source.weight === 'number'
+			? (source.declaredVariant?.weight ?? source.weight)
+			: `${source.weight.min} ${source.weight.max}`;
 	try {
-		sources = files
-			.map(
-				({ url, format }) =>
-					`url(${JSON.stringify(new URL(url, 'https://api.fontsource.org').toString())}) format("${format}")`,
-			)
-			.join(', ');
+		return renderFontFaceRule({
+			family: fontFamily,
+			style: source.declaredVariant?.style ?? source.style,
+			weight,
+			unicodeRange: null,
+			sources: files.map(({ url, format }) => ({
+				url: new URL(url, 'https://api.fontsource.org').toString(),
+				format,
+			})),
+		});
 	} catch {
 		return '';
 	}
-
-	return `@font-face {
-	font-family: ${JSON.stringify(fontFamily)};
-	src: ${sources};
-	font-style: ${fontStyle};
-	font-weight: ${weight};
-	font-display: swap;
-}`;
 };
 
 export const selectRegistryPreviewSource = (
@@ -142,27 +138,21 @@ export const getFontPreviewCSS = (
 	);
 	const unicodeKeys = Object.keys(unicodeRange);
 	const subsets = unicodeKeys.length > 0 ? unicodeKeys : metadata.subsets;
-	const cssConfig = {
-		id: metadata.id,
-		family: metadata.family,
-		subsets,
-		weights: metadata.weights,
-		styles: metadata.styles,
-		unicodeRange,
-	};
-	return variable
-		? generateCSS(
-				{ ...cssConfig, variable: variable.axes },
-				{
-					axisKeys: [
-						selectVariableAxisKey(variable.axes, Object.keys(variable.axes)),
-					],
-					resolver: jsDelivrResolver(metadata.id, true),
-					display: 'swap',
-				},
-			)
-		: generateCSS(cssConfig, {
-				resolver: jsDelivrResolver(metadata.id),
-				display: 'swap',
-			});
+	const faces = resolveFontFaces(
+		{
+			id: metadata.id,
+			family: metadata.family,
+			subsets,
+			weights: metadata.weights,
+			styles: metadata.styles,
+			unicodeRange,
+			variable: variable?.axes,
+		},
+		variable
+			? [selectVariableAxisKey(variable.axes, Object.keys(variable.axes))]
+			: undefined,
+	);
+	return generateCSS(metadata.family, faces, {
+		resolver: jsDelivrResolver(metadata.id, !!variable),
+	});
 };

@@ -345,15 +345,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/almendra",
-		"revision": "988cfa73bbc740e8a263da7a9c94c405d1436530"
+		"revision": "8a710d34448831809bac6591af29d173da92e98a"
 	},
 	"provenance": {
 		"directory": "ofl/almendra",
 		"repository": "google/fonts",
-		"revision": "cacc35deffa880fb6d17e32959046238c7721483",
+		"revision": "be8aa5607c9681c86b184022a99f172be22b25ad",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

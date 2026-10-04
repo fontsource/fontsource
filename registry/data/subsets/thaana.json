@@ -65,6 +65,10 @@
 			"201D"
 		],
 		[
+			"20C2",
+			"20C2"
+		],
+		[
 			"25CC",
 			"25CC"
 		],
@@ -79,8 +83,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/thaana_unique-glyphs.nam",
-		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
-		"sha256": "e547a564d4a0a7cc55935f2c28cc622b501560fe3a593f6a4e1a3370d051fa3c",
+		"revision": "326c4ef46c83db3b7d0bcbc9934af4c8e440c1b2",
+		"sha256": "081f029b4158b7aeb05b1671ee592fe2c3c5b02e691b5fe4934ead0b86325393",
 		"upstream": "namFiles"
 	}
 }

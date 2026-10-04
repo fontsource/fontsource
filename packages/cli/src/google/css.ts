@@ -1,45 +1,27 @@
-import { type FontObject, generateFontFace } from '@fontsource-utils/generate';
-import type {
-	APIIconResponse,
-	FontObjectV1,
-	FontObjectV2,
-	FontObjectVariable,
-} from 'google-font-metadata';
-
+import {
+	determineAxisKey,
+	type FontStyle,
+	formatAxisValue,
+	getFaceStretch,
+	getFaceStyle,
+	renderFontFaceRule,
+} from '@fontsource-utils/core/css';
+import type { FontObjectV1, FontObjectVariable } from 'google-font-metadata';
 import type { CSSGenerate } from '../types';
 import { findClosest } from '../utils';
-
-const REGISTERED_AXES = new Set(['wght', 'wdth', 'slnt', 'opsz']);
-
-/**
- * Keep browser-safe CSS generators in one module so the browser entry does not
- * pull Node.js-only imports into downstream builds.
- */
 
 type GenerateMetadataV1 = Pick<
 	FontObjectV1['id'],
 	'id' | 'family' | 'styles' | 'weights' | 'subsets' | 'variants'
->;
+> & { unicodeRange?: Record<string, string> };
 
-type GenerateMetadataV2 = Pick<
-	FontObjectV2['id'],
-	| 'id'
-	| 'family'
-	| 'styles'
-	| 'weights'
-	| 'subsets'
-	| 'variants'
-	| 'unicodeRange'
->;
+type GenerateMetadataV2 = GenerateMetadataV1 & {
+	unicodeRange: Record<string, string>;
+};
 
 type GenerateMetadataVariable = Pick<
 	FontObjectVariable['id'],
 	'axes' | 'variants'
->;
-
-type GenerateIconStatic = Pick<
-	FontObjectV2['id'],
-	'id' | 'family' | 'styles' | 'weights' | 'subsets' | 'variants'
 >;
 
 type GenerateIconVariable = Pick<
@@ -47,485 +29,236 @@ type GenerateIconVariable = Pick<
 	'id' | 'family' | 'axes' | 'variants'
 >;
 
-export const generateV1CSS = (
+type StaticPath = (
+	id: string,
+	subset: string,
+	weight: string,
+	style: string,
+	extension: string,
+) => string;
+type VariablePath = (
+	id: string,
+	subset: string,
+	axes: string,
+	style: string,
+) => string;
+
+// Match the files selected by the downloader, including absent format fallbacks.
+const available = (url: string | undefined) => /^https?:\/\//.test(url ?? '');
+
+const staticFaces = (
 	metadata: GenerateMetadataV1,
-	makeFontFilePath: (
-		id: string,
-		subset: string,
-		weight: string,
-		style: string,
-		extension: string,
-	) => string,
+	makePath: StaticPath,
 	tag?: string,
-): CSSGenerate => {
-	const cssGenerate: CSSGenerate = [];
-	const { id, family, styles, weights, subsets, variants } = metadata;
-
-	for (const subset of subsets) {
-		// Arrays of CSS blocks to be concatenated
-		const cssSubset: string[] = [];
-		const cssSubsetItalic: string[] = [];
-
-		for (const weight of weights) {
-			for (const style of styles) {
-				// Some fonts may have variants 400, 400i, 700 but not 700i
-				if (style in variants[weight]) {
-					const fontObj = {
-						family,
+	ranges?: Record<string, string>,
+) => {
+	const faces = [];
+	// Follow actual variant records: the weight/style lists are only summaries.
+	for (const [weight, styles] of Object.entries(metadata.variants)) {
+		for (const [style, subsets] of Object.entries(styles)) {
+			for (const [subset, { url }] of Object.entries(subsets)) {
+				const sources = (['woff2', 'woff'] as const)
+					.filter((format) => available(url[format]))
+					.map((format) => ({
+						url: makePath(
+							tag ?? metadata.id,
+							subset.replace('[', '').replace(']', ''),
+							weight,
+							style,
+							format,
+						),
+						format,
+					}));
+				if (!sources.length) continue;
+				faces.push({
+					subset,
+					weight: Number(weight),
+					style,
+					css: renderFontFaceRule({
+						family: metadata.family,
 						style,
-						display: 'swap',
 						weight,
-						src: [
-							{
-								url: makeFontFilePath(
-									tag ?? id,
-									subset,
-									String(weight),
-									style,
-									'woff2',
-								),
-								format: 'woff2' as const,
-							},
-							{
-								url: makeFontFilePath(
-									tag ?? id,
-									subset,
-									String(weight),
-									style,
-									'woff',
-								),
-								format: 'woff' as const,
-							},
-						],
-						comment: `${tag ?? id}-${subset}-${weight}-${style}`,
-					};
-					// This takes in a font object and returns an @font-face block
-					const css = generateFontFace(fontObj);
-
-					// Needed to differentiate filenames
-					if (style === 'normal') {
-						cssGenerate.push({
-							filename: `${subset}-${weight}.css`,
-							css,
-						});
-
-						cssSubset.push(css);
-					} else {
-						cssGenerate.push({
-							filename: `${subset}-${weight}-${style}.css`,
-							css,
-						});
-
-						cssSubsetItalic.push(css);
-					}
-				}
+						sources,
+						// Some legacy records have no coverage; never guess a range.
+						unicodeRange: ranges?.[subset] ?? null,
+					}),
+				});
 			}
 		}
-
-		cssGenerate.push({
-			filename: `${subset}.css`,
-			css: cssSubset.join('\n\n'),
-		});
-
-		// If there are italic styles for a subset
-		if (cssSubsetItalic.length > 0) {
-			cssGenerate.push({
-				filename: `${subset}-italic.css`,
-				css: cssSubsetItalic.join('\n\n'),
-			});
-		}
 	}
+	return faces;
+};
 
-	return cssGenerate;
+// index.css prefers normal, then the first available style, nearest to 400.
+// Keep the first weight on ties, matching existing Google package defaults.
+const defaultStaticFace = (faces: { style: string; weight: number }[]) => {
+	const style = faces.some((face) => face.style === 'normal')
+		? 'normal'
+		: faces[0]?.style;
+	const weight = findClosest(
+		faces.filter((face) => face.style === style).map((face) => face.weight),
+		400,
+	);
+	return { style, weight };
+};
+
+const append = (
+	assets: Map<string, string[]>,
+	filename: string,
+	css: string,
+) => {
+	const blocks = assets.get(filename) ?? [];
+	blocks.push(css);
+	assets.set(filename, blocks);
+};
+const finish = (assets: Map<string, string[]>): CSSGenerate =>
+	Array.from(assets, ([filename, blocks]) => ({
+		filename,
+		css: blocks.join('\n\n'),
+	}));
+const styleSuffix = (style: string) => (style === 'normal' ? '' : `-${style}`);
+
+export const generateV1CSS = (
+	metadata: GenerateMetadataV1,
+	makePath: StaticPath,
+	tag?: string,
+): CSSGenerate => {
+	const assets = new Map<string, string[]>();
+	for (const { subset, weight, style, css } of staticFaces(
+		metadata,
+		makePath,
+		tag,
+		metadata.unicodeRange,
+	)) {
+		const suffix = styleSuffix(style);
+		append(assets, `${subset}-${weight}${suffix}.css`, css);
+		append(assets, `${subset}${suffix}.css`, css);
+	}
+	// Retain published base subset imports for italic-only families.
+	for (const subset of metadata.subsets) {
+		if (!assets.has(`${subset}.css`)) assets.set(`${subset}.css`, []);
+	}
+	return finish(assets);
 };
 
 export const generateV2CSS = (
 	metadata: GenerateMetadataV2,
-	makeFontFilePath: (
-		id: string,
-		subset: string,
-		weight: string,
-		style: string,
-		extension: string,
-	) => string,
+	makePath: StaticPath,
 	tag?: string,
 ): CSSGenerate => {
-	const cssGenerate: CSSGenerate = [];
-	const { id, family, styles, weights, variants, unicodeRange, subsets } =
-		metadata;
+	const faces = staticFaces(metadata, makePath, tag, metadata.unicodeRange);
+	const assets = new Map<string, string[]>();
+	const index = defaultStaticFace(faces);
+	for (const { weight, style, css } of faces) {
+		append(assets, `${weight}${styleSuffix(style)}.css`, css);
+		if (weight === index.weight && style === index.style)
+			append(assets, 'index.css', css);
+	}
+	return finish(assets);
+};
 
-	// Find the weight for index.css in the case weight 400 does not exist.
-	const indexWeight = findClosest(weights, 400);
+export const generateIconStaticCSS = (
+	metadata: GenerateMetadataV1,
+	makePath: StaticPath,
+	tag?: string,
+): CSSGenerate => {
+	const faces = staticFaces(metadata, makePath, tag);
+	const assets = new Map<string, string[]>();
+	const index = defaultStaticFace(faces);
+	for (const { subset, weight, style, css } of faces) {
+		const suffix = styleSuffix(style);
+		append(assets, `${weight}${suffix}.css`, css);
+		append(assets, `${subset}-${weight}${suffix}.css`, css);
+		append(assets, `${subset}.css`, css);
+		if (weight === index.weight && style === index.style)
+			append(assets, 'index.css', css);
+	}
+	return finish(assets);
+};
 
-	// Generate CSS
-	const hasUnicode = Object.keys(unicodeRange).length > 0;
-	const unicodeKeys = hasUnicode ? Object.keys(unicodeRange) : subsets;
-
-	for (const weight of weights) {
-		for (const style of styles) {
-			const cssStyle: string[] = [];
-
-			for (const subset of unicodeKeys) {
-				// Some fonts may have variants 400, 400i, 700 but not 700i.
-				if (style in variants[weight]) {
-					const fontObj = {
+const variableCSS = (
+	id: string,
+	family: string,
+	{ axes, variants }: GenerateMetadataVariable,
+	weight: number,
+	ranges: Record<string, string> | null,
+	makePath: VariablePath,
+): CSSGenerate => {
+	const assets = new Map<string, string[]>();
+	const fontWeight = axes.wght ? formatAxisValue(axes.wght) : weight;
+	for (const [axisKey, styles] of Object.entries(variants)) {
+		for (const [style, subsets] of Object.entries(styles)) {
+			const filename = `${axisKey.toLowerCase()}${styleSuffix(style)}.css`;
+			const fontStyle = getFaceStyle(axisKey, style as FontStyle, axes);
+			const stretch = getFaceStretch(axisKey, axes);
+			for (const [subset, url] of Object.entries(subsets)) {
+				if (!available(url)) continue;
+				append(
+					assets,
+					filename,
+					renderFontFaceRule({
 						family,
-						style,
-						display: 'swap',
-						weight,
-						unicodeRange: hasUnicode ? unicodeRange[subset] : undefined,
-						src: [
+						isVariable: true,
+						style: fontStyle,
+						stretch,
+						weight: fontWeight,
+						unicodeRange: ranges?.[subset] ?? null,
+						sources: [
 							{
-								url: makeFontFilePath(
-									tag ?? id,
-									subset,
-									String(weight),
+								url: makePath(
+									id,
+									subset.replace('[', '').replace(']', ''),
+									axisKey.toLowerCase(),
 									style,
-									'woff2',
 								),
-								format: 'woff2' as const,
-							},
-							{
-								url: makeFontFilePath(
-									tag ?? id,
-									subset,
-									String(weight),
-									style,
-									'woff',
-								),
-								format: 'woff' as const,
+								format: 'woff2-variations',
 							},
 						],
-						comment: `${tag ?? id}-${subset}-${weight}-${style}`,
-					};
-					// This takes in a font object and returns an @font-face block
-					const css = generateFontFace(fontObj);
-					cssStyle.push(css);
-				}
-			}
-
-			// Write down CSS
-			if (style in variants[weight]) {
-				if (style === 'normal') {
-					cssGenerate.push({
-						filename: `${weight}.css`,
-						css: cssStyle.join('\n\n'),
-					});
-
-					// Generate index CSS
-					if (weight === indexWeight) {
-						cssGenerate.push({
-							filename: 'index.css',
-							css: cssStyle.join('\n\n'),
-						});
-					}
-				} else {
-					// If italic or else, define specific style CSS file
-					cssGenerate.push({
-						filename: `${weight}-${style}.css`,
-						css: cssStyle.join('\n\n'),
-					});
-				}
+					}),
+				);
 			}
 		}
 	}
-
-	return cssGenerate;
+	const css = finish(assets);
+	// Prefer existing entrypoints; metadata cannot select a bundle that was not emitted.
+	const preferred = ['wght', 'opsz', determineAxisKey(axes).toLowerCase()];
+	const index =
+		preferred
+			.map(
+				(axis) =>
+					css.find((entry) => entry.filename === `${axis}.css`) ??
+					css.find((entry) => entry.filename.startsWith(`${axis}-`)),
+			)
+			.find((entry) => entry !== undefined) ?? css[0];
+	if (!index) throw new Error(`Unable to generate index.css for ${id}`);
+	return [...css, { filename: 'index.css', css: index.css }];
 };
 
 export const generateVariableCSS = (
 	metadata: GenerateMetadataV2,
 	variableMeta: GenerateMetadataVariable,
-	makeFontFilePath: (
-		id: string,
-		subset: string,
-		axes: string,
-		style: string,
-	) => string,
+	makePath: VariablePath,
 	tag?: string,
-): CSSGenerate => {
-	const { id, family, unicodeRange, weights } = metadata;
-	const { axes, variants } = variableMeta;
-	const cssGenerate: CSSGenerate = [];
-	let indexCSS = '';
-
-	for (const axesKey of Object.keys(variants)) {
-		const variant = variants[axesKey];
-		const styles = Object.keys(variant);
-		const axesLower = axesKey.toLowerCase();
-
-		// These are variable modifiers to change specific CSS selectors
-		// for variable fonts.
-		const variableOpts: FontObject['variable'] = {
-			wght: axes.wght,
-		};
-		if (axesKey === 'standard' || axesKey === 'full' || axesKey === 'wdth')
-			variableOpts.stretch = axes.wdth;
-
-		if (axesKey === 'standard' || axesKey === 'full' || axesKey === 'slnt')
-			variableOpts.slnt = axes.slnt;
-
-		for (const style of styles) {
-			const cssStyle: string[] = [];
-
-			for (const subset of Object.keys(variant[style])) {
-				const fontObj: FontObject = {
-					family: `${family} Variable`,
-					style,
-					display: 'swap',
-					weight: findClosest(weights, 400),
-					unicodeRange: unicodeRange[subset],
-					variable: variableOpts,
-					src: [
-						{
-							url: makeFontFilePath(tag ?? id, subset, axesLower, style),
-							format: 'woff2-variations',
-						},
-					],
-					comment: `${tag ?? id}-${subset}-${axesLower}-${style}`,
-				};
-
-				// This takes in a font object and returns an @font-face block
-				const css = generateFontFace(fontObj);
-				cssStyle.push(css);
-			}
-
-			// Write down CSS
-			const filename =
-				style === 'normal' ? `${axesLower}.css` : `${axesLower}-${style}.css`;
-			const css = cssStyle.join('\n\n');
-
-			cssGenerate.push({
-				filename,
-				css,
-			});
-
-			// Ensure style is normal or there is only one style
-			if (axesKey === 'wght' && (style === 'normal' || styles.length === 1))
-				indexCSS = css;
-
-			// Some fonts may not have a wght axis, but usually have an opsz axis to compensate
-			if (indexCSS === '' && axesKey === 'opsz') indexCSS = css;
-		}
-	}
-
-	// No wght/opsz default was found, so fall back to:
-	// - `full` when a custom axis is present,
-	// - `standard` for multiple registered axes,
-	// - otherwise the sole axis.
-	if (!indexCSS) {
-		const activeAxes = Object.keys(axes).filter((axis) => axis !== 'ital');
-		const hasCustomAxis = activeAxes.some((axis) => !REGISTERED_AXES.has(axis));
-
-		let defaultAxis: string | undefined;
-		if (activeAxes.length > 1) {
-			defaultAxis = hasCustomAxis ? 'full' : 'standard';
-		} else {
-			defaultAxis = activeAxes[0]?.toLowerCase();
-		}
-
-		indexCSS =
-			cssGenerate.find((entry) => entry.filename === `${defaultAxis}.css`)
-				?.css ??
-			cssGenerate.find(
-				(entry) => entry.filename === `${defaultAxis}-italic.css`,
-			)?.css ??
-			'';
-	}
-
-	if (!indexCSS) {
-		throw new Error(`Unable to generate index.css for ${id}`);
-	}
-
-	// Write down index.css for variable package
-	cssGenerate.push({
-		filename: 'index.css',
-		css: indexCSS,
-	});
-
-	return cssGenerate;
-};
-
-export const generateIconStaticCSS = (
-	metadata: GenerateIconStatic,
-	makeFontFilePath: (
-		id: string,
-		subset: string,
-		weight: string,
-		style: string,
-		extension: string,
-	) => string,
-	tag?: string,
-): CSSGenerate => {
-	const cssGenerate: CSSGenerate = [];
-	const { id, family, styles, weights, subsets, variants } = metadata;
-
-	// Find the weight for index.css in the case weight 400 does not exist.
-	const indexWeight = findClosest(weights, 400);
-
-	// Generate CSS
-	for (const subset of subsets) {
-		// Arrays of CSS blocks to be concatenated
-		const cssSubset: string[] = [];
-
-		for (const weight of weights) {
-			for (const style of styles) {
-				// Some fonts may have variants 400, 400i, 700 but not 700i
-				if (style in variants[weight]) {
-					const fontObj = {
-						family,
-						style,
-						display: 'swap',
-						weight,
-						src: [
-							{
-								url: makeFontFilePath(
-									tag ?? id,
-									subset,
-									String(weight),
-									style,
-									'woff2',
-								),
-								format: 'woff2' as const,
-							},
-							{
-								url: makeFontFilePath(
-									tag ?? id,
-									subset,
-									String(weight),
-									style,
-									'woff',
-								),
-								format: 'woff' as const,
-							},
-						],
-						comment: `${tag ?? id}-${subset}-${weight}-${style}`,
-					};
-					// This takes in a font object and returns an @font-face block
-					const css = generateFontFace(fontObj);
-
-					if (style === 'normal') {
-						cssGenerate.push(
-							{
-								filename: `${weight}.css`,
-								css,
-							},
-							{
-								filename: `${subset}-${weight}.css`,
-								css,
-							},
-						);
-					} else {
-						cssGenerate.push(
-							{
-								filename: `${weight}-italic.css`,
-								css,
-							},
-							{
-								filename: `${subset}-${weight}-italic.css`,
-								css,
-							},
-						);
-					}
-					cssSubset.push(css);
-				}
-			}
-
-			// If the weight is index, generate index.css
-			if (weight === indexWeight) {
-				cssGenerate.push({
-					filename: 'index.css',
-					css: cssSubset.join('\n\n'),
-				});
-			}
-
-			cssGenerate.push({
-				filename: `${subset}.css`,
-				css: cssSubset.join('\n\n'),
-			});
-		}
-	}
-
-	return cssGenerate;
-};
+): CSSGenerate =>
+	variableCSS(
+		tag ?? metadata.id,
+		metadata.family,
+		variableMeta,
+		findClosest(metadata.weights, 400),
+		metadata.unicodeRange,
+		makePath,
+	);
 
 export const generateIconVariableCSS = (
 	metadata: GenerateIconVariable,
-	makeFontFilePath: (
-		id: string,
-		subset: string,
-		axesLower: string,
-		style: string,
-	) => string,
+	makePath: VariablePath,
 	tag?: string,
-): CSSGenerate => {
-	const cssGenerate: CSSGenerate = [];
-	const { id, family, variants, axes } = metadata;
-
-	// Generate CSS
-	let indexCSS = '';
-
-	for (const axesKey of Object.keys(variants)) {
-		const variant = variants[axesKey];
-		const styles = Object.keys(variant);
-		const axesLower = axesKey.toLowerCase();
-
-		// These are variable modifiers to change specific CSS selectors
-		// for variable fonts.
-		const variableOpts: APIIconResponse['axes'] = {
-			wght: axes.wght,
-		};
-		if (axesKey === 'standard' || axesKey === 'full' || axesKey === 'wdth')
-			variableOpts.stretch = axes.wdth;
-
-		if (axesKey === 'standard' || axesKey === 'full' || axesKey === 'slnt')
-			variableOpts.slnt = axes.slnt;
-
-		// Generate variable CSS
-		for (const style of styles) {
-			const cssStyle: string[] = [];
-
-			for (const subset of Object.keys(variant[style])) {
-				const fontObj: FontObject = {
-					family: `${family} Variable`,
-					style,
-					display: 'swap',
-					weight: Number(axes.wght.default),
-					variable: variableOpts,
-					src: [
-						{
-							url: makeFontFilePath(tag ?? id, subset, axesLower, style),
-							format: 'woff2-variations',
-						},
-					],
-					comment: `${tag ?? id}-${subset}-${axesLower}-${style}`,
-				};
-
-				// This takes in a font object and returns an @font-face block
-				const css = generateFontFace(fontObj);
-				cssStyle.push(css);
-			}
-
-			// Write down CSS
-			const filename =
-				style === 'normal' ? `${axesLower}.css` : `${axesLower}-${style}.css`;
-			const css = cssStyle.join('\n\n');
-			cssGenerate.push({
-				filename,
-				css,
-			});
-
-			// Some fonts may not have a wght axis, but usually have an opsz axis to compensate
-			if (axesKey === 'wght') indexCSS = css;
-			if (!indexCSS && axesKey === 'opsz') indexCSS = css;
-		}
-	}
-
-	// Write down index.css for variable package
-	cssGenerate.push({
-		filename: 'index.css',
-		css: indexCSS,
-	});
-
-	return cssGenerate;
-};
+): CSSGenerate =>
+	variableCSS(
+		tag ?? metadata.id,
+		metadata.family,
+		metadata,
+		Number(metadata.axes.wght?.default ?? 400),
+		null,
+		makePath,
+	);

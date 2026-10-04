@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/bigshotone",
-		"revision": "354d1d8880d46e04cf3b57980e6d56d1a5e1400d"
+		"revision": "f29b15c2cb862fd0f2cadbe1929dc0786ac87225"
 	},
 	"provenance": {
 		"directory": "ofl/bigshotone",
 		"repository": "google/fonts",
-		"revision": "4ac1176f30284f788a01ea6aa04195c749bf8101",
+		"revision": "9575bf205ab4d42c49ee2d05233d024751ec17e0",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

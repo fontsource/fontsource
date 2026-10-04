@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/drsugiyama",
-		"revision": "67e9b2e25cd7b9bde6ea5d5001fce5da54a9e877"
+		"revision": "277b8789c528b1d6deb4d4e8a89646f33eb2c0bf"
 	},
 	"provenance": {
 		"directory": "ofl/drsugiyama",
 		"repository": "google/fonts",
-		"revision": "3ffbe5150bb755148f90a20f033b6e731227b9af",
+		"revision": "1b3e93804d369cd1a3930b4a44ce15386c1c0c73",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

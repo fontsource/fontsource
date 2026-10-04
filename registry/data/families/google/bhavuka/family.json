@@ -82,6 +82,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -512,10 +513,10 @@
 	"provenance": {
 		"directory": "ofl/bhavuka",
 		"repository": "google/fonts",
-		"revision": "b0979d991509181e59a5b00cf2f9c975476e31f1",
+		"revision": "2da939049951e1bbab3a760e9a5075c6deb5f9c4",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-09",
+	"sourceModified": "2026-09-03",
 	"sources": [
 		{
 			"inspection": {

@@ -1,0 +1,27 @@
+/* wght.css */
+@font-face {
+  font-family: 'Example Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/example-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+/* wght-italic.css */
+@font-face {
+  font-family: 'Example Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/example-latin-wght-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}
+/* index.css */
+@font-face {
+  font-family: 'Example Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/example-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF;
+}

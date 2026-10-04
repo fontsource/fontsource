@@ -1,11 +1,11 @@
 export { createFontContext, type FontContext } from './context';
-export { type ConversionResult, convertFont } from './conversion';
 export {
-	type CSSOptions,
-	generateCSS,
-	generateCSSAssets,
-	type UrlResolver,
-} from './css';
+	type ConversionResult,
+	convertFont,
+	planConversionFormats,
+	UnsupportedCffToTtfError,
+} from './conversion';
+export { decodeDesktopFont } from './desktop-font';
 export {
 	type FontInspection,
 	type FontInspectionAxis,
@@ -32,9 +32,4 @@ export type {
 	VariableFontBuildConfig,
 	WebFontFormat,
 } from './types';
-export {
-	determineAxisKey,
-	getVariableAxisKeys,
-	resolveFontFaces,
-	selectVariableAxisKey,
-} from './utils';
+export { getVariableAxisKeys } from './utils';

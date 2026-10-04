@@ -6,7 +6,7 @@ import {
 	type SerializedPageTree,
 } from 'fumadocs-core/source/client';
 import { useMemo } from 'react';
-import { Link, useLocation, useMatches } from 'react-router';
+import { Link, useLocation, useRouteLoaderData } from 'react-router';
 import { firstInternalPageUrl } from '@/utils/docs/navigation';
 
 import classes from './LeftSidebar.module.css';
@@ -19,18 +19,6 @@ interface LeftSidebarProps {
 	tree?: PageTree.Root;
 	toggle?: () => void;
 }
-
-const usePageTree = (tree?: PageTree.Root) => {
-	const matches = useMatches();
-	const serialized = matches.find((match) => match.id === 'routes/docs')
-		?.loaderData as LayoutData | undefined;
-
-	return useMemo(() => {
-		if (tree) return tree;
-		if (!serialized?.pageTree) return undefined;
-		return deserializePageTree(serialized.pageTree);
-	}, [serialized?.pageTree, tree]);
-};
 
 const nodeKey = (node: PageTree.Node) =>
 	node.$id ??
@@ -95,7 +83,6 @@ const PageLink = ({
 			className={className}
 			to={node.url}
 			prefetch="intent"
-			data-active={active}
 			aria-current={active ? 'page' : undefined}
 			onClick={toggle}
 		>
@@ -187,7 +174,6 @@ const RootSection = ({
 					className={classes.rootSection}
 					to={url}
 					prefetch="intent"
-					data-active={active}
 					aria-current={active ? 'location' : undefined}
 					onClick={toggle}
 				>
@@ -201,7 +187,11 @@ const RootSection = ({
 };
 
 const LeftSidebar = ({ tree, toggle }: LeftSidebarProps) => {
-	const pageTree = usePageTree(tree);
+	const serialized = useRouteLoaderData<LayoutData>('routes/docs')?.pageTree;
+	const pageTree = useMemo(() => {
+		if (tree) return tree;
+		return serialized ? deserializePageTree(serialized) : undefined;
+	}, [serialized, tree]);
 	const location = useLocation();
 
 	if (!pageTree) return null;

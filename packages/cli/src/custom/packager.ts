@@ -1,7 +1,6 @@
-import { generateFontFace } from '@fontsource-utils/generate';
+import { renderFontFaceRule } from '@fontsource-utils/core/css';
 import fs from 'fs-extra';
 import path from 'pathe';
-
 import type { Metadata } from '../types';
 import { findClosest, makeFontFilePath } from '../utils';
 
@@ -30,9 +29,9 @@ export const packagerCustom = async (
 				const fontObj = {
 					family,
 					style,
-					display: 'swap',
+					unicodeRange: null,
 					weight,
-					src: [
+					sources: [
 						{
 							url: makeFontFilePath(id, subset, String(weight), style, 'woff2'),
 							format: 'woff2' as const,
@@ -42,10 +41,9 @@ export const packagerCustom = async (
 							format: 'woff' as const,
 						},
 					],
-					comment: `${id}-${subset}-${weight}-${style}`,
 				};
 				// This takes in a font object and returns an @font-face block
-				const css = generateFontFace(fontObj);
+				const css = renderFontFaceRule(fontObj);
 
 				// Needed to differentiate filenames for style CSS
 				if (style === 'normal') {

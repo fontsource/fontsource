@@ -118,7 +118,7 @@ const SourceTable = ({
 										{formatFileSize(source.file.size)}
 									</Text>
 									{source.error && (
-										<Text size="xs" c="red" mt={4}>
+										<Text size="xs" c="red" mt={4} role="alert">
 											{source.error}
 										</Text>
 									)}

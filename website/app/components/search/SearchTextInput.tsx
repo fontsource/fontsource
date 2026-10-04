@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useSearchBox } from 'react-instantsearch';
 
 import { IconSearch, SearchByAlgolia } from '@/components/icons';
+import { MAX_SEARCH_QUERY_LENGTH } from '@/utils/search';
 
 import classes from './SearchTextInput.module.css';
 
@@ -44,7 +45,7 @@ const SearchBar = () => {
 			autoComplete="off"
 			autoCorrect="off"
 			spellCheck={false}
-			maxLength={512}
+			maxLength={MAX_SEARCH_QUERY_LENGTH}
 			ref={ref}
 			leftSection={
 				<IconSearch

@@ -390,15 +390,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/coveredbyyourgrace",
-		"revision": "705a49490c07c9e76f1ba8dc2d4f56d1b7bbf42c"
+		"revision": "ec5beabb11b92f63abd716bac8d181b763bc366e"
 	},
 	"provenance": {
 		"directory": "ofl/coveredbyyourgrace",
 		"repository": "google/fonts",
-		"revision": "3923ba677636550d5922d8efa12a63b902462412",
+		"revision": "260fc3f7c302f785d812679a321d160832712712",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

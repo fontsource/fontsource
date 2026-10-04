@@ -67,6 +67,7 @@
 		"cjk_Latn",
 		"cnh_Latn",
 		"cni_Latn",
+		"cnr_Latn",
 		"co_Latn",
 		"cof_Latn",
 		"con_Latn",
@@ -428,15 +429,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/autourone",
-		"revision": "11d97fbce17c2eb0a2eb88eb560c4ecf8e7645ac"
+		"revision": "2773d8996d23617e284fcad81a8b396f2f098696"
 	},
 	"provenance": {
 		"directory": "ofl/autourone",
 		"repository": "google/fonts",
-		"revision": "e8afceb45500d9457f0dbef0c9a0ca37709cf540",
+		"revision": "2822b91670c2874262b475dd2b6c8877989c5f7b",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

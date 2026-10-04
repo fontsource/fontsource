@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/cookie",
-		"revision": "a86099c7b0fb4176bea1657e2b9e66ac3ab85513"
+		"revision": "04beabaf5fe9a6c83b63514600b85190ffac4401"
 	},
 	"provenance": {
 		"directory": "ofl/cookie",
 		"repository": "google/fonts",
-		"revision": "954387290dd9a1ea017bdc05ab80f8f7eaf8e4e6",
+		"revision": "fbacb4997e84060c219541a38b2435878daa312e",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-16",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

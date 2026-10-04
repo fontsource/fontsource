@@ -33,6 +33,10 @@
 			"965"
 		],
 		[
+			"B83",
+			"B83"
+		],
+		[
 			"D00",
 			"D0C"
 		],
@@ -87,8 +91,8 @@
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/malayalam_unique-glyphs.nam",
-		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
-		"sha256": "459a9d029346fec27b637439123f4e6ad5b4b140b81fbeee1ae2097270a51fd7",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "cc72af1d786a0bafc967e895cbb97d7bc2f0adb92c35f2098f342a8254e8c35d",
 		"upstream": "namFiles"
 	}
 }

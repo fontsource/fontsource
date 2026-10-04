@@ -93,15 +93,15 @@
 	"primaryScript": "Deva",
 	"project": {
 		"repository": "https://github.com/notofonts/devanagari",
-		"revision": "bb8d2566a1708ef2dcc6396ee2eb261a18967f76"
+		"revision": "e123d230c160ebe949d731cc19017cdb354180d1"
 	},
 	"provenance": {
 		"directory": "ofl/notosansdevanagari",
 		"repository": "google/fonts",
-		"revision": "8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5",
+		"revision": "2bc5d431b584d89e646214bf6cfa75494e76ceea",
 		"type": "github"
 	},
-	"sourceModified": "2026-03-12",
+	"sourceModified": "2026-09-09",
 	"sources": [
 		{
 			"inspection": {
@@ -141,14 +141,14 @@
 						"half",
 						"locl",
 						"nukt",
-						"ordn",
 						"pres",
 						"psts",
 						"rkrf",
-						"rphf"
+						"rphf",
+						"ss01"
 					]
 				},
-				"fontVersion": "Version 2.006",
+				"fontVersion": "Version 2.007",
 				"glyphs": 1117,
 				"outline": "glyf",
 				"style": "normal",
@@ -160,8 +160,8 @@
 				}
 			},
 			"path": "ofl/notosansdevanagari/NotoSansDevanagari[wdth,wght].ttf",
-			"sha256": "9ce7b04f60e363d8870e5997744cf85cf69d38a4d7d129d364d92a3b14b461d7",
-			"size": 647144,
+			"sha256": "14ec4af41f27482216d1c2229f417ff9b1425e1babb014e57d1d40d03229853e",
+			"size": 641944,
 			"variant": {
 				"style": "normal",
 				"weight": 400
@@ -170,8 +170,6 @@
 	],
 	"status": "active",
 	"tags": [
-		"expressive/competent",
-		"expressive/sincere",
 		"sans/humanist"
 	]
 }

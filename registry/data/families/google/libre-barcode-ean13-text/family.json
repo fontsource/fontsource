@@ -19,13 +19,13 @@
 	"provenance": {
 		"directory": "ofl/librebarcodeean13text",
 		"repository": "google/fonts",
-		"revision": "a72c96c1a19635960a42271c031e1e94de97fc09",
+		"revision": "f2bd09badbc763d8757951d52deec29da27e85fb",
 		"type": "github"
 	},
 	"sampleText": {
 		"short": "001234567890?"
 	},
-	"sourceModified": "2026-03-27",
+	"sourceModified": "2026-09-18",
 	"sources": [
 		{
 			"inspection": {

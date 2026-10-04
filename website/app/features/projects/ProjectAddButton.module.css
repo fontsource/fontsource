@@ -35,14 +35,9 @@
 }
 
 .toast {
-	position: fixed;
-	inset: auto 24px 24px auto;
-	z-index: 1000;
-	max-width: min(520px, calc(100% - 48px));
-	display: none;
+	display: flex;
 	align-items: center;
 	gap: 24px;
-	margin: 0;
 	padding: 13px 14px 13px 16px;
 	border: 1px solid light-dark(#d8dbea, #2c3651);
 	border-radius: 6px;
@@ -50,14 +45,16 @@
 	color: light-dark(#01112c, #f5f7f9);
 	font-size: 14px;
 
-	&[data-open] {
-		display: flex;
+	> span {
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	> div {
 		display: flex;
 		align-items: center;
 		gap: 12px;
+		flex-shrink: 0;
 		margin-inline-start: auto;
 	}
 
@@ -69,24 +66,28 @@
 		padding: 0 8px;
 		border: 0;
 		background: transparent;
-		color: var(--mantine-color-purple-0);
+		color: light-dark(var(--mantine-color-purple-0), #7c76ff);
 		font: inherit;
 		font-weight: 600;
 		text-decoration: none;
+		white-space: nowrap;
 		cursor: pointer;
 	}
 
+	:is(button, a):hover {
+		background: var(--mantine-color-purpleHover-0);
+	}
+
 	:is(button, a):focus-visible {
-		outline: 2px solid var(--mantine-color-purple-0);
+		outline: 2px solid currentColor;
 		outline-offset: 2px;
 	}
-}
 
-.close {
-	display: inline-grid;
-	min-width: 44px;
-	place-items: center;
-	color: light-dark(#52617a, #aeb9cc) !important;
+	.close {
+		min-width: 44px;
+		justify-content: center;
+		color: light-dark(#52617a, #aeb9cc);
+	}
 }
 
 @media (--lt-sm) {
@@ -95,10 +96,6 @@
 	}
 
 	.toast {
-		right: 16px;
-		bottom: 16px;
-		left: 16px;
-		max-width: none;
 		align-items: flex-start;
 		flex-direction: column;
 		gap: 10px;

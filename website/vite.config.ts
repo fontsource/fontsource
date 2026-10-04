@@ -78,6 +78,9 @@ export default defineConfig({
 		dedupe: ['react', 'react-dom'],
 		mainFields: ['browser', 'module', 'main'],
 		alias: {
+			'@fontsource-utils/core/css': fileURLToPath(
+				new URL('../packages/core/src/css/index.ts', import.meta.url),
+			),
 			'@fontsource-utils/core': fileURLToPath(
 				new URL('../packages/core/src/index.ts', import.meta.url),
 			),

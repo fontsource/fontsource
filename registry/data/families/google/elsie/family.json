@@ -347,15 +347,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/elsie",
-		"revision": "32783244780b4fdd904d5a1aa3f45a25c76ed15f"
+		"revision": "5dc3946767fc57b80f3aec071dc15d5bff1fe491"
 	},
 	"provenance": {
 		"directory": "ofl/elsie",
 		"repository": "google/fonts",
-		"revision": "042c20e2751c97d50b747405b256026894c55e64",
+		"revision": "18bfe7f34a46053fe84436d0185681fe7fbafe35",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-21",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

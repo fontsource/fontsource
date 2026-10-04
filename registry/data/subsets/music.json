@@ -30,21 +30,13 @@
 		],
 		[
 			"1D100",
-			"1D126"
-		],
-		[
-			"1D129",
-			"1D1EA"
-		],
-		[
-			"1D200",
 			"1D245"
 		]
 	],
 	"source": {
 		"path": "Lib/gfsubsets/data/music_unique-glyphs.nam",
-		"revision": "893b401e8912bf3ffa7409528213f317a3dc6d75",
-		"sha256": "9194e797f347074881b525d9a2fc12f0d349a4899281810ab3434c42368d865a",
+		"revision": "2a68014b16056e965c18fd47de1f3fde9a5b0095",
+		"sha256": "ad3088b243da411d6ee03cae8679fe0ed28bf30cb00259f342de5d3344dd21b5",
 		"upstream": "namFiles"
 	}
 }

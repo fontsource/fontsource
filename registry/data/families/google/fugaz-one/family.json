@@ -352,15 +352,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/fugazone",
-		"revision": "cc513bad4e98bf35e593423ddcbe6a71ec532143"
+		"revision": "a569b175e4b89e8915708a55c2796debdfe46aeb"
 	},
 	"provenance": {
 		"directory": "ofl/fugazone",
 		"repository": "google/fonts",
-		"revision": "3021e11e09a4a51e981221f42e8c29860dafeb1d",
+		"revision": "0b82f9ec134be17ce44a1531636c81dacf8f7f1d",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

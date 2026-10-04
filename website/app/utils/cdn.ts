@@ -1,4 +1,4 @@
-import type { UrlResolver } from '@fontsource-utils/core';
+import type { UrlResolver } from '@fontsource-utils/core/css';
 
 export const getJsDelivrPackageUrl = (
 	packageName: string,

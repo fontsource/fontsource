@@ -15,7 +15,7 @@ allowBuilds:
 
 catalog:
   '@biomejs/biome': 2.5.4
-  '@cloudflare/vite-plugin': 1.55.0
+  '@cloudflare/vite-plugin': 1.57.1
   '@vitest/coverage-v8': 4.1.11
   esbuild: 0.28.2
   knip: 6.32.0
@@ -24,7 +24,7 @@ catalog:
   typescript: 7.0.2
   vite: 8.3.0
   vitest: 4.1.11
-  wrangler: 4.134.0
+  wrangler: 4.136.1
 
 catalogs:
   node20:

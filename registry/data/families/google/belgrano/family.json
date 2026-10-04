@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/belgrano",
-		"revision": "e79e00337ef13f738009b16d2909cc2dd17af344"
+		"revision": "e302859418e7d9bde89fa08de47658bab32d6559"
 	},
 	"provenance": {
 		"directory": "ofl/belgrano",
 		"repository": "google/fonts",
-		"revision": "d3da14dcf43fef9b93923f9d3fabc6aca1792dda",
+		"revision": "706c794b7e4471f509241db36c64825dfbca305b",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-15",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

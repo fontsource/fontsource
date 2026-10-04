@@ -351,15 +351,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/galdeano",
-		"revision": "41268aaf05c1ab2716d0b4a8114aa6b7beff8e31"
+		"revision": "79cf98b98a74be1aac08d719abd22e7986ee9949"
 	},
 	"provenance": {
 		"directory": "ofl/galdeano",
 		"repository": "google/fonts",
-		"revision": "1926afa554af9df3efccb5ac5821f60c1fa894b3",
+		"revision": "1c3381763e5260ad2c3ec884c21677a33f6cc44b",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {

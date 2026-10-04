@@ -132,8 +132,6 @@ export const FamilyActions = ({
 			<ProjectAddButton
 				displayName={registry.displayName ?? metadata.family}
 				familyId={metadata.id}
-				label="Add to font set"
-				includedLabel="In font set"
 			/>
 			{showGetFont && (
 				<Link

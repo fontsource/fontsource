@@ -137,11 +137,11 @@ describe('getRegistrySourcePreviewCSS', () => {
 	it('loads the exact static Registry source', () => {
 		expect(getRegistrySourcePreviewCSS(staticSource)).toMatchInlineSnapshot(`
 			"@font-face {
-				font-family: "Fontsource Registry Preview";
-				src: url("https://api.fontsource.org/v1/registry/sources/static-400") format("truetype");
-				font-style: normal;
-				font-weight: 400;
-				font-display: swap;
+			  font-family: 'Fontsource Registry Preview';
+			  font-style: normal;
+			  font-display: swap;
+			  font-weight: 400;
+			  src: url(https://api.fontsource.org/v1/registry/sources/static-400) format(truetype);
 			}"
 		`);
 	});
@@ -163,11 +163,11 @@ describe('getRegistrySourcePreviewCSS', () => {
 
 		expect(getRegistrySourcePreviewCSS(source)).toMatchInlineSnapshot(`
 			"@font-face {
-				font-family: "Fontsource Registry Preview";
-				src: url("https://api.fontsource.org/v1/registry/sources/variable-standard") format("opentype");
-				font-style: italic;
-				font-weight: 100 900;
-				font-display: swap;
+			  font-family: 'Fontsource Registry Preview';
+			  font-style: italic;
+			  font-display: swap;
+			  font-weight: 100 900;
+			  src: url(https://api.fontsource.org/v1/registry/sources/variable-standard) format(opentype);
 			}"
 		`);
 	});
@@ -197,11 +197,11 @@ describe('getRegistrySourcePreviewCSS', () => {
 		});
 		expect(previewCSS).toMatchInlineSnapshot(`
 			"@font-face {
-				font-family: "Fontsource Registry Preview";
-				src: url("https://api.fontsource.org/v1/registry/sources/variable-standard/preview/1.woff2") format("woff2"), url("https://api.fontsource.org/v1/registry/sources/variable-standard") format("truetype");
-				font-style: normal;
-				font-weight: 100 900;
-				font-display: swap;
+			  font-family: 'Fontsource Registry Preview';
+			  font-style: normal;
+			  font-display: swap;
+			  font-weight: 100 900;
+			  src: url(https://api.fontsource.org/v1/registry/sources/variable-standard/preview/1.woff2) format(woff2), url(https://api.fontsource.org/v1/registry/sources/variable-standard) format(truetype);
 			}"
 		`);
 	});
@@ -209,7 +209,7 @@ describe('getRegistrySourcePreviewCSS', () => {
 	it('supports a source-specific preview family name', () => {
 		expect(
 			getRegistrySourcePreviewCSS(staticSource, 'Preview static-400'),
-		).toContain('font-family: "Preview static-400";');
+		).toContain("font-family: 'Preview static-400';");
 	});
 
 	it('ignores an invalid source URL instead of breaking the preview', () => {

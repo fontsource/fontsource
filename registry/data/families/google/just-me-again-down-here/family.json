@@ -396,15 +396,15 @@
 	},
 	"project": {
 		"repository": "https://github.com/googlefonts/justmeagaindownhere",
-		"revision": "23514049cb37c16431521835a69aa7cfe5d9b709"
+		"revision": "bc6529922d3d9ced792726d687ed7c613a25c6f3"
 	},
 	"provenance": {
 		"directory": "ofl/justmeagaindownhere",
 		"repository": "google/fonts",
-		"revision": "5bce8c4ee5603515b0f0be8e3474ca88700d9e35",
+		"revision": "28859654255818f959349d3de17cb41f67e5e6d9",
 		"type": "github"
 	},
-	"sourceModified": "2026-07-22",
+	"sourceModified": "2026-09-04",
 	"sources": [
 		{
 			"inspection": {
