@@ -2,8 +2,7 @@ import { Button, Group, Text } from '@mantine/core';
 import { useIntersection } from '@mantine/hooks';
 import { Link, useLocation } from 'react-router';
 import type { ListRegistryLanguagesResponse } from '@/generated/api';
-import { useIsFontReady } from '@/hooks/useIsFontLoaded';
-import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
+import { useFontPreview } from '@/hooks/useFontPreview';
 import {
 	getFontFamilyStack,
 	getPreviewLanguageTag,
@@ -42,18 +41,17 @@ const FontCard = ({
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
 	});
-	const stylesheetStatus = usePreviewStylesheet(
-		stylesheetHref,
-		eagerStylesheet || Boolean(entry?.isIntersecting),
-	);
-	const isFontReady = useIsFontReady(
-		font.family,
-		stylesheetStatus === 'loaded',
-	);
-	const previewFailed = stylesheetStatus === 'failed';
-
 	const previewText =
 		preview ?? getRecommendedPreviewText(font, 'short', languages);
+	const previewStatus = useFontPreview({
+		family: font.family,
+		text: previewText,
+		stylesheetHref,
+		enabled: eagerStylesheet || Boolean(entry?.isIntersecting),
+	});
+	const isFontReady = previewStatus === 'ready';
+	const previewFailed = previewStatus === 'stylesheet-error';
+
 	const sampleLanguage =
 		languages?.find((language) => language.id === previewLanguageId) ??
 		getRecommendedPreviewLanguage(font, languages ?? []);

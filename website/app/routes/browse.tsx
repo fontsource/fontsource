@@ -4,8 +4,7 @@ import { IconArrowRight, IconSearch } from '@tabler/icons-react';
 import { useState } from 'react';
 import type { LoaderFunctionArgs, MetaFunction } from 'react-router';
 import { data, Link, useLoaderData } from 'react-router';
-import { useIsFontReady } from '@/hooks/useIsFontLoaded';
-import { usePreviewStylesheet } from '@/hooks/usePreviewStylesheet';
+import { useFontPreview } from '@/hooks/useFontPreview';
 import classes from '@/styles/browse.module.css';
 import { cacheHeaders } from '@/utils/cache';
 import type { DiscoveryPage } from '@/utils/discovery';
@@ -198,14 +197,13 @@ const TagPreview = ({
 	const { ref, entry } = useIntersection<HTMLLIElement>({
 		rootMargin: '200px',
 	});
-	const stylesheetStatus = usePreviewStylesheet(
-		`https://cdn.jsdelivr.net/fontsource/css/${specimen?.id}@latest/index.css`,
-		Boolean(specimen && entry?.isIntersecting),
-	);
-	const ready = useIsFontReady(
-		specimen?.family ?? '',
-		Boolean(specimen && stylesheetStatus !== 'loading'),
-	);
+	const previewStatus = useFontPreview({
+		family: specimen?.family ?? '',
+		text: specimen?.text,
+		stylesheetHref: `https://cdn.jsdelivr.net/fontsource/css/${specimen?.id}@latest/index.css`,
+		enabled: Boolean(specimen && entry?.isIntersecting),
+	});
+	const ready = previewStatus !== 'loading';
 	return (
 		<li ref={ref}>
 			<Link to={page.path} prefetch="intent" className={classes.tagLink}>
