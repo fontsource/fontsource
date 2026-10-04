@@ -11,6 +11,7 @@ import { Form, Link, useNavigate } from 'react-router';
 
 import { IconSearch } from '@/components/icons';
 import { DEFAULT_SEARCH_INDEX, searchClient } from '@/utils/algolia-client';
+import { MAX_SEARCH_QUERY_LENGTH } from '@/utils/search';
 
 import classes from './HeaderSearch.module.css';
 
@@ -110,7 +111,7 @@ export const HeaderSearch = () => {
 							autoComplete="off"
 							autoCorrect="off"
 							spellCheck={false}
-							maxLength={512}
+							maxLength={MAX_SEARCH_QUERY_LENGTH}
 							value={query}
 							onChange={(event) => {
 								const value = event.currentTarget.value;
