@@ -18,7 +18,6 @@ type CarbonWindow = typeof window & {
 let carbonHost: HTMLSpanElement | undefined;
 let isRefreshing = false;
 let refreshQueued = false;
-const REFRESH_TIMEOUT_MS = 30_000;
 
 const getCarbonHost = () => {
 	carbonHost ??= document.createElement('span');
@@ -29,10 +28,7 @@ const refreshCarbonAd = () => {
 	const host = getCarbonHost();
 	isRefreshing = true;
 	let settled = false;
-	const timeout = window.setTimeout(
-		() => completeRefresh(false),
-		REFRESH_TIMEOUT_MS,
-	);
+	const timeout = window.setTimeout(() => completeRefresh(false), 30_000);
 
 	const observer = new MutationObserver(() => {
 		if (host.querySelector('#carbonads')) completeRefresh(true);
@@ -80,23 +76,20 @@ const refreshCarbonAd = () => {
 interface CarbonAdProps extends BoxProps {
 	layout?: 'vertical' | 'horizontal';
 	slotClassName?: string;
-	/** Identity of meaningful content that changes without route navigation. */
-	refreshKey?: string;
 }
 
 export const CarbonAd = ({
 	layout = 'vertical',
 	className,
 	slotClassName,
-	refreshKey,
 	...props
 }: CarbonAdProps) => {
-	const { pathname, search } = useLocation();
+	const { pathname } = useLocation();
 	const mountRef = useRef<HTMLSpanElement>(null);
 	const desktop = useMediaQuery('(min-width: 1201px)');
 	const shouldLoad = !slotClassName || desktop;
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: Refresh on route or explicit content changes.
+	// biome-ignore lint/correctness/useExhaustiveDependencies: Refresh the ad when the tab route changes.
 	useEffect(() => {
 		if (!shouldLoad) return;
 		const host = getCarbonHost();
@@ -113,7 +106,7 @@ export const CarbonAd = ({
 			host.hidden = true;
 			document.body.appendChild(host);
 		};
-	}, [pathname, search, refreshKey, shouldLoad]);
+	}, [pathname, shouldLoad]);
 
 	const ad = (
 		<Box
