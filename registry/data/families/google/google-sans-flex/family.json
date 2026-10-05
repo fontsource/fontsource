@@ -480,10 +480,10 @@
 	"provenance": {
 		"directory": "ofl/googlesansflex",
 		"repository": "google/fonts",
-		"revision": "3dc14e61f108f036db84188b9b405a67df9b7c88",
+		"revision": "a0e3dbcdc3a3ecfafff3f071159ae0221628922d",
 		"type": "github"
 	},
-	"sourceModified": "2026-09-15",
+	"sourceModified": "2026-09-24",
 	"sources": [
 		{
 			"inspection": {

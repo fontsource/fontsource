@@ -19,13 +19,13 @@
 	"provenance": {
 		"directory": "variablefont",
 		"repository": "google/material-design-icons",
-		"revision": "bd8cb85bd4bad964fe6918f79665bb40c3a8efef",
+		"revision": "737e3324305806514d7909874fa1818ae1808232",
 		"type": "github"
 	},
 	"sampleText": {
 		"short": "search settings home person add shopping_cart check_circle favorite logout trophy"
 	},
-	"sourceModified": "2026-09-25",
+	"sourceModified": "2026-10-02",
 	"sources": [
 		{
 			"inspection": {
@@ -64,7 +64,7 @@
 						"rlig"
 					]
 				},
-				"fontVersion": "Version 2.972",
+				"fontVersion": "Version 2.973",
 				"glyphs": 6646,
 				"outline": "glyf",
 				"style": "normal",
@@ -76,8 +76,8 @@
 				}
 			},
 			"path": "variablefont/MaterialSymbolsRounded[FILL,GRAD,opsz,wght].ttf",
-			"sha256": "c2182b6337495e64cc9e2311c52522567ac277d25a842bd027f9c9e3a5cc6d86",
-			"size": 15214320,
+			"sha256": "95b24392bb49efd1bc3e92cff4e2452ad094461bab7c97e7d8723fab97e330ca",
+			"size": 15214520,
 			"variant": {
 				"style": "normal",
 				"weight": 400

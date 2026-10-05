@@ -769,10 +769,10 @@
 	"provenance": {
 		"directory": "ofl/googlesans",
 		"repository": "google/fonts",
-		"revision": "f0598df34086d3d8191d99bd975a188ac62ab7bb",
+		"revision": "a0e3dbcdc3a3ecfafff3f071159ae0221628922d",
 		"type": "github"
 	},
-	"sourceModified": "2026-09-23",
+	"sourceModified": "2026-09-24",
 	"sources": [
 		{
 			"inspection": {

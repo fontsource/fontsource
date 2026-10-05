@@ -5,11 +5,11 @@
 	},
 	"googleFonts": {
 		"repository": "google/fonts",
-		"revision": "23e54b51ddffbc7713c583748e3bd86f62b1fa4a"
+		"revision": "9710da1eacb3be272583c3224dcb70f9da6eadbb"
 	},
 	"googleIcons": {
 		"repository": "google/material-design-icons",
-		"revision": "bd8cb85bd4bad964fe6918f79665bb40c3a8efef"
+		"revision": "737e3324305806514d7909874fa1818ae1808232"
 	},
 	"namFiles": {
 		"repository": "googlefonts/nam-files",
