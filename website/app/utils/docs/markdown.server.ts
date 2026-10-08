@@ -86,10 +86,15 @@ export const getAllDocsMarkdown = () => {
 };
 
 export const getDocsMarkdownResponse = async (pathname: string) => {
-	const route = getMarkdownRoute(pathname);
-	if (!route) return null;
-
-	const page = source.getPage(route.split('/').filter(Boolean));
+	let page: ReturnType<typeof source.getPage>;
+	try {
+		const route = getMarkdownRoute(pathname);
+		if (!route) return null;
+		page = source.getPage(route.split('/').filter(Boolean));
+	} catch (error) {
+		if (!(error instanceof URIError)) throw error;
+		return new Response('Not found', { status: 404 });
+	}
 
 	if (!page) {
 		return new Response('Not found', { status: 404 });

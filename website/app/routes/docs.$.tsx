@@ -93,7 +93,13 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 		});
 	}
 
-	const page = source.getPage(route.split('/').filter(Boolean));
+	let page: ReturnType<typeof source.getPage>;
+	try {
+		page = source.getPage(route.split('/').filter(Boolean));
+	} catch (error) {
+		if (!(error instanceof URIError)) throw error;
+		throw new Response('Not found', { status: 404 });
+	}
 
 	if (!page) {
 		throw new Response('Not found', { status: 404 });
