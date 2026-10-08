@@ -81,7 +81,7 @@ const loadFontPageCapabilities = async (
 
 const loadFontPageLanguages = (signal: AbortSignal) =>
 	loadRequiredRegistryData(
-		listRegistryLanguages({ signal }),
+		listRegistryLanguages(undefined, { signal }),
 		signal,
 		'Language data',
 	);

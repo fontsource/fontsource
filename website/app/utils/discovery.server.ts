@@ -44,8 +44,8 @@ export const loadDiscoveryData = async (
 			!pathname || pathname === '/variable-fonts'
 				? listFontValues({ variable: '' }, { signal })
 				: Promise.resolve<ListFontValuesResponse>({}),
-			listRegistryFamilies({ signal }),
-			getRegistryTaxonomy({ signal }),
+			listRegistryFamilies(undefined, { signal }),
+			getRegistryTaxonomy(undefined, { signal }),
 		],
 	);
 

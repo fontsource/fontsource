@@ -259,28 +259,41 @@ export const getFontOpenGraphImage = <ThrowOnError extends boolean = true>(param
 /**
  * Get registry classifications and tags
  */
-export const getRegistryTaxonomy = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<GetRegistryTaxonomyResponses, GetRegistryTaxonomyErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<GetRegistryTaxonomyResponses, GetRegistryTaxonomyErrors, ThrowOnError, 'data'>({
-    responseStyle: 'data',
-    url: '/v1/registry/taxonomy',
-    ...options
-});
+export const getRegistryTaxonomy = <ThrowOnError extends boolean = true>(parameters?: {
+    revision?: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<GetRegistryTaxonomyResponses, GetRegistryTaxonomyErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'query', key: 'revision' }] }]);
+    return (options?.client ?? client).get<GetRegistryTaxonomyResponses, GetRegistryTaxonomyErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/taxonomy',
+        ...options,
+        ...params
+    });
+};
 
 /**
  * List registry font families
  */
-export const listRegistryFamilies = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<ListRegistryFamiliesResponses, ListRegistryFamiliesErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<ListRegistryFamiliesResponses, ListRegistryFamiliesErrors, ThrowOnError, 'data'>({
-    responseStyle: 'data',
-    url: '/v1/registry/families',
-    ...options
-});
+export const listRegistryFamilies = <ThrowOnError extends boolean = true>(parameters?: {
+    revision?: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<ListRegistryFamiliesResponses, ListRegistryFamiliesErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'query', key: 'revision' }] }]);
+    return (options?.client ?? client).get<ListRegistryFamiliesResponses, ListRegistryFamiliesErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/families',
+        ...options,
+        ...params
+    });
+};
 
 /**
  * Get a registry font family
  */
 export const getRegistryFamily = <ThrowOnError extends boolean = true>(parameters: {
     id: string;
+    revision?: string;
 }, options?: Options<never, ThrowOnError>): RequestResult<GetRegistryFamilyResponses, GetRegistryFamilyErrors, ThrowOnError, 'data'> => {
-    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }] }]);
+    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }, { in: 'query', key: 'revision' }] }]);
     return (options?.client ?? client).get<GetRegistryFamilyResponses, GetRegistryFamilyErrors, ThrowOnError, 'data'>({
         responseStyle: 'data',
         url: '/v1/registry/families/{id}',
@@ -294,8 +307,9 @@ export const getRegistryFamily = <ThrowOnError extends boolean = true>(parameter
  */
 export const getRegistryFamilySymbols = <ThrowOnError extends boolean = true>(parameters: {
     id: string;
+    revision?: string;
 }, options?: Options<never, ThrowOnError>): RequestResult<GetRegistryFamilySymbolsResponses, GetRegistryFamilySymbolsErrors, ThrowOnError, 'data'> => {
-    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }] }]);
+    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }, { in: 'query', key: 'revision' }] }]);
     return (options?.client ?? client).get<GetRegistryFamilySymbolsResponses, GetRegistryFamilySymbolsErrors, ThrowOnError, 'data'>({
         responseStyle: 'data',
         url: '/v1/registry/families/{id}/symbols',
@@ -307,28 +321,41 @@ export const getRegistryFamilySymbols = <ThrowOnError extends boolean = true>(pa
 /**
  * List registry languages
  */
-export const listRegistryLanguages = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<ListRegistryLanguagesResponses, ListRegistryLanguagesErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<ListRegistryLanguagesResponses, ListRegistryLanguagesErrors, ThrowOnError, 'data'>({
-    responseStyle: 'data',
-    url: '/v1/registry/languages',
-    ...options
-});
+export const listRegistryLanguages = <ThrowOnError extends boolean = true>(parameters?: {
+    revision?: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<ListRegistryLanguagesResponses, ListRegistryLanguagesErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'query', key: 'revision' }] }]);
+    return (options?.client ?? client).get<ListRegistryLanguagesResponses, ListRegistryLanguagesErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/languages',
+        ...options,
+        ...params
+    });
+};
 
 /**
  * List registry Unicode subsets
  */
-export const listRegistrySubsets = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<ListRegistrySubsetsResponses, ListRegistrySubsetsErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<ListRegistrySubsetsResponses, ListRegistrySubsetsErrors, ThrowOnError, 'data'>({
-    responseStyle: 'data',
-    url: '/v1/registry/subsets',
-    ...options
-});
+export const listRegistrySubsets = <ThrowOnError extends boolean = true>(parameters?: {
+    revision?: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<ListRegistrySubsetsResponses, ListRegistrySubsetsErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'query', key: 'revision' }] }]);
+    return (options?.client ?? client).get<ListRegistrySubsetsResponses, ListRegistrySubsetsErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/subsets',
+        ...options,
+        ...params
+    });
+};
 
 /**
  * Get a registry Unicode subset
  */
 export const getRegistrySubset = <ThrowOnError extends boolean = true>(parameters: {
     id: string;
+    revision?: string;
 }, options?: Options<never, ThrowOnError>): RequestResult<GetRegistrySubsetResponses, GetRegistrySubsetErrors, ThrowOnError, 'data'> => {
-    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }] }]);
+    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'id' }, { in: 'query', key: 'revision' }] }]);
     return (options?.client ?? client).get<GetRegistrySubsetResponses, GetRegistrySubsetErrors, ThrowOnError, 'data'>({
         responseStyle: 'data',
         url: '/v1/registry/subsets/{id}',
@@ -340,11 +367,17 @@ export const getRegistrySubset = <ThrowOnError extends boolean = true>(parameter
 /**
  * List registry variable axes
  */
-export const listRegistryAxes = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<ListRegistryAxesResponses, ListRegistryAxesErrors, ThrowOnError, 'data'> => (options?.client ?? client).get<ListRegistryAxesResponses, ListRegistryAxesErrors, ThrowOnError, 'data'>({
-    responseStyle: 'data',
-    url: '/v1/registry/axes',
-    ...options
-});
+export const listRegistryAxes = <ThrowOnError extends boolean = true>(parameters?: {
+    revision?: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<ListRegistryAxesResponses, ListRegistryAxesErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [{ in: 'query', key: 'revision' }] }]);
+    return (options?.client ?? client).get<ListRegistryAxesResponses, ListRegistryAxesErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/axes',
+        ...options,
+        ...params
+    });
+};
 
 /**
  * Get an archived source font
@@ -382,8 +415,9 @@ export const getRegistrySourcePreview = <ThrowOnError extends boolean = true>(pa
  */
 export const getRegistrySourceCapabilities = <ThrowOnError extends boolean = true>(parameters: {
     sha256: string;
+    revision?: string;
 }, options?: Options<never, ThrowOnError>): RequestResult<GetRegistrySourceCapabilitiesResponses, GetRegistrySourceCapabilitiesErrors, ThrowOnError, 'data'> => {
-    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'sha256' }] }]);
+    const params = buildClientParams([parameters], [{ args: [{ in: 'path', key: 'sha256' }, { in: 'query', key: 'revision' }] }]);
     return (options?.client ?? client).get<GetRegistrySourceCapabilitiesResponses, GetRegistrySourceCapabilitiesErrors, ThrowOnError, 'data'>({
         responseStyle: 'data',
         url: '/v1/registry/sources/{sha256}/capabilities',

@@ -37,12 +37,12 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		basePromise,
 		loadFontPageLanguages(request.signal),
 		loadRequiredRegistryData(
-			listRegistryAxes(options),
+			listRegistryAxes(undefined, options),
 			request.signal,
 			'Variable axis data',
 		),
 		loadRequiredRegistryData(
-			getRegistryTaxonomy(options),
+			getRegistryTaxonomy(undefined, options),
 			request.signal,
 			'Font taxonomy',
 		),

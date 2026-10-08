@@ -43,7 +43,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		const options = { signal: request.signal };
 		const [packages, registryFamilies] = await Promise.all([
 			resolveFontPackages({ ids: validIds }, options),
-			listRegistryFamilies(options),
+			listRegistryFamilies(undefined, options),
 		]);
 		const registryById = new Map(
 			registryFamilies.map((family) => [family.id, family]),
