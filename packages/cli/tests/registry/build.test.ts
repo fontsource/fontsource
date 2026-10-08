@@ -2,16 +2,14 @@ import { createHash } from 'node:crypto';
 import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { createFontContext } from '@fontsource-utils/core';
 import { expect, it, vi } from 'vitest';
-import type { RegistryFamilyDetail } from '../../../api/shared/registry';
-import { loadStaticFontFixture } from '../../core/tests/font-fixture';
-import { buildFamily } from './build';
-import { writePackage } from './package';
-import { loadBuildInputs } from './registry';
+import type { RegistryFamilyDetail } from '../../../../api/shared/registry';
+import { loadStaticFontFixture } from '../../../core/tests/font-fixture';
+import { buildPackages } from '../../src/registry/build';
+import { loadBuildInputs } from '../../src/registry/inputs';
 
 it('freezes one registry revision, builds a package offline, and rejects changed source bytes', async () => {
-	const directory = await mkdtemp(join(tmpdir(), 'fontsource-v6-'));
+	const directory = await mkdtemp(join(tmpdir(), 'fontsource-build-'));
 	const source = loadStaticFontFixture();
 	const sha256 = createHash('sha256').update(source).digest('hex');
 	const revision = 'a'.repeat(40);
@@ -61,7 +59,6 @@ it('freezes one registry revision, builds a package offline, and rejects changed
 			},
 		},
 	};
-	const context = createFontContext();
 	try {
 		vi.stubGlobal('fetch', async (url: URL) => {
 			if (url.pathname === family.sources[0].downloadUrl)
@@ -83,15 +80,9 @@ it('freezes one registry revision, builds a package offline, and rejects changed
 		vi.stubGlobal('fetch', () => {
 			throw new Error('Offline build attempted a network request');
 		});
-		const inputs = await loadBuildInputs(['abel'], inputsDirectory);
-		const result = await buildFamily(
-			context,
-			inputs.families[0],
-			inputs,
-			false,
-		);
-		const output = join(directory, 'package');
-		await writePackage(output, inputs.families[0], result, false);
+		const packages = join(directory, 'packages');
+		await buildPackages(['abel'], { inputs: inputsDirectory, out: packages });
+		const output = join(packages, 'static', 'abel');
 		expect({
 			files: (await readdir(output, { recursive: true })).sort(),
 			manifest: JSON.parse(
@@ -105,7 +96,6 @@ it('freezes one registry revision, builds a package offline, and rejects changed
 		);
 	} finally {
 		vi.unstubAllGlobals();
-		context.destroy();
 		await rm(directory, { recursive: true, force: true });
 	}
 });
