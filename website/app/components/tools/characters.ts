@@ -81,11 +81,6 @@ export const resolveCharacters = async (
 	const codepoints = [...points].sort((a, b) => a - b);
 	return {
 		codepoints,
-		characters: {
-			subsets: ['custom'],
-			subsetSources: {
-				custom: codepoints.map((point) => `0x${point.toString(16)}`).join('\n'),
-			},
-		},
+		characters: [{ subset: 'custom', codepoints }],
 	};
 };
