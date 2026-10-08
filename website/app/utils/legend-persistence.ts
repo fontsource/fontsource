@@ -62,7 +62,15 @@ const syncValidatedLocalStorage = <T>({
 		onUnavailable();
 		ready$.set(true);
 	};
-	const stored = readStoredValue(localStorage, key, schema);
+	let storage: Storage;
+	try {
+		// Browser policies can block access to localStorage itself.
+		storage = localStorage;
+	} catch {
+		fail();
+		return;
+	}
+	const stored = readStoredValue(storage, key, schema);
 
 	if (stored.status === 'unavailable') {
 		fail();
@@ -71,7 +79,7 @@ const syncValidatedLocalStorage = <T>({
 
 	if (stored.status === 'invalid') {
 		try {
-			localStorage.removeItem(key);
+			storage.removeItem(key);
 		} catch {
 			fail();
 			return;
@@ -81,7 +89,7 @@ const syncValidatedLocalStorage = <T>({
 	try {
 		if (stored.status === 'valid') {
 			state$.set(stored.value);
-			localStorage.setItem(key, JSON.stringify(stored.value));
+			storage.setItem(key, JSON.stringify(stored.value));
 		}
 		syncObservable(state$, {
 			persist: {
