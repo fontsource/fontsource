@@ -18,7 +18,6 @@ const SnapshotSchema = z.object({
 });
 
 export interface BuildInputs {
-	revision: string;
 	families: RegistryFamilyDetail[];
 	subsets: Record<string, Subset>;
 	sources: Map<string, Uint8Array>;
@@ -42,7 +41,7 @@ const referencedSources = (family: RegistryFamilyDetail) => {
 export async function loadBuildInputs(
 	ids: string[],
 	directory: string,
-	registryUrl?: string,
+	registryUrl: string,
 	requestedRevision?: string,
 ): Promise<BuildInputs> {
 	for (const id of ids) RegistryIdParamSchema.parse({ id });
@@ -57,7 +56,6 @@ export async function loadBuildInputs(
 	}
 
 	const request = async (path: string, metadata: boolean) => {
-		if (!registryUrl) throw new Error('New inputs require --registry-url');
 		const url = new URL(path, registryUrl);
 		if (metadata && revision) url.searchParams.set('revision', revision);
 		const response = await fetch(url);
@@ -153,5 +151,5 @@ export async function loadBuildInputs(
 			{ flag: 'wx' },
 		);
 	}
-	return { revision, families, subsets, sources };
+	return { families, subsets, sources };
 }
