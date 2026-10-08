@@ -7,10 +7,6 @@
 			"entry": ["container/server.ts", "container/**/*.test.ts"],
 			"ignoreDependencies": ["cloudflare"]
 		},
-		"packages/cli": {
-			// This source file backs the package's public browser export condition.
-			"entry": ["src/index.ts", "src/browser.ts"]
-		},
 		"packages/core": {
 			"entry": ["src/index.{ts,tsx}", "tests/**/*.test.ts"]
 		},

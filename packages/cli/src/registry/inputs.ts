@@ -1,14 +1,21 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { z } from 'zod';
 import {
 	type RegistryFamilyDetail,
 	RegistryFamilyDetailSchema,
 	RegistryIdParamSchema,
 	RegistrySubsetSchema,
-} from '../../../api/shared/registry';
+} from '../../../../api/shared/registry';
 
 type Subset = ReturnType<typeof RegistrySubsetSchema.parse>;
+
+const SnapshotSchema = z.object({
+	revision: z.string().regex(/^[0-9a-f]{40}$/),
+	families: z.array(RegistryFamilyDetailSchema),
+	subsets: z.record(z.string(), RegistrySubsetSchema),
+});
 
 export interface BuildInputs {
 	revision: string;
@@ -71,19 +78,12 @@ export async function loadBuildInputs(
 	};
 
 	if (frozen) {
-		const snapshot = JSON.parse(frozen);
+		const snapshot = SnapshotSchema.parse(JSON.parse(frozen));
 		if (revision && revision !== snapshot.revision)
 			throw new Error('Frozen inputs use a different revision');
 		revision = snapshot.revision;
-		families = snapshot.families.map((family: unknown) =>
-			RegistryFamilyDetailSchema.parse(family),
-		);
-		subsets = Object.fromEntries(
-			Object.entries(snapshot.subsets).map(([id, subset]) => [
-				id,
-				RegistrySubsetSchema.parse(subset),
-			]),
-		);
+		families = snapshot.families;
+		subsets = snapshot.subsets;
 		families = ids.map((id) => {
 			const family = families.find((family) => family.id === id);
 			if (!family)

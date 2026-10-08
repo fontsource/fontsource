@@ -4,8 +4,8 @@ import {
 	type FontBuildTarget,
 	type FontContext,
 } from '@fontsource-utils/core';
-import type { RegistryFamilyDetail } from '../../../api/shared/registry';
-import type { BuildInputs } from './registry';
+import type { RegistryFamilyDetail } from '../../../../api/shared/registry';
+import type { BuildInputs } from './inputs';
 
 const expandRanges = (ranges: [string, string][]): number[] =>
 	ranges.flatMap(([start, end]) => {

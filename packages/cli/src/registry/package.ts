@@ -1,9 +1,9 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import type { FontBuildResult } from '@fontsource-utils/core';
-import type { RegistryFamilyDetail } from '../../../api/shared/registry';
+import type { RegistryFamilyDetail } from '../../../../api/shared/registry';
 
-/** Local v6 packages contain only generated outputs; frozen inputs stay outside them. */
+/** Package only generated outputs; frozen build inputs stay outside the package. */
 export async function writePackage(
 	directory: string,
 	family: RegistryFamilyDetail,
@@ -24,8 +24,7 @@ export async function writePackage(
 			filename: 'package.json',
 			content: json({
 				name,
-				version: '6.0.0-dev.0',
-				private: true,
+				version: '6.0.0',
 				description: `Self-host the ${family.family} font.`,
 				license: family.license.id,
 				main: 'index.css',
@@ -43,7 +42,7 @@ export async function writePackage(
 		},
 		{
 			filename: 'README.md',
-			content: `# ${family.family}\n\nLocal Fontsource v6 preview.\n\n\`\`\`js\nimport '${name}';\n\`\`\`\n`,
+			content: `# ${family.family}\n\nSelf-host the ${family.family} font.\n\n\`\`\`js\nimport '${name}';\n\`\`\`\n`,
 		},
 	];
 	for (const asset of assets) {

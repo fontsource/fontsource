@@ -5,40 +5,14 @@
 	"bin": {
 		"fontsource": "dist/cli.mjs"
 	},
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.cts",
-	"exports": {
-		"node": {
-			"require": {
-				"types": "./dist/index.d.cts",
-				"default": "./dist/index.cjs"
-			},
-			"import": {
-				"types": "./dist/index.d.mts",
-				"default": "./dist/index.mjs"
-			}
-		},
-		"default": {
-			"require": {
-				"types": "./dist/browser.d.cts",
-				"default": "./dist/browser.cjs"
-			},
-			"import": {
-				"types": "./dist/browser.d.mts",
-				"default": "./dist/browser.mjs"
-			}
-		}
-	},
 	"scripts": {
 		"build": "tsdown",
 		"cli": "tsx ./src/cli.ts",
-		"v6:build": "tsx ./v6/cli.ts",
 		"prepack": "pnpm run build",
 		"test": "vitest run",
 		"test:coverage": "vitest run --coverage",
 		"test:watch": "vitest",
-		"typecheck": "tsc --noEmit && tsc -p v6/tsconfig.json"
+		"typecheck": "tsc --noEmit"
 	},
 	"keywords": [
 		"fontsource",
@@ -51,27 +25,22 @@
 		"@clack/prompts": "^1.7.0",
 		"cac": "^7.0.0",
 		"consola": "^3.1.0",
-		"dotenv": "^17.4.2",
 		"fs-extra": "^11.1.1",
 		"json-stringify-pretty-compact": "^4.0.0",
-		"p-queue": "^9.3.1",
 		"pathe": "^2.0.3",
-		"picocolors": "^1.0.0"
+		"picocolors": "^1.0.0",
+		"@fontsource-utils/core": "workspace:*",
+		"zod": "4.6.5"
 	},
 	"devDependencies": {
-		"@fontsource-utils/core": "workspace:*",
 		"@types/fs-extra": "^11.0.1",
 		"@types/node": "catalog:node20",
 		"@vitest/coverage-v8": "catalog:",
-		"google-font-metadata": "^6.0.4",
 		"sass": "^1.62.1",
 		"tsdown": "catalog:",
 		"tsx": "catalog:",
 		"typescript": "catalog:",
 		"vitest": "catalog:"
-	},
-	"peerDependencies": {
-		"google-font-metadata": "^6.0.4"
 	},
 	"files": [
 		"dist/*"
@@ -80,12 +49,13 @@
 		"access": "public"
 	},
 	"engines": {
-		"node": ">=20.19.0"
+		"node": ">=22.0.0"
 	},
 	"homepage": "https://github.com/fontsource/fontsource/tree/main/packages/cli",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/fontsource/fontsource",
 		"directory": "packages/cli"
-	}
+	},
+	"type": "module"
 }

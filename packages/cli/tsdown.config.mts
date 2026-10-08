@@ -1,25 +1,7 @@
 import { defineConfig } from 'tsdown';
 
-const libraryEntries = {
-	browser: 'src/browser.ts',
-	index: 'src/index.ts',
-};
-
 export default defineConfig({
-	entry: libraryEntries,
-	format: {
-		esm: {
-			entry: {
-				...libraryEntries,
-				cli: 'src/cli.ts',
-			},
-		},
-		cjs: {},
-	},
-	dts: {
-		entry: Object.values(libraryEntries),
-	},
-	target: 'node20',
-	// Bundle the pure CSS entrypoint into the CLI's browser and CommonJS outputs.
-	deps: { alwaysBundle: ['@fontsource-utils/core'] },
+	entry: { cli: 'src/cli.ts' },
+	format: 'esm',
+	target: 'node22',
 });
