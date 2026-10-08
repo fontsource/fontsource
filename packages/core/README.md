@@ -15,6 +15,44 @@ pnpm add @fontsource-utils/core
 - **CSS generation**: Automatically generate CSS files with proper `@font-face` declarations
 - **Slicing support**: Handle large fonts by splitting them into smaller chunks
 
+## Building from sources
+
+`buildFont(context, config)` accepts explicit source-bound targets and structured
+character selections. Callers own source acquisition and distribution policy;
+Core owns font transformation and matching CSS.
+
+```ts
+import { readFile } from 'node:fs/promises';
+import { buildFont, createFontContext } from '@fontsource-utils/core';
+
+const context = createFontContext();
+try {
+  const result = await buildFont(context, {
+    id: 'example-math',
+    family: 'Example Math',
+    targets: [{
+      type: 'static',
+      source: await readFile('ExampleMath-Regular.ttf'),
+      weight: 400,
+      style: 'normal',
+    }],
+    characters: 'all',
+  });
+  // result contains font bytes, resolved faces, and package CSS assets.
+} finally {
+  context.destroy();
+}
+```
+
+Reuse a context across builds, then destroy it. Variable targets specify their
+source, style, axis bundle, and axes; omitted axes are pinned to source defaults.
+Use `characters: 'all'` to preserve complete source coverage, or provide
+`{ subset, codepoints, sliceIndex? }` selections. CSS ranges reflect the requested
+codepoints present in each generated face; full-font faces omit the descriptor.
+
+This replaces the previous inferred source/weight/style cross-product and NAM
+text inputs. Callers must now supply `targets` and `characters` explicitly.
+
 ## Standalone CSS generation
 
 Import `@fontsource-utils/core/css` to generate CSS without loading the font
@@ -74,11 +112,8 @@ Rendering uses single-quoted family names, bare URLs and bare standard format
 hints. Callers supply trusted URLs already safe for unquoted CSS. Legacy variation hints remain quoted. Supported formats are enforced by
 TypeScript; a small local serializer escapes quotes, backslashes and line breaks.
 `{ minify: true }` produces compact CSS directly, including through `generateCSS`
-and the asset generators. The CLI bundles this pure entrypoint
-into its browser and CommonJS builds without loading font-processing modules.
-Google metadata adapters preserve its explicit source variants and only emit
-formats selected by the downloader. Missing legacy coverage is passed as
-`null`; the renderer does not invent a Unicode range.
+and the asset generators. Missing coverage is passed as `null`; the renderer
+does not invent a Unicode range.
 
 CSS output is covered by readable snapshots. Review changes to declarations,
 Unicode ranges, filenames, and entrypoints before updating a snapshot; matching
