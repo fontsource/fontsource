@@ -166,8 +166,13 @@ describe('actual static variants', () => {
 	it('renders only available subsets and formats with their coverage', () => {
 		expect(generateV2CSS(metadata, path)).toMatchSnapshot();
 	});
-	it('includes known coverage in subset entrypoints', () => {
+	it('keeps legacy subset entrypoints unrestricted', () => {
 		expect(generateV1CSS(metadata, path)).toMatchSnapshot();
+	});
+	it('keeps faces unrestricted when upstream provides no ranges', () => {
+		expect(
+			generateV2CSS({ ...metadata, unicodeRange: {} }, path),
+		).toMatchSnapshot();
 	});
 	it('emits icon entrypoints once and selects only the default face', () => {
 		expect(generateIconStaticCSS(metadata, path)).toMatchSnapshot();
