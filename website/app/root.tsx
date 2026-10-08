@@ -170,11 +170,11 @@ export const links: LinksFunction = () => [
 	},
 ];
 
-interface DocumentProps {
+interface LayoutProps {
 	children: React.ReactNode;
 }
 
-export const Document = ({ children }: DocumentProps) => {
+export const Layout = ({ children }: LayoutProps) => {
 	const { pathname } = useLocation();
 	const canonical = getCanonicalUrl(pathname);
 
@@ -219,17 +219,9 @@ export const Document = ({ children }: DocumentProps) => {
 };
 
 export default function App() {
-	return (
-		<Document>
-			<Outlet />
-		</Document>
-	);
+	return <Outlet />;
 }
 
 export function ErrorBoundary() {
-	return (
-		<Document>
-			<ErrorBoundaryComponent />
-		</Document>
-	);
+	return <ErrorBoundaryComponent />;
 }
