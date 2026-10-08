@@ -21,19 +21,33 @@ import {
 	getRegistryView,
 } from '../features/registry/handler';
 import { ErrorResponseSchema } from '../schemas/common';
+import { RegistryQuerySchema } from '../schemas/registry';
 
 type AppContext = Context<AppEnv>;
 
 const registryResponses = (schema: z.ZodType) => ({
 	'200': {
-		description: 'Registry data from the current snapshot',
+		description: 'Registry data from the selected snapshot',
+		headers: z.object({
+			'X-Registry-Revision': z
+				.string()
+				.describe('Resolved registry snapshot revision'),
+		}),
 		...contentJson(schema),
 	},
 	'304': {
 		description: 'Not modified (conditional request)',
 	},
+	'400': {
+		description: 'Invalid registry revision',
+		...contentJson(ErrorResponseSchema),
+	},
+	'404': {
+		description: 'Registry snapshot not found',
+		...contentJson(ErrorResponseSchema),
+	},
 	'502': {
-		description: 'The current registry snapshot is unavailable or incomplete',
+		description: 'The selected registry snapshot is unavailable or incomplete',
 		...contentJson(ErrorResponseSchema),
 	},
 });
@@ -43,6 +57,7 @@ export class ListRegistryFamiliesRoute extends OpenAPIRoute {
 		tags: ['Registry'],
 		operationId: 'listRegistryFamilies',
 		summary: 'List registry font families',
+		request: { query: RegistryQuerySchema },
 		responses: registryResponses(RegistryFamiliesSchema),
 	};
 
@@ -56,6 +71,7 @@ export class GetRegistryTaxonomyRoute extends OpenAPIRoute {
 		tags: ['Registry'],
 		operationId: 'getRegistryTaxonomy',
 		summary: 'Get registry classifications and tags',
+		request: { query: RegistryQuerySchema },
 		responses: registryResponses(RegistryTaxonomySchema),
 	};
 
@@ -70,12 +86,13 @@ export class GetRegistryFamilyRoute extends OpenAPIRoute {
 		operationId: 'getRegistryFamily',
 		summary: 'Get a registry font family',
 		request: {
+			query: RegistryQuerySchema,
 			params: RegistryIdParamSchema,
 		},
 		responses: {
 			...registryResponses(RegistryFamilyDetailSchema),
 			'404': {
-				description: 'Registry family not found',
+				description: 'Registry family not found or snapshot not found',
 				...contentJson(ErrorResponseSchema),
 			},
 		},
@@ -97,12 +114,14 @@ export class GetRegistryFamilySymbolsRoute extends OpenAPIRoute {
 		operationId: 'getRegistryFamilySymbols',
 		summary: 'Get a registry family symbol catalog',
 		request: {
+			query: RegistryQuerySchema,
 			params: RegistryIdParamSchema,
 		},
 		responses: {
 			...registryResponses(RegistryFamilySymbolsSchema),
 			'404': {
-				description: 'Registry family symbol catalog not found',
+				description:
+					'Registry family symbol catalog not found or snapshot not found',
 				...contentJson(ErrorResponseSchema),
 			},
 		},
@@ -123,6 +142,7 @@ export class ListRegistryLanguagesRoute extends OpenAPIRoute {
 		tags: ['Registry'],
 		operationId: 'listRegistryLanguages',
 		summary: 'List registry languages',
+		request: { query: RegistryQuerySchema },
 		responses: registryResponses(RegistryLanguagesSchema),
 	};
 
@@ -136,6 +156,7 @@ export class ListRegistrySubsetsRoute extends OpenAPIRoute {
 		tags: ['Registry'],
 		operationId: 'listRegistrySubsets',
 		summary: 'List registry Unicode subsets',
+		request: { query: RegistryQuerySchema },
 		responses: registryResponses(RegistrySubsetsSchema),
 	};
 
@@ -150,12 +171,13 @@ export class GetRegistrySubsetRoute extends OpenAPIRoute {
 		operationId: 'getRegistrySubset',
 		summary: 'Get a registry Unicode subset',
 		request: {
+			query: RegistryQuerySchema,
 			params: RegistryIdParamSchema,
 		},
 		responses: {
 			...registryResponses(RegistrySubsetSchema),
 			'404': {
-				description: 'Registry subset not found',
+				description: 'Registry subset not found or snapshot not found',
 				...contentJson(ErrorResponseSchema),
 			},
 		},
@@ -176,6 +198,7 @@ export class ListRegistryAxesRoute extends OpenAPIRoute {
 		tags: ['Registry'],
 		operationId: 'listRegistryAxes',
 		summary: 'List registry variable axes',
+		request: { query: RegistryQuerySchema },
 		responses: registryResponses(RegistryAxesSchema),
 	};
 
@@ -265,12 +288,14 @@ export class GetRegistrySourceCapabilitiesRoute extends OpenAPIRoute {
 		operationId: 'getRegistrySourceCapabilities',
 		summary: 'Get archived source font capabilities',
 		request: {
+			query: RegistryQuerySchema,
 			params: RegistrySourceParamSchema,
 		},
 		responses: {
 			...registryResponses(RegistrySourceCapabilitiesSchema),
 			'404': {
-				description: 'Registry source capabilities not found',
+				description:
+					'Registry source capabilities not found or snapshot not found',
 				...contentJson(ErrorResponseSchema),
 			},
 		},

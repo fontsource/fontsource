@@ -27,7 +27,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			basePromise,
 			loadFontPageLanguages(request.signal),
 			loadRequiredRegistryData(
-				listRegistryAxes(options),
+				listRegistryAxes(undefined, options),
 				request.signal,
 				'Variable axis data',
 			),
