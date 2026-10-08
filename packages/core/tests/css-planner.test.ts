@@ -127,7 +127,7 @@ describe('css planner', () => {
 		expect(assetPlan.get('wght.css')).toEqual(faces);
 	});
 
-	it('uses slices for aggregate CSS and named faces for subset CSS', () => {
+	it('replaces only the sliced subset in aggregate CSS', () => {
 		const named = staticFace({
 			subset: 'latin',
 			weight: 400,
@@ -139,11 +139,16 @@ describe('css planner', () => {
 			sliceIndex: 1,
 			filename: 'japanese-1.woff2',
 		});
-		const assetPlan = groupFacesByCSSFile([named, sliced]);
+		const full = staticFace({
+			subset: 'japanese',
+			weight: 400,
+			filename: 'japanese.woff2',
+		});
+		const assetPlan = groupFacesByCSSFile([named, full, sliced]);
 
 		expect(assetPlan.get('latin.css')).toEqual([named]);
-		expect(assetPlan.get('400.css')).toEqual([sliced]);
-		expect(assetPlan.has('japanese.css')).toBe(false);
+		expect(assetPlan.get('400.css')).toEqual([named, sliced]);
+		expect(assetPlan.get('japanese.css')).toEqual([full]);
 	});
 
 	it('selects a normal static asset for index.css before falling back to italic', () => {
@@ -176,5 +181,20 @@ describe('css planner', () => {
 				groupFacesByCSSFile(faces),
 			),
 		).toBe('wght-italic.css');
+		expect(
+			pickVariableIndexCSS(
+				{ wght: { min: 100, max: 900 } },
+				groupFacesByCSSFile([variableFace({ axisKey: 'full' })]),
+			),
+		).toBe('full.css');
+		expect(
+			pickVariableIndexCSS(
+				{ CTRS: { min: 0, max: 100 }, wght: { min: 300, max: 700 } },
+				groupFacesByCSSFile([
+					variableFace({ axisKey: 'wght', style: 'italic' }),
+					variableFace({ axisKey: 'wght', style: 'normal' }),
+				]),
+			),
+		).toBe('wght.css');
 	});
 });
