@@ -24,9 +24,9 @@ describe('optimizer character selection', () => {
 				subsets: [],
 				text: 'Abba é',
 			});
-			const result = await buildFont(ctx, [source], {
+			const result = await buildFont(ctx, {
 				family: 'Abel',
-				type: 'static',
+				targets: [{ type: 'static', source, weight: 400, style: 'normal' }],
 				characters,
 				formats: ['woff2'],
 			});

@@ -95,36 +95,32 @@ export interface FontConfig
 	variable?: VariableAxisConfig;
 }
 
-export interface SubsetFontBuildCharacters {
-	subsets: string[];
-	subsetSources: Partial<UnicodeRangeMap>;
-	slicing?: {
-		subset: string;
-		source: string;
-	};
+export interface FontCharacterSet {
+	subset: string;
+	codepoints: number[];
+	/** Numbered slices start at 1; named subsets omit this field. */
+	sliceIndex?: number;
 }
 
-export type FontBuildCharacters = 'all' | SubsetFontBuildCharacters;
+export type FontBuildCharacters = 'all' | FontCharacterSet[];
 
-interface BaseFontBuildConfigFields extends FontIdentity {
+export type FontBuildTarget =
+	| { type: 'static'; source: Uint8Array; weight: number; style: FontStyle }
+	// Axes describe the available bundle; omitted axes are pinned to source defaults.
+	| {
+			type: 'variable';
+			source: Uint8Array;
+			style: FontStyle;
+			axisKey: VariableAxisKey;
+			axes: VariableAxisConfig;
+	  };
+
+export interface FontBuildConfig extends FontIdentity {
+	targets: FontBuildTarget[];
 	characters: FontBuildCharacters;
-	weights?: number[];
-	styles?: FontStyle[];
 	featureSettings?: Record<string, boolean>;
 	formats?: WebFontFormat[];
 }
-
-export interface StaticFontBuildConfig extends BaseFontBuildConfigFields {
-	type: 'static';
-}
-
-export interface VariableFontBuildConfig extends BaseFontBuildConfigFields {
-	type: 'variable';
-	variable?: VariableAxisConfig;
-	axisKeys?: VariableAxisKey[];
-}
-
-export type FontBuildConfig = StaticFontBuildConfig | VariableFontBuildConfig;
 
 export interface FontAsset extends FontSource {
 	content: Uint8Array;

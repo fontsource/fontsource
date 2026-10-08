@@ -39,9 +39,18 @@ const pickVariableIndexCSS = (
 ): string | undefined => {
 	// Prefer the primary-axis normal file, but fall back to the italic file.
 	const axisKey = determineAxisKey(variable);
-	return [`${axisKey}.css`, `${axisKey}-italic.css`].find((filename) =>
-		facesByCSSFile.has(filename),
+	const preferred = [`${axisKey}.css`, `${axisKey}-italic.css`].find(
+		(filename) => facesByCSSFile.has(filename),
 	);
+	if (preferred) return preferred;
+
+	// Explicit targets may publish only part of the source's available axes.
+	const available = [...facesByCSSFile].filter(([, faces]) =>
+		faces.some((face) => face.isVariable),
+	);
+	return (available.find(([, faces]) =>
+		faces.some((face) => face.isVariable && face.style === 'normal'),
+	) ?? available[0])?.[0];
 };
 
 // One resolved face can feed multiple published CSS files, for example a static
@@ -50,10 +59,13 @@ const groupFacesByCSSFile = (
 	faces: readonly FontFace[],
 ): Map<string, FontFace[]> => {
 	const facesByCSSFile = new Map<string, FontFace[]>();
-	const useSlicedAggregate = faces.some((face) => face.sliceIndex > 0);
+	// Slices replace their named subset, not other scripts such as Cyrillic.
+	const slicedSubsets = new Set(
+		faces.filter((face) => face.sliceIndex > 0).map((face) => face.subset),
+	);
 
 	for (const face of faces) {
-		for (const cssFile of getCSSFiles(face, useSlicedAggregate)) {
+		for (const cssFile of getCSSFiles(face, slicedSubsets.has(face.subset))) {
 			const cssFaces = facesByCSSFile.get(cssFile);
 
 			if (cssFaces) {
@@ -67,10 +79,10 @@ const groupFacesByCSSFile = (
 	return facesByCSSFile;
 };
 
-const getCSSFiles = (face: FontFace, useSlicedAggregate = false): string[] => {
+const getCSSFiles = (face: FontFace, subsetIsSliced = false): string[] => {
 	const style = formatStyle(face.style);
 	const isSlice = face.sliceIndex > 0;
-	const isAggregateFace = !useSlicedAggregate || isSlice;
+	const isAggregateFace = !subsetIsSliced || isSlice;
 
 	if (face.isVariable) {
 		if (!isAggregateFace) return [];
