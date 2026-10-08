@@ -80,3 +80,35 @@ npx fontsource build [...fonts] [options]
 ## License
 
 MIT
+
+## Local v6 builds (internal)
+
+The v6 preview builds archived TTF/OTF sources through Core, using the Registry
+API's explicit distribution targets and character definitions. It does not read
+Google Font Metadata or use the v5 publishing pipeline.
+
+```bash
+pnpm --dir packages/core build
+pnpm --dir packages/cli v6:build noto-sans-math stix-two-math \
+  --registry-url http://localhost:8787 \
+  --inputs /tmp/fontsource-v6-inputs --out /tmp/fontsource-v6-packages
+```
+
+The API must support `X-Registry-Revision` and pinned metadata reads. The first
+response selects the revision; `--revision <registry-commit>` can select one
+explicitly. All subsequent metadata uses that revision. Only distributed source
+files are downloaded, and their SHA-256 and sizes are checked.
+
+Repeat with the same `--inputs` and a new `--out` directory to build offline.
+Frozen metadata and verified source bytes are reused without network requests;
+use a new input directory to select another revision or additional families.
+Paths are relative to `packages/cli`; absolute paths avoid ambiguity.
+
+Outputs are private `6.0.0-dev.0` packages under `static/<id>` and `variable/<id>`.
+They contain WOFF2 files, CSS entrypoints, the source license, and registry
+metadata. Existing output directories are never overwritten, and failed builds
+do not leave a completed package directory. Root CSS includes every distributed
+subset at the default weight/style; full-repertoire fonts omit `unicode-range`.
+These are local previews, not v5 drop-in replacements: WOFF, SCSS helpers and the
+old metadata schema are outside this first slice. Existing v5 commands and
+published packages are unchanged. Nothing publishes or uploads these outputs.

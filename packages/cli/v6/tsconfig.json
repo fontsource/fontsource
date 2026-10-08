@@ -1,0 +1,5 @@
+{
+	"extends": "../tsconfig.json",
+	"include": ["*.ts", "../../../api/shared/registry.ts"],
+	"compilerOptions": { "composite": false, "noEmit": true }
+}
