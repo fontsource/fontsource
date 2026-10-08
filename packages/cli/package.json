@@ -33,11 +33,12 @@
 	"scripts": {
 		"build": "tsdown",
 		"cli": "tsx ./src/cli.ts",
+		"v6:build": "tsx ./v6/cli.ts",
 		"prepack": "pnpm run build",
 		"test": "vitest run",
 		"test:coverage": "vitest run --coverage",
 		"test:watch": "vitest",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit && tsc -p v6/tsconfig.json"
 	},
 	"keywords": [
 		"fontsource",
