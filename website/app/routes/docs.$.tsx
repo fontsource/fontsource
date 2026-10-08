@@ -13,12 +13,21 @@ import classes from '@/components/docs/Page.module.css';
 import { PageActions } from '@/components/docs/PageActions';
 import { Pager } from '@/components/docs/Pager';
 import { Toc } from '@/components/docs/Toc';
+import { ErrorView } from '@/components/ErrorBoundary';
 import { cacheHeaders } from '@/utils/cache';
 import type { Breadcrumb, Pager as PagerData } from '@/utils/docs/navigation';
 import { getBreadcrumbs, getPager } from '@/utils/docs/navigation';
 import { source } from '@/utils/docs/source.server';
 import { mdxComponents } from '@/utils/mdx/getMdxComponent';
 import { ogMeta } from '@/utils/meta';
+import type { Route } from './+types/docs.$';
+
+export const headers = ({ errorHeaders, parentHeaders }: Route.HeadersArgs) =>
+	errorHeaders ?? parentHeaders;
+
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+	return <ErrorView error={error} className={classes.error} />;
+}
 
 interface FrontMatter {
 	title: string;

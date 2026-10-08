@@ -102,7 +102,7 @@ import {
 	useLocation,
 } from 'react-router';
 
-import { ErrorBoundary as ErrorBoundaryComponent } from '@/components/ErrorBoundary';
+import { ErrorView } from '@/components/ErrorBoundary';
 import { AppShell } from '@/components/layout/AppShell';
 import { CollectionsProvider } from '@/features/collections/CollectionsProvider';
 import { CurrentProjectProvider } from '@/features/projects/CurrentProjectProvider';
@@ -110,6 +110,7 @@ import notificationClasses from '@/styles/notifications.module.css';
 import { theme } from '@/styles/theme';
 import { cacheHeaders } from '@/utils/cache';
 import { getCanonicalUrl, ogMeta } from '@/utils/meta';
+import type { Route } from './+types/root';
 
 export const meta: MetaFunction = () => {
 	return ogMeta({});
@@ -222,6 +223,6 @@ export default function App() {
 	return <Outlet />;
 }
 
-export function ErrorBoundary() {
-	return <ErrorBoundaryComponent />;
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+	return <ErrorView error={error} />;
 }

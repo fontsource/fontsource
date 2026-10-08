@@ -1,10 +1,16 @@
 import { Button, Center, Flex, Stack, Text, Title } from '@mantine/core';
-import { isRouteErrorResponse, Link, useRouteError } from 'react-router';
+import clsx from 'clsx';
+import { isRouteErrorResponse, Link } from 'react-router';
 import styles from './ErrorBoundary.module.css';
 import { IconGithub } from './icons/Github';
 
-export function ErrorBoundary() {
-	const error = useRouteError();
+export function ErrorView({
+	error,
+	className,
+}: {
+	error: unknown;
+	className?: string;
+}) {
 	const isNotFound = isRouteErrorResponse(error) && error.status === 404;
 
 	let status = 500;
@@ -50,7 +56,7 @@ export function ErrorBoundary() {
 	};
 
 	return (
-		<Center className={styles.container}>
+		<Center className={clsx(styles.container, className)}>
 			<Flex align="center" className={styles.content} direction="column">
 				<Flex align="center" className={styles.errorInfo} direction="column">
 					<Text className={styles.statusCode}>{status}</Text>

@@ -1,3 +1,7 @@
+.error {
+	--error-min-height: 0px;
+}
+
 .page {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) 260px;
