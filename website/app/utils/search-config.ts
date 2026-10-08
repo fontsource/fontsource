@@ -111,7 +111,7 @@ const routing = (
 				const index = uiState[indexName];
 				const collectionId = state$.collectionId.peek();
 				const result = {
-					query: index.query,
+					...(index.query ? { query: index.query } : {}),
 					...(collectionId ? { collection: collectionId } : {}),
 					// RefinementList facets
 					...(index.refinementList?.subsets?.length
