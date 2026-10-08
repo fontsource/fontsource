@@ -135,8 +135,7 @@ export const buildFont = async (
 		].join('|');
 
 	// Export fonts for each axis combination and build corresponding CSS faces.
-	const fontAssets: FontAsset[] = [];
-	const fontAssetsByName = new Map<string, FontAsset>();
+	const fontAssets = new Map<string, FontAsset>();
 	const faceMap = new Map<string, FontFace>();
 
 	try {
@@ -308,7 +307,7 @@ export const buildFont = async (
 								);
 
 					const assetFilename = `files/${filename}`;
-					const existingAsset = fontAssetsByName.get(assetFilename);
+					const existingAsset = fontAssets.get(assetFilename);
 					if (existingAsset && !buffersEqual(existingAsset.content, content)) {
 						throw new Error(
 							`Multiple distinct fonts would be written to ${assetFilename}`,
@@ -316,8 +315,7 @@ export const buildFont = async (
 					}
 					if (!existingAsset) {
 						const asset = { filename: assetFilename, format, content };
-						fontAssets.push(asset);
-						fontAssetsByName.set(assetFilename, asset);
+						fontAssets.set(assetFilename, asset);
 					}
 
 					const faceWeight = isVariableFont
@@ -373,5 +371,5 @@ export const buildFont = async (
 			: undefined,
 	});
 
-	return { css: cssAssets, fonts: fontAssets, faces };
+	return { css: cssAssets, fonts: [...fontAssets.values()], faces };
 };
