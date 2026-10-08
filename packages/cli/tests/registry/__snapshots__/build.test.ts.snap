@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`freezes one registry revision, builds a package offline, and rejects changed source bytes 1`] = `
+{
+  "css": "@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal.woff2) format(woff2);
+  unicode-range: U+41;
+}
+
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-symbols-400-normal.woff2) format(woff2);
+  unicode-range: U+42;
+}",
+  "files": [
+    "400.css",
+    "LICENSE",
+    "README.md",
+    "files",
+    "files/abel-latin-400-normal.woff2",
+    "files/abel-symbols-400-normal.woff2",
+    "index.css",
+    "index.d.css.ts",
+    "latin.css",
+    "metadata.json",
+    "package.json",
+    "symbols.css",
+  ],
+  "manifest": {
+    "description": "Self-host the Abel font.",
+    "exports": {
+      ".": {
+        "default": "./index.css",
+        "types": "./index.d.css.ts",
+      },
+      "./*": "./*.css",
+      "./*.css": "./*.css",
+      "./LICENSE": "./LICENSE",
+      "./files/*": "./files/*",
+      "./metadata.json": "./metadata.json",
+      "./package.json": "./package.json",
+    },
+    "license": "OFL-1.1",
+    "main": "index.css",
+    "name": "@fontsource/abel",
+    "types": "index.d.css.ts",
+    "version": "6.0.0",
+  },
+}
+`;

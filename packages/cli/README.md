@@ -1,11 +1,11 @@
 # Fontsource CLI
 
-The Fontsource CLI allows users to build fontsource packages locally as well as create new packages for submissions. For metadata, it uses [Google Font Metadata](https://github.com/fontsource/google-font-metadata).
+The Fontsource CLI builds self-hostable font packages from the Fontsource Registry and supports custom package submissions.
 
 ## Getting Started
 
 ```bash
-npm install @fontsource-utils/cli google-font-metadata
+npm install @fontsource-utils/cli
 ```
 
 # Commands
@@ -38,44 +38,41 @@ npx fontsource create-verify [options]
 | `--ci`     | Disables fancy prompts                    | `false`              |
 | `--cwd`    | Sets the current working directory        | `process.cwd()`      |
 
-## `fontsource fetch`
-
-Fetches the latest metadata from Google Fonts.
-
-### Usage
-
-```bash
-npx fontsource fetch [key] [options]
-```
-
-- Key is the Google Fonts API key. If not provided, it will be read from the environment variable `GOOGLE_API_KEY`.
-
-### Options
-
-| Option        | Description                            | Default |
-| ------------- | -------------------------------------- | ------- |
-| `-f, --force` | Force parse all metadata without cache | `false` |
-
-
 ## `fontsource build`
 
-Builds all Google Fonts packages from the metadata generated from `fontsource fetch`.
-
-### Usage
+Builds fonts from Registry API sources using Core. Requires Node.js 22 or newer.
 
 ```bash
-npx fontsource build [...fonts] [options]
+fontsource build noto-sans-math stix-two-math \
+  --inputs /tmp/fontsource-inputs --out /tmp/fontsource-packages
 ```
 
-- Fonts is a list of font ids to build. If not provided, it will build all fonts.
+`--inputs` stores one frozen registry snapshot and its hash-verified source files.
+`--out` must be a new directory. Repeat with the same inputs and another output
+path to build offline. Use a new input directory to choose another revision or
+additional families. Optional `--revision <commit>` selects the registry revision;
+`--registry-url <url>` selects another API origin (defaults to
+`https://api.fontsource.org`). The API must support pinned registry reads.
 
-### Options
+The build writes `static/<id>` and `variable/<id>` packages with WOFF2 fonts,
+CSS entrypoints, the original license, and registry metadata. Root CSS covers all
+declared character sets at the default weight/style. Full-repertoire fonts omit
+`unicode-range`. Partial output is discarded on failure; existing output is never
+overwritten. Building does not publish or upload anything.
 
-| Option        | Description                                     | Default |
-| ------------- | ----------------------------------------------- | ------- |
-| `-f, --force` | Force rebuild all packages from scratch         | `false` |
-| `-t, --test`  | Generate a small number of packages for testing | `false` |
-| `--ttf`       | Download TTF/OTF font files                     | `false` |
+For local development, run `pnpm --dir packages/core build`, then
+`pnpm --dir packages/cli cli build ...` with the same arguments.
+
+## Release and migration
+
+This is a breaking CLI release: `build` now uses registry sources and requires
+explicit family IDs, `--inputs`, and `--out`. The Google metadata `fetch` command,
+library exports, browser entrypoint, and CommonJS build are removed. This package
+is now a Node CLI; CSS-only consumers use `@fontsource-utils/core/css`. Custom
+submission commands remain available.
+
+New source-built font packages start at `6.0.0`. They use registry metadata and
+WOFF2; legacy metadata, WOFF and SCSS output are not part of this generator.
 
 ## License
 

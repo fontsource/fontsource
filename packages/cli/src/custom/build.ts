@@ -55,8 +55,6 @@ export const buildCustom = async (metadata: Metadata, opts?: CustomOptions) => {
 	await packageJson(metadata, {
 		dir,
 		isVariable: false,
-		tmpDir: '',
-		force: false,
 		version: opts?.version,
 		publishHash: opts?.publishHash,
 	});
