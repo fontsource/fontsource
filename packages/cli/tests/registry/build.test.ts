@@ -91,9 +91,9 @@ it('freezes one registry revision, builds a package offline, and rejects changed
 			css: await readFile(join(output, 'index.css'), 'utf8'),
 		}).toMatchSnapshot();
 		await writeFile(join(inputsDirectory, 'sources', sha256), 'changed');
-		await expect(loadBuildInputs(['abel'], inputsDirectory)).rejects.toThrow(
-			'source integrity mismatch',
-		);
+		await expect(
+			loadBuildInputs(['abel'], inputsDirectory, 'https://registry.test'),
+		).rejects.toThrow('source integrity mismatch');
 	} finally {
 		vi.unstubAllGlobals();
 		await rm(directory, { recursive: true, force: true });

@@ -28,7 +28,7 @@ export async function buildPackages(
 	const inputs = await loadBuildInputs(
 		[...new Set(ids)],
 		resolve(options.inputs),
-		options.registryUrl,
+		options.registryUrl ?? 'https://api.fontsource.org',
 		options.revision,
 	);
 	await mkdir(dirname(output), { recursive: true });

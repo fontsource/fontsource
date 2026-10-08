@@ -15,9 +15,10 @@ cli
 	.command('build [...fonts]', 'Build font packages from registry sources')
 	.option('--inputs <directory>', 'Directory for frozen registry inputs')
 	.option('--out <directory>', 'New directory for generated packages')
-	.option('--registry-url <url>', 'Registry API origin', {
-		default: 'https://api.fontsource.org',
-	})
+	.option(
+		'--registry-url <url>',
+		'Registry API origin (default: https://api.fontsource.org)',
+	)
 	.option('--revision <sha>', 'Registry snapshot revision')
 	.action(async (fonts: string[], options: PackageBuildOptions) => {
 		try {
