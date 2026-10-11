@@ -129,7 +129,6 @@ describe('container artifact builder', () => {
 				id: testCatalog.familypack.id,
 				version: '1.0.0',
 			},
-			metadata: testCatalog.familypack,
 		};
 
 		await expect(buildArtifacts(request)).resolves.toBe(3);
@@ -158,7 +157,6 @@ describe('container artifact builder', () => {
 		await buildArtifacts({
 			mode: 'static',
 			tag: { id: 'abel', version: '1.0.0' },
-			metadata: staticMetadata,
 		});
 		expect(putObject.mock.calls.map(([key]) => key).sort()).toEqual([
 			'abel@1.0.0/latin-400-normal.otf',
@@ -192,7 +190,6 @@ describe('container artifact builder', () => {
 				id: variableMetadata.id,
 				version: '1.0.0',
 			},
-			metadata: variableMetadata,
 		};
 
 		await expect(buildArtifacts(request)).resolves.toBe(2);

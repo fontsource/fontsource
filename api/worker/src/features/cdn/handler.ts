@@ -8,10 +8,12 @@ import {
 	findFontPackageEntry,
 	resolveFontPackageManifest,
 } from '../../../../shared/font-package-manifest';
+import type { PackageOutputManifest } from '../../../../shared/package-output';
 import { toResponseBody } from '../../../../shared/response';
 import { getBinaryKey, getDownloadKey } from '../../../../shared/storage';
 import {
 	fetchPackageFileList,
+	fetchPackageOutput,
 	isPackageVersionPublished,
 	UpstreamNotFoundError,
 } from '../../../../shared/upstream';
@@ -36,11 +38,10 @@ interface ResolvedAssetTag extends Omit<ParsedFontTag, 'version'> {
 	version: string;
 }
 
-export interface ResolvedFontRequest {
-	tag: ResolvedAssetTag;
-	metadata: SourceFontMetadata;
-	axes?: VariableAxes;
-}
+export type ResolvedFontRequest = { tag: ResolvedAssetTag } & (
+	| { manifest: PackageOutputManifest; metadata?: never; axes?: never }
+	| { manifest?: never; metadata: SourceFontMetadata; axes?: VariableAxes }
+);
 
 interface BinaryMetadata {
 	etag?: string;
@@ -74,40 +75,32 @@ export const resolveFontRequest = async (
 	rawTag: string | ParsedFontTag,
 ): Promise<ResolvedFontRequest> => {
 	const parsedTag = typeof rawTag === 'string' ? parseFontTag(rawTag) : rawTag;
-	const metadata = await getFontById(c, parsedTag.id);
-
-	if (!metadata) {
+	const versions = isPinnedVersion(parsedTag.version)
+		? undefined
+		: await getPublishedVersions(parsedTag.id, parsedTag.isVariable);
+	// Preserve the legacy unknown-family response when no package versions exist.
+	if (versions?.length === 0 && !(await getFontById(c, parsedTag.id)))
 		throw notFound('Not Found. Font does not exist.');
+	const version = versions
+		? resolveVersionTag(parsedTag.version, versions)
+		: parsedTag.version;
+	const tag = { ...parsedTag, requestedVersion: parsedTag.version, version };
+	// Older packages predate manifests and retain their legacy catalog behavior.
+	if (Number(version.split('.')[0]) >= 6) {
+		return {
+			tag,
+			manifest: await fetchPackageOutput(tag.id, version, tag.isVariable),
+		};
 	}
-
+	const metadata = await getFontById(c, tag.id);
+	if (!metadata) throw notFound('Not Found. Font does not exist.');
 	const axes =
 		metadata.variable && typeof metadata.variable === 'object'
 			? metadata.variable
 			: undefined;
-
-	if (parsedTag.isVariable && !axes) {
-		throw notFound(
-			`Not Found. Variable metadata for ${parsedTag.id} not found.`,
-		);
-	}
-
-	const versions = isPinnedVersion(parsedTag.version)
-		? undefined
-		: await getPublishedVersions(parsedTag.id, parsedTag.isVariable);
-	const resolvedVersion = versions
-		? resolveVersionTag(parsedTag.version, versions)
-		: parsedTag.version;
-
-	return {
-		tag: {
-			id: parsedTag.id,
-			isVariable: parsedTag.isVariable,
-			requestedVersion: parsedTag.version,
-			version: resolvedVersion,
-		},
-		metadata,
-		axes,
-	};
+	if (tag.isVariable && !axes)
+		throw notFound(`Not Found. Variable metadata for ${tag.id} not found.`);
+	return { tag, metadata, axes };
 };
 
 /**
@@ -336,6 +329,28 @@ export const getDownloadAsset = async (
  * Serves public binary assets from R2, building the exact version on demand if
  * the requested file has not been warmed yet.
  */
+const findManifestSource = (
+	manifest: PackageOutputManifest,
+	tag: ParsedFontTag,
+	file: string,
+): string | undefined => {
+	const sources = manifest.faces.flatMap((face) => face.sources);
+	const filename = `${tag.id}-${file}`;
+	if (sources.some((source) => source.filename === filename)) return file;
+	// Desktop downloads are decoded from the actual static WOFF2; the builder selects TTF or OTF.
+	if (!tag.isVariable && /\.(ttf|otf)$/.test(file)) {
+		const woff2 = file.replace(/\.(ttf|otf)$/, '.woff2');
+		if (
+			sources.some(
+				(source) =>
+					source.format === 'woff2' && source.filename === `${tag.id}-${woff2}`,
+			)
+		)
+			return woff2;
+	}
+	return undefined;
+};
+
 export const getBinaryAsset = async (
 	c: Context<AppEnv>,
 	tag: string,
@@ -367,25 +382,15 @@ export const getBinaryAsset = async (
 
 	// Resolve version (for floating) or validate font exists (for pinned)
 	const resolved = await resolveFontRequest(c, parsedTag);
-	const requestedEntry = findFontPackageEntry(
-		resolveFontPackageManifest(resolved.metadata, resolved.axes),
-		{
-			file,
-			isVariable: resolved.tag.isVariable,
-		},
-	);
-
-	if (!requestedEntry) {
-		throw notFound('Not Found. File does not exist.');
-	}
-
-	if (pinnedVersion) {
-		await ensurePublishedPinnedAsset(
-			resolved,
-			file,
-			requestedEntry.sourceFilename,
-		);
-	}
+	const sourceFilename = resolved.manifest
+		? findManifestSource(resolved.manifest, resolved.tag, file)
+		: findFontPackageEntry(
+				resolveFontPackageManifest(resolved.metadata, resolved.axes),
+				{ file, isVariable: resolved.tag.isVariable },
+			)?.sourceFilename;
+	if (!sourceFilename) throw notFound('Not Found. File does not exist.');
+	if (pinnedVersion && !resolved.manifest)
+		await ensurePublishedPinnedAsset(resolved, file, sourceFilename);
 
 	// For pinned versions, the fast-path already checked R2 and missed,
 	// so skip straight to build. For floating versions, try R2 with the resolved version.

@@ -80,5 +80,4 @@ export const ensurePackageBuilt = async (
 			id: resolved.tag.id,
 			version: resolved.tag.version,
 		},
-		metadata: resolved.metadata,
 	} satisfies BuildPackageRequest);

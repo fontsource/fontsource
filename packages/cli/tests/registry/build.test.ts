@@ -89,6 +89,7 @@ it('freezes one registry revision, builds a package offline, and rejects changed
 			manifest: JSON.parse(
 				await readFile(join(output, 'package.json'), 'utf8'),
 			),
+			output: JSON.parse(await readFile(join(output, 'manifest.json'), 'utf8')),
 			css: await Promise.all(
 				files
 					.filter((filename) => filename.endsWith('.css'))

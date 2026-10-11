@@ -24,6 +24,7 @@ const build = async (
 const packageOutput = (result: FontBuildResult) => ({
 	css: result.css,
 	faces: result.faces,
+	entrypoints: result.entrypoints,
 	files: result.fonts.map(({ filename, format }) => ({ filename, format })),
 });
 const changeFontRevision = (font: Uint8Array): Uint8Array => {

@@ -2,6 +2,7 @@ import { zipSync } from 'fflate';
 import { HttpResponse, http } from 'msw';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { SourceFontMetadata } from '../shared/catalog';
+import type { PackageOutputManifest } from '../shared/package-output';
 import { KV_KEYS, UPSTREAM_URLS } from '../worker/src/constants';
 import { clearMetadataCachesForTest } from '../worker/src/features/metadata/store';
 import {
@@ -71,6 +72,127 @@ describe('cdn routes', () => {
 		vi.restoreAllMocks();
 	});
 
+	it('renders exact manifest entrypoints without legacy catalog coverage or formats', async () => {
+		const manifest: PackageOutputManifest = {
+			schemaVersion: 1,
+			family: 'New Math',
+			sourceModified: '2026-01-01',
+			faces: [
+				{
+					subset: 'full',
+					weight: 400,
+					style: 'normal',
+					isVariable: false,
+					sliceIndex: 0,
+					unicodeRange: '',
+					sources: [
+						{ filename: 'new-math-full-400-normal.woff2', format: 'woff2' },
+					],
+				},
+			],
+			entrypoints: { 'index.css': [0], '400.css': [0] },
+		};
+		mockUpstreamResponses({
+			[`${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/new-math@6.0.0/manifest.json`]:
+				Response.json(manifest),
+			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/new-math`]: Response.json({
+				versions: [{ version: '6.0.0' }],
+			}),
+		});
+		expect({
+			pinned: await textSnapshot(
+				'https://fontsource.test/css/new-math@6.0.0/index.css',
+			),
+			floating: await textSnapshot(
+				'https://fontsource.test/css/new-math@latest/400.min.css',
+			),
+		}).toMatchSnapshot();
+		const missing = await dispatch(
+			'https://fontsource.test/css/new-math@6.0.0/latin.css',
+		);
+		expect(missing.response.status).toBe(404);
+		await missing.response.text();
+		await missing.settle();
+
+		const builder = installArtifactBuilderMock(testEnv);
+		builder.buildVersion.mockImplementation(async () => {
+			await testEnv.FONTS.put(
+				'new-math@6.0.0/full-400-normal.woff2',
+				staticWoff2Bytes,
+			);
+			return { state: 'ready', buildKey: 'build:new-math@6.0.0:static' };
+		});
+		const binary = await dispatch(
+			'https://fontsource.test/fonts/new-math@6.0.0/full-400-normal.woff2',
+		);
+		expect(binary.response.status).toBe(200);
+		expect(new Uint8Array(await binary.response.arrayBuffer())).toEqual(
+			staticWoff2Bytes,
+		);
+		await binary.settle();
+		const absent = await dispatch(
+			'https://fontsource.test/fonts/new-math@6.0.0/full-400-normal.woff',
+		);
+		expect(absent.response.status).toBe(404);
+		await absent.response.text();
+		await absent.settle();
+	});
+
+	it('preserves the published variable index and numbered slices', async () => {
+		const manifest: PackageOutputManifest = {
+			schemaVersion: 1,
+			family: 'New Variable',
+			sourceModified: '2026-01-01',
+			faces: [7, 12].map((sliceIndex) => ({
+				subset: 'japanese',
+				weight: '300 700',
+				style: 'normal',
+				isVariable: true,
+				axisKey: 'wght',
+				sliceIndex,
+				unicodeRange: sliceIndex === 7 ? 'U+41' : 'U+42',
+				sources: [
+					{
+						filename: `new-variable-japanese-wght-normal-${sliceIndex}.woff2`,
+						format: 'woff2',
+					},
+				],
+			})),
+			entrypoints: { 'wght.css': [0, 1], 'index.css': [1, 0] },
+		};
+		mockUpstreamResponses({
+			[`${UPSTREAM_URLS.jsdelivrNpm}/@fontsource-variable/new-variable@6.0.0/manifest.json`]:
+				Response.json(manifest),
+		});
+		expect(
+			await textSnapshot(
+				'https://fontsource.test/css/new-variable:vf@6.0.0/index.css',
+			),
+		).toMatchSnapshot();
+	});
+
+	it.each([
+		['unavailable', () => new Response(null, { status: 404 })],
+		['invalid', () => Response.json({ schemaVersion: 2 })],
+		['failed', () => new Response(null, { status: 500 })],
+	] as const)(
+		'fails closed for a %s manifest instead of inventing legacy CSS',
+		async (_name, response) => {
+			mockUpstreamResponses({
+				[`${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/abel@6.0.0/manifest.json`]:
+					response,
+				[`${UPSTREAM_URLS.npmRegistry}/@fontsource/abel/6.0.0`]: Response.json({
+					version: '6.0.0',
+				}),
+			});
+			const result = await dispatch(
+				'https://fontsource.test/css/abel@6.0.0/index.css',
+			);
+			expect(result.response.status).toBe(502);
+			await result.response.text();
+			await result.settle();
+		},
+	);
 	it.each([
 		[
 			'static',
@@ -604,7 +726,7 @@ describe('cdn routes', () => {
 	it('rejects missing exact package versions before the builder runs', async () => {
 		const builder = installArtifactBuilderMock(testEnv);
 		mockUpstreamResponses({
-			[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel@9.9.9?structure=flat`]:
+			[`${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/abel@9.9.9/manifest.json`]:
 				new Response('not found', { status: 404 }),
 			[`${UPSTREAM_URLS.npmRegistry}/@fontsource/abel/9.9.9`]: new Response(
 				'not found',

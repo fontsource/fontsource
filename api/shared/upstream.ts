@@ -1,4 +1,5 @@
 import { HTTPException } from 'hono/http-exception';
+import { PackageOutputSchema } from './package-output';
 
 interface JsDelivrPackageResponse {
 	versions?: Array<{ version: string }>;
@@ -184,3 +185,36 @@ export const fetchPackageAssetBytes = async (
 	fetchBinaryBytes(
 		`${UPSTREAM_URLS.jsdelivrNpm}/${packageName(id, isVariable)}@${version}/files/${id}-${file}`,
 	);
+
+/** V6 packages require an exact-version manifest; unavailable data must not invent faces. */
+export const fetchPackageOutput = async (
+	id: string,
+	version: string,
+	isVariable: boolean,
+) => {
+	const url = `${UPSTREAM_URLS.jsdelivrNpm}/${packageName(id, isVariable)}@${version}/manifest.json`;
+	try {
+		const parsed = PackageOutputSchema.safeParse(
+			await fetchCachedJson<unknown>(url, 86400),
+		);
+		if (!parsed.success)
+			throw new HTTPException(502, {
+				message: 'Bad Gateway. Invalid package output manifest.',
+			});
+		return parsed.data;
+	} catch (error) {
+		if (error instanceof UpstreamNotFoundError) {
+			if (!(await isPackageVersionPublished(id, version, isVariable)))
+				throw new HTTPException(404, {
+					message: `Unable to resolve version "${version}"`,
+				});
+			throw new HTTPException(502, {
+				message: 'Bad Gateway. Package output manifest is unavailable.',
+			});
+		}
+		if (error instanceof HTTPException) throw error;
+		throw new HTTPException(502, {
+			message: 'Bad Gateway. Unable to read package output manifest.',
+		});
+	}
+};

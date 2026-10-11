@@ -135,4 +135,6 @@ export interface FontBuildResult {
 	css: CSSAsset[];
 	fonts: FontAsset[];
 	faces: FontFace[];
+	/** CSS filenames mapped to indexes in faces, in rendering order. */
+	entrypoints: Record<string, number[]>;
 }
