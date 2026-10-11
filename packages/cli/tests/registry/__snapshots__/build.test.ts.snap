@@ -2,7 +2,9 @@
 
 exports[`freezes one registry revision, builds a package offline, and rejects changed source bytes 1`] = `
 {
-  "css": "@font-face {
+  "css": [
+    {
+      "content": "@font-face {
   font-family: 'Abel';
   font-style: normal;
   font-display: swap;
@@ -19,6 +21,51 @@ exports[`freezes one registry revision, builds a package offline, and rejects ch
   src: url(./files/abel-symbols-400-normal.woff2) format(woff2);
   unicode-range: U+42;
 }",
+      "filename": "400.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal.woff2) format(woff2);
+  unicode-range: U+41;
+}
+
+@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-symbols-400-normal.woff2) format(woff2);
+  unicode-range: U+42;
+}",
+      "filename": "index.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-latin-400-normal.woff2) format(woff2);
+  unicode-range: U+41;
+}",
+      "filename": "latin.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/abel-symbols-400-normal.woff2) format(woff2);
+  unicode-range: U+42;
+}",
+      "filename": "symbols.css",
+    },
+  ],
   "files": [
     "400.css",
     "LICENSE",

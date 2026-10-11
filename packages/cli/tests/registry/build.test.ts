@@ -83,12 +83,20 @@ it('freezes one registry revision, builds a package offline, and rejects changed
 		const packages = join(directory, 'packages');
 		await buildPackages(['abel'], { inputs: inputsDirectory, out: packages });
 		const output = join(packages, 'static', 'abel');
+		const files = (await readdir(output, { recursive: true })).sort();
 		expect({
-			files: (await readdir(output, { recursive: true })).sort(),
+			files,
 			manifest: JSON.parse(
 				await readFile(join(output, 'package.json'), 'utf8'),
 			),
-			css: await readFile(join(output, 'index.css'), 'utf8'),
+			css: await Promise.all(
+				files
+					.filter((filename) => filename.endsWith('.css'))
+					.map(async (filename) => ({
+						filename,
+						content: await readFile(join(output, filename), 'utf8'),
+					})),
+			),
 		}).toMatchSnapshot();
 		await writeFile(join(inputsDirectory, 'sources', sha256), 'changed');
 		await expect(
