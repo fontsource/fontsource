@@ -1,10 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import {
-	getCSSFiles,
-	groupFacesByCSSFile,
-	pickStaticIndexCSS,
-	pickVariableIndexCSS,
-} from '../src/css/planner';
+import { generateCSSAssets } from '../src/css/assets';
 import type { FontFace } from '../src/types';
 
 type FaceOverrides = Partial<Omit<FontFace, 'sources'>> & {
@@ -46,155 +41,85 @@ const variableFace = (
 	...overrides,
 });
 
-describe('css planner', () => {
-	it('assigns static faces to weight and subset assets', () => {
+describe('CSS package entrypoints', () => {
+	it('preserves named imports while slices replace only their own aggregate subset', () => {
 		expect(
-			getCSSFiles(
+			generateCSSAssets('Fixture', [
+				staticFace({ subset: 'latin', weight: 400, filename: 'latin.woff2' }),
 				staticFace({
-					subset: 'latin',
+					subset: 'japanese',
 					weight: 400,
+					filename: 'japanese.woff2',
 				}),
-			),
-		).toEqual(['400.css', 'latin.css']);
-
-		expect(
-			getCSSFiles(
 				staticFace({
-					subset: 'latin',
+					subset: 'japanese',
 					weight: 400,
-					style: 'italic',
+					sliceIndex: 7,
+					filename: 'japanese-7.woff2',
 				}),
-			),
-		).toEqual(['400-italic.css', 'latin.css', 'latin-italic.css']);
-	});
-
-	it('assigns variable faces to axis assets', () => {
-		expect(
-			getCSSFiles(
-				variableFace({
-					subset: 'latin',
-				}),
-			),
-		).toEqual(['wght.css']);
-
-		expect(
-			getCSSFiles(
-				variableFace({
-					subset: 'latin',
-					style: 'italic',
-				}),
-			),
-		).toEqual(['wght-italic.css']);
-
-		expect(
-			getCSSFiles(
-				variableFace({
-					subset: 'latin',
-					style: 'oblique 0deg 15deg',
-				}),
-			),
-		).toEqual(['wght-italic.css']);
-	});
-
-	it('normalizes oblique static faces onto italic asset filenames', () => {
-		expect(
-			getCSSFiles(
 				staticFace({
-					subset: 'latin',
+					subset: 'japanese',
 					weight: 400,
-					style: 'oblique 12deg',
+					sliceIndex: 12,
+					filename: 'japanese-12.woff2',
 				}),
-			),
-		).toEqual(['400-italic.css', 'latin.css', 'latin-italic.css']);
+			]),
+		).toMatchSnapshot();
 	});
-
-	it('groups sliced faces into the same planned asset', () => {
-		const faces = [
-			variableFace({
-				subset: 'japanese',
-				sliceIndex: 1,
-				filename: 'japanese-1.woff2',
-			}),
-			variableFace({
-				subset: 'japanese',
-				sliceIndex: 2,
-				filename: 'japanese-2.woff2',
-			}),
-		];
-
-		const assetPlan = groupFacesByCSSFile(faces);
-
-		expect(assetPlan.get('wght.css')).toEqual(faces);
+	it('prefers normal static faces and uses italic entrypoints for oblique-only packages', () => {
+		expect({
+			normalPreferred: generateCSSAssets('Fixture', [
+				staticFace({ subset: 'latin', weight: 400, style: 'italic' }),
+				staticFace({ subset: 'latin', weight: 700 }),
+			]),
+			obliqueOnly: generateCSSAssets('Fixture', [
+				staticFace({ subset: 'latin', weight: 300, style: 'oblique 12deg' }),
+			]),
+		}).toMatchSnapshot();
 	});
-
-	it('replaces only the sliced subset in aggregate CSS', () => {
-		const named = staticFace({
-			subset: 'latin',
-			weight: 400,
-			filename: 'latin.woff2',
-		});
-		const sliced = staticFace({
-			subset: 'japanese',
-			weight: 400,
-			sliceIndex: 1,
-			filename: 'japanese-1.woff2',
-		});
-		const full = staticFace({
-			subset: 'japanese',
-			weight: 400,
-			filename: 'japanese.woff2',
-		});
-		const assetPlan = groupFacesByCSSFile([named, full, sliced]);
-
-		expect(assetPlan.get('latin.css')).toEqual([named]);
-		expect(assetPlan.get('400.css')).toEqual([named, sliced]);
-		expect(assetPlan.get('japanese.css')).toEqual([full]);
-	});
-
-	it('selects a normal static asset for index.css before falling back to italic', () => {
-		const faces = [
-			staticFace({
-				subset: 'latin',
-				weight: 400,
-				style: 'italic',
-			}),
-			staticFace({
-				subset: 'latin',
-				weight: 700,
-			}),
-		];
-
-		expect(pickStaticIndexCSS(faces)).toBe('700.css');
-	});
-
-	it('falls back to the italic variable asset for index.css when normal is missing', () => {
-		const faces = [
-			variableFace({
-				subset: 'latin',
-				style: 'italic',
-			}),
-		];
-
-		expect(
-			pickVariableIndexCSS(
-				{ wght: { min: 100, max: 900 } },
-				groupFacesByCSSFile(faces),
+	it('selects index.css from the variable bundles actually published', () => {
+		expect({
+			italicOnly: generateCSSAssets(
+				'Fixture',
+				[variableFace({ subset: 'latin', style: 'italic' })],
+				{ variable: { wght: { min: 100, max: 900 } } },
 			),
-		).toBe('wght-italic.css');
-		expect(
-			pickVariableIndexCSS(
-				{ wght: { min: 100, max: 900 } },
-				groupFacesByCSSFile([variableFace({ axisKey: 'full' })]),
+			fullOnly: generateCSSAssets(
+				'Fixture',
+				[variableFace({ subset: 'latin', axisKey: 'full' })],
+				{ variable: { wght: { min: 100, max: 900 } } },
 			),
-		).toBe('full.css');
-		expect(
-			pickVariableIndexCSS(
-				{ CTRS: { min: 0, max: 100 }, wght: { min: 300, max: 700 } },
-				groupFacesByCSSFile([
-					variableFace({ axisKey: 'wght', style: 'italic' }),
-					variableFace({ axisKey: 'wght', style: 'normal' }),
-				]),
+			partialAxes: generateCSSAssets(
+				'Fixture',
+				[
+					variableFace({ subset: 'latin', style: 'italic' }),
+					variableFace({ subset: 'latin' }),
+				],
+				{
+					variable: {
+						CTRS: { min: 0, max: 100 },
+						wght: { min: 100, max: 900 },
+					},
+				},
 			),
-		).toBe('wght.css');
+			obliqueSlices: generateCSSAssets(
+				'Fixture',
+				[
+					variableFace({
+						subset: 'japanese',
+						sliceIndex: 7,
+						filename: 'japanese-7.woff2',
+						style: 'oblique 0deg 15deg',
+					}),
+					variableFace({
+						subset: 'japanese',
+						sliceIndex: 12,
+						filename: 'japanese-12.woff2',
+						style: 'oblique 0deg 15deg',
+					}),
+				],
+				{ variable: { wght: { min: 100, max: 900 } } },
+			),
+		}).toMatchSnapshot();
 	});
 });

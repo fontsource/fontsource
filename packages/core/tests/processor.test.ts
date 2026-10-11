@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { createFontContext } from '../src/context';
 import { inspectFont } from '../src/inspection';
 import { buildFont } from '../src/processor';
-import type { FontBuildConfig } from '../src/types';
+import type { FontBuildConfig, FontBuildResult } from '../src/types';
 import {
 	loadStaticFontFixture,
 	loadStaticWoff2Fixture,
@@ -20,6 +20,12 @@ const build = async (
 		ctx.destroy();
 	}
 };
+// Snapshot public output without embedding compressed binary bytes.
+const packageOutput = (result: FontBuildResult) => ({
+	css: result.css,
+	faces: result.faces,
+	files: result.fonts.map(({ filename, format }) => ({ filename, format })),
+});
 const changeFontRevision = (font: Uint8Array): Uint8Array => {
 	const changed = font.slice();
 	const view = new DataView(
@@ -79,17 +85,7 @@ describe('buildFont integration with real fixtures', () => {
 		} finally {
 			ctx.destroy();
 		}
-		expect(result.faces[0]?.unicodeRange).toBe('');
-		expect(result.faces[0]?.sources).toHaveLength(2);
-		expect(
-			result.css.find((asset) => asset.filename === 'index.css')?.content,
-		).toContain('font-display: block');
-		expect(
-			result.css.find((asset) => asset.filename === 'index.css')?.content,
-		).toContain('url(/fonts/abel-full-400-normal.woff2)');
-		expect(
-			result.css.find((asset) => asset.filename === 'index.css')?.content,
-		).not.toContain('unicode-range');
+		expect(packageOutput(result)).toMatchSnapshot();
 	});
 	it('builds only explicit sparse static variants and removes variable axes', async () => {
 		const source = loadVariableFontFixture();
@@ -101,10 +97,7 @@ describe('buildFont integration with real fixtures', () => {
 				{ type: 'static', source, weight: 700, style: 'italic' },
 			],
 		});
-		expect(result.fonts.map((font) => font.filename)).toEqual([
-			'files/recursive-latin-400-normal.woff2',
-			'files/recursive-latin-700-italic.woff2',
-		]);
+		expect(packageOutput(result)).toMatchSnapshot();
 		const ctx = createFontContext();
 		try {
 			for (const font of result.fonts)
@@ -118,17 +111,15 @@ describe('buildFont integration with real fixtures', () => {
 		const result = await build({
 			family: 'Abel',
 			characters: [
-				{ subset: 'latin', codepoints: [32, 33, 34] },
+				{ subset: 'latin', codepoints: [32, 33, 34, 0x10ffff] },
+				{ subset: 'missing', codepoints: [0x10ffff] },
+				{ subset: 'japanese', codepoints: [65, 66] },
 				{ subset: 'japanese', sliceIndex: 1, codepoints: [65] },
 				{ subset: 'japanese', sliceIndex: 2, codepoints: [66] },
 			],
 			targets: [{ type: 'static', source, weight: 400, style: 'normal' }],
 		});
-		expect({
-			css: result.css,
-			faces: result.faces,
-			files: result.fonts.map((font) => font.filename),
-		}).toMatchSnapshot();
+		expect(packageOutput(result)).toMatchSnapshot();
 	});
 	it('pins excluded axes and respects variable style selection', async () => {
 		const source = loadVariableFontFixture();
@@ -145,13 +136,7 @@ describe('buildFont integration with real fixtures', () => {
 				{ type: 'variable', source, style: 'normal', axisKey: 'full', axes },
 			],
 		});
-		expect(
-			result.faces.map((face) => ({
-				style: face.style,
-				axisKey: face.axisKey,
-				weight: face.weight,
-			})),
-		).toMatchSnapshot();
+		expect(packageOutput(result)).toMatchSnapshot();
 		const ctx = createFontContext();
 		try {
 			expect(
@@ -176,7 +161,7 @@ describe('buildFont integration with real fixtures', () => {
 			characters: 'all' as const,
 			targets: [target, target],
 		};
-		expect((await build(config)).fonts).toHaveLength(1);
+		expect(packageOutput(await build(config))).toMatchSnapshot();
 		await expect(
 			build({
 				...config,
