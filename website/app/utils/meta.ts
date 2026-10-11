@@ -20,7 +20,7 @@ const DEFAULT_IMAGE: OpenGraphImage = {
 
 export const getCanonicalUrl = (pathname: string) => {
 	const url = new URL(SITE_ORIGIN);
-	url.pathname = pathname.replace(/\/+$/, '') || '/';
+	url.pathname = pathname.replace(/\/+$/, '');
 	return url.href;
 };
 
