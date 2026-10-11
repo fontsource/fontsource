@@ -3,6 +3,7 @@ import {
 	convertFont,
 	createFontContext,
 	type FontBuildConfig,
+	type FontBuildTarget,
 	type FontFileFormat,
 	type FontInspection,
 	inspectFont,
@@ -387,20 +388,36 @@ export const useFontWorkbench = (preset: FontToolPreset) => {
 							characters,
 							formats,
 						};
-						const config: FontBuildConfig = family.faces.some(
-							(face) => face.axes.length > 0,
-						)
-							? {
-									...shared,
-									type: 'variable',
-									axisKeys: ['full'],
-								}
-							: { ...shared, type: 'static' };
-						const buffers: Uint8Array[] = [];
-						for (const { file } of familySources) {
-							buffers.push(new Uint8Array(await file.arrayBuffer()));
+						const targets: FontBuildTarget[] = [];
+						for (const { file, inspection } of familySources) {
+							if (!inspection) continue;
+							const source = new Uint8Array(await file.arrayBuffer());
+							const style =
+								inspection.style === 'oblique' ? 'italic' : inspection.style;
+							targets.push(
+								inspection.axes.length > 0
+									? {
+											type: 'variable',
+											source,
+											style,
+											axisKey: 'full',
+											axes: Object.fromEntries(
+												inspection.axes.map((axis) => [axis.tag, axis]),
+											),
+										}
+									: {
+											type: 'static',
+											source,
+											style,
+											weight:
+												typeof inspection.weight === 'number'
+													? inspection.weight
+													: inspection.weight.default,
+										},
+							);
 						}
-						const result = await buildFont(ctx, buffers, config, {
+						const config: FontBuildConfig = { ...shared, targets };
+						const result = await buildFont(ctx, config, {
 							css: {
 								display: output.display,
 								resolver: ({ source }) =>

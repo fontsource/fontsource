@@ -1,0 +1,304 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CSS package entrypoints > prefers normal static faces and uses italic entrypoints for oblique-only packages 1`] = `
+{
+  "normalPreferred": [
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "400-italic.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/fixture.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "latin.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "latin-italic.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "700.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "index.css",
+    },
+  ],
+  "obliqueOnly": [
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: oblique 12deg;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "300-italic.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: oblique 12deg;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "latin.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: oblique 12deg;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "latin-italic.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: oblique 12deg;
+  font-display: swap;
+  font-weight: 300;
+  src: url(./files/fixture.woff2) format(woff2);
+}",
+      "filename": "index.css",
+    },
+  ],
+}
+`;
+
+exports[`CSS package entrypoints > preserves named imports while slices replace only their own aggregate subset 1`] = `
+[
+  {
+    "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/latin.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/japanese-7.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/japanese-12.woff2) format(woff2);
+}",
+    "filename": "400.css",
+  },
+  {
+    "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/latin.woff2) format(woff2);
+}",
+    "filename": "latin.css",
+  },
+  {
+    "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/japanese.woff2) format(woff2);
+}",
+    "filename": "japanese.css",
+  },
+  {
+    "content": "@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/latin.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/japanese-7.woff2) format(woff2);
+}
+
+@font-face {
+  font-family: 'Fixture';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/japanese-12.woff2) format(woff2);
+}",
+    "filename": "index.css",
+  },
+]
+`;
+
+exports[`CSS package entrypoints > selects index.css from the variable bundles actually published 1`] = `
+{
+  "fullOnly": [
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/fixture.woff2) format('woff2-variations');
+}",
+      "filename": "full.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/fixture.woff2) format('woff2-variations');
+}",
+      "filename": "index.css",
+    },
+  ],
+  "italicOnly": [
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/fixture.woff2) format('woff2-variations');
+}",
+      "filename": "wght-italic.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/fixture.woff2) format('woff2-variations');
+}",
+      "filename": "index.css",
+    },
+  ],
+  "obliqueSlices": [
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/japanese-7.woff2) format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Fixture Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/japanese-12.woff2) format('woff2-variations');
+}",
+      "filename": "wght-italic.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/japanese-7.woff2) format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Fixture Variable';
+  font-style: oblique 0deg 15deg;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/japanese-12.woff2) format('woff2-variations');
+}",
+      "filename": "index.css",
+    },
+  ],
+  "partialAxes": [
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/fixture.woff2) format('woff2-variations');
+}",
+      "filename": "wght-italic.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/fixture.woff2) format('woff2-variations');
+}",
+      "filename": "wght.css",
+    },
+    {
+      "content": "@font-face {
+  font-family: 'Fixture Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./files/fixture.woff2) format('woff2-variations');
+}",
+      "filename": "index.css",
+    },
+  ],
+}
+`;
