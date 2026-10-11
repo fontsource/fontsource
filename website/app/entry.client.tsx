@@ -11,14 +11,15 @@ if (import.meta.env.PROD) {
 		ui_host: 'https://eu.posthog.com',
 		defaults: '2026-05-30',
 		cookieless_mode: 'always',
-		autocapture: true,
+		autocapture: false,
+		rageclick: false,
 		capture_pageview: 'history_change',
 		disable_session_recording: true,
 		disable_surveys: true,
 		capture_performance: { web_vitals: true, network_timing: false },
 		capture_exceptions: true,
 		capture_heatmaps: true,
-		capture_dead_clicks: true,
+		capture_dead_clicks: false,
 		advanced_disable_flags: true,
 	});
 }
