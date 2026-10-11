@@ -294,10 +294,7 @@ export const FamilyUse = ({
 			: 'Paste this version-pinned CSS into your project. Font files load from jsDelivr.';
 	return (
 		<section className={classes.page} aria-labelledby="use-heading">
-			<style
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-				dangerouslySetInnerHTML={{ __html: previewCSS }}
-			/>
+			<style>{previewCSS}</style>
 			<div className={classes.heading}>
 				<div>
 					<h2 id="use-heading">Download {metadata.family}</h2>

@@ -7,17 +7,8 @@ import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
 import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
 import { formatFontLabel } from '@/utils/font-labels';
-import {
-	getFontFamilyStack,
-	getFontPreviewFamily,
-	registrySourcePreviewFamily,
-} from '@/utils/font-preview';
-import {
-	getRegistryFamilyKind,
-	getRegistrySourcePreviewStyle,
-	type RegistryFamily,
-	type RegistrySource,
-} from '@/utils/registry';
+import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
+import { getRegistryFamilyKind, type RegistryFamily } from '@/utils/registry';
 
 import classes from './FamilyPageShell.module.css';
 import { FontSkeleton } from './FontSkeleton';
@@ -28,7 +19,6 @@ type FontPageLocationState = { fontResults?: string };
 interface FamilyPageShellProps {
 	metadata: Omit<GetFontResponse, 'variants'>;
 	registry: RegistryFamily;
-	previewSource?: RegistrySource;
 	variable?: GetVariableFontResponse;
 	tabsValue: FamilyTab;
 	children: React.ReactNode;
@@ -44,21 +34,14 @@ const tabs: Array<{ label: string; value: FamilyTab; suffix: string }> = [
 export const FamilyIdentity = ({
 	metadata,
 	registry,
-	previewSource,
 	variableAvailable = false,
 }: {
 	metadata: Omit<GetFontResponse, 'variants'>;
 	registry: RegistryFamily;
-	previewSource?: RegistrySource;
 	variableAvailable?: boolean;
 }) => {
-	const sourcePreviewStyle = getRegistrySourcePreviewStyle(previewSource);
-	const fontFamily = previewSource
-		? `"${registrySourcePreviewFamily}", "Fallback Outline"`
-		: getFontFamilyStack(metadata, variableAvailable, registry);
-	const previewFamily = previewSource
-		? registrySourcePreviewFamily
-		: getFontPreviewFamily(metadata, variableAvailable);
+	const fontFamily = getFontFamilyStack(metadata, variableAvailable, registry);
+	const previewFamily = getFontPreviewFamily(metadata, variableAvailable);
 	const category = formatFontLabel(metadata.category);
 	const weightLabel = `${metadata.weights.length} ${metadata.weights.length === 1 ? 'weight' : 'weights'}`;
 	const classification = registry.classifications[0]
@@ -72,9 +55,7 @@ export const FamilyIdentity = ({
 			order={1}
 			className={classes.title}
 			id="family-title"
-			style={
-				useSpecimenTitle ? { fontFamily, ...sourcePreviewStyle } : undefined
-			}
+			style={useSpecimenTitle ? { fontFamily } : undefined}
 		>
 			{registry.displayName ?? metadata.family}
 		</Title>
@@ -87,8 +68,7 @@ export const FamilyIdentity = ({
 					<FontSkeleton
 						name="font-detail-compact-title"
 						family={previewFamily}
-						weight={sourcePreviewStyle.fontWeight ?? 500}
-						style={sourcePreviewStyle.fontStyle}
+						weight={500}
 					>
 						{title}
 					</FontSkeleton>
@@ -187,7 +167,6 @@ export const FamilyTabs = ({
 export const FamilyPageShell = ({
 	metadata,
 	registry,
-	previewSource,
 	variable,
 	tabsValue,
 	children,
@@ -217,7 +196,6 @@ export const FamilyPageShell = ({
 					<FamilyIdentity
 						metadata={metadata}
 						registry={registry}
-						previewSource={previewSource}
 						variableAvailable={Boolean(variable)}
 					/>
 					<FamilyActions

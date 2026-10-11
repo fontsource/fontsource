@@ -358,10 +358,7 @@ export const FamilyAbout = ({
 	}
 	return (
 		<section className={classes.page} aria-labelledby="about-heading">
-			<style
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-				dangerouslySetInnerHTML={{ __html: previewCSS }}
-			/>
+			<style>{previewCSS}</style>
 
 			<div className={classes.intro}>
 				<div className={classes.story}>
