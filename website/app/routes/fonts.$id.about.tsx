@@ -21,6 +21,13 @@ import {
 } from '@/utils/registry';
 import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
+const compactNumber = new Intl.NumberFormat('en', {
+	notation: 'compact',
+	maximumFractionDigits: 2,
+});
+
+const exactNumber = new Intl.NumberFormat('en');
+
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
@@ -49,6 +56,28 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		loadFontPageCapabilities(basePromise, request.signal),
 		loadFontPageStats(id, request.signal),
 	]);
+	// Format once on the server: older Safari versions round compact numbers differently.
+	const monthlyUsage = stats
+		? [
+				{
+					provider: 'npm',
+					value: stats.total.npmDownloadMonthly,
+					unit: 'downloads',
+				},
+				{
+					provider: 'jsDelivr',
+					value: stats.total.jsDelivrHitsMonthly,
+					unit: 'requests',
+				},
+			]
+				.filter(({ value }) => value > 0)
+				.map(({ provider, value, unit }) => ({
+					provider,
+					compact: compactNumber.format(value),
+					exact: exactNumber.format(value),
+					unit,
+				}))
+		: [];
 	return data(
 		{
 			...base,
@@ -62,7 +91,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 			axisRegistry: axesResult,
 			taxonomy: taxonomyResult,
 			capabilities: capabilitiesResult.capabilities,
-			stats,
+			monthlyUsage,
 		},
 		{ headers: cacheHeaders.short },
 	);
@@ -91,7 +120,7 @@ export default function AboutPage() {
 		axisRegistry,
 		taxonomy,
 		capabilities,
-		stats,
+		monthlyUsage,
 	} = useLoaderData<typeof loader>();
 
 	return (
@@ -111,7 +140,7 @@ export default function AboutPage() {
 				axisRegistry={axisRegistry}
 				taxonomy={taxonomy}
 				capabilities={capabilities}
-				stats={stats}
+				monthlyUsage={monthlyUsage}
 			/>
 		</FamilyPageShell>
 	);

@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 import { IconCopy } from '@/components/icons';
 import type {
 	GetFontResponse,
-	GetFontStatsResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetRegistryTaxonomyResponse,
 	GetVariableFontResponse,
@@ -45,7 +44,12 @@ interface FamilyAboutProps {
 	axisRegistry: ListRegistryAxesResponse;
 	taxonomy: GetRegistryTaxonomyResponse;
 	capabilities: GetRegistrySourceCapabilitiesResponse;
-	stats?: GetFontStatsResponse;
+	monthlyUsage: {
+		provider: string;
+		compact: string;
+		exact: string;
+		unit: string;
+	}[];
 }
 
 const formatDate = (value?: string) => {
@@ -59,13 +63,6 @@ const formatDate = (value?: string) => {
 		timeZone: 'UTC',
 	}).format(date);
 };
-
-const compactNumber = new Intl.NumberFormat('en', {
-	notation: 'compact',
-	maximumFractionDigits: 2,
-});
-
-const exactNumber = new Intl.NumberFormat('en');
 
 const getRegistryAssetUrl = (value: string) =>
 	new URL(value, 'https://api.fontsource.org').toString();
@@ -260,7 +257,7 @@ export const FamilyAbout = ({
 	axisRegistry,
 	taxonomy,
 	capabilities,
-	stats,
+	monthlyUsage,
 }: FamilyAboutProps) => {
 	const hasCatalog = Boolean(registry.symbols);
 	const hasNamedLigatures = usesNameLigatures(registry);
@@ -324,20 +321,6 @@ export const FamilyAbout = ({
 		? 'Google Fonts'
 		: formatFontLabel(provider);
 	const updated = formatDate(registry.sourceModified);
-	const monthlyUsage = stats
-		? [
-				{
-					provider: 'npm',
-					value: stats.total.npmDownloadMonthly,
-					unit: 'downloads',
-				},
-				{
-					provider: 'jsDelivr',
-					value: stats.total.jsDelivrHitsMonthly,
-					unit: 'requests',
-				},
-			].filter(({ value }) => value > 0)
-		: [];
 	const featureTags = Array.from(
 		new Set([...capabilities.features.gsub, ...capabilities.features.gpos]),
 	).sort();
@@ -431,15 +414,15 @@ export const FamilyAbout = ({
 							<dt>Monthly usage</dt>
 							<dd>
 								<ul className={classes.usageStats}>
-									{monthlyUsage.map(({ provider, value, unit }) => (
+									{monthlyUsage.map(({ provider, compact, exact, unit }) => (
 										<li key={provider}>
 											<span>{provider}</span>
 											<span className={classes.usageValue}>
 												<span aria-hidden="true">
-													{compactNumber.format(value)} {unit}
+													{compact} {unit}
 												</span>
 												<VisuallyHidden>
-													{exactNumber.format(value)} {unit} last month
+													{exact} {unit} last month
 												</VisuallyHidden>
 											</span>
 										</li>
