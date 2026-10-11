@@ -18,8 +18,11 @@ const DEFAULT_IMAGE: OpenGraphImage = {
 	height: 800,
 };
 
-export const getCanonicalUrl = (pathname: string) =>
-	new URL(pathname.replace(/\/+$/, '') || '/', SITE_ORIGIN).href;
+export const getCanonicalUrl = (pathname: string) => {
+	const url = new URL(SITE_ORIGIN);
+	url.pathname = pathname.replace(/\/+$/, '');
+	return url.href;
+};
 
 interface OGMeta {
 	title?: string;
