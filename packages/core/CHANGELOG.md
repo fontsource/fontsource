@@ -1,5 +1,21 @@
 # @fontsource-utils/core
 
+## [0.6.0](https://github.com/fontsource/fontsource/compare/core-v0.5.1...core-v0.6.0) (2026-10-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** buildFont requires explicit targets and structured character selections instead of inferred source combinations and NAM text. Document the replacement API and context lifecycle.
+
+### Features
+
+* **core:** require explicit source-bound font build targets ([#1447](https://github.com/fontsource/fontsource/issues/1447)) ([ae4c16f](https://github.com/fontsource/fontsource/commit/ae4c16fc0863b3d98fb6437c880f4bdc907a26f2))
+
+
+### Bug Fixes
+
+* **fonts:** preserve correct desktop font formats ([#1348](https://github.com/fontsource/fontsource/issues/1348)) ([43cfc04](https://github.com/fontsource/fontsource/commit/43cfc04f7f53ef63cc5781c018c4058d8908f485))
+
 ## [0.5.1](https://github.com/fontsource/fontsource/compare/core-v0.5.0...core-v0.5.1) (2026-09-23)
 
 
