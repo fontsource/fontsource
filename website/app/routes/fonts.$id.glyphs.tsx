@@ -10,6 +10,7 @@ import {
 	loadFontPageCapabilities,
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
+import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -25,6 +26,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
+			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
 			symbols,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,
@@ -49,6 +51,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) =>
 export default function GlyphsPage() {
 	const {
 		metadata,
+		previewCSS,
 		variable,
 		registry,
 		symbols,
@@ -60,10 +63,13 @@ export default function GlyphsPage() {
 		<FamilyPageShell
 			metadata={metadata}
 			registry={registry}
-			previewSource={capabilitySource}
 			variable={variable}
 			tabsValue="glyphs"
 		>
+			<style
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
+				dangerouslySetInnerHTML={{ __html: previewCSS }}
+			/>
 			<CharacterExplorer
 				key={metadata.id}
 				metadata={metadata}
