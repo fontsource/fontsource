@@ -569,10 +569,7 @@ export const CharacterExplorer = ({
 
 	return (
 		<section className={classes.page} aria-labelledby="characters-heading">
-			<style
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-				dangerouslySetInnerHTML={{ __html: sourceCSS }}
-			/>
+			<style>{sourceCSS}</style>
 
 			<div className={classes.headingRow}>
 				<div>

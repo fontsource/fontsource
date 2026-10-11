@@ -286,19 +286,16 @@ const PreviewFontStyle = observer(() => {
 		: packagePreviewFamily;
 
 	return (
-		<style
-			// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-			dangerouslySetInnerHTML={{
-				__html: [
-					model.previewCSS,
-					activeSource
-						? getRegistrySourcePreviewCSS(activeSource, activePreviewFamily)
-						: '',
-				]
-					.filter(Boolean)
-					.join('\n'),
-			}}
-		/>
+		<style>
+			{[
+				model.previewCSS,
+				activeSource
+					? getRegistrySourcePreviewCSS(activeSource, activePreviewFamily)
+					: '',
+			]
+				.filter(Boolean)
+				.join('\n')}
+		</style>
 	);
 });
 
