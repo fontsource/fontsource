@@ -3,7 +3,14 @@ import stringify from 'json-stringify-pretty-compact';
 import * as path from 'pathe';
 
 import BASE_VERSION from '../../version';
-import type { BuildOptions, Metadata } from '../types';
+import type { Metadata } from '../types';
+
+interface PackageOptions {
+	dir: string;
+	isVariable: boolean;
+	version?: string;
+	publishHash?: string;
+}
 
 interface ExistingData {
 	oldVersion?: string;
@@ -82,7 +89,7 @@ const template = (
 	...(existing?.publishHash && { publishHash: existing.publishHash }),
 });
 
-const packageJson = async (metadata: Metadata, opts: BuildOptions) => {
+const packageJson = async (metadata: Metadata, opts: PackageOptions) => {
 	let oldVersion: string | undefined;
 	let oldPublishHash: string | undefined;
 	try {

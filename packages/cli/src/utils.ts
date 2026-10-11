@@ -1,31 +1,6 @@
 const cleanPaths = (str: string): string =>
 	str.replace('[', '').replace(']', '');
 
-// Used to determine where the downloader should save the files
-const makeFontDownloadPath = (
-	fontDir: string,
-	fontId: string,
-	subset: string,
-	weight: number,
-	style: string,
-	extension: string,
-): string =>
-	cleanPaths(
-		`${fontDir}/files/${fontId}-${subset}-${weight}-${style}.${extension}`,
-	);
-
-// Some axes are all uppercase making packages inconsistent
-const makeVariableFontDownloadPath = (
-	fontDir: string,
-	fontId: string,
-	subset: string,
-	axes: string,
-	style: string,
-): string =>
-	cleanPaths(
-		`${fontDir}/files/${fontId}-${subset}-${axes.toLowerCase()}-${style}.woff2`,
-	);
-
 // Used for the src urls in CSS files
 const makeFontFilePath = (
 	fontId: string,
@@ -35,13 +10,6 @@ const makeFontFilePath = (
 	extension: string,
 ): string =>
 	cleanPaths(`./files/${fontId}-${subset}-${weight}-${style}.${extension}`);
-
-const makeVariableFontFilePath = (
-	fontId: string,
-	subset: string,
-	axes: string,
-	style: string,
-): string => cleanPaths(`./files/${fontId}-${subset}-${axes}-${style}.woff2`);
 
 // Insert a weight array to find the closest number given num - used for index.css gen
 const findClosest = (arr: number[], num: number): number => {
@@ -65,17 +33,4 @@ const licenseMap = {
 export const licenseShort = (license: string): string | undefined =>
 	licenseMap[license.toLowerCase() as keyof typeof licenseMap];
 
-// `assertNever` will result in a type error at compile time, or an exception at runtime,
-// if the passed in value is not of type `never`. Useful for exhaustiveness checking.
-// The result of this function can be used in place of any value (as it will never return).
-export const assertNever = (value: never): never => {
-	throw new Error(`Unhandled union member: ${JSON.stringify(value)}`);
-};
-
-export {
-	findClosest,
-	makeFontDownloadPath,
-	makeFontFilePath,
-	makeVariableFontDownloadPath,
-	makeVariableFontFilePath,
-};
+export { findClosest, makeFontFilePath };

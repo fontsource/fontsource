@@ -1,21 +1,3 @@
-export interface CLIOptions {
-	test?: boolean;
-	force?: boolean;
-	ttf?: boolean;
-}
-
-export interface BuildOptions {
-	dir: string;
-	tmpDir: string;
-	force: boolean;
-	isVariable: boolean;
-	noSubset?: boolean;
-	isIcon?: boolean;
-	version?: string;
-	publishHash?: string;
-	ttf?: boolean;
-}
-
 interface AxisOptions {
 	default: string;
 	min: string;
@@ -61,11 +43,4 @@ export interface Metadata {
 	source: string;
 	type: TypeNames;
 }
-interface CSSGenerateItem {
-	filename: string;
-	css: string;
-}
-
-export type CSSGenerate = CSSGenerateItem[];
-
 export type UnicodeRange = Record<string, string>;
