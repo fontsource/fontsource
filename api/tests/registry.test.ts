@@ -192,6 +192,9 @@ const seedRegistry = async (): Promise<void> => {
 		existing.objects.map(({ key }) => testEnv.REGISTRY.delete(key)),
 	);
 	await Promise.all([
+		putJson(`snapshots/${REVISION}/manifest.json`, {
+			registryRevision: REVISION,
+		}),
 		putJson('current.json', {
 			schemaVersion: 1,
 			registryRevision: REVISION,
@@ -227,6 +230,56 @@ describe('registry routes', () => {
 		}
 	});
 
+	it('pins every metadata view after the current snapshot changes', async () => {
+		const initial = await dispatch(
+			'https://fontsource.test/v1/registry/families',
+		);
+		expect(initial.response.headers.get('X-Registry-Revision')).toBe(REVISION);
+		expect(
+			initial.response.headers.get('Access-Control-Expose-Headers'),
+		).toContain('X-Registry-Revision');
+		await initial.response.text();
+		await initial.settle();
+		const nextRevision = '3'.repeat(40);
+		await putJson('current.json', {
+			schemaVersion: 1,
+			registryRevision: nextRevision,
+		});
+		await putJson(`snapshots/${nextRevision}/api/families.json`, []);
+		for (const { route, body } of VIEWS) {
+			const result = await dispatch(
+				`https://fontsource.test${route}?revision=${REVISION}`,
+			);
+			expect(result.response.status).toBe(200);
+			expect(result.response.headers.get('X-Registry-Revision')).toBe(REVISION);
+			expect(await result.response.json()).toEqual(body);
+			await result.settle();
+		}
+		const current = await dispatch(
+			'https://fontsource.test/v1/registry/families',
+		);
+		expect(current.response.headers.get('X-Registry-Revision')).toBe(
+			nextRevision,
+		);
+		expect(await current.response.json()).toEqual([]);
+		await current.settle();
+	});
+
+	it('rejects invalid and unfinished pinned snapshots without falling back', async () => {
+		const unfinishedRevision = '4'.repeat(40);
+		await putJson(`snapshots/${unfinishedRevision}/api/families.json`, []);
+		for (const [revision, status] of [
+			['invalid', 400],
+			['5'.repeat(40), 404],
+			[unfinishedRevision, 404],
+		] as const) {
+			const response = await jsonSnapshot(
+				`https://fontsource.test/v1/registry/families?revision=${revision}`,
+			);
+			expect(response.status).toBe(status);
+		}
+	});
+
 	it('revalidates cached registry views with their ETag', async () => {
 		const url = 'https://fontsource.test/v1/registry/languages';
 		const first = await dispatch(url);
@@ -241,6 +294,7 @@ describe('registry routes', () => {
 		);
 		await second.settle();
 		expect(second.response.status).toBe(304);
+		expect(second.response.headers.get('X-Registry-Revision')).toBe(REVISION);
 		expect(second.response.headers.get('ETag')).toBe(etag);
 	});
 

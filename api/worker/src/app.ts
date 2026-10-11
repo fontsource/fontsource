@@ -43,7 +43,7 @@ import { DEFAULT_NOT_FOUND_MESSAGE, toErrorResponse } from './utils/errors';
 
 const app = new Hono<AppEnv>();
 
-app.use('*', cors());
+app.use('*', cors({ exposeHeaders: ['X-Registry-Revision'] }));
 
 app.use('*', async (c, next) => {
 	await next();

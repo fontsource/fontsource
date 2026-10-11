@@ -82,9 +82,9 @@ export const loadSearch = async (
 ) => {
 	const options = { signal: request.signal };
 	const [families, languages, taxonomy] = await Promise.all([
-		registry?.families ?? listRegistryFamilies(options),
-		listRegistryLanguages(options),
-		registry?.taxonomy ?? getRegistryTaxonomy(options),
+		registry?.families ?? listRegistryFamilies(undefined, options),
+		listRegistryLanguages(undefined, options),
+		registry?.taxonomy ?? getRegistryTaxonomy(undefined, options),
 	]);
 	const facets = { languages, taxonomy };
 	const requestUrl = new URL(request.url);

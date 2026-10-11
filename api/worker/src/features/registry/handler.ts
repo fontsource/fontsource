@@ -2,8 +2,9 @@ import type { Context } from 'hono';
 import { z } from 'zod';
 import { CACHE_POLICIES } from '../../constants';
 import type { AppEnv } from '../../env';
+import { RegistryQuerySchema } from '../../schemas/registry';
 import { toHttpDate } from '../../utils/cache';
-import { badGateway, notFound } from '../../utils/errors';
+import { badGateway, badRequest, notFound } from '../../utils/errors';
 
 const CurrentSnapshotSchema = z.strictObject({
 	schemaVersion: z.literal(1),
@@ -49,7 +50,18 @@ export const getRegistryView = async (
 	path: string,
 	notFoundMessage?: string,
 ): Promise<Response> => {
-	const revision = await getCurrentRevision(c);
+	const query = RegistryQuerySchema.safeParse(c.req.query());
+	if (!query.success) {
+		throw badRequest('Bad Request. Invalid registry revision.');
+	}
+	const revision = query.data.revision ?? (await getCurrentRevision(c));
+	// The archive writes this marker only after all snapshot objects are uploaded.
+	if (
+		query.data.revision &&
+		!(await c.env.REGISTRY.head(`snapshots/${revision}/manifest.json`))
+	) {
+		throw notFound('Not Found. Registry snapshot does not exist.');
+	}
 	const object = await c.env.REGISTRY.get(`snapshots/${revision}/api/${path}`, {
 		onlyIf: c.req.raw.headers,
 	});
@@ -60,11 +72,13 @@ export const getRegistryView = async (
 		throw badGateway('Bad Gateway. Registry snapshot is incomplete.');
 	}
 
-	return respondWithObject(
+	const response = respondWithObject(
 		object,
 		'application/json; charset=utf-8',
 		CACHE_POLICIES.metadata,
 	);
+	response.headers.set('X-Registry-Revision', revision);
+	return response;
 };
 
 export const readRegistryView = async <T>(

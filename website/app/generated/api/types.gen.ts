@@ -628,13 +628,44 @@ export type GetFontOpenGraphImageResponse = GetFontOpenGraphImageResponses[keyof
 export type GetRegistryTaxonomyData = {
     body?: never;
     path?: never;
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/taxonomy';
 };
 
 export type GetRegistryTaxonomyErrors = {
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry snapshot not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -652,7 +683,7 @@ export type GetRegistryTaxonomyError = GetRegistryTaxonomyErrors[keyof GetRegist
 
 export type GetRegistryTaxonomyResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: {
         classifications: {
@@ -696,13 +727,44 @@ export type GetRegistryTaxonomyResponse = GetRegistryTaxonomyResponses[keyof Get
 export type ListRegistryFamiliesData = {
     body?: never;
     path?: never;
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/families';
 };
 
 export type ListRegistryFamiliesErrors = {
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry snapshot not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -720,7 +782,7 @@ export type ListRegistryFamiliesError = ListRegistryFamiliesErrors[keyof ListReg
 
 export type ListRegistryFamiliesResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: Array<{
         id: string;
@@ -774,13 +836,31 @@ export type GetRegistryFamilyData = {
          */
         id: string;
     };
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/families/{id}';
 };
 
 export type GetRegistryFamilyErrors = {
     /**
-     * Registry family not found
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry family not found or snapshot not found
      */
     404: {
         /**
@@ -793,7 +873,7 @@ export type GetRegistryFamilyErrors = {
         error: string;
     };
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -811,7 +891,7 @@ export type GetRegistryFamilyError = GetRegistryFamilyErrors[keyof GetRegistryFa
 
 export type GetRegistryFamilyResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: {
         id: string;
@@ -1045,13 +1125,31 @@ export type GetRegistryFamilySymbolsData = {
          */
         id: string;
     };
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/families/{id}/symbols';
 };
 
 export type GetRegistryFamilySymbolsErrors = {
     /**
-     * Registry family symbol catalog not found
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry family symbol catalog not found or snapshot not found
      */
     404: {
         /**
@@ -1064,7 +1162,7 @@ export type GetRegistryFamilySymbolsErrors = {
         error: string;
     };
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -1082,7 +1180,7 @@ export type GetRegistryFamilySymbolsError = GetRegistryFamilySymbolsErrors[keyof
 
 export type GetRegistryFamilySymbolsResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: Array<{
         name: string;
@@ -1096,13 +1194,44 @@ export type GetRegistryFamilySymbolsResponse = GetRegistryFamilySymbolsResponses
 export type ListRegistryLanguagesData = {
     body?: never;
     path?: never;
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/languages';
 };
 
 export type ListRegistryLanguagesErrors = {
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry snapshot not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -1120,7 +1249,7 @@ export type ListRegistryLanguagesError = ListRegistryLanguagesErrors[keyof ListR
 
 export type ListRegistryLanguagesResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: Array<{
         id: string;
@@ -1154,13 +1283,44 @@ export type ListRegistryLanguagesResponse = ListRegistryLanguagesResponses[keyof
 export type ListRegistrySubsetsData = {
     body?: never;
     path?: never;
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/subsets';
 };
 
 export type ListRegistrySubsetsErrors = {
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry snapshot not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -1178,7 +1338,7 @@ export type ListRegistrySubsetsError = ListRegistrySubsetsErrors[keyof ListRegis
 
 export type ListRegistrySubsetsResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: Array<string>;
 };
@@ -1193,13 +1353,31 @@ export type GetRegistrySubsetData = {
          */
         id: string;
     };
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/subsets/{id}';
 };
 
 export type GetRegistrySubsetErrors = {
     /**
-     * Registry subset not found
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry subset not found or snapshot not found
      */
     404: {
         /**
@@ -1212,7 +1390,7 @@ export type GetRegistrySubsetErrors = {
         error: string;
     };
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -1230,7 +1408,7 @@ export type GetRegistrySubsetError = GetRegistrySubsetErrors[keyof GetRegistrySu
 
 export type GetRegistrySubsetResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: {
         id: string;
@@ -1253,13 +1431,44 @@ export type GetRegistrySubsetResponse = GetRegistrySubsetResponses[keyof GetRegi
 export type ListRegistryAxesData = {
     body?: never;
     path?: never;
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/axes';
 };
 
 export type ListRegistryAxesErrors = {
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry snapshot not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -1277,7 +1486,7 @@ export type ListRegistryAxesError = ListRegistryAxesErrors[keyof ListRegistryAxe
 
 export type ListRegistryAxesResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: {
         [key: string]: {
@@ -1409,13 +1618,31 @@ export type GetRegistrySourceCapabilitiesData = {
          */
         sha256: string;
     };
-    query?: never;
+    query?: {
+        /**
+         * Completed registry snapshot revision. Omit to use the current snapshot.
+         */
+        revision?: string;
+    };
     url: '/v1/registry/sources/{sha256}/capabilities';
 };
 
 export type GetRegistrySourceCapabilitiesErrors = {
     /**
-     * Registry source capabilities not found
+     * Invalid registry revision
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Registry source capabilities not found or snapshot not found
      */
     404: {
         /**
@@ -1428,7 +1655,7 @@ export type GetRegistrySourceCapabilitiesErrors = {
         error: string;
     };
     /**
-     * The current registry snapshot is unavailable or incomplete
+     * The selected registry snapshot is unavailable or incomplete
      */
     502: {
         /**
@@ -1446,7 +1673,7 @@ export type GetRegistrySourceCapabilitiesError = GetRegistrySourceCapabilitiesEr
 
 export type GetRegistrySourceCapabilitiesResponses = {
     /**
-     * Registry data from the current snapshot
+     * Registry data from the selected snapshot
      */
     200: {
         glyphCount: number;
