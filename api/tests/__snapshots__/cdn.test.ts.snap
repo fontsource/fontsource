@@ -4,7 +4,7 @@ exports[`cdn routes > preserves the published variable index and numbered slices
 {
   "body": "@font-face {
   font-family: 'New Variable';
-  font-style: normal;
+  font-style: oblique -12.5deg 0deg;
   font-display: swap;
   font-weight: 300 700;
   src: url(https://cdn.jsdelivr.net/fontsource/fonts/new-variable:vf@6.0.0/japanese-wght-normal-12.woff2) format('woff2-variations');
@@ -13,7 +13,7 @@ exports[`cdn routes > preserves the published variable index and numbered slices
 
 @font-face {
   font-family: 'New Variable';
-  font-style: normal;
+  font-style: oblique -12.5deg 0deg;
   font-display: swap;
   font-weight: 300 700;
   src: url(https://cdn.jsdelivr.net/fontsource/fonts/new-variable:vf@6.0.0/japanese-wght-normal-7.woff2) format('woff2-variations');

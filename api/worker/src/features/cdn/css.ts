@@ -83,15 +83,11 @@ export const getCssAsset = async (
 ): Promise<Response> => {
 	const { tag, metadata, axes, manifest } = await resolveFontRequest(c, rawTag);
 
-	if (!manifest && tag.isVariable && !axes) {
-		throw notFound(`Not Found. Variable metadata for ${tag.id} not found.`);
-	}
-
 	const resolvedTag = tag.isVariable
 		? `${tag.id}:vf@${tag.version}`
 		: `${tag.id}@${tag.version}`;
 	const isMinified = filename.endsWith('.min.css');
-	const assetFilename = filename.replace(/\.min\.css$/, '.css');
+	const assetFilename = isMinified ? `${filename.slice(0, -8)}.css` : filename;
 
 	if (manifest) {
 		const entrypoint = Object.keys(manifest.entrypoints).find(
@@ -127,6 +123,6 @@ export const getCssAsset = async (
 	return createCssResponse(
 		asset.content,
 		tag.requestedVersion,
-		metadata?.lastModified,
+		metadata.lastModified,
 	);
 };

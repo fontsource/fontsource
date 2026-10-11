@@ -1,15 +1,15 @@
-import type { FontFace, FontStyle } from '@fontsource-utils/core/css';
+import type { FontFace } from '@fontsource-utils/core/css';
 import { z } from 'zod';
 
 // Published package data is a versioned contract, independent of today's catalog.
 const FaceSchema: z.ZodType<FontFace> = z.object({
 	subset: z.string(),
 	weight: z.union([z.number(), z.string()]),
-	style: z
-		.string()
-		.regex(
-			/^(normal|italic|oblique -?\d+(?:\.\d+)?deg(?: -?\d+(?:\.\d+)?deg)?)$/,
-		) as z.ZodType<FontStyle>,
+	style: z.union([
+		z.enum(['normal', 'italic']),
+		z.templateLiteral(['oblique ', z.number(), 'deg']),
+		z.templateLiteral(['oblique ', z.number(), 'deg ', z.number(), 'deg']),
+	]),
 	unicodeRange: z.string(),
 	sliceIndex: z.number().int().nonnegative(),
 	isVariable: z.boolean(),
@@ -18,6 +18,7 @@ const FaceSchema: z.ZodType<FontFace> = z.object({
 	sources: z
 		.array(
 			z.object({
+				// Basenames are interpolated into public URLs; reject paths and URL syntax.
 				filename: z
 					.string()
 					.regex(/^[a-zA-Z0-9][a-zA-Z0-9._-]*\.(woff2|woff|ttf)$/),
@@ -31,10 +32,10 @@ export const PackageOutputSchema = z
 	.object({
 		schemaVersion: z.literal(1),
 		family: z.string().min(1),
-		sourceModified: z.string().min(1),
+		sourceModified: z.iso.date(),
 		faces: z.array(FaceSchema).min(1),
 		entrypoints: z.record(
-			z.string().regex(/^[a-zA-Z0-9_-]+\.css$/),
+			z.string().endsWith('.css'),
 			z.array(z.number().int().nonnegative()).min(1),
 		),
 	})

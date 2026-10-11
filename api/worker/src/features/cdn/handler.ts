@@ -338,8 +338,8 @@ const findManifestSource = (
 	const filename = `${tag.id}-${file}`;
 	if (sources.some((source) => source.filename === filename)) return file;
 	// Desktop downloads are decoded from the actual static WOFF2; the builder selects TTF or OTF.
-	if (!tag.isVariable && /\.(ttf|otf)$/.test(file)) {
-		const woff2 = file.replace(/\.(ttf|otf)$/, '.woff2');
+	if (!tag.isVariable && (file.endsWith('.ttf') || file.endsWith('.otf'))) {
+		const woff2 = `${file.slice(0, -4)}.woff2`;
 		if (
 			sources.some(
 				(source) =>

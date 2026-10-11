@@ -74,10 +74,6 @@ submission commands remain available.
 New source-built font packages start at `6.0.0`. They use registry metadata and
 WOFF2; legacy metadata, WOFF and SCSS output are not part of this generator.
 
-## License
-
-MIT
-
 ### Published output manifest
 
 Each generated package includes `manifest.json` with schema version 1, the family
@@ -85,3 +81,7 @@ name and source modification date, actual resolved faces, and CSS entrypoints
 referencing ordered face indexes. The CDN uses this exact-version output for V6
 CSS and font-file selection, including full-font coverage and numbered slices.
 The manifest describes built outputs; `metadata.json` retains registry metadata.
+
+## License
+
+MIT

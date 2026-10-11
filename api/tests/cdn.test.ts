@@ -146,7 +146,7 @@ describe('cdn routes', () => {
 			faces: [7, 12].map((sliceIndex) => ({
 				subset: 'japanese',
 				weight: '300 700',
-				style: 'normal',
+				style: 'oblique -12.5deg 0deg',
 				isVariable: true,
 				axisKey: 'wght',
 				sliceIndex,
