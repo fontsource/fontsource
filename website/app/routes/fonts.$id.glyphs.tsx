@@ -66,10 +66,7 @@ export default function GlyphsPage() {
 			variable={variable}
 			tabsValue="glyphs"
 		>
-			<style
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: Generated from owned font metadata.
-				dangerouslySetInnerHTML={{ __html: previewCSS }}
-			/>
+			<style>{previewCSS}</style>
 			<CharacterExplorer
 				key={metadata.id}
 				metadata={metadata}
