@@ -109,9 +109,4 @@ const getCSSFiles = (face: FontFace, subsetIsSliced = false): string[] => {
 	return assetFilenames;
 };
 
-export {
-	getCSSFiles,
-	groupFacesByCSSFile,
-	pickStaticIndexCSS,
-	pickVariableIndexCSS,
-};
+export { groupFacesByCSSFile, pickStaticIndexCSS, pickVariableIndexCSS };
