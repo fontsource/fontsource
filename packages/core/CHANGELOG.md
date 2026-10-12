@@ -1,5 +1,12 @@
 # @fontsource-utils/core
 
+## [0.6.1](https://github.com/fontsource/fontsource/compare/core-v0.6.0...core-v0.6.1) (2026-10-12)
+
+
+### Bug Fixes
+
+* **cdn:** serve V6 assets from published output manifests ([#1464](https://github.com/fontsource/fontsource/issues/1464)) ([293f707](https://github.com/fontsource/fontsource/commit/293f7073362ffc516c9c2ce415b737157d1d4f2c))
+
 ## [0.6.0](https://github.com/fontsource/fontsource/compare/core-v0.5.1...core-v0.6.0) (2026-10-11)
 
 

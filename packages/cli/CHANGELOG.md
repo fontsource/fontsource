@@ -1,5 +1,21 @@
 # @fontsource-utils/cli
 
+## [0.8.0](https://github.com/fontsource/fontsource/compare/cli-v0.7.4...cli-v0.8.0) (2026-10-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **cli:** the CLI now builds explicit families from frozen registry inputs and source fonts. Remove the legacy fetch command, build flags, library exports and CommonJS/browser bundles. Require Node.js 22 or newer.
+
+### Features
+
+* **cli:** replace Google metadata builds with registry sources ([#1448](https://github.com/fontsource/fontsource/issues/1448)) ([efa39dc](https://github.com/fontsource/fontsource/commit/efa39dcb6479427f784632aa126355140f1c26a7))
+
+
+### Bug Fixes
+
+* **cdn:** serve V6 assets from published output manifests ([#1464](https://github.com/fontsource/fontsource/issues/1464)) ([293f707](https://github.com/fontsource/fontsource/commit/293f7073362ffc516c9c2ce415b737157d1d4f2c))
+
 ## [0.7.4](https://github.com/fontsource/fontsource/compare/cli-v0.7.3...cli-v0.7.4) (2026-09-23)
 
 
