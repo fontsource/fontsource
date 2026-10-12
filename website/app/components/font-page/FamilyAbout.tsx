@@ -14,7 +14,6 @@ import {
 	fontWeightNames,
 	formatFontLabel,
 	getAxisLabel,
-	getScriptLabel,
 } from '@/utils/font-labels';
 import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
 import {
@@ -41,6 +40,7 @@ interface FamilyAboutProps {
 	variable?: GetVariableFontResponse;
 	registry: RegistryFamily;
 	languages: ListRegistryLanguagesResponse;
+	scriptLabels: Record<string, string>;
 	axisRegistry: ListRegistryAxesResponse;
 	taxonomy: GetRegistryTaxonomyResponse;
 	capabilities: GetRegistrySourceCapabilitiesResponse;
@@ -254,6 +254,7 @@ export const FamilyAbout = ({
 	variable,
 	registry,
 	languages,
+	scriptLabels,
 	axisRegistry,
 	taxonomy,
 	capabilities,
@@ -333,7 +334,7 @@ export const FamilyAbout = ({
 	} else if (primaryLanguage) {
 		coverageDescription = `${primaryLanguage.preferredName ?? primaryLanguage.name} is listed as the primary language.`;
 	} else if (registry.primaryScript) {
-		coverageDescription = `${getScriptLabel(registry.primaryScript)} is the primary writing system.`;
+		coverageDescription = `${scriptLabels[registry.primaryScript]} is the primary writing system.`;
 	} else if (languageCount > 0) {
 		coverageDescription = `${languageCount.toLocaleString('en')} languages are listed for this family.`;
 	} else {
@@ -491,6 +492,7 @@ export const FamilyAbout = ({
 							<SearchableLanguageList
 								familyId={metadata.id}
 								languages={languages}
+								scriptLabels={scriptLabels}
 							/>
 						) : null}
 					</div>

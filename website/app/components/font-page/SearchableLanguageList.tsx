@@ -1,5 +1,4 @@
 import type { ListRegistryLanguagesResponse } from '@/generated/api';
-import { getScriptLabel } from '@/utils/font-labels';
 import { normalizeSearchValue } from '@/utils/search';
 import { SearchableMetadataList } from './SearchableMetadataList';
 import classes from './SearchableMetadataList.module.css';
@@ -7,27 +6,27 @@ import classes from './SearchableMetadataList.module.css';
 interface SearchableLanguageListProps {
 	familyId: string;
 	languages: ListRegistryLanguagesResponse;
+	scriptLabels: Record<string, string>;
 }
 
 const searchThreshold = 12;
 
 type Language = ListRegistryLanguagesResponse[number];
 
-const getLanguageSearchText = (language: Language) =>
+const getLanguageSearchText = (language: Language, scriptLabel: string) =>
 	[
 		language.id,
 		language.name,
 		language.preferredName,
 		language.autonym,
 		language.script,
-		getScriptLabel(language.script),
+		scriptLabel,
 	]
 		.filter(Boolean)
 		.join(' ');
 
-const renderLanguage = (language: Language) => {
+const renderLanguage = (language: Language, scriptLabel: string) => {
 	const displayName = language.preferredName ?? language.name;
-	const scriptLabel = getScriptLabel(language.script);
 	const autonym =
 		language.autonym && language.autonym !== displayName
 			? language.autonym
@@ -50,11 +49,14 @@ const renderLanguage = (language: Language) => {
 const SearchableLanguageList = ({
 	familyId,
 	languages,
+	scriptLabels,
 }: SearchableLanguageListProps) => (
 	<SearchableMetadataList
 		emptyLabel="No supported languages match"
 		getKey={(language) => language.id}
-		getSearchText={getLanguageSearchText}
+		getSearchText={(language) =>
+			getLanguageSearchText(language, scriptLabels[language.script])
+		}
 		itemName={{ singular: 'language', plural: 'languages' }}
 		items={[...languages].sort((a, b) =>
 			(a.preferredName ?? a.name).localeCompare(
@@ -64,7 +66,9 @@ const SearchableLanguageList = ({
 		)}
 		listClassName={classes.languageList}
 		listId={`language-list-${familyId}`}
-		renderItem={renderLanguage}
+		renderItem={(language) =>
+			renderLanguage(language, scriptLabels[language.script])
+		}
 		searchLabel="Search supported languages"
 		searchId={`language-search-${familyId}`}
 		searchThreshold={searchThreshold}

@@ -31,9 +31,6 @@ const formatFontLabel = (value: string) =>
 		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
 		.join(' ');
 
-const scriptNames = new Intl.DisplayNames('en', { type: 'script' });
-
 const getAxisLabel = (axis: string) => axisLabels[axis] ?? axis.toUpperCase();
-const getScriptLabel = (script: string) => scriptNames.of(script) ?? script;
 
-export { fontWeightNames, formatFontLabel, getAxisLabel, getScriptLabel };
+export { fontWeightNames, formatFontLabel, getAxisLabel };

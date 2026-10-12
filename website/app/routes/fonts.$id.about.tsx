@@ -21,6 +21,8 @@ import {
 } from '@/utils/registry';
 import { loadRequiredRegistryData } from '@/utils/registry-request.server';
 
+const scriptNames = new Intl.DisplayNames('en', { type: 'script' });
+
 const compactNumber = new Intl.NumberFormat('en', {
 	notation: 'compact',
 	maximumFractionDigits: 2,
@@ -56,6 +58,16 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		loadFontPageCapabilities(basePromise, request.signal),
 		loadFontPageStats(id, request.signal),
 	]);
+	const familyLanguages = selectRegistryFamilyLanguages(
+		base.registry,
+		languages,
+	);
+	const scripts = new Set(familyLanguages.map(({ script }) => script));
+	if (base.registry.primaryScript) scripts.add(base.registry.primaryScript);
+	// Intl script names differ across runtimes (for example, "Simplified" vs "Simplified Han").
+	const scriptLabels = Object.fromEntries(
+		[...scripts].map((script) => [script, scriptNames.of(script) ?? script]),
+	);
 	// Format once on the server: older Safari versions round compact numbers differently.
 	const monthlyUsage = stats
 		? [
@@ -87,7 +99,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 				getRegistryContent(base.registry)?.description,
 				base.registry.designer,
 			),
-			languages: selectRegistryFamilyLanguages(base.registry, languages),
+			languages: familyLanguages,
+			scriptLabels,
 			axisRegistry: axesResult,
 			taxonomy: taxonomyResult,
 			capabilities: capabilitiesResult.capabilities,
@@ -117,6 +130,7 @@ export default function AboutPage() {
 		variable,
 		registry,
 		languages,
+		scriptLabels,
 		axisRegistry,
 		taxonomy,
 		capabilities,
@@ -137,6 +151,7 @@ export default function AboutPage() {
 				variable={variable}
 				registry={registry}
 				languages={languages}
+				scriptLabels={scriptLabels}
 				axisRegistry={axisRegistry}
 				taxonomy={taxonomy}
 				capabilities={capabilities}
