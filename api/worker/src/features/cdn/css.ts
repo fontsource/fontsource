@@ -1,6 +1,7 @@
 import {
 	type CSSAsset,
 	type FontConfig,
+	generateCSS,
 	generateCSSAssets,
 	resolveFontFaces,
 } from '@fontsource-utils/core/css';
@@ -80,18 +81,36 @@ export const getCssAsset = async (
 	rawTag: string,
 	filename: string,
 ): Promise<Response> => {
-	const { tag, metadata, axes } = await resolveFontRequest(c, rawTag);
-
-	if (tag.isVariable && !axes) {
-		throw notFound(`Not Found. Variable metadata for ${tag.id} not found.`);
-	}
+	const { tag, metadata, axes, manifest } = await resolveFontRequest(c, rawTag);
 
 	const resolvedTag = tag.isVariable
 		? `${tag.id}:vf@${tag.version}`
 		: `${tag.id}@${tag.version}`;
 	const isMinified = filename.endsWith('.min.css');
-	const assetFilename = filename.replace(/\.min\.css$/, '.css');
+	const assetFilename = isMinified ? `${filename.slice(0, -8)}.css` : filename;
 
+	if (manifest) {
+		const entrypoint = Object.keys(manifest.entrypoints).find(
+			(name) =>
+				name === assetFilename ||
+				(tag.isVariable && name.toLowerCase() === assetFilename),
+		);
+		if (!entrypoint) throw notFound('Not Found. File does not exist.');
+		const content = generateCSS(
+			manifest.family,
+			manifest.entrypoints[entrypoint].map((index) => manifest.faces[index]),
+			{
+				minify: isMinified,
+				resolver: ({ source }) =>
+					`${UPSTREAM_URLS.publicCdn}/fonts/${resolvedTag}/${getPublicFilename(tag.id, source.filename)}`,
+			},
+		);
+		return createCssResponse(
+			content,
+			tag.requestedVersion,
+			manifest.sourceModified,
+		);
+	}
 	const asset = findCssAsset(metadata, assetFilename, resolvedTag, {
 		minify: isMinified,
 		axes: tag.isVariable ? axes : undefined,

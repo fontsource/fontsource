@@ -5,11 +5,7 @@ import type {
 	VariableAxisConfig,
 } from '../types';
 import { type CSSRenderOptions, renderFontFaceRule } from './face-rule';
-import {
-	groupFacesByCSSFile,
-	pickStaticIndexCSS,
-	pickVariableIndexCSS,
-} from './planner';
+import { planCSSAssets } from './planner';
 
 export interface CSSOptions extends CSSRenderOptions {
 	resolver?: UrlResolver;
@@ -65,15 +61,7 @@ const generateCSSAssets = (
 	faces: readonly FontFace[],
 	options: CSSOptions & { variable?: VariableAxisConfig } = {},
 ): CSSAsset[] => {
-	const { variable } = options;
-	const facesByFile = groupFacesByCSSFile(faces);
-
-	const indexCSSFile = variable
-		? pickVariableIndexCSS(variable, facesByFile)
-		: pickStaticIndexCSS(faces);
-
-	const indexFaces = indexCSSFile ? facesByFile.get(indexCSSFile) : undefined;
-	if (indexFaces) facesByFile.set('index.css', indexFaces);
+	const facesByFile = planCSSAssets(faces, options.variable);
 
 	// Subset, weight and index entrypoints share faces. Resolve URLs and render
 	// each face once per build, without retaining anything between builds.

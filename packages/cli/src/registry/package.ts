@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import type { FontBuildResult } from '@fontsource-utils/core';
+import type { PackageOutputManifest } from '../../../../api/shared/package-output';
 import type { RegistryFamilyDetail } from '../../../../api/shared/registry';
 
 /** Package only generated outputs; frozen build inputs stay outside the package. */
@@ -21,6 +22,16 @@ export async function writePackage(
 		{ filename: 'index.d.css.ts', content: 'export {};\n' },
 		{ filename: 'metadata.json', content: json(family) },
 		{
+			filename: 'manifest.json',
+			content: json({
+				schemaVersion: 1,
+				family: family.family,
+				sourceModified: family.sourceModified,
+				faces: result.faces,
+				entrypoints: result.entrypoints,
+			} satisfies PackageOutputManifest),
+		},
+		{
 			filename: 'package.json',
 			content: json({
 				name,
@@ -36,6 +47,7 @@ export async function writePackage(
 					'./LICENSE': './LICENSE',
 					'./package.json': './package.json',
 					'./metadata.json': './metadata.json',
+					'./manifest.json': './manifest.json',
 					'./*': './*.css',
 				},
 			}),

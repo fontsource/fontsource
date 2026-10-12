@@ -92,7 +92,10 @@ Both functions preserve each face's Unicode range. An empty `unicodeRange`
 deliberately omits the descriptor for an unrestricted face; it does not default
 to Latin. Callers must supply coverage matching the referenced artifact.
 
-`buildFont()` returns resolved `faces` and package `css`. Render those faces
+`buildFont()` returns resolved `faces`, package `css`, and `entrypoints` mapping
+CSS filenames to ordered indexes in `faces`. Persist that mapping alongside the
+faces when serving published packages; later readers need not repeat the build
+planner to discover what an entrypoint contains. Render those faces
 directly when different CSS output is needed. Metadata-based callers first use
 `resolveFontFaces(config, axisKeys?)` to plan filenames and select variable
 bundles, then pass the result to either generator. Axis selections use distinct,

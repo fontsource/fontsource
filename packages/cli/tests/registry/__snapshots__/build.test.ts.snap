@@ -76,6 +76,7 @@ exports[`freezes one registry revision, builds a package offline, and rejects ch
     "index.css",
     "index.d.css.ts",
     "latin.css",
+    "manifest.json",
     "metadata.json",
     "package.json",
     "symbols.css",
@@ -91,6 +92,7 @@ exports[`freezes one registry revision, builds a package offline, and rejects ch
       "./*.css": "./*.css",
       "./LICENSE": "./LICENSE",
       "./files/*": "./files/*",
+      "./manifest.json": "./manifest.json",
       "./metadata.json": "./metadata.json",
       "./package.json": "./package.json",
     },
@@ -99,6 +101,59 @@ exports[`freezes one registry revision, builds a package offline, and rejects ch
     "name": "@fontsource/abel",
     "types": "index.d.css.ts",
     "version": "6.0.0",
+  },
+  "output": {
+    "entrypoints": {
+      "400.css": [
+        0,
+        1,
+      ],
+      "index.css": [
+        0,
+        1,
+      ],
+      "latin.css": [
+        0,
+      ],
+      "symbols.css": [
+        1,
+      ],
+    },
+    "faces": [
+      {
+        "isVariable": false,
+        "sliceIndex": 0,
+        "sources": [
+          {
+            "filename": "abel-latin-400-normal.woff2",
+            "format": "woff2",
+          },
+        ],
+        "stretch": null,
+        "style": "normal",
+        "subset": "latin",
+        "unicodeRange": "U+41",
+        "weight": 400,
+      },
+      {
+        "isVariable": false,
+        "sliceIndex": 0,
+        "sources": [
+          {
+            "filename": "abel-symbols-400-normal.woff2",
+            "format": "woff2",
+          },
+        ],
+        "stretch": null,
+        "style": "normal",
+        "subset": "symbols",
+        "unicodeRange": "U+42",
+        "weight": 400,
+      },
+    ],
+    "family": "Abel",
+    "schemaVersion": 1,
+    "sourceModified": "2026-01-01",
   },
 }
 `;

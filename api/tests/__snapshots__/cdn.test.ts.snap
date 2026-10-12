@@ -1,5 +1,36 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`cdn routes > preserves the published variable index and numbered slices 1`] = `
+{
+  "body": "@font-face {
+  font-family: 'New Variable';
+  font-style: oblique -12.5deg 0deg;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/new-variable:vf@6.0.0/japanese-wght-normal-12.woff2) format('woff2-variations');
+  unicode-range: U+42;
+}
+
+@font-face {
+  font-family: 'New Variable';
+  font-style: oblique -12.5deg 0deg;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/new-variable:vf@6.0.0/japanese-wght-normal-7.woff2) format('woff2-variations');
+  unicode-range: U+41;
+}",
+  "headers": {
+    "cacheControl": "public, max-age=31536000, immutable",
+    "cdnCacheControl": "public, max-age=31536000, immutable",
+    "contentType": "text/css; charset=utf-8",
+    "edgeCacheControl": "public, max-age=31536000, immutable",
+    "etag": "<etag>",
+    "lastModified": "<last-modified>",
+  },
+  "status": 200,
+}
+`;
+
 exports[`cdn routes > public asset outputs > generates correct CSS output 1`] = `
 {
   "body": "@font-face {
@@ -34,6 +65,41 @@ exports[`cdn routes > public asset outputs > generates variable CSS output 1`] =
 `;
 
 exports[`cdn routes > public asset outputs > serves minified CSS aliases 1`] = `"@font-face{font-family:'Family Pack';font-style:normal;font-display:swap;font-weight:400;src:url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-400-normal.woff2) format(woff2),url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-400-normal.woff) format(woff);unicode-range:U+0000-00FF;}@font-face{font-family:'Family Pack';font-style:normal;font-display:swap;font-weight:700;src:url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-700-normal.woff2) format(woff2),url(https://cdn.jsdelivr.net/fontsource/fonts/familypack@5.0.0/latin-700-normal.woff) format(woff);unicode-range:U+0000-00FF;}"`;
+
+exports[`cdn routes > renders exact manifest entrypoints without legacy catalog coverage or formats 1`] = `
+{
+  "floating": {
+    "body": "@font-face{font-family:'New Math';font-style:normal;font-display:swap;font-weight:400;src:url(https://cdn.jsdelivr.net/fontsource/fonts/new-math@6.0.0/full-400-normal.woff2) format(woff2);}",
+    "headers": {
+      "cacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+      "cdnCacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+      "contentType": "text/css; charset=utf-8",
+      "edgeCacheControl": "public, max-age=900, stale-if-error=604800",
+      "etag": "<etag>",
+      "lastModified": "<last-modified>",
+    },
+    "status": 200,
+  },
+  "pinned": {
+    "body": "@font-face {
+  font-family: 'New Math';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/new-math@6.0.0/full-400-normal.woff2) format(woff2);
+}",
+    "headers": {
+      "cacheControl": "public, max-age=31536000, immutable",
+      "cdnCacheControl": "public, max-age=31536000, immutable",
+      "contentType": "text/css; charset=utf-8",
+      "edgeCacheControl": "public, max-age=31536000, immutable",
+      "etag": "<etag>",
+      "lastModified": "<last-modified>",
+    },
+    "status": 200,
+  },
+}
+`;
 
 exports[`cdn routes > reports a failed asynchronous download build 1`] = `
 {

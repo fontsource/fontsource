@@ -10,7 +10,6 @@ export interface BuildVersionTag {
 export interface BuildPackageRequest {
 	mode: 'static' | 'variable';
 	tag: BuildVersionTag;
-	metadata: SourceFontMetadata;
 }
 
 export interface BuildDownloadRequest {

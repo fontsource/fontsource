@@ -68,6 +68,24 @@ exports[`buildFont integration with real fixtures > builds only explicit sparse 
       "filename": "index.css",
     },
   ],
+  "entrypoints": {
+    "400.css": [
+      0,
+    ],
+    "700-italic.css": [
+      1,
+    ],
+    "index.css": [
+      0,
+    ],
+    "latin-italic.css": [
+      1,
+    ],
+    "latin.css": [
+      0,
+      1,
+    ],
+  },
   "faces": [
     {
       "axisKey": undefined,
@@ -149,6 +167,17 @@ exports[`buildFont integration with real fixtures > deduplicates identical files
       "filename": "index.css",
     },
   ],
+  "entrypoints": {
+    "400.css": [
+      0,
+    ],
+    "full.css": [
+      0,
+    ],
+    "index.css": [
+      0,
+    ],
+  },
   "faces": [
     {
       "axisKey": undefined,
@@ -260,6 +289,24 @@ exports[`buildFont integration with real fixtures > keeps named subset imports s
       "filename": "index.css",
     },
   ],
+  "entrypoints": {
+    "400.css": [
+      0,
+      2,
+      3,
+    ],
+    "index.css": [
+      0,
+      2,
+      3,
+    ],
+    "japanese.css": [
+      1,
+    ],
+    "latin.css": [
+      0,
+    ],
+  },
   "faces": [
     {
       "axisKey": undefined,
@@ -384,6 +431,17 @@ exports[`buildFont integration with real fixtures > pins excluded axes and respe
       "filename": "index.css",
     },
   ],
+  "entrypoints": {
+    "full-italic.css": [
+      1,
+    ],
+    "index.css": [
+      1,
+    ],
+    "wght-italic.css": [
+      0,
+    ],
+  },
   "faces": [
     {
       "axisKey": "wght",
@@ -465,6 +523,17 @@ exports[`buildFont integration with real fixtures > preserves full coverage for 
       "filename": "index.css",
     },
   ],
+  "entrypoints": {
+    "400.css": [
+      0,
+    ],
+    "full.css": [
+      0,
+    ],
+    "index.css": [
+      0,
+    ],
+  },
   "faces": [
     {
       "axisKey": undefined,

@@ -35,3 +35,17 @@ pnpm test
 pnpm typecheck
 pnpm build
 ```
+
+### V6 package output manifests
+
+CSS and font-file routes for package major versions 6 and later read the exact
+npm version's `manifest.json` through jsDelivr. The manifest supplies real faces,
+formats, coverage, and ordered CSS entrypoints; these routes do not infer V6
+outputs from the legacy catalog. Static desktop conversions still decode the
+published WOFF2 bytes through the existing artifact builder.
+
+Version 5 keeps its existing catalog path. A missing, invalid, or unavailable V6
+manifest fails explicitly rather than falling back to guessed outputs. Pinned
+binary objects already in R2 keep their existing fast path and cache behavior.
+The catalog-backed listing and ZIP download endpoints are unchanged; migrating
+those consumers remains part of the Font Files/catalog rollout.

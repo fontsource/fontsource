@@ -109,4 +109,16 @@ const getCSSFiles = (face: FontFace, subsetIsSliced = false): string[] => {
 	return assetFilenames;
 };
 
-export { groupFacesByCSSFile, pickStaticIndexCSS, pickVariableIndexCSS };
+/** Select the exact faces behind each published CSS entrypoint. */
+export const planCSSAssets = (
+	faces: readonly FontFace[],
+	variable?: VariableAxisConfig,
+): Map<string, FontFace[]> => {
+	const facesByFile = groupFacesByCSSFile(faces);
+	const indexCSSFile = variable
+		? pickVariableIndexCSS(variable, facesByFile)
+		: pickStaticIndexCSS(faces);
+	const indexFaces = indexCSSFile ? facesByFile.get(indexCSSFile) : undefined;
+	if (indexFaces) facesByFile.set('index.css', indexFaces);
+	return facesByFile;
+};

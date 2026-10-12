@@ -7,6 +7,7 @@ import {
 import type { FontRef, StyleValues } from '@glypht/core';
 import type { FontContext } from './context';
 import { type CSSOptions, generateCSSAssets } from './css/assets';
+import { planCSSAssets } from './css/planner';
 import { normalizeFontBuffer } from './normalize';
 
 import type {
@@ -364,12 +365,25 @@ export const buildFont = async (
 	// Convert the face map into an array for CSS generation.
 	const faces = Array.from(faceMap.values());
 
+	const variable = config.targets.some((target) => target.type === 'variable')
+		? variableConfig
+		: undefined;
 	const cssAssets = generateCSSAssets(config.family, faces, {
 		...options.css,
-		variable: config.targets.some((target) => target.type === 'variable')
-			? variableConfig
-			: undefined,
+		variable,
 	});
+	const faceIndexes = new Map(faces.map((face, index) => [face, index]));
+	const entrypoints = Object.fromEntries(
+		Array.from(planCSSAssets(faces, variable), ([filename, selected]) => [
+			filename,
+			selected.map((face) => faceIndexes.get(face) as number),
+		]),
+	);
 
-	return { css: cssAssets, fonts: [...fontAssets.values()], faces };
+	return {
+		css: cssAssets,
+		fonts: [...fontAssets.values()],
+		faces,
+		entrypoints,
+	};
 };
