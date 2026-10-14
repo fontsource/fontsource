@@ -1,0 +1,126 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`serves promoted versions and exact outputs independently of catalog membership 1`] = `
+{
+  "output": {
+    "body": {
+      "id": "new-math",
+      "kind": "static",
+      "manifest": {
+        "entrypoints": {
+          "400.css": [
+            0,
+          ],
+          "index.css": [
+            0,
+          ],
+        },
+        "faces": [
+          {
+            "isVariable": false,
+            "sliceIndex": 0,
+            "sources": [
+              {
+                "filename": "new-math-full-400-normal.woff2",
+                "format": "woff2",
+              },
+            ],
+            "style": "normal",
+            "subset": "full",
+            "unicodeRange": "",
+            "weight": 400,
+          },
+        ],
+        "family": "New Math",
+        "schemaVersion": 1,
+        "sourceModified": "2026-01-01",
+      },
+      "metadata": {
+        "axes": [],
+        "classifications": [
+          "serif",
+        ],
+        "distribution": {
+          "characters": {
+            "type": "all",
+          },
+          "static": [
+            {
+              "source": "2222222222222222222222222222222222222222222222222222222222222222",
+              "style": "normal",
+              "weight": 400,
+            },
+          ],
+        },
+        "family": "New Math",
+        "id": "new-math",
+        "languages": [],
+        "license": {
+          "id": "OFL-1.1",
+          "text": "Test license",
+          "url": "https://openfontlicense.org",
+        },
+        "previewSource": "2222222222222222222222222222222222222222222222222222222222222222",
+        "provenance": {
+          "type": "registry",
+        },
+        "provider": "other",
+        "sourceModified": "2026-01-01",
+        "sources": [
+          {
+            "capabilitiesUrl": "/v1/registry/sources/2222222222222222222222222222222222222222222222222222222222222222/capabilities",
+            "codepointCount": 1,
+            "downloadUrl": "/v1/registry/sources/2222222222222222222222222222222222222222222222222222222222222222",
+            "filename": "Math.ttf",
+            "fontVersion": null,
+            "format": "ttf",
+            "glyphCount": 1,
+            "path": "Math.ttf",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+            "size": 1,
+            "style": "normal",
+            "type": "static",
+            "weight": 400,
+          },
+        ],
+        "status": "active",
+        "tags": [],
+      },
+      "version": "6.0.0",
+    },
+    "headers": {
+      "cacheControl": "public, max-age=31536000, immutable",
+      "cdnCacheControl": "public, max-age=31536000, immutable",
+      "contentType": "application/json",
+      "edgeCacheControl": "public, max-age=31536000, immutable",
+      "etag": "<etag>",
+    },
+    "status": 200,
+  },
+  "packages": {
+    "body": {
+      "abel": {
+        "static": "5.0.0",
+      },
+      "new-math": {
+        "static": "6.0.0",
+      },
+      "recursive": {
+        "static": "5.0.0",
+        "variable": "5.0.0",
+      },
+      "variable-only": {
+        "variable": "6.0.1",
+      },
+    },
+    "headers": {
+      "cacheControl": "public, max-age=300",
+      "cdnCacheControl": "public, max-age=86400",
+      "contentType": "application/json",
+      "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
+      "etag": "<etag>",
+    },
+    "status": 200,
+  },
+}
+`;

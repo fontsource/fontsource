@@ -227,6 +227,8 @@ describe('metadata routes', () => {
 			'/v1/fonts',
 			'/v1/fonts/{id}',
 			'/v1/fonts/{id}/{file}',
+			'/v1/packages',
+			'/v1/packages/{id}/{kind}/{version}',
 			'/v1/registry/axes',
 			'/v1/registry/families',
 			'/v1/registry/families/{id}',
@@ -292,6 +294,10 @@ describe('metadata routes', () => {
 	});
 
 	it('refreshes scheduled metadata caches from upstream', async () => {
+		await testEnv.METADATA.put(
+			KV_KEYS.publishedPackages,
+			JSON.stringify({ abel: { static: '5.0.0' } }),
+		);
 		const ctrl = createScheduledController({
 			cron: '0 */3 * * *',
 			scheduledTime: new Date('2026-03-22T00:00:00.000Z'),
@@ -302,6 +308,9 @@ describe('metadata routes', () => {
 
 		expect({
 			catalog: await testEnv.METADATA.get(KV_KEYS.catalog, { type: 'json' }),
+			publishedPackages: await testEnv.METADATA.get(KV_KEYS.publishedPackages, {
+				type: 'json',
+			}),
 			axisRegistry: await testEnv.METADATA.get(KV_KEYS.axisRegistry, {
 				type: 'json',
 			}),
