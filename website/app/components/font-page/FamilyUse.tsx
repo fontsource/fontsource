@@ -1,22 +1,20 @@
+import type { FontStyle } from '@fontsource-utils/core/css';
 import { SegmentedControl, Tabs, VisuallyHidden } from '@mantine/core';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
+import invariant from 'tiny-invariant';
 import { CarbonAd } from '@/components/CarbonAd';
 import { CopyCodeBlock } from '@/components/code/CopyCodeBlock';
 import { PackageManagerCode } from '@/components/code/PackageManagerCode';
 import { IconDownload, IconExternal } from '@/components/icons';
-import type {
-	GetFontResponse,
-	GetFontVersionsResponse,
-	GetRegistrySubsetResponse,
-	GetVariableFontResponse,
-} from '@/generated/api';
+import type { GetVariableFontResponse } from '@/generated/api';
 import { getJsDelivrPackageUrl } from '@/utils/cdn';
 import {
 	fontWeightNames,
 	formatFontLabel,
 	getAxisLabel,
 } from '@/utils/font-labels';
+import type { FontPackage } from '@/utils/font-package';
 import type { RegistryFamily } from '@/utils/registry';
 
 import classes from './FamilyUse.module.css';
@@ -28,18 +26,15 @@ import {
 } from './family-use-css';
 
 interface FamilyUseProps {
-	metadata: Omit<GetFontResponse, 'variants'>;
-	versions: GetFontVersionsResponse;
+	packages: { static?: FontPackage; variable?: FontPackage };
 	variable?: GetVariableFontResponse;
 	previewCSS: string;
 	registry: RegistryFamily;
-	subsetDefinitions?: GetRegistrySubsetResponse[];
 }
 
 type Method = 'package' | 'cdn';
 type AcquisitionPath = 'download' | 'web';
 type FamilyFormat = 'variable' | 'static';
-type FontStyle = GetFontResponse['styles'][number];
 type NavigationParameter = 'tab' | 'method' | 'setup';
 
 const navigationDefaults: Record<NavigationParameter, string> = {
@@ -112,28 +107,47 @@ const getWeightLabel = (weight: number) =>
 		: String(weight);
 
 export const FamilyUse = ({
-	metadata,
 	previewCSS,
 	variable,
-	versions,
+	packages,
 	registry,
-	subsetDefinitions,
 }: FamilyUseProps) => {
 	const [searchParams, setSearchParams] = useSearchParams();
-	const supportsVariable = Boolean(variable && versions.latestVariable);
-	const supportsStatic = Boolean(versions.latest);
+	const supportsVariable = Boolean(packages.variable);
+	const supportsStatic = Boolean(packages.static);
+	const defaultFormat: FamilyFormat = supportsVariable ? 'variable' : 'static';
+	const [format, setFormat] = useState<FamilyFormat>(defaultFormat);
+	const isVariable = format === 'variable' && supportsVariable;
+	const selectedPackage = isVariable ? packages.variable : packages.static;
+	invariant(selectedPackage, 'Selected package is unavailable');
+	const metadata = selectedPackage.metadata;
 	const recommendedStyle = metadata.styles.includes('normal')
 		? 'normal'
 		: (metadata.styles[0] ?? 'normal');
 	const recommendedWeight = metadata.weights.includes(400)
 		? 400
 		: (metadata.weights[0] ?? 400);
-	const availableAxes = Object.keys(variable?.axes ?? {}).filter(
-		(axis) => axis.toLowerCase() !== 'ital',
-	);
-	const defaultActiveAxes = availableAxes.includes('wght')
-		? ['wght']
-		: availableAxes.slice(0, 1);
+	const availableAxes = selectedPackage.manifest
+		? [
+				...new Set(
+					selectedPackage.manifest.faces.flatMap((face) =>
+						face.axisKey ? [face.axisKey] : [],
+					),
+				),
+			]
+		: Object.keys(variable?.axes ?? {}).filter(
+				(axis) => axis.toLowerCase() !== 'ital',
+			);
+	const defaultActiveAxes = selectedPackage.manifest
+		? [
+				selectedPackage.manifest.faces[
+					selectedPackage.manifest.entrypoints['index.css'][0]
+				].axisKey ?? availableAxes[0],
+			].filter((axis): axis is string => Boolean(axis))
+		: availableAxes.includes('wght')
+			? ['wght']
+			: availableAxes.slice(0, 1);
+
 	const path: AcquisitionPath =
 		searchParams.get('tab') === 'web' ? 'web' : 'download';
 	const method: Method =
@@ -152,8 +166,6 @@ export const FamilyUse = ({
 			preventScrollReset: true,
 		});
 	};
-	const defaultFormat: FamilyFormat = supportsVariable ? 'variable' : 'static';
-	const [format, setFormat] = useState<FamilyFormat>(defaultFormat);
 	const [selectedStyles, setSelectedStyles] = useState<FontStyle[]>([
 		recommendedStyle,
 	]);
@@ -162,17 +174,44 @@ export const FamilyUse = ({
 	]);
 	const [activeAxes, setActiveAxes] = useState<string[]>(defaultActiveAxes);
 	const [fontDisplay, setFontDisplay] = useState<FontDisplay>('swap');
-	const isVariable = format === 'variable' && supportsVariable;
+	const selectedAxis = availableAxes.includes(activeAxes[0])
+		? activeAxes[0]
+		: defaultActiveAxes[0];
+	const packageStyles =
+		selectedPackage.manifest && isVariable
+			? metadata.styles.filter((style) =>
+					selectedPackage.manifest?.faces.some(
+						(face) => face.axisKey === selectedAxis && face.style === style,
+					),
+				)
+			: metadata.styles;
 	const availableStyles = [
-		...metadata.styles.filter((style) => style === 'normal'),
-		...metadata.styles.filter((style) => style !== 'normal'),
+		...packageStyles.filter((style) => style === 'normal'),
+		...packageStyles.filter((style) => style !== 'normal'),
 	];
-	const styles = availableStyles.filter((style) =>
+	const chosenStyles = availableStyles.filter((style) =>
 		selectedStyles.includes(style),
 	);
-	const weights = metadata.weights.filter((weight) =>
+	const styles = chosenStyles.length
+		? chosenStyles
+		: availableStyles.slice(0, 1);
+	const availableWeights =
+		selectedPackage.manifest && !isVariable
+			? metadata.weights.filter((weight) =>
+					styles.every((style) =>
+						selectedPackage.manifest?.faces.some(
+							(face) => face.weight === weight && face.style === style,
+						),
+					),
+				)
+			: metadata.weights;
+	const chosenWeights = availableWeights.filter((weight) =>
 		selectedWeights.includes(weight),
 	);
+	const weights = chosenWeights.length
+		? chosenWeights
+		: availableWeights.slice(0, 1);
+
 	const primaryStyle = styles[0] ?? recommendedStyle;
 	const primaryWeight = weights[0] ?? recommendedWeight;
 	const isDefaultSetup =
@@ -185,23 +224,17 @@ export const FamilyUse = ({
 	const packageName = isVariable
 		? `@fontsource-variable/${metadata.id}`
 		: `@fontsource/${metadata.id}`;
-	const packageVersion = isVariable
-		? (versions.latestVariable ?? versions.latest)
-		: versions.latest;
+	const packageVersion = selectedPackage.version;
 	const npmPackageUrl = `https://www.npmjs.com/package/${packageName}`;
 	const jsDelivrPackagePageUrl = `https://www.jsdelivr.com/package/npm/${packageName}`;
 	const fontFaceCSS = customSetup
 		? buildFamilyUseCSS({
-				metadata,
-				variable,
+				fontPackage: selectedPackage,
 				isVariable,
 				styles,
 				weights: isVariable ? metadata.weights : weights,
-				subsets: metadata.subsets,
-				activeAxes,
+				activeAxes: selectedPackage.manifest ? [selectedAxis] : activeAxes,
 				display: fontDisplay,
-				version: packageVersion,
-				subsetDefinitions,
 				delivery: method,
 			})
 		: '';
@@ -213,17 +246,29 @@ export const FamilyUse = ({
 					packageVersion,
 					'index.css',
 				)}');`;
-	const minWeight = variable?.axes.wght
-		? Number(variable.axes.wght.min)
-		: Math.min(...metadata.weights);
-	const maxWeight = variable?.axes.wght
-		? Number(variable.axes.wght.max)
-		: Math.max(...metadata.weights);
+	const selectedFaceWeights = selectedPackage.manifest?.faces
+		.filter(
+			(face) => face.axisKey === selectedAxis && styles.includes(face.style),
+		)
+		.flatMap((face) => String(face.weight).split(' ').map(Number));
+	const minWeight = selectedFaceWeights?.length
+		? Math.min(...selectedFaceWeights)
+		: variable?.axes.wght
+			? Number(variable.axes.wght.min)
+			: Math.min(...metadata.weights);
+	const maxWeight = selectedFaceWeights?.length
+		? Math.max(...selectedFaceWeights)
+		: variable?.axes.wght
+			? Number(variable.axes.wght.max)
+			: Math.max(...metadata.weights);
+
 	const variableWeightRange = `${minWeight}–${maxWeight}`;
 	const usageCSS = buildFamilyUsageCSS(
 		metadata,
 		isVariable,
-		primaryWeight,
+		isVariable
+			? Math.min(maxWeight, Math.max(minWeight, primaryWeight))
+			: primaryWeight,
 		primaryStyle,
 	);
 	const usageDescription = isVariable
@@ -346,9 +391,8 @@ export const FamilyUse = ({
 								Ready for design apps, desktop use, and self-hosting.
 							</p>
 							<p className={classes.downloadContents}>
-								Includes desktop fonts for every static weight and style. A
-								separate webfonts folder contains WOFF, WOFF2, CSS, and the
-								original license.
+								Includes the published font files, desktop conversions, CSS, and
+								the original license.
 							</p>
 						</div>
 						<div className={classes.downloadAction}>
@@ -457,14 +501,14 @@ export const FamilyUse = ({
 									<p className={classes.formatSummary}>{formatDescription}</p>
 								)}
 
-								{metadata.styles.length > 1 && (
+								{availableStyles.length > 1 && (
 									<RequiredOptionGroup
 										description="Choose one or more. At least one is required."
 										id={`${metadata.id}-style`}
 										legend="Styles"
 										onChange={(style) =>
 											setSelectedStyles((current) =>
-												toggleRequiredValue(current, style, metadata.styles),
+												toggleRequiredValue(current, style, availableStyles),
 											)
 										}
 										options={availableStyles}
@@ -473,17 +517,17 @@ export const FamilyUse = ({
 									/>
 								)}
 
-								{!isVariable && metadata.weights.length > 1 && (
+								{!isVariable && availableWeights.length > 1 && (
 									<RequiredOptionGroup
 										description="Choose one or more weights. At least one is required."
 										id={`${metadata.id}-weight`}
 										legend="Weights"
 										onChange={(weight) =>
 											setSelectedWeights((current) =>
-												toggleRequiredValue(current, weight, metadata.weights),
+												toggleRequiredValue(current, weight, availableWeights),
 											)
 										}
-										options={metadata.weights}
+										options={availableWeights}
 										selected={weights}
 										toLabel={getWeightLabel}
 									/>
@@ -491,17 +535,23 @@ export const FamilyUse = ({
 
 								{isVariable && availableAxes.length > 1 && (
 									<RequiredOptionGroup
-										description="Choose the controls your project needs. Generated CSS uses each selected axis’s font default."
+										description="Choose the available variable font files for your project."
 										id={`${metadata.id}-active-axis`}
 										legend="Variable axes"
 										onChange={(axis) =>
 											setActiveAxes((current) =>
-												toggleRequiredValue(current, axis, availableAxes),
+												selectedPackage.manifest
+													? [axis]
+													: toggleRequiredValue(current, axis, availableAxes),
 											)
 										}
 										options={availableAxes}
-										selected={activeAxes}
-										toLabel={getAxisLabel}
+										selected={
+											selectedPackage.manifest ? [selectedAxis] : activeAxes
+										}
+										toLabel={(axis) =>
+											axis === 'standard' ? 'All axes' : getAxisLabel(axis)
+										}
 									/>
 								)}
 

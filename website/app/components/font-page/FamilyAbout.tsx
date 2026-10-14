@@ -3,7 +3,6 @@ import { useClipboard } from '@mantine/hooks';
 import { Link } from 'react-router';
 import { IconCopy } from '@/components/icons';
 import type {
-	GetFontResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetRegistryTaxonomyResponse,
 	GetVariableFontResponse,
@@ -15,6 +14,7 @@ import {
 	formatFontLabel,
 	getAxisLabel,
 } from '@/utils/font-labels';
+import type { FontPageMetadata } from '@/utils/font-package';
 import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
 import {
 	getOpenTypeFeatureDescription,
@@ -35,7 +35,7 @@ import { SearchableMetadataList } from './SearchableMetadataList';
 import listClasses from './SearchableMetadataList.module.css';
 
 interface FamilyAboutProps {
-	metadata: Omit<GetFontResponse, 'variants'>;
+	metadata: FontPageMetadata;
 	previewCSS: string;
 	variable?: GetVariableFontResponse;
 	registry: RegistryFamily;

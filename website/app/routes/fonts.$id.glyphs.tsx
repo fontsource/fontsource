@@ -10,7 +10,6 @@ import {
 	loadFontPageCapabilities,
 	loadFontPageSymbols,
 } from '@/utils/font-page.server';
-import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
@@ -26,7 +25,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return data(
 		{
 			...base,
-			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
+			previewCSS: base.previewCSS,
 			symbols,
 			capabilities: capabilitiesResult.capabilities,
 			capabilitySource: capabilitiesResult.capabilitySource,

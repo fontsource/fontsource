@@ -870,7 +870,7 @@ export type GetFontVersionsData = {
     body?: never;
     path: {
         /**
-         * Font family identifier (e.g. "roboto", "open-sans")
+         * Registry family or subset identifier
          */
         id: string;
     };
@@ -2202,7 +2202,7 @@ export type LegacyFontFileRedirectData = {
     body?: never;
     path: {
         /**
-         * Font family identifier
+         * Registry family or subset identifier
          */
         id: string;
         /**

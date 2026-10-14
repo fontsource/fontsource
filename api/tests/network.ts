@@ -136,6 +136,11 @@ const handlers = [
 			const packageRef = path.replace(/@([^@/]+)$/, '');
 			return packageFileMetaResponse(packageRef);
 		}
+		if (
+			path === '@fontsource/notafont' ||
+			path === '@fontsource-variable/notafont'
+		)
+			return new HttpResponse(null, { status: 404 });
 		const versions = versionPayloads[path];
 		if (!versions) throw new Error(`Unexpected package metadata fetch: ${url}`);
 		return HttpResponse.json({

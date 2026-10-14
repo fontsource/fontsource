@@ -1,6 +1,7 @@
 import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
+import { RegistryIdParamSchema } from '../../../shared/registry';
 import type { AppEnv } from '../env';
 import { listAxisRegistry } from '../features/metadata/axis-registry/handler';
 import {
@@ -104,7 +105,7 @@ export class GetFontRoute extends OpenAPIRoute {
 		operationId: 'getFont',
 		summary: 'Get font detail',
 		description:
-			'Returns full metadata for a single font family, including variant download URLs.',
+			'Returns legacy V5 family metadata and download URLs pinned to a compatible V5 package. Use package outputs for V6.',
 		request: {
 			params: IdParamSchema,
 		},
@@ -314,7 +315,7 @@ export class GetFontVersionsRoute extends OpenAPIRoute {
 		description:
 			'Returns the published version list for a font family, including both static and variable package versions when available.',
 		request: {
-			params: IdParamSchema,
+			params: RegistryIdParamSchema,
 		},
 		responses: {
 			'200': {

@@ -66,3 +66,19 @@ export const packageManifest: PackageOutputManifest = {
 	],
 	entrypoints: { 'index.css': [0], '400.css': [0] },
 };
+
+export const publishedFamilies = [
+	['abel', 'Abel'],
+	['recursive', 'Recursive'],
+	['new-math', 'New Math'],
+	['variable-only', 'Variable Only'],
+].map(([id, family]) => ({
+	id,
+	family,
+	provider: 'other',
+	status: 'active',
+	classifications: ['serif'],
+	tags: [],
+	sourceModified: '2026-01-01',
+	axes: [],
+}));

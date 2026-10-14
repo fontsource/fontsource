@@ -5,6 +5,8 @@ import { RegistryIdParamSchema } from '../../../shared/registry';
 import { UPSTREAM_URLS } from '../constants';
 import type { AppEnv } from '../env';
 import { getDownloadAsset } from '../features/cdn/handler';
+import { resolveVersionTag } from '../features/font-tag';
+import { getPublishedVersions } from '../features/metadata/store';
 import {
 	ErrorResponseSchema,
 	FileRedirectParamSchema,
@@ -70,7 +72,9 @@ export class LegacyFontFileRedirectRoute extends OpenAPIRoute {
 			'Backward-compatible redirect from the old `/v1/fonts/:id/:file` layout ' +
 			'to the public jsDelivr CDN.',
 		request: {
-			params: FileRedirectParamSchema,
+			params: FileRedirectParamSchema.extend({
+				id: RegistryIdParamSchema.shape.id,
+			}),
 		},
 		responses: {
 			'301': {
@@ -82,9 +86,13 @@ export class LegacyFontFileRedirectRoute extends OpenAPIRoute {
 	async handle(c: AppContext) {
 		const data = await this.getValidatedData<typeof this.schema>();
 		const { id, file } = data.params;
+		const version = resolveVersionTag(
+			'5',
+			await getPublishedVersions(id, false),
+		);
 
 		return c.redirect(
-			`${UPSTREAM_URLS.publicCdn}/fonts/${id}@latest/${file}`,
+			`${UPSTREAM_URLS.publicCdn}/fonts/${id}@${version}/${file}`,
 			301,
 		);
 	}
