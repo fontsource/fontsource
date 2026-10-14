@@ -1,65 +1,41 @@
 import type { Context } from 'hono';
-import limitConcur from 'limit-concur';
-
+import { RegistryFamiliesSchema } from '../../../../../shared/registry';
 import type { AppEnv } from '../../../env';
-import { getFontIndex, getVersions } from '../store';
+import { readRegistryView } from '../../registry/handler';
+import { getFontById, getPublishedPackages } from '../store';
 
-interface FontPackageItem {
-	id: string;
-	packageName: string;
-	packageVersion: string;
-	fontFamily: string;
-}
-
-/** Resolves the current standard package for multiple font families. */
+/** Resolve only promoted packages, preserving the existing variable preference. */
 export const resolveFontPackages = async (
 	c: Context<AppEnv>,
 	requestedIds: readonly string[],
 ): Promise<Response> => {
-	const ids = [...new Set(requestedIds)];
-	const fontsById = new Map(
-		(await getFontIndex(c)).map((font) => [font.id, font]),
-	);
-	const resolved = await Promise.all(
-		ids.map(
-			limitConcur(8, async (id) => {
-				const font = fontsById.get(id);
-				if (!font) return { id };
-
-				try {
-					const versions = await getVersions(id, font.variable);
-					const isVariable = Boolean(versions.latestVariable);
-					const packageVersion = isVariable
-						? versions.latestVariable
-						: versions.latest;
-
-					if (!packageVersion) {
-						return { id };
-					}
-
-					return {
-						id,
-						item: {
-							id,
-							packageName: isVariable
-								? `@fontsource-variable/${id}`
-								: `@fontsource/${id}`,
-							packageVersion,
-							fontFamily: isVariable ? `${font.family} Variable` : font.family,
-						} satisfies FontPackageItem,
-					};
-				} catch {
-					return { id };
-				}
-			}),
-		),
-	);
-
-	return c.json(
-		{
-			items: resolved.flatMap((result) => (result.item ? [result.item] : [])),
-			failedIds: resolved.flatMap((result) => (result.item ? [] : [result.id])),
-		},
-		200,
-	);
+	const [published, families] = await Promise.all([
+		getPublishedPackages(c),
+		readRegistryView(c, 'families.json', RegistryFamiliesSchema),
+	]);
+	const names = new Map(families.map((family) => [family.id, family.family]));
+	const items = [];
+	const failedIds: string[] = [];
+	for (const id of new Set(requestedIds)) {
+		const entry = published[id];
+		const version = entry?.variable ?? entry?.static;
+		// A few published V5 families predate the source registry.
+		const family =
+			names.get(id) ??
+			(version && Number(version.split('.')[0]) < 6
+				? (await getFontById(c, id))?.family
+				: undefined);
+		if (!family || !version) {
+			failedIds.push(id);
+			continue;
+		}
+		const variable = Boolean(entry.variable);
+		items.push({
+			id,
+			packageName: `@fontsource${variable ? '-variable' : ''}/${id}`,
+			packageVersion: version,
+			fontFamily: variable ? `${family} Variable` : family,
+		});
+	}
+	return c.json({ items, failedIds });
 };

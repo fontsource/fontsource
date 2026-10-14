@@ -149,13 +149,10 @@ export const getAxisRegistry = (c: Context<AppEnv>): Promise<AxisRegistry> =>
 /**
  * Returns the version payload for one family directly from jsDelivr metadata.
  */
-export const getVersions = async (
-	id: string,
-	hasVariable: boolean,
-): Promise<VersionResponse> => {
+export const getVersions = async (id: string): Promise<VersionResponse> => {
 	const [staticVersions, variableVersions] = await Promise.all([
 		getPublishedVersions(id, false),
-		hasVariable ? getPublishedVersions(id, true) : undefined,
+		getPublishedVersions(id, true),
 	]);
 
 	return buildVersionResponse(staticVersions, variableVersions);

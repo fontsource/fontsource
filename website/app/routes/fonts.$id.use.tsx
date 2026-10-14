@@ -7,42 +7,20 @@ import { data, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 import { FamilyPageShell } from '@/components/font-page/FamilyPageShell';
 import { FamilyUse } from '@/components/font-page/FamilyUse';
-import { getFontVersions, getRegistrySubset } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { loadFontPageBase } from '@/utils/font-page.server';
-import { getFontPreviewCSS } from '@/utils/font-preview';
 import { getFontOpenGraphImage, ogMeta } from '@/utils/meta';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const { id } = params;
 	invariant(id, 'Missing font ID!');
 	const basePromise = loadFontPageBase(id, request.signal);
-	const subsetDefinitionsPromise = basePromise.then(async (base) => {
-		const characters = base.registry.distribution.characters;
-		if (characters?.type !== 'subsets') {
-			return [];
-		}
-		const slicing = characters.slicing;
-		const slicingSubset = characters.slicingSubset;
-		if (!slicing || !slicingSubset) return [];
-		const definition = await getRegistrySubset(
-			{ id: slicing },
-			{ signal: request.signal },
-		);
-		return [{ ...definition, id: slicingSubset }];
-	});
-	const [base, subsetDefinitions, versions] = await Promise.all([
-		basePromise,
-		subsetDefinitionsPromise,
-		getFontVersions({ id }, { signal: request.signal }),
-	]);
+	const base = await basePromise;
 
 	return data(
 		{
 			...base,
-			previewCSS: getFontPreviewCSS(base.metadata, base.variable),
-			versions,
-			subsetDefinitions,
+			previewCSS: base.previewCSS,
 		},
 		{ headers: cacheHeaders.short },
 	);
@@ -67,7 +45,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 	return ogMeta({
 		title: family ? `Download ${family} Font | Fontsource` : undefined,
 		description: family
-			? `Download ${family} in TTF, WOFF, and WOFF2 formats with CSS. Self-host with npm packages, or use a CDN.`
+			? `Download ${family} font files with CSS. Self-host with npm packages, or use a CDN.`
 			: undefined,
 		image: loaderData?.metadata
 			? getFontOpenGraphImage(loaderData.metadata)
@@ -76,14 +54,8 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData }) => {
 };
 
 export default function UsePage() {
-	const {
-		metadata,
-		previewCSS,
-		variable,
-		versions,
-		registry,
-		subsetDefinitions,
-	} = useLoaderData<typeof loader>();
+	const { metadata, previewCSS, variable, packages, registry } =
+		useLoaderData<typeof loader>();
 
 	return (
 		<FamilyPageShell
@@ -94,12 +66,10 @@ export default function UsePage() {
 		>
 			<FamilyUse
 				key={metadata.id}
-				metadata={metadata}
 				previewCSS={previewCSS}
 				variable={variable}
-				versions={versions}
+				packages={packages}
 				registry={registry}
-				subsetDefinitions={subsetDefinitions}
 			/>
 		</FamilyPageShell>
 	);

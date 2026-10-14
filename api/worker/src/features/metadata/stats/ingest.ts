@@ -1,7 +1,7 @@
-import type { FontCatalog } from '../../../../../shared/catalog';
 import { logger } from '../../../../../shared/logger';
+import type { PublishedPackages } from '../../../../../shared/published-packages';
 import { KV_KEYS } from '../../../constants';
-import { refreshCatalog } from '../refresh';
+import { refreshPublishedPackages } from '../refresh';
 import {
 	fetchJsDelivrDownloads,
 	fetchNpmDownloads,
@@ -132,10 +132,11 @@ const processStatsPackage = async (
 };
 
 export const scheduleStatsRefresh = async (env: Env): Promise<void> => {
-	const catalog =
-		(await env.METADATA.get<FontCatalog>(KV_KEYS.catalog, { type: 'json' })) ??
-		(await refreshCatalog(env));
-	await seedStatsPackages(env, catalog);
+	const packages =
+		(await env.METADATA.get<PublishedPackages>(KV_KEYS.publishedPackages, {
+			type: 'json',
+		})) ?? (await refreshPublishedPackages(env));
+	await seedStatsPackages(env, packages);
 	const packageNames = await getStatsPackageNamesToRefresh(env);
 
 	for (let index = 0; index < packageNames.length; index += QUEUE_BATCH_SIZE) {

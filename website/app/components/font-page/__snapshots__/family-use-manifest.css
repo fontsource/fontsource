@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@6.0.0/12-400-normal.woff2) format(woff2);
+  unicode-range: U+3040-30FF;
+}
+
+@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@6.0.0/7-400-normal.woff2) format(woff2);
+  unicode-range: U+3000-303F;
+}
+
+@font-face {
+  font-family: 'Example';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/example@6.0.0/all-700-normal.woff2) format(woff2);
+}

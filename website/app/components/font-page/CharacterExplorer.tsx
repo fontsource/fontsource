@@ -18,11 +18,11 @@ import {
 import { DropdownSimple } from '@/components/Dropdown';
 import { IconCopy, IconSearch } from '@/components/icons';
 import type {
-	GetFontResponse,
 	GetRegistryFamilySymbolsResponse,
 	GetRegistrySourceCapabilitiesResponse,
 } from '@/generated/api';
 import { formatFontLabel } from '@/utils/font-labels';
+import type { FontPageMetadata } from '@/utils/font-package';
 import {
 	getRegistrySourcePreviewCSS,
 	registrySourcePreviewFamily,
@@ -49,7 +49,7 @@ import { FontSkeleton } from './FontSkeleton';
 import { GlyphSpecimen } from './GlyphSpecimen';
 
 interface CharacterExplorerProps {
-	metadata: Omit<GetFontResponse, 'variants'>;
+	metadata: FontPageMetadata;
 	registry: RegistryFamily;
 	symbols?: GetRegistryFamilySymbolsResponse;
 	capabilities: GetRegistrySourceCapabilitiesResponse;

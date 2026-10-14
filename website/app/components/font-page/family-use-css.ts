@@ -4,12 +4,8 @@ import {
 	selectVariableAxisKey,
 	type UrlResolver,
 } from '@fontsource-utils/core/css';
-
-import type {
-	GetFontResponse,
-	GetRegistrySubsetResponse,
-	GetVariableFontResponse,
-} from '@/generated/api';
+import type { GetFontResponse } from '@/generated/api';
+import type { FontPackage, FontPageMetadata } from '@/utils/font-package';
 import { jsDelivrResolver } from '../../utils/cdn';
 
 type FontDisplay = 'auto' | 'swap' | 'block' | 'fallback' | 'optional';
@@ -25,17 +21,13 @@ const fallbackFamilies: Record<GetFontResponse['category'], string> = {
 };
 
 interface FamilyUseCSSOptions {
-	metadata: Omit<GetFontResponse, 'variants'>;
-	variable?: GetVariableFontResponse;
+	fontPackage: FontPackage;
 	isVariable: boolean;
-	styles: GetFontResponse['styles'];
+	styles: FontPageMetadata['styles'];
 	weights: number[];
-	subsets: string[];
 	activeAxes: string[];
 	display: FontDisplay;
-	version: string;
 	delivery: 'package' | 'cdn';
-	subsetDefinitions?: GetRegistrySubsetResponse[];
 }
 
 const fontDisplays: FontDisplay[] = [
@@ -52,25 +44,38 @@ const packageResolver =
 		`${packageName}/files/${source.filename}`;
 
 const buildFamilyUseCSS = ({
-	metadata,
-	variable,
+	fontPackage,
 	isVariable,
 	styles,
 	weights,
-	subsets,
 	activeAxes,
 	display,
-	version,
 	delivery,
-	subsetDefinitions = [],
 }: FamilyUseCSSOptions) => {
+	const { metadata, variable } = fontPackage;
 	const packageName = isVariable
 		? `@fontsource-variable/${metadata.id}`
 		: `@fontsource/${metadata.id}`;
 	const resolver =
 		delivery === 'package'
 			? packageResolver(packageName)
-			: jsDelivrResolver(metadata.id, isVariable, version);
+			: jsDelivrResolver(metadata.id, isVariable, fontPackage.version);
+	if (fontPackage.manifest) {
+		const manifest = fontPackage.manifest;
+		const axisKey = activeAxes[0];
+		const entrypoints = styles.flatMap((style) =>
+			(isVariable ? [axisKey] : weights).map(
+				(key) => `${key}${style === 'normal' ? '' : '-italic'}.css`,
+			),
+		);
+		const indices = new Set(
+			entrypoints.flatMap((filename) => manifest.entrypoints[filename] ?? []),
+		);
+		const faces = Array.from(indices, (index) => manifest.faces[index]);
+		return generateCSS(manifest.family, faces, { display, resolver });
+	}
+	const legacy = fontPackage.legacy;
+	const subsetDefinitions = fontPackage.subsetDefinitions ?? [];
 	const subsetSlices = Object.fromEntries(
 		subsetDefinitions.flatMap((definition) => {
 			if (!definition.slices?.length) return [];
@@ -94,10 +99,10 @@ const buildFamilyUseCSS = ({
 		{
 			id: metadata.id,
 			family: metadata.family,
-			subsets,
+			subsets: legacy.subsets,
 			weights,
 			styles,
-			unicodeRange: metadata.unicodeRange,
+			unicodeRange: legacy.unicodeRange,
 			subsetSlices,
 			formats: ['woff2'],
 			variable: isVariable ? variable?.axes : undefined,
@@ -110,15 +115,15 @@ const buildFamilyUseCSS = ({
 };
 
 const buildFamilyUsageCSS = (
-	metadata: Omit<GetFontResponse, 'variants'>,
+	metadata: FontPageMetadata,
 	isVariable: boolean,
 	weight: number,
-	style: GetFontResponse['styles'][number],
+	style: FontPageMetadata['styles'][number],
 ) => {
 	const family =
 		`${metadata.family}${isVariable ? ' Variable' : ''}`.replaceAll("'", "\\'");
 
-	return `body {\n  font-family: '${family}', ${fallbackFamilies[metadata.category]};\n  font-weight: ${weight};\n  font-style: ${style};\n}`;
+	return `body {\n  font-family: '${family}', ${fallbackFamilies[metadata.category]};\n  font-weight: ${weight};\n  font-style: ${style.split(' ').slice(0, 2).join(' ')};\n}`;
 };
 
 export {

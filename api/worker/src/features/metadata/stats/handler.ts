@@ -3,7 +3,7 @@ import { buildStatsResponse } from '../../../../../shared/stats';
 import { CACHE_POLICIES } from '../../../constants';
 import type { AppEnv } from '../../../env';
 import { notFound } from '../../../utils/errors';
-import { getFontById } from '../store';
+import { getPublishedPackages } from '../store';
 import { getStats } from './repository';
 
 const badgeConfig = {
@@ -77,7 +77,7 @@ export const getFontStats = async (
 	c: Context<AppEnv>,
 	id: string,
 ): Promise<Response> => {
-	const font = await getFontById(c, id);
+	const font = (await getPublishedPackages(c))[id];
 	if (!font) {
 		throw notFound('Not Found. Font does not exist.');
 	}

@@ -1,13 +1,12 @@
 import type { ObservableObject } from '@legendapp/state';
-
 import type {
-	GetFontResponse,
 	GetRegistrySourceCapabilitiesResponse,
 	GetVariableFontResponse,
 	ListRegistryAxesResponse,
 	ListRegistryLanguagesResponse,
 } from '@/generated/api';
 import { getAxisLabel } from '@/utils/font-labels';
+import type { FontPageMetadata } from '@/utils/font-package';
 import { selectRegistryPreviewSource } from '@/utils/font-preview';
 import { getRecommendedPreviewText } from '@/utils/language/language';
 import {
@@ -80,7 +79,7 @@ interface PreviewEditorValue {
 type PreviewEditorState = ObservableObject<PreviewEditorValue>;
 
 interface PreviewEditorProps {
-	metadata: Omit<GetFontResponse, 'variants'>;
+	metadata: FontPageMetadata;
 	previewCSS: string;
 	variable?: GetVariableFontResponse;
 	registry: RegistryFamily;
