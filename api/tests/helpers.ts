@@ -1,3 +1,4 @@
+import { publishedPackages } from './fixtures/publication';
 import './network';
 import {
 	applyD1Migrations,
@@ -93,6 +94,10 @@ const serializeHeaders = (response: Response): Record<string, string> => {
 };
 
 const seedMetadata = async (env: Env): Promise<void> => {
+	await env.METADATA.put(
+		KV_KEYS.publishedPackages,
+		JSON.stringify(publishedPackages),
+	);
 	await env.METADATA.put(KV_KEYS.catalog, JSON.stringify(testCatalog));
 	await env.METADATA.put(
 		KV_KEYS.axisRegistry,
