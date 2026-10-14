@@ -1819,7 +1819,7 @@ export type DownloadFontData = {
     body?: never;
     path: {
         /**
-         * Font family identifier (e.g. "roboto", "open-sans")
+         * Registry family or subset identifier
          */
         id: string;
     };
