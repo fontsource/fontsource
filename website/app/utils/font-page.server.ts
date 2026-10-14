@@ -12,7 +12,7 @@ import {
 	listRegistryLanguages,
 } from '@/generated/api';
 import { jsDelivrResolver } from '@/utils/cdn';
-import type { FontPackage, FontPageMetadata } from '@/utils/font-package';
+import type { FontPackage } from '@/utils/font-package';
 import { getFontPreviewCSS } from '@/utils/font-preview';
 import {
 	loadOptionalRegistryData,
@@ -87,18 +87,9 @@ const loadFontPageBase = async (id: string, signal: AbortSignal) => {
 					}
 				: undefined;
 		const category =
-			family.classifications.find(
-				(
-					value,
-				): value is Exclude<FontPageMetadata['category'], 'icons' | 'other'> =>
-					[
-						'sans-serif',
-						'serif',
-						'display',
-						'handwriting',
-						'monospace',
-					].includes(value),
-			) ??
+			family.classifications
+				.map((value) => (value === 'slab-serif' ? 'serif' : value))
+				.find((value) => value !== 'symbols') ??
 			(family.symbols?.inputModes.includes('name-ligature')
 				? 'icons'
 				: 'other');
