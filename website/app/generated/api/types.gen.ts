@@ -4,6 +4,330 @@ export type ClientOptions = {
     baseUrl: `${string}://${string}` | 'https://api.fontsource.org' | (string & {});
 };
 
+export type ListPublishedPackagesData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/packages';
+};
+
+export type ListPublishedPackagesResponses = {
+    /**
+     * Promoted versions keyed by family ID
+     */
+    200: {
+        [key: string]: {
+            static?: string;
+            variable?: string;
+        };
+    };
+};
+
+export type ListPublishedPackagesResponse = ListPublishedPackagesResponses[keyof ListPublishedPackagesResponses];
+
+export type GetPackageOutputData = {
+    body?: never;
+    path: {
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+        kind: 'static' | 'variable';
+        version: string;
+    };
+    query?: never;
+    url: '/v1/packages/{id}/{kind}/{version}';
+};
+
+export type GetPackageOutputErrors = {
+    /**
+     * Package version unavailable
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Published package output unavailable or invalid
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetPackageOutputError = GetPackageOutputErrors[keyof GetPackageOutputErrors];
+
+export type GetPackageOutputResponses = {
+    /**
+     * Built faces, entrypoints and frozen build metadata
+     */
+    200: {
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+        kind: 'static' | 'variable';
+        version: string;
+        manifest: {
+            schemaVersion: 1;
+            family: string;
+            sourceModified: string;
+            faces: Array<{
+                subset: string;
+                weight: number | string;
+                style: 'normal' | 'italic' | string | string;
+                unicodeRange: string;
+                sliceIndex: number;
+                isVariable: boolean;
+                axisKey?: string;
+                stretch?: string | null;
+                sources: Array<{
+                    filename: string;
+                    format: 'woff2' | 'woff' | 'ttf';
+                }>;
+            }>;
+            entrypoints: {
+                [key: string]: Array<number>;
+            };
+        };
+        metadata: {
+            id: string;
+            family: string;
+            displayName?: string;
+            provider: string;
+            status: 'active' | 'deprecated';
+            replacedBy?: string;
+            classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
+            tags: Array<string>;
+            sourceModified: string;
+            axes: Array<string>;
+            primaryLanguage?: string;
+            primaryScript?: string;
+            primaryDirection?: 'ltr' | 'rtl';
+            /**
+             * Reviewed package subset for previews and default acquisition
+             */
+            previewSubset?: string;
+            sampleText?: {
+                /**
+                 * Compact preview text
+                 */
+                short: string;
+                /**
+                 * Extended preview text
+                 */
+                long?: string;
+            };
+            /**
+             * Fallback families needed to demonstrate the font in its intended context
+             */
+            previewContext?: {
+                fallbackFamilies: Array<string>;
+            };
+            designer?: string;
+            license: {
+                id: string;
+                url: string;
+                attribution?: string;
+                /**
+                 * Complete license text
+                 */
+                text: string;
+            };
+            /**
+             * Semantic language IDs, distinct from package subsets
+             */
+            languages: Array<string>;
+            dateAdded?: string;
+            /**
+             * Author-maintained upstream font project
+             */
+            project?: {
+                repository: string;
+                revision?: string;
+            };
+            /**
+             * Source snapshot ingested by Fontsource
+             */
+            provenance: {
+                type: 'github';
+                /**
+                 * Repository containing the archived sources
+                 */
+                repository: string;
+                /**
+                 * Pinned repository revision
+                 */
+                revision: string;
+            } | {
+                type: 'registry';
+            };
+            content?: {
+                [key: string]: {
+                    /**
+                     * Markdown family description
+                     */
+                    description?: string;
+                    /**
+                     * Markdown family article
+                     */
+                    article?: string;
+                };
+            };
+            symbols?: {
+                catalogUrl: string;
+                inputModes: Array<'codepoint' | 'name-ligature'>;
+            };
+            sources: Array<{
+                sha256: string;
+                filename: string;
+                /**
+                 * Provider-relative path within the provenance snapshot
+                 */
+                path: string;
+                format: 'ttf' | 'otf';
+                size: number;
+                /**
+                 * Relative source download URL
+                 */
+                downloadUrl: string;
+                /**
+                 * Relative full-coverage WOFF2 preview URL
+                 */
+                previewUrl?: string;
+                /**
+                 * Relative source capabilities URL
+                 */
+                capabilitiesUrl: string;
+                fontVersion: string | null;
+                /**
+                 * Total source glyphs
+                 */
+                glyphCount: number;
+                /**
+                 * Mapped Unicode codepoints in the source
+                 */
+                codepointCount: number;
+                /**
+                 * Inspected font style
+                 */
+                style: 'normal' | 'italic' | 'oblique';
+                /**
+                 * Provider-declared weight and style
+                 */
+                declaredVariant?: {
+                    weight: number;
+                    style: 'normal' | 'italic';
+                };
+                type: 'static';
+                /**
+                 * Inspected font weight
+                 */
+                weight: number;
+            } | {
+                sha256: string;
+                filename: string;
+                /**
+                 * Provider-relative path within the provenance snapshot
+                 */
+                path: string;
+                format: 'ttf' | 'otf';
+                size: number;
+                /**
+                 * Relative source download URL
+                 */
+                downloadUrl: string;
+                /**
+                 * Relative full-coverage WOFF2 preview URL
+                 */
+                previewUrl?: string;
+                /**
+                 * Relative source capabilities URL
+                 */
+                capabilitiesUrl: string;
+                fontVersion: string | null;
+                /**
+                 * Total source glyphs
+                 */
+                glyphCount: number;
+                /**
+                 * Mapped Unicode codepoints in the source
+                 */
+                codepointCount: number;
+                /**
+                 * Inspected font style
+                 */
+                style: 'normal' | 'italic' | 'oblique';
+                /**
+                 * Provider-declared weight and style
+                 */
+                declaredVariant?: {
+                    weight: number;
+                    style: 'normal' | 'italic';
+                };
+                type: 'variable';
+                /**
+                 * Inspected font weight or range
+                 */
+                weight: number | {
+                    min: number;
+                    max: number;
+                    default: number;
+                };
+                axes: Array<{
+                    tag: string;
+                    min: number;
+                    max: number;
+                    default: number;
+                }>;
+            }>;
+            /**
+             * Distributed source selected for default previews and source-scoped capability inspection
+             */
+            previewSource: string;
+            distribution: {
+                static?: Array<{
+                    weight: number;
+                    style: 'normal' | 'italic';
+                    source: string;
+                }>;
+                variable?: Array<{
+                    axisKey: 'standard' | string;
+                    style: 'normal' | 'italic';
+                    source: string;
+                }>;
+                characters: {
+                    type: 'all';
+                } | {
+                    type: 'subsets';
+                    defaultSubset: string;
+                    subsets: Array<{
+                        id: string;
+                        definition: string;
+                    }>;
+                    slicing?: string;
+                    slicingSubset?: string;
+                };
+            };
+        };
+    };
+};
+
+export type GetPackageOutputResponse = GetPackageOutputResponses[keyof GetPackageOutputResponses];
+
 export type ListFontValuesData = {
     body?: never;
     path?: never;

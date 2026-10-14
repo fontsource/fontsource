@@ -4,7 +4,6 @@ import { cors } from 'hono/cors';
 import { etag, RETAINED_304_HEADERS } from 'hono/etag';
 import { HTTPException } from 'hono/http-exception';
 import { logger } from '../../shared/logger';
-
 import { CACHE_POLICIES } from './constants';
 import type { AppEnv } from './env';
 import {
@@ -26,6 +25,10 @@ import {
 	LegacyFontFileRedirectRoute,
 } from './routes/compat';
 import { GetFontOpenGraphRoute } from './routes/open-graph';
+import {
+	GetPackageOutputRoute,
+	ListPublishedPackagesRoute,
+} from './routes/packages';
 import {
 	GetRegistryFamilyRoute,
 	GetRegistryFamilySymbolsRoute,
@@ -103,6 +106,8 @@ for (const path of [
 }
 
 app.use('/css/*', apiEtag);
+app.use('/v1/packages', apiEtag);
+app.use('/v1/packages/*', apiEtag);
 app.use('/og/fonts/*', apiEtag);
 
 const openapi = fromHono(app, {
@@ -166,6 +171,9 @@ const openapi = fromHono(app, {
 		],
 	},
 });
+
+openapi.get('/v1/packages', ListPublishedPackagesRoute);
+openapi.get('/v1/packages/:id/:kind/:version', GetPackageOutputRoute);
 
 openapi.get('/fontlist', ListFontValuesRoute);
 openapi.get('/v1/fonts', ListFontsRoute);

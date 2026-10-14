@@ -289,5 +289,20 @@ exports[`metadata routes > refreshes scheduled metadata caches from upstream 1`]
       ],
     },
   },
+  "publishedPackages": {
+    "abel": {
+      "static": "5.0.0",
+    },
+    "new-math": {
+      "static": "6.0.0",
+    },
+    "recursive": {
+      "static": "5.0.0",
+      "variable": "5.0.0",
+    },
+    "variable-only": {
+      "variable": "6.0.1",
+    },
+  },
 }
 `;
