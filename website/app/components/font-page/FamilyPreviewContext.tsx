@@ -101,7 +101,9 @@ const PreviewRuntimeEffects = observer(() => {
 			capabilitiesTimeoutMs,
 		);
 
-		fetch(capabilitiesUrl, { signal: controller.signal })
+		// Fetch wrappers can throw before returning a promise; use the same fallback.
+		Promise.resolve()
+			.then(() => fetch(capabilitiesUrl, { signal: controller.signal }))
 			.then((response) => {
 				if (!response.ok) throw new Error('Capabilities unavailable');
 				return response.json() as Promise<GetRegistrySourceCapabilitiesResponse>;
