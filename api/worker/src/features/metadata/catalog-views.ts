@@ -26,17 +26,20 @@ const buildFontListItem = (metadata: SourceFontMetadata): FontListItem => ({
 });
 
 /** Builds the full font detail response, including its nested variant map. */
-export const buildFontDetail = (metadata: SourceFontMetadata): FontDetail => {
+export const buildFontDetail = (
+	metadata: SourceFontMetadata,
+	packageVersion?: string,
+): FontDetail => {
 	const variants: FontVariants = {};
 
-	for (const weight of metadata.weights) {
+	for (const weight of packageVersion ? metadata.weights : []) {
 		variants[String(weight)] = variants[String(weight)] ?? {};
 
 		for (const style of metadata.styles) {
 			variants[String(weight)][style] = variants[String(weight)][style] ?? {};
 
 			for (const subset of getMetadataSubsetKeys(metadata)) {
-				const url = `${UPSTREAM_URLS.publicCdn}/fonts/${metadata.id}@latest/${subset}-${weight}-${style}`;
+				const url = `${UPSTREAM_URLS.publicCdn}/fonts/${metadata.id}@${packageVersion}/${subset}-${weight}-${style}`;
 				variants[String(weight)][style][subset] = {
 					url: {
 						woff2: `${url}.woff2`,

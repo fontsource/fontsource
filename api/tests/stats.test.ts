@@ -11,7 +11,7 @@ import type { StatsQueueMessage } from '../worker/src/features/metadata/stats/in
 import { fetchNpmDownloads } from '../worker/src/features/metadata/stats/providers';
 import { seedStatsPackages } from '../worker/src/features/metadata/stats/repository';
 import worker from '../worker/src/index';
-import { testCatalog } from './fixtures/metadata';
+import { publishedPackages } from './fixtures/publication';
 import { dispatch, setupWorkerTest, testEnv } from './helpers';
 import { mockUpstreamResponses } from './network';
 
@@ -55,15 +55,16 @@ describe('download stats ingestion', () => {
 			FROM stats_packages`,
 		).first<{ packages: number; active: number }>();
 		const packageCount =
-			Object.keys(testCatalog).length +
-			Object.values(testCatalog).filter((font) => font.variable).length +
-			legacyFontIds.length;
+			Object.values(publishedPackages).reduce(
+				(count, versions) => count + Object.keys(versions).length,
+				0,
+			) + legacyFontIds.length;
 
 		expect(state).toEqual({ packages: packageCount, active: packageCount });
 	});
 
 	it('stores a complete package refresh idempotently', async () => {
-		await seedStatsPackages(testEnv, testCatalog);
+		await seedStatsPackages(testEnv, publishedPackages);
 		vi.spyOn(scheduler, 'wait').mockResolvedValue();
 		const firstResult = await processQueueMessage();
 		const secondResult = await processQueueMessage();
@@ -94,7 +95,7 @@ describe('download stats ingestion', () => {
 	});
 
 	it('retries the package message after an upstream failure', async () => {
-		await seedStatsPackages(testEnv, testCatalog);
+		await seedStatsPackages(testEnv, publishedPackages);
 		vi.spyOn(scheduler, 'wait').mockResolvedValue();
 		mockUpstreamResponses({
 			'https://api.npmjs.org/downloads/point/last-month/%40fontsource%2Fabel':
