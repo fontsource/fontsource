@@ -101,12 +101,14 @@ const PreviewRuntimeEffects = observer(() => {
 			capabilitiesTimeoutMs,
 		);
 
-		fetch(capabilitiesUrl, { signal: controller.signal })
-			.then((response) => {
+		const loadCapabilities = async () => {
+			try {
+				const response = await fetch(capabilitiesUrl, {
+					signal: controller.signal,
+				});
 				if (!response.ok) throw new Error('Capabilities unavailable');
-				return response.json() as Promise<GetRegistrySourceCapabilitiesResponse>;
-			})
-			.then((sourceCapabilities) => {
+				const sourceCapabilities: GetRegistrySourceCapabilitiesResponse =
+					await response.json();
 				if (!current) return;
 				batch(() => {
 					model.state$.capabilitiesBySource.set({
@@ -121,15 +123,17 @@ const PreviewRuntimeEffects = observer(() => {
 						),
 					});
 				});
-			})
-			.catch(() => {
+			} catch {
 				if (!current) return;
 				model.state$.capabilitiesBySource.set({
 					...model.state$.capabilitiesBySource.peek(),
 					[activeSource.sha256]: null,
 				});
-			})
-			.finally(() => window.clearTimeout(timeoutId));
+			} finally {
+				window.clearTimeout(timeoutId);
+			}
+		};
+		void loadCapabilities();
 
 		return () => {
 			current = false;
