@@ -5,11 +5,6 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { BuildVersionRequest } from '../shared/build';
 import { logger } from '../shared/logger';
 import { toResponseBody } from '../shared/response';
-import {
-	staticMetadata,
-	testCatalog,
-	variableMetadata,
-} from '../tests/fixtures/metadata';
 import { publishedFiles } from '../tests/fixtures/published-files';
 import { buildArtifacts } from './src/artifacts';
 
@@ -117,7 +112,7 @@ describe('container artifact builder', () => {
 	it('builds every published static artifact in package mode', async () => {
 		fetchPackageTarball.mockResolvedValueOnce(
 			tarballStream(
-				await createPackageTarball(testCatalog.familypack.id, false, [
+				await createPackageTarball('familypack', false, [
 					'latin-400-normal.woff2',
 					'latin-400-normal.woff',
 				]),
@@ -126,7 +121,7 @@ describe('container artifact builder', () => {
 		const request: BuildVersionRequest = {
 			mode: 'static',
 			tag: {
-				id: testCatalog.familypack.id,
+				id: 'familypack',
 				version: '1.0.0',
 			},
 		};
@@ -171,7 +166,7 @@ describe('container artifact builder', () => {
 		await buildArtifacts({
 			mode: 'download',
 			staticVersion: '1.0.0',
-			metadata: staticMetadata,
+			id: 'abel',
 		});
 		const zipPut = putObject.mock.calls.find(([key]) =>
 			key.endsWith('/download.zip'),
@@ -187,7 +182,7 @@ describe('container artifact builder', () => {
 		const request: BuildVersionRequest = {
 			mode: 'variable',
 			tag: {
-				id: variableMetadata.id,
+				id: 'recursive',
 				version: '1.0.0',
 			},
 		};
@@ -209,7 +204,7 @@ describe('container artifact builder', () => {
 		const request: BuildVersionRequest = {
 			mode: 'download',
 			staticVersion: '1.0.0',
-			metadata: testCatalog.familypack,
+			id: 'familypack',
 		};
 
 		await expect(buildArtifacts(request)).resolves.toBe(13);
@@ -263,7 +258,7 @@ describe('container artifact builder', () => {
 			mode: 'download',
 			staticVersion: '1.0.0',
 			variableVersion: '2.0.0',
-			metadata: variableMetadata,
+			id: 'recursive',
 		});
 
 		expect(fetchPackageTarball).toHaveBeenCalledWith(
@@ -294,7 +289,7 @@ describe('container artifact builder', () => {
 		await buildArtifacts({
 			mode: 'download',
 			variableVersion: '2.0.0',
-			metadata: variableMetadata,
+			id: 'recursive',
 		});
 
 		const zipPut = putObject.mock.calls.find(
@@ -320,7 +315,7 @@ describe('container artifact builder', () => {
 			buildArtifacts({
 				mode: 'download',
 				staticVersion: '1.0.0',
-				metadata: staticMetadata,
+				id: 'abel',
 			}),
 		).resolves.toBeGreaterThan(1);
 
@@ -345,7 +340,7 @@ describe('container artifact builder', () => {
 		const build = buildArtifacts({
 			mode: 'download',
 			staticVersion: '1.0.0',
-			metadata: staticMetadata,
+			id: 'abel',
 		}).finally(() => {
 			finished = true;
 		});
@@ -362,7 +357,7 @@ describe('container artifact builder', () => {
 	it('filters download artifacts to files published for that version', async () => {
 		fetchPackageTarball.mockResolvedValueOnce(
 			tarballStream(
-				await createPackageTarball(testCatalog.familypack.id, false, [
+				await createPackageTarball('familypack', false, [
 					'latin-400-normal.woff2',
 					'latin-400-normal.woff',
 					'latin-700-normal.woff2',
@@ -374,7 +369,7 @@ describe('container artifact builder', () => {
 		const request: BuildVersionRequest = {
 			mode: 'download',
 			staticVersion: '1.0.0',
-			metadata: testCatalog.familypack,
+			id: 'familypack',
 		};
 
 		await expect(buildArtifacts(request)).resolves.toBe(7);

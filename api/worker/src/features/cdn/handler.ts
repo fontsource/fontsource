@@ -245,38 +245,23 @@ export const getDownloadAsset = async (
 	c: Context<AppEnv>,
 	id: string,
 ): Promise<Response> => {
-	const metadata = await getFontById(c, id);
-	if (!metadata) {
-		throw notFound('Not Found. Font does not exist.');
-	}
-
-	const axes = metadata.variable || undefined;
 	const [staticVersions, variableVersions] = await Promise.all([
 		getPublishedVersions(id, false),
-		axes ? getPublishedVersions(id, true) : undefined,
+		getPublishedVersions(id, true),
 	]);
 	const staticVersion =
 		staticVersions.length > 0
 			? resolveVersionTag('latest', staticVersions)
 			: undefined;
-	const variableVersion = variableVersions?.length
+	const variableVersion = variableVersions.length
 		? resolveVersionTag('latest', variableVersions)
 		: undefined;
-	const versions = staticVersion
-		? { staticVersion, variableVersion }
-		: variableVersion
-			? { variableVersion }
-			: undefined;
-	if (!versions) {
+	if (!staticVersion && !variableVersion) {
 		throw notFound(
 			'Unable to resolve download: no published versions available',
 		);
 	}
-	const downloadKey = getDownloadKey(
-		id,
-		versions.staticVersion,
-		versions.variableVersion,
-	);
+	const downloadKey = getDownloadKey(id, staticVersion, variableVersion);
 	const readDownload = () =>
 		getStoredBinaryObject(c, downloadKey, c.req.raw.headers);
 	const respond = (asset: StoredBinaryAsset) =>
@@ -296,14 +281,15 @@ export const getDownloadAsset = async (
 
 	const build = await startDownloadBuild(c, {
 		mode: 'download',
-		...versions,
-		metadata,
+		staticVersion,
+		variableVersion,
+		id,
 	});
 	if (build.state === 'building') {
 		return Response.json(
 			{
 				state: 'building',
-				version: versions.staticVersion ?? versions.variableVersion,
+				version: staticVersion ?? variableVersion,
 			},
 			{
 				status: 202,
