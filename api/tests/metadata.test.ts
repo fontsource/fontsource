@@ -4,7 +4,7 @@ import {
 	waitOnExecutionContext,
 } from 'cloudflare:test';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { KV_KEYS } from '../worker/src/constants';
+import { KV_KEYS, UPSTREAM_URLS } from '../worker/src/constants';
 import { clearMetadataCachesForTest } from '../worker/src/features/metadata/store';
 import worker from '../worker/src/index';
 import { testAxisRegistry } from './fixtures/metadata';
@@ -15,6 +15,7 @@ import {
 	setupWorkerTest,
 	testEnv,
 } from './helpers';
+import { mockUpstreamResponses } from './network';
 
 const expandedAxisRegistry = {
 	MONO: {
@@ -64,6 +65,21 @@ describe('metadata routes', () => {
 			await jsonSnapshot(`https://fontsource.test${path}`),
 		).toMatchSnapshot();
 	});
+
+	it.each([['6.0.0', '5.0.0'], []])(
+		'keeps legacy metadata usable across publication changes: %j',
+		async (...versions) => {
+			mockUpstreamResponses({
+				[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/abel`]: Response.json({
+					versions: versions.map((version) => ({ version })),
+				}),
+			});
+			const result = await jsonSnapshot(
+				'https://fontsource.test/v1/fonts/abel',
+			);
+			expect(result).toMatchSnapshot();
+		},
+	);
 
 	it('keeps API cache headers on conditional metadata responses', async () => {
 		const first = await dispatch('https://fontsource.test/v1/fonts/abel');
@@ -117,7 +133,16 @@ describe('metadata routes', () => {
 			new Request('https://fontsource.test/v1/font-packages', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ ids: ['abel', 'recursive', 'missing', 'abel'] }),
+				body: JSON.stringify({
+					ids: [
+						'abel',
+						'recursive',
+						'new-math',
+						'variable-only',
+						'missing',
+						'abel',
+					],
+				}),
 			}),
 		);
 		const body = await response.json();
@@ -138,6 +163,18 @@ describe('metadata routes', () => {
 					packageVersion: '5.0.0',
 					fontFamily: 'Recursive Variable',
 				},
+				{
+					id: 'new-math',
+					packageName: '@fontsource/new-math',
+					packageVersion: '6.0.0',
+					fontFamily: 'New Math',
+				},
+				{
+					id: 'variable-only',
+					packageName: '@fontsource-variable/variable-only',
+					packageVersion: '6.0.1',
+					fontFamily: 'Variable Only Variable',
+				},
 			],
 			failedIds: ['missing'],
 		});
@@ -153,7 +190,7 @@ describe('metadata routes', () => {
 
 		expect(response.status).toBe(301);
 		expect(response.headers.get('Location')).toBe(
-			'https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/download.zip',
+			'https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/download.zip',
 		);
 		expect(response.headers.get('Cache-Control')).toBe('public, max-age=3600');
 		expect(response.headers.get('CDN-Cache-Control')).toBe(
@@ -177,7 +214,7 @@ describe('metadata routes', () => {
 
 		expect(response.status).toBe(301);
 		expect(response.headers.get('Location')).toBe(
-			'https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff2',
+			'https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2',
 		);
 	});
 

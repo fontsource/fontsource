@@ -6,8 +6,14 @@ import type {
 import type { AppEnv } from '../../../env';
 import { toHttpDate } from '../../../utils/cache';
 import { badRequest, notFound } from '../../../utils/errors';
+import { resolveVersionTag } from '../../font-tag';
 import { buildFontDetail, filterFontIndex } from '../catalog-views';
-import { getFontById, getFontIndex, getFontlist } from '../store';
+import {
+	getFontById,
+	getFontIndex,
+	getFontlist,
+	getPublishedVersions,
+} from '../store';
 
 type QueryMap = Record<string, string[]>;
 
@@ -123,9 +129,14 @@ export const getFont = async (
 	}
 
 	const lastModified = toHttpDate(font.lastModified);
+	const versions = await getPublishedVersions(id, false);
+	// Variable-only families still expose legacy metadata, without static URLs.
+	const version = versions.length
+		? resolveVersionTag('5', versions)
+		: undefined;
 
 	return c.json(
-		buildFontDetail(font),
+		buildFontDetail(font, version),
 		200,
 		lastModified ? { 'Last-Modified': lastModified } : {},
 	);

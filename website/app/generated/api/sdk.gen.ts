@@ -125,7 +125,7 @@ export const listFonts = <ThrowOnError extends boolean = true>(parameters?: {
 /**
  * Get font detail
  *
- * Returns full metadata for a single font family, including variant download URLs.
+ * Returns legacy V5 family metadata and download URLs pinned to a compatible V5 package. Use package outputs for V6.
  */
 export const getFont = <ThrowOnError extends boolean = true>(parameters: {
     id: string;

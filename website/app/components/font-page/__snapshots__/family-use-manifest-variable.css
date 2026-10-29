@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Example Variable';
+  font-style: oblique 0deg 12deg;
+  font-display: optional;
+  font-weight: 250 800;
+  src: url(@fontsource-variable/example/files/example-all-standard-italic.woff2) format('woff2-variations');
+}
