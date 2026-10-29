@@ -20,6 +20,8 @@ export class UpstreamNotFoundError extends Error {
  * Canonical upstream endpoints for metadata, package files, and public CDN URLs.
  */
 export const UPSTREAM_URLS = {
+	publishedPackages:
+		'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/published.json',
 	catalog:
 		'https://raw.githubusercontent.com/fontsource/font-files/main/metadata/fontsource.json',
 	axisRegistry:

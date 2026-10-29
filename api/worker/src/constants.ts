@@ -5,6 +5,7 @@ import {
 
 export const KV_KEYS = {
 	catalog: 'catalog',
+	publishedPackages: 'published_packages',
 	axisRegistry: 'axis_registry',
 } as const;
 
