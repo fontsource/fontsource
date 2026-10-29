@@ -31,10 +31,22 @@ startTransition(() => {
 			<HydratedRouter
 				onError={(error, { pattern, errorInfo }) => {
 					if (!import.meta.env.PROD) return;
-					if (isRouteErrorResponse(error) && error.status < 500) return;
-					posthog.captureException(error, {
+					const response = isRouteErrorResponse(error) ? error : undefined;
+					if (response && response.status < 500) return;
+					// Capture the API message instead of the router response's object keys.
+					const exception = response
+						? new Error(
+								`HTTP ${response.status}: ${
+									typeof response.data?.error === 'string'
+										? response.data.error
+										: response.statusText
+								}`,
+							)
+						: error;
+					posthog.captureException(exception, {
 						source: 'react-router',
 						route: pattern,
+						status: response?.status,
 						componentStack: errorInfo?.componentStack,
 					});
 				}}
