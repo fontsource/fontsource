@@ -332,7 +332,7 @@ const InfiniteHits = observer((props: InfiniteHitsProps) => {
 				: undefined,
 	});
 	const virtualRows = rowVirtualizer.getVirtualItems();
-	const lastVirtualIndex = virtualRows.at(-1)?.index ?? -1;
+	const lastVirtualIndex = virtualRows[virtualRows.length - 1]?.index ?? -1;
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: viewport changes can move the results below responsive controls.
 	useLayoutEffect(() => {
