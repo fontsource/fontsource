@@ -201,7 +201,7 @@ const buildPackageArtifacts = async (
 const buildDownloadArtifacts = async (
 	request: BuildDownloadRequest,
 ): Promise<number> => {
-	const { id } = request.metadata;
+	const { id } = request;
 	const [staticPackage, variablePackage] = await Promise.all([
 		request.staticVersion
 			? readPackageArchive(id, request.staticVersion, false)
