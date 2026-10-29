@@ -19,6 +19,7 @@ import {
 	isValidElement,
 	type ReactElement,
 	type ReactNode,
+	useState,
 } from 'react';
 
 import { IconCopy } from '@/components/icons';
@@ -66,14 +67,16 @@ interface CodeWrapperProps {
 
 export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 	const clipboard = useClipboard({ timeout: 1500 });
+	const [copyFailed, setCopyFailed] = useState(false);
+	const copyError = copyFailed || clipboard.error;
 	const copyLabel = clipboard.copied
 		? 'Copied'
-		: clipboard.error
+		: copyError
 			? 'Copy failed. Try again.'
 			: 'Copy code';
 	const copyStatus = clipboard.copied
 		? 'Code copied to clipboard.'
-		: clipboard.error
+		: copyError
 			? 'Could not copy code. Select and copy it manually.'
 			: '';
 
@@ -97,7 +100,14 @@ export const CodeWrapper = ({ children, language, code }: CodeWrapperProps) => {
 						className={classes.copy}
 						aria-label={copyLabel}
 						onClick={() => {
-							clipboard.copy(code);
+							setCopyFailed(false);
+							try {
+								clipboard.copy(code);
+							} catch {
+								// Clipboard access can throw before Mantine receives a promise.
+								clipboard.reset();
+								setCopyFailed(true);
+							}
 						}}
 					>
 						<IconCopy aria-hidden="true" stroke="white" />
