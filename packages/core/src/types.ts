@@ -67,6 +67,8 @@ export interface FontFace extends FontFaceBase {
 	isVariable: boolean;
 	sources: FontSource[];
 	axisKey?: VariableAxisKey;
+	/** Axes retained in the emitted binary, not all axes in the original source. */
+	axes?: Array<{ tag: string; min: number; max: number; default: number }>;
 	stretch?: string | null;
 }
 
@@ -118,6 +120,7 @@ export type FontBuildTarget =
 export interface FontBuildConfig extends FontIdentity {
 	targets: FontBuildTarget[];
 	characters: FontBuildCharacters;
+	/** Override the subsetter's web defaults; true retains a feature, false removes it. */
 	featureSettings?: Record<string, boolean>;
 	formats?: WebFontFormat[];
 }

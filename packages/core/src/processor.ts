@@ -8,6 +8,7 @@ import type { FontRef, StyleValues } from '@glypht/core';
 import type { FontContext } from './context';
 import { type CSSOptions, generateCSSAssets } from './css/assets';
 import { planCSSAssets } from './css/planner';
+import { inspectFontAxes } from './inspection';
 import { normalizeFontBuffer } from './normalize';
 
 import type {
@@ -168,6 +169,25 @@ export const buildFont = async (
 				target.type === 'variable'
 					? pickAxisConfig(target.axes, target.axisKey)
 					: undefined;
+			const sourceAxes = inspectFontAxes(fontRefs[0]);
+			for (const [tag, range] of Object.entries(axisConfig ?? {})) {
+				if (!range) continue;
+				const sourceAxis = sourceAxes.find((axis) => axis.tag === tag);
+				const min = Number(range.min);
+				const max = Number(range.max);
+				if (
+					!sourceAxis ||
+					!Number.isFinite(min) ||
+					!Number.isFinite(max) ||
+					min > max ||
+					min < sourceAxis.min ||
+					max > sourceAxis.max
+				) {
+					throw new Error(
+						`Source does not support requested ${tag} range ${min} ${max}`,
+					);
+				}
+			}
 			const familySettings: FamilySettings[] = sortFontsIntoFamilies(
 				fontRefs,
 			).map((family) => {
@@ -225,6 +245,8 @@ export const buildFont = async (
 					enableSubsetting: true,
 					styleValues,
 					axes,
+					// Glypht/HarfBuzz defaults retain shaping features and drop discretionary
+					// alternates. An empty override is intentional, not "keep all features".
 					features: config.featureSettings ?? {},
 					includeCharacters: keepAllCharacters ? 'all' : includeCharacters,
 				};
@@ -243,15 +265,13 @@ export const buildFont = async (
 				},
 			);
 
-			const variableWeight = axisConfig?.wght
-				? formatAxisValue(axisConfig.wght)
-				: undefined;
-
-			const variableStretch =
-				axisKey && axisConfig ? getFaceStretch(axisKey, axisConfig) : null;
-
 			for (const exported of exportedFonts) {
 				const { weight, style } = extractFontStyle(exported.font.styleValues);
+				const retainedAxes = inspectFontAxes(exported.font);
+				// CSS and metadata share the retained ranges, not the original source axes.
+				const outputAxes = Object.fromEntries(
+					retainedAxes.map(({ tag, ...range }) => [tag, range]),
+				);
 
 				// Glypht omits charset names when exactly one selection is exported.
 				const charsetName = exported.charsetNameOrIndex;
@@ -279,10 +299,9 @@ export const buildFont = async (
 						);
 				if (!keepAllCharacters && !unicodeRange) continue;
 
-				const faceStyle =
-					axisKey && axisConfig
-						? getFaceStyle(axisKey, style, axisConfig)
-						: style;
+				const faceStyle = axisKey
+					? getFaceStyle(axisKey, style, outputAxes)
+					: style;
 
 				for (const format of assetFormats) {
 					const content = exported.data[format];
@@ -320,7 +339,9 @@ export const buildFont = async (
 					}
 
 					const faceWeight = isVariableFont
-						? (variableWeight ?? `${weight}`)
+						? outputAxes.wght
+							? formatAxisValue(outputAxes.wght)
+							: `${weight}`
 						: weight;
 
 					// Collapse per-format exports back into one CSS face.
@@ -340,7 +361,8 @@ export const buildFont = async (
 						unicodeRange,
 						sources: [],
 						axisKey,
-						stretch: variableStretch,
+						...(isVariableFont ? { axes: retainedAxes } : {}),
+						stretch: axisKey ? getFaceStretch(axisKey, outputAxes) : null,
 						sliceIndex,
 					};
 

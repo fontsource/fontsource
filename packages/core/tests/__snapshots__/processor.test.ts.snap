@@ -444,6 +444,14 @@ exports[`buildFont integration with real fixtures > pins excluded axes and respe
   },
   "faces": [
     {
+      "axes": [
+        {
+          "default": 300,
+          "max": 1000,
+          "min": 300,
+          "tag": "wght",
+        },
+      ],
       "axisKey": "wght",
       "isVariable": true,
       "sliceIndex": 0,
@@ -460,6 +468,26 @@ exports[`buildFont integration with real fixtures > pins excluded axes and respe
       "weight": "300 1000",
     },
     {
+      "axes": [
+        {
+          "default": 0,
+          "max": 1,
+          "min": 0,
+          "tag": "CASL",
+        },
+        {
+          "default": 0,
+          "max": 0,
+          "min": -15,
+          "tag": "slnt",
+        },
+        {
+          "default": 300,
+          "max": 1000,
+          "min": 300,
+          "tag": "wght",
+        },
+      ],
       "axisKey": "full",
       "isVariable": true,
       "sliceIndex": 0,

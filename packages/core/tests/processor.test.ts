@@ -4,6 +4,7 @@ import { inspectFont } from '../src/inspection';
 import { buildFont } from '../src/processor';
 import type { FontBuildConfig, FontBuildResult } from '../src/types';
 import {
+	loadCffFontFixture,
 	loadStaticFontFixture,
 	loadStaticWoff2Fixture,
 	loadVariableFontFixture,
@@ -145,6 +146,98 @@ describe('buildFont integration with real fixtures', () => {
 					(axis) => axis.tag,
 				),
 			).toEqual(['wght']);
+			for (const [index, font] of result.fonts.entries()) {
+				expect(result.faces[index].axes).toEqual(
+					(await inspectFont(ctx, font.content)).axes,
+				);
+			}
+		} finally {
+			ctx.destroy();
+		}
+	});
+	it('keeps shaping defaults but requires an override for discretionary ligatures', async () => {
+		const source = loadVariableFontFixture();
+		// Reuse the fixture's real denominator substitution as a discretionary
+		// feature. dlig preserves the sorted feature record order of dnom.
+		const offset = Buffer.from(source).indexOf('dnom');
+		expect(offset).toBeGreaterThan(0);
+		source.set(new TextEncoder().encode('dlig'), offset);
+		const config: FontBuildConfig = {
+			family: 'Recursive',
+			characters: 'all',
+			targets: [{ type: 'static', source, weight: 400, style: 'normal' }],
+		};
+		const standard = await build(config);
+		const custom = await build({ ...config, featureSettings: { dlig: true } });
+		const ctx = createFontContext();
+		try {
+			expect((await inspectFont(ctx, source)).features.gsub).toContain('dlig');
+			const web = await inspectFont(ctx, standard.fonts[0].content);
+			expect(web.features.gsub).not.toContain('dlig');
+			expect(web.features.gsub).toEqual(
+				expect.arrayContaining(['ccmp', 'locl']),
+			);
+			expect(web.features.gpos).toEqual(['kern', 'mark', 'mkmk']);
+			expect(
+				(await inspectFont(ctx, custom.fonts[0].content)).features.gsub,
+			).toContain('dlig');
+		} finally {
+			ctx.destroy();
+		}
+	});
+	it('rejects unavailable ranges and reports narrowed defaults correctly', async () => {
+		const config: FontBuildConfig = {
+			family: 'Recursive',
+			characters: [{ subset: 'latin', codepoints: [65] }],
+			targets: [
+				{
+					type: 'variable',
+					source: loadVariableFontFixture(),
+					style: 'normal',
+					axisKey: 'wght',
+					axes: { wght: { min: 200, max: 1200 } },
+				},
+			],
+		};
+		await expect(build(config)).rejects.toThrow(
+			'Source does not support requested wght range 200 1200',
+		);
+		const target = config.targets[0];
+		if (target.type !== 'variable')
+			throw new Error('Expected variable fixture');
+		const result = await build({
+			...config,
+			targets: [{ ...target, axes: { wght: { min: 400, max: 700 } } }],
+		});
+		expect(result.faces[0].weight).toBe('400 700');
+		expect(result.faces[0].axes).toEqual([
+			{ tag: 'wght', min: 400, max: 700, default: 400 },
+		]);
+		expect(
+			result.css.find(({ filename }) => filename === 'index.css')?.content,
+		).toContain('font-weight: 400 700');
+	});
+	it('builds WOFF2 directly from CFF outlines', async () => {
+		const result = await build({
+			family: 'Synthetic CFF',
+			characters: [{ subset: 'latin', codepoints: [65] }],
+			targets: [
+				{
+					type: 'static',
+					source: loadCffFontFixture(),
+					weight: 400,
+					style: 'normal',
+				},
+			],
+		});
+		expect(result.fonts).toHaveLength(1);
+		expect(result.fonts[0].format).toBe('woff2');
+		const ctx = createFontContext();
+		try {
+			const output = await inspectFont(ctx, result.fonts[0].content);
+			expect(output.tables).toContain('CFF ');
+			expect(output.unicodeRanges).toEqual([65]);
+			expect(result.faces[0].unicodeRange).toBe('U+41');
 		} finally {
 			ctx.destroy();
 		}
