@@ -251,9 +251,6 @@ importers:
       fs-extra:
         specifier: ^11.1.0
         version: 11.3.6
-      hash-wasm:
-        specifier: ^4.9.0
-        version: 4.12.0
       json-stringify-pretty-compact:
         specifier: ^4.0.0
         version: 4.0.0
@@ -3713,9 +3710,6 @@ packages:
   has-symbols@1.1.0:
     resolution: {integrity: sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==}
     engines: {node: '>= 0.4'}
-
-  hash-wasm@4.12.0:
-    resolution: {integrity: sha512-+/2B2rYLb48I/evdOIhP+K/DD2ca2fgBjp6O+GBEnCDk2e4rpeXIK8GvIyRPjTezgmWn9gmKwkQjjx6BtqDHVQ==}
 
   hasown@2.0.4:
     resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
@@ -8251,8 +8245,6 @@ snapshots:
   has-flag@4.0.0: {}
 
   has-symbols@1.1.0: {}
-
-  hash-wasm@4.12.0: {}
 
   hasown@2.0.4:
     dependencies:

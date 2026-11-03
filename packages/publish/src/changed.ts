@@ -12,6 +12,7 @@ import { getPackages, mergeFlags } from './utils';
 const getChanged = async (ctx: Context) => {
 	const changedList: ChangedList = [];
 	const queue = new PQueue({ concurrency: 4 });
+	const pending: Promise<unknown>[] = [];
 
 	const handleHash = async (packagePath: string, packageJson: PackageJson) => {
 		// Get hash of current package and compare with old hash
@@ -33,14 +34,14 @@ const getChanged = async (ctx: Context) => {
 
 			// Check if package.json exists
 			const packageJson: PackageJson = await fs.readJson(
-				path.join(process.cwd(), packagePath, 'package.json'),
+				path.resolve(packagePath, 'package.json'),
 			);
 
-			void queue.add(() => handleHash(packagePath, packageJson));
+			pending.push(queue.add(() => handleHash(packagePath, packageJson)));
 		}
 	}
 
-	await queue.onIdle();
+	await Promise.all(pending);
 	return changedList.sort((a, b) => a.path.localeCompare(b.path));
 };
 
