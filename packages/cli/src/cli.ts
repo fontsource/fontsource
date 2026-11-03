@@ -8,11 +8,15 @@ import { create } from './custom/create';
 import { rebuild } from './custom/rebuilder';
 import { verify, verifyAll } from './custom/verify';
 import { buildPackages, type PackageBuildOptions } from './registry/build';
+import { type DownloadOptions, downloadPackages } from './registry/download';
 
 const cli = cac('fontsource');
 
 cli
-	.command('build [...fonts]', 'Build font packages from registry sources')
+	.command(
+		'build-local [...fonts]',
+		'Build custom font packages locally from original registry sources',
+	)
 	.option('--inputs <directory>', 'Directory for frozen registry inputs')
 	.option('--out <directory>', 'New directory for generated packages')
 	.option(
@@ -20,12 +24,38 @@ cli
 		'Registry API origin (default: https://api.fontsource.org)',
 	)
 	.option('--revision <sha>', 'Registry snapshot revision')
+	.option('--text <text>', 'Keep only characters used by this text')
+	.option(
+		'--features <tags>',
+		'Comma-separated OpenType tags to retain (prefix a tag with - to remove it)',
+	)
 	.action(async (fonts: string[], options: PackageBuildOptions) => {
 		try {
 			if (!options.inputs || !options.out)
 				throw new Error('Both --inputs and --out are required');
 			await buildPackages(fonts, options);
 			consola.success(`Built packages in ${options.out}`);
+		} catch (error) {
+			consola.error(error);
+			process.exitCode = 1;
+		}
+	});
+
+cli
+	.command(
+		'build [...fonts]',
+		'Download prepared web fonts and assemble packages',
+	)
+	.option('--out <directory>', 'New directory for generated packages')
+	.option(
+		'--registry-url <url>',
+		'Registry API origin (default: https://api.fontsource.org)',
+	)
+	.action(async (fonts: string[], options: DownloadOptions) => {
+		try {
+			if (!options.out) throw new Error('--out is required');
+			await downloadPackages(fonts, options);
+			consola.success(`Assembled packages in ${options.out}`);
 		} catch (error) {
 			consola.error(error);
 			process.exitCode = 1;

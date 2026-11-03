@@ -89,6 +89,7 @@ export type GetPackageOutputResponses = {
                 subset: string;
                 weight: number | string;
                 style: 'normal' | 'italic' | string | string;
+                variantStyle?: 'normal' | 'italic' | string | string;
                 unicodeRange: string;
                 sliceIndex: number;
                 isVariable: boolean;
@@ -1747,6 +1748,7 @@ export type GetPreparedArtifactResponses = {
                 subset: string;
                 weight: number | string;
                 style: 'normal' | 'italic' | string | string;
+                variantStyle?: 'normal' | 'italic' | string | string;
                 unicodeRange: string;
                 sliceIndex: number;
                 isVariable: boolean;

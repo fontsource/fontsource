@@ -361,6 +361,9 @@ export const buildFont = async (
 						unicodeRange,
 						sources: [],
 						axisKey,
+						...(target.style !== faceStyle
+							? { variantStyle: target.style }
+							: {}),
 						...(isVariableFont ? { axes: retainedAxes } : {}),
 						stretch: axisKey ? getFaceStretch(axisKey, outputAxes) : null,
 						sliceIndex,
