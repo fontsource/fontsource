@@ -19,6 +19,11 @@ import {
 	ListVariableFontsRoute,
 	ResolveFontPackagesRoute,
 } from './routes/api';
+import {
+	GetPreparedArtifactFileRoute,
+	GetPreparedArtifactFontRoute,
+	GetPreparedArtifactRoute,
+} from './routes/artifacts';
 import { GetBinaryAssetRoute, GetCssFileRoute } from './routes/cdn';
 import {
 	DownloadFontRoute,
@@ -108,6 +113,7 @@ for (const path of [
 app.use('/css/*', apiEtag);
 app.use('/v1/packages', apiEtag);
 app.use('/v1/packages/*', apiEtag);
+app.use('/v1/registry/families/:id/artifacts/:kind', apiEtag);
 app.use('/og/fonts/*', apiEtag);
 
 const openapi = fromHono(app, {
@@ -191,6 +197,18 @@ openapi.get('/og/fonts/:id', GetFontOpenGraphRoute);
 openapi.get('/v1/registry/taxonomy', GetRegistryTaxonomyRoute);
 openapi.get('/v1/registry/families', ListRegistryFamiliesRoute);
 openapi.get('/v1/registry/families/:id', GetRegistryFamilyRoute);
+openapi.get(
+	'/v1/registry/families/:id/artifacts/:kind',
+	GetPreparedArtifactRoute,
+);
+openapi.get(
+	'/v1/registry/families/:id/artifacts/:kind/:artifact/:file',
+	GetPreparedArtifactFileRoute,
+);
+openapi.get(
+	'/v1/registry/families/:id/artifacts/:kind/:artifact/files/:file',
+	GetPreparedArtifactFontRoute,
+);
 openapi.get('/v1/registry/families/:id/symbols', GetRegistryFamilySymbolsRoute);
 openapi.get('/v1/registry/languages', ListRegistryLanguagesRoute);
 openapi.get('/v1/registry/subsets', ListRegistrySubsetsRoute);
