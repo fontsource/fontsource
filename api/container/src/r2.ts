@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { AwsClient } from 'aws4fetch';
 
 const requireEnv = (key: string): string => {
@@ -42,6 +43,7 @@ export const putObject = async (
 ): Promise<void> => {
 	const headers: Record<string, string> = {
 		'Content-Length': String(body.byteLength),
+		'x-amz-meta-sha256': createHash('sha256').update(body).digest('hex'),
 	};
 
 	if (metadata.cacheControl) {

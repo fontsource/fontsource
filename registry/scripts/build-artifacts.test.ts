@@ -22,7 +22,52 @@ import {
 	loadStaticFontFixture,
 	loadVariableFontFixture,
 } from '../../packages/core/tests/font-fixture';
-import { buildArtifacts } from './build-artifacts';
+import { buildArtifacts, createArtifactStore } from './build-artifacts';
+
+it('verifies older checksum-less objects without overwriting different bytes', async () => {
+	vi.stubEnv('R2_S3_ENDPOINT', 'https://r2.test');
+	vi.stubEnv('R2_ACCESS_KEY_ID', 'test');
+	vi.stubEnv('R2_SECRET_ACCESS_KEY', 'test');
+	const expected = new TextEncoder().encode('abc');
+	let remote = expected;
+	let metadata: Record<string, string> = {};
+	let reads = 0;
+	vi.spyOn(S3Client.prototype, 'send').mockImplementation(
+		async (command: unknown) => {
+			if (command instanceof HeadObjectCommand)
+				return { ContentLength: remote.byteLength, Metadata: metadata };
+			if (command instanceof GetObjectCommand) {
+				reads++;
+				return { Body: { transformToByteArray: async () => remote } };
+			}
+			throw new Error('An existing immutable object must not be overwritten');
+		},
+	);
+	try {
+		const store = await createArtifactStore();
+		await expect(
+			store.put('abel@6.0.0/font.woff2', expected, 'font/woff2'),
+		).resolves.toBeUndefined();
+		expect(reads).toBe(1);
+		remote = new TextEncoder().encode('xyz');
+		await expect(
+			store.put('abel@6.0.0/font.woff2', expected, 'font/woff2'),
+		).rejects.toThrow('Existing artifact does not match');
+		expect(reads).toBe(2);
+		remote = expected;
+		metadata = {
+			sha256:
+				'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad',
+		};
+		await expect(
+			store.put('abel@6.0.0/font.woff2', expected, 'font/woff2'),
+		).resolves.toBeUndefined();
+		expect(reads).toBe(2);
+	} finally {
+		vi.restoreAllMocks();
+		vi.unstubAllEnvs();
+	}
+});
 
 it('builds verified web artifacts offline, reuses them, and rejects corrupted cached bytes', async () => {
 	const directory = await mkdtemp(join(tmpdir(), 'fontsource-artifacts-'));
