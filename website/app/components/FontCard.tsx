@@ -5,6 +5,7 @@ import type { ListRegistryLanguagesResponse } from '@/generated/api';
 import { useFontPreview } from '@/hooks/useFontPreview';
 import {
 	getFontFamilyStack,
+	getFontPreviewFamily,
 	getPreviewLanguageTag,
 } from '@/utils/font-preview';
 import type { FontSummary } from '@/utils/font-summary';
@@ -37,14 +38,15 @@ const FontCard = ({
 	eagerStylesheet = false,
 }: FontCardProps) => {
 	const location = useLocation();
-	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${font.id}@latest/index.css`;
+	// Some families publish only a variable package; use its matching CSS and family.
+	const stylesheetHref = `https://cdn.jsdelivr.net/fontsource/css/${font.id}${font.variable ? ':vf' : ''}@latest/index.css`;
 	const { ref, entry } = useIntersection<HTMLDivElement>({
 		rootMargin: '150% 0px',
 	});
 	const previewText =
 		preview ?? getRecommendedPreviewText(font, 'short', languages);
 	const previewStatus = useFontPreview({
-		family: font.family,
+		family: getFontPreviewFamily(font),
 		text: previewText,
 		stylesheetHref,
 		enabled: eagerStylesheet || Boolean(entry?.isIntersecting),
@@ -55,7 +57,7 @@ const FontCard = ({
 	const sampleLanguage =
 		languages?.find((language) => language.id === previewLanguageId) ??
 		getRecommendedPreviewLanguage(font, languages ?? []);
-	const fontFamily = getFontFamilyStack(font, false, font);
+	const fontFamily = getFontFamilyStack(font, font.variable, font);
 
 	return (
 		<div className={classes.wrapper} data-layout={layout} ref={ref}>
