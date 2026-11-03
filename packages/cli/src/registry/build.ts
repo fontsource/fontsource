@@ -1,8 +1,10 @@
 import { access, mkdir, mkdtemp, rename, rm } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { createFontContext } from '@fontsource-utils/core';
-import { buildFamily } from './family';
-import { loadBuildInputs } from './inputs';
+import { z } from 'zod';
+import { RegistryIdParamSchema } from '../../../../api/shared/registry';
+import { buildFamily } from '../../../../registry/scripts/build/family.ts';
+import { loadBuildInputs } from '../../../../registry/scripts/build/inputs.ts';
 import { writePackage } from './package';
 
 export interface PackageBuildOptions {
@@ -17,7 +19,7 @@ export async function buildPackages(
 	ids: string[],
 	options: PackageBuildOptions,
 ) {
-	if (ids.length === 0) throw new Error('Specify at least one registry family');
+	const families = z.array(RegistryIdParamSchema.shape.id).min(1).parse(ids);
 	const output = resolve(options.out);
 	try {
 		await access(output);
@@ -26,7 +28,7 @@ export async function buildPackages(
 		if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
 	}
 	const inputs = await loadBuildInputs(
-		[...new Set(ids)],
+		[...new Set(families)],
 		resolve(options.inputs),
 		options.registryUrl ?? 'https://api.fontsource.org',
 		options.revision,

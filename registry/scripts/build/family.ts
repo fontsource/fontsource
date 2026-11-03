@@ -1,11 +1,12 @@
 import {
 	buildFont,
 	type FontBuildCharacters,
+	type FontBuildConfig,
 	type FontBuildTarget,
 	type FontContext,
 } from '@fontsource-utils/core';
-import type { RegistryFamilyDetail } from '../../../../api/shared/registry';
-import type { BuildInputs } from './inputs';
+import type { RegistryFamilyDetail } from '../../../api/shared/registry.ts';
+import type { BuildInputs } from './inputs.ts';
 
 const expandRanges = (ranges: [string, string][]): number[] =>
 	ranges.flatMap(([start, end]) => {
@@ -21,6 +22,7 @@ export async function buildFamily(
 	family: RegistryFamilyDetail,
 	inputs: BuildInputs,
 	variable: boolean,
+	overrides: Partial<Pick<FontBuildConfig, 'characters' | 'featureSettings'>> = {},
 ) {
 	const distribution = family.distribution;
 	const sourceBytes = (hash: string) => {
@@ -83,5 +85,6 @@ export async function buildFamily(
 		targets,
 		characters,
 		formats: ['woff2'],
+		...overrides,
 	});
 }

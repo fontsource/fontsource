@@ -7,7 +7,7 @@ import {
 	RegistryFamilyDetailSchema,
 	RegistryIdParamSchema,
 	RegistrySubsetSchema,
-} from '../../../../api/shared/registry';
+} from '../../../api/shared/registry.ts';
 
 type Subset = ReturnType<typeof RegistrySubsetSchema.parse>;
 

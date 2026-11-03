@@ -2,7 +2,7 @@
 
 import { buildClientParams, type Client, type ClientMeta, type Options as Options2, type RequestResult, type TDataShape } from './client';
 import { client } from './client.gen';
-import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetPackageOutputErrors, GetPackageOutputResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourcePreviewErrors, GetRegistrySourcePreviewResponses, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListPublishedPackagesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses, ResolveFontPackagesResponses } from './types.gen';
+import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetPackageOutputErrors, GetPackageOutputResponses, GetPreparedArtifactErrors, GetPreparedArtifactFileErrors, GetPreparedArtifactFileResponses, GetPreparedArtifactFontErrors, GetPreparedArtifactFontResponses, GetPreparedArtifactResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourcePreviewErrors, GetRegistrySourcePreviewResponses, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListPublishedPackagesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses, ResolveFontPackagesResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -327,6 +327,73 @@ export const getRegistryFamily = <ThrowOnError extends boolean = true>(parameter
     return (options?.client ?? client).get<GetRegistryFamilyResponses, GetRegistryFamilyErrors, ThrowOnError, 'data'>({
         responseStyle: 'data',
         url: '/v1/registry/families/{id}',
+        ...options,
+        ...params
+    });
+};
+
+/**
+ * Get completed standard web assets before or after npm publication
+ */
+export const getPreparedArtifact = <ThrowOnError extends boolean = true>(parameters: {
+    id: string;
+    kind: 'static' | 'variable';
+    artifact?: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<GetPreparedArtifactResponses, GetPreparedArtifactErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [
+                { in: 'path', key: 'id' },
+                { in: 'path', key: 'kind' },
+                { in: 'query', key: 'artifact' }
+            ] }]);
+    return (options?.client ?? client).get<GetPreparedArtifactResponses, GetPreparedArtifactErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/families/{id}/artifacts/{kind}',
+        ...options,
+        ...params
+    });
+};
+
+/**
+ * Get a completed web font or stylesheet
+ */
+export const getPreparedArtifactFile = <ThrowOnError extends boolean = true>(parameters: {
+    id: string;
+    kind: 'static' | 'variable';
+    artifact: string;
+    file: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<GetPreparedArtifactFileResponses, GetPreparedArtifactFileErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [
+                { in: 'path', key: 'id' },
+                { in: 'path', key: 'kind' },
+                { in: 'path', key: 'artifact' },
+                { in: 'path', key: 'file' }
+            ] }]);
+    return (options?.client ?? client).get<GetPreparedArtifactFileResponses, GetPreparedArtifactFileErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/families/{id}/artifacts/{kind}/{artifact}/{file}',
+        ...options,
+        ...params
+    });
+};
+
+/**
+ * Get a completed web font or stylesheet
+ */
+export const getPreparedArtifactFont = <ThrowOnError extends boolean = true>(parameters: {
+    id: string;
+    kind: 'static' | 'variable';
+    artifact: string;
+    file: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<GetPreparedArtifactFontResponses, GetPreparedArtifactFontErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [
+                { in: 'path', key: 'id' },
+                { in: 'path', key: 'kind' },
+                { in: 'path', key: 'artifact' },
+                { in: 'path', key: 'file' }
+            ] }]);
+    return (options?.client ?? client).get<GetPreparedArtifactFontResponses, GetPreparedArtifactFontErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/registry/families/{id}/artifacts/{kind}/{artifact}/files/{file}',
         ...options,
         ...params
     });

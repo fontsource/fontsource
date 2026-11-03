@@ -1447,6 +1447,473 @@ export type GetRegistryFamilyResponses = {
 
 export type GetRegistryFamilyResponse = GetRegistryFamilyResponses[keyof GetRegistryFamilyResponses];
 
+export type GetPreparedArtifactData = {
+    body?: never;
+    path: {
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+        kind: 'static' | 'variable';
+    };
+    query?: {
+        artifact?: string;
+    };
+    url: '/v1/registry/families/{id}/artifacts/{kind}';
+};
+
+export type GetPreparedArtifactErrors = {
+    /**
+     * Invalid artifact selection
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Completed artifact not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Artifact is incomplete or invalid
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetPreparedArtifactError = GetPreparedArtifactErrors[keyof GetPreparedArtifactErrors];
+
+export type GetPreparedArtifactResponses = {
+    /**
+     * Frozen metadata and downloadable web assets
+     */
+    200: {
+        schemaVersion: 1;
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+        kind: 'static' | 'variable';
+        artifact: string;
+        profile: string;
+        metadata: {
+            id: string;
+            family: string;
+            displayName?: string;
+            provider: string;
+            status: 'active' | 'deprecated';
+            replacedBy?: string;
+            classifications: Array<'serif' | 'sans-serif' | 'slab-serif' | 'display' | 'handwriting' | 'monospace' | 'symbols'>;
+            tags: Array<string>;
+            sourceModified: string;
+            axes: Array<string>;
+            primaryLanguage?: string;
+            primaryScript?: string;
+            primaryDirection?: 'ltr' | 'rtl';
+            /**
+             * Reviewed package subset for previews and default acquisition
+             */
+            previewSubset?: string;
+            sampleText?: {
+                /**
+                 * Compact preview text
+                 */
+                short: string;
+                /**
+                 * Extended preview text
+                 */
+                long?: string;
+            };
+            /**
+             * Fallback families needed to demonstrate the font in its intended context
+             */
+            previewContext?: {
+                fallbackFamilies: Array<string>;
+            };
+            designer?: string;
+            license: {
+                id: string;
+                url: string;
+                attribution?: string;
+                /**
+                 * Complete license text
+                 */
+                text: string;
+            };
+            /**
+             * Semantic language IDs, distinct from package subsets
+             */
+            languages: Array<string>;
+            dateAdded?: string;
+            /**
+             * Author-maintained upstream font project
+             */
+            project?: {
+                repository: string;
+                revision?: string;
+            };
+            /**
+             * Source snapshot ingested by Fontsource
+             */
+            provenance: {
+                type: 'github';
+                /**
+                 * Repository containing the archived sources
+                 */
+                repository: string;
+                /**
+                 * Pinned repository revision
+                 */
+                revision: string;
+            } | {
+                type: 'registry';
+            };
+            content?: {
+                [key: string]: {
+                    /**
+                     * Markdown family description
+                     */
+                    description?: string;
+                    /**
+                     * Markdown family article
+                     */
+                    article?: string;
+                };
+            };
+            symbols?: {
+                catalogUrl: string;
+                inputModes: Array<'codepoint' | 'name-ligature'>;
+            };
+            sources: Array<{
+                sha256: string;
+                filename: string;
+                /**
+                 * Provider-relative path within the provenance snapshot
+                 */
+                path: string;
+                format: 'ttf' | 'otf';
+                size: number;
+                /**
+                 * Relative source download URL
+                 */
+                downloadUrl: string;
+                /**
+                 * Relative full-coverage WOFF2 preview URL
+                 */
+                previewUrl?: string;
+                /**
+                 * Relative source capabilities URL
+                 */
+                capabilitiesUrl: string;
+                fontVersion: string | null;
+                /**
+                 * Total source glyphs
+                 */
+                glyphCount: number;
+                /**
+                 * Mapped Unicode codepoints in the source
+                 */
+                codepointCount: number;
+                /**
+                 * Inspected font style
+                 */
+                style: 'normal' | 'italic' | 'oblique';
+                /**
+                 * Provider-declared weight and style
+                 */
+                declaredVariant?: {
+                    weight: number;
+                    style: 'normal' | 'italic';
+                };
+                type: 'static';
+                /**
+                 * Inspected font weight
+                 */
+                weight: number;
+            } | {
+                sha256: string;
+                filename: string;
+                /**
+                 * Provider-relative path within the provenance snapshot
+                 */
+                path: string;
+                format: 'ttf' | 'otf';
+                size: number;
+                /**
+                 * Relative source download URL
+                 */
+                downloadUrl: string;
+                /**
+                 * Relative full-coverage WOFF2 preview URL
+                 */
+                previewUrl?: string;
+                /**
+                 * Relative source capabilities URL
+                 */
+                capabilitiesUrl: string;
+                fontVersion: string | null;
+                /**
+                 * Total source glyphs
+                 */
+                glyphCount: number;
+                /**
+                 * Mapped Unicode codepoints in the source
+                 */
+                codepointCount: number;
+                /**
+                 * Inspected font style
+                 */
+                style: 'normal' | 'italic' | 'oblique';
+                /**
+                 * Provider-declared weight and style
+                 */
+                declaredVariant?: {
+                    weight: number;
+                    style: 'normal' | 'italic';
+                };
+                type: 'variable';
+                /**
+                 * Inspected font weight or range
+                 */
+                weight: number | {
+                    min: number;
+                    max: number;
+                    default: number;
+                };
+                axes: Array<{
+                    tag: string;
+                    min: number;
+                    max: number;
+                    default: number;
+                }>;
+            }>;
+            /**
+             * Distributed source selected for default previews and source-scoped capability inspection
+             */
+            previewSource: string;
+            distribution: {
+                static?: Array<{
+                    weight: number;
+                    style: 'normal' | 'italic';
+                    source: string;
+                }>;
+                variable?: Array<{
+                    axisKey: 'standard' | string;
+                    style: 'normal' | 'italic';
+                    source: string;
+                }>;
+                characters: {
+                    type: 'all';
+                } | {
+                    type: 'subsets';
+                    defaultSubset: string;
+                    subsets: Array<{
+                        id: string;
+                        definition: string;
+                    }>;
+                    slicing?: string;
+                    slicingSubset?: string;
+                };
+            };
+        };
+        manifest: {
+            schemaVersion: 1;
+            family: string;
+            sourceModified: string;
+            faces: Array<{
+                subset: string;
+                weight: number | string;
+                style: 'normal' | 'italic' | string | string;
+                unicodeRange: string;
+                sliceIndex: number;
+                isVariable: boolean;
+                axisKey?: string;
+                axes?: Array<{
+                    tag: string;
+                    min: number;
+                    max: number;
+                    default: number;
+                }>;
+                stretch?: string | null;
+                sources: Array<{
+                    filename: string;
+                    format: 'woff2' | 'woff' | 'ttf';
+                }>;
+            }>;
+            entrypoints: {
+                [key: string]: Array<number>;
+            };
+        };
+        files: Array<{
+            path: string;
+            sha256: string;
+            size: number;
+            url: string;
+        }>;
+    };
+};
+
+export type GetPreparedArtifactResponse = GetPreparedArtifactResponses[keyof GetPreparedArtifactResponses];
+
+export type GetPreparedArtifactFileData = {
+    body?: never;
+    path: {
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+        kind: 'static' | 'variable';
+        artifact: string;
+        file: string;
+    };
+    query?: never;
+    url: '/v1/registry/families/{id}/artifacts/{kind}/{artifact}/{file}';
+};
+
+export type GetPreparedArtifactFileErrors = {
+    /**
+     * Invalid artifact selection
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Completed artifact not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Artifact is incomplete or invalid
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetPreparedArtifactFileError = GetPreparedArtifactFileErrors[keyof GetPreparedArtifactFileErrors];
+
+export type GetPreparedArtifactFileResponses = {
+    /**
+     * Web font or stylesheet
+     */
+    200: string;
+};
+
+export type GetPreparedArtifactFileResponse = GetPreparedArtifactFileResponses[keyof GetPreparedArtifactFileResponses];
+
+export type GetPreparedArtifactFontData = {
+    body?: never;
+    path: {
+        /**
+         * Registry family or subset identifier
+         */
+        id: string;
+        kind: 'static' | 'variable';
+        artifact: string;
+        file: string;
+    };
+    query?: never;
+    url: '/v1/registry/families/{id}/artifacts/{kind}/{artifact}/files/{file}';
+};
+
+export type GetPreparedArtifactFontErrors = {
+    /**
+     * Invalid artifact selection
+     */
+    400: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Completed artifact not found
+     */
+    404: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+    /**
+     * Artifact is incomplete or invalid
+     */
+    502: {
+        /**
+         * HTTP status code
+         */
+        status: number;
+        /**
+         * Human-readable error message
+         */
+        error: string;
+    };
+};
+
+export type GetPreparedArtifactFontError = GetPreparedArtifactFontErrors[keyof GetPreparedArtifactFontErrors];
+
+export type GetPreparedArtifactFontResponses = {
+    /**
+     * Web font or stylesheet
+     */
+    200: string;
+};
+
+export type GetPreparedArtifactFontResponse = GetPreparedArtifactFontResponses[keyof GetPreparedArtifactFontResponses];
+
 export type GetRegistryFamilySymbolsData = {
     body?: never;
     path: {

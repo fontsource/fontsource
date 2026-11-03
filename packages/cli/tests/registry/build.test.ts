@@ -4,9 +4,9 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { expect, it, vi } from 'vitest';
 import type { RegistryFamilyDetail } from '../../../../api/shared/registry';
+import { loadBuildInputs } from '../../../../registry/scripts/build/inputs.ts';
 import { loadStaticFontFixture } from '../../../core/tests/font-fixture';
 import { buildPackages } from '../../src/registry/build';
-import { loadBuildInputs } from '../../src/registry/inputs';
 
 it('freezes one registry revision, builds a package offline, and rejects changed source bytes', async () => {
 	const directory = await mkdtemp(join(tmpdir(), 'fontsource-build-'));
