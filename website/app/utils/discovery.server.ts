@@ -1,22 +1,18 @@
 import {
 	type GetRegistryTaxonomyResponse,
 	getRegistryTaxonomy,
-	type ListFontValuesResponse,
 	type ListRegistryFamiliesResponse,
-	listFontValues,
+	listPublishedPackages,
 	listRegistryFamilies,
 } from '@/generated/api';
+import { DEFAULT_SEARCH_INDEX, searchClient } from '@/utils/algolia-client';
 import { getDiscoveryPages } from '@/utils/discovery';
 
-const countValues = (
-	familyValues: ListFontValuesResponse[string][],
-): Record<string, number> => {
+const countValues = (familyValues: string[][]): Record<string, number> => {
 	const counts: Record<string, number> = {};
 
 	for (const value of familyValues) {
-		const values = new Set(
-			(Array.isArray(value) ? value : [value]).map((item) => String(item)),
-		);
+		const values = new Set(value);
 		for (const item of values) {
 			counts[item] = (counts[item] ?? 0) + 1;
 		}
@@ -32,31 +28,34 @@ export type DiscoveryRegistry = {
 
 export const loadDiscoveryData = async (
 	signal?: AbortSignal,
-	pathname?: string,
+	_pathname?: string,
 ) => {
-	// Browse and the sitemap need every projection; a landing page only needs its own.
-	const [subsets, categories, variable, families, taxonomy] = await Promise.all(
-		[
-			!pathname || pathname.startsWith('/languages/')
-				? listFontValues({ subsets: '' }, { signal })
-				: Promise.resolve<ListFontValuesResponse>({}),
-			listFontValues({ category: '' }, { signal }),
-			!pathname || pathname === '/variable-fonts'
-				? listFontValues({ variable: '' }, { signal })
-				: Promise.resolve<ListFontValuesResponse>({}),
-			listRegistryFamilies(undefined, { signal }),
-			getRegistryTaxonomy(undefined, { signal }),
-		],
-	);
-
-	// Search indexes the published font catalog, not every registry family.
+	// Reuse search facets for shipped subset routes; registry describes source coverage.
+	const [published, families, taxonomy, search] = await Promise.all([
+		listPublishedPackages({ signal }),
+		listRegistryFamilies(undefined, { signal }),
+		getRegistryTaxonomy(undefined, { signal }),
+		searchClient.searchForHits({
+			requests: [
+				{
+					indexName: DEFAULT_SEARCH_INDEX,
+					hitsPerPage: 0,
+					facets: ['subsets', 'category'],
+					maxValuesPerFacet: 1000,
+				},
+			],
+		}),
+	]);
 	const catalogFamilies = families.filter((family) =>
-		Object.hasOwn(categories, family.id),
+		Object.hasOwn(published, family.id),
 	);
+	const facets = search.results[0].facets ?? {};
+
 	const counts = {
-		subsets: countValues(Object.values(subsets)),
-		categories: countValues(Object.values(categories)),
-		variable: countValues(Object.values(variable)).true ?? 0,
+		subsets: facets.subsets ?? {},
+		categories: facets.category ?? {},
+		variable: catalogFamilies.filter((family) => published[family.id].variable)
+			.length,
 		classifications: countValues(
 			catalogFamilies.map((family) => family.classifications),
 		),
@@ -65,7 +64,6 @@ export const loadDiscoveryData = async (
 	return {
 		pages: getDiscoveryPages(counts, taxonomy),
 		catalogFamilies,
-		catalogSubsets: subsets,
 		registry: { families, taxonomy },
 	};
 };

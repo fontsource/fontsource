@@ -47,8 +47,8 @@ published WOFF2 bytes through the existing artifact builder.
 Version 5 keeps its existing catalog path. A missing, invalid, or unavailable V6
 manifest fails explicitly rather than falling back to guessed outputs. Pinned
 binary objects already in R2 keep their existing fast path and cache behavior.
-The catalog-backed listing and ZIP download endpoints are unchanged; migrating
-those consumers remains part of the Font Files/catalog rollout.
+Legacy catalog listing endpoints retain their V5 response shapes. ZIP downloads
+resolve both npm scopes independently and archive actual package files.
 
 ### Published packages
 
@@ -61,3 +61,22 @@ this consumer. Failed refreshes preserve the stored index.
 frozen registry metadata (`kind` is `static` or `variable`). It does not depend on
 the index: the producer uses this endpoint to verify output before promoting it.
 Registry membership describes source availability, not npm publication.
+
+### How the catalog fits together
+
+| Data | Owner | Answers |
+| --- | --- | --- |
+| Source registry | Registry pipeline | What is this font and how can it be built? |
+| `published.json` | Font Files reconciliation | Which verified static and variable versions are available? |
+| Versioned `manifest.json` and `metadata.json` | Published package | What did this exact build contain? |
+
+A registry entry alone does not make a font available for installation. The
+publication index selects versions; V6 consumers use those versions' manifests
+for filenames, CSS entrypoints, and subsets. V5 consumers retain the legacy
+metadata path because those packages have no output manifest. Static and variable
+packages can have different versions, including a V5/V6 mix.
+
+Roll out the committed publication index first, then the package API. Refresh
+Algolia from that index before deploying the website consumers. The search update
+replaces records, so review its dry-run output before the first refresh.
+This migration does not rebuild or publish V6 font packages.

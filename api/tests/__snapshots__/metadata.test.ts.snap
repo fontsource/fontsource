@@ -1,5 +1,95 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`metadata routes > keeps legacy metadata usable across publication changes: "6.0.0" 1`] = `
+{
+  "body": {
+    "category": "sans-serif",
+    "defSubset": "latin",
+    "family": "Abel",
+    "id": "abel",
+    "lastModified": "2024-01-01",
+    "license": "OFL-1.1",
+    "source": "https://example.com",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "google",
+    "unicodeRange": {
+      "latin": "U+0000-00FF",
+    },
+    "variable": false,
+    "variants": {
+      "400": {
+        "normal": {
+          "latin": {
+            "url": {
+              "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.ttf",
+              "woff": "https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff",
+              "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2",
+            },
+          },
+        },
+      },
+    },
+    "version": "v1",
+    "weights": [
+      400,
+    ],
+  },
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
+    "etag": "<etag>",
+    "lastModified": "<last-modified>",
+  },
+  "status": 200,
+}
+`;
+
+exports[`metadata routes > keeps legacy metadata usable across publication changes: undefined 1`] = `
+{
+  "body": {
+    "category": "sans-serif",
+    "defSubset": "latin",
+    "family": "Abel",
+    "id": "abel",
+    "lastModified": "2024-01-01",
+    "license": "OFL-1.1",
+    "source": "https://example.com",
+    "styles": [
+      "normal",
+    ],
+    "subsets": [
+      "latin",
+    ],
+    "type": "google",
+    "unicodeRange": {
+      "latin": "U+0000-00FF",
+    },
+    "variable": false,
+    "variants": {},
+    "version": "v1",
+    "weights": [
+      400,
+    ],
+  },
+  "headers": {
+    "cacheControl": "public, max-age=300",
+    "cdnCacheControl": "public, max-age=86400",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=10800, stale-while-revalidate=86400, stale-if-error=86400",
+    "etag": "<etag>",
+    "lastModified": "<last-modified>",
+  },
+  "status": 200,
+}
+`;
+
 exports[`metadata routes > lists all stats 1`] = `
 {
   "body": {
@@ -142,9 +232,9 @@ exports[`metadata routes > matches public metadata response for /v1/fonts/abel 1
         "normal": {
           "latin": {
             "url": {
-              "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.ttf",
-              "woff": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff",
-              "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/abel@latest/latin-400-normal.woff2",
+              "ttf": "https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.ttf",
+              "woff": "https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff",
+              "woff2": "https://cdn.jsdelivr.net/fontsource/fonts/abel@5.0.0/latin-400-normal.woff2",
             },
           },
         },

@@ -14,8 +14,9 @@ import { getRecommendedPreviewText } from '@/utils/language/language';
 import { ogMeta } from '@/utils/meta';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-	const { pages, registry, catalogFamilies, catalogSubsets } =
-		await loadDiscoveryData(request.signal);
+	const { pages, registry, catalogFamilies } = await loadDiscoveryData(
+		request.signal,
+	);
 	const tagSpecimens: Record<
 		string,
 		{ id: string; family: string; text: string; direction?: 'ltr' | 'rtl' }
@@ -28,10 +29,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 			family.tags.includes(tag),
 		);
 		const latinCandidates = candidates.filter((family) => {
-			const subsets = catalogSubsets[family.id];
 			return (
-				Array.isArray(subsets) &&
-				subsets.some((subset) => subset === 'latin') &&
+				family.primaryScript === 'Latn' &&
 				!family.classifications.includes('symbols')
 			);
 		});

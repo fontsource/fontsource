@@ -1,6 +1,5 @@
 import type { LoaderFunction } from 'react-router';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { listFontValues } from '@/generated/api';
 import { cacheHeaders } from '@/utils/cache';
 import { loadDiscoveryData } from '@/utils/discovery.server';
 import { source } from '@/utils/docs/source.server';
@@ -25,12 +24,9 @@ export const loader: LoaderFunction = async ({ request }) => {
 	});
 
 	// Pipe each font to stream
-	const [fontlist, { pages }] = await Promise.all([
-		listFontValues({ family: '' }, { signal: request.signal }),
-		loadDiscoveryData(request.signal),
-	]);
+	const { pages, catalogFamilies } = await loadDiscoveryData(request.signal);
 
-	for (const id of Object.keys(fontlist)) {
+	for (const { id } of catalogFamilies) {
 		smStream.write({
 			url: `/fonts/${id}`,
 			changefreq: 'weekly',

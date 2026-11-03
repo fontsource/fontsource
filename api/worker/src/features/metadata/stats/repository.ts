@@ -1,5 +1,5 @@
-import type { FontCatalog } from '../../../../../shared/catalog';
 import legacyFontIds from '../../../../../shared/legacy-fonts.json';
+import type { PublishedPackages } from '../../../../../shared/published-packages';
 import type { StatsResponse } from '../../../../../shared/stats';
 
 // Three values per seed keeps each statement below D1's 100-parameter limit.
@@ -119,23 +119,14 @@ export const getStats = async (
 };
 
 // Unscoped packages are deprecated and no longer discoverable from the catalog.
-const packageSeeds = (catalog: FontCatalog) => [
-	...Object.values(catalog).flatMap((font) => [
-		{
-			packageName: `@fontsource/${font.id}`,
-			familyId: font.id,
-			kind: 'static' as const,
-		},
-		...(font.variable
-			? [
-					{
-						packageName: `@fontsource-variable/${font.id}`,
-						familyId: font.id,
-						kind: 'variable' as const,
-					},
-				]
-			: []),
-	]),
+const packageSeeds = (packages: PublishedPackages) => [
+	...Object.entries(packages).flatMap(([familyId, versions]) =>
+		Object.keys(versions).map((kind) => ({
+			familyId,
+			kind,
+			packageName: `@fontsource${kind === 'variable' ? '-variable' : ''}/${familyId}`,
+		})),
+	),
 	...legacyFontIds.map((familyId) => ({
 		packageName: `fontsource-${familyId}`,
 		familyId,
@@ -145,9 +136,9 @@ const packageSeeds = (catalog: FontCatalog) => [
 
 export const seedStatsPackages = async (
 	env: Env,
-	catalog: FontCatalog,
+	packages: PublishedPackages,
 ): Promise<void> => {
-	const seeds = packageSeeds(catalog);
+	const seeds = packageSeeds(packages);
 	const statements: D1PreparedStatement[] = [
 		env.STATS.prepare(
 			`UPDATE stats_packages

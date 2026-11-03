@@ -129,6 +129,7 @@ export const getFontFamilyStack = (
 export const getFontPreviewCSS = (
 	metadata: Omit<GetFontResponse, 'variants'>,
 	variable?: GetVariableFontResponse,
+	version = 'latest',
 ) => {
 	const unicodeRange = Object.fromEntries(
 		Object.entries(metadata.unicodeRange).map(([key, range]) => [
@@ -153,6 +154,6 @@ export const getFontPreviewCSS = (
 			: undefined,
 	);
 	return generateCSS(metadata.family, faces, {
-		resolver: jsDelivrResolver(metadata.id, !!variable),
+		resolver: jsDelivrResolver(metadata.id, !!variable, version),
 	});
 };

@@ -1,12 +1,12 @@
 import { Box, Group, Title } from '@mantine/core';
 import { Link, NavLink, useLocation } from 'react-router';
-
 import { IconDownload } from '@/components/icons';
 import { AddToCollectionMenu } from '@/features/collections/AddToCollectionMenu';
 import { FavoriteButton } from '@/features/collections/FavoriteButton';
 import { ProjectAddButton } from '@/features/projects/ProjectAddButton';
-import type { GetFontResponse, GetVariableFontResponse } from '@/generated/api';
+import type { GetVariableFontResponse } from '@/generated/api';
 import { formatFontLabel } from '@/utils/font-labels';
+import type { FontPageMetadata } from '@/utils/font-package';
 import { getFontFamilyStack, getFontPreviewFamily } from '@/utils/font-preview';
 import { getRegistryFamilyKind, type RegistryFamily } from '@/utils/registry';
 
@@ -17,7 +17,7 @@ type FamilyTab = 'preview' | 'glyphs' | 'about' | 'use';
 type FontPageLocationState = { fontResults?: string };
 
 interface FamilyPageShellProps {
-	metadata: Omit<GetFontResponse, 'variants'>;
+	metadata: FontPageMetadata;
 	registry: RegistryFamily;
 	variable?: GetVariableFontResponse;
 	tabsValue: FamilyTab;
@@ -36,7 +36,7 @@ export const FamilyIdentity = ({
 	registry,
 	variableAvailable = false,
 }: {
-	metadata: Omit<GetFontResponse, 'variants'>;
+	metadata: FontPageMetadata;
 	registry: RegistryFamily;
 	variableAvailable?: boolean;
 }) => {
@@ -90,7 +90,7 @@ export const FamilyActions = ({
 	registry,
 	showGetFont = true,
 }: {
-	metadata: Omit<GetFontResponse, 'variants'>;
+	metadata: FontPageMetadata;
 	registry: RegistryFamily;
 	showGetFont?: boolean;
 }) => {
@@ -132,7 +132,7 @@ export const FamilyTabs = ({
 	registry,
 	contained = false,
 }: {
-	metadata: Omit<GetFontResponse, 'variants'>;
+	metadata: FontPageMetadata;
 	registry: RegistryFamily;
 	contained?: boolean;
 }) => {

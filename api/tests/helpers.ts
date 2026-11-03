@@ -1,4 +1,4 @@
-import { publishedPackages } from './fixtures/publication';
+import { publishedFamilies, publishedPackages } from './fixtures/publication';
 import './network';
 import {
 	applyD1Migrations,
@@ -94,6 +94,15 @@ const serializeHeaders = (response: Response): Record<string, string> => {
 };
 
 const seedMetadata = async (env: Env): Promise<void> => {
+	const revision = '1'.repeat(40);
+	await env.REGISTRY.put(
+		'current.json',
+		JSON.stringify({ schemaVersion: 1, registryRevision: revision }),
+	);
+	await env.REGISTRY.put(
+		`snapshots/${revision}/api/families.json`,
+		JSON.stringify(publishedFamilies),
+	);
 	await env.METADATA.put(
 		KV_KEYS.publishedPackages,
 		JSON.stringify(publishedPackages),
