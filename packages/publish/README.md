@@ -16,6 +16,11 @@ npx @fontsource-utils/publish init
 
 # How It Works
 
-1. Use folder hashes (recursive filehashes) to determine if a package has changed.
-2. Bump packages and validate they are publishable by comparing versions on the NPM registry.
-3. Run `npm publish` for each changed package, with optional provenance attestations.
+1. Hash npm's publishable file list, including font binaries, paths, and package metadata. Only `version` and `publishHash` are excluded from change detection.
+2. Set the selected version and hash, then pack once without lifecycle scripts. These are already-generated font packages.
+3. Publish that tarball and verify its integrity against the exact npm version. An existing version is accepted only when its bytes match.
+4. Commit verified package directories. Failed packages retain their previous version and hash, and the command exits unsuccessfully.
+
+For main-repository release orchestration, use `publish <version> --yes --no-git --report <path>`. The JSON report contains `published` package records and `failed` records, including partial failures. Keep it outside package directories. The workflow owns committing the verified directories; no GitHub token is required with `--no-git`.
+
+This changes the hash algorithm, so packages carrying the previous hashes will be considered changed once. Preserve the `font-files` baseline between runs. `from-package` retries an explicitly selected version; it never overwrites a different npm payload.

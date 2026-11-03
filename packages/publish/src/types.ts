@@ -40,6 +40,8 @@ export interface BumpFlags extends ChangedFlags {
 
 export interface PublishFlags extends BumpFlags {
 	provenance?: boolean;
+	git?: boolean;
+	report?: string;
 }
 
 export type Flags = ChangedFlags | BumpFlags | PublishFlags;

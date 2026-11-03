@@ -77,6 +77,8 @@ cli
 	.option('--commit-message', 'Change commit message')
 	.option('--packages', 'Package directory')
 	.option('--provenance', 'Include NPM provenance attestations')
+	.option('--no-git', 'Leave commits and pushes to the release workflow')
+	.option('--report <path>', 'Write verified publication outcomes as JSON')
 	.action(async (version: string, opts: PublishFlags) => {
 		try {
 			await publishPackages(version, opts);
