@@ -93,6 +93,12 @@ export type GetPackageOutputResponses = {
                 sliceIndex: number;
                 isVariable: boolean;
                 axisKey?: string;
+                axes?: Array<{
+                    tag: string;
+                    min: number;
+                    max: number;
+                    default: number;
+                }>;
                 stretch?: string | null;
                 sources: Array<{
                     filename: string;
