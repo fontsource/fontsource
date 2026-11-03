@@ -92,7 +92,12 @@ export const fetchCachedJson = async <T>(
 	(await (
 		await fetchWithCache(url, {
 			cacheEverything: true,
-			cacheTtl,
+			// A just-published package can briefly be missing from jsDelivr. Do not
+			// turn propagation errors into a full successful-response TTL outage.
+			cacheTtlByStatus: {
+				'200-299': cacheTtl,
+				'400-599': -1,
+			},
 		})
 	).json()) as T;
 

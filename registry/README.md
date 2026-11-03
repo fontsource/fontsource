@@ -230,6 +230,28 @@ matching, including an empty list for fonts with no semantic language support.
 The source repository stores the raw binaries; this repository commits only
 generated text records.
 
+## Package releases
+
+Prepare a release locally without publishing or modifying the package baseline:
+
+~~~sh
+pnpm --filter '@fontsource-utils/registry' release \
+  --font-files /path/to/font-files --out /tmp/font-release --fonts abel,recursive
+~~~
+
+The API must already expose completed web artifacts. The runner downloads those
+assets, compares package hashes with `font-files`, checks occupied npm versions,
+and writes a release plan. Omit `--fonts` to select the registry catalog.
+
+`--publish` additionally verifies R2 write access, publishes packages, verifies
+their exact API output, and promotes only successful releases to the CDN and
+`font-files`. Failed or removed families retain their previous release. Reports
+record partial successes so the workflow commits only verified package paths.
+
+The main-repository release workflow is manual and defaults to a dry run. Disable
+the old `font-files` publisher before enabling actual releases; the cutover is a
+separate change. No color-font processing changes are included in this pipeline.
+
 ## Development
 
 ~~~sh

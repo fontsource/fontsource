@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
+	fetchCachedJson,
 	fetchPackageAssetBytes,
 	fetchPackageFileList,
 	fetchPackageTarball,
@@ -64,5 +65,24 @@ describe('upstream package fetches', () => {
 			`${UPSTREAM_URLS.npmRegistry}/@fontsource-variable/recursive/-/recursive-5.2.8.tgz`,
 			undefined,
 		);
+	});
+
+	it('caches successful JSON without caching package propagation failures', async () => {
+		const fetchMock = vi
+			.fn()
+			.mockResolvedValueOnce(new Response('missing', { status: 404 }))
+			.mockResolvedValueOnce(new Response('{"ready":true}'));
+		vi.stubGlobal('fetch', fetchMock);
+		const url = `${UPSTREAM_URLS.jsdelivrNpm}/@fontsource/abel@6.0.0/manifest.json`;
+		await expect(fetchCachedJson(url, 86400)).rejects.toBeInstanceOf(
+			UpstreamNotFoundError,
+		);
+		await expect(fetchCachedJson(url, 86400)).resolves.toEqual({ ready: true });
+		expect(fetchMock).toHaveBeenCalledWith(url, {
+			cf: {
+				cacheEverything: true,
+				cacheTtlByStatus: { '200-299': 86400, '400-599': -1 },
+			},
+		});
 	});
 });

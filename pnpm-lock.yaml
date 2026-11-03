@@ -327,6 +327,9 @@ importers:
       '@fontsource-utils/core':
         specifier: workspace:*
         version: link:../packages/core
+      '@fontsource-utils/publish':
+        specifier: workspace:*
+        version: link:../packages/publish
       consola:
         specifier: ^3.1.0
         version: 3.4.2
