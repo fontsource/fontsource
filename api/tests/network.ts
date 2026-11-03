@@ -13,6 +13,7 @@ import {
 	scheduledCatalog,
 	testVersions,
 } from './fixtures/metadata';
+import { publishedPackages } from './fixtures/publication';
 import { publishedFiles } from './fixtures/published-files';
 
 export const toResponse = (body: string | Uint8Array<ArrayBufferLike>) =>
@@ -78,6 +79,9 @@ const unexpectedRequests: string[] = [];
 const handlerErrors: Error[] = [];
 
 const handlers = [
+	http.get(UPSTREAM_URLS.publishedPackages, () =>
+		HttpResponse.json(publishedPackages),
+	),
 	http.get(`${UPSTREAM_URLS.npmRegistry}/*`, ({ request }) => {
 		const packageName = decodeURIComponent(
 			request.url.slice(`${UPSTREAM_URLS.npmRegistry}/`.length),

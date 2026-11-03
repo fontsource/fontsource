@@ -6,6 +6,7 @@ import type {
 	SourceFontMetadata,
 	VariableCatalog,
 } from '../../../../shared/catalog';
+import type { PublishedPackages } from '../../../../shared/published-packages';
 import { fetchPackageVersions } from '../../../../shared/upstream';
 import {
 	DERIVED_METADATA_CACHE_TTL_MS,
@@ -19,7 +20,11 @@ import {
 	buildFontlist,
 	buildVariableIndex,
 } from './catalog-views';
-import { refreshAxisRegistry, refreshCatalog } from './refresh';
+import {
+	refreshAxisRegistry,
+	refreshCatalog,
+	refreshPublishedPackages,
+} from './refresh';
 
 export interface VersionResponse {
 	latest: string;
@@ -172,3 +177,8 @@ export const getFontById = async (
 	const catalog = await getCatalog(c);
 	return catalog[id];
 };
+
+export const getPublishedPackages = (
+	c: Context<AppEnv>,
+): Promise<PublishedPackages> =>
+	readKvJsonOrRefresh(c, KV_KEYS.publishedPackages, refreshPublishedPackages);

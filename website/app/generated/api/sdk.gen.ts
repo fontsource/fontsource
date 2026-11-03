@@ -2,7 +2,7 @@
 
 import { buildClientParams, type Client, type ClientMeta, type Options as Options2, type RequestResult, type TDataShape } from './client';
 import { client } from './client.gen';
-import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourcePreviewErrors, GetRegistrySourcePreviewResponses, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses, ResolveFontPackagesResponses } from './types.gen';
+import type { DownloadFontErrors, DownloadFontResponses, GetBinaryAssetErrors, GetBinaryAssetResponses, GetCssFileErrors, GetCssFileResponses, GetFontErrors, GetFontOpenGraphImageErrors, GetFontOpenGraphImageResponses, GetFontResponses, GetFontStatsErrors, GetFontStatsResponses, GetFontVersionsErrors, GetFontVersionsResponses, GetPackageOutputErrors, GetPackageOutputResponses, GetRegistryFamilyErrors, GetRegistryFamilyResponses, GetRegistryFamilySymbolsErrors, GetRegistryFamilySymbolsResponses, GetRegistrySourceCapabilitiesErrors, GetRegistrySourceCapabilitiesResponses, GetRegistrySourceErrors, GetRegistrySourcePreviewErrors, GetRegistrySourcePreviewResponses, GetRegistrySourceResponses, GetRegistrySubsetErrors, GetRegistrySubsetResponses, GetRegistryTaxonomyErrors, GetRegistryTaxonomyResponses, GetStatsBadgeErrors, GetStatsBadgeResponses, GetVariableFontErrors, GetVariableFontResponses, ListAxisRegistryErrors, ListAxisRegistryResponses, ListFontsErrors, ListFontsResponses, ListFontValuesErrors, ListFontValuesResponses, ListPublishedPackagesResponses, ListRegistryAxesErrors, ListRegistryAxesResponses, ListRegistryFamiliesErrors, ListRegistryFamiliesResponses, ListRegistryLanguagesErrors, ListRegistryLanguagesResponses, ListRegistrySubsetsErrors, ListRegistrySubsetsResponses, ListStatsResponses, ListVariableFontsResponses, ResolveFontPackagesResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -16,6 +16,36 @@ export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends 
      * used to access values that aren't defined as part of the SDK function.
      */
     meta?: keyof ClientMeta extends never ? Record<string, unknown> : ClientMeta;
+};
+
+/**
+ * List verified published packages
+ */
+export const listPublishedPackages = <ThrowOnError extends boolean = true>(options?: Options<never, ThrowOnError>): RequestResult<ListPublishedPackagesResponses, unknown, ThrowOnError, 'data'> => (options?.client ?? client).get<ListPublishedPackagesResponses, unknown, ThrowOnError, 'data'>({
+    responseStyle: 'data',
+    url: '/v1/packages',
+    ...options
+});
+
+/**
+ * Read exact published V6 package output
+ */
+export const getPackageOutput = <ThrowOnError extends boolean = true>(parameters: {
+    id: string;
+    kind: 'static' | 'variable';
+    version: string;
+}, options?: Options<never, ThrowOnError>): RequestResult<GetPackageOutputResponses, GetPackageOutputErrors, ThrowOnError, 'data'> => {
+    const params = buildClientParams([parameters], [{ args: [
+                { in: 'path', key: 'id' },
+                { in: 'path', key: 'kind' },
+                { in: 'path', key: 'version' }
+            ] }]);
+    return (options?.client ?? client).get<GetPackageOutputResponses, GetPackageOutputErrors, ThrowOnError, 'data'>({
+        responseStyle: 'data',
+        url: '/v1/packages/{id}/{kind}/{version}',
+        ...options,
+        ...params
+    });
 };
 
 /**

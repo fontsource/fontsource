@@ -49,3 +49,15 @@ manifest fails explicitly rather than falling back to guessed outputs. Pinned
 binary objects already in R2 keep their existing fast path and cache behavior.
 The catalog-backed listing and ZIP download endpoints are unchanged; migrating
 those consumers remains part of the Font Files/catalog rollout.
+
+### Published packages
+
+`GET /v1/packages` reads `metadata/published.json` from Font Files through the
+existing KV metadata refresh. It contains only verified static/variable package
+versions. Merge the Font Files producer and its initial index before deploying
+this consumer. Failed refreshes preserve the stored index.
+
+`GET /v1/packages/:id/:kind/:version` reads an exact V6 package's manifest and
+frozen registry metadata (`kind` is `static` or `variable`). It does not depend on
+the index: the producer uses this endpoint to verify output before promoting it.
+Registry membership describes source availability, not npm publication.
