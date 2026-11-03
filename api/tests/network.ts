@@ -68,6 +68,7 @@ const packageFileMetaResponse = (packageName: string): Response => {
 
 const versionPayloads: Record<string, string[]> = {
 	'@fontsource/abel': testVersions.abel.static,
+	'@fontsource-variable/abel': [],
 	'@fontsource/recursive': testVersions.recursive.static,
 	'@fontsource/familypack': testVersions.familypack.static,
 	'@fontsource-variable/recursive': testVersions.recursive.variable ?? [],

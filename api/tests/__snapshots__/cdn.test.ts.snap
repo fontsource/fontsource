@@ -117,6 +117,70 @@ exports[`cdn routes > reports a failed asynchronous download build 1`] = `
 }
 `;
 
+exports[`cdn routes > resolves downloads from published packages absent from the catalog: {"static":["6.0.0"],"variable":["6.0.1"]} 1`] = `
+{
+  "body": {
+    "state": "building",
+    "version": "6.0.0",
+  },
+  "headers": {
+    "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
+    "contentType": "application/json",
+    "edgeCacheControl": "no-store",
+  },
+  "status": 202,
+}
+`;
+
+exports[`cdn routes > resolves downloads from published packages absent from the catalog: {"static":["6.0.0"],"variable":[]} 1`] = `
+{
+  "body": {
+    "state": "building",
+    "version": "6.0.0",
+  },
+  "headers": {
+    "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
+    "contentType": "application/json",
+    "edgeCacheControl": "no-store",
+  },
+  "status": 202,
+}
+`;
+
+exports[`cdn routes > resolves downloads from published packages absent from the catalog: {"static":[],"variable":["6.0.1"]} 1`] = `
+{
+  "body": {
+    "state": "building",
+    "version": "6.0.1",
+  },
+  "headers": {
+    "cacheControl": "no-store",
+    "cdnCacheControl": "no-store",
+    "contentType": "application/json",
+    "edgeCacheControl": "no-store",
+  },
+  "status": 202,
+}
+`;
+
+exports[`cdn routes > resolves downloads from published packages absent from the catalog: {"static":[],"variable":[]} 1`] = `
+{
+  "body": {
+    "error": "Unable to resolve download: no published versions available",
+    "status": 404,
+  },
+  "headers": {
+    "cacheControl": "public, max-age=60",
+    "cdnCacheControl": "public, max-age=60",
+    "contentType": "application/json",
+    "edgeCacheControl": "public, max-age=60",
+  },
+  "status": 404,
+}
+`;
+
 exports[`cdn routes > returns 502 when the artifact builder fails 1`] = `
 {
   "body": {

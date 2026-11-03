@@ -1,4 +1,3 @@
-import type { SourceFontMetadata } from './catalog';
 /**
  * Version target shared by the Worker and container.
  */
@@ -16,7 +15,7 @@ export interface BuildDownloadRequest {
 	mode: 'download';
 	staticVersion?: string;
 	variableVersion?: string;
-	metadata: SourceFontMetadata;
+	id: string;
 }
 
 export type BuildVersionRequest = BuildDownloadRequest | BuildPackageRequest;
@@ -44,6 +43,6 @@ export type BuildVersionStatus = BuildVersionBuilding | BuildVersionFailure;
 export const getBuildKey = (request: BuildVersionRequest): string =>
 	request.mode === 'download'
 		? request.staticVersion
-			? `build:${request.metadata.id}@${request.staticVersion}${request.variableVersion && request.variableVersion !== request.staticVersion ? `+vf@${request.variableVersion}` : ''}:download`
-			: `build:${request.metadata.id}:vf@${request.variableVersion}:download`
+			? `build:${request.id}@${request.staticVersion}${request.variableVersion && request.variableVersion !== request.staticVersion ? `+vf@${request.variableVersion}` : ''}:download`
+			: `build:${request.id}:vf@${request.variableVersion}:download`
 		: `build:${request.tag.id}@${request.tag.version}:${request.mode}`;

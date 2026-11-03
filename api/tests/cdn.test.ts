@@ -435,6 +435,39 @@ describe('cdn routes', () => {
 		});
 	});
 
+	it.each([
+		{ static: ['6.0.0'], variable: [] },
+		{ static: [], variable: ['6.0.1'] },
+		{ static: ['6.0.0'], variable: ['6.0.1'] },
+		{ static: [], variable: [] },
+	])(
+		'resolves downloads from published packages absent from the catalog: %j',
+		async (versions) => {
+			mockUpstreamResponses({
+				[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource/new-math`]:
+					Response.json({
+						versions: versions.static.map((version) => ({ version })),
+					}),
+				[`${UPSTREAM_URLS.jsdelivrPackage}/@fontsource-variable/new-math`]:
+					Response.json({
+						versions: versions.variable.map((version) => ({ version })),
+					}),
+			});
+			expect(
+				await jsonSnapshot('https://fontsource.test/v1/download/new-math'),
+			).toMatchSnapshot();
+		},
+	);
+
+	it('rejects unsafe family identifiers before resolving download packages', async () => {
+		const result = await dispatch(
+			'https://fontsource.test/v1/download/abel%40latest',
+		);
+		expect(result.response.status).toBe(400);
+		await result.response.text();
+		await result.settle();
+	});
+
 	it('returns accepted while building, then serves the stored download with conditional caching', async () => {
 		const url = 'https://fontsource.test/v1/download/recursive';
 		const accepted = await dispatch(url);

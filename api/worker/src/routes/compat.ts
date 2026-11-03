@@ -1,13 +1,13 @@
 import { contentJson, OpenAPIRoute } from 'chanfana';
 import type { Context } from 'hono';
 import { z } from 'zod';
+import { RegistryIdParamSchema } from '../../../shared/registry';
 import { UPSTREAM_URLS } from '../constants';
 import type { AppEnv } from '../env';
 import { getDownloadAsset } from '../features/cdn/handler';
 import {
 	ErrorResponseSchema,
 	FileRedirectParamSchema,
-	IdParamSchema,
 } from '../schemas/common';
 
 type AppContext = Context<AppEnv>;
@@ -25,7 +25,7 @@ export class DownloadFontRoute extends OpenAPIRoute {
 		description:
 			'Serves a zip archive containing the latest available static and variable packages for a font family.',
 		request: {
-			params: IdParamSchema,
+			params: RegistryIdParamSchema,
 		},
 		responses: {
 			'200': {
