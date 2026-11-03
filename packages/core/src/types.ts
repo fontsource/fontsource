@@ -67,6 +67,8 @@ export interface FontFace extends FontFaceBase {
 	isVariable: boolean;
 	sources: FontSource[];
 	axisKey?: VariableAxisKey;
+	/** Distribution style used for selection when CSS exposes an oblique range. */
+	variantStyle?: FontStyle;
 	/** Axes retained in the emitted binary, not all axes in the original source. */
 	axes?: Array<{ tag: string; min: number; max: number; default: number }>;
 	stretch?: string | null;

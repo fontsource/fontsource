@@ -32,6 +32,12 @@ Use the `faces` mixin to generate `@font-face` rules:
 @include fontsource.faces($metadata: recursive.$metadata);
 ```
 
+For v6 packages, the default matches the package's `index.css`. Selections use
+only faces present in the package; sparse weights/styles and custom axis names
+are preserved. Numbered slices replace their overlapping named aggregate.
+V6 packages support `woff2` only and use the exact filenames in their metadata.
+Existing v5 metadata remains supported with its existing defaults.
+
 Learn more in the [Fontsource SCSS documentation](https://fontsource.org/docs/getting-started/sass-introduction).
 
 ## License

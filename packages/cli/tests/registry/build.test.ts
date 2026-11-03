@@ -99,6 +99,28 @@ it('freezes one registry revision, builds a package offline, and rejects changed
 					})),
 			),
 		}).toMatchSnapshot();
+		const custom = join(directory, 'custom');
+		await buildPackages(['abel'], {
+			inputs: inputsDirectory,
+			out: custom,
+			text: 'A',
+			features: 'kern',
+		});
+		const customManifest = JSON.parse(
+			await readFile(join(custom, 'static/abel/manifest.json'), 'utf8'),
+		);
+		expect(customManifest.faces).toHaveLength(1);
+		expect(customManifest.faces[0]).toMatchObject({
+			subset: 'custom',
+			unicodeRange: 'U+41',
+		});
+		await expect(
+			buildPackages(['abel'], {
+				inputs: inputsDirectory,
+				out: join(directory, 'invalid'),
+				features: 'invalid',
+			}),
+		).rejects.toThrow('Invalid OpenType feature tag');
 		await writeFile(join(inputsDirectory, 'sources', sha256), 'changed');
 		await expect(
 			loadBuildInputs(['abel'], inputsDirectory, 'https://registry.test'),

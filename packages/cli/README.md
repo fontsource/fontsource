@@ -40,10 +40,25 @@ npx fontsource create-verify [options]
 
 ## `fontsource build`
 
-Builds fonts from Registry API sources using Core. Requires Node.js 22 or newer.
+Downloads completed web assets from the Registry API and assembles packages.
+Requires Node.js 22 or newer. The fonts are not rebuilt during download.
 
 ```bash
-fontsource build noto-sans-math stix-two-math \
+fontsource build noto-sans-math stix-two-math --out /tmp/fontsource-packages
+```
+
+Files are checksum-verified. Static and variable packages use the same prepared
+source build. `--out` must be a new directory; failures leave no partial packages.
+Use `--registry-url <url>` to select another API origin.
+
+## `fontsource build-local`
+
+Builds from original registry sources using Core. Use this for local character or
+OpenType feature customization instead of trying to restore features removed
+from prepared web fonts.
+
+```bash
+fontsource build-local noto-sans-math stix-two-math \
   --inputs /tmp/fontsource-inputs --out /tmp/fontsource-packages
 ```
 
@@ -54,6 +69,11 @@ additional families. Optional `--revision <commit>` selects the registry revisio
 `--registry-url <url>` selects another API origin (defaults to
 `https://api.fontsource.org`). The API must support pinned registry reads.
 
+`--text <text>` restricts characters. `--features ss01,smcp` retains selected
+OpenType features in addition to the standard defaults; a leading minus removes
+a feature, for example `--features=ss01,-dlig`. These options affect local output
+only, not official API/CDN assets.
+
 The build writes `static/<id>` and `variable/<id>` packages with WOFF2 fonts,
 CSS entrypoints, the original license, and registry metadata. Root CSS covers all
 declared character sets at the default weight/style. Full-repertoire fonts omit
@@ -61,18 +81,21 @@ declared character sets at the default weight/style. Full-repertoire fonts omit
 overwritten. Building does not publish or upload anything.
 
 For local development, run `pnpm --dir packages/core build`, then
-`pnpm --dir packages/cli cli build ...` with the same arguments.
+`pnpm --dir packages/cli cli build-local ...` with the same arguments.
 
 ## Release and migration
 
-This is a breaking CLI release: `build` now uses registry sources and requires
-explicit family IDs, `--inputs`, and `--out`. The Google metadata `fetch` command,
+This is a breaking CLI release: `build` downloads prepared registry assets and
+requires family IDs and `--out`. Source processing is available through
+`build-local`, which also requires `--inputs`. The Google metadata `fetch` command,
 library exports, browser entrypoint, and CommonJS build are removed. This package
 is now a Node CLI; CSS-only consumers use `@fontsource-utils/core/css`. Custom
 submission commands remain available.
 
 New source-built font packages start at `6.0.0`. They use registry metadata and
-WOFF2; legacy metadata, WOFF and SCSS output are not part of this generator.
+WOFF2. They retain `scss/metadata.scss` for `@fontsource-utils/scss`, a changelog
+redirect, and the publisher hash. Legacy metadata, `unicode.json`, WOFF, and
+package-local Sass mixins are not generated.
 
 ### Published output manifest
 

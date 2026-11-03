@@ -1,15 +1,18 @@
 import type { FontFace } from '@fontsource-utils/core/css';
 import { z } from 'zod';
 
+const FontStyleSchema = z.union([
+	z.enum(['normal', 'italic']),
+	z.templateLiteral(['oblique ', z.number(), 'deg']),
+	z.templateLiteral(['oblique ', z.number(), 'deg ', z.number(), 'deg']),
+]);
+
 // Published package data is a versioned contract, independent of today's catalog.
 const FaceSchema: z.ZodType<FontFace> = z.object({
 	subset: z.string(),
 	weight: z.union([z.number(), z.string()]),
-	style: z.union([
-		z.enum(['normal', 'italic']),
-		z.templateLiteral(['oblique ', z.number(), 'deg']),
-		z.templateLiteral(['oblique ', z.number(), 'deg ', z.number(), 'deg']),
-	]),
+	style: FontStyleSchema,
+	variantStyle: FontStyleSchema.optional(),
 	unicodeRange: z.string(),
 	sliceIndex: z.number().int().nonnegative(),
 	isVariable: z.boolean(),

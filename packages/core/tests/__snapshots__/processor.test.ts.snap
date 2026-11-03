@@ -117,6 +117,7 @@ exports[`buildFont integration with real fixtures > builds only explicit sparse 
       "style": "oblique 15deg",
       "subset": "latin",
       "unicodeRange": "U+20-22",
+      "variantStyle": "italic",
       "weight": 700,
     },
   ],
@@ -465,6 +466,7 @@ exports[`buildFont integration with real fixtures > pins excluded axes and respe
       "style": "oblique 15deg",
       "subset": "latin",
       "unicodeRange": "U+20-22",
+      "variantStyle": "italic",
       "weight": "300 1000",
     },
     {
@@ -501,6 +503,7 @@ exports[`buildFont integration with real fixtures > pins excluded axes and respe
       "style": "oblique 0deg 15deg",
       "subset": "latin",
       "unicodeRange": "U+20-22",
+      "variantStyle": "normal",
       "weight": "300 1000",
     },
   ],

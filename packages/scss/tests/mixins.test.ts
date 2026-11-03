@@ -70,6 +70,56 @@ const compileMetadataSass = (metadata: string, axes: string) =>
 	).css.toString();
 
 describe('sass mixins', () => {
+	describe('v6 output manifests', () => {
+		const metadata = `(
+			id: 'sparse', family: 'Sparse', variable: false,
+			faces: (
+				(subset: 'latin', weight: 300, style: 'normal', unicodeRange: 'U+41', sliceIndex: 0, sources: ((filename: 'light.woff2', format: 'woff2'),)),
+				(subset: 'latin', weight: 700, style: 'normal', unicodeRange: 'U+41', sliceIndex: 0, sources: ((filename: 'bold.woff2', format: 'woff2'),)),
+				(subset: 'latin', weight: 700, style: 'italic', unicodeRange: 'U+41', sliceIndex: 0, sources: ((filename: 'bold-italic.woff2', format: 'woff2'),)),
+				(subset: 'japanese', weight: 300, style: 'normal', unicodeRange: 'U+3042', sliceIndex: 0, sources: ((filename: 'japanese.woff2', format: 'woff2'),)),
+				(subset: 'japanese', weight: 300, style: 'normal', unicodeRange: 'U+3042', sliceIndex: 1, sources: ((filename: 'japanese-1.woff2', format: 'woff2'),)),
+			),
+			entrypoints: ('index.css': (0, 4)),
+		)`;
+		const compile = (value: string, options = '') =>
+			compileString(`${mixins}@include faces($metadata: ${value}${options});`)
+				.css;
+
+		it('uses the default faces and replaces named aggregates with slices', () => {
+			expect(compile(metadata)).toMatchSnapshot();
+		});
+
+		it('selects only existing variants and actual filenames', () => {
+			expect(
+				compile(
+					metadata,
+					', $weights: all, $styles: all, $directory: "/fonts"',
+				),
+			).toMatchSnapshot();
+		});
+
+		it('rejects formats absent from v6 packages', () => {
+			expect(() => compile(metadata, ', $formats: woff')).toThrow(
+				'v6 font packages contain WOFF2 only',
+			);
+		});
+
+		it('preserves custom axis casing and unquotes CSS ranges', () => {
+			const variable = `(
+				id: 'variable', family: 'Example Variable', variable: true,
+				faces: (
+					(subset: 'full', weight: '300 1000', style: 'normal', unicodeRange: '', sliceIndex: 0, axisKey: 'wght', sources: ((filename: 'weight.woff2', format: 'woff2'),)),
+					(subset: 'full', weight: '400', style: 'oblique -15deg 0deg', stretch: '75% 100%', unicodeRange: '', sliceIndex: 0, axisKey: 'CASL', sources: ((filename: 'casual.woff2', format: 'woff2'),)),
+				),
+				entrypoints: ('index.css': (0,)),
+			)`;
+			expect(
+				compile(variable, ', $axes: CASL, $styles: all'),
+			).toMatchSnapshot();
+		});
+	});
+
 	it('should compile sass for non unicode range font successfully', async () => {
 		expect(compileSass('@fontsource/carlito')).toMatchSnapshot();
 	});
