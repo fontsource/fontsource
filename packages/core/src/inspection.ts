@@ -1,4 +1,9 @@
-import type { FontRef, StyleValue } from '@glypht/core';
+import type {
+	AxisInfo,
+	FontRef,
+	StyleValue,
+	SubsetAxisInfo,
+} from '@glypht/core';
 import type { FontContext } from './context';
 import { normalizeFontBuffer } from './normalize';
 
@@ -255,7 +260,9 @@ const axisRange = (value: {
 }) => ({
 	min: value.min,
 	max: value.max,
-	default: value.defaultValue,
+	// Glypht's subset metadata retains the source default when a range is narrowed.
+	// The emitted fvar default is clamped to that retained range.
+	default: Math.min(value.max, Math.max(value.min, value.defaultValue)),
 });
 
 const styleAxis = (
@@ -267,19 +274,29 @@ const styleAxis = (
 const styleValue = (value: StyleValue): number =>
 	value.type === 'single' ? value.value : value.value.defaultValue;
 
-const inspectFace = (font: FontRef, sfnt: SfntFace): FontInspection => {
-	const weight = font.styleValues.weight;
-	const axes = [
-		styleAxis('wght', weight),
+/** Read retained axes from either an original or subsetted Glypht font. */
+export const inspectFontAxes = (font: {
+	styleValues: FontRef['styleValues'];
+	axes: Array<AxisInfo | SubsetAxisInfo>;
+}): FontInspectionAxis[] =>
+	[
+		styleAxis('wght', font.styleValues.weight),
 		styleAxis('wdth', font.styleValues.width),
 		styleAxis('ital', font.styleValues.italic),
 		styleAxis('slnt', font.styleValues.slant),
-		...font.axes.map((axis) => ({ tag: axis.tag, ...axisRange(axis) })),
+		...font.axes.map((axis) =>
+			'type' in axis
+				? styleAxis(axis.tag, axis)
+				: { tag: axis.tag, ...axisRange(axis) },
+		),
 	]
 		.filter((axis): axis is FontInspectionAxis => axis !== null)
 		.sort((left, right) =>
 			left.tag < right.tag ? -1 : left.tag > right.tag ? 1 : 0,
 		);
+
+const inspectFace = (font: FontRef, sfnt: SfntFace): FontInspection => {
+	const weight = font.styleValues.weight;
 
 	const italic = styleValue(font.styleValues.italic);
 	const slant = styleValue(font.styleValues.slant);
@@ -291,7 +308,7 @@ const inspectFace = (font: FontRef, sfnt: SfntFace): FontInspection => {
 		glyphs: sfnt.glyphs,
 		weight: weight.type === 'single' ? weight.value : axisRange(weight.value),
 		style: italic >= 0.5 ? 'italic' : slant === 0 ? 'normal' : 'oblique',
-		axes,
+		axes: inspectFontAxes(font),
 		unicodeRanges: font.unicodeRanges,
 		features: sfnt.features,
 		tables: sfnt.tables,

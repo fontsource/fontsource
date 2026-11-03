@@ -50,6 +50,17 @@ Use `characters: 'all'` to preserve complete source coverage, or provide
 `{ subset, codepoints, sliceIndex? }` selections. CSS ranges reflect the requested
 codepoints present in each generated face; full-font faces omit the descriptor.
 
+Builds default to WOFF2 and Glypht/HarfBuzz's web feature defaults: retain normal
+shaping and positioning, and remove discretionary alternates. `featureSettings`
+overrides individual feature retention; it does not activate those features in
+CSS. Custom feature builds must start from original sources, since removed
+features cannot be restored from an already-subsetted font. The Glypht versions
+are pinned so an upgrade to this policy is deliberate and regression-tested.
+
+Variable output faces include `axes` with the ranges and defaults actually
+retained in each binary. Consumers should use these instead of the original
+source's axes, which can include axes pinned away during the build.
+
 This replaces the previous inferred source/weight/style cross-product and NAM
 text inputs. Callers must now supply `targets` and `characters` explicitly.
 

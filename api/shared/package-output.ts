@@ -14,6 +14,18 @@ const FaceSchema: z.ZodType<FontFace> = z.object({
 	sliceIndex: z.number().int().nonnegative(),
 	isVariable: z.boolean(),
 	axisKey: z.string().optional(),
+	axes: z
+		.array(
+			z
+				.object({
+					tag: z.string().length(4),
+					min: z.number(),
+					max: z.number(),
+					default: z.number(),
+				})
+				.refine(({ min, max, default: value }) => min <= value && value <= max),
+		)
+		.optional(),
 	stretch: z.string().nullable().optional(),
 	sources: z
 		.array(
