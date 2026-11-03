@@ -29,6 +29,7 @@ const loadFontPageBase = async (id: string, signal: AbortSignal) => {
 			'Font registry record',
 		),
 	]);
+	// Source membership is not publication: only promoted versions can be installed.
 	const versions = published[id];
 	if (!versions) throw new Response('Font not found', { status: 404 });
 	const loadPackage = async (
@@ -126,6 +127,7 @@ const loadFontPageBase = async (id: string, signal: AbortSignal) => {
 			},
 		};
 	};
+	// Resolve each scope separately: releases need not share a version or generation.
 	const [staticPackage, variablePackage] = await Promise.all([
 		loadPackage('static', versions.static),
 		loadPackage('variable', versions.variable),

@@ -5,6 +5,7 @@ import type {
 	GetVariableFontResponse,
 } from '@/generated/api';
 
+// Shared presentation fields keep page components independent of package generation.
 export type FontPageMetadata = Pick<
 	GetFontResponse,
 	| 'id'
@@ -18,6 +19,7 @@ export type FontPageMetadata = Pick<
 	| 'lastModified'
 > & { styles: FontStyle[] };
 
+// Each published scope is either legacy V5 metadata or exact V6 build output.
 export type FontPackage = {
 	version: string;
 	metadata: FontPageMetadata;

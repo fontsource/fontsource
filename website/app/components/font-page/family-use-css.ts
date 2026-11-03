@@ -68,6 +68,7 @@ const buildFamilyUseCSS = ({
 				(key) => `${key}${style === 'normal' ? '' : '-italic'}.css`,
 			),
 		);
+		// Entrypoints define face membership and order, including split Unicode subsets.
 		const indices = new Set(
 			entrypoints.flatMap((filename) => manifest.entrypoints[filename] ?? []),
 		);
