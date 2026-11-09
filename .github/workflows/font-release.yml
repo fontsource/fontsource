@@ -1,0 +1,99 @@
+name: Font Package Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      fonts:
+        description: Comma-separated family IDs (empty builds the catalog)
+        type: string
+        default: ''
+      publish:
+        description: Publish verified packages and update font-files
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: font-package-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout Fontsource
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Create release token
+        if: inputs.publish
+        id: app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: font-files
+          permission-contents: write
+
+      - name: Checkout package baseline
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          repository: fontsource/font-files
+          ref: main
+          path: .font-files
+          token: ${{ steps.app-token.outputs.token || github.token }}
+
+      - name: Setup
+        uses: jdx/mise-action@dad1bfd3df957f44999b559dd69dc1671cb4e9ea # v4.2.1
+
+      - name: Install and build tools
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm --filter '@fontsource-utils/cli...' --filter '@fontsource-utils/publish' build
+
+      - name: Prepare or release packages
+        id: release
+        continue-on-error: true
+        env:
+          FONT_IDS: ${{ inputs.fonts }}
+          PUBLISH: ${{ inputs.publish }}
+          NPM_TOKEN: ${{ inputs.publish && secrets.NPM_TOKEN || '' }}
+          R2_S3_ENDPOINT: ${{ inputs.publish && secrets.R2_S3_ENDPOINT || '' }}
+          R2_ACCESS_KEY_ID: ${{ inputs.publish && secrets.R2_ACCESS_KEY_ID || '' }}
+          R2_SECRET_ACCESS_KEY: ${{ inputs.publish && secrets.R2_SECRET_ACCESS_KEY || '' }}
+        run: |
+          args=()
+          if [ "$PUBLISH" = true ]; then args+=(--publish); fi
+          node registry/scripts/release.ts \
+            --font-files "$GITHUB_WORKSPACE/.font-files" \
+            --out "$RUNNER_TEMP/font-release" \
+            --fonts "$FONT_IDS" "${args[@]}"
+
+      - name: Commit verified releases
+        if: always() && inputs.publish && steps.release.outputs.commit_paths != ''
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
+        with:
+          repository: .font-files
+          file_pattern: ${{ steps.release.outputs.commit_paths }}
+          commit_message: 'chore: release font packages'
+          commit_user_name: 'fontsource-release[bot]'
+          commit_user_email: '306564713+fontsource-release[bot]@users.noreply.github.com'
+          commit_author: 'fontsource-release[bot] <306564713+fontsource-release[bot]@users.noreply.github.com>'
+
+      - name: Keep release reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: font-release-reports
+          path: |
+            ${{ runner.temp }}/font-release/release-plan.json
+            ${{ runner.temp }}/font-release/publish-report.json
+            ${{ runner.temp }}/font-release/release-result.json
+
+      - name: Fail incomplete release
+        if: always() && steps.release.outcome == 'failure'
+        run: exit 1

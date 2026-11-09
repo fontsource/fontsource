@@ -272,10 +272,18 @@ export async function createArtifactStore() {
 			const existing = await client.send(
 				new HeadObjectCommand({ Bucket: 'fontsource-artifacts', Key: key }),
 			);
-			if (
-				existing.ContentLength !== size ||
-				existing.Metadata?.sha256 !== sha256
-			)
+			if (existing.ContentLength !== size)
+				throw new Error(`Existing artifact does not match ${key}`);
+			let storedHash = existing.Metadata?.sha256;
+			if (storedHash === undefined) {
+				// Older container uploads predate checksum metadata. Verify their
+				// bytes before reusing the shared, immutable release key.
+				const body = await read(key);
+				if (!body || body.byteLength !== size)
+					throw new Error(`Existing artifact does not match ${key}`);
+				storedHash = digest(body);
+			}
+			if (storedHash !== sha256)
 				throw new Error(`Existing artifact does not match ${key}`);
 			return true;
 		} catch (error) {
