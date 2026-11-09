@@ -23,8 +23,8 @@ export const getGitConfig = async (): Promise<Git> => {
 	}
 };
 
-export const gitAdd = async (): Promise<void> => {
-	await execa('git', ['add', '--all']);
+export const gitAdd = async (paths: string[]): Promise<void> => {
+	await execa('git', ['add', '--', ...paths]);
 };
 
 export const gitCommit = async (message: string): Promise<void> => {

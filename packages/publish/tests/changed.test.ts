@@ -1,58 +1,40 @@
-import { describe, expect, it } from 'vitest';
-
+import { tmpdir } from 'node:os';
+import fs from 'fs-extra';
+import path from 'pathe';
+import { afterEach, beforeEach, expect, it } from 'vitest';
 import { getChanged } from '../src/changed';
 
-describe('get changed packages', () => {
-	const config = {
-		packages: ['./tests/fixtures/'],
-		ignoreExtension: [],
-		commitMessage: 'chore: release new versions',
-	};
-	it('lists all changed packages', async () => {
-		const packages = await getChanged(config);
-		// Package 1 has no hash, so it should generate a new one
-		// Package 2 has a matching existing hash, so it should not generate a new one
-		// Package 3 has an existing hash, but differing file contents, so it should generate a new one
-		expect(packages).toEqual([
-			{
-				name: 'package1',
-				path: 'tests/fixtures/package1',
-				hash: '2d7f1808da1fa63c',
-				version: '0.1.0',
-			},
-			{
-				name: 'package3',
-				path: 'tests/fixtures/package3diff',
-				hash: 'd4a613dee558a143',
-				version: '0.3.0',
-			},
-		]);
+let root: string;
+beforeEach(async () => {
+	root = await fs.mkdtemp(path.join(tmpdir(), 'publish-changed-'));
+	await fs.outputJson(path.join(root, 'font', 'package.json'), {
+		name: 'font-test',
+		version: '1.0.0',
 	});
+	await fs.outputFile(path.join(root, 'font', 'font.woff2'), 'font bytes');
+});
+afterEach(() => fs.remove(root));
 
-	it('lists all packages with force flag', async () => {
-		const packages = await getChanged({
-			...config,
-			force: true,
-		});
-		expect(packages).toEqual([
-			{
-				name: 'package1',
-				path: 'tests/fixtures/package1',
-				hash: '2d7f1808da1fa63c',
-				version: '0.1.0',
-			},
-			{
-				name: 'package2',
-				path: 'tests/fixtures/package2',
-				hash: '2d7f1808da1fa63c',
-				version: '0.2.0',
-			},
-			{
-				name: 'package3',
-				path: 'tests/fixtures/package3diff',
-				hash: 'd4a613dee558a143',
-				version: '0.3.0',
-			},
-		]);
+it('skips the recorded baseline and detects binary-only changes', async () => {
+	const config = { packages: [root], commitMessage: 'release' };
+	const [changed] = await getChanged(config);
+	expect(changed.name).toBe('font-test');
+	await fs.writeJson(path.join(root, 'font', 'package.json'), {
+		name: 'font-test',
+		version: '1.0.0',
+		publishHash: changed.hash,
 	});
+	expect(await getChanged(config)).toEqual([]);
+	expect(await getChanged({ ...config, force: true })).toHaveLength(1);
+	await fs.writeFile(path.join(root, 'font', 'font.woff2'), 'changed');
+	expect(await getChanged(config)).toHaveLength(1);
+});
+
+it('propagates packing failures instead of reporting a successful empty scan', async () => {
+	await fs.writeJson(path.join(root, 'font', 'package.json'), {
+		name: 'font-test',
+	});
+	await expect(
+		getChanged({ packages: [root], commitMessage: 'release' }),
+	).rejects.toThrow();
 });

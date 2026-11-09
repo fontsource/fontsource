@@ -5,6 +5,10 @@
 	"bin": {
 		"fontsource-publish": "dist/cli.mjs"
 	},
+	"exports": {
+		"./hash": "./dist/hash.mjs",
+		"./package.json": "./package.json"
+	},
 	"scripts": {
 		"build": "tsdown",
 		"dev": "pnpm run build && node ./dist/cli.mjs",
@@ -25,7 +29,6 @@
 		"dotenv": "^17.4.2",
 		"execa": "^10.0.0",
 		"fs-extra": "^11.1.0",
-		"hash-wasm": "^4.9.0",
 		"json-stringify-pretty-compact": "^4.0.0",
 		"p-queue": "^9.3.1",
 		"parse-git-config": "^3.0.0",

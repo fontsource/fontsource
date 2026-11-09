@@ -1,36 +1,39 @@
+import { createHash } from 'node:crypto';
+import { execa } from 'execa';
 import fs from 'fs-extra';
-import { createXXHash64 } from 'hash-wasm';
-import * as path from 'pathe';
+import path from 'pathe';
 
-const getAllFiles = async (dir: string): Promise<string[]> => {
-	const dirents = await fs.readdir(dir, { withFileTypes: true });
-	const files = await Promise.all(
-		dirents.map(async (dirent) => {
-			// If file is package.json, do not include
-			if (dirent.name === 'package.json') {
-				return [];
-			}
-			// Ignore .woff and .woff2 files
-			if (dirent.name.endsWith('.woff') || dirent.name.endsWith('.woff2')) {
-				return [];
-			}
-			const res = path.resolve(dir, dirent.name);
-			return dirent.isDirectory() ? await getAllFiles(res) : res;
-		}),
+// Let npm own files/.npmignore semantics, including its mandatory exclusions.
+export const getAllFiles = async (dir: string): Promise<string[]> => {
+	const { stdout } = await execa(
+		'npm',
+		['pack', '--dry-run', '--json', '--ignore-scripts'],
+		{ cwd: dir },
 	);
-
-	return Array.prototype.concat(...files);
+	const [pack] = Object.values(JSON.parse(stdout)) as [
+		{ files: { path: string }[] },
+	];
+	return pack.files.map((file) => path.resolve(dir, file.path)).sort();
 };
 
-const getHash = async (dir: string): Promise<string> => {
-	const files = await getAllFiles(dir);
-	const hasher = await createXXHash64();
-	hasher.init();
-	for (const file of files) {
-		const contents = await fs.readFile(file);
+export const getHash = async (dir: string): Promise<string> => {
+	const hasher = createHash('sha256');
+	for (const file of await getAllFiles(dir)) {
+		const relative = path.relative(path.resolve(dir), file);
+		let contents = await fs.readFile(file);
+		if (relative === 'package.json') {
+			const {
+				version: _version,
+				publishHash: _hash,
+				...metadata
+			} = JSON.parse(contents.toString());
+			contents = Buffer.from(JSON.stringify(metadata));
+		}
+		// Include boundaries and paths: renames and split/concatenated files change the package.
+		hasher.update(
+			`${Buffer.byteLength(relative)}:${relative}:${contents.length}:`,
+		);
 		hasher.update(contents);
 	}
-	return hasher.digest();
+	return hasher.digest('hex');
 };
-
-export { getAllFiles, getHash };
