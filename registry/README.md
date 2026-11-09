@@ -1,7 +1,7 @@
 # Registry
 
-This private workspace package maintains Fontsource's font registry as
-text-only metadata. It is repository tooling, not a public package.
+This private workspace package maintains Fontsource's text-only font registry
+and prepares web assets. It is repository tooling, not a public package.
 
 ## Commands
 
@@ -90,9 +90,43 @@ The workflow needs `REGISTRY_R2_ENDPOINT` and bucket-scoped Object Read & Write
 credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 `REGISTRY_R2_SECRET_ACCESS_KEY`.
 
+## Web assets
+
+Build locally without uploading:
+
+~~~sh
+pnpm --filter '@fontsource-utils/registry' artifacts abel recursive --inputs /tmp/font-inputs --out /tmp/font-artifacts
+~~~
+
+Omit family IDs to build the catalog. The runner pins one API snapshot, verifies
+the archived originals, and processes one family at a time through Core. Frozen
+inputs can be replayed offline. `--revision` selects an archived registry snapshot;
+use a new input directory when changing snapshots.
+
+Outputs contain WOFF2 files, CSS, frozen metadata, and a checksummed manifest under
+`prepared/<id>/<kind>/<artifact>/`. The identity includes inputs and the processing
+implementation. Completed outputs are verified before reuse.
+
+The manually triggered [web assets workflow](../.github/workflows/web-artifacts.yml)
+adds `--upload` to store outputs in `fontsource-artifacts`, separate from original
+sources in `fontsource-registry`. It requires repository secrets `R2_S3_ENDPOINT`,
+`R2_ACCESS_KEY_ID`, and `R2_SECRET_ACCESS_KEY` with read/write access to that bucket.
+Uploads write each manifest last. Static and variable outputs share one identity;
+current references change only after all declared kinds are complete. Upload mode
+reuses completed R2 files through size and checksum metadata checks without
+downloading those binaries into the local output directory.
+
+`GET /v1/registry/families/:id/artifacts/:kind` exposes completed builds without
+requiring npm publication. Its file URLs serve the same assets to the CDN and CLI.
+The CLI can pin the returned identity with `?artifact=...`; it assembles packages
+without rebuilding fonts. Generated binaries stay outside this repository.
+
 ## Structure
 
 - `scripts/generate.ts` coordinates one complete registry build and validation.
+- `scripts/build-artifacts.ts` prepares and stores standard web assets.
+- `scripts/build/` shares verified input loading and registry-to-Core build planning
+  with the CLI's local processing path.
 - `scripts/font-files.ts` implements Git-backed Fontsource ingestion.
 - `scripts/google-icons.ts` ingests Material Icons, Material Symbols, and their
   public name-to-codepoint mappings.
@@ -129,8 +163,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
 
 ## Invariants
 
-- Inputs are local repositories pinned to exact commits.
-- Output is canonical, deterministic, text-only, and schema-validated.
+- Ingestion inputs are local repositories pinned to exact commits.
+- Committed registry output is canonical, deterministic, text-only, and schema-validated.
 - Public API views explicitly map registry records rather than exposing them.
 - Provenance comes from Git history, not prior generated metadata.
 - Each provider owns its directory; one adapter never changes another
@@ -151,8 +185,8 @@ credentials in `REGISTRY_R2_ACCESS_KEY_ID` and
   family-wide slicing strategy replaces named subsets in aggregate CSS.
 - Build format, package version, storage paths, and artifact hashes are global
   release concerns and do not belong in family distribution records.
-- Core owns generic font processing; these scripts own provider ingestion and
-  NAM data.
+- Core owns generic font processing; these scripts own provider ingestion, NAM
+  data, and web-build orchestration.
 
 ## Font-files sources
 

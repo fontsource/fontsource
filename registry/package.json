@@ -3,6 +3,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
+		"artifacts": "pnpm --filter '@fontsource-utils/core' build && node scripts/build-artifacts.ts",
 		"archive": "pnpm --filter '@fontsource-utils/core' build && node scripts/archive.ts",
 		"generate": "pnpm --filter '@fontsource-utils/core' build && node scripts/generate.ts",
 		"test": "pnpm --filter '@fontsource-utils/core' build && vitest run",
@@ -18,7 +19,7 @@
 		"fastq": "^1.20.1",
 		"protobufjs": "8.7.1",
 		"turndown": "7.2.4",
-		"zod": "4.4.3"
+		"zod": "4.6.5"
 	},
 	"devDependencies": {
 		"@types/node": "catalog:node24",

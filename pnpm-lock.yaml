@@ -346,8 +346,8 @@ importers:
         specifier: 7.2.4
         version: 7.2.4
       zod:
-        specifier: 4.4.3
-        version: 4.4.3
+        specifier: 4.6.5
+        version: 4.6.5
     devDependencies:
       '@types/node':
         specifier: catalog:node24
