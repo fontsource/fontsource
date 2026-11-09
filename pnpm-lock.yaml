@@ -209,10 +209,10 @@ importers:
   packages/core:
     dependencies:
       '@glypht/bundler-utils':
-        specifier: ^0.0.9
+        specifier: 0.0.9
         version: 0.0.9
       '@glypht/core':
-        specifier: ^0.0.9
+        specifier: 0.0.9
         version: 0.0.9
     devDependencies:
       '@vitest/coverage-v8':
