@@ -26,7 +26,7 @@ import { HOME_DISCOVERY_LINKS } from '@/utils/agent-discovery';
 import {
 	ALGOLIA_APP_ID,
 	DEFAULT_SEARCH_INDEX,
-	searchClient,
+	instantSearchClient,
 } from '@/utils/algolia-client';
 import { ogMeta } from '@/utils/meta';
 import {
@@ -127,7 +127,7 @@ export function CatalogSearchPage() {
 	return (
 		<InstantSearchSSRProvider {...serverState}>
 			<InstantSearch
-				searchClient={searchClient}
+				searchClient={instantSearchClient}
 				indexName={DEFAULT_SEARCH_INDEX}
 				routing={routing(serverUrl, state$, discovery, navigateSearch)}
 				future={{ preserveSharedStateOnUnmount: true }}
