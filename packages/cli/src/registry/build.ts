@@ -12,6 +12,8 @@ export interface PackageBuildOptions {
 	out: string;
 	registryUrl?: string;
 	revision?: string;
+	text?: string;
+	features?: string;
 }
 
 /** Build from one frozen registry snapshot, committing the output only on success. */
@@ -20,6 +22,24 @@ export async function buildPackages(
 	options: PackageBuildOptions,
 ) {
 	const families = z.array(RegistryIdParamSchema.shape.id).min(1).parse(ids);
+	const featureSettings: Record<string, boolean> = {};
+	for (const item of options.features?.split(',') ?? []) {
+		if (!/^-?[A-Za-z0-9]{4}$/.test(item))
+			throw new Error(`Invalid OpenType feature tag: ${item}`);
+		featureSettings[item.replace(/^-/, '')] = !item.startsWith('-');
+	}
+	if (options.text === '') throw new Error('--text must not be empty');
+	const codepoints =
+		options.text === undefined
+			? undefined
+			: [
+					...new Set(
+						Array.from(
+							options.text,
+							(character) => character.codePointAt(0) as number,
+						),
+					),
+				];
 	const output = resolve(options.out);
 	try {
 		await access(output);
@@ -45,7 +65,12 @@ export async function buildPackages(
 						: family.distribution.static)
 				)
 					continue;
-				const result = await buildFamily(context, family, inputs, variable);
+				const result = await buildFamily(context, family, inputs, variable, {
+					featureSettings,
+					...(codepoints
+						? { characters: [{ subset: 'custom', codepoints }] }
+						: {}),
+				});
 				await writePackage(
 					join(temporary, variable ? 'variable' : 'static', family.id),
 					family,

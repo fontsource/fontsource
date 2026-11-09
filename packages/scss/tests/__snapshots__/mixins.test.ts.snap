@@ -2393,3 +2393,75 @@ exports[`sass mixins > should use the standard bundle for multiple standard axes
   src: url("@fontsource-variable/aggregate-font/files/aggregate-font-latin-standard-normal.woff2") format("woff2-variations");
 }"
 `;
+
+exports[`sass mixins > v6 output manifests > preserves custom axis casing and unquotes CSS ranges 1`] = `
+"/* casual */
+@font-face {
+  font-family: "Example Variable";
+  font-style: oblique -15deg 0deg;
+  font-display: swap;
+  font-weight: 400;
+  font-stretch: 75% 100%;
+  src: url("@fontsource-variable/variable/files/casual.woff2") format("woff2");
+}"
+`;
+
+exports[`sass mixins > v6 output manifests > selects only existing variants and actual filenames 1`] = `
+"/* light */
+@font-face {
+  font-family: "Sparse";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  unicode-range: U+41;
+  src: url("/fonts/light.woff2") format("woff2");
+}
+/* bold */
+@font-face {
+  font-family: "Sparse";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  unicode-range: U+41;
+  src: url("/fonts/bold.woff2") format("woff2");
+}
+/* bold-italic */
+@font-face {
+  font-family: "Sparse";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  unicode-range: U+41;
+  src: url("/fonts/bold-italic.woff2") format("woff2");
+}
+/* japanese-1 */
+@font-face {
+  font-family: "Sparse";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  unicode-range: U+3042;
+  src: url("/fonts/japanese-1.woff2") format("woff2");
+}"
+`;
+
+exports[`sass mixins > v6 output manifests > uses the default faces and replaces named aggregates with slices 1`] = `
+"/* light */
+@font-face {
+  font-family: "Sparse";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  unicode-range: U+41;
+  src: url("@fontsource/sparse/files/light.woff2") format("woff2");
+}
+/* japanese-1 */
+@font-face {
+  font-family: "Sparse";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  unicode-range: U+3042;
+  src: url("@fontsource/sparse/files/japanese-1.woff2") format("woff2");
+}"
+`;

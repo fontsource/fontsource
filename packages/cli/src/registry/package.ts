@@ -3,6 +3,7 @@ import { dirname, join } from 'node:path';
 import type { FontBuildResult } from '@fontsource-utils/core';
 import type { PackageOutputManifest } from '../../../../api/shared/package-output';
 import type { RegistryFamilyDetail } from '../../../../api/shared/registry';
+import { packageSass } from './sass';
 
 /** Package only generated outputs; frozen build inputs stay outside the package. */
 export async function writePackage(
@@ -22,6 +23,14 @@ export async function writePackage(
 		{ filename: 'index.d.css.ts', content: 'export {};\n' },
 		{ filename: 'metadata.json', content: json(family) },
 		{
+			filename: 'scss/metadata.scss',
+			content: packageSass(family.id, family.family, result, variable),
+		},
+		{
+			filename: 'CHANGELOG.md',
+			content: `# Changelog\n\nSee the [Fontsource release history](https://github.com/fontsource/font-files/commits/main).\n`,
+		},
+		{
 			filename: 'manifest.json',
 			content: json({
 				schemaVersion: 1,
@@ -38,6 +47,13 @@ export async function writePackage(
 				version: '6.0.0',
 				description: `Self-host the ${family.family} font.`,
 				license: family.license.id,
+				homepage: `https://fontsource.org/fonts/${family.id}`,
+				repository: {
+					type: 'git',
+					url: 'https://github.com/fontsource/font-files.git',
+				},
+				funding: 'https://github.com/sponsors/ayuhito',
+				publishHash: '',
 				main: 'index.css',
 				types: 'index.d.css.ts',
 				exports: {
@@ -48,6 +64,8 @@ export async function writePackage(
 					'./package.json': './package.json',
 					'./metadata.json': './metadata.json',
 					'./manifest.json': './manifest.json',
+					'./scss': './scss/metadata.scss',
+					'./scss/*': './scss/*',
 					'./*': './*.css',
 				},
 			}),

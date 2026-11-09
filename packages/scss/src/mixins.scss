@@ -64,6 +64,133 @@ $-standard-axes: (wght, wdth, slnt, opsz);
 	@return standard;
 }
 
+@function -matches($selection, $value) {
+	@return $selection == all or list.index($selection, $value) != null;
+}
+
+@function -variant-style($face) {
+	@return map.get($face, variantStyle) or map.get($face, style);
+}
+
+// v6 metadata contains real output faces; never infer filenames or cross-products.
+@mixin -manifest-generator(
+	$metadata, $directory, $family, $display, $formats,
+	$subsets, $weights, $styles, $axes
+) {
+	$is-variable: map.get($metadata, variable);
+	$suffix: '';
+	$family-suffix: '';
+	@if $is-variable {
+		$suffix: '-variable';
+		@if string.slice(map.get($metadata, family), -9) != ' Variable' {
+			$family-suffix: ' Variable';
+		}
+	}
+	$directory: $directory or '@fontsource#{$suffix}/#{map.get($metadata, id)}/files';
+	$family: $family or map.get($metadata, family) + $family-suffix;
+	$display: $display or swap;
+	@if $formats {
+		@each $format in $formats {
+			@if $format != all and $format != woff2 {
+				@error 'v6 font packages contain WOFF2 only.';
+			}
+		}
+	}
+	$faces: map.get($metadata, faces);
+	$use-default-faces: not $subsets and not $weights and not $styles and not $axes;
+	$default-faces: ();
+	$default-weights: ();
+	$default-styles: ();
+	$default-axes: ();
+	@each $index in map.get($metadata, entrypoints, 'index.css') {
+		$face: list.nth($faces, $index + 1);
+		$default-faces: list.append($default-faces, $face);
+		$default-weights: list.append($default-weights, map.get($face, weight));
+		$default-styles: list.append($default-styles, -variant-style($face));
+		$default-axes: list.append($default-axes, map.get($face, axisKey));
+	}
+	$weights: $weights or $default-weights;
+	$styles: $styles or $default-styles;
+	$axes: $axes or $default-axes;
+	$subsets: $subsets or all;
+	$selected: ();
+	$sliced: ();
+	@if $use-default-faces {
+		$faces: $default-faces;
+	}
+	@each $face in $faces {
+		@if (
+			-matches($subsets, map.get($face, subset)) and
+			-matches($styles, -variant-style($face)) and
+			(($is-variable and -matches($axes, map.get($face, axisKey))) or
+			(not $is-variable and -matches($weights, map.get($face, weight))))
+		) {
+			$selected: list.append($selected, $face);
+			@if map.get($face, sliceIndex) > 0 {
+				$key: (
+					map.get($face, subset), map.get($face, weight),
+					map.get($face, style), map.get($face, axisKey)
+				);
+				$sliced: map.set($sliced, $key, true);
+			}
+		}
+	}
+	@each $face in $selected {
+		$key: (
+			map.get($face, subset), map.get($face, weight),
+			map.get($face, style), map.get($face, axisKey)
+		);
+		@if map.get($face, sliceIndex) > 0 or not map.has-key($sliced, $key) {
+			$src: ();
+			@each $source in map.get($face, sources) {
+				$src: list.append(
+					$src,
+					url('#{$directory}/#{map.get($source, filename)}') format('woff2'),
+					comma
+				);
+			}
+			$range: map.get($face, unicodeRange);
+			@if $range == '' {
+				$range: null;
+			}
+			$css-range: null;
+			@if $range {
+				$css-range: string.unquote($range);
+			}
+			$stretch: map.get($face, stretch);
+			@if $stretch {
+				$stretch: string.unquote($stretch);
+			}
+			$filename: map.get(list.nth(map.get($face, sources), 1), filename);
+			@content ((
+				metadata: $metadata,
+				directory: $directory,
+				family: $family,
+				display: $display,
+				formats: woff2,
+				subsets: $subsets,
+				weights: $weights,
+				styles: $styles,
+				axes: $axes,
+				variant: string.slice($filename, 1, -7),
+				subset: map.get($face, subset),
+				unicodeSubset: map.get($face, subset),
+				unicodeRange: $range,
+				weight: map.get($face, weight),
+				axis: map.get($face, axisKey),
+				style: -variant-style($face),
+				font-family: string.quote($family),
+				font-style: string.unquote(map.get($face, style)),
+				font-display: $display,
+				font-weight: string.unquote('#{map.get($face, weight)}'),
+				font-stretch: $stretch,
+				src: $src,
+				unicode-range: $css-range,
+			));
+		}
+	}
+}
+
 @mixin generator(
 	$metadata: $metadata,
 	$directory: $directory,
@@ -78,6 +205,14 @@ $-standard-axes: (wght, wdth, slnt, opsz);
 	@if $metadata == null or meta.type-of($metadata) != map {
 		@error '$metadata is a required variable and must be a map for the Fontsource mixin.';
 	}
+	@if map.has-key($metadata, faces) {
+		@include -manifest-generator(
+			$metadata, $directory, $family, $display, $formats,
+			$subsets, $weights, $styles, $axes
+		) using ($props) {
+			@content ($props);
+		}
+	} @else {
 
 	$isVariable: map.get($metadata, axes) != null;
 
@@ -231,6 +366,7 @@ $-standard-axes: (wght, wdth, slnt, opsz);
 				}
 			}
 		}
+	}
 	}
 }
 
