@@ -20,7 +20,10 @@ import {
 } from '@/generated/api';
 import { theme } from '@/styles/theme';
 import { buildAlgoliaCacheKey } from '@/utils/algolia';
-import { DEFAULT_SEARCH_INDEX, searchClient } from '@/utils/algolia-client';
+import {
+	DEFAULT_SEARCH_INDEX,
+	instantSearchClient,
+} from '@/utils/algolia-client';
 import { cacheHeaders, PUBLIC_ORIGIN } from '@/utils/cache';
 import { cloudflareContext } from '@/utils/cloudflare-context';
 import type { DiscoveryPage } from '@/utils/discovery';
@@ -50,7 +53,7 @@ const getSearchServerState = (
 			<MantineProvider theme={theme}>
 				<InstantSearchSSRProvider>
 					<InstantSearch
-						searchClient={searchClient}
+						searchClient={instantSearchClient}
 						indexName={DEFAULT_SEARCH_INDEX}
 						routing={routing(serverUrl, state$, discovery)}
 						future={{ preserveSharedStateOnUnmount: true }}
